@@ -1,31 +1,25 @@
-# Deploy to Render after the checks pass — only when a merge to main changes something the site runs.
-# Round A "pipes" (2026-09-27, owner ruling: route A of docs/cloud-results/mobile-round-questions.md topic 1).
+# PR checks only — Render builds and deploys main by itself (round "move the build to Render", owner 21/10 "ครับงั้นตามนั้นเลย
+# จะได้ไม่เสียเงิน 2 ต่อ"). Until 21/10 this workflow ran a full `next build` on every ready PR push and again on every merge,
+# then called the Render deploy hook — and Render built the site a third time. The full build + leak check now run on the
+# local test server before the checker (TEAM_RULES 13.4 / 13.5) and on Render at deploy (render.yaml autoDeployTrigger:
+# commit — a failed build is not deployed and the previous deploy keeps serving).
 #
-#   push to main  → decide (scripts/deploy-decision.js — the same path list as the merge gate, scripts/lib/site-paths.js)
-#                 → nothing on the site changed = SKIP (no checks, no deploy)
-#                 → this push edits .github/workflows/ = SKIP deploy (checks still run) — so the merge that brings this
-#                   file to main never deploys, even with the secret already set
-#                 → otherwise: checks (verify:commerce + verify:catalog --full = tsc · eslint · contract tests · next
-#                   build · next start leak check) → all green → call the Render deploy hook
-#   pull_request  → decide + checks as a dry run; the deploy job never runs for a PR
-#   Run workflow  → (Actions tab, also from the GitHub phone app) checks on the chosen branch; deploy=true on main
-#                   deploys main after the checks pass, whatever changed
+#   pull_request  → decide (scripts/deploy-decision.js — does the PR reach the site?) → checks: verify:commerce +
+#                   verify:catalog (tsc · eslint · contract tests, no build) — the required checks "checks" (branch rule)
+#                   · a draft PR runs nothing; mark it ready once, after the checker PASS
+#   Run workflow  → (Actions tab) the same checks on the chosen branch; full=true adds the build + leak check (--full)
 #
-# The hook URL lives only in the repository secret RENDER_DEPLOY_HOOK_URL (the owner pastes it; GitHub masks it in logs).
-# No secret = the deploy job says so in its summary and ends green — nothing is deployed, nothing fails silently.
-# render.yaml keeps `autoDeploy: false`: Render never deploys on its own; this workflow is the only automatic route.
-# Stop it: Actions → "deploy" → ⋯ → Disable workflow. Undo a bad deploy: Render → Rollback (docs/RECOVERY.md).
+# Undo: revert the PR that brought this file (the push trigger + the deploy-hook job come back) and set render.yaml back to
+# `autoDeployTrigger: off`. Undo a bad deploy: Render → Rollback (docs/RECOVERY.md).
 name: deploy
 on:
-  push:
-    branches: [main]
   pull_request:
-    # ready_for_review: a draft PR runs nothing (job `decide` below); marking it ready runs the full set once
+    # ready_for_review: a draft PR runs nothing (job `decide` below); marking it ready runs the checks once
     types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
     inputs:
-      deploy:
-        description: "Deploy main after the checks pass (only on main)"
+      full:
+        description: "Also run the full build + leak check (verify:catalog --full)"
         type: boolean
         default: false
 permissions:
@@ -37,7 +31,7 @@ concurrency:
 jobs:
   decide:
     # Draft PRs skip the whole workflow (owner 21/10 "ลดรอบ": every push to an open PR rebuilt the site, which
-    # used up the month's Actions minutes). Work in progress = draft; "Ready for review" before the checker.
+    # used up the month's Actions minutes). Work in progress = draft; "Ready for review" once, after the checker PASS.
     # A skipped required job counts as passed, but a draft cannot be merged anyway.
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-24.04
@@ -56,25 +50,20 @@ jobs:
         id: d
         env:
           EVENT: ${{ github.event_name }}
-          BEFORE: ${{ github.event.before }}
-          AFTER: ${{ github.sha }}
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           PR_HEAD: ${{ github.event.pull_request.head.sha }}
-          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy && github.ref == 'refs/heads/main' }}
         run: |
           case "$EVENT" in
-            push)              node scripts/deploy-decision.js --range "$BEFORE..$AFTER" ;;
             pull_request)      node scripts/deploy-decision.js --range "$PR_BASE...$PR_HEAD" ;;
-            workflow_dispatch) if [ "$FORCE" = "true" ]; then node scripts/deploy-decision.js --force --files ""
-                               else node scripts/deploy-decision.js --files ""; fi ;;
+            workflow_dispatch) node scripts/deploy-decision.js --files "" ;;
           esac
       - name: Summary
         env:
           DEPLOY: ${{ steps.d.outputs.deploy }}
           REASON: ${{ steps.d.outputs.reason }}
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then what="dry run on a PR — never deploys"; else what="commit ${GITHUB_SHA:0:7} on ${GITHUB_REF_NAME}"; fi
-          if [ "$DEPLOY" = "true" ]; then verdict="DEPLOY after the checks pass"; else verdict="SKIP deploy"; fi
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then what="PR checks — Render deploys main by itself after the merge"; else what="commit ${GITHUB_SHA:0:7} on ${GITHUB_REF_NAME}"; fi
+          if [ "$DEPLOY" = "true" ]; then verdict="reaches the site — checks run"; else verdict="does not reach the site"; fi
           echo "### ${verdict}" >> "$GITHUB_STEP_SUMMARY"
           echo "${what} · ${REASON}" >> "$GITHUB_STEP_SUMMARY"
           echo "::notice title=deploy decision::${verdict} — ${REASON}"
@@ -99,53 +88,10 @@ jobs:
         run: npx next typegen
       - name: verify:commerce
         run: npm run verify:commerce
-      - name: verify:catalog --full (tsc · eslint · contract tests · next build · leak check)
+      - name: verify:catalog (tsc · eslint · contract tests — the build runs on the test server and on Render)
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.full) }}
+        run: npm run verify:catalog
+      - name: verify:catalog --full (by hand only — tsc · eslint · contract tests · next build · leak check)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.full }}
         run: npm run verify:catalog -- --full
 
-  deploy:
-    needs: [decide, checks]
-    if: >-
-      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
-      needs.decide.outputs.deploy == 'true' && needs.checks.result == 'success'
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22
-      - name: Call the Render deploy hook
-        env:
-          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-        run: |
-          short="${GITHUB_SHA:0:7}"
-          if [ -z "$HOOK" ]; then
-            echo "### SKIP deploy — secret RENDER_DEPLOY_HOOK_URL is not set" >> "$GITHUB_STEP_SUMMARY"
-            echo "Checks passed on ${short}; deploy it by hand in Render, or set the secret (docs/CLOUD.md) and run this workflow with deploy=true." >> "$GITHUB_STEP_SUMMARY"
-            echo "::warning title=not deployed::secret RENDER_DEPLOY_HOOK_URL is not set — ${short} was checked but not deployed"
-            exit 0
-          fi
-          # The hook deploys the newest commit of main. If main moved on while the checks ran (or before a re-run),
-          # the newer run deploys it — but only when a newer commit reaches the site: a docs-only merge after a failed
-          # deploy has a run that SKIPs, so skipping here too left the site change undeployed (#115, 29/09 — its
-          # re-run said "main moved on", the docs merge said "nothing on the site changed"). When no newer file reaches
-          # the site, the newest main serves exactly the site files checked here, so this run deploys it.
-          now="$(git ls-remote origin refs/heads/main | cut -f1)"
-          if [ "$now" != "$GITHUB_SHA" ]; then
-            git fetch -q origin main
-            newer="$(GITHUB_OUTPUT= node scripts/deploy-decision.js --range "$GITHUB_SHA..$now" 2>&1 || true)"
-            if printf '%s\n' "$newer" | grep -qE '^[0-9]+ files · 0 reach the site$'; then
-              echo "### main moved on to ${now:0:7}, but nothing newer reaches the site — deploying it (same site files as ${short})" >> "$GITHUB_STEP_SUMMARY"
-              echo "::notice title=main moved on::${now:0:7} changes nothing on the site — deploying for ${short}"
-            else
-              echo "### SKIP deploy — main moved on to ${now:0:7} with site changes; its own run deploys it" >> "$GITHUB_STEP_SUMMARY"
-              echo "::notice title=not deployed::main moved on to ${now:0:7} while ${short} was checked"
-              exit 0
-            fi
-          fi
-          resp="$(curl -fsS -X POST "$HOOK")" || { echo "::error title=deploy hook failed::the Render deploy hook call failed for ${short}"; exit 1; }
-          id="$(printf '%s' "$resp" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log(JSON.parse(s).deploy.id||"")}catch{console.log("")}})')"
-          echo "### DEPLOY started — commit ${short}" >> "$GITHUB_STEP_SUMMARY"
-          echo "Render deploy id: ${id:-not returned}. Whether it went live: Render → okami24 → Events (same deploy id)." >> "$GITHUB_STEP_SUMMARY"
-          echo "::notice title=deploy started::commit ${short} · Render deploy ${id:-id not returned}"

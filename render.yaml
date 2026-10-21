@@ -41,10 +41,12 @@ services:
     buildCommand: npm ci && node scripts/build-native-sqlite.js && node scripts/check-native-sqlite.js && npm run build
     startCommand: npm start
     healthCheckPath: /
-    # Deliberately manual for launch: a push to `main` should not reach customers before someone
-    # has looked at it. Turn this on in Settings once the site has been live and stable for a
-    # while — the owner decides, not this file.
-    autoDeploy: false
+    # Render builds and deploys every merge to main itself (owner 21/10, round "move the build to Render": "ครับงั้นตามนั้นเลย
+    # จะได้ไม่เสียเงิน 2 ต่อ" — GitHub Actions no longer builds the site; .github/workflows/deploy.yml = PR checks only).
+    # Every PR has passed the checker on a local build first (TEAM_RULES 13.4); a failed Render build is not deployed and the
+    # previous deploy keeps serving. `autoDeployTrigger` replaces the deprecated `autoDeploy` (render.com/docs/blueprint-spec).
+    # Undo: `off` here + revert the workflow PR.
+    autoDeployTrigger: commit
     disk:
       name: okami24-data
       mountPath: /var/data

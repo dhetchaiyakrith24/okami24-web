@@ -34,6 +34,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   money approval must be typed by the owner in the chat that spends it · let a side chat merge its own PRs · new PRs = draft while working.
 3h ROUND "homepage hero" CLOSED 21/10 — tag hero-2010. Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
   LINE order message without the page URL — `_incoming/friday-queue.md`.
+3d OPEN ROUND "move the build to Render" = `docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt` (owner 21/10: Render builds + deploys
+  each merge, GitHub = fast PR checks — PR #702). Listed first: the lock reads the first OPEN line for 【แตะได้】.
 3w OPEN ROUND "homepage upgrade" = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` (reference getlayers "Artefakt"; owner: no purchase,
   Friday drafts). DONE: batch 1 #677 · 1b #679 · 1d #683 · batch 2 #687 (all tier B, checker PASS; what each did = item 1 + §18 "Homepage").
   The owner's path 21/10: cards kept ("การ์ด 4 ชิ้นโอเค") → lattice rejected → layers → tried a level row (#682) and a 6-card deck, dropped
@@ -251,7 +253,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 6 verify baseline = round SEO ฉ close 14/10 (`_incoming/seo-f/b7/*.log`, numbers as printed) [ตรวจแล้ว]: tsc 0 (empty log) ·
   verify:commerce 17/17 · i18n 16/16 · content-dates current (57 paths) · raw NBSP/U+2060 in source 0 (again 0 on 15/10 after
   #494) · scan.js 0/118 + og-gate 118/118 (both against the live site — before the 14/10 test-server rule) · storefront 55 shown /
-  55 buyable (37 legacy + 18 ProductMaster). verify:catalog --full = GitHub `checks` on every site PR.
+  55 buyable (37 legacy + 18 ProductMaster). verify:catalog --full = the local test server before the checker (since 21/10 GitHub `checks` = the fast verify, no build; Render builds at deploy).
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
