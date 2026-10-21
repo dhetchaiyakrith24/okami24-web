@@ -8,6 +8,7 @@ import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotTagline } from "@/i18n/product-copy-en";
+import { pilotName } from "@/i18n/product-names-en";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { pilotAxisLabel } from "./axis-label";
 import { labelLang } from "@/lib/label-lang";
@@ -91,7 +92,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
         ) : (
           <span aria-hidden="true" className="label-mono min-h-[1lh] text-[0.65rem] max-lg:text-[0.6rem]" />
         )}
-        <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{product.displayName}</h3>
+        <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{pilotName(product.slug, product.displayName, locale)}</h3>
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
         <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden lg:min-h-10">{locale === "th" ? thaiTypographyNode(pilotTagline(product.slug, product.tagline, locale)) : pilotTagline(product.slug, product.tagline, locale)}</p>
