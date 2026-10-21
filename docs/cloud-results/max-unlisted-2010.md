@@ -19,7 +19,7 @@ Match rule: a Max parent counts as "on the site" when any of its codes is in `sr
 | 9 | Coil-21 | คอยล์ Argus Pod | 450 | 4 (1) | no product in code | new page; VOOPOO Argus Pod coils | 9 |
 | 10 | ELQ-64 | Double Mint Salt Nic | 300 | 6 (2) | no product in code | new page; Thai-market brand, no maker site → identity check first | 10 |
 
-## A2. Status 21/10 (after the listing PRs)
+## A2. Status 21/10 (after the listing PRs; Max re-read 21/10 15:40 — 64 parents incl. 2 test rows, nothing new to list)
 
 | Row | State |
 |---|---|
@@ -27,12 +27,14 @@ Match rule: a Max parent counts as "on the site" when any of its codes is in `sr
 | Pod-157 Relx Essential 2 | **LIVE** (PR #664, 4 Max colours + the shop's Orange, ฿490) |
 | Pod-27 RELX Infinity Pro 2 pods | **LIVE** (PR #664, 42 flavours, ฿149, card = Watermelon Ice pack, 41 flavours no-photo panel) |
 | Coil-21 VOOPOO Argus Pod | **LIVE** (PR #666, 4 options, ฿450) |
-| Pod-115 Vazer One | PR in review (legacy page unhidden; 21 flavours = Max 5 with new studio photos + the maker's other 16 as sold-out, no-photo; ฿59; card = Mango) |
+| Pod-115 Vazer One | **LIVE** (PR #669, 21 flavours = Max 5 with new studio photos + the maker's other 16 as sold-out, no-photo; ฿59; card = Mango) |
 | Pod-142 Reswa Sportcan 12K | **already LIVE** as /products/pod-142 since list19 (card + 4 of 5 flavours; Red Bull has no photo on purpose — Friday 18/10, third-party trademark). The hidden legacy copy `reswa-sportcan-12k` in unbranded.ts is a duplicate and is not shown. Section A's row 5 ("hidden, needs a card image") was wrong. |
-| Eliquid-169 Muro Freebase | blocked: no bottle photo found (owner photo wanted) · price to use = Max ฿220 (the legacy approval's 250 is old) |
-| ELQ-64 Double Mint Salt Nic | **held**: the bottle prints "RIGLEY'S DOUBLEMINT CHEWING GUM" in Wrigley's trade dress — a confirmed counterfeit; the code (active-catalog-to-product-master.ts, 2/9) says never admit it without an explicit owner decision. Asked Friday 21/10; no render made |
-| Disposable-42 Foli Bar 15k | blocked: identity + image — two Foli lines are sold ("Foli Bar 15000" on pod789 = Max's name, smoky tapered device; "Foli Cool Bar 15000" on ihavevape, short black device); the only "Foli Bar" artwork is a 600 px poster with ~45 px devices → owner photo of the real stock needed |
+| Eliquid-169 Muro Freebase | blocked: no bottle photo found anywhere · owner photo asked in `docs/รอพี่ตรวจ.md` item 71 (21/10) · price to use = Max ฿220 (the legacy approval's 250 is old) |
+| ELQ-64 Double Mint Salt Nic | **LIVE** (PR #674, owner 21/10 "ลงคลังปกติครับ" — brandless, Max name; 6 flavours, ฿300) |
+| Disposable-42 Foli Bar 15k | **LIVE** (PR #676, identity = FOLI Cool Bar 15K — Max's 12 flavour names match that line 12 of 12; 12 flavours with photos, ฿349) |
 | Pod-137 Relx Creator Pod 20K | skipped: identity not confirmed — shops sell "Creator Boost 20000" / "Creator Pod Clear 18K", none names a 31-flavour "Creator Pod 20K" |
+| Set-Coil-1-1 Vinci 0.15Ω box of 5 (new in Max since 20/10, ฿350) | no new page: a unit-of-sale pack of Coil Vinci 0.15Ω (Coil-1-1), which is live — packs are the cart/stock job (sku survey "unit of sale") |
+| Coil-55-1 หัวแทงค์ Caliburn G2 | no action: the 20/10 list wrote it as Coil-55; same product, already in sku-map (`coil-55` → Coil-55-1) |
 
 ## B. Max parents that ARE on the site (checked in sku-map, not hidden) — 54 parents, no action
 Includes everything list19 listed (Disposable-43, Pod-176, eliquid-78, Pod-173, ELQ-6) and the Nexswitch, Esko, Infy, M Switch,
