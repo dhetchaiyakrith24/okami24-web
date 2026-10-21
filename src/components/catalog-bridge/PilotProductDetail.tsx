@@ -31,6 +31,7 @@ import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
+import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -180,7 +181,7 @@ export function PilotProductDetail({
     <>
       <PageHeader
         eyebrow={product.categoryName}
-        title={product.displayName}
+        title={pilotName(product.slug, product.displayName, locale)}
         // Round 30.3: same English-overlay lookup as PilotProductCard (Thai is the source line).
         description={locale === "th" ? thaiTypographyNode(pilotTagline(product.slug, product.tagline, locale)) : pilotTagline(product.slug, product.tagline, locale)}
         // M3 (2026-09-08): on phones the tagline sits below the fold anyway; hiding it here (CSS
@@ -218,7 +219,7 @@ export function PilotProductDetail({
 
           <ProductMasterVariantPicker
             optionAxisLabel={axisLabel}
-            variants={product.variants}
+            variants={product.variants.map((v) => ({ ...v, label: pilotOptionLabel(v.label, locale) }))}
             selectedId={selectedVariantId}
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
@@ -281,7 +282,7 @@ export function PilotProductDetail({
           {!available && soldOutBadge}
           {showNoPhoto && selectedVariant ? (
             <div className="h-full w-full p-8 lg:p-12">
-              <NoOptionPhoto name={selectedVariant.label} note={noPhotoNote} />
+              <NoOptionPhoto name={pilotOptionLabel(selectedVariant.label, locale)} note={noPhotoNote} />
             </div>
           ) : displayImage ? (
             <>
@@ -355,7 +356,7 @@ export function PilotProductDetail({
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
-        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>
+        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null}>
           <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
