@@ -495,6 +495,18 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-layout="deck"] .okh-card:nth-child(8) { z-index: 8; }
   .okh[data-layout="deck"] .okh-card:is(:hover, :focus-visible) { z-index: 10; }
   .okh[data-layout="deck"] .okh-card-img img { object-position: 22% 50%; }
+  /* solid cards, so nothing under an overlap shows through (a price ghosting under the next card read as clutter); the
+     tag row keeps only the colour / flavour count — the type chip would be cut by the next card */
+  .okh[data-layout="deck"] .okh-card,
+  .okh[data-layout="deck"] .okh-card:hover { background: var(--surface-1); }
+  .okh[data-layout="deck"] .okh-card-tags em.label-mono { display: none; }
+  /* short laptop screens: a smaller lift and a smaller gap, so the row clears the LINE button and the lifted card still
+     keeps 12 px from the buttons above */
+  @media (max-height: 50rem) {
+    .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-cards { margin-top: 0.75rem; }
+    .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card-img { height: clamp(6.5rem, calc(100svh - 43.25rem), 20rem); }
+    .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:is(:hover, :focus-visible) { transform: translateY(-6px) scale(1.03); }
+  }
 
   .okh-cards {
     display: grid;
