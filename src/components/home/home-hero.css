@@ -478,6 +478,9 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     filter: blur(3px) brightness(0.55);
   }
   .okh[data-layout="stagger"] .okh-card:is(:hover, :focus-visible) { transform: translateY(-10px) scale(1.05); }
+  /* the lifted card keeps the strip it left under the pointer, so a mouse resting on its bottom edge does not drop the
+     hover and make it flicker (checker #683) */
+  .okh[data-layout="stagger"] .okh-card:hover::after { content: ""; position: absolute; inset: 100% 0 auto; height: 1rem; }
   @media (max-height: 50rem) {
     .okh[data-layout="stagger"] .okh-cards { margin-top: 0.75rem; }
     .okh[data-layout="stagger"] .okh-card-img { height: clamp(6.5rem, calc(100svh - 44.75rem), 19rem); }
