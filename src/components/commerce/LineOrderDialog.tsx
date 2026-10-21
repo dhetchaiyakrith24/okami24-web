@@ -14,8 +14,9 @@ import { lineOaMessageUrl } from "@/lib/line-order";
  * QR dark-on-light (#0e0e10 on #f3f1ec) so phones read it on the dark theme, focus trapped, Esc / backdrop / X close,
  * focus returns to the button that opened it. Phones never see this — their tap opens LINE directly.
  * Rendered into document.body (portal): inside the product hero it sat under the hero image's stacking context.
+ * mode "contact" (owner 21/10): the site-wide LINE button on a computer — a QR of the shop's add-friend link, no message.
  */
-export function LineOrderDialog({ message, mode, onClose }: { message: string; mode: "order" | "ask"; onClose: () => void }) {
+export function LineOrderDialog({ message, mode, onClose }: { message?: string; mode: "order" | "ask" | "contact"; onClose: () => void }) {
   const { locale } = useLocale();
   const copy = LINE_ORDER_COPY[locale];
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -23,7 +24,9 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
   const textRef = useRef<HTMLParagraphElement>(null);
   const downOnBackdrop = useRef(false);
   const [copied, setCopied] = useState(false);
-  const url = lineOaMessageUrl(message);
+  const contact = mode === "contact" || !message;
+  const url = contact ? CONTACT.lineUrl : lineOaMessageUrl(message);
+  const title = contact ? copy.titleContact : mode === "ask" ? copy.titleAsk : copy.titleOrder;
 
   const qr = useMemo(() => {
     const code = qrcode(0, "M");
@@ -82,7 +85,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
   function copyMessage() {
     try {
       navigator.clipboard
-        .writeText(message)
+        .writeText(message ?? "")
         .then(() => {
           setCopied(true);
           window.setTimeout(() => setCopied(false), 2000);
@@ -93,7 +96,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
     }
   }
 
-  const lines = message.split("\n");
+  const lines = (message ?? "").split("\n");
   const urlLine = lines[lines.length - 1];
 
   return createPortal(
@@ -128,19 +131,30 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
           LINE <span className="normal-case">{CONTACT.lineId}</span>
         </span>
         <h2 id="line-order-title" className="mt-3 font-display text-2xl font-semibold tracking-tight text-foreground">
-          {mode === "ask" ? copy.titleAsk : copy.titleOrder}
+          {title}
         </h2>
         <p id="line-order-desc" className="mt-2 text-sm leading-relaxed text-foreground-muted">
-          {copy.body}
+          {contact ? copy.bodyContact : copy.body}
         </p>
         <div className="mt-6 flex justify-center">
           <div className="rounded-xl bg-[#f3f1ec] p-4">
-            <svg role="img" aria-label={mode === "ask" ? copy.titleAsk : copy.titleOrder} viewBox={`0 0 ${qr.size} ${qr.size}`} width={px} height={px} shapeRendering="crispEdges">
+            <svg role="img" aria-label={title} viewBox={`0 0 ${qr.size} ${qr.size}`} width={px} height={px} shapeRendering="crispEdges">
               <rect width={qr.size} height={qr.size} fill="#f3f1ec" />
               <path d={qr.d} fill="#0e0e10" />
             </svg>
           </div>
         </div>
+        {contact ? (
+          <button
+            ref={copyRef}
+            type="button"
+            onClick={onClose}
+            className="mt-6 w-full rounded-full border border-surface-border px-5 py-3 text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
+          >
+            {copy.close}
+          </button>
+        ) : (
+          <>
         <p className="mt-6 text-xs text-foreground-dim">{copy.messageLabel}</p>
         <div className="mt-2 rounded-xl border border-surface-border-soft bg-surface-0 p-4 text-sm leading-relaxed text-foreground">
           <p ref={textRef} className="whitespace-pre-line">
@@ -167,8 +181,10 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
             {copy.close}
           </button>
         </div>
+          </>
+        )}
         <p className="mt-5 text-center text-xs text-foreground-dim">
-          <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className="underline-offset-4 hover:text-foreground hover:underline">
+          <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot={contact ? "pill" : "buy-note"} className="underline-offset-4 hover:text-foreground hover:underline">
             {copy.addFriend}
             {String.fromCharCode(0xa0)}
             {CONTACT.lineId}
