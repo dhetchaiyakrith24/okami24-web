@@ -375,6 +375,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "punta-ice": "น้ำยา Punta Ice มีให้เลือก 7 กลิ่น",
   "next-pro-2-beyond": "Next Pro 2 Beyond ตัวเครื่องพอต มีให้เลือก 6 สี",
   "muro-salt-nic": "Muro Salt Nic น้ำยา salt nic มีให้เลือก 6 กลิ่น",
+  "muro-freebase": "Muro Freebase น้ำยา freebase มีให้เลือก 6 กลิ่น",
   "vazer-one-pod": "หัวพอต Vazer One มีให้เลือก 21 กลิ่น",
   "foli-bar-15k": "Foli Cool Bar 15K พอตใช้แล้วทิ้ง 15,000 พัฟ มีให้เลือก 12 กลิ่น",
   "super-cool-saltnic": "น้ำยา Super Cool นิโคตินแบบ salt nic มีให้เลือก 10 กลิ่น",
