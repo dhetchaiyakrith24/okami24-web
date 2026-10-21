@@ -13,9 +13,11 @@ export function still() {
 /**
  * Latin text that "tunes in" (the Artefakt reference, owner 21/10): for about half a second the letters are noise, then
  * they settle left to right. Only Latin letters and digits are scrambled — Thai (stacked vowels and tone marks would
- * smear) and prices (a wrong number for a moment) are never passed in. The real text is server HTML and stays in a
- * screen-reader copy; the animation writes the visible copy's textContent directly (no React render per frame) and
- * only while it runs. `run` changes = play again; reduced motion / Save-Data = never plays.
+ * smear) and prices (a wrong number for a moment) are never passed in. ONE span: the real text is the server HTML (what
+ * search engines and screen readers get); the animation writes its textContent directly (no React render per frame)
+ * only while it runs, and puts the word back when it ends. No second sr-only copy — inside a link it doubled the
+ * anchor text ("VOOPOOVOOPOOARGUS G4ARGUS G4", line 2 SEO 21/10). `run` changes = play again; reduced motion /
+ * Save-Data = never plays.
  */
 export function Decode({ text, run, delay = 0 }: { text: string; run: number; delay?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -46,14 +48,7 @@ export function Decode({ text, run, delay = 0 }: { text: string; run: number; de
       el.textContent = text;
     };
   }, [text, run, delay]);
-  return (
-    <>
-      <span className="sr-only">{text}</span>
-      <span ref={ref} aria-hidden>
-        {text}
-      </span>
-    </>
-  );
+  return <span ref={ref}>{text}</span>;
 }
 
 /**
