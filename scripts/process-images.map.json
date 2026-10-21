@@ -10303,6 +10303,126 @@
   }
  },
  {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-2.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-2",
+  "note": "image sweep 21/10 - MQ Bar 22K Grape Lychee (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-grape-lychee-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-grape-lychee, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-3.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-3",
+  "note": "image sweep 21/10 - MQ Bar 22K Blue Ice (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-blue-ice-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-blue-ice, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-4.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-4",
+  "note": "image sweep 21/10 - MQ Bar 22K Double Mint (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-double-mint-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-double-mint, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-5.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-5",
+  "note": "image sweep 21/10 - MQ Bar 22K Pink Berry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-pink-berry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-pink-berry, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-6.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-6",
+  "note": "image sweep 21/10 - MQ Bar 22K Mixberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-mixberry-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-mixberry, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-7.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-7",
+  "note": "image sweep 21/10 - MQ Bar 22K Strawberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-strawberry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-strawberry, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-8.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-8",
+  "note": "image sweep 21/10 - MQ Bar 22K Peach Strawberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-peach-strawberry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-peach-strawberry, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-9.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-9",
+  "note": "image sweep 21/10 - MQ Bar 22K Watermelon (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-watermelon-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-watermelon, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-10.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-10",
+  "note": "image sweep 21/10 - MQ Bar 22K Cola (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-cola-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-cola, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-11.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-11",
+  "note": "image sweep 21/10 - MQ Bar 22K Rainbow Candy (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-rainbow-candy-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-rainbow-candy, 800 px, text over the poster) - _incoming/q2/mq/",
+   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
   "source": "_incoming/list19/vmate/gilt-black.png",
   "slug": "vmate-pro-2",
   "role": "card",
