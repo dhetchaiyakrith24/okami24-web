@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { HomeText, HomeTypeText } from "@/components/home/HomeCopy";
+import { DecodeOnView } from "@/components/home/Decode";
 import { cn } from "@/lib/utils";
 
 /** The English tag above each section title — same words as the hero tabs' tags (THAI_STYLE §5 group ก). */
@@ -51,7 +52,7 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div className="flex flex-col gap-3">
             <span className="label-mono text-xs text-ember" lang="en">
-              {TYPE_TAG[type]}
+              <DecodeOnView text={TYPE_TAG[type]} />
             </span>
             <h2 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
               <HomeTypeText type={type} field="label" />
