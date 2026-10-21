@@ -30,6 +30,7 @@ import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { verifiedRows } from "@/lib/verified-specs";
+import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -253,8 +254,9 @@ export function PilotProductDetail({
               <dl className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
                 {verifiedRows(product.specifications).map((spec) => (
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-                    <dt className="text-foreground-muted">{spec.label}</dt>
-                    <dd className="text-right font-medium text-foreground">{spec.value}</dd>
+                    {/* The seed stores these rows in Thai; English/Chinese visitors read spec-seed-en.ts (21/10). */}
+                    <dt className="text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
+                    <dd className="text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
                   </div>
                 ))}
               </dl>
