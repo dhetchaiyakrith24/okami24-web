@@ -446,49 +446,30 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     background: radial-gradient(circle 26rem at var(--mx) var(--my), rgb(255 106 44 / 0.11), rgb(255 106 44 / 0.045) 42%, transparent 72%);
   }
 
-  /* DESKTOP_CARD_LAYOUT (owner 21/10 "อยากให้เรียงแบบมี Layers ทับซ้อนกันเล็กน้อย"): the cards overlap at their edges —
-     each one over the card before it, a soft shadow on its left edge — the overlap stays inside the cards' own padding so
-     no name or price is ever covered; the hovered card comes to the front. "stagger" = every other card sits lower ·
-     "fan" = a slight fan of tilts, the outer two lower. The extra height is taken from the photos so the row still ends
-     above the LINE button. */
-  .okh[data-layout="stagger"] .okh-cards,
-  .okh[data-layout="fan"] .okh-cards { gap: 0; align-items: start; }
-  .okh[data-layout="stagger"] .okh-card,
-  .okh[data-layout="fan"] .okh-card {
-    /* the right padding is wider than the overlap, so the price always keeps 18 px of its own card; the shadow stays
-       inside that strip (checker #679: a wide shadow greyed the price of the card underneath) */
+  /* DESKTOP_CARD_LAYOUT "focus" (owner 21/10: "วางชิดกันเลยเป็น 1111 … ซ้อนนะ … ชี้ที่การ์ดไหน การ์ดนั้นเด้งสูงขึ้น เด่นขึ้นมาก
+     และการ์ดอื่นๆ เบลอไป"): one level row, each card overlapping the one before it a little (inside the cards' own right
+     padding, so no name or price is covered; a tight edge shadow — checker #679); the hovered / focused card lifts and grows
+     to the front, the other three blur and dim. It grows from its centre, so it never reaches the buttons above or the
+     LINE button below (measure.js). Reduced motion / Save-Data: no lift or zoom, the blur and dimming stay. */
+  .okh[data-layout="focus"] .okh-cards { gap: 0; }
+  .okh[data-layout="focus"] .okh-card {
     padding-inline: 1.375rem 2.25rem;
     box-shadow: -8px 0 14px -10px rgb(0 0 0 / 0.75);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
   }
-  .okh[data-layout="stagger"] .okh-card + .okh-card,
-  .okh[data-layout="fan"] .okh-card + .okh-card { margin-left: -1.125rem; }
-  .okh[data-layout="stagger"] .okh-card:nth-child(1),
-  .okh[data-layout="fan"] .okh-card:nth-child(1) { z-index: 1; }
-  .okh[data-layout="stagger"] .okh-card:nth-child(2),
-  .okh[data-layout="fan"] .okh-card:nth-child(2) { z-index: 2; }
-  .okh[data-layout="stagger"] .okh-card:nth-child(3),
-  .okh[data-layout="fan"] .okh-card:nth-child(3) { z-index: 3; }
-  .okh[data-layout="stagger"] .okh-card:nth-child(4),
-  .okh[data-layout="fan"] .okh-card:nth-child(4) { z-index: 4; }
-  .okh[data-layout="stagger"] .okh-card:hover,
-  .okh[data-layout="fan"] .okh-card:hover,
-  .okh[data-layout="stagger"] .okh-card:focus-visible,
-  .okh[data-layout="fan"] .okh-card:focus-visible { z-index: 10; }
-  .okh[data-layout="stagger"] .okh-card:hover,
-  .okh[data-layout="fan"] .okh-card:hover {
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45), -8px 0 14px -10px rgb(0 0 0 / 0.75);
+  .okh[data-layout="focus"] .okh-card + .okh-card { margin-left: -1.125rem; }
+  .okh[data-layout="focus"] .okh-card:nth-child(1) { z-index: 1; }
+  .okh[data-layout="focus"] .okh-card:nth-child(2) { z-index: 2; }
+  .okh[data-layout="focus"] .okh-card:nth-child(3) { z-index: 3; }
+  .okh[data-layout="focus"] .okh-card:nth-child(4) { z-index: 4; }
+  .okh[data-layout="focus"] .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) {
+    filter: blur(3px) brightness(0.55);
   }
-  /* the 1st and 3rd sit lower: the last card stays high, clear of the LINE button in the corner */
-  .okh[data-layout="stagger"] .okh-card:nth-child(odd) { margin-top: 1.5rem; }
-  .okh[data-layout="fan"] .okh-card { transform-origin: 50% 100%; }
-  .okh[data-layout="fan"] .okh-card:nth-child(1) { margin-top: 1.25rem; rotate: -3deg; }
-  .okh[data-layout="fan"] .okh-card:nth-child(2) { rotate: -1deg; }
-  .okh[data-layout="fan"] .okh-card:nth-child(3) { rotate: 1deg; }
-  .okh[data-layout="fan"] .okh-card:nth-child(4) { margin-top: 1.25rem; rotate: 3deg; }
-  .okh[data-layout="fan"] .okh-card:hover { rotate: 0deg; }
-  .okh[data-layout="fan"] .okh-card { transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, rotate 0.35s ease; }
-  .okh[data-layout="stagger"] .okh-card-img,
-  .okh[data-layout="fan"] .okh-card-img { height: clamp(7rem, calc(100svh - 44rem), 19rem); }
+  .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) {
+    z-index: 10;
+    transform: translateY(-14px) scale(1.07);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 35%, transparent), 0 30px 70px -24px rgb(0 0 0 / 0.9), 0 24px 60px -30px rgb(255 106 44 / 0.5);
+  }
 
   .okh-cards {
     display: grid;
@@ -598,9 +579,11 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   html[data-okami-lite="1"] .okh-card:hover .okh-card-img img { transform: scale(1.1); }
   html[data-okami-lite="1"] .okh-lattice::after { transition: opacity 0.2s ease; }
   html[data-okami-lite="1"] .okh[data-layout] .okh-card { transition: none; }
+  html[data-okami-lite="1"] .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) { transform: none; }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
   .okh[data-layout] .okh-card { transition: none; }
+  .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) { transform: none; }
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow { transition: none; }
   .okh-card:hover, .okh-card:hover .okh-card-arrow { transform: none; }
   .okh-card:hover .okh-card-img img { transform: scale(1.1); }
