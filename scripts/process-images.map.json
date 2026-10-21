@@ -11071,6 +11071,126 @@
   }
  },
  {
+  "source": "_incoming/relx/pp2-final/banana-freeze.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-10",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Banana Freeze pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/banana-freeze.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Banana Freeze poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/banana-freeze.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/green-grape-ice.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-25",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Green Grape Ice pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/green-grape-ice.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Green Grape Ice poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/green-grape-ice.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/honeydew-melon.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-11",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Honeydew Melon pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/honeydew-melon.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Honeydew Melon poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/honeydew-melon.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/lemon-ice-tea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-26",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Lemon Ice Tea pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/lemon-ice-tea.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Lemon Ice Tea poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/lemon-ice-tea.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/lemon-mint.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-15",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Lemon Mint 50mg pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/lemon-mint.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Lemon Mint poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/lemon-mint.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/longjing-ice-tea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-21",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Longjing Ice Tea pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/longjing-ice-tea.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Longjing Ice Tea poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/longjing-ice-tea.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/menthol-xtra.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-6",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Menthol Xtra 50mg pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/menthol-xtra.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Menthol Xtra poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/menthol-xtra.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/mint-freeze.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-23",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Mint Freeze 50mg pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/mint-freeze.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Mint Freeze poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/mint-freeze.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/rich-tobacco.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-9",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Rich Tobacco 50mg pack",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the pack front only, strict \"copy, do not redesign\" prompt (window.__PP3/__ICY); render _incoming/relx/pc/rich-tobacco.png; cut _incoming/relx/boxcut2.js T 40 (shadow-aware)",
+   "reference": "pod789.com RELX Pod Pro 2 Rich Tobacco poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/rich-tobacco.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
+  "source": "_incoming/relx/pp2-final/watermelon-ice.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-5",
+  "note": "image sweep 21/10 - RELX Pod Pro 2 Watermelon Ice pack",
+  "aiRender": {
+   "tool": "same cut as the live card (Higgsfield Nano Banana Pro 2K, list19 round), reused as the Watermelon Ice variant",
+   "reference": "pod789.com RELX Pod Pro 2 Watermelon Ice poster (https://pod789.com/product/relx-infinity-pro-2/ - wp-content/uploads/2024/08/หัวพอต-Relx-Infinity-Pro-Pod-2-<Flavour>.jpg, 600 px) - _incoming/relx/pp2/ (pack crop _incoming/relx/pp2-in/watermelon-ice.png)",
+   "fidelitySheet": "_incoming/relx/fid-pp2.jpg (pack crop beside render), pp2-cuts.jpg (cuts on the site background), pp2-tops.jpg (nicotine % per pack)"
+  }
+ },
+ {
   "source": "_incoming/list19/argus-pod/pod.png",
   "slug": "coil-21",
   "role": "card",
