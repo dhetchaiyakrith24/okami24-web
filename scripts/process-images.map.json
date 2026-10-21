@@ -9132,6 +9132,19 @@
   "fileName": "variant-iqosheet-15-10.webp"
  },
  {
+  "source": "_incoming/terea/final/terea-card.png",
+  "slug": "iqosheet-15",
+  "role": "card",
+  "fileName": "card-v2.webp",
+  "replaces": "/assets/products/iqosheet-15/card.webp",
+  "note": "image sweep 21/10 - IQOS TEREA card: real packs instead of bare sticks (owner 21/10 \"เอากล่องบุหรี่จริงเข้ามาเลย ... ถ้าหาแล้วไม่ผ่านมาตรสร้างสั่งสร้างใหม่\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits; owner bought 21/10), web app through Chrome; two official references: image 1 = the real TEREA Sienna single pack (box shape, front layout, text-only warning panel), image 2 = the real fronts of the 4 flavours the shop sells (colour, ring colour, flavour name only); render _incoming/terea/r/terea-1.png; cut _incoming/terea/boxcut.js (row span AND column span of the colour-distance mask, 2 px erode)",
+   "reference": "IQOS official (PMI) — TEREA Sienna pack https://www.iqos.com/mt/en/shop/terea-sienna-pack.html (pmi_G0000705_01_mt.png, 2048 px) + TEREA Green / Blue / Sienna / Purple Wave fronts https://www.iqos.com/ph/en/shop/buy-terea.html (pmi_G0000724/719/730/728_00_ph.png, 2048 px) - _incoming/terea/ref/",
+   "fidelitySheet": "_incoming/terea/fid.jpg (both official references beside the render), c1-dark.jpg (cut on the site background)"
+  }
+ },
+ {
   "source": "_incoming/p63/nexpod/out/Black.png",
   "slug": "nexpod-15k",
   "role": "card",
