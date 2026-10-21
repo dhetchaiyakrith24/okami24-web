@@ -18,11 +18,12 @@
 
 ### 1ก. เว็บขึ้นเองหลัง merge (ตั้งแต่ 21/10: Render สร้างและขึ้นเว็บเอง) — ปิดชั่วคราว / ดูว่าขึ้น commit ไหน
 
-ตั้งแต่รอบ "ย้ายการสร้างเว็บไป Render" (21/10): merge อะไรก็ตามเข้า `main` = Render สร้างเว็บและขึ้นเว็บเอง (`render.yaml` `autoDeployTrigger: commit`) — GitHub ไม่สร้างเว็บแล้ว (ตรวจแค่ PR) · build ล้ม = Render ไม่ขึ้นเว็บ เว็บเดิมเปิดต่อ · **[ยังไม่ได้ลองบนมือถือ]**
+ตั้งแต่รอบ "ย้ายการสร้างเว็บไป Render" (21/10): merge อะไรก็ตามเข้า `main` = Render สร้างเว็บและขึ้นเว็บเอง (หน้า Render → okami24 → Settings → **Auto-Deploy = On Commit**) — GitHub ไม่สร้างเว็บแล้ว (ตรวจแค่ PR) · build ล้ม = Render ไม่ขึ้นเว็บ เว็บเดิมเปิดต่อ · **[ยังไม่ได้ลองบนมือถือ]**
+- **Blueprint ของ Render ถูกพัก sync ("Sync paused")** → แก้ไฟล์ `render.yaml` แล้ว**ไม่ถึง Render** · ค่าที่ใช้จริง = ค่าในหน้า Render · **เปลี่ยนค่าอะไรของ Render = แก้ในหน้า Render (dashboard)** ไม่ใช่แก้ไฟล์ (ตรวจ 21/10)
 - **ดูว่าขึ้น commit ไหน สำเร็จไหม:** Render → okami24 → **Events** (หรือ **Deploys**) → แถวบนสุดบอกรหัส commit 7 ตัว + Live / Failed
 - **ไม่ขึ้น / อยากให้ขึ้นใหม่:** Render → okami24 → ปุ่ม **Manual Deploy** → **Deploy latest commit**
 - **ของพังหลังขึ้นเอง:** ทำข้อ 1 (Rollback) ก่อนเสมอ — แล้วค่อยแก้โค้ด · หลัง Rollback โค้ดใน `main` ยังเป็นของพัง: merge ที่แตะเว็บครั้งถัดไปจะดันของพังกลับขึ้นด้วย → บอกทีมให้ revert ก่อน หรือปิดตัวขึ้นเอง (ข้อถัดไป) จนกว่า revert จะ merge
-- **ปิดตัวขึ้นเองชั่วคราว:** Render → okami24 → **Settings** → **Auto-Deploy** → **Off** · เปิดคืน = ที่เดิม **On Commit** · ระหว่างปิด merge ไม่ขึ้นเว็บเลย (ขึ้นด้วยมือ = Manual Deploy) · ถาวร = แก้ `render.yaml` เป็น `autoDeployTrigger: off`
+- **ปิดตัวขึ้นเองชั่วคราว:** Render → okami24 → **Settings** → **Auto-Deploy** → **Off** · เปิดคืน = ที่เดิม **On Commit** · ระหว่างปิด merge ไม่ขึ้นเว็บเลย (ขึ้นด้วยมือ = Manual Deploy) · ถาวร = ปิดที่หน้าเดิมแล้วไม่เปิดคืน (แก้ `render.yaml` ไม่มีผลระหว่าง Blueprint พัก sync)
 - **กุญแจ deploy hook เก่า** (`RENDER_DEPLOY_HOOK_URL` ใน GitHub) ไม่มีใครใช้แล้วตั้งแต่ 21/10 · ลบได้: GitHub → Settings → Secrets and variables → Actions → Remove · และ Render → okami24 → Settings → Deploy Hook → สร้างใหม่ (กุญแจเก่าใช้ไม่ได้ทันที)
 
 ## 2. อยากกลับไป "ก่อนรอบไหน" → บอกชื่อ tag
