@@ -1305,12 +1305,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-15/card.webp",
-      alt: "IQOS TEREA tobacco sticks, 4 official flavor packs (Green, Blue, Sienna, Purple Wave)",
-      angle: "FULL REBUILD (owner quality review, 2026-09-02) — REPLACES the previous composite entirely, not a patch. The prior composite used PMI's OLDER pack-box-front photography; direct re-fetch of media.iqos.com this pass found PMI has since shipped a redesigned \"NEW LOOK SAME TASTE\" pack graphic (a fanned 5-stick render, not a box front) across every flavor checked — the old asset was stale, not merely improvable. Rebuilt as a 2×2 grid of 4 real official per-flavor photos (Green, Blue, Sienna, Purple Wave), each the SAME new-design CDN asset now used for that flavor's own per-variant image below, cropped to the stick-fan region only (excluding the temporary \"NEW LOOK\" campaign ribbon and the flavor-name badge, which read as clutter at composite/thumbnail scale). Chosen to read as one coherent current family, matching every per-variant asset below rather than being a separate, disconnected representation.",
-      transparentBackground: true, // background cut 2026-09-05 by scripts/process-images.ts --fix-opaque (flat white/dark bg → alpha); pixels of the product untouched,
-      sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia market, iqos.com/id)",
-      sourceUrl: "https://media.iqos.com/is/image/pmintl/product/1000px/TEREA+GREEN+PACK-pmi_G0000699_00_id-1782351563000.png",
+      src: "/assets/products/iqosheet-15/card-v2.webp",
+      alt: "IQOS TEREA tobacco stick packs, Green, Blue, Sienna and Purple Wave, studio photo",
+      angle: "Owner 21/10: the card shows real TEREA packs, not bare sticks. iqos.com no longer has a clean single-pack photo of Green / Blue / Purple Wave, so this is an OKami24 studio render (IMAGE_SPEC §0 item 7) built from two official IQOS references: the real Sienna single pack (box, layout, text warning panel) and the real fronts of the four flavours the shop sells. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from official IQOS TEREA pack photos",
+      sourceUrl: "https://www.iqos.com/ph/en/shop/buy-terea.html",
     },
   ],
   "IQOSHEET-16": [
