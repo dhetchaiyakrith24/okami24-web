@@ -8,7 +8,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
 import { fxIsOff, markFx, onFxChange, setFxOff } from "@/lib/fx-pref";
-import { DESKTOP_BG, DESKTOP_CARD_LAYOUT, type HeroType } from "@/data/home-hero";
+import { DESKTOP_BG, DESKTOP_CARD_LAYOUT, DESKTOP_TRAVEL, type HeroType } from "@/data/home-hero";
 import { HeroCards } from "./HeroCards";
 import "./home-hero.css";
 
@@ -91,6 +91,8 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
   const stageRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const latticeRef = useRef<HTMLDivElement>(null);
+  const pinRef = useRef<HTMLDivElement>(null);
+  const travel = desktop === "cards" && DESKTOP_TRAVEL === "lineup";
   const ribbonsRef = useRef<RibbonDriver | null>(null);
   const fxOff = useSyncExternalStore(onFxChange, fxIsOff, () => false);
   const tx = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
@@ -131,6 +133,7 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
     // scroll is sent relative to the hero itself: on desktop the cinematic intro (DESKTOP_INTRO) puts
     // the hero ~5 screens down, and the page's own scrollY dimmed the ribbons there (checker #634)
     let heroTop = 0;
+    let hold = 0;
     const sync = () => {
       if (!ribbons) return;
       const c = canvas.getBoundingClientRect();
@@ -139,11 +142,14 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
       // the bundle crosses behind the product: its centre, in canvas pixels
       ribbons.size(c.width, c.height, Math.min(window.devicePixelRatio || 1, 2), window.innerWidth < 1024);
       ribbons.focus(s.left - c.left + s.width / 2, s.top - c.top + s.height / 2);
-      heroTop = section.getBoundingClientRect().top + window.scrollY;
-      ribbons.scroll(window.scrollY - heroTop);
+      // DESKTOP_TRAVEL: the hero is sticky inside its taller box — measure from the box, and hold the light while the row forms
+      const pin = pinRef.current;
+      heroTop = (pin ?? section).getBoundingClientRect().top + window.scrollY;
+      hold = pin ? Math.max(0, pin.offsetHeight - section.offsetHeight) : 0;
+      ribbons.scroll(Math.max(0, window.scrollY - heroTop - hold));
     };
     const run = () => ribbons?.run(visible && !document.hidden && !off, still && !off);
-    const onScroll = () => ribbons?.scroll(window.scrollY - heroTop);
+    const onScroll = () => ribbons?.scroll(Math.max(0, window.scrollY - heroTop - hold));
 
     // The ribbons wait until the page has loaded and the browser is idle: the product photo and the
     // headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10: starting
@@ -240,10 +246,79 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
     };
   }, [desktop]);
 
+  // DESKTOP_TRAVEL "lineup": measure once per resize where each card must travel to so the four devices end in one level
+  // row in the middle of the screen (designer spec 21/10); the CSS animations run on the scroll (no per-frame JS) and only
+  // once data-travel is set, so without this effect the hero simply holds still for the short pin.
+  useEffect(() => {
+    const pin = pinRef.current;
+    const section = sectionRef.current;
+    const row = cardsRef.current;
+    if (!travel || !pin || !section || !row) return;
+    const mq = window.matchMedia("(min-width: 64rem) and (min-height: 44rem) and (prefers-reduced-motion: no-preference)");
+    const ok = () =>
+      mq.matches && document.documentElement.dataset.okamiLite !== "1" && CSS.supports("animation-timeline: view()");
+    const measure = () => {
+      if (!ok()) {
+        delete section.dataset.travel;
+        return;
+      }
+      const cards = Array.from(row.querySelectorAll<HTMLElement>(".okh-card"));
+      if (!cards.length) return;
+      const vh = window.innerHeight;
+      const head = 80; // the sticky site header, 5rem
+      const area = vh - head;
+      const imgBox = cards[0].querySelector<HTMLElement>(".okh-card-img");
+      const h = imgBox?.offsetHeight ?? 0;
+      if (!h) return;
+      // the end size of the approved clip (21/10): ~370 px of device at 1440×900, ~360 at 1366×768
+      const H = Math.max(h, Math.min(360, Math.max(224, vh * 0.45)));
+      // room between the brand label, the grown device and the name (the approved clip breathed more than a tight fit)
+      const gap = 24;
+      const grow = H - h + 2 * gap;
+      const tops = cards.map((c) => c.offsetTop + (c.querySelector<HTMLElement>(".okh-card-top")?.offsetTop ?? 0));
+      const bottoms = cards.map((c) => {
+        const hd = c.querySelector<HTMLElement>(".okh-card-head");
+        return c.offsetTop + (hd ? hd.offsetTop + hd.offsetHeight : c.offsetHeight);
+      });
+      const L = Math.max(...bottoms.map((b, i) => b - tops[i])) + grow;
+      // centred in what the visitor sees under the header; the row ends above the LINE button, starts 24 px down at least
+      let target = (area - L) / 2;
+      target = Math.min(target, area - 112 - L);
+      target = Math.max(24, target);
+      row.style.setProperty("--okh-H", `${H}px`);
+      row.style.setProperty("--okh-k", String(h / H));
+      row.style.setProperty("--okh-grow", `${grow}px`);
+      cards.forEach((c, i) => c.style.setProperty("--okh-dy", `${target + grow - tops[i]}px`));
+      section.dataset.travel = "1";
+    };
+    // hover lift / neighbour blur / label re-tune stay off while the row is moving under a resting mouse
+    let moving = false;
+    const onScroll = () => {
+      const r = pin.getBoundingClientRect();
+      const m = r.top < 80 - 8 && r.bottom > window.innerHeight;
+      if (m !== moving) {
+        moving = m;
+        if (m) section.dataset.moving = "1";
+        else delete section.dataset.moving;
+      }
+    };
+    measure();
+    onScroll();
+    const ro = new ResizeObserver(measure);
+    ro.observe(section);
+    mq.addEventListener("change", measure);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      ro.disconnect();
+      mq.removeEventListener("change", measure);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [travel]);
+
   const paused = hover || !onScreen;
   const slot = slots[cur];
 
-  return (
+  const hero = (
     <section
       ref={sectionRef}
       className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0"
@@ -389,5 +464,13 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
         </div>
       </div>
     </section>
+  );
+  // DESKTOP_TRAVEL: a taller box the hero sticks inside (its extra height is CSS from the first frame — no layout shift)
+  return travel ? (
+    <div ref={pinRef} className="okh-pin">
+      {hero}
+    </div>
+  ) : (
+    hero
   );
 }

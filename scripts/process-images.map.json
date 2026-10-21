@@ -10387,6 +10387,78 @@
   }
  },
  {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-1.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-1",
+  "note": "image sweep 21/10 - Punta Ice Grape Ice (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/grape-ice-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Grape-Ice.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-2.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-2",
+  "note": "image sweep 21/10 - Punta Ice Mint Bubblegum (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mint-bubblegum-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Mint-Bubblegum.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-3.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-3",
+  "note": "image sweep 21/10 - Punta Ice Guava Ice (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/guava-ice-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Guava-Ice.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-4.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-4",
+  "note": "image sweep 21/10 - Punta Ice Bubblegum Ice (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/bubblegum-ice-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Bubblegum-Ice.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-5.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-5",
+  "note": "image sweep 21/10 - Punta Ice Peach Mango Watermelon (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/pmw-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Peach-Mango-Watermelon-Ice.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/punta-ice-eliquid-78-6.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-6",
+  "note": "image sweep 21/10 - Punta Ice Mango Bubblegum (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mango-bubblegum-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "ihavevape.net Punta Ice flavour poster (https://ihavevape.net/product/punta-ice/ - wp-content/uploads/2024/10/Punta-Ice-Mango-Bubblegum-Ice.jpg.webp, 600 px bottle + box) - _incoming/q2/punta/",
+   "fidelitySheet": "_incoming/q2/fid-punta.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
   "source": "_incoming/list19/next/razer-black.png",
   "slug": "next-pro-2-beyond",
   "role": "variant",
