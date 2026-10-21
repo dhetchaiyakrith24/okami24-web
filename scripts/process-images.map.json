@@ -10735,6 +10735,30 @@
   }
  },
  {
+  "source": "_incoming/q2/final/super-cool-saltnic-elq-6-2.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-2",
+  "note": "image sweep 21/10 - Super Cool Shine Muscat (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the salt nic e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/sc-shine-muscat-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "sudjudpod.net Super Cool Salt Nic flavour photo (https://sudjudpod.net/product/super-cool/ - wp-content/uploads/2024/08/super-cool-salt-nic-30-ml-nic35-shine-muscat.webp, 600 px, DEALERVAPE mark on the poster - not reproduced) - _incoming/q2/sc/",
+   "fidelitySheet": "_incoming/q2/fid-sc.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/q2/final/super-cool-saltnic-elq-6-3.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-3",
+  "note": "image sweep 21/10 - Super Cool Yacool (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the salt nic e-liquid bottle only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/sc-yacool-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
+   "reference": "sudjudpod.net Super Cool Salt Nic flavour photo (https://sudjudpod.net/product/super-cool/ - wp-content/uploads/2024/08/super-cool-salt-nic-30-ml-nic35-yacool.webp, 600 px, DEALERVAPE mark on the poster - not reproduced) - _incoming/q2/sc/",
+   "fidelitySheet": "_incoming/q2/fid-sc.jpg (reference crop vs picked render), edges-p.jpg (cap tip and base corners on the site background)"
+  }
+ },
+ {
   "source": "_incoming/muro-free/c/watermelon-1.png",
   "slug": "muro-freebase",
   "role": "card",
