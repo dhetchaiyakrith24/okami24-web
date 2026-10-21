@@ -1,0 +1,254 @@
+{
+ "request": {
+  "startDate": "2026-09-22",
+  "endDate": "2026-10-19",
+  "dimensions": [
+   "country"
+  ]
+ },
+ "rows": [
+  {
+   "keys": [
+    "tha"
+   ],
+   "clicks": 604,
+   "impressions": 3664,
+   "ctr": 0.1648471615720524,
+   "position": 9.304312227074236
+  },
+  {
+   "keys": [
+    "deu"
+   ],
+   "clicks": 1,
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
+   "position": 12
+  },
+  {
+   "keys": [
+    "gbr"
+   ],
+   "clicks": 1,
+   "impressions": 7,
+   "ctr": 0.14285714285714285,
+   "position": 30.857142857142858
+  },
+  {
+   "keys": [
+    "lao"
+   ],
+   "clicks": 1,
+   "impressions": 8,
+   "ctr": 0.125,
+   "position": 6
+  },
+  {
+   "keys": [
+    "bgd"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 11.333333333333334
+  },
+  {
+   "keys": [
+    "bih"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 35
+  },
+  {
+   "keys": [
+    "bra"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 47
+  },
+  {
+   "keys": [
+    "fra"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 34
+  },
+  {
+   "keys": [
+    "idn"
+   ],
+   "clicks": 0,
+   "impressions": 8,
+   "ctr": 0,
+   "position": 59.625
+  },
+  {
+   "keys": [
+    "ind"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
+    "irn"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 103
+  },
+  {
+   "keys": [
+    "isr"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
+  },
+  {
+   "keys": [
+    "ita"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 75
+  },
+  {
+   "keys": [
+    "jpn"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 43
+  },
+  {
+   "keys": [
+    "khm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "kor"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "mex"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 52.5
+  },
+  {
+   "keys": [
+    "mmr"
+   ],
+   "clicks": 0,
+   "impressions": 19,
+   "ctr": 0,
+   "position": 6.052631578947368
+  },
+  {
+   "keys": [
+    "mys"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "phl"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 82
+  },
+  {
+   "keys": [
+    "pol"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 62
+  },
+  {
+   "keys": [
+    "svk"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 83.5
+  },
+  {
+   "keys": [
+    "tkm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "tun"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 34
+  },
+  {
+   "keys": [
+    "tur"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 15.333333333333334
+  },
+  {
+   "keys": [
+    "usa"
+   ],
+   "clicks": 0,
+   "impressions": 10,
+   "ctr": 0,
+   "position": 64.2
+  },
+  {
+   "keys": [
+    "ven"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-21",
-  "endDate": "2026-10-18",
+  "startDate": "2026-09-22",
+  "endDate": "2026-10-19",
   "dimensions": [
    "device"
   ]
@@ -11,28 +11,28 @@
    "keys": [
     "MOBILE"
    ],
-   "clicks": 433,
-   "impressions": 2776,
-   "ctr": 0.15597982708933716,
-   "position": 7.711455331412104
+   "clicks": 441,
+   "impressions": 2877,
+   "ctr": 0.15328467153284672,
+   "position": 7.651025373653111
   },
   {
    "keys": [
     "DESKTOP"
    ],
-   "clicks": 160,
-   "impressions": 799,
-   "ctr": 0.2002503128911139,
-   "position": 17.640801001251564
+   "clicks": 161,
+   "impressions": 835,
+   "ctr": 0.19281437125748502,
+   "position": 17.568862275449103
   },
   {
    "keys": [
     "TABLET"
    ],
-   "clicks": 4,
-   "impressions": 40,
-   "ctr": 0.1,
-   "position": 7.1
+   "clicks": 5,
+   "impressions": 42,
+   "ctr": 0.11904761904761904,
+   "position": 6.904761904761905
   }
  ]
 }

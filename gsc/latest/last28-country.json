@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-21",
-  "endDate": "2026-10-18",
+  "startDate": "2026-09-22",
+  "endDate": "2026-10-19",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 595,
-   "impressions": 3536,
-   "ctr": 0.16826923076923078,
-   "position": 9.420531674208144
+   "clicks": 604,
+   "impressions": 3664,
+   "ctr": 0.1648471615720524,
+   "position": 9.304312227074236
   },
   {
    "keys": [
@@ -33,6 +33,15 @@
    "impressions": 7,
    "ctr": 0.14285714285714285,
    "position": 30.857142857142858
+  },
+  {
+   "keys": [
+    "lao"
+   ],
+   "clicks": 1,
+   "impressions": 8,
+   "ctr": 0.125,
+   "position": 6
   },
   {
    "keys": [
@@ -75,9 +84,9 @@
     "idn"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 8,
    "ctr": 0,
-   "position": 56.75
+   "position": 59.625
   },
   {
    "keys": [
@@ -138,18 +147,9 @@
     "kor"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
    "position": 10
-  },
-  {
-   "keys": [
-    "lao"
-   ],
-   "clicks": 0,
-   "impressions": 5,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [
@@ -165,18 +165,27 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 18,
+   "impressions": 19,
    "ctr": 0,
-   "position": 6.277777777777778
+   "position": 6.052631578947368
   },
   {
    "keys": [
     "mys"
    ],
    "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "phl"
+   ],
+   "clicks": 0,
    "impressions": 1,
    "ctr": 0,
-   "position": 1
+   "position": 82
   },
   {
    "keys": [
