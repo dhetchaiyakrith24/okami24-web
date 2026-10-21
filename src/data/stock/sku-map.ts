@@ -950,6 +950,15 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "eliquid-78-6": "eliquid-78-6",
     "eliquid-78-7": "eliquid-78-7",
   } },
+  // Image sweep (21/10): Muro Freebase (legacy) — Max Eliquid-169-1..6 (the Max flavour names = the legacy flavour names).
+  "muro-freebase": { parent: "Eliquid-169", options: {
+    "grape": "Eliquid-169-1",
+    "watermelon": "Eliquid-169-2",
+    "click-mint": "Eliquid-169-3",
+    "strawberry-twist": "Eliquid-169-4",
+    "peach": "Eliquid-169-5",
+    "big-cola": "Eliquid-169-6",
+  } },
   // maxlist (20/10): Muro Salt Nic (legacy) — Max ELQ-4-1..6 (the Max flavour names = the legacy flavour names).
   "muro-salt-nic": { parent: "ELQ-4", options: {
     "grape": "ELQ-4-1",

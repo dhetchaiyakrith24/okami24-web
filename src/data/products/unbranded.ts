@@ -660,26 +660,42 @@ export const unbrandedProducts: Product[] = [
   {
     id: "muro-freebase",
     slug: "muro-freebase",
-    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "Unbranded",
     familyId: "Muro",
     categoryId: "e-liquid",
     systemType: "e-liquid",
     name: "Muro Freebase",
     displayName: "Muro Freebase",
-    tagline: "60mL freebase e-liquid.",
-    shortDescription: "A freebase e-liquid from the Muro line, currently stocked in 3 flavors.",
+    // Max read 17/10: Eliquid-169 "Muro Freebase" ฿220, 6 flavours. Copy says warehouse facts only (bottle size / nicotine rows stay unverified).
+    tagline: "Muro freebase e-liquid.",
+    shortDescription: "Muro freebase e-liquid in 6 flavors.",
     isFlagship: false,
     attributes: {
       capacityMl: 60,
       liquidBase: "freebase",
       beginnerFriendly: false,
     },
-    assets: [],
+    // Image sweep 21/10: card = Watermelon; every flavour = an OKami24 studio re-shoot (Higgsfield) of that bottle on the flavour's
+    // retailer poster (600 px, below IMAGE_SPEC; IMAGE_SPEC §0 item 7) — source, prompt and check per file in scripts/process-images.map.json.
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/muro-freebase/card.webp",
+        alt: "Muro Freebase 60ml e-liquid bottle, Watermelon, studio photo",
+        angle: "Front, studio re-shoot (image sweep 21/10, IMAGE_SPEC §0 item 7) of the retailer's Muro Freebase poster.",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a retailer's Muro Freebase poster",
+        sourceUrl: "https://ihavevape.net/product/muro-freebase/",
+      },
+    ],
     flavorVariants: [
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown" },
-      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-grape.webp", alt: "Muro Freebase e-liquid bottle, Grape, studio photo" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-watermelon.webp", alt: "Muro Freebase e-liquid bottle, Watermelon, studio photo" } },
+      { id: "click-mint", name: "Click Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-click-mint.webp", alt: "Muro Freebase e-liquid bottle, Click Mint, studio photo" } },
+      { id: "strawberry-twist", name: "Strawberry Twist", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-strawberry-twist.webp", alt: "Muro Freebase e-liquid bottle, Strawberry Twist, studio photo" } },
+      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-peach.webp", alt: "Muro Freebase e-liquid bottle, Peach, studio photo" } },
+      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-big-cola.webp", alt: "Muro Freebase e-liquid bottle, Big Cola, studio photo" } },
     ],
     specifications: [
       { key: "type", label: "Nicotine type", value: "Freebase", sourceStatus: "verified" },
@@ -691,7 +707,7 @@ export const unbrandedProducts: Product[] = [
     whoIsThisFor: ["Vapers who prefer freebase e-liquid in an open-system device."],
     faqs: [],
     relatedProductSlugs: ["muro-salt-nic", "muro-space-15k", "muro-3ml", "muro-sc-8000", "muro-connector-20k"],
-    sourceUrls: ["https://vapemun.com/"],
+    sourceUrls: ["https://vapemun.com/", "https://ihavevape.net/product/muro-freebase/"],
   },
   {
     id: "muro-salt-nic",
