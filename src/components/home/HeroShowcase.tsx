@@ -8,7 +8,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
 import { fxIsOff, markFx, onFxChange, setFxOff } from "@/lib/fx-pref";
-import type { HeroType } from "@/data/home-hero";
+import { DESKTOP_BG, DESKTOP_CARD_LAYOUT, type HeroType } from "@/data/home-hero";
 import { HeroCards } from "./HeroCards";
 import "./home-hero.css";
 
@@ -211,7 +211,7 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
   useEffect(() => {
     const section = sectionRef.current;
     const lattice = latticeRef.current;
-    if (desktop !== "cards" || !section || !lattice) return;
+    if (desktop !== "cards" || DESKTOP_BG === "none" || !section || !lattice) return;
     let frame = 0;
     let x = 0;
     let y = 0;
@@ -248,8 +248,10 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
       ref={sectionRef}
       className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0"
       data-desk={desktop}
+      data-bg={DESKTOP_BG}
+      data-layout={DESKTOP_CARD_LAYOUT}
     >
-      {desktop === "cards" ? <div ref={latticeRef} className="okh-lattice" aria-hidden /> : null}
+      {desktop === "cards" && DESKTOP_BG !== "none" ? <div ref={latticeRef} className="okh-lattice" aria-hidden /> : null}
       <div className="okh-grid mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="okh-copy">
           <h1 className="font-display font-semibold text-foreground">

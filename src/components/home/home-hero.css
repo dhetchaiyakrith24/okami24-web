@@ -436,6 +436,59 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh-lattice[data-hot]::after { opacity: 1; }
   /* the light switch off = the glow goes too */
   html[data-okami-fx="off"] .okh-lattice::after { opacity: 0; }
+  /* DESKTOP_BG (home-hero.ts, owner 21/10 "ฉากหลังตาราง … ไม่เอาได้มั้ย"): "none" = no layer · "spot" = the same cursor
+     light without the squares — a soft, wide orange glow */
+  .okh[data-bg="none"] .okh-lattice { display: none; }
+  .okh[data-bg="spot"] .okh-lattice::before { display: none; }
+  .okh[data-bg="spot"] .okh-lattice::after {
+    -webkit-mask: none;
+    mask: none;
+    background: radial-gradient(circle 26rem at var(--mx) var(--my), rgb(255 106 44 / 0.11), rgb(255 106 44 / 0.045) 42%, transparent 72%);
+  }
+
+  /* DESKTOP_CARD_LAYOUT (owner 21/10 "อยากให้เรียงแบบมี Layers ทับซ้อนกันเล็กน้อย"): the cards overlap at their edges —
+     each one over the card before it, a soft shadow on its left edge — the overlap stays inside the cards' own padding so
+     no name or price is ever covered; the hovered card comes to the front. "stagger" = every other card sits lower ·
+     "fan" = a slight fan of tilts, the outer two lower. The extra height is taken from the photos so the row still ends
+     above the LINE button. */
+  .okh[data-layout="stagger"] .okh-cards,
+  .okh[data-layout="fan"] .okh-cards { gap: 0; align-items: start; }
+  .okh[data-layout="stagger"] .okh-card,
+  .okh[data-layout="fan"] .okh-card {
+    /* the right padding is wider than the overlap, so the price always keeps 18 px of its own card; the shadow stays
+       inside that strip (checker #679: a wide shadow greyed the price of the card underneath) */
+    padding-inline: 1.375rem 2.25rem;
+    box-shadow: -8px 0 14px -10px rgb(0 0 0 / 0.75);
+  }
+  .okh[data-layout="stagger"] .okh-card + .okh-card,
+  .okh[data-layout="fan"] .okh-card + .okh-card { margin-left: -1.125rem; }
+  .okh[data-layout="stagger"] .okh-card:nth-child(1),
+  .okh[data-layout="fan"] .okh-card:nth-child(1) { z-index: 1; }
+  .okh[data-layout="stagger"] .okh-card:nth-child(2),
+  .okh[data-layout="fan"] .okh-card:nth-child(2) { z-index: 2; }
+  .okh[data-layout="stagger"] .okh-card:nth-child(3),
+  .okh[data-layout="fan"] .okh-card:nth-child(3) { z-index: 3; }
+  .okh[data-layout="stagger"] .okh-card:nth-child(4),
+  .okh[data-layout="fan"] .okh-card:nth-child(4) { z-index: 4; }
+  .okh[data-layout="stagger"] .okh-card:hover,
+  .okh[data-layout="fan"] .okh-card:hover,
+  .okh[data-layout="stagger"] .okh-card:focus-visible,
+  .okh[data-layout="fan"] .okh-card:focus-visible { z-index: 10; }
+  .okh[data-layout="stagger"] .okh-card:hover,
+  .okh[data-layout="fan"] .okh-card:hover {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45), -8px 0 14px -10px rgb(0 0 0 / 0.75);
+  }
+  /* the 1st and 3rd sit lower: the last card stays high, clear of the LINE button in the corner */
+  .okh[data-layout="stagger"] .okh-card:nth-child(odd) { margin-top: 1.5rem; }
+  .okh[data-layout="fan"] .okh-card { transform-origin: 50% 100%; }
+  .okh[data-layout="fan"] .okh-card:nth-child(1) { margin-top: 1.25rem; rotate: -3deg; }
+  .okh[data-layout="fan"] .okh-card:nth-child(2) { rotate: -1deg; }
+  .okh[data-layout="fan"] .okh-card:nth-child(3) { rotate: 1deg; }
+  .okh[data-layout="fan"] .okh-card:nth-child(4) { margin-top: 1.25rem; rotate: 3deg; }
+  .okh[data-layout="fan"] .okh-card:hover { rotate: 0deg; }
+  .okh[data-layout="fan"] .okh-card { transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, rotate 0.35s ease; }
+  .okh[data-layout="stagger"] .okh-card-img,
+  .okh[data-layout="fan"] .okh-card-img { height: clamp(7rem, calc(100svh - 44rem), 19rem); }
 
   .okh-cards {
     display: grid;
@@ -544,8 +597,10 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   html[data-okami-lite="1"] :is(.okh-card:hover, .okh-card:hover .okh-card-arrow) { transform: none; }
   html[data-okami-lite="1"] .okh-card:hover .okh-card-img img { transform: scale(1.1); }
   html[data-okami-lite="1"] .okh-lattice::after { transition: opacity 0.2s ease; }
+  html[data-okami-lite="1"] .okh[data-layout] .okh-card { transition: none; }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
+  .okh[data-layout] .okh-card { transition: none; }
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow { transition: none; }
   .okh-card:hover, .okh-card:hover .okh-card-arrow { transform: none; }
   .okh-card:hover .okh-card-img img { transform: scale(1.1); }

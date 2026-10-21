@@ -35,6 +35,16 @@ export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string 
 export const DESKTOP_HERO: "cards" | "stage" = "cards";
 
 /**
+ * Desktop "cards" only. Owner 21/10 (after #677): "ฉากหลังตาราง … ไม่เอาได้มั้ย" and "อยากให้เรียงแบบมี Layers ทับซ้อนกันเล็กน้อย".
+ * DESKTOP_BG — "none" = plain dark + the ribbons · "spot" = a soft orange light that follows the cursor, no pattern ·
+ *   "lattice" = the #677 grid of squares lit around the cursor.
+ * DESKTOP_CARD_LAYOUT — "row" = side by side (#677) · "stagger" = edges overlap, every other card sits lower ·
+ *   "fan" = edges overlap, a slight fan of tilts like a hand of cards. The hovered card comes to the front.
+ */
+export const DESKTOP_BG: "none" | "spot" | "lattice" = "spot";
+export const DESKTOP_CARD_LAYOUT: "row" | "stagger" | "fan" = "stagger";
+
+/**
  * Phones (below 64rem): "showcase" = the new hero · "classic" = the previous phone hero
  * (Hero.tsx, owner-liked "calm, plain") on phones while desktop keeps the new one. One value is the
  * whole switch back (owner 20/10: keep the current mobile hero restorable in one step).
