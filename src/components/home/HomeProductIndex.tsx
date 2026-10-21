@@ -5,6 +5,7 @@ import { categoriesWithProducts } from "@/lib/category-visibility";
 import { Container } from "@/components/ui/Container";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import { HomeText } from "@/components/home/HomeCopy";
+import { DecodeOnView } from "@/components/home/Decode";
 import { brandName } from "@/lib/utils";
 
 /**
@@ -62,7 +63,7 @@ export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {
       <Container>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div className="flex flex-col gap-3">
-            <span className="label-mono text-xs text-ember" lang="en">{eyebrow}</span>
+            <span className="label-mono text-xs text-ember" lang="en"><DecodeOnView text={eyebrow} /></span>
             <h2 id="home-product-index" className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
               <HomeText k="indexTitle" />
             </h2>

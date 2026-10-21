@@ -3,6 +3,7 @@ import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { HomeText } from "@/components/home/HomeCopy";
+import { DecodeOnView } from "@/components/home/Decode";
 
 export function CompareCTA({ products }: { products: Product[] }) {
   return (
@@ -32,7 +33,7 @@ export function CompareCTA({ products }: { products: Product[] }) {
 function SectionHeadingInline() {
   return (
     <div className="flex flex-col gap-3">
-      <span className="label-mono text-xs text-ember" lang="en">Compare</span>
+      <span className="label-mono text-xs text-ember" lang="en"><DecodeOnView text="Compare" /></span>
       <h2 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
         <HomeText k="compareTitle" />
       </h2>

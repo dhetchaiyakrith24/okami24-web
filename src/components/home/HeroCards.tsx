@@ -1,66 +1,13 @@
 "use client";
 
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { HeroType } from "@/data/home-hero";
 import type { HeroSlotView } from "./HeroShowcase";
-
-// letters and digits only — symbols in the display face read as broken glyphs, not as "tuning in" (designer 21/10)
-const NOISE = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
-
-/** True when the visitor asked for less motion, or Save-Data / 2G is on (`html[data-okami-lite]`, page.tsx). */
-function still() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1";
-}
-
-/**
- * Latin text that "tunes in" (the Artefakt reference, owner 21/10): for about half a second the letters are noise, then
- * they settle left to right. Only Latin letters and digits are scrambled — Thai (stacked vowels and tone marks would
- * smear) and prices (a wrong number for a moment) are never passed in. The real text is server HTML and stays in a
- * screen-reader copy; the animation writes the visible copy's textContent directly (no React render per frame) and
- * only while it runs. `run` changes = play again; reduced motion / Save-Data = never plays.
- */
-function Decode({ text, run, delay = 0 }: { text: string; run: number; delay?: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || run === 0 || still()) return;
-    let timer = 0;
-    let start = 0;
-    const DURATION = 520;
-    const tick = () => {
-      const t = Math.min(1, (performance.now() - start) / DURATION);
-      const settled = Math.floor(t * text.length);
-      let out = "";
-      for (let i = 0; i < text.length; i++) {
-        const c = text[i];
-        out += i < settled || !/[A-Za-z0-9]/.test(c) ? c : NOISE[(Math.random() * NOISE.length) | 0];
-      }
-      el.textContent = out;
-      if (t < 1) timer = window.setTimeout(tick, 45);
-    };
-    const begin = window.setTimeout(() => {
-      start = performance.now();
-      tick();
-    }, delay);
-    return () => {
-      window.clearTimeout(begin);
-      window.clearTimeout(timer);
-      el.textContent = text;
-    };
-  }, [text, run, delay]);
-  return (
-    <>
-      <span className="sr-only">{text}</span>
-      <span ref={ref} aria-hidden>
-        {text}
-      </span>
-    </>
-  );
-}
+import { Decode } from "./Decode";
 
 const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
 
