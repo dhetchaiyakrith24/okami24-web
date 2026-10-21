@@ -712,7 +712,9 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
     .okh[data-travel] .okh-card:nth-child(3) { --okh-a: 24%; --okh-b: 82%; }
     .okh[data-travel] .okh-card:nth-child(4) { --okh-a: 28%; --okh-b: 86%; }
 
-    .okh[data-travel] :is(.okh-copy, .okh-cta) {
+    /* the CTA's children, not the CTA box: a translate on the box would make it the containing block of the absolutely
+       placed light switch, which then jumped onto "all products" (checker #697) */
+    .okh[data-travel] :is(.okh-copy, .okh-cta > *) {
       animation: okh-t-out ease-in both;
       animation-timeline: --okh-pin;
       animation-range: contain 4% contain 26%;
@@ -744,6 +746,8 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
       animation-range: contain var(--okh-a) contain var(--okh-b);
     }
     .okh[data-travel] .okh-card-ph img { filter: drop-shadow(0 28px 34px rgb(0 0 0 / 0.55)); }
+    /* the grown photo boxes overlap their neighbours' transparent margins: clicks go to the card underneath */
+    .okh[data-travel] .okh-card-ph { pointer-events: none; }
 
     /* while the row moves under a resting mouse: no lift, no neighbour blur, no zoom */
     .okh[data-layout="stagger"][data-moving] .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) { filter: none; }

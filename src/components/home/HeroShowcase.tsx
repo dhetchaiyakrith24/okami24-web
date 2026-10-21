@@ -270,7 +270,10 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
       const imgBox = cards[0].querySelector<HTMLElement>(".okh-card-img");
       const h = imgBox?.offsetHeight ?? 0;
       if (!h) return;
-      const H = Math.max(h, Math.min(416, Math.max(224, vh * 0.52)));
+      // end size: square, at most the card's own width — the photo then fits the same way at rest as today (the box
+      // shrinks evenly to h × h, never narrower than the card's photo — checker #697: a taller-than-wide box shrank it)
+      const w = imgBox?.offsetWidth ?? 0;
+      const H = Math.max(h, Math.min(416, Math.max(224, vh * 0.52), w || 416));
       const grow = H - h;
       const tops = cards.map((c) => c.offsetTop + (c.querySelector<HTMLElement>(".okh-card-top")?.offsetTop ?? 0));
       const bottoms = cards.map((c) => {
