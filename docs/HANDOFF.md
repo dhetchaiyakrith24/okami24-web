@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~23:15 = 6ea47c20 (#705). DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
+1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~23:30 = 5af862b8 (#706, handoff docs; site = 6ea47c20 #705). DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
   deploys every merge to main itself — service setting Auto-Deploy = "On Commit" (set in the dashboard 21/10 23:10 with the owner's OK);
   GitHub `deploy` workflow = fast PR checks only (decide + checks = verify:commerce + verify:catalog, no build). The Render BLUEPRINT IS
   "Sync paused" (last sync a month ago) → render.yaml edits do NOT reach Render; the dashboard settings are the truth. Last deploy:
@@ -22,29 +22,30 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   #699 Punta · #700 MQ Bar · #701/#703 Super Cool · #704 TEREA card (real 4 packs, render) · #705 RELX LUMI 18K.
   Open PRs: #685 stock sync 21/10 (owner confirms before merge, 13.7) · #643 stock docs. GitHub budget email 21/10: $13.50 of $15 used [owner's
   screenshot]; the owner had chosen "$30" — the cap may still be $15 (his step).
-2 Nothing ahead of main. Branch `docs-handoff-move-2110b` = this handoff. Test servers (stop/rebuild freely): 3422 = wt-3422 at 797880f4 ·
+2 Nothing ahead of main. Branch `rounds-close-2110` = the 3d/3w close (docs only). Test servers (stop/rebuild freely): 3422 = wt-3422 at 797880f4 ·
   3423 = wt-3423 (home-phone-ground, merged) · 3424 = wt-3424 at a4c519ad (stopped for verify --full). Rebuild: `bash
   _incoming/hero-2010/rebuild-3424.sh <port>`. Helpers `_incoming/upgrade-2110/` (shot.js rail=, b5/rec-scroll.js, b5/hit-probe.js,
   b5/y0-probe.js, b5/pin-probe.js, b6/floor-probe.js, b4/decode-probe.js). NEW LOCK (#702): pre-checker-gate check `full` = a PR that reaches
   the site needs `npx tsx scripts/verify-catalog.ts --full` passed on its head in a TEST WORKTREE (env: SITE_URL only — OKAMI24_DATA_DIR breaks
   the backup contract test) → stamp in .git/verify-full/<sha>. PR flow now: draft → gate → checker → `gh pr ready` once → checks → merge.
-3 MAIN CHAT MOVED 21/10 ~23:15. New main chat must SendMessage each side chat once so they report to it. Side chats:
+3 MAIN CHAT = local_4ae9f252-496d-4dd1-8816-9ae3de33e062 since 21/10 ~23:20 (both side chats told to report to it). Owner 21/10 ~23:30:
+  "เอาแค่แชทลูกแชทเดียว … งานรูปหลักๆ ลุยเลยสร้างเลย" → ONE side chat = line 1 (images, full speed); line 2 PAUSED (told to push and go idle);
+  the 22/10 GSC read = the main chat. Side chats:
   line 1 = `1-products-2110b` (local_0ede4203-ce72-489e-a165-15bd25f9a0d0, worktree mystifying-driscoll-575ab6) — image sweep on
   Nano Banana Pro **2K only** (owner bought a 3-day Unlimited 21/10 ~21:20, Chrome only; 4K costs credits): all missing flavour photos,
   biggest first (RELX Infinity Pro 2 pods 42 · INFY PLUS 27 · nexPOD 15K 20 · pod-150 16 · Vazer One 16 · nexBAR 18K 11 · SKE B20000 7 · Esko 20K 7).
   Credits balance 3,949.4 [line 1's report]. Blueraz Berry / Pinky Blush (Super Cool) = no reference anywhere.
-  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), idle, GSC read due 22/10 (also check: the decoded
+  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), PAUSED 21/10; GSC read due 22/10 (also check: the decoded
   hero/tag labels carry the word twice in HTML, sr-only + visible — checker #695 asked for an SEO eye).
   Owner rules learned 21/10: a relayed credit approval worked for line 1 when quoted verbatim · Friday never types a password (Shipnity Max
   login asked 21/10 — refused; owner may log in once himself) · every ready-PR push costs Actions money → draft until checker PASS.
-3d ROUND "move the build to Render" = `docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt` — DONE 21/10 (#702 checker r2 PASS, merged,
-  deploy proven). To close: mark CLOSED here (the lock reads the first OPEN line — while 3d is first, render.yaml is writable), tag, and add
-  to RECOVERY 1ก + DEPLOY-RENDER: "Blueprint sync is paused — change Render settings in the dashboard". Left on purpose: buildFilter
+3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
+  render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
   (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
   lines 85/91 still describe the old hook flow.
-3w ROUND "homepage upgrade" = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` — ALL BATCHES LIVE (1, 1b, 1d, 2, 3 #691, 4 #695,
-  5 #697 + #698 phone). Owner 21/10: "ทำแค่หน้าแรกพอครับ" (category/product pages dropped). Friday proposed closing; owner did not object.
-  To close: round-close skill (tag). Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
+3w CLOSED 21/10 — round "homepage upgrade" (Artefakt), tag `home-upgrade-2110` (round file: `git show home-upgrade-2110:docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt`)
+  · all batches live (1, 1b, 1d, 2, 3 #691, 4 #695, 5 #697 + #698 phone) · owner 21/10 "ทำแค่หน้าแรกพอครับ" (category/product pages dropped).
+  Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
   tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
 3u STOCK — owner 21/10: wants stock checked every hour 08:00–00:00, ideally in the cloud; Friday cannot log in (password); plan offered =
   owner logs into Shipnity Max once in the app browser → hourly routine reads it + a site endpoint takes the snapshot without a rebuild;
