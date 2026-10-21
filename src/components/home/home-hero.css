@@ -455,8 +455,10 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-layout="fan"] .okh-cards { gap: 0; align-items: start; }
   .okh[data-layout="stagger"] .okh-card,
   .okh[data-layout="fan"] .okh-card {
-    padding-inline: 1.375rem;
-    box-shadow: -18px 0 36px -14px rgb(0 0 0 / 0.85);
+    /* the right padding is wider than the overlap, so the price always keeps 18 px of its own card; the shadow stays
+       inside that strip (checker #679: a wide shadow greyed the price of the card underneath) */
+    padding-inline: 1.375rem 2.25rem;
+    box-shadow: -8px 0 14px -10px rgb(0 0 0 / 0.75);
   }
   .okh[data-layout="stagger"] .okh-card + .okh-card,
   .okh[data-layout="fan"] .okh-card + .okh-card { margin-left: -1.125rem; }
@@ -474,7 +476,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-layout="fan"] .okh-card:focus-visible { z-index: 10; }
   .okh[data-layout="stagger"] .okh-card:hover,
   .okh[data-layout="fan"] .okh-card:hover {
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45), -18px 0 36px -14px rgb(0 0 0 / 0.85);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45), -8px 0 14px -10px rgb(0 0 0 / 0.75);
   }
   /* the 1st and 3rd sit lower: the last card stays high, clear of the LINE button in the corner */
   .okh[data-layout="stagger"] .okh-card:nth-child(odd) { margin-top: 1.5rem; }
