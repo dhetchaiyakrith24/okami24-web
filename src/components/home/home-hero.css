@@ -154,9 +154,9 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   position: absolute;
   left: auto;
   right: calc(4% + 0.384 * var(--okh-sh));
-  bottom: 7.5%;
+  bottom: 3%;
   width: calc(0.4 * var(--okh-sh));
-  height: 6%;
+  height: 7%;
   transform: translateX(50%);
   background:
     radial-gradient(closest-side, rgba(6, 4, 3, 0.85), rgba(6, 4, 3, 0.45) 50%, rgba(6, 4, 3, 0) 75%),
