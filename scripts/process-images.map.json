@@ -9118,6 +9118,114 @@
   }
  },
  {
+  "source": "_incoming/infy/final/kyoho-grape.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-2",
+  "note": "image sweep 22/10 - INFY PLUS Kyoho Grape pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Kyoho Grape poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Kyoho-Grape.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/kyoho-grape.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/grape-bubblegum.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-4",
+  "note": "image sweep 22/10 - INFY PLUS Grape Bubblegum pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Grape Bubblegum poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Grape-Bubblegum.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/grape-bubblegum.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/coke.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-8",
+  "note": "image sweep 22/10 - INFY PLUS Coke pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Coke poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Coke.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/coke.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/mint.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-9",
+  "note": "image sweep 22/10 - INFY PLUS Mint pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Mint poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Mint.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/mint.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/orange-soda.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-10",
+  "note": "image sweep 22/10 - INFY PLUS Orange Soda pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Orange Soda poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Orange-Soda-1.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/orange-soda-1.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/jasmine-tea.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-19",
+  "note": "image sweep 22/10 - INFY PLUS Jasmine Tea pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Jasmine Tea poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Jasmine-Tea.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/jasmine-tea.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/mango-peach.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-25",
+  "note": "image sweep 22/10 - INFY PLUS Mango Peach pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Mango Peach poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Mango-Peach.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/mango-peach.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/lychee-ice.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-26",
+  "note": "image sweep 22/10 - INFY PLUS Lychee Ice pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Lychee Ice poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Lychee-Ice.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/lychee-ice.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/infy/final/lychee-raspberry.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-27",
+  "note": "image sweep 22/10 - INFY PLUS Lychee Raspberry pod",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "reference": "maneevp.com INFY PLUS Lychee Raspberry poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Lychee-Raspberry.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/lychee-raspberry.jpg",
+   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
+  }
+ },
+ {
   "source": "_incoming/p63/emerald/emerald-edition.png",
   "slug": "iqosheet-15",
   "role": "variant",
