@@ -66,8 +66,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3u STOCK — owner 21/10: wants stock checked every hour 08:00–00:00, ideally in the cloud; Friday cannot log in (password); plan offered =
   owner logs into Shipnity Max once in the app browser → hourly routine reads it + a site endpoint takes the snapshot without a rebuild;
   cloud = needs the warehouse API key. Owner: "ทดเรื่องนี้ไว้เดี๋ยวมาจัดการต่อ" (parked).
-3c NEXT ROUND "reopen the cart" — owner 22/10 "พี่อยากเปิดระบบตะกร้าแล้ว"; START AFTER line 2's Max sync is done (owner 22/10 "2 เริ่มหลังงาน
-  Max เสร็จ"). No warehouse API: Shipnity charges "several thousand baht a month" for non-WooCommerce sites (warehouse LINE 22/10) → open
+3c OPEN ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` (opened 22/10 ~23:40 after line 2's Max sync finished — owner
+  22/10 "2 เริ่มหลังงาน Max เสร็จ"; a new side chat line 2 = the cart chat). Owner 22/10 "พี่อยากเปิดระบบตะกร้าแล้ว". No warehouse API: Shipnity charges "several thousand baht a month" for non-WooCommerce sites (warehouse LINE 22/10) → open
   WITHOUT it; staff forward orders to the warehouse by hand as with LINE orders. Owner decisions 22/10 (put into BSOT §9/§8 in the round):
   (1) customers PAY AT ONCE at checkout (option "จ่ายทันที"); out of stock after the transfer = the customer picks another item of the
   same price OR gets a refund (the option text he chose — conflicts with BSOT "no refund after transfer" → write as the owner's new
@@ -79,7 +79,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (Blueprint sync paused — not render.yaml). Full-set round (money · orders · customer data, 13.5 #3). LAUNCH_AUDIT 44 criteria +
   BSOT §11 guest checkout phone = check in the round. Owner questions for Shipnity (if he adds their LINE): API price + minimum term ·
   stock-read-only price · free daily stock file (CSV) or download link.
-3m OPEN ROUND "Max list" (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
+  ALERT BOT CREATED 22/10 (owner signed up; Friday set it in his Chrome on his word "ทำให้พี่เลย"): LINE OA "OKM ORDER" @691qxpxp (free
+  plan, provider "OKami24", channel ID 2012160030) · Messaging API ON · join group chats = allowed · greeting + auto-reply = OFF ·
+  webhook URL empty (set when the endpoint exists) · NOT yet in the team group. The channel SECRET was shown in an owner screenshot in
+  chat 22/10 → REISSUE it (LINE Developers Console) before first use; the owner pastes secret + access token into Render env himself
+  (13.3 #9), never in chat. TWO LINE groups (owner 22/10), both created by Friday in the owner's LINE PC 22/10, owner the only member, bot NOT
+  invited yet: "OKM Order" = new web-order alerts (push → free quota; keep members few) · "OKM Slip" = staff drop slips, the bot replies
+  with the EasySlip verdict (reply = free; EasySlip ฿350/1,000 slips shared with the site). Existing groups "OKAMI ORDER (8)" / "OKAMI ADMIN (5)"
+  are untouched.
+3m ROUND "Max list" — DONE 22/10 by line 2 (#722–#725, #729–#734; live table `docs/cloud-results/max-sync-2210.md`; Creator Pod 20K #733
+  waits for its card photo from line 1; 8 options held for maker evidence = the table) → to close with a tag. Was: (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
   (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
   `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
   #666 VOOPOO Argus Pod (coil-21) ฿450 · #669 Vazer One ฿59 (21 flavours). Reswa Sportcan was already live (pod-142). OPEN: Double Mint Salt Nic (owner "ลงคลังปกติ" 21/10;
