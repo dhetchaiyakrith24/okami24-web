@@ -60,8 +60,9 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
           const src = image.kind === "packs" ? f.boxImage : f.image;
           if (!src) return null;
           return (
-            <div key={f.id} className={cn("relative", image.kind === "packs" ? "h-36 w-16 sm:h-44 sm:w-20" : "h-48 w-24 sm:h-64 sm:w-32")}>
-              <Image src={src.src} alt={src.alt} fill sizes="128px" className="object-contain" />
+            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-36 w-16 sm:h-44 sm:w-20" : "h-52 w-20 sm:h-72 sm:w-28")}>
+              {/* the device renders carry wide transparent margins: cover + scale crops them so the device fills its box */}
+              <Image src={src.src} alt={src.alt} fill loading="eager" sizes="160px" className={image.kind === "packs" ? "object-contain" : "scale-125 object-cover"} />
             </div>
           );
         })}
@@ -243,9 +244,9 @@ export function ProductEditorialFaq({ copy }: { copy: CopyByLocale }) {
   // on the server page is built from the same Thai copy).
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
-      <Container className="max-w-4xl">
+      <Container>
         <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{t(c.faq.title)}</h2>
-        <div className="mt-8 border-t border-surface-border">
+        <div className="mt-8 max-w-3xl border-t border-surface-border">
           {c.faq.items.map((f, i) => (
             <details key={i} className="group border-b border-surface-border py-4" open={i === 0}>
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-medium text-foreground lg:text-lg [&::-webkit-details-marker]:hidden">
