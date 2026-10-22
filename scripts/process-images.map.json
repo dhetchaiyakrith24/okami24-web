@@ -12320,5 +12320,17 @@
   },
   "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
   "fileName": "variant-strawberry-ice-cream.webp"
+ },
+ {
+  "source": "_incoming/creator/r/A-cut.png",
+  "slug": "relx-creator-pod-20k",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "line 1 23/10 - RELX Creator Pod 20K (Max Pod-137): the card held line 2's publication line (IMAGE_SPEC §4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 Unlimited (web app through Chrome, 0 credits), studio re-shoot \"keep exactly, remove everything else\" of the red Creator Boost pod fitted to the black Creator device as RELX's own key visual shows them (the only real picture of this pod: its right side sits in the device); take A (Higgsfield hf_20261022_182729 4737120c), keyed with scripts/flatcut.js",
+   "reference": "RELX Creator Boost Pod 20000 Puffs key visual, as sold by pod789.com/product/relx-creator-20000-puffs/ (Relx-Creator-Boost-20000-Puffs.jpg, 600 px; the same artwork on pod9k.com) - crop _incoming/creator/ref-pod-device.png",
+   "fidelitySheet": "_incoming/creator/fid.png - key-visual crop | ours: pod shape, mouthpiece, hexagon pattern, RELX lettering, pixel screen checked by eye"
+  }
  }
 ]

@@ -909,6 +909,21 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/argus-pod/",
     },
   ],
+  // line 1 (23/10): RELX Creator Pod 20K card = the red Creator Boost pod on the Creator device, studio re-shoot of RELX's own key
+  // visual (the only real picture of this pod — its right side sits in the device, so it is shown fitted, never redrawn alone).
+  // The 31 flavours show the no-photo panel (no per-flavour picture published).
+  "RELX-CREATOR-POD-20K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-creator-pod-20k/card.webp",
+      alt: "RELX Creator 20K Boost pod fitted to the RELX Creator device, studio photo",
+      angle: "Three-quarter front, upright — studio re-shoot (line 1 23/10, IMAGE_SPEC §0 item 7) of RELX's own Creator Boost Pod key visual. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from RELX's Creator Boost Pod key visual",
+      sourceUrl: "https://pod789.com/product/relx-creator-20000-puffs/",
+    },
+  ],
   // maxlist (20/10): RELX Infinity Pro 2 pod card = the Watermelon Ice pack (in stock) — OKami24 re-shoot of RELX's own flavour poster as sold by the shop. The other 41
   // flavours show the no-photo panel (owner 20/10: card only; the packs differ only by the printed flavour, relabelling one photo would make up images).
   "RELX-INFINITY-PRO-2-POD": [
