@@ -369,8 +369,7 @@ phone number. Build this in the round that turns online ordering back on (§8 ex
 Today's checkout already asks for a phone number with no code (§9, OTP off); whether that alone
 counts as "captured" is settled in that round.
 **Checked in the cart round (2026-10-22):** every order carries two phone numbers — the checkout phone step (the
-customer record, no sign-up, no password) and the recipient's phone on the shipping address — both required (the staff
-order list on /staff shows them). That meets "at minimum the phone number"; nothing more is asked.
+customer record, no sign-up, no password) and the recipient's phone on the shipping address — both required. That meets "at minimum the phone number"; nothing more is asked.
 
 **Initial required customer identity field:** phone number.
 

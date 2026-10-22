@@ -39,6 +39,11 @@ export interface HowToOrderCopy {
   noRefund: ReactNode;
   checkTitle: string;
   checks: ReactNode[];
+  /** Switch-bound (cart round 22/10): while ordering is ON, the pay card's value and the first check point at the order
+   *  page (slip upload, the account shown there). While it is OFF the plain lines above stay — THAI_STYLE §3 bans pointing
+   *  to ordering on the site until the owner opens it. */
+  summaryPayWhileOrderingOn: string;
+  checkAccountWhileOrderingOn: ReactNode;
   stuckTitle: string;
   stuck1: ReactNode;
   stuck2: ReactNode;
@@ -61,7 +66,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     askLineCta: `ถามก่อนทางไลน์ ${line}`,
     summary: [
       { label: "1 · สั่ง", value: "ใส่ตะกร้า ยืนยันเบอร์ กรอกที่อยู่", note: "ได้เลขคำสั่งซื้อทันที" },
-      { label: "2 · จ่าย", value: "โอนหรือสแกน QR แล้วแนบสลิป", note: "ไม่รับบัตร ไม่มีเก็บเงินปลายทาง" },
+      { label: "2 · จ่าย", value: "โอนธนาคาร หรือสแกน QR", note: "ไม่รับบัตร ไม่มีเก็บเงินปลายทาง" },
       { label: "3 · รับของ", value: "แอดมินตรวจยอด แล้วส่งพร้อมเลขพัสดุ", note: "ค่าส่ง 50 บาท · ฟรีเมื่อ 500 บาทขึ้นไป" },
     ],
     stepsTitle: "สั่งซื้อทีละขั้น",
@@ -122,9 +127,11 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>โอนแล้วยกเลิกไม่ได้ ยกเว้นกรณีสินค้าหมด</E> เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นที่ราคาเท่ากัน หรือรับเงินคืน ก่อนโอนทุกครั้งจึงควรเช็ครายการ สี กลิ่น และจำนวนให้ครบ</>,
     checkTitle: "ก่อนโอน เช็ค 2 อย่าง",
     checks: [
-      <><B>โอนเข้าบัญชีที่แสดงในหน้าสถานะคำสั่งซื้อ หรือที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
+      <><B>โอนเข้าบัญชีที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
       <><B>ไลน์ทางการมีชื่อเดียวคือ {line}</B> — เช็คได้จากปุ่มไลน์ท้ายเว็บนี้ทุกหน้า</>,
     ],
+    summaryPayWhileOrderingOn: "โอนหรือสแกน QR แล้วแนบสลิป",
+    checkAccountWhileOrderingOn: <><B>โอนเข้าบัญชีที่แสดงในหน้าสถานะคำสั่งซื้อ หรือที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
     stuckTitle: "ถ้าติดตรงไหน",
     stuck1: <>ทักไลน์ <LineLink /> ได้เลย บอกเลขคำสั่งซื้อมาด้วยจะเร็วที่สุด แอดมินตอบเอง ไม่ใช่บอท ช่วยเช็คสต๊อก ช่วยเลือกรุ่น ตามคำสั่งซื้อ ส่งสลิป — เรื่องพวกนี้คุยทางไลน์ได้หมด</>,
     stuck2: <><B>ยังไม่แน่ใจว่าจะเอาตัวไหน ดูจากบนเว็บก่อนได้</B> ทุกรุ่นมีสเปก ราคา สี กลิ่น ครบ อยากเทียบหลายตัวก็มีหน้าเปรียบเทียบให้ เลือกได้แล้วค่อยทักมาบอกชื่อรุ่น คุยจบเร็วกว่าเยอะ</>,
@@ -143,7 +150,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     askLineCta: `Ask on LINE ${line}`,
     summary: [
       { label: "1 · Order", value: "Add to cart, verify your phone, enter your address", note: "You get an order number straight away" },
-      { label: "2 · Pay", value: "Transfer or scan the QR, then attach the slip", note: "No card payment, no COD" },
+      { label: "2 · Pay", value: "Bank transfer or scan the QR", note: "No card payment, no COD" },
       { label: "3 · Get it", value: "An admin checks the amount, then ships with a tracking number", note: "Shipping ฿50 · free on orders ฿500 and over" },
     ],
     stepsTitle: "Ordering, step by step",
@@ -204,9 +211,11 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>Once you’ve transferred, the order can’t be cancelled — unless an item is out of stock.</E> If that happens, we’ll contact you, and you can choose another item at the same price or get a refund. So check your items, colours, flavours and quantities every time before you transfer.</>,
     checkTitle: "Two things to check before you transfer",
     checks: [
-      <><B>Only transfer to the account shown on your order status page, or the one an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
+      <><B>Only transfer to the account an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
       <><B>Our only official LINE account is {line}</B> — you can check it from the LINE button in the footer of every page.</>,
     ],
+    summaryPayWhileOrderingOn: "Transfer or scan the QR, then attach the slip",
+    checkAccountWhileOrderingOn: <><B>Only transfer to the account shown on your order status page, or the one an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
     stuckTitle: "If you get stuck",
     stuck1: <>Just message us on LINE <LineLink /> — include your order number and it’ll be quickest. You’re talking to an admin, not a bot. Stock checks, help choosing a model, order updates, sending a slip — all of that works over LINE.</>,
     stuck2: <><B>Not sure which one you want? Check it here first.</B> Every model has its specs, price, colours and flavours, and the compare page lines a few up side by side. Pick one, then message us — much quicker that way.</>,
@@ -225,7 +234,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     askLineCta: `先在 LINE 咨询 ${line}`,
     summary: [
       { label: "1 · 下单", value: "加入购物车、验证手机号、填写地址", note: "立即获得订单编号" },
-      { label: "2 · 付款", value: "转账或扫码，然后上传凭证", note: "不支持刷卡，无货到付款" },
+      { label: "2 · 付款", value: "银行转账或扫二维码", note: "不支持刷卡，无货到付款" },
       { label: "3 · 收货", value: "管理员核对金额后发货，并提供快递单号", note: "运费 50 铢 · 满 500 铢免运费" },
     ],
     stepsTitle: "下单步骤",
@@ -286,9 +295,11 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>转账后订单不可取消，商品缺货的情况除外。</E>如遇缺货，我们会联系您，您可以换成价格相同的其他商品，或选择退款。所以每次转账前，请务必核对商品、颜色、口味和数量。</>,
     checkTitle: "转账前请核对两件事",
     checks: [
-      <><B>只能转账到订单状态页上显示的账户，或管理员在 LINE {line} 上发给您的账户</B> —— 若有人发来其他账号，请勿转账。</>,
+      <><B>只能转账到管理员在 LINE {line} 上发给您的账号</B> —— 若有人发来其他账号，请勿转账。</>,
       <><B>我们唯一的官方 LINE 账号是 {line}</B> —— 每个页面底部的 LINE 按钮都可以核对。</>,
     ],
+    summaryPayWhileOrderingOn: "转账或扫码，然后上传凭证",
+    checkAccountWhileOrderingOn: <><B>只能转账到订单状态页上显示的账户，或管理员在 LINE {line} 上发给您的账户</B> —— 若有人发来其他账号，请勿转账。</>,
     stuckTitle: "遇到问题怎么办",
     stuck1: <>直接通过 LINE <LineLink /> 联系我们，附上订单编号最快。回复您的是管理员，不是机器人。查库存、帮您选型号、跟进订单、发送转账凭证 —— 这些都可以在 LINE 上处理。</>,
     stuck2: <><B>还没想好要哪一款，可以先在网站看。</B>每款的参数、价格、颜色和口味都写清楚了，还有对比页可以把几款并排看。选好再来找我们，会快很多。</>,
