@@ -66,4 +66,4 @@ skill `okami24-handoff`), and keep it current at every batch close.
 
 ## When to stop and ask
 
-`.claude/TEAM_RULES.md` 13.3 only. Everything else: decide, do it, write it in the report part "ติดปัญหา".
+`.claude/TEAM_RULES.md` 13.3 only. Everything else: decide, do it, write it in the report part "ตัดสินใจเอง".
