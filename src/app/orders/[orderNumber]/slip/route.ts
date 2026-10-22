@@ -1,5 +1,6 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { after, NextResponse, type NextRequest } from "next/server";
 import { submitPaymentSlip } from "@/lib/commerce/payment-slip";
+import { notifyPaidOrder } from "@/lib/line/notify";
 import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_BYTES } from "@/lib/staff/easyslip";
 import { sameSiteRequest } from "@/lib/staff/request-guard";
 
@@ -47,5 +48,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ or
     fileName: image instanceof File && image.name ? image.name.slice(0, 100) : "slip",
   });
   if (!result.ok) return reply({ ok: false, error: result.error }, result.error === "not-found" ? 404 : 200);
+  // The team's "OKM Order" LINE group hears about it after the customer already has their answer.
+  after(() => notifyPaidOrder(result.order.orderNumber, result.verdict, result.reasons));
   return reply({ ok: true, verdict: result.verdict });
 }

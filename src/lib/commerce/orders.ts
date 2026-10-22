@@ -287,6 +287,15 @@ export async function getOrderDetailForViewer(orderNumber: string, viewToken: st
   return assembleDetail(row);
 }
 
+/**
+ * Server-side lookup with NO viewer check — only for code that is already behind its own lock: the staff area
+ * (staff session) and the LINE alert sent after a customer's own slip upload. Never call it from a customer route.
+ */
+export function getOrderDetailInternal(orderNumber: string): OrderDetail | null {
+  const row = getDb().prepare("SELECT * FROM orders WHERE order_number = ?").get(orderNumber) as OrderRow | undefined;
+  return row ? assembleDetail(row) : null;
+}
+
 // The customer's "I have paid" claim lives in payment-slip.ts since the cart round 22/10 (slip upload +
 // EasySlip check); the old note-only claim was removed so there is one way to mark an order paid.
 
