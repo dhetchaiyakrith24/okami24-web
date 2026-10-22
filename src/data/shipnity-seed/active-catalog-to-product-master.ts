@@ -2540,6 +2540,8 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "perint-pearl-edition", label: "Perint Pearl Edition", sourceUrl: "https://www.iqos.com/id/id/shop/iqos-terea-perint-pearl-edition.html" },
     { code: "bermin-pearl-edition", label: "Bermin Pearl Edition", sourceUrl: "https://www.iqos.com/id/id/shop/iqos-terea-bermin-pearl-edition.html" },
     { code: "riviera-pearl", label: "Riviera Pearl", sourceUrl: "https://www.iqos.com/id/id/shop/iqos-terea-riviera-pearl.html" },
+    // line 2 max-sync (22/10): Shipnity Max IQOSHEET-15-18 "Black Purple" — iqos.com/id announces TEREA Black Purple with Black Ruby.
+    { code: "black-purple", label: "Black Purple", sourceUrl: "https://www.iqos.com/id/en/news/information/frosty-sensation-terea-black-ruby-and-black-purple-with-berry-aroma.html" },
   ],
   "IQOSHEET-16": [
     { code: "garnet-red", label: "Garnet Red", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },

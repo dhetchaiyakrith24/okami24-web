@@ -783,6 +783,9 @@ export const salthubProducts: Product[] = [
       { id: "teal", name: "Teal", swatchHex: "#2a8a8a", image: { src: "/assets/products/zero-pro/variant-teal.webp", alt: "SALTHUB / Marbo Zero Pro, Teal (official: Light Blue)" } },
       { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/zero-pro/variant-red.webp", alt: "SALTHUB / Marbo Zero Pro, Red" } },
       { id: "charcoal-red", name: "Charcoal Red", swatchHex: "#6e3535", image: { src: "/assets/products/zero-pro/variant-charcoal-red.webp", alt: "SALTHUB / Marbo Zero Pro, Charcoal Red (official: Black and Red Gradient)" } },
+      // line 2 max-sync (22/10, owner "1 ลง"): Max name, no maker page — no photo yet. Max Pod-178-3 / -6 (salthub.com shows 8 colours without these names).
+      { id: "copper", name: "Copper", swatchHex: "#b87333" },
+      { id: "champagne", name: "Champagne", swatchHex: "#e8d5a8" },
     ],
     specifications: [
       // Batch 3a (05/10): rows from SALTHUB's own Zero Pro page + posters (_incoming/sitewide-template/3/facts-zero-pro.md). Left
