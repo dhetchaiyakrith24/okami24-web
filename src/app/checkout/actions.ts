@@ -6,14 +6,14 @@ import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 /** Online ordering off (owner 2026-09-07): every step that moves a visitor towards a NEW order
- *  refuses, the same way the checkout pages do. `submitPaymentAction` is deliberately NOT guarded —
- *  it belongs to an order that already exists (the owner's test order, any earlier customer), and
- *  "I have paid" must keep working for those. See src/lib/commerce/ordering-mode.ts. */
+ *  refuses, the same way the checkout pages do. Paying for an order that already exists is not
+ *  guarded — that is the slip upload (POST /orders/<n>/slip, cart round 22/10), which replaced the
+ *  old "I have paid" note action. See src/lib/commerce/ordering-mode.ts. */
 function refuseWhileOrderingOff(): void {
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
 }
 import { addAddress, type AddressInput } from "@/lib/commerce/addresses";
-import { placeOrder, submitPaymentClaim } from "@/lib/commerce/orders";
+import { placeOrder } from "@/lib/commerce/orders";
 
 export interface OtpFormState {
   step: "phone" | "code";
@@ -109,17 +109,4 @@ export async function placeOrderAction(formData: FormData): Promise<void> {
     redirect(`/checkout/review?addressId=${addressId}&error=${encodeURIComponent(result.error)}`);
   }
   redirect(`/orders/${result.order.orderNumber}?token=${result.order.viewToken}`);
-}
-
-export async function submitPaymentAction(formData: FormData): Promise<void> {
-  const orderNumber = String(formData.get("orderNumber") ?? "");
-  const token = String(formData.get("token") ?? "");
-  const note = String(formData.get("note") ?? "");
-  const result = await submitPaymentClaim(orderNumber, token || null, note);
-
-  const params = new URLSearchParams();
-  if (token) params.set("token", token);
-  if (!result.ok) params.set("error", result.error);
-  const qs = params.toString();
-  redirect(`/orders/${orderNumber}${qs ? `?${qs}` : ""}`);
 }

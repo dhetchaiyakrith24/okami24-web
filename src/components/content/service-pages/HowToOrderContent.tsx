@@ -81,7 +81,8 @@ export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?
           <ServiceSection title={c.stuckTitle}>
             <p>{c.stuck1}</p>
             <p>{c.stuck2}</p>
-            <p>{c.stuck3}</p>
+            {/* "order through LINE only" — true only while the cart is off (cart round 22/10) */}
+            {!orderingEnabled && <p>{c.stuck3}</p>}
             <p className="text-sm">
               {c.readNext} <Link href="/shipping" className={link}>{c.links.shipping}</Link> · <Link href="/contact" className={link}>{c.links.contact}</Link> ·{" "}
               <Link href="/faq" className={link}>{c.links.faq}</Link>
