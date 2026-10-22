@@ -12,6 +12,7 @@
  *   OKAMI24_OFFSITE_BUCKET    the bucket name
  *   OKAMI24_OFFSITE_KEY_ID    R2 API token "Access Key ID"
  *   OKAMI24_OFFSITE_SECRET    R2 API token "Secret Access Key"  (never logged)
+ * Backblaze B2 works the same way (its S3-compatible endpoint + application key) — see regionFor().
  * Retention is the bucket's own lifecycle rule (owner sets "delete after N days" in the R2 dashboard).
  *
  * Like data-backup.ts this module does not import `server-only`: it runs inside the server (scheduler) and from tsx.
@@ -34,8 +35,21 @@ export function offsiteConfig(env: Record<string, string | undefined> = process.
   const keyId = env.OKAMI24_OFFSITE_KEY_ID?.trim() ?? "";
   const secret = env.OKAMI24_OFFSITE_SECRET?.trim() ?? "";
   if (!/^https:\/\/[^/\s]+$/.test(endpoint) || !/^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$/.test(bucket) || keyId.length < 8 || secret.length < 16) return null;
-  // R2's region is always "auto" (developers.cloudflare.com/r2/api/s3/api/).
-  return { endpoint, bucket, keyId, secret, region: "auto" };
+  return { endpoint, bucket, keyId, secret, region: regionFor(endpoint, env.OKAMI24_OFFSITE_REGION) };
+}
+
+/**
+ * The SigV4 region. Either target works from Render values alone (cart round 23/10 — the owner may pick B2 instead of R2):
+ *   Cloudflare R2  https://<account>.r2.cloudflarestorage.com  → "auto" (developers.cloudflare.com/r2/api/s3/api/)
+ *   Backblaze B2   https://s3.<region>.backblazeb2.com          → "<region>", e.g. us-east-005 — the region named in the
+ *                  bucket's own S3 endpoint (www.backblaze.com/docs/cloud-storage-call-the-s3-compatible-api)
+ * `OKAMI24_OFFSITE_REGION` (optional) overrides both.
+ */
+export function regionFor(endpoint: string, override?: string): string {
+  const o = override?.trim() ?? "";
+  if (/^[a-z0-9-]{2,32}$/.test(o)) return o;
+  const b2 = /^https:\/\/s3\.([a-z0-9-]+)\.backblazeb2\.com$/.exec(endpoint);
+  return b2 ? b2[1] : "auto";
 }
 
 const sha256hex = (data: string | Buffer) => crypto.createHash("sha256").update(data).digest("hex");

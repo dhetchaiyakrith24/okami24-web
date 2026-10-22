@@ -13,7 +13,7 @@ import fs from "node:fs";
 import http from "node:http";
 import os from "node:os";
 import path from "node:path";
-import { offsiteConfig, signV4, uploadBackup } from "./offsite";
+import { offsiteConfig, regionFor, signV4, uploadBackup } from "./offsite";
 
 interface Result {
   name: string;
@@ -59,6 +59,11 @@ async function main() {
   for (const k of Object.keys(full) as (keyof typeof full)[]) {
     check(`missing ${k} = off`, offsiteConfig({ ...full, [k]: "" }) === null);
   }
+  check("B2 endpoint → its own region", offsiteConfig({ ...full, OKAMI24_OFFSITE_ENDPOINT: "https://s3.us-east-005.backblazeb2.com" })?.region === "us-east-005");
+  check("B2 region from the endpoint, not invented", regionFor("https://s3.eu-central-003.backblazeb2.com") === "eu-central-003");
+  check("R2 endpoint → auto", regionFor("https://0123456789abcdef.r2.cloudflarestorage.com") === "auto");
+  check("OKAMI24_OFFSITE_REGION overrides", offsiteConfig({ ...full, OKAMI24_OFFSITE_REGION: "us-west-004" })?.region === "us-west-004");
+  check("a junk override is ignored", regionFor("https://s3.us-east-005.backblazeb2.com", "us east/5") === "us-east-005");
   check("http (not https) endpoint = off", offsiteConfig({ ...full, OKAMI24_OFFSITE_ENDPOINT: "http://x.r2.cloudflarestorage.com" }) === null);
 
   // 3. a real PUT to a local fake S3
