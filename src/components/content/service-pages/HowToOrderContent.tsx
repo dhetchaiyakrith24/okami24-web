@@ -39,7 +39,7 @@ export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?
               <strong className="font-semibold">{c.stepsPausedLead}</strong> {c.stepsPausedNotice}
             </p>
           )}
-          <SummaryCards items={c.summary} />
+          <SummaryCards items={orderingEnabled ? c.summary.map((it, i) => (i === 1 ? { ...it, value: c.summaryPayWhileOrderingOn } : it)) : c.summary} />
 
           <ServiceSection title={c.stepsTitle}>
             <div className="flex flex-col gap-8">
@@ -72,7 +72,7 @@ export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?
 
           <ServiceSection title={c.checkTitle}>
             <ul className="flex flex-col gap-2 text-sm">
-              {c.checks.map((s, i) => (
+              {(orderingEnabled ? [c.checkAccountWhileOrderingOn, ...c.checks.slice(1)] : c.checks).map((s, i) => (
                 <li key={i}>{s}</li>
               ))}
             </ul>

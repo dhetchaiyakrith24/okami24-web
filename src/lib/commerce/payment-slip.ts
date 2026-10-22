@@ -56,6 +56,13 @@ export async function submitPaymentSlip(input: {
     // Re-read inside the transaction: two uploads at once must not both move the order.
     const current = db.prepare("SELECT status FROM orders WHERE id = ?").get(order.id) as { status: string } | undefined;
     if (current?.status !== "pending_payment") return false;
+    // Same transfer attached to another order a moment ago (two uploads racing) — checked again under the lock.
+    if (decision.transRef) {
+      const other = db
+        .prepare("SELECT order_id FROM order_payment_submissions WHERE slip_trans_ref = ? AND order_id <> ? LIMIT 1")
+        .get(decision.transRef, order.id);
+      if (other) return "used" as const;
+    }
     db.prepare(
       `INSERT INTO order_payment_submissions (order_id, method, slip_trans_ref, slip_amount_satang, slip_verdict, slip_reasons)
        VALUES (?, 'bank_transfer', ?, ?, ?, ?)`
@@ -64,6 +71,7 @@ export async function submitPaymentSlip(input: {
     db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'payment_submitted', ?)").run(order.id, note);
     return true;
   })();
+  if (moved === "used") return { ok: false, error: "SLIP_USED" };
   if (!moved) return { ok: false, error: "not-payable" };
 
   return { ok: true, order: { ...order, status: "payment_submitted" }, verdict: decision.verdict, reasons: decision.reasons };
