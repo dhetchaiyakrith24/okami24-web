@@ -61,17 +61,21 @@ export function Footer({ categories, brands, dnsGuideId }: { categories: NavCate
             <Image src="/brand/okami-logo-red.png" alt="OKami24" width={568} height={480} className="h-10 w-auto" />
           </Link>
           <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">{dict.footer.tagline}</p>
-          <div className="flex items-center gap-3 pt-1">
+          {/* Owner 22/10: each platform's own logo in its own colours, big enough to see and tap (44 px rows), with the
+              handle beside it so the two YouTube channels can be told apart. */}
+          <div className="flex flex-wrap items-center gap-2.5 pt-1">
             <Link
               href={CONTACT.lineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={dict.nav.contactLine}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
+              aria-label={`${dict.nav.contactLine} ${CONTACT.lineId}`}
+              className={SOCIAL_PILL}
             >
-              <LineIcon className="h-4 w-4" />
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#06C755]">
+                <LineIcon className="h-5 w-5 text-white" />
+              </span>
+              {CONTACT.lineId}
             </Link>
-            {/* Owner 22/10: one icon per channel; the handle in the label + tooltip tells the two apart. */}
             {CONTACT.youtubeChannels.map((ch) => (
               <Link
                 key={ch.url}
@@ -79,10 +83,12 @@ export function Footer({ categories, brands, dnsGuideId }: { categories: NavCate
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${dict.nav.youtubeChannel} ${ch.handle}`}
-                title={ch.handle}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
+                className={SOCIAL_PILL}
               >
-                <YoutubeIcon className="h-4 w-4" />
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white">
+                  <YoutubeIcon className="h-5 w-5 text-[#FF0000]" />
+                </span>
+                {ch.handle}
               </Link>
             ))}
           </div>
@@ -179,6 +185,9 @@ function FooterColumn({ title, defaultOpen = false, children }: { title: string;
     </div>
   );
 }
+
+const SOCIAL_PILL =
+  "inline-flex min-h-11 items-center gap-2.5 rounded-full border border-surface-border py-1.5 pl-1.5 pr-4 text-sm font-medium text-foreground transition-colors hover:border-foreground-muted";
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
