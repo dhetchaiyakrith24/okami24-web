@@ -1016,6 +1016,7 @@ const allGuides: Guide[] = [
           "ดีไหมอยู่ที่ว่าอยากได้อะไรจากพอตเปลี่ยนหัว M Switch เป็นของ SALTHUB ตระกูลเดียวกับ M Bar ที่หลายร้านเรียกรวมกันว่า Marbo ใช้ง่ายเท่าพอตใช้แล้วทิ้ง ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์",
           "M Switch Pod หัวละสูงสุด 15,000 พัฟ ส่วน M Bar 10K สูงสุด 10,000 พัฟ และ M Bar 9K สูงสุด 9,000 พัฟต่อเครื่อง",
           "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น อ่าน [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch) ดูพอตใช้แล้วทิ้งรุ่นอื่นบนเว็บได้ที่ [หมวดพอตใช้แล้วทิ้ง](/products/disposables)",
+          "รุ่นทั้งหมดของ SALTHUB ทั้ง M Bar และ M Switch ดูได้ที่ [หน้าแบรนด์ SALTHUB](/brands/salthub)",
         ],
       },
     ],
@@ -1032,6 +1033,12 @@ const allGuides: Guide[] = [
       {
         question: "พอตใช้แล้วทิ้งชาร์จได้ไหม",
         answer: "แล้วแต่รุ่น M Bar 9K กับ M Bar 10K แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C รุ่นอื่นดูได้ในตารางสเปกของรุ่นนั้น",
+      },
+      {
+        // Keyword line 23/10 (owner's pick): "พอตกับมาโบต่างกันยังไง" · "มาโบกับพอตต่างกันยังไง" (autocomplete both ways). Marbo in English
+        // only (THAI_STYLE round-8 lock); says only what brands.ts says — other shops use the name, nothing on who makes what.
+        question: "พอตกับ Marbo ต่างกันยังไง",
+        answer: "Marbo ไม่ใช่พอตอีกชนิดหนึ่ง แต่เป็นชื่อที่หลายร้านในไทยใช้เรียกพอตของ SALTHUB ส่วนคำว่าพอตเป็นคำเรียกรวมทุกแบบ M Bar ของ SALTHUB คือพอตใช้แล้วทิ้ง ส่วน M Switch คือพอตเปลี่ยนหัวของแบรนด์เดียวกัน ที่เก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัวพอต",
       },
       {
         question: "พอตเปลี่ยนหัว ใช้ได้นานแค่ไหน",
