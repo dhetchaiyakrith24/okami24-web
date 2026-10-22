@@ -726,7 +726,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-94-4": "Coil-94-4",
   } },
   // Round list19 (17/10): LAMBDA i8 — Max children -1 Black · -2 Silver · -3 Gray · -4 Red · -5 Green · -6 Gold. LAMBDA's own colour
-  // list has White, not Silver: "check" until the admin confirms the warehouse "Silver" is LAMBDA's White.
+  // list has White, not Silver. Line 2 max-sync (22/10, owner "1 ลง"): Silver is shown by its Max name (-2); White stays "check".
   "iqosheet-14": { parent: "IQOSHEET-14", options: {
     "IQOSHEET-14-4": "IQOSHEET-14-4",
     "IQOSHEET-14-6": "IQOSHEET-14-6",
@@ -734,6 +734,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-14-verified-green": "IQOSHEET-14-5",
     "iqosheet-14-verified-gray": "IQOSHEET-14-3",
     "iqosheet-14-verified-white": "check",
+    "iqosheet-14-verified-silver": "IQOSHEET-14-2", // line 2 max-sync 22/10
   } },
   "iqosheet-15": { parent: "IQOSHEET-15", options: {
     "IQOSHEET-15-1": "IQOSHEET-15-1",
