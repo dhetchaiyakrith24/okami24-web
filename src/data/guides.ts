@@ -783,7 +783,8 @@ const allGuides: Guide[] = [
         answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Mango Passion · Strawberry Watermelon",
       },
       {
-        question: "Marbo 10K ใช้ยังไง ปรับโหมดยังไง",
+        // THAI_STYLE line 63 exception 2 (owner 23/10): on this guide "มาโบ" may stand in FAQ questions as people type them.
+        question: "มาโบ 10K ใช้ยังไง ปรับโหมดยังไง",
         answer: "ที่ก้นเครื่อง M Bar 10K มีปุ่ม กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco · Soft · Boost จอเล็ก ๆ บนเครื่องบอกว่าตอนนี้อยู่โหมดไหน และไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25%",
       },
     ],
