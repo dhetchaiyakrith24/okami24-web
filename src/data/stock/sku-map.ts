@@ -580,6 +580,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "watermelon-strawberry": "Disposable-37-15",
     "grape-n5": "Disposable-37-21",
     "blueberry-n5": null,
+    "watermelon-50mg": "Disposable-37-16",
+    "mint-n5": "Disposable-37-22",
   } },
   "muro-3ml": { parent: null, options: {
     "grape": null,

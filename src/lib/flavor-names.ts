@@ -24,6 +24,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // line 2 max-sync (22/10): + the 13 new Muro Connector 20K names (Max Pod-171 labels), sorted in by length.
   // line 2 max-sync (22/10): + the Zero Cartridge 50mg and M Bar 9K names (Max Pod-85 / Disposable-25 labels), sorted in by length.
   // line 2 max-sync (22/10): + the RELX Smash GO 12K 5% names (Max Disposable-39 labels, written "<Flavour> 5%"), sorted in by length.
+  // line 2 max-sync (22/10): + the 2 new MOOOD Monster 14K names (Max Disposable-37 labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -305,6 +306,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Grape 5%",
   "Big Cola",
   "Lime Ice",
+  "Mint N5%",
   "Love 77",
   "Cola 5%",
 ];
