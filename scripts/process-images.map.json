@@ -11897,5 +11897,53 @@
    "reference": "ihavevape.net Pepo Salt Nic Mint poster (https://ihavevape.net/product/pepo-salt-nic/ - wp-content/uploads/2022/10/salt7.jpg, 600 px, bottle + box, no shop watermark) - _incoming/pepo/src/salt7.jpg (bottle crop mint-crop.png)",
    "fidelitySheet": "_incoming/pepo/ab.jpg (both takes) + dark.jpg (cut on the site background beside Peach); label art, PEPO wordmark and mascot checked by eye against the poster; the bottle's MINT word is hidden on the poster - printed in the box's MINT lettering like PEACH on the Peach bottle"
   }
+ },
+ {
+  "source": "_incoming/nex/final/grape-lychee.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-2",
+  "note": "image sweep 22/10 - Nexswitch 16K pod Grape Lychee (Max Pod-162-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "reference": "pod789.com Nexswitch Grape Lychee poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Grape-Lychee.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Grape-Lychee.jpg",
+   "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/nex/final/cola-lemon.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-7",
+  "note": "image sweep 22/10 - Nexswitch 16K pod Cola Lemon (Max Pod-162-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "reference": "pod789.com Nexswitch Cola Lemon poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Cola-Lemont.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Cola-Lemont.jpg",
+   "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/nex/final/mint.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-8",
+  "note": "image sweep 22/10 - Nexswitch 16K pod Mint (Max Pod-162-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "reference": "pod789.com Nexswitch Mint poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Mint.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Mint.jpg",
+   "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/nex/final/pink-berry.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-9",
+  "note": "image sweep 22/10 - Nexswitch 16K pod Pink Berry (Max Pod-162-9)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "reference": "pod789.com Nexswitch Pink Berry poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Pink-Berryl.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Pink-Berryl.jpg",
+   "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
+  }
  }
 ]
