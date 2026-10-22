@@ -88,7 +88,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             },
             {
               heading: "ยังไม่แน่ใจว่าจะเริ่มจากกลิ่นไหน",
-              paragraphs: ["ลองเริ่มจากสายที่ชอบก่อนก็ได้ ด้านล่างร้านแบ่งกลิ่นไว้เป็นสามสาย คือ สายผลไม้ สายเย็น กับสายขนมและเครื่องดื่ม เลือกสายที่สนใจแล้วค่อยเปิดดูรูปทีละกลิ่นได้", "รายชื่อในหน้านี้รวมทุกกลิ่นในตารางกลิ่นของ SALTHUB และกลิ่นใหม่อีกสองกลิ่นที่ออกตามมา คือ Blueberry Mint กับ Strawberry Kiwi ถ้าอยากรู้ว่ากลิ่นไหนมีของอยู่ตอนนี้ ทักไลน์ @okm24 ถามร้านได้เลย"],
+              paragraphs: ["ลองเริ่มจากสายที่ชอบก่อนก็ได้ ด้านล่างร้านแบ่งกลิ่นไว้เป็นสามสาย คือ สายผลไม้ สายเย็น กับสายขนมและเครื่องดื่ม เลือกสายที่สนใจแล้วค่อยเปิดดูรูปทีละกลิ่นได้", "รายชื่อในหน้านี้รวมทุกกลิ่นในตารางกลิ่นของ SALTHUB และอีกสองกลิ่น คือ Blueberry Mint กับ Strawberry Kiwi ถ้าอยากรู้ว่ากลิ่นไหนมีของอยู่ตอนนี้ ทักไลน์ @okm24 ถามร้านได้เลย"],
             },
           ],
         },
@@ -118,9 +118,9 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
           title: "คำถามที่พบบ่อย",
           items: [
             { question: "มาโบ 9K กับ 10K ต่างกันยังไง", answer: "ต่างกันหลัก ๆ ที่ M Bar 10K สลับได้ 3 โหมด คือ Eco · Soft และ Boost พร้อมไฟ RGB ที่บอกว่าตอนนี้อยู่โหมดไหน ส่วนเรื่องอื่นร้านเทียบไว้ทีละข้อในตารางด้านบนแล้ว" },
-            { question: "Marbo 9K กลิ่นไหนดี", answer: "ไม่มีคำตอบเดียว ขึ้นอยู่กับว่าชอบแนวไหน ลองเลือกจากสายก่อน แล้วค่อยดูรูปของกลิ่นในสายนั้น ร้านแยกกลิ่นของ M Bar 9K · M Bar 10K และ M Switch Pod ไว้ตามสายใน[บทความเลือกกลิ่น](/guides/choosing-a-marbo-flavor)" },
+            { question: "Marbo 9K กลิ่นไหนดี", answer: "ไม่มีคำตอบเดียว ขึ้นอยู่กับว่าชอบแนวไหน ลองเลือกจากสายก่อน แล้วค่อยดูรูปของกลิ่นในสายนั้น ร้านแยกกลิ่นของทั้งตระกูล M Bar ไว้ตามสายใน[บทความเลือกกลิ่น](/guides/choosing-a-marbo-flavor)" },
             { question: "มาโบ 9K ใช้ได้กี่วัน", answer: "ไม่มีจำนวนวันที่ตายตัว SALTHUB ระบุไว้เป็นจำนวนพัฟ ไม่ได้ระบุเป็นวัน ส่วนจะใช้ได้กี่วันขึ้นกับว่าแต่ละคนสูบถี่แค่ไหน วิธีอ่านตัวเลขพัฟบนกล่องและวิธีใช้ให้ได้นานขึ้น ร้านเขียนไว้ที่[พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)" },
-            { question: "มาโบ 9K ชาร์จได้ไหม", answer: "ได้ ชาร์จผ่าน USB-C ระหว่างใช้ถ้าแบตอ่อนลงก็เสียบชาร์จแล้วสูบต่อได้ เครื่องจะใช้ไปได้จนกว่าน้ำยาข้างในจะหมด แล้วจึงเปลี่ยนเป็นเครื่องใหม่ทั้งเครื่อง วิธีชาร์จให้แบตอยู่กับเราได้นาน ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)" },
+            { question: "มาโบ 9K ชาร์จได้ไหม", answer: "ได้ ชาร์จผ่าน USB-C ระหว่างใช้ถ้าแบตอ่อนลงก็เสียบชาร์จแล้วสูบต่อได้ เครื่องจะใช้ไปได้จนกว่าน้ำยาจะหมด แล้วจึงเปลี่ยนเป็นเครื่องใหม่ทั้งเครื่อง วิธีชาร์จให้แบตอยู่กับเราได้นาน ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)" },
           ],
         },
       },
@@ -155,7 +155,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             },
             {
               heading: "Not sure where to start?",
-              paragraphs: ["Start with the kind of flavour you like. Below, we've sorted them into three groups: fruity, cool, and sweets & drinks. Pick one, then browse the photos flavour by flavour.", "The list here covers every flavour on SALTHUB's chart, plus two newer ones: Blueberry Mint and Strawberry Kiwi. To check which are in stock right now, message us on LINE @okm24."],
+              paragraphs: ["Start with the kind of flavour you like. Below, we've sorted them into three groups: fruity, cool, and sweets & drinks. Pick one, then browse the photos flavour by flavour.", "The list here covers every flavour on SALTHUB's chart, plus two more: Blueberry Mint and Strawberry Kiwi. To check which are in stock right now, message us on LINE @okm24."],
             },
           ],
         },
@@ -222,7 +222,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             },
             {
               heading: "不知道从哪个口味开始？",
-              paragraphs: ["可以先从喜欢的类型入手。下方按水果系、清凉系、甜品饮品系三类整理好了，选定一类后再逐一查看口味图片。", "这里列出了 SALTHUB 口味表上的全部口味，以及后来新增的两款：Blueberry Mint 和 Strawberry Kiwi。想知道哪些口味目前有货，请通过 LINE @okm24 咨询。"],
+              paragraphs: ["可以先从喜欢的类型入手。下方按水果系、清凉系、甜品饮品系三类整理好了，选定一类后再逐一查看口味图片。", "这里列出了 SALTHUB 口味表上的全部口味，以及另外两款：Blueberry Mint 和 Strawberry Kiwi。想知道哪些口味目前有货，请通过 LINE @okm24 咨询。"],
             },
           ],
         },
