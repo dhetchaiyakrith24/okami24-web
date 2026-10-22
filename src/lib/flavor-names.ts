@@ -22,12 +22,17 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // maxlist (21/10): + the Vazer One names (the maker's flavours), sorted in by length.
   // maxlist (20/10): + the RELX Infinity Pro 2 pod names (Max Pod-27 labels), sorted in by length.
   // line 2 max-sync (22/10): + the 13 new Muro Connector 20K names (Max Pod-171 labels), sorted in by length.
+  // line 2 max-sync (22/10): + the Zero Cartridge 50mg and M Bar 9K names (Max Pod-85 / Disposable-25 labels), sorted in by length.
+  // line 2 max-sync (22/10): + the RELX Smash GO 12K 5% names (Max Disposable-39 labels, written "<Flavour> 5%"), sorted in by length.
+  // line 2 max-sync (22/10): + the 2 new MOOOD Monster 14K names (Max Disposable-37 labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
   "Peach Mango Watermelon",
+  "Banana Strawberry 50mg",
   "Strawberry Watermelon",
   "Watermelon Strawberry",
+  "Peach Strawberry 50mg",
   "Blueberry Watermelon",
   "Bermin Pearl Edition",
   "Perint Pearl Edition",
@@ -49,11 +54,13 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Dimensions Apricity",
   "Raspberry Mint 50mg",
   "Watermelon Ice 50mg",
+  "Menthol Freeze 50mg",
   "Hokkaido Ice Cream",
   "Hokkaido Melon Ice",
   "Strawberry Custard",
   "Hawaiian Shore Ice",
   "Tropical Mix Fruit",
+  "Classic Tobacco 5%",
   "Banana Strawberry",
   "Strawberry Banana",
   "Vanilla Ice Cream",
@@ -113,6 +120,10 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Vanilla Custard",
   "Chocolate Dubai",
   "Watermelon 50MG",
+  "Apple Aloe 50mg",
+  "Grape Aloe 50mg",
+  "Pink Berry 50mg",
+  "Watermelon 50mg",
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -140,6 +151,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Oolong Ice Tea",
   "Orange Sparkle",
   "Spearmint 50mg",
+  "Blueberry Mint",
   "Riviera Pearl",
   "Berries Party",
   "Blueberry Ice",
@@ -168,6 +180,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Lemon Ice Tea",
   "Thai Milk Tea",
   "Yakult Orange",
+  "Mixberry 50mg",
   "Red Bull Ice", // maxlist 21/10: Foli Bar 15K
   "Purple Grape",
   "Apple Baraku",
@@ -184,6 +197,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Dark Sparkle",
   "Lime Tobacco",
   "Smooth Mango",
+  "Cool Mint 5%",
+  "Spearmint 5%",
   "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
   "Monster Ice",
@@ -225,6 +240,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Tangy Grape",
   "Fruit Punch",
   "Yakult 50MG",
+  "Mixberry 5%",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
@@ -279,6 +295,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Guava Ice",
   "Ludou Ice",
   "Peach Tea",
+  "Cola 50mg",
+  "Mint 50mg",
   "Blue Ice",
   "Cola Ice",
   "Thai Tea",
@@ -288,5 +306,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Grape 5%",
   "Big Cola",
   "Lime Ice",
+  "Mint N5%",
   "Love 77",
+  "Cola 5%",
 ];
