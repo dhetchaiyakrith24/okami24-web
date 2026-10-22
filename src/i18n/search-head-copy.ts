@@ -470,6 +470,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "VOOPOO ARGUS รุ่นไหนดี เทียบ ARGUS G4 · G4 mini · G3 mini · P3 ทีละคู่ ทั้งแบต วัตต์ จอ การเปลี่ยนค่าโอห์ม ช่องลม และหัวพอตที่ใช้ร่วมกันได้ ก่อนเลือกซื้อ",
   "checking-a-genuine-pod":
     "พอตของแท้ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์ รวมหน้าเช็คของ UWELL RELX INFY SALTHUB Esko Bar และ VOOPOO พร้อมวิธีใช้ และสิ่งที่ควรทำเมื่อซื้อพอตออนไลน์",
+  // Keyword line 23/10: thai-copy's head line for the new beginner guide (no "น้ำยา").
+  "how-to-vape-without-coughing":
+    "สูบพอตยังไงไม่ให้สำลัก เริ่มจากดูดช้า ๆ เบา ๆ เข้าปากก่อน พร้อมเรื่องนิโคตินและเครื่องที่ทำให้ไอ และวิธีเริ่มใช้พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็ม",
 };
 
 /** Row C19 — keyed by technology entry id. */
