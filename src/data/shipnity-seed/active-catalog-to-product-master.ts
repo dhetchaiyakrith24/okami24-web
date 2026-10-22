@@ -2561,6 +2561,8 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "green", label: "Green", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
     { code: "gray", label: "Gray", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
     { code: "white", label: "White", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    // line 2 max-sync (22/10, owner "1 ลง"): Max name, no maker page — no photo yet. Max IQOSHEET-14-2 "Silver" — LAMBDA's page lists Black, Gray, Red, Green, Gold, White, not Silver.
+    { code: "silver", label: "Silver", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   ],
   "IQOSHEET-17": [
     { code: "digital-violet", label: "Digital Violet", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },

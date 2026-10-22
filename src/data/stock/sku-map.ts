@@ -731,6 +731,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-14-verified-green": "IQOSHEET-14-5",
     "iqosheet-14-verified-gray": "IQOSHEET-14-3",
     "iqosheet-14-verified-white": "check",
+    "iqosheet-14-verified-silver": "IQOSHEET-14-2", // line 2 max-sync 22/10
   } },
   "iqosheet-15": { parent: "IQOSHEET-15", options: {
     "IQOSHEET-15-1": "IQOSHEET-15-1",
