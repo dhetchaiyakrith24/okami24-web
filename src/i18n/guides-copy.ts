@@ -34,6 +34,17 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       // (_incoming/round8/writer-2-result.md). The first sentence of the next section lost its
       // own three-way definition so the two do not say the same thing twice.
       {
+        // Keyword line 23/10 ("beat page 1" for "พอตยี่ห้อไหนดี"): page 1 is TOP-10 listicles + an old Pantip thread — this opener
+        // answers in the first sentence and routes to the two buying guides + the beginner guide (thai-copy 23/10). Thai only, like
+        // the round-8 sections; no new fact.
+        heading: "พอตยี่ห้อไหนดี สำหรับมือใหม่",
+        paragraphs: [
+          "พอตยี่ห้อไหนดีสำหรับมือใหม่ ไม่มียี่ห้อเดียวที่เหมาะกับทุกคน ร้านแนะนำให้ตัดสินใจก่อนว่าอยากเติมน้ำยาเอง หรืออยากได้แบบที่บรรจุน้ำยามาให้แล้ว จากนั้นค่อยเลือกรุ่นที่ตรงกับสิ่งที่คุณอยากได้ ตัวอย่างสามแบบอยู่ในหัวข้อ “ยี่ห้อไหนดี ตอบจากสิ่งที่คุณอยากได้” ด้านล่าง",
+          "ถ้าไม่อยากเติมน้ำยา มีให้เลือกสองทาง อยากใช้จนหมดแล้วทิ้งทั้งเครื่อง อ่านต่อที่ [พอตใช้แล้วทิ้ง ยี่ห้อไหนดี](/guides/choosing-a-disposable) ถ้าอยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตเปลี่ยนหัว รุ่นไหนดี](/guides/choosing-a-switch-pod) ส่วนใครอยากเติมน้ำยาเอง ร้านยกตัวอย่าง Caliburn G5 กับ ARGUS G3 mini ไว้ในบทความนี้แล้ว",
+          "ถ้ายังไม่เคยสูบพอตมาก่อนเลย อ่าน [สูบพอตยังไงไม่ให้สำลัก](/guides/how-to-vape-without-coughing) ไว้ด้วย จะได้เริ่มดูดอย่างถูกวิธีตั้งแต่ครั้งแรก",
+        ],
+      },
+      {
         // Round SEO E "pod" (owner 09/10 "ตามนั้นเลย", choice A): "Pod System คืออะไร" is now answered by its own article
         // (what-is-a-pod-system); this heading stops competing for "pod system คือ" and links there instead.
         heading: "พอตซิสเต็ม พอตคิท และพอตใช้แล้วทิ้ง ต่างกันยังไง",
