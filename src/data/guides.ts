@@ -2194,7 +2194,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
         paragraphs: [
-          "นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา หัว Zero Cartridge มีให้เลือก 22 กลิ่น หัวพอตของ Esko Bar Switch 20K · Muro Connector 20K และ nexPOD 15K มีรุ่นละ 20 กลิ่น M Switch Pod มี 17 กลิ่น หัวของ KS Quikpro มี 16 กลิ่น และ Nexswitch 16K Pod มี 10 กลิ่น",
+          "นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา หัว Zero Cartridge มีให้เลือก 22 กลิ่น หัวพอตของ Esko Bar Switch 20K และ nexPOD 15K มีรุ่นละ 20 กลิ่น Muro Connector 20K มี 33 กลิ่น M Switch Pod มี 17 กลิ่น หัวของ KS Quikpro มี 16 กลิ่น และ Nexswitch 16K Pod มี 10 กลิ่น",
           "กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้ ส่วนกลิ่นไหนของ M Switch Pod เป็นสายเย็นหรือสายองุ่น ร้านแยกไว้ให้ที่[Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)",
         ],
       },
