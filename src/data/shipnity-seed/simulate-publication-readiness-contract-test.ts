@@ -140,7 +140,8 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   // Pod-169 INFY PLUS republished round list19 (2026-10-18) with an OKami24 re-shoot of one clear pod: the 28 Max flavours at ฿129.
   checkGenuinelyPublished("Pod-169", 129, 28);
   // IQOSHEET-14 republished round list19 (2026-10-17) with LAMBDA's own per-colour photos: 2 Shipnity children + 4 verified colours.
-  checkGenuinelyPublished("IQOSHEET-14", 2390, 6);
+  // line 2 max-sync (22/10): + Silver (Max IQOSHEET-14-2, Max name) as a 5th extra colour → 7.
+  checkGenuinelyPublished("IQOSHEET-14", 2390, 7);
 
   // A product with no minimum copy (e.g. eliquid-62 — no brand/category/copy at all) must
   // correctly simulate as NOT ready, proving the simulation isn't rubber-stamping everything.
