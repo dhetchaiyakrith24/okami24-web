@@ -7,6 +7,8 @@ import { recentChecks } from "@/lib/staff/slip-checks";
 import { staffLogoutAction } from "@/app/staff/actions";
 import { StaffLogin } from "@/app/staff/_components/StaffLogin";
 import { SlipChecker } from "@/app/staff/_components/SlipChecker";
+import { LineGroups } from "@/app/staff/_components/LineGroups";
+import { lineConfigured } from "@/lib/line/client";
 
 /**
  * /staff — the staff-only slip-check page (owner ruling 2026-10-07, docs/BUSINESS_SOURCE_OF_TRUTH.md §9
@@ -56,6 +58,7 @@ export default async function StaffPage() {
             initialQuota={quota && quota.ok ? quota.data : null}
             recent={recentChecks(30)}
           />
+          {lineConfigured() && <LineGroups />}
           <form action={staffLogoutAction} className="flex justify-center">
             <button
               type="submit"

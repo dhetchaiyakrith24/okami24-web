@@ -39,6 +39,11 @@ export interface HowToOrderCopy {
   noRefund: ReactNode;
   checkTitle: string;
   checks: ReactNode[];
+  /** Switch-bound (cart round 22/10): while ordering is ON, the pay card's value and the first check point at the order
+   *  page (slip upload, the account shown there). While it is OFF the plain lines above stay — THAI_STYLE §3 bans pointing
+   *  to ordering on the site until the owner opens it. */
+  summaryPayWhileOrderingOn: string;
+  checkAccountWhileOrderingOn: ReactNode;
   stuckTitle: string;
   stuck1: ReactNode;
   stuck2: ReactNode;
@@ -92,15 +97,15 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             เรารับโอนธนาคารและสแกน QR เท่านั้น — <B>ไม่รับบัตรเครดิต และไม่มีเก็บเงินปลายทาง</B>
             <br />
-            <B>โอนแล้วยกเลิกไม่ได้</B> ตรวจรายการและยอดให้ครบก่อนโอน
+            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมด ตรวจรายการและยอดให้ครบก่อนโอน
           </>
         ),
       },
       {
-        title: "กด “แจ้งชำระเงินแล้ว”",
+        title: "แนบสลิปในหน้าสถานะคำสั่งซื้อ",
         body: (
           <>
-            หลังโอนเสร็จ กลับมาที่หน้าสถานะคำสั่งซื้อแล้วกดปุ่มนี้ ใส่หมายเหตุการโอนได้ถ้ามี ตอนนี้เว็บยังแนบรูปสลิปไม่ได้ ให้ส่งสลิปทางไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อ
+            โอนเสร็จแล้ว แนบรูปสลิปในหน้าสถานะคำสั่งซื้อได้เลย ระบบจะเช็คสลิปกับธนาคารให้ แล้วแอดมินจะตรวจยอดอีกครั้งก่อนแพ็กของ ถ้าแนบไม่ได้ ส่งสลิปทางไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อแทนได้
           </>
         ),
       },
@@ -110,8 +115,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     afterIntro: "สถานะในหน้าคำสั่งซื้อจะไล่ตามนี้ ดูได้ตลอดว่าถึงขั้นไหนแล้ว",
     statuses: [
       <><B>รอชำระเงิน</B> — คำสั่งซื้อเข้าระบบแล้ว รอคุณโอน</>,
-      <><B>แจ้งชำระเงินแล้ว</B> — คุณกดแจ้งเข้ามาแล้ว</>,
-      <><B><span className="whitespace-nowrap">รอตรวจสอบโดยแอดมิน</span></B> — แอดมินกำลังเช็คยอดเงินที่เข้าจริง การกดแจ้งว่าจ่ายแล้วยังไม่ใช่การยืนยันอัตโนมัติ ต้องมีคนตรวจก่อนเสมอ</>,
+      <><B>แจ้งชำระเงินแล้ว</B> — ได้รับสลิปของคุณแล้ว</>,
+      <><B><span className="whitespace-nowrap">รอตรวจสอบโดยแอดมิน</span></B> — แอดมินกำลังเช็คยอดเงินที่เข้าจริง การส่งสลิปยังไม่ใช่การยืนยันอัตโนมัติ ต้องมีคนตรวจก่อนเสมอ</>,
       <><B>อนุมัติแล้ว</B> — ยอดตรง คำสั่งซื้อผ่าน</>,
       <><B>กำลังเตรียมจัดส่ง</B> — แพ็กของอยู่</>,
       <><B>จัดส่งแล้ว</B> — ส่งออกแล้ว พร้อมเลขพัสดุให้กดติดตาม</>,
@@ -119,12 +124,14 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "ถ้ามีเหตุต้องยกเลิก คำสั่งซื้อจะขึ้นสถานะ “ยกเลิก”",
     cancelBefore: <>ยกเลิกได้ตราบใดที่ยังไม่ได้โอน ทักไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อ บอกว่าจะยกเลิก แอดมินจัดการให้</>,
-    noRefund: <><E>โอนแล้วยกเลิกไม่ได้ และไม่มีการคืนเงิน</E> เพราะฉะนั้นเช็ครายการ สี กลิ่น และจำนวนให้ครบก่อนโอนทุกครั้ง</>,
+    noRefund: <><E>โอนแล้วยกเลิกไม่ได้ ยกเว้นกรณีสินค้าหมด</E> เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นที่ราคาเท่ากัน หรือรับเงินคืน ก่อนโอนทุกครั้งจึงควรเช็ครายการ สี กลิ่น และจำนวนให้ครบ</>,
     checkTitle: "ก่อนโอน เช็ค 2 อย่าง",
     checks: [
       <><B>โอนเข้าบัญชีที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
       <><B>ไลน์ทางการมีชื่อเดียวคือ {line}</B> — เช็คได้จากปุ่มไลน์ท้ายเว็บนี้ทุกหน้า</>,
     ],
+    summaryPayWhileOrderingOn: "โอนหรือสแกน QR แล้วแนบสลิป",
+    checkAccountWhileOrderingOn: <><B>โอนเข้าบัญชีที่แสดงในหน้าสถานะคำสั่งซื้อ หรือที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
     stuckTitle: "ถ้าติดตรงไหน",
     stuck1: <>ทักไลน์ <LineLink /> ได้เลย บอกเลขคำสั่งซื้อมาด้วยจะเร็วที่สุด แอดมินตอบเอง ไม่ใช่บอท ช่วยเช็คสต๊อก ช่วยเลือกรุ่น ตามคำสั่งซื้อ ส่งสลิป — เรื่องพวกนี้คุยทางไลน์ได้หมด</>,
     stuck2: <><B>ยังไม่แน่ใจว่าจะเอาตัวไหน ดูจากบนเว็บก่อนได้</B> ทุกรุ่นมีสเปก ราคา สี กลิ่น ครบ อยากเทียบหลายตัวก็มีหน้าเปรียบเทียบให้ เลือกได้แล้วค่อยทักมาบอกชื่อรุ่น คุยจบเร็วกว่าเยอะ</>,
@@ -174,15 +181,15 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             We only accept bank transfers and QR payments — <B>no credit cards, and no cash on delivery</B>.
             <br />
-            <B>Transfers cannot be cancelled.</B> Check your items and the total before you transfer.
+            <B>Transfers can’t be cancelled</B> unless an item is out of stock. Check your items and the total before you transfer.
           </>
         ),
       },
       {
-        title: "Tap “I’ve paid — submit for review”",
+        title: "Attach your slip on the order page",
         body: (
           <>
-            Once you’ve transferred, go back to your order status page and tap this button. You can add a transfer note if you have one. The site can’t take a slip photo yet, so send the slip on LINE <LineLink /> with your order number.
+            Once you’ve transferred, attach the slip on your order status page. The site checks it with the bank, and an admin still confirms the payment before packing. If it won’t upload, send the slip on LINE <LineLink /> with your order number.
           </>
         ),
       },
@@ -192,8 +199,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     afterIntro: "Your order page moves through these statuses, so you can always see where things stand.",
     statuses: [
       <><B>Pending payment</B> — the order is in our system, waiting for your transfer</>,
-      <><B>Payment submitted</B> — you’ve submitted your payment</>,
-      <><B>Awaiting admin verification</B> — an admin is checking the money that actually arrived. Submitting a payment is not automatic confirmation; a person always checks first.</>,
+      <><B>Payment submitted</B> — we’ve received your slip</>,
+      <><B>Awaiting admin verification</B> — an admin is checking the money that actually arrived. Sending a slip isn’t automatic confirmation; a person always checks first.</>,
       <><B>Approved</B> — the amount matches, your order is through</>,
       <><B>Processing</B> — we’re packing it</>,
       <><B>Shipped</B> — it’s on its way, with a tracking number you can follow</>,
@@ -201,12 +208,14 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "If an order has to be cancelled, there’s a Cancelled status for that.",
     cancelBefore: <>You can cancel any time before you transfer. Message us on LINE <LineLink /> with your order number and say you’d like to cancel — an admin will take care of it.</>,
-    noRefund: <><E>Once you’ve transferred, the order can’t be cancelled and the money isn’t refundable.</E> So check your items, colours, flavours and quantities every time before you transfer.</>,
+    noRefund: <><E>Once you’ve transferred, the order can’t be cancelled — unless an item is out of stock.</E> If that happens, we’ll contact you, and you can choose another item at the same price or get a refund. So check your items, colours, flavours and quantities every time before you transfer.</>,
     checkTitle: "Two things to check before you transfer",
     checks: [
       <><B>Only transfer to the account an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
       <><B>Our only official LINE account is {line}</B> — you can check it from the LINE button in the footer of every page.</>,
     ],
+    summaryPayWhileOrderingOn: "Transfer or scan the QR, then attach the slip",
+    checkAccountWhileOrderingOn: <><B>Only transfer to the account shown on your order status page, or the one an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
     stuckTitle: "If you get stuck",
     stuck1: <>Just message us on LINE <LineLink /> — include your order number and it’ll be quickest. You’re talking to an admin, not a bot. Stock checks, help choosing a model, order updates, sending a slip — all of that works over LINE.</>,
     stuck2: <><B>Not sure which one you want? Check it here first.</B> Every model has its specs, price, colours and flavours, and the compare page lines a few up side by side. Pick one, then message us — much quicker that way.</>,
@@ -256,15 +265,15 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             我们只接受银行转账和扫码付款 —— <B>不支持信用卡，也没有货到付款</B>。
             <br />
-            <B>转账后不可取消。</B>请在转账前核对商品和金额。
+            <B>转账后不可取消</B>，商品缺货的情况除外。请在转账前核对商品和金额。
           </>
         ),
       },
       {
-        title: "点击「已付款，提交审核」",
+        title: "在订单页上传转账凭证",
         body: (
           <>
-            转账完成后，回到订单状态页点击这个按钮，有转账备注可以一并填写。目前网站还不能上传转账凭证，请通过 LINE <LineLink /> 发送凭证并附上订单编号。
+            转账完成后，在订单状态页上传转账凭证即可。系统会向银行核验凭证，管理员也会再确认一次款项后才打包。如果无法上传，请通过 LINE <LineLink /> 发送凭证并附上订单编号。
           </>
         ),
       },
@@ -274,8 +283,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     afterIntro: "订单页面会按以下状态推进，您随时可以看到进行到哪一步。",
     statuses: [
       <><B>待付款</B> —— 订单已进入系统，等待您转账</>,
-      <><B>已提交付款</B> —— 您已提交付款信息</>,
-      <><B>等待管理员核实</B> —— 管理员正在核对实际到账金额。提交付款并不等于自动确认，始终需要人工核实。</>,
+      <><B>已提交付款</B> —— 已收到您的转账凭证</>,
+      <><B>等待管理员核实</B> —— 管理员正在核对实际到账金额。提交凭证并不等于自动确认，始终需要人工核实。</>,
       <><B>已批准</B> —— 金额无误，订单通过</>,
       <><B>备货中</B> —— 正在打包</>,
       <><B>已发货</B> —— 已寄出，附带可查询的快递单号</>,
@@ -283,12 +292,14 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "如果需要取消订单，系统也有「已取消」这个状态。",
     cancelBefore: <>只要还没转账，都可以取消。通过 LINE <LineLink /> 联系我们，附上订单编号说明要取消，管理员会为您处理。</>,
-    noRefund: <><E>转账后订单不可取消，也不退款。</E>所以每次转账前，请务必核对商品、颜色、口味和数量。</>,
+    noRefund: <><E>转账后订单不可取消，商品缺货的情况除外。</E>如遇缺货，我们会联系您，您可以换成价格相同的其他商品，或选择退款。所以每次转账前，请务必核对商品、颜色、口味和数量。</>,
     checkTitle: "转账前请核对两件事",
     checks: [
       <><B>只能转账到管理员在 LINE {line} 上发给您的账号</B> —— 若有人发来其他账号，请勿转账。</>,
       <><B>我们唯一的官方 LINE 账号是 {line}</B> —— 每个页面底部的 LINE 按钮都可以核对。</>,
     ],
+    summaryPayWhileOrderingOn: "转账或扫码，然后上传凭证",
+    checkAccountWhileOrderingOn: <><B>只能转账到订单状态页上显示的账户，或管理员在 LINE {line} 上发给您的账户</B> —— 若有人发来其他账号，请勿转账。</>,
     stuckTitle: "遇到问题怎么办",
     stuck1: <>直接通过 LINE <LineLink /> 联系我们，附上订单编号最快。回复您的是管理员，不是机器人。查库存、帮您选型号、跟进订单、发送转账凭证 —— 这些都可以在 LINE 上处理。</>,
     stuck2: <><B>还没想好要哪一款，可以先在网站看。</B>每款的参数、价格、颜色和口味都写清楚了，还有对比页可以把几款并排看。选好再来找我们，会快很多。</>,

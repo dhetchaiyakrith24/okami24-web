@@ -6,7 +6,7 @@ import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
-import { canTransition, type OrderStatus } from "./order-status";
+import type { OrderStatus } from "./order-status";
 
 export interface OrderSummary {
   id: number;
@@ -287,47 +287,17 @@ export async function getOrderDetailForViewer(orderNumber: string, viewToken: st
   return assembleDetail(row);
 }
 
-export type SubmitPaymentResult = { ok: true } | { ok: false; error: string };
-
 /**
- * Customer-facing "I've paid" claim (docs/BUSINESS_SOURCE_OF_TRUTH.md §9: this is a claim, not
- * confirmed payment — moving an order past `awaiting_verification` requires an admin action,
- * which has no UI yet since no admin authentication/tooling exists in this pass; see the final
- * report's follow-up list). Only valid from `pending_payment`, enforced via `canTransition` so a
- * customer can't replay this against an order an admin has already moved forward.
+ * Server-side lookup with NO viewer check — only for code that is already behind its own lock: the staff area
+ * (staff session) and the LINE alert sent after a customer's own slip upload. Never call it from a customer route.
  */
-export async function submitPaymentClaim(
-  orderNumber: string,
-  viewToken: string | null,
-  referenceNote: string
-): Promise<SubmitPaymentResult> {
-  const db = getDb();
-  const row = db.prepare("SELECT * FROM orders WHERE order_number = ?").get(orderNumber) as OrderRow | undefined;
-  if (!row) return { ok: false, error: "Order not found." };
-
-  const session = await getSession();
-  const isOwner = session !== null && session.id === row.customer_id;
-  const hasValidToken = viewToken !== null && viewToken.length > 0 && viewToken === row.view_token;
-  if (!isOwner && !hasValidToken) return { ok: false, error: "Order not found." };
-
-  const currentStatus = row.status as OrderStatus;
-  if (!canTransition(currentStatus, "payment_submitted")) {
-    return { ok: false, error: `Order is already "${currentStatus}" — payment can no longer be submitted.` };
-  }
-
-  const trimmedNote = referenceNote.trim().slice(0, 500);
-  db.transaction(() => {
-    db.prepare(
-      "INSERT INTO order_payment_submissions (order_id, method, reference_note) VALUES (?, 'bank_transfer', ?)"
-    ).run(row.id, trimmedNote || null);
-    db.prepare("UPDATE orders SET status = 'payment_submitted', updated_at = datetime('now') WHERE id = ?").run(row.id);
-    db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'payment_submitted', 'Customer submitted payment reference')").run(
-      row.id
-    );
-  })();
-
-  return { ok: true };
+export function getOrderDetailInternal(orderNumber: string): OrderDetail | null {
+  const row = getDb().prepare("SELECT * FROM orders WHERE order_number = ?").get(orderNumber) as OrderRow | undefined;
+  return row ? assembleDetail(row) : null;
 }
+
+// The customer's "I have paid" claim lives in payment-slip.ts since the cart round 22/10 (slip upload +
+// EasySlip check); the old note-only claim was removed so there is one way to mark an order paid.
 
 export async function listOrdersForCustomer(): Promise<OrderSummary[]> {
   const customer = await requireCustomer();
