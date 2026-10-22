@@ -93,7 +93,7 @@ export function organizationRef() {
  * `src/data/contact.ts`; nothing here is invented, and the LINE handle is deliberately not a URL
  * field of its own because schema.org has no property for it.
  */
-export function organizationJsonLd(contact: { lineUrl: string; youtubeUrl: string }) {
+export function organizationJsonLd(contact: { lineUrl: string; youtubeChannels: readonly { url: string }[] }) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -102,7 +102,7 @@ export function organizationJsonLd(contact: { lineUrl: string; youtubeUrl: strin
     alternateName: ["OKM", "okm pod", "Okami vape", "okami24"],
     url: SITE_URL,
     logo: absoluteUrl("/brand/okami-logo-red.png"),
-    sameAs: [contact.lineUrl, contact.youtubeUrl],
+    sameAs: [contact.lineUrl, ...contact.youtubeChannels.map((ch) => ch.url)],
     areaServed: "TH",
   };
 }

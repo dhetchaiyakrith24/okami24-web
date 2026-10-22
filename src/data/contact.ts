@@ -8,6 +8,11 @@ export const CONTACT = {
   // (oaMessage) takes it; "@okm24" stays the handle the site shows.
   lineBasicId: "@662nqfjy",
   youtubeUrl: "https://www.youtube.com/@OKMYARZ",
+  // Owner 22/10: the footer shows both of these channels (the shop's third, @OKM_24, is not asked for there).
+  youtubeChannels: [
+    { handle: "@OKMYARZ", url: "https://www.youtube.com/@OKMYARZ" },
+    { handle: "@PODSYSTEM-OKAMI-II", url: "https://www.youtube.com/@PODSYSTEM-OKAMI-II" },
+  ],
   // Owner 2026-09-06 (PAGE_COPY answer 8 / 10): the shop's official written channel — shown on
   // the contact page and named as the PDPA contact. BSOT §3.
   email: "okamisalt@gmail.com",
