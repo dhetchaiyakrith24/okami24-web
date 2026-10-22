@@ -228,8 +228,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109) — Max ราคาขาย ฿159 for the parent and its 4 flavours (read 2026-10-17).
   "Eliquid-109": { sellingPrice: 159, lastPriceReview: "2026-10-19" },
+  // Round list19 (19/10): Super Cool Salt Nic (Max ELQ-6) — Max ราคาขาย ฿269 for the parent and its 10 flavours (read 2026-10-17).
+  // owner-confirmed 2026-10-22: admin ICE's LINE 22/10 15.00 "SUPERCOOL SALTNIC ปรับเป็นขวดละ 280.-", forwarded by the owner "แก้เรื่องราคา
+  // ตามแอดมินพี่แจ้งมา" — owner override (was ฿269), every flavour. Max says ฿269 until the admin updates it.
+  "SUPER-COOL-SALTNIC": { sellingPrice: 280, lastPriceReview: "2026-10-22" },
   // Round list19 (19/10): prepared, held until a card photo exists (IMAGE_SPEC §4) — Max ราคาขาย read 2026-10-17:
-  "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
   "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
   // maxlist (20/10): RELX Essential 2 (Max-only "Pod-157") — Max ราคาขาย ฿490 for the parent and its 4 colours (read 2026-10-20).
