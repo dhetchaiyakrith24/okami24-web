@@ -462,7 +462,7 @@ export const en: Dictionary = {
     itemsTitle: "Items",
     shipToTitle: "Shipping to",
     paymentTitle: "Payment",
-    paymentPendingNote: "Bank transfer and QR details appear on your order status page right after you place the order. No card payment, no COD. Transfers cannot be cancelled.",
+    paymentPendingNote: "Bank transfer and QR details appear on your order status page right after you place the order. No card payment, no COD. Transfers can’t be cancelled unless an item is out of stock.",
     contactLineCta: "Ask on LINE",
     placeOrderCta: "Place order",
     changeAddressCta: "Change address",

@@ -455,7 +455,7 @@ export const zh: Dictionary = {
     itemsTitle: "商品",
     shipToTitle: "收货地址",
     paymentTitle: "付款方式",
-    paymentPendingNote: "银行转账和二维码信息将在下单后立即显示在订单状态页。不支持刷卡或货到付款，转账后不可取消。",
+    paymentPendingNote: "银行转账和二维码信息将在下单后立即显示在订单状态页。不支持刷卡或货到付款，转账后不可取消，商品缺货的情况除外。",
     contactLineCta: "LINE 咨询",
     placeOrderCta: "提交订单",
     changeAddressCta: "更改地址",
