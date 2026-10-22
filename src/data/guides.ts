@@ -783,7 +783,8 @@ const allGuides: Guide[] = [
         answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Mango Passion · Strawberry Watermelon",
       },
       {
-        question: "Marbo 10K ใช้ยังไง ปรับโหมดยังไง",
+        // THAI_STYLE line 63 exception 2 (owner 23/10): on this guide "มาโบ" may stand in FAQ questions as people type them.
+        question: "มาโบ 10K ใช้ยังไง ปรับโหมดยังไง",
         answer: "ที่ก้นเครื่อง M Bar 10K มีปุ่ม กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco · Soft · Boost จอเล็ก ๆ บนเครื่องบอกว่าตอนนี้อยู่โหมดไหน และไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25%",
       },
     ],
@@ -3068,7 +3069,8 @@ const allGuides: Guide[] = [
     // "พอตใช้ยังไง" (Google autocomplete + related searches 23/10, _incoming/keys-2310/research-2310.md). Maker facts, opened 23/10 (researcher):
     // Vaporesso https://store.vaporesso.com/blogs/news/how-to-vape-correctly-stop-coughing (slow gentle puff · MTL for beginners · short puffs with
     // pauses · 3–12 mg freebase / 20–35 mg salt · fresh coil soaks 5–10 min) · SMOK https://www.smoktech.com/faq/925 (3 min after filling · first
-    // puffs a bit harder) · RELX https://relxnow.com/pages/new-to-relx (draw-activated, some models have a button) · Innokin
+    // puffs a bit harder) · RELX https://relxnow.com/pages/new-to-relx (about pod systems in general, re-read 23/10 in a real browser: "Automatic operation
+    // is typical in these systems, so all you have to do is suck in to pull in vapour, but some may offer manual use buttons") · Innokin
     // https://www.innokin.com/blog/sore-throat-from-vaping (nicotine too high · salt smoother · high PG scratchy · coil's wattage range · MTL/DTL
     // device mismatch, airflow). No maker gives a puff length in seconds, so none is written. No shop clip on this topic was found (23/10).
     // Wording: thai-copy 23/10.
@@ -3093,7 +3095,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "มือใหม่ส่วนใหญ่เริ่มจากการสูบแบบ MTL คือดูดเข้าปากก่อน แล้วค่อยสูดลงปอด Vaporesso ให้เหตุผลว่าวิธีนี้รู้สึกเป็นธรรมชาติ และไม่หนักเกินไปสำหรับคนที่เพิ่งเริ่ม ความต่างของการสูบสองแบบอ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
           "ช่วงแรกให้ดูดสั้น ๆ ก่อน และเว้นจังหวะพักระหว่างพัฟ ไม่ต้องรีบดูดให้ได้ควันเยอะตั้งแต่พัฟแรก ค่อย ๆ ปรับให้คุ้นไปทีละพัฟก็พอ",
-          "พอตหลายรุ่นทำงานเองเมื่อดูด ไม่ต้องกดปุ่ม RELX อธิบายว่าหัวพอตของ RELX แค่ดูดก็ได้ควันแล้ว แต่บางรุ่นก็มีปุ่มให้กดด้วย ถ้าดูดแล้วไม่มีอะไรออกมา ไล่เช็คต่อได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+          "พอตส่วนใหญ่ทำงานเองเมื่อดูด ไม่ต้องกดปุ่ม RELX อธิบายว่าพอตแบบนี้แค่ดูดก็ได้ควันแล้ว แต่บางรุ่นก็มีปุ่มให้กดด้วย ถ้าดูดแล้วไม่มีอะไรออกมา ไล่เช็คต่อได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
       },
       {
