@@ -8,7 +8,7 @@ import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/o
 import { getStaffOrder } from "@/lib/staff/orders";
 import { staffOrderAction } from "@/app/staff/actions";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
-import { formatBaht, formatDateTime, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
@@ -183,7 +183,7 @@ export default async function StaffOrderPage({
               </button>
               {order.slip && (
                 <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ยกเลิกได้เฉพาะกรณีของหมด แล้วคืนเงินหรือเปลี่ยนสินค้าราคาเท่ากันตามที่ลูกค้าเลือก (เจ้าของ 22/10)
+                  ลูกค้าโอนแล้ว: ยกเลิกได้เฉพาะกรณีของหมด แล้วคืนเงินหรือเปลี่ยนสินค้าราคาเท่ากันตามที่ลูกค้าเลือก
                 </p>
               )}
             </form>
@@ -197,7 +197,7 @@ export default async function StaffOrderPage({
           {order.statusHistory.map((h, i) => (
             <li key={i}>
               {formatDateTime(h.createdAt)} · {orderStatusLabel(h.status as Parameters<typeof orderStatusLabel>[0], "th")}
-              {h.note ? ` — ${h.note}` : ""}
+              {h.note ? ` — ${historyNoteTh(h.note)}` : ""}
             </li>
           ))}
         </ul>

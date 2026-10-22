@@ -20,3 +20,26 @@ export const REASON_LABEL: Record<string, string> = {
   "amount-mismatch": "ยอดในสลิปไม่ตรงยอดออเดอร์",
   "seen-before": "สลิปนี้เคยตรวจแล้ว",
 };
+
+const ACTION_TH: Record<string, string> = {
+  confirm: "ยืนยันยอดเงิน",
+  "to-warehouse": "ส่งรายการให้คลัง",
+  ship: "ส่งของ",
+  complete: "ลูกค้าได้รับของ",
+  cancel: "ยกเลิก",
+};
+
+/** The order history keeps its notes in English (written by orders.ts / payment-slip.ts / staff/orders.ts); staff read
+ *  them in Thai. Unknown notes are shown as stored. Display only — nothing stored changes. */
+export function historyNoteTh(note: string): string {
+  if (note === "Order created") return "ลูกค้าสั่งซื้อ";
+  const slip = /^Slip attached — (?:EasySlip: (pass|check)(?: \((.+)\))?|not checked \(EasySlip unavailable\))$/.exec(note);
+  if (slip) {
+    if (slip[1] === "pass") return "ลูกค้าแนบสลิป — ✅ ผ่าน";
+    if (slip[1] === "check") return `ลูกค้าแนบสลิป — ⚠️ ต้องดูเอง (${(slip[2] ?? "").split(", ").map((r) => REASON_LABEL[r] ?? r).join(" · ")})`;
+    return "ลูกค้าแนบสลิป — ⏳ ระบบตรวจไม่ได้";
+  }
+  const staff = /^Staff: ([a-z-]+)(.*)$/.exec(note);
+  if (staff) return `ทีมงาน: ${ACTION_TH[staff[1]] ?? staff[1]}${staff[2].replace(" — tracking ", " — เลขพัสดุ ")}`;
+  return note;
+}
