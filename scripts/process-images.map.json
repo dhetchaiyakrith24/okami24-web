@@ -11885,5 +11885,17 @@
    "reference": "pod789.com SKE Crystal B20000 Mango poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Mango.jpg, 600 px, no third-party watermark) - _incoming/ske/src/mango.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
   }
+ },
+ {
+  "source": "_incoming/pepo/final/mint.png",
+  "slug": "eliquid-72",
+  "role": "variant",
+  "id": "elq-5-2",
+  "note": "image sweep 22/10 - Pepo Mint (Max ELQ-5-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the Mint bottle from the shop poster (image 1) with the live Pepo Peach photo as the framing/light reference (image 2) so the set matches; take A of 2 (r/mint-A.png); cut _incoming/pepo/bcut.js T=40",
+   "reference": "ihavevape.net Pepo Salt Nic Mint poster (https://ihavevape.net/product/pepo-salt-nic/ - wp-content/uploads/2022/10/salt7.jpg, 600 px, bottle + box, no shop watermark) - _incoming/pepo/src/salt7.jpg (bottle crop mint-crop.png)",
+   "fidelitySheet": "_incoming/pepo/ab.jpg (both takes) + dark.jpg (cut on the site background beside Peach); label art, PEPO wordmark and mascot checked by eye against the poster; the bottle's MINT word is hidden on the poster - printed in the box's MINT lettering like PEACH on the Peach bottle"
+  }
  }
 ]
