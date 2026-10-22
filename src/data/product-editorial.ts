@@ -78,7 +78,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
           sections: [
             {
               heading: "ทุกกลิ่นตัวเครื่องสีดำ แล้วจะรู้ได้ยังไงว่าเป็นกลิ่นไหน",
-              paragraphs: ["M Bar 9K ทุกกลิ่นใช้ตัวเครื่องสีดำแบบเดียวกัน สิ่งที่บอกว่าเป็นกลิ่นไหนคือสีของตัวอักษร BAR9K และโลโก้ M ที่พิมพ์อยู่บนตัวเครื่อง แต่ละกลิ่นพิมพ์ด้วยสีของตัวเอง"],
+              paragraphs: ["M Bar 9K ทุกกลิ่นใช้ตัวเครื่องสีดำแบบเดียวกัน ดูกลิ่นได้จากสีของตัวอักษร BAR9K กับโลโก้ M บนตัวเครื่อง แต่ละกลิ่นพิมพ์ด้วยสีของตัวเอง"],
               image: { kind: "devices", ids: MBAR9K_DEVICES, caption: CAPTION_DEVICES },
             },
             {
@@ -99,13 +99,13 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             { label: "สายเย็น", ids: MBAR9K_GROUPS.cool },
             { label: "สายขนมและเครื่องดื่ม", ids: MBAR9K_GROUPS.sweet },
           ],
-          note: "การแบ่งสายนี้ร้านจัดเองจากชื่อกลิ่น ไม่ได้มาจาก SALTHUB",
+          note: "ร้านแบ่งสายเองจากชื่อกลิ่น ไม่ได้มาจาก SALTHUB",
           more: "ดูรูปทุกกลิ่น",
         },
         compare: {
           title: "M Bar 9K กับ M Bar 10K ต่างกันตรงไหน",
           rows: [
-            { key: "puffs", label: "พัฟสูงสุด" },
+            { key: "puffs", label: "พัฟสูงสุด", numberOnly: true },
             { key: "flavours", label: "จำนวนกลิ่น" },
             { key: "modes", label: "โหมดวัตต์" },
             { key: "indicator", label: "ไฟบอกสถานะ" },
@@ -172,7 +172,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
         compare: {
           title: "M Bar 9K vs M Bar 10K",
           rows: [
-            { key: "puffs", label: "Max puffs" },
+            { key: "puffs", label: "Max puffs", numberOnly: true },
             { key: "flavours", label: "Flavours" },
             { key: "modes", label: "Power modes" },
             { key: "indicator", label: "Status light" },
@@ -239,7 +239,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
         compare: {
           title: "M Bar 9K 与 M Bar 10K 有何不同",
           rows: [
-            { key: "puffs", label: "最高口数" },
+            { key: "puffs", label: "最高口数", numberOnly: true },
             { key: "flavours", label: "口味数量" },
             { key: "modes", label: "功率模式" },
             { key: "indicator", label: "状态灯" },

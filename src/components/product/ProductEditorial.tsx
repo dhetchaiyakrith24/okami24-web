@@ -55,14 +55,14 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
   const items = pick(image.ids);
   return (
     <figure className="my-6 rounded-2xl border border-surface-border-soft bg-surface-1 px-4 py-6 text-center">
-      <div className="flex items-end justify-center gap-3 sm:gap-5">
+      <div className={cn("justify-center", image.kind === "packs" ? "grid grid-cols-2 justify-items-center gap-4 sm:flex sm:items-end sm:gap-6" : "flex items-end gap-3 sm:gap-5")}>
         {items.map((f) => {
           const src = image.kind === "packs" ? f.boxImage : f.image;
           if (!src) return null;
           return (
-            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-36 w-16 sm:h-44 sm:w-20" : "h-52 w-20 sm:h-72 sm:w-28")}>
+            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-64 w-28 sm:h-72 sm:w-32" : "h-52 w-20 sm:h-72 sm:w-28")}>
               {/* the device renders carry wide transparent margins: cover + scale crops them so the device fills its box */}
-              <Image src={src.src} alt={src.alt} fill loading="eager" sizes="160px" className={image.kind === "packs" ? "object-contain" : "scale-125 object-cover"} />
+              <Image src={src.src} alt={src.alt} fill loading="eager" sizes="(min-width: 640px) 128px, 112px" className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
             </div>
           );
         })}
@@ -151,87 +151,93 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                 </div>
               ))}
             </div>
-
-            <div id="flavours" className="mt-14 scroll-mt-20 border-t border-surface-border-soft pt-12">
-              <h2 className="font-display text-3xl leading-tight font-semibold tracking-tight text-foreground">{t(c.flavours.title)}</h2>
-              {c.flavours.groups.map((g) => {
-                const items = g.ids.map((id) => flavours.find((f) => f.id === id)).filter((f) => f !== undefined);
-                if (items.length === 0) return null;
-                return (
-                  <div key={g.label} className="mt-6">
-                    <h3 className="text-sm text-foreground-muted">
-                      {t(g.label)} <span className="text-foreground-dim">· {items.length}</span>
-                    </h3>
-                    <ul className="mt-3 flex flex-wrap gap-2">
-                      {items.map((f) => (
-                        <li key={f.id}>
-                          <a
-                            href={`#option-${f.id}`}
-                            onClick={(e) => {
-                              // the same chip twice = no hashchange; ask the hero again (ProductMoreDetails does the same)
-                              if (window.location.hash === `#option-${f.id}`) {
-                                e.preventDefault();
-                                window.dispatchEvent(new HashChangeEvent("hashchange"));
-                              }
-                            }}
-                            className="inline-flex items-center gap-2 rounded-lg border border-surface-border px-3 py-1.5 text-sm text-foreground transition-colors hover:border-ember"
-                          >
-                            <span className="h-2 w-2 rounded-full" style={{ backgroundColor: f.swatchHex }} aria-hidden />
-                            {f.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-              <p className="mt-4 text-xs text-foreground-dim">{t(c.flavours.note)}</p>
-              <details className="group mt-5">
-                <summary className="inline-flex cursor-pointer list-none items-center gap-1 border-b border-ember pb-0.5 text-sm text-foreground [&::-webkit-details-marker]:hidden">
-                  {t(c.flavours.more)} <span className="transition-transform group-open:rotate-180" aria-hidden>↓</span>
-                </summary>
-                <ul className="mt-5 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8">
-                  {flavours.map((f) =>
-                    f.image ? (
-                      <li key={f.id} className="overflow-hidden rounded-lg bg-surface-1 text-center">
-                        <div className="relative aspect-[3/4]">
-                          <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 9vw, 22vw" className="scale-110 object-cover" />
-                        </div>
-                        <span className="block px-1 pb-1.5 text-[10px] leading-tight text-foreground-muted">{f.name}</span>
-                      </li>
-                    ) : null,
-                  )}
-                </ul>
-              </details>
-            </div>
-
-            {sibling && (
-              <div className="mt-14 border-t border-surface-border-soft pt-12">
-                <h2 className="font-display text-3xl leading-tight font-semibold tracking-tight text-foreground">{t(c.compare.title)}</h2>
-                <table className="mt-5 w-full border-collapse text-sm">
-                  <thead>
-                    <tr className="border-b border-surface-border">
-                      <th className="w-[34%] py-3" />
-                      <th className="py-3 text-left font-display text-lg font-semibold text-foreground">{product.name}</th>
-                      <th className="py-3 text-left font-display text-lg font-medium text-foreground-muted">{sibling.name}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {c.compare.rows.map((r) => (
-                      <tr key={r.key} className="border-b border-surface-border-soft">
-                        <th scope="row" className="py-3 pr-2 text-left font-normal text-foreground-muted">{t(r.label)}</th>
-                        <td className="py-3 pr-2 font-medium text-foreground">{t(vsCell(product, rows, copyTh, r.key, r.numberOnly))}</td>
-                        <td className="py-3 text-foreground-muted">{t(vsCell(sibling, sibRows, siblingCopyTh, r.key, r.numberOnly))}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <Link href={`/products/${sibling.slug}`} className="mt-4 inline-block border-b border-ember pb-0.5 text-sm text-foreground">
-                  {t(c.compare.link)}
-                </Link>
-              </div>
-            )}
           </div>
+        </div>
+
+        <div className="mt-16 grid gap-14 border-t border-surface-border-soft pt-12 lg:grid-cols-12 lg:gap-16">
+          <div id="flavours" className="scroll-mt-20 lg:col-span-7">
+            <h2 className="font-display text-3xl leading-tight font-semibold tracking-tight text-foreground">{t(c.flavours.title)}</h2>
+            {c.flavours.groups.map((g) => {
+              const items = g.ids.map((id) => flavours.find((f) => f.id === id)).filter((f) => f !== undefined);
+              if (items.length === 0) return null;
+              return (
+                <div key={g.label} className="mt-6">
+                  <h3 className="text-sm text-foreground-muted">
+                    {t(g.label)} <span className="text-foreground-dim">· {items.length}</span>
+                  </h3>
+                  <ul className="mt-2 flex flex-wrap gap-x-1 text-[0.9375rem] leading-8 text-foreground">
+                    {items.map((f, fi) => (
+                      <li key={f.id} className="inline-flex items-center">
+                        {fi > 0 && (
+                          <span className="mr-1 text-foreground-dim" aria-hidden>
+                            ·
+                          </span>
+                        )}
+                        <a
+                          href={`#option-${f.id}`}
+                          onClick={(e) => {
+                            // the same chip twice = no hashchange; ask the hero again (ProductMoreDetails does the same)
+                            if (window.location.hash === `#option-${f.id}`) {
+                              e.preventDefault();
+                              window.dispatchEvent(new HashChangeEvent("hashchange"));
+                            }
+                          }}
+                          className="whitespace-nowrap underline-offset-4 transition-colors hover:text-ember hover:underline"
+                        >
+                          {f.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+            <p className="mt-4 text-xs text-foreground-dim">{t(c.flavours.note)}</p>
+            <details className="group mt-5">
+              <summary className="inline-flex cursor-pointer list-none items-center gap-1 border-b border-ember pb-0.5 text-sm text-foreground [&::-webkit-details-marker]:hidden">
+                {t(c.flavours.more)} <span className="transition-transform group-open:rotate-180" aria-hidden>↓</span>
+              </summary>
+              <ul className="mt-5 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8">
+                {flavours.map((f) =>
+                  f.image ? (
+                    <li key={f.id} className="overflow-hidden rounded-lg bg-surface-1 text-center">
+                      <div className="relative aspect-[3/4]">
+                        <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 9vw, 22vw" className="scale-110 object-cover" />
+                      </div>
+                      <span className="block px-1 pb-1.5 text-[10px] leading-tight text-foreground-muted">{f.name}</span>
+                    </li>
+                  ) : null,
+                )}
+              </ul>
+            </details>
+          </div>
+
+          {sibling && (
+            <div className="lg:col-span-5">
+              <h2 className="font-display text-3xl leading-tight font-semibold tracking-tight text-foreground">{t(c.compare.title)}</h2>
+              <table className="mt-5 w-full border-collapse text-sm">
+                <thead>
+                  <tr className="border-b border-surface-border">
+                    <th className="w-[34%] py-3" />
+                    <th className="py-3 text-left font-display text-lg font-semibold text-foreground">{product.name}</th>
+                    <th className="py-3 text-left font-display text-lg font-medium text-foreground-muted">{sibling.name}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {c.compare.rows.map((r) => (
+                    <tr key={r.key} className="border-b border-surface-border-soft">
+                      <th scope="row" className="py-3 pr-2 text-left font-normal text-foreground-muted">{t(r.label)}</th>
+                      <td className="py-3 pr-2 font-medium text-foreground">{t(vsCell(product, rows, copyTh, r.key, r.numberOnly))}</td>
+                      <td className="py-3 text-foreground-muted">{t(vsCell(sibling, sibRows, siblingCopyTh, r.key, r.numberOnly))}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <Link href={`/products/${sibling.slug}`} className="mt-4 inline-block border-b border-ember pb-0.5 text-sm text-foreground">
+                {t(c.compare.link)}
+              </Link>
+            </div>
+          )}
         </div>
       </Container>
     </section>
