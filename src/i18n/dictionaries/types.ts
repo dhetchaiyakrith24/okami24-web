@@ -584,9 +584,20 @@ export interface Dictionary {
     paymentNoRefundWarning: string;
     paymentCopyCta: string;
     paymentCopiedLabel: string;
-    referenceNoteLabel: string;
-    submitPaymentCta: string;
     paymentSubmittedNote: string;
+    slipUploadTitle: string;
+    slipUploadPick: string;
+    slipUploadChange: string;
+    slipUploadHint: string;
+    slipPreviewAlt: string;
+    slipUploadCta: string;
+    slipUploadPending: string;
+    slipErrorUnreadable: string;
+    slipErrorPending: string;
+    slipErrorTooLarge: string;
+    slipErrorUsed: string;
+    slipErrorBusy: string;
+    slipErrorGeneric: string;
     notFoundMessage: string;
   };
   languageSwitcher: {

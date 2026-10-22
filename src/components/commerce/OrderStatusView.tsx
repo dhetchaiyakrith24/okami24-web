@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { submitPaymentAction } from "@/app/checkout/actions";
+import { SlipUploadForm } from "@/components/commerce/SlipUploadForm";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { CONTACT } from "@/data/contact";
 import type { OrderDetail } from "@/lib/commerce/orders";
@@ -154,22 +153,7 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                 <p className="text-sm font-medium text-ember">{dict.orderStatus.paymentNoRefundWarning}</p>
               </div>
             )}
-            <form action={submitPaymentAction} className="flex flex-col gap-2">
-              <input type="hidden" name="orderNumber" value={order.orderNumber} />
-              {token && <input type="hidden" name="token" value={token} />}
-              <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor="note">
-                {dict.orderStatus.referenceNoteLabel}
-                <textarea
-                  id="note"
-                  name="note"
-                  rows={2}
-                  className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
-                />
-              </label>
-              <Button type="submit" className="w-full justify-center">
-                {dict.orderStatus.submitPaymentCta}
-              </Button>
-            </form>
+            <SlipUploadForm orderNumber={order.orderNumber} token={token} />
           </div>
         )}
 
