@@ -10,12 +10,25 @@ Owner scope 22/10 (via Friday): "สินค้าที่ Max มีเรา
 
 | Max code | Max name | ราคาขาย | Kids (in stock) | State / next step |
 |---|---|---|---|---|
-| Disposable-45 | SUP Zero 22K | 329 | 15 (15) | **new in Max 22/10** · new page, 15 flavours (10 + 5 "5%") · maker research first |
-| Pod-180 | หัว dude 3 ml. | 129 | 10 (10) | **Max re-used the code**: the site's `pod-180` = nexBar CLEAR 18K from the old seed (see d). Identity of "dude" pod (which device) needs research first |
-| Pod-137 | Relx เลโก้ 20000 คำ - เครื่องเปล่า (pods ฿349) | 199 | 31 (0) | still blocked: identity — Max renamed it 22/10 ("เลโก้" = Lego), still no maker product that matches 31 flavours; all sold out |
+| Disposable-45 | SUP Zero 22K | 329 | 15 (15) | **owner-declined 22/10** ("2 ไม่ลง") — not listed. Research: brand "SUP ZERO", one Thai shop only (zeedcupvp.com, tier 2), no maker site |
+| Pod-180 | หัว dude 3 ml. | 129 | 10 (10) | **owner-declined 22/10** ("2 ไม่ลง") — not listed. Identity unknown (a DUDE brand sells 10K/16K disposables, no 3 ml refill pod found). Max re-used the code: the site's `pod-180` = nexBar CLEAR 18K from the old seed (see d) |
+| Pod-137 | Relx เลโก้ 20000 คำ - เครื่องเปล่า (pods ฿349) | 199 | 31 (0) | owner 22/10 "หาข้อมูลเองเลย" → research: Thai shops (7pods.shop, pod9k.com, ezy-pods.net, siam-pod.com, tier 2) sell it as **RELX Creator 20K pod / "RELX Lego 20000"** for the RELX Creator battery, ฿349, 3%/5%; no relxnow.com page (tier 1 silent). Verdict LIKELY — next: a Max-only page for the pods if Friday agrees; all 31 sold out in Max |
 
 Not pages on purpose: Set-Coil-1-1 / Set-Coil-1-14 / Set-Coil-92-1 (box-of-5 packs of live coils — unit of sale is the cart's job),
 ELIQUID-1-1 (฿807 bundle), `test`, `Close`. Coil-55-1 = live as `coil-55`.
+
+## Live after step 2 (22/10)
+
+| PR | What | State |
+|---|---|---|
+| #722 | this table | merged |
+| #723 | Esko Bar Switch pod + kit: 4 options linked (b1) | merged, live 200 |
+| #724 | VOOPOO Coil Vinci 4 → 16 coils | merged, live 200 |
+| #725 | Muro Connector 20K 20 → 33 flavours | merged, live 200 |
+| #729 | SALTHUB: Zero Cartridge 22 → 33 (50mg), M Bar 9K 22 → 24, M Switch Kit Grape Aloe linked | see PR |
+| next | RELX Smash GO 10 → 27 · MOOOD Monster 21 → 23 · "กลิ่น"/"รส" kept with their number (owner 22/10 "1 ทำ") | — |
+
+Identity checks (b3) after research 22/10 (no change made): Zero Pro Copper / Champagne — salthub.com shows 8 colours, neither name (maybe shop names for Golden Fade / Pink, unproven) · Prime "Red Brown" — not an IQOS name (Garnet Red is) · Infinity 2 Plus "Dark Asteroid" — not on relxnow.com (Blue Bay is) · Joiway "Funta Green" — shops print Funta Grape (owner chose Funta Grape 06/09) · Lambda i8 Silver — no maker source · TEREA Black Purple — official on iqos.com/id → can be added next · ILUMA i ONE Pebble Grey / Azure Blue — these are **ILUMA ONE** (older line) colours, not i ONE → not added.
 
 ## (b) Max children missing from the product's options or not linked in sku-map — 27 products checked, gaps in 17
 
