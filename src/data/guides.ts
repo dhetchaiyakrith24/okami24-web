@@ -698,7 +698,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "Marbo กลิ่นไหนดี ไม่มีคำตอบเดียว อยู่ที่ว่าชอบแนวไหน เริ่มจากเลือกสายก่อน เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วค่อยดูว่ารุ่นที่ใช้อยู่มีกลิ่นไหนในสายนั้น ที่ร้านเองก็มีหลายกลิ่นที่ลูกค้าชอบ",
           "กลุ่มในบทความนี้แบ่งจากคำในชื่อกลิ่น ชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อผลไม้อื่น ๆ อยู่สายผลไม้ ที่เหลือเป็นแนวอื่น",
-          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K](/products/m-bar-9k) มี 22 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
+          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K](/products/m-bar-9k) มี 24 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
           "ถ้าใช้ M Switch กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ใช้ตัวเดิม อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว",
         ],
       },
@@ -707,7 +707,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "กลิ่นเย็นเป็นสายที่ลูกค้าที่ร้านถามถึงบ่อย สายนี้รวมทุกชื่อที่มีคำสื่อถึงความเย็น แยกตามรุ่นไว้ข้างล่าง",
           "ชื่อที่มีทั้งผลไม้และคำที่สื่อถึงความเย็น เช่น Watermelon Mint เราจัดไว้สายนี้ ส่วนคนที่มองหากลิ่นเมนทอล มี Menthol Freeze ใน M Bar 9K และ Menthol Blast ใน M Bar 10K",
-          "M Bar 9K (3 กลิ่น): Blue Ice · Doublemint · Menthol Freeze",
+          "M Bar 9K (4 กลิ่น): Blue Ice · Blueberry Mint · Doublemint · Menthol Freeze",
           "M Bar 10K (4 กลิ่น): Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint",
           "M Switch Pod (2 กลิ่น): Blue Ice · Doublemint",
         ],
@@ -726,7 +726,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในกลุ่มนี้ รวมถึงชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Watermelon Bubblegum กับ Strawberry Milkshake ใครมองหากลิ่นแตงโม มี Watermelon ครบทั้งสามรุ่น ส่วนกลิ่นพีช มี Peach ใน M Bar 9K และ Peach Strawberry ที่คนค้นว่าพีชสตอ ทั้งใน M Bar 9K และ M Switch Pod",
           "ชื่อไทยที่คนค้นบ่อยในสายนี้ พิ้งเบอร์รี่คือ Pink Berry มีครบทั้งสามรุ่น แอปเปิ้ลอโลคือ Apple Aloe มีใน M Bar 9K กับ M Switch Pod ส่วนกลิ่นมะม่วงมีใน M Switch Pod ชื่อ Mango Passion",
-          "M Bar 9K (11 กลิ่น): Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Milkshake · Watermelon · Watermelon Bubblegum",
+          "M Bar 9K (12 กลิ่น): Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Kiwi · Strawberry Milkshake · Watermelon · Watermelon Bubblegum",
           "M Bar 10K (4 กลิ่น): All Berry · Pink Berry · Strawberry Kiwi · Watermelon",
           "M Switch Pod (10 กลิ่น): Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon · Watermelon · Watermelon Bubblegum",
         ],
@@ -2194,7 +2194,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
         paragraphs: [
-          "นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา หัว Zero Cartridge มีให้เลือก 22 กลิ่น หัวพอตของ Esko Bar Switch 20K · Muro Connector 20K และ nexPOD 15K มีรุ่นละ 20 กลิ่น M Switch Pod มี 17 กลิ่น หัวของ KS Quikpro มี 16 กลิ่น และ Nexswitch 16K Pod มี 10 กลิ่น",
+          "นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา หัว Zero Cartridge มีให้เลือก 33 กลิ่น หัวพอตของ Esko Bar Switch 20K · Muro Connector 20K และ nexPOD 15K มีรุ่นละ 20 กลิ่น M Switch Pod มี 17 กลิ่น หัวของ KS Quikpro มี 16 กลิ่น และ Nexswitch 16K Pod มี 10 กลิ่น",
           "กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้ ส่วนกลิ่นไหนของ M Switch Pod เป็นสายเย็นหรือสายองุ่น ร้านแยกไว้ให้ที่[Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)",
         ],
       },
@@ -2305,7 +2305,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
         paragraphs: [
-          "นับจากรายชื่อกลิ่นบนหน้าสินค้า WOTOFO nexBAR 18K มี 31 กลิ่น Joiway F3 มี 30 กลิ่น INFY 20K มี 24 กลิ่น M Bar 9K มี 22 กลิ่น MOOOD Monster 14K Puffs มี 19 กลิ่น และ nexBar CLEAR 18K มี 15 กลิ่น",
+          "นับจากรายชื่อกลิ่นบนหน้าสินค้า WOTOFO nexBAR 18K มี 31 กลิ่น Joiway F3 มี 30 กลิ่น INFY 20K มี 24 กลิ่น M Bar 9K มี 24 กลิ่น MOOOD Monster 14K Puffs มี 19 กลิ่น และ nexBar CLEAR 18K มี 15 กลิ่น",
           "รุ่นที่มี 12 กลิ่น ได้แก่ M Bar 10K และ Muro SC 8000 Puffs รุ่นที่มี 10 กลิ่น ได้แก่ TFIT M Power 20K และ RELX Smash Go 12K ส่วน Joiway F4 มี 16 คู่กลิ่นตามหัวข้อข้างบน",
           "รายชื่อบนหน้าสินค้ารวมกลิ่นที่ร้านยังไม่มีของไว้ด้วย กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
         ],
@@ -2331,7 +2331,7 @@ const allGuides: Guide[] = [
         heading: "Marbo 9K กับ 10K ต่างกันยังไง",
         paragraphs: [
           "M Bar 9K กับ M Bar 10K เป็นของ SALTHUB ตระกูลเดียวกันที่หลายร้านในไทยเรียกว่า Marbo ทั้งสองรุ่นแบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และปรับช่องลมได้เหมือนกัน",
-          "จุดที่ต่างคือ M Bar 10K ระบุสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมด Eco · Soft · Boost และมีไฟ LED บอกแบตกับโหมดที่ใช้อยู่ ส่วน M Bar 9K ระบุไว้สูงสุด 9,000 พัฟ และมีกลิ่นให้เลือกมากกว่า นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา M Bar 9K มี 22 กลิ่น ส่วน M Bar 10K มี 12 กลิ่น",
+          "จุดที่ต่างคือ M Bar 10K ระบุสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมด Eco · Soft · Boost และมีไฟ LED บอกแบตกับโหมดที่ใช้อยู่ ส่วน M Bar 9K ระบุไว้สูงสุด 9,000 พัฟ และมีกลิ่นให้เลือกมากกว่า นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา M Bar 9K มี 24 กลิ่น ส่วน M Bar 10K มี 12 กลิ่น",
           "ถ้าอยากสลับโหมดได้และมีไฟไว้ดูแบต ลองดู M Bar 10K ถ้าอยากได้กลิ่นให้เลือกเยอะกว่า ลองดู M Bar 9K ส่วนกลิ่นไหนอยู่สายไหน ร้านแยกไว้ให้ที่ [Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)",
         ],
       },
@@ -2361,7 +2361,7 @@ const allGuides: Guide[] = [
     faq: [
       { question: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี", answer: "ขึ้นอยู่กับว่าอยากได้อะไรจากเครื่อง บนเว็บเรามี SALTHUB · RELX · JOIWAY · TFIT · WOTOFO · MOOOD และ INFY ถ้าอยากได้พัฟเยอะ ดู TFIT M Power 20K หรือ Joiway F4 ถ้าอยากมีจอ ดู WOTOFO nexBAR 18K หรือ Joiway F4 ถ้าอยากปรับแรงสูบได้ ดู M Bar 10K และถ้าอยากได้กลิ่นให้เลือกเยอะ ดู WOTOFO nexBAR 18K หรือ Joiway F3" },
       { question: "พอตใช้แล้วทิ้ง 20K มีรุ่นไหนบ้าง", answer: "บนเว็บเรามี TFIT M Power 20K ที่ TFIT ระบุไว้สูงสุด 20,000 พัฟ และ Joiway F4 ที่ JOIWAY ระบุไว้ 20,000 พัฟ แบ่งเป็นฝั่งละ 10,000 พัฟ ส่วน INFY 20K ร้านยืนยันความจุไว้ 20mL" },
-      { question: "Marbo 9K กับ 10K ต่างกันยังไง", answer: "ทั้งสองรุ่นเป็นของ SALTHUB แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และปรับช่องลมได้ M Bar 10K ระบุไว้สูงสุด 10,000 พัฟ มี 3 โหมด Eco · Soft · Boost และมีไฟบอกแบต ส่วน M Bar 9K ระบุไว้สูงสุด 9,000 พัฟ และมีกลิ่นให้เลือก 22 กลิ่น มากกว่า M Bar 10K ที่มี 12 กลิ่น" },
+      { question: "Marbo 9K กับ 10K ต่างกันยังไง", answer: "ทั้งสองรุ่นเป็นของ SALTHUB แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และปรับช่องลมได้ M Bar 10K ระบุไว้สูงสุด 10,000 พัฟ มี 3 โหมด Eco · Soft · Boost และมีไฟบอกแบต ส่วน M Bar 9K ระบุไว้สูงสุด 9,000 พัฟ และมีกลิ่นให้เลือก 24 กลิ่น มากกว่า M Bar 10K ที่มี 12 กลิ่น" },
       { question: "INFY กับ Esko Bar ต่างกันยังไง", answer: "INFY 20K เป็นพอตใช้แล้วทิ้ง หมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL และช่องลมที่ปรับได้ ส่วน Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัวพอต Esko Bar ระบุไว้หัวละสูงสุด 20,000 พัฟ และตัวเครื่องแบต 850mAh" },
       { question: "พอตใช้แล้วทิ้งรุ่นไหนมีจอ", answer: "WOTOFO nexBAR 18K มีจอ LED ที่บอกแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ Joiway F4 ก็มีจอ LED เช่นกัน ส่วนถ้าแค่อยากรู้ระดับแบต M Bar 10K มีไฟ LED บอกแบตทีละ 25%" },
       { question: "พอตใช้แล้วทิ้งสองกลิ่นในเครื่องเดียว มีรุ่นไหน", answer: "Joiway F4 ของ JOIWAY มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น บนหน้าสินค้าของเว็บเรามีให้ดู 16 คู่กลิ่น" },

@@ -254,6 +254,9 @@ export const salthubProducts: Product[] = [
       { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#7dc7ea", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-menthol-freeze-v2.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-menthol-freeze.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — pack, from SALTHUB's flavour chart" } },
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#6d649d", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-kyoho-grape.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — pack, from SALTHUB's flavour chart" } },
       { id: "zapple", name: "Zapple", swatchHex: "#82b890", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-zapple-v2.webp", alt: "SALTHUB M Bar 9K, Zapple — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-zapple.webp", alt: "SALTHUB M Bar 9K, Zapple — pack, from SALTHUB's flavour chart" } },
+      // line 2 max-sync (22/10): 2 more flavours Shipnity Max lists (Disposable-25-23/24) — Max names; no photo yet.
+      { id: "blueberry-mint", name: "Blueberry Mint", swatchHex: "#4a6fbd", availability: "unknown" },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c95a5a", availability: "unknown" },
     ],
     specifications: [
       // Data round (2026-09-24, real browser): salthub.com states for M BAR 9K "9000 puffs · Battery Capacity: 600mAh ·
@@ -950,6 +953,18 @@ export const salthubProducts: Product[] = [
       { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-strawberry-v2.webp", alt: "SALTHUB Zero Cartridge, Strawberry", ownFloor: true } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-watermelon-v2.webp", alt: "SALTHUB Zero Cartridge, Watermelon", ownFloor: true } },
       { id: "yakult", name: "Yakult", swatchHex: "#de6569", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-yakult-v2.webp", alt: "SALTHUB Zero Cartridge, Yakult", ownFloor: true } },
+      // line 2 max-sync (22/10): the 50mg pods Shipnity Max lists (Pod-85-20..24, 26..31) — Max names; no photo yet.
+      { id: "peach-strawberry-50mg", name: "Peach Strawberry 50mg", swatchHex: "#e07a6b", availability: "unknown" },
+      { id: "watermelon-50mg", name: "Watermelon 50mg", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "grape-50mg", name: "Grape 50mg", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "grape-aloe-50mg", name: "Grape Aloe 50mg", swatchHex: "#7a5a9e", availability: "unknown" },
+      { id: "apple-aloe-50mg", name: "Apple Aloe 50mg", swatchHex: "#8ab84a", availability: "unknown" },
+      { id: "mint-50mg", name: "Mint 50mg", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "mixberry-50mg", name: "Mixberry 50mg", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "cola-50mg", name: "Cola 50mg", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "pink-berry-50mg", name: "Pink Berry 50mg", swatchHex: "#d94f8e", availability: "unknown" },
+      { id: "banana-strawberry-50mg", name: "Banana Strawberry 50mg", swatchHex: "#e0a05a", availability: "unknown" },
+      { id: "menthol-freeze-50mg", name: "Menthol Freeze 50mg", swatchHex: "#7fc8d8", availability: "unknown" },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
