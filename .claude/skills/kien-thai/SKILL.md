@@ -10,9 +10,11 @@ description: Audit checklist for Thai copy on okami24.store — structural frame
 > beside thai-copy, not as a writing workflow of its own).
 > **Kept word for word:** `references/ai-tells.md` · `craft.md` · `grammar.md` · `forbidden-phrases.md` · `style-rules.md`, and
 > the upstream SKILL.md sections "Why this skill exists" + frames f1–f7 + "Person deixis" + "Stylistic conventions" (below).
-> **Changed (6 code spans on 5 lines):** a Thai example ending in "!" right before a closing backtick (craft 42 ×2, forbidden-phrases 27–28,
-> style-rules 145) — the "!" moved out of the code span as "(+ !)", because that pattern reads as a load-time command
-> (find-skills step C). Frontmatter + this head rewritten.
+> **Changed:** (1) 6 code spans on 5 lines where "!" sat right before a closing backtick — craft 42 ×2, forbidden-phrases
+> 27–28 and style-rules 145 → the "!" moved out as "(+ !)"; craft 47 (an exclamation mark alone in a code span) → plain quotes — because that
+> pattern reads as a load-time command (find-skills step C). (2) 3 author source notes written as HTML comments (craft
+> 138, style-rules 84, SKILL "f5" example) → the same words as a visible "> (author note …)" quote, so nothing is hidden.
+> (3) Frontmatter + this head rewritten.
 > **Dropped:** upstream frontmatter (it triggered on any Thai prose) · "Best output" model route + `scripts/` (local LLM
 > via ollama + a multi-GB download — code execution, central §9) · "Workflow / edit / translate / References" sections (ASK
 > steps clash with TEAM_RULES 13.3; translate-from-English clashes with thai-copy "write Thai first") · `register.md`
@@ -34,9 +36,11 @@ description: Audit checklist for Thai copy on okami24.store — structural frame
   coin-and-gloss, `inline-def-parenthetical`, `parenthetical-aside`, `foreign-name-format` → THAI_STYLE §2 four layers
   (brand and model names in English; no bracket that explains a term, owner 04/10).
 - `mai-yamok-spacing` without a space → always a space before ๆ (THAI_STYLE §4).
-- An exclamation mark anywhere, `cta-bang` / `generic-reassurance` "softened", CTA models (`ลองใช้ฟรี…`) → no exclamation mark, no selling CTA, no
-  free/trial offer; ordering points to LINE only.
-- `empty-intensifier` leaving `อย่างมีประสิทธิภาพ` alone, and `ที่แท้จริง…เสมอ` as praise → both are filler / guarantee
+- The "softened" Marketing/SaaS readings of `cta-bang` and `generic-reassurance` (a closing exclamation or reassurance at the
+  hook or CTA) → not taken: both apply at full strictness here, because the shop voice is "สุภาพ · นิ่ง" with no selling
+  call to action (thai-copy "The voice"), and ordering is on LINE only (BSOT). (The dropped register/examples files also model
+  CTAs like `ลองใช้ฟรี…` — not used.)
+- `empty-intensifier` leaving `อย่างมีประสิทธิภาพ` alone (craft), and `ที่แท้จริง…เสมอ` praised in the dropped examples file → both are filler / guarantee
   wording we cut (thai-copy · THAI_STYLE §3).
 - `numeric-anchor` → a number only from a verified spec row (thai-check); never an invented one.
 - "ASK the user" for register, voice or gender → the shop voice is fixed; taste is picked, not asked (TEAM_RULES 13.3).
@@ -169,8 +173,8 @@ main strategies that AI underuses:
    - Dangling: `ของค้างก็กลายเป็นต้นทุนเงียบ ระบบนี้ช่วย...`
    - Bridged: `ของค้างก็กลายเป็นต้นทุนเงียบ ตรงนี้แหละที่ระบบช่วยได้`
 
-<!-- Native side lifted from corpus/curated/tech-writing/somkiat-bun-testing.md;
-     Calqued side manufactured by re-inserting `มัน` at each VP head. -->
+> (author note, shown instead of a hidden comment) Native side lifted from corpus/curated/tech-writing/somkiat-bun-testing.md;
+> Calqued side manufactured by re-inserting `มัน` at each VP head.
 - Calqued: `bun ได้ปล่อย feature ต่าง ๆ ออกมามากมาย มันปรับปรุงเรื่องของ performance จากการ build มันลดการใช้งาน memory ในขณะ runtime และมันยังปรับปรุงแนวทางการทดสอบอีกด้วย`
 - Native: `bun ได้ปล่อย feature ต่าง ๆ ออกมามากมาย ทั้งการปรับปรุงเรื่องของ performance จากการ build และลดการใช้งาน memory ในขณะ runtime รวมทั้งยังได้ปรับปรุงแนวทางการทดสอบอีกด้วย`
 

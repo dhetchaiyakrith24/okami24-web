@@ -81,10 +81,10 @@ Two rules for the space before ๆ:
    publication — pick one and stay consistent within a piece.
 
 Small-N evidence — treat rule 2 as a default, not a hard check.
-<!-- evidence (vetted 2026-05-13, docs/scratch/chrome-session-2026-05-13.md §3):
-     Pantip Blueplanet (settembre) + GotoKnow plain-diary (Vicharn Panich) drop
-     the space on non-`ต่าง ๆ` reduplications 7/7; Bank of Thailand keeps it 2/2;
-     Blognone homepage mixes within publication. ~20 samples total. -->
+> (author note, shown instead of a hidden comment) evidence (vetted 2026-05-13, docs/scratch/chrome-session-2026-05-13.md §3):
+> Pantip Blueplanet (settembre) + GotoKnow plain-diary (Vicharn Panich) drop
+> the space on non-`ต่าง ๆ` reduplications 7/7; Bank of Thailand keeps it 2/2;
+> Blognone homepage mixes within publication. ~20 samples total.
 
 ### `baeb-hedger` *(style · scoped · soft)*
 

@@ -135,10 +135,10 @@ specs where the intent is auto-execution on condition, use `ถึงจะ` or
 temporal fronting (`เมื่อ Y แล้ว ระบบจะ X ให้`). `+ ได้` is not a free
 swap for `จะ` in this position.
 
-<!-- provisional: corpus has no curated operational/system-spec register; this
-     rule reasons across registers we haven't sourced. `ก็ต่อเมื่อ` traces to one
-     corpus instance in translation register only. Revisit when operational
-     corpus exists. -->
+> (author note, shown instead of a hidden comment) provisional: corpus has no curated operational/system-spec register; this
+> rule reasons across registers we haven't sourced. `ก็ต่อเมื่อ` traces to one
+> corpus instance in translation register only. Revisit when operational
+> corpus exists.
 
 ## See also
 
