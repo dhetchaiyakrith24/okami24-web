@@ -2425,6 +2425,10 @@ const allGuides: Guide[] = [
       { question: "พอตใช้แล้วทิ้งรุ่นไหนมีจอ", answer: "WOTOFO nexBAR 18K มีจอ LED ที่บอกแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ Joiway F4 ก็มีจอ LED เช่นกัน ส่วนถ้าแค่อยากรู้ระดับแบต M Bar 10K มีไฟ LED บอกแบตทีละ 25%" },
       { question: "พอตใช้แล้วทิ้งสองกลิ่นในเครื่องเดียว มีรุ่นไหน", answer: "Joiway F4 ของ JOIWAY มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น บนหน้าสินค้าของเว็บเรามีให้ดู 16 คู่กลิ่น" },
     ],
+    // Keyword line 23/10 ("beat page 1"): the shop's own TOP 10 disposables clip already shows in Google's video block for
+    // "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี" and "พอตยี่ห้อไหนดี" (SERP 23/10). Channel + title by YouTube oEmbed, upload date from the watch
+    // page's uploadDate (2025-02-08T04:01:09-08:00), both read 23/10.
+    reviewVideo: { videoId: "p2hWunl1vv0", title: "TOP 10 พอตใช้แล้วทิ้งรุ่นยอดนิยมได้ประจำปี 2024", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-02-08" },
   },
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
