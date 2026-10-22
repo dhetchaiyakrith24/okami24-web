@@ -254,9 +254,10 @@ export const salthubProducts: Product[] = [
       { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#7dc7ea", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-menthol-freeze-v2.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-menthol-freeze.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — pack, from SALTHUB's flavour chart" } },
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#6d649d", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-kyoho-grape.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — pack, from SALTHUB's flavour chart" } },
       { id: "zapple", name: "Zapple", swatchHex: "#82b890", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-zapple-v2.webp", alt: "SALTHUB M Bar 9K, Zapple — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-zapple.webp", alt: "SALTHUB M Bar 9K, Zapple — pack, from SALTHUB's flavour chart" } },
-      // line 2 max-sync (22/10): 2 more flavours Shipnity Max lists (Disposable-25-23/24) — Max names; no photo yet.
-      { id: "blueberry-mint", name: "Blueberry Mint", swatchHex: "#4a6fbd", availability: "unknown" },
-      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c95a5a", availability: "unknown" },
+      // line 2 max-sync (22/10): 2 more flavours Shipnity Max lists (Disposable-25-23/24) — Max names. Photos (line 1, 22/10): the same master + print
+      // recolour as the 22, print colours from the retailer launch posters (no SALTHUB chart card yet, so no pack).
+      { id: "blueberry-mint", name: "Blueberry Mint", swatchHex: "#4a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-blueberry-mint-v2.webp", alt: "SALTHUB M Bar 9K, Blueberry Mint — device" } },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c95a5a", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-strawberry-kiwi-v2.webp", alt: "SALTHUB M Bar 9K, Strawberry Kiwi — device" } },
     ],
     specifications: [
       // Data round (2026-09-24, real browser): salthub.com states for M BAR 9K "9000 puffs · Battery Capacity: 600mAh ·

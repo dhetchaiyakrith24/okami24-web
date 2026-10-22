@@ -598,6 +598,8 @@ export interface Dictionary {
     slipErrorUsed: string;
     slipErrorBusy: string;
     slipErrorGeneric: string;
+    /** Shown once an order is shipped (cart round 22/10). */
+    trackingLabel: string;
     notFoundMessage: string;
   };
   languageSwitcher: {

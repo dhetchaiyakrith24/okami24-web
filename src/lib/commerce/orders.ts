@@ -43,6 +43,8 @@ export interface OrderDetail extends OrderSummary {
   items: OrderItemDetail[];
   shippingAddress: OrderShippingAddress;
   statusHistory: { status: string; note: string | null; createdAt: string }[];
+  /** Parcel tracking number staff entered when shipping (migration 0010); null until then. */
+  trackingNumber: string | null;
 }
 
 interface OrderRow {
@@ -55,6 +57,7 @@ interface OrderRow {
   shipping_fee: number;
   total: number;
   created_at: string;
+  tracking_number?: string | null;
 }
 
 function toSummary(row: OrderRow): OrderSummary {
@@ -266,6 +269,7 @@ function assembleDetail(row: OrderRow): OrderDetail {
       postalCode: address.postal_code,
     },
     statusHistory: history.map((h) => ({ status: h.status, note: h.note, createdAt: h.created_at })),
+    trackingNumber: row.tracking_number ?? null,
   };
 }
 

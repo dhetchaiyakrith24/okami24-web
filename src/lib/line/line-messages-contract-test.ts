@@ -45,6 +45,7 @@ const ORDER: OrderDetail = {
     postalCode: "10110",
   },
   statusHistory: [],
+  trackingNumber: null,
 };
 
 const SITE = "https://okami24.store";
@@ -54,7 +55,7 @@ const pass = formatOrderAlert(ORDER, "pass", [], SITE);
 check("alert has the order number", pass.includes("OK-20261022-a1b2c3"), pass);
 check("alert lists item, option and quantity", pass.includes("M Bar 10K (Grape Ice) ×2"), pass);
 check("alert has the total and the shipping fee", pass.includes("฿550") && pass.includes("฿50"), pass);
-check("alert links the staff page", pass.includes(`${SITE}/staff`), pass);
+check("alert links the staff order page", pass.includes(`${SITE}/staff/orders/OK-20261022-a1b2c3`), pass);
 check("alert has recipient name + province", pass.includes("สมชาย ใจดี") && pass.includes("กรุงเทพมหานคร"), pass);
 check("alert never carries the phone", !pass.includes("0812345678") && !/0\d{8,9}/.test(pass.replace("20261022", "")), pass);
 check("alert never carries the street address or postal code", !pass.includes("สุขุมวิท") && !pass.includes("10110") && !pass.includes("วัฒนา"), pass);
