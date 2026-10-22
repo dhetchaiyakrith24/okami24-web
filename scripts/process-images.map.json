@@ -12151,5 +12151,174 @@
   },
   "note": "line 1 22/10 - the 2 Shipnity Max flavours line 2 added (#733); same treatment and file naming as the 22 (image-sitewide 30/09)",
   "fileName": "variant-strawberry-kiwi-v2.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/butterscotch.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "butterscotch",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Butterscotch-vapemun.webp (_incoming/muro/src/butterscotch.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-butterscotch.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/chocolate-dubai.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "chocolate-dubai",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Chocolate-Dubai-vapemun.webp (_incoming/muro/src/chocolate-dubai.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-chocolate-dubai.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/spear-mint.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "spear-mint",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-SpearMint-Vapemun.webp (_incoming/muro/src/spear-mint.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-spear-mint.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/grape-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "grape-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Grape-50MG-Vapemun.webp (_incoming/muro/src/grape-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-grape-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/watermelon-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "watermelon-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Watermelon-50MG-Vapemun.webp (_incoming/muro/src/watermelon-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-watermelon-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/double-mint-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "double-mint-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20KDouble-Mint-50MG-vapemun.webp (_incoming/muro/src/double-mint-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-double-mint-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/mix-berries-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mix-berries-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-MixBerries-50MG-Vapemun.webp (_incoming/muro/src/mix-berries-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-mix-berries-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/yakult-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-Yakult-50MG-Vapemun.webp (_incoming/muro/src/yakult-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-yakult-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/fruit-punch.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "fruit-punch",
+  "aiRender": {
+   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Fruit-Punch-vapemun.webp (_incoming/muro/src/fruit-punch.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-fruit-punch.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/yakult-orange.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-orange",
+  "aiRender": {
+   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Yakult-Orange-Vapemun.webp (_incoming/muro/src/yakult-orange.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-yakult-orange.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/green-slush.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "green-slush",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-GreenSlush-Vapemun.webp (_incoming/muro/src/green-slush.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-green-slush.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/peach-tea.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "peach-tea",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-PeachTea-Vapemun.webp (_incoming/muro/src/peach-tea.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-peach-tea.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/strawberry-ice-cream.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "strawberry-ice-cream",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Strawberry-Ice-Cream-Vapemun.webp (_incoming/muro/src/strawberry-ice-cream.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-strawberry-ice-cream.webp"
  }
 ]
