@@ -199,6 +199,36 @@ npm run qr:upload-text
 32. อัปโหลดสลิปจริงของร้าน 1 ใบ → ผลต้องตรงกับแอปธนาคาร (ยอด · เวลา · "บัญชีร้าน") → อัปโหลดใบเดิมอีกครั้ง ต้องขึ้น **"⚠️ สลิปนี้เคยตรวจแล้ว"**
 33. ส่งคู่มือแอดมิน `docs/คู่มือแอดมิน-ตรวจสลิป.md` (Friday ส่งข้อความพร้อมก๊อปให้ในแชท) + รหัสทีมงาน เข้ากลุ่ม LINE ทีม — **ส่งรหัสแยกข้อความ** และไม่ส่งในกลุ่มที่มีคนนอก
 
+## 9. สำเนาข้อมูลออเดอร์ออกนอก Render — Cloudflare R2 (20 นาที · ทำครั้งเดียว · เพิ่ม 2026-10-23)
+
+ตอนนี้ไฟล์สำรองอยู่บนดิสก์ก้อนเดียวกับฐานข้อมูล (ดิสก์พัง = หายทั้งคู่ · LAUNCH_AUDIT ข้อ 42 "ทาง 2") · หลังทำข้อนี้ เว็บจะส่งสำเนาฐานข้อมูล
+ไปเก็บใน R2 ของพี่เองทุก 6 ชม. · ส่งเฉพาะฐานข้อมูล ไม่ส่งไฟล์รหัส · **ค่าลับพี่วางเองในหน้า Render เท่านั้น** ห้ามส่งในแชท ·
+R2 ฟรีถึง 10 GB ต่อเดือน (ฐานข้อมูลร้านตอนนี้เล็กกว่านั้นมาก) แต่ Cloudflare **ขอผูกบัตรก่อนเปิดใช้ R2** แม้ใช้ไม่เกินฟรี
+
+**ก. สร้างที่เก็บ**
+43. https://dash.cloudflare.com → ล็อกอิน → เมนูซ้าย **R2 Object Storage** → (ครั้งแรกจะให้ผูกบัตร/เปิดแผน R2 — ทำตามหน้าจอ) → **Create bucket**
+    → ชื่อ `okami24-backups` → Location ปล่อย Automatic → **Create bucket**
+44. ใน bucket นั้น → แท็บ **Settings** → **Object lifecycle rules** → **Add rule** → ชื่อ `keep-30-days` → เลือกลบ object หลัง **30 วัน** → Save
+    (เก็บย้อนหลัง 30 วัน · ไฟล์เก่ากว่านั้นลบเอง)
+
+**ข. ออกกุญแจให้เว็บ**
+45. กลับหน้า **R2 Object Storage** → **Manage API tokens** (หรือ **API** → Manage API tokens) → **Create API token** (แบบ Account API token)
+    → Permissions = **Object Read & Write** → Specify bucket = **okami24-backups** เท่านั้น → **Create API Token**
+46. หน้าถัดไปขึ้น 3 ค่า (ขึ้นครั้งเดียว — ปิดหน้าแล้วดูอีกไม่ได้): **Access Key ID** · **Secret Access Key** · และ endpoint แบบ
+    `https://xxxxxxxx.r2.cloudflarestorage.com` → วางใน Render ตามข้อ 47 ก่อนปิดหน้านี้
+
+**ค. วางใน Render** (dashboard.render.com → **okami24** → **Environment** → **+ Add Environment Variable** ทีละค่า ชื่อ Key พิมพ์ตรงตัว)
+47. - `OKAMI24_OFFSITE_ENDPOINT` → endpoint จากข้อ 46 (ขึ้นต้น `https://` ไม่มี `/` ท้าย)
+    - `OKAMI24_OFFSITE_BUCKET` → `okami24-backups`
+    - `OKAMI24_OFFSITE_KEY_ID` → Access Key ID
+    - `OKAMI24_OFFSITE_SECRET` → Secret Access Key
+    → **Save** → เลือกแบบที่มีคำว่า **deploy** → รอ 3–5 นาที
+
+**ง. ลองเอง (เห็นแบบนี้ = สำเร็จ)**
+48. Render → okami24 → **Logs** → ประมาณ 15 วินาทีหลังเว็บขึ้น ต้องเห็นบรรทัด `[backup] startup: off-site copy db/okami24-… (… bytes)`
+    (ถ้าขึ้น `off-site copy FAILED — HTTP 403` = กุญแจไม่มีสิทธิ์ bucket นี้ ทำข้อ 45 ใหม่ · บอก Friday พร้อมรหัสหลังคำว่า FAILED ได้ ไม่มีความลับในนั้น)
+49. Cloudflare → R2 → **okami24-backups** → โฟลเดอร์ `db/` มีไฟล์ `okami24-<วันเวลา>.db` = สำเนาออกมานอก Render แล้ว
+
 ## เรื่องที่ต้องรู้ไว้ ไม่ต้องทำอะไรตอนนี้
 
 - **ตอนอัปเดตเว็บ เว็บจะดับสั้น ๆ ไม่กี่วินาที** เป็นเรื่องปกติของเครื่องที่มีดิสก์ติดอยู่ (Railway ก็เหมือนกัน)
