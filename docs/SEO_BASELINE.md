@@ -358,3 +358,29 @@ Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/
   moves on THREE variables at once (own title word, the guide title, new inbound links); read it as mixed · held guide links in
   (switch / disposable / flavour / ARGUS / genuine / DRAG guides) → new inbound links into rows 5, 6, 7 owners + infy-20k,
   joiway-f3/f4, m-switch-kit; read-next boxes on brand + product pages moved (linkmap diff in the PR).
+
+## READ 22/10 (Friday, main chat, 22/10 evening · owner's Chrome, read-only) — 08/10–21/10 vs 24/09–07/10 (14 days each)
+
+Method: Performance URLs with `query=!<exact>` / `*<contains>` / `page=!<url>` + `metrics=CLICKS,IMPRESSIONS,POSITION`, read as page
+text (clicks/impressions · avg position). The window mixes every change of 08–21/10 (owner accepted a mixed read 19/10).
+
+Site: clicks 341 → 305 · impressions 2.11K → 2.25K · CTR 16.1% → 13.6% · avg position 9.4 → 10.8. GSC overview 22/10: 129 indexed / 16
+not (was 113/13 on 14/10) · its own insight cards: /brands/joiway impressions −92% · /products/pod-systems +115%.
+
+| # | query | result 08–21/10 | verdict |
+|---|---|---|---|
+| 1 | joiway f4 | joiway-f4 1/25 · 10.4 · brands/joiway 1/17 · 9.8 | WORKED — joiway-f4 has most impressions |
+| 2 | *argus g4 | argus-g4 4/14 · 5.4 · argus-g4-mini 2/12 · 10.0 | WORKED — argus-g4 is the main page |
+| 3 | caliburn g5 | caliburn-g5 1/10 · 10.3 · uwell 0/2 · g5-lite 0/1 | WORKED (mostly) — g5 main; uwell almost gone |
+| 4 | *15k | m-bar-15k 4/29 · 6.9 · m-switch-pod 0/1 | WORKED — salthub gone |
+| 5 | esko bar | 0/0 (24/09–07/10: 0/87 · 3.6 on brands/esko-bar). Daily: last impressions 04/10 — BEFORE our 07/10 head change | DROPPED, not ours by timing. All `*esko` = 0/9 · 52.4 (esko-bar-switch-pod 61 · brands/esko-bar 55 · esko-bar-20k 108) |
+| 6 | joiway | brands/joiway 0/21 · 6.5 (was 3/161 · 6.3). Daily: last impressions 09/10 — right after #344/#354 (07–08/10) took F3/F4 + prices out of the brand head | DROPPED; position held when shown. Brand page all queries 13/342 → 3/99 |
+| 7 | esko bar switch 20k | no exact row (was pod-159 0/7 · 9.1); "esko switch 20k" 0/2 · 52.5 | DROPPED with row 5 |
+| 8 | *infy 20k | infy-20k 2/39 · 12.7 · brands/infy 0/1 | slight gain (13.8 → 12.7), brand share not up — OK |
+| 22 | pods | pods-cartridges 0/1 · 5.0 (was 0/24 · 4.3) | DROPPED in impressions |
+| 24 | ร้านพอต · พอตของแท้ | no rows; / = brand queries only (okami24 7/16 · 1.0 · okami pod 3/8 · 3.4) | no signal yet |
+
+URL Inspection /brands/esko-bar 22/10: on Google, indexed, last crawl 20/10 17:20 → not an indexing fault.
+Next (Friday's proposal, not done): Esko = watch to 01/11 (drop predates our edits; a demand or SERP change, not fixable by head copy alone) ·
+JOIWAY = the timing matches #344/#354 → put "JOIWAY F3 / F4" back in the brand meta (reversible) at the next SEO slot, then read 01/11.
+Rows 9–21, 23 = 01/11 as planned.
