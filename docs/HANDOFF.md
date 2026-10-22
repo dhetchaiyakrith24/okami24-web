@@ -11,50 +11,34 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 22/10 (day closed by the owner) = 20cced3b (#712). Since the move: #707 rounds 3d/3w closed (tags
-  render-build-2110 · home-upgrade-2110) · #708 home hero card links read each label once (Decode = one span; was "VOOPOOVOOPOOARGUS G4ARGUS G4"
-  in server HTML) [ตรวจแล้ว checker PASS 315e603b, live curl] — its deploy answered 502 for ~1 min at the switch-over, then 200 on / and the 4
-  card pages [ตรวจแล้ว curl] (watch: does every Render deploy blip?) · line 1 images #709 RELX Infinity Pro 2 pods 10 flavours · #710/#711 INFY
-  PLUS pods (every flavour with a poster) · #712 KS Quikpro kit 4 flavours. DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
-  deploys every merge to main itself — service setting Auto-Deploy = "On Commit" (set in the dashboard 21/10 23:10 with the owner's OK);
-  GitHub `deploy` workflow = fast PR checks only (decide + checks = verify:commerce + verify:catalog, no build). The Render BLUEPRINT IS
-  "Sync paused" (last sync a month ago) → render.yaml edits do NOT reach Render; the dashboard settings are the truth. Last deploy:
-  "Manually triggered via Dashboard" 6ea47c2 live 23:06 [ตรวจแล้ว buildId ok8b4gQLXJrK60a9qWVKO, /, King Melon image, TEREA card-v2 200].
-  LIVE today [ตรวจแล้ว curl + live CSS]: #691 8 cards per type rail + hero devices sway · #692 site-wide LINE pill → scan-to-chat QR on computers ·
-  #695 English section tags decode on view · #697 desktop "lineup" (hero holds 0.6 screen, 4 devices grow into a row; DESKTOP_TRAVEL) ·
-  #698 phone hero floor shadow under the device + calm float. Line 1: #693 en/zh product names · #694 Marbo 10 · #696 Muro Freebase ฿220 ·
-  #699 Punta · #700 MQ Bar · #701/#703 Super Cool · #704 TEREA card (real 4 packs, render) · #705 RELX LUMI 18K.
-  Open PRs: #685 stock sync 21/10 (owner confirms before merge, 13.7) · #643 stock docs. GitHub budget email 21/10: $13.50 of $15 used [owner's
-  screenshot]; the owner had chosen "$30" — the cap may still be $15 (his step).
-2 Main folder: nothing ahead of main except branch `docs-handoff-2210` = this handoff. Line 1's branches = its own report (item 3). Test servers
-  (stop/rebuild freely, all up 22/10): 3422 = wt-3422 at 085805d9 · 3423 = wt-3423 (home-phone-ground, merged) · 3424 = wt-3424 at 315e603b (#708). Rebuild: `bash
-  _incoming/hero-2010/rebuild-3424.sh <port>`. Helpers `_incoming/upgrade-2110/` (shot.js rail=, b5/rec-scroll.js, b5/hit-probe.js,
-  b5/y0-probe.js, b5/pin-probe.js, b6/floor-probe.js, b4/decode-probe.js). NEW LOCK (#702): pre-checker-gate check `full` = a PR that reaches
-  the site needs `npx tsx scripts/verify-catalog.ts --full` passed on its head in a TEST WORKTREE (env: SITE_URL only — OKAMI24_DATA_DIR breaks
-  the backup contract test) → stamp in .git/verify-full/<sha>. PR flow now: draft → gate → checker → `gh pr ready` once → checks → merge.
-3 MAIN CHAT = local_4ae9f252-496d-4dd1-8816-9ae3de33e062 since 21/10 ~23:20 (both side chats told to report to it). Owner 21/10 ~23:30:
-  "เอาแค่แชทลูกแชทเดียว … งานรูปหลักๆ ลุยเลยสร้างเลย" → ONE side chat = line 1 (images, full speed); line 2 PAUSED (told to push and go idle);
-  the GSC read = the main chat. **Owner 22/10: "ค่อยทำพรุ่งนี้" — main + side chat stopped for the day; resume 23/10.**
-  NEXT (main, 23/10): (1) GSC read that was due 22/10 (SEO_BASELINE rows 1–8 + 22 + 24; judge with the 19–21/10 changes: home links, #708
-  anchor fix) · (2) small fix: hero card index "01–04" (aria-hidden) still sits inside each card link → anchor text "02VOOPOO…" (checker #708
-  note) · (3) restart line 1 on the image queue. Friday's image ruling 22/10 (taste, owner may overrule — told him): look-alike flavour sets
-  (KS Quikpro 15K pods 16 · Esko Bar 20K 7 · Nexswitch 16K pods 5) → photo = pod/device + THAT flavour's own pack/box/label when one exists
-  (MURO SC 8000 + #712 precedent); none = keep the no-photo panel (no repeated photo, no fruit props). Pop Up 10K ×4 · Super Cool ×2 = no
-  reference anywhere. Side chats:
-  line 1 = `1-products-2110b` (local_0ede4203-ce72-489e-a165-15bd25f9a0d0, worktree mystifying-driscoll-575ab6) — image sweep on
-  Nano Banana Pro **2K only** (owner bought a 3-day Unlimited 21/10 ~21:20, Chrome only; 4K costs credits): all missing flavour photos,
-  biggest first (RELX Infinity Pro 2 pods 42 · INFY PLUS 27 · nexPOD 15K 20 · pod-150 16 · Vazer One 16 · nexBAR 18K 11 · SKE B20000 7 · Esko 20K 7).
-  Credits balance 3,949.4 [line 1's report]. Blueraz Berry / Pinky Blush (Super Cool) = no reference anywhere.
-  LINE 1 STOPPED 22/10 [its report: tree clean, all pushed, 0 credits today]: OPEN draft #713 SKE Crystal B20000 6 flavours (branch
-  ske-crystal-2210, head d2e0add5 · gate PASS + verify --full PASS · checker was still reading at the stop — its result goes in the PR body;
-  passed = Checker line → ready → merge → curl; no result = re-run the checker on d2e0add5). Next: Pepo Mint + Dundu Grape (refs found, 2 small
-  PRs) → RELX Pro 2 (~19 of 32 missing flavours have official MY/US pack renders) → look for flavour-specific packs for KS 15K pods / Esko 20K /
-  Nexswitch 16K (ruling above). Stay no-photo: Reswa Red Bull (trademark, 18/10) · Double Mint · Pop Up ×4 · Super Cool ×2 · INFY ×7 · KS Grape
-  Berry. Its notes = `line1-marbo-v3-2110.md` in its worktree.
-  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), PAUSED 21/10, nothing open (its stop note = 3s +
-  first line of `_incoming/next-chat-seo.md` in its worktree). Its doubled-label finding was fixed in #708.
-  Owner rules learned 21/10: a relayed credit approval worked for line 1 when quoted verbatim · Friday never types a password (Shipnity Max
-  login asked 21/10 — refused; owner may log in once himself) · every ready-PR push costs Actions money → draft until checker PASS.
+1 main: `git fetch && git log -1 --oneline origin/main` · 23/10 ~03:50 = b6edd9f5 (#754). Merged 22–23/10 [ตรวจแล้ว each PR's checker line +
+  live curl 200]: #707 close 3d/3w · #708 hero card anchor once · #709–#713 #718 #719 #721 line-1 flavour photos · #714 #717 docs (GSC read
+  22/10 in SEO_BASELINE last section) · #716 prices (owner via admin ICE 22/10: ESKO BAR SWITCH 20K pod ฿400 · Super Cool Salt Nic ฿280 ·
+  Muro Freebase ฿250) · #720 #728 #735 docs · #722–#725 #729–#734 #737–#740 #747 Max sync (round 3m) · #726 footer: LINE + YouTube @OKMYARZ +
+  @PODSYSTEM-OKAMI-II as brand-colour 44px pills, Organization sameAs both channels · #727 OptionScaledCard (card no longer bigger than the
+  option photos; jumping pages 57→7) · #736 Smash GO 27 options · #742 #743 #744 #745 #750 #751 cart batches A B C F · #748 M Bar 9K ·
+  #749 Zero 50mg · #752 Muro Connector · #753 RELX Creator Pod 20K (new page ฿349, all sold out) · #754 TEREA 6 real packs.
+  Every Render deploy answers 502 for ~30–60 s at the switch-over (the service has a persistent disk) [ตรวจแล้ว several times 22/10].
+  Deploys: Render builds + deploys every merge itself (dashboard Auto-Deploy "On Commit"; Blueprint "Sync paused" → render.yaml does not
+  reach Render). GitHub `deploy` = fast PR checks. If a docs PR's required "checks" never appears → `gh run rerun <run>`; a PR made ready
+  after draft runs can show "SKIPPED the head" → `gh pr ready --undo` + `gh pr ready` (both seen 22/10).
+  Open PRs: #746 cart D (draft — merge only on switch day after the owner's OK) · #715 / #685 stock syncs (owner confirms in chat, 13.7) · #643.
+2 Main folder: on branch `docs-handoff-2310` = this handoff (nothing else ahead of main). Main chat's test trees `_incoming/footer-2210/wt-3430`
+  (main 9d05d25e) + `wt-3431` (#726) — stop/remove freely. A FRESH worktree fails verify --full typecheck once (LayoutProps is generated by the
+  first build) → build, then re-run. PR flow: draft → verify --full on the head in a test worktree → gate → checker → `gh pr ready` once →
+  checks → self-merge-check alone → merge.
+3 MAIN CHAT moves 23/10 ~03:50 (65% context). Side chats (both report to the main chat; SendMessage the new main chat id to each once):
+  line 1 = `line1-images-2210` (local_735d085c-036b-4291-b736-893ed2a2172b, worktree seo-all-keys-a38889) — images. NOW: TEREA batch 2 (13
+  Indonesian flavours as real packs from retail refs) + 4 with no pack anywhere (Black Green · Emerald · Golden · Black Purple) as STUDIO
+  PHOTOS of the real 5 sticks held ~1.25× the pack height (Friday's pick, sample sent to the owner). Then: Vinci · MOOOD · 7 pages whose first
+  option photo is undersized · sub-standard sweep · no-photo research. Nano Banana Pro Unlimited 2K (owner: about one day left from 22/10 night).
+  OWNER IMAGE RULING 23/10 ~03:45 (also in IMAGE_SPEC §0 item 7): every new image = same product size + position across a model's options
+  (measured), real studio light/reflections, crisp clean edges — clean bad source edges, never look graphic; older sets wait for a later
+  "site-wide image fix" round.
+  line 2 = `line2-cart-2210` (local_d5218b7d-9310-4134-8a9c-a98750b5d46e) — cart round 3c, PAUSED by the owner 23/10 "มาสานต่อพรุ่งนี้".
+  Its status note = side-session-notes/line2-cart-2210-status.md.
+  Closed/archived 22/10: price chat (#716) · Max chat (#747). Old line 1 local_0ede4203… + old SEO chat local_d6b80e36… = idle, not archived
+  (their worktrees hold untracked _incoming notes).
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
   render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
   (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
@@ -66,36 +50,21 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3u STOCK — owner 21/10: wants stock checked every hour 08:00–00:00, ideally in the cloud; Friday cannot log in (password); plan offered =
   owner logs into Shipnity Max once in the app browser → hourly routine reads it + a site endpoint takes the snapshot without a rebuild;
   cloud = needs the warehouse API key. Owner: "ทดเรื่องนี้ไว้เดี๋ยวมาจัดการต่อ" (parked).
-3c OPEN ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` (opened 22/10 ~23:40 after line 2's Max sync finished — owner
-  22/10 "2 เริ่มหลังงาน Max เสร็จ"; a new side chat line 2 = the cart chat). Owner 22/10 "พี่อยากเปิดระบบตะกร้าแล้ว". No warehouse API: Shipnity charges "several thousand baht a month" for non-WooCommerce sites (warehouse LINE 22/10) → open
-  WITHOUT it; staff forward orders to the warehouse by hand as with LINE orders. Owner decisions 22/10 (put into BSOT §9/§8 in the round):
-  (1) customers PAY AT ONCE at checkout (option "จ่ายทันที"); out of stock after the transfer = the customer picks another item of the
-  same price OR gets a refund (the option text he chose — conflicts with BSOT "no refund after transfer" → write as the owner's new
-  exception) · (2) new-order alerts go to the team's OWN LINE group via a separate, free LINE OA bot used only for alerts (not @okm24;
-  LINE Notify ended 31/3/2025 → Messaging API is the only official way) — owner signs up + adds the bot; check the free message quota.
-  Plan (Friday 22/10, ~3–5 days): alert bot → staff order list in /staff (same login; EasySlip auto-check; confirm / tracking no. /
-  shipped / cancel; "copy for the warehouse") → hourly Max stock read (owner logs in once) → backup way 2 off Render (owner signs up
-  R2/B2) → full test order on a test build + shots to the owner → owner OK → Friday flips OKAMI24_ORDERING in the Render dashboard
-  (Blueprint sync paused — not render.yaml). Full-set round (money · orders · customer data, 13.5 #3). LAUNCH_AUDIT 44 criteria +
-  BSOT §11 guest checkout phone = check in the round. Owner questions for Shipnity (if he adds their LINE): API price + minimum term ·
-  stock-read-only price · free daily stock file (CSV) or download link.
-  ALERT BOT CREATED 22/10 (owner signed up; Friday set it in his Chrome on his word "ทำให้พี่เลย"): LINE OA "OKM ORDER" @691qxpxp (free
-  plan, provider "OKami24", channel ID 2012160030) · Messaging API ON · join group chats = allowed · greeting + auto-reply = OFF ·
-  webhook URL empty (set when the endpoint exists) · NOT yet in the team group. The channel SECRET was shown in an owner screenshot in
-  chat 22/10 → REISSUE it (LINE Developers Console) before first use; the owner pastes secret + access token into Render env himself
-  (13.3 #9), never in chat. TWO LINE groups (owner 22/10), both created by Friday in the owner's LINE PC 22/10, owner the only member, bot NOT
-  invited yet: "OKM Order" = new web-order alerts (push → free quota; keep members few) · "OKM Slip" = staff drop slips, the bot replies
-  with the EasySlip verdict (reply = free; EasySlip ฿350/1,000 slips shared with the site). Existing groups "OKAMI ORDER (8)" / "OKAMI ADMIN (5)"
-  are untouched.
-3m ROUND "Max list" — DONE 22/10 by line 2 (#722–#725, #729–#734; live table `docs/cloud-results/max-sync-2210.md`; Creator Pod 20K #733
-  waits for its card photo from line 1; 8 options held for maker evidence = the table) → to close with a tag. Was: (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
-  (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
-  `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
-  #666 VOOPOO Argus Pod (coil-21) ฿450 · #669 Vazer One ฿59 (21 flavours). Reswa Sportcan was already live (pod-142). OPEN: Double Mint Salt Nic (owner "ลงคลังปกติ" 21/10;
-  refs + `_incoming/maxlist/edit-dm.js` ready, 6 renders = 24 credits) · Foli Cool Bar 15K (Max Disposable-42; flavours match the ihavevape Cool Bar line 12 of 12;
-  `_incoming/maxlist/edit-foli.js` ready, 12 renders = 48 credits) · Muro Freebase (needs an owner bottle photo; price Max ฿220) · Creator Pod 20K (skipped: identity unconfirmed).
-  Credits: renders cost 4 per run of 2 images; the owner must type the yes in THAT chat (a relayed yes is refused by the permission classifier); measured 68 (button) + 20 (balance 4177.4 → 4157.4).
-  New PR rule (Friday 21/10): open as draft, push, `gh pr ready` once, then the gate; merge only when `checks` = pass (not skipping).
+3c OPEN ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` · GO-LIVE DATE 24/10 (owner 22/10 "เปิดตะกร้าจริงวันที่ 24"). LIVE
+  (switch still OFF, /cart 307): A slip upload + EasySlip auto-check on the order page + sold-out-after-payment policy (BSOT §9 dated owner
+  exception) · B LINE bot webhook `/api/line/webhook` (404/405 until env) — groups captured on join, bound on /staff · C /staff order list +
+  actions + copy-for-warehouse · F off-site DB copy (R2 or B2 from the same 4 Render values; off until the owner sets them).
+  Owner steps (Thai, click-by-click) = docs/DEPLOY-RENDER.md §8 (LINE, steps 34–42) · §9 (backup: R2 = card on file · B2 [เชื่อว่า] no card).
+  Staff guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md. WAITING ON THE OWNER: (1) paste OKAMI24_LINE_CHANNEL_SECRET (reissued) + _TOKEN in Render
+  (2) R2 / B2 / none (3) OK on the test-order shots (.claude/worktrees/cart-2210-3bb482/_incoming/cart-2210/shots/) (4) log into Shipnity
+  Max in Chrome for the 24/10 morning stock-read PR (he confirms it in chat before merge). SWITCH DAY: stock PR → owner OK → OKAMI24_ORDERING=on
+  in the Render dashboard → merge #746 → one real order from the owner's phone → cancel on /staff. Deferred past 24/10: hourly stock read (E).
+  Bot: LINE OA "OKM ORDER" @691qxpxp (free plan 300 msgs/month; a group push counts per member → keep "OKM Order" small; slip replies free) ·
+  groups "OKM Order" + "OKM Slip" created 22/10 (owner only, bot not invited) · existing "OKAMI ORDER (8)" / "OKAMI ADMIN (5)" untouched.
+  No Shipnity API (several thousand ฿/month for non-WooCommerce, warehouse 22/10) — staff forward orders by hand.
+3m ROUND "Max list" — DONE 22/10 (line 2 Max chat; table `docs/cloud-results/max-sync-2210.md`; owner "1 ลง" = the 6 Max-only options listed
+  #737–#740; owner "2 ไม่ลง" = SUP Zero 22K + "หัว dude 3 ml." not listed) → TO CLOSE with a tag (round-close). Round file
+  `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` (its 【แตะได้】 thai-typography line was used by #731 กลิ่น/รส).
 3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
   #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
   Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
