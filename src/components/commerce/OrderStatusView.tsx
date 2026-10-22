@@ -76,6 +76,13 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
             <span className="text-foreground-muted">{dict.orderStatus.statusLabel}</span>
             <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
           </div>
+          {/* Entered by staff when the parcel leaves (cart round 22/10); no carrier name — BSOT §10. */}
+          {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
+            <div className="flex justify-between">
+              <span className="text-foreground-muted">{dict.orderStatus.trackingLabel}</span>
+              <span className="select-all font-medium tracking-wide text-foreground">{order.trackingNumber}</span>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col gap-3">

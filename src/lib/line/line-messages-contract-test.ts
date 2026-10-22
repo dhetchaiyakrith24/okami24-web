@@ -45,6 +45,7 @@ const ORDER: OrderDetail = {
     postalCode: "10110",
   },
   statusHistory: [],
+  trackingNumber: null,
 };
 
 const SITE = "https://okami24.store";
