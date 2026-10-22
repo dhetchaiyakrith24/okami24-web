@@ -83,6 +83,8 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   // maxlist (20/10): RELX Infinity Pro 2 pods (Max Pod-27) — 42 flavour pods; Max writes the 50 mg ones as "<flavour> Nic / 50mg." — a nicotine mark
   // on a flavour pod would read as a mixed axis, but every child is one flavour pod (the pack prints the flavour + its nicotine strength).
   "RELX-INFINITY-PRO-2-POD": "flavor",
+  // line 2 max-sync (22/10): RELX Creator Pod 20K (Max Pod-137) — 31 flavour pods, the 5% ones written "<flavour> 5%".
+  "RELX-CREATOR-POD-20K": "flavor",
   // maxlist (21/10): VOOPOO Argus Pod cartridges (Max Coil-21) — the four options are the cartridge versions the warehouse sells: the new-version "Argus mix",
   // 1.2Ω, and two Top Fill (0.4Ω / 0.7Ω, 2ml). "Argus mix" carries no resistance mark and was dropped as unresolved (the one in-stock option vanished).
   "Coil-21": "resistance",

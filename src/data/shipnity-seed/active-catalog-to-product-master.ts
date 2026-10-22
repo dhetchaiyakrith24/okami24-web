@@ -337,6 +337,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
   // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; relxnow.com has no page for these pods.
   "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; no page on relxnow.com — warehouse facts only' },
+  // line 2 max-sync (22/10, owner "หาข้อมูลเองเลย"): RELX Creator Pod 20K — Max-only record (Pod-137, 31 flavours incl. 5%, all sold out 22/10).
+  "RELX-CREATOR-POD-20K": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Relx Creator Pod 20K" (Pod-137, 17/10; renamed "Relx เลโก้ 20000 คำ" 22/10), 31 flavour pods ฿349 + an empty device row ฿199 (not an option) — Thai shops sell it as the RELX Creator 20K pod for the RELX Creator battery: 7pods.shop/product/relx-creator-boost-20000-puffs-lego · pod9k.com/product/relx-creator-20k-pod · ezy-pods.net/product/relx-lego-20k · siam-pod.com (tier 2, read 22/10); no relxnow.com page — warehouse facts only, no spec numbers' },
   "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); no Essential 2 page on relxnow.com (searched 20/10) — warehouse facts only, device only' },
   "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
   "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
@@ -656,6 +658,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "RELX-INFINITY-PRO-2-POD": {
     tagline: "หัวพอต RELX Infinity Pro 2",
     shortDescription: "หัวพอต RELX Infinity Pro 2 ร้านมีให้เลือก 42 กลิ่น",
+  },
+  // line 2 max-sync (22/10): warehouse facts only — the Max name "Relx Creator Pod 20K"; "fits RELX Creator" = the Thai shops above (no maker page).
+  "RELX-CREATOR-POD-20K": {
+    tagline: "หัวพอต RELX Creator Pod 20K",
+    shortDescription: "หัวพอต RELX Creator Pod 20K ใช้กับเครื่อง RELX Creator ร้านมีให้เลือก 31 กลิ่น",
   },
   // maxlist (20/10): warehouse facts only — the Max name "Relx Essential 2" (no maker page); colours = Max's 4 + the shop's 5th (Orange).
   "RELX-ESSENTIAL-2": {
@@ -2780,6 +2787,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "RELX-INFINITY-PRO-2-POD": { name: "RELX Infinity Pro 2 Pod", sourceUrl: "https://pod789.com/product/relx-infinity-pro-2/" },
+  "RELX-CREATOR-POD-20K": { name: "RELX Creator Pod 20K", sourceUrl: "https://pod9k.com/product/relx-creator-20k-pod/" },
   "RELX-ESSENTIAL-2": { name: "RELX Essential 2", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },

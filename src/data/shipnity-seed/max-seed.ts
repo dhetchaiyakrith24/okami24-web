@@ -3617,6 +3617,205 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       { "shipnityVariantId": "Pod-27-41", "rawLabel": "Lychee Ice", "sellingPrice": 149, "inStock": true },
       { "shipnityVariantId": "Pod-27-42", "rawLabel": "Ice Sparking Nic / 50mg.", "sellingPrice": 149, "inStock": true }
     ]
+  },
+  "RELX-CREATOR-POD-20K": {
+    "maxParentId": "Pod-137",
+    "name": "Relx Creator Pod 20K",
+    "operationalSellingPrice": 349,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-137-1",
+        "rawLabel": "Grape",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-2",
+        "rawLabel": "Double Mint",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-3",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-4",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-5",
+        "rawLabel": "Cola",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-6",
+        "rawLabel": "Blueberry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-7",
+        "rawLabel": "Lemon Candy Mint",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-8",
+        "rawLabel": "Rainbow Candy",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-9",
+        "rawLabel": "Mineral",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-10",
+        "rawLabel": "Jasmine Tea",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-11",
+        "rawLabel": "Cool Mint",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-12",
+        "rawLabel": "Strawberry Watermelon",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-13",
+        "rawLabel": "Peach Strawberry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-14",
+        "rawLabel": "Banana",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-15",
+        "rawLabel": "Strawberry Banana",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-16",
+        "rawLabel": "Pineapple",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-17",
+        "rawLabel": "Pink Guava",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-18",
+        "rawLabel": "Starfruit",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-19",
+        "rawLabel": "Pink Berry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-20",
+        "rawLabel": "Spearmint",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-21",
+        "rawLabel": "Lychee",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-22",
+        "rawLabel": "Apple Aloe",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-23",
+        "rawLabel": "Watermelon Bubblegum",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-24",
+        "rawLabel": "Grape 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-25",
+        "rawLabel": "Double Mint 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-26",
+        "rawLabel": "Watermelon 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-27",
+        "rawLabel": "Mixberry 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-28",
+        "rawLabel": "Cola 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-29",
+        "rawLabel": "Peach Strawberry 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-30",
+        "rawLabel": "Banana Strawberry 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137-31",
+        "rawLabel": "Classic Tobacco 5%",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-137",
+        "rawLabel": "Relx เลโก้ 20000 คำ - เครื่องเปล่า",
+        "sellingPrice": 199,
+        "inStock": false
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K"];
