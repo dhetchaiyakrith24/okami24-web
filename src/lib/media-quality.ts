@@ -123,6 +123,9 @@ export interface ImageDisplayInfo {
   /** True when filling the hero container would not visibly upscale this source (within
    *  `MAX_ACCEPTABLE_UPSCALE`). False means: render at intrinsic size instead. */
   fillHero: boolean;
+  /** Long side of the product itself (the alpha bounding box), in file pixels — what OptionScaledCard needs to draw a
+   *  card at its option photos' size (owner 22/10). Absent when the file has no alpha box to measure. */
+  productLong?: number;
 }
 
 const cache = new Map<string, ImageDisplayInfo | null>();
@@ -147,6 +150,11 @@ export async function getImageDisplayInfo(publicSrc: string): Promise<ImageDispl
     // filling is safe; otherwise it would visibly enlarge the source.
     const scaleToFill = Math.min(HERO_BOX_WIDTH / meta.width, HERO_BOX_HEIGHT / meta.height);
     const info: ImageDisplayInfo = { width: meta.width, height: meta.height, fillHero: scaleToFill <= MAX_ACCEPTABLE_UPSCALE };
+    if (meta.hasAlpha) {
+      // trim() on the alpha channel alone = the product's bounding box (the transparent margin is the same value as the corner).
+      const { info: box } = await sharp(buf).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
+      if (box.width < meta.width || box.height < meta.height) info.productLong = Math.max(box.width, box.height);
+    }
     cache.set(publicSrc, info);
     return info;
   } catch {

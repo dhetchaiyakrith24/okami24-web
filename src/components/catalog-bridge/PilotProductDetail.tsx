@@ -29,7 +29,7 @@ import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/M
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
-import { OptionScaledCard, isStandardCard } from "@/components/visual/OptionScaledCard";
+import { OptionScaledCard, optionScale } from "@/components/visual/OptionScaledCard";
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
@@ -127,7 +127,11 @@ export function PilotProductDetail({
   const fillHero = displayImageInfo ? displayImageInfo.fillHero : true;
   // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
   const scaleCard = (img: typeof displayImage) =>
-    !!img && img.src === product.image?.src && product.variants.some((v) => v.image) && isStandardCard(imageDisplayMap?.[img.src]);
+    !!img && img.src === product.image?.src && product.variants.some((v) => v.image) && optionScale(imageDisplayMap?.[img.src]) !== null;
+  const cardBox = (src: string) => {
+    const info = imageDisplayMap![src]!;
+    return { scale: optionScale(info)!, aspect: info.width / info.height };
+  };
 
   const available = (selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock";
   const showBuy = isPublished && product.sellingPrice !== null;
@@ -155,7 +159,7 @@ export function PilotProductDetail({
         // absolute inset-0: an option photo here is `fill` straight inside this padded box, and `fill` ignores padding,
         // so the card is sized against the same full box the options are drawn in.
         <div className="absolute inset-0">
-          <OptionScaledCard>
+          <OptionScaledCard {...cardBox(img.src)}>
             {fill ? (
               <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
             ) : (
@@ -313,7 +317,7 @@ export function PilotProductDetail({
               {scaleCard(displayImage) ? (
                 // absolute inset-0: same full box as the `fill` option photos below (they ignore the p-8/p-12 padding).
                 <div className="absolute inset-0">
-                  <OptionScaledCard>
+                  <OptionScaledCard {...cardBox(displayImage.src)}>
                     {fillHero ? (
                       <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" loading="eager" fetchPriority="high" />
                     ) : (
