@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
+import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/OptionScaledCard";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { ColorVariantRail } from "@/components/product/ColorVariantRail";
 import { FlavorVariantGrid } from "@/components/product/FlavorVariantGrid";
@@ -220,6 +221,14 @@ export function ProductHero({
   }, []);
   // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
   const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
+  // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
+  const optionPhotos = optionRecords.flatMap((o) => (o.image ? [imageDisplayMap?.[o.image.src]] : []));
+  const cardScale = optionPhotos.length ? optionScale(imageDisplayInfo, optionShare(optionPhotos)) : null;
+  const scaleCard = cardScale !== null;
+  const cardMedia = (sizes: string, eager: boolean) => {
+    const media = <ProductMedia product={product} sizes={sizes} qualityAware={imageDisplayInfo} {...(eager ? { loading: "eager" as const, fetchPriority: "high" as const } : {})} />;
+    return cardScale !== null && imageDisplayInfo ? <OptionScaledCard scale={cardScale} aspect={imageDisplayInfo.width / imageDisplayInfo.height}>{media}</OptionScaledCard> : media;
+  };
   const lineupSlide = lineupFirst && product.lineupImage
     ? [{ id: "all", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[product.lineupImage.src] ?? null} overrideImage={product.lineupImage} loading={showAllColors ? "eager" : "lazy"} fetchPriority={showAllColors ? "high" : "auto"} /></div> }]
     : [];
@@ -233,7 +242,7 @@ export function ProductHero({
     options.length > 0
       ? [
           ...lineupSlide,
-          ...(leadWithCard ? [{ id: "default", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" /></div> }] : []),
+          ...(leadWithCard ? [{ id: "default", node: <div className="h-full w-full p-2">{cardMedia(MOBILE_SLIDE_SIZES, true)}</div> }] : []),
           ...options.map((o, i) => optionSlides[i] ?? {
           id: o.id,
           node: (
@@ -425,6 +434,8 @@ export function ProductHero({
           <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
             {showNoPhoto && selectedRecord ? (
               <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
+            ) : !heroOverrideImage && scaleCard ? (
+              cardMedia("(min-width: 1024px) 42vw, 85vw", false)
             ) : (
               <ProductMedia
                 product={product}

@@ -29,6 +29,7 @@ import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/M
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
+import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/OptionScaledCard";
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
@@ -124,6 +125,14 @@ export function PilotProductDetail({
   const showNoPhoto = lacksOwnPhoto(selectedVariant);
   const displayImageInfo = displayImage ? imageDisplayMap?.[displayImage.src] : undefined;
   const fillHero = displayImageInfo ? displayImageInfo.fillHero : true;
+  // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
+  const cardShare = optionShare(product.variants.flatMap((v) => (v.image ? [imageDisplayMap?.[v.image.src]] : [])));
+  const scaleCard = (img: typeof displayImage) =>
+    !!img && img.src === product.image?.src && product.variants.some((v) => v.image) && optionScale(imageDisplayMap?.[img.src], cardShare) !== null;
+  const cardBox = (src: string) => {
+    const info = imageDisplayMap![src]!;
+    return { scale: optionScale(info, cardShare)!, aspect: info.width / info.height };
+  };
 
   const available = (selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock";
   const showBuy = isPublished && product.sellingPrice !== null;
@@ -146,6 +155,21 @@ export function PilotProductDetail({
     }
     const info = imageDisplayMap?.[img.src];
     const fill = info ? info.fillHero : true;
+    if (scaleCard(img)) {
+      return (
+        // absolute inset-0: an option photo here is `fill` straight inside this padded box, and `fill` ignores padding,
+        // so the card is sized against the same full box the options are drawn in.
+        <div className="absolute inset-0">
+          <OptionScaledCard {...cardBox(img.src)}>
+            {fill ? (
+              <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
+            ) : (
+              <Image key={img.src} src={img.src} alt={img.alt} width={info!.width} height={info!.height} sizes={MOBILE_SLIDE_SIZES} className="h-auto max-h-full w-auto max-w-full object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
+            )}
+          </OptionScaledCard>
+        </div>
+      );
+    }
     return fill ? (
       <div className="relative h-full w-full p-2">
         <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
@@ -291,6 +315,18 @@ export function PilotProductDetail({
                 style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
                 aria-hidden
               />
+              {scaleCard(displayImage) ? (
+                // absolute inset-0: same full box as the `fill` option photos below (they ignore the p-8/p-12 padding).
+                <div className="absolute inset-0">
+                  <OptionScaledCard {...cardBox(displayImage.src)}>
+                    {fillHero ? (
+                      <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" loading="eager" fetchPriority="high" />
+                    ) : (
+                      <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} width={displayImageInfo!.width} height={displayImageInfo!.height} sizes="(min-width: 1024px) 42vw, 90vw" className="h-auto max-h-full w-auto max-w-full object-contain" loading="eager" fetchPriority="high" />
+                    )}
+                  </OptionScaledCard>
+                </div>
+              ) : (
               <div className={fillHero ? "relative h-full w-full p-8 lg:p-12" : "relative flex h-full w-full items-center justify-center p-8 lg:p-12"}>
                 {fillHero ? (
                   // `loading`/`fetchPriority` rather than `priority`: same no-op story as the
@@ -314,6 +350,7 @@ export function PilotProductDetail({
                   />
                 )}
               </div>
+              )}
               <div
                 className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"
                 style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
