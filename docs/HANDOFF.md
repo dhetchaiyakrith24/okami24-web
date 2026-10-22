@@ -79,6 +79,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (Blueprint sync paused — not render.yaml). Full-set round (money · orders · customer data, 13.5 #3). LAUNCH_AUDIT 44 criteria +
   BSOT §11 guest checkout phone = check in the round. Owner questions for Shipnity (if he adds their LINE): API price + minimum term ·
   stock-read-only price · free daily stock file (CSV) or download link.
+  ALERT BOT CREATED 22/10 (owner signed up; Friday set it in his Chrome on his word "ทำให้พี่เลย"): LINE OA "OKM ORDER" @691qxpxp (free
+  plan, provider "OKami24", channel ID 2012160030) · Messaging API ON · join group chats = allowed · greeting + auto-reply = OFF ·
+  webhook URL empty (set when the endpoint exists) · NOT yet in the team group. The channel SECRET was shown in an owner screenshot in
+  chat 22/10 → REISSUE it (LINE Developers Console) before first use; the owner pastes secret + access token into Render env himself
+  (13.3 #9), never in chat. Same bot also checks slips the team drops into the group (owner 22/10 idea; EasySlip key already on the site).
 3m OPEN ROUND "Max list" (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
   (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
   `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
