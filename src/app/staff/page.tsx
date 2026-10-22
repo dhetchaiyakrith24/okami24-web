@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
@@ -9,6 +10,7 @@ import { StaffLogin } from "@/app/staff/_components/StaffLogin";
 import { SlipChecker } from "@/app/staff/_components/SlipChecker";
 import { LineGroups } from "@/app/staff/_components/LineGroups";
 import { lineConfigured } from "@/lib/line/client";
+import { countTodo } from "@/lib/staff/orders";
 
 /**
  * /staff — the staff-only slip-check page (owner ruling 2026-10-07, docs/BUSINESS_SOURCE_OF_TRUTH.md §9
@@ -17,7 +19,8 @@ import { lineConfigured } from "@/lib/line/client";
  * Not for customers and not for search: no link to it anywhere on the site, not in the sitemap, noindex
  * here. It is also deliberately NOT listed in robots.txt — that file is public, and listing the path
  * there would only advertise it. 404 until the owner sets OKAMI24_STAFF_PASSWORD on the host.
- * The page only helps a person check a slip; it never changes an order.
+ * The page only helps a person check a slip; it never changes an order. Web orders and their buttons live on
+ * /staff/orders (cart round 22/10).
  */
 
 export const dynamic = "force-dynamic";
@@ -33,6 +36,7 @@ export default async function StaffPage() {
 
   const configured = loggedIn && easySlipConfigured();
   const quota = configured ? await getQuota() : null;
+  const todo = loggedIn ? countTodo() : 0;
 
   return (
     <Container className="flex max-w-xl flex-col gap-6 pb-28 pt-8 lg:pt-12">
@@ -49,6 +53,14 @@ export default async function StaffPage() {
             "หน้านี้สำหรับทีมงานร้านเท่านั้น ใส่รหัสทีมงานเพื่อเข้าใช้"
           )}
         </p>
+        {loggedIn && (
+          <Link
+            href="/staff/orders"
+            className="self-start rounded-full border border-surface-border px-4 py-2 text-sm font-semibold text-foreground hover:border-foreground-dim"
+          >
+            ออเดอร์เว็บ{todo > 0 ? ` · ต้องทำ ${todo}` : ""} →
+          </Link>
+        )}
       </header>
 
       {loggedIn ? (
