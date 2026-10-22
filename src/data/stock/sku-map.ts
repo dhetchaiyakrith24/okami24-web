@@ -354,6 +354,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "teal": "Pod-178-7",
     "red": "Pod-178-8",
     "charcoal-red": "Pod-178-4",
+    "copper": "Pod-178-3", // line 2 max-sync 22/10
+    "champagne": "Pod-178-6", // line 2 max-sync 22/10
   } },
   "zero-nano": { parent: null, product: null },
   "zero-cartridge": { parent: "Pod-85", options: {
