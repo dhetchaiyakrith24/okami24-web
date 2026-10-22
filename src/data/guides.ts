@@ -2305,7 +2305,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
         paragraphs: [
-          "นับจากรายชื่อกลิ่นบนหน้าสินค้า WOTOFO nexBAR 18K มี 31 กลิ่น Joiway F3 มี 30 กลิ่น RELX Smash Go 12K มี 27 กลิ่น INFY 20K มี 24 กลิ่น M Bar 9K มี 24 กลิ่น MOOOD Monster 14K Puffs มี 23 กลิ่น และ nexBar CLEAR 18K มี 15 กลิ่น",
+          "นับจากรายชื่อกลิ่นบนหน้าสินค้า WOTOFO nexBAR 18K มี 31 กลิ่น Joiway F3 มี 31 กลิ่น RELX Smash Go 12K มี 27 กลิ่น INFY 20K มี 24 กลิ่น M Bar 9K มี 24 กลิ่น MOOOD Monster 14K Puffs มี 23 กลิ่น และ nexBar CLEAR 18K มี 15 กลิ่น",
           "รุ่นที่มี 12 กลิ่น ได้แก่ M Bar 10K และ Muro SC 8000 Puffs รุ่นที่มี 10 กลิ่น คือ TFIT M Power 20K ส่วน Joiway F4 มี 16 คู่กลิ่นตามหัวข้อข้างบน",
           "รายชื่อบนหน้าสินค้ารวมกลิ่นที่ร้านยังไม่มีของไว้ด้วย กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
         ],

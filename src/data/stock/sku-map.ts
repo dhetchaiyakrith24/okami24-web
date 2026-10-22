@@ -468,6 +468,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "virginia-tobacco": null,
     "vodak": "Pod-133-19", // spelled "Vodka" in Shipnity (owner 08/10: match it here)
     "watermelon-orange": null,
+    "funta-green": "Pod-133-15", // line 2 max-sync 22/10
   } },
   "joiway-f4": { parent: null, options: {
     "grape-ice-and-lychee-ice": null,

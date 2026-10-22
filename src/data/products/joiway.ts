@@ -88,6 +88,8 @@ export const joiwayProducts: Product[] = [
       { id: "virginia-tobacco", name: "Virginia Tobacco", swatchHex: "#a0703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-virginia-tobacco-v2.webp", alt: "JOIWAY F3, Virginia Tobacco" } },
       { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v2.webp", alt: "JOIWAY F3, Vodak" } },
       { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange-v2.webp", alt: "JOIWAY F3, Watermelon Orange" } },
+      // line 2 max-sync (22/10, owner "1 ลง"): Max name, no maker page — no photo yet. Max Pod-133-15 "Funta Green" (shops print Funta Grape, which stays — owner 06/09).
+      { id: "funta-green", name: "Funta Green", swatchHex: "#6aa84f", availability: "unknown" },
     ],
     // Site-wide template round batch 4a (06/10): the G5 template — JOIWAY's own Thai posters, one per block (3840 px, down-sized only:
     // _incoming/sitewide-template/4/4a/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
