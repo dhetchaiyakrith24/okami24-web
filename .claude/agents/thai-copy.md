@@ -76,6 +76,10 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
    Read it to calibrate together with "The voice" below. **Never propose changes to it.**
 5. The maker's own facts for the product (facts sheet / maker page the main agent gives you) — you write from those,
    in each language, not from another language's draft.
+6. Thai only: after your draft, run the audit pass in `.claude/skills/kien-thai/SKILL.md` (frames f1–f7 +
+   `references/ai-tells.md` · `grammar.md` · `forbidden-phrases.md` · `craft.md` · `style-rules.md`) on every sentence;
+   its "NOT used here" list and everything in this file and THAI_STYLE win on conflict (owner 23/10: blind A/B test,
+   "1-2 ผสมกัน … ธรรมชาติขึ้น" — this method + kien-thai together).
 
 # Rules you may not break
 
