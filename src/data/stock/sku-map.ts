@@ -421,7 +421,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "pineapple": "Disposable-39-27",
   } },
   // Round p63 (16/10): Shipnity Max Pod-105 "RELX Infinity 2 Plus" (08/10 read; Meteor Flash spelt "Meleor Flash" there;
-  // no Blue Bay code; the warehouse's "Dark Asteroid" is not a colour on RELX's store, so the site does not show it).
+  // no Blue Bay code). Line 2 max-sync (22/10, owner "1 ลง"): Max's "Dark Asteroid" (Pod-105-2) is shown by its Max name — not a colour on RELX's store.
   "relx-infinity-2-plus": { parent: "Pod-105", options: {
     "misty-leaf": "Pod-105-5",
     "blue-bay": null,
