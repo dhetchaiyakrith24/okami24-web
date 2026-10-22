@@ -7845,13 +7845,13 @@
   "source": "_incoming/coil3/key/D-c1-tw15.png",
   "slug": "coil-1",
   "role": "variant",
-  "id": "coil-1-1",
+  "id": "coil-1-15",
   "aiRender": {
    "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
    "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tw15.png; render _incoming/coil3/out/c1-tw15-S1.png)",
    "fidelitySheet": "_incoming/coil3/fid/c1-tw15.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white · 23/10: shown on Coil-1-15 \"TW15 0.15Ω\" (Coil-1-1 \"0.15Ω\" is PnP-VM6, #767)",
   "fileName": "variant-coil-1-1.webp"
  },
  {
@@ -7866,19 +7866,6 @@
   },
   "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "variant-coil-1-14.webp"
- },
- {
-  "source": "_incoming/coil3/key/D-c1-tr1.png",
-  "slug": "coil-1",
-  "role": "variant",
-  "id": "coil-1-11",
-  "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tr1.png; render _incoming/coil3/out/c1-tr1-S2.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c1-tr1.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
-  },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-1-11.webp"
  },
  {
   "source": "_incoming/coil3/key/D-c1-tr1.png",
@@ -12621,5 +12608,161 @@
    "reference": "real Dimensions Apricity pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/7-9.webp (_incoming/terea2/ahd/dimensions-apricity.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
    "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
   }
+ },
+ {
+  "source": "_incoming/coil1/key/vm5-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM5 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM5 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM5-0.2ohm.jpg (_incoming/line1-2310/coil1/ref/VM5-0.2ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-2.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-3",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM1-0.3ohm.jpg (_incoming/line1-2310/coil1/ref/VM1-0.3ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-3.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/m2-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-M2 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-M2 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-M2-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/M2-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-4.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/r1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-5",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-R1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-R1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-R1-0.8ohm.jpg (_incoming/line1-2310/coil1/ref/R1-0.8ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-5.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm4-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-6",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM4 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM4 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM4-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/VM4-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-6.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tm1-e2-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-7",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TM1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TM1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TM1-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/TM1-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-7.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm3-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-9",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM3 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM3 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM3-0.45ohm.jpg (_incoming/line1-2310/coil1/ref/VM3-0.45ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-9.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/r2-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-10",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-R2 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-R2 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-R2-1.0ohm.jpg (_incoming/line1-2310/coil1/ref/R2-1.0ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-10.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tw30-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-13",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TW15 grey box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TW30 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TW30 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TW30-0.3ohm.jpg (_incoming/line1-2310/coil1/ref/TW30-0.3ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-13.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tw20-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-16",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TW15 grey box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TW20 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TW20 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TW20-0.2ohm.jpg (_incoming/line1-2310/coil1/ref/TW20-0.2ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-16.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm6-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM6 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM6 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM6-0.15ohm.jpg (_incoming/line1-2310/coil1/ref/VM6-0.15ohm.jpg; reference only); the two 0.15Ω PnP coils are TW15 and VM6; TW15 has its own option (-15), so \"0.15Ω\" (-1) is VM6",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - correction (Friday 23/10): the #388 photo on this option showed a different coil; the two 0.15Ω PnP coils are TW15 and VM6; TW15 has its own option (-15), so \"0.15Ω\" (-1) is VM6",
+  "fileName": "variant-coil-1-1-vm6.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/c1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-11",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-C1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-C1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-C1-1.2ohm.jpg (_incoming/line1-2310/coil1/ref/C1-1.2ohm.jpg; reference only); the two 1.2Ω PnP coils are TR1 (teal ring, the shop's \"ฟ้า\" = -12) and C1 (white/clear ring), so \"1.2Ω ยางขาว\" (-11) is C1",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - correction (Friday 23/10): the #388 photo on this option showed a different coil; the two 1.2Ω PnP coils are TR1 (teal ring, the shop's \"ฟ้า\" = -12) and C1 (white/clear ring), so \"1.2Ω ยางขาว\" (-11) is C1",
+  "fileName": "variant-coil-1-11-c1.webp"
  }
 ]
