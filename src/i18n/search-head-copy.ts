@@ -241,7 +241,7 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
  * iqosheet / pod-159 pages keep their generated titles so `<title>`, Product.name and H1 agree.
  */
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
-  "m-bar-9k": "SALTHUB M BAR 9K (Marbo) ของแท้",
+  "m-bar-9k": "SALTHUB M BAR 9K (Marbo / มาโบ 9K) ของแท้",
   "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
   // the Pod opens with the locked type word, like the coil/pod rows below.
