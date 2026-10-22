@@ -429,6 +429,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "rose-gold": "Pod-105-4",
     "meteor-flash": "Pod-105-3",
     "bronze-dusk": "Pod-105-6",
+    "dark-asteroid": "Pod-105-2", // line 2 max-sync 22/10
   } },
   "relx-creator": { parent: "Pod-138", options: {
     "grey-yellow": "Pod-138-1", // owner list 24 (10/10): battery-only สีเทาเหลือง = Grey Yellow
