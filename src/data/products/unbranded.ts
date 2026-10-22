@@ -352,7 +352,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro Connector 20K",
     tagline: "A high-puff-count disposable rated for up to 20,000 puffs.",
     shortDescription:
-      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 20 flavors.",
+      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 33 flavors.",
     isFlagship: false,
     // Round "clip" (2026-09-27): the "RELX Creator pod" clip of docs/SEO_LANDSCAPE.md §4 item 6, from @OKM_24 (the main
     // channel of the two that cover this pod). "LEGO" in its title is the same honeycomb-shell nickname as this record's
@@ -408,6 +408,20 @@ export const unbrandedProducts: Product[] = [
       { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#e08a7a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-strawberry-peach-v2.webp", alt: "Muro Connector 20K, Strawberry Peach" } },
       { id: "vanilla-ice-cream", name: "Vanilla Ice Cream", swatchHex: "#e8d9b8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-vanilla-ice-cream-v2.webp", alt: "Muro Connector 20K, Vanilla Ice Cream" } },
       { id: "taro-ice-cream", name: "Taro Ice Cream", swatchHex: "#9a7ab8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-taro-ice-cream-v2.webp", alt: "Muro Connector 20K, Taro Ice Cream" } },
+      // line 2 max-sync (22/10): 13 more flavours in Shipnity Max (Pod-171-21..33) — Max names; no photo yet (no-photo panel).
+      { id: "green-slush", name: "Green Slush", swatchHex: "#7ac943", availability: "unknown" },
+      { id: "spear-mint", name: "Spear Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "yakult-orange", name: "Yakult Orange", swatchHex: "#f0a040", availability: "unknown" },
+      { id: "peach-tea", name: "Peach Tea", swatchHex: "#e8a07a", availability: "unknown" },
+      { id: "fruit-punch", name: "Fruit Punch", swatchHex: "#d9405a", availability: "unknown" },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f0a0b8", availability: "unknown" },
+      { id: "butterscotch", name: "Butterscotch", swatchHex: "#c9893a", availability: "unknown" },
+      { id: "chocolate-dubai", name: "Chocolate Dubai", swatchHex: "#6b4a2f", availability: "unknown" },
+      { id: "grape-50mg", name: "Grape 50MG", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "watermelon-50mg", name: "Watermelon 50MG", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "double-mint-50mg", name: "Double Mint 50MG", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "mix-berries-50mg", name: "Mix Berries 50MG", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "yakult-50mg", name: "Yakult 50MG", swatchHex: "#f0e4c0", availability: "unknown" },
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "Up to 20,000", sourceStatus: "verified" }],
     features: [],

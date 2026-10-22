@@ -21,6 +21,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // maxlist (20/10): + the Muro Salt Nic names (Max labels), sorted in by length.
   // maxlist (21/10): + the Vazer One names (the maker's flavours), sorted in by length.
   // maxlist (20/10): + the RELX Infinity Pro 2 pod names (Max Pod-27 labels), sorted in by length.
+  // line 2 max-sync (22/10): + the 13 new Muro Connector 20K names (Max Pod-171 labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -85,6 +86,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Longjing Ice Tea",
   "Mint Freeze 50mg",
   "Strawberry Burst",
+  "Double Mint 50MG",
+  "Mix Berries 50MG",
   "Banana Icecream",
   "Sour Strawberry",
   "Berrine Edition",
@@ -108,6 +111,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Peppermint 50mg",
   "Strawberry 50mg",
   "Vanilla Custard",
+  "Chocolate Dubai",
+  "Watermelon 50MG",
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -162,6 +167,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Banana Freeze",
   "Lemon Ice Tea",
   "Thai Milk Tea",
+  "Yakult Orange",
   "Red Bull Ice", // maxlist 21/10: Foli Bar 15K
   "Purple Grape",
   "Apple Baraku",
@@ -217,6 +223,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Fresh Peach",
   "Ice Tobacco",
   "Tangy Grape",
+  "Fruit Punch",
+  "Yakult 50MG",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
@@ -252,6 +260,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Taro Scoop",
   "Gummy Bear",
   "Milk Honey",
+  "Grape 50MG",
+  "Spear Mint",
   "Just Mint",
   "Sun Pearl",
   "All Berry",
@@ -268,6 +278,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Red Apple",
   "Guava Ice",
   "Ludou Ice",
+  "Peach Tea",
   "Blue Ice",
   "Cola Ice",
   "Thai Tea",
