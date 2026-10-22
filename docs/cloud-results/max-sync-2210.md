@@ -27,9 +27,9 @@ ELIQUID-1-1 (฿807 bundle), `test`, `Close`. Coil-55-1 = live as `coil-55`.
 | #725 | Muro Connector 20K 20 → 33 flavours | merged, live 200 |
 | #729 | SALTHUB: Zero Cartridge 22 → 33 (50mg), M Bar 9K 22 → 24, M Switch Kit Grape Aloe linked | merged, live 200 |
 | #730 | RELX Smash GO 10 → 27 (incl. 5% versions) | merged, live 200 |
-| #731 | "กลิ่น" / "รส" kept on the line of their number (owner 22/10 "1 ทำ"; whole sitemap: 1 break fixed, 0 new) | merged |
-| #732 | MOOOD Monster 14K 21 → 23 | merged |
-| #733 | RELX Creator Pod 20K (Pod-137) prepared — **unpublished until a card photo** (line 1) | see PR |
+| #731 | "กลิ่น" / "รส" kept on the line of their number (owner 22/10 "1 ทำ"; whole sitemap: 1 break fixed, 0 new) | merged, live |
+| #732 | MOOOD Monster 14K 21 → 23 | merged, live 200 |
+| #733 | RELX Creator Pod 20K (Pod-137) prepared — **unpublished until a card photo** (line 1: card + uncomment its approval + sku-map Pod-137-1..31) | merged (nothing visible) |
 
 All new options carry Max's names and no photo yet (no-photo panel); line 1 (images) has the option ids. Every (a)/(b) row is now live, prepared, owner-declined, or in the identity list below.
 
