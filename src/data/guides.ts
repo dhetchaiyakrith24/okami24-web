@@ -741,6 +741,21 @@ const allGuides: Guide[] = [
         ],
       },
       {
+        // Keyword line 23/10 (owner's pick): "มาโบ 10K ใช้ยังไง / ปรับยังไง / วิธีใช้" + PAA "Marbo 10k ปรับไฟยังไง". SALTHUB posters only
+        // (researcher 23/10): MBar10K_04 double-click bottom button → ECO/SOFT/BOOST · MBar10K_03 mini display mode + battery, 4-LED
+        // battery 25/50/75/100%, RGB status indicator · 10,000 puffs / 600mAh / USB-C = the m-bar-10k spec rows. SALTHUB publishes no mode
+        // details, blink meanings or charge time → said so. The Thai nickname stays out (THAI_STYLE round-8 lock: Marbo in English only).
+        heading: "M Bar 10K ใช้ยังไง ปรับโหมดยังไง ไฟบอกอะไร",
+        paragraphs: [
+          "M Bar 10K เป็นพอตใช้แล้วทิ้งของ SALTHUB ที่ระบุไว้สูงสุด 10,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และเลือกโหมดกับปรับลมได้ตามความต้องการ",
+          "ที่ก้นเครื่องมีปุ่ม กดสองครั้งติดกันเพื่อสลับ 3 โหมด คือ Eco · Soft และ Boost เท่าที่ร้านเช็ค SALTHUB ยังไม่ได้อธิบายว่าแต่ละโหมดต่างกันแค่ไหน ร้านแนะนำให้ลองสลับดู แล้วเลือกโหมดที่สูบแล้วสบายสำหรับตัวเอง",
+          "จอเล็ก ๆ บนตัวเครื่องบอกโหมดที่ใช้อยู่และแบตที่เหลือ ไฟแบตมี 4 ดวง ติด 1 ดวงคือ 25% 2 ดวงคือ 50% 3 ดวงคือ 75% และติดครบ 4 ดวงคือ 100% ส่วนไฟ RGB อีกจุดบอกว่าตอนนี้อยู่โหมดไหน",
+          "ไฟ 4 ดวงนี้บอกแบตอย่างเดียว ไม่ได้บอกว่าน้ำยาเหลือเท่าไหร่ ถ้าไฟยังเต็มแต่รสเริ่มจาง อาจเป็นเพราะน้ำยาใกล้หมด วิธีดูอยู่ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts) ส่วนถ้าแบตหมดก็ชาร์จผ่าน USB-C แล้วใช้ต่อได้",
+          "ความหมายของไฟกะพริบและเวลาชาร์จ SALTHUB ยังไม่ได้บอกไว้ ถ้าเจออาการที่ไม่แน่ใจ ทักไลน์ @okm24 ถามร้านได้ ดูรายละเอียดของรุ่นนี้ได้ที่ [M Bar 10K](/products/m-bar-10k)",
+        ],
+        image: SECTION_IMAGES.mBar10kModes,
+      },
+      {
         heading: "กลิ่นที่คนค้นหา และกลิ่นใหม่ของ M Bar 9K",
         paragraphs: [
           "เวลาพิมพ์ “marbo กลิ่น” ใน Google คำที่ขึ้นมาให้เลือกมี Zapple · แตงโม (Watermelon) · แอปเปิ้ล (Apple Aloe) · Blue Ice · องุ่น (Grape) และส้ม (Orange Sour) แตงโม Blue Ice และองุ่นมีทั้งสามรุ่น Apple Aloe มีใน M Bar 9K กับ M Switch Pod ส่วน Zapple กับส้มมีเฉพาะ M Bar 9K",
@@ -749,7 +764,7 @@ const allGuides: Guide[] = [
         ],
       },
     ],
-    relatedProductSlugs: ["m-bar-9k", "m-switch-pod"],
+    relatedProductSlugs: ["m-bar-9k", "m-bar-10k", "m-switch-pod"],
     faq: [
       {
         question: "Marbo กลิ่นไหนเย็น",
@@ -766,6 +781,10 @@ const allGuides: Guide[] = [
       {
         question: "หัว M Switch กับ M Bar กลิ่นเหมือนกันไหม",
         answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Mango Passion · Strawberry Watermelon",
+      },
+      {
+        question: "Marbo 10K ใช้ยังไง ปรับโหมดยังไง",
+        answer: "ที่ก้นเครื่อง M Bar 10K มีปุ่ม กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco · Soft · Boost จอเล็ก ๆ บนเครื่องบอกว่าตอนนี้อยู่โหมดไหน และไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25%",
       },
     ],
     // Round "clip" (2026-09-27, owner: this clip only — it replaces QptFMwIXbJE "M BAR 9K NEW FLAVOR 2" of round 10B):
