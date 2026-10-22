@@ -207,7 +207,7 @@ npm run qr:upload-text
 
 **ก. ออกรหัสลับใหม่ 2 ค่าใน LINE Developers**
 34. คอมเปิด https://developers.line.biz/console → ล็อกอินบัญชีที่สมัครบอท → กด Provider ของร้าน → กดช่อง **OKM ORDER** (ป้าย Messaging API)
-35. แท็บ **Basic settings** → เลื่อนหา **Channel secret** → กด **Issue** (ออกใหม่) → กด **Copy** → ไปวางใน Render ตามข้อ 38 ทันที
+35. แท็บ **Basic settings** → เลื่อนหา **Channel secret** → กดปุ่มออกรหัสใหม่ข้าง ๆ ช่องนั้น (ชื่อปุ่ม **Issue** หรือ **Reissue**) → ถ้าถามยืนยัน กดยืนยัน → กด **Copy** → ไปวางใน Render ตามข้อ 38 ทันที
 36. แท็บ **Messaging API** → เลื่อนล่างสุด **Channel access token (long-lived)** → กด **Issue** → กด **Copy** → วางใน Render ตามข้อ 38
     (หาปุ่มตามข้อ 35–36 ไม่เจอ = แคปหน้าจอส่ง Friday **โดยปิดส่วนที่เป็นรหัสก่อน**)
 

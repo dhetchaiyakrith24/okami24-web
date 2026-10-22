@@ -47,7 +47,7 @@ export function formatOrderAlert(order: OrderDetail, verdict: SlipVerdict, reaso
     `ยอด ${baht(order.total)}${order.shippingFee > 0 ? ` (รวมค่าส่ง ${baht(order.shippingFee)})` : " (ไม่มีค่าส่ง)"}`,
     verdictLine(verdict, reasons),
     `ผู้รับ: ${order.shippingAddress.recipientName} · ${order.shippingAddress.province}`,
-    `เปิดดู: ${siteUrl}/staff/orders/${encodeURIComponent(order.orderNumber)}`,
+    `เปิดดู: ${siteUrl}/staff`,
   ].join("\n");
 }
 
