@@ -84,6 +84,9 @@ export const mooodProducts: Product[] = [
       flavour("watermelon-strawberry", "Watermelon Strawberry", "#c94a4a"),
       flavour("grape-n5", "Grape N5%", "#6b4a8e"),
       flavour("blueberry-n5", "Blueberry N5%", "#3a4a8e"),
+      // line 2 max-sync (22/10): 2 more in Shipnity Max (Disposable-37-16 / -22) — Max names; no photo yet (no-photo panel).
+      { id: "watermelon-50mg", name: "Watermelon 50MG", swatchHex: "#d94f6b", availability: "unknown" as const },
+      { id: "mint-n5", name: "Mint N5%", swatchHex: "#3ea88a", availability: "unknown" as const },
     ],
     // Rows from the maker's own files (Wayback copies, facts file above): posters 01/02/20 + every flavour photo print
     // "14000 Puffs", "DUO MESH", "16 ml", "3% Nicotine". The N5% flavours' 5% is seen only on a retailer photo of the

@@ -47,6 +47,11 @@ const MAX_ONLY_RECORDS = {
   "VMATE-PRO-2": "Pod-176", // Vmate Pro 2
   "GRAPLE-FREEBASE": "ELQ-2", // Graple Freebase (Max parent ฿795, its one child ฿159; owner price ฿160 for both, 19/10)
   "MQ-BAR-22K": "Disposable-43", // MQ Bar 22K (Max parent ฿369, children ฿359; owner price ฿390 for all, 19/10)
+  // maxlist (20/10): added to max-seed.ts by hand then; written here so a re-run keeps them (line 2 max-sync 22/10).
+  "RELX-ESSENTIAL-2": "Pod-157", // Relx Essential 2
+  "RELX-INFINITY-PRO-2-POD": "Pod-27", // หัวพอต RELX Infinity Pro 2
+  // line 2 max-sync (22/10): Max "Relx Creator Pod 20K" (17/10; renamed "Relx เลโก้ 20000 คำ" 22/10) — Thai shops sell it as RELX Creator 20K pod.
+  "RELX-CREATOR-POD-20K": "Pod-137",
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
