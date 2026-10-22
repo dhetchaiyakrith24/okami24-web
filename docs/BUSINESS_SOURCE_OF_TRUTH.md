@@ -317,6 +317,19 @@ shop's PromptPay QR is recognised by the QR's reference (08/10) · quota shown f
 transferring**. **After the transfer there is no cancellation and no refund** (a failed authenticity check is a
 claim, not a cancellation — see §12 "Authenticity"). Say this on the
 how-to-order page and on the order page next to the bank details.
+> **OWNER EXCEPTION 2026-10-22 (cart round, chat — option "จ่ายทันที (แนะนำ)"):** if an item turns out to be **out of
+> stock after the customer has transferred**, the shop contacts the customer, who chooses **another item at the same
+> price OR a refund**. The rule above ("no cancellation and no refund after the transfer") stays for every other case.
+> Why: the site opens without the warehouse API (Shipnity charges several thousand baht a month for a non-WooCommerce
+> site), so stock on the site can lag the warehouse by up to one stock read.
+
+**Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
+and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
+order moves to "payment submitted" with the verdict beside it. This widens the 2026-10-07 "one exception" above from the
+staff page to the order page — still **no automatic confirmation**: a person moves every order past "payment submitted".
+No slip image, name or account number is stored (same line as the staff page). Code: `src/lib/commerce/payment-slip.ts`.
+New-order and slip alerts go to the team's own LINE group through a separate LINE OA bot "OKM ORDER" (@691qxpxp, not
+@okm24); a second group "OKM Slip" gets the bot's EasySlip answer for slips staff drop in there.
 
 ---
 
@@ -355,6 +368,9 @@ Customers buy without registering, but the shop must still capture customer data
 phone number. Build this in the round that turns online ordering back on (§8 exception), not now.
 Today's checkout already asks for a phone number with no code (§9, OTP off); whether that alone
 counts as "captured" is settled in that round.
+**Checked in the cart round (2026-10-22):** every order carries two phone numbers — the checkout phone step (the
+customer record, no sign-up, no password) and the recipient's phone on the shipping address — both required (the staff
+order list on /staff shows them). That meets "at minimum the phone number"; nothing more is asked.
 
 **Initial required customer identity field:** phone number.
 
