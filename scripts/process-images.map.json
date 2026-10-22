@@ -12410,5 +12410,216 @@
    "reference": "IQOS official OASIS PEARL pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+OASIS+PEARL+PACK-pmi_G0000948_00_ph-1771171317115.png (_incoming/terea2/ph/oasis-pearl.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
    "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
   }
+ },
+ {
+  "source": "_incoming/terea2/r/black-green-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-1",
+  "fileName": "variant-iqosheet-15-1-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Black Green five-sticks graphic, iqos.com/id (_incoming/p63/terea2000/black-green.png) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/emerald-edition-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-10",
+  "fileName": "variant-iqosheet-15-10-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Emerald Edition five-sticks graphic, iqos.com/id (public/assets/products/iqosheet-15/variant-iqosheet-15-10.webp, the live crop of IQOS's Emerald Edition render) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/golden-edition-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-11",
+  "fileName": "variant-iqosheet-15-11-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Golden Edition five-sticks graphic, iqos.com/id (_incoming/p63/terea2000/golden-edition.png) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/bright-wave-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-7",
+  "fileName": "variant-iqosheet-15-7-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Bright Wave pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/2-9.webp (_incoming/terea2/ahd/bright-wave.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/dimensions-yugen-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-9",
+  "fileName": "variant-iqosheet-15-9-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Dimensions Yugen pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/5-10.webp (_incoming/terea2/ahd/dimensions-yugen.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/berrine-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-13",
+  "fileName": "variant-iqosheet-15-13-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Berrine Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Berrine-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/berrine-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/mulint-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-14",
+  "fileName": "variant-iqosheet-15-14-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Mulint Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Mulint-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/mulint-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/sun-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-16",
+  "fileName": "variant-iqosheet-15-16-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Sun Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2024/10/IQOS-Terea-Sun-Pearl-indonesia-for-all-heets.webp (_incoming/terea2/ahd/sun-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/black-ruby-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-17",
+  "fileName": "variant-iqosheet-15-17-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Black Ruby pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Black-Ruby-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/black-ruby.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/auburn-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-auburn-edition",
+  "fileName": "variant-iqosheet-15-auburn-edition-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Auburn Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Auburn-Edition-Indonesia.webp (_incoming/terea2/ahd/auburn-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/bermin-pearl-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-bermin-pearl-edition",
+  "fileName": "variant-iqosheet-15-bermin-pearl-edition-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Bermin Pearl Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Bermin-Pearl-Edition-Indonesia.webp (_incoming/terea2/ahd/bermin-pearl-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/passion-fruit-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-passion-fruit-pearl",
+  "fileName": "variant-iqosheet-15-passion-fruit-pearl-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Passion Fruit Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/09/Iqos-Terea-Passion-Fruit-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/passion-fruit-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/perint-pearl-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-perint-pearl-edition",
+  "fileName": "variant-iqosheet-15-perint-pearl-edition-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Perint Pearl Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Perint-Pearl-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/perint-pearl-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/riviera-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-riviera-pearl",
+  "fileName": "variant-iqosheet-15-riviera-pearl-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Riviera Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Riviera-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/riviera-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/strawberry-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-strawberry-pearl",
+  "fileName": "variant-iqosheet-15-strawberry-pearl-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Strawberry Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/09/Iqos-Terea-Strawberry-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/strawberry-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/dimensions-apricity-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-8",
+  "fileName": "variant-iqosheet-15-8-pack.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the official Sienna pack's printed panel (panel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Dimensions Apricity pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/7-9.webp (_incoming/terea2/ahd/dimensions-apricity.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
  }
 ]
