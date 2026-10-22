@@ -62,9 +62,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Bot: LINE OA "OKM ORDER" @691qxpxp (free plan 300 msgs/month; a group push counts per member → keep "OKM Order" small; slip replies free) ·
   groups "OKM Order" + "OKM Slip" created 22/10 (owner only, bot not invited) · existing "OKAMI ORDER (8)" / "OKAMI ADMIN (5)" untouched.
   No Shipnity API (several thousand ฿/month for non-WooCommerce, warehouse 22/10) — staff forward orders by hand.
-3m ROUND "Max list" — DONE 22/10 (line 2 Max chat; table `docs/cloud-results/max-sync-2210.md`; owner "1 ลง" = the 6 Max-only options listed
-  #737–#740; owner "2 ไม่ลง" = SUP Zero 22K + "หัว dude 3 ml." not listed) → TO CLOSE with a tag (round-close). Round file
-  `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` (its 【แตะได้】 thai-typography line was used by #731 กลิ่น/รส).
+3m CLOSED 23/10 — round "Max list", tag `max-list-2310` (round file: `git show max-list-2310:docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt`;
+  its 【แตะได้】 thai-typography line ended with the round — thai-typography.ts is locked again). Table `docs/cloud-results/max-sync-2210.md`
+  (every row answered) · owner "1 ลง" = the 6 Max-only options listed #737–#740 · owner "2 ไม่ลง" = SUP Zero 22K + "หัว dude 3 ml." not listed.
 3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
   #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
   Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
