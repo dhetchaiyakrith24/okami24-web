@@ -755,6 +755,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-15-verified-perint-pearl-edition": null,
     "iqosheet-15-verified-bermin-pearl-edition": null,
     "iqosheet-15-verified-riviera-pearl": null,
+    "iqosheet-15-verified-black-purple": "IQOSHEET-15-18", // line 2 max-sync 22/10
   } },
   "iqosheet-16": { parent: "IQOSHEET-16", options: {
     "IQOSHEET-16-1": "IQOSHEET-16-1",
@@ -762,6 +763,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "IQOSHEET-16-3": "IQOSHEET-16-3",
     "iqosheet-16-verified-garnet-red": null,
     "iqosheet-16-verified-electric-purple": null,
+    "IQOSHEET-16-4": "IQOSHEET-16-4", // line 2 max-sync 22/10: Max "Red Brown"
   } },
   // Round list19 (17/10): IQOS ILUMA i ONE — the warehouse holds Breeze Blue only (Max children -1 Pebble Grey · -2 Azure Blue are
   // the original ILUMA ONE, kept off this record; -4 Oasis Limited · -5 Bright not identified yet).
