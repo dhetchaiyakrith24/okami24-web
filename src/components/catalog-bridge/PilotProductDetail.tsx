@@ -29,7 +29,7 @@ import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/M
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
-import { OptionScaledCard, optionScale } from "@/components/visual/OptionScaledCard";
+import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/OptionScaledCard";
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
@@ -126,11 +126,12 @@ export function PilotProductDetail({
   const displayImageInfo = displayImage ? imageDisplayMap?.[displayImage.src] : undefined;
   const fillHero = displayImageInfo ? displayImageInfo.fillHero : true;
   // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
+  const cardShare = optionShare(product.variants.flatMap((v) => (v.image ? [imageDisplayMap?.[v.image.src]] : [])));
   const scaleCard = (img: typeof displayImage) =>
-    !!img && img.src === product.image?.src && product.variants.some((v) => v.image) && optionScale(imageDisplayMap?.[img.src]) !== null;
+    !!img && img.src === product.image?.src && product.variants.some((v) => v.image) && optionScale(imageDisplayMap?.[img.src], cardShare) !== null;
   const cardBox = (src: string) => {
     const info = imageDisplayMap![src]!;
-    return { scale: optionScale(info)!, aspect: info.width / info.height };
+    return { scale: optionScale(info, cardShare)!, aspect: info.width / info.height };
   };
 
   const available = (selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock";

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
-import { OptionScaledCard, optionScale } from "@/components/visual/OptionScaledCard";
+import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/OptionScaledCard";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { ColorVariantRail } from "@/components/product/ColorVariantRail";
 import { FlavorVariantGrid } from "@/components/product/FlavorVariantGrid";
@@ -222,7 +222,8 @@ export function ProductHero({
   // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
   const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
   // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
-  const cardScale = optionRecords.some((o) => o.image) ? optionScale(imageDisplayInfo) : null;
+  const optionPhotos = optionRecords.flatMap((o) => (o.image ? [imageDisplayMap?.[o.image.src]] : []));
+  const cardScale = optionPhotos.length ? optionScale(imageDisplayInfo, optionShare(optionPhotos)) : null;
   const scaleCard = cardScale !== null;
   const cardMedia = (sizes: string, eager: boolean) => {
     const media = <ProductMedia product={product} sizes={sizes} qualityAware={imageDisplayInfo} {...(eager ? { loading: "eager" as const, fetchPriority: "high" as const } : {})} />;
