@@ -446,7 +446,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "cola-ice": "Pod-133-5",
     "cola-lemon": "Pod-133-12",
     "cool-mint-ice": "Pod-133-4",
-    "funta-grape": null, // owner list 24 (10/10): Pod-133-15 Funta Green is a different flavour
+    "funta-grape": null, // owner list 24 (10/10): Pod-133-15 Funta Green is a different flavour (listed as its own option 22/10, below)
     "grape-ice": "Pod-133-1",
     "green-apple-ice": "Pod-133-7",
     "hokkaido-melon-ice": "Pod-133-16",
@@ -471,6 +471,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "virginia-tobacco": null,
     "vodak": "Pod-133-19", // spelled "Vodka" in Shipnity (owner 08/10: match it here)
     "watermelon-orange": null,
+    "funta-green": "Pod-133-15", // line 2 max-sync 22/10
   } },
   "joiway-f4": { parent: null, options: {
     "grape-ice-and-lychee-ice": null,
