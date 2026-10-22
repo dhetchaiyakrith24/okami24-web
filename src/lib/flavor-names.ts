@@ -26,6 +26,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // line 2 max-sync (22/10): + the RELX Smash GO 12K 5% names (Max Disposable-39 labels, written "<Flavour> 5%"), sorted in by length.
   // line 2 max-sync (22/10): + the 2 new MOOOD Monster 14K names (Max Disposable-37 labels), sorted in by length.
   // line 2 max-sync (22/10): + TEREA Black Purple (iqos.com/id), sorted in by length.
+  // line 2 max-sync (22/10): + JOIWAY F3 Funta Green (Max Pod-133-15), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -243,6 +244,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Fruit Punch",
   "Yakult 50MG",
   "Mixberry 5%",
+  "Funta Green",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",

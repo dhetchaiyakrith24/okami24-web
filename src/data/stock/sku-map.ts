@@ -423,7 +423,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "pineapple": "Disposable-39-27",
   } },
   // Round p63 (16/10): Shipnity Max Pod-105 "RELX Infinity 2 Plus" (08/10 read; Meteor Flash spelt "Meleor Flash" there;
-  // no Blue Bay code; the warehouse's "Dark Asteroid" is not a colour on RELX's store, so the site does not show it).
+  // no Blue Bay code). Line 2 max-sync (22/10, owner "1 ลง"): Max's "Dark Asteroid" (Pod-105-2) is shown by its Max name — not a colour on RELX's store.
   "relx-infinity-2-plus": { parent: "Pod-105", options: {
     "misty-leaf": "Pod-105-5",
     "blue-bay": null,
@@ -431,6 +431,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "rose-gold": "Pod-105-4",
     "meteor-flash": "Pod-105-3",
     "bronze-dusk": "Pod-105-6",
+    "dark-asteroid": "Pod-105-2", // line 2 max-sync 22/10
   } },
   "relx-creator": { parent: "Pod-138", options: {
     "grey-yellow": "Pod-138-1", // owner list 24 (10/10): battery-only สีเทาเหลือง = Grey Yellow
@@ -445,7 +446,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "cola-ice": "Pod-133-5",
     "cola-lemon": "Pod-133-12",
     "cool-mint-ice": "Pod-133-4",
-    "funta-grape": null, // owner list 24 (10/10): Pod-133-15 Funta Green is a different flavour
+    "funta-grape": null, // owner list 24 (10/10): Pod-133-15 Funta Green is a different flavour (listed as its own option 22/10, below)
     "grape-ice": "Pod-133-1",
     "green-apple-ice": "Pod-133-7",
     "hokkaido-melon-ice": "Pod-133-16",
@@ -470,6 +471,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "virginia-tobacco": null,
     "vodak": "Pod-133-19", // spelled "Vodka" in Shipnity (owner 08/10: match it here)
     "watermelon-orange": null,
+    "funta-green": "Pod-133-15", // line 2 max-sync 22/10
   } },
   "joiway-f4": { parent: null, options: {
     "grape-ice-and-lychee-ice": null,
@@ -725,7 +727,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-94-4": "Coil-94-4",
   } },
   // Round list19 (17/10): LAMBDA i8 — Max children -1 Black · -2 Silver · -3 Gray · -4 Red · -5 Green · -6 Gold. LAMBDA's own colour
-  // list has White, not Silver: "check" until the admin confirms the warehouse "Silver" is LAMBDA's White.
+  // list has White, not Silver. Line 2 max-sync (22/10, owner "1 ลง"): Silver is shown by its Max name (-2); White stays "check".
   "iqosheet-14": { parent: "IQOSHEET-14", options: {
     "IQOSHEET-14-4": "IQOSHEET-14-4",
     "IQOSHEET-14-6": "IQOSHEET-14-6",
@@ -733,6 +735,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-14-verified-green": "IQOSHEET-14-5",
     "iqosheet-14-verified-gray": "IQOSHEET-14-3",
     "iqosheet-14-verified-white": "check",
+    "iqosheet-14-verified-silver": "IQOSHEET-14-2", // line 2 max-sync 22/10
   } },
   "iqosheet-15": { parent: "IQOSHEET-15", options: {
     "IQOSHEET-15-1": "IQOSHEET-15-1",
