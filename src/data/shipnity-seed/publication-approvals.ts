@@ -210,7 +210,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round p63 (19/10): ESKO BAR 20000 (Max-only "Pod-130") — owner list item 69 "ใส่ตามคลัง": Max ราคาขาย ฿389 for the parent and its 22 flavours (read 2026-10-17).
   "ESKO-BAR-20K": { sellingPrice: 389, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod (Max-only "Pod-160") — Max ราคาขาย ฿349 for the parent and its 18 flavours (read 2026-10-17).
-  "ESKO-BAR-SWITCH-POD": { sellingPrice: 349, lastPriceReview: "2026-10-19" },
+  // owner-confirmed 2026-10-22: admin ICE's LINE 22/10 15.00 "หัวน้ำยา Esko. ปรับเป็นราคา 400.-", forwarded by the owner "แก้เรื่องราคาตามแอดมิน
+  // พี่แจ้งมา" — owner override (was ฿349). Max says ฿349 until the admin updates it.
+  "ESKO-BAR-SWITCH-POD": { sellingPrice: 400, lastPriceReview: "2026-10-22" },
   // Round list19 (18/10, owner ruling "list it, warehouse data only"): SKE Crystal B20000 — Max "ราคาขาย" ฿329 (parent "Product 1141360"
   // and its 8 children Pod-149-*, 17/10 read).
   "Pod-149": { sellingPrice: 329, lastPriceReview: "2026-10-18" },
