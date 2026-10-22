@@ -71,15 +71,20 @@ export function Footer({ categories, brands, dnsGuideId }: { categories: NavCate
             >
               <LineIcon className="h-4 w-4" />
             </Link>
-            <Link
-              href={CONTACT.youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={dict.nav.youtubeChannel}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
-            >
-              <YoutubeIcon className="h-4 w-4" />
-            </Link>
+            {/* Owner 22/10: one icon per channel; the handle in the label + tooltip tells the two apart. */}
+            {CONTACT.youtubeChannels.map((ch) => (
+              <Link
+                key={ch.url}
+                href={ch.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${dict.nav.youtubeChannel} ${ch.handle}`}
+                title={ch.handle}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
+              >
+                <YoutubeIcon className="h-4 w-4" />
+              </Link>
+            ))}
           </div>
           {/* Round "site unreachable" (owner 11/10): the DNS help page, next to LINE so it reads as help — here and not in
               the help column, which phones show folded (designer 11/10). */}
