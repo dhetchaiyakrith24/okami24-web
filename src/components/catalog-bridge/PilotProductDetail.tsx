@@ -152,7 +152,9 @@ export function PilotProductDetail({
     const fill = info ? info.fillHero : true;
     if (scaleCard(img)) {
       return (
-        <div className="relative h-full w-full p-2">
+        // absolute inset-0: an option photo here is `fill` straight inside this padded box, and `fill` ignores padding,
+        // so the card is sized against the same full box the options are drawn in.
+        <div className="absolute inset-0">
           <OptionScaledCard>
             {fill ? (
               <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
@@ -309,7 +311,8 @@ export function PilotProductDetail({
                 aria-hidden
               />
               {scaleCard(displayImage) ? (
-                <div className="relative h-full w-full p-8 lg:p-12">
+                // absolute inset-0: same full box as the `fill` option photos below (they ignore the p-8/p-12 padding).
+                <div className="absolute inset-0">
                   <OptionScaledCard>
                     {fillHero ? (
                       <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" loading="eager" fetchPriority="high" />
