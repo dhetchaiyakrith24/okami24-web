@@ -649,7 +649,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       resistance: "1.0Ω",
     },
     tagline: "ปรับช่องลมได้ รองรับ 9,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ ปรับช่องลมได้ รองรับสูงสุด 9,000 พัฟ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
+    // M Bar 9K redesign (23/10, thai-copy): the one Marbo/มาโบ line under the name (THAI_STYLE line 63 exception 2);
+    // 9,000 puffs + airflow left out — the tagline and the compare table already say them (one fact at most twice).
+    shortDescription: "พอตใช้แล้วทิ้งรุ่นชาร์จซ้ำได้ของ SALTHUB ใช้ salt nic 30mg มีให้เลือก 24 กลิ่น หลายร้านเรียกรุ่นนี้ว่า Marbo หรือมาโบ 9K",
     features: {
       "adjustable-airflow": {
         title: "ปรับช่องลมได้",

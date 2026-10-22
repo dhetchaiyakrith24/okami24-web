@@ -184,7 +184,7 @@ export const salthubProducts: Product[] = [
     displayName: "SALTHUB M BAR 9K",
     tagline: "Adjustable airflow, 9,000 puffs.",
     shortDescription:
-      "A rechargeable disposable with adjustable airflow, rated up to 9,000 puffs. Many Thai shops list the M Bar line under the name Marbo — the same line.",
+      "A rechargeable disposable from SALTHUB with 30mg salt nic, in 24 flavours. Many shops call this same model Marbo 9K.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@OKM_24 — one of OKami24's own three channels.

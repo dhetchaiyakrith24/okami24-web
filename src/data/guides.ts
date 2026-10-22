@@ -783,7 +783,8 @@ const allGuides: Guide[] = [
         answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Mango Passion · Strawberry Watermelon",
       },
       {
-        question: "Marbo 10K ใช้ยังไง ปรับโหมดยังไง",
+        // THAI_STYLE line 63 exception 2 (owner 23/10): on this guide "มาโบ" may stand in FAQ questions as people type them.
+        question: "มาโบ 10K ใช้ยังไง ปรับโหมดยังไง",
         answer: "ที่ก้นเครื่อง M Bar 10K มีปุ่ม กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco · Soft · Boost จอเล็ก ๆ บนเครื่องบอกว่าตอนนี้อยู่โหมดไหน และไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25%",
       },
     ],
@@ -2206,7 +2207,7 @@ const allGuides: Guide[] = [
           "เครื่องระบบสวิตช์รุ่นไหนดี หรือยี่ห้อไหนดี คำตอบขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง บางคนอยากได้พัฟต่อหัวเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้เครื่องตัวเล็กไว้พกติดตัว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามความต้องการทีละแบบ",
           "พอตเปลี่ยนหัวคือพอตที่เก็บเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จเมื่อหัวเดิมหมด ไม่ต้องเติมน้ำยาเอง บนเว็บเรารวมเครื่องแบบนี้ไว้ในหมวด[พอตเปลี่ยนหัว](/products/switch-pods) และเรียกตัวเครื่องว่าเครื่องระบบสวิตช์",
           "รุ่นที่มีบนเว็บตอนนี้ ของ SALTHUB มี [M Switch Kit](/products/m-switch-kit) · [Zero Pro](/products/zero-pro) · [Zero Nano](/products/zero-nano) ของ RELX มี [RELX Creator](/products/relx-creator) กับ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ของ Esko Bar มี [Esko Bar Switch 20K](/products/pod-159) ของ WOTOFO มี [nexPOD 15K Pro Kit](/products/nexpod-15k) ของ KS มี [KS Quikpro 15K Kit](/products/ks-quikpro-kit) และอีกรุ่นที่ไม่ได้ระบุยี่ห้อคือ [Nexswitch 16K Kit](/products/nexswitch-16k-kit)",
-          "ถ้ายังลังเลว่าจะเลือกเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน[พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)ก่อนได้ บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
+          "ถ้ายังลังเลว่าจะเลือกเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน[พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)ก่อนได้ บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว ถ้าตัดสินใจแล้วว่าจะเอาพอตใช้แล้วทิ้ง ไปต่อที่[พอตใช้แล้วทิ้ง ยี่ห้อไหนดี](/guides/choosing-a-disposable)ได้เลย และถ้าเพิ่งเริ่มสูบพอตครั้งแรก อ่าน[สูบพอตยังไงไม่ให้สำลัก](/guides/how-to-vape-without-coughing)ไว้ด้วย",
         ],
       },
       {
@@ -2323,7 +2324,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "พอตใช้แล้วทิ้งยี่ห้อไหนดี ตัวไหนดี ไม่มีคำตอบเดียวที่ใช้ได้กับทุกคน เพราะแต่ละคนมองหาไม่เหมือนกัน บางคนอยากได้รุ่นที่พัฟเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้สองกลิ่นในเครื่องเดียว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามสิ่งที่คุณอยากได้ทีละแบบ",
           "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี [Joiway F3](/products/joiway-f3) กับ [Joiway F4](/products/joiway-f4) TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี [INFY 20K](/products/infy-20k) นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
-          "ถ้ายังลังเลว่าจะเอาพอตใช้แล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ก่อนได้ ส่วนถ้ากำลังชั่งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
+          "ถ้ายังลังเลว่าจะเอาพอตใช้แล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ก่อนได้ ส่วนถ้ากำลังชั่งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว ถ้าตัดสินใจแล้วว่าอยากเก็บตัวเครื่องไว้ อ่านต่อที่ [พอตเปลี่ยนหัว รุ่นไหนดี](/guides/choosing-a-switch-pod) และถ้าเพิ่งเริ่มสูบพอตครั้งแรก อ่าน [สูบพอตยังไงไม่ให้สำลัก](/guides/how-to-vape-without-coughing) ไว้ด้วย",
         ],
       },
       {
@@ -2424,6 +2425,10 @@ const allGuides: Guide[] = [
       { question: "พอตใช้แล้วทิ้งรุ่นไหนมีจอ", answer: "WOTOFO nexBAR 18K มีจอ LED ที่บอกแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ Joiway F4 ก็มีจอ LED เช่นกัน ส่วนถ้าแค่อยากรู้ระดับแบต M Bar 10K มีไฟ LED บอกแบตทีละ 25%" },
       { question: "พอตใช้แล้วทิ้งสองกลิ่นในเครื่องเดียว มีรุ่นไหน", answer: "Joiway F4 ของ JOIWAY มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น บนหน้าสินค้าของเว็บเรามีให้ดู 16 คู่กลิ่น" },
     ],
+    // Keyword line 23/10 ("beat page 1"): the shop's own TOP 10 disposables clip already shows in Google's video block for
+    // "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี" and "พอตยี่ห้อไหนดี" (SERP 23/10). Channel + title by YouTube oEmbed, upload date from the watch
+    // page's uploadDate (2025-02-08T04:01:09-08:00), both read 23/10.
+    reviewVideo: { videoId: "p2hWunl1vv0", title: "TOP 10 พอตใช้แล้วทิ้งรุ่นยอดนิยมได้ประจำปี 2024", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-02-08" },
   },
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
@@ -3068,7 +3073,8 @@ const allGuides: Guide[] = [
     // "พอตใช้ยังไง" (Google autocomplete + related searches 23/10, _incoming/keys-2310/research-2310.md). Maker facts, opened 23/10 (researcher):
     // Vaporesso https://store.vaporesso.com/blogs/news/how-to-vape-correctly-stop-coughing (slow gentle puff · MTL for beginners · short puffs with
     // pauses · 3–12 mg freebase / 20–35 mg salt · fresh coil soaks 5–10 min) · SMOK https://www.smoktech.com/faq/925 (3 min after filling · first
-    // puffs a bit harder) · RELX https://relxnow.com/pages/new-to-relx (draw-activated, some models have a button) · Innokin
+    // puffs a bit harder) · RELX https://relxnow.com/pages/new-to-relx (about pod systems in general, re-read 23/10 in a real browser: "Automatic operation
+    // is typical in these systems, so all you have to do is suck in to pull in vapour, but some may offer manual use buttons") · Innokin
     // https://www.innokin.com/blog/sore-throat-from-vaping (nicotine too high · salt smoother · high PG scratchy · coil's wattage range · MTL/DTL
     // device mismatch, airflow). No maker gives a puff length in seconds, so none is written. No shop clip on this topic was found (23/10).
     // Wording: thai-copy 23/10.
@@ -3093,7 +3099,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "มือใหม่ส่วนใหญ่เริ่มจากการสูบแบบ MTL คือดูดเข้าปากก่อน แล้วค่อยสูดลงปอด Vaporesso ให้เหตุผลว่าวิธีนี้รู้สึกเป็นธรรมชาติ และไม่หนักเกินไปสำหรับคนที่เพิ่งเริ่ม ความต่างของการสูบสองแบบอ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
           "ช่วงแรกให้ดูดสั้น ๆ ก่อน และเว้นจังหวะพักระหว่างพัฟ ไม่ต้องรีบดูดให้ได้ควันเยอะตั้งแต่พัฟแรก ค่อย ๆ ปรับให้คุ้นไปทีละพัฟก็พอ",
-          "พอตหลายรุ่นทำงานเองเมื่อดูด ไม่ต้องกดปุ่ม RELX อธิบายว่าหัวพอตของ RELX แค่ดูดก็ได้ควันแล้ว แต่บางรุ่นก็มีปุ่มให้กดด้วย ถ้าดูดแล้วไม่มีอะไรออกมา ไล่เช็คต่อได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+          "พอตส่วนใหญ่ทำงานเองเมื่อดูด ไม่ต้องกดปุ่ม RELX อธิบายว่าพอตแบบนี้แค่ดูดก็ได้ควันแล้ว แต่บางรุ่นก็มีปุ่มให้กดด้วย ถ้าดูดแล้วไม่มีอะไรออกมา ไล่เช็คต่อได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
       },
       {
