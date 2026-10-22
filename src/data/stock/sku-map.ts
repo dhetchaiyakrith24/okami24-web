@@ -1158,9 +1158,9 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-160-13": "Pod-160-13",
     "Pod-160-14": "Pod-160-14",
     "Pod-160-15": "Pod-160-15",
-    "Pod-160-16": null, // not in the 13/10 warehouse read (Max stock "?")
-    "Pod-160-17": null, // not in the 13/10 warehouse read (Max stock "?")
-    "Pod-160-18": null, // not in the 13/10 warehouse read (Max stock "?")
+    "Pod-160-16": "Pod-160-16", // in the Max list 22/10 (line 2 max-sync)
+    "Pod-160-17": "Pod-160-17", // in the Max list 22/10 (line 2 max-sync)
+    "Pod-160-18": "Pod-160-18", // in the Max list 22/10 (line 2 max-sync)
     "esko-bar-switch-pod-verified-chocolate-mint": null,
     "esko-bar-switch-pod-verified-coconut": null,
   } },
@@ -1172,7 +1172,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "pod-159-verified-blueberry-jam": null,
     "pod-159-verified-chocolate-mint": null,
     "pod-159-verified-coconut": null,
-    "pod-159-verified-extra-menthol": null,
+    "pod-159-verified-extra-menthol": "Pod-159-16", // Max "Extra Menthol" 22/10 (line 2 max-sync)
     "pod-159-verified-grape": "Pod-159-1",
     "pod-159-verified-honeydew": "Pod-159-8",
     "pod-159-verified-lychee": "Pod-159-11",
