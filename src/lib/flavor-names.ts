@@ -23,6 +23,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // maxlist (20/10): + the RELX Infinity Pro 2 pod names (Max Pod-27 labels), sorted in by length.
   // line 2 max-sync (22/10): + the 13 new Muro Connector 20K names (Max Pod-171 labels), sorted in by length.
   // line 2 max-sync (22/10): + the Zero Cartridge 50mg and M Bar 9K names (Max Pod-85 / Disposable-25 labels), sorted in by length.
+  // line 2 max-sync (22/10): + the RELX Smash GO 12K 5% names (Max Disposable-39 labels, written "<Flavour> 5%"), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -58,6 +59,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Strawberry Custard",
   "Hawaiian Shore Ice",
   "Tropical Mix Fruit",
+  "Classic Tobacco 5%",
   "Banana Strawberry",
   "Strawberry Banana",
   "Vanilla Ice Cream",
@@ -194,6 +196,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Dark Sparkle",
   "Lime Tobacco",
   "Smooth Mango",
+  "Cool Mint 5%",
+  "Spearmint 5%",
   "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
   "Monster Ice",
@@ -235,6 +239,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Tangy Grape",
   "Fruit Punch",
   "Yakult 50MG",
+  "Mixberry 5%",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
@@ -301,4 +306,5 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Big Cola",
   "Lime Ice",
   "Love 77",
+  "Cola 5%",
 ];
