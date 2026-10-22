@@ -83,7 +83,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   plan, provider "OKami24", channel ID 2012160030) · Messaging API ON · join group chats = allowed · greeting + auto-reply = OFF ·
   webhook URL empty (set when the endpoint exists) · NOT yet in the team group. The channel SECRET was shown in an owner screenshot in
   chat 22/10 → REISSUE it (LINE Developers Console) before first use; the owner pastes secret + access token into Render env himself
-  (13.3 #9), never in chat. Same bot also checks slips the team drops into the group (owner 22/10 idea; EasySlip key already on the site).
+  (13.3 #9), never in chat. TWO LINE groups (owner 22/10), both created by Friday in the owner's LINE PC 22/10, owner the only member, bot NOT
+  invited yet: "OKM Order" = new web-order alerts (push → free quota; keep members few) · "OKM Slip" = staff drop slips, the bot replies
+  with the EasySlip verdict (reply = free; EasySlip ฿350/1,000 slips shared with the site). Existing groups "OKAMI ORDER (8)" / "OKAMI ADMIN (5)"
+  are untouched.
 3m OPEN ROUND "Max list" (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
   (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
   `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
