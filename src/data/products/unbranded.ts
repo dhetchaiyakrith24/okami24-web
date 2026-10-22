@@ -666,7 +666,7 @@ export const unbrandedProducts: Product[] = [
     systemType: "e-liquid",
     name: "Muro Freebase",
     displayName: "Muro Freebase",
-    // Max read 17/10: Eliquid-169 "Muro Freebase" ฿220, 6 flavours. Copy says warehouse facts only (bottle size / nicotine rows stay unverified).
+    // Max read 17/10: Eliquid-169 "Muro Freebase" ฿220, 6 flavours (site price ฿250 owner-confirmed 22/10 — legacy-price-approvals). Copy says warehouse facts only (bottle size / nicotine rows stay unverified).
     tagline: "Muro freebase e-liquid.",
     shortDescription: "Muro freebase e-liquid in 6 flavors.",
     isFlagship: false,
