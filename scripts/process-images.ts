@@ -94,6 +94,10 @@ interface MapEntry {
    *  that look "leaning" when only their bounding box is centred (owner taste note, coil-53/coil-70, round img-1610).
    *  Clamped so the product never leaves the canvas. Omit = bounding-box centre (unchanged behaviour). */
   balance?: number;
+  /** 0–1: the product's long side as a share of the canvas, instead of the role's standard (0.84 variant, 0.94 card) —
+   *  for an option whose product has a different shape from its siblings but must read at the same physical scale
+   *  (TEREA 23/10: a tall row of sticks held to ~1.25x the height of the flat pack photos, Friday's ruling). */
+  boxRatio?: number;
   note?: string;
 }
 
@@ -245,7 +249,7 @@ async function processEntry(e: MapEntry): Promise<Decision> {
 
   if (e.canvas && e.canvas < CANVAS[e.role]) return { ...d, reason: `map "canvas": ${e.canvas} is retired (owner 2026-09-28 — standard canvas only, a small product keeps its real size; IMAGE_SPEC §8). Remove "canvas" from the entry to re-process it.` };
   const cw = e.role === "card" ? CARD_CANVAS.width : CANVAS[e.role], ch = e.role === "card" ? CARD_CANVAS.height : CANVAS[e.role];
-  const ratio = e.role === "card" ? CARD_BOX_RATIO : BOX_RATIO; d.canvas = Math.max(cw, ch);
+  const ratio = e.boxRatio ?? (e.role === "card" ? CARD_BOX_RATIO : BOX_RATIO); d.canvas = Math.max(cw, ch);
   const scale = Math.min((cw * ratio) / box.width, (ch * ratio) / box.height, MAX_UPSCALE); d.scale = Math.round(scale * 1000) / 1000;
   const cropped = await fromRaw(raw).extract(box).png().toBuffer();
   const w = Math.max(1, Math.round(box.width * scale)), h = Math.max(1, Math.round(box.height * scale));
