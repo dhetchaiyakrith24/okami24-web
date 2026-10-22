@@ -989,6 +989,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 20,000",
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 20 รส",
+    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 33 รส",
   },
 };
