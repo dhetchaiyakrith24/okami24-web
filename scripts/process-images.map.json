@@ -13017,5 +13017,57 @@
   "fileName": "variant-black-v4.webp",
   "note": "image run 23/10 (line 1) - VINCI S Black re-fitted to its siblings: v3 carried a faint haze (alpha 17-40) from y 80 to 144 above the clear pod, so it was fitted as if the device reached y 80 and the real device stood ~8% smaller than every other colour. No new render: 53 haze pixels cleared, then the photo scaled 830/765 about its foot (device top 80, shadow foot 910 - measured equal to Silver/Grey at alpha 16/40/128/245), webp q82",
   "replaces": "/assets/products/vinci-s/variant-black-v3.webp"
+ },
+ {
+  "source": "_incoming/iq/c92/out/0.2.png",
+  "slug": "coil-92",
+  "role": "variant",
+  "id": "coil-92-2",
+  "fileName": "variant-coil-92-2.webp",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - VOOPOO PnP X 0.2Ω coil (Max Coil-92-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit of the live PnP X 0.15Ω studio photo (variant-coil-92-1) changing only the printed text and the O-ring colour to the real 0.2Ω coil; cut with the live 0.15Ω file's own alpha (_incoming/iq/fit-same.js, row-aligned), rim of the AI backdrop cleaned (_incoming/iq/c92/edgefill.js + erode.js, outline pulled in 1 px) - alpha>16 box 291,80-709,919 = the 0.15Ω option",
+   "reference": "maneevp.com real photo of the PnP X 0.2Ω coil, printed \"0.2Ω 40-60W\" (https://maneevp.com/product/voopoo-pnp-x-coil/ - wp-content/uploads/2024/02/PNP-X-coil-0.2ohm-2.jpg, 1000 px; shop logo and caption cropped off, _incoming/iq/c92/crop-0.2.png)",
+   "fidelitySheet": "_incoming/iq/c92/cmp-0.2.jpg, cmp-0.3.jpg (real coil | live 0.15 | new), edges2.png (3x edges)"
+  }
+ },
+ {
+  "source": "_incoming/iq/c92/out/0.3.png",
+  "slug": "coil-92",
+  "role": "variant",
+  "id": "coil-92-3",
+  "fileName": "variant-coil-92-3.webp",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - VOOPOO PnP X 0.3Ω coil (Max Coil-92-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit of the live PnP X 0.15Ω studio photo (variant-coil-92-1) changing only the printed text and the O-ring colour to the real 0.3Ω coil; cut with the live 0.15Ω file's own alpha (_incoming/iq/fit-same.js, row-aligned), rim of the AI backdrop cleaned (_incoming/iq/c92/edgefill.js + erode.js, outline pulled in 1 px) - alpha>16 box 291,80-709,919 = the 0.15Ω option",
+   "reference": "maneevp.com real photo of the PnP X 0.3Ω coil, printed \"0.3Ω 32-40W\" (https://maneevp.com/product/voopoo-pnp-x-coil/ - wp-content/uploads/2024/02/PNP-X-coil-0.3ohm-2.jpg, 1000 px; shop logo and caption cropped off, _incoming/iq/c92/crop-0.3.png)",
+   "fidelitySheet": "_incoming/iq/c92/cmp-0.2.jpg, cmp-0.3.jpg (real coil | live 0.15 | new), edges2.png (3x edges)"
+  }
+ },
+ {
+  "source": "_incoming/iq/c92/out/0.6.png",
+  "slug": "coil-92",
+  "role": "variant",
+  "id": "coil-92-4",
+  "fileName": "variant-coil-92-4.webp",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - VOOPOO PnP X 0.6Ω coil (Max Coil-92-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit of the live PnP X 0.15Ω studio photo (variant-coil-92-1) changing only the printed text and the O-ring colour to the real 0.6Ω coil; cut with the live 0.15Ω file's own alpha (_incoming/iq/fit-same.js, row-aligned), rim of the AI backdrop cleaned (_incoming/iq/c92/edgefill.js + erode.js, outline pulled in 1 px) - alpha>16 box 291,80-709,919 = the 0.15Ω option",
+   "reference": "maneevp.com real photo of the PnP X 0.6Ω coil, printed \"0.6Ω 18-23W\" (https://maneevp.com/product/voopoo-pnp-x-coil/ - wp-content/uploads/2024/02/PNP-X-coil-0.6ohm-2.jpg, 1000 px; shop logo and caption cropped off, _incoming/iq/c92/crop-0.6.png)",
+   "fidelitySheet": "_incoming/iq/c92/cmp-0.2.jpg, cmp-0.3.jpg (real coil | live 0.15 | new), edges2.png (3x edges)"
+  }
+ },
+ {
+  "source": "_incoming/iq/c38/out/dm1-b.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-1",
+  "fileName": "variant-coil-38-1.webp",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - VOOPOO TPP-DM1 0.15Ω coil box (Max Coil-38-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live TPP-DM2 box shot (variant-coil-38-2-v2) changing only the box text to TPP-DM1 / 0.15Ω 3PCS / Max 80W (2nd render; the 1st zoomed out and added a mirror reflection); cut with the DM2 file's own alpha (fit-same.js, aspect 1.001), rim cleaned (edgefill.js + erode.js)",
+   "reference": "Element Vape real photo of the TPP-DM1 box (https://d2svuhg8jeu25r.cloudfront.net/catalog/product/v/o/voopoo_tpp_replacement_coils_-_tpp_dm1_coils.png, 700 px; box crop _incoming/iq/c38/ref-dm1.png)",
+   "fidelitySheet": "_incoming/iq/c38/cmp2.jpg (live DM2 | new DM1 | text close-up)"
+  }
  }
 ]
