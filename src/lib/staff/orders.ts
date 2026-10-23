@@ -74,6 +74,8 @@ export function countTodo(): number {
 export interface StaffOrderDetail extends OrderDetail {
   customerPhone: string;
   trackingNumber: string | null;
+  /** The customer's optional note to the shop from the review step (cart UX batch C) — staff page only. */
+  customerNote: string | null;
   slip: { verdict: SlipVerdict | null; reasons: string[]; transRef: string | null; amount: number | null; submittedAt: string } | null;
   lines: { sku: string | null; name: string; quantity: number }[];
   warehouseText: string;
@@ -91,8 +93,8 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   if (!order) return null;
   const db = getDb();
   const extra = db
-    .prepare("SELECT o.tracking_number, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
-    .get(order.id) as { tracking_number: string | null; phone: string };
+    .prepare("SELECT o.tracking_number, o.customer_note, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
+    .get(order.id) as { tracking_number: string | null; customer_note: string | null; phone: string };
   const slipRow = db
     .prepare(
       "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
@@ -111,6 +113,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
     ...order,
     customerPhone: extra.phone,
     trackingNumber: extra.tracking_number,
+    customerNote: extra.customer_note,
     slip: slipRow
       ? {
           verdict: slipRow.slip_verdict,

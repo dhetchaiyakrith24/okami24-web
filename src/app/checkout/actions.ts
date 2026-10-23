@@ -104,7 +104,9 @@ export async function placeOrderAction(formData: FormData): Promise<void> {
   refuseWhileOrderingOff();
   const addressId = Number(formData.get("addressId"));
   const idempotencyKey = String(formData.get("idempotencyKey") ?? "");
-  const result = await placeOrder(addressId, idempotencyKey);
+  // Optional note to the shop (cart UX batch C) — cleaned and capped inside placeOrder.
+  const customerNote = formData.get("customerNote");
+  const result = await placeOrder(addressId, idempotencyKey, typeof customerNote === "string" ? customerNote : null);
   if (!result.ok) {
     redirect(`/checkout/review?addressId=${addressId}&error=${encodeURIComponent(result.error)}`);
   }

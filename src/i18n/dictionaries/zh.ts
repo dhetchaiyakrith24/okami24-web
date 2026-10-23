@@ -460,6 +460,9 @@ export const zh: Dictionary = {
     contactLineCta: "LINE 咨询",
     placeOrderCta: "提交订单",
     changeAddressCta: "更改地址",
+    noteToggle: "给店铺的备注（选填）",
+    notePlaceholder: "例如：方便收货的时间",
+    noteHint: "团队会在订单中看到此备注 · 最多 200 个字符",
   },
   orderLookup: {
     eyebrow: "您的订单",
