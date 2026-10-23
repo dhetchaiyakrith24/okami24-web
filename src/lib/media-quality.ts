@@ -126,6 +126,10 @@ export interface ImageDisplayInfo {
   /** Long side of the product itself (the alpha bounding box), in file pixels — what OptionScaledCard needs to draw a
    *  card at its option photos' size (owner 22/10). Absent when the file has no alpha box to measure. */
   productLong?: number;
+  /** The same long side without a soft studio floor: the box of near-opaque pixels only (alpha > 245). An option photo
+   *  marked `ownFloor` carries its shadow as a fade under the device (alpha ~240 → 0), which `productLong` counts as
+   *  product — OptionScaledCard measures those photos with this instead (line 1 23/10: the 7 pages that still jumped). */
+  productLongBody?: number;
 }
 
 const cache = new Map<string, ImageDisplayInfo | null>();
@@ -154,6 +158,8 @@ export async function getImageDisplayInfo(publicSrc: string): Promise<ImageDispl
       // trim() on the alpha channel alone = the product's bounding box (the transparent margin is the same value as the corner).
       const { info: box } = await sharp(buf).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
       if (box.width < meta.width || box.height < meta.height) info.productLong = Math.max(box.width, box.height);
+      const { info: body } = await sharp(buf).extractChannel(3).trim({ threshold: 245 }).toBuffer({ resolveWithObject: true });
+      if (body.width < meta.width || body.height < meta.height) info.productLongBody = Math.max(body.width, body.height);
     }
     cache.set(publicSrc, info);
     return info;
