@@ -1172,9 +1172,9 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-70/card-v3.webp",
+      src: "/assets/products/coil-70/card-v4.webp",
       alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo",
-      angle: "Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      angle: "Card re-centred on its visual weight 23/10 (image line 1: same render moved 77 px right, 0.6 of the gap, as coil-53 card-v4). Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo",
       sourceUrl: "https://www.elementvape.com/dotmod-dotcoils",

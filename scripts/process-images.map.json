@@ -13142,5 +13142,13 @@
    "reference": "RELX's own-style store render 'Infinity2plus_device_Dark_Asteroid_Device_1200x1200' (1200 px) on vapehaus.com.my's RELX Infinity 2 Plus listing (Malaysian dealer, variant 'Dark Asteroid'; kissyvape.com lists the same colour as 'dark-asteroid 深灰' = dark grey) - shop copy _incoming/da/dark-asteroid.jpg",
    "fidelitySheet": "_incoming/da/sheet.jpg (Black Sapphire / Dark Asteroid / Meteor Flash on the site dark + the reference) · _incoming/da/edges.png (3x edge crops)"
   }
+ },
+ {
+  "source": "public/assets/products/coil-70/card-v3.webp",
+  "slug": "coil-70",
+  "role": "card",
+  "fileName": "card-v4.webp",
+  "note": "23/10 (image line 1): card-v3 re-centred on its visual weight - pixels moved 77 px right (0.6 x the 128 px gap between the alpha-weighted centre and the canvas centre, the balance 0.6 used for coil-53 card-v4), no resampling, webp q82 (_incoming/tn). HANDOFF taste note 'coil-53/coil-70 cards lean left'.",
+  "replaces": "/assets/products/coil-70/card-v3.webp"
  }
 ]
