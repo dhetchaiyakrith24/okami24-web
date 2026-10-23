@@ -16,7 +16,8 @@ import { getDictionary } from "@/i18n/dictionaries";
  * (see https://schema.org/VideoObject) — this still lands in the server-rendered HTML (Next SSRs
  * client components too) even though the player itself only loads client-side on click.
  */
-export function ProductReviewSection({ product }: { product: Product }) {
+/** `title` (optional): the section heading — every page but the editorial ones keeps the product's display name. */
+export function ProductReviewSection({ product, title: sectionTitle }: { product: Product; title?: string }) {
   const { dict, locale } = useLocale();
   if (!product.reviewVideo) return null;
   const { videoId, title, channelName } = product.reviewVideo;
@@ -30,7 +31,7 @@ export function ProductReviewSection({ product }: { product: Product }) {
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />
       <Container className="flex flex-col gap-8">
-        <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={product.displayName} />
+        <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={sectionTitle ?? product.displayName} />
         <div className="max-w-2xl">
           <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideTitle} contextName={product.displayName} />
         </div>
