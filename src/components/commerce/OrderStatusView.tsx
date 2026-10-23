@@ -73,9 +73,21 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.statusLabel}</span>
-            <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            {/* Owner 23/10: "shipped" gets a quiet green glow — a soft breathing dot inside a thin pill, still within the
+                site's calm look; motion stops for visitors who ask for reduced motion. Other statuses stay plain text. */}
+            {order.status === "shipped" ? (
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-0.5 font-medium text-emerald-300 shadow-[0_0_14px_-2px_rgba(52,211,153,0.35)]">
+                <span aria-hidden className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/60 [animation-duration:2.4s] motion-reduce:hidden" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-400 shadow-[0_0_6px_1px_rgba(52,211,153,0.8)]" />
+                </span>
+                {orderStatusLabel(order.status, locale)}
+              </span>
+            ) : (
+              <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            )}
           </div>
         </div>
 
