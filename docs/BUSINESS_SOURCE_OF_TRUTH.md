@@ -223,7 +223,7 @@ operational information.
 > or `off` and choose "Save, rebuild, and deploy" — a rebuild, because the prerendered pages read it at build
 > time ("Save and deploy" reuses the old build). `render.yaml` keeps its declared "off".
 > Code: `src/lib/commerce/ordering-mode.ts`. Tracked as LAUNCH_AUDIT item 43.
-> **ENDED <FLIP-DATE> (owner OK in chat, cart round 22/10):** ordering is ON; the order-channel rule below
+> **ENDED 2026-10-24 (owner OK in chat, cart round 22/10):** ordering is ON; the order-channel rule below
 > (website = primary, LINE = backup) applies again. Turning it off again = the same switch set to `off`.
 
 **Current:**
