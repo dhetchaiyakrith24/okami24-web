@@ -36,6 +36,8 @@ export function Footer({ categories, brands, dnsGuideId }: { categories: NavCate
   // 2026-09-06 once the owner approved the claim conditions (BSOT §12).
   const HELP_LINKS = [
     { label: dict.nav.howToOrder, href: "/how-to-order" },
+    // Owner 24/10: "ติดตามคำสั่งซื้อ" — find your orders by phone number.
+    { label: dict.nav.trackOrder, href: "/orders" },
     { label: dict.nav.shipping, href: "/shipping" },
     { label: dict.nav.warranty, href: "/warranty" },
     { label: dict.nav.faq, href: "/faq" },

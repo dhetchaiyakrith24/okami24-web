@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X, Search, Heart, ShoppingCart, ChevronDown } from "lucide-react";
+import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { NavCategory } from "@/lib/category-visibility";
 import { cn } from "@/lib/utils";
@@ -119,6 +119,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           >
             <Heart size={19} aria-hidden />
           </Link>
+          {/* Owner 24/10: "ติดตามคำสั่งซื้อ" as a visible header item — icon on phones (the drawer also lists it), icon + words
+              from xl where the bar has room. Shown even with ordering off: past orders can still be followed. */}
+          <Link
+            href="/orders"
+            aria-label={dict.nav.trackOrder}
+            className="inline-flex items-center gap-1.5 rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground xl:px-3"
+          >
+            <PackageSearch size={19} aria-hidden />
+            <span className="hidden text-sm xl:inline">{dict.nav.trackOrder}</span>
+          </Link>
           {orderingEnabled && (
             <Link
               href="/cart"
@@ -176,6 +186,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
               {dict.nav.cart}
             </Link>
           )}
+          <Link href="/orders" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
+            {dict.nav.trackOrder}
+          </Link>
         </nav>
       </div>
     </>
