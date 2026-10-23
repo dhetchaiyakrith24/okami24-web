@@ -6,6 +6,7 @@ import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder } from "@/lib/staff/orders";
+import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffOrderAction } from "@/app/staff/actions";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 const ERROR_TEXT: Record<string, string> = {
   "not-allowed": "ทำขั้นนี้กับออเดอร์สถานะนี้ไม่ได้ (อาจมีคนกดไปก่อนแล้ว) — โหลดหน้าใหม่ดูสถานะล่าสุด",
   tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
+  carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ Flash Express) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
   note: "ยกเลิกต้องเขียนเหตุผลสั้น ๆ (เช่น ของหมด ลูกค้าเลือกคืนเงิน)",
   "not-found": "ไม่พบออเดอร์นี้",
 };
@@ -32,7 +34,7 @@ const ERROR_TEXT: Record<string, string> = {
 const DONE_TEXT: Record<StaffAction, string> = {
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
-  ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นเลขพัสดุในหน้าออเดอร์",
+  ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์",
 };
@@ -139,7 +141,11 @@ export default async function StaffOrderPage({
           {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
         </p>
         <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>
-        {order.trackingNumber && <p className="text-foreground">เลขพัสดุ {order.trackingNumber}</p>}
+        {order.trackingNumber && (
+          <p className="text-foreground">
+            {order.carrier ? `${CARRIERS[order.carrier].name.th} · ` : ""}เลขพัสดุ {order.trackingNumber}
+          </p>
+        )}
       </section>
 
       <section className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-5">
@@ -157,10 +163,24 @@ export default async function StaffOrderPage({
                 <input type="hidden" name="orderNumber" value={order.orderNumber} />
                 <input type="hidden" name="action" value={act} />
                 {act === "ship" && (
-                  <label className="flex flex-col gap-1 text-sm text-foreground-muted">
-                    เลขพัสดุ
-                    <input name="tracking" required autoComplete="off" className={input} />
-                  </label>
+                  <>
+                    {/* Staff pick the carrier — never guessed from the number (owner 23/10: the customer sees it). */}
+                    <fieldset className="flex flex-col gap-1 text-sm text-foreground-muted">
+                      <legend className="mb-1">ขนส่ง</legend>
+                      <div className="flex flex-wrap gap-3">
+                        {CARRIER_IDS.map((id) => (
+                          <label key={id} className="flex items-center gap-2 text-foreground">
+                            <input type="radio" name="carrier" value={id} required />
+                            {CARRIERS[id].name.th}
+                          </label>
+                        ))}
+                      </div>
+                    </fieldset>
+                    <label className="flex flex-col gap-1 text-sm text-foreground-muted">
+                      เลขพัสดุ
+                      <input name="tracking" required autoComplete="off" className={input} />
+                    </label>
+                  </>
                 )}
                 <button type="submit" className={button}>
                   {STAFF_ACTIONS[act].label}

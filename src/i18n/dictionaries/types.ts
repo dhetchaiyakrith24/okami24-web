@@ -600,6 +600,15 @@ export interface Dictionary {
     slipErrorGeneric: string;
     /** Shown once an order is shipped (cart round 22/10). */
     trackingLabel: string;
+    /** The "track your parcel" box once shipped (owner 23/10): carrier name, copy, the carrier's own tracking page and
+     *  3 steps. `{carrier}` in a step = the carrier's name. */
+    trackTitle: string;
+    carrierLabel: string;
+    trackCopyCta: string;
+    trackCta: string;
+    trackStep1: string;
+    trackStep2: string;
+    trackStep3: string;
     notFoundMessage: string;
   };
   languageSwitcher: {

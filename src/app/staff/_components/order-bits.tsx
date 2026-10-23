@@ -1,3 +1,4 @@
+import { CARRIERS, toCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 
 export { formatBaht, formatDateTime } from "@/app/staff/_components/format";
@@ -40,6 +41,14 @@ export function historyNoteTh(note: string): string {
     return "ลูกค้าแนบสลิป — ⏳ ระบบตรวจไม่ได้";
   }
   const staff = /^Staff: ([a-z-]+)(.*)$/.exec(note);
-  if (staff) return `ทีมงาน: ${ACTION_TH[staff[1]] ?? staff[1]}${staff[2].replace(" — tracking ", " — เลขพัสดุ ")}`;
+  if (staff) {
+    const rest = staff[2]
+      .replace(" — tracking ", " — เลขพัสดุ ")
+      .replace(/ — carrier ([a-z-]+)/, (m, id: string) => {
+        const c = toCarrierId(id);
+        return c ? ` — ${CARRIERS[c].name.th}` : m;
+      });
+    return `ทีมงาน: ${ACTION_TH[staff[1]] ?? staff[1]}${rest}`;
+  }
   return note;
 }

@@ -495,6 +495,13 @@ export const zh: Dictionary = {
     slipErrorBusy: "尝试次数过多，请稍后再试。",
     slipErrorGeneric: "凭证提交失败。请重试，或通过 LINE @okm24 发送凭证并附上订单编号。",
     trackingLabel: "快递单号",
+    trackTitle: "查询包裹",
+    carrierLabel: "快递公司",
+    trackCopyCta: "复制快递单号",
+    trackCta: "查询包裹状态",
+    trackStep1: "点击上方的“复制快递单号”",
+    trackStep2: "点击“查询包裹状态”，{carrier} 的查询页面会在新标签页中打开",
+    trackStep3: "把单号粘贴到搜索框即可查询",
     notFoundMessage: "未找到该订单，或您无权查看。",
   },
   languageSwitcher: {
