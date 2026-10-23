@@ -54,6 +54,38 @@ function validate(input: AddressInput): string | null {
   return null;
 }
 
+/**
+ * Which saved address a returning customer most likely wants (cart UX batch C, owner 24/10 "preselect the last-used saved
+ * address and go straight to review"): the saved address that matches the shipping address of their latest order; else the
+ * first of `listAddresses()` (default first, then newest). null = no saved address. Read-only; the customer can still change
+ * it from the review step.
+ */
+export async function lastUsedAddressId(addresses: AddressRecord[]): Promise<number | null> {
+  if (addresses.length === 0) return null;
+  const customer = await requireCustomer();
+  const last = getDb()
+    .prepare(
+      `SELECT s.recipient_name, s.phone, s.line1, s.subdistrict, s.district, s.province, s.postal_code
+       FROM orders o JOIN order_shipping_addresses s ON s.order_id = o.id
+       WHERE o.customer_id = ? ORDER BY o.id DESC LIMIT 1`
+    )
+    .get(customer.id) as Omit<AddressRow, "id" | "is_default"> | undefined;
+  if (last) {
+    const match = addresses.find(
+      (a) =>
+        a.recipientName === last.recipient_name &&
+        a.phone === last.phone &&
+        a.line1 === last.line1 &&
+        a.subdistrict === last.subdistrict &&
+        a.district === last.district &&
+        a.province === last.province &&
+        a.postalCode === last.postal_code
+    );
+    if (match) return match.id;
+  }
+  return addresses[0].id;
+}
+
 export async function listAddresses(): Promise<AddressRecord[]> {
   const customer = await requireCustomer();
   const rows = getDb()
