@@ -727,15 +727,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-94-4": "Coil-94-4",
   } },
   // Round list19 (17/10): LAMBDA i8 — Max children -1 Black · -2 Silver · -3 Gray · -4 Red · -5 Green · -6 Gold. LAMBDA's own colour
-  // list has White, not Silver. Line 2 max-sync (22/10, owner "1 ลง"): Silver is shown by its Max name (-2); White stays "check".
+  // list has White, not Silver. 23/10 (owner "หาข้อมูลเองเลย", image line 1): Max -2 "Silver" = White — LAMBDA sells six colours
+  // (lambdacc.com "Lambda-i8-All-colors.jpg": Gold, Green, Black, Gray, Red, White) and Max holds six children; Gray has its own
+  // child (-3), so the one Max name left over (Silver) is the one maker colour left over (White, a light silver-white aluminium).
   "iqosheet-14": { parent: "IQOSHEET-14", options: {
     "IQOSHEET-14-4": "IQOSHEET-14-4",
     "IQOSHEET-14-6": "IQOSHEET-14-6",
     "iqosheet-14-verified-black": "IQOSHEET-14-1",
     "iqosheet-14-verified-green": "IQOSHEET-14-5",
     "iqosheet-14-verified-gray": "IQOSHEET-14-3",
-    "iqosheet-14-verified-white": "check",
-    "iqosheet-14-verified-silver": "IQOSHEET-14-2", // line 2 max-sync 22/10
+    "iqosheet-14-verified-white": "IQOSHEET-14-2", // 23/10 image line 1: Max "Silver" = LAMBDA's White (see the comment above)
   } },
   "iqosheet-15": { parent: "IQOSHEET-15", options: {
     "IQOSHEET-15-1": "IQOSHEET-15-1",
@@ -762,13 +763,15 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-15-verified-riviera-pearl": null,
     "iqosheet-15-verified-black-purple": "IQOSHEET-15-18", // line 2 max-sync 22/10
   } },
+  // 23/10 (owner "หาข้อมูลเองเลย", image line 1): Max -4 "Red Brown" is not an IQOS colour name. IQOS sells ILUMA i PRIME in
+  // four colours — Midnight Black, Breeze Blue, Aspen Green, Garnet Red (ca.iqos.com ILUMA i PRIME kit page) — and Max holds
+  // four children; -1..-3 are the first three, so -4 is Garnet Red (a deep red-brown anodised aluminium).
   "iqosheet-16": { parent: "IQOSHEET-16", options: {
     "IQOSHEET-16-1": "IQOSHEET-16-1",
     "IQOSHEET-16-2": "IQOSHEET-16-2",
     "IQOSHEET-16-3": "IQOSHEET-16-3",
-    "iqosheet-16-verified-garnet-red": null,
+    "iqosheet-16-verified-garnet-red": "IQOSHEET-16-4", // 23/10 image line 1: Max "Red Brown" = Garnet Red (comment above)
     "iqosheet-16-verified-electric-purple": null,
-    "IQOSHEET-16-4": "IQOSHEET-16-4", // line 2 max-sync 22/10: Max "Red Brown"
   } },
   // Round list19 (17/10): IQOS ILUMA i ONE — the warehouse holds Breeze Blue only (Max children -1 Pebble Grey · -2 Azure Blue are
   // the original ILUMA ONE, kept off this record; -4 Oasis Limited · -5 Bright not identified yet).

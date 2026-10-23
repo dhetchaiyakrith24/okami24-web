@@ -21,9 +21,10 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * "Pod-171-10aa") is not an option of the record — it is listed in `maxDroppedChildren` instead (one price per record).
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
-// line 2 max-sync (22/10): + "Coil-1" (all 16 Vinci coils), "IQOSHEET-16" (Max IQOSHEET-16-4 "Red Brown" — Max name, no maker page; owner 22/10 "1 ลง").
+// line 2 max-sync (22/10): + "Coil-1" (all 16 Vinci coils). "IQOSHEET-16" went back to its frozen seed 23/10 (image line 1): Max's
+// IQOSHEET-16-4 "Red Brown" is IQOS's Garnet Red (sku-map.ts) — no separate option.
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109", "Coil-21", "Eliquid-64", "Coil-1", "IQOSHEET-16"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109", "Coil-21", "Eliquid-64", "Coil-1"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
