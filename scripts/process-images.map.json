@@ -12995,5 +12995,18 @@
    "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
   },
   "replaces": "/assets/products/relx-infinity-2-plus/variant-bronze-dusk.webp"
+ },
+ {
+  "source": "_incoming/line1-2310/terea2/rid2/black-purple-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-black-purple",
+  "fileName": "variant-iqosheet-15-black-purple-pack2.webp",
+  "note": "image run 23/10 (line 1, owner priority: options with no photo first) - TEREA Black Purple (Max IQOSHEET-15-18), same method and place as the TEREA batch 2 packs: written from the 2048 cut by _incoming/iq/place.js (scale 974/2048, offset 8,-19 = the transform that reproduces the live Dimensions Apricity pack2 file, mean abs diff 1.39) - alpha box 103,220-884,763 like every pack2 option",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/line1-2310/terea2/ref/sienna-angle.jpg, iqos.com/mt) with only the artwork changed to the real Indonesian Black Purple pack (render _incoming/iq/bp-e1.png; a ghost copy of the box above it lies outside the official outline and is cut away); warning panel = the Indonesian pack's printed warning typeset crisp (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js)",
+   "reference": "real Black Purple Indonesia pack photo at a retailer: https://vapdeals.ae/wp-content/uploads/2026/10/IQOS-Terea-Black-Purple-From-Indonesia.jpg (1875 px; artwork only - _incoming/iq/bp-ref.jpg); IQOS sells it on iqos.com/id (G0001989) with only a 10-sticks graphic, flavour pill \"Forest Berry\"",
+   "fidelitySheet": "_incoming/iq/bp-fid.jpg - retail pack | ours | live Dimensions Apricity pack"
+  }
  }
 ]
