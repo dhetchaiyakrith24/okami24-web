@@ -587,8 +587,10 @@ export interface Dictionary {
     paymentCopyCta: string;
     paymentCopiedLabel: string;
     paymentSubmittedNote: string;
-    /** Shown on the order page from "payment submitted" onwards (cart UX batch A, owner 24/10). */
-    thankYouLine: string;
+    /** The order page's thank-you heading from "payment submitted" onwards (owner 24/10, two fixed lines; the brand name
+     *  "OKami24" is added after `thankYouTail` by the page in the display font). */
+    thankYouLead: string;
+    thankYouTail: string;
     slipUploadTitle: string;
     slipUploadPick: string;
     slipUploadChange: string;

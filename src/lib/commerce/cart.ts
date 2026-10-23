@@ -114,6 +114,15 @@ export interface CartView {
   hasProblems: boolean;
 }
 
+/** Total quantity in the visitor's cart, for the floating cart button's badge (cart UX batch B, owner 24/10). Read-only like
+ *  `getCart`, but one SUM — no catalog resolving — because every page asks for it. Display only: never used for money. */
+export async function getCartCount(): Promise<number> {
+  const cartId = await peekCartId();
+  if (cartId === null) return 0;
+  const row = getDb().prepare("SELECT COALESCE(SUM(quantity), 0) AS n FROM cart_items WHERE cart_id = ?").get(cartId) as { n: number };
+  return row.n;
+}
+
 export async function getCart(): Promise<CartView> {
   const cartId = await peekCartId();
   if (cartId === null) {
