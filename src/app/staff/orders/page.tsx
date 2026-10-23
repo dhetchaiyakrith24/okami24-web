@@ -40,6 +40,14 @@ export default async function StaffOrdersPage({ searchParams }: { searchParams: 
         <Link href="/staff" className="text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline">
           ← หน้าตรวจสลิป
         </Link>
+        {/* Owner 23/10: a copy of every order on the shop's own computer — opens in Excel. */}
+        <a
+          href="/staff/api/export"
+          download
+          className="mt-1 inline-flex w-fit items-center rounded-full border border-surface-border px-4 py-2 text-sm text-foreground-muted hover:border-foreground-dim hover:text-foreground"
+        >
+          ดาวน์โหลดออเดอร์ทั้งหมด (Excel)
+        </a>
       </header>
 
       <nav className="flex gap-2" aria-label="กรองออเดอร์">
