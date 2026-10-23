@@ -1897,9 +1897,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
-  // Image sweep (21/10): RELX Infinity Pro 2 pods — one studio re-shoot per pack front on the shop's (pod789) per-flavour posters: 10 of 42
-  // flavours (the 4 "50mg" packs print 5% Nicotine, as the posters show). The other 32 have no poster (no-photo panel); Jasmine Green Tea,
-  // Lychee Ice and Pink Guava posters show only the top half of an older pack design, so they are left without a photo rather than invent the rest.
+  // RELX Infinity Pro 2 pods — 15 of 42 flavours have their own pack photo, each from a real picture of THAT flavour's pack (owner 20/10:
+  // never relabel one photo): 10 from the shop's (pod789) per-flavour posters (image sweep 21/10; the 4 "50mg" packs print 5% Nicotine),
+  // 5 from foodpanda.pk listing photos of the real 3% packs (image run 23/10: Tangy Grape, Dark Sparkle, Taro Scoop, Pink Guava, Lychee Ice).
+  // The other 27 have no real pack photo found (no-photo panel); Jasmine Green Tea's poster shows only the top half of an older pack design.
   "RELX-INFINITY-PRO-2-POD": {
     "Pod-27-5": { kind: "official-photo", role: "detail", src: "/assets/products/relx-infinity-pro-2-pod/variant-pod-27-5.webp", alt: "RELX Pod Pro 2 pack, Watermelon Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Pod Pro 2 flavour poster", sourceUrl: "https://pod789.com/product/relx-infinity-pro-2/" },
     "Pod-27-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-infinity-pro-2-pod/variant-pod-27-1.webp", alt: "RELX Pod Pro 2 pack, Tangy Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the real RELX Pod Pro 2 Tangy Grape pack", sourceUrl: "https://www.foodpanda.pk/groceries/product/Z25P5J/relx-pod-pro-2-1-pod-pack-tangy-grape-30mgg-std-m" },
