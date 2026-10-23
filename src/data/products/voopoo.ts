@@ -1315,7 +1315,7 @@ export const voopooProducts: Product[] = [
     // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v3.webp", alt: "VOOPOO VINCI S, Black", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v4.webp", alt: "VOOPOO VINCI S, Black", ownFloor: true } },
       { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v3.webp", alt: "VOOPOO VINCI S, Silver", ownFloor: true } },
       { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v3.webp", alt: "VOOPOO VINCI S, Grey", ownFloor: true } },
       { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v3.webp", alt: "VOOPOO VINCI S, Blue Gradient", ownFloor: true } },
