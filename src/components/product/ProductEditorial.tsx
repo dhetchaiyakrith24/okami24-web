@@ -64,14 +64,14 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
   const items = pick(image.ids);
   return (
     <figure className="my-6 rounded-2xl border border-surface-border-soft bg-surface-1 px-4 py-6 text-center">
-      <div className={cn("justify-center", image.kind === "packs" ? "grid grid-cols-2 justify-items-center gap-4 sm:flex sm:items-end sm:gap-6" : "flex items-end gap-3 sm:gap-5")}>
+      <div className={cn("justify-center", image.kind === "packs" ? "grid grid-cols-2 justify-items-center gap-4 sm:flex sm:items-end sm:gap-6 lg:gap-4" : "flex items-end gap-3 sm:gap-5")}>
         {items.map((f) => {
           const src = image.kind === "packs" ? f.boxImage : f.image;
           if (!src) return null;
           return (
-            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-[190px] w-[84px]" : "h-52 w-20 sm:h-72 sm:w-28")}>
+            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-[190px] w-[84px] lg:h-[380px] lg:w-[168px]" : "h-52 w-20 sm:h-72 sm:w-28")}>
               {/* the device renders carry wide transparent margins: cover + scale crops them so the device fills its box */}
-              <Image src={src.src} alt={src.alt} fill loading="eager" sizes={image.kind === "packs" ? "84px" : "300px"} className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
+              <Image src={src.src} alt={src.alt} fill loading="eager" sizes={image.kind === "packs" ? "(min-width: 1024px) 168px, 84px" : "300px"} className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
             </div>
           );
         })}
@@ -167,11 +167,22 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
               {c.article.sections.map((s, i) => (
                 <div key={i} id={s.heading ? `detail-${i}` : undefined} className={cn("scroll-mt-24", s.heading ? "mt-10 first:mt-2" : "mt-2")}>
                   {s.heading && <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{t(s.heading)}</h3>}
-                  {s.paragraphs.map((p, pi) => (
-                    <p key={pi} className="mt-3 text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
-                      {renderInline(p, locale, `e${i}p${pi}`)}
-                    </p>
-                  ))}
+                  {s.paragraphs.map((p, pi) =>
+                    s.cards?.includes(pi) ? null : (
+                      <p key={pi} className="mt-3 text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
+                        {renderInline(p, locale, `e${i}p${pi}`)}
+                      </p>
+                    ),
+                  )}
+                  {s.cards && (
+                    <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                      {s.cards.map((pi) => (
+                        <li key={pi} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-[0.9375rem] leading-relaxed text-foreground-muted">
+                          {renderInline(s.paragraphs[pi], locale, `e${i}c${pi}`)}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   {s.image && <Figure image={s.image} caption={s.image.caption[locale] ?? s.image.caption.en} product={product} />}
                 </div>
               ))}
@@ -206,8 +217,8 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                           className="block"
                         >
                           {f.image && (
-                            <div className="relative aspect-[3/4] overflow-hidden">
-                              <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 11vw, 34vw" className="scale-125 object-cover" />
+                            <div className="relative aspect-square">
+                              <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 9vw, 24vw" className="object-contain" />
                             </div>
                           )}
                           <span className="block px-1 pb-2 text-[11px] leading-tight text-foreground">{f.name}</span>

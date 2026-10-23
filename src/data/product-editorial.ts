@@ -28,7 +28,8 @@ export interface EditorialCopy {
     source: string;
   };
   /** A section with an empty heading continues the one above it (a second image under the same question). */
-  article: { title: string; sections: { heading: string; paragraphs: string[]; image?: EditorialImage }[] };
+  /** `cards`: indexes of paragraphs shown as a 2-column set of cards after the plain paragraphs (a run of list-like ones). */
+  article: { title: string; sections: { heading: string; paragraphs: string[]; image?: EditorialImage; cards?: number[] }[] };
   flavours: { title: string; groups: { label: string; ids: string[] }[]; note: string };
   /** `key` = a spec key of both products, or "flavours" (the option count). */
   /** `numberOnly`: show the row's first number + unit only (the battery row's "rechargeable, USB-C" is said elsewhere). */
@@ -60,7 +61,7 @@ const MBAR9K_COVER = {
   width: 1537,
   height: 920,
   alt: {"th":"M Bar 9K 7 กลิ่นวางเรียงกัน ตัวเครื่องสีดำ ลาย BAR9K สีต่างกันตามกลิ่น","en":"Seven M Bar 9K flavours side by side: the same black body, the BAR9K print in each flavour's colour","zh":"七款 M Bar 9K 并排：同样的黑色机身，BAR9K 字样颜色随口味不同"},
-  caption: {"th":"Peach · Watermelon · Blue Ice · Grape Aloe · Sparkling Lemon · Strawberry · Mixberry","en":"Peach · Watermelon · Blue Ice · Grape Aloe · Sparkling Lemon · Strawberry · Mixberry","zh":"Peach · Watermelon · Blue Ice · Grape Aloe · Sparkling Lemon · Strawberry · Mixberry"},
+  caption: {"th":"M Bar 9K 7 จาก 24 กลิ่น","en":"7 of the 24 M Bar 9K flavours","zh":"M Bar 9K 24 种口味中的 7 种"},
 };
 const CAPTION_PACKS = {"th":"กล่อง M Bar 9K 4 กลิ่น จากตารางกลิ่นของ SALTHUB แต่ละกล่องเป็นสีของกลิ่นนั้นและมีชื่อกลิ่นกำกับ","en":"Four M Bar 9K packs from SALTHUB's flavour chart, each in its flavour's colour and labelled with the flavour name.","zh":"SALTHUB 口味表中的 4 款 M Bar 9K 包装，每款为对应口味的颜色并印有口味名称。"};
 
@@ -130,12 +131,13 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "M Bar 9K มีกลิ่นอะไรบ้าง",
               paragraphs: [
                 "ร้านแบ่งกลิ่นของ M Bar 9K ไว้เป็นสี่สาย โดยดูจากคำในชื่อกลิ่น ไม่ได้แบ่งตาม SALTHUB ชื่อที่มี Ice · Mint · Menthol หรือ Freeze อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อผลไม้อื่น ๆ อยู่สายผลไม้ และที่เหลืออยู่แนวอื่น เลือกสายที่ชอบไว้ก่อน แล้วค่อยเปิดดูรูปทีละกลิ่นด้านล่างได้",
+                "ในตารางกลิ่นของ SALTHUB มีสองกลิ่นที่ติดป้าย NEW คือ Kyoho Grape กับ Zapple และแบรนด์บอกไว้ด้วยว่าจะมีกลิ่นใหม่ตามมาอีก รายชื่อในหน้านี้รวมทุกกลิ่นจากตารางนั้น กับอีกสองกลิ่นที่ร้านลงไว้ คือ Blueberry Mint และ Strawberry Kiwi ถ้าอยากเทียบกลิ่นกับรุ่นอื่นในตระกูล M Bar ด้วย อ่านต่อได้ที่[บทความเลือกกลิ่น](/guides/choosing-a-marbo-flavor)",
                 "สายเย็นมี 4 กลิ่น คือ Blue Ice · Blueberry Mint · Doublemint และ Menthol Freeze ถ้ากำลังหากลิ่นเมนทอล ชื่อในรายการคือ Menthol Freeze",
                 "สายองุ่นมี 4 กลิ่น คือ Grape · Grape Aloe · Grape Lychee และ Kyoho Grape มีทั้งองุ่นอย่างเดียว องุ่นคู่กับอโล และองุ่นคู่กับลิ้นจี่ ส่วนองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape",
                 "สายผลไม้มี 12 กลิ่น คือ Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Kiwi · Strawberry Milkshake · Watermelon และ Watermelon Bubblegum ชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Strawberry Milkshake กับ Watermelon Bubblegum ร้านก็จัดไว้ในสายนี้ด้วย",
                 "แนวอื่นมี 4 กลิ่น คือ Cola · Rainbow Candy · Sour Gummy และ Zapple เป็นชื่อที่ไม่ได้บอกผลไม้ชนิดใดชนิดหนึ่งไว้ตรง ๆ",
-                "ในตารางกลิ่นของ SALTHUB มีสองกลิ่นที่ติดป้าย NEW คือ Kyoho Grape กับ Zapple และแบรนด์บอกไว้ด้วยว่าจะมีกลิ่นใหม่ตามมาอีก รายชื่อในหน้านี้รวมทุกกลิ่นจากตารางนั้น กับอีกสองกลิ่นที่ร้านลงไว้ คือ Blueberry Mint และ Strawberry Kiwi ถ้าอยากเทียบกลิ่นกับรุ่นอื่นในตระกูล M Bar ด้วย อ่านต่อได้ที่[บทความเลือกกลิ่น](/guides/choosing-a-marbo-flavor)",
               ],
+              cards: [2, 3, 4, 5],
             },
             {
               heading: "ดูยังไงว่าเป็นของแท้",
@@ -253,12 +255,13 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "What flavours does the M Bar 9K come in?",
               paragraphs: [
                 "We've sorted the M Bar 9K flavours into four groups by the words in their names; the grouping is ours, not SALTHUB's. Names with Ice, Mint, Menthol or Freeze are Cool, names with Grape are Grape, other fruit names are Fruity, and the rest are Other. Pick a group, then browse the photos below.",
+                "SALTHUB's chart marks Kyoho Grape and Zapple as NEW and says more flavours are on the way. The list here covers every flavour on that chart, plus two more we list: Blueberry Mint and Strawberry Kiwi.",
                 "Cool has four: Blue Ice, Blueberry Mint, Doublemint and Menthol Freeze. If you're after menthol, look for Menthol Freeze.",
                 "Grape has four: Grape, Grape Aloe, Grape Lychee and Kyoho Grape. That's grape on its own, grape with aloe, grape with lychee, and the Kyoho variety.",
                 "Fruity has twelve: Apple Aloe, Mixberry, Orange Sour, Peach, Peach Strawberry, Pink Berry, Sparkling Lemon, Strawberry, Strawberry Kiwi, Strawberry Milkshake, Watermelon and Watermelon Bubblegum. Names that pair a fruit with a sweet or a drink, like Strawberry Milkshake and Watermelon Bubblegum, sit here too.",
                 "Other has four: Cola, Rainbow Candy, Sour Gummy and Zapple, names that don't point to one particular fruit.",
-                "SALTHUB's chart marks Kyoho Grape and Zapple as NEW and says more flavours are on the way. The list here covers every flavour on that chart, plus two more we list: Blueberry Mint and Strawberry Kiwi.",
               ],
+              cards: [2, 3, 4, 5],
             },
             {
               heading: "How to tell a genuine M Bar 9K",
@@ -376,12 +379,13 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "M Bar 9K 有哪些口味？",
               paragraphs: [
                 "我们按口味名称中的关键词，把 M Bar 9K 分成四类，这是本店自己的分法，并非 SALTHUB 的分类。名称带 Ice、Mint、Menthol 或 Freeze 的归入清凉系，带 Grape 的归入葡萄系，其他水果名称归入水果系，其余归入其他。先选一类，再往下逐一查看口味图片。",
+                "SALTHUB 口味表将 Kyoho Grape 和 Zapple 标为 NEW，并表示还会推出更多新口味。本页列出了该口味表上的全部口味，另加本店上架的 Blueberry Mint 和 Strawberry Kiwi 两款。",
                 "清凉系共 4 款：Blue Ice、Blueberry Mint、Doublemint、Menthol Freeze。想找薄荷醇口味，可以看 Menthol Freeze。",
                 "葡萄系共 4 款：Grape、Grape Aloe、Grape Lychee、Kyoho Grape，既有纯葡萄，也有搭配芦荟或荔枝的组合，Kyoho Grape 即巨峰葡萄。",
                 "水果系共 12 款：Apple Aloe、Mixberry、Orange Sour、Peach、Peach Strawberry、Pink Berry、Sparkling Lemon、Strawberry、Strawberry Kiwi、Strawberry Milkshake、Watermelon、Watermelon Bubblegum。像 Strawberry Milkshake、Watermelon Bubblegum 这类水果搭配甜品或饮品的名称，也归在这一类。",
                 "其他共 4 款：Cola、Rainbow Candy、Sour Gummy、Zapple，名称并不指向某一种具体水果。",
-                "SALTHUB 口味表将 Kyoho Grape 和 Zapple 标为 NEW，并表示还会推出更多新口味。本页列出了该口味表上的全部口味，另加本店上架的 Blueberry Mint 和 Strawberry Kiwi 两款。",
               ],
+              cards: [2, 3, 4, 5],
             },
             {
               heading: "如何辨别正品？",
