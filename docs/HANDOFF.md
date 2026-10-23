@@ -34,8 +34,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3 MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
   NO side chats. Old side chats to archive: line1-images-2310d local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c
   local_1b6cafc0…. Weekly quota 92% (resets 25/10 22:00) → after batch A, stop at the PR edge until the reset unless the owner says go.
-  NEXT: cart UX batch B (add-to-cart animation + floating cart button — designer first) → C (full set) → D (designer) → E (full set) — 3c.
-  Waiting on the owner (รอพี่ตรวจ 72 order tracking without the order number · 73 hourly stock · 74 scan a real order QR).
+  Owner 24/10 ~02:30: "เรื่มชุด B เลยครับ" (quota go) · thank-you line → "ขอบคุณที่ไว้วางใจและใช้บริการกับ OKami24", big bold "Impact ทรงพลัง"
+  (rides with batch B) · order tracking = PHONE NUMBER ONLY (owner's pick over Friday's phone+postcode; Friday masks name/address) · real order QR
+  scanned by the owner: amount filled [owner 24/10 "ยอดเงินขึ้นแล้ว"].
+  NEXT: cart UX batch B (designer first) → order tracking by phone (full set: customer data) → C (full set) → D (designer) → E (full set) — 3c.
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
   render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
   (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
@@ -44,11 +46,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   · all batches live (1, 1b, 1d, 2, 3 #691, 4 #695, 5 #697 + #698 phone) · owner 21/10 "ทำแค่หน้าแรกพอครับ" (category/product pages dropped).
   Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
   tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — daily routine `okami24-stock-daily` (15:00) reads Shipnity Max in the owner's Chrome (logged in; a NEW tab is fine beside other
-  Chrome work — owner 23/10) → PR → owner confirms in chat → merge (13.7). Owner 23/10 wants HOURLY checks from 24/10 morning: ASKED (not answered
-  yet — รอพี่ตรวจ 73): A = hourly 08:00–00:00, PR only when stock changed, Friday merges without waiting (stops + asks on anomalies) [Friday's pick] · B = owner
-  confirms every hourly PR. A needs the owner to lift the 13.7 confirmation for stock PRs (rule change → write it in TEAM_RULES 13.7 once he
-  says A). Then edit the scheduled task (cron + prompt). Long-term (after go-live): stock without a rebuild (DB/endpoint) — proposed, not started.
+3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, from 24/10 08:00 — owner 24/10 "Merge ได้เลยโดยไม่ต้องรอ") reads Shipnity
+  Max in the owner's Chrome (logged in; a NEW tab is fine beside other Chrome work — owner 23/10) → PR only when stock changed → verify --full →
+  gate → checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops (>15 products / >60 codes / missing codes / other
+  files) leave a draft and ask. Skips when a stock-sync PR is still open or `_incoming/wt-stock` is busy. Cost watch: each changed hour = one
+  full build + one checker + one deploy (~30–60 s of 502) — if quota or 502s hurt, propose fewer hours to the owner.
+  Long-term (after go-live): stock without a rebuild (DB/endpoint) — proposed, not started.
   The routine's session hit an auto-mode refusal on a chained edit 23/10 → it now edits with the Edit tool, one command at a time.
 3c ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` — CART IS LIVE [ตรวจแล้ว]: OKAMI24_ORDERING=on (Render dashboard,
   rebuilt) live 23/10 23:59; owner asked close+reopen → off live 00:16, ON again live 00:22 24/10 (/cart 200, "เพิ่มลงตะกร้า" on in-stock
@@ -269,7 +272,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Page notes for each page's next touch = `git show 6b70cd2:docs/HANDOFF.md` §16 item 5 · wordbreak: «ไฟจะ» on
     /guides/fixing-no-draw-and-blinking-light@390 + pre-existing flags in `_incoming/sitewide-template/5/mood/gates/wb3.log`.
   - Rule-audit 15/10 lock proposals (Friday's, a hook = checker): L1 rm/sed -i/redirect into a checker-read tree · L2 scan/shot
-    tools against the live site · L3 `Owner: OK` line for the morning stock PR (with the stock task).
+    tools against the live site (L3 dropped 24/10: the stock PR no longer waits for the owner).
   - Scan baseline re-measure on the test server (rule-audit row 45) = the next full round close.
   - Proposal to make (owner's queue 03/10, item D = rule-audit old #44): move chats earlier in image rounds (~350–400K) = a
     central-rule change → propose with reasons first (central §12 item 28).
@@ -361,7 +364,9 @@ Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in
 `docs/IMAGE_SPEC.md`; this list holds the rulings that have no other home. A ruling that is replaced = overwrite its line.
 
-**Shop and ordering:** the cart is closed (LAUNCH_AUDIT item 43) → LINE @okm24 · never propose reopening it · the 4
+**Shop and ordering:** the cart is OPEN since 24/10 00:22 (owner; LINE @okm24 = back-up channel, BSOT §8) · checkout = phone only, no OTP
+(owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
+without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are not touched and carry no JSON-LD on purpose (item 49) ·
 admin page and OTP are parked · caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices") or when the stock API lands.
