@@ -158,8 +158,6 @@ export async function getImageDisplayInfo(publicSrc: string): Promise<ImageDispl
       // trim() on the alpha channel alone = the product's bounding box (the transparent margin is the same value as the corner).
       const { info: box } = await sharp(buf).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
       if (box.width < meta.width || box.height < meta.height) info.productLong = Math.max(box.width, box.height);
-      const { info: body } = await sharp(buf).extractChannel(3).trim({ threshold: 245 }).toBuffer({ resolveWithObject: true });
-      if (body.width < meta.width || body.height < meta.height) info.productLongBody = Math.max(body.width, body.height);
     }
     cache.set(publicSrc, info);
     return info;
@@ -174,10 +172,41 @@ export async function getImageDisplayInfo(publicSrc: string): Promise<ImageDispl
  *  the server and hands the client component a plain lookup map keyed by `src`. Entries that
  *  couldn't be read are simply absent, so a lookup miss is the caller's signal to fall back to
  *  the previous always-fill behavior for that one image. */
-export async function buildImageDisplayMap(srcs: (string | undefined)[]): Promise<Record<string, ImageDisplayInfo>> {
+export async function buildImageDisplayMap(
+  srcs: (string | undefined)[],
+  bodySrcs: (string | undefined)[] = [],
+): Promise<Record<string, ImageDisplayInfo>> {
   const unique = [...new Set(srcs.filter((s): s is string => Boolean(s)))];
   const entries = await Promise.all(unique.map(async (s) => [s, await getImageDisplayInfo(s)] as const));
   const map: Record<string, ImageDisplayInfo> = {};
   for (const [s, info] of entries) if (info) map[s] = info;
+  // The body box costs a second decode + trim, so it is measured only for the photos that need it (`ownFloor` options) —
+  // measuring it for every image pushed /products/infy-20k past Render's 60 s static-page limit (23/10, #776 → #779 builds failed).
+  const bodies = [...new Set(bodySrcs.filter((s): s is string => Boolean(s) && Boolean(map[s as string])))];
+  await Promise.all(bodies.map(async (s) => {
+    const body = await getProductLongBody(s);
+    if (body !== undefined) map[s] = { ...map[s], productLongBody: body };
+  }));
   return map;
+}
+
+const bodyCache = new Map<string, number | undefined>();
+
+/** `productLongBody` for one file (see ImageDisplayInfo): the long side of its near-opaque pixels (alpha > 245). */
+async function getProductLongBody(publicSrc: string): Promise<number | undefined> {
+  if (bodyCache.has(publicSrc)) return bodyCache.get(publicSrc);
+  let long: number | undefined;
+  try {
+    const sharp = (await import("sharp")).default;
+    const buf = await readFile(path.join(process.cwd(), "public", publicSrc.replace(/^\//, "")));
+    const meta = await sharp(buf).metadata();
+    if (meta.hasAlpha && meta.width && meta.height) {
+      const { info: body } = await sharp(buf).extractChannel(3).trim({ threshold: 245 }).toBuffer({ resolveWithObject: true });
+      if (body.width < meta.width || body.height < meta.height) long = Math.max(body.width, body.height);
+    }
+  } catch {
+    long = undefined;
+  }
+  bodyCache.set(publicSrc, long);
+  return long;
 }
