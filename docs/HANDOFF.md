@@ -72,6 +72,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   D cart upsell row: half same brand/category in stock + half shop best-sellers (owner "A+B ครึ่ง ๆ"). designer for B + D, tier B shots,
   full set for C (orders/customer data). Batch-A exploration notes = `_incoming/cart-handover-2410.md` (images: order_items has no image —
   map product_slug + variant_id to the catalog option image at render time).
+  E SOLD OUT AFTER PAYMENT (owner 24/10 asked; Friday proposed, owner answer PENDING): staff button "สินค้าหมด" on /staff with reason →
+    order page notice box with 2 choices: swap to an in-stock item at the same/near price (picker) OR refund → one tap "คืนเข้าพร้อมเพย์เบอร์
+    ที่ใช้สั่ง" (or type another PromptPay number — no full bank account numbers stored) → staff marks refunded + ref → customer sees "คืนเงินแล้ว";
+    staff also phone/LINE the customer (no customer push channel yet). Owner idea = reject + reason + refund bank-account box (kept as option).
   Owner steps docs: DEPLOY-RENDER.md §8 (LINE) · §9 (backup). Staff guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md (staff confirm each paid order with
   "ยืนยันยอดเงินแล้ว" after the ✅ alert). Bot: LINE OA "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member).
   No Shipnity API — staff forward orders by hand.
