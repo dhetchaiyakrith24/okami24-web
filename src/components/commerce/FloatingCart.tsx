@@ -137,7 +137,9 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
       href="/cart"
       aria-label={`${label} (${count})`}
       className={cn(
-        "okami-cart-fab group fixed z-30 flex items-center overflow-hidden rounded-full border bg-surface-1/95 p-3.5 text-foreground shadow-2xl backdrop-blur-md transition-[border-color,padding] duration-300 hover:border-ember/50 focus-visible:border-ember/50 focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2 sm:hover:px-5 sm:focus-visible:px-5",
+        // No overflow-hidden here: the count badge sits on the bubble's corner and must not be clipped by the circle
+        // (checker #792); the label clips itself inside its own span.
+        "okami-cart-fab group fixed z-30 flex items-center rounded-full border bg-surface-1/95 p-3.5 text-foreground shadow-2xl backdrop-blur-md transition-[border-color,padding] duration-300 hover:border-ember/50 focus-visible:border-ember/50 focus-visible:outline-2 focus-visible:outline-ember focus-visible:outline-offset-2 sm:hover:px-5 sm:focus-visible:px-5",
         calm ? "border-ember" : "border-surface-border",
       )}
     >
