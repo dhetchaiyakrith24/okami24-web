@@ -698,7 +698,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "Marbo กลิ่นไหนดี ไม่มีคำตอบเดียว อยู่ที่ว่าชอบแนวไหน เริ่มจากเลือกสายก่อน เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วค่อยดูว่ารุ่นที่ใช้อยู่มีกลิ่นไหนในสายนั้น ที่ร้านเองก็มีหลายกลิ่นที่ลูกค้าชอบ",
           "กลุ่มในบทความนี้แบ่งจากคำในชื่อกลิ่น ชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อผลไม้อื่น ๆ อยู่สายผลไม้ ที่เหลือเป็นแนวอื่น",
-          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K](/products/m-bar-9k) มี 24 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
+          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K หรือมาโบ 9K](/products/m-bar-9k) มี 24 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
           "ถ้าใช้ M Switch กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ใช้ตัวเดิม อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว",
         ],
       },
@@ -768,7 +768,7 @@ const allGuides: Guide[] = [
     faq: [
       {
         question: "Marbo กลิ่นไหนเย็น",
-        answer: "กลิ่นสายเย็นดูได้จากชื่อที่มีคำสื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Doublemint",
+        answer: "กลิ่นสายเย็นดูได้จากชื่อที่มีคำสื่อถึงความเย็น M Bar 9K มี Blue Ice · Blueberry Mint · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Doublemint",
       },
       {
         question: "Marbo กลิ่นองุ่นมีแบบไหนบ้าง",
@@ -821,7 +821,7 @@ const allGuides: Guide[] = [
         heading: "ใช้ได้กี่วัน ไม่มีตัวเลขตายตัว",
         paragraphs: [
           "พอตใช้แล้วทิ้ง 1 ตัวใช้ได้กี่วัน ตอบตรง ๆ คือไม่มีตัวเลขตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย รุ่นเดียวกันแต่คนละคนใช้ ก็หมดไม่พร้อมกัน",
-          "ถามว่า “Marbo 9K ใช้ได้กี่วัน” ก็คำตอบเดียวกัน [M Bar 9K](/products/m-bar-9k) ที่หลายร้านในไทยเรียกว่า Marbo ระบุไว้สูงสุด 9,000 พัฟ ส่วน [M Bar 10K](/products/m-bar-10k) สูงสุด 10,000 พัฟ ตัวเลขนี้คือจำนวนพัฟ ไม่ใช่จำนวนวัน และเอาไปหารเป็นวันไม่ได้",
+          "ถามว่า “Marbo 9K ใช้ได้กี่วัน” ก็คำตอบเดียวกัน [M Bar 9K หรือมาโบ 9K](/products/m-bar-9k) ระบุไว้สูงสุด 9,000 พัฟ ส่วน [M Bar 10K](/products/m-bar-10k) สูงสุด 10,000 พัฟ ตัวเลขนี้คือจำนวนพัฟ ไม่ใช่จำนวนวัน และเอาไปหารเป็นวันไม่ได้",
         ],
       },
       {
@@ -2323,7 +2323,7 @@ const allGuides: Guide[] = [
         heading: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี",
         paragraphs: [
           "พอตใช้แล้วทิ้งยี่ห้อไหนดี ตัวไหนดี ไม่มีคำตอบเดียวที่ใช้ได้กับทุกคน เพราะแต่ละคนมองหาไม่เหมือนกัน บางคนอยากได้รุ่นที่พัฟเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้สองกลิ่นในเครื่องเดียว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามสิ่งที่คุณอยากได้ทีละแบบ",
-          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี [Joiway F3](/products/joiway-f3) กับ [Joiway F4](/products/joiway-f4) TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี [INFY 20K](/products/infy-20k) นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
+          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K หรือมาโบ 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี [Joiway F3](/products/joiway-f3) กับ [Joiway F4](/products/joiway-f4) TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี [INFY 20K](/products/infy-20k) นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
           "ถ้ายังลังเลว่าจะเอาพอตใช้แล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ก่อนได้ ส่วนถ้ากำลังชั่งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว ถ้าตัดสินใจแล้วว่าอยากเก็บตัวเครื่องไว้ อ่านต่อที่ [พอตเปลี่ยนหัว รุ่นไหนดี](/guides/choosing-a-switch-pod) และถ้าเพิ่งเริ่มสูบพอตครั้งแรก อ่าน [สูบพอตยังไงไม่ให้สำลัก](/guides/how-to-vape-without-coughing) ไว้ด้วย",
         ],
       },
