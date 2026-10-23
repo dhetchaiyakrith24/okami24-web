@@ -217,9 +217,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
   sold out + OutOfStock JSON-LD · #404 sold-out chips + pill "สินค้าหมด" · #408 shipping 60 → 50 · #409 Shipnity Max read →
   `scripts/stock-sync.js` → warehouse-stock data · #425 owner list 24. Evidence `_incoming/stock-api/`.
-  NEXT: owner 14/10 "C" = a scheduled morning read that prepares the PR (read → PR → checker); the OWNER confirms in chat before
-  it merges (TEAM_RULES 13.7). State 15/10: the app has no stock task (deleted 08/10); its prompt folder `okami24-stock-sync`
-  is kept (§18) — the PR step was never built. Then stock adapter when the warehouse sends the API · then order push with the
+  The scheduled read = 3u STOCK above (hourly since 24/10, the run merges its own PR — TEAM_RULES 13.7). The old prompt folder
+  `okami24-stock-sync` is kept (§18). NEXT: stock adapter when the warehouse sends the API · then order push with the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
   From the warehouse (via the owner): the copy-ready question list = รอพี่ตรวจ "คำถามถึงคลังสินค้า".
   Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for
