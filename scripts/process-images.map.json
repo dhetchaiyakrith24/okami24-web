@@ -12913,6 +12913,90 @@
   }
  },
  {
+  "source": "_incoming/r1/out/misty-leaf.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "misty-leaf",
+  "fileName": "variant-misty-leaf-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Misty Leaf option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the card-v3 studio render (image 1, Black Sapphire) with RELX's own store image of this colour (image 2), prompt \"change ONLY the colour of the aluminium body ... keep everything else\"; then _incoming/r1/fit.js: each row of the render aligned to the card's outline and cut with the card's own alpha, so every option has the identical silhouette, fitted 1000x1000 top 80 height 839, webp q90 written from that canvas",
+   "reference": "RELX's store image of Misty Leaf (relxnow.com Shopify CDN, the previous live option photo variant-misty-leaf.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-misty-leaf.webp"
+ },
+ {
+  "source": "_incoming/r1/out/blue-bay.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "blue-bay",
+  "fileName": "variant-blue-bay-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Blue Bay option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the card-v3 studio render (image 1, Black Sapphire) with RELX's own store image of this colour (image 2), prompt \"change ONLY the colour of the aluminium body ... keep everything else\"; then _incoming/r1/fit.js: each row of the render aligned to the card's outline and cut with the card's own alpha, so every option has the identical silhouette, fitted 1000x1000 top 80 height 839, webp q90 written from that canvas",
+   "reference": "RELX's store image of Blue Bay (relxnow.com Shopify CDN, the previous live option photo variant-blue-bay.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-blue-bay.webp"
+ },
+ {
+  "source": "public/assets/products/relx-infinity-2-plus/card-v3.webp",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "black-sapphire",
+  "fileName": "variant-black-sapphire-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Black Sapphire option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "no new render: the card-v3 studio re-shoot (Black Sapphire) re-fitted to the option frame by _incoming/r1/fit.js",
+   "reference": "RELX's store image of Black Sapphire (relxnow.com Shopify CDN, the previous live option photo variant-black-sapphire.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-black-sapphire.webp"
+ },
+ {
+  "source": "_incoming/r1/out/rose-gold.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "rose-gold",
+  "fileName": "variant-rose-gold-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Rose Gold option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the card-v3 studio render (image 1, Black Sapphire) with RELX's own store image of this colour (image 2), prompt \"change ONLY the colour of the aluminium body ... keep everything else\"; then _incoming/r1/fit.js: each row of the render aligned to the card's outline and cut with the card's own alpha, so every option has the identical silhouette, fitted 1000x1000 top 80 height 839, webp q90 written from that canvas",
+   "reference": "RELX's store image of Rose Gold (relxnow.com Shopify CDN, the previous live option photo variant-rose-gold.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-rose-gold.webp"
+ },
+ {
+  "source": "_incoming/r1/out/meteor-flash.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "meteor-flash",
+  "fileName": "variant-meteor-flash-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Meteor Flash option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the card-v3 studio render (image 1, Black Sapphire) with RELX's own store image of this colour (image 2), prompt \"change ONLY the colour of the aluminium body ... keep everything else\"; then _incoming/r1/fit.js: each row of the render aligned to the card's outline and cut with the card's own alpha, so every option has the identical silhouette, fitted 1000x1000 top 80 height 839, webp q90 written from that canvas",
+   "reference": "RELX's store image of Meteor Flash (relxnow.com Shopify CDN, the previous live option photo variant-meteor-flash.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-meteor-flash.webp"
+ },
+ {
+  "source": "_incoming/r1/out/bronze-dusk.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "bronze-dusk",
+  "fileName": "variant-bronze-dusk-v2.webp",
+  "note": "image run 23/10 (line 1) - RELX Infinity 2 Plus Bronze Dusk option, studio photo to the owner's 23/10 standard (replaces RELX's flat store render; same size and place as every other option)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the card-v3 studio render (image 1, Black Sapphire) with RELX's own store image of this colour (image 2), prompt \"change ONLY the colour of the aluminium body ... keep everything else\"; then _incoming/r1/fit.js: each row of the render aligned to the card's outline and cut with the card's own alpha, so every option has the identical silhouette, fitted 1000x1000 top 80 height 839, webp q90 written from that canvas",
+   "reference": "RELX's store image of Bronze Dusk (relxnow.com Shopify CDN, the previous live option photo variant-bronze-dusk.webp) for the colour; card-v3 for shape, cap, display and light",
+   "fidelitySheet": "_incoming/r1/sheet.png (old vs new on the site dark) · _incoming/r1/edges*.png (3x edge crops)"
+  },
+  "replaces": "/assets/products/relx-infinity-2-plus/variant-bronze-dusk.webp"
+ },
+ {
   "source": "public/assets/products/vinci-s/variant-black-v3.webp",
   "slug": "vinci-s",
   "role": "variant",
