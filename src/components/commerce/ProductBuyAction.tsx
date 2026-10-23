@@ -1,8 +1,7 @@
 "use client";
 
 import { CONTACT } from "@/data/contact";
-import { addToCartAction } from "@/app/cart/actions";
-import { Button } from "@/components/ui/Button";
+import { AddToCartForm } from "@/components/commerce/AddToCartForm";
 import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { cn } from "@/lib/utils";
@@ -101,17 +100,13 @@ export function ProductBuyAction({
   }
 
   return (
-    <form action={addToCartAction} className={compact ? "flex" : formClassName}>
-      <input type="hidden" name="slug" value={slug} />
-      {variantId && <input type="hidden" name="variantId" value={variantId} />}
-      <input type="hidden" name="quantity" value={1} />
-      <Button type="submit">{dict.productActions.addToCartCta}</Button>
+    <AddToCartForm slug={slug} variantId={variantId} className={compact ? "flex" : formClassName} label={dict.productActions.addToCartCta}>
       {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
       {!compact && (
         <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className={noteClassName}>
           {dict.productActions.orderOnLineNote}
         </a>
       )}
-    </form>
+    </AddToCartForm>
   );
 }

@@ -117,6 +117,57 @@ img {
   }
 }
 
+/* Cart UX batch B (owner 24/10, designer option A): the floating cart bubble sits 12px above the LINE button on the same
+   right edge. Phone: LINE is 48px at bottom 1rem → cart at 4.75rem. Phone product page: LINE is hidden (rule above), so
+   the cart takes LINE's lifted slot right above the buy bar. ≥640: LINE pill at bottom 2rem (+ lift below lg) → cart at
+   5.75rem (+ lift). */
+.okami-cart-fab {
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  animation: okami-cart-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@media (max-width: 39.98rem) {
+  body:has(.mobile-buy-bar) .okami-cart-fab {
+    bottom: calc(1rem + var(--okami-fab-lift, 0px) + env(safe-area-inset-bottom, 0px));
+  }
+}
+@media (min-width: 40rem) {
+  .okami-cart-fab {
+    right: 2rem;
+    bottom: calc(5.75rem + var(--okami-fab-lift, 0px));
+  }
+}
+@keyframes okami-cart-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+.okami-cart-badge {
+  animation: okami-cart-badge 200ms ease-out both;
+}
+@keyframes okami-cart-badge {
+  from { opacity: 0; transform: translateY(6px) scale(1.25); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* Order page thank-you heading (owner 24/10): fades and rises in once. */
+.okami-thanks {
+  animation: okami-thanks-in 420ms ease-out 80ms both;
+}
+@keyframes okami-thanks-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* The add-to-cart dot (FloatingCart): fixed, flies by WAAPI; never catches a tap. */
+.okami-cart-dot {
+  position: fixed;
+  z-index: 35;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: var(--color-ember);
+  box-shadow: 0 0 10px rgba(255, 106, 44, 0.7);
+  pointer-events: none;
+}
+
 /* Mobile round B, B4 (owner 2026-09-08): the colour/flavour chip rows scroll sideways on phones
    (the `max-lg:` classes in ColorVariantRail / FlavorVariantGrid / ProductMasterVariantPicker) and
    were cut off hard at the right edge with nothing saying "more this way". The right 2.5rem now

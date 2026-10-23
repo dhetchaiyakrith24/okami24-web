@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { addToCart, setCartItemQuantity, removeCartItem } from "@/lib/commerce/cart";
+import { addToCart, setCartItemQuantity, removeCartItem, getCartCount } from "@/lib/commerce/cart";
 import type { ProductRef } from "@/lib/commerce/catalog-resolver";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
@@ -19,15 +19,18 @@ function refuseWhileOrderingOff(): void {
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
 }
 
-export async function addToCartAction(formData: FormData): Promise<void> {
+/** Returns whether the line went in and the cart's new item count — the product page plays the add moment and updates
+ *  the floating cart button only on `ok` (cart UX batch B, owner 24/10). A refused add changes nothing, as before. */
+export async function addToCartAction(formData: FormData): Promise<{ ok: boolean; count: number }> {
   refuseWhileOrderingOff();
   const slug = String(formData.get("slug") ?? "");
   // origin is provenance for labeling only (see resolveProductRef) — read it from the catalog
   // index rather than assuming ProductMaster, now that priced legacy products are purchasable.
   const ref: ProductRef = { origin: getCatalogItem(slug)?.origin ?? "product-master", slug, variantId: readVariantId(formData) };
   const quantity = Number(formData.get("quantity") ?? "1") || 1;
-  await addToCart(ref, quantity);
+  const result = await addToCart(ref, quantity);
   revalidatePath("/cart");
+  return { ok: result.ok, count: await getCartCount() };
 }
 
 export async function updateQuantityAction(formData: FormData): Promise<void> {

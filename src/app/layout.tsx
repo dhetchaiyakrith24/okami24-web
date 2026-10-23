@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TrustBar } from "@/components/layout/TrustBar";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
+import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
 import { navCategories } from "@/lib/category-visibility";
@@ -107,6 +108,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <TrustBar />
           <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} />
           <LineContact />
+          {/* Cart UX batch B (owner 24/10): the floating cart bubble above the LINE button — only while the cart has items. */}
+          <FloatingCart orderingEnabled={ORDERING_ENABLED} />
           {/* Round 8 (owner 2026-09-23, option ก): counts clicks on every LINE link site-wide —
               in-site, no cookie, nothing sent outside. Renders nothing. */}
           <LineClickTracker />
