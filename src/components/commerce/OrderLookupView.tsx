@@ -24,9 +24,11 @@ function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
 }
 
-/** orders.created_at is SQLite `datetime('now')` = UTC without a zone; shown as the Thai calendar day. */
+/** orders.created_at is an ISO string (UTC, with "Z"); an older SQLite `datetime('now')` form ("YYYY-MM-DD HH:MM:SS", UTC
+ *  without a zone) is read as UTC too. Shown as the Thai calendar day. */
 function formatDate(createdAt: string, locale: "th" | "en" | "zh"): string {
-  const d = new Date(`${createdAt.replace(" ", "T")}Z`);
+  const iso = createdAt.includes("T") ? createdAt : `${createdAt.replace(" ", "T")}Z`;
+  const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return "";
   const tag = locale === "th" ? "th-TH" : locale === "zh" ? "zh-CN" : "en-GB";
   return d.toLocaleDateString(tag, { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Bangkok" });
