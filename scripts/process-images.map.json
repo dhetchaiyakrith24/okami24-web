@@ -12887,5 +12887,29 @@
    "fidelitySheet": "_incoming/sweep-2310/esko/chk-mango.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
    "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
   }
+ },
+ {
+  "source": "_incoming/sweep-2310/supercool/blueraz-A-fin.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-5",
+  "note": "image sweep 23/10 - Super Cool Blueraz Berry (Max ELQ-6-5): owner search in Chrome found the real bottle",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of our Grape Blast studio render (list19/i/r/sc-grape-2.png) changing only the two-line flavour name to Blueraz Berry as printed on the real bottle (image 2); _incoming/sweep-2310/supercool/swapname.js then pastes only the changed name band (feathered) onto the live Grape Blast final, whose cut/alpha is kept, so the bottle, size and position are identical by construction",
+   "reference": "vapemun.com Super Cool Saltnic Blueraz Berry photo (https://vapemun.com/product/super-cool-saltnic/ - wp-content/uploads/2026/10/Supercool-Saltnic-Blueraz-Berry-Vapemun.webp, 600 px; COF Super Cool Salt Series label, name readable) - _incoming/sweep-2310/supercool/src/vm-Blueraz-Berry.webp; bottle crop up/ref-Blueraz-Berry.png (fruit left out)",
+   "fidelitySheet": "_incoming/sweep-2310/supercool/blueraz-A-fin-zoom.png (name band at 1:1) + sheet.jpg (the shop photos)"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/supercool/pinky-A-fin.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-6",
+  "note": "image sweep 23/10 - Super Cool Pinky Blush (Max ELQ-6-6): owner search in Chrome found the real bottle",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of our Grape Blast studio render (list19/i/r/sc-grape-2.png) changing only the two-line flavour name to Pinky Blush as printed on the real bottle (image 2); _incoming/sweep-2310/supercool/swapname.js then pastes only the changed name band (feathered) onto the live Grape Blast final, whose cut/alpha is kept, so the bottle, size and position are identical by construction",
+   "reference": "vapemun.com Super Cool Saltnic Pinky Blush photo (https://vapemun.com/product/super-cool-saltnic/ - wp-content/uploads/2026/10/Supercool-Saltnic-Pinky-Blush-Vapemun.webp, 600 px; COF Super Cool Salt Series label, name readable) - _incoming/sweep-2310/supercool/src/vm-Pinky-Blush.webp; bottle crop up/ref-Pinky-Blush.png (fruit left out)",
+   "fidelitySheet": "_incoming/sweep-2310/supercool/pinky-A-fin-zoom.png (name band at 1:1) + sheet.jpg (the shop photos)"
+  }
  }
 ]
