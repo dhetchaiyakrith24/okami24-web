@@ -38,7 +38,7 @@ description: Audit checklist for Thai copy on okami24.store — structural frame
 - `mai-yamok-spacing` without a space → always a space before ๆ (THAI_STYLE §4).
 - The "softened" Marketing/SaaS readings of `cta-bang` and `generic-reassurance` (a closing exclamation or reassurance at the
   hook or CTA) → not taken: both apply at full strictness here, because the shop voice is "สุภาพ · นิ่ง" with no selling
-  call to action (thai-copy "The voice"), and ordering is on LINE only (BSOT). (The dropped register/examples files also model
+  call to action (thai-copy "The voice"); ordering goes through the site cart or LINE as BSOT §8 says. (The dropped register/examples files also model
   CTAs like `ลองใช้ฟรี…` — not used.)
 - `empty-intensifier` leaving `อย่างมีประสิทธิภาพ` alone (craft), and `ที่แท้จริง…เสมอ` praised in the dropped examples file → both are filler / guarantee
   wording we cut (thai-copy · THAI_STYLE §3).

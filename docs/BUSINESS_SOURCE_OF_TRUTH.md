@@ -219,9 +219,12 @@ operational information.
 > Three sentences that said "order on the site" were approved as the only wording exceptions to
 > the "do not touch site text" rule (LAUNCH_AUDIT item 30): the site description for search
 > engines, the how-to-order page intro, and the "how do I order" FAQ answer — all switch-bound.
-> **How to turn ordering back on:** in Render, set `OKAMI24_ORDERING` to `on` (in `render.yaml`
-> then merge, since the service is Blueprint-managed) and choose "Save, rebuild, and deploy".
+> **How the switch works:** in the Render dashboard (okami24 → Environment) set `OKAMI24_ORDERING` to `on`
+> or `off` and choose "Save, rebuild, and deploy" — a rebuild, because the prerendered pages read it at build
+> time ("Save and deploy" reuses the old build). `render.yaml` keeps its declared "off".
 > Code: `src/lib/commerce/ordering-mode.ts`. Tracked as LAUNCH_AUDIT item 43.
+> **ENDED 2026-10-24 (owner OK in chat, cart round 22/10):** ordering is ON; the order-channel rule below
+> (website = primary, LINE = backup) applies again. Turning it off again = the same switch set to `off`.
 
 **Current:**
 - Website → customer discovers product → contacts LINE OA → admin assists → order
