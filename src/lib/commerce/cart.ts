@@ -6,6 +6,7 @@ import { getSession } from "./session";
 import { resolveProductRef, type ProductRef, type ResolveFailureReason } from "./catalog-resolver";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
+import { lineImage, type LineImage } from "./line-image";
 
 const CART_COOKIE = "okami24_cart";
 const cookieOpts = { httpOnly: true, sameSite: "lax" as const, path: "/", secure: process.env.NODE_ENV === "production" };
@@ -100,6 +101,8 @@ export interface CartLineView extends PricedLine {
    *  variant removed, etc). The line stays visible with quantity/slug so the customer can see
    *  what needs attention, but it is excluded from `totals` and must be excluded from checkout. */
   problem?: ResolveFailureReason;
+  /** The chosen colour/flavour's photo, else the product's card photo (cart UX batch A) — display only. */
+  image: LineImage | null;
 }
 
 export interface CartView {
@@ -133,12 +136,13 @@ export async function getCart(): Promise<CartView> {
         quantity: row.quantity,
         lineTotal: 0,
         problem: resolved.reason,
+        image: lineImage(row.product_slug, row.variant_id),
       };
     }
-    return priceLine(resolved.line, row.quantity);
+    return { ...priceLine(resolved.line, row.quantity), image: lineImage(row.product_slug, row.variant_id) };
   });
 
-  const totals = computeOrderTotals(lines.filter((l): l is PricedLine => !("problem" in l && l.problem)));
+  const totals = computeOrderTotals(lines.filter((l): l is CartLineView & PricedLine => !("problem" in l && l.problem)));
   return { cartId, lines, totals, hasProblems: lines.some((l) => l.problem !== undefined) };
 }
 

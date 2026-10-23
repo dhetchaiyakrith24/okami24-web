@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { placeOrderAction } from "@/app/checkout/actions";
+import { LineThumb } from "@/components/commerce/LineThumb";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 
@@ -37,15 +38,18 @@ export function ReviewStepView({
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
             {cart.lines.map((line) => (
-              <div key={`${line.productSlug}:${line.variantId ?? ""}`} className="flex items-center justify-between p-4 text-sm">
-                <div>
-                  <p className="font-medium text-foreground">{line.displayName}</p>
-                  {line.variantLabel && <p className="text-foreground-muted">{line.variantLabel}</p>}
-                  <p className="text-foreground-muted">
-                    {formatTHB(line.unitPrice)} × {line.quantity}
-                  </p>
+              <div key={`${line.productSlug}:${line.variantId ?? ""}`} className="flex items-center justify-between gap-4 p-4 text-sm">
+                <div className="flex items-center gap-4">
+                  <LineThumb image={line.image} />
+                  <div>
+                    <p className="font-medium text-foreground">{line.displayName}</p>
+                    {line.variantLabel && <p className="text-foreground-muted">{line.variantLabel}</p>}
+                    <p className="text-foreground-muted">
+                      {formatTHB(line.unitPrice)} × {line.quantity}
+                    </p>
+                  </div>
                 </div>
-                <p className="font-medium text-foreground">{formatTHB(line.lineTotal)}</p>
+                <p className="shrink-0 font-medium text-foreground">{formatTHB(line.lineTotal)}</p>
               </div>
             ))}
           </div>

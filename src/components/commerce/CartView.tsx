@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { updateQuantityAction, removeItemAction } from "@/app/cart/actions";
+import { LineThumb } from "@/components/commerce/LineThumb";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 
 function formatTHB(value: number): string {
@@ -29,16 +30,19 @@ export function CartView({ cart }: { cart: CartViewData }) {
             <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
               {cart.lines.map((line) => (
                 <div key={`${line.productSlug}:${line.variantId ?? ""}`} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex flex-col gap-1">
-                    <span className="font-medium text-foreground">{line.displayName}</span>
-                    {line.variantLabel && <span className="text-sm text-foreground-muted">{line.variantLabel}</span>}
-                    {line.problem ? (
-                      <span className="text-sm text-ember">{dict.cart.unavailableMessage}</span>
-                    ) : (
-                      <span className="text-sm text-foreground-muted">
-                        {formatTHB(line.unitPrice)} × {line.quantity} = {formatTHB(line.lineTotal)}
-                      </span>
-                    )}
+                  <div className="flex items-center gap-4">
+                    <LineThumb image={line.image} />
+                    <div className="flex flex-col gap-1">
+                      <span className="font-medium text-foreground">{line.displayName}</span>
+                      {line.variantLabel && <span className="text-sm text-foreground-muted">{line.variantLabel}</span>}
+                      {line.problem ? (
+                        <span className="text-sm text-ember">{dict.cart.unavailableMessage}</span>
+                      ) : (
+                        <span className="text-sm text-foreground-muted">
+                          {formatTHB(line.unitPrice)} × {line.quantity} = {formatTHB(line.lineTotal)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="flex items-center gap-3">
                     {!line.problem && (

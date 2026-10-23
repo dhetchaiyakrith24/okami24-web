@@ -6,6 +6,7 @@ import { OrderNotFoundMessage } from "@/components/commerce/OrderNotFoundMessage
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/data/payment";
 import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
+import { lineImage } from "@/lib/commerce/line-image";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -41,5 +42,7 @@ export default async function OrderStatusPage({
     };
   }
 
-  return <OrderStatusView order={order} token={token ?? null} payment={payment} />;
+  const itemImages = order.items.map((item) => lineImage(item.productSlug, item.variantId));
+
+  return <OrderStatusView order={order} token={token ?? null} payment={payment} itemImages={itemImages} />;
 }

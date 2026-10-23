@@ -521,6 +521,7 @@ export const th: Dictionary = {
     paymentCopyCta: "คัดลอกเลขบัญชี",
     paymentCopiedLabel: "คัดลอกแล้ว",
     paymentSubmittedNote: "ได้รับสลิปเรียบร้อยแล้ว แอดมินกำลังตรวจยอดเงินให้ เมื่อคำสั่งซื้อไปถึงขั้นถัดไป สถานะในหน้านี้จะเปลี่ยนตาม",
+    thankYouLine: "ขอบคุณที่เลือกสั่งซื้อกับ OKami24",
     slipUploadTitle: "แนบสลิปโอนเงิน",
     slipUploadPick: "กดเพื่อเลือกรูปสลิป",
     slipUploadChange: "กดเพื่อเปลี่ยนรูป",
