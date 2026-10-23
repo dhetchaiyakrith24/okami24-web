@@ -1110,15 +1110,16 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     },
   ],
   // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
+  // 23/10 (image line 1): that file is 349x603, small on the card -> studio re-shoot from it (+ the maker banner for detail).
   "ESKO-BAR-20K": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/esko-bar-20k/card.webp",
+      src: "/assets/products/esko-bar-20k/card-v2.webp",
       alt: "ESKO BAR 498 (20000 puffs) disposable, yellow, tilted",
-      angle: "Tilted, isolated — ESKO BAR's own transparent render 498-6.png from https://eskobarvape.com/product/eskobar",
+      angle: "Tilted, isolated — OKami24 studio re-shoot (Higgsfield, IMAGE_SPEC §0 item 7) of ESKO BAR's own render 498-6.png from https://eskobarvape.com/product/eskobar, same device and angle",
       transparentBackground: true,
-      sourceName: "ESKO BAR (official site, eskobarvape.com)",
+      sourceName: "OKami24 render (Higgsfield) from ESKO BAR's 498-6.png",
       sourceUrl: "https://eskobarvape.com/product/eskobar",
     },
   ],
@@ -1172,9 +1173,9 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-70/card-v3.webp",
+      src: "/assets/products/coil-70/card-v4.webp",
       alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo",
-      angle: "Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      angle: "Card re-centred on its visual weight 23/10 (image line 1: same render moved 77 px right, 0.6 of the gap, as coil-53 card-v4). Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo",
       sourceUrl: "https://www.elementvape.com/dotmod-dotcoils",
