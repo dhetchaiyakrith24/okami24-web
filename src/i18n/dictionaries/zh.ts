@@ -474,7 +474,7 @@ export const zh: Dictionary = {
     paymentAccountNameLabel: "户名",
     paymentAccountNumberLabel: "账号",
     paymentQrNote: "也可用银行 App 扫描下方二维码，按上方总金额付款。",
-    paymentQrAmountNote: "也可用银行 App 扫描下方二维码，本订单金额会自动填好，确认金额后再付款。",
+    paymentQrAmountNote: "也可用银行 App 扫描下方二维码，二维码已包含本订单金额，付款前请核对是否与上方总金额一致。",
     paymentQrAlt: "用于向店铺账户转账的 PromptPay 二维码",
     paymentVerifyNameWarning: "转账前请核对户名是否与本页显示的一致。若有人发来其他账号，请勿转账。",
     paymentAfterTransferNote: "转账完成后，请在下方上传转账凭证。我们核对款项后会为您备货发货。如有问题，请通过 LINE @okm24 联系我们。",
