@@ -13150,5 +13150,18 @@
   "fileName": "card-v4.webp",
   "note": "23/10 (image line 1): card-v3 re-centred on its visual weight - pixels moved 77 px right (0.6 x the 128 px gap between the alpha-weighted centre and the canvas centre, the balance 0.6 used for coil-53 card-v4), no resampling, webp q82 (_incoming/tn). HANDOFF taste note 'coil-53/coil-70 cards lean left'.",
   "replaces": "/assets/products/coil-70/card-v3.webp"
+ },
+ {
+  "source": "_incoming/esko/r1.png",
+  "slug": "esko-bar-20k",
+  "role": "card",
+  "fileName": "card-v2.webp",
+  "note": "23/10 (image line 1): studio re-shoot of the card - the maker's only device-only file is 349x603 (card product 632 px tall, small on the card; HANDOFF 'image-line re-shoot candidate')",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: image 1 = the maker render 498-6.png on white (shape, tilt, framing), image 2 = the right-hand device cropped from the maker banner 498-banner.png (logo, screen and base detail); prompt \"studio re-shoot of image 1 at much higher resolution ... keep EXACTLY the same device, same tilt ... plain pure white background\" (render hf_20261023_151408_b89c6b03-b29f-406b-b579-e60c3e4bacf4); white background cut by process-images",
+   "reference": "ESKO BAR official https://eskobarvape.com/product/eskobar - assets/eskobar-498/498-6.png (349x603, the previous card source) + assets/eskobar-498/498-banner.png (1920x1059) - copies _incoming/esko/",
+   "fidelitySheet": "_incoming/esko/fid.jpg (maker render vs re-shoot, same height, on the site dark)"
+  },
+  "replaces": "/assets/products/esko-bar-20k/card.webp"
  }
 ]
