@@ -134,8 +134,9 @@ export function runSimulationContractTests(): SimulationContractResult[] {
     const ok = real?.status === "candidate" && real.product.publicationStatus !== "published";
     check(`${id} is a real candidate but WITHDRAWN from publication (approval entry removed 2026-09-06)`, ok, JSON.stringify(real));
   };
-  // Coil-92 PnP X republished round list19 (2026-10-19) with an OKami24 re-shoot card: 4 Max resistances + VOOPOO's other 3 at ฿130.
-  checkGenuinelyPublished("Coil-92", 130, 7);
+  // Coil-92 PnP X republished round list19 (2026-10-19) with an OKami24 re-shoot card: 4 Max resistances + VOOPOO's other 3;
+  // ฿130 → ฿150 owner override 2026-10-24.
+  checkGenuinelyPublished("Coil-92", 150, 7);
   checkWithdrawn("Coil-63");
   // Pod-169 INFY PLUS republished round list19 (2026-10-18) with an OKami24 re-shoot of one clear pod: the 28 Max flavours at ฿129.
   checkGenuinelyPublished("Pod-169", 129, 28);

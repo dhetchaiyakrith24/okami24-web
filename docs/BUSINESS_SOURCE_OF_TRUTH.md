@@ -219,9 +219,12 @@ operational information.
 > Three sentences that said "order on the site" were approved as the only wording exceptions to
 > the "do not touch site text" rule (LAUNCH_AUDIT item 30): the site description for search
 > engines, the how-to-order page intro, and the "how do I order" FAQ answer — all switch-bound.
-> **How to turn ordering back on:** in Render, set `OKAMI24_ORDERING` to `on` (in `render.yaml`
-> then merge, since the service is Blueprint-managed) and choose "Save, rebuild, and deploy".
+> **How the switch works:** in the Render dashboard (okami24 → Environment) set `OKAMI24_ORDERING` to `on`
+> or `off` and choose "Save, rebuild, and deploy" — a rebuild, because the prerendered pages read it at build
+> time ("Save and deploy" reuses the old build). `render.yaml` keeps its declared "off".
 > Code: `src/lib/commerce/ordering-mode.ts`. Tracked as LAUNCH_AUDIT item 43.
+> **ENDED 2026-10-24 (owner OK in chat, cart round 22/10):** ordering is ON; the order-channel rule below
+> (website = primary, LINE = backup) applies again. Turning it off again = the same switch set to `off`.
 
 **Current:**
 - Website → customer discovers product → contacts LINE OA → admin assists → order
@@ -331,6 +334,13 @@ No slip image, name or account number is stored (same line as the staff page). C
 New-order and slip alerts go to the team's own LINE group through a separate LINE OA bot "OKM ORDER" (@691qxpxp, not
 @okm24); a second group "OKM Slip" gets the bot's EasySlip answer for slips staff drop in there.
 
+**QR carries the order amount (owner 2026-10-23, chat — "A ครับทำได้"):** the PromptPay QR on the order page is redrawn per
+order with the order total filled in (the customer's bank app shows the amount; the customer does not type it). The
+receiver part of the code is copied unchanged from the owner's QR file, so the money still goes to the same PromptPay
+wallet and the "recognised by the QR's reference" slip rule above still holds. Any failure to build the amount QR → the
+page shows the owner's original QR file and the old note. **Owner step before go-live:** scan one order's QR with a real
+bank app (amount filled · receiver = the shop). Code: `src/lib/commerce/promptpay-amount.ts` + `promptpay-qr.ts`.
+
 ---
 
 ## 10. Shipping
@@ -357,6 +367,16 @@ its meta description must not name EMS / Thailand Post / Flash Express. Say only
 The owner said this in the original interview ("ไม่อยากให้ขึ้น … อยากโชว์เรื่องส่งไว") and re-confirmed
 it on 2026-09-07 after the live /shipping page was found to name both carriers. **The wording change
 is queued as point 4 of LAUNCH_AUDIT item 30 (the Thai language pass) — the page is not edited yet.**
+
+**Owner ruling 2026-10-23 — exception for a shipped order's own page (overrides the rule above there only).** In the
+owner's words: "A ครับ เพราะลูกค้าโอนแล้วเราถึงแจ้งเรื่องการตรวจสอบพัสดุ". Once a web order is shipped, its order page
+(`/orders/<n>`) names the carrier (Thailand Post EMS or Flash Express), shows the tracking number with a copy button and
+a "เช็คสถานะพัสดุ" button that opens that carrier's own tracking page, plus a 3-step how-to (the carrier pages do not
+fill the number in). Staff pick the carrier on /staff when they enter the number — it is never guessed from the number.
+The rule above still holds for the public pages (/shipping and its meta description): before payment the site sells
+"fast dispatch + tracking", not carrier names. **Later (owner 23/10):** show the tracking status inside our own site
+(no jump to the carrier) — needs the Thailand Post Track & Trace API and the Flash Express merchant API, each with an
+account/token from the owner; not built yet.
 
 ---
 

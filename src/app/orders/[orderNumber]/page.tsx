@@ -5,6 +5,8 @@ import { OrderStatusView } from "@/components/commerce/OrderStatusView";
 import { OrderNotFoundMessage } from "@/components/commerce/OrderNotFoundMessage";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/data/payment";
+import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
+import { lineImage } from "@/lib/commerce/line-image";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -35,8 +37,12 @@ export default async function OrderStatusPage({
       accountName: PAYMENT_ACCOUNT.accountName,
       accountNumber: PAYMENT_ACCOUNT.accountNumber,
       hasQr: existsSync(promptpayQrPath()),
+      // Owner 23/10: the QR carries the order total when the shop QR decodes (src/lib/commerce/promptpay-qr.ts).
+      qrHasAmount: await amountQrAvailable(),
     };
   }
 
-  return <OrderStatusView order={order} token={token ?? null} payment={payment} />;
+  const itemImages = order.items.map((item) => lineImage(item.productSlug, item.variantId));
+
+  return <OrderStatusView order={order} token={token ?? null} payment={payment} itemImages={itemImages} />;
 }

@@ -578,6 +578,8 @@ export interface Dictionary {
     paymentAccountNameLabel: string;
     paymentAccountNumberLabel: string;
     paymentQrNote: string;
+    /** Instead of paymentQrNote when the QR carries the order total (owner 23/10, BSOT §9). */
+    paymentQrAmountNote: string;
     paymentQrAlt: string;
     paymentVerifyNameWarning: string;
     paymentAfterTransferNote: string;
@@ -585,6 +587,8 @@ export interface Dictionary {
     paymentCopyCta: string;
     paymentCopiedLabel: string;
     paymentSubmittedNote: string;
+    /** Shown on the order page from "payment submitted" onwards (cart UX batch A, owner 24/10). */
+    thankYouLine: string;
     slipUploadTitle: string;
     slipUploadPick: string;
     slipUploadChange: string;
@@ -600,6 +604,15 @@ export interface Dictionary {
     slipErrorGeneric: string;
     /** Shown once an order is shipped (cart round 22/10). */
     trackingLabel: string;
+    /** The "track your parcel" box once shipped (owner 23/10): carrier name, copy, the carrier's own tracking page and
+     *  3 steps. `{carrier}` in a step = the carrier's name. */
+    trackTitle: string;
+    carrierLabel: string;
+    trackCopyCta: string;
+    trackCta: string;
+    trackStep1: string;
+    trackStep2: string;
+    trackStep3: string;
     notFoundMessage: string;
   };
   languageSwitcher: {

@@ -7,8 +7,11 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { SlipUploadForm } from "@/components/commerce/SlipUploadForm";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { CONTACT } from "@/data/contact";
+import { CARRIERS } from "@/lib/commerce/carriers";
 import type { OrderDetail } from "@/lib/commerce/orders";
 import type { PaymentAccountView } from "@/data/payment";
+import type { LineImage } from "@/lib/commerce/line-image";
+import { LineThumb } from "@/components/commerce/LineThumb";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
@@ -59,45 +62,116 @@ function CopyButton({ value, label, doneLabel }: { value: string; label: string;
  * appear at the last step of a real order, never on a public page. The QR itself is fetched from
  * a route handler that re-checks the viewer's access to this order.
  */
-export function OrderStatusView({ order, token, payment = null }: { order: OrderDetail; token: string | null; payment?: PaymentAccountView | null }) {
+export function OrderStatusView({
+  order,
+  token,
+  payment = null,
+  itemImages = [],
+}: {
+  order: OrderDetail;
+  token: string | null;
+  payment?: PaymentAccountView | null;
+  /** One per `order.items` entry, same order (resolved by the server page — order_items stores no image). */
+  itemImages?: (LineImage | null)[];
+}) {
   const { dict, locale } = useLocale();
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
+  const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
 
   return (
     <>
       <PageHeader eyebrow={dict.orderStatus.eyebrow} title={dict.orderStatus.pageTitle} />
       <Container className="flex max-w-xl flex-col gap-8 py-12 lg:py-16">
+        {/* Cart UX batch A (owner 24/10): a thank-you once the slip is in — from "payment submitted" to "completed". */}
+        {paidOrLater && <p className="text-base font-medium text-foreground">{dict.orderStatus.thankYouLine}</p>}
         <div className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.statusLabel}</span>
-            <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            {/* Owner 23/10: "shipped" gets a quiet green glow — a soft breathing dot inside a thin pill, still within the
+                site's calm look; motion stops for visitors who ask for reduced motion. Other statuses stay plain text. */}
+            {order.status === "shipped" ? (
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-0.5 font-medium text-emerald-300 shadow-[0_0_14px_-2px_rgba(52,211,153,0.35)]">
+                <span aria-hidden className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/60 [animation-duration:2.4s] motion-reduce:hidden" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-400 shadow-[0_0_6px_1px_rgba(52,211,153,0.8)]" />
+                </span>
+                {orderStatusLabel(order.status, locale)}
+              </span>
+            ) : order.status === "pending_payment" ? (
+              // Cart UX batch A (owner 24/10): "waiting for payment" gets a quiet warm glow — the shipped pill's twin in
+              // amber, slower and fainter, so the one step the customer still has to do reads first without alarming.
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-amber-300/10 px-3 py-0.5 font-medium text-amber-200 shadow-[0_0_14px_-4px_rgba(252,211,77,0.3)]">
+                <span aria-hidden className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-300/50 [animation-duration:3.2s] motion-reduce:hidden" />
+                  <span className="relative inline-flex size-2 rounded-full bg-amber-300 shadow-[0_0_6px_1px_rgba(252,211,77,0.6)]" />
+                </span>
+                {orderStatusLabel(order.status, locale)}
+              </span>
+            ) : (
+              <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            )}
           </div>
-          {/* Entered by staff when the parcel leaves (cart round 22/10); no carrier name — BSOT §10. */}
-          {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
-            <div className="flex justify-between">
-              <span className="text-foreground-muted">{dict.orderStatus.trackingLabel}</span>
-              <span className="select-all font-medium tracking-wide text-foreground">{order.trackingNumber}</span>
-            </div>
-          )}
         </div>
+
+        {/* Entered by staff when the parcel leaves (cart round 22/10). Owner 23/10 (BSOT §10): once shipped, name the
+            carrier and link to its own tracking page, with the 3 steps — the page opens without the number filled in.
+            An order shipped before staff picked carriers has no carrier: the number alone, no button. */}
+        {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
+          <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+            <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.trackTitle}</span>
+            {order.carrier && (
+              <div className="flex justify-between gap-4">
+                <span className="text-foreground-muted">{dict.orderStatus.carrierLabel}</span>
+                <span className="font-medium text-foreground">{CARRIERS[order.carrier].name[locale]}</span>
+              </div>
+            )}
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+              <span className="text-foreground-muted">{dict.orderStatus.trackingLabel}</span>
+              <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="select-all font-medium tracking-wide text-foreground">{order.trackingNumber}</span>
+                <CopyButton value={order.trackingNumber} label={dict.orderStatus.trackCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
+              </span>
+            </div>
+            {order.carrier && (
+              <>
+                <a
+                  href={CARRIERS[order.carrier].trackUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
+                >
+                  {dict.orderStatus.trackCta}
+                </a>
+                <ol className="flex list-decimal flex-col gap-1 pl-5 text-foreground-muted">
+                  {[dict.orderStatus.trackStep1, dict.orderStatus.trackStep2, dict.orderStatus.trackStep3].map((step, i) => (
+                    <li key={i}>{step.replace("{carrier}", CARRIERS[order.carrier!].name[locale])}</li>
+                  ))}
+                </ol>
+              </>
+            )}
+          </div>
+        )}
 
         <div className="flex flex-col gap-3">
           <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
             {order.items.map((item, i) => (
-              <div key={i} className="flex items-center justify-between p-4 text-sm">
-                <div>
-                  <p className="font-medium text-foreground">{item.productName}</p>
-                  {item.variantLabel && <p className="text-foreground-muted">{item.variantLabel}</p>}
-                  <p className="text-foreground-muted">
-                    {formatTHB(item.unitPrice)} × {item.quantity}
-                  </p>
+              <div key={i} className="flex items-center justify-between gap-4 p-4 text-sm">
+                <div className="flex items-center gap-4">
+                  <LineThumb image={itemImages[i] ?? null} />
+                  <div>
+                    <p className="font-medium text-foreground">{item.productName}</p>
+                    {item.variantLabel && <p className="text-foreground-muted">{item.variantLabel}</p>}
+                    <p className="text-foreground-muted">
+                      {formatTHB(item.unitPrice)} × {item.quantity}
+                    </p>
+                  </div>
                 </div>
-                <p className="font-medium text-foreground">{formatTHB(item.lineTotal)}</p>
+                <p className="shrink-0 font-medium text-foreground">{formatTHB(item.lineTotal)}</p>
               </div>
             ))}
           </div>
@@ -139,7 +213,7 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                 </dl>
                 {qrHref && (
                   <div className="flex flex-col gap-2">
-                    <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
+                    <p className="text-sm text-foreground-muted">{payment.qrHasAmount ? dict.orderStatus.paymentQrAmountNote : dict.orderStatus.paymentQrNote}</p>
                     {/* plain <img>: the route handler is per-order and sends no-store, so next/image's
                         optimizer cache must not sit in front of it.
                         320×320: the served file is now the QR square only (500×500). The owner's
