@@ -11,7 +11,11 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~03:45 = cf315d91 (#792). Later 24/10 [ตรวจแล้ว deploy success + live 200]:
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~07:00 = c12c86e6 (#795 cart UX C: last-used address straight to review +
+  optional "หมายเหตุถึงร้าน" → orders.customer_note (migration 0012), staff order page only — deploy success + live 200; staff-page render NOT
+  seen in a browser yet (no staff password locally) → first real note: look at /staff/orders/<n>). Before: #794 "ติดตามคำสั่งซื้อ" /orders by phone only + header
+  (lg band hidden) / drawer / footer link — deploy success + live 200). FIRST REAL WEB ORDER 24/10 02:25 OK-20261023-eb3fe0 (Muro Connector 20K
+  ฿350, slip ✅) — live customers now: group merges, avoid daytime deploys. Later 24/10 [ตรวจแล้ว deploy success + live 200]:
   #791 hourly stock rule · #792 cart UX B (floating cart bubble above LINE + `/api/cart/count` + add moment; thank-you heading "ขอบคุณที่ไว้วางใจ /
   และใช้บริการกับ OKami24" big bold, brand in Barlow Condensed red). Merged 24/10 by the main chat [ตรวจแล้ว deploy
   status success + live curl 200]: #787 cart go-live batch (= #773 carrier/tracking/green shipped glow + #775 QR carries the order total + #746
@@ -39,8 +43,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner 24/10 ~02:30: "เรื่มชุด B เลยครับ" (quota go) · thank-you line → "ขอบคุณที่ไว้วางใจและใช้บริการกับ OKami24", big bold "Impact ทรงพลัง"
   (rides with batch B) · order tracking = PHONE NUMBER ONLY (owner's pick over Friday's phone+postcode; Friday masks name/address) · real order QR
   scanned by the owner: amount filled [owner 24/10 "ยอดเงินขึ้นแล้ว"].
-  NEXT: order tracking by phone (full set: customer data — ASK the owner first: "เบอร์โทร" read as phone-only C, checker says it could also be A
-  phone+postcode) → C (full set) → D (designer) → E (full set) — 3c. Context 58% at 24/10 ~03:45 → start the tracking feature in a NEW chat.
+  Order tracking DONE #794 (owner "เบอร์อย่างเดียวครับ" + "ทำต่อในแชทนี้เลย"). Known, not fixed (checker #794): no rate limit on number guessing;
+  if OTP is switched on, the lookup's otp-enabled answer shows as "not found". Owner proposal 24/10 = member promo (free shipping from ฿300 +
+  5% off at ฿1,000) → Friday's options = รอพี่ตรวจ 75 (A returning-customer perk recommended); THAI_STYLE §3 bans "ส่งฟรี" — change it only
+  with the owner's ruling. Owner 24/10 ~06:00: promo + a LOGIN PAGE that customers AND the owner/staff use (staff today = /staff with its own
+  password) → do both on 25/10; propose the login design first (login system = central §8 ask). Cart UX C DONE #795 (last-used address → review;
+  optional note → orders.customer_note, staff page only; migration 0012; checker notes not fixed: Back from review returns to review, a typed note is lost if placing fails). NEXT: D upsell row in the cart
+  (owner asked again 24/10 "สินค้าเลือกเพิ่มเติม" — designer first) → E (full set) — 3c.
   Test-build kit for cart work: `_incoming/cartux-a/` (data-b3 = fresh DB; build with OKAMI24_ORDERING=on via `OKAMI24_ORDERING=on npx tsx
   scripts/verify-catalog.ts --full` = stamp + an ordering-on build in one run; the Browser pane must be fronted or rAF/animations pause).
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
