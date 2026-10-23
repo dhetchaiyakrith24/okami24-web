@@ -1,7 +1,7 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
-const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
+const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
@@ -168,7 +168,8 @@ export const relxProducts: Product[] = [
       },
     ],
     openOnCardPhoto: true,
-    // RELX's six colours in its store's order, one RELX store image each.
+    // RELX's six colours in its store's order. -v2 (image run 23/10): studio photos made from the card-v3 studio render, each colour an edit
+    // of it with RELX's own store image of that colour, all cut with the card's outline (same size and place for every option).
     colorVariants: [
       { id: "misty-leaf", name: "Misty Leaf", swatchHex: "#d9e3cd", image: infinityPhoto("misty-leaf", "Misty Leaf") },
       { id: "blue-bay", name: "Blue Bay", swatchHex: "#b4cddb", image: infinityPhoto("blue-bay", "Blue Bay") },
