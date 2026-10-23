@@ -1110,15 +1110,16 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     },
   ],
   // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
+  // 23/10 (image line 1): that file is 349x603, small on the card -> studio re-shoot from it (+ the maker banner for detail).
   "ESKO-BAR-20K": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/esko-bar-20k/card.webp",
+      src: "/assets/products/esko-bar-20k/card-v2.webp",
       alt: "ESKO BAR 498 (20000 puffs) disposable, yellow, tilted",
-      angle: "Tilted, isolated — ESKO BAR's own transparent render 498-6.png from https://eskobarvape.com/product/eskobar",
+      angle: "Tilted, isolated — OKami24 studio re-shoot (Higgsfield, IMAGE_SPEC §0 item 7) of ESKO BAR's own render 498-6.png from https://eskobarvape.com/product/eskobar, same device and angle",
       transparentBackground: true,
-      sourceName: "ESKO BAR (official site, eskobarvape.com)",
+      sourceName: "OKami24 render (Higgsfield) from ESKO BAR's 498-6.png",
       sourceUrl: "https://eskobarvape.com/product/eskobar",
     },
   ],
