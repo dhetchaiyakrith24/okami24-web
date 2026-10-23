@@ -90,6 +90,9 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   if (reducedMotion) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
   if (cookies.length) await send("Page.addScriptToEvaluateOnNewDocument", { source: cookies.map((c) => `try{document.cookie=${JSON.stringify(`${c}; path=/`)}}catch(e){}`).join("") });
+  // Also set them on the browser before the first request, so a server-rendered page that reads a cookie (the cart, an
+  // order page, a signed-in checkout step — cart UX round 24/10) gets it on the very first load, not only after a reload.
+  if (cookies.length) await send("Network.setCookies", { cookies: cookies.map((c) => { const at = c.indexOf("="); return { name: c.slice(0, at), value: c.slice(at + 1), url: new URL(url).origin }; }) });
   const stamp = useReady ? await docStamp(send) : null;
   await send("Page.navigate", { url });
   if (!useReady) await sleep(wait);
