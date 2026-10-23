@@ -11,33 +11,31 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 00:45 = d1dd78b3 (#786). Merged 23/10 evening–24/10 [ตรวจแล้ว deploy status success +
-  live curl 200 each]: #776 ownFloor size-jump fix (7 pages) · #777 RELX Infinity 2 Plus ×6 re-shoot · #778 TEREA Black
-  Purple · #779 PnP X 0.2/0.3/0.6Ω + TPP-DM1 · #780 RELX Pod Pro 2 ×5 real packs · #781 build-timeout fix (see LESSONS พ41 — lands with #773) ·
-  #782 /staff "ดาวน์โหลดออเดอร์ทั้งหมด (Excel)" CSV export · #783 IQOS i PRIME Red Brown→Garnet Red, LAMBDA i8 Silver→White (by elimination,
-  [เชื่อว่า]), RELX Dark Asteroid photo · #784 coil-70 card centred + ESKO BAR 20000 card re-shoot · #785 /staff LINE-group box refreshes ·
-  #786 stock sync 23/10 (fresh Chrome read 782 codes / 381 out; SKE Crystal B20000 pod-149 discontinued → all 8 flavours sold out, page kept).
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~02:15 = 4cf0a979 (#789). Merged 24/10 by the main chat [ตรวจแล้ว deploy
+  status success + live curl 200]: #787 cart go-live batch (= #773 carrier/tracking/green shipped glow + #775 QR carries the order total + #746
+  go-live docs; one deploy) · #788 VOOPOO PnP X coil (Coil-92) ฿130 → ฿150 (owner/admin in chat; live price 150) · #789 cart UX batch A (line
+  photos in cart/review/order page via `lineImage()`, warm amber "รอชำระเงิน" pill, thank-you line from payment_submitted on, shot.js
+  --cookie before first request, thai-copy agent "cart open since 24/10"). #685 #715 closed (superseded by #786). Earlier 23/10 merges
+  #776–#786 = `git log`.
   ALWAYS after a merge: check the deploy reached success (`gh api repos/dhetchaiyakrith24/okami24-web/deployments?sha=<merge sha>` → statuses)
   — #776+#779 builds FAILED on Render's 60 s per-page limit while local verify passed (fixed #781). Every deploy = ~30–60 s of 502 for LIVE
   customers + LINE webhook events in that window are lost → group merges, avoid merging while the owner tests LINE/orders.
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
-  Open PRs: #773 #775 #746 (cart, see 3c) · #715 #685 #643 → close #715/#685 as superseded by #786.
-2 Main folder: branch `docs-handoff-2410` = this handoff. Cart landing branch `cart-golive-2410` (f7487de2, tree `_incoming/wt-golive`, real
-  node_modules) = main d1dd78b3 + #773 + #775 + #746, no conflicts, NOT verified yet. Test trees free to reuse: `_incoming/wt-cart` (real
-  node_modules) · `_incoming/wt-stock`. A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice. Junctioned node_modules
-  break Turbopack builds (verify needs a real copy). PR flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready`
-  once → checks → `self-merge-check --pr` alone (in a tree checked out on the PR head) → merge --match-head-commit → deploy status success.
-3 MAIN CHAT moves 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e; context 65%, weekly quota 92%, resets 25/10 22:00).
-  Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" → NO side chats for now; the new main chat does the cart work itself. Side chats stopped
-  clean (archive them): line1-images-2310d local_be2fd557… (eye sweep stopped: done WOTOFO, SALTHUB-1; brief `_incoming/next-chat.md`
-  status: stopped) · line2-cart-2310b local_277aecbf… (hand-over `_incoming/cart-handover-2410.md` — READ IT) · line1-images-2310c
-  local_1b6cafc0… (archive refused earlier: Remote Control client) · the stock routine run local_ebf92c73… is a scheduled-task session.
-  NEW MAIN CHAT FIRST STEPS: (1) land the cart batch: `cart-golive-2410` verify --full (twice if LayoutProps) → draft PR → gate → checker
-  (narrow: merge of 3 PASSed PRs + #746's new docs commits + kien-thai clause) → ready → checks → self-merge-check → merge (marks #773/#775/#746
-  merged) → deploy success → curl /cart /orders → close #685 #715. Owner step after it: scan one real order QR with a bank app (amount filled,
-  receiver = shop). (2) cart UX round batch A (3c). (3) ask the owner the hourly-stock choice if still unanswered.
-  Weekly quota 92% → expect to stop after (1) + batch A until 25/10 22:00; say so at a PR edge, never mid-change.
+  Open PRs: #643 (old, not touched).
+2 Main folder: branch `docs-handoff-2410` = this handoff. Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
+  `_incoming/wt-cart` · `_incoming/wt-stock`. A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice. Junctioned
+  node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge origin/main + all extra commits BEFORE the
+  verify run. PR flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready` once → checks → `self-merge-check
+  --pr` alone → merge --match-head-commit → deploy status success.
+  Cart/order page proof on a test build (24/10): the build needs OKAMI24_ORDERING=on SITE_URL=https://okami24.store (else /cart redirects);
+  start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
+  (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
+3 MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
+  NO side chats. Old side chats to archive: line1-images-2310d local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c
+  local_1b6cafc0…. Weekly quota 92% (resets 25/10 22:00) → after batch A, stop at the PR edge until the reset unless the owner says go.
+  NEXT: cart UX batch B (add-to-cart animation + floating cart button — designer first) → C (full set) → D (designer) → E (full set) — 3c.
+  Waiting on the owner (รอพี่ตรวจ 72 order tracking without the order number · 73 hourly stock · 74 scan a real order QR).
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
   render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
   (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
@@ -48,7 +46,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
 3u STOCK — daily routine `okami24-stock-daily` (15:00) reads Shipnity Max in the owner's Chrome (logged in; a NEW tab is fine beside other
   Chrome work — owner 23/10) → PR → owner confirms in chat → merge (13.7). Owner 23/10 wants HOURLY checks from 24/10 morning: ASKED (not answered
-  yet): A = hourly 08:00–00:00, PR only when stock changed, Friday merges without waiting (stops + asks on anomalies) [Friday's pick] · B = owner
+  yet — รอพี่ตรวจ 73): A = hourly 08:00–00:00, PR only when stock changed, Friday merges without waiting (stops + asks on anomalies) [Friday's pick] · B = owner
   confirms every hourly PR. A needs the owner to lift the 13.7 confirmation for stock PRs (rule change → write it in TEAM_RULES 13.7 once he
   says A). Then edit the scheduled task (cron + prompt). Long-term (after go-live): stock without a rebuild (DB/endpoint) — proposed, not started.
   The routine's session hit an auto-mode refusal on a chained edit 23/10 → it now edits with the Edit tool, one command at a time.
@@ -65,13 +63,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner rulings 23–24/10 (round): checkout stays phone-only (no OTP, no LINE login) · green "shipped" glow approved = the style for key-moment
   effects site-wide ("ยืนบนความเรียบหรู") · LAUNCH_AUDIT 44 seven criteria superseded by the 22/10 go-live ruling (in #746) · off-site backup
   (R2/B2) queued until after the cart setup; meanwhile the Excel export (#782) · test-order shots OK · IQOS colour names = Friday decides.
-  CART UX ROUND (owner 24/10 ~00:30, all approved; taste = Friday, reversible): A images (chosen colour/flavour, modest size) in cart / review /
-  order status + quiet warm glow on "รอชำระเงิน" + thank-you line after the slip (thai-copy) · B add-to-cart animation + floating cart button
+  CART UX ROUND (owner 24/10 ~00:30, all approved; taste = Friday, reversible): A DONE 24/10 = #789 (line photos 64 px · amber pill · thank-you
+  line th "ขอบคุณที่เลือกสั่งซื้อกับ OKami24" written by Friday, not thai-copy — quota; owner taste check pending) · B add-to-cart animation + floating cart button
   bottom-right above the LINE button, only when the cart has items, count badge, small nudge on add (owner "A") · C preselect the last-used
   saved address and go straight to review + OPTIONAL collapsed "หมายเหตุถึงร้าน" ≤200 chars, staff page only, NOT in the LINE alert (owner "A") ·
   D cart upsell row: half same brand/category in stock + half shop best-sellers (owner "A+B ครึ่ง ๆ"). designer for B + D, tier B shots,
-  full set for C (orders/customer data). Batch-A exploration notes = `_incoming/cart-handover-2410.md` (images: order_items has no image —
-  map product_slug + variant_id to the catalog option image at render time).
+  full set for C (orders/customer data). D can reuse `lineImage()` / LineThumb for its cards.
   E SOLD OUT AFTER PAYMENT — owner 24/10 chose Friday's flow ("ใช้แบบที่ Friday เสนอ: ลูกค้าเลือกเปลี่ยนสินค้า หรือกดรับเงินคืนเข้าพร้อมเพย์"): staff button "สินค้าหมด" on /staff with reason →
     order page notice box with 2 choices: swap to an in-stock item at the same/near price (picker) OR refund → one tap "คืนเข้าพร้อมเพย์เบอร์
     ที่ใช้สั่ง" (or type another PromptPay number — no full bank account numbers stored) → staff marks refunded + ref → customer sees "คืนเงินแล้ว";
