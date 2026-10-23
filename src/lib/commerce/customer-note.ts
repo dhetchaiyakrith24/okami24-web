@@ -10,6 +10,6 @@ export const CUSTOMER_NOTE_MAX = 200;
  */
 export function cleanCustomerNote(raw: unknown): string | null {
   if (typeof raw !== "string") return null;
-  const text = raw.replace(/[\u0000-\u001f\u007f​-‍⁠﻿]+/g, " ").replace(/\s+/g, " ").trim();
+  const text = raw.replace(/[\u0000-\u001f\u007f\u200b-\u200d\u2060\ufeff]+/g, " ").replace(/\s+/g, " ").trim();
   return text ? Array.from(text).slice(0, CUSTOMER_NOTE_MAX).join("") : null;
 }
