@@ -13069,5 +13069,65 @@
    "reference": "Element Vape real photo of the TPP-DM1 box (https://d2svuhg8jeu25r.cloudfront.net/catalog/product/v/o/voopoo_tpp_replacement_coils_-_tpp_dm1_coils.png, 700 px; box crop _incoming/iq/c38/ref-dm1.png)",
    "fidelitySheet": "_incoming/iq/c38/cmp2.jpg (live DM2 | new DM1 | text close-up)"
   }
+ },
+ {
+  "source": "_incoming/pp2/out/tangy-grape2.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-1",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - RELX Pod Pro 2 Tangy Grape pack (Max Pod-27-1); its own real pack photo, not a relabelled sibling (owner 20/10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live Watermelon Ice pack photo (variant-pod-27-5) replacing only the flavour artwork and name with the real pack's printed artwork (prompt: copy as printed, no invented fruit); the English WARNING panel kept; cut with variant-pod-27-5's own alpha (_incoming/iq/fit-same.js, row-aligned) - same size and place as every Pod Pro 2 option",
+   "reference": "foodpanda.pk listing photo of the real RELX Pod Pro 2 Tangy Grape 3% pack (https://www.foodpanda.pk/groceries/product/Z25P5J/relx-pod-pro-2-1-pod-pack-tangy-grape-30mgg-std-m - https://foodpanda.dhmedia.io/image/darkstores/nv-global-catalog/pk/451a20a3-49b0-4f77-adfc-f80a0bcbd3ff.jpg; local crop _incoming/pp2/ref/tangy-grape-crop.png); its own warning panel not copied",
+   "fidelitySheet": "_incoming/pp2/cmp-*.jpg (real pack | ours on the site dark)"
+  }
+ },
+ {
+  "source": "_incoming/pp2/out/dark-sparkle.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-4",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - RELX Pod Pro 2 Dark Sparkle pack (Max Pod-27-4); its own real pack photo, not a relabelled sibling (owner 20/10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live Watermelon Ice pack photo (variant-pod-27-5) replacing only the flavour artwork and name with the real pack's printed artwork (prompt: copy as printed, no invented fruit); the English WARNING panel kept; cut with variant-pod-27-5's own alpha (_incoming/iq/fit-same.js, row-aligned) - same size and place as every Pod Pro 2 option",
+   "reference": "foodpanda.pk listing photo of the real RELX Pod Pro 2 Dark Sparkle 3% pack (https://www.foodpanda.pk/darkstore/pia4/pandamart-i9-platform-fmcg-isb/product/18486940 - https://foodpanda.dhmedia.io/image/nv/Pakistan/Kings-Vape-DHA/6941974903055.jpg; local crop _incoming/pp2/ref/dark-sparkle-crop.png); its own warning panel not copied",
+   "fidelitySheet": "_incoming/pp2/cmp-*.jpg (real pack | ours on the site dark)"
+  }
+ },
+ {
+  "source": "_incoming/pp2/out/taro-scoop.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-18",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - RELX Pod Pro 2 Taro Scoop pack (Max Pod-27-18); its own real pack photo, not a relabelled sibling (owner 20/10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live Watermelon Ice pack photo (variant-pod-27-5) replacing only the flavour artwork and name with the real pack's printed artwork (prompt: copy as printed, no invented fruit); the English WARNING panel kept; cut with variant-pod-27-5's own alpha (_incoming/iq/fit-same.js, row-aligned) - same size and place as every Pod Pro 2 option",
+   "reference": "foodpanda.pk listing photo of the real RELX Pod Pro 2 Taro Scoop 3% pack (https://www.foodpanda.pk/darkstore/o24t/pandamart-dha-phase-viii-khi/product/144093296 - https://foodpanda.dhmedia.io/image/darkstores-my/Relx%20Vape%20/In%20n%20Out%20sku%20listing/Taro%20Scoop%20pod.jpg; local crop _incoming/pp2/ref/taro-scoop-crop.png); its own warning panel not copied",
+   "fidelitySheet": "_incoming/pp2/cmp-*.jpg (real pack | ours on the site dark)"
+  }
+ },
+ {
+  "source": "_incoming/pp2/out/pink-guava.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-38",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - RELX Pod Pro 2 Pink Guava pack (Max Pod-27-38); its own real pack photo, not a relabelled sibling (owner 20/10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live Watermelon Ice pack photo (variant-pod-27-5) replacing only the flavour artwork and name with the real pack's printed artwork (prompt: copy as printed, no invented fruit); the English WARNING panel kept; cut with variant-pod-27-5's own alpha (_incoming/iq/fit-same.js, row-aligned) - same size and place as every Pod Pro 2 option",
+   "reference": "foodpanda.pk listing photo of the real RELX Pod Pro 2 Pink Guava 3% pack (https://www.foodpanda.pk/darkstore/fp8x/pandamart-bahria-town-lhr/product/9510624 - https://foodpanda.dhmedia.io/image/darkstores/nv-global-catalog/pk/57e2e707-e22a-4700-844e-a51fe990a7bc.jpg; local crop _incoming/pp2/ref/pink-guava-crop.png); its own warning panel not copied",
+   "fidelitySheet": "_incoming/pp2/cmp-*.jpg (real pack | ours on the site dark)"
+  }
+ },
+ {
+  "source": "_incoming/pp2/out/lychee-ice.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-41",
+  "note": "image run 23/10 (line 1, owner: options with no photo first) - RELX Pod Pro 2 Lychee Ice pack (Max Pod-27-41); its own real pack photo, not a relabelled sibling (owner 20/10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live Watermelon Ice pack photo (variant-pod-27-5) replacing only the flavour artwork and name with the real pack's printed artwork (prompt: copy as printed, no invented fruit); the English WARNING panel kept; cut with variant-pod-27-5's own alpha (_incoming/iq/fit-same.js, row-aligned) - same size and place as every Pod Pro 2 option",
+   "reference": "foodpanda.pk listing photo of the real RELX Pod Pro 2 Lychee Ice 3% pack (https://www.foodpanda.pk/groceries/product/FFC7EJ/relx-pod-pro-21-pod-packlychee-ice30mggstdm - https://foodpanda.dhmedia.io/image/darkstores/MY/MY-Dmart-Image-Cleanup-1/Relx%20pod%20pro2%20Lychee%20ice.jpg; local crop _incoming/pp2/ref/lychee-ice-crop.png); its own warning panel not copied",
+   "fidelitySheet": "_incoming/pp2/cmp-*.jpg (real pack | ours on the site dark)"
+  }
  }
 ]
