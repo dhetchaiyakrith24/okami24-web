@@ -40,4 +40,6 @@ export type PaymentAccountView = {
   accountNumber: string;
   /** true when the QR file exists on this server, so the client can render the <img> */
   hasQr: boolean;
+  /** true when the QR the route serves carries the order total (owner 23/10) — the page note then says so */
+  qrHasAmount: boolean;
 };

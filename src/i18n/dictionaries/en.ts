@@ -481,6 +481,7 @@ export const en: Dictionary = {
     paymentAccountNameLabel: "Account name",
     paymentAccountNumberLabel: "Account number",
     paymentQrNote: "Or scan the QR code below in your banking app and transfer the total shown above.",
+    paymentQrAmountNote: "Or scan the QR code below in your banking app — the amount for this order fills in by itself. Check it before you confirm.",
     paymentQrAlt: "PromptPay QR code for transferring to the shop's account",
     paymentVerifyNameWarning: "Before you transfer, check that the account name matches the one shown on this page. If anyone sends you a different account number, do not transfer.",
     paymentAfterTransferNote: "Once you've transferred, attach your slip below. We'll check the payment and get your order ready to ship. Any trouble, message us on LINE @okm24.",
