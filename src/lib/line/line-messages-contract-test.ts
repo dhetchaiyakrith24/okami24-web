@@ -46,6 +46,7 @@ const ORDER: OrderDetail = {
   },
   statusHistory: [],
   trackingNumber: null,
+  carrier: null,
 };
 
 const SITE = "https://okami24.store";

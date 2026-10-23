@@ -534,6 +534,13 @@ export const th: Dictionary = {
     slipErrorBusy: "ส่งหลายครั้งติดกันเกินไป รอสักครู่แล้วลองใหม่อีกครั้ง",
     slipErrorGeneric: "ส่งสลิปไม่สำเร็จ ลองใหม่อีกครั้ง หรือส่งสลิปทางไลน์ @okm24 พร้อมเลขคำสั่งซื้อ",
     trackingLabel: "เลขพัสดุ",
+    trackTitle: "ติดตามพัสดุ",
+    carrierLabel: "ส่งโดย",
+    trackCopyCta: "คัดลอกเลขพัสดุ",
+    trackCta: "เช็คสถานะพัสดุ",
+    trackStep1: "กด “คัดลอกเลขพัสดุ” ด้านบน",
+    trackStep2: "กด “เช็คสถานะพัสดุ” หน้าติดตามพัสดุของ {carrier} จะเปิดขึ้นในแท็บใหม่",
+    trackStep3: "วางเลขพัสดุลงในช่องค้นหาได้เลย",
     notFoundMessage: "ไม่พบคำสั่งซื้อ หรือคุณไม่มีสิทธิ์เข้าถึง",
   },
   languageSwitcher: {

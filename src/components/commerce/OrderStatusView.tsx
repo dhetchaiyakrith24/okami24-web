@@ -7,6 +7,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { SlipUploadForm } from "@/components/commerce/SlipUploadForm";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { CONTACT } from "@/data/contact";
+import { CARRIERS } from "@/lib/commerce/carriers";
 import type { OrderDetail } from "@/lib/commerce/orders";
 import type { PaymentAccountView } from "@/data/payment";
 
@@ -72,18 +73,62 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
           </div>
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.statusLabel}</span>
-            <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            {/* Owner 23/10: "shipped" gets a quiet green glow — a soft breathing dot inside a thin pill, still within the
+                site's calm look; motion stops for visitors who ask for reduced motion. Other statuses stay plain text. */}
+            {order.status === "shipped" ? (
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-0.5 font-medium text-emerald-300 shadow-[0_0_14px_-2px_rgba(52,211,153,0.35)]">
+                <span aria-hidden className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/60 [animation-duration:2.4s] motion-reduce:hidden" />
+                  <span className="relative inline-flex size-2 rounded-full bg-emerald-400 shadow-[0_0_6px_1px_rgba(52,211,153,0.8)]" />
+                </span>
+                {orderStatusLabel(order.status, locale)}
+              </span>
+            ) : (
+              <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+            )}
           </div>
-          {/* Entered by staff when the parcel leaves (cart round 22/10); no carrier name — BSOT §10. */}
-          {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
-            <div className="flex justify-between">
-              <span className="text-foreground-muted">{dict.orderStatus.trackingLabel}</span>
-              <span className="select-all font-medium tracking-wide text-foreground">{order.trackingNumber}</span>
-            </div>
-          )}
         </div>
+
+        {/* Entered by staff when the parcel leaves (cart round 22/10). Owner 23/10 (BSOT §10): once shipped, name the
+            carrier and link to its own tracking page, with the 3 steps — the page opens without the number filled in.
+            An order shipped before staff picked carriers has no carrier: the number alone, no button. */}
+        {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
+          <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+            <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.trackTitle}</span>
+            {order.carrier && (
+              <div className="flex justify-between gap-4">
+                <span className="text-foreground-muted">{dict.orderStatus.carrierLabel}</span>
+                <span className="font-medium text-foreground">{CARRIERS[order.carrier].name[locale]}</span>
+              </div>
+            )}
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+              <span className="text-foreground-muted">{dict.orderStatus.trackingLabel}</span>
+              <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span className="select-all font-medium tracking-wide text-foreground">{order.trackingNumber}</span>
+                <CopyButton value={order.trackingNumber} label={dict.orderStatus.trackCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
+              </span>
+            </div>
+            {order.carrier && (
+              <>
+                <a
+                  href={CARRIERS[order.carrier].trackUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
+                >
+                  {dict.orderStatus.trackCta}
+                </a>
+                <ol className="flex list-decimal flex-col gap-1 pl-5 text-foreground-muted">
+                  {[dict.orderStatus.trackStep1, dict.orderStatus.trackStep2, dict.orderStatus.trackStep3].map((step, i) => (
+                    <li key={i}>{step.replace("{carrier}", CARRIERS[order.carrier!].name[locale])}</li>
+                  ))}
+                </ol>
+              </>
+            )}
+          </div>
+        )}
 
         <div className="flex flex-col gap-3">
           <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.itemsTitle}</span>

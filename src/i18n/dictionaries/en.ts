@@ -502,6 +502,13 @@ export const en: Dictionary = {
     slipErrorBusy: "Too many attempts. Please wait a moment and try again.",
     slipErrorGeneric: "Your slip didn't go through. Please try again, or send it on LINE @okm24 with your order number.",
     trackingLabel: "Tracking number",
+    trackTitle: "Track your parcel",
+    carrierLabel: "Carrier",
+    trackCopyCta: "Copy tracking number",
+    trackCta: "Check parcel status",
+    trackStep1: "Tap “Copy tracking number” above",
+    trackStep2: "Tap “Check parcel status” to open the {carrier} tracking page in a new tab",
+    trackStep3: "Paste the number into the search box to see where your parcel is",
     notFoundMessage: "Order not found, or you don't have access to view it.",
   },
   languageSwitcher: {
