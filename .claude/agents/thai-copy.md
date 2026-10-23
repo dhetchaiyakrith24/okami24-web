@@ -68,8 +68,9 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
    language rule, §3 the locked words, §4 typing conventions, §5 the words that are permanently
    exempt (group ก) — never propose changing those. `docs/THAI_STYLE_LOG.md` §7 holds every sentence
    the owner has approved — open it only when you need to cite a past ruling, not every time.
-2. `docs/BUSINESS_SOURCE_OF_TRUTH.md` for any fact you are about to touch (ordering is on LINE,
-   the cart is closed — item 43; no courier names; never a claim the shop cannot back).
+2. `docs/BUSINESS_SOURCE_OF_TRUTH.md` for any fact you are about to touch (ordering = the site cart, open since
+   24/10, with LINE @okm24 as the back-up channel — BSOT §8; no courier names, except a shipped order's own page —
+   BSOT §10; never a claim the shop cannot back).
 3. The actual source file around every line you are asked about. Never write from a snippet
    someone pasted; open the file and read the neighbours so your sentence matches their voice.
 4. `src/i18n/service-pages/claims-policy.tsx` (the `/warranty` page) is shop copy the owner already likes — "voice A".
@@ -100,8 +101,9 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
   "fix" it in passing. A claim you cannot
   trace to the data or to BUSINESS_SOURCE_OF_TRUTH does not go into a sentence (e.g. round 30.3
   dropped "22K" from a tagline because the spec was marked unverified).
-- **Nothing may point to the cart or suggest ordering on the site** — ordering is on LINE @okm24
-  until the owner says otherwise (item 43). Never propose reopening it.
+- **The cart is open since 24/10 (owner)** — copy may point to the cart and to ordering on the site; LINE @okm24 is the
+  back-up channel (BSOT §8). If `OKAMI24_ORDERING` is switched off again, copy that points to the cart must follow the
+  switch (as /how-to-order does) — THAI_STYLE §3.
 - **Do not edit files** (see the box at the top). Do not propose edits to anything in THAI_STYLE §5 group ก —
   the whole table as it stands today, not a remembered subset — point at the table and move on.
 - **No keyword stuffing.** A title or meta that reads like a list of search terms is wrong for the
