@@ -31,9 +31,12 @@ ELIQUID-1-1 (฿807 bundle), `test`, `Close`. Coil-55-1 = live as `coil-55`.
 | #732 | MOOOD Monster 14K 21 → 23 | merged, live 200 |
 | #733 | RELX Creator Pod 20K (Pod-137) prepared — **unpublished until a card photo** (line 1: card + uncomment its approval + sku-map Pod-137-1..31) | merged (nothing visible) |
 
+| #737 | IQOS ILUMA i PRIME + Red Brown (Max name) · TEREA + Black Purple (iqos.com/id) | merged, live 200 |
+| #738–#741 | owner 22/10 "1 ลง": Zero Pro + Copper, Champagne · RELX Infinity 2 Plus + Dark Asteroid · JOIWAY F3 + Funta Green (30 → 31) · LAMBDA i8 + Silver — Max names, no maker page | merged, live 200 |
+
 All new options carry Max's names and no photo yet (no-photo panel); line 1 (images) has the option ids. Every (a)/(b) row is now live, prepared, owner-declined, or in the identity list below.
 
-Identity checks (b3) after research 22/10 (no change made): Zero Pro Copper / Champagne — salthub.com shows 8 colours, neither name (maybe shop names for Golden Fade / Pink, unproven) · Prime "Red Brown" — not an IQOS name (Garnet Red is) · Infinity 2 Plus "Dark Asteroid" — not on relxnow.com (Blue Bay is) · Joiway "Funta Green" — shops print Funta Grape (owner chose Funta Grape 06/09) · Lambda i8 Silver — no maker source · TEREA Black Purple — official on iqos.com/id → can be added next · ILUMA i ONE Pebble Grey / Azure Blue — these are **ILUMA ONE** (older line) colours, not i ONE → not added.
+Identity checks (b3) after research 22/10 — owner 22/10 "1 ลง": the first six below are now listed by their Max names (#737–#741); still not listed: ILUMA i ONE Pebble Grey / Azure Blue (ILUMA ONE colours), the INFY 20K duplicate Mix Berry row, the Pop Up 10K battery base: Zero Pro Copper / Champagne — salthub.com shows 8 colours, neither name (maybe shop names for Golden Fade / Pink, unproven) · Prime "Red Brown" — not an IQOS name (Garnet Red is) · Infinity 2 Plus "Dark Asteroid" — not on relxnow.com (Blue Bay is) · Joiway "Funta Green" — shops print Funta Grape (owner chose Funta Grape 06/09) · Lambda i8 Silver — no maker source · TEREA Black Purple — official on iqos.com/id → can be added next · ILUMA i ONE Pebble Grey / Azure Blue — these are **ILUMA ONE** (older line) colours, not i ONE → not added.
 
 ## (b) Max children missing from the product's options or not linked in sku-map — 27 products checked, gaps in 17
 

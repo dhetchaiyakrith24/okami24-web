@@ -11,6 +11,7 @@
  * also never keep a shutting-down process alive.
  */
 import { runBackup } from "./data-backup";
+import { offsiteConfig, uploadBackup } from "./offsite";
 
 declare global {
   var __okami24BackupTimer: NodeJS.Timeout | undefined;
@@ -30,6 +31,11 @@ async function backupOnce(reason: string): Promise<void> {
     const r = await runBackup();
     if (r.ok) {
       console.log(`[backup] ${reason}: ${r.file} (${r.bytes} bytes, orders=${r.orders ?? "n/a"}, env=${r.envFiles.join(",") || "-"}, pruned=${r.pruned.length})`);
+      // Off-site copy (LAUNCH_AUDIT 42 "ทาง 2", cart round 22/10): only when the owner has set the R2 settings.
+      if (offsiteConfig()) {
+        const up = await uploadBackup(r.file);
+        console.log(up.ok ? `[backup] ${reason}: off-site copy ${up.key} (${up.bytes} bytes)` : `[backup] ${reason}: off-site copy FAILED — ${up.reason}`);
+      }
     } else {
       console.log(`[backup] ${reason}: skipped — ${r.reason}`);
     }

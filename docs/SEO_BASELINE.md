@@ -384,3 +384,9 @@ URL Inspection /brands/esko-bar 22/10: on Google, indexed, last crawl 20/10 17:2
 Next (Friday's proposal, not done): Esko = watch to 01/11 (drop predates our edits; a demand or SERP change, not fixable by head copy alone) ·
 JOIWAY = the timing matches #344/#354 → put "JOIWAY F3 / F4" back in the brand meta (reversible) at the next SEO slot, then read 01/11.
 Rows 9–21, 23 = 01/11 as planned.
+
+## Keyword line 23/10/2026 (owner picks on the questions page) - changed before the 01/11 read
+
+- NEW /guides/how-to-vape-without-coughing (Thai-only, head line in search-head-copy) — target "สูบพอตยังไงไม่ให้สำลัก" · "วิธีดูดพอตมือใหม่"; read 15/11.
+- Body + FAQ only (no title / meta / H1 change): choosing-a-marbo-flavor (M Bar 10K use) · how-long-a-disposable-lasts (row 16: "หมดแล้วดูยังไง") ·
+  disposable-vs-switch-pod (FAQ พอตกับ Marbo) · taking-a-pod-on-a-plane (row 20: Japan · Korea · Singapore · Hong Kong). No link added to watch rows 1–8.

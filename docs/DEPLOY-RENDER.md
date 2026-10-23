@@ -199,6 +199,94 @@ npm run qr:upload-text
 32. อัปโหลดสลิปจริงของร้าน 1 ใบ → ผลต้องตรงกับแอปธนาคาร (ยอด · เวลา · "บัญชีร้าน") → อัปโหลดใบเดิมอีกครั้ง ต้องขึ้น **"⚠️ สลิปนี้เคยตรวจแล้ว"**
 33. ส่งคู่มือแอดมิน `docs/คู่มือแอดมิน-ตรวจสลิป.md` (Friday ส่งข้อความพร้อมก๊อปให้ในแชท) + รหัสทีมงาน เข้ากลุ่ม LINE ทีม — **ส่งรหัสแยกข้อความ** และไม่ส่งในกลุ่มที่มีคนนอก
 
+## 8. ต่อบอทแจ้งออเดอร์ OKM ORDER เข้ากลุ่มไลน์ทีม (15 นาที · ทำครั้งเดียว · เพิ่ม 2026-10-22)
+
+บอท **OKM ORDER** (@691qxpxp — คนละตัวกับ @okm24 ของลูกค้า) ทำ 2 อย่าง: ออเดอร์เว็บที่ลูกค้าแนบสลิปแล้ว → ส่งข้อความเข้ากลุ่ม **OKM Order** ·
+แอดมินโยนรูปสลิปลงกลุ่ม **OKM Slip** → บอทตอบผลตรวจ EasySlip · ต้องใส่ค่าลับ 2 ค่า ซึ่ง**พี่วางเองในหน้า Render เท่านั้น** ห้ามส่งในแชท ห้ามใส่ในไฟล์ ·
+ทำหลัง Friday แจ้งว่า "บอทขึ้นเว็บแล้ว" (ก่อนนั้นข้อ 39 จะไม่ผ่าน)
+
+**ก. ออกรหัสลับใหม่ 2 ค่าใน LINE Developers**
+34. คอมเปิด https://developers.line.biz/console → ล็อกอินบัญชีที่สมัครบอท → กด Provider ของร้าน → กดช่อง **OKM ORDER** (ป้าย Messaging API)
+35. แท็บ **Basic settings** → เลื่อนหา **Channel secret** → กดปุ่มออกรหัสใหม่ข้าง ๆ ช่องนั้น (ชื่อปุ่ม **Issue** หรือ **Reissue**) → ถ้าถามยืนยัน กดยืนยัน → กด **Copy** → ไปวางใน Render ตามข้อ 38 ทันที
+36. แท็บ **Messaging API** → เลื่อนล่างสุด **Channel access token (long-lived)** → กด **Issue** → กด **Copy** → วางใน Render ตามข้อ 38
+    (หาปุ่มตามข้อ 35–36 ไม่เจอ = แคปหน้าจอส่ง Friday **โดยปิดส่วนที่เป็นรหัสก่อน**)
+
+**ข. ตั้งค่าในแท็บ Messaging API (หน้าเดิม)**
+37. **Webhook URL** → กด Edit → ใส่ `https://okami24.store/api/line/webhook` → Update → เปิดสวิตช์ **Use webhook** ·
+    **Allow bot to join group chats** → Edit → เลือก **Enabled** ·
+    **Auto-reply messages** และ **Greeting messages** → Edit → **Disabled** ทั้งคู่ (กันบอทตอบข้อความอัตโนมัติในกลุ่ม)
+
+**ค. วาง 2 ค่าใน Render**
+38. https://dashboard.render.com → **okami24** → **Environment** → **+ Add Environment Variable** ทีละค่า (ชื่อ Key พิมพ์ตรงตัว):
+    - Key `OKAMI24_LINE_CHANNEL_SECRET` → Value = ค่าจากข้อ 35
+    - Key `OKAMI24_LINE_CHANNEL_TOKEN` → Value = ค่าจากข้อ 36
+    → **Save** → เลือกแบบที่มีคำว่า **deploy** → รอ 3–5 นาที
+
+**ง. ลองเอง (เห็นแบบนี้ = สำเร็จ)**
+39. กลับหน้า LINE Developers แท็บ Messaging API → ใต้ Webhook URL กด **Verify** → ขึ้น **Success**
+40. ในแอป LINE: เชิญ **OKM ORDER** เข้ากลุ่ม **OKM Order** และกลุ่ม **OKM Slip**
+41. มือถือเปิด `https://okami24.store/staff` → ล็อกอิน → กล่อง **"กลุ่มไลน์ของบอท OKM ORDER"** เห็นทั้ง 2 กลุ่ม → กลุ่ม OKM Order กด **"ใช้เป็นกลุ่มแจ้งออเดอร์"** ·
+    กลุ่ม OKM Slip กด **"ใช้เป็นกลุ่มตรวจสลิป"**
+42. โยนรูปสลิปจริงของร้าน 1 ใบลงกลุ่ม OKM Slip → บอทตอบ **"✅ เงินเข้าบัญชีร้าน ฿…"** ภายในไม่กี่วินาที
+
+**โควตาข้อความ:** แพ็กเกจฟรีของ LINE OA ไทยส่งได้ 300 ข้อความ/เดือน · ข้อความแจ้งออเดอร์ 1 ครั้ง นับตาม**จำนวนคนในกลุ่ม** OKM Order
+(กลุ่ม 5 คน = ออเดอร์ละ 5 ข้อความ → ฟรีราว 60 ออเดอร์/เดือน) · การตอบสลิปในกลุ่ม OKM Slip **ไม่นับ** · โควตาหมด = ข้อความแจ้งไม่ออก
+แต่ออเดอร์ยังเข้าหน้าทีมงานครบ (ดูที่ `/staff`) · เกินบ่อย = อัปแพ็กเกจในหน้า LINE Official Account Manager
+
+## 9. สำเนาข้อมูลออเดอร์ออกนอก Render — Cloudflare R2 หรือ Backblaze B2 (20 นาที · ทำครั้งเดียว · เพิ่ม 2026-10-23)
+
+ตอนนี้ไฟล์สำรองอยู่บนดิสก์ก้อนเดียวกับฐานข้อมูล (ดิสก์พัง = หายทั้งคู่ · LAUNCH_AUDIT ข้อ 42 "ทาง 2") · หลังทำข้อนี้ เว็บจะส่งสำเนาฐานข้อมูล
+ไปเก็บในที่เก็บของพี่เองทุก 6 ชม. · ส่งเฉพาะฐานข้อมูล ไม่ส่งไฟล์รหัส · **ค่าลับพี่วางเองในหน้า Render เท่านั้น** ห้ามส่งในแชท ·
+**เลือกที่เดียวพอ — ทาง A หรือทาง B** (โค้ดเดียวกัน รู้เองจากที่อยู่ที่วาง):
+- **ทาง A Cloudflare R2** (ข้อ 43–49) — ฟรี 10 GB · Cloudflare **ขอผูกบัตรก่อนเปิดใช้ R2** แม้ใช้ไม่เกินฟรี
+- **ทาง B Backblaze B2** (ข้อ 50–56) — ฟรี 10 GB แรก (หน้าราคาของ Backblaze) · ผลค้นหาบอกว่าหน้าสมัครเขียนว่า**ไม่ต้องใช้บัตร** —
+  Friday ยังไม่ได้เปิดหน้าสมัครเห็นเอง ถ้าตอนสมัครขอบัตร = หยุดแล้วบอก Friday
+
+### ทาง A — Cloudflare R2
+
+**ก. สร้างที่เก็บ**
+43. https://dash.cloudflare.com → ล็อกอิน → เมนูซ้าย **R2 Object Storage** → (ครั้งแรกจะให้ผูกบัตร/เปิดแผน R2 — ทำตามหน้าจอ) → **Create bucket**
+    → ชื่อ `okami24-backups` → Location ปล่อย Automatic → **Create bucket**
+44. ใน bucket นั้น → แท็บ **Settings** → **Object lifecycle rules** → **Add rule** → ชื่อ `keep-30-days` → เลือกลบ object หลัง **30 วัน** → Save
+    (เก็บย้อนหลัง 30 วัน · ไฟล์เก่ากว่านั้นลบเอง)
+
+**ข. ออกกุญแจให้เว็บ**
+45. กลับหน้า **R2 Object Storage** → **Manage API tokens** (หรือ **API** → Manage API tokens) → **Create API token** (แบบ Account API token)
+    → Permissions = **Object Read & Write** → Specify bucket = **okami24-backups** เท่านั้น → **Create API Token**
+46. หน้าถัดไปขึ้น 3 ค่า (ขึ้นครั้งเดียว — ปิดหน้าแล้วดูอีกไม่ได้): **Access Key ID** · **Secret Access Key** · และ endpoint แบบ
+    `https://xxxxxxxx.r2.cloudflarestorage.com` → วางใน Render ตามข้อ 47 ก่อนปิดหน้านี้
+
+**ค. วางใน Render** (dashboard.render.com → **okami24** → **Environment** → **+ Add Environment Variable** ทีละค่า ชื่อ Key พิมพ์ตรงตัว)
+47. - `OKAMI24_OFFSITE_ENDPOINT` → endpoint จากข้อ 46 (ขึ้นต้น `https://` ไม่มี `/` ท้าย)
+    - `OKAMI24_OFFSITE_BUCKET` → `okami24-backups`
+    - `OKAMI24_OFFSITE_KEY_ID` → Access Key ID
+    - `OKAMI24_OFFSITE_SECRET` → Secret Access Key
+    → **Save** → เลือกแบบที่มีคำว่า **deploy** → รอ 3–5 นาที
+
+**ง. ลองเอง (เห็นแบบนี้ = สำเร็จ)**
+48. Render → okami24 → **Logs** → ประมาณ 15 วินาทีหลังเว็บขึ้น ต้องเห็นบรรทัด `[backup] startup: off-site copy db/okami24-… (… bytes)`
+    (ถ้าขึ้น `off-site copy FAILED — HTTP 403` = กุญแจไม่มีสิทธิ์ bucket นี้ ทำข้อ 45 ใหม่ · บอก Friday พร้อมรหัสหลังคำว่า FAILED ได้ ไม่มีความลับในนั้น)
+49. Cloudflare → R2 → **okami24-backups** → โฟลเดอร์ `db/` มีไฟล์ `okami24-<วันเวลา>.db` = สำเนาออกมานอก Render แล้ว
+
+### ทาง B — Backblaze B2
+
+50. https://www.backblaze.com → สมัคร **B2 Cloud Storage** → ล็อกอิน
+51. เมนูซ้าย **B2 Cloud Storage** → **Buckets** → **Create a Bucket** → ชื่อ `okami24-backups` (ถ้าชื่อซ้ำกับคนอื่น ให้ต่อท้าย เช่น `okami24-backups-db`)
+    → เลือก **Private** → สร้าง
+52. หน้า Buckets ใต้ชื่อ bucket จะมีบรรทัด **Endpoint** แบบ `s3.us-east-005.backblazeb2.com` (ตัวเลข/ภูมิภาคของพี่อาจต่างจากนี้) → จดไว้
+53. เมนูซ้าย **Application Keys** → **Add a New Application Key** → ตั้งชื่อ `okami24-web` → **Allow Access to Bucket(s)** = bucket จากข้อ 51
+    → Type of Access = **Read and Write** → **Create New Key**
+54. หน้าถัดไปขึ้น **keyID** และ **applicationKey** — **applicationKey ขึ้นครั้งเดียว** → วางใน Render ตามข้อ 55 ก่อนปิดหน้านี้
+55. Render → **okami24** → **Environment** → **+ Add Environment Variable** ทีละค่า (ชื่อ Key พิมพ์ตรงตัว):
+    - `OKAMI24_OFFSITE_ENDPOINT` → `https://` + endpoint จากข้อ 52 (เช่น `https://s3.us-east-005.backblazeb2.com` ไม่มี `/` ท้าย)
+    - `OKAMI24_OFFSITE_BUCKET` → ชื่อ bucket จากข้อ 51
+    - `OKAMI24_OFFSITE_KEY_ID` → keyID
+    - `OKAMI24_OFFSITE_SECRET` → applicationKey
+    → **Save** → เลือกแบบที่มีคำว่า **deploy** → รอ 3–5 นาที → ดู Logs แบบข้อ 48
+56. Backblaze → **Buckets** → bucket นั้น → **Browse Files** → โฟลเดอร์ `db/` มีไฟล์ `okami24-<วันเวลา>.db` = สำเร็จ
+    · B2 **ยังไม่ตั้งลบไฟล์เก่าอัตโนมัติ** (ตัวเลือกในหน้าเว็บของ B2 ลบได้เฉพาะไฟล์ชื่อซ้ำ ส่วนไฟล์ของเราชื่อไม่ซ้ำ) —
+    Friday ดูขนาดไฟล์จริงจาก Logs หลังเปิด แล้วบอกว่าเต็ม 10 GB เมื่อไหร่และต้องลบอย่างไร
+
 ## เรื่องที่ต้องรู้ไว้ ไม่ต้องทำอะไรตอนนี้
 
 - **ตอนอัปเดตเว็บ เว็บจะดับสั้น ๆ ไม่กี่วินาที** เป็นเรื่องปกติของเครื่องที่มีดิสก์ติดอยู่ (Railway ก็เหมือนกัน)

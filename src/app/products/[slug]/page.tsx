@@ -19,6 +19,9 @@ import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
+import { EditorialClip, ProductEditorialFaq, ProductEditorialMain } from "@/components/product/ProductEditorial";
+import { PRODUCT_EDITORIAL } from "@/data/product-editorial";
+import { articleFaqJsonLd } from "@/lib/article-jsonld";
 import { getBrand } from "@/data/brands";
 import {
   getPilotProduct,
@@ -315,6 +318,11 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // Product type itself still has no price field; never fabricated.
     offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...(legacyAllSoldOut ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
+  // Round "M Bar 9K redesign" (owner 23/10): a slug in product-editorial.ts gets the editorial body instead of the
+  // review / more-details / spec / compatibility / FAQ sections; its FAQPage block is built from the same Thai copy.
+  const editorial = PRODUCT_EDITORIAL[product.slug];
+  const editorialSibling = editorial?.siblingSlug ? getProduct(editorial.siblingSlug) : undefined;
+  const editorialFaqJsonLd = editorial ? articleFaqJsonLd(editorial.copy.th.faq.items) : null;
   const legacyTrail = [
     { name: "Home", path: "/" },
     { name: categoryNameOf(product.categoryId), path: `/products/${product.categoryId}` },
@@ -325,27 +333,38 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
+      {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} />
-      <ProductReviewSection product={product} />
-      {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
-      {product.storyDetails ? (
-        <ProductMoreDetails product={product} copy={productDetailsCopy(product.slug)} />
+      {editorial ? (
+        <>
+          <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
+          <EditorialClip product={product} copy={editorial.copy} />
+          <ProductEditorialFaq copy={editorial.copy} />
+        </>
       ) : (
         <>
-          <ProductGallery product={product} />
-          {product.isFlagship && <ProductAnatomy product={product} />}
-          <FeatureGrid product={product} copyTh={copyTh} />
+          <ProductReviewSection product={product} />
+          {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
+          {product.storyDetails ? (
+            <ProductMoreDetails product={product} copy={productDetailsCopy(product.slug)} />
+          ) : (
+            <>
+              <ProductGallery product={product} />
+              {product.isFlagship && <ProductAnatomy product={product} />}
+              <FeatureGrid product={product} copyTh={copyTh} />
+            </>
+          )}
+          <SpecSheet product={product} copyTh={copyTh} />
+          <CompatibilitySection product={product} copyTh={copyTh} />
+          {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
+              (not instead of) the free-text platform facts above. Renders nothing when there are no
+              verified links, so an unlinked product's page is unchanged. */}
+          <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
+          <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
+          <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <SpecSheet product={product} copyTh={copyTh} />
-      <CompatibilitySection product={product} copyTh={copyTh} />
-      {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
-          (not instead of) the free-text platform facts above. Renders nothing when there are no
-          verified links, so an unlinked product's page is unchanged. */}
-      <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
-      <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
-      <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
       <RelatedProducts products={related} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}

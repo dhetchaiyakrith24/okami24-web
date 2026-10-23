@@ -501,6 +501,7 @@ export const en: Dictionary = {
     slipErrorUsed: "This slip has already been used for another order. If you made a new transfer for this one, send that slip; otherwise, message us on LINE @okm24.",
     slipErrorBusy: "Too many attempts. Please wait a moment and try again.",
     slipErrorGeneric: "Your slip didn't go through. Please try again, or send it on LINE @okm24 with your order number.",
+    trackingLabel: "Tracking number",
     notFoundMessage: "Order not found, or you don't have access to view it.",
   },
   languageSwitcher: {

@@ -240,8 +240,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // maxlist (20/10): RELX Infinity Pro 2 pods (Max-only "Pod-27") — Max ราคาขาย ฿149 for the parent and its 42 flavours (read 2026-10-20).
   "RELX-INFINITY-PRO-2-POD": { sellingPrice: 149, lastPriceReview: "2026-10-20" },
   // line 2 max-sync (22/10): RELX Creator Pod 20K (Max-only "Pod-137") — Max ราคาขาย ฿349 for each of the 31 pods (read 2026-10-22; the ฿199 parent row is the empty device).
-  // held until a card photo exists (IMAGE_SPEC §4) — uncomment with the card:
-  // "RELX-CREATOR-POD-20K": { sellingPrice: 349, lastPriceReview: "2026-10-22" },
+  // Card added by line 1 (23/10, VERIFIED_MEDIA["RELX-CREATOR-POD-20K"]).
+  "RELX-CREATOR-POD-20K": { sellingPrice: 349, lastPriceReview: "2026-10-22" },
   // maxlist (21/10): VOOPOO Argus Pod cartridge (Max Coil-21) — Max ราคาขาย ฿450 for the parent and its 4 options (read 2026-10-20).
   "Coil-21": { sellingPrice: 450, lastPriceReview: "2026-10-21" },
   "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },

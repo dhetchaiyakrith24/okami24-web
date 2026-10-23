@@ -43,6 +43,8 @@ export interface OrderDetail extends OrderSummary {
   items: OrderItemDetail[];
   shippingAddress: OrderShippingAddress;
   statusHistory: { status: string; note: string | null; createdAt: string }[];
+  /** Parcel tracking number staff entered when shipping (migration 0010); null until then. */
+  trackingNumber: string | null;
 }
 
 interface OrderRow {
@@ -55,6 +57,7 @@ interface OrderRow {
   shipping_fee: number;
   total: number;
   created_at: string;
+  tracking_number?: string | null;
 }
 
 function toSummary(row: OrderRow): OrderSummary {
@@ -266,6 +269,7 @@ function assembleDetail(row: OrderRow): OrderDetail {
       postalCode: address.postal_code,
     },
     statusHistory: history.map((h) => ({ status: h.status, note: h.note, createdAt: h.created_at })),
+    trackingNumber: row.tracking_number ?? null,
   };
 }
 
@@ -285,6 +289,15 @@ export async function getOrderDetailForViewer(orderNumber: string, viewToken: st
   if (!isOwner && !hasValidToken) return null;
 
   return assembleDetail(row);
+}
+
+/**
+ * Server-side lookup with NO viewer check — only for code that is already behind its own lock: the staff area
+ * (staff session) and the LINE alert sent after a customer's own slip upload. Never call it from a customer route.
+ */
+export function getOrderDetailInternal(orderNumber: string): OrderDetail | null {
+  const row = getDb().prepare("SELECT * FROM orders WHERE order_number = ?").get(orderNumber) as OrderRow | undefined;
+  return row ? assembleDetail(row) : null;
 }
 
 // The customer's "I have paid" claim lives in payment-slip.ts since the cart round 22/10 (slip upload +

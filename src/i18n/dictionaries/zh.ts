@@ -494,6 +494,7 @@ export const zh: Dictionary = {
     slipErrorUsed: "这张凭证已用于其他订单。如果您为本订单另外转了账，请上传那张凭证；否则请通过 LINE @okm24 联系我们。",
     slipErrorBusy: "尝试次数过多，请稍后再试。",
     slipErrorGeneric: "凭证提交失败。请重试，或通过 LINE @okm24 发送凭证并附上订单编号。",
+    trackingLabel: "快递单号",
     notFoundMessage: "未找到该订单，或您无权查看。",
   },
   languageSwitcher: {

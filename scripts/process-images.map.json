@@ -7845,13 +7845,13 @@
   "source": "_incoming/coil3/key/D-c1-tw15.png",
   "slug": "coil-1",
   "role": "variant",
-  "id": "coil-1-1",
+  "id": "coil-1-15",
   "aiRender": {
    "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
    "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tw15.png; render _incoming/coil3/out/c1-tw15-S1.png)",
    "fidelitySheet": "_incoming/coil3/fid/c1-tw15.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white · 23/10: shown on Coil-1-15 \"TW15 0.15Ω\" (Coil-1-1 \"0.15Ω\" is PnP-VM6, #767)",
   "fileName": "variant-coil-1-1.webp"
  },
  {
@@ -7866,19 +7866,6 @@
   },
   "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "variant-coil-1-14.webp"
- },
- {
-  "source": "_incoming/coil3/key/D-c1-tr1.png",
-  "slug": "coil-1",
-  "role": "variant",
-  "id": "coil-1-11",
-  "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tr1.png; render _incoming/coil3/out/c1-tr1-S2.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c1-tr1.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
-  },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-1-11.webp"
  },
  {
   "source": "_incoming/coil3/key/D-c1-tr1.png",
@@ -12124,6 +12111,805 @@
    "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Yogurt (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Yogurt.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Yogurt.jpg",
    "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/m9k/rc/final/blueberry-mint.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "blueberry-mint",
+  "aiRender": {
+   "tool": "no new render: the same Higgsfield nano_banana_pro 4k master as the other 22 flavours (_incoming/image-sitewide/m9k/out/master-1-cut.png, copied to _incoming/m9k/rc/out/) + the same print recolour script (_incoming/m9k/rc/recolour.js = image-sitewide/m9k/recolour.js with its folder moved) - geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved",
+   "reference": "print colour: this flavour's device on the retailer launch poster (_incoming/m9k/src/Blueberry-Mint.jpg, Marbo-Bar-9K-กลิ่น-Blueberry Mint - SALTHUB's own chart predates these 2 flavours), 8 bands top to bottom, most saturated quarter per band (_incoming/m9k/rc/colours.json)",
+   "fidelitySheet": "_incoming/m9k/rc/compare.png - poster device | our photo, checked by eye (Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "line 1 22/10 - the 2 Shipnity Max flavours line 2 added (#733); same treatment and file naming as the 22 (image-sitewide 30/09)",
+  "fileName": "variant-blueberry-mint-v2.webp"
+ },
+ {
+  "source": "_incoming/m9k/rc/final/strawberry-kiwi.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "aiRender": {
+   "tool": "no new render: the same Higgsfield nano_banana_pro 4k master as the other 22 flavours (_incoming/image-sitewide/m9k/out/master-1-cut.png, copied to _incoming/m9k/rc/out/) + the same print recolour script (_incoming/m9k/rc/recolour.js = image-sitewide/m9k/recolour.js with its folder moved) - geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved",
+   "reference": "print colour: this flavour's device on the retailer launch poster (_incoming/m9k/src/Strawberry-Kiwi.jpg, Marbo-Bar-9K-กลิ่น-Strawberry Kiwi - SALTHUB's own chart predates these 2 flavours), 8 bands top to bottom, most saturated quarter per band (_incoming/m9k/rc/colours.json)",
+   "fidelitySheet": "_incoming/m9k/rc/compare.png - poster device | our photo, checked by eye (Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "line 1 22/10 - the 2 Shipnity Max flavours line 2 added (#733); same treatment and file naming as the 22 (image-sitewide 30/09)",
+  "fileName": "variant-strawberry-kiwi-v2.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/butterscotch.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "butterscotch",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Butterscotch-vapemun.webp (_incoming/muro/src/butterscotch.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-butterscotch.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/chocolate-dubai.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "chocolate-dubai",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Chocolate-Dubai-vapemun.webp (_incoming/muro/src/chocolate-dubai.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-chocolate-dubai.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/spear-mint.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "spear-mint",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-SpearMint-Vapemun.webp (_incoming/muro/src/spear-mint.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-spear-mint.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/grape-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "grape-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Grape-50MG-Vapemun.webp (_incoming/muro/src/grape-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-grape-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/watermelon-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "watermelon-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Watermelon-50MG-Vapemun.webp (_incoming/muro/src/watermelon-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-watermelon-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/double-mint-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "double-mint-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20KDouble-Mint-50MG-vapemun.webp (_incoming/muro/src/double-mint-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-double-mint-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/mix-berries-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mix-berries-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-MixBerries-50MG-Vapemun.webp (_incoming/muro/src/mix-berries-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-mix-berries-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/yakult-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-50mg",
+  "aiRender": {
+   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-Yakult-50MG-Vapemun.webp (_incoming/muro/src/yakult-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-yakult-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/fruit-punch.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "fruit-punch",
+  "aiRender": {
+   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Fruit-Punch-vapemun.webp (_incoming/muro/src/fruit-punch.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-fruit-punch.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/yakult-orange.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-orange",
+  "aiRender": {
+   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Yakult-Orange-Vapemun.webp (_incoming/muro/src/yakult-orange.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-yakult-orange.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/green-slush.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "green-slush",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-GreenSlush-Vapemun.webp (_incoming/muro/src/green-slush.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-green-slush.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/peach-tea.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "peach-tea",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-PeachTea-Vapemun.webp (_incoming/muro/src/peach-tea.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-peach-tea.webp"
+ },
+ {
+  "source": "_incoming/muro/tool/out/cut/strawberry-ice-cream.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "strawberry-ice-cream",
+  "aiRender": {
+   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
+   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Strawberry-Ice-Cream-Vapemun.webp (_incoming/muro/src/strawberry-ice-cream.webp)",
+   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
+  },
+  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
+  "fileName": "variant-strawberry-ice-cream.webp"
+ },
+ {
+  "source": "_incoming/creator/r/A-cut.png",
+  "slug": "relx-creator-pod-20k",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "line 1 23/10 - RELX Creator Pod 20K (Max Pod-137): the card held line 2's publication line (IMAGE_SPEC §4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 Unlimited (web app through Chrome, 0 credits), studio re-shoot \"keep exactly, remove everything else\" of the red Creator Boost pod fitted to the black Creator device as RELX's own key visual shows them (the only real picture of this pod: its right side sits in the device); take A (Higgsfield hf_20261022_182729 4737120c), keyed with scripts/flatcut.js",
+   "reference": "RELX Creator Boost Pod 20000 Puffs key visual, as sold by pod789.com/product/relx-creator-20000-puffs/ (Relx-Creator-Boost-20000-Puffs.jpg, 600 px; the same artwork on pod9k.com) - crop _incoming/creator/ref-pod-device.png",
+   "fidelitySheet": "_incoming/creator/fid.png - key-visual crop | ours: pod shape, mouthpiece, hexagon pattern, RELX lettering, pixel screen checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/green-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-2",
+  "fileName": "variant-iqosheet-15-2-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official GREEN pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+GREEN+PACK-pmi_G0000699_00_ph-1771171317083.png (_incoming/terea2/ph/green.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/blue-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-3",
+  "fileName": "variant-iqosheet-15-3-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official BLUE pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLUE+PACK-pmi_G0000694_00_ph-1771171317078.png (_incoming/terea2/ph/blue.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/sienna-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-4",
+  "fileName": "variant-iqosheet-15-4-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official SIENNA pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+SIENNA+PACK-pmi_G0000705_00_ph-1776322128686.png (_incoming/terea2/ph/sienna.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/purple-wave-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-5",
+  "fileName": "variant-iqosheet-15-5-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official PURPLE WAVE pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+PURPLE+WAVE+PACK-pmi_G0000703_00_ph-1771171317085.png (_incoming/terea2/ph/purple-wave.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/bronze-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-6",
+  "fileName": "variant-iqosheet-15-6-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official BRONZE pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+BRONZE+PACK-pmi_G0000697_00_ph-1771171317080.png (_incoming/terea2/ph/bronze.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/oasis-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-15",
+  "fileName": "variant-iqosheet-15-15-pack2.webp",
+  "note": "line 1 23/10 - owner 22/10 (\"Iqos รูปยังไม่เสร็จ\"): a real single pack instead of the five-sticks graphic, in the card's method so the option matches the card (owner 21/10: real packs) · panel fix 23/10 (checker #759): the official panel kept, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (image 1, _incoming/terea2/ref/sienna-angle.jpg from iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's official pack (image 2); warning panel = the official Sienna pack's printed panel (ref/sienna-pack-front.png), pasted only inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official Sienna photo's own (packcut.js), so every option is the same box at the same place",
+   "reference": "IQOS official OASIS PEARL pack, iqos.com/ph buy-terea page: media.iqos.com/is/image/pmintl/product/2000px/TEREA+OASIS+PEARL+PACK-pmi_G0000948_00_ph-1771171317115.png (_incoming/terea2/ph/oasis-pearl.png) - artwork, logo colours and flavour name; the ph pack's graphic warning is not copied",
+   "fidelitySheet": "_incoming/terea2/fid.png - official pack | ours, per flavour"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/black-green-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-1",
+  "fileName": "variant-iqosheet-15-1-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Black Green five-sticks graphic, iqos.com/id (_incoming/p63/terea2000/black-green.png) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/emerald-edition-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-10",
+  "fileName": "variant-iqosheet-15-10-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Emerald Edition five-sticks graphic, iqos.com/id (public/assets/products/iqosheet-15/variant-iqosheet-15-10.webp, the live crop of IQOS's Emerald Edition render) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/r/golden-edition-sticks-final.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-11",
+  "fileName": "variant-iqosheet-15-11-sticks.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges)",
+  "boxRatio": 0.7,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits): one studio photo of the five real sticks (black-green, from IQOS's graphic); the other stick flavours = EDITS of that photo with only the print changed, so all share one shape; one crisp outline from the black-green photo applied to all (stickmask.js + stickapply.js, shift by measured position)",
+   "reference": "IQOS's own Golden Edition five-sticks graphic, iqos.com/id (_incoming/p63/terea2000/golden-edition.png) - no pack photo of this flavour exists on any IQOS site or retailer we could reach, so the real sticks are photographed instead of drawing a pack",
+   "fidelitySheet": "_incoming/terea2/fid2.png - IQOS graphic | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/bright-wave-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-7",
+  "fileName": "variant-iqosheet-15-7-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Bright Wave pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/2-9.webp (_incoming/terea2/ahd/bright-wave.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/dimensions-yugen-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-9",
+  "fileName": "variant-iqosheet-15-9-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Dimensions Yugen pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/5-10.webp (_incoming/terea2/ahd/dimensions-yugen.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/berrine-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-13",
+  "fileName": "variant-iqosheet-15-13-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Berrine Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Berrine-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/berrine-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/mulint-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-14",
+  "fileName": "variant-iqosheet-15-14-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Mulint Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Mulint-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/mulint-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/sun-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-16",
+  "fileName": "variant-iqosheet-15-16-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Sun Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2024/10/IQOS-Terea-Sun-Pearl-indonesia-for-all-heets.webp (_incoming/terea2/ahd/sun-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/black-ruby-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-17",
+  "fileName": "variant-iqosheet-15-17-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Black Ruby pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Black-Ruby-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/black-ruby.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/auburn-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-auburn-edition",
+  "fileName": "variant-iqosheet-15-auburn-edition-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Auburn Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Auburn-Edition-Indonesia.webp (_incoming/terea2/ahd/auburn-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/bermin-pearl-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-bermin-pearl-edition",
+  "fileName": "variant-iqosheet-15-bermin-pearl-edition-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Bermin Pearl Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Bermin-Pearl-Edition-Indonesia.webp (_incoming/terea2/ahd/bermin-pearl-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/passion-fruit-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-passion-fruit-pearl",
+  "fileName": "variant-iqosheet-15-passion-fruit-pearl-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Passion Fruit Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/09/Iqos-Terea-Passion-Fruit-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/passion-fruit-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/perint-pearl-edition-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-perint-pearl-edition",
+  "fileName": "variant-iqosheet-15-perint-pearl-edition-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Perint Pearl Edition pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Perint-Pearl-Edition-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/perint-pearl-edition.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/riviera-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-riviera-pearl",
+  "fileName": "variant-iqosheet-15-riviera-pearl-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Riviera Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/07/IQOS-TEREA-Riviera-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/riviera-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/strawberry-pearl-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-strawberry-pearl",
+  "fileName": "variant-iqosheet-15-strawberry-pearl-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Strawberry Pearl pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2026/09/Iqos-Terea-Strawberry-Pearl-indonesia-for-all-heets-dubai.webp (_incoming/terea2/ahd/strawberry-pearl.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/terea2/rid/dimensions-apricity-cut.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-8",
+  "fileName": "variant-iqosheet-15-8-pack2.webp",
+  "note": "line 1 23/10 - TEREA batch 2: owner 22/10 \"รูปยังไม่เสร็จ\" (flat five-sticks graphic) + owner 23/10 (same size/position measured, real studio light, crisp edges) · panel fix 23/10 (checker #759): the real Indonesian pack's own warning text, typeset crisp, filled only inside the tilted black frame (panel.js spilled a bounding box over it) - idpanel.js",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K Unlimited (0 credits), EDIT of IQOS's official single TEREA Sienna pack photo (_incoming/terea2/ref/sienna-angle.jpg, iqos.com/mt pmi_G0000705_01) with only the artwork changed to this flavour's real Indonesian pack; warning panel = the real Indonesian pack's printed warning (\"Produk ini tidak bebas risiko dan mengandung nikotin yang menyebabkan ketergantungan\", as on the retail pack photos), typeset crisp inside the render's own tilted panel (idpanel.js); alpha + contact shadow = the official photo's own (packcut.js) - the same box at the same place as every TEREA pack option and the card",
+   "reference": "real Dimensions Apricity pack photo at a retailer: https://allheetsdubai.ae/wp-content/uploads/2023/04/7-9.webp (_incoming/terea2/ahd/dimensions-apricity.webp; watermark + caption cropped off, artwork only - the shop's warning text is not copied); IQOS sells this flavour only on iqos.com/id, which shows a five-sticks graphic, no pack photo",
+   "fidelitySheet": "_incoming/terea2/fid2.png - retail pack | ours"
+  }
+ },
+ {
+  "source": "_incoming/coil1/key/vm5-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM5 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM5 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM5-0.2ohm.jpg (_incoming/line1-2310/coil1/ref/VM5-0.2ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-2.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-3",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM1-0.3ohm.jpg (_incoming/line1-2310/coil1/ref/VM1-0.3ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-3.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/m2-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-M2 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-M2 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-M2-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/M2-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-4.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/r1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-5",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-R1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-R1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-R1-0.8ohm.jpg (_incoming/line1-2310/coil1/ref/R1-0.8ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-5.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm4-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-6",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM4 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM4 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM4-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/VM4-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-6.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tm1-e2-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-7",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TM1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TM1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TM1-0.6ohm.jpg (_incoming/line1-2310/coil1/ref/TM1-0.6ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-7.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm3-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-9",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM3 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM3 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM3-0.45ohm.jpg (_incoming/line1-2310/coil1/ref/VM3-0.45ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance and ring colour in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-9.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/r2-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-10",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-R2 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-R2 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-R2-1.0ohm.jpg (_incoming/line1-2310/coil1/ref/R2-1.0ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-10.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tw30-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-13",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TW15 grey box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TW30 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TW30 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TW30-0.3ohm.jpg (_incoming/line1-2310/coil1/ref/TW30-0.3ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-13.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/tw20-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-16",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TW15 grey box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-TW20 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-TW20 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-TW20-0.2ohm.jpg (_incoming/line1-2310/coil1/ref/TW20-0.2ohm.jpg; reference only, the shop's captions and layout are not copied); model = the only VOOPOO PnP coil with this resistance in the Max option name",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - Coil-1 options added by #724 (22/10) had no photo; owner 23/10 ruling (same measured size/position as the #388 options, real studio light, crisp edges)",
+  "fileName": "variant-coil-1-16.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/vm6-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-VM6 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-VM6 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-VM6-0.15ohm.jpg (_incoming/line1-2310/coil1/ref/VM6-0.15ohm.jpg; reference only); the two 0.15Ω PnP coils are TW15 and VM6; TW15 has its own option (-15), so \"0.15Ω\" (-1) is VM6",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - correction (Friday 23/10): the #388 photo on this option showed a different coil; the two 0.15Ω PnP coils are TW15 and VM6; TW15 has its own option (-15), so \"0.15Ω\" (-1) is VM6",
+  "fileName": "variant-coil-1-1-vm6.webp"
+ },
+ {
+  "source": "_incoming/coil1/key/c1-e1-final.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-11",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited - no credits): EDIT of our own #388 studio render (PnP-TR1 black box, _incoming/coil3/out) with only the box's model text, resistance label, coil drawing and the standing coil changed to the real PnP-C1 (prompt _incoming/line1-2310/coil1/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device at the foot line, faint backdrop alpha dropped, placed by _incoming/coil3/place.js (key.sh) - same box at the same size and place as the #388 options",
+   "reference": "real PnP-C1 box + coil photo at a Thai retailer (VOOPOO's shop answers 403): https://maneevp.com/wp-content/uploads/2024/02/Voopoo-PNP-Coil-C1-1.2ohm.jpg (_incoming/line1-2310/coil1/ref/C1-1.2ohm.jpg; reference only); the two 1.2Ω PnP coils are TR1 (teal ring, the shop's \"ฟ้า\" = -12) and C1 (white/clear ring), so \"1.2Ω ยางขาว\" (-11) is C1",
+   "fidelitySheet": "_incoming/line1-2310/coil1/fid.jpg - reference | ours"
+  },
+  "note": "line 1 23/10 - correction (Friday 23/10): the #388 photo on this option showed a different coil; the two 1.2Ω PnP coils are TR1 (teal ring, the shop's \"ฟ้า\" = -12) and C1 (white/clear ring), so \"1.2Ω ยางขาว\" (-11) is C1",
+  "fileName": "variant-coil-1-11-c1.webp"
+ },
+ {
+  "source": "_incoming/sweep-2310/nex/gi-A-final.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-1",
+  "note": "image sweep 23/10 - Nexswitch 16K pod Grape Ice (Max Pod-162-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome; one render from the live Watermelon pod photo (body/framing) + the Grape Ice poster crop (label); the label was then moved onto the live Watermelon body (_incoming/sweep-2310/nex/lift.js, copied from the 22/10 set) so the set keeps one body",
+   "reference": "pod789.com Nexswitch poster filed as Grape but printed GRAPE ICE (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Grape.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/sweep-2310/nex/Grape.jpg",
+   "fidelitySheet": "_incoming/sweep-2310/nex/fid-gi.png (final, poster crop, label close-up)"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/ks/gb-label.png",
+  "slug": "pod-150",
+  "role": "variant",
+  "id": "pod-150-verified-grape-berry",
+  "fileName": "variant-grape-berry.webp",
+  "note": "image sweep 23/10 - KS Quikpro 15K pod Grape Berry (Kardinal list, not in the warehouse): no photo of this pack anywhere; built by script from our live Grape Lychee photo (same pod, same 2-line pack template)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the live Grape Lychee final (_incoming/ksp/final/grape-lychee.png, itself Higgsfield Nano Banana Pro) recoloured in CIELAB toward Lab(36,17,-24) on chromatic pixels only (_incoming/sweep-2310/ks/gb.js); LYCHEE replaced by BERRY moved from our Blueberry pack label (_incoming/sweep-2310/ks/swap.js)",
+   "reference": "pack colour = Kardinal's own Grape Berry flavour icon (https://www.kardinal.com/products/quikpro, Quikpro_Flav_GrapeBerry_icon.png, 64 px - LOW-RES maker icon: same hue as the Grape icon, darker; the pack is the Grape pack hue made darker) - _incoming/sweep-2310/ks/icons/GrapeBerry.png; colour = [estimate], no pack photo exists",
+   "fidelitySheet": "_incoming/sweep-2310/ks/look2.png (Grape · Grape Berry · Blackcurrant Lychee packs + the three Kardinal icons) + gb-plate.png (label)"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/banana-C-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-16",
+  "fileName": "variant-banana-icecream.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Banana Icecream (Max Pod-130-16): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Banana Icecream poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-Banana-Ice-Cream.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-banana.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-banana.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/lychee-A-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-17",
+  "fileName": "variant-lychee.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Lychee (Max Pod-130-17): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Lychee poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-กลิ่น-Lychee.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-lychee.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-lychee.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/doublemint-A-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-18",
+  "fileName": "variant-double-mint.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Double Mint (Max Pod-130-18): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Double Mint poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-กลิ่น-Double-Mint.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-doublemint.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-doublemint.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/redlemon-A-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-19",
+  "fileName": "variant-red-lemon-soda.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Red Lemon Soda (Max Pod-130-19): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Red Lemon Soda poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-Red-Lemon-Soda.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-redlemon.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-redlemon.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/menthol-A-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-20",
+  "fileName": "variant-extra-menthol.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Extra Menthol 5% (Max Pod-130-20): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Extra Menthol 5% poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-Extra-Menthol.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-menthol.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-menthol.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/mineral-B-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-21",
+  "fileName": "variant-mineral.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Mineral (Max Pod-130-21): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Mineral poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-Mineral.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-mineral.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-mineral.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/esko/mango-A-fin.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-22",
+  "fileName": "variant-mango.webp",
+  "note": "image sweep 23/10 - ESKO BAR 498 (20K) Mango (Max Pod-130-22): maker-style set completion, Friday 23/10, owner may revert",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of the live Grape maker render (image 1) with that flavour's fruit crop (image 2); then _incoming/sweep-2310/esko/fin.js: backdrop keyed, the new splash/fruit layer fitted to the Grape photo's bbox, and the MAKER's own device pixels pasted back from the Grape render, so the device is the maker's file in the maker's place",
+   "reference": "maneevp.com ESKO Bar 20000 Puffs Mango poster (https://maneevp.com/product/esko-bar-20000-puffs/ - wp-content/uploads/2025/06/ESKO-Bar-20000-Puffs-Mango.jpg, 1000 px, MANEE VAPE watermark) - only the fruit area was used, watermark and text cut out (_incoming/sweep-2310/esko/up/ref-mango.png)",
+   "fidelitySheet": "_incoming/sweep-2310/esko/chk-mango.jpg (Grape sibling · new photo on the site dark · device foot on magenta)",
+   "exception": "Friday 23/10: for ESKO BAR 498 only, the 15 live maker renders show fruit + splash beside the device, so the 7 missing flavours follow that maker style (an exception to the 22/10 no-prop ruling); the owner may revert"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/supercool/blueraz-A-fin.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-5",
+  "note": "image sweep 23/10 - Super Cool Blueraz Berry (Max ELQ-6-5): owner search in Chrome found the real bottle",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of our Grape Blast studio render (list19/i/r/sc-grape-2.png) changing only the two-line flavour name to Blueraz Berry as printed on the real bottle (image 2); _incoming/sweep-2310/supercool/swapname.js then pastes only the changed name band (feathered) onto the live Grape Blast final, whose cut/alpha is kept, so the bottle, size and position are identical by construction",
+   "reference": "vapemun.com Super Cool Saltnic Blueraz Berry photo (https://vapemun.com/product/super-cool-saltnic/ - wp-content/uploads/2026/10/Supercool-Saltnic-Blueraz-Berry-Vapemun.webp, 600 px; COF Super Cool Salt Series label, name readable) - _incoming/sweep-2310/supercool/src/vm-Blueraz-Berry.webp; bottle crop up/ref-Blueraz-Berry.png (fruit left out)",
+   "fidelitySheet": "_incoming/sweep-2310/supercool/blueraz-A-fin-zoom.png (name band at 1:1) + sheet.jpg (the shop photos)"
+  }
+ },
+ {
+  "source": "_incoming/sweep-2310/supercool/pinky-A-fin.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-6",
+  "note": "image sweep 23/10 - Super Cool Pinky Blush (Max ELQ-6-6): owner search in Chrome found the real bottle",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome: an edit of our Grape Blast studio render (list19/i/r/sc-grape-2.png) changing only the two-line flavour name to Pinky Blush as printed on the real bottle (image 2); _incoming/sweep-2310/supercool/swapname.js then pastes only the changed name band (feathered) onto the live Grape Blast final, whose cut/alpha is kept, so the bottle, size and position are identical by construction",
+   "reference": "vapemun.com Super Cool Saltnic Pinky Blush photo (https://vapemun.com/product/super-cool-saltnic/ - wp-content/uploads/2026/10/Supercool-Saltnic-Pinky-Blush-Vapemun.webp, 600 px; COF Super Cool Salt Series label, name readable) - _incoming/sweep-2310/supercool/src/vm-Pinky-Blush.webp; bottle crop up/ref-Pinky-Blush.png (fruit left out)",
+   "fidelitySheet": "_incoming/sweep-2310/supercool/pinky-A-fin-zoom.png (name band at 1:1) + sheet.jpg (the shop photos)"
   }
  }
 ]
