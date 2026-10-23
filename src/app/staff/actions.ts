@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/auth";
 import { assignRole } from "@/lib/line/groups";
@@ -29,6 +30,9 @@ export async function assignLineGroupAction(formData: FormData): Promise<void> {
   const groupId = String(formData.get("groupId") ?? "");
   const role = String(formData.get("role") ?? "");
   assignRole(groupId, role === "order" || role === "slip" ? role : null);
+  // The redirect lands on the page the button is on; without this the client router reuses its cached /staff and the
+  // box keeps the old role until a manual reload (seen live 23/10).
+  revalidatePath("/staff");
   redirect("/staff#line-groups");
 }
 
