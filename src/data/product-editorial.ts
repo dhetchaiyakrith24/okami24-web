@@ -61,7 +61,7 @@ const MBAR9K_COVER = {
   width: 1537,
   height: 920,
   alt: {"th":"M Bar 9K 7 กลิ่นวางเรียงกัน ตัวเครื่องสีดำ ลาย BAR9K สีต่างกันตามกลิ่น","en":"Seven M Bar 9K flavours side by side: the same black body, the BAR9K print in each flavour's colour","zh":"七款 M Bar 9K 并排：同样的黑色机身，BAR9K 字样颜色随口味不同"},
-  caption: {"th":"M Bar 9K 7 จาก 24 กลิ่น","en":"7 of the 24 M Bar 9K flavours","zh":"M Bar 9K 24 种口味中的 7 种"},
+  caption: {"th":"ตัวอย่าง 7 กลิ่นของ M Bar 9K","en":"Seven M Bar 9K flavours","zh":"七款 M Bar 9K 口味"},
 };
 const CAPTION_PACKS = {"th":"กล่อง M Bar 9K 4 กลิ่น จากตารางกลิ่นของ SALTHUB แต่ละกล่องเป็นสีของกลิ่นนั้นและมีชื่อกลิ่นกำกับ","en":"Four M Bar 9K packs from SALTHUB's flavour chart, each in its flavour's colour and labelled with the flavour name.","zh":"SALTHUB 口味表中的 4 款 M Bar 9K 包装，每款为对应口味的颜色并印有口味名称。"};
 
@@ -275,7 +275,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               paragraphs: [
                 "The M Bar 10K is from the same family, rated at up to 10,000 puffs, in 12 flavours. The main difference is modes: on the 10K, a double-click switches between Eco, Soft and Boost, an RGB light shows which mode you're in, and an LED shows the battery in 25% steps. SALTHUB lists no modes for the 9K.",
                 "Both have the same battery size, and the table sets each figure side by side. If you want more flavours to choose from, the 9K has the wider range; if you'd like to change the strength as you vape, the 10K is the one to look at.",
-                "If you vape disposables regularly and would rather not replace the whole device each time, the [M Switch Kit](/products/m-switch-kit) is another route: a reusable device where you keep the body and swap a prefilled M Switch Pod when it runs out or when you want a different flavour. See [disposable vs switch pod](/guides/disposable-vs-switch-pod) for how the two compare.",
+                "If you vape disposables regularly and would rather not replace the whole device each time, the [M Switch Kit](/products/m-switch-kit) is another route: a reusable device where you keep the body and swap a prefilled M Switch Pod when it runs out or when you want a different flavour.",
               ],
             },
           ],
@@ -399,7 +399,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               paragraphs: [
                 "M Bar 10K 属于同一系列，最高 10,000 口，共 12 种口味。两者的主要区别在于模式：10K 双击即可在 Eco、Soft、Boost 之间切换，RGB 灯显示当前模式，LED 以 25% 为一档显示电量；SALTHUB 未为 9K 标注模式。",
                 "两款电池容量相同，具体数值可在对比表中逐项查看。想要更多口味可选，9K 的选择更多；想边抽边切换力度，可以看看 10K。",
-                "如果你经常使用一次性电子烟，又不想每次整支更换，[M Switch Kit](/products/m-switch-kit) 是另一种选择：机身可重复使用，烟弹用完或想换口味时，只需更换预灌装的 M Switch Pod。两种方式的区别见[一次性与换弹式对比](/guides/disposable-vs-switch-pod)。",
+                "如果你经常使用一次性电子烟，又不想每次整支更换，[M Switch Kit](/products/m-switch-kit) 是另一种选择：机身可重复使用，烟弹用完或想换口味时，只需更换预灌装的 M Switch Pod。",
               ],
             },
           ],
