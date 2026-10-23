@@ -82,8 +82,22 @@ export function OrderStatusView({
     <>
       <PageHeader eyebrow={dict.orderStatus.eyebrow} title={dict.orderStatus.pageTitle} />
       <Container className="flex max-w-xl flex-col gap-8 py-12 lg:py-16">
-        {/* Cart UX batch A (owner 24/10): a thank-you once the slip is in — from "payment submitted" to "completed". */}
-        {paidOrLater && <p className="text-base font-medium text-foreground">{dict.orderStatus.thankYouLine}</p>}
+        {/* A thank-you once the slip is in — from "payment submitted" to "completed". Owner 24/10: his wording, big and bold
+            ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
+            brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
+            PageHeader's tight 0.95 would clip Thai vowels). */}
+        {paidOrLater && (
+          <div className="okami-thanks">
+            <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
+            <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
+              <span className="block">{dict.orderStatus.thankYouLead}</span>
+              <span className="block whitespace-nowrap">
+                {dict.orderStatus.thankYouTail}{" "}
+                <span className="font-display font-extrabold text-red-strong [text-shadow:0_0_24px_rgba(242,48,48,0.25)]">OKami24</span>
+              </span>
+            </p>
+          </div>
+        )}
         <div className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
