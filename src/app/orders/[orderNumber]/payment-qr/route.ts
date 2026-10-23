@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { NextResponse, type NextRequest } from "next/server";
 import { getOrderDetailForViewer } from "@/lib/commerce/orders";
 import { promptpayQrPath } from "@/data/payment";
+import { amountQrPng } from "@/lib/commerce/promptpay-qr";
 
 /**
  * Serves the shop's PromptPay QR to the viewer of ONE order — owner rule 2026-09-06: the QR is
@@ -18,7 +19,9 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ord
   if (!order || order.status !== "pending_payment") return new NextResponse(null, { status: 404 });
 
   try {
-    const file = await readFile(promptpayQrPath());
+    // Owner 23/10 (BSOT §9): the QR carries this order's total, so the banking app fills the amount in. If the shop
+    // QR cannot be turned into one, the owner's file is served as before (the page note then says to type the total).
+    const file = (await amountQrPng(order.total)) ?? (await readFile(promptpayQrPath()));
     return new NextResponse(new Uint8Array(file), {
       status: 200,
       headers: {

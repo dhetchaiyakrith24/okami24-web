@@ -12,7 +12,7 @@ export type StaffAction = "confirm" | "to-warehouse" | "ship" | "complete" | "ca
 export const STAFF_ACTIONS: Record<StaffAction, { label: string; path: OrderStatus[] }> = {
   confirm: { label: "ยืนยันยอดเงินแล้ว", path: ["awaiting_verification", "approved"] },
   "to-warehouse": { label: "ส่งรายการให้คลังแล้ว", path: ["processing"] },
-  ship: { label: "ส่งของแล้ว (ใส่เลขพัสดุ)", path: ["processing", "shipped"] },
+  ship: { label: "ส่งของแล้ว (เลือกขนส่ง + ใส่เลขพัสดุ)", path: ["processing", "shipped"] },
   complete: { label: "ลูกค้าได้รับของแล้ว", path: ["completed"] },
   cancel: { label: "ยกเลิกออเดอร์", path: ["cancelled"] },
 };

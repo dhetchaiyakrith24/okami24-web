@@ -7,6 +7,7 @@ import { computeOrderTotals } from "./pricing";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
 import type { OrderStatus } from "./order-status";
+import { toCarrierId, type CarrierId } from "./carriers";
 
 export interface OrderSummary {
   id: number;
@@ -45,6 +46,8 @@ export interface OrderDetail extends OrderSummary {
   statusHistory: { status: string; note: string | null; createdAt: string }[];
   /** Parcel tracking number staff entered when shipping (migration 0010); null until then. */
   trackingNumber: string | null;
+  /** Which carrier took the parcel (migration 0011, owner 23/10); null until shipped, or for orders shipped before it. */
+  carrier: CarrierId | null;
 }
 
 interface OrderRow {
@@ -58,6 +61,7 @@ interface OrderRow {
   total: number;
   created_at: string;
   tracking_number?: string | null;
+  carrier?: string | null;
 }
 
 function toSummary(row: OrderRow): OrderSummary {
@@ -270,6 +274,7 @@ function assembleDetail(row: OrderRow): OrderDetail {
     },
     statusHistory: history.map((h) => ({ status: h.status, note: h.note, createdAt: h.created_at })),
     trackingNumber: row.tracking_number ?? null,
+    carrier: toCarrierId(row.carrier),
   };
 }
 

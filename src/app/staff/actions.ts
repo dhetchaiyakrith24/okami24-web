@@ -46,6 +46,7 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
   if (!(action in STAFF_ACTIONS)) redirect(`${back}?error=not-allowed`);
   const result = applyStaffAction(orderNumber, action as StaffAction, {
     tracking: String(formData.get("tracking") ?? ""),
+    carrier: String(formData.get("carrier") ?? ""),
     note: String(formData.get("note") ?? ""),
   });
   redirect(result.ok ? `${back}?done=${action}` : `${back}?error=${result.error}`);

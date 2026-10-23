@@ -2,6 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { getOrderDetailInternal, type OrderDetail } from "@/lib/commerce/orders";
 import type { OrderStatus } from "@/lib/commerce/order-status";
+import { toCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
@@ -130,13 +131,20 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   };
 }
 
-export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" | "not-allowed" | "tracking" | "note" };
+export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" | "not-allowed" | "tracking" | "carrier" | "note" };
 
-export function applyStaffAction(orderNumber: string, action: StaffAction, input: { tracking?: string; note?: string }): StaffActionResult {
+export function applyStaffAction(
+  orderNumber: string,
+  action: StaffAction,
+  input: { tracking?: string; carrier?: string; note?: string }
+): StaffActionResult {
   const db = getDb();
   const note = (input.note ?? "").trim().slice(0, 300);
   const tracking = action === "ship" ? cleanTracking(input.tracking ?? "") : null;
   if (action === "ship" && !tracking) return { ok: false, error: "tracking" };
+  // Staff pick the carrier with the number — never guessed from it (owner 23/10: the order page names it).
+  const carrier = action === "ship" ? toCarrierId(input.carrier) : null;
+  if (action === "ship" && !carrier) return { ok: false, error: "carrier" };
   // A cancellation always says why — after a transfer it is the out-of-stock refund/swap case (owner 22/10).
   if (action === "cancel" && note.length < 3) return { ok: false, error: "note" };
 
@@ -151,13 +159,13 @@ export function applyStaffAction(orderNumber: string, action: StaffAction, input
     for (const status of steps) {
       const isLast = status === steps[steps.length - 1];
       const text = isLast
-        ? [`Staff: ${action}`, tracking ? `tracking ${tracking}` : null, note || null].filter(Boolean).join(" — ")
+        ? [`Staff: ${action}`, tracking ? `tracking ${tracking}` : null, carrier ? `carrier ${carrier}` : null, note || null].filter(Boolean).join(" — ")
         : `Staff: ${action}`;
       history.run(row.id, status, text);
     }
     db.prepare(
-      `UPDATE orders SET status = ?, tracking_number = COALESCE(?, tracking_number), updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`
-    ).run(steps[steps.length - 1], tracking, row.id);
+      `UPDATE orders SET status = ?, tracking_number = COALESCE(?, tracking_number), carrier = COALESCE(?, carrier), updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`
+    ).run(steps[steps.length - 1], tracking, carrier, row.id);
     return { ok: true };
   })();
 }
