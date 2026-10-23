@@ -12764,5 +12764,17 @@
   },
   "note": "line 1 23/10 - correction (Friday 23/10): the #388 photo on this option showed a different coil; the two 1.2Ω PnP coils are TR1 (teal ring, the shop's \"ฟ้า\" = -12) and C1 (white/clear ring), so \"1.2Ω ยางขาว\" (-11) is C1",
   "fileName": "variant-coil-1-11-c1.webp"
+ },
+ {
+  "source": "_incoming/sweep-2310/nex/gi-A-final.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-1",
+  "note": "image sweep 23/10 - Nexswitch 16K pod Grape Ice (Max Pod-162-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome; one render from the live Watermelon pod photo (body/framing) + the Grape Ice poster crop (label); the label was then moved onto the live Watermelon body (_incoming/sweep-2310/nex/lift.js, copied from the 22/10 set) so the set keeps one body",
+   "reference": "pod789.com Nexswitch poster filed as Grape but printed GRAPE ICE (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Grape.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/sweep-2310/nex/Grape.jpg",
+   "fidelitySheet": "_incoming/sweep-2310/nex/fid-gi.png (final, poster crop, label close-up)"
+  }
  }
 ]
