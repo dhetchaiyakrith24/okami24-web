@@ -88,10 +88,15 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
         return;
       }
       setCount(next);
-      // Wait one frame so a first-time bubble is in the layout before measuring where the dot lands.
-      requestAnimationFrame(() => {
+      // A first-time bubble mounts only after React commits the new count — wait up to ~10 frames for it before
+      // measuring where the dot lands (found in the first-add test: one frame was not always enough).
+      let frames = 0;
+      const fly = () => {
         const fab = fabRef.current;
-        if (!fab) return;
+        if (!fab) {
+          if (++frames < 10) requestAnimationFrame(fly);
+          return;
+        }
         const to = fab.getBoundingClientRect();
         const dx = to.left + to.width / 2 - from.x;
         const dy = to.top + to.height / 2 - from.y;
@@ -122,7 +127,8 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
             { duration: 700, easing: "ease-out" },
           );
         };
-      });
+      };
+      requestAnimationFrame(fly);
     };
     window.addEventListener(CART_ADDED_EVENT, onAdded);
     return () => window.removeEventListener(CART_ADDED_EVENT, onAdded);
