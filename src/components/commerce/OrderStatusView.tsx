@@ -184,7 +184,7 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                 </dl>
                 {qrHref && (
                   <div className="flex flex-col gap-2">
-                    <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
+                    <p className="text-sm text-foreground-muted">{payment.qrHasAmount ? dict.orderStatus.paymentQrAmountNote : dict.orderStatus.paymentQrNote}</p>
                     {/* plain <img>: the route handler is per-order and sends no-store, so next/image's
                         optimizer cache must not sit in front of it.
                         320×320: the served file is now the QR square only (500×500). The owner's

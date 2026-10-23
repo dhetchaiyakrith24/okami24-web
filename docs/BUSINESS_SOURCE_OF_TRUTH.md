@@ -331,6 +331,13 @@ No slip image, name or account number is stored (same line as the staff page). C
 New-order and slip alerts go to the team's own LINE group through a separate LINE OA bot "OKM ORDER" (@691qxpxp, not
 @okm24); a second group "OKM Slip" gets the bot's EasySlip answer for slips staff drop in there.
 
+**QR carries the order amount (owner 2026-10-23, chat — "A ครับทำได้"):** the PromptPay QR on the order page is redrawn per
+order with the order total filled in (the customer's bank app shows the amount; the customer does not type it). The
+receiver part of the code is copied unchanged from the owner's QR file, so the money still goes to the same PromptPay
+wallet and the "recognised by the QR's reference" slip rule above still holds. Any failure to build the amount QR → the
+page shows the owner's original QR file and the old note. **Owner step before go-live:** scan one order's QR with a real
+bank app (amount filled · receiver = the shop). Code: `src/lib/commerce/promptpay-amount.ts` + `promptpay-qr.ts`.
+
 ---
 
 ## 10. Shipping
