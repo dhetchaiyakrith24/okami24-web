@@ -499,6 +499,9 @@ export const th: Dictionary = {
     contactLineCta: "สอบถามทาง LINE",
     placeOrderCta: "ยืนยันคำสั่งซื้อ",
     changeAddressCta: "เปลี่ยนที่อยู่",
+    noteToggle: "หมายเหตุถึงร้าน (ไม่บังคับ)",
+    notePlaceholder: "เช่น ช่วงเวลาที่สะดวกรับของ",
+    noteHint: "ทีมงานจะเห็นข้อความนี้ในหน้าคำสั่งซื้อ · ไม่เกิน 200 ตัวอักษร",
   },
   orderLookup: {
     eyebrow: "คำสั่งซื้อของคุณ",
