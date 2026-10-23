@@ -482,6 +482,7 @@ export const zh: Dictionary = {
     paymentCopyCta: "复制账号",
     paymentCopiedLabel: "已复制",
     paymentSubmittedNote: "已收到您的转账凭证，管理员正在核对款项。订单有进展时，本页状态会随之更新。",
+    thankYouLine: "感谢您在 OKami24 下单。",
     slipUploadTitle: "上传转账凭证",
     slipUploadPick: "点击选择凭证图片",
     slipUploadChange: "点击更换图片",

@@ -587,6 +587,8 @@ export interface Dictionary {
     paymentCopyCta: string;
     paymentCopiedLabel: string;
     paymentSubmittedNote: string;
+    /** Shown on the order page from "payment submitted" onwards (cart UX batch A, owner 24/10). */
+    thankYouLine: string;
     slipUploadTitle: string;
     slipUploadPick: string;
     slipUploadChange: string;
