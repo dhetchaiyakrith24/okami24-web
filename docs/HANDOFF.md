@@ -11,7 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~02:15 = 4cf0a979 (#789). Merged 24/10 by the main chat [ตรวจแล้ว deploy
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~03:45 = cf315d91 (#792). Later 24/10 [ตรวจแล้ว deploy success + live 200]:
+  #791 hourly stock rule · #792 cart UX B (floating cart bubble above LINE + `/api/cart/count` + add moment; thank-you heading "ขอบคุณที่ไว้วางใจ /
+  และใช้บริการกับ OKami24" big bold, brand in Barlow Condensed red). Merged 24/10 by the main chat [ตรวจแล้ว deploy
   status success + live curl 200]: #787 cart go-live batch (= #773 carrier/tracking/green shipped glow + #775 QR carries the order total + #746
   go-live docs; one deploy) · #788 VOOPOO PnP X coil (Coil-92) ฿130 → ฿150 (owner/admin in chat; live price 150) · #789 cart UX batch A (line
   photos in cart/review/order page via `lineImage()`, warm amber "รอชำระเงิน" pill, thank-you line from payment_submitted on, shot.js
@@ -37,7 +39,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner 24/10 ~02:30: "เรื่มชุด B เลยครับ" (quota go) · thank-you line → "ขอบคุณที่ไว้วางใจและใช้บริการกับ OKami24", big bold "Impact ทรงพลัง"
   (rides with batch B) · order tracking = PHONE NUMBER ONLY (owner's pick over Friday's phone+postcode; Friday masks name/address) · real order QR
   scanned by the owner: amount filled [owner 24/10 "ยอดเงินขึ้นแล้ว"].
-  NEXT: cart UX batch B (designer first) → order tracking by phone (full set: customer data) → C (full set) → D (designer) → E (full set) — 3c.
+  NEXT: order tracking by phone (full set: customer data — ASK the owner first: "เบอร์โทร" read as phone-only C, checker says it could also be A
+  phone+postcode) → C (full set) → D (designer) → E (full set) — 3c. Context 58% at 24/10 ~03:45 → start the tracking feature in a NEW chat.
+  Test-build kit for cart work: `_incoming/cartux-a/` (data-b3 = fresh DB; build with OKAMI24_ORDERING=on via `OKAMI24_ORDERING=on npx tsx
+  scripts/verify-catalog.ts --full` = stamp + an ordering-on build in one run; the Browser pane must be fronted or rAF/animations pause).
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
   render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
   (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
@@ -66,8 +71,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner rulings 23–24/10 (round): checkout stays phone-only (no OTP, no LINE login) · green "shipped" glow approved = the style for key-moment
   effects site-wide ("ยืนบนความเรียบหรู") · LAUNCH_AUDIT 44 seven criteria superseded by the 22/10 go-live ruling (in #746) · off-site backup
   (R2/B2) queued until after the cart setup; meanwhile the Excel export (#782) · test-order shots OK · IQOS colour names = Friday decides.
-  CART UX ROUND (owner 24/10 ~00:30, all approved; taste = Friday, reversible): A DONE 24/10 = #789 (line photos 64 px · amber pill · thank-you
-  line th "ขอบคุณที่เลือกสั่งซื้อกับ OKami24" written by Friday, not thai-copy — quota; owner taste check pending) · B add-to-cart animation + floating cart button
+  CART UX ROUND (owner 24/10 ~00:30, all approved; taste = Friday, reversible): A DONE 24/10 = #789 (line photos 64 px · amber pill) · B DONE
+  24/10 = #792 (designer option A "ฟองกระจกคู่"; count from /api/cart/count because pages are prerendered — never add cookies() to the layout;
+  addToCartAction returns {ok,count}; known, not fixed: the add form needs JS now, double tap while pending adds twice) · was B: add-to-cart animation + floating cart button
   bottom-right above the LINE button, only when the cart has items, count badge, small nudge on add (owner "A") · C preselect the last-used
   saved address and go straight to review + OPTIONAL collapsed "หมายเหตุถึงร้าน" ≤200 chars, staff page only, NOT in the LINE alert (owner "A") ·
   D cart upsell row: half same brand/category in stock + half shop best-sellers (owner "A+B ครึ่ง ๆ"). designer for B + D, tier B shots,
