@@ -71,7 +71,7 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
           return (
             <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-[190px] w-[84px]" : "h-52 w-20 sm:h-72 sm:w-28")}>
               {/* the device renders carry wide transparent margins: cover + scale crops them so the device fills its box */}
-              <Image src={src.src} alt={src.alt} fill loading="eager" sizes={image.kind === "packs" ? "84px" : "112px"} className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
+              <Image src={src.src} alt={src.alt} fill loading="eager" sizes={image.kind === "packs" ? "84px" : "300px"} className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
             </div>
           );
         })}
@@ -207,7 +207,7 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                         >
                           {f.image && (
                             <div className="relative aspect-[3/4] overflow-hidden">
-                              <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 8vw, 24vw" className="scale-125 object-cover" />
+                              <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 11vw, 34vw" className="scale-125 object-cover" />
                             </div>
                           )}
                           <span className="block px-1 pb-2 text-[11px] leading-tight text-foreground">{f.name}</span>

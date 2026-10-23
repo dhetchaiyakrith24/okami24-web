@@ -53,9 +53,7 @@ const MBAR9K_GROUPS = {
   fruit: ["apple-aloe", "mixberry", "orange-sour", "peach", "peach-strawberry", "pink-berry", "sparkling-lemon", "strawberry", "strawberry-kiwi", "strawberry-milkshake", "watermelon", "watermelon-bubblegum"],
   other: ["cola", "rainbow-candy", "sour-gummy", "zapple"],
 };
-const MBAR9K_DEVICES = ["grape-aloe", "blue-ice", "peach"];
 const MBAR9K_PACKS = ["grape-aloe", "blue-ice", "peach", "cola"];
-const CAPTION_DEVICES = {"th":"M Bar 9K ตัวเครื่องสีดำ ตัวอักษร BAR9K และโลโก้ M พิมพ์เป็นสีของกลิ่น","en":"M Bar 9K: a black body, with the BAR9K lettering and M logo printed in the flavour's colour.","zh":"M Bar 9K 黑色机身，BAR9K 字样与 M 标志以口味对应颜色印制。"};
 const MBAR9K_COVER = {
   kind: "image" as const,
   src: "/assets/products/m-bar-9k/story-lineup.webp",
@@ -119,8 +117,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "ทุกกลิ่นตัวเครื่องสีดำ แล้วจะรู้ได้ยังไงว่าเป็นกลิ่นไหน",
               paragraphs: [
                 "M Bar 9K ทุกกลิ่นใช้ตัวเครื่องสีดำแบบเดียวกัน ดูกลิ่นได้จากสีของตัวอักษร BAR9K กับโลโก้ M บนตัวเครื่อง แต่ละกลิ่นพิมพ์ด้วยสีของตัวเอง",
-              ],
-              image: { kind: "devices", ids: MBAR9K_DEVICES, caption: CAPTION_DEVICES },
+              ],
             },
             {
               heading: "",
@@ -152,7 +149,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               paragraphs: [
                 "M Bar 10K เป็นรุ่นในตระกูลเดียวกัน สูบได้สูงสุด 10,000 พัฟ และมีให้เลือก 12 กลิ่น ส่วนที่ต่างจาก 9K หลัก ๆ คือเรื่องโหมด รุ่น 10K กดสองครั้งติดกันเพื่อสลับโหมด Eco · Soft และ Boost ได้ มีไฟ RGB บอกว่าตอนนี้อยู่โหมดไหน และมีไฟ LED บอกระดับแบตทีละ 25% ขณะที่ SALTHUB ไม่ได้ระบุโหมดไว้สำหรับรุ่น 9K",
                 "แบตของทั้งสองรุ่นมีขนาดเท่ากัน ตัวเลขแต่ละข้อร้านวางเทียบไว้ในตารางแล้ว ถ้าอยากได้กลิ่นให้เลือกหลายแนว M Bar 9K มีตัวเลือกมากกว่า แต่ถ้าอยากปรับความแรงได้ตามจังหวะการสูบ M Bar 10K ก็น่าดูกว่า",
-                "ถ้าสูบพอตใช้แล้วทิ้งเป็นประจำ และไม่อยากเปลี่ยนเครื่องใหม่ทุกครั้งที่น้ำยาหมด อีกทางที่น่าดูคือ [M Switch Kit](/products/m-switch-kit) เครื่องระบบสวิตช์ที่ใช้ตัวเครื่องเดิมต่อไปได้ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ M Switch Pod เมื่อหัวเดิมหมดหรืออยากเปลี่ยนกลิ่น สองแบบนี้ต่างกันยังไง อ่านต่อได้ที่[เทียบกับพอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+                "ถ้าสูบพอตใช้แล้วทิ้งเป็นประจำ และไม่อยากเปลี่ยนเครื่องใหม่ทุกครั้งที่น้ำยาหมด อีกทางที่น่าดูคือ [M Switch Kit](/products/m-switch-kit) เครื่องระบบสวิตช์ที่ใช้ตัวเครื่องเดิมต่อไปได้ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ [M Switch Pod](/products/m-switch-pod) เมื่อหัวเดิมหมดหรืออยากเปลี่ยนกลิ่น สองแบบนี้ต่างกันยังไง อ่านต่อได้ที่[เทียบกับพอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
               ],
             },
           ],
@@ -243,8 +240,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "Every flavour has the same black body. So how do you tell them apart?",
               paragraphs: [
                 "Every M Bar 9K shares the same black body. What sets each flavour apart is the colour of the BAR9K lettering and the M logo printed on it, and each flavour has its own.",
-              ],
-              image: { kind: "devices", ids: MBAR9K_DEVICES, caption: CAPTION_DEVICES },
+              ],
             },
             {
               heading: "",
@@ -367,8 +363,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
               heading: "所有口味都是黑色机身，怎么区分？",
               paragraphs: [
                 "M Bar 9K 每个口味都采用同样的黑色机身，区别在于机身上 BAR9K 字样和 M 标志的印刷颜色，每个口味各有专属颜色。",
-              ],
-              image: { kind: "devices", ids: MBAR9K_DEVICES, caption: CAPTION_DEVICES },
+              ],
             },
             {
               heading: "",
