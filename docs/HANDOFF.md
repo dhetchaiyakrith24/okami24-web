@@ -50,6 +50,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   password) → do both on 25/10; propose the login design first (login system = central §8 ask). Cart UX C DONE #795 (last-used address → review;
   optional note → orders.customer_note, staff page only; migration 0012; checker notes not fixed: Back from review returns to review, a typed note is lost if placing fails). NEXT: D upsell row in the cart
   (owner asked again 24/10 "สินค้าเลือกเพิ่มเติม" — designer first) → E (full set) — 3c.
+  OWNER FIXES 24/10 ~03:10 from his phone on the live site (do FIRST on 25/10, one batch, tier B):
+  (a) product pages (phone): the floating cart bubble sits above the buy bar over the page — move it INTO the buy bar beside the CTA
+      ("แถบนี้ตามไปทุกหน้า") and hide the floating bubble while `.mobile-buy-bar` is on screen (badge stays);
+  (b) the CTA label "เลือกกลิ่นก่อน" (no option picked yet) → better wording (thai-copy; owner asked what it should be);
+  (c) cart page: the totals card (sm:w-80, right) does not match the full-width item card above — make them one width / one column
+      (or propose a better layout); check the review page boxes too;
+  (d) review step: "เปลี่ยนที่อยู่" is too small (ghost text-xs) → a real secondary button; for a RETURNING customer (address preselected,
+      batch C) the label "จัดส่งไปยัง" → owner idea "จัดส่งที่อยู่เดิมใช่ไหมคะ?"-style confirm wording; new customers keep "จัดส่งไปยัง".
+  Then: login page + member promo (รอพี่ตรวจ 75 · propose the login design first) · D upsell row.
   Test-build kit for cart work: `_incoming/cartux-a/` (data-b3 = fresh DB; build with OKAMI24_ORDERING=on via `OKAMI24_ORDERING=on npx tsx
   scripts/verify-catalog.ts --full` = stamp + an ordering-on build in one run; the Browser pane must be fronted or rAF/animations pause).
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
