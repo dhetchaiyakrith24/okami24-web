@@ -26,6 +26,13 @@ export function optionShare(infos: (ImageDisplayInfo | null | undefined)[]): num
   return shares.length ? shares[Math.floor(shares.length / 2)] : OPTION_PRODUCT_SHARE;
 }
 
+/** An option photo as `optionShare` should measure it: one marked `ownFloor` has its studio shadow baked in under the
+ *  device, so its product is the body without that floor (`productLongBody`) — else the card is matched to device +
+ *  shadow and still draws the device bigger than the options (line 1 23/10). */
+export function optionPhotoInfo(info: ImageDisplayInfo | null | undefined, ownFloor?: boolean): ImageDisplayInfo | null | undefined {
+  return ownFloor && info?.productLongBody ? { ...info, productLong: info.productLongBody } : info;
+}
+
 /** Height of the card's canvas as a share of the frame's shorter side, or null when it cannot be matched. */
 export function optionScale(info: ImageDisplayInfo | null | undefined, share: number | null): number | null {
   return info?.productLong && share !== null ? (info.height * share) / info.productLong : null;

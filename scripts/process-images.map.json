@@ -13008,5 +13008,14 @@
    "reference": "real Black Purple Indonesia pack photo at a retailer: https://vapdeals.ae/wp-content/uploads/2026/10/IQOS-Terea-Black-Purple-From-Indonesia.jpg (1875 px; artwork only - _incoming/iq/bp-ref.jpg); IQOS sells it on iqos.com/id (G0001989) with only a 10-sticks graphic, flavour pill \"Forest Berry\"",
    "fidelitySheet": "_incoming/iq/bp-fid.jpg - retail pack | ours | live Dimensions Apricity pack"
   }
+ },
+ {
+  "source": "public/assets/products/vinci-s/variant-black-v3.webp",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "black",
+  "fileName": "variant-black-v4.webp",
+  "note": "image run 23/10 (line 1) - VINCI S Black re-fitted to its siblings: v3 carried a faint haze (alpha 17-40) from y 80 to 144 above the clear pod, so it was fitted as if the device reached y 80 and the real device stood ~8% smaller than every other colour. No new render: 53 haze pixels cleared, then the photo scaled 830/765 about its foot (device top 80, shadow foot 910 - measured equal to Silver/Grey at alpha 16/40/128/245), webp q82",
+  "replaces": "/assets/products/vinci-s/variant-black-v3.webp"
  }
 ]
