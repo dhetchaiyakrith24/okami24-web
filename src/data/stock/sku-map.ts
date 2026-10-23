@@ -785,16 +785,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Variation 2217": null,
   } },
   // Round list19 (18/10): Pop Up 10K pod — its 18 flavour rows (the battery base Pod-154-19 is not an option of this page).
-  // Round list19 (18/10): SKE Crystal B20000 — Max parent "Product 1141360", children keep the Pod-149-* codes.
-  "pod-149": { parent: "Product 1141360", options: {
-    "Pod-149-1": "Pod-149-1",
-    "Pod-149-2": "Pod-149-2",
-    "Pod-149-3": "Pod-149-3",
-    "Pod-149-4": "Pod-149-4",
-    "Pod-149-5": "Pod-149-5",
-    "Pod-149-6": "Pod-149-6",
-    "Pod-149-7": "Pod-149-7",
-    "Pod-149-8": "Pod-149-8",
+  // Round list19 (18/10): SKE Crystal B20000. Owner 23/10: discontinued, its Max rows are gone (read 23/10) — page and all 8 flavours stay, shown sold out (null).
+  "pod-149": { parent: null, options: {
+    "Pod-149-1": null,
+    "Pod-149-2": null,
+    "Pod-149-3": null,
+    "Pod-149-4": null,
+    "Pod-149-5": null,
+    "Pod-149-6": null,
+    "Pod-149-7": null,
+    "Pod-149-8": null,
   } },
   // Round list19 (18/10): Marbo Saltnic — Max parent ELQ-1 (old seed id ELIQUID-1); the ฿807 bundle ELIQUID-1-1 is not an option.
   // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5, old seed Eliquid-72) · Dundu Salt Nic (Max Eliquid-73).
