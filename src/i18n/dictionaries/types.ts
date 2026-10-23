@@ -22,6 +22,7 @@ export interface Dictionary {
     search: string;
     favorites: string;
     cart: string;
+    trackOrder: string;
     openMenu: string;
     closeMenu: string;
     /** Customer-service pages added 2026-09-06 (LAUNCH_AUDIT 3/4): /how-to-order, /shipping,
@@ -562,6 +563,20 @@ export interface Dictionary {
     changeAddressCta: string;
   };
   /** `/orders/[orderNumber]` — order confirmation/status. */
+  /** /orders "ติดตามคำสั่งซื้อ" (owner 24/10: find your orders by phone number only). */
+  orderLookup: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    phoneLabel: string;
+    otherPhoneLabel: string;
+    submitCta: string;
+    /** "{phone}" = the masked number. */
+    listTitle: string;
+    emptyNote: string;
+    errorInvalidPhone: string;
+    errorNotFound: string;
+  };
   orderStatus: {
     eyebrow: string;
     pageTitle: string;
