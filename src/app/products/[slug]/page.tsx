@@ -19,7 +19,7 @@ import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
-import { ProductEditorialFaq, ProductEditorialMain } from "@/components/product/ProductEditorial";
+import { EditorialClip, ProductEditorialFaq, ProductEditorialMain } from "@/components/product/ProductEditorial";
 import { PRODUCT_EDITORIAL } from "@/data/product-editorial";
 import { articleFaqJsonLd } from "@/lib/article-jsonld";
 import { getBrand } from "@/data/brands";
@@ -339,7 +339,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
-          <ProductReviewSection product={product} />
+          <EditorialClip product={product} copy={editorial.copy} />
           <ProductEditorialFaq copy={editorial.copy} />
         </>
       ) : (

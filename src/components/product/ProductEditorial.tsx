@@ -9,8 +9,9 @@ import { renderInline } from "@/components/content/ArticleBody";
 import type { EditorialCopy, EditorialImage } from "@/data/product-editorial";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { verifiedRows } from "@/lib/verified-specs";
-import { thaiTypographyNode } from "@/lib/thai-typography";
+import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import { cn } from "@/lib/utils";
+import { ProductReviewSection } from "@/components/product/ProductReviewSection";
 
 /**
  * Editorial product body — round "M Bar 9K redesign" (owner 23/10 picked draft F: "calm, the article, the details and the
@@ -52,6 +53,14 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
   const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const flavours = product.flavorVariants ?? [];
   const pick = (ids: string[]) => ids.map((id) => flavours.find((f) => f.id === id)).filter((f) => f !== undefined);
+  if (image.kind === "image") {
+    return (
+      <figure className="my-6">
+        <Image src={image.src} alt={image.alt[locale] ?? image.alt.en} width={image.width} height={image.height} sizes="(min-width: 1024px) 760px, 100vw" className="h-auto w-full" />
+        <figcaption className="mt-3 text-center text-xs text-foreground-dim">{t(caption)}</figcaption>
+      </figure>
+    );
+  }
   const items = pick(image.ids);
   return (
     <figure className="my-6 rounded-2xl border border-surface-border-soft bg-surface-1 px-4 py-6 text-center">
@@ -60,9 +69,9 @@ function Figure({ image, caption, product }: { image: EditorialImage; caption: s
           const src = image.kind === "packs" ? f.boxImage : f.image;
           if (!src) return null;
           return (
-            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-64 w-28 sm:h-72 sm:w-32" : "h-52 w-20 sm:h-72 sm:w-28")}>
+            <div key={f.id} className={cn("relative overflow-hidden", image.kind === "packs" ? "h-[190px] w-[84px]" : "h-52 w-20 sm:h-72 sm:w-28")}>
               {/* the device renders carry wide transparent margins: cover + scale crops them so the device fills its box */}
-              <Image src={src.src} alt={src.alt} fill loading="eager" sizes="(min-width: 640px) 128px, 112px" className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
+              <Image src={src.src} alt={src.alt} fill loading="eager" sizes={image.kind === "packs" ? "84px" : "112px"} className={image.kind === "packs" ? "object-contain" : "scale-110 object-cover"} />
             </div>
           );
         })}
@@ -138,9 +147,25 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
           <aside className="lg:order-2 lg:col-span-4">{specPanel}</aside>
           <div className="min-w-0 lg:order-1 lg:col-span-8 lg:max-w-3xl">
             <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{t(c.article.title)}</h2>
+            {c.tocLabel && (
+              <nav aria-label={c.tocLabel} className="mt-6 border-l border-surface-border pl-4">
+                <p className="text-xs text-foreground-dim">{t(c.tocLabel)}</p>
+                <ol className="mt-2 flex flex-col gap-1.5 text-sm">
+                  {c.article.sections.map((s, i) =>
+                    s.heading ? (
+                      <li key={i}>
+                        <a href={`#detail-${i}`} className="text-foreground-muted transition-colors hover:text-ember">
+                          {t(s.heading)}
+                        </a>
+                      </li>
+                    ) : null,
+                  )}
+                </ol>
+              </nav>
+            )}
             <div className="mt-6 flex flex-col">
               {c.article.sections.map((s, i) => (
-                <div key={i} className={s.heading ? "mt-10 first:mt-2" : "mt-2"}>
+                <div key={i} id={s.heading ? `detail-${i}` : undefined} className={cn("scroll-mt-24", s.heading ? "mt-10 first:mt-2" : "mt-2")}>
                   {s.heading && <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{t(s.heading)}</h3>}
                   {s.paragraphs.map((p, pi) => (
                     <p key={pi} className="mt-3 text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
@@ -157,6 +182,7 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
         <div className="mt-16 grid gap-14 border-t border-surface-border-soft pt-12 lg:grid-cols-12 lg:gap-16">
           <div id="flavours" className="scroll-mt-20 lg:col-span-7">
             <h2 className="font-display text-3xl leading-tight font-semibold tracking-tight text-foreground">{t(c.flavours.title)}</h2>
+            {/* photos per group (the article above names every flavour; the hero has the chips) — a tile picks it in the hero */}
             {c.flavours.groups.map((g) => {
               const items = g.ids.map((id) => flavours.find((f) => f.id === id)).filter((f) => f !== undefined);
               if (items.length === 0) return null;
@@ -165,26 +191,26 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                   <h3 className="text-sm text-foreground-muted">
                     {t(g.label)} <span className="text-foreground-dim">· {items.length}</span>
                   </h3>
-                  <ul className="mt-2 flex flex-wrap gap-x-1 text-[0.9375rem] leading-8 text-foreground">
-                    {items.map((f, fi) => (
-                      <li key={f.id} className="inline-flex items-center">
-                        {fi > 0 && (
-                          <span className="mr-1 text-foreground-dim" aria-hidden>
-                            ·
-                          </span>
-                        )}
+                  <ul className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
+                    {items.map((f) => (
+                      <li key={f.id} className="overflow-hidden rounded-lg border border-surface-border-soft bg-surface-1 text-center transition-colors has-[a:hover]:border-ember">
                         <a
                           href={`#option-${f.id}`}
                           onClick={(e) => {
-                            // the same chip twice = no hashchange; ask the hero again (ProductMoreDetails does the same)
+                            // the same tile twice = no hashchange; ask the hero again (ProductMoreDetails does the same)
                             if (window.location.hash === `#option-${f.id}`) {
                               e.preventDefault();
                               window.dispatchEvent(new HashChangeEvent("hashchange"));
                             }
                           }}
-                          className="whitespace-nowrap underline-offset-4 transition-colors hover:text-ember hover:underline"
+                          className="block"
                         >
-                          {f.name}
+                          {f.image && (
+                            <div className="relative aspect-[3/4] overflow-hidden">
+                              <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 8vw, 24vw" className="scale-125 object-cover" />
+                            </div>
+                          )}
+                          <span className="block px-1 pb-2 text-[11px] leading-tight text-foreground">{f.name}</span>
                         </a>
                       </li>
                     ))}
@@ -192,24 +218,7 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                 </div>
               );
             })}
-            <p className="mt-4 text-xs text-foreground-dim">{t(c.flavours.note)}</p>
-            <details className="group mt-5">
-              <summary className="inline-flex cursor-pointer list-none items-center gap-1 border-b border-ember pb-0.5 text-sm text-foreground [&::-webkit-details-marker]:hidden">
-                {t(c.flavours.more)} <span className="transition-transform group-open:rotate-180" aria-hidden>↓</span>
-              </summary>
-              <ul className="mt-5 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8">
-                {flavours.map((f) =>
-                  f.image ? (
-                    <li key={f.id} className="overflow-hidden rounded-lg bg-surface-1 text-center">
-                      <div className="relative aspect-[3/4]">
-                        <Image src={f.image.src} alt={f.image.alt} fill sizes="(min-width: 1024px) 9vw, 22vw" className="scale-110 object-cover" />
-                      </div>
-                      <span className="block px-1 pb-1.5 text-[10px] leading-tight text-foreground-muted">{f.name}</span>
-                    </li>
-                  ) : null,
-                )}
-              </ul>
-            </details>
+            <p className="mt-5 text-xs text-foreground-dim">{t(c.flavours.note)}</p>
           </div>
 
           {sibling && (
@@ -242,6 +251,13 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
       </Container>
     </section>
   );
+}
+
+/** The shop clip with this page's own sentence-case heading (ProductReviewSection keeps its VideoObject JSON-LD). */
+export function EditorialClip({ product, copy }: { product: Product; copy: CopyByLocale }) {
+  const { locale, c } = useCopy(copy);
+  const title = c.clipTitle ? (locale === "th" ? thaiTypography(c.clipTitle) : c.clipTitle) : undefined;
+  return <ProductReviewSection product={product} title={title} />;
 }
 
 export function ProductEditorialFaq({ copy }: { copy: CopyByLocale }) {
