@@ -4,6 +4,7 @@ import { getDb } from "@/lib/db/client";
 import { requireCustomer, getSession } from "./session";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
+import { cleanCustomerNote } from "./customer-note";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
 import type { OrderStatus } from "./order-status";
@@ -101,8 +102,11 @@ export type PlaceOrderResult =
  * `idempotencyKey` — a double-submit or a client retry after a dropped response replays into the
  * SAME order instead of creating a duplicate. See migrations/0001_init.sql's comment on
  * `idempotency_keys` for the concurrency argument.
+ *
+ * `customerNote` (cart UX batch C, owner 24/10): the optional note to the shop from the review step, stored as given after
+ * `cleanCustomerNote` — never used for money, stock or the LINE alert.
  */
-export async function placeOrder(addressId: number, idempotencyKey: string): Promise<PlaceOrderResult> {
+export async function placeOrder(addressId: number, idempotencyKey: string, customerNote: string | null = null): Promise<PlaceOrderResult> {
   const customer = await requireCustomer();
   const db = getDb();
 
@@ -148,10 +152,10 @@ export async function placeOrder(addressId: number, idempotencyKey: string): Pro
       const viewToken = crypto.randomBytes(16).toString("hex");
       const insertOrder = db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, status, subtotal, shipping_fee, total, payment_method)
-           VALUES (?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer')`
+          `INSERT INTO orders (order_number, view_token, customer_id, status, subtotal, shipping_fee, total, payment_method, customer_note)
+           VALUES (?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer', ?)`
         )
-        .run(orderNumber, viewToken, customer.id, totals.subtotal, totals.shippingFee, totals.total);
+        .run(orderNumber, viewToken, customer.id, totals.subtotal, totals.shippingFee, totals.total, cleanCustomerNote(customerNote));
       const newOrderId = Number(insertOrder.lastInsertRowid);
 
       const insertItem = db.prepare(

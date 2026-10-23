@@ -561,6 +561,10 @@ export interface Dictionary {
     contactLineCta: string;
     placeOrderCta: string;
     changeAddressCta: string;
+    /** Cart UX batch C (owner 24/10): the optional, closed-by-default note to the shop on the review step. */
+    noteToggle: string;
+    notePlaceholder: string;
+    noteHint: string;
   };
   /** `/orders/[orderNumber]` — order confirmation/status. */
   /** /orders "ติดตามคำสั่งซื้อ" (owner 24/10: find your orders by phone number only). */

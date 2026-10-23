@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { placeOrderAction } from "@/app/checkout/actions";
+import { CUSTOMER_NOTE_MAX } from "@/lib/commerce/customer-note";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
@@ -79,7 +80,8 @@ export function ReviewStepView({
               {address.line1}, {address.subdistrict}, {address.district}, {address.province} {address.postalCode}
             </p>
           </div>
-          <Button href="/checkout/address" variant="ghost" className="self-start px-0 text-xs">
+          {/* ?choose=1: the address step otherwise jumps straight back here with the last-used address (batch C). */}
+          <Button href="/checkout/address?choose=1" variant="ghost" className="self-start px-0 text-xs">
             {dict.checkout.changeAddressCta}
           </Button>
         </div>
@@ -89,9 +91,28 @@ export function ReviewStepView({
           <p className="text-sm text-foreground-muted">{dict.checkout.paymentPendingNote}</p>
         </div>
 
-        <form action={placeOrderAction}>
+        <form action={placeOrderAction} className="flex flex-col gap-4">
           <input type="hidden" name="addressId" value={addressId} />
           <input type="hidden" name="idempotencyKey" value={idempotencyKey} />
+          {/* Cart UX batch C (owner 24/10): an OPTIONAL note to the shop, closed by default so it never slows the order down.
+              Staff see it on the order's staff page only (not the LINE alert). */}
+          <details className="group rounded-xl border border-surface-border-soft bg-surface-1">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 p-4 text-sm text-foreground [&::-webkit-details-marker]:hidden">
+              <span>{dict.checkout.noteToggle}</span>
+              <span aria-hidden className="text-foreground-dim transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div className="flex flex-col gap-2 px-4 pb-4">
+              <textarea
+                name="customerNote"
+                maxLength={CUSTOMER_NOTE_MAX}
+                rows={3}
+                aria-label={dict.checkout.noteToggle}
+                placeholder={dict.checkout.notePlaceholder}
+                className="w-full resize-none rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
+              />
+              <p className="text-xs text-foreground-dim">{dict.checkout.noteHint}</p>
+            </div>
+          </details>
           <Button type="submit" className="w-full justify-center">
             {dict.checkout.placeOrderCta}
           </Button>

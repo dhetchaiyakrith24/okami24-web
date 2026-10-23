@@ -467,6 +467,9 @@ export const en: Dictionary = {
     contactLineCta: "Ask on LINE",
     placeOrderCta: "Place order",
     changeAddressCta: "Change address",
+    noteToggle: "Note to the shop (optional)",
+    notePlaceholder: "e.g. a good time to receive the parcel",
+    noteHint: "Our team sees this note with your order · up to 200 characters",
   },
   orderLookup: {
     eyebrow: "Your orders",

@@ -112,6 +112,14 @@ export default async function StaffOrderPage({
         )}
       </section>
 
+      {/* Cart UX batch C (owner 24/10): the customer's optional note — here only (not in the LINE alert, not in the export). */}
+      {order.customerNote && (
+        <section className="flex flex-col gap-2 rounded-xl border border-ember/40 bg-surface-1 p-5 text-sm">
+          <h2 className="text-base font-semibold text-foreground">หมายเหตุจากลูกค้า</h2>
+          <p className="whitespace-pre-wrap break-words text-foreground">{order.customerNote}</p>
+        </section>
+      )}
+
       <section className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm">
         <h2 className="text-base font-semibold text-foreground">สินค้า</h2>
         <ul className="flex flex-col divide-y divide-surface-border-soft">
