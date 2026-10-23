@@ -105,6 +105,11 @@ function legacyProductImageSrcs(product: Product): (string | undefined)[] {
   ];
 }
 
+/** The option photos that carry their own studio floor — only these need the body measurement (OptionScaledCard). */
+function legacyOwnFloorSrcs(product: Product): (string | undefined)[] {
+  return [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].map((v) => (v.image?.ownFloor ? v.image.src : undefined));
+}
+
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
   // — so a production `next build` never statically generates DEV-preview-only slugs, matching
@@ -294,7 +299,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   // hero could ever show (card, lineup, each color/flavor) so switching variants client-side never
   // silently reuses another image's fill decision. See src/lib/media-quality.ts and
   // `legacyProductImageSrcs`'s own doc comment for the bug this fixes.
-  const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product));
+  const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product), legacyOwnFloorSrcs(product));
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
