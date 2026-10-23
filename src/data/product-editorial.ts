@@ -135,7 +135,7 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
                 "สายเย็นมี 4 กลิ่น คือ Blue Ice · Blueberry Mint · Doublemint และ Menthol Freeze ถ้ากำลังหากลิ่นเมนทอล ชื่อในรายการคือ Menthol Freeze",
                 "สายองุ่นมี 4 กลิ่น คือ Grape · Grape Aloe · Grape Lychee และ Kyoho Grape มีทั้งองุ่นอย่างเดียว องุ่นคู่กับอโล และองุ่นคู่กับลิ้นจี่ ส่วนองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape",
                 "สายผลไม้มี 12 กลิ่น คือ Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Kiwi · Strawberry Milkshake · Watermelon และ Watermelon Bubblegum ชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Strawberry Milkshake กับ Watermelon Bubblegum ร้านก็จัดไว้ในสายนี้ด้วย",
-                "แนวอื่นมี 4 กลิ่น คือ Cola · Rainbow Candy · Sour Gummy และ Zapple เป็นชื่อที่ไม่ได้บอกผลไม้ชนิดใดชนิดหนึ่งไว้ตรง ๆ",
+                "แนวอื่นมี 4 กลิ่น คือ Cola · Rainbow Candy · Sour Gummy และ Zapple ชื่อในสายนี้ไม่ได้บอกตรง ๆ ว่าเป็นรสของผลไม้ชนิดไหน",
               ],
               cards: [2, 3, 4, 5],
             },
