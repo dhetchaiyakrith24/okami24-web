@@ -177,8 +177,10 @@ export const relxProducts: Product[] = [
       { id: "rose-gold", name: "Rose Gold", swatchHex: "#f9d3d2", image: infinityPhoto("rose-gold", "Rose Gold") },
       { id: "meteor-flash", name: "Meteor Flash", swatchHex: "#c5c5c7", image: infinityPhoto("meteor-flash", "Meteor Flash") },
       { id: "bronze-dusk", name: "Bronze Dusk", swatchHex: "#b39280", image: infinityPhoto("bronze-dusk", "Bronze Dusk") },
-      // line 2 max-sync (22/10, owner "1 ลง"): Max name, no maker page — no photo yet. Max Pod-105-2 (relxnow.com lists the other 6).
-      { id: "dark-asteroid", name: "Dark Asteroid", swatchHex: "#3a3f4a" },
+      // Max Pod-105-2. Not on relxnow.com (it lists the other 6) but a real RELX colour: the Malaysian dealer vapehaus.com.my sells
+      // "Dark Asteroid" with RELX's store render of it (dark gunmetal grey body, black cap), kissyvape.com names it 深灰 (dark grey).
+      // Photo = the same studio edit as the six above, from that render (image line 1, 23/10).
+      { id: "dark-asteroid", name: "Dark Asteroid", swatchHex: "#7d7e81", image: infinityPhoto("dark-asteroid", "Dark Asteroid") },
     ],
     // relxnow.com spec block + description + the "What's Special" tab (rendered by script — read in a browser 16/10):
     // "Eco Mode … operates at 6.5W" · "Smooth Mode … is set at 8W" · "Boost Mode … reaches an impressive 10W" ·
