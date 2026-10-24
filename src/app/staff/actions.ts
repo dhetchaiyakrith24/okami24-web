@@ -6,6 +6,7 @@ import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/
 import { assignRole } from "@/lib/line/groups";
 import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { applyStaffAction } from "@/lib/staff/orders";
+import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 
 export type StaffLoginState = { error: null | "wrong" | "locked" | "empty"; retryMinutes?: number };
 
@@ -50,4 +51,26 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     note: String(formData.get("note") ?? ""),
   });
   redirect(result.ok ? `${back}?done=${action}` : `${back}?error=${result.error}`);
+}
+
+/** Out of stock after payment (cart UX batch E, owner 24/10): mark lines out (or ask again) · apply the customer's swap ·
+ *  record the refund made in the bank app. The rules are in src/lib/commerce/stock-issues.ts. */
+export async function staffStockAction(formData: FormData): Promise<void> {
+  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const orderNumber = String(formData.get("orderNumber") ?? "");
+  const step = String(formData.get("step") ?? "");
+  const back = `/staff/orders/${encodeURIComponent(orderNumber)}`;
+  const result =
+    step === "open"
+      ? openStockIssue(
+          orderNumber,
+          formData.getAll("itemId").map((v) => Number(v)),
+          String(formData.get("note") ?? "")
+        )
+      : step === "swap"
+        ? applySwap(orderNumber)
+        : step === "refunded"
+          ? markRefunded(orderNumber, String(formData.get("ref") ?? ""))
+          : ({ ok: false, error: "not-allowed" } as const);
+  redirect(result.ok ? `${back}?done=stock-${step}` : `${back}?error=stock-${result.error}`);
 }

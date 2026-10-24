@@ -51,6 +51,16 @@ export function formatOrderAlert(order: OrderDetail, verdict: SlipVerdict, reaso
   ].join("\n");
 }
 
+/** Out of stock after payment (cart UX batch E): the customer chose on the order page. Never the PromptPay number — the
+ *  staff page has it. */
+export function formatStockChoiceAlert(orderNumber: string, choice: "swap" | "refund", siteUrl: string): string {
+  return [
+    `📦 ลูกค้าเลือกแล้ว — สินค้าหมด ${orderNumber}`,
+    choice === "swap" ? "เลือก: เปลี่ยนเป็นสินค้าราคาเท่ากัน (เช็คของที่คลังก่อนกดยืนยัน)" : "เลือก: รับเงินคืนเข้าพร้อมเพย์ (โอนคืนแล้วบันทึกเลขอ้างอิง)",
+    `เปิดดู: ${siteUrl}/staff/orders/${encodeURIComponent(orderNumber)}`,
+  ].join("\n");
+}
+
 /** The bot's answer to a slip dropped into the "OKM Slip" group — the same verdicts as the staff page. */
 export function formatSlipReply(result: SlipCheckResponse, attachedOrder: string | null): string {
   if (!result.ok) {

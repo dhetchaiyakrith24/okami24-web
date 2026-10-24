@@ -4,11 +4,12 @@ import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
+import { availableActions, STAFF_ACTIONS } from "@/lib/staff/order-actions";
 import { getStaffOrder } from "@/lib/staff/orders";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffOrderAction } from "@/app/staff/actions";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
+import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
 
 /**
@@ -31,12 +32,23 @@ const ERROR_TEXT: Record<string, string> = {
   "not-found": "ไม่พบออเดอร์นี้",
 };
 
-const DONE_TEXT: Record<StaffAction, string> = {
+const DONE_TEXT: Record<string, string> = {
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์",
+  "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
+  "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังด้านล่างเป็นรายการใหม่",
+  "stock-refunded": "บันทึกแล้ว: คืนเงินแล้ว ลูกค้าเห็นในหน้าออเดอร์",
+};
+
+const STOCK_ERROR_TEXT: Record<string, string> = {
+  "stock-not-allowed": "ทำขั้นนี้ไม่ได้ (สถานะเปลี่ยนไปแล้ว หรือมีคนกดไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
+  "stock-no-lines": "ติ๊กเลือกสินค้าที่หมดอย่างน้อย 1 รายการ",
+  "stock-swap-invalid": "สินค้าที่ลูกค้าเลือกหมดหรือราคาเปลี่ยนแล้ว — กด \"แจ้งใหม่\" ให้ลูกค้าเลือกอีกครั้ง",
+  "stock-refund-ref": "ใส่เลขอ้างอิงการโอนจากแอปธนาคาร (ตัวอักษรอังกฤษ ตัวเลข 4–60 ตัว)",
+  "stock-not-found": "ไม่พบออเดอร์นี้",
 };
 
 const button =
@@ -73,13 +85,13 @@ export default async function StaffOrderPage({
         </div>
       </header>
 
-      {error && ERROR_TEXT[error] && (
+      {error && (ERROR_TEXT[error] ?? STOCK_ERROR_TEXT[error]) && (
         <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm text-foreground">
-          {ERROR_TEXT[error]}
+          {ERROR_TEXT[error] ?? STOCK_ERROR_TEXT[error]}
         </p>
       )}
       {done && done in DONE_TEXT && (
-        <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done as StaffAction]}</p>
+        <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
       <section className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm">
@@ -129,6 +141,10 @@ export default async function StaffOrderPage({
                 {i.productName}
                 {i.variantLabel ? ` · ${i.variantLabel}` : ""} × {i.quantity}
                 <span className="block text-xs text-foreground-dim">รหัสคลัง {order.lines[idx]?.sku ?? "ไม่มี — ถามเจ้าของร้าน"}</span>
+                {order.stockIssue?.resolution === "refunded" &&
+                  order.stockIssue.outLines.some((l) => l.itemId === order.itemLines[idx]?.itemId) && (
+                    <span className="block text-xs text-unverified">คืนเงินแล้ว — ไม่ส่ง</span>
+                  )}
               </span>
               <span className="whitespace-nowrap text-foreground">{formatBaht(i.lineTotal)}</span>
             </li>
@@ -139,6 +155,8 @@ export default async function StaffOrderPage({
           <span>{formatBaht(order.total)}</span>
         </p>
       </section>
+
+      <StockIssueSection order={order} />
 
       <section className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm">
         <h2 className="text-base font-semibold text-foreground">ส่งถึง</h2>
@@ -211,7 +229,7 @@ export default async function StaffOrderPage({
               </button>
               {order.slip && (
                 <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ยกเลิกได้เฉพาะกรณีของหมด แล้วคืนเงินหรือเปลี่ยนสินค้าราคาเท่ากันตามที่ลูกค้าเลือก
+                  ลูกค้าโอนแล้ว: สินค้าหมดให้ใช้กล่อง &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; ด้านบนแทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
                 </p>
               )}
             </form>

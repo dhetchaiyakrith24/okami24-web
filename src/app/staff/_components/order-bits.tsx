@@ -50,5 +50,11 @@ export function historyNoteTh(note: string): string {
       });
     return `ทีมงาน: ${ACTION_TH[staff[1]] ?? staff[1]}${rest}`;
   }
+  // Out of stock after payment (cart UX batch E) — written by src/lib/commerce/stock-issues.ts.
+  if (note.startsWith("Stock: out after payment")) return `ทีมงาน: แจ้งลูกค้าว่าสินค้าหมด${note.replace(/^Stock: out after payment — lines [\d,]+/, "")}`;
+  if (note.startsWith("Stock: swapped — ")) return `ทีมงาน: เปลี่ยนสินค้าให้แล้ว — ${note.slice("Stock: swapped — ".length)}`;
+  if (note.startsWith("Stock: refunded — ref ")) return `ทีมงาน: คืนเงินแล้ว — เลขอ้างอิง ${note.slice("Stock: refunded — ref ".length)}`;
+  if (note === "Customer: chose swap") return "ลูกค้าเลือกเปลี่ยนสินค้า";
+  if (note === "Customer: chose refund") return "ลูกค้าเลือกรับเงินคืน";
   return note;
 }

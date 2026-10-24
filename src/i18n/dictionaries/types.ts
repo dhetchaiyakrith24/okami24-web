@@ -634,6 +634,31 @@ export interface Dictionary {
     trackStep1: string;
     trackStep2: string;
     trackStep3: string;
+    /** Out of stock after payment (cart UX batch E, owner 24/10; BSOT §9 owner exception 22/10). {name} = the item that
+     *  is out · {amount} = the refund in baht · {phone} = the PromptPay number, masked to its last 4 digits. */
+    stockTitle: string;
+    stockLead: string;
+    stockSwapTitle: string;
+    stockSwapPickLabel: string;
+    stockSwapPlaceholder: string;
+    stockSwapCta: string;
+    stockSwapNone: string;
+    stockRefundTitle: string;
+    stockRefundAmount: string;
+    stockRefundPartialNote: string;
+    stockRefundOwnCta: string;
+    stockRefundOtherLabel: string;
+    stockRefundOtherCta: string;
+    stockPending: string;
+    stockChosenSwap: string;
+    stockChosenRefund: string;
+    stockSwapped: string;
+    stockRefunded: string;
+    stockRefundedPartial: string;
+    stockErrorSwap: string;
+    stockErrorPromptPay: string;
+    stockErrorClosed: string;
+    stockContactNote: string;
     notFoundMessage: string;
   };
   languageSwitcher: {
