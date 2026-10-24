@@ -12,6 +12,8 @@ import type { OrderDetail } from "@/lib/commerce/orders";
 import type { PaymentAccountView } from "@/data/payment";
 import type { LineImage } from "@/lib/commerce/line-image";
 import { LineThumb } from "@/components/commerce/LineThumb";
+import { StockIssueBox } from "@/components/commerce/StockIssueBox";
+import type { StockIssueView } from "@/lib/commerce/stock-issue-rules";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
@@ -67,12 +69,15 @@ export function OrderStatusView({
   token,
   payment = null,
   itemImages = [],
+  stockIssue = null,
 }: {
   order: OrderDetail;
   token: string | null;
   payment?: PaymentAccountView | null;
   /** One per `order.items` entry, same order (resolved by the server page — order_items stores no image). */
   itemImages?: (LineImage | null)[];
+  /** Out of stock after payment (cart UX batch E) — resolved by the server page; null = nothing to show. */
+  stockIssue?: StockIssueView | null;
 }) {
   const { dict, locale } = useLocale();
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
@@ -130,6 +135,8 @@ export function OrderStatusView({
             )}
           </div>
         </div>
+
+        {stockIssue && <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />}
 
         {/* Entered by staff when the parcel leaves (cart round 22/10). Owner 23/10 (BSOT §10): once shipped, name the
             carrier and link to its own tracking page, with the 3 steps — the page opens without the number filled in.

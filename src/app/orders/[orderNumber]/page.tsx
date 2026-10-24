@@ -7,6 +7,7 @@ import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/data/payment";
 import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
 import { lineImage } from "@/lib/commerce/line-image";
+import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -44,5 +45,8 @@ export default async function OrderStatusPage({
 
   const itemImages = order.items.map((item) => lineImage(item.productSlug, item.variantId));
 
-  return <OrderStatusView order={order} token={token ?? null} payment={payment} itemImages={itemImages} />;
+  // Out of stock after payment (cart UX batch E): the swap/refund choice, or where it stands.
+  const stockIssue = stockIssueViewFor(order.id);
+
+  return <OrderStatusView order={order} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} />;
 }
