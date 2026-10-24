@@ -13,7 +13,6 @@ export interface Dictionary {
     products: string;
     allProducts: string;
     inStock: string;
-    inStockShort: string;
     eliquid: string;
     compare: string;
     finder: string;

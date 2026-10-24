@@ -6,7 +6,6 @@ export const th: Dictionary = {
     products: "สินค้า",
     allProducts: "สินค้าทั้งหมด",
     inStock: "สินค้าพร้อมส่ง",
-    inStockShort: "พร้อมส่ง",
     eliquid: "น้ำยา",
     compare: "เปรียบเทียบ",
     finder: "ตัวช่วยเลือกสินค้า",
