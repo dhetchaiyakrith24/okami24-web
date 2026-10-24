@@ -11,6 +11,8 @@ export const zh: Dictionary = {
   nav: {
     products: "产品",
     allProducts: "全部产品",
+    inStock: "有现货",
+    inStockShort: "现货",
     eliquid: "电子烟油",
     compare: "对比",
     finder: "选购助手",
@@ -158,6 +160,7 @@ export const zh: Dictionary = {
     filterPortability: "便携性",
     filterExperienceLevel: "使用经验",
     filterBeginnerOnly: "仅显示新手友好产品",
+    inStockOnly: "有现货",
     screenNone: "无屏幕",
     screenLed: "LED 指示灯",
     screenColor: "彩色显示屏",

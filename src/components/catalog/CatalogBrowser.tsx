@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Category, Product, ScreenType, Portability } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
@@ -11,7 +12,7 @@ import { brands } from "@/data/brands";
 import { queryMatches, type SearchText } from "@/lib/catalog-search";
 import { familyName } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
+import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 
@@ -98,6 +99,16 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
   return [...legacyEntries, ...publishedEntries];
 }
 
+/** The header's "พร้อมส่ง" button links to ?stock=in (owner 24/10 night). Read in its own Suspense child so the grid
+ *  page stays prerendered, and on every in-site navigation — a tap while already on this page still switches it on. */
+function StockParamSync({ onInStock }: { onInStock: () => void }) {
+  const stock = useSearchParams().get("stock");
+  useEffect(() => {
+    if (stock === "in") onInStock();
+  }, [stock, onInStock]);
+  return null;
+}
+
 /** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
 type SheetGroupId = "brand" | "screen" | "portability" | "level";
 
@@ -111,6 +122,7 @@ export function CatalogBrowser({
   searchTexts,
   isEmptyCategory,
   alternativeCategories = [],
+  inStockKeys,
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
@@ -120,6 +132,9 @@ export function CatalogBrowser({
   /** Categories that do have products today (`categoriesWithProducts()`), offered as the way out
    *  of an empty category page. The server page passes it; nothing renders when it is empty. */
   alternativeCategories?: Pick<Category, "slug" | "shortName" | "labelTh">[];
+  /** "สินค้าพร้อมส่ง" (owner 24/10 night): entry keys a customer can buy today, from `inStockEntryKeys()`
+   *  (src/lib/in-stock.ts) on the server page. Absent = no in-stock toggle. */
+  inStockKeys?: string[];
 }) {
   const { dict, locale } = useLocale();
 
@@ -140,6 +155,10 @@ export function CatalogBrowser({
   const [screenFilter, setScreenFilter] = useState<Set<ScreenType>>(new Set());
   const [portabilityFilter, setPortabilityFilter] = useState<Set<Portability>>(new Set());
   const [beginnerOnly, setBeginnerOnly] = useState(false);
+  const [inStockOnly, setInStockOnly] = useState(false);
+  const inStockSet = useMemo(() => new Set(inStockKeys ?? []), [inStockKeys]);
+  // Stable, so the URL listener runs only when ?stock changes — never undoing the visitor's own tap on the toggle.
+  const turnOnInStock = useCallback(() => setInStockOnly(true), []);
   const [sort, setSort] = useState<SortMode>("featured");
 
   // Phone sheet (M4). Groups start with only the brand list open — it is the facet a shopper
@@ -177,6 +196,7 @@ export function CatalogBrowser({
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
     if (portabilityFilter.size > 0) list = list.filter((e) => e.portability !== null && portabilityFilter.has(e.portability));
     if (beginnerOnly) list = list.filter((e) => e.beginnerFriendly === true);
+    if (inStockOnly) list = list.filter((e) => inStockSet.has(e.key));
 
     const sorted = [...list];
     if (sort === "alphabetical") {
@@ -188,7 +208,7 @@ export function CatalogBrowser({
       sorted.sort((a, b) => Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
-  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, sort]);
+  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, sort]);
 
   function toggle<T>(set: Set<T>, value: T, setter: (s: Set<T>) => void) {
     const next = new Set(set);
@@ -321,6 +341,25 @@ export function CatalogBrowser({
               merges three DOM text nodes into one, which re-shapes the line and moved a handful of
               antialiased pixels at 1440 (proved by the masked compare). The joined `countText`
               above is only for the sheet's button label. */}
+          {inStockKeys && !isEmptyCategory && (
+            <Suspense fallback={null}>
+              <StockParamSync onInStock={turnOnInStock} />
+            </Suspense>
+          )}
+          {inStockKeys && !isEmptyCategory && (
+            <button
+              type="button"
+              aria-pressed={inStockOnly}
+              onClick={() => setInStockOnly((v) => !v)}
+              className={cn(
+                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors lg:min-h-9",
+                inStockOnly ? "border-ember bg-ember/15 text-foreground" : "border-surface-border bg-surface-1 text-foreground hover:border-foreground-dim hover:bg-surface-2",
+              )}
+            >
+              {inStockOnly && <Check size={15} aria-hidden className="text-ember" />}
+              {dict.catalog.inStockOnly}
+            </button>
+          )}
           <p className="label-mono text-xs text-foreground-dim max-lg:ml-auto">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
