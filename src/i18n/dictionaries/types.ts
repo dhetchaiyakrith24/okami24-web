@@ -218,6 +218,10 @@ export interface Dictionary {
     chooseFlavorFirst: string;
     chooseColorFirst: string;
     outOfStockChip: string;
+    /** Phone option tiles (Q5, 24/10): the green pill, the sold-out pill, and "{in} of {n}" over the tiles. */
+    optionIn: string;
+    optionOut: string;
+    optionStockCount: string;
     reviewVideoEyebrow: string;
     watchOnYoutube: string;
     /** Round "clip" (owner 2026-09-27): the line under a clip card whose Thai YouTube title is hidden on en/zh. The
