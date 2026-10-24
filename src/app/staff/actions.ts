@@ -7,6 +7,7 @@ import { assignRole } from "@/lib/line/groups";
 import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { applyStaffAction } from "@/lib/staff/orders";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
+import { addCustomerMessage } from "@/lib/commerce/order-messages";
 
 export type StaffLoginState = { error: null | "wrong" | "locked" | "empty"; retryMinutes?: number };
 
@@ -49,6 +50,7 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     tracking: String(formData.get("tracking") ?? ""),
     carrier: String(formData.get("carrier") ?? ""),
     note: String(formData.get("note") ?? ""),
+    message: String(formData.get("message") ?? ""),
   });
   redirect(result.ok ? `${back}?done=${action}` : `${back}?error=${result.error}`);
 }
@@ -65,7 +67,8 @@ export async function staffStockAction(formData: FormData): Promise<void> {
       ? openStockIssue(
           orderNumber,
           formData.getAll("itemId").map((v) => Number(v)),
-          String(formData.get("note") ?? "")
+          String(formData.get("note") ?? ""),
+          formData.get("message")
         )
       : step === "swap"
         ? applySwap(orderNumber)
@@ -73,4 +76,13 @@ export async function staffStockAction(formData: FormData): Promise<void> {
           ? markRefunded(orderNumber, String(formData.get("ref") ?? ""))
           : ({ ok: false, error: "not-allowed" } as const);
   redirect(result.ok ? `${back}?done=stock-${step}` : `${back}?error=stock-${result.error}`);
+}
+
+/** "ข้อความถึงลูกค้า" on /staff/orders/<n> (owner 24/10): a message the customer reads on their order page. */
+export async function staffMessageAction(formData: FormData): Promise<void> {
+  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const orderNumber = String(formData.get("orderNumber") ?? "");
+  const back = `/staff/orders/${encodeURIComponent(orderNumber)}`;
+  const result = addCustomerMessage(orderNumber, formData.get("message"));
+  redirect(result.ok ? `${back}?done=message#customer-messages` : `${back}?error=${result.error}`);
 }

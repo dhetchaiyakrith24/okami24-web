@@ -8,6 +8,7 @@ import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/dat
 import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
 import { lineImage } from "@/lib/commerce/line-image";
 import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
+import { customerMessagesFor } from "@/lib/commerce/order-messages";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -48,9 +49,15 @@ export default async function OrderStatusPage({
   // Out of stock after payment (cart UX batch E): the swap/refund choice, or where it stands.
   const stockIssue = stockIssueViewFor(order.id);
 
+  // Owner 24/10: the admin's messages to the customer, dated here on the server (one time zone, no hydration drift).
+  const dateFmt = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const messages = customerMessagesFor(order.id).map((m) => ({ body: m.body, dateLabel: dateFmt.format(new Date(m.createdAt)) }));
+  // Whether money ever came in — a cancelled order that was paid tells the customer about the refund.
+  const paid = order.statusHistory.some((h) => h.status === "payment_submitted");
+
   // The history holds staff-only notes (cancel reasons, out-of-stock notes — checker #802) and the page never shows it:
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} />;
 }

@@ -7,7 +7,8 @@ import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS } from "@/lib/staff/order-actions";
 import { getStaffOrder } from "@/lib/staff/orders";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
-import { staffOrderAction } from "@/app/staff/actions";
+import { staffMessageAction, staffOrderAction } from "@/app/staff/actions";
+import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
@@ -29,6 +30,7 @@ const ERROR_TEXT: Record<string, string> = {
   tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
   carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ Flash Express) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
   note: "ยกเลิกต้องเขียนเหตุผลสั้น ๆ (เช่น ของหมด ลูกค้าเลือกคืนเงิน)",
+  message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
   "not-found": "ไม่พบออเดอร์นี้",
 };
 
@@ -37,7 +39,8 @@ const DONE_TEXT: Record<string, string> = {
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
-  cancel: "บันทึกแล้ว: ยกเลิกออเดอร์",
+  cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
+  message: "ส่งข้อความแล้ว: ลูกค้าเห็นในหน้าออเดอร์ — ถ้าเรื่องด่วน โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังด้านล่างเป็นรายการใหม่",
   "stock-refunded": "บันทึกแล้ว: คืนเงินแล้ว ลูกค้าเห็นในหน้าออเดอร์",
@@ -70,6 +73,7 @@ export default async function StaffOrderPage({
   if (!order) notFound();
 
   const actions = availableActions(order.status);
+  const messages = customerMessagesFor(order.id);
   const a = order.shippingAddress;
 
   return (
@@ -158,6 +162,33 @@ export default async function StaffOrderPage({
 
       <StockIssueSection order={order} />
 
+      {/* Owner 24/10: the admin's message on the customer's order page. Everything else on this page stays staff-only. */}
+      <section id="customer-messages" className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm">
+        <h2 className="text-base font-semibold text-foreground">ข้อความถึงลูกค้า</h2>
+        {messages.length > 0 ? (
+          <ul className="flex flex-col gap-2">
+            {messages.map((m, i) => (
+              <li key={i} className="rounded-lg border border-surface-border-soft bg-surface-2 p-3">
+                <p className="text-xs text-foreground-dim">{formatDateTime(m.createdAt)}</p>
+                <p className="whitespace-pre-wrap break-words text-foreground">{m.body}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-foreground-muted">ยังไม่มีข้อความ</p>
+        )}
+        <form action={staffMessageAction} className="flex flex-col gap-2">
+          <input type="hidden" name="orderNumber" value={order.orderNumber} />
+          <label className="flex flex-col gap-1 text-foreground-muted">
+            เขียนถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ ส่งแล้วแก้ไม่ได้)
+            <textarea name="message" required minLength={3} maxLength={600} rows={3} className={input} />
+          </label>
+          <button type="submit" className={`${button} self-start`}>
+            ส่งข้อความ
+          </button>
+        </form>
+      </section>
+
       <section className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm">
         <h2 className="text-base font-semibold text-foreground">ส่งถึง</h2>
         <p className="text-foreground">
@@ -218,8 +249,12 @@ export default async function StaffOrderPage({
               <input type="hidden" name="orderNumber" value={order.orderNumber} />
               <input type="hidden" name="action" value="cancel" />
               <label className="flex flex-col gap-1 text-sm text-foreground-muted">
-                เหตุผลที่ยกเลิก (ลูกค้าไม่เห็น)
-                <input name="note" required minLength={3} autoComplete="off" className={input} />
+                เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์
+                <textarea name="message" required minLength={3} maxLength={600} rows={2} className={input} />
+              </label>
+              <label className="flex flex-col gap-1 text-sm text-foreground-muted">
+                หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
+                <input name="note" autoComplete="off" maxLength={300} className={input} />
               </label>
               <button
                 type="submit"

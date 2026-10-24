@@ -5,6 +5,8 @@ import { getProduct } from "@/data/products";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { resolveProductRef } from "./catalog-resolver";
 import { getOrderDetailForViewer } from "./orders";
+import { cleanOrderMessage } from "./order-message-rules";
+import { insertCustomerMessage } from "./order-messages";
 import type { OrderStatus } from "./order-status";
 import {
   canOpenStockIssue,
@@ -220,7 +222,7 @@ function orderRow(orderNumber: string) {
 const now = "strftime('%Y-%m-%dT%H:%M:%fZ','now')";
 
 /** Staff mark which lines are out (again = "ask the customer again": the old choice is cleared). */
-export function openStockIssue(orderNumber: string, itemIds: number[], staffNote: string): StaffStockResult {
+export function openStockIssue(orderNumber: string, itemIds: number[], staffNote: string, customerMessage?: unknown): StaffStockResult {
   const db = getDb();
   return db.transaction((): StaffStockResult => {
     const order = orderRow(orderNumber);
@@ -242,6 +244,9 @@ export function openStockIssue(orderNumber: string, itemIds: number[], staffNote
       order.status,
       `Stock: out after payment — lines ${ids.join(",")}${note ? ` — ${note}` : ""}`
     );
+    // Optional: what the customer reads above the swap/refund box (owner 24/10, the admin's message).
+    const message = cleanOrderMessage(customerMessage);
+    if (message) insertCustomerMessage(order.id, message);
     return { ok: true };
   })();
 }

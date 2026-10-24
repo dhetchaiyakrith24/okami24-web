@@ -3,6 +3,9 @@
 /** Longest note a customer may leave the shop on the review step (cart UX batch C, owner 24/10: "≤200"). */
 export const CUSTOMER_NOTE_MAX = 200;
 
+/** Control and invisible characters (also used by order-messages.ts for the shop's messages to the customer). */
+export const UNSAFE_CHARS = /[\u0000-\u001f\u007f\u200b-\u200d\u2060\ufeff]+/g;
+
 /**
  * The customer's note to the shop, made safe to store: control and invisible characters out, runs of spaces / new lines
  * folded to one (a short note, not a letter), trimmed, cut at 200 characters. Not a string or empty = null (no note).
@@ -10,6 +13,6 @@ export const CUSTOMER_NOTE_MAX = 200;
  */
 export function cleanCustomerNote(raw: unknown): string | null {
   if (typeof raw !== "string") return null;
-  const text = raw.replace(/[\u0000-\u001f\u007f\u200b-\u200d\u2060\ufeff]+/g, " ").replace(/\s+/g, " ").trim();
+  const text = raw.replace(UNSAFE_CHARS, " ").replace(/\s+/g, " ").trim();
   return text ? Array.from(text).slice(0, CUSTOMER_NOTE_MAX).join("") : null;
 }

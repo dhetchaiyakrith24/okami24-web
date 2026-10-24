@@ -70,6 +70,8 @@ export function OrderStatusView({
   payment = null,
   itemImages = [],
   stockIssue = null,
+  messages = [],
+  paid = false,
 }: {
   order: OrderDetail;
   token: string | null;
@@ -78,8 +80,40 @@ export function OrderStatusView({
   itemImages?: (LineImage | null)[];
   /** Out of stock after payment (cart UX batch E) — resolved by the server page; null = nothing to show. */
   stockIssue?: StockIssueView | null;
+  /** The shop's messages to the customer, newest first, dates already formatted by the server page (owner 24/10). */
+  messages?: { body: string; dateLabel: string }[];
+  /** True when a slip was ever sent — a cancelled paid order says the shop will contact them about the refund. */
+  paid?: boolean;
 }) {
   const { dict, locale } = useLocale();
+  const t = dict.orderStatus;
+  // The order's story (owner 24/10: "ลูกค้าแค่ต้องรู้สถานะ: จัดส่งแล้วไปขั้นตอนไหน ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ").
+  // While an out-of-stock choice is open, the pill and the next step speak about that instead of e.g. "approved".
+  const stockStage = order.status !== "cancelled" && stockIssue && stockIssue.stage !== "resolved" ? stockIssue.stage : null;
+  const STEP_OF: Partial<Record<OrderDetail["status"], number>> = {
+    pending_payment: 0,
+    payment_submitted: 1,
+    awaiting_verification: 1,
+    approved: 2,
+    processing: 2,
+    shipped: 3,
+    completed: 4,
+  };
+  const step = STEP_OF[order.status];
+  const NEXT: Record<OrderDetail["status"], string> = {
+    pending_payment: t.nextPendingPayment,
+    payment_submitted: t.nextChecking,
+    awaiting_verification: t.nextChecking,
+    approved: t.nextApproved,
+    processing: t.nextProcessing,
+    shipped: t.nextShipped,
+    completed: t.nextCompleted,
+    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid ? t.nextCancelledPaid : t.nextCancelled,
+  };
+  const next = stockStage === "waiting-choice" ? t.nextStockWaiting : stockStage === "chosen" ? t.nextStockChosen : NEXT[order.status];
+  const terminal = order.status === "completed" || order.status === "cancelled";
+  const statusText =
+    stockStage === "waiting-choice" ? t.statusStockWaiting : stockStage === "chosen" ? t.statusStockChosen : orderStatusLabel(order.status, locale);
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
   const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
 
@@ -118,9 +152,9 @@ export function OrderStatusView({
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400/60 [animation-duration:2.4s] motion-reduce:hidden" />
                   <span className="relative inline-flex size-2 rounded-full bg-emerald-400 shadow-[0_0_6px_1px_rgba(52,211,153,0.8)]" />
                 </span>
-                {orderStatusLabel(order.status, locale)}
+                {statusText}
               </span>
-            ) : order.status === "pending_payment" ? (
+            ) : order.status === "pending_payment" || stockStage === "waiting-choice" ? (
               // Cart UX batch A (owner 24/10): "waiting for payment" gets a quiet warm glow — the shipped pill's twin in
               // amber, slower and fainter, so the one step the customer still has to do reads first without alarming.
               <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-amber-300/10 px-3 py-0.5 font-medium text-amber-200 shadow-[0_0_14px_-4px_rgba(252,211,77,0.3)]">
@@ -128,13 +162,47 @@ export function OrderStatusView({
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-300/50 [animation-duration:3.2s] motion-reduce:hidden" />
                   <span className="relative inline-flex size-2 rounded-full bg-amber-300 shadow-[0_0_6px_1px_rgba(252,211,77,0.6)]" />
                 </span>
-                {orderStatusLabel(order.status, locale)}
+                {statusText}
               </span>
             ) : (
-              <span className="font-medium text-foreground">{orderStatusLabel(order.status, locale)}</span>
+              <span className="font-medium text-foreground">{statusText}</span>
             )}
           </div>
+          {/* Four steps, then one sentence on what happens next. A cancelled order has no steps — only why and what next. */}
+          {step !== undefined && (
+            <ol className="mt-3 grid grid-cols-4 gap-1.5">
+              {[t.stepPay, t.stepCheck, t.stepPack, t.stepShip].map((label, i) => {
+                const state = i < step ? "done" : i === step ? "now" : "todo";
+                return (
+                  <li key={i} aria-current={state === "now" ? "step" : undefined} className="flex flex-col gap-1.5">
+                    <span
+                      aria-hidden
+                      className={`h-1 rounded-full ${state === "done" ? "bg-emerald-400/70" : state === "now" ? "bg-ember" : "bg-surface-border"}`}
+                    />
+                    <span className={`text-xs ${state === "todo" ? "text-foreground-dim" : "text-foreground"} ${state === "now" ? "font-semibold" : ""}`}>{label}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          )}
+          <p className="mt-3 border-t border-surface-border-soft pt-3 text-foreground">
+            {!terminal && <span className="text-foreground-muted">{t.nextLabel} · </span>}
+            {withLineLink(next)}
+          </p>
         </div>
+
+        {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}
+        {messages.length > 0 && (
+          <div className="flex flex-col gap-3 rounded-xl border border-ember/40 bg-surface-1 p-4 text-sm">
+            <span className="label-mono text-xs text-foreground-dim">{t.messagesTitle}</span>
+            {messages.map((m, i) => (
+              <div key={i} className={i > 0 ? "border-t border-surface-border-soft pt-3" : undefined}>
+                <p className="whitespace-pre-wrap break-words text-foreground">{m.body}</p>
+                <p className="mt-1 text-xs text-foreground-dim">{m.dateLabel}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {stockIssue && <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />}
 

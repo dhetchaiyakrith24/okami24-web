@@ -668,6 +668,29 @@ export interface Dictionary {
     stockErrorBank: string;
     stockErrorClosed: string;
     stockContactNote: string;
+    /** The order's story (owner 24/10: "จัดส่งแล้วไปขั้นตอนไหน ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ"): the 4 steps under the status, and
+     *  one "next step" sentence per state. "@okm24" inside a sentence becomes the LINE link. */
+    stepPay: string;
+    stepCheck: string;
+    stepPack: string;
+    stepShip: string;
+    nextLabel: string;
+    nextPendingPayment: string;
+    nextChecking: string;
+    nextApproved: string;
+    nextProcessing: string;
+    nextShipped: string;
+    nextCompleted: string;
+    nextCancelled: string;
+    nextCancelledPaid: string;
+    nextCancelledRefunded: string;
+    nextStockWaiting: string;
+    nextStockChosen: string;
+    /** The status pill while an out-of-stock choice is open (instead of e.g. "อนุมัติแล้ว"). */
+    statusStockWaiting: string;
+    statusStockChosen: string;
+    /** "ข้อความจากร้าน" — the admin's messages to the customer (owner 24/10). */
+    messagesTitle: string;
     notFoundMessage: string;
   };
   languageSwitcher: {

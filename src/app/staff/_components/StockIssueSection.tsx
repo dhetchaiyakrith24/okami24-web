@@ -32,7 +32,11 @@ function OpenForm({ order, again }: { order: StaffOrderDetail; again: boolean })
         ))}
       </fieldset>
       <label className="flex flex-col gap-1 text-foreground-muted">
-        หมายเหตุ (ลูกค้าไม่เห็น)
+        ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ไม่ใส่ก็ได้)
+        <textarea name="message" maxLength={600} rows={2} className={input} />
+      </label>
+      <label className="flex flex-col gap-1 text-foreground-muted">
+        หมายเหตุทีมงาน (ลูกค้าไม่เห็น)
         <input name="note" autoComplete="off" maxLength={300} className={input} />
       </label>
       <button type="submit" className={again ? `${ghost} self-start` : `${button} self-start`}>
