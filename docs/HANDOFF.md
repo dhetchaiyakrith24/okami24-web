@@ -11,7 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 night = b2f074ab (#811 cart-ready: pre-payment flow + copy + unpaid auto-cancel 24 h + phone rate limit, checker PASS 5964e996,
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 late night = 0ffbea19 (#822 docs) · fb215aa4 (#821 in-stock link moved into
+  the menus, deploy success [ตรวจแล้ว]) · b2fea8ed (#819 in-stock filter) · 1da08611 (#817 Q1–Q3) · 24/10 night = b2f074ab (#811 cart-ready: pre-payment flow + copy + unpaid auto-cancel 24 h + phone rate limit, checker PASS 5964e996,
   deploy success 11:23 UTC, live 200 [ตรวจแล้ว]) · 72255106 (#812 hourly stock) · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
   to a bank account; GitHub marked #804 merged with it — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
   617e5553 (#805 handoff) · 7de15064 (#802 cart UX E). Earlier 24/10 merges #787–#803 = `git log`.
@@ -25,7 +26,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
   Open PRs: #643 (old, not touched).
-2 Main folder: branch `docs-handoff-2410i` = this handoff. Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
+2 Main folder: branch `docs-handoff-2410n` = this handoff (nothing else open; every branch of this chat merged). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
   origin/main + all extra commits BEFORE the verify run (~20 min each). PR flow: draft → verify --full on the head in a test tree → gate →
@@ -72,9 +73,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        all products · contact/help) as ONE job — drafts to the owner first (new look)
     Q2b [DONE #821] owner: the bar pill was too prominent — "สินค้าพร้อมส่ง" now an item in the desktop "สินค้า" menu + phone
        drawer; grid toggles stay.
-    Q5 [DRAFTS SENT 24/10 night — waiting for the owner to pick: A photo grid (Friday recommends) · B bottom sheet · C swipe the big
-       photo; mockups _incoming/cartpolish-2410/picker/ (gen.js)] phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
-       photos · swatch grid), owner picks
+    Q5 [NEXT — OWNER PICKED 24/10 late night, build it] phone option/colour/flavour picking. Mockups _incoming/cartpolish-2410/picker/
+       (A.png B.png C.png, gen.js). Owner: layout = A (every option a photo tile with its name, 4 per row, no sideways scrolling) ·
+       status pill = B's (green "มีของ" — "เห็นแว๊บเดียวรู้เลยว่าของมี"; sold out = dimmed + "หมด") · C (swipe the big photo + small
+       photo strip) for products with MORE than 8–12 options (Friday's cut: >12 → C, ≤12 → A; reversible) · KEEP the hero's round dots
+       and swipe (owner attached a shot of the 8 dots under ARGUS G4) but make them easier to use and read; keep what works in the old one.
+       Owner asked "orange = ใกล้หมด ดีมะ": the stock read gives only in/out (order-entry button blue/grey, no quantity) → tell him orange
+       needs quantities (Shipnity API / a count read) — not built now; never show "ใกล้หมด" without a real number.
+       Files: ColorVariantRail · FlavorVariantGrid (legacy, ProductHero) · ProductMasterVariantPicker (PilotProductDetail) — all carry
+       data-option-picker (choose-option button scrolls there). New look = designer pass before merge (13.5 #6), tier B, shots 390+1440,
+       pages: one colour product (argus-g4), one flavour product (m-bar-10k, 12), one >12 (nexpod-15k 20 / iqosheet-15 22), one ProductMaster.
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
