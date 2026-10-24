@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~13:09 = 4220dfef (#801 stock routine CLOSE-ONLY, deploy success + live 200
-  [ตรวจแล้ว]) · before it eadd1c31 (#800 Double Mint sold out by hand) · a0929b7f (#798 hourly stock 12:14). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~16:00 = 7de15064 (#802 cart UX E, out of stock after payment) · 02b1613c
+  (#803 hourly stock by the routine) · 4220dfef (#801 stock routine CLOSE-ONLY, deploy success + live 200 [ตรวจแล้ว]) · before it eadd1c31 (#800 Double Mint sold out by hand) · a0929b7f (#798 hourly stock 12:14). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
   optional "หมายเหตุถึงร้าน" → orders.customer_note (migration 0012), staff order page only — deploy success + live 200; staff-page render NOT
   seen in a browser yet (no staff password locally) → first real note: look at /staff/orders/<n>). Before: #794 "ติดตามคำสั่งซื้อ" /orders by phone only + header
   (lg band hidden) / drawer / footer link — deploy success + live 200). FIRST REAL WEB ORDER 24/10 02:25 OK-20261023-eb3fe0 (Muro Connector 20K
@@ -52,7 +52,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Single-SKU rows (e.g. Eliquid-73) had no "เพิ่ม <x>" buttons — read method still open. Data comes from api.shipnitymax.com/api/graphql
   (not used: would mean calling their API with the session). Spot check matched our closed list (Pod-168 all out; Coil-53 only 1.0Ω in).
   Close = the modal's own "ยกเลิก", then close the tab (never the page's "บันทึก"). Proposal sent to the owner; build after batch E merges.
-  (2) CART UX E = PR (cart-ux-e-2410, draft) — state in the PR; flow below. Why: the first web order OK-20261023-eb3fe0
+  NEXT = build that reader (side by side with the product-list read 2–3 days) — owner told; not started.
+  (2) CART UX E = #802 MERGED 24/10 (7de15064, checker PASS 0114b39d after a round-1 FAIL: staff notes rode to the customer page in
+  statusHistory — now stripped on /orders/<n>, which also closes the old cancel-reason leak; swap rule enforced server-side). Migration 0013
+  order_stock_issues. Flow = BSOT §9 dated 24/10 line + staff guide item 3. Known, not fixed (checker): after a partial refund the order cannot
+  get a second out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests. Designer note left:
+  mark the out rows in the order page's item list. Not yet seen on a real order. Why: the first web order OK-20261023-eb3fe0
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
   the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
