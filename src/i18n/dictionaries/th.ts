@@ -566,7 +566,7 @@ export const th: Dictionary = {
     stockSwapPickLabel: "เลือกแทน {name}",
     stockSwapPlaceholder: "เลือกสินค้า",
     stockSwapCta: "ยืนยันเปลี่ยนสินค้า",
-    stockSwapNone: "ตอนนี้ยังไม่มีสินค้าราคาเท่ากันที่มีของ เลือกรับเงินคืนได้ หรือทักไลน์ @okm24 ให้แอดมินช่วยหาให้",
+    stockSwapNone: "ตอนนี้ยังหาสินค้าราคาเท่ากันมาแทนได้ไม่ครบทุกรายการ เลือกรับเงินคืนได้ หรือทักไลน์ @okm24 ให้แอดมินช่วยหาให้",
     stockRefundTitle: "รับเงินคืนเข้าพร้อมเพย์",
     stockRefundAmount: "ยอดเงินคืน {amount}",
     stockRefundPartialNote: "คืนเฉพาะรายการที่หมด รายการอื่นส่งตามปกติ",

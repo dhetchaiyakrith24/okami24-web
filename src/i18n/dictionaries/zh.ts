@@ -527,7 +527,7 @@ export const zh: Dictionary = {
     stockSwapPickLabel: "替换 {name}",
     stockSwapPlaceholder: "选择商品",
     stockSwapCta: "确认更换",
-    stockSwapNone: "目前没有同价且有货的商品。您可以选择退款，或通过 LINE @okm24 联系我们帮您寻找。",
+    stockSwapNone: "目前无法为每件商品找到同价的替换品。您可以选择退款，或通过 LINE @okm24 联系我们帮您寻找。",
     stockRefundTitle: "退款至 PromptPay",
     stockRefundAmount: "退款金额 {amount}",
     stockRefundPartialNote: "仅退还售罄商品的金额，其余商品照常发货。",

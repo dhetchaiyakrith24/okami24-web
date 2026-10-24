@@ -25,18 +25,24 @@ const secondary =
   "inline-flex w-full items-center justify-center rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim disabled:opacity-60";
 const field = "w-full rounded-lg border border-surface-border bg-surface-2 px-3 py-3 text-base text-foreground";
 
+/** The "@okm24" in a sentence becomes the LINE link, kept on one line with the word before it ("ทักไลน์ @okm24" never
+ *  splits as "ทัก|ไลน์" at a line end — seen at 1440, 24/10). Assumes one handle per sentence. */
 function withLineLink(sentence: string) {
-  const parts = sentence.split(CONTACT.lineId);
-  if (parts.length < 2) return sentence;
-  return parts.flatMap((part, i) =>
-    i === 0
-      ? [part]
-      : [
-          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
-            {CONTACT.lineId}
-          </a>,
-          part,
-        ],
+  const at = sentence.indexOf(CONTACT.lineId);
+  if (at < 0) return sentence;
+  const before = sentence.slice(0, at);
+  const cut = before.trimEnd().lastIndexOf(" ") + 1;
+  return (
+    <>
+      {before.slice(0, cut)}
+      <span className="whitespace-nowrap">
+        {before.slice(cut)}
+        <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
+          {CONTACT.lineId}
+        </a>
+      </span>
+      {sentence.slice(at + CONTACT.lineId.length)}
+    </>
   );
 }
 

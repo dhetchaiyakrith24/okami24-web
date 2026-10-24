@@ -534,7 +534,7 @@ export const en: Dictionary = {
     stockSwapPickLabel: "Instead of {name}",
     stockSwapPlaceholder: "Choose an item",
     stockSwapCta: "Confirm swap",
-    stockSwapNone: "No in-stock item at the same price right now. You can choose a refund, or message us on LINE @okm24 and we'll help you find one.",
+    stockSwapNone: "Right now we can't find a same-price replacement for every item. You can choose a refund, or message us on LINE @okm24 and we'll help you find one.",
     stockRefundTitle: "Refund to PromptPay",
     stockRefundAmount: "Refund amount {amount}",
     stockRefundPartialNote: "Only the out-of-stock items are refunded. We'll ship the rest as usual.",
