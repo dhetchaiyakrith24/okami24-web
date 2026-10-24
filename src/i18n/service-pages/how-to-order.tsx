@@ -97,7 +97,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             เรารับโอนธนาคารและสแกน QR เท่านั้น — <B>ไม่รับบัตรเครดิต และไม่มีเก็บเงินปลายทาง</B>
             <br />
-            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมด ตรวจรายการและยอดให้ครบก่อนโอน
+            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมด
           </>
         ),
       },
@@ -181,7 +181,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             We only accept bank transfers and QR payments — <B>no credit cards, and no cash on delivery</B>.
             <br />
-            <B>Transfers can’t be cancelled</B> unless an item is out of stock. Check your items and the total before you transfer.
+            <B>Transfers can’t be cancelled</B> unless an item is out of stock.
           </>
         ),
       },
@@ -265,7 +265,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             我们只接受银行转账和扫码付款 —— <B>不支持信用卡，也没有货到付款</B>。
             <br />
-            <B>转账后不可取消</B>，商品缺货的情况除外。请在转账前核对商品和金额。
+            <B>转账后不可取消</B>，商品缺货的情况除外。
           </>
         ),
       },
