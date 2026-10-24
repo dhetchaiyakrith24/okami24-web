@@ -350,6 +350,13 @@ wallet and the "recognised by the QR's reference" slip rule above still holds. A
 page shows the owner's original QR file and the old note. **Owner step before go-live:** scan one order's QR with a real
 bank app (amount filled · receiver = the shop). Code: `src/lib/commerce/promptpay-amount.ts` + `promptpay-qr.ts`.
 
+**Unpaid orders cancel themselves (owner 2026-10-24 evening, main chat — proposal ② of "ระบบอื่นๆ", his words "ตามที่แนะนำมาทั้งหมดเลย"
+except ①):** an order still waiting for payment **24 hours** after it was placed (no slip went through) is cancelled by the
+site. 24 hours is Friday's pick, reversible (one constant, `UNPAID_HOURS` in `src/lib/commerce/unpaid-expiry.ts`). The
+review step says so before the customer places the order; the order page shows the exact deadline while it waits and why
+it was cancelled afterwards. Orders that moved on (slip sent, staff action) are never touched. No LINE alert per
+cancellation (the bot's monthly quota is small) — staff see it in /staff.
+
 ---
 
 ## 10. Shipping
