@@ -60,11 +60,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        without "ตรวจรายการและยอดให้ครบก่อนโอน") · "ยกเลิกแล้ว" = red glow pill (twin of the green shipped glow) · ค่ะ/นะคะ + LINE pointer
        "ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24" across cart → checkout → order page → stock box → /orders (THAI_STYLE §2 rulings 24/10)
        + "จัดส่งไปที่อยู่เดิมของคุณค่ะ"
-    Q2 [DONE #817] header button "สินค้าทั้งหมด": one tap = every product, no scrolling
+    Q2 [DONE #819 — corrected: the owner meant IN STOCK] header "พร้อมส่ง" → /products?stock=in (src/lib/in-stock.ts = the
+       product pages own can-buy rule) + in-stock toggle on product/category/brand grids · /how-to-order "ตรวจรายการและยอด…" cut (owner)
     Q3 [DONE #817] LINE order-group alert carries name · phone · address · items (admin copies to the warehouse; web confirm unchanged)
     #817 checker notes left: desktop "สินค้า" link — Esc does not close the category menu, menu stays open after a click inside,
        touch laptops ≥1024 tap = /products (no category menu) · 2 lines tell the customer to SEND a slip to LINE (kept as instructions,
        not the "ติดต่อสอบถาม…" pointer) · /how-to-order still says "ตรวจรายการและยอดให้ครบก่อนโอน" (owner named only the orange line).
+    Small, for the next touch: pod-159 (ESKO BAR SWITCH 20K) page shows "เลือกกลิ่น" although every flavour is sold out
+       (ProductMaster photoRule page opens unpicked) — should read sold out · phone grid bar: the sort select drops to a second row.
     Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
     Q5 phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
