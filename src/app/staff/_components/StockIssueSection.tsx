@@ -131,6 +131,10 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
           <p className="text-foreground">
             โอนคืน {formatBaht(issue.refund.amount)} เข้าพร้อมเพย์ <span className="select-all font-semibold">{issue.refundPromptPay}</span>
           </p>
+          {/* Anyone holding the order link can type another number (checker #802) — staff check the receiver name first. */}
+          {issue.refundPromptPay && issue.refundPromptPay !== order.customerPhone && (
+            <p className="text-unverified">ไม่ใช่เบอร์ที่ใช้สั่ง — ก่อนโอนเช็คว่าชื่อบัญชีปลายทางตรงกับชื่อลูกค้า ({order.shippingAddress.recipientName})</p>
+          )}
           <p className="text-xs text-foreground-dim">
             {issue.refund.wholeOrder ? "สินค้าหมดทุกรายการ — บันทึกแล้วออเดอร์จะถูกยกเลิก" : "คืนเฉพาะรายการที่หมด (ค่าส่งไม่คืน) — รายการที่เหลือส่งตามปกติ"}
           </p>

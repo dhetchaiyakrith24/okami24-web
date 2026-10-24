@@ -182,7 +182,15 @@ export function swapCandidates(line: Pick<StockIssueLine, "productSlug" | "varia
 }
 
 /** A picked swap is still valid: buyable now, same unit price as the line it replaces. */
+/** A picked swap is still valid: it is one of the options the picker would offer for this line right now (buyable, same
+ *  price, same category, same product for device parts, not the line's own option — checker #802: the server enforces the
+ *  same list the page shows, never just price). */
 function validSwap(line: ItemRow, productSlug: string, variantId: string | null) {
+  const value = encodeSwapValue(productSlug, variantId);
+  const offered = swapCandidates({ productSlug: line.product_slug, variantId: line.variant_id, unitPrice: line.unit_price }).some((g) =>
+    g.options.some((o) => o.value === value)
+  );
+  if (!offered) return null;
   const item = allCatalogItems().find((i) => i.slug === productSlug);
   if (!item) return null;
   const r = resolveProductRef({ origin: item.origin, slug: productSlug, variantId });
