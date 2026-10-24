@@ -80,12 +80,14 @@ export function PhoneOptionTiles({
           ))}
         </div>
       )}
+      {/* Each option spans 3 subgrid rows (photo · name · pill): the name row is as tall as the longest name of that
+          row, so the pills line up without padding one-line names (designer pass 24/10). */}
       <div
         ref={listRef}
         className={
           strip
-            ? "okami-chip-row -mx-5 flex gap-2 overflow-x-auto overflow-y-hidden px-5 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            : "grid grid-cols-4 gap-x-2 gap-y-3"
+            ? "okami-chip-row -mx-5 grid auto-cols-[4.5rem] grid-flow-col grid-rows-[auto_auto_auto] gap-x-2 gap-y-1.5 overflow-x-auto overflow-y-hidden px-5 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            : "grid grid-cols-4 gap-x-2 gap-y-1.5"
         }
       >
         {options.map((o) => {
@@ -100,7 +102,7 @@ export function PhoneOptionTiles({
               aria-pressed={picked}
               aria-label={name}
               title={name}
-              className={cn("flex min-w-0 flex-col items-center gap-1.5 text-center", strip && "w-[4.5rem] shrink-0")}
+              className={cn("row-span-3 grid min-w-0 grid-rows-subgrid justify-items-center text-center", !strip && "mb-2")}
             >
               <span
                 className={cn(
@@ -119,10 +121,9 @@ export function PhoneOptionTiles({
                   />
                 )}
               </span>
-              {/* Two lines reserved, so the pills of one row line up whatever the name length. */}
               <span
                 className={cn(
-                  "line-clamp-2 min-h-[2.5em] w-full text-xs leading-tight",
+                  "line-clamp-2 w-full self-start text-xs leading-tight",
                   picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
                 )}
               >
@@ -142,9 +143,10 @@ function StockPill({ out, small }: { out: boolean; small?: boolean }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border font-medium leading-none",
-        small ? "px-1.5 py-0.5 text-[0.65rem]" : "px-2 py-1 text-xs",
-        out ? "border-surface-border text-foreground-dim" : "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+        "inline-flex items-center self-start rounded-full font-medium leading-none",
+        small ? "px-2 py-1 text-xs" : "px-2.5 py-1 text-xs",
+        // Only "in stock" gets the green frame, so the eye finds what can be bought; sold out is plain dim text (B).
+        out ? "text-foreground-dim" : "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
       )}
     >
       {out ? dict.product.optionOut : dict.product.optionIn}

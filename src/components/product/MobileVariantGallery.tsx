@@ -219,14 +219,14 @@ export function MobileVariantGallery({
       )}
       {slides.length > 1 && !counter && (
         // The tile picker under the gallery is the accessible control; these are a pointer shortcut only.
-        <div className="pointer-events-none absolute inset-x-0 bottom-1.5 flex items-center justify-center" aria-hidden>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-center" aria-hidden>
           {slides.map((s, i) => (
             <button
               key={s.id}
               type="button"
               tabIndex={-1}
               onClick={() => onSelect(s.id)}
-              className="pointer-events-auto flex h-7 items-center px-1"
+              className="pointer-events-auto flex h-11 items-center px-2"
             >
               <span
                 className={cn(
