@@ -529,7 +529,7 @@ export const zh: Dictionary = {
     stockSwapCta: "确认更换",
     stockSwapNone: "目前无法为每件商品找到同价的替换品。您可以选择退款，或通过 LINE @okm24 联系我们帮您寻找。",
     stockRefundTitle: "退款至 PromptPay",
-    stockRefundAmount: "退款金额 {amount}",
+    stockRefundAmount: "退款金额",
     stockRefundPartialNote: "仅退还售罄商品的金额，其余商品照常发货。",
     stockRefundOwnCta: "退款至 PromptPay {phone}",
     stockRefundOtherLabel: "或退款至其他已绑定 PromptPay 的手机号",

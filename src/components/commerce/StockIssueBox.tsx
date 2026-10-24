@@ -23,6 +23,10 @@ const primary =
   "inline-flex w-full items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember disabled:opacity-60";
 const secondary =
   "inline-flex w-full items-center justify-center rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim disabled:opacity-60";
+// Designer 24/10: BSOT §9 offers the swap OR the refund as equals — when both are open they share one weight (heavier than
+// an outline); ember is kept for the only open way.
+const equal =
+  "inline-flex w-full items-center justify-center rounded-full border border-surface-border bg-surface-2 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim disabled:opacity-60";
 const field = "w-full rounded-lg border border-surface-border bg-surface-2 px-3 py-3 text-base text-foreground";
 
 /** The "@okm24" in a sentence becomes the LINE link, kept on one line with the word before it ("ทักไลน์ @okm24" never
@@ -91,13 +95,20 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
 
   return (
     <div className="flex flex-col gap-5 rounded-xl border border-amber-300/30 bg-amber-300/[0.06] p-4 text-sm shadow-[0_0_18px_-6px_rgba(252,211,77,0.25)]">
-      <div className="flex flex-col gap-2">
-        <p className="text-base font-semibold text-foreground">{t.stockTitle}</p>
-        <p className="text-foreground-muted">{t.stockLead}</p>
-        <ul className="flex flex-col gap-1">
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-1">
+          {/* The amber dot = the "waiting for payment" pill's dot without the ping (designer 24/10). */}
+          <p className="flex items-start gap-2 text-lg font-semibold leading-snug text-foreground lg:text-xl">
+            <span aria-hidden className="mt-2 inline-flex size-2 shrink-0 rounded-full bg-amber-300 shadow-[0_0_6px_1px_rgba(252,211,77,0.6)]" />
+            {t.stockTitle}
+          </p>
+          <p className="text-foreground-muted">{t.stockLead}</p>
+        </div>
+        <ul className="flex flex-col gap-1.5 rounded-lg border border-surface-border-soft bg-surface-2 p-3">
           {issue.outLines.map((l) => (
-            <li key={l.itemId} className="font-medium text-foreground">
-              {lineName(l)} × {l.quantity}
+            <li key={l.itemId} className="flex justify-between gap-4">
+              <span className="text-foreground">{lineName(l)}</span>
+              <span className="shrink-0 text-foreground-muted">× {l.quantity}</span>
             </li>
           ))}
         </ul>
@@ -106,7 +117,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
       {/* 1 — swap for a same-price item */}
       <form action={swapAction} className="flex flex-col gap-3 border-t border-surface-border-soft pt-4">
         {hidden}
-        <p className="font-semibold text-foreground">{t.stockSwapTitle}</p>
+        <p className={anySwap ? "font-semibold text-foreground" : "font-semibold text-foreground-muted"}>{t.stockSwapTitle}</p>
         {anySwap ? (
           <>
             {issue.outLines.map((l) => (
@@ -133,7 +144,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
                 {t[swapState.errorKey]}
               </p>
             )}
-            <button type="submit" disabled={pending} className={primary}>
+            <button type="submit" disabled={pending} className={equal}>
               {swapPending ? t.stockPending : t.stockSwapCta}
             </button>
           </>
@@ -146,8 +157,13 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
       <form action={refundAction} className="flex flex-col gap-3 border-t border-surface-border-soft pt-4">
         {hidden}
         <p className="font-semibold text-foreground">{t.stockRefundTitle}</p>
-        <p className="text-foreground">{fill(t.stockRefundAmount, { amount })}</p>
-        {!issue.wholeOrder && <p className="text-foreground-muted">{t.stockRefundPartialNote}</p>}
+        <div className="flex flex-col gap-1">
+          <p className="flex items-baseline justify-between gap-4">
+            <span className="text-foreground-muted">{t.stockRefundAmount}</span>
+            <span className="font-display text-xl font-semibold text-foreground">{amount}</span>
+          </p>
+          {!issue.wholeOrder && <p className="text-foreground-muted">{t.stockRefundPartialNote}</p>}
+        </div>
         {otherOpen ? (
           <>
             <input type="hidden" name="mode" value="other" />
@@ -173,14 +189,14 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
               </p>
             )}
             {issue.ownPhoneMasked && (
-              <button type="submit" disabled={pending} className={secondary}>
+              <button type="submit" disabled={pending} className={anySwap ? equal : primary}>
                 {refundPending ? t.stockPending : fill(t.stockRefundOwnCta, { phone: issue.ownPhoneMasked })}
               </button>
             )}
             <button
               type="button"
               onClick={() => setOtherOpen(true)}
-              className="self-start text-foreground-muted underline underline-offset-4 hover:text-foreground"
+              className="inline-flex min-h-11 items-center self-start text-foreground-muted underline underline-offset-4 hover:text-foreground"
             >
               {t.stockRefundOtherLabel}
             </button>
@@ -188,7 +204,8 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
         )}
       </form>
 
-      <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>
+      {/* The no-swap sentence already names LINE — say it once (designer 24/10). */}
+      {anySwap && <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>}
     </div>
   );
 }
