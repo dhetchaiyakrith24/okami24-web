@@ -43,14 +43,16 @@ function fromRow(row: AddressRow): AddressRecord {
   };
 }
 
-function validate(input: AddressInput): string | null {
-  if (!input.recipientName.trim()) return "Recipient name is required.";
-  if (!input.phone.trim()) return "Phone is required.";
-  if (!input.line1.trim()) return "Address line is required.";
-  if (!input.subdistrict.trim()) return "Subdistrict is required.";
-  if (!input.district.trim()) return "District is required.";
-  if (!input.province.trim()) return "Province is required.";
-  if (!/^[0-9]{5}$/.test(input.postalCode.trim())) return "Postal code must be 5 digits.";
+/** Why an address was refused — the address step shows the matching dictionary line (`dict.checkout.addressError*`).
+ *  Was an English sentence passed through the URL (cart-ready round 24/10). */
+export type AddressError = "missing" | "phone" | "postal";
+
+function validate(input: AddressInput): AddressError | null {
+  const required = [input.recipientName, input.phone, input.line1, input.subdistrict, input.district, input.province];
+  if (required.some((v) => !v.trim())) return "missing";
+  // A number the courier can call: 9–10 digits starting with 0 (mobile or landline), dashes and spaces allowed.
+  if (!/^0[0-9]{8,9}$/.test(input.phone.replace(/[\s-]/g, ""))) return "phone";
+  if (!/^[0-9]{5}$/.test(input.postalCode.trim())) return "postal";
   return null;
 }
 
@@ -94,7 +96,7 @@ export async function listAddresses(): Promise<AddressRecord[]> {
   return rows.map(fromRow);
 }
 
-export async function addAddress(input: AddressInput, makeDefault: boolean): Promise<{ ok: true; id: number } | { ok: false; error: string }> {
+export async function addAddress(input: AddressInput, makeDefault: boolean): Promise<{ ok: true; id: number } | { ok: false; error: AddressError }> {
   const error = validate(input);
   if (error) return { ok: false, error };
 

@@ -20,16 +20,17 @@ export default async function CheckoutAddressPage({
 }) {
   // Online ordering off (owner 2026-09-07) — see src/lib/commerce/ordering-mode.ts.
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
-  const session = await getSession();
-  if (!session) redirect("/checkout");
+  if (!(await getSession())) redirect("/checkout");
 
   const { error, choose } = await searchParams;
   const addresses = await listAddresses();
   // Cart UX batch C (owner 24/10): a returning customer goes straight to the review step with their last-used address.
   // Not when they asked to choose ("เปลี่ยนที่อยู่" on the review step sends ?choose=1) or came back with an error.
+  // `saved=1` tells the review step this address was picked FOR them, so it asks "ส่งที่อยู่เดิมนี้ใช่ไหม" (owner idea, d).
   if (!choose && !error) {
     const lastId = await lastUsedAddressId(addresses);
-    if (lastId !== null) redirect(`/checkout/review?addressId=${lastId}`);
+    if (lastId !== null) redirect(`/checkout/review?addressId=${lastId}&saved=1`);
   }
-  return <AddressStepView addresses={addresses} error={error} />;
+  const session = await getSession();
+  return <AddressStepView addresses={addresses} addressMissing={error === "not-found"} defaultPhone={session?.phone ?? ""} />;
 }
