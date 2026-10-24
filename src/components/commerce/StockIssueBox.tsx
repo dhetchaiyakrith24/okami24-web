@@ -29,6 +29,9 @@ const equal =
   "inline-flex w-full items-center justify-center rounded-full border border-surface-border bg-surface-2 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim disabled:opacity-60";
 const field = "w-full rounded-lg border border-surface-border bg-surface-2 px-3 py-3 text-base text-foreground";
 
+/** Suggestions for the bank field (it stays free text — any bank is accepted): the banks most Thai customers use. */
+const TH_BANKS = ["กสิกรไทย", "ไทยพาณิชย์", "กรุงเทพ", "กรุงไทย", "กรุงศรีอยุธยา", "ทหารไทยธนชาต (ttb)", "ออมสิน", "ธ.ก.ส.", "ยูโอบี", "ซีไอเอ็มบี ไทย", "เกียรตินาคินภัทร", "แลนด์ แอนด์ เฮ้าส์", "อาคารสงเคราะห์", "ทิสโก้"];
+
 /** The "@okm24" in a sentence becomes the LINE link, kept on one line with the word before it ("ทักไลน์ @okm24" never
  *  splits as "ทัก|ไลน์" at a line end — seen at 1440, 24/10). Assumes one handle per sentence. */
 function withLineLink(sentence: string) {
@@ -177,9 +180,14 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             </label>
             <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankName}
-              <input name="bank" type="text" autoComplete="off" maxLength={60} required className={field} />
+              <input name="bank" type="text" list="okami-th-banks" autoComplete="off" maxLength={60} required className={field} />
             </label>
-            <label className="flex flex-col gap-1 text-foreground-muted">
+            <datalist id="okami-th-banks">
+              {TH_BANKS.map((b) => (
+                <option key={b} value={b} />
+              ))}
+            </datalist>
+            <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankBranch}
               <input name="branch" type="text" autoComplete="off" maxLength={60} required className={field} />
             </label>
