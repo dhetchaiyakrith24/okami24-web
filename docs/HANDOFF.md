@@ -39,7 +39,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (2) selecting a product → payment done: the whole pre-payment flow ready — NEXT
   (3) after payment: cancelled / shipped → which step next — DONE #807 [ตรวจแล้ว test build; not yet on a real order]
   (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — owner 24/10 evening: "ตามที่แนะนำมาทั้งหมดเลย" EXCEPT ① (deploy blips are fine) → build ② ③ ④ ⑤;
-      ③ DONE (staff guide line, docs PR #809). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
+      ③ DONE (staff guide line, docs PR #810). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
       ② N = 24 hours from placing, unpaid only (Friday's pick, reversible — tell the owner) · ④ needs an R2/B2 account = the owner signs up (13.3 #2; DEPLOY-RENDER §9) · ⑤ simple per-IP limit.
       Proposals as sent: ① stock without a rebuild (every stock
       PR = a deploy = 30–60 s of 502; with re-open allowed there will be more) ② unpaid orders auto-cancel after N hours ③ staff check the
