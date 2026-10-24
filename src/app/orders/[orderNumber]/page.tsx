@@ -61,11 +61,11 @@ export default async function OrderStatusPage({
   const paid = order.statusHistory.some((h) => h.status === "payment_submitted");
   // Cancelled by the unpaid sweep, not by staff — the page says why. The deadline line shows while it still waits.
   const autoCancelled = order.status === "cancelled" && order.statusHistory.some((h) => h.status === "cancelled" && isAutoCancelNote(h.note));
-  const deadlineLabel = order.status === "pending_payment" ? dateFmt.format(paymentDeadline(order.createdAt)) : null;
+  const deadlineIso = order.status === "pending_payment" ? paymentDeadline(order.createdAt).toISOString() : null;
 
   // The history holds staff-only notes (cancel reasons, out-of-stock notes — checker #802) and the page never shows it:
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} autoCancelled={autoCancelled} deadlineLabel={deadlineLabel} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
 }

@@ -23,9 +23,23 @@ function formatTHB(value: number): string {
 function withLineLink(sentence: string) {
   const parts = sentence.split(CONTACT.lineId);
   if (parts.length < 2) return sentence;
+  // The word right before the handle stays on its line with it ("ได้ที่ @okm24" split in the 24/10 night wordbreak scan) —
+  // the same rule StockIssueBox's helper already follows.
+  const cut = parts[0].trimEnd().lastIndexOf(" ") + 1;
+  const lead = parts[0].slice(cut);
   return parts.flatMap((part, i) =>
     i === 0
-      ? [part]
+      ? [part.slice(0, cut)]
+      : i === 1
+        ? [
+            <span key="lead" className="whitespace-nowrap">
+              {lead}
+              <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
+                {CONTACT.lineId}
+              </a>
+            </span>,
+            part,
+          ]
       : [
           // Owner 24/10 night: the handle must look tappable — LINE green, underlined.
           <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
@@ -74,7 +88,7 @@ export function OrderStatusView({
   messages = [],
   paid = false,
   autoCancelled = false,
-  deadlineLabel = null,
+  deadlineIso = null,
 }: {
   order: OrderDetail;
   token: string | null;
@@ -89,8 +103,9 @@ export function OrderStatusView({
   paid?: boolean;
   /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
   autoCancelled?: boolean;
-  /** While waiting for payment: when the order cancels itself, formatted by the server page (Bangkok time). */
-  deadlineLabel?: string | null;
+  /** While waiting for payment: when the order cancels itself (ISO). Shown in Bangkok time in the page language — a
+   *  Thai-formatted date leaked into the en/zh pages (locale scan, 24/10 night). */
+  deadlineIso?: string | null;
 }) {
   const { dict, locale } = useLocale();
   const t = dict.orderStatus;
@@ -204,7 +219,14 @@ export function OrderStatusView({
             {!terminal && <span className="text-foreground-muted">{t.nextLabel} · </span>}
             {withLineLink(next)}
           </p>
-          {deadlineLabel && <p className="mt-1.5 text-sm text-foreground-muted">{t.paymentDeadlineNote.replace("{deadline}", deadlineLabel)}</p>}
+          {deadlineIso && (
+            <p className="mt-1.5 text-sm text-foreground-muted">
+              {t.paymentDeadlineNote.replace(
+                "{deadline}",
+                new Intl.DateTimeFormat(locale === "th" ? "th-TH" : locale === "zh" ? "zh-CN" : "en-GB", { timeZone: "Asia/Bangkok", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(deadlineIso)),
+              )}
+            </p>
+          )}
         </div>
 
         {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}

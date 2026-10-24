@@ -551,7 +551,7 @@ export const th: Dictionary = {
     slipUploadTitle: "แนบสลิปโอนเงิน",
     slipUploadPick: "กดเพื่อเลือกรูปสลิป",
     slipUploadChange: "กดเพื่อเปลี่ยนรูป",
-    slipUploadHint: "แนะนำให้ใช้รูปสลิปที่บันทึกจากแอปธนาคาร ระบบจะอ่านได้ชัดกว่ารูปที่ถ่ายด้วยกล้องค่ะ",
+    slipUploadHint: "แนะนำให้ใช้รูปสลิปที่บันทึกจากแอปธนาคาร ระบบจะอ่านได้ชัดกว่ารูปถ่ายค่ะ",
     slipPreviewAlt: "รูปสลิปที่คุณเลือก",
     slipUploadCta: "ส่งสลิป",
     slipUploadPending: "กำลังตรวจสลิป…",
