@@ -522,7 +522,7 @@ export const zh: Dictionary = {
     trackStep2: "点击“查询包裹状态”，{carrier} 的查询页面会在新标签页中打开",
     trackStep3: "把单号粘贴到搜索框即可查询",
     stockTitle: "抱歉，部分商品已售罄",
-    stockLead: "以下商品在您付款后售罄。您可以换成同价的其他商品，或选择退款。",
+    stockLead: "以下商品在您付款后售罄，请在下方选择适合您的方式。",
     stockSwapTitle: "换成同价的其他商品",
     stockSwapPickLabel: "替换 {name}",
     stockSwapPlaceholder: "选择商品",

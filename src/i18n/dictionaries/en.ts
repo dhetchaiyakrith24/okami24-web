@@ -529,7 +529,7 @@ export const en: Dictionary = {
     trackStep2: "Tap “Check parcel status” to open the {carrier} tracking page in a new tab",
     trackStep3: "Paste the number into the search box to see where your parcel is",
     stockTitle: "Sorry, some items are out of stock",
-    stockLead: "The items below ran out after you paid. You can swap them for another item at the same price, or get a refund.",
+    stockLead: "The items below ran out after you paid. Choose whichever suits you below.",
     stockSwapTitle: "Swap for another item at the same price",
     stockSwapPickLabel: "Instead of {name}",
     stockSwapPlaceholder: "Choose an item",

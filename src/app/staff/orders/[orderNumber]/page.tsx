@@ -141,6 +141,10 @@ export default async function StaffOrderPage({
                 {i.productName}
                 {i.variantLabel ? ` · ${i.variantLabel}` : ""} × {i.quantity}
                 <span className="block text-xs text-foreground-dim">รหัสคลัง {order.lines[idx]?.sku ?? "ไม่มี — ถามเจ้าของร้าน"}</span>
+                {order.stockIssue?.resolution === "refunded" &&
+                  order.stockIssue.outLines.some((l) => l.itemId === order.itemLines[idx]?.itemId) && (
+                    <span className="block text-xs text-unverified">คืนเงินแล้ว — ไม่ส่ง</span>
+                  )}
               </span>
               <span className="whitespace-nowrap text-foreground">{formatBaht(i.lineTotal)}</span>
             </li>

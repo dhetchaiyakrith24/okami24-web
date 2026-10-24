@@ -81,11 +81,23 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
     <section className={`${box} ${stage === "resolved" ? "border-surface-border-soft" : "border-unverified/50"}`}>
       <h2 className="text-base font-semibold text-foreground">สินค้าหมดหลังลูกค้าโอน</h2>
       <p className="text-foreground-muted">แจ้งเมื่อ {formatDateTime(issue.openedAt)}{issue.staffNote ? ` — ${issue.staffNote}` : ""}</p>
-      <ul className="list-disc pl-5 text-foreground">
-        {issue.outLines.map((l) => (
-          <li key={l.itemId}>{lineName(l)}</li>
-        ))}
-      </ul>
+      {issue.resolution === "swapped" && issue.swap ? (
+        // The order lines now hold the new items — show what changed from the customer's recorded choice.
+        <ul className="list-disc pl-5 text-foreground">
+          {issue.swap.map((p) => (
+            <li key={p.itemId}>
+              {p.fromLabel ?? "?"} → {p.name}
+              {p.variantLabel ? ` · ${p.variantLabel}` : ""}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul className="list-disc pl-5 text-foreground">
+          {issue.outLines.map((l) => (
+            <li key={l.itemId}>{lineName(l)}</li>
+          ))}
+        </ul>
+      )}
 
       {stage === "waiting-choice" && (
         <p className="text-foreground">
@@ -99,15 +111,12 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
           <input type="hidden" name="step" value="swap" />
           <p className="font-semibold text-foreground">ลูกค้าเลือกเปลี่ยนสินค้า ({formatDateTime(issue.chosenAt ?? issue.openedAt)})</p>
           <ul className="list-disc pl-5 text-foreground">
-            {issue.swap.map((p) => {
-              const from = issue.outLines.find((l) => l.itemId === p.itemId);
-              return (
-                <li key={p.itemId}>
-                  {from ? `${from.productName}${from.variantLabel ? ` · ${from.variantLabel}` : ""}` : "?"} → {p.name}
-                  {p.variantLabel ? ` · ${p.variantLabel}` : ""}
-                </li>
-              );
-            })}
+            {issue.swap.map((p) => (
+              <li key={p.itemId}>
+                {p.fromLabel ?? "?"} → {p.name}
+                {p.variantLabel ? ` · ${p.variantLabel}` : ""}
+              </li>
+            ))}
           </ul>
           <p className="text-xs text-foreground-dim">เช็คของจริงที่คลังก่อนกด — กดแล้วรายการในออเดอร์และข้อความส่งคลังเปลี่ยนตาม ยอดเงินเท่าเดิม</p>
           <button type="submit" className={`${button} self-start`}>

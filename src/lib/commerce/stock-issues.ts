@@ -137,8 +137,9 @@ export function getStockIssue(orderId: number): StockIssue | null {
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Swap candidates — every option that would pass checkout right now (resolveProductRef: approved price + stock) at the
-// SAME unit price as the line that is out (BSOT §9 owner exception: "another item at the same price"). The line's own
-// product comes first (another flavour/colour is the usual swap).
+// SAME unit price as the line that is out (BSOT §9 owner exception: "another item at the same price"), in the SAME
+// category (a disposable is never offered a refill pod for a device the customer may not own — Friday 24/10). The line's
+// own product comes first (another flavour/colour is the usual swap).
 
 function optionIdsOf(slug: string, origin: "legacy" | "product-master", published: Map<string, string[]>): (string | null)[] {
   if (origin === "product-master") {
@@ -153,8 +154,10 @@ function optionIdsOf(slug: string, origin: "legacy" | "product-master", publishe
 export function swapCandidates(line: Pick<StockIssueLine, "productSlug" | "variantId" | "unitPrice">): SwapGroup[] {
   const published = new Map(buildPublishedCatalog().map((p) => [p.slug, p.variants.map((v) => v.id)]));
   const groups: SwapGroup[] = [];
-  const items = allCatalogItems()
-    .filter((i) => i.sellingPrice === line.unitPrice)
+  const all = allCatalogItems();
+  const category = all.find((i) => i.slug === line.productSlug)?.categoryId ?? null;
+  const items = all
+    .filter((i) => i.sellingPrice === line.unitPrice && (category === null || i.categoryId === category))
     .sort((a, b) => (a.slug === line.productSlug ? -1 : b.slug === line.productSlug ? 1 : a.name.localeCompare(b.name)));
   for (const item of items) {
     const options: SwapGroup["options"] = [];
@@ -291,7 +294,7 @@ export async function chooseSwap(orderNumber: string, viewToken: string | null, 
     const decoded = decodeSwapValue(values.get(line.itemId));
     const row = items.get(line.itemId);
     if (!decoded || !row || !validSwap(row, decoded.productSlug, decoded.variantId)) return { ok: false, error: "swap-invalid" };
-    picks.push({ itemId: line.itemId, ...decoded });
+    picks.push({ itemId: line.itemId, ...decoded, fromLabel: `${line.productName}${line.variantLabel ? ` · ${line.variantLabel}` : ""}` });
   }
   return recordChoice(order.id, "swap", JSON.stringify(picks), null);
 }

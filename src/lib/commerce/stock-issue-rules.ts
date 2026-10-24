@@ -54,6 +54,8 @@ export interface SwapPick {
   itemId: number;
   productSlug: string;
   variantId: string | null;
+  /** The out line's name when the customer chose ("M BAR 10K · Cola") — the order line itself is rewritten by the swap. */
+  fromLabel?: string;
 }
 
 /** "slug" or "slug::variantId" — the value of one option in the swap picker. */
@@ -77,9 +79,9 @@ export function parseSwapJson(raw: string | null): SwapPick[] | null {
     const picks: SwapPick[] = [];
     for (const v of value) {
       if (!v || typeof v !== "object") return null;
-      const { itemId, productSlug, variantId } = v as Record<string, unknown>;
+      const { itemId, productSlug, variantId, fromLabel } = v as Record<string, unknown>;
       if (typeof itemId !== "number" || typeof productSlug !== "string" || !(variantId === null || typeof variantId === "string")) return null;
-      picks.push({ itemId, productSlug, variantId });
+      picks.push({ itemId, productSlug, variantId, ...(typeof fromLabel === "string" ? { fromLabel } : {}) });
     }
     return picks;
   } catch {
