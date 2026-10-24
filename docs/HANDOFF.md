@@ -38,7 +38,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
   (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
 3 NEW MAIN CHAT from 24/10 ~12:45 (previous main local_626dcb43-ac97-4ee7-9a3d-f1c8b60b7b25 moved at context 81%; weekly quota 94%, resets
-  25/10 22:00; extra usage ON, limit $40). THE NEW CHAT DOES ONLY CART UX E (owner 24/10 "แชทใหม่ทำแค่ระบบยกเลิกสินค้าก่อน" — sold out
+  25/10 22:00; extra usage ON, limit $40). NEW CHAT ORDER (owner 24/10 ~13:40 "ได้ครับลองแก้ปัญหากันดูนะ … ละค่อยเริ่มทำ" = start in the new
+  chat): (1) STOCK FIRST, quick — make the routine `okami24-stock-daily` CLOSE-ONLY (owner said ได้ to Friday's recommended option 1): a code
+  that was out and now reads มีของ stays out (keep it in warehouse-stock.ts), the run merges the rest and lists those "คลังบอกว่ากลับมามีของ"
+  codes for the owner to confirm; edit the prompt in C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md step 3/5 + TEAM_RULES
+  13.7 stock line; then propose the order-entry read design (see ROOT CAUSE below). (2) THEN CART UX E (owner earlier: "แชทใหม่ทำแค่ระบบยกเลิกสินค้าก่อน" — sold out
   after payment, flow in 3c "E"; full set: money, orders, customer data; BSOT §9 dated line). Why: the first web order OK-20261023-eb3fe0
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
