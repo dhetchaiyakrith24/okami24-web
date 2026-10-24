@@ -1,8 +1,9 @@
 /**
  * The text the alert bot sends (cart round 22/10) — pure, no I/O, so line-messages-contract-test.ts can hold it to
- * what staff need and to what must never be in a group chat: the customer's phone, address or account numbers.
- * Staff read the full order on /staff; the group gets the order number, items, total, slip verdict, recipient's
- * name + province and the link.
+ * what staff need and to what must never be in a group chat: account numbers, the customer's note to the shop.
+ * Owner 24/10 night (queue Q3): the paid-order alert now carries the full delivery block — recipient, phone, address —
+ * so admin can copy it to the warehouse straight from the team group; confirming the payment on /staff is unchanged.
+ * The group is the shop team's own (the same people who see /staff).
  */
 import type { OrderDetail } from "@/lib/commerce/orders";
 import type { SlipReason, SlipVerdict } from "@/lib/commerce/slip-decision";
@@ -41,12 +42,14 @@ function verdictLine(verdict: SlipVerdict, reasons: SlipReason[]): string {
 
 export function formatOrderAlert(order: OrderDetail, verdict: SlipVerdict, reasons: SlipReason[], siteUrl: string): string {
   const items = order.items.map((i) => `• ${i.productName}${i.variantLabel ? ` (${i.variantLabel})` : ""} ×${i.quantity}`);
+  const a = order.shippingAddress;
   return [
     `🛒 ออเดอร์ใหม่ ${order.orderNumber}`,
     ...items,
     `ยอด ${baht(order.total)}${order.shippingFee > 0 ? ` (รวมค่าส่ง ${baht(order.shippingFee)})` : " (ไม่มีค่าส่ง)"}`,
     verdictLine(verdict, reasons),
-    `ผู้รับ: ${order.shippingAddress.recipientName} · ${order.shippingAddress.province}`,
+    `ผู้รับ: ${a.recipientName} · ${a.phone}`,
+    `ที่อยู่: ${a.line1} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
     `เปิดดู: ${siteUrl}/staff/orders/${encodeURIComponent(order.orderNumber)}`,
   ].join("\n");
 }
