@@ -70,7 +70,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (ProductMaster photoRule page opens unpicked) — should read sold out · phone grid bar: the sort select drops to a second row.
     Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
-    Q5 phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
+    Q2b [DONE #821] owner: the bar pill was too prominent — "สินค้าพร้อมส่ง" now an item in the desktop "สินค้า" menu + phone
+       drawer; grid toggles stay.
+    Q5 [DRAFTS SENT 24/10 night — waiting for the owner to pick: A photo grid (Friday recommends) · B bottom sheet · C swipe the big
+       photo; mockups _incoming/cartpolish-2410/picker/ (gen.js)] phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
        photos · swatch grid), owner picks
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
