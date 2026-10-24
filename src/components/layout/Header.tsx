@@ -110,15 +110,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
-          {/* Q2 (owner 24/10 night): phones and tablets get one visible button to every product — the menu drawer was the only
-              way before. 390 px has ~64 px free beside the icons (measured 24/10), so phones read "สินค้า"; from 640 px the full
-              "สินค้าทั้งหมด". Desktop uses the nav's "สินค้า" link instead. */}
+          {/* Q2 (owner 24/10 night, then corrected the same night: "ปุ่มดูสินค้าว่าทั้งเว็บตอนนี้เรามีสินค้าอะไรบ้างที่ยังมีในสต๊อก"):
+              one tap to every product the shop has IN STOCK — /products with the in-stock filter on (src/lib/in-stock.ts).
+              390 px has ~64 px free beside the icons (measured 24/10), so phones read "พร้อมส่ง"; from 640 px "สินค้าพร้อมส่ง".
+              Hidden in the 1024–1279 band, where the nav already fills the bar (measured 24/10). */}
           <Link
-            href="/products"
-            className="whitespace-nowrap rounded-full border border-ember/50 px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:border-ember hover:bg-ember/10 lg:hidden"
+            href="/products?stock=in"
+            className="whitespace-nowrap rounded-full border border-ember/50 px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:border-ember hover:bg-ember/10 lg:hidden xl:inline-flex"
           >
-            <span className="sm:hidden">{dict.nav.products}</span>
-            <span className="hidden sm:inline">{dict.nav.allProducts}</span>
+            <span className="sm:hidden">{dict.nav.inStockShort}</span>
+            <span className="hidden sm:inline">{dict.nav.inStock}</span>
           </Link>
           <LanguageSwitcher />
           <Link

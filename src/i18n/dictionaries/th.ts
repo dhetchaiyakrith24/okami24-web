@@ -5,6 +5,8 @@ export const th: Dictionary = {
   nav: {
     products: "สินค้า",
     allProducts: "สินค้าทั้งหมด",
+    inStock: "สินค้าพร้อมส่ง",
+    inStockShort: "พร้อมส่ง",
     eliquid: "น้ำยา",
     compare: "เปรียบเทียบ",
     finder: "ตัวช่วยเลือกสินค้า",
@@ -177,6 +179,7 @@ export const th: Dictionary = {
     filterPortability: "ขนาดพกพา",
     filterExperienceLevel: "ระดับผู้ใช้งาน",
     filterBeginnerOnly: "เหมาะกับมือใหม่เท่านั้น",
+    inStockOnly: "สินค้าพร้อมส่ง",
     screenNone: "ไม่มีหน้าจอ",
     screenLed: "ไฟ LED แสดงสถานะ",
     screenColor: "หน้าจอสี",

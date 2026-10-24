@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { inStockEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
@@ -228,6 +229,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             // do have something instead of ending the visit. Read from the catalog, so it needs
             // no upkeep and makes no promise about this category.
             alternativeCategories={isEmptyCategory ? categoriesWithProducts() : []}
+            inStockKeys={inStockEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
           <CollectionReviewVideo video={clip} contextName={category.name} />

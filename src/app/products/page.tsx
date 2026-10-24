@@ -4,6 +4,7 @@ import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { catalogSearchTexts } from "@/lib/catalog-search-entries";
+import { inStockEntryKeys } from "@/lib/in-stock";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
 import { canonicalFor, collectionPageJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { productsHeadTh } from "@/i18n/search-head-copy";
@@ -44,7 +45,7 @@ export default function ProductsPage() {
             <LineOrderingNotice />
           </Suspense>
         )}
-        <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} />
+        <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} />
       </Container>
     </>
   );

@@ -12,6 +12,8 @@ export interface Dictionary {
   nav: {
     products: string;
     allProducts: string;
+    inStock: string;
+    inStockShort: string;
     eliquid: string;
     compare: string;
     finder: string;
@@ -182,6 +184,7 @@ export interface Dictionary {
     filterPortability: string;
     filterExperienceLevel: string;
     filterBeginnerOnly: string;
+    inStockOnly: string;
     screenNone: string;
     screenLed: string;
     screenColor: string;

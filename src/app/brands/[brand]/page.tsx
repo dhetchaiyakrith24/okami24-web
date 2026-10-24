@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { inStockEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { brands, getBrand } from "@/data/brands";
 import { familiesForBrand } from "@/data/families";
@@ -95,7 +96,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
+        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts)} />
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>

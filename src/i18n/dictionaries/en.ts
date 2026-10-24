@@ -6,6 +6,8 @@ export const en: Dictionary = {
   nav: {
     products: "Products",
     allProducts: "All Products",
+    inStock: "In stock",
+    inStockShort: "In stock",
     eliquid: "E-Liquid",
     compare: "Compare",
     finder: "Finder",
@@ -163,6 +165,7 @@ export const en: Dictionary = {
     filterPortability: "Portability",
     filterExperienceLevel: "Experience level",
     filterBeginnerOnly: "Beginner-friendly only",
+    inStockOnly: "In stock",
     screenNone: "No screen",
     screenLed: "LED indicator",
     screenColor: "Colour display",
