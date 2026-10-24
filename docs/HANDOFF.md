@@ -82,6 +82,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        unpicked flavour header has no "เลือก…" prompt · relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour).
     Q5b [DONE #826 63ad8f45, checker PASS 4f895ff2] past 12 options a "ดูทั้งหมด {n} แบบ" button opens the strip into the tile grid
        ("ย่อกลับ" closes) · header count = "พร้อมส่ง 9/27" (no double "มีของ") — owner: keep the new look (24/10).
+    Q5c [NEXT — 25/10, owner 24/10 night] "ย่อกลับ" leaves the page far down (the grid collapses above the reader) — on close, scroll
+       the picker back into view (PhoneOptionTiles toggle). Small fix, tier B shots 390.
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
