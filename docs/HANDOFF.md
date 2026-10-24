@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~07:00 = c12c86e6 (#795 cart UX C: last-used address straight to review +
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~12:40 = a0929b7f (#798 hourly stock 12:14 by the routine). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
   optional "หมายเหตุถึงร้าน" → orders.customer_note (migration 0012), staff order page only — deploy success + live 200; staff-page render NOT
   seen in a browser yet (no staff password locally) → first real note: look at /staff/orders/<n>). Before: #794 "ติดตามคำสั่งซื้อ" /orders by phone only + header
   (lg band hidden) / drawer / footer link — deploy success + live 200). FIRST REAL WEB ORDER 24/10 02:25 OK-20261023-eb3fe0 (Muro Connector 20K
@@ -37,7 +37,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Cart/order page proof on a test build (24/10): the build needs OKAMI24_ORDERING=on SITE_URL=https://okami24.store (else /cart redirects);
   start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
   (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
-3 MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
+3 NEW MAIN CHAT from 24/10 ~12:45 (previous main local_626dcb43-ac97-4ee7-9a3d-f1c8b60b7b25 moved at context 81%; weekly quota 94%, resets
+  25/10 22:00; extra usage ON, limit $40). FIRST TASK = CART UX E (sold out after payment, flow in 3c "E") — it HAPPENED: the first web order
+  OK-20261023-eb3fe0 (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin 24/10 because the item was
+  really out of stock while Shipnity Max still says "มีของ" (reads 23/10 16:00 + 24/10 12:14 both Pod-171-3=1) → the admin refunds by hand
+  and phones the customer (no customer message channel). Pod-171-3 stays buyable on the site until Shipnity is fixed (owner/admin step; the
+  hourly read then closes it) — offer the owner a manual sold-out override if it is still open. E = full set (money, orders, customer data;
+  BSOT §9 dated line). Then: the owner's 4 fixes (below) → login page + member promo (รอพี่ตรวจ 75) → D upsell row.
+  Hourly stock routine: no runs 08:00–11:00 24/10 (computer/app was off) · 12:14 run = #798 (Pod-156-14 back in, M-Switch Kit) merged by the
+  routine, deploy success, live 200 [ตรวจแล้ว]. The owner talks to the routine chat directly sometimes ("เสร็จแล้ว Merge ได้เลย").
+  Before this: MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
   NO side chats. Old side chats to archive: line1-images-2310d local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c
   local_1b6cafc0…. Weekly quota 92% (resets 25/10 22:00) → after batch A, stop at the PR edge until the reset unless the owner says go.
   Owner 24/10 ~02:30: "เรื่มชุด B เลยครับ" (quota go) · thank-you line → "ขอบคุณที่ไว้วางใจและใช้บริการกับ OKami24", big bold "Impact ทรงพลัง"
@@ -50,7 +59,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   password) → do both on 25/10; propose the login design first (login system = central §8 ask). Cart UX C DONE #795 (last-used address → review;
   optional note → orders.customer_note, staff page only; migration 0012; checker notes not fixed: Back from review returns to review, a typed note is lost if placing fails). NEXT: D upsell row in the cart
   (owner asked again 24/10 "สินค้าเลือกเพิ่มเติม" — designer first) → E (full set) — 3c.
-  OWNER FIXES 24/10 ~03:10 from his phone on the live site (do FIRST on 25/10, one batch, tier B):
+  OWNER FIXES 24/10 ~03:10 from his phone on the live site (after E, one batch, tier B):
   (a) product pages (phone): the floating cart bubble sits above the buy bar over the page — move it INTO the buy bar beside the CTA
       ("แถบนี้ตามไปทุกหน้า") and hide the floating bubble while `.mobile-buy-bar` is on screen (badge stays);
   (b) the CTA label "เลือกกลิ่นก่อน" (no option picked yet) → better wording (thai-copy; owner asked what it should be);
