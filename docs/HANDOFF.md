@@ -16,10 +16,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   deploy success 11:23 UTC, live 200 [ตรวจแล้ว]) · 72255106 (#812 hourly stock) · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
   to a bank account; GitHub marked #804 merged with it — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
   617e5553 (#805 handoff) · 7de15064 (#802 cart UX E). Earlier 24/10 merges #787–#803 = `git log`.
-  **CART IS OFF on the live site since 24/10 ~16:00** (owner: "ปิดระบบตะกร้าไปก่อน รอจนกว่า … จะเสร็จ") — Render env OKAMI24_ORDERING=off
-  + Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 307 → /products?order=line, product pages "สอบถามทาง LINE" [ตรวจแล้ว].
-  /orders/<n> and /staff keep working for existing orders. Turn it ON again only when the owner says the item 3 list is done (Render →
-  okami24 → Environment → Edit → OKAMI24_ORDERING = on → "Save, rebuild, and deploy").
+  **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
+  Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 200 + "เพิ่มลงตะกร้า" on product pages, / /products /staff /orders 200 [ตรวจแล้ว].
+  Render env form: unrevealed secret rows show EMPTY inputs in the DOM (not loaded) — saving keeps them; edit only the one row (focus it by
+  its key, type, check the value by script) — Chrome screenshots of that page time out. Turn OFF = same steps with off.
   ALWAYS after a merge: check the deploy reached success (`gh api repos/dhetchaiyakrith24/okami24-web/deployments?sha=<merge sha>` → statuses)
   — #776+#779 builds FAILED on Render's 60 s per-page limit while local verify passed (fixed #781). Every deploy = ~30–60 s of 502 + LINE
   webhook events in that window are lost → group merges.
@@ -80,6 +80,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        bigger + tappable, counter past 12 + a cover slide · desktop unchanged · "ใกล้หมด" NOT built (no quantities). Shots _incoming/q5/shots/.
        Left (taste, for the owner): header shows "มีของ" twice when the picked option is in stock · counter counts the cover slide ·
        unpicked flavour header has no "เลือก…" prompt · relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour).
+    Q5b [DONE #826 63ad8f45, checker PASS 4f895ff2] past 12 options a "ดูทั้งหมด {n} แบบ" button opens the strip into the tile grid
+       ("ย่อกลับ" closes) · header count = "พร้อมส่ง 9/27" (no double "มีของ") — owner: keep the new look (24/10).
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
@@ -120,7 +122,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   · all batches live (1, 1b, 1d, 2, 3 #691, 4 #695, 5 #697 + #698 phone) · owner 21/10 "ทำแค่หน้าแรกพอครับ" (category/product pages dropped).
   Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
   tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`) — paused 24/10 ~16:00 (owner), REWRITTEN + re-enabled ~17:00 after #806:
+3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, Sonnet 5.5 medium) — owner paused it ~20:00 24/10, Friday re-enabled 23:00 24/10
+  (owner: "ตั้งใหม่ … เจอสินค้าใหม่ให้รายงานไว้สั้นๆ") with step 3b: NEW product codes (in the read, not in sku-map.ts) appended to
+  `_incoming/stock-api/new-products.md` (not in git) — Friday reads it and queues the listing for the side chat; clears lines once listed.
+  First list 24/10: Disposable-45 (15/15 in stock). Flow:
   reads the ORDER-ENTRY picker in the owner's Chrome (new tab, read only: never pick a customer / add an item / press บันทึก) per the header of
   `scripts/order-entry-stock.js` → `stock-sync.js --order-entry` (closes AND re-opens) → PR only when stock changed → verify --full → gate →
   checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops (>15 products / >60 codes / missing codes / other
