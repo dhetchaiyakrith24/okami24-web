@@ -6,6 +6,7 @@ import { toCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
+import { getStockIssue, orderLines, type StockIssue, type StockIssueLine } from "@/lib/commerce/stock-issues";
 
 /**
  * The staff order list and its buttons (cart round 22/10, round batch 2). Reached only through /staff pages and
@@ -79,6 +80,10 @@ export interface StaffOrderDetail extends OrderDetail {
   slip: { verdict: SlipVerdict | null; reasons: string[]; transRef: string | null; amount: number | null; submittedAt: string } | null;
   lines: { sku: string | null; name: string; quantity: number }[];
   warehouseText: string;
+  /** Out of stock after payment (cart UX batch E) — null when nobody marked a line out. */
+  stockIssue: StockIssue | null;
+  /** The order lines with their ids (the "which lines are out" checkboxes), same order as `items`. */
+  itemLines: StockIssueLine[];
 }
 
 function skuFor(productSlug: string, variantId: string | null): string | null {
@@ -108,6 +113,12 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
     name: `${i.productName}${i.variantLabel ? ` ${i.variantLabel}` : ""}`,
     quantity: i.quantity,
   }));
+  const stockIssue = getStockIssue(order.id);
+  const itemLines = orderLines(order.id);
+  // A partial refund (batch E): the refunded lines are not sent — they leave the warehouse text (they stay on the order
+  // page and in the totals, which are what the customer paid).
+  const refundedIds = new Set(stockIssue?.resolution === "refunded" ? stockIssue.outLines.map((l) => l.itemId) : []);
+  const shipLines = lines.filter((_, idx) => !refundedIds.has(itemLines[idx]?.itemId ?? -1));
   const a = order.shippingAddress;
   return {
     ...order,
@@ -124,9 +135,11 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
         }
       : null,
     lines,
+    stockIssue,
+    itemLines,
     warehouseText: warehouseText({
       orderNumber: order.orderNumber,
-      lines,
+      lines: shipLines,
       recipientName: a.recipientName,
       phone: a.phone,
       address: `${a.line1} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
