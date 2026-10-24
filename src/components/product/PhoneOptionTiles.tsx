@@ -11,7 +11,8 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  * three pickers (ColorVariantRail · FlavorVariantGrid · ProductMasterVariantPicker) render this instead of their
  * sideways chip row; `lg` and above keep their own markup. Owner's picks:
  *   - up to `TILE_LIMIT` options = layout A: every option a photo tile with its name, 4 per row, no sideways scroll;
- *   - more than that = layout C: the big photo stays the main picker (swipe), with a strip of small photos under it;
+ *   - more than that = layout C: the big photo stays the main picker (swipe), with a strip of small photos under it
+ *     (names + pills kept under each: flavour photos often look alike, the name is what tells them apart);
  *   - the status pill is B's: green "มีของ" so stock reads at a glance, sold out = dimmed tile + "หมด".
  * An option without its own verified photo shows its swatch (or a plain dot) — never another option's photo.
  * Only in/out is known (the order-entry read has no quantities), so there is no "low stock" state.
@@ -99,7 +100,7 @@ export function PhoneOptionTiles({
               aria-pressed={picked}
               aria-label={name}
               title={name}
-              className={cn("flex min-w-0 flex-col items-center gap-1.5 text-center", strip && "w-16 shrink-0")}
+              className={cn("flex min-w-0 flex-col items-center gap-1.5 text-center", strip && "w-[4.5rem] shrink-0")}
             >
               <span
                 className={cn(
@@ -118,19 +119,16 @@ export function PhoneOptionTiles({
                   />
                 )}
               </span>
-              {!strip && (
-                <>
-                  <span
-                    className={cn(
-                      "line-clamp-2 w-full text-xs leading-tight",
-                      picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
-                    )}
-                  >
-                    {o.name}
-                  </span>
-                  <StockPill out={o.out} small />
-                </>
-              )}
+              {/* Two lines reserved, so the pills of one row line up whatever the name length. */}
+              <span
+                className={cn(
+                  "line-clamp-2 min-h-[2.5em] w-full text-xs leading-tight",
+                  picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
+                )}
+              >
+                {o.name}
+              </span>
+              <StockPill out={o.out} small />
             </button>
           );
         })}

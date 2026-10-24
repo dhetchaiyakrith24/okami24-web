@@ -184,7 +184,8 @@ export function MobileVariantGallery({
     if (!hasScrollEnd) scheduleSettle();
   };
 
-  const counter = slides.length > TILE_LIMIT;
+  // +1: a product may lead with one cover/lineup slide before its options (M Bar 10K = 1 + 12 → still dots).
+  const counter = slides.length > TILE_LIMIT + 1;
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>
