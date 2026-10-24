@@ -38,7 +38,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (1) stock checked 100 % from the order-entry screen ("หน้าคีย์ออเดอร์") — DONE #806 + routine (3u) [ตรวจแล้ว]
   (2) selecting a product → payment done: the whole pre-payment flow ready — NEXT
   (3) after payment: cancelled / shipped → which step next — DONE #807 [ตรวจแล้ว test build; not yet on a real order]
-  (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — Friday's proposals sent to the owner 24/10 (report): ① stock without a rebuild (every stock
+  (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — owner 24/10 evening: "ตามที่แนะนำมาทั้งหมดเลย" EXCEPT ① (deploy blips are fine) → build ② ③ ④ ⑤;
+      ③ DONE (staff guide line, docs PR #810). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
+      ② N = 24 hours from placing, unpaid only (Friday's pick, reversible — tell the owner) · ④ needs an R2/B2 account = the owner signs up (13.3 #2; DEPLOY-RENDER §9) · ⑤ simple per-IP limit.
+      Proposals as sent: ① stock without a rebuild (every stock
       PR = a deploy = 30–60 s of 502; with re-open allowed there will be more) ② unpaid orders auto-cancel after N hours ③ staff check the
       order-entry screen before "ยืนยันยอดเงิน" (staff guide line) ④ off-site DB backup (queued since 23/10) ⑤ rate limit on the phone
       lookup (#794 known) — build what the owner picks; ③ is a docs line Friday may add at once.
@@ -404,7 +407,7 @@ Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in
 `docs/IMAGE_SPEC.md`; this list holds the rulings that have no other home. A ruling that is replaced = overwrite its line.
 
-**Shop and ordering:** the cart is OPEN since 24/10 00:22 (owner; LINE @okm24 = back-up channel, BSOT §8) · checkout = phone only, no OTP
+**Shop and ordering:** the cart is OFF since 24/10 ~16:00 until the owner's 5-item list is done (§16 item 3; LINE @okm24 = the channel meanwhile, BSOT §8) · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock-PR deploys (~30–60 s of 502) are fine, no need for stock without a rebuild (owner 24/10 "ไม่ต้องซีเรียสครับ ของจริงมันไม่ถึง") · checkout = phone only, no OTP
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
 without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are not touched and carry no JSON-LD on purpose (item 49) ·
