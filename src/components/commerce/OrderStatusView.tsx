@@ -72,6 +72,8 @@ export function OrderStatusView({
   stockIssue = null,
   messages = [],
   paid = false,
+  autoCancelled = false,
+  deadlineLabel = null,
 }: {
   order: OrderDetail;
   token: string | null;
@@ -84,6 +86,10 @@ export function OrderStatusView({
   messages?: { body: string; dateLabel: string }[];
   /** True when a slip was ever sent — a cancelled paid order says the shop will contact them about the refund. */
   paid?: boolean;
+  /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
+  autoCancelled?: boolean;
+  /** While waiting for payment: when the order cancels itself, formatted by the server page (Bangkok time). */
+  deadlineLabel?: string | null;
 }) {
   const { dict, locale } = useLocale();
   const t = dict.orderStatus;
@@ -106,9 +112,10 @@ export function OrderStatusView({
     awaiting_verification: t.nextChecking,
     approved: t.nextApproved,
     processing: t.nextProcessing,
-    shipped: t.nextShipped,
+    // No carrier picked = no "check the parcel" button below (checker #807 note b) — the line points at the number instead.
+    shipped: order.carrier ? t.nextShipped : t.nextShippedNoCarrier,
     completed: t.nextCompleted,
-    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid ? t.nextCancelledPaid : t.nextCancelled,
+    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid ? t.nextCancelledPaid : autoCancelled ? t.nextCancelledUnpaid : t.nextCancelled,
   };
   const next = stockStage === "waiting-choice" ? t.nextStockWaiting : stockStage === "chosen" ? t.nextStockChosen : NEXT[order.status];
   const terminal = order.status === "completed" || order.status === "cancelled";
@@ -189,6 +196,7 @@ export function OrderStatusView({
             {!terminal && <span className="text-foreground-muted">{t.nextLabel} · </span>}
             {withLineLink(next)}
           </p>
+          {deadlineLabel && <p className="mt-1.5 text-sm text-foreground-muted">{t.paymentDeadlineNote.replace("{deadline}", deadlineLabel)}</p>}
         </div>
 
         {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}

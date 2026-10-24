@@ -9,6 +9,7 @@ import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
 import { lineImage } from "@/lib/commerce/line-image";
 import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
+import { isAutoCancelNote, paymentDeadline, sweepIfPastDeadline } from "@/lib/commerce/unpaid-expiry";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -26,9 +27,13 @@ export default async function OrderStatusPage({
 }) {
   const { orderNumber } = await params;
   const { token } = await searchParams;
-  const order = await getOrderDetailForViewer(orderNumber, token ?? null);
+  let order = await getOrderDetailForViewer(orderNumber, token ?? null);
 
   if (!order) return <OrderNotFoundMessage />;
+
+  // Owner 24/10 proposal ②: an order past its payment deadline is cancelled before the page shows it (the 15-minute
+  // sweep in src/lib/commerce/unpaid-expiry.ts may not have reached it yet) — never "waiting for payment" after the deadline.
+  if (sweepIfPastDeadline(order)) order = (await getOrderDetailForViewer(orderNumber, token ?? null)) ?? order;
 
   // Bank details only for an order that is still waiting for payment (owner rule 2026-09-06,
   // BSOT §9) — resolved here on the server, never shipped in the client dictionary.
@@ -54,10 +59,13 @@ export default async function OrderStatusPage({
   const messages = customerMessagesFor(order.id).map((m) => ({ body: m.body, dateLabel: dateFmt.format(new Date(m.createdAt)) }));
   // Whether money ever came in — a cancelled order that was paid tells the customer about the refund.
   const paid = order.statusHistory.some((h) => h.status === "payment_submitted");
+  // Cancelled by the unpaid sweep, not by staff — the page says why. The deadline line shows while it still waits.
+  const autoCancelled = order.status === "cancelled" && order.statusHistory.some((h) => h.status === "cancelled" && isAutoCancelNote(h.note));
+  const deadlineLabel = order.status === "pending_payment" ? dateFmt.format(paymentDeadline(order.createdAt)) : null;
 
   // The history holds staff-only notes (cancel reasons, out-of-stock notes — checker #802) and the page never shows it:
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} autoCancelled={autoCancelled} deadlineLabel={deadlineLabel} />;
 }
