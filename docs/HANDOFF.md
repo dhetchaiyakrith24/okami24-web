@@ -38,12 +38,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
   (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
 3 NEW MAIN CHAT from 24/10 ~12:45 (previous main local_626dcb43-ac97-4ee7-9a3d-f1c8b60b7b25 moved at context 81%; weekly quota 94%, resets
-  25/10 22:00; extra usage ON, limit $40). FIRST TASK = CART UX E (sold out after payment, flow in 3c "E") — it HAPPENED: the first web order
-  OK-20261023-eb3fe0 (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin 24/10 because the item was
-  really out of stock while Shipnity Max still says "มีของ" (reads 23/10 16:00 + 24/10 12:14 both Pod-171-3=1) → the admin refunds by hand
-  and phones the customer (no customer message channel). Pod-171-3 stays buyable on the site until Shipnity is fixed (owner/admin step; the
-  hourly read then closes it) — offer the owner a manual sold-out override if it is still open. E = full set (money, orders, customer data;
-  BSOT §9 dated line). Then: the owner's 4 fixes (below) → login page + member promo (รอพี่ตรวจ 75) → D upsell row.
+  25/10 22:00; extra usage ON, limit $40). THE NEW CHAT DOES ONLY CART UX E (owner 24/10 "แชทใหม่ทำแค่ระบบยกเลิกสินค้าก่อน" — sold out
+  after payment, flow in 3c "E"; full set: money, orders, customer data; BSOT §9 dated line). Why: the first web order OK-20261023-eb3fe0
+  (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
+  Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
+  the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
+  `muro-connector-20k | Double Mint` in src/data/stock/sold-out.ts (survives the hourly read; remove when back) — check it merged.
+  Proposed, not built: the stock routine should stop and ask when a code flips 0 → 1 after being out for days. After E: the owner's 4 fixes
+  (below) → login page + member promo (รอพี่ตรวจ 75) → D upsell row — only when the owner says go.
   Hourly stock routine: no runs 08:00–11:00 24/10 (computer/app was off) · 12:14 run = #798 (Pod-156-14 back in, M-Switch Kit) merged by the
   routine, deploy success, live 200 [ตรวจแล้ว]. The owner talks to the routine chat directly sometimes ("เสร็จแล้ว Merge ได้เลย").
   Before this: MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
