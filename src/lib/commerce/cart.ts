@@ -7,6 +7,7 @@ import { resolveProductRef, type ProductRef, type ResolveFailureReason } from ".
 import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
 import { lineImage, type LineImage } from "./line-image";
+import { MAX_LINE_QUANTITY } from "./cart-limits";
 
 const CART_COOKIE = "okami24_cart";
 const cookieOpts = { httpOnly: true, sameSite: "lax" as const, path: "/", secure: process.env.NODE_ENV === "production" };
@@ -156,7 +157,7 @@ export async function getCart(): Promise<CartView> {
 }
 
 export async function addToCart(ref: ProductRef, quantity: number): Promise<{ ok: true } | { ok: false; error: string }> {
-  if (!Number.isInteger(quantity) || quantity <= 0 || quantity > 20) {
+  if (!Number.isInteger(quantity) || quantity <= 0 || quantity > MAX_LINE_QUANTITY) {
     return { ok: false, error: "Invalid quantity." };
   }
   const resolved = resolveProductRef(ref);
@@ -169,7 +170,8 @@ export async function addToCart(ref: ProductRef, quantity: number): Promise<{ ok
     .get(cartId, ref.slug, ref.variantId) as { id: number; quantity: number } | undefined;
 
   if (existing) {
-    db.prepare("UPDATE cart_items SET quantity = ? WHERE id = ?").run(existing.quantity + quantity, existing.id);
+    // Same cap as setCartItemQuantity: repeated adds used to grow past 20.
+    db.prepare("UPDATE cart_items SET quantity = ? WHERE id = ?").run(Math.min(existing.quantity + quantity, MAX_LINE_QUANTITY), existing.id);
   } else {
     db.prepare("INSERT INTO cart_items (cart_id, product_slug, variant_id, quantity) VALUES (?, ?, ?, ?)").run(
       cartId,
@@ -198,7 +200,7 @@ export async function setCartItemQuantity(
   } else {
     db.prepare(
       "UPDATE cart_items SET quantity = ? WHERE cart_id = ? AND product_slug = ? AND variant_id IS ?"
-    ).run(Math.min(quantity, 20), cartId, productSlug, variantId);
+    ).run(Math.min(quantity, MAX_LINE_QUANTITY), cartId, productSlug, variantId);
   }
   db.prepare("UPDATE carts SET updated_at = datetime('now') WHERE id = ?").run(cartId);
 }
