@@ -11,7 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 night = b2f074ab (#811 cart-ready: pre-payment flow + copy + unpaid auto-cancel 24 h + phone rate limit, checker PASS 5964e996,
+  deploy success 11:23 UTC, live 200 [ตรวจแล้ว]) · 72255106 (#812 hourly stock) · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
   to a bank account; GitHub marked #804 merged with it — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
   617e5553 (#805 handoff) · 7de15064 (#802 cart UX E). Earlier 24/10 merges #787–#803 = `git log`.
   **CART IS OFF on the live site since 24/10 ~16:00** (owner: "ปิดระบบตะกร้าไปก่อน รอจนกว่า … จะเสร็จ") — Render env OKAMI24_ORDERING=off
@@ -24,7 +25,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
   Open PRs: #643 (old, not touched).
-2 Main folder: branch `docs-handoff-2410g` = this handoff. Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
+2 Main folder: branch `docs-handoff-2410i` = this handoff. Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
   origin/main + all extra commits BEFORE the verify run (~20 min each). PR flow: draft → verify --full on the head in a test tree → gate →
@@ -36,8 +37,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Server-action forms in the Browser pane: React resets uncontrolled inputs after every action (LESSONS พ45).
 3 ROUND "cart ready to reopen" — owner 24/10 ~16:00 (chat, main chat local_6dc0e8b6-0003-4167-b981-1d6bd5539951): cart OFF until ALL of:
   (1) stock checked 100 % from the order-entry screen ("หน้าคีย์ออเดอร์") — DONE #806 + routine (3u) [ตรวจแล้ว]
-  (2) selecting a product → payment done: the whole pre-payment flow ready — BUILT 24/10 night on branch cart-flow-2410 (PR = item 3
-      "THIS CHAT"), walked on a test build with ordering ON [ตรวจแล้ว test build]
+  (2) selecting a product → payment done: the whole pre-payment flow ready — DONE #811 (live; cart still OFF) — walked on a test build with
+      ordering ON incl. a new customer [ตรวจแล้ว test build; not yet on the live site with the cart on]
   (3) after payment: cancelled / shipped → which step next — DONE #807 [ตรวจแล้ว test build; not yet on a real order]
   (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — owner 24/10 evening: "ตามที่แนะนำมาทั้งหมดเลย" EXCEPT ① (deploy blips are fine) → build ② ③ ④ ⑤;
       ③ DONE (staff guide line, docs PR #810). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
@@ -46,12 +47,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
       PR = a deploy = 30–60 s of 502; with re-open allowed there will be more) ② unpaid orders auto-cancel after N hours ③ staff check the
       order-entry screen before "ยืนยันยอดเงิน" (staff guide line) ④ off-site DB backup (queued since 23/10) ⑤ rate limit on the phone
       lookup (#794 known) — build what the owner picks; ③ is a docs line Friday may add at once.
-  (5) Thai copy in these parts easy to read — DONE with (2): thai-copy agent pass applied (32 rows; skipped: order-not-found line + the
+  (5) Thai copy in these parts easy to read — DONE #811 with (2): thai-copy agent pass applied (32 rows; skipped: order-not-found line + the
       awaiting_verification label, both also printed on /how-to-order) · ② auto-cancel 24 h + ⑤ phone rate limit + branch optional built too.
-  THIS CHAT (24/10 night, local_6ed48dbb-2b07-4e78-a88f-7e76b591f6c0): branch cart-flow-2410 — owner fixes a–d, #795/#792 notes, ②, ⑤,
+  24/10 night chat local_6ed48dbb-2b07-4e78-a88f-7e76b591f6c0 = #811 — owner fixes a–d, #795/#792 notes, ②, ⑤,
   #807 notes b/c/f, copy pass. Walk kit: `_incoming/cartflow-2410/` (data-walk DB, dict-edit*.js, pr-body.md). Test tree `_incoming/wt-golive`.
   Left: #807 note (a) "ด้านล่าง" admin message after the choice · (d) stale comments · age-gate body still says "order on LINE"
-  (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77). AFTER MERGE: owner decides when to turn the cart ON (item 1 steps).
+  (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
+  300/10 min cap) · empty idempotencyKey not refused (old). ALL FIVE ITEMS DONE → the owner decides when to turn the cart ON (item 1 steps).
   Then (only when the owner says go): login page + member promo (รอพี่ตรวจ 75 · propose the login design first) · D upsell row in the cart.
   DONE 24/10 this chat [ตรวจแล้ว]:
   · #806 order-entry stock reader (checker PASS 062ed7df): `scripts/order-entry-stock.browser.js` (runs in the "เลือกสินค้า" picker of
