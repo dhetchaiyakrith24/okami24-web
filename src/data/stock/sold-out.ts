@@ -85,4 +85,6 @@ wotofo-nexbar-18k | Cherry Dragon Fruit
 wotofo-nexbar-18k | Melon Blast
 wotofo-nexbar-18k | Pineapple Ice
 wotofo-nexbar-18k | Watermelon Dragon Fruit
+# ---- 24/10 เจ้าของสั่งปิด: ของหมดจริง แต่ Shipnity Max ยังบอก "มีของ" (ออเดอร์แรกถูกยกเลิก) — ของเข้าแล้วลบบรรทัดนี้ ----
+muro-connector-20k | Double Mint
 `;
