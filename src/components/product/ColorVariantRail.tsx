@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
-import { useChipAutoscroll } from "./use-chip-autoscroll";
+import { PhoneOptionTiles } from "./PhoneOptionTiles";
 
 /**
  * Real manufacturer color/finish selector for a Legacy Product Detail hero (owner quality review,
@@ -27,10 +26,8 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  * the cart gates (ProductHero + `resolveProductRef()`) keep it out of the cart. `"unknown"`/absent renders like
  * in-stock, matching the legacy cart gate.
  *
- * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): the row no longer wraps, it
- * scrolls sideways edge to edge, each dot is a 44×44 target, and the selected dot scrolls itself
- * into view when the gallery swipe changes the selection (useChipAutoscroll). At `lg` and above
- * nothing here changed.
+ * Phones (queue Q5, owner 24/10): below `lg` the dot row is replaced by PhoneOptionTiles (photo tiles with
+ * an in-stock / sold-out pill; a photo strip past 12 options). At `lg` and above the dots are unchanged.
  */
 export function ColorVariantRail({
   variants,
@@ -62,21 +59,24 @@ export function ColorVariantRail({
   const pills = allChips ?? (onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []);
   const selectedPill = pills.find((p) => p.selected);
   const selected = variants.find((v) => v.id === selectedId);
-  const listRef = useRef<HTMLDivElement>(null);
   const anyAll = !!selectedPill;
-  useChipAutoscroll(listRef, anyAll ? null : selectedId);
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
-      <span className="label-mono text-xs text-foreground-dim">
+      <PhoneOptionTiles
+        className="lg:hidden"
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock" }))}
+        selectedId={anyAll ? null : selectedId}
+        onSelect={onSelect}
+        label={label}
+        pills={pills}
+      />
+      <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
         {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
         {selectedPill && <span className="ml-2 font-sans normal-case text-foreground-muted">{selectedPill.label}</span>}
       </span>
-      <div
-        ref={listRef}
-        className="okami-chip-row flex flex-wrap items-center gap-2.5 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-1.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
-      >
+      <div className="flex flex-wrap items-center gap-2.5 max-lg:hidden">
         {pills.map((p) => (
           <button
             key={p.label}
@@ -85,7 +85,7 @@ export function ColorVariantRail({
             aria-pressed={p.selected}
             title={p.label}
             className={cn(
-              "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150 max-lg:h-11 max-lg:px-4 max-lg:text-sm",
+              "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150",
               p.selected
                 ? "border-ember bg-ember/10 text-foreground"
                 : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
@@ -106,7 +106,7 @@ export function ColorVariantRail({
               aria-pressed={!anyAll && v.id === selectedId}
               title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
-                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150 max-lg:h-11 max-lg:w-11",
+                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
                 !anyAll && v.id === selectedId
                   ? "scale-110 ring-ember"
                   : "ring-transparent hover:scale-105 hover:ring-surface-border"
@@ -119,7 +119,7 @@ export function ColorVariantRail({
               />
               {outOfStock && (
                 <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80 max-lg:w-12"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80"
                   aria-hidden
                 />
               )}
@@ -128,7 +128,7 @@ export function ColorVariantRail({
         })}
       </div>
       {outOfStockLabel && variants.some((v) => v.availability === "out-of-stock") && (
-        <span className="text-xs text-foreground-dim">
+        <span className="text-xs text-foreground-dim max-lg:hidden">
           {variants
             .filter((v) => v.availability === "out-of-stock")
             .map((v) => v.name)

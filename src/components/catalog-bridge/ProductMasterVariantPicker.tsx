@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import type { StorefrontVariantView } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { useChipAutoscroll } from "@/components/product/use-chip-autoscroll";
+import { PhoneOptionTiles } from "@/components/product/PhoneOptionTiles";
 
 /**
  * Shared between the isolated `/preview/product-master` route (Phase 2.8) and the main
@@ -28,9 +28,8 @@ import { useChipAutoscroll } from "@/components/product/use-chip-autoscroll";
  * fully selectable — a customer can still see it exists and inspect it — `PilotProductDetail`'s own
  * add-to-cart gate is what actually blocks the purchase, this is only the visual signal.
  *
- * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): one sideways-scrolling row edge
- * to edge, pills at least 44px tall, selected pill scrolls itself into view after a gallery
- * swipe (useChipAutoscroll). `lg` and above unchanged.
+ * Phones (queue Q5, owner 24/10): below `lg` the pills are replaced by PhoneOptionTiles (photo tiles with an
+ * in-stock / sold-out pill; a photo strip past 12 options). `lg` and above unchanged.
  */
 export function ProductMasterVariantPicker({
   optionAxisLabel,
@@ -54,18 +53,20 @@ export function ProductMasterVariantPicker({
     if (onSelect) onSelect(id);
     else setInternalSelectedId(id);
   };
-  const listRef = useRef<HTMLDivElement>(null);
-  useChipAutoscroll(listRef, selectedId);
 
   if (variants.length === 0) return null;
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2", className)}>
-      {optionAxisLabel && <span className="label-mono text-xs text-foreground-dim">{optionAxisLabel}</span>}
-      <div
-        ref={listRef}
-        className="okami-chip-row flex flex-wrap gap-2 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
-      >
+      <PhoneOptionTiles
+        className="lg:hidden"
+        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock" }))}
+        selectedId={selectedId}
+        onSelect={handleSelect}
+        label={optionAxisLabel}
+      />
+      {optionAxisLabel && <span className="label-mono text-xs text-foreground-dim max-lg:hidden">{optionAxisLabel}</span>}
+      <div className="flex flex-wrap gap-2 max-lg:hidden">
         {variants.map((v) => {
           const outOfStock = v.availabilityStatus !== "in-stock";
           return (
@@ -77,7 +78,7 @@ export function ProductMasterVariantPicker({
               aria-pressed={selectedId === v.id}
               title={outOfStock && outOfStockLabel ? `${v.label} — ${outOfStockLabel}` : v.label}
               className={cn(
-                "label-mono inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors max-lg:min-h-11 max-lg:shrink-0 max-lg:whitespace-nowrap max-lg:px-4 max-lg:text-sm",
+                "label-mono inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors",
                 selectedId === v.id
                   ? "border-ember bg-ember-soft/30 text-ember"
                   : "border-surface-border bg-surface-1 text-foreground-muted hover:border-foreground-dim",

@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { TILE_LIMIT } from "./PhoneOptionTiles";
 
 /**
  * Swipe-to-select product gallery for phones — MOBILE_SPEC M2.2/M2.3, chat A (2026-09-08).
@@ -25,6 +26,10 @@ import { cn } from "@/lib/utils";
  * state (since stock batch 2c the chips are selectable too, and the slide carries a sold-out photo badge). A selection from outside
  * the gallery never animates, so reduced motion needs nothing extra. The frame has a fixed aspect ratio, so no
  * layout shift while images load.
+ *
+ * Position marks (queue Q5, owner 24/10 — "keep the round dots, make them easier to use and read"): up to
+ * TILE_LIMIT slides the dots stay, bigger, the current one a wider ember bar, and each dot is a tap target that
+ * jumps to its slide; past TILE_LIMIT (the photo-strip layout) a "3 / 20" counter replaces dots too small to read.
  *
  * This component owns no selection state (P1: the state stays in the page, where M5 will read
  * it too). Desktop never renders it — callers wrap it in `lg:hidden`.
@@ -179,7 +184,8 @@ export function MobileVariantGallery({
     if (!hasScrollEnd) scheduleSettle();
   };
 
-  const many = slides.length > 24;
+  // +1: a product may lead with one cover/lineup slide before its options (M Bar 10K = 1 + 12 → still dots).
+  const counter = slides.length > TILE_LIMIT + 1;
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>
@@ -203,17 +209,32 @@ export function MobileVariantGallery({
         ))}
       </div>
       {overlay}
-      {slides.length > 1 && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-3 flex items-center justify-center gap-1.5" aria-hidden>
+      {slides.length > 1 && counter && (
+        <span
+          className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium tabular-nums text-foreground backdrop-blur-sm"
+          aria-hidden
+        >
+          {index + 1} / {slides.length}
+        </span>
+      )}
+      {slides.length > 1 && !counter && (
+        // The tile picker under the gallery is the accessible control; these are a pointer shortcut only.
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-center" aria-hidden>
           {slides.map((s, i) => (
-            <span
+            <button
               key={s.id}
-              className={cn(
-                "rounded-full transition-colors duration-150",
-                many ? "h-1 w-1" : "h-1.5 w-1.5",
-                i === index ? "bg-ember" : "bg-foreground/30"
-              )}
-            />
+              type="button"
+              tabIndex={-1}
+              onClick={() => onSelect(s.id)}
+              className="pointer-events-auto flex h-11 items-center px-2"
+            >
+              <span
+                className={cn(
+                  "block h-2 rounded-full transition-all duration-150",
+                  i === index ? "w-5 bg-ember" : "w-2 bg-foreground/40"
+                )}
+              />
+            </button>
           ))}
         </div>
       )}

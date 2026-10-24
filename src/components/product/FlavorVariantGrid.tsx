@@ -1,9 +1,8 @@
 "use client";
 
-import { useRef } from "react";
 import type { FlavorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
-import { useChipAutoscroll } from "./use-chip-autoscroll";
+import { PhoneOptionTiles } from "./PhoneOptionTiles";
 
 /**
  * Real manufacturer flavor selector for a Legacy Product Detail hero (owner mandate, 2026-09-03 —
@@ -22,9 +21,8 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  * renders like `"in-stock"` deliberately: we have no live signal either way, and marking it as if
  * confirmed-unavailable would be its own kind of fabrication.
  *
- * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): one sideways-scrolling row edge
- * to edge instead of a wrapped grid, pills at least 44px tall, and the selected pill scrolls
- * itself into view when a gallery swipe selects it (useChipAutoscroll). `lg` and above unchanged.
+ * Phones (queue Q5, owner 24/10): below `lg` the pills are replaced by PhoneOptionTiles (photo tiles with an
+ * in-stock / sold-out pill; a photo strip past 12 options). `lg` and above unchanged.
  */
 export function FlavorVariantGrid({
   variants,
@@ -54,20 +52,23 @@ export function FlavorVariantGrid({
   className?: string;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
-  const listRef = useRef<HTMLDivElement>(null);
-  useChipAutoscroll(listRef, isAllSelected ? null : selectedId);
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
-      <span className="label-mono text-xs text-foreground-dim">
+      <PhoneOptionTiles
+        className="lg:hidden"
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock" }))}
+        selectedId={isAllSelected ? null : selectedId}
+        onSelect={onSelect}
+        label={label}
+        pills={onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []}
+      />
+      <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
         {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
-      <div
-        ref={listRef}
-        className="okami-chip-row flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1 max-lg:-mx-5 max-lg:max-h-none max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:pr-5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
-      >
+      <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto pr-1 max-lg:hidden">
         {onSelectAll && (
           <button
             type="button"
@@ -75,7 +76,7 @@ export function FlavorVariantGrid({
             aria-pressed={isAllSelected}
             title={allLabel}
             className={cn(
-              "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold tracking-tight transition-all duration-150 max-lg:min-h-11 max-lg:shrink-0 max-lg:px-4 max-lg:text-sm",
+              "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold tracking-tight transition-all duration-150",
               isAllSelected
                 ? "border-ember bg-ember/10 text-foreground"
                 : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
@@ -96,7 +97,7 @@ export function FlavorVariantGrid({
               aria-pressed={v.id === selectedId}
               title={outOfStock ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150 max-lg:min-h-11 max-lg:shrink-0 max-lg:whitespace-nowrap max-lg:px-4 max-lg:text-sm",
+                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150",
                 selected
                   ? "border-ember bg-ember/10 text-foreground"
                   : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground",

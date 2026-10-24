@@ -71,6 +71,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (ProductMaster photoRule page opens unpicked) — should read sold out · phone grid bar: the sort select drops to a second row.
     Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
+       + owner 24/10 late night: sign-up/login the modern way — "Continue with Google · LINE · Facebook" buttons (LINE first for
+       Thai buyers). Needs developer apps on Google / LINE / Meta + secrets in Render env = owner signs up (13.3 #2, #9 login system).
     Q2b [DONE #821] owner: the bar pill was too prominent — "สินค้าพร้อมส่ง" now an item in the desktop "สินค้า" menu + phone
        drawer; grid toggles stay.
     Q5 [NEXT — OWNER PICKED 24/10 late night, build it] phone option/colour/flavour picking. Mockups _incoming/cartpolish-2410/picker/
