@@ -56,7 +56,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
   const router = useRouter();
   const [swapState, swapAction, swapPending] = useActionState(chooseSwapAction, INITIAL);
   const [refundState, refundAction, refundPending] = useActionState(chooseRefundAction, INITIAL);
-  const [otherOpen, setOtherOpen] = useState(false);
+  const [mode, setMode] = useState<"own" | "other" | "bank">("own");
   const done = swapState.done || refundState.done;
   useEffect(() => {
     if (done) router.refresh();
@@ -76,14 +76,18 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
   // Resolved or chosen: one calm status line, no buttons.
   if (issue.stage !== "waiting-choice" || done) {
     const phone = issue.refundPhoneMasked ?? issue.ownPhoneMasked ?? "";
+    const bank = issue.refundBank;
+    const bankVars = bank ? { amount, bank: bank.bank, branch: bank.branch, account: bank.accountMasked } : null;
     const text =
       issue.resolution === "swapped"
         ? t.stockSwapped
         : issue.resolution === "refunded"
-          ? `${fill(t.stockRefunded, { amount, phone })}${issue.wholeOrder ? "" : ` ${t.stockRefundedPartial}`}`
+          ? `${bankVars ? fill(t.stockRefundedBank, bankVars) : fill(t.stockRefunded, { amount, phone })}${issue.wholeOrder ? "" : ` ${t.stockRefundedPartial}`}`
           : issue.choice === "swap" || swapState.done
             ? t.stockChosenSwap
-            : fill(t.stockChosenRefund, { amount, phone });
+            : bankVars
+              ? fill(t.stockChosenRefundBank, bankVars)
+              : fill(t.stockChosenRefund, { amount, phone });
     return (
       <div className="flex flex-col gap-2 rounded-xl border border-amber-300/25 bg-amber-300/[0.06] p-4 text-sm">
         <span className="label-mono text-xs text-amber-200">{t.stockTitle}</span>
@@ -164,7 +168,38 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
           </p>
           {!issue.wholeOrder && <p className="text-foreground-muted">{t.stockRefundPartialNote}</p>}
         </div>
-        {otherOpen ? (
+        {mode === "bank" ? (
+          <>
+            <input type="hidden" name="mode" value="bank" />
+            <label className="flex flex-col gap-1 text-foreground-muted">
+              {t.stockRefundBankNumber}
+              <input name="account" type="text" inputMode="numeric" autoComplete="off" maxLength={20} required className={field} />
+            </label>
+            <label className="flex flex-col gap-1 text-foreground-muted">
+              {t.stockRefundBankName}
+              <input name="bank" type="text" autoComplete="off" maxLength={60} required className={field} />
+            </label>
+            <label className="flex flex-col gap-1 text-foreground-muted">
+              {t.stockRefundBankBranch}
+              <input name="branch" type="text" autoComplete="off" maxLength={60} required className={field} />
+            </label>
+            {refundState.errorKey && (
+              <p role="alert" className="text-ember">
+                {t[refundState.errorKey]}
+              </p>
+            )}
+            <button type="submit" disabled={pending} className={secondary}>
+              {refundPending ? t.stockPending : t.stockRefundBankCta}
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("own")}
+              className="inline-flex min-h-11 items-center self-start text-foreground-muted underline underline-offset-4 hover:text-foreground"
+            >
+              {t.stockRefundBankBack}
+            </button>
+          </>
+        ) : mode === "other" ? (
           <>
             <input type="hidden" name="mode" value="other" />
             <label className="flex flex-col gap-1 text-foreground-muted">
@@ -195,10 +230,17 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             )}
             <button
               type="button"
-              onClick={() => setOtherOpen(true)}
+              onClick={() => setMode("other")}
               className="inline-flex min-h-11 items-center self-start text-foreground-muted underline underline-offset-4 hover:text-foreground"
             >
               {t.stockRefundOtherLabel}
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("bank")}
+              className="inline-flex min-h-11 items-center self-start text-foreground-muted underline underline-offset-4 hover:text-foreground"
+            >
+              {t.stockRefundBankLabel}
             </button>
           </>
         )}

@@ -329,7 +329,7 @@ how-to-order page and on the order page next to the bank details.
 > cart UX batch E):** staff tick the out-of-stock lines of a paid, not-yet-shipped order on /staff → the customer's order page
 > offers (a) a swap to an item that is in stock **at the same unit price** (picked from a list; staff check the warehouse and
 > confirm, the total does not change) or (b) a refund to **PromptPay — the mobile number the order was placed with in one
-> tap, or another PromptPay mobile number** (no bank account and no citizen ID is ever stored) → staff transfer the money in
+> tap, or another PromptPay mobile number, or a bank account number with its bank and branch** (owner 2026-10-24, later in chat: "แนบแค่เลขบัญชีหรือเบอร์พร้อมเพย์ — เลขบัญชีต้องมีสาขา"; a citizen ID is never stored; the customer page shows only the last 4 digits) → staff transfer the money in
 > the bank app and record the reference; the customer's page then says it is done. **Refund amount (Friday's call, reversible):**
 > only the out-of-stock lines, the rest of the order still ships and the shipping fee is kept; when every line is out the
 > whole paid total goes back and the order is cancelled. Staff still phone or LINE the customer (the site cannot message
