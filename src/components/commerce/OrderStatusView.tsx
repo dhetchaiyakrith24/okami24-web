@@ -23,11 +23,26 @@ function formatTHB(value: number): string {
 function withLineLink(sentence: string) {
   const parts = sentence.split(CONTACT.lineId);
   if (parts.length < 2) return sentence;
+  // The word right before the handle stays on its line with it ("ได้ที่ @okm24" split in the 24/10 night wordbreak scan) —
+  // the same rule StockIssueBox's helper already follows.
+  const cut = parts[0].trimEnd().lastIndexOf(" ") + 1;
+  const lead = parts[0].slice(cut);
   return parts.flatMap((part, i) =>
     i === 0
-      ? [part]
+      ? [part.slice(0, cut)]
+      : i === 1
+        ? [
+            <span key="lead" className="whitespace-nowrap">
+              {lead}
+              <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
+                {CONTACT.lineId}
+              </a>
+            </span>,
+            part,
+          ]
       : [
-          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
+          // Owner 24/10 night: the handle must look tappable — LINE green, underlined.
+          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
             {CONTACT.lineId}
           </a>,
           part,
@@ -73,7 +88,7 @@ export function OrderStatusView({
   messages = [],
   paid = false,
   autoCancelled = false,
-  deadlineLabel = null,
+  deadlineIso = null,
 }: {
   order: OrderDetail;
   token: string | null;
@@ -88,8 +103,9 @@ export function OrderStatusView({
   paid?: boolean;
   /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
   autoCancelled?: boolean;
-  /** While waiting for payment: when the order cancels itself, formatted by the server page (Bangkok time). */
-  deadlineLabel?: string | null;
+  /** While waiting for payment: when the order cancels itself (ISO). Shown in Bangkok time in the page language — a
+   *  Thai-formatted date leaked into the en/zh pages (locale scan, 24/10 night). */
+  deadlineIso?: string | null;
 }) {
   const { dict, locale } = useLocale();
   const t = dict.orderStatus;
@@ -171,6 +187,13 @@ export function OrderStatusView({
                 </span>
                 {statusText}
               </span>
+            ) : order.status === "cancelled" ? (
+              // Owner 24/10 night: "ยกเลิกแล้ว" gets a red glow — the third twin of the shipped/pending pills, but still: a
+              // cancelled order is finished, so the dot does not pulse.
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-400/35 bg-red-500/10 px-3 py-0.5 font-medium text-red-300 shadow-[0_0_14px_-3px_rgba(248,113,113,0.4)]">
+                <span aria-hidden className="relative inline-flex size-2 rounded-full bg-red-400 shadow-[0_0_6px_1px_rgba(248,113,113,0.7)]" />
+                {statusText}
+              </span>
             ) : (
               <span className="font-medium text-foreground">{statusText}</span>
             )}
@@ -196,7 +219,14 @@ export function OrderStatusView({
             {!terminal && <span className="text-foreground-muted">{t.nextLabel} · </span>}
             {withLineLink(next)}
           </p>
-          {deadlineLabel && <p className="mt-1.5 text-sm text-foreground-muted">{t.paymentDeadlineNote.replace("{deadline}", deadlineLabel)}</p>}
+          {deadlineIso && (
+            <p className="mt-1.5 text-sm text-foreground-muted">
+              {t.paymentDeadlineNote.replace(
+                "{deadline}",
+                new Intl.DateTimeFormat(locale === "th" ? "th-TH" : locale === "zh" ? "zh-CN" : "en-GB", { timeZone: "Asia/Bangkok", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date(deadlineIso)),
+              )}
+            </p>
+          )}
         </div>
 
         {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}
@@ -323,7 +353,7 @@ export function OrderStatusView({
                     <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={320} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
                   </div>
                 )}
-                <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>
+                {/* Owner 24/10 night: the "check the account name before transferring" line is dropped. */}
                 <p className="text-sm text-foreground-muted">
                   {/* the LINE handle inside the sentence is the link (designer 2026-09-06: no floating red link under the warnings) */}
                   {withLineLink(dict.orderStatus.paymentAfterTransferNote)}

@@ -54,7 +54,27 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left: #807 note (a) "ด้านล่าง" admin message after the choice · (d) stale comments · age-gate body still says "order on LINE"
   (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
   300/10 min cap) · empty idempotencyKey not refused (old). ALL FIVE ITEMS DONE → the owner decides when to turn the cart ON (item 1 steps).
-  Then (only when the owner says go): login page + member promo (รอพี่ตรวจ 75 · propose the login design first) · D upsell row in the cart.
+  OWNER WORK QUEUE — the ONE ordered list (owner 24/10 night: "จดด้วยนะ อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย") · tick here when done:
+    Q1 [running 24/10 night, branch cart-polish-2410] order page + buying-flow copy: owner's lines ("เมื่อโอนเสร็จแล้ว แนบสลิปด้านล่างได้เลยค่ะ
+       หากติดขัดตรงไหน สอบถามได้ทางไลน์ @OKM24 ได้ทันที" — @okm24 tappable to LINE; drop the "เช็คชื่อบัญชีก่อนโอน" line; orange line
+       without "ตรวจรายการและยอดให้ครบก่อนโอน") · "ยกเลิกแล้ว" = red glow pill (twin of the green shipped glow) · ค่ะ/นะคะ + LINE pointer
+       "ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24" across cart → checkout → order page → stock box → /orders (THAI_STYLE §2 rulings 24/10)
+       + "จัดส่งไปที่อยู่เดิมของคุณค่ะ"
+    Q2 [next] header button "สินค้าทั้งหมด": one tap = every product, no scrolling
+    Q3 [next] LINE order-group alert carries name · phone · address · items (admin copies to the warehouse; web confirm unchanged)
+    Q4 [25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
+       all products · contact/help) as ONE job — drafts to the owner first (new look)
+    Q5 phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
+       photos · swatch grid), owner picks
+    Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
+       "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
+       (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
+       reference = owner's 10.10 broadcast poster; drafts first
+    Q7 ค่ะ/นะคะ + LINE pointer sweep over the REST of the site (service pages, FAQ; not product descriptions or articles)
+    Q8 D upsell row in the cart
+    Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · cart ON = owner flips it himself when calm ("ไว้นิ่งแล้ว
+       พี่จะเปิด") · age-gate LINE line stays (owner 24/10) · image sweep 21 warehouse products (รอพี่ตรวจ 41) · SEO line 2 queue (3s) ·
+       GSC read 01/11 · speed (item 5) · #807 notes a/d · rehearsal (รอพี่ตรวจ 59).
   DONE 24/10 this chat [ตรวจแล้ว]:
   · #806 order-entry stock reader (checker PASS 062ed7df): `scripts/order-entry-stock.browser.js` (runs in the "เลือกสินค้า" picker of
     https://app.shipnitymax.com/order/create, reads each option button blue/grey from the row's React props, cross-checks `available`,

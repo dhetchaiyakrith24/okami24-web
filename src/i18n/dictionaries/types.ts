@@ -610,7 +610,6 @@ export interface Dictionary {
     /** Instead of paymentQrNote when the QR carries the order total (owner 23/10, BSOT §9). */
     paymentQrAmountNote: string;
     paymentQrAlt: string;
-    paymentVerifyNameWarning: string;
     paymentAfterTransferNote: string;
     paymentNoRefundWarning: string;
     paymentCopyCta: string;

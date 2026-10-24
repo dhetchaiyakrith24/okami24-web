@@ -2,8 +2,8 @@
  * OKami24 — alert bot messages contract (cart round 22/10).
  *
  *   1. the new-order alert carries what staff act on (order number, every item with its option and quantity, total,
- *      slip verdict, link to the staff page) and NEVER the customer's phone, street address or postal code — a LINE
- *      group is not the place for those (the staff page has them);
+ *      slip verdict, link to the staff page) and, since owner 24/10 night (Q3), the full delivery block — recipient,
+ *      phone, address with postal code — for admin to copy to the warehouse; never the view token;
  *   2. each slip verdict reads differently: pass / check (with the reason in Thai) / unchecked;
  *   3. the slip-group reply flags a slip seen before and says which web order it is attached to;
  *   4. times are Bangkok time.
@@ -58,8 +58,9 @@ check("alert lists item, option and quantity", pass.includes("M Bar 10K (Grape I
 check("alert has the total and the shipping fee", pass.includes("฿550") && pass.includes("฿50"), pass);
 check("alert links the staff order page", pass.includes(`${SITE}/staff/orders/OK-20261022-a1b2c3`), pass);
 check("alert has recipient name + province", pass.includes("สมชาย ใจดี") && pass.includes("กรุงเทพมหานคร"), pass);
-check("alert never carries the phone", !pass.includes("0812345678") && !/0\d{8,9}/.test(pass.replace("20261022", "")), pass);
-check("alert never carries the street address or postal code", !pass.includes("สุขุมวิท") && !pass.includes("10110") && !pass.includes("วัฒนา"), pass);
+// Owner 24/10 night (Q3): the full delivery block goes to the team group so admin can copy it to the warehouse.
+check("alert carries the phone", pass.includes("0812345678"), pass);
+check("alert carries the full address with postal code", pass.includes("99/1 ซอยสุขุมวิท 11 ต.คลองเตยเหนือ อ.วัฒนา จ.กรุงเทพมหานคร 10110"), pass);
 check("alert never carries the view token", !pass.includes(ORDER.viewToken), pass);
 
 // 2. verdict lines
