@@ -344,7 +344,8 @@ export async function chooseRefund(orderNumber: string, viewToken: string | null
   if (input.mode === "bank") {
     const account = cleanBankAccount(input.account);
     const bank = cleanBankText(input.bank);
-    const typedBranch = typeof input.branch === "string" ? input.branch.trim() : "";
+    // The page adds "สาขา" / "branch" itself — a customer who typed "สาขาสีลม" would otherwise read "สาขาสาขาสีลม".
+    const typedBranch = typeof input.branch === "string" ? input.branch.trim().replace(/^(สาขา|branch)\s*/i, "").replace(/\s*(branch|支行)$/i, "") : "";
     const branch = typedBranch === "" ? "" : cleanBankText(typedBranch);
     if (!account || !bank || branch === null) return { ok: false, error: "bank-invalid" };
     target = { kind: "bank", account, bank, branch };

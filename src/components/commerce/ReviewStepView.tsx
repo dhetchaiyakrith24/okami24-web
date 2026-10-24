@@ -100,7 +100,12 @@ export function ReviewStepView({
 
         <div className="flex flex-col gap-2">
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.paymentTitle}</span>
-          <p className="text-sm leading-relaxed text-foreground-muted">{dict.checkout.paymentPendingNote}</p>
+          {/* One fact per line (thai-copy 24/10: the note carries four facts and read as one long block). */}
+          <ul className="flex flex-col gap-1.5 text-sm leading-relaxed text-foreground-muted">
+            {dict.checkout.paymentPendingNote.split(" · ").map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
         </div>
 
         <form action={formAction} className="flex flex-col gap-4">
