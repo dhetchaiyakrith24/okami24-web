@@ -7,7 +7,6 @@ export const en: Dictionary = {
     products: "Products",
     allProducts: "All Products",
     inStock: "In stock",
-    inStockShort: "In stock",
     eliquid: "E-Liquid",
     compare: "Compare",
     finder: "Finder",

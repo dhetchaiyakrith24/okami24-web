@@ -12,7 +12,6 @@ export const zh: Dictionary = {
     products: "产品",
     allProducts: "全部产品",
     inStock: "有现货",
-    inStockShort: "现货",
     eliquid: "电子烟油",
     compare: "对比",
     finder: "选购助手",

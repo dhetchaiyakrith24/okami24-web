@@ -45,7 +45,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   return (
     <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6">
+      <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
         <Link href="/" className="flex items-center" aria-label="OKami24">
           <Image
             src="/brand/okami-logo-red.png"
@@ -85,6 +85,13 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
                 >
                   {dict.nav.allProducts}
                 </Link>
+                {/* Owner 24/10 night: "สินค้าพร้อมส่ง" lives in the menus, not as a pill on the bar (too prominent). */}
+                <Link
+                  href="/products?stock=in"
+                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"
+                >
+                  {dict.nav.inStock}
+                </Link>
                 <div className="my-2 h-px bg-surface-border-soft" />
                 {categories.map((c) => (
                   <Link
@@ -110,17 +117,6 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
-          {/* Q2 (owner 24/10 night, then corrected the same night: "ปุ่มดูสินค้าว่าทั้งเว็บตอนนี้เรามีสินค้าอะไรบ้างที่ยังมีในสต๊อก"):
-              one tap to every product the shop has IN STOCK — /products with the in-stock filter on (src/lib/in-stock.ts).
-              390 px has ~64 px free beside the icons (measured 24/10), so phones read "พร้อมส่ง"; from 640 px "สินค้าพร้อมส่ง".
-              Hidden in the 1024–1279 band, where the nav already fills the bar (measured 24/10). */}
-          <Link
-            href="/products?stock=in"
-            className="whitespace-nowrap rounded-full border border-ember/50 px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:border-ember hover:bg-ember/10 lg:hidden xl:inline-flex"
-          >
-            <span className="sm:hidden">{dict.nav.inStockShort}</span>
-            <span className="hidden sm:inline">{dict.nav.inStock}</span>
-          </Link>
           <LanguageSwitcher />
           <Link
             href="/search"
@@ -185,6 +181,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           <span className="label-mono px-3 py-2 text-xs text-foreground-dim">{dict.nav.products}</span>
           <Link href="/products" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
             {dict.nav.allProducts}
+          </Link>
+          <Link href="/products?stock=in" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
+            {dict.nav.inStock}
           </Link>
           {categories.map((c) => (
             <Link key={c.id} href={`/products/${c.slug}`} className="rounded-lg px-3 py-3 text-base text-foreground-muted hover:bg-surface-2">
