@@ -55,14 +55,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
   300/10 min cap) · empty idempotencyKey not refused (old). ALL FIVE ITEMS DONE → the owner decides when to turn the cart ON (item 1 steps).
   OWNER WORK QUEUE — the ONE ordered list (owner 24/10 night: "จดด้วยนะ อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย") · tick here when done:
-    Q1 [running 24/10 night, branch cart-polish-2410] order page + buying-flow copy: owner's lines ("เมื่อโอนเสร็จแล้ว แนบสลิปด้านล่างได้เลยค่ะ
+    Q1 [DONE #817 1da08611, checker PASS 16dbb1ab] order page + buying-flow copy: owner's lines ("เมื่อโอนเสร็จแล้ว แนบสลิปด้านล่างได้เลยค่ะ
        หากติดขัดตรงไหน สอบถามได้ทางไลน์ @OKM24 ได้ทันที" — @okm24 tappable to LINE; drop the "เช็คชื่อบัญชีก่อนโอน" line; orange line
        without "ตรวจรายการและยอดให้ครบก่อนโอน") · "ยกเลิกแล้ว" = red glow pill (twin of the green shipped glow) · ค่ะ/นะคะ + LINE pointer
        "ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24" across cart → checkout → order page → stock box → /orders (THAI_STYLE §2 rulings 24/10)
        + "จัดส่งไปที่อยู่เดิมของคุณค่ะ"
-    Q2 [next] header button "สินค้าทั้งหมด": one tap = every product, no scrolling
-    Q3 [next] LINE order-group alert carries name · phone · address · items (admin copies to the warehouse; web confirm unchanged)
-    Q4 [25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
+    Q2 [DONE #817] header button "สินค้าทั้งหมด": one tap = every product, no scrolling
+    Q3 [DONE #817] LINE order-group alert carries name · phone · address · items (admin copies to the warehouse; web confirm unchanged)
+    #817 checker notes left: desktop "สินค้า" link — Esc does not close the category menu, menu stays open after a click inside,
+       touch laptops ≥1024 tap = /products (no category menu) · 2 lines tell the customer to SEND a slip to LINE (kept as instructions,
+       not the "ติดต่อสอบถาม…" pointer) · /how-to-order still says "ตรวจรายการและยอดให้ครบก่อนโอน" (owner named only the orange line).
+    Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
     Q5 phone option/colour picking is awkward ("เลือกยาก แอบหงุดหงิด") — find why, designer drafts 2–3 ideas (bottom sheet of real
        photos · swatch grid), owner picks
