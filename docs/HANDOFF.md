@@ -45,7 +45,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   9fa7c7e0. ORDER-ENTRY READ (owner 24/10 ~12:37 sent the "เพิ่มสินค้า" screen of order entry): blue "เพิ่ม <option>" button = in stock, grey =
   out (Double Mint grey = matches reality); Friday's design = read every button state on that screen in one script, never pick a customer,
   never add to cart, never press บันทึก; option names → codes via the product-list read; run both reads side by side 2–3 days, then let the
-  routine re-open from order entry. Needs the owner's OK to open that screen once (the routine prompt forbids order pages today).
+  routine re-open from order entry. Owner OK 24/10 ~15:00 ("เปิดหน้าคีย์ออเดอร์ดูได้ 1 ครั้ง ห้ามเลือกลูกค้า ห้ามใส่ตะกร้า ห้ามกดบันทึก") — LOOKED
+  15:08: https://app.shipnitymax.com/order/create (empty form) → "เพิ่มสินค้า" (ref button in ข้อมูลสินค้า) opens modal "เลือกสินค้า": 10 products
+  per page, 7 pages (pager buttons), filters WAREHOUSE / sort / สินค้าทั้งหมด. Each table row (TR) = code cell (e.g. Pod-168) + option buttons
+  "เพิ่ม <option>" (BUTTON > SPAN); OUT = button class has "pointer-events-none" + "text-field-gray", IN = "border-primary text-primary".
+  Single-SKU rows (e.g. Eliquid-73) had no "เพิ่ม <x>" buttons — read method still open. Data comes from api.shipnitymax.com/api/graphql
+  (not used: would mean calling their API with the session). Spot check matched our closed list (Pod-168 all out; Coil-53 only 1.0Ω in).
+  Close = the modal's own "ยกเลิก", then close the tab (never the page's "บันทึก"). Proposal sent to the owner; build after batch E merges.
   (2) CART UX E = PR (cart-ux-e-2410, draft) — state in the PR; flow below. Why: the first web order OK-20261023-eb3fe0
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
