@@ -21,6 +21,7 @@ export function Button({
   className,
   onClick,
   type = "button",
+  disabled = false,
 }: {
   children: ReactNode;
   variant?: ButtonVariant;
@@ -30,6 +31,8 @@ export function Button({
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  /** Buttons only (ignored with `href`): e.g. a submit while its form is pending, so a double tap cannot post twice. */
+  disabled?: boolean;
 }) {
   const classes = cn(baseClasses, variantClasses[variant], className);
   if (href && external) {
@@ -47,7 +50,7 @@ export function Button({
     );
   }
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled || undefined} className={classes}>
       {children}
     </button>
   );

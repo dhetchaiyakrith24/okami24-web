@@ -4,7 +4,26 @@ import { CONTACT } from "@/data/contact";
 import { AddToCartForm } from "@/components/commerce/AddToCartForm";
 import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+
+/** Scrolls the page's option chips (`data-option-picker`) into view and rings the in-stock chips once (no motion when
+ *  the visitor asked for reduced motion — then only the scroll, without smooth animation). */
+function showOptionPicker(): void {
+  const picker = document.querySelector<HTMLElement>("[data-option-picker]");
+  if (!picker) return;
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  picker.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
+  if (calm) return;
+  const chips = Array.from(picker.querySelectorAll<HTMLElement>("button")).slice(0, 24);
+  for (const chip of chips) {
+    chip.animate([{ boxShadow: "0 0 0 0 rgba(255,106,44,.55)" }, { boxShadow: "0 0 0 8px rgba(255,106,44,0)" }], {
+      duration: 900,
+      delay: 350,
+      easing: "ease-out",
+    });
+  }
+}
 
 /**
  * The one buy action of a product page — mobile round, chat A (owner decision C-ก, 2026-09-08).
@@ -56,7 +75,7 @@ export function ProductBuyAction({
   compact?: boolean;
   /** Image-fix round 2026-09-28: set when the product has options and none is picked yet (a product whose options
    *  have no photos opens with nothing pre-selected). Not a stock state — "out of stock" must never show for it.
-   *  Cart mode shows a disabled button with this label; LINE mode orders as usual (the chat asks the option). */
+   *  Cart mode shows a button with this label that brings the option chips into view; LINE mode orders as usual (the chat asks the option). */
   choiceMissingLabel?: string | null;
   /** 19/10 LINE ready-message: the code the admin looks up (published: the picked Shipnity variant code). Default = slug. */
   productCode?: string;
@@ -87,9 +106,13 @@ export function ProductBuyAction({
   }
 
   if (choiceMissingLabel && orderingEnabled) {
+    // Cart-ready round (owner 24/10): was a greyed, untappable pill. Now a real button that takes the visitor to the
+    // option chips (on a phone they sit above the fold the bar covers) and pulses them once, so the next step is obvious.
     return (
       <div className={compact ? "flex" : formClassName}>
-        <span aria-disabled="true" className={cn("inline-flex items-center justify-center rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground-muted", compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3")}>{choiceMissingLabel}</span>
+        <Button onClick={showOptionPicker} className={compact ? "min-h-11 px-5 py-2.5" : undefined}>
+          {choiceMissingLabel}
+        </Button>
       </div>
     );
   }

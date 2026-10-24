@@ -393,7 +393,7 @@ export function PilotProductDetail({
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
-        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null}>
+        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled}>
           <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
