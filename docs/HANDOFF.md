@@ -57,7 +57,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   statusHistory — now stripped on /orders/<n>, which also closes the old cancel-reason leak; swap rule enforced server-side). Migration 0013
   order_stock_issues. Flow = BSOT §9 dated 24/10 line + staff guide item 3. Known, not fixed (checker): after a partial refund the order cannot
   get a second out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests. Designer note left:
-  mark the out rows in the order page's item list. Not yet seen on a real order. Why: the first web order OK-20261023-eb3fe0
+  mark the out rows in the order page's item list. Not yet seen on a real order.
+  NEXT CHAT — 3 TASKS (owner 24/10 ~16:00, "จดเลย"), in this order:
+  (A) ORDER-ENTRY STOCK READER into the hourly routine — owner OK 24/10 ("เรามีวิธีการเช็คสต๊อกใหม่แล้ว … เข้าหน้าลงออเดอร์ … ตรงกัน 100 %"):
+      the routine may open https://app.shipnitymax.com/order/create every run, READ ONLY — never pick a customer, never add an item, never
+      press บันทึก; close the picker with its own "ยกเลิก", then close the tab. Structure = the "LOOKED 15:08" lines above. Order entry
+      becomes the source of truth → the routine may RE-OPEN codes itself again (close-only was the stopgap; change SKILL.md step 3/5,
+      stock-sync.js `--reopen`/held-out logic and the TEAM_RULES 13.7 stock line together). First run: also report the codes where the
+      product-list read and the order-entry read disagree (one comparison, to catch reader bugs — Friday 24/10, not a 2–3-day trial).
+      Open: single-SKU rows (no "เพิ่ม <x>" buttons) need a read method · option name → code via the product-list read.
+  (B) CUSTOMER ORDER PAGE TELLS THE STORY (owner 24/10, his words): on /orders tracking the customer sees the status ("ยกเลิก" when
+      cancelled), a box with the ADMIN'S MESSAGE explaining why ("กล่องข้อความแจ้งรายละเอียดจากแอดมิน"), and what happens next = choose a
+      new item OR refund (with the refund-account box). NO "รับทราบ" button — but the confirm buttons stay ("ต้องมีปุ่มเพื่อกดยืนยัน" =
+      the existing "ยืนยันเปลี่ยนสินค้า" / refund buttons). "ลูกค้าแค่ต้องรู้สถานะ: จัดส่งแล้วไปขั้นตอนไหน ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ".
+      Gaps: staff notes are staff-only by design → add a separate CUSTOMER-VISIBLE admin message (typed on /staff, shown on the order page
+      for a cancel and for an out-of-stock issue) · a plain staff cancel shows only "ยกเลิก" with no reason · while a stock issue is open
+      the status still reads e.g. "อนุมัติแล้ว". Full set (orders, customer data).
+  (C) PR #804 (draft, made by another chat 24/10 15:44, NOT checked): refund to PromptPay phone OR bank account + bank + branch (owner 24/10
+      overrides the earlier "no bank account stored"; migration 0014). Check it (full set), see it on screen, merge — fold into (B) if easier.
+  Why it started: the first web order OK-20261023-eb3fe0
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
   the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
