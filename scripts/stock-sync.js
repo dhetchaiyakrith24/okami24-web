@@ -52,6 +52,12 @@ if (fs.existsSync(target)) {
   const m = /WAREHOUSE_OUT_OF_STOCK[^[]*\[([\s\S]*?)\]\);/.exec(fs.readFileSync(target, "utf8"));
   if (!m) { console.error("cannot read WAREHOUSE_OUT_OF_STOCK from the current file"); process.exit(1); }
   for (const c of m[1].matchAll(/"([^"]+)"/g)) prevOut.add(c[1]);
+  // Close-only must never switch itself off quietly (checker #801): a file that exists but reads as "nothing out" means
+  // its format changed — stop instead of re-opening every code.
+  if (prevOut.size === 0) { console.error("current WAREHOUSE_OUT_OF_STOCK reads empty — format changed? refusing to drop close-only"); process.exit(1); }
+} else {
+  console.error(`missing ${path.relative(process.cwd(), target)} — close-only needs the current list`);
+  process.exit(1);
 }
 const notOut = [...reopen].filter((c) => !prevOut.has(c));
 if (notOut.length) { console.error(`--reopen: not out now: ${notOut.join(", ")}`); process.exit(1); }
