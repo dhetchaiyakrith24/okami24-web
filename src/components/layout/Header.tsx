@@ -45,7 +45,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   return (
     <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6">
         <Link href="/" className="flex items-center" aria-label="OKami24">
           <Image
             src="/brand/okami-logo-red.png"
@@ -62,15 +62,21 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             className="relative"
             onMouseEnter={() => setProductsOpen(true)}
             onMouseLeave={() => setProductsOpen(false)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setProductsOpen(false);
+            }}
           >
-            <button
+            {/* Q2 (owner 24/10 night: "กดทีเดียวเห็นสินค้าทั้งหมด"): a click goes straight to every product; the categories still
+                open on hover, and on keyboard focus. */}
+            <Link
+              href="/products"
               className="flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
-              onClick={() => setProductsOpen((v) => !v)}
+              onFocus={() => setProductsOpen(true)}
               aria-expanded={productsOpen}
               aria-haspopup="true"
             >
               {dict.nav.products} <ChevronDown size={14} aria-hidden />
-            </button>
+            </Link>
             {productsOpen && (
               <div className="absolute left-0 top-full w-88 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl">
                 <Link
@@ -104,6 +110,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
+          {/* Q2 (owner 24/10 night): phones and tablets get one visible button to every product — the menu drawer was the only
+              way before. 390 px has ~64 px free beside the icons (measured 24/10), so phones read "สินค้า"; from 640 px the full
+              "สินค้าทั้งหมด". Desktop uses the nav's "สินค้า" link instead. */}
+          <Link
+            href="/products"
+            className="whitespace-nowrap rounded-full border border-ember/50 px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:border-ember hover:bg-ember/10 lg:hidden"
+          >
+            <span className="sm:hidden">{dict.nav.products}</span>
+            <span className="hidden sm:inline">{dict.nav.allProducts}</span>
+          </Link>
           <LanguageSwitcher />
           <Link
             href="/search"
