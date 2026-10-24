@@ -60,6 +60,14 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
   const [swapState, swapAction, swapPending] = useActionState(chooseSwapAction, INITIAL);
   const [refundState, refundAction, refundPending] = useActionState(chooseRefundAction, INITIAL);
   const [mode, setMode] = useState<"own" | "other" | "bank">("own");
+  // Controlled fields: React resets a form's uncontrolled inputs after every action, so a refused bank number would wipe
+  // the bank and branch the customer already typed (seen on the test build 24/10).
+  const [typed, setTyped] = useState({ account: "", bank: "", branch: "", promptPay: "" });
+  const bind = (name: keyof typeof typed) => ({
+    name,
+    value: typed[name],
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => setTyped((v) => ({ ...v, [name]: e.target.value })),
+  });
   const done = swapState.done || refundState.done;
   useEffect(() => {
     if (done) router.refresh();
@@ -176,11 +184,11 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             <input type="hidden" name="mode" value="bank" />
             <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankNumber}
-              <input name="account" type="text" inputMode="numeric" autoComplete="off" maxLength={20} required className={field} />
+              <input {...bind("account")} type="text" inputMode="numeric" autoComplete="off" maxLength={20} required className={field} />
             </label>
             <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankName}
-              <input name="bank" type="text" list="okami-th-banks" autoComplete="off" maxLength={60} required className={field} />
+              <input {...bind("bank")} type="text" list="okami-th-banks" autoComplete="off" maxLength={60} required className={field} />
             </label>
             <datalist id="okami-th-banks">
               {TH_BANKS.map((b) => (
@@ -189,7 +197,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             </datalist>
             <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankBranch}
-              <input name="branch" type="text" autoComplete="off" maxLength={60} required className={field} />
+              <input {...bind("branch")} type="text" autoComplete="off" maxLength={60} required className={field} />
             </label>
             {refundState.errorKey && (
               <p role="alert" className="text-ember">
@@ -212,7 +220,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             <input type="hidden" name="mode" value="other" />
             <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundOtherLabel}
-              <input name="promptPay" type="tel" inputMode="numeric" autoComplete="tel" maxLength={14} required className={field} />
+              <input {...bind("promptPay")} type="tel" inputMode="numeric" autoComplete="tel" maxLength={14} required className={field} />
             </label>
             {refundState.errorKey && (
               <p role="alert" className="text-ember">
