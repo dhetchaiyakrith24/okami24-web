@@ -88,7 +88,8 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
   if (issue.stage !== "waiting-choice" || done) {
     const phone = issue.refundPhoneMasked ?? issue.ownPhoneMasked ?? "";
     const bank = issue.refundBank;
-    const bankVars = bank ? { amount, bank: bank.bank, branch: bank.branch, account: bank.accountMasked } : null;
+    // The branch is optional (owner 24/10 evening) — its words come in only when the customer gave one.
+    const bankVars = bank ? { amount, bank: bank.bank, branch: bank.branch ? fill(t.stockBranchPart, { branch: bank.branch }) : "", account: bank.accountMasked } : null;
     const text =
       issue.resolution === "swapped"
         ? t.stockSwapped
@@ -195,9 +196,9 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
                 <option key={b} value={b} />
               ))}
             </datalist>
-            <label className="flex flex-col gap-1 text-foreground-muted">
+            <label className="flex flex-col gap-1 text-foreground-muted">
               {t.stockRefundBankBranch}
-              <input {...bind("branch")} type="text" autoComplete="off" maxLength={60} required className={field} />
+              <input {...bind("branch")} type="text" autoComplete="off" maxLength={60} className={field} />
             </label>
             {refundState.errorKey && (
               <p role="alert" className="text-ember">

@@ -135,8 +135,13 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
           <p className="text-foreground">
             {issue.refundBankAccount ? (
               <>
-                โอนคืน {formatBaht(issue.refund.amount)} เข้าบัญชี <span className="font-semibold">{issue.refundBankAccount.bank}</span> สาขา{" "}
-                <span className="font-semibold">{issue.refundBankAccount.branch}</span> เลขที่{" "}
+                โอนคืน {formatBaht(issue.refund.amount)} เข้าบัญชี <span className="font-semibold">{issue.refundBankAccount.bank}</span>{" "}
+                {issue.refundBankAccount.branch && (
+                  <>
+                    สาขา <span className="font-semibold">{issue.refundBankAccount.branch}</span>{" "}
+                  </>
+                )}
+                เลขที่{" "}
                 <span className="select-all font-semibold">{issue.refundBankAccount.account}</span>
               </>
             ) : (

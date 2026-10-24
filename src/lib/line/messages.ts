@@ -51,12 +51,13 @@ export function formatOrderAlert(order: OrderDetail, verdict: SlipVerdict, reaso
   ].join("\n");
 }
 
-/** Out of stock after payment (cart UX batch E): the customer chose on the order page. Never the PromptPay number — the
- *  staff page has it. */
+/** Out of stock after payment (cart UX batch E): the customer chose on the order page. Never the PromptPay number or bank
+ *  account — the staff page has it. The refund line names no channel: it may be PromptPay or a bank account (#804,
+ *  checker #807 note c). */
 export function formatStockChoiceAlert(orderNumber: string, choice: "swap" | "refund", siteUrl: string): string {
   return [
     `📦 ลูกค้าเลือกแล้ว — สินค้าหมด ${orderNumber}`,
-    choice === "swap" ? "เลือก: เปลี่ยนเป็นสินค้าราคาเท่ากัน (เช็คของที่คลังก่อนกดยืนยัน)" : "เลือก: รับเงินคืนเข้าพร้อมเพย์ (โอนคืนแล้วบันทึกเลขอ้างอิง)",
+    choice === "swap" ? "เลือก: เปลี่ยนเป็นสินค้าราคาเท่ากัน (เช็คของที่คลังก่อนกดยืนยัน)" : "เลือก: รับเงินคืน (ดูบัญชีที่ลูกค้าให้ในหน้าออเดอร์ โอนคืนแล้วบันทึกเลขอ้างอิง)",
     `เปิดดู: ${siteUrl}/staff/orders/${encodeURIComponent(orderNumber)}`,
   ].join("\n");
 }

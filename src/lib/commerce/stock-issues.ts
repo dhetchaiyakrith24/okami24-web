@@ -139,7 +139,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
       : null,
     refundPromptPay: row.refund_promptpay,
     refundBankAccount:
-      row.refund_account && row.refund_bank && row.refund_branch ? { account: row.refund_account, bank: row.refund_bank, branch: row.refund_branch } : null,
+      row.refund_account && row.refund_bank ? { account: row.refund_account, bank: row.refund_bank, branch: row.refund_branch ?? "" } : null,
     refund: refundAmount(outLines, { total, lineCount: all.length }),
     chosenAt: row.chosen_at,
     resolution: row.resolution,
@@ -331,7 +331,8 @@ export async function chooseSwap(orderNumber: string, viewToken: string | null, 
 }
 
 /** { mode: "own" } → the phone the order was placed with · { mode: "other", promptPay } → another PromptPay mobile number ·
- *  { mode: "bank", account, bank, branch } → a bank account, which needs its bank and its branch (owner 24/10, chat). */
+ *  { mode: "bank", account, bank, branch } → a bank account with its bank (owner 24/10, chat); the branch is optional
+ *  (owner 24/10 evening, BSOT §9: only the bank's name is needed) — empty = none, anything typed must still be clean. */
 export type RefundInput = { mode: "own" } | { mode: "other"; promptPay: unknown } | { mode: "bank"; account: unknown; bank: unknown; branch: unknown };
 
 export async function chooseRefund(orderNumber: string, viewToken: string | null, input: RefundInput): Promise<CustomerStockResult> {
@@ -343,8 +344,9 @@ export async function chooseRefund(orderNumber: string, viewToken: string | null
   if (input.mode === "bank") {
     const account = cleanBankAccount(input.account);
     const bank = cleanBankText(input.bank);
-    const branch = cleanBankText(input.branch);
-    if (!account || !bank || !branch) return { ok: false, error: "bank-invalid" };
+    const typedBranch = typeof input.branch === "string" ? input.branch.trim() : "";
+    const branch = typedBranch === "" ? "" : cleanBankText(typedBranch);
+    if (!account || !bank || branch === null) return { ok: false, error: "bank-invalid" };
     target = { kind: "bank", account, bank, branch };
   } else {
     const phone =
@@ -371,7 +373,7 @@ function recordChoice(orderId: number, choice: StockIssueChoice, swapJson: strin
       target?.kind === "promptpay" ? target.phone : null,
       target?.kind === "bank" ? target.account : null,
       target?.kind === "bank" ? target.bank : null,
-      target?.kind === "bank" ? target.branch : null,
+      target?.kind === "bank" && target.branch ? target.branch : null,
       orderId
     ).changes;
   if (changed === 0) return { ok: false, error: "closed" };
