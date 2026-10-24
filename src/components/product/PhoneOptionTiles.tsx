@@ -123,7 +123,9 @@ export function PhoneOptionTiles({
               </span>
               <span
                 className={cn(
-                  "line-clamp-2 w-full self-start text-xs leading-tight",
+                  "w-full self-start text-xs leading-tight",
+                  // Strip photos are often plain swatches, so the name carries the choice: one more line there.
+                  strip ? "line-clamp-3" : "line-clamp-2",
                   picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
                 )}
               >

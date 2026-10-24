@@ -15,7 +15,10 @@ function showOptionPicker(): void {
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   picker.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
   if (calm) return;
-  const chips = Array.from(picker.querySelectorAll<HTMLElement>("button")).slice(0, 24);
+  // Visible chips only: every picker holds a phone layout and a desktop layout, one of them display:none (Q5, 24/10).
+  const chips = Array.from(picker.querySelectorAll<HTMLElement>("button"))
+    .filter((b) => b.offsetParent !== null)
+    .slice(0, 24);
   for (const chip of chips) {
     chip.animate([{ boxShadow: "0 0 0 0 rgba(255,106,44,.55)" }, { boxShadow: "0 0 0 8px rgba(255,106,44,0)" }], {
       duration: 900,
