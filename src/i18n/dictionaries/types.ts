@@ -490,8 +490,9 @@ export interface Dictionary {
     continueShoppingCta: string;
     unavailableMessage: string;
     removeCta: string;
+    decreaseLabel: string;
+    increaseLabel: string;
     quantityLabel: string;
-    updateCta: string;
     subtotalLabel: string;
     shippingLabel: string;
     freeShippingLabel: string;
@@ -539,6 +540,7 @@ export interface Dictionary {
     errorExpired: string;
     errorTooManyAttempts: string;
     errorIncorrectCode: string;
+    errorTooManyTries: string;
     addressEyebrow: string;
     addressTitle: string;
     savedAddressesTitle: string;
@@ -561,6 +563,13 @@ export interface Dictionary {
     contactLineCta: string;
     placeOrderCta: string;
     changeAddressCta: string;
+    changeSavedAddressCta: string;
+    shipToSavedTitle: string;
+    addressErrorMissing: string;
+    addressErrorPhone: string;
+    addressErrorPostal: string;
+    placeErrorBusy: string;
+    placeErrorAddress: string;
     /** Cart UX batch C (owner 24/10): the optional, closed-by-default note to the shop on the review step. */
     noteToggle: string;
     notePlaceholder: string;
@@ -580,6 +589,7 @@ export interface Dictionary {
     emptyNote: string;
     errorInvalidPhone: string;
     errorNotFound: string;
+    errorTooManyTries: string;
   };
   orderStatus: {
     eyebrow: string;
@@ -666,6 +676,7 @@ export interface Dictionary {
     stockErrorSwap: string;
     stockErrorPromptPay: string;
     stockErrorBank: string;
+    stockBranchPart: string;
     stockErrorClosed: string;
     stockContactNote: string;
     /** The order's story (owner 24/10: "จัดส่งแล้วไปขั้นตอนไหน ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ"): the 4 steps under the status, and
@@ -680,9 +691,12 @@ export interface Dictionary {
     nextApproved: string;
     nextProcessing: string;
     nextShipped: string;
+    nextShippedNoCarrier: string;
     nextCompleted: string;
     nextCancelled: string;
     nextCancelledPaid: string;
+    nextCancelledUnpaid: string;
+    paymentDeadlineNote: string;
     nextCancelledRefunded: string;
     nextStockWaiting: string;
     nextStockChosen: string;

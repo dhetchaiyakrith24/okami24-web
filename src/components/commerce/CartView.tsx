@@ -1,17 +1,37 @@
 "use client";
 
+import { Minus, Plus } from "lucide-react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { updateQuantityAction, removeItemAction } from "@/app/cart/actions";
 import { LineThumb } from "@/components/commerce/LineThumb";
+import { MAX_LINE_QUANTITY } from "@/lib/commerce/cart-limits";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
 }
 
+/** Hidden fields that name one cart line for the quantity / remove actions. */
+function LineFields({ slug, variantId }: { slug: string; variantId: string | null }) {
+  return (
+    <>
+      <input type="hidden" name="slug" value={slug} />
+      {variantId && <input type="hidden" name="variantId" value={variantId} />}
+    </>
+  );
+}
+
+const stepClass =
+  "flex size-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember disabled:cursor-not-allowed disabled:text-foreground-dim disabled:hover:bg-transparent";
+
+/**
+ * Cart page. Cart-ready round (owner 24/10: the totals card did not match the item card above it): phones = one column,
+ * every card full width; ≥1024 = items left, the summary beside them and kept in view while the list scrolls. The
+ * quantity is a − / + stepper (was a number box + "อัปเดต" button); "−" stops at 1 — taking a line out is "ลบ".
+ */
 export function CartView({ cart }: { cart: CartViewData }) {
   const { dict } = useLocale();
   const isEmpty = cart.lines.length === 0;
@@ -19,20 +39,20 @@ export function CartView({ cart }: { cart: CartViewData }) {
   return (
     <>
       <PageHeader eyebrow={dict.cart.eyebrow} title={dict.cart.pageTitle} />
-      <Container className="flex flex-col gap-8 py-12 lg:py-16">
+      <Container className="py-12 lg:py-16">
         {isEmpty ? (
           <div className="flex flex-col items-start gap-4">
             <p className="text-foreground-muted">{dict.cart.emptyMessage}</p>
             <Button href="/products">{dict.cart.continueShoppingCta}</Button>
           </div>
         ) : (
-          <>
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start lg:gap-8">
             <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
               {cart.lines.map((line) => (
                 <div key={`${line.productSlug}:${line.variantId ?? ""}`} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-center gap-4">
                     <LineThumb image={line.image} />
-                    <div className="flex flex-col gap-1">
+                    <div className="flex min-w-0 flex-col gap-1">
                       <span className="font-medium text-foreground">{line.displayName}</span>
                       {line.variantLabel && <span className="text-sm text-foreground-muted">{line.variantLabel}</span>}
                       {line.problem ? (
@@ -44,32 +64,31 @@ export function CartView({ cart }: { cart: CartViewData }) {
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between gap-3 sm:justify-end">
                     {!line.problem && (
-                      <form action={updateQuantityAction} className="flex items-center gap-2">
-                        <input type="hidden" name="slug" value={line.productSlug} />
-                        {line.variantId && <input type="hidden" name="variantId" value={line.variantId} />}
-                        <label className="text-xs text-foreground-dim" htmlFor={`qty-${line.productSlug}-${line.variantId ?? ""}`}>
-                          {dict.cart.quantityLabel}
-                        </label>
-                        <input
-                          id={`qty-${line.productSlug}-${line.variantId ?? ""}`}
-                          type="number"
-                          name="quantity"
-                          min={1}
-                          max={20}
-                          defaultValue={line.quantity}
-                          className="w-16 rounded-md border border-surface-border bg-surface-2 px-2 py-1 text-sm text-foreground"
-                        />
-                        <Button type="submit" variant="secondary" className="px-3 py-1.5 text-xs">
-                          {dict.cart.updateCta}
-                        </Button>
-                      </form>
+                      <div className="flex items-center rounded-full border border-surface-border" role="group" aria-label={dict.cart.quantityLabel}>
+                        <form action={updateQuantityAction}>
+                          <LineFields slug={line.productSlug} variantId={line.variantId} />
+                          <input type="hidden" name="quantity" value={line.quantity - 1} />
+                          <button type="submit" className={stepClass} disabled={line.quantity <= 1} aria-label={dict.cart.decreaseLabel}>
+                            <Minus size={16} aria-hidden />
+                          </button>
+                        </form>
+                        <span className="min-w-8 text-center text-sm font-semibold tabular-nums text-foreground" aria-live="polite">
+                          {line.quantity}
+                        </span>
+                        <form action={updateQuantityAction}>
+                          <LineFields slug={line.productSlug} variantId={line.variantId} />
+                          <input type="hidden" name="quantity" value={line.quantity + 1} />
+                          <button type="submit" className={stepClass} disabled={line.quantity >= MAX_LINE_QUANTITY} aria-label={dict.cart.increaseLabel}>
+                            <Plus size={16} aria-hidden />
+                          </button>
+                        </form>
+                      </div>
                     )}
                     <form action={removeItemAction}>
-                      <input type="hidden" name="slug" value={line.productSlug} />
-                      {line.variantId && <input type="hidden" name="variantId" value={line.variantId} />}
-                      <Button type="submit" variant="ghost" className="px-3 py-1.5 text-xs">
+                      <LineFields slug={line.productSlug} variantId={line.variantId} />
+                      <Button type="submit" variant="ghost" className="px-3 py-1.5 text-sm">
                         {dict.cart.removeCta}
                       </Button>
                     </form>
@@ -78,7 +97,7 @@ export function CartView({ cart }: { cart: CartViewData }) {
               ))}
             </div>
 
-            <div className="flex flex-col gap-2 self-end rounded-xl border border-surface-border-soft bg-surface-1 p-6 sm:w-80">
+            <div className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-6 lg:sticky lg:top-24">
               <div className="flex items-center justify-between text-sm text-foreground-muted">
                 <span>{dict.cart.subtotalLabel}</span>
                 <span>{formatTHB(cart.totals.subtotal)}</span>
@@ -99,8 +118,11 @@ export function CartView({ cart }: { cart: CartViewData }) {
                   {dict.cart.checkoutCta}
                 </Button>
               )}
+              <Button href="/products" variant="ghost" className="w-full justify-center py-2">
+                {dict.cart.continueShoppingCta}
+              </Button>
             </div>
-          </>
+          </div>
         )}
       </Container>
     </>

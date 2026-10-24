@@ -18,19 +18,19 @@ export const metadata: Metadata = {
 export default async function CheckoutReviewPage({
   searchParams,
 }: {
-  searchParams: Promise<{ addressId?: string; error?: string }>;
+  searchParams: Promise<{ addressId?: string; saved?: string }>;
 }) {
   // Online ordering off (owner 2026-09-07) — see src/lib/commerce/ordering-mode.ts.
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
   const session = await getSession();
   if (!session) redirect("/checkout");
 
-  const { addressId: addressIdRaw, error } = await searchParams;
+  const { addressId: addressIdRaw, saved } = await searchParams;
   const addressId = Number(addressIdRaw);
   if (!addressIdRaw || Number.isNaN(addressId)) redirect("/checkout/address");
 
   const address = await getOwnedAddress(addressId);
-  if (!address) redirect(`/checkout/address?error=${encodeURIComponent("Address not found.")}`);
+  if (!address) redirect("/checkout/address?error=not-found");
 
   const cart = await getCart();
   if (cart.lines.length === 0 || cart.hasProblems) redirect("/cart");
@@ -40,5 +40,5 @@ export default async function CheckoutReviewPage({
   // idempotency needs to guard. See placeOrder() in src/lib/commerce/orders.ts.
   const idempotencyKey = crypto.randomUUID();
 
-  return <ReviewStepView cart={cart} address={address} addressId={addressId} idempotencyKey={idempotencyKey} error={error} />;
+  return <ReviewStepView cart={cart} address={address} addressId={addressId} idempotencyKey={idempotencyKey} savedAddress={saved === "1"} />;
 }

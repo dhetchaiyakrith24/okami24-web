@@ -15,11 +15,12 @@ export interface CartAddedDetail {
 }
 
 function SubmitButton({ children }: { children: ReactNode }) {
-  // While the server answers: a quiet busy state, no spinner (designer, cart UX batch B).
+  // While the server answers: a quiet busy state, no spinner (designer, cart UX batch B). The button is disabled meanwhile —
+  // a double tap used to add the item twice (checker #792).
   const { pending } = useFormStatus();
   return (
     <span aria-busy={pending || undefined} className={cn("inline-flex", pending && "cursor-progress opacity-80")}>
-      <Button type="submit">{children}</Button>
+      <Button type="submit" disabled={pending}>{children}</Button>
     </span>
   );
 }
@@ -44,9 +45,17 @@ export function AddToCartForm({
   children?: ReactNode;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
+  // React QUEUES a second submit made before the re-render disables the button and runs it after the first — so a fast
+  // double tap is dropped at the submit event itself, before React sees it (a prevented submit runs no action).
+  const busy = useRef(false);
 
   async function add(formData: FormData) {
-    const result = await addToCartAction(formData);
+    let result: Awaited<ReturnType<typeof addToCartAction>>;
+    try {
+      result = await addToCartAction(formData);
+    } finally {
+      busy.current = false;
+    }
     if (!result.ok) return;
     const rect = formRef.current?.querySelector('button[type="submit"]')?.getBoundingClientRect();
     const from = rect ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 } : { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -54,7 +63,15 @@ export function AddToCartForm({
   }
 
   return (
-    <form ref={formRef} action={add} className={className}>
+    <form
+      ref={formRef}
+      action={add}
+      onSubmit={(e) => {
+        if (busy.current) e.preventDefault();
+        else busy.current = true;
+      }}
+      className={className}
+    >
       <input type="hidden" name="slug" value={slug} />
       {variantId && <input type="hidden" name="variantId" value={variantId} />}
       <input type="hidden" name="quantity" value={1} />

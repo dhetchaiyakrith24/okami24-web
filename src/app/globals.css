@@ -118,23 +118,24 @@ img {
 }
 
 /* Cart UX batch B (owner 24/10, designer option A): the floating cart bubble sits 12px above the LINE button on the same
-   right edge. Phone: LINE is 48px at bottom 1rem → cart at 4.75rem. Phone product page: LINE is hidden (rule above), so
-   the cart takes LINE's lifted slot right above the buy bar. ≥640: LINE pill at bottom 2rem (+ lift below lg) → cart at
-   5.75rem (+ lift). */
+   right edge. Phone: LINE is 48px at bottom 1rem → cart at 4.75rem. ≥640: LINE pill at bottom 2rem → cart at 5.75rem.
+   Product pages below lg: the bubble is hidden, the buy bar carries the cart button (rule below). */
 .okami-cart-fab {
   right: calc(1rem + env(safe-area-inset-right, 0px));
   bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
   animation: okami-cart-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
-@media (max-width: 39.98rem) {
+/* Cart-ready round (owner 24/10): while the buy bar is on the page the cart button lives INSIDE the bar (MobileBuyBar's
+   CartBarButton) — the bubble no longer floats over the page above it. Same cut-off as the bar itself (`lg:hidden`). */
+@media (max-width: 63.98rem) {
   body:has(.mobile-buy-bar) .okami-cart-fab {
-    bottom: calc(1rem + var(--okami-fab-lift, 0px) + env(safe-area-inset-bottom, 0px));
+    display: none;
   }
 }
 @media (min-width: 40rem) {
   .okami-cart-fab {
     right: 2rem;
-    bottom: calc(5.75rem + var(--okami-fab-lift, 0px));
+    bottom: 5.75rem;
   }
 }
 @keyframes okami-cart-in {

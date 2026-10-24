@@ -36,7 +36,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Server-action forms in the Browser pane: React resets uncontrolled inputs after every action (LESSONS พ45).
 3 ROUND "cart ready to reopen" — owner 24/10 ~16:00 (chat, main chat local_6dc0e8b6-0003-4167-b981-1d6bd5539951): cart OFF until ALL of:
   (1) stock checked 100 % from the order-entry screen ("หน้าคีย์ออเดอร์") — DONE #806 + routine (3u) [ตรวจแล้ว]
-  (2) selecting a product → payment done: the whole pre-payment flow ready — NEXT
+  (2) selecting a product → payment done: the whole pre-payment flow ready — BUILT 24/10 night on branch cart-flow-2410 (PR = item 3
+      "THIS CHAT"), walked on a test build with ordering ON [ตรวจแล้ว test build]
   (3) after payment: cancelled / shipped → which step next — DONE #807 [ตรวจแล้ว test build; not yet on a real order]
   (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — owner 24/10 evening: "ตามที่แนะนำมาทั้งหมดเลย" EXCEPT ① (deploy blips are fine) → build ② ③ ④ ⑤;
       ③ DONE (staff guide line, docs PR #810). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
@@ -45,17 +46,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
       PR = a deploy = 30–60 s of 502; with re-open allowed there will be more) ② unpaid orders auto-cancel after N hours ③ staff check the
       order-entry screen before "ยืนยันยอดเงิน" (staff guide line) ④ off-site DB backup (queued since 23/10) ⑤ rate limit on the phone
       lookup (#794 known) — build what the owner picks; ③ is a docs line Friday may add at once.
-  (5) Thai copy in these parts easy to read — NEXT (with (2))
-  NEXT CHAT: (2) + (5) as one round — walk the flow on a test build with ordering ON (product page → add → cart → address → review → order
-  page → slip), fix what is unclear or broken, then the thai-copy agent over every customer string of cart/checkout/order/stock-issue (th
-  first; en/zh follow), one or two PRs, tier B, full set (cart/orders). The owner's 4 fixes of 24/10 ~03:10 are part of (2):
-  (a) product pages (phone): the floating cart bubble sits above the buy bar over the page — move it INTO the buy bar beside the CTA
-      ("แถบนี้ตามไปทุกหน้า") and hide the floating bubble while `.mobile-buy-bar` is on screen (badge stays);
-  (b) the CTA label "เลือกกลิ่นก่อน" (no option picked yet) → better wording (thai-copy; owner asked what it should be);
-  (c) cart page: the totals card (sm:w-80, right) does not match the full-width item card above — one width / one column (or a better
-      layout); check the review page boxes too;
-  (d) review step: "เปลี่ยนที่อยู่" is too small (ghost text-xs) → a real secondary button; RETURNING customer (address preselected) →
-      owner idea "จัดส่งที่อยู่เดิมใช่ไหมคะ?"-style confirm wording; new customers keep "จัดส่งไปยัง".
+  (5) Thai copy in these parts easy to read — DONE with (2): thai-copy agent pass applied (32 rows; skipped: order-not-found line + the
+      awaiting_verification label, both also printed on /how-to-order) · ② auto-cancel 24 h + ⑤ phone rate limit + branch optional built too.
+  THIS CHAT (24/10 night, local_6ed48dbb-2b07-4e78-a88f-7e76b591f6c0): branch cart-flow-2410 — owner fixes a–d, #795/#792 notes, ②, ⑤,
+  #807 notes b/c/f, copy pass. Walk kit: `_incoming/cartflow-2410/` (data-walk DB, dict-edit*.js, pr-body.md). Test tree `_incoming/wt-golive`.
+  Left: #807 note (a) "ด้านล่าง" admin message after the choice · (d) stale comments · age-gate body still says "order on LINE"
+  (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77). AFTER MERGE: owner decides when to turn the cart ON (item 1 steps).
   Then (only when the owner says go): login page + member promo (รอพี่ตรวจ 75 · propose the login design first) · D upsell row in the cart.
   DONE 24/10 this chat [ตรวจแล้ว]:
   · #806 order-entry stock reader (checker PASS 062ed7df): `scripts/order-entry-stock.browser.js` (runs in the "เลือกสินค้า" picker of

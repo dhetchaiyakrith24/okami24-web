@@ -60,7 +60,7 @@ export function ProductMasterVariantPicker({
   if (variants.length === 0) return null;
 
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
+    <div data-option-picker className={cn("flex flex-col gap-2", className)}>
       {optionAxisLabel && <span className="label-mono text-xs text-foreground-dim">{optionAxisLabel}</span>}
       <div
         ref={listRef}

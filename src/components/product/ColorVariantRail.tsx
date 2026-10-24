@@ -67,7 +67,7 @@ export function ColorVariantRail({
   useChipAutoscroll(listRef, anyAll ? null : selectedId);
 
   return (
-    <div className={cn("flex flex-col gap-2.5", className)}>
+    <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <span className="label-mono text-xs text-foreground-dim">
         {label}
         {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}

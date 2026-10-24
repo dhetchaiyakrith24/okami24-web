@@ -475,7 +475,7 @@ export function ProductHero({
       </Container>
     </section>
     {sellingPrice !== null && (
-      <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel}>
+      <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled}>
         <ProductBuyAction
           available={canAddToCart}
                 choiceMissingLabel={choiceMissingLabel}

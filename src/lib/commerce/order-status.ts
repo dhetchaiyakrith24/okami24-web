@@ -40,7 +40,7 @@ const STATUS_LABEL_TH: Record<OrderStatus, string> = {
   processing: "กำลังเตรียมจัดส่ง",
   shipped: "จัดส่งแล้ว",
   completed: "สำเร็จ",
-  cancelled: "ยกเลิก",
+  cancelled: "ยกเลิกแล้ว",
 };
 
 // Chinese labels written 2026-09-06 together with the zh service pages (writer agent), so the
