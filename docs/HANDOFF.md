@@ -43,8 +43,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
   the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
-  `muro-connector-20k | Double Mint` in src/data/stock/sold-out.ts (survives the hourly read; remove when back) — check it merged.
-  Proposed, not built: the stock routine should stop and ask when a code flips 0 → 1 after being out for days. After E: the owner's 4 fixes
+  `muro-connector-20k | Double Mint` in src/data/stock/sold-out.ts (survives the hourly read; remove when back).
+  ROOT CAUSE (owner 24/10 ~13:30, from the admin team): Shipnity Max's PRODUCT LIST page is unstable — items already out can still show
+  มีของ; the TRUE stock shows only at the ORDER-ENTRY step ("คีย์ออเดอร์" / ลงออเดอร์ — the admin checked). Our routine reads the product
+  list (scripts/stock-sync.js header) → every site stock flag can be wrong, not just Pod-171-3. Fix options for the owner (asked 24/10):
+  read stock from the order-entry screen read-only (never submit an order; that page may hold customer data — the routine prompt forbids
+  order/customer pages today, so it needs the owner's OK and a new read design) · meanwhile let the routine only CLOSE items (1 → 0), never
+  re-open (0 → 1) without the owner. PR #800 = hand-kept sold-out line for Double Mint (merged eadd1c31, live "สินค้าหมด"). After E: the owner's 4 fixes
   (below) → login page + member promo (รอพี่ตรวจ 75) → D upsell row — only when the owner says go.
   Hourly stock routine: no runs 08:00–11:00 24/10 (computer/app was off) · 12:14 run = #798 (Pod-156-14 back in, M-Switch Kit) merged by the
   routine, deploy success, live 200 [ตรวจแล้ว]. The owner talks to the routine chat directly sometimes ("เสร็จแล้ว Merge ได้เลย").
