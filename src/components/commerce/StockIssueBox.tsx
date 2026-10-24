@@ -44,7 +44,7 @@ function withLineLink(sentence: string) {
       {before.slice(0, cut)}
       <span className="whitespace-nowrap">
         {before.slice(cut)}
-        <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
+        <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
           {CONTACT.lineId}
         </a>
       </span>

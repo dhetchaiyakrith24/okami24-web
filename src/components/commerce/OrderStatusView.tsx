@@ -27,7 +27,8 @@ function withLineLink(sentence: string) {
     i === 0
       ? [part]
       : [
-          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
+          // Owner 24/10 night: the handle must look tappable — LINE green, underlined.
+          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#06C755] underline decoration-[#06C755]/50 underline-offset-2 hover:decoration-[#06C755]">
             {CONTACT.lineId}
           </a>,
           part,
@@ -169,6 +170,13 @@ export function OrderStatusView({
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-amber-300/50 [animation-duration:3.2s] motion-reduce:hidden" />
                   <span className="relative inline-flex size-2 rounded-full bg-amber-300 shadow-[0_0_6px_1px_rgba(252,211,77,0.6)]" />
                 </span>
+                {statusText}
+              </span>
+            ) : order.status === "cancelled" ? (
+              // Owner 24/10 night: "ยกเลิกแล้ว" gets a red glow — the third twin of the shipped/pending pills, but still: a
+              // cancelled order is finished, so the dot does not pulse.
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-400/35 bg-red-500/10 px-3 py-0.5 font-medium text-red-300 shadow-[0_0_14px_-3px_rgba(248,113,113,0.4)]">
+                <span aria-hidden className="relative inline-flex size-2 rounded-full bg-red-400 shadow-[0_0_6px_1px_rgba(248,113,113,0.7)]" />
                 {statusText}
               </span>
             ) : (
@@ -323,7 +331,7 @@ export function OrderStatusView({
                     <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={320} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
                   </div>
                 )}
-                <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>
+                {/* Owner 24/10 night: the "check the account name before transferring" line is dropped. */}
                 <p className="text-sm text-foreground-muted">
                   {/* the LINE handle inside the sentence is the link (designer 2026-09-06: no floating red link under the warnings) */}
                   {withLineLink(dict.orderStatus.paymentAfterTransferNote)}
