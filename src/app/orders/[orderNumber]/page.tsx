@@ -48,5 +48,9 @@ export default async function OrderStatusPage({
   // Out of stock after payment (cart UX batch E): the swap/refund choice, or where it stands.
   const stockIssue = stockIssueViewFor(order.id);
 
-  return <OrderStatusView order={order} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} />;
+  // The history holds staff-only notes (cancel reasons, out-of-stock notes — checker #802) and the page never shows it:
+  // it must not reach the browser at all.
+  const customerOrder = { ...order, statusHistory: [] };
+
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} />;
 }
