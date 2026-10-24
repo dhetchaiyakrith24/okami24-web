@@ -138,8 +138,11 @@ export function getStockIssue(orderId: number): StockIssue | null {
 // ---------------------------------------------------------------------------------------------------------------------
 // Swap candidates — every option that would pass checkout right now (resolveProductRef: approved price + stock) at the
 // SAME unit price as the line that is out (BSOT §9 owner exception: "another item at the same price"), in the SAME
-// category (a disposable is never offered a refill pod for a device the customer may not own — Friday 24/10). The line's
-// own product comes first (another flavour/colour is the usual swap).
+// category (a disposable is never offered a refill pod for a device the customer may not own — Friday 24/10). Parts that
+// must fit the customer's own device (pods/cartridges, coils, heated-tobacco sticks) — and anything whose category is
+// unknown — stay within the same product: another flavour or resistance of the same part, never another brand's part.
+// The line's own product comes first.
+const SAME_PRODUCT_ONLY = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
 
 function optionIdsOf(slug: string, origin: "legacy" | "product-master", published: Map<string, string[]>): (string | null)[] {
   if (origin === "product-master") {
@@ -157,7 +160,11 @@ export function swapCandidates(line: Pick<StockIssueLine, "productSlug" | "varia
   const all = allCatalogItems();
   const category = all.find((i) => i.slug === line.productSlug)?.categoryId ?? null;
   const items = all
-    .filter((i) => i.sellingPrice === line.unitPrice && (category === null || i.categoryId === category))
+    .filter(
+      (i) =>
+        i.sellingPrice === line.unitPrice &&
+        (category === null || SAME_PRODUCT_ONLY.has(category) ? i.slug === line.productSlug : i.categoryId === category)
+    )
     .sort((a, b) => (a.slug === line.productSlug ? -1 : b.slug === line.productSlug ? 1 : a.name.localeCompare(b.name)));
   for (const item of items) {
     const options: SwapGroup["options"] = [];
