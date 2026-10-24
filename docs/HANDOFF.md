@@ -73,16 +73,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        all products · contact/help) as ONE job — drafts to the owner first (new look)
     Q2b [DONE #821] owner: the bar pill was too prominent — "สินค้าพร้อมส่ง" now an item in the desktop "สินค้า" menu + phone
        drawer; grid toggles stay.
-    Q5 [NEXT — OWNER PICKED 24/10 late night, build it] phone option/colour/flavour picking. Mockups _incoming/cartpolish-2410/picker/
-       (A.png B.png C.png, gen.js). Owner: layout = A (every option a photo tile with its name, 4 per row, no sideways scrolling) ·
-       status pill = B's (green "มีของ" — "เห็นแว๊บเดียวรู้เลยว่าของมี"; sold out = dimmed + "หมด") · C (swipe the big photo + small
-       photo strip) for products with MORE than 8–12 options (Friday's cut: >12 → C, ≤12 → A; reversible) · KEEP the hero's round dots
-       and swipe (owner attached a shot of the 8 dots under ARGUS G4) but make them easier to use and read; keep what works in the old one.
-       Owner asked "orange = ใกล้หมด ดีมะ": the stock read gives only in/out (order-entry button blue/grey, no quantity) → tell him orange
-       needs quantities (Shipnity API / a count read) — not built now; never show "ใกล้หมด" without a real number.
-       Files: ColorVariantRail · FlavorVariantGrid (legacy, ProductHero) · ProductMasterVariantPicker (PilotProductDetail) — all carry
-       data-option-picker (choose-option button scrolls there). New look = designer pass before merge (13.5 #6), tier B, shots 390+1440,
-       pages: one colour product (argus-g4), one flavour product (m-bar-10k, 12), one >12 (nexpod-15k 20 / iqosheet-15 22), one ProductMaster.
+    Q5 [DONE #824 ae941761, checker PASS 3c0cab4d, deploy success + live 200 [ตรวจแล้ว]] phone picker: src/components/product/PhoneOptionTiles.tsx
+       (≤12 = photo tiles 4/row, >12 = photo strip; green "มีของ" pill, sold out = dim + plain "หมด"; TILE_LIMIT = 12 reversible) · hero dots
+       bigger + tappable, counter past 12 + a cover slide · desktop unchanged · "ใกล้หมด" NOT built (no quantities). Shots _incoming/q5/shots/.
+       Left (taste, for the owner): header shows "มีของ" twice when the picked option is in stock · counter counts the cover slide ·
+       unpicked flavour header has no "เลือก…" prompt · relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour).
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
