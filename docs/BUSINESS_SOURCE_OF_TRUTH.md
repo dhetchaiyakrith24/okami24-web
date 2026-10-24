@@ -325,6 +325,15 @@ how-to-order page and on the order page next to the bank details.
 > price OR a refund**. The rule above ("no cancellation and no refund after the transfer") stays for every other case.
 > Why: the site opens without the warehouse API (Shipnity charges several thousand baht a month for a non-WooCommerce
 > site), so stock on the site can lag the warehouse by up to one stock read.
+> **How it runs on the site (owner 2026-10-24, chat — "ใช้แบบที่ Friday เสนอ: ลูกค้าเลือกเปลี่ยนสินค้า หรือกดรับเงินคืนเข้าพร้อมเพย์"; built
+> cart UX batch E):** staff tick the out-of-stock lines of a paid, not-yet-shipped order on /staff → the customer's order page
+> offers (a) a swap to an item that is in stock **at the same unit price** (picked from a list; staff check the warehouse and
+> confirm, the total does not change) or (b) a refund to **PromptPay — the mobile number the order was placed with in one
+> tap, or another PromptPay mobile number** (no bank account and no citizen ID is ever stored) → staff transfer the money in
+> the bank app and record the reference; the customer's page then says it is done. **Refund amount (Friday's call, reversible):**
+> only the out-of-stock lines, the rest of the order still ships and the shipping fee is kept; when every line is out the
+> whole paid total goes back and the order is cancelled. Staff still phone or LINE the customer (the site cannot message
+> them). Code: `src/lib/commerce/stock-issues.ts`.
 
 **Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
