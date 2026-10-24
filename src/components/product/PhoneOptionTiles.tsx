@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -13,6 +13,8 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  *   - up to `TILE_LIMIT` options = layout A: every option a photo tile with its name, 4 per row, no sideways scroll;
  *   - more than that = layout C: the big photo stays the main picker (swipe), with a strip of small photos under it
  *     (names + pills kept under each: flavour photos often look alike, the name is what tells them apart);
+ *   - past TILE_LIMIT a "show all" button opens the strip into the A grid and closes it again (owner 24/10: "กดแล้วโชว์การ์ด
+ *     เล็กๆเพิ่ม … ถ้าลูกค้าไม่กดก็เลื่อนไปทางซ้ายได้เหมือนกัน");
  *   - the status pill is B's: green "มีของ" so stock reads at a glance, sold out = dimmed tile + "หมด".
  * An option without its own verified photo shows its swatch (or a plain dot) — never another option's photo.
  * Only in/out is known (the order-entry read has no quantities), so there is no "low stock" state.
@@ -47,7 +49,9 @@ export function PhoneOptionTiles({
   const { dict } = useLocale();
   const t = dict.product;
   const listRef = useRef<HTMLDivElement>(null);
-  const strip = options.length > TILE_LIMIT;
+  const many = options.length > TILE_LIMIT;
+  const [open, setOpen] = useState(false);
+  const strip = many && !open;
   useChipAutoscroll(listRef, strip ? selectedId : null);
   const selected = options.find((o) => o.id === selectedId);
   const inCount = options.filter((o) => !o.out).length;
@@ -136,6 +140,16 @@ export function PhoneOptionTiles({
           );
         })}
       </div>
+      {many && (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="min-h-11 w-full rounded-full border border-surface-border text-sm font-semibold text-foreground-muted transition-colors active:border-ember active:text-foreground"
+        >
+          {open ? t.optionShowLess : t.optionShowAll.replace("{n}", String(options.length))}
+        </button>
+      )}
     </div>
   );
 }
