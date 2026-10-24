@@ -5,18 +5,24 @@ import { getProduct } from "@/data/products";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { resolveProductRef } from "./catalog-resolver";
 import { getOrderDetailForViewer } from "./orders";
+import { cleanOrderMessage } from "./order-message-rules";
+import { insertCustomerMessage } from "./order-messages";
 import type { OrderStatus } from "./order-status";
 import {
   canOpenStockIssue,
+  cleanBankAccount,
+  cleanBankText,
   cleanPromptPayPhone,
   cleanRefundRef,
   decodeSwapValue,
   encodeSwapValue,
   parseItemIds,
   parseSwapJson,
+  maskAccount,
   maskPhone,
   refundAmount,
   stockIssueStage,
+  type RefundTarget,
   type StockIssueChoice,
   type StockIssueView,
   type SwapGroup,
@@ -51,6 +57,8 @@ export interface StockIssue {
   /** 'swap': what the customer picked for each out line (names resolved for display). */
   swap: (SwapPick & { name: string; variantLabel: string | null })[] | null;
   refundPromptPay: string | null;
+  /** Or the bank account the customer gave (full number — staff page only) with its bank and branch. */
+  refundBankAccount: { account: string; bank: string; branch: string } | null;
   /** What a refund returns (refundAmount in stock-issue-rules.ts): the out lines, or the whole paid total when all are out. */
   refund: { amount: number; wholeOrder: boolean };
   chosenAt: string | null;
@@ -67,6 +75,9 @@ interface IssueRow {
   choice: StockIssueChoice | null;
   swap_json: string | null;
   refund_promptpay: string | null;
+  refund_account: string | null;
+  refund_bank: string | null;
+  refund_branch: string | null;
   chosen_at: string | null;
   resolution: StockIssueResolution | null;
   refund_ref: string | null;
@@ -127,6 +138,8 @@ export function getStockIssue(orderId: number): StockIssue | null {
         })
       : null,
     refundPromptPay: row.refund_promptpay,
+    refundBankAccount:
+      row.refund_account && row.refund_bank && row.refund_branch ? { account: row.refund_account, bank: row.refund_bank, branch: row.refund_branch } : null,
     refund: refundAmount(outLines, { total, lineCount: all.length }),
     chosenAt: row.chosen_at,
     resolution: row.resolution,
@@ -209,7 +222,7 @@ function orderRow(orderNumber: string) {
 const now = "strftime('%Y-%m-%dT%H:%M:%fZ','now')";
 
 /** Staff mark which lines are out (again = "ask the customer again": the old choice is cleared). */
-export function openStockIssue(orderNumber: string, itemIds: number[], staffNote: string): StaffStockResult {
+export function openStockIssue(orderNumber: string, itemIds: number[], staffNote: string, customerMessage?: unknown): StaffStockResult {
   const db = getDb();
   return db.transaction((): StaffStockResult => {
     const order = orderRow(orderNumber);
@@ -224,13 +237,16 @@ export function openStockIssue(orderNumber: string, itemIds: number[], staffNote
     db.prepare(
       `INSERT INTO order_stock_issues (order_id, out_item_ids, staff_note) VALUES (?, ?, ?)
        ON CONFLICT(order_id) DO UPDATE SET out_item_ids = excluded.out_item_ids, staff_note = excluded.staff_note, opened_at = ${now},
-         choice = NULL, swap_json = NULL, refund_promptpay = NULL, chosen_at = NULL, resolution = NULL, refund_ref = NULL, resolved_at = NULL`
+         choice = NULL, swap_json = NULL, refund_promptpay = NULL, refund_account = NULL, refund_bank = NULL, refund_branch = NULL, chosen_at = NULL, resolution = NULL, refund_ref = NULL, resolved_at = NULL`
     ).run(order.id, ids.join(","), note);
     db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)").run(
       order.id,
       order.status,
       `Stock: out after payment — lines ${ids.join(",")}${note ? ` — ${note}` : ""}`
     );
+    // Optional: what the customer reads above the swap/refund box (owner 24/10, the admin's message).
+    const message = cleanOrderMessage(customerMessage);
+    if (message) insertCustomerMessage(order.id, message);
     return { ok: true };
   })();
 }
@@ -290,7 +306,7 @@ export function markRefunded(orderNumber: string, rawRef: string): StaffStockRes
 
 export type CustomerStockResult =
   | { ok: true; choice: StockIssueChoice }
-  | { ok: false; error: "not-found" | "closed" | "swap-invalid" | "promptpay-invalid" };
+  | { ok: false; error: "not-found" | "closed" | "swap-invalid" | "promptpay-invalid" | "bank-invalid" };
 
 async function customerIssue(orderNumber: string, viewToken: string | null) {
   const order = await getOrderDetailForViewer(orderNumber, viewToken);
@@ -314,26 +330,50 @@ export async function chooseSwap(orderNumber: string, viewToken: string | null, 
   return recordChoice(order.id, "swap", JSON.stringify(picks), null);
 }
 
-/** `promptPay` = null → the phone the order was placed with. */
-export async function chooseRefund(orderNumber: string, viewToken: string | null, promptPay: unknown | null): Promise<CustomerStockResult> {
+/** { mode: "own" } → the phone the order was placed with · { mode: "other", promptPay } → another PromptPay mobile number ·
+ *  { mode: "bank", account, bank, branch } → a bank account, which needs its bank and its branch (owner 24/10, chat). */
+export type RefundInput = { mode: "own" } | { mode: "other"; promptPay: unknown } | { mode: "bank"; account: unknown; bank: unknown; branch: unknown };
+
+export async function chooseRefund(orderNumber: string, viewToken: string | null, input: RefundInput): Promise<CustomerStockResult> {
   const found = await customerIssue(orderNumber, viewToken);
   if (!found) return { ok: false, error: "not-found" };
   const { order, issue } = found;
   if (!issue || issue.choice || issue.resolution || !canOpenStockIssue(order.status)) return { ok: false, error: "closed" };
-  const number =
-    promptPay === null
-      ? cleanPromptPayPhone((getDb().prepare("SELECT c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?").get(order.id) as { phone: string }).phone)
-      : cleanPromptPayPhone(promptPay);
-  if (!number) return { ok: false, error: "promptpay-invalid" };
-  return recordChoice(order.id, "refund", null, number);
+  let target: RefundTarget;
+  if (input.mode === "bank") {
+    const account = cleanBankAccount(input.account);
+    const bank = cleanBankText(input.bank);
+    const branch = cleanBankText(input.branch);
+    if (!account || !bank || !branch) return { ok: false, error: "bank-invalid" };
+    target = { kind: "bank", account, bank, branch };
+  } else {
+    const phone =
+      input.mode === "own"
+        ? cleanPromptPayPhone((getDb().prepare("SELECT c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?").get(order.id) as { phone: string }).phone)
+        : cleanPromptPayPhone(input.promptPay);
+    if (!phone) return { ok: false, error: "promptpay-invalid" };
+    target = { kind: "promptpay", phone };
+  }
+  return recordChoice(order.id, "refund", null, target);
 }
 
-function recordChoice(orderId: number, choice: StockIssueChoice, swapJson: string | null, promptPay: string | null): CustomerStockResult {
+function recordChoice(orderId: number, choice: StockIssueChoice, swapJson: string | null, target: RefundTarget | null): CustomerStockResult {
   const db = getDb();
   // `choice IS NULL` in the WHERE: two taps (or two tabs) cannot both record a choice.
   const changed = db
-    .prepare(`UPDATE order_stock_issues SET choice = ?, swap_json = ?, refund_promptpay = ?, chosen_at = ${now} WHERE order_id = ? AND choice IS NULL AND resolution IS NULL`)
-    .run(choice, swapJson, promptPay, orderId).changes;
+    .prepare(
+      `UPDATE order_stock_issues SET choice = ?, swap_json = ?, refund_promptpay = ?, refund_account = ?, refund_bank = ?, refund_branch = ?, chosen_at = ${now}
+       WHERE order_id = ? AND choice IS NULL AND resolution IS NULL`
+    )
+    .run(
+      choice,
+      swapJson,
+      target?.kind === "promptpay" ? target.phone : null,
+      target?.kind === "bank" ? target.account : null,
+      target?.kind === "bank" ? target.bank : null,
+      target?.kind === "bank" ? target.branch : null,
+      orderId
+    ).changes;
   if (changed === 0) return { ok: false, error: "closed" };
   const status = (db.prepare("SELECT status FROM orders WHERE id = ?").get(orderId) as { status: string }).status;
   db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)").run(orderId, status, `Customer: chose ${choice}`);
@@ -359,6 +399,9 @@ export function stockIssueViewFor(orderId: number): StockIssueView | null {
     wholeOrder: issue.refund.wholeOrder,
     ownPhoneMasked: ownPhone ? maskPhone(ownPhone) : null,
     refundPhoneMasked: issue.refundPromptPay ? maskPhone(issue.refundPromptPay) : null,
+    refundBank: issue.refundBankAccount
+      ? { bank: issue.refundBankAccount.bank, branch: issue.refundBankAccount.branch, accountMasked: maskAccount(issue.refundBankAccount.account) }
+      : null,
     swapGroups,
   };
 }

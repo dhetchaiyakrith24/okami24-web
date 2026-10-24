@@ -37,6 +37,29 @@ export function cleanPromptPayPhone(raw: unknown): string | null {
   return normalizePhone(raw.slice(0, 40));
 }
 
+/** A bank account number the refund goes to (owner 24/10 chat): digits only, 10–15 long. A 13-digit number is refused — that
+ *  is a citizen ID, which the site never holds. */
+export function cleanBankAccount(raw: unknown): string | null {
+  if (typeof raw !== "string") return null;
+  const digits = raw.slice(0, 40).replace(/[\s-]/g, "");
+  return /^\d{10,15}$/.test(digits) && digits.length !== 13 ? digits : null;
+}
+
+/** The bank name or branch a customer types: 2–60 characters, no markup or control characters. */
+export function cleanBankText(raw: unknown): string | null {
+  if (typeof raw !== "string") return null;
+  const t = raw.trim().replace(/\s+/g, " ");
+  return t.length >= 2 && t.length <= 60 && !/[<>{}\u0000-\u001f]/.test(t) ? t : null;
+}
+
+/** Where a refund goes: a PromptPay mobile number, or a bank account with its bank and branch. */
+export type RefundTarget = { kind: "promptpay"; phone: string } | { kind: "bank"; account: string; bank: string; branch: string };
+
+/** The customer page names an account by its last 4 digits only; the full number stays on the staff page. */
+export function maskAccount(account: string): string {
+  return `xxx-x-xxx${account.slice(-4)}`;
+}
+
 /** "0812345678" → "xxx-xxx-5678" — how the order page names the number it will refund to (the full number stays on the
  *  staff page). */
 export function maskPhone(phone: string): string {
@@ -121,6 +144,8 @@ export interface StockIssueView {
   ownPhoneMasked: string | null;
   /** The number the customer chose for the refund, masked. */
   refundPhoneMasked: string | null;
+  /** The bank account the customer chose for the refund: its bank, branch and masked number. */
+  refundBank: { bank: string; branch: string; accountMasked: string } | null;
   /** Only while the customer still has to choose: the swap options for each out line, by order-line id. */
   swapGroups: Record<number, SwapGroup[]>;
 }

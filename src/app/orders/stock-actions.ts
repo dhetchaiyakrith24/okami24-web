@@ -1,7 +1,7 @@
 "use server";
 
 import { after } from "next/server";
-import { chooseRefund, chooseSwap, type CustomerStockResult } from "@/lib/commerce/stock-issues";
+import { chooseRefund, chooseSwap, type CustomerStockResult, type RefundInput } from "@/lib/commerce/stock-issues";
 import { notifyStockChoice } from "@/lib/line/notify";
 
 /**
@@ -12,7 +12,7 @@ import { notifyStockChoice } from "@/lib/line/notify";
 
 export interface StockActionState {
   /** A key of `dict.orderStatus` to show, or null. */
-  errorKey: "stockErrorSwap" | "stockErrorPromptPay" | "stockErrorClosed" | null;
+  errorKey: "stockErrorSwap" | "stockErrorPromptPay" | "stockErrorBank" | "stockErrorClosed" | null;
   done: boolean;
 }
 
@@ -21,6 +21,7 @@ const ERROR_KEY: Record<Exclude<CustomerStockResult, { ok: true }>["error"], Sto
   closed: "stockErrorClosed",
   "swap-invalid": "stockErrorSwap",
   "promptpay-invalid": "stockErrorPromptPay",
+  "bank-invalid": "stockErrorBank",
 };
 
 function answer(orderNumber: string, result: CustomerStockResult): StockActionState {
@@ -44,6 +45,12 @@ export async function chooseSwapAction(_prev: StockActionState, formData: FormDa
 export async function chooseRefundAction(_prev: StockActionState, formData: FormData): Promise<StockActionState> {
   const orderNumber = String(formData.get("orderNumber") ?? "");
   const token = String(formData.get("token") ?? "") || null;
-  const promptPay = formData.get("mode") === "other" ? formData.get("promptPay") : null;
-  return answer(orderNumber, await chooseRefund(orderNumber, token, promptPay));
+  const mode = formData.get("mode");
+  const input: RefundInput =
+    mode === "bank"
+      ? { mode, account: formData.get("account"), bank: formData.get("bank"), branch: formData.get("branch") }
+      : mode === "other"
+        ? { mode, promptPay: formData.get("promptPay") }
+        : { mode: "own" };
+  return answer(orderNumber, await chooseRefund(orderNumber, token, input));
 }

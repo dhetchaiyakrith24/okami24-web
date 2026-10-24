@@ -7,6 +7,8 @@ import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
 import { getStockIssue, orderLines, type StockIssue, type StockIssueLine } from "@/lib/commerce/stock-issues";
+import { cleanOrderMessage } from "@/lib/commerce/order-message-rules";
+import { insertCustomerMessage } from "@/lib/commerce/order-messages";
 
 /**
  * The staff order list and its buttons (cart round 22/10, round batch 2). Reached only through /staff pages and
@@ -147,12 +149,12 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   };
 }
 
-export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" | "not-allowed" | "tracking" | "carrier" | "note" };
+export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" | "not-allowed" | "tracking" | "carrier" | "note" | "message" };
 
 export function applyStaffAction(
   orderNumber: string,
   action: StaffAction,
-  input: { tracking?: string; carrier?: string; note?: string }
+  input: { tracking?: string; carrier?: string; note?: string; message?: string }
 ): StaffActionResult {
   const db = getDb();
   const note = (input.note ?? "").trim().slice(0, 300);
@@ -161,8 +163,11 @@ export function applyStaffAction(
   // Staff pick the carrier with the number — never guessed from it (owner 23/10: the order page names it).
   const carrier = action === "ship" ? toCarrierId(input.carrier) : null;
   if (action === "ship" && !carrier) return { ok: false, error: "carrier" };
-  // A cancellation always says why — after a transfer it is the out-of-stock refund/swap case (owner 22/10).
-  if (action === "cancel" && note.length < 3) return { ok: false, error: "note" };
+  // A cancellation always tells the CUSTOMER why (owner 24/10: "ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ") — the message shows on
+  // their order page; the staff note beside it stays staff-only and may be left empty (then the message is the history note).
+  const message = action === "cancel" ? cleanOrderMessage(input.message) : null;
+  if (action === "cancel" && !message) return { ok: false, error: "message" };
+  const historyNote = note || (message ? message.replace(/\s+/g, " ").slice(0, 300) : "");
 
   return db.transaction((): StaffActionResult => {
     const row = db.prepare("SELECT id, status FROM orders WHERE order_number = ?").get(orderNumber) as
@@ -175,13 +180,14 @@ export function applyStaffAction(
     for (const status of steps) {
       const isLast = status === steps[steps.length - 1];
       const text = isLast
-        ? [`Staff: ${action}`, tracking ? `tracking ${tracking}` : null, carrier ? `carrier ${carrier}` : null, note || null].filter(Boolean).join(" — ")
+        ? [`Staff: ${action}`, tracking ? `tracking ${tracking}` : null, carrier ? `carrier ${carrier}` : null, historyNote || null].filter(Boolean).join(" — ")
         : `Staff: ${action}`;
       history.run(row.id, status, text);
     }
     db.prepare(
       `UPDATE orders SET status = ?, tracking_number = COALESCE(?, tracking_number), carrier = COALESCE(?, carrier), updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`
     ).run(steps[steps.length - 1], tracking, carrier, row.id);
+    if (message) insertCustomerMessage(row.id, message);
     return { ok: true };
   })();
 }

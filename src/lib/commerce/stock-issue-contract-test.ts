@@ -3,10 +3,13 @@
  */
 import {
   canOpenStockIssue,
+  cleanBankAccount,
+  cleanBankText,
   cleanPromptPayPhone,
   cleanRefundRef,
   decodeSwapValue,
   encodeSwapValue,
+  maskAccount,
   maskPhone,
   parseItemIds,
   parseSwapJson,
@@ -46,6 +49,20 @@ export function runStockIssueContractTests(): { name: string; passed: boolean; d
       cleanPromptPayPhone("hello") === null &&
       cleanPromptPayPhone(undefined) === null
   );
+  check(
+    "bank account: 10–15 digits kept, dashes dropped; citizen ID (13), short, letters refused",
+    cleanBankAccount("153-8-29240-7") === "1538292407" &&
+      cleanBankAccount("123456789012") === "123456789012" &&
+      cleanBankAccount("1101700203451") === null &&
+      cleanBankAccount("12345") === null &&
+      cleanBankAccount("12345abc90") === null &&
+      cleanBankAccount(undefined) === null
+  );
+  check(
+    "bank / branch text: 2–60 characters, markup refused",
+    cleanBankText(" กสิกรไทย ") === "กสิกรไทย" && cleanBankText("ก") === null && cleanBankText("<b>x</b>") === null && cleanBankText("") === null && cleanBankText(3) === null
+  );
+  check("bank account mask shows the last 4 digits only", maskAccount("1538292407") === "xxx-x-xxx2407");
   check("mask shows the last 4 digits only", maskPhone("0812345678") === "xxx-xxx-5678");
   check("refund ref: bank reference kept", cleanRefundRef("  2026102414x5AbC ") === "2026102414x5AbC");
   check("refund ref: too short / odd characters rejected", cleanRefundRef("ab") === null && cleanRefundRef("<script>") === null && cleanRefundRef(5) === null);

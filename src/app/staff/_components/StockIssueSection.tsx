@@ -32,7 +32,11 @@ function OpenForm({ order, again }: { order: StaffOrderDetail; again: boolean })
         ))}
       </fieldset>
       <label className="flex flex-col gap-1 text-foreground-muted">
-        หมายเหตุ (ลูกค้าไม่เห็น)
+        ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ไม่ใส่ก็ได้)
+        <textarea name="message" maxLength={600} rows={2} className={input} />
+      </label>
+      <label className="flex flex-col gap-1 text-foreground-muted">
+        หมายเหตุทีมงาน (ลูกค้าไม่เห็น)
         <input name="note" autoComplete="off" maxLength={300} className={input} />
       </label>
       <button type="submit" className={again ? `${ghost} self-start` : `${button} self-start`}>
@@ -129,11 +133,21 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
         <div className="flex flex-col gap-1">
           <p className="font-semibold text-foreground">ลูกค้าเลือกรับเงินคืน ({formatDateTime(issue.chosenAt ?? issue.openedAt)})</p>
           <p className="text-foreground">
-            โอนคืน {formatBaht(issue.refund.amount)} เข้าพร้อมเพย์ <span className="select-all font-semibold">{issue.refundPromptPay}</span>
+            {issue.refundBankAccount ? (
+              <>
+                โอนคืน {formatBaht(issue.refund.amount)} เข้าบัญชี <span className="font-semibold">{issue.refundBankAccount.bank}</span> สาขา{" "}
+                <span className="font-semibold">{issue.refundBankAccount.branch}</span> เลขที่{" "}
+                <span className="select-all font-semibold">{issue.refundBankAccount.account}</span>
+              </>
+            ) : (
+              <>
+                โอนคืน {formatBaht(issue.refund.amount)} เข้าพร้อมเพย์ <span className="select-all font-semibold">{issue.refundPromptPay}</span>
+              </>
+            )}
           </p>
           {/* Anyone holding the order link can type another number (checker #802) — staff check the receiver name first. */}
-          {issue.refundPromptPay && issue.refundPromptPay !== order.customerPhone && (
-            <p className="text-unverified">ไม่ใช่เบอร์ที่ใช้สั่ง — ก่อนโอนเช็คว่าชื่อบัญชีปลายทางตรงกับชื่อลูกค้า ({order.shippingAddress.recipientName})</p>
+          {(issue.refundBankAccount || (issue.refundPromptPay && issue.refundPromptPay !== order.customerPhone)) && (
+            <p className="text-unverified">ไม่ใช่เบอร์ที่ใช้สั่ง (หรือเป็นเลขบัญชี) — ก่อนโอนเช็คว่าชื่อบัญชีปลายทางตรงกับชื่อลูกค้า ({order.shippingAddress.recipientName})</p>
           )}
           <p className="text-xs text-foreground-dim">
             {issue.refund.wholeOrder ? "สินค้าหมดทุกรายการ — บันทึกแล้วออเดอร์จะถูกยกเลิก" : "คืนเฉพาะรายการที่หมด (ค่าส่งไม่คืน) — รายการที่เหลือส่งตามปกติ"}
