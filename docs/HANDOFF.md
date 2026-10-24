@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 evening = #807 merge (order page tells the story + shop messages + refund
-  to a bank account; supersedes #804 — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
+  to a bank account; GitHub marked #804 merged with it — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
   617e5553 (#805 handoff) · 7de15064 (#802 cart UX E). Earlier 24/10 merges #787–#803 = `git log`.
   **CART IS OFF on the live site since 24/10 ~16:00** (owner: "ปิดระบบตะกร้าไปก่อน รอจนกว่า … จะเสร็จ") — Render env OKAMI24_ORDERING=off
   + Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 307 → /products?order=line, product pages "สอบถามทาง LINE" [ตรวจแล้ว].
@@ -62,10 +62,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     products, 733 options, 782 codes = the product list's code set, 0 disagreements; 8 options the product list called มีของ are out
     (M Bar 10K · INFY 20K · Muro SC 8000 · Muro Connector 20K ×2 · Marbo Saltnic eliquid-1 · RELX LUMI 18K) → live. Warehouse slip: Pod-156's
     14th option is coded "Pod-147" in Shipnity Max (skipped by the decoder). TEAM_RULES 13.7 stock lines rewritten.
-  · #807 (B + C, checker see PR): order page = 4 steps + "ขั้นต่อไป" per state · pill "รอคุณเลือก" while an out-of-stock choice is open ·
+  · #807 (B + C, checker PASS 2c6d035e 7/7): order page = 4 steps + "ขั้นต่อไป" per state · pill "รอคุณเลือก" while an out-of-stock choice is open ·
     "ข้อความจากร้าน" box (table order_customer_messages, migration 0015; staff write it on /staff/orders/<n>) · cancel REQUIRES a
     customer-facing reason · refund to a bank account (from #804, migration 0014) with bank suggestions · typed values survive a refused
     submit. Staff + customer flows tested on the test build with a local staff password; no staff note reaches the customer HTML.
+  #807 checker notes, not fixed (fold into the NEXT round): (a) an admin message saying "ด้านล่าง" stays after the customer chose — hide
+  messages older than chosen_at or tell staff not to point "below" · (b) nextShipped says "กดปุ่มด้านล่าง" but an order shipped without a
+  carrier has no button · (c) the LINE alert formatStockChoiceAlert still says "รับเงินคืนเข้าพร้อมเพย์" for a bank refund · (d) stale
+  comments (migration 0013, cleanPromptPayPhone "no bank account") · cleanBankText keeps invisible characters · unused ERROR_TEXT "note"
+  · (f) stockChosenRefundBank still says "แอดมิน". BSOT §9 line changed by #804 quotes the owner's chat 24/10 (other chat) — confirm with the owner.
   Known, not fixed: after a partial refund the order cannot get a second out-of-stock issue (one row per order) · history keeps the refund ref,
   not the amount · no DB-level tests · designer note: mark the out rows in the order page's item list.
   Also for (2): checker notes of cart UX C (#795) — Back from review returns to review · a typed note is lost if placing fails · the add
