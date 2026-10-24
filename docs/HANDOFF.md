@@ -11,7 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~07:00 = c12c86e6 (#795 cart UX C: last-used address straight to review +
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~16:00 = 7de15064 (#802 cart UX E, out of stock after payment) · 02b1613c
+  (#803 hourly stock by the routine) · 4220dfef (#801 stock routine CLOSE-ONLY, deploy success + live 200 [ตรวจแล้ว]) · before it eadd1c31 (#800 Double Mint sold out by hand) · a0929b7f (#798 hourly stock 12:14). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
   optional "หมายเหตุถึงร้าน" → orders.customer_note (migration 0012), staff order page only — deploy success + live 200; staff-page render NOT
   seen in a browser yet (no staff password locally) → first real note: look at /staff/orders/<n>). Before: #794 "ติดตามคำสั่งซื้อ" /orders by phone only + header
   (lg band hidden) / drawer / footer link — deploy success + live 200). FIRST REAL WEB ORDER 24/10 02:25 OK-20261023-eb3fe0 (Muro Connector 20K
@@ -37,7 +38,40 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Cart/order page proof on a test build (24/10): the build needs OKAMI24_ORDERING=on SITE_URL=https://okami24.store (else /cart redirects);
   start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
   (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
-3 MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
+3 MAIN CHAT local_686a322f-0897-443b-89a8-c30fd88e0e5c from 24/10 ~12:50 (weekly quota 94% at start, resets 25/10 22:00; extra usage ON,
+  limit $40). DONE 24/10: (1) STOCK CLOSE-ONLY = #801 live — scripts/stock-sync.js keeps every code already in WAREHOUSE_OUT_OF_STOCK, prints
+  "held out" codes for the owner; only `--reopen CODE,CODE` (owner-confirmed, main chat) re-opens; routine prompt
+  C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md step 3/5 + report line updated; TEAM_RULES 13.7 stock line. Checker PASS
+  9fa7c7e0. ORDER-ENTRY READ (owner 24/10 ~12:37 sent the "เพิ่มสินค้า" screen of order entry): blue "เพิ่ม <option>" button = in stock, grey =
+  out (Double Mint grey = matches reality); Friday's design = read every button state on that screen in one script, never pick a customer,
+  never add to cart, never press บันทึก; option names → codes via the product-list read; run both reads side by side 2–3 days, then let the
+  routine re-open from order entry. Owner OK 24/10 ~15:00 ("เปิดหน้าคีย์ออเดอร์ดูได้ 1 ครั้ง ห้ามเลือกลูกค้า ห้ามใส่ตะกร้า ห้ามกดบันทึก") — LOOKED
+  15:08: https://app.shipnitymax.com/order/create (empty form) → "เพิ่มสินค้า" (ref button in ข้อมูลสินค้า) opens modal "เลือกสินค้า": 10 products
+  per page, 7 pages (pager buttons), filters WAREHOUSE / sort / สินค้าทั้งหมด. Each table row (TR) = code cell (e.g. Pod-168) + option buttons
+  "เพิ่ม <option>" (BUTTON > SPAN); OUT = button class has "pointer-events-none" + "text-field-gray", IN = "border-primary text-primary".
+  Single-SKU rows (e.g. Eliquid-73) had no "เพิ่ม <x>" buttons — read method still open. Data comes from api.shipnitymax.com/api/graphql
+  (not used: would mean calling their API with the session). Spot check matched our closed list (Pod-168 all out; Coil-53 only 1.0Ω in).
+  Close = the modal's own "ยกเลิก", then close the tab (never the page's "บันทึก"). Proposal sent to the owner; build after batch E merges.
+  NEXT = build that reader (side by side with the product-list read 2–3 days) — owner told; not started.
+  (2) CART UX E = #802 MERGED 24/10 (7de15064, checker PASS 0114b39d after a round-1 FAIL: staff notes rode to the customer page in
+  statusHistory — now stripped on /orders/<n>, which also closes the old cancel-reason leak; swap rule enforced server-side). Migration 0013
+  order_stock_issues. Flow = BSOT §9 dated 24/10 line + staff guide item 3. Known, not fixed (checker): after a partial refund the order cannot
+  get a second out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests. Designer note left:
+  mark the out rows in the order page's item list. Not yet seen on a real order. Why: the first web order OK-20261023-eb3fe0
+  (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
+  Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
+  the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
+  `muro-connector-20k | Double Mint` in src/data/stock/sold-out.ts (survives the hourly read; remove when back).
+  ROOT CAUSE (owner 24/10 ~13:30, from the admin team): Shipnity Max's PRODUCT LIST page is unstable — items already out can still show
+  มีของ; the TRUE stock shows only at the ORDER-ENTRY step ("คีย์ออเดอร์" / ลงออเดอร์ — the admin checked). Our routine reads the product
+  list (scripts/stock-sync.js header) → every site stock flag can be wrong, not just Pod-171-3. Fix options for the owner (asked 24/10):
+  read stock from the order-entry screen read-only (never submit an order; that page may hold customer data — the routine prompt forbids
+  order/customer pages today, so it needs the owner's OK and a new read design) · meanwhile let the routine only CLOSE items (1 → 0), never
+  re-open (0 → 1) without the owner. PR #800 = hand-kept sold-out line for Double Mint (merged eadd1c31, live "สินค้าหมด"). After E: the owner's 4 fixes
+  (below) → login page + member promo (รอพี่ตรวจ 75) → D upsell row — only when the owner says go.
+  Hourly stock routine: no runs 08:00–11:00 24/10 (computer/app was off) · 12:14 run = #798 (Pod-156-14 back in, M-Switch Kit) merged by the
+  routine, deploy success, live 200 [ตรวจแล้ว]. The owner talks to the routine chat directly sometimes ("เสร็จแล้ว Merge ได้เลย").
+  Before this: MAIN CHAT since 24/10 ~00:50 (old main local_f62bdd70-4bf1-48a9-a7aa-3e413794850e). Owner 24/10: "Friday หยุดแชทลูกละทำในแชทนี้ได้เลย" →
   NO side chats. Old side chats to archive: line1-images-2310d local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c
   local_1b6cafc0…. Weekly quota 92% (resets 25/10 22:00) → after batch A, stop at the PR edge until the reset unless the owner says go.
   Owner 24/10 ~02:30: "เรื่มชุด B เลยครับ" (quota go) · thank-you line → "ขอบคุณที่ไว้วางใจและใช้บริการกับ OKami24", big bold "Impact ทรงพลัง"
@@ -50,7 +84,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   password) → do both on 25/10; propose the login design first (login system = central §8 ask). Cart UX C DONE #795 (last-used address → review;
   optional note → orders.customer_note, staff page only; migration 0012; checker notes not fixed: Back from review returns to review, a typed note is lost if placing fails). NEXT: D upsell row in the cart
   (owner asked again 24/10 "สินค้าเลือกเพิ่มเติม" — designer first) → E (full set) — 3c.
-  OWNER FIXES 24/10 ~03:10 from his phone on the live site (do FIRST on 25/10, one batch, tier B):
+  OWNER FIXES 24/10 ~03:10 from his phone on the live site (after E, one batch, tier B):
   (a) product pages (phone): the floating cart bubble sits above the buy bar over the page — move it INTO the buy bar beside the CTA
       ("แถบนี้ตามไปทุกหน้า") and hide the floating bubble while `.mobile-buy-bar` is on screen (badge stays);
   (b) the CTA label "เลือกกลิ่นก่อน" (no option picked yet) → better wording (thai-copy; owner asked what it should be);
@@ -72,7 +106,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, from 24/10 08:00 — owner 24/10 "Merge ได้เลยโดยไม่ต้องรอ") reads Shipnity
   Max in the owner's Chrome (logged in; a NEW tab is fine beside other Chrome work — owner 23/10) → PR only when stock changed → verify --full →
   gate → checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops (>15 products / >60 codes / missing codes / other
-  files) leave a draft and ask. Skips when a stock-sync PR is still open or `_incoming/wt-stock` is busy. Cost watch: each changed hour = one
+  files / a code re-opened) leave a draft and ask. CLOSE-ONLY since #801 (24/10): the run only closes options; codes the warehouse list says
+  are back = "held out", reported to the owner, re-opened by Friday with `--reopen` after the owner confirms. Skips when a stock-sync PR is still open or `_incoming/wt-stock` is busy. Cost watch: each changed hour = one
   full build + one checker + one deploy (~30–60 s of 502) — if quota or 502s hurt, propose fewer hours to the owner.
   Long-term (after go-live): stock without a rebuild (DB/endpoint) — proposed, not started.
   The routine's session hit an auto-mode refusal on a chained edit 23/10 → it now edits with the Edit tool, one command at a time.
