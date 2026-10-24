@@ -11,7 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~12:40 = a0929b7f (#798 hourly stock 12:14 by the routine). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
+1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 ~13:09 = 4220dfef (#801 stock routine CLOSE-ONLY, deploy success + live 200
+  [ตรวจแล้ว]) · before it eadd1c31 (#800 Double Mint sold out by hand) · a0929b7f (#798 hourly stock 12:14). Earlier 24/10: c12c86e6 (#795 cart UX C: last-used address straight to review +
   optional "หมายเหตุถึงร้าน" → orders.customer_note (migration 0012), staff order page only — deploy success + live 200; staff-page render NOT
   seen in a browser yet (no staff password locally) → first real note: look at /staff/orders/<n>). Before: #794 "ติดตามคำสั่งซื้อ" /orders by phone only + header
   (lg band hidden) / drawer / footer link — deploy success + live 200). FIRST REAL WEB ORDER 24/10 02:25 OK-20261023-eb3fe0 (Muro Connector 20K
@@ -37,13 +38,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Cart/order page proof on a test build (24/10): the build needs OKAMI24_ORDERING=on SITE_URL=https://okami24.store (else /cart redirects);
   start with OKAMI24_DATA_DIR=<copy of a test DB>; test DB + seeded cart/session + shoot script + crop script = `_incoming/cartux-a/`
   (shoot.sh <side> <port> · crop.js · shots/). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
-3 NEW MAIN CHAT from 24/10 ~12:45 (previous main local_626dcb43-ac97-4ee7-9a3d-f1c8b60b7b25 moved at context 81%; weekly quota 94%, resets
-  25/10 22:00; extra usage ON, limit $40). NEW CHAT ORDER (owner 24/10 ~13:40 "ได้ครับลองแก้ปัญหากันดูนะ … ละค่อยเริ่มทำ" = start in the new
-  chat): (1) STOCK FIRST, quick — make the routine `okami24-stock-daily` CLOSE-ONLY (owner said ได้ to Friday's recommended option 1): a code
-  that was out and now reads มีของ stays out (keep it in warehouse-stock.ts), the run merges the rest and lists those "คลังบอกว่ากลับมามีของ"
-  codes for the owner to confirm; edit the prompt in C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md step 3/5 + TEAM_RULES
-  13.7 stock line; then propose the order-entry read design (see ROOT CAUSE below). (2) THEN CART UX E (owner earlier: "แชทใหม่ทำแค่ระบบยกเลิกสินค้าก่อน" — sold out
-  after payment, flow in 3c "E"; full set: money, orders, customer data; BSOT §9 dated line). Why: the first web order OK-20261023-eb3fe0
+3 MAIN CHAT local_686a322f-0897-443b-89a8-c30fd88e0e5c from 24/10 ~12:50 (weekly quota 94% at start, resets 25/10 22:00; extra usage ON,
+  limit $40). DONE 24/10: (1) STOCK CLOSE-ONLY = #801 live — scripts/stock-sync.js keeps every code already in WAREHOUSE_OUT_OF_STOCK, prints
+  "held out" codes for the owner; only `--reopen CODE,CODE` (owner-confirmed, main chat) re-opens; routine prompt
+  C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md step 3/5 + report line updated; TEAM_RULES 13.7 stock line. Checker PASS
+  9fa7c7e0. ORDER-ENTRY READ (owner 24/10 ~12:37 sent the "เพิ่มสินค้า" screen of order entry): blue "เพิ่ม <option>" button = in stock, grey =
+  out (Double Mint grey = matches reality); Friday's design = read every button state on that screen in one script, never pick a customer,
+  never add to cart, never press บันทึก; option names → codes via the product-list read; run both reads side by side 2–3 days, then let the
+  routine re-open from order entry. Needs the owner's OK to open that screen once (the routine prompt forbids order pages today).
+  (2) CART UX E = PR (cart-ux-e-2410, draft) — state in the PR; flow below. Why: the first web order OK-20261023-eb3fe0
   (Muro Connector 20K Double Mint Pod-171-3, ฿350 paid, slip ✅) was cancelled by the admin — really out of stock. Shipnity Max reads:
   Pod-171-3 = 0 on 20/10 and 23/10 08:10, = 1 on 23/10 ~22:29 (→ #786 merged 23:49 re-opened it on the site) and still 1 on 24/10 12:14 →
   the flip came from the warehouse system. Admin refunds by hand + phones the customer. PR #800 = hand-kept sold-out line
@@ -92,7 +95,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, from 24/10 08:00 — owner 24/10 "Merge ได้เลยโดยไม่ต้องรอ") reads Shipnity
   Max in the owner's Chrome (logged in; a NEW tab is fine beside other Chrome work — owner 23/10) → PR only when stock changed → verify --full →
   gate → checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops (>15 products / >60 codes / missing codes / other
-  files) leave a draft and ask. Skips when a stock-sync PR is still open or `_incoming/wt-stock` is busy. Cost watch: each changed hour = one
+  files / a code re-opened) leave a draft and ask. CLOSE-ONLY since #801 (24/10): the run only closes options; codes the warehouse list says
+  are back = "held out", reported to the owner, re-opened by Friday with `--reopen` after the owner confirms. Skips when a stock-sync PR is still open or `_incoming/wt-stock` is busy. Cost watch: each changed hour = one
   full build + one checker + one deploy (~30–60 s of 502) — if quota or 502s hurt, propose fewer hours to the owner.
   Long-term (after go-live): stock without a rebuild (DB/endpoint) — proposed, not started.
   The routine's session hit an auto-mode refusal on a chained edit 23/10 → it now edits with the Edit tool, one command at a time.
