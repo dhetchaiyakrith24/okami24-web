@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { NextResponse, type NextRequest } from "next/server";
 import { getOrderDetailForViewer } from "@/lib/commerce/orders";
+import { sweepIfPastDeadline } from "@/lib/commerce/unpaid-expiry";
 import { promptpayQrPath } from "@/data/payment";
 import { amountQrPng } from "@/lib/commerce/promptpay-qr";
 
@@ -16,7 +17,8 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ord
   const { orderNumber } = await context.params;
   const token = request.nextUrl.searchParams.get("token");
   const order = await getOrderDetailForViewer(orderNumber, token);
-  if (!order || order.status !== "pending_payment") return new NextResponse(null, { status: 404 });
+  // Past the 24-hour deadline = no QR, even before the 15-minute sweep reaches the order (checker #811 note).
+  if (!order || order.status !== "pending_payment" || sweepIfPastDeadline(order)) return new NextResponse(null, { status: 404 });
 
   try {
     // Owner 23/10 (BSOT §9): the QR carries this order's total, so the banking app fills the amount in. If the shop

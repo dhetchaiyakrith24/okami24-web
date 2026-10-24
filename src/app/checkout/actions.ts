@@ -101,7 +101,9 @@ export async function addAddressAction(_prev: AddressFormState, formData: FormDa
     const errorKey = result.error === "phone" ? "addressErrorPhone" : result.error === "postal" ? "addressErrorPostal" : "addressErrorMissing";
     return { errorKey, values };
   }
-  redirect(`/checkout/review?addressId=${result.id}`);
+  // Replace: /checkout/address now jumps to review for a customer with an address, so a pushed entry here made Back
+  // from review bounce straight back to it (checker #811, the #795 loop for a NEW customer).
+  redirect(`/checkout/review?addressId=${result.id}`, RedirectType.replace);
 }
 
 export async function selectAddressAction(formData: FormData): Promise<void> {
@@ -129,7 +131,7 @@ export async function placeOrderAction(_prev: PlaceOrderState, formData: FormDat
   const customerNote = formData.get("customerNote");
   const result = await placeOrder(addressId, idempotencyKey, typeof customerNote === "string" ? customerNote : null);
   if (!result.ok) {
-    if (result.code === "empty-cart" || result.code === "cart-has-problems") redirect("/cart");
+    if (result.code === "empty-cart" || result.code === "cart-has-problems") redirect("/cart", RedirectType.replace);
     return { errorKey: result.code === "address-not-found" ? "placeErrorAddress" : "placeErrorBusy" };
   }
   // Replace: Back from the order page must not reopen a review step whose cart is already ordered.
