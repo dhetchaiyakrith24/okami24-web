@@ -49,7 +49,8 @@ export const en: Dictionary = {
     learn: "Learn",
     tools: "Tools",
     help: "Help",
-    ageNotice: "For ages 21 and over only. Nicotine is addictive. Order and ask us on LINE",
+    ageNotice: "For ages 21 and over only. Nicotine is addictive. Order right here on the site; ask us on LINE",
+    ageNoticeWhileOrderingOff: "For ages 21 and over only. Nicotine is addictive. Order and ask us on LINE",
     siteUnreachable: "Can't open the site? See how to fix it",
   },
   hero: {
@@ -60,6 +61,8 @@ export const en: Dictionary = {
     headingLine2: "Genuine.",
     headingAccent: "Documented.",
     description:
+      "Most people call it an e-cigarette; we call it a pod. Pod systems, switch pods and disposables — real specs on every model, so you can compare before you decide. Order right here, or ask on LINE @okm24.",
+    descriptionWhileOrderingOff:
       "Most people call it an e-cigarette; we call it a pod. Pod systems, switch pods and disposables — real specs on every model, so you can compare before you decide. Ask or order on LINE @okm24.",
     ctaPrimary: "Explore the catalog",
     ctaSecondary: "Take the Finder",

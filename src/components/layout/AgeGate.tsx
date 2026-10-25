@@ -30,7 +30,7 @@ function subscribe(callback: () => void) {
   };
 }
 
-export function AgeGate() {
+export function AgeGate({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
   // Round 6 "about3lang" (owner 2026-09-23): the dialog reads the visitor's locale like the rest of
   // the site. The copy comes from src/i18n/age-gate-copy.tsx WITHOUT the render-time Thai
   // typography the dictionaries get — the Thai here is THAI_STYLE §5 group ก and must render byte
@@ -105,7 +105,7 @@ export function AgeGate() {
           {copy.title}
         </h2>
         <p id="age-gate-desc" className="mt-4 text-sm leading-relaxed text-foreground-muted">
-          {copy.body}
+          {orderingEnabled ? copy.body : copy.bodyWhileOrderingOff}
         </p>
         <p className="mt-3 text-xs leading-relaxed text-foreground-dim">
           {copy.nicotine}
