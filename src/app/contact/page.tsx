@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { CONTACT_HEAD_TH } from "@/i18n/search-head-copy";
 import { ContactContent } from "@/components/content/service-pages/ContactContent";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
 // Channels: BSOT §3 / src/data/contact.ts. Hours (24/7), email and "LINE = backup order channel"
 // are the owner's 2026-09-06 answers 7, 8, 18. No contact form on purpose (designer note).
@@ -18,7 +19,7 @@ export default function ContactPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(CONTACT_HEAD_TH.title, "/contact")) }} />
-      <ContactContent />
+      <ContactContent orderingEnabled={ORDERING_ENABLED} />
     </>
   );
 }

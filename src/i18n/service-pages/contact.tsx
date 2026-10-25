@@ -20,6 +20,10 @@ export interface ContactCopy {
   orderCardTitle: string;
   orderCard1: string;
   orderCard2: string;
+  /** Q7b (26/10): the same card while online ordering is ON (OKAMI24_ORDERING); the three above stay for the cart-off state. */
+  orderCardTitleWhileOrderingOn: string;
+  orderCard1WhileOrderingOn: string;
+  orderCard2WhileOrderingOn: string;
   orderCardLink: string;
   prepareTitle: string;
   prepareIntro: ReactNode;
@@ -48,8 +52,11 @@ export const CONTACT_PAGE: ServiceCopy<ContactCopy> = {
     youtubeCardTitle: "YouTube @OKMYARZ — ดูของจริงก่อนตัดสินใจ",
     youtubeCard1: "รีวิวสินค้าจากเราเอง อยากเห็นตัวจริงก่อนสั่ง เข้าไปดูได้เลยค่ะ",
     orderCardTitle: "สั่งซื้อ — ตอนนี้สั่งทางไลน์",
-    orderCard1: "บอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินสรุปยอดรวมค่าส่งและวิธีโอนให้ในแชท โอนแล้วแอดมินตรวจยอดก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม",
-    orderCard2: "อยากดูสเปกหรือเทียบราคาก่อน เลือกดูในเว็บนี้ได้เต็มที่ ได้รุ่นที่ถูกใจแล้วค่อยทักมาบอกชื่อรุ่น",
+    orderCard1: "บอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินสรุปยอดรวมค่าส่งและวิธีโอนให้ในแชท โอนแล้วแอดมินตรวจยอดก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตามค่ะ",
+    orderCard2: "อยากดูสเปกหรือเทียบราคาก่อน เลือกดูในเว็บนี้ได้เต็มที่ ได้รุ่นที่ถูกใจแล้วค่อยทักมาบอกชื่อรุ่นได้เลยค่ะ",
+    orderCardTitleWhileOrderingOn: "สั่งซื้อ — สั่งบนเว็บได้เลย",
+    orderCard1WhileOrderingOn: "เลือกรุ่น สี หรือกลิ่นแล้วกดใส่ตะกร้า ระบบจะสรุปยอดรวมค่าส่งให้ก่อนยืนยัน โอนแล้วแนบสลิปในหน้าคำสั่งซื้อ แอดมินตรวจยอดก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตามค่ะ",
+    orderCard2WhileOrderingOn: "อยากให้ช่วยเลือกรุ่นหรือเช็คของก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
     orderCardLink: "ดูวิธีสั่งซื้อทีละขั้น →",
     prepareTitle: "ก่อนทักมา เตรียมอะไร",
     prepareIntro: <>ถ้าเป็นเรื่องคำสั่งซื้อที่สั่งไว้แล้ว <B>ส่งเลขคำสั่งซื้อมาด้วย</B> จะเช็คให้ได้เร็วที่สุดค่ะ</>,
@@ -73,6 +80,9 @@ export const CONTACT_PAGE: ServiceCopy<ContactCopy> = {
     emailCard2: "For orders, tracking and sending slips, LINE is faster.",
     youtubeCardTitle: "YouTube @OKMYARZ — see the real thing before you decide",
     youtubeCard1: "Our own product reviews. If you want to see a product for real before ordering, take a look.",
+    orderCardTitleWhileOrderingOn: "Ordering — right here on the site",
+    orderCard1WhileOrderingOn: "Pick the model, colour or flavour and add it to the cart — the total with shipping is shown before you confirm. Transfer, attach the slip on your order page, and once an admin has checked the payment, your order ships with a tracking number.",
+    orderCard2WhileOrderingOn: "Want help choosing a model or checking stock before you order? Message us on LINE @okm24.",
     orderCardTitle: "Ordering — on LINE for now",
     orderCard1: "Tell us the model, colour or flavour you want. The admin gives you the total with shipping and how to pay, right there in the chat. Once your transfer has been checked, the order ships with a tracking number.",
     orderCard2: "Want to read the specs or compare prices first? Browse the site as much as you like, then message us with the model name once you’ve picked one.",
@@ -99,6 +109,9 @@ export const CONTACT_PAGE: ServiceCopy<ContactCopy> = {
     emailCard2: "下单、查件、发送转账凭证，用 LINE 更快。",
     youtubeCardTitle: "YouTube @OKMYARZ —— 下单前先看看实物",
     youtubeCard1: "我们自己拍的商品评测。想在下单前看看实物，可以去看看。",
+    orderCardTitleWhileOrderingOn: "下单 —— 直接在网站下单",
+    orderCard1WhileOrderingOn: "选好型号、颜色或口味后加入购物车，确认前会显示含运费的总金额。转账后在订单页上传凭证，管理员核对款项后即安排发货，并提供快递单号。",
+    orderCard2WhileOrderingOn: "下单前想让我们帮忙选型号或查库存，欢迎通过 LINE @okm24 咨询。",
     orderCardTitle: "下单 —— 目前通过 LINE 下单",
     orderCard1: "告诉我们想要的型号、颜色或口味，管理员会在聊天里给出含运费的总金额和付款方式。转账核对无误后即安排发货，并提供快递单号。",
     orderCard2: "想先看规格或比价，可以在网站上慢慢看，选好之后再把型号名称发给我们。",
