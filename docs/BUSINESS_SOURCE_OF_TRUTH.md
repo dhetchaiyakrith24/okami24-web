@@ -415,6 +415,13 @@ Do not collect unnecessary personal information.
 **Future account capabilities** (implement only when approved): order history, favorites,
 addresses, tracking, product interests.
 
+**Member sign-in — owner 2026-10-26 (queue Q4, main chat):** optional sign-in with **LINE and Google first** (no Facebook);
+**no member perks yet, and none shown on the sign-up page**; staff keep their own password login; designs = drafts v2
+("พรีเมียม เรียบหรู"). Guest checkout above is unchanged — signing in is never required to buy, and checkout still asks for
+the phone. What is kept: the provider's user ID and display name only (no email, no picture, no tokens). The member page
+lists only orders placed while signed in (never orders matched by phone alone). The free-shipping-from-300 idea for members
+(§ shipping, owner 2026-10-24) is not live.
+
 **Personal data (PDPA) — owner 2026-09-06, answers 9–11:**
 - **Retention:** order and address data are kept **1 year**, counted from order completion, then
   deleted. Customers may ask for earlier deletion via LINE or email.
