@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // Round "SEO all keys" batch 6 (16/10): "พอตส่งด่วน" answered with what the shop really does (BSOT §10: same-day dispatch
   // when paid and reported before 15:00, 1–3 days) — no rider/express claim, no carrier name, no "ส่งฟรี" in new copy (THAI_STYLE).
   title: "ส่งพอตไวทั่วไทย โอนก่อน 15:00 ส่งวันเดียวกัน",
-  description: "อยากได้พอตด่วน โอนและส่งสลิปทางไลน์ก่อน 15:00 เราจัดส่งให้วันเดียวกัน ถึงมือใน 1–3 วัน ส่งทั่วประเทศไทย ค่าส่ง 50 บาท และมีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
+  description: "อยากได้พอตด่วน โอนและส่งสลิปก่อน 15:00 เราจัดส่งให้วันเดียวกัน ถึงมือใน 1–3 วัน ส่งทั่วประเทศไทย ค่าส่ง 50 บาท และมีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
   ...canonicalFor("/shipping"),
 };
 
