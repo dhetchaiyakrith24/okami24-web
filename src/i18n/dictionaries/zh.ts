@@ -186,6 +186,7 @@ export const zh: Dictionary = {
     optionStockCount: "现货 {in}/{n}",
     optionShowAll: "查看全部 {n} 款",
     optionShowLess: "收起",
+    optionPickPrompt: "点选图片",
     reviewVideoEyebrow: "OKami24 评测",
     watchOnYoutube: "在 YouTube 上观看",
     reviewVideoHiddenTitle: "真机试用（泰语讲解）",
