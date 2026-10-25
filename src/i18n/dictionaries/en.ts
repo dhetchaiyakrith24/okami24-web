@@ -20,6 +20,7 @@ export const en: Dictionary = {
     trackOrder: "Track order",
     account: "My account",
     login: "Log in",
+    accountShort: "Account",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     howToOrder: "How to Order",

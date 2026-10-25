@@ -25,6 +25,7 @@ export const zh: Dictionary = {
     trackOrder: "查询订单",
     account: "我的账户",
     login: "登录",
+    accountShort: "账户",
     openMenu: "打开菜单",
     closeMenu: "关闭菜单",
     howToOrder: "购买流程",

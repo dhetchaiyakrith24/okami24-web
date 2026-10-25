@@ -28,6 +28,8 @@ export interface Dictionary {
     account: string;
     /** Owner 26/10: the word on the header pill while signed out ("เข้าสู่ระบบ"); signed in it reads `account`. */
     login: string;
+    /** The signed-in pill on phones, where `account` does not fit beside the logo at 360 px. */
+    accountShort: string;
     openMenu: string;
     closeMenu: string;
     /** Customer-service pages added 2026-09-06 (LAUNCH_AUDIT 3/4): /how-to-order, /shipping,

@@ -76,7 +76,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
     <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6 lg:gap-4 min-[1400px]:gap-6">
-        <Link href="/" className="flex items-center" aria-label="OKami24">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
           <Image
             src="/brand/okami-logo-red.png"
             alt="OKami24"
@@ -188,12 +188,21 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             <span className="hidden text-sm xl:inline">{dict.nav.trackOrder}</span>
           </Link>
           {/* Member sign-in (owner 26/10: the word "เข้าสู่ระบบ" visible on the bar on every page, every width). A gold-outlined
-              text pill, the members' accent (account-ui.tsx). */}
+              text pill, the members' accent (account-ui.tsx). Signed in, phones read the short word ("บัญชี") — the full
+              "บัญชีสมาชิก" is wider than "เข้าสู่ระบบ" and squeezed the logo at 360 (checker #857). */}
           <Link
             href="/account"
+            aria-label={accountLabel}
             className="inline-flex items-center whitespace-nowrap rounded-full border border-[rgba(200,178,138,0.45)] px-2 py-1 text-xs text-[#e8dcc4] transition-colors hover:border-[#c8b28a] hover:text-white sm:px-3 sm:py-1.5 sm:text-[13px]"
           >
-            {accountLabel}
+            {signedIn ? (
+              <>
+                <span className="sm:hidden">{dict.nav.accountShort}</span>
+                <span className="hidden sm:inline">{accountLabel}</span>
+              </>
+            ) : (
+              accountLabel
+            )}
           </Link>
           {orderingEnabled && (
             <Link
