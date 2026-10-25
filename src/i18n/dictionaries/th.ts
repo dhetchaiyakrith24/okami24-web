@@ -18,6 +18,8 @@ export const th: Dictionary = {
     cart: "ตะกร้าสินค้า",
     trackOrder: "ติดตามคำสั่งซื้อ",
     account: "บัญชีสมาชิก",
+    login: "เข้าสู่ระบบ",
+    accountShort: "บัญชี",
     openMenu: "เปิดเมนู",
     closeMenu: "ปิดเมนู",
     howToOrder: "วิธีสั่งซื้อ",

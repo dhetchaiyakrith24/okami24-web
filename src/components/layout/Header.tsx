@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch, UserRound } from "lucide-react";
+import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { NavCategory } from "@/lib/category-visibility";
 import { cn } from "@/lib/utils";
@@ -21,6 +21,23 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   // remembered at pointerdown, before the browser's emulated mouseenter opens it (checker note #817).
   const touchOpensMenu = useRef(false);
   const { dict, locale } = useLocale();
+  // Member sign-in (owner 26/10: "อยากให้มีคำว่า 'เข้าสู่ระบบ' เห็นชัดบนหัวเว็บทุกหน้า"). Pages are prerendered and the layout
+  // never reads cookies, so the header asks after load whether this browser is signed in (same pattern as the cart count)
+  // and then reads "บัญชีสมาชิก" instead. Until it answers — or if it fails — the bar shows "เข้าสู่ระบบ".
+  const [signedIn, setSignedIn] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/account/status", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d: { signedIn?: boolean } | null) => {
+        if (alive && d?.signedIn) setSignedIn(true);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
+  const accountLabel = signedIn ? dict.nav.account : dict.nav.login;
   // Round "share-deadend" batch 2 (2026-09-22): both menus list the categories that have a
   // product today (src/lib/category-visibility.ts) — "น้ำยา" used to open an empty page. The root layout computes the
   // list and passes it in (SEO ฉ batch 4, 13/10 — computing it here shipped the whole catalog to every browser).
@@ -58,8 +75,8 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   return (
     <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
-        <Link href="/" className="flex items-center" aria-label="OKami24">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6 lg:gap-4 min-[1400px]:gap-6">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
           <Image
             src="/brand/okami-logo-red.png"
             alt="OKami24"
@@ -70,7 +87,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center lg:flex min-[1400px]:gap-1" aria-label="Primary">
           <div
             className="relative"
             onMouseEnter={() => setProductsOpen(true)}
@@ -83,7 +100,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
                 open on hover, and on keyboard focus. */}
             <Link
               href="/products"
-              className="flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+              className="flex items-center gap-1 rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-3"
               onFocus={() => setProductsOpen(true)}
               onPointerDown={(e) => {
                 touchOpensMenu.current = e.pointerType === "touch" && !productsOpen;
@@ -135,19 +152,19 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+              className="rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-3"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-0.5 sm:gap-2">
           <LanguageSwitcher />
           <Link
             href="/search"
             aria-label={dict.nav.search}
-            className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+            className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2"
           >
             <Search size={19} aria-hidden />
           </Link>
@@ -165,33 +182,39 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           <Link
             href="/orders"
             aria-label={dict.nav.trackOrder}
-            className="inline-flex items-center gap-1.5 rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground lg:hidden xl:inline-flex xl:px-3"
+            className="inline-flex items-center gap-1.5 rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 lg:hidden xl:inline-flex xl:px-3"
           >
             <PackageSearch size={19} aria-hidden />
             <span className="hidden text-sm xl:inline">{dict.nav.trackOrder}</span>
           </Link>
-          {/* Member sign-in (queue Q4, owner 26/10): a person icon to /account (the page sends a visitor who is not signed in to
-              the login page). From sm up — on phones the drawer lists it, so the 390 bar keeps its four icons. Hidden again
-              from lg to 1399: one more icon wrapped the whole nav onto two lines at 1280 (measured 26/10); the footer help
-              column links /account at every width. */}
+          {/* Member sign-in (owner 26/10: the word "เข้าสู่ระบบ" visible on the bar on every page, every width). A gold-outlined
+              text pill, the members' accent (account-ui.tsx). Signed in, phones read the short word ("บัญชี") — the full
+              "บัญชีสมาชิก" is wider than "เข้าสู่ระบบ" and squeezed the logo at 360 (checker #857). */}
           <Link
             href="/account"
-            aria-label={dict.nav.account}
-            className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex lg:max-[1399px]:hidden"
+            aria-label={accountLabel}
+            className="inline-flex items-center whitespace-nowrap rounded-full border border-[rgba(200,178,138,0.45)] px-2 py-1 text-xs text-[#e8dcc4] transition-colors hover:border-[#c8b28a] hover:text-white sm:px-3 sm:py-1.5 sm:text-[13px]"
           >
-            <UserRound size={19} aria-hidden />
+            {signedIn ? (
+              <>
+                <span className="sm:hidden">{dict.nav.accountShort}</span>
+                <span className="hidden sm:inline">{accountLabel}</span>
+              </>
+            ) : (
+              accountLabel
+            )}
           </Link>
           {orderingEnabled && (
             <Link
               href="/cart"
               aria-label={dict.nav.cart}
-              className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+              className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2"
             >
               <ShoppingCart size={19} aria-hidden />
             </Link>
           )}
           <button
-            className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground lg:hidden"
+            className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 lg:hidden"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={mobileOpen}
@@ -245,7 +268,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             {dict.nav.trackOrder}
           </Link>
           <Link href="/account" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
-            {dict.nav.account}
+            {accountLabel}
           </Link>
         </nav>
       </div>

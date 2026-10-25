@@ -38,7 +38,7 @@ export function Footer({ categories, brands, dnsGuideId, orderingEnabled = true 
     { label: dict.nav.howToOrder, href: "/how-to-order" },
     // Owner 24/10: "ติดตามคำสั่งซื้อ" — find your orders by phone number.
     { label: dict.nav.trackOrder, href: "/orders" },
-    // Member sign-in (queue Q4, owner 26/10) — the header icon is hidden at 1024–1399 where the nav has no room.
+    // Member sign-in (queue Q4, owner 26/10) — also on the header pill at every width.
     { label: dict.nav.account, href: "/account" },
     { label: dict.nav.shipping, href: "/shipping" },
     { label: dict.nav.warranty, href: "/warranty" },
