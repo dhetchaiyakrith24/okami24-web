@@ -49,6 +49,7 @@ export function PhoneOptionTiles({
   const { dict } = useLocale();
   const t = dict.product;
   const listRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const many = options.length > TILE_LIMIT;
   const [open, setOpen] = useState(false);
   const strip = many && !open;
@@ -57,7 +58,7 @@ export function PhoneOptionTiles({
   const inCount = options.filter((o) => !o.out).length;
 
   return (
-    <div className={cn("flex flex-col gap-3", className)}>
+    <div ref={rootRef} className={cn("flex flex-col gap-3", className)}>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
         {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
@@ -143,7 +144,12 @@ export function PhoneOptionTiles({
       {many && (
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            setOpen((v) => !v);
+            // Closing shrinks the grid above the reader, who would land far down the page (owner 24/10): bring the
+            // picker back on screen once the strip has replaced the grid.
+            if (open) requestAnimationFrame(() => rootRef.current?.scrollIntoView({ block: "center", behavior: "auto" }));
+          }}
           aria-expanded={open}
           className="min-h-11 w-full rounded-full border border-surface-border text-sm font-semibold text-foreground-muted transition-colors active:border-ember active:text-foreground"
         >
