@@ -33,7 +33,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       title: "1. ข้อมูลที่เราเก็บ",
       intro: "ตอนคุณสั่งซื้อ เราเก็บเท่าที่จำเป็นต่อการส่งของ",
       items: [
-        "เบอร์มือถือที่ใช้ยืนยันตัวตน (รหัส OTP เก็บแบบเข้ารหัสทางเดียว — แม้แต่เราก็อ่านย้อนกลับไม่ได้)",
+        "เบอร์มือถือที่ใช้สั่งซื้อ (ใช้ติดต่อเรื่องคำสั่งซื้อ และให้คุณกลับมาดูสถานะคำสั่งซื้อได้)",
         "ชื่อผู้รับ และเบอร์ติดต่อผู้รับ",
         "ที่อยู่จัดส่ง",
         "รายการสินค้าและยอดเงินในคำสั่งซื้อ",
@@ -98,7 +98,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       title: "1. What we collect",
       intro: "When you place an order, we collect only what’s needed to get it to you.",
       items: [
-        "The mobile number used to verify you (the OTP code is stored one-way hashed — not even we can read it back)",
+        "The mobile number you order with (used to contact you about the order and to let you look it up later)",
         "The recipient’s name and contact number",
         "The shipping address",
         "The items and amounts in your order",
@@ -163,7 +163,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       title: "1. 我们收集的资料",
       intro: "您下单时，我们只收集发货所需的资料。",
       items: [
-        "用于验证身份的手机号码（验证码以单向加密方式存储 —— 连我们自己也无法还原读取）",
+        "下单时使用的手机号码（用于联系您订单事宜，以及让您之后查询订单）",
         "收件人姓名和联系电话",
         "收货地址",
         "订单中的商品和金额",
