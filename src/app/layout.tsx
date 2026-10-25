@@ -100,13 +100,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
-          <AgeGate />
+          <AgeGate orderingEnabled={ORDERING_ENABLED} />
           <Header orderingEnabled={ORDERING_ENABLED} categories={categories} />
           <main className="flex-1">{children}</main>
           {/* Round 30.4ข batch 5: the four-claim trust strip sits between the page and the footer on
               every route (owner's placement "ก่อน footer"). */}
           <TrustBar />
-          <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} />
+          <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} orderingEnabled={ORDERING_ENABLED} />
           <LineContact />
           {/* Cart UX batch B (owner 24/10): the floating cart bubble above the LINE button — only while the cart has items. */}
           <FloatingCart orderingEnabled={ORDERING_ENABLED} />

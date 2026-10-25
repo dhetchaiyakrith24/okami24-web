@@ -11,7 +11,7 @@ import type { NavBrand } from "@/lib/brand-visibility";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
-export function Footer({ categories, brands, dnsGuideId }: { categories: NavCategory[]; brands: NavBrand[]; dnsGuideId: string }) {
+export function Footer({ categories, brands, dnsGuideId, orderingEnabled = true }: { categories: NavCategory[]; brands: NavBrand[]; dnsGuideId: string; orderingEnabled?: boolean }) {
   const { dict } = useLocale();
   // Only link brands that actually have a real product in the catalog right now — a brand added
   // on real evidence but still fully media-blocked (see shipnity-seed/README.md) would otherwise
@@ -146,7 +146,7 @@ export function Footer({ categories, brands, dnsGuideId }: { categories: NavCate
             ))}
           </div>
           <p className="max-w-2xl leading-relaxed">
-            {dict.footer.ageNotice} {CONTACT.lineId}
+            {orderingEnabled ? dict.footer.ageNotice : dict.footer.ageNoticeWhileOrderingOff} {CONTACT.lineId}
           </p>
         </Container>
       </div>

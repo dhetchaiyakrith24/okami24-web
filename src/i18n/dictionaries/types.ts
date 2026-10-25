@@ -58,6 +58,8 @@ export interface Dictionary {
     /** Column title for the customer-service links (วิธีสั่งซื้อ / การจัดส่ง / ติดต่อเรา / ความเป็นส่วนตัว). */
     help: string;
     ageNotice: string;
+    /** ageNotice while online ordering is OFF (owner 26/10: the cart-on notice says order on the site). */
+    ageNoticeWhileOrderingOff: string;
     /** Round "site unreachable" (owner 11/10): the link to the DNS help page under the LINE/YouTube icons, every page. */
     siteUnreachable: string;
   };
@@ -67,6 +69,8 @@ export interface Dictionary {
     headingLine2: string;
     headingAccent: string;
     description: string;
+    /** hero.description while online ordering is OFF (owner 26/10). */
+    descriptionWhileOrderingOff: string;
     ctaPrimary: string;
     ctaSecondary: string;
     statProducts: string;

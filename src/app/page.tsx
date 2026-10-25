@@ -18,6 +18,7 @@ import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
 import { HomeProductIndex } from "@/components/home/HomeProductIndex";
 import { CONTACT } from "@/data/contact";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
@@ -103,7 +104,7 @@ export default function Home() {
       {PHONE_HERO === "classic" ? (
         <>
           <div className="lg:hidden">
-            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
+            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} orderingEnabled={ORDERING_ENABLED} />
           </div>
           <div className="hidden lg:block">
             <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />

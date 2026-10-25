@@ -43,6 +43,10 @@ export interface AgeGateCopy {
   title: string;
   /** the age condition is the one phrase in bold, in every language */
   body: ReactNode;
+  /** The body while online ordering is OFF (OKAMI24_ORDERING). Owner 26/10 "แก้ได้เลย หน้าเตือนอายุ … ให้บอกว่าสั่งบนเว็บได้": the
+   *  ordering clause of `body` now says order on the site; this keeps the previous wording for the cart-off state. The age and
+   *  nicotine sentences are unchanged. */
+  bodyWhileOrderingOff: ReactNode;
   /** small print: nicotine + the no-claims line */
   nicotine: string;
   confirm: string;
@@ -57,7 +61,8 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
   th: {
     eyebrow: "ประกาศเรื่องอายุ",
     title: "คุณอายุ 21 ปีขึ้นไปหรือไม่?",
-    body: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้าและราคาได้ทั้งเว็บ ส่วนการสั่งซื้อหรือสอบถาม ทักไลน์ OA ของ OKami24 ได้เลย</>,
+    body: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้าและราคาได้ทั้งเว็บ และสั่งซื้อบนเว็บได้เลย ถ้ามีคำถาม ทักไลน์ OA ของ OKami24 ได้เลยค่ะ</>,
+    bodyWhileOrderingOff: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้าและราคาได้ทั้งเว็บ ส่วนการสั่งซื้อหรือสอบถาม ทักไลน์ OA ของ OKami24 ได้เลย</>,
     nicotine: "นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ",
     confirm: "ใช่ ฉันอายุ 21 ปีขึ้นไป",
     decline: "ไม่ใช่ ฉันอายุต่ำกว่า 21 ปี",
@@ -66,7 +71,8 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
   en: {
     eyebrow: "Age notice",
     title: "Are you 21 or over?",
-    body: <>This site shows vape devices and e-liquid, <B>for ages 21 and over only</B>. Browse products and prices anywhere on the site; order or ask on the OKami24 <span className="whitespace-nowrap">LINE OA</span>.</>,
+    body: <>This site shows vape devices and e-liquid, <B>for ages 21 and over only</B>. Browse and order anywhere on the site; for questions, message the OKami24 <span className="whitespace-nowrap">LINE OA</span>.</>,
+    bodyWhileOrderingOff: <>This site shows vape devices and e-liquid, <B>for ages 21 and over only</B>. Browse products and prices anywhere on the site; order or ask on the OKami24 <span className="whitespace-nowrap">LINE OA</span>.</>,
     nicotine: "Nicotine is addictive. This site makes no health, safety or quit-smoking claims about vaping.",
     confirm: "Yes, I’m 21 or over",
     decline: "No, I’m under 21",
@@ -75,7 +81,8 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
   zh: {
     eyebrow: "年龄提示",
     title: "您已年满21岁了吗？",
-    body: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。产品与价格全站均可浏览；下单与咨询请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
+    body: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。全站均可浏览商品与价格并直接下单；如有疑问，请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
+    bodyWhileOrderingOff: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。产品与价格全站均可浏览；下单与咨询请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
     nicotine: "尼古丁为成瘾性物质。本网站不对电子烟做出任何健康、安全或戒烟方面的声明。",
     confirm: "是，我已年满21岁",
     decline: "否，我未满21岁",

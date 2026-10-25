@@ -20,12 +20,15 @@ export function Hero({
   backdrop,
   productCount,
   brandCount,
+  orderingEnabled = true,
 }: {
   flagship: Product;
   backdrop?: Product;
   /** Counted in page.tsx from the same sources /products counts — never hardcoded here again. */
   productCount: number;
   brandCount: number;
+  /** Owner 26/10: the line says "order on the site" while the cart is on, the LINE wording only while it is off. */
+  orderingEnabled?: boolean;
 }) {
   const { dict } = useLocale();
   const backdropRef = useRef<HTMLDivElement>(null);
@@ -160,7 +163,7 @@ export function Hero({
             <br />
             <span className="okami-hero-line-3 text-ember">{dict.hero.headingAccent}</span>
           </h1>
-          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg"><ThaiText>{dict.hero.description}</ThaiText></p>
+          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg"><ThaiText>{orderingEnabled ? dict.hero.description : dict.hero.descriptionWhileOrderingOff}</ThaiText></p>
           <div className="okami-hero-cta flex flex-wrap gap-3 pt-2">
             <Button href="/products">{dict.hero.ctaPrimary}</Button>
             <Button href="/finder" variant="secondary">
