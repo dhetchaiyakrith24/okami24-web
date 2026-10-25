@@ -225,6 +225,8 @@ export interface Dictionary {
     /** Past 12 options: open the photo strip into the full grid / close it again (owner 24/10). */
     optionShowAll: string;
     optionShowLess: string;
+    /** Header line while nothing is picked yet. */
+    optionPickPrompt: string;
     reviewVideoEyebrow: string;
     watchOnYoutube: string;
     /** Round "clip" (owner 2026-09-27): the line under a clip card whose Thai YouTube title is hidden on en/zh. The

@@ -184,8 +184,12 @@ export function MobileVariantGallery({
     if (!hasScrollEnd) scheduleSettle();
   };
 
-  // +1: a product may lead with one cover/lineup slide before its options (M Bar 10K = 1 + 12 → still dots).
-  const counter = slides.length > TILE_LIMIT + 1;
+  // The counter counts options only: lead slides (the lineup "all" and the product card "default") are not options —
+  // "1 / 21" over a 20-flavour product read wrong (designer note 24/10). On a lead slide the counter is hidden.
+  const lead = slides.findIndex((s) => s.id !== "all" && s.id !== "default");
+  const leadCount = lead < 0 ? slides.length : lead;
+  const optionCount = slides.length - leadCount;
+  const counter = optionCount > TILE_LIMIT;
 
   return (
     <div className={cn("relative w-full overflow-hidden", className)}>
@@ -209,12 +213,12 @@ export function MobileVariantGallery({
         ))}
       </div>
       {overlay}
-      {slides.length > 1 && counter && (
+      {counter && index >= leadCount && (
         <span
           className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium tabular-nums text-foreground backdrop-blur-sm"
           aria-hidden
         >
-          {index + 1} / {slides.length}
+          {index - leadCount + 1} / {optionCount}
         </span>
       )}
       {slides.length > 1 && !counter && (

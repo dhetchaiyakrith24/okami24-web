@@ -205,6 +205,7 @@ export const th: Dictionary = {
     optionStockCount: "พร้อมส่ง {in}/{n}",
     optionShowAll: "ดูทั้งหมด {n} แบบ",
     optionShowLess: "ย่อกลับ",
+    optionPickPrompt: "แตะรูปเพื่อเลือก",
     reviewVideoEyebrow: "รีวิวจาก OKami24",
     watchOnYoutube: "ดูบน YouTube",
     reviewVideoHiddenTitle: "ลองใช้งานจริง",

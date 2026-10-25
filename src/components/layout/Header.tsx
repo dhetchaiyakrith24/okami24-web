@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { NavCategory } from "@/lib/category-visibility";
@@ -17,6 +17,9 @@ import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 export function Header({ orderingEnabled = true, categories }: { orderingEnabled?: boolean; categories: NavCategory[] }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  // Touch screens at lg+ (tablets, touch laptops): the first tap on "สินค้า" opens the menu instead of leaving the page —
+  // remembered at pointerdown, before the browser's emulated mouseenter opens it (checker note #817).
+  const touchOpensMenu = useRef(false);
   const { dict, locale } = useLocale();
   // Round "share-deadend" batch 2 (2026-09-22): both menus list the categories that have a
   // product today (src/lib/category-visibility.ts) — "น้ำยา" used to open an empty page. The root layout computes the
@@ -34,6 +37,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
     { label: dict.nav.faq, href: "/faq" },
     { label: dict.nav.about, href: "/about" },
   ];
+
+  // Escape closes the products menu however it was opened (hover gives it no focus — checker #845).
+  useEffect(() => {
+    if (!productsOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setProductsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [productsOpen]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -72,13 +85,26 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
               href="/products"
               className="flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
               onFocus={() => setProductsOpen(true)}
+              onPointerDown={(e) => {
+                touchOpensMenu.current = e.pointerType === "touch" && !productsOpen;
+              }}
+              onClick={(e) => {
+                if (!touchOpensMenu.current) return;
+                touchOpensMenu.current = false;
+                e.preventDefault();
+                setProductsOpen(true);
+              }}
               aria-expanded={productsOpen}
               aria-haspopup="true"
             >
               {dict.nav.products} <ChevronDown size={14} aria-hidden />
             </Link>
             {productsOpen && (
-              <div className="absolute left-0 top-full w-88 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl">
+              // A pick inside closes the menu (it stayed open over the next page — checker note #817).
+              <div
+                className="absolute left-0 top-full w-88 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl"
+                onClick={() => setProductsOpen(false)}
+              >
                 <Link
                   href="/products"
                   className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"

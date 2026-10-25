@@ -191,6 +191,7 @@ export const en: Dictionary = {
     optionStockCount: "{in}/{n} available",
     optionShowAll: "Show all {n}",
     optionShowLess: "Show less",
+    optionPickPrompt: "Tap a photo to choose",
     reviewVideoEyebrow: "OKami24 Review",
     watchOnYoutube: "Watch on YouTube",
     reviewVideoHiddenTitle: "Hands-on review (in Thai)",
