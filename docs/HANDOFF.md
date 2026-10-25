@@ -40,20 +40,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "order on LINE" (owner 24/10: stays) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
   300/10 min cap) · empty idempotencyKey not refused (old).
   OWNER WORK QUEUE — the ONE ordered list (owner 24/10 night: "จดด้วยนะ อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย") · tick here when done:
-    DONE (what each did = the PR): Q1 #817 · Q2 #819 · Q3 #817 · Q2b #821 · Q5 #824 · Q5b #826.
+    DONE (what each did = the PR): Q1 #817 · Q2 #819 · Q3 #817 · Q2b #821 · Q5 #824 · Q5b #826 · 26/10 #842 = Q5c + staff order page
+       tidied to 4 cards with ONE customer-message box (owner 26/10) + unpicked pages read sold out when every option is out (pod-159).
+    Disposable-45 = SUP Zero 22K — owner declined 22/10 ("2 ไม่ลง"); marked so in `_incoming/stock-api/new-products.md`, not listed.
     #817 checker notes left: desktop "สินค้า" link — Esc does not close the category menu, menu stays open after a click inside,
        touch laptops ≥1024 tap = /products (no category menu) · 2 lines tell the customer to SEND a slip to LINE (kept as instructions,
        not the "ติดต่อสอบถาม…" pointer) · /how-to-order still says "ตรวจรายการและยอดให้ครบก่อนโอน" (owner named only the orange line).
     Q5 left (taste, for the owner): counter counts the cover slide · unpicked flavour header has no "เลือก…" prompt ·
        relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
-    Small, for the next touch: pod-159 (ESKO BAR SWITCH 20K) page shows "เลือกกลิ่น" although every flavour is sold out
-       (ProductMaster photoRule page opens unpicked) — should read sold out · phone grid bar: the sort select drops to a second row.
+    Small, for the next touch: phone grid bar: the sort select drops to a second row.
     Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
        + owner 24/10 late night: sign-up/login the modern way — "Continue with Google · LINE · Facebook" buttons (LINE first for
        Thai buyers). Needs developer apps on Google / LINE / Meta + secrets in Render env = owner signs up (13.3 #2, #9 login system).
-    Q5c [NEXT — 25/10, owner 24/10 night] "ย่อกลับ" leaves the page far down (the grid collapses above the reader) — on close, scroll
-       the picker back into view (PhoneOptionTiles toggle). Small fix, tier B shots 390.
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
