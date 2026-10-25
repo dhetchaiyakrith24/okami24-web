@@ -63,6 +63,8 @@ export function PhoneOptionTiles({
         {label && <span className="text-foreground-dim">{label}</span>}
         {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
         {selected && <StockPill out={selected.out} />}
+        {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
+        {!selected && !pills.some((p) => p.selected) && <span className="text-foreground-muted">{t.optionPickPrompt}</span>}
         <span className="ml-auto text-xs text-foreground-dim">
           {t.optionStockCount.replace("{in}", String(inCount)).replace("{n}", String(options.length))}
         </span>
