@@ -188,7 +188,7 @@ export const voopooProducts: Product[] = [
       { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: G4_PAGE },
       { key: "screen", label: "Display", value: "0.85\" HD — battery, wattage, resistance, lock state, puff count", sourceStatus: "verified", sourceUrl: G4_PAGE },
       { key: "control", label: "Control", value: "One button: press twice = next resistance (0.7 → 1.0 → 0.4Ω) · 3 presses = wattage · 5 presses = menu (power off, theme, puff clear, lock) · long press = tips screen", sourceStatus: "verified", sourceUrl: G4_PAGE },
-      { key: "pod", label: "Included pod", value: "2 × ARGUS Multi-Ohm Cartridge — 0.7Ω as it goes in, 1.0Ω turned 180°, 0.4Ω by pressing the button twice · 3.5mL (2mL TPD) · top fill under a silicone plug · PCTG", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "pod", label: "Included pod", value: "2 × ARGUS Multi-Ohm Cartridge — 0.7Ω as it goes in, 1.0Ω turned 180°, 0.4Ω by pressing the button twice · 3.5mL · top fill under a silicone plug · PCTG", sourceStatus: "verified", sourceUrl: G4_PAGE },
       { key: "pod-compat", label: "Pod platform", value: "Every ARGUS pod-family cartridge: Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL), other ARGUS cartridges incl. CRC", sourceStatus: "verified", sourceUrl: G4_PAGE },
       { key: "coil", label: "Coil", value: "Multi-core electrode tech · iCOSM CODE 2.0", sourceStatus: "verified", sourceUrl: G4_PAGE },
       { key: "airflow", label: "Airflow", value: "Stepless slider, MTL to RDL", sourceStatus: "verified", sourceUrl: G4_PAGE },
@@ -357,7 +357,7 @@ export const voopooProducts: Product[] = [
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified", sourceUrl: G4M_PAGE },
       { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: G4M_PAGE },
       { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: G4M_PAGE },
-      { key: "pod", label: "Included pod", value: "2 × ARGUS Multi-Ohm Cartridge — 0.7Ω inserted as it comes, 1.0Ω turned 180° · 3.5mL (2mL TPD) · top fill · PCTG", sourceStatus: "verified", sourceUrl: G4M_PAGE },
+      { key: "pod", label: "Included pod", value: "2 × ARGUS Multi-Ohm Cartridge — 0.7Ω inserted as it comes, 1.0Ω turned 180° · 3.5mL · top fill · PCTG", sourceStatus: "verified", sourceUrl: G4M_PAGE },
       { key: "pod-compat", label: "Pod platform", value: "Every ARGUS pod-family cartridge: Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL), other ARGUS cartridges incl. CRC", sourceStatus: "verified", sourceUrl: G4M_PAGE },
       { key: "coil", label: "Coil", value: "Multi-core electrode tech · iCOSM CODE 2.0", sourceStatus: "verified", sourceUrl: G4M_PAGE },
       { key: "airflow", label: "Airflow", value: "Stepless slider, MTL to RDL", sourceStatus: "verified", sourceUrl: G4M_PAGE },
@@ -693,7 +693,7 @@ export const voopooProducts: Product[] = [
       // row (shop page 3.2–4.2V, voopoo.com 3.2–4.35V). Activation = VOOPOO's blog ("draw-activated, button-free").
       { key: "battery", label: "Battery", value: "1350mAh built-in", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "output", label: "Max output", value: "Up to 30W, matched to the cartridge automatically", sourceStatus: "verified", sourceUrl: G3M_PAGE },
-      { key: "pod", label: "Included pod", value: "ARGUS Top Fill Cartridge V2 0.7Ω · 3mL (2mL TPD) · top fill", sourceStatus: "verified", sourceUrl: G3M_PAGE },
+      { key: "pod", label: "Included pod", value: "ARGUS Top Fill Cartridge V2 0.7Ω · 3mL · top fill", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "pod-compat", label: "Pod platform", value: "ARGUS Top Fill Cartridge V2: 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · the whole ARGUS pod family (check resistance and output)", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "coil", label: "Coil", value: "iCOSM CODE 2.0 — Liquid-Seal Shield, Mega-Core, Golden Cotton", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "airflow", label: "Airflow", value: "Fixed, not adjustable", sourceStatus: "verified", sourceUrl: G3M_PAGE },
@@ -837,14 +837,14 @@ export const voopooProducts: Product[] = [
       // Batch 2b (04/10): VOOPOO's shop page + posters read file by file (_incoming/sitewide-template/2/facts-drag6.md) — the
       // DRAG 6 is a built-in-battery mod with the UFORCE-X Tank II (PnP X coils), not a pod kit; the old "DRAG-series coil pod"
       // row (unverified) is replaced by the maker's tank/coil rows. systemType/category stay — category structure = owner item (14).
-      { key: "tank", label: "E-liquid capacity", value: "5mL (2mL TPD), UFORCE-X Tank II, top fill", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "tank", label: "E-liquid capacity", value: "5mL, UFORCE-X Tank II, top fill", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "coil", label: "Coil", value: "Every PnP X coil; the kit comes with PnP X 0.15Ω and 0.3Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "airflow", label: "Airflow", value: "Rotary airflow dial, Golden Triangle airflow", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "resistance", label: "Resistance range", value: "0.05–3.0Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "charging", label: "Charging", value: "USB-C, 5V/3A", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "charge-time", label: "Charge time", value: "2–3 hours", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "dimensions", label: "Dimensions", value: "150 × 51.4 × 28.6 mm", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
-      { key: "weight", label: "Weight", value: "Approx. 280g (294g TPD)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "weight", label: "Weight", value: "Approx. 280g", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       // Batch 2c (04/10): VOOPOO's spec list "Vaping Style: DTL & MTL" (shop page HTML). attributes.drawStyle stays "DTL" —
       // the enum has no DTL+MTL bucket and the filter buckets are the category-structure item (14).
       { key: "vaping-style", label: "Vaping style", value: "DTL and MTL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
@@ -1005,7 +1005,7 @@ export const voopooProducts: Product[] = [
       { key: "chip", label: "Chipset", value: "GENE.TT 2.0", sourceStatus: "verified", sourceUrl: S3_PAGE },
       { key: "modes", label: "Output modes", value: "SMART, RBA, ECO", sourceStatus: "verified", sourceUrl: S3_PAGE },
       { key: "control", label: "Control", value: "Capacitive unlock sensor on the fire button (touch to unlock, locks again on release) · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: S3_PAGE },
-      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL / MTL, 5mL (2mL TPD), side fill", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL / MTL, 5mL, side fill", sourceStatus: "verified", sourceUrl: S3_PAGE },
       { key: "coil", label: "Coil", value: "Every PnP X coil (0.15–1.0Ω); the kit comes with PnP X 0.6Ω and 0.8Ω", sourceStatus: "verified", sourceUrl: S3_PAGE },
       { key: "airflow", label: "Airflow", value: "Top airflow, sliding adjustment", sourceStatus: "verified", sourceUrl: S3_PAGE },
       { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: S3_PAGE },
@@ -1206,7 +1206,7 @@ export const voopooProducts: Product[] = [
       { key: "chip", label: "Chipset", value: "GENE.TT 2.0", sourceStatus: "verified", sourceUrl: X3_PAGE },
       { key: "modes", label: "Output modes", value: "SMART, RBA, ECO", sourceStatus: "verified", sourceUrl: X3_PAGE },
       { key: "control", label: "Control", value: "Capacitive touch unlock, button unlock or stay unlocked · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: X3_PAGE },
-      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL (in the kit) / MTL, 5mL (2mL TPD), side fill", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL (in the kit) / MTL, 5mL, side fill", sourceStatus: "verified", sourceUrl: X3_PAGE },
       { key: "coil", label: "Coil", value: "Every PnP X coil", sourceStatus: "verified", sourceUrl: X3_PAGE },
       { key: "airflow", label: "Airflow", value: "Top airflow", sourceStatus: "verified", sourceUrl: X3_PAGE },
       { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: X3_PAGE },
@@ -1274,7 +1274,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO VINCI S",
     tagline: "40W, topside-fill, built for daily flavor-chasing.",
     shortDescription:
-      "A 2000mAh, 5–40W pod kit with a 4.5mL (2mL TPD) topside-fill cartridge and a 0.3–3.0Ω resistance range.",
+      "A 2000mAh, 5–40W pod kit with a 4.5mL topside-fill cartridge and a 0.3–3.0Ω resistance range.",
     isFlagship: false,
     attributes: {
       batteryMah: 2000,
@@ -1342,7 +1342,7 @@ export const voopooProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "2000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–40W", sourceStatus: "verified" },
-      { key: "pod", label: "Cartridge capacity", value: "4.5mL (2mL in TPD regions)", sourceStatus: "verified" },
+      { key: "pod", label: "Cartridge capacity", value: "4.5mL", sourceStatus: "verified" },
       { key: "resistance", label: "Resistance range", value: "0.3–3.0Ω", sourceStatus: "verified" },
       { key: "fill", label: "Fill style", value: "Topside filling", sourceStatus: "verified" },
       { key: "materials", label: "Materials", value: "Aluminum alloy + PC", sourceStatus: "verified" },
@@ -1451,7 +1451,7 @@ export const voopooProducts: Product[] = [
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified", sourceUrl: I3_PAGE },
       { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: I3_PAGE },
       { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
-      { key: "pod", label: "Included pod", value: "VMATE Top Fill Cartridge 0.7Ω · 3mL (2mL TPD) · top fill, without removing it", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "pod", label: "Included pod", value: "VMATE Top Fill Cartridge 0.7Ω · 3mL · top fill, without removing it", sourceStatus: "verified", sourceUrl: I3_PAGE },
       { key: "pod-compat", label: "Pod platform", value: "Every VMATE cartridge — Top Fill Cartridge 0.4Ω RDL, 30W or more · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W; check resistance and output", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
       { key: "coil", label: "Coil", value: "iCOSM CODE — 90mL coil life, 30 days standing without leaks (VOOPOO's lab tests)", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
       { key: "airflow", label: "Airflow", value: "Slider, tight MTL to airy RDL", sourceStatus: "verified", sourceUrl: I3_PAGE },

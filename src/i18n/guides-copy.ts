@@ -162,7 +162,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           // 12/10: chip name and body size left out, weight = the catalog row (voopoo.ts: VOOPOO names the chip two ways on
           // one page; length differs by the 3mL / 2mL version).
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ ไม่มีปุ่ม สูบได้เลย ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ สูงสุด 30 วัตต์",
-          "แบต 1350mAh ตัวเครื่องหนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL (2mL ในเวอร์ชัน TPD) มีระบบกันรั่ว iCOSM CODE 2.0",
+          "แบต 1350mAh ตัวเครื่องหนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0",
           "บอกตรง ๆ ก่อนตัดสินใจ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง",
         ],
         image: SECTION_IMAGES.argusG3MiniTiny,
@@ -787,7 +787,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ตัวอย่างจริง: ช่วงวัตต์กว้างของ VINCI S",
         paragraphs: [
-          "[VINCI S](/products/vinci-s) เป็นพอตคิทที่ช่วงวัตต์กว้างกว่า คือ 5–40 วัตต์ ช่วงโอห์ม 0.3–3.0 โอห์ม หัวพอตความจุ 4.5mL (2mL ในเวอร์ชัน TPD) เติมด้านบนได้โดยไม่ต้องถอดหัวออกจากเครื่อง และแบตในตัว 2000mAh",
+          "[VINCI S](/products/vinci-s) เป็นพอตคิทที่ช่วงวัตต์กว้างกว่า คือ 5–40 วัตต์ ช่วงโอห์ม 0.3–3.0 โอห์ม หัวพอตความจุ 4.5mL เติมด้านบนได้โดยไม่ต้องถอดหัวออกจากเครื่อง และแบตในตัว 2000mAh",
           "ช่วงกว้างแบบนี้ให้ที่ปรับเยอะขึ้น แต่ช่วงวัตต์ของเครื่องบอกแค่ว่าเครื่องจ่ายได้เท่าไหร่ ไม่ได้บอกว่าคอยล์ที่ใส่อยู่รับได้แค่ไหน ก่อนตั้งค่า ให้ดูช่วงวัตต์ของคอยล์หรือหัวพอตที่ใส่อยู่ แล้วเริ่มจากค่าต่ำของช่วงนั้น วิธีอ่านตัวเลขเหล่านี้อยู่ที่ [วิธีอ่านตารางสเปก](/guides/reading-a-spec-sheet)",
         ],
       },
@@ -888,7 +888,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         heading: "实例：适合新手的 auto-draw 换弹主机（ARGUS G3 mini）",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 是一台 auto-draw 换弹主机：没有点火键，吸气即启动，功率会按所装烟弹自动调节，最高 30W。",
-          "电池 1350mAh，机身重 40.85 g。随附烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL（TPD 地区为 2mL），配 iCOSM CODE 2.0 防漏系统。",
+          "电池 1350mAh，机身重 40.85 g。随附烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL，配 iCOSM CODE 2.0 防漏系统。",
           "决定前先说清楚一点：本店目前尚未单独销售 ARGUS 烟弹，这里能买到的是盒内随附的那一颗。",
         ],
         image: SECTION_IMAGES_ZH.argusG3MiniTiny,
@@ -1217,7 +1217,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "真实例子：VINCI S 的宽功率范围",
         paragraphs: [
-          "[VINCI S](/products/vinci-s) 是一台功率范围更宽的换弹主机：5–40W，阻值范围 0.3–3.0Ω，4.5mL 烟弹（TPD 地区为 2mL）可不拆烟弹从顶部注油，内置 2000mAh 电池。",
+          "[VINCI S](/products/vinci-s) 是一台功率范围更宽的换弹主机：5–40W，阻值范围 0.3–3.0Ω，4.5mL 烟弹可不拆烟弹从顶部注油，内置 2000mAh 电池。",
           "范围宽意味着调整空间更大，但主机的范围只说明它能输出多少，并不代表所装雾化芯能承受多少。设定之前，先看所装雾化芯或烟弹标注的功率范围，从低端开始。这些数字怎么读，见 [如何解读设备规格表](/guides/reading-a-spec-sheet)。",
         ],
       },

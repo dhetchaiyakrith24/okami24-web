@@ -173,7 +173,7 @@ const allGuides: Guide[] = [
         heading: "Real example: an auto-draw pod kit for beginners (ARGUS G3 mini)",
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
-          "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL (2mL in TPD regions), with the iCOSM CODE 2.0 anti-leak system.",
+          "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL, with the iCOSM CODE 2.0 anti-leak system.",
           "One thing to know before you decide: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get here.",
         ],
         image: SECTION_IMAGES_EN.argusG3MiniTiny,
@@ -659,7 +659,7 @@ const allGuides: Guide[] = [
       {
         heading: "A real example: the wide wattage range of the VINCI S",
         paragraphs: [
-          "The [VINCI S](/products/vinci-s) is a pod kit with a wider 5–40W range, a 0.3–3.0Ω resistance range, a 4.5mL pod (2mL in TPD regions) filled from the top without removing it, and a 2000mAh built-in battery.",
+          "The [VINCI S](/products/vinci-s) is a pod kit with a wider 5–40W range, a 0.3–3.0Ω resistance range, a 4.5mL pod filled from the top without removing it, and a 2000mAh built-in battery.",
           "A wide range gives you more room to adjust, but the device's range only says what it can deliver, not what the fitted coil can take. Before setting it, check the wattage range of the coil or pod you have fitted and start at its low end. How to read those lines is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
       },
@@ -1483,8 +1483,8 @@ const allGuides: Guide[] = [
             paragraphs: [
               "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
               // Round "SEO all keys" 16/10: the old line ("G4 and G4 Mini come with 0.4 + 0.9, 0.6 and 1.2 sold separately") contradicted
-              // the verified rows — G4 Mini box = one 0.6Ω, G4 box = by market version (uwell.ts "included-pod" / pod-compat rows).
-              "หัว GPP ที่มาในกล่องของ G4 กับ G4 Mini ต่างกัน G4 Mini มาพร้อมหัว 0.6 โอห์มหนึ่งหัว ส่วน G4 ขึ้นกับเวอร์ชันที่วางขาย อย่างเวอร์ชัน INT มาพร้อมหัว 0.4 โอห์มกับ 0.9 โอห์ม เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+              // the verified rows — G4 Mini box = one 0.6Ω, G4 box = 0.4Ω + 0.9Ω (international version, owner 26/10) (uwell.ts "included-pod" / pod-compat rows).
+              "หัว GPP ที่มาในกล่องของ G4 กับ G4 Mini ต่างกัน G4 Mini มาพร้อมหัว 0.6 โอห์มหนึ่งหัว ส่วน G4 มาพร้อมหัว 0.4 โอห์มกับ 0.9 โอห์ม เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
             ],
           },
         ],
@@ -1528,7 +1528,7 @@ const allGuides: Guide[] = [
         heading: "Caliburn G4 vs G3 Pro",
         paragraphs: [
           "G4 แบต 1300mAh มากกว่า G3 Pro ที่ 1000mAh ทั้งคู่มีจอ G4 เป็นจอสี ส่วน G3 Pro เป็นจอ LCD โอบด้านข้าง ปรับได้ 5–35 วัตต์ และปรับช่องลมได้เต็มช่วง ทั้งคู่ชาร์จผ่าน USB-C ที่ 2A",
-          "ต่างกันชัดที่หัวพอต G4 ใช้ GPP และหัวที่มาในกล่องขึ้นกับเวอร์ชันที่วางขาย ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
+          "ต่างกันชัดที่หัวพอต G4 ใช้ GPP มาในกล่อง 2 หัว 0.4 โอห์มกับ 0.9 โอห์ม ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
           "อยากได้แบตมากกว่า ดู G4 อยากปรับวัตต์และช่องลมเองได้เต็มช่วง ดู G3 Pro ค่าโอห์มกับช่องลมส่งผลกับแนวการสูบยังไง อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) หรือดู Caliburn ทั้งหมดที่ [UWELL](/brands/uwell)",
           "ส่วน [Caliburn G3](/products/caliburn-g3) เป็นคนละรุ่นกับ G3 Pro แบต 900mAh ตั้งได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ และใช้หัวพอตของ Caliburn G3 ที่มีคอยล์ในตัว 0.6 · 0.9 · 1.2 โอห์ม",
         ],
@@ -1575,7 +1575,7 @@ const allGuides: Guide[] = [
         heading: "ระบบหัวพอตและแนวการสูบ",
         paragraphs: [
           "ARGUS G4 ใช้ระบบหัวพอต ARGUS เติมด้านบน มีหลายค่าโอห์ม ตัวเครื่องรับช่วงโอห์ม 0.4–3.0 โอห์ม ส่วน G5 ใช้หัวพอต GPP ของ UWELL ความจุ 3mL เติมด้านบน",
-          "หัว GPP มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ช่วงที่ ARGUS G4 รับได้กว้างกว่า แต่ช่วงกว้างไม่ได้แปลว่ามีหัวพอตทุกค่าให้ซื้อ อ่านเรื่องนี้ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet) ด้านความจุ หัวพอต ARGUS Multi-Ohm ที่มากับ ARGUS G4 จุ 3.5mL ส่วนหัว GPP ของ G5 จุ 3mL ในเวอร์ชัน TPD จุ 2mL ทั้งคู่",
+          "หัว GPP มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ช่วงที่ ARGUS G4 รับได้กว้างกว่า แต่ช่วงกว้างไม่ได้แปลว่ามีหัวพอตทุกค่าให้ซื้อ อ่านเรื่องนี้ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet) ด้านความจุ หัวพอต ARGUS Multi-Ohm ที่มากับ ARGUS G4 จุ 3.5mL ส่วนหัว GPP ของ G5 จุ 3mL",
           "ค่าโอห์มของหัวพอตที่ใส่มีผลกับแนวการสูบ ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) ก่อน",
         ],
         video: SECTION_CLIPS.argusG4,
@@ -1931,7 +1931,7 @@ const allGuides: Guide[] = [
         heading: "หัวพอตแบบไหนเติมเองได้",
         paragraphs: [
           "หัวพอตที่เติมเองได้คือหัวพอตของพอตซิสเต็ม อย่างหัวพอต GPP ของตระกูล Caliburn จาก UWELL รวมถึงพอตคิทที่ใช้หัวพอตแบบเติม อย่างสาย ARGUS กับ DRAG ดูรุ่นทั้งหมดได้ในหมวดพอตซิสเต็ม",
-          "หัวพอตแบบเติมยังแบ่งตามตำแหน่งช่องเติมน้ำยาได้อีกสองแบบ คือเติมด้านบนกับเติมด้านข้าง หัวพอต GPP ของ UWELL มีทั้งสองแบบ และหัวที่มากับกล่องจะเป็นแบบไหน ขึ้นกับเวอร์ชันที่วางขาย อย่าง Caliburn G4 Pro เวอร์ชัน INT กับ FDA มากับหัวพอตเติมด้านข้าง ส่วนเวอร์ชัน TPD กับ CRC มากับหัวพอตเติมด้านบน ก่อนเติมจึงควรดูให้แน่ใจว่าช่องเติมของหัวที่อยู่ในมืออยู่ตรงไหน",
+          "หัวพอตแบบเติมยังแบ่งตามตำแหน่งช่องเติมน้ำยาได้อีกสองแบบ คือเติมด้านบนกับเติมด้านข้าง หัวพอต GPP ของ UWELL มีทั้งสองแบบ อย่าง Caliburn G4 Pro มากับหัวพอตเติมด้านข้าง ก่อนเติมจึงควรดูให้แน่ใจว่าช่องเติมของหัวที่อยู่ในมืออยู่ตรงไหน",
         ],
         image: SECTION_IMAGES.argusG4Fill,
       },
@@ -2119,8 +2119,8 @@ const allGuides: Guide[] = [
           {
             heading: "ถังน้ำยา หัวพอต และคอยล์",
             paragraphs: [
-              "DRAG 6 มากับถังน้ำยา UFORCE-X Tank II จุ 5mL (2mL ในเวอร์ชัน TPD) เติมด้านบน และในกล่องมีคอยล์ PnP X 0.15 โอห์มกับ 0.3 โอห์มมาให้",
-              "DRAG S3 กับ DRAG X3 ใช้หัวพอตแบบเดียวกัน คือ PnP X Cartridge จุ 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง ทั้งสองรุ่นมีหัวพอตแบบ DTL มาในชุด และถ้าอยากสูบ MTL ก็เปลี่ยนเป็นหัวพอตแบบ MTL ได้ในเครื่องเดิม สำหรับ DRAG S3 ในกล่องมีคอยล์ PnP X 0.6 โอห์มกับ 0.8 โอห์มด้วย",
+              "DRAG 6 มากับถังน้ำยา UFORCE-X Tank II จุ 5mL เติมด้านบน และในกล่องมีคอยล์ PnP X 0.15 โอห์มกับ 0.3 โอห์มมาให้",
+              "DRAG S3 กับ DRAG X3 ใช้หัวพอตแบบเดียวกัน คือ PnP X Cartridge จุ 5mL เติมด้านข้าง ทั้งสองรุ่นมีหัวพอตแบบ DTL มาในชุด และถ้าอยากสูบ MTL ก็เปลี่ยนเป็นหัวพอตแบบ MTL ได้ในเครื่องเดิม สำหรับ DRAG S3 ในกล่องมีคอยล์ PnP X 0.6 โอห์มกับ 0.8 โอห์มด้วย",
               "ทั้งสามรุ่นใช้คอยล์ PnP X ได้ทุกตัว ถ้ามี DRAG มากกว่าหนึ่งเครื่อง ก็ใช้คอยล์ชุดเดียวกันได้ ส่วนวิธีดูแลคอยล์และหัวพอตให้ใช้ได้นาน อ่านได้ที่ [หัวพอตใช้ได้กี่วัน เปลี่ยนเมื่อไหร่](/guides/coil-and-pod-maintenance)",
             ],
             image: SECTION_IMAGES.dragS3Coils,
@@ -2136,7 +2136,7 @@ const allGuides: Guide[] = [
           {
             heading: "ขนาดและตัวเครื่อง",
             paragraphs: [
-              "DRAG 6 ขนาด 150 × 51.4 × 28.6 mm หนักราว 280 กรัม (294 กรัมในเวอร์ชัน TPD) DRAG X3 ขนาด 133 × 34 × 28 mm และ DRAG S3 ขนาด 124.25 × 33 × 28 mm DRAG S3 จึงตัวเล็กกว่าอีกสองรุ่น",
+              "DRAG 6 ขนาด 150 × 51.4 × 28.6 mm หนักราว 280 กรัม DRAG X3 ขนาด 133 × 34 × 28 mm และ DRAG S3 ขนาด 124.25 × 33 × 28 mm DRAG S3 จึงตัวเล็กกว่าอีกสองรุ่น",
               "DRAG S3 กับ DRAG X3 ใช้ตัวเครื่องซิงค์อัลลอยหุ้มหนังเหมือนกัน",
             ],
           },
@@ -2598,7 +2598,7 @@ const allGuides: Guide[] = [
             paragraphs: [
               "VOOPOO ระบุว่าทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS ร่วมกันได้ หัว Multi-Ohm ใช้สลับกันได้ระหว่าง G4 กับ G4 mini หัว Snap ที่มากับ P3 ใส่ได้ทั้ง G4 และ G4 mini ส่วนหัว Top Fill Cartridge V2 ที่มากับ G3 mini อยู่ในรายการหัวพอตที่ใช้ได้ของทั้งสี่รุ่น",
               "สำหรับ P3 กับ G3 mini ทาง VOOPOO แนะนำให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้",
-              "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ทั้งสองแบบจุ 2mL ในเวอร์ชัน TPD ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
+              "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
               "ถ้าอยากได้หัวพอต ARGUS เพิ่ม ทักไลน์ @okm24 ถามร้านก่อนได้",
             ],
             image: SECTION_IMAGES.argusPods,

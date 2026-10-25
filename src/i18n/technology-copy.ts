@@ -57,7 +57,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         heading: "ตัวอย่างจริง: ARGUS G3 mini ในกล่องมีหัวพอตค่าเดียว (0.7 โอห์ม)",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สเปกบอกว่าเครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ แปลว่าระบบรองรับหัวพอตมากกว่าค่าเดียว",
-          "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL (2mL ในเวอร์ชัน TPD) มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
+          "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
           "บอกตรง ๆ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง ทั้ง ARGUS G4, ARGUS G4 mini, ARGUS P3 และ ARGUS G3 mini ยังไม่มีหัวพอตขายแยกในแคตตาล็อก",
           "ส่วน MTL กับ RDL ที่พูดถึงข้างบนให้ความรู้สึกต่างกันยังไง อ่านที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl)",
         ],
@@ -229,7 +229,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         heading: "实例：ARGUS G3 mini 盒内只附一种阻值的烟弹（0.7 欧姆）",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 是一台 auto-draw 换弹主机，没有点火键。规格表写明功率会按所装烟弹自动调节，最高 30W——也就是说平台支持不止一种阻值。",
-          "但盒内只有一种：ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL（TPD 地区为 2mL），配 iCOSM CODE 2.0 防漏系统，电池 1350mAh。",
+          "但盒内只有一种：ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL，配 iCOSM CODE 2.0 防漏系统，电池 1350mAh。",
           "先说清楚：本店目前尚未单独销售 ARGUS 烟弹，这里能买到的是盒内随附的那一颗。ARGUS G4、ARGUS G4 mini、ARGUS P3 和 ARGUS G3 mini 在目录中都还没有可搭配的烟弹。",
           "上面提到的 MTL 和 RDL 吸法感受有何不同，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
         ],
