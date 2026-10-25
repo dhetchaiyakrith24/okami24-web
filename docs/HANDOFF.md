@@ -53,11 +53,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
        reference = owner's 10.10 broadcast poster; drafts first
-    Q7b [NEXT] left from #846 (thai-copy table 26/10 in the PR body): lines still saying "order on LINE only" while the cart is ON need
-       OKAMI24_ORDERING switch binding (THAI_STYLE line 111) — FAQ where-to-buy · how-to-order stuck2 · contact order card · about contact ·
-       privacy s1 "รหัส OTP เก็บแบบเข้ารหัส" (OTP is off; th/en/zh) · ASK the owner first (group ก / approved voice): age-gate body ("order on
-       LINE") · footer.ageNotice "สั่งซื้อและสอบถามทาง LINE" · hero.description "ถามหรือสั่งทางไลน์" · /warranty ค่ะ (10 spots, drafted) ·
-       pre-existing: /products en/zh show the Thai name "หัวพอต RELX Creator Pod 20K" (unpublished seed row 147e469d).
+    Q7b [DONE #849] cart-on wording follows OKAMI24_ORDERING (FAQ where-to-buy via ORDERING_OFF_ANSWERS, how-to-order stuck2, contact order
+       card, about contact) + privacy phone line without OTP. Left — ASK the owner first (group ก / approved voice): age-gate body ("order on
+       LINE") · footer.ageNotice "สั่งซื้อและสอบถามทาง LINE" · hero.description "ถามหรือสั่งทางไลน์" · /warranty ค่ะ (10 spots drafted in
+       #846 notes) · pre-existing: /products en/zh show the Thai name "หัวพอต RELX Creator Pod 20K" (side chat list-missing handles it).
+    Side chat list-missing (local_b0f66e49, Opus 5.5 medium, owner 26/10): lists every Max product the site lacks (brief
+       `_incoming/next-chat-list.md`); skips owner-declined Disposable-45 + Pod-180; stock from the order-entry read only.
     Q8 D upsell row in the cart (owner "A+B ครึ่ง ๆ": half same brand/category in stock + half shop best-sellers · designer + tier B shots ·
        can reuse `lineImage()` / LineThumb for its cards)
     Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
