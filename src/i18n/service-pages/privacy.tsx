@@ -47,6 +47,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       items: [
         <><B>คุกกี้เซสชัน</B> — จำว่าคุณล็อกอินอยู่ ตะกร้าใบไหนของใคร ไม่มีอันนี้เว็บทำงานไม่ได้</>,
         <><B>คุกกี้ภาษา</B> (okami24_locale) — จำว่าคุณเลือกภาษาไหน</>,
+        <><B>คุกกี้สมาชิก</B> (okami24_member) — มีเฉพาะเมื่อเข้าสู่ระบบด้วย LINE หรือ Google จำการเข้าสู่ระบบไว้ 90 วัน หรือจนกด &quot;ออกจากระบบ&quot;</>,
         <><B>ค่าจำว่ายืนยันอายุแล้ว</B> — เก็บในเครื่องคุณ จะได้ไม่ต้องกดยืนยันอายุซ้ำทุกครั้ง</>,
         <><B>รายการโปรดและรายการเปรียบเทียบ</B> — เก็บในเครื่องคุณ ไม่ได้ส่งขึ้นเซิร์ฟเวอร์</>,
       ],
@@ -113,6 +114,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       items: [
         <><B>Session cookie</B> — remembers that you’re signed in and whose cart is whose. The site can’t work without it.</>,
         <><B>Language cookie</B> (okami24_locale) — remembers which language you chose.</>,
+        <><B>Member cookie</B> (okami24_member) — only if you sign in with LINE or Google; keeps you signed in for 90 days or until you sign out.</>,
         <><B>Age-confirmation flag</B> — stored on your own device, so you don’t have to confirm your age every time.</>,
         <><B>Favourites and comparison list</B> — stored on your own device, never sent to our server.</>,
       ],
@@ -179,6 +181,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
       items: [
         <><B>会话 Cookie</B> —— 记住您已登录的状态和购物车归属。没有它网站无法运作。</>,
         <><B>语言 Cookie</B>（okami24_locale）—— 记住您选择的语言。</>,
+        <><B>会员 Cookie</B>（okami24_member）—— 仅在您以 LINE 或 Google 登录时存在，保持登录 90 天或直到您退出登录。</>,
         <><B>年龄确认标记</B> —— 存储在您自己的设备上，这样就不必每次都重新确认年龄。</>,
         <><B>收藏与对比清单</B> —— 存储在您自己的设备上，不会上传到我们的服务器。</>,
       ],

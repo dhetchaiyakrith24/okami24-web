@@ -7,7 +7,7 @@ import { checkIdToken, type IdTokenClaims } from "./id-token";
  * LINE Login + Google sign-in for members (queue Q4, owner 26/10: LINE + Google first, no Facebook).
  * Authorization-code flow with PKCE + state + nonce; scopes `openid profile` only — no email, no friends, no messages.
  *
- * Settings, read on the server only (set in the Render dashboard — docs/DEPLOY-RENDER.md; never in git):
+ * Settings, read on the server only (set in the Render dashboard — docs/DEPLOY-RENDER.md §10; never in git):
  *
  *   OKAMI24_LINE_LOGIN_CHANNEL_ID / OKAMI24_LINE_LOGIN_CHANNEL_SECRET   the "LINE Login" channel (provider OKM24)
  *   OKAMI24_GOOGLE_CLIENT_ID / OKAMI24_GOOGLE_CLIENT_SECRET             the Google Cloud "Web application" client

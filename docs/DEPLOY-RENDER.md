@@ -288,6 +288,24 @@ npm run qr:upload-text
     · B2 **ยังไม่ตั้งลบไฟล์เก่าอัตโนมัติ** (ตัวเลือกในหน้าเว็บของ B2 ลบได้เฉพาะไฟล์ชื่อซ้ำ ส่วนไฟล์ของเราชื่อไม่ซ้ำ) —
     Friday ดูขนาดไฟล์จริงจาก Logs หลังเปิด แล้วบอกว่าเต็ม 10 GB เมื่อไหร่และต้องลบอย่างไร
 
+## 10. เข้าสู่ระบบสมาชิกด้วย LINE + Google (ทำครั้งเดียว · เพิ่ม 2026-10-26 · ตั้งแล้ว 26/10)
+
+ปุ่มของแต่ละเจ้าจะขึ้นในหน้า `/account/login` ก็ต่อเมื่อมีค่าใน Render ครบ 2 ตัวของเจ้านั้น · อีเมลติดต่อทุกช่อง = **okamisalt@gmail.com**
+(ห้ามใช้อีเมลส่วนตัว — เจ้าของ 26/10)
+
+57. **LINE:** developers.line.biz → provider **OKM24** → ช่อง **LINE Login "OKami24"** (Channel ID `2012198931`) → แท็บ LINE Login →
+    Callback URL = `https://okami24.store/api/auth/line/callback` · ช่องอยู่โหมด "กำลังพัฒนา" = เข้าได้เฉพาะผู้ดูแลช่อง →
+    เปิดให้ลูกค้าใช้ = กดสถานะเป็น **Published**
+58. **Google:** console.cloud.google.com → โปรเจกต์ **okami24-gsc** → Google Auth Platform → Branding: ชื่อแอป OKami24 ·
+    อีเมลฝ่ายช่วยเหลือและอีเมลติดต่อ = okamisalt@gmail.com · โดเมน okami24.store · Clients → **"OKami24 website sign-in"** (Web) →
+    Authorized redirect URI = `https://okami24.store/api/auth/google/callback` · Audience อยู่โหมด Testing = เข้าได้เฉพาะ test users →
+    เปิดให้ลูกค้าใช้ = **Publish app** (ขอแค่ `openid profile` — ไม่ต้องยื่นตรวจ ตราบใดที่ไม่อัปโหลดโลโก้)
+59. Render → **okami24** → **Environment** → เพิ่ม 4 ค่า (ความลับ 2 ตัว = เจ้าของวางเอง):
+    - `OKAMI24_LINE_LOGIN_CHANNEL_ID` → Channel ID · `OKAMI24_LINE_LOGIN_CHANNEL_SECRET` → Channel secret (LINE แท็บ Basic settings)
+    - `OKAMI24_GOOGLE_CLIENT_ID` → Client ID · `OKAMI24_GOOGLE_CLIENT_SECRET` → Client secret (Google ให้ดูครั้งเดียวตอนสร้าง ·
+      หายแล้ว = หน้า client → Add secret)
+    → Save (ค่าจะมีผลกับการ deploy ครั้งถัดไป) · `OKAMI24_AUTH_ORIGIN` ไม่ต้องตั้งบน Render (ใช้เฉพาะเครื่องทดสอบ)
+
 ## เรื่องที่ต้องรู้ไว้ ไม่ต้องทำอะไรตอนนี้
 
 - **ตอนอัปเดตเว็บ เว็บจะดับสั้น ๆ ไม่กี่วินาที** เป็นเรื่องปกติของเครื่องที่มีดิสก์ติดอยู่ (Railway ก็เหมือนกัน)

@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { authOrigin, finishSignIn, isMemberProvider } from "@/lib/members/providers";
 import { clearPendingCookie, PENDING_COOKIE, readPendingCookie } from "@/lib/members/pending-cookie";
 import { createMemberSession, upsertMemberFromIdentity } from "@/lib/members/session";
+import { safeReturnPath } from "@/lib/members/id-token";
 
 /**
  * Member sign-in, step 2 (queue Q4): the provider sends the visitor back here with `code` + `state`. The state must equal
@@ -35,7 +36,8 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
   if (!result.ok) return toLogin(result.reason, provider);
 
   const memberId = upsertMemberFromIdentity(provider, result.claims.sub, result.claims.name);
-  const response = NextResponse.redirect(`${authOrigin()}${pending.returnTo}`, { status: 302, headers: HEADERS });
+  // The cookie is unsigned — re-check the return path here as a second lock (checker #854 n1).
+  const response = NextResponse.redirect(`${authOrigin()}${safeReturnPath(pending.returnTo)}`, { status: 302, headers: HEADERS });
   clearPendingCookie(response);
   createMemberSession(memberId, provider, response);
   return response;
