@@ -11,11 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 24/10 late night = 0ffbea19 (#822 docs) · fb215aa4 (#821 in-stock link moved into
-  the menus, deploy success [ตรวจแล้ว]) · b2fea8ed (#819 in-stock filter) · 1da08611 (#817 Q1–Q3) · 24/10 night = b2f074ab (#811 cart-ready: pre-payment flow + copy + unpaid auto-cancel 24 h + phone rate limit, checker PASS 5964e996,
-  deploy success 11:23 UTC, live 200 [ตรวจแล้ว]) · 72255106 (#812 hourly stock) · 24/10 evening = b12c111f (#807 order page tells the story + shop messages + refund
-  to a bank account; GitHub marked #804 merged with it — see item 3) · ab4cf149 (#806 order-entry stock reader, deploy success + live 200 [ตรวจแล้ว]) ·
-  617e5553 (#805 handoff) · 7de15064 (#802 cart UX E). Earlier 24/10 merges #787–#803 = `git log`.
+1 main: `git fetch && git log -1 --oneline origin/main` · 25/10 evening = 4012bf10 (#836 hourly stock; #830–#836 = stock runs) ·
+  #829 docs shipping note · #826 Q5b · #824 Q5 · #821 in-stock menu · #819 in-stock filter · #817 Q1–Q3 · #811 cart-ready. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
   Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 200 + "เพิ่มลงตะกร้า" on product pages, / /products /staff /orders 200 [ตรวจแล้ว].
   Render env form: unrevealed secret rows show EMPTY inputs in the DOM (not loaded) — saving keeps them; edit only the one row (focus it by
@@ -26,7 +23,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
   Open PRs: #643 (old, not touched).
-2 Main folder: branch `docs-handoff-2410n` = this handoff (nothing else open; every branch of this chat merged). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
+2 Main folder: every branch of the 24/10 chats merged (#823 handoff, #829 shipping note). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
   origin/main + all extra commits BEFORE the verify run (~20 min each). PR flow: draft → verify --full on the head in a test tree → gate →
@@ -36,52 +33,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   · shots/) · cart flow: `_incoming/cartux-a/`. Staff pages locally: start with OKAMI24_STAFF_PASSWORD=<the test value in
   `_incoming/stock-oe/.staff-test-pass`> (local only, never the live one). Stop only your own servers by port (Get-NetTCPConnection → Stop-Process).
   Server-action forms in the Browser pane: React resets uncontrolled inputs after every action (LESSONS พ45).
-3 ROUND "cart ready to reopen" — owner 24/10 ~16:00 (chat, main chat local_6dc0e8b6-0003-4167-b981-1d6bd5539951): cart OFF until ALL of:
-  (1) stock checked 100 % from the order-entry screen ("หน้าคีย์ออเดอร์") — DONE #806 + routine (3u) [ตรวจแล้ว]
-  (2) selecting a product → payment done: the whole pre-payment flow ready — DONE #811 (live; cart still OFF) — walked on a test build with
-      ordering ON incl. a new customer [ตรวจแล้ว test build; not yet on the live site with the cart on]
-  (3) after payment: cancelled / shipped → which step next — DONE #807 [ตรวจแล้ว test build; not yet on a real order]
-  (4) "ระบบอื่นๆที่พี่มองไม่เห็นและควรจะมี" — owner 24/10 evening: "ตามที่แนะนำมาทั้งหมดเลย" EXCEPT ① (deploy blips are fine) → build ② ③ ④ ⑤;
-      ③ DONE (staff guide line, docs PR #810). Branch field on the bank refund = make it OPTIONAL (owner: only the bank name is needed — BSOT §9).
-      ② N = 24 hours from placing, unpaid only (Friday's pick, reversible — tell the owner) · ④ needs an R2/B2 account = the owner signs up (13.3 #2; DEPLOY-RENDER §9) · ⑤ simple per-IP limit.
-      Proposals as sent: ① stock without a rebuild (every stock
-      PR = a deploy = 30–60 s of 502; with re-open allowed there will be more) ② unpaid orders auto-cancel after N hours ③ staff check the
-      order-entry screen before "ยืนยันยอดเงิน" (staff guide line) ④ off-site DB backup (queued since 23/10) ⑤ rate limit on the phone
-      lookup (#794 known) — build what the owner picks; ③ is a docs line Friday may add at once.
-  (5) Thai copy in these parts easy to read — DONE #811 with (2): thai-copy agent pass applied (32 rows; skipped: order-not-found line + the
-      awaiting_verification label, both also printed on /how-to-order) · ② auto-cancel 24 h + ⑤ phone rate limit + branch optional built too.
-  24/10 night chat local_6ed48dbb-2b07-4e78-a88f-7e76b591f6c0 = #811 — owner fixes a–d, #795/#792 notes, ②, ⑤,
-  #807 notes b/c/f, copy pass. Walk kit: `_incoming/cartflow-2410/` (data-walk DB, dict-edit*.js, pr-body.md). Test tree `_incoming/wt-golive`.
-  Left: #807 note (a) "ด้านล่าง" admin message after the choice · (d) stale comments · age-gate body still says "order on LINE"
-  (รอพี่ตรวจ 76) · ④ owner signs up (รอพี่ตรวจ 77) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
-  300/10 min cap) · empty idempotencyKey not refused (old). ALL FIVE ITEMS DONE → the owner decides when to turn the cart ON (item 1 steps).
+3 ROUND "cart ready to reopen" (owner 24/10 ~16:00, main chat local_6dc0e8b6-0003-4167-b981-1d6bd5539951) — ALL FIVE conditions DONE
+  (#806 order-entry stock · #811 pre-payment flow + copy + unpaid auto-cancel 24 h + phone rate limit + bank-refund branch optional ·
+  #807 after-payment steps · #810 staff guide line) and the cart is ON (item 1). Walk kit `_incoming/cartflow-2410/` · test tree `_incoming/wt-golive`.
+  Left: ④ off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77; DEPLOY-RENDER §9) · age-gate body still says
+  "order on LINE" (owner 24/10: stays) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
+  300/10 min cap) · empty idempotencyKey not refused (old).
   OWNER WORK QUEUE — the ONE ordered list (owner 24/10 night: "จดด้วยนะ อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย") · tick here when done:
-    Q1 [DONE #817 1da08611, checker PASS 16dbb1ab] order page + buying-flow copy: owner's lines ("เมื่อโอนเสร็จแล้ว แนบสลิปด้านล่างได้เลยค่ะ
-       หากติดขัดตรงไหน สอบถามได้ทางไลน์ @OKM24 ได้ทันที" — @okm24 tappable to LINE; drop the "เช็คชื่อบัญชีก่อนโอน" line; orange line
-       without "ตรวจรายการและยอดให้ครบก่อนโอน") · "ยกเลิกแล้ว" = red glow pill (twin of the green shipped glow) · ค่ะ/นะคะ + LINE pointer
-       "ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24" across cart → checkout → order page → stock box → /orders (THAI_STYLE §2 rulings 24/10)
-       + "จัดส่งไปที่อยู่เดิมของคุณค่ะ"
-    Q2 [DONE #819 — corrected: the owner meant IN STOCK] header "พร้อมส่ง" → /products?stock=in (src/lib/in-stock.ts = the
-       product pages own can-buy rule) + in-stock toggle on product/category/brand grids · /how-to-order "ตรวจรายการและยอด…" cut (owner)
-    Q3 [DONE #817] LINE order-group alert carries name · phone · address · items (admin copies to the warehouse; web confirm unchanged)
+    DONE (what each did = the PR): Q1 #817 · Q2 #819 · Q3 #817 · Q2b #821 · Q5 #824 · Q5b #826.
     #817 checker notes left: desktop "สินค้า" link — Esc does not close the category menu, menu stays open after a click inside,
        touch laptops ≥1024 tap = /products (no category menu) · 2 lines tell the customer to SEND a slip to LINE (kept as instructions,
        not the "ติดต่อสอบถาม…" pointer) · /how-to-order still says "ตรวจรายการและยอดให้ครบก่อนโอน" (owner named only the orange line).
+    Q5 left (taste, for the owner): counter counts the cover slide · unpicked flavour header has no "เลือก…" prompt ·
+       relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
     Small, for the next touch: pod-159 (ESKO BAR SWITCH 20K) page shows "เลือกกลิ่น" although every flavour is sold out
        (ProductMaster photoRule page opens unpicked) — should read sold out · phone grid bar: the sort select drops to a second row.
     Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
        all products · contact/help) as ONE job — drafts to the owner first (new look)
        + owner 24/10 late night: sign-up/login the modern way — "Continue with Google · LINE · Facebook" buttons (LINE first for
        Thai buyers). Needs developer apps on Google / LINE / Meta + secrets in Render env = owner signs up (13.3 #2, #9 login system).
-    Q2b [DONE #821] owner: the bar pill was too prominent — "สินค้าพร้อมส่ง" now an item in the desktop "สินค้า" menu + phone
-       drawer; grid toggles stay.
-    Q5 [DONE #824 ae941761, checker PASS 3c0cab4d, deploy success + live 200 [ตรวจแล้ว]] phone picker: src/components/product/PhoneOptionTiles.tsx
-       (≤12 = photo tiles 4/row, >12 = photo strip; green "มีของ" pill, sold out = dim + plain "หมด"; TILE_LIMIT = 12 reversible) · hero dots
-       bigger + tappable, counter past 12 + a cover slide · desktop unchanged · "ใกล้หมด" NOT built (no quantities). Shots _incoming/q5/shots/.
-       Left (taste, for the owner): header shows "มีของ" twice when the picked option is in stock · counter counts the cover slide ·
-       unpicked flavour header has no "เลือก…" prompt · relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour).
-    Q5b [DONE #826 63ad8f45, checker PASS 4f895ff2] past 12 options a "ดูทั้งหมด {n} แบบ" button opens the strip into the tile grid
-       ("ย่อกลับ" closes) · header count = "พร้อมส่ง 9/27" (no double "มีของ") — owner: keep the new look (24/10).
     Q5c [NEXT — 25/10, owner 24/10 night] "ย่อกลับ" leaves the page far down (the grid collapses above the reader) — on close, scroll
        the picker back into view (PhoneOptionTiles toggle). Small fix, tier B shots 390.
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
@@ -89,229 +59,111 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
        reference = owner's 10.10 broadcast poster; drafts first
     Q7 ค่ะ/นะคะ + LINE pointer sweep over the REST of the site (service pages, FAQ; not product descriptions or articles)
-    Q8 D upsell row in the cart
-    Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · cart ON = owner flips it himself when calm ("ไว้นิ่งแล้ว
-       พี่จะเปิด") · age-gate LINE line stays (owner 24/10) · image sweep 21 warehouse products (รอพี่ตรวจ 41) · SEO line 2 queue (3s) ·
-       GSC read 01/11 · speed (item 5) · #807 notes a/d · rehearsal (รอพี่ตรวจ 59).
-  DONE 24/10 this chat [ตรวจแล้ว]:
-  · #806 order-entry stock reader (checker PASS 062ed7df): `scripts/order-entry-stock.browser.js` (runs in the "เลือกสินค้า" picker of
-    https://app.shipnitymax.com/order/create, reads each option button blue/grey from the row's React props, cross-checks `available`,
-    pages with the dialog's own pager only) → `scripts/order-entry-stock.js` (decode + `--compare` with a product-list read) →
-    `scripts/stock-sync.js --order-entry` (closes AND re-opens; codes missing from the read stay out). First read 16:45: 7 pages, 64
-    products, 733 options, 782 codes = the product list's code set, 0 disagreements; 8 options the product list called มีของ are out
-    (M Bar 10K · INFY 20K · Muro SC 8000 · Muro Connector 20K ×2 · Marbo Saltnic eliquid-1 · RELX LUMI 18K) → live. Warehouse slip: Pod-156's
-    14th option is coded "Pod-147" in Shipnity Max (skipped by the decoder). TEAM_RULES 13.7 stock lines rewritten.
-  · #807 (B + C, checker PASS 2c6d035e 7/7): order page = 4 steps + "ขั้นต่อไป" per state · pill "รอคุณเลือก" while an out-of-stock choice is open ·
-    "ข้อความจากร้าน" box (table order_customer_messages, migration 0015; staff write it on /staff/orders/<n>) · cancel REQUIRES a
-    customer-facing reason · refund to a bank account (from #804, migration 0014) with bank suggestions · typed values survive a refused
-    submit. Staff + customer flows tested on the test build with a local staff password; no staff note reaches the customer HTML.
+    Q8 D upsell row in the cart (owner "A+B ครึ่ง ๆ": half same brand/category in stock + half shop best-sellers · designer + tier B shots ·
+       can reuse `lineImage()` / LineThumb for its cards)
+    Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
+       SEO line 2 queue (3s) · GSC read 01/11 · speed (item 5) · #807 notes a/d · rehearsal (รอพี่ตรวจ 59) · stock without a rebuild
+       (proposal ①: every stock PR = a deploy = 30–60 s of 502).
   #807 checker notes, not fixed (fold into the NEXT round): (a) an admin message saying "ด้านล่าง" stays after the customer chose — hide
   messages older than chosen_at or tell staff not to point "below" · (b) nextShipped says "กดปุ่มด้านล่าง" but an order shipped without a
   carrier has no button · (c) the LINE alert formatStockChoiceAlert still says "รับเงินคืนเข้าพร้อมเพย์" for a bank refund · (d) stale
   comments (migration 0013, cleanPromptPayPhone "no bank account") · cleanBankText keeps invisible characters · unused ERROR_TEXT "note"
   · (f) stockChosenRefundBank still says "แอดมิน". BSOT §9 line changed by #804 quotes the owner's chat 24/10 (other chat) — confirm with the owner.
   Known, not fixed: after a partial refund the order cannot get a second out-of-stock issue (one row per order) · history keeps the refund ref,
-  not the amount · no DB-level tests · designer note: mark the out rows in the order page's item list.
-  Also for (2): checker notes of cart UX C (#795) — Back from review returns to review · a typed note is lost if placing fails · the add
-  form needs JS, a double tap while pending adds twice (#792). Hand-kept sold-out line `muro-connector-20k | Double Mint` (#800,
-  src/data/stock/sold-out.ts) — remove when the order-entry read shows Pod-171-3 back. Old side chats to archive: line1-images-2310d
-  local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c local_1b6cafc0… · old main local_686a322f-0897-443b-89a8-c30fd88e0e5c.
-3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
-  render.yaml is locked again. RECOVERY 1ก + DEPLOY-RENDER now say: Blueprint sync is paused — change Render settings in the dashboard. Left on purpose: buildFilter
-  (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
-  lines 85/91 still describe the old hook flow.
-3w CLOSED 21/10 — round "homepage upgrade" (Artefakt), tag `home-upgrade-2110` (round file: `git show home-upgrade-2110:docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt`)
-  · all batches live (1, 1b, 1d, 2, 3 #691, 4 #695, 5 #697 + #698 phone) · owner 21/10 "ทำแค่หน้าแรกพอครับ" (category/product pages dropped).
-  Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
-  tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, Sonnet 5.5 medium) — owner paused it ~20:00 24/10, Friday re-enabled 23:00 24/10
-  (owner: "ตั้งใหม่ … เจอสินค้าใหม่ให้รายงานไว้สั้นๆ") with step 3b: NEW product codes (in the read, not in sku-map.ts) appended to
-  `_incoming/stock-api/new-products.md` (not in git) — Friday reads it and queues the listing for the side chat; clears lines once listed.
-  First list 24/10: Disposable-45 (15/15 in stock). Flow:
-  reads the ORDER-ENTRY picker in the owner's Chrome (new tab, read only: never pick a customer / add an item / press บันทึก) per the header of
-  `scripts/order-entry-stock.js` → `stock-sync.js --order-entry` (closes AND re-opens) → PR only when stock changed → verify --full → gate →
-  checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops (>15 products / >60 codes / missing codes / other
-  files / reader problems, disagreements or a CONFLICT) leave a draft and ask. Skips when a stock-sync PR is still open or `_incoming/wt-stock`
-  is busy. Prompt = C:Usersdhetc.claudescheduled-tasksokami24-stock-dailySKILL.md. FIRST order-entry run not yet watched — check its
-  report. Cost watch: each changed hour = one full build + one checker + one deploy (~30–60 s of 502) — proposal ① in item 3 (4).
-  Long-term: stock without a rebuild (DB/endpoint) — proposed, not started.
-3c ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` — CART OFF AGAIN since 24/10 ~16:00 (item 1) — history: was live OKAMI24_ORDERING=on (Render dashboard,
-  rebuilt) live 23/10 23:59; owner asked close+reopen → off live 00:16, ON again live 00:22 24/10 (/cart 200, "เพิ่มลงตะกร้า" on in-stock
-  options, sold-out options show "สอบถามทาง LINE"). LINE bot LIVE [ตรวจแล้ว 23/10 ~22:25]: secret + token pasted by the owner in Render,
-  webhook https://okami24.store/api/line/webhook + Use webhook ON, Verify = Success, unsigned POST = 401; groups bound on /staff:
-  "OKM Webside order" = order alerts · "OKM Slip check" = slip check; a real ฿450 slip → "✅ เงินเข้าบัญชีร้าน", same slip again → "เคยตรวจแล้ว".
-  A join event lost during a deploy = remove the bot from the group and invite again (in #746's DEPLOY-RENDER §8 commit).
+  not the amount · no DB-level tests · designer note: mark the out rows in the order page's item list · cart UX C (#795): Back from review
+  returns to review · a typed note is lost if placing fails · the add form needs JS, a double tap while pending adds twice (#792) · B count comes
+  from /api/cart/count because pages are prerendered — never add cookies() to the layout.
+  Warehouse slip: Pod-156's 14th option is coded "Pod-147" in Shipnity Max (the order-entry decoder skips it). Hand-kept sold-out line
+  `muro-connector-20k | Double Mint` (#800, src/data/stock/sold-out.ts) — remove when the order-entry read shows Pod-171-3 back.
+  Old side chats to archive: line1-images-2310d local_be2fd557… · line2-cart-2310b local_277aecbf… · line1-images-2310c local_1b6cafc0… ·
+  old main local_686a322f-0897-443b-89a8-c30fd88e0e5c.
+  LINE bot LIVE [ตรวจแล้ว 23/10]: webhook https://okami24.store/api/line/webhook (Verify = Success, unsigned POST = 401); groups bound on /staff:
+  "OKM Webside order" = order alerts · "OKM Slip check" = slip check. A join event lost during a deploy = remove the bot from the group and
+  invite again (DEPLOY-RENDER §8). Bot: LINE OA "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member).
+  No Shipnity API — staff forward orders by hand. Staff guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md.
   Test orders: OK-20261023-e25378 (TEREA ฿270, pending payment) + possibly a 2nd (M Bar 9K ฿400, owner's screenshot) → cancel on /staff
   (reason "ทดสอบ") after the owner finishes testing. Order numbers use the UTC date (OK-20261023-… was placed 00:09 Thai 24/10) — noted, not changed.
   EasySlip quota 497/1000 used this month (23/10) — warn the owner before it runs out. Known slip risk: receiver-match misjudged a K+ slip 10/10
   → fix = EasySlip matchedAccount (owner step, รอพี่ตรวจ 57).
   Owner rulings 23–24/10 (round): checkout stays phone-only (no OTP, no LINE login) · green "shipped" glow approved = the style for key-moment
-  effects site-wide ("ยืนบนความเรียบหรู") · LAUNCH_AUDIT 44 seven criteria superseded by the 22/10 go-live ruling (in #746) · off-site backup
-  (R2/B2) queued until after the cart setup; meanwhile the Excel export (#782) · test-order shots OK · IQOS colour names = Friday decides.
-  CART UX ROUND (owner 24/10 ~00:30, all approved; taste = Friday, reversible): A DONE 24/10 = #789 (line photos 64 px · amber pill) · B DONE
-  24/10 = #792 (designer option A "ฟองกระจกคู่"; count from /api/cart/count because pages are prerendered — never add cookies() to the layout;
-  addToCartAction returns {ok,count}; known, not fixed: the add form needs JS now, double tap while pending adds twice) · was B: add-to-cart animation + floating cart button
-  bottom-right above the LINE button, only when the cart has items, count badge, small nudge on add (owner "A") · C preselect the last-used
-  saved address and go straight to review + OPTIONAL collapsed "หมายเหตุถึงร้าน" ≤200 chars, staff page only, NOT in the LINE alert (owner "A") ·
-  D cart upsell row: half same brand/category in stock + half shop best-sellers (owner "A+B ครึ่ง ๆ"). designer for B + D, tier B shots,
-  full set for C (orders/customer data). D can reuse `lineImage()` / LineThumb for its cards.
-  E SOLD OUT AFTER PAYMENT — owner 24/10 chose Friday's flow ("ใช้แบบที่ Friday เสนอ: ลูกค้าเลือกเปลี่ยนสินค้า หรือกดรับเงินคืนเข้าพร้อมเพย์"): staff button "สินค้าหมด" on /staff with reason →
-    order page notice box with 2 choices: swap to an in-stock item at the same/near price (picker) OR refund → one tap "คืนเข้าพร้อมเพย์เบอร์
-    ที่ใช้สั่ง" (or type another PromptPay number — no full bank account numbers stored) → staff marks refunded + ref → customer sees "คืนเงินแล้ว";
-    staff also phone/LINE the customer (no customer push channel yet). Money/orders/customer data → full set; BSOT §9 dated line to add.
-  Owner steps docs: DEPLOY-RENDER.md §8 (LINE) · §9 (backup). Staff guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md (staff confirm each paid order with
-  "ยืนยันยอดเงินแล้ว" after the ✅ alert). Bot: LINE OA "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member).
-  No Shipnity API — staff forward orders by hand.
-3m CLOSED 23/10 — round "Max list", tag `max-list-2310` (round file: `git show max-list-2310:docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt`;
-  its 【แตะได้】 thai-typography line ended with the round — thai-typography.ts is locked again). Table `docs/cloud-results/max-sync-2210.md`
-  (every row answered) · owner "1 ลง" = the 6 Max-only options listed #737–#740 · owner "2 ไม่ลง" = SUP Zero 22K + "หัว dude 3 ml." not listed.
-3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
-  #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
-  Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
-  Seedance 2.0 light-sweep / floating-roll, 216 credits) = _incoming/img-1610/hero-test/README.md. Higgsfield balance 4,644.4 (20/10).
-3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
-  worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
-  shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome until ~evening 18/10 (owner 16/10: 3 days from 15/10) — render first, key later.
-  LIVE [ตรวจแล้ว 17/10]: #501 #503 #505 #512 #516 #522 #526 #528 #533 #549 #552 #562 #566 #567 (what each shot = the PR; method
-  notes worth keeping: G4 Classic / G4 mini bottoms = one shared silhouette, pipeline b16/ — `_incoming/img-1610/NEXT.md`). VOID 16/10 (already done / not drawn): argus-g4 gallery
-  (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
-  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. audit2 eye pass DONE (live pages fine; low-res sets not on the site = VOID; mood-monster-14k kept, Friday 16/10). Batch 7 RENDERED 16-17/10 (line-1 chat, no site change): masters for 19 of the 21 warehouse products + Pop Up 14 flavours + Marbo 5 colours + Pepo 4 + 1 lifestyle sample (G5 Mystic Forest forest scene, 16:9) = `_incoming/img-1610/masters/` (SOURCE.md = table, out/picks.txt = picks/rejects); IQOS ILUMA ONE = official iqos.com PNGs; Pod-168 G4 Pro Stripe Black already on the site. Open: Feelin C1 ref unresolved · Double Mint Watermelon/Peach + Pop Up Strawberry/Mixberry/Lime Soda/Guava Kiwi have no ref · Breeze Blue = the ILUMA i ONE model. Keying + INFY label swaps need no Nano Banana (after 18/10). Higgsfield dropped to 1 unlimited job at a time ~00:45 17/10. State, prompts, pipelines, page helpers, lessons to fold in =
-  `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" — RESUMED 18/10 ~22:30 (quota reset; Friday "เริ่ม") = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt`
-  (side-chat line 2; also owns 3p) · worktree since 19/10 `.claude/worktrees/seo-line2-c` (chat c) · build trees `_incoming/wt7-<port>` +
-  test servers 3419 (after) / 3418 (before = main): `bash _incoming/l2c/setup-build.sh <sha> <port>` (real node_modules copy, ~5 min;
-  pass a SHA, never HEAD) · chat b's worktree `mystifying-driscoll-575ab6` (`_incoming/p63/`) · older line-2 tools: `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3's) ·
-  【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
-  DONE [ตรวจแล้ว]: #499 #502 #514 #519 #536 #543 #546 #551 #553 (what each did = the PR; full list = `git show 438cd6e7:docs/HANDOFF.md`).
+  effects site-wide ("ยืนบนความเรียบหรู") · IQOS colour names = Friday decides.
+3c ROUND "reopen the cart" = `docs/rounds/รอบเปิดตะกร้า-22-10.txt` — goal reached (cart ON, item 1); round not closed (no tag yet).
+3w CLOSED 21/10 homepage upgrade (tag `home-upgrade-2110`) · taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup
+  label→device gap ~10 px tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT ·
+  DESKTOP_TRAVEL · PHONE_HERO. Other closed rounds (render-build-2110 · max-list-2310) = their tags.
+3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`, Sonnet 5.5 medium) — re-enabled 23:00 24/10 (owner: "ตั้งใหม่ …
+  เจอสินค้าใหม่ให้รายงานไว้สั้นๆ") with step 3b: NEW product codes (in the read, not in sku-map.ts) appended to
+  `_incoming/stock-api/new-products.md` (not in git) — Friday reads it and queues the listing for the side chat; clears lines once listed.
+  First list 24/10: Disposable-45 (15/15 in stock). Flow: reads the ORDER-ENTRY picker in the owner's Chrome (new tab, read only: never pick a
+  customer / add an item / press บันทึก) per the header of `scripts/order-entry-stock.js` → `stock-sync.js --order-entry` (closes AND re-opens)
+  → PR only when stock changed → verify --full → gate → checker → the run merges it itself (TEAM_RULES 13.7) → deploy success; anomaly stops
+  (>15 products / >60 codes / missing codes / other files / reader problems, disagreements or a CONFLICT) leave a draft and ask. Skips when a
+  stock-sync PR is still open or `_incoming/wt-stock` is busy. Prompt = C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md.
+  Cost watch: each changed hour = one full build + one checker + one deploy (~30–60 s of 502).
+  Old round "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` · 【ห้ามแตะ】 coil-1/72/94 photos · every
+  price file · rulings = §18 "Stock" + BSOT §4 · old prompt folder `okami24-stock-sync` kept (§18). NEXT: stock adapter when the warehouse
+  sends the API · then order push with the shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line —
+  `docs/cloud-results/stock-api-sku-survey.md` last section). Warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า".
+  Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (price
+  file 【ห้ามแตะ】 — next allowed touch) · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18): Friday's pick at the next touch =
+  a free band above full-frame photos (taste, reversible).
+3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` — PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" =
+  homepage hero; last live #619 #620 #621 #624 #625). Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10
+  points — then the queue). Image chats own the main folder's `_incoming/img-1610/` (worktrees `wt-img` work · `wt-gate` checker · `wt-base`
+  base build 47320ddd + before shots `shots/before-*`). State, prompts, pipelines, lessons to fold in = `_incoming/img-1610/NEXT.md` (read it
+  first) · prompts `_incoming/img-1610/prompts.md` · masters for 19 of the 21 warehouse products + Pop Up 14 flavours + Marbo 5 colours +
+  Pepo 4 = `_incoming/img-1610/masters/` (SOURCE.md = table, out/picks.txt). Open: Feelin C1 ref unresolved · Double Mint
+  Watermelon/Peach + Pop Up Strawberry/Mixberry/Lime Soda/Guava Kiwi have no ref · Breeze Blue = the ILUMA i ONE model. VOID 16/10: argus-g4
+  gallery (storyDetails never renders role "detail") · caliburn-g5 colours · Drag S3/X3 · row line-ups · M Bar 10K anatomy size = next design
+  round. Hero test clips = _incoming/img-1610/hero-test/README.md. Higgsfield balance 4,644.4 (20/10).
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side-chat line 2; also owns 3p) · worktrees `.claude/worktrees/seo-line2-c`
+  (chat c; build trees `_incoming/wt7-<port>`, `bash _incoming/l2c/setup-build.sh <sha> <port>` — pass a SHA, never HEAD) · `sad-nash-5bf72f`
+  (chat d, tools `_incoming/l2d/`) · (`mystifying-driscoll-575ab6` + its `_incoming/p63/` are GONE from the computer — found 25/10; evidence = the PRs) · `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3:
+  `linkmap.js` · `wbfix-gen.tsx` + `wb-driver2.js` · `wb-openscan.js` LESSONS พ34) · 【ห้ามแตะ】 product images + image map · every price file.
+  Order = SEO_LANDSCAPE §9.6. DONE PRs up to #657 (held links + held titles) and #615 #623 #626 #627 #629 #630 = the PRs; full old list =
+  `git show 438cd6e7:docs/HANDOFF.md`. The 22/10 hold was lifted 19/10 and the 22/10 GSC read was done 23/10 (SEO_BASELINE last section).
   Do-not-redo facts: genuine guide has no maker image of a check · DRAG has no clip on the three shop channels (16/10) · dropped on
   sight: Caliburn G4 airflow still, GPP pod chart (white block) · the MTL / RDL / DTL clip `_s48AaDCtf4` is already understanding-mtl-vs-dtl's
-  record clip · HELD with the links below: the DRAG X link in the DRAG guide (it moved the DRAG guide into /products/pod-kits' box over
-  choosing-your-first-pod-system, SEO_BASELINE row 17).
-  Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
-  included). **Exception 18/10 (owner "list everything" overrode the hold, through Friday): /brands/infy CHANGED before the 22/10
-  read** — INFY PLUS 2.5ML Cartridge (/products/pod-169) joined its product grid (round list19) — read the brand page's 22/10
-  numbers with that in mind. Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
-  pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
-  `wb-openscan.js` (LESSONS พ34).
-  HELD LINKS + HELD TITLES DONE 20/10 [ตรวจแล้ว curl 200] = #657 (line 2 chat d, merge 1f170a80): every held link in (switch · disposable ·
-  flavour · ARGUS · genuine → /brands/infy + /brands/esko-bar, both brands now have several products · DRAG guide → drag-x) · ARGUS guide title
-  "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบครบ 4 รุ่น" ("VOOPOO ARGUS" split mid-name, measured) · SALTHUB "QR + serial" FAQs fixed th/en/zh ·
-  product titles พอตคิท → พอตซิสเต็ม (VOOPOO) / พอตเปลี่ยนหัว (switch) · brand heads + intros esko-bar / joiway ("JOIWAY จอยเวย์ …", seo-auditor) /
-  relx / voopoo · open-system-vs-disposable box reaches every pod-systems device. Still left plain ON PURPOSE: category links in the switch /
-  flavour guides, RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the disposable guide's relatedProductSlugs.
-  Kept on purpose (checker #536 noted): Zero Nano 500mAh (verified row, source salthub.com, no model URL) and every nexBar CLEAR 18K
-  number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
-  owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
-  Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  DONE line 2 [ตรวจแล้ว]: #557 · #558 (what each did = the PR). §9.4 checked 16/10: charging / no-draw / coil / disposable-fade / burnt FAQs already done.
-  DONE 19/10 [ตรวจแล้ว curl 200]: #585 /e-liquid meta (SEO_BASELINE logged) · #590 §9.7 batch 9 — Thai searched names beside the Marbo
-  flavour names (choosing-a-marbo-flavor) + FAQ "พอต 15K คืออะไร สูบได้กี่พัฟ" (how-long-a-disposable-lasts; "กี่คำ" is the searched form but
-  THAI_STYLE พัฟ row rules it out). §9.7 "head meta ราคา" rows on unlocked model pages = nothing to do (every description already says
-  "ราคา ฿…"). §9.7 left for the next batch: relx-creator H2 "หัวที่ใช้ได้" · blinking/charging/burnt guide phrases ("มาโบ ไฟกะพริบ" — light
-  meanings only from a maker manual) · INFY 12K page (NP).
-  22/10 READ adds (Friday 18/10, `_incoming/p63/gsc-2210-todo.md` in this worktree): snippet gaps "esko bar" 87 impr pos 3.6 0 clicks ·
-  "joiway" 179 impr pos 6.2 3 clicks (/brands/joiway 417 impr 15 clicks) → fix the ranking pages' title/description with the held
-  heads · weekly clicks 214 (29/09–05/10) → 160 (09–15/10), impressions 1,470 → 918: say whether it is specific pages or the general dip ·
-  /brands/esko-bar intro still names only the Switch (now 2 products) · /brands/esko-bar + /brands/infy changed before the read (logged) · 19/10 also /brands/esko-bar
-  (+ ESKO BAR SWITCH 20K pods, #600) and /brands/voopoo (+ PnP X coils, #601) each gained a card (owner "list everything") — read
-  both pages' 22/10 numbers with that in mind.
-  **CATEGORY RESTRUCTURE 19/10 = #595 (merged 63b83c06, live 200/308, owner "ทำเลยตอนนี้")** — pod-kits retired: VOOPOO refill devices →
-  /products/pod-systems · new /products/switch-pods "Switch Pod / พอตเปลี่ยนหัว" (M Switch · Zero · RELX Infinity 2 Plus · RELX Creator ·
-  nexPOD · ESKO BAR SWITCH · KS Quikpro · Nexswitch 16K) · /products/pod-kits 308 → pod-systems. **The 22/10 read of pod-systems and
-  pod-kits is MIXED by this change (owner accepted)** — "pod" was split pod-systems 5.1 (25/88) vs pod-kits 8.1 (7/67), GSC 18/10;
-  watch rows 2 (argus-g4) + 7 (pod-159): title/meta/H1 unchanged, but breadcrumb + JSON-LD category moved with the merge.
+  record clip. Kept on purpose (checker #536): Zero Nano 500mAh (verified row, salthub.com) and every nexBar CLEAR 18K number (owner's maker
+  poster) — cut both if the owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line).
+  Left plain ON PURPOSE: category links in the switch / flavour guides, RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide,
+  the disposable guide's relatedProductSlugs.
+  From the GSC read todo (its file was in the removed p63 folder; items kept here): snippet gaps "esko bar" (pos 3.6, 0 clicks) · "joiway"
+  (pos 6.2) → fix the ranking pages' title/description with the held heads · /brands/esko-bar intro still names only the Switch (now 2 products).
   Still open from the held list: "พอตคิท" in 5 VOOPOO product metas/taglines (argus-p3 · argus-g3-mini · drag-x · vinci-s · vmate-i3 —
   THAI_STYLE allows it as the VOOPOO device word; ARGUS P3/G4 taglines tie to locked thai-typography entries) · first-pod guide H2 + ¶1
   "พอตคิท" (locked entries) · switch-pods ↔ the two switch guides link each other in <main> · breadcrumb name = shortName vs H1 labelTh
   (all categories) · ItemList on category pages · choosing-a-disposable lacks the new disposables (ESKO BAR 20000, RELX LUMI 18K …).
-  Pre-existing, not line 2: en/zh of /products/pod-159 + /brands/voopoo show Thai text nodes (spec labels, Shipnity coil names).
-  Known limit: a category has no zh field — zh shows its English name/lede (every category).
-  DONE 19/10 [ตรวจแล้ว curl 200]: #597 — choosing-a-switch-pod covers all 9 switch devices (was "สามยี่ห้อ") + category links +
-  FAQs "พอตเปลี่ยนหัว 15K" · "RELX Infinity 2 Plus ใช้หัวอะไร" · "พอตเปลี่ยนหัว ใช้ได้นานแค่ไหน" · "พอตซิสเต็มกับ Marbo" (th/en/zh).
-  Checked 19/10, nothing to do before 22/10: charging / burnt / blinking guides already carry the §9.4/§9.7 FAQ phrasings · IQOS
-  + Caliburn titles already carry the price · relx-creator already has "หัวพอตที่ทำมาคู่กัน" H2 + "ใช้กับหัวพอตรุ่นไหนได้บ้าง" FAQ.
-  **22/10 HOLD LIFTED (owner 19/10 via Friday: "ถ้าเรามีโจทย์ที่ชัดอยู่แล้ว แก้เลยครับ ไม่ต้องรอผล")** — the 22/10 read will be MIXED (owner
-  accepted); still do the read on 22/10, judging each row with the changes below in mind. Live 19–20/10 [ตรวจแล้ว curl 200]:
-  #615 home brand strip (owner "ขึ้นเว็บเลย") — `/` now links 8 brand pages ×5 incl. watch-row owners /brands/joiway (row 6) and
-  /brands/esko-bar (row 5): new homepage links before the read · #623 NEW /guides/iqos-iluma-i-one-vs-iluma-i + /guides/choosing-a-terea-flavor
-  (Thai-only; IQOS read-next boxes on /brands/iqos + iqosheet-14/16/17/18 moved; iqosheet-16 lost its battery-guide link = row 14) ·
-  #626 ONE CLIP PER GUIDE (owner "1 เรื่อง 1 บทความ · 1 คลิปหลักต่อหน้า"): 40 section clips removed from 15 guides (rows 11–21 guides
-  included) · KOKO clip → /products/caliburn-g4-pro-koko · mesh clip → /technology/mesh-coil-systems · #627 content-dates fix (main deploy
-  was red: concurrent merges left 3 guide dates stale — after merging main into a guide branch, run `npx tsx scripts/content-dates.ts`).
-  CLIP JOB (Friday 19/10): freed clips with search demand → own one-topic guide, else the model's product page; never two pages
-  per keyword. Inventory of all 62 clip ids + autocomplete 19/10 = `_incoming/l2c/` (worktree seo-line2-c). DONE 20/10 [ตรวจแล้ว curl
-  200]: #629 NEW /guides/pg-vg-in-e-liquid (clip i5SPcPp9HAE; salt-nic PG/VG part → link). Left: freed clips with no page + no demand
-  found (Fast Charge · mAh · disposable-fade set · leak/burnt extras) = unused; "เลิกบุหรี่ไฟฟ้า" (AC ×9) = health sources needed, parked;
-  "m switch รีวิว" (AC ×4) would compete with /products/m-switch-kit — skipped. Standard for every guide from 19/10 (Friday): 1 main
-  query in title/H1/¶1/slug · 3–8 secondary · 1 image per main section · 1 main clip · every product named links its page on first
-  mention · 2–4 related guides · FAQ + JSON-LD.
-  HOME LOGO STRIP DONE 20/10 [ตรวจแล้ว curl 200]: #630 (owner "Logo แบบ A") — 8 official logos, all white, equal weight, 18.25 px/s kept;
-  files + sources in BrandMarquee.tsx comment. Checker taste note: IQOS (thin strokes) reads a bit lighter — bump only if the owner says so.
-  LINE 2 = chat d since 20/10 (worktree sad-nash-5bf72f, tools `_incoming/l2d/`; builds still via seo-line2-c `setup-build.sh`) — queue:
-  22/10 GSC read (SEO_BASELINE rows + its 19–20/10 section; row 2 moves on three variables) → NEXT list below → clip leftovers. Line 1
-  (`line1-maxlist`) edits product/category data meanwhile; homepage files belong to round 3h — not line 2.
-  Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
-  before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
-  GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
-  coil care th/en/zh · salt-nic) · #608 (wattage th/en/zh · how-long-a-disposable · plane) — product-page posters only (SECTION_IMAGES).
-  Still no section image, ON PURPOSE: what-is-a-pod-system (row 10, after 22/10) · iqos-iluma-i guide (only colour photos, no screen /
-  charging poster) · checking-a-genuine-pod (no maker image of a check) · the two flavour guides + quit-smoking (no poster shows the
-  section's subject; TFIT Watermelon ≠ the M Bar/M Switch flavour lists) · cant-open-the-website. Tall portrait posters (> ~1.2 h/w)
-  fill the 1440 screen — use landscape ones. No new shop clips found for the touched sections.
-  NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
-  reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
-  second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
-  head set (seo-auditor reads the paper set first; baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) →
-  held links → FAQAccordion server HTML (answers render only when opened — shared by /faq, product and guide FAQs → whole-sitemap
-  scan, after 22/10) → product flavour FAQs. Answered 16/10: 63 (BSOT §4 — pages for unstocked models, own chat products-63; its keys = §9.7 NP rows) · 64 · 65 · 66 · 67 (§18 "Head copy", THAI_STYLE
-  round 10B line, BSOT §12 "Authenticity").
-  Line breaks: new copy must leave 0 latin-term / compound / negation / number-unit flags at 390 + 1440 (approved guides carry only
-  single-word-last-line) — model names outside MODEL_NAMES (TFIT M Power · nexBAR 18K · RELX Creator · Muro Connector · QR code)
-  split; wording only (thai-typography.ts is locked).
-  Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
-  remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
-3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` · since 16/10 evening owned by side chat 4 (seo-all-keys-4,
-  line rule 13.6 — products-63-2 archived); its files copied to `.claude/worktrees/mystifying-driscoll-575ab6/_incoming/p63/` (big g3
-  build outputs left behind) · evidence `_incoming/p63/research.md` (verdict per name, maker quotes, warehouse rows). Owner item 63 (BSOT §4): a page per
-  searched model, maker facts only, no price row (browse-only), options mapped in `sku-map.ts` (null = sold out; real warehouse codes where
-  the warehouse lists the model).
-  LIVE [ตรวจแล้ว]: #537 VOOPOO DRAG X https://okami24.store/products/drag-x · #534 UWELL Caliburn G3 https://okami24.store/products/caliburn-g3
-  (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13) · #540 840034de RELX Infinity 2 Plus
-  https://okami24.store/products/relx-infinity-2-plus (checker r2 PASS 0aedc4a1: mode-wattage quotes + card-v2 re-shoot img-1610 b15;
-  taste note: real cap = light-grey disc with a V notch, render = black — image line told, a card-v3 would come by message).
-  LIVE 18/10 [ตรวจแล้ว curl 200] (side-chat line 2, worktree mystifying-driscoll-575ab6): #583 IQOS TEREA ฿220/pack
-  https://okami24.store/products/iqosheet-15 (checker full set r3 PASS 847130cd: 22 flavours each with IQOS's own pack image — Emerald
-  Edition from its archived iqos.com/id page, SKU G0001475; option labels = maker names ("Dimensions …"); axis = flavour; spec row
-  "ขายเป็น 1 ซอง (20 ก้าน)" under the price because the 390 hero hides the tagline) · #584 WOTOFO nexPOD 15K Pro Kit
-  https://okami24.store/products/nexpod-15k (checker PASS 19301574: 6 colours cut from WOTOFO's kit renders by `_incoming/p63/nexpod/key.js`,
-  20 kit flavours, no price, all sold out, no puffCount — 15,000 is per pod) · #585 /e-liquid meta "มี Marbo Saltnic แล้ว" (SEO_BASELINE logged).
-  Left on purpose: TEREA en/zh still show the Thai spec rows (every ProductMaster spec row does — site-wide gap, cleanup list) ·
-  warehouse child IQOSHEET-15-18 "Black Purple" (Shipnity MAX, not on iqos.com/id) not on the page — needs a maker source first ·
-  the nexPOD 15K pods (40 flavours 20mg / 15 at 50mg on wotofo.com) = a separate product if ever wanted.
-  Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
-  map entry (cobalt-blue.jpg) still sits beside the new one.
-  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (→ nexPOD 15K, owner item 68, live).
-  JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  LIVE 19/10 [ตรวจแล้ว curl 200]: #589 ESKO BAR 20000 ฿389 https://okami24.store/products/esko-bar-20k (Max-only record ESKO-BAR-20K =
-  Pod-130 = maker "ESKO BAR 498"; 22 flavours, 15 with the maker's flavour render; card small — the maker's only device-only file is
-  603 px → image-line re-shoot candidate). NEXT: INFY 12K (NP) · then round-close (tag p63-1610).
-3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
-  【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
-  Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
-  sold out + OutOfStock JSON-LD · #404 sold-out chips + pill "สินค้าหมด" · #408 shipping 60 → 50 · #409 Shipnity Max read →
-  `scripts/stock-sync.js` → warehouse-stock data · #425 owner list 24. Evidence `_incoming/stock-api/`.
-  The scheduled read = 3u STOCK above (hourly since 24/10, the run merges its own PR — TEAM_RULES 13.7). The old prompt folder
-  `okami24-stock-sync` is kept (§18). NEXT: stock adapter when the warehouse sends the API · then order push with the
-  shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
-  From the warehouse (via the owner): the copy-ready question list = รอพี่ตรวจ "คำถามถึงคลังสินค้า".
-  Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for
-  caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18):
-  Friday's pick at the next touch = a free band above full-frame photos (taste, reversible — 13.3 last paragraph).
-4 SIZE: §16 is ~35 KB, over the 15 KB spec — trim the 3m/3i/3s/3p/3u blocks at the next house-clean (git keeps the text).
+  §9.7 left: relx-creator H2 "หัวที่ใช้ได้" · blinking/charging/burnt guide phrases ("มาโบ ไฟกะพริบ" — light meanings only from a maker
+  manual) · INFY 12K page (NP). Pre-existing: en/zh of /products/pod-159 + /brands/voopoo show Thai text nodes · a category has no zh field.
+  CLIP JOB (Friday 19/10): freed clips with search demand → own one-topic guide, else the model's product page; never two pages per keyword.
+  Inventory of 62 clip ids = `_incoming/l2c/` (seo-line2-c). Unused on purpose: Fast Charge · mAh · disposable-fade set · leak/burnt extras ·
+  "เลิกบุหรี่ไฟฟ้า" (health sources needed) · "m switch รีวิว" (would compete with /products/m-switch-kit).
+  Guide standard (Friday 19/10): 1 main query in title/H1/¶1/slug · 3–8 secondary · 1 image per main section · 1 main clip · every product
+  named links its page on first mention · 2–4 related guides · FAQ + JSON-LD. Tall portrait posters (> ~1.2 h/w) fill the 1440 screen — use
+  landscape ones. No section image ON PURPOSE: what-is-a-pod-system · iqos-iluma-i guide · checking-a-genuine-pod · the two flavour guides +
+  quit-smoking · cant-open-the-website. Logo strip (#630): IQOS reads a bit lighter — bump only if the owner says so.
+  NEXT (line 2): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE → §9.7 row 9 heads (seo-auditor reads the paper set first) → "พอต 15k คือ" →
+  open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) → second-pass key research (§9 append) → batch 3 head
+  set (baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) → FAQAccordion server HTML (answers render only when
+  opened — shared by /faq, product and guide FAQs → whole-sitemap scan) → product flavour FAQs → clip leftovers.
+  Line breaks: new copy must leave 0 latin-term / compound / negation / number-unit flags at 390 + 1440 — model names outside MODEL_NAMES
+  (TFIT M Power · nexBAR 18K · RELX Creator · Muro Connector · QR code) split; wording only (thai-typography.ts is locked). Measure candidate
+  wording in the running page first (harness in `_incoming/l2c/`). Plan tool: skill `content-strategy` (keymap = SEO_LANDSCAPE §0).
+3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` (owned by line 2) · its `_incoming/p63/` files (research.md) are gone with the worktree — the PRs hold the evidence
+  · Owner item 63 (BSOT §4): a page per searched model, maker facts only, no price row (browse-only), options in
+  `sku-map.ts` (null = sold out). LIVE = #534 #537 #540 #583 #584 #589 (the PRs).
+  Left on purpose: TEREA en/zh show the Thai spec rows (site-wide gap) · warehouse child IQOSHEET-15-18 "Black Purple" not on the page (needs a
+  maker source) · nexPOD 15K pods = a separate product if ever wanted · relx-infinity-2-plus real cap = light-grey disc with a V notch, render
+  = black (card-v3 would come from the image line) · esko-bar-20k card small (maker file 603 px → re-shoot candidate).
+  Small follow-up (checker #534 r2): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card map entry
+  (cobalt-blue.jpg) still sits beside the new one.
+  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (→ nexPOD 15K). JOIWAY 12K / 20K = F3 / F4
+  already live (alias = SEO chat). NEXT: INFY 12K (NP) · then round-close (tag p63-1610).
+4 SIZE: §16 trimmed by house-weekly 25/10 (done PR lists → the PRs; old text = git) — still over the 15 KB spec; the rest is open-round state.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here.
 5 open / dated:
-  - GSC reads: 22/10 → done 23/10 by the main chat (SEO_BASELINE last section rows 1–8 + 22 + 24, and round SEO ง's "validate fix" started 07/10) · 01/11
-    (rows 9–21, 23) · 15/11 · 10/12. `_incoming/seo-d/` kept until 22/10. GSC in the owner's Chrome: screenshots time out —
+  - GSC reads: 22/10 done 23/10 · next 01/11 (rows 9–21, 23) · 15/11 · 10/12. GSC in the owner's Chrome: screenshots time out —
     drive it by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE (the first is swallowed).
   - Search Console 2–4 weeks after 12/10: no okami-24.com URL shows instead of .store.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
@@ -319,9 +171,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     ProductRail + FavoritesList/FinderTool/SearchTool; give it a `taglineTh` prop, server callers pass the tagline; CatalogBrowser
     + RelatedProducts take a slug→tagline map) · then framer-motion on home (owner-approved hero animations — designer first).
     Before = a build of main on the test server.
-  - IMAGE SWEEP (owner 10/10 "ทำให้ครบทั้งเว็บ"): every item of the 10/10 list is live or VOID (item 3i) — what is left = the 21
-    warehouse products (รอพี่ตรวจ 41, masters in 3i batch 7). Seedream 4.5 needs "no glowing lines, no LED light, no spotlight, even
-    dark backdrop". Old list = `git show 438cd6e7:docs/HANDOFF.md` §16 item 5.
+  - IMAGE SWEEP (owner 10/10 "ทำให้ครบทั้งเว็บ"): what is left = the 21 warehouse products (รอพี่ตรวจ 41, masters in 3i). Seedream 4.5 needs
+    "no glowing lines, no LED light, no spotlight, even dark backdrop". Old list = `git show 438cd6e7:docs/HANDOFF.md` §16 item 5.
   - Taste notes: coil-53/coil-70 cards lean left · faint stray pixels on 94-2/94-3 pod bottoms at 2.7x
     (`_incoming/chk-coil2/pod92b.jpg`) · the charging article's record-level clip sits at the end · Drag 6 group image "still
     graphic" (owner 04/10, later) · the M Bar 10K anatomy sheet "looks a bit big" → polish its size (owner 29/09, from the old HANDOFF).
@@ -350,7 +201,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Cleanup: `lineupFirst` unused · `dict.product.anatomyTitle` en/zh · zh spec/FAQ English · article H3 font reads narrow ·
     m-bar-15k card.webp still referenced (hidden product, harmless) · families.ts / unbranded.ts history comments ·
     `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused (names appear in src/ — check by hand) · `attributes.drawStyle`: an old
-    ruling called it "deliberately unused", it is now used in CompareTool + infy.ts — check it is a real maker fact.
+    ruling called it "deliberately unused", it is now used in CompareTool + infy.ts — check it is a real maker fact ·
+    scripts with no live reference (house-check 18/10 + 25/10): asset-refs.ts · image-quality-audit.ts · poster-cutout.js — cut at the image
+    round's close if unused · deploy-decision.js header + CLOUD.md lines 85/91 still describe the old hook flow (Render buildFilter left on
+    purpose: docs-only merges still build).
   - Page notes for each page's next touch = `git show 6b70cd2:docs/HANDOFF.md` §16 item 5 · wordbreak: «ไฟจะ» on
     /guides/fixing-no-draw-and-blinking-light@390 + pre-existing flags in `_incoming/sitewide-template/5/mood/gates/wb3.log`.
   - Rule-audit 15/10 lock proposals (Friday's, a hook = checker): L1 rm/sed -i/redirect into a checker-read tree · L2 scan/shot
