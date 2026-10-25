@@ -162,6 +162,8 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
           </div>
           <div>
             {orders.length > 1 && <RowLink href="#all-orders" title={t.linkOrders} sub={t.linkOrdersSub} />}
+            {/* Owner 26/10: customers who ordered before signing in have only their phone — the phone lookup stays one tap away. */}
+            <RowLink href="/orders" title={t.linkPhoneOrders} sub={t.linkPhoneOrdersSub} />
             <RowLink href={CONTACT.youtubeUrl} title={t.linkYoutube} sub={t.linkYoutubeSub} external />
             <RowLink href="/guides" title={t.linkGuides} sub={t.linkGuidesSub} />
             <RowLink href="/products?stock=in" title={t.linkProducts} sub={t.linkProductsSub} />
@@ -182,7 +184,8 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
 
         {orders.length > 1 && (
           <section id="all-orders" className="mt-12 scroll-mt-24">
-            <h2 className="font-display text-xs font-semibold tracking-[0.32em]" style={{ color: GOLD }}>
+            {/* Thai heading — no letter-spacing (tracking pulls Thai vowel marks off their consonants); the gold carries the look. */}
+            <h2 className="text-sm font-medium" style={{ color: GOLD }}>
               {t.allOrdersTitle}
             </h2>
             <ul className="mt-4 flex flex-col divide-y divide-white/[0.06] rounded-[20px] border border-white/[0.07]">

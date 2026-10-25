@@ -533,6 +533,8 @@ export const en: Dictionary = {
     allOrdersTitle: "All orders",
     linkOrders: "My orders",
     linkOrdersSub: "Every order, every status",
+    linkPhoneOrders: "Orders placed before signing in",
+    linkPhoneOrdersSub: "Find them with the phone number you ordered with",
     linkYoutube: "Reviews on YouTube",
     linkYoutubeSub: "See the real thing before you choose",
     linkGuides: "Articles and guides",

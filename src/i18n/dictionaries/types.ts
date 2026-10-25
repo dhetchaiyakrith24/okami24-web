@@ -641,6 +641,9 @@ export interface Dictionary {
     allOrdersTitle: string;
     linkOrders: string;
     linkOrdersSub: string;
+    /** Orders placed before signing in (owner 26/10: old customers have only the phone) → the phone lookup on /orders. */
+    linkPhoneOrders: string;
+    linkPhoneOrdersSub: string;
     linkYoutube: string;
     linkYoutubeSub: string;
     linkGuides: string;

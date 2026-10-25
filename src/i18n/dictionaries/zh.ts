@@ -525,6 +525,8 @@ export const zh: Dictionary = {
     allOrdersTitle: "全部订单",
     linkOrders: "我的订单",
     linkOrdersSub: "所有订单与状态",
+    linkPhoneOrders: "登录前下的订单",
+    linkPhoneOrdersSub: "用下单时的手机号码查询",
     linkYoutube: "YouTube 评测",
     linkYoutubeSub: "先看实物再决定",
     linkGuides: "文章与指南",

@@ -565,6 +565,8 @@ export const th: Dictionary = {
     allOrdersTitle: "คำสั่งซื้อทั้งหมด",
     linkOrders: "คำสั่งซื้อของฉัน",
     linkOrdersSub: "ทุกคำสั่งซื้อ ทุกสถานะ",
+    linkPhoneOrders: "คำสั่งซื้อก่อนเข้าสู่ระบบ",
+    linkPhoneOrdersSub: "ดูด้วยเบอร์มือถือที่ใช้สั่งซื้อ",
     linkYoutube: "รีวิวบน YouTube",
     linkYoutubeSub: "ดูของจริงก่อนตัดสินใจ",
     linkGuides: "บทความและคู่มือ",
