@@ -5,8 +5,10 @@ import { formatBaht, formatDateTime } from "@/app/staff/_components/order-bits";
 
 /**
  * "สินค้าหมดหลังลูกค้าโอน" on /staff/orders/<n> (cart UX batch E, owner 24/10). Staff tick the lines that are out → the
- * customer's order page offers a same-price swap or a PromptPay refund → staff carry it out here. Nothing here moves money:
+ * customer's order page offers a same-price swap or a refund → staff carry it out here. Nothing here moves money:
  * the refund is made in the bank app first, then recorded with its reference.
+ * Owner 26/10 ("ส่งข้อความถึงลูกค้าก็ดูจะมีถึง 2 ข้อ"): no message or note fields of its own any more — staff write to the
+ * customer in the page's one "ลูกค้า" box — and folded shut until an order actually has a stock problem.
  */
 
 const button = "rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong";
@@ -31,19 +33,11 @@ function OpenForm({ order, again }: { order: StaffOrderDetail; again: boolean })
           </label>
         ))}
       </fieldset>
-      <label className="flex flex-col gap-1 text-foreground-muted">
-        ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ไม่ใส่ก็ได้)
-        <textarea name="message" maxLength={600} rows={2} className={input} />
-      </label>
-      <label className="flex flex-col gap-1 text-foreground-muted">
-        หมายเหตุทีมงาน (ลูกค้าไม่เห็น)
-        <input name="note" autoComplete="off" maxLength={300} className={input} />
-      </label>
       <button type="submit" className={again ? `${ghost} self-start` : `${button} self-start`}>
         {again ? "แจ้งใหม่ (ให้ลูกค้าเลือกอีกครั้ง)" : "แจ้งลูกค้าว่าสินค้าหมด"}
       </button>
       <p className="text-xs text-foreground-dim">
-        ลูกค้าจะเห็นในหน้าออเดอร์: เปลี่ยนเป็นสินค้าที่มีของราคาเท่ากัน หรือรับเงินคืนเข้าพร้อมเพย์ — โทรหรือทัก LINE บอกลูกค้าด้วย
+        ลูกค้าจะเห็นในหน้าออเดอร์: เปลี่ยนเป็นสินค้าที่มีของราคาเท่ากัน หรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย
       </p>
     </form>
   );
@@ -73,10 +67,10 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
   const box = "flex flex-col gap-3 rounded-xl border bg-surface-1 p-5 text-sm";
   if (!issue) {
     return (
-      <section className={`${box} border-surface-border-soft`}>
-        <h2 className="text-base font-semibold text-foreground">สินค้าหมดหลังลูกค้าโอน</h2>
+      <details className={`${box} border-surface-border-soft`}>
+        <summary className="cursor-pointer text-sm font-semibold text-foreground-muted hover:text-foreground">สินค้าหมดหลังลูกค้าโอน</summary>
         <OpenForm order={order} again={false} />
-      </section>
+      </details>
     );
   }
 

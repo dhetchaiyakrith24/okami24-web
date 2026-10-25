@@ -134,7 +134,13 @@ export function PilotProductDetail({
     return { scale: optionScale(info, cardShare)!, aspect: info.width / info.height };
   };
 
-  const available = (selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock";
+  // Nothing picked yet (photo-rule pages open unpicked): sellable only if some option is in stock — an ESKO BAR SWITCH with
+  // every flavour out asked the visitor to "เลือกกลิ่น" (queue note 24/10); it now reads sold out like a picked one.
+  const available = selectedVariant
+    ? selectedVariant.availabilityStatus === "in-stock"
+    : product.variants.length > 0
+      ? inStock.length > 0
+      : product.availabilityStatus === "in-stock";
   const showBuy = isPublished && product.sellingPrice !== null;
 
   // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
