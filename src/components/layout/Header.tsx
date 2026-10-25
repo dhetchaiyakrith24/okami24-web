@@ -177,7 +177,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           <Link
             href="/account"
             aria-label={dict.nav.account}
-            className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex lg:hidden min-[1400px]:inline-flex"
+            className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex lg:max-[1399px]:hidden"
           >
             <UserRound size={19} aria-hidden />
           </Link>
