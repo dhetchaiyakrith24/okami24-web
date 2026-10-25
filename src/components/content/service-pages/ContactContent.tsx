@@ -9,7 +9,7 @@ import { AgeNote, EmailLink, InfoCard, LineLink, SERVICE_PAGES_UPDATED, ServiceS
 import { CONTACT_PAGE } from "@/i18n/service-pages/contact";
 
 /** Body of /contact in the active language (copy: src/i18n/service-pages/contact.tsx). */
-export function ContactContent() {
+export function ContactContent({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
   const c = useServiceCopy(CONTACT_PAGE);
   return (
     <>
@@ -54,9 +54,10 @@ export function ContactContent() {
                   </a>
                 </p>
               </InfoCard>
-              <InfoCard title={c.orderCardTitle}>
-                <p>{c.orderCard1}</p>
-                <p>{c.orderCard2}</p>
+              {/* Q7b (26/10): the card follows the OKAMI24_ORDERING switch — cart on = order on the site, off = order on LINE. */}
+              <InfoCard title={orderingEnabled ? c.orderCardTitleWhileOrderingOn : c.orderCardTitle}>
+                <p>{orderingEnabled ? c.orderCard1WhileOrderingOn : c.orderCard1}</p>
+                <p>{orderingEnabled ? c.orderCard2WhileOrderingOn : c.orderCard2}</p>
                 <p>
                   <Link href="/how-to-order" className="font-semibold text-foreground hover:text-red">
                     {c.orderCardLink}

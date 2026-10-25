@@ -47,6 +47,8 @@ export interface HowToOrderCopy {
   stuckTitle: string;
   stuck1: ReactNode;
   stuck2: ReactNode;
+  /** Q7b (26/10): stuck2 while online ordering is ON — "tell us the model" sent buyers to LINE while the cart was open. */
+  stuck2WhileOrderingOn: ReactNode;
   stuck3: ReactNode;
   readNext: string;
   links: { shipping: string; contact: string; faq: string };
@@ -135,6 +137,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "ถ้าติดตรงไหน",
     stuck1: <>ติดต่อสอบถามเพิ่มเติมได้ที่ <LineLink /> แอดมินตอบเอง ไม่ใช่บอท ช่วยเช็คสต๊อก ช่วยเลือกรุ่น ตามคำสั่งซื้อ ส่งสลิป — เรื่องพวกนี้คุยทางไลน์ได้หมด ถ้าเป็นเรื่องคำสั่งซื้อ บอกเลขคำสั่งซื้อมาด้วยจะเร็วที่สุดค่ะ</>,
     stuck2: <><B>ยังไม่แน่ใจว่าจะเอาตัวไหน ดูจากบนเว็บก่อนได้</B> ทุกรุ่นมีสเปก ราคา สี กลิ่น ครบ อยากเทียบหลายตัวก็มีหน้าเปรียบเทียบให้ เลือกได้แล้วค่อยทักมาบอกชื่อรุ่น คุยจบเร็วกว่าเยอะค่ะ</>,
+    stuck2WhileOrderingOn: <><B>ยังไม่แน่ใจว่าจะเอาตัวไหน ดูจากบนเว็บก่อนได้</B> ทุกรุ่นมีสเปก ราคา สี กลิ่น ครบ อยากเทียบหลายตัวก็มีหน้าเปรียบเทียบให้ เลือกได้แล้วกดใส่ตะกร้าและสั่งซื้อต่อได้เลยค่ะ</>,
     stuck3: <>ตอนนี้สั่งพอตออนไลน์ได้ทางไลน์ <LineLink /> ช่องทางเดียว ทักมาบอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินจะเช็คของให้ แล้วส่งยอดรวม วิธีโอน และเลขคำสั่งซื้อกลับไปในแชท เลขนี้เก็บไว้ใช้อ้างอิงเวลาทักถามทีหลังได้ค่ะ</>,
     readNext: "อ่านต่อ:",
     links: { shipping: "การจัดส่ง", contact: "ติดต่อเรา", faq: "คำถามที่พบบ่อย" },
@@ -219,6 +222,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "If you get stuck",
     stuck1: <>Just message us on LINE <LineLink /> — include your order number and it’ll be quickest. You’re talking to an admin, not a bot. Stock checks, help choosing a model, order updates, sending a slip — all of that works over LINE.</>,
     stuck2: <><B>Not sure which one you want? Check it here first.</B> Every model has its specs, price, colours and flavours, and the compare page lines a few up side by side. Pick one, then message us — much quicker that way.</>,
+    stuck2WhileOrderingOn: <><B>Not sure which one you want? Check it here first.</B> Every model has its specs, price, colours and flavours, and the compare page lines a few up side by side. Once you’ve picked one, add it to the cart and check out.</>,
     stuck3: <>Right now you can order pods online through LINE <LineLink /> only. Message us the model, colour or flavour you want — an admin checks stock, then sends back the total, how to pay and your order number in the chat. Keep that number and quote it when you message us later.</>,
     readNext: "Read next:",
     links: { shipping: "Shipping", contact: "Contact", faq: "FAQ" },
@@ -303,6 +307,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "遇到问题怎么办",
     stuck1: <>直接通过 LINE <LineLink /> 联系我们，附上订单编号最快。回复您的是管理员，不是机器人。查库存、帮您选型号、跟进订单、发送转账凭证 —— 这些都可以在 LINE 上处理。</>,
     stuck2: <><B>还没想好要哪一款，可以先在网站看。</B>每款的参数、价格、颜色和口味都写清楚了，还有对比页可以把几款并排看。选好再来找我们，会快很多。</>,
+    stuck2WhileOrderingOn: <><B>还没想好要哪一款，可以先在网站看。</B>每款的参数、价格、颜色和口味都写清楚了，还有对比页可以把几款并排看。选好后加入购物车，直接下单即可。</>,
     stuck3: <>目前在线订购只能通过 LINE <LineLink />。告诉我们想要的型号、颜色或口味，管理员确认有货后，会在聊天中把总金额、付款方式和订单编号一起发给您。请保存这个编号，之后联系我们时报给管理员。</>,
     readNext: "继续阅读：",
     links: { shipping: "配送", contact: "联系我们", faq: "常见问题" },

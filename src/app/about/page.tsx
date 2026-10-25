@@ -3,6 +3,7 @@ import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { ABOUT_HEAD_TH } from "@/i18n/search-head-copy";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { AboutContent } from "@/components/content/AboutContent";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
 // SEO round ก rows A3/A4 (owner เคาะ 2026-09-21) — search-head-copy.ts holds the strings.
 // Head copy stays Thai in every language, like every other page on the site: what a crawler and a
@@ -23,7 +24,7 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(ABOUT_HEAD_TH.title, "/about")) }} />
-      <AboutContent brands={brands} />
+      <AboutContent brands={brands} orderingEnabled={ORDERING_ENABLED} />
     </>
   );
 }
