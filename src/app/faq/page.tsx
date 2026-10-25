@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteFaqs, faqsByCategory, ORDERING_FAQ_ID, ORDERING_ON_LINE_FAQ_ANSWER } from "@/data/faqs";
+import { siteFaqs, faqsByCategory, ORDERING_OFF_ANSWERS } from "@/data/faqs";
 import type { SiteFAQ } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
@@ -26,7 +26,7 @@ export default function FAQPage() {
   const faqSchemaItems = CATEGORY_ORDER.flatMap((category) =>
     faqsByCategory(category).map((item) => ({
       question: FAQ_COPY_TH[item.id]?.question ?? item.question,
-      answer: !ORDERING_ENABLED && item.id === ORDERING_FAQ_ID ? ORDERING_ON_LINE_FAQ_ANSWER.th : (FAQ_COPY_TH[item.id]?.answer ?? item.answer),
+      answer: (!ORDERING_ENABLED && ORDERING_OFF_ANSWERS[item.id]?.th) || (FAQ_COPY_TH[item.id]?.answer ?? item.answer),
     }))
   );
   return (
@@ -42,7 +42,7 @@ export default function FAQPage() {
             // at all — not even inside the serialized props. FAQAccordion does the same swap for
             // th/zh, where the translation overlay lives.
             const items = faqsByCategory(category).map((item) =>
-              !ORDERING_ENABLED && item.id === ORDERING_FAQ_ID ? { ...item, answer: ORDERING_ON_LINE_FAQ_ANSWER.en } : item
+              !ORDERING_ENABLED && ORDERING_OFF_ANSWERS[item.id] ? { ...item, answer: ORDERING_OFF_ANSWERS[item.id].en } : item
             );
             if (items.length === 0) return null;
             return (

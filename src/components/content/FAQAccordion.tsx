@@ -6,7 +6,7 @@ import { ChevronDown, ArrowRight } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import { FAQ_COPY_TH, FAQ_COPY_ZH } from "@/i18n/faq-copy";
-import { ORDERING_FAQ_ID, ORDERING_ON_LINE_FAQ_ANSWER } from "@/data/faqs";
+import { ORDERING_OFF_ANSWERS } from "@/data/faqs";
 import type { FAQAction } from "@/types/catalog";
 
 interface Item {
@@ -61,8 +61,8 @@ export function FAQAccordion({ items, orderingEnabled = true }: { items: Item[];
     ...item,
     question: locale === "th" ? thaiTypography(overlay?.[item.id]?.question ?? item.question) : (overlay?.[item.id]?.question ?? item.question),
     answer:
-      !orderingEnabled && item.id === ORDERING_FAQ_ID
-        ? (locale === "th" ? thaiTypography(ORDERING_ON_LINE_FAQ_ANSWER[locale]) : ORDERING_ON_LINE_FAQ_ANSWER[locale])
+      !orderingEnabled && ORDERING_OFF_ANSWERS[item.id]
+        ? (locale === "th" ? thaiTypography(ORDERING_OFF_ANSWERS[item.id][locale]) : ORDERING_OFF_ANSWERS[item.id][locale])
         : (locale === "th" ? thaiTypography(overlay?.[item.id]?.answer ?? item.answer) : (overlay?.[item.id]?.answer ?? item.answer)),
   }));
 

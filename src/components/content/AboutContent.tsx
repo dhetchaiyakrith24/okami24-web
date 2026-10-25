@@ -32,9 +32,11 @@ import type { Brand } from "@/types/catalog";
  *    Chinese visitor reads the English lede here exactly as they already do on /brands/[slug] —
  *    the ledes are not this round's copy and were not translated.
  */
-export function AboutContent({ brands }: { brands: Brand[] }) {
+export function AboutContent({ brands, orderingEnabled = true }: { brands: Brand[]; orderingEnabled?: boolean }) {
   const { locale } = useLocale();
   const c = ABOUT[locale];
+  // Q7b (26/10): the contact paragraph follows the OKAMI24_ORDERING switch (cart on = order on the site).
+  const contact = orderingEnabled ? c.contactWhileOrderingOn : c.contact;
   const link = "text-foreground hover:text-red";
   return (
     <>
@@ -63,11 +65,11 @@ export function AboutContent({ brands }: { brands: Brand[] }) {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">{c.contactTitle}</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              {c.contact.beforeLine}
+              {contact.beforeLine}
               <Link href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className={link}>
                 {CONTACT.lineId}
               </Link>
-              {c.contact.afterLine}
+              {contact.afterLine}
             </p>
             <p className="mt-3 text-sm text-foreground-muted">
               {c.readMore.label}

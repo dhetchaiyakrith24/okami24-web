@@ -53,6 +53,8 @@ export interface AboutCopy {
   contactTitle: string;
   /** Split around the LINE OA link, whose text is `CONTACT.lineId` in every language. */
   contact: { beforeLine: string; afterLine: string };
+  /** Q7b (26/10): the same paragraph while online ordering is ON (OKAMI24_ORDERING); `contact` stays for the cart-off state. */
+  contactWhileOrderingOn: { beforeLine: string; afterLine: string };
   readMore: { label: string; howToOrder: string; shipping: string; contact: string };
   photosTitle: string;
   photos: string;
@@ -84,7 +86,12 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     contact: {
       beforeLine:
         "ดูสินค้าและราคาได้ครบทั้งเว็บ ส่วนการสั่งซื้อ ตอนนี้สั่งทางไลน์ทางเดียว ทักมาบอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินสรุปยอดรวมค่าส่งและวิธีโอนให้ในแชท โอนแล้วแอดมินตรวจยอดก่อนจัดส่ง พร้อมเลขพัสดุให้ติดตาม ทักไลน์ OA ",
-      afterLine: " ได้เลย แอดมินช่วยเช็คสต๊อกและแนะนำสินค้าที่เหมาะกับคุณ",
+      afterLine: " ได้เลย แอดมินช่วยเช็คสต๊อกและแนะนำสินค้าที่เหมาะกับคุณค่ะ",
+    },
+    contactWhileOrderingOn: {
+      beforeLine:
+        "ดูสินค้าและราคาได้ครบทั้งเว็บ และสั่งซื้อบนเว็บได้เลยค่ะ เลือกรุ่น สี หรือกลิ่นที่อยากได้ใส่ตะกร้า ระบบจะสรุปยอดรวมค่าส่งให้ก่อนยืนยัน โอนแล้วแอดมินตรวจยอดก่อนจัดส่ง พร้อมเลขพัสดุให้ติดตาม ถ้าอยากให้ช่วยเช็คสต๊อกหรือแนะนำสินค้าที่เหมาะกับคุณ ติดต่อสอบถามเพิ่มเติมได้ที่ ",
+      afterLine: " ค่ะ",
     },
     readMore: { label: "อ่านต่อ: ", howToOrder: "วิธีสั่งซื้อ", shipping: "การจัดส่ง", contact: "ติดต่อเรา" },
     photosTitle: "รูปสินค้า",
@@ -115,6 +122,11 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
         "You can see every product and price across the site. Ordering, though, goes through LINE only right now. Message us the model, the colour or flavour you want, and the admin sends you the total including shipping, and how to transfer, in the chat. Once you’ve transferred, the admin checks the amount before shipping, with a tracking number you can follow. Message the LINE OA ",
       afterLine: " any time — the admin can check stock and suggest what fits you.",
     },
+    contactWhileOrderingOn: {
+      beforeLine:
+        "You can see every product and price across the site, and order right here too. Add the model, colour or flavour you want to the cart — the total with shipping is shown before you confirm. Once you’ve transferred, the admin checks the amount before shipping, with a tracking number you can follow. If you’d like help checking stock or picking what fits you, message the LINE OA ",
+      afterLine: ".",
+    },
     readMore: { label: "Read next: ", howToOrder: "How to Order", shipping: "Shipping", contact: "Contact" },
     photosTitle: "Product photos",
     photos:
@@ -143,6 +155,11 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
       beforeLine:
         "全站的商品与价格都可以查看。下单目前只走 LINE。告诉我们想要的型号、颜色或口味，管理员会在聊天里发给你含运费的总金额和转账方式。转账后管理员先核对金额再发货，并附带可查询的快递单号。欢迎联系 LINE OA ",
       afterLine: "，管理员可以帮你查库存、推荐适合你的产品。",
+    },
+    contactWhileOrderingOn: {
+      beforeLine:
+        "全站的商品与价格都可以查看，也可以直接在网站下单。把想要的型号、颜色或口味加入购物车，确认前会显示含运费的总金额。转账后管理员先核对金额再发货，并附带可查询的快递单号。想让我们帮忙查库存、推荐适合你的产品，欢迎联系 LINE OA ",
+      afterLine: "。",
     },
     readMore: { label: "继续阅读：", howToOrder: "购买流程", shipping: "配送说明", contact: "联系我们" },
     photosTitle: "商品图片",

@@ -19,6 +19,20 @@ export const ORDERING_ON_LINE_FAQ_ANSWER: Record<"en" | "th" | "zh", string> = {
 /** The FAQ id whose answer `ORDERING_ON_LINE_FAQ_ANSWER` replaces. */
 export const ORDERING_FAQ_ID = "what-is-this-site";
 
+/**
+ * Every FAQ answer that reads differently while online ordering is OFF (Q7b, 26/10 — THAI_STYLE "ตะกร้าเปิดแล้ว" line: text that
+ * points to the cart must follow the OKAMI24_ORDERING switch). The canonical answers (siteFaqs / FAQ_COPY_TH / FAQ_COPY_ZH) are the
+ * cart-on wording; these are swapped in only while the cart is off. "where-to-buy" keeps the LINE wording it had before 24/10.
+ */
+export const ORDERING_OFF_ANSWERS: Record<string, Record<"en" | "th" | "zh", string>> = {
+  [ORDERING_FAQ_ID]: ORDERING_ON_LINE_FAQ_ANSWER,
+  "where-to-buy": {
+    en: "Right here at OKami24. Browse the models, prices, colours and flavours on this site first, then message us on LINE @okm24 with the one you want — the admin checks stock and confirms the total in the chat. We deliver anywhere in Thailand, and every order comes with a tracking number. LINE is open every day, 24 hours.",
+    th: "สั่งออนไลน์กับ OKami24 ได้เลย เลือกดูรุ่น ราคา สี และกลิ่นบนเว็บนี้ได้ก่อน แล้วทักไลน์ @okm24 บอกรุ่นที่ต้องการ แอดมินจะเช็คของและสรุปยอดให้ในแชท เราจัดส่งถึงบ้านทั่วประเทศไทย และทุกคำสั่งซื้อมีเลขพัสดุให้ติดตาม ทักได้ทุกวัน ตลอด 24 ชั่วโมงค่ะ",
+    zh: "可以直接在 OKami24 网上购买。先在本站看好型号、价格、颜色和口味，再通过 LINE @okm24 告诉我们想要哪一款，管理员会确认库存并在聊天中报上总价。我们配送泰国全境，每笔订单都附快递单号。LINE 每天 24 小时都可以联系。",
+  },
+};
+
 export const siteFaqs: SiteFAQ[] = [
   {
     id: "what-is-this-site",
@@ -48,7 +62,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "Where can I buy a pod online and have it delivered?",
     answer:
-      "Right here at OKami24. Browse the models, prices, colours and flavours on this site first, then message us on LINE @okm24 with the one you want — the admin checks stock and confirms the total in the chat. We deliver anywhere in Thailand, and every order comes with a tracking number. LINE is open every day, 24 hours.",
+      "Right here at OKami24. Pick the model, colour or flavour you want on this site, add it to the cart and place the order straight away — no need to message us first. We deliver anywhere in Thailand, and every order comes with a tracking number. If you’d like help choosing, message us on LINE @okm24 — any day, 24 hours.",
     action: { href: "/how-to-order", labelKey: "howToOrder" },
   },
   {
