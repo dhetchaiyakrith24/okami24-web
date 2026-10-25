@@ -354,7 +354,7 @@ export function CatalogBrowser({
               aria-pressed={inStockOnly}
               onClick={() => setInStockOnly((v) => !v)}
               className={cn(
-                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:px-3 lg:min-h-9",
+                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:mr-auto max-lg:px-3 lg:min-h-9",
                 inStockOnly ? "border-ember bg-ember/15 text-foreground" : "border-surface-border bg-surface-1 text-foreground hover:border-foreground-dim hover:bg-surface-2",
               )}
             >
