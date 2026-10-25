@@ -5,6 +5,7 @@ import { listOrdersForMember } from "@/lib/commerce/orders";
 import { lineImage } from "@/lib/commerce/line-image";
 import { AccountView, type AccountOrder } from "@/components/account/AccountView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { memberSerif } from "@/components/account/member-font";
 
 export const metadata: Metadata = {
   title: "บัญชีสมาชิก",
@@ -25,5 +26,9 @@ export default async function AccountPage() {
     itemCount: o.itemCount,
     image: o.firstItem ? lineImage(o.firstItem.productSlug, o.firstItem.variantId) : null,
   }));
-  return <AccountView displayName={member.displayName} provider={member.provider} orders={orders} />;
+  return (
+    <div className={memberSerif.variable}>
+      <AccountView displayName={member.displayName} provider={member.provider} orders={orders} />
+    </div>
+  );
 }

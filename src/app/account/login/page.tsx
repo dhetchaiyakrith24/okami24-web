@@ -5,6 +5,7 @@ import { enabledMemberProviders } from "@/lib/members/providers";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { AccountLoginView } from "@/components/account/AccountLoginView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { memberSerif } from "@/components/account/member-font";
 
 export const metadata: Metadata = {
   title: "เข้าสู่ระบบสมาชิก",
@@ -18,11 +19,13 @@ export default async function AccountLoginPage({ searchParams }: { searchParams:
   if (await getMember()) redirect("/account");
   const { error, next } = await searchParams;
   return (
-    <AccountLoginView
-      providers={enabledMemberProviders()}
-      showError={error !== undefined}
-      orderingEnabled={ORDERING_ENABLED}
-      next={next ?? null}
-    />
+    <div className={memberSerif.variable}>
+      <AccountLoginView
+        providers={enabledMemberProviders()}
+        showError={error !== undefined}
+        orderingEnabled={ORDERING_ENABLED}
+        next={next ?? null}
+      />
+    </div>
   );
 }
