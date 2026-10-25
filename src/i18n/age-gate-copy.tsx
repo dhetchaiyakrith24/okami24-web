@@ -8,7 +8,8 @@ import { B, type ServiceCopy } from "./service-pages/shared";
  *
  * Two conditions shape this file:
  *
- * 1. **The Thai is the master text and must not change by one character** (THAI_STYLE §5 group ก,
+ * 1. **The Thai is the master text and must not change by one character** without the owner (THAI_STYLE §5 group ก — owner 26/10 allowed
+ *    the ordering clause of `body` to say "order on the site"; `bodyWhileOrderingOff` keeps the previous text) (group ก,
  *    untouchable since round 30.1). The strings below are the literals that used to sit inside
  *    AgeGate.tsx, moved here byte for byte — the proof at the batch close is a diff of the
  *    dialog's rendered HTML in Thai, before against after, which must be empty.
@@ -61,7 +62,7 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
   th: {
     eyebrow: "ประกาศเรื่องอายุ",
     title: "คุณอายุ 21 ปีขึ้นไปหรือไม่?",
-    body: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้าและราคาได้ทั้งเว็บ และสั่งซื้อบนเว็บได้เลย ถ้ามีคำถาม ทักไลน์ OA ของ OKami24 ได้เลยค่ะ</>,
+    body: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้า ราคา และสั่งซื้อได้ทั้งเว็บ ถ้ามีคำถาม ทักไลน์ OA ของ OKami24 ได้เลยค่ะ</>,
     bodyWhileOrderingOff: <>เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <B>21 ปีบริบูรณ์ขึ้นไปเท่านั้น</B> ดูสินค้าและราคาได้ทั้งเว็บ ส่วนการสั่งซื้อหรือสอบถาม ทักไลน์ OA ของ OKami24 ได้เลย</>,
     nicotine: "นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ",
     confirm: "ใช่ ฉันอายุ 21 ปีขึ้นไป",
@@ -81,7 +82,7 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
   zh: {
     eyebrow: "年龄提示",
     title: "您已年满21岁了吗？",
-    body: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。全站均可浏览商品与价格并直接下单；如有疑问，请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
+    body: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。全站均可浏览产品与价格并直接下单；如有疑问，请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
     bodyWhileOrderingOff: <>本网站展示电子烟设备与烟油，<B>仅限年满21岁及以上人士</B>。产品与价格全站均可浏览；下单与咨询请加 OKami24 的 <span className="whitespace-nowrap">LINE OA</span>。</>,
     nicotine: "尼古丁为成瘾性物质。本网站不对电子烟做出任何健康、安全或戒烟方面的声明。",
     confirm: "是，我已年满21岁",
