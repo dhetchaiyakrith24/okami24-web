@@ -54,11 +54,11 @@ export const WAREHOUSE_OUT_OF_STOCK: ReadonlySet<string> = new Set([
   "Pod-170-2", "Pod-170-13", "Pod-170-14", "Pod-170-19", "Pod-171-1", "Pod-171-2", "Pod-171-3", "Pod-171-4",
   "Pod-171-5", "Pod-171-6", "Pod-171-7", "Pod-171-8", "Pod-171-9", "Pod-171-11", "Pod-171-12", "Pod-171-13",
   "Pod-171-15", "Pod-171-16", "Pod-171-17", "Pod-171-18", "Pod-171-22", "Pod-171-23", "Pod-171-24", "Pod-171-25",
-  "Pod-171-29", "Pod-171-30", "Pod-171-31", "Pod-171-32", "Pod-172-1", "Pod-172-2", "Pod-172-3", "Pod-172-4",
-  "Pod-172-5", "Pod-172-6", "Pod-172-7", "Pod-172-8", "Pod-172-9", "Pod-172-10", "Pod-173-3", "Pod-173-4",
-  "Pod-173-5", "Pod-173-6", "Pod-176", "Pod-176-1", "Pod-176-2", "Pod-176-3", "Pod-176-4", "Pod-177",
-  "Pod-177-1", "Pod-177-2", "Pod-177-3", "Pod-177-4", "Pod-177-5", "Pod-178-1", "Pod-178-2", "Pod-178-4",
-  "Pod-178-5", "Pod-178-6", "Pod-178-7", "Pod-179-1", "Pod-179-2", "Pod-179-3", "Pod-179-5",
+  "Pod-171-29", "Pod-171-30", "Pod-171-31", "Pod-171-32", "Pod-171-33", "Pod-172-1", "Pod-172-2", "Pod-172-3",
+  "Pod-172-4", "Pod-172-5", "Pod-172-6", "Pod-172-7", "Pod-172-8", "Pod-172-9", "Pod-172-10", "Pod-173-3",
+  "Pod-173-4", "Pod-173-5", "Pod-173-6", "Pod-176", "Pod-176-1", "Pod-176-2", "Pod-176-3", "Pod-176-4",
+  "Pod-177", "Pod-177-1", "Pod-177-2", "Pod-177-3", "Pod-177-4", "Pod-177-5", "Pod-178-1", "Pod-178-2",
+  "Pod-178-4", "Pod-178-5", "Pod-178-6", "Pod-178-7", "Pod-179-1", "Pod-179-2", "Pod-179-3", "Pod-179-5",
 ]);
 /** Every code in the read, in stock or not — sku-map-contract-test.ts checks each mapped code is still listed. */
 export const WAREHOUSE_ALL_CODES: ReadonlySet<string> = new Set([
