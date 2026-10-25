@@ -322,7 +322,9 @@ export function CatalogBrowser({
       )}
 
       <div className="flex flex-col gap-6">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4">
+        {/* Phones (queue note 24/10: the sort select dropped to a second row): the two buttons and the select share one row,
+            the count sits on its own line under it. */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4 max-lg:gap-2">
           {/* Phone/tablet only (M4): the one button that replaces the sidebar. */}
           {!isEmptyCategory && (
           <button
@@ -330,7 +332,7 @@ export function CatalogBrowser({
             onClick={openSheet}
             aria-haspopup="dialog"
             aria-expanded={sheetOpen}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-surface-border bg-surface-1 px-4 text-sm font-semibold tracking-tight text-foreground transition-colors hover:border-foreground-dim hover:bg-surface-2 lg:hidden"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-surface-border bg-surface-1 px-3 text-sm font-semibold tracking-tight text-foreground transition-colors hover:border-foreground-dim hover:bg-surface-2 lg:hidden"
           >
             <SlidersHorizontal size={16} aria-hidden />
             {dict.catalog.filtersButton}
@@ -352,7 +354,7 @@ export function CatalogBrowser({
               aria-pressed={inStockOnly}
               onClick={() => setInStockOnly((v) => !v)}
               className={cn(
-                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors lg:min-h-9",
+                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:px-3 lg:min-h-9",
                 inStockOnly ? "border-ember bg-ember/15 text-foreground" : "border-surface-border bg-surface-1 text-foreground hover:border-foreground-dim hover:bg-surface-2",
               )}
             >
@@ -360,12 +362,12 @@ export function CatalogBrowser({
               {dict.catalog.inStockOnly}
             </button>
           )}
-          <p className="label-mono text-xs text-foreground-dim max-lg:ml-auto">
+          <p className="label-mono text-xs text-foreground-dim max-lg:order-last max-lg:w-full">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
           {/* Sorting nothing is as dead a control as filtering nothing (owner, 2026-09-22). */}
           {!isEmptyCategory && (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-lg:ml-auto">
             {/* On phones the word "sort by" is read out but not drawn: the button, the count and
                 the select only fit on one bar (the owner asked for one bar) without it, and the
                 select shows the chosen order in full. Unchanged from `lg` up. */}
@@ -376,7 +378,7 @@ export function CatalogBrowser({
               id="catalog-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortMode)}
-              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11"
+              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11 max-lg:max-w-[7rem]"
             >
               <option value="featured">{dict.catalog.sortFeatured}</option>
               <option value="alphabetical">{dict.catalog.sortAlphabetical}</option>
