@@ -111,10 +111,12 @@ function Greeting({ template, name }: { template: string; name: string }) {
   const [before, after = ""] = template.split("{name}");
   const cut = before.lastIndexOf(" ") + 1;
   const [first, ...rest] = name.split(" ");
+  // A long first word (a 15+ letter LINE / Google name with no space) must still be allowed to wrap, or it runs off a phone.
+  const glue = first.length <= 12;
   return (
     <>
       {before.slice(0, cut)}
-      <span className="whitespace-nowrap">
+      <span className={glue ? "whitespace-nowrap" : "[overflow-wrap:anywhere]"}>
         {before.slice(cut)}
         {first}
       </span>

@@ -26,6 +26,8 @@ export interface Dictionary {
     trackOrder: string;
     /** Member sign-in (queue Q4, owner 26/10) — the header person icon + drawer link to /account. */
     account: string;
+    /** Owner 26/10: the word on the header pill while signed out ("เข้าสู่ระบบ"); signed in it reads `account`. */
+    login: string;
     openMenu: string;
     closeMenu: string;
     /** Customer-service pages added 2026-09-06 (LAUNCH_AUDIT 3/4): /how-to-order, /shipping,
