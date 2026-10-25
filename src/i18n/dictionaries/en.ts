@@ -508,8 +508,8 @@ export const en: Dictionary = {
   account: {
     eyebrow: "OKAMI24 MEMBERS",
     loginTitle: "Welcome home",
-    loginLine1: "Sign in with an account you already have. No password needed.",
-    loginLine2: "First time? We'll set up your account right away. After that, the same button brings you straight back.",
+    loginLine1: "Sign in with LINE or Google — no password needed.",
+    loginLine2: "First time? Your account is set up instantly.",
     continueLine: "Continue with LINE",
     continueGoogle: "Continue with Google",
     loginError: "Sign-in didn't go through. Please try again.",

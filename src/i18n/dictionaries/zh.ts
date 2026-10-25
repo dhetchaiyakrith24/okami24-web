@@ -501,7 +501,7 @@ export const zh: Dictionary = {
     eyebrow: "OKAMI24 MEMBERS",
     loginTitle: "欢迎来到\nOKami24 之家",
     loginLine1: "使用您已有的账户登录，无需设置密码。",
-    loginLine2: "首次登录将即时为您建立账户，之后只需点同一个按钮，即可直接回来。",
+    loginLine2: "首次登录即时建立账户，之后点同一个按钮即可回来。",
     continueLine: "使用 LINE 继续",
     continueGoogle: "使用 Google 继续",
     loginError: "登录未成功，请再试一次。",

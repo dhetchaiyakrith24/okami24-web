@@ -100,7 +100,8 @@
     animation: rule-grow 600ms ease-out 1100ms both;
   }
   .fadeIn {
-    animation: fade-in 600ms ease-out 900ms both;
+    /* The buttons must not wait behind the curtain — they arrive with the heading (checker #856 c). */
+    animation: fade-in 500ms ease-out 350ms both;
   }
 
   @media (max-width: 1023px) {

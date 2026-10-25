@@ -103,6 +103,27 @@ function LatestOrderCard({ order }: { order: AccountOrder }) {
   );
 }
 
+/**
+ * "ยินดีต้อนรับ คุณ{name}" — the word glued to the name ("คุณ") and the name's first word never part across lines (checker
+ * #856: at 390 "คุณ" sat alone at the end of line one). The rest of a long name may still wrap.
+ */
+function Greeting({ template, name }: { template: string; name: string }) {
+  const [before, after = ""] = template.split("{name}");
+  const cut = before.lastIndexOf(" ") + 1;
+  const [first, ...rest] = name.split(" ");
+  return (
+    <>
+      {before.slice(0, cut)}
+      <span className="whitespace-nowrap">
+        {before.slice(cut)}
+        {first}
+      </span>
+      {rest.length > 0 ? ` ${rest.join(" ")}` : ""}
+      {after}
+    </>
+  );
+}
+
 function RowLink({ href, title, sub, external }: { href: string; title: string; sub?: string; external?: boolean }) {
   const body: ReactNode = (
     <>
@@ -145,7 +166,7 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
           {t.eyebrow}
         </span>
         <h1 className="mt-3 font-[family-name:var(--font-member-serif)] text-[36px] font-light leading-[1.15] text-foreground lg:text-[48px]">
-          {displayName ? t.greeting.replace("{name}", displayName) : t.greetingNoName}
+          {displayName ? <Greeting template={t.greeting} name={displayName} /> : t.greetingNoName}
         </h1>
         <p className="mt-2 text-[13px] text-foreground-muted">{t.signedInWith.replace("{provider}", providerName)}</p>
 

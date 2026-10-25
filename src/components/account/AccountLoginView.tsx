@@ -71,7 +71,7 @@ export function AccountLoginView({
           <div className={`${s.rule} mt-6`} />
 
           <div className={s.fadeIn}>
-            <p className="mt-6 text-[15px] leading-[1.85] text-foreground-muted">
+            <p className="mt-6 text-[15px] leading-[1.85] text-foreground-muted [text-wrap:pretty]">
               {t.loginLine1}
               <br />
               {t.loginLine2}
