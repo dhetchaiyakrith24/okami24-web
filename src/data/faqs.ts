@@ -25,7 +25,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "How do I actually order from OKami24?",
     answer:
-      "Add what you want to the cart, verify your phone number with the OTP code, enter your delivery address, and confirm the order. Then pay by bank transfer or QR scan — once an admin has checked the payment, the order is approved and shipped with a tracking number. Shipping is 50 baht, free on orders from 500 baht up. If a product isn't buyable on the site yet, or you'd like help picking a model, message us on LINE @okm24.",
+      "Add what you want to the cart, enter your mobile number and delivery address, and confirm the order. Then pay by bank transfer or QR scan and attach the slip on your order page — once an admin has checked the payment, the order is approved and shipped with a tracking number. Shipping is 50 baht, free on orders from 500 baht up. If a product isn't buyable on the site yet, or you'd like help picking a model, message us on LINE @okm24.",
     // Owner decision (2026-09-06): the site has a real cart now, so the ordering FAQ sends people
     // to the catalog instead of LINE. LINE stays the fallback inside the answer text itself.
     action: { href: "/products", labelKey: "browseProductsCta" },
@@ -56,7 +56,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "How long does delivery take?",
     answer:
-      "Transfer and send us the slip on LINE before 15:00 and we ship the same day; after 15:00 it goes out the next working day. We ship Monday to Saturday, not on Sundays or public holidays. Once it’s out, it arrives within 1–3 days, and the admin sends you the tracking number on LINE.",
+      "Transfer and send your slip before 15:00 and we ship the same day; after 15:00 it goes out the next working day. We ship Monday to Saturday, not on Sundays or public holidays. Once it’s out, it arrives within 1–3 days, with a tracking number you can follow.",
     action: { href: "/shipping", labelKey: "shipping" },
   },
   {
