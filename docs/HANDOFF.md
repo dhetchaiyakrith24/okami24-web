@@ -40,34 +40,32 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "order on LINE" (owner 24/10: stays) · checker notes not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide
   300/10 min cap) · empty idempotencyKey not refused (old).
   OWNER WORK QUEUE — the ONE ordered list (owner 24/10 night: "จดด้วยนะ อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย") · tick here when done:
-    DONE (what each did = the PR): Q1 #817 · Q2 #819 · Q3 #817 · Q2b #821 · Q5 #824 · Q5b #826 · 26/10 #842 = Q5c + staff order page
-       tidied to 4 cards with ONE customer-message box (owner 26/10) + unpicked pages read sold out when every option is out (pod-159).
+    DONE (what each did = the PR): Q1 #817 · Q2 #819 · Q3 #817 · Q2b #821 · Q5 #824 · Q5b #826 · 26/10: #842 = Q5c + staff order page
+       4 cards / ONE customer-message box (owner) + unpicked pages read sold out when every option is out · #845 = header menu Esc/tap,
+       phone grid bar two planned rows, option counter skips the cover, "แตะรูปเพื่อเลือก" prompt · #846 = Q7 ค่ะ/นะคะ + LINE pointer +
+       facts (no OTP, slip on the order page, tracking number not only via LINE) th/en/zh.
     Disposable-45 = SUP Zero 22K — owner declined 22/10 ("2 ไม่ลง"); marked so in `_incoming/stock-api/new-products.md`, not listed.
-    #817 checker notes left: desktop "สินค้า" link — Esc does not close the category menu, menu stays open after a click inside,
-       touch laptops ≥1024 tap = /products (no category menu) · 2 lines tell the customer to SEND a slip to LINE (kept as instructions,
-       not the "ติดต่อสอบถาม…" pointer) · /how-to-order still says "ตรวจรายการและยอดให้ครบก่อนโอน" (owner named only the orange line).
-    Q5 left (taste, for the owner): counter counts the cover slide · unpicked flavour header has no "เลือก…" prompt ·
-       relx-smash-go-12k: 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
-    Small, for the next touch: phone grid bar: the sort select drops to a second row.
-    Q4 [NEXT — 25/10, owner set] login page + member promo (รอพี่ตรวจ 75) + customer DASHBOARD (track orders · YouTube reviews · articles ·
-       all products · contact/help) as ONE job — drafts to the owner first (new look)
-       + owner 24/10 late night: sign-up/login the modern way — "Continue with Google · LINE · Facebook" buttons (LINE first for
-       Thai buyers). Needs developer apps on Google / LINE / Meta + secrets in Render env = owner signs up (13.3 #2, #9 login system).
+    Q5 taste left: relx-smash-go-12k 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
+    Q4 [PAUSED — owner 26/10 "ยังไม่สะดวก"] login + member page. Owner picked: LINE + Google first (no Facebook) · NO member perks yet and
+       none on the sign-up page · staff keep the password. Drafts v2 (premium, owner asked "พรีเมียม เรียบหรู") = `_incoming/q4-drafts/`
+       v2-*-390/1440.png (gen2.js) — owner has not said OK yet. Needs the owner to sign up LINE Login + Google OAuth (Friday guides).
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
        reference = owner's 10.10 broadcast poster; drafts first
-    Q7 ค่ะ/นะคะ + LINE pointer sweep over the REST of the site (service pages, FAQ; not product descriptions or articles)
+    Q7b [NEXT] left from #846 (thai-copy table 26/10 in the PR body): lines still saying "order on LINE only" while the cart is ON need
+       OKAMI24_ORDERING switch binding (THAI_STYLE line 111) — FAQ where-to-buy · how-to-order stuck2 · contact order card · about contact ·
+       privacy s1 "รหัส OTP เก็บแบบเข้ารหัส" (OTP is off; th/en/zh) · ASK the owner first (group ก / approved voice): age-gate body ("order on
+       LINE") · footer.ageNotice "สั่งซื้อและสอบถามทาง LINE" · hero.description "ถามหรือสั่งทางไลน์" · /warranty ค่ะ (10 spots, drafted) ·
+       pre-existing: /products en/zh show the Thai name "หัวพอต RELX Creator Pod 20K" (unpublished seed row 147e469d).
     Q8 D upsell row in the cart (owner "A+B ครึ่ง ๆ": half same brand/category in stock + half shop best-sellers · designer + tier B shots ·
        can reuse `lineImage()` / LineThumb for its cards)
     Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
        SEO line 2 queue (3s) · GSC read 01/11 · speed (item 5) · #807 notes a/d · rehearsal (รอพี่ตรวจ 59) · stock without a rebuild
        (proposal ①: every stock PR = a deploy = 30–60 s of 502).
-  #807 checker notes, not fixed (fold into the NEXT round): (a) an admin message saying "ด้านล่าง" stays after the customer chose — hide
-  messages older than chosen_at or tell staff not to point "below" · (b) nextShipped says "กดปุ่มด้านล่าง" but an order shipped without a
-  carrier has no button · (c) the LINE alert formatStockChoiceAlert still says "รับเงินคืนเข้าพร้อมเพย์" for a bank refund · (d) stale
-  comments (migration 0013, cleanPromptPayPhone "no bank account") · cleanBankText keeps invisible characters · unused ERROR_TEXT "note"
-  · (f) stockChosenRefundBank still says "แอดมิน". BSOT §9 line changed by #804 quotes the owner's chat 24/10 (other chat) — confirm with the owner.
+  #807 checker notes left (b, c, f were fixed; checked 26/10): (a) an admin message saying "ด้านล่าง" stays after the customer
+  chose · (d) stale comments (migration 0013, cleanPromptPayPhone) · cleanBankText keeps invisible characters. BSOT §9 line changed by
+  #804 quotes the owner's chat 24/10 (other chat) — confirm with the owner.
   Known, not fixed: after a partial refund the order cannot get a second out-of-stock issue (one row per order) · history keeps the refund ref,
   not the amount · no DB-level tests · designer note: mark the out rows in the order page's item list · cart UX C (#795): Back from review
   returns to review · a typed note is lost if placing fails · the add form needs JS, a double tap while pending adds twice (#792) · B count comes
