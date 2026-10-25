@@ -63,6 +63,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     N6 Q8 cart upsell row + small fixes (home `/` en/zh show 20 Thai category labels via HomeProductIndex · /about "ไม่ใช่ | บอท" ·
        #807 note a) + checker security notes (phone rate limit trusts X-Forwarded-For · empty idempotencyKey not refused) — owner: go.
     Q6 logo round = TOMORROW 27/10 (owner).
+    Q9 [owner idea 26/10, PLAN TOGETHER FIRST — "ตรงนี้จดไว้นะเดี๋ยวมาวางแพลนกัน"] a staff view that shows (1) how many people are on
+       the site right now, (2) how many members signed up, (3) a customer profile with what they ordered before. Not started —
+       open questions for the plan: live-visitor counting without Analytics/cookies (owner 07/10: no Analytics yet) · member list
+       = members table (#854) · profile = member orders (orders.member_id) vs phone orders · lives on /staff · PDPA (BSOT §11).
     Q4 [owner picks 26/10] login + member page: LINE + Google first (no Facebook) · NO member perks yet and
        none on the sign-up page · staff keep the password. Drafts v2 (premium, owner asked "พรีเมียม เรียบหรู") = `_incoming/q4-drafts/`
        v2-*-390/1440.png (gen2.js) — built and live (N1).
