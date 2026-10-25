@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 night = f18f4a4f (#852 docs) · #851 age gate/footer/home follow the cart switch ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = c39590aa (#854 member sign-in LINE + Google, Q4) · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
   Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 200 + "เพิ่มลงตะกร้า" on product pages, / /products /staff /orders 200 [ตรวจแล้ว].
@@ -47,8 +47,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     Disposable-45 = SUP Zero 22K — owner declined 22/10 ("2 ไม่ลง"); marked so in `_incoming/stock-api/new-products.md`, not listed.
     Q5 taste left: relx-smash-go-12k 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
     OWNER ANSWERS 26/10 night (do them in this order — the chat moved at 784k before starting any):
-    N1 Q4 NOW — owner: "มาเลยครับ พร้อม" = ready to sign up LINE Login + Google OAuth (Friday guides step by step in the owner's
-       Chrome; the owner types his own passwords; secrets into Render env per 13.3 #2/#9). Drafts v2 = go ahead and build.
+    N1 Q4 LIVE 26/10 (#854, deploy success, checker PASS 4eb84e2a): /account/login + /account, LINE channel 2012198931 (provider
+       OKM24) + Google client "OKami24 website sign-in" (project okami24-gsc; support + contact email okamisalt; test users okamisalt +
+       the owner), Render env 4 values set by the owner (DEPLOY-RENDER §10). STILL IN TEST MODE: LINE channel "Developing" + Google
+       Audience "Testing" → only the owner signs in. NEXT: owner tests both on the live site → Friday publishes both (LINE Published ·
+       Google Publish app) → delete the unused Google client secret ending BBDQ (keep U8sj). Owner 26/10 also asked for a stronger
+       login visual + motion + a "หรู พรีเมียม เหมือนได้เข้าบ้าน" welcome → designer + thai-copy proposals running; tier-B follow-up PR.
+       Header icon hidden 1024–1399 (nav wrap) — footer link covers it; owner may want it in the bar (taste, reported).
     N2 pods = INTERNATIONAL version (owner "แบบสากลครับ"): Caliburn + VOOPOO pod/tank pages state one size (3 mL / 5 mL tank) and drop
        "(2 mL in the TPD version)" — answers รอพี่ตรวจ 58 (remove it there) · record the ruling in §18.
     N3 house-clean 25/10 list = A: Friday deletes per `_incoming/house-20261025/report.md` "รายการลบ" — remove รอพี่ตรวจ 70.
@@ -60,7 +65,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     Q6 logo round = TOMORROW 27/10 (owner).
     Q4 [owner picks 26/10] login + member page: LINE + Google first (no Facebook) · NO member perks yet and
        none on the sign-up page · staff keep the password. Drafts v2 (premium, owner asked "พรีเมียม เรียบหรู") = `_incoming/q4-drafts/`
-       v2-*-390/1440.png (gen2.js) — owner has not said OK yet. Needs the owner to sign up LINE Login + Google OAuth (Friday guides).
+       v2-*-390/1440.png (gen2.js) — built and live (N1).
     Q6 brand round: new logo (owner's file 24/10 = kabuto in red ring + "OKAMI"; Friday: change everywhere on one day + broadcast
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
