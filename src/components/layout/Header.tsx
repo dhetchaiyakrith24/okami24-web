@@ -38,6 +38,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
     { label: dict.nav.about, href: "/about" },
   ];
 
+  // Escape closes the products menu however it was opened (hover gives it no focus — checker #845).
+  useEffect(() => {
+    if (!productsOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setProductsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [productsOpen]);
+
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -67,9 +77,6 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             onMouseLeave={() => setProductsOpen(false)}
             onBlur={(e) => {
               if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setProductsOpen(false);
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Escape") setProductsOpen(false);
             }}
           >
             {/* Q2 (owner 24/10 night: "กดทีเดียวเห็นสินค้าทั้งหมด"): a click goes straight to every product; the categories still

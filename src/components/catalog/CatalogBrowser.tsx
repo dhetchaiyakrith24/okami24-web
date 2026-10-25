@@ -322,8 +322,8 @@ export function CatalogBrowser({
       )}
 
       <div className="flex flex-col gap-6">
-        {/* Phones (queue note 24/10: the sort select dropped to a second row): the two buttons and the select share one row,
-            the count sits on its own line under it. */}
+        {/* Phones (queue note 24/10: the sort select dropped alone to a second row): two planned rows instead — the two
+            buttons on top, the count and the sort under them (a zero-height break forces the row at 360 and 390 alike). */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4 max-lg:gap-2">
           {/* Phone/tablet only (M4): the one button that replaces the sidebar. */}
           {!isEmptyCategory && (
@@ -362,12 +362,13 @@ export function CatalogBrowser({
               {dict.catalog.inStockOnly}
             </button>
           )}
-          <p className="label-mono text-xs text-foreground-dim max-lg:order-last max-lg:w-full">
+          <span aria-hidden className="hidden max-lg:order-2 max-lg:block max-lg:h-0 max-lg:basis-full" />
+          <p className="label-mono text-xs text-foreground-dim max-lg:order-3">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
           {/* Sorting nothing is as dead a control as filtering nothing (owner, 2026-09-22). */}
           {!isEmptyCategory && (
-          <div className="flex items-center gap-2 max-lg:ml-auto">
+          <div className="flex items-center gap-2 max-lg:order-4 max-lg:ml-auto">
             {/* On phones the word "sort by" is read out but not drawn: the button, the count and
                 the select only fit on one bar (the owner asked for one bar) without it, and the
                 select shows the chosen order in full. Unchanged from `lg` up. */}
@@ -378,7 +379,7 @@ export function CatalogBrowser({
               id="catalog-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortMode)}
-              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11 max-lg:max-w-[7rem]"
+              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11"
             >
               <option value="featured">{dict.catalog.sortFeatured}</option>
               <option value="alphabetical">{dict.catalog.sortAlphabetical}</option>
