@@ -321,6 +321,8 @@ the web work may point to the owner personally — every contact / support / dev
 service set up for it (Google Cloud consent screen, LINE channels, Render, …) = **okamisalt@gmail.com**. The bank account
 holder name on the order page (BSOT §9) is the receiving account itself, not a contact pointer — raised with the owner 26/10.
 
+**Pods = INTERNATIONAL version (owner 26/10 "แบบสากลครับ", answers รอพี่ตรวจ 58):** Caliburn (UWELL) + VOOPOO pages state the international version only — pod/tank capacity (3 mL / 3.5 mL / 4.5 mL / 5 mL), dimensions, weight and in-box pods; no "(2 mL in the TPD version)", no INT/FDA/TPD/CRC splits. The maker compatibility lists ("also fits … CRC versions") stay as the maker wrote them.
+
 **Shop and ordering:** the cart is OFF since 24/10 ~16:00 until the owner's 5-item list is done (§16 item 3; LINE @okm24 = the channel meanwhile, BSOT §8) · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock-PR deploys (~30–60 s of 502) are fine, no need for stock without a rebuild (owner 24/10 "ไม่ต้องซีเรียสครับ ของจริงมันไม่ถึง") · checkout = phone only, no OTP
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
 without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
