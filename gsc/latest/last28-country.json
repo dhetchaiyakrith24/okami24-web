@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-25",
-  "endDate": "2026-10-22",
+  "startDate": "2026-09-26",
+  "endDate": "2026-10-23",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 630,
-   "impressions": 4265,
-   "ctr": 0.1477139507620164,
-   "position": 9.609847596717469
+   "clicks": 648,
+   "impressions": 4521,
+   "ctr": 0.14333112143331123,
+   "position": 9.915726609157266
   },
   {
    "keys": [
@@ -117,15 +117,6 @@
   },
   {
    "keys": [
-    "ind"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 8
-  },
-  {
-   "keys": [
     "irn"
    ],
    "clicks": 0,
@@ -156,18 +147,18 @@
     "jpn"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 7,
    "ctr": 0,
-   "position": 36.4
+   "position": 28.714285714285715
   },
   {
    "keys": [
     "khm"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 3
+   "position": 14
   },
   {
    "keys": [
@@ -192,9 +183,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 19,
+   "impressions": 21,
    "ctr": 0,
-   "position": 6.052631578947368
+   "position": 5.9523809523809526
   },
   {
    "keys": [
@@ -282,9 +273,9 @@
     "usa"
    ],
    "clicks": 0,
-   "impressions": 12,
+   "impressions": 10,
    "ctr": 0,
-   "position": 53.666666666666664
+   "position": 47.3
   },
   {
    "keys": [
@@ -294,6 +285,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 1
+  },
+  {
+   "keys": [
+    "vnm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
   },
   {
    "keys": [
