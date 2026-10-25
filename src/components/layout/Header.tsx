@@ -171,11 +171,13 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             <span className="hidden text-sm xl:inline">{dict.nav.trackOrder}</span>
           </Link>
           {/* Member sign-in (queue Q4, owner 26/10): a person icon to /account (the page sends a visitor who is not signed in to
-              the login page). From sm up — on phones the drawer lists it, so the 390 bar keeps its four icons. */}
+              the login page). From sm up — on phones the drawer lists it, so the 390 bar keeps its four icons. Hidden again
+              from lg to 1399: one more icon wrapped the whole nav onto two lines at 1280 (measured 26/10); the footer help
+              column links /account at every width. */}
           <Link
             href="/account"
             aria-label={dict.nav.account}
-            className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex"
+            className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex lg:hidden min-[1400px]:inline-flex"
           >
             <UserRound size={19} aria-hidden />
           </Link>
