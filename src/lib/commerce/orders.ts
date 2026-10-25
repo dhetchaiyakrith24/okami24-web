@@ -9,6 +9,7 @@ import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
 import type { OrderStatus } from "./order-status";
 import { toCarrierId, type CarrierId } from "./carriers";
+import { getMember } from "@/lib/members/session";
 
 export interface OrderSummary {
   id: number;
@@ -56,6 +57,7 @@ interface OrderRow {
   order_number: string;
   view_token: string;
   customer_id: number;
+  member_id?: number | null;
   status: string;
   subtotal: number;
   shipping_fee: number;
@@ -108,6 +110,8 @@ export type PlaceOrderResult =
  */
 export async function placeOrder(addressId: number, idempotencyKey: string, customerNote: string | null = null): Promise<PlaceOrderResult> {
   const customer = await requireCustomer();
+  // Signed in as a member (queue Q4) = the order also belongs to that member and shows on /account. Guests: null, as before.
+  const member = await getMember();
   const db = getDb();
 
   const existingKey = db.prepare("SELECT order_id FROM idempotency_keys WHERE key = ?").get(idempotencyKey) as
@@ -152,10 +156,10 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       const viewToken = crypto.randomBytes(16).toString("hex");
       const insertOrder = db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, status, subtotal, shipping_fee, total, payment_method, customer_note)
-           VALUES (?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer', ?)`
+          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, total, payment_method, customer_note)
+           VALUES (?, ?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer', ?)`
         )
-        .run(orderNumber, viewToken, customer.id, totals.subtotal, totals.shippingFee, totals.total, cleanCustomerNote(customerNote));
+        .run(orderNumber, viewToken, customer.id, member?.id ?? null, totals.subtotal, totals.shippingFee, totals.total, cleanCustomerNote(customerNote));
       const newOrderId = Number(insertOrder.lastInsertRowid);
 
       const insertItem = db.prepare(
@@ -293,7 +297,10 @@ export async function getOrderDetailForViewer(orderNumber: string, viewToken: st
   if (!row) return null;
 
   const session = await getSession();
-  const isOwner = session !== null && session.id === row.customer_id;
+  // Owner = the phone session the order was placed under, or the member it was placed under (queue Q4, /account links here).
+  const member = await getMember();
+  const isOwner =
+    (session !== null && session.id === row.customer_id) || (member !== null && row.member_id != null && member.id === row.member_id);
   const hasValidToken = viewToken !== null && viewToken.length > 0 && viewToken === row.view_token;
   if (!isOwner && !hasValidToken) return null;
 
@@ -318,4 +325,25 @@ export async function listOrdersForCustomer(): Promise<OrderSummary[]> {
     .prepare("SELECT * FROM orders WHERE customer_id = ? ORDER BY id DESC")
     .all(customer.id) as OrderRow[];
   return rows.map(toSummary);
+}
+
+export interface MemberOrderSummary extends OrderSummary {
+  itemCount: number;
+  /** The first line's product + option — the member page shows its photo beside the latest order. */
+  firstItem: { productSlug: string; variantId: string | null } | null;
+}
+
+/** Orders placed while signed in as this member (queue Q4), newest first. Never orders matched by phone alone. */
+export function listOrdersForMember(memberId: number): MemberOrderSummary[] {
+  const db = getDb();
+  const rows = db.prepare("SELECT * FROM orders WHERE member_id = ? ORDER BY id DESC").all(memberId) as OrderRow[];
+  const items = db.prepare("SELECT product_slug, variant_id, quantity FROM order_items WHERE order_id = ? ORDER BY id");
+  return rows.map((row) => {
+    const lines = items.all(row.id) as { product_slug: string; variant_id: string | null; quantity: number }[];
+    return {
+      ...toSummary(row),
+      itemCount: lines.reduce((n, l) => n + l.quantity, 0),
+      firstItem: lines[0] ? { productSlug: lines[0].product_slug, variantId: lines[0].variant_id } : null,
+    };
+  });
 }

@@ -24,6 +24,8 @@ export interface Dictionary {
     favorites: string;
     cart: string;
     trackOrder: string;
+    /** Member sign-in (queue Q4, owner 26/10) — the header person icon + drawer link to /account. */
+    account: string;
     openMenu: string;
     closeMenu: string;
     /** Customer-service pages added 2026-09-06 (LAUNCH_AUDIT 3/4): /how-to-order, /shipping,
@@ -605,6 +607,51 @@ export interface Dictionary {
     errorInvalidPhone: string;
     errorNotFound: string;
     errorTooManyTries: string;
+  };
+  /** /account/login + /account (queue Q4, owner 26/10: LINE + Google, no member perks on the page, drafts v2). */
+  account: {
+    eyebrow: string;
+    loginTitle: string;
+    loginLine1: string;
+    loginLine2: string;
+    continueLine: string;
+    continueGoogle: string;
+    loginError: string;
+    loginUnavailable: string;
+    /** What is kept, said before the visitor signs in (BSOT §11 / PDPA); followed by the privacy link. */
+    privacyNote: string;
+    privacyLink: string;
+    guestOrdering: string;
+    guestLookup: string;
+    /** "{name}" = the LINE / Google display name. */
+    greeting: string;
+    greetingNoName: string;
+    /** "{provider}" = LINE / Google. */
+    signedInWith: string;
+    latestOrder: string;
+    /** "{count}" items · "{total}" baht. */
+    orderMeta: string;
+    stepPaid: string;
+    stepConfirmed: string;
+    stepShipped: string;
+    stepReceived: string;
+    viewOrder: string;
+    noOrdersTitle: string;
+    noOrdersBody: string;
+    allOrdersTitle: string;
+    linkOrders: string;
+    linkOrdersSub: string;
+    /** Orders placed before signing in (owner 26/10: old customers have only the phone) → the phone lookup on /orders. */
+    linkPhoneOrders: string;
+    linkPhoneOrdersSub: string;
+    linkYoutube: string;
+    linkYoutubeSub: string;
+    linkGuides: string;
+    linkGuidesSub: string;
+    linkProducts: string;
+    linkProductsSub: string;
+    linkContact: string;
+    signOut: string;
   };
   orderStatus: {
     eyebrow: string;
