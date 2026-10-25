@@ -53,12 +53,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        "โฉมใหม่"; need the original high-res/vector file; ask "OKAMI" vs "OKami24" text) + samurai-woman character in a restrained way
        (red sword-slash on add / confirm / paid · faint brush + red moon in a few backgrounds · the character only in hero spots) —
        reference = owner's 10.10 broadcast poster; drafts first
-    Q7b [DONE #849] cart-on wording follows OKAMI24_ORDERING (FAQ where-to-buy via ORDERING_OFF_ANSWERS, how-to-order stuck2, contact order
-       card, about contact) + privacy phone line without OTP. Left — ASK the owner first (group ก / approved voice): age-gate body ("order on
-       LINE") · footer.ageNotice "สั่งซื้อและสอบถามทาง LINE" · hero.description "ถามหรือสั่งทางไลน์" · /warranty ค่ะ (10 spots drafted in
-       #846 notes) · pre-existing: /products en/zh show the Thai name "หัวพอต RELX Creator Pod 20K" (side chat list-missing handles it).
-    Side chat list-missing (local_b0f66e49, Opus 5.5 medium, owner 26/10): lists every Max product the site lacks (brief
-       `_incoming/next-chat-list.md`); skips owner-declined Disposable-45 + Pod-180; stock from the order-entry read only.
+    Q7b [DONE #849 + #851] every "order on LINE" line follows OKAMI24_ORDERING: FAQ where-to-buy (ORDERING_OFF_ANSWERS), how-to-order,
+       contact, about, and (owner 26/10 "แก้ได้เลย" — group ก text, owner-approved) age-gate body (`bodyWhileOrderingOff`), footer ageNotice
+       (`ageNoticeWhileOrderingOff`), classic home hero line (`descriptionWhileOrderingOff`). Privacy phone line without OTP.
+       Left: /warranty ค่ะ (10 spots drafted in #846 notes — owner-approved voice, ask first) · pre-existing: home `/` en/zh show 20 Thai
+       category labels (HomeProductIndex renders category.labelTh) · /about "…ไม่ใช่ | บอท" word-break flag (old text).
+    Side chat list-missing (local_b0f66e49, done 26/10): every Max product has a live page except the 2 owner-declined codes; #848 fixed
+       the RELX Creator Pod 20K Thai name in en/zh. The hourly stock routine lists any NEW code in `_incoming/stock-api/new-products.md`.
     Q8 D upsell row in the cart (owner "A+B ครึ่ง ๆ": half same brand/category in stock + half shop best-sellers · designer + tier B shots ·
        can reuse `lineImage()` / LineThumb for its cards)
     Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
