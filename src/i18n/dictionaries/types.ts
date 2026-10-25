@@ -611,6 +611,7 @@ export interface Dictionary {
   /** /account/login + /account (queue Q4, owner 26/10: LINE + Google, no member perks on the page, drafts v2). */
   account: {
     eyebrow: string;
+    /** "\n" = where the heading breaks (th: the shop name on its own line). */
     loginTitle: string;
     loginLine1: string;
     loginLine2: string;

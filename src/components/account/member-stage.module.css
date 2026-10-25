@@ -1,0 +1,141 @@
+/*
+ * /account/login — direction A "ลอดม่านเข้าบ้าน" (owner 26/10, drafts `_incoming/q4-drafts/v3/`): two dark curtain halves part
+ * like a noren at a Japanese doorway and a soft red moon rises behind them; at rest the moon "breathes" slowly (the same
+ * kind of key-moment glow as the owner-approved green "shipped" effect, slower). Pure CSS, so it plays from the server HTML
+ * without waiting for hydration. Reduced motion = the final frame, still.
+ */
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0c;
+}
+
+.moon {
+  position: absolute;
+  left: 50%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(141, 0, 0, 0.95) 0%,
+    rgba(141, 0, 0, 0.55) 38%,
+    rgba(141, 0, 0, 0.12) 62%,
+    transparent 72%
+  );
+  filter: blur(2px);
+  opacity: 0.55;
+  transform: translateX(-50%);
+}
+
+/* Fine film grain so the dark field reads as a surface, not a flat graphic block. */
+.grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(180deg, #151517, #0e0e10);
+  opacity: 0;
+}
+.curtainLeft {
+  left: 0;
+  transform: translateX(-52%);
+}
+.curtainRight {
+  right: 0;
+  transform: translateX(52%);
+}
+
+/* The thin gold line where the two halves meet. */
+.seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(200, 178, 138, 0.5), transparent);
+}
+
+.rule {
+  height: 1px;
+  width: 48px;
+  background: #c8b28a;
+}
+
+/* One heading line per dictionary line ("\n"), with or without motion. */
+.line,
+.lineInner {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .curtainLeft {
+    animation: part-left 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+  }
+  .curtainRight {
+    animation: part-right 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+  }
+  .moon {
+    animation:
+      moon-rise 800ms ease-out 600ms both,
+      moon-breathe 6s ease-in-out 1400ms infinite alternate;
+  }
+  /* Each heading line slides up out of its own mask — whole lines only: splitting Thai into letters would tear the vowel
+     and tone marks off their consonants. */
+  .line {
+    overflow: hidden;
+    padding-top: 0.12em;
+  }
+  .lineInner {
+    animation: line-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .rule {
+    animation: rule-grow 600ms ease-out 1100ms both;
+  }
+  .fadeIn {
+    animation: fade-in 600ms ease-out 900ms both;
+  }
+
+  @media (max-width: 1023px) {
+    .curtainLeft,
+    .curtainRight {
+      animation-duration: 600ms;
+    }
+  }
+}
+
+@keyframes part-left {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-52%); opacity: 0; }
+}
+@keyframes part-right {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(52%); opacity: 0; }
+}
+@keyframes moon-rise {
+  from { opacity: 0; transform: translateX(-50%) scale(0.96); }
+  to { opacity: 0.55; transform: translateX(-50%) scale(1); }
+}
+@keyframes moon-breathe {
+  from { opacity: 0.5; }
+  to { opacity: 0.62; }
+}
+@keyframes line-up {
+  from { transform: translateY(0.45em); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes rule-grow {
+  from { width: 0; }
+  to { width: 48px; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

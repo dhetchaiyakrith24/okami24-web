@@ -144,7 +144,7 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
         <span className="font-display text-xs font-semibold tracking-[0.32em]" style={{ color: GOLD }} lang="en">
           {t.eyebrow}
         </span>
-        <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.05] tracking-[0.02em] text-foreground">
+        <h1 className="mt-3 font-[family-name:var(--font-member-serif)] text-[36px] font-light leading-[1.15] text-foreground lg:text-[48px]">
           {displayName ? t.greeting.replace("{name}", displayName) : t.greetingNoName}
         </h1>
         <p className="mt-2 text-[13px] text-foreground-muted">{t.signedInWith.replace("{provider}", providerName)}</p>
