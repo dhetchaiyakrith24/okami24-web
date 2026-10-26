@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 6279c06b (#873 B2 orders) · #869 quick add · #861 Q8 row · #860 N3–N6 · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 474c2455 (#877 B4 refund slip) · #875 B3 staff pages · #873 B2 orders · #869 quick add · #861 Q8 row · #860 N3–N6 · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
   #856 login page direction A · #854 member sign-in LINE + Google · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
@@ -23,7 +23,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   webhook events in that window are lost → group merges.
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
-  Open PRs: #875 B3 staff pages (draft — item 3) · the handoff PR of 26/10 evening.
+  Open PRs: none from the orders line (B3 #875 + B4 #877 merged 26/10).
 2 Main folder: every branch of the 24/10 chats merged (#823 handoff, #829 shipping note). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
@@ -90,30 +90,32 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        /api/line/slip/<32-char random token> (valid until deleted — NOT one-time; LINE counts one push per member however many bubbles)
        · BSOT §9 + /privacy (th/en/zh: slip 90 days, EasySlip, team LINE group alert; "3 uses" → 4) + staff guide updated. Checker PASS
        7b330f62. NOT yet seen on the real LINE group (stand-in only) — the first real slip will show it; owner has not seen the pages.
-    B3 STAFF PAGES — PR #875 DRAFT, branch staff-b3-2610 head 84ef365e (checked out in _incoming/wt-cart; main folder = docs branch).
-       Built per designer direction 26/10 (layout A): /staff = job board (1 รอตรวจสลิป → 2 รอส่งคลัง → 3 รอใส่เลขพัสดุ rows + counts,
-       ยังไม่จ่าย · ส่งแล้ว/เสร็จ · ยกเลิก small) · slip tool moved to /staff/slip · StaffBar = bottom tab bar on phones (LINE fab hidden
-       via a scoped <style>), tabs from lg, named Back keeping `from` through actions · job lists · order page next-step card first, one
-       folded card, cancel last red. Owner got 2 draft shots 26/10 (home + order at 390) — no answer yet.
-       verify --full PASS was for 8da95585; 84ef365e = designer-review fixes after it (slip picture max-h-72 for portrait slips, one
-       warning line, "ส่งแล้ว/เสร็จ", short list dates, tel link ember) → NOT yet verified or checked.
-       NEXT for B3: (1) verify --full on the head in _incoming/wt-cart; (2) designer asked for proof shots from a BUILD (next start, not
-       next dev — the dev "N" button covers the หน้าแรก tab) at 390x844 viewport: order-slip with a PORTRAIT slip picture, an order page
-       scrolled to the last fold row (the tab bar must not cover "ยกเลิกออเดอร์"), one shipped order with a customer note + a different
-       ordering phone (the "เบอร์ที่ใช้สั่ง" line shows only when it differs — intended); kit: _incoming/b3-2610/run.sh + shoot.sh +
-       snap/ (DB snapshot; staff cookie via _incoming/b2-2610/seed-shots.js; generated local test password _incoming/b2-2610/.staff-pass-b2);
-       before shots (main) already in _incoming/b3-2610/shots/final/; (3) gate → checker (tier B, staff pages only) → ready →
-       self-merge-check → merge → deploy check → send the owner the after shots.
-    NEW OWNER ASKS 26/10 evening (answered in chat, not built):
-       B4 REFUND SLIP: staff attach the refund transfer slip on the order → the customer's order page shows "คืนเงินแล้ว" + the slip
-          (owner: refund to the order's PromptPay phone when it works, else wait for the customer's account on the web → refund →
-          status + slip → customer checks). Today the stock-issue box already lets staff record a refund (bank ref) before the customer
-          chooses; missing = the picture. Reuse B2 slip-images (90 days). The owner's real out-of-stock order this week was refunded by
-          PromptPay already → Friday told the owner to record it with the bank ref in "สินค้าหมดหลังลูกค้าโอน" (not checked if done).
-       B5 STOCK QUANTITY + "ใกล้หมด" label: owner asks whether the hourly routine should read quantities. Friday answered: yes, but
-          first (i) stock without a rebuild (proposal ①: every stock PR = deploy = 30–60 s of 502 — counts would deploy every hour) and
-          (ii) a trustworthy count source (the order-entry picker shows only in/out; the product list showed wrong "in stock" before).
-          Label suggested "ใกล้หมด · เหลือ N ชิ้น" only at ≤ 3 — the owner has not picked the word yet (ask with the plan).
+    B3 STAFF PAGES DONE + LIVE (#875, merge bd599b8c, deploy success 26/10 [ตรวจแล้ว]): /staff = job board (1 รอตรวจสลิป → 2 รอส่งคลัง →
+       3 รอใส่เลขพัสดุ + counts) · slip tool /staff/slip · bottom tab bar on phones, named Back keeping `from` · order page next-step card
+       first, one folded card, cancel last red. Checker PASS 900b9787. Proof from the BUILD: _incoming/b3-2610/shots/build/ (+ NOTES.md:
+       tab bar never covers the last row). Owner has not said OK to the look yet. Checker taste note (not fixed): a portrait slip in the
+       next-step card is ~135 px wide at 390 (max-h-72) — the amount is readable in "ยอดในสลิป", the slip text only after tapping.
+       Kit: _incoming/b3-2610/build/start.sh + prep.js (portrait slip + other ordering phone) · seed _incoming/b2-2610/seed-shots.js.
+    B4 REFUND SLIP DONE (#877, merge 474c2455; checker FAIL 19b55903 → fix → PASS 7e86abd3): migration 0018 (order_stock_issues
+       refund_slip_path/at/deleted_at) · after "บันทึกว่าคืนเงินแล้ว" staff attach the bank slip on the staff order page (a refunded
+       issue without a slip stays as its own card on top; the next-step card is not held back) → the customer's order page shows a
+       green "คืนเงินแล้ว" pill + the refund sentence + the slip. 90 days from attaching (same sweep), never posted to LINE; /privacy
+       th/en/zh + BSOT §9 + staff guide updated. Only for refunds recorded through "สินค้าหมดหลังลูกค้าโอน" (a paid order cancelled
+       for another reason has no refund box — not built). Evidence _incoming/b4-2610/NOTES.md + shots/ (after2-* = with slips).
+       The owner's real out-of-stock order this week (refunded by PromptPay) can now get its slip — record it there if not done.
+    B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" label (word = owner 26/10, §18 "Low-stock label") — NOT built: (1) stock without a
+       rebuild first (every stock PR = a deploy = 30–60 s of 502; counts would deploy hourly) → (2) a trustworthy count source tested
+       against the order-entry picker for a week → (3) label at ≤ 3 left.
+       ① STARTED 26/10 (owner "Start B5 step 1"): the count source is the order-entry picker itself — each option's React props carry
+       `available` (= inventory − reserved; checked live 26/10 on page 1: 94/94 equal, none negative, max 223). The browser read now
+       also leaves window.__oeCounts; the hourly routine saves it and runs `node scripts/stock-count-log.js <counts> <oe-snap>` →
+       `_incoming/stock-api/count-log.jsonl`; verdict `node scripts/stock-count-log.js --report` on 02/11 (READY / NOT YET) → then ②.
+       Done = count > 0 ⇔ picker "เพิ่ม" on every read for 7 days (≥ 12 reads a day). NEXT ② stock at runtime — a DB table written by the routine through a
+       staff-token endpoint (needs a NEW secret env on Render = owner OK first, 13.3 #9); product pages stay prerendered and read
+       stock from a small no-cookie API; cart + placeOrder check the DB; the build-time WAREHOUSE set stays as the fallback; hourly
+       stock PRs/deploys stop. ③ the label on option tiles + product page (designer places it), then proof + checker + merge.
+       Today stock is compiled into the build (src/data/stock/warehouse-stock.ts → apply-sold-out.ts; product pages use
+       generateStaticParams) — that is why ② comes before any number on the site.
     LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (owner 26/10: "เดี๋ยวพี่ส่งให้" — the file
        comes in the next chat) → crop the kabuto mark square → LINE Developers → channel 2012198931 → icon (owner's Chrome).
     Q6 logo round = TOMORROW 27/10 (owner).
@@ -420,6 +422,9 @@ only read it, to open the cart later) · the old Shipnity (`shipnity.com`, sourc
 is retired: "ตัวเก่าเขาไม่ได้ใช้แล้ว" — never take a code, stock or price from it · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
 model), even when that is over half the catalog · Shipnity spellings that differ are matched in `src/data/stock/sku-map.ts`,
 never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile.
+
+**Low-stock label (owner 26/10, chat — answer to รอพี่ตรวจ 78):** the word is **"ใกล้หมด · เหลือ N ชิ้น"**, shown at ≤ 3 left
+(Friday's threshold, the owner picked the word with it). Not built yet — B5 in §16 item 3.
 
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
