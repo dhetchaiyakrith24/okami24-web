@@ -363,6 +363,10 @@ function selfTest() {
   ok(guard(sh("echo x > docs/a.md"), env) === "deny" && guard(sh("node scripts/x.js >> docs/a.md"), env) === "deny", "H+ note on → a > / >> redirect into the read tree → deny");
   ok(guard(sh("node scripts/house-check.js > _incoming/h.txt 2>&1"), env) === "none", "H+ note on → a redirect under _incoming/ (and 2>&1) → allowed");
   ok(guard(sh("rm docs/old.md", wt), env) === "none", "H+ note on → rm in another worktree → allowed");
+  ok(guard(sh(`rm ${path.join(ROOT, "docs", "old.md").replace(/\\/g, "/")}`, wt), env) === "deny" &&
+    guard(sh("echo a > ../docs/a.md", path.join(ROOT, "_incoming")), env) === "deny", "H+ note on → an absolute path from another tree / ../ from _incoming/ → deny");
+  ok(guard(sh("echo a >| docs/a.md"), env) === "deny" && guard(sh("sed -i.bak 's/a/b/' docs/a.md"), env) === "deny", "H+ note on → >| and sed -i.bak → deny");
+  ok(guard(sh(`node -e "console.log(1>0)"`), env) === "none" && guard(sh("ls 2>NUL"), env) === "none", "H+ note on → `1>0` in an expression / 2>NUL → allowed");
 
   console.log("\n## locks at the act — .githooks/pre-commit and scripts/lib/chrome.js");
   const repo = path.join(tmp, "repo");

@@ -137,8 +137,9 @@ function checkShell(cmd, cwd) {
     }
   });
   // J — a redirect that would overwrite a brief the next chat has not picked up
-  segs.forEach((seg, i) => {
-    for (const t of redirectTargets(seg)) if (briefStillReady(resolveArg(dirs[i], t))) decide("deny", BRIEF_MSG);
+  segments(noClobber(plain)).forEach((seg, i, all) => {
+    const at = placeOf(all, cwd)[i];
+    for (const t of redirectTargets(seg)) if (briefStillReady(resolveArg(at, t))) decide("deny", BRIEF_MSG);
   });
   // F
   if (/self-merge-check/.test(plain) &&/\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge(?![-\w])/.test(plain)) {
@@ -189,9 +190,14 @@ function briefStillReady(file) {
     return false; // no file yet = nothing to overwrite
   }
 }
-// the files a segment writes: > / >> / >| redirects (not 2>&1, not >&2)
+// `>|` (write even with noclobber) would be cut at its `|` by segments() — read it as a plain `>` first
+const noClobber = (s) => s.replace(/>\|/g, ">");
+// the files a segment writes: > / >> / &> redirects (not 2>&1, not >&2, not /dev/…, not cmd's NUL, not a bare number
+// such as the `1>0` of an inline `node -e` expression)
 function redirectTargets(seg) {
-  return [...seg.matchAll(/(?:^|[^<&\d])\d?>>?\|?\s*([^\s;|&<>()]+)/g)].map((m) => m[1].replace(/^["']|["']$/g, "")).filter((t) => t && !/^\/dev\//.test(t));
+  return [...seg.matchAll(/(?:^|[^<&\d])(?:\d|&)?>>?\s*([^\s;|&<>()]+)/g)]
+    .map((m) => m[1].replace(/^["']|["']$/g, ""))
+    .filter((t) => t && !/^\/dev\//.test(t) && !/^(nul|con)$/i.test(t) && !/^\d+$/.test(t));
 }
 // + rm / sed -i / tee targets (H+)
 function shellWriteTargets(seg) {
@@ -201,7 +207,7 @@ function shellWriteTargets(seg) {
   const name = (words[cmdAt] || "").replace(/^.*[\\/]/, "");
   const args = words.slice(cmdAt + 1).filter((a) => !a.startsWith("-")).map((a) => a.replace(/^["']|["']$/g, ""));
   if (/^(rm|rmdir|unlink|tee)$/.test(name)) out.push(...args);
-  if (/^(sed|perl)$/.test(name) && words.slice(cmdAt + 1).some((a) => /^(-\w*i\w*|--in-place)$/.test(a)) && args.length) out.push(args[args.length - 1]);
+  if (/^(sed|perl)$/.test(name) && words.slice(cmdAt + 1).some((a) => /^(-\w*i[\w.~-]*|--in-place(=\S*)?)$/.test(a)) && args.length) out.push(args[args.length - 1]); // -i · -i.bak · -pi
   return out;
 }
 
@@ -242,17 +248,18 @@ const inside = (p, tree) =>
 // shell writes into it (rm · sed -i · tee · a redirect — H+). Where a segment runs = the hook's cwd moved by any `cd` before
 // it, or git's own -C.
 function checkReadingShell(cmd, cwd) {
-  const segs = segments(blankText(cmd));
+  const segs = segments(noClobber(blankText(cmd)));
   const dirs = placeOf(segs, cwd);
   for (const r of checkerReading()) {
     segs.forEach((seg, i) => {
       if (/test-server\.js["']?\s+(build|start|stop|restart)\b/.test(seg)) decide("deny", r.msg); // 3412 is the machine's, not one tree's
+      // H+ is judged by where the write LANDS (an absolute path, or ../ from _incoming/), not by where the shell sits
+      for (const t of shellWriteTargets(seg)) if (inside(norm(resolveArg(dirs[i], t)), r.tree)) decide("deny", r.msg);
       const g = gitCall(seg);
       if (!inside(norm(g && g.dir ? resolveArg(dirs[i], g.dir) : dirs[i]), r.tree)) return;
       if (g && /^(checkout|switch|reset|merge|pull|rebase|commit|restore|clean|cherry-pick|revert|am|apply)$/.test(g.sub)) decide("deny", r.msg);
       if (g && g.sub === "stash" && !/^(list|show)$/.test(g.args[0] || "")) decide("deny", r.msg);
       if (isBuild(seg)) decide("deny", r.msg);
-      for (const t of shellWriteTargets(seg)) if (inside(norm(resolveArg(dirs[i], t)), r.tree)) decide("deny", r.msg); // H+
     });
   }
 }

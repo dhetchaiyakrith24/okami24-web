@@ -32,7 +32,8 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   let text;
   if (args.includes("--staged")) {
-    const staged = execFileSync("git", ["diff", "--cached", "--name-only"], { encoding: "utf8" }).split("\n");
+    // --diff-filter=d: a staged deletion of HANDOFF has no §16 to measure
+    const staged = execFileSync("git", ["diff", "--cached", "--name-only", "--diff-filter=d"], { encoding: "utf8" }).split(/\r?\n/);
     if (!staged.includes("docs/HANDOFF.md")) process.exit(0);
     text = execFileSync("git", ["show", ":docs/HANDOFF.md"], { encoding: "utf8", maxBuffer: 1 << 26 });
   } else text = fs.readFileSync(args[0] || "docs/HANDOFF.md", "utf8");
