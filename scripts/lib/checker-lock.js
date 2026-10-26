@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node helper, CommonJS on purpose */
 // checker-lock.js — "the checker is reading <sha> in <tree>": written by scripts/pre-checker-gate.js when it passes,
 // read by scripts/guard-tool.js, which then refuses to change that working tree or the test server until
-// `node scripts/pre-checker-gate.js --done` (LESSONS พ22: a branch switch + rebuild while the checker read #283).
+// `node scripts/pre-checker-gate.js --done` (TEAM_RULES 13.4 — a branch switch + rebuild while the checker read #283).
 // One note per working tree, kept in the git common dir (.git/ of the main folder) so every worktree of this clone
 // sees every note. A note older than MAX_AGE_MS is ignored (a chat that died must not lock a folder for ever).
 // OKAMI24_CHECKER_LOCK_DIR overrides the folder (the gate's --self-test only).
