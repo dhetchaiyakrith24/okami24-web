@@ -1,26 +1,31 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
+import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
+import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { availableActions, STAFF_ACTIONS } from "@/lib/staff/order-actions";
-import { getStaffOrder } from "@/lib/staff/orders";
+import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
+import { countByJob, getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
+import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TODO_JOBS, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffMessageAction, staffOrderAction } from "@/app/staff/actions";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
+import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
  * to the warehouse, and the buttons that move it on. The customer's order page follows every change.
  *
- * Layout (owner 26/10: "หัวข้อมันซ้ำซ้อน และเยอะเกินไป … ไม่รก เรียบง่าย หัวข้อสำคัญอยู่ครบ"): four cards in working order —
- * payment · items (+ the warehouse text) · customer (address, their note, the ONE message box) · next step — and the rarely
- * used parts folded: cancel, out of stock after payment, history.
+ * Layout (owner 26/10, queue B3: "หน้าออเดอร์ยาวและรก · ใช้บนมือถือ"; designer direction 26/10): the NEXT STEP first, holding
+ * exactly what that step needs (the slip and the confirm button · the warehouse text and its button · carrier + tracking ·
+ * received) — an out-of-stock problem that is still open takes that place, so nobody ships the wrong items. Then the
+ * customer (open). Everything else is one folded card: items, payment, messages, out of stock, history, cancel (last, red,
+ * away from the main button). Statuses read in the team's words with the owner's colours (src/lib/staff/jobs.ts).
  */
 
 export const dynamic = "force-dynamic";
@@ -58,26 +63,123 @@ const STOCK_ERROR_TEXT: Record<string, string> = {
   "stock-not-found": "ไม่พบออเดอร์นี้",
 };
 
-const button =
-  "rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong";
-const input = "rounded-md border border-surface-border bg-surface-2 px-3 py-2.5 text-base text-foreground";
-const card = "flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm";
-const h2 = "text-base font-semibold text-foreground";
-const fold = "cursor-pointer text-sm font-semibold text-foreground-muted hover:text-foreground";
+const primary =
+  "inline-flex h-12 w-full items-center justify-center rounded-full bg-ember px-6 text-base font-semibold text-[#181008] transition-colors hover:bg-ember-strong sm:w-auto";
+const input = "h-12 w-full rounded-md border border-surface-border bg-surface-2 px-3 text-base text-foreground";
+const card = "flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm sm:p-5";
+const foldRow = "group border-surface-border-soft";
+const foldSummary =
+  "flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 text-sm text-foreground hover:bg-surface-2 sm:px-5 [&::-webkit-details-marker]:hidden";
+const foldBody = "flex flex-col gap-3 px-4 pb-4 text-sm sm:px-5";
+
+function Chevron() {
+  return (
+    <span aria-hidden className="text-foreground-dim transition-transform group-open:rotate-90">
+      ›
+    </span>
+  );
+}
+
+/** The hidden fields every order form carries: which order, and which list it was opened from (Back goes there). */
+function OrderFields({ order, from }: { order: StaffOrderDetail; from: string }) {
+  return (
+    <>
+      <input type="hidden" name="orderNumber" value={order.orderNumber} />
+      {from && <input type="hidden" name="from" value={from} />}
+    </>
+  );
+}
+
+function ActionForm({ order, from, act, children }: { order: StaffOrderDetail; from: string; act: StaffAction; children?: React.ReactNode }) {
+  return (
+    <form action={staffOrderAction} className="flex flex-col gap-3">
+      <OrderFields order={order} from={from} />
+      <input type="hidden" name="action" value={act} />
+      {children}
+      <button type="submit" className={primary}>
+        {STAFF_ACTIONS[act].label}
+      </button>
+    </form>
+  );
+}
+
+/** Slip verdict, the reasons (red — a "no", HANDOFF §18), the two amounts side by side and the picture. */
+function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetail; slipImageHref: string; compact: boolean }) {
+  const slip = order.slip;
+  if (!slip) return <p className="text-foreground-muted">ลูกค้ายังไม่ได้แนบสลิป</p>;
+  const amountOff = slip.amount !== null && slip.amount !== order.total;
+  return (
+    <>
+      {slip.verdict && (
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <VerdictBadge verdict={slip.verdict} />
+        </div>
+      )}
+      {slip.reasons.length > 0 && (
+        <ul className="list-disc pl-5 text-danger">
+          {slip.reasons.map((r) => (
+            <li key={r}>{REASON_LABEL[r] ?? r}</li>
+          ))}
+        </ul>
+      )}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="rounded-lg bg-surface-2 px-3 py-2">
+          <p className="text-xs text-foreground-muted">ยอดในสลิป</p>
+          <p className={`text-xl font-semibold tabular-nums ${amountOff ? "text-danger" : "text-foreground"}`}>
+            {slip.amount === null ? "—" : formatBaht(slip.amount)}
+          </p>
+        </div>
+        <div className="rounded-lg bg-surface-2 px-3 py-2">
+          <p className="text-xs text-foreground-muted">ยอดออเดอร์</p>
+          <p className="text-xl font-semibold tabular-nums text-foreground">{formatBaht(order.total)}</p>
+        </div>
+      </div>
+      <p className="text-xs text-foreground-muted">
+        ส่งสลิปเมื่อ {formatDateTime(slip.submittedAt)}
+        {slip.transRef ? ` · เลขอ้างอิง ${slip.transRef}` : ""}
+      </p>
+      {/* Owner 26/10 (queue B2 (c)): the slip picture is kept 90 days. Plain <img>: the route is staff-only and sends
+          no-store, so next/image's optimiser must not fetch and cache it. */}
+      {slip.hasImage ? (
+        <a href={slipImageHref} target="_blank" rel="noopener" className="flex w-fit flex-col gap-1">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={slipImageHref}
+            alt="รูปสลิปที่ลูกค้าแนบ"
+            className={`${compact ? "max-h-48" : "max-h-96"} w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2`}
+          />
+          <span className="text-xs text-foreground-dim">แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง</span>
+        </a>
+      ) : slip.imageDeletedAt ? (
+        <p className="text-xs text-foreground-dim">รูปสลิปลบแล้วเมื่อครบ 90 วัน ผลตรวจด้านบนยังอยู่</p>
+      ) : null}
+    </>
+  );
+}
 
 export default async function StaffOrderPage({
   params,
   searchParams,
 }: {
   params: Promise<{ orderNumber: string }>;
-  searchParams: Promise<{ error?: string; done?: string }>;
+  searchParams: Promise<{ error?: string; done?: string; from?: string }>;
 }) {
   if (!staffAreaEnabled()) notFound();
   if (!(await isStaff())) redirect("/staff");
   const { orderNumber } = await params;
-  const { error, done } = await searchParams;
+  const { error, done, from: fromParam } = await searchParams;
   const order = getStaffOrder(orderNumber);
   if (!order) notFound();
+
+  const from = isStaffJob(fromParam) || fromParam === "all" ? fromParam : "";
+  const back =
+    from === "all"
+      ? { href: "/staff/orders?f=all", label: "ออเดอร์ทั้งหมด" }
+      : isStaffJob(from)
+        ? { href: `/staff/orders?f=${from}`, label: STAFF_JOBS[from].label }
+        : { href: "/staff/orders", label: "ต้องทำทั้งหมด" };
+  const counts = countByJob();
+  const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
 
   const actions = availableActions(order.status);
   const steps = actions.filter((act) => act !== "cancel");
@@ -85,20 +187,22 @@ export default async function StaffOrderPage({
   const a = order.shippingAddress;
   const slipImageHref = `/staff/orders/${encodeURIComponent(order.orderNumber)}/slip-image`;
   const runNumber = formatRunNumber(order.runNumber);
+  const tone = TONE_CLASS[statusTone(order.status)];
+  const stockOpen = order.stockIssue !== null && stockIssueStage(order.stockIssue) !== "resolved";
+  const paymentStep = order.status === "payment_submitted" || order.status === "awaiting_verification";
+  const itemCount = order.items.reduce((n, i) => n + i.quantity, 0);
+  const cancelNote = order.status === "cancelled" ? [...order.statusHistory].reverse().find((h) => h.status === "cancelled")?.note ?? null : null;
 
   return (
-    <Container className="flex max-w-2xl flex-col gap-5 pb-28 pt-8 lg:pt-12">
-      <header className="flex flex-col gap-2">
-        <Link href="/staff/orders" className="text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline">
-          ← ออเดอร์ทั้งหมด
-        </Link>
-        {/* The shop's running number leads once the payment is confirmed (owner 26/10, queue B2 (a)); OK-… stays beside it. */}
-        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
-          {runNumber && <span className="mr-2 text-ember">{runNumber}</span>}
-          {order.orderNumber}
-        </h1>
+    <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
+      <StaffBar current="orders" back={back} todo={todo} />
+
+      <header className="flex flex-col gap-1.5">
+        {/* The shop's running number leads once the payment is confirmed (owner 26/10, queue B2 (a)); OK-… sits under it. */}
+        <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">{runNumber ?? order.orderNumber}</h1>
+        {runNumber && <p className="text-sm text-foreground-dim">{order.orderNumber}</p>}
         <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="rounded-full border border-surface-border px-3 py-1 text-foreground">{orderStatusLabel(order.status, "th")}</span>
+          <span className={`rounded-full border px-3 py-1 font-medium ${tone.pill}`}>{STAFF_STATUS_LABEL[order.status]}</span>
           <span className="text-foreground-muted">สั่งเมื่อ {formatDateTime(order.createdAt)}</span>
         </div>
       </header>
@@ -112,90 +216,96 @@ export default async function StaffOrderPage({
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
-      <section className={card}>
-        <h2 className={h2}>การชำระเงิน</h2>
-        {order.slip ? (
-          <>
-            {order.slip.verdict && (
-              <div className="flex flex-wrap items-center gap-2 text-xs">
-                <VerdictBadge verdict={order.slip.verdict} />
-              </div>
-            )}
-            {order.slip.reasons.length > 0 && (
-              <ul className="list-disc pl-5 text-foreground">
-                {order.slip.reasons.map((r) => (
-                  <li key={r}>{REASON_LABEL[r] ?? r}</li>
-                ))}
-              </ul>
-            )}
-            <p className="text-foreground-muted">
-              ยอดในสลิป {order.slip.amount === null ? "—" : formatBaht(order.slip.amount)} · ยอดออเดอร์ {formatBaht(order.total)}
-              <br />
-              ส่งสลิปเมื่อ {formatDateTime(order.slip.submittedAt)}
-              {order.slip.transRef ? ` · เลขอ้างอิง ${order.slip.transRef}` : ""}
+      {/* An out-of-stock problem still open IS the next step (designer 26/10): shown first, before any ship button. */}
+      {stockOpen && <StockIssueSection order={order} />}
+
+      {/* NEXT STEP — what this status needs, nothing else. */}
+      {order.status === "pending_payment" && (
+        <section className={`${card} border-unverified/40`}>
+          <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · รอลูกค้าโอน</h2>
+          <p className="text-foreground-muted">
+            ลูกค้ายังไม่ได้แนบสลิป · ถ้าไม่แนบภายใน {formatDateTime(paymentDeadline(order.createdAt).toISOString())} ระบบยกเลิกให้เอง
+          </p>
+        </section>
+      )}
+      {paymentStep && (
+        <section className={`${card} border-unverified/40`}>
+          <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.slip.label}</h2>
+          <SlipDetails order={order} slipImageHref={slipImageHref} compact />
+          {order.slip?.verdict !== "pass" && <p className="text-unverified">ก่อนยืนยัน เปิดแอปธนาคารของร้านดูยอดเข้าจริงอีกครั้ง</p>}
+          <p className="text-xs text-foreground-dim">ก่อนกด เช็คของในหน้าคีย์ออเดอร์ของ Shipnity Max — หมด = ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; ด้านล่างแทน</p>
+          {steps.includes("confirm") && <ActionForm order={order} from={from} act="confirm" />}
+        </section>
+      )}
+      {order.status === "approved" && !stockOpen && (
+        <section className={`${card} border-unverified/40`}>
+          <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.warehouse.label}</h2>
+          <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
+          {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+        </section>
+      )}
+      {order.status === "processing" && !stockOpen && (
+        <section className={`${card} border-unverified/40`}>
+          <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.tracking.label}</h2>
+          {steps.includes("ship") && (
+            <ActionForm order={order} from={from} act="ship">
+              {/* Staff pick the carrier — never guessed from the number (owner 23/10: the customer sees it). */}
+              <fieldset className="flex flex-col gap-2">
+                <legend className="mb-1 text-foreground-muted">ขนส่ง</legend>
+                <div className="grid grid-cols-2 gap-2">
+                  {CARRIER_IDS.map((id) => (
+                    <label key={id} className="relative">
+                      <input type="radio" name="carrier" value={id} required className="peer absolute inset-0 opacity-0" />
+                      <span className="flex h-12 items-center justify-center rounded-xl border border-surface-border text-sm text-foreground peer-checked:border-ember peer-checked:bg-ember/10 peer-checked:font-semibold peer-focus-visible:outline-2 peer-focus-visible:outline-ember">
+                        {CARRIERS[id].name.th}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <label className="flex flex-col gap-1 text-foreground-muted">
+                เลขพัสดุ
+                <input name="tracking" required autoComplete="off" autoCapitalize="characters" className={input} />
+              </label>
+            </ActionForm>
+          )}
+        </section>
+      )}
+      {order.status === "shipped" && (
+        <section className={`${card} border-verified/40`}>
+          <h2 className="text-base font-semibold text-foreground">ส่งแล้ว · รอลูกค้าได้รับของ</h2>
+          {order.trackingNumber && (
+            <p className="text-foreground">
+              {order.carrier ? `${CARRIERS[order.carrier].name.th} · ` : ""}เลขพัสดุ <span className="select-all font-semibold">{order.trackingNumber}</span>
             </p>
-            {order.slip.verdict !== "pass" && <p className="text-foreground">ก่อนยืนยัน เปิดแอปธนาคารของร้านดูยอดเข้าจริงอีกครั้ง</p>}
-            {/* Owner 26/10 (queue B2 (c)): the slip picture is kept 90 days. Plain <img>: the route is staff-only and
-                sends no-store, so next/image's optimiser must not fetch and cache it. */}
-            {order.slip.hasImage ? (
-              <a href={slipImageHref} target="_blank" rel="noopener" className="flex w-fit flex-col gap-1">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={slipImageHref}
-                  alt="รูปสลิปที่ลูกค้าแนบ"
-                  className="max-h-96 w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2"
-                />
-                <span className="text-xs text-foreground-dim">แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง</span>
-              </a>
-            ) : order.slip.imageDeletedAt ? (
-              <p className="text-xs text-foreground-dim">รูปสลิปลบแล้วเมื่อครบ 90 วัน ผลตรวจด้านบนยังอยู่</p>
-            ) : null}
-          </>
-        ) : (
-          <p className="text-foreground-muted">ลูกค้ายังไม่ได้แนบสลิป</p>
-        )}
-      </section>
-
-      <section className={card}>
-        <h2 className={h2}>สินค้า</h2>
-        <ul className="flex flex-col divide-y divide-surface-border-soft">
-          {order.items.map((i, idx) => (
-            <li key={idx} className="flex justify-between gap-3 py-2">
-              <span className="text-foreground">
-                {i.productName}
-                {i.variantLabel ? ` · ${i.variantLabel}` : ""} × {i.quantity}
-                <span className="block text-xs text-foreground-dim">รหัสคลัง {order.lines[idx]?.sku ?? "ไม่มี — ถามเจ้าของร้าน"}</span>
-                {order.stockIssue?.resolution === "refunded" &&
-                  order.stockIssue.outLines.some((l) => l.itemId === order.itemLines[idx]?.itemId) && (
-                    <span className="block text-xs text-unverified">คืนเงินแล้ว — ไม่ส่ง</span>
-                  )}
-              </span>
-              <span className="whitespace-nowrap text-foreground">{formatBaht(i.lineTotal)}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold text-foreground">
-          <span>รวม (ค่าส่ง {formatBaht(order.shippingFee)})</span>
-          <span>{formatBaht(order.total)}</span>
+          )}
+          {steps.includes("complete") && <ActionForm order={order} from={from} act="complete" />}
+        </section>
+      )}
+      {order.status === "completed" && (
+        <p className="rounded-xl border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-verified">เสร็จแล้ว — ลูกค้าได้รับของแล้ว</p>
+      )}
+      {order.status === "cancelled" && (
+        <p className="rounded-xl border border-danger/50 bg-danger/10 px-4 py-3 text-sm text-danger">
+          ยกเลิกแล้ว{cancelNote ? ` — ${historyNoteTh(cancelNote)}` : ""}
         </p>
-        <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
-          <p className="text-foreground-muted">ข้อความส่งคลัง</p>
-          <CopyBlock text={order.warehouseText} label="คัดลอกส่งคลัง" doneLabel="คัดลอกแล้ว" />
-        </div>
-      </section>
+      )}
 
-      {/* The ONE place staff write to the customer (owner 26/10: two message boxes were confusing). */}
-      <section id="customer-messages" className={card}>
-        <h2 className={h2}>ลูกค้า</h2>
+      {/* The customer — open: staff call or LINE them often. */}
+      <section className={card}>
+        <h2 className="text-base font-semibold text-foreground">ลูกค้า</h2>
         <div className="flex flex-col gap-1">
           <p className="text-foreground">
-            {a.recipientName} · {a.phone}
+            {a.recipientName} ·{" "}
+            <a href={`tel:${a.phone}`} className="font-semibold underline-offset-4 hover:underline">
+              {a.phone}
+            </a>
           </p>
           <p className="text-foreground-muted">
             {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
           </p>
-          <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>
-          {order.trackingNumber && (
+          {order.customerPhone !== a.phone && <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>}
+          {order.trackingNumber && order.status !== "shipped" && (
             <p className="text-foreground">
               {order.carrier ? `${CARRIERS[order.carrier].name.th} · ` : ""}เลขพัสดุ {order.trackingNumber}
             </p>
@@ -208,105 +318,151 @@ export default async function StaffOrderPage({
             <p className="whitespace-pre-wrap break-words text-foreground">{order.customerNote}</p>
           </div>
         )}
-        <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
-          {/* #807 checker note (a): a message stays on the order page after the customer acts, so one that points at "ด้านล่าง" (the swap / refund box) would later point at nothing — staff are told here, where they type. */}
-          <p className="text-foreground-muted">ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ส่งแล้วแก้ไม่ได้ · ข้อความอยู่ในหน้าออเดอร์ตลอด จึงไม่เขียนชี้ว่า &ldquo;ด้านล่าง&rdquo;)</p>
-          {messages.length > 0 && (
-            <ul className="flex flex-col gap-2">
-              {messages.map((m, i) => (
-                <li key={i} className="rounded-lg border border-surface-border-soft bg-surface-2 p-3">
-                  <p className="text-xs text-foreground-dim">{formatDateTime(m.createdAt)}</p>
-                  <p className="whitespace-pre-wrap break-words text-foreground">{m.body}</p>
+      </section>
+
+      {/* Everything else, folded into ONE card — each row says what is inside before it is opened. */}
+      <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
+        <details className={foldRow}>
+          <summary className={foldSummary}>
+            <span>
+              สินค้า · {itemCount} ชิ้น · {formatBaht(order.total)}
+            </span>
+            <Chevron />
+          </summary>
+          <div className={foldBody}>
+            <ul className="flex flex-col divide-y divide-surface-border-soft">
+              {order.items.map((i, idx) => (
+                <li key={idx} className="flex justify-between gap-3 py-2">
+                  <span className="text-foreground">
+                    {i.productName}
+                    {i.variantLabel ? ` · ${i.variantLabel}` : ""} × {i.quantity}
+                    <span className="block text-xs text-foreground-dim">รหัสคลัง {order.lines[idx]?.sku ?? "ไม่มี — ถามเจ้าของร้าน"}</span>
+                    {order.stockIssue?.resolution === "refunded" &&
+                      order.stockIssue.outLines.some((l) => l.itemId === order.itemLines[idx]?.itemId) && (
+                        <span className="block text-xs text-danger">คืนเงินแล้ว — ไม่ส่ง</span>
+                      )}
+                  </span>
+                  <span className="whitespace-nowrap text-foreground">{formatBaht(i.lineTotal)}</span>
                 </li>
               ))}
             </ul>
-          )}
-          <form action={staffMessageAction} className="flex flex-col gap-2">
-            <input type="hidden" name="orderNumber" value={order.orderNumber} />
-            <textarea name="message" required minLength={3} maxLength={600} rows={2} aria-label="ข้อความถึงลูกค้า" className={input} />
-            <button type="submit" className={`${button} self-start`}>
-              ส่งข้อความ
-            </button>
-          </form>
-        </div>
-      </section>
+            <p className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold text-foreground">
+              <span>รวม (ค่าส่ง {formatBaht(order.shippingFee)})</span>
+              <span>{formatBaht(order.total)}</span>
+            </p>
+            {order.status !== "approved" && (
+              <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
+                <p className="text-foreground-muted">ข้อความส่งคลัง</p>
+                <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
+              </div>
+            )}
+          </div>
+        </details>
 
-      {actions.length > 0 && (
-        <section className={`${card} gap-4`}>
-          <h2 className={h2}>ขั้นต่อไป</h2>
-          {steps.map((act) => (
-            <form key={act} action={staffOrderAction} className="flex flex-wrap items-end gap-3">
-              <input type="hidden" name="orderNumber" value={order.orderNumber} />
-              <input type="hidden" name="action" value={act} />
-              {act === "ship" && (
-                <>
-                  {/* Staff pick the carrier — never guessed from the number (owner 23/10: the customer sees it). */}
-                  <fieldset className="flex flex-col gap-1 text-foreground-muted">
-                    <legend className="mb-1">ขนส่ง</legend>
-                    <div className="flex flex-wrap gap-3">
-                      {CARRIER_IDS.map((id) => (
-                        <label key={id} className="flex items-center gap-2 text-foreground">
-                          <input type="radio" name="carrier" value={id} required />
-                          {CARRIERS[id].name.th}
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-                  <label className="flex flex-col gap-1 text-foreground-muted">
-                    เลขพัสดุ
-                    <input name="tracking" required autoComplete="off" className={input} />
-                  </label>
-                </>
-              )}
-              <button type="submit" className={button}>
-                {STAFF_ACTIONS[act].label}
+        {!paymentStep && order.slip && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span>การชำระเงิน</span>
+              <Chevron />
+            </summary>
+            <div className={foldBody}>
+              <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} />
+            </div>
+          </details>
+        )}
+
+        {/* The ONE place staff write to the customer (owner 26/10: two message boxes were confusing). Opens itself after a
+            message was just sent, so the "sent" line and the message are in view. */}
+        <details id="customer-messages" className={foldRow} open={done === "message" || undefined}>
+          <summary className={foldSummary}>
+            <span>
+              ข้อความถึงลูกค้า{messages.length > 0 ? ` · ${messages.length}` : ""}
+            </span>
+            <Chevron />
+          </summary>
+          <div className={foldBody}>
+            <p className="text-xs text-foreground-muted">ลูกค้าเห็นในหน้าออเดอร์ · ส่งแล้วแก้ไม่ได้ · ไม่เขียนชี้ว่า &ldquo;ด้านล่าง&rdquo;</p>
+            {messages.length > 0 && (
+              <ul className="flex flex-col gap-2">
+                {messages.map((m, i) => (
+                  <li key={i} className="rounded-lg border border-surface-border-soft bg-surface-2 p-3">
+                    <p className="text-xs text-foreground-dim">{formatDateTime(m.createdAt)}</p>
+                    <p className="whitespace-pre-wrap break-words text-foreground">{m.body}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <form action={staffMessageAction} className="flex flex-col gap-2">
+              <OrderFields order={order} from={from} />
+              <textarea
+                name="message"
+                required
+                minLength={3}
+                maxLength={600}
+                rows={2}
+                aria-label="ข้อความถึงลูกค้า"
+                className="w-full rounded-md border border-surface-border bg-surface-2 px-3 py-2.5 text-base text-foreground"
+              />
+              <button type="submit" className="self-start rounded-full border border-surface-border px-5 py-2.5 text-sm font-semibold text-foreground hover:border-foreground-dim">
+                ส่งข้อความ
               </button>
             </form>
-          ))}
-          {actions.includes("cancel") && (
-            <details className={steps.length > 0 ? "border-t border-surface-border-soft pt-3" : undefined}>
-              <summary className={fold}>ยกเลิกออเดอร์</summary>
-              <form action={staffOrderAction} className="flex flex-col gap-2 pt-3">
-                <input type="hidden" name="orderNumber" value={order.orderNumber} />
-                <input type="hidden" name="action" value="cancel" />
-                {order.slip && (
-                  <p className="text-xs text-foreground-dim">
-                    ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; ด้านล่างแทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
-                  </p>
-                )}
-                <label className="flex flex-col gap-1 text-foreground-muted">
-                  เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์
-                  <textarea name="message" required minLength={3} maxLength={600} rows={2} className={input} />
-                </label>
-                <label className="flex flex-col gap-1 text-foreground-muted">
-                  หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
-                  <input name="note" autoComplete="off" maxLength={300} className={input} />
-                </label>
-                <button
-                  type="submit"
-                  className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10"
-                >
-                  {STAFF_ACTIONS.cancel.label}
-                </button>
-              </form>
-            </details>
-          )}
-        </section>
-      )}
+          </div>
+        </details>
 
-      <StockIssueSection order={order} />
+        {!stockOpen && <StockIssueSection order={order} />}
 
-      <details className={card}>
-        <summary className={fold}>ประวัติออเดอร์</summary>
-        <ul className="flex flex-col gap-1 pt-1 text-foreground-muted">
-          {order.statusHistory.map((h, i) => (
-            <li key={i}>
-              {formatDateTime(h.createdAt)} · {orderStatusLabel(h.status as Parameters<typeof orderStatusLabel>[0], "th")}
-              {h.note ? ` — ${historyNoteTh(h.note)}` : ""}
-            </li>
-          ))}
-        </ul>
-      </details>
+        <details className={foldRow}>
+          <summary className={foldSummary}>
+            <span>ประวัติ · {order.statusHistory.length}</span>
+            <Chevron />
+          </summary>
+          <ul className={`${foldBody} gap-1 text-foreground-muted`}>
+            {order.statusHistory.map((h, i) => (
+              <li key={i}>
+                {formatDateTime(h.createdAt)} · {orderStatusLabel(h.status as Parameters<typeof orderStatusLabel>[0], "th")}
+                {h.note ? ` — ${historyNoteTh(h.note)}` : ""}
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {actions.includes("cancel") && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span className="text-danger">ยกเลิกออเดอร์</span>
+              <Chevron />
+            </summary>
+            <form action={staffOrderAction} className={foldBody}>
+              <OrderFields order={order} from={from} />
+              <input type="hidden" name="action" value="cancel" />
+              {order.slip && (
+                <p className="text-xs text-foreground-dim">
+                  ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
+                </p>
+              )}
+              <label className="flex flex-col gap-1 text-foreground-muted">
+                เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์
+                <textarea
+                  name="message"
+                  required
+                  minLength={3}
+                  maxLength={600}
+                  rows={2}
+                  className="w-full rounded-md border border-surface-border bg-surface-2 px-3 py-2.5 text-base text-foreground"
+                />
+              </label>
+              <label className="flex flex-col gap-1 text-foreground-muted">
+                หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
+                <input name="note" autoComplete="off" maxLength={300} className={input} />
+              </label>
+              <button type="submit" className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10">
+                {STAFF_ACTIONS.cancel.label}
+              </button>
+            </form>
+          </details>
+        )}
+      </div>
     </Container>
   );
 }

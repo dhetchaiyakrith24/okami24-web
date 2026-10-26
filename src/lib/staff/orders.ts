@@ -11,6 +11,7 @@ import { cleanOrderMessage } from "@/lib/commerce/order-message-rules";
 import { insertCustomerMessage } from "@/lib/commerce/order-messages";
 import { AUTO_CANCELLED_SQL } from "@/lib/commerce/unpaid-rules";
 import { ASSIGN_RUN_NUMBER_SQL } from "@/lib/commerce/run-number";
+import { jobOf, STAFF_JOB_ORDER, STAFF_JOBS, TODO_JOBS, type StaffJob } from "./jobs";
 
 /**
  * The staff order list and its buttons (cart round 22/10, round batch 2). Reached only through /staff pages and
@@ -32,16 +33,23 @@ export interface StaffOrderRow {
   runNumber: number | null;
 }
 
-/** "todo" = everything a person still has to act on (paid and not shipped, or cancelled-pending nothing);
- *  "unpaid" = placed, no slip yet; "all" = the newest 200. Orders the unpaid sweep cancelled are left out of every list
- *  (owner 26/10 "ซ่อน" — kept in the database, still open by their link). */
-export type StaffOrderFilter = "todo" | "unpaid" | "all";
+/** A job box of the staff home (src/lib/staff/jobs.ts — owner 26/10, queue B3), "todo" = the three to-do jobs together,
+ *  "all" = the newest 200. Orders the unpaid sweep cancelled are left out of every list and count (owner 26/10 "ซ่อน" —
+ *  kept in the database, still open by their link). */
+export type StaffOrderFilter = StaffJob | "todo" | "all";
 
-const FILTER_SQL: Record<StaffOrderFilter, string> = {
-  todo: "o.status IN ('payment_submitted','awaiting_verification','approved','processing')",
-  unpaid: "o.status = 'pending_payment'",
-  all: "1 = 1",
-};
+const inStatuses = (statuses: readonly string[]) => `o.status IN (${statuses.map((s) => `'${s}'`).join(",")})`;
+
+function filterSql(filter: StaffOrderFilter): string {
+  if (filter === "all") return "1 = 1";
+  if (filter === "todo") return inStatuses(TODO_JOBS.flatMap((j) => STAFF_JOBS[j].statuses));
+  return inStatuses(STAFF_JOBS[filter].statuses);
+}
+
+/** Work that waits on the team is listed oldest first (the one waiting longest on top); the rest newest first. */
+function orderSql(filter: StaffOrderFilter): string {
+  return filter === "todo" || (filter !== "all" && STAFF_JOBS[filter].tone === "wait" && filter !== "unpaid") ? "o.id ASC" : "o.id DESC";
+}
 
 export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
   const rows = getDb()
@@ -50,8 +58,8 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
               (SELECT COALESCE(SUM(quantity), 0) FROM order_items i WHERE i.order_id = o.id) AS item_count,
               (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
-        WHERE ${FILTER_SQL[filter]} AND NOT ${AUTO_CANCELLED_SQL}
-        ORDER BY o.id DESC LIMIT 200`
+        WHERE ${filterSql(filter)} AND NOT ${AUTO_CANCELLED_SQL}
+        ORDER BY ${orderSql(filter)} LIMIT 200`
     )
     .all() as {
     order_number: string;
@@ -77,8 +85,14 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
   }));
 }
 
-export function countTodo(): number {
-  return (getDb().prepare(`SELECT COUNT(*) AS n FROM orders o WHERE ${FILTER_SQL.todo}`).get() as { n: number }).n;
+/** How many orders each job box holds — the staff home. Same hidden rule as the lists. */
+export function countByJob(): Record<StaffJob, number> {
+  const rows = getDb()
+    .prepare(`SELECT o.status, COUNT(*) AS n FROM orders o WHERE NOT ${AUTO_CANCELLED_SQL} GROUP BY o.status`)
+    .all() as { status: OrderStatus; n: number }[];
+  const counts = Object.fromEntries(STAFF_JOB_ORDER.map((j) => [j, 0])) as Record<StaffJob, number>;
+  for (const r of rows) counts[jobOf(r.status)] += r.n;
+  return counts;
 }
 
 export interface StaffOrderDetail extends OrderDetail {
