@@ -9,7 +9,7 @@
 //      line-break word list — THAI_STYLE §5, owner 15/10) change only when a line of
 //      the open round file that starts with 【แตะได้】 names the path (the plan = the permission, no tickets); otherwise the
 //      normal permission prompt asks the owner                                                   → allow / ask
-// Lock round 15/10 (rule-audit 14/10 L2 L3 L5 L7 + LESSONS พ22) — each a rule that was kept only by memory:
+// Lock round 15/10 (rule-audit 14/10 L2 L3 L5 L7 + the 13.4 checker-read lock) — each a rule that was kept only by memory:
 //   D  no bare `next build` / `npm run build` in the main folder — `node scripts/test-server.js build` (right env,
 //      refuses while 3412 is up); a build that runs IN a worktree under _incoming/ or an app worktree under
 //      .claude/worktrees/ (the shell's cwd, or a `cd` before it) passes (HANDOFF §17 "Test server") → deny
@@ -21,7 +21,7 @@
 //   H  while scripts/pre-checker-gate.js has noted "the checker is reading" (scripts/lib/checker-lock.js): no edit in that
 //      working tree outside _incoming/ and .claude/worktrees/ (trees of their own), no git command that moves or
 //      rewrites it, no test-server build/start/stop,
-//      no build — until `node scripts/pre-checker-gate.js --done` (LESSONS พ22)                  → deny
+//      no build — until `node scripts/pre-checker-gate.js --done` (TEAM_RULES 13.4)                  → deny
 //
 // Input: the hook JSON on stdin ({ tool_name, tool_input, cwd }). Output: a PreToolUse decision on stdout, or nothing
 // (= carry on as usual). Fails open on its own errors — a broken guard must not stop all work; the git pre-push
@@ -178,7 +178,7 @@ function checkerReading() {
   return checkerLock.readAll(ROOT).map((note) => ({ // every worktree's note lives in the main folder's .git
     ...note,
     tree: norm(note.tree),
-    msg: `The checker is reading ${String(note.sha).slice(0, 8)} (${note.branch}) in ${note.tree} since ${note.started} — leave that working tree and the test server alone until its report, then run \`node scripts/pre-checker-gate.js --done\` there (LESSONS พ22). Prepare the next work under _incoming/ or in a worktree.`,
+    msg: `The checker is reading ${String(note.sha).slice(0, 8)} (${note.branch}) in ${note.tree} since ${note.started} — leave that working tree and the test server alone until its report, then run \`node scripts/pre-checker-gate.js --done\` there (TEAM_RULES 13.4). Prepare the next work under _incoming/ or in a worktree.`,
   }));
 }
 // _incoming/ and the app's worktrees under .claude/worktrees/ are trees of their own (16/10: a checker note on the main
