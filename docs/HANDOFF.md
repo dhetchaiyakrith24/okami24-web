@@ -12,7 +12,7 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 26/10 (house round): every finished item left as its PR; the full text before = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · open PRs = `gh pr list` · last round checkpoint = tag `cart-reopen-2210`.
+1 main: `git fetch && git log -1 --oneline origin/main` · open PRs = `gh pr list` · last round checkpoint = tag `house-clean-2610-done` (house round 26/10 closed 27/10).
   CART IS ON since 24/10 ~23:35 [ตรวจแล้ว] (Render env OKAMI24_ORDERING=on). Live-site facts, deploy checks, test kit = §17
   "Live site" + "Test trees + PR flow".
 2 Main folder: branch `cart-fit-2610` (HANDOFF note only) · test trees `_incoming/wt-golive` · `_incoming/wt-cart` · `_incoming/wt-stock`
