@@ -3,8 +3,7 @@ import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { categoriesWithProducts } from "@/lib/category-visibility";
 import { Container } from "@/components/ui/Container";
-import { CategoryLabel } from "@/components/catalog/CategoryLabel";
-import { HomeText } from "@/components/home/HomeCopy";
+import { HomeCategoryLabel, HomeIndexName, HomeText } from "@/components/home/HomeCopy";
 import { DecodeOnView } from "@/components/home/Decode";
 import { brandName } from "@/lib/utils";
 
@@ -85,7 +84,7 @@ export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {
             <details key={category.id} className="okh-index group/box rounded-2xl border border-surface-border bg-surface-0">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-display text-lg font-semibold leading-tight text-foreground">
-                  <CategoryLabel label={category.labelTh} />
+                  <HomeCategoryLabel labelTh={category.labelTh} shortName={category.shortName} />
                 </h3>
                 <span className="flex shrink-0 items-center gap-2 text-foreground-muted">
                   <span className="label-mono text-xs" lang="en">
@@ -104,7 +103,7 @@ export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {
                     <li key={entry.slug} className="text-sm leading-snug">
                       <Link href={`/products/${entry.slug}`} className="block py-1 text-foreground transition-colors hover:text-ember">
                         {entry.brand && <span className="text-foreground-muted">{entry.brand} </span>}
-                        {entry.name}
+                        <HomeIndexName slug={entry.slug} name={entry.name} />
                       </Link>
                     </li>
                   ))}
