@@ -505,11 +505,10 @@ Same format as above
   central §12 item 10 report in Thai, not this skill's report format.
 * **Hard lines:** no doorway or scaled pages · no fake freshness · no bought, swapped or self-posted links (SEO_LANDSCAPE §3) · copy through
   `thai-copy` + skill `thai-check` · prices never typed by hand · product facts from the maker only · no legal-status topics (TEAM_RULES tail).
+* **"Ask the user" in the text above** = questions to the owner follow TEAM_RULES 13.3 only (the one list) — the rest Friday decides and reports.
 * Skills it names that we have not installed (programmatic-seo · schema · ai-seo · cro · competitors · marketing-loops …) = not available here.
 * **Our locale setup is a ruling, not a fault:** en/zh share the Thai URL and Google indexes Thai only, so no hreflang (SEO_LANDSCAPE §7 row 10).
-  Lines above that would flag "locale hidden from URLs" or missing hreflang = report as known; changing it = change of direction → owner (13.3 #4).
+  Lines above that would flag "locale hidden from URLs" or missing hreflang = report as known; changing it = change of direction (TEAM_RULES 13.3 #4).
 * **Title patterns:** "vs / alternatives / best N" in references/title-tags.md = not for us where SEO_LANDSCAPE §9.5 rules them out
   (no competitor-name pages, no top-N lists).
-* **Article standard (owner 19/10 — 1 เรื่อง 1 บทความ):** one page = one main search question · primary keyword in title, H1, first paragraph, slug ·
-  secondary phrases from real queries in H2s · depth, no word-count target · one image per main section that shows the text · one main shop clip ·
-  every product named links to its live product page on first mention + 2–4 related guides.
+* **Article standard + internal links** = owner ruling, one home: `docs/SEO_LANDSCAPE.md` §7.3 "มาตรฐานบทความของร้าน".
