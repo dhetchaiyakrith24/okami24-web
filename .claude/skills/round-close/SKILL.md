@@ -17,7 +17,7 @@ owner's dev server on port 3000, never two Chrome jobs at once).
 List every request the owner made for this round — the round file or next-chat brief, the owner's chat messages of the
 round, and HANDOFF §16 items that name the round or were asked during it (a brief can miss one: the house round 26/10
 nearly closed without the owner's three new tools, LESSONS พ50). Each one = merged (PR) or parked in the owner's own
-words. Anything else = the round does not close: do it, or ask (13.3). The list goes in the report part "ทำอะไร" as one line.
+words. Anything else = the round does not close: do it — ask the owner only when it falls in 13.3. The list goes in the report part "ทำอะไร" as one line.
 
 ## Step 1 — Proof sized to what changed (13.5)
 
