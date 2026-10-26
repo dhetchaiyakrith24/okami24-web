@@ -31,20 +31,41 @@ const handoff = text["docs/HANDOFF.md"] || "";
 const s16 = handoff.slice(handoff.indexOf("## 16."), handoff.indexOf("## 17.") > 0 ? handoff.indexOf("## 17.") : undefined);
 const now = {
   loadedEveryChat: LOADED.reduce((n, f) => n + (text[f] || "").length, 0),
+  loadedBytes: LOADED.reduce((n, f) => n + Buffer.byteLength(text[f] || ""), 0),
   handoff: handoff.length,
   s16Bytes: Buffer.byteLength(s16),
+  s16LongestLine: Math.max(0, ...s16.split("\n").map((l) => Buffer.byteLength(l))),
   lessons: (text[".claude/LESSONS.md"] || "").length,
+  lessonsBytes: Buffer.byteLength(text[".claude/LESSONS.md"] || ""),
   agents: tracked.filter((f) => /^\.claude\/agents\/.+\.md$/.test(f)).length,
   skills: tracked.filter((f) => /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(f)).length,
 };
 const lastFile = "_incoming/house-last.json";
 const last = fs.existsSync(lastFile) ? JSON.parse(fs.readFileSync(lastFile, "utf8")) : null;
-console.log("## sizes (characters, line ends not counted)" + (last ? ` — previous run ${last.date}` : ""));
+console.log("## sizes (characters, line ends not counted · *Bytes and s16LongestLine = UTF-8 bytes, Thai = 3 a letter)" + (last ? ` — previous run ${last.date}` : ""));
 for (const [k, v] of Object.entries(now)) {
   const was = last && last.values[k];
   const d = was ? ` (was ${was}, ${v >= was ? "+" : ""}${Math.round(((v - was) / was) * 100)}%)` : "";
   console.log(`  ${k.padEnd(16)} ${String(v).padStart(8)}${d}`);
 }
+
+// 1b. shapes the specs set — skill okami24-handoff ขั้น 2 (§16 ≤ 15 KB, no line over 2,000 bytes, finished work deleted, owner
+// waits live in รอพี่ตรวจ) · TEAM_RULES head (one home: a LESSONS entry that only points elsewhere = a stub, deleted once its
+// citers are repointed). Report only, like the sizes.
+console.log("\n## §16 + LESSONS shape");
+let shape = 0;
+if (now.s16Bytes > 15000) { console.log(`  §16 ${now.s16Bytes} bytes > 15,000`); shape++; }
+if (now.s16LongestLine > 2000) { console.log(`  §16 longest line ${now.s16LongestLine} bytes > 2,000`); shape++; }
+s16.split("\n").forEach((l, i) => {
+  const w = l.match(/\b(CLOSED|BUILT|DONE)\b|not yet said OK/);
+  if (w) { console.log(`  §16 line ${i + 1} says "${w[0]}": ${l.trim().slice(0, 90)}`); shape++; }
+});
+for (const e of (text[".claude/LESSONS.md"] || "").split(/\n(?=## )/).slice(1)) {
+  const [head, ...body] = e.split("\n");
+  const lines = body.filter((l) => l.trim() && !/^#/.test(l));
+  if (lines.length === 1 && /^→ /.test(lines[0].trim())) { console.log(`  LESSONS stub: ${head.slice(3, 70)}`); shape++; }
+}
+if (!shape) console.log("  none");
 
 // 2. dead pointers
 console.log("\n## dead pointers in live files");

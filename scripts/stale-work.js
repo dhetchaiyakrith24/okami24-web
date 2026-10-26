@@ -40,8 +40,13 @@ try {
   notes.push("docs/HANDOFF.md not readable — dated items and branch names not checked");
 }
 const s16 = handoff.slice(handoff.indexOf("## 16."), handoff.indexOf("## 17."));
-const b5 = s16.slice(s16.indexOf("\n5 open / dated"));
+const at5 = s16.indexOf("\n5 open / dated");
+const b5 = at5 < 0 ? "" : s16.slice(at5);
 const dated = b5.split("\n").slice(1).filter((l) => /^\s+- /.test(l));
+// a §16 whose item 5 lost its header or its dd/mm dates makes this check find nothing in silence (rule-audit 26/10)
+if (handoff && at5 < 0) notes.push("HANDOFF §16 has no '5 open / dated' header — dated items not checked (skill okami24-handoff item 5)");
+else if (handoff && !dated.some((l) => /(?:^\s+- |· )\d{2}\/\d{2}(?![\d/])/.test(l)))
+  notes.push("HANDOFF §16 item 5 has no dd/mm date — nothing can come due (skill okami24-handoff item 5)");
 for (const line of dated) {
   if (/\b(DONE|CLOSED)\b/.test(line)) continue;
   for (const m of line.matchAll(/(?:^\s+- |· )(\d{2})\/(\d{2})(?![\d/])/g)) {
