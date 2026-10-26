@@ -12,6 +12,8 @@
 //      problems or disagree not empty = stop and report. The result string stays in window.__oeCompact.
 //   4. copy window.__oeCompact out in slices of 900 characters (the tool cuts output near 1,000), join them exactly, save
 //      as <compact.txt>, check its byte count = compactLength
+//      B5 step 1 (owner 26/10, 7-day log): copy window.__oeCounts the same way (check countsLength), save it beside the read and
+//      run `node scripts/stock-count-log.js <counts.txt> <snapshot-out.txt>` after this script — log only, never a stop reason
 //   5. close the picker with its own "ยกเลิก", then close the tab — never the page's "บันทึก"
 //
 // Each option's state is the picker button itself (blue "เพิ่ม <option>" = 1, grey pointer-events-none/disabled = 0) — what

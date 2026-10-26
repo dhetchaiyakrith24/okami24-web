@@ -110,9 +110,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        `available` (= inventory − reserved; checked live 26/10 on page 1: 94/94 equal, none negative, max 223). The browser read now
        also leaves window.__oeCounts; the hourly routine saves it and runs `node scripts/stock-count-log.js <counts> <oe-snap>` →
        `_incoming/stock-api/count-log.jsonl`; verdict `node scripts/stock-count-log.js --report` on 02/11 (READY / NOT YET) → then ②.
-       PLAN (Friday 26/10, sent to the owner): ① count source — read-only look in the owner's Chrome for a per-code quantity in
-       Shipnity Max (product list / stock report); the hourly routine LOGS it beside the picker in/out for 7 days (no site change);
-       done = count > 0 ⇔ picker "เพิ่ม" on every code read. ② stock at runtime — a DB table written by the routine through a
+       Done = count > 0 ⇔ picker "เพิ่ม" on every read for 7 days (≥ 12 reads a day). NEXT ② stock at runtime — a DB table written by the routine through a
        staff-token endpoint (needs a NEW secret env on Render = owner OK first, 13.3 #9); product pages stay prerendered and read
        stock from a small no-cookie API; cart + placeOrder check the DB; the build-time WAREHOUSE set stays as the fallback; hourly
        stock PRs/deploys stop. ③ the label on option tiles + product page (designer places it), then proof + checker + merge.

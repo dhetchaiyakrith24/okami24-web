@@ -44,7 +44,9 @@ if (report) {
   const shown = lowNow.slice(0, 20).map(([c, n]) => `${c}=${n}`).join(", ");
   console.log(`  low (1–3 left) in the latest read: ${lowNow.length} code(s)${lowNow.length ? ": " + shown + (lowNow.length > 20 ? " …" : "") : ""}`);
   const spanDays = (Date.parse(last) - Date.parse(first)) / 86_400_000;
-  console.log(spanDays >= days - 0.5 && clean === runs.length ? "READY - the count is as trustworthy as the button for every read" : `NOT YET - ${spanDays.toFixed(1)} of ${days} day(s), ${runs.length - clean} read(s) with a difference`);
+  // The routine reads 17 times a day (08:00–00:00); fewer than 12 a day on average = gaps, not proof.
+  const enough = runs.length >= days * 12;
+  console.log(spanDays >= days - 0.5 && enough && clean === runs.length ? "READY - the count is as trustworthy as the button for every read" : `NOT YET - ${spanDays.toFixed(1)} of ${days} day(s), ${runs.length} read(s) (need ${days * 12}), ${runs.length - clean} with a difference`);
   process.exit(0);
 }
 

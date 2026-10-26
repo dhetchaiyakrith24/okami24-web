@@ -47,7 +47,7 @@
         const f = fib(b), dis = !!(f && f.return && f.return.memoizedProps && f.return.memoizedProps.disabled);
         const state = dis || /pointer-events-none/.test(b.className) ? 0 : 1;
         if (state !== (s.available > 0 ? 1 : 0)) disagree.push(`${s.sku} button ${state} available ${s.available}`);
-        read.push([s.sku, state, Number.isFinite(s.available) ? s.available : -1]);
+        read.push([s.sku, state, Number.isFinite(Number(s.available)) && s.available !== null && s.available !== "" ? Number(s.available) : -1]);
       });
       products.push({ sku: p.sku, read });
     }
