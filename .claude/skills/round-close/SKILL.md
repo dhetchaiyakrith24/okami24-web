@@ -27,6 +27,8 @@ owner's dev server on port 3000, never two Chrome jobs at once).
 ## Step 2 — Designer once, only per 13.5 #6
 
 A new look, slot or component in the round → `designer` **one time** with the flagged crops only. Otherwise skip.
+Something a customer sees changed in the round → agent `visitor` once on the test build (TEAM_RULES 13.2 — brief = the test address + a
+customer's goal only). Nothing a customer sees changed = skip.
 
 ## Step 3 — Verify set (names only)
 

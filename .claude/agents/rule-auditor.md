@@ -59,7 +59,7 @@ Read whole files. Do not sample. A rule hidden at the bottom of a file is still 
 | **มัดมือ** (method without a guard) | The rule dictates *how* to work but stops no real breakage — dropping it would break nothing (central §12 items 20 · 25). |
 | **ทำเป็นตัวล็อกได้** (lockable) | The rule is followed by memory only, yet a script, hook or check could enforce it — name the script or hook that would. |
 
-Three lenses for every row (from skill `house-clean`): would dropping it break anything · does it tie the doer's hands (มัดมือ) ·
+Three lenses for every row (from skill `house-clean`): left as it is, does work go wrong or messy (ไม่แก้แล้วเละ) · does it tie the doer's hands (มัดมือ) ·
 was the old text cleared when the subject was rewritten (central §12 item 25).
 
 Judge from the text only. Do not soften a finding because a rule looks important, and do not
