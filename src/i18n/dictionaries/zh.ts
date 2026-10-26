@@ -547,6 +547,7 @@ export const zh: Dictionary = {
     eyebrow: "订单",
     pageTitle: "订单状态",
     orderNumberLabel: "订单编号",
+    runNumberLabel: "店铺订单序号",
     statusLabel: "状态",
     itemsTitle: "商品",
     shipToTitle: "收货地址",

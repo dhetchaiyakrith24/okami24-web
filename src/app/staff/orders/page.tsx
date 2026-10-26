@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
+import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { listStaffOrders, type StaffOrderFilter } from "@/lib/staff/orders";
 import { formatBaht, formatDateTime, VerdictBadge } from "@/app/staff/_components/order-bits";
@@ -75,7 +76,10 @@ export default async function StaffOrdersPage({ searchParams }: { searchParams: 
             <li key={o.orderNumber}>
               <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex flex-col gap-1 p-4 hover:bg-surface-2">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-medium text-foreground">{o.orderNumber}</span>
+                  <span className="font-medium text-foreground">
+                    {o.runNumber !== null && <span className="mr-2 text-ember">{formatRunNumber(o.runNumber)}</span>}
+                    {o.orderNumber}
+                  </span>
                   <span className="text-sm font-semibold text-foreground">{formatBaht(o.total)}</span>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-foreground-muted">

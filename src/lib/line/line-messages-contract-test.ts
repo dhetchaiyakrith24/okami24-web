@@ -28,6 +28,7 @@ const ORDER: OrderDetail = {
   orderNumber: "OK-20261022-a1b2c3",
   viewToken: "0123456789abcdef0123456789abcdef",
   status: "payment_submitted",
+  runNumber: null,
   subtotal: 500,
   shippingFee: 50,
   total: 550,

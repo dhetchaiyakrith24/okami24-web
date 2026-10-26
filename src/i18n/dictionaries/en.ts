@@ -555,6 +555,7 @@ export const en: Dictionary = {
     eyebrow: "Order",
     pageTitle: "Order status",
     orderNumberLabel: "Order number",
+    runNumberLabel: "Shop order no.",
     statusLabel: "Status",
     itemsTitle: "Items",
     shipToTitle: "Shipping to",
