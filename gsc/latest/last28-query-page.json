@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-26",
-  "endDate": "2026-10-23",
+  "startDate": "2026-09-27",
+  "endDate": "2026-10-24",
   "dimensions": [
    "query",
    "page"
@@ -13,20 +13,20 @@
     "pod",
     "https://okami24.store/products/pod-systems"
    ],
-   "clicks": 29,
-   "impressions": 173,
-   "ctr": 0.1676300578034682,
-   "position": 5.676300578034682
+   "clicks": 31,
+   "impressions": 179,
+   "ctr": 0.17318435754189945,
+   "position": 6.206703910614525
   },
   {
    "keys": [
     "voopoo drag 6",
     "https://okami24.store/products/drag-6"
    ],
-   "clicks": 21,
-   "impressions": 69,
-   "ctr": 0.30434782608695654,
-   "position": 7.492753623188406
+   "clicks": 22,
+   "impressions": 73,
+   "ctr": 0.3013698630136986,
+   "position": 7.342465753424658
   },
   {
    "keys": [
@@ -34,29 +34,19 @@
     "https://okami24.store/products/pod-systems"
    ],
    "clicks": 19,
-   "impressions": 67,
-   "ctr": 0.2835820895522388,
-   "position": 4.313432835820896
+   "impressions": 69,
+   "ctr": 0.2753623188405797,
+   "position": 4.304347826086957
   },
   {
    "keys": [
     "voopoo drag 6 ราคา",
     "https://okami24.store/products/drag-6"
    ],
-   "clicks": 18,
-   "impressions": 32,
-   "ctr": 0.5625,
-   "position": 2.375
-  },
-  {
-   "keys": [
-    "okami24",
-    "https://okami24.store/"
-   ],
-   "clicks": 16,
-   "impressions": 30,
-   "ctr": 0.5333333333333333,
-   "position": 1
+   "clicks": 17,
+   "impressions": 31,
+   "ctr": 0.5483870967741935,
+   "position": 2.354838709677419
   },
   {
    "keys": [
@@ -64,19 +54,29 @@
     "https://okami24.store/products/pod-systems"
    ],
    "clicks": 14,
+   "impressions": 29,
+   "ctr": 0.4827586206896552,
+   "position": 3.5172413793103448
+  },
+  {
+   "keys": [
+    "okami24",
+    "https://okami24.store/"
+   ],
+   "clicks": 14,
    "impressions": 28,
    "ctr": 0.5,
-   "position": 3.5357142857142856
+   "position": 1
   },
   {
    "keys": [
     "okami pod",
     "https://okami24.store/"
    ],
-   "clicks": 9,
-   "impressions": 25,
-   "ctr": 0.36,
-   "position": 5.28
+   "clicks": 10,
+   "impressions": 26,
+   "ctr": 0.38461538461538464,
+   "position": 5.115384615384615
   },
   {
    "keys": [
@@ -124,9 +124,9 @@
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 6,
-   "impressions": 25,
-   "ctr": 0.24,
-   "position": 4.4399999999999995
+   "impressions": 24,
+   "ctr": 0.25,
+   "position": 4.416666666666666
   },
   {
    "keys": [
@@ -137,6 +137,16 @@
    "impressions": 30,
    "ctr": 0.16666666666666666,
    "position": 8.533333333333333
+  },
+  {
+   "keys": [
+    "caliburn g5 ราคา",
+    "https://okami24.store/products/caliburn-g5"
+   ],
+   "clicks": 4,
+   "impressions": 9,
+   "ctr": 0.4444444444444444,
+   "position": 1.3333333333333333
   },
   {
    "keys": [
@@ -190,23 +200,13 @@
   },
   {
    "keys": [
-    "caliburn g5 ราคา",
-    "https://okami24.store/products/caliburn-g5"
-   ],
-   "clicks": 3,
-   "impressions": 7,
-   "ctr": 0.42857142857142855,
-   "position": 1.4285714285714286
-  },
-  {
-   "keys": [
     "joiway",
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 3,
-   "impressions": 189,
-   "ctr": 0.015873015873015872,
-   "position": 6.407407407407407
+   "impressions": 203,
+   "ctr": 0.014778325123152709,
+   "position": 6.556650246305419
   },
   {
    "keys": [
@@ -300,16 +300,6 @@
   },
   {
    "keys": [
-    "drag 6 ราคา",
-    "https://okami24.store/products/drag-6"
-   ],
-   "clicks": 2,
-   "impressions": 6,
-   "ctr": 0.3333333333333333,
-   "position": 3.8333333333333335
-  },
-  {
-   "keys": [
     "infy 20k",
     "https://okami24.store/products/infy-20k"
    ],
@@ -370,16 +360,6 @@
   },
   {
    "keys": [
-    "nexbar clear 18k",
-    "https://okami24.store/products/pod-180"
-   ],
-   "clicks": 2,
-   "impressions": 3,
-   "ctr": 0.6666666666666666,
-   "position": 12.666666666666666
-  },
-  {
-   "keys": [
     "okami พอต",
     "https://okami24.store/"
    ],
@@ -397,6 +377,26 @@
    "impressions": 4,
    "ctr": 0.5,
    "position": 1.75
+  },
+  {
+   "keys": [
+    "relx lumi",
+    "https://okami24.store/products/relx-lumi-18k"
+   ],
+   "clicks": 2,
+   "impressions": 3,
+   "ctr": 0.6666666666666666,
+   "position": 35.333333333333336
+  },
+  {
+   "keys": [
+    "tfit m power 20,000 puff",
+    "https://okami24.store/products/tfit-m-power-20k"
+   ],
+   "clicks": 2,
+   "impressions": 7,
+   "ctr": 0.2857142857142857,
+   "position": 3.5714285714285716
   },
   {
    "keys": [
@@ -504,8 +504,8 @@
     "https://okami24.store/brands/uwell"
    ],
    "clicks": 1,
-   "impressions": 7,
-   "ctr": 0.14285714285714285,
+   "impressions": 9,
+   "ctr": 0.1111111111111111,
    "position": 5
   },
   {
@@ -514,9 +514,9 @@
     "https://okami24.store/products/caliburn-g5-lite-se"
    ],
    "clicks": 1,
-   "impressions": 3,
-   "ctr": 0.3333333333333333,
-   "position": 12.666666666666666
+   "impressions": 5,
+   "ctr": 0.2,
+   "position": 12
   },
   {
    "keys": [
@@ -527,6 +527,16 @@
    "impressions": 5,
    "ctr": 0.2,
    "position": 48.8
+  },
+  {
+   "keys": [
+    "dotmod thailand",
+    "https://okami24.store/brands/dotmod"
+   ],
+   "clicks": 1,
+   "impressions": 11,
+   "ctr": 0.09090909090909091,
+   "position": 30.545454545454547
   },
   {
    "keys": [
@@ -550,6 +560,16 @@
   },
   {
    "keys": [
+    "drag 6 ราคา",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 1,
+   "impressions": 5,
+   "ctr": 0.2,
+   "position": 3.6
+  },
+  {
+   "keys": [
     "drag voopoo 6",
     "https://okami24.store/products/drag-6"
    ],
@@ -567,16 +587,6 @@
    "impressions": 5,
    "ctr": 0.2,
    "position": 75.2
-  },
-  {
-   "keys": [
-    "iqos",
-    "https://okami24.store/brands/iqos"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 3.5
   },
   {
    "keys": [
@@ -630,16 +640,6 @@
   },
   {
    "keys": [
-    "mood monster",
-    "https://okami24.store/products/mood-monster-14k"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 21
-  },
-  {
-   "keys": [
     "muro connector 20k",
     "https://okami24.store/products/muro-connector-20k"
    ],
@@ -677,16 +677,6 @@
    "impressions": 1,
    "ctr": 1,
    "position": 15
-  },
-  {
-   "keys": [
-    "okami บุหรี่ไฟฟ้า",
-    "https://okami24.store/"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 5.5
   },
   {
    "keys": [
@@ -750,16 +740,6 @@
   },
   {
    "keys": [
-    "relx lumi",
-    "https://okami24.store/products/relx-lumi-18k"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 34.5
-  },
-  {
-   "keys": [
     "relx smash go",
     "https://okami24.store/products/relx-smash-go-12k"
    ],
@@ -767,16 +747,6 @@
    "impressions": 2,
    "ctr": 0.5,
    "position": 47
-  },
-  {
-   "keys": [
-    "tfit m power 20,000 puff",
-    "https://okami24.store/products/tfit-m-power-20k"
-   ],
-   "clicks": 1,
-   "impressions": 6,
-   "ctr": 0.16666666666666666,
-   "position": 3.8333333333333335
   },
   {
    "keys": [
@@ -814,9 +784,9 @@
     "https://okami24.store/products/caliburn-g5"
    ],
    "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 8.5
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
+   "position": 7.333333333333333
   },
   {
    "keys": [
@@ -1110,16 +1080,6 @@
   },
   {
    "keys": [
-    "caliburn g",
-    "https://okami24.store/products/caliburn-g4"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 67
-  },
-  {
-   "keys": [
     "caliburn g 3",
     "https://okami24.store/brands/uwell"
    ],
@@ -1310,6 +1270,16 @@
   },
   {
    "keys": [
+    "caliburn g5 lite vs g5 lite se",
+    "https://okami24.store/products/caliburn-g5-lite-se"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 48
+  },
+  {
+   "keys": [
     "caliburn g5 se lite",
     "https://okami24.store/products/caliburn-g5-lite-se"
    ],
@@ -1334,9 +1304,9 @@
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 7.5
+   "position": 11.666666666666666
   },
   {
    "keys": [
@@ -1360,6 +1330,26 @@
   },
   {
    "keys": [
+    "caliburn gs lite",
+    "https://okami24.store/products/caliburn-g5-lite"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 2
+  },
+  {
+   "keys": [
+    "caliburn gs lite",
+    "https://okami24.store/products/caliburn-g5-lite-se"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 8
+  },
+  {
+   "keys": [
     "cartridge pod",
     "https://okami24.store/products/pods-cartridges"
    ],
@@ -1380,13 +1370,23 @@
   },
   {
    "keys": [
+    "cartridge relx infinity",
+    "https://okami24.store/products/relx-infinity-pro-2-pod"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 31
+  },
+  {
+   "keys": [
     "darg 6",
     "https://okami24.store/products/drag-6"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 1,
    "ctr": 0,
-   "position": 9.666666666666666
+   "position": 7
   },
   {
    "keys": [
@@ -1394,9 +1394,9 @@
     "https://okami24.store/products/disposables"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 12
+   "position": 11.8
   },
   {
    "keys": [
@@ -1437,16 +1437,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 62
-  },
-  {
-   "keys": [
-    "dotmod thailand",
-    "https://okami24.store/brands/dotmod"
-   ],
-   "clicks": 0,
-   "impressions": 8,
-   "ctr": 0,
-   "position": 31.25
   },
   {
    "keys": [
@@ -1670,6 +1660,16 @@
   },
   {
    "keys": [
+    "esko bar switch 20k ดูดไม่ขึ้น",
+    "https://okami24.store/products/esko-bar-switch-pod"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
     "esko bar switch kit",
     "https://okami24.store/brands/esko-bar"
    ],
@@ -1734,9 +1734,9 @@
     "https://okami24.store/products/esko-bar-switch-pod"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 6
+   "position": 3.3333333333333335
   },
   {
    "keys": [
@@ -1754,9 +1754,9 @@
     "https://okami24.store/products/mq-bar-22k"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 9,
    "ctr": 0,
-   "position": 9
+   "position": 9.222222222222221
   },
   {
    "keys": [
@@ -1780,6 +1780,16 @@
   },
   {
    "keys": [
+    "g3 ion 12",
+    "https://okami24.store/products/caliburn-g3"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 59
+  },
+  {
+   "keys": [
     "g3 mini",
     "https://okami24.store/products/argus-g3-mini"
    ],
@@ -1790,6 +1800,16 @@
   },
   {
    "keys": [
+    "g3 mini argus",
+    "https://okami24.store/products/argus-g3-mini"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 28
+  },
+  {
+   "keys": [
     "g3 pro",
     "https://okami24.store/products/caliburn-g3-pro-koko"
    ],
@@ -1797,6 +1817,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 9
+  },
+  {
+   "keys": [
+    "g3pro koko",
+    "https://okami24.store/products/caliburn-g3-pro-koko"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 66
   },
   {
    "keys": [
@@ -2090,6 +2120,16 @@
   },
   {
    "keys": [
+    "iqos device",
+    "https://okami24.store/brands/iqos"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
     "iqos iluma i reset",
     "https://okami24.store/guides/iqos-iluma-i-reset-and-charging"
    ],
@@ -2097,6 +2137,26 @@
    "impressions": 1,
    "ctr": 0,
    "position": 19
+  },
+  {
+   "keys": [
+    "iqos iluma prime",
+    "https://okami24.store/brands/iqos"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "iqos iluma prime",
+    "https://okami24.store/guides/iqos-iluma-i-one-vs-iluma-i"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
   },
   {
    "keys": [
@@ -2200,6 +2260,16 @@
   },
   {
    "keys": [
+    "lambda i8",
+    "https://okami24.store/products/iqosheet-14"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 73
+  },
+  {
+   "keys": [
     "lnfy 20k",
     "https://okami24.store/products/infy-20k"
    ],
@@ -2264,9 +2334,9 @@
     "https://okami24.store/products/tfit-m-power-20k"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 5,
    "ctr": 0,
-   "position": 13.25
+   "position": 11.6
   },
   {
    "keys": [
@@ -2277,6 +2347,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 29
+  },
+  {
+   "keys": [
+    "m power20k",
+    "https://okami24.store/products/tfit-m-power-20k"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
   },
   {
    "keys": [
@@ -2364,9 +2444,9 @@
     "https://okami24.store/products/eliquid-1"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 6,
    "ctr": 0,
-   "position": 7.2
+   "position": 6.5
   },
   {
    "keys": [
@@ -2420,13 +2500,23 @@
   },
   {
    "keys": [
+    "monster 14 k",
+    "https://okami24.store/products/mood-monster-14k"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
     "monster 14k",
     "https://okami24.store/products/mood-monster-14k"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 3
+   "position": 3.4
   },
   {
    "keys": [
@@ -2437,6 +2527,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 9
+  },
+  {
+   "keys": [
+    "mood monster",
+    "https://okami24.store/products/mood-monster-14k"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 20
   },
   {
    "keys": [
@@ -2500,6 +2600,16 @@
   },
   {
    "keys": [
+    "muro mixto",
+    "https://okami24.store/products/muro-salt-nic"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 31
+  },
+  {
+   "keys": [
     "muro sc 8000",
     "https://okami24.store/products/muro-3ml"
    ],
@@ -2517,6 +2627,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 26
+  },
+  {
+   "keys": [
+    "nic juice price",
+    "https://okami24.store/products/e-liquid"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 73
   },
   {
    "keys": [
@@ -2547,6 +2667,16 @@
    "impressions": 2,
    "ctr": 0,
    "position": 1
+  },
+  {
+   "keys": [
+    "okami บุหรี่ไฟฟ้า",
+    "https://okami24.store/"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
   },
   {
    "keys": [
@@ -2694,7 +2824,7 @@
     "https://okami24.store/how-to-order"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 3,
    "ctr": 0,
    "position": 1
   },
@@ -2714,19 +2844,9 @@
     "https://okami24.store/products"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 5,
    "ctr": 0,
    "position": 1
-  },
-  {
-   "keys": [
-    "okami24",
-    "https://okami24.store/products/caliburn-g5-lite"
-   ],
-   "clicks": 0,
-   "impressions": 2,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [
@@ -2870,13 +2990,43 @@
   },
   {
    "keys": [
+    "pnp coils",
+    "https://okami24.store/products/coil-92"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 61
+  },
+  {
+   "keys": [
+    "pocket xl disposable",
+    "https://okami24.store/products/disposables"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 27
+  },
+  {
+   "keys": [
     "pod",
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 15,
+   "impressions": 17,
    "ctr": 0,
-   "position": 35.53333333333333
+   "position": 35.64705882352941
+  },
+  {
+   "keys": [
+    "pod",
+    "https://okami24.store/guides/open-system-vs-disposable"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 34.5
   },
   {
    "keys": [
@@ -3164,9 +3314,9 @@
     "https://okami24.store/brands/relx"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 4,
    "ctr": 0,
-   "position": 79
+   "position": 83
   },
   {
    "keys": [
@@ -3224,9 +3374,9 @@
     "https://okami24.store/products/relx-lumi-18k"
    ],
    "clicks": 0,
-   "impressions": 21,
+   "impressions": 29,
    "ctr": 0,
-   "position": 2.619047619047619
+   "position": 2.689655172413793
   },
   {
    "keys": [
@@ -3277,6 +3427,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 40
+  },
+  {
+   "keys": [
+    "round pods",
+    "https://okami24.store/products/pod-systems"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 28
   },
   {
    "keys": [
@@ -3620,6 +3780,26 @@
   },
   {
    "keys": [
+    "uwell caliburn g3pro",
+    "https://okami24.store/products/caliburn-g3-pro"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 52
+  },
+  {
+   "keys": [
+    "uwell caliburn g3pro",
+    "https://okami24.store/products/caliburn-g3-pro-koko"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 59
+  },
+  {
+   "keys": [
     "uwell caliburn g4",
     "https://okami24.store/brands/uwell"
    ],
@@ -3700,6 +3880,16 @@
   },
   {
    "keys": [
+    "uwell caliburn g5 lite se pod system kit",
+    "https://okami24.store/products/caliburn-g5-lite"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
     "uwell g3 pro",
     "https://okami24.store/products/caliburn-g3-pro-koko"
    ],
@@ -3720,6 +3910,26 @@
   },
   {
    "keys": [
+    "uwell g4 pro price",
+    "https://okami24.store/brands/uwell"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 41
+  },
+  {
+   "keys": [
+    "uwell g4 pro price",
+    "https://okami24.store/products/caliburn-g4-pro"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 49
+  },
+  {
+   "keys": [
     "uwell g5 lite",
     "https://okami24.store/products/caliburn-g5-lite"
    ],
@@ -3734,9 +3944,9 @@
     "https://okami24.store/products/caliburn-g5-lite-se"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 9
+   "position": 8.666666666666668
   },
   {
    "keys": [
@@ -3880,6 +4090,16 @@
   },
   {
    "keys": [
+    "voopoo vmate pro 2 pod",
+    "https://okami24.store/products/vmate-pro-2"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 48
+  },
+  {
+   "keys": [
     "voopoo vmate top fill",
     "https://okami24.store/products/coil-74"
    ],
@@ -3980,6 +4200,16 @@
   },
   {
    "keys": [
+    "ขอพิกัดซื้อ",
+    "https://okami24.store/products/m-switch-kit"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 4
+  },
+  {
+   "keys": [
     "ขอรูป",
     "https://okami24.store/products/infy-pod"
    ],
@@ -4064,9 +4294,29 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 7,
    "ctr": 0,
-   "position": 8.5
+   "position": 8
+  },
+  {
+   "keys": [
+    "จอยเวย์",
+    "https://okami24.store/brands/joiway"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
+    "จอยเวย์ f4",
+    "https://okami24.store/brands/joiway"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
   },
   {
    "keys": [
@@ -4117,6 +4367,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 5
+  },
+  {
+   "keys": [
+    "ดูดพอตยังไงไม่ให้สําลัก",
+    "https://okami24.store/guides/how-to-vape-without-coughing"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
   },
   {
    "keys": [
@@ -4404,9 +4664,9 @@
     "https://okami24.store/products/disposables"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 4,
    "ctr": 0,
-   "position": 41
+   "position": 43
   },
   {
    "keys": [
@@ -4434,9 +4694,9 @@
     "https://okami24.store/"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 12
+   "position": 12.666666666666666
   },
   {
    "keys": [
@@ -4540,6 +4800,16 @@
   },
   {
    "keys": [
+    "ราคา เท่า ไหร่",
+    "https://okami24.store/products/esko-bar-switch-pod"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
     "ราคาตัวละเท่าไหร่",
     "https://okami24.store/products/infy-20k"
    ],
@@ -4590,16 +4860,6 @@
   },
   {
    "keys": [
-    "ราคาไทย",
-    "https://okami24.store/products/iqosheet-18"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
-  },
-  {
-   "keys": [
     "รุ่นอะไร",
     "https://okami24.store/products/zero-nano"
    ],
@@ -4617,6 +4877,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 84
+  },
+  {
+   "keys": [
+    "วิธีดูดบุหรี่ไฟฟ้า ไม่ให้ สําลัก",
+    "https://okami24.store/guides/how-to-vape-without-coughing"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
   },
   {
    "keys": [

@@ -1,0 +1,23 @@
+{
+  "site": "sc-domain:okami24.store",
+  "account": "…@okami24-gsc.iam.gserviceaccount.com",
+  "ranges": {
+    "last28": {
+      "startDate": "2026-09-27",
+      "endDate": "2026-10-24"
+    },
+    "last90": {
+      "startDate": "2026-07-27",
+      "endDate": "2026-10-24"
+    }
+  },
+  "rows": {
+    "last28-query": 365,
+    "last28-page": 160,
+    "last28-query-page": 510,
+    "last28-device": 3,
+    "last28-country": 33,
+    "last90-date": 48
+  },
+  "ranAt": "2026-10-26T01:31:18.100Z"
+}
