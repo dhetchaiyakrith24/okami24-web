@@ -19,18 +19,21 @@ import { resolveProductRef } from "./catalog-resolver";
  * No other device and no shop pick while the cart has items; nothing fits = no row. This replaced the Q8 "half from the
  * cart, half shop picks" mix, whose same-category tier put other devices next to an Argus G4.
  *
- * Empty cart: BSOT §15's list, then the homepage lead models as a reserve — used only as an order: the heading claims
+ * Empty cart: SHOP_PICKS (market order, below), then the homepage lead models as a reserve — used only as an order: the heading claims
  * nothing (owner 20/10: no "best seller" wording, there are no sales figures).
  * Every card: sellable today (the product page's buy rule, in-stock.ts), an approved price, not already in the cart, not
  * on BSOT §15 "Not recommended". Deterministic (no shuffle) — the same cart always shows the same row.
  */
 const SLOTS = 4;
 
-/** BSOT §15 in its order — "Real best sellers", "Customer favorites", then "Beginner friendly". Esko Bar Switch 20K = the kit
- *  page (pod-159) · M Switch 15K = the kit page (its "ใช้กับ" section leads to the pods) · nexBar CLEAR 18K (pod-180) ·
- *  "Marbo" = SALTHUB M BAR ("มาโบ") 10K / 9K.
- *  "Relx Connector 20K" is not listed until the owner says which page it means (Muro Connector 20K or RELX Creator Pod 20K). */
-const SHOP_PICKS = ["pod-159", "m-switch-kit", "pod-180", "m-bar-10k", "m-bar-9k"];
+/** Market order (owner 26/10: "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"). ESTIMATE, not sales figures: researcher 27/10
+ *  counted Thai vape shops' own "สินค้าขายดี / ยอดนิยม" blocks (pod789.com · ihavevape.net · vapemun.com · 17pod.shop ·
+ *  pod9k.com · zeedcupvp.com · goatvapethai.com; the first three look like one template, so not independent), weighted by
+ *  position. Strong (4–5 shops): M BAR 10K · ESKO BAR SWITCH 20K kit (pod-159) · M SWITCH kit · M BAR 9K — the same four the
+ *  owner's BSOT §15 names. Medium (2–3 shops): Muro Connector 20K — also the owner's "Relx Connector 20K" [estimate: the only
+ *  "Connector" in Thai shops; pod789 sells it as a pod that fits the RELX Creator] · ESKO BAR 20000 · INFY 20K · RELX LUMI 18K.
+ *  nexBar CLEAR 18K (pod-180) had no market signal; it stays last on the owner's word (BSOT §15 "Customer favorites"). */
+const SHOP_PICKS = ["m-bar-10k", "pod-159", "m-switch-kit", "m-bar-9k", "muro-connector-20k", "esko-bar-20k", "infy-20k", "relx-lumi-18k", "pod-180"];
 
 /** BSOT §15 "Not recommended". */
 const NEVER = new Set(["muro-space-15k"]);
