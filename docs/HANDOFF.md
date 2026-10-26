@@ -159,6 +159,10 @@ Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules �
   check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
 Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its file in `.claude/agents/`) · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
+Stock PR anomaly = draft + ask the owner (TEAM_RULES 13.7 · the prompt follows this list): more than 15 products change at once, or more than 60 codes
+  flip in one run · a code in sku-map missing from the read, or far fewer read than last run · the reader reports a problem or contradicts itself ·
+  the diff touches any file but the stock file (`src/data/content-dates.json` moved by the hook does not count). Reading the product-list page
+  alone (not order entry) = may close only; reopening waits for the owner, then `--reopen`. How to read (read only) = header of `scripts/order-entry-stock.js`.
 Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield MCP: `generate_image`
   is ALLOWED (owner 20/10, #661); every other credit-spending Higgsfield tool stays DENIED in `.claude/settings.json` · credits =
   IMAGE_SPEC §0 item 7.
