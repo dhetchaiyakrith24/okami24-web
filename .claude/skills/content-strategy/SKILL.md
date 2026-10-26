@@ -469,5 +469,5 @@ Visual or structured representation of how content interconnects.
   topics (TEAM_RULES "เรื่องสถานะทางกฎหมาย").
 - **Output to the owner:** the top picks in chat (central §12 item 10, Thai) + the full list in ONE committed docs home
   (no second copy of the keymap) · then run in batches (TEAM_RULES 13.5 / 13.7; the owner can object at any time).
-- **Related skills above** are not installed here except where named: writing = `thai-copy`, SEO checks = `seo-auditor`;
+- **Related skills above** are not installed here except where named: writing = `thai-copy`, SEO checks = `seo-auditor` + skills `seo-audit` · `site-architecture`;
   `programmatic-seo` is not adopted (doorway-page risk).
