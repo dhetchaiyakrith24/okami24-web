@@ -42,12 +42,8 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
-  h OWNER'S NEW TEAM TOOLS (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; one numbering = the owner's chat list):
-     BUILT 26/10 in #888 — (4) researcher market/competitor/price mode · (5) follow-up = `scripts/stale-work.js` + agent `follow-up` +
-     a line at every chat open (session-sync step 7); its daily 13:00 task `okami24-follow-up-morning`
-     (writes "ค้างนาน" on the status page) · (6) agent `visitor` (outside-eye customer on the test build) — not yet run for real; first
-     use = the next big round or new look.
-     LEFT — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
+  h OWNER'S NEW TEAM TOOLS still to build (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; numbers = the owner's chat list; 4–6 are in
+     TEAM_RULES 13.2 · agent `visitor` not yet run for real, first use = the next big round or new look) — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
      site-architecture / designer itself · (2) one assets folder C:\Users\dhetc\OKami24-assets\<YYYY-MM>\<job>\ for images WE made or
      edited only (never others' refs) + a step in the image skills · (3) shop accounts audit (income/costs/investment) = a SEPARATE
      project (central §12 item 32) with its own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page.
@@ -57,8 +53,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      (rm/sed -i/redirect into a checker-read tree) + L2 (scan/shot tools against the live site) · old side chats to archive:
      line1-images-2310d local_be2fd557 · line2-cart-2310b local_277aecbf · line1-images-2310c local_1b6cafc0 · old main
      local_686a322f-0897-443b-89a8-c30fd88e0e5c.
-  Owner has not yet said OK to: login look (#856) · quick add (#869) · B2 slip push on the real LINE group (first real slip shows it) ·
-     B3 look · B4 (record the owner's real refunded order's slip there if not done).
+  Live looks the owner has not yet said OK to = รอพี่ตรวจ 78.
   Taste notes left: relx-smash-go-12k 17 of 27 tiles share photos · /account/login poster polish after Q6 · portrait slip ~135 px wide
      in the staff next-step card at 390.
   Test orders OK-20261023-e25378 (+ maybe M Bar 9K ฿400) → cancel on /staff (reason "ทดสอบ") when the owner finishes testing.
@@ -69,10 +64,9 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · hand-kept sold-out `muro-connector-20k | Double Mint`
      (src/data/stock/sold-out.ts) — remove when the order-entry read shows Pod-171-3 back · EasySlip quota 497/1000 (23/10) — warn
      before it runs out · K+ slip misjudged 10/10 → EasySlip matchedAccount (owner step, รอพี่ตรวจ).
-3c CLOSED 26/10 round "reopen the cart" (`docs/rounds/รอบเปิดตะกร้า-22-10.txt`, tag `cart-reopen-2210`): all five conditions done
-  (#806 #807 #810 #811), cart ON. Left outside the round: off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ;
+3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77;
   DEPLOY-RENDER §9) · age-gate body still says "order on LINE" (owner 24/10: stays).
-3w CLOSED rounds = their tags (home-upgrade-2110 · render-build-2110 · max-list-2310 · cart-reopen-2210). Home switches
+3w Home (closed rounds = their tags). Home switches
   `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
 3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`) reads the ORDER-ENTRY picker in the owner's Chrome (read only,
   header of `scripts/order-entry-stock.js`) → `stock-sync.js --order-entry` → PR only when stock changed → full checks → merges itself
@@ -138,7 +132,7 @@ Test server: `node scripts/test-server.js build` then `start` (port 3412 · SITE
   stop it by the PID on 3413 only ·
   Chrome one job at a time (machine-wide note in the OS temp folder — a second script prints "chrome: waiting", gives up
   after 15 min with exit 2; `OKAMI24_CHROME_LOCK_WAIT=<s>`) · a job over 10 minutes = background + watch the log · a full-page `shot.js` with black
-  posters = shoot spot by spot with `--anchor` instead of chasing a page bug · an agent silent past 2x its time budget =
+  posters = shoot spot by spot with `--anchor` instead of chasing a page bug · an agent silent for 30 minutes =
   look at its PID/output files
 Windows shell: scripts are written with the Write tool · Thai text enters scripts through json/txt files only (argv is
   mangled) · shot.js wraps the eval result in JSON twice (parse twice) · CRLF: a new file from Write = LF → unix2dos

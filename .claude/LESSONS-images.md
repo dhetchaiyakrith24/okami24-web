@@ -3,8 +3,7 @@
 > แยกจาก `.claude/LESSONS.md` 15/10 (เจ้าของ 14/10 — ไอเดียจากรอบเก็บบ้านของอีกโปรเจกต์) · **อ่านเฉพาะรอบ/ก้อนที่ทำรูป** — เปิดรอบอ่านแค่หัวข้อ
 > (`grep -n "^## " .claude/LESSONS-images.md`) แล้วเปิดข้อที่ตรงงาน · กติกาเดียวกับ LESSONS: เรื่องเดิม = เขียนทับ · เรื่องใหม่ = ต่อท้าย ·
 > เลขข้อคงเดิม (คนอ้าง "LESSONS 29" = ข้อ 29 ในไฟล์นี้) · กฎรูป = `docs/IMAGE_SPEC.md` · สายตาเจ้าของ = Owner eye ใน `.claude/agents/designer.md`
-> **ทางสร้างรูป = MCP `generate_image` หรือ Higgsfield เว็บใน Chrome ช่วงที่เจ้าของบอกว่าฟรี (ข้อ 29 · IMAGE_SPEC §0 ข้อ 7)** · ทุกทางที่หักเครดิต
-> (nano_banana_pro · gpt_image · seedream · bytedance upscale ฯลฯ) = ใช้ได้เฉพาะเมื่อเจ้าของตอบ yes ในแชท · MCP ตัวอื่นที่หักเครดิต (batch · upscale ฯลฯ) ยังปิดไว้ใน `.claude/settings.json`
+> **ทางสร้างรูป + เครดิต = `docs/IMAGE_SPEC.md` §0 ข้อ 7 ที่เดียว** (วิธีที่ได้ผล = ข้อ 29 ในไฟล์นี้)
 
 ---
 
