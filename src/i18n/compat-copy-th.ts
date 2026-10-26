@@ -112,13 +112,13 @@ const GPP_MATCH_EN = " The cartridge's four resistances (0.4/0.6/0.9/1.2Ω meshe
 export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   // ARGUS pods 27/10 (thai-copy): the four ARGUS device → coil-21 edges, same sentence shape as the DRAG rows below.
   "VOOPOO's ARGUS G4 page: compatible with every ARGUS pod-family cartridge — Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL) and other ARGUS cartridges incl. CRC.":
-    "VOOPOO ระบุในหน้า ARGUS G4 ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Multi-Ohm · Snap และหัวพอตเติมด้านบน V2 ขนาด 2mL กับ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ที่นับรุ่น CRC ไว้ด้วย",
+    "VOOPOO ระบุในหน้า ARGUS G4 ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Multi-Ohm · Snap และ ARGUS Top Fill Cartridge V2 ขนาด 2mL กับ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ที่นับรุ่น CRC ไว้ด้วย",
   "VOOPOO's ARGUS G4 mini page: compatible with every ARGUS pod-family cartridge — Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL) and other ARGUS cartridges incl. CRC.":
-    "VOOPOO ระบุในหน้า ARGUS G4 mini ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Multi-Ohm · Snap และหัวพอตเติมด้านบน V2 ขนาด 2mL กับ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ที่นับรุ่น CRC ไว้ด้วย",
+    "VOOPOO ระบุในหน้า ARGUS G4 mini ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Multi-Ohm · Snap และ ARGUS Top Fill Cartridge V2 ขนาด 2mL กับ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ที่นับรุ่น CRC ไว้ด้วย",
   "VOOPOO's ARGUS P3 page: every ARGUS pod-family cartridge — Snap, Top Fill Cartridge V2, Top Fill Cartridge and CRC versions (check resistance and output).":
-    "VOOPOO ระบุในหน้า ARGUS P3 ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Snap · หัวพอตเติมด้านบนทั้งรุ่นแรกและ V2 และรุ่น CRC โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
+    "VOOPOO ระบุในหน้า ARGUS P3 ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Snap · ARGUS Top Fill Cartridge V2 และรุ่นก่อนหน้า รวมถึงรุ่น CRC โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
   "VOOPOO's ARGUS G3 mini page: ARGUS Top Fill Cartridge V2 and the whole ARGUS pod family (check resistance and output).":
-    "VOOPOO ระบุในหน้า ARGUS G3 mini ว่าใช้หัวพอตเติมด้านบน V2 และหัวพอตตระกูล ARGUS ได้ทุกหัว โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
+    "VOOPOO ระบุในหน้า ARGUS G3 mini ว่าใช้หัวพอต ARGUS Top Fill Cartridge V2 และหัวพอตตระกูล ARGUS ได้ทุกหัว โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
   // Round list19 (19/10): the three DRAG ↔ PnP X coil edges show on coil-92 now that the coil page is published again.
   "VOOPOO's own DRAG 6 page states the kit's UFORCE-X Tank II takes every PnP X coil, and the kit ships with PnP X 0.15Ω and 0.3Ω coils.":
     "VOOPOO ระบุในหน้า DRAG 6 ว่าถังน้ำยา UFORCE-X ของชุดนี้ใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15Ω กับ 0.3Ω",
