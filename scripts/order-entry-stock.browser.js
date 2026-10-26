@@ -47,7 +47,7 @@
         const f = fib(b), dis = !!(f && f.return && f.return.memoizedProps && f.return.memoizedProps.disabled);
         const state = dis || /pointer-events-none/.test(b.className) ? 0 : 1;
         if (state !== (s.available > 0 ? 1 : 0)) disagree.push(`${s.sku} button ${state} available ${s.available}`);
-        read.push([s.sku, state]);
+        read.push([s.sku, state, Number.isFinite(s.available) ? s.available : -1]);
       });
       products.push({ sku: p.sku, read });
     }
@@ -68,5 +68,14 @@
     return seq ? `${sku}:${bits}` : `${sku}:${bits}@${read.map(([c]) => c).join("|")}`;
   }).join(",");
   window.__oeCompact = compact;
-  return JSON.stringify({ pages, products: products.length, options: products.reduce((n, p) => n + p.read.length, 0), problems, disagree, compactLength: compact.length });
+  // B5 step 1 (owner 26/10 "Start B5 step 1"): the same rows' `available` counts (= inventory − reserved; -1 = missing),
+  // same shape with dots — "SKU:21.0.29" or "SKU:21.0@CODE|CODE". Logged only (scripts/stock-count-log.js); the site
+  // still takes nothing but the button states above.
+  const counts = products.map(({ sku, read }) => {
+    const nums = read.map(([, , n]) => n).join(".");
+    const seq = read.every(([c], i) => c === `${sku}-${i + 1}`);
+    return seq ? `${sku}:${nums}` : `${sku}:${nums}@${read.map(([c]) => c).join("|")}`;
+  }).join(",");
+  window.__oeCounts = counts;
+  return JSON.stringify({ pages, products: products.length, options: products.reduce((n, p) => n + p.read.length, 0), problems, disagree, compactLength: compact.length, countsLength: counts.length });
 })();
