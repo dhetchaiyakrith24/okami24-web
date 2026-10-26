@@ -52,6 +52,7 @@ const MAX_ONLY_RECORDS = {
   "RELX-INFINITY-PRO-2-POD": "Pod-27", // หัวพอต RELX Infinity Pro 2
   // line 2 max-sync (22/10): Max "Relx Creator Pod 20K" (17/10; renamed "Relx เลโก้ 20000 คำ" 22/10) — Thai shops sell it as RELX Creator 20K pod.
   "RELX-CREATOR-POD-20K": "Pod-137",
+  "SUP-ZERO-22K": "Disposable-45", // SUP Zero 22K (owner brief 26/10)
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows

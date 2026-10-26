@@ -377,6 +377,6 @@ Mermaid diagram showing page relationships and navigation zones. Use `graph TD` 
   `thai-copy` + skill `thai-check` · prices never typed by hand · product facts from the maker only · no legal-status topics (TEAM_RULES tail).
 * Skills it names that we have not installed (programmatic-seo · schema · ai-seo · cro · competitors · marketing-loops …) = not available here.
 * **Existing URLs stay.** Any URL move needs a one-to-one 301 map and goes to the owner first (13.3 #4/#5) — they rank and are approved.
-* **Header, footer and navigation are shared parts:** scope-auditor + designer + tier B + whole-sitemap scans (TEAM_RULES 13.5 #5).
+* **Header, footer and navigation are shared parts:** scope-auditor + tier B + whole-sitemap scans (TEAM_RULES 13.5 #5) · designer only for a new look, slot or component (13.5 #6).
   The SaaS defaults in the templates ("Start Free Trial" CTA, `/shop/category/sub/product`) are examples, not targets.
 * **Internal links (owner 19/10):** every product named in a guide links to its live product page on first mention · never link an unpublished product.

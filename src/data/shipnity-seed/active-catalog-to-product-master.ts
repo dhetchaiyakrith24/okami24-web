@@ -334,6 +334,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "PUNTA-ICE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Punta Ice" (eliquid-78), 7 flavours, ฿150; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "GRAPLE-FREEBASE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Graple Freebase" (ELQ-2), 1 option; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "MQ-BAR-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "MQ Bar 22K" (Disposable-43), 11 flavours; no maker source found 19/10 — prepared on warehouse facts only, without a brand' },
+  // Owner brief 26/10 (replaces the 22/10 "ไม่ลง"): SUP Zero 22K — Max-only record (Disposable-45, 15 flavours incl. 5%).
+  "SUP-ZERO-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "SUP Zero 22K" (Disposable-45), 15 flavours ฿329 (product list read 26/10); the device prints SUP ZERO; no maker site found 22/10 + 26/10 (one Thai shop: zeedcupvp.com/product/sup-zero-22000-puffs, tier 2) — listed on warehouse facts only, without a brand' },
   // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
   // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; relxnow.com has no page for these pods.
   "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; no page on relxnow.com — warehouse facts only' },
@@ -654,6 +656,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง MQ Bar 22K",
     shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
+  // Owner brief 26/10: warehouse facts only — the Max name "SUP Zero 22K" and its 15 flavour rows (5 of them named 5%).
+  "SUP-ZERO-22K": {
+    tagline: "พอตใช้แล้วทิ้ง SUP ZERO 22K",
+    shortDescription: "พอตใช้แล้วทิ้ง SUP ZERO ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 15 กลิ่น",
+  },
   // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2" (no maker page).
   "RELX-INFINITY-PRO-2-POD": {
     tagline: "หัวพอต RELX Infinity Pro 2",
@@ -840,6 +847,21 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster",
       sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp",
+    },
+  ],
+  // Owner brief 26/10: SUP ZERO 22K card — the owner's Higgsfield studio re-shoot (25/10) of the device on the Grape Ice poster.
+  // Every flavour has the same black body; only the colour of the four card-suit icons changes by flavour, and the render
+  // shows them all white — so it serves as the card only and the 15 flavours carry no per-flavour photo.
+  "SUP-ZERO-22K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/sup-zero-22k/card.webp",
+      alt: "SUP ZERO 22K disposable vape, black, studio photo",
+      angle: "Front, upright — studio re-shoot (owner's Higgsfield order 25/10, IMAGE_SPEC §0 item 7) of the device on the SUP ZERO Grape Ice poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the SUP ZERO 22K Grape Ice poster",
+      sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/",
     },
   ],
   // Image sweep (19/10): Graple Freebase card — OKami24 studio re-shoot of the front bottle on the shop's Graple poster (Phatjuice bottle).
@@ -1562,6 +1584,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "RELX-LUMI-18K": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // Owner brief 26/10: warehouse facts only (no maker page) — the Max name "SUP Zero 22K".
+  "SUP-ZERO-22K": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 22,000", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
@@ -2513,6 +2542,10 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Owner brief 26/10: the SUP ZERO line-up poster and zeedcupvp.com list 16 flavours; Apple Aloe Vera (3%) is not in Max (Disposable-45).
+  "SUP-ZERO-22K": [
+    { code: "apple-aloe-vera", label: "Apple Aloe Vera", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
+  ],
   // maxlist (20/10): the shop's RELX Essential 2 colour line-up shows 5 colours; Max (Pod-157) carries 4 — Orange is not in the warehouse.
   "RELX-ESSENTIAL-2": [
     { code: "orange", label: "Orange", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
@@ -2845,6 +2878,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "RELX-CREATOR-POD-20K": { name: "RELX Creator Pod 20K", sourceUrl: "https://pod9k.com/product/relx-creator-20k-pod/" },
   "RELX-ESSENTIAL-2": { name: "RELX Essential 2", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
+  "SUP-ZERO-22K": { name: "SUP ZERO 22K", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },

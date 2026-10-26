@@ -129,6 +129,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Grape Aloe 50mg",
   "Pink Berry 50mg",
   "Watermelon 50mg",
+  "Grape Lychee 5%", // SUP ZERO 22K (26/10)
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -205,6 +206,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Cool Mint 5%",
   "Spearmint 5%",
   "Black Purple",
+  "Grape Ice 5%", // SUP ZERO 22K (26/10)
   "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
   "Monster Ice",

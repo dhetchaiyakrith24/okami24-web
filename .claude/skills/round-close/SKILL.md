@@ -34,10 +34,10 @@ Full-set work (13.5 #3) runs the whole list; light-set work runs 13.5 #2 (GitHub
 every PR that touches the site; the full build runs on the test server and on Render at deploy — 21/10) plus the Thai-copy gates on the touched pages.
 
 - `npx tsc --noEmit` · `npx eslint <files touched this round>` · `npm run verify:commerce`
-- `SITE_URL=<production origin> npm run verify:catalog -- --full` — builds by itself: stop the test server first
-  (HANDOFF §17 "stop =")
-- `npx tsx scripts/count-storefront.ts` — printed counts = HANDOFF §16 item 6 unless the round changed the catalog
-  (then write the new counts there)
+- `SITE_URL=<production origin> npm run verify:catalog -- --full` — builds by itself: in a test worktree, never the main
+  folder (13.5 #2 (ก)); stop the test server first (HANDOFF §17 "stop =")
+- `npx tsx scripts/count-storefront.ts` — printed counts go in the close commit message (the baseline = the
+  latest round close; HANDOFF §16 keeps no baseline since 26/10)
 - the i18n contract test (HANDOFF §17 "src files the skills use" [i18n-test]) · `node scripts/thai-raw-chars-check.js`
 - `node scripts/scan.js --pages` against the test server (which pages = skill `thai-check` gate 1) · `node scripts/og-gate.js --base <test server>`
 - `npx tsx scripts/content-dates.ts --check` — fails = the post-commit hook did not run (`docs/RECOVERY.md` 2ค) →

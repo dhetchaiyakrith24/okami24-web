@@ -3816,6 +3816,103 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "SUP-ZERO-22K": {
+    "maxParentId": "Disposable-45",
+    "name": "SUP Zero 22K",
+    "operationalSellingPrice": 329,
+    "children": [
+      {
+        "shipnityVariantId": "Disposable-45-1",
+        "rawLabel": "Grape Ice",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-2",
+        "rawLabel": "Grape Lychee",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-3",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-4",
+        "rawLabel": "Peach Strawberry",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-5",
+        "rawLabel": "Strawberry Ice",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-6",
+        "rawLabel": "Cola",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-7",
+        "rawLabel": "Blueberry Ice",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-8",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-9",
+        "rawLabel": "Double Mint",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-10",
+        "rawLabel": "Lychee Ice",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-11",
+        "rawLabel": "Grape Ice 5%",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-12",
+        "rawLabel": "Grape Lychee 5%",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-13",
+        "rawLabel": "Mixberry 5%",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-14",
+        "rawLabel": "Watermelon 5%",
+        "sellingPrice": 329,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-45-15",
+        "rawLabel": "Double Mint 5%",
+        "sellingPrice": 329,
+        "inStock": true
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K"];

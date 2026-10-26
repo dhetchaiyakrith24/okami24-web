@@ -68,8 +68,8 @@ a file under `_incoming/<round>/` and the path is cited in field 4 of its report
    "พอด" (the script knows) — never replace across a whole file.
 
 5. **Forbidden claims in new text, every language** — the single list is THAI_STYLE
-   "คำ/ประโยคที่ห้ามในข้อความใหม่ทุกภาษา" (free shipping, guarantee, payment channels, pointing at
-   the cart, "ที่สุด"/superlatives without a number, health / safety / quit-smoking / official
+   "คำ/ประโยคที่ห้ามในข้อความใหม่ทุกภาษา" (free shipping, guarantee, payment channels,
+   "ที่สุด"/superlatives without a number, health / safety / quit-smoking / official
    endorsement, zh 保证) and its one exception (health / quitting ARTICLES, both sides, foreign official
    sources — written in the same THAI_STYLE line). The gate of item 4 also greps the two words banned outright
    `ไม่เผาไหม้|保证` (THAI_STYLE §3 bans ไม่เผาไหม้ in every language, round 30.4ข batch 3); the rest is meaning, not a word ("ส่งฟรี" / "รับประกัน" are

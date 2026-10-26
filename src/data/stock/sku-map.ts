@@ -1227,6 +1227,25 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Disposable-43-10": "Disposable-43-10",
     "Disposable-43-11": "Disposable-43-11",
   } },
+  // Owner brief 26/10: SUP ZERO 22K — Max Disposable-45, 15 flavours; Apple Aloe Vera = maker line-up only (no Max row).
+  "sup-zero-22k": { parent: "Disposable-45", options: {
+    "Disposable-45-1": "Disposable-45-1",
+    "Disposable-45-2": "Disposable-45-2",
+    "Disposable-45-3": "Disposable-45-3",
+    "Disposable-45-4": "Disposable-45-4",
+    "Disposable-45-5": "Disposable-45-5",
+    "Disposable-45-6": "Disposable-45-6",
+    "Disposable-45-7": "Disposable-45-7",
+    "Disposable-45-8": "Disposable-45-8",
+    "Disposable-45-9": "Disposable-45-9",
+    "Disposable-45-10": "Disposable-45-10",
+    "Disposable-45-11": "Disposable-45-11",
+    "Disposable-45-12": "Disposable-45-12",
+    "Disposable-45-13": "Disposable-45-13",
+    "Disposable-45-14": "Disposable-45-14",
+    "Disposable-45-15": "Disposable-45-15",
+    "sup-zero-22k-verified-apple-aloe-vera": null,
+  } },
   // Image sweep (19/10): Graple Freebase — Max ELQ-2, one child.
   "graple-freebase": { parent: "ELQ-2", options: {
     "ELQ-2-1": "ELQ-2-1",
