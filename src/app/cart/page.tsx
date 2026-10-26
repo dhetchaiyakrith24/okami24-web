@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getCart } from "@/lib/commerce/cart";
 import { CartView } from "@/components/commerce/CartView";
+import { cartSuggestions } from "@/lib/commerce/cart-suggestions";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { redirect } from "next/navigation";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
@@ -18,5 +19,7 @@ export default async function CartPage() {
   // switching ordering back on shows it again with whatever was in it.
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
   const cart = await getCart();
-  return <CartView cart={cart} />;
+  // Q8: picked here so the client cart receives only the few suggestion cards, never the catalog.
+  const suggestions = cartSuggestions([...new Set(cart.lines.map((l) => l.productSlug))]);
+  return <CartView cart={cart} suggestions={suggestions} />;
 }

@@ -430,6 +430,7 @@ export const en: Dictionary = {
     totalLabel: "Total",
     checkoutCta: "Check out",
     fixIssuesNote: "Please remove the unavailable items above before you check out.",
+    suggestionsTitle: "You may also like",
   },
   productActions: {
     addToCartCta: "Add to cart",
