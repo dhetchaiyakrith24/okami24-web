@@ -62,7 +62,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        docs-stock-signin-20261020 (#643 closed) · stock-sync-20261021-1502/-1540 · 20261022-1810 (+ q2-combined-local, docs-line-bot-2210
        = fully in main). KEPT on purpose: img-ag4gal-1610 · img-b17-combo · img-se-1610 · p63-terea-publish (open rounds) · gsc-data · inbox ·
        worktrees sad-nash / seo-line2 / seo-line2-c (open SEO round) + cart-2210-3bb482 (session list-missing not archived) · Artifacts.
-    N4 DONE in branch (26/10): /warranty th body sentences end ค่ะ / นะคะ (10 spots; the old draft table was not found — re-drafted
+    N4 DONE in branch (26/10): /warranty th body sentences end ค่ะ / นะคะ (9 spots — a 10th fell alone onto the 1440 last line and was dropped; the old draft table was not found — re-drafted
        per THAI_STYLE §2 หางเสียง: titles, labels, summary chips untouched) — ships in the N6 PR.
     N5 DONE 26/10: Muro Freebase already has all 6 flavour bottles live since the image sweep 21/10 (studio re-shoots of the retailer
        posters, scripts/process-images.map.json) — รอพี่ตรวจ 71 was stale → removed, 56 removed (owner: done) · test orders: Login round

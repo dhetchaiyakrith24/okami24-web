@@ -26,8 +26,9 @@ function attempts(): Map<string, number[]> {
 
 async function clientKey(): Promise<string> {
   const h = await headers();
-  // Every request to a Render web service passes Render's own Cloudflare, which writes CF-Connecting-IP and overwrites
-  // what the caller sent (render.com/articles/host-pocketbase-on-render, read 26/10). Without it, the RIGHTMOST
+  // CF-Connecting-IP first: Cloudflare writes it, and Render's article says it does so on every request to a Render web
+  // service, overwriting the caller's copy (render.com/articles/host-pocketbase-on-render, read 26/10 — an article, not
+  // Render's docs; not measured on Render ourselves). Without it, the RIGHTMOST
   // X-Forwarded-For entry — the one a proxy appended — never the leftmost, which the caller writes and can set to any
   // address per request to dodge MAX_PER_CLIENT (checker note, fixed N6 26/10; Cloudflare appends: developers.cloudflare.com
   // /fundamentals/reference/http-headers/).
