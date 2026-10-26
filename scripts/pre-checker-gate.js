@@ -322,6 +322,26 @@ function selfTest() {
     ok(guard(sh("node scripts/scan.js --pages=/about,/faq")) === "deny", "L3 a --flag=/… value → deny");
   } else console.log("  skip L3 (Git Bash path rewriting exists on Windows only)");
   ok(guard(sh("git push --force")) === "deny", "B force push still → deny (old lock intact)");
+  // I (house round 26/10): scan/shot tools never pointed at the live site without OKAMI24_LIVE_OK=1
+  ok(guard(sh("node scripts/shot.js a.png https://okami24.store/ --ready")) === "deny" && guard(sh("node scripts/visible-text.js scan --base https://okami24.store --out x /")) === "deny", "I shot / visible-text against okami24.store → deny");
+  ok(guard(sh("OKAMI24_LIVE_OK=1 node scripts/shot.js a.png https://okami24.store/")) === "none", "I OKAMI24_LIVE_OK=1 in front → allowed");
+  ok(guard(sh("curl -s -o /dev/null -w '%{http_code}' https://okami24.store/")) === "none" && guard(sh("node scripts/shot.js a.png http://localhost:3412/")) === "none", "I curl of the live site / a tool on the test server → allowed");
+  ok(guard(sh('git commit -m "ran node scripts/scan.js on okami24.store"')) === "none", "I a commit message quoting it → allowed");
+  // J (house round 26/10): a brief the next chat has not picked up is not overwritten
+  const brief = path.join(tmp, "_incoming", "next-chat-selftest.md"); // a scratch tree: the guard reads any …/_incoming/next-chat*.md
+  fs.mkdirSync(path.dirname(brief), { recursive: true });
+  fs.writeFileSync(brief, "status: ready\n\nbrief\n");
+  ok(guard({ tool_name: "Write", tool_input: { file_path: brief, content: "a new brief\n" }, cwd: ROOT }) === "deny", "J Write over a `status: ready` brief → deny");
+  ok(guard({ tool_name: "Write", tool_input: { file_path: brief, content: "status: started\n\nbrief\n" }, cwd: ROOT }) === "none", "J the new chat writing `status: started` → allowed");
+  ok(guard(sh(`echo x > _incoming/${path.basename(brief)}`, tmp)) === "deny", "J a > redirect over a ready brief → deny");
+  fs.writeFileSync(brief, "status: started\n\nbrief\n");
+  ok(guard({ tool_name: "Write", tool_input: { file_path: brief, content: "a new brief\n" }, cwd: ROOT }) === "none", "J a `status: started` brief may be overwritten → allowed");
+  fs.unlinkSync(brief);
+  // K (house round 26/10): HANDOFF §16 spec at commit time
+  const hs = require("./handoff-size-check");
+  ok(hs.check("## 16. x\nshort\n## 17. y\n").length === 0, "K a small §16 → OK");
+  ok(hs.check("## 16. x\n" + "ก".repeat(700) + "\n## 17. y\n").some((p) => /line 2 is \d+ bytes/.test(p)), "K a §16 line over 2,000 bytes → flagged");
+  ok(hs.check("## 16. x\n" + ("a".repeat(100) + "\n").repeat(160) + "## 17. y\n").some((p) => /§16 is \d+ bytes/.test(p)), "K a §16 over 15,000 bytes → flagged");
   const env = { OKAMI24_CHECKER_LOCK_DIR: tmp };
   ok(guard(sh("git checkout main"), env) === "none", "พ22 no note → git checkout allowed");
   process.env.OKAMI24_CHECKER_LOCK_DIR = tmp;
@@ -337,6 +357,12 @@ function selfTest() {
   ok(guard(sh("git checkout main 2>&1 | tee _incoming/x.log"), env) === "deny", "พ22 note on → a log under _incoming/ does not excuse a checkout → deny");
   ok(guard(sh("git checkout main", wt), env) === "none", "พ22 note on → the shell sits in another worktree → allowed");
   ok(guard(sh("node scripts/pre-checker-gate.js --done"), env) === "none", "พ22 note on → --done → allowed");
+  // H+ (house round 26/10): plain shell writes into the read tree
+  ok(guard(sh("rm docs/old.md"), env) === "deny", "H+ note on → rm in the read tree → deny");
+  ok(guard(sh("sed -i 's/a/b/' docs/HANDOFF.md"), env) === "deny", "H+ note on → sed -i in the read tree → deny");
+  ok(guard(sh("echo x > docs/a.md"), env) === "deny" && guard(sh("node scripts/x.js >> docs/a.md"), env) === "deny", "H+ note on → a > / >> redirect into the read tree → deny");
+  ok(guard(sh("node scripts/house-check.js > _incoming/h.txt 2>&1"), env) === "none", "H+ note on → a redirect under _incoming/ (and 2>&1) → allowed");
+  ok(guard(sh("rm docs/old.md", wt), env) === "none", "H+ note on → rm in another worktree → allowed");
 
   console.log("\n## locks at the act — .githooks/pre-commit and scripts/lib/chrome.js");
   const repo = path.join(tmp, "repo");
