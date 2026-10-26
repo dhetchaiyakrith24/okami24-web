@@ -54,6 +54,9 @@ export function historyNoteTh(note: string): string {
   if (note.startsWith("Stock: out after payment")) return `ทีมงาน: แจ้งลูกค้าว่าสินค้าหมด${note.replace(/^Stock: out after payment — lines [\d,]+/, "")}`;
   if (note.startsWith("Stock: swapped — ")) return `ทีมงาน: เปลี่ยนสินค้าให้แล้ว — ${note.slice("Stock: swapped — ".length)}`;
   if (note.startsWith("Stock: refunded — ref ")) return `ทีมงาน: คืนเงินแล้ว — เลขอ้างอิง ${note.slice("Stock: refunded — ref ".length)}`;
+  // Queue B4 — written by saveRefundSlip in src/lib/commerce/slip-images.ts.
+  if (note === "Stock: refund slip attached") return "ทีมงาน: แนบสลิปโอนคืนให้ลูกค้าดู";
+  if (note === "Stock: refund slip replaced") return "ทีมงาน: เปลี่ยนรูปสลิปโอนคืน";
   if (note === "Customer: chose swap") return "ลูกค้าเลือกเปลี่ยนสินค้า";
   if (note === "Customer: chose refund") return "ลูกค้าเลือกรับเงินคืน";
   return note;

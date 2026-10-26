@@ -750,6 +750,10 @@ export interface Dictionary {
     stockRefunded: string;
     stockRefundedBank: string;
     stockRefundedPartial: string;
+    /** Heading of the settled refund (owner 26/10 evening, queue B4). */
+    stockRefundedTitle: string;
+    stockRefundSlipAlt: string;
+    stockRefundSlipOpen: string;
     stockErrorSwap: string;
     stockErrorPromptPay: string;
     stockErrorBank: string;

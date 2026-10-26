@@ -148,6 +148,8 @@ export interface StockIssueView {
   refundBank: { bank: string; branch: string; accountMasked: string } | null;
   /** Only while the customer still has to choose: the swap options for each out line, by order-line id. */
   swapGroups: Record<number, SwapGroup[]>;
+  /** Refunded and staff attached the bank's transfer slip (queue B4) — the order page shows it from /orders/<n>/refund-slip. */
+  refundSlip: boolean;
 }
 
 /** "12,15" ↔ [12, 15] — the order lines staff marked out. */

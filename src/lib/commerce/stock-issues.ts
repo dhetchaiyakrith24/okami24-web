@@ -65,6 +65,8 @@ export interface StockIssue {
   resolution: StockIssueResolution | null;
   refundRef: string | null;
   resolvedAt: string | null;
+  /** When staff attached the refund transfer slip (queue B4); null = none yet, or deleted after its 90 days. */
+  refundSlipAt: string | null;
 }
 
 interface IssueRow {
@@ -82,6 +84,8 @@ interface IssueRow {
   resolution: StockIssueResolution | null;
   refund_ref: string | null;
   resolved_at: string | null;
+  refund_slip_path: string | null;
+  refund_slip_at: string | null;
 }
 
 interface ItemRow {
@@ -145,6 +149,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
     resolution: row.resolution,
     refundRef: row.refund_ref,
     resolvedAt: row.resolved_at,
+    refundSlipAt: row.refund_slip_path ? row.refund_slip_at : null,
   };
 }
 
@@ -406,5 +411,6 @@ export function stockIssueViewFor(orderId: number): StockIssueView | null {
       ? { bank: issue.refundBankAccount.bank, branch: issue.refundBankAccount.branch, accountMasked: maskAccount(issue.refundBankAccount.account) }
       : null,
     swapGroups,
+    refundSlip: issue.resolution === "refunded" && issue.refundSlipAt !== null,
   };
 }

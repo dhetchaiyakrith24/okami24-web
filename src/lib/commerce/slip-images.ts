@@ -5,7 +5,15 @@ import path from "node:path";
 import sharp from "sharp";
 import { getDb } from "@/lib/db/client";
 import { privateDataDir } from "@/lib/paths";
-import { isSlipFileName, isSlipImageToken, previewFileName, SLIP_IMAGE_DAYS, slipImageCutoff } from "./slip-image-rules";
+import {
+  isRefundSlipFileName,
+  isSlipFileName,
+  isSlipImageToken,
+  isSweepableSlipFile,
+  previewFileName,
+  SLIP_IMAGE_DAYS,
+  slipImageCutoff,
+} from "./slip-image-rules";
 
 /**
  * The slip picture a customer attaches on the order page (owner 26/10 in chat, queue B2 (c) — BSOT §9 updated the same
@@ -90,6 +98,104 @@ export function slipImageByToken(token: string, preview: boolean): Buffer | null
   return readFile(row?.proof_image_path ?? null, preview);
 }
 
+// ---------------------------------------------------------------------------------------------------------------------
+// The refund slip (owner 26/10 evening, queue B4): after staff transfer a refund in the bank app they attach the bank's
+// slip to the order, and the customer's order page shows it under "คืนเงินแล้ว". One picture per order (a new one
+// replaces the old), same folder, same 90 days (counted from when it was attached), no LINE token — it is only served
+// to staff and to the order's own viewer (the logged-in owner or the view token).
+
+export type RefundSlipResult = { ok: true } | { ok: false; error: "not-refunded" | "unreadable" };
+
+/** Keeps the refund slip of order `orderId`. Only an issue already recorded as refunded takes one (the bank reference
+ *  first — markRefunded in stock-issues.ts — then the picture). */
+export async function saveRefundSlip(orderId: number, bytes: Buffer): Promise<RefundSlipResult> {
+  const db = getDb();
+  const row = db.prepare("SELECT resolution, refund_slip_path FROM order_stock_issues WHERE order_id = ?").get(orderId) as
+    | { resolution: string | null; refund_slip_path: string | null }
+    | undefined;
+  if (row?.resolution !== "refunded") return { ok: false, error: "not-refunded" };
+  let full: Buffer;
+  try {
+    full = await toJpeg(bytes, FULL_EDGE, 85);
+  } catch (err) {
+    console.error(`[slip-image] refund slip of order ${orderId}: unreadable — ${err instanceof Error ? err.message : String(err)}`);
+    return { ok: false, error: "unreadable" };
+  }
+  const name = `r${orderId}-${crypto.randomBytes(8).toString("hex")}.jpg`;
+  const dir = slipDir();
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, name), full, { mode: 0o600 });
+  db.transaction(() => {
+    db.prepare("UPDATE order_stock_issues SET refund_slip_path = ?, refund_slip_at = ?, refund_slip_deleted_at = NULL WHERE order_id = ?").run(
+      name,
+      new Date().toISOString(),
+      orderId
+    );
+    const status = (db.prepare("SELECT status FROM orders WHERE id = ?").get(orderId) as { status: string }).status;
+    db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)").run(
+      orderId,
+      status,
+      // "Stock: …" like the other out-of-stock rows (historyNoteTh maps them) — a "Staff: <action>" note would read as an
+      // unknown staff action.
+      row.refund_slip_path ? "Stock: refund slip replaced" : "Stock: refund slip attached"
+    );
+  })();
+  if (row.refund_slip_path) {
+    try {
+      removeRefundFile(row.refund_slip_path);
+    } catch (err) {
+      // The row already points at the new picture; the old file is past any row, so the orphan sweep removes it at 90 days.
+      console.error(`[slip-image] old refund slip of order ${orderId}: not deleted — ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+  return { ok: true };
+}
+
+/** The refund slip of an order, or null (none attached, or deleted after its 90 days). The caller has checked who asks:
+ *  the staff session, or the order page's own viewer. */
+export function refundSlipForOrder(orderId: number): Buffer | null {
+  const row = getDb().prepare("SELECT refund_slip_path FROM order_stock_issues WHERE order_id = ?").get(orderId) as
+    | { refund_slip_path: string | null }
+    | undefined;
+  const name = row?.refund_slip_path ?? null;
+  if (!name || !isRefundSlipFileName(name)) return null;
+  try {
+    return fs.readFileSync(path.join(slipDir(), name));
+  } catch {
+    return null;
+  }
+}
+
+function removeRefundFile(name: string): void {
+  if (!isRefundSlipFileName(name)) return;
+  try {
+    fs.unlinkSync(path.join(slipDir(), name));
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err;
+  }
+}
+
+/** Refund slips past their 90 days (counted from when staff attached them); the bank reference stays on the issue. */
+function purgeOldRefundSlips(now: Date): number {
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT order_id, refund_slip_path FROM order_stock_issues WHERE refund_slip_path IS NOT NULL AND refund_slip_at < ?")
+    .all(slipImageCutoff(now)) as { order_id: number; refund_slip_path: string }[];
+  const clear = db.prepare("UPDATE order_stock_issues SET refund_slip_path = NULL, refund_slip_deleted_at = ? WHERE order_id = ?");
+  let done = 0;
+  for (const r of rows) {
+    try {
+      removeRefundFile(r.refund_slip_path);
+    } catch (err) {
+      console.error(`[slip-image] refund slip of order ${r.order_id}: could not delete — ${err instanceof Error ? err.message : String(err)}`);
+      continue;
+    }
+    clear.run(now.toISOString(), r.order_id);
+    done++;
+  }
+  return done;
+}
+
 function removeFiles(name: string): void {
   if (!isSlipFileName(name)) return;
   for (const f of [name, previewFileName(name)]) {
@@ -122,7 +228,7 @@ export function purgeOldSlipImages(now: Date = new Date()): number {
     clear.run(now.toISOString(), r.id);
     done++;
   }
-  return done + purgeOrphanFiles(now);
+  return done + purgeOldRefundSlips(now) + purgeOrphanFiles(now);
 }
 
 /** A file no row points at (the server stopped between writing it and saving its name, or the save lost a race) would
@@ -138,7 +244,7 @@ function purgeOrphanFiles(now: Date): number {
   }
   let done = 0;
   for (const name of names) {
-    if (!/^\d{1,12}-[0-9a-f]{16}(-p)?\.jpg$/.test(name)) continue;
+    if (!isSweepableSlipFile(name)) continue;
     const file = path.join(slipDir(), name);
     try {
       if (fs.statSync(file).mtimeMs >= cutoff) continue;

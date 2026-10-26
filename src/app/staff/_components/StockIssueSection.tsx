@@ -2,6 +2,7 @@ import { staffStockAction } from "@/app/staff/actions";
 import { canOpenStockIssue, stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import type { StaffOrderDetail } from "@/lib/staff/orders";
 import { formatBaht, formatDateTime } from "@/app/staff/_components/order-bits";
+import { RefundSlipUpload } from "@/app/staff/_components/RefundSlipUpload";
 
 /**
  * "สินค้าหมดหลังลูกค้าโอน" on /staff/orders/<n> (cart UX batch E, owner 24/10). Staff tick the lines that are out → the
@@ -55,6 +56,7 @@ function RefundForm({ order }: { order: StaffOrderDetail }) {
       <button type="submit" className={`${button} self-start`}>
         บันทึกว่าคืนเงินแล้ว
       </button>
+      <p className="text-xs text-foreground-dim">บันทึกแล้วแนบรูปสลิปโอนคืนต่อได้ทันที — ลูกค้าจะเห็นสลิปในหน้าออเดอร์</p>
     </form>
   );
 }
@@ -178,6 +180,28 @@ export function StockIssueSection({ order, asRow = false }: { order: StaffOrderD
             ? `เปลี่ยนสินค้าแล้ว ${formatDateTime(issue.resolvedAt ?? "")}`
             : `คืนเงิน ${formatBaht(issue.refund.amount)} แล้ว ${formatDateTime(issue.resolvedAt ?? "")} · เลขอ้างอิง ${issue.refundRef ?? "—"}`}
         </p>
+      )}
+
+      {/* Owner 26/10 evening (queue B4): the bank's refund slip, shown to the customer under "คืนเงินแล้ว". */}
+      {issue.resolution === "refunded" && (
+        <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
+          {issue.refundSlipAt ? (
+            <>
+              <p className="text-foreground-muted">สลิปโอนคืน (ลูกค้าเห็นในหน้าออเดอร์) · แนบเมื่อ {formatDateTime(issue.refundSlipAt)}</p>
+              <a href={`/staff/orders/${encodeURIComponent(order.orderNumber)}/refund-slip`} target="_blank" rel="noopener" className="self-start">
+                {/* eslint-disable-next-line @next/next/no-img-element -- private picture behind the staff session, not an optimisable asset */}
+                <img
+                  src={`/staff/orders/${encodeURIComponent(order.orderNumber)}/refund-slip?v=${encodeURIComponent(issue.refundSlipAt)}`}
+                  alt="สลิปโอนคืน"
+                  className="max-h-72 w-auto rounded-md border border-surface-border-soft object-contain"
+                />
+              </a>
+            </>
+          ) : (
+            <p className="font-semibold text-foreground">แนบสลิปโอนคืน — ลูกค้าจะเห็น &quot;คืนเงินแล้ว&quot; พร้อมสลิปในหน้าออเดอร์</p>
+          )}
+          <RefundSlipUpload orderNumber={order.orderNumber} hasSlip={issue.refundSlipAt !== null} />
+        </div>
       )}
 
       {open && issue.resolution !== "refunded" && (

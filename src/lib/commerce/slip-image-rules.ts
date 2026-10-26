@@ -18,6 +18,16 @@ export function isSlipFileName(name: string): boolean {
   return /^\d{1,12}-[0-9a-f]{16}\.jpg$/.test(name);
 }
 
+/** `r<order id>-<16 hex>.jpg` — the refund slip staff attach to an order (owner 26/10 evening, queue B4). */
+export function isRefundSlipFileName(name: string): boolean {
+  return /^r\d{1,12}-[0-9a-f]{16}\.jpg$/.test(name);
+}
+
+/** Any file the slip sweep may delete by age: a payment slip, its preview, or a refund slip. */
+export function isSweepableSlipFile(name: string): boolean {
+  return /^r?\d{1,12}-[0-9a-f]{16}(-p)?\.jpg$/.test(name);
+}
+
 /** The preview LINE shows in the chat sits beside the full picture: `<base>-p.jpg`. */
 export function previewFileName(name: string): string {
   return name.replace(/\.jpg$/, "-p.jpg");

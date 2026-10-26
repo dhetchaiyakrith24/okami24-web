@@ -100,6 +100,28 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             : bankVars
               ? fill(t.stockChosenRefundBank, bankVars)
               : fill(t.stockChosenRefund, { amount, phone });
+    // Owner 26/10 evening (queue B4): a settled refund reads "คืนเงินแล้ว" with the shop's transfer slip, so the customer
+    // can check it — in the quiet green of the "shipped" pill (owner 23/10: the style for key moments), no ping.
+    if (issue.resolution === "refunded") {
+      const slipSrc = `/orders/${encodeURIComponent(orderNumber)}/refund-slip${token ? `?token=${encodeURIComponent(token)}` : ""}`;
+      return (
+        <div className="flex flex-col gap-3 rounded-xl border border-emerald-400/25 bg-emerald-400/[0.05] p-4 text-sm">
+          <span className="inline-flex items-center gap-2 self-start rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-0.5 font-medium text-emerald-300 shadow-[0_0_14px_-2px_rgba(52,211,153,0.35)]">
+            <span aria-hidden className="inline-flex size-2 rounded-full bg-emerald-400 shadow-[0_0_6px_1px_rgba(52,211,153,0.8)]" />
+            {t.stockRefundedTitle}
+          </span>
+          <p className="text-foreground">{text}</p>
+          {issue.refundSlip && (
+            <a href={slipSrc} target="_blank" rel="noopener" className="flex flex-col gap-1.5 self-start">
+              {/* eslint-disable-next-line @next/next/no-img-element -- private picture behind the order's access check */}
+              <img src={slipSrc} alt={t.stockRefundSlipAlt} className="max-h-80 w-auto rounded-md border border-surface-border-soft object-contain" />
+              <span className="text-xs text-foreground-muted">{t.stockRefundSlipOpen}</span>
+            </a>
+          )}
+          <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>
+        </div>
+      );
+    }
     return (
       <div className="flex flex-col gap-2 rounded-xl border border-amber-300/25 bg-amber-300/[0.06] p-4 text-sm">
         <span className="label-mono text-xs text-amber-200">{t.stockTitle}</span>
