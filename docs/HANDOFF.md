@@ -70,12 +70,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        trailing negation · staff message hint "ไม่เขียนชี้ ด้านล่าง" + staff guide · placeOrder refuses empty/malformed keys and replays only
        the same customer's order (an empty key could hand back another customer's order + view token) · phone rate limit falls back to the
        RIGHTMOST X-Forwarded-For (staff login too since #869, owner "แก้เลย"). Optional hardening = disable the onrender.com subdomain
-       (Render docs custom-domains) — owner asked "does it affect us?" (answer: no, customers and staff use okami24.store) — not done, ask.
+       (Render docs custom-domains) — owner 26/10: KEEP it open ("ควรเปิดไว้ใช้ในกรณีที่หน้าเว็บหลักเข้าไม่ได้") — §18, do not re-ask.
     N6 Q8 DONE + LIVE #861 (merge 68104454): "สินค้าที่คุณอาจสนใจ" row — src/lib/commerce/cart-suggestions.ts + CartSuggestions.tsx;
        designer direction 26/10 (4 calm link cards, phones 2×2 under checkout, ≥1024 left column under the items, empty cart = shop picks);
        designer review caught a pod offered without its device → pods/coils/sticks only via the verified-fit table. Shots _incoming/q8-shots/.
-       Open: "Relx Connector 20K" (BSOT §15) = which page? (Muro Connector 20K vs RELX Creator Pod 20K) — not listed until the owner says
-       (owner 26/10 forgot where the list came from: BSOT §15 "Real best sellers", his own early answers — explained in chat).
+       BEST SELLERS (owner 26/10 evening): "หาข้อมูลเองได้เลย ตัดสินใจได้เลยว่าตัวไหนขายดี ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"
+       → next chat: researcher reads Thai market signals (shop best-seller pages, marketplace sold counts, search interest), Friday picks
+       the list for SHOP_PICKS in cart-suggestions.ts (also settles "Relx Connector 20K"), notes sources + that it is an estimate in the
+       code comment; BSOT §15 merchant list stays the owner's words. Guessing is allowed ONLY for this list.
        Designer idea left: a cart that already has a device should skip "same brand + category" (another device competing) — taste.
     #869 DONE + LIVE (merge cab8c6a5, owner 26/10 phone): quick add on the suggestion cards (picker: BottomSheet < lg / native <dialog>
        ≥ lg, PhoneOptionTiles outDisabled, options + sellable from the server) · Back from a product page returns to where the visitor came
@@ -94,8 +96,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        home = boxes by job with counts (รอตรวจสลิป · รอส่งคลัง · รอใส่เลขพัสดุ · เสร็จ · ยกเลิก) · staff menu + clear Back on every page ·
        order page reordered (next action on top, details folded) · yellow = waiting states, red = no (§18). New look = designer drafts →
        send the owner 1–2 shots → build (central §6).
-    LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (sent as an image in chat 26/10 — not saved
-       as a file; ask him to send the file again / put it in Downloads) → LINE Developers → channel 2012198931 → icon (owner's Chrome).
+    LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (owner 26/10: "เดี๋ยวพี่ส่งให้" — the file
+       comes in the next chat) → crop the kabuto mark square → LINE Developers → channel 2012198931 → icon (owner's Chrome).
     Q6 logo round = TOMORROW 27/10 (owner).
     Q9 [owner idea 26/10, PLAN TOGETHER FIRST — "ตรงนี้จดไว้นะเดี๋ยวมาวางแพลนกัน"] a staff view that shows (1) how many people are on
        the site right now, (2) how many members signed up, (3) a customer profile with what they ordered before. Not started —
@@ -356,6 +358,9 @@ refused uses the red `danger` colour, never the ember orange** ("ขอใช้
 actions and accents (the how-to-order "ordering paused" note is information, not a no — stays ember). **Yellow (owner 26/10):
 waiting / pending / being updated / being improved / being checked** ("สีเหลือง รอดำเนินการ รออัพเดต รอปรับปรุง ตรวจสอบ") —
 the amber of "รอชำระเงิน" on the customer side, `unverified` on the staff side; the staff pages get it in the staff redesign.
+
+**onrender.com stays open (owner 26/10):** the service's `*.onrender.com` address is the back door "ในกรณีที่หน้าเว็บหลักเข้าไม่ได้" —
+never disable it.
 
 **Owner's personal contact — NEVER (owner 26/10 "งานเว็บทั้งหมดต้องไม่มีส่วนไหนชี้มาหาส่วนตัวพี่ครับ ห้ามเด็ดขาด"):** nothing in
 the web work may point to the owner personally — every contact / support / developer email on the site and on every outside
