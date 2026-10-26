@@ -1,7 +1,7 @@
 import { CARRIERS, toCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 
-export { formatBaht, formatDateTime } from "@/app/staff/_components/format";
+export { formatBaht, formatDateTime, formatShortDateTime } from "@/app/staff/_components/format";
 
 const VERDICT: Record<SlipVerdict, { label: string; className: string }> = {
   pass: { label: "✅ สลิปผ่าน", className: "border-verified/40 bg-verified/10 text-verified" },

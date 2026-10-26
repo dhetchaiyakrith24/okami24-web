@@ -6,7 +6,7 @@ import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { countByJob, listStaffOrders, type StaffOrderFilter, type StaffOrderRow } from "@/lib/staff/orders";
 import { isStaffJob, jobOf, STAFF_JOB_ORDER, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TODO_JOBS, TONE_CLASS } from "@/lib/staff/jobs";
-import { formatBaht, formatDateTime, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { formatBaht, formatShortDateTime, VerdictBadge } from "@/app/staff/_components/order-bits";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 
 /**
@@ -44,7 +44,7 @@ function OrderRow({ o, from, showStatus }: { o: StaffOrderRow; from: string; sho
           <span className="min-w-0 truncate">
             {o.recipientName} · {o.itemCount} ชิ้น · {o.province}
           </span>
-          <span className="shrink-0 text-xs">{formatDateTime(o.createdAt)}</span>
+          <span className="shrink-0 text-xs">{formatShortDateTime(o.createdAt)}</span>
         </div>
         {(showStatus || (jobOf(o.status) === "slip" && o.slipVerdict)) && (
           <div className="flex flex-wrap items-center gap-2 text-xs">

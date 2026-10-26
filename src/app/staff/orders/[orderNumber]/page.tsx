@@ -149,9 +149,9 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
           <img
             src={slipImageHref}
             alt="รูปสลิปที่ลูกค้าแนบ"
-            className={`${compact ? "max-h-48" : "max-h-96"} w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2`}
+            className={`${compact ? "max-h-72 min-w-40" : "max-h-96"} w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2 object-contain`}
           />
-          <span className="text-xs text-foreground-dim">แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง</span>
+          <span className="text-xs text-foreground-dim">{compact ? "แตะเพื่อเปิดรูปเต็ม" : "แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง"}</span>
         </a>
       ) : slip.imageDeletedAt ? (
         <p className="text-xs text-foreground-dim">รูปสลิปลบแล้วเมื่อครบ 90 วัน ผลตรวจด้านบนยังอยู่</p>
@@ -235,8 +235,10 @@ export default async function StaffOrderPage({
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.slip.label}</h2>
           <SlipDetails order={order} slipImageHref={slipImageHref} compact />
-          {order.slip?.verdict !== "pass" && <p className="text-unverified">ก่อนยืนยัน เปิดแอปธนาคารของร้านดูยอดเข้าจริงอีกครั้ง</p>}
-          <p className="text-xs text-foreground-dim">ก่อนกด เช็คของในหน้าคีย์ออเดอร์ของ Shipnity Max — หมด = ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; ด้านล่างแทน</p>
+          {/* One warning line above the button (designer 26/10: three stacked notes read as clutter). */}
+          <p className="text-unverified">
+            {order.slip?.verdict !== "pass" ? "ก่อนยืนยัน ดูยอดเข้าในแอปธนาคารของร้าน และเช็คของในหน้าคีย์ออเดอร์ Shipnity" : "ก่อนยืนยัน เช็คของในหน้าคีย์ออเดอร์ Shipnity — หมด = ใช้ “สินค้าหมดหลังลูกค้าโอน”"}
+          </p>
           {steps.includes("confirm") && <ActionForm order={order} from={from} act="confirm" />}
         </section>
       )}
@@ -300,7 +302,7 @@ export default async function StaffOrderPage({
         <div className="flex flex-col gap-1">
           <p className="text-foreground">
             {a.recipientName} ·{" "}
-            <a href={`tel:${a.phone}`} className="font-semibold underline-offset-4 hover:underline">
+            <a href={`tel:${a.phone}`} className="font-semibold text-ember underline underline-offset-4">
               {a.phone}
             </a>
           </p>

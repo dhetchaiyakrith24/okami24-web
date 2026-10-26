@@ -25,7 +25,7 @@ export const STAFF_JOBS: Record<StaffJob, StaffJobInfo> = {
   slip: { label: "รอตรวจสลิป", hint: "ดูสลิป แล้วกดยืนยันยอดเงิน", statuses: ["payment_submitted", "awaiting_verification"], tone: "wait" },
   warehouse: { label: "รอส่งคลัง", hint: "คัดลอกรายการส่งคลัง", statuses: ["approved"], tone: "wait" },
   tracking: { label: "รอใส่เลขพัสดุ", hint: "ใส่ขนส่งและเลขพัสดุ", statuses: ["processing"], tone: "wait" },
-  done: { label: "ส่งแล้ว", hint: "ส่งของแล้ว / ลูกค้าได้รับแล้ว", statuses: ["shipped", "completed"], tone: "done" },
+  done: { label: "ส่งแล้ว/เสร็จ", hint: "ส่งของแล้ว / ลูกค้าได้รับแล้ว", statuses: ["shipped", "completed"], tone: "done" },
   cancelled: { label: "ยกเลิก", hint: "ออเดอร์ที่ยกเลิก", statuses: ["cancelled"], tone: "no" },
   unpaid: { label: "ยังไม่จ่าย", hint: "ลูกค้ายังไม่แนบสลิป · ไม่จ่ายใน 24 ชม. ระบบยกเลิกเอง", statuses: ["pending_payment"], tone: "wait" },
 };
