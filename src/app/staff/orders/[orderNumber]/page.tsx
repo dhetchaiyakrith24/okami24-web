@@ -7,8 +7,8 @@ import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
-import { countByJob, getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
-import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TODO_JOBS, TONE_CLASS } from "@/lib/staff/jobs";
+import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
+import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffMessageAction, staffOrderAction } from "@/app/staff/actions";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
@@ -180,9 +180,7 @@ export default async function StaffOrderPage({
       ? { href: "/staff/orders?f=all", label: "ออเดอร์ทั้งหมด" }
       : isStaffJob(from)
         ? { href: `/staff/orders?f=${from}`, label: STAFF_JOBS[from].label }
-        : { href: "/staff/orders", label: "ต้องทำทั้งหมด" };
-  const counts = countByJob();
-  const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
+        : { href: "/staff", label: "งาน" };
 
   const actions = availableActions(order.status);
   const steps = actions.filter((act) => act !== "cancel");
@@ -203,7 +201,7 @@ export default async function StaffOrderPage({
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar current="orders" back={back} todo={todo} />
+      <StaffBar back={back} />
 
       <header className="flex flex-col gap-1.5">
         {/* The shop's running number leads once the payment is confirmed (owner 26/10, queue B2 (a)); OK-… sits under it. */}
