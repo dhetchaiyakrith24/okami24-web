@@ -39,7 +39,7 @@ someone remembered.
    reaches one page. A category description reaches the category page *and* any card that
    repeats it.
 4. **Group the result by route family** (home · /products index · category pages · product
-   pages by kind — pod systems / pod kits / disposables / pods / coils & accessories / HNB ·
+   pages by kind — pod systems / switch pods / disposables / pods / coils & accessories / HNB ·
    brand pages · guides · technology · e-liquid families · service pages · finder/compare/faq/
    about/404) and give the count in each family, so "53" can never again hide "56".
 

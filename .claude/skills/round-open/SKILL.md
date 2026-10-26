@@ -31,7 +31,8 @@ cite an old ruling. Tools and verify commands: `docs/HANDOFF.md` §17, when need
 1. Read the `session-sync` lines in the chat's first context (the SessionStart hook fetched and fast-forwarded a
    clean branch): `STOP SIGN` = tell the owner first · `RE-READ NOW` = re-read those rule files first · no
    `session-sync` line at all = the hook did not run: say so, `git fetch origin` by hand, and run
-   `node scripts/prepare-clone.js` (must end `prepare-clone: READY`).
+   `node scripts/prepare-clone.js` (must end `prepare-clone: READY`) · `stale-work:` lines = tell the owner the stuck or due items
+   in one Thai line before other work (TEAM_RULES 13.2 `follow-up`).
 2. `origin/main` vs the commit the instruction names: equal = go on · main moved on = one line
    (`git log --oneline <named>..origin/main`) and start from the latest main · stop only when a newer commit touches a
    file this round will change, or the named commit is not an ancestor of `origin/main`.

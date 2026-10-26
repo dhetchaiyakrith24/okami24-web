@@ -164,7 +164,7 @@ Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its fil
   an agent added or edited is usable at once in the running chat
 Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield MCP: `generate_image`
   is ALLOWED (owner 20/10, #661); every other credit-spending Higgsfield tool stays DENIED in `.claude/settings.json` · credits =
-  IMAGE_SPEC §0 item 7 (cost first, owner's yes).
+  IMAGE_SPEC §0 item 7.
 Work folders: round work = `_incoming/<round>/` (not in git) · what Friday may move or delete alone = skill house-clean
   "รายการเดียว" (its one home) · image provenance keeps pointing at `_incoming/` (§18).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
@@ -195,9 +195,9 @@ Test trees + PR flow (moved from §16 26/10): reuse `_incoming/wt-golive` · `_i
   server-action forms in the Browser pane: React resets uncontrolled inputs after every action (LESSONS พ45).
 Owner status page (TEAM_RULES 13.6, owner 26/10): https://claude.ai/artifact/WW3HFHFntievMThnvNtn1K ("OKami24 งานวันนี้", Thai, phone-first) ·
   update = Artifact tool `action: read` with that `url` (gives the saved page file) → edit the sections (รอพี่ตอบ · รอพี่ทำเองหรือเลือก ·
-  กำลังทำ · คิวถัดไป · เสร็จและขึ้นเว็บแล้ว · ยังไม่ได้เคาะหน้าตา) + the date line → publish with the same `url` · pictures = the page's
+  กำลังทำ · คิวถัดไป · เสร็จและขึ้นเว็บแล้ว · ยังไม่ได้เคาะหน้าตา · ค้างนาน = the only section the daily 13:00 task writes) + the date line → publish with the same `url` · pictures = the page's
   asset store (needs the `assets` capability — skill `artifact-capabilities` first) · its waiting sections = `docs/รอพี่ตรวจ.md` + questions open in the chat (the page never holds a decision the files lack).
-Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES 13.6) · a new task: "Run now" once while the owner
+Scheduled tasks: unattended = TEAM_RULES 13.6 · a new task: "Run now" once while the owner
   is there and "Always allow" each prompt, or skill `fewer-permission-prompts` · one command per Bash call
 ```
 
@@ -303,8 +303,7 @@ to Friday: plain, luxurious, premium, depth); disposables / pod-replacement prod
 เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
 (the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
 live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
-fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) · two chats at once: the
-second chat works in its own git worktree, never switches the main folder's branch (LESSONS พ22 · พ27).
+fix, a broken source photo) · image routes and credits = IMAGE_SPEC §0 item 7.
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
@@ -345,4 +344,7 @@ title is hidden = "Hands-on review (in Thai)" / "真机试用（泰语讲解）"
 Copy: "แท้" only ever as a sweep of all brand ledes, never one brand · brand ledes say "ที่ร้านมี", not "ที่ร้านตอนนี้มี" · gallery
 lede th/en/zh = credit only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น…" ("เรากำลังทำเพื่อการค้า").
 Central rules repo: adding a project = edit key A, never re-make it.
+**Best sellers (owner 26/10, "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"):** the shop's best-seller picks (SHOP_PICKS) may rank by
+Thai market signals with an estimate, sources + "estimate" in the code comment — the only task where the researcher may guess.
+
 **Homepage (owner 20–21/10, round hero-2010):** hero = the dark ribbons stage, light lines in the shop orange leaning a little to the logo red — never green ("เอาแค่ความลื่นและมิติ") · the four hero slots = strong BRANDS ("ทาง 1"): UWELL Caliburn G5 · VOOPOO ARGUS G4 (not P3: square body) · SALTHUB M Switch · IQOS ILUMA i ONE (Friday's pick); tabs name the brand · desktop products LIE across the stage using the product's OWN card photo rotated (AI re-renders rejected: "บิดๆ เบี้ยวๆ"), calm drift over a warm floor shadow; phones keep the standing card photo · desktop hero (owner 21/10, round homepage upgrade, Artefakt direction) = the 4 slots as CARDS, "การ์ด 4 ชิ้นโอเค" — staggered overlapping layers (#679) + on hover the card lifts and the others blur (#683; a level row and a spread deck were tried and dropped 21/10); the lattice-of-squares background is rejected ("ฉากหลังตาราง … ไม่เอา") · the scroll flow light below the hero = code kept, switched OFF (`HOME_FLOW = false` in `src/data/home-hero.ts`, #672 — "เก็บเข้าคลังไว้ไม่เปิดใช้") · wide rails bleeding right = rejected (#658) · no "ขายดี" / bestseller wording anywhere on the homepage (no sales figures).

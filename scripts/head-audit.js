@@ -43,7 +43,7 @@ async function main() {
       rows.push({ path: p, status: "ERR " + e.message });
       continue;
     }
-    // invisible chars the typography layer inserts (WORD JOINER, NBSP — .claude/LESSONS.md 1ข)
+    // invisible chars the typography layer inserts (WORD JOINER, NBSP — see scripts/visible-text.js header)
     const clean = html.replace(/[\u2060\u00A0]/g, "");
     const title = decode((clean.match(/<title[^>]*>([^<]*)<\/title>/) || [])[1] || "");
     const desc = decode((clean.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "");

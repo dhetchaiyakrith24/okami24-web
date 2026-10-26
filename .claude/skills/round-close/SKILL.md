@@ -89,5 +89,5 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 ## Step 7 — The report (Thai, central §12 item 10 · `docs/TEMPLATES.md` (ข))
 
 Cut: narration of the way there · repeating the instruction · reasons scattered through the body (all reasons go in
-the parts "เจอปัญหา" / "ตัดสินใจเอง"). Keep: tables go in `_incoming/<round>/` (evidence for the checker); what the OWNER must read goes in the PR, an artifact or `docs/cloud-results/` — `_incoming/` does not open on the owner's phone. The part "ตัดสินใจเอง" also answers `docs/TEMPLATES.md`
+the parts "เจอปัญหา" / "ตัดสินใจเอง"). Keep: tables go in `_incoming/<round>/` (evidence for the checker); what the OWNER must read goes on the owner status page (TEAM_RULES 13.6 · cloud = `docs/cloud-results/`) — `_incoming/` does not open on the owner's phone. The part "ตัดสินใจเอง" also answers `docs/TEMPLATES.md`
 (ค)-8: which part of the instruction prescribed a method that was not needed or blocked a better one ("nothing" = one line).

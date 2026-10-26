@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // pre-checker-gate.js — the one gate Friday runs before ANY PR goes to the checker (TEAM_RULES 13.4 · lock round 15/10).
-// Rules that were kept only by memory (rule-audit 14/10 L1–L3, L5–L10 + LESSONS พ22) are checked here on the branch,
+// Rules that were kept only by memory (rule-audit 14/10 L1–L3, L5–L10 + the 13.4 checker-read lock "พ22") are checked here on the branch,
 // or locked at the moment of the act by the existing locks — the gate's --self-test plants an example of each:
 //
 //   checked here (the branch the checker will read, diff origin/main...HEAD)
