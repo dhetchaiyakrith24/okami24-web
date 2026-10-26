@@ -58,7 +58,7 @@ export const technologyEntries: TechnologyEntry[] = [
         heading: "Real example: the ARGUS G3 mini ships with one pod resistance in the box (0.7Ω)",
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit with no fire button. Its sheet says wattage auto-adjusts to whichever pod is installed, up to 30W — which means the platform supports more than one resistance.",
-          "What is in the box, though, is a single one: the ARGUS Top Fill Cartridge V2 at 0.7Ω, 3mL (2mL in TPD regions), with the iCOSM CODE 2.0 anti-leak system, on a 1350mAh battery.",
+          "What is in the box, though, is a single one: the ARGUS Top Fill Cartridge V2 at 0.7Ω, 3mL, with the iCOSM CODE 2.0 anti-leak system, on a 1350mAh battery.",
           "To be plain about it: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get. The ARGUS G4, ARGUS G4 mini, ARGUS P3 and ARGUS G3 mini have no compatible pod in the catalog yet.",
           "How the MTL and RDL draws mentioned above actually feel is in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
         ],

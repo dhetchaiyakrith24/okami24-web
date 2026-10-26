@@ -63,6 +63,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     N6 Q8 cart upsell row + small fixes (home `/` en/zh show 20 Thai category labels via HomeProductIndex · /about "ไม่ใช่ | บอท" ·
        #807 note a) + checker security notes (phone rate limit trusts X-Forwarded-For · empty idempotencyKey not refused) — owner: go.
     Q6 logo round = TOMORROW 27/10 (owner).
+    Q9 [owner idea 26/10, PLAN TOGETHER FIRST — "ตรงนี้จดไว้นะเดี๋ยวมาวางแพลนกัน"] a staff view that shows (1) how many people are on
+       the site right now, (2) how many members signed up, (3) a customer profile with what they ordered before. Not started —
+       open questions for the plan: live-visitor counting without Analytics/cookies (owner 07/10: no Analytics yet) · member list
+       = members table (#854) · profile = member orders (orders.member_id) vs phone orders · lives on /staff · PDPA (BSOT §11).
     Q4 [owner picks 26/10] login + member page: LINE + Google first (no Facebook) · NO member perks yet and
        none on the sign-up page · staff keep the password. Drafts v2 (premium, owner asked "พรีเมียม เรียบหรู") = `_incoming/q4-drafts/`
        v2-*-390/1440.png (gen2.js) — built and live (N1).
@@ -320,6 +324,8 @@ Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/T
 the web work may point to the owner personally — every contact / support / developer email on the site and on every outside
 service set up for it (Google Cloud consent screen, LINE channels, Render, …) = **okamisalt@gmail.com**. The bank account
 holder name on the order page (BSOT §9) is the receiving account itself, not a contact pointer — raised with the owner 26/10.
+
+**Pods = INTERNATIONAL version (owner 26/10 "แบบสากลครับ", answers รอพี่ตรวจ 58):** Caliburn (UWELL) + VOOPOO pages state the international version only — pod/tank capacity (3 mL / 3.5 mL / 4.5 mL / 5 mL), dimensions, weight and in-box pods; no "(2 mL in the TPD version)", no INT/FDA/TPD/CRC splits. The maker compatibility lists ("also fits … CRC versions") stay as the maker wrote them.
 
 **Shop and ordering:** the cart is OFF since 24/10 ~16:00 until the owner's 5-item list is done (§16 item 3; LINE @okm24 = the channel meanwhile, BSOT §8) · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock-PR deploys (~30–60 s of 502) are fine, no need for stock without a rebuild (owner 24/10 "ไม่ต้องซีเรียสครับ ของจริงมันไม่ถึง") · checkout = phone only, no OTP
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge

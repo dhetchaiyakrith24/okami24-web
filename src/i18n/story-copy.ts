@@ -42,7 +42,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       points: [
         { text: { th: "GPP ปกติ 2 หัว", en: "2 regular GPP pods", zh: "2 个普通 GPP 烟弹" }, specKey: "included-pod" },
         { text: { th: "GPP Alpha 0.6 โอห์ม 1 หัว", en: "1 GPP Alpha, 0.6Ω", zh: "1 个 0.6Ω GPP Alpha 烟弹" }, specKey: "included-pod" },
-        { text: { th: "แบบหัวต่างกันตามเวอร์ชัน", en: "Pod types vary by market version", zh: "烟弹类型因销售版本而异" }, specKey: "included-pod" },
+        { text: { th: "หัวพอตเติมด้านข้าง", en: "Side-fill pods", zh: "侧注油烟弹" }, specKey: "included-pod" },
       ],
       // the GPP cartridges the shop sells (catalog-relationships.ts: every GPP cartridge fits the G5)
       link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G5", en: "See the GPP pods that fit the G5", zh: "查看适用于 G5 的 GPP 烟弹" } },
@@ -891,7 +891,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         { th: "เติมด้านบน", en: "Top fill", zh: "顶部注油" },
       ],
       points: [
-        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD)", en: "Holds 5mL (2mL in the TPD version)", zh: "容量 5mL（TPD 版 2mL）" }, specKey: "tank" },
+        { text: { th: "จุน้ำยา 5mL", en: "Holds 5mL", zh: "容量 5mL" }, specKey: "tank" },
         { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว", en: "Takes every PnP X coil", zh: "兼容全部 PnP X 线圈" }, specKey: "coil" },
       ],
       link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
@@ -937,7 +937,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "ใส่ได้ทั้งหัวพอต PnP X Cartridge DTL และ MTL", en: "Takes the PnP X Cartridge DTL or MTL", zh: "可用 PnP X Cartridge DTL 或 MTL 烟弹" }, specKey: "pod-compat" },
-        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง", en: "Holds 5mL (2mL in the TPD version), filled from the side", zh: "容量 5mL（TPD 版 2mL），侧注油" }, specKey: "pod-compat" },
+        { text: { th: "จุน้ำยา 5mL เติมด้านข้าง", en: "Holds 5mL, filled from the side", zh: "容量 5mL，侧注油" }, specKey: "pod-compat" },
         { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว ตั้งแต่ 0.15 ถึง 1.0 โอห์ม", en: "Takes every PnP X coil, from 0.15 to 1.0Ω", zh: "兼容全部 PnP X 线圈，0.15–1.0Ω" }, specKey: "coil" },
         { text: { th: "สูบได้ทั้ง MTL RDL และ DTL แบบเบา ๆ", en: "MTL, RDL and light DTL", zh: "适合 MTL、RDL 和轻度 DTL" }, specKey: "vaping-style" },
       ],
@@ -998,7 +998,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "套装附带的是 DTL 烟弹；想抽 MTL，在同一台机器上换成 PnP X Cartridge MTL 即可，VOOPOO 单独出售。",
       },
       points: [
-        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง", en: "Holds 5mL (2mL in the TPD version), filled from the side", zh: "容量 5mL（TPD 版 2mL），侧注油" }, specKey: "pod-compat" },
+        { text: { th: "จุน้ำยา 5mL เติมด้านข้าง", en: "Holds 5mL, filled from the side", zh: "容量 5mL，侧注油" }, specKey: "pod-compat" },
         { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว", en: "Takes every PnP X coil", zh: "兼容全部 PnP X 线圈" }, specKey: "coil" },
         { text: { th: "ช่องลมอยู่ด้านบน", en: "Top airflow", zh: "顶部进气" }, specKey: "airflow" },
       ],
@@ -1046,7 +1046,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "不用取下烟弹，从顶部就能注油。外壳是透明、抗摔的 PCTG。",
       },
       points: [
-        { text: { th: "จุน้ำยา 3.5mL (2mL ในเวอร์ชัน TPD) เติมด้านบน", en: "3.5mL (2mL in the TPD version), top fill", zh: "容量 3.5mL（TPD 版 2mL），顶部注油" }, specKey: "pod" },
+        { text: { th: "จุน้ำยา 3.5mL เติมด้านบน", en: "3.5mL, top fill", zh: "容量 3.5mL，顶部注油" }, specKey: "pod" },
         { text: { th: "ตัวเครื่องใส่หัวพอตตระกูล ARGUS ได้ทุกหัว", en: "Takes every ARGUS pod-family cartridge", zh: "兼容整个 ARGUS 烟弹家族" }, specKey: "pod-compat" },
       ],
     },
@@ -1105,7 +1105,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         { text: { th: "0.4 โอห์ม สำหรับ RDL ที่ 18–30 วัตต์", en: "0.4Ω: RDL, 18–30W", zh: "0.4Ω：RDL，18–30W" }, specKey: "pod-compat" },
         { text: { th: "0.7 โอห์ม สำหรับ MTL ที่ 14–18 วัตต์", en: "0.7Ω: MTL, 14–18W", zh: "0.7Ω：MTL，14–18W" }, specKey: "pod-compat" },
         { text: { th: "1.0 โอห์ม สำหรับ MTL ที่ 10–14 วัตต์", en: "1.0Ω: MTL, 10–14W", zh: "1.0Ω：MTL，10–14W" }, specKey: "pod-compat" },
-        { text: { th: "จุน้ำยา 3mL (2mL ในเวอร์ชัน TPD)", en: "3mL (2mL in the TPD version)", zh: "容量 3mL（TPD 版 2mL）" }, specKey: "pod" },
+        { text: { th: "จุน้ำยา 3mL", en: "3mL", zh: "容量 3mL" }, specKey: "pod" },
       ],
       link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
     },
@@ -1228,7 +1228,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       points: [
         { text: { th: "คอยล์ใช้ได้กับน้ำยา 90mL", en: "Coil life: 90mL of liquid", zh: "线圈寿命：90mL 烟油" }, specKey: "coil" },
         { text: { th: "ตั้งทิ้งไว้ 30 วันโดยน้ำยาไม่รั่วซึม", en: "No leaks after 30 days standing", zh: "静置 30 天不漏油" }, specKey: "coil" },
-        { text: { th: "จุน้ำยา 3mL (2mL ในเวอร์ชัน TPD)", en: "3mL (2mL in the TPD version)", zh: "容量 3mL（TPD 版 2mL）" }, specKey: "pod" },
+        { text: { th: "จุน้ำยา 3mL", en: "3mL", zh: "容量 3mL" }, specKey: "pod" },
       ],
     },
     "family": {
@@ -1341,7 +1341,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "随附的 Multi-Ohm 烟弹采用透明、抗摔的 PCTG。",
       },
       points: [
-        { text: { th: "หัวพอต Multi-Ohm จุน้ำยา 3.5mL (2mL ในเวอร์ชัน TPD)", en: "Multi-Ohm cartridge: 3.5mL (2mL in the TPD version)", zh: "Multi-Ohm 烟弹：3.5mL（TPD 版 2mL）" }, specKey: "pod" },
+        { text: { th: "หัวพอต Multi-Ohm จุน้ำยา 3.5mL", en: "Multi-Ohm cartridge: 3.5mL", zh: "Multi-Ohm 烟弹：3.5mL" }, specKey: "pod" },
         { text: { th: "ใส่ Snap Cartridge และ Top Fill Cartridge V2 ทั้งขนาด 2mL และ 3mL ได้ด้วย รวมถึงหัวพอตรุ่น CRC", en: "Also fits: Snap Cartridge, Top Fill Cartridge V2 (2mL and 3mL), CRC versions", zh: "也能用：Snap 烟弹、Top Fill Cartridge V2（2mL 和 3mL）、CRC 版本" }, specKey: "pod-compat" },
       ],
     },
