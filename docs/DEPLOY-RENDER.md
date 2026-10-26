@@ -53,7 +53,7 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 
 **สำเร็จเมื่อ:** สถานะขึ้นเป็น **Live** สีเขียว และกดลิงก์ `okami24-xxxx.onrender.com` แล้วเว็บเปิดได้จริง
 
-> **บริการจริงของเราสร้างด้วยวิธีนี้ = "Blueprint managed"** (เจ้าของตรวจจากหน้า Render 2026-09-06) → ค่าทุกช่องและตัวแปรทุกตัวที่ประกาศใน `render.yaml` **ถูกอ่านจากไฟล์ใน branch `main` เท่านั้น** ค่าที่ไปแก้ในหน้า Environment **ที่ขัดกับไฟล์** จะถูก Blueprint ทับกลับตอน sync · อยากเปลี่ยนอะไร (เช่น `NODE_VERSION` ซึ่งตอนนี้เป็น `24.14.1` แล้ว) ให้แก้ไฟล์ → merge `main` (คำเดิม "→ Manual Deploy" ถูกแทน 2026-09-27 รอบ B: merge ที่แตะเว็บขึ้นเองหลังด่านบน GitHub ผ่าน — `docs/RECOVERY.md` 1ก · **ค่าใน `render.yaml` ใช้ผ่าน "Blueprint Sync" ของ Render ซึ่งคนละกลไกกับการขึ้นเว็บทาง GitHub** [ยืนยันจากเอกสาร render.com/docs/infrastructure-as-code: Auto Sync เปิดเป็นค่าเริ่มต้น และ push ที่แก้ไฟล์ Blueprint สั่ง deploy เอง] · `autoDeploy: false` กันการ deploy จาก Auto Sync ได้ไหม = [ยังไม่มีข้อมูล] เอกสารไม่ได้บอก → ก่อน merge ที่แก้ `render.yaml` ครั้งหน้า ให้ Javis/เจ้าของดูหน้า Render → Blueprints → สวิตช์ Auto Sync ก่อน) · ตัวแปรที่เพิ่มในหน้าเว็บโดย**ไม่มี**ในไฟล์ (เช่น QR ในข้อ 5) จะ**ไม่ถูกลบ** — Render ทับเฉพาะค่าที่ขัดกับไฟล์ (render.com/docs/infrastructure-as-code หัวข้อ "Modifying a resource outside of its Blueprint" · ตรวจ 2026-09-06)
+> **บริการจริงของเราสร้างด้วย Blueprint** (เจ้าของตรวจจากหน้า Render 2026-09-06) แต่ **Blueprint พัก sync ("Sync paused") ตั้งแต่ 21/10** → แก้ `render.yaml` แล้วไม่ถึง Render · เปลี่ยนค่าใด ๆ = ในหน้า Render โดยตรง (`docs/RECOVERY.md` ข้อ 1 · 1ก) · อย่ากด "Sync Blueprint" โดยไม่ถาม (มันจะทับค่าในหน้าเว็บด้วยไฟล์) · ข้อความเก่าเรื่อง Auto Sync = `git show 0ecdd4bf:docs/DEPLOY-RENDER.md`
 
 > **ถ้า Blueprint ใช้ไม่ได้** (Render เปลี่ยนหน้าตาหรือฟ้อง error เรื่องไฟล์) ให้กด **New + → Web Service** แล้วกรอกมือตามตารางนี้
 > ค่าทุกช่องคัดมาจาก `render.yaml` ตัวเดียวกัน:
@@ -81,7 +81,7 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 > | `OKAMI24_DATA_DIR` | `/var/data/app-data` |
 > | `OKAMI24_BACKUP_DIR` | `/var/data/backups` |
 > | `NODE_OPTIONS` | `--report-on-fatalerror --report-on-signal --report-directory=/var/data` (ให้ Node เขียนรายงานตอนตายเองลงดิสก์ · ไม่ช่วยกรณี segfault จาก native — ดู `render.yaml`) |
-> | `OKAMI24_ORDERING` | `off` (เจ้าของสั่งปิดสั่งซื้อออนไลน์ 2026-09-07 — ลูกค้าดูได้ครบ ซื้อทางไลน์ @okm24) · **เปิดกลับ = แก้เป็น `on` ในไฟล์นี้ → merge → "Save, rebuild, and deploy"** (ขั้นสุดท้ายนี้อาจซ้ำกับ deploy ที่เกิดเองหลัง merge — ดูหมายเหตุ Blueprint Sync ข้างบน · Javis ยืนยันวิธีก่อนเปิดจริง) (ต้อง rebuild ไม่ใช่แค่รีสตาร์ต เพราะหน้าสินค้า/แคตตาล็อกอ่านค่าตอน build) · ค่าอื่นทุกค่าที่ไม่ใช่ `on` = ปิด |
+> | `OKAMI24_ORDERING` | ค่าจริง = **`on`** ในหน้า Render Environment (ตะกร้าเปิดตั้งแต่ 24/10) · ค่าในไฟล์ `render.yaml` ไม่ถึง Render เพราะ Blueprint พัก sync ตั้งแต่ 21/10 · เปลี่ยน = Render → Environment → แก้แถวนี้แถวเดียว → "Save, rebuild, and deploy" (`docs/RECOVERY.md` ข้อ 5 · ต้อง rebuild เพราะหน้าสินค้าอ่านค่าตอน build) · ค่าอื่นทุกค่าที่ไม่ใช่ `on` = ปิด |
 > | `OKAMI24_METRICS_TOKEN` (ไม่บังคับ · เพิ่มรอบ 8 2026-09-23 · **เจ้าของเคาะ 2026-09-23: ไม่ตั้ง** — ดูยอดทาง Web Shell แทน ดูหัวข้อ "ดูจำนวนคนกดปุ่มไลน์" ข้างล่าง) | รหัสลับที่ตั้งเอง **ยาวอย่างน้อย 16 ตัว** (ตัวอักษร+ตัวเลข ไม่มีช่องว่าง) — ใช้เปิดดู "จำนวนคนกดปุ่มไลน์" ที่เว็บนับเองโดยไม่ใช้คุกกี้: เปิด `https://okami24.store/api/metrics/line-click?key=<รหัส>` (หรือส่ง header `X-OKami24-Metrics-Key`) ได้ตัวเลขรวม 30 วันเป็น JSON · เพิ่ม `&days=7` เปลี่ยนช่วง · **ถ้ายังไม่ตั้ง หน้านี้ตอบ 404 เฉย ๆ** ไม่มีอะไรรั่ว · ตั้งแล้วกด "Save, rebuild, and deploy" หรือรีสตาร์ต (อ่านค่าตอนรัน ไม่ต้อง rebuild) · ตัวเลขเป็นยอดรวมเท่านั้น ไม่มีข้อมูลบุคคล |
 
 ### ดูจำนวนคนกดปุ่มไลน์ (เพิ่มรอบ 8 · 2026-09-23)
@@ -308,7 +308,7 @@ npm run qr:upload-text
 
 ## เรื่องที่ต้องรู้ไว้ ไม่ต้องทำอะไรตอนนี้
 
-- **ตอนอัปเดตเว็บ เว็บจะดับสั้น ๆ ไม่กี่วินาที** เป็นเรื่องปกติของเครื่องที่มีดิสก์ติดอยู่ (Railway ก็เหมือนกัน)
+- **ตอนอัปเดตเว็บ เว็บจะดับ 30–60 วินาที** เป็นเรื่องปกติของเครื่องที่มีดิสก์ติดอยู่ (`.claude/TEAM_RULES.md` 13.7) (Railway ก็เหมือนกัน)
 - **Auto-Deploy ของ Render = On Commit** (ตั้งแต่ 21/10 รอบ "ย้ายการสร้างเว็บไป Render" · แทนคำเคาะ Q4 รอบ B 27/09 "ปิดตลอด") —
   merge เข้า `main` → Render สร้างและขึ้นเว็บเอง · build ล้ม = ไม่ขึ้น เว็บเดิมเปิดต่อ · ปิดชั่วคราว = `docs/RECOVERY.md` ข้อ 1ก
 - **การสำรองข้อมูล** ทำเองอัตโนมัติทุก 6 ชั่วโมงตั้งแต่เว็บเปิด เก็บไว้บนดิสก์เดียวกันที่ `/var/data/backups`
