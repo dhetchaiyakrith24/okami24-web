@@ -7,8 +7,8 @@ import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
-import { countByJob, getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
-import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TODO_JOBS, TONE_CLASS } from "@/lib/staff/jobs";
+import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
+import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffMessageAction, staffOrderAction } from "@/app/staff/actions";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
@@ -113,6 +113,7 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
   const amountOff = slip.amount !== null && slip.amount !== order.total;
   return (
     <>
+      {/* The verdict stays on the step card in every case — staff confirm by the ✅ (admin manual step 2.1; checker 27/10). */}
       {slip.verdict && (
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <VerdictBadge verdict={slip.verdict} />
@@ -137,10 +138,13 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
           <p className="text-xl font-semibold tabular-nums text-foreground">{formatBaht(order.total)}</p>
         </div>
       </div>
-      <p className="text-xs text-foreground-muted">
-        ส่งสลิปเมื่อ {formatDateTime(slip.submittedAt)}
-        {slip.transRef ? ` · เลขอ้างอิง ${slip.transRef}` : ""}
-      </p>
+      {/* The step card keeps one line of small text (staff declutter 27/10) — when it came, and the ref, are in "รายละเอียด". */}
+      {!compact && (
+        <p className="text-xs text-foreground-muted">
+          ส่งสลิปเมื่อ {formatDateTime(slip.submittedAt)}
+          {slip.transRef ? ` · เลขอ้างอิง ${slip.transRef}` : ""}
+        </p>
+      )}
       {/* Owner 26/10 (queue B2 (c)): the slip picture is kept 90 days. Plain <img>: the route is staff-only and sends
           no-store, so next/image's optimiser must not fetch and cache it. */}
       {slip.hasImage ? (
@@ -180,9 +184,7 @@ export default async function StaffOrderPage({
       ? { href: "/staff/orders?f=all", label: "ออเดอร์ทั้งหมด" }
       : isStaffJob(from)
         ? { href: `/staff/orders?f=${from}`, label: STAFF_JOBS[from].label }
-        : { href: "/staff/orders", label: "ต้องทำทั้งหมด" };
-  const counts = countByJob();
-  const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
+        : { href: "/staff", label: "งาน" };
 
   const actions = availableActions(order.status);
   const steps = actions.filter((act) => act !== "cancel");
@@ -203,16 +205,14 @@ export default async function StaffOrderPage({
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar current="orders" back={back} todo={todo} />
+      <StaffBar back={back} />
 
-      <header className="flex flex-col gap-1.5">
-        {/* The shop's running number leads once the payment is confirmed (owner 26/10, queue B2 (a)); OK-… sits under it. */}
+      {/* One number (the shop's running number once the payment is confirmed — owner 26/10, queue B2 (a); OK-… and the
+          order date live in "รายละเอียด"). The status pill only while an open stock problem hides the step card — every
+          other status is named by the card below (staff declutter 27/10: the same status said twice). */}
+      <header className="flex flex-wrap items-center gap-3">
         <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">{runNumber ?? order.orderNumber}</h1>
-        {runNumber && <p className="text-sm text-foreground-dim">{order.orderNumber}</p>}
-        <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className={`rounded-full border px-3 py-1 font-medium ${tone.pill}`}>{STAFF_STATUS_LABEL[order.status]}</span>
-          <span className="text-foreground-muted">สั่งเมื่อ {formatDateTime(order.createdAt)}</span>
-        </div>
+        {stockOpen && <span className={`rounded-full border px-3 py-1 text-sm font-medium ${tone.pill}`}>{STAFF_STATUS_LABEL[order.status]}</span>}
       </header>
 
       {error && (ERROR_TEXT[error] ?? STOCK_ERROR_TEXT[error]) && (
@@ -332,14 +332,21 @@ export default async function StaffOrderPage({
 
       {/* Everything else, folded into ONE card — each row says what is inside before it is opened. */}
       <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
+        {/* Staff declutter 27/10: items, payment, history and the order's own facts are one row ("รายละเอียด"), not three. */}
         <details className={foldRow}>
           <summary className={foldSummary}>
             <span>
-              สินค้า · {itemCount} ชิ้น · {formatBaht(order.total)}
+              รายละเอียด · {itemCount} ชิ้น · {formatBaht(order.total)}
             </span>
             <Chevron />
           </summary>
           <div className={foldBody}>
+            <p className="text-foreground-muted">
+              {runNumber ? `${order.orderNumber} · ` : ""}สั่งเมื่อ {formatDateTime(order.createdAt)}
+              {paymentStep && order.slip
+                ? ` · ส่งสลิปเมื่อ ${formatDateTime(order.slip.submittedAt)}${order.slip.transRef ? ` · เลขอ้างอิง ${order.slip.transRef}` : ""}`
+                : ""}
+            </p>
             <ul className="flex flex-col divide-y divide-surface-border-soft">
               {order.items.map((i, idx) => (
                 <li key={idx} className="flex justify-between gap-3 py-2">
@@ -366,20 +373,25 @@ export default async function StaffOrderPage({
                 <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
               </div>
             )}
+            {!paymentStep && order.slip && (
+              <div className="flex flex-col gap-3 border-t border-surface-border-soft pt-3">
+                <p className="font-semibold text-foreground">การชำระเงิน</p>
+                <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} />
+              </div>
+            )}
+            <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
+              <p className="font-semibold text-foreground">ประวัติ</p>
+              <ul className="flex flex-col gap-1 text-foreground-muted">
+                {order.statusHistory.map((h, i) => (
+                  <li key={i}>
+                    {formatDateTime(h.createdAt)} · {orderStatusLabel(h.status as Parameters<typeof orderStatusLabel>[0], "th")}
+                    {h.note ? ` — ${historyNoteTh(h.note)}` : ""}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </details>
-
-        {!paymentStep && order.slip && (
-          <details className={foldRow}>
-            <summary className={foldSummary}>
-              <span>การชำระเงิน</span>
-              <Chevron />
-            </summary>
-            <div className={foldBody}>
-              <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} />
-            </div>
-          </details>
-        )}
 
         {/* The ONE place staff write to the customer (owner 26/10: two message boxes were confusing). Opens itself after a
             message was just sent, so the "sent" line and the message are in view. */}
@@ -421,21 +433,6 @@ export default async function StaffOrderPage({
         </details>
 
         {!stockOpen && !refundSlipDue && <StockIssueSection order={order} asRow />}
-
-        <details className={foldRow}>
-          <summary className={foldSummary}>
-            <span>ประวัติ · {order.statusHistory.length}</span>
-            <Chevron />
-          </summary>
-          <ul className={`${foldBody} gap-1 text-foreground-muted`}>
-            {order.statusHistory.map((h, i) => (
-              <li key={i}>
-                {formatDateTime(h.createdAt)} · {orderStatusLabel(h.status as Parameters<typeof orderStatusLabel>[0], "th")}
-                {h.note ? ` — ${historyNoteTh(h.note)}` : ""}
-              </li>
-            ))}
-          </ul>
-        </details>
 
         {actions.includes("cancel") && (
           <details className={foldRow}>
