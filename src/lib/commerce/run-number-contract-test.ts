@@ -15,7 +15,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { ASSIGN_RUN_NUMBER_SQL, formatRunNumber } from "./run-number";
 import { AUTO_CANCELLED_SQL } from "./unpaid-rules";
-import { isSlipFileName, isSlipImageToken, previewFileName, slipImageCutoff } from "./slip-image-rules";
+import { isRefundSlipFileName, isSlipFileName, isSlipImageToken, isSweepableSlipFile, previewFileName, slipImageCutoff } from "./slip-image-rules";
 
 interface Result {
   name: string;
@@ -121,6 +121,19 @@ check(
   ["../okami24.db", "12-0123456789abcdef.png", "12-0123456789abcdef.jpg/..", "/etc/passwd", "12-0123456789ABCDEF.jpg"].every((n) => !isSlipFileName(n))
 );
 check("4. token shape", isSlipImageToken("A".repeat(32)) && !isSlipImageToken("A".repeat(31)) && !isSlipImageToken(`${"A".repeat(30)}/.`));
+// B4 (owner 26/10 evening): the refund slip shares the folder — its own name shape, never mistaken for a payment slip.
+check(
+  "4. refund slip name shape",
+  isRefundSlipFileName("r12-0123456789abcdef.jpg") &&
+    !isSlipFileName("r12-0123456789abcdef.jpg") &&
+    !isRefundSlipFileName("12-0123456789abcdef.jpg") &&
+    ["r../x.jpg", "r12-0123456789abcdef-p.jpg", "R12-0123456789abcdef.jpg", "r12-0123456789abcdef.jpg/.."].every((n) => !isRefundSlipFileName(n))
+);
+check(
+  "4. the age sweep takes payment slips, previews and refund slips only",
+  ["12-0123456789abcdef.jpg", "12-0123456789abcdef-p.jpg", "r12-0123456789abcdef.jpg"].every(isSweepableSlipFile) &&
+    ["promptpay-qr.png", "okami24.db", "x12-0123456789abcdef.jpg"].every((n) => !isSweepableSlipFile(n))
+);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

@@ -192,6 +192,9 @@ export default async function StaffOrderPage({
   const runNumber = formatRunNumber(order.runNumber);
   const tone = TONE_CLASS[statusTone(order.status)];
   const stockOpen = order.stockIssue !== null && stockIssueStage(order.stockIssue) !== "resolved";
+  // Refunded but the bank slip is not attached yet (queue B4) = the problem card stays on top until it is; it does not
+  // hold back the next-step card (a partial refund still ships).
+  const refundSlipDue = order.stockIssue?.resolution === "refunded" && order.stockIssue.refundSlipAt === null;
   const paymentStep = order.status === "payment_submitted" || order.status === "awaiting_verification";
   const itemCount = order.items.reduce((n, i) => n + i.quantity, 0);
   const cancelNote = order.status === "cancelled" ? [...order.statusHistory].reverse().find((h) => h.status === "cancelled")?.note ?? null : null;
@@ -220,7 +223,7 @@ export default async function StaffOrderPage({
       )}
 
       {/* An out-of-stock problem still open IS the next step (designer 26/10): shown first, before any ship button. */}
-      {stockOpen && <StockIssueSection order={order} />}
+      {(stockOpen || refundSlipDue) && <StockIssueSection order={order} />}
 
       {/* NEXT STEP — what this status needs, nothing else. */}
       {order.status === "pending_payment" && (
@@ -415,7 +418,7 @@ export default async function StaffOrderPage({
           </div>
         </details>
 
-        {!stockOpen && <StockIssueSection order={order} asRow />}
+        {!stockOpen && !refundSlipDue && <StockIssueSection order={order} asRow />}
 
         <details className={foldRow}>
           <summary className={foldSummary}>
