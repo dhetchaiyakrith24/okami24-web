@@ -40,11 +40,9 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
-  h OWNER'S NEW TEAM TOOLS still to build (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; numbers = the owner's chat list; 4–6 are in
-     TEAM_RULES 13.2 · agent `visitor` not yet run for real, first use = the next big round or new look) — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
-     site-architecture / designer itself · (2) one assets folder C:\Users\dhetc\OKami24-assets\<YYYY-MM>\<job>\ for images WE made or
-     edited only (never others' refs) + a step in the image skills · (3) shop accounts audit (income/costs/investment) = a SEPARATE
-     project (central §12 item 32) with its own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page.
+  h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
+     (3) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) — PARKED, owner 27/10 "ยังไม่ทำตอนนี้";
+     web-side costs (Render · GitHub · Higgsfield) go on the status page. (1) /วางแผน = skill `okami24-plan` · (2) assets folder = IMAGE_SPEC §0 item 7.
   Left from the §16 rewrite (checker #884, items with no other home): ProductMaster seed in-stock flags are from September · home 3w
      taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
      of /account/login not measured · designer: mark the out rows in the order page's item list · old side chats to archive:
