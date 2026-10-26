@@ -42,7 +42,9 @@ the standing list is:
 - `docs/CLOUD.md` (cloud capability table + how a round opens in the cloud) · `docs/rounds/README.md`
 - `AGENTS.md` at the repo root
 - `docs/HANDOFF.md` §16–§18 · `docs/THAI_STYLE.md` · `docs/TEMPLATES.md` · `docs/IMAGE_SPEC.md` (whole file) · `docs/รอพี่ตรวจ.md` ·
-  `docs/RECOVERY.md` · `.claude/LESSONS.md` · `.claude/LESSONS-images.md`
+  `docs/RECOVERY.md` · `docs/DEPLOY-RENDER.md` · `docs/SEO_LANDSCAPE.md` (owner SEO rulings) · `docs/seo-audit/` (read by `seo-auditor`) ·
+  `.claude/LESSONS.md` · `.claude/LESSONS-images.md`
+- the scheduled-task prompts `~/.claude/scheduled-tasks/okami24-*/SKILL.md` (outside git — TEAM_RULES 13.6 / 13.7 point at them)
 - `.claude/agents/*.md` (every agent, including yourself)
 - `.claude/skills/*/SKILL.md` (the handoff skill is `okami24-handoff`, in the repo since 2026-09-25) · `.claude/launch.json`
 
