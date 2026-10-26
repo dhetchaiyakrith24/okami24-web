@@ -58,7 +58,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สเปกบอกว่าเครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ แปลว่าระบบรองรับหัวพอตมากกว่าค่าเดียว",
           "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
-          "บอกตรง ๆ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง ทั้ง ARGUS G4, ARGUS G4 mini, ARGUS P3 และ ARGUS G3 mini ยังไม่มีหัวพอตขายแยกในแคตตาล็อก",
+          "ถ้าอยากได้ค่าโอห์มอื่น เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก 0.4 · 0.7 และ 1.2 โอห์ม VOOPOO ระบุว่าหัวพอตตระกูล ARGUS ใช้กับ G3 mini ได้ทั้งหมด โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
           "ส่วน MTL กับ RDL ที่พูดถึงข้างบนให้ความรู้สึกต่างกันยังไง อ่านที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl)",
         ],
       },
@@ -66,7 +66,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
     faq: [
       {
         question: "ARGUS G3 mini ใช้หัวโอห์มอื่นได้ไหม",
-        answer: "สเปกบอกว่าเครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่ แต่ในกล่องมีหัว 0.7 โอห์มค่าเดียว และตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก",
+        answer: "ได้ VOOPOO ระบุว่าหัวพอตตระกูล ARGUS ใช้กับเครื่องนี้ได้ทั้งหมด โดยให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ ในกล่องมีหัว 0.7 โอห์มมาให้ค่าเดียว ส่วนค่าอื่นเลือกได้จากหัวพอต VOOPOO Argus Pod บนเว็บเรา",
       },
       {
         question: "หัวพอตหลายโอห์มคืออะไร",
@@ -98,7 +98,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         heading: "ตัวอย่างจริง: จอทัชเต็มจอ 2.01 นิ้วของ ARGUS P3",
         paragraphs: [
           "[ARGUS P3](/products/argus-p3) เป็นพอตคิทที่ใช้จอทัชเต็มจอ TFT HD 2.01 นิ้ว คุมเมนูและสลับโหมดจากจอ แบตในตัว 1500mAh จ่ายไฟ 5–30 วัตต์",
-          "หัวพอตที่ใช้ได้เป็นระบบหัวพอต ARGUS เติมด้านบน แต่ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก จะเลือกเครื่องเพราะจอ ก็ต้องดูบรรทัดหัวพอตประกอบด้วย วิธีอ่านอยู่ที่ [วิธีอ่านตารางสเปก](/guides/reading-a-spec-sheet)",
+          "หัวพอตที่ใช้ได้เป็นระบบหัวพอต ARGUS เติมด้านบน เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก แต่ VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ จะเลือกเครื่องเพราะจอ ก็ต้องดูบรรทัดหัวพอตประกอบด้วย วิธีอ่านอยู่ที่ [วิธีอ่านตารางสเปก](/guides/reading-a-spec-sheet)",
         ],
       },
     ],
@@ -137,7 +137,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) ใช้ชิป GENE.AI เป็นระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สูบแล้วเครื่องทำงานเอง วัตต์ปรับให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ ไม่มีเมนูให้ตั้ง",
           "แบตในตัว 1350mAh ตัวเครื่อง 95.3 × 25.8 × 13.7 mm หนัก 41 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม มีระบบกันรั่ว iCOSM CODE 2.0",
-          "บอกตรง ๆ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง",
+          "ถ้าอยากเปลี่ยนค่าโอห์ม เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก โดย VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
           "สองเครื่องนี้คือสองขั้วของงานที่ชิปทำ DRAG 6 ยกการตั้งค่าให้คุณคุมเอง ARGUS G3 mini ให้ชิปคุมแทน ถ้ายังไม่แน่ใจว่าอยากคุมวัตต์เองไหม อ่านที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
         ],
       },
@@ -230,13 +230,13 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 是一台 auto-draw 换弹主机，没有点火键。规格表写明功率会按所装烟弹自动调节，最高 30W——也就是说平台支持不止一种阻值。",
           "但盒内只有一种：ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL，配 iCOSM CODE 2.0 防漏系统，电池 1350mAh。",
-          "先说清楚：本店目前尚未单独销售 ARGUS 烟弹，这里能买到的是盒内随附的那一颗。ARGUS G4、ARGUS G4 mini、ARGUS P3 和 ARGUS G3 mini 在目录中都还没有可搭配的烟弹。",
+          "想换其他阻值的话，本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有 0.4、0.7 和 1.2 欧姆可选。按 VOOPOO 的说明，整个 ARGUS 烟弹家族都适用于 G3 mini，使用前请核对阻值和功率。",
           "上面提到的 MTL 和 RDL 吸法感受有何不同，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
         ],
       },
     ],
     faq: [
-      { question: "ARGUS G3 mini 能换其他阻值的烟弹吗？", answer: "规格表写明功率会按所装烟弹自动调节，但盒内只附 0.7 欧姆一种，而且本店目前尚未单独销售 ARGUS 烟弹。" },
+      { question: "ARGUS G3 mini 能换其他阻值的烟弹吗？", answer: "可以。按 VOOPOO 的说明，整个 ARGUS 烟弹家族都适用，使用前请核对阻值和功率。盒内只附 0.7 欧姆一种；其他阻值可选本店有售的 VOOPOO Argus Pod 烟弹。" },
       { question: "多阻值烟弹是什么？", answer: "同一外形的烟弹，装在同一台设备上，但内置雾化芯有多种阻值可选。想换吸法只需换烟弹，设备照用。" },
     ],
   },
@@ -264,7 +264,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         heading: "实例：ARGUS P3 的 2.01 英寸全触控屏",
         paragraphs: [
           "[ARGUS P3](/products/argus-p3) 是一台换弹主机，用 2.01 英寸全触控 TFT HD 屏幕操作菜单和切换模式，1500mAh 内置电池，5–30W 输出。",
-          "它的烟弹平台是 ARGUS 顶部注油烟弹，但本店目前尚未单独销售 ARGUS 烟弹。按屏幕选设备之前，请把烟弹那一行一起看，读法见 [如何解读规格表](/guides/reading-a-spec-sheet)。",
+          "它的烟弹平台是 ARGUS 顶部注油烟弹。本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，VOOPOO 提醒使用前先对照 P3 核对阻值和功率。按屏幕选设备之前，请把烟弹那一行一起看，读法见 [如何解读规格表](/guides/reading-a-spec-sheet)。",
         ],
       },
     ],
@@ -297,7 +297,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 搭载 GENE.AI 芯片，是 auto-draw 设计：没有点火键，吸气即启动，功率按所装烟弹自动调节，最高 30W，没有菜单需要设置。",
           "1350mAh 内置电池，机身 95.3 × 25.8 × 13.7 mm、重 41 g。盒内烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆，配 iCOSM CODE 2.0 防漏系统。",
-          "先说清楚：本店目前尚未单独销售 ARGUS 烟弹，这里能买到的是盒内随附的那一颗。",
+          "想换阻值的话，本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)；VOOPOO 提醒使用前先核对阻值和功率。",
           "这两台设备是芯片能力的两端：DRAG 6 把设定交给你，ARGUS G3 mini 让芯片替你决定。还不确定自己想不想亲自调功率，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
         ],
       },

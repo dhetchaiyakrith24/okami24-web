@@ -174,7 +174,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
           "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL, with the iCOSM CODE 2.0 anti-leak system.",
-          "One thing to know before you decide: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get here.",
+          "VOOPOO says the whole ARGUS pod family fits, as long as you check the resistance and output first — and when you need more pods, we carry [VOOPOO Argus Pod cartridges](/products/coil-21).",
         ],
         image: SECTION_IMAGES_EN.argusG3MiniTiny,
       },
@@ -200,7 +200,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "What pods does the ARGUS G3 mini use?",
-        answer: "It ships with the ARGUS Top Fill Cartridge V2 at 0.7 ohm. This shop does not yet sell ARGUS pods separately.",
+        answer: "It ships with the ARGUS Top Fill Cartridge V2 at 0.7 ohm, and VOOPOO says the rest of the ARGUS pod family fits too — check the resistance and output first. We carry VOOPOO Argus Pod cartridges.",
       },
       {
         question: "What e-liquid does a pod system use?",
@@ -488,8 +488,8 @@ const allGuides: Guide[] = [
       {
         heading: "A wide resistance range does not always mean the pod is for sale",
         paragraphs: [
-          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but right now our site has no ARGUS pods for sale. The ARGUS G4, ARGUS G4 mini, ARGUS P3 and ARGUS G3 mini have no compatible pod or coil in the catalog yet.",
-          "Compare the Caliburn side, where the [GPP pod](/products/coil-94) is on the site and states exactly which devices it fits. The resistance range on a spec sheet is only half the answer; the other half is whether the pod you would put in it can actually be bought. Read those two lines together before choosing a device — or, if you have not started choosing yet, start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
+          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but the [VOOPOO Argus Pod cartridges](/products/coil-21) on our site come in 0.4, 0.7 and 1.2Ω, not every value in that range. VOOPOO lists the ARGUS G4, ARGUS G4 mini, ARGUS P3 and ARGUS G3 mini as taking this pod family.",
+          "The Caliburn side works the same way: the [GPP pod](/products/coil-94) is on the site and states exactly which devices it fits. The resistance range on a spec sheet is only half the answer; the other half is whether the pod you would put in it can actually be bought. Read those two lines together before choosing a device — or, if you have not started choosing yet, start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
       },
     ],
@@ -500,7 +500,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "Where can I buy ARGUS pods?",
-        answer: "Not on our site right now. The ARGUS G4, G4 mini, P3 and G3 mini have no compatible pod in the catalog yet. Ask on LINE @okm24.",
+        answer: "On our site: VOOPOO Argus Pod cartridges, in several resistances. VOOPOO says the ARGUS pod family fits the ARGUS G4, G4 mini, P3 and G3 mini; on the P3 and G3 mini, check resistance and output first.",
       },
       {
         question: "What does the resistance range tell me?",
@@ -2599,7 +2599,7 @@ const allGuides: Guide[] = [
               "VOOPOO ระบุว่าทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS ร่วมกันได้ หัว Multi-Ohm ใช้สลับกันได้ระหว่าง G4 กับ G4 mini หัว Snap ที่มากับ P3 ใส่ได้ทั้ง G4 และ G4 mini ส่วนหัว Top Fill Cartridge V2 ที่มากับ G3 mini อยู่ในรายการหัวพอตที่ใช้ได้ของทั้งสี่รุ่น",
               "สำหรับ P3 กับ G3 mini ทาง VOOPOO แนะนำให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้",
               "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
-              "ถ้าอยากได้หัวพอต ARGUS เพิ่ม ทักไลน์ @okm24 ถามร้านก่อนได้",
+              "ถ้าอยากได้หัวพอต ARGUS เพิ่ม เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก",
             ],
             image: SECTION_IMAGES.argusPods,
           },

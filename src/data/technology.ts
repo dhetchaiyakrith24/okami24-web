@@ -59,7 +59,7 @@ export const technologyEntries: TechnologyEntry[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit with no fire button. Its sheet says wattage auto-adjusts to whichever pod is installed, up to 30W — which means the platform supports more than one resistance.",
           "What is in the box, though, is a single one: the ARGUS Top Fill Cartridge V2 at 0.7Ω, 3mL, with the iCOSM CODE 2.0 anti-leak system, on a 1350mAh battery.",
-          "To be plain about it: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get. The ARGUS G4, ARGUS G4 mini, ARGUS P3 and ARGUS G3 mini have no compatible pod in the catalog yet.",
+          "If you want another resistance, we carry [VOOPOO Argus Pod cartridges](/products/coil-21) in 0.4, 0.7 and 1.2Ω. VOOPOO says the whole ARGUS pod family fits the G3 mini; check the resistance and output first.",
           "How the MTL and RDL draws mentioned above actually feel is in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
         ],
       },
@@ -67,7 +67,7 @@ export const technologyEntries: TechnologyEntry[] = [
     faq: [
       {
         question: "Can the ARGUS G3 mini take a pod of another resistance?",
-        answer: "Its sheet says wattage auto-adjusts to the pod installed, but the box holds one pod only, at 0.7Ω, and this shop does not yet sell ARGUS pods separately.",
+        answer: "Yes. VOOPOO says the whole ARGUS pod family fits — check the resistance and output first. The box holds one pod, at 0.7Ω; for other resistances, we carry VOOPOO Argus Pod cartridges.",
       },
       {
         question: "What is a multi-resistance pod?",
@@ -104,7 +104,7 @@ export const technologyEntries: TechnologyEntry[] = [
         heading: "Real example: the ARGUS P3's 2.01\" full-touch display",
         paragraphs: [
           "The [ARGUS P3](/products/argus-p3) is a pod kit run from a 2.01\" full-touch TFT HD display for menu and mode control, with a 1500mAh built-in battery and a 5–30W output range.",
-          "Its pod line is the ARGUS top-fill cartridge platform, but this shop does not yet sell ARGUS pods separately. Before choosing a device by its screen, read the pod line alongside it — how to is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
+          "Its pod line is the ARGUS top-fill cartridge platform. We carry [VOOPOO Argus Pod cartridges](/products/coil-21), and VOOPOO asks you to check resistance and output against the P3 first. Before choosing a device by its screen, read the pod line alongside it — how to is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
       },
     ],
@@ -147,7 +147,7 @@ export const technologyEntries: TechnologyEntry[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) runs GENE.AI and is auto-draw: no fire button, the device fires when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W, with no menu to set.",
           "A 1350mAh built-in battery in a 95.3 × 25.8 × 13.7 mm, 41 g body. The pod in the box is the ARGUS Top Fill Cartridge V2 at 0.7Ω, with the iCOSM CODE 2.0 anti-leak system.",
-          "To be plain about it: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get.",
+          "For another resistance, we carry [VOOPOO Argus Pod cartridges](/products/coil-21); VOOPOO asks you to check resistance and output before use.",
           "These two devices are the two ends of what a chip can do: the DRAG 6 hands the settings to you, the ARGUS G3 mini lets the chip decide. Not sure yet whether you want to set wattage yourself? Read [Choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
         ],
       },

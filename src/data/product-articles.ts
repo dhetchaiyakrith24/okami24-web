@@ -922,7 +922,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าใช้ได้ทั้ง Multi-Ohm Cartridge กับ Snap Cartridge และ Top Fill Cartridge V2 ทั้งขนาด 2mL และ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ซึ่งนับรุ่น CRC ไว้ด้วย",
-            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+            "ร้านเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือกหลายค่าโอห์ม และใช้กับ ARGUS G4 mini ได้ตามที่ VOOPOO ระบุไว้ข้างต้น"
           ]
         },
         {
@@ -947,7 +947,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "VOOPOO lists the Multi-Ohm Cartridge, the Snap Cartridge, the Top Fill Cartridge V2 (2mL and 3mL) and other ARGUS cartridges, CRC versions included.",
-            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+            "We carry [VOOPOO Argus Pod cartridges](/products/coil-21) in several resistances, and VOOPOO's list above covers them for the G4 mini."
           ]
         },
         {
@@ -972,7 +972,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹，去哪里买？",
           paragraphs: [
             "VOOPOO 列出的有 Multi-Ohm Cartridge、Snap Cartridge、Top Fill Cartridge V2（2mL 和 3mL），以及其他 ARGUS 烟弹，包括 CRC 版本。",
-            "本店目前尚未单独销售 ARGUS 烟弹，可通过 LINE @okm24 询问。"
+            "本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有多种阻值可选；按上面 VOOPOO 的说明，可用于 ARGUS G4 mini。"
           ]
         },
         {
@@ -999,7 +999,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
-            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+            "ร้านเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือกหลายค่าโอห์ม ก่อนสั่ง แนะนำให้เทียบค่าโอห์มกับวัตต์ของ G3 mini อีกครั้ง"
           ]
         },
         {
@@ -1024,7 +1024,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "The ARGUS Top Fill Cartridge V2 fits the whole ARGUS pod family; VOOPOO asks you to check the resistance and output against the device.",
-            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+            "We carry [VOOPOO Argus Pod cartridges](/products/coil-21) in several resistances. Before you order, check the resistance and output against the G3 mini once more."
           ]
         },
         {
@@ -1049,7 +1049,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹，去哪里买？",
           paragraphs: [
             "ARGUS Top Fill Cartridge V2 兼容整个 ARGUS 烟弹家族；VOOPOO 提醒按阻值和功率确认是否适配。",
-            "本店目前尚未单独销售 ARGUS 烟弹，可通过 LINE @okm24 询问。"
+            "本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有多种阻值可选。下单前请再对照 G3 mini 核对阻值和功率。"
           ]
         },
         {
@@ -1077,7 +1077,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าใช้ได้ทั้ง Snap Cartridge และ Top Fill Cartridge V2 รวมถึง Top Fill Cartridge และหัวพอตรุ่น CRC",
-            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+            "ร้านเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือกหลายค่าโอห์ม ก่อนสั่ง แนะนำให้เทียบค่าโอห์มกับวัตต์ของ P3 ตามที่ VOOPOO ระบุไว้อีกครั้ง"
           ]
         },
         {
@@ -1102,7 +1102,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "VOOPOO lists the Snap Cartridge, the Top Fill Cartridge V2, the Top Fill Cartridge and their CRC versions.",
-            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+            "We carry [VOOPOO Argus Pod cartridges](/products/coil-21) in several resistances. Before you order, check the resistance and output against the P3, as VOOPOO advises."
           ]
         },
         {
@@ -1127,7 +1127,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹？去哪里买？",
           paragraphs: [
             "VOOPOO 列出的有 Snap 烟弹、Top Fill Cartridge V2、Top Fill Cartridge 以及它们的 CRC 版本。",
-            "我们暂时还没有单独销售 ARGUS 烟弹。可以在 LINE @okm24 询问。"
+            "本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有多种阻值可选。下单前请按 VOOPOO 的提示，对照 P3 核对阻值和功率。"
           ]
         },
         {
@@ -1228,7 +1228,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
-            "หัวพอต ARGUS ที่ไล่ไว้ด้านบนใช้กับเครื่องนี้ได้ทุกหัว ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+            "หัวพอต ARGUS ที่ไล่ไว้ด้านบนใช้กับเครื่องนี้ได้ทุกหัว และร้านเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือกหลายค่าโอห์ม"
           ]
         },
         {
@@ -1252,7 +1252,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
-            "Every ARGUS pod in the block above fits. We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+            "Every ARGUS pod in the block above fits, and we carry [VOOPOO Argus Pod cartridges](/products/coil-21) in several resistances."
           ]
         },
         {
@@ -1276,7 +1276,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "能用哪些烟弹？去哪里买？",
           paragraphs: [
-            "上面列出的 ARGUS 烟弹都能用。我们暂时还没有单独销售 ARGUS 烟弹。可以在 LINE @okm24 询问。"
+            "上面列出的 ARGUS 烟弹都能用。本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有多种阻值可选。"
           ]
         },
         {
