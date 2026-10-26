@@ -197,7 +197,9 @@ export default async function StaffOrderPage({
   const refundSlipDue = order.stockIssue?.resolution === "refunded" && order.stockIssue.refundSlipAt === null;
   const paymentStep = order.status === "payment_submitted" || order.status === "awaiting_verification";
   const itemCount = order.items.reduce((n, i) => n + i.quantity, 0);
-  const cancelNote = order.status === "cancelled" ? [...order.statusHistory].reverse().find((h) => h.status === "cancelled")?.note ?? null : null;
+  // "cancelled" is final (order-status.ts), so the FIRST cancelled row is the cancellation itself — later rows on a cancelled
+  // order (e.g. the refund slip attached afterwards, queue B4) must not replace its reason (checker #877).
+  const cancelNote = order.status === "cancelled" ? order.statusHistory.find((h) => h.status === "cancelled")?.note ?? null : null;
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">

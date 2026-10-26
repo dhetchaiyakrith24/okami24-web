@@ -135,7 +135,9 @@ export async function saveRefundSlip(orderId: number, bytes: Buffer): Promise<Re
     db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)").run(
       orderId,
       status,
-      row.refund_slip_path ? "Staff: refund slip replaced" : "Staff: refund slip attached"
+      // "Stock: …" like the other out-of-stock rows (historyNoteTh maps them) — a "Staff: <action>" note would read as an
+      // unknown staff action.
+      row.refund_slip_path ? "Stock: refund slip replaced" : "Stock: refund slip attached"
     );
   })();
   if (row.refund_slip_path) {
