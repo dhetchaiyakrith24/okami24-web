@@ -83,7 +83,8 @@ the rule that is read most often (the central rules and `.claude/TEAM_RULES.md`,
   `.claude/TEAM_RULES.md` or other repo files that would add a new rule, record an owner habit that becomes
   a rule, or pick between two duplicates that rule differently end with *owner must rule*; rows there that
   only merge a duplicate whose rulings agree, or fix a dead pointer, propose the fix — the main agent
-  applies it and reports (central §12 item 28).
+  applies it and reports (central §12 item 28). A conflict that is purely technical (locks, scripts, how to
+  check) never ends with *owner must rule* — propose the pick; Friday chooses (TEAM_RULES 13.3).
 
 Close the report with:
 

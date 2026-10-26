@@ -184,6 +184,10 @@ Test trees + PR flow (moved from §16 26/10): reuse `_incoming/wt-golive` · `_i
   shoot-b.sh) · cart flow `_incoming/cartux-a/` · staff pages locally: OKAMI24_STAFF_PASSWORD=<test value in
   `_incoming/stock-oe/.staff-test-pass`> (local only) · stop only your own servers by port (Get-NetTCPConnection → Stop-Process) ·
   server-action forms in the Browser pane: React resets uncontrolled inputs after every action (LESSONS พ45).
+Owner status page (TEAM_RULES 13.6, owner 26/10): https://claude.ai/artifact/WW3HFHFntievMThnvNtn1K ("OKami24 งานวันนี้", Thai, phone-first) ·
+  update = Artifact tool `action: read` with that `url` (gives the saved page file) → edit the sections (รอพี่ตอบ · รอพี่ทำเองหรือเลือก ·
+  กำลังทำ · คิวถัดไป · เสร็จและขึ้นเว็บแล้ว · ยังไม่ได้เคาะหน้าตา) + the date line → publish with the same `url` · pictures = the page's
+  asset store (needs the `assets` capability — skill `artifact-capabilities` first) · its waiting sections = `docs/รอพี่ตรวจ.md` + questions open in the chat (the page never holds a decision the files lack).
 Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES 13.6) · a new task: "Run now" once while the owner
   is there and "Always allow" each prompt, or skill `fewer-permission-prompts` · one command per Bash call
 ```
