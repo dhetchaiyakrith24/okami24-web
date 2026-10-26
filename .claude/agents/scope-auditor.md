@@ -26,8 +26,8 @@ someone remembered.
 
 1. **Build the full page list from source**, not from memory. `src/app/sitemap.ts` is the single
    source of truth: static routes + every category in `src/data/categories.ts` + every product in
-   `src/data/products` + every published ProductMaster product (`storefront-bridge.ts`
-   `getPublishedProducts()`) + brands with products (`brand-visibility.ts`) + guides + technology
+   `src/data/products` + every published ProductMaster product (`src/data/shipnity-seed/storefront-bridge.ts`
+   `getPublishedProducts()`) + brands with products (`src/lib/brand-visibility.ts`) + guides + technology
    entries + flavour families. Count them. The live site publishes the same list at
    `https://okami24.store/sitemap.xml` (105 URLs on 2026-09-17) — fetch it once and reconcile;
    if the two counts differ, report both and say which is ahead.
