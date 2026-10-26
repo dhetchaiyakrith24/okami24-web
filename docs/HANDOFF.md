@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = ebe86e20 (#860 N3–N6) · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = cab8c6a5 (#869 quick add) · #861 Q8 row · #860 N3–N6 · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
   #856 login page direction A · #854 member sign-in LINE + Google · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
@@ -69,12 +69,33 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     N6 small fixes + security DONE + LIVE (#860, merge ebe86e20): home index en/zh (shortName + pilotName) · /about line without the
        trailing negation · staff message hint "ไม่เขียนชี้ ด้านล่าง" + staff guide · placeOrder refuses empty/malformed keys and replays only
        the same customer's order (an empty key could hand back another customer's order + view token) · phone rate limit falls back to the
-       RIGHTMOST X-Forwarded-For. NOT done (login system = owner first): src/lib/staff/auth.ts keeps the leftmost-XFF fallback · optional
-       hardening = disable the onrender.com subdomain (Render docs custom-domains) so every request passes Cloudflare — owner's call.
-    N6 Q8 = PR #861 (branch q8-upsell-2610): "สินค้าที่คุณอาจสนใจ" row — src/lib/commerce/cart-suggestions.ts + CartSuggestions.tsx;
+       RIGHTMOST X-Forwarded-For (staff login too since #869, owner "แก้เลย"). Optional hardening = disable the onrender.com subdomain
+       (Render docs custom-domains) — owner asked "does it affect us?" (answer: no, customers and staff use okami24.store) — not done, ask.
+    N6 Q8 DONE + LIVE #861 (merge 68104454): "สินค้าที่คุณอาจสนใจ" row — src/lib/commerce/cart-suggestions.ts + CartSuggestions.tsx;
        designer direction 26/10 (4 calm link cards, phones 2×2 under checkout, ≥1024 left column under the items, empty cart = shop picks);
        designer review caught a pod offered without its device → pods/coils/sticks only via the verified-fit table. Shots _incoming/q8-shots/.
-       Open: "Relx Connector 20K" (BSOT §15) = which page? (Muro Connector 20K vs RELX Creator Pod 20K) — not listed until the owner says.
+       Open: "Relx Connector 20K" (BSOT §15) = which page? (Muro Connector 20K vs RELX Creator Pod 20K) — not listed until the owner says
+       (owner 26/10 forgot where the list came from: BSOT §15 "Real best sellers", his own early answers — explained in chat).
+       Designer idea left: a cart that already has a device should skip "same brand + category" (another device competing) — taste.
+    #869 DONE + LIVE (merge cab8c6a5, owner 26/10 phone): quick add on the suggestion cards (picker: BottomSheet < lg / native <dialog>
+       ≥ lg, PhoneOptionTiles outDisabled, options + sellable from the server) · Back from a product page returns to where the visitor came
+       from (HashLinksKeepHistory: same-page #links replaceState, capture phase) · red for every "no" (§18) · staff-login XFF fix.
+       Shots _incoming/qa-shots/. Designer + checker PASS. Owner has not yet seen it.
+    NEXT — OWNER ASKS 26/10 afternoon (answers given in chat; build in this order, one PR each, checker each):
+    B2 ORDERS (database + LINE = ชุดเต็ม 13.5 #3; owner chose every option below in chat 26/10):
+       (a) running order number #0001… given when STAFF CONFIRM PAYMENT (OK-date-xxx stays the customer's reference) · new column +
+           migration, show on /staff list + order page + customer order page.
+       (b) unpaid orders auto-cancelled at 24 h (#811 already) are HIDDEN from the staff lists (kept in the DB — owner "ซ่อน", not delete).
+       (c) keep the SLIP IMAGE 90 days then delete it automatically (keep the verdict) — staff order page shows it · owner ALSO wants the
+           bot to post the slip image into the "OKM Webside order" LINE group when a customer attaches it. CONFLICTS with BSOT §9 lines 276
+           + 342 "no slip image stored" → owner chose it 26/10 in chat: update BSOT §9 with the date + quote, then build. LINE image
+           message needs an HTTPS URL → serve via a long random one-time path, staff-only otherwise; push counts per member (300/month free).
+    B3 STAFF PAGES for phones (owner: "หาออเดอร์ที่ต้องทำไม่เจอ · ย้อนกลับ/ไปหน้าอื่นยาก · หน้าออเดอร์ยาวและรก · ใช้บนมือถือ"):
+       home = boxes by job with counts (รอตรวจสลิป · รอส่งคลัง · รอใส่เลขพัสดุ · เสร็จ · ยกเลิก) · staff menu + clear Back on every page ·
+       order page reordered (next action on top, details folded) · yellow = waiting states, red = no (§18). New look = designer drafts →
+       send the owner 1–2 shots → build (central §6).
+    LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (sent as an image in chat 26/10 — not saved
+       as a file; ask him to send the file again / put it in Downloads) → LINE Developers → channel 2012198931 → icon (owner's Chrome).
     Q6 logo round = TOMORROW 27/10 (owner).
     Q9 [owner idea 26/10, PLAN TOGETHER FIRST — "ตรงนี้จดไว้นะเดี๋ยวมาวางแพลนกัน"] a staff view that shows (1) how many people are on
        the site right now, (2) how many members signed up, (3) a customer profile with what they ordered before. Not started —
