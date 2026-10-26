@@ -93,8 +93,6 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 (unchanged lists).
   - Scan baseline re-measure on the test server = the next full round close (replaces the old item 6 baseline of 14/10).
-  - Gate gap (checker note on #907): self-merge-check --pr accepts `Checker: SKIP <any reason>` — only `SKIP self-review` is bounded. Next: accept
-    only docs-only · self-review · series · after-pass, and check docs-only files really are docs (gate script = BIG, checker).
   - Proposal to make (owner 03/10, item D): move chats earlier in image rounds (~350–400K) = central rule → propose with reasons first.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
