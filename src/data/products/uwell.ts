@@ -1648,8 +1648,8 @@ export const uwellProducts: Product[] = [
       {
         id: "in-the-box",
         title: "What's in the box",
-        description: "The device, a 0.6Ω and a 0.9Ω pod, a Type-C cable and the user manual (INT / FDA kit).",
-        image: { src: "/assets/products/caliburn-g3/story-in-the-box.webp", alt: "UWELL's Caliburn G3 picture — the INT / FDA kit contents", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1206, height: 809 },
+        description: "The device, a 0.6Ω and a 0.9Ω pod, a Type-C cable and the user manual.",
+        image: { src: "/assets/products/caliburn-g3/story-in-the-box.webp", alt: "UWELL's Caliburn G3 picture — the kit contents", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1206, height: 809 },
       },
     ],
     // Not `usbC` (its 5V/2A note): UWELL's G3 page says only "2A Fast Charging".

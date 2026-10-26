@@ -702,7 +702,7 @@ export const voopooProducts: Product[] = [
       { key: "charging", label: "Charging", value: "USB-C, 5V/1A", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       // weight sits in this row, not its own: the search text would read "40.85g" + "40.85 กรัม" as "…g4085…" and answer
       // "argus g4 mini" with this product (fix-weight.js)
-      { key: "dimensions", label: "Dimensions", value: "97.9 × 25.8 × 13.7 mm (3mL) · 95.4 × 25.8 × 13.7 mm (2mL) · 40.85g", sourceStatus: "verified", sourceUrl: G3M_PAGE },
+      { key: "dimensions", label: "Dimensions", value: "97.9 × 25.8 × 13.7 mm · 40.85g", sourceStatus: "verified", sourceUrl: G3M_PAGE },
     ],
     features: [
       {

@@ -160,7 +160,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         heading: "ตัวอย่างจริง: พอตคิทระบบออโต้สำหรับมือใหม่ (ARGUS G3 mini)",
         paragraphs: [
           // 12/10: chip name and body size left out, weight = the catalog row (voopoo.ts: VOOPOO names the chip two ways on
-          // one page; length differs by the 3mL / 2mL version).
+          // one page; the international version only — owner 26/10).
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ ไม่มีปุ่ม สูบได้เลย ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ สูงสุด 30 วัตต์",
           "แบต 1350mAh ตัวเครื่องหนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0",
           "บอกตรง ๆ ก่อนตัดสินใจ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง",

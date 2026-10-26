@@ -280,7 +280,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       "in-the-box": {
         title: "ในกล่องมีอะไรบ้าง",
-        description: "ชุด INT และ FDA มีตัวเครื่อง หัวพอต 0.6 และ 0.9 โอห์ม สายชาร์จ และคู่มือการใช้งาน",
+        description: "ในกล่องมีตัวเครื่อง หัวพอต 0.6 และ 0.9 โอห์ม สายชาร์จ และคู่มือการใช้งาน",
       },
     },
     tagline: "Caliburn ทรงเพรียว พร้อมจอ OLED ที่บอกวัตต์และจำนวนพัฟ",
@@ -435,7 +435,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "ไม่มีปุ่ม สูบได้เลย",
       materials: "อะลูมิเนียมอัลลอย · ลาย Clous de Paris",
       charging: "USB-C 5V/1A",
-      dimensions: "97.9 × 25.8 × 13.7 mm เมื่อใส่หัวพอต 3mL · 95.4 × 25.8 × 13.7 mm เมื่อใส่หัวพอต 2mL · 40.85 กรัม",
+      dimensions: "97.9 × 25.8 × 13.7 mm · 40.85 กรัม",
     },
     tagline: "ไม่มีปุ่ม ไม่ต้องตั้งค่า ชิป GENE.AI ปรับวัตต์ให้เองตามหัวพอต",
     shortDescription:
