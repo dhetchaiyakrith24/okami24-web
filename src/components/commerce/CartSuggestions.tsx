@@ -214,7 +214,7 @@ function OptionPicker({ item, name, onClose, onAdded }: { item: CartSuggestion; 
   const footer = (
     <div className="flex flex-col items-center gap-2">
       <span aria-busy={pending || undefined} className="w-full">
-        <Button onClick={confirm} disabled={!selected || pending} className="w-full justify-center">
+        <Button onClick={confirm} disabled={!selected || pending} className={`w-full justify-center ${selected ? "" : "cursor-not-allowed opacity-50"}`}>
           {selected ? `${dict.productActions.addToCartCta} · ${formatTHB(item.price)}` : dict.product.optionPickPrompt}
         </Button>
       </span>
