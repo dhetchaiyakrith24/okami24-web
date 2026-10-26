@@ -22,6 +22,14 @@
 //      working tree outside _incoming/ and .claude/worktrees/ (trees of their own), no git command that moves or
 //      rewrites it, no test-server build/start/stop,
 //      no build — until `node scripts/pre-checker-gate.js --done` (TEAM_RULES 13.4)                  → deny
+// House round 26/10 (rule-audit L1 L2 + the next-chat brief rule):
+//   H+ while the checker reads a tree: no shell write into it either — rm · sed -i · tee · a > / >> redirect whose target
+//      is in that tree outside _incoming/ (was "Friday's discipline", TEAM_RULES 13.4)            → deny
+//   I  scan/shot tools (shot · visible-text · scan · wordbreak-scan · head-audit · linemap-scan) pointed at the live site
+//      okami24.store — before/after is measured on the test build (TEAM_RULES 13.5 · Render bandwidth); a deliberate live read
+//      = put OKAMI24_LIVE_OK=1 in front · curl is not touched                                     → deny
+//   J  `_incoming/next-chat*.md` overwritten (Write tool, or a > redirect) while its first line is still `status: ready` —
+//      the new chat has not picked the brief up yet (TEAM_RULES 13.6) · a Write whose first line is `status: started` passes → deny
 //
 // Input: the hook JSON on stdin ({ tool_name, tool_input, cwd }). Output: a PreToolUse decision on stdout, or nothing
 // (= carry on as usual). Fails open on its own errors — a broken guard must not stop all work; the git pre-push
@@ -128,8 +136,13 @@ function checkShell(cmd, cwd) {
       decide("deny", "No `git commit -a` (TEAM_RULES 13.7): `git status --short`, `git add <file>` by name, then commit.");
     }
   });
+  // J — a redirect that would overwrite a brief the next chat has not picked up
+  segments(noClobber(plain)).forEach((seg, i, all) => {
+    const at = placeOf(all, cwd)[i];
+    for (const t of redirectTargets(seg)) if (briefStillReady(resolveArg(at, t))) decide("deny", BRIEF_MSG);
+  });
   // F
-  if (/self-merge-check/.test(plain) && /\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge(?![-\w])/.test(plain)) {
+  if (/self-merge-check/.test(plain) &&/\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge(?![-\w])/.test(plain)) {
     decide("deny", "Run `node scripts/self-merge-check.js` ALONE, read its last line (BLOCKED = no merge), then merge in a separate command (TEAM_RULES 13.7).");
   }
 }
@@ -150,6 +163,52 @@ function checkPathConversion(cmd) {
       decide("deny", "Git Bash will turn the page path into C:/Program Files/Git/… and the script scans the wrong pages. Put `MSYS_NO_PATHCONV=1 ` in front of the command (HANDOFF §17 \"Windows shell\").");
     }
   }
+}
+
+// I — only a segment that STARTS with node/tsx running one of the scan/shot scripts is read (like G), so a commit message,
+// heredoc or `gh pr --body` quoting such a command never trips it
+const LIVE_TOOLS = /^\s*(?:\w+=\S*\s+)*(?:timeout\s+\d+\s+)?(?:node(?:\s+--?[\w-]+(?:=\S+)?)*|npx\s+tsx|tsx)\s+(?:\S*\/)?scripts\/(?:shot|visible-text|scan|wordbreak-scan|head-audit|linemap-scan)\.(?:c?js|mjs|ts)\b(.*)$/;
+function checkLiveSite(cmd) {
+  for (const seg of stripBodies(cmd).split(/\n|&&|\|\|?|;/)) {
+    const m = seg.match(LIVE_TOOLS);
+    if (!m || /(?:^|\s)OKAMI24_LIVE_OK=1\s/.test(seg)) continue;
+    if (/(?:https?:\/\/)?(?:www\.)?okami24\.store\b/i.test(m[1])) {
+      decide("deny", "Before/after is measured on the test build, not the live site (TEAM_RULES 13.5 · Render bandwidth) — point the tool at the test server. A deliberate live read: put OKAMI24_LIVE_OK=1 in front and say why in the report. curl of the touched pages after a merge is fine.");
+    }
+  }
+}
+
+// J — the next-chat brief (TEAM_RULES 13.6: overwrite only once the brief says `status: started`)
+const BRIEF = /(?:^|\/)_incoming\/next-chat[^/]*\.md$/i;
+const BRIEF_MSG = "This next-chat brief still says `status: ready` — the new chat has not picked it up, so it must not be overwritten (TEAM_RULES 13.6). Wait for `status: started`, or write the second brief to its own `_incoming/next-chat-<line>.md`.";
+function briefStillReady(file) {
+  const p = String(file).replace(/\\/g, "/");
+  if (!BRIEF.test(p)) return false;
+  try {
+    return /^status:\s*ready\b/.test(require("fs").readFileSync(p, "utf8").replace(/^﻿/, ""));
+  } catch {
+    return false; // no file yet = nothing to overwrite
+  }
+}
+// `>|` (write even with noclobber) would be cut at its `|` by segments() — read it as a plain `>` first
+const noClobber = (s) => s.replace(/>\|/g, ">");
+// the files a segment writes: > / >> / &> redirects (not 2>&1, not >&2, not /dev/…, not cmd's NUL, not a bare number
+// such as the `1>0` of an inline `node -e` expression)
+function redirectTargets(seg) {
+  return [...seg.matchAll(/(?:^|[^<&\d])(?:\d|&)?>>?\s*([^\s;|&<>()]+)/g)]
+    .map((m) => m[1].replace(/^["']|["']$/g, ""))
+    .filter((t) => t && !/^\/dev\//.test(t) && !/^(nul|con)$/i.test(t) && !/^\d+$/.test(t));
+}
+// + rm / sed -i / tee targets (H+)
+function shellWriteTargets(seg) {
+  const out = redirectTargets(seg);
+  const words = seg.trim().split(/\s+/);
+  const cmdAt = words.findIndex((w) => !/^\w+=/.test(w)); // skip VAR=x prefixes
+  const name = (words[cmdAt] || "").replace(/^.*[\\/]/, "");
+  const args = words.slice(cmdAt + 1).filter((a) => !a.startsWith("-")).map((a) => a.replace(/^["']|["']$/g, ""));
+  if (/^(rm|rmdir|unlink|tee)$/.test(name)) out.push(...args);
+  if (/^(sed|perl)$/.test(name) && words.slice(cmdAt + 1).some((a) => /^(-\w*i[\w.~-]*|--in-place(=\S*)?)$/.test(a)) && args.length) out.push(args[args.length - 1]); // -i · -i.bak · -pi
+  return out;
 }
 
 // Split a command tail into shell arguments with their quotes removed ('a b' "c d" e\ f → 3 arguments).
@@ -185,15 +244,17 @@ function checkerReading() {
 // folder froze the SEO chat's app worktree nested inside it)
 const inside = (p, tree) =>
   (p + "/").startsWith(tree + "/") && !(p + "/").startsWith(tree + "/_incoming/") && !(p + "/").startsWith(tree + "/.claude/worktrees/");
-// Covers the acts that move or rebuild a tree (git, builds, the test server) and the Edit/Write tools — not every shell
-// write (rm · sed -i · a redirect): those stay Friday's discipline (TEAM_RULES 13.4 says so). Where a segment runs = the
-// hook's cwd moved by any `cd` before it, or git's own -C.
+// Covers the acts that move or rebuild a tree (git, builds, the test server), the Edit/Write tools and since 26/10 the plain
+// shell writes into it (rm · sed -i · tee · a redirect — H+). Where a segment runs = the hook's cwd moved by any `cd` before
+// it, or git's own -C.
 function checkReadingShell(cmd, cwd) {
-  const segs = segments(blankText(cmd));
+  const segs = segments(noClobber(blankText(cmd)));
   const dirs = placeOf(segs, cwd);
   for (const r of checkerReading()) {
     segs.forEach((seg, i) => {
       if (/test-server\.js["']?\s+(build|start|stop|restart)\b/.test(seg)) decide("deny", r.msg); // 3412 is the machine's, not one tree's
+      // H+ is judged by where the write LANDS (an absolute path, or ../ from _incoming/), not by where the shell sits
+      for (const t of shellWriteTargets(seg)) if (inside(norm(resolveArg(dirs[i], t)), r.tree)) decide("deny", r.msg);
       const g = gitCall(seg);
       if (!inside(norm(g && g.dir ? resolveArg(dirs[i], g.dir) : dirs[i]), r.tree)) return;
       if (g && /^(checkout|switch|reset|merge|pull|rebase|commit|restore|clean|cherry-pick|revert|am|apply)$/.test(g.sub)) decide("deny", r.msg);
@@ -245,11 +306,13 @@ process.stdin.on("end", () => {
       const cmd = String(ti.command || "");
       checkShell(cmd, cwd);
       if (tool === "Bash") checkPathConversion(cmd);
+      checkLiveSite(cmd);
       checkReadingShell(cmd, cwd);
     }
     if (["Edit", "Write", "MultiEdit", "NotebookEdit"].includes(tool)) {
       const p = String(ti.file_path || ti.notebook_path || "").replace(/\\/g, "/");
       checkReadingEdit(p, cwd); // deny first — it outranks C's "ask"
+      if (tool === "Write" && !/^status:\s*started\b/.test(String(ti.content || "")) && briefStillReady(path.resolve(cwd, p))) decide("deny", BRIEF_MSG); // J
       if (LOCKED.some((re) => re.test(p))) lockedDecision(p);
     }
   } catch {
