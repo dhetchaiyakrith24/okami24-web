@@ -82,7 +82,7 @@ git ไม่ยอมเปิดด่าน (hook) ให้เองหล�
 ## 5. ห้ามกดเด็ดขาด
 
 - **Delete service / Delete disk / Suspend** ใน Render — ลบแล้ว DB และสำเนาชั้น 1 หายทั้งหมด
-- **เปลี่ยน `OKAMI24_ORDERING`** (ตอนนี้ `on` = ตะกร้าเปิด) เมื่อเจ้าของไม่ได้สั่ง — วิธีเปลี่ยน: Render → okami24 → Environment → แก้แถวนี้แถวเดียว → "Save, rebuild, and deploy" (Blueprint พัก sync ตั้งแต่ 21/10 → แก้ `render.yaml` ไม่ถึง Render) · ปิดตะกร้า = ใส่ `off` วิธีเดียวกัน
+- **เปลี่ยน `OKAMI24_ORDERING`** (ตอนนี้ `on` = ตะกร้าเปิด) เมื่อเจ้าของไม่ได้สั่ง — วิธีเปลี่ยน = `docs/DEPLOY-RENDER.md` แถว `OKAMI24_ORDERING` · ปิดตะกร้า = ใส่ `off`
 - **Manual Deploy จาก branch อื่นที่ไม่ใช่ `main`** และ **Sync Blueprint** โดยไม่ถาม — อย่างหลังจะทับค่าที่ตั้งในหน้าจอกลับเป็นค่าในไฟล์
 - ใน GitHub: **Delete tag / Force push** — จุดกลับทุกจุดในข้อ 2 อยู่ตรงนั้น · **Delete branch** ได้เฉพาะ branch ที่งานอยู่ใน main แล้ว (นำหน้า main 0 commit) หรือมี tag เก็บปลายไว้ (คำตัดสิน 8A · แก้บรรทัดนี้รอบ B 27/09 — ของเดิมห้ามลบ branch ทุกตัว)
 - ใน Render: **ปิด Auto-Deploy ถาวร** โดยไม่บอก Friday — ค่าที่ถูกตั้งแต่ 21/10 คือ **On Commit** (merge แล้วเว็บขึ้นเอง) · ปิดชั่วคราวได้ตามข้อ 1ก (คำเดิม "ห้ามเปิด Auto-Deploy" ของรอบ B 27/09 ถูกแทนตอนย้ายการสร้างเว็บไป Render 21/10)
@@ -110,7 +110,7 @@ git ไม่ยอมเปิดด่าน (hook) ให้เองหล�
 2. ดูว่าเป็นเฉพาะบางเครือข่ายหรือทุกคน: ให้ Friday เปิดเว็บจากเครื่องร้าน + curl — เว็บล่มจริง (ทุกคนเข้าไม่ได้) = ข้อ 1 ของไฟล์นี้ ไม่ใช่ข้อนี้
 
 **6ค. ถ้าเข้าไม่ได้ยาวหลายสัปดาห์ และพี่ตัดสินใจย้ายไป okami-24.com ถาวร — งานใหญ่ ให้ Friday เปิดรอบ ห้ามกดเองทีละจุด**
-- เปลี่ยน `SITE_URL` เป็น `https://okami-24.com` (ไฟล์คำสั่งรอบต้องมีบรรทัด【แตะได้】`render.yaml`) → canonical / sitemap ทั้งเว็บชี้ okami-24.com
+- เปลี่ยน `SITE_URL` เป็น `https://okami-24.com` ที่ Render → Environment (`docs/DEPLOY-RENDER.md` · Blueprint พัก sync = แก้ไฟล์อย่างเดียวไม่ถึง Render) + แก้ `render.yaml` ให้ตรงกัน (ไฟล์คำสั่งรอบต้องมีบรรทัด【แตะได้】`render.yaml`) → canonical / sitemap ทั้งเว็บชี้ okami-24.com
 - ตั้ง 301 จากทุกหน้าของ okami24.store ไปหน้าเดียวกันบน okami-24.com (Google แนะนำ 301/308 และให้คงไว้อย่างน้อย 1 ปี)
 - Search Console → **Change of Address** จาก okami24.store ไป okami-24.com: ต้องเป็นเจ้าของทั้งสองโดเมนในบัญชี Google เดียวกัน · ต้องมี 301
   ก่อน · มีผล 180 วัน · ถือโดเมนเก่าไว้อย่างน้อย 1 ปี
