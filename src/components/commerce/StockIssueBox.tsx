@@ -156,7 +156,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
               </label>
             ))}
             {swapState.errorKey && (
-              <p role="alert" className="text-ember">
+              <p role="alert" className="text-danger">
                 {t[swapState.errorKey]}
               </p>
             )}
@@ -201,7 +201,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
               <input {...bind("branch")} type="text" autoComplete="off" maxLength={60} className={field} />
             </label>
             {refundState.errorKey && (
-              <p role="alert" className="text-ember">
+              <p role="alert" className="text-danger">
                 {t[refundState.errorKey]}
               </p>
             )}
@@ -224,7 +224,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
               <input {...bind("promptPay")} type="tel" inputMode="numeric" autoComplete="tel" maxLength={14} required className={field} />
             </label>
             {refundState.errorKey && (
-              <p role="alert" className="text-ember">
+              <p role="alert" className="text-danger">
                 {t[refundState.errorKey]}
               </p>
             )}
@@ -236,7 +236,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
           <>
             <input type="hidden" name="mode" value="own" />
             {refundState.errorKey && (
-              <p role="alert" className="text-ember">
+              <p role="alert" className="text-danger">
                 {t[refundState.errorKey]}
               </p>
             )}

@@ -358,7 +358,7 @@ export function OrderStatusView({
                   {/* the LINE handle inside the sentence is the link (designer 2026-09-06: no floating red link under the warnings) */}
                   {withLineLink(dict.orderStatus.paymentAfterTransferNote)}
                 </p>
-                <p className="text-sm font-medium text-ember">{dict.orderStatus.paymentNoRefundWarning}</p>
+                <p className="text-sm font-medium text-danger">{dict.orderStatus.paymentNoRefundWarning}</p>
               </div>
             )}
             <SlipUploadForm orderNumber={order.orderNumber} token={token} />

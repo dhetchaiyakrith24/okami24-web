@@ -90,7 +90,7 @@ export function ProductBuyAction({
   if (!available) {
     return (
       <div className={compact ? "flex items-center gap-3" : "flex flex-col items-start gap-2"}>
-        <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
+        <span className="label-mono text-xs text-danger">{dict.productActions.outOfStockLabel}</span>
         {/* 19/10: the enquiry opens the same LINE ready-message / scan dialog as the order button, in "ask" wording. */}
         <OrderViaLineButton
           productName={productName}

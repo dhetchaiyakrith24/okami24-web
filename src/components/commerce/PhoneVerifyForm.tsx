@@ -52,7 +52,7 @@ export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
                 className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
               />
             </label>
-            {errorText(dict, state.errorKey) && <p className="text-sm text-ember">{errorText(dict, state.errorKey)}</p>}
+            {errorText(dict, state.errorKey) && <p className="text-sm text-danger">{errorText(dict, state.errorKey)}</p>}
             <Button type="submit" className="mt-2 w-full justify-center">
               {pending ? "…" : otpEnabled ? dict.checkout.sendCodeCta : dict.checkout.continueCta}
             </Button>
@@ -81,7 +81,7 @@ export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
                   className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base tracking-[0.4em] text-foreground"
                 />
               </label>
-              {errorText(dict, state.errorKey) && <p className="text-sm text-ember">{errorText(dict, state.errorKey)}</p>}
+              {errorText(dict, state.errorKey) && <p className="text-sm text-danger">{errorText(dict, state.errorKey)}</p>}
               <Button type="submit" className="mt-2 w-full justify-center">
                 {pending ? "…" : dict.checkout.verifyCta}
               </Button>

@@ -330,6 +330,10 @@ Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in
 `docs/IMAGE_SPEC.md`; this list holds the rulings that have no other home. A ruling that is replaced = overwrite its line.
 
+**Red for "no" (owner 26/10): every box or line on the site that says no / not passed / not approved / not allowed /
+refused uses the red `danger` colour, never the ember orange** ("ขอใช้เป็นสีแดงได้เลย ไม่ใช้สีส้มทั้งเว็บ"). Ember stays for
+actions and accents; a yellow "check it yourself" state stays yellow.
+
 **Owner's personal contact — NEVER (owner 26/10 "งานเว็บทั้งหมดต้องไม่มีส่วนไหนชี้มาหาส่วนตัวพี่ครับ ห้ามเด็ดขาด"):** nothing in
 the web work may point to the owner personally — every contact / support / developer email on the site and on every outside
 service set up for it (Google Cloud consent screen, LINE channels, Render, …) = **okamisalt@gmail.com**. The bank account

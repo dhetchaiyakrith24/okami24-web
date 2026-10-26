@@ -60,7 +60,7 @@ function LookupForm({ again }: { again: boolean }) {
           className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
         />
       </label>
-      {state.errorKey && <p className="text-sm text-ember">{t[state.errorKey]}</p>}
+      {state.errorKey && <p className="text-sm text-danger">{t[state.errorKey]}</p>}
       <Button type="submit" variant={again ? "secondary" : "primary"} className="mt-2 w-full justify-center">
         {pending ? "…" : t.submitCta}
       </Button>
