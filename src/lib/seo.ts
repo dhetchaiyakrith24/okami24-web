@@ -101,7 +101,7 @@ export function organizationJsonLd(contact: { lineUrl: string; youtubeChannels: 
     name: SITE_NAME,
     alternateName: ["OKM", "okm pod", "Okami vape", "okami24"],
     url: SITE_URL,
-    logo: absoluteUrl("/brand/okami-logo-red.png"),
+    logo: absoluteUrl("/brand/okami-logo.png"),
     sameAs: [contact.lineUrl, ...contact.youtubeChannels.map((ch) => ch.url)],
     areaServed: "TH",
   };

@@ -78,10 +78,10 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6 lg:gap-4 min-[1400px]:gap-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
           <Image
-            src="/brand/okami-logo-red.png"
+            src="/brand/okami-logo.png"
             alt="OKami24"
-            width={568}
-            height={480}
+            width={1416}
+            height={429}
             priority
             className="h-10 w-auto sm:h-12"
           />

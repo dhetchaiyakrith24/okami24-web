@@ -130,7 +130,8 @@ async function main() {
     { item: "cinematic Scene3 (VOOPOO) — DRAG 6", src: "/assets/products/drag-6/card.png" },
     { item: "cinematic Scene4 (Hero) — M Bar 10K", src: "/assets/products/m-bar-10k/card.webp" },
     { item: "cinematic Scene4 (Hero) — M Switch Kit", src: "/assets/products/m-switch-kit/hero-scene4.webp" },
-    { item: "โลโก้ (Header/Footer/Intro/Finale)", src: "/brand/okami-logo-red.png" },
+    { item: "โลโก้ (Header/Footer)", src: "/brand/okami-logo.png" },
+    { item: "โลโก้เก่า (cinematic Intro/Finale — ปิดอยู่)", src: "/brand/okami-logo-red.png" },
   ];
   for (const s of site) await push({ slug: "(หน้าหลัก)", brandId: "-", brandName: "-", source: "site", layer: "home", item: s.item, src: s.src });
   for (const p of allProducts.filter((x) => x.isFlagship)) {

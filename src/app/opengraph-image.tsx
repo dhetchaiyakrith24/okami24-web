@@ -11,7 +11,7 @@ export const contentType = "image/png";
 // glyph coverage without an explicitly loaded Thai font, so any Thai copy here would render as
 // tofu boxes — the existing brand mark alone is honest and safe.
 export default async function Image() {
-  const logo = await readFile(join(process.cwd(), "public/brand/okami-logo-red.png"));
+  const logo = await readFile(join(process.cwd(), "public/brand/okami-logo.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
 
   return new ImageResponse(
@@ -27,7 +27,7 @@ export default async function Image() {
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element -- next/og requires a plain <img>, not next/image */}
-        <img src={logoSrc} width={340} height={288} alt="" />
+        <img src={logoSrc} width={840} height={255} alt="" />
       </div>
     ),
     { ...size }
