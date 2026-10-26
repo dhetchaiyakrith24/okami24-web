@@ -103,10 +103,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        th/en/zh + BSOT §9 + staff guide updated. Only for refunds recorded through "สินค้าหมดหลังลูกค้าโอน" (a paid order cancelled
        for another reason has no refund box — not built). Evidence _incoming/b4-2610/NOTES.md + shots/ (after2-* = with slips).
        The owner's real out-of-stock order this week (refunded by PromptPay) can now get its slip — record it there if not done.
-    B5 STOCK QUANTITY + "ใกล้หมด" label — NOT built, waits for the owner's word (asked 26/10 with the plan): (1) stock without a
+    B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" label (word = owner 26/10, §18 "Low-stock label") — NOT built: (1) stock without a
        rebuild first (every stock PR = a deploy = 30–60 s of 502; counts would deploy hourly) → (2) a trustworthy count source tested
-       against the order-entry picker for a week → (3) label at ≤ 3 left. Word options sent: "ใกล้หมด · เหลือ N ชิ้น" (Friday's pick) ·
-       "เหลือ N ชิ้น" · "ใกล้หมด" without a number.
+       against the order-entry picker for a week → (3) label at ≤ 3 left.
+       PLAN (Friday 26/10, sent to the owner): ① count source — read-only look in the owner's Chrome for a per-code quantity in
+       Shipnity Max (product list / stock report); the hourly routine LOGS it beside the picker in/out for 7 days (no site change);
+       done = count > 0 ⇔ picker "เพิ่ม" on every code read. ② stock at runtime — a DB table written by the routine through a
+       staff-token endpoint (needs a NEW secret env on Render = owner OK first, 13.3 #9); product pages stay prerendered and read
+       stock from a small no-cookie API; cart + placeOrder check the DB; the build-time WAREHOUSE set stays as the fallback; hourly
+       stock PRs/deploys stop. ③ the label on option tiles + product page (designer places it), then proof + checker + merge.
+       Today stock is compiled into the build (src/data/stock/warehouse-stock.ts → apply-sold-out.ts; product pages use
+       generateStaticParams) — that is why ② comes before any number on the site.
     LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (owner 26/10: "เดี๋ยวพี่ส่งให้" — the file
        comes in the next chat) → crop the kabuto mark square → LINE Developers → channel 2012198931 → icon (owner's Chrome).
     Q6 logo round = TOMORROW 27/10 (owner).
@@ -413,6 +420,9 @@ only read it, to open the cart later) · the old Shipnity (`shipnity.com`, sourc
 is retired: "ตัวเก่าเขาไม่ได้ใช้แล้ว" — never take a code, stock or price from it · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
 model), even when that is over half the catalog · Shipnity spellings that differ are matched in `src/data/stock/sku-map.ts`,
 never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile.
+
+**Low-stock label (owner 26/10, chat — answer to รอพี่ตรวจ 78):** the word is **"ใกล้หมด · เหลือ N ชิ้น"**, shown at ≤ 3 left
+(Friday's threshold, the owner picked the word with it). Not built yet — B5 in §16 item 3.
 
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
