@@ -229,7 +229,7 @@ holder name on the order page (BSOT §9) is the receiving account itself, not a 
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
 without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are touched only when the owner asks or a BSOT fact they state changes (owner 26/10, house round) and carry no JSON-LD on purpose (item 49) ·
-**free shipping ฿500 (owner 26/10):** the day the promo really starts, Friday adds it to BSOT and the "ส่งฟรี" / payment wording ban of THAI_STYLE §3 lifts for copy that states the real policy (owner's OK = the house round 26/10; until then the ban stays) ·
+**free shipping ฿500 (owner 26/10):** the start date = the owner types it; Friday never starts it alone (owner 27/10, answer 80) · the day the promo really starts, Friday adds it to BSOT and the "ส่งฟรี" / payment wording ban of THAI_STYLE §3 lifts for copy that states the real policy (owner's OK = the house round 26/10; until then the ban stays) ·
 green "shipped" glow = the style for key-moment effects site-wide ("ยืนบนความเรียบหรู", owner 23–24/10) · IQOS colour names = Friday decides ·
 caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices") or when the stock API lands.
