@@ -8,10 +8,6 @@
 
 ---
 
-## 1ข. grep หาข้อความไทยบนหน้าที่เรนเดอร์แล้ว ต้องตัด U+2060/U+00A0 ทิ้งก่อนเสมอ
-
-→ is a rule now: strip U+2060 / U+00A0 before matching rendered `<main>` text (agent `seo-auditor` capture spec · `scripts/visible-text.js` header) — the mechanism still puts U+2060 into rendered pages. Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
 ## 2. ถามว่า "ข้อความจะไหลผ่านกลไกไหนบ้าง" ก่อนเลือกที่เก็บข้อความ
 
 *(รอบ 6 "about3lang" B1 · 2026-09-23)*
@@ -28,12 +24,7 @@
 ว่าประโยคนี้ **ไม่ต้อง** ผูกอักขระ = การตัดสินใจไม่ลากไปเกินขอบเขตถูกต้อง
 
 **ใช้ซ้ำเมื่อไหร่:** ก่อนย้ายข้อความเข้า dictionary/overlay ใด ๆ — ไล่ก่อนว่ามี transform ตอน render
-ไหม และข้อความใหม่ไป match `within` ของ `JOINED` หรือ `NEVER_SPLIT` หรือเปล่า
-**รวม (26/10):** Before moving, splitting or link-wrapping Thai text, trace the render transforms (thaiTypographyDeep) and grep `within:` of JOINED/NEVER_SPLIT in thai-typography.ts with the words around the spot — a fragment that no longer matches the full sentence breaks a protected word or drags an owner exception elsewhere. Fix: own module, move the link, wordbreak-scan before/after (was พ28).
-
-## พ28. ห่อคำไทยเป็นลิงก์กลางประโยค แล้วคำที่เคยกันขาดบรรทัดไว้กลับขาด — กฎ joiner อ่านทั้งประโยค (รอบ SEO ง ก้อน 6 08/10 · #352)
-
-→ merged into item 2 (house round 26/10). Old text = `git show 464b7f64:.claude/LESSONS.md`.
+ไหม และข้อความใหม่ไป match `within` ของ `JOINED` หรือ `NEVER_SPLIT` หรือเปล่า · Before moving, splitting or link-wrapping Thai text, trace the render transforms (thaiTypographyDeep) and grep `within:` of JOINED/NEVER_SPLIT in thai-typography.ts with the words around the spot — a fragment that no longer matches the full sentence breaks a protected word or drags an owner exception elsewhere. Fix: own module, move the link, wordbreak-scan before/after (was พ28).
 
 ## 3. แก้ "เพดานที่เดาเอา" ด้วยโครงสร้างที่ไม่ต้องเดา
 
@@ -76,12 +67,7 @@
 · 11 สตริงเกินเพดาน · 2 คำสะกดชื่อรุ่นไม่นิ่ง — แก้บนกระดาษทั้งหมด ลงโค้ดครั้งเดียว
 **ทำไมได้ผล:** ของที่แก้บนกระดาษไม่ต้อง build/ตรวจซ้ำ · สองผู้ตรวจเห็นคนละมุม (ภาษา vs การแข่งคำ)
 · เหลืองานให้ checker แค่ยืนยันว่าโค้ดตรงกระดาษ
-**ใช้ซ้ำเมื่อไหร่:** ทุกก้อนที่เปลี่ยนข้อความหลายสิบสตริงพร้อมกัน — ทำไฟล์ชุดเสนอ → ผู้ตรวจ → โค้ด
-**รวม (26/10):** Same when a lede sentence is extended: touching shortDescription/descriptionTh = touching head copy — seo-auditor simulates the meta cut (`withPriceSuffixTh`, pages in SEO_BASELINE) on paper first (was item 8).
-
-## 8. ต่อประโยคท้าย lede = แตะ head โดยไม่รู้ตัว — ให้ seo-auditor "จำลองการตัด" ก่อนลง
-
-→ merged into item 6 (house round 26/10). Old text = `git show 464b7f64:.claude/LESSONS.md`.
+**ใช้ซ้ำเมื่อไหร่:** ทุกก้อนที่เปลี่ยนข้อความหลายสิบสตริงพร้อมกัน — ทำไฟล์ชุดเสนอ → ผู้ตรวจ → โค้ด · Same when a lede sentence is extended: touching shortDescription/descriptionTh = touching head copy — seo-auditor simulates the meta cut (`withPriceSuffixTh`, pages in SEO_BASELINE) on paper first (was item 8).
 
 ## 7. ลิงก์ "ก่อน" ต้องนับทุกชนิด — ตัวกรองแคบเกินทำให้ regression มองไม่เห็น
 
@@ -98,8 +84,7 @@
 ลิงก์ที่บทความเขียนเอง (relatedProductSlugs) เรียงตามลำดับใน `allGuides` เพดาน 3 ต่อหน้า · ใส่บทความใหม่กลางรายการ → m-bar-9k เสียลิงก์
 "พอตใช้แล้วทิ้ง ใช้ได้กี่วัน" (หน้าเจ้าของคำที่วัดผลอยู่) · `visible-text diff` เป็นตัวจับได้ ไม่ใช่ตา · แก้: ย้ายบทความใหม่ไปท้ายรายการ แล้ววัดกล่องด้วย
 `relatedArticlesForLegacy` ใน tsx (`scripts/lab/seo-rel.tsx`) ก่อน/หลัง โดยไม่ต้อง build
-**ใช้ซ้ำเมื่อไหร่:** ทุกบทความใหม่ที่มี relatedProductSlugs — ใส่ท้าย `allGuides` เป็นค่าเริ่มต้น และเทียบกล่อง "อ่านต่อ" ของสินค้าที่มันชี้ก่อน commit
-**รวม (26/10):** Default: put a new article at the end of `allGuides`; before commit diff the boxes/links over the whole sitemap (seo-rel.tsx, linkmap.js) and unlink whatever pushes a locked page (was พ37).
+**ใช้ซ้ำเมื่อไหร่:** ทุกบทความใหม่ที่มี relatedProductSlugs — ใส่ท้าย `allGuides` เป็นค่าเริ่มต้น และเทียบกล่อง "อ่านต่อ" ของสินค้าที่มันชี้ก่อน commit · Default: put a new article at the end of `allGuides`; before commit diff the boxes/links over the whole sitemap (seo-rel.tsx, linkmap.js) and unlink whatever pushes a locked page (was พ37).
 
 ## 9. ตัวนับคลิก = ตัวฟังตัวเดียวที่ `document` ไม่ใช่ onClick ทีละปุ่ม
 
@@ -164,8 +149,7 @@ Friday เห็นเองตอนเปิดภาพหลัง build · 
 กล่อง "อ่านต่อ" หน้าสินค้า · /e-liquid ในคำสั่งเดียว) + `lines.js` อ่านปลายบรรทัดทุกบล็อก · ชื่อบทความหนึ่งชื่อต้องผ่านทุกที่ทั้ง 390/1440 พร้อมกัน
 (ชื่อวัตต์ต้องลอง 7 แบบ) · checker ยังจับ "ผู้ร่วมการ | ศึกษา" ที่ Friday ปล่อยผ่านเพราะสแกนเนอร์ขึ้น OK — ปลายบรรทัดที่ขาดกลางคำประสม = ตัดสินด้วยตา ไม่ใช่ด้วยธง
 **ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่ต้องเกลาประโยคไทยเพื่อหนีธง wordbreak หรือบรรทัดหัวข้อ · สั่ง path ผ่าน Git Bash = HANDOFF §17 "Windows shell"
-(ก้อน 3 เสียรอบเพราะข้อนี้ — รายการหน้าหายเงียบ สแกนทั้งเว็บแทน)
-**รวม (26/10):** Measure in the real element (named selector, print element and width) at 390/1440, open each FAQ one by one (folded answers are never measured otherwise); a break inside a compound is judged by eye, not by a flag (was พ34) · the tools for this = item 36.
+(ก้อน 3 เสียรอบเพราะข้อนี้ — รายการหน้าหายเงียบ สแกนทั้งเว็บแทน) · Measure in the real element (named selector, print element and width) at 390/1440, open each FAQ one by one (folded answers are never measured otherwise); a break inside a compound is judged by eye, not by a flag (was พ34) · the tools for this = item 36.
 
 ## 36. สแกนเนอร์ 0 ธง แต่ checker ยังตีกลับเรื่องคำประสมขาด — ตัวจับคำประสมจากศัพท์ของบทความ ใช้วัดตัวเลือกก่อน build (ก้อน 6c · 13/10 · #460)
 
@@ -274,8 +258,7 @@ checker ขึ้นกิ่งสำรองใหม่บน GitHub (`wip/t
 
 **เกิดอะไร:** สคริปต์สร้างข้อความเติมต่อท้ายไฟล์ → จะรันซ้ำต้องคืนไฟล์ก่อน · `git checkout 23fc781 -- product-articles.ts` คืนไฟล์ **และเขียนทับ index ด้วย** ·
 รันสคริปต์แล้ว add เฉพาะ 2 ไฟล์ที่เปลี่ยน → commit ถัดไปพาไฟล์บทความรุ่นเก่าใน index ไปด้วย = บทความหาย · ภาพและตัววัดทั้งหมดวัดจาก working tree จึงไม่เห็น ·
-**ใช้ซ้ำเมื่อไหร่:** คืนไฟล์เพื่อรันสคริปต์ซ้ำ = `git show <commit>:ไฟล์ > ไฟล์` (ไม่แตะ index) · ก่อน push ทุกครั้งเช็ค `git status` ว่าไม่มีไฟล์ src ค้าง "M" · สคริปต์เติมข้อความ = ควรเขียนทับช่องของตัวเอง ไม่ใช่ต่อท้าย
-**รวม (26/10):** Same trap during script work: never `git checkout [<sha>] -- f` as a "restore" — use `git show <sha>:f > f` or a copy in `_incoming/`; commit real work first, no `sed -i` (CRLF → LF), check `git status` before push (was พ43).
+**ใช้ซ้ำเมื่อไหร่:** คืนไฟล์เพื่อรันสคริปต์ซ้ำ = `git show <commit>:ไฟล์ > ไฟล์` (ไม่แตะ index) · ก่อน push ทุกครั้งเช็ค `git status` ว่าไม่มีไฟล์ src ค้าง "M" · สคริปต์เติมข้อความ = ควรเขียนทับช่องของตัวเอง ไม่ใช่ต่อท้าย · Same trap during script work: never `git checkout [<sha>] -- f` as a "restore" — use `git show <sha>:f > f` or a copy in `_incoming/`; commit real work first, no `sed -i` (CRLF → LF), check `git status` before push (was พ43).
 
 ## พ18. ตัดตัวเลขที่ยืนยันไม่ได้ออกจากข้อความ แต่โปสเตอร์ในบล็อกเดียวกันยังพิมพ์ตัวเลขนั้นอยู่ — checker จับได้ (รอบไล่ทั้งเว็บ ก้อน 2e 04/10 · #262)
 
@@ -292,10 +275,6 @@ checker ขึ้นกิ่งสำรองใหม่บน GitHub (`wip/t
 เจ้าของ: "เกิดอะไรขึ้นทำไมพี่ต้องทำ พิมพ์ต่อเอง" · ข้อห้ามนั้นห้าม**วนถาม**ซ้ำ ๆ ไม่ได้ห้ามรอ ·
 **ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่ต้องรอด่าน GitHub หรือ deploy ก่อนทำขั้นถัดไป = คำสั่งรอครั้งเดียวที่จบเอง (`gh run watch <run id> --exit-status` แบบ background → ระบบปลุกเมื่อจบ)
 แล้วทำต่อจนจบงาน (merge → curl → §16 → รายงาน) · ห้ามจบรอบแชทโดยฝากให้เจ้าของเป็นคนปลุก (ด่านต้องเขียวก่อน merge = กฎ 13.7)
-
-## พ22. สลับ branch และ build เครื่องทดสอบใหม่ ระหว่างที่ checker กำลังอ่านไฟล์ในเครื่อง (รอบไล่ทั้งเว็บ ก้อน 5a 06/10 · #283)
-
-→ is a rule now: TEAM_RULES 13.4 (the lock refuses edits, git moves and builds in a tree the checker reads). Old text = `git show 464b7f64:.claude/LESSONS.md`.
 
 ## พ27. ทำงานใน worktree แต่เครื่องมือแอบไปทำที่อื่น — เครื่องทดสอบเปิดในโฟลเดอร์หลัก · สแกนรายหน้ากลายเป็นทั้งเว็บ (รอบ SEO ง 07/10)
 
@@ -319,16 +298,7 @@ junction ของ node_modules ใช้ build ไม่ได้ (Turbopack + 
 **เกิดอะไร:** คำโปรยแบรนด์ตัด «Monster | 14K» ที่ 390 → Friday เพิ่ม "Monster 14K" ใน MODEL_NAMES (HANDOFF §17 Do not touch + THAI_STYLE §5 = เจ้าของเคาะ) → ถอยด้วย revert ·
 ถ้อยคำใหม่ลองแค่ /brands/moood แต่คำโปรยเดียวกันขึ้นใน /about ในกล่องที่แคบกว่า → ตัดอีก · จบที่วาง "Monster 14K" ไว้กลางประโยค ลองครบทุกหน้า × 390/1440 ·
 **ใช้ซ้ำเมื่อไหร่:** คำขาดบรรทัด = แก้ที่ถ้อยคำก่อนเสมอ (กลไกตัวอักษร = ไฟล์ล็อก 13.7) · ข้อความของแบรนด์/สินค้าขึ้นหลายหน้า (หน้าแบรนด์ · /about · การ์ด · meta) — หาทุกหน้าที่ข้อความขึ้นด้วย
-vt-after (grep ข้อความ) แล้วลองคำบนทุกหน้านั้น (`scripts/lab/mood-trylede4.js` — เลือก element จากข้อความ ไม่ใช่ตัวสั้นสุด)
-**รวม (26/10):** Includes /about's narrower column (not in 13.5 #2 (ค)): find every page with a visible-text grep, try the new words on each at 390/1440 before building; fix a broken word in the wording, never in thai-typography.ts (was พ40).
-
-## พ30. ตัวล็อก git ปิดเงียบหลายวัน — ไม่มีอะไรเช็คว่าตัวล็อกยังเปิดอยู่ (เจอ 15/10 ตอนตรวจบ้าน · ที่แก้แล้ว = TEAM_RULES 13.7 "ตัวล็อก" · house-check "locks")
-
-→ is a rule now: TEAM_RULES 13.7 "ตัวล็อก" (every lock has a planted example in `pre-checker-gate.js --self-test`). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
-## พ31. ลบ Artifact ที่ต้องเก็บไปด้วย — ลิงก์ 2 แบบเป็นหน้าเดียวกัน (เก็บบ้าน 16/10)
-
-→ is a rule now: skill `house-clean` "รายการเดียว" item 4 (delete an Artifact only by a URL from `action: list`). Old text = `git show 464b7f64:.claude/LESSONS.md`.
+vt-after (grep ข้อความ) แล้วลองคำบนทุกหน้านั้น (`scripts/lab/mood-trylede4.js` — เลือก element จากข้อความ ไม่ใช่ตัวสั้นสุด) · Includes /about's narrower column (not in 13.5 #2 (ค)): find every page with a visible-text grep, try the new words on each at 390/1440 before building; fix a broken word in the wording, never in thai-typography.ts (was พ40).
 
 ## พ32. checker ตีกลับทีละจุดใหม่ทุกรอบ — ขอให้ไล่ทีเดียวให้ครบ (เก็บบ้าน 15–16/10 · บทเรียนของ Dive Records ที่เจ้าของส่งมา 16/10)
 
@@ -343,22 +313,6 @@ vt-after (grep ข้อความ) แล้วลองคำบนทุก
 (2) เสนอ "มุมตรวจ SEO หลายภาษา + ในพื้นที่" ให้เจ้าของ ก่อนเช็ค SEO_LANDSCAPE — 2 มุมขัดคำตัดสินเดิม (ไม่ต้องมี hreflang · ไม่ทำหน้าใกล้ฉัน/GBP) checker จับได้
 **ใช้ซ้ำเมื่อไหร่:** ข้อความที่มี backtick/`\` (คำอธิบาย PR · ข้อความกฎ) = เขียนลงไฟล์ด้วย Write แล้วส่ง `--body-file` หรือแก้ด้วย Edit — ไม่ส่งผ่าน
 สตริงของ shell · ก่อนเสนอเพิ่มอะไรให้ผู้ตรวจ/สกิล = ค้นคำตัดสินเดิมในบ้านของเรื่องนั้นก่อน (SEO = SEO_LANDSCAPE · §18) แล้วเสนอเฉพาะส่วนที่ไม่ขัด
-
-## พ34. ตัววัดตัวเลือกตัดบรรทัดวัดผิดธาตุ — คำตอบ FAQ ขึ้นต้นเหมือนย่อหน้าในเนื้อบทความ (รอบ SEO คีย์ทั้งหมด 16/10 · #514 checker รอบ 1)
-
-→ merged into item 33 (house round 26/10). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
-## พ35. checker รายงานแล้วแต่ลืมรัน `--done` — แก้ไฟล์ต่อด้วย sed / heredoc ใน tree ที่ยังติดโน้ต "checker กำลังอ่าน" (รอบ SEO คีย์ทั้งหมด 16/10 · #502)
-
-→ is a rule now: TEAM_RULES 13.4 (`--done` after the checker's report · rm / sed -i / redirect in a locked tree = Friday does not). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
-## พ37. บทความใหม่ที่ลิงก์หน้าแบรนด์/หมวด หรือหลายสินค้า ดันบทความเจ้าของคำที่วัดผลอยู่ออกจากกล่อง "อ่านต่อ" ของหน้าอื่น — วัดทั้ง sitemap ก่อน/หลัง (รอบ SEO คีย์ทั้งหมด 16/10 · #536)
-
-→ merged into item 35 (house round 26/10) — its tools live in `.claude/worktrees/seo-line2/_incoming/seo-keys/` (the old worktree seo-all-keys-a38889 is gone). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
-## พ36. คืนแรกที่ดูแลแชทลูก — แอปไม่ให้เปิดแชทใหม่ในรอบที่ถูกปลุกด้วยข้อความจากแชทลูก (16/10)
-
-→ is a rule now: TEAM_RULES 13.6 (`start_session` refused on phone / side-chat-woken turns · `request_keep_awake` at night). Old text = `git show 464b7f64:.claude/LESSONS.md`.
 
 ## พ38. ย้ายแชทลูกตอนเจ้าของพิมพ์จากมือถือ — แอปไม่ให้เปิด · แชทใน Routines เจ้าของมองไม่เห็นและไม่มีคนกดอนุญาต (17/10)
 
@@ -376,19 +330,43 @@ vt-after (grep ข้อความ) แล้วลองคำบนทุก
 เจ้าของจับได้ = ขอโทษ 1 บรรทัด แล้วทำงานต่อ ไม่อธิบายยาว
 **ใช้ซ้ำเมื่อไหร่:** ข้อความแรกของทุกแชท · ทุกครั้งที่เปลี่ยน model / effort กลางแชท
 
----
-
-# สิ่งที่เจ้าของชอบ / ไม่ชอบ (หมวด 12 ข้อ 27 — เจ้าของพูดเอง = จดเลย)
-
-## พ40. คำแนะนำแบรนด์ (`descriptionTh`) ขึ้นที่หน้า /about ด้วย — สแกนตัดบรรทัดแค่หน้าแบรนด์แล้วพลาดที่ /about (รอบ SEO คีย์ทั้งหมด 20/10 · #657)
-
-→ merged into พ26 (house round 26/10). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
 ## พ41. Render สร้างแต่ละหน้าได้ไม่เกิน 60 วินาที — งานต่อรูปที่เพิ่มใน `getImageDisplayInfo` ทำให้ deploy ล้มทุกรอบ ทั้งที่ verify --full บนคอมผ่าน (23/10 · #776 → #779)
 
 **เกิดอะไร:** #776 เพิ่มการถอดรูป + trim ครั้งที่สองให้ทุกรูปที่มีพื้นใส → /products/infy-20k (ตัวเลือกเยอะ) สร้างเกิน 60 วินาทีบนเครื่อง build ของ Render 3 ครั้ง → "Exited with status 1" ทั้ง deploy ของ #776 และ #779 · เว็บค้างที่ build ของ #778 ราวชั่วโมงกว่าจะมีคนสังเกต (sha1 รูปบนเว็บไม่ตรงรีโป) · คอมเราเร็วกว่า build จึงผ่าน
 **ได้ผล:** ดูสถานะ deploy ได้จาก GitHub (`gh api repos/<repo>/deployments?sha=<merge sha>` → statuses) · ข้อความล้มอยู่ใน Render → Deploys → log ค้นคำ "rror" · แก้ = วัดเฉพาะรูปที่ต้องใช้ (ownFloor) ไม่วัดทุกรูป
 **ใช้ซ้ำเมื่อไหร่:** แตะโค้ดที่รันตอนสร้างหน้าสินค้า (media-quality · ทุกอย่างที่วนต่อรูปหรือต่อตัวเลือก) = จำกัดเฉพาะที่ต้องใช้ + cache · หลัง merge ทุกครั้ง เช็ค deployment status เป็น success ก่อนบอกว่า "ขึ้นเว็บแล้ว"
+
+## พ42. พิมพ์รหัส escape ของตัวอักษรล่องหน (แบ็กสแลช-u-200b ฯลฯ) ในเครื่องมือเขียนไฟล์/คำสั่ง = ได้ตัวอักษรล่องหนดิบลงไฟล์ (24/10 · #795)
+checker จับ: regex และ test ของหมายเหตุลูกค้ามีตัวล่องหนดิบ 4+3 ตัว แม้ Friday พิมพ์เป็น escape · แก้ด้วย sed/สคริปต์ที่พิมพ์ escape ก็กลายเป็นตัวดิบอีกรอบ · ได้ผล = สร้างข้อความ escape จากเลข: String.fromCharCode(92) + "u" + รหัสฐาน 16 (สคริปต์ `_incoming/cartux-a/fix-raw2.js`) แล้วยืนยันด้วย `node scripts/thai-raw-chars-check.js` = 0 + `LC_ALL=C grep -cP` หาไบต์ของ U+200B/200D/FEFF = 0 · อย่าใส่ backtick ในข้อความที่ส่งผ่าน `node -e "…"` ใน bash (ถูกรันเป็นคำสั่ง)
+**ใช้ซ้ำเมื่อไหร่:** โค้ดที่ต้องอ้างตัวอักษรล่องหน — เขียนแบบสร้างจากเลข หรือรันสคริปต์ fix-raw2 หลังเขียน แล้วรันสองคำสั่งตรวจก่อน commit
+
+## พ44. กฎที่หน้าจอบังคับ ต้องบังคับซ้ำที่เซิร์ฟเวอร์ · ประวัติออเดอร์ (statusHistory) มีโน้ตของทีมงาน ห้ามส่งเข้า client (24/10 · checker #802)
+**เกิดอะไร:** รายการเปลี่ยนสินค้ากรองหมวด/รุ่นที่หน้าจอ แต่ server action เช็คแค่ราคา · หน้า /orders ส่ง OrderDetail ทั้งก้อน (รวมโน้ตยกเลิก/โน้ตของหมด) เข้า component "use client" ทั้งที่หน้าไม่แสดง
+**ใช้ซ้ำเมื่อไหร่:** ทุก action ที่รับค่าจากลูกค้า = เช็คว่าอยู่ในชุดเดียวกับที่หน้าจอเสนอ · ส่งข้อมูลเข้า client = ตัดฟิลด์ที่ลูกค้าไม่ควรเห็นที่ฝั่ง server ก่อน (ไม่พึ่งว่า component ไม่ render)
+
+## พ45. ฟอร์มที่ส่งด้วย server action ล้างช่องที่ลูกค้ากรอกทุกครั้งที่ส่ง — กรอกผิดช่องเดียว ช่องอื่นหายหมด (24/10 · #807)
+**เกิดอะไร:** ทดสอบกล่องคืนเงินบนเครื่องทดสอบ ใส่เลขบัญชี 13 หลัก → ระบบปฏิเสธถูกต้อง แต่ชื่อธนาคารกับสาขาที่พิมพ์ไว้หายไปด้วย (React 19 รีเซ็ตช่องแบบ uncontrolled หลัง action ทุกครั้ง) · ตรวจจากโค้ดไม่เห็น — เห็นเพราะกดจริงทีละขั้น · ได้ผล = ทำช่องเป็น controlled (useState + value/onChange)
+**ใช้ซ้ำเมื่อไหร่:** ฟอร์มลูกค้าทุกตัวที่ส่งผ่าน `useActionState` แล้วอาจได้ข้อผิดพลาดกลับ = ทดสอบกรณี "กรอกผิดแล้วแก้" บนเครื่องทดสอบทุกครั้ง ไม่ใช่แค่กรณีกรอกถูก
+
+## พ46. เดินขั้นตอนสั่งซื้อด้วยลูกค้าเก่าอย่างเดียว แล้วพลาดเส้นทางของลูกค้าใหม่ — checker จับ Back วนกลับหน้าตรวจ (24/10 · #811)
+**เกิดอะไร:** แก้ Back วนที่หน้าเบอร์ (redirect แบบ replace) แล้วเดินทดสอบด้วยเบอร์ที่มีที่อยู่อยู่แล้ว ผ่าน · แต่ลูกค้าใหม่ = เพิ่มที่อยู่ → หน้าตรวจ (push) → Back = หน้าที่อยู่ ซึ่งตอนนี้มีที่อยู่แล้วจึงเด้งกลับหน้าตรวจ · ได้ผล = redirect ทุกจุดที่ "ไปข้างหน้าแล้วหน้าเดิมจะ redirect ต่อเอง" เป็น `RedirectType.replace` แล้วเดินใหม่ด้วยเบอร์ใหม่ (ลบ sessions ใน DB ทดสอบ)
+**ใช้ซ้ำเมื่อไหร่:** แก้ขั้นตอนสั่งซื้อ = เดิน 2 แบบเสมอ: ลูกค้าใหม่ (เบอร์ใหม่ ไม่มีที่อยู่) + ลูกค้าเก่า · build ทดสอบเดียวใช้ได้ทั้งเดินและตรา verify ถ้ารัน `OKAMI24_ORDERING=on npx tsx scripts/verify-catalog.ts --full`
+
+## พ47. ถอด worktree ที่ build แล้ว — เหลือ junction ค้างใน `.next/node_modules` (house round 26/10)
+
+**เกิดอะไร:** `git worktree remove --force` ลบไฟล์ได้ แต่ทิ้งโฟลเดอร์ `.next/node_modules/<pkg>-<hash>` ที่เป็น junction (Turbopack ทำไว้) ซึ่งชี้ไปที่ที่ถูกลบแล้ว — `rmdir` ของ Git Bash และ `cmd rmdir` ลบไม่ได้ ("cannot find the path")
+**ได้ผล:** PowerShell `[System.IO.Directory]::Delete(<junction>)` ทีละตัว (ไม่ recurse = ไม่ตามเข้าไปในเป้า) แล้วลบโฟลเดอร์ว่างขึ้นไป · เช็คว่า `node_modules` ของโฟลเดอร์หลักยังครบก่อนและหลัง
+**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่ถอด worktree ที่เคย `next build` (skill `house-clean` "รายการเดียว" ข้อ 2)
+
+## พ48. §16 โตถึง 39 KB เพราะเก็บรายการ "DONE" ไว้ในคิวงานของเจ้าของ (house round 26/10)
+
+**เกิดอะไร:** ทุกงานที่จบถูกเขียนต่อท้ายเป็นย่อหน้ายาวในคิว (สิ่งที่ทำ · หลักฐาน · ภาพ) แทนที่จะเหลือแค่เลข PR — §16 เกินสเปก 15 KB เกือบ 3 เท่า แชทใหม่ต้องอ่านของที่จบแล้ว
+**ได้ผล:** วันที่ merge = ย่อเหลือ "<ชื่องาน> #PR" ในบรรทัด main ของ §16 · รายละเอียดอยู่ในคำอธิบาย PR · ของที่ยังค้างจากงานนั้นย้ายเป็นบรรทัดของตัวเองในคิว
+**ใช้ซ้ำเมื่อไหร่:** ทุก merge ที่ปิดงานในคิวของเจ้าของ
+
+---
+
+# สิ่งที่เจ้าของชอบ / ไม่ชอบ (หมวด 12 ข้อ 27 — เจ้าของพูดเอง = จดเลย)
 
 ## ช5. ไอเดียนอกคำสั่งที่เจ้าของชอบมาก: แถบชื่อแบรนด์เลื่อนช้า ๆ บนหน้าแรกมือถือ (เจ้าของพูดเอง 01/10)
 
@@ -428,38 +406,6 @@ Friday ลงหน้า G5 ด้วยเลย์เอาต์ของ M 
 **ใช้ซ้ำเมื่อไหร่:** ทุกชุดคำถาม — บอกในคำถามว่าแก้กฎกลาง (ทุกโปรเจกต์) หรือกฎเว็บ · ยกตัวอย่างที่เจ้าของเห็นบนหน้าเว็บ ·
 ทางเลือกเทคนิคล้วน = Friday เลือกเองแล้วรายงาน (TEAM_RULES 13.3 · กฎกลาง §12 ข้อ 15) · ตอบ "ไม่เข้าใจ" 2 ครั้ง = กฎแล้ว (TEAM_RULES 13.3 ย่อหน้าท้าย · 16/10)
 
-## พ42. พิมพ์รหัส escape ของตัวอักษรล่องหน (แบ็กสแลช-u-200b ฯลฯ) ในเครื่องมือเขียนไฟล์/คำสั่ง = ได้ตัวอักษรล่องหนดิบลงไฟล์ (24/10 · #795)
-checker จับ: regex และ test ของหมายเหตุลูกค้ามีตัวล่องหนดิบ 4+3 ตัว แม้ Friday พิมพ์เป็น escape · แก้ด้วย sed/สคริปต์ที่พิมพ์ escape ก็กลายเป็นตัวดิบอีกรอบ · ได้ผล = สร้างข้อความ escape จากเลข: String.fromCharCode(92) + "u" + รหัสฐาน 16 (สคริปต์ `_incoming/cartux-a/fix-raw2.js`) แล้วยืนยันด้วย `node scripts/thai-raw-chars-check.js` = 0 + `LC_ALL=C grep -cP` หาไบต์ของ U+200B/200D/FEFF = 0 · อย่าใส่ backtick ในข้อความที่ส่งผ่าน `node -e "…"` ใน bash (ถูกรันเป็นคำสั่ง)
-**ใช้ซ้ำเมื่อไหร่:** โค้ดที่ต้องอ้างตัวอักษรล่องหน — เขียนแบบสร้างจากเลข หรือรันสคริปต์ fix-raw2 หลังเขียน แล้วรันสองคำสั่งตรวจก่อน commit
-
-## พ43. สคริปต์ลองเล่นไปทับงานที่ยังไม่ commit — `git checkout -- <ไฟล์>` เพื่อ "คืนค่า" หลังแก้ชั่วคราว ลบการแก้จริงที่ยังไม่ commit ไปด้วย (24/10 · #802)
-
-→ merged into พ15 (house round 26/10). Old text = `git show 464b7f64:.claude/LESSONS.md`.
-
-## พ44. กฎที่หน้าจอบังคับ ต้องบังคับซ้ำที่เซิร์ฟเวอร์ · ประวัติออเดอร์ (statusHistory) มีโน้ตของทีมงาน ห้ามส่งเข้า client (24/10 · checker #802)
-**เกิดอะไร:** รายการเปลี่ยนสินค้ากรองหมวด/รุ่นที่หน้าจอ แต่ server action เช็คแค่ราคา · หน้า /orders ส่ง OrderDetail ทั้งก้อน (รวมโน้ตยกเลิก/โน้ตของหมด) เข้า component "use client" ทั้งที่หน้าไม่แสดง
-**ใช้ซ้ำเมื่อไหร่:** ทุก action ที่รับค่าจากลูกค้า = เช็คว่าอยู่ในชุดเดียวกับที่หน้าจอเสนอ · ส่งข้อมูลเข้า client = ตัดฟิลด์ที่ลูกค้าไม่ควรเห็นที่ฝั่ง server ก่อน (ไม่พึ่งว่า component ไม่ render)
-
-## พ45. ฟอร์มที่ส่งด้วย server action ล้างช่องที่ลูกค้ากรอกทุกครั้งที่ส่ง — กรอกผิดช่องเดียว ช่องอื่นหายหมด (24/10 · #807)
-**เกิดอะไร:** ทดสอบกล่องคืนเงินบนเครื่องทดสอบ ใส่เลขบัญชี 13 หลัก → ระบบปฏิเสธถูกต้อง แต่ชื่อธนาคารกับสาขาที่พิมพ์ไว้หายไปด้วย (React 19 รีเซ็ตช่องแบบ uncontrolled หลัง action ทุกครั้ง) · ตรวจจากโค้ดไม่เห็น — เห็นเพราะกดจริงทีละขั้น · ได้ผล = ทำช่องเป็น controlled (useState + value/onChange)
-**ใช้ซ้ำเมื่อไหร่:** ฟอร์มลูกค้าทุกตัวที่ส่งผ่าน `useActionState` แล้วอาจได้ข้อผิดพลาดกลับ = ทดสอบกรณี "กรอกผิดแล้วแก้" บนเครื่องทดสอบทุกครั้ง ไม่ใช่แค่กรณีกรอกถูก
-
-## พ46. เดินขั้นตอนสั่งซื้อด้วยลูกค้าเก่าอย่างเดียว แล้วพลาดเส้นทางของลูกค้าใหม่ — checker จับ Back วนกลับหน้าตรวจ (24/10 · #811)
-**เกิดอะไร:** แก้ Back วนที่หน้าเบอร์ (redirect แบบ replace) แล้วเดินทดสอบด้วยเบอร์ที่มีที่อยู่อยู่แล้ว ผ่าน · แต่ลูกค้าใหม่ = เพิ่มที่อยู่ → หน้าตรวจ (push) → Back = หน้าที่อยู่ ซึ่งตอนนี้มีที่อยู่แล้วจึงเด้งกลับหน้าตรวจ · ได้ผล = redirect ทุกจุดที่ "ไปข้างหน้าแล้วหน้าเดิมจะ redirect ต่อเอง" เป็น `RedirectType.replace` แล้วเดินใหม่ด้วยเบอร์ใหม่ (ลบ sessions ใน DB ทดสอบ)
-**ใช้ซ้ำเมื่อไหร่:** แก้ขั้นตอนสั่งซื้อ = เดิน 2 แบบเสมอ: ลูกค้าใหม่ (เบอร์ใหม่ ไม่มีที่อยู่) + ลูกค้าเก่า · build ทดสอบเดียวใช้ได้ทั้งเดินและตรา verify ถ้ารัน `OKAMI24_ORDERING=on npx tsx scripts/verify-catalog.ts --full`
-
 ## ช21. ค่ะ / นะคะ = ทำให้ประโยค soft นุ่มนวล — เจ้าของอยากให้ลูกค้ารู้สึกแบบนี้ในทุกจุดที่ควรมี (เจ้าของพูดเอง 24/10 ค่ำ)
 **คำเจ้าของ:** "คำว่า ค่ะ - นะคะ มีความหมายที่ทำให้ประโยคดู Soft ลงฟังดูนุ่มนวล เรียนรู้เรื่องนี้ด้วยนะ" · ก่อนหน้านี้ผู้ช่วยตัดหางเสียงออกเพราะ "ทั้งเว็บไม่มี" = อ่านกฎน้ำเสียงเก่าแคบไป
 **ใช้ซ้ำเมื่อไหร่:** เขียนข้อความบริการถึงลูกค้า (เตือน ข้อจำกัด ขอให้ทำ ผิดพลาด ขอบคุณ) = ลงท้าย ค่ะ/นะคะ เสมอ ไม่ใช่แค่ "ใส่ได้" · ประโยคที่บอกข้อจำกัด/ปฏิเสธ ยิ่งต้องมี · ปุ่ม/หัวข้อ/ป้าย/คำบรรยายสินค้า/บทความ ไม่ใส่ (THAI_STYLE §2)
-
-## พ47. ถอด worktree ที่ build แล้ว — เหลือ junction ค้างใน `.next/node_modules` (house round 26/10)
-
-**เกิดอะไร:** `git worktree remove --force` ลบไฟล์ได้ แต่ทิ้งโฟลเดอร์ `.next/node_modules/<pkg>-<hash>` ที่เป็น junction (Turbopack ทำไว้) ซึ่งชี้ไปที่ที่ถูกลบแล้ว — `rmdir` ของ Git Bash และ `cmd rmdir` ลบไม่ได้ ("cannot find the path")
-**ได้ผล:** PowerShell `[System.IO.Directory]::Delete(<junction>)` ทีละตัว (ไม่ recurse = ไม่ตามเข้าไปในเป้า) แล้วลบโฟลเดอร์ว่างขึ้นไป · เช็คว่า `node_modules` ของโฟลเดอร์หลักยังครบก่อนและหลัง
-**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่ถอด worktree ที่เคย `next build` (skill `house-clean` "รายการเดียว" ข้อ 2)
-
-## พ48. §16 โตถึง 39 KB เพราะเก็บรายการ "DONE" ไว้ในคิวงานของเจ้าของ (house round 26/10)
-
-**เกิดอะไร:** ทุกงานที่จบถูกเขียนต่อท้ายเป็นย่อหน้ายาวในคิว (สิ่งที่ทำ · หลักฐาน · ภาพ) แทนที่จะเหลือแค่เลข PR — §16 เกินสเปก 15 KB เกือบ 3 เท่า แชทใหม่ต้องอ่านของที่จบแล้ว
-**ได้ผล:** วันที่ merge = ย่อเหลือ "<ชื่องาน> #PR" ในบรรทัด main ของ §16 · รายละเอียดอยู่ในคำอธิบาย PR · ของที่ยังค้างจากงานนั้นย้ายเป็นบรรทัดของตัวเองในคิว
-**ใช้ซ้ำเมื่อไหร่:** ทุก merge ที่ปิดงานในคิวของเจ้าของ
