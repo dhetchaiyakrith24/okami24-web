@@ -21,7 +21,7 @@ import { decideSlip, type SlipReason, type SlipVerdict } from "./slip-decision";
  */
 
 export type SubmitSlipResult =
-  | { ok: true; order: OrderDetail; verdict: SlipVerdict; reasons: SlipReason[] }
+  | { ok: true; order: OrderDetail; verdict: SlipVerdict; reasons: SlipReason[]; submissionId: number }
   | { ok: false; error: "not-found" | "not-payable" | string };
 
 export async function submitPaymentSlip(input: {
@@ -52,6 +52,7 @@ export async function submitPaymentSlip(input: {
       : decision.verdict === "check"
         ? `Slip attached — EasySlip: check (${decision.reasons.join(", ")})`
         : "Slip attached — not checked (EasySlip unavailable)";
+  let submissionId = 0;
   const moved = db.transaction(() => {
     // Re-read inside the transaction: two uploads at once must not both move the order.
     const current = db.prepare("SELECT status FROM orders WHERE id = ?").get(order.id) as { status: string } | undefined;
@@ -63,10 +64,12 @@ export async function submitPaymentSlip(input: {
         .get(decision.transRef, order.id);
       if (other) return "used" as const;
     }
-    db.prepare(
-      `INSERT INTO order_payment_submissions (order_id, method, slip_trans_ref, slip_amount_satang, slip_verdict, slip_reasons)
-       VALUES (?, 'bank_transfer', ?, ?, ?, ?)`
-    ).run(order.id, decision.transRef, decision.amountSatang, decision.verdict, decision.reasons.join(",") || null);
+    submissionId = Number(
+      db.prepare(
+        `INSERT INTO order_payment_submissions (order_id, method, slip_trans_ref, slip_amount_satang, slip_verdict, slip_reasons)
+         VALUES (?, 'bank_transfer', ?, ?, ?, ?)`
+      ).run(order.id, decision.transRef, decision.amountSatang, decision.verdict, decision.reasons.join(",") || null).lastInsertRowid
+    );
     db.prepare("UPDATE orders SET status = 'payment_submitted', updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?").run(order.id);
     db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'payment_submitted', ?)").run(order.id, note);
     return true;
@@ -74,5 +77,5 @@ export async function submitPaymentSlip(input: {
   if (moved === "used") return { ok: false, error: "SLIP_USED" };
   if (!moved) return { ok: false, error: "not-payable" };
 
-  return { ok: true, order: { ...order, status: "payment_submitted" }, verdict: decision.verdict, reasons: decision.reasons };
+  return { ok: true, order: { ...order, status: "payment_submitted" }, verdict: decision.verdict, reasons: decision.reasons, submissionId };
 }

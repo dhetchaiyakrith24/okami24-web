@@ -9,6 +9,8 @@ import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./orde
 import { getStockIssue, orderLines, type StockIssue, type StockIssueLine } from "@/lib/commerce/stock-issues";
 import { cleanOrderMessage } from "@/lib/commerce/order-message-rules";
 import { insertCustomerMessage } from "@/lib/commerce/order-messages";
+import { AUTO_CANCELLED_SQL } from "@/lib/commerce/unpaid-rules";
+import { ASSIGN_RUN_NUMBER_SQL } from "@/lib/commerce/run-number";
 
 /**
  * The staff order list and its buttons (cart round 22/10, round batch 2). Reached only through /staff pages and
@@ -26,10 +28,13 @@ export interface StaffOrderRow {
   province: string;
   itemCount: number;
   slipVerdict: SlipVerdict | null;
+  /** The shop's running number (migration 0017) — null until the payment is confirmed. */
+  runNumber: number | null;
 }
 
 /** "todo" = everything a person still has to act on (paid and not shipped, or cancelled-pending nothing);
- *  "unpaid" = placed, no slip yet; "all" = the newest 200. */
+ *  "unpaid" = placed, no slip yet; "all" = the newest 200. Orders the unpaid sweep cancelled are left out of every list
+ *  (owner 26/10 "ซ่อน" — kept in the database, still open by their link). */
 export type StaffOrderFilter = "todo" | "unpaid" | "all";
 
 const FILTER_SQL: Record<StaffOrderFilter, string> = {
@@ -41,11 +46,11 @@ const FILTER_SQL: Record<StaffOrderFilter, string> = {
 export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
   const rows = getDb()
     .prepare(
-      `SELECT o.order_number, o.status, o.total, o.created_at, a.recipient_name, a.province,
+      `SELECT o.order_number, o.status, o.total, o.created_at, o.run_number, a.recipient_name, a.province,
               (SELECT COALESCE(SUM(quantity), 0) FROM order_items i WHERE i.order_id = o.id) AS item_count,
               (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
-        WHERE ${FILTER_SQL[filter]}
+        WHERE ${FILTER_SQL[filter]} AND NOT ${AUTO_CANCELLED_SQL}
         ORDER BY o.id DESC LIMIT 200`
     )
     .all() as {
@@ -57,6 +62,7 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     province: string;
     item_count: number;
     slip_verdict: SlipVerdict | null;
+    run_number: number | null;
   }[];
   return rows.map((r) => ({
     orderNumber: r.order_number,
@@ -67,6 +73,7 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     province: r.province,
     itemCount: r.item_count,
     slipVerdict: r.slip_verdict,
+    runNumber: r.run_number,
   }));
 }
 
@@ -79,7 +86,17 @@ export interface StaffOrderDetail extends OrderDetail {
   trackingNumber: string | null;
   /** The customer's optional note to the shop from the review step (cart UX batch C) — staff page only. */
   customerNote: string | null;
-  slip: { verdict: SlipVerdict | null; reasons: string[]; transRef: string | null; amount: number | null; submittedAt: string } | null;
+  slip: {
+    verdict: SlipVerdict | null;
+    reasons: string[];
+    transRef: string | null;
+    amount: number | null;
+    submittedAt: string;
+    /** The picture is on the disk (kept 90 days — src/lib/commerce/slip-images.ts). */
+    hasImage: boolean;
+    /** When the 90-day sweep deleted it; null while kept, or for slips from before images were kept. */
+    imageDeletedAt: string | null;
+  } | null;
   lines: { sku: string | null; name: string; quantity: number }[];
   warehouseText: string;
   /** Out of stock after payment (cart UX batch E) — null when nobody marked a line out. */
@@ -104,10 +121,18 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
     .get(order.id) as { tracking_number: string | null; customer_note: string | null; phone: string };
   const slipRow = db
     .prepare(
-      "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
+      "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at, proof_image_path, slip_image_deleted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
     )
     .get(order.id) as
-    | { slip_verdict: SlipVerdict | null; slip_reasons: string | null; slip_trans_ref: string | null; slip_amount_satang: number | null; submitted_at: string }
+    | {
+        slip_verdict: SlipVerdict | null;
+        slip_reasons: string | null;
+        slip_trans_ref: string | null;
+        slip_amount_satang: number | null;
+        submitted_at: string;
+        proof_image_path: string | null;
+        slip_image_deleted_at: string | null;
+      }
     | undefined;
 
   const lines = order.items.map((i) => ({
@@ -134,6 +159,8 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
           transRef: slipRow.slip_trans_ref,
           amount: slipRow.slip_amount_satang === null ? null : slipRow.slip_amount_satang / 100,
           submittedAt: slipRow.submitted_at,
+          hasImage: slipRow.proof_image_path !== null,
+          imageDeletedAt: slipRow.slip_image_deleted_at,
         }
       : null,
     lines,
@@ -187,6 +214,8 @@ export function applyStaffAction(
     db.prepare(
       `UPDATE orders SET status = ?, tracking_number = COALESCE(?, tracking_number), carrier = COALESCE(?, carrier), updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?`
     ).run(steps[steps.length - 1], tracking, carrier, row.id);
+    // The payment is confirmed → the order takes the next running number (owner 26/10, queue B2 (a)).
+    if (steps.includes("approved")) db.prepare(ASSIGN_RUN_NUMBER_SQL).run(row.id);
     if (message) insertCustomerMessage(row.id, message);
     return { ok: true };
   })();

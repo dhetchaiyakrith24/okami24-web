@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { SlipUploadForm } from "@/components/commerce/SlipUploadForm";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
+import { formatRunNumber } from "@/lib/commerce/run-number";
 import { CONTACT } from "@/data/contact";
 import { CARRIERS } from "@/lib/commerce/carriers";
 import type { OrderDetail } from "@/lib/commerce/orders";
@@ -139,6 +140,7 @@ export function OrderStatusView({
     stockStage === "waiting-choice" ? t.statusStockWaiting : stockStage === "chosen" ? t.statusStockChosen : orderStatusLabel(order.status, locale);
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
   const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
+  const runNumber = formatRunNumber(order.runNumber);
 
   return (
     <>
@@ -165,6 +167,12 @@ export function OrderStatusView({
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
           </div>
+          {runNumber && (
+            <div className="flex justify-between">
+              <span className="text-foreground-muted">{dict.orderStatus.runNumberLabel}</span>
+              <span className="font-medium text-foreground">{runNumber}</span>
+            </div>
+          )}
           <div className="flex items-center justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.statusLabel}</span>
             {/* Owner 23/10: "shipped" gets a quiet green glow — a soft breathing dot inside a thin pill, still within the

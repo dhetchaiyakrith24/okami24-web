@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
+import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS } from "@/lib/staff/order-actions";
 import { getStaffOrder } from "@/lib/staff/orders";
@@ -82,6 +83,8 @@ export default async function StaffOrderPage({
   const steps = actions.filter((act) => act !== "cancel");
   const messages = customerMessagesFor(order.id);
   const a = order.shippingAddress;
+  const slipImageHref = `/staff/orders/${encodeURIComponent(order.orderNumber)}/slip-image`;
+  const runNumber = formatRunNumber(order.runNumber);
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-28 pt-8 lg:pt-12">
@@ -89,7 +92,11 @@ export default async function StaffOrderPage({
         <Link href="/staff/orders" className="text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline">
           ← ออเดอร์ทั้งหมด
         </Link>
-        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">{order.orderNumber}</h1>
+        {/* The shop's running number leads once the payment is confirmed (owner 26/10, queue B2 (a)); OK-… stays beside it. */}
+        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
+          {runNumber && <span className="mr-2 text-ember">{runNumber}</span>}
+          {order.orderNumber}
+        </h1>
         <div className="flex flex-wrap items-center gap-2 text-sm">
           <span className="rounded-full border border-surface-border px-3 py-1 text-foreground">{orderStatusLabel(order.status, "th")}</span>
           <span className="text-foreground-muted">สั่งเมื่อ {formatDateTime(order.createdAt)}</span>
@@ -128,6 +135,22 @@ export default async function StaffOrderPage({
               {order.slip.transRef ? ` · เลขอ้างอิง ${order.slip.transRef}` : ""}
             </p>
             {order.slip.verdict !== "pass" && <p className="text-foreground">ก่อนยืนยัน เปิดแอปธนาคารของร้านดูยอดเข้าจริงอีกครั้ง</p>}
+            {/* Owner 26/10 (queue B2 (c)): the slip picture is kept 90 days. Plain <img>: the route is staff-only and
+                sends no-store, so next/image's optimiser must not fetch and cache it. */}
+            {order.slip.hasImage ? (
+              <a href={slipImageHref} target="_blank" rel="noopener" className="flex w-fit flex-col gap-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={slipImageHref}
+                  alt="รูปสลิปที่ลูกค้าแนบ"
+                  loading="lazy"
+                  className="max-h-96 w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2"
+                />
+                <span className="text-xs text-foreground-dim">แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง</span>
+              </a>
+            ) : order.slip.imageDeletedAt ? (
+              <p className="text-xs text-foreground-dim">รูปสลิปลบแล้วเมื่อครบ 90 วัน ผลตรวจด้านบนยังอยู่</p>
+            ) : null}
           </>
         ) : (
           <p className="text-foreground-muted">ลูกค้ายังไม่ได้แนบสลิป</p>

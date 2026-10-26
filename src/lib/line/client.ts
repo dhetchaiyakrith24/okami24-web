@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 /**
  * LINE Messaging API client for the team's alert bot "OKM ORDER" (@691qxpxp — a separate LINE OA, NOT the shop's
  * @okm24; cart round 22/10). Three calls only:
- *   POST /v2/bot/message/push    new-order alert into the "OKM Order" group
+ *   POST /v2/bot/message/push    new-order alert into the "OKM Order" group (with the slip picture since 26/10)
  *   POST /v2/bot/message/reply   the slip verdict back into the "OKM Slip" group (reply = free, no quota)
  *   GET  /v2/bot/message/{id}/content (api-data.line.me) — the slip picture a staff member posted
  * The channel secret (`OKAMI24_LINE_CHANNEL_SECRET`, webhook signatures) and the channel access token
@@ -72,6 +72,16 @@ const textMessage = (text: string) => ({ type: "text", text: text.length > MAX_T
 
 export function pushText(to: string, text: string): Promise<LineResult> {
   return post("/v2/bot/message/push", { to, messages: [textMessage(text)] });
+}
+
+/** Text + picture in ONE push (owner 26/10: the slip picture in the order group). LINE counts a push request once per
+ *  recipient however many bubbles it carries (up to 5), so the picture costs no extra quota. Both URLs must be HTTPS
+ *  JPEG/PNG that LINE can fetch — original ≤ 10 MB, preview ≤ 1 MB (src/lib/commerce/slip-images.ts makes them). */
+export function pushTextWithImage(to: string, text: string, image: { originalUrl: string; previewUrl: string }): Promise<LineResult> {
+  return post("/v2/bot/message/push", {
+    to,
+    messages: [textMessage(text), { type: "image", originalContentUrl: image.originalUrl, previewImageUrl: image.previewUrl }],
+  });
 }
 
 export function replyText(replyToken: string, text: string): Promise<LineResult> {

@@ -21,6 +21,8 @@ export interface OrderSummary {
   shippingFee: number;
   total: number;
   createdAt: string;
+  /** The shop's running number (migration 0017) — null until staff confirm the payment. Format: run-number.ts. */
+  runNumber: number | null;
 }
 
 export interface OrderItemDetail {
@@ -66,6 +68,7 @@ interface OrderRow {
   created_at: string;
   tracking_number?: string | null;
   carrier?: string | null;
+  run_number?: number | null;
 }
 
 function toSummary(row: OrderRow): OrderSummary {
@@ -78,6 +81,7 @@ function toSummary(row: OrderRow): OrderSummary {
     shippingFee: row.shipping_fee,
     total: row.total,
     createdAt: row.created_at,
+    runNumber: row.run_number ?? null,
   };
 }
 
