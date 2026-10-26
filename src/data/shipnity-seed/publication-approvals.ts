@@ -251,6 +251,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
   "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
+  // Owner brief 26/10: SUP Zero 22K (Max-only "Disposable-45") — Max ราคาขาย ฿329 for the parent and its 15 flavours (read 2026-10-26 17:30).
+  "SUP-ZERO-22K": { sellingPrice: 329, lastPriceReview: "2026-10-26" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
