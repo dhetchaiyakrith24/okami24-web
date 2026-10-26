@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper */
 // stale-work.js — what is stuck or due, so work does not drift (owner 26/10: "เวลาที่งานไหลไปเรื่อยๆแล้วไม่มีใครตามงานค้าง งานเก่า").
-//   node scripts/stale-work.js          full list (English, one finding per line) — the `follow-up` agent and the morning task read it
+//   node scripts/stale-work.js          full list (English, one finding per line) — the `follow-up` agent and the daily 13:00 task read it
 //   node scripts/stale-work.js --brief  only the count line + the findings, for session-sync at chat open
 //   node scripts/stale-work.js --json   machine-readable
 // Read only: never edits, fetches nothing but `gh` reads. Offline / no gh = says so and still checks the files.

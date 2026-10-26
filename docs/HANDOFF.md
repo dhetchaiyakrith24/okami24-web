@@ -44,7 +44,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; one numbering = the owner's chat list):
      BUILT 26/10 in #888 — (4) researcher market/competitor/price mode · (5) follow-up = `scripts/stale-work.js` + agent `follow-up` +
-     a line at every chat open (session-sync step 7); its morning task `okami24-follow-up-morning` is created right after #888 merges
+     a line at every chat open (session-sync step 7); its daily 13:00 task `okami24-follow-up-morning` (owner moved it from 07:30)
      (writes "ค้างนาน" on the status page) · (6) agent `visitor` (outside-eye customer on the test build) — not yet run for real; first
      use = the next big round or new look.
      LEFT — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
