@@ -303,10 +303,52 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   //   m-bar-pod → anything — no SALTHUB page exists and the M Bar 9K is documented as
   //           non-refillable, so which device this cartridge serves is genuinely unclear.
   //           Worth an owner/supplier question rather than more web research.
-  // The single biggest attach-rate gap found: argus-g4, argus-g4-mini, argus-p3 and
-  // argus-g3-mini have NO compatible consumable in the catalog at all. They need the ARGUS
-  // Multi-Ohm Cartridge, the ARGUS Top Fill cartridge, or ITO M-series coils — none stocked.
+  //   coil-83 (ARGUS POD empty cartridge) → the ARGUS devices — family-level fit only, and it
+  //           holds no coil: it works only with an ITO coil, none of which is listed, so an
+  //           edge would sell a part that does nothing on its own (cart fit 27/10).
   // =================================================================================
+
+  // =================================================================================
+  // VOOPOO — ARGUS pod family (cart fit 27/10, owner: "เลือก Argus G4 … ต้องเป็นหัวพอต Argus").
+  // coil-21 = the shop's ARGUS cartridge listing (Max options: ARGUS Pod Cartridge 1.2Ω side
+  // fill · ARGUS Top Fill 0.4Ω / 0.7Ω 2ml · one "Argus mix"). Each device's own VOOPOO page says
+  // it takes the whole ARGUS pod family — the same pages already back the "Pod platform" spec
+  // row of each device in src/data/products/voopoo.ts (sourceStatus verified). Family-level
+  // claim: the pages name Top Fill (V2) cartridges outright, the side-fill Pod Cartridge only as
+  // a member of the family.
+  // =================================================================================
+  {
+    device: "argus-g4",
+    consumable: "coil-21",
+    role: "cartridge",
+    evidence: "VOOPOO's ARGUS G4 page: compatible with every ARGUS pod-family cartridge — Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL) and other ARGUS cartridges incl. CRC.",
+    sourceUrl: "https://shop.voopoo.com/products/argus-g4",
+    tier: "official",
+  },
+  {
+    device: "argus-g4-mini",
+    consumable: "coil-21",
+    role: "cartridge",
+    evidence: "VOOPOO's ARGUS G4 mini page: compatible with every ARGUS pod-family cartridge — Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL) and other ARGUS cartridges incl. CRC.",
+    sourceUrl: "https://shop.voopoo.com/products/argus-g4-mini",
+    tier: "official",
+  },
+  {
+    device: "argus-p3",
+    consumable: "coil-21",
+    role: "cartridge",
+    evidence: "VOOPOO's ARGUS P3 page: every ARGUS pod-family cartridge — Snap, Top Fill Cartridge V2, Top Fill Cartridge and CRC versions (check resistance and output).",
+    sourceUrl: "https://shop.voopoo.com/products/argus-p3",
+    tier: "official",
+  },
+  {
+    device: "argus-g3-mini",
+    consumable: "coil-21",
+    role: "cartridge",
+    evidence: "VOOPOO's ARGUS G3 mini page: ARGUS Top Fill Cartridge V2 and the whole ARGUS pod family (check resistance and output).",
+    sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",
+    tier: "official",
+  },
 ];
 
 // ===================================================================================
