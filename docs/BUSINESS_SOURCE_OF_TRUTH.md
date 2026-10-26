@@ -680,7 +680,7 @@ depend on the visitor again.
 
 - **The site never guesses.** It does not read the visitor's country (no `cf-ipcountry`, no
   `x-vercel-ip-country`, no geo-IP service) and does not read the browser's `Accept-Language`.
-  The guessing code — `src/i18n/detect-locale.ts` and the country check in `src/proxy.ts` — was **deleted** rather than
+  The guessing code — the old locale-detection file and the country check in `src/proxy.ts` — was **deleted** rather than
   pointed at the new host's header, on the owner's instruction: "ยิ่งน้อยยิ่งพลาดยาก". (`src/proxy.ts` came back on
   2026-09-30 for another job only — it makes the image optimizer answer WebP — and reads no country or language.) A contract
   test in `src/i18n/i18n-contract-test.ts` fails the build if geo detection reappears.
