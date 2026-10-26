@@ -8,18 +8,21 @@ import { useEffect } from "react";
  * (owner 26/10: "กดย้อนกลับแต่มันไม่กลับมาตรงหน้าระบบตะกร้า"). Here a same-page hash click REPLACES the current entry
  * instead: Back now leaves the page. The hash still changes and `hashchange` still fires (ProductHero picks the option
  * from it); other targets are scrolled to as the browser would (scroll-margin respected, smooth unless reduced motion).
- * A click another handler already handled (preventDefault), a modified click or a non-hash link is left alone.
+ * Listens in the CAPTURE phase and stops the click there: the "#specifications" button and the colour tiles are next/link
+ * or React handlers that push their own entry, which a bubbling listener sees too late (verified on the test build). A
+ * tile tapped twice still re-picks — the hashchange below is always sent. A modified click or a non-hash link is left alone.
  */
 export function HashLinksKeepHistory() {
   useEffect(() => {
     function onClick(e: MouseEvent) {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const link = (e.target as Element | null)?.closest?.('a[href^="#"]');
       const id = link ? decodeURIComponent(link.getAttribute("href")!.slice(1)) : "";
       if (!id) return;
       const target = document.getElementById(id);
       if (!target && !id.startsWith("option-")) return;
       e.preventDefault();
+      e.stopPropagation();
       const old = window.location.href;
       history.replaceState(history.state, "", `#${encodeURIComponent(id)}`);
       window.dispatchEvent(new HashChangeEvent("hashchange", { oldURL: old, newURL: window.location.href }));
@@ -28,8 +31,8 @@ export function HashLinksKeepHistory() {
         target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
       }
     }
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
   }, []);
   return null;
 }
