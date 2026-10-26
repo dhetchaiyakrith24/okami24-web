@@ -143,7 +143,7 @@ function selfReviewProblem(body, files, big, site) {
 // The other SKIP reasons (TEAM_RULES 13.4 lists them; checker note on #907: any free text used to pass). `bigWhys` = bigReason()
 // per file, "" when not big. docs-only = SMALL and every file a doc (13.7) · after-pass = no file of 13.7 big kind (1)
 // (hooks · gates · settings · .github · rules copy — 13.5 #2 (จ)) · series = "series n/N" (13.5 #1) · self-review = above.
-const DOCS_ONLY = /^(docs\/|\.claude\/(LESSONS\.md|LESSONS-images\.md|memory\/))/;
+const DOCS_ONLY = /^(docs\/.+|\.claude\/(LESSONS\.md|LESSONS-images\.md|memory\/.+))$/;
 const KIND1 = /^(a script a hook runs by itself|runs by itself or decides)/;
 function skipReasonProblem(body, files, big, site, bigWhys) {
   const m = body.match(/^\s*Checker:\s*SKIP\s+(\S+)[ \t]*(.*)$/im);
@@ -156,7 +156,8 @@ function skipReasonProblem(body, files, big, site, bigWhys) {
     return big || site ? "`Checker: SKIP docs-only` needs a SMALL PR - send the checker (TEAM_RULES 13.7)" : "";
   }
   if (reason === "after-pass") {
-    const i = bigWhys.findIndex((w) => KIND1.test(w));
+    // kind (1) by bigReason() + the gate/lock files bigReason() leaves empty (checker on #910: pre-checker-gate, verify-catalog)
+    const i = files.findIndex((f, n) => KIND1.test(bigWhys[n] || "") || SELF_REVIEW_NEVER.slice(0, 3).some((re) => re.test(f)));
     return i < 0 ? "" : `\`Checker: SKIP after-pass\` cannot cover ${files[i]} (13.7 big kind (1)) - send the checker again (TEAM_RULES 13.5 #2 (จ))`;
   }
   if (reason === "series") return /^\d+\/\d+\b/.test(m[2].trim()) ? "" : "`Checker: SKIP series` needs n/N (TEAM_RULES 13.5 #1)";

@@ -325,6 +325,9 @@ function selfTest() {
       "S2 SKIP docs-only on a script · unknown reason · series without n/N → BLOCKED");
     ok(sk(skip("after-pass (13.5 #2 (จ))"), ["src/x.ts"], 0, 1, [""]) === "" && sk(skip("after-pass"), [".github/w.yml"], 1, 0, ["runs by itself or decides merges/deploys"]) !== "",
       "S2 SKIP after-pass on a site file → allowed · on a gate/hook file → BLOCKED");
+    const { bigReason: br } = require("./lib/site-paths");
+    ok(sk(skip("after-pass"), ["scripts/pre-checker-gate.js"], 0, 0, [br("scripts/pre-checker-gate.js")]) !== "" && sk(skip("docs-only"), [".claude/LESSONS.mdx"], 0, 0, [""]) !== "",
+      "S2 SKIP after-pass on the gate script (real bigReason) · docs-only on LESSONS.mdx → BLOCKED");
   }
   if (process.platform === "win32") {
     ok(guard(sh('node scripts/scan.js --pages "/about /faq"')) === "deny", "L3 Git Bash page path without MSYS_NO_PATHCONV=1 → deny");
