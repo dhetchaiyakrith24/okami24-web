@@ -12,7 +12,7 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 26/10 (house round): every finished item left as its PR; the full text before = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 464b7f64 (#881 SUP Zero 22K) · #880 B5 step 1 · #877 B4 refund slip ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = bcae46d6 (#884 house rules) · #883 house docs · #881 SUP Zero 22K · #880 B5 step 1 · #877 B4 refund slip ·
   #875 B3 staff pages · #873 B2 orders · #869 quick add · #861 cart suggestions · #860 N3–N6 · #858 pods international · #854–#857
   member sign-in + login page · #851/#849 copy follows the cart switch. Older = `git log`.
   CART IS ON since 24/10 ~23:35 [ตรวจแล้ว] (Render env OKAMI24_ORDERING=on). Live-site facts, deploy checks, test kit = §17
@@ -42,6 +42,21 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
+  h OWNER'S NEW TEAM TOOLS — approved 26/10 ("ได้ครับ" to Friday's table; each = proposal table → build, new rule/agent text per central §12 item 28
+     already OK'd in that table): (1) "ลูกค้าลับ" agent — never reads briefs, walks the TEST build at 390 like a customer (find, add to cart,
+     no real order), reports confusion/breakage; called only for big rounds, new looks, round close · (2) stale-work watcher = a morning
+     scheduled task (not an agent): work open > 3 days, promised work with no PR, silent side chats → "ค้างนาน" on the status page ·
+     (3) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
+     site-architecture / designer itself · (4) researcher gets a competitor/market mode (first use = best sellers, item 3 f) ·
+     (5) one assets folder C:UsersdhetcOKami24-assets<YYYY-MM><job> for images WE made or edited only (never others' refs) +
+     a step in the image skills · (6) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) with its
+     own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page. Order: (1) + (2) first.
+  Left from the §16 rewrite (checker #884, items with no other home): ProductMaster seed in-stock flags are from September · home 3w
+     taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
+     of /account/login not measured · designer: mark the out rows in the order page's item list · rule-audit 15/10 lock proposals L1
+     (rm/sed -i/redirect into a checker-read tree) + L2 (scan/shot tools against the live site) · old side chats to archive:
+     line1-images-2310d local_be2fd557 · line2-cart-2310b local_277aecbf · line1-images-2310c local_1b6cafc0 · old main
+     local_686a322f-0897-443b-89a8-c30fd88e0e5c.
   Owner has not yet said OK to: login look (#856) · quick add (#869) · B2 slip push on the real LINE group (first real slip shows it) ·
      B3 look · B4 (record the owner's real refunded order's slip there if not done).
   Taste notes left: relx-smash-go-12k 17 of 27 tiles share photos · /account/login poster polish after Q6 · portrait slip ~135 px wide
