@@ -79,18 +79,11 @@
 - **วิธีทำ (Friday):** รวมภาพ crop ก่อน/หลังเป็นหน้าเดียว (หัวข้อ = จุดที่เปลี่ยน · ใต้ภาพ = หน้า/จอ/ภาษา) → ส่งขึ้นด้วยเครื่องมือ Artifact → ใส่ลิงก์ในข้อ "ทำอะไร" ของรายงาน และใน `docs/cloud-results/<รอบ>.md` · เพดาน 16 MB ต่อหน้า (ภาพ crop ~150–400 KB → ~40 ภาพต่อหน้า · เกินนั้นแยกหน้า) · อัปเดตหน้าเดิมได้ ลิงก์ไม่เปลี่ยน
 - ทางรองที่ไม่แนะนำ: branch `evidence/<รอบ>` บน GitHub — ภาพค้างในประวัติ git และลบ branch จากคลาวด์ไม่ได้
 
-## 7. วางกุญแจให้เว็บขึ้นเอง — เจ้าของทำครั้งเดียว จากมือถือ [ยังไม่ได้ลองบนมือถือ]
+## 7. เว็บขึ้นเองหลัง merge — ไม่ต้องวางกุญแจแล้ว
 
-**[ทำแล้ว 2026-09-27 — ชื่อ `RENDER_DEPLOY_HOOK_URL` อยู่ในรายการ secrets แล้ว (Friday ดูแค่ชื่อ)]** · ขั้นข้างล่างเก็บไว้สำหรับเปลี่ยนกุญแจครั้งหน้า
-**ทำหลัง Javis merge PR ของรอบ A และเห็นผล "SKIP deploy" แล้วเท่านั้น** (GitHub → Actions → deploy → แถวบนสุด → Summary)
-Friday ไม่เห็น ไม่ถือ ไม่พิมพ์กุญแจนี้ — **ห้ามวางกุญแจในแชท**
-
-1. **Render (เอากุญแจ):** เปิดเบราว์เซอร์มือถือ → https://dashboard.render.com → เข้าบริการ **okami24** → **Settings** → เลื่อนหา **Deploy Hook** → กดไอคอนคัดลอก (ข้อความขึ้นต้น `https://api.render.com/deploy/…`) — ห้ามกด "Regenerate" ถ้าไม่ได้ตั้งใจเปลี่ยนกุญแจ
-2. **GitHub (วางกุญแจ):** เปิด https://github.com/dhetchaiyakrith24/okami24-web/settings/secrets/actions (ในแอป GitHub เมนูนี้อาจไม่มี ให้ใช้เบราว์เซอร์ แตะ "Desktop site" ถ้าหน้าไม่ขึ้น) → **New repository secret** → Name: `RENDER_DEPLOY_HOOK_URL` → Secret: วางที่คัดลอกมา → **Add secret**
-3. **สำเร็จ** = เห็นชื่อ `RENDER_DEPLOY_HOOK_URL` ในรายการ (ค่าจะไม่แสดงอีก — ปกติ)
-4. จากนี้: merge งานที่แตะเว็บ → รอด่านราว 2 นาที (วัดบน PR #73) → Actions → deploy → Summary บอก "DEPLOY started — commit xxxxxxx" → Render → Events เห็น deploy ใหม่ขึ้น **Live** = เว็บขึ้นแล้ว
-5. อยากสั่งขึ้นเว็บเองโดยไม่ merge อะไร: Render → okami24 → **Manual Deploy** → Deploy latest commit (ตั้งแต่ 21/10 Render สร้างและขึ้นเว็บเองทุก merge — GitHub ไม่ deploy แล้ว · `docs/RECOVERY.md` 1ก)
-- พัง / ปิด / ถอดกุญแจ = `docs/RECOVERY.md` 1ก · โควตา GitHub Actions เคยหมดกลางเดือน (12/10) — งบและวิธีประหยัด = HANDOFF §18 "Answered 12/10"
+ตั้งแต่ 21/10 Render สร้างและขึ้นเว็บเองทุก merge เข้า main (Auto-Deploy "On Commit") — กุญแจ `RENDER_DEPLOY_HOOK_URL` ใน GitHub ไม่ได้ใช้แล้ว
+(ขั้นวางกุญแจเดิม = `git show 464b7f64:docs/CLOUD.md` ข้อ 7) · สั่งขึ้นเว็บเองโดยไม่ merge: Render → okami24 → **Manual Deploy** → Deploy latest commit
+- พัง / ปิดชั่วคราว = `docs/RECOVERY.md` 1ก · โควตา GitHub Actions เคยหมดกลางเดือน (12/10) — งบและวิธีประหยัด = HANDOFF §18 "Answered 12/10"
 
 ## ที่มา (เอกสารทางการ อ่านเมื่อ 2026-09-26)
 - https://code.claude.com/docs/en/claude-code-on-the-web.md (ตัวกลาง GitHub · `--cloud` · `-p --cloud <id>` · โควตาร่วม · แชทหมดอายุ)
