@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = cab8c6a5 (#869 quick add) · #861 Q8 row · #860 N3–N6 · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 6279c06b (#873 B2 orders) · #869 quick add · #861 Q8 row · #860 N3–N6 · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
   #856 login page direction A · #854 member sign-in LINE + Google · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
@@ -23,7 +23,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   webhook events in that window are lost → group merges.
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
-  Open PRs: none (#643 closed 26/10 — tag archive/docs-stock-signin-20261020).
+  Open PRs: #875 B3 staff pages (draft — item 3) · the handoff PR of 26/10 evening.
 2 Main folder: every branch of the 24/10 chats merged (#823 handoff, #829 shipping note). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
@@ -83,19 +83,37 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        ≥ lg, PhoneOptionTiles outDisabled, options + sellable from the server) · Back from a product page returns to where the visitor came
        from (HashLinksKeepHistory: same-page #links replaceState, capture phase) · red for every "no" (§18) · staff-login XFF fix.
        Shots _incoming/qa-shots/. Designer + checker PASS. Owner has not yet seen it.
-    NEXT — OWNER ASKS 26/10 afternoon (answers given in chat; build in this order, one PR each, checker each):
-    B2 ORDERS (database + LINE = ชุดเต็ม 13.5 #3; owner chose every option below in chat 26/10):
-       (a) running order number #0001… given when STAFF CONFIRM PAYMENT (OK-date-xxx stays the customer's reference) · new column +
-           migration, show on /staff list + order page + customer order page.
-       (b) unpaid orders auto-cancelled at 24 h (#811 already) are HIDDEN from the staff lists (kept in the DB — owner "ซ่อน", not delete).
-       (c) keep the SLIP IMAGE 90 days then delete it automatically (keep the verdict) — staff order page shows it · owner ALSO wants the
-           bot to post the slip image into the "OKM Webside order" LINE group when a customer attaches it. CONFLICTS with BSOT §9 lines 276
-           + 342 "no slip image stored" → owner chose it 26/10 in chat: update BSOT §9 with the date + quote, then build. LINE image
-           message needs an HTTPS URL → serve via a long random one-time path, staff-only otherwise; push counts per member (300/month free).
-    B3 STAFF PAGES for phones (owner: "หาออเดอร์ที่ต้องทำไม่เจอ · ย้อนกลับ/ไปหน้าอื่นยาก · หน้าออเดอร์ยาวและรก · ใช้บนมือถือ"):
-       home = boxes by job with counts (รอตรวจสลิป · รอส่งคลัง · รอใส่เลขพัสดุ · เสร็จ · ยกเลิก) · staff menu + clear Back on every page ·
-       order page reordered (next action on top, details folded) · yellow = waiting states, red = no (§18). New look = designer drafts →
-       send the owner 1–2 shots → build (central §6).
+    B2 ORDERS DONE + LIVE (#873, merge 6279c06b, deploy success 26/10 [ตรวจแล้ว]): running number #0001 at staff confirm (migration
+       0017 orders.run_number, backfilled in confirm order) on staff list/order page, customer order page (th/en/zh) and the Excel ·
+       auto-cancelled unpaid orders hidden from staff lists (still in DB/Excel) · slip picture kept 90 days under <data>/private/slips
+       (6-hourly sweep + orphan-file sweep), shown on the staff order page, posted with the new-order push into "OKM Webside order" via
+       /api/line/slip/<32-char random token> (valid until deleted — NOT one-time; LINE counts one push per member however many bubbles)
+       · BSOT §9 + /privacy (th/en/zh: slip 90 days, EasySlip, team LINE group alert; "3 uses" → 4) + staff guide updated. Checker PASS
+       7b330f62. NOT yet seen on the real LINE group (stand-in only) — the first real slip will show it; owner has not seen the pages.
+    B3 STAFF PAGES — PR #875 DRAFT, branch staff-b3-2610 head 84ef365e (checked out in _incoming/wt-cart; main folder = docs branch).
+       Built per designer direction 26/10 (layout A): /staff = job board (1 รอตรวจสลิป → 2 รอส่งคลัง → 3 รอใส่เลขพัสดุ rows + counts,
+       ยังไม่จ่าย · ส่งแล้ว/เสร็จ · ยกเลิก small) · slip tool moved to /staff/slip · StaffBar = bottom tab bar on phones (LINE fab hidden
+       via a scoped <style>), tabs from lg, named Back keeping `from` through actions · job lists · order page next-step card first, one
+       folded card, cancel last red. Owner got 2 draft shots 26/10 (home + order at 390) — no answer yet.
+       verify --full PASS was for 8da95585; 84ef365e = designer-review fixes after it (slip picture max-h-72 for portrait slips, one
+       warning line, "ส่งแล้ว/เสร็จ", short list dates, tel link ember) → NOT yet verified or checked.
+       NEXT for B3: (1) verify --full on the head in _incoming/wt-cart; (2) designer asked for proof shots from a BUILD (next start, not
+       next dev — the dev "N" button covers the หน้าแรก tab) at 390x844 viewport: order-slip with a PORTRAIT slip picture, an order page
+       scrolled to the last fold row (the tab bar must not cover "ยกเลิกออเดอร์"), one shipped order with a customer note + a different
+       ordering phone (the "เบอร์ที่ใช้สั่ง" line shows only when it differs — intended); kit: _incoming/b3-2610/run.sh + shoot.sh +
+       snap/ (DB snapshot; staff cookie via _incoming/b2-2610/seed-shots.js; generated local test password _incoming/b2-2610/.staff-pass-b2);
+       before shots (main) already in _incoming/b3-2610/shots/final/; (3) gate → checker (tier B, staff pages only) → ready →
+       self-merge-check → merge → deploy check → send the owner the after shots.
+    NEW OWNER ASKS 26/10 evening (answered in chat, not built):
+       B4 REFUND SLIP: staff attach the refund transfer slip on the order → the customer's order page shows "คืนเงินแล้ว" + the slip
+          (owner: refund to the order's PromptPay phone when it works, else wait for the customer's account on the web → refund →
+          status + slip → customer checks). Today the stock-issue box already lets staff record a refund (bank ref) before the customer
+          chooses; missing = the picture. Reuse B2 slip-images (90 days). The owner's real out-of-stock order this week was refunded by
+          PromptPay already → Friday told the owner to record it with the bank ref in "สินค้าหมดหลังลูกค้าโอน" (not checked if done).
+       B5 STOCK QUANTITY + "ใกล้หมด" label: owner asks whether the hourly routine should read quantities. Friday answered: yes, but
+          first (i) stock without a rebuild (proposal ①: every stock PR = deploy = 30–60 s of 502 — counts would deploy every hour) and
+          (ii) a trustworthy count source (the order-entry picker shows only in/out; the product list showed wrong "in stock" before).
+          Label suggested "ใกล้หมด · เหลือ N ชิ้น" only at ≤ 3 — the owner has not picked the word yet (ask with the plan).
     LOGO for the LINE sign-in consent screen (grey circle now): owner wants the NEW kabuto logo (owner 26/10: "เดี๋ยวพี่ส่งให้" — the file
        comes in the next chat) → crop the kabuto mark square → LINE Developers → channel 2012198931 → icon (owner's Chrome).
     Q6 logo round = TOMORROW 27/10 (owner).
