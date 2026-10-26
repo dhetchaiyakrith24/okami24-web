@@ -53,7 +53,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      (rm/sed -i/redirect into a checker-read tree) + L2 (scan/shot tools against the live site) · old side chats to archive:
      line1-images-2310d local_be2fd557 · line2-cart-2310b local_277aecbf · line1-images-2310c local_1b6cafc0 · old main
      local_686a322f-0897-443b-89a8-c30fd88e0e5c.
-  Live looks the owner has not yet said OK to = รอพี่ตรวจ 78.
+  Live looks waiting for the owner's verdict = รอพี่ตรวจ 78.
   Taste notes left: relx-smash-go-12k 17 of 27 tiles share photos · /account/login poster polish after Q6 · portrait slip ~135 px wide
      in the staff next-step card at 390.
   Test orders OK-20261023-e25378 (+ maybe M Bar 9K ฿400) → cancel on /staff (reason "ทดสอบ") when the owner finishes testing.
