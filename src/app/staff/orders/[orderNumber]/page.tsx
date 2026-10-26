@@ -243,7 +243,7 @@ export default async function StaffOrderPage({
       {order.status === "approved" && !stockOpen && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.warehouse.label}</h2>
-          <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
+          <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
           {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
         </section>
       )}

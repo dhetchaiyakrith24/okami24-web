@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 /** A text block with one "copy" button — the warehouse order text on /staff/orders/<n>. */
-export function CopyBlock({ text, label, doneLabel }: { text: string; label: string; doneLabel: string }) {
+/** `outline` (staff redesign 26/10): when the card's main button sits right below, copying must not look like that step. */
+export function CopyBlock({ text, label, doneLabel, outline = false }: { text: string; label: string; doneLabel: string; outline?: boolean }) {
   const [done, setDone] = useState(false);
   return (
     <div className="flex flex-col gap-2">
@@ -19,7 +20,11 @@ export function CopyBlock({ text, label, doneLabel }: { text: string; label: str
             /* clipboard blocked — the text above can still be selected by hand */
           }
         }}
-        className="self-start rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong"
+        className={
+          outline
+            ? "self-start rounded-full border border-surface-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim"
+            : "self-start rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong"
+        }
       >
         {done ? doneLabel : label}
       </button>
