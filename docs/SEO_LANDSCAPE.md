@@ -447,6 +447,8 @@ relx ไม่มี นิโคติน (ไม่เขียนคำอ้
 | 25 | ลิงก์จากเว็บอื่น: ได้มาเองตามธรรมชาติ · ห้ามซื้อ/แลก/เครือข่าย | ⬜ หาแหล่งปลอดภัยไม่เจอ (ข้อ 3) · ทางที่ถูกกติกาและทำได้ = เนื้อหาที่คนอยากอ้างถึง (ก้อน 5–6) + คนค้นชื่อร้านจากคลิป | dev/essentials/spam-policies · dev/fundamentals/seo-starter-guide |
 | 26 | Search Console: ขอ index หน้าใหม่/หน้าที่แก้ (คิวละหน้า มีโควตาต่อวัน ส่งซ้ำไม่ช่วย) | ⬜ ก้อน 7 | sc/9012289 |
 
+**มาตรฐานบทความของร้าน (เจ้าของ 19/10 — 1 เรื่อง 1 บทความ · ย้ายจากสกิล seo-audit / site-architecture 26/10):** one page = one main search question · primary keyword in title, H1, first paragraph, slug · secondary phrases from real queries in H2s · depth, no word-count target · one image per main section that shows the text · one main shop clip · every product named links to its live product page on first mention + 2–4 related guides. · never link an unpublished product.
+
 **Google บอกเองว่าไม่ช่วยอันดับ:** meta keywords · priority/changefreq ใน sitemap · ความยาวบทความ (ตั้งเป้าจำนวนคำ = สัญญาณไม่ดี) · ลำดับ/จำนวนหัวข้อ ·
 E-E-A-T ไม่ใช่ตัวคะแนนตรง (แต่ความน่าเชื่อถือสำคัญที่สุด) · CWV คะแนนเต็มไม่การันตีอันดับ · ขอ index ซ้ำไม่เร่ง
 

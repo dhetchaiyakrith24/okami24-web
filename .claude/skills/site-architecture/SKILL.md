@@ -375,8 +375,9 @@ Mermaid diagram showing page relationships and navigation zones. Use `graph TD` 
   central §12 item 10 report in Thai, not this skill's report format.
 * **Hard lines:** no doorway or scaled pages · no fake freshness · no bought, swapped or self-posted links (SEO_LANDSCAPE §3) · copy through
   `thai-copy` + skill `thai-check` · prices never typed by hand · product facts from the maker only · no legal-status topics (TEAM_RULES tail).
+* **"Ask the user" in the text above** = questions to the owner follow TEAM_RULES 13.3 only (the one list) — the rest Friday decides and reports.
 * Skills it names that we have not installed (programmatic-seo · schema · ai-seo · cro · competitors · marketing-loops …) = not available here.
-* **Existing URLs stay.** Any URL move needs a one-to-one 301 map and goes to the owner first (13.3 #4/#5) — they rank and are approved.
+* **Existing URLs stay.** Any URL move needs a one-to-one 301 map · whether to ask first = TEAM_RULES 13.3 (#4 · #5) — they rank and are approved.
 * **Header, footer and navigation are shared parts:** scope-auditor + tier B + whole-sitemap scans (TEAM_RULES 13.5 #5) · designer only for a new look, slot or component (13.5 #6).
   The SaaS defaults in the templates ("Start Free Trial" CTA, `/shop/category/sub/product`) are examples, not targets.
-* **Internal links (owner 19/10):** every product named in a guide links to its live product page on first mention · never link an unpublished product.
+* **Internal links + article standard** = owner ruling, one home: `docs/SEO_LANDSCAPE.md` §7.3 "มาตรฐานบทความของร้าน".
