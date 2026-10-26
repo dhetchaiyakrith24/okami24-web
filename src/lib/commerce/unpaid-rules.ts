@@ -1,0 +1,13 @@
+/**
+ * Pure side of the unpaid sweep (src/lib/commerce/unpaid-expiry.ts) — no I/O, so run-number-contract-test.ts can run it
+ * against a real SQLite file built from the migrations.
+ *
+ * SQL condition (orders aliased `o`): the order was cancelled by the unpaid sweep — never paid. Owner 26/10 (queue
+ * B2 (b) "ซ่อน"): these are HIDDEN from the staff lists and counts, not deleted — the row stays, and
+ * /staff/orders/<number> still opens it. Matches the sweep's history note ("System: unpaid <N> h — auto-cancel",
+ * isAutoCancelNote) for any N, so a later UNPAID_HOURS still matches older rows — and only when no slip ever came in:
+ * an order that was ever paid stays listed whatever its history says.
+ */
+export const AUTO_CANCELLED_SQL = `(o.status = 'cancelled' AND EXISTS (SELECT 1 FROM order_status_history h
+  WHERE h.order_id = o.id AND h.status = 'cancelled' AND h.note LIKE 'System: unpaid %' AND h.note LIKE '%auto-cancel')
+  AND NOT EXISTS (SELECT 1 FROM order_status_history p WHERE p.order_id = o.id AND p.status = 'payment_submitted'))`;

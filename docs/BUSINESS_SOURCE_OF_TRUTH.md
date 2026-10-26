@@ -339,9 +339,21 @@ how-to-order page and on the order page next to the bank details.
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
 order moves to "payment submitted" with the verdict beside it. This widens the 2026-10-07 "one exception" above from the
 staff page to the order page — still **no automatic confirmation**: a person moves every order past "payment submitted".
-No slip image, name or account number is stored (same line as the staff page). Code: `src/lib/commerce/payment-slip.ts`.
+No name or account number is stored (same line as the staff page). Code: `src/lib/commerce/payment-slip.ts`.
 New-order and slip alerts go to the team's own LINE group through a separate LINE OA bot "OKM ORDER" (@691qxpxp, not
 @okm24); a second group "OKM Slip" gets the bot's EasySlip answer for slips staff drop in there.
+
+**Slip picture kept 90 days (owner 2026-10-26, chat — queue B2 (c); replaces "no slip image is stored" for the ORDER
+PAGE only):** the picture a customer attaches on the order page is kept **90 days, then deleted automatically** — the
+verdict, amount and bank reference stay on the order. Staff see it on the staff order page, and the bot posts it with the
+new-order alert into the "OKM Webside order" LINE group (the owner asked for both). The staff slip-check page and the
+"OKM Slip" group still keep no picture. Kept on the server's data disk outside the public folder, not in the backups;
+the privacy page says so. Code: `src/lib/commerce/slip-images.ts`.
+
+**Order handling (owner 2026-10-26, chat — queue B2 (a)(b)):** (a) a **running order number #0001, #0002 …** is given
+when staff confirm the payment (an unpaid or cancelled-before-payment order never takes one); `OK-<date>-<code>` stays
+the customer's reference; shown on the staff list, the staff order page and the customer's order page. (b) Orders the
+system cancels for no payment within 24 hours are **hidden from the staff lists, not deleted** (owner: "ซ่อน").
 
 **QR carries the order amount (owner 2026-10-23, chat — "A ครับทำได้"):** the PromptPay QR on the order page is redrawn per
 order with the order total filled in (the customer's bank app shows the amount; the customer does not type it). The

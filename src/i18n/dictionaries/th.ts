@@ -587,6 +587,7 @@ export const th: Dictionary = {
     eyebrow: "คำสั่งซื้อ",
     pageTitle: "สถานะคำสั่งซื้อ",
     orderNumberLabel: "หมายเลขคำสั่งซื้อ",
+    runNumberLabel: "ลำดับคำสั่งซื้อ",
     statusLabel: "สถานะ",
     itemsTitle: "รายการสินค้า",
     shipToTitle: "จัดส่งไปยัง",

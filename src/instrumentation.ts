@@ -2,7 +2,7 @@
  * Next.js instrumentation hook — `register()` runs once per server instance, before it serves
  * requests. Node.js runtime only; never during `next build`.
  *
- * Four things happen here. The middle two are about the data that is not in git (see
+ * Five things happen here. The middle two are about the data that is not in git (see
  * src/lib/paths.ts); the first is temporary, and dated:
  *   1. the native libraries are exercised in a child process and the result logged
  *      (src/lib/db/startup-check.ts) — added 2026-09-06 to locate a segfault that kills this server
@@ -10,7 +10,8 @@
  *   2. the shop's PromptPay QR is written to the data disk if it isn't there yet and the owner
  *      pasted one into the host's dashboard (src/lib/promptpay-qr-install.ts), and
  *   3. the automatic backup schedule starts (src/lib/backup/), and
- *   4. the unpaid-order sweep starts (src/lib/commerce/unpaid-expiry.ts — owner 24/10).
+ *   4. the unpaid-order sweep starts (src/lib/commerce/unpaid-expiry.ts — owner 24/10), and
+ *   5. the 90-day slip-picture sweep starts (src/lib/commerce/slip-images.ts — owner 26/10).
  * None of them can stop the server: the probe runs in a child process and only reports how it died,
  * the QR install returns a result instead of throwing, and a failed backup is logged and ignored.
  */
@@ -63,4 +64,8 @@ export async function register(): Promise<void> {
   // 4. Unpaid orders cancel themselves after 24 hours (owner 24/10 proposal ②) — src/lib/commerce/unpaid-expiry.ts.
   const { startUnpaidExpiryScheduler } = await import("./lib/commerce/unpaid-expiry");
   startUnpaidExpiryScheduler();
+
+  // 5. Slip pictures are deleted after 90 days (owner 26/10, queue B2 (c)) — src/lib/commerce/slip-images.ts.
+  const { startSlipImagePurge } = await import("./lib/commerce/slip-images");
+  startSlipImagePurge();
 }

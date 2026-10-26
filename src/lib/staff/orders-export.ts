@@ -2,6 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { orderStatusLabel, type OrderStatus } from "@/lib/commerce/order-status";
 import { toCsv } from "./csv";
+import { formatRunNumber } from "@/lib/commerce/run-number";
 
 /**
  * Every web order as one Excel-ready CSV (owner 23/10: keep the orders and each customer's buying history on the
@@ -11,6 +12,7 @@ import { toCsv } from "./csv";
 
 const HEADER = [
   "เลขออเดอร์",
+  "เลขรัน",
   "วันเวลาสั่ง",
   "สถานะ",
   "เบอร์ลูกค้า (บัญชี)",
@@ -49,7 +51,7 @@ function bangkokTime(iso: string): string {
 export function ordersCsv(): string {
   const rows = getDb()
     .prepare(
-      `SELECT o.order_number, o.created_at, o.status, o.shipping_fee, o.total, o.tracking_number, c.phone AS customer_phone,
+      `SELECT o.order_number, o.run_number, o.created_at, o.status, o.shipping_fee, o.total, o.tracking_number, c.phone AS customer_phone,
               a.recipient_name, a.phone AS recipient_phone, a.line1, a.subdistrict, a.district, a.province, a.postal_code,
               i.product_name_snapshot, i.variant_label, i.quantity, i.unit_price, i.line_total
          FROM orders o
@@ -60,6 +62,7 @@ export function ordersCsv(): string {
     )
     .all() as {
     order_number: string;
+    run_number: number | null;
     created_at: string;
     status: OrderStatus;
     shipping_fee: number;
@@ -84,6 +87,8 @@ export function ordersCsv(): string {
     HEADER,
     rows.map((r) => [
       { keepZeros: r.order_number },
+      // The shop running number (owner 26/10) — empty until the payment was confirmed.
+      formatRunNumber(r.run_number),
       bangkokTime(r.created_at),
       orderStatusLabel(r.status, "th"),
       { keepZeros: r.customer_phone },

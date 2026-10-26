@@ -671,6 +671,8 @@ export interface Dictionary {
     eyebrow: string;
     pageTitle: string;
     orderNumberLabel: string;
+    /** The shop running number #0001 (owner 26/10, queue B2 (a)) — shown once staff confirmed the payment. */
+    runNumberLabel: string;
     statusLabel: string;
     itemsTitle: string;
     shipToTitle: string;

@@ -2,7 +2,7 @@ import "server-only";
 import { getOrderDetailInternal } from "@/lib/commerce/orders";
 import type { SlipReason, SlipVerdict } from "@/lib/commerce/slip-decision";
 import { SITE_URL } from "@/lib/seo";
-import { lineConfigured, pushText } from "./client";
+import { lineConfigured, pushText, pushTextWithImage } from "./client";
 import { groupForRole } from "./groups";
 import { formatOrderAlert, formatStockChoiceAlert } from "./messages";
 
@@ -12,7 +12,14 @@ import { formatOrderAlert, formatStockChoiceAlert } from "./messages";
  * monthly quota, once per group member (developers.line.biz/en/docs/messaging-api/pricing/), so pushes stay rare:
  * this one and notifyStockChoice below. Never throws: a failed alert is logged and the order stays exactly as it is.
  */
-export async function notifyPaidOrder(orderNumber: string, verdict: SlipVerdict, reasons: SlipReason[]): Promise<void> {
+/** `slipImageToken` (owner 26/10): the kept slip picture rides along in the same push — LINE fetches it from
+ *  /api/line/slip/<token>. null (not kept, or no HTTPS site address) = the text alone, as before. */
+export async function notifyPaidOrder(
+  orderNumber: string,
+  verdict: SlipVerdict,
+  reasons: SlipReason[],
+  slipImageToken: string | null = null
+): Promise<void> {
   try {
     if (!lineConfigured()) return;
     const groupId = groupForRole("order");
@@ -22,7 +29,11 @@ export async function notifyPaidOrder(orderNumber: string, verdict: SlipVerdict,
     }
     const order = getOrderDetailInternal(orderNumber);
     if (!order) return;
-    const result = await pushText(groupId, formatOrderAlert(order, verdict, reasons, SITE_URL));
+    const text = formatOrderAlert(order, verdict, reasons, SITE_URL);
+    const imageUrl = slipImageToken && SITE_URL.startsWith("https://") ? `${SITE_URL}/api/line/slip/${slipImageToken}` : null;
+    const result = imageUrl
+      ? await pushTextWithImage(groupId, text, { originalUrl: imageUrl, previewUrl: `${imageUrl}?preview=1` })
+      : await pushText(groupId, text);
     if (!result.ok) console.error(`[line] order ${orderNumber}: push failed (${result.status ?? "network"})`);
   } catch (err) {
     console.error(`[line] order ${orderNumber}: alert threw — ${err instanceof Error ? err.message : String(err)}`);
