@@ -10,34 +10,39 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 26/10 (house round): every finished item left as its PR; the full text before = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 27/10 (chat move after the house round closed): queue reordered by the owner. Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
 
 1 main: `git fetch && git log -1 --oneline origin/main` · open PRs = `gh pr list` · last round checkpoint = tag `house-clean-2610-done` (house round 26/10 closed 27/10).
   CART IS ON since 24/10 ~23:35 [ตรวจแล้ว] (Render env OKAMI24_ORDERING=on). Live-site facts, deploy checks, test kit = §17
   "Live site" + "Test trees + PR flow".
-2 Main folder: branch `cart-fit-2610` (HANDOFF note only) · test trees `_incoming/wt-golive` · `_incoming/wt-cart` · `_incoming/wt-stock`
+2 Main folder: branch `cart-fit-2610` (HANDOFF note only) — 72 commits BEHIND origin/main on 27/10 [ตรวจแล้ว], so its .claude/ rules and skills
+  are OLD: work in a fresh worktree from origin/main (round-open step 2) or fast-forward the folder first · no branch ahead of main
+  (#905–#913 all merged) · test trees `_incoming/wt-golive` · `_incoming/wt-cart` · `_incoming/wt-stock`
   (the hourly routine's — leave it clean).
 3 OWNER QUEUE — the ONE ordered list (owner 24/10: "อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย"); done items = their PRs above:
-  a CART FIT [owner 26/10 night, NOT built]: "สินค้าตัวเลือกเพิ่มเติมในหน้าตะกร้าต้องเหมาะกับสินค้าที่ลูกค้าเลือกเท่านั้น เช่น เลือก
+  Owner's order 27/10 (chat move): logo round → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
+  a Q6 LOGO ROUND = 27/10, START HERE (owner 27/10 "เริ่มงานด้วย รอบโลโก้ใหม่"): new kabuto logo (owner's file 24/10, red ring + "OKAMI"); change everywhere on one day + broadcast
+     "โฉมใหม่"; need the high-res/vector file; ask "OKAMI" vs "OKami24" text · samurai-woman character, restrained (red sword-slash on
+     add/confirm/paid · faint brush + red moon in a few backgrounds · character only in hero spots); reference = owner's 10.10 poster;
+     drafts first. Untracked `logo/` in the main folder root (26/10): okami-logo-b-ตัดพื้นหลัง.png · okami-logo-b-ระยะห่างใหม่.png ·
+     okami-helmet-ลายน้ำ-ขาว.png · qr-line-okm24.png · แนวB_ตราหมวกเรียบแข็งแรง_ร่าง.png — likely the owner's logo files [เชื่อว่า]; confirm, never delete.
+     Plan it with skill `okami24-plan` (/วางแผน) first.
+  b CART FIT [owner 26/10 night, NOT built]: "สินค้าตัวเลือกเพิ่มเติมในหน้าตะกร้าต้องเหมาะกับสินค้าที่ลูกค้าเลือกเท่านั้น เช่น เลือก
      Argus G4 สินค้าต้องใกล้เคียง ต้องเป็นหัวพอต Argus น้ำยา คอยล์" → with items in the cart the row shows ONLY what fits them:
      verified pods/coils/sticks (relationship table), e-liquid for refillable devices (BSOT §17 "Device → Suitable e-liquid
      category"), a pod's own device; NO other devices and no shop picks while the cart has items; nothing fits = no row.
      Empty cart = shop picks. Code: src/lib/commerce/cart-suggestions.ts. Full set (cart).
-  b STAFF PAGES declutter [owner interview 26/10]: B3 pages still "รก มึน ดูแล้วหัวข้อเยอะ" → regroup sections, buttons, boxes;
+  c STAFF PAGES declutter [owner interview 26/10]: B3 pages still "รก มึน ดูแล้วหัวข้อเยอะ" → regroup sections, buttons, boxes;
      "น้อยแต่ชัด หาสิ่งที่ต้องกดเจอเลย". Back office = light checks (house round 26/10). Proof kit `_incoming/b3-2610/build/`.
-  c B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log RUNNING (#880) — verdict 02/11:
+  d LINE sign-in logo (grey circle now): owner sends the new kabuto file → crop square → LINE Developers → channel 2012198931 → icon.
+  e BEST SELLERS for SHOP_PICKS (owner 26/10, "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"): researcher reads Thai market signals,
+     Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
+  f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log RUNNING (#880) — verdict 02/11:
      `node scripts/stock-count-log.js --report --log C:/Users/dhetc/Claude-Web-Lab-v3-checkpoint-3.3.3/_incoming/stock-api/count-log.jsonl`
      (READY = count > 0 ⇔ picker "เพิ่ม" on every read for 7 days, ≥ 12 reads a day) → ② stock at runtime: DB table written by the
      routine through a staff-token endpoint (NEW secret env on Render = owner OK first, 13.3 #9), product pages stay prerendered and
      read a small no-cookie API, cart + placeOrder check the DB, build-time WAREHOUSE set = fallback, hourly stock PRs stop →
      ③ label at ≤ 3 left on option tiles + product page (designer places it). Today stock is compiled into the build.
-  d Q6 LOGO ROUND = 27/10 (owner): new kabuto logo (owner's file 24/10, red ring + "OKAMI"); change everywhere on one day + broadcast
-     "โฉมใหม่"; need the high-res/vector file; ask "OKAMI" vs "OKami24" text · samurai-woman character, restrained (red sword-slash on
-     add/confirm/paid · faint brush + red moon in a few backgrounds · character only in hero spots); reference = owner's 10.10 poster;
-     drafts first. Untracked `logo/` in the main folder root = probably the owner's files for it — leave it.
-  e LINE sign-in logo (grey circle now): owner sends the new kabuto file → crop square → LINE Developers → channel 2012198931 → icon.
-  f BEST SELLERS for SHOP_PICKS (owner 26/10, "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"): researcher reads Thai market signals,
-     Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
@@ -47,7 +52,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
      of /account/login not measured · designer: mark the out rows in the order page's item list · old side chats to archive:
      line1-images-2310d local_be2fd557 · line2-cart-2310b local_277aecbf · line1-images-2310c local_1b6cafc0 · old main
-     local_686a322f-0897-443b-89a8-c30fd88e0e5c.
+     local_686a322f-0897-443b-89a8-c30fd88e0e5c · house round 26/10 part 4 local_a2c2b4a9-5bd7-4e23-8a66-f242df1c2522.
   Live looks waiting for the owner's verdict = รอพี่ตรวจ 78.
   Taste notes left: relx-smash-go-12k 17 of 27 tiles share photos · /account/login poster polish after Q6 · portrait slip ~135 px wide
      in the staff next-step card at 390.
@@ -82,7 +87,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here. Status page for the owner's phone =
   §17 "Owner status page".
 5 open / dated:
-  - 27/10 Q6 logo round (item 3 d) · 01/11 GSC read (rows 9–21, 23) then 15/11 · 10/12 · 02/11 B5 verdict (item 3 c) · Search Console 2–4 weeks
+  - 27/10 Q6 logo round (item 3 a) · 01/11 GSC read (rows 9–21, 23) then 15/11 · 10/12 · 02/11 B5 verdict (item 3 f) · Search Console 2–4 weeks
     after 12/10: no okami-24.com URL shows instead of .store.
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
