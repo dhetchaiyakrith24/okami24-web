@@ -522,6 +522,13 @@ export interface Dictionary {
     fixIssuesNote: string;
     /** Q8 (26/10): the heading of the cart's suggestion row — claims nothing (owner 20/10: no "best seller" wording). */
     suggestionsTitle: string;
+    /** Quick add on a suggestion card (owner 26/10). `{name}` = the product name. */
+    suggestionAddLabel: string;
+    /** Status line after a quick add — `{name}` = product (+ option). */
+    suggestionAdded: string;
+    /** Shown in the picker when the add was refused (the option sold out meanwhile). */
+    suggestionAddFailed: string;
+    suggestionViewProduct: string;
   };
   /** Product Detail add-to-cart control — only rendered for a genuinely published, priced
    *  product; see PilotProductDetail.tsx. */

@@ -36,6 +36,7 @@ export function PhoneOptionTiles({
   label,
   pills = [],
   className,
+  outDisabled = false,
 }: {
   options: PhoneOption[];
   /** null while nothing (or an "all" pill) is picked. */
@@ -45,6 +46,8 @@ export function PhoneOptionTiles({
   /** "All" lineup pills, shown before the options. */
   pills?: { label: string; selected: boolean; onSelect: () => void }[];
   className?: string;
+  /** Sold-out tiles cannot be picked (the cart's quick add). The product page keeps them pickable to show the photo. */
+  outDisabled?: boolean;
 }) {
   const { dict } = useLocale();
   const t = dict.product;
@@ -106,6 +109,7 @@ export function PhoneOptionTiles({
               type="button"
               data-option-id={o.id}
               onClick={() => onSelect(o.id)}
+              disabled={outDisabled && o.out}
               aria-pressed={picked}
               aria-label={name}
               title={name}

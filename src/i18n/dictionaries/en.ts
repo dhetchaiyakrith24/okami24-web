@@ -431,6 +431,10 @@ export const en: Dictionary = {
     checkoutCta: "Check out",
     fixIssuesNote: "Please remove the unavailable items above before you check out.",
     suggestionsTitle: "You may also like",
+    suggestionAddLabel: "Add {name} to cart",
+    suggestionAdded: "Added {name} to your cart",
+    suggestionAddFailed: "That option just sold out — please pick another",
+    suggestionViewProduct: "View product details",
   },
   productActions: {
     addToCartCta: "Add to cart",
