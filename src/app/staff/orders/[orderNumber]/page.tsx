@@ -187,7 +187,8 @@ export default async function StaffOrderPage({
           </div>
         )}
         <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
-          <p className="text-foreground-muted">ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ส่งแล้วแก้ไม่ได้)</p>
+          {/* #807 checker note (a): a message stays on the order page after the customer acts, so one that points at "ด้านล่าง" (the swap / refund box) would later point at nothing — staff are told here, where they type. */}
+          <p className="text-foreground-muted">ข้อความถึงลูกค้า (ลูกค้าเห็นในหน้าออเดอร์ · ส่งแล้วแก้ไม่ได้ · ข้อความอยู่ในหน้าออเดอร์ตลอด จึงไม่เขียนชี้ว่า &ldquo;ด้านล่าง&rdquo;)</p>
           {messages.length > 0 && (
             <ul className="flex flex-col gap-2">
               {messages.map((m, i) => (

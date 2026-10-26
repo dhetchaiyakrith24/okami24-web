@@ -2,6 +2,7 @@ import "server-only";
 import crypto from "node:crypto";
 import { getDb } from "@/lib/db/client";
 import { requireCustomer, getSession } from "./session";
+import { isIdempotencyKey } from "./idempotency-key";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
 import { cleanCustomerNote } from "./customer-note";
@@ -114,6 +115,11 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
   const member = await getMember();
   const db = getDb();
 
+  // A key must look minted (idempotency-key.ts): an empty or guessable one would be shared across customers.
+  if (!isIdempotencyKey(idempotencyKey)) {
+    return { ok: false, error: "This checkout is already being processed.", code: "idempotency-conflict" };
+  }
+
   const existingKey = db.prepare("SELECT order_id FROM idempotency_keys WHERE key = ?").get(idempotencyKey) as
     | { order_id: number | null }
     | undefined;
@@ -121,8 +127,10 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
     if (existingKey.order_id === null) {
       return { ok: false, error: "This checkout is already being processed.", code: "idempotency-conflict" };
     }
+    // Replay only into this customer's own order — never hand back (with its view token) someone else's.
     const row = getOrderRowById(existingKey.order_id);
-    if (row) return { ok: true, order: toSummary(row) };
+    if (row && row.customer_id === customer.id) return { ok: true, order: toSummary(row) };
+    return { ok: false, error: "This checkout is already being processed.", code: "idempotency-conflict" };
   }
 
   const address = await getOwnedAddress(addressId);
@@ -207,7 +215,7 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       | undefined;
     if (winner?.order_id) {
       const row = getOrderRowById(winner.order_id);
-      if (row) return { ok: true, order: toSummary(row) };
+      if (row && row.customer_id === customer.id) return { ok: true, order: toSummary(row) };
     }
     return { ok: false, error: "This checkout is already being processed.", code: "idempotency-conflict" };
   }
