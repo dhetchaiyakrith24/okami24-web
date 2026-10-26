@@ -143,7 +143,6 @@ export default async function StaffOrderPage({
                 <img
                   src={slipImageHref}
                   alt="รูปสลิปที่ลูกค้าแนบ"
-                  loading="lazy"
                   className="max-h-96 w-auto max-w-full rounded-lg border border-surface-border-soft bg-surface-2"
                 />
                 <span className="text-xs text-foreground-dim">แตะเพื่อเปิดรูปเต็ม · รูปสลิปเก็บไว้ 90 วันนับจากวันที่ลูกค้าส่ง</span>

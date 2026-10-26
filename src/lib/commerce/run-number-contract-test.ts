@@ -96,9 +96,12 @@ check("3. the auto-cancelled unpaid order is hidden", !listed.includes(4), liste
 check("3. a staff cancellation stays listed", listed.includes(5), listed.join(","));
 check("3. every other order stays listed", [1, 2, 3].every((id) => listed.includes(id)), listed.join(","));
 check("3. hidden, not deleted", db.prepare("SELECT 1 FROM orders WHERE id = 4").get() !== undefined);
-history.run(1, "cancelled", "Staff: cancel — System: unpaid note quoted by staff auto-cancel");
+// A paid order that somehow also carries the sweep's note (seen in a hand-edited test database) stays listed.
+history.run(1, "payment_submitted", "Slip attached");
+db.prepare("UPDATE orders SET status = 'cancelled' WHERE id = 1").run();
+history.run(1, "cancelled", "System: unpaid 24 h — auto-cancel");
 check(
-  "3. a staff note that merely quotes the sweep text on a non-cancelled order is not hidden",
+  "3. an order that was ever paid is never hidden",
   (db.prepare(`SELECT COUNT(*) AS n FROM orders o WHERE o.id = 1 AND ${AUTO_CANCELLED_SQL}`).get() as { n: number }).n === 0
 );
 
