@@ -51,6 +51,10 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      site-architecture / designer itself · (2) one assets folder C:\Users\dhetc\OKami24-assets\<YYYY-MM>\<job>\ for images WE made or
      edited only (never others' refs) + a step in the image skills · (3) shop accounts audit (income/costs/investment) = a SEPARATE
      project (central §12 item 32) with its own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page.
+  i SKILL QUEUE (owner 26/10 "ยังไม่ต้อง เก็บไว้ในคิวก่อน"): our own storefront checklist written from medusajs/medusa-agent-skills
+     `storefront-best-practices` @42b9afd2 (4.6K installs · 3 audits PASS · skill-scan benign · NO license → our own words, not a copy;
+     drop the Medusa SDK parts) — first use with item 3 a cart fit. Not adopted: seo-ecommerce (overlaps seo-audit/seo-auditor, live data
+     = paid DataForSEO) · nexscope checkout-optimization (thin, promo link). Adopt = skill find-skills C–E + the owner's OK.
   Left from the §16 rewrite (checker #884, items with no other home): ProductMaster seed in-stock flags are from September · home 3w
      taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
      of /account/login not measured · designer: mark the out rows in the order page's item list · rule-audit 15/10 lock proposals L1
