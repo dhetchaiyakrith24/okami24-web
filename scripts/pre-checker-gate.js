@@ -310,6 +310,14 @@ function selfTest() {
   ok(guard(sh("node scripts/self-merge-check.js --pr 9 && gh pr merge 9 --merge")) === "deny", "L7 self-merge-check + merge in one command → deny");
   ok(guard(sh('git commit -m "self-merge-check then gh pr merge"')) === "none", "L7 the words inside a commit message → allowed");
   ok(guard(sh("git merge-base --is-ancestor a b && node scripts/self-merge-check.js")) === "none", "L7 `git merge-base` is not a merge → allowed");
+  {
+    const { selfReviewProblem: sr } = require("./self-merge-check");
+    const body = "x\nChecker: SKIP self-review (13.7)\n";
+    ok(sr(body, ["scripts/stale-work.js", "docs/a.md"], 0, 0) === "", "S1 SKIP self-review on a SMALL backend PR → allowed");
+    ok(sr(body, ["scripts/pre-checker-gate.js"], 0, 0) !== "" && sr(body, ["scripts/stock-sync.js"], 0, 0) !== "" && sr(body, [".claude/skills/x/SKILL.md"], 0, 0) !== "",
+      "S1 SKIP self-review on a gate / stock script / skill → BLOCKED");
+    ok(sr(body, ["scripts/a.js"], 1, 0) !== "" && sr(body, ["src/app/page.tsx"], 0, 1) !== "", "S1 SKIP self-review on a BIG or SITE PR → BLOCKED");
+  }
   if (process.platform === "win32") {
     ok(guard(sh('node scripts/scan.js --pages "/about /faq"')) === "deny", "L3 Git Bash page path without MSYS_NO_PATHCONV=1 → deny");
     ok(guard(sh('node scripts/scan.js --pages "/"')) === "deny", 'L3 the home page "/" alone → deny');

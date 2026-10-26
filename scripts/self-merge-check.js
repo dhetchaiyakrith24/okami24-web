@@ -124,6 +124,22 @@ function checkerLineProblem(body, prHead) {
   return "";
 }
 
+// `Checker: SKIP self-review` (TEAM_RULES 13.7, owner 27/10 "2 จัดการเลยครับ"): backend work Friday reviews alone. Only a SMALL
+// PR (nothing big, nothing on the site) and none of these files: the rules, agents and skills · the gates and locks · anything
+// about stock, orders, money, carts, prices, slips or customers (checker 907: bigReason() alone let gate and stock scripts through).
+const SELF_REVIEW_NEVER = [
+  /^\.claude\/(TEAM_RULES\.md|agents\/|skills\/|settings)/,
+  /^(\.githooks|\.github|scripts\/lib)\//,
+  /^scripts\/(pre-checker-gate|self-merge-check|guard-tool|push-guard|verify-catalog|house-check|central-rules-copy-check|handoff-size-check|large-file-check|eol-check)\b/,
+  /stock|order|slip|refund|pay|cart|price|customer|backup|restore/i,
+];
+function selfReviewProblem(body, files, big, site) {
+  if (!/^\s*Checker:\s*SKIP\s+self-review\b/im.test(body)) return "";
+  if (big || site) return "`Checker: SKIP self-review` needs a SMALL PR (this one has big or site files) - send the checker (TEAM_RULES 13.7)";
+  const hit = files.find((f) => SELF_REVIEW_NEVER.some((re) => re.test(f)));
+  return hit ? `\`Checker: SKIP self-review\` cannot cover ${hit} (rules · gates · stock/orders/money/customers) - send the checker (TEAM_RULES 13.7)` : "";
+}
+
 function changedFiles(argv) {
   const fl = argv.indexOf("--files"); // dry run on a given list (comma-separated) - for testing the gate itself
   if (fl !== -1) return (argv[fl + 1] || "").split(",").join("\n");
@@ -253,7 +269,7 @@ function main() {
         blocked++;
         console.log(`BLOCKED  (repo) local HEAD ${head.slice(0, 7)} is not the PR head ${prHead.slice(0, 7)} - check out the PR branch first`);
       }
-      const why = checkerLineProblem(view.body || "", prHead);
+      const why = checkerLineProblem(view.body || "", prHead) || selfReviewProblem(view.body || "", files, big, site);
       if (why) {
         blocked++;
         console.log(`BLOCKED  (repo) ${why}`);
@@ -276,4 +292,5 @@ function main() {
   process.exit(blocked ? 1 : 0);
 }
 
-main();
+if (require.main === module) main();
+module.exports = { selfReviewProblem }; // planted examples: pre-checker-gate --self-test
