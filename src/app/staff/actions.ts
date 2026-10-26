@@ -6,6 +6,7 @@ import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/
 import { assignRole } from "@/lib/line/groups";
 import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { applyStaffAction } from "@/lib/staff/orders";
+import { isStaffJob } from "@/lib/staff/jobs";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
 
@@ -40,19 +41,26 @@ export async function assignLineGroupAction(formData: FormData): Promise<void> {
 
 /** One button on /staff/orders/<n> (cart round 22/10): confirm payment · sent to warehouse · shipped + tracking ·
  *  completed · cancel (with a reason). The rules are in src/lib/staff/order-actions.ts. */
+/** Where an order action lands: the same order page, still carrying the list it was opened from (`from`, owner 26/10 B3:
+ *  Back must go back to that list) — then `done=` / `error=` follow. */
+function orderPage(orderNumber: string, formData: FormData): string {
+  const from = String(formData.get("from") ?? "");
+  return `/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}`;
+}
+
 export async function staffOrderAction(formData: FormData): Promise<void> {
   if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
   const orderNumber = String(formData.get("orderNumber") ?? "");
   const action = String(formData.get("action") ?? "");
-  const back = `/staff/orders/${encodeURIComponent(orderNumber)}`;
-  if (!(action in STAFF_ACTIONS)) redirect(`${back}?error=not-allowed`);
+  const back = orderPage(orderNumber, formData);
+  if (!(action in STAFF_ACTIONS)) redirect(`${back}error=not-allowed`);
   const result = applyStaffAction(orderNumber, action as StaffAction, {
     tracking: String(formData.get("tracking") ?? ""),
     carrier: String(formData.get("carrier") ?? ""),
     note: String(formData.get("note") ?? ""),
     message: String(formData.get("message") ?? ""),
   });
-  redirect(result.ok ? `${back}?done=${action}` : `${back}?error=${result.error}`);
+  redirect(result.ok ? `${back}done=${action}` : `${back}error=${result.error}`);
 }
 
 /** Out of stock after payment (cart UX batch E, owner 24/10): mark lines out (or ask again) · apply the customer's swap ·
@@ -61,7 +69,7 @@ export async function staffStockAction(formData: FormData): Promise<void> {
   if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
   const orderNumber = String(formData.get("orderNumber") ?? "");
   const step = String(formData.get("step") ?? "");
-  const back = `/staff/orders/${encodeURIComponent(orderNumber)}`;
+  const back = orderPage(orderNumber, formData);
   const result =
     step === "open"
       ? openStockIssue(
@@ -75,14 +83,14 @@ export async function staffStockAction(formData: FormData): Promise<void> {
         : step === "refunded"
           ? markRefunded(orderNumber, String(formData.get("ref") ?? ""))
           : ({ ok: false, error: "not-allowed" } as const);
-  redirect(result.ok ? `${back}?done=stock-${step}` : `${back}?error=stock-${result.error}`);
+  redirect(result.ok ? `${back}done=stock-${step}` : `${back}error=stock-${result.error}`);
 }
 
 /** "ข้อความถึงลูกค้า" on /staff/orders/<n> (owner 24/10): a message the customer reads on their order page. */
 export async function staffMessageAction(formData: FormData): Promise<void> {
   if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
   const orderNumber = String(formData.get("orderNumber") ?? "");
-  const back = `/staff/orders/${encodeURIComponent(orderNumber)}`;
+  const back = orderPage(orderNumber, formData);
   const result = addCustomerMessage(orderNumber, formData.get("message"));
-  redirect(result.ok ? `${back}?done=message#customer-messages` : `${back}?error=${result.error}`);
+  redirect(result.ok ? `${back}done=message#customer-messages` : `${back}error=${result.error}`);
 }

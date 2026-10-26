@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { listStaffOrders, type StaffOrderFilter } from "@/lib/staff/orders";
-import { formatBaht, formatDateTime, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { countByJob, listStaffOrders, type StaffOrderFilter, type StaffOrderRow } from "@/lib/staff/orders";
+import { isStaffJob, jobOf, STAFF_JOB_ORDER, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TODO_JOBS, TONE_CLASS } from "@/lib/staff/jobs";
+import { formatBaht, formatShortDateTime, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { StaffBar } from "@/app/staff/_components/StaffBar";
 
 /**
- * /staff/orders — the web orders, newest first (cart round 22/10, round batch 2). Same lock as /staff: 404 until the
- * staff password is set, the login page without a staff session. Not linked from the shop, not indexed.
+ * /staff/orders?f=<job> — the web orders of one job box (owner 26/10, queue B3; jobs = src/lib/staff/jobs.ts; designer
+ * direction 26/10). No `f` = every order waiting on the team, grouped by step; `f=all` = the newest 200. Waiting work is
+ * listed oldest first. Same lock as /staff: 404 until the staff password is set, the login page without a staff session.
+ * Not linked from the shop, not indexed. An order opened from here comes back to the same list (its link carries `from`).
  */
 
 export const dynamic = "force-dynamic";
@@ -20,80 +23,122 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };
 
-const TABS: { key: StaffOrderFilter; label: string }[] = [
-  { key: "todo", label: "ต้องทำ" },
-  { key: "unpaid", label: "ยังไม่จ่าย" },
-  { key: "all", label: "ทั้งหมด" },
-];
+const chip = "inline-flex h-9 items-center gap-1.5 rounded-full border px-3 text-sm";
+
+function OrderRow({ o, from, showStatus }: { o: StaffOrderRow; from: string; showStatus: boolean }) {
+  const run = formatRunNumber(o.runNumber);
+  return (
+    <li>
+      <Link
+        href={`/staff/orders/${encodeURIComponent(o.orderNumber)}${from ? `?from=${from}` : ""}`}
+        className="flex min-h-16 flex-col justify-center gap-1 px-4 py-3 hover:bg-surface-2"
+      >
+        <div className="flex items-baseline justify-between gap-3">
+          <span className="min-w-0 truncate">
+            <span className="font-semibold tabular-nums text-foreground">{run ?? o.orderNumber}</span>
+            {run && <span className="ml-2 text-xs text-foreground-dim">{o.orderNumber}</span>}
+          </span>
+          <span className="shrink-0 text-sm font-semibold tabular-nums text-foreground">{formatBaht(o.total)}</span>
+        </div>
+        <div className="flex items-baseline justify-between gap-3 text-sm text-foreground-muted">
+          <span className="min-w-0 truncate">
+            {o.recipientName} · {o.itemCount} ชิ้น · {o.province}
+          </span>
+          <span className="shrink-0 text-xs">{formatShortDateTime(o.createdAt)}</span>
+        </div>
+        {(showStatus || (jobOf(o.status) === "slip" && o.slipVerdict)) && (
+          <div className="flex flex-wrap items-center gap-2 text-xs">
+            {showStatus && (
+              <span className={`rounded-full border px-2 py-0.5 ${TONE_CLASS[statusTone(o.status)].pill}`}>{STAFF_STATUS_LABEL[o.status]}</span>
+            )}
+            {jobOf(o.status) === "slip" && o.slipVerdict && <VerdictBadge verdict={o.slipVerdict} />}
+          </div>
+        )}
+      </Link>
+    </li>
+  );
+}
 
 export default async function StaffOrdersPage({ searchParams }: { searchParams: Promise<{ f?: string }> }) {
   if (!staffAreaEnabled()) notFound();
   if (!(await isStaff())) redirect("/staff");
   const { f } = await searchParams;
-  const filter: StaffOrderFilter = f === "unpaid" || f === "all" ? f : "todo";
+  const filter: StaffOrderFilter = f === "all" ? "all" : isStaffJob(f) ? f : "todo";
   const orders = listStaffOrders(filter);
+  const counts = countByJob();
+  const todoCount = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
+  const title = filter === "all" ? "ออเดอร์ทั้งหมด" : filter === "todo" ? "ต้องทำทั้งหมด" : STAFF_JOBS[filter].label;
+  const chips: { key: StaffOrderFilter; label: string; n: number | null }[] = [
+    { key: "todo", label: "ต้องทำ", n: todoCount },
+    ...STAFF_JOB_ORDER.map((j) => ({ key: j as StaffOrderFilter, label: STAFF_JOBS[j].label, n: counts[j] })),
+    { key: "all", label: "ทั้งหมด", n: null },
+  ];
+  const from = filter === "todo" ? "" : filter;
+  // One job on screen = every row has the same status, so the pill would only add noise (designer 26/10).
+  const showStatus = filter === "all";
+  const list = "flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1";
 
   return (
-    <Container className="flex max-w-2xl flex-col gap-6 pb-28 pt-8 lg:pt-12">
-      <header className="flex flex-col gap-2">
-        <span className="label-mono text-xs text-ember">OKami24 · ทีมงาน</span>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">ออเดอร์เว็บ</h1>
-        <Link href="/staff" className="text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline">
-          ← หน้าตรวจสลิป
-        </Link>
-        {/* Owner 23/10: a copy of every order on the shop's own computer — opens in Excel. */}
-        <a
-          href="/staff/api/export"
-          download
-          className="mt-1 inline-flex w-fit items-center rounded-full border border-surface-border px-4 py-2 text-sm text-foreground-muted hover:border-foreground-dim hover:text-foreground"
-        >
-          ดาวน์โหลดออเดอร์ทั้งหมด (Excel)
-        </a>
-      </header>
+    <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
+      <StaffBar current="orders" back={{ href: "/staff", label: "หน้าแรก" }} todo={todoCount} />
+      <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
+        {title} <span className="text-foreground-dim">· {orders.length}</span>
+      </h1>
 
-      <nav className="flex gap-2" aria-label="กรองออเดอร์">
-        {TABS.map((t) => (
-          <Link
-            key={t.key}
-            href={t.key === "todo" ? "/staff/orders" : `/staff/orders?f=${t.key}`}
-            aria-current={filter === t.key ? "page" : undefined}
-            className={
-              filter === t.key
-                ? "rounded-full bg-ember px-4 py-2 text-sm font-semibold text-[#181008]"
-                : "rounded-full border border-surface-border px-4 py-2 text-sm text-foreground-muted hover:text-foreground"
-            }
-          >
-            {t.label}
-          </Link>
-        ))}
+      {/* Every job visible at once — two short rows on a phone, never a sideways scroll that hides half of them. */}
+      <nav aria-label="กรองออเดอร์">
+        <ul className="flex flex-wrap gap-2">
+          {chips.map((c) => {
+            const active = filter === c.key;
+            const waiting = c.key === "todo" || (TODO_JOBS as readonly string[]).includes(c.key) || c.key === "unpaid";
+            return (
+              <li key={c.key}>
+                <Link
+                  href={c.key === "todo" ? "/staff/orders" : `/staff/orders?f=${c.key}`}
+                  aria-current={active ? "page" : undefined}
+                  className={
+                    active
+                      ? `${chip} border-ember bg-ember font-semibold text-[#181008]`
+                      : `${chip} border-surface-border text-foreground-muted hover:text-foreground`
+                  }
+                >
+                  {c.label}
+                  {c.n !== null && (
+                    <span className={`tabular-nums ${active ? "font-bold" : waiting && c.n > 0 ? "font-bold text-unverified" : "text-foreground-dim"}`}>
+                      {c.n}
+                    </span>
+                  )}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
 
       {orders.length === 0 ? (
         <p className="rounded-xl border border-surface-border-soft bg-surface-1 p-5 text-sm text-foreground-muted">ไม่มีออเดอร์ในหมวดนี้</p>
+      ) : filter === "todo" ? (
+        // Everything waiting on the team, one group per step in working order.
+        TODO_JOBS.map((job, i) => {
+          const rows = orders.filter((o) => jobOf(o.status) === job);
+          if (rows.length === 0) return null;
+          return (
+            <section key={job} className="flex flex-col gap-2">
+              <h2 className="text-sm font-semibold text-foreground-muted">
+                ขั้น {i + 1} · {STAFF_JOBS[job].label} <span className="text-unverified">{rows.length}</span>
+              </h2>
+              <ul className={list}>
+                {rows.map((o) => (
+                  <OrderRow key={o.orderNumber} o={o} from={job} showStatus={false} />
+                ))}
+              </ul>
+            </section>
+          );
+        })
       ) : (
-        <ul className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
+        <ul className={list}>
           {orders.map((o) => (
-            <li key={o.orderNumber}>
-              <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex flex-col gap-1 p-4 hover:bg-surface-2">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="font-medium text-foreground">
-                    {o.runNumber !== null && <span className="mr-2 text-ember">{formatRunNumber(o.runNumber)}</span>}
-                    {o.orderNumber}
-                  </span>
-                  <span className="text-sm font-semibold text-foreground">{formatBaht(o.total)}</span>
-                </div>
-                <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-foreground-muted">
-                  <span>
-                    {o.recipientName} · {o.province} · {o.itemCount} ชิ้น
-                  </span>
-                  <span className="text-xs">{formatDateTime(o.createdAt)}</span>
-                </div>
-                <div className="flex flex-wrap items-center gap-2 text-xs">
-                  <span className="rounded-full border border-surface-border px-2 py-0.5 text-foreground">{orderStatusLabel(o.status, "th")}</span>
-                  {o.slipVerdict && <VerdictBadge verdict={o.slipVerdict} />}
-                </div>
-              </Link>
-            </li>
+            <OrderRow key={o.orderNumber} o={o} from={from} showStatus={showStatus} />
           ))}
         </ul>
       )}
