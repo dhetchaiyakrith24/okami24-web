@@ -30,7 +30,9 @@ const CHECKS = [
   ["hidden", "hidden character", (l) => HIDDEN.test(l)],
   ["hidden", "control character", (l) => /[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]/.test(l)], // C0 + DEL + C1
   ["hidden", "HTML comment", (l) => l.includes("<!" + "--")],
-  ["hidden", "long encoded blob", (l) => /[A-Za-z0-9+/=_-]{80,}/.test(l)],
+  // a long lowercase hyphen slug inside a URL is a readable page address, not a blob (3 false hits in seo-audit references,
+  // rule-audit 26/10) — mixed case, digits-and-letters soup or a run outside a URL still trips it
+  ["hidden", "long encoded blob", (l) => [...l.matchAll(/[A-Za-z0-9+/=_-]{80,}/g)].some((m) => !(/^[a-z0-9/_.-]+$/.test(m[0]) && /https?:\/\/\S*$/i.test(l.slice(0, m.index + 1))))],
   ["hidden", "load-time shell", (l) => LOAD_TIME.test(l)],
   ["reach", "URL", (l) => /https?:\/\//i.test(l)],
   ["reach", "send / upload / post", (l) => /\b(curl|wget|fetch\(|upload|exfiltrat|webhook|post (it|them|the)|send (it|them|the|to))\b/i.test(l)],
@@ -170,6 +172,9 @@ function selfTest() {
   check(m.some((f) => f.label === "encoded block over lines"), "short split base64 with list markers flagged");
   check(!m.some((f) => f.label === "frontmatter beyond name/description" && /a comment/.test(f.text)), "a frontmatter comment is not a false hit");
   check(scanText(thai).length === 0, "plain Thai text → 0 hits");
+  const slugUrl = "- [A post](https://example.com/blog/" + "how-google-handles-canonicalization-of-same-language-pages-".repeat(2) + ")";
+  check(!scanText(slugUrl).some((f) => f.label === "long encoded blob"), "a long lowercase slug inside a URL is not a blob");
+  check(scanText("https://example.com/x?d=" + b64).some((f) => f.label === "long encoded blob"), "base64 hidden in a URL query still flagged");
   console.log(ok ? "SELF-TEST PASS" : "SELF-TEST FAIL");
   process.exit(ok ? 0 : 1);
 }
