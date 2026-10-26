@@ -113,7 +113,8 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
   const amountOff = slip.amount !== null && slip.amount !== order.total;
   return (
     <>
-      {slip.verdict && !(compact && slip.verdict === "pass") && (
+      {/* The verdict stays on the step card in every case — staff confirm by the ✅ (admin manual step 2.1; checker 27/10). */}
+      {slip.verdict && (
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <VerdictBadge verdict={slip.verdict} />
         </div>
