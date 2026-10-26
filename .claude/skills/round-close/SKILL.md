@@ -12,6 +12,13 @@ The **procedure** for closing a round; the rules stay in `.claude/TEAM_RULES.md`
 Precondition for any server gate: the test server for the current build is up (HANDOFF §17 "test server"; never the
 owner's dev server on port 3000, never two Chrome jobs at once).
 
+## Step 0 — Everything the owner asked in the round is done or parked by the owner
+
+List every request the owner made for this round — the round file or next-chat brief, the owner's chat messages of the
+round, and HANDOFF §16 items that name the round or were asked during it (a brief can miss one: the house round 26/10
+nearly closed without the owner's three new tools, LESSONS พ50). Each one = merged (PR) or parked in the owner's own
+words. Anything else = the round does not close: do it — ask the owner only when it falls in 13.3. The list goes in the report part "ทำอะไร" as one line.
+
 ## Step 1 — Proof sized to what changed (13.5)
 
 0. `node scripts/self-merge-check.js --base <base>` ends in `PASS` (nothing a visitor gets changed — the allow-list of
