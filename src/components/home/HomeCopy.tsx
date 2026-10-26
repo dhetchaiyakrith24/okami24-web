@@ -8,6 +8,8 @@ import type { GuideHeadCopy } from "@/lib/guide-head-copy";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
 import { labelLang } from "@/lib/label-lang";
 import { thaiTypographyNode } from "@/lib/thai-typography";
+import { CategoryLabel } from "@/components/catalog/CategoryLabel";
+import { pilotName } from "@/i18n/product-names-en";
 
 /**
  * Round 30.3ข (owner, 2026-09-11) — the homepage sections are Server Components whose headings,
@@ -70,4 +72,17 @@ export function FlavorText({ id, field, en }: { id: string; field: "name" | "fir
   if (!overlay) return <>{en}</>;
   const text = field === "name" ? overlay.name : (overlay.characterNotes[0] ?? en);
   return <>{locale === "th" ? thaiTypographyNode(text) : text}</>;
+}
+
+/** The product index's box heading (HomeProductIndex): the "English / ไทย" label the category page's H1 uses on
+ *  Thai, the short English name on en/zh — as CatalogBrowser's category links do (N6 26/10: en/zh showed the Thai half). */
+export function HomeCategoryLabel({ labelTh, shortName }: { labelTh: string; shortName: string }) {
+  const { locale } = useLocale();
+  return locale === "th" ? <CategoryLabel label={labelTh} /> : <>{shortName}</>;
+}
+
+/** A product name in the index: the warehouse name on Thai, the English overlay on en/zh (product-names-en.ts). */
+export function HomeIndexName({ slug, name }: { slug: string; name: string }) {
+  const { locale } = useLocale();
+  return <>{pilotName(slug, name, locale)}</>;
 }

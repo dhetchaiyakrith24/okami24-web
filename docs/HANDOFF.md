@@ -23,7 +23,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   webhook events in that window are lost → group merges.
   Deploys: Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → change Render settings in the dashboard). Spend limit
   $10/month (owner 23/10). Env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the rebuild).
-  Open PRs: #643 (old, not touched).
+  Open PRs: none (#643 closed 26/10 — tag archive/docs-stock-signin-20261020).
 2 Main folder: every branch of the 24/10 chats merged (#823 handoff, #829 shipping note). Test trees free to reuse (real node_modules incl. jsqr): `_incoming/wt-golive` ·
   `_incoming/wt-cart` · `_incoming/wt-stock` (the hourly routine's — leave it clean). A FRESH worktree fails verify --full typecheck once
   (LayoutProps) → run twice. Junctioned node_modules break Turbopack builds. Gate `full` needs a verify stamp of the EXACT head → merge
@@ -55,10 +55,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        26/10 ✓. Setup = DEPLOY-RENDER §10. Owner has NOT yet said OK to the new login look (sent shots 26/10). Left (taste, reported):
        10.10 poster file → moon/brush polish + kabuto in the moon after Q6 · Lighthouse of /account/login not measured (1 font).
     N2 DONE + LIVE (#858): Caliburn + VOOPOO pages = international version only (§18 ruling) · รอพี่ตรวจ 58 removed.
-    N3 house-clean 25/10 list = A: Friday deletes per `_incoming/house-20261025/report.md` "รายการลบ" — remove รอพี่ตรวจ 70.
-    N4 /warranty ค่ะ = yes (10 spots drafted in the #846 notes / thai-copy table 26/10).
-    N5 Muro Freebase bottle photo: owner says research it yourself in his Chrome (รอพี่ตรวจ 71) · admin-guide item 56 = owner says done
-       → remove 56 · cancel the test orders only AFTER the Login round (owner).
+    N3 DONE 26/10 (house-clean 25/10 list A): moved to `C:\Users\dhetc\OKami24-archive\` (_incoming cart-2210 · cart-2210-testdb ·
+       cartux-e; worktrees line1-img-2310c · names-locale-2110 · prices-2210-c59a67 · seo-all-keys-2-c830d3 · seo-all-keys-a38889 ·
+       seo-line2-terea; scheduled-task folders friday-chat-move · okami24-chat-continue/-2/-3/-b) · `_incoming/keys-2310/wt` deleted
+       (research files kept) · branches deleted local + GitHub after `archive/<name>` tags: hero-ground · home-upgrade-deck/focus-2110 ·
+       docs-stock-signin-20261020 (#643 closed) · stock-sync-20261021-1502/-1540 · 20261022-1810 (+ q2-combined-local, docs-line-bot-2210
+       = fully in main). KEPT on purpose: img-ag4gal-1610 · img-b17-combo · img-se-1610 · p63-terea-publish (open rounds) · gsc-data · inbox ·
+       worktrees sad-nash / seo-line2 / seo-line2-c (open SEO round) + cart-2210-3bb482 (session list-missing not archived) · Artifacts.
+    N4 DONE in branch (26/10): /warranty th body sentences end ค่ะ / นะคะ (9 spots — a 10th fell alone onto the 1440 last line and was dropped; the old draft table was not found — re-drafted
+       per THAI_STYLE §2 หางเสียง: titles, labels, summary chips untouched) — ships in the N6 PR.
+    N5 DONE 26/10: Muro Freebase already has all 6 flavour bottles live since the image sweep 21/10 (studio re-shoots of the retailer
+       posters, scripts/process-images.map.json) — รอพี่ตรวจ 71 was stale → removed, 56 removed (owner: done) · test orders: Login round
+       is live → asked the owner whether to cancel now (needs /staff sign-in = owner or the owner's Chrome session).
     N6 Q8 cart upsell row + small fixes (home `/` en/zh show 20 Thai category labels via HomeProductIndex · /about "ไม่ใช่ | บอท" ·
        #807 note a) + checker security notes (phone rate limit trusts X-Forwarded-For · empty idempotencyKey not refused) — owner: go.
     Q6 logo round = TOMORROW 27/10 (owner).
