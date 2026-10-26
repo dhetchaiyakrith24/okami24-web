@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { labelLang } from "@/lib/label-lang";
 import { pilotName } from "@/i18n/product-names-en";
 import type { CartSuggestion } from "@/lib/commerce/cart-suggestions";
 
@@ -12,7 +11,7 @@ function formatTHB(value: number): string {
 }
 
 /**
- * The cart's suggestion row (owner queue Q8, designer spec 26/10) — the cards come picked from the server
+ * The cart's suggestion row (owner queue Q8, designer spec 26/10; no brand line — every catalog name already leads with it) — the cards come picked from the server
  * (`cartSuggestions`), so this file holds no catalog. Calm on purpose ("ยืนบนความเรียบหรู"): each card is one link to the
  * product page (options are chosen there — no add button), hover only lifts the border colour; no lift, zoom or glow
  * (the green glow belongs to "shipped"). Phones 2 × 2 under the checkout button; ≥640 one row of four.
@@ -33,13 +32,9 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
               className="flex h-full flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-colors hover:border-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
             >
               <div className="relative aspect-square bg-surface-2/40">
-                {item.image && <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width: 1024px) 190px, 45vw" className="object-contain p-3" />}
+                {item.image && <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 25vw, 50vw" className="object-contain p-3" />}
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3">
-                {/* an empty brand line keeps every name and price on the same baseline */}
-                <span className="label-mono min-h-[1.2em] text-[0.6rem] text-foreground-dim" lang={labelLang(item.brandName)}>
-                  {item.brandName ?? ""}
-                </span>
                 <span className="line-clamp-2 min-h-[2.5em] text-sm font-semibold leading-[1.25] text-foreground">
                   {pilotName(item.slug, item.name, locale)}
                 </span>
