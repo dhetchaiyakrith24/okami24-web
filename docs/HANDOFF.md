@@ -45,7 +45,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        4 cards / ONE customer-message box (owner) + unpicked pages read sold out when every option is out · #845 = header menu Esc/tap,
        phone grid bar two planned rows, option counter skips the cover, "แตะรูปเพื่อเลือก" prompt · #846 = Q7 ค่ะ/นะคะ + LINE pointer +
        facts (no OTP, slip on the order page, tracking number not only via LINE) th/en/zh.
-    Disposable-45 = SUP Zero 22K — owner declined 22/10 ("2 ไม่ลง"); marked so in `_incoming/stock-api/new-products.md`, not listed.
+    Disposable-45 = SUP Zero 22K — LISTED 26/10 as `sup-zero-22k` (owner brief 26/10 `_incoming/next-chat-d45.md` replaces the 22/10
+       "2 ไม่ลง"; side chat new-products): 15 Max flavours ฿329 + Apple Aloe Vera (maker line-up, not in Max); card = owner's Higgsfield
+       render, flavours no photo (suit-icon colours differ by flavour). Pod-180 "หัว dude 3 ml." stays owner-declined.
     Q5 taste left: relx-smash-go-12k 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
     OWNER ANSWERS 26/10 night — N1 + N2 DONE 26/10 (chat moved again at 834k; next chat starts at N3):
     N1 DONE + LIVE, open to customers: /account/login (direction A "ลอดม่านเข้าบ้าน" #856 — curtain + red moon CSS, Noto Serif
@@ -134,7 +136,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        contact, about, and (owner 26/10 "แก้ได้เลย" — group ก text, owner-approved) age-gate body (`bodyWhileOrderingOff`), footer ageNotice
        (`ageNoticeWhileOrderingOff`), classic home hero line (`descriptionWhileOrderingOff`). Privacy phone line without OTP.
        Left items were done in #860 (N4/N6).
-    Side chat list-missing (local_b0f66e49, done 26/10): every Max product has a live page except the 2 owner-declined codes; #848 fixed
+    Side chat list-missing (local_b0f66e49, done 26/10): every Max product has a live page except the owner-declined Pod-180 (Disposable-45 listed 26/10 evening); #848 fixed
        the RELX Creator Pod 20K Thai name in en/zh. The hourly stock routine lists any NEW code in `_incoming/stock-api/new-products.md`.
     Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
        SEO line 2 queue (3s) · GSC read 01/11 · speed (item 5) · #807 note d · rehearsal (รอพี่ตรวจ 59) · stock without a rebuild
