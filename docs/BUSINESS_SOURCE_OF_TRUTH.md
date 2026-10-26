@@ -350,6 +350,12 @@ new-order alert into the "OKM Webside order" LINE group (the owner asked for bot
 "OKM Slip" group still keep no picture. Kept on the server's data disk outside the public folder, not in the backups;
 the privacy page says so. Code: `src/lib/commerce/slip-images.ts`.
 
+**Refund slip on the order (owner 2026-10-26 evening, chat — queue B4):** after staff transfer a refund in the bank app
+(out of stock after payment) and record its reference, they attach the bank's transfer slip to the order; the customer's
+order page then shows **"คืนเงินแล้ว" with that slip** so the customer can check it. Same keeping rule as the payment
+slip: **90 days, then deleted automatically** (the reference stays); seen only by staff and by the order's own viewer
+(owner or the order link), never posted to LINE. Code: `src/lib/commerce/slip-images.ts`.
+
 **Order handling (owner 2026-10-26, chat — queue B2 (a)(b)):** (a) a **running order number #0001, #0002 …** is given
 when staff confirm the payment (an unpaid or cancelled-before-payment order never takes one); `OK-<date>-<code>` stays
 the customer's reference; shown on the staff list, the staff order page and the customer's order page. (b) Orders the
