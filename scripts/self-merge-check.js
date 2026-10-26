@@ -111,8 +111,8 @@ function unquoteGitPath(line) {
 }
 
 // The PR description must carry the checker's verdict (TEAM_RULES 13.4, owner 15/10): `Checker: PASS <sha>` for the PR
-// head it checked (≥ 7 hex chars), or `Checker: SKIP <reason>` for a PR that needs no checker (docs-only 13.7 · a
-// polish after PASS, 13.5 #2 (จ)). Returns why the line fails, or "" when it is fine. --pr mode only (needs `gh`).
+// head it checked (≥ 7 hex chars), or `Checker: SKIP <reason>` for a PR that needs no checker (docs-only · self-review · after-pass · series —
+// skipReasonProblem below). Returns why the line fails, or "" when it is fine. --pr mode only (needs `gh`).
 function checkerLineProblem(body, prHead) {
   const m = body.match(/^\s*Checker:\s*(PASS|SKIP)\b[ \t]*(.*)$/im);
   if (!m) return "no `Checker: PASS <sha>` / `Checker: SKIP <reason>` line in the PR description (TEAM_RULES 13.4)";
@@ -138,6 +138,29 @@ function selfReviewProblem(body, files, big, site) {
   if (big || site) return "`Checker: SKIP self-review` needs a SMALL PR (this one has big or site files) - send the checker (TEAM_RULES 13.7)";
   const hit = files.find((f) => SELF_REVIEW_NEVER.some((re) => re.test(f)));
   return hit ? `\`Checker: SKIP self-review\` cannot cover ${hit} (rules · gates · stock/orders/money/customers) - send the checker (TEAM_RULES 13.7)` : "";
+}
+
+// The other SKIP reasons (TEAM_RULES 13.4 lists them; checker note on #907: any free text used to pass). `bigWhys` = bigReason()
+// per file, "" when not big. docs-only = SMALL and every file a doc (13.7) · after-pass = no file of 13.7 big kind (1)
+// (hooks · gates · settings · .github · rules copy — 13.5 #2 (จ)) · series = "series n/N" (13.5 #1) · self-review = above.
+const DOCS_ONLY = /^(docs\/|\.claude\/(LESSONS\.md|LESSONS-images\.md|memory\/))/;
+const KIND1 = /^(a script a hook runs by itself|runs by itself or decides)/;
+function skipReasonProblem(body, files, big, site, bigWhys) {
+  const m = body.match(/^\s*Checker:\s*SKIP\s+(\S+)[ \t]*(.*)$/im);
+  if (!m) return "";
+  const reason = m[1].toLowerCase();
+  if (reason === "self-review") return selfReviewProblem(body, files, big, site);
+  if (reason === "docs-only") {
+    const off = files.find((f) => !DOCS_ONLY.test(f));
+    if (off) return `\`Checker: SKIP docs-only\` but ${off} is not a doc (docs/ · LESSONS · .claude/memory/) - send the checker (TEAM_RULES 13.7)`;
+    return big || site ? "`Checker: SKIP docs-only` needs a SMALL PR - send the checker (TEAM_RULES 13.7)" : "";
+  }
+  if (reason === "after-pass") {
+    const i = bigWhys.findIndex((w) => KIND1.test(w));
+    return i < 0 ? "" : `\`Checker: SKIP after-pass\` cannot cover ${files[i]} (13.7 big kind (1)) - send the checker again (TEAM_RULES 13.5 #2 (จ))`;
+  }
+  if (reason === "series") return /^\d+\/\d+\b/.test(m[2].trim()) ? "" : "`Checker: SKIP series` needs n/N (TEAM_RULES 13.5 #1)";
+  return `\`Checker: SKIP ${m[1]}\` is not a known reason - use docs-only · self-review · after-pass · series n/N, or send the checker (TEAM_RULES 13.4)`;
 }
 
 function changedFiles(argv) {
@@ -225,6 +248,7 @@ function main() {
   let blocked = 0; // --base / --files: files on the site · verdict mode: repo problems only
   let big = 0;
   let site = 0;
+  const bigWhys = []; // bigReason() per file, for the SKIP reasons
   if (!sizing) {
     for (const p of repoProblems()) {
       blocked++;
@@ -239,6 +263,7 @@ function main() {
       continue;
     }
     const bigWhy = bigReason(f, hooks, build);
+    bigWhys.push(bigWhy);
     const siteWhy = bigWhy ? "" : siteReason(f, build);
     if (bigWhy) big++;
     else if (siteWhy) site++;
@@ -269,7 +294,7 @@ function main() {
         blocked++;
         console.log(`BLOCKED  (repo) local HEAD ${head.slice(0, 7)} is not the PR head ${prHead.slice(0, 7)} - check out the PR branch first`);
       }
-      const why = checkerLineProblem(view.body || "", prHead) || selfReviewProblem(view.body || "", files, big, site);
+      const why = checkerLineProblem(view.body || "", prHead) || skipReasonProblem(view.body || "", files, big, site, bigWhys);
       if (why) {
         blocked++;
         console.log(`BLOCKED  (repo) ${why}`);
@@ -293,4 +318,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { selfReviewProblem }; // planted examples: pre-checker-gate --self-test
+module.exports = { selfReviewProblem, skipReasonProblem }; // planted examples: pre-checker-gate --self-test

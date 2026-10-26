@@ -317,6 +317,14 @@ function selfTest() {
     ok(sr(body, ["scripts/pre-checker-gate.js"], 0, 0) !== "" && sr(body, ["scripts/stock-sync.js"], 0, 0) !== "" && sr(body, [".claude/skills/x/SKILL.md"], 0, 0) !== "",
       "S1 SKIP self-review on a gate / stock script / skill → BLOCKED");
     ok(sr(body, ["scripts/a.js"], 1, 0) !== "" && sr(body, ["src/app/page.tsx"], 0, 1) !== "", "S1 SKIP self-review on a BIG or SITE PR → BLOCKED");
+    const { skipReasonProblem: sk } = require("./self-merge-check");
+    const skip = (r) => `x\nChecker: SKIP ${r}\n`;
+    ok(sk(skip("docs-only (13.7)"), ["docs/a.md", ".claude/LESSONS.md"], 0, 0, ["", ""]) === "" && sk(skip("series 2/5 (13.5 #1)"), ["src/data/x.ts"], 1, 0, ["x"]) === "",
+      "S2 SKIP docs-only on docs · SKIP series n/N → allowed");
+    ok(sk(skip("docs-only (13.7)"), ["scripts/a.js"], 0, 0, [""]) !== "" && sk(skip("backend review"), ["docs/a.md"], 0, 0, [""]) !== "" && sk(skip("series"), ["docs/a.md"], 0, 0, [""]) !== "",
+      "S2 SKIP docs-only on a script · unknown reason · series without n/N → BLOCKED");
+    ok(sk(skip("after-pass (13.5 #2 (จ))"), ["src/x.ts"], 0, 1, [""]) === "" && sk(skip("after-pass"), [".github/w.yml"], 1, 0, ["runs by itself or decides merges/deploys"]) !== "",
+      "S2 SKIP after-pass on a site file → allowed · on a gate/hook file → BLOCKED");
   }
   if (process.platform === "win32") {
     ok(guard(sh('node scripts/scan.js --pages "/about /faq"')) === "deny", "L3 Git Bash page path without MSYS_NO_PATHCONV=1 → deny");
