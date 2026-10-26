@@ -11,7 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = c39590aa (#854 member sign-in LINE + Google, Q4) · #851 age gate/footer/home follow the cart switch ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 91f16bbf (#858 N2 pods international) · #857 header "เข้าสู่ระบบ" pill ·
+  #856 login page direction A · #854 member sign-in LINE + Google · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
   Save, rebuild, and deploy (Friday in the owner's Chrome); /cart 200 + "เพิ่มลงตะกร้า" on product pages, / /products /staff /orders 200 [ตรวจแล้ว].
@@ -46,16 +47,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        facts (no OTP, slip on the order page, tracking number not only via LINE) th/en/zh.
     Disposable-45 = SUP Zero 22K — owner declined 22/10 ("2 ไม่ลง"); marked so in `_incoming/stock-api/new-products.md`, not listed.
     Q5 taste left: relx-smash-go-12k 17 of 27 tiles share photos (data picks by device band colour) · "ใกล้หมด" NOT built (no quantities).
-    OWNER ANSWERS 26/10 night (do them in this order — the chat moved at 784k before starting any):
-    N1 Q4 LIVE 26/10 (#854, deploy success, checker PASS 4eb84e2a): /account/login + /account, LINE channel 2012198931 (provider
-       OKM24) + Google client "OKami24 website sign-in" (project okami24-gsc; support + contact email okamisalt; test users okamisalt +
-       the owner), Render env 4 values set by the owner (DEPLOY-RENDER §10). STILL IN TEST MODE: LINE channel "Developing" + Google
-       Audience "Testing" → only the owner signs in. NEXT: owner tests both on the live site → Friday publishes both (LINE Published ·
-       Google Publish app) → delete the unused Google client secret ending BBDQ (keep U8sj). Owner 26/10 also asked for a stronger
-       login visual + motion + a "หรู พรีเมียม เหมือนได้เข้าบ้าน" welcome → designer + thai-copy proposals running; tier-B follow-up PR.
-       Header icon hidden 1024–1399 (nav wrap) — footer link covers it; owner may want it in the bar (taste, reported).
-    N2 pods = INTERNATIONAL version (owner "แบบสากลครับ"): Caliburn + VOOPOO pod/tank pages state one size (3 mL / 5 mL tank) and drop
-       "(2 mL in the TPD version)" — answers รอพี่ตรวจ 58 (remove it there) · record the ruling in §18.
+    OWNER ANSWERS 26/10 night — N1 + N2 DONE 26/10 (chat moved again at 834k; next chat starts at N3):
+    N1 DONE + LIVE, open to customers: /account/login (direction A "ลอดม่านเข้าบ้าน" #856 — curtain + red moon CSS, Noto Serif
+       Thai heading "ยินดีต้อนรับสู่บ้าน / OKami24") + /account (#854) + header gold pill "เข้าสู่ระบบ" ↔ "บัญชีสมาชิก" on every page
+       (#857, /api/account/status yes/no). LINE channel 2012198931 PUBLISHED · Google client "OKami24 website sign-in" (project
+       okami24-gsc) IN PRODUCTION, support + contact email okamisalt, old secret BBDQ deleted (U8sj in use) · owner tested both
+       26/10 ✓. Setup = DEPLOY-RENDER §10. Owner has NOT yet said OK to the new login look (sent shots 26/10). Left (taste, reported):
+       10.10 poster file → moon/brush polish + kabuto in the moon after Q6 · Lighthouse of /account/login not measured (1 font).
+    N2 DONE + LIVE (#858): Caliburn + VOOPOO pages = international version only (§18 ruling) · รอพี่ตรวจ 58 removed.
     N3 house-clean 25/10 list = A: Friday deletes per `_incoming/house-20261025/report.md` "รายการลบ" — remove รอพี่ตรวจ 70.
     N4 /warranty ค่ะ = yes (10 spots drafted in the #846 notes / thai-copy table 26/10).
     N5 Muro Freebase bottle photo: owner says research it yourself in his Chrome (รอพี่ตรวจ 71) · admin-guide item 56 = owner says done
