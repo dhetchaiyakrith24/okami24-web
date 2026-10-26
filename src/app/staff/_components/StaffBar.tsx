@@ -12,12 +12,7 @@ const TABS: { key: StaffSection; href: string; label: string }[] = [
    button climbs above it (phones: hidden — staff do not need the shop's LINE button here). Same mechanism as the product
    page's buy bar in globals.css (body:has(.mobile-buy-bar)), kept here so only staff pages carry it. */
 const TABBAR_CSS = `@media (max-width: 63.98rem){body:has(.staff-tabbar){padding-bottom:calc(4.5rem + env(safe-area-inset-bottom,0px));--okami-fab-lift:4.25rem}}
-body:has(.staff-tabbar)>header,body:has(.staff-tabbar) main~*{display:none}`;
-/* Staff declutter (owner interview 26/10: "รก มึน ดูแล้วหัวข้อเยอะ" · "น้อยแต่ชัด หาสิ่งที่ต้องกดเจอเลย"): every staff page
-   carried the whole shop around it — the shop header (language, search, sign-in, cart, menu), the trust strip, the shop
-   footer, the LINE and cart bubbles. The second rule hides all of it, only where this bar is on the page (the root layout
-   renders the shop header as body's direct child and everything after <main> is shop chrome); the staff top line below
-   stands in for the header. The login screen has no bar, so it keeps the shop frame. */
+@media (max-width: 39.98rem){body:has(.staff-tabbar) .okami-line-fab{display:none}}`;
 
 /**
  * The staff menu on every staff page (owner 26/10, queue B3: "ย้อนกลับ/ไปหน้าอื่นยาก · ใช้บนมือถือ"; designer direction
@@ -31,14 +26,6 @@ export function StaffBar({ current, back, todo = 0 }: { current: StaffSection; b
   return (
     <>
       <style>{TABBAR_CSS}</style>
-      <div className="flex min-h-11 items-center justify-between gap-3">
-        <Link href="/staff" className="label-mono text-xs text-ember">
-          OKami24 · ทีมงาน
-        </Link>
-        <Link href="/" className="inline-flex min-h-11 items-center text-xs text-foreground-muted hover:text-foreground">
-          ไปหน้าร้าน <span aria-hidden className="ml-1">↗</span>
-        </Link>
-      </div>
       <nav
         aria-label="เมนูทีมงาน"
         className="staff-tabbar fixed inset-x-0 bottom-0 z-40 border-t border-surface-border-soft bg-surface-0/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:static lg:z-auto lg:border-t-0 lg:border-b lg:bg-transparent lg:pb-0 lg:backdrop-blur-none"
