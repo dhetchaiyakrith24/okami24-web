@@ -77,7 +77,7 @@ export function AccountLoginView({
               {t.loginLine2}
             </p>
 
-            {showError && <p className="mt-6 text-sm text-ember">{t.loginError}</p>}
+            {showError && <p className="mt-6 text-sm text-danger">{t.loginError}</p>}
 
             {providers.length === 0 ? (
               <p className="mt-9 text-sm leading-relaxed text-foreground-muted">{t.loginUnavailable}</p>

@@ -62,7 +62,7 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
                       <span className="font-medium text-foreground">{line.displayName}</span>
                       {line.variantLabel && <span className="text-sm text-foreground-muted">{line.variantLabel}</span>}
                       {line.problem ? (
-                        <span className="text-sm text-ember">{dict.cart.unavailableMessage}</span>
+                        <span className="text-sm text-danger">{dict.cart.unavailableMessage}</span>
                       ) : (
                         <span className="text-sm text-foreground-muted">
                           {formatTHB(line.unitPrice)} × {line.quantity} = {formatTHB(line.lineTotal)}
@@ -118,7 +118,7 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
               </div>
 
               {cart.hasProblems ? (
-                <p className="pt-2 text-xs text-ember">{dict.cart.fixIssuesNote}</p>
+                <p className="pt-2 text-xs text-danger">{dict.cart.fixIssuesNote}</p>
               ) : (
                 <Button href="/checkout" className="mt-3 w-full justify-center">
                   {dict.cart.checkoutCta}

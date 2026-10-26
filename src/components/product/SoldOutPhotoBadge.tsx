@@ -13,13 +13,13 @@ export function SoldOutPhotoBadge({ label, className }: { label: string; classNa
   return (
     <span
       className={cn(
-        "pointer-events-none absolute left-2 top-2 z-10 inline-flex h-9 items-center gap-2 rounded-full border border-ember/40 bg-surface-0/70 px-3.5 backdrop-blur max-lg:left-1 max-lg:top-1 max-lg:h-6 max-lg:gap-1.5 max-lg:px-2.5",
+        "pointer-events-none absolute left-2 top-2 z-10 inline-flex h-9 items-center gap-2 rounded-full border border-danger/40 bg-surface-0/70 px-3.5 backdrop-blur max-lg:left-1 max-lg:top-1 max-lg:h-6 max-lg:gap-1.5 max-lg:px-2.5",
         className
       )}
       aria-hidden
     >
-      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ember max-lg:h-1 max-lg:w-1" />
-      <span className="label-mono text-xs text-ember max-lg:text-[0.7rem]">{label}</span>
+      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-danger max-lg:h-1 max-lg:w-1" />
+      <span className="label-mono text-xs text-danger max-lg:text-[0.7rem]">{label}</span>
     </span>
   );
 }

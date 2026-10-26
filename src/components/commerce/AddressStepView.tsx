@@ -124,7 +124,7 @@ export function AddressStepView({
             />
           </div>
           {error && (
-            <p role="alert" className="text-sm text-ember">
+            <p role="alert" className="text-sm text-danger">
               {error}
             </p>
           )}

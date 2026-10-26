@@ -77,6 +77,7 @@ import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
 import { lineOrderCodes } from "@/lib/line-order-codes";
+import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
@@ -276,6 +277,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
+          <HashLinksKeepHistory />
           <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
           <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} />
         </>
@@ -341,6 +343,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
+      <HashLinksKeepHistory />
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} />
       {editorial ? (

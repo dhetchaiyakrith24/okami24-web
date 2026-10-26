@@ -39,7 +39,7 @@ export function ClaimsPolicyContent() {
                   <p key={it}>{it}</p>
                 ))}
               </InfoCard>
-              <InfoCard title={c.symptoms.declineTitle} tone="warn">
+              <InfoCard title={c.symptoms.declineTitle} tone="danger">
                 {c.symptoms.declineItems.map((it) => (
                   <p key={it}>{it}</p>
                 ))}

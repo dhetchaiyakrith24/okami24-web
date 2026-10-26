@@ -54,10 +54,11 @@ function passwordMatches(given: string, expected: string): boolean {
 
 async function clientHash(): Promise<string> {
   const h = await headers();
-  // Cloudflare sits in front of the site and names the visitor in CF-Connecting-IP. The fallbacks only
-  // matter off Cloudflare (local runs); a spoofed header there is what the shop-wide cap is for.
+  // Cloudflare sits in front of the site and names the visitor in CF-Connecting-IP. Without it, the RIGHTMOST
+  // X-Forwarded-For entry (a proxy appended it) — never the leftmost, which the caller writes and could change per try to
+  // dodge the per-visitor lock; same rule as src/lib/commerce/phone-rate-limit.ts (owner 26/10 "แก้เลย").
   const ip =
-    h.get("cf-connecting-ip") ?? h.get("x-forwarded-for")?.split(",")[0]?.trim() ?? h.get("x-real-ip") ?? "unknown";
+    h.get("cf-connecting-ip") ?? h.get("x-forwarded-for")?.split(",").at(-1)?.trim() ?? h.get("x-real-ip") ?? "unknown";
   return sha256(`okami24-staff-client:${ip}`);
 }
 

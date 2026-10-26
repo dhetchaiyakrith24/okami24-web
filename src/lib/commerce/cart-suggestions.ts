@@ -5,6 +5,7 @@ import { getCompatibleConsumables } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { inStockEntryKeys } from "@/lib/in-stock";
+import { resolveProductRef } from "./catalog-resolver";
 
 /**
  * The cart page's "สินค้าที่คุณอาจสนใจ" row (owner queue Q8 "A+B ครึ่ง ๆ", designer spec 26/10): up to SLOTS cards, half
@@ -33,12 +34,26 @@ const NEVER = new Set(["muro-space-15k"]);
 /** Parts that fit only some devices (src/data/categories.ts) — offered only where the relationship table verifies the fit. */
 const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
 
+/** One colour / flavour / variant of a suggestion, for the card's quick add (owner 26/10: "กดตะกร้าปุ๊บก็มีสีให้เลือกเลย"). */
+export interface SuggestionOption {
+  id: string;
+  name: string;
+  image?: { src: string; alt: string };
+  swatchHex?: string;
+  /** false = the add would be refused (resolveProductRef — the same rule addToCart applies). */
+  sellable: boolean;
+}
+
 export interface CartSuggestion {
   slug: string;
   href: string;
   name: string;
   image: { src: string; alt: string } | null;
   price: number;
+  /** Which word heads the picker: a legacy colour or flavour list, or a ProductMaster variant list (no axis word). */
+  axis: "color" | "flavor" | null;
+  /** [] = no options: one tap adds the product itself. */
+  options: SuggestionOption[];
 }
 
 function sellable(slug: string): boolean {
@@ -57,8 +72,26 @@ function byLead(a: CatalogItem, b: CatalogItem): number {
   return a.name.localeCompare(b.name);
 }
 
+function optionsOf(item: CatalogItem): Pick<CartSuggestion, "axis" | "options"> {
+  const can = (variantId: string) => resolveProductRef({ origin: item.origin, slug: item.slug, variantId }).ok;
+  const legacy = getProduct(item.slug);
+  if (legacy) {
+    const colors = legacy.colorVariants ?? [];
+    const list = [...colors, ...(legacy.flavorVariants ?? [])];
+    return {
+      axis: list.length === 0 ? null : colors.length > 0 ? "color" : "flavor",
+      options: list.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, sellable: can(v.id) })),
+    };
+  }
+  const published = getPublishedProductBySlug(item.slug);
+  return {
+    axis: null,
+    options: (published?.variants ?? []).map((v) => ({ id: v.id, name: v.label, image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined, sellable: can(v.id) })),
+  };
+}
+
 function toCard(item: CatalogItem): CartSuggestion {
-  return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number };
+  return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item) };
 }
 
 export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {

@@ -133,7 +133,7 @@ export function ReviewStepView({
             </div>
           </details>
           {state.errorKey && (
-            <p role="alert" className="text-sm text-ember">
+            <p role="alert" className="text-sm text-danger">
               {dict.checkout[state.errorKey]}
             </p>
           )}

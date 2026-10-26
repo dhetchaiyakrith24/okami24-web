@@ -463,6 +463,10 @@ export const th: Dictionary = {
     checkoutCta: "สั่งซื้อสินค้า",
     fixIssuesNote: "รบกวนลบสินค้าที่ไม่มีขายแล้วด้านบนออกก่อน แล้วสั่งซื้อต่อได้เลยค่ะ",
     suggestionsTitle: "สินค้าที่คุณอาจสนใจ",
+    suggestionAddLabel: "เพิ่ม {name} ลงตะกร้า",
+    suggestionAdded: "เพิ่ม {name} ลงตะกร้าแล้วค่ะ",
+    suggestionAddFailed: "ตัวเลือกนี้เพิ่งหมด เลือกตัวอื่นได้เลยค่ะ",
+    suggestionViewProduct: "ดูรายละเอียดสินค้า",
   },
   productActions: {
     addToCartCta: "เพิ่มลงตะกร้า",

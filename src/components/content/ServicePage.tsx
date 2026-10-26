@@ -133,11 +133,12 @@ export function NumberedSteps({ steps, start = 1, headingLevel = 3, split = fals
 
 /** Plain card, same look as the brand cards on /about.
  *  `tone` (designer 2026-09-06) tints only the border and the title, using colours the site
- *  already uses — `verified` is the green of the free-shipping row, `warn` the ember of the
- *  no-refund warning. Default keeps every existing InfoCard exactly as it was. */
-export function InfoCard({ title, children, tone = "plain" }: { title: ReactNode; children: ReactNode; tone?: "plain" | "verified" | "warn" }) {
-  const border = tone === "verified" ? "border-verified/25" : tone === "warn" ? "border-ember/25" : "border-surface-border-soft";
-  const titleColor = tone === "verified" ? "text-verified" : tone === "warn" ? "text-ember" : "text-foreground";
+ *  already uses — `verified` is the green of the free-shipping row, `danger` the red every "no / refused / not
+ *  allowed" message uses (owner 26/10: red, never the orange, for anything that says no). Default keeps every
+ *  existing InfoCard exactly as it was. */
+export function InfoCard({ title, children, tone = "plain" }: { title: ReactNode; children: ReactNode; tone?: "plain" | "verified" | "danger" }) {
+  const border = tone === "verified" ? "border-verified/25" : tone === "danger" ? "border-danger/40" : "border-surface-border-soft";
+  const titleColor = tone === "verified" ? "text-verified" : tone === "danger" ? "text-danger" : "text-foreground";
   return (
     <div className={`rounded-xl border ${border} bg-surface-1 p-4`}>
       <p className={`font-semibold text-balance ${titleColor}`}>{title}</p>
