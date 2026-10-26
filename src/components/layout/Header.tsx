@@ -77,13 +77,25 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6 lg:gap-4 min-[1400px]:gap-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
+          {/* Q6 logo (owner 24/10): the full lockup is ~2.8x wider than the old sticker logo. Where the row is already full
+              the helmet mark alone stands in, same footprint as the old logo: phones under sm (at 390 the lockup pushed the
+              menu button off screen) and lg to 1439 px (at 1280 it pushed four nav labels onto two lines). Tablets and
+              1440+ show the lockup. 90rem, not 1440px: an arbitrary px breakpoint sorts before lg in the CSS and lost. */}
           <Image
-            src="/brand/okami-logo-red.png"
+            src="/brand/okami-logo.png"
             alt="OKami24"
-            width={568}
-            height={480}
+            width={1416}
+            height={429}
             priority
-            className="h-10 w-auto sm:h-12"
+            className="hidden h-12 w-auto sm:block lg:hidden min-[90rem]:block min-[90rem]:h-10"
+          />
+          <Image
+            src="/brand/okami-mark.png"
+            alt="OKami24"
+            width={460}
+            height={429}
+            priority
+            className="h-10 w-auto sm:hidden lg:block lg:h-12 min-[90rem]:hidden"
           />
         </Link>
 
