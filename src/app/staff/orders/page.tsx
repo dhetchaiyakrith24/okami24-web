@@ -34,25 +34,26 @@ function OrderRow({ o, from, showStatus }: { o: StaffOrderRow; from: string; sho
         className="flex min-h-16 flex-col justify-center gap-1 px-4 py-3 hover:bg-surface-2"
       >
         <div className="flex items-baseline justify-between gap-3">
-          <span className="min-w-0 truncate text-foreground">
-            <span className="font-semibold tabular-nums">{run ?? o.orderNumber}</span>
-            <span className="text-foreground-muted"> · {o.recipientName}</span>
+          <span className="min-w-0 truncate">
+            <span className="font-semibold tabular-nums text-foreground">{run ?? o.orderNumber}</span>
+            {run && <span className="ml-2 text-xs text-foreground-dim">{o.orderNumber}</span>}
           </span>
           <span className="shrink-0 text-sm font-semibold tabular-nums text-foreground">{formatBaht(o.total)}</span>
         </div>
-        <div className="flex items-center justify-between gap-3 text-xs text-foreground-muted">
-          <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
+        <div className="flex items-baseline justify-between gap-3 text-sm text-foreground-muted">
+          <span className="min-w-0 truncate">
+            {o.recipientName} · {o.itemCount} ชิ้น · {o.province}
+          </span>
+          <span className="shrink-0 text-xs">{formatDateTime(o.createdAt)}</span>
+        </div>
+        {(showStatus || (jobOf(o.status) === "slip" && o.slipVerdict)) && (
+          <div className="flex flex-wrap items-center gap-2 text-xs">
             {showStatus && (
               <span className={`rounded-full border px-2 py-0.5 ${TONE_CLASS[statusTone(o.status)].pill}`}>{STAFF_STATUS_LABEL[o.status]}</span>
             )}
             {jobOf(o.status) === "slip" && o.slipVerdict && <VerdictBadge verdict={o.slipVerdict} />}
-            <span>
-              {o.itemCount} ชิ้น · {o.province}
-            </span>
-            {run && <span className="text-foreground-dim">{o.orderNumber}</span>}
-          </span>
-          <span className="shrink-0">{formatDateTime(o.createdAt)}</span>
-        </div>
+          </div>
+        )}
       </Link>
     </li>
   );

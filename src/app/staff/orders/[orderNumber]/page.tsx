@@ -90,6 +90,9 @@ function OrderFields({ order, from }: { order: StaffOrderDetail; from: string })
   );
 }
 
+/** Shorter words where the step card already says what to fill in (the long list label wrapped onto two lines at 390). */
+const BUTTON_LABEL: Partial<Record<StaffAction, string>> = { ship: "บันทึกว่าส่งของแล้ว" };
+
 function ActionForm({ order, from, act, children }: { order: StaffOrderDetail; from: string; act: StaffAction; children?: React.ReactNode }) {
   return (
     <form action={staffOrderAction} className="flex flex-col gap-3">
@@ -97,7 +100,7 @@ function ActionForm({ order, from, act, children }: { order: StaffOrderDetail; f
       <input type="hidden" name="action" value={act} />
       {children}
       <button type="submit" className={primary}>
-        {STAFF_ACTIONS[act].label}
+        {BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}
       </button>
     </form>
   );
@@ -410,7 +413,7 @@ export default async function StaffOrderPage({
           </div>
         </details>
 
-        {!stockOpen && <StockIssueSection order={order} />}
+        {!stockOpen && <StockIssueSection order={order} asRow />}
 
         <details className={foldRow}>
           <summary className={foldSummary}>

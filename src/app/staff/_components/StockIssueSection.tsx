@@ -59,14 +59,26 @@ function RefundForm({ order }: { order: StaffOrderDetail }) {
   );
 }
 
-export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
+/** `asRow`: drawn as one row of the staff order page's folded card (staff redesign 26/10, queue B3) instead of a card of
+ *  its own — used while nothing is open, or once the problem is settled. An open problem is always its own card, on top. */
+export function StockIssueSection({ order, asRow = false }: { order: StaffOrderDetail; asRow?: boolean }) {
   const issue = order.stockIssue;
   const open = canOpenStockIssue(order.status);
   if (!issue && !open) return null;
 
   const box = "flex flex-col gap-3 rounded-xl border bg-surface-1 p-5 text-sm";
   if (!issue) {
-    return (
+    return asRow ? (
+      <details className="group">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 text-sm text-foreground hover:bg-surface-2 sm:px-5 [&::-webkit-details-marker]:hidden">
+          <span>สินค้าหมดหลังลูกค้าโอน</span>
+          <span aria-hidden className="text-foreground-dim transition-transform group-open:rotate-90">›</span>
+        </summary>
+        <div className="px-4 pb-4 text-sm sm:px-5">
+          <OpenForm order={order} again={false} />
+        </div>
+      </details>
+    ) : (
       <details className={`${box} border-surface-border-soft`}>
         <summary className="cursor-pointer text-sm font-semibold text-foreground-muted hover:text-foreground">สินค้าหมดหลังลูกค้าโอน</summary>
         <OpenForm order={order} again={false} />
@@ -76,7 +88,11 @@ export function StockIssueSection({ order }: { order: StaffOrderDetail }) {
 
   const stage = stockIssueStage(issue);
   return (
-    <section className={`${box} ${stage === "resolved" ? "border-surface-border-soft" : "border-unverified/50"}`}>
+    <section
+      className={
+        asRow ? "flex flex-col gap-3 px-4 py-4 text-sm sm:px-5" : `${box} ${stage === "resolved" ? "border-surface-border-soft" : "border-unverified/50"}`
+      }
+    >
       <h2 className="text-base font-semibold text-foreground">สินค้าหมดหลังลูกค้าโอน</h2>
       <p className="text-foreground-muted">แจ้งเมื่อ {formatDateTime(issue.openedAt)}{issue.staffNote ? ` — ${issue.staffNote}` : ""}</p>
       {issue.resolution === "swapped" && issue.swap ? (

@@ -60,7 +60,7 @@ export default async function StaffPage() {
 
       {/* Designer 26/10 (layout A): the three to-do jobs as full-width rows in working order — the eye stops on the first
           one with work. Done / cancelled / unpaid sit below, small and quiet: "done" only grows, it is not work. */}
-      <ol className="flex flex-col gap-3 lg:grid lg:grid-cols-3">
+      <ol className="flex flex-col gap-3">
         {TODO_JOBS.map((job, i) => {
           const n = counts[job];
           return (
