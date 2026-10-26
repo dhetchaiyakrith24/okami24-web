@@ -24,13 +24,16 @@ import { isSlipFileName, isSlipImageToken, previewFileName, SLIP_IMAGE_DAYS, sli
 
 const FULL_EDGE = 2000;
 const PREVIEW_EDGE = 480;
+/** A slip is a phone screenshot (a few megapixels). The limit keeps a hostile, highly-compressed huge PNG (≤ 4 MB on the
+ *  wire) from decoding into gigabytes on the 512 MB server — sharp's default is 268 MP (checker #873). */
+const MAX_INPUT_PIXELS = 40_000_000;
 
 function slipDir(): string {
   return path.join(privateDataDir(), "slips");
 }
 
 async function toJpeg(bytes: Buffer, edge: number, quality: number): Promise<Buffer> {
-  return sharp(bytes, { failOn: "none" })
+  return sharp(bytes, { failOn: "none", limitInputPixels: MAX_INPUT_PIXELS })
     .rotate()
     .resize({ width: edge, height: edge, fit: "inside", withoutEnlargement: true })
     .jpeg({ quality, mozjpeg: true })
@@ -118,6 +121,32 @@ export function purgeOldSlipImages(now: Date = new Date()): number {
     }
     clear.run(now.toISOString(), r.id);
     done++;
+  }
+  return done + purgeOrphanFiles(now);
+}
+
+/** A file no row points at (the server stopped between writing it and saving its name, or the save lost a race) would
+ *  never be reached by the row sweep above — and the privacy page promises 90 days. So the folder itself is swept too:
+ *  any slip file older than SLIP_IMAGE_DAYS by its modified time goes (checker #873). Never throws. */
+function purgeOrphanFiles(now: Date): number {
+  const cutoff = Date.parse(slipImageCutoff(now));
+  let names: string[];
+  try {
+    names = fs.readdirSync(slipDir());
+  } catch {
+    return 0;
+  }
+  let done = 0;
+  for (const name of names) {
+    if (!/^\d{1,12}-[0-9a-f]{16}(-p)?\.jpg$/.test(name)) continue;
+    const file = path.join(slipDir(), name);
+    try {
+      if (fs.statSync(file).mtimeMs >= cutoff) continue;
+      fs.unlinkSync(file);
+      if (!name.endsWith("-p.jpg")) done++;
+    } catch (err) {
+      console.error(`[slip-image] ${name}: could not delete — ${err instanceof Error ? err.message : String(err)}`);
+    }
   }
   return done;
 }
