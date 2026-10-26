@@ -422,6 +422,7 @@ export const zh: Dictionary = {
     totalLabel: "总计",
     checkoutCta: "去结算",
     fixIssuesNote: "请先移除上方无法购买的商品，再继续下单。",
+    suggestionsTitle: "你可能也喜欢",
   },
   productActions: {
     addToCartCta: "加入购物车",

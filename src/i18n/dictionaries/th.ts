@@ -462,6 +462,7 @@ export const th: Dictionary = {
     totalLabel: "ยอดรวมทั้งหมด",
     checkoutCta: "สั่งซื้อสินค้า",
     fixIssuesNote: "รบกวนลบสินค้าที่ไม่มีขายแล้วด้านบนออกก่อน แล้วสั่งซื้อต่อได้เลยค่ะ",
+    suggestionsTitle: "สินค้าที่คุณอาจสนใจ",
   },
   productActions: {
     addToCartCta: "เพิ่มลงตะกร้า",

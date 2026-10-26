@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = 91f16bbf (#858 N2 pods international) · #857 header "เข้าสู่ระบบ" pill ·
+1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = ebe86e20 (#860 N3–N6) · #858 N2 pods international · #857 header "เข้าสู่ระบบ" pill ·
   #856 login page direction A · #854 member sign-in LINE + Google · #851 age gate/footer/home follow the cart switch ·
   #849 Q7b · #846 Q7 · #845 small fixes · #842 staff page 4 cards + Q5c · #848 (side chat) RELX Creator en name. Older = `git log`.
   **CART IS ON on the live site since 24/10 ~23:35** (owner 24/10 23:00: "จบตรงนี้เปิดระบบตะกร้าเลยครับ") — Render env OKAMI24_ORDERING=on +
@@ -62,13 +62,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        docs-stock-signin-20261020 (#643 closed) · stock-sync-20261021-1502/-1540 · 20261022-1810 (+ q2-combined-local, docs-line-bot-2210
        = fully in main). KEPT on purpose: img-ag4gal-1610 · img-b17-combo · img-se-1610 · p63-terea-publish (open rounds) · gsc-data · inbox ·
        worktrees sad-nash / seo-line2 / seo-line2-c (open SEO round) + cart-2210-3bb482 (session list-missing not archived) · Artifacts.
-    N4 DONE in branch (26/10): /warranty th body sentences end ค่ะ / นะคะ (9 spots — a 10th fell alone onto the 1440 last line and was dropped; the old draft table was not found — re-drafted
-       per THAI_STYLE §2 หางเสียง: titles, labels, summary chips untouched) — ships in the N6 PR.
+    N4 DONE + LIVE (#860): /warranty th body sentences end ค่ะ / นะคะ (9 spots; a 10th fell alone onto the 1440 last line — dropped).
     N5 DONE 26/10: Muro Freebase already has all 6 flavour bottles live since the image sweep 21/10 (studio re-shoots of the retailer
        posters, scripts/process-images.map.json) — รอพี่ตรวจ 71 was stale → removed, 56 removed (owner: done) · test orders: Login round
        is live → asked the owner whether to cancel now (needs /staff sign-in = owner or the owner's Chrome session).
-    N6 Q8 cart upsell row + small fixes (home `/` en/zh show 20 Thai category labels via HomeProductIndex · /about "ไม่ใช่ | บอท" ·
-       #807 note a) + checker security notes (phone rate limit trusts X-Forwarded-For · empty idempotencyKey not refused) — owner: go.
+    N6 small fixes + security DONE + LIVE (#860, merge ebe86e20): home index en/zh (shortName + pilotName) · /about line without the
+       trailing negation · staff message hint "ไม่เขียนชี้ ด้านล่าง" + staff guide · placeOrder refuses empty/malformed keys and replays only
+       the same customer's order (an empty key could hand back another customer's order + view token) · phone rate limit falls back to the
+       RIGHTMOST X-Forwarded-For. NOT done (login system = owner first): src/lib/staff/auth.ts keeps the leftmost-XFF fallback · optional
+       hardening = disable the onrender.com subdomain (Render docs custom-domains) so every request passes Cloudflare — owner's call.
+    N6 Q8 = PR #861 (branch q8-upsell-2610): "สินค้าที่คุณอาจสนใจ" row — src/lib/commerce/cart-suggestions.ts + CartSuggestions.tsx;
+       designer direction 26/10 (4 calm link cards, phones 2×2 under checkout, ≥1024 left column under the items, empty cart = shop picks);
+       designer review caught a pod offered without its device → pods/coils/sticks only via the verified-fit table. Shots _incoming/q8-shots/.
+       Open: "Relx Connector 20K" (BSOT §15) = which page? (Muro Connector 20K vs RELX Creator Pod 20K) — not listed until the owner says.
     Q6 logo round = TOMORROW 27/10 (owner).
     Q9 [owner idea 26/10, PLAN TOGETHER FIRST — "ตรงนี้จดไว้นะเดี๋ยวมาวางแพลนกัน"] a staff view that shows (1) how many people are on
        the site right now, (2) how many members signed up, (3) a customer profile with what they ordered before. Not started —
@@ -84,14 +90,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     Q7b [DONE #849 + #851] every "order on LINE" line follows OKAMI24_ORDERING: FAQ where-to-buy (ORDERING_OFF_ANSWERS), how-to-order,
        contact, about, and (owner 26/10 "แก้ได้เลย" — group ก text, owner-approved) age-gate body (`bodyWhileOrderingOff`), footer ageNotice
        (`ageNoticeWhileOrderingOff`), classic home hero line (`descriptionWhileOrderingOff`). Privacy phone line without OTP.
-       Left: /warranty ค่ะ (10 spots drafted in #846 notes — owner-approved voice, ask first) · pre-existing: home `/` en/zh show 20 Thai
-       category labels (HomeProductIndex renders category.labelTh) · /about "…ไม่ใช่ | บอท" word-break flag (old text).
+       Left items were done in #860 (N4/N6).
     Side chat list-missing (local_b0f66e49, done 26/10): every Max product has a live page except the 2 owner-declined codes; #848 fixed
        the RELX Creator Pod 20K Thai name in en/zh. The hourly stock routine lists any NEW code in `_incoming/stock-api/new-products.md`.
-    Q8 D upsell row in the cart (owner "A+B ครึ่ง ๆ": half same brand/category in stock + half shop best-sellers · designer + tier B shots ·
-       can reuse `lineImage()` / LineThumb for its cards)
     Later / parked: off-site backup (owner 24/10: "ยังไม่ทำ" — รอพี่ตรวจ 77) · image sweep 21 warehouse products (รอพี่ตรวจ 41) ·
-       SEO line 2 queue (3s) · GSC read 01/11 · speed (item 5) · #807 notes a/d · rehearsal (รอพี่ตรวจ 59) · stock without a rebuild
+       SEO line 2 queue (3s) · GSC read 01/11 · speed (item 5) · #807 note d · rehearsal (รอพี่ตรวจ 59) · stock without a rebuild
        (proposal ①: every stock PR = a deploy = 30–60 s of 502).
   #807 checker notes left (b, c, f were fixed; checked 26/10): (a) an admin message saying "ด้านล่าง" stays after the customer
   chose · (d) stale comments (migration 0013, cleanPromptPayPhone) · cleanBankText keeps invisible characters. BSOT §9 line changed by

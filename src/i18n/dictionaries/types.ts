@@ -520,6 +520,8 @@ export interface Dictionary {
     totalLabel: string;
     checkoutCta: string;
     fixIssuesNote: string;
+    /** Q8 (26/10): the heading of the cart's suggestion row — claims nothing (owner 20/10: no "best seller" wording). */
+    suggestionsTitle: string;
   };
   /** Product Detail add-to-cart control — only rendered for a genuinely published, priced
    *  product; see PilotProductDetail.tsx. */
