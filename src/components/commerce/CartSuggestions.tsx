@@ -17,13 +17,18 @@ function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
 }
 
-/** Same form fields the product page posts — the server (addToCartAction → resolveProductRef) stays the only judge. */
+/** Same form fields the product page posts — the server (addToCartAction → resolveProductRef) stays the only judge.
+ *  A dropped connection counts as "not added" (checker: a thrown action used to leave the button stuck). */
 async function addOne(slug: string, variantId: string | null): Promise<boolean> {
   const form = new FormData();
   form.set("slug", slug);
   if (variantId) form.set("variantId", variantId);
   form.set("quantity", "1");
-  return (await addToCartAction(form)).ok;
+  try {
+    return (await addToCartAction(form)).ok;
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -41,7 +46,7 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
   const { dict, locale } = useLocale();
   const router = useRouter();
   const [picking, setPicking] = useState<CartSuggestion | null>(null);
-  const [status, setStatus] = useState<string | null>(null);
+  const [status, setStatus] = useState<{ text: string; failed: boolean } | null>(null);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [pendingSlug, setPendingSlug] = useState<string | null>(null);
   const [, startTransition] = useTransition();
@@ -57,25 +62,29 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
   const nameOf = (item: CartSuggestion) => pilotName(item.slug, item.name, locale);
 
   function added(item: CartSuggestion, optionName: string | null) {
-    setStatus(dict.cart.suggestionAdded.replace("{name}", optionName ? `${nameOf(item)} · ${optionName}` : nameOf(item)));
+    setStatus({ text: dict.cart.suggestionAdded.replace("{name}", optionName ? `${nameOf(item)} · ${optionName}` : nameOf(item)), failed: false });
     setJustAdded(item.slug);
     setTimeout(() => setJustAdded((s) => (s === item.slug ? null : s)), 1500);
   }
 
   function quickAdd(item: CartSuggestion) {
     if (pendingSlug) return;
-    const sellable = item.options.filter((o) => o.sellable);
-    if (item.options.length > 0 && sellable.length !== 1) {
+    // Any colour / flavour choice opens the picker, even when only one is in stock (owner: "มีสีให้ขึ้นเลือก"); a
+    // product without options adds at once.
+    if (item.options.length > 1) {
       setPicking(item);
       return;
     }
-    const only = sellable[0] ?? null;
+    const only = item.options[0] ?? null;
     setPendingSlug(item.slug);
     startTransition(async () => {
       const ok = await addOne(item.slug, only?.id ?? null);
       setPendingSlug(null);
       if (ok) added(item, only?.name ?? null);
-      else router.refresh();
+      else {
+        setStatus({ text: dict.cart.suggestionAddFailed, failed: true });
+        router.refresh();
+      }
     });
   }
 
@@ -84,8 +93,8 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
       <h2 id="cart-suggestions" className="font-display text-xl font-semibold text-foreground">
         {dict.cart.suggestionsTitle}
       </h2>
-      <p aria-live="polite" className="mb-3 mt-1 min-h-5 text-sm text-foreground-muted">
-        {status}
+      <p aria-live="polite" className={`mb-3 mt-1 min-h-5 text-sm ${status?.failed ? "text-danger" : "text-foreground-muted"}`}>
+        {status?.text}
       </p>
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
         {items.map((item) => (
@@ -142,7 +151,11 @@ function OptionPicker({ item, name, onClose, onAdded }: { item: CartSuggestion; 
   const { dict } = useLocale();
   const router = useRouter();
   const [desktop] = useState(() => typeof window !== "undefined" && window.matchMedia("(min-width: 64rem)").matches);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Only one option in stock = it starts picked; the visitor still sees every option and confirms.
+  const [selectedId, setSelectedId] = useState<string | null>(() => {
+    const sellable = item.options.filter((o) => o.sellable);
+    return sellable.length === 1 ? sellable[0].id : null;
+  });
   const [failed, setFailed] = useState(false);
   const [pending, startTransition] = useTransition();
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -159,7 +172,10 @@ function OptionPicker({ item, name, onClose, onAdded }: { item: CartSuggestion; 
     if (!selected || pending) return;
     startTransition(async () => {
       const ok = await addOne(item.slug, selected.id);
-      if (ok) onAdded(selected.name);
+      if (ok) {
+        dialogRef.current?.close(); // the native dialog hands focus back before it unmounts
+        onAdded(selected.name);
+      }
       else {
         // Sold out meanwhile: nothing changed in the cart; refresh so that option turns sold out here too.
         setFailed(true);

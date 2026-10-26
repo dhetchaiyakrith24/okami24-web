@@ -112,7 +112,7 @@ export function FlavorVariantGrid({
                 aria-hidden
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
-              {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-ember" : "text-foreground-dim")}>{outOfStockLabel}</span>}
+              {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-danger" : "text-foreground-dim")}>{outOfStockLabel}</span>}
             </button>
           );
         })}

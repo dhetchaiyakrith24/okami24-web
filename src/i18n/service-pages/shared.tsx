@@ -19,7 +19,8 @@ export function B({ children }: { children: ReactNode }) {
   return <strong className="text-foreground">{children}</strong>;
 }
 
-/** bold, ember — the one warning per page that must not be missed (designer 2026-09-06) */
+/** bold, red — the one warning per page that must not be missed (designer 2026-09-06); its only use says "cannot be
+ *  cancelled", so it follows the owner's 26/10 rule: anything that says no is red, never the ember orange */
 export function E({ children }: { children: ReactNode }) {
-  return <strong className="text-ember">{children}</strong>;
+  return <strong className="text-danger">{children}</strong>;
 }
