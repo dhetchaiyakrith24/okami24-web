@@ -4,7 +4,7 @@
 //
 //   node scripts/house-check.js            prints the report; compares with the previous run in _incoming/house-last.json
 //
-// Sections: sizes (rules loaded every chat · HANDOFF · §16 · LESSONS) · locks (git hooks on? · do they still bite =
+// Sections: sizes (rules loaded every chat · HANDOFF · §16 · LESSONS) · per-file ceilings · locks (git hooks on? · do they still bite =
 // scripts/pre-checker-gate.js --self-test · a checker note left on) · rules followed (merged PRs,
 // last 7 days) · this project's scheduled-task folders · dead pointers (a backticked repo path that does
 // not exist · a "13.x" the rules file has no heading for · <FILE> [§N] "heading" whose words are gone) · files nobody references (scripts · docs · agents · skills) ·
@@ -66,6 +66,21 @@ for (const e of (text[".claude/LESSONS.md"] || "").split(/\n(?=## )/).slice(1)) 
   if (lines.length === 1 && /^→ /.test(lines[0].trim())) { console.log(`  LESSONS stub: ${head.slice(3, 70)}`); shape++; }
 }
 if (!shape) console.log("  none");
+
+// 1c. ceilings — the one home of the per-file size ceilings (owner 26/10 "9 ABC ได้": A = ceilings flagged here, report
+// only · C = skill house-clean (ก) may open a draft PR that slims a file over its ceiling). UTF-8 bytes, 1 KB = 1,000.
+const CEILINGS = [
+  [".claude/TEAM_RULES.md", 40], [".claude/LESSONS.md", 60], ["docs/THAI_STYLE.md", 60], // owner 26/10
+  [".claude/LESSONS-images.md", 60], ["docs/IMAGE_SPEC.md", 60], ["docs/HANDOFF.md", 50], // Friday 27/10
+  ...tracked.filter((f) => /^\.claude\/(agents\/[^/]+\.md|skills\/[^/]+\/SKILL\.md)$/.test(f)).map((f) => [f, 30]),
+];
+console.log("\n## ceilings (KB = 1,000 UTF-8 bytes · report only — skill house-clean (ก) slims a file over its ceiling)");
+let over = 0;
+for (const [f, kb] of CEILINGS) {
+  const b = Buffer.byteLength(text[f] || "");
+  if (b > kb * 1000) { console.log(`  over ceiling: ${f} ${(b / 1000).toFixed(1)} KB > ${kb} KB`); over++; }
+}
+if (!over) console.log("  none");
 
 // 2. dead pointers
 console.log("\n## dead pointers in live files");
