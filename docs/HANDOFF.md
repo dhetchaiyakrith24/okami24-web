@@ -44,7 +44,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; one numbering = the owner's chat list):
      BUILT 26/10 in #888 — (4) researcher market/competitor/price mode · (5) follow-up = `scripts/stale-work.js` + agent `follow-up` +
-     a line at every chat open (session-sync step 7); its daily 13:00 task `okami24-follow-up-morning` (owner moved it from 07:30)
+     a line at every chat open (session-sync step 7); its daily 13:00 task `okami24-follow-up-morning`
      (writes "ค้างนาน" on the status page) · (6) agent `visitor` (outside-eye customer on the test build) — not yet run for real; first
      use = the next big round or new look.
      LEFT — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
@@ -152,7 +152,7 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
   pre-checker-gate.js (13.4 — before every checker · `--done` after its report · `--self-test` = every lock on a planted example) ·
-  house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · stale-work.js (stuck/due work — agent follow-up, session-sync, morning task) · lab/js-weight.js (first-paint JS per page) ·
+  house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · stale-work.js (stuck/due work — agent follow-up, session-sync, daily 13:00 task) · lab/js-weight.js (first-paint JS per page) ·
   poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
