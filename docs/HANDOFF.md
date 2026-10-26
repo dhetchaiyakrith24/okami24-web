@@ -42,7 +42,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
-  h OWNER'S NEW TEAM TOOLS — approved 26/10 ("ได้ครับ" to Friday's table; each = proposal table → build, new rule/agent text per central §12 item 28
+  h OWNER'S NEW TEAM TOOLS — (4) researcher market mode · (5) follow-up agent + stale-work.js + morning task · (6) visitor agent = BUILT 26/10 (#PR team-tools-2610); left (3) /วางแผน · (5) assets folder · (6) accounts project. Approved 26/10 ("ได้ครับ" to Friday's table; each = proposal table → build, new rule/agent text per central §12 item 28
      already OK'd in that table): (1) "ลูกค้าลับ" agent — never reads briefs, walks the TEST build at 390 like a customer (find, add to cart,
      no real order), reports confusion/breakage; called only for big rounds, new looks, round close · (2) stale-work watcher = a morning
      scheduled task (not an agent): work open > 3 days, promised work with no PR, silent side chats → "ค้างนาน" on the status page ·
@@ -84,12 +84,12 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
-  Resume from `_incoming/img-1610/NEXT.md` (state, prompts, masters, open refs) · full old state = `git show 464b7f64:docs/HANDOFF.md` §16 3i.
+  Kept branches: img-ag4gal-1610 · img-se-1610 · img-b17-combo. Resume from `_incoming/img-1610/NEXT.md` (state, prompts, masters, open refs) · full old state = `git show 464b7f64:docs/HANDOFF.md` §16 3i.
 3s PARKED round "SEO all keys" (`docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt`, line 2, owns 3p): worktrees `.claude/worktrees/seo-line2-c` ·
   `sad-nash-5bf72f` · `seo-line2`. Queue order = SEO_LANDSCAPE §9.6; held items, do-not-redo facts, guide standard, NEXT list and
   line-break rules = `git show 464b7f64:docs/HANDOFF.md` §16 3s (read it before resuming). GSC snippet gaps "esko bar" / "joiway".
 3p PARKED round "p63 searched models" (`docs/rounds/รอบลงสินค้า-63-16-10.txt`, line 2): LIVE = #534 #537 #540 #583 #584 #589. NEXT =
-  INFY 12K (NP) → round-close (tag p63-1610). Left-on-purpose + NOT REAL list = `git show 464b7f64:docs/HANDOFF.md` §16 3p.
+  INFY 12K (NP) → round-close (tag p63-1610). Kept branches: p63-terea-publish · p63-uwell. Left-on-purpose + NOT REAL list = `git show 464b7f64:docs/HANDOFF.md` §16 3p.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here. Status page for the owner's phone =
   §17 "Owner status page".
 5 open / dated:
@@ -152,7 +152,7 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
   pre-checker-gate.js (13.4 — before every checker · `--done` after its report · `--self-test` = every lock on a planted example) ·
-  house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · lab/js-weight.js (first-paint JS per page) ·
+  house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · stale-work.js (stuck/due work — agent follow-up, session-sync, morning task) · lab/js-weight.js (first-paint JS per page) ·
   poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
