@@ -14,7 +14,8 @@ Read first, ask second: anything a file already answers is not asked (HANDOFF §
 `docs/BUSINESS_SOURCE_OF_TRUTH.md` · `docs/SEO_LANDSCAPE.md` · `docs/SEO_BASELINE.md` · `docs/IMAGE_SPEC.md` · `docs/THAI_STYLE.md`).
 What is still open goes to the owner as ONE set (13.3 "คำถามหลายเรื่อง = ชุดเดียว"), each with options and a recommendation —
 usually: what counts as success (sales · visitors from Google · how the shop looks) · how wide (one product · one category ·
-the whole site) · how soon. No answer in 30 minutes = take the recommendation and say so (13.3).
+the whole site) · how soon. These are questions outside the 13.3 list = asking never stops the work: no answer yet = go on
+with the recommendation and say so in the report (13.3 "นอกรายการนี้ไม่หยุดถาม").
 
 ## Step 2 — pick the tools yourself
 
@@ -40,6 +41,8 @@ an estimate is labelled `[เชื่อว่า]`, missing data `[ยัง�
 
 Thai, short, owner's words (central §12 items 5–10): first line = what the plan gets the shop · the steps · the one question
 ("เริ่มตามนี้ไหม" with the recommended answer first). Long detail goes on the owner status page or a file, linked.
+A clear goal whose first step rolls back = start that step while the owner reads (TEAM_RULES 13.1 #4); only a step that hits
+13.3 waits — and only that step.
 
 ## Step 5 — after "ได้"
 
