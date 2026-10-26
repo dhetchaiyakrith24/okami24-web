@@ -1,22 +1,26 @@
 import "server-only";
 import { getProduct } from "@/data/products";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { getCompatibleConsumables } from "@/data/catalog-relationships";
+import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { resolveProductRef } from "./catalog-resolver";
 
 /**
- * The cart page's "สินค้าที่คุณอาจสนใจ" row (owner queue Q8 "A+B ครึ่ง ๆ", designer spec 26/10): up to SLOTS cards, half
- * picked from what is in the cart (A) and half from the shop's own best-seller list (B); a side short of picks lends its
- * slots to the other. Picked here on the server so the client cart gets only the few small cards (never the catalog).
+ * The cart page's "สินค้าที่คุณอาจสนใจ" row. Picked here on the server so the client cart gets only the few small cards
+ * (never the catalog).
  *
- * A, per cart line in order — never an invented pairing (BSOT §17): (1) a pod / coil the relationship table verifies for
- * that device (BSOT §14 device → consumable), (2) same brand + category, (3) same category, (4) same brand. A consumable
- * (pod · coil · stick) enters ONLY through (1): the designer review 26/10 caught an M Switch pod offered to an M Bar buyer.
- * B = BSOT §15's list, then the homepage lead models as a reserve so the row is full whenever the shop has stock — used only
- * as an order: the heading claims nothing (owner 20/10: no "best seller" wording, there are no sales figures).
+ * Cart with items (owner 26/10 night: "ต้องเหมาะกับสินค้าที่ลูกค้าเลือกเท่านั้น เช่น เลือก Argus G4 สินค้าต้องใกล้เคียง ต้องเป็น
+ * หัวพอต Argus น้ำยา คอยล์"): ONLY what fits a cart line, per line in cart order — never an invented pairing (BSOT §17):
+ *   (1) the pods / coils / sticks the relationship table verifies for that device (BSOT §14 device → consumable),
+ *   (2) the device a pod / coil / stick in the cart is verified to fit (the derived reverse of the same table),
+ *   (3) e-liquid when the line is a refillable device (category pod-systems = fill-your-own, src/data/categories.ts).
+ * No other device and no shop pick while the cart has items; nothing fits = no row. This replaced the Q8 "half from the
+ * cart, half shop picks" mix, whose same-category tier put other devices next to an Argus G4.
+ *
+ * Empty cart: BSOT §15's list, then the homepage lead models as a reserve — used only as an order: the heading claims
+ * nothing (owner 20/10: no "best seller" wording, there are no sales figures).
  * Every card: sellable today (the product page's buy rule, in-stock.ts), an approved price, not already in the cart, not
  * on BSOT §15 "Not recommended". Deterministic (no shuffle) — the same cart always shows the same row.
  */
@@ -31,8 +35,12 @@ const SHOP_PICKS = ["pod-159", "m-switch-kit", "pod-180", "m-bar-10k", "m-bar-9k
 /** BSOT §15 "Not recommended". */
 const NEVER = new Set(["muro-space-15k"]);
 
-/** Parts that fit only some devices (src/data/categories.ts) — offered only where the relationship table verifies the fit. */
+/** Parts that fit only some devices (src/data/categories.ts) — never a shop pick for an empty cart. */
 const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
+
+/** Fill-your-own devices (categories.ts: refillable VOOPOO joined pod-systems; switch-pods are prefilled, never filled). */
+const REFILLABLE_CATEGORY = "pod-systems";
+const E_LIQUID_CATEGORY = "e-liquid";
 
 /** One colour / flavour / variant of a suggestion, for the card's quick add (owner 26/10: "กดตะกร้าปุ๊บก็มีสีให้เลือกเลย"). */
 export interface SuggestionOption {
@@ -63,7 +71,7 @@ function sellable(slug: string): boolean {
   return published ? inStockEntryKeys([], [published]).length > 0 : false;
 }
 
-/** Homepage lead order first (Friday's flagship picks per type), then by name — a stable order inside each A tier. */
+/** Homepage lead order first (Friday's flagship picks per type), then by name — a stable order inside each tier. */
 const LEAD = HOME_TYPE_SECTIONS.flatMap((s) => s.first);
 function byLead(a: CatalogItem, b: CatalogItem): number {
   const ia = LEAD.indexOf(a.slug);
@@ -94,34 +102,32 @@ function toCard(item: CatalogItem): CartSuggestion {
   return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item) };
 }
 
+/** What fits one cart line, in tier order (see the file header). */
+function fitsFor(slug: string, catalog: CatalogItem[]): CatalogItem[] {
+  const own = getCatalogItem(slug);
+  if (!own) return [];
+  const bySlug = (slugs: string[]) => slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined).sort(byLead);
+  return [
+    ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
+    ...bySlug(getCompatibleDevices(slug).map((d) => d.ref.slug)),
+    ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY).sort(byLead) : []),
+  ];
+}
+
 export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   const taken = new Set(cartSlugs);
   const ok = (item: CatalogItem | undefined): item is CatalogItem =>
     item !== undefined && !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug);
-  const openFit = (item: CatalogItem) => !CONSUMABLE_CATEGORIES.has(item.categoryId);
 
-  const catalog = allCatalogItems();
-  const fromCart: CatalogItem[] = [];
-  for (const slug of cartSlugs) {
-    const own = getCatalogItem(slug);
-    if (!own) continue;
-    const tiers: CatalogItem[][] = [
-      getCompatibleConsumables(slug).map((c) => getCatalogItem(c.ref.slug)).filter(ok).sort(byLead),
-      catalog.filter((i) => own.brandId !== null && i.brandId === own.brandId && i.categoryId === own.categoryId).filter(openFit).filter(ok).sort(byLead),
-      catalog.filter((i) => i.categoryId === own.categoryId).filter(openFit).filter(ok).sort(byLead),
-      catalog.filter((i) => own.brandId !== null && i.brandId === own.brandId).filter(openFit).filter(ok).sort(byLead),
-    ];
-    for (const tier of tiers) for (const item of tier) if (!fromCart.some((x) => x.slug === item.slug)) fromCart.push(item);
+  let chosen: CatalogItem[] = [];
+  if (cartSlugs.length > 0) {
+    const catalog = allCatalogItems();
+    for (const slug of cartSlugs) for (const item of fitsFor(slug, catalog).filter(ok)) if (!chosen.some((x) => x.slug === item.slug)) chosen.push(item);
+  } else {
+    chosen = [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(i.categoryId));
   }
-  const picks = [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter(openFit);
-
-  // Half and half; a short side lends its slots to the other (and a product in both halves counts once).
-  const aCount = Math.min(fromCart.length, Math.max(SLOTS / 2, SLOTS - picks.length));
-  const a = fromCart.slice(0, aCount);
-  const b = picks.filter((i) => !a.some((x) => x.slug === i.slug)).slice(0, SLOTS - a.length);
-  const rest = fromCart.slice(aCount).filter((i) => !b.some((x) => x.slug === i.slug));
-  const chosen = [...a, ...b, ...rest].slice(0, SLOTS);
-  // 2–3 cards = show 2, fewer = none (no hole in the 2 × 2 phone grid — designer spec).
-  const shown = chosen.length >= SLOTS ? SLOTS : chosen.length >= 2 ? 2 : 0;
+  // 4 fill the 2 × 2 phone grid; 2–3 show 2 (no hole in it — designer spec); a single fitting part still shows rather
+  // than hiding the only thing that fits (cart fit 27/10).
+  const shown = chosen.length >= SLOTS ? SLOTS : chosen.length >= 2 ? 2 : chosen.length;
   return chosen.slice(0, shown).map(toCard);
 }
