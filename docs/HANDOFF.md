@@ -78,7 +78,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        → next chat: researcher reads Thai market signals (shop best-seller pages, marketplace sold counts, search interest), Friday picks
        the list for SHOP_PICKS in cart-suggestions.ts (also settles "Relx Connector 20K"), notes sources + that it is an estimate in the
        code comment; BSOT §15 merchant list stays the owner's words. Guessing is allowed ONLY for this list.
-       Designer idea left: a cart that already has a device should skip "same brand + category" (another device competing) — taste.
+       CART FIT [owner 26/10 night, NOT built]: "สินค้าตัวเลือกเพิ่มเติมในหน้าตะกร้าต้องเหมาะกับสินค้าที่ลูกค้าเลือกเท่านั้น เช่น เลือก
+          Argus G4 สินค้าต้องใกล้เคียง ต้องเป็นหัวพอต Argus น้ำยา คอยล์" → with items in the cart the row shows ONLY what fits them:
+          verified pods/coils/sticks (relationship table), e-liquid for refillable devices (BSOT §17 "Device → Suitable e-liquid
+          category" — the owner's words are the merchant knowledge), a pod's own device; NO other devices (drops A(2)–(4) and the
+          shop picks B while the cart has items — also settles the designer idea above); nothing fits = no row. Empty cart = shop picks.
+          Code: src/lib/commerce/cart-suggestions.ts. Full set (cart).
     #869 DONE + LIVE (merge cab8c6a5, owner 26/10 phone): quick add on the suggestion cards (picker: BottomSheet < lg / native <dialog>
        ≥ lg, PhoneOptionTiles outDisabled, options + sellable from the server) · Back from a product page returns to where the visitor came
        from (HashLinksKeepHistory: same-page #links replaceState, capture phase) · red for every "no" (§18) · staff-login XFF fix.
