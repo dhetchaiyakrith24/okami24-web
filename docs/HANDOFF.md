@@ -42,15 +42,15 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
      Friday picks, sources + "estimate" in the code comment; settles "Relx Connector 20K"; BSOT §15 stays the owner's words.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
-  h OWNER'S NEW TEAM TOOLS — (4) researcher market mode · (5) follow-up agent + stale-work.js + morning task · (6) visitor agent = BUILT 26/10 (#PR team-tools-2610); left (3) /วางแผน · (5) assets folder · (6) accounts project. Approved 26/10 ("ได้ครับ" to Friday's table; each = proposal table → build, new rule/agent text per central §12 item 28
-     already OK'd in that table): (1) "ลูกค้าลับ" agent — never reads briefs, walks the TEST build at 390 like a customer (find, add to cart,
-     no real order), reports confusion/breakage; called only for big rounds, new looks, round close · (2) stale-work watcher = a morning
-     scheduled task (not an agent): work open > 3 days, promised work with no PR, silent side chats → "ค้างนาน" on the status page ·
-     (3) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
-     site-architecture / designer itself · (4) researcher gets a competitor/market mode (first use = best sellers, item 3 f) ·
-     (5) one assets folder C:UsersdhetcOKami24-assets<YYYY-MM><job> for images WE made or edited only (never others' refs) +
-     a step in the image skills · (6) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) with its
-     own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page. Order: (1) + (2) first.
+  h OWNER'S NEW TEAM TOOLS (owner 26/10 "ได้ครับ" + "4-5-6 เริ่มได้เลย"; one numbering = the owner's chat list):
+     BUILT 26/10 in #888 — (4) researcher market/competitor/price mode · (5) follow-up = `scripts/stale-work.js` + agent `follow-up` +
+     a line at every chat open (session-sync step 7); its morning task `okami24-follow-up-morning` is created right after #888 merges
+     (writes "ค้างนาน" on the status page) · (6) agent `visitor` (outside-eye customer on the test build) — not yet run for real; first
+     use = the next big round or new look.
+     LEFT — (1) skill /วางแผน (SEO · articles · design plan): 2–3 questions → plan ≤ 7 steps, picks content-strategy / seo-audit /
+     site-architecture / designer itself · (2) one assets folder C:\Users\dhetc\OKami24-assets\<YYYY-MM>\<job>\ for images WE made or
+     edited only (never others' refs) + a step in the image skills · (3) shop accounts audit (income/costs/investment) = a SEPARATE
+     project (central §12 item 32) with its own folder; web-side costs (Render · GitHub · Higgsfield) go on the status page.
   Left from the §16 rewrite (checker #884, items with no other home): ProductMaster seed in-stock flags are from September · home 3w
      taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
      of /account/login not measured · designer: mark the out rows in the order page's item list · rule-audit 15/10 lock proposals L1

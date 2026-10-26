@@ -33,7 +33,12 @@ const found = [];
 const notes = [];
 
 // 1 dated items in HANDOFF §16
-const handoff = fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8").replace(/\r\n/g, "\n");
+let handoff = "";
+try {
+  handoff = fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8").replace(/\r\n/g, "\n");
+} catch {
+  notes.push("docs/HANDOFF.md not readable — dated items and branch names not checked");
+}
 const s16 = handoff.slice(handoff.indexOf("## 16."), handoff.indexOf("## 17."));
 const b5 = s16.slice(s16.indexOf("\n5 open / dated"));
 const dated = b5.split("\n").slice(1).filter((l) => /^\s+- /.test(l));
@@ -41,7 +46,10 @@ for (const line of dated) {
   if (/\b(DONE|CLOSED)\b/.test(line)) continue;
   for (const m of line.matchAll(/(?:^\s+- |· )(\d{2})\/(\d{2})(?![\d/])/g)) {
     if (Number(m[2]) < 1 || Number(m[2]) > 12) continue;
-    const d = new Date(today.getFullYear(), Number(m[2]) - 1, Number(m[1]));
+    // dd/mm has no year: across New Year a December day read in January is last year, a January day read in December next year.
+    const mon = Number(m[2]) - 1;
+    const yr = today.getFullYear() + (today.getMonth() === 0 && mon === 11 ? -1 : today.getMonth() === 11 && mon === 0 ? 1 : 0);
+    const d = new Date(yr, mon, Number(m[1]));
     const diff = days(d - today);
     if (diff <= 1 && diff >= -14) {
       const what = line.slice(m.index, m.index + 110).replace(/^[\s·-]+/, "");
@@ -73,7 +81,13 @@ for (const repo of ["dhetchaiyakrith24/okami24-web", "dhetchaiyakrith24/smogz-ru
     notes.push(`gh could not list PRs of ${repo} (offline or not signed in)`);
     continue;
   }
-  for (const p of JSON.parse(r.out || "[]")) {
+  let prs = [];
+  try {
+    prs = JSON.parse(r.out || "[]");
+  } catch {
+    notes.push(`gh gave unreadable output for ${repo}`);
+  }
+  for (const p of prs) {
     const age = now - new Date(p.updatedAt);
     if (age > DAY) found.push({ kind: "pr", repo, pr: p.number, age: `${days(age)} days`, draft: p.isDraft, what: p.title.slice(0, 90) });
   }
@@ -84,7 +98,8 @@ const refs = run("git", ["for-each-ref", "--format=%(refname:short)|%(committerd
 for (const l of refs.ok ? refs.out.split("\n") : []) {
   const [ref, t, subject] = l.split("|");
   if (!ref || /^origin\/(HEAD|main|gsc-data|inbox)$/.test(ref) || ref === "origin") continue;
-  if (handoff.includes(ref.slice("origin/".length))) continue;
+  const name = ref.slice("origin/".length).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (new RegExp(`(^|[^\\w/-])${name}([^\\w/-]|$)`).test(handoff)) continue; // named as a whole word = parked on purpose
   if (run("git", ["merge-base", "--is-ancestor", ref, "origin/main"]).ok) continue;
   const age = now - Number(t) * 1000;
   if (age > 7 * DAY) found.push({ kind: "branch", ref, age: `${days(age)} days`, what: (subject || "").slice(0, 90) });

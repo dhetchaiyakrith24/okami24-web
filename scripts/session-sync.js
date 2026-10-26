@@ -15,7 +15,8 @@
 //   5 cloud      CLAUDE_CODE_REMOTE=true → then runs `prepare-clone.js --session-start` (after the fetch, never beside it:
 //                two git fetches at once fight over the ref lock).
 //   6 hooks      core.hooksPath must be .githooks (the commit/push locks) — anything else = reset it + warn (15/10).
-//   7 stale      `stale-work.js --brief` — stuck or due work, one Thai count for the owner (26/10, never a stop sign).
+//   7 stale      `stale-work.js --brief` — stuck or due work, one Thai count for the owner (26/10, never a stop sign;
+//                skipped by --dry — run `node scripts/stale-work.js` to see it).
 // Output = the hook JSON: `systemMessage` = one Thai line the owner sees · `additionalContext` = the English lines for
 // Friday. Always exits 0 (a SessionStart hook cannot stop a chat; the warning is the stop sign — central §12 item 9: never say done before it is).
 "use strict";
@@ -174,10 +175,11 @@ if (hp !== ".githooks") {
 // Never a stop sign: it adds lines for Friday and one short Thai count for the owner.
 let staleNote = "";
 if (!DRY) {
-  const sw = spawnSync(process.execPath, [path.join(__dirname, "stale-work.js"), "--brief"], { cwd: ROOT, encoding: "utf8", timeout: 60000 });
+  // 20 s cap: the hook's own limit (.claude/settings.json) must also hold the cloud's prepare-clone run above.
+  const sw = spawnSync(process.execPath, [path.join(__dirname, "stale-work.js"), "--brief"], { cwd: ROOT, encoding: "utf8", timeout: 20000 });
   const out = `${sw.stdout || ""}`.trim();
   const n = Number((out.match(/^stale-work: (\d+)/) || [])[1] || 0);
-  if (out) ctx.push(`${out}\n→ tell the owner the stuck/due items in one Thai line before other work (TEAM_RULES 13.2 follow-up).`);
+  if (n) ctx.push(`${out}\n→ tell the owner the stuck/due items in one Thai line before other work (TEAM_RULES 13.2 follow-up).`);
   if (n) staleNote = ` · งานค้าง/ถึงกำหนด ${n} เรื่อง — Friday จะบอก`;
 }
 
