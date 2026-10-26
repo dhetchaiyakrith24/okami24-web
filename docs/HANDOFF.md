@@ -170,7 +170,7 @@ Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its fil
   an agent added or edited is usable at once in the running chat
 Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield MCP: `generate_image`
   is ALLOWED (owner 20/10, #661); every other credit-spending Higgsfield tool stays DENIED in `.claude/settings.json` · credits =
-  IMAGE_SPEC §0 item 7 (cost first, owner's yes).
+  IMAGE_SPEC §0 item 7.
 Work folders: round work = `_incoming/<round>/` (not in git) · what Friday may move or delete alone = skill house-clean
   "รายการเดียว" (its one home) · image provenance keeps pointing at `_incoming/` (§18).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
@@ -309,7 +309,7 @@ to Friday: plain, luxurious, premium, depth); disposables / pod-replacement prod
 เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
 (the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
 live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
-fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7).
+fix, a broken source photo) · image routes and credits = IMAGE_SPEC §0 item 7.
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
