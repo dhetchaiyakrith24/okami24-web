@@ -106,6 +106,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" label (word = owner 26/10, §18 "Low-stock label") — NOT built: (1) stock without a
        rebuild first (every stock PR = a deploy = 30–60 s of 502; counts would deploy hourly) → (2) a trustworthy count source tested
        against the order-entry picker for a week → (3) label at ≤ 3 left.
+       ① STARTED 26/10 (owner "Start B5 step 1"): the count source is the order-entry picker itself — each option's React props carry
+       `available` (= inventory − reserved; checked live 26/10 on page 1: 94/94 equal, none negative, max 223). The browser read now
+       also leaves window.__oeCounts; the hourly routine saves it and runs `node scripts/stock-count-log.js <counts> <oe-snap>` →
+       `_incoming/stock-api/count-log.jsonl`; verdict `node scripts/stock-count-log.js --report` on 02/11 (READY / NOT YET) → then ②.
        PLAN (Friday 26/10, sent to the owner): ① count source — read-only look in the owner's Chrome for a per-code quantity in
        Shipnity Max (product list / stock report); the hourly routine LOGS it beside the picker in/out for 7 days (no site change);
        done = count > 0 ⇔ picker "เพิ่ม" on every code read. ② stock at runtime — a DB table written by the routine through a
