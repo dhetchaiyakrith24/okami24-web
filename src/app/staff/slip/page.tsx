@@ -6,8 +6,6 @@ import { easySlipConfigured, getQuota } from "@/lib/staff/easyslip";
 import { recentChecks } from "@/lib/staff/slip-checks";
 import { SlipChecker } from "@/app/staff/_components/SlipChecker";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
-import { countByJob } from "@/lib/staff/orders";
-import { TODO_JOBS } from "@/lib/staff/jobs";
 
 /**
  * /staff/slip — the slip-check tool (owner ruling 2026-10-07, BSOT §9 "one exception"; round file
@@ -28,12 +26,10 @@ export default async function StaffSlipPage() {
   if (!(await isStaff())) redirect("/staff");
   const configured = easySlipConfigured();
   const quota = configured ? await getQuota() : null;
-  const counts = countByJob();
-  const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
 
   return (
     <Container className="flex max-w-xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar current="slip" back={{ href: "/staff", label: "หน้าแรก" }} todo={todo} />
+      <StaffBar back={{ href: "/staff", label: "งาน" }} />
       <header className="flex flex-col gap-2">
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ตรวจสลิปโอนเงิน</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">
