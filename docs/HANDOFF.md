@@ -12,11 +12,9 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 26/10 (house round): every finished item left as its PR; the full text before = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 26/10 = bcae46d6 (#884 house rules) · #883 house docs · #881 SUP Zero 22K · #880 B5 step 1 · #877 B4 refund slip ·
-  #875 B3 staff pages · #873 B2 orders · #869 quick add · #861 cart suggestions · #860 N3–N6 · #858 pods international · #854–#857
-  member sign-in + login page · #851/#849 copy follows the cart switch. Older = `git log`.
+1 main: `git fetch && git log -1 --oneline origin/main` · open PRs = `gh pr list` · last round checkpoint = tag `cart-reopen-2210`.
   CART IS ON since 24/10 ~23:35 [ตรวจแล้ว] (Render env OKAMI24_ORDERING=on). Live-site facts, deploy checks, test kit = §17
-  "Live site" + "Test trees + PR flow". Open PRs: none (26/10).
+  "Live site" + "Test trees + PR flow".
 2 Main folder: branch `cart-fit-2610` (HANDOFF note only) · test trees `_incoming/wt-golive` · `_incoming/wt-cart` · `_incoming/wt-stock`
   (the hourly routine's — leave it clean).
 3 OWNER QUEUE — the ONE ordered list (owner 24/10: "อะไรทำ ยังไม่ทำ งานค้าง ลำดับให้เรียบร้อย"); done items = their PRs above:
@@ -72,7 +70,7 @@ Rewritten 26/10 (house round): every finished item left as its PR; the full text
   header of `scripts/order-entry-stock.js`) → `stock-sync.js --order-entry` → PR only when stock changed → full checks → merges itself
   (13.7) → deploy success; anomalies leave a draft and ask. Also logs counts (B5 ①) and lists NEW codes in
   `_incoming/stock-api/new-products.md` (Friday queues the listing, clears lines once listed). Prompt =
-  C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (~30–60 s of 502).
+  C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (a short 502 — §17 "Render after a merge").
   NEXT when the warehouse sends the API: stock adapter, then order push with the shipping fee (`docs/cloud-results/stock-api-sku-survey.md`
   last section). Warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า". 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
@@ -174,7 +172,7 @@ Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs 
   sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS-images 29)
 Live site (moved from §16 26/10): ALWAYS after a merge check the deploy reached success (`gh api
   repos/dhetchaiyakrith24/okami24-web/deployments?sha=<merge sha>` → statuses) — #776+#779 builds FAILED on Render's 60 s per-page
-  limit while local verify passed (#781) · every deploy = ~30–60 s of 502 + LINE webhook events in that window are lost → group merges ·
+  limit while local verify passed (#781) · every deploy = the short 502 window above + LINE webhook events in that window are lost → group merges ·
   Render builds every merge (Auto-Deploy "On Commit"; Blueprint "Sync paused" → Render settings change in the dashboard only) · spend
   limit $10/month (owner 23/10) · env change = Render → Environment → Edit → "Save, rebuild, and deploy" (prerendered pages need the
   rebuild); unrevealed secret rows show EMPTY inputs in the DOM — saving keeps them; edit only the one row (focus it by its key, type,
