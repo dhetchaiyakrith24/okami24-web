@@ -13163,5 +13163,18 @@
    "fidelitySheet": "_incoming/esko/fid.jpg (maker render vs re-shoot, same height, on the site dark)"
   },
   "replaces": "/assets/products/esko-bar-20k/card.webp"
+ },
+ {
+  "source": "_incoming/d45-2610/card/card.png",
+  "slug": "sup-zero-22k",
+  "role": "card",
+  "note": "owner brief 26/10 - card = the owner's Higgsfield studio re-shoot (25/10) of the SUP ZERO device; every flavour shares the black body and only the suit-icon colours change, so the 15 flavours carry no photo",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 2K 2:3 (owner's own order 25/10, job 31b5bb3f-ed5a-4195-8c19-41922e847dd0 - re-light of job 88465bf4 on a transparent background); heart and diamond icons recoloured to the poster's cyan #aaf5f5 by _incoming/d45-2610/card/ (pixel blend by brightness, no AI) because the render drew all four suits white",
+   "reference": "SUP ZERO Grape Ice poster (owner upload e22eb0da, _incoming/d45-2610/card/ref-e22eb0da.webp) + SUP ZERO 22000 line-up poster (a139c244, ref-a139c244.jpg); shop page https://zeedcupvp.com/product/sup-zero-22000-puffs/",
+   "prompt": "Higgsfield job 31b5bb3f params.prompt (\"Exact same SUP ZERO disposable vape device as the first reference image ... commercial packshot\")",
+   "fidelitySheet": "_incoming/d45-2610/card/eye-sheet.jpg (line-up device | Grape Ice poster | render A | render B) - no straight-on real photo exists, so by eye (IMAGE_SPEC 7): Z logo, SUP / ZERO lettering, ローヤルフラッシュ, suit order and colours (after the recolour), drop + lightning gauges, ribbed collar, tapered mouthpiece match; render A picked over B for the longer mouthpiece taper"
+  },
+  "fileName": "card.webp"
  }
 ]
