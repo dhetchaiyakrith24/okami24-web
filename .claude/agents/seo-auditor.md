@@ -75,10 +75,10 @@ after" table is one method, not two memories.
       that the shop's name and contact agree across pages, JSON-LD and `docs/BUSINESS_SOURCE_OF_TRUTH.md`. Never propose
       city pages or a GBP listing.
    3. **Content quality + AI-writing signs:** experience and source signals on guides (the shop's own clips, maker sources) ·
-      thin or near-duplicate pages · AI-writing patterns on en/zh pages (no detection list is installed — skill `kien-thai` mechanical tells as a hint) — Thai voice
+      thin or near-duplicate pages · AI-writing patterns from `docs/seo-audit/references/ai-writing-detection.md` on en/zh pages — Thai voice
       is `thai-copy`'s (THAI_STYLE §2); you point, it rewrites.
    4. **Technical + title tags:** robots / sitemap / noindex / canonical per URL agree · mobile speed only from runs the round
-      already made (13.5 #4 — you start no build or Lighthouse) · titles held against the keymap; `.claude/skills/seo-audit/references/title-tags.md`
+      already made (13.5 #4 — you start no build or Lighthouse) · titles held against the keymap; `docs/seo-audit/references/title-tags.md`
       only as a hint of what each page type's title should say — the length ceilings are `thai-copy`'s (Thai runs wider),
       and its "Pricing" / "Best … in [Year]" patterns don't apply (prices are never typed by hand; no year claims).
 
