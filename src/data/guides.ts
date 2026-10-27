@@ -2896,7 +2896,6 @@ const allGuides: Guide[] = [
           "ถ้ายังไม่แน่ใจว่าจะเลือกรุ่นไหน ความต่างของสามรุ่นนี้อ่านได้ที่ [ILUMA i ONE vs ILUMA i ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
           "อีกทางหนึ่งคือ [LAMBDA i8](/products/iqosheet-14) ซึ่งเป็นเครื่องอุ่นยาสูบของ LAMBDA ไม่ใช่เครื่องของ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้าน TEREA และ SENTIA ได้",
         ],
-        image: SECTION_IMAGES.ilumaIOne,
       },
     ],
     relatedProductSlugs: ["iqosheet-15", "iqosheet-17", "iqosheet-18", "iqosheet-16"],
@@ -3144,7 +3143,6 @@ const allGuides: Guide[] = [
           "SMOK บอกด้วยว่าสองสามพัฟแรกของหัวพอตใหม่อาจต้องดูดแรงกว่าปกตินิดหนึ่ง จากนั้นก็ดูดได้ตามปกติ",
           "ถ้ายังไม่มีเครื่อง ดูวิธีเลือกได้ที่ [Pod System ตัวไหนดี เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) หรือดูรุ่นทั้งหมดในหมวด[พอตซิสเต็ม](/products/pod-systems) ถ้ายังไม่แน่ใจว่าเครื่องหรือความเข้มข้นแบบไหนเหมาะกับตัวเอง ทักไลน์ @okm24 ถามร้านก่อนได้",
         ],
-        image: SECTION_IMAGES.argusG4Fill,
       },
     ],
     faq: [
