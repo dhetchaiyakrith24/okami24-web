@@ -243,6 +243,8 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   "m-bar-9k": "SALTHUB M BAR 9K (Marbo / มาโบ 9K) ของแท้",
   "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
+  // List-new (27/10, HANDOFF §18): the lookalike — its title must not carry the default " ของแท้" (search-titles.ts).
+  "marbo-10k-clone": "Marbo 10K (เทียบแท้) พอตใช้แล้วทิ้ง",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
   // the Pod opens with the locked type word, like the coil/pod rows below.
   "m-switch-kit": "SALTHUB M SWITCH KIT (M BAR 15K) ของแท้",

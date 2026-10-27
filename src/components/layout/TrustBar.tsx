@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { CheckCircle2, Globe, MessageCircle, Tag } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 
 /**
  * Round 30.4ข batch 5 (owner, 2026-09-17): a short "why buy here" strip above the footer on every
@@ -23,13 +24,10 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  */
 const ICONS = [CheckCircle2, Tag, MessageCircle, Globe] as const;
 
-/** The one lookalike product (owner 27/10, docs/HANDOFF.md §18): no "ของแท้" anywhere on its page, so item 0 (genuine products)
- *  is left out there. Every other page keeps all four items. */
-const NO_GENUINE_CLAIM_PATHS = new Set(["/products/marbo-10k-clone"]);
-
 export function TrustBar() {
   const { dict } = useLocale();
   const pathname = usePathname();
+  // item 0 = "ของแท้" (genuine products) — left out where the page makes no genuine claim (src/lib/genuine-claim.ts)
   const items = NO_GENUINE_CLAIM_PATHS.has(pathname) ? dict.trust.items.slice(1) : dict.trust.items;
   return (
     <section aria-label={dict.trust.ariaLabel} data-trust-bar className="border-t border-surface-border-soft bg-surface-0">
