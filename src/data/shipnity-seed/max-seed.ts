@@ -2416,6 +2416,127 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "Pod-180": {
+    "maxParentId": "Disposable-46",
+    "name": "Nexbar Clear 18k",
+    "operationalSellingPrice": 359,
+    "children": [
+      {
+        "shipnityVariantId": "Disposable-46-1",
+        "rawLabel": "Grape Ice",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-2",
+        "rawLabel": "Grape Lychee",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-3",
+        "rawLabel": "Kyoho Grape",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-4",
+        "rawLabel": "Mint",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-5",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-6",
+        "rawLabel": "Strawberry Custard",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-7",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-8",
+        "rawLabel": "Strawberry Watermelon",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-9",
+        "rawLabel": "Blueberry",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-10",
+        "rawLabel": "Lychee",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-11",
+        "rawLabel": "Honeydew Melon",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-12",
+        "rawLabel": "Watermelon Bubblegum",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-13",
+        "rawLabel": "White Slush",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-14",
+        "rawLabel": "Strawberry Kiwi",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-46-15",
+        "rawLabel": "Strawberry Banana",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-16",
+        "rawLabel": "Peach Strawberry",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-17",
+        "rawLabel": "Cola Lemon",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-18",
+        "rawLabel": "Pineapple",
+        "sellingPrice": 359,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-46-19",
+        "rawLabel": "Mango",
+        "sellingPrice": 359,
+        "inStock": false
+      }
+    ]
+  },
   "Pod-85": {
     "maxParentId": "Pod-85",
     "name": "หัวพอต Marbo Zero",
