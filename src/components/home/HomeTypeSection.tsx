@@ -2,7 +2,7 @@ import Link from "next/link";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { getCategory } from "@/data/categories";
-import { PHONE_CARDS, RAIL_CARDS, TABLET_CARDS } from "@/data/home-sections";
+import { PHONE_CARDS, RAIL_CARDS, RAIL_LAST, TABLET_CARDS } from "@/data/home-sections";
 import type { HeroType } from "@/data/home-hero";
 import { Container } from "@/components/ui/Container";
 import { ProductCard } from "@/components/catalog/ProductCard";
@@ -33,6 +33,7 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
       .map((p) => ({ slug: p.slug, legacy: null, published: p })),
   ]);
   const rank = (slug: string) => {
+    if (RAIL_LAST.has(slug)) return first.length + 1;
     const i = first.indexOf(slug);
     return i === -1 ? first.length : i;
   };
