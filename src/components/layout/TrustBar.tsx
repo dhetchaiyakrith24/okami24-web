@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { CheckCircle2, Globe, MessageCircle, Tag } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -22,16 +23,22 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  */
 const ICONS = [CheckCircle2, Tag, MessageCircle, Globe] as const;
 
+/** The one lookalike product (owner 27/10, docs/HANDOFF.md §18): no "ของแท้" anywhere on its page, so item 0 (genuine products)
+ *  is left out there. Every other page keeps all four items. */
+const NO_GENUINE_CLAIM_PATHS = new Set(["/products/marbo-10k-clone"]);
+
 export function TrustBar() {
   const { dict } = useLocale();
+  const pathname = usePathname();
+  const items = NO_GENUINE_CLAIM_PATHS.has(pathname) ? dict.trust.items.slice(1) : dict.trust.items;
   return (
     <section aria-label={dict.trust.ariaLabel} data-trust-bar className="border-t border-surface-border-soft bg-surface-0">
       <Container className="py-8 lg:py-10">
-        <ul className="grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-4 lg:gap-x-10">
-          {dict.trust.items.map((item, i) => {
-            const Icon = ICONS[i] ?? CheckCircle2;
+        <ul className={`grid grid-cols-2 gap-x-6 gap-y-7 lg:gap-x-10 ${items.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+          {items.map((item) => {
+            const Icon = ICONS[dict.trust.items.indexOf(item)] ?? CheckCircle2;
             return (
-              <li key={i} className="flex flex-col gap-2 lg:flex-row lg:gap-3">
+              <li key={item.title} className="flex flex-col gap-2 lg:flex-row lg:gap-3">
                 <Icon size={22} strokeWidth={1.75} aria-hidden className="shrink-0 text-ember lg:mt-0.5" />
                 <div className="flex flex-col gap-1">
                   <p className="font-display text-base font-semibold leading-tight text-foreground">{item.title}</p>
