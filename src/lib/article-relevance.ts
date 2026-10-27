@@ -101,6 +101,23 @@ function eLiquidRules(p: { categoryId: string }): (RelatedArticle | null)[] {
   return [article("guide", "salt-nic-vs-freebase", why), article("guide", "pg-vg-in-e-liquid", why), article("guide", "refilling-a-pod", why)];
 }
 
+/** Round seo-push-2710 batch 4: eleven articles had no product page linking them. These rules run LAST, so they only
+ *  fill a box that still has room after every rule above (LESSONS 35: never push an existing link out). The evidence
+ *  is the category the product is shown under — what each article is about: a pod or coil can burn or leak · a
+ *  disposable buyer chooses a disposable and a flavour · a switch-pod buyer chooses a flavour · a pod-system device
+ *  wears out and its pod can leak. */
+function tailRules(p: { categoryId: string }): (RelatedArticle | null)[] {
+  const why = `category ${p.categoryId}`;
+  const ids: Record<string, string[]> = {
+    "pods-cartridges": ["fixing-a-burnt-pod", "fixing-a-leaking-pod"],
+    "coils-accessories": ["fixing-a-burnt-pod", "fixing-a-leaking-pod"],
+    disposables: ["choosing-a-disposable", "choosing-a-pod-flavor", "fixing-a-burnt-pod"],
+    "switch-pods": ["choosing-a-pod-flavor", "fixing-a-burnt-pod"],
+    "pod-systems": ["how-long-a-pod-device-lasts", "fixing-a-leaking-pod"],
+  };
+  return (ids[p.categoryId] ?? []).map((id) => article("guide", id, why));
+}
+
 /** Rules for a legacy product record (the rich one: typed attributes + spec rows). */
 function legacyRules(p: Product): RelatedArticle[] {
   const out: (RelatedArticle | null)[] = [];
@@ -128,6 +145,8 @@ function legacyRules(p: Product): RelatedArticle[] {
   if (resistances.length > 1 || resistances.some((s) => (s.value.match(/\d+(\.\d+)?\s*(Ω|โอห์ม|ohm)/gi) ?? []).length > 1)) {
     out.push(article("technology", "multi-resistance-cartridges", `${resistances.length} verified resistance row(s): ${resistances.map((s) => s.value).join(" / ")}`));
   }
+  if (p.attributes.beginnerFriendly && DEVICE_CATEGORIES.has(p.categoryId)) out.push(article("guide", "how-to-vape-without-coughing", `attributes.beginnerFriendly = true, category ${p.categoryId}`));
+  out.push(...tailRules(p));
 
   return out.filter((a): a is RelatedArticle => a !== null);
 }
@@ -154,6 +173,7 @@ function publishedRules(p: StorefrontProductView): RelatedArticle[] {
   if (comparedFormat(p)) out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
   const battery = verifiedSpec(p.specifications, /battery|แบต|mAh/i);
   if (battery) out.push(article("guide", "battery-care-and-charging", battery));
+  out.push(...tailRules(p));
   return out.filter((a): a is RelatedArticle => a !== null);
 }
 
