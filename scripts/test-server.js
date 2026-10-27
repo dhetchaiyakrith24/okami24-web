@@ -5,7 +5,7 @@
 //                                        no build) — a later build of the repo cannot break it; restart to serve the new build
 //   node scripts/test-server.js stop     kill ONLY the process tree listening on 3412 (never by image name, never 3000)
 //   node scripts/test-server.js build    `next build` — refuses while 3412 is up (a build under a running server breaks it)
-//                                        · builds with OKAMI24_ORDERING=on like the live site (cart icon in the header);
+//                                        · build AND start use OKAMI24_ORDERING=on like the live site (static pages read it at build, /cart at runtime);
 //                                        set OKAMI24_ORDERING=off yourself for a cart-off build (27/10: a cart-off proof hid
 //                                        the header overflow the owner then saw live)
 //   node scripts/test-server.js guard    exit 1 if 3412 is up — for other scripts that build (verify-catalog --full)
@@ -205,7 +205,7 @@ async function main() {
       windowsHide: true,
       shell: process.platform === "win32",
       stdio: ["ignore", fd, fd],
-      env: { ...process.env, SITE_URL, OKAMI24_DATA_DIR: dataDir, OKAMI24_BACKUP_DISABLED: "1", OKAMI24_STARTUP_PROBE: "0" },
+      env: { ...process.env, SITE_URL, OKAMI24_DATA_DIR: dataDir, OKAMI24_BACKUP_DISABLED: "1", OKAMI24_STARTUP_PROBE: "0", OKAMI24_ORDERING: process.env.OKAMI24_ORDERING ?? "on" },
     });
     child.unref();
     const status = await waitUp(60000);
