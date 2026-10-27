@@ -89,8 +89,9 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
     });
   }
 
+  // min-w-0: in the cart page grid this section is a grid item; without it the phone swipe row (nowrap) widens the whole page (checker #928).
   return (
-    <section aria-labelledby="cart-suggestions" className={className}>
+    <section aria-labelledby="cart-suggestions" className={`min-w-0 ${className}`}>
       <h2 id="cart-suggestions" className="font-display text-xl font-semibold text-foreground">
         {dict.cart.suggestionsTitle}
       </h2>
