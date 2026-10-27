@@ -228,6 +228,10 @@ actions and accents (the how-to-order "ordering paused" note is information, not
 waiting / pending / being updated / being improved / being checked** ("สีเหลือง รอดำเนินการ รออัพเดต รอปรับปรุง ตรวจสอบ") —
 the amber of "รอชำระเงิน" on the customer side, `unverified` on the staff side; the staff pages get it in the staff redesign.
 
+**Orders to the warehouse (owner 27/10, chat "API"):** when web orders flow into Shipnity by themselves, the LINE alerts stay
+exactly as today — new order in the order group, slip attached in the slip group ("การแจ้งเตือนทางไลน์ยังเหมือนเดิม แนบใบสลิปเหมือนเดิม") —
+only the admin stops keying the order into Shipnity by hand. Slips never go to the warehouse.
+
 **onrender.com stays open (owner 26/10):** the service's `*.onrender.com` address is the back door "ในกรณีที่หน้าเว็บหลักเข้าไม่ได้" —
 never disable it.
 

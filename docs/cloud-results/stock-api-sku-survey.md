@@ -133,6 +133,6 @@ New database tables = owner "ได้" 27/10.
 | 2 | read the log → fit the door to the calls Shipnity really makes | Shipnity's stock writes land for real codes | revert |
 | 3 | compare Shipnity's numbers with the hourly order-entry read for some days | they agree | — |
 | 4 | live stock: site reads the table at runtime (B5 ② in HANDOFF §16 3f), hourly stock PRs stop, owner's sold-out list still wins | a Shipnity change shows on the site without a deploy | flag off → build-time stock |
-| 5 | orders: paid orders go to Shipnity's hook (no slip, no refund data); tracking back if Shipnity sends it | a test order appears in Shipnity | revert |
+| 5 | orders: paid orders go to Shipnity's hook (no slip, no refund data); tracking back if Shipnity sends it · LINE alerts + slips unchanged, admin stops keying by hand (HANDOFF §18) | a test order appears in Shipnity | revert |
 
 Risk: Cloudflare sits in front of the site — if it challenges Shipnity's server, the log stays empty; then allow `/wp-json/*`.
