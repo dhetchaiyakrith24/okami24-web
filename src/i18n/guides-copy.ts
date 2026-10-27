@@ -163,7 +163,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           // one page; the international version only — owner 26/10).
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ ไม่มีปุ่ม สูบได้เลย ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ สูงสุด 30 วัตต์",
           "แบต 1350mAh ตัวเครื่องหนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0",
-          "หัวพอตตระกูล ARGUS ใช้กับเครื่องนี้ได้ทั้งหมดตามที่ VOOPOO ระบุ โดยให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ และถ้าอยากได้หัวเพิ่ม เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก",
+          "VOOPOO ระบุว่าเครื่องนี้ใช้หัวพอต ARGUS แบบเติมด้านบนได้ ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม โดยให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ ถ้าอยากได้หัวเพิ่ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์ม ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้",
         ],
         image: SECTION_IMAGES.argusG3MiniTiny,
       },
@@ -889,7 +889,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 是一台 auto-draw 换弹主机：没有点火键，吸气即启动，功率会按所装烟弹自动调节，最高 30W。",
           "电池 1350mAh，机身重 40.85 g。随附烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL，配 iCOSM CODE 2.0 防漏系统。",
-          "按 VOOPOO 的说明，整个 ARGUS 烟弹家族都能用在这台机器上，使用前核对阻值和功率即可；需要备用烟弹的话，本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)。",
+          "按 VOOPOO 的说明，这台机器适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆，使用前核对阻值和功率即可；需要备用烟弹的话，本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 Top Fill 0.4 和 0.7 欧姆两个选项，其中的 1.2 欧姆选项是侧注式烟弹，不在这台机器的范围内。",
         ],
         image: SECTION_IMAGES_ZH.argusG3MiniTiny,
       },

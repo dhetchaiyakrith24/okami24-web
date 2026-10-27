@@ -147,7 +147,7 @@ export const technologyEntries: TechnologyEntry[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) runs GENE.AI and is auto-draw: no fire button, the device fires when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W, with no menu to set.",
           "A 1350mAh built-in battery in a 95.3 × 25.8 × 13.7 mm, 41 g body. The pod in the box is the ARGUS Top Fill Cartridge V2 at 0.7Ω, with the iCOSM CODE 2.0 anti-leak system.",
-          "For another resistance, we carry [VOOPOO Argus Pod cartridges](/products/coil-21); VOOPOO asks you to check resistance and output before use.",
+          "For another resistance, VOOPOO rates the G3 mini for ARGUS Top Fill cartridges at 0.4, 0.7 and 1.0Ω; our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes a 0.4Ω Top Fill cartridge, while its 1.2Ω option is a side-fill pod, outside that range. VOOPOO asks you to check resistance and output before use.",
           "These two devices are the two ends of what a chip can do: the DRAG 6 hands the settings to you, the ARGUS G3 mini lets the chip decide. Not sure yet whether you want to set wattage yourself? Read [Choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
         ],
       },

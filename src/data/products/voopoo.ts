@@ -694,7 +694,7 @@ export const voopooProducts: Product[] = [
       { key: "battery", label: "Battery", value: "1350mAh built-in", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "output", label: "Max output", value: "Up to 30W, matched to the cartridge automatically", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "pod", label: "Included pod", value: "ARGUS Top Fill Cartridge V2 0.7Ω · 3mL · top fill", sourceStatus: "verified", sourceUrl: G3M_PAGE },
-      { key: "pod-compat", label: "Pod platform", value: "ARGUS Top Fill Cartridge V2: 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · the whole ARGUS pod family (check resistance and output)", sourceStatus: "verified", sourceUrl: G3M_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "ARGUS Top Fill Cartridge V2: 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W (check resistance and output)", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "coil", label: "Coil", value: "iCOSM CODE 2.0 — Liquid-Seal Shield, Mega-Core, Golden Cotton", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "airflow", label: "Airflow", value: "Fixed, not adjustable", sourceStatus: "verified", sourceUrl: G3M_PAGE },
       { key: "firing", label: "Activation", value: "Draw-activated, no fire button", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/blog/argus-g3-mini-upgrade-from-disposables/" },

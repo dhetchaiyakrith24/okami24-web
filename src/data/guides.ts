@@ -174,7 +174,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
           "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL, with the iCOSM CODE 2.0 anti-leak system.",
-          "VOOPOO says the whole ARGUS pod family fits, as long as you check the resistance and output first — and when you need more pods, we carry [VOOPOO Argus Pod cartridges](/products/coil-21).",
+          "VOOPOO says the G3 mini takes ARGUS Top Fill cartridges, rated 0.4, 0.7 and 1.0Ω — check the resistance and output first. When you need more pods, our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4Ω and 0.7Ω; its 1.2Ω option is a side-fill pod, outside the G3 mini's range.",
         ],
         image: SECTION_IMAGES_EN.argusG3MiniTiny,
       },
