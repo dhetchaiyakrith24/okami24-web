@@ -121,6 +121,8 @@ const FLAVOR_WORDS = [
   "malee",
   // round list19 (18/10): INFY PLUS "Tropical Mix Fruit" and "Sprite" (a soda flavour) stayed unresolved and dropped off the page.
   "tropical", "sprite",
+  // list-new (27/10): Marbo 10K (เทียบแท้) "Mocha Latte" (a coffee flavour) stayed unresolved without these.
+  "mocha", "latte",
   "องุ่น", "แตงโม", "สตรอเบอร์รี่", "มะม่วง", "แอปเปิ้ล", "มินท์", "เมนทอล", "บลูเบอร์รี่",
   "ลิ้นจี่", "โคล่า", "กล้วย", "มะนาว", "ยาสูบ", "แตง", "ฝรั่ง",
 ];

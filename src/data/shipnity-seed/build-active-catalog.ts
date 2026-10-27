@@ -113,6 +113,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "Pod-158-13": "Champagne Gold",
   // Image sweep (19/10): Vmate Pro 2 — Max "Glit Black"; the device and VOOPOO's line-up print "Gilt Black".
   "Pod-176-1": "Gilt Black",
+  // List-new (27/10): Marbo 10K (เทียบแท้) — Max spells "Mocha Latee"; only the "Latte" spelling is corrected.
+  "Disposable-47-11": "Mocha Latte",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {

@@ -384,6 +384,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 มีให้เลือก 42 กลิ่น",
   "coil-21": "หัวพอต VOOPOO Argus Pod มีให้เลือก 4 แบบ",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
+  // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
+  "marbo-10k-clone": "Marbo 10K เทียบแท้ พอตใช้แล้วทิ้ง ไม่ใช่สินค้าของ SALTHUB มีให้เลือก 12 กลิ่น",
   "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
