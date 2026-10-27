@@ -336,6 +336,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "MQ-BAR-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "MQ Bar 22K" (Disposable-43), 11 flavours; no maker source found 19/10 — prepared on warehouse facts only, without a brand' },
   // Owner brief 26/10 (replaces the 22/10 "ไม่ลง"): SUP Zero 22K — Max-only record (Disposable-45, 15 flavours incl. 5%).
   "SUP-ZERO-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "SUP Zero 22K" (Disposable-45), 15 flavours ฿329 (product list read 26/10); the device prints SUP ZERO; no maker site found 22/10 + 26/10 (one Thai shop: zeedcupvp.com/product/sup-zero-22000-puffs, tier 2) — listed on warehouse facts only, without a brand' },
+  // List-new (27/10, owner ruling HANDOFF §18): Max "Marbo 10k โคลน" (Disposable-47) = a lookalike of SALTHUB's M Bar 10K, sold as
+  // "Marbo 10K (เทียบแท้)" — NOT a SALTHUB product, so no brand (never salthub, never a link to /brands/salthub).
+  "MARBO-10K-CLONE": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Marbo 10k โคลน" (Disposable-47), 12 flavours ฿299 (product list read 27/10); owner 27/10: a copy of M Bar 10K, listed as "Marbo 10K (เทียบแท้)" (HANDOFF §18) — not SALTHUB, no maker to cite: warehouse names only, no spec rows, no card photo yet (the only Max image is SALTHUB own poster)' },
   // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
   // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; relxnow.com has no page for these pods.
   "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; no page on relxnow.com — warehouse facts only' },
@@ -657,6 +660,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
   // Owner brief 26/10: warehouse facts only — the Max name "SUP Zero 22K" and its 15 flavour rows (5 of them named 5%).
+  // List-new (27/10, HANDOFF §18): thai-copy 27/10 — the เทียบแท้ line is required on the page; never "ของแท้"; no spec numbers.
+  "MARBO-10K-CLONE": {
+    tagline: "พอตใช้แล้วทิ้ง Marbo 10K เทียบแท้",
+    shortDescription: "พอตใช้แล้วทิ้ง Marbo 10K รุ่นนี้เป็นสินค้าเทียบแท้ ไม่ใช่สินค้าของ SALTHUB ร้านมีให้เลือก 12 กลิ่น",
+  },
   "SUP-ZERO-22K": {
     tagline: "พอตใช้แล้วทิ้ง SUP ZERO 22K",
     shortDescription: "พอตใช้แล้วทิ้ง SUP ZERO ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 15 กลิ่น",
@@ -2872,6 +2880,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "RELX-ESSENTIAL-2": { name: "RELX Essential 2", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "SUP-ZERO-22K": { name: "SUP ZERO 22K", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
+  // Owner 27/10 (HANDOFF §18): the name is the owner's own — no outside source.
+  "MARBO-10K-CLONE": { name: "Marbo 10K (เทียบแท้)", sourceUrl: "" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },

@@ -116,6 +116,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "Pod-176-1": "Gilt Black",
   // List-new (27/10): nexBar CLEAR 18K — Max "Watermelon"; the old seed (Pod-180-4) and the shop page name it Watermelon Ice.
   "Disposable-46-5": "Watermelon Ice",
+  // List-new (27/10): Marbo 10K (เทียบแท้) — Max spells "Mocha Latee"; only the "Latte" spelling is corrected.
+  "Disposable-47-11": "Mocha Latte",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {

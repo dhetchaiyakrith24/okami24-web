@@ -61,6 +61,8 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "esko-bar-switch-pod": { tagline: "ESKO BAR SWITCH 20K refill pod" },
   "mq-bar-22k": { tagline: "MQ Bar 22K disposable" },
   "sup-zero-22k": { tagline: "SUP ZERO 22K disposable" },
+  // List-new (27/10, HANDOFF §18): the lookalike — thai-copy 27/10; never "genuine/authentic/original".
+  "marbo-10k-clone": { tagline: "Marbo 10K clone disposable, not made by SALTHUB" },
   "graple-freebase": { tagline: "Graple freebase e-liquid" },
   "vmate-pro-2": { tagline: "VOOPOO Vmate Pro 2 device" },
   "punta-ice": { tagline: "Punta Ice e-liquid" },

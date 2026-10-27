@@ -253,6 +253,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
   // Owner brief 26/10: SUP Zero 22K (Max-only "Disposable-45") — Max ราคาขาย ฿329 for the parent and its 15 flavours (read 2026-10-26 17:30).
   "SUP-ZERO-22K": { sellingPrice: 329, lastPriceReview: "2026-10-26" },
+  // List-new (27/10): Marbo 10K (เทียบแท้) (Max-only "Disposable-47") — Max ราคาขาย ฿299 for the parent and its 12 flavours (read 2026-10-27);
+  // owner 27/10 "ราคา ฿299". Held until a card photo exists (IMAGE_SPEC §4) — uncomment with the card (+ sku-map entry):
+  // "MARBO-10K-CLONE": { sellingPrice: 299, lastPriceReview: "2026-10-27" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

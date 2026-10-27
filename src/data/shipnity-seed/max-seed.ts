@@ -4034,6 +4034,85 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": true
       }
     ]
-  }
+  },
+  "MARBO-10K-CLONE": {
+    "maxParentId": "Disposable-47",
+    "name": "Marbo 10k โคลน",
+    "operationalSellingPrice": 299,
+    "children": [
+      {
+        "shipnityVariantId": "Disposable-47-1",
+        "rawLabel": "Grape",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-2",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-3",
+        "rawLabel": "Watermelon Mint",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-4",
+        "rawLabel": "Menthol Blast",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-5",
+        "rawLabel": "Blue Ice",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-6",
+        "rawLabel": "Kyoho Grape",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-7",
+        "rawLabel": "Pink Berry",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-8",
+        "rawLabel": "Cola",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-9",
+        "rawLabel": "All Berry",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-47-10",
+        "rawLabel": "Yellow Mint",
+        "sellingPrice": 299,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-47-11",
+        "rawLabel": "Mocha Latee",
+        "sellingPrice": 299,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-47-12",
+        "rawLabel": "Strawberry Kiwi",
+        "sellingPrice": 299,
+        "inStock": true
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE"];
