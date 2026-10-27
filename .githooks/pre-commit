@@ -12,4 +12,6 @@ fi
 node scripts/eol-check.js --staged || exit 1
 # 4. HANDOFF §16 spec: ≤ 15 KB, no line over 2,000 bytes (skill okami24-handoff ขั้น 2 · house round 26/10)
 node scripts/handoff-size-check.js --staged || exit 1
+# 5. agent and skill headers must parse, or the app silently drops them (scripts/agent-header-check.js · 27/10)
+node scripts/agent-header-check.js --staged || exit 1
 exec node scripts/large-file-check.js --staged
