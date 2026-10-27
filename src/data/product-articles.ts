@@ -1754,6 +1754,174 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Round seo-push-2710 (27/10, owner: the "more details" heading of these two pages had nothing under it but the grid).
+  // Neither maker publishes a product page (INFY lists no 20K; Muro has no site), so every fact below is one of the page's
+  // verified rows or its flavour list; the flavour groups are the shop's own, by the words in each name (thai-copy 27/10).
+  // en/zh link only the guides that exist in those languages (the flavour and disposable guides are Thai only).
+  "infy-20k": {
+    th: {
+      lede: "INFY 20K มีให้เลือก 24 กลิ่น ด้านล่างร้านจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น พร้อมเรื่องการปรับช่องลมและระยะเวลาใช้งานที่ควรรู้ก่อนเลือก",
+      sections: [
+        {
+          heading: "INFY 20K กลิ่นไหนดี",
+          paragraphs: [
+            "กลิ่นไหนดีไม่มีคำตอบเดียว ขึ้นอยู่กับว่าชอบแนวไหน ลองเลือกจากสายก่อนก็ได้ ร้านจัดสายเองจากคำในชื่อกลิ่น ชื่อที่มี Mint หรือ Menthol อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อชาอยู่สายชา และชื่อผลไม้อื่น ๆ อยู่สายผลไม้",
+            "สายเย็นมี Mint กับ Menthol Freeze ส่วนสายองุ่นมี 6 กลิ่น คือ Grape Apple · Grape Lychee · Grape Aloevera · Grape Bubblegum · Kyoho Grape และ Yoyo Grape มีทั้งองุ่นอย่างเดียว องุ่นคู่กับผลไม้ องุ่นคู่กับอโล และองุ่นคู่กับหมากฝรั่ง",
+            "สายผลไม้มี 12 กลิ่น มีทั้งผลไม้อย่างเดียว อย่าง Lychee · Peach · Blueberry และผลไม้สองอย่างคู่กัน อย่าง Strawberry Kiwi กับ Watermelon Lychee ส่วน Strawberry Ice Cream กับ Watermelon Bubblegum ที่มีผลไม้คู่กับขนม ร้านก็จัดไว้ในสายนี้ด้วย",
+            "สายชามี Milk Tea Cha กับ Matcha ส่วน Cola กับ Mineral Water ชื่อไม่ได้เป็นผลไม้หรือชา ร้านจึงจัดไว้เป็นแนวอื่น ถ้ายังไม่แน่ใจว่าจะเริ่มจากสายไหน อ่านวิธีเลือกได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "ปรับช่องลมแล้ว การสูบต่างกันยังไง",
+          paragraphs: [
+            "ถ้าเปิดช่องลมให้กว้างขึ้น การสูบจะโล่งขึ้น และควันจะเย็นและบางลง ถ้าหรี่ช่องลมให้แคบลง การสูบก็จะแน่นขึ้น ลองเริ่มจากระดับกลาง ๆ ก่อน แล้วค่อยปรับทีละน้อยจนได้แบบที่ชอบ",
+            "ช่องลมแบบไหนเข้ากับแนวการสูบแบบไหน ร้านเล่าไว้ละเอียดที่[เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
+          ],
+        },
+        {
+          heading: "INFY 20K ใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "ใช้ได้กี่วันไม่มีตัวเลขตายตัว ขึ้นอยู่กับว่าสูบถี่แค่ไหน และดูดแต่ละครั้งนานเท่าไร ตัวเครื่องมีน้ำยาบรรจุมาให้แล้ว 20mL พอน้ำยาหมดก็เปลี่ยนเป็นเครื่องใหม่ ส่วนถ้าแบตหมดก่อน ก็ชาร์จผ่าน USB-C แล้วใช้ต่อได้",
+            "ตัวเลขพัฟที่พอตใช้แล้วทิ้งระบุไว้ควรอ่านยังไง และสูบแบบไหนถึงใช้ได้นานขึ้น ร้านเขียนไว้ที่[พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The INFY 20K comes in 24 flavours. Below, we've sorted them into groups to make choosing easier, with a word on airflow and on how long one lasts.",
+      sections: [
+        {
+          heading: "Which INFY 20K flavour should I start with?",
+          paragraphs: [
+            "There's no single right answer, so start with the kind of flavour you like. We grouped them by the words in their names, not by INFY's own list: Mint or Menthol means cool, Grape means the grape group, tea names go under tea, and other fruit names under fruit.",
+            "The cool group is Mint and Menthol Freeze. The grape group has six: Grape Apple, Grape Lychee, Grape Aloevera, Grape Bubblegum, Kyoho Grape and Yoyo Grape.",
+            "Fruit has 12, from single fruits such as Lychee, Peach and Blueberry to pairs like Strawberry Kiwi and Watermelon Lychee. Names that pair a fruit with a sweet, like Strawberry Ice Cream and Watermelon Bubblegum, sit here too.",
+            "Tea is Milk Tea Cha and Matcha. That leaves Cola and Mineral Water, whose names point to neither fruit nor tea, so we list them as others.",
+          ],
+        },
+        {
+          heading: "How does adjusting the airflow change the draw?",
+          paragraphs: [
+            "Open the airflow wider and the draw gets looser, with cooler, thinner vapour. Close it down and the draw gets tighter. Start in the middle and adjust a little at a time until it feels right.",
+            "Which airflow suits which draw style is covered in [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow).",
+          ],
+        },
+        {
+          heading: "How long does an INFY 20K last?",
+          paragraphs: [
+            "There's no fixed number of days: it depends on how often you vape and how long each draw is. It comes prefilled with 20mL, and when that runs out it's time for a new one. If the battery runs low first, charge it over USB-C and carry on.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "INFY 20K 共有 24 种口味。下面我们按类型分好了组，方便挑选，也顺带讲讲进气调节和能用多久。",
+      sections: [
+        {
+          heading: "INFY 20K 哪个口味好？",
+          paragraphs: [
+            "没有标准答案，可以先从喜欢的类型选起。我们按口味名称里的词来分组，并非 INFY 官方分类：带 Mint 或 Menthol 的归为清凉，带 Grape 的归为葡萄，茶类名称归为茶，其他水果名称归为水果。",
+            "清凉类有 Mint 和 Menthol Freeze。葡萄类有 6 款：Grape Apple、Grape Lychee、Grape Aloevera、Grape Bubblegum、Kyoho Grape 和 Yoyo Grape。",
+            "水果类有 12 款，既有 Lychee、Peach、Blueberry 这样的单一水果，也有 Strawberry Kiwi、Watermelon Lychee 这样的组合。水果搭配甜点的名称，比如 Strawberry Ice Cream 和 Watermelon Bubblegum，也归在这一类。",
+            "茶类是 Milk Tea Cha 和 Matcha。剩下的 Cola 和 Mineral Water，名称既不是水果也不是茶，我们归为其他。",
+          ],
+        },
+        {
+          heading: "调节进气，吸感有什么不同？",
+          paragraphs: [
+            "进气开大，吸感更松，烟雾更凉、更薄；进气收小，吸感更紧。可以先从中间开始，再一点点调到自己喜欢的程度。",
+            "不同吸法适合怎样的进气，详见[如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
+          ],
+        },
+        {
+          heading: "INFY 20K 能用多久？",
+          paragraphs: [
+            "能用几天没有固定数字，取决于抽的频率和每口的长短。机身预装 20mL 烟油，抽完就换新的；如果电池先用完，用 USB-C 充电后可以继续使用。",
+          ],
+        },
+      ],
+    },
+  },
+  "muro-sc-8000": {
+    th: {
+      lede: "Muro SC 8000 มีให้เลือก 12 กลิ่น ด้านล่างร้านจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น พร้อมเรื่องการชาร์จ และความต่างจาก Muro รุ่นที่พัฟเยอะกว่า",
+      sections: [
+        {
+          heading: "Muro SC 8000 กลิ่นไหนดี",
+          paragraphs: [
+            "กลิ่นไหนดีขึ้นอยู่กับว่าชอบแนวไหน ลองเลือกจากสายก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่นที่พิมพ์ไว้บนซองของแต่ละกลิ่น สายเย็นมี Extreme Menthol กับ Double Mint ถ้ากำลังหากลิ่นเมนทอล ชื่อในรายการคือ Extreme Menthol",
+            "สายผลไม้มี 7 กลิ่น คือ Strawberry · Banana Strawberry · Mix Berries · Grape · Watermelon · Honey Lemon และ Apple Shisha สองกลิ่นหลังมีผลไม้คู่กับอย่างอื่นในชื่อ ร้านก็จัดไว้ในสายนี้ด้วย",
+            "ส่วนแนวอื่นมี Cola · Mineral Water และ Yakult ชื่อในกลุ่มนี้เป็นเครื่องดื่ม ไม่ได้บอกว่าเป็นผลไม้ชนิดไหน วิธีเลือกกลิ่นจากชื่อ อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "พอตใช้แล้วทิ้งที่ชาร์จซ้ำได้ ใช้ยังไง",
+          paragraphs: [
+            "Muro SC 8000 ชาร์จซ้ำได้ผ่านช่องชาร์จ USB-C ถ้าแบตหมดก่อนน้ำยา ก็เสียบสายชาร์จแล้วสูบต่อได้ ไม่ต้องเปลี่ยนเครื่องใหม่ทั้งที่น้ำยายังเหลืออยู่",
+            "ชาร์จนานแค่ไหน ชาร์จข้ามคืนได้ไหม และชาร์จยังไงให้แบตใช้ได้นาน ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
+          ],
+        },
+        {
+          heading: "Muro SC 8000 กับ Connector 20K ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้งของ Muro ความต่างที่เห็นชัดคือจำนวนพัฟ [Muro Connector 20K](/products/muro-connector-20k) รองรับสูงสุด 20,000 พัฟ มากกว่ารุ่นนี้ ถ้าสูบจัดและอยากเปลี่ยนเครื่องให้น้อยครั้งลง Connector 20K ก็เป็นอีกรุ่นที่น่าดู",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Muro SC 8000 comes in 12 flavours. Below, we've sorted them into groups to make choosing easier, with a note on charging and on how it differs from Muro's higher-puff model.",
+      sections: [
+        {
+          heading: "Which Muro SC 8000 flavour should I start with?",
+          paragraphs: [
+            "Start with the kind of flavour you like. We grouped them by the words in the name printed on each pouch. The cool pair is Extreme Menthol and Double Mint; if you're after menthol, the name to look for is Extreme Menthol.",
+            "Fruit has seven: Strawberry, Banana Strawberry, Mix Berries, Grape, Watermelon, Honey Lemon and Apple Shisha. The last two pair a fruit with something else, and we keep them here too.",
+            "The rest are Cola, Mineral Water and Yakult, all named after drinks rather than a fruit.",
+          ],
+        },
+        {
+          heading: "What does rechargeable mean on a disposable?",
+          paragraphs: [
+            "The Muro SC 8000 charges through a USB-C port. If the battery runs out before the e-liquid does, charge it and keep going, with no need to replace a device that still has e-liquid left.",
+            "How long to charge, whether overnight is fine and how to look after the battery are covered in [Battery care](/guides/battery-care-and-charging).",
+          ],
+        },
+        {
+          heading: "Muro SC 8000 or Connector 20K?",
+          paragraphs: [
+            "Both are Muro disposables. The clear difference is the puff rating: the [Muro Connector 20K](/products/muro-connector-20k) is rated for up to 20,000 puffs, more than this one. If you vape a lot and would rather change devices less often, the Connector 20K is worth a look.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Muro SC 8000 共有 12 种口味。下面我们按类型分好了组，方便挑选，也讲讲充电，以及它和 Muro 口数更多的型号有什么不同。",
+      sections: [
+        {
+          heading: "Muro SC 8000 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。我们按每个包装袋上印的口味名称来分组。清凉类有 Extreme Menthol 和 Double Mint；想找薄荷醇口味，就选 Extreme Menthol。",
+            "水果类有 7 款：Strawberry、Banana Strawberry、Mix Berries、Grape、Watermelon、Honey Lemon 和 Apple Shisha。后两款是水果搭配其他元素，也归在这一类。",
+            "其余是 Cola、Mineral Water 和 Yakult，名称都是饮品，而不是某种水果。",
+          ],
+        },
+        {
+          heading: "可充电的一次性设备，用起来有什么不同？",
+          paragraphs: [
+            "Muro SC 8000 通过 USB-C 接口充电。如果电池比烟油先用完，充好电就能继续抽，不必在烟油还有剩余时就换新机。",
+            "要充多久、能不能整夜充电、怎样让电池更耐用，详见[电池保养](/guides/battery-care-and-charging)。",
+          ],
+        },
+        {
+          heading: "Muro SC 8000 和 Connector 20K 怎么选？",
+          paragraphs: [
+            "两款都是 Muro 的一次性设备。明显的区别在口数：[Muro Connector 20K](/products/muro-connector-20k) 标注最多 20,000 口，比这款更多。如果抽得多、想少换几次机器，可以看看 Connector 20K。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

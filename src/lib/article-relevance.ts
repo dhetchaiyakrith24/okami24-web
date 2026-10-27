@@ -93,6 +93,14 @@ const DEVICE_CATEGORIES = new Set(["pod-systems", "switch-pods", "disposables"])
 // pod-systems device counts — the VOOPOO refill devices are open systems too, the format the article compares.
 const comparedFormat = (p: { categoryId: string }) => p.categoryId === "disposables" || p.categoryId === "pod-systems";
 
+/** Round seo-push-2710: a bottle of e-liquid is what these three articles are about (salt nic or freebase · the PG/VG
+ *  ratio · filling a pod) — before this, no e-liquid page linked any article. */
+function eLiquidRules(p: { categoryId: string }): (RelatedArticle | null)[] {
+  if (p.categoryId !== "e-liquid") return [];
+  const why = `category ${p.categoryId}`;
+  return [article("guide", "salt-nic-vs-freebase", why), article("guide", "pg-vg-in-e-liquid", why), article("guide", "refilling-a-pod", why)];
+}
+
 /** Rules for a legacy product record (the rich one: typed attributes + spec rows). */
 function legacyRules(p: Product): RelatedArticle[] {
   const out: (RelatedArticle | null)[] = [];
@@ -107,6 +115,7 @@ function legacyRules(p: Product): RelatedArticle[] {
   if (p.attributes.wattageMin !== undefined && p.attributes.wattageMax !== undefined) out.push(article("guide", "choosing-wattage-and-airflow", `attributes.wattageMin/Max = ${p.attributes.wattageMin}–${p.attributes.wattageMax}`));
   if (p.attributes.screenType === "touchscreen") out.push(article("technology", "onboard-touch-displays", `attributes.screenType = touchscreen`));
   if (POD_OR_COIL.has(p.categoryId)) out.push(article("guide", "coil-and-pod-maintenance", `category ${p.categoryId}`));
+  out.push(...eLiquidRules(p));
 
   const mesh = spec(/mesh/i);
   if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));
@@ -137,6 +146,7 @@ function publishedRules(p: StorefrontProductView): RelatedArticle[] {
   // rules — the designer's B3 pass caught pod-180 losing its mesh-coil link to three generic
   // guides when the new rules ran first.
   if (POD_OR_COIL.has(p.categoryId)) out.push(article("guide", "coil-and-pod-maintenance", `category ${p.categoryId}`));
+  out.push(...eLiquidRules(p));
   if (p.optionAxisCode === "resistance" && p.variants.length > 1) out.push(article("technology", "multi-resistance-cartridges", `option axis "resistance" with ${p.variants.length} values`));
   const mesh = verifiedSpec(p.specifications, /mesh/i);
   if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));

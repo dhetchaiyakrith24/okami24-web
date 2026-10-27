@@ -3,6 +3,7 @@
 import type { LineOrderCodes } from "@/lib/line-order-codes";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
@@ -69,7 +70,10 @@ export function PilotProductDetail({
   worksWith,
   fitsDevices,
   lineCodes,
+  brandHref,
 }: {
+  /** Round seo-push-2710: the brand page of this product (`/brands/<slug>`), when the brand has one — the brand chip links there. */
+  brandHref?: string;
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
   lineCodes?: LineOrderCodes;
 
@@ -220,7 +224,14 @@ export function PilotProductDetail({
         descriptionClassName="max-lg:hidden"
         meta={
           <div className="flex flex-wrap items-center gap-2">
-            {product.brandName && <Badge tone="steel">{product.brandName}</Badge>}
+            {product.brandName &&
+              (brandHref ? (
+                <Link href={brandHref} className="inline-flex transition-opacity hover:opacity-80">
+                  <Badge tone="steel">{product.brandName}</Badge>
+                </Link>
+              ) : (
+                <Badge tone="steel">{product.brandName}</Badge>
+              ))}
             {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
           </div>
         }
