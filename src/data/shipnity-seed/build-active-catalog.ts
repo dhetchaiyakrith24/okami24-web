@@ -23,8 +23,9 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  */
 // line 2 max-sync (22/10): + "Coil-1" (all 16 Vinci coils). "IQOSHEET-16" went back to its frozen seed 23/10 (image line 1): Max's
 // IQOSHEET-16-4 "Red Brown" is IQOS's Garnet Red (sku-map.ts) — no separate option.
+// List-new (27/10): + "Pod-180" — nexBar CLEAR 18K, which Max re-coded as Disposable-46 (19 flavours; the old seed had 10).
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109", "Coil-21", "Eliquid-64", "Coil-1"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109", "Coil-21", "Eliquid-64", "Coil-1", "Pod-180"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
@@ -113,6 +114,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "Pod-158-13": "Champagne Gold",
   // Image sweep (19/10): Vmate Pro 2 — Max "Glit Black"; the device and VOOPOO's line-up print "Gilt Black".
   "Pod-176-1": "Gilt Black",
+  // List-new (27/10): nexBar CLEAR 18K — Max "Watermelon"; the old seed (Pod-180-4) and the shop page name it Watermelon Ice.
+  "Disposable-46-5": "Watermelon Ice",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
