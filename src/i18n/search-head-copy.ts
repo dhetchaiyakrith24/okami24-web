@@ -474,6 +474,20 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Keyword line 23/10: thai-copy's head line for the new beginner guide (no "น้ำยา").
   "how-to-vape-without-coughing":
     "สูบพอตยังไงไม่ให้สำลัก เริ่มจากดูดช้า ๆ เบา ๆ เข้าปากก่อน พร้อมเรื่องนิโคตินและเครื่องที่ทำให้ไอ และวิธีเริ่มใช้พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็ม",
+  // SEO push 27/10 batch 2 (side chat seo-push-2710): head-only lines for six Thai-only guides that used their dek as meta —
+  // three had no main keyword in it (Marbo · Caliburn · พอตเปลี่ยนหัว), three IQOS deks ran past 200 characters. thai-copy's lines.
+  "choosing-a-marbo-flavor":
+    "Marbo กลิ่นไหนดี และมีกลิ่นอะไรบ้าง รวมรายชื่อกลิ่น M Bar 9K · M Bar 10K และ M Switch Pod แยกเป็นสายเย็น องุ่น ผลไม้ และแนวอื่น ให้เลือกตามแนวที่ชอบได้ง่าย",
+  "comparing-caliburn-models":
+    "Caliburn รุ่นไหนดี เทียบ Caliburn 8 รุ่นทีละคู่ เช่น G5 กับ G4 และ G4 กับ G4 Pro ต่างกันยังไง ทั้งจอกับการควบคุม ขนาดแบต การปรับช่องลม และระบบหัวพอต",
+  "disposable-vs-switch-pod":
+    "พอตใช้แล้วทิ้งกับพอตเปลี่ยนหัว ต่างกันยังไง แบบแรกแกะแล้วใช้ได้เลย หมดแล้วทิ้งทั้งเครื่อง แบบหลังเก็บตัวเครื่องไว้ เปลี่ยนแค่หัวพอต ส่วน Marbo มีทั้งสองแบบ",
+  "iqos-iluma-i-reset-and-charging":
+    "IQOS ILUMA i รีเซ็ตยังไง วาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มค้างไว้ 10 วินาที พร้อมวิธีเช็คเมื่อชาร์จไม่เข้า ความหมายของไฟและสัญลักษณ์บนจอ และวิธีใช้",
+  "choosing-a-terea-flavor":
+    "TEREA กลิ่นไหนดี เริ่มจากกลุ่มที่ชอบก่อน IQOS แบ่งไว้สี่กลุ่ม คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูล รวมความต่างของแต่ละกลิ่น และวิธีบีบแคปซูลของกลิ่น Pearl",
+  "iqos-iluma-i-one-vs-iluma-i":
+    "ILUMA i ONE กับ ILUMA i ต่างกันยังไง i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ i PRIME มีสองชิ้น พร้อมจอทัชและโหมดหยุดพัก",
 };
 
 /** Row C19 — keyed by technology entry id. */
