@@ -110,6 +110,10 @@ export default async function StaffPage() {
           <Link href="/staff/slip" className={more}>
             ตรวจสลิปจาก LINE <span aria-hidden>→</span>
           </Link>
+          {/* Owner 27/10: the warehouse's Shipnity connects here (key pair + call log). */}
+          <Link href="/staff/shipnity" className={more}>
+            เชื่อมคลัง Shipnity <span aria-hidden>→</span>
+          </Link>
           {/* Owner 23/10: a copy of every order on the shop's own computer — opens in Excel. */}
           <a href="/staff/api/export" download className={more}>
             ดาวน์โหลดออเดอร์ทั้งหมด (Excel) <span aria-hidden>↓</span>
