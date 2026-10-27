@@ -27,6 +27,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // line 2 max-sync (22/10): + the 2 new MOOOD Monster 14K names (Max Disposable-37 labels), sorted in by length.
   // line 2 max-sync (22/10): + TEREA Black Purple (iqos.com/id), sorted in by length.
   // line 2 max-sync (22/10): + JOIWAY F3 Funta Green (Max Pod-133-15), sorted in by length.
+  // list-new (27/10): + Marbo 10K (เทียบแท้) Mocha Latte (Max Disposable-47-11), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -207,6 +208,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Spearmint 5%",
   "Black Purple",
   "Grape Ice 5%", // SUP ZERO 22K (26/10)
+  "Mocha Latte",
   "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
   "Monster Ice",
