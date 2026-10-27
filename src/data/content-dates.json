@@ -41,7 +41,7 @@
     "src/data/shipnity-seed/active-catalog-to-product-master.ts": "2026-10-26T18:02:01+07:00",
     "src/data/shipnity-seed/legacy-price-approvals.ts": "2026-10-22T18:18:31+07:00",
     "src/data/shipnity-seed/publication-approvals.ts": "2026-10-26T18:02:01+07:00",
-    "src/data/technology.ts": "2026-10-27T15:40:11+07:00",
+    "src/data/technology.ts": "2026-10-27T19:13:16+07:00",
     "src/i18n/faq-copy.ts": "2026-10-26T02:48:56+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/flavor-copy.ts": "2026-09-17T03:44:12+07:00",
@@ -55,7 +55,7 @@
     "src/i18n/service-pages/privacy.tsx": "2026-10-26T16:35:56+07:00",
     "src/i18n/service-pages/shared.tsx": "2026-10-26T14:31:42+07:00",
     "src/i18n/service-pages/shipping.tsx": "2026-10-26T02:20:20+07:00",
-    "src/i18n/technology-copy.ts": "2026-10-27T15:40:11+07:00",
+    "src/i18n/technology-copy.ts": "2026-10-27T19:13:16+07:00",
     "src/lib/catalog-search.ts": "2026-09-22T15:46:52+07:00",
     "src/lib/finder.ts": "2026-09-25T00:04:57+07:00"
   },

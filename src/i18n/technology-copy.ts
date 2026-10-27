@@ -136,7 +136,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         heading: "ตัวอย่างจริง: ปุ่มยิงหายไปเลย — ARGUS G3 mini กับ GENE.AI",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) ใช้ชิป GENE.AI เป็นระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สูบแล้วเครื่องทำงานเอง วัตต์ปรับให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ ไม่มีเมนูให้ตั้ง",
-          "แบตในตัว 1350mAh ตัวเครื่อง 95.3 × 25.8 × 13.7 mm หนัก 41 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม มีระบบกันรั่ว iCOSM CODE 2.0",
+          "แบตในตัว 1350mAh ตัวเครื่อง 97.9 × 25.8 × 13.7 mm หนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม มีระบบกันรั่ว iCOSM CODE 2.0",
           "ถ้าอยากเปลี่ยนค่าโอห์ม VOOPOO ระบุให้ G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบน ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 โอห์ม ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้ โดย VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
           "สองเครื่องนี้คือสองขั้วของงานที่ชิปทำ DRAG 6 ยกการตั้งค่าให้คุณคุมเอง ARGUS G3 mini ให้ชิปคุมแทน ถ้ายังไม่แน่ใจว่าอยากคุมวัตต์เองไหม อ่านที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
         ],
@@ -296,7 +296,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         heading: "实例：点火键干脆消失——ARGUS G3 mini 与 GENE.AI",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 搭载 GENE.AI 芯片，是 auto-draw 设计：没有点火键，吸气即启动，功率按所装烟弹自动调节，最高 30W，没有菜单需要设置。",
-          "1350mAh 内置电池，机身 95.3 × 25.8 × 13.7 mm、重 41 g。盒内烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆，配 iCOSM CODE 2.0 防漏系统。",
+          "1350mAh 内置电池，机身 97.9 × 25.8 × 13.7 mm、重 40.85 g。盒内烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆，配 iCOSM CODE 2.0 防漏系统。",
           "想换阻值的话，按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆；本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 欧姆的 Top Fill 选项，其中的 1.2 欧姆选项是侧注式烟弹，不在 G3 mini 的范围内。VOOPOO 提醒使用前先核对阻值和功率。",
           "这两台设备是芯片能力的两端：DRAG 6 把设定交给你，ARGUS G3 mini 让芯片替你决定。还不确定自己想不想亲自调功率，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
         ],
