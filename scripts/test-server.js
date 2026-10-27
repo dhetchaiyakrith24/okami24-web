@@ -5,6 +5,9 @@
 //                                        no build) — a later build of the repo cannot break it; restart to serve the new build
 //   node scripts/test-server.js stop     kill ONLY the process tree listening on 3412 (never by image name, never 3000)
 //   node scripts/test-server.js build    `next build` — refuses while 3412 is up (a build under a running server breaks it)
+//                                        · builds with OKAMI24_ORDERING=on like the live site (cart icon in the header);
+//                                        set OKAMI24_ORDERING=off yourself for a cart-off build (27/10: a cart-off proof hid
+//                                        the header overflow the owner then saw live)
 //   node scripts/test-server.js guard    exit 1 if 3412 is up — for other scripts that build (verify-catalog --full)
 // Port 3000 is the owner's own dev server: this script never starts, stops or builds for it, and has no port option.
 // start uses: SITE_URL=https://okami24.store · a throwaway data dir (OKAMI24_DATA_DIR, default <tmp>/okami24-3412-data)
@@ -181,7 +184,7 @@ async function main() {
       cwd: ROOT,
       stdio: "inherit",
       shell: process.platform === "win32",
-      env: { ...process.env, SITE_URL },
+      env: { ...process.env, SITE_URL, OKAMI24_ORDERING: process.env.OKAMI24_ORDERING ?? "on" },
     });
     process.exit(r.status ?? 1);
   }
