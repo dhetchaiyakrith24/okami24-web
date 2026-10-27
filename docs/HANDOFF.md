@@ -272,6 +272,11 @@ never fixed in Shipnity · the warehouse will send the API; build the SKU map me
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
 
+**Never write "the shop does not sell X" (owner 27/10, chat — "สินค้าที่เกี่ยวกับ Pod เราขายเกือบทั้งหมดยกเว้นของหมด หรือ เลิกขายแล้ว
+และต่อให้เลิกขายหรือไม่มีขายเราก็จะใส่สินค้าลงเว็บเพื่อ Seo"):** no page says the shop does not sell / does not carry / has no
+item, in any language. A product the shop is out of, has stopped selling or has not listed yet is listed anyway (SEO); stock
+state is the cart's job. A line that would say "we don't sell it" = list the product instead.
+
 **MOOOD Monster 14K (owner 06/10 night):** Grape N5% / Blueberry N5% keep the real frosted body (A) · flavour list = maker 19 + the
 shop's 2 N5% · "Sugar Apple" as printed · nicotine row 3% · official-site link to the Wayback copy · no story section, 220 chars OK ·
 who-for line = "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (the edit itself = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 "Data round").
