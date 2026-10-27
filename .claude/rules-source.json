@@ -2,7 +2,7 @@
   "note": "Written by the sync workflow of dhetchaiyakrith24/smogz-rules. .claude/rules/central-rules.md is a byte copy of CLAUDE.md there — never edit the copy; change the source repo through a pull request (its README).",
   "source_repo": "dhetchaiyakrith24/smogz-rules",
   "source_path": "CLAUDE.md",
-  "source_commit": "5ce70be2482c6fd66ef9b6ea57acb5fd572f59c0",
-  "sha256": "f3971c94ec85d5870247b43590bd244e99ee9197fa6c6fb269bfc446ec7255d6",
-  "sync_run": "https://github.com/dhetchaiyakrith24/smogz-rules/actions/runs/40369943728"
+  "source_commit": "d1c38e6eee4694e8f44dc13adb50661f2f74e67f",
+  "sha256": "39bee91a6766e1d24146e47248b7ba4ff75625ff8b0438ef07c142c00767232f",
+  "sync_run": "https://github.com/dhetchaiyakrith24/smogz-rules/actions/runs/40535719608"
 }
