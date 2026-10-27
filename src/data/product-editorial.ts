@@ -30,7 +30,7 @@ export interface EditorialCopy {
   /** A section with an empty heading continues the one above it (a second image under the same question). */
   /** `cards`: indexes of paragraphs shown as a 2-column set of cards after the plain paragraphs (a run of list-like ones). */
   article: { title: string; sections: { heading: string; paragraphs: string[]; image?: EditorialImage; cards?: number[] }[] };
-  flavours: { title: string; groups: { label: string; ids: string[] }[]; note: string };
+  flavours: { title: string; groups: { label: string; ids: string[] }[]; note?: string };
   /** `key` = a spec key of both products, or "flavours" (the option count). */
   /** `numberOnly`: show the row's first number + unit only (the battery row's "rechargeable, USB-C" is said elsewhere). */
   compare: { title: string; rows: { key: string; label: string; numberOnly?: boolean }[]; link: string };
@@ -164,7 +164,6 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             { label: "สายผลไม้", ids: MBAR9K_GROUPS.fruit },
             { label: "แนวอื่น", ids: MBAR9K_GROUPS.other },
           ],
-          note: "กลิ่นไหนมีของตอนนี้ ทักถามร้านทางไลน์ @okm24 ได้",
         },
         compare: {
           title: "เทียบสเปกกับ M Bar 10K",
@@ -288,7 +287,6 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             { label: "Fruity", ids: MBAR9K_GROUPS.fruit },
             { label: "Other", ids: MBAR9K_GROUPS.other },
           ],
-          note: "To check what's in stock now, message us on LINE @okm24.",
         },
         compare: {
           title: "Side by side with the M Bar 10K",
@@ -412,7 +410,6 @@ export const PRODUCT_EDITORIAL: Record<string, ProductEditorial> = {
             { label: "水果系", ids: MBAR9K_GROUPS.fruit },
             { label: "其他", ids: MBAR9K_GROUPS.other },
           ],
-          note: "想知道哪些口味目前有货，请通过 LINE @okm24 咨询。",
         },
         compare: {
           title: "与 M Bar 10K 参数对比",

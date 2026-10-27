@@ -229,7 +229,7 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
                 </div>
               );
             })}
-            <p className="mt-5 text-xs text-foreground-dim">{t(c.flavours.note)}</p>
+            {c.flavours.note && <p className="mt-5 text-xs text-foreground-dim">{t(c.flavours.note)}</p>}
           </div>
 
           {sibling && (

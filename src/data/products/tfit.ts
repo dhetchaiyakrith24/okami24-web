@@ -17,7 +17,7 @@ export const tfitProducts: Product[] = [
     // unconfirmed (a wrong fact now — fixed per owner 06/10, HANDOFF §18); it mirrors the Thai line in product-copy-th.ts.
     tagline: "TFIT's disposable that OKami24 reviewed hands-on on YouTube.",
     shortDescription:
-      "A high-puff TFIT disposable sold in Thailand. OKami24 reviewed it hands-on on YouTube — ask on LINE @okm24 for the models and flavors in stock.",
+      "A high-puff TFIT disposable sold in Thailand. OKami24 reviewed it hands-on on YouTube.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKM_24 — one
     // of OKami24's own three channels. A genuine 14-day hands-on review.

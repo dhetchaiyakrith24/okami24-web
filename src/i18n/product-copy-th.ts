@@ -946,7 +946,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้งรุ่นพัฟเยอะของ INFY",
     shortDescription:
-      "พอตใช้แล้วทิ้งพัฟเยอะจาก INFY ตัวที่ขายกันในไทย ตอนนี้มีกลิ่นไหนบ้าง ทักไลน์ @okm24 ถามได้เลย",
+      "พอตใช้แล้วทิ้งพัฟเยอะจาก INFY ตัวที่ขายกันในไทย",
   },
   // Round 30.3 (2026-09-10) — MOOOD / Muro entries, same translation-only rule as above; these four
   // products had no Thai line, so their cards fell back to English once ProductCard started reading
@@ -981,7 +981,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
     },
     tagline: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 8,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ ตอนนี้มีให้เลือก 12 รส",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ",
   },
   "muro-connector-20k": {
     whoIsThisFor: {
@@ -991,6 +991,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 20,000",
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 33 รส",
+    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ",
   },
 };
