@@ -10,29 +10,27 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 27/10 ~20:10 (daytime chat move at 648k tokens). Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 28/10 ~01:20 (owner closed the day: "ปิดงานพรุ่งนี้ค่อยว่ากัน"). Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 27/10 20:05 = 38ddb685 [ตรวจแล้ว]. Merged 27/10, all live (deploy success + curl
-  200 [ตรวจแล้ว]): #917 ARGUS pods (every "we don't sell ARGUS pods" line gone; G3 mini = Top Fill 0.4–1.0Ω only) · #920 header nav never
-  wraps (bar nav from xl, menu button 1024–1279) · #923 CHECKER AGENT FIXED — its YAML description (unquoted ": ") broke on 26/10 and
-  the app dropped the agent; that is why the hourly stock routine stalled at 13:27/17:03/18:03 · #924 stock-sync prints `newly out` + a
-  `RESULT: CHANGED / NO CHANGE` line (the 16:04 run called a change "no change") + agent/skill header lock (pre-commit + gate self-test)
-  · #926 rules 13.5 #5 (no whole-sitemap scan for size/spacing/colour-only changes) · 13.6 background-job time limits + check-in ≤ 10 min
-  · 13.8 extension work never blocks main work + test-server builds cart-on · §18 "never write we don't sell X" · #928 cart
-  suggestions 4 → 8, phones swipe one row (#928 also: test-server `start` cart-on) · stock #919 #921 #922 #925 (#925 = routine merged
-  itself — checker works again) · side chats: #927 SEO (seo-push) · #929 nexBar CLEAR 18K stock (list-new-products). CART IS ON.
-  Main folder = branch main, clean except the owner's untracked `logo/`. No test servers left running [ตรวจแล้ว].
-2 Open: PR #930 DRAFT (side chat list-new-products) = Marbo 10K (เทียบแท้), Max Disposable-47, hidden until the owner's photo (รอพี่ตรวจ 81).
-  Central rules PR dhetchaiyakrith24/smogz-rules#19 (§12 items 6 + 10: every action says what it is for / why — owner asked 27/10)
-  = merge after the owner's "ได้" (รอพี่ตรวจ 79); then merge the copy PR the sender opens in this repo.
-  Side chats running (TEAM_RULES 13.6; check with `list_sessions` linked or the session ids): seo-push local_18174958-4e89-4635-ab2a-e1ce668f9aa3
-  (4 SEO audits + fixes; also owns: list RELX Pod / Pod Pro / Pod Pro 2 as products instead of "ยังไม่มีขายบนเว็บเรา" in the switch-pod
-  guide, and the G3 mini dimensions on /technology/high-output-chip-platforms) · list-new-products local_05542f3e-1360-46bb-b997-d8d0f22b0455
-  (Disposable-46 done #929; Disposable-47 waits the photo; then Shipnity vs site sweep). Their digests to the owner = noon / evening.
-  Stock routine prompt (outside git, `C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md`) edited 27/10: step 0 finishes an
-  earlier draft that only waits for the checker · step 3c decides from the `RESULT:` line · step 6 general-purpose stand-in if `checker`
-  cannot load · step 7 merge origin/main when the gate says behind. Worktrees: wt-golive (cart work merged) · wt-argus (detached) ·
-  wt-agentfix (this note) · wt-stock = the routine's, never touch.
+1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 00:05 = 9f2e15f9 [ตรวจแล้ว]. No open PRs [ตรวจแล้ว: gh pr list].
+  Live 27/10 (deploy success + curl 200 [ตรวจแล้ว]): #917 ARGUS pods · #920 header nav never wraps · #923 checker agent fixed (YAML
+  description) · #924 stock-sync RESULT line + agent/skill header lock · #926 rules 13.5 #5 / 13.6 / 13.8 · #928 cart suggestions 4 → 8
+  (phones swipe) · #935 Marbo 10K (เทียบแท้) ฿299 live at /products/marbo-10k-clone with the M Bar 10K photos (owner: same product) ·
+  #941 central-rules copy (§12 items 6 + 10 "what for / why" — smogz-rules#19 merged) · #937 #939 Shipnity Woo link step 1 + notes ·
+  SEO side chat: #927 #936 #940 #943 #944 (guide metas, stock talk removed sitewide, pictures in 4 guides, 57 product→guide links,
+  Caliburn G3 article). Hourly stock PRs through #945 (00:02) merged by the routine itself. CART IS ON.
+  Main folder = branch main, clean except the owner's untracked `logo/`. No test servers running [ตรวจแล้ว].
+2 Nothing in flight. Side chats seo-push + list-new-products ARCHIVED 28/10 (owner: close all except API). api-talk
+  local_5d63a556-9f34-4123-848b-13408838633d stays open (waits for the warehouse to type Url · ck · cs into Shipnity, then the owner sends
+  a screenshot of what Shipnity calls). Notes kept: `_incoming/seo-push-2710/seo-push-2710.md` (SEO left-list, in order) +
+  `salthub-facts-2710.md` + `list-new-2710.md` · the list-new worktree's _incoming copied to `_incoming/from-wt-cart-2210/`.
+  NEXT SEO = 14 legacy products with no article AND no "more details" section — owner-approved 27/10: one brand per PR, SALTHUB first,
+  tier B 390+1440, designer Owner-eye on the first brand, show the owner its before/after. Whoever does it reads the note first.
+  Main-chat follow-ups: owner status page NOT updated since 27/10 morning (do first) · MSYS path bug hit 3x on 27/10
+  (MSYS_NO_PATHCONV=1 sends /c/Users paths to C:\c\Users; use C:/ paths + node fetch waits) → lesson or helper ·
+  port 3412 shared by parallel chats (queues them) — consider per-chat ports.
+  Stock routine prompt (outside git, `C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md`) edited 27/10 (steps 0 · 3c ·
+  6 · 7 · 8). Worktrees: wt-stock = the routine's, never touch · wt-close-2810 (this note).
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND (`docs/rounds/รอบโลโก้ใหม่-27-10.txt`) — owner 27/10 "จัดการได้เลย" = recommendations: wordmark "OKAMI" as in his file,
      the owner's PNG (logo/okami-logo-b-ระยะห่างใหม่.png; untracked `logo/` folder = his files, never delete). Batch 1 DONE #915 (LIVE) ·
