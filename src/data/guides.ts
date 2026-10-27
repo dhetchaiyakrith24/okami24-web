@@ -57,6 +57,11 @@ export const SECTION_IMAGES = {
   argusG3MiniCartridge: { src: "/assets/products/argus-g3-mini/story-cartridge.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอต ARGUS Top Fill Cartridge V2 ขนาด 3mL และ 2mL มี 0.4 · 0.7 และ 1.0 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g3-mini`, width: 1024, height: 1056 },
   mBar10kNonstop: { src: "/assets/products/m-bar-10k/story-nonstop.webp", alt: "โปสเตอร์ของ SALTHUB: M Bar 10K สูงสุด 10,000 พัฟ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1079 },
   dragX3Battery: { src: "/assets/products/drag-x3/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ใช้ถ่าน 18650 หรือ 21700 และมีเซนเซอร์แตะปลดล็อก", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
+  // SEO push 27/10 batch 3: the official IQOS photos the ILUMA product pages already show (IQOS (official brand site), see
+  // active-catalog-to-product-master.ts variant media) — for the three IQOS guides that had no picture.
+  ilumaIOne: { src: "/assets/products/iqosheet-17/variant-midnight-black.webp", alt: "ภาพของ IQOS: ILUMA i ONE สี Midnight Black เครื่องชิ้นเดียวที่สูบได้ในตัว", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html", width: 1000, height: 1000, transparent: true },
+  ilumaI: { src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2.webp", alt: "ภาพของ IQOS: ILUMA i สี Midnight Black ที่ชาร์จพกพา Pocket Charger กับ Holder ที่มีจอทัช", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html", width: 1613, height: 1238, transparent: true },
+  ilumaIPrime: { src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2.webp", alt: "ภาพของ IQOS: ILUMA i PRIME สี Midnight Black ที่ชาร์จพกพาหุ้มผ้า กับ Holder ที่มีจอทัช", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html", width: 1772, height: 1173, transparent: true },
 } satisfies Record<string, StoryImage>;
 
 type SectionImageKey = keyof typeof SECTION_IMAGES;
@@ -255,6 +260,7 @@ const allGuides: Guide[] = [
           "A real example: UWELL's GPP pod comes in four resistances — 0.4, 0.6, 0.9 and 1.2 ohm — and the same pod fits most current Caliburn devices (G5, G4 and G3 series). To change how a Caliburn draws, you change the pod, not the device.",
           "VOOPOO's ARGUS top-fill cartridge follows the same idea: one pod shape, several resistances. More in [Multi-Resistance Cartridges](/technology/multi-resistance-cartridges).",
         ],
+        image: SECTION_IMAGES_EN.vmateI3Family,
       },
       {
         heading: "Refill it yourself, or use a prefilled pod",
@@ -2791,6 +2797,7 @@ const allGuides: Guide[] = [
           "IQOS แนะนำให้ชาร์จด้วยหัวชาร์จ 5V 2A แบบ USB-C คู่กับสาย USB-C โดย Pocket Charger ใช้เวลาชาร์จจนเต็มประมาณ 2 ชั่วโมง 15 นาที และจะวาง Holder ไว้ข้างในระหว่างชาร์จหรือไม่ก็ได้",
           "ไม่จำเป็นต้องรอให้เต็มทุกครั้งก่อนใช้ แต่ครั้งแรก IQOS แนะนำให้ชาร์จจนเต็มก่อน",
         ],
+        image: SECTION_IMAGES.ilumaI,
       },
       {
         heading: "ILUMA i ชาร์จไม่เข้า เช็คอะไรบ้าง",
@@ -2933,6 +2940,7 @@ const allGuides: Guide[] = [
           "[ILUMA i ONE](/products/iqosheet-17) รวมทุกอย่างไว้ในเครื่องเดียว ไม่มี Holder แยก ตัวเครื่องเป็นอะลูมิเนียม แบต 1728mAh สูบต่อกันได้สูงสุด 20 ก้าน และชาร์จเต็มในประมาณ 1 ชั่วโมง 30 นาที",
           "เสียบก้านแล้วเครื่องจะเริ่มอุ่นให้เอง และหยุดเองโดยอัตโนมัติ นอกจากนี้ยังมี FlexPuff ที่ปรับจำนวนพัฟตามจังหวะการสูบ เพิ่มได้สูงสุด 4 พัฟ",
         ],
+        image: SECTION_IMAGES.ilumaIOne,
       },
       {
         heading: "IQOS ILUMA i: สองชิ้น มีจอทัช",
@@ -2940,6 +2948,7 @@ const allGuides: Guide[] = [
           "[ILUMA i](/products/iqosheet-18) มีสองชิ้น ตัว Holder ใช้สูบ แบต 300mAh ส่วนตัวชาร์จ Pocket Charger แบต 2700mAh ชาร์จ Holder หนึ่งครั้งสูบต่อกันได้สูงสุด 3 ก้าน แล้ววางกลับลงไปชาร์จต่อ ส่วน Pocket Charger ชาร์จเต็มในราว 135 นาที",
           "บน Holder มีจอทัช มีโหมดหยุดพักระหว่างสูบ มี FlexPuff และมี FlexBattery ที่เลือกได้ระหว่างโหมด Performance กับ Eco วิธีชาร์จ รีเซ็ต และความหมายของสัญลักษณ์บนจอ อ่านได้ที่ [IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า](/guides/iqos-iluma-i-reset-and-charging)",
         ],
+        image: SECTION_IMAGES.ilumaI,
       },
       {
         heading: "IQOS ILUMA i PRIME: ระบบเดียวกับ i ดีไซน์พรีเมียมกว่า",
@@ -2947,6 +2956,7 @@ const allGuides: Guide[] = [
           "[ILUMA i PRIME](/products/iqosheet-16) ใช้ระบบเดียวกับ ILUMA i คือมี Holder กับ Pocket Charger แบตก็เท่ากัน แบต 2700mAh อยู่ใน Pocket Charger และแบต 300mAh อยู่ใน Holder ชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน สิ่งที่ต่างคือดีไซน์ที่พรีเมียมกว่า และจอทัชที่แสดงข้อมูลได้ละเอียดกว่า",
           "Holder สูบต่อกันได้สูงสุด 3 ก้าน หรือ 2 ก้านถ้าเปิดโหมดหยุดพักในโหมด Performance ซึ่งพักได้นานสุด 8 นาที มี FlexPuff ที่เพิ่มได้สูงสุด 4 พัฟ และ FlexBattery ที่เลือกโหมด Performance หรือ Eco ได้ในแอป IQOS ในกล่องมีสาย USB-C มาให้ด้วย",
         ],
+        image: SECTION_IMAGES.ilumaIPrime,
       },
       {
         heading: "สามรุ่นต่างกันตรงไหนบ้าง",
@@ -3123,6 +3133,7 @@ const allGuides: Guide[] = [
           "พอตเปลี่ยนหัวใช้คล้ายพอตใช้แล้วทิ้ง ต่างกันที่ต้องเสียบหัวพอตเข้ากับตัวเครื่องก่อน หัวพอตบรรจุสำเร็จมีน้ำยามาในหัวแล้ว ไม่ต้องเติมเอง หมดก็ถอดเปลี่ยนหัวใหม่ ส่วนตัวเครื่องเก็บไว้ชาร์จใช้ต่อ",
           "ดูรุ่นได้ในหมวด[พอตเปลี่ยนหัว](/products/switch-pods) และถ้ายังชั่งใจระหว่างสองแบบนี้ อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
         ],
+        image: SECTION_IMAGES.mBar15kSwap,
       },
       {
         heading: "พอตซิสเต็มที่เติมน้ำยาเอง ใช้ยังไง",
