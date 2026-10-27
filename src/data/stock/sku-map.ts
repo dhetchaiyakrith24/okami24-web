@@ -1296,6 +1296,21 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   } },
   // List-new (27/10): nexBar CLEAR 18K — Max re-coded it as Disposable-46 (19 flavours, ฿359, read 27/10); the record moved onto
   // Max (build-active-catalog.ts), so its options are the Max codes. Max's own Pod-180 is now another product — never link it here.
+  // List-new (27/10): Marbo 10K (เทียบแท้) — Max "Marbo 10k โคลน" (Disposable-47), 12 flavours (owner 27/10, HANDOFF §18).
+  "marbo-10k-clone": { parent: "Disposable-47", options: {
+    "Disposable-47-1": "Disposable-47-1",
+    "Disposable-47-2": "Disposable-47-2",
+    "Disposable-47-3": "Disposable-47-3",
+    "Disposable-47-4": "Disposable-47-4",
+    "Disposable-47-5": "Disposable-47-5",
+    "Disposable-47-6": "Disposable-47-6",
+    "Disposable-47-7": "Disposable-47-7",
+    "Disposable-47-8": "Disposable-47-8",
+    "Disposable-47-9": "Disposable-47-9",
+    "Disposable-47-10": "Disposable-47-10",
+    "Disposable-47-11": "Disposable-47-11",
+    "Disposable-47-12": "Disposable-47-12",
+  } },
   "pod-180": { parent: "Disposable-46", options: {
     "Disposable-46-1": "Disposable-46-1",
     "Disposable-46-2": "Disposable-46-2",

@@ -78,6 +78,7 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
 import { lineOrderCodes } from "@/lib/line-order-codes";
 import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory";
+import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
@@ -175,7 +176,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const title = productTitleWithPriceTh(publishedProduct.slug, baseTitle, publishedProduct.sellingPrice);
     // Same head-only override + B2 price line as the legacy branch above.
     const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
-    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice);
+    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice, !NO_GENUINE_CLAIM_PATHS.has(path));
     return {
       title,
       description,

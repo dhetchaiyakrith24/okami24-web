@@ -39,6 +39,10 @@ export const HOME_TYPE_SECTIONS: { type: HeroType; categories: string[]; first: 
 /** cards each section puts in the page at all (the rest = "see all N") — one number to change.
  *  Owner 21/10: 6 → 8 ("เพิ่มเป็น 8") — the desktop rail and the tablet grid; phones keep PHONE_CARDS. */
 export const RAIL_CARDS = 8;
+
+/** Products a homepage rail never puts in its cards — they sort last and stay on the category page ("see all N").
+ *  The one lookalike (owner 27/10, docs/HANDOFF.md §18: never in shop picks, never next to the genuine M Bar 10K). */
+export const RAIL_LAST = new Set<string>(["marbo-10k-clone"]);
 /** cards shown per section on a phone (two rows of two … three rows) before "see all N" */
 export const PHONE_CARDS = 6;
 /** cards shown per section on a tablet (two rows of four) */

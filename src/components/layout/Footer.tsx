@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { NavCategory } from "@/lib/category-visibility";
@@ -10,9 +11,11 @@ import { CONTACT } from "@/data/contact";
 import type { NavBrand } from "@/lib/brand-visibility";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 
 export function Footer({ categories, brands, dnsGuideId, orderingEnabled = true }: { categories: NavCategory[]; brands: NavBrand[]; dnsGuideId: string; orderingEnabled?: boolean }) {
   const { dict } = useLocale();
+  const pathname = usePathname();
   // Only link brands that actually have a real product in the catalog right now — a brand added
   // on real evidence but still fully media-blocked (see shipnity-seed/README.md) would otherwise
   // be a dead-end link from primary navigation. See brand-visibility.ts's own doc comment.
@@ -64,7 +67,8 @@ export function Footer({ categories, brands, dnsGuideId, orderingEnabled = true 
           <Link href="/" className="flex items-center" aria-label="OKami24">
             <Image src="/brand/okami-logo.png" alt="OKami24" width={1416} height={429} className="h-10 w-auto" />
           </Link>
-          <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">{dict.footer.tagline}</p>
+          {/* the slogan line says "ของแท้" — left out where the page makes no genuine claim (src/lib/genuine-claim.ts) */}
+          {!NO_GENUINE_CLAIM_PATHS.has(pathname) && <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">{dict.footer.tagline}</p>}
           {/* Owner 22/10: each platform's own logo in its own colours, big enough to see and tap (44 px rows), with the
               handle beside it so the two YouTube channels can be told apart. */}
           <div className="flex flex-wrap items-center gap-2.5 pt-1">

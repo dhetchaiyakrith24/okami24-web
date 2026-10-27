@@ -16,6 +16,7 @@ import type { RelatedArticle } from "@/lib/article-relevance";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import type { RelatedConsumable, RelatedDevice } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
+import { PRODUCT_NOTICE } from "@/i18n/product-notices";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -232,6 +233,7 @@ export function PilotProductDetail({
               ) : (
                 <Badge tone="steel">{product.brandName}</Badge>
               ))}
+            {PRODUCT_NOTICE[product.slug] && <Badge tone="neutral">{PRODUCT_NOTICE[product.slug][locale]}</Badge>}
             {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
           </div>
         }

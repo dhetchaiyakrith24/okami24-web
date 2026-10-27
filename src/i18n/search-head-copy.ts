@@ -172,8 +172,9 @@ export const BRAND_H1: Record<string, string> = {
 };
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
-export function productPriceSuffixTh(price: number): string {
-  return `ของแท้ ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
+/** `genuine: false` = a page that makes no genuine claim (src/lib/genuine-claim.ts) — the suffix drops "ของแท้". */
+export function productPriceSuffixTh(price: number, genuine = true): string {
+  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
 }
 
 /**
@@ -243,6 +244,8 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   "m-bar-9k": "SALTHUB M BAR 9K (Marbo / มาโบ 9K) ของแท้",
   "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
+  // List-new (27/10, HANDOFF §18): the lookalike — its title must not carry the default " ของแท้" (search-titles.ts).
+  "marbo-10k-clone": "Marbo 10K (เทียบแท้) พอตใช้แล้วทิ้ง",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
   // the Pod opens with the locked type word, like the coil/pod rows below.
   "m-switch-kit": "SALTHUB M SWITCH KIT (M BAR 15K) ของแท้",
@@ -279,9 +282,9 @@ const NUMERIC_TAIL = /^[\d,.]+$/u;
  * off past any dangling connective / bare number / unclosed bracket — never inside a word, and
  * never the price line. A product without a price keeps its description exactly as it was.
  */
-export function withPriceSuffixTh(base: string, price: number | null): string {
+export function withPriceSuffixTh(base: string, price: number | null, genuine = true): string {
   if (price === null) return base;
-  const suffix = productPriceSuffixTh(price);
+  const suffix = productPriceSuffixTh(price, genuine);
   const room = META_DESCRIPTION_MAX - suffix.length - 1;
   let head = base.trim();
   if (head.length > room) {
@@ -384,6 +387,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 มีให้เลือก 42 กลิ่น",
   "coil-21": "หัวพอต VOOPOO Argus Pod มีให้เลือก 4 แบบ",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
+  // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
+  "marbo-10k-clone": "Marbo 10K เทียบแท้ พอตใช้แล้วทิ้ง ไม่ใช่สินค้าของ SALTHUB มีให้เลือก 12 กลิ่น",
   "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
