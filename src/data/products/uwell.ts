@@ -1624,7 +1624,7 @@ export const uwellProducts: Product[] = [
       { key: "weight", label: "Weight", value: "Approx. 47g", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
     ],
     // UWELL's own page pictures, one per block (files.myuwell.com/uwell/product/caliburn-g3/pc…), text on them is UWELL's —
-    // the "more details" story (storyDetails) the other Caliburn pages use; no article or cover for this model.
+    // the "more details" story (storyDetails) the other Caliburn pages use; no cover for this model; its article = product-articles.ts (27/10).
     storyDetails: true,
     features: [
       {

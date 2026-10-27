@@ -524,6 +524,97 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Product-article round (27/10, side chat seo-push-2710): standard Caliburn G3 (not G3 Pro). Facts only from the verified spec
+  // rows of `caliburn-g3` and `caliburn-g3-pro` in src/data/products/uwell.ts (UWELL's own pages / manual / pod chart); thai-copy 27/10.
+  "caliburn-g3": {
+    th: {
+      lede: "Caliburn G3 คือรุ่นมาตรฐานของตระกูล G3 ตัวเครื่องเล็กและเบา ด้านล่างรวมเรื่องที่ควรรู้ก่อนเลือก ทั้งความต่างจาก G3 Pro การเลือกโอห์มของหัวพอต และแบบเติมน้ำยา",
+      sections: [
+        {
+          heading: "Caliburn G3 กับ G3 Pro ต่างกันยังไง",
+          paragraphs: [
+            "G3 ตัวเครื่องเป็นอะลูมิเนียม หนักประมาณ 47 กรัม ส่วน G3 Pro หนักประมาณ 92 กรัม G3 จึงเบากว่าเกือบครึ่งหนึ่ง",
+            "[G3 Pro](/products/caliburn-g3-pro) แบตใหญ่กว่าที่ 1000mAh ปรับได้สูงสุด 35 วัตต์ มีจอเต็มหน้าเครื่อง และมีวาล์วให้ปรับลมได้ละเอียด",
+            "หัวพอต G3 ค่า 0.6 0.9 และ 1.2 โอห์ม ใช้กับ G3 Pro ได้ด้วย ถ้าวันหนึ่งเปลี่ยนไปใช้ G3 Pro ก็ใช้หัวพอตเดิมต่อได้",
+            "ถ้าเน้นเครื่องที่เบาและพกง่าย G3 ก็เพียงพอแล้ว ถ้าอยากเห็นข้อมูลบนจอใหญ่และปรับลมเองได้ เลือก G3 Pro ได้เลย",
+          ],
+        },
+        {
+          heading: "เลือกหัวพอตกี่โอห์มดี",
+          paragraphs: [
+            "หัวพอต G3 มีสามค่า คือ 0.6 0.9 และ 1.2 โอห์ม โอห์มยิ่งต่ำลมยิ่งโล่งและใช้วัตต์สูงขึ้น โอห์มยิ่งสูงลมก็ยิ่งแน่น",
+            "ตามตารางหัวพอตของ UWELL ฝั่งโอห์มต่ำเหมาะกับการสูบแบบ RDL ส่วนฝั่งโอห์มสูงเหมาะกับการสูบแบบ MTL คือดูดเข้าปากก่อน",
+            "ในกล่องมีหัว 0.6 และ 0.9 โอห์มมาให้ ลองทั้งสองหัวก่อนก็ได้ ถ้ายังรู้สึกว่าลมโล่งไป หัว 1.2 โอห์มจะให้ลมแน่นขึ้นอีก",
+          ],
+        },
+        {
+          heading: "เติมด้านข้างกับเติมด้านบนต่างกันยังไง",
+          paragraphs: [
+            "หัวพอต G3 มีสองแบบ ต่างกันที่ตำแหน่งช่องเติมน้ำยา แบบหนึ่งอยู่ด้านข้าง อีกแบบอยู่ด้านบน",
+            "เครื่องแต่ละชุดมาพร้อมหัวพอตแบบใดแบบหนึ่ง เวลาซื้อหัวพอตเพิ่ม ดูจากหัวที่ได้มาในกล่องก่อนก็ได้ จะได้เติมน้ำยาแบบที่คุ้นมือ",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Caliburn G3 is the standard model in the G3 line, small and light. Below: how it differs from the G3 Pro, which pod resistance to pick, and the two ways to fill.",
+      sections: [
+        {
+          heading: "How is the Caliburn G3 different from the G3 Pro?",
+          paragraphs: [
+            "The G3 has an aluminium body and weighs about 47g; the G3 Pro is about 92g, so the G3 is close to half the weight.",
+            "The [G3 Pro](/products/caliburn-g3-pro) has the bigger battery at 1000mAh, goes up to 35W, has a full-front screen and a valve to fine-tune the airflow.",
+            "G3 pods at 0.6Ω, 0.9Ω and 1.2Ω fit the G3 Pro too, so your pods carry over if you move up.",
+            "If light and easy to carry matters most, the G3 is enough. If you want everything on a big screen and airflow you can tune, go for the G3 Pro.",
+          ],
+        },
+        {
+          heading: "Which pod resistance?",
+          paragraphs: [
+            "G3 pods come in 0.6Ω, 0.9Ω and 1.2Ω. The lower the resistance, the looser the draw and the higher the wattage; the higher it is, the tighter the draw.",
+            "On UWELL's pod chart, the low end suits an RDL draw and the high end an MTL draw.",
+            "The box has a 0.6Ω and a 0.9Ω pod, so try both first. If the draw still feels too loose, a 1.2Ω pod tightens it further.",
+          ],
+        },
+        {
+          heading: "Side fill or top fill?",
+          paragraphs: [
+            "G3 pods come in two versions that differ in where the fill port sits: one on the side, one on the top.",
+            "Each kit comes with one type. When you buy more pods, the one in your box is a good guide to the filling style you are used to.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Caliburn G3 是 G3 系列的标准款，机身小巧轻便。下面是选购前值得了解的几点：和 G3 Pro 的区别、烟弹阻值怎么选，以及两种注油方式。",
+      sections: [
+        {
+          heading: "Caliburn G3 和 G3 Pro 有什么不同？",
+          paragraphs: [
+            "G3 采用铝合金机身，约 47 克；G3 Pro 约 92 克，G3 轻了将近一半。",
+            "[G3 Pro](/products/caliburn-g3-pro) 电池更大，1000mAh，最高 35W，正面整块屏幕，还有可微调的进气阀。",
+            "0.6Ω、0.9Ω 和 1.2Ω 的 G3 烟弹在 G3 Pro 上也能用，以后换机，烟弹可以继续用。",
+            "更看重轻巧好携带，G3 就够了；想在大屏上看清各项数据、自己调气流，就选 G3 Pro。",
+          ],
+        },
+        {
+          heading: "烟弹选哪个阻值？",
+          paragraphs: [
+            "G3 烟弹有 0.6Ω、0.9Ω 和 1.2Ω 三种。阻值越低，吸感越松、功率越高；阻值越高，吸感越紧。",
+            "在 UWELL 的烟弹图里，低阻值一端适合 RDL，高阻值一端适合 MTL。",
+            "盒内附 0.6Ω 和 0.9Ω 两颗烟弹，可以先都试试。如果还是觉得太松，1.2Ω 会更紧一些。",
+          ],
+        },
+        {
+          heading: "侧注油还是顶注油？",
+          paragraphs: [
+            "G3 烟弹有两种版本，区别在注油口的位置：一种在侧面，一种在顶部。",
+            "每套只附其中一种。再买烟弹时，可以参考盒里那颗，选你用惯的注油方式。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 1d (04/10): from UWELL's G3 Pro / KOKO pages, spec sheet and user manual; Thai = thai-copy 04/10.
   "caliburn-g3-pro": {
     th: {
