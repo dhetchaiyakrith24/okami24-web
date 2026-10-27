@@ -105,3 +105,11 @@ console.log(`stock-sync: ${all.size} codes read on ${date} · ${out.length} out 
 if (orderEntry) console.log(backIn.length ? `back in (order entry can add it again): ${backIn.join(", ")}` : "back in: none");
 if (reopen.size) console.log(`re-opened by the owner: ${[...reopen].filter((c) => !outSet.has(c)).join(", ") || "(none — the read still says ไม่มีของ)"}`);
 console.log(held.length ? `held out (${orderEntry ? "not in the read" : "read says มีของ or not listed — owner to confirm"}): ${held.join(", ")}` : "held out: none");
+// The routine decides "PR or no PR" from this output (27/10: the 16:04 run read "back in: none · held out: none" as "no
+// change" while 8 codes had just sold out — the new closures were never printed). So list them and end on one verdict line.
+const newlyOut = out.filter((c) => !prevOut.has(c));
+const reopened = [...prevOut].filter((c) => !outSet.has(c)).sort(byCode);
+console.log(newlyOut.length ? `newly out: ${newlyOut.join(", ")}` : "newly out: none");
+console.log(newlyOut.length || reopened.length
+  ? `RESULT: CHANGED — ${newlyOut.length} newly out, ${reopened.length} back in vs the current file (open a PR)`
+  : "RESULT: NO CHANGE — the out-of-stock set equals the current file (no PR)");

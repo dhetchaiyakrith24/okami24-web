@@ -285,6 +285,19 @@ function selfTest() {
   ok(!fails("client", plantImport('import type { Guide } from "@/data/guides";')), "client: `import type` passes");
   ok(!fails("client", { ...plantImport('import { guides } from "@/data/guides";'), content: { "src/components/Foo.tsx": 'import { guides } from "@/data/guides";\n\nimport { x } from "y";\n' } }), "client: a server file passes");
 
+  console.log("\n## commit lock — scripts/agent-header-check.js (.githooks/pre-commit) on a planted agent header");
+  const agentRepo = fs.mkdtempSync(path.join(os.tmpdir(), "okami24-agents-"));
+  const headerCheck = (description) => {
+    fs.mkdirSync(path.join(agentRepo, ".claude", "agents"), { recursive: true });
+    fs.writeFileSync(path.join(agentRepo, ".claude", "agents", "x.md"), `---\nname: x\ndescription: ${description}\nmodel: sonnet\n---\nbody\n`);
+    spawnSync("git", ["add", "-A"], { cwd: agentRepo });
+    return spawnSync(process.execPath, [path.join(ROOT, "scripts", "agent-header-check.js"), "--staged"], { cwd: agentRepo, encoding: "utf8" }).status;
+  };
+  spawnSync("git", ["init", "-q"], { cwd: agentRepo });
+  ok(headerCheck("ตรวจก่อน merge (เขียน `Checker: SKIP`)") === 1, "agent header: an unquoted ': ' in description is refused (26/10 checker incident)");
+  ok(headerCheck('"ตรวจก่อน merge (เขียน `Checker: SKIP`)"') === 0, "agent header: the same text quoted passes");
+  fs.rmSync(agentRepo, { recursive: true, force: true });
+
   console.log("\n## locks at the act — scripts/guard-tool.js (hook) on planted commands");
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "okami24-gate-"));
   const noNotes = path.join(tmp, "no-notes"); // the real "checker reading" note (if one is on now) must not change the answers
