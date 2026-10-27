@@ -10,22 +10,29 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 27/10 ~04:40 (owner paused for the night: "เบรคงาน … พรุ่งนี้ค่อยมาทำต่อ"). Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 27/10 ~20:10 (daytime chat move at 648k tokens). Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 27/10 = 9093108e [ตรวจแล้ว] · merged today: #915 new kabuto logo (ee5272dd, LIVE
-  [ตรวจแล้ว] curl: header/footer/JSON-LD = okami-logo.png) · #916 cart fit + market best sellers + staff "งาน" (9093108e, merged 04:1x — live
-  not yet curled). Open PR: #917 ARGUS pods (DRAFT, see item 2). CART IS ON [ตรวจแล้ว 24/10]. Live facts / test kit = §17.
-  CHECKER AGENT TYPE NOT LOADABLE in this session (27/10) — #915/#916 were checked by a general-purpose agent told to read
-  .claude/agents/checker.md and act as it (stated in each PR body). Session limit, not a repo bug: try `checker` first next chat.
-2 Branch ahead of main: `argus-pods-2710` (worktree `_incoming/wt-argus`, real node_modules) — `git log --oneline origin/main..origin/argus-pods-2710`
-  = 6 commits, head 8b44a9da, pushed, PR #917 DRAFT, NOT checked yet. Proof done [ตรวจแล้ว]: verify --full stamped 8b44a9da · visible-text
-  14 pages × th/en/zh × 390/1440 (before = `_incoming/logo-2710/base` worktree at 9093108e) = 288 changes / 160 groups, all on the 11
-  touched pages, controls clean, /brands/voopoo only re-orders its latest-guides list (new content dates) · scan.js 0/11 · hydration 0 ·
-  wordbreak diff 0 NEW 1 FIXED. Shot plan (26 before + 34 after → `_incoming/cart-fit-2710/vt-diff/`) was RUNNING at pause — check
-  the pngs exist, re-run the lists in `vt-diff/shots-*.txt` if not (before needs the base build on 3416, after the argus build on 3418).
-  NEXT: pre-checker-gate in wt-argus → checker (brief = PR #917 body) → `gh pr ready` → checks → self-merge-check --pr 917 → merge →
-  curl /products/argus-g4 + /products/coil-21 live → ARGUS G4 cart should then suggest coil-21.
-  Test servers left running at pause: 3416 (base) · 3418 (argus) — stop by port. Main folder: branch `handoff-2710b` (this note).
+1 main: `git fetch && git log -1 --oneline origin/main` · 27/10 20:05 = 38ddb685 [ตรวจแล้ว]. Merged 27/10, all live (deploy success + curl
+  200 [ตรวจแล้ว]): #917 ARGUS pods (every "we don't sell ARGUS pods" line gone; G3 mini = Top Fill 0.4–1.0Ω only) · #920 header nav never
+  wraps (bar nav from xl, menu button 1024–1279) · #923 CHECKER AGENT FIXED — its YAML description (unquoted ": ") broke on 26/10 and
+  the app dropped the agent; that is why the hourly stock routine stalled at 13:27/17:03/18:03 · #924 stock-sync prints `newly out` + a
+  `RESULT: CHANGED / NO CHANGE` line (the 16:04 run called a change "no change") + agent/skill header lock (pre-commit + gate self-test)
+  · #926 rules 13.5 #5 (no whole-sitemap scan for size/spacing/colour-only changes) · 13.6 background-job time limits + check-in ≤ 10 min
+  · 13.8 extension work never blocks main work + test-server builds cart-on · §18 "never write we don't sell X" · #928 cart
+  suggestions 4 → 8, phones swipe one row (#928 also: test-server `start` cart-on) · stock #919 #921 #922 #925 (#925 = routine merged
+  itself — checker works again) · side chats: #927 SEO (seo-push) · #929 nexBar CLEAR 18K stock (list-new-products). CART IS ON.
+  Main folder = branch main, clean except the owner's untracked `logo/`. No test servers left running [ตรวจแล้ว].
+2 Open: PR #930 DRAFT (side chat list-new-products) = Marbo 10K (เทียบแท้), Max Disposable-47, hidden until the owner's photo (รอพี่ตรวจ 81).
+  Central rules PR dhetchaiyakrith24/smogz-rules#19 (§12 items 6 + 10: every action says what it is for / why — owner asked 27/10)
+  = merge after the owner's "ได้" (รอพี่ตรวจ 79); then merge the copy PR the sender opens in this repo.
+  Side chats running (TEAM_RULES 13.6; check with `list_sessions` linked or the session ids): seo-push local_18174958-4e89-4635-ab2a-e1ce668f9aa3
+  (4 SEO audits + fixes; also owns: list RELX Pod / Pod Pro / Pod Pro 2 as products instead of "ยังไม่มีขายบนเว็บเรา" in the switch-pod
+  guide, and the G3 mini dimensions on /technology/high-output-chip-platforms) · list-new-products local_05542f3e-1360-46bb-b997-d8d0f22b0455
+  (Disposable-46 done #929; Disposable-47 waits the photo; then Shipnity vs site sweep). Their digests to the owner = noon / evening.
+  Stock routine prompt (outside git, `C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md`) edited 27/10: step 0 finishes an
+  earlier draft that only waits for the checker · step 3c decides from the `RESULT:` line · step 6 general-purpose stand-in if `checker`
+  cannot load · step 7 merge origin/main when the gate says behind. Worktrees: wt-golive (cart work merged) · wt-argus (detached) ·
+  wt-agentfix (this note) · wt-stock = the routine's, never touch.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND (`docs/rounds/รอบโลโก้ใหม่-27-10.txt`) — owner 27/10 "จัดการได้เลย" = recommendations: wordmark "OKAMI" as in his file,
      the owner's PNG (logo/okami-logo-b-ระยะห่างใหม่.png; untracked `logo/` folder = his files, never delete). Batch 1 DONE #915 (LIVE) ·
@@ -35,7 +42,7 @@ Rewritten 27/10 ~04:40 (owner paused for the night: "เบรคงาน … �
      Checker note (taste, not a fail): faint brown smear at the ring's lower-left + grey seams in the owner's PNG — visible only large
      (share image); a clean file from the owner fixes it, never retouch. Round stays OPEN until batch 2 → round-close (tag logo-q6-2710).
   b CART FIT — DONE #916: with items = verified pods/coils/sticks · the device a part fits · e-liquid for refillable (pod-systems); no
-     other devices/shop picks; nothing fits = no row; 1 fitting card shows. ARGUS pods ride on #917 (item 2).
+     other devices/shop picks; nothing fits = no row. ARGUS G4 → coil-21 since #917; up to 8 cards since #928.
   c STAFF PAGES — DONE #916 (owner 27/10: "ปุ่ม เมนู กล่อง ในการทำงาน", header/footer stay): /staff = "งาน" work list by step · no chips,
      no bottom tab bar · order page says each thing once · admin manual updated. Not seen live: a ✅ slip on the step card (test DB had none).
   d LINE sign-in logo — DONE (see a).
