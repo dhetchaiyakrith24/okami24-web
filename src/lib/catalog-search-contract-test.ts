@@ -119,7 +119,9 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   //         unit, not m AND bar), and finds something ----
   for (const [alias, terms] of Object.entries(TERM_SEARCH_ALIASES)) {
     const viaAlias = search(alias);
-    const viaTerms = all.filter((e) => terms.some((t) => phraseMatches(t, e.text))).map((e) => e.hit.slug);
+    // + what the alias word itself names: "marbo" also finds Marbo 10K (เทียบแท้) by its own name, though it is not SALTHUB
+    // (owner 27/10, docs/HANDOFF.md §18).
+    const viaTerms = all.filter((e) => [...terms, alias].some((t) => phraseMatches(t, e.text))).map((e) => e.hit.slug);
     // Round "leftovers" (2026-09-22): an alias whose every term is declared dormant is held to
     // the opposite bargain — see DORMANT_ALIAS_TERMS in search-aliases.ts for why, and for what
     // has to happen on the day the brand's photo lands.
