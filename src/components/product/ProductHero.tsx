@@ -70,6 +70,7 @@ export function ProductHero({
   orderingEnabled = true,
   copyTh: copyThAll,
   brandSlug,
+  hasBrandPage = false,
   lineCodes,
 }: {
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
@@ -79,6 +80,9 @@ export function ProductHero({
    *  the Thai copy table and the brand list here shipped every product's Thai text to the browser of every product page. */
   copyTh?: ProductCopyTh;
   brandSlug: string;
+  /** Round seo-push-2710: the brand has its own /brands page — the text chip of a brand with no logo file links there too
+   *  (before, only logo brands linked, so WOTOFO, RINCOE and the like were reached from /about alone). */
+  hasBrandPage?: boolean;
   /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
    *  cart form is replaced by OrderViaLineButton; everything else on the page is unchanged.
    *  Defaults to true so every other caller renders exactly as before. */
@@ -316,6 +320,10 @@ export function ProductHero({
                   style={{ "--logo-scale": BRAND_LOGOS[product.brandId].scale ?? 1 } as CSSProperties}
                   className="h-[calc(1.25rem*var(--logo-scale))] w-auto lg:h-[calc(1.5rem*var(--logo-scale))]"
                 />
+              </Link>
+            ) : hasBrandPage ? (
+              <Link href={`/brands/${brandSlug}`} className="inline-flex transition-opacity hover:opacity-80">
+                <Badge tone="steel">{brandName(product.brandId)}</Badge>
               </Link>
             ) : (
               <Badge tone="steel">{brandName(product.brandId)}</Badge>
