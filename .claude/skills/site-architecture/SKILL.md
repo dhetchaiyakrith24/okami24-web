@@ -378,6 +378,6 @@ Mermaid diagram showing page relationships and navigation zones. Use `graph TD` 
 * **"Ask the user" in the text above** = questions to the owner follow TEAM_RULES 13.3 only (the one list) — the rest Friday decides and reports.
 * Skills it names that we have not installed (programmatic-seo · schema · ai-seo · cro · competitors · marketing-loops …) = not available here.
 * **Existing URLs stay.** Any URL move needs a one-to-one 301 map · whether to ask first = TEAM_RULES 13.3 (#4 · #5) — they rank and are approved.
-* **Header, footer and navigation are shared parts:** scope-auditor + tier B + whole-sitemap scans (TEAM_RULES 13.5 #5) · designer only for a new look, slot or component (13.5 #6).
+* **Header, footer and navigation are shared parts:** scope-auditor + tier B + the scan TEAM_RULES 13.5 #5 sets (whole sitemap for text/structure; size/spacing/colour-only = targeted measure) · designer only for a new look, slot or component (13.5 #6).
   The SaaS defaults in the templates ("Start Free Trial" CTA, `/shop/category/sub/product`) are examples, not targets.
 * **Internal links + article standard** = owner ruling, one home: `docs/SEO_LANDSCAPE.md` §7.3 "มาตรฐานบทความของร้าน".
