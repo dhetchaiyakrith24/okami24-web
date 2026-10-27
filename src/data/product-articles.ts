@@ -534,9 +534,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Caliburn G3 กับ G3 Pro ต่างกันยังไง",
           paragraphs: [
             "G3 ตัวเครื่องเป็นอะลูมิเนียม หนักประมาณ 47 กรัม ส่วน G3 Pro หนักประมาณ 92 กรัม น้ำหนักของ G3 จึงราวครึ่งหนึ่งของ G3 Pro",
-            "[G3 Pro](/products/caliburn-g3-pro) แบตใหญ่กว่าที่ 1000mAh ปรับได้สูงสุด 35 วัตต์ มีจอเต็มหน้าเครื่อง และปรับลมได้ละเอียดด้วยวาล์ว",
-            "หัวพอต G3 ค่า 0.6 0.9 และ 1.2 โอห์ม ใช้กับ G3 Pro ได้ด้วย ถ้าวันหนึ่งเปลี่ยนไปใช้ G3 Pro ก็ใช้หัวพอตเดิมต่อได้",
-            "ถ้าเน้นเครื่องที่เบาและพกง่าย G3 ก็เพียงพอแล้ว ถ้าอยากเห็นข้อมูลบนจอใหญ่และปรับลมเองได้ เลือก G3 Pro ได้เลย",
+            "[G3 Pro](/products/caliburn-g3-pro) แบตใหญ่กว่าที่ 1000mAh ปรับได้สูงสุด 35 วัตต์ มีจอเต็มหน้าเครื่อง และมีวาล์วสำหรับปรับลมแบบละเอียด",
+            "G3 Pro ใช้หัวพอต G3 ได้ทุกค่า ทั้ง 0.6 0.9 และ 1.2 โอห์ม วันหนึ่งถ้าเปลี่ยนเครื่อง หัวพอตเดิมก็ยังใช้ต่อได้",
+            "G3 เหมาะกับคนที่เน้นเครื่องเบาและพกง่าย ส่วน G3 Pro เหมาะกับคนที่อยากเห็นข้อมูลบนจอใหญ่และอยากปรับลมเอง",
           ],
         },
         {
@@ -564,8 +564,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "The G3 has an aluminium body and weighs about 47g; the G3 Pro is about 92g, so the G3 is close to half the weight.",
             "The [G3 Pro](/products/caliburn-g3-pro) has the bigger battery at 1000mAh, goes up to 35W, has a full-front screen and a valve to fine-tune the airflow.",
-            "G3 pods at 0.6Ω, 0.9Ω and 1.2Ω fit the G3 Pro too, so your pods carry over if you move up.",
-            "If light and easy to carry matters most, the G3 is enough. If you want everything on a big screen and airflow you can tune, go for the G3 Pro.",
+            "The G3 Pro takes every G3 pod — 0.6Ω, 0.9Ω and 1.2Ω — so your pods carry over if you change devices.",
+            "The G3 suits you if light and easy to carry matters most; the G3 Pro suits you if you want a big screen and airflow you tune yourself.",
           ],
         },
         {
@@ -580,7 +580,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Side fill or top fill?",
           paragraphs: [
             "G3 pods come in two versions that differ in where the fill port sits: one on the side, one on the top.",
-            "Each kit comes with one type. When you buy more pods, the one in your box is a good guide to the filling style you are used to.",
+            "Each kit comes with one type. When you buy more pods, check the fill type of the pod that came in your box.",
           ],
         },
       ],
@@ -609,7 +609,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "侧注油还是顶注油？",
           paragraphs: [
             "G3 烟弹有两种版本，区别在注油口的位置：一种在侧面，一种在顶部。",
-            "每套只附其中一种。再买烟弹时，可以参考盒里那颗，选你用惯的注油方式。",
+            "每套只附其中一种。再买烟弹时，先看看盒里那颗是哪种注油方式。",
           ],
         },
       ],
