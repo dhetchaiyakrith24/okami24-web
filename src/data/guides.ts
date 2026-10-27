@@ -2215,7 +2215,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ตัวเครื่องซื้อครั้งเดียว แต่หัวพอตต้องซื้อไปเรื่อย ๆ ตลอดที่ใช้ ร้านเราจึงแนะนำให้ดูหัวพอตของรุ่นนั้นไปพร้อมกัน ว่าหัวละกี่พัฟ มีกลิ่นให้เลือกเท่าไหร่ และใส่กับเครื่องรุ่นไหนได้บ้าง",
           "[M Switch Pod](/products/m-switch-pod) ใช้กับตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ส่วน [Zero Cartridge](/products/zero-cartridge) หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano ถ้ามีสองเครื่องก็ใช้หัวร่วมกันได้ Esko Bar Switch 20K ใช้หัวพอตของ [Esko Bar Switch](/products/esko-bar-switch-pod) เอง และ RELX Creator ใส่ได้ทั้งหัว RELX Creator Pod กับหัว [Muro Connector](/products/muro-connector-20k) สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่",
-          "RELX Infinity 2 Plus ใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ซึ่ง RELX ระบุไว้ว่าเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ หัว RELX Pod Pro 2 ดูกลิ่นทั้งหมดได้ที่หน้า [RELX Infinity Pro 2 Pod](/products/relx-infinity-pro-2-pod)",
+          "RELX Infinity 2 Plus ใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ซึ่ง RELX ระบุไว้ว่าเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ หัว RELX Pod Pro 2 ดูกลิ่นทั้งหมดได้ที่ [RELX Infinity Pro 2 Pod](/products/relx-infinity-pro-2-pod)",
           "สามรุ่นที่เหลือมีหัวพอตมาในกล่องหนึ่งหัว เมื่อหัวหมด ของ KS ใช้หัว [KS Quikpro 15K Cartridge](/products/pod-150) ซึ่ง KS ตอบไว้ว่าถอดเปลี่ยนได้ แต่เติมน้ำยาเองไม่ได้ ของ Nexswitch ใช้หัว [Nexswitch 16K Pod](/products/nexswitch-16k-pod) ส่วน nexPOD 15K มาพร้อมหัวพอตบรรจุสำเร็จ และใส่หัวแบบเติมน้ำยาเองที่ WOTOFO ขายแยกได้ด้วย",
           "ถ้าต้องการหัวพอตที่ยังไม่มีบนเว็บ หรือจะใช้หัวพอตแบบอื่นนอกจากที่บอกไว้ ทักไลน์ @okm24 ถามร้านก่อนได้",
         ],
