@@ -8,6 +8,7 @@
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { productArticle } from "@/data/product-articles";
+import { PRODUCT_EDITORIAL } from "@/data/product-editorial";
 import { verifiedRows } from "@/lib/verified-specs";
 
 const gapsOnly = process.argv.includes("--gaps");
@@ -25,6 +26,8 @@ for (const p of allProducts) {
   total++;
   const fs: string[] = [];
   const th = productArticle(p.slug, "th");
+  // a PRODUCT_EDITORIAL page (M Bar 9K redesign 23/10) shows its own article in place of "more details"
+  const editorial = p.slug in PRODUCT_EDITORIAL;
   const posters = p.features.filter((f) => f.image).length;
   const isColour = (p.colorVariants?.length ?? 0) > 0;
   const opts = isColour
@@ -32,8 +35,8 @@ for (const p of allProducts) {
     : (p.flavorVariants ?? []).map((o) => !!(o.boxImage ?? o.image));
   const noPhoto = opts.filter((x) => !x).length;
   const specs = verifiedRows(p.specifications).length;
-  if (!th) flag(fs, "NO-ARTICLE");
-  if (p.storyDetails && !th?.lede && !p.storyCover && posters === 0 && !th) flag(fs, "EMPTY-HEAD");
+  if (!th && !editorial) flag(fs, "NO-ARTICLE");
+  if (p.storyDetails && !editorial && !th?.lede && !p.storyCover && posters === 0 && !th) flag(fs, "EMPTY-HEAD");
   if (noPhoto > 0) flag(fs, `OPT-NO-PHOTO ${noPhoto}/${opts.length}`);
   if (specs < 2) flag(fs, "FEW-SPECS");
   if (fs.length) withGap++;
