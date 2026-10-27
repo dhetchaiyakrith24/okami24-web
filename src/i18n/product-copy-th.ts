@@ -429,7 +429,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "1350mAh ในตัว",
       output: "สูงสุด 30W · เครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่",
       pod: "ARGUS Top Fill Cartridge V2 0.7Ω · 3mL · เติมด้านบน",
-      "pod-compat": "ARGUS Top Fill Cartridge V2 · 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · ใช้หัวพอตได้ทั้งตระกูล ARGUS โดยเช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่อง",
+      "pod-compat": "ARGUS Top Fill Cartridge V2 · 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่อง",
       coil: "iCOSM CODE 2.0 · Liquid-Seal Shield · Mega-Core · Golden Cotton",
       airflow: "ช่องลมคงที่ ปรับไม่ได้",
       firing: "ไม่มีปุ่ม สูบได้เลย",

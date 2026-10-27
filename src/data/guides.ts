@@ -174,7 +174,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
           "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL, with the iCOSM CODE 2.0 anti-leak system.",
-          "One thing to know before you decide: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get here.",
+          "VOOPOO says the G3 mini takes ARGUS Top Fill cartridges, rated 0.4, 0.7 and 1.0Ω — check the resistance and output first. When you need more pods, our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4Ω and 0.7Ω; its 1.2Ω option is a side-fill pod, outside the G3 mini's range.",
         ],
         image: SECTION_IMAGES_EN.argusG3MiniTiny,
       },
@@ -200,7 +200,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "What pods does the ARGUS G3 mini use?",
-        answer: "It ships with the ARGUS Top Fill Cartridge V2 at 0.7 ohm. This shop does not yet sell ARGUS pods separately.",
+        answer: "It ships with the ARGUS Top Fill Cartridge V2 at 0.7 ohm. VOOPOO says the G3 mini takes ARGUS Top Fill cartridges, rated 0.4, 0.7 and 1.0 ohm. Our VOOPOO Argus Pod listing includes Top Fill cartridges at 0.4 and 0.7 ohm.",
       },
       {
         question: "What e-liquid does a pod system use?",
@@ -488,8 +488,8 @@ const allGuides: Guide[] = [
       {
         heading: "A wide resistance range does not always mean the pod is for sale",
         paragraphs: [
-          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but right now our site has no ARGUS pods for sale. The ARGUS G4, ARGUS G4 mini, ARGUS P3 and ARGUS G3 mini have no compatible pod or coil in the catalog yet.",
-          "Compare the Caliburn side, where the [GPP pod](/products/coil-94) is on the site and states exactly which devices it fits. The resistance range on a spec sheet is only half the answer; the other half is whether the pod you would put in it can actually be bought. Read those two lines together before choosing a device — or, if you have not started choosing yet, start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
+          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but the [VOOPOO Argus Pod cartridges](/products/coil-21) on our site come in 0.4, 0.7 and 1.2Ω, not every value in that range. VOOPOO lists the ARGUS G4, ARGUS G4 mini and ARGUS P3 as taking this pod family; the ARGUS G3 mini takes its Top Fill cartridges (0.4–1.0Ω), so the 1.2Ω side-fill pod is outside its range.",
+          "The Caliburn side works the same way: the [GPP pod](/products/coil-94) is on the site and states exactly which devices it fits. The resistance range on a spec sheet is only half the answer; the other half is whether the pod you would put in it can actually be bought. Read those two lines together before choosing a device — or, if you have not started choosing yet, start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
       },
     ],
@@ -500,7 +500,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "Where can I buy ARGUS pods?",
-        answer: "Not on our site right now. The ARGUS G4, G4 mini, P3 and G3 mini have no compatible pod in the catalog yet. Ask on LINE @okm24.",
+        answer: "On our site: VOOPOO Argus Pod cartridges, in several resistances. VOOPOO says the ARGUS pod family fits the ARGUS G4, G4 mini and P3 (on the P3, check resistance and output first); the G3 mini takes the Top Fill cartridges, 0.4 to 1.0Ω.",
       },
       {
         question: "What does the resistance range tell me?",
@@ -2541,7 +2541,7 @@ const allGuides: Guide[] = [
         heading: "สรุปก่อน: ARGUS สี่รุ่นต่างกันตรงไหน",
         paragraphs: [
           "ARGUS G4 กับ G4 mini ต่างกันยังไง ตอบสั้น ๆ คือสองรุ่นนี้แบตเท่ากันที่ 1650mAh และใช้หัวพอต Multi-Ohm เหมือนกัน ที่ต่างคือ G4 มีจอ HD 0.85 นิ้ว ปรับได้ 5–35 วัตต์ และกดปุ่มเพื่อใช้ 0.4 โอห์มได้อีกค่า ส่วน G4 mini ไม่มีจอ วัตต์อยู่ที่ 5–30 วัตต์ และเบากว่าที่ 56 กรัม",
-          "บนเว็บเรามี ARGUS ให้เลือกสี่รุ่น คือ [ARGUS G4](/products/argus-g4) · [ARGUS G4 mini](/products/argus-g4-mini) · [ARGUS G3 mini](/products/argus-g3-mini) และ [ARGUS P3](/products/argus-p3) ทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS เหมือนกัน และต่างกันอยู่ห้าเรื่อง คือจอกับการควบคุม วิธีเปลี่ยนค่าโอห์ม แบตกับวัตต์ ช่องลม และน้ำหนัก",
+          "บนเว็บเรามี ARGUS ให้เลือกสี่รุ่น คือ [ARGUS G4](/products/argus-g4) · [ARGUS G4 mini](/products/argus-g4-mini) · [ARGUS G3 mini](/products/argus-g3-mini) และ [ARGUS P3](/products/argus-p3) ทั้งสี่รุ่นเป็นเครื่องตระกูล ARGUS และต่างกันอยู่ห้าเรื่อง คือจอกับการควบคุม วิธีเปลี่ยนค่าโอห์ม แบตกับวัตต์ ช่องลม และน้ำหนัก",
           "ตัวเลขทุกตัวในบทความนี้มาจากหน้าเว็บและโปสเตอร์ของ VOOPOO ชุดเดียวกับตารางสเปกบนหน้าสินค้าของแต่ละรุ่น",
         ],
       },
@@ -2596,10 +2596,10 @@ const allGuides: Guide[] = [
           {
             heading: "ระบบหัวพอต",
             paragraphs: [
-              "VOOPOO ระบุว่าทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS ร่วมกันได้ หัว Multi-Ohm ใช้สลับกันได้ระหว่าง G4 กับ G4 mini หัว Snap ที่มากับ P3 ใส่ได้ทั้ง G4 และ G4 mini ส่วนหัว Top Fill Cartridge V2 ที่มากับ G3 mini อยู่ในรายการหัวพอตที่ใช้ได้ของทั้งสี่รุ่น",
+              "VOOPOO ระบุว่า G4 · G4 mini และ P3 ใช้หัวพอตตระกูล ARGUS ร่วมกันได้ หัว Multi-Ohm ใช้สลับกันได้ระหว่าง G4 กับ G4 mini หัว Snap ที่มากับ P3 ใส่ได้ทั้ง G4 และ G4 mini ส่วน G3 mini ใช้หัวแบบเติมด้านบนช่วง 0.4–1.0 โอห์ม และหัว Top Fill Cartridge V2 ที่มากับ G3 mini อยู่ในรายการหัวพอตที่ใช้ได้ของทั้งสี่รุ่น",
               "สำหรับ P3 กับ G3 mini ทาง VOOPOO แนะนำให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้",
               "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
-              "ถ้าอยากได้หัวพอต ARGUS เพิ่ม ทักไลน์ @okm24 ถามร้านก่อนได้",
+              "ถ้าอยากได้หัวพอต ARGUS เพิ่ม เว็บเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือก",
             ],
             image: SECTION_IMAGES.argusPods,
           },
@@ -2646,7 +2646,7 @@ const allGuides: Guide[] = [
       { question: "ARGUS G4 mini กับ G3 mini ต่างกันยังไง", answer: "G4 mini แบต 1650mAh มีปุ่มเลื่อนปรับลม และกลับด้านหัวพอตเพื่อสลับ 0.7 กับ 1.0 โอห์มได้ ส่วน G3 mini แบต 1350mAh ช่องลมคงที่ เครื่องปรับวัตต์ให้เองตามหัวพอต และเบากว่าที่ 40.85 กรัม" },
       { question: "VOOPOO ARGUS รุ่นไหนดี", answer: "ขึ้นอยู่กับว่าอยากได้อะไร ถ้าอยากได้จอกับสามค่าโอห์มจากหัวพอตหัวเดียว ลองดู G4 ถ้าอยากได้แบตเท่ากันในตัวที่เล็กกว่า ลองดู G4 mini ถ้าอยากได้เครื่องที่เบาและใช้ง่าย ลองดู G3 mini และถ้าอยากได้จอทัชเต็มจอ ลองดู P3" },
       { question: "ARGUS P3 กับ G4 ต่างกันยังไง", answer: "P3 มีจอทัชเต็มจอ 2.01 นิ้ว ตั้งกราฟวัตต์เองได้ แบต 1500mAh ปรับได้ 5–30 วัตต์ ส่วน G4 มีจอ HD 0.85 นิ้ว สั่งงานด้วยปุ่มเดียว แบต 1650mAh ปรับได้ 5–35 วัตต์ และเปลี่ยนได้สามค่าโอห์มจากหัว Multi-Ohm หัวเดียว" },
-      { question: "ARGUS ใช้หัวพอตร่วมกันได้ไหม", answer: "ได้ VOOPOO ระบุว่าทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS ร่วมกันได้ เช่น หัว Multi-Ohm ใช้ได้ทั้ง G4 และ G4 mini และหัว Top Fill Cartridge V2 อยู่ในรายการของทั้งสี่รุ่น สำหรับ P3 กับ G3 mini ให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้" },
+      { question: "ARGUS ใช้หัวพอตร่วมกันได้ไหม", answer: "ได้เกือบทุกรุ่น VOOPOO ระบุว่า G4 · G4 mini และ P3 ใช้หัวพอตตระกูล ARGUS ร่วมกันได้ เช่น หัว Multi-Ohm ใช้ได้ทั้ง G4 และ G4 mini ส่วน G3 mini ใช้หัวแบบเติมด้านบนช่วง 0.4–1.0 โอห์ม และหัว Top Fill Cartridge V2 อยู่ในรายการของทั้งสี่รุ่น สำหรับ P3 กับ G3 mini ให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้" },
     ],
     relatedProductSlugs: ["argus-g4", "argus-g4-mini", "argus-g3-mini", "argus-p3"],
   },
