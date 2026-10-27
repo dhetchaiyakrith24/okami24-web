@@ -237,6 +237,12 @@ holder name on the order page (BSOT §9) is the receiving account itself, not a 
 
 **Pods = INTERNATIONAL version (owner 26/10 "แบบสากลครับ", answers รอพี่ตรวจ 58):** Caliburn (UWELL) + VOOPOO pages state the international version only — pod/tank capacity (3 mL / 3.5 mL / 4.5 mL / 5 mL), dimensions, weight and in-box pods; no "(2 mL in the TPD version)", no INT/FDA/TPD/CRC splits. The maker compatibility lists ("also fits … CRC versions") stay as the maker wrote them.
 
+**One "เทียบแท้" (lookalike) product — Marbo 10K (owner 27/10, through the main chat):** Max Disposable-47 "Marbo 10k โคลน" is an
+imitation of SALTHUB's M Bar 10K. Owner: "มันเป็นของก็อบอะอยากให้ลงด้วยนะแต่กำกับว่า *เทียบแท้* และราคาตามนั้นเลย", then
+"(แนะนำ) ลงได้ ชื่อสินค้า “Marbo 10K (เทียบแท้)” ราคา ฿299". Rules for that page only: name "Marbo 10K (เทียบแท้)", price = Max
+ราคาขาย (฿299), all its flavours · a clear line that it is a เทียบแท้ item, not a SALTHUB product · no "ของแท้" / genuine wording on the
+page, title, meta or JSON-LD · the /warranty authenticity refund does not cover it · never in cart suggestions or shop picks · never
+linked to or from the genuine M Bar 10K page. The only exception to BSOT "Genuine products"; any other lookalike = ask the owner.
 **Shop and ordering:** the cart is ON since 24/10 ~23:35 (owner "จบตรงนี้เปิดระบบตะกร้าเลยครับ") · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock without a rebuild IS planned — B5 (owner 26/10, low-stock label) replaces the 24/10 "stock-PR deploys are fine, no need" (house round 26/10) · checkout = phone only, no OTP
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
 without the owner (owner 24/10, TEAM_RULES 13.7) · the 4

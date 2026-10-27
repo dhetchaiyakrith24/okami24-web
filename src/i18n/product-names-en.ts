@@ -27,6 +27,8 @@ const NAMES_EN: Record<string, string> = {
   "coil-83": "VOOPOO Argus P1 Empty Pod",
   "coil-92": "Voopoo PnP X Coil",
   "coil-94": "UWELL Caliburn G4&G3 Series Pod",
+  // List-new (27/10, HANDOFF §18): "เทียบแท้" = Clone (thai-copy 27/10: the plain trade word; not "replica"/"genuine").
+  "marbo-10k-clone": "Marbo 10K (Clone)",
 };
 
 const OPTION_LABELS_EN: Record<string, string> = {
