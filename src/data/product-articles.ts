@@ -1404,7 +1404,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "สูบได้กี่พัฟ และมีกลิ่นอะไรให้เลือกบ้าง",
           paragraphs: [
-            "ตามโปสเตอร์หลักของ JOIWAY สูบได้ 12,000+ พัฟ ส่วนกลิ่นที่ JOIWAY มีให้เลือก เรารวมไว้ในตารางกลิ่นด้านบนแล้ว ถ้าอยากรู้ว่ากลิ่นไหนมีของอยู่ตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+            "ตามโปสเตอร์หลักของ JOIWAY สูบได้ 12,000+ พัฟ ส่วนกลิ่นที่ JOIWAY มีให้เลือก เรารวมไว้ในตารางกลิ่นด้านบนแล้ว"
           ]
         }
       ]
@@ -1415,7 +1415,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How many puffs, and which flavours?",
           paragraphs: [
-            "JOIWAY's main poster gives 12,000+ puffs. The flavours JOIWAY offers are in the grid above; to check which ones are in stock right now, message us on LINE @okm24."
+            "JOIWAY's main poster gives 12,000+ puffs. The flavours JOIWAY offers are in the grid above."
           ]
         }
       ]
@@ -1426,7 +1426,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "多少口？有哪些口味？",
           paragraphs: [
-            "JOIWAY 主海报标注 12,000+ 口。JOIWAY 提供的口味都在上方的口味表里，想知道现在哪些有货，可以在 LINE @okm24 问我们。"
+            "JOIWAY 主海报标注 12,000+ 口。JOIWAY 提供的口味都在上方的口味表里。"
           ]
         }
       ]
@@ -1440,7 +1440,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ความเข้มข้นมีให้เลือกสองแบบ",
           paragraphs: [
-            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีความเข้มข้นไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%"
           ]
         }
       ]
@@ -1451,7 +1451,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Two strengths to choose from",
           paragraphs: [
-            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. To check which strength we have in your flavour right now, message us on LINE @okm24."
+            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version."
           ]
         }
       ]
@@ -1462,7 +1462,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "两种浓度可选",
           paragraphs: [
-            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。想知道你喜欢的口味现在有哪种浓度，可以在 LINE @okm24 问我们。"
+            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。"
           ]
         }
       ]
@@ -1476,7 +1476,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "หัวพอตที่ทำมาคู่กัน",
           paragraphs: [
-            "หัวพอต RELX Creator Pod มีความจุน้ำยา 2+8mL และใช้คอยล์ Dual Mesh ตามที่ RELX ระบุไว้ ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
+            "หัวพอต RELX Creator Pod มีความจุน้ำยา 2+8mL และใช้คอยล์ Dual Mesh ตามที่ RELX ระบุไว้"
           ]
         },
         {
@@ -1493,7 +1493,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "The pod made for it",
           paragraphs: [
-            "The RELX Creator Pod holds 2+8mL of e-liquid and uses a Dual Mesh coil, according to RELX. To check which flavours we have right now, message us on LINE @okm24."
+            "The RELX Creator Pod holds 2+8mL of e-liquid and uses a Dual Mesh coil, according to RELX."
           ]
         },
         {
@@ -1510,7 +1510,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "与它配套的烟弹",
           paragraphs: [
-            "据 RELX 标注，RELX Creator Pod 容量为 2+8mL，采用 Dual Mesh 线圈。想知道我们现在有哪些口味，可以在 LINE @okm24 问我们。"
+            "据 RELX 标注，RELX Creator Pod 容量为 2+8mL，采用 Dual Mesh 线圈。"
           ]
         },
         {
@@ -1530,7 +1530,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ความเข้มข้นที่มีให้เลือก",
           paragraphs: [
-            "WOTOFO ทำ nexBAR 18K ออกมาสองความเข้มข้น คือ 20mg และ 50mg และแต่ละความเข้มข้นก็มีกลิ่นให้เลือกแยกกัน เลื่อนขึ้นไปดูรายชื่อกลิ่นได้ ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหน ทักไลน์ @okm24 ถามได้เลย"
+            "WOTOFO ทำ nexBAR 18K ออกมาสองความเข้มข้น คือ 20mg และ 50mg และแต่ละความเข้มข้นก็มีกลิ่นให้เลือกแยกกัน เลื่อนขึ้นไปดูรายชื่อกลิ่นได้"
           ]
         },
         {
@@ -1547,7 +1547,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which strength?",
           paragraphs: [
-            "WOTOFO makes the nexBAR 18K in two nicotine strengths, 20mg and 50mg, and each comes with its own set of flavours. The flavour list above shows them. To check what we have right now, message us on LINE @okm24."
+            "WOTOFO makes the nexBAR 18K in two nicotine strengths, 20mg and 50mg, and each comes with its own set of flavours. The flavour list above shows them."
           ]
         },
         {
@@ -1564,7 +1564,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "选哪种浓度？",
           paragraphs: [
-            "WOTOFO 的 nexBAR 18K 有 20mg 和 50mg 两种尼古丁浓度，每种都有各自的口味。上方的口味列表都列出来了。想知道我们现在有哪些，可以在 LINE @okm24 问我们。"
+            "WOTOFO 的 nexBAR 18K 有 20mg 和 50mg 两种尼古丁浓度，每种都有各自的口味。上方的口味列表都列出来了。"
           ]
         },
         {

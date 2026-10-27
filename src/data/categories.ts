@@ -38,7 +38,7 @@ export const categories: Category[] = [
     description:
       "Ready out of the box, nothing to fill; most can be recharged until the e-liquid runs out. M Bar, RELX and JOIWAY differ mainly in puff count and battery size.",
     descriptionTh:
-      "พอตใช้แล้วทิ้ง แกะกล่องใช้ได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด ตอนนี้มีทั้ง M Bar RELX และ JOIWAY ต่างกันหลัก ๆ ที่จำนวนพัฟกับขนาดแบต",
+      "พอตใช้แล้วทิ้ง แกะกล่องใช้ได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด มีให้เลือกทั้ง M Bar RELX และ JOIWAY ต่างกันหลัก ๆ ที่จำนวนพัฟกับขนาดแบต",
     systemTypes: ["disposable"],
   },
   {
@@ -68,7 +68,7 @@ export const categories: Category[] = [
     description:
       "Genuine replacement pod coils from UWELL, VOOPOO and DOTMOD. Match your device model first, then pick ohms by how you vape: lower is airier, higher is tighter.",
     descriptionTh:
-      "คอยล์พอตของแท้สำหรับเปลี่ยน ตอนนี้มีของ UWELL VOOPOO และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
+      "คอยล์พอตของแท้สำหรับเปลี่ยน มีให้เลือกทั้ง UWELL VOOPOO และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
     systemTypes: ["coil", "accessory"],
   },
   // Phase 3.5 (E-liquid) — deliberately `systemTypes: []`, not a guess at a device value. `SystemType`
@@ -100,9 +100,9 @@ export const categories: Category[] = [
     name: "Heated Tobacco Devices",
     shortName: "HNB Devices",
     labelTh: "Heated Tobacco Devices / เครื่องอุ่นยาสูบ",
-    description: "Genuine IQOS ILUMA devices that heat tobacco sticks and use no e-liquid. They take TEREA sticks only. Right now that's ILUMA i and ILUMA i PRIME.",
+    description: "Genuine IQOS ILUMA devices that heat tobacco sticks and use no e-liquid. They take TEREA sticks only. Models: ILUMA i ONE, ILUMA i and ILUMA i PRIME.",
     descriptionTh:
-      "เครื่อง IQOS ILUMA ของแท้ อุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ตอนนี้มี ILUMA i และ ILUMA i PRIME",
+      "เครื่อง IQOS ILUMA ของแท้ อุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น มีให้เลือกทั้ง ILUMA i ONE · ILUMA i และ ILUMA i PRIME",
     systemTypes: [],
   },
   {

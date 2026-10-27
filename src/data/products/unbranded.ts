@@ -62,7 +62,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro Space 15K",
     tagline: "A disposable vape rated for up to 15,000 puffs.",
     shortDescription:
-      "A disposable vape from the Muro \"Space\" line, rated for up to 15,000 puffs, currently stocked in 5 flavors.",
+      "A disposable vape from the Muro \"Space\" line, rated for up to 15,000 puffs.",
     isFlagship: false,
     attributes: {
       puffCount: 15000,
@@ -273,7 +273,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro SC 8000 Puffs",
     tagline: "A rechargeable disposable rated for up to 8,000 puffs.",
     shortDescription:
-      "A rechargeable disposable from the Muro \"SC\" line, with a 600mAh battery and USB-C charging, rated for up to 8,000 puffs and currently stocked in 12 flavors.",
+      "A rechargeable disposable from the Muro \"SC\" line, with a 600mAh battery and USB-C charging, rated for up to 8,000 puffs.",
     isFlagship: false,
     attributes: {
       batteryMah: 600,
@@ -352,7 +352,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro Connector 20K",
     tagline: "A high-puff-count disposable rated for up to 20,000 puffs.",
     shortDescription:
-      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 33 flavors.",
+      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs.",
     isFlagship: false,
     // Round "clip" (2026-09-27): the "RELX Creator pod" clip of docs/SEO_LANDSCAPE.md §4 item 6, from @OKM_24 (the main
     // channel of the two that cover this pod). "LEGO" in its title is the same honeycomb-shell nickname as this record's
@@ -568,7 +568,7 @@ export const unbrandedProducts: Product[] = [
     name: "Reswa Sportcan 12K",
     displayName: "Reswa Sportcan 12K",
     tagline: "A disposable vape rated for up to 12,000 puffs.",
-    shortDescription: "A disposable vape from the Reswa \"Sportcan\" line, rated for up to 12,000 puffs, currently stocked in 3 flavors.",
+    shortDescription: "A disposable vape from the Reswa \"Sportcan\" line, rated for up to 12,000 puffs.",
     isFlagship: false,
     attributes: {
       puffCount: 12000,
