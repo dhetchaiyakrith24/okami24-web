@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-27",
-  "endDate": "2026-10-24",
+  "startDate": "2026-09-28",
+  "endDate": "2026-10-25",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 652,
-   "impressions": 4737,
-   "ctr": 0.13763985644922946,
-   "position": 10.345788473717542
+   "clicks": 665,
+   "impressions": 4884,
+   "ctr": 0.13615888615888616,
+   "position": 10.260647010647011
   },
   {
    "keys": [
@@ -60,6 +60,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 52
+  },
+  {
+   "keys": [
+    "bel"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 31
   },
   {
    "keys": [
@@ -111,9 +120,9 @@
     "idn"
    ],
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 9,
    "ctr": 0,
-   "position": 59.625
+   "position": 63.44444444444444
   },
   {
    "keys": [
@@ -156,9 +165,9 @@
     "khm"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 14
+   "position": 25
   },
   {
    "keys": [
@@ -183,9 +192,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 21,
+   "impressions": 20,
    "ctr": 0,
-   "position": 5.9523809523809526
+   "position": 5.95
   },
   {
    "keys": [
@@ -213,6 +222,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 62
+  },
+  {
+   "keys": [
+    "sau"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 6
   },
   {
    "keys": [

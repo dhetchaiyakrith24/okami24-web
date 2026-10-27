@@ -1,0 +1,326 @@
+{
+ "request": {
+  "startDate": "2026-09-28",
+  "endDate": "2026-10-25",
+  "dimensions": [
+   "country"
+  ]
+ },
+ "rows": [
+  {
+   "keys": [
+    "tha"
+   ],
+   "clicks": 665,
+   "impressions": 4884,
+   "ctr": 0.13615888615888616,
+   "position": 10.260647010647011
+  },
+  {
+   "keys": [
+    "chn"
+   ],
+   "clicks": 1,
+   "impressions": 5,
+   "ctr": 0.2,
+   "position": 10.4
+  },
+  {
+   "keys": [
+    "deu"
+   ],
+   "clicks": 1,
+   "impressions": 4,
+   "ctr": 0.25,
+   "position": 10.5
+  },
+  {
+   "keys": [
+    "gbr"
+   ],
+   "clicks": 1,
+   "impressions": 7,
+   "ctr": 0.14285714285714285,
+   "position": 30.857142857142858
+  },
+  {
+   "keys": [
+    "lao"
+   ],
+   "clicks": 1,
+   "impressions": 8,
+   "ctr": 0.125,
+   "position": 6
+  },
+  {
+   "keys": [
+    "arg"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 52
+  },
+  {
+   "keys": [
+    "bel"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 31
+  },
+  {
+   "keys": [
+    "bgd"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 11.333333333333334
+  },
+  {
+   "keys": [
+    "bih"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 35
+  },
+  {
+   "keys": [
+    "bra"
+   ],
+   "clicks": 0,
+   "impressions": 5,
+   "ctr": 0,
+   "position": 49.8
+  },
+  {
+   "keys": [
+    "cyp"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "fra"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 34
+  },
+  {
+   "keys": [
+    "idn"
+   ],
+   "clicks": 0,
+   "impressions": 9,
+   "ctr": 0,
+   "position": 63.44444444444444
+  },
+  {
+   "keys": [
+    "irn"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 68.5
+  },
+  {
+   "keys": [
+    "isr"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "ita"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 75
+  },
+  {
+   "keys": [
+    "jpn"
+   ],
+   "clicks": 0,
+   "impressions": 8,
+   "ctr": 0,
+   "position": 25.25
+  },
+  {
+   "keys": [
+    "khm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 25
+  },
+  {
+   "keys": [
+    "kor"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "mex"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "mmr"
+   ],
+   "clicks": 0,
+   "impressions": 20,
+   "ctr": 0,
+   "position": 5.95
+  },
+  {
+   "keys": [
+    "mys"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 18
+  },
+  {
+   "keys": [
+    "phl"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 82
+  },
+  {
+   "keys": [
+    "pol"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 62
+  },
+  {
+   "keys": [
+    "sau"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
+    "sgp"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "svk"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 83.5
+  },
+  {
+   "keys": [
+    "tkm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
+  },
+  {
+   "keys": [
+    "tun"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 34
+  },
+  {
+   "keys": [
+    "tur"
+   ],
+   "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 15.333333333333334
+  },
+  {
+   "keys": [
+    "twn"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 15
+  },
+  {
+   "keys": [
+    "usa"
+   ],
+   "clicks": 0,
+   "impressions": 10,
+   "ctr": 0,
+   "position": 47.3
+  },
+  {
+   "keys": [
+    "ven"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
+  },
+  {
+   "keys": [
+    "vnm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
+    "xkk"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  }
+ ]
+}
