@@ -23,6 +23,7 @@ this file rather than letting the knowledge live only in chat history.
 - Bold
 - Technology-oriented
 - Genuine products
+  - Exception (owner 2026-10-27): one product sold as "เทียบแท้" (a lookalike, not genuine) — Marbo 10K (เทียบแท้); its rules = `docs/HANDOFF.md` §18.
 - Curated by experienced seller
 - Fair / transparent pricing
 - Service-first
