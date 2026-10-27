@@ -65,10 +65,12 @@ const ok = (json: unknown, headers?: Record<string, string>, writes: StockWrite[
 
 function stockOf(sku: string, inStock: boolean, reports: Map<string, StockReportView>) {
   const r = sku ? reports.get(sku) : undefined;
+  // With manage_stock on, WooCommerce derives the status from the number; a status alone is kept as sent.
+  const fromNumber = r?.quantity == null ? null : r.quantity > 0 ? "instock" : "outofstock";
   return {
     manage_stock: true,
     stock_quantity: r?.quantity ?? null,
-    stock_status: r?.stockStatus ?? (inStock ? "instock" : "outofstock"),
+    stock_status: fromNumber ?? r?.stockStatus ?? (inStock ? "instock" : "outofstock"),
   };
 }
 

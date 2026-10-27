@@ -20,7 +20,7 @@ export function NewKeyForm({ siteUrl }: { siteUrl: string }) {
           ["ck", state.consumerKey],
           ["cs", state.consumerSecret],
         ].map(([name, text]) => (
-          <div key={name} className="flex flex-col gap-1">
+          <div key={name} className="flex flex-col gap-1 [&_pre]:break-all">
             <span className="label-mono text-xs text-foreground-dim">{name}</span>
             <CopyBlock text={text} label={`ก๊อป ${name}`} doneLabel="ก๊อปแล้ว" outline />
           </div>

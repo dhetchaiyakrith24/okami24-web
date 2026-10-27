@@ -96,6 +96,7 @@ if (variable) {
   );
   check("variation stock write recorded for its code only", w.writes.length === 1 && w.writes[0].sku === v.sku && w.writes[0].quantity === 7);
   check("the answer shows the new number", (w.json as { stock_quantity: number }).stock_quantity === 7);
+  check("a number > 0 reads in stock", (w.json as { stock_status: string }).stock_status === "instock");
   check("a price in the write is ignored", (w.json as { price: string }).price === "");
 
   const batch = handle(
