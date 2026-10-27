@@ -28,6 +28,7 @@ const MAX_PARENT_OF = {
   "Eliquid-109": "ELQ-3", // Marbo Freebase ขวดยาว
   "eliquid-62": "ELQ-4", // Muro Salt Nic
   "Coil-55": "Coil-55-1", // หัวแทงค์ Caliburn G2 (a parent row with no children)
+  "Pod-180": "Disposable-46", // Nexbar Clear 18k (re-coded 26/10; Max's Pod-180 is now another product, "หัว dude 3 ml.")
 };
 // Max-only products (no old seed record) → the record id they get here (round list19 18/10, owner "ทำเลยครับทั้งหมด"). The record id
 // is the storefront slug once lowercased (same rule as every seed record), so it is a readable model name, not Max's "Product N".
