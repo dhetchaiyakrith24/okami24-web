@@ -2569,13 +2569,19 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   "Pod-150": [
     { code: "grape-berry", label: "Grape Berry", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   ],
-  // Image-fix round 2026-09-30: nexBar CLEAR 18K — the maker's poster lists 15 flavours; these 5 are not in Shipnity.
+  // Image-fix round 2026-09-30: nexBar CLEAR 18K — the maker's poster lists 15 flavours; these 5 were not in Shipnity then.
+  // List-new (27/10): Max sells the record as Disposable-46 with 19 flavours (sku-map.ts links all 19); the shop page above lists
+  // the same 19 (read 27/10) — the last 4 have no flavour photo there (it reuses the Mint image), so they show the no-photo panel.
   "Pod-180": [
     { code: "blueberry", label: "Blueberry", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
     { code: "lychee", label: "Lychee", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
     { code: "honeydew-melon", label: "Honeydew Melon", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
     { code: "strawberry-banana", label: "Strawberry Banana", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
     { code: "peach-strawberry", label: "Peach Strawberry", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "kyoho-grape", label: "Kyoho Grape", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "cola-lemon", label: "Cola Lemon", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "pineapple", label: "Pineapple", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "mango", label: "Mango", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   ],
   // Tier-1 disposable growth mission (2026-09-03). Pod-159's active (have_stock=true) children are
   // only the 2 flavors currently bundled in stock (Cool Mint, Cola) — but eskobarvape.com's own
