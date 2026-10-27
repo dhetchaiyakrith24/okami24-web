@@ -100,9 +100,9 @@ export const categories: Category[] = [
     name: "Heated Tobacco Devices",
     shortName: "HNB Devices",
     labelTh: "Heated Tobacco Devices / เครื่องอุ่นยาสูบ",
-    description: "Genuine IQOS ILUMA devices that heat tobacco sticks and use no e-liquid. They take TEREA sticks only.",
+    description: "Genuine IQOS ILUMA devices that heat tobacco sticks and use no e-liquid. They take TEREA sticks only. Models: ILUMA i ONE, ILUMA i and ILUMA i PRIME.",
     descriptionTh:
-      "เครื่อง IQOS ILUMA ของแท้ อุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น",
+      "เครื่อง IQOS ILUMA ของแท้ อุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น มีให้เลือกทั้ง ILUMA i ONE · ILUMA i และ ILUMA i PRIME",
     systemTypes: [],
   },
   {
