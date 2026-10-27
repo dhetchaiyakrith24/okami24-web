@@ -68,7 +68,7 @@ export const categories: Category[] = [
     description:
       "Genuine replacement pod coils from UWELL, VOOPOO and DOTMOD. Match your device model first, then pick ohms by how you vape: lower is airier, higher is tighter.",
     descriptionTh:
-      "คอยล์พอตของแท้สำหรับเปลี่ยน ตอนนี้มีของ UWELL VOOPOO และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
+      "คอยล์พอตของแท้สำหรับเปลี่ยน มีให้เลือกทั้ง UWELL VOOPOO และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
     systemTypes: ["coil", "accessory"],
   },
   // Phase 3.5 (E-liquid) — deliberately `systemTypes: []`, not a guess at a device value. `SystemType`

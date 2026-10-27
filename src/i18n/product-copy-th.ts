@@ -946,7 +946,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้งรุ่นพัฟเยอะของ INFY",
     shortDescription:
-      "พอตใช้แล้วทิ้งพัฟเยอะจาก INFY ตัวที่ขายกันในไทย ตอนนี้มีกลิ่นไหนบ้าง ทักไลน์ @okm24 ถามได้เลย",
+      "พอตใช้แล้วทิ้งพัฟเยอะจาก INFY ตัวที่ขายกันในไทย",
   },
   // Round 30.3 (2026-09-10) — MOOOD / Muro entries, same translation-only rule as above; these four
   // products had no Thai line, so their cards fell back to English once ProductCard started reading
