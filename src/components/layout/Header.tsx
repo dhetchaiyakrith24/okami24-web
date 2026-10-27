@@ -79,15 +79,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
         <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
           {/* Q6 logo (owner 24/10): the full lockup is ~2.8x wider than the old sticker logo. Where the row is already full
               the helmet mark alone stands in, same footprint as the old logo: phones under sm (at 390 the lockup pushed the
-              menu button off screen) and lg to 1439 px (at 1280 it pushed four nav labels onto two lines). Tablets and
-              1440+ show the lockup. 90rem, not 1440px: an arbitrary px breakpoint sorts before lg in the CSS and lost. */}
+              menu button off screen) and xl to 1439 px (at 1280 it pushed four nav labels onto two lines). Tablets, the
+              lg band (menu button, no nav) and 1440+ show the lockup. 90rem, not 1440px: an arbitrary px breakpoint sorts
+              before lg/xl in the CSS and lost. */}
           <Image
             src="/brand/okami-logo.png"
             alt="OKami24"
             width={1416}
             height={429}
             priority
-            className="hidden h-12 w-auto sm:block lg:hidden min-[90rem]:block min-[90rem]:h-10"
+            className="hidden h-12 w-auto sm:block xl:hidden min-[90rem]:block min-[90rem]:h-10"
           />
           <Image
             src="/brand/okami-mark.png"
@@ -95,11 +96,15 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             width={460}
             height={429}
             priority
-            className="h-10 w-auto sm:hidden lg:block lg:h-12 min-[90rem]:hidden"
+            className="h-10 w-auto sm:hidden xl:block xl:h-12 min-[90rem]:hidden"
           />
         </Link>
 
-        <nav className="hidden items-center lg:flex min-[1400px]:gap-1" aria-label="Primary">
+        {/* The bar nav starts at xl (owner 27/10: labels "เรียงแปลกๆ"). Measured 27/10 in Thai, the widest language: from 1024
+            to ~1100 px the eight labels need ~60 px more than the row has, so they broke onto two lines — under xl the menu
+            button carries them. Labels never wrap (whitespace-nowrap). From 1400 px the row is capped at 1400 (Container):
+            lockup + nav + "บัญชีสมาชิก" left 4 px short at px-3, so px-2.5 there leaves ~28 px spare. */}
+        <nav className="hidden items-center xl:flex min-[1400px]:gap-1" aria-label="Primary">
           <div
             className="relative"
             onMouseEnter={() => setProductsOpen(true)}
@@ -112,7 +117,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
                 open on hover, and on keyboard focus. */}
             <Link
               href="/products"
-              className="flex items-center gap-1 rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-3"
+              className="flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-2.5"
               onFocus={() => setProductsOpen(true)}
               onPointerDown={(e) => {
                 touchOpensMenu.current = e.pointerType === "touch" && !productsOpen;
@@ -164,7 +169,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-3"
+              className="whitespace-nowrap rounded-full px-2 py-2 text-sm text-foreground-muted transition-colors hover:text-foreground min-[1400px]:px-2.5"
             >
               {link.label}
             </Link>
@@ -188,13 +193,11 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             <Heart size={19} aria-hidden />
           </Link>
           {/* Owner 24/10: "ติดตามคำสั่งซื้อ" as a visible header item — icon on phones (the drawer also lists it), icon + words
-              from xl where the bar has room. Not in the lg band (1024–1279): the nav already wraps there and one more item
-              pushed "เกี่ยวกับเรา" onto two lines (measured 24/10) — the footer link covers it. Shown even with ordering
-              off: past orders can still be followed. */}
+              from xl where the bar has room. Shown even with ordering off: past orders can still be followed. */}
           <Link
             href="/orders"
             aria-label={dict.nav.trackOrder}
-            className="inline-flex items-center gap-1.5 rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 lg:hidden xl:inline-flex xl:px-3"
+            className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 xl:px-3"
           >
             <PackageSearch size={19} aria-hidden />
             <span className="hidden text-sm xl:inline">{dict.nav.trackOrder}</span>
@@ -226,7 +229,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             </Link>
           )}
           <button
-            className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 lg:hidden"
+            className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 xl:hidden"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={mobileOpen}
@@ -239,7 +242,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
 
       <div
         className={cn(
-          "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface-0 transition-transform duration-300 lg:hidden",
+          "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface-0 transition-transform duration-300 xl:hidden",
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
