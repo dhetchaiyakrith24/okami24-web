@@ -188,7 +188,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       },
       {
         question: "ARGUS G3 mini ใช้หัวพอตอะไร",
-        answer: "ในกล่องมีหัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม มาให้ หัวพอตตระกูล ARGUS อื่นก็ใช้ได้ตามที่ VOOPOO ระบุ โดยให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ และถ้าอยากได้หัวเพิ่ม บนเว็บเรามีหัวพอต VOOPOO Argus Pod ให้เลือก",
+        answer: "ในกล่องมีหัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม มาให้ VOOPOO ระบุว่า G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบนได้ ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้าหัวพอต VOOPOO Argus Pod บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์ม",
       },
       {
         question: "มือใหม่ควรเริ่มนิโคตินกี่เปอร์เซ็นต์",
@@ -480,7 +480,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ช่วงโอห์มกว้างไม่ได้แปลว่ามีหัวพอตขายเสมอ",
         paragraphs: [
-          "กลับมาที่บรรทัดหัวพอตของ ARGUS G4 ช่วงโอห์ม 0.4–3.0 โอห์มกว้างก็จริง และตัวเครื่องรองรับหัวพอต ARGUS หลายค่าโอห์ม แต่ [หัวพอต VOOPOO Argus Pod](/products/coil-21) ที่ขายบนเว็บเรามีให้เลือก 0.4 · 0.7 และ 1.2 โอห์ม ยังไม่ครบทุกค่าในช่วงนั้น ส่วนเครื่องที่ใช้หัวพอตตระกูลนี้ได้ VOOPOO ระบุไว้ทั้ง ARGUS G4 · ARGUS G4 mini · ARGUS P3 และ ARGUS G3 mini",
+          "กลับมาที่บรรทัดหัวพอตของ ARGUS G4 ช่วงโอห์ม 0.4–3.0 โอห์มกว้างก็จริง และตัวเครื่องรองรับหัวพอต ARGUS หลายค่าโอห์ม แต่ [หัวพอต VOOPOO Argus Pod](/products/coil-21) ที่ขายบนเว็บเรามีให้เลือก 0.4 · 0.7 และ 1.2 โอห์ม ยังไม่ครบทุกค่าในช่วงนั้น ส่วนเครื่องที่ใช้หัวพอตตระกูลนี้ได้ VOOPOO ระบุไว้ทั้ง ARGUS G4 · ARGUS G4 mini และ ARGUS P3 ขณะที่ ARGUS G3 mini ใช้หัวแบบเติมด้านบนช่วง 0.4–1.0 โอห์ม หัว 1.2 โอห์มแบบเติมด้านข้างจึงอยู่นอกช่วงของรุ่นนี้",
           "ฝั่ง Caliburn ก็เป็นแบบเดียวกัน [หัวพอต GPP](/products/coil-94) มีขายบนเว็บและระบุชัดว่าใช้กับรุ่นไหนได้บ้าง ช่วงโอห์มในตารางสเปกจึงเป็นแค่ครึ่งเดียวของคำตอบ อีกครึ่งคือหัวพอตที่จะเอามาใส่หาซื้อได้จริงไหม ก่อนเลือกเครื่องให้ดูสองบรรทัดนี้คู่กันเสมอ หรือถ้ายังไม่ได้เริ่มเลือก เริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
       },
@@ -492,7 +492,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       },
       {
         question: "หัวพอต ARGUS ซื้อที่ไหน",
-        answer: "บนเว็บเรามีหัวพอต VOOPOO Argus Pod ให้เลือกหลายค่าโอห์ม ตามที่ VOOPOO ระบุ หัวพอตตระกูล ARGUS ใช้ได้กับ ARGUS G4 · G4 mini · P3 และ G3 mini ส่วน P3 กับ G3 mini แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
+        answer: "บนเว็บเรามีหัวพอต VOOPOO Argus Pod ให้เลือกหลายค่าโอห์ม ตามที่ VOOPOO ระบุ หัวพอตตระกูล ARGUS ใช้ได้กับ ARGUS G4 · G4 mini และ P3 โดย P3 แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้ ส่วน G3 mini ใช้หัวแบบเติมด้านบนช่วง 0.4–1.0 โอห์ม",
       },
       {
         question: "ช่วงโอห์มในสเปกบอกอะไร",
@@ -909,7 +909,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
     ],
     faq: [
       { question: "Caliburn G5 使用哪种烟弹？", answer: "UWELL GPP 烟弹，有 0.4、0.6、0.9 和 1.2 欧姆四种阻值。同一种烟弹适用于大多数现款 Caliburn 设备。" },
-      { question: "ARGUS G3 mini 使用哪种烟弹？", answer: "随附 ARGUS Top Fill Cartridge V2，0.7 欧姆。按 VOOPOO 的说明，其他 ARGUS 烟弹也能用，使用前请核对阻值和功率。本店有售 VOOPOO Argus Pod 烟弹。" },
+      { question: "ARGUS G3 mini 使用哪种烟弹？", answer: "随附 ARGUS Top Fill Cartridge V2，0.7 欧姆。按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆。本店的 VOOPOO Argus Pod 烟弹有 0.4 和 0.7 欧姆的 Top Fill 选项。" },
       { question: "开放式换弹设备用什么烟油？", answer: "Caliburn 这类开放式换弹设备使用另外购买的瓶装烟油，自行注入烟弹。M Bar 9K 这类一次性设备和 M Switch Pod 烟弹出厂已预填烟油，无需另购或注油。" },
       { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar 9K、M Switch）可在 Salthub 官网 salthub.com/authenticate 拍摄包装盒上的防伪标签自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若验证未通过，请在 7 天内通过 LINE 发来验证结果和开箱视频，本店核实后，会告知您换新还是退款。若产品有其他问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
     ],
@@ -1104,14 +1104,14 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "阻值范围宽，不代表烟弹一定有售",
         paragraphs: [
-          "回到 ARGUS G4 的烟弹那一行。0.4–3.0Ω 的范围确实宽，设备也支持多种阻值的 ARGUS 烟弹——但本站上架的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 标有 0.4、0.7 和 1.2Ω，并没有覆盖整个范围。按 VOOPOO 的说明，ARGUS G4、ARGUS G4 mini、ARGUS P3 和 ARGUS G3 mini 都能用这一烟弹家族。",
+          "回到 ARGUS G4 的烟弹那一行。0.4–3.0Ω 的范围确实宽，设备也支持多种阻值的 ARGUS 烟弹——但本站上架的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 标有 0.4、0.7 和 1.2Ω，并没有覆盖整个范围。按 VOOPOO 的说明，ARGUS G4、ARGUS G4 mini 和 ARGUS P3 都能用这一烟弹家族；ARGUS G3 mini 用的是 Top Fill 烟弹（0.4–1.0Ω），1.2Ω 侧注式烟弹不在它的范围内。",
           "Caliburn 这边也是一样，[GPP 烟弹](/products/coil-94) 已在本站上架，并明确写出适配哪些设备。规格表上的阻值范围只是答案的一半；另一半是你要装进去的烟弹到底买不买得到。选设备之前，把这两行放在一起看——还没开始选的话，从 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 开始。",
         ],
       },
     ],
     faq: [
       { question: "电池能用多久？看 mAh 就知道吗？", answer: "只能用来比较。同等功率下 mAh 更高通常用得更久，但小时数取决于设定的功率、屏幕使用和抽吸频率。" },
-      { question: "ARGUS 烟弹在哪里买？", answer: "本站有售 VOOPOO Argus Pod 烟弹，有多种阻值可选。按 VOOPOO 的说明，ARGUS 烟弹家族适用于 ARGUS G4、G4 mini、P3 和 G3 mini；P3 和 G3 mini 使用前请核对阻值和功率。" },
+      { question: "ARGUS 烟弹在哪里买？", answer: "本站有售 VOOPOO Argus Pod 烟弹，有多种阻值可选。按 VOOPOO 的说明，ARGUS 烟弹家族适用于 ARGUS G4、G4 mini 和 P3（P3 使用前请核对阻值和功率）；G3 mini 适用 Top Fill 烟弹，0.4–1.0 欧姆。" },
       { question: "阻值范围说明了什么？", answer: "说明设备支持哪些阻值的烟弹或雾化芯。阻值低通常在高功率下吸感更开放；阻值高适合低功率的紧口 MTL 吸法。范围宽并不代表每种阻值都实际有售。" },
     ],
   },

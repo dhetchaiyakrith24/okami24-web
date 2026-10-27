@@ -999,7 +999,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
-            "ร้านเรามี [หัวพอต VOOPOO Argus Pod](/products/coil-21) ให้เลือกหลายค่าโอห์ม ก่อนสั่ง แนะนำให้เทียบค่าโอห์มกับวัตต์ของ G3 mini อีกครั้ง"
+            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์ม อยู่ในช่วง 0.4–1.0 โอห์มที่ VOOPOO ระบุไว้สำหรับ G3 mini ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้"
           ]
         },
         {
@@ -1024,7 +1024,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "The ARGUS Top Fill Cartridge V2 fits the whole ARGUS pod family; VOOPOO asks you to check the resistance and output against the device.",
-            "We carry [VOOPOO Argus Pod cartridges](/products/coil-21) in several resistances. Before you order, check the resistance and output against the G3 mini once more."
+            "Our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4 and 0.7Ω, inside the 0.4–1.0Ω range VOOPOO gives for the G3 mini; its 1.2Ω option is a side-fill pod, outside that range."
           ]
         },
         {
@@ -1049,7 +1049,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹，去哪里买？",
           paragraphs: [
             "ARGUS Top Fill Cartridge V2 兼容整个 ARGUS 烟弹家族；VOOPOO 提醒按阻值和功率确认是否适配。",
-            "本店有售 [VOOPOO Argus Pod 烟弹](/products/coil-21)，有多种阻值可选。下单前请再对照 G3 mini 核对阻值和功率。"
+            "本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 和 0.7 欧姆的 Top Fill 选项，在 VOOPOO 为 G3 mini 标注的 0.4–1.0 欧姆范围内；1.2 欧姆选项是侧注式烟弹，不在这一范围内。"
           ]
         },
         {

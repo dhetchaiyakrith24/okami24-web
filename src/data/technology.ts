@@ -59,7 +59,7 @@ export const technologyEntries: TechnologyEntry[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit with no fire button. Its sheet says wattage auto-adjusts to whichever pod is installed, up to 30W — which means the platform supports more than one resistance.",
           "What is in the box, though, is a single one: the ARGUS Top Fill Cartridge V2 at 0.7Ω, 3mL, with the iCOSM CODE 2.0 anti-leak system, on a 1350mAh battery.",
-          "If you want another resistance, we carry [VOOPOO Argus Pod cartridges](/products/coil-21) in 0.4, 0.7 and 1.2Ω. VOOPOO says the whole ARGUS pod family fits the G3 mini; check the resistance and output first.",
+          "VOOPOO says the G3 mini takes ARGUS Top Fill cartridges and rates it for 0.4, 0.7 and 1.0Ω. Our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4Ω, lower than the one in the box, and 0.7Ω, the same as the one in the box. Its 1.2Ω option is a side-fill pod, outside the G3 mini's range.",
           "How the MTL and RDL draws mentioned above actually feel is in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
         ],
       },
@@ -67,7 +67,7 @@ export const technologyEntries: TechnologyEntry[] = [
     faq: [
       {
         question: "Can the ARGUS G3 mini take a pod of another resistance?",
-        answer: "Yes. VOOPOO says the whole ARGUS pod family fits — check the resistance and output first. The box holds one pod, at 0.7Ω; for other resistances, we carry VOOPOO Argus Pod cartridges.",
+        answer: "Yes, within ARGUS Top Fill cartridges: VOOPOO rates the G3 mini for 0.4, 0.7 and 1.0Ω. The box holds one pod, at 0.7Ω; our VOOPOO Argus Pod listing includes a 0.4Ω Top Fill cartridge.",
       },
       {
         question: "What is a multi-resistance pod?",
