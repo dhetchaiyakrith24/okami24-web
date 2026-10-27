@@ -172,8 +172,9 @@ export const BRAND_H1: Record<string, string> = {
 };
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
-export function productPriceSuffixTh(price: number): string {
-  return `ของแท้ ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
+/** `genuine: false` = a page that makes no genuine claim (src/lib/genuine-claim.ts) — the suffix drops "ของแท้". */
+export function productPriceSuffixTh(price: number, genuine = true): string {
+  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
 }
 
 /**
@@ -281,9 +282,9 @@ const NUMERIC_TAIL = /^[\d,.]+$/u;
  * off past any dangling connective / bare number / unclosed bracket — never inside a word, and
  * never the price line. A product without a price keeps its description exactly as it was.
  */
-export function withPriceSuffixTh(base: string, price: number | null): string {
+export function withPriceSuffixTh(base: string, price: number | null, genuine = true): string {
   if (price === null) return base;
-  const suffix = productPriceSuffixTh(price);
+  const suffix = productPriceSuffixTh(price, genuine);
   const room = META_DESCRIPTION_MAX - suffix.length - 1;
   let head = base.trim();
   if (head.length > room) {
