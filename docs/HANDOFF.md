@@ -84,8 +84,9 @@ Rewritten 27/10 ~20:10 (daytime chat move at 648k tokens). Older full text = `gi
   (13.7) → deploy success; anomalies leave a draft and ask. Also logs counts (B5 ①) and lists NEW codes in
   `_incoming/stock-api/new-products.md` (Friday queues the listing, clears lines once listed). Prompt =
   C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (a short 502 — §17 "Render after a merge").
-  NEXT when the warehouse sends the API: stock adapter, then order push with the shipping fee (`docs/cloud-results/stock-api-sku-survey.md`
-  last section). Warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า". 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
+  types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
+  "Shipnity link". Step 1 (door + keys + call log, stock only recorded) built; next = read what Shipnity calls, then live stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).

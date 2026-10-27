@@ -110,3 +110,29 @@ time**, and free shipping as a **separate shop-paid discount line** (customer to
 cost + that field, never from the customer total; the site stores per order sale · cost · shipping · discount · margin for a
 monthly match against the warehouse bill. Needs from the API doc: separate shipping and discount fields on order create,
 and the shop's cost per SKU. Margin note: a free-shipping order pays the warehouse's 35 out of the shop's margin.
+
+## Shipnity link — the site as a WooCommerce look-alike (owner 27/10, chat "API")
+
+**Why:** the warehouse links every agent's WooCommerce shop for free — the shop makes a WooCommerce REST key pair, the
+warehouse types it into Shipnity; a non-Woo site would need Shipnity's paid API (BSOT ~line 327). The warehouse confirmed
+27/10 (screenshot in chat): Shipnity's "เชื่อมต่อ WooCommerce" form has exactly **URL WooCommerce · ck · cs**. Shipnity's own
+guide (blog.shipnity.com, "การเชื่อมต่อ Wordpress / Woocommerce ในระบบ Shipnity"): key = Read/Write; products matched by
+**SKU = the Shipnity code**; Shipnity is the stock master and **pushes the total stock of all its warehouses** to the shop;
+new orders reach Shipnity through a Woo webhook "Order Created" to `http://www.shipnity.com/wc_hooks/<shop id>` (API v2
+payload) — that guide is for old shipnity.com; Max's hook URL is still to ask. Tracking back to the shop: not mentioned.
+
+**Shipping fee (warehouse 27/10):** "not a problem — I recompute the shipping when I bill; later Shipnity will take the
+shipping fee from Shipnity's side". The fee-field design above stays as the plan, but it no longer blocks the order step.
+
+**Owner 27/10:** stock first; orders flowing too is welcome; slips stay with the shop only (the warehouse bills weekly).
+New database tables = owner "ได้" 27/10.
+
+| # | step | done when | rollback |
+|---|---|---|---|
+| 1 | door `/wp-json/wc/v1–v3` (products + variations, no price, orders empty) · keys on `/staff/shipnity` (hashes only, shown once, revoke) · every call logged · stock writes only recorded (`woo_stock_reports`) | warehouse saves the key in Shipnity and the log shows its calls | revert; revoke the key |
+| 2 | read the log → fit the door to the calls Shipnity really makes | Shipnity's stock writes land for real codes | revert |
+| 3 | compare Shipnity's numbers with the hourly order-entry read for some days | they agree | — |
+| 4 | live stock: site reads the table at runtime (B5 ② in HANDOFF §16 3f), hourly stock PRs stop, owner's sold-out list still wins | a Shipnity change shows on the site without a deploy | flag off → build-time stock |
+| 5 | orders: paid orders go to Shipnity's hook (no slip, no refund data); tracking back if Shipnity sends it | a test order appears in Shipnity | revert |
+
+Risk: Cloudflare sits in front of the site — if it challenges Shipnity's server, the log stays empty; then allow `/wp-json/*`.
