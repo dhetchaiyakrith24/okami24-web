@@ -24,7 +24,9 @@ import { resolveProductRef } from "./catalog-resolver";
  * Every card: sellable today (the product page's buy rule, in-stock.ts), an approved price, not already in the cart, not
  * on BSOT §15 "Not recommended". Deterministic (no shuffle) — the same cart always shows the same row.
  */
-const SLOTS = 4;
+/** Up to 8 cards (owner 27/10: "เพิ่มการ์ดจาก 4 เป็น 8 บนมือถือให้ปัดด้วยนิ้วขวาซ้ายได้") — phones swipe one row, ≥640 shows rows of 4. */
+const SLOTS = 8;
+const ROW = 4;
 
 /** Market order (owner 26/10: "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"). ESTIMATE, not sales figures: researcher 27/10
  *  counted Thai vape shops' own "สินค้าขายดี / ยอดนิยม" blocks (pod789.com · ihavevape.net · vapemun.com · 17pod.shop ·
@@ -129,8 +131,8 @@ export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   } else {
     chosen = [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(i.categoryId));
   }
-  // 4 fill the 2 × 2 phone grid; 2–3 show 2 (no hole in it — designer spec); a single fitting part still shows rather
-  // than hiding the only thing that fits (cart fit 27/10).
-  const shown = chosen.length >= SLOTS ? SLOTS : chosen.length >= 2 ? 2 : chosen.length;
+  // Phones swipe a single row, so any count fits there; from 640 px the cards sit in rows of 4, so 5–7 round down to 4
+  // (no half-empty second row). Fewer than 4 all show — a single fitting part still shows (cart fit 27/10).
+  const shown = chosen.length >= SLOTS ? SLOTS : chosen.length >= ROW ? ROW : chosen.length;
   return chosen.slice(0, shown).map(toCard);
 }

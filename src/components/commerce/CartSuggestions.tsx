@@ -35,7 +35,8 @@ async function addOne(slug: string, variantId: string | null): Promise<boolean> 
  * The cart's suggestion row (owner queue Q8, designer spec 26/10; no brand line — every catalog name already leads with it)
  * — the cards come picked from the server (`cartSuggestions`), so this file holds no catalog. Calm on purpose
  * ("ยืนบนความเรียบหรู"): the card is one link to the product page, hover only lifts the border colour; no lift, zoom or glow
- * (the green glow belongs to "shipped"). Phones 2 × 2 under the checkout button; ≥640 one row of four.
+ * (the green glow belongs to "shipped"). Up to 8 cards (owner 27/10): phones swipe one row left/right (scroll-snap, the
+ * next card peeks in as the hint, no scrollbar); ≥640 rows of four.
  *
  * Quick add (owner 26/10: "กดตะกร้าปุ๊บก็จะมีสีให้ขึ้นเลือกเลย", designer spec): a quiet round cart button beside the price —
  * never ember, the page's one orange button is the checkout. One sellable option (or none) = one tap adds it; more = a
@@ -88,24 +89,25 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
     });
   }
 
+  // min-w-0: in the cart page grid this section is a grid item; without it the phone swipe row (nowrap) widens the whole page (checker #928).
   return (
-    <section aria-labelledby="cart-suggestions" className={className}>
+    <section aria-labelledby="cart-suggestions" className={`min-w-0 ${className}`}>
       <h2 id="cart-suggestions" className="font-display text-xl font-semibold text-foreground">
         {dict.cart.suggestionsTitle}
       </h2>
       <p aria-live="polite" className={`mb-3 mt-1 min-h-5 text-sm ${status?.failed ? "text-danger" : "text-foreground-muted"}`}>
         {status?.text}
       </p>
-      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
+      <ul className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-4 [&::-webkit-scrollbar]:hidden">
         {items.map((item) => (
-          <li key={item.slug} className="relative">
+          <li key={item.slug} className="relative w-[42%] shrink-0 snap-start sm:w-auto">
             <Link
               href={item.href}
               className="flex h-full flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-colors hover:border-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
             >
               <div className="relative aspect-square bg-surface-2/40">
                 {item.image && (
-                  <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 25vw, 50vw" className="object-contain p-3" />
+                  <Image src={item.image.src} alt={item.image.alt} fill sizes="(min-width: 1024px) 320px, (min-width: 640px) 25vw, 42vw" className="object-contain p-3" />
                 )}
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3">
