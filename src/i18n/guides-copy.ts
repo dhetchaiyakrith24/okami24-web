@@ -245,6 +245,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "ตัวอย่างจากของจริงคือหัวพอต GPP ของ UWELL ที่มีให้เลือก 4 ค่าโอห์ม คือ 0.4 · 0.6 · 0.9 และ 1.2 โอห์ม หัวพอตตัวเดียวกันนี้ใช้กับ Caliburn รุ่นปัจจุบันได้เกือบทุกรุ่น ทั้ง G5 · G4 และ G3 ถ้าอยากเปลี่ยนแนวการสูบ ก็เปลี่ยนแค่หัวพอตได้ โดยไม่ต้องเปลี่ยนเครื่อง",
           "หัวพอต ARGUS ของ VOOPOO ก็ใช้แนวคิดเดียวกัน คือหัวพอตเติมด้านบนทรงเดียว แต่มีให้เลือกหลายโอห์ม รายละเอียดอ่านได้ที่ [ระบบหัวพอตหลายโอห์ม](/technology/multi-resistance-cartridges)",
         ],
+        image: SECTION_IMAGES.vmateI3Family,
       },
       {
         heading: "เติมน้ำยาเอง หรือใช้หัวพอตที่มีน้ำยามาแล้ว",
@@ -947,6 +948,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "举个实际例子：UWELL 的 GPP 烟弹有 0.4、0.6、0.9 和 1.2 欧姆四种阻值，同一种烟弹适用于大多数现款 Caliburn 设备（G5、G4、G3 系列）。想换吸法，换一颗烟弹就行，不用换设备。",
           "VOOPOO 的 ARGUS 顶部注油烟弹也是同样的思路：同一外形，多种阻值。详见 [多阻值烟弹平台](/technology/multi-resistance-cartridges)。",
         ],
+        image: SECTION_IMAGES_ZH.vmateI3Family,
       },
       {
         heading: "自己注油，还是用预填烟弹",
