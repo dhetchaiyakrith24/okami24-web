@@ -403,7 +403,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     faq: [
       {
         question: "คอยล์ไหนเหมาะกับ DRAG X3",
-        answer: "หน้า DRAG X3 บนเว็บของ VOOPOO ระบุว่าใช้คอยล์ PnP X ได้ทุกตัว ตอนนี้คอยล์ PnP X ยังไม่ขึ้นหน้าเว็บเรา ทักไลน์ @okm24 ถามได้",
+        answer: "หน้า DRAG X3 บนเว็บของ VOOPOO ระบุว่าใช้คอยล์ PnP X ได้ทุกตัว ดูคอยล์ PnP X ทุกค่าโอห์มได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92)",
       },
       {
         question: "MTL กับ RDL ต่างกันตรงไหน",
@@ -1059,7 +1059,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       },
     ],
     faq: [
-      { question: "DRAG X3 该用哪款雾化芯？", answer: "VOOPOO 官方的 DRAG X3 页面写明，全部 PnP X 雾化芯都能用。PnP X 雾化芯目前未在本站上架，可通过 LINE @okm24 询问。" },
+      { question: "DRAG X3 该用哪款雾化芯？", answer: "VOOPOO 官方的 DRAG X3 页面写明，全部 PnP X 雾化芯都能用。各阻值的 PnP X 雾化芯见本站 [VOOPOO PnP X 雾化芯](/products/coil-92) 页面。" },
       { question: "MTL 和 RDL 有什么区别？", answer: "MTL 先把烟雾吸入口腔再入肺，进气紧、阻值高、功率低。RDL（受限直入肺）直接入肺但仍有一定阻力——比 MTL 松，比完整的 DTL 设置紧。" },
       { question: "Caliburn G4 Pro KOKO 用什么烟弹？", answer: "UWELL GPP 烟弹，共四种阻值：0.4、0.6、0.9 和 1.2Ω。也可使用旧款 Caliburn G3 烟弹。来源：UWELL 官方 G Pod Platform 页面。" },
     ],

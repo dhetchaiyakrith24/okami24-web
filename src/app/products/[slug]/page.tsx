@@ -266,6 +266,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         // option sold out — the read model's own answer) → OutOfStock, same rule as the legacy branch (stock round 2b).
         offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...(publishedProduct.availabilityStatus === "out-of-stock" ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
+      const publishedBrand = publishedProduct.brandId ? getBrand(publishedProduct.brandId) : undefined;
+      const publishedBrandHref = publishedBrand ? `/brands/${publishedBrand.slug}` : undefined;
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
         { name: "Home", path: "/" },
@@ -279,7 +281,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
           <HashLinksKeepHistory />
           <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} />
         </>
       );
     }
@@ -345,7 +347,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={legacyTrail} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />

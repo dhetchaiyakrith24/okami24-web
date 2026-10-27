@@ -406,7 +406,7 @@ const allGuides: Guide[] = [
     faq: [
       {
         question: "Which coil fits the DRAG X3?",
-        answer: "Every PnP X coil, according to VOOPOO's own DRAG X3 page. PnP X coils are not on our site right now — ask on LINE @okm24.",
+        answer: "Every PnP X coil, according to VOOPOO's own DRAG X3 page. The shop lists them on its [VOOPOO PnP X coil page](/products/coil-92).",
       },
       {
         question: "What is the difference between MTL and RDL?",
@@ -1657,7 +1657,7 @@ const allGuides: Guide[] = [
           "แบบไหนเหมาะกับใคร ดูจากเครื่องที่ใช้ก่อนเลย ผู้ผลิตอย่าง Aspire RELX และ Lost Vape แนะนำไปทางเดียวกัน คือ salt nic เข้ากับพอตตัวเล็กที่ใช้วัตต์ต่ำและสูบแน่นแบบ MTL ส่วน freebase เข้ากับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ",
           "จากที่ร้านเห็น พอตที่ขายกันทุกวันนี้ส่วนใหญ่ใช้ salt nic อย่าง [M Bar 9K](/products/m-bar-9k) ที่ SALTHUB ระบุว่าเป็น salt nic 30mg และ [RELX Smash Go 12K](/products/relx-smash-go-12k) ที่ RELX ระบุว่าเป็น salt nic มีให้เลือก 3% หรือ 5%",
           "บางเครื่องก็ทำมาให้ใช้ได้ทั้งสองแบบ [ARGUS G4 mini](/products/argus-g4-mini) ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ VOOPOO ระบุว่าด้าน 1.0 โอห์มสูบแบบ MTL ที่แน่น เหมาะกับ salt nic ส่วนด้าน 0.7 โอห์มสูบได้ตั้งแต่ MTL แบบลมโล่งไปจนถึง RDL และเหมาะกับ freebase มากกว่า",
-          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ให้เลือกแบบที่เข้ากับเครื่องก่อน แล้วค่อยเลือกกลิ่นที่ชอบ กลุ่มรสแต่ละแบบดูได้ที่ [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ตอนนี้หน้าร้านเรายังไม่มีน้ำยาแบบขวดขาย ถ้าอยากรู้ว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ทักไลน์ @okm24 ถามร้านได้",
+          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ให้เลือกแบบที่เข้ากับเครื่องก่อน แล้วค่อยเลือกกลิ่นที่ชอบ กลุ่มรสแต่ละแบบดูได้ที่ [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ส่วนน้ำยาแบบขวดทั้ง salt nic และ freebase ดูได้ที่หน้า [น้ำยา](/products/e-liquid) ถ้าอยากรู้ว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ทักไลน์ @okm24 ถามร้านได้",
         ],
         image: SECTION_IMAGES.vmateI3Family,
       },
@@ -2215,7 +2215,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ตัวเครื่องซื้อครั้งเดียว แต่หัวพอตต้องซื้อไปเรื่อย ๆ ตลอดที่ใช้ ร้านเราจึงแนะนำให้ดูหัวพอตของรุ่นนั้นไปพร้อมกัน ว่าหัวละกี่พัฟ มีกลิ่นให้เลือกเท่าไหร่ และใส่กับเครื่องรุ่นไหนได้บ้าง",
           "[M Switch Pod](/products/m-switch-pod) ใช้กับตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ส่วน [Zero Cartridge](/products/zero-cartridge) หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano ถ้ามีสองเครื่องก็ใช้หัวร่วมกันได้ Esko Bar Switch 20K ใช้หัวพอตของ [Esko Bar Switch](/products/esko-bar-switch-pod) เอง และ RELX Creator ใส่ได้ทั้งหัว RELX Creator Pod กับหัว [Muro Connector](/products/muro-connector-20k) สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่",
-          "RELX Infinity 2 Plus ใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ซึ่ง RELX ระบุไว้ว่าเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ ตอนนี้หัวพอตกลุ่มนี้ยังไม่มีขายบนเว็บเรา",
+          "RELX Infinity 2 Plus ใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ซึ่ง RELX ระบุไว้ว่าเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ หัว RELX Pod Pro 2 ดูกลิ่นทั้งหมดได้ที่ [RELX Infinity Pro 2 Pod](/products/relx-infinity-pro-2-pod)",
           "สามรุ่นที่เหลือมีหัวพอตมาในกล่องหนึ่งหัว เมื่อหัวหมด ของ KS ใช้หัว [KS Quikpro 15K Cartridge](/products/pod-150) ซึ่ง KS ตอบไว้ว่าถอดเปลี่ยนได้ แต่เติมน้ำยาเองไม่ได้ ของ Nexswitch ใช้หัว [Nexswitch 16K Pod](/products/nexswitch-16k-pod) ส่วน nexPOD 15K มาพร้อมหัวพอตบรรจุสำเร็จ และใส่หัวแบบเติมน้ำยาเองที่ WOTOFO ขายแยกได้ด้วย",
           "ถ้าต้องการหัวพอตที่ยังไม่มีบนเว็บ หรือจะใช้หัวพอตแบบอื่นนอกจากที่บอกไว้ ทักไลน์ @okm24 ถามร้านก่อนได้",
         ],
@@ -2297,7 +2297,7 @@ const allGuides: Guide[] = [
       { question: "เครื่องระบบสวิตช์ 20K มีรุ่นไหนบ้าง", answer: "บนเว็บเรามี Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ ตัวเครื่องแบต 850mAh และปรับช่องลมได้ 3 ระดับ ถ้าดูรุ่นที่ใกล้เคียงกัน Nexswitch 16K Kit ระบุไว้หัวละสูงสุด 16,000 พัฟ" },
       { question: "M Bar 15K กับ M Switch เป็นรุ่นเดียวกันไหม", answer: "ใช่ ร้านเราเรียกชุด M Switch Kit ของ SALTHUB ว่า M Bar 15K หรือ Marbo 15K ใช้หัว M Switch Pod ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ" },
       { question: "พอตเปลี่ยนหัว 15K มีรุ่นไหนบ้าง", answer: "บนเว็บเรามีสามรุ่น คือ M Switch Kit ของ SALTHUB · nexPOD 15K Pro Kit ของ WOTOFO และ KS Quikpro 15K Kit ทั้งสามรุ่นผู้ผลิตระบุไว้หัวละสูงสุด 15,000 พัฟ ที่ต่างกันคือขนาดน้ำยาต่อหัวและตัวเครื่อง หัวพอตบรรจุสำเร็จของ nexPOD 15K Pro Kit ขนาด 18mL ส่วนหัว KS Quikpro 15K Cartridge ขนาด 15mL" },
-      { question: "RELX Infinity 2 Plus ใช้หัวอะไร", answer: "RELX ระบุว่าใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 เป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ ตอนนี้หัวพอตกลุ่มนี้ยังไม่มีขายบนเว็บเรา ถ้าต้องการ ทักไลน์ @okm24 ถามร้านได้" },
+      { question: "RELX Infinity 2 Plus ใช้หัวอะไร", answer: "RELX ระบุว่าใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 เป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ หัว RELX Pod Pro 2 ดูได้ที่หน้า [RELX Infinity Pro 2 Pod](/products/relx-infinity-pro-2-pod)" },
       { question: "Zero Cartridge ใส่กับเครื่องไหนได้บ้าง", answer: "ใส่ได้ทั้ง Zero Pro และ Zero Nano ของ SALTHUB หัวเดียวกันใช้ได้ทั้งสองเครื่อง" },
       { question: "INFY 20K เปลี่ยนหัวได้ไหม", answer: "INFY 20K ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL ไว้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้" },
     ],
@@ -3053,7 +3053,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "พอตตัวเล็กที่ใช้ salt nic มีผู้ผลิตสองรายแนะนำไปทางเดียวกัน GeekVape แนะนำ 50/50 หรือ PG สูงกว่านั้นสำหรับพอต Sonder Q ส่วน Lost Vape แนะนำราว 50/50 สำหรับพอตตัวเล็ก ความต่างของนิโคตินสองแบบนี้อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
           "ส่วนพอตใช้แล้วทิ้งกับหัวพอตบรรจุสำเร็จ มีน้ำยามาในเครื่องแล้ว จึงไม่ต้องเลือกสัดส่วนเอง และบางแบรนด์ก็ไม่ได้บอกตัวเลขไว้ อย่าง RELX ระบุว่าน้ำยาในหัวพอตมี PG กับ glycerol ผสมกับกลิ่นและ salt nic แต่ไม่ได้บอกสัดส่วนไว้",
-          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ลองดูกลุ่มรสแต่ละแบบในหน้า [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ตอนนี้หน้าร้านเรายังไม่มีน้ำยาแบบขวดขาย ถ้ายังไม่แน่ใจว่าเครื่องที่ใช้อยู่เข้ากับสัดส่วนไหน ทักไลน์ @okm24 ถามร้านก่อนได้",
+          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ลองดูกลุ่มรสแต่ละแบบในหน้า [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) และดูน้ำยาแบบขวดในร้านได้ที่หน้า [น้ำยา](/products/e-liquid) ถ้ายังไม่แน่ใจว่าเครื่องที่ใช้อยู่เข้ากับสัดส่วนไหน ทักไลน์ @okm24 ถามร้านก่อนได้",
         ],
       },
     ],
