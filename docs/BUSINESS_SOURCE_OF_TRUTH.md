@@ -177,6 +177,14 @@ of 20 sticks, RELX Infinity 2 Plus ฿990, Esko Bar 20000 ฿389 (for its page w
   rows carry basis `"owner-confirmed"` in `legacy-price-approvals.ts` (or an "owner override" note in
   `publication-approvals.ts`): an owner-set price that outranks the Shipnity "ราคาขาย" and is **not**
   overwritten by the stock API. The two price files themselves list which rows were applied.
+- **2026-10-29 — new pricing rule: warehouse cost + about 6–12% (owner, chat; adds to the rules above, replaces none of them):** the owner,
+  in his own words: "พี่จะตั้งราคาสินค้าใหม่ทั้งหมดโดยอ้างอิง ราคาทุนจากคลังสมุติว่าคลังขาย 359 พี่อาจจะขาย 369-379 + ขึ้นมาประมาณ 6-10 %" and, on the
+  rounding question, "ใช้ตาม Recommen ได้ครับ แต่ขยับแก็บ 6-12 %" (recommended = cost +8%, rounded up to end in 9, e.g. 359 → 389; from ฿1,000 the
+  ending is 90). "Cost" = the warehouse's Shipnity Max "ราคาขาย" (Max has no separate cost column). Scope (owner 29/10, "แก้ราคาแค่รูปใหม่ที่สร้างมา"):
+  only products that have a NEW catalogue picture (black background, the site's theme) are re-priced, and the site price equals the price the
+  new picture prints (the owner picks it with the picture); every other product keeps its current price until its picture is redone. Applied
+  29/10: INFY 20K, TFIT M Power 20K, RELX LUMI 18K, SALTHUB Zero Pro, Zero cartridge — log: `docs/ปรับราคา-2026-10-29.md`. A daily check against
+  the warehouse list only REPORTS (and may open a draft PR) — it never publishes a price; the owner's OK stays the final gate.
 
 ---
 
