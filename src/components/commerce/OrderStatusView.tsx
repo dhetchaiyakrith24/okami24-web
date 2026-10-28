@@ -153,7 +153,7 @@ export function OrderStatusView({
     const play = () => {
       if (paidOrLater) {
         const width = bandRef.current?.offsetWidth ?? 400;
-        playSlashOnce(`okami-slash:${order.orderNumber}:paid`, bandRef.current, { length: Math.round(width * 0.5), thickness: 4, draw: 260, hold: 120, fade: 320, shadow: true, at: "bottom", offsetY: -26 });
+        playSlashOnce(`okami-slash:${order.orderNumber}:paid`, bandRef.current, { length: Math.round(width * 0.5), thickness: 4, draw: 260, hold: 120, fade: 320, shadow: true, at: "bottom", offsetY: -10 });
       } else if (order.status === "pending_payment") {
         playSlashOnce(`okami-slash:${order.orderNumber}:placed`, numberRef.current, { length: 150, thickness: 3, draw: 200, fade: 280, at: "top" });
       }
