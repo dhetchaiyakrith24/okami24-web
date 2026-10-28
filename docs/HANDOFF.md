@@ -10,31 +10,36 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 29/10 ~03:00 (chat "Shipnity live", moved at ~87% context). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 29/10 ~03:30 (chat "owner 29/10 list", moved at 72% context; the Shipnity chat's 03:00 notes kept in 1).
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:00 = 82c6405d (#974) + this docs PR. All live. CART IS ON.
-  No open PRs. Hourly stock routine DELETED — stock is live from Shipnity (3u below).
-  DONE 28–29/10 (all checker PASS, all live): #962 live stock + emptied sold-out list · #963 Excel +6 columns · #967 cart cap at
-  the live count (owner "Cap it", §18 Stock) · #969 stock light in Okami dev + LINE alert · #971 new-product alert (option A) ·
-  #974 INFY 20K Grape Aloe / Apple Aloe / Peach photos from the importer's real posts (Grape Lychee kept: render was wrong).
-  STOCK VERIFIED 29/10 02:30: order-create picker (all 7 pages, 764 options) vs live /api/stock = 738/738 codes agree; the
-  product-list page of Shipnity is NOT a stock source (owner: check via /order/create only).
-  NEXT (owner 29/10): (a) split Muro Connector's 5,254 orders/month (29/09–29/10, "6 ร้านค้าที่เชื่อมต่อ") per shop — owner
-  wants the per-shop totals only ("รู้เขารู้เรา"); the product page splits by channel only, not shop; seen sellers PEPO,
-  LINE ELM; try Shipnity's order list filtered per shop / Excel export, totals only, no customer data in reports.
-  (b) #0021 cancelled on /staff 29/10 (owner "ยกเลิก") — the LINE cancel alert is still unseen live: first real/test warehouse cancel proves it.
-  (c) INFY notes: the 3 new photos keep a coloured base reflection like the real ones (v2 bases flat) — owner's eye;
-  scripts/process-images.map.json still names the deleted infy -v2 aloevera/peach files.
-2 DONE 28/10 (owner's list, #960 model names + cart suggestions + /staff boxes · #961 samurai + slashes): `git log` + round
-  files under tag logo-q6-2710; evidence `_incoming/chk-2810/`. Owner has not looked yet [รอเจ้าของ].
-  api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (Shipnity link). SEO next (14 legacy product articles,
-  SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
-3 NEXT AFTER A + B (owner 28/10): NEW ARRIVALS on the homepage, automatic — no listing date exists in the data. Plan: a
-  `first-listed` date per product (seeded once from git history, then verify-catalog fails when a published slug has none, so every
-  listing PR stamps it) → a homepage "สินค้าใหม่" row of the newest sellable products (designer first, 13.5 #6). Tell the owner the plan.
-  · Stock-count verdict 02/11 (interim 28/10: count and in/out button agreed on every read; 23 of 84 reads).
-  · Owner answers 28/10 (also in §18 / รอพี่ตรวจ): header approved · header logo stays as is (no lockup at 1024–1439) · YouTube "31 ช่อง"
-    = the shop's 3 channels OKAMI · POD SYSTEM OKAMI II · OKM YARZ (Friday's reading after "ไม่เข้าใจ"; owner may correct).
+1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:30 = 55c88b2a (#977) + #980 (this handoff). CART IS ON.
+  LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 = whole owner character faded 4 sides (asset renamed samurai-404-full.webp) ·
+  slash redrawn, add slash plays on the pressed button at submit · addToCartAction lost revalidatePath("/cart") (dot 1.0–1.4 s → 0.25 s),
+  CartSuggestions refreshes /cart after an add. #978 /staff/stock "เช็คสต็อก": the cart's own answer per option + Shipnity count + copy
+  a LINE reply (resolveProductRef optional `item`; book cached 15 s).
+  #977 NEW ARRIVALS (checker PASS ed8cb111 round 2): src/data/first-listed.ts (dates = day-by-day replay of main, `_incoming/chk-2910/
+  replay.sh`) · row "สินค้าเข้าใหม่" under CategoryNav = 8 newest the cart sells at build · new-arrivals-contract-test fails on a priced
+  product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand). If still open: checks green →
+  self-merge-check --pr 977 → merge --match-head-commit ed8cb111 → curl /. Checker notes: relx-creator-pod-20k not in the row (no
+  sellable option at build) · Foli/Vazer/Muro cards show "UNBRANDED" (old ProductCard behaviour).
+  Shipnity chat 29/10: #962–#974 live, stock verified 738/738 via /order/create. Its NEXT: (a) Muro Connector 5,254 orders/month per
+  shop, totals only · (b) LINE cancel alert unseen live · (c) INFY v2 reflections; process-images.map.json names deleted infy files.
+2 OPEN (owner 29/10 list):
+  a SAMURAI THEME (owner item 2): designer = "เงาจันทร์" (character faded in the /products header, faint behind the product gallery,
+    2–4 petals, none on cart/checkout/staff/prices) + a hard card-click cut (−20°, ~350 ms, nav waits ≤150 ms). Drafts sent 29/10
+    (`_incoming/chk-2910/theme/`); delete untracked _incoming/wt-2810b/public/brand/draft-moon.webp. Owner has NOT chosen (status page).
+  b JAVIS via owner 29/10: file move in the Javis photo studio folder DONE 99/99 (no-clobber). M Bar 9K "14 ml" + TFIT "18 → 17 ml"
+    CONFLICT with our evidence (salthub.com states no capacity; TFIT's own spec poster says 18ML — `_incoming/sitewide-template/4/
+    facts-tfit-m-power-20k.md`) → asked the owner (recommend keep). MURO CONNECTOR 20K not started: a connector POD for the
+    MURO/RELX Creator battery (maker poster) listed as "disposables" in src/data/products/unbranded.ts → "pods-cartridges" like
+    relx-creator-pod-20k + reword th/en/zh; photos print "AMAZE YOUR NOSE" (real "AWAKE YOUR NOSE.") → Javis's 28 pods in the Javis
+    folder products/muro-connector-20k/assets/pods/ (site has 33 variant files incl. -50mg — map first); IMAGE_SPEC §7; checker.
+  c SEO side chat seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): "pod system" did not drop (4–5); "pod" dipped 21–25/10
+    after the pod-kits merge, back at 6.6 on 26/10; 28 d clicks 257 → 710. Proposals, none built (re-read 01–05/11 · request indexing
+    for 3 guides = owner OK). Report `.claude/worktrees/sad-nash-5bf72f/_incoming/seo-gsc-2910/gsc-read-2910.md`.
+  d Leftovers: /staff/stock page comment "read fresh" (now 15 s cache) · LESSONS พ54 (backgrounded commit hid a hook) + พ55
+    (dropping revalidatePath = grep every caller) written 29/10.
+  · Stock-count verdict 02/11 · Owner 28/10: header approved · header logo stays · "31 ช่อง" = the shop's 3 YouTube channels.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
