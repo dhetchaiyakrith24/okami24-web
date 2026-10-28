@@ -11,7 +11,10 @@ import type { WooProduct, WooVariation } from "@/lib/woo/catalog";
  *   - read the products / variations list (name, SKU = Shipnity code, stock state; no price, BSOT §5);
  *   - send a stock number or stock state per product / variation → recorded in woo_stock_reports, NOT shown on the site
  *     yet (step 3 compares it with the hourly read first);
- *   - list orders → always empty in step 1 (orders go out in a later step, without slips — owner 27/10).
+ *   - register / read / change / delete webhooks (Shipnity registers order.created/updated/deleted when it connects —
+ *     log 28/10); an order goes to one only after staff approve it on /staff/shipnity (order-push.ts);
+ *   - read the orders already sent to it (Woo order objects, no slip — owner 27/10); everything else is not listed;
+ *   - read the shop's e-mail sender name (Shipnity asks on connect).
  * Every other field in a write is ignored; anything else answers WooCommerce's own "no route" 404.
  * Pure: the route does the database and the log.
  */
@@ -27,6 +30,37 @@ export interface StockReportView {
   stockStatus: string | null;
 }
 
+export interface WebhookInput {
+  name: string;
+  topic: string;
+  deliveryUrl: string;
+  secret: string;
+  status: string;
+}
+
+export interface WebhookView {
+  id: number;
+  name: string;
+  topic: string;
+  deliveryUrl: string;
+  status: string;
+  createdAt: string;
+}
+
+/** Where webhooks live (the database in the route, a Map in the contract test). */
+export interface WebhookStore {
+  list(): WebhookView[];
+  get(id: number): WebhookView | null;
+  create(w: WebhookInput): WebhookView;
+  update(id: number, patch: Partial<WebhookInput>): WebhookView | null;
+  remove(id: number): WebhookView | null;
+}
+
+/** The orders already sent to the warehouse, as Woo order objects (src/lib/woo/order-json.ts). */
+export interface OrderSource {
+  list(): { id: number }[];
+}
+
 export interface ApiRequest {
   method: string;
   /** Path segments after /wp-json, e.g. ["wc", "v3", "products", "123"]. */
@@ -37,6 +71,8 @@ export interface ApiRequest {
   siteUrl: string;
   catalog: WooProduct[];
   reports: Map<string, StockReportView>;
+  hooks: WebhookStore;
+  orders: OrderSource;
 }
 
 export interface ApiResponse {
@@ -154,6 +190,56 @@ function page<T>(items: T[], query: URLSearchParams): { items: T[]; headers: Rec
     items: items.slice((pageNo - 1) * perPage, pageNo * perPage),
     headers: { "X-WP-Total": String(total), "X-WP-TotalPages": String(Math.max(1, Math.ceil(total / perPage))) },
   };
+}
+
+/** A Woo webhook object — never with the secret (WooCommerce does not echo it either). */
+function webhookJson(w: WebhookView) {
+  const [resource, event] = w.topic.split(".");
+  return {
+    id: w.id,
+    name: w.name,
+    status: w.status,
+    topic: w.topic,
+    resource: resource ?? "",
+    event: event ?? "",
+    hooks: [`woocommerce_new_${resource ?? ""}`],
+    delivery_url: w.deliveryUrl,
+    date_created: w.createdAt.replace(/\.\d+Z$/, ""),
+    date_modified: w.createdAt.replace(/\.\d+Z$/, ""),
+  };
+}
+
+const TOPIC = /^(order|product|customer|coupon)\.(created|updated|deleted|restored)$/;
+
+/** The webhook fields of a POST/PUT body. A delivery URL must be https; a new webhook needs topic + URL. */
+export function readWebhook(body: unknown, partial = false): Partial<WebhookInput> | null {
+  if (!body || typeof body !== "object") return partial ? {} : null;
+  const b = body as Record<string, unknown>;
+  const str = (k: string, max: number) => (typeof b[k] === "string" ? (b[k] as string).trim().slice(0, max) : undefined);
+  const topic = str("topic", 40);
+  const url = str("delivery_url", 500);
+  const out: Partial<WebhookInput> = {};
+  if (topic !== undefined) {
+    if (!TOPIC.test(topic)) return null;
+    out.topic = topic;
+  }
+  if (url !== undefined) {
+    try {
+      if (new URL(url).protocol !== "https:") return null;
+    } catch {
+      return null;
+    }
+    out.deliveryUrl = url;
+  }
+  const name = str("name", 120);
+  if (name !== undefined) out.name = name;
+  const secret = str("secret", 200);
+  if (secret !== undefined) out.secret = secret;
+  const status = str("status", 20);
+  if (status !== undefined) out.status = /^(active|paused|disabled)$/.test(status) ? status : "active";
+  if (partial) return out;
+  if (!out.topic || !out.deliveryUrl) return null;
+  return { name: out.name ?? "", topic: out.topic, deliveryUrl: out.deliveryUrl, secret: out.secret ?? "", status: out.status ?? "active" };
 }
 
 /** The stock fields of one write body (everything else is ignored). */
@@ -300,36 +386,53 @@ export function handle(req: ApiRequest): ApiResponse {
     return noRoute();
   }
 
+  // Orders: only those staff already sent to the warehouse (order-push.ts) — never the rest of the shop's orders.
+  // A write from Shipnity (status / tracking) is answered with the order unchanged; the log keeps what it sent.
   if (r0 === "orders") {
-    if (rest.length === 1 && method === "GET") return ok([], { "X-WP-Total": "0", "X-WP-TotalPages": "1" });
-    if (rest.length === 2) return err(404, "woocommerce_rest_shop_order_invalid_id", "Invalid ID.");
+    const all = req.orders.list();
+    if (rest.length === 1 && method === "GET") {
+      const { items, headers } = page(all, req.query);
+      return ok(items, headers);
+    }
+    if (rest.length === 2) {
+      const o = all.find((x) => x.id === Number(r1));
+      if (!o) return err(404, "woocommerce_rest_shop_order_invalid_id", "Invalid ID.");
+      if (method === "GET" || write) return ok(o);
+    }
     return noRoute();
   }
 
-  if (r0 === "webhooks" && rest.length === 1) {
-    if (method === "GET") return ok([], { "X-WP-Total": "0", "X-WP-TotalPages": "1" });
-    // Accepted and logged, not stored: orders are not sent in step 1. The log keeps the body (topic + delivery URL) for
-    // the order step.
-    if (method === "POST") {
-      const b = (req.body ?? {}) as Record<string, unknown>;
-      return ok(
-        {
-          id: 1,
-          name: typeof b.name === "string" ? b.name : "",
-          status: "active",
-          topic: typeof b.topic === "string" ? b.topic : "",
-          resource: "",
-          event: "",
-          hooks: [],
-          delivery_url: typeof b.delivery_url === "string" ? b.delivery_url : "",
-          date_created: DATE,
-          date_modified: DATE,
-        },
-        undefined,
-        [],
-        201
-      );
+  if (r0 === "webhooks") {
+    if (rest.length === 1 && method === "GET") {
+      const { items, headers } = page(req.hooks.list(), req.query);
+      return ok(items.map(webhookJson), headers);
     }
+    if (rest.length === 1 && method === "POST") {
+      const input = readWebhook(req.body);
+      if (!input) return err(400, "rest_invalid_param", "Invalid parameter(s): topic, delivery_url");
+      return ok(webhookJson(req.hooks.create(input as WebhookInput)), undefined, [], 201);
+    }
+    if (rest.length === 2) {
+      const id = Number(r1);
+      if (method === "GET") {
+        const w = req.hooks.get(id);
+        return w ? ok(webhookJson(w)) : err(404, "woocommerce_rest_webhook_invalid_id", "Invalid ID.");
+      }
+      if (write) {
+        const w = req.hooks.update(id, readWebhook(req.body, true) ?? {});
+        return w ? ok(webhookJson(w)) : err(404, "woocommerce_rest_webhook_invalid_id", "Invalid ID.");
+      }
+      if (method === "DELETE") {
+        const w = req.hooks.remove(id);
+        return w ? ok(webhookJson(w)) : err(404, "woocommerce_rest_webhook_invalid_id", "Invalid ID.");
+      }
+    }
+    return noRoute();
+  }
+
+  // Shipnity reads the shop's sender name when it connects (log 28/10 18:06).
+  if (r0 === "settings" && r1 === "email" && r2 === "woocommerce_email_from_name" && rest.length === 3 && method === "GET") {
+    return ok({ id: "woocommerce_email_from_name", label: '"From" name', description: "", type: "text", default: "", tip: "", value: "OKami24" });
   }
 
   return noRoute();

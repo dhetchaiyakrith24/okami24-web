@@ -9,6 +9,7 @@ import { applyStaffAction } from "@/lib/staff/orders";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
+import { pushOrder } from "@/lib/woo/order-push";
 
 export type StaffLoginState = { error: null | "wrong" | "locked" | "empty"; retryMinutes?: number };
 
@@ -61,6 +62,18 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     message: String(formData.get("message") ?? ""),
   });
   redirect(result.ok ? `${back}done=${action}` : `${back}error=${result.error}`);
+}
+
+/** "ส่งเข้าคลัง Shipnity" (Shipnity link, owner 28/10): send the paid order to the warehouse's Shipnity, then record the
+ *  same step as "ส่งรายการให้คลังแล้ว". A failed send changes nothing on the order — staff can still copy the text. */
+export async function staffShipnityPushAction(formData: FormData): Promise<void> {
+  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const orderNumber = String(formData.get("orderNumber") ?? "");
+  const back = orderPage(orderNumber, formData);
+  const pushed = await pushOrder(orderNumber);
+  if (!pushed.ok) redirect(`${back}error=shipnity-${pushed.error}`);
+  const step = applyStaffAction(orderNumber, "to-warehouse", { note: "ส่งเข้า Shipnity อัตโนมัติ" });
+  redirect(step.ok ? `${back}done=shipnity` : `${back}done=shipnity-resent`);
 }
 
 /** Out of stock after payment (cart UX batch E, owner 24/10): mark lines out (or ask again) · apply the customer's swap ·

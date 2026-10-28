@@ -36,3 +36,8 @@ export function safeQuery(query: URLSearchParams): string {
   }
   return out.toString();
 }
+
+/** The webhook secret Shipnity sends must never reach the call log (it signs every order sent to Shipnity). */
+export function redactSecrets(raw: string): string {
+  return raw.replace(/("secret"\s*:\s*)"(?:[^"\\]|\\.)*"/g, '$1"<hidden>"');
+}
