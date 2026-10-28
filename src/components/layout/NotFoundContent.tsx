@@ -27,7 +27,7 @@ export function NotFoundContent() {
       >
         <Image src="/brand/samurai-404-full.webp" alt="" fill priority sizes="(min-width: 1024px) 560px, 420px" className="object-cover" />
       </div>
-      <span className="label-mono relative -mt-28 text-xs text-ember lg:-mt-40">404</span>
+      <span className="label-mono relative -mt-20 text-xs text-ember lg:-mt-32">404</span>
       <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{t.title}</h1>
       <p className="max-w-md text-base text-foreground-muted">{t.body}</p>
       <div className="flex flex-wrap justify-center gap-3">
