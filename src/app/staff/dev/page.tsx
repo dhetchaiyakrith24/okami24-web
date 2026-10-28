@@ -13,6 +13,7 @@ import { feedHealth } from "@/lib/woo/watch";
 import { bangkokShort } from "@/lib/woo/watch-rules";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { WAREHOUSE_NEW } from "@/data/stock/warehouse-new";
 
 /**
  * /staff/dev — "Okami dev" (owner 28/10: the third box at the top of the staff pages; designer spec 28/10): the shop's
@@ -37,6 +38,7 @@ export default async function StaffDevPage() {
   const lastCall = recentCalls(1)[0];
   const feed = feedHealth();
   const light = FEED_LIGHT[feed.state];
+  const newProducts = [...WAREHOUSE_NEW].reverse().slice(0, 10);
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -92,6 +94,35 @@ export default async function StaffDevPage() {
           </details>
         )}
       </div>
+
+      {/* Owner 28/10 option A: what the warehouse added in Shipnity, as the daily 15:00 run found it — newest first, the
+          last 10 (src/data/stock/warehouse-new.ts). LINE "OKM Order" hears about each one after its deploy. */}
+      <section className="flex flex-col gap-2">
+        <h2 className="text-sm font-semibold text-foreground">สินค้าใหม่จากคลัง</h2>
+        <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
+          {newProducts.length === 0 ? (
+            <p className="px-4 py-3 text-sm text-foreground-dim">ยังไม่มี · ระบบตรวจหลังร้าน Shipnity ทุกวัน 15:00</p>
+          ) : (
+            newProducts.map((p) => (
+              <div key={`${p.code}:${p.seenOn}`} className={ROW}>
+                <span className="flex min-w-0 flex-col">
+                  {p.status === "listed" && p.href ? (
+                    <Link href={p.href} className="underline-offset-2 hover:underline">{p.name}</Link>
+                  ) : (
+                    p.name
+                  )}
+                  <span className="text-xs text-foreground-dim">
+                    {p.code} · เจอ {p.seenOn.slice(8, 10)}/{p.seenOn.slice(5, 7)}{p.note ? ` · ${p.note}` : ""}
+                  </span>
+                </span>
+                <span className={`shrink-0 font-semibold ${p.status === "listed" ? "text-verified" : "text-unverified"}`}>
+                  {p.status === "listed" ? "ลงเว็บแล้ว" : "รอลงเว็บ"}
+                </span>
+              </div>
+            ))
+          )}
+        </div>
+      </section>
     </Container>
   );
 }
