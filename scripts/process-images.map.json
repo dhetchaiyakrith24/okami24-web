@@ -2433,6 +2433,58 @@
   "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
  },
  {
+  "source": "_incoming/img-2910/b1/out-kyoho-grape.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "fileName": "variant-kyoho-grape.webp",
+  "aiRender": {
+   "tool": "Javis (owner assistant) 28/10: Higgsfield re-render of our variant-grape-ice.webp with only the printed flavour label changed + image_background_remover (_working/assets/nx/u_dev-kyoho-grape.png, Javis job ids in Javis photo studio products/nexbar-clear-18k/product.md); OKami24 29/10 kept OUR passed variant-grape-ice.webp pixel for pixel and pasted only the label band from Javis (_incoming/img-2910/b1/patch.js, aligned on the nexBar logo, 8 px feather)",
+   "reference": "our variant-grape-ice.webp (device, liquid, shell) · no maker photo of Kyoho Grape exists anywhere (Javis 28/10: ihavevape shows the Mint photo for it) — label text per the maker 19-flavour list (Shipnity Disposable-46), liquid colour unknown so it keeps the base flavour tone",
+   "fidelitySheet": "_incoming/img-2910/b1/fid-kyoho-grape.png (Javis file vs our base: IoU 0.977; colour cells differ only on the label by design) + zoom.jpg / zoom2.jpg (label read by eye)"
+  },
+  "note": "images-all round 29/10 — nexBar CLEAR 18K flavour with no photo before (IMAGE_SPEC §0 item 7: no source anywhere → built from the real device + the flavour name)"
+ },
+ {
+  "source": "_incoming/img-2910/b1/out-cola-lemon.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "cola-lemon",
+  "fileName": "variant-cola-lemon.webp",
+  "aiRender": {
+   "tool": "Javis (owner assistant) 28/10: Higgsfield re-render of our variant-strawberry-banana.webp with only the printed flavour label changed + image_background_remover (_working/assets/nx/u_dev-cola-lemon.png, Javis job ids in Javis photo studio products/nexbar-clear-18k/product.md); OKami24 29/10 kept OUR passed variant-strawberry-banana.webp pixel for pixel and pasted only the label band from Javis (_incoming/img-2910/b1/patch.js, aligned on the nexBar logo, 8 px feather)",
+   "reference": "our variant-strawberry-banana.webp (device, liquid, shell) · no maker photo of Cola Lemon exists anywhere (Javis 28/10: ihavevape shows the Mint photo for it) — label text per the maker 19-flavour list (Shipnity Disposable-46), liquid colour unknown so it keeps the base flavour tone",
+   "fidelitySheet": "_incoming/img-2910/b1/fid-cola-lemon.png (Javis file vs our base: IoU 0.965; colour cells differ only on the label by design) + zoom.jpg / zoom2.jpg (label read by eye)"
+  },
+  "note": "images-all round 29/10 — nexBar CLEAR 18K flavour with no photo before (IMAGE_SPEC §0 item 7: no source anywhere → built from the real device + the flavour name)"
+ },
+ {
+  "source": "_incoming/img-2910/b1/out-pineapple.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "pineapple",
+  "fileName": "variant-pineapple.webp",
+  "aiRender": {
+   "tool": "Javis (owner assistant) 28/10: Higgsfield re-render of our variant-grape-ice.webp with only the printed flavour label changed + image_background_remover (_working/assets/nx/u_dev-pineapple.png, Javis job ids in Javis photo studio products/nexbar-clear-18k/product.md); OKami24 29/10 kept OUR passed variant-grape-ice.webp pixel for pixel and pasted only the label band from Javis (_incoming/img-2910/b1/patch.js, aligned on the nexBar logo, 8 px feather)",
+   "reference": "our variant-grape-ice.webp (device, liquid, shell) · no maker photo of Pineapple exists anywhere (Javis 28/10: ihavevape shows the Mint photo for it) — label text per the maker 19-flavour list (Shipnity Disposable-46), liquid colour unknown so it keeps the base flavour tone",
+   "fidelitySheet": "_incoming/img-2910/b1/fid-pineapple.png (Javis file vs our base: IoU 0.973; colour cells differ only on the label by design) + zoom.jpg / zoom2.jpg (label read by eye)"
+  },
+  "note": "images-all round 29/10 — nexBar CLEAR 18K flavour with no photo before (IMAGE_SPEC §0 item 7: no source anywhere → built from the real device + the flavour name)"
+ },
+ {
+  "source": "_incoming/img-2910/b1/out-mango.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "mango",
+  "fileName": "variant-mango.webp",
+  "aiRender": {
+   "tool": "Javis (owner assistant) 28/10: Higgsfield re-render of our variant-grape-ice.webp with only the printed flavour label changed + image_background_remover (_working/assets/nx/u_dev-mango.png, Javis job ids in Javis photo studio products/nexbar-clear-18k/product.md); OKami24 29/10 kept OUR passed variant-grape-ice.webp pixel for pixel and pasted only the label band from Javis (_incoming/img-2910/b1/patch.js, aligned on the nexBar logo, 8 px feather)",
+   "reference": "our variant-grape-ice.webp (device, liquid, shell) · no maker photo of Mango exists anywhere (Javis 28/10: ihavevape shows the Mint photo for it) — label text per the maker 19-flavour list (Shipnity Disposable-46), liquid colour unknown so it keeps the base flavour tone",
+   "fidelitySheet": "_incoming/img-2910/b1/fid-mango.png (Javis file vs our base: IoU 0.977; colour cells differ only on the label by design) + zoom.jpg / zoom2.jpg (label read by eye)"
+  },
+  "note": "images-all round 29/10 — nexBar CLEAR 18K flavour with no photo before (IMAGE_SPEC §0 item 7: no source anywhere → built from the real device + the flavour name)"
+ },
+ {
   "source": "_incoming/image-sitewide/m9k/final/grape-aloe.png",
   "slug": "m-bar-9k",
   "role": "variant",
