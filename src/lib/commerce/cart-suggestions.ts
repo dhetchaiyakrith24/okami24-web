@@ -13,7 +13,8 @@ import { resolveProductRef } from "./catalog-resolver";
  *
  * Cart with items (owner 28/10: "เอาให้คล้าย 50 อีก 50 แนะนำอื่นๆได้" — 26/10's fits-only row came out too thin, or all
  * e-liquid for a refillable device, and a disposable has nothing that fits). Half the row is LIKE the cart, half the shop's picks:
- *   like the cart, per line in cart order — what fits it first, never an invented pairing (BSOT §17):
+ *   like the cart, taken in turns across the cart lines (one card per line per turn, so every line shows; tiers 1–4 of
+ *   every line before any tier 5) — what fits it first, never an invented pairing (BSOT §17):
  *     (1) the pods / coils / sticks the relationship table verifies for that device (BSOT §14 device → consumable),
  *     (2) the device a pod / coil / stick in the cart is verified to fit (the derived reverse of the same table),
  *     (3) one e-liquid when the line is a refillable device (category pod-systems = fill-your-own, src/data/categories.ts),
@@ -109,21 +110,46 @@ function toCard(item: CatalogItem): CartSuggestion {
   return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item) };
 }
 
-/** What is like one cart line, in tier order (see the file header): what fits it, then its brand and category. */
-function likeFor(slug: string, catalog: CatalogItem[]): CatalogItem[] {
+/** What is like one cart line, in tier order (see the file header): `close` = what fits it (1–3) and its own brand in its
+ *  category (4); `loose` = the rest of its category (5), which only says "the same kind of thing". */
+function likeFor(slug: string, catalog: CatalogItem[]): { close: CatalogItem[]; loose: CatalogItem[] } {
   const own = getCatalogItem(slug);
-  if (!own) return [];
+  if (!own) return { close: [], loose: [] };
   const bySlug = (slugs: string[]) => slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined).sort(byLead);
   const sameCategory = catalog.filter((i) => i.categoryId === own.categoryId).sort(byLead);
-  return [
-    ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
-    ...bySlug(getCompatibleDevices(slug).map((d) => d.ref.slug)),
-    // one e-liquid only: the half is 4 cards, and a refillable device's row was all e-liquid before (owner 28/10)
-    ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY && sellable(i.slug)).sort(byLead).slice(0, 1) : []),
-    ...(own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : []),
-    ...sameCategory,
-  ];
+  return {
+    close: [
+      ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
+      ...bySlug(getCompatibleDevices(slug).map((d) => d.ref.slug)),
+      // one e-liquid only: the half is 4 cards, and a refillable device's row was all e-liquid before (owner 28/10)
+      ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY && sellable(i.slug)).sort(byLead).slice(0, 1) : []),
+      ...(own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : []),
+    ],
+    loose: sameCategory,
+  };
 }
+
+/** Take one card per list in turn (cart order) until every list is used up — so the second and third cart lines get
+ *  their own cards instead of the first line filling the whole half (checker #960). */
+function roundRobin(lists: CatalogItem[][], into: CatalogItem[]): void {
+  const at = lists.map(() => 0);
+  for (let more = true; more; ) {
+    more = false;
+    lists.forEach((list, n) => {
+      while (at[n] < list.length && into.some((x) => x.slug === list[at[n]].slug)) at[n]++;
+      if (at[n] < list.length) {
+        into.push(list[at[n]++]);
+        more = true;
+      }
+    });
+  }
+}
+
+/** Heat-not-burn and vapour are different shoppers: the "other" half shows the cart's own family first (checker #960 —
+ *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family, and the
+ *  like-the-cart half fills the rest. */
+const HEATED_TOBACCO = new Set(["heated-tobacco-devices", "heated-tobacco-consumables"]);
+const isHeated = (i: CatalogItem) => HEATED_TOBACCO.has(i.categoryId);
 
 export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   const taken = new Set(cartSlugs);
@@ -134,9 +160,16 @@ export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   let chosen: CatalogItem[] = [];
   if (cartSlugs.length > 0) {
     const catalog = allCatalogItems();
+    const lines = cartSlugs.map((slug) => likeFor(slug, catalog));
     const like: CatalogItem[] = [];
-    for (const slug of cartSlugs) for (const item of likeFor(slug, catalog).filter(ok)) if (!like.some((x) => x.slug === item.slug)) like.push(item);
-    const other = picks().filter((i) => !like.some((x) => x.slug === i.slug));
+    roundRobin(lines.map((l) => l.close.filter(ok)), like);
+    roundRobin(lines.map((l) => l.loose.filter(ok)), like);
+    const heatedCart = cartSlugs.some((slug) => {
+      const own = getCatalogItem(slug);
+      return own !== undefined && isHeated(own);
+    });
+    const rest = picks().filter((i) => !like.some((x) => x.slug === i.slug));
+    const other = [...rest.filter((i) => isHeated(i) === heatedCart), ...rest.filter((i) => isHeated(i) !== heatedCart).slice(0, 1)];
     const half = SLOTS / 2;
     const likeCount = Math.min(like.length, Math.max(half, SLOTS - other.length));
     const otherCount = Math.min(other.length, SLOTS - likeCount);
