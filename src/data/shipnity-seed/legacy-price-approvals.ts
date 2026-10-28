@@ -87,18 +87,18 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Vmate i3" ฿690 → ฿800 · match was — exact-legacy-match: Shipnity "Vmate i3" (Pod-177, 5 colours, ฿690); 5 of 5 Excel colour names are in the legacy colour list',
   },
   "zero-pro": {
-    sellingPrice: 990,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 1090,
+    lastPriceReview: "2026-10-29",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-178",
-    evidence: 'exact-legacy-match: Shipnity "Marbo Zero Pro" (Pod-178, 8 colours, ฿990) — pre-rebrand name of SALTHUB Zero Pro; 6 of 8 Excel colour names match',
+    evidence: 'owner-confirmed 2026-10-29: new catalogue image prints ฿1,090 (Max cost ฿990 +10%, owner chose it 28 Oct) ฿990 → ฿1,090 · match was — exact-legacy-match: Shipnity "Marbo Zero Pro" (Pod-178, 8 colours, ฿990) — pre-rebrand name of SALTHUB Zero Pro; 6 of 8 Excel colour names match',
   },
   "zero-cartridge": {
-    sellingPrice: 150,
-    lastPriceReview: "2026-10-06",
+    sellingPrice: 139,
+    lastPriceReview: "2026-10-29",
     basis: "owner-confirmed",
     shipnityProductId: "Pod-85",
-    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "หัว Marbo Zero" ฿129 → ฿150 · match was — exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-29: new catalogue image prints ฿139 (Max cost ฿129 +8%, owner chose it 28 Oct) ฿150 → ฿139 · earlier: owner-confirmed 2026-10-06: admin current-price list row "หัว Marbo Zero" ฿129 → ฿150 · match was — exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
   },
   "m-bar-9k": {
     sellingPrice: 350,
@@ -187,11 +187,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   // ---- Prices round 2026-09-21, basis "shipnity": 9 parents read by Cowork from the Shipnity ----
   // ---- back-office screenshots of 2026-09-21 (9 pages; owner's instruction file, table ก) -------
   "infy-20k": {
-    sellingPrice: 400,
-    lastPriceReview: "2026-10-06",
+    sellingPrice: 399,
+    lastPriceReview: "2026-10-29",
     basis: "owner-confirmed",
     shipnityProductId: "Pod-170",
-    evidence: 'owner-confirmed 2026-10-06: admin chat "INFY 20K … 400 ฿" (owner rule: an admin-reported price applies) ฿369 → ฿400 · match was — shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-29: new catalogue image prints ฿399 (cost ฿369 +8%, owner chose option A; Javis photo studio product.md) ฿400 → ฿399 · earlier: owner-confirmed 2026-10-06: admin chat "INFY 20K … 400 ฿" (owner rule: an admin-reported price applies) ฿369 → ฿400 · match was — shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "relx-smash-go-12k": {
     sellingPrice: 320,
@@ -222,11 +222,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'owner-confirmed 2026-10-06: admin current-price list row "M Switch Kit" ฿550 → ฿600 · match was — shipnity-backoffice: "ชุดเซ็ท M Switch 15k" (Pod-156, ฿550) — the device + pod set — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "tfit-m-power-20k": {
-    sellingPrice: 350,
-    lastPriceReview: "2026-10-19",
+    sellingPrice: 349,
+    lastPriceReview: "2026-10-29",
     basis: "owner-confirmed",
     shipnityProductId: "Disposable-41",
-    evidence: 'owner-confirmed 2026-10-19: owner in chat "Tfit M power ราคา 350.- ครับ แก้เลยครับ" ฿320 → ฿350 (Max says ฿320 for Disposable-41 and its 11 flavours until the admin updates it) · match was — shipnity-backoffice: "TFIT M Power 20000" (Disposable-41, ฿320) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-29: new catalogue image prints ฿349 (Max cost ฿320 +9%, owner chose option A) ฿350 → ฿349 · earlier: owner-confirmed 2026-10-19: owner in chat "Tfit M power ราคา 350.- ครับ แก้เลยครับ" ฿320 → ฿350 (Max says ฿320 for Disposable-41 and its 11 flavours until the admin updates it) · match was — shipnity-backoffice: "TFIT M Power 20000" (Disposable-41, ฿320) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "foli-bar-15k": {
     sellingPrice: 349,
