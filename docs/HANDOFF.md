@@ -10,51 +10,34 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 28/10 ~18:30 (daytime chat move at 595k tokens / 60%: two batches still need proof + checker). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 ~18:00 = 3b30d444+ (hourly stock PRs only since 27/10). No open PRs.
-  27/10 work all live (git log). CART IS ON.
-2 IN FLIGHT — owner's 28/10 list ("เริ่มเลย ในแชทนี้"). Both branches PUSHED, no PR yet, NOT checked by the checker:
-  A `owner-2810-a` (worktree `_incoming/wt-2810`, head 1d556e13 = merged origin/main 3b30d444; verify --full STAMPED at 1d556e13):
-    7315b6c1 typography: G3 Pro · G4 Pro · G3/G4 mini · G5 Lite · PnP X · Zero Pro · Pod Pro · Next Pro · Vmate Pro · DRAG X · VINCI S/X
-      kept on one line (MODEL_NAMES, locked file — owner approved in chat 28/10 "G3 Pro แก้เลยครับ") → whole-sitemap wordbreak scan (13.5 #5)
-    fa581a1a cart suggestions = half like the cart (fits → 1 e-liquid → same brand+category → same category) + half SHOP_PICKS/leads
-      (owner "เอาให้คล้าย 50 อีก 50 แนะนำอื่นๆได้"). BIG (cart) → full set.
-    f30d985e staff: boxes on top ออเดอร์ · ตรวจสลิป · Okami dev (new /staff/dev: Shipnity · stock read · ordering on/off read-only ·
-      Excel · LINE groups); folded "อื่น ๆ" row gone; log out = quiet line; admin manuals updated (designer spec 28/10 — Friday picked
-      the designer's recommendations: "ตรวจสลิป" = the LINE slip tool + a link to web orders waiting; H1 "งาน · N" kept; name "Okami dev").
-    Proof DONE 28/10 evening: wordbreak diff 354 pairs = 0 new (`_incoming/wt-2810-wbdiff.md`) · shots before/after cart (3 items) +
-      /staff · /staff/slip · /staff/dev at 390+1440 = `_incoming/chk-2810/shots/` (scripts in `_incoming/chk-2810/`). NEXT: gate → checker → merge.
-  B `samurai-2810` (worktree `_incoming/wt-2810b`, head df4b6a2c on 3b30d444):
-    6266e84a logo round batch 2 — owner 28/10 "ได้ ตามร่าง" (designer spec: character ONLY on the paid thank-you card + 404, cut at the
-      shoulder; empty cart = faint moon + brush; red slash (src/components/brand/slash.ts) at add-to-cart · order placed · paid, once per
-      event, none on reduced motion; never on home/product/checkout/share image). Crops = public/brand/samurai-*.webp (from
-      `_incoming/logo-2710/ref/samurai-character-owner-2810.webp`). Round file `docs/rounds/รอบโลโก้ใหม่-27-10.txt` → round-close after B merges.
-    df4b6a2c "สินค้าพร้อมส่ง" for signed-in members only (header menus + catalog button; account page already links it) — owner 28/10.
-    verify --full FAILED only on `next build` fetching Google fonts (network) + the tsc LayoutProps that a build generates → rerun.
-    Proof: thank-you card needs a PAID order on the test server (seed), 404, empty cart, slash moments (record or step frames), header
-      menu signed-out vs signed-in (13.5 head), /products button signed-out vs in. BIG (cart/order files) → full set + designer Owner-eye.
-  api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (warehouse has NOT typed the keys: Shipnity calls get 401 —
-  normal). SEO next (14 legacy product articles, SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
-3o OPEN ROUND owner 28/10 list = `docs/rounds/รอบงานพี่-28-10.txt` (batches A + B above; its 【แตะได้】 thai-typography.ts = owner OK
-  in chat 28/10 "ได้ เขียนเลย") — remove this line when B is live.
+1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 ~22:00 = 1fe28194+ (hourly stock routine PAUSED by the owner 28/10).
+  All work live (git log). CART IS ON. No open PRs of this chat.
+2 DONE 28/10 — owner's 28/10 list LIVE (round files: `git show logo-q6-2710:docs/rounds/รอบงานพี่-28-10.txt` · …/รอบโลโก้ใหม่-27-10.txt):
+  A #960 (checker PASS 84808bf6 round 3): two-word model names on one line (MODEL_NAMES, owner OK "G3 Pro แก้เลยครับ" + 【แตะได้】
+    "ได้ เขียนเลย") · cart suggestions = like the cart (round-robin across cart lines; a part line gets only what fits + its own make)
+    + 4 seats kept for shop picks/leads, max 1 card of the other family (vape vs heat-not-burn) · /staff boxes ออเดอร์ · ตรวจสลิป ·
+    Okami dev (new /staff/dev).
+  B #961 (checker PASS 94cd2fb4 round 3): samurai character on the paid thank-you card (band on TOP at every width — Friday's
+    deviation from the designer's "right side from lg": red OKami24 sat on the red moon at 1440) + 404 · empty cart moon + brush ·
+    red slash at add-to-cart (on the cart button) · order placed (150 px) · paid (under the face, at the band's low edge), once per
+    event per tab, none on reduced motion · "สินค้าพร้อมส่ง" only for signed-in members (menus + /products button).
+  Evidence `_incoming/chk-2810/` (shots · scripts · PR bodies). Owner has not looked yet [รอเจ้าของ].
+  api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (Shipnity link). SEO next (14 legacy product articles,
+  SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
 3 NEXT AFTER A + B (owner 28/10): NEW ARRIVALS on the homepage, automatic — no listing date exists in the data. Plan: a
   `first-listed` date per product (seeded once from git history, then verify-catalog fails when a published slug has none, so every
   listing PR stamps it) → a homepage "สินค้าใหม่" row of the newest sellable products (designer first, 13.5 #6). Tell the owner the plan.
   · Stock-count verdict 02/11 (interim 28/10: count and in/out button agreed on every read; 23 of 84 reads).
   · Owner answers 28/10 (also in §18 / รอพี่ตรวจ): header approved · header logo stays as is (no lockup at 1024–1439) · YouTube "31 ช่อง"
     = the shop's 3 channels OKAMI · POD SYSTEM OKAMI II · OKM YARZ (Friday's reading after "ไม่เข้าใจ"; owner may correct).
-  Owner status page not updated for 28/10 yet.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
-  a Q6 LOGO ROUND (`docs/rounds/รอบโลโก้ใหม่-27-10.txt`) — owner 27/10 "จัดการได้เลย" = recommendations: wordmark "OKAMI" as in his file,
-     the owner's PNG (logo/okami-logo-b-ระยะห่างใหม่.png; untracked `logo/` folder = his files, never delete). Batch 1 DONE #915 (LIVE) ·
-     header: helmet mark under sm and lg–1439 px (the lockup pushed the menu off screen at 390 / wrapped nav at 1280), lockup at sm–lg + ≥ 90rem.
-     Batch 3: LINE Login channel 2012198931 icon UPLOADED 27/10 [ตรวจแล้ว: reload shows dark/red/white kabuto, 256 px] · broadcast "โฉมใหม่"
-     = the OWNER sends (outsiders, 13.3). Batch 2 samurai-woman character = WAITS for the owner's 10.10 poster / character picture (central §6).
-     Checker note (taste, not a fail): faint brown smear at the ring's lower-left + grey seams in the owner's PNG — visible only large
-     (share image); a clean file from the owner fixes it, never retouch. Round stays OPEN until batch 2 → round-close (tag logo-q6-2710).
-  b CART FIT — DONE #916: with items = verified pods/coils/sticks · the device a part fits · e-liquid for refillable (pod-systems); no
-     other devices/shop picks; nothing fits = no row. ARGUS G4 → coil-21 since #917; up to 8 cards since #928.
+  a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
+     Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
+     Left: broadcast "โฉมใหม่" = the OWNER sends (outsiders, 13.3) · checker taste note: faint smear + grey seams in the owner's PNG
+     (visible only large, share image) — a clean file from the owner fixes it, never retouch.
+  b CART FIT — DONE #916 → REPLACED 28/10 by #960 (half like the cart, half shop picks — item 2). Up to 8 cards since #928.
   c STAFF PAGES — DONE #916 (owner 27/10: "ปุ่ม เมนู กล่อง ในการทำงาน", header/footer stay): /staff = "งาน" work list by step · no chips,
      no bottom tab bar · order page says each thing once · admin manual updated. Not seen live: a ✅ slip on the step card (test DB had none).
   d LINE sign-in logo — DONE (see a).
