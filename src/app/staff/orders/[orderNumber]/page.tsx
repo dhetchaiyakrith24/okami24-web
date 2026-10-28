@@ -100,13 +100,29 @@ function OrderFields({ order, from }: { order: StaffOrderDetail; from: string })
 /** Shorter words where the step card already says what to fill in (the long list label wrapped onto two lines at 390). */
 const BUTTON_LABEL: Partial<Record<StaffAction, string>> = { ship: "บันทึกว่าส่งของแล้ว" };
 
-function ActionForm({ order, from, act, children }: { order: StaffOrderDetail; from: string; act: StaffAction; children?: React.ReactNode }) {
+/** `quiet` = the hand-copy fallback once "ส่งเข้าคลัง Shipnity" is the main button (one main button per card). */
+const quietButton =
+  "inline-flex h-12 w-full items-center justify-center rounded-full border border-surface-border px-6 text-base font-semibold text-foreground transition-colors hover:border-foreground-dim sm:w-auto";
+
+function ActionForm({
+  order,
+  from,
+  act,
+  quiet = false,
+  children,
+}: {
+  order: StaffOrderDetail;
+  from: string;
+  act: StaffAction;
+  quiet?: boolean;
+  children?: React.ReactNode;
+}) {
   return (
     <form action={staffOrderAction} className="flex flex-col gap-3">
       <OrderFields order={order} from={from} />
       <input type="hidden" name="action" value={act} />
       {children}
-      <button type="submit" className={primary}>
+      <button type="submit" className={quiet ? quietButton : primary}>
         {BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}
       </button>
     </form>
@@ -271,8 +287,23 @@ export default async function StaffOrderPage({
               </p>
             </form>
           )}
-          <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-          {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+          {shipnity ? (
+            <details className="group">
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-sm text-foreground-muted hover:text-foreground [&::-webkit-details-marker]:hidden">
+                ส่งเองแบบเดิม (คัดลอกข้อความ)
+                <Chevron />
+              </summary>
+              <div className="flex flex-col gap-3 pt-2">
+                <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
+                {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" quiet />}
+              </div>
+            </details>
+          ) : (
+            <>
+              <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
+              {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+            </>
+          )}
         </section>
       )}
       {order.status === "processing" && !stockOpen && (
