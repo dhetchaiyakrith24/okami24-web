@@ -520,6 +520,12 @@ export interface Dictionary {
     totalLabel: string;
     checkoutCta: string;
     fixIssuesNote: string;
+    /** Owner 28/10 "Cap it": a line holds more than the warehouse has now — `{n}` = what is left. */
+    shortMessage: string;
+    /** The checkout note when the only thing to fix is a quantity above the warehouse count. */
+    fixQuantityNote: string;
+    /** Product page, under the add button: the line already holds `{n}`, the most it may hold now (warehouse count or the 20 cap). */
+    addLimitReached: string;
     /** Q8 (26/10): the heading of the cart's suggestion row — claims nothing (owner 20/10: no "best seller" wording). */
     suggestionsTitle: string;
     /** Quick add on a suggestion card (owner 26/10). `{name}` = the product name. */

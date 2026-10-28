@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import { useFormStatus } from "react-dom";
 import { addToCartAction } from "@/app/cart/actions";
 import { Button } from "@/components/ui/Button";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 import { cn } from "@/lib/utils";
 
 /** Fired on window after a successful add; the floating cart button (FloatingCart) listens. */
@@ -30,6 +31,8 @@ function SubmitButton({ children }: { children: ReactNode }) {
  * before; the only change is that the result comes back to the page, so a successful add tells the floating cart button
  * to play the add moment (an ember dot flies from this button into it) and show the new count. A refused add (sold out
  * meanwhile, bad option) changes nothing on screen, as before — the server stays the only judge of stock and price.
+ * Owner 28/10 "Cap it": when the cart already holds every unit the warehouse has, one quiet line under the button says so
+ * (a tap that did nothing read as a broken button).
  */
 export function AddToCartForm({
   slug,
@@ -48,6 +51,8 @@ export function AddToCartForm({
   // React QUEUES a second submit made before the re-render disables the button and runs it after the first — so a fast
   // double tap is dropped at the submit event itself, before React sees it (a prevented submit runs no action).
   const busy = useRef(false);
+  const { dict } = useLocale();
+  const [limit, setLimit] = useState<number | null>(null);
 
   async function add(formData: FormData) {
     let result: Awaited<ReturnType<typeof addToCartAction>>;
@@ -56,6 +61,7 @@ export function AddToCartForm({
     } finally {
       busy.current = false;
     }
+    setLimit(!result.ok && result.limit !== undefined ? result.limit : null);
     if (!result.ok) return;
     const rect = formRef.current?.querySelector('button[type="submit"]')?.getBoundingClientRect();
     const from = rect ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 } : { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -76,6 +82,11 @@ export function AddToCartForm({
       {variantId && <input type="hidden" name="variantId" value={variantId} />}
       <input type="hidden" name="quantity" value={1} />
       <SubmitButton>{label}</SubmitButton>
+      {limit !== null && (
+        <p role="status" className="basis-full text-sm text-foreground-muted">
+          {dict.cart.addLimitReached.replace("{n}", String(limit))}
+        </p>
+      )}
       {children}
     </form>
   );

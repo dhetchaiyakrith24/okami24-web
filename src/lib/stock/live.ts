@@ -1,6 +1,6 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
-import { lookupFrom, type LiveLookup, type LiveReport } from "@/lib/stock/live-rules";
+import { lookupFrom, quantityLookupFrom, type LiveLookup, type LiveQuantityLookup, type LiveReport } from "@/lib/stock/live-rules";
 
 /**
  * The server side of live stock (live-rules.ts): Shipnity's last number per code, read from woo_stock_reports and kept in
@@ -32,4 +32,9 @@ function reports(): Map<string, LiveReport> {
 /** The live lookup for the cart, checkout and the stock API. */
 export function liveLookup(): LiveLookup {
   return lookupFrom(reports());
+}
+
+/** The live count per option for the cart's cap (owner 28/10 "Cap it") — same cached read as liveLookup. */
+export function liveQuantityLookup(): LiveQuantityLookup {
+  return quantityLookupFrom(reports());
 }

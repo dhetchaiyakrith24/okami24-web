@@ -126,7 +126,7 @@ export function ProductBuyAction({
   }
 
   return (
-    <AddToCartForm slug={slug} variantId={variantId} className={compact ? "flex" : formClassName} label={dict.productActions.addToCartCta}>
+    <AddToCartForm slug={slug} variantId={variantId} className={compact ? "flex flex-wrap gap-y-1" : formClassName} label={dict.productActions.addToCartCta}>
       {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
       {!compact && (
         <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className={noteClassName}>

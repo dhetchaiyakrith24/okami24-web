@@ -20,8 +20,9 @@ function refuseWhileOrderingOff(): void {
 }
 
 /** Returns whether the line went in and the cart's new item count — the product page plays the add moment and updates
- *  the floating cart button only on `ok` (cart UX batch B, owner 24/10). A refused add changes nothing, as before. */
-export async function addToCartAction(formData: FormData): Promise<{ ok: boolean; count: number }> {
+ *  the floating cart button only on `ok` (cart UX batch B, owner 24/10). A refused add changes nothing, as before;
+ *  `limit` = refused because the cart already holds all the warehouse has (owner 28/10 "Cap it") — the page says so. */
+export async function addToCartAction(formData: FormData): Promise<{ ok: boolean; count: number; limit?: number }> {
   refuseWhileOrderingOff();
   const slug = String(formData.get("slug") ?? "");
   // origin is provenance for labeling only (see resolveProductRef) — read it from the catalog
@@ -30,7 +31,7 @@ export async function addToCartAction(formData: FormData): Promise<{ ok: boolean
   const quantity = Number(formData.get("quantity") ?? "1") || 1;
   const result = await addToCart(ref, quantity);
   revalidatePath("/cart");
-  return { ok: result.ok, count: await getCartCount() };
+  return { ok: result.ok, count: await getCartCount(), ...(!result.ok && result.limit !== undefined ? { limit: result.limit } : {}) };
 }
 
 export async function updateQuantityAction(formData: FormData): Promise<void> {
