@@ -11,13 +11,15 @@ import { resolveProductRef } from "./catalog-resolver";
  * The cart page's "สินค้าที่คุณอาจสนใจ" row. Picked here on the server so the client cart gets only the few small cards
  * (never the catalog).
  *
- * Cart with items (owner 26/10 night: "ต้องเหมาะกับสินค้าที่ลูกค้าเลือกเท่านั้น เช่น เลือก Argus G4 สินค้าต้องใกล้เคียง ต้องเป็น
- * หัวพอต Argus น้ำยา คอยล์"): ONLY what fits a cart line, per line in cart order — never an invented pairing (BSOT §17):
- *   (1) the pods / coils / sticks the relationship table verifies for that device (BSOT §14 device → consumable),
- *   (2) the device a pod / coil / stick in the cart is verified to fit (the derived reverse of the same table),
- *   (3) e-liquid when the line is a refillable device (category pod-systems = fill-your-own, src/data/categories.ts).
- * No other device and no shop pick while the cart has items; nothing fits = no row. This replaced the Q8 "half from the
- * cart, half shop picks" mix, whose same-category tier put other devices next to an Argus G4.
+ * Cart with items (owner 28/10: "เอาให้คล้าย 50 อีก 50 แนะนำอื่นๆได้" — 26/10's fits-only row came out too thin, or all
+ * e-liquid for a refillable device, and a disposable has nothing that fits). Half the row is LIKE the cart, half the shop's picks:
+ *   like the cart, per line in cart order — what fits it first, never an invented pairing (BSOT §17):
+ *     (1) the pods / coils / sticks the relationship table verifies for that device (BSOT §14 device → consumable),
+ *     (2) the device a pod / coil / stick in the cart is verified to fit (the derived reverse of the same table),
+ *     (3) one e-liquid when the line is a refillable device (category pod-systems = fill-your-own, src/data/categories.ts),
+ *     then (4) the same brand in the same category, (5) the same category — "like it", claimed as nothing more;
+ *   the other half: SHOP_PICKS then the homepage lead models, devices only (as the empty cart).
+ * Either half short = the other fills in. The like-the-cart cards come first.
  *
  * Empty cart: SHOP_PICKS (market order, below), then the homepage lead models as a reserve — used only as an order: the heading claims
  * nothing (owner 20/10: no "best seller" wording, there are no sales figures).
@@ -107,15 +109,19 @@ function toCard(item: CatalogItem): CartSuggestion {
   return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item) };
 }
 
-/** What fits one cart line, in tier order (see the file header). */
-function fitsFor(slug: string, catalog: CatalogItem[]): CatalogItem[] {
+/** What is like one cart line, in tier order (see the file header): what fits it, then its brand and category. */
+function likeFor(slug: string, catalog: CatalogItem[]): CatalogItem[] {
   const own = getCatalogItem(slug);
   if (!own) return [];
   const bySlug = (slugs: string[]) => slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined).sort(byLead);
+  const sameCategory = catalog.filter((i) => i.categoryId === own.categoryId).sort(byLead);
   return [
     ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
     ...bySlug(getCompatibleDevices(slug).map((d) => d.ref.slug)),
-    ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY).sort(byLead) : []),
+    // one e-liquid only: the half is 4 cards, and a refillable device's row was all e-liquid before (owner 28/10)
+    ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY && sellable(i.slug)).sort(byLead).slice(0, 1) : []),
+    ...(own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : []),
+    ...sameCategory,
   ];
 }
 
@@ -123,13 +129,20 @@ export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   const taken = new Set(cartSlugs);
   const ok = (item: CatalogItem | undefined): item is CatalogItem =>
     item !== undefined && !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug);
+  const picks = () => [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(i.categoryId));
 
   let chosen: CatalogItem[] = [];
   if (cartSlugs.length > 0) {
     const catalog = allCatalogItems();
-    for (const slug of cartSlugs) for (const item of fitsFor(slug, catalog).filter(ok)) if (!chosen.some((x) => x.slug === item.slug)) chosen.push(item);
+    const like: CatalogItem[] = [];
+    for (const slug of cartSlugs) for (const item of likeFor(slug, catalog).filter(ok)) if (!like.some((x) => x.slug === item.slug)) like.push(item);
+    const other = picks().filter((i) => !like.some((x) => x.slug === i.slug));
+    const half = SLOTS / 2;
+    const likeCount = Math.min(like.length, Math.max(half, SLOTS - other.length));
+    const otherCount = Math.min(other.length, SLOTS - likeCount);
+    chosen = [...like.slice(0, likeCount), ...other.slice(0, otherCount)];
   } else {
-    chosen = [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(i.categoryId));
+    chosen = picks();
   }
   // Phones swipe a single row, so any count fits there; from 640 px the cards sit in rows of 4, so 5–7 round down to 4
   // (no half-empty second row). Fewer than 4 all show — a single fitting part still shows (cart fit 27/10).
