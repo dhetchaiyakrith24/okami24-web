@@ -1857,7 +1857,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "INFY 20K กลิ่นไหนดี",
           paragraphs: [
             "กลิ่นไหนดีไม่มีคำตอบเดียว ขึ้นอยู่กับว่าชอบแนวไหน ลองเลือกจากสายก่อนก็ได้ ร้านจัดสายเองจากคำในชื่อกลิ่น ชื่อที่มี Mint หรือ Menthol อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อชาอยู่สายชา และชื่อผลไม้อื่น ๆ อยู่สายผลไม้",
-            "สายเย็นมี Mint กับ Menthol Freeze ส่วนสายองุ่นมี 6 กลิ่น คือ Grape Apple · Grape Lychee · Grape Aloevera · Grape Bubblegum · Kyoho Grape และ Yoyo Grape มีทั้งองุ่นอย่างเดียว องุ่นคู่กับผลไม้ องุ่นคู่กับอโล และองุ่นคู่กับหมากฝรั่ง",
+            "สายเย็นมี Mint กับ Menthol Freeze ส่วนสายองุ่นมี 6 กลิ่น คือ Grape Apple · Grape Lychee · Grape Aloe · Grape Bubblegum · Kyoho Grape และ Yoyo Grape มีทั้งองุ่นอย่างเดียว องุ่นคู่กับผลไม้ องุ่นคู่กับอโล และองุ่นคู่กับหมากฝรั่ง",
             "สายผลไม้มี 12 กลิ่น มีทั้งผลไม้อย่างเดียว อย่าง Lychee · Peach · Blueberry และผลไม้สองอย่างคู่กัน อย่าง Strawberry Kiwi กับ Watermelon Lychee ส่วน Strawberry Ice Cream กับ Watermelon Bubblegum ที่มีผลไม้คู่กับขนม ร้านก็จัดไว้ในสายนี้ด้วย",
             "สายชามี Milk Tea Cha กับ Matcha ส่วน Cola กับ Mineral Water ชื่อไม่ได้เป็นผลไม้หรือชา ร้านจึงจัดไว้เป็นแนวอื่น ถ้ายังไม่แน่ใจว่าจะเริ่มจากสายไหน อ่านวิธีเลือกได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
           ],
@@ -1885,7 +1885,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which INFY 20K flavour should I start with?",
           paragraphs: [
             "There's no single right answer, so start with the kind of flavour you like. We grouped them by the words in their names, not by INFY's own list: Mint or Menthol means cool, Grape means the grape group, tea names go under tea, and other fruit names under fruit.",
-            "The cool group is Mint and Menthol Freeze. The grape group has six: Grape Apple, Grape Lychee, Grape Aloevera, Grape Bubblegum, Kyoho Grape and Yoyo Grape.",
+            "The cool group is Mint and Menthol Freeze. The grape group has six: Grape Apple, Grape Lychee, Grape Aloe, Grape Bubblegum, Kyoho Grape and Yoyo Grape.",
             "Fruit has 12, from single fruits such as Lychee, Peach and Blueberry to pairs like Strawberry Kiwi and Watermelon Lychee. Names that pair a fruit with a sweet, like Strawberry Ice Cream and Watermelon Bubblegum, sit here too.",
             "Tea is Milk Tea Cha and Matcha. That leaves Cola and Mineral Water, whose names point to neither fruit nor tea, so we list them as others.",
           ],
@@ -1912,7 +1912,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "INFY 20K 哪个口味好？",
           paragraphs: [
             "没有标准答案，可以先从喜欢的类型选起。我们按口味名称里的词来分组，并非 INFY 官方分类：带 Mint 或 Menthol 的归为清凉，带 Grape 的归为葡萄，茶类名称归为茶，其他水果名称归为水果。",
-            "清凉类有 Mint 和 Menthol Freeze。葡萄类有 6 款：Grape Apple、Grape Lychee、Grape Aloevera、Grape Bubblegum、Kyoho Grape 和 Yoyo Grape。",
+            "清凉类有 Mint 和 Menthol Freeze。葡萄类有 6 款：Grape Apple、Grape Lychee、Grape Aloe、Grape Bubblegum、Kyoho Grape 和 Yoyo Grape。",
             "水果类有 12 款，既有 Lychee、Peach、Blueberry 这样的单一水果，也有 Strawberry Kiwi、Watermelon Lychee 这样的组合。水果搭配甜点的名称，比如 Strawberry Ice Cream 和 Watermelon Bubblegum，也归在这一类。",
             "茶类是 Milk Tea Cha 和 Matcha。剩下的 Cola 和 Mineral Water，名称既不是水果也不是茶，我们归为其他。",
           ],

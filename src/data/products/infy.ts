@@ -43,6 +43,10 @@ export const infyProducts: Product[] = [
     // letters, no glow; screen = droplet + bolt tiles in a white frame), same recolour method
     // (_incoming/image-sitewide/infy2/recolour2.js); Peach's outline re-read from that real Peach photo. The card = the
     // v2 master tilted in 2D (no second render). New file names (-v2), lesson พ6.
+    // v3 29/10 (owner: the importer's real posts show other art): Grape Aloe · Apple Aloe · Peach = device cut from Javis's
+    // Higgsfield nano_banana_2 renders of the importer's photos (PODIMPORTTH posters), fitted to the v2 frame
+    // (_incoming/infy-2910/compose.js) · the printed names are GRAPE ALOE / APPLE ALOE (ids keep -aloevera: sku-map) ·
+    // Grape Lychee kept v2: that render took the pouch's purple, the real device has mint letters like v2.
     assets: [
       {
         kind: "official-photo",
@@ -74,13 +78,13 @@ export const infyProducts: Product[] = [
       { id: "lychee", name: "Lychee", swatchHex: "#dd8db8", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-lychee-v2.webp", alt: "INFY 20K, Lychee — device" } },
       { id: "mint", name: "Mint", swatchHex: "#6dd2dc", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mint-v2.webp", alt: "INFY 20K, Mint — device" } },
       { id: "mixberry", name: "Mixberry", swatchHex: "#3d539b", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mixberry-v2.webp", alt: "INFY 20K, Mixberry — device" } },
-      { id: "peach", name: "Peach", swatchHex: "#d6ac7e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-peach-v2.webp", alt: "INFY 20K, Peach — device" } },
+      { id: "peach", name: "Peach", swatchHex: "#cd7e73", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-peach-v3.webp", alt: "INFY 20K, Peach — device" } },
       { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#c8b254", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-sparkling-lemon-v2.webp", alt: "INFY 20K, Sparkling Lemon — device" } },
       { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#c43e95", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-watermelon-v2.webp", alt: "INFY 20K, Strawberry Watermelon — device" } },
       { id: "watermelon-lychee", name: "Watermelon Lychee", swatchHex: "#bc3743", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-lychee-v2.webp", alt: "INFY 20K, Watermelon Lychee — device" } },
-      { id: "apple-aloevera", name: "Apple Aloevera", swatchHex: "#8fa450", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-apple-aloevera-v2.webp", alt: "INFY 20K, Apple Aloevera — device" } },
+      { id: "apple-aloevera", name: "Apple Aloe", swatchHex: "#579e5e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-apple-aloe-v3.webp", alt: "INFY 20K, Apple Aloe — device" } },
       { id: "blueberry", name: "Blueberry", swatchHex: "#2ae3f9", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-blueberry-v2.webp", alt: "INFY 20K, Blueberry — device" } },
-      { id: "grape-aloevera", name: "Grape Aloevera", swatchHex: "#3b3e93", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-aloevera-v2.webp", alt: "INFY 20K, Grape Aloevera — device" } },
+      { id: "grape-aloevera", name: "Grape Aloe", swatchHex: "#82cf8b", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-aloe-v3.webp", alt: "INFY 20K, Grape Aloe — device" } },
       { id: "mineral-water", name: "Mineral Water", swatchHex: "#bad0dd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mineral-water-v2.webp", alt: "INFY 20K, Mineral Water — device" } },
       { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#eccbdd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-banana-v2.webp", alt: "INFY 20K, Strawberry Banana — device" } },
       { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#dced6f", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-kiwi-v2.webp", alt: "INFY 20K, Strawberry Kiwi — device" } },
