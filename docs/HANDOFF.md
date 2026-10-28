@@ -43,12 +43,8 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   d LINE sign-in logo — DONE (see a).
   e BEST SELLERS — DONE #916: SHOP_PICKS = Thai shops' "ขายดี" blocks (7 shops, estimate, sources in the code comment); "Relx Connector 20K"
      read as Muro Connector 20K [เชื่อว่า] — owner may say otherwise. Esko Switch kit + M Switch kit currently all-out (no card).
-  f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log RUNNING (#880) — verdict 02/11:
-     `node scripts/stock-count-log.js --report --log C:/Users/dhetc/Claude-Web-Lab-v3-checkpoint-3.3.3/_incoming/stock-api/count-log.jsonl`
-     (READY = count > 0 ⇔ picker "เพิ่ม" on every read for 7 days, ≥ 12 reads a day) → ② stock at runtime: DB table written by the
-     routine through a staff-token endpoint (NEW secret env on Render = owner OK first, 13.3 #9), product pages stay prerendered and
-     read a small no-cookie API, cart + placeOrder check the DB, build-time WAREHOUSE set = fallback, hourly stock PRs stop →
-     ③ label at ≤ 3 left on option tiles + product page (designer places it). Today stock is compiled into the build.
+  f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log ENDED (routine deleted 28/10; Shipnity sends numbers) · ② DONE 28/10
+     = live stock from Shipnity (3u) · ③ label at ≤ 3 left on option tiles + product page (designer places it) — numbers now exist.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
@@ -64,21 +60,20 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
      out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests · cart C (#795) Back
      from review returns to review · a typed note is lost if placing fails · add form needs JS, double tap while pending adds twice ·
      #807 notes a/d + cleanBankText keeps invisible characters · BSOT §9 line by #804 quotes the owner's 24/10 chat — confirm.
-  Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · hand-kept sold-out `muro-connector-20k | Double Mint`
-     (src/data/stock/sold-out.ts) — remove when the order-entry read shows Pod-171-3 back · EasySlip quota 497/1000 (23/10) — warn
+  Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · manual sold-out list EMPTIED 28/10 (owner "ยกเลิกการปิดขาย อัพเดตสดตามจริง"; live stock decides,
+     no-SKU options stay out) · EasySlip quota 497/1000 (23/10) — warn
      before it runs out · K+ slip misjudged 10/10 → EasySlip matchedAccount (owner step, รอพี่ตรวจ).
 3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77;
   DEPLOY-RENDER §9) · age-gate body still says "order on LINE" (owner 24/10: stays).
 3w Home (closed rounds = their tags). Home switches
   `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — HOURLY routine `okami24-stock-daily` (cron `0 0,8-23 * * *`) reads the ORDER-ENTRY picker in the owner's Chrome (read only,
-  header of `scripts/order-entry-stock.js`) → `stock-sync.js --order-entry` → PR only when stock changed → full checks → merges itself
-  (13.7) → deploy success; anomalies leave a draft and ask. Also logs counts (B5 ①) and lists NEW codes in
-  `_incoming/stock-api/new-products.md` (Friday queues the listing, clears lines once listed). Prompt =
-  C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (a short 502 — §17 "Render after a merge").
+3u STOCK — Shipnity pushes stock numbers to /wp-json (woo_stock_reports) and the site reads them at runtime (live stock, 28/10).
+  Hourly `okami24-stock-daily` DELETED 28/10 (owner; prompt backup `_incoming/stock-api/okami24-stock-daily.SKILL.md.bak`). NEW: daily
+  `okami24-new-products-daily` (12:00, Auto) reads the order-entry picker for codes not in sku-map.ts → `_incoming/stock-api/new-products.md`
+  + push to the owner "เปิดแชทหลักแล้วพิมพ์ ลงสินค้าใหม่"; never changes the site. Friday lists them, clears lines once listed.
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
-  "Shipnity link". Step 1 live 27/10 · Shipnity connected 28/10 18:06 · step 5 (order button, approved webhook) built 28/10 · hourly stock routine PAUSED by the owner 28/10 · next = warehouse presses update-stock → compare → live stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine DELETED 28/10 (owner). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).

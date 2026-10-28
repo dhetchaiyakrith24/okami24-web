@@ -6,6 +6,7 @@ import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { resolveProductRef } from "./catalog-resolver";
+import { liveLookup } from "@/lib/stock/live";
 
 /**
  * The cart page's "สินค้าที่คุณอาจสนใจ" row. Picked here on the server so the client cart gets only the few small cards
@@ -89,7 +90,8 @@ function byLead(a: CatalogItem, b: CatalogItem): number {
 }
 
 function optionsOf(item: CatalogItem): Pick<CartSuggestion, "axis" | "options"> {
-  const can = (variantId: string) => resolveProductRef({ origin: item.origin, slug: item.slug, variantId }).ok;
+  const live = liveLookup();
+  const can = (variantId: string) => resolveProductRef({ origin: item.origin, slug: item.slug, variantId }, live).ok;
   const legacy = getProduct(item.slug);
   if (legacy) {
     const colors = legacy.colorVariants ?? [];

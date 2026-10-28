@@ -20,6 +20,7 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
@@ -63,7 +64,7 @@ function initialOption<T extends { id: string; availability?: string; image?: un
  *  `ProductBuyAction`. Selection state is unchanged and still lives here (P1: M5 reads it next).
  *  At `lg` and above every class that was here before is still here, untouched. */
 export function ProductHero({
-  product,
+  product: builtProduct,
   sellingPrice = null,
   imageDisplayInfo,
   imageDisplayMap,
@@ -99,6 +100,8 @@ export function ProductHero({
    *  See `src/lib/media-quality.ts` and `ProductMedia`'s doc comment. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
+  // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
+  const product = useLiveLegacyProduct(builtProduct);
   const { locale, dict } = useLocale();
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
   // tagline/description from product-copy-th.ts INSTEAD of the English pair. Until this round the
@@ -223,6 +226,15 @@ export function ProductHero({
     // the option list never changes after mount, and selectOption only calls state setters
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // Live stock (owner 28/10): when the live answer arrives and the option the page opened on is now sold out, move to the
+  // first one that sells — once, so a customer who taps a sold-out chip afterwards keeps it (checker #962). Adjusted while
+  // rendering (React's "state from a previous render" pattern), not in an effect.
+  const [liveSeen, setLiveSeen] = useState(false);
+  if (!liveSeen && product !== builtProduct) {
+    setLiveSeen(true);
+    if (!startUnpicked && selectedColor?.availability === "out-of-stock") setSelectedColorId(initialOption(product.colorVariants));
+    if (!startUnpicked && selectedFlavor?.availability === "out-of-stock") setSelectedFlavorId(initialOption(product.flavorVariants));
+  }
   // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
   const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
   // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).
