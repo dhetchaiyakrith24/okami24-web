@@ -56,14 +56,14 @@ export const WAREHOUSE_OUT_OF_STOCK: ReadonlySet<string> = new Set([
   "Pod-166-1", "Pod-166-2", "Pod-166-5", "Pod-166-6", "Pod-166-11", "Pod-168", "Pod-168-1", "Pod-168-2",
   "Pod-168-3", "Pod-168-4", "Pod-169-6", "Pod-169-10", "Pod-169-11", "Pod-169-13", "Pod-169-20", "Pod-169-21",
   "Pod-169-22", "Pod-170-2", "Pod-170-5", "Pod-170-6", "Pod-170-9", "Pod-170-13", "Pod-170-14", "Pod-170-19",
-  "Pod-171-1", "Pod-171-2", "Pod-171-3", "Pod-171-4", "Pod-171-7", "Pod-171-8", "Pod-171-9", "Pod-171-11",
-  "Pod-171-12", "Pod-171-13", "Pod-171-15", "Pod-171-16", "Pod-171-24", "Pod-171-31", "Pod-171-32", "Pod-172",
-  "Pod-172-1", "Pod-172-2", "Pod-172-3", "Pod-172-4", "Pod-172-5", "Pod-172-6", "Pod-172-7", "Pod-172-8",
-  "Pod-172-9", "Pod-172-10", "Pod-172-11", "Pod-172-12", "Pod-173-3", "Pod-173-4", "Pod-173-5", "Pod-173-6",
-  "Pod-176", "Pod-176-1", "Pod-176-2", "Pod-176-3", "Pod-176-4", "Pod-177", "Pod-177-1", "Pod-177-2",
-  "Pod-177-3", "Pod-177-4", "Pod-177-5", "Pod-178", "Pod-178-1", "Pod-178-2", "Pod-178-3", "Pod-178-4",
-  "Pod-178-5", "Pod-178-6", "Pod-178-7", "Pod-178-8", "Pod-179", "Pod-179-1", "Pod-179-2", "Pod-179-3",
-  "Pod-179-4", "Pod-179-5", "Pod-179-6",
+  "Pod-171-1", "Pod-171-2", "Pod-171-3", "Pod-171-4", "Pod-171-5", "Pod-171-7", "Pod-171-8", "Pod-171-9",
+  "Pod-171-11", "Pod-171-12", "Pod-171-13", "Pod-171-15", "Pod-171-16", "Pod-171-24", "Pod-171-30", "Pod-171-31",
+  "Pod-171-32", "Pod-172", "Pod-172-1", "Pod-172-2", "Pod-172-3", "Pod-172-4", "Pod-172-5", "Pod-172-6",
+  "Pod-172-7", "Pod-172-8", "Pod-172-9", "Pod-172-10", "Pod-172-11", "Pod-172-12", "Pod-173-3", "Pod-173-4",
+  "Pod-173-5", "Pod-173-6", "Pod-176", "Pod-176-1", "Pod-176-2", "Pod-176-3", "Pod-176-4", "Pod-177",
+  "Pod-177-1", "Pod-177-2", "Pod-177-3", "Pod-177-4", "Pod-177-5", "Pod-178", "Pod-178-1", "Pod-178-2",
+  "Pod-178-3", "Pod-178-4", "Pod-178-5", "Pod-178-6", "Pod-178-7", "Pod-178-8", "Pod-179", "Pod-179-1",
+  "Pod-179-2", "Pod-179-3", "Pod-179-4", "Pod-179-5", "Pod-179-6",
 ]);
 /** Every code in the read, in stock or not — sku-map-contract-test.ts checks each mapped code is still listed. */
 export const WAREHOUSE_ALL_CODES: ReadonlySet<string> = new Set([
