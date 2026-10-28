@@ -169,29 +169,21 @@ export function OrderStatusView({
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
             PageHeader's tight 0.95 would clip Thai vowels). */}
         {/* Logo round batch 2 (owner 28/10 "ได้ ตามร่าง"; designer spec 28/10): the card carries the samurai — head, kabuto and
-            red moon only, cut above the shoulder blades — a band on top on phones (line 2 of the thank-you never wraps, so
-            it cannot sit beside a picture at 390), on the right from lg, faded into the card. */}
+            red moon only, cut above the shoulder blades — a band on top at every width: line 2 of the thank-you never wraps,
+            and this column is max-w-xl, so a picture beside the text put the red "OKami24" on the red moon at 1440 (Friday's
+            Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
           <div ref={thanksRef} className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-            <div className="relative h-[200px] w-full lg:hidden">
+            <div className="relative h-[200px] w-full lg:h-[240px]">
               <Image
                 src="/brand/samurai-thanks-wide.webp"
                 alt=""
                 fill
-                sizes="100vw"
+                sizes="(min-width: 640px) 576px, 100vw"
                 className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
               />
             </div>
-            <div aria-hidden className="absolute inset-y-0 right-0 hidden w-64 lg:block">
-              <Image
-                src="/brand/samurai-thanks.webp"
-                alt=""
-                fill
-                sizes="256px"
-                className="object-cover object-top [mask-image:linear-gradient(to_right,transparent,black_45%)]"
-              />
-            </div>
-            <div className="relative flex flex-col justify-center px-5 pb-6 lg:min-h-[260px] lg:px-7 lg:py-8">
+            <div className="relative flex flex-col justify-center px-5 pb-6 lg:px-7 lg:pb-8">
               <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
               <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
                 <span className="block">{dict.orderStatus.thankYouLead}</span>
