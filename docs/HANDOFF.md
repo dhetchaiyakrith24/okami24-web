@@ -74,11 +74,14 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine DELETED 28/10 (owner). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
-  After merge 28/10 (live curl /api/stock): Pod-159-16 Extra Menthol in · Zero Cartridge Blueberry out — as expected; Kyoho Grape
-  (Disposable-25-21) + Muro Connector Watermelon (Pod-171-2) still out (expected in at Shipnity 1) → owner checks /staff/shipnity
-  (รอพี่ตรวจ 83). Excel export +6 columns live (#963). Owner asks: cart cap at the live quantity (รอพี่ตรวจ 81) · slip zip (82).
-  Next small fix (no owner wait): an unavailable cart line shows the raw slug (`cart.ts` resolve-failure branch) — show the
-  catalog name + option label. Test order #0021 (OK-20261028-281129) kept for the warehouse-cancel alert test.
+  28/10 night: /staff/shipnity = Shipnity pushes on every change (PUT log, all 738 codes reported); Kyoho Grape + Muro
+  Watermelon are Shipnity 0 now (sold) — live is right. Excel +6 columns live (#963). Cart cap live (#967, owner "Cap it",
+  §18 "Stock"): a line ≤ the live count, `shortTo` blocks checkout, unavailable lines show names. Owner asks: slip zip
+  (รอพี่ตรวจ 82) · new-product alert route (85). NEXT (owner 28/10 "ตามแนะนำ"): stock watchdog — always-on status box in
+  /staff "Okami dev" (green last push · amber quiet > 24 h · red = an order went to Shipnity > 30 min ago and none of its
+  codes reported since, or the key is gone) + one LINE OKM Order alert on red and one on recovery; server sweep every 10 min. To look at: Shipnity's
+  unauthenticated `GET /wp-json/wc/v3/orders` (401, 19:06 + 20:42 28/10) — what it is for, whether anything misses it.
+  Test order #0021 (OK-20261028-281129) kept for the warehouse-cancel alert test. The new-products routine (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
@@ -279,7 +282,9 @@ the same fact at most twice outside the spec table — "ตอนนี้กำ
 only read it, to open the cart later) · the old Shipnity (`shipnity.com`, source of the September seed and of the Pod-181 re-code)
 is retired: "ตัวเก่าเขาไม่ได้ใช้แล้ว" — never take a code, stock or price from it · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
 model), even when that is over half the catalog · Shipnity spellings that differ are matched in `src/data/stock/sku-map.ts`,
-never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile.
+never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile. · **Cart cap (owner 28/10 "Cap it"):**
+a cart line never holds more than Shipnity's live count for that option (20 when there is no number) — never cut an order
+silently: a line above the count blocks checkout until the customer lowers it.
 
 **Low-stock label (owner 26/10, chat — answer to รอพี่ตรวจ 78):** the word is **"ใกล้หมด · เหลือ N ชิ้น"**, shown at ≤ 3 left
 (Friday's threshold, the owner picked the word with it). Not built yet — B5 in §16 item 3 c.
