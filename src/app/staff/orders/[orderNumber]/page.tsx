@@ -10,7 +10,8 @@ import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/o
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
-import { staffMessageAction, staffOrderAction } from "@/app/staff/actions";
+import { staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
+import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
@@ -41,11 +42,20 @@ const ERROR_TEXT: Record<string, string> = {
   carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ Flash Express) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
   message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
   "not-found": "ไม่พบออเดอร์นี้",
+  "shipnity-no-target": "ยังส่งเข้า Shipnity ไม่ได้ — ยังไม่ได้กดอนุญาตที่รับออเดอร์ในหน้า \"เชื่อมคลัง Shipnity\" · ใช้คัดลอกข้อความส่งคลังไปก่อน",
+  "shipnity-no-sku": "ส่งเข้า Shipnity ไม่ได้ — มีสินค้าที่ไม่มีรหัสคลัง · ใช้คัดลอกข้อความส่งคลังแทน แล้วแจ้ง Friday",
+  "shipnity-failed": "ส่งเข้า Shipnity ไม่สำเร็จ ออเดอร์ยังไม่เปลี่ยน — กดส่งใหม่อีกครั้ง หรือคัดลอกข้อความส่งคลังไปก่อน",
+  "shipnity-not-found": "ไม่พบออเดอร์นี้",
+  "shipnity-not-approved": "ส่งเข้า Shipnity ไม่ได้ — ส่งได้เฉพาะออเดอร์ที่ยืนยันยอดเงินแล้วและยังไม่ส่งคลัง (อาจมีคนกดเปลี่ยนสถานะไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
+  "shipnity-already-sent": "ออเดอร์นี้ส่งเข้า Shipnity ไปแล้ว (หรือกำลังส่ง) — ไม่ส่งซ้ำ · โหลดหน้าใหม่ดูสถานะล่าสุด",
+  "shipnity-stock-open": "ส่งเข้า Shipnity ไม่ได้ — ยังมีเรื่องสินค้าหมดที่ยังไม่จบ จัดการกล่องสินค้าหมดก่อน",
+  "shipnity-sent-status": "ส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
 };
 
 const DONE_TEXT: Record<string, string> = {
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
+  shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
@@ -93,13 +103,29 @@ function OrderFields({ order, from }: { order: StaffOrderDetail; from: string })
 /** Shorter words where the step card already says what to fill in (the long list label wrapped onto two lines at 390). */
 const BUTTON_LABEL: Partial<Record<StaffAction, string>> = { ship: "บันทึกว่าส่งของแล้ว" };
 
-function ActionForm({ order, from, act, children }: { order: StaffOrderDetail; from: string; act: StaffAction; children?: React.ReactNode }) {
+/** `quiet` = the hand-copy fallback once "ส่งเข้าคลัง Shipnity" is the main button (one main button per card). */
+const quietButton =
+  "inline-flex h-12 w-full items-center justify-center rounded-full border border-surface-border px-6 text-base font-semibold text-foreground transition-colors hover:border-foreground-dim sm:w-auto";
+
+function ActionForm({
+  order,
+  from,
+  act,
+  quiet = false,
+  children,
+}: {
+  order: StaffOrderDetail;
+  from: string;
+  act: StaffAction;
+  quiet?: boolean;
+  children?: React.ReactNode;
+}) {
   return (
     <form action={staffOrderAction} className="flex flex-col gap-3">
       <OrderFields order={order} from={from} />
       <input type="hidden" name="action" value={act} />
       {children}
-      <button type="submit" className={primary}>
+      <button type="submit" className={quiet ? quietButton : primary}>
         {BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}
       </button>
     </form>
@@ -202,6 +228,9 @@ export default async function StaffOrderPage({
   // "cancelled" is final (order-status.ts), so the FIRST cancelled row is the cancellation itself — later rows on a cancelled
   // order (e.g. the refund slip attached afterwards, queue B4) must not replace its reason (checker #877).
   const cancelNote = order.status === "cancelled" ? order.statusHistory.find((h) => h.status === "cancelled")?.note ?? null : null;
+  // Shipnity link (owner 28/10): the button shows once staff approved where Shipnity takes orders (/staff/shipnity).
+  const shipnity = shipnityReady();
+  const sent = sendState(order.id);
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -250,8 +279,34 @@ export default async function StaffOrderPage({
       {order.status === "approved" && !stockOpen && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.warehouse.label}</h2>
-          <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-          {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+          {shipnity && (
+            <form action={staffShipnityPushAction} className="flex flex-col gap-2">
+              <OrderFields order={order} from={from} />
+              <button type="submit" className={primary}>
+                ส่งเข้าคลัง Shipnity
+              </button>
+              <p className="text-xs text-foreground-dim">
+                ส่งชื่อ ที่อยู่ เบอร์ สินค้า และค่าส่ง ไม่ส่งสลิป{sent?.status === "failed" ? " · ครั้งก่อนส่งไม่สำเร็จ" : ""}
+              </p>
+            </form>
+          )}
+          {shipnity ? (
+            <details className="group">
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-sm text-foreground-muted hover:text-foreground [&::-webkit-details-marker]:hidden">
+                ส่งเองแบบเดิม (คัดลอกข้อความ)
+                <Chevron />
+              </summary>
+              <div className="flex flex-col gap-3 pt-2">
+                <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
+                {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" quiet />}
+              </div>
+            </details>
+          ) : (
+            <>
+              <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
+              {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+            </>
+          )}
         </section>
       )}
       {order.status === "processing" && !stockOpen && (
@@ -370,6 +425,11 @@ export default async function StaffOrderPage({
             {order.status !== "approved" && (
               <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
                 <p className="text-foreground-muted">ข้อความส่งคลัง</p>
+                {sent?.firstSentAt ? (
+                  <p className="text-foreground">ส่งเข้า Shipnity แล้ว {formatDateTime(sent.firstSentAt)}</p>
+                ) : sent?.status === "failed" ? (
+                  <p className="text-danger">ส่งเข้า Shipnity ไม่สำเร็จ</p>
+                ) : null}
                 <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
               </div>
             )}

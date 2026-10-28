@@ -10,27 +10,42 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 28/10 ~01:20 (owner closed the day: "ปิดงานพรุ่งนี้ค่อยว่ากัน"). Older full text = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 28/10 ~18:30 (daytime chat move at 595k tokens / 60%: two batches still need proof + checker). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 00:05 = 9f2e15f9 [ตรวจแล้ว]. No open PRs [ตรวจแล้ว: gh pr list].
-  Live 27/10 (deploy success + curl 200 [ตรวจแล้ว]): #917 ARGUS pods · #920 header nav never wraps · #923 checker agent fixed (YAML
-  description) · #924 stock-sync RESULT line + agent/skill header lock · #926 rules 13.5 #5 / 13.6 / 13.8 · #928 cart suggestions 4 → 8
-  (phones swipe) · #935 Marbo 10K (เทียบแท้) ฿299 live at /products/marbo-10k-clone with the M Bar 10K photos (owner: same product) ·
-  #941 central-rules copy (§12 items 6 + 10 "what for / why" — smogz-rules#19 merged) · #937 #939 Shipnity Woo link step 1 + notes ·
-  SEO side chat: #927 #936 #940 #943 #944 (guide metas, stock talk removed sitewide, pictures in 4 guides, 57 product→guide links,
-  Caliburn G3 article). Hourly stock PRs through #945 (00:02) merged by the routine itself. CART IS ON.
-  Main folder = branch main, clean except the owner's untracked `logo/`. No test servers running [ตรวจแล้ว].
-2 Nothing in flight. Side chats seo-push + list-new-products ARCHIVED 28/10 (owner: close all except API). api-talk
-  local_5d63a556-9f34-4123-848b-13408838633d stays open (waits for the warehouse to type Url · ck · cs into Shipnity, then the owner sends
-  a screenshot of what Shipnity calls). Notes kept: `_incoming/seo-push-2710/seo-push-2710.md` (SEO left-list, in order) +
-  `salthub-facts-2710.md` + `list-new-2710.md` · the list-new worktree's _incoming copied to `_incoming/from-wt-cart-2210/`.
-  NEXT SEO = 14 legacy products with no article AND no "more details" section — owner-approved 27/10: one brand per PR, SALTHUB first,
-  tier B 390+1440, designer Owner-eye on the first brand, show the owner its before/after. Whoever does it reads the note first.
-  Main-chat follow-ups: owner status page NOT updated since 27/10 morning (do first) · MSYS path bug hit 3x on 27/10
-  (MSYS_NO_PATHCONV=1 sends /c/Users paths to C:\c\Users; use C:/ paths + node fetch waits) → lesson or helper ·
-  port 3412 shared by parallel chats (queues them) — consider per-chat ports.
-  Stock routine prompt (outside git, `C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md`) edited 27/10 (steps 0 · 3c ·
-  6 · 7 · 8). Worktrees: wt-stock = the routine's, never touch · wt-close-2810 (this note).
+1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 ~18:00 = 3b30d444+ (hourly stock PRs only since 27/10). No open PRs.
+  27/10 work all live (git log). CART IS ON.
+2 IN FLIGHT — owner's 28/10 list ("เริ่มเลย ในแชทนี้"). Both branches PUSHED, no PR yet, NOT checked by the checker:
+  A `owner-2810-a` (worktree `_incoming/wt-2810`, head 1d556e13 = merged origin/main 3b30d444; verify --full STAMPED at 1d556e13):
+    7315b6c1 typography: G3 Pro · G4 Pro · G3/G4 mini · G5 Lite · PnP X · Zero Pro · Pod Pro · Next Pro · Vmate Pro · DRAG X · VINCI S/X
+      kept on one line (MODEL_NAMES, locked file — owner approved in chat 28/10 "G3 Pro แก้เลยครับ") → whole-sitemap wordbreak scan (13.5 #5)
+    fa581a1a cart suggestions = half like the cart (fits → 1 e-liquid → same brand+category → same category) + half SHOP_PICKS/leads
+      (owner "เอาให้คล้าย 50 อีก 50 แนะนำอื่นๆได้"). BIG (cart) → full set.
+    f30d985e staff: boxes on top ออเดอร์ · ตรวจสลิป · Okami dev (new /staff/dev: Shipnity · stock read · ordering on/off read-only ·
+      Excel · LINE groups); folded "อื่น ๆ" row gone; log out = quiet line; admin manuals updated (designer spec 28/10 — Friday picked
+      the designer's recommendations: "ตรวจสลิป" = the LINE slip tool + a link to web orders waiting; H1 "งาน · N" kept; name "Okami dev").
+    Proof so far: before = `_incoming/wt-2810-base` build of 3b30d444 (server 3440) · after = wt-2810 build (server 3441) ·
+      wordbreak scan before DONE `_incoming/wb-2810-before/` (354 = 177 pages × 2) · after scan was RUNNING into `_incoming/wb-2810-after/`
+      (check it finished; rerun if < 354 files). Servers 3440/3441: stop by PID (netstat) if still up. NEXT: diff the two scans,
+      visible-text before/after on /cart (+ a seeded cart: argus-g4 · m-bar-10k · caliburn-g3), /staff · /staff/slip · /staff/dev (staff
+      login needs OKAMI24_STAFF_PASSWORD on the test server), shots 390+1440, gate → checker → draft PR → merge.
+  B `samurai-2810` (worktree `_incoming/wt-2810b`, head df4b6a2c on 3b30d444):
+    6266e84a logo round batch 2 — owner 28/10 "ได้ ตามร่าง" (designer spec: character ONLY on the paid thank-you card + 404, cut at the
+      shoulder; empty cart = faint moon + brush; red slash (src/components/brand/slash.ts) at add-to-cart · order placed · paid, once per
+      event, none on reduced motion; never on home/product/checkout/share image). Crops = public/brand/samurai-*.webp (from
+      `_incoming/logo-2710/ref/samurai-character-owner-2810.webp`). Round file `docs/rounds/รอบโลโก้ใหม่-27-10.txt` → round-close after B merges.
+    df4b6a2c "สินค้าพร้อมส่ง" for signed-in members only (header menus + catalog button; account page already links it) — owner 28/10.
+    verify --full FAILED only on `next build` fetching Google fonts (network) + the tsc LayoutProps that a build generates → rerun.
+    Proof: thank-you card needs a PAID order on the test server (seed), 404, empty cart, slash moments (record or step frames), header
+      menu signed-out vs signed-in (13.5 head), /products button signed-out vs in. BIG (cart/order files) → full set + designer Owner-eye.
+  api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (warehouse has NOT typed the keys: Shipnity calls get 401 —
+  normal). SEO next (14 legacy product articles, SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
+3 NEXT AFTER A + B (owner 28/10): NEW ARRIVALS on the homepage, automatic — no listing date exists in the data. Plan: a
+  `first-listed` date per product (seeded once from git history, then verify-catalog fails when a published slug has none, so every
+  listing PR stamps it) → a homepage "สินค้าใหม่" row of the newest sellable products (designer first, 13.5 #6). Tell the owner the plan.
+  · Stock-count verdict 02/11 (interim 28/10: count and in/out button agreed on every read; 23 of 84 reads).
+  · Owner answers 28/10 (also in §18 / รอพี่ตรวจ): header approved · header logo stays as is (no lockup at 1024–1439) · YouTube "31 ช่อง"
+    = the shop's 3 channels OKAMI · POD SYSTEM OKAMI II · OKM YARZ (Friday's reading after "ไม่เข้าใจ"; owner may correct).
+  Owner status page not updated for 28/10 yet.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND (`docs/rounds/รอบโลโก้ใหม่-27-10.txt`) — owner 27/10 "จัดการได้เลย" = recommendations: wordmark "OKAMI" as in his file,
      the owner's PNG (logo/okami-logo-b-ระยะห่างใหม่.png; untracked `logo/` folder = his files, never delete). Batch 1 DONE #915 (LIVE) ·
@@ -59,10 +74,7 @@ Rewritten 28/10 ~01:20 (owner closed the day: "ปิดงานพรุ่ง
      web-side costs (Render · GitHub · Higgsfield) go on the status page. (1) /วางแผน = skill `okami24-plan` · (2) assets folder = IMAGE_SPEC §0 item 7.
   Left from the §16 rewrite (checker #884, items with no other home): ProductMaster seed in-stock flags are from September · home 3w
      taste notes (G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px tighter than the approved clip) · Lighthouse
-     of /account/login not measured · designer: mark the out rows in the order page's item list · old side chats to archive:
-     line1-images-2310d local_be2fd557 · line2-cart-2310b local_277aecbf · line1-images-2310c local_1b6cafc0 · old main
-     local_686a322f-0897-443b-89a8-c30fd88e0e5c · house round 26/10 part 4 local_a2c2b4a9-5bd7-4e23-8a66-f242df1c2522.
-  Live looks waiting for the owner's verdict = รอพี่ตรวจ 78 + 27/10: new logo · staff "งาน" · cart suggestions (status page).
+     of /account/login not measured · designer: mark the out rows in the order page's item list.
   Taste notes left: relx-smash-go-12k 17 of 27 tiles share photos · portrait slip ~135 px wide
      in the staff next-step card at 390.
   Test orders OK-20261023-e25378 (+ maybe M Bar 9K ฿400) → cancel on /staff (reason "ทดสอบ") when the owner finishes testing.
@@ -84,7 +96,7 @@ Rewritten 28/10 ~01:20 (owner closed the day: "ปิดงานพรุ่ง
   C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (a short 502 — §17 "Render after a merge").
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
-  "Shipnity link". Step 1 (door + keys + call log, stock only recorded) built; next = read what Shipnity calls, then live stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  "Shipnity link". Step 1 live 27/10 · Shipnity connected 28/10 18:06 · step 5 (order button, approved webhook) built 28/10 · hourly stock routine PAUSED by the owner 28/10 · next = warehouse presses update-stock → compare → live stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
@@ -225,6 +237,9 @@ refused uses the red `danger` colour, never the ember orange** ("ขอใช้
 actions and accents (the how-to-order "ordering paused" note is information, not a no — stays ember). **Yellow (owner 26/10):
 waiting / pending / being updated / being improved / being checked** ("สีเหลือง รอดำเนินการ รออัพเดต รอปรับปรุง ตรวจสอบ") —
 the amber of "รอชำระเงิน" on the customer side, `unverified` on the staff side; the staff pages get it in the staff redesign.
+
+**Header logo (owner 28/10, asked after the header was approved):** keep it as it is — helmet mark only under sm and at
+lg–1439 px, helmet + wordmark at sm–lg and ≥ 90rem; no smaller lockup at 1024–1439. The header itself is approved (28/10 "หัวเว็บผ่าน").
 
 **Orders to the warehouse (owner 27/10, chat "API"):** when web orders flow into Shipnity by themselves, the LINE alerts stay
 exactly as today — new order in the order group, slip attached in the slip group ("การแจ้งเตือนทางไลน์ยังเหมือนเดิม แนบใบสลิปเหมือนเดิม") —

@@ -135,4 +135,6 @@ New database tables = owner "ได้" 27/10.
 | 4 | live stock: site reads the table at runtime (B5 ② in HANDOFF §16 3f), hourly stock PRs stop, owner's sold-out list still wins | a Shipnity change shows on the site without a deploy | flag off → build-time stock |
 | 5 | orders: paid orders go to Shipnity's hook (no slip, no refund data); tracking back if Shipnity sends it · LINE alerts + slips unchanged, admin stops keying by hand (HANDOFF §18) | a test order appears in Shipnity | revert |
 
+**Live 28/10:** Shipnity connected 18:06–18:09 (UA `shipnity-channel-gateway`): tested with `products?per-page=1` + `settings/email/woocommerce_email_from_name`, registered webhooks order.created / order.updated / order.deleted (delivery host `webhook-proxy-jx0d.onrender.com` — warehouse asked to confirm it is Shipnity's), then read every product page (`status=publish`, per_page 10) and each product's variations. No stock write yet (the warehouse has not pressed its update-stock button). Step 5 built 28/10: button "ส่งเข้าคลัง Shipnity" on the order page, sends only to a webhook staff approved on /staff/shipnity. The hourly order-entry routine is PAUSED since 28/10 ~18:55 (owner "หยุดงานรูทีนก่อนเลยระหว่างนี้").
+
 Risk: Cloudflare sits in front of the site — if it challenges Shipnity's server, the log stays empty; then allow `/wp-json/*`.

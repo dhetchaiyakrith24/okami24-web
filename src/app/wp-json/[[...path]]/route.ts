@@ -2,9 +2,13 @@ import { NextResponse, type NextRequest } from "next/server";
 import { SITE_URL } from "@/lib/seo";
 import { handle } from "@/lib/woo/api";
 import { wooCatalog } from "@/lib/woo/catalog";
-import { safeQuery } from "@/lib/woo/credentials";
+import { redactSecrets, safeQuery } from "@/lib/woo/credentials";
 import { authenticate } from "@/lib/woo/keys";
+import { sentOrders } from "@/lib/woo/order-push";
+import { wooOrderJson } from "@/lib/woo/order-json";
 import { logCall, saveStockReport, stockReports } from "@/lib/woo/store";
+import { createWebhook, deleteWebhook, getWebhook, listWebhooks, updateWebhook } from "@/lib/woo/webhooks";
+import type { OrderSource, WebhookStore } from "@/lib/woo/api";
 
 /**
  * /wp-json/* — where a WooCommerce shop answers its REST API, so the warehouse's Shipnity can connect to this site with
@@ -16,6 +20,17 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const MAX_BODY = 256 * 1024;
+
+const NO_HOOKS: WebhookStore = {
+  list: () => [],
+  get: () => null,
+  create: () => {
+    throw new Error("unsigned");
+  },
+  update: () => null,
+  remove: () => null,
+};
+const NO_ORDERS: OrderSource = { list: () => [] };
 
 async function serve(request: NextRequest, ctx: { params: Promise<{ path?: string[] }> }): Promise<NextResponse> {
   const { path } = await ctx.params;
@@ -46,6 +61,11 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     siteUrl: SITE_URL,
     catalog: wooCatalog(),
     reports: keyId !== null ? stockReports() : new Map(),
+    hooks:
+      keyId !== null
+        ? { list: listWebhooks, get: getWebhook, create: (w) => createWebhook(keyId, w), update: updateWebhook, remove: deleteWebhook }
+        : NO_HOOKS,
+    orders: keyId !== null ? { list: () => sentOrders().map((o) => wooOrderJson(o, SITE_URL)) } : NO_ORDERS,
   });
   for (const w of res.writes) saveStockReport(w.sku, w.quantity, w.stockStatus);
 
@@ -57,7 +77,7 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     keyId,
     ip: request.headers.get("cf-connecting-ip") ?? request.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim() ?? null,
     userAgent: request.headers.get("user-agent"),
-    body: keyId !== null && raw ? raw : null,
+    body: keyId !== null && raw ? redactSecrets(raw) : null,
   });
 
   return NextResponse.json(res.json, {
