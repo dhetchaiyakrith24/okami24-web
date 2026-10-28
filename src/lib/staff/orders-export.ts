@@ -3,11 +3,15 @@ import { getDb } from "@/lib/db/client";
 import { orderStatusLabel, type OrderStatus } from "@/lib/commerce/order-status";
 import { toCsv } from "./csv";
 import { formatRunNumber } from "@/lib/commerce/run-number";
+import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
+import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 
 /**
  * Every web order as one Excel-ready CSV (owner 23/10: keep the orders and each customer's buying history on the
  * shop's own computer). One row per order line, newest order first, so filtering the customer-phone column in Excel
  * shows that customer's whole history. Reached only through the staff export route, which checks the staff session.
+ * Owner 28/10 (the warehouse asked for strict checks at first): the warehouse code of each line, the customer's slip
+ * (amount, check result, time, bank reference) and when the order went into Shipnity — to match the weekly warehouse bill.
  */
 
 const HEADER = [
@@ -31,7 +35,23 @@ const HEADER = [
   "ค่าส่ง (บาท)",
   "ยอดออเดอร์ (บาท)",
   "เลขพัสดุ",
+  "รหัสคลัง",
+  "ยอดในสลิป (บาท)",
+  "ผลตรวจสลิป",
+  "เวลาแนบสลิป",
+  "เลขอ้างอิงสลิป",
+  "ส่งเข้า Shipnity เมื่อ",
 ];
+
+const VERDICT_TH: Record<SlipVerdict, string> = { pass: "ผ่าน", check: "ต้องดูเอง", unchecked: "ระบบตรวจไม่ได้" };
+
+/** The Shipnity Max code of one order line (sku-map.ts), or empty when the option has none. */
+export function warehouseCode(productSlug: string, variantId: string | null): string | null {
+  const entry = SHIPNITY_SKU_MAP[productSlug];
+  if (!entry) return null;
+  const v = entry.options ? (variantId ? entry.options[variantId] : undefined) : entry.product;
+  return typeof v === "string" && v !== "check" ? v : null;
+}
 
 const BANGKOK = new Intl.DateTimeFormat("sv-SE", {
   timeZone: "Asia/Bangkok",
@@ -53,11 +73,15 @@ export function ordersCsv(): string {
     .prepare(
       `SELECT o.order_number, o.run_number, o.created_at, o.status, o.shipping_fee, o.total, o.tracking_number, c.phone AS customer_phone,
               a.recipient_name, a.phone AS recipient_phone, a.line1, a.subdistrict, a.district, a.province, a.postal_code,
-              i.product_name_snapshot, i.variant_label, i.quantity, i.unit_price, i.line_total
+              i.product_name_snapshot, i.variant_label, i.quantity, i.unit_price, i.line_total, i.product_slug, i.variant_id,
+              ps.slip_amount_satang, ps.slip_verdict, ps.submitted_at AS slip_at, ps.slip_trans_ref, ws.first_sent_at
          FROM orders o
          JOIN customers c ON c.id = o.customer_id
          JOIN order_shipping_addresses a ON a.order_id = o.id
          JOIN order_items i ON i.order_id = o.id
+         -- the latest slip the customer attached (one per order today; the newest wins if a second is ever added)
+         LEFT JOIN order_payment_submissions ps ON ps.id = (SELECT MAX(id) FROM order_payment_submissions WHERE order_id = o.id)
+         LEFT JOIN woo_order_sends ws ON ws.order_id = o.id
         ORDER BY o.id DESC, i.id ASC`
     )
     .all() as {
@@ -81,6 +105,13 @@ export function ordersCsv(): string {
     quantity: number;
     unit_price: number;
     line_total: number;
+    product_slug: string;
+    variant_id: string | null;
+    slip_amount_satang: number | null;
+    slip_verdict: SlipVerdict | null;
+    slip_at: string | null;
+    slip_trans_ref: string | null;
+    first_sent_at: string | null;
   }[];
 
   return toCsv(
@@ -107,6 +138,12 @@ export function ordersCsv(): string {
       r.shipping_fee,
       r.total,
       r.tracking_number ? { keepZeros: r.tracking_number } : null,
+      warehouseCode(r.product_slug, r.variant_id),
+      r.slip_amount_satang === null ? null : r.slip_amount_satang / 100,
+      r.slip_verdict ? VERDICT_TH[r.slip_verdict] : null,
+      r.slip_at ? bangkokTime(r.slip_at) : null,
+      r.slip_trans_ref ? { keepZeros: r.slip_trans_ref } : null,
+      r.first_sent_at ? bangkokTime(r.first_sent_at) : null,
     ])
   );
 }
