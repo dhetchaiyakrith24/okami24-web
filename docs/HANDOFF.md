@@ -83,9 +83,12 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   row (green · amber no push 24 h · red = no key / never / an order sent > 3 h ago (48 h lookback) with no push since) ·
   sweep 10 min (instrumentation) · LINE OKM Order once into red + once on recovery, retried while the push fails · state =
   <data dir>/woo-watch.json. TUNE after ~1 week: compare real first_sent_at vs the next product PUT (woo_api_log) — the 3 h
-  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). To look at: Shipnity's
-  unauthenticated `GET /wp-json/wc/v3/orders` (401, 19:06 + 20:42 28/10) — what it is for, whether anything misses it.
-  Test order #0021 (OK-20261028-281129) kept for the warehouse-cancel alert test. The new-products routine (15:00) needs the PC on.
+  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). The 401
+  `GET /wp-json/wc/v3/orders` (19:06 + 20:42 28/10) were NOT Shipnity: ua curl/8.21.0 from a Thai home IPv6 (Shipnity = ua
+  shipnity-channel-gateway, ip 74.220.52.129) — our own no-key test, nothing missed. #0021 (order 33): Shipnity sent
+  PUT /orders/33 {"status":"cancelled"} at 20:00 28/10 — before #958 (cancel alert) went live 20:37, so no LINE and no row
+  under "ออเดอร์ที่คลังเปลี่ยน"; the web order still shows รอใส่เลขพัสดุ (by design the web never changes status itself).
+  Slip zip: NOT built (owner 29/10 "ตามแนะนำ" = the Excel slip columns + per-order slips are enough). New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
