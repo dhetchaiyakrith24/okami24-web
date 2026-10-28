@@ -9,7 +9,8 @@ import { formatCount, formatShortDateTime } from "@/app/staff/_components/format
 import { lineConfigured } from "@/lib/line/client";
 import { listKeys } from "@/lib/woo/keys";
 import { recentCalls } from "@/lib/woo/store";
-import { WAREHOUSE_OUT_OF_STOCK, WAREHOUSE_STOCK_READ_ON } from "@/data/stock/warehouse-stock";
+import { feedHealth } from "@/lib/woo/watch";
+import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
 /**
@@ -33,7 +34,8 @@ export default async function StaffDevPage() {
   if (!(await isStaff())) redirect("/staff");
   const activeKeys = listKeys().filter((k) => !k.revoked_at).length;
   const lastCall = recentCalls(1)[0];
-  const readOn = `${WAREHOUSE_STOCK_READ_ON.slice(8, 10)}/${WAREHOUSE_STOCK_READ_ON.slice(5, 7)}`;
+  const feed = feedHealth();
+  const light = FEED_LIGHT[feed.state];
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -57,12 +59,19 @@ export default async function StaffDevPage() {
           </span>
           <span aria-hidden>→</span>
         </Link>
+        {/* Owner 28/10: the stock light is always on — green while Shipnity sends, red when it stopped (watch-rules.ts);
+            the same light sits on the Okami dev box, and LINE hears when it turns red. */}
         <div className={ROW}>
-          <span className="flex flex-col">
-            สต็อกจากคลัง
+          <span className="flex min-w-0 flex-col">
+            สต็อกจาก Shipnity (อัปเดตสด)
             <span className="text-xs text-foreground-dim">
-              อ่านล่าสุด {readOn} · หมด {formatCount(WAREHOUSE_OUT_OF_STOCK.size)} รหัส · อัปเดตเองทุกชั่วโมง
+              ส่งล่าสุด {feed.lastPushAt ? formatShortDateTime(feed.lastPushAt) : "ยังไม่เคย"} · ส่งมาแล้ว {formatCount(feed.reportedCodes)} รหัส
             </span>
+            {feed.reason && <span className={`text-xs ${light.text}`}>{feed.reason}</span>}
+          </span>
+          <span className={`inline-flex shrink-0 items-center gap-1.5 font-semibold ${light.text}`}>
+            <span aria-hidden className={`size-2.5 rounded-full ${light.dot}`} />
+            {light.long}
           </span>
         </div>
         <div className={ROW}>

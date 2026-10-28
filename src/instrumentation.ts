@@ -11,7 +11,8 @@
  *      pasted one into the host's dashboard (src/lib/promptpay-qr-install.ts), and
  *   3. the automatic backup schedule starts (src/lib/backup/), and
  *   4. the unpaid-order sweep starts (src/lib/commerce/unpaid-expiry.ts — owner 24/10), and
- *   5. the 90-day slip-picture sweep starts (src/lib/commerce/slip-images.ts — owner 26/10).
+ *   5. the 90-day slip-picture sweep starts (src/lib/commerce/slip-images.ts — owner 26/10), and
+ *   6. the Shipnity stock watch starts (src/lib/woo/watch.ts — owner 28/10).
  * None of them can stop the server: the probe runs in a child process and only reports how it died,
  * the QR install returns a result instead of throwing, and a failed backup is logged and ignored.
  */
@@ -68,4 +69,8 @@ export async function register(): Promise<void> {
   // 5. Slip pictures are deleted after 90 days (owner 26/10, queue B2 (c)) — src/lib/commerce/slip-images.ts.
   const { startSlipImagePurge } = await import("./lib/commerce/slip-images");
   startSlipImagePurge();
+
+  // 6. The Shipnity stock light + LINE alert when the stock push stops (owner 28/10) — src/lib/woo/watch.ts.
+  const { startStockWatch } = await import("./lib/woo/watch");
+  startStockWatch();
 }
