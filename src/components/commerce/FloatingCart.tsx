@@ -8,6 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CART_ADDED_EVENT, type CartAddedDetail } from "@/components/commerce/AddToCartForm";
 import { markLanded, refreshCartCount, setCartCount, useCartCount, useCartLanded, visibleCartTarget } from "@/components/commerce/cart-count";
 import { cn } from "@/lib/utils";
+import { playSlash } from "@/components/brand/slash";
 
 /** Pages that are the cart flow themselves (or staff) — the button would only point at where the visitor already is. */
 const HIDDEN_ON = ["/cart", "/checkout", "/orders", "/staff"];
@@ -93,6 +94,8 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
         flight.onfinish = () => {
           dot.remove();
           markLanded();
+          // Logo round batch 2 (owner 28/10): the short red slash where the dot lands — never on the ember button itself.
+          playSlash(fab, { length: 72, thickness: 2, draw: 180, fade: 240 });
           fab.animate([{ transform: "scale(1)" }, { transform: "scale(1.14)" }, { transform: "scale(0.96)" }, { transform: "scale(1)" }], {
             duration: 360,
             easing: "ease-out",
