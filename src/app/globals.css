@@ -288,7 +288,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
    product cards begin and the picture fades to nothing on the way down; on wide screens it is the right half and also
    fades toward the title. Opacity = half the 29/10 draft (1440 0.5 → 0.25). */
 .samurai-backdrop {
-  height: 54rem;
+  height: 26rem;
 }
 .samurai-backdrop-figure {
   width: 100%;
@@ -301,7 +301,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 @media (min-width: 1024px) {
   .samurai-backdrop {
-    height: 28rem;
+    height: 26rem;
   }
   .samurai-backdrop-figure {
     width: 52%;
