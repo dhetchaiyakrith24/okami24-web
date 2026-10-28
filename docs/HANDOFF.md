@@ -14,7 +14,7 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
 
 1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 ~22:00 = 1fe28194+ (hourly stock routine PAUSED by the owner 28/10).
   All work live (git log). CART IS ON. No open PRs of this chat.
-2 DONE 28/10 — owner's 28/10 list LIVE (round file `docs/rounds/รอบงานพี่-28-10.txt` closed with the logo round, tag logo-q6-2710):
+2 DONE 28/10 — owner's 28/10 list LIVE (round files: `git show logo-q6-2710:docs/rounds/รอบงานพี่-28-10.txt` · …/รอบโลโก้ใหม่-27-10.txt):
   A #960 (checker PASS 84808bf6 round 3): two-word model names on one line (MODEL_NAMES, owner OK "G3 Pro แก้เลยครับ" + 【แตะได้】
     "ได้ เขียนเลย") · cart suggestions = like the cart (round-robin across cart lines; a part line gets only what fits + its own make)
     + 4 seats kept for shop picks/leads, max 1 card of the other family (vape vs heat-not-burn) · /staff boxes ออเดอร์ · ตรวจสลิป ·
