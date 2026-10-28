@@ -4,7 +4,7 @@ import { getOrderDetailInternal, type OrderDetail } from "@/lib/commerce/orders"
 import type { OrderStatus } from "@/lib/commerce/order-status";
 import { toCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
-import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
+import { warehouseCode } from "./orders-export";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
 import { getStockIssue, orderLines, type StockIssue, type StockIssueLine } from "@/lib/commerce/stock-issues";
 import { cleanOrderMessage } from "@/lib/commerce/order-message-rules";
@@ -119,13 +119,6 @@ export interface StaffOrderDetail extends OrderDetail {
   itemLines: StockIssueLine[];
 }
 
-function skuFor(productSlug: string, variantId: string | null): string | null {
-  const entry = SHIPNITY_SKU_MAP[productSlug];
-  if (!entry) return null;
-  const value = entry.options ? (variantId ? entry.options[variantId] : undefined) : entry.product;
-  return typeof value === "string" && value !== "check" ? value : null;
-}
-
 export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   const order = getOrderDetailInternal(orderNumber);
   if (!order) return null;
@@ -150,7 +143,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
     | undefined;
 
   const lines = order.items.map((i) => ({
-    sku: skuFor(i.productSlug, i.variantId),
+    sku: warehouseCode(i.productSlug, i.variantId),
     name: `${i.productName}${i.variantLabel ? ` ${i.variantLabel}` : ""}`,
     quantity: i.quantity,
   }));
