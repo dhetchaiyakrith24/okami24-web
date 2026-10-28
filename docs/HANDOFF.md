@@ -74,6 +74,11 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine DELETED 28/10 (owner). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  After merge 28/10 (live curl /api/stock): Pod-159-16 Extra Menthol in · Zero Cartridge Blueberry out — as expected; Kyoho Grape
+  (Disposable-25-21) + Muro Connector Watermelon (Pod-171-2) still out (expected in at Shipnity 1) → owner checks /staff/shipnity
+  (รอพี่ตรวจ 83). Excel export +6 columns live (#963). Owner asks: cart cap at the live quantity (รอพี่ตรวจ 81) · slip zip (82).
+  Next small fix (no owner wait): an unavailable cart line shows the raw slug (`cart.ts` resolve-failure branch) — show the
+  catalog name + option label. Test order #0021 (OK-20261028-281129) kept for the warehouse-cancel alert test.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
