@@ -22,7 +22,7 @@ Rewritten 29/10 ~03:00 (chat "Shipnity live", moved at ~87% context). Older = `g
   NEXT (owner 29/10): (a) split Muro Connector's 5,254 orders/month (29/09–29/10, "6 ร้านค้าที่เชื่อมต่อ") per shop — owner
   wants the per-shop totals only ("รู้เขารู้เรา"); the product page splits by channel only, not shop; seen sellers PEPO,
   LINE ELM; try Shipnity's order list filtered per shop / Excel export, totals only, no customer data in reports.
-  (b) cancel test order #0021 on /staff — waits for the owner's word ("ยกเลิก"), asked 29/10.
+  (b) #0021 cancelled on /staff 29/10 (owner "ยกเลิก") — the LINE cancel alert is still unseen live: first real/test warehouse cancel proves it.
   (c) INFY notes: the 3 new photos keep a coloured base reflection like the real ones (v2 bases flat) — owner's eye;
   scripts/process-images.map.json still names the deleted infy -v2 aloevera/peach files.
 2 DONE 28/10 (owner's list, #960 model names + cart suggestions + /staff boxes · #961 samurai + slashes): `git log` + round
