@@ -72,12 +72,13 @@ function playSplit(card: HTMLElement): boolean {
   const T = 360, at = (ms: number) => ms / T;
   line.animate(
     [
-      { clipPath: "inset(0 100% 0 0)", opacity: 1 },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, offset: at(70) },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, offset: at(190) },
+      // easing per step, never on the whole effect (that warps the timeline: the line was nearly gone while the halves were apart)
+      { clipPath: "inset(0 100% 0 0)", opacity: 1, transform: "rotate(-20deg)", easing: "cubic-bezier(.05,.9,.1,1)" },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-20deg)", offset: at(70) },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-20deg)", offset: at(190), easing: "cubic-bezier(.4,0,1,1)" },
       { clipPath: "inset(0 0 0 0)", opacity: 0, transform: "rotate(-20deg) scaleY(0.3)" },
     ],
-    { duration: T, easing: "cubic-bezier(.05,.9,.1,1)", fill: "forwards" },
+    { duration: T, fill: "forwards" },
   );
   const dx = Math.cos(TILT), dy = -Math.sin(TILT);
   const slide = (el: HTMLElement, along: number, perp: number) => {
