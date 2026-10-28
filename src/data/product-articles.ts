@@ -1955,7 +1955,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Muro SC 8000 กับ Connector 20K ต่างกันยังไง",
           paragraphs: [
-            "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้งของ Muro ความต่างที่เห็นชัดคือจำนวนพัฟ [Muro Connector 20K](/products/muro-connector-20k) รองรับสูงสุด 20,000 พัฟ มากกว่ารุ่นนี้ ถ้าสูบจัดและอยากเปลี่ยนเครื่องให้น้อยครั้งลง Connector 20K ก็เป็นอีกรุ่นที่น่าดู",
+            "สองรุ่นนี้ใช้งานต่างกัน Muro SC 8000 เป็นพอตใช้แล้วทิ้ง แกะแล้วสูบได้เลย ส่วน [Muro Connector 20K](/products/muro-connector-20k) เป็นหัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ ต้องใส่กับตัวเครื่อง Creator ของ Muro หรือของ RELX ถ้ามีตัวเครื่องอยู่แล้วและสูบจัด Connector 20K ก็เป็นอีกรุ่นที่น่าดู",
           ],
         },
       ],
@@ -1981,7 +1981,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Muro SC 8000 or Connector 20K?",
           paragraphs: [
-            "Both are Muro disposables. The clear difference is the puff rating: the [Muro Connector 20K](/products/muro-connector-20k) is rated for up to 20,000 puffs, more than this one. If you vape a lot and would rather change devices less often, the Connector 20K is worth a look.",
+            "They work differently. The Muro SC 8000 is a disposable you open and use straight away, while the [Muro Connector 20K](/products/muro-connector-20k) is a prefilled pod rated for up to 20,000 puffs that fits a Muro Creator or RELX Creator device. If you already have one of those and vape a lot, the Connector 20K is worth a look.",
           ],
         },
       ],
@@ -2007,7 +2007,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Muro SC 8000 和 Connector 20K 怎么选？",
           paragraphs: [
-            "两款都是 Muro 的一次性设备。明显的区别在口数：[Muro Connector 20K](/products/muro-connector-20k) 标注最多 20,000 口，比这款更多。如果抽得多、想少换几次机器，可以看看 Connector 20K。",
+            "两款的用法不同：Muro SC 8000 是一次性设备，拆开就能抽；[Muro Connector 20K](/products/muro-connector-20k) 则是预装烟油的烟弹，标注最多 20,000 口，需要装在 Muro Creator 或 RELX Creator 主机上使用。如果已经有主机、抽得又多，可以看看 Connector 20K。",
           ],
         },
       ],

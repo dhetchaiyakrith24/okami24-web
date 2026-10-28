@@ -1663,266 +1663,6 @@
   "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
  },
  {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/blue-ice.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "blue-ice",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Blue-Ice-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-blue-ice-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/double-mint.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "double-mint",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-DoubleMint-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-double-mint-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mineral-water.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "mineral-water",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-MineralWater-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-mineral-water-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cool-mint.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "cool-mint",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Cool-mint-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-cool-mint-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/apple-baraku.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "apple-baraku",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Apple-baraku-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-apple-baraku-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cola.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "cola",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Cola-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-cola-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/watermelon.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "watermelon",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Watermelon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-watermelon-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/grape.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "grape",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Grape-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-grape-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mix-berries.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "mix-berries",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Mixberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-mix-berries-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/kyoho-grape.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "kyoho-grape",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Kyoho-Grape-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-kyoho-grape-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/banana-strawberry.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "banana-strawberry",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Banana-Strawberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-banana-strawberry-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/honey-lemon.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "honey-lemon",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Honey-Lemon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-honey-lemon-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pineapple.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "pineapple",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Pineapple-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-pineapple-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/yakult.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "yakult",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Yakult-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-yakult-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/green-tea.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "green-tea",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Green-Tea-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-green-tea-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/lemon-jeez.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "lemon-jeez",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Lemon-Jeez-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-lemon-jeez-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/taro-ice-cream.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "taro-ice-cream",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Taro-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-taro-ice-cream-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/vanilla-ice-cream.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "vanilla-ice-cream",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Vanilla-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-vanilla-ice-cream-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pink-berry.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "pink-berry",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (pink: pink body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-master-pink.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Pink-Berry-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-pink-berry-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/strawberry-peach.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "strawberry-peach",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (pink: pink body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-master-pink.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
-   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Strawberry-Peach-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
-  },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
-  "fileName": "variant-strawberry-peach-v2.webp"
- },
- {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/all_berry-3.png",
   "slug": "m-bar-10k",
   "role": "variant",
@@ -1999,19 +1739,6 @@
   },
   "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
   "fileName": "variant-watermelon-mint-v2.webp"
- },
- {
-  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/_card.png",
-  "slug": "muro-connector-20k",
-  "role": "card",
-  "replaces": "/assets/products/muro-connector-20k/card.webp",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (_incoming/web-product-images/muro-connector-20k/out/job-card-1.json)",
-   "reference": "the previous card (vapemun.com retailer photo, 179x414) _incoming/web-product-images/muro-connector-20k/refs/r-card-3q.png + OKAMI clip thumbnail _incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png + the navy side render",
-   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/fid-card.png — IoU 0.989, deltaE max 8.3 (> 6: the honeycomb cells land differently) — used on the owner's explicit OK 29/09 (\"Muro ok ครับ เห็นแล้วสวยคม\")"
-  },
-  "note": "image-fix round 2026-09-29 — sharp 3/4 remake of the 179-px card; background keyed with _incoming/image-fix/flatcut.js (despeckled)",
-  "fileName": "card-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-blue_ice.png",
@@ -3913,19 +3640,6 @@
    "fidelitySheet": "_incoming/image-sitewide/muro/compare.png — retailer poster | our photo per flavour, checked by eye 12/12 (pouch, label colour, name, device)"
   },
   "note": "image-sitewide round 2026-09-30 batch 4 — owner 30/09: the flavour photo = the device + that flavour's pouch; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5"
- },
- {
-  "source": "_incoming/image-sitewide/gen/mc-card-A-cut.png",
-  "slug": "muro-connector-20k",
-  "role": "card",
-  "replaces": "/assets/products/muro-connector-20k/card-v2.webp",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k (job 936e030e-e6a6-45e5-ac48-7883ed95d85b), the same device tilted ~10 degrees, flat #E9E9EC keyed with scripts/flatcut.js",
-   "reference": "the owner-approved card-v2 (29/09) source _incoming/web-product-images/muro-connector-20k/out/cut/_card.png (_incoming/image-sitewide/muro/refs/mc-ref1-card.png) + the Mineral Water side print variant-mineral-water-v2.webp (refs/mc-ref2-front.png)",
-   "fidelitySheet": "_incoming/image-sitewide/mc-A.png — old card | new card: shape, studs, mouthpiece, MURO / AMAZE YOUR NOSE / MINERAL WATER / CE print checked by eye (honeycomb cells land differently, as on card-v2)"
-  },
-  "note": "image-sitewide round 2026-09-30 batch 4 (owner 30/09: the card \"ไม่สวย ไม่คม ขนาดดูไม่สมมาตร\") — 4K remake on the 4:5 card standard; card-v2 was on the old square canvas",
-  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/cards/m9k-card-src.png",
@@ -12140,175 +11854,6 @@
   "fileName": "variant-strawberry-kiwi-v2.webp"
  },
  {
-  "source": "_incoming/muro/tool/out/cut/butterscotch.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "butterscotch",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Butterscotch-vapemun.webp (_incoming/muro/src/butterscotch.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-butterscotch.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/chocolate-dubai.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "chocolate-dubai",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Chocolate-Dubai-vapemun.webp (_incoming/muro/src/chocolate-dubai.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-chocolate-dubai.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/spear-mint.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "spear-mint",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-SpearMint-Vapemun.webp (_incoming/muro/src/spear-mint.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-spear-mint.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/grape-50mg.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "grape-50mg",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Grape-50MG-Vapemun.webp (_incoming/muro/src/grape-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-grape-50mg.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/watermelon-50mg.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "watermelon-50mg",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Watermelon-50MG-Vapemun.webp (_incoming/muro/src/watermelon-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-watermelon-50mg.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/double-mint-50mg.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "double-mint-50mg",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20KDouble-Mint-50MG-vapemun.webp (_incoming/muro/src/double-mint-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-double-mint-50mg.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/mix-berries-50mg.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "mix-berries-50mg",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-MixBerries-50MG-Vapemun.webp (_incoming/muro/src/mix-berries-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-mix-berries-50mg.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/yakult-50mg.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "yakult-50mg",
-  "aiRender": {
-   "tool": "one master per body colour - NEW master _incoming/muro/tool/out/black.png: Higgsfield nano_banana_pro 2K Unlimited (0 credits) recolour of the navy master (out/mineral-water-1.png) after the black pod on the Butterscotch poster, mouthpiece tint neutralised by script (out/black-raw.png = as rendered); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-Yakult-50MG-Vapemun.webp (_incoming/muro/src/yakult-50mg.webp) - every 50MG poster shows the black pod, so the 50MG pods use the black body (the 3% pods of these flavours are tinted or yellow)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-yakult-50mg.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/fruit-punch.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "fruit-punch",
-  "aiRender": {
-   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Fruit-Punch-vapemun.webp (_incoming/muro/src/fruit-punch.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-fruit-punch.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/yakult-orange.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "yakult-orange",
-  "aiRender": {
-   "tool": "one master per body colour - the live yellow master (out/rc-yellow.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Yakult-Orange-Vapemun.webp (_incoming/muro/src/yakult-orange.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-yakult-orange.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/green-slush.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "green-slush",
-  "aiRender": {
-   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-GreenSlush-Vapemun.webp (_incoming/muro/src/green-slush.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-green-slush.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/peach-tea.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "peach-tea",
-  "aiRender": {
-   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-PeachTea-Vapemun.webp (_incoming/muro/src/peach-tea.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-peach-tea.webp"
- },
- {
-  "source": "_incoming/muro/tool/out/cut/strawberry-ice-cream.png",
-  "slug": "muro-connector-20k",
-  "role": "variant",
-  "id": "strawberry-ice-cream",
-  "aiRender": {
-   "tool": "one master per body colour - the live pink master (out/master-pink.png, 29/09); the printed flavour name re-typeset in Lato Bold by _incoming/muro/tool/label.js (= web-product-images/muro-connector-20k/label.js with the 13 new options), no AI redraw",
-   "reference": "device + label layout: the same as the live 20 (OKAMI clip Mp0QbGUX3gU) · body colour + label line breaks: vapemun.com poster wp-content/uploads/2026/03/Muro-Lego-20K-Strawberry-Ice-Cream-Vapemun.webp (_incoming/muro/src/strawberry-ice-cream.webp)",
-   "fidelitySheet": "_incoming/muro/fid.png - poster device | ours, every label read by eye"
-  },
-  "note": "line 1 23/10 - the 13 options line 2 added (#733, Max Pod-171-21..33); flat #E9E9EC keyed with scripts/flatcut.js",
-  "fileName": "variant-strawberry-ice-cream.webp"
- },
- {
   "source": "_incoming/creator/r/A-cut.png",
   "slug": "relx-creator-pod-20k",
   "role": "card",
@@ -13176,5 +12721,446 @@
    "fidelitySheet": "_incoming/d45-2610/card/eye-sheet.jpg (line-up device | Grape Ice poster | render A | render B) - no straight-on real photo exists, so by eye (IMAGE_SPEC 7): Z logo, SUP / ZERO lettering, ローヤルフラッシュ, suit order and colours (after the recolour), drop + lightning gauges, ribbed collar, tapered mouthpiece match; render A picked over B for the longer mouthpiece taper"
   },
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/grape-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 0861ffce-53ae-4ca6-a8bf-b17cb894a10e) — Javis photo studio products/muro-connector-20k/assets/pods/grape.webp; cut + floor reflection by Javis (_working/assets/muroconn/grape-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); card = the Grape pod (purple = the maker poster's hero pod)",
+  "fileName": "card-v4.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/grape-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 0861ffce-53ae-4ca6-a8bf-b17cb894a10e) — Javis photo studio products/muro-connector-20k/assets/pods/grape.webp; cut + floor reflection by Javis (_working/assets/muroconn/grape-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-grape.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/watermelon-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 35851d24-1a01-4998-8782-c6a9d659f54d) — Javis photo studio products/muro-connector-20k/assets/pods/watermelon.webp; cut + floor reflection by Javis (_working/assets/muroconn/watermelon-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-watermelon.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/double-mint-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "double-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 5560054e-b489-4ae6-a26d-87e364fea121) — Javis photo studio products/muro-connector-20k/assets/pods/double-mint.webp; cut + floor reflection by Javis (_working/assets/muroconn/double-mint-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-double-mint.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/cola-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 2f7d5bb4-3a9f-47b1-9d3f-1b996a647a27) — Javis photo studio products/muro-connector-20k/assets/pods/cola.webp; cut + floor reflection by Javis (_working/assets/muroconn/cola-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-cola.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/mix-berries-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mix-berries",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 1d18fc72-c9a8-4733-a216-9cb383156bb5) — Javis photo studio products/muro-connector-20k/assets/pods/mix-berries.webp; cut + floor reflection by Javis (_working/assets/muroconn/mix-berries-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-mix-berries.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/pineapple-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 1effa3b9-c937-4a06-b802-cdca7cade367) — Javis photo studio products/muro-connector-20k/assets/pods/pineapple.webp; cut + floor reflection by Javis (_working/assets/muroconn/pineapple-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-pineapple.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/honey-lemon-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "honey-lemon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job c9e4eb13-7759-4bde-b437-2300bd012183) — Javis photo studio products/muro-connector-20k/assets/pods/honey-lemon.webp; cut + floor reflection by Javis (_working/assets/muroconn/honey-lemon-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-honey-lemon.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/apple-baraku-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "apple-baraku",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 338e2b2a-0386-4a59-9fcc-9fd5e9856076) — Javis photo studio products/muro-connector-20k/assets/pods/apple-baraku.webp; cut + floor reflection by Javis (_working/assets/muroconn/apple-baraku-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-apple-baraku.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/mineral-water-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mineral-water",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job eb0b5282-b0df-454a-ae5d-d7ebc359d66f) — Javis photo studio products/muro-connector-20k/assets/pods/mineral-water.webp; cut + floor reflection by Javis (_working/assets/muroconn/mineral-water-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-mineral-water.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/yakult-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 55b5742b-4579-4c3d-87fd-ea2ace0f10c7) — Javis photo studio products/muro-connector-20k/assets/pods/yakult.webp; cut + floor reflection by Javis (_working/assets/muroconn/yakult-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-yakult.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/banana-strawberry-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "banana-strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job cbef7480-aa5c-4e9b-b1fa-b9c88771d42f) — Javis photo studio products/muro-connector-20k/assets/pods/banana-strawberry.webp; cut + floor reflection by Javis (_working/assets/muroconn/banana-strawberry-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-banana-strawberry.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/kyoho-grape-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 54265e78-98b8-4215-87b2-9c0e606fe1f0) — Javis photo studio products/muro-connector-20k/assets/pods/kyoho-grape.webp; cut + floor reflection by Javis (_working/assets/muroconn/kyoho-grape-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-kyoho-grape.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/pink-berry-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 4e629f05-8af5-4696-a49c-bd8a1db06efb) — Javis photo studio products/muro-connector-20k/assets/pods/pink-berry.webp; cut + floor reflection by Javis (_working/assets/muroconn/pink-berry-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-pink-berry.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/lemon-jeez-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "lemon-jeez",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 8ac4bdfe-84f0-486a-ad37-a33ad7655bd6) — Javis photo studio products/muro-connector-20k/assets/pods/lemon-jeez.webp; cut + floor reflection by Javis (_working/assets/muroconn/lemon-jeez-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-lemon-jeez.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/cool-mint-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "cool-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 950a470f-f749-497c-927d-aaa2054999f3) — Javis photo studio products/muro-connector-20k/assets/pods/cool-mint.webp; cut + floor reflection by Javis (_working/assets/muroconn/cool-mint-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-cool-mint.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/blue-ice-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 54ed880e-b654-4e19-bac8-9b647a9e3907) — Javis photo studio products/muro-connector-20k/assets/pods/blue-ice.webp; cut + floor reflection by Javis (_working/assets/muroconn/blue-ice-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-blue-ice.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/green-tea-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "green-tea",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 1aea7d31-fe8c-456a-baa8-8c7ab245e796) — Javis photo studio products/muro-connector-20k/assets/pods/green-tea.webp; cut + floor reflection by Javis (_working/assets/muroconn/green-tea-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-green-tea.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/strawberry-peach-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "strawberry-peach",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job ce7d28e8-54f8-4fb4-840c-cbed1a8e9733) — Javis photo studio products/muro-connector-20k/assets/pods/strawberry-peach.webp; cut + floor reflection by Javis (_working/assets/muroconn/strawberry-peach-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-strawberry-peach.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/vanilla-ice-cream-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "vanilla-ice-cream",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 7543aadc-cd7b-4d27-a564-68e8734f3152) — Javis photo studio products/muro-connector-20k/assets/pods/vanilla-ice-cream.webp; cut + floor reflection by Javis (_working/assets/muroconn/vanilla-ice-cream-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-vanilla-ice-cream.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/taro-ice-cream-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "taro-ice-cream",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job a5beb0da-dc87-400d-9051-d7d9f130ad76) — Javis photo studio products/muro-connector-20k/assets/pods/taro-ice-cream.webp; cut + floor reflection by Javis (_working/assets/muroconn/taro-ice-cream-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-taro-ice-cream.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/green-slush-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "green-slush",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 3af4fac7-afeb-40a0-866e-98b6c6eacd20) — Javis photo studio products/muro-connector-20k/assets/pods/green-slush.webp; cut + floor reflection by Javis (_working/assets/muroconn/green-slush-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-green-slush.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/spear-mint-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "spear-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 17506ab3-8ea0-46d5-b967-eb567880ce1d) — Javis photo studio products/muro-connector-20k/assets/pods/spear-mint.webp; cut + floor reflection by Javis (_working/assets/muroconn/spear-mint-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-spear-mint.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/yakult-orange-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-orange",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 439244ff-3a49-41e4-8e5a-1179326692cb) — Javis photo studio products/muro-connector-20k/assets/pods/yakult-orange.webp; cut + floor reflection by Javis (_working/assets/muroconn/yakult-orange-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-yakult-orange.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/peach-tea-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "peach-tea",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job b6138ac5-1595-4af5-9e13-712d8a1b08d4) — Javis photo studio products/muro-connector-20k/assets/pods/peach-tea.webp; cut + floor reflection by Javis (_working/assets/muroconn/peach-tea-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-peach-tea.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/fruit-punch-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "fruit-punch",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 74bdfc1f-7425-4b6b-8215-cadae6be6e5f) — Javis photo studio products/muro-connector-20k/assets/pods/fruit-punch.webp; cut + floor reflection by Javis (_working/assets/muroconn/fruit-punch-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-fruit-punch.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/strawberry-ice-cream-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "strawberry-ice-cream",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 5f506f05-e712-4e82-a8d6-a7998380c5b5) — Javis photo studio products/muro-connector-20k/assets/pods/strawberry-ice-cream.webp; cut + floor reflection by Javis (_working/assets/muroconn/strawberry-ice-cream-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-strawberry-ice-cream.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/butterscotch-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "butterscotch",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job 108192d1-788c-4425-8044-dc57a43279cd) — Javis photo studio products/muro-connector-20k/assets/pods/butterscotch.webp; cut + floor reflection by Javis (_working/assets/muroconn/butterscotch-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-butterscotch.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/chocolate-dubai-reflect.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "chocolate-dubai",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro (Javis, 27/10, job fea1f153-0d36-4a20-8979-4c369b445bde) — Javis photo studio products/muro-connector-20k/assets/pods/chocolate-dubai.webp; cut + floor reflection by Javis (_working/assets/muroconn/chocolate-dubai-reflect.png)",
+   "reference": "maker posters via ihavevape.net (Muro-Connector-20k.webp: CONNECTOR POD · USE WITH MURO CREATOR DEVICE · AWAKE YOUR NOSE.; per-flavour posters for pod colour) — Javis photo studio products/muro-connector-20k/assets/ref/ + product.md",
+   "fidelitySheet": "Javis read every pod by eye (MURO / AWAKE YOUR NOSE. / flavour name, 28 of 28) + _incoming/muro-conn-2910/javis-labels.png (Friday re-read 29/10)"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters)",
+  "fileName": "pod-chocolate-dubai.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/grape-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "grape-50mg",
+  "aiRender": {
+   "tool": "Javis's black pod (butterscotch, job 108192d1-788c-4425-8044-dc57a43279cd) with its printed name erased by vertical blend, then the grape name lifted from Javis's 3% grape pod (same pose, luminance key of the white ink) — _incoming/muro-conn-2910/make50.js, no AI redraw",
+   "reference": "every 50MG poster shows the black pod (vapemun.com Muro-Lego-20K-*-50MG posters, the previous entry of this file) · name print = Javis's 3% pod of the flavour",
+   "fidelitySheet": "_incoming/muro-conn-2910/labels-50mg.png — every label read by eye"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); 50MG = black pod",
+  "fileName": "pod-grape-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/watermelon-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "watermelon-50mg",
+  "aiRender": {
+   "tool": "Javis's black pod (butterscotch, job 108192d1-788c-4425-8044-dc57a43279cd) with its printed name erased by vertical blend, then the watermelon name lifted from Javis's 3% watermelon pod (same pose, luminance key of the white ink) — _incoming/muro-conn-2910/make50.js, no AI redraw",
+   "reference": "every 50MG poster shows the black pod (vapemun.com Muro-Lego-20K-*-50MG posters, the previous entry of this file) · name print = Javis's 3% pod of the flavour",
+   "fidelitySheet": "_incoming/muro-conn-2910/labels-50mg.png — every label read by eye"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); 50MG = black pod",
+  "fileName": "pod-watermelon-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/double-mint-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "double-mint-50mg",
+  "aiRender": {
+   "tool": "Javis's black pod (butterscotch, job 108192d1-788c-4425-8044-dc57a43279cd) with its printed name erased by vertical blend, then the double-mint name lifted from Javis's 3% double-mint pod (same pose, luminance key of the white ink) — _incoming/muro-conn-2910/make50.js, no AI redraw",
+   "reference": "every 50MG poster shows the black pod (vapemun.com Muro-Lego-20K-*-50MG posters, the previous entry of this file) · name print = Javis's 3% pod of the flavour",
+   "fidelitySheet": "_incoming/muro-conn-2910/labels-50mg.png — every label read by eye"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); 50MG = black pod",
+  "fileName": "pod-double-mint-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/mix-berries-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mix-berries-50mg",
+  "aiRender": {
+   "tool": "Javis's black pod (butterscotch, job 108192d1-788c-4425-8044-dc57a43279cd) with its printed name erased by vertical blend, then the mix-berries name lifted from Javis's 3% mix-berries pod (same pose, luminance key of the white ink) — _incoming/muro-conn-2910/make50.js, no AI redraw",
+   "reference": "every 50MG poster shows the black pod (vapemun.com Muro-Lego-20K-*-50MG posters, the previous entry of this file) · name print = Javis's 3% pod of the flavour",
+   "fidelitySheet": "_incoming/muro-conn-2910/labels-50mg.png — every label read by eye"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); 50MG = black pod",
+  "fileName": "pod-mix-berries-50mg.webp"
+ },
+ {
+  "source": "_incoming/muro-conn-2910/src/yakult-50mg.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult-50mg",
+  "aiRender": {
+   "tool": "Javis's black pod (butterscotch, job 108192d1-788c-4425-8044-dc57a43279cd) with its printed name erased by vertical blend, then the yakult name lifted from Javis's 3% yakult pod (same pose, luminance key of the white ink) — _incoming/muro-conn-2910/make50.js, no AI redraw",
+   "reference": "every 50MG poster shows the black pod (vapemun.com Muro-Lego-20K-*-50MG posters, the previous entry of this file) · name print = Javis's 3% pod of the flavour",
+   "fidelitySheet": "_incoming/muro-conn-2910/labels-50mg.png — every label read by eye"
+  },
+  "note": "29/10 owner via Javis: the live pods printed AMAZE YOUR NOSE (real print AWAKE YOUR NOSE.) and only 3 pod colours — replaced by Javis's 28 pods (6 colours, maker posters); 50MG = black pod",
+  "fileName": "pod-yakult-50mg.webp"
  }
 ]
