@@ -83,7 +83,9 @@ export function AddToCartForm({
       <input type="hidden" name="quantity" value={1} />
       <SubmitButton>{label}</SubmitButton>
       {limit !== null && (
-        <p role="status" className="basis-full text-sm text-foreground-muted">
+        // w-0 + min-w-full: as wide as the button and never wider — in the phone's sticky bar a wider line pushed the
+        // price and the cart button aside (proof 28/10).
+        <p role="status" className="w-0 min-w-full basis-full text-xs text-foreground-muted">
           {dict.cart.addLimitReached.replace("{n}", String(limit))}
         </p>
       )}
