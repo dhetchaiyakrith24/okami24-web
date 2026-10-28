@@ -80,6 +80,21 @@ export interface ApiResponse {
   json: unknown;
   headers?: Record<string, string>;
   writes: StockWrite[];
+  /** Shipnity changed an order it was sent (status, or deleted) — the route records it and alerts staff. */
+  orderUpdates?: OrderUpdate[];
+}
+
+export interface OrderUpdate {
+  orderId: number;
+  /** The Woo status Shipnity set ("cancelled", "completed", …), "deleted" for a DELETE, null when the body had none. */
+  status: string | null;
+}
+
+/** The order status in a write body — only a known Woo status word is taken. */
+export function readOrderStatus(body: unknown): string | null {
+  if (!body || typeof body !== "object") return null;
+  const s = (body as Record<string, unknown>).status;
+  return typeof s === "string" && /^(pending|processing|on-hold|completed|cancelled|refunded|failed|trash)$/.test(s) ? s : null;
 }
 
 const NAMESPACES = ["wc/v1", "wc/v2", "wc/v3"];
@@ -394,10 +409,35 @@ export function handle(req: ApiRequest): ApiResponse {
       const { items, headers } = page(all, req.query);
       return ok(items, headers);
     }
+    // Shipnity's changes to an order it was sent (e.g. cancelled — out of stock at the warehouse, owner 28/10): answered
+    // with the order unchanged, and handed to the route as an update so staff hear about it on LINE. The site's own
+    // order status is never changed from here — staff decide with the customer.
+    if (rest.length === 2 && r1 === "batch" && method === "POST") {
+      const b = (req.body ?? {}) as { update?: unknown[]; delete?: unknown[] };
+      const updates: OrderUpdate[] = [];
+      const answer = (id: number) => all.find((x) => x.id === id);
+      const upd = (Array.isArray(b.update) ? b.update : []).map((u) => {
+        const id = Number((u as { id?: unknown })?.id);
+        const o = answer(id);
+        if (!o) return { id, error: { code: "woocommerce_rest_shop_order_invalid_id", message: "Invalid ID.", data: { status: 400 } } };
+        updates.push({ orderId: id, status: readOrderStatus(u) });
+        return o;
+      });
+      const del = (Array.isArray(b.delete) ? b.delete : []).map((d) => {
+        const id = Number(d);
+        const o = answer(id);
+        if (!o) return { id, error: { code: "woocommerce_rest_shop_order_invalid_id", message: "Invalid ID.", data: { status: 400 } } };
+        updates.push({ orderId: id, status: "deleted" });
+        return o;
+      });
+      return { ...ok({ create: [], update: upd, delete: del }), orderUpdates: updates };
+    }
     if (rest.length === 2) {
       const o = all.find((x) => x.id === Number(r1));
       if (!o) return err(404, "woocommerce_rest_shop_order_invalid_id", "Invalid ID.");
-      if (method === "GET" || write) return ok(o);
+      if (method === "GET") return ok(o);
+      if (write) return { ...ok(o), orderUpdates: [{ orderId: o.id, status: readOrderStatus(req.body) }] };
+      if (method === "DELETE") return { ...ok(o), orderUpdates: [{ orderId: o.id, status: "deleted" }] };
     }
     return noRoute();
   }
