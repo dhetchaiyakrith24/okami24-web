@@ -158,6 +158,10 @@ const MODEL_NAMES: ReadonlyArray<string> = [
   "Esko Bar Switch", "No Atomizer",
   // Data round (owner instruction 2026-09-24, batch 4): the G5 line's upper-case message, same rule.
   "NO ATOMIZER",
+  // Owner 28/10 ("G3 Pro แก้เลยครับ"): short two-word model names split at 390 ("G3 | Pro"). After the ARGUS
+  // entries above, so "ARGUS G4 mini" is already bound when "G4 mini" looks.
+  "G3 Pro", "G4 Pro", "G3 mini", "G4 mini", "G4 Mini", "G5 Lite", "PnP X", "Zero Pro", "Pod Pro", "Next Pro",
+  "Vmate Pro", "DRAG X", "Drag X", "VINCI S", "VINCI X",
 ];
 
 // a number (with , . – - inside) followed by ONE plain space and a unit. A Thai unit may run
