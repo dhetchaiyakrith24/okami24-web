@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { playSlashOnce } from "@/components/brand/slash";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -141,6 +143,22 @@ export function OrderStatusView({
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
   const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
   const runNumber = formatRunNumber(order.runNumber);
+  const thanksRef = useRef<HTMLDivElement>(null);
+  const numberRef = useRef<HTMLDivElement>(null);
+  // Logo round batch 2 (owner 28/10): one red slash when the order is first seen placed, one when first seen paid.
+  // The paid slash waits for the card's own entrance (okami-thanks-in, 80 + 420 ms).
+  useEffect(() => {
+    const play = () => {
+      if (paidOrLater) {
+        const width = thanksRef.current?.offsetWidth ?? 400;
+        playSlashOnce(`okami-slash:${order.orderNumber}:paid`, thanksRef.current, { length: Math.round(width * 0.85), thickness: 4, draw: 260, hold: 120, fade: 320, shadow: true });
+      } else if (order.status === "pending_payment") {
+        playSlashOnce(`okami-slash:${order.orderNumber}:placed`, numberRef.current, { length: window.innerWidth >= 1024 ? 220 : 160, thickness: 3, draw: 200, fade: 280, at: "top" });
+      }
+    };
+    const t = window.setTimeout(play, paidOrLater ? 520 : 120);
+    return () => window.clearTimeout(t);
+  }, [paidOrLater, order.status, order.orderNumber]);
 
   return (
     <>
@@ -150,19 +168,42 @@ export function OrderStatusView({
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
             PageHeader's tight 0.95 would clip Thai vowels). */}
+        {/* Logo round batch 2 (owner 28/10 "ได้ ตามร่าง"; designer spec 28/10): the card carries the samurai — head, kabuto and
+            red moon only, cut above the shoulder blades — a band on top on phones (line 2 of the thank-you never wraps, so
+            it cannot sit beside a picture at 390), on the right from lg, faded into the card. */}
         {paidOrLater && (
-          <div className="okami-thanks">
-            <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
-            <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
-              <span className="block">{dict.orderStatus.thankYouLead}</span>
-              <span className="block whitespace-nowrap">
-                {dict.orderStatus.thankYouTail}{" "}
-                <span className="font-display font-extrabold text-red-strong [text-shadow:0_0_24px_rgba(242,48,48,0.25)]">OKami24</span>
-              </span>
-            </p>
+          <div ref={thanksRef} className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
+            <div className="relative h-[200px] w-full lg:hidden">
+              <Image
+                src="/brand/samurai-thanks-wide.webp"
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+              />
+            </div>
+            <div aria-hidden className="absolute inset-y-0 right-0 hidden w-64 lg:block">
+              <Image
+                src="/brand/samurai-thanks.webp"
+                alt=""
+                fill
+                sizes="256px"
+                className="object-cover object-top [mask-image:linear-gradient(to_right,transparent,black_45%)]"
+              />
+            </div>
+            <div className="relative flex flex-col justify-center px-5 pb-6 lg:min-h-[260px] lg:px-7 lg:py-8">
+              <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
+              <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
+                <span className="block">{dict.orderStatus.thankYouLead}</span>
+                <span className="block whitespace-nowrap">
+                  {dict.orderStatus.thankYouTail}{" "}
+                  <span className="font-display font-extrabold text-red-strong [text-shadow:0_0_24px_rgba(242,48,48,0.25)]">OKami24</span>
+                </span>
+              </p>
+            </div>
           </div>
         )}
-        <div className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
