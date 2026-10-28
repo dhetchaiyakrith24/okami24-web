@@ -960,7 +960,7 @@ export const salthubProducts: Product[] = [
       // line 2 max-sync (22/10): the 50mg pods Shipnity Max lists (Pod-85-20..24, 26..31) — Max names. Photos (line 1, 23/10):
       // a 50mg pod = the photo of the same flavour's pod above (the label prints the flavour only, not the strength; no
       // separate 50mg pod is published anywhere we could find). Pink Berry / Banana Strawberry / Menthol Freeze have no pod
-      // photo of their own anywhere (not on salthub.com) — no photo (no-photo panel).
+      // photo of their own anywhere (not on salthub.com) — images-all 29/10: our pod + the flavour section of Javis pod (map aiRender).
       { id: "peach-strawberry-50mg", name: "Peach Strawberry 50mg", swatchHex: "#e07a6b", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-peach-strawberry-v2.webp", alt: "SALTHUB Zero Cartridge, Peach Strawberry 50mg", ownFloor: true } },
       { id: "watermelon-50mg", name: "Watermelon 50mg", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-watermelon-v2.webp", alt: "SALTHUB Zero Cartridge, Watermelon 50mg", ownFloor: true } },
       { id: "grape-50mg", name: "Grape 50mg", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-grape-v3.webp", alt: "SALTHUB Zero Cartridge, Grape 50mg", ownFloor: true } },
@@ -969,9 +969,9 @@ export const salthubProducts: Product[] = [
       { id: "mint-50mg", name: "Mint 50mg", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-mint-v2.webp", alt: "SALTHUB Zero Cartridge, Mint 50mg", ownFloor: true } },
       { id: "mixberry-50mg", name: "Mixberry 50mg", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-mixberry-v2.webp", alt: "SALTHUB Zero Cartridge, Mixberry 50mg", ownFloor: true } },
       { id: "cola-50mg", name: "Cola 50mg", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-cola-v2.webp", alt: "SALTHUB Zero Cartridge, Cola 50mg", ownFloor: true } },
-      { id: "pink-berry-50mg", name: "Pink Berry 50mg", swatchHex: "#d94f8e", availability: "unknown" },
-      { id: "banana-strawberry-50mg", name: "Banana Strawberry 50mg", swatchHex: "#e0a05a", availability: "unknown" },
-      { id: "menthol-freeze-50mg", name: "Menthol Freeze 50mg", swatchHex: "#7fc8d8", availability: "unknown" },
+      { id: "pink-berry-50mg", name: "Pink Berry 50mg", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-pink-berry.webp", alt: "SALTHUB Zero Cartridge, Pink Berry 50mg", ownFloor: true } },
+      { id: "banana-strawberry-50mg", name: "Banana Strawberry 50mg", swatchHex: "#e0a05a", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-banana-strawberry.webp", alt: "SALTHUB Zero Cartridge, Banana Strawberry 50mg", ownFloor: true } },
+      { id: "menthol-freeze-50mg", name: "Menthol Freeze 50mg", swatchHex: "#7fc8d8", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-menthol-freeze.webp", alt: "SALTHUB Zero Cartridge, Menthol Freeze 50mg", ownFloor: true } },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
