@@ -985,12 +985,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "muro-connector-20k": {
     whoIsThisFor: {
-      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ มีให้เลือกหลายกลิ่น",
+      0: "มีเครื่อง Muro Creator หรือ RELX Creator อยู่แล้ว อยากได้หัวพอตพัฟเยอะ มีให้เลือกหลายกลิ่น",
     },
     specifications: {
       puffs: "สูงสุด 20,000",
     },
-    tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ",
+    tagline: "หัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ",
+    shortDescription: "หัวพอตบรรจุสำเร็จจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ใช้กับเครื่อง Muro Creator และร้านยืนยันจากของจริงแล้วว่าใส่กับ RELX Creator ได้",
   },
 };
