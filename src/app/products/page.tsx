@@ -11,6 +11,7 @@ import { productsHeadTh } from "@/i18n/search-head-copy";
 import { Suspense } from "react";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
+import { SamuraiBackdrop } from "@/components/brand/SamuraiBackdrop";
 
 // The count in the <title>/description is the same "shown products" number the page header
 // prints — counted from the two catalog halves at build, never typed (owner 2026-09-21, SEO
@@ -35,18 +36,21 @@ export default function ProductsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: PRODUCTS_HEAD.title, description: PRODUCTS_HEAD.description, path: "/products" })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(PRODUCTS_HEAD.title, "/products")) }} />
-      <ProductsPageHeader totalCount={totalCount} />
-      <Container className="py-12 lg:py-16">
-        {/* Only while online ordering is off, and only visible when /cart or /checkout sent the
-            visitor here (?order=line) — read client-side so this page stays prerendered.
-            src/lib/commerce/ordering-mode.ts, owner 2026-09-07. */}
-        {!ORDERING_ENABLED && (
-          <Suspense fallback={null}>
-            <LineOrderingNotice />
-          </Suspense>
-        )}
-        <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} />
-      </Container>
+      <div className="relative isolate">
+        <SamuraiBackdrop />
+        <ProductsPageHeader totalCount={totalCount} />
+        <Container className="py-12 lg:py-16">
+          {/* Only while online ordering is off, and only visible when /cart or /checkout sent the
+              visitor here (?order=line) — read client-side so this page stays prerendered.
+              src/lib/commerce/ordering-mode.ts, owner 2026-09-07. */}
+          {!ORDERING_ENABLED && (
+            <Suspense fallback={null}>
+              <LineOrderingNotice />
+            </Suspense>
+          )}
+          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} />
+        </Container>
+      </div>
     </>
   );
 }

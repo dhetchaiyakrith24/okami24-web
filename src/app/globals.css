@@ -284,6 +284,38 @@ html:lang(th) .label-mono:not(:lang(en)) {
   font-weight: 500;
 }
 
+/* Samurai backdrop on /products (SamuraiBackdrop.tsx, owner 29/10): the layer runs from the page top to about where the
+   product cards begin and the picture fades to nothing on the way down; on wide screens it is the right half and also
+   fades toward the title. Opacity 0.12 at every width (owner 29/10 on the built page: "ชัดไป … เหลือ 10-15"). */
+.samurai-backdrop {
+  height: 26rem;
+}
+.samurai-backdrop-figure {
+  width: 100%;
+  opacity: 0.12;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
+}
+.samurai-backdrop-figure img {
+  object-position: 60% 0%;
+}
+@media (min-width: 1024px) {
+  .samurai-backdrop {
+    height: 26rem;
+  }
+  .samurai-backdrop-figure {
+    width: 52%;
+    opacity: 0.12;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%), linear-gradient(to right, transparent 0%, #000 45%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%), linear-gradient(to right, transparent 0%, #000 45%);
+    mask-composite: intersect;
+  }
+  .samurai-backdrop-figure img {
+    object-position: 50% 22%;
+  }
+}
+
 /* Thin scroll rails for horizontal product rails */
 .rail-scroll {
   scrollbar-width: thin;

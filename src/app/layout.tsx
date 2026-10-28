@@ -9,6 +9,7 @@ import { LineContact } from "@/components/layout/LineContact";
 import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
+import { CardCut } from "@/components/brand/CardCut";
 import { navCategories } from "@/lib/category-visibility";
 import { navBrands } from "@/lib/brand-visibility";
 import { DNS_GUIDE_ID } from "@/data/guides";
@@ -115,6 +116,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <LineClickTracker />
           {/* Owner 2026-10-06: no right-click / drag / long-press save on pictures. Renders nothing. */}
           <ImageSaveGuard />
+          {/* Samurai theme (owner 29/10): the short red cut across a product card's photo on click. Renders nothing. */}
+          <CardCut />
         </LocaleProvider>
       </body>
     </html>

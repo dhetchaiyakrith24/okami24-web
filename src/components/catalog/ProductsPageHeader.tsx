@@ -11,6 +11,7 @@ export function ProductsPageHeader({ totalCount }: { totalCount: number }) {
   const { dict } = useLocale();
   return (
     <PageHeader
+      bare
       eyebrow={dict.catalog.eyebrow}
       title={dict.nav.allProducts}
       description={`${totalCount} ${pluralCount(totalCount, dict.products.pageDescriptionOne, dict.products.pageDescriptionOther)}`}
