@@ -5,9 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { staffLogoutAction } from "@/app/staff/actions";
 import { StaffLogin } from "@/app/staff/_components/StaffLogin";
-import { LineGroups } from "@/app/staff/_components/LineGroups";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
-import { lineConfigured } from "@/lib/line/client";
 import { countByJob, listStaffOrders } from "@/lib/staff/orders";
 import { LIST_CLASS, OrderRow } from "@/app/staff/_components/OrderRow";
 import { jobOf, STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
@@ -15,7 +13,7 @@ import { jobOf, STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
 /**
  * /staff — "งาน", the staff home (owner 26/10, queue B3: "หาออเดอร์ที่ต้องทำไม่เจอ … ใช้บนมือถือ"; staff declutter 27/10):
  * every order waiting on the team, under รอตรวจสลิป · รอส่งคลัง · รอใส่เลขพัสดุ in working order, then one line to the other
- * jobs and one folded row of tools (slip check from LINE · Excel · LINE groups · log out). Jobs and colours =
+ * jobs and log out; the section boxes on top (owner 28/10) lead to the slip check and Okami dev. Jobs and colours =
  * src/lib/staff/jobs.ts (yellow waiting, green done, red cancelled — HANDOFF §18).
  *
  * Not for customers and not for search: no link to it anywhere on the site, not in the sitemap, noindex here. It is also
@@ -51,11 +49,10 @@ export default async function StaffPage() {
   const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
   const waiting = listStaffOrders("todo");
   const others: StaffJob[] = ["unpaid", "done", "cancelled"];
-  const more = "flex min-h-12 items-center justify-between px-4 text-sm text-foreground hover:bg-surface-2";
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar />
+      <StaffBar tab="orders" />
       <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
         งาน <span className={todo > 0 ? "text-unverified" : "text-foreground-dim"}>· {todo}</span>
       </h1>
@@ -100,39 +97,13 @@ export default async function StaffPage() {
         </Link>
       </nav>
 
-      {/* The rarely used tools, folded into one row at the foot. */}
-      <details className="group rounded-xl border border-surface-border-soft bg-surface-1">
-        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 text-sm text-foreground-muted hover:text-foreground [&::-webkit-details-marker]:hidden">
-          อื่น ๆ
-          <span aria-hidden className="text-foreground-dim transition-transform group-open:rotate-90">›</span>
-        </summary>
-        <div className="flex flex-col divide-y divide-surface-border-soft border-t border-surface-border-soft">
-          <Link href="/staff/slip" className={more}>
-            ตรวจสลิปจาก LINE <span aria-hidden>→</span>
-          </Link>
-          {/* Owner 27/10: the warehouse's Shipnity connects here (key pair + call log). */}
-          <Link href="/staff/shipnity" className={more}>
-            เชื่อมคลัง Shipnity <span aria-hidden>→</span>
-          </Link>
-          {/* Owner 23/10: a copy of every order on the shop's own computer — opens in Excel. */}
-          <a href="/staff/api/export" download className={more}>
-            ดาวน์โหลดออเดอร์ทั้งหมด (Excel) <span aria-hidden>↓</span>
-          </a>
-          {lineConfigured() && (
-            <details className="px-4 py-3">
-              <summary className="cursor-pointer text-sm text-foreground hover:text-foreground">ตั้งค่ากลุ่ม LINE ของบอท</summary>
-              <div className="pt-3">
-                <LineGroups />
-              </div>
-            </details>
-          )}
-          <form action={staffLogoutAction}>
-            <button type="submit" className={`${more} w-full text-foreground-muted`}>
-              ออกจากระบบ
-            </button>
-          </form>
-        </div>
-      </details>
+      {/* The tools that sat in the folded "อื่น ๆ" row moved under the boxes at the top (owner 28/10): slip check → ตรวจสลิป,
+          Shipnity · Excel · LINE groups → Okami dev. Log out stays here as one quiet line. */}
+      <form action={staffLogoutAction}>
+        <button type="submit" className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground">
+          ออกจากระบบ
+        </button>
+      </form>
     </Container>
   );
 }
