@@ -80,7 +80,7 @@ export function formatFeedAlert(h: FeedHealth, siteUrl: string): string {
     "⚠️ สต็อกจาก Shipnity อาจหยุดส่งเข้าเว็บ",
     h.reason,
     h.lastPushAt ? `ตัวเลขบนเว็บค้างอยู่ที่ส่งมาล่าสุด ${bangkokShort(h.lastPushAt)}` : null,
-    "ฝั่งคลัง: เปิดการเชื่อม WooCommerce ใน Shipnity แล้วกดอัปเดตสต็อก · ไม่หายให้แจ้ง Friday",
+    "ฝั่งคลัง: ตรวจว่าการเชื่อม WooCommerce ใน Shipnity ยังเปิดอยู่ · ไม่หายให้แจ้งทีมเว็บ",
     `เปิดดู: ${siteUrl}/staff/dev`,
   ]
     .filter(Boolean)

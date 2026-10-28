@@ -10,6 +10,7 @@ import { lineConfigured } from "@/lib/line/client";
 import { listKeys } from "@/lib/woo/keys";
 import { recentCalls } from "@/lib/woo/store";
 import { feedHealth } from "@/lib/woo/watch";
+import { bangkokShort } from "@/lib/woo/watch-rules";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
@@ -65,7 +66,7 @@ export default async function StaffDevPage() {
           <span className="flex min-w-0 flex-col">
             สต็อกจาก Shipnity (อัปเดตสด)
             <span className="text-xs text-foreground-dim">
-              ส่งล่าสุด {feed.lastPushAt ? formatShortDateTime(feed.lastPushAt) : "ยังไม่เคย"} · ส่งมาแล้ว {formatCount(feed.reportedCodes)} รหัส
+              ส่งล่าสุด {feed.lastPushAt ? bangkokShort(feed.lastPushAt) : "ยังไม่เคย"} · ส่งมาแล้ว {formatCount(feed.reportedCodes)} รหัส
             </span>
             {feed.reason && <span className={`text-xs ${light.text}`}>{feed.reason}</span>}
           </span>

@@ -18,7 +18,17 @@ import { alertFor, formatFeedAlert, formatFeedRecovered, judgeFeed, LOOKBACK_HOU
 const SWEEP_MS = 10 * 60_000;
 const STATE_FILE = "woo-watch.json";
 
+/** Never throws — every staff page calls it (the Okami dev box): a failed read is itself a red light, not a broken page. */
 export function feedHealth(now = Date.now()): FeedHealth {
+  try {
+    return readFeed(now);
+  } catch (err) {
+    console.error(`[stock-watch] read failed — ${err instanceof Error ? err.message : String(err)}`);
+    return { state: "down", lastPushAt: null, reportedCodes: 0, reason: "อ่านสถานะสต็อกไม่ได้ — แจ้งทีมเว็บ" };
+  }
+}
+
+function readFeed(now: number): FeedHealth {
   const db = getDb();
   const push = db.prepare("SELECT MAX(reported_at) AS last, COUNT(*) AS n FROM woo_stock_reports").get() as { last: string | null; n: number };
   const since = new Date(now - LOOKBACK_HOURS * 3_600_000).toISOString();
@@ -61,7 +71,8 @@ async function sweep(reason: string): Promise<void> {
       if (groupId) {
         const text = alert === "down" ? formatFeedAlert(health, SITE_URL) : formatFeedRecovered(health);
         const result = await pushText(groupId, text);
-        if (!result.ok) console.error(`[stock-watch] LINE push failed (${result.status ?? "network"})`);
+        // Keep the old light on a failed push, so the next sweep (10 min) tries again instead of losing the alert.
+        if (!result.ok) return console.error(`[stock-watch] LINE push failed (${result.status ?? "network"}) — retry next sweep`);
       }
     }
     if (prev !== health.state) fs.writeFileSync(statePath(), JSON.stringify({ state: health.state, at: new Date().toISOString() }));
