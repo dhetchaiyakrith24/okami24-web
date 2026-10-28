@@ -12814,6 +12814,149 @@
   "fileName": "card.webp"
  },
  {
+  "source": "_incoming/img-2910/b4/grape-ice.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "grape-ice",
+  "fileName": "variant-grape-ice.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-grape-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/grape-lychee.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "fileName": "variant-grape-lychee.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-grape-lychee.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/watermelon.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "watermelon",
+  "fileName": "variant-watermelon.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-watermelon-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/peach-strawberry.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "fileName": "variant-peach-strawberry.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-peach-strawberry.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/strawberry-ice.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "strawberry-ice",
+  "fileName": "variant-strawberry-ice.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-strawberry-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/cola.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "cola",
+  "fileName": "variant-cola.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-cola-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/blueberry-ice.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "blueberry-ice",
+  "fileName": "variant-blueberry-ice.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-blueberry-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/mixberry.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "mixberry",
+  "fileName": "variant-mixberry.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-mix-berries.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/double-mint.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "double-mint",
+  "fileName": "variant-double-mint.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-double-mint.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/lychee-ice.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "lychee-ice",
+  "fileName": "variant-lychee-ice.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-lychee-ice.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10)",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
+  "source": "_incoming/img-2910/b4/apple-aloe-vera.png",
+  "slug": "sup-zero-22k",
+  "role": "variant",
+  "id": "apple-aloe-vera",
+  "fileName": "variant-apple-aloe-vera.webp",
+  "aiRender": {
+   "tool": "composite by script (_incoming/img-2910/b4/comp.js): our card.webp device (pixel for pixel, 820 px tall, top 70, centred) + Javis's fruit cut-out fruit-apple-aloe-vera.png (Javis photo studio products/sup-zero-22000/assets — his Higgsfield fruit renders for the SUP ZERO catalogue the owner passed 26/10); its soft white halo cut by an alpha curve (a-120)*255/135",
+   "reference": "device = card.webp (owner's own Higgsfield order 25/10) · fruit = the flavour name; no SUP ZERO box or pouch exists in any source we have (owner 29/10 \"ถ้าซองไม่มี กล่องไม่มี ใส่ผลไม้แทน\")",
+   "fidelitySheet": "_incoming/img-2910/b4/all.jpg (all 11 on dark) · zoom.jpg / zoom2.jpg (edges)"
+  },
+  "note": "images-all round 29/10 — SUP ZERO flavour photo (device + fruit), owner 29/10"
+ },
+ {
   "source": "_incoming/muro-conn-2910/src/grape-reflect.png",
   "slug": "muro-connector-20k",
   "role": "card",
