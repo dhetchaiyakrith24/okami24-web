@@ -35,7 +35,7 @@ export default async function StaffShipnityPage() {
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar back={{ href: "/staff", label: "งาน" }} />
+      <StaffBar back={{ href: "/staff/dev", label: "Okami dev" }} />
       <header className="flex flex-col gap-2">
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">เชื่อมคลัง Shipnity</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">

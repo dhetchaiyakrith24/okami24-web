@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { countByJob } from "@/lib/staff/orders";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
@@ -26,16 +28,21 @@ export default async function StaffSlipPage() {
   if (!(await isStaff())) redirect("/staff");
   const configured = easySlipConfigured();
   const quota = configured ? await getQuota() : null;
+  const waitingSlips = countByJob().slip;
 
   return (
     <Container className="flex max-w-xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar back={{ href: "/staff", label: "งาน" }} />
+      <StaffBar tab="slip" />
       <header className="flex flex-col gap-2">
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ตรวจสลิปโอนเงิน</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">
           อัปโหลดรูปสลิปจากลูกค้า แล้วดูผลยืนยันจากธนาคาร <span className="whitespace-nowrap">ทั้งยอดเงิน</span> เวลาโอน และบัญชีผู้รับ
           · สลิปของออเดอร์เว็บ ระบบตรวจให้แล้วในหน้าออเดอร์
         </p>
+        {/* Designer 28/10: someone who came here for a web order's slip finds its list in one tap. */}
+        <Link href="/staff/orders?f=slip" className="w-fit text-sm font-semibold text-foreground hover:underline">
+          ออเดอร์เว็บรอตรวจสลิป · <span className={waitingSlips > 0 ? "text-unverified" : "text-foreground-dim"}>{waitingSlips}</span> →
+        </Link>
       </header>
       <SlipChecker configured={configured} initialQuota={quota && quota.ok ? quota.data : null} recent={recentChecks(30)} />
     </Container>
