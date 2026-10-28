@@ -29,7 +29,18 @@ export interface StockProduct {
   options: StockOption[];
 }
 
+// Two staff opening the page within a few seconds get one build of the book (it takes ~0.4 s — the whole catalog through the
+// resolver); a stock change still shows within 15 s, like the 10 s live cache under it.
+const TTL_MS = 15_000;
+let cache: { at: number; book: StockProduct[] } | null = null;
+
 export function stockBook(): StockProduct[] {
+  if (cache && Date.now() - cache.at < TTL_MS) return cache.book;
+  cache = { at: Date.now(), book: buildBook() };
+  return cache.book;
+}
+
+function buildBook(): StockProduct[] {
   const live = liveLookup();
   const qtyOf = liveQuantityLookup();
   const out: StockProduct[] = [];
@@ -45,14 +56,14 @@ export function stockBook(): StockProduct[] {
         ? raw.map((o) => ({
             id: o.id,
             name: o.name,
-            sells: resolveProductRef({ origin: item.origin, slug: item.slug, variantId: o.id }, live).ok,
+            sells: resolveProductRef({ origin: item.origin, slug: item.slug, variantId: o.id }, live, item).ok,
             qty: qtyOf(item.slug, o.id),
           }))
         : [
             {
               id: null,
               name: item.name,
-              sells: resolveProductRef({ origin: item.origin, slug: item.slug, variantId: null }, live).ok,
+              sells: resolveProductRef({ origin: item.origin, slug: item.slug, variantId: null }, live, item).ok,
               qty: qtyOf(item.slug),
             },
           ];
