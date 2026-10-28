@@ -12,30 +12,28 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 29/10 ~03:45 (chat "owner 29/10 list", moved at 72%).
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~05:45 = 63fb19da (#983). CART IS ON.
+1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~08:00 = 5864a58f (#991) + child merges. CART IS ON.
   LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 character + slash on the pressed add button + /cart revalidate dropped (dot
-  0.25 s) · #978 /staff/stock "เช็คสต็อก" (cart answer per option + Shipnity count + LINE reply) · #982 + #983 = item 2.
-  #977 NEW ARRIVALS (checker PASS ed8cb111 round 2): src/data/first-listed.ts (dates = day-by-day replay of main, `_incoming/chk-2910/
-  replay.sh`) · row "สินค้าเข้าใหม่" under CategoryNav = 8 newest the cart sells at build · new-arrivals-contract-test fails on a priced
-  product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand). MERGED 55c88b2a.
-  Checker notes: relx-creator-pod-20k not in the row (none sellable at build) · Foli/Vazer/Muro cards: "UNBRANDED".
+  0.25 s) · #978 /staff/stock "เช็คสต็อก" (cart answer per option + Shipnity count + LINE reply) · #982 #983 #991 = item 2 · #985–#987 #989 #990 = children (item 2e).
+  #977 NEW ARRIVALS live: row "สินค้าเข้าใหม่" = 8 newest sellable at build from src/data/first-listed.ts · new-arrivals-contract-test
+  fails on a priced product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand).
   Shipnity chat 29/10: #962–#974 live, stock verified 738/738 via /order/create. Its NEXT: (a) Muro Connector 5,254 orders/month per
   shop, totals only · (b) LINE cancel alert unseen live · (c) INFY v2 reflections; process-images.map.json names deleted infy files.
 2 OPEN (owner 29/10 list):
-  a SAMURAI THEME — LIVE 29/10 (#983, checker PASS 3b1c3f61, curl ok): /products = owner's character (public/brand/samurai-products-bg.webp)
-    fading top → bottom to the first card row, opacity 0.12 every width (owner on the build: 0.25 "ชัดไป … 10-15"), header NOT boxed
-    (PageHeader `bare`; owner asked box vs no box → designer: no box — the panel rule cut the character; category/brand keep the panel).
-    Card cut on every product card site-wide (CardCut in the root layout: −20°, ≤230 px, 4 px, 310 ms, nav after 120 ms; quiet on
-    cart/checkout/staff/orders; reduced motion = none). Cut not yet seen live by the owner (รอพี่ตรวจ 78). Designer:
-    gap under the description ~130 px at 1440 (−24–32 px possible; then re-measure the 26rem layer).
-  b JAVIS via owner 29/10: file move in the Javis photo studio folder DONE 99/99. M Bar 9K "14 ml" + TFIT "18 → 17 ml" CONFLICT with our
-    evidence (salthub.com states no capacity; TFIT's poster says 18ML — `_incoming/sitewide-template/4/facts-tfit-m-power-20k.md`) →
-    asked the owner (recommend keep), no answer yet. MURO CONNECTOR 20K — LIVE 29/10 (#982, checker PASS f894746b + after-pass en
-    wording, curl ok): pods-cartridges, th/en/zh reworded, Javis's 28 pods + 5 × 50MG black pods (`_incoming/muro-conn-2910/`).
-  e CHILD CHATS (owner 29/10): price-reset (local_9abb86ef-d9d8-430a-9db3-aa01d6fa82b4) = re-price ONLY products with a new
-    black-background image in the owner's Drive at warehouse cost +6–10%, change log, then a daily price-check routine (auto-change vs
-    report = BSOT §5 question for the owner) · images-all (local_498e6752-edf6-40c3-a122-f58c0e85788d) = every product photo complete +
-    audit/fix substandard ones (resumes 3i). Both report to Friday.
+  a SAMURAI THEME — LIVE (#983 + #991, checker PASS 3b1c3f61 / 8582e5ea, curl ok). /products backdrop = owner's character
+    (`public/brand/samurai-products-bg-v2.webp`, top 1600 px) at its own aspect, 74% wide ≥1024 · min(180%, 44rem) below, opacity 0.10
+    with an 8-stop mask whose tail equals the 0.15 build — visible in the card gaps through the first row, gone by the second; no
+    header panel (designer pick). Card effects (CardCut, root layout): click = "ตัดขาด" split inside the card (`data-card-photo`),
+    nav at 150 ms · mouse hover = glint masked to the product. Owner picked both from demo https://claude.ai/artifact/132jaUiMjeM8G2oXNgmpDZ;
+    neither seen live by the owner yet (รอพี่ตรวจ 78). OPEN: card-cut-dbl-2910 = a double click during the cut does nothing (checker
+    note on #991) — verify running 29/10 night, then checker + merge. Designer taste: gap under the description ~130 px at 1440.
+  b JAVIS 29/10: answered (§18 29/10) — capacity kept, Muro OK. MURO CONNECTOR 20K LIVE (#982): pods-cartridges, Javis's 28 pods +
+    5 × 50MG black pods (`_incoming/muro-conn-2910/`).
+  e CHILD CHATS (owner 29/10, both report to Friday): price-reset (local_9abb86ef-d9d8-430a-9db3-aa01d6fa82b4) DONE — #985 re-priced the 5
+    products with a new black-background image (log `docs/ปรับราคา-2026-10-29.md`, rule in BSOT §5) · #987 SUP ZERO 22K ฿350 · routine
+    `okami24-price-check-daily` 15:00 Sonnet 5.5 medium = report + draft PR (owner OKs). images-all (local_498e6752-edf6-40c3-a122-
+    f58c0e85788d) WORKING — audit: 160 options in 23 products without a photo + 5 substandard; live: #986 nexBar CLEAR 18K · #989 Zero
+    cartridge · #990 SUP ZERO 22K (device + fruit — no box/pouch exists). Port 3412 is shared by every chat: Friday uses 3413.
   c SEO side chat seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): "pod system" did not drop (4–5); "pod" dipped 21–25/10
     after the pod-kits merge, back at 6.6 on 26/10; 28 d clicks 257 → 710. Proposals, none built (re-read 01–05/11 · request indexing
     for 3 guides = owner OK). Report `.claude/worktrees/sad-nash-5bf72f/_incoming/seo-gsc-2910/gsc-read-2910.md`.
@@ -399,3 +397,10 @@ Central rules repo: adding a project = edit key A, never re-make it.
 Thai market signals with an estimate, sources + "estimate" in the code comment — the only task where the researcher may guess.
 
 **Homepage (owner 20–21/10, round hero-2010):** hero = the dark ribbons stage, light lines in the shop orange leaning a little to the logo red — never green ("เอาแค่ความลื่นและมิติ") · the four hero slots = strong BRANDS ("ทาง 1"): UWELL Caliburn G5 · VOOPOO ARGUS G4 (not P3: square body) · SALTHUB M Switch · IQOS ILUMA i ONE (Friday's pick); tabs name the brand · desktop products LIE across the stage using the product's OWN card photo rotated (AI re-renders rejected: "บิดๆ เบี้ยวๆ"), calm drift over a warm floor shadow; phones keep the standing card photo · desktop hero (owner 21/10, round homepage upgrade, Artefakt direction) = the 4 slots as CARDS, "การ์ด 4 ชิ้นโอเค" — staggered overlapping layers (#679) + on hover the card lifts and the others blur (#683; a level row and a spread deck were tried and dropped 21/10); the lattice-of-squares background is rejected ("ฉากหลังตาราง … ไม่เอา") · the scroll flow light below the hero = code kept, switched OFF (`HOME_FLOW = false` in `src/data/home-hero.ts`, #672 — "เก็บเข้าคลังไว้ไม่เปิดใช้") · wide rails bleeding right = rejected (#658) · no "ขายดี" / bestseller wording anywhere on the homepage (no sales figures).
+
+**Samurai theme on /products (owner 29/10, chat):** the character runs from the page top and fades long and slow — behind the
+first card row, gone by the second ("ลึกและยาวมากกว่านี้ … หลังการ์ดสินค้าซัก 1-2 แถว") · strength 12–15% (0.25 = "ชัดไป") · no grey header
+panel on /products (designer pick, owner asked) · the card cut = small/short/sharp/luxurious, red or theme orange — still being developed (owner: "ยังไม่ค่อยโอเค").
+**Answered 29/10 (owner, chat):** capacity stays as the site has it — M Bar 9K shows none (Javis's "14 ml" not added), TFIT M Power 20K 18 ml ·
+Muro Connector 20K (pods, Javis's photos) OK · SUP ZERO 22K price = the price printed on its new image · daily price check 15:00, Sonnet 5.5 medium ·
+option photos where all flavours share one body = device + that flavour's box/pouch if we have one (cheapest), else + its fruit.
