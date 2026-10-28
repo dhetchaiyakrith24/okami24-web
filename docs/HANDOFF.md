@@ -10,20 +10,23 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
+Rewritten 29/10 ~03:00 (chat "Shipnity live", moved at ~87% context). Older = `git show 464b7f64:docs/HANDOFF.md` §16.
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 28/10 ~22:00 = 1fe28194+ (hourly stock routine PAUSED by the owner 28/10).
-  All work live (git log). CART IS ON. No open PRs of this chat.
-2 DONE 28/10 — owner's 28/10 list LIVE (round files: `git show logo-q6-2710:docs/rounds/รอบงานพี่-28-10.txt` · …/รอบโลโก้ใหม่-27-10.txt):
-  A #960 (checker PASS 84808bf6 round 3): two-word model names on one line (MODEL_NAMES, owner OK "G3 Pro แก้เลยครับ" + 【แตะได้】
-    "ได้ เขียนเลย") · cart suggestions = like the cart (round-robin across cart lines; a part line gets only what fits + its own make)
-    + 4 seats kept for shop picks/leads, max 1 card of the other family (vape vs heat-not-burn) · /staff boxes ออเดอร์ · ตรวจสลิป ·
-    Okami dev (new /staff/dev).
-  B #961 (checker PASS 94cd2fb4 round 3): samurai character on the paid thank-you card (band on TOP at every width — Friday's
-    deviation from the designer's "right side from lg": red OKami24 sat on the red moon at 1440) + 404 · empty cart moon + brush ·
-    red slash at add-to-cart (on the cart button) · order placed (150 px) · paid (under the face, at the band's low edge), once per
-    event per tab, none on reduced motion · "สินค้าพร้อมส่ง" only for signed-in members (menus + /products button).
-  Evidence `_incoming/chk-2810/` (shots · scripts · PR bodies). Owner has not looked yet [รอเจ้าของ].
+1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:00 = 82c6405d (#974) + this docs PR. All live. CART IS ON.
+  No open PRs. Hourly stock routine DELETED — stock is live from Shipnity (3u below).
+  DONE 28–29/10 (all checker PASS, all live): #962 live stock + emptied sold-out list · #963 Excel +6 columns · #967 cart cap at
+  the live count (owner "Cap it", §18 Stock) · #969 stock light in Okami dev + LINE alert · #971 new-product alert (option A) ·
+  #974 INFY 20K Grape Aloe / Apple Aloe / Peach photos from the importer's real posts (Grape Lychee kept: render was wrong).
+  STOCK VERIFIED 29/10 02:30: order-create picker (all 7 pages, 764 options) vs live /api/stock = 738/738 codes agree; the
+  product-list page of Shipnity is NOT a stock source (owner: check via /order/create only).
+  NEXT (owner 29/10): (a) split Muro Connector's 5,254 orders/month (29/09–29/10, "6 ร้านค้าที่เชื่อมต่อ") per shop — owner
+  wants the per-shop totals only ("รู้เขารู้เรา"); the product page splits by channel only, not shop; seen sellers PEPO,
+  LINE ELM; try Shipnity's order list filtered per shop / Excel export, totals only, no customer data in reports.
+  (b) cancel test order #0021 on /staff — waits for the owner's word ("ยกเลิก"), asked 29/10.
+  (c) INFY notes: the 3 new photos keep a coloured base reflection like the real ones (v2 bases flat) — owner's eye;
+  scripts/process-images.map.json still names the deleted infy -v2 aloevera/peach files.
+2 DONE 28/10 (owner's list, #960 model names + cart suggestions + /staff boxes · #961 samurai + slashes): `git log` + round
+  files under tag logo-q6-2710; evidence `_incoming/chk-2810/`. Owner has not looked yet [รอเจ้าของ].
   api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (Shipnity link). SEO next (14 legacy product articles,
   SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
 3 NEXT AFTER A + B (owner 28/10): NEW ARRIVALS on the homepage, automatic — no listing date exists in the data. Plan: a
@@ -101,6 +104,7 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here. Status page for the owner's phone =
   §17 "Owner status page".
 5 open / dated:
+  - 04/11 tune the stock light's red rule (3 h after an order sent with no push) from a week of real first_sent_at vs product PUTs.
   - 01/11 GSC read (rows 9–21, 23) then 15/11 · 10/12 · 02/11 B5 verdict (item 3 f) · Search Console 2–4 weeks
     after 12/10: no okami-24.com URL shows instead of .store.
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
