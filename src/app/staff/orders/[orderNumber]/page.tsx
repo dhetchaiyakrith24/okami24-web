@@ -12,6 +12,15 @@ import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } fr
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
 import { staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
+import { warehouseChange } from "@/lib/woo/order-events";
+
+const WAREHOUSE_CHANGE_TEXT: Record<string, string> = {
+  cancelled: "คลังยกเลิกออเดอร์นี้ใน Shipnity",
+  deleted: "คลังลบออเดอร์นี้ใน Shipnity",
+  trash: "คลังลบออเดอร์นี้ใน Shipnity",
+  refunded: "คลังคืนเงิน / ยกเลิกออเดอร์นี้ใน Shipnity",
+  failed: "คลังแจ้งว่าออเดอร์นี้ไม่สำเร็จใน Shipnity",
+};
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
@@ -231,6 +240,7 @@ export default async function StaffOrderPage({
   // Shipnity link (owner 28/10): the button shows once staff approved where Shipnity takes orders (/staff/shipnity).
   const shipnity = shipnityReady();
   const sent = sendState(order.id);
+  const warehouse = warehouseChange(order.id);
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -251,6 +261,15 @@ export default async function StaffOrderPage({
       )}
       {done && done in DONE_TEXT && (
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
+      )}
+
+      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. The order's
+          status here is not changed by it: staff call the customer and the warehouse's admin first. */}
+      {warehouse && (
+        <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm leading-relaxed text-foreground">
+          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} — คุยกับแอดมินคลัง
+          แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)
+        </p>
       )}
 
       {/* An out-of-stock problem still open IS the next step (designer 26/10): shown first, before any ship button. */}
