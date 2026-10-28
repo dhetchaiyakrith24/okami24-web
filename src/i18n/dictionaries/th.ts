@@ -145,6 +145,8 @@ export const th: Dictionary = {
     indexDescription: "รายการเต็มทุกหมวด กดเปิดหมวดที่สนใจ แล้วเข้าไปดูสเปกได้ทุกรุ่น",
     indexViewAll: "เปิดหน้ารวมสินค้า →",
     typeViewAll: "ดูทั้งหมด {n} รุ่น",
+    newTitle: "สินค้าเข้าใหม่",
+    newDesc: "รุ่นที่เพิ่งลงร้านล่าสุด เรียงจากใหม่ไปเก่า",
     indexOpenCategory: "เปิดหน้าหมวดนี้ →",
   },
   search: {

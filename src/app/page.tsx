@@ -12,6 +12,7 @@ import { getCatalogItem } from "@/lib/catalog-index";
 import { getCategory } from "@/data/categories";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { CategoryNav } from "@/components/home/CategoryNav";
+import { HomeNewArrivals } from "@/components/home/HomeNewArrivals";
 import { HomeTypeSection } from "@/components/home/HomeTypeSection";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { CompareCTA } from "@/components/home/CompareCTA";
@@ -119,6 +120,8 @@ export default function Home() {
         {HOME_FLOW ? <HomeFlow /> : null}
         <BrandMarquee />
         <CategoryNav />
+        {/* Owner 29/10: the newest listed models, above the type rows (src/lib/new-arrivals.ts). */}
+        <HomeNewArrivals />
 
         {/* Round "หน้าแรก hero" (owner 20/10 ~03:40): the page is organised by product TYPE, not around one
             line — a section per hero tab, each with every product of the type as the shop's own cards

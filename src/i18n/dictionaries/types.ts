@@ -141,6 +141,9 @@ export interface Dictionary {
     indexViewAll: string;
     /** Round "หน้าแรก hero" (owner 20/10): the type sections' phone button — "{n}" = models in the type. */
     typeViewAll: string;
+    /** Owner 29/10: the "new in" row under the category bar — the newest listed models (src/lib/new-arrivals.ts). */
+    newTitle: string;
+    newDesc: string;
     /** …and the link inside each collapsible box of the full index, to that category's page. */
     indexOpenCategory: string;
   };
