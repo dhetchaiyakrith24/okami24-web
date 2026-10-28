@@ -1,4 +1,5 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { after, NextResponse, type NextRequest } from "next/server";
+import { recordOrderUpdates } from "@/lib/woo/order-events";
 import { SITE_URL } from "@/lib/seo";
 import { handle } from "@/lib/woo/api";
 import { wooCatalog } from "@/lib/woo/catalog";
@@ -68,6 +69,9 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     orders: keyId !== null ? { list: () => sentOrders().map((o) => wooOrderJson(o, SITE_URL)) } : NO_ORDERS,
   });
   for (const w of res.writes) saveStockReport(w.sku, w.quantity, w.stockStatus);
+  // Shipnity changed an order (e.g. cancelled — out of stock): record it and alert the team on LINE after answering.
+  const updates = res.orderUpdates ?? [];
+  if (updates.length > 0) after(() => recordOrderUpdates(updates));
 
   logCall({
     method: request.method,

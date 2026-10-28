@@ -60,6 +60,14 @@ export function recentCalls(limit = 100): LogRow[] {
   return getDb().prepare("SELECT * FROM woo_api_log ORDER BY id DESC LIMIT ?").all(limit) as LogRow[];
 }
 
+/** Every call that is not about products (orders, webhooks, settings, unknown paths) — a stock run of 700+ writes can no
+ *  longer push an order cancellation off the page (owner 28/10). */
+export function recentOtherCalls(limit = 100): LogRow[] {
+  return getDb()
+    .prepare("SELECT * FROM woo_api_log WHERE path NOT LIKE '/wp-json/wc/v_/products%' ORDER BY id DESC LIMIT ?")
+    .all(limit) as LogRow[];
+}
+
 export interface StockReport {
   quantity: number | null;
   stockStatus: string | null;
