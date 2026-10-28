@@ -7,12 +7,15 @@ import { lineConfigured, pushText } from "@/lib/line/client";
 import { groupForRole } from "@/lib/line/groups";
 import { SITE_URL } from "@/lib/seo";
 import { listKeys } from "./keys";
+import { WAREHOUSE_NEW } from "@/data/stock/warehouse-new";
+import { alertKey, formatNewProductsAlert, unannounced } from "./new-products-rules";
 import { alertFor, formatFeedAlert, formatFeedRecovered, judgeFeed, LOOKBACK_HOURS, type FeedHealth, type FeedState } from "./watch-rules";
 
 /**
  * The stock watch (owner 28/10, watch-rules.ts): the light Okami dev shows, and a sweep every 10 minutes that tells the
  * "OKM Order" LINE group once when the light turns red and once when it comes back. The last light is kept in a small
  * file on the data disk (not the database), so a deploy or restart never repeats an alert. Never throws.
+ * The same sweep announces new warehouse products (announceNewProducts, owner 28/10 option A).
  */
 
 const SWEEP_MS = 10 * 60_000;
@@ -60,7 +63,38 @@ function readLastState(): FeedState | null {
   }
 }
 
+const NEW_FILE = "woo-new-products.json";
+
+function readAnnounced(): Set<string> {
+  try {
+    const s = JSON.parse(fs.readFileSync(path.join(dataDir(), NEW_FILE), "utf8")) as { announced?: unknown };
+    return new Set(Array.isArray(s.announced) ? s.announced.filter((x): x is string => typeof x === "string") : []);
+  } catch {
+    return new Set();
+  }
+}
+
+/** New warehouse products (src/data/stock/warehouse-new.ts, owner 28/10 option A): one LINE message to "OKM Order" for every
+ *  entry a deploy brought that was not announced yet; remembered on the data disk only after the push went through. */
+async function announceNewProducts(): Promise<void> {
+  try {
+    const announced = readAnnounced();
+    const fresh = unannounced(WAREHOUSE_NEW, announced);
+    if (fresh.length === 0) return;
+    const groupId = lineConfigured() ? groupForRole("order") : null;
+    if (!groupId) return;
+    const result = await pushText(groupId, formatNewProductsAlert(fresh, SITE_URL));
+    if (!result.ok) return console.error(`[new-products] LINE push failed (${result.status ?? "network"}) — retry next sweep`);
+    for (const e of fresh) announced.add(alertKey(e));
+    fs.writeFileSync(path.join(dataDir(), NEW_FILE), JSON.stringify({ announced: [...announced] }));
+    console.log(`[new-products] told LINE about ${fresh.length}: ${fresh.map(alertKey).join(", ")}`);
+  } catch (err) {
+    console.error(`[new-products] FAILED — ${err instanceof Error ? err.message : String(err)}`);
+  }
+}
+
 async function sweep(reason: string): Promise<void> {
+  await announceNewProducts();
   try {
     const health = feedHealth();
     const prev = readLastState();
