@@ -1955,7 +1955,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Muro SC 8000 กับ Connector 20K ต่างกันยังไง",
           paragraphs: [
-            "สองรุ่นนี้ใช้งานต่างกัน Muro SC 8000 เป็นพอตใช้แล้วทิ้ง แกะแล้วสูบได้เลย ส่วน [Muro Connector 20K](/products/muro-connector-20k) เป็นหัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ ต้องใช้คู่กับเครื่อง Muro Creator หรือ RELX Creator ถ้ามีเครื่องอยู่แล้วและสูบจัด Connector 20K ก็เป็นอีกรุ่นที่น่าดู",
+            "สองรุ่นนี้ใช้งานต่างกัน Muro SC 8000 เป็นพอตใช้แล้วทิ้ง แกะแล้วสูบได้เลย ส่วน [Muro Connector 20K](/products/muro-connector-20k) เป็นหัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ ต้องใส่กับตัวเครื่อง Creator ของ Muro หรือของ RELX ถ้ามีตัวเครื่องอยู่แล้วและสูบจัด Connector 20K ก็เป็นอีกรุ่นที่น่าดู",
           ],
         },
       ],

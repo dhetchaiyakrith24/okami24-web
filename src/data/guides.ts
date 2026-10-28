@@ -2410,7 +2410,7 @@ const allGuides: Guide[] = [
       {
         heading: "Muro Connector 20K ใช้คู่กับเครื่องไหน",
         paragraphs: [
-          "[Muro Connector 20K](/products/muro-connector-20k) เป็นหัวพอตบรรจุสำเร็จที่ผู้ผลิตทำมาให้ใช้กับเครื่อง Muro Creator และทางร้านยืนยันจากของจริงที่มีอยู่ว่าใส่กับตัวเครื่อง RELX Creator ได้ ถ้าใช้ RELX Creator อยู่แล้ว บนหน้าสินค้าของเว็บเรามีหัว Muro Connector ให้ดู 33 กลิ่น",
+          "[Muro Connector 20K](/products/muro-connector-20k) เป็นหัวพอตบรรจุสำเร็จที่ผู้ผลิตทำมาให้ใช้กับตัวเครื่อง Creator ของ Muro และทางร้านยืนยันจากของจริงที่มีอยู่ว่าใส่กับตัวเครื่อง Creator ของ RELX ได้ด้วย ถ้าใช้ RELX Creator อยู่แล้ว บนหน้าสินค้าของเว็บเรามีหัว Muro Connector ให้ดู 33 กลิ่น",
         ],
       },
       {
