@@ -77,7 +77,9 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   28/10 night: /staff/shipnity = Shipnity pushes on every change (PUT log, all 738 codes reported); Kyoho Grape + Muro
   Watermelon are Shipnity 0 now (sold) — live is right. Excel +6 columns live (#963). Cart cap live (#967, owner "Cap it",
   §18 "Stock"): a line ≤ the live count, `shortTo` blocks checkout, unavailable lines show names. Owner asks: slip zip
-  (รอพี่ตรวจ 82) · new-product alert route (85). Stock light LIVE (#969, owner "ตามแนะนำ"): Okami dev box +
+  (รอพี่ตรวจ 82). New-product alert LIVE (#971, owner option A): the 15:00 run appends to `src/data/stock/warehouse-new.ts`
+  in the product PR → after deploy the 10-min sweep tells LINE "OKM Order" once per code:status (`woo-new-products.json`)
+  + Okami dev lists the last 10 · LINE comes after the deploy, not at the find (phone push at 15:00 unchanged). Stock light LIVE (#969, owner "ตามแนะนำ"): Okami dev box +
   row (green · amber no push 24 h · red = no key / never / an order sent > 3 h ago (48 h lookback) with no push since) ·
   sweep 10 min (instrumentation) · LINE OKM Order once into red + once on recovery, retried while the push fails · state =
   <data dir>/woo-watch.json. TUNE after ~1 week: compare real first_sent_at vs the next product PUT (woo_api_log) — the 3 h
