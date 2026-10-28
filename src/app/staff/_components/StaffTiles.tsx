@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { countByJob } from "@/lib/staff/orders";
 import { TODO_JOBS } from "@/lib/staff/jobs";
-import { recentCalls } from "@/lib/woo/store";
-import { WAREHOUSE_STOCK_READ_ON } from "@/data/stock/warehouse-stock";
+import { feedHealth } from "@/lib/woo/watch";
+import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 
 export type StaffTab = "orders" | "slip" | "dev";
 
@@ -16,7 +16,7 @@ export type StaffTab = "orders" | "slip" | "dev";
 export function StaffTiles({ active }: { active: StaffTab }) {
   const counts = countByJob();
   const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
-  const lastCall = recentCalls(1)[0];
+  const feed = FEED_LIGHT[feedHealth().state];
   const tiles: { tab: StaffTab; href: string; label: string; line: React.ReactNode }[] = [
     {
       tab: "orders",
@@ -29,9 +29,11 @@ export function StaffTiles({ active }: { active: StaffTab }) {
       tab: "dev",
       href: "/staff/dev",
       label: "Okami dev",
+      // Owner 28/10: the Shipnity stock light, on every section page — red the moment the push stops (watch-rules.ts).
       line: (
-        <span className={lastCall && lastCall.status >= 400 ? "text-danger" : "text-foreground-dim"}>
-          สต็อก {WAREHOUSE_STOCK_READ_ON.slice(8, 10)}/{WAREHOUSE_STOCK_READ_ON.slice(5, 7)}
+        <span className={`inline-flex items-center gap-1.5 ${feed.text}`}>
+          <span aria-hidden className={`size-2 rounded-full ${feed.dot}`} />
+          สต็อก {feed.short}
         </span>
       ),
     },
