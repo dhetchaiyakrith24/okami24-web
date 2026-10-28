@@ -22,6 +22,8 @@ export interface SlashOptions {
   shadow?: boolean;
   /** A dark edge around the stroke — for a cut across a bright surface (the ember add button), where red alone sinks in. */
   dark?: boolean;
+  /** Tilt in degrees (default −14). The product-card cut is steeper (−20, owner 29/10 theme). */
+  angle?: number;
 }
 
 const NS = "http://www.w3.org/2000/svg";
@@ -34,6 +36,7 @@ export function playSlash(target: Element | null, o: SlashOptions): void {
   const cy = (o.at === "top" ? r.top : o.at === "bottom" ? r.bottom : r.top + r.height / 2) + (o.offsetY ?? 0);
   // The crescent's middle is about 0.4 of the box height (the path below), so the box is 2.5 × the stroke.
   const h = o.thickness * 2.5;
+  const tilt = `rotate(${o.angle ?? -14}deg)`;
 
   const svg = document.createElementNS(NS, "svg");
   svg.setAttribute("aria-hidden", "true");
@@ -47,7 +50,7 @@ export function playSlash(target: Element | null, o: SlashOptions): void {
     height: `${h}px`,
     zIndex: "36",
     pointerEvents: "none",
-    transform: "rotate(-14deg)",
+    transform: tilt,
     filter: o.dark
       ? "drop-shadow(0 0 1px rgba(0,0,0,0.9)) drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
       : o.shadow
@@ -71,10 +74,10 @@ export function playSlash(target: Element | null, o: SlashOptions): void {
   const total = o.draw + hold + o.fade;
   const anim = svg.animate(
     [
-      { clipPath: "inset(0 100% 0 0)", opacity: 1, transform: "rotate(-14deg)", easing: "cubic-bezier(.05,.9,.1,1)" },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-14deg)", offset: o.draw / total },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-14deg)", offset: (o.draw + hold) / total, easing: "cubic-bezier(.4,0,1,1)" },
-      { clipPath: "inset(0 0 0 0)", opacity: 0, transform: "rotate(-14deg) translateX(8%) scaleY(0.35)" },
+      { clipPath: "inset(0 100% 0 0)", opacity: 1, transform: tilt, easing: "cubic-bezier(.05,.9,.1,1)" },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: tilt, offset: o.draw / total },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: tilt, offset: (o.draw + hold) / total, easing: "cubic-bezier(.4,0,1,1)" },
+      { clipPath: "inset(0 0 0 0)", opacity: 0, transform: `${tilt} translateX(8%) scaleY(0.35)` },
     ],
     { duration: total, fill: "forwards" },
   );
