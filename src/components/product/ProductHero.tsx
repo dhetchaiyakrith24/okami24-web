@@ -226,6 +226,15 @@ export function ProductHero({
     // the option list never changes after mount, and selectOption only calls state setters
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // Live stock (owner 28/10): when the live answer arrives and the option the page opened on is now sold out, move to the
+  // first one that sells — once, so a customer who taps a sold-out chip afterwards keeps it (checker #962). Adjusted while
+  // rendering (React's "state from a previous render" pattern), not in an effect.
+  const [liveSeen, setLiveSeen] = useState(false);
+  if (!liveSeen && product !== builtProduct) {
+    setLiveSeen(true);
+    if (!startUnpicked && selectedColor?.availability === "out-of-stock") setSelectedColorId(initialOption(product.colorVariants));
+    if (!startUnpicked && selectedFlavor?.availability === "out-of-stock") setSelectedFlavorId(initialOption(product.flavorVariants));
+  }
   // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
   const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
   // Owner 22/10: the card is drawn at its options' size so the device does not shrink on the first pick (OptionScaledCard).

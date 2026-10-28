@@ -28,13 +28,17 @@ export function codeFor(slug: string, optionId?: string): string | null {
   return typeof v === "string" && v !== "check" ? v : null;
 }
 
+/** `listed` = the owner's sold-out list (sold-out.ts); a test passes its own. */
+export type ListedCheck = (slug: string, nameOrId: string, id?: string) => boolean;
+
 export function liveState(
   reports: ReadonlyMap<string, LiveReport>,
   slug: string,
   optionId?: string,
-  optionName?: string
+  optionName?: string,
+  listed: ListedCheck = isListedSoldOut
 ): LiveState | null {
-  if (optionId !== undefined && isListedSoldOut(slug, optionName ?? optionId, optionId)) return "out";
+  if (optionId !== undefined && listed(slug, optionName ?? optionId, optionId)) return "out";
   const code = codeFor(slug, optionId);
   if (!code) return null;
   const r = reports.get(code);
@@ -47,6 +51,6 @@ export function liveState(
 /** Looks up one option's live state; the server builds it from the table, tests from a Map. */
 export type LiveLookup = (slug: string, optionId?: string, optionName?: string) => LiveState | null;
 
-export function lookupFrom(reports: ReadonlyMap<string, LiveReport>): LiveLookup {
-  return (slug, optionId, optionName) => liveState(reports, slug, optionId, optionName);
+export function lookupFrom(reports: ReadonlyMap<string, LiveReport>, listed: ListedCheck = isListedSoldOut): LiveLookup {
+  return (slug, optionId, optionName) => liveState(reports, slug, optionId, optionName, listed);
 }

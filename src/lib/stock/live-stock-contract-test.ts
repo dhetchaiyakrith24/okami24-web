@@ -61,6 +61,14 @@ if (sellableLegacy) {
   check("no report keeps the build", resolveProductRef(ref, lookupFrom(new Map())).ok);
 }
 
+// The owner's list wins over any number — with a list of our own (the real list may be empty: owner 28/10 emptied it).
+if (sellableLegacy) {
+  const { slug, id, name, code } = sellableLegacy;
+  const listed = (s: string, n: string, i?: string) => s === slug && (i === id || n === name);
+  check("owner's sold-out list wins over a live 10", liveState(new Map([[code, rep(10)]]), slug, id, name, listed) === "out");
+  const ref = { origin: getCatalogItem(slug)!.origin, slug, variantId: id };
+  check("owner's list blocks checkout even with a live 10", !resolveProductRef(ref, lookupFrom(new Map([[code, rep(10)]]), listed)).ok);
+}
 if (listedEntry) {
   const entry = SHIPNITY_SKU_MAP[listedEntry.slug];
   const p = allProducts.find((x) => x.slug === listedEntry.slug);
