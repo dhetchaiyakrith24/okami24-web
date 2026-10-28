@@ -3,7 +3,7 @@ import Image from "next/image";
 /**
  * Samurai theme on /products (designer "เงาจันทร์", owner 29/10 "go, with changes"): the owner's samurai character
  * behind the top of the page — NOT boxed in the header: it starts at the page top and fades TOP → BOTTOM until it is
- * gone where the product cards begin, at half the strength of the 29/10 draft (draft 0.5 at 1440 → 0.25). On a wide
+ * gone where the product cards begin, at 0.12 opacity (owner 29/10: the half-strength 0.25 was still "ชัดไป" → 10–15%). On a wide
  * screen it sits on the right and also fades toward the title; on a phone it spans the width behind the header.
  * The petals are the ones already in the owner's picture. Decorative only: no alt text, never catches a tap.
  * Parent = a `relative isolate` wrapper (this layer is z −1 inside it). The picture is the owner's file

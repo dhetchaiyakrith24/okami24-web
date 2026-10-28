@@ -286,13 +286,13 @@ html:lang(th) .label-mono:not(:lang(en)) {
 
 /* Samurai backdrop on /products (SamuraiBackdrop.tsx, owner 29/10): the layer runs from the page top to about where the
    product cards begin and the picture fades to nothing on the way down; on wide screens it is the right half and also
-   fades toward the title. Opacity = half the 29/10 draft (1440 0.5 → 0.25). */
+   fades toward the title. Opacity 0.12 at every width (owner 29/10 on the built page: "ชัดไป … เหลือ 10-15"). */
 .samurai-backdrop {
   height: 26rem;
 }
 .samurai-backdrop-figure {
   width: 100%;
-  opacity: 0.22;
+  opacity: 0.12;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 100%);
 }
@@ -305,7 +305,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
   }
   .samurai-backdrop-figure {
     width: 52%;
-    opacity: 0.25;
+    opacity: 0.12;
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%), linear-gradient(to right, transparent 0%, #000 45%);
     -webkit-mask-composite: source-in;
     mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%), linear-gradient(to right, transparent 0%, #000 45%);
