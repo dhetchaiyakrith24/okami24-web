@@ -87,4 +87,6 @@ wotofo-nexbar-18k | Pineapple Ice
 wotofo-nexbar-18k | Watermelon Dragon Fruit
 # ---- 24/10 เจ้าของสั่งปิด: ของหมดจริง แต่ Shipnity Max ยังบอก "มีของ" (ออเดอร์แรกถูกยกเลิก) — ของเข้าแล้วลบบรรทัดนี้ ----
 muro-connector-20k | Double Mint
+# ---- 28/10 Shipnity ส่งมาว่า 0 แต่เว็บยังขาย (งานอ่านสต็อกรายชั่วโมงพักอยู่) — ชั่วคราว ลบเมื่อสต็อกจาก Shipnity ขึ้นหน้าเว็บเอง ----
+zero-cartridge | Blueberry
 `;
