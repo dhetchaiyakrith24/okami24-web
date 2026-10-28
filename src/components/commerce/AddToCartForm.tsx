@@ -52,7 +52,9 @@ export function AddToCartForm({
   // double tap is dropped at the submit event itself, before React sees it (a prevented submit runs no action).
   const busy = useRef(false);
   const { dict } = useLocale();
-  const [limit, setLimit] = useState<number | null>(null);
+  // Tied to the option it was refused for: picking another flavour/colour hides it (checker #967).
+  const [refused, setRefused] = useState<{ variantId: string | null; limit: number } | null>(null);
+  const limit = refused && refused.variantId === variantId ? refused.limit : null;
 
   async function add(formData: FormData) {
     let result: Awaited<ReturnType<typeof addToCartAction>>;
@@ -61,7 +63,7 @@ export function AddToCartForm({
     } finally {
       busy.current = false;
     }
-    setLimit(!result.ok && result.limit !== undefined ? result.limit : null);
+    setRefused(!result.ok && result.limit !== undefined ? { variantId, limit: result.limit } : null);
     if (!result.ok) return;
     const rect = formRef.current?.querySelector('button[type="submit"]')?.getBoundingClientRect();
     const from = rect ? { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 } : { x: window.innerWidth / 2, y: window.innerHeight / 2 };
