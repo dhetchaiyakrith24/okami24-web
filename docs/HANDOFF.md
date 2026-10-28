@@ -12,30 +12,30 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 29/10 ~03:45 (chat "owner 29/10 list", moved at 72%).
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:30 = 55c88b2a (#977) + #980 (this handoff). CART IS ON.
-  LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 = whole owner character faded 4 sides (asset renamed samurai-404-full.webp) ·
-  slash redrawn, add slash plays on the pressed button at submit · addToCartAction lost revalidatePath("/cart") (dot 1.0–1.4 s → 0.25 s),
-  CartSuggestions refreshes /cart after an add. #978 /staff/stock "เช็คสต็อก": the cart's own answer per option + Shipnity count + copy
-  a LINE reply (resolveProductRef optional `item`; book cached 15 s).
+1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~05:45 = 63fb19da (#983). CART IS ON.
+  LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 character + slash on the pressed add button + /cart revalidate dropped (dot
+  0.25 s) · #978 /staff/stock "เช็คสต็อก" (cart answer per option + Shipnity count + LINE reply) · #982 + #983 = item 2.
   #977 NEW ARRIVALS (checker PASS ed8cb111 round 2): src/data/first-listed.ts (dates = day-by-day replay of main, `_incoming/chk-2910/
   replay.sh`) · row "สินค้าเข้าใหม่" under CategoryNav = 8 newest the cart sells at build · new-arrivals-contract-test fails on a priced
   product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand). MERGED 55c88b2a.
-  Checker notes: relx-creator-pod-20k not in the row (none sellable at build) · Foli/Vazer/Muro cards say "UNBRANDED".
+  Checker notes: relx-creator-pod-20k not in the row (none sellable at build) · Foli/Vazer/Muro cards: "UNBRANDED".
   Shipnity chat 29/10: #962–#974 live, stock verified 738/738 via /order/create. Its NEXT: (a) Muro Connector 5,254 orders/month per
   shop, totals only · (b) LINE cancel alert unseen live · (c) INFY v2 reflections; process-images.map.json names deleted infy files.
 2 OPEN (owner 29/10 list):
-  a SAMURAI THEME (owner item 2): designer = "เงาจันทร์" (character faded in the /products header, faint behind the product gallery,
-    2–4 petals, none on cart/checkout/staff/prices) + a hard card-click cut (−20°, ~350 ms, nav waits ≤150 ms). Drafts sent 29/10
-    (`_incoming/chk-2910/theme/`). OWNER ANSWERED 29/10 ~03:40 (go, with changes): background = NOT boxed
-    in the header — the character fades TOP → BOTTOM from the page top down to the product cards, at HALF today's draft strength (draft
-    1440 0.5 → ~0.25), phone the same; the cut = SMALLER, SHORT, smooth, luxurious but sharp, distinctive; orange (theme) or red.
-    NEXT = build it for real (tier B, designer once on the frames, Lighthouse 13.5 #4, checker).
-  b JAVIS via owner 29/10: file move in the Javis photo studio folder DONE 99/99 (no-clobber). M Bar 9K "14 ml" + TFIT "18 → 17 ml"
-    CONFLICT with our evidence (salthub.com states no capacity; TFIT's own spec poster says 18ML — `_incoming/sitewide-template/4/
-    facts-tfit-m-power-20k.md`) → asked the owner (recommend keep). MURO CONNECTOR 20K not started: a connector POD for the
-    MURO/RELX Creator battery (maker poster) listed as "disposables" in src/data/products/unbranded.ts → "pods-cartridges" like
-    relx-creator-pod-20k + reword th/en/zh; photos print "AMAZE YOUR NOSE" (real "AWAKE YOUR NOSE.") → Javis's 28 pods in the Javis
-    folder products/muro-connector-20k/assets/pods/ (site has 33 variant files incl. -50mg — map first); IMAGE_SPEC §7; checker.
+  a SAMURAI THEME — LIVE 29/10 (#983, checker PASS 3b1c3f61, curl ok): /products = owner's character (public/brand/samurai-products-bg.webp)
+    fading top → bottom to the first card row, opacity 0.12 every width (owner on the build: 0.25 "ชัดไป … 10-15"), header NOT boxed
+    (PageHeader `bare`; owner asked box vs no box → designer: no box — the panel rule cut the character; category/brand keep the panel).
+    Card cut on every product card site-wide (CardCut in the root layout: −20°, ≤230 px, 4 px, 310 ms, nav after 120 ms; quiet on
+    cart/checkout/staff/orders; reduced motion = none). Cut not yet seen live by the owner (รอพี่ตรวจ 78). Designer:
+    gap under the description ~130 px at 1440 (−24–32 px possible; then re-measure the 26rem layer).
+  b JAVIS via owner 29/10: file move in the Javis photo studio folder DONE 99/99. M Bar 9K "14 ml" + TFIT "18 → 17 ml" CONFLICT with our
+    evidence (salthub.com states no capacity; TFIT's poster says 18ML — `_incoming/sitewide-template/4/facts-tfit-m-power-20k.md`) →
+    asked the owner (recommend keep), no answer yet. MURO CONNECTOR 20K — LIVE 29/10 (#982, checker PASS f894746b + after-pass en
+    wording, curl ok): pods-cartridges, th/en/zh reworded, Javis's 28 pods + 5 × 50MG black pods (`_incoming/muro-conn-2910/`).
+  e CHILD CHATS (owner 29/10): price-reset (local_9abb86ef-d9d8-430a-9db3-aa01d6fa82b4) = re-price ONLY products with a new
+    black-background image in the owner's Drive at warehouse cost +6–10%, change log, then a daily price-check routine (auto-change vs
+    report = BSOT §5 question for the owner) · images-all (local_498e6752-edf6-40c3-a122-f58c0e85788d) = every product photo complete +
+    audit/fix substandard ones (resumes 3i). Both report to Friday.
   c SEO side chat seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): "pod system" did not drop (4–5); "pod" dipped 21–25/10
     after the pod-kits merge, back at 6.6 on 26/10; 28 d clicks 257 → 710. Proposals, none built (re-read 01–05/11 · request indexing
     for 3 guides = owner OK). Report `.claude/worktrees/sad-nash-5bf72f/_incoming/seo-gsc-2910/gsc-read-2910.md`.
