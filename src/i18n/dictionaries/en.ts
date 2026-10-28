@@ -131,8 +131,8 @@ export const en: Dictionary = {
     indexDescription: "The full list, by category — open one, and every model page is a tap away.",
     indexViewAll: "Open the full catalog →",
     typeViewAll: "See all {n} models",
-    newTitle: "Just in",
-    newDesc: "The latest models in the shop, newest first.",
+    newTitle: "Newest in the shop",
+    newDesc: "Models that went on the site most recently, newest first.",
     indexOpenCategory: "Open this category →",
   },
   search: {
