@@ -143,14 +143,23 @@ export function CardCut() {
   const router = useRouter();
   useEffect(() => {
     const still = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches || QUIET.test(window.location.pathname);
+    // A second click while a card is cutting (a double click) does nothing: the first click already navigates, and a second
+    // split would copy the photo while it is hidden and draw a second line (checker note on #991).
+    const cutting = new WeakSet<Element>();
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const target = e.target as Element | null;
       const card = target?.closest<HTMLAnchorElement>("a[data-card-cut]");
       if (!card || target?.closest("button") || still()) return;
+      if (cutting.has(card)) {
+        e.preventDefault();
+        return;
+      }
       const href = card.getAttribute("href");
       if (!href || !playSplit(card)) return;
       e.preventDefault();
+      cutting.add(card);
+      window.setTimeout(() => cutting.delete(card), 400);
       window.setTimeout(() => router.push(href), NAV_DELAY);
     };
     const glinting = new WeakSet<Element>();
