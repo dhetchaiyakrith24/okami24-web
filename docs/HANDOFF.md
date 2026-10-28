@@ -77,9 +77,11 @@ Rewritten 28/10 ~22:30 (owner 28/10 list + logo round CLOSED, tag logo-q6-2710).
   28/10 night: /staff/shipnity = Shipnity pushes on every change (PUT log, all 738 codes reported); Kyoho Grape + Muro
   Watermelon are Shipnity 0 now (sold) — live is right. Excel +6 columns live (#963). Cart cap live (#967, owner "Cap it",
   §18 "Stock"): a line ≤ the live count, `shortTo` blocks checkout, unavailable lines show names. Owner asks: slip zip
-  (รอพี่ตรวจ 82) · new-product alert route (85). NEXT (owner 28/10 "ตามแนะนำ"): stock watchdog — always-on status box in
-  /staff "Okami dev" (green last push · amber quiet > 24 h · red = an order went to Shipnity > 30 min ago and none of its
-  codes reported since, or the key is gone) + one LINE OKM Order alert on red and one on recovery; server sweep every 10 min. To look at: Shipnity's
+  (รอพี่ตรวจ 82) · new-product alert route (85). Stock light LIVE (#969, owner "ตามแนะนำ"): Okami dev box +
+  row (green · amber no push 24 h · red = no key / never / an order sent > 3 h ago (48 h lookback) with no push since) ·
+  sweep 10 min (instrumentation) · LINE OKM Order once into red + once on recovery, retried while the push fails · state =
+  <data dir>/woo-watch.json. TUNE after ~1 week: compare real first_sent_at vs the next product PUT (woo_api_log) — the 3 h
+  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). To look at: Shipnity's
   unauthenticated `GET /wp-json/wc/v3/orders` (401, 19:06 + 20:42 28/10) — what it is for, whether anything misses it.
   Test order #0021 (OK-20261028-281129) kept for the warehouse-cancel alert test. The new-products routine (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
