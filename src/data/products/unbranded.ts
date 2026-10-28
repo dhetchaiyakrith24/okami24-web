@@ -346,13 +346,15 @@ export const unbrandedProducts: Product[] = [
     slug: "muro-connector-20k",
     brandId: "Unbranded",
     familyId: "Muro",
-    categoryId: "disposables",
-    systemType: "disposable",
+    // 29/10 (owner via Javis): a CONNECTOR POD, not a disposable — the maker poster prints "CONNECTOR POD" + "USE WITH MURO
+    // CREATOR DEVICE" and the battery device is sold apart; RELX Creator fit = the shop's own stock (relx-creator FAQ).
+    categoryId: "pods-cartridges",
+    systemType: "pod-cartridge",
     name: "Muro Connector 20K",
     displayName: "Muro Connector 20K",
-    tagline: "A high-puff-count disposable rated for up to 20,000 puffs.",
+    tagline: "A prefilled connector pod rated for up to 20,000 puffs.",
     shortDescription:
-      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs.",
+      "A prefilled pod from the Muro \"Connector\" line, rated for up to 20,000 puffs. It clicks onto the Muro Creator device, and the shop has confirmed it also fits the RELX Creator.",
     isFlagship: false,
     // Round "clip" (2026-09-27): the "RELX Creator pod" clip of docs/SEO_LANDSCAPE.md §4 item 6, from @OKM_24 (the main
     // channel of the two that cover this pod). "LEGO" in its title is the same honeycomb-shell nickname as this record's
@@ -364,74 +366,69 @@ export const unbrandedProducts: Product[] = [
       drawStyle: "MTL/RDL",
       portability: "ultra-compact",
       beginnerFriendly: true,
-      chargingType: "Not independently confirmed",
+      chargingType: "N/A — pod only, the battery is in the device",
     },
-    // Real, watermark-free retailer photo (vapemun.com's own listing, filename "muro-lego-20k" —
-    // a retailer nickname for the honeycomb-pattern shell, not a claim of a different official
-    // product name). Device is printed "MURO" with a "Mineral Water" flavor label, matching one of
-    // this record's own 20 real flavors exactly — strong identity confidence despite the nickname.
+    // 29/10: Javis's pods (Higgsfield, from the maker's posters) replace the earlier remakes, which printed
+    // "AMAZE YOUR NOSE" (the real print is "AWAKE YOUR NOSE.") and showed 3 pod colours instead of the maker's 6.
+    // Sources and checks per file: scripts/process-images.map.json.
     assets: [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/muro-connector-20k/card-v3.webp",
-        alt: "Muro Connector 20K, Mineral Water, three-quarter view",
-        angle: "Three-quarter, isolated",
+        src: "/assets/products/muro-connector-20k/card-v4.webp",
+        alt: "Muro Connector 20K pod, Grape, three-quarter view",
+        angle: "Three-quarter, isolated, floor reflection",
         transparentBackground: true,
-        // Image-fix round 2026-09-29: sharp remake of the 179-px retailer card (owner OK); source + check in the map.
-        // Round "image-sitewide" 2026-09-30 (owner: "ไม่สวย ไม่คม ขนาดดูไม่สมมาตร"): card-v3 = a 4K remake, tilted, on the
-        // 4:5 card standard (card-v2 was on the old square canvas); new name, lesson พ6.
-        sourceName: "OKami24 render (Higgsfield) from the vapemun.com retailer photo + OKAMI's own clip",
-        sourceUrl: "https://vapemun.com/product/muro-connector-20k/",
+        sourceName: "OKami24 render (Higgsfield) from Muro's own flavour posters",
+        sourceUrl: "https://ihavevape.net/product/muro-connector-20k/",
       },
     ],
-    // Flavour photos show the printed-label side only; the card (front, honeycomb face) stays the first photo.
+    // Every flavour photo is the same pod pose (honeycomb face + printed label side); the card opens the gallery.
     openOnCardPhoto: true,
     flavorVariants: [
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-grape-v2.webp", alt: "Muro Connector 20K, Grape" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-watermelon-v2.webp", alt: "Muro Connector 20K, Watermelon" } },
-      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-double-mint-v2.webp", alt: "Muro Connector 20K, Double Mint" } },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-cola-v2.webp", alt: "Muro Connector 20K, Cola" } },
-      { id: "mix-berries", name: "Mix Berries", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-mix-berries-v2.webp", alt: "Muro Connector 20K, Mix Berries" } },
-      { id: "pineapple", name: "Pineapple", swatchHex: "#e0c93a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-pineapple-v2.webp", alt: "Muro Connector 20K, Pineapple" } },
-      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-honey-lemon-v2.webp", alt: "Muro Connector 20K, Honey Lemon" } },
-      { id: "apple-baraku", name: "Apple Baraku", swatchHex: "#7ab84a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-apple-baraku-v2.webp", alt: "Muro Connector 20K, Apple Baraku" } },
-      { id: "mineral-water", name: "Mineral Water", swatchHex: "#cfe8ee", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-mineral-water-v2.webp", alt: "Muro Connector 20K, Mineral Water" } },
-      { id: "yakult", name: "Yakult", swatchHex: "#f0e4c0", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-yakult-v2.webp", alt: "Muro Connector 20K, Yakult" } },
-      { id: "banana-strawberry", name: "Banana Strawberry", swatchHex: "#e0a05a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-banana-strawberry-v2.webp", alt: "Muro Connector 20K, Banana Strawberry" } },
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-kyoho-grape-v2.webp", alt: "Muro Connector 20K, Kyoho Grape" } },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-pink-berry-v2.webp", alt: "Muro Connector 20K, Pink Berry" } },
-      { id: "lemon-jeez", name: "Lemon Jeez", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-lemon-jeez-v2.webp", alt: "Muro Connector 20K, Lemon Jeez" } },
-      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-cool-mint-v2.webp", alt: "Muro Connector 20K, Cool Mint" } },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-blue-ice-v2.webp", alt: "Muro Connector 20K, Blue Ice" } },
-      { id: "green-tea", name: "Green Tea", swatchHex: "#7a8a4a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-green-tea-v2.webp", alt: "Muro Connector 20K, Green Tea" } },
-      { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#e08a7a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-strawberry-peach-v2.webp", alt: "Muro Connector 20K, Strawberry Peach" } },
-      { id: "vanilla-ice-cream", name: "Vanilla Ice Cream", swatchHex: "#e8d9b8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-vanilla-ice-cream-v2.webp", alt: "Muro Connector 20K, Vanilla Ice Cream" } },
-      { id: "taro-ice-cream", name: "Taro Ice Cream", swatchHex: "#9a7ab8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-taro-ice-cream-v2.webp", alt: "Muro Connector 20K, Taro Ice Cream" } },
-      // line 2 max-sync (22/10): 13 more flavours in Shipnity Max (Pod-171-21..33) — Max names. Photos (line 1, 23/10): the
-      // live way (one master per body colour + the name typeset by script), body colour from each option's vapemun.com poster;
-      // the 50MG posters all show the black pod. Sources per file: scripts/process-images.map.json.
-      { id: "green-slush", name: "Green Slush", swatchHex: "#7ac943", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-green-slush.webp", alt: "Muro Connector 20K, Green Slush" } },
-      { id: "spear-mint", name: "Spear Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-spear-mint.webp", alt: "Muro Connector 20K, Spear Mint" } },
-      { id: "yakult-orange", name: "Yakult Orange", swatchHex: "#f0a040", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-yakult-orange.webp", alt: "Muro Connector 20K, Yakult Orange" } },
-      { id: "peach-tea", name: "Peach Tea", swatchHex: "#e8a07a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-peach-tea.webp", alt: "Muro Connector 20K, Peach Tea" } },
-      { id: "fruit-punch", name: "Fruit Punch", swatchHex: "#d9405a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-fruit-punch.webp", alt: "Muro Connector 20K, Fruit Punch" } },
-      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f0a0b8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-strawberry-ice-cream.webp", alt: "Muro Connector 20K, Strawberry Ice Cream" } },
-      { id: "butterscotch", name: "Butterscotch", swatchHex: "#c9893a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-butterscotch.webp", alt: "Muro Connector 20K, Butterscotch" } },
-      { id: "chocolate-dubai", name: "Chocolate Dubai", swatchHex: "#6b4a2f", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-chocolate-dubai.webp", alt: "Muro Connector 20K, Chocolate Dubai" } },
-      { id: "grape-50mg", name: "Grape 50MG", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-grape-50mg.webp", alt: "Muro Connector 20K, Grape 50MG" } },
-      { id: "watermelon-50mg", name: "Watermelon 50MG", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-watermelon-50mg.webp", alt: "Muro Connector 20K, Watermelon 50MG" } },
-      { id: "double-mint-50mg", name: "Double Mint 50MG", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-double-mint-50mg.webp", alt: "Muro Connector 20K, Double Mint 50MG" } },
-      { id: "mix-berries-50mg", name: "Mix Berries 50MG", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-mix-berries-50mg.webp", alt: "Muro Connector 20K, Mix Berries 50MG" } },
-      { id: "yakult-50mg", name: "Yakult 50MG", swatchHex: "#f0e4c0", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-yakult-50mg.webp", alt: "Muro Connector 20K, Yakult 50MG" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-grape.webp", alt: "Muro Connector 20K pod, Grape" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-watermelon.webp", alt: "Muro Connector 20K pod, Watermelon" } },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-double-mint.webp", alt: "Muro Connector 20K pod, Double Mint" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-cola.webp", alt: "Muro Connector 20K pod, Cola" } },
+      { id: "mix-berries", name: "Mix Berries", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-mix-berries.webp", alt: "Muro Connector 20K pod, Mix Berries" } },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#e0c93a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-pineapple.webp", alt: "Muro Connector 20K pod, Pineapple" } },
+      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-honey-lemon.webp", alt: "Muro Connector 20K pod, Honey Lemon" } },
+      { id: "apple-baraku", name: "Apple Baraku", swatchHex: "#7ab84a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-apple-baraku.webp", alt: "Muro Connector 20K pod, Apple Baraku" } },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#cfe8ee", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-mineral-water.webp", alt: "Muro Connector 20K pod, Mineral Water" } },
+      { id: "yakult", name: "Yakult", swatchHex: "#f0e4c0", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-yakult.webp", alt: "Muro Connector 20K pod, Yakult" } },
+      { id: "banana-strawberry", name: "Banana Strawberry", swatchHex: "#e0a05a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-banana-strawberry.webp", alt: "Muro Connector 20K pod, Banana Strawberry" } },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-kyoho-grape.webp", alt: "Muro Connector 20K pod, Kyoho Grape" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-pink-berry.webp", alt: "Muro Connector 20K pod, Pink Berry" } },
+      { id: "lemon-jeez", name: "Lemon Jeez", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-lemon-jeez.webp", alt: "Muro Connector 20K pod, Lemon Jeez" } },
+      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-cool-mint.webp", alt: "Muro Connector 20K pod, Cool Mint" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-blue-ice.webp", alt: "Muro Connector 20K pod, Blue Ice" } },
+      { id: "green-tea", name: "Green Tea", swatchHex: "#7a8a4a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-green-tea.webp", alt: "Muro Connector 20K pod, Green Tea" } },
+      { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#e08a7a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-strawberry-peach.webp", alt: "Muro Connector 20K pod, Strawberry Peach" } },
+      { id: "vanilla-ice-cream", name: "Vanilla Ice Cream", swatchHex: "#e8d9b8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-vanilla-ice-cream.webp", alt: "Muro Connector 20K pod, Vanilla Ice Cream" } },
+      { id: "taro-ice-cream", name: "Taro Ice Cream", swatchHex: "#9a7ab8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-taro-ice-cream.webp", alt: "Muro Connector 20K pod, Taro Ice Cream" } },
+      // line 2 max-sync (22/10): 13 more flavours in Shipnity Max (Pod-171-21..33) — Max names. The 50MG posters all show the
+      // black pod, so the 50MG photos are the black pod with that flavour's own printed name (map: _incoming/muro-conn-2910/make50.js).
+      { id: "green-slush", name: "Green Slush", swatchHex: "#7ac943", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-green-slush.webp", alt: "Muro Connector 20K pod, Green Slush" } },
+      { id: "spear-mint", name: "Spear Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-spear-mint.webp", alt: "Muro Connector 20K pod, Spear Mint" } },
+      { id: "yakult-orange", name: "Yakult Orange", swatchHex: "#f0a040", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-yakult-orange.webp", alt: "Muro Connector 20K pod, Yakult Orange" } },
+      { id: "peach-tea", name: "Peach Tea", swatchHex: "#e8a07a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-peach-tea.webp", alt: "Muro Connector 20K pod, Peach Tea" } },
+      { id: "fruit-punch", name: "Fruit Punch", swatchHex: "#d9405a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-fruit-punch.webp", alt: "Muro Connector 20K pod, Fruit Punch" } },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f0a0b8", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-strawberry-ice-cream.webp", alt: "Muro Connector 20K pod, Strawberry Ice Cream" } },
+      { id: "butterscotch", name: "Butterscotch", swatchHex: "#c9893a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-butterscotch.webp", alt: "Muro Connector 20K pod, Butterscotch" } },
+      { id: "chocolate-dubai", name: "Chocolate Dubai", swatchHex: "#6b4a2f", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-chocolate-dubai.webp", alt: "Muro Connector 20K pod, Chocolate Dubai" } },
+      { id: "grape-50mg", name: "Grape 50MG", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-grape-50mg.webp", alt: "Muro Connector 20K pod, Grape 50MG" } },
+      { id: "watermelon-50mg", name: "Watermelon 50MG", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-watermelon-50mg.webp", alt: "Muro Connector 20K pod, Watermelon 50MG" } },
+      { id: "double-mint-50mg", name: "Double Mint 50MG", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-double-mint-50mg.webp", alt: "Muro Connector 20K pod, Double Mint 50MG" } },
+      { id: "mix-berries-50mg", name: "Mix Berries 50MG", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-mix-berries-50mg.webp", alt: "Muro Connector 20K pod, Mix Berries 50MG" } },
+      { id: "yakult-50mg", name: "Yakult 50MG", swatchHex: "#f0e4c0", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-yakult-50mg.webp", alt: "Muro Connector 20K pod, Yakult 50MG" } },
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "Up to 20,000", sourceStatus: "verified" }],
     features: [],
     compatibility: [],
-    whoIsThisFor: ["Vapers looking for a high-puff-count disposable with an extensive flavor lineup."],
+    whoIsThisFor: ["Muro Creator or RELX Creator owners who want a high-puff pod with a wide flavour lineup."],
     faqs: [],
-    relatedProductSlugs: ["muro-space-15k", "muro-3ml", "muro-sc-8000", "muro-freebase", "muro-salt-nic"],
-    sourceUrls: ["https://vapemun.com/"],
+    relatedProductSlugs: ["relx-creator", "muro-3ml", "muro-space-15k", "muro-sc-8000", "muro-freebase", "muro-salt-nic"],
+    sourceUrls: ["https://ihavevape.net/product/muro-connector-20k/", "https://vapemun.com/"],
   },
   {
     id: "foli-bar-15k",
