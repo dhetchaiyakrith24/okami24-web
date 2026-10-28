@@ -125,6 +125,8 @@ export const zh: Dictionary = {
     indexDescription: "按分类排好的完整清单，打开分类，每款产品页都点得到。",
     indexViewAll: "打开产品总览 →",
     typeViewAll: "查看全部 {n} 款",
+    newTitle: "新品上架",
+    newDesc: "店里最新上架的型号，从新到旧排列。",
     indexOpenCategory: "打开此分类 →",
   },
   search: {
