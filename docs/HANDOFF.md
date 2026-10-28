@@ -23,11 +23,8 @@ Rewritten 28/10 ~18:30 (daytime chat move at 595k tokens / 60%: two batches stil
     f30d985e staff: boxes on top ออเดอร์ · ตรวจสลิป · Okami dev (new /staff/dev: Shipnity · stock read · ordering on/off read-only ·
       Excel · LINE groups); folded "อื่น ๆ" row gone; log out = quiet line; admin manuals updated (designer spec 28/10 — Friday picked
       the designer's recommendations: "ตรวจสลิป" = the LINE slip tool + a link to web orders waiting; H1 "งาน · N" kept; name "Okami dev").
-    Proof so far: before = `_incoming/wt-2810-base` build of 3b30d444 (server 3440) · after = wt-2810 build (server 3441) ·
-      wordbreak scan before DONE `_incoming/wb-2810-before/` (354 = 177 pages × 2) · after scan was RUNNING into `_incoming/wb-2810-after/`
-      (check it finished; rerun if < 354 files). Servers 3440/3441: stop by PID (netstat) if still up. NEXT: diff the two scans,
-      visible-text before/after on /cart (+ a seeded cart: argus-g4 · m-bar-10k · caliburn-g3), /staff · /staff/slip · /staff/dev (staff
-      login needs OKAMI24_STAFF_PASSWORD on the test server), shots 390+1440, gate → checker → draft PR → merge.
+    Proof DONE 28/10 evening: wordbreak diff 354 pairs = 0 new (`_incoming/wt-2810-wbdiff.md`) · shots before/after cart (3 items) +
+      /staff · /staff/slip · /staff/dev at 390+1440 = `_incoming/chk-2810/shots/` (scripts in `_incoming/chk-2810/`). NEXT: gate → checker → merge.
   B `samurai-2810` (worktree `_incoming/wt-2810b`, head df4b6a2c on 3b30d444):
     6266e84a logo round batch 2 — owner 28/10 "ได้ ตามร่าง" (designer spec: character ONLY on the paid thank-you card + 404, cut at the
       shoulder; empty cart = faint moon + brush; red slash (src/components/brand/slash.ts) at add-to-cart · order placed · paid, once per
@@ -39,6 +36,8 @@ Rewritten 28/10 ~18:30 (daytime chat move at 595k tokens / 60%: two batches stil
       menu signed-out vs signed-in (13.5 head), /products button signed-out vs in. BIG (cart/order files) → full set + designer Owner-eye.
   api-talk side chat local_5d63a556-9f34-4123-848b-13408838633d stays open (warehouse has NOT typed the keys: Shipnity calls get 401 —
   normal). SEO next (14 legacy product articles, SALTHUB first) = notes `_incoming/seo-push-2710/seo-push-2710.md` (not started).
+3o OPEN ROUND owner 28/10 list = `docs/rounds/รอบงานพี่-28-10.txt` (batches A + B above; its 【แตะได้】 thai-typography.ts = owner OK
+  in chat 28/10 "ได้ เขียนเลย") — remove this line when B is live.
 3 NEXT AFTER A + B (owner 28/10): NEW ARRIVALS on the homepage, automatic — no listing date exists in the data. Plan: a
   `first-listed` date per product (seeded once from git history, then verify-catalog fails when a published slug has none, so every
   listing PR stamps it) → a homepage "สินค้าใหม่" row of the newest sellable products (designer first, 13.5 #6). Tell the owner the plan.
