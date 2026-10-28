@@ -30,7 +30,10 @@ export async function addToCartAction(formData: FormData): Promise<{ ok: boolean
   const ref: ProductRef = { origin: getCatalogItem(slug)?.origin ?? "product-master", slug, variantId: readVariantId(formData) };
   const quantity = Number(formData.get("quantity") ?? "1") || 1;
   const result = await addToCart(ref, quantity);
-  revalidatePath("/cart");
+  // No revalidatePath("/cart") here (owner 29/10 "รู้สึกหน่วง"): called from a product page it wiped the browser's whole
+  // route cache, so the page re-rendered and re-fetched every link on it before this answer reached the cart button
+  // (~1 s measured on the test build). /cart reads cookies, so it is rendered fresh on every visit anyway (router cache
+  // for dynamic pages = 0 s since Next 15). The quantity/remove actions below run ON /cart and keep theirs.
   return { ok: result.ok, count: await getCartCount(), ...(!result.ok && result.limit !== undefined ? { limit: result.limit } : {}) };
 }
 

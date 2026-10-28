@@ -64,9 +64,12 @@ export type ResolveResult =
 /** `live` (Shipnity link step 4, owner 28/10): the warehouse's live stock — the server passes `liveLookup()`
  *  (src/lib/stock/live.ts); left out (tests, scripts) = the build-time stock alone, exactly as before. A live "in" sells an
  *  option the build marked out; a live "out" blocks one the build sells; no answer keeps the build. The owner's sold-out
- *  list is inside the live answer, so it still wins. */
-export function resolveProductRef(ref: ProductRef, live?: LiveLookup): ResolveResult {
-  const catalogItem = getCatalogItem(ref.slug);
+ *  list is inside the live answer, so it still wins.
+ *  `item` (staff stock book, 29/10): the caller already holds this slug's entry from `allCatalogItems()` — passing it skips
+ *  `getCatalogItem`, which rebuilds the whole catalog on every call (the book asks ~1,000 times; checker #978 measured
+ *  1.6 s that also stalled the cart). It must be the entry for `ref.slug`; the cart and checkout never pass it. */
+export function resolveProductRef(ref: ProductRef, live?: LiveLookup, item?: CatalogItem): ResolveResult {
+  const catalogItem = item?.slug === ref.slug ? item : getCatalogItem(ref.slug);
   if (!catalogItem) {
     return { ok: false, reason: "not-found", detail: `No catalog entry for slug "${ref.slug}".` };
   }
