@@ -10,7 +10,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 29/10 ~03:30 (chat "owner 29/10 list", moved at 72% context; the Shipnity chat's 03:00 notes kept in 1).
+Rewritten 29/10 ~03:45 (chat "owner 29/10 list", moved at 72%).
 
 1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:30 = 55c88b2a (#977) + #980 (this handoff). CART IS ON.
   LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 = whole owner character faded 4 sides (asset renamed samurai-404-full.webp) ·
@@ -19,15 +19,17 @@ Rewritten 29/10 ~03:30 (chat "owner 29/10 list", moved at 72% context; the Shipn
   a LINE reply (resolveProductRef optional `item`; book cached 15 s).
   #977 NEW ARRIVALS (checker PASS ed8cb111 round 2): src/data/first-listed.ts (dates = day-by-day replay of main, `_incoming/chk-2910/
   replay.sh`) · row "สินค้าเข้าใหม่" under CategoryNav = 8 newest the cart sells at build · new-arrivals-contract-test fails on a priced
-  product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand). If still open: checks green →
-  self-merge-check --pr 977 → merge --match-head-commit ed8cb111 → curl /. Checker notes: relx-creator-pod-20k not in the row (no
-  sellable option at build) · Foli/Vazer/Muro cards show "UNBRANDED" (old ProductCard behaviour).
+  product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand). MERGED 55c88b2a.
+  Checker notes: relx-creator-pod-20k not in the row (none sellable at build) · Foli/Vazer/Muro cards say "UNBRANDED".
   Shipnity chat 29/10: #962–#974 live, stock verified 738/738 via /order/create. Its NEXT: (a) Muro Connector 5,254 orders/month per
   shop, totals only · (b) LINE cancel alert unseen live · (c) INFY v2 reflections; process-images.map.json names deleted infy files.
 2 OPEN (owner 29/10 list):
   a SAMURAI THEME (owner item 2): designer = "เงาจันทร์" (character faded in the /products header, faint behind the product gallery,
     2–4 petals, none on cart/checkout/staff/prices) + a hard card-click cut (−20°, ~350 ms, nav waits ≤150 ms). Drafts sent 29/10
-    (`_incoming/chk-2910/theme/`); delete untracked _incoming/wt-2810b/public/brand/draft-moon.webp. Owner has NOT chosen (status page).
+    (`_incoming/chk-2910/theme/`). OWNER ANSWERED 29/10 ~03:40 (go, with changes): background = NOT boxed
+    in the header — the character fades TOP → BOTTOM from the page top down to the product cards, at HALF today's draft strength (draft
+    1440 0.5 → ~0.25), phone the same; the cut = SMALLER, SHORT, smooth, luxurious but sharp, distinctive; orange (theme) or red.
+    NEXT = build it for real (tier B, designer once on the frames, Lighthouse 13.5 #4, checker).
   b JAVIS via owner 29/10: file move in the Javis photo studio folder DONE 99/99 (no-clobber). M Bar 9K "14 ml" + TFIT "18 → 17 ml"
     CONFLICT with our evidence (salthub.com states no capacity; TFIT's own spec poster says 18ML — `_incoming/sitewide-template/4/
     facts-tfit-m-power-20k.md`) → asked the owner (recommend keep). MURO CONNECTOR 20K not started: a connector POD for the
@@ -39,7 +41,7 @@ Rewritten 29/10 ~03:30 (chat "owner 29/10 list", moved at 72% context; the Shipn
     for 3 guides = owner OK). Report `.claude/worktrees/sad-nash-5bf72f/_incoming/seo-gsc-2910/gsc-read-2910.md`.
   d Leftovers: /staff/stock page comment "read fresh" (now 15 s cache) · LESSONS พ54 (backgrounded commit hid a hook) + พ55
     (dropping revalidatePath = grep every caller) written 29/10.
-  · Stock-count verdict 02/11 · Owner 28/10: header approved · header logo stays · "31 ช่อง" = the shop's 3 YouTube channels.
+  · Stock-count verdict 02/11 · Owner 28/10: header approved, logo stays, "31 ช่อง" = 3 YouTube channels.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
