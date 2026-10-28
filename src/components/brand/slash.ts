@@ -14,8 +14,10 @@ export interface SlashOptions {
   draw: number;
   hold?: number;
   fade: number;
-  /** Where on the target: its centre, or its top edge. */
-  at?: "center" | "top";
+  /** Where on the target: its centre, its top edge or its bottom edge. */
+  at?: "center" | "top" | "bottom";
+  /** Moves the stroke's centre up (negative) or down from that point, in px. */
+  offsetY?: number;
   shadow?: boolean;
 }
 
@@ -26,7 +28,7 @@ export function playSlash(target: Element | null, o: SlashOptions): void {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const r = target.getBoundingClientRect();
   const cx = r.left + r.width / 2;
-  const cy = o.at === "top" ? r.top : r.top + r.height / 2;
+  const cy = (o.at === "top" ? r.top : o.at === "bottom" ? r.bottom : r.top + r.height / 2) + (o.offsetY ?? 0);
   // The crescent's middle is about 0.4 of the box height (the path below), so the box is 2.5 × the stroke.
   const h = o.thickness * 2.5;
 

@@ -143,17 +143,19 @@ export function OrderStatusView({
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
   const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
   const runNumber = formatRunNumber(order.runNumber);
-  const thanksRef = useRef<HTMLDivElement>(null);
   const numberRef = useRef<HTMLDivElement>(null);
+  const bandRef = useRef<HTMLDivElement>(null);
   // Logo round batch 2 (owner 28/10): one red slash when the order is first seen placed, one when first seen paid.
-  // The paid slash waits for the card's own entrance (okami-thanks-in, 80 + 420 ms).
+  // The paid slash waits for the card's own entrance (okami-thanks-in, 80 + 420 ms). It cuts across the low edge of the
+  // picture band, under the face (checker #961: across the card's centre it ran through the character's eyes at 390), and
+  // the placed one stays short enough to clear the "หมายเลขคำสั่งซื้อ" label at 1440.
   useEffect(() => {
     const play = () => {
       if (paidOrLater) {
-        const width = thanksRef.current?.offsetWidth ?? 400;
-        playSlashOnce(`okami-slash:${order.orderNumber}:paid`, thanksRef.current, { length: Math.round(width * 0.85), thickness: 4, draw: 260, hold: 120, fade: 320, shadow: true });
+        const width = bandRef.current?.offsetWidth ?? 400;
+        playSlashOnce(`okami-slash:${order.orderNumber}:paid`, bandRef.current, { length: Math.round(width * 0.5), thickness: 4, draw: 260, hold: 120, fade: 320, shadow: true, at: "bottom", offsetY: -26 });
       } else if (order.status === "pending_payment") {
-        playSlashOnce(`okami-slash:${order.orderNumber}:placed`, numberRef.current, { length: window.innerWidth >= 1024 ? 220 : 160, thickness: 3, draw: 200, fade: 280, at: "top" });
+        playSlashOnce(`okami-slash:${order.orderNumber}:placed`, numberRef.current, { length: 150, thickness: 3, draw: 200, fade: 280, at: "top" });
       }
     };
     const t = window.setTimeout(play, paidOrLater ? 520 : 120);
@@ -173,8 +175,8 @@ export function OrderStatusView({
             and this column is max-w-xl, so a picture beside the text put the red "OKami24" on the red moon at 1440 (Friday's
             Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
-          <div ref={thanksRef} className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-            <div className="relative h-[200px] w-full lg:h-[240px]">
+          <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
+            <div ref={bandRef} className="relative h-[200px] w-full lg:h-[240px]">
               <Image
                 src="/brand/samurai-thanks-wide.webp"
                 alt=""
