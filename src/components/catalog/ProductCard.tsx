@@ -42,7 +42,7 @@ export function ProductCard({ product }: { product: Product }) {
       data-card-cut=""
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-all duration-300 hover:-translate-y-1 hover:border-foreground-dim"
     >
-      <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6 max-lg:p-3">
+      <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6 max-lg:p-3" data-card-photo="">
         {/* max-lg:z-10 — with the tighter phone padding the absolutely-positioned photo (next/image
             fill) painted over the option-count badge (designer, 2026-09-08); the heart already had z-10. */}
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5 max-lg:left-2 max-lg:top-2 max-lg:z-10">
