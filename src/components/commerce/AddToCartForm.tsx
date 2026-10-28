@@ -4,6 +4,7 @@ import { useRef, useState, type ReactNode } from "react";
 import { useFormStatus } from "react-dom";
 import { addToCartAction } from "@/app/cart/actions";
 import { Button } from "@/components/ui/Button";
+import { playSlash } from "@/components/brand/slash";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { cn } from "@/lib/utils";
 
@@ -75,8 +76,15 @@ export function AddToCartForm({
       ref={formRef}
       action={add}
       onSubmit={(e) => {
-        if (busy.current) e.preventDefault();
-        else busy.current = true;
+        if (busy.current) {
+          e.preventDefault();
+          return;
+        }
+        busy.current = true;
+        // Owner 29/10 "รู้สึกหน่วง": the cut answers the press itself, before the server does — it says "pressed", not
+        // "added" (a refused add still changes nothing else on screen; the count moves only on the server's yes).
+        const pressed = formRef.current?.querySelector('button[type="submit"]');
+        if (pressed) playSlash(pressed, { length: Math.max(120, pressed.getBoundingClientRect().width * 1.25), thickness: 6, draw: 90, hold: 70, fade: 220, dark: true });
       }}
       className={className}
     >
