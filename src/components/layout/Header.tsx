@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { useSignedIn } from "@/components/account/use-signed-in";
 
 /** `orderingEnabled` comes from the root layout (src/lib/commerce/ordering-mode.ts — owner
  *  2026-09-07): while online ordering is off, the cart icon and the mobile-menu cart link are not
@@ -24,19 +25,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   // Member sign-in (owner 26/10: "อยากให้มีคำว่า 'เข้าสู่ระบบ' เห็นชัดบนหัวเว็บทุกหน้า"). Pages are prerendered and the layout
   // never reads cookies, so the header asks after load whether this browser is signed in (same pattern as the cart count)
   // and then reads "บัญชีสมาชิก" instead. Until it answers — or if it fails — the bar shows "เข้าสู่ระบบ".
-  const [signedIn, setSignedIn] = useState(false);
-  useEffect(() => {
-    let alive = true;
-    fetch("/api/account/status", { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d: { signedIn?: boolean } | null) => {
-        if (alive && d?.signedIn) setSignedIn(true);
-      })
-      .catch(() => {});
-    return () => {
-      alive = false;
-    };
-  }, []);
+  const signedIn = useSignedIn();
   const accountLabel = signedIn ? dict.nav.account : dict.nav.login;
   // Round "share-deadend" batch 2 (2026-09-22): both menus list the categories that have a
   // product today (src/lib/category-visibility.ts) — "น้ำยา" used to open an empty page. The root layout computes the
@@ -145,13 +134,16 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
                 >
                   {dict.nav.allProducts}
                 </Link>
-                {/* Owner 24/10 night: "สินค้าพร้อมส่ง" lives in the menus, not as a pill on the bar (too prominent). */}
-                <Link
-                  href="/products?stock=in"
-                  className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"
-                >
-                  {dict.nav.inStock}
-                </Link>
+                {/* Owner 24/10 night: "สินค้าพร้อมส่ง" lives in the menus, not as a pill on the bar (too prominent).
+                    Owner 28/10: members only — "อย่างน้อยลูกค้าต้อง Login ก่อนถึงจะเห็น" (also on the account page). */}
+                {signedIn && (
+                  <Link
+                    href="/products?stock=in"
+                    className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"
+                  >
+                    {dict.nav.inStock}
+                  </Link>
+                )}
                 <div className="my-2 h-px bg-surface-border-soft" />
                 {categories.map((c) => (
                   <Link
@@ -257,9 +249,11 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           <Link href="/products" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
             {dict.nav.allProducts}
           </Link>
-          <Link href="/products?stock=in" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
-            {dict.nav.inStock}
-          </Link>
+          {signedIn && (
+            <Link href="/products?stock=in" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
+              {dict.nav.inStock}
+            </Link>
+          )}
           {categories.map((c) => (
             <Link key={c.id} href={`/products/${c.slug}`} className="rounded-lg px-3 py-3 text-base text-foreground-muted hover:bg-surface-2">
               <CategoryLabel label={categoryLabel(c)} />
