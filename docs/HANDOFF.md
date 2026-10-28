@@ -96,7 +96,7 @@ Rewritten 28/10 ~18:30 (daytime chat move at 595k tokens / 60%: two batches stil
   C:\Users\dhetc\.claude\scheduled-tasks\okami24-stock-daily\SKILL.md. Each changed hour = one build + checker + deploy (a short 502 — §17 "Render after a merge").
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
-  "Shipnity link". Step 1 live 27/10 · Shipnity connected 28/10 18:06 · step 5 (order button, approved webhook) built 28/10 · hourly stock routine PAUSED by the owner 28/10 · next = warehouse presses update-stock → compare → live stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine PAUSED (owner) — not needed for stock. 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
