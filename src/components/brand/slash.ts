@@ -1,7 +1,8 @@
 /**
  * The red sword slash (logo round batch 2, owner 28/10 "ได้ ตามร่าง"; designer spec 28/10): a tapered crescent stroke,
  * tilted −14°, that draws left to right and fades — never ember (that orange is the checkout button's), no glow except a
- * faint shadow on "paid". Three moments only: an add to cart (over the floating cart button), the order placed (top edge
+ * faint shadow on "paid". Three moments only: an add to cart (across the pressed button, the moment it is pressed — owner
+ * 29/10 "รู้สึกหน่วง": it used to wait for the server and the dot flight), the order placed (top edge
  * of the order-number box), the order paid (across the thank-you card). Reduced motion = no slash at all; the static red
  * rule the pages already have stays. Drawn as a fixed overlay over the target, removed when done; never catches a tap.
  */
@@ -19,6 +20,8 @@ export interface SlashOptions {
   /** Moves the stroke's centre up (negative) or down from that point, in px. */
   offsetY?: number;
   shadow?: boolean;
+  /** A dark edge around the stroke — for a cut across a bright surface (the ember add button), where red alone sinks in. */
+  dark?: boolean;
 }
 
 const NS = "http://www.w3.org/2000/svg";
@@ -45,25 +48,33 @@ export function playSlash(target: Element | null, o: SlashOptions): void {
     zIndex: "36",
     pointerEvents: "none",
     transform: "rotate(-14deg)",
-    filter: o.shadow ? "drop-shadow(0 0 8px rgba(242,48,48,0.25))" : "",
+    filter: o.dark
+      ? "drop-shadow(0 0 1px rgba(0,0,0,0.9)) drop-shadow(0 1px 3px rgba(0,0,0,0.6))"
+      : o.shadow
+        ? "drop-shadow(0 0 8px rgba(242,48,48,0.25))"
+        : "",
   } satisfies Partial<CSSStyleDeclaration>);
-  // A crescent: both ends taper to a point.
+  // Owner 29/10 "ฟาด ฟัน เฉือนไปเลย … แว๊บเดียว": a hard cut, not a brush — a crescent that is dark where the blade enters
+  // and hot red where it leaves, with a white-hot edge along its top; it draws in one snap and, on the way out, thins
+  // and slides on a little in the cut's direction (the blade passing through) while it fades.
   const id = `okami-slash-${Math.random().toString(36).slice(2, 8)}`;
   svg.innerHTML =
     `<defs><linearGradient id="${id}" x1="0" x2="1" y1="0" y2="0">` +
-    `<stop offset="0" stop-color="#8d0000"/><stop offset="0.55" stop-color="#f23030"/><stop offset="1" stop-color="#8d0000"/>` +
+    `<stop offset="0" stop-color="#5c0000" stop-opacity="0"/><stop offset="0.18" stop-color="#b30000"/>` +
+    `<stop offset="0.65" stop-color="#f23030"/><stop offset="1" stop-color="#ff5c5c"/>` +
     `</linearGradient></defs>` +
-    `<path d="M0 7 Q50 -1 100 3 Q50 5 0 7Z" fill="url(#${id})"/>`;
+    `<path d="M0 7 Q50 -1 100 3 Q50 5 0 7Z" fill="url(#${id})"/>` +
+    `<path d="M10 6.1 Q52 0.5 100 3 Q52 2.2 10 6.1Z" fill="#fff1ec" opacity="0.9"/>`;
   document.body.appendChild(svg);
 
   const hold = o.hold ?? 0;
   const total = o.draw + hold + o.fade;
   const anim = svg.animate(
     [
-      { clipPath: "inset(0 100% 0 0)", opacity: 1, easing: "cubic-bezier(.2,.9,.1,1)" },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, offset: o.draw / total },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, offset: (o.draw + hold) / total, easing: "ease-out" },
-      { clipPath: "inset(0 0 0 0)", opacity: 0 },
+      { clipPath: "inset(0 100% 0 0)", opacity: 1, transform: "rotate(-14deg)", easing: "cubic-bezier(.05,.9,.1,1)" },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-14deg)", offset: o.draw / total },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-14deg)", offset: (o.draw + hold) / total, easing: "cubic-bezier(.4,0,1,1)" },
+      { clipPath: "inset(0 0 0 0)", opacity: 0, transform: "rotate(-14deg) translateX(8%) scaleY(0.35)" },
     ],
     { duration: total, fill: "forwards" },
   );
