@@ -66,6 +66,9 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
     setStatus({ text: dict.cart.suggestionAdded.replace("{name}", optionName ? `${nameOf(item)} · ${optionName}` : nameOf(item)), failed: false });
     setJustAdded(item.slug);
     setTimeout(() => setJustAdded((s) => (s === item.slug ? null : s)), 1500);
+    // The cart lines and totals above are server-rendered: since 29/10 the add action no longer revalidates /cart (it made
+    // every product-page add slow), so the page this row sits on asks for its fresh lines itself (checker #975).
+    router.refresh();
   }
 
   function quickAdd(item: CartSuggestion) {
