@@ -12,7 +12,7 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 29/10 ~03:30 (chat "owner 29/10 list", moved at 72% context; the Shipnity chat's 03:00 notes kept in 1).
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:20 = 002a7e92 (#975) + #977 if merged (`gh pr view 977`). CART IS ON.
+1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~03:30 = 55c88b2a (#977) + #980 (this handoff). CART IS ON.
   LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 = whole owner character faded 4 sides (asset renamed samurai-404-full.webp) ·
   slash redrawn, add slash plays on the pressed button at submit · addToCartAction lost revalidatePath("/cart") (dot 1.0–1.4 s → 0.25 s),
   CartSuggestions refreshes /cart after an add. #978 /staff/stock "เช็คสต็อก": the cart's own answer per option + Shipnity count + copy
