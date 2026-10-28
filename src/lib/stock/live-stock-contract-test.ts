@@ -5,12 +5,15 @@
  *      less is sold out; no report = no live answer (the build stays);
  *   2. the money boundary (resolveProductRef) with a live lookup: a live "out" blocks an option the build sells, a live
  *      "in" sells an option the build marked out, no answer keeps the build — on both catalog halves; without a lookup it
- *      behaves exactly as before.
+ *      behaves exactly as before;
+ *   3. the cart's cap (owner 28/10 "Cap it"): liveQuantity = the reported whole count, null when there is no number;
+ *   4. an unavailable cart line keeps its product + option names (lineNames), not the raw slug.
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
 
-import { codeFor, liveState, lookupFrom, type LiveReport } from "./live-rules";
+import { codeFor, liveQuantity, liveState, lookupFrom, quantityLookupFrom, type LiveReport } from "./live-rules";
+import { lineNames } from "@/lib/commerce/line-image";
 import { resolveProductRef } from "@/lib/commerce/catalog-resolver";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 import { parseSoldOutList } from "@/data/stock/apply-sold-out";
@@ -128,6 +131,29 @@ if (pm) {
   check("ProductMaster: sells as built", resolveProductRef(ref).ok);
   check("ProductMaster: live 0 blocks", !resolveProductRef(ref, lookupFrom(new Map([[pm.code, rep(0)]]))).ok);
 }
+
+// 3. the cart's cap (owner 28/10 "Cap it"): the live count of a coded option, or null when there is no number to cap by
+if (sellableLegacy) {
+  const { slug, id, code } = sellableLegacy;
+  check("count: Shipnity 3 → 3", liveQuantity(new Map([[code, rep(3)]]), slug, id) === 3);
+  check("count: Shipnity 0 → 0", liveQuantity(new Map([[code, rep(0)]]), slug, id) === 0);
+  check("count: negative or fractional reads as whole units ≥ 0", liveQuantity(new Map([[code, rep(-2)]]), slug, id) === 0 && liveQuantity(new Map([[code, rep(2.7)]]), slug, id) === 2);
+  check("count: status without a number → no cap", liveQuantity(new Map([[code, rep(null, "instock")]]), slug, id) === null);
+  check("count: never reported → no cap", liveQuantity(new Map(), slug, id) === null);
+  check("count: lookup = the function", quantityLookupFrom(new Map([[code, rep(5)]]))(slug, id) === 5);
+}
+check("count: an option without a code → no cap", liveQuantity(new Map(), "no-such-product", "x") === null);
+
+// 4. an unavailable cart line still shows the product and option names (not the slug)
+if (sellableLegacy) {
+  const n = lineNames(sellableLegacy.slug, sellableLegacy.id);
+  check("names: legacy option → its display name + option name", n.displayName !== sellableLegacy.slug && n.variantLabel === sellableLegacy.name, JSON.stringify(n));
+}
+if (pm) {
+  const n = lineNames(pm.slug, pm.id);
+  check("names: ProductMaster option → display name + label", n.displayName !== pm.slug && !!n.variantLabel, JSON.stringify(n));
+}
+check("names: unknown product → the slug, no option", JSON.stringify(lineNames("no-such-product", "x")) === JSON.stringify({ displayName: "no-such-product", variantLabel: null }));
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

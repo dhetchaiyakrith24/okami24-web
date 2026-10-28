@@ -8,7 +8,6 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { updateQuantityAction, removeItemAction } from "@/app/cart/actions";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { CartSuggestions } from "@/components/commerce/CartSuggestions";
-import { MAX_LINE_QUANTITY } from "@/lib/commerce/cart-limits";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { CartSuggestion } from "@/lib/commerce/cart-suggestions";
 
@@ -74,6 +73,9 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
                           {formatTHB(line.unitPrice)} × {line.quantity} = {formatTHB(line.lineTotal)}
                         </span>
                       )}
+                      {line.shortTo !== undefined && (
+                        <span className="text-sm text-danger">{dict.cart.shortMessage.replace("{n}", String(line.shortTo))}</span>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-3 sm:justify-end">
@@ -92,7 +94,7 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
                         <form action={updateQuantityAction}>
                           <LineFields slug={line.productSlug} variantId={line.variantId} />
                           <input type="hidden" name="quantity" value={line.quantity + 1} />
-                          <button type="submit" className={stepClass} disabled={line.quantity >= MAX_LINE_QUANTITY} aria-label={dict.cart.increaseLabel}>
+                          <button type="submit" className={stepClass} disabled={line.quantity >= line.maxQuantity} aria-label={dict.cart.increaseLabel}>
                             <Plus size={16} aria-hidden />
                           </button>
                         </form>
@@ -124,7 +126,9 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
               </div>
 
               {cart.hasProblems ? (
-                <p className="pt-2 text-xs text-danger">{dict.cart.fixIssuesNote}</p>
+                <p className="pt-2 text-xs text-danger">
+                  {cart.lines.some((l) => l.problem) ? dict.cart.fixIssuesNote : dict.cart.fixQuantityNote}
+                </p>
               ) : (
                 <Button href="/checkout" className="mt-3 w-full justify-center">
                   {dict.cart.checkoutCta}

@@ -48,6 +48,25 @@ export function liveState(
   return qty > 0 ? "in" : "out";
 }
 
+/**
+ * How many of one option the warehouse holds, as Shipnity last reported — the cart's cap (owner 28/10: "Cap it", so a
+ * customer cannot order 2 when 1 is left). `null` = no live count (no code, never reported, or a status without a
+ * number): the cart keeps its usual cap. Sold out (0) is not decided here — liveState blocks the line before any cap.
+ */
+export function liveQuantity(reports: ReadonlyMap<string, LiveReport>, slug: string, optionId?: string): number | null {
+  const code = codeFor(slug, optionId);
+  if (!code) return null;
+  const q = reports.get(code)?.quantity;
+  return typeof q === "number" ? Math.max(0, Math.floor(q)) : null;
+}
+
+/** Looks up one option's live count; `optionId` undefined = a product without options. */
+export type LiveQuantityLookup = (slug: string, optionId?: string) => number | null;
+
+export function quantityLookupFrom(reports: ReadonlyMap<string, LiveReport>): LiveQuantityLookup {
+  return (slug, optionId) => liveQuantity(reports, slug, optionId);
+}
+
 /** Looks up one option's live state; the server builds it from the table, tests from a Map. */
 export type LiveLookup = (slug: string, optionId?: string, optionName?: string) => LiveState | null;
 

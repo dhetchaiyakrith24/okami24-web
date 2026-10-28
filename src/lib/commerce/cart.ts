@@ -4,10 +4,10 @@ import crypto from "node:crypto";
 import { getDb } from "@/lib/db/client";
 import { getSession } from "./session";
 import { resolveProductRef, type ProductRef, type ResolveFailureReason } from "./catalog-resolver";
-import { liveLookup } from "@/lib/stock/live";
+import { liveLookup, liveQuantityLookup } from "@/lib/stock/live";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
-import { lineImage, type LineImage } from "./line-image";
+import { lineImage, lineNames, type LineImage } from "./line-image";
 import { MAX_LINE_QUANTITY } from "./cart-limits";
 
 const CART_COOKIE = "okami24_cart";
@@ -105,6 +105,12 @@ export interface CartLineView extends PricedLine {
   problem?: ResolveFailureReason;
   /** The chosen colour/flavour's photo, else the product's card photo (cart UX batch A) — display only. */
   image: LineImage | null;
+  /** Most this line may hold: MAX_LINE_QUANTITY, or fewer when Shipnity reports fewer in the warehouse (owner 28/10
+   *  "Cap it") — the "+" button stops here. */
+  maxQuantity: number;
+  /** Set when the line holds more than the warehouse has now (the count went down after the add): what is left. Like
+   *  `problem`, it blocks checkout until the customer lowers the quantity — an order is never cut silently. */
+  shortTo?: number;
 }
 
 export interface CartView {
@@ -113,6 +119,7 @@ export interface CartView {
   cartId: string | null;
   lines: CartLineView[];
   totals: OrderTotals;
+  /** A line is unavailable (`problem`) or above the warehouse count (`shortTo`) — checkout waits until it is fixed. */
   hasProblems: boolean;
 }
 
@@ -136,6 +143,7 @@ export async function getCart(): Promise<CartView> {
 
   // Live warehouse stock (Shipnity, owner 28/10) — one read for the whole cart.
   const live = liveLookup();
+  const liveQty = liveQuantityLookup();
   const lines: CartLineView[] = rows.map((row) => {
     const ref: ProductRef = { origin: getCatalogItem(row.product_slug)?.origin ?? "product-master", slug: row.product_slug, variantId: row.variant_id };
     const resolved = resolveProductRef(ref, live);
@@ -143,44 +151,61 @@ export async function getCart(): Promise<CartView> {
       return {
         productSlug: row.product_slug,
         variantId: row.variant_id,
-        displayName: row.product_slug,
-        variantLabel: null,
+        ...lineNames(row.product_slug, row.variant_id),
         unitPrice: 0,
         quantity: row.quantity,
         lineTotal: 0,
         problem: resolved.reason,
         image: lineImage(row.product_slug, row.variant_id),
+        maxQuantity: MAX_LINE_QUANTITY,
       };
     }
-    return { ...priceLine(resolved.line, row.quantity), image: lineImage(row.product_slug, row.variant_id) };
+    const maxQuantity = lineCap(liveQty(row.product_slug, row.variant_id ?? undefined));
+    return {
+      ...priceLine(resolved.line, row.quantity),
+      image: lineImage(row.product_slug, row.variant_id),
+      maxQuantity,
+      ...(row.quantity > maxQuantity ? { shortTo: maxQuantity } : {}),
+    };
   });
 
   const totals = computeOrderTotals(lines.filter((l): l is CartLineView & PricedLine => !("problem" in l && l.problem)));
-  return { cartId, lines, totals, hasProblems: lines.some((l) => l.problem !== undefined) };
+  return { cartId, lines, totals, hasProblems: lines.some((l) => l.problem !== undefined || l.shortTo !== undefined) };
 }
 
-export async function addToCart(ref: ProductRef, quantity: number): Promise<{ ok: true } | { ok: false; error: string }> {
+/** The most one line may hold: the usual cap, or the warehouse count when Shipnity reported fewer. */
+function lineCap(liveCount: number | null): number {
+  return liveCount === null ? MAX_LINE_QUANTITY : Math.min(MAX_LINE_QUANTITY, liveCount);
+}
+
+/** `limit` = the line already holds all the warehouse has (owner 28/10 "Cap it") — the product page says so. */
+export async function addToCart(
+  ref: ProductRef,
+  quantity: number
+): Promise<{ ok: true } | { ok: false; error: string; limit?: number }> {
   if (!Number.isInteger(quantity) || quantity <= 0 || quantity > MAX_LINE_QUANTITY) {
     return { ok: false, error: "Invalid quantity." };
   }
   const resolved = resolveProductRef(ref, liveLookup());
   if (!resolved.ok) return { ok: false, error: resolved.detail };
 
+  const cap = lineCap(liveQuantityLookup()(ref.slug, ref.variantId ?? undefined));
   const cartId = await getOrCreateCartId();
   const db = getDb();
   const existing = db
     .prepare("SELECT id, quantity FROM cart_items WHERE cart_id = ? AND product_slug = ? AND variant_id IS ?")
     .get(cartId, ref.slug, ref.variantId) as { id: number; quantity: number } | undefined;
+  if (existing && existing.quantity >= cap) return { ok: false, error: "No more in stock.", limit: cap };
 
   if (existing) {
-    // Same cap as setCartItemQuantity: repeated adds used to grow past 20.
-    db.prepare("UPDATE cart_items SET quantity = ? WHERE id = ?").run(Math.min(existing.quantity + quantity, MAX_LINE_QUANTITY), existing.id);
+    // Same cap as setCartItemQuantity: repeated adds used to grow past 20 (and past the warehouse count, 28/10).
+    db.prepare("UPDATE cart_items SET quantity = ? WHERE id = ?").run(Math.min(existing.quantity + quantity, cap), existing.id);
   } else {
     db.prepare("INSERT INTO cart_items (cart_id, product_slug, variant_id, quantity) VALUES (?, ?, ?, ?)").run(
       cartId,
       ref.slug,
       ref.variantId,
-      quantity
+      Math.min(quantity, cap)
     );
   }
   db.prepare("UPDATE carts SET updated_at = datetime('now') WHERE id = ?").run(cartId);
@@ -201,9 +226,11 @@ export async function setCartItemQuantity(
       variantId
     );
   } else {
+    // "+" stops at the warehouse count; "−" on a line above it (the count went down) brings it straight to what is left.
+    const cap = lineCap(liveQuantityLookup()(productSlug, variantId ?? undefined));
     db.prepare(
       "UPDATE cart_items SET quantity = ? WHERE cart_id = ? AND product_slug = ? AND variant_id IS ?"
-    ).run(Math.min(quantity, MAX_LINE_QUANTITY), cartId, productSlug, variantId);
+    ).run(Math.max(1, Math.min(quantity, cap)), cartId, productSlug, variantId);
   }
   db.prepare("UPDATE carts SET updated_at = datetime('now') WHERE id = ?").run(cartId);
 }
