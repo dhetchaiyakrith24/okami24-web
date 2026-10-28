@@ -20,6 +20,7 @@ import { PRODUCT_NOTICE } from "@/i18n/product-notices";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { useLivePilotProduct } from "@/components/product/useLiveStock";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -62,7 +63,7 @@ import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
  * `ProductBuyAction`. Selection state stays here (P1). `lg` and above: unchanged.
  */
 export function PilotProductDetail({
-  product,
+  product: builtProduct,
   related,
   relatedArticles,
   relatedArticlesOtherLocales,
@@ -100,6 +101,8 @@ export function PilotProductDetail({
    *  See `src/lib/media-quality.ts`. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
+  // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the variants re-labelled from /api/stock.
+  const product = useLivePilotProduct(builtProduct);
   const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";

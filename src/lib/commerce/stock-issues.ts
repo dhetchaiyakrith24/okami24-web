@@ -4,6 +4,7 @@ import { allCatalogItems } from "@/lib/catalog-index";
 import { getProduct } from "@/data/products";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { resolveProductRef } from "./catalog-resolver";
+import { liveLookup } from "@/lib/stock/live";
 import { getOrderDetailForViewer } from "./orders";
 import { cleanOrderMessage } from "./order-message-rules";
 import { insertCustomerMessage } from "./order-messages";
@@ -137,7 +138,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
     choice: row.choice,
     swap: picks
       ? picks.map((p) => {
-          const r = resolveProductRef({ origin: "product-master", slug: p.productSlug, variantId: p.variantId });
+          const r = resolveProductRef({ origin: "product-master", slug: p.productSlug, variantId: p.variantId }, liveLookup());
           return { ...p, name: r.ok ? r.line.displayName : p.productSlug, variantLabel: r.ok ? r.line.variantLabel : p.variantId };
         })
       : null,
@@ -189,7 +190,7 @@ export function swapCandidates(line: Pick<StockIssueLine, "productSlug" | "varia
     let productName = item.name;
     for (const variantId of optionIdsOf(item.slug, item.origin, published)) {
       if (item.slug === line.productSlug && variantId === line.variantId) continue;
-      const r = resolveProductRef({ origin: item.origin, slug: item.slug, variantId });
+      const r = resolveProductRef({ origin: item.origin, slug: item.slug, variantId }, liveLookup());
       if (!r.ok || r.line.unitPrice !== line.unitPrice) continue;
       productName = r.line.displayName;
       options.push({ value: encodeSwapValue(item.slug, variantId), label: r.line.variantLabel ?? r.line.displayName });
@@ -211,7 +212,7 @@ function validSwap(line: ItemRow, productSlug: string, variantId: string | null)
   if (!offered) return null;
   const item = allCatalogItems().find((i) => i.slug === productSlug);
   if (!item) return null;
-  const r = resolveProductRef({ origin: item.origin, slug: productSlug, variantId });
+  const r = resolveProductRef({ origin: item.origin, slug: productSlug, variantId }, liveLookup());
   return r.ok && r.line.unitPrice === line.unit_price ? r.line : null;
 }
 
