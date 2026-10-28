@@ -20,6 +20,7 @@ import { PRODUCT_NOTICE } from "@/i18n/product-notices";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { useLivePilotProduct } from "@/components/product/useLiveStock";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -62,7 +63,7 @@ import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
  * `ProductBuyAction`. Selection state stays here (P1). `lg` and above: unchanged.
  */
 export function PilotProductDetail({
-  product,
+  product: builtProduct,
   related,
   relatedArticles,
   relatedArticlesOtherLocales,
@@ -100,6 +101,8 @@ export function PilotProductDetail({
    *  See `src/lib/media-quality.ts`. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
+  // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the variants re-labelled from /api/stock.
+  const product = useLivePilotProduct(builtProduct);
   const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
@@ -120,6 +123,14 @@ export function PilotProductDetail({
   const initialVariantId = photoRule ? null : ((inStock.find((v) => v.image) ?? inStock[0] ?? product.variants[0])?.id ?? null);
   const noPhotoNote = product.optionAxisCode === "color" ? dict.product.noPhotoColor : dict.product.noPhotoFlavor;
   const [selectedVariantId, setSelectedVariantId] = useState(initialVariantId);
+  // Live stock (owner 28/10): the variant the page opened on went out of stock in the live answer → open on the first that
+  // sells instead, once (a later tap on a sold-out chip is the customer's own choice — checker #962). Adjusted while rendering.
+  const [liveSeen, setLiveSeen] = useState(false);
+  if (!liveSeen && product !== builtProduct) {
+    setLiveSeen(true);
+    const opened = product.variants.find((v) => v.id === selectedVariantId);
+    if (!photoRule && opened && opened.availabilityStatus !== "in-stock") setSelectedVariantId(initialVariantId);
+  }
   const selectedVariant = product.variants.find((v) => v.id === selectedVariantId);
   const choiceMissingLabel = photoRule && selectedVariantId === null ? (product.optionAxisCode === "color" ? dict.product.chooseColorFirst : dict.product.chooseFlavorFirst) : null;
   // A selected variant with no photo of its own prefers the neutral fallback (when the product

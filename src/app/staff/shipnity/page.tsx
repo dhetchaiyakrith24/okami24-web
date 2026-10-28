@@ -79,7 +79,7 @@ function StockRows({ rows }: { rows: StockRow[] }) {
             {r.name} <span className="label-mono text-xs text-foreground-dim">{r.sku}</span>
           </span>
           <span className="whitespace-nowrap text-xs text-foreground-muted">
-            Shipnity {r.shipnity ?? "—"} · เว็บ {r.siteInStock ? "มีของ" : "หมด"}
+            Shipnity {r.shipnity ?? "—"} · เว็บรอบสร้างล่าสุด {r.siteInStock ? "มีของ" : "หมด"}
           </span>
         </li>
       ))}
@@ -119,12 +119,12 @@ export default async function StaffShipnityPage() {
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar back={{ href: "/staff", label: "งาน" }} />
+      <StaffBar back={{ href: "/staff/dev", label: "Okami dev" }} />
       <header className="flex flex-col gap-2">
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">เชื่อมคลัง Shipnity</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">
           คลังเชื่อมเว็บนี้แบบเดียวกับร้าน Woo: ใส่ Url · ck · cs ใน Shipnity · ตอนนี้ระบบส่งให้คลังแค่รายการสินค้าและรหัส (
-          {formatCount(catalog.length)} สินค้า · {formatCount(codes)} รหัส) · {sending ? "ส่งออเดอร์ได้ด้วยปุ่มในหน้าออเดอร์" : "ยังไม่ส่งออเดอร์"} · สต็อกจาก Shipnity ยังไม่ขึ้นหน้าเว็บ (เทียบก่อน)
+          {formatCount(catalog.length)} สินค้า · {formatCount(codes)} รหัส) · {sending ? "ส่งออเดอร์ได้ด้วยปุ่มในหน้าออเดอร์" : "ยังไม่ส่งออเดอร์"} · สต็อกจาก Shipnity ใช้กับหน้าสินค้า ตะกร้า และการสั่งซื้อแล้ว (เทียบด้านล่าง = ตัวเลข Shipnity กับสต็อกตอนสร้างเว็บรอบล่าสุด)
         </p>
       </header>
 

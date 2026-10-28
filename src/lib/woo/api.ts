@@ -9,8 +9,8 @@ import type { WooProduct, WooVariation } from "@/lib/woo/catalog";
  *
  * What a signed caller can do — nothing more:
  *   - read the products / variations list (name, SKU = Shipnity code, stock state; no price, BSOT §5);
- *   - send a stock number or stock state per product / variation → recorded in woo_stock_reports, NOT shown on the site
- *     yet (step 3 compares it with the hourly read first);
+ *   - send a stock number or stock state per product / variation → recorded in woo_stock_reports, which the site reads
+ *     at runtime for product pages, cart and checkout (src/lib/stock/live.ts, owner 28/10);
  *   - register / read / change / delete webhooks (Shipnity registers order.created/updated/deleted when it connects —
  *     log 28/10); an order goes to one only after staff approve it on /staff/shipnity (order-push.ts);
  *   - read the orders already sent to it (Woo order objects, no slip — owner 27/10); everything else is not listed;

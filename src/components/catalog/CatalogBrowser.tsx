@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
+import { useSignedIn } from "@/components/account/use-signed-in";
 
 type SortMode = "featured" | "alphabetical" | "family";
 
@@ -156,6 +157,9 @@ export function CatalogBrowser({
   const [portabilityFilter, setPortabilityFilter] = useState<Set<Portability>>(new Set());
   const [beginnerOnly, setBeginnerOnly] = useState(false);
   const [inStockOnly, setInStockOnly] = useState(false);
+  // Owner 28/10: "สินค้าพร้อมส่ง" is for signed-in members only — a guest sees no button and ?stock=in shows everything.
+  const signedIn = useSignedIn();
+  const showStock = Boolean(inStockKeys) && !isEmptyCategory && signedIn;
   const inStockSet = useMemo(() => new Set(inStockKeys ?? []), [inStockKeys]);
   // Stable, so the URL listener runs only when ?stock changes — never undoing the visitor's own tap on the toggle.
   const turnOnInStock = useCallback(() => setInStockOnly(true), []);
@@ -196,7 +200,7 @@ export function CatalogBrowser({
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
     if (portabilityFilter.size > 0) list = list.filter((e) => e.portability !== null && portabilityFilter.has(e.portability));
     if (beginnerOnly) list = list.filter((e) => e.beginnerFriendly === true);
-    if (inStockOnly) list = list.filter((e) => inStockSet.has(e.key));
+    if (inStockOnly && signedIn) list = list.filter((e) => inStockSet.has(e.key));
 
     const sorted = [...list];
     if (sort === "alphabetical") {
@@ -208,7 +212,7 @@ export function CatalogBrowser({
       sorted.sort((a, b) => Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
-  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, sort]);
+  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort]);
 
   function toggle<T>(set: Set<T>, value: T, setter: (s: Set<T>) => void) {
     const next = new Set(set);
@@ -343,12 +347,12 @@ export function CatalogBrowser({
               merges three DOM text nodes into one, which re-shapes the line and moved a handful of
               antialiased pixels at 1440 (proved by the masked compare). The joined `countText`
               above is only for the sheet's button label. */}
-          {inStockKeys && !isEmptyCategory && (
+          {showStock && (
             <Suspense fallback={null}>
               <StockParamSync onInStock={turnOnInStock} />
             </Suspense>
           )}
-          {inStockKeys && !isEmptyCategory && (
+          {showStock && (
             <button
               type="button"
               aria-pressed={inStockOnly}

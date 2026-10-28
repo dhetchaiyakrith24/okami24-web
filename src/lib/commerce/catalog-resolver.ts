@@ -7,6 +7,7 @@
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { getProduct } from "@/data/products";
+import type { LiveLookup } from "@/lib/stock/live-rules";
 
 /**
  * A cart/order line's reference into the catalog. `origin` is carried through for
@@ -60,7 +61,11 @@ export type ResolveResult =
  * become purchasable automatically, with no code change here. Never invents a price for a legacy
  * item — this only changes WHAT is checked (price presence, not origin), never adds one.
  */
-export function resolveProductRef(ref: ProductRef): ResolveResult {
+/** `live` (Shipnity link step 4, owner 28/10): the warehouse's live stock — the server passes `liveLookup()`
+ *  (src/lib/stock/live.ts); left out (tests, scripts) = the build-time stock alone, exactly as before. A live "in" sells an
+ *  option the build marked out; a live "out" blocks one the build sells; no answer keeps the build. The owner's sold-out
+ *  list is inside the live answer, so it still wins. */
+export function resolveProductRef(ref: ProductRef, live?: LiveLookup): ResolveResult {
   const catalogItem = getCatalogItem(ref.slug);
   if (!catalogItem) {
     return { ok: false, reason: "not-found", detail: `No catalog entry for slug "${ref.slug}".` };
@@ -72,7 +77,7 @@ export function resolveProductRef(ref: ProductRef): ResolveResult {
   // A price exists. Since 2026-09-05 that can be either half of the catalog: ProductMaster
   // (publication-approvals.ts) or legacy (legacy-price-approvals.ts). The index's own provenance
   // tag decides which variant/stock lookup applies — never the caller-supplied `ref.origin`.
-  if (catalogItem.origin === "legacy") return resolveLegacyRef(ref, catalogItem);
+  if (catalogItem.origin === "legacy") return resolveLegacyRef(ref, catalogItem, live);
 
   const product = getPublishedProductBySlug(ref.slug);
   if (!product) {
@@ -92,11 +97,20 @@ export function resolveProductRef(ref: ProductRef): ResolveResult {
     }
     variantLabel = variant.label;
     availabilityStatus = variant.availabilityStatus;
+    const now = live?.(product.slug, variant.id, variant.label);
+    if (now === "in") availabilityStatus = "in-stock";
+    else if (now === "out") availabilityStatus = "out-of-stock";
     // KNOWN LIMITATION: StorefrontProductView's toView() never reads ProductVariant.pricingOverride
     // (see storefront-preview-read-model.ts), so every published variant today inherits the
     // product-level sellingPrice. No currently-published product sets a pricingOverride, so this
     // is not a live bug — but if one ever does, this resolver and toView() must be updated
     // together, or a variant will be mispriced. Flagged in the final report's follow-up list.
+  }
+
+  if (product.variants.length === 0) {
+    const now = live?.(product.slug);
+    if (now === "in") availabilityStatus = "in-stock";
+    else if (now === "out") availabilityStatus = "out-of-stock";
   }
 
   // CORRECTED (owner architecture review): this used to only block an explicit "out-of-stock" and
@@ -154,7 +168,7 @@ export function resolveProductRef(ref: ProductRef): ResolveResult {
  * When Shipnity stock is wired to the legacy catalog, collapse this back to the confirmed-positive
  * rule and delete this comment. The client-side gate in ProductHero mirrors exactly this rule.
  */
-function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem): ResolveResult {
+function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem, live?: LiveLookup): ResolveResult {
   const product = getProduct(ref.slug);
   if (!product || catalogItem.sellingPrice === null) {
     return { ok: false, reason: "not-found", detail: `No legacy product for slug "${ref.slug}".` };
@@ -162,10 +176,15 @@ function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem): ResolveRes
   const options = [
     ...(product.colorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability ?? "unknown" })),
     ...(product.flavorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability })),
-  ];
+  ].map((o) => {
+    const now = live?.(product.slug, o.id, o.label);
+    return now === "in" ? { ...o, availability: "in-stock" as const } : now === "out" ? { ...o, availability: "out-of-stock" as const } : o;
+  });
+  const productNow = options.length === 0 ? live?.(product.slug) : null;
+  const productAvailability = productNow === "in" ? "in-stock" : productNow === "out" ? "out-of-stock" : product.availability;
 
   // A product without options that has no SKU in the warehouse (applySoldOut, stock round batch 2b).
-  if (options.length === 0 && product.availability === "out-of-stock") {
+  if (options.length === 0 && productAvailability === "out-of-stock") {
     return { ok: false, reason: "out-of-stock", detail: `"${ref.slug}" is out of stock.` };
   }
 

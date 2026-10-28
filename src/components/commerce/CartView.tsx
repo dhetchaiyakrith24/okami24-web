@@ -46,10 +46,16 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
       <PageHeader eyebrow={dict.cart.eyebrow} title={dict.cart.pageTitle} />
       <Container className="py-12 lg:py-16">
         {isEmpty ? (
-          <div className="flex flex-col items-start gap-4">
-            <p className="text-foreground-muted">{dict.cart.emptyMessage}</p>
-            <Button href="/products">{dict.cart.continueShoppingCta}</Button>
-            <CartSuggestions items={suggestions} className="mt-6 w-full" />
+          <div className="relative flex flex-col items-start gap-4">
+            {/* Logo round batch 2 (owner 28/10, designer spec 28/10): a faint red moon and one brush stroke — no character on
+                a page where people shop. Behind the content, never catches a tap. */}
+            <span aria-hidden className="okami-cart-moon pointer-events-none absolute -top-10 right-0 size-[220px] lg:-top-16 lg:size-[360px]" />
+            <p className="relative text-foreground-muted">{dict.cart.emptyMessage}</p>
+            <svg aria-hidden viewBox="0 0 280 24" className="relative -mt-2 h-[18px] w-[200px] lg:h-6 lg:w-[280px]">
+              <path d="M2 16 C60 6 150 4 278 9 C170 12 80 16 6 21 Z" fill="#8d0000" opacity="0.55" />
+            </svg>
+            <Button href="/products" className="relative">{dict.cart.continueShoppingCta}</Button>
+            <CartSuggestions items={suggestions} className="relative mt-6 w-full" />
           </div>
         ) : (
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start lg:gap-8">

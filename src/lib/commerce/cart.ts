@@ -4,6 +4,7 @@ import crypto from "node:crypto";
 import { getDb } from "@/lib/db/client";
 import { getSession } from "./session";
 import { resolveProductRef, type ProductRef, type ResolveFailureReason } from "./catalog-resolver";
+import { liveLookup } from "@/lib/stock/live";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
 import { lineImage, type LineImage } from "./line-image";
@@ -133,9 +134,11 @@ export async function getCart(): Promise<CartView> {
     .prepare("SELECT id, product_slug, variant_id, quantity FROM cart_items WHERE cart_id = ? ORDER BY id")
     .all(cartId) as CartItemRow[];
 
+  // Live warehouse stock (Shipnity, owner 28/10) — one read for the whole cart.
+  const live = liveLookup();
   const lines: CartLineView[] = rows.map((row) => {
     const ref: ProductRef = { origin: getCatalogItem(row.product_slug)?.origin ?? "product-master", slug: row.product_slug, variantId: row.variant_id };
-    const resolved = resolveProductRef(ref);
+    const resolved = resolveProductRef(ref, live);
     if (!resolved.ok) {
       return {
         productSlug: row.product_slug,
@@ -160,7 +163,7 @@ export async function addToCart(ref: ProductRef, quantity: number): Promise<{ ok
   if (!Number.isInteger(quantity) || quantity <= 0 || quantity > MAX_LINE_QUANTITY) {
     return { ok: false, error: "Invalid quantity." };
   }
-  const resolved = resolveProductRef(ref);
+  const resolved = resolveProductRef(ref, liveLookup());
   if (!resolved.ok) return { ok: false, error: resolved.detail };
 
   const cartId = await getOrCreateCartId();
