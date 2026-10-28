@@ -290,13 +290,14 @@ html:lang(th) .label-mono:not(:lang(en)) {
    where its red mist turns black, so the mask only has to finish the fade. Phone: 180% wide (capped at 44rem), centred on the character.
    Wide screens: the right half, also fading toward the title. */
 .samurai-backdrop-figure {
-  --samurai-fade: linear-gradient(to bottom, #000 0%, #000 40%, rgb(0 0 0 / 0.8) 52%, rgb(0 0 0 / 0.55) 63%,
-    rgb(0 0 0 / 0.32) 74%, rgb(0 0 0 / 0.15) 84%, rgb(0 0 0 / 0.05) 93%, transparent 100%);
+  /* owner 29/10 on the 0.15 build: the top stood out → 0.10, but the tail behind the cards keeps its 0.15-build strength */
+  --samurai-fade: linear-gradient(to bottom, #000 0%, #000 52%, rgb(0 0 0 / 0.83) 63%, rgb(0 0 0 / 0.5) 74%,
+    rgb(0 0 0 / 0.25) 84%, rgb(0 0 0 / 0.08) 93%, transparent 100%);
   /* 180% of a phone, capped so a tablet (640–1023 px) gets the phone's size, not a giant crop; the face (57% across the
      picture) sits ~60% across the screen */
   width: min(180%, 44rem);
   margin-left: calc(60% - min(180%, 44rem) * 0.57);
-  opacity: 0.15;
+  opacity: 0.1;
   -webkit-mask-image: var(--samurai-fade);
   mask-image: var(--samurai-fade);
 }

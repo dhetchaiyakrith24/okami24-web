@@ -4,7 +4,7 @@ import Image from "next/image";
  * Samurai theme on /products (designer "เงาจันทร์", owner 29/10 "go, with changes"): the owner's samurai character
  * behind the top of the page — NOT boxed in the header: it starts at the page top and fades TOP → BOTTOM, slowly, until
  * it is gone 1–2 card rows down (owner on the live page: deeper and longer than the first build, which ended at the
- * cards), at 0.15 opacity (owner 29/10: 0.25 "ชัดไป" → 10–15%; then "ถ้าไม่ smooth ขยับ 12 เป็น 15"). On a wide screen it sits on
+ * cards), at 0.10 opacity with the tail behind the cards kept at the 0.15 build's strength (owner 29/10: 0.25 "ชัดไป"; 0.15 top "เริ่มเด่น" but keep the deep fade). On a wide screen it sits on
  * the right and also fades toward the title; on a phone it spans the width behind the header. The petals are the ones
  * already in the owner's picture. Decorative only: no alt text, never catches a tap.
  * Parent = a `relative isolate` wrapper (this layer is z −1 inside it); the layer is as tall as the picture.
