@@ -119,7 +119,6 @@ export interface StaffOrderDetail extends OrderDetail {
   itemLines: StockIssueLine[];
 }
 
-
 export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   const order = getOrderDetailInternal(orderNumber);
   if (!order) return null;
