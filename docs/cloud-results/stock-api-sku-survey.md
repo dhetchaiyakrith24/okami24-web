@@ -132,7 +132,7 @@ New database tables = owner "ได้" 27/10.
 | 1 ✅ 27/10 #937 | door `/wp-json/wc/v1–v3` (products + variations, no price, orders empty) · keys on `/staff/shipnity` (hashes only, shown once, revoke) · every call logged · stock writes only recorded (`woo_stock_reports`) | warehouse saves the key in Shipnity and the log shows its calls | revert; revoke the key |
 | 2 ✅ 28/10 | read the log → fit the door to the calls Shipnity really makes | Shipnity's stock writes land for real codes | revert |
 | 3 ✅ 28/10 #958 (734/738 agree at once) | compare Shipnity's numbers with the hourly order-entry read for some days | they agree | — |
-| 4 ✅ 28/10 | live stock: site reads the table at runtime (B5 ② in HANDOFF §16 3f), hourly stock PRs stop, owner's sold-out list still wins | a Shipnity change shows on the site without a deploy | flag off → build-time stock |
+| 4 ✅ 28/10 | live stock: site reads the table at runtime (B5 ② in HANDOFF §16 3f), hourly stock PRs stop, owner's sold-out list still wins | a Shipnity change shows on the site without a deploy (product pages, cart, checkout; listing cards / in-stock filter / JSON-LD stay build-time) | revert → build-time stock |
 | 5 ✅ 28/10 #957 #958 (button; auto-send later) | orders: paid orders go to Shipnity's hook (no slip, no refund data); tracking back if Shipnity sends it · LINE alerts + slips unchanged, admin stops keying by hand (HANDOFF §18) | a test order appears in Shipnity | revert |
 
 **Routines 28/10 (owner):** the hourly order-entry stock routine is deleted (Shipnity now sends the numbers); a daily 12:00 routine reads the order-entry picker only for NEW codes and asks the owner to open the main chat to list them.
