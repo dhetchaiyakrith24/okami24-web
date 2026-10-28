@@ -125,7 +125,9 @@ function likeFor(slug: string, catalog: CatalogItem[]): { close: CatalogItem[]; 
       ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY && sellable(i.slug)).sort(byLead).slice(0, 1) : []),
       ...(own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : []),
     ],
-    loose: sameCategory,
+    // A pod / coil / stick of another make fits other devices — shown as "like" it reads as a spare for the cart's
+    // device (checker #960). Parts get only what fits and their own make (tiers 1–4); devices keep tier 5.
+    loose: CONSUMABLE_CATEGORIES.has(own.categoryId) ? [] : sameCategory,
   };
 }
 
@@ -146,8 +148,7 @@ function roundRobin(lists: CatalogItem[][], into: CatalogItem[]): void {
 }
 
 /** Heat-not-burn and vapour are different shoppers: the "other" half shows the cart's own family first (checker #960 —
- *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family, and the
- *  like-the-cart half fills the rest. */
+ *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family. */
 const HEATED_TOBACCO = new Set(["heated-tobacco-devices", "heated-tobacco-consumables"]);
 const isHeated = (i: CatalogItem) => HEATED_TOBACCO.has(i.categoryId);
 
@@ -168,12 +169,15 @@ export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
       const own = getCatalogItem(slug);
       return own !== undefined && isHeated(own);
     });
-    const rest = picks().filter((i) => !like.some((x) => x.slug === i.slug));
-    const other = [...rest.filter((i) => isHeated(i) === heatedCart), ...rest.filter((i) => isHeated(i) !== heatedCart).slice(0, 1)];
+    // The other half keeps its 4 seats (owner "50 อีก 50"; checker #960 round 2: excluding every like card emptied it):
+    // only the like half's own 4 cards are taken out of the picks, then whichever half runs short is filled by the other.
     const half = SLOTS / 2;
-    const likeCount = Math.min(like.length, Math.max(half, SLOTS - other.length));
-    const otherCount = Math.min(other.length, SLOTS - likeCount);
-    chosen = [...like.slice(0, likeCount), ...other.slice(0, otherCount)];
+    const likeHead = like.slice(0, half);
+    const rest = picks().filter((i) => !likeHead.some((x) => x.slug === i.slug));
+    const other = [...rest.filter((i) => isHeated(i) === heatedCart), ...rest.filter((i) => isHeated(i) !== heatedCart).slice(0, 1)];
+    const otherChosen = other.slice(0, Math.max(half, SLOTS - like.length));
+    const likeChosen = like.filter((i) => !otherChosen.some((x) => x.slug === i.slug)).slice(0, SLOTS - otherChosen.length);
+    chosen = [...likeChosen, ...otherChosen];
   } else {
     chosen = picks();
   }
