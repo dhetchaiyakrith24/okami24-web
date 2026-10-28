@@ -287,13 +287,15 @@ html:lang(th) .label-mono:not(:lang(en)) {
 /* Samurai backdrop on /products (SamuraiBackdrop.tsx, owner 29/10): the picture starts at the page top and fades out
    slowly, reaching nothing 1–2 card rows down (owner on the live page: "ไล่ระดับให้ลึกและยาวมากกว่านี้ … อยู่หลังการ์ดสินค้าซัก
    1-2 แถว"); it shows in the gaps around the opaque cards. The picture keeps its own shape (no crop): the owner's file down to
-   where its red mist turns black, so the mask only has to finish the fade. Phone: 180% wide, centred on the character.
+   where its red mist turns black, so the mask only has to finish the fade. Phone: 180% wide (capped at 44rem), centred on the character.
    Wide screens: the right half, also fading toward the title. */
 .samurai-backdrop-figure {
   --samurai-fade: linear-gradient(to bottom, #000 0%, #000 40%, rgb(0 0 0 / 0.8) 52%, rgb(0 0 0 / 0.55) 63%,
     rgb(0 0 0 / 0.32) 74%, rgb(0 0 0 / 0.15) 84%, rgb(0 0 0 / 0.05) 93%, transparent 100%);
-  width: 180%;
-  margin-left: -44%;
+  /* 180% of a phone, capped so a tablet (640–1023 px) gets the phone's size, not a giant crop; the face (57% across the
+     picture) sits ~60% across the screen */
+  width: min(180%, 44rem);
+  margin-left: calc(60% - min(180%, 44rem) * 0.57);
   opacity: 0.15;
   -webkit-mask-image: var(--samurai-fade);
   mask-image: var(--samurai-fade);
