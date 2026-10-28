@@ -52,8 +52,10 @@ export function createWebhook(keyId: number, w: WebhookInput): WebhookView {
 export function updateWebhook(id: number, patch: Partial<WebhookInput>): WebhookView | null {
   const cur = getDb().prepare("SELECT * FROM woo_webhooks WHERE id = ? AND deleted_at IS NULL").get(id) as Row | undefined;
   if (!cur) return null;
-  // A new delivery URL is a new place for customer data → it needs staff approval again.
-  const urlChanged = patch.deliveryUrl !== undefined && patch.deliveryUrl !== cur.delivery_url;
+  // A new delivery URL (a new place for customer data) or a new topic (e.g. turned into order.created) needs staff
+  // approval again.
+  const urlChanged =
+    (patch.deliveryUrl !== undefined && patch.deliveryUrl !== cur.delivery_url) || (patch.topic !== undefined && patch.topic !== cur.topic);
   getDb()
     .prepare("UPDATE woo_webhooks SET name = ?, topic = ?, delivery_url = ?, secret = ?, status = ?, approved_at = ? WHERE id = ?")
     .run(

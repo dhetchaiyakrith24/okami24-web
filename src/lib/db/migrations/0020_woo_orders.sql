@@ -42,6 +42,12 @@ SELECT key_id,
 FROM woo_api_log
 WHERE method = 'POST' AND path LIKE '/wp-json/wc/v_/webhooks' AND status = 201 AND key_id IS NOT NULL
   AND json_valid(body) AND json_extract(body, '$.topic') IS NOT NULL AND json_extract(body, '$.delivery_url') IS NOT NULL
+  -- one row per topic + URL (the newest registration wins), so a repeated registration never sends an order twice
+  AND id IN (
+    SELECT MAX(id) FROM woo_api_log
+    WHERE method = 'POST' AND path LIKE '/wp-json/wc/v_/webhooks' AND status = 201 AND key_id IS NOT NULL AND json_valid(body)
+    GROUP BY json_extract(body, '$.topic'), json_extract(body, '$.delivery_url')
+  )
 ORDER BY id;
 
 UPDATE woo_api_log SET body = NULL WHERE path LIKE '%/webhooks%';

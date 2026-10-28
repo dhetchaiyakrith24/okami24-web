@@ -46,13 +46,16 @@ const ERROR_TEXT: Record<string, string> = {
   "shipnity-no-sku": "ส่งเข้า Shipnity ไม่ได้ — มีสินค้าที่ไม่มีรหัสคลัง · ใช้คัดลอกข้อความส่งคลังแทน แล้วแจ้ง Friday",
   "shipnity-failed": "ส่งเข้า Shipnity ไม่สำเร็จ ออเดอร์ยังไม่เปลี่ยน — กดส่งใหม่อีกครั้ง หรือคัดลอกข้อความส่งคลังไปก่อน",
   "shipnity-not-found": "ไม่พบออเดอร์นี้",
+  "shipnity-not-approved": "ส่งเข้า Shipnity ไม่ได้ — ส่งได้เฉพาะออเดอร์ที่ยืนยันยอดเงินแล้วและยังไม่ส่งคลัง (อาจมีคนกดเปลี่ยนสถานะไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
+  "shipnity-already-sent": "ออเดอร์นี้ส่งเข้า Shipnity ไปแล้ว (หรือกำลังส่ง) — ไม่ส่งซ้ำ · โหลดหน้าใหม่ดูสถานะล่าสุด",
+  "shipnity-stock-open": "ส่งเข้า Shipnity ไม่ได้ — ยังมีเรื่องสินค้าหมดที่ยังไม่จบ จัดการกล่องสินค้าหมดก่อน",
+  "shipnity-sent-status": "ส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
 };
 
 const DONE_TEXT: Record<string, string> = {
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
-  "shipnity-resent": "ส่งเข้า Shipnity อีกครั้งแล้ว",
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
@@ -422,11 +425,11 @@ export default async function StaffOrderPage({
             {order.status !== "approved" && (
               <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">
                 <p className="text-foreground-muted">ข้อความส่งคลัง</p>
-                {sent && (
-                  <p className={sent.firstSentAt ? "text-foreground" : "text-danger"}>
-                    {sent.firstSentAt ? `ส่งเข้า Shipnity แล้ว ${formatDateTime(sent.firstSentAt)}` : "ส่งเข้า Shipnity ไม่สำเร็จ"}
-                  </p>
-                )}
+                {sent?.firstSentAt ? (
+                  <p className="text-foreground">ส่งเข้า Shipnity แล้ว {formatDateTime(sent.firstSentAt)}</p>
+                ) : sent?.status === "failed" ? (
+                  <p className="text-danger">ส่งเข้า Shipnity ไม่สำเร็จ</p>
+                ) : null}
                 <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" />
               </div>
             )}

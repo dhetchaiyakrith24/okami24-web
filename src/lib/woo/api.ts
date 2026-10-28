@@ -419,7 +419,9 @@ export function handle(req: ApiRequest): ApiResponse {
         return w ? ok(webhookJson(w)) : err(404, "woocommerce_rest_webhook_invalid_id", "Invalid ID.");
       }
       if (write) {
-        const w = req.hooks.update(id, readWebhook(req.body, true) ?? {});
+        const patch = readWebhook(req.body, true);
+        if (!patch) return err(400, "rest_invalid_param", "Invalid parameter(s): topic, delivery_url");
+        const w = req.hooks.update(id, patch);
         return w ? ok(webhookJson(w)) : err(404, "woocommerce_rest_webhook_invalid_id", "Invalid ID.");
       }
       if (method === "DELETE") {

@@ -16,7 +16,7 @@
 import { handle, readStockFields, type ApiRequest, type StockReportView, type WebhookInput, type WebhookView } from "./api";
 import { wooCatalog } from "./catalog";
 import { parseCredentials, redactSecrets, safeQuery } from "./credentials";
-import { wooOrderJson, type PushOrder } from "./order-json";
+import { pushBlock, wooOrderJson, type PushOrder } from "./order-json";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 
@@ -168,6 +168,7 @@ check("http delivery URL refused", handle(req({ method: "POST", segments: ["wc",
 check("unknown topic refused", handle(req({ method: "POST", segments: ["wc", "v3", "webhooks"], body: { ...hookBody, topic: "action.woocommerce_x" }, hooks })).status === 400);
 const hookList = handle(req({ segments: ["wc", "v3", "webhooks"], hooks }));
 check("webhook list shows it", (hookList.json as { topic: string }[])[0]?.topic === "order.created");
+check("webhook PUT with an http URL = 400", handle(req({ method: "PUT", segments: ["wc", "v3", "webhooks", "1"], body: { delivery_url: "http://x.example/h" }, hooks })).status === 400);
 check("webhook DELETE removes it", handle(req({ method: "DELETE", segments: ["wc", "v3", "webhooks", "1"], hooks })).status === 200 && hooks.list().length === 0);
 check("unsigned webhook list = 401", handle(req({ signed: false, segments: ["wc", "v3", "webhooks"] })).status === 401);
 check("sender-name setting answers", handle(req({ segments: ["wc", "v3", "settings", "email", "woocommerce_email_from_name"] })).status === 200);
@@ -201,6 +202,12 @@ check(
 check("order: address mapped (Thai fields)", paid.shipping.address_2 === "ตำบล" && paid.shipping.city === "อำเภอ" && paid.shipping.state === "จังหวัด" && paid.shipping.country === "TH");
 const orderText = JSON.stringify(paid);
 check("order: no e-mail, note or slip", paid.billing.email === "" && paid.customer_note === "" && !/slip|สลิป|refund_|promptpay/i.test(orderText));
+for (const status of ["pending_payment", "payment_submitted", "awaiting_verification", "processing", "shipped", "completed", "cancelled"]) {
+  check(`push refused for ${status}`, pushBlock({ status, alreadySent: false, stockOpen: false }) === "not-approved");
+}
+check("push allowed for approved, never sent, no stock problem", pushBlock({ status: "approved", alreadySent: false, stockOpen: false }) === null);
+check("push refused once sent (no duplicate)", pushBlock({ status: "approved", alreadySent: true, stockOpen: false }) === "already-sent");
+check("push refused while an out-of-stock problem is open", pushBlock({ status: "approved", alreadySent: false, stockOpen: true }) === "stock-open");
 check("order: marked paid (processing)", paid.status === "processing" && paid.set_paid === true);
 check("unknown product id = 404", handle(req({ segments: ["wc", "v3", "products", "5"] })).status === 404);
 check("unknown route = 404", handle(req({ segments: ["wc", "v3", "customers"] })).status === 404);

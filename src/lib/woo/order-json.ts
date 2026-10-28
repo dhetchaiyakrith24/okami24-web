@@ -40,6 +40,16 @@ export interface PushOrder {
   postalCode: string;
 }
 
+/** Why an order may NOT go to the warehouse now — null = it may. Only a paid order (staff confirmed the money →
+ *  "approved") that was never sent before and has no open out-of-stock problem; anything else would hand Shipnity an
+ *  unpaid, cancelled or duplicate order marked paid. */
+export function pushBlock(o: { status: string; alreadySent: boolean; stockOpen: boolean }): "not-approved" | "already-sent" | "stock-open" | null {
+  if (o.alreadySent) return "already-sent";
+  if (o.status !== "approved") return "not-approved";
+  if (o.stockOpen) return "stock-open";
+  return null;
+}
+
 const money = (n: number) => n.toFixed(2);
 const wooDate = (iso: string) => iso.replace(/\.\d+Z$/, "").replace(/Z$/, "");
 

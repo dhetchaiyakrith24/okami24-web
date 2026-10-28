@@ -3,7 +3,8 @@ import crypto from "node:crypto";
 import { getDb } from "@/lib/db/client";
 import { SITE_URL } from "@/lib/seo";
 import { getStaffOrder } from "@/lib/staff/orders";
-import { wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
+import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
+import { pushBlock, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
 
 /**
@@ -53,14 +54,35 @@ export function sign(body: string, secret: string): string {
   return crypto.createHmac("sha256", secret).update(body, "utf8").digest("base64");
 }
 
-export type PushResult = { ok: true } | { ok: false; error: "not-found" | "no-target" | "no-sku" | "failed"; detail?: string };
+export type PushResult =
+  | { ok: true }
+  | { ok: false; error: "not-found" | "not-approved" | "already-sent" | "stock-open" | "no-target" | "no-sku" | "failed"; detail?: string };
 
 export async function pushOrder(orderNumber: string): Promise<PushResult> {
+  // Checked on the server at the moment of sending, not only by which button the page showed (checker #957: a page left
+  // open in a second tab could send an unpaid or cancelled order).
+  const detail = getStaffOrder(orderNumber);
+  if (!detail) return { ok: false, error: "not-found" };
+  const block = pushBlock({
+    status: detail.status,
+    alreadySent: sendState(detail.id)?.firstSentAt != null,
+    stockOpen: detail.stockIssue !== null && stockIssueStage(detail.stockIssue) !== "resolved",
+  });
+  if (block) return { ok: false, error: block };
   const order = pushOrderFor(orderNumber);
   if (!order) return { ok: false, error: "not-found" };
   if (order.lines.length === 0 || order.lines.some((l) => !l.sku)) return { ok: false, error: "no-sku" };
   const targets = orderCreatedTargets();
   if (targets.length === 0) return { ok: false, error: "no-target" };
+  // Claim the order before the network call, so a double click (or two staff at once) sends it once: only a new order
+  // or one whose last try failed can be claimed.
+  const claimed = getDb()
+    .prepare(
+      `INSERT INTO woo_order_sends (order_id, status) VALUES (?, 'sending')
+       ON CONFLICT(order_id) DO UPDATE SET status = 'sending' WHERE woo_order_sends.status = 'failed'`
+    )
+    .run(order.id).changes;
+  if (claimed !== 1) return { ok: false, error: "already-sent" };
 
   const body = JSON.stringify(wooOrderJson(order, SITE_URL));
   let delivered = 0;

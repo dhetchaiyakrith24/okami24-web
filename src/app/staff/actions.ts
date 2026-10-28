@@ -73,7 +73,8 @@ export async function staffShipnityPushAction(formData: FormData): Promise<void>
   const pushed = await pushOrder(orderNumber);
   if (!pushed.ok) redirect(`${back}error=shipnity-${pushed.error}`);
   const step = applyStaffAction(orderNumber, "to-warehouse", { note: "ส่งเข้า Shipnity อัตโนมัติ" });
-  redirect(step.ok ? `${back}done=shipnity` : `${back}done=shipnity-resent`);
+  // Sent, but the status moved meanwhile (another tab) — say so instead of a plain "done".
+  redirect(step.ok ? `${back}done=shipnity` : `${back}error=shipnity-sent-status`);
 }
 
 /** Out of stock after payment (cart UX batch E, owner 24/10): mark lines out (or ask again) · apply the customer's swap ·
