@@ -2292,6 +2292,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Disposable-45-15": { kind: "official-photo", role: "detail", src: "/assets/products/sup-zero-22k/variant-double-mint.webp", alt: "SUP ZERO 22K, Double Mint 5%, device with mint leaves", transparentBackground: true, sourceName: "OKami24 composite: our SUP ZERO 22K card photo + a studio photo of mint leaves (no flavour box or pouch exists)", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
     "sup-zero-22k-verified-apple-aloe-vera": { kind: "official-photo", role: "detail", src: "/assets/products/sup-zero-22k/variant-apple-aloe-vera.webp", alt: "SUP ZERO 22K, Apple Aloe Vera, device with apple and aloe vera", transparentBackground: true, sourceName: "OKami24 composite: our SUP ZERO 22K card photo + a studio photo of apple and aloe vera (no flavour box or pouch exists)", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
   },
+  // Images-all round 29/10: Dundu sells one flavour here — the Grape option shows the card photo (IMAGE_SPEC §4: a one-option product
+  // may use its card as the option photo), so the option no longer shows the no-photo panel.
+  "Eliquid-73": {
+    "Eliquid-73-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-73/card.webp", alt: "Dundu Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Dundu Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/dundu-salt-nic/" },
+  },
   // List-new (27/10, owner — HANDOFF §18): Marbo 10K (เทียบแท้) reuses the M Bar 10K device photo of the SAME flavour name only.
   // Watermelon Ice (M Bar 10K has "Watermelon") and Mocha Latte (M Bar 10K has "Matcha Latte") have no same-name photo → no-photo
   // panel (IMAGE_SPEC "ห้ามยืมรูป").
