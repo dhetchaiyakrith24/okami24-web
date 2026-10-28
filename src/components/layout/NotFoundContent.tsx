@@ -18,19 +18,16 @@ export function NotFoundContent() {
   const t = dict.notFound;
   return (
     <Container className="flex flex-col items-center gap-6 pb-32 pt-12 text-center lg:pt-16">
-      {/* Logo round batch 2 (owner 28/10, designer spec 28/10): the samurai over the red moon, cut at the shoulder, every
-          edge faded into the page; above the heading, never over it. */}
-      <div aria-hidden className="relative h-[220px] w-[290px] lg:h-[300px] lg:w-[396px]">
-        <Image
-          src="/brand/samurai-404.webp"
-          alt=""
-          fill
-          priority
-          sizes="(min-width: 1024px) 396px, 290px"
-          className="object-cover [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_72%)]"
-        />
+      {/* Owner 29/10 "ไม่จำเป็นต้องตัดให้กลม ใช้เป็นภาพหลัก ค่อยๆไล่ Fade out": the whole character (moon, kabuto, hilt,
+          sakura kimono) as the page's main picture — no oval cut; the sides fade early, the bottom fades long into the
+          page (the top fades too, so no edge of the picture shows) and the "404" + heading sit on that faded part (the text starts where the picture is already dark). */}
+      <div
+        aria-hidden
+        className="relative -mt-6 aspect-[1000/1017] w-[min(100%,420px)] [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_14%,black_42%,transparent_90%),linear-gradient(to_right,transparent,black_26%,black_74%,transparent)] lg:-mt-10 lg:w-[560px]"
+      >
+        <Image src="/brand/samurai-404-full.webp" alt="" fill priority sizes="(min-width: 1024px) 560px, 420px" className="object-cover" />
       </div>
-      <span className="label-mono text-xs text-ember">404</span>
+      <span className="label-mono relative -mt-28 text-xs text-ember lg:-mt-40">404</span>
       <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{t.title}</h1>
       <p className="max-w-md text-base text-foreground-muted">{t.body}</p>
       <div className="flex flex-wrap justify-center gap-3">
