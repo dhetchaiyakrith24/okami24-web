@@ -183,7 +183,7 @@ of 20 sticks, RELX Infinity 2 Plus ฿990, Esko Bar 20000 ฿389 (for its page w
   ending is 90). "Cost" = the warehouse's Shipnity Max "ราคาขาย" (Max has no separate cost column). Scope (owner 29/10, "แก้ราคาแค่รูปใหม่ที่สร้างมา"):
   only products that have a NEW catalogue picture (black background, the site's theme) are re-priced, and the site price equals the price the
   new picture prints (the owner picks it with the picture); every other product keeps its current price until its picture is redone. Applied
-  29/10: INFY 20K, TFIT M Power 20K, RELX LUMI 18K, SALTHUB Zero Pro, Zero cartridge — log: `docs/ปรับราคา-2026-10-29.md`. A daily check against
+  29/10: INFY 20K, TFIT M Power 20K, RELX LUMI 18K, SALTHUB Zero Pro, Zero cartridge, SUP ZERO 22K (owner "ตามรูป" ฿350) — log: `docs/ปรับราคา-2026-10-29.md`. A daily check against
   the warehouse list only REPORTS (and may open a draft PR) — it never publishes a price; the owner's OK stays the final gate.
 
 ---
