@@ -1981,7 +1981,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Muro SC 8000 or Connector 20K?",
           paragraphs: [
-            "They work differently. The Muro SC 8000 is a disposable you open and use straight away, while the [Muro Connector 20K](/products/muro-connector-20k) is a prefilled pod rated for up to 20,000 puffs that clicks onto a Muro Creator or RELX Creator device. If you already have one of those and vape a lot, the Connector 20K is worth a look.",
+            "They work differently. The Muro SC 8000 is a disposable you open and use straight away, while the [Muro Connector 20K](/products/muro-connector-20k) is a prefilled pod rated for up to 20,000 puffs that fits a Muro Creator or RELX Creator device. If you already have one of those and vape a lot, the Connector 20K is worth a look.",
           ],
         },
       ],

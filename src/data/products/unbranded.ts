@@ -354,7 +354,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro Connector 20K",
     tagline: "A prefilled connector pod rated for up to 20,000 puffs.",
     shortDescription:
-      "A prefilled pod from the Muro \"Connector\" line, rated for up to 20,000 puffs. It clicks onto the Muro Creator device, and the shop has confirmed it also fits the RELX Creator.",
+      "A prefilled pod from the Muro \"Connector\" line, rated for up to 20,000 puffs. It is made for the Muro Creator device, and the shop has confirmed it also fits the RELX Creator.",
     isFlagship: false,
     // Round "clip" (2026-09-27): the "RELX Creator pod" clip of docs/SEO_LANDSCAPE.md §4 item 6, from @OKM_24 (the main
     // channel of the two that cover this pod). "LEGO" in its title is the same honeycomb-shell nickname as this record's
