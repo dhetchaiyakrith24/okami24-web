@@ -7,6 +7,7 @@ import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { pushBlock, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
 import { trimLine1 } from "@/lib/commerce/address-line1";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
+import { pickCarrier, toStaffCarrierId } from "@/lib/commerce/carriers";
 
 /**
  * Send one paid order to the warehouse's Shipnity the way a WooCommerce shop does (Shipnity link, owner 28/10): POST the
@@ -49,6 +50,8 @@ export function pushOrderFor(orderNumber: string): PushOrder | null {
     district: a.district,
     province: a.province,
     postalCode: a.postalCode,
+    // Owner 30/10: staff's pick on the order page, else DHL / EMS from the postcode.
+    carrier: toStaffCarrierId(o.carrier) ?? pickCarrier(a.postalCode),
   };
 }
 
@@ -58,7 +61,7 @@ export function sign(body: string, secret: string): string {
 
 export type PushResult =
   | { ok: true }
-  | { ok: false; error: "not-found" | "not-approved" | "already-sent" | "stock-open" | "no-target" | "no-sku" | "failed"; detail?: string };
+  | { ok: false; error: "not-found" | "not-approved" | "already-sent" | "stock-open" | "no-target" | "no-sku" | "failed" | "no-reply"; detail?: string };
 
 export async function pushOrder(orderNumber: string): Promise<PushResult> {
   // Checked on the server at the moment of sending, not only by which button the page showed (checker #957: a page left
@@ -127,7 +130,10 @@ export async function pushOrder(orderNumber: string): Promise<PushResult> {
          last_attempt_at = excluded.last_attempt_at`
     )
     .run(order.id, ok ? "sent" : "failed", lastStatus, ok ? null : lastError, ok ? 1 : 0);
-  return ok ? { ok: true } : { ok: false, error: "failed", detail: lastError ?? undefined };
+  if (ok) return { ok: true };
+  // No answer at all (timeout / network) — Shipnity may still have taken the order, so a second press could add it
+  // twice (owner 30/10 "ตรวจเรื่องที่อยู่ซ้ำ"): staff are told to look in Shipnity first.
+  return { ok: false, error: lastStatus === null ? "no-reply" : "failed", detail: lastError ?? undefined };
 }
 
 export interface SendState {
