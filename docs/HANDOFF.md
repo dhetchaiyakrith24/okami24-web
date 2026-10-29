@@ -404,3 +404,5 @@ panel on /products (designer pick, owner asked) · the card cut = small/short/sh
 **Answered 29/10 (owner, chat):** capacity stays as the site has it — M Bar 9K shows none (Javis's "14 ml" not added), TFIT M Power 20K 18 ml ·
 Muro Connector 20K (pods, Javis's photos) OK · SUP ZERO 22K price = the price printed on its new image · daily price check 15:00, Sonnet 5.5 medium ·
 option photos where all flavours share one body = device + that flavour's box/pouch if we have one (cheapest), else + its fruit.
+**Higgsfield credits 29/10 (owner, chat "Yes, use them"):** approved for one batch only — RELX Pod Pro 2 11 flavours + Menthol Freeze + TPP-DM4 coil box (~13 images, ~2 credits each, cap ~40) · existing credits only, never buy · more = ask again ·
+Zero Pro Copper / Champagne = slot stays without a photo until a real one exists.
