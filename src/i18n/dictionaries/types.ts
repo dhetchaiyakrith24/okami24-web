@@ -706,6 +706,7 @@ export interface Dictionary {
     /** Bank-details block (owner 2026-09-06). The account values themselves are NOT in the
      *  dictionary — they come from the server-only src/data/payment.ts via page props. */
     paymentTransferTitle: string;
+    paymentCardTag: string;
     paymentBankLabel: string;
     paymentAccountNameLabel: string;
     paymentAccountNumberLabel: string;
