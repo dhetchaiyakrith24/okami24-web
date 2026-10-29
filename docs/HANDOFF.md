@@ -12,33 +12,34 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Rewritten 29/10 ~22:30 by the main chat (Friday, local_dbb36e53)
 
-1 main = fbb80d36 (#1006) 29/10 ~22:30. CART IS ON. LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: samurai theme r2 (#983 #991 #993) ·
-  Muro Connector 20K (#982) · re-price (#985 #987) · images #986–#1002 · #1004 cut-off 12:30 (th/en/zh, BSOT §10) + a cancelled order
-  whose slip was never confirmed reads "ร้านยืนยันยอดโอนเงินไม่ได้" (out-of-stock keeps the refund line) · docs #1003 #1005 #1006.
+1 main = b5a10c95 (#1007) 29/10 ~23:00. CART IS ON. LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: samurai theme r2 (#983 #991 #993) ·
+  Muro Connector 20K (#982) · re-price (#985 #987) · images #986–#1002 · #1004 cut-off 12:30 + failed-slip cancel line · #1009 unboxing-
+  video notice on the order page (paid → 7 days after completed) · #1010 Woo push/LINE alert/warehouse text drop a line-1 tail that repeats
+  the address boxes (anchored only; order #0023 = Shipnity C159 went out doubled before it) + first address box relabelled · #1007 SHIPPING
+  TIERS (BSOT §10; column `orders.shipping_rule`; members who ordered before go-live = first order already used, owner 29/10).
 2 IN FLIGHT 29/10 night:
-  a images-4 (local_59489061-3559-40a4-8d46-140f74af2e4a, Opus high): FIRST TPP-DM4 on /products/coil-38 — owner REJECTED live (edges,
-    options jump) → one frame per option + clean cut; THEN the approved credit batch (58 images ≈ 116, cap 130, never buy) + RELX Pod Pro 2
-    missing flavours via Claude in Chrome. Brief side-session-notes `next-chat-images.md`. Zero Menthol Freeze = owner PASSED.
-  b shipping-rules (local_1489bf1f-e147-4f7e-9a29-bf5174e66f48): BSOT §10 tiers (first member order ฿0 · ≥800 ฿0 · ≥500 ฿0 once a calendar
-    month per phone, then ฿35 · <500 ฿50 · no reuse on same PHONE or ADDRESS) · reason on CHECKOUT · info pages never say ฿35/฿800 ·
-    sign-in nudge on checkout · DB column `orders.shipping_rule` APPROVED by the owner. Plan `side-session-notes/shipping-rules-2910-plan.md`.
-    Money = full set; Friday merges. Live site keeps ฿500-for-everyone until then.
-  c seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): owner can't find the site for "pod"/"pod system" though GSC says ~6.6/4–5 →
+  a images-4 (local_59489061-3559-40a4-8d46-140f74af2e4a, Opus high): FIRST TPP-DM4 (/products/coil-38, owner REJECTED: edges, options
+    jump) — draft PR #1011; THEN the credit batch (58 ≈ 116 credits, cap 130, never buy) + RELX Pod Pro 2 missing flavours via Chrome.
+    Brief side-session-notes `next-chat-images.md`. Main moved under its verify (#1009 #1010 #1007) → it must merge main + re-verify.
+  b seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): owner can't find the site for "pod"/"pod system" though GSC says ~6.6/4–5 →
     explain (country/device/SafeSearch, real SERP read-only) + 1–3 fixes; build nothing.
-  d cost-excel DONE: `_incoming/cost-2910/ต้นทุนสินค้า-OKami24-2026-10-29.xlsx` (outside git), 1 row per product, 96 products, 63 with cost
-    (shipnity.com account OKAMI, column "ต้นทุน") · Vazer One pod cost 80 > its price 59 (flagged).
-  e Friday HERE next: unboxing-video notice on the ORDER PAGE ONLY, after payment while waiting (owner 29/10). thai-copy draft: title
-    "อย่าลืมถ่ายคลิปตอนแกะกล่อง" + 2 sentences + line A "ไม่มีคลิปตอนแกะกล่อง ร้านพิจารณาเคลมให้ไม่ได้ ข้อนี้ใช้กับทุกคำสั่งซื้อนะคะ" + link
-    /warranty, th/en/zh — owner sees it first. "ของไม่ครบ" is not claimable in BSOT §12 (copy says "ถ้าของมีปัญหา"). shipping-rules
-    must not touch `OrderStatusView.tsx`.
-  f Stuck "รอส่งคลัง" orders → ADMIN presses "ส่งรายการให้คลังแล้ว" (not the 19:46 one); Friday has no staff sign-in.
-  g NEXT, one at a time after shipping-rules (owner 29/10): (1) customer cards on /staff (orders · frequency · totals · favourites · member
-    since · benefits used; members = provider id + display name + times, no email; LINE customers matched by PHONE) + one privacy line;
-    no cookie banner while only necessary cookies exist · (2) admins sign in with their own Gmail → who accepted / checked each slip
-    (login = 13.3 #9, plan to owner) · (3) EMS + DHL tracking + motion graphic — step 1 DHL in `carriers.ts` + staff picker (still Flash;
-    BSOT §10 lines 417/422 too); live tracking needs owner-made EMS/DHL developer accounts · (4) LINE orders on the web = later.
-    Off-site backup (77) = after the back office.
+  c cost-excel DONE: `_incoming/cost-2910/ต้นทุนสินค้า-OKami24-2026-10-29.xlsx` (outside git), 1 row per product, 68 of 96 with cost
+    (Shipnity account OKAMI "ต้นทุน" + 10 the owner gave in chat).
+  d Stuck "รอส่งคลัง" orders: the owner is pressing "ส่งรายการให้คลังแล้ว" himself (#0006 done 22:31; #0010 #0011 #0014 #0015 #0017 #0020
+    #0022 left). NEVER "ส่งเข้าคลัง Shipnity" on these — already keyed, it would duplicate. Friday has no staff sign-in.
+  e NEXT (owner order 29/10), one at a time:
+    (0) CARRIER AUTO-PICK + push automation (owner: queue after shipping fees) — postcode rule from the admin: Phuket (83xxx) + Bangkok
+        10220, 10250 → DHL, else EMS [confirm "else EMS"]; the Woo push today sends shipping_lines "ค่าส่ง"/flat_rate → Shipnity shows
+        OTHER. Questions sent to the admin via the owner: Shipnity's carrier names, its Woo shipping-method mapping screen, where tracking
+        numbers live, how failed slips are handled. Steps: 1 auto carrier + staff override · 2 confirm = push in one click · 3 (MONEY,
+        owner yes first; EasySlip account 57 first) slips with verdict "pass" auto-approve + auto-push 24/7, the rest wait for staff.
+    (1) customer cards on /staff (orders · frequency · totals · favourites · member since · benefits used; members = provider id + display
+        name + times, no email; LINE customers matched by PHONE) + one privacy line; no cookie banner while only necessary cookies exist ·
+    (2) admins sign in with their own Gmail → who accepted / checked each slip (login = 13.3 #9, plan to owner) ·
+    (3) EMS + DHL tracking + motion graphic — DHL in `carriers.ts` + staff picker (still Flash; BSOT §10 lines 417/422 too); live tracking
+        needs owner-made EMS/DHL developer accounts · (4) LINE orders on the web = later. Off-site backup (77) = after the back office.
   Leftovers: Pod-180 back as its own Shipnity product with stock (nexBar CLEAR 18K moved to Disposable-46) — decide new vs duplicate ·
+    trimLine1 checker note: a name after an unlisted place word (โรงแรม, Soi, Rd …) can still be cut when the run is anchored (no data lost) ·
     owner not yet judged live: samurai theme, nexPOD photos, nexBar CLEAR tones (78).
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).

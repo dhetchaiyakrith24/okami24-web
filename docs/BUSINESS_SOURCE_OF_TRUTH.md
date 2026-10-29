@@ -396,8 +396,8 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
   = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Owner 29/10 ("ตามแนะนำ"): rule 3 is for
   everyone, counted per phone, calendar month (Bangkok) · a benefit already used cannot be reused when the PHONE or the ADDRESS
   (house no. + sub-district + postcode) matches an order that used it — the recipient name alone never blocks · orders before
-  go-live do not count · info pages state only the first-order member benefit + "from ฿500, once a month" (never ฿35 or ฿800). NOT LIVE until the shipping-rules PR merges —
-  until then the site still applies ฿500 for everyone.
+  go-live do not count · info pages state only the first-order member benefit + "from ฿500, once a month" (never ฿35 or ฿800). LIVE 2026-10-29 (#1007). A member who
+  ordered before go-live has already used the first-order benefit (owner 29/10: "ไม่ได้ครับเพราะเขาได้ไปแล้วก่อนหน้านี้").
 - **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
   orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
   phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.
