@@ -9,7 +9,14 @@ import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
 import { lineImage, lineNames, type LineImage } from "./line-image";
 import { MAX_LINE_QUANTITY } from "./cart-limits";
-import { loadShippingHistory, nextShippingStep, shippingNoteKey, type ShippingHistory, type ShippingNoteKey } from "./shipping-rules";
+import {
+  loadShippingHistory,
+  nextShippingStep,
+  shippingNoteKey,
+  type ShippingAddressKey,
+  type ShippingHistory,
+  type ShippingNoteKey,
+} from "./shipping-rules";
 import { getMember } from "@/lib/members/session";
 
 const CART_COOKIE = "okami24_cart";
@@ -149,17 +156,24 @@ export async function getCartCount(): Promise<number> {
   return row.n;
 }
 
-/** What the shipping tiers (shipping-rules.ts) know about this visitor: the signed-in member, the checkout phone, and the
- *  recipient's phone once an address is picked. Read-only, like the rest of `getCart`. */
-export async function visitorShippingHistory(recipientPhone: string | null = null): Promise<ShippingHistory> {
+/** The chosen address, as far as the shipping tiers need it (recipient phone + the anti-reuse address key). */
+export type CartShippingAddress = ShippingAddressKey & { phone: string };
+
+/** What the shipping tiers (shipping-rules.ts) know about this visitor: the signed-in member, the checkout phone, and —
+ *  once an address is picked — the recipient's phone and the address. Read-only, like the rest of `getCart`. */
+export async function visitorShippingHistory(address: CartShippingAddress | null = null): Promise<ShippingHistory> {
   const [session, member] = await Promise.all([getSession(), getMember()]);
-  return loadShippingHistory(getDb(), { memberId: member?.id ?? null, phones: [session?.phone ?? "", recipientPhone ?? ""] });
+  return loadShippingHistory(getDb(), {
+    memberId: member?.id ?? null,
+    phones: [session?.phone ?? "", address?.phone ?? ""],
+    address,
+  });
 }
 
-/** `recipientPhone` = the chosen address's phone (review step) — the cart page has none yet. */
-export async function getCart(recipientPhone: string | null = null): Promise<CartView> {
+/** `address` = the chosen address (review step) — the cart page has none yet. */
+export async function getCart(address: CartShippingAddress | null = null): Promise<CartView> {
   const cartId = await peekCartId();
-  const history = await visitorShippingHistory(recipientPhone);
+  const history = await visitorShippingHistory(address);
   if (cartId === null) {
     const totals = computeOrderTotals([], history);
     return { cartId: null, lines: [], totals, hasProblems: false, shipping: shippingHint(totals, history) };

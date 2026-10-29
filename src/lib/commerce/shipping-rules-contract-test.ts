@@ -2,7 +2,8 @@
  * OKami24 — shipping-fee tiers (owner 29/10, BSOT §10), held to every rule and boundary the owner named:
  *
  *   1. the amounts: 499 / 500 / 799 / 800, for a newcomer and for someone who already used the month's one;
- *   2. a member's first order is 0 at any amount, once; a cancelled first order gives the benefit back;
+ *   2. a member's first order is 0 at any amount, once; a cancelled first order gives the benefit back; anti-reuse by
+ *      phone or address (house no. + sub-district + postcode, owner 29/10), never by name;
  *   3. the second 500+ order in a month pays 35; the month rolls over at midnight Bangkok time; a cancelled order never
  *      uses the month up; it is counted per checkout phone, recipient phone (as typed, dashes and all) and member;
  *   4. only `monthly_free` orders count — 800+, first-order and pre-tier (NULL) orders use nothing up;
@@ -18,6 +19,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   decideShipping,
+  houseNumber,
   loadShippingHistory,
   monthlyWindowStart,
   nextShippingStep,
@@ -37,9 +39,9 @@ interface Result {
 const results: Result[] = [];
 const check = (name: string, passed: boolean, detail = "") => results.push({ name, passed, detail });
 
-const USED: ShippingHistory = { isMember: false, memberHasOrder: false, monthlyFreeUsed: true };
-const NEW_MEMBER: ShippingHistory = { isMember: true, memberHasOrder: false, monthlyFreeUsed: false };
-const OLD_MEMBER: ShippingHistory = { isMember: true, memberHasOrder: true, monthlyFreeUsed: false };
+const USED: ShippingHistory = { isMember: false, firstOrderUsed: false, monthlyFreeUsed: true };
+const NEW_MEMBER: ShippingHistory = { isMember: true, firstOrderUsed: false, monthlyFreeUsed: false };
+const OLD_MEMBER: ShippingHistory = { isMember: true, firstOrderUsed: true, monthlyFreeUsed: false };
 const MEMBERS_ONLY: ShippingSettings = { ...SHIPPING_SETTINGS, monthlyFreeFor: "members" };
 const ROLLING: ShippingSettings = { ...SHIPPING_SETTINGS, monthlyWindow: "rolling-30-days" };
 const show = (d: { rule: string; fee: number }) => `${d.rule} ${d.fee}`;
@@ -106,17 +108,17 @@ const db = new Database(":memory:");
 db.pragma("foreign_keys = ON");
 for (const f of files) db.exec(fs.readFileSync(path.join(MIGRATIONS, f), "utf8"));
 
-db.prepare("INSERT INTO customers (id, phone) VALUES (1, '0811111111'), (2, '0822222222'), (3, '0833333333'), (4, '0844444444')").run();
-db.prepare("INSERT INTO members (id) VALUES (1), (2), (3)").run();
+db.prepare("INSERT INTO customers (id, phone) VALUES (1, '0811111111'), (2, '0822222222'), (3, '0833333333'), (4, '0844444444'), (5, '0855500000'), (6, '0866600000')").run();
+db.prepare("INSERT INTO members (id) VALUES (1), (2), (3), (4), (5)").run();
 let nextId = 1;
-function addOrder(o: { customer: number; member?: number; rule: string | null; status?: string; at: string; recipientPhone?: string }): number {
+function addOrder(o: { customer: number; member?: number; rule: string | null; status?: string; at: string; recipientPhone?: string; addr?: [string, string, string] }): number {
   const id = nextId++;
   db.prepare(
     "INSERT INTO orders (id, order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, created_at) VALUES (?, ?, 'tok', ?, ?, ?, 600, 0, ?, 600, ?)"
   ).run(id, `OK-T-${id}`, o.customer, o.member ?? null, o.status ?? "pending_payment", o.rule, o.at);
   db.prepare(
-    "INSERT INTO order_shipping_addresses (order_id, recipient_name, phone, line1, subdistrict, district, province, postal_code) VALUES (?, 'ก', ?, '1', 'ต', 'อ', 'จ', '10110')"
-  ).run(id, o.recipientPhone ?? "0899999999");
+    "INSERT INTO order_shipping_addresses (order_id, recipient_name, phone, line1, subdistrict, district, province, postal_code) VALUES (?, 'ก', ?, ?, ?, 'อ', 'จ', ?)"
+  ).run(id, o.recipientPhone ?? "0899999999", ...(o.addr ?? ["1", "ต", "10110"]));
   return id;
 }
 const cancel = (id: number) => db.prepare("UPDATE orders SET status = 'cancelled' WHERE id = ?").run(id);
@@ -145,17 +147,34 @@ check("800+ and pre-tier (NULL) orders use nothing up", used(["0833333333"]) ===
 
 const firstOrder = addOrder({ customer: 4, member: 1, rule: "first_member_order", at: "2026-10-09T03:00:00.000Z", recipientPhone: "0844444444" });
 const m1 = loadShippingHistory(db, { memberId: 1, phones: ["0844444444"] }, mid);
-check("a member's first order is recorded: no second first-order benefit", m1.isMember && m1.memberHasOrder === true, JSON.stringify(m1));
+check("a member's first order is recorded: no second first-order benefit", m1.isMember && m1.firstOrderUsed === true, JSON.stringify(m1));
 check("…and it does not use up the month's one", m1.monthlyFreeUsed === false && show(decideShipping(600, m1)) === "monthly_free 0", JSON.stringify(m1));
 cancel(firstOrder);
 const m1After = loadShippingHistory(db, { memberId: 1, phones: [] }, mid);
-check("cancelling the first order gives the first-order benefit back", m1After.memberHasOrder === false && decideShipping(100, m1After).rule === "first_member_order", JSON.stringify(m1After));
+check("cancelling the first order gives the first-order benefit back", m1After.firstOrderUsed === false && decideShipping(100, m1After).rule === "first_member_order", JSON.stringify(m1After));
 
 addOrder({ customer: 4, member: 2, rule: "monthly_free", at: "2026-10-10T03:00:00.000Z", recipientPhone: "0866666666" });
 check("the month's one is counted per member, whatever phone the member types next", used(["0877777777"], 2) === true);
 check("a guest (no member) with an unrelated phone is not affected", used(["0877777777"]) === false);
 const newMember = loadShippingHistory(db, { memberId: 3, phones: ["0877777777"] }, mid);
 check("a member with no orders at all → first order 0", decideShipping(2000, newMember).rule === "first_member_order", JSON.stringify(newMember));
+
+// Anti-reuse (owner 29/10, BSOT §10): phone OR address (house no. + sub-district + postcode); the name never blocks.
+const histFor = (memberId: number | null, phones: string[], address: { line1: string; subdistrict: string; postalCode: string } | null) =>
+  loadShippingHistory(db, { memberId, phones, address }, mid);
+addOrder({ customer: 5, member: 4, rule: "first_member_order", at: "2026-10-12T03:00:00.000Z", recipientPhone: "0861111111", addr: ["12/3 หมู่ 4", "บางรัก", "10500"] });
+check("first-order benefit: a second LINE / Google account with the same recipient phone gets none", histFor(5, ["0862222222", "0861111111"], null).firstOrderUsed === true);
+check(
+  "first-order benefit: same house no. + sub-district + postcode, other phone, other name → none (ต./แขวง and the street ignored)",
+  histFor(5, ["0862222222"], { line1: "12/3 ซอยอื่น", subdistrict: "แขวงบางรัก", postalCode: "10500" }).firstOrderUsed === true
+);
+check("first-order benefit: next-door house no. 12/4 → still given", histFor(5, ["0862222222"], { line1: "12/4 หมู่ 4", subdistrict: "บางรัก", postalCode: "10500" }).firstOrderUsed === false);
+check("first-order benefit: same house no., other postcode → still given", histFor(5, ["0862222222"], { line1: "12/3 หมู่ 4", subdistrict: "บางรัก", postalCode: "10330" }).firstOrderUsed === false);
+addOrder({ customer: 6, rule: "monthly_free", at: "2026-10-11T03:00:00.000Z", recipientPhone: "0863333333", addr: ["88 ถนนสุขุมวิท", "คลองตัน", "10110"] });
+check("month's one: same address, other phones → 35", decideShipping(500, histFor(null, ["0864444444"], { line1: "88 ซอย 5", subdistrict: "ต.คลองตัน", postalCode: "10110" })).fee === 35);
+check("month's one: the house no. in Thai digits matches too", histFor(null, ["0864444444"], { line1: "๘๘ ซอย 5", subdistrict: "คลองตัน", postalCode: "10110" }).monthlyFreeUsed === true);
+check("month's one: house 89 at the same sub-district + postcode → still free", histFor(null, ["0864444444"], { line1: "89 ถนนสุขุมวิท", subdistrict: "คลองตัน", postalCode: "10110" }).monthlyFreeUsed === false);
+check("houseNumber: '99/1 ถนน…' → '99/1' · 'เลขที่ 7-2 …' → '7-2'", houseNumber("99/1 ถนนทดสอบ") === "99/1" && houseNumber("เลขที่ 7-2 ซอย 1") === "7-2", `${houseNumber("99/1 ถนนทดสอบ")} ${houseNumber("เลขที่ 7-2 ซอย 1")}`);
 
 addOrder({ customer: 1, rule: "monthly_free", at: "2026-09-21T05:00:00.000Z", recipientPhone: "0812121212" });
 check("Q2 rolling: an order 29 days back counts", used(["0812121212"], null, mid, ROLLING) === true);

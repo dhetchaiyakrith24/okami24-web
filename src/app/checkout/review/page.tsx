@@ -32,9 +32,9 @@ export default async function CheckoutReviewPage({
   const address = await getOwnedAddress(addressId);
   if (!address) redirect("/checkout/address?error=not-found");
 
-  // The recipient phone joins the checkout phone for the once-a-month shipping rule (shipping-rules.ts) — the fee shown here
+  // The recipient phone and the address join the checkout phone for the shipping tiers (shipping-rules.ts) — the fee shown here
   // is the one placeOrder charges.
-  const cart = await getCart(address.phone);
+  const cart = await getCart(address);
   if (cart.lines.length === 0 || cart.hasProblems) redirect("/cart");
 
   // Fresh per page load — a single review page instance's hidden field stays the same value

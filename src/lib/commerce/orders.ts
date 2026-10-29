@@ -171,7 +171,7 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       // order instead of erroring out.
       db.prepare("INSERT INTO idempotency_keys (key, order_id) VALUES (?, NULL)").run(idempotencyKey);
 
-      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone] });
+      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone], address });
       totals = computeOrderTotals(purchasableLines, history);
 
       const orderNumber = generateOrderNumber();
