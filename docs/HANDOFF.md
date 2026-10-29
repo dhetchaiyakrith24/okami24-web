@@ -10,45 +10,39 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 30/10 ~01:00 by the main chat (Friday, local_dbb36e53), moved at 80% context.
+Rewritten 30/10 ~02:25 by the 2nd main chat (Friday, local_10d3f4d1) — the 1st moved at 80% context.
 
-1 main ≈ 8c80890f (#1017) 30/10 ~01:00. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS, curl]: #1004 cut-off 12:30 + failed-slip line ·
-  #1009 unboxing notice · #1010 address line-1 dedupe to Shipnity + relabelled box · #1011 coil-38 TPP DM1–DM4 one frame · #1013 thank-you
-  card band = picture aspect · #1014 tracking step 1 (/staff/shipnity JSON download of Shipnity's writes) · #1015 SHIPPING v2 (BSOT §10:
-  members ฿0 once a calendar month from ฿300 · else ≥500 = ฿35, <500 = ฿50 · ≥800 ฿0; #1007 v1 replaced).
-2 IN FLIGHT 30/10 ~01:00 (main chat moved at 80% context — open the new chat with skill round-open "continue"):
-  a images-5 (local_f3cfc15f-3276-478a-bd3d-53cdf97e1fa8, Opus high): credit batch (cap 130 for chats 4+5; chat 4 used 16, Vazer One 32 so
-    far) · RELX Creator 20K = Friday ruled: 5 coloured pods + per-flavour fruit/cue (owner §18 rule), 16 known-colour flavours, skip Mineral +
-    15 unsourced · RELX Pod Pro 2 16 flavours = search in the owner's Chrome FIRST; UAE pack (relxnow.ae) is a different design → owner
-    not asked yet (Friday: leave the slot) · 14-credit drift outside chat 4.
-  b seo-push (local_e8d8cd82-c249-4e47-b83b-cfb84de9ffed, PR #1016 draft): on-site only (owner: NO outside link pushing — only YouTube,
-    platform risk) · plan 7 steps: real-SERP baseline 30/10 + weekly method in SEO docs · rival gap table · pod-systems body block (choose
-    guide · spec-sourced comparison · FAQ) · ItemList JSON-LD + internal links · Lighthouse · re-measure 06/11 13/11 · Friday added a Thai
-    variant cluster (พอต · พอตไฟฟ้า · pod system คืออะไร · ยี่ห้อไหนดี) linking to the hub · head of /products/pod-systems stays (owner lock 09/10).
-  c tracking-sync (local_824f03fa-…, done step 1): waits for the ADMIN to ship one web order in Shipnity, then download the JSON at
-    okami24.store/staff/shipnity and send it → step 2 (auto tracking + carrier + shipped).
-  d shipping-rules (local_1489bf1f-…, idle): ASK it to confirm in data (owner 30/10 "ใช้สิทธิไปแล้ว ต้องใช้อีกไม่ได้")
-    = a member who got ฿0 shipping on an October order (v1 or v2) has used October's benefit; November resets.
-2N NEXT for the new main chat (owner 30/10 ~01:00):
-  a PAYMENT BOX on the order page: owner picked option B (embossed samurai) of https://claude.ai/artifact/C6nhv4BQemDC1XNMNFPxVe but wants
-    the CURRENT simple layout kept (bank box · QR "ใส่ยอดไว้แล้ว" · notes · slip upload) — only add the samurai for character. Draft files:
-    `_incoming/order-art-3010/` (paycard2-tpl.html · paycard-draft.html · b64.json · option-B.jpg · owner images). Save option B image to the owner's Drive folder
-    https://drive.google.com/drive/folders/1N3Qr35Rm1r8MUNvOavYLb4p9BjRdN6mQ (owner asked; not done — the upload needs a fresh context).
-    Owner's LINE card art = dark-on-dark embossed and too faint on screens; the site's colour art `public/brand/samurai-products-bg-v2.webp`
-    is the same pose (B used it in grayscale). Ask the owner for the original line-art file if B must be sharper.
-  b THANK-YOU CARD: owner sent a NEW full-body samurai (white background, 1024×1536; in chat 39146c29 images/6.webp) — "ให้ใช้การ Fade out
-    เหมือนหน้าสินค้าทั้งหมด" → cut the white background, fade like the /products backdrop, replace `samurai-thanks-wide.webp` use in
-    OrderStatusView thank-you band; tier B shots + checker.
-  c SEO ROUTINE (owner 30/10): Saturdays 15:00 — propose the exact contents to the owner BEFORE creating it: check the SEO score /
-    head-audit, real-SERP measure, GSC coverage → fix list as a draft PR, request indexing for problem pages (GSC in the owner's Chrome,
-    limited per day), report. Owner approves → create.
-  d CARRIER AUTO-PICK (queued): Phuket 83xxx + Bangkok 10220/10250 = DHL, else EMS (admin confirmed) · Shipnity names OTHER / DHL / EMS ·
-    admin: Shipnity can't map Woo shipping methods ("ฝั่งคลังต้องแก้") → test sending method_title "EMS"/"DHL" with ONE test order (owner OK
-    needed; admin deletes it) · steps 2 (confirm = push) and 3 (auto-approve "pass" slips, MONEY, owner yes + EasySlip account 57 first).
+1 main ≈ 918a05e7 (#1028) 30/10 ~02:20. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS, deploy success up to ee54ceb7; #1028 deploying at the time of writing]:
+  #1004 cut-off 12:30 + failed-slip line · #1009 unboxing notice · #1010 address line-1 dedupe · #1011 · #1013 · #1014 tracking step 1 · #1015 SHIPPING v2 ·
+  30/10: #1023 + #1025 + #1028 ORDER-PAGE ART (thank-you = no card, the owner's transparent full-body samurai big + wide, faded bottom + sides;
+  payment bank box = BLACK CARD: logo · PAYMENT CARD tag · gold chip · bank/name/number · copy button with an orange LED frame · character right ·
+  NO amount/running number on the card · credit-card proportion 1.586:1 from sm up) · #1024 SHIPPING "count all" (owner 30/10: any ฿0-shipping member order
+  — 300 benefit, ≥800, or v1 — uses that calendar month's benefit) · #1026 every staff order list newest first · #1019 /products/pod-systems body + ItemList + links
+  (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 docs. Owner Q "15" on /staff = how many orders wait in "รอใส่เลขพัสดุ" now (NOT the
+  total); "#00NN" = the shop's running number given when payment is confirmed (MAX+1 over all orders) — told to the owner 30/10.
+2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
+  a images-6 (local_4c561554-990d-43fd-b501-02d227df7a5b): PR #1031 = 3 more RELX Pod Pro 2 flavours (Watermelon Ice · Spearmint · Triple Berry 50mg) —
+    checker re-check running; then RELX Creator 20K on its own branch (owner §18 rule: 5 coloured pods + per-flavour cue; 16 known-colour flavours) · SKE Crystal whole set
+    (grey studio plate under every colour; Double Mint rendered, not listed) · later nexSwitch / MQ Bar / Marbo. Credits 40 left of 72. Hand-over note =
+    `…\side-session-notes\local_dbb36e53…\images-chat5-notes.md` (AppData\Local\Claude-Data). 4 RELX flavours without the shop's pack design are left on purpose.
+  b tracking-sync (local_824f03fa-5eaa-405f-9139-929c79f0c3b9): NEW JOB 30/10 = EMS/DHL auto-pick (Phuket 83xxx + Bangkok 10220/10250 = DHL, else EMS) sent via
+    method_title + tracking step-2 parser (not connected) + a DUPLICATE-ADDRESS check (it found 2 real gaps → its own small PR) + a plain-Thai "who does what" list for the
+    owner/admin (one test order, admin on stand-by, admin deletes it). Draft PR #1029. Steps 3 (auto-approve "pass" slips) = MONEY, not part of it: owner yes + EasySlip first.
+  c Archived 30/10: images-5 · seo-push (#1019 #1016 done) · shipping-rules (#1024 done). seo-push's remaining dates (re-measure 06/11 · 13/11) belong to the new routine.
+  d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
+    request indexing (≤ 8 URLs) · short Thai report. Its permission mode was NOT saved → the owner sets Auto on the task (Scheduled) or presses "Run now" once.
+2N NEXT for the main chat:
+  a DONE (#1023 #1025 #1028): the order-page art — wait for the owner's eye on the live page (taste note: at 390 the account rows run over the character's torso).
+     THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
+  b DONE: thank-you card. c DONE: SEO routine created (see 2 d).
+  d CARRIER AUTO-PICK = 2 b (in flight). After its PR: the owner OKs ONE test order → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders: owner presses "ส่งรายการให้คลังแล้ว" (#0006 done; #0010 #0011 #0014 #0015 #0017 #0020 #0022 were left at 22:30).
-  f Back-office queue after that: customer cards · admin Gmail sign-in · EMS/DHL tracking page + motion · LINE orders on web (later) ·
-    off-site backup (77) after the back office.
-  Leftovers: Pod-180 back in Shipnity (nexBar CLEAR 18K → Disposable-46) · trimLine1 can cut a name after an unlisted place word (no data lost).
+  f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
+     off-site backup (77) after the back office.
+  g Owner's checklist answers 30/10 (short): cost Excel = the cost-excel chat reported done (a file, no PR — not opened by Friday) · shipping first-after-signup = live (#1015) + count-all (#1024) ·
+     12:30 cut-off + no-refund line for a missing/fake/failed slip = live (#1004) · duplicate address = #1010 live, a re-check is running (2 b).
+  Leftovers: Pod-180 back in Shipnity (nexBar CLEAR 18K → Disposable-46) · trimLine1 can cut a name after an unlisted place word (no data lost) · the old item-2 line about
+     `logo/` untracked folder stays (never delete).
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
