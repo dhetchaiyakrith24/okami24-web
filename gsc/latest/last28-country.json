@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-29",
-  "endDate": "2026-10-26",
+  "startDate": "2026-09-30",
+  "endDate": "2026-10-27",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 684,
-   "impressions": 5049,
-   "ctr": 0.1354723707664884,
-   "position": 10.202020202020202
+   "clicks": 673,
+   "impressions": 5073,
+   "ctr": 0.13266311847033313,
+   "position": 10.236940666272423
   },
   {
    "keys": [
@@ -36,21 +36,12 @@
   },
   {
    "keys": [
-    "gbr"
-   ],
-   "clicks": 1,
-   "impressions": 8,
-   "ctr": 0.125,
-   "position": 31.25
-  },
-  {
-   "keys": [
     "lao"
    ],
    "clicks": 1,
    "impressions": 8,
    "ctr": 0.125,
-   "position": 6
+   "position": 6.625
   },
   {
    "keys": [
@@ -75,9 +66,9 @@
     "bgd"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 4,
    "ctr": 0,
-   "position": 11.333333333333334
+   "position": 27.5
   },
   {
    "keys": [
@@ -114,6 +105,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 34
+  },
+  {
+   "keys": [
+    "gbr"
+   ],
+   "clicks": 0,
+   "impressions": 6,
+   "ctr": 0,
+   "position": 38.333333333333336
   },
   {
    "keys": [
@@ -192,9 +192,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 21,
+   "impressions": 22,
    "ctr": 0,
-   "position": 6.142857142857143
+   "position": 5.909090909090909
   },
   {
    "keys": [
