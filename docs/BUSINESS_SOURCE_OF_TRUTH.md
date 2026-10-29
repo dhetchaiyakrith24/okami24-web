@@ -390,14 +390,15 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
 
 - **Standard shipping fee:** 50 THB (owner, chat 2026-10-09: "พี่คิดลูกค้า 50 บาท" — was 60 THB). The warehouse (Shipnity Max,
   dropship) bills the shop 35 THB shipping per order ("คลังคิดพี่ 35 บาท") — internal cost, never shown to customers.
-- **Free shipping (owner 2026-10-29, chat: "สมัครแล้วส่งฟรีครั้งแรก · ครบ ฿500 ส่งฟรีเดือนละครั้ง · ครบ ฿800 ส่งฟรีทุกครั้ง และครั้งที่ 500
-  แต่ไม่ได้ส่งฟรีในเดือนนั้น ๆ ให้คิดค่าส่งแค่ 35 บาท"; replaces ฿500-for-everyone of 2026-10-26 and the ฿300 member idea of 2026-10-24):**
-  (1) a member's first order after signing up = shipping 0, once · (2) subtotal ≥ 800 THB = 0, every order · (3) subtotal ≥ 500 THB
-  = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Owner 29/10 ("ตามแนะนำ"): rule 3 is for
-  everyone, counted per phone, calendar month (Bangkok) · a benefit already used cannot be reused when the PHONE or the ADDRESS
-  (house no. + sub-district + postcode) matches an order that used it — the recipient name alone never blocks · orders before
-  go-live do not count · info pages state only the first-order member benefit + "from ฿500, once a month" (never ฿35 or ฿800). LIVE 2026-10-29 (#1007). A member who
-  ordered before go-live has already used the first-order benefit (owner 29/10: "ไม่ได้ครับเพราะเขาได้ไปแล้วก่อนหน้านี้").
+- **Free shipping (owner 2026-10-29 late, chat: "สมัครใหม่ส่งฟรีใช่แต่ต้องสั่ง 300 บาทขึ้นไป และสิทธินี้รีทุกเดือน … ยอดถึง 500 ก็เหลือ 35 ยอดไม่ถึง
+  500 … ก็ 50 บาท" + "เฉพาะสมาชิกที่สมัครด้วย LINE/Google"; LIVE 2026-10-30 #1015, replaces #1007 of the same evening):** (1) subtotal ≥ 800 THB =
+  shipping 0 for everyone, every order · (2) a MEMBER (signed in with LINE/Google) gets shipping 0 once per calendar month (Bangkok) on
+  the first order with subtotal ≥ 300 THB; the benefit resets every month · (3) everyone else, and members who already used this
+  month: ≥ 500 THB = 35 THB, below 500 = 50 THB · **what uses the month's benefit up (owner 2026-10-30, chat: "นับรวมครับ เพราะมีการสั่งซื้อแม้ยอดจะเกิน"):**
+  ANY member order that got shipping 0 that month — the ≥ 300 benefit AND the ≥ 800 tier alike (and the 29/10 first version's
+  member orders); guest orders and orders that paid 35 / 50 never count · a used benefit cannot be reused when the PHONE or the ADDRESS (house no. + sub-district +
+  postcode) matches; the recipient name alone never blocks; a cancelled order gives it back · info pages state only the member
+  monthly ฿300 benefit (never ฿35 or ฿800).
 - **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
   orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
   phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.

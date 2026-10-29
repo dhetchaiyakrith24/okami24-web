@@ -202,24 +202,25 @@ export function OrderStatusView({
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
             PageHeader's tight 0.95 would clip Thai vowels). */}
-        {/* Logo round batch 2 (owner 28/10 "ได้ ตามร่าง"; designer spec 28/10): the card carries the samurai — head, kabuto and
-            red moon only, cut above the shoulder blades — a band on top at every width: line 2 of the thank-you never wraps,
-            and this column is max-w-xl, so a picture beside the text put the red "OKami24" on the red moon at 1440 (Friday's
-            Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
-          <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-            {/* Owner 29/10 "หน้าหาย": a fixed 200/240 px band cropped the 716×400 picture to the kabuto and faded out the face.
-                The band now keeps the picture's own shape (face whole at every width) and fades only its last fifth. */}
-            <div ref={bandRef} className="relative aspect-[716/400] w-full">
+          // Owner 30/10 (after #1023 live): "ไม่ต้องมีการ์ด … เน้นภาพใหญ่กว้างแบบหน้าสินค้ารวมไปเลย ปรับให้แมชและเหมาะ ดูดี" — no card:
+          // the owner's full-body samurai (his own transparent cut) stands big and wide behind the thank-you, faded out toward the
+          // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
+          // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
+          <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2">
               <Image
-                src="/brand/samurai-thanks-wide.webp"
+                src="/brand/samurai-thanks-full.webp"
                 alt=""
-                fill
-                sizes="(min-width: 640px) 576px, 100vw"
-                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
+                width={1024}
+                height={820}
+                sizes="(min-width: 820px) 820px, 100vw"
+                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in]"
               />
             </div>
-            <div className="relative flex flex-col justify-center px-5 pb-6 lg:px-7 lg:pb-8">
+            {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
+            <div ref={bandRef} aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[58%]" />
+            <div className="relative px-1 lg:px-2">
               <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
               <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
                 <span className="block">{dict.orderStatus.thankYouLead}</span>
@@ -416,17 +417,34 @@ export function OrderStatusView({
             {payment && (
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-semibold text-foreground">{dict.orderStatus.paymentTransferTitle}</p>
-                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 rounded-lg border border-surface-border-soft bg-surface-2 p-3 text-sm">
-                  <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
-                  <dd className="text-foreground">{payment.bankName[locale]}</dd>
-                  <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
-                  <dd className="font-medium text-foreground">{payment.accountName}</dd>
-                  <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNumberLabel}</dt>
-                  <dd className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="font-display text-2xl font-semibold tracking-wide text-foreground">{payment.accountNumber}</span>
-                    <CopyButton value={payment.accountNumber.replace(/-/g, "")} label={dict.orderStatus.paymentCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
-                  </dd>
-                </dl>
+                {/* Owner 30/10: option B of the payment-card draft, "สูงขึ้นแบบ B" — the bank box gets B's picture band on top: the
+                    samurai and the moon in silver on near-black with B's fine vertical texture and its dark colours (his words: "ภาพ
+                    ในการ์ดใช้เป็นซามูไร texture detail สี ตามนี้ … สีเมนูปุ่ม ทุกอย่างเหมือน Web" and earlier "ไม่อยากให้มืดตามภาพ — ส่วนเดียวที่มืด
+                    คืองานภาพ"). The picture is the only dark part: the box, labels, values, copy button and borders keep the web's own
+                    colours, and the picture fades into the box colour under the first rows. */}
+                <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2">
+                  <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(70vw,320px)] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_bottom,black_58%,transparent)]">
+                    <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_3px)]" />
+                    <Image
+                      src="/brand/samurai-products-bg-v2.webp"
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 576px, 100vw"
+                      className="object-cover object-[50%_10%] opacity-75 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:radial-gradient(ellipse_58%_60%_at_50%_40%,#000_55%,transparent_100%)]"
+                    />
+                  </div>
+                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 pt-[min(34vw,170px)] text-sm">
+                    <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
+                    <dd className="text-foreground">{payment.bankName[locale]}</dd>
+                    <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
+                    <dd className="font-medium text-foreground">{payment.accountName}</dd>
+                    <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNumberLabel}</dt>
+                    <dd className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <span className="font-display text-2xl font-semibold tracking-wide text-foreground">{payment.accountNumber}</span>
+                      <CopyButton value={payment.accountNumber.replace(/-/g, "")} label={dict.orderStatus.paymentCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
+                    </dd>
+                  </dl>
+                </div>
                 {qrHref && (
                   <div className="flex flex-col gap-2">
                     <p className="text-sm text-foreground-muted">{payment.qrHasAmount ? dict.orderStatus.paymentQrAmountNote : dict.orderStatus.paymentQrNote}</p>

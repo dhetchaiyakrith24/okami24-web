@@ -3,8 +3,8 @@
  * of the same evening, his words: "สมัครใหม่ส่งฟรีใช่แต่ต้องสั่ง 300 บาทขึ้นไป และสิทธินี้รีทุกเดือน หลังจากครบ 300 อีก 2-3 วันมาสั่งต่อ
  * ยอดถึง 500 ก็เหลือ 35 ยอดไม่ถึง 500 ไม่มีสิทธิครั้งแรกก็ 50 บาท · ครั้งที่ 3 800 ค่าส่งเป็นฟรี" — the monthly benefit is for members
  * only (signed in with LINE / Google). Checked in this order, first match wins:
- *   1. `over_800`       — subtotal ≥ 800 → 0, everyone, every order; uses up nothing (it is checked before the member
- *      benefit, so a member's 800+ order keeps this month's benefit for a smaller order).
+ *   1. `over_800`       — subtotal ≥ 800 → 0, everyone, every order. A MEMBER's 800+ order still uses up this month's
+ *      benefit (owner 30/10, below).
  *   2. `member_monthly` — signed in, subtotal ≥ 300, and no order inside this calendar month (Bangkok) that used the member
  *      benefit shares this member, phone or address → 0. Once per month; it comes back on the 1st.
  *   3. `over_500`       — subtotal ≥ 500 → 35 (guests, and members whose benefit is used this month).
@@ -12,9 +12,10 @@
  * Anti-reuse (owner 29/10 "ตามแนะนำ", BSOT §10): the benefit is not given again when the PHONE (checkout or recipient) or
  * the ADDRESS (house no. + sub-district + postcode) matches an order that used it this month — the recipient's name alone
  * never blocks. A cancelled order never uses it up (customer cancel, staff cancel, or the 24-hour unpaid sweep).
- * Orders placed before migration 0022 (rule NULL) count for nothing. Orders of the first version (LEGACY_SHIPPING_RULES,
- * live 29/10 evening) count as this month's benefit only when a member got 0 shipping below 800 — `first_member_order`, or
- * `monthly_free` placed signed in (Friday's reading 29/10: "only if it actually got shipping ฿0 under a member benefit").
+ * What uses the benefit up (owner 30/10, his words: "นับรวมครับ เพราะมีการสั่งซื้อแม้ยอดจะเกิน"): ANY member order that shipped
+ * for 0 this month — the 300 benefit, the 800 tier, and the first version's (LEGACY_SHIPPING_RULES, live 29/10 evening) member
+ * first order or 500 tier alike. Guest orders and orders that paid 35 / 50 count for nothing; so do orders placed before
+ * migration 0022 (rule NULL).
  *
  * Pure (no `server-only`, no I/O beyond the `db` handed in) so shipping-rules-contract-test.ts can run it on an in-memory
  * SQLite built from the real migrations.
@@ -100,9 +101,8 @@ interface Db {
   prepare(sql: string): { get(...params: unknown[]): unknown; all(...params: unknown[]): unknown[] };
 }
 
-/** An order that used the member benefit (see the head comment for the first version's two rules — an 800+ order of
- *  theirs would have shipped for 0 anyway, so it uses nothing up). */
-const USED_BENEFIT_SQL = `(o.shipping_rule = 'member_monthly' OR (o.subtotal < ${ALWAYS_FREE_THRESHOLD_THB} AND (o.shipping_rule = 'first_member_order' OR (o.shipping_rule = 'monthly_free' AND o.member_id IS NOT NULL))))`;
+/** An order that used the member benefit: a member's order that shipped for 0, under any tier (head comment, owner 30/10). */
+const USED_BENEFIT_SQL = "(o.member_id IS NOT NULL AND o.shipping_fee = 0 AND o.shipping_rule IS NOT NULL)";
 
 /** Orders that used the benefit this month (not cancelled) and share the member, a phone, or the address's sub-district +
  *  postcode — the house number is compared in JS (houseNumber), SQLite cannot parse it. The checkout phone has no code

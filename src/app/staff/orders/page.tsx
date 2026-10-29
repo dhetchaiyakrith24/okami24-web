@@ -8,8 +8,8 @@ import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { LIST_CLASS, OrderRow } from "@/app/staff/_components/OrderRow";
 
 /**
- * /staff/orders?f=<job> — the web orders of one job (jobs = src/lib/staff/jobs.ts); `f=all` = the newest 200. Waiting work
- * is listed oldest first. Staff declutter 27/10: the work list itself lives on /staff ("งาน"), so no `f` goes there, and
+ * /staff/orders?f=<job> — the web orders of one job (jobs = src/lib/staff/jobs.ts); `f=all` = the newest 200. Every list is
+ * newest first (owner 30/10). Staff declutter 27/10: the work list itself lives on /staff ("งาน"), so no `f` goes there, and
  * the row of eight filter chips is gone — "งาน" links each job by its heading and the other jobs from one line at its foot.
  * Same lock as /staff: 404 until the staff password is set, the login page without a staff session. Not linked from the
  * shop, not indexed. An order opened from here comes back to the same list (its link carries `from`).
