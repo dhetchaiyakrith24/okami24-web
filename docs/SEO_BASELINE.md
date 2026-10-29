@@ -390,3 +390,44 @@ Rows 9–21, 23 = 01/11 as planned.
 - NEW /guides/how-to-vape-without-coughing (Thai-only, head line in search-head-copy) — target "สูบพอตยังไงไม่ให้สำลัก" · "วิธีดูดพอตมือใหม่"; read 15/11.
 - Body + FAQ only (no title / meta / H1 change): choosing-a-marbo-flavor (M Bar 10K use) · how-long-a-disposable-lasts (row 16: "หมดแล้วดูยังไง") ·
   disposable-vs-switch-pod (FAQ พอตกับ Marbo) · taking-a-pod-on-a-plane (row 20: Japan · Korea · Singapore · Hong Kong). No link added to watch rows 1–8.
+
+## REAL GOOGLE RESULT PAGE — weekly read (round SEO pod 30/10 · owner-approved direction 2)
+
+**Why both:** GSC "average position" is averaged over the searches where the site WAS shown — a week with 20 impressions at
+pos 4.8 says nothing about the other searches, where the site may not appear at all (29/10: GSC "pod system" 4.8, real page
+= absent from the top 50). Read GSC for the trend, read the real page for "would a shopper see us".
+
+**Method (same every week — results are only comparable read the same way):**
+- built-in browser of the Claude app · `https://www.google.co.th/search?q=<query>&hl=th&gl=th&pws=0` (pws=0 = no personalisation;
+  the profile is signed in to the shop's Google account, a signed-out read is not possible there) · desktop, then mobile
+  (`resize_window` preset mobile + reload) · `num=` is ignored by Google now — walk pages with `&start=10,20,…`
+- count organic results only (`a h3` links, first occurrence of each URL) · position = index of the first okami24.store URL
+- **pace:** at most 5 pages per query per device, ≥ 20 s between page loads, queries in this order: pod system · pod ·
+  พอตซิสเต็ม · pod system ราคา · pod system ตัวไหนดี. 30/10 a scripted burst (~80 page fetches in a few minutes) hit Google's
+  "unusual traffic" check → **a CAPTCHA = stop the read for that day, never solve or route around it** (TEAM_RULES 13.3 · central §8)
+- record: date · device · query · position (or "not in top N") · the URL Google chose · top-3 domains · captcha yes/no
+
+| date | device | query | okami24 | URL Google chose | read depth | note |
+|---|---|---|---|---|---|---|
+| 29/10 | desktop | pod system | not in top 50 | — | 50 | SEO chat (serp-gap-2910) |
+| 29/10 | desktop | pod | not in top 50 | — | 50 | same |
+| 29/10 | mobile | pod system · pod | not in top 30 | — | 30 | Pixel 8 emulation |
+| 30/10 | desktop | pod system | not in top 96 | — | 96 | top 3: shop category page · YouTube playlist · shop home |
+| 30/10 | desktop | pod | not in top 94 | — | 94 | top 3: shop collection page · Facebook post · Thai Wikipedia (band P.O.D.) |
+| 30/10 | desktop | พอตซิสเต็ม · pod system ราคา · pod system ตัวไหนดี | not in top 46–48 | — | 46–48 | — |
+| 30/10 | desktop | พอต | not in top 20 | — | 20 | — |
+| 30/10 | mobile | — | not read | — | — | CAPTCHA after the desktop burst → stopped (method above fixed) |
+
+Next reads: 06/11 · 13/11 (+ GSC 01/11 · 15/11 as planned). What changed on the site before them = the rows of round SEO pod below.
+
+## Round SEO pod (30/10/2026, round file `docs/rounds/รอบ-SEO-pod-system-30-10.txt`) - what changed before the 06/11 read
+
+- PR #1019 (checker PASS 878211af, live after merge): /products/pod-systems gets a visible block under the grid — 3 families
+  (Caliburn · ARGUS/VMATE/VINCI · DRAG), a battery / top wattage / capacity table from verified spec rows, a 5-question FAQ in
+  `<details>`; JSON-LD = CollectionPage + mainEntity ItemList (23 models) + FAQPage. Head (title / meta / H1) unchanged (owner lock 09/10).
+  Main text 3,390 → 7,422 chars (head-audit). Links in <main>: to guides 3 → 6.
+- Cluster links (Friday step 3b): /guides/open-system-vs-disposable ("[Pod System] หรือพอตคิท") and /guides/disposable-vs-switch-pod
+  (opener) link the hub with "Pod System"; the hub links what-is · choosing · open-system-vs-disposable · disposable-vs-switch-pod.
+  No new article — every cluster word has an owner guide (SEO_LANDSCAPE §0); "พอต" / "พอตไฟฟ้า" had no GSC row (28 days to 27/10).
+- Read on 06/11 / 13/11: real result page (table above) for pod system · pod · พอตซิสเต็ม · pod system ราคา · pod system ตัวไหนดี;
+  GSC 01/11 · 15/11 for pod / pod system on /products/pod-systems (impressions, not only avg position) and "pod system คือ" on what-is.
