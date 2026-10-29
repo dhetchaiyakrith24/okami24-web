@@ -13,7 +13,7 @@ import { CONTACT } from "@/data/contact";
  */
 export const ORDERING_ON_LINE_FAQ_ANSWER: Record<"en" | "th" | "zh", string> = {
   en: "Right now the easier way to order is LINE @okm24: message us the model, colour or flavour you want, and the admin confirms the total and how to pay in the chat. Once the payment is checked, the order ships with a tracking number. Shipping is 50 baht. Orders of 500 baht and over ship for 0 baht once a month and for 35 baht after that in the same month, and orders of 800 baht and over always ship for 0 baht. Want help picking a model? Just ask.",
-  th: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินสรุปยอดและวิธีโอนให้ในแชท จ่ายแล้วแอดมินตรวจยอดโอนก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม ค่าส่งปกติ 50 บาท ถ้ายอดครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง ครั้งต่อไปในเดือนเดียวกันคิด 35 บาท และยอดครบ 800 บาท ค่าส่ง 0 บาททุกออเดอร์ อยากให้ช่วยเลือกรุ่นก็ทักมาได้เลย",
+  th: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินสรุปยอดและวิธีโอนให้ในแชท จ่ายแล้วแอดมินตรวจยอดโอนก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม ค่าส่งปกติ 50 บาท ถ้ายอดครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง ครั้งต่อไปในเดือนเดียวกันคิด 35 บาท และยอดครบ 800 บาท ค่าส่ง 0 บาททุกครั้ง อยากให้ช่วยเลือกรุ่นก็ทักมาได้เลย",
   zh: "这段时间用 LINE @okm24 下单更方便：告诉店主想要的型号、颜色或口味，店主会在聊天里确认总价和付款方式。核对到账后安排出货，并提供物流单号查询。运费 50 泰铢；满 500 泰铢每月可享一次运费 0 泰铢，同月再次满 500 泰铢运费 35 泰铢；满 800 泰铢每单运费 0 泰铢。想让店主帮忙挑型号也可以直接问。",
 };
 /** The FAQ id whose answer `ORDERING_ON_LINE_FAQ_ANSWER` replaces. */
