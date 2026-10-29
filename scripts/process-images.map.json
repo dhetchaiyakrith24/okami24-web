@@ -7502,7 +7502,7 @@
   "role": "variant",
   "id": "coil-38-4",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro via MCP generate_image, job d61fef8d-77db-4e4e-ab52-cfd1ddd9a0e5 (2 credits, owner yes 29/10 item 87): the TPP-DM4 box + 3 coils on a white sweep; cut by _incoming/img-2910/b8/dm4cut.js (white flood + box foot line measured per column from its dark bottom edge, coil floor shadow flood below y 1600), specks dropped, then dm4place.js: box height = the DM2 box (698 px), box left 85, coils moved left to the DM2 group's right edge 919 in front of the box (the DM2 shot overlaps its coils on the box too)",
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image, job d61fef8d-77db-4e4e-ab52-cfd1ddd9a0e5 (2 credits, owner yes 29/10 item 87): the TPP-DM4 box + 3 coils on a white sweep; cut by _incoming/img-2910/b8/dm4cut.js (white flood; box foot = the black face bottom, light bottom flap cut; coils cut below each column's lowest dark row, max of ±3 columns — no floor-shadow plates, checker #1001 round 1), specks dropped, then dm4place.js: box height = the DM2 box (698 px), box left 85, coils moved left to the DM2 group's right edge 919 in front of the box (the DM2 shot overlaps its coils on the box too)",
    "reference": "Giant Vapes' TPP-DM4 box photo https://giantvapes.com/products/voopoo-tpp-coils + our live variant-coil-38-4-v2.webp (the earlier re-shoot of the same box, 12% smaller than DM2)",
    "fidelitySheet": "_incoming/img-2910/b8/dm4sheet.jpg (DM2 | old DM4 | new DM4) + dm4zoom.png: VOOPOO, Max 40W, TPP-DM4, 0.3Ω | 3PCS, gold strip, coil shape read by eye"
   },
