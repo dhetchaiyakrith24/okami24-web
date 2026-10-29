@@ -13205,6 +13205,45 @@
   "note": "images chat 6 30/10 - RELX Pod Pro 2 flavour with no photo before (shop pack design)"
  },
  {
+  "source": "_incoming/img-3010/rx/out/watermelon-ice.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-29",
+  "fileName": "variant-pod-27-29.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 00a94cf1-d42d-45f6-98bd-199c723e1a02 (first render 9bafd8c6 misspelled the small print, re-done); render _incoming/img-3010/rx/render/watermelon-ice.png; cut _incoming/img-3010/rx/cutpack2.js (4 straight edges; width:height = 0.505 like the live shop-design packs)",
+   "reference": "(1) the pack cropped from the Thai shop's (thshop24.com) Watermelon Ice poster - prototype only, the shop logos around it are not used - _incoming/img-3010/rx/ref/watermelon-ice.png; (2) our live Pod-27-1 Tangy Grape pack - layout, camera and the English WARNING box",
+   "fidelitySheet": "_incoming/img-3010/rx/sheet-vs-ref.jpg (render cut beside the shop poster pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images chat 6 30/10 - RELX Pod Pro 2 flavour with no photo before (shop pack design)"
+ },
+ {
+  "source": "_incoming/img-3010/rx/out/spearmint.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-30",
+  "fileName": "variant-pod-27-30.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 0695a7ca-f791-4c5b-9fd1-2c6fa6cb01fa; render _incoming/img-3010/rx/render/spearmint.png; cut _incoming/img-3010/rx/cutpack2.js (4 straight edges; width:height = 0.505 like the live shop-design packs)",
+   "reference": "(1) the pack cropped from the Thai shop's (thshop24.com) Spearmint poster - prototype only, the shop logos around it are not used - _incoming/img-3010/rx/ref/spearmint.png; (2) our live Pod-27-1 Tangy Grape pack - layout, camera and the English WARNING box",
+   "fidelitySheet": "_incoming/img-3010/rx/sheet-vs-ref.jpg (render cut beside the shop poster pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images chat 6 30/10 - RELX Pod Pro 2 flavour with no photo before (shop pack design)"
+ },
+ {
+  "source": "_incoming/img-3010/rx/out/triple-berry.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-32",
+  "fileName": "variant-pod-27-32.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 9a81b6fe-d5c3-44c3-add9-f678fd84b857; render _incoming/img-3010/rx/render/triple-berry.png; cut _incoming/img-3010/rx/cutpack2.js (4 straight edges; width:height = 0.505 like the live shop-design packs)",
+   "reference": "(1) the pack cropped from the Thai shop's (thshop24.com) Triple Berry poster - prototype only, the shop logos around it are not used - _incoming/img-3010/rx/ref/triple-berry.png; (2) our live Pod-27-1 Tangy Grape pack - layout, camera and the English WARNING box",
+   "fidelitySheet": "_incoming/img-3010/rx/sheet-vs-ref.jpg (render cut beside the shop poster pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images chat 6 30/10 - RELX Pod Pro 2 flavour with no photo before (shop pack design)"
+ },
+ {
   "source": "_incoming/da/r1.png",
   "slug": "relx-infinity-2-plus",
   "role": "variant",
