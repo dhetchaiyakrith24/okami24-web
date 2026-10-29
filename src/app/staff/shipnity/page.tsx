@@ -167,6 +167,12 @@ export default async function StaffShipnityPage() {
       <section id="order-events" className="flex flex-col gap-3">
         <h2 className="text-lg font-semibold text-foreground">ออเดอร์ที่คลังเปลี่ยนใน Shipnity</h2>
         <p className="text-sm leading-relaxed text-foreground-muted">ยกเลิก / ลบ = บอทแจ้งกลุ่ม OKM Order · สถานะบนเว็บไม่เปลี่ยนเอง</p>
+        <p className="text-sm leading-relaxed text-foreground-muted">
+          <a href="/staff/api/shipnity-order-writes" className="font-medium text-foreground underline underline-offset-2">
+            ดาวน์โหลดสิ่งที่ Shipnity ส่งกลับมาในออเดอร์ (ไฟล์ JSON)
+          </a>{" "}
+          · ซ่อนชื่อ เบอร์ และที่อยู่ลูกค้าแล้ว · ใช้ดูว่าเลขพัสดุมาทางไหน
+        </p>
         {orderEvents.length === 0 ? (
           <p className="text-sm text-foreground-dim">ยังไม่มี</p>
         ) : (
