@@ -35,12 +35,11 @@ Rewritten 30/10 ~02:25 by the 2nd main chat (Friday, local_10d3f4d1) — the 1st
   a DONE (#1023 #1025 #1028): the order-page art — wait for the owner's eye on the live page (taste note: at 390 the account rows run over the character's torso).
      THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
   b DONE: thank-you card. c DONE: SEO routine created (see 2 d).
-  d CARRIER AUTO-PICK = built (2 b). NEXT: the owner OKs ONE test order (รอพี่ตรวจ 80) → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
+  d CARRIER AUTO-PICK = built (2 b). OWNER 30/10: the admin keeps pressing "ส่งเข้าคลัง Shipnity" for now (the web only PRE-PICKS the carrier); real-order test 31/10 (รอพี่ตรวจ 80);
+     only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" (small PR, tracking-sync has the plan) — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders: owner presses "ส่งรายการให้คลังแล้ว" (#0006 done; #0010 #0011 #0014 #0015 #0017 #0020 #0022 were left at 22:30).
   f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
      off-site backup (77) after the back office.
-  g Owner's checklist answers 30/10 (short): cost Excel = the cost-excel chat reported done (a file, no PR — not opened by Friday) · shipping first-after-signup = live (#1015) + count-all (#1024) ·
-     12:30 cut-off + no-refund line for a missing/fake/failed slip = live (#1004) · duplicate address = #1010 live, a re-check is running (2 b).
   Leftovers: Pod-180 back in Shipnity (nexBar CLEAR 18K → Disposable-46) · trimLine1 can cut a name after an unlisted place word (no data lost) · the old item-2 line about
      `logo/` untracked folder stays (never delete).
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
