@@ -210,13 +210,16 @@ export function OrderStatusView({
           <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
             {/* Owner 29/10 "หน้าหาย": a fixed 200/240 px band cropped the 716×400 picture to the kabuto and faded out the face.
                 The band now keeps the picture's own shape (face whole at every width) and fades only its last fifth. */}
-            <div ref={bandRef} className="relative aspect-[716/400] w-full">
+            {/* Owner 30/10: a new full-body samurai (his file, white background cut to transparent) replaces the head-and-moon
+                picture — "ให้ใช้การ Fade out เหมือนหน้าสินค้าทั้งหมด": the figure fades out toward the text over its lower half,
+                the way the /products backdrop fades, instead of a fifth at the edge. The file is the top 820 px (head to hips). */}
+            <div ref={bandRef} className="relative aspect-[1024/760] w-full">
               <Image
-                src="/brand/samurai-thanks-wide.webp"
+                src="/brand/samurai-thanks-full.webp"
                 alt=""
                 fill
                 sizes="(min-width: 640px) 576px, 100vw"
-                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
+                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_38%,transparent_97%)]"
               />
             </div>
             <div className="relative flex flex-col justify-center px-5 pb-6 lg:px-7 lg:pb-8">
