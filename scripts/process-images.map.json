@@ -7497,17 +7497,17 @@
   "fileName": "variant-coil-38-2-v2.webp"
  },
  {
-  "source": "_incoming/coil4/D-c38-dm4-v2.png",
+  "source": "_incoming/img-2910/b8/fin-dm4.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-4",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
-   "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm4.png; render _incoming/coil4/out/c38-dm4-A.png)",
-   "fidelitySheet": "_incoming/coil4/fid-c38-dm4-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image, job d61fef8d-77db-4e4e-ab52-cfd1ddd9a0e5 (2 credits, owner yes 29/10 item 87): the TPP-DM4 box + 3 coils on a white sweep; cut by _incoming/img-2910/b8/dm4cut.js (white flood + box foot line measured per column from its dark bottom edge, coil floor shadow flood below y 1600), specks dropped, then dm4place.js: box height = the DM2 box (698 px), box left 85, coils moved left to the DM2 group's right edge 919 in front of the box (the DM2 shot overlaps its coils on the box too)",
+   "reference": "Giant Vapes' TPP-DM4 box photo https://giantvapes.com/products/voopoo-tpp-coils + our live variant-coil-38-4-v2.webp (the earlier re-shoot of the same box, 12% smaller than DM2)",
+   "fidelitySheet": "_incoming/img-2910/b8/dm4sheet.jpg (DM2 | old DM4 | new DM4) + dm4zoom.png: VOOPOO, Max 40W, TPP-DM4, 0.3Ω | 3PCS, gold strip, coil shape read by eye"
   },
-  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render",
-  "fileName": "variant-coil-38-4-v2.webp"
+  "note": "images-all 29/10 chat 3 — DM4 box now the same size as DM2 (was 12% small)",
+  "fileName": "variant-coil-38-4-v3.webp"
  },
  {
   "source": "_incoming/img-1610/b1/key/D-c55.png",
