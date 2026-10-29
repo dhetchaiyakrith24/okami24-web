@@ -393,8 +393,10 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
 - **Free shipping (owner 2026-10-29, chat: "สมัครแล้วส่งฟรีครั้งแรก · ครบ ฿500 ส่งฟรีเดือนละครั้ง · ครบ ฿800 ส่งฟรีทุกครั้ง และครั้งที่ 500
   แต่ไม่ได้ส่งฟรีในเดือนนั้น ๆ ให้คิดค่าส่งแค่ 35 บาท"; replaces ฿500-for-everyone of 2026-10-26 and the ฿300 member idea of 2026-10-24):**
   (1) a member's first order after signing up = shipping 0, once · (2) subtotal ≥ 800 THB = 0, every order · (3) subtotal ≥ 500 THB
-  = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Open with the owner (wait list
-  92): rule 3 for everyone by phone number or members only · calendar month or 30 days. NOT LIVE until the shipping-rules PR merges —
+  = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Owner 29/10 ("ตามแนะนำ"): rule 3 is for
+  everyone, counted per phone, calendar month (Bangkok) · a benefit already used cannot be reused when the PHONE or the ADDRESS
+  (house no. + sub-district + postcode) matches an order that used it — the recipient name alone never blocks · orders before
+  go-live do not count · info pages state only the first-order member benefit + "from ฿500, once a month" (never ฿35 or ฿800). NOT LIVE until the shipping-rules PR merges —
   until then the site still applies ฿500 for everyone.
 - **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
   orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
