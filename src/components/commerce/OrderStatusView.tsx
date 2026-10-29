@@ -90,6 +90,7 @@ export function OrderStatusView({
   stockIssue = null,
   messages = [],
   paid = false,
+  paymentConfirmed = false,
   autoCancelled = false,
   deadlineIso = null,
 }: {
@@ -104,6 +105,8 @@ export function OrderStatusView({
   messages?: { body: string; dateLabel: string }[];
   /** True when a slip was ever sent — a cancelled paid order says the shop will contact them about the refund. */
   paid?: boolean;
+  /** True when the shop ever confirmed the payment ("approved"). Paid but never confirmed = the slip failed — no refund line (owner 29/10). */
+  paymentConfirmed?: boolean;
   /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
   autoCancelled?: boolean;
   /** While waiting for payment: when the order cancels itself (ISO). Shown in Bangkok time in the page language — a
@@ -134,7 +137,7 @@ export function OrderStatusView({
     // No carrier picked = no "check the parcel" button below (checker #807 note b) — the line points at the number instead.
     shipped: order.carrier ? t.nextShipped : t.nextShippedNoCarrier,
     completed: t.nextCompleted,
-    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid ? t.nextCancelledPaid : autoCancelled ? t.nextCancelledUnpaid : t.nextCancelled,
+    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid && !paymentConfirmed ? t.nextCancelledSlipRejected : paid ? t.nextCancelledPaid : autoCancelled ? t.nextCancelledUnpaid : t.nextCancelled,
   };
   const next = stockStage === "waiting-choice" ? t.nextStockWaiting : stockStage === "chosen" ? t.nextStockChosen : NEXT[order.status];
   const terminal = order.status === "completed" || order.status === "cancelled";

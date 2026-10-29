@@ -59,6 +59,9 @@ export default async function OrderStatusPage({
   const messages = customerMessagesFor(order.id).map((m) => ({ body: m.body, dateLabel: dateFmt.format(new Date(m.createdAt)) }));
   // Whether money ever came in — a cancelled order that was paid tells the customer about the refund.
   const paid = order.statusHistory.some((h) => h.status === "payment_submitted");
+  // Owner 29/10: a slip that was never confirmed (failed or fake) promises no refund — only an order whose money the shop
+  // confirmed (it reached "approved") keeps the refund line, e.g. an out-of-stock cancel.
+  const paymentConfirmed = order.statusHistory.some((h) => h.status === "approved");
   // Cancelled by the unpaid sweep, not by staff — the page says why. The deadline line shows while it still waits.
   const autoCancelled = order.status === "cancelled" && order.statusHistory.some((h) => h.status === "cancelled" && isAutoCancelNote(h.note));
   const deadlineIso = order.status === "pending_payment" ? paymentDeadline(order.createdAt).toISOString() : null;
@@ -67,5 +70,5 @@ export default async function OrderStatusPage({
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} paymentConfirmed={paymentConfirmed} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
 }

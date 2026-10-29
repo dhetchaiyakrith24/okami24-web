@@ -785,6 +785,8 @@ export interface Dictionary {
     nextCompleted: string;
     nextCancelled: string;
     nextCancelledPaid: string;
+    /** Cancelled after a slip was sent but before the payment was ever confirmed (slip failed / fake) — no refund promise (owner 29/10). */
+    nextCancelledSlipRejected: string;
     nextCancelledUnpaid: string;
     paymentDeadlineNote: string;
     nextCancelledRefunded: string;
