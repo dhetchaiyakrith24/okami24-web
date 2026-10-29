@@ -10,45 +10,44 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 29/10 ~03:45 (chat "owner 29/10 list", moved at 72%).
+Rewritten 29/10 ~22:30 by the main chat (Friday, local_dbb36e53)
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 29/10 ~08:00 = 5864a58f (#991) + child merges. CART IS ON.
-  LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: #975 404 character + slash on the pressed add button + /cart revalidate dropped (dot
-  0.25 s) · #978 /staff/stock "เช็คสต็อก" (cart answer per option + Shipnity count + LINE reply) · #982 #983 #991 = item 2 · #985–#987 #989 #990 = children (item 2e).
-  #977 NEW ARRIVALS live: row "สินค้าเข้าใหม่" = 8 newest sellable at build from src/data/first-listed.ts · new-arrivals-contract-test
-  fails on a priced product without a date (listing PRs add "<slug>": "<deploy day>"; a re-listed slug = by hand).
-  Shipnity chat 29/10: #962–#974 live, stock verified 738/738 via /order/create. Its NEXT: (a) Muro Connector 5,254 orders/month per
-  shop, totals only · (b) LINE cancel alert unseen live · (c) INFY v2 reflections; process-images.map.json names deleted infy files.
-2 OPEN (owner 29/10 list):
-  a SAMURAI THEME — LIVE (#983 + #991, checker PASS 3b1c3f61 / 8582e5ea, curl ok). /products backdrop = owner's character
-    (`public/brand/samurai-products-bg-v2.webp`, top 1600 px) at its own aspect, 74% wide ≥1024 · min(180%, 44rem) below, opacity 0.10
-    with an 8-stop mask whose tail equals the 0.15 build — visible in the card gaps through the first row, gone by the second; no
-    header panel (designer pick). Card effects (CardCut, root layout): click = "ตัดขาด" split inside the card (`data-card-photo`),
-    nav at 150 ms · mouse hover = glint masked to the product. Owner picked both from demo https://claude.ai/artifact/132jaUiMjeM8G2oXNgmpDZ;
-    neither seen live by the owner yet (รอพี่ตรวจ 78). OPEN: card-cut-dbl-2910 = a double click during the cut does nothing (checker
-    note on #991) — verify running 29/10 night, then checker + merge. Designer taste: gap under the description ~130 px at 1440.
-  b JAVIS 29/10: answered (§18 29/10) — capacity kept, Muro OK. MURO CONNECTOR 20K LIVE (#982): pods-cartridges, Javis's 28 pods +
-    5 × 50MG black pods (`_incoming/muro-conn-2910/`).
-  e CHILD CHATS (owner 29/10, both report to Friday): price-reset (local_9abb86ef-d9d8-430a-9db3-aa01d6fa82b4) DONE — #985 re-priced the 5
-    products with a new black-background image (log `docs/ปรับราคา-2026-10-29.md`, rule in BSOT §5) · #987 SUP ZERO 22K ฿350 · routine
-    `okami24-price-check-daily` 15:00 Sonnet 5.5 medium = report + draft PR (owner OKs). images-all (local_498e6752-edf6-40c3-a122-
-    f58c0e85788d) WORKING — audit: 160 options in 23 products without a photo + 5 substandard; live: #986 nexBar CLEAR 18K · #989 Zero
-    cartridge · #990 SUP ZERO 22K (device + fruit — no box/pouch exists). Port 3412 is shared by every chat: Friday uses 3413.
-  c SEO side chat seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): "pod system" did not drop (4–5); "pod" dipped 21–25/10
-    after the pod-kits merge, back at 6.6 on 26/10; 28 d clicks 257 → 710. Proposals, none built (re-read 01–05/11 · request indexing
-    for 3 guides = owner OK). Report `.claude/worktrees/sad-nash-5bf72f/_incoming/seo-gsc-2910/gsc-read-2910.md`.
-  d Leftovers: /staff/stock page comment "read fresh" (now 15 s cache) · LESSONS พ54 (backgrounded commit hid a hook) + พ55
-    (dropping revalidatePath = grep every caller) written 29/10.
-  · Stock-count verdict 02/11 · Owner 28/10: header approved, logo stays, "31 ช่อง" = 3 YouTube channels.
+1 main = fbb80d36 (#1006) 29/10 ~22:30. CART IS ON. LIVE 29/10 [ตรวจแล้ว: checker PASS, curl]: samurai theme r2 (#983 #991 #993) ·
+  Muro Connector 20K (#982) · re-price (#985 #987) · images #986–#1002 · #1004 cut-off 12:30 (th/en/zh, BSOT §10) + a cancelled order
+  whose slip was never confirmed reads "ร้านยืนยันยอดโอนเงินไม่ได้" (out-of-stock keeps the refund line) · docs #1003 #1005 #1006.
+2 IN FLIGHT 29/10 night:
+  a images-4 (local_59489061-3559-40a4-8d46-140f74af2e4a, Opus high): FIRST TPP-DM4 on /products/coil-38 — owner REJECTED live (edges,
+    options jump) → one frame per option + clean cut; THEN the approved credit batch (58 images ≈ 116, cap 130, never buy) + RELX Pod Pro 2
+    missing flavours via Claude in Chrome. Brief side-session-notes `next-chat-images.md`. Zero Menthol Freeze = owner PASSED.
+  b shipping-rules (local_1489bf1f-e147-4f7e-9a29-bf5174e66f48): BSOT §10 tiers (first member order ฿0 · ≥800 ฿0 · ≥500 ฿0 once a calendar
+    month per phone, then ฿35 · <500 ฿50 · no reuse on same PHONE or ADDRESS) · reason on CHECKOUT · info pages never say ฿35/฿800 ·
+    sign-in nudge on checkout · DB column `orders.shipping_rule` APPROVED by the owner. Plan `side-session-notes/shipping-rules-2910-plan.md`.
+    Money = full set; Friday merges. Live site keeps ฿500-for-everyone until then.
+  c seo-gsc-2910 (local_14687b66-a34c-4e67-8723-d7f87c9b6981): owner can't find the site for "pod"/"pod system" though GSC says ~6.6/4–5 →
+    explain (country/device/SafeSearch, real SERP read-only) + 1–3 fixes; build nothing.
+  d cost-excel DONE: `_incoming/cost-2910/ต้นทุนสินค้า-OKami24-2026-10-29.xlsx` (outside git), 1 row per product, 96 products, 63 with cost
+    (shipnity.com account OKAMI, column "ต้นทุน") · Vazer One pod cost 80 > its price 59 (flagged).
+  e Friday HERE next: unboxing-video notice on the ORDER PAGE ONLY, after payment while waiting (owner 29/10). thai-copy draft: title
+    "อย่าลืมถ่ายคลิปตอนแกะกล่อง" + 2 sentences + line A "ไม่มีคลิปตอนแกะกล่อง ร้านพิจารณาเคลมให้ไม่ได้ ข้อนี้ใช้กับทุกคำสั่งซื้อนะคะ" + link
+    /warranty, th/en/zh — owner sees it first. "ของไม่ครบ" is not claimable in BSOT §12 (copy says "ถ้าของมีปัญหา"). shipping-rules
+    must not touch `OrderStatusView.tsx`.
+  f Stuck "รอส่งคลัง" orders → ADMIN presses "ส่งรายการให้คลังแล้ว" (not the 19:46 one); Friday has no staff sign-in.
+  g NEXT, one at a time after shipping-rules (owner 29/10): (1) customer cards on /staff (orders · frequency · totals · favourites · member
+    since · benefits used; members = provider id + display name + times, no email; LINE customers matched by PHONE) + one privacy line;
+    no cookie banner while only necessary cookies exist · (2) admins sign in with their own Gmail → who accepted / checked each slip
+    (login = 13.3 #9, plan to owner) · (3) EMS + DHL tracking + motion graphic — step 1 DHL in `carriers.ts` + staff picker (still Flash;
+    BSOT §10 lines 417/422 too); live tracking needs owner-made EMS/DHL developer accounts · (4) LINE orders on the web = later.
+    Off-site backup (77) = after the back office.
+  Leftovers: Pod-180 back as its own Shipnity product with stock (nexBar CLEAR 18K moved to Disposable-46) — decide new vs duplicate ·
+    owner not yet judged live: samurai theme, nexPOD photos, nexBar CLEAR tones (78).
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
      Left: broadcast "โฉมใหม่" = the OWNER sends (outsiders, 13.3) · checker taste note: faint smear + grey seams in the owner's PNG
      (visible only large, share image) — a clean file from the owner fixes it, never retouch.
-  b CART FIT — DONE #916 → REPLACED 28/10 by #960 (half like the cart, half shop picks — item 2). Up to 8 cards since #928.
+  b CART FIT — #960 (half like the cart, half shop picks), up to 8 cards.
   c STAFF PAGES — DONE #916 (owner 27/10: "ปุ่ม เมนู กล่อง ในการทำงาน", header/footer stay): /staff = "งาน" work list by step · no chips,
      no bottom tab bar · order page says each thing once · admin manual updated. Not seen live: a ✅ slip on the step card (test DB had none).
-  d LINE sign-in logo — DONE (see a).
   e BEST SELLERS — DONE #916: SHOP_PICKS = Thai shops' "ขายดี" blocks (7 shops, estimate, sources in the code comment); "Relx Connector 20K"
      read as Muro Connector 20K [เชื่อว่า] — owner may say otherwise. Esko Switch kit + M Switch kit currently all-out (no card).
   f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log ENDED (routine deleted 28/10; Shipnity sends numbers) · ② DONE 28/10
