@@ -1,5 +1,6 @@
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { wooId } from "@/lib/woo/catalog";
+import { SHIPNITY_CARRIER_NAME, type CarrierId } from "@/lib/commerce/carriers";
 
 /**
  * One web order as a WooCommerce order (REST v3 "order" object — woocommerce.github.io/woocommerce-rest-api-docs, Orders),
@@ -9,7 +10,10 @@ import { wooId } from "@/lib/woo/catalog";
  *     the shipping fee; no slip, no refund account, no customer note, no email, no member id;
  *   - the real shipping fee on its own line every time; free shipping = a shop-paid discount line (BSOT §10, survey
  *     "Order push") — the order total stays what the customer paid;
- *   - lines refunded after an out-of-stock (batch E) are not sent (same rule as the copy-to-warehouse text).
+ *   - lines refunded after an out-of-stock (batch E) are not sent (same rule as the copy-to-warehouse text);
+ *   - the carrier (owner 30/10: DHL for Phuket 83xxx + Bangkok 10220 / 10250, EMS for the rest) rides as the shipping
+ *     line's title in Shipnity's own words (EMS / DHL) and as order meta `shipping_carrier` — Shipnity cannot map Woo
+ *     shipping methods (admin 30/10), so one real test order shows which it reads; without a carrier the line keeps "ค่าส่ง".
  * Thai address → Woo: address_1 = house/street, address_2 = sub-district, city = district, state = province.
  */
 
@@ -38,6 +42,8 @@ export interface PushOrder {
   district: string;
   province: string;
   postalCode: string;
+  /** The carrier the order goes with (staff's pick, else from the postcode); absent = the line title stays "ค่าส่ง". */
+  carrier?: CarrierId;
 }
 
 /** Why an order may NOT go to the warehouse now — null = it may. Only a paid order (staff confirmed the money →
@@ -58,6 +64,7 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
   const shippingReal = FLAT_SHIPPING_FEE_THB;
   const discount = Math.max(0, shippingReal - o.shippingFee);
   const total = itemsTotal + shippingReal - discount;
+  const carrierName = o.carrier ? SHIPNITY_CARRIER_NAME[o.carrier] : null;
   const address = {
     first_name: o.recipientName,
     last_name: "",
@@ -101,7 +108,7 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
     payment_method_title: "โอนเงิน (ชำระแล้ว)",
     transaction_id: "",
     set_paid: true,
-    meta_data: [],
+    meta_data: carrierName ? [{ id: 1, key: "shipping_carrier", value: carrierName }] : [],
     line_items: o.lines.map((l) => ({
       id: l.itemId,
       name: l.name,
@@ -119,7 +126,9 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
       price: l.unitPrice,
     })),
     tax_lines: [],
-    shipping_lines: [{ id: 1, method_title: "ค่าส่ง", method_id: "flat_rate", total: money(shippingReal), total_tax: "0.00", taxes: [], meta_data: [] }],
+    shipping_lines: [
+      { id: 1, method_title: carrierName ?? "ค่าส่ง", method_id: "flat_rate", total: money(shippingReal), total_tax: "0.00", taxes: [], meta_data: [] },
+    ],
     fee_lines: [],
     coupon_lines: discount > 0 ? [{ id: 1, code: "free-shipping", discount: money(discount), discount_tax: "0.00", meta_data: [] }] : [],
     refunds: [],

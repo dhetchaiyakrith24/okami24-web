@@ -7,6 +7,7 @@ import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { pushBlock, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
 import { trimLine1 } from "@/lib/commerce/address-line1";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
+import { pickCarrier, toStaffCarrierId } from "@/lib/commerce/carriers";
 
 /**
  * Send one paid order to the warehouse's Shipnity the way a WooCommerce shop does (Shipnity link, owner 28/10): POST the
@@ -49,6 +50,8 @@ export function pushOrderFor(orderNumber: string): PushOrder | null {
     district: a.district,
     province: a.province,
     postalCode: a.postalCode,
+    // Owner 30/10: staff's pick on the order page, else DHL / EMS from the postcode.
+    carrier: toStaffCarrierId(o.carrier) ?? pickCarrier(a.postalCode),
   };
 }
 

@@ -9,9 +9,9 @@ import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
-import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
+import { CARRIERS, pickCarrier, STAFF_CARRIER_IDS, toStaffCarrierId, type CarrierId } from "@/lib/commerce/carriers";
 import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
-import { staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
+import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
 
@@ -49,7 +49,8 @@ export const metadata: Metadata = {
 const ERROR_TEXT: Record<string, string> = {
   "not-allowed": "ทำขั้นนี้กับออเดอร์สถานะนี้ไม่ได้ (อาจมีคนกดไปก่อนแล้ว) — โหลดหน้าใหม่ดูสถานะล่าสุด",
   tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
-  carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ Flash Express) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
+  carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ DHL) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
+  "carrier-locked": "เปลี่ยนขนส่งไม่ได้แล้ว — ออเดอร์ส่งเข้า Shipnity แล้ว หรือสถานะเปลี่ยนไป · แจ้งคลังให้เปลี่ยนใน Shipnity แทน",
   message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
   "not-found": "ไม่พบออเดอร์นี้",
   "shipnity-no-target": "ยังส่งเข้า Shipnity ไม่ได้ — ยังไม่ได้กดอนุญาตที่รับออเดอร์ในหน้า \"เชื่อมคลัง Shipnity\" · ใช้คัดลอกข้อความส่งคลังไปก่อน",
@@ -66,6 +67,7 @@ const DONE_TEXT: Record<string, string> = {
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
+  carrier: "บันทึกแล้ว: เปลี่ยนขนส่ง — ส่งเข้า Shipnity พร้อมขนส่งนี้",
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
@@ -116,6 +118,45 @@ const BUTTON_LABEL: Partial<Record<StaffAction, string>> = { ship: "บันท
 /** `quiet` = the hand-copy fallback once "ส่งเข้าคลัง Shipnity" is the main button (one main button per card). */
 const quietButton =
   "inline-flex h-12 w-full items-center justify-center rounded-full border border-surface-border px-6 text-base font-semibold text-foreground transition-colors hover:border-foreground-dim sm:w-auto";
+
+/** The carrier the order goes with (owner 30/10): picked from the postcode (DHL for Phuket 83xxx and Bangkok 10220 /
+ *  10250, EMS for the rest) unless staff changed it; staff can change it until the order is sent to Shipnity. */
+function CarrierPick({ order, from, planned, byPostcode }: { order: StaffOrderDetail; from: string; planned: CarrierId; byPostcode: boolean }) {
+  return (
+    <details className="group">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-foreground [&::-webkit-details-marker]:hidden">
+        <span>
+          ขนส่ง <span className="font-semibold">{CARRIERS[planned].name.th}</span>
+          <span className="text-foreground-dim">{byPostcode ? " · เลือกจากรหัสไปรษณีย์" : " · ทีมงานเลือก"} · เปลี่ยน</span>
+        </span>
+        <Chevron />
+      </summary>
+      <form action={staffCarrierAction} className="flex flex-col gap-3 pt-2">
+        <OrderFields order={order} from={from} />
+        <CarrierRadios checked={planned} />
+        <button type="submit" className={quietButton}>
+          บันทึกขนส่ง
+        </button>
+      </form>
+    </details>
+  );
+}
+
+/** EMS or DHL as two big radio boxes, starting on `checked`. */
+function CarrierRadios({ checked }: { checked: CarrierId }) {
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {STAFF_CARRIER_IDS.map((id) => (
+        <label key={id} className="relative">
+          <input type="radio" name="carrier" value={id} required defaultChecked={id === checked} className="peer absolute inset-0 opacity-0" />
+          <span className="flex h-12 items-center justify-center rounded-xl border border-surface-border text-sm text-foreground peer-checked:border-ember peer-checked:bg-ember/10 peer-checked:font-semibold peer-focus-visible:outline-2 peer-focus-visible:outline-ember">
+            {CARRIERS[id].name.th}
+          </span>
+        </label>
+      ))}
+    </div>
+  );
+}
 
 function ActionForm({
   order,
@@ -242,6 +283,8 @@ export default async function StaffOrderPage({
   const shipnity = shipnityReady();
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const staffCarrier = toStaffCarrierId(order.carrier);
+  const planned = staffCarrier ?? pickCarrier(a.postalCode);
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -299,6 +342,7 @@ export default async function StaffOrderPage({
       {order.status === "approved" && !stockOpen && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.warehouse.label}</h2>
+          <CarrierPick order={order} from={from} planned={planned} byPostcode={!staffCarrier} />
           {shipnity && (
             <form action={staffShipnityPushAction} className="flex flex-col gap-2">
               <OrderFields order={order} from={from} />
@@ -334,19 +378,10 @@ export default async function StaffOrderPage({
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.tracking.label}</h2>
           {steps.includes("ship") && (
             <ActionForm order={order} from={from} act="ship">
-              {/* Staff pick the carrier — never guessed from the number (owner 23/10: the customer sees it). */}
+              {/* Staff confirm the carrier (owner 23/10: the customer sees it) — starts on the postcode pick, never guessed from the number. */}
               <fieldset className="flex flex-col gap-2">
                 <legend className="mb-1 text-foreground-muted">ขนส่ง</legend>
-                <div className="grid grid-cols-2 gap-2">
-                  {CARRIER_IDS.map((id) => (
-                    <label key={id} className="relative">
-                      <input type="radio" name="carrier" value={id} required className="peer absolute inset-0 opacity-0" />
-                      <span className="flex h-12 items-center justify-center rounded-xl border border-surface-border text-sm text-foreground peer-checked:border-ember peer-checked:bg-ember/10 peer-checked:font-semibold peer-focus-visible:outline-2 peer-focus-visible:outline-ember">
-                        {CARRIERS[id].name.th}
-                      </span>
-                    </label>
-                  ))}
-                </div>
+                <CarrierRadios checked={planned} />
               </fieldset>
               <label className="flex flex-col gap-1 text-foreground-muted">
                 เลขพัสดุ
