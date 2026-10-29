@@ -8,7 +8,7 @@ import type { CartShippingHint } from "@/lib/commerce/cart";
 /**
  * The lines under the shipping row of the cart and the review step (owner 29/10, BSOT §10): why the fee is what it is,
  * before the customer pays — then, when it can drop, how much more brings it down, and (signed out) the sign-in that
- * gives a member's first order 0 shipping. Display only: the amount itself is `cart.totals.shippingFee`.
+ * gives a member 0 shipping once a month from 300 THB. Display only: the amount itself is `cart.totals.shippingFee`.
  */
 export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippingHint; formatTHB: (n: number) => string; signInNext: string }) {
   const { dict, locale } = useLocale();
@@ -37,7 +37,7 @@ export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippi
       )}
       {!hint.signedIn && (
         <p>
-          {text(hint.firstOrderUsed ? c.shippingSignInUsedNote : c.shippingSignInNote)}{" "}
+          {text(hint.benefitUsed ? c.shippingSignInUsedNote : c.shippingSignInNote)}{" "}
           <Link href={`/account/login?next=${encodeURIComponent(signInNext)}`} className="text-ember underline underline-offset-2">
             {text(c.shippingSignInCta)}
           </Link>

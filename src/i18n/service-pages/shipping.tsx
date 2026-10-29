@@ -11,7 +11,7 @@ export interface ShippingCopy {
   tableHeadFee: string;
   /** Shipping tiers (owner 29/10, BSOT §10) — one row per amount band; `free` rows show in the "verified" colour. */
   rows: { total: string; fee: string; free?: boolean }[];
-  /** The first-order benefit for members (any amount), under the table. */
+  /** The members' monthly benefit (300 THB and over, once a month), under the table. */
   memberNote: ReactNode;
   feeNote: string;
   whenTitle: string;
@@ -40,7 +40,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "การจัดส่ง",
     description: "ค่าส่งเท่าไหร่ กี่วันถึง ตามพัสดุได้ที่ไหน — บอกไว้ตรงนี้หมด ไม่มีค่าใช้จ่ายแอบซ่อนค่ะ",
     summary: [
-      { label: "ค่าส่ง", value: "50 บาท", note: "ครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง · สมาชิกออเดอร์แรกค่าส่ง 0 บาท" },
+      { label: "ค่าส่ง", value: "50 บาท", note: "สมาชิกยอดครบ 300 บาท ค่าส่ง 0 บาทเดือนละครั้ง" },
       { label: "ถึงมือใน", value: "1–3 วัน", note: "โอนก่อน 12:30 ส่งวันเดียวกัน" },
       { label: "ติดตามพัสดุ", value: "มีทุกคำสั่งซื้อ", note: "ได้เลขพัสดุเมื่อของออกจากร้าน" },
     ],
@@ -49,9 +49,9 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     tableHeadFee: "ค่าจัดส่ง",
     rows: [
       { total: "ต่ำกว่า 500 บาท", fee: "50 บาท" },
-      { total: "500 บาทขึ้นไป เดือนละครั้ง", fee: "ฟรี", free: true },
+      { total: "สมาชิก ยอดครบ 300 บาท เดือนละครั้ง", fee: "ฟรี", free: true },
     ],
-    memberNote: <><B>เข้าสู่ระบบด้วย LINE หรือ Google</B> แล้วออเดอร์แรกของสมาชิกจะได้ค่าส่ง 0 บาท ทุกยอดสั่งซื้อค่ะ</>,
+    memberNote: <><B>เข้าสู่ระบบด้วย LINE หรือ Google</B> แล้วยอดครบ 300 บาท ได้ค่าส่ง 0 บาทเดือนละครั้ง สิทธิ์เริ่มใหม่ทุกต้นเดือนค่ะ</>,
     feeNote: "ค่าส่งเป็นอัตราเดียวกันทั่วประเทศ ถ้ายกเลิกออเดอร์ สิทธิ์ค่าส่ง 0 บาทจะกลับมาใช้ได้อีก และก่อนยืนยันคำสั่งซื้อ คุณจะเห็นค่าส่งพร้อมเหตุผลทุกครั้งค่ะ",
     whenTitle: "ส่งเมื่อไหร่",
     when1: "โอนแล้วของยังไม่ออกทันที แอดมินต้องเช็คยอดที่เข้าจริงก่อน ตรวจผ่านแล้วถึงแพ็กและส่งออกค่ะ อยากรู้ว่าถึงไหนแล้ว ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
@@ -74,7 +74,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "Shipping",
     description: "What shipping costs, how long it takes, where to track it — it’s all here, with no hidden charges.",
     summary: [
-      { label: "Shipping", value: "฿50", note: "฿0 once a month from ฿500 · ฿0 on a member’s first order" },
+      { label: "Shipping", value: "฿50", note: "Members: ฿0 once a month from ฿300" },
       { label: "Arrives in", value: "1–3 days", note: "Transfer before 12:30 and we ship the same day" },
       { label: "Tracking", value: "On every order", note: "You get it when the parcel leaves the shop" },
     ],
@@ -83,9 +83,9 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     tableHeadFee: "Shipping",
     rows: [
       { total: "Under ฿500", fee: "฿50" },
-      { total: "฿500 and over, once a month", fee: "Free", free: true },
+      { total: "Members, ฿300 and over, once a month", fee: "Free", free: true },
     ],
-    memberNote: <><B>Sign in with LINE or Google</B> and your first order as a member ships for ฿0, whatever the total.</>,
+    memberNote: <><B>Sign in with LINE or Google</B> and one order of ฿300 or more each month ships for ฿0. It renews at the start of every month.</>,
     feeNote: "Rates are the same anywhere in Thailand. A cancelled order doesn’t use up a ฿0 shipping benefit, and you always see the shipping fee and the reason for it before you confirm your order.",
     whenTitle: "When we ship",
     when1: "Transferring doesn’t send your parcel out straight away — an admin checks the money that actually arrived first, then we pack it and ship it. Want to know where your order stands? Just ask us on LINE.",
@@ -108,7 +108,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "配送",
     description: "运费多少、几天送到、在哪查快递 —— 都写在这里，没有隐藏费用。",
     summary: [
-      { label: "运费", value: "50 铢", note: "满 500 铢每月一次运费 0 铢 · 会员首单运费 0 铢" },
+      { label: "运费", value: "50 铢", note: "会员满 300 铢每月一次运费 0 铢" },
       { label: "送达时间", value: "1–3 天", note: "12:30 前转账，当天发货" },
       { label: "快递查询", value: "每笔订单都有", note: "包裹寄出时提供" },
     ],
@@ -117,9 +117,9 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     tableHeadFee: "运费",
     rows: [
       { total: "低于 500 铢", fee: "50 铢" },
-      { total: "500 铢及以上，每月一次", fee: "免费", free: true },
+      { total: "会员满 300 铢，每月一次", fee: "免费", free: true },
     ],
-    memberNote: <><B>用 LINE 或 Google 登录</B>即成为会员，首单不论金额，运费均为 0 铢。</>,
+    memberNote: <><B>用 LINE 或 Google 登录</B>即成为会员，每月一单满 300 铢运费 0 铢，每月初重新计算。</>,
     feeNote: "全国运费统一。已取消的订单不计入运费 0 铢优惠的使用次数；确认订单前，您都能看到运费及原因。",
     whenTitle: "什么时候发货",
     when1: "转账后不会立刻发货。管理员会先核对实际到账的金额，确认无误后才打包寄出。想知道进度，随时可以在 LINE 上问我们。",

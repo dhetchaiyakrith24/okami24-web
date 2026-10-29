@@ -527,10 +527,10 @@ export interface Dictionary {
     /** "Add `{n}` more" — `{n}` = the baht still to add; `Free` when that brings shipping to 0, `Reduced` when to `{fee}` (a number; the unit is in the string). */
     shippingNextFree: string;
     shippingNextReduced: string;
-    /** Cart, signed out: signing in gives the first order 0 shipping. The link opens /account/login and comes back. */
+    /** Cart, signed out: signing in gives 0 shipping once a month from 300 THB. The link opens /account/login and comes back. */
     shippingSignInNote: string;
     shippingSignInCta: string;
-    /** Signed out, but this phone / address already used a first-order benefit: the line only invites a member back in
+    /** Signed out, but this phone / address already used this month's member benefit: the line only invites a member back in
      *  (no promise of 0 shipping) — "Already a member?" + the same sign-in link. */
     shippingSignInUsedNote: string;
     totalLabel: string;

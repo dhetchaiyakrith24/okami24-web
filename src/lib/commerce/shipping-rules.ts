@@ -1,19 +1,20 @@
 /**
- * Shipping-fee tiers — owner, chat 2026-10-29 (docs/BUSINESS_SOURCE_OF_TRUTH.md §10), his words: "สมัครแล้วส่งฟรีครั้งแรก ·
- * ครบ ฿500 ส่งฟรีเดือนละครั้ง · ครบ ฿800 ส่งฟรีทุกครั้ง และครั้งที่ 500 แต่ไม่ได้ส่งฟรีในเดือนนั้น ๆ ให้คิดค่าส่งแค่ 35 บาท".
- * Checked in this order, first match wins:
- *   1. `first_member_order` — signed in (LINE / Google), the member has no order that is not cancelled, and no earlier
- *      `first_member_order` order shares this phone or address → 0, any amount. It is the member's first order, so it is
- *      used up even when the order is 800+ (free either way).
- *   2. `over_800`           — subtotal ≥ 800 → 0, every time, uses up nothing.
- *   3. `monthly_free`       — subtotal ≥ 500 and no `monthly_free` order (not cancelled) in the window shares this
- *      member, phone or address → 0.
- *   4. `monthly_used`       — subtotal ≥ 500, the window's one is used (or MONTHLY_FREE_FOR excludes this visitor) → 35.
- *   5. `standard`           — below 500 → 50.
- * Anti-reuse (owner 29/10 "ตามแนะนำ", BSOT §10): a benefit already used is not given again when the PHONE (checkout or
- * recipient) or the ADDRESS (house no. + sub-district + postcode) matches an order that used it — the recipient's name
- * alone never blocks. A cancelled order never uses a benefit up (customer cancel, staff cancel, or the 24-hour unpaid sweep).
- * Orders placed before migration 0022 (rule NULL) count for nothing.
+ * Shipping-fee tiers — owner, chat 2026-10-29 ~23:20 (docs/BUSINESS_SOURCE_OF_TRUTH.md §10), correcting the first version
+ * of the same evening, his words: "สมัครใหม่ส่งฟรีใช่แต่ต้องสั่ง 300 บาทขึ้นไป และสิทธินี้รีทุกเดือน หลังจากครบ 300 อีก 2-3 วันมาสั่งต่อ
+ * ยอดถึง 500 ก็เหลือ 35 ยอดไม่ถึง 500 ไม่มีสิทธิครั้งแรกก็ 50 บาท · ครั้งที่ 3 800 ค่าส่งเป็นฟรี" — the monthly benefit is for members
+ * only (signed in with LINE / Google). Checked in this order, first match wins:
+ *   1. `over_800`       — subtotal ≥ 800 → 0, everyone, every order; uses up nothing (it is checked before the member
+ *      benefit, so a member's 800+ order keeps this month's benefit for a smaller order).
+ *   2. `member_monthly` — signed in, subtotal ≥ 300, and no order inside this calendar month (Bangkok) that used the member
+ *      benefit shares this member, phone or address → 0. Once per month; it comes back on the 1st.
+ *   3. `over_500`       — subtotal ≥ 500 → 35 (guests, and members whose benefit is used this month).
+ *   4. `standard`       — below 500 → 50.
+ * Anti-reuse (owner 29/10 "ตามแนะนำ", BSOT §10): the benefit is not given again when the PHONE (checkout or recipient) or
+ * the ADDRESS (house no. + sub-district + postcode) matches an order that used it this month — the recipient's name alone
+ * never blocks. A cancelled order never uses it up (customer cancel, staff cancel, or the 24-hour unpaid sweep).
+ * Orders placed before migration 0022 (rule NULL) count for nothing. Orders of the first version (LEGACY_SHIPPING_RULES,
+ * live 29/10 evening) count as this month's benefit only when a member got 0 shipping below 800 — `first_member_order`, or
+ * `monthly_free` placed signed in (Friday's reading 29/10: "only if it actually got shipping ฿0 under a member benefit").
  *
  * Pure (no `server-only`, no I/O beyond the `db` handed in) so shipping-rules-contract-test.ts can run it on an in-memory
  * SQLite built from the real migrations.
@@ -21,65 +22,46 @@
 
 export const STANDARD_SHIPPING_FEE_THB = 50;
 export const REDUCED_SHIPPING_FEE_THB = 35;
-export const MONTHLY_FREE_THRESHOLD_THB = 500;
+export const MEMBER_FREE_THRESHOLD_THB = 300;
+export const REDUCED_THRESHOLD_THB = 500;
 export const ALWAYS_FREE_THRESHOLD_THB = 800;
 
-/** Q1 — who the once-a-month rule counts for. Owner 29/10 ("ตามแนะนำ"): "everyone" = guests too, counted per phone /
- *  address (and per member when signed in). "members" = only signed-in members; guests at 500+ pay the 35 rate. */
-export type MonthlyFreeFor = "everyone" | "members";
-export const MONTHLY_FREE_FOR = "everyone" as MonthlyFreeFor;
-/** Q2 — what "a month" is. Owner 29/10 ("ตามแนะนำ"): calendar month in Bangkok time. "rolling-30-days" = 30 days back. */
-export type MonthlyWindow = "calendar-month-bangkok" | "rolling-30-days";
-export const MONTHLY_WINDOW = "calendar-month-bangkok" as MonthlyWindow;
-
-export const SHIPPING_RULES = ["first_member_order", "over_800", "monthly_free", "monthly_used", "standard"] as const;
+export const SHIPPING_RULES = ["over_800", "member_monthly", "over_500", "standard"] as const;
+/** Rules of the first version (29/10 evening) — never decided any more, still stored on its orders. */
+export const LEGACY_SHIPPING_RULES = ["first_member_order", "monthly_free", "monthly_used"] as const;
 export type ShippingRule = (typeof SHIPPING_RULES)[number];
+export type StoredShippingRule = ShippingRule | (typeof LEGACY_SHIPPING_RULES)[number];
 
-export function isShippingRule(value: unknown): value is ShippingRule {
-  return typeof value === "string" && (SHIPPING_RULES as readonly string[]).includes(value);
+export function isShippingRule(value: unknown): value is StoredShippingRule {
+  return typeof value === "string" && ([...SHIPPING_RULES, ...LEGACY_SHIPPING_RULES] as readonly string[]).includes(value);
 }
-
-export interface ShippingSettings {
-  monthlyFreeFor: MonthlyFreeFor;
-  monthlyWindow: MonthlyWindow;
-}
-
-export const SHIPPING_SETTINGS: ShippingSettings = { monthlyFreeFor: MONTHLY_FREE_FOR, monthlyWindow: MONTHLY_WINDOW };
 
 /** What the rules need to know about the visitor. A visitor nobody can identify yet (no phone, not signed in) = all false. */
 export interface ShippingHistory {
   isMember: boolean;
-  /** The first-order benefit is gone: the member already has an order that is not cancelled, or an earlier
-   *  `first_member_order` order shares this phone or address. Worked out for guests too (by phone / address only): the
-   *  cart then invites a member back in without promising 0 shipping. */
-  firstOrderUsed: boolean;
-  /** A `monthly_free` order (not cancelled) inside the window shares this member, phone or address. */
-  monthlyFreeUsed: boolean;
+  /** This month's member benefit is gone: an order (not cancelled) that used it shares this member, phone or address. Worked
+   *  out for guests too (by phone / address only): the cart then invites a member back in without promising 0 shipping. */
+  benefitUsed: boolean;
 }
 
-export const UNKNOWN_VISITOR: ShippingHistory = { isMember: false, firstOrderUsed: false, monthlyFreeUsed: false };
+export const UNKNOWN_VISITOR: ShippingHistory = { isMember: false, benefitUsed: false };
 
 export interface ShippingDecision {
   rule: ShippingRule;
   fee: number;
 }
 
-export function decideShipping(subtotal: number, history: ShippingHistory, settings: ShippingSettings = SHIPPING_SETTINGS): ShippingDecision {
-  if (history.isMember && !history.firstOrderUsed) return { rule: "first_member_order", fee: 0 };
+export function decideShipping(subtotal: number, history: ShippingHistory): ShippingDecision {
   if (subtotal >= ALWAYS_FREE_THRESHOLD_THB) return { rule: "over_800", fee: 0 };
-  if (subtotal >= MONTHLY_FREE_THRESHOLD_THB) {
-    const counts = settings.monthlyFreeFor === "everyone" || history.isMember;
-    if (counts && !history.monthlyFreeUsed) return { rule: "monthly_free", fee: 0 };
-    return { rule: "monthly_used", fee: REDUCED_SHIPPING_FEE_THB };
-  }
+  if (history.isMember && !history.benefitUsed && subtotal >= MEMBER_FREE_THRESHOLD_THB) return { rule: "member_monthly", fee: 0 };
+  if (subtotal >= REDUCED_THRESHOLD_THB) return { rule: "over_500", fee: REDUCED_SHIPPING_FEE_THB };
   return { rule: "standard", fee: STANDARD_SHIPPING_FEE_THB };
 }
 
 const BANGKOK_OFFSET_MS = 7 * 60 * 60 * 1000; // Thailand has no daylight saving
 
-/** Start of the once-a-month window, as the same ISO-8601 UTC text `orders.created_at` holds (so it compares as text). */
-export function monthlyWindowStart(now: Date, window: MonthlyWindow = MONTHLY_WINDOW): string {
-  if (window === "rolling-30-days") return new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString();
+/** Start of this calendar month in Bangkok, as the same ISO-8601 UTC text `orders.created_at` holds (so it compares as text). */
+export function monthlyWindowStart(now: Date): string {
   const bangkok = new Date(now.getTime() + BANGKOK_OFFSET_MS);
   return new Date(Date.UTC(bangkok.getUTCFullYear(), bangkok.getUTCMonth(), 1) - BANGKOK_OFFSET_MS).toISOString();
 }
@@ -118,12 +100,14 @@ interface Db {
   prepare(sql: string): { get(...params: unknown[]): unknown; all(...params: unknown[]): unknown[] };
 }
 
-const MEMBER_HAS_ORDER_SQL = "SELECT 1 FROM orders WHERE member_id = ? AND status != 'cancelled' LIMIT 1";
+/** An order that used the member benefit (see the head comment for the first version's two rules — an 800+ order of
+ *  theirs would have shipped for 0 anyway, so it uses nothing up). */
+const USED_BENEFIT_SQL = `(o.shipping_rule = 'member_monthly' OR (o.subtotal < ${ALWAYS_FREE_THRESHOLD_THB} AND (o.shipping_rule = 'first_member_order' OR (o.shipping_rule = 'monthly_free' AND o.member_id IS NOT NULL))))`;
 
-/** Orders with `rule` (not cancelled, inside the window when given) that share the member, a phone, or the address's
- *  sub-district + postcode — the house number is compared in JS (houseNumber), SQLite cannot parse it. The checkout phone
- *  has no code (otp-mode.ts), so the recipient phone and the address stop "type another number" from renewing a benefit. */
-function benefitCandidatesSql(phoneCount: number, withMember: boolean, withAddress: boolean, withWindow: boolean): string {
+/** Orders that used the benefit this month (not cancelled) and share the member, a phone, or the address's sub-district +
+ *  postcode — the house number is compared in JS (houseNumber), SQLite cannot parse it. The checkout phone has no code
+ *  (otp-mode.ts), so the recipient phone and the address stop "type another number" from renewing the benefit. */
+function benefitCandidatesSql(phoneCount: number, withMember: boolean, withAddress: boolean): string {
   const list = Array.from({ length: phoneCount }, () => "?").join(", ");
   const who = [
     ...(phoneCount > 0 ? [`c.phone IN (${list})`, `REPLACE(REPLACE(a.phone, '-', ''), ' ', '') IN (${list})`] : []),
@@ -134,7 +118,7 @@ function benefitCandidatesSql(phoneCount: number, withMember: boolean, withAddre
           FROM orders o
           JOIN customers c ON c.id = o.customer_id
           LEFT JOIN order_shipping_addresses a ON a.order_id = o.id
-          WHERE o.shipping_rule = ? AND o.status != 'cancelled'${withWindow ? " AND o.created_at >= ?" : ""}
+          WHERE ${USED_BENEFIT_SQL} AND o.status != 'cancelled' AND o.created_at >= ?
             AND (${who.join(" OR ")})`;
 }
 
@@ -147,10 +131,10 @@ interface CandidateRow {
   postal: string | null;
 }
 
-function benefitUsed(db: Db, rule: ShippingRule, since: string | null, phones: string[], memberId: number | null, address: ShippingAddressKey | null): boolean {
+function benefitUsed(db: Db, since: string, phones: string[], memberId: number | null, address: ShippingAddressKey | null): boolean {
   if (phones.length === 0 && memberId === null && address === null) return false;
-  const params: unknown[] = [rule, ...(since ? [since] : []), ...phones, ...phones, ...(memberId !== null ? [memberId] : []), ...(address ? [address.postalCode.trim()] : [])];
-  const rows = db.prepare(benefitCandidatesSql(phones.length, memberId !== null, address !== null, since !== null)).all(...params) as CandidateRow[];
+  const params: unknown[] = [since, ...phones, ...phones, ...(memberId !== null ? [memberId] : []), ...(address ? [address.postalCode.trim()] : [])];
+  const rows = db.prepare(benefitCandidatesSql(phones.length, memberId !== null, address !== null)).all(...params) as CandidateRow[];
   const digits = (p: string | null) => (p ?? "").replace(/[^0-9]/g, "");
   return rows.some(
     (r) =>
@@ -164,63 +148,49 @@ function benefitUsed(db: Db, rule: ShippingRule, since: string | null, phones: s
   );
 }
 
-export function loadShippingHistory(db: Db, who: ShippingIdentity, now: Date = new Date(), settings: ShippingSettings = SHIPPING_SETTINGS): ShippingHistory {
+export function loadShippingHistory(db: Db, who: ShippingIdentity, now: Date = new Date()): ShippingHistory {
   // Addresses keep the phone as typed (dashes, spaces); customers.phone is already digits only (phone.ts).
   const phones = [...new Set(who.phones.map((p) => p.replace(/[^0-9]/g, "")).filter((p) => p.length > 0))];
-  const address = who.address ?? null;
-  const isMember = who.memberId !== null;
-  const firstOrderUsed =
-    (isMember && db.prepare(MEMBER_HAS_ORDER_SQL).get(who.memberId) !== undefined) || benefitUsed(db, "first_member_order", null, phones, null, address);
-  const monthlyFreeUsed = benefitUsed(db, "monthly_free", monthlyWindowStart(now, settings.monthlyWindow), phones, who.memberId, address);
-  return { isMember, firstOrderUsed, monthlyFreeUsed };
+  return {
+    isMember: who.memberId !== null,
+    benefitUsed: benefitUsed(db, monthlyWindowStart(now), phones, who.memberId, who.address ?? null),
+  };
 }
 
 /** The next amount that lowers the fee, for the cart's "add ฿n more" line — null when shipping is already 0. Display only. */
-export function nextShippingStep(
-  subtotal: number,
-  history: ShippingHistory,
-  settings: ShippingSettings = SHIPPING_SETTINGS
-): { addMore: number; fee: number } | null {
-  const now = decideShipping(subtotal, history, settings);
-  if (now.fee === 0) return null;
-  const threshold = now.rule === "standard" ? MONTHLY_FREE_THRESHOLD_THB : ALWAYS_FREE_THRESHOLD_THB;
-  return { addMore: threshold - subtotal, fee: decideShipping(threshold, history, settings).fee };
+export function nextShippingStep(subtotal: number, history: ShippingHistory): { addMore: number; fee: number } | null {
+  if (decideShipping(subtotal, history).fee === 0) return null;
+  const memberStep = history.isMember && !history.benefitUsed;
+  const threshold = memberStep ? MEMBER_FREE_THRESHOLD_THB : subtotal < REDUCED_THRESHOLD_THB ? REDUCED_THRESHOLD_THB : ALWAYS_FREE_THRESHOLD_THB;
+  return { addMore: threshold - subtotal, fee: decideShipping(threshold, history).fee };
 }
 
-/** Why this fee, in the customer's words — the dictionary key under `cart.shippingNote` (`monthlyMembersOnly` = Q1 set to
- *  members and a guest reached 500; the two month lines follow MONTHLY_WINDOW). */
-export type ShippingNoteKey =
-  | "firstMemberOrder"
-  | "over800"
-  | "monthlyFree"
-  | "monthlyFreeRolling"
-  | "monthlyUsed"
-  | "monthlyUsedRolling"
-  | "monthlyMembersOnly"
-  | "standard";
+/** Why this fee, in the customer's words — the dictionary key under `cart.shippingNote` (`…Used` = a member whose benefit
+ *  this month is gone; `memberUnder300` = a member with the benefit still open, below 300). */
+export type ShippingNoteKey = "over800" | "memberMonthly" | "memberUnder300" | "over500" | "over500Used" | "standard" | "standardUsed";
 
-export function shippingNoteKey(rule: ShippingRule, history: ShippingHistory, settings: ShippingSettings = SHIPPING_SETTINGS): ShippingNoteKey {
-  const rolling = settings.monthlyWindow === "rolling-30-days";
+export function shippingNoteKey(rule: ShippingRule, history: ShippingHistory): ShippingNoteKey {
+  const used = history.isMember && history.benefitUsed;
   switch (rule) {
-    case "first_member_order":
-      return "firstMemberOrder";
     case "over_800":
       return "over800";
-    case "monthly_free":
-      return rolling ? "monthlyFreeRolling" : "monthlyFree";
-    case "monthly_used":
-      if (settings.monthlyFreeFor === "members" && !history.isMember) return "monthlyMembersOnly";
-      return rolling ? "monthlyUsedRolling" : "monthlyUsed";
+    case "member_monthly":
+      return "memberMonthly";
+    case "over_500":
+      return used ? "over500Used" : "over500";
     case "standard":
-      return "standard";
+      if (used) return "standardUsed";
+      return history.isMember ? "memberUnder300" : "standard";
   }
 }
 
 /** /staff order page — which rule set the fee (staff read Thai). */
-export const SHIPPING_RULE_STAFF_LABEL: Record<ShippingRule, string> = {
-  first_member_order: "ออเดอร์แรกของสมาชิก (ค่าส่ง 0)",
+export const SHIPPING_RULE_STAFF_LABEL: Record<StoredShippingRule, string> = {
   over_800: "ยอดครบ 800 (ค่าส่ง 0)",
-  monthly_free: "ยอดครบ 500 · สิทธิ์ค่าส่ง 0 ของเดือน",
-  monthly_used: "ยอดครบ 500 · ใช้สิทธิ์เดือนนี้แล้ว (ค่าส่ง 35)",
+  member_monthly: "สิทธิ์สมาชิกของเดือน · ยอดครบ 300 (ค่าส่ง 0)",
+  over_500: "ยอดครบ 500 (ค่าส่ง 35)",
   standard: "ยอดต่ำกว่า 500 (ค่าส่ง 50)",
+  first_member_order: "ออเดอร์แรกของสมาชิก (กฎชุดแรก 29/10 · ค่าส่ง 0)",
+  monthly_free: "ยอดครบ 500 · สิทธิ์ของเดือน (กฎชุดแรก 29/10 · ค่าส่ง 0)",
+  monthly_used: "ยอดครบ 500 · ใช้สิทธิ์แล้ว (กฎชุดแรก 29/10 · ค่าส่ง 35)",
 };

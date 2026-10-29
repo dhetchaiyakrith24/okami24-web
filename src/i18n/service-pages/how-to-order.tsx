@@ -69,7 +69,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · สั่ง", value: "ใส่ตะกร้า ยืนยันเบอร์ กรอกที่อยู่", note: "ได้เลขคำสั่งซื้อทันที" },
       { label: "2 · จ่าย", value: "โอนธนาคาร หรือสแกน QR", note: "ไม่รับบัตร ไม่มีเก็บเงินปลายทาง" },
-      { label: "3 · รับของ", value: "แอดมินตรวจยอด แล้วส่งพร้อมเลขพัสดุ", note: "ค่าส่ง 50 บาท · ครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง · สมาชิกออเดอร์แรกค่าส่ง 0 บาท" },
+      { label: "3 · รับของ", value: "แอดมินตรวจยอด แล้วส่งพร้อมเลขพัสดุ", note: "ค่าส่ง 50 บาท · สมาชิกยอดครบ 300 บาท เดือนละครั้ง ค่าส่ง 0 บาท" },
     ],
     stepsTitle: "สั่งซื้อทีละขั้น",
     phase1: "01 · สั่ง",
@@ -154,7 +154,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · Order", value: "Add to cart, verify your phone, enter your address", note: "You get an order number straight away" },
       { label: "2 · Pay", value: "Bank transfer or scan the QR", note: "No card payment, no COD" },
-      { label: "3 · Get it", value: "An admin checks the amount, then ships with a tracking number", note: "Shipping ฿50 · ฿0 once a month from ฿500 · ฿0 on a member’s first order" },
+      { label: "3 · Get it", value: "An admin checks the amount, then ships with a tracking number", note: "Shipping ฿50 · members: ฿0 once a month from ฿300" },
     ],
     stepsTitle: "Ordering, step by step",
     phase1: "01 · Order",
@@ -239,7 +239,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · 下单", value: "加入购物车、验证手机号、填写地址", note: "立即获得订单编号" },
       { label: "2 · 付款", value: "银行转账或扫二维码", note: "不支持刷卡，无货到付款" },
-      { label: "3 · 收货", value: "管理员核对金额后发货，并提供快递单号", note: "运费 50 铢 · 满 500 铢每月一次运费 0 铢 · 会员首单运费 0 铢" },
+      { label: "3 · 收货", value: "管理员核对金额后发货，并提供快递单号", note: "运费 50 铢 · 会员满 300 铢每月一次运费 0 铢" },
     ],
     stepsTitle: "下单步骤",
     phase1: "01 · 下单",

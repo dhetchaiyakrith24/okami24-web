@@ -139,10 +139,10 @@ export interface CartShippingHint {
   noteKey: ShippingNoteKey;
   /** The next amount that lowers the fee ("add ฿n more"), or null when shipping is already 0. */
   next: { addMore: number; fee: number } | null;
-  /** Signed in as a member — when false, the cart offers the sign-in that unlocks the first-order benefit. */
+  /** Signed in as a member — when false, the cart offers the sign-in that unlocks the monthly member benefit. */
   signedIn: boolean;
-  /** This phone / address already used a first-order benefit — the sign-in line then promises nothing. */
-  firstOrderUsed: boolean;
+  /** This phone / address already used this month's member benefit — the sign-in line then promises nothing. */
+  benefitUsed: boolean;
 }
 
 function shippingHint(totals: OrderTotals, history: ShippingHistory): CartShippingHint {
@@ -150,7 +150,7 @@ function shippingHint(totals: OrderTotals, history: ShippingHistory): CartShippi
     noteKey: shippingNoteKey(totals.shippingRule, history),
     next: nextShippingStep(totals.subtotal, history),
     signedIn: history.isMember,
-    firstOrderUsed: history.firstOrderUsed,
+    benefitUsed: history.benefitUsed,
   };
 }
 

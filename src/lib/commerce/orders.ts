@@ -5,7 +5,7 @@ import { requireCustomer, getSession } from "./session";
 import { isIdempotencyKey } from "./idempotency-key";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
-import { isShippingRule, loadShippingHistory, type ShippingRule } from "./shipping-rules";
+import { isShippingRule, loadShippingHistory, type StoredShippingRule } from "./shipping-rules";
 import { cleanCustomerNote } from "./customer-note";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
@@ -21,7 +21,7 @@ export interface OrderSummary {
   subtotal: number;
   shippingFee: number;
   /** Which shipping tier set the fee (migration 0022, owner 29/10) — null for orders placed before the tiers. */
-  shippingRule: ShippingRule | null;
+  shippingRule: StoredShippingRule | null;
   total: number;
   createdAt: string;
   /** The shop's running number (migration 0017) — null until staff confirm the payment. Format: run-number.ts. */
@@ -122,7 +122,7 @@ class ShippingChangedError extends Error {}
  * `cleanCustomerNote` — never used for money, stock or the LINE alert.
  *
  * `shownShippingFee` (shipping tiers, owner 29/10): the fee the review step showed. When the tier decided here differs (another
- * order took the month's or the first-order benefit meanwhile, or the visitor signed in or out in another tab) nothing is
+ * order took the member's monthly benefit meanwhile, or the visitor signed in or out in another tab) nothing is
  * created and the result is `shipping-changed` — the customer sees the new fee and its reason before ordering, never after.
  * Only ever compared, never charged: the fee charged is always the one computed here.
  */
@@ -172,7 +172,7 @@ export async function placeOrder(
   }
 
   // Assigned inside the transaction: the shipping tier (shipping-rules.ts) reads earlier orders, so it is decided in the same
-  // write lock that inserts this one — two quick orders cannot both take the once-a-month or first-order benefit.
+  // write lock that inserts this one — two quick orders cannot both take the member's once-a-month benefit.
   let totals = computeOrderTotals(purchasableLines);
 
   let orderId: number;
