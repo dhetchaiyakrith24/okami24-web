@@ -207,22 +207,24 @@ export function OrderStatusView({
             and this column is max-w-xl, so a picture beside the text put the red "OKami24" on the red moon at 1440 (Friday's
             Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
-          <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-            {/* Owner 29/10 "หน้าหาย": a fixed 200/240 px band cropped the 716×400 picture to the kabuto and faded out the face.
-                The band now keeps the picture's own shape (face whole at every width) and fades only its last fifth. */}
-            {/* Owner 30/10: a new full-body samurai (his own transparent cut) replaces the head-and-moon
-                picture — "ให้ใช้การ Fade out เหมือนหน้าสินค้าทั้งหมด": the figure fades out toward the text over its lower half,
-                the way the /products backdrop fades, instead of a fifth at the edge. The file is the top 820 px of his transparent cut (head to hips). */}
-            <div ref={bandRef} className="relative aspect-[1024/760] w-full">
+          // Owner 30/10 (after #1023 live): "ไม่ต้องมีการ์ด … เน้นภาพใหญ่กว้างแบบหน้าสินค้ารวมไปเลย ปรับให้แมชและเหมาะ ดูดี" — no card:
+          // the owner's full-body samurai (his own transparent cut) stands big and wide behind the thank-you, faded out toward the
+          // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
+          // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
+          <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(100vw,820px)] -translate-x-1/2">
               <Image
                 src="/brand/samurai-thanks-full.webp"
                 alt=""
-                fill
-                sizes="(min-width: 640px) 576px, 100vw"
-                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_38%,transparent_97%)]"
+                width={1024}
+                height={820}
+                sizes="(min-width: 820px) 820px, 100vw"
+                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in]"
               />
             </div>
-            <div className="relative flex flex-col justify-center px-5 pb-6 lg:px-7 lg:pb-8">
+            {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
+            <div ref={bandRef} aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[58%]" />
+            <div className="relative px-1 lg:px-2">
               <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
               <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
                 <span className="block">{dict.orderStatus.thankYouLead}</span>
@@ -419,17 +421,17 @@ export function OrderStatusView({
             {payment && (
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-semibold text-foreground">{dict.orderStatus.paymentTransferTitle}</p>
-                {/* Owner 30/10 (option B of the payment-card draft, "ขอแค่เพิ่มซามูไรให้มีเอกลักษณ์"): the bank box keeps its layout —
-                    bank · name · number · copy — and gains the samurai as a silver, embossed backdrop on its right, like the owner's
-                    LINE card (the same pose as the /products backdrop, grayscale, screen-blended, faded toward the text). */}
+                {/* Owner 30/10 (option B of the payment-card draft, "ขอแค่เพิ่มซามูไรให้มีเอกลักษณ์"; then "ไม่อยากให้มืดตามภาพ — ส่วนเดียวที่มืดคือ
+                    งานภาพตัวละคร"): the bank box keeps its layout and its own colour — nothing behind the figure darkens it. Only the
+                    character (the owner's transparent cut, no moon, no black backdrop) shows on the right, silver, faded toward the text. */}
                 <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2">
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-3/5">
+                  <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[46%] overflow-hidden">
                     <Image
-                      src="/brand/samurai-products-bg-v2.webp"
+                      src="/brand/samurai-thanks-full.webp"
                       alt=""
                       fill
                       sizes="(min-width: 640px) 346px, 60vw"
-                      className="object-cover object-[50%_20%] sm:object-[50%_26%] opacity-70 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:linear-gradient(to_right,transparent,black_55%)]"
+                      className="origin-[56%_14%] scale-[1.3] object-cover object-[56%_0%] opacity-50 contrast-125 grayscale [mask-image:linear-gradient(to_right,transparent,black_50%)]"
                     />
                   </div>
                   <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 text-sm">
