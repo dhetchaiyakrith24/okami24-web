@@ -12867,6 +12867,19 @@
   }
  },
  {
+  "source": "_incoming/img-2910/b9/src-dm3.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-3",
+  "fileName": "variant-coil-38-3.webp",
+  "note": "images-all 29/10 chat 4 — TPP-DM3 had no photo (audit 29/10 A row 10); made in the DM2 scene like DM1/DM4 so all four options share one frame",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image 2K, 2 passes (owner-approved credit batch 29/10 evening): job 0e457128-e616-4a39-832b-327abc77a6a7 = edit of the DM2 scene render (_incoming/coil4/out/c38-dm2-A.png) to Max 100W / TPP-DM3 / 0.15Ω | 3PCS (pill came out beside the name), then job ce2a1a6a-bbdb-49dd-8952-2f8f1fe78bee = an edit of that render re-laying the print like the real box (name centred, pill under it); 8 credits for the 4 renders; box 0.7% vertical stretch about its bottom (warp2.js KY) so its top meets the other three; new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px); side-panel fine print and the upside-down coil word softened (soften.js), as on DM1/DM2",
+   "reference": "Giant Vapes' TPP-DM3 box photo (600 px) https://cdn.shopify.com/s/files/1/0613/8472/0630/files/TppDM3.webp (variant image on https://giantvapes.com/products/voopoo-tpp-coils; copy _incoming/img-2910/b9/ref/gv-dm3.png) — the box shows no coils, so the coils are the DM1/DM2 scene coils",
+   "fidelitySheet": "_incoming/img-2910/b9/proof/ — VOOPOO, Max 100W, coil drawing, TPP-DM3, 0.15Ω | 3PCS under the name, WARNING panel, 21+ side mark read by eye against the Giant Vapes photo"
+  }
+ },
+ {
   "source": "_incoming/pp2/out/tangy-grape2.png",
   "slug": "relx-infinity-pro-2-pod",
   "role": "variant",
