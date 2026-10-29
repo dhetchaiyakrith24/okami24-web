@@ -8,6 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { placeOrderAction, type PlaceOrderState } from "@/app/checkout/actions";
 import { CUSTOMER_NOTE_MAX } from "@/lib/commerce/customer-note";
 import { LineThumb } from "@/components/commerce/LineThumb";
+import { ShippingNote } from "@/components/commerce/ShippingNote";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 
@@ -72,6 +73,8 @@ export function ReviewStepView({
                 <span>{dict.cart.shippingLabel}</span>
                 <span>{cart.totals.shippingFee === 0 ? dict.cart.freeShippingLabel : formatTHB(cart.totals.shippingFee)}</span>
               </div>
+              {/* Why this fee, before paying (owner 29/10); signing in here comes straight back to this step. */}
+              <ShippingNote hint={cart.shipping} formatTHB={formatTHB} signInNext={`/checkout/review?addressId=${addressId}`} />
               <div className="flex justify-between border-t border-surface-border-soft pt-2 text-base font-semibold text-foreground">
                 <span>{dict.cart.totalLabel}</span>
                 <span>{formatTHB(cart.totals.total)}</span>
