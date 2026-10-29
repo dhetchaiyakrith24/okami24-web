@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { playSlashOnce } from "@/components/brand/slash";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -22,6 +22,29 @@ import type { UnboxingNotice } from "@/lib/commerce/unboxing-notice";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
+}
+
+/** Thai phrases of the unboxing notice that must not break mid-phrase at 390 (checker #1009: "ยังไม่แกะ / กล่อง",
+ *  "นับจากวัน / ที่ได้รับของ"). Wrapped in no-wrap spans here, like withLineLink's lead word — no U+2060 in the copy. */
+const UNBOX_KEEP = /(แกะกล่อง|วันที่ได้รับของ)/;
+
+function keepPhrases(text: string): ReactNode[] {
+  return text.split(UNBOX_KEEP).map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={`k${i}`} className="whitespace-nowrap">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  );
+}
+
+/** The unboxing notice's sentence: kept phrases + the LINE link. */
+function unboxingSentence(sentence: string): ReactNode[] {
+  const linked = withLineLink(sentence);
+  const nodes: ReactNode[] = Array.isArray(linked) ? linked : [linked];
+  return nodes.map((node, i) => (typeof node === "string" ? <Fragment key={`s${i}`}>{keepPhrases(node)}</Fragment> : node));
 }
 
 /** Turns the "@okm24" inside a dictionary sentence into the LINE link (normal weight, not a warning colour). */
@@ -339,9 +362,9 @@ export function OrderStatusView({
         {unboxing && (
           <div className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
             <span className="label-mono text-xs text-foreground-dim">{t.unboxingTitle}</span>
-            <p className="text-foreground">{withLineLink(unboxing === "waiting" ? t.unboxingWaiting : t.unboxingReceived)}</p>
+            <p className="text-foreground">{unboxingSentence(unboxing === "waiting" ? t.unboxingWaiting : t.unboxingReceived)}</p>
             <p className="text-foreground-muted">
-              {t.unboxingRule}{" "}
+              {keepPhrases(t.unboxingRule)}{" "}
               <Link href="/warranty" className="text-foreground underline underline-offset-2 hover:text-ember">{t.unboxingLink}</Link>
             </p>
           </div>
