@@ -1456,7 +1456,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-38/card-v3.webp",
+      src: "/assets/products/coil-38/card-v4.webp",
       alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo",
       angle: "Front, studio re-shoot 09/10 (coil-94 box-shot direction, owner passed 09/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' TPP-DM2 box photo: the box upright with its three coils out of the blister lying in front; every printed mark checked by eye against that photo. Card = the DM2 option shot. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2443,9 +2443,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
   },
   "Coil-38": {
-    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the TPP-DM1 box", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
-    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v2.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
-    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v3.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
+    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v3.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
   },
   "Coil-87": {
     "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
