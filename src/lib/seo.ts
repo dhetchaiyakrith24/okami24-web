@@ -158,9 +158,10 @@ export function pageBreadcrumbJsonLd(name: string, path: string) {
 /**
  * `CollectionPage` for a category or brand listing (SEO round ก, batch 4). Name and description
  * are the page's own Thai title/lede — the same strings its `generateMetadata` already returns —
- * never a second wording written for the schema.
+ * never a second wording written for the schema. `items` (round SEO pod, 30/10) = the models the page lists, in catalog
+ * order, as its `mainEntity` ItemList — only on a page that passes them.
  */
-export function collectionPageJsonLd(input: { name: string; description?: string; path: string }) {
+export function collectionPageJsonLd(input: { name: string; description?: string; path: string; items?: { name: string; path: string }[] }) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -169,6 +170,15 @@ export function collectionPageJsonLd(input: { name: string; description?: string
     url: absoluteUrl(input.path),
     inLanguage: "th",
     isPartOf: { "@type": "WebSite", url: SITE_URL },
+    ...(input.items?.length
+      ? {
+          mainEntity: {
+            "@type": "ItemList",
+            numberOfItems: input.items.length,
+            itemListElement: input.items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, url: absoluteUrl(it.path) })),
+          },
+        }
+      : {}),
   };
 }
 

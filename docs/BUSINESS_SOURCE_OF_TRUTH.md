@@ -394,7 +394,9 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
   500 … ก็ 50 บาท" + "เฉพาะสมาชิกที่สมัครด้วย LINE/Google"; LIVE 2026-10-30 #1015, replaces #1007 of the same evening):** (1) subtotal ≥ 800 THB =
   shipping 0 for everyone, every order · (2) a MEMBER (signed in with LINE/Google) gets shipping 0 once per calendar month (Bangkok) on
   the first order with subtotal ≥ 300 THB; the benefit resets every month · (3) everyone else, and members who already used this
-  month: ≥ 500 THB = 35 THB, below 500 = 50 THB · a used benefit cannot be reused when the PHONE or the ADDRESS (house no. + sub-district +
+  month: ≥ 500 THB = 35 THB, below 500 = 50 THB · **what uses the month's benefit up (owner 2026-10-30, chat: "นับรวมครับ เพราะมีการสั่งซื้อแม้ยอดจะเกิน"):**
+  ANY member order that got shipping 0 that month — the ≥ 300 benefit AND the ≥ 800 tier alike (and the 29/10 first version's
+  member orders); guest orders and orders that paid 35 / 50 never count · a used benefit cannot be reused when the PHONE or the ADDRESS (house no. + sub-district +
   postcode) matches; the recipient name alone never blocks; a cancelled order gives it back · info pages state only the member
   monthly ฿300 benefit (never ฿35 or ฿800).
 - **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
