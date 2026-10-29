@@ -3,13 +3,16 @@
  * (sub-district, district, province, postcode) and then filled those boxes again. Shipnity joins every Woo address field
  * into one text, so the warehouse saw the address twice (owner 29/10, order C159: "ที่อยู่มันซ้ำไป 2 รอบ").
  *
- * `trimLine1` drops, from the END of line 1 only, the words that repeat the order's own sub-district / district /
- * province / postcode boxes (with or without ตำบล · แขวง · อำเภอ · เขต · จังหวัด and their short forms). It stops at the
- * first word that is not a repeat and never empties the line, so a house number, building or street is never touched.
- * Pure — address-line1-contract-test.ts holds it.
+ * `trimLine1` drops, from the END of line 1 only, a run of words that repeats the order's own sub-district / district /
+ * province / postcode boxes — and only when that run is ANCHORED: it holds the postcode or a word written with
+ * ตำบล · แขวง · อำเภอ · เขต · จังหวัด (or ต. อ. จ.). A bare place name with no anchor ("123 ถนน ลาดพร้าว") is never cut,
+ * nor a name right after a place word (ถนน · ซอย · หมู่บ้าน · ตลาด …), so a real street or building is never touched
+ * (checker #1010). It never empties the line. Pure — address-line1-contract-test.ts holds it.
  */
 const PREFIX = /^(ตำบล|ต\.|แขวง|อำเภอ|อ\.|เขต|จังหวัด|จ\.)/;
 const PREFIX_ONLY = /^(ตำบล|ต\.|แขวง|อำเภอ|อ\.|เขต|จังหวัด|จ\.)$/;
+/** Words that name what comes next — the name after one of them belongs to the street/building, not to a box. */
+const PLACE_WORD = /^(ถนน|ถ\.|ซอย|ซ\.|หมู่บ้าน|หมู่|ม\.|ตลาด|คอนโด|อาคาร|หอพัก|วัด|ชุมชน|นิคม|โครงการ)$/;
 
 /** A box's value without its ตำบล/อำเภอ/จังหวัด prefix and spaces. */
 function core(value: string): string {
@@ -22,19 +25,30 @@ export function trimLine1(
 ): string {
   const cores = [boxes.subdistrict, boxes.district, boxes.province].map(core).filter((c) => c.length >= 2);
   const postcode = boxes.postalCode.replace(/\s+/g, "");
-  const repeats = (word: string): boolean => {
-    if (PREFIX_ONLY.test(word)) return true;
+  // Equal to a box, or a part of one of 4+ letters ("นครสวรรค์" typed where the province box says "นครนครสวรรค์").
+  const matchesBox = (w: string) => cores.some((c) => c === w || (w.length >= 4 && c.includes(w)));
+  /** "anchor" = the postcode or a prefixed word; "plain" = an unprefixed repeat; null = not a repeat. */
+  const kind = (word: string): "anchor" | "plain" | null => {
+    if (PREFIX_ONLY.test(word)) return "anchor";
+    if (postcode && word === postcode) return "anchor";
     const w = core(word);
-    if (!w) return true;
-    if (postcode && w === postcode) return true;
-    // Equal to a box, or a part of one ("นครสวรรค์" typed where the province box says "นครนครสวรรค์").
-    return cores.some((c) => c === w || (w.length >= 3 && c.includes(w)));
+    if (!w) return null;
+    if (PREFIX.test(word)) return matchesBox(w) ? "anchor" : null;
+    return matchesBox(w) ? "plain" : null;
   };
-  // Words split on spaces and commas; keep the original text up to the last word that stays.
+
   const words = [...line1.matchAll(/[^\s,]+/g)];
-  let keep = words.length;
-  while (keep > 1 && repeats(words[keep - 1][0])) keep--;
-  if (keep === words.length) return line1.trim();
-  const last = words[keep - 1];
+  let start = words.length;
+  let anchored = false;
+  while (start > 1) {
+    const k = kind(words[start - 1][0]);
+    if (!k) break;
+    // A plain name right after a place word is the street/building's own name — the run stops before it.
+    if (k === "plain" && PLACE_WORD.test(words[start - 2][0])) break;
+    if (k === "anchor") anchored = true;
+    start--;
+  }
+  if (!anchored || start === words.length) return line1.trim();
+  const last = words[start - 1];
   return line1.slice(0, (last.index ?? 0) + last[0].length).trim();
 }
