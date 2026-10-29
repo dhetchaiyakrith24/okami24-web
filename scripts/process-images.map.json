@@ -7372,17 +7372,17 @@
   "note": "images-all round 29/10 — Zero cartridge 50mg flavour with no photo before"
  },
  {
-  "source": "_incoming/img-2910/b2/fin-menthol-freeze.png",
+  "source": "_incoming/img-2910/b8/fin-menthol.png",
   "slug": "zero-cartridge",
   "role": "variant",
   "id": "menthol-freeze-50mg",
-  "fileName": "variant-menthol-freeze.webp",
+  "fileName": "variant-menthol-freeze-v2.webp",
   "aiRender": {
-   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-menthol-freeze-reflect.png); OKami24 29/10 kept OUR passed variant-blueberry-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower2.js); reflection = mirror of the new pod's own bottom",
-   "reference": "our variant-blueberry-v2.webp (shape) · Javis's Menthol Freeze pod (label word + band / lower block / stripe / base colours) — salthub.com has no photo of this flavour",
-   "fidelitySheet": "_incoming/img-2910/b2/fid-menthol-freeze.png (IoU vs our base; colour cells differ on the flavour section by design) + cmp3.jpg / zoom2.jpg (label read by eye)"
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image, job 338e31e0-283b-477d-b66b-ba28fc7e166e (2 credits, owner yes 29/10 item 87): a re-shoot of the Menthol Freeze pod on the dark studio sweep; OKami24 29/10 kept OUR passed variant-blueberry-v2.webp (shell, top, silhouette, alpha) and took the flavour section (label band to base, rows 604-851) from the render with one scale for the whole section (_incoming/img-2910/b8/placeR.js + lower3.js — base bottom now at the base's real row 851, the old file filled the reflection rows 852-867 with pod colour = the skewed double base); reflection = mirror of the new base at 50% (blueberry's own ratio); edge bites inherited from the base outline filled (notch.js)",
+   "reference": "our variant-blueberry-v2.webp (shape) · the render's Menthol Freeze pod (label word, band, lower block and base colours, from Javis's Menthol Freeze pod) — salthub.com has no photo of this flavour",
+   "fidelitySheet": "_incoming/img-2910/b8/cmp1.jpg (old | new | blueberry-v2) + edges4.png (3x edges on magenta): shape = blueberry-v2's own alpha, label read by eye"
   },
-  "note": "images-all round 29/10 — Zero cartridge 50mg flavour with no photo before"
+  "note": "images-all 29/10 chat 3 — Menthol Freeze re-shoot (the v1 base was skewed and doubled)"
  },
  {
   "source": "_incoming/option-photos/b4/key/D-c56.png",
