@@ -3,7 +3,7 @@ import { decideShipping, STANDARD_SHIPPING_FEE_THB, UNKNOWN_VISITOR, type Shippi
 
 /**
  * Totals math — docs/BUSINESS_SOURCE_OF_TRUTH.md §10. The shipping fee comes from the tiers in shipping-rules.ts (owner
- * 29/10: 50 THB, 35 THB, or 0 by the first-order / 800 / once-a-month rules). Pure functions, no I/O, so they're cheap to
+ * 29/10: 50 THB, 35 THB, or 0 by the 800 rule / the members' once-a-month 300 rule). Pure functions, no I/O, so they're cheap to
  * unit-test (see pricing-contract-test.ts) and safe to call from both cart display and checkout submission.
  * Never accept a client-submitted subtotal/shipping/total — only ever compute them here from
  * server-resolved lines.
