@@ -80,7 +80,7 @@ function withLineLink(sentence: string) {
 
 /** Copy-to-clipboard for the account number — a 10-digit number is hard to long-press-select on a phone
  *  (designer 2026-09-06). Copies digits only, so it pastes cleanly into a banking app. */
-function CopyButton({ value, label, doneLabel }: { value: string; label: string; doneLabel: string }) {
+function CopyButton({ value, label, doneLabel, led = false }: { value: string; label: string; doneLabel: string; led?: boolean }) {
   const [done, setDone] = useState(false);
   return (
     <button
@@ -94,7 +94,11 @@ function CopyButton({ value, label, doneLabel }: { value: string; label: string;
           /* clipboard blocked (http, old browser) — the number is still readable on screen */
         }
       }}
-      className="rounded-full border border-surface-border px-3 py-1 text-xs font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground"
+      className={
+        led
+          ? "rounded-full border border-ember/80 px-3 py-1 text-xs font-semibold text-foreground shadow-[0_0_8px_rgba(255,106,44,0.55),inset_0_0_5px_rgba(255,106,44,0.3)] transition-shadow hover:border-ember-strong hover:shadow-[0_0_14px_rgba(255,131,71,0.8),inset_0_0_8px_rgba(255,106,44,0.4)]"
+          : "rounded-full border border-surface-border px-3 py-1 text-xs font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground"
+      }
     >
       {done ? doneLabel : label}
     </button>
@@ -417,33 +421,48 @@ export function OrderStatusView({
             {payment && (
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-semibold text-foreground">{dict.orderStatus.paymentTransferTitle}</p>
-                {/* Owner 30/10: option B of the payment-card draft, "สูงขึ้นแบบ B" — the bank box gets B's picture band on top: the
-                    samurai and the moon in silver on near-black with B's fine vertical texture and its dark colours (his words: "ภาพ
-                    ในการ์ดใช้เป็นซามูไร texture detail สี ตามนี้ … สีเมนูปุ่ม ทุกอย่างเหมือน Web" and earlier "ไม่อยากให้มืดตามภาพ — ส่วนเดียวที่มืด
-                    คืองานภาพ"). The picture is the only dark part: the box, labels, values, copy button and borders keep the web's own
-                    colours, and the picture fades into the box colour under the first rows. */}
-                <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2">
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(70vw,320px)] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_bottom,black_58%,transparent)]">
+                {/* Owner 30/10, option B of his payment-card draft inside the web's own box: the samurai + moon picture (silver, near-black,
+                    fine vertical texture — the only dark part) sits to the RIGHT, the words stand up-left, and the card's own details
+                    are back: logo, PAYMENT CARD tag, gold chip (top), the rows at the bottom like a real card at sm+ (credit-card proportion 1.586:1, max 440 px — owner 30/10 "ดูเป็นบัตร Credit"), a green dot on the bank — and NOT the amount or the running number (owner 30/10:
+                    "ยอด-รหัส ไม่ใส่ลงในการ์ด … เรียบ แบบ Black card มีคาแรคเตอร์ ดูเป็นบัตร Credit"). The copy button has an orange LED frame (owner 30/10 "ปุ่มคัดลอก กรอบเป็น LED สีส้มตามธีม"). Box, labels,
+                    values and borders keep the web's colours; the picture fades into the box colour toward the words. */}
+                <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2 sm:mx-auto sm:aspect-[1.586/1] sm:w-full sm:max-w-[440px]">
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[72%] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_right,transparent,black_42%)]"
+                  >
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_3px)]" />
                     <Image
                       src="/brand/samurai-products-bg-v2.webp"
                       alt=""
                       fill
-                      sizes="(min-width: 640px) 576px, 100vw"
-                      className="object-cover object-[50%_10%] opacity-75 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:radial-gradient(ellipse_58%_60%_at_50%_40%,#000_55%,transparent_100%)]"
+                      sizes="(min-width: 640px) 416px, 72vw"
+                      className="object-cover object-[50%_6%] opacity-75 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:radial-gradient(ellipse_62%_62%_at_58%_34%,#000_55%,transparent_100%)]"
                     />
                   </div>
-                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 pt-[min(34vw,170px)] text-sm">
-                    <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
-                    <dd className="text-foreground">{payment.bankName[locale]}</dd>
-                    <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
-                    <dd className="font-medium text-foreground">{payment.accountName}</dd>
-                    <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNumberLabel}</dt>
-                    <dd className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <span className="font-display text-2xl font-semibold tracking-wide text-foreground">{payment.accountNumber}</span>
-                      <CopyButton value={payment.accountNumber.replace(/-/g, "")} label={dict.orderStatus.paymentCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
-                    </dd>
-                  </dl>
+                  <div className="relative flex flex-col gap-3 p-3.5 sm:h-full sm:justify-between sm:p-4">
+                    <div className="flex flex-col gap-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <Image src="/brand/okami-logo.png" alt="" width={1416} height={429} sizes="96px" className="h-5 w-auto" />
+                      <span className="text-[0.64rem] font-bold tracking-[0.3em] text-ember">{dict.orderStatus.paymentCardTag}</span>
+                    </div>
+                    <span aria-hidden className="block h-[26px] w-[34px] rounded-md bg-gradient-to-br from-[#d9b77a] to-[#9c7a45]" />
+                    </div>
+                    <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
+                      <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
+                      <dd className="flex items-center gap-2 text-foreground">
+                        <span aria-hidden className="size-2 shrink-0 rounded-full bg-emerald-400" />
+                        {payment.bankName[locale]}
+                      </dd>
+                      <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
+                      <dd className="font-medium text-foreground">{payment.accountName}</dd>
+                      <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNumberLabel}</dt>
+                      <dd className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <span className="font-display text-2xl font-semibold tracking-wide text-foreground">{payment.accountNumber}</span>
+                        <CopyButton led value={payment.accountNumber.replace(/-/g, "")} label={dict.orderStatus.paymentCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
+                      </dd>
+                    </dl>
+                  </div>
                 </div>
                 {qrHref && (
                   <div className="flex flex-col gap-2">
