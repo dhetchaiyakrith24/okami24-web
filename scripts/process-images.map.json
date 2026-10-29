@@ -13719,6 +13719,90 @@
   "fileName": "pod-yakult-50mg.webp"
  },
  {
+  "source": "_incoming/img-3010/infy/pod-169-14.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-14",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Apple Aloe Vera (Max Pod-169-14)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-apple-aloe-vera-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-15.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-15",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Tropical Mix Fruit (Max Pod-169-15)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-tropical-mix-fruit-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-16.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-16",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Pineapple Bubblegum (Max Pod-169-16)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-pineapple-bubblegum-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-17.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-17",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Sour Bubblegum (Max Pod-169-17)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-sour-bubblegum-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-18.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-18",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Sea Salt Lemon (Max Pod-169-18)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-sea-salt-lemon-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-20.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-20",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Watermelon Raspberry (Max Pod-169-20)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-watermelon-rasberry-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/infy/pod-169-21.png",
+  "slug": "pod-169",
+  "role": "variant",
+  "id": "pod-169-21",
+  "note": "images-all 30/10 (chat 5) - INFY PLUS Cherry Strawberry (Max Pod-169-21)",
+  "aiRender": {
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
+   "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-cherry-strawberry-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
+   "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
   "source": "_incoming/img-3010/vz/watermelon.png",
   "slug": "vazer-one-pod",
   "role": "variant",
