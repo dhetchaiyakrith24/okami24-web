@@ -61,6 +61,9 @@ function legacyBaseDescriptionTh(product: Product): string {
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
+import { CategoryGuide } from "@/components/catalog/CategoryGuide";
+import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
+import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
@@ -209,11 +212,17 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // Round "clip": the page's shop clip (if any) + its VideoObject (src/data/collection-videos.ts).
     const clip = isEmptyCategory ? undefined : COLLECTION_VIDEOS[categoryPath];
     const collectionSlugs = [...products, ...publishedProducts, ...pilotProducts].map((p) => p.slug);
+    // Round SEO pod (30/10): a category with an entry in CATEGORY_GUIDE_COPY gets the text block under its grid, its FAQPage
+    // (the Thai Q/A it shows) and the listed models as the CollectionPage's ItemList. Other categories are unchanged.
+    const guideCopy = isEmptyCategory ? undefined : CATEGORY_GUIDE_COPY[category.id];
+    const guideFaqJsonLd = guideCopy?.th ? articleFaqJsonLd(guideCopy.th.faq) : null;
+    const listItems = guideCopy ? [...products, ...publishedProducts].map((p) => ({ name: p.displayName, path: `/products/${p.slug}` })) : undefined;
     return (
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
             CollectionPage + the Home → Category trail. No visible change. */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath, items: listItems })) }} />
+        {guideFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideFaqJsonLd) }} />}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
         {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
         <CategoryPageHeader category={category} />
@@ -236,6 +245,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <PilotProductSection products={pilotProducts} />
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
+        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} />}
         {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
         {!isEmptyCategory && (
           <RelatedArticles
