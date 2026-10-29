@@ -45,10 +45,10 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
                 <table className="w-full min-w-[30rem] border-collapse text-sm">
                   <thead>
                     <tr className="border-b border-surface-border">
-                      <th scope="col" className="py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.model)}</th>
-                      <th scope="col" className="py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.battery)}</th>
-                      <th scope="col" className="py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.power)}</th>
-                      <th scope="col" className="py-3 text-left font-medium text-foreground-muted">{t(c.table.capacity)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.model)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.battery)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.power)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 text-left font-medium text-foreground-muted">{t(c.table.capacity)}</th>
                     </tr>
                   </thead>
                   <tbody>
