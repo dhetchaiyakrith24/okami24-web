@@ -22,6 +22,13 @@ const kit = (id: string, name: string) => ({
   alt: `WOTOFO nexPOD 15K Pro, ${name}, with a prefilled pod fitted`,
 });
 
+/** One flavour = WOTOFO's own pod + pod-box poster with the fruit dropped (Pomegranate Ice: the Pro Kit poster — no pod poster). */
+const flavour = (id: string, name: string) => ({
+  src: `/assets/products/nexpod-15k/variant-${id}.webp`,
+  alt: id === "pomegranate-ice" ? `WOTOFO nexPOD 15K Pro Kit, ${name}, with its box` : `WOTOFO nexPOD 15K prefilled pod, ${name}, with its box`,
+  ownFloor: true as const,
+});
+
 export const wotofoProducts: Product[] = [
   {
     // Image-fix round (owner 2026-09-29/30): the shop sells nexBar CLEAR 18K (Shipnity Pod-180), not this model —
@@ -192,29 +199,29 @@ export const wotofoProducts: Product[] = [
       { id: "rose-gold", name: "Rose Gold", swatchHex: "#e2b2a6", availability: "unknown", image: kit("rose-gold", "Rose Gold"), sourceUrl: DEVICE_PAGE },
     ],
     // The kit's own flavour choice (17 on the kit page's selector) + the 3 more its page copy names (Mixed Berries,
-    // Strawberry Banana, Strawberry Watermelon Ice) — catalog completeness rule. Flavour photos on wotofo.com carry the box
-    // and its text, so the flavours stay swatch-only.
+    // Strawberry Banana, Strawberry Watermelon Ice) — catalog completeness rule. Photos (images-all 29/10) = pod + its box, the
+    // SUP ZERO rule (owner 29/10): the pods differ only by a small printed name, the box tells the flavours apart.
     flavorVariants: [
-      { id: "forest-berries", name: "Forest Berries", swatchHex: "#5b3f8a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "blueberry-watermelon", name: "Blueberry Watermelon", swatchHex: "#6a5fb8", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa8", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "guava-kiwi-passion-fruit", name: "Guava Kiwi Passion Fruit", swatchHex: "#e2d6a6", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "just-mint", name: "Just Mint", swatchHex: "#7fc4a4", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "love-77", name: "Love 77", swatchHex: "#c9d65a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "mango-ice", name: "Mango Ice", swatchHex: "#f0b52a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "melon-kiwi-banana", name: "Melon Kiwi Banana", swatchHex: "#c8d870", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "mixed-berries", name: "Mixed Berries", swatchHex: "#a0408a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "monster-ice", name: "Monster Ice", swatchHex: "#9cc43a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "peach-ice", name: "Peach Ice", swatchHex: "#f2a07a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "peach-mango-watermelon", name: "Peach Mango Watermelon", swatchHex: "#e8a6c0", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "pineapple-ice", name: "Pineapple Ice", swatchHex: "#f0d23a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "pomegranate-ice", name: "Pomegranate Ice", swatchHex: "#b0283a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#e8d02e", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#d8384a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#e6a0b8", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "strawberry-watermelon-ice", name: "Strawberry Watermelon Ice", swatchHex: "#e0506a", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "three-melons", name: "Three Melons", swatchHex: "#a8d070", availability: "unknown", sourceUrl: KIT_PAGE },
-      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#d8383f", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "forest-berries", name: "Forest Berries", swatchHex: "#5b3f8a", availability: "unknown", image: flavour("forest-berries", "Forest Berries"), sourceUrl: KIT_PAGE },
+      { id: "blueberry-watermelon", name: "Blueberry Watermelon", swatchHex: "#6a5fb8", availability: "unknown", image: flavour("blueberry-watermelon", "Blueberry Watermelon"), sourceUrl: KIT_PAGE },
+      { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa8", availability: "unknown", image: flavour("grape-ice", "Grape Ice"), sourceUrl: KIT_PAGE },
+      { id: "guava-kiwi-passion-fruit", name: "Guava Kiwi Passion Fruit", swatchHex: "#e2d6a6", availability: "unknown", image: flavour("guava-kiwi-passion-fruit", "Guava Kiwi Passion Fruit"), sourceUrl: KIT_PAGE },
+      { id: "just-mint", name: "Just Mint", swatchHex: "#7fc4a4", availability: "unknown", image: flavour("just-mint", "Just Mint"), sourceUrl: KIT_PAGE },
+      { id: "love-77", name: "Love 77", swatchHex: "#c9d65a", availability: "unknown", image: flavour("love-77", "Love 77"), sourceUrl: KIT_PAGE },
+      { id: "mango-ice", name: "Mango Ice", swatchHex: "#f0b52a", availability: "unknown", image: flavour("mango-ice", "Mango Ice"), sourceUrl: KIT_PAGE },
+      { id: "melon-kiwi-banana", name: "Melon Kiwi Banana", swatchHex: "#c8d870", availability: "unknown", image: flavour("melon-kiwi-banana", "Melon Kiwi Banana"), sourceUrl: KIT_PAGE },
+      { id: "mixed-berries", name: "Mixed Berries", swatchHex: "#a0408a", availability: "unknown", image: flavour("mixed-berries", "Mixed Berries"), sourceUrl: KIT_PAGE },
+      { id: "monster-ice", name: "Monster Ice", swatchHex: "#9cc43a", availability: "unknown", image: flavour("monster-ice", "Monster Ice"), sourceUrl: KIT_PAGE },
+      { id: "peach-ice", name: "Peach Ice", swatchHex: "#f2a07a", availability: "unknown", image: flavour("peach-ice", "Peach Ice"), sourceUrl: KIT_PAGE },
+      { id: "peach-mango-watermelon", name: "Peach Mango Watermelon", swatchHex: "#e8a6c0", availability: "unknown", image: flavour("peach-mango-watermelon", "Peach Mango Watermelon"), sourceUrl: KIT_PAGE },
+      { id: "pineapple-ice", name: "Pineapple Ice", swatchHex: "#f0d23a", availability: "unknown", image: flavour("pineapple-ice", "Pineapple Ice"), sourceUrl: KIT_PAGE },
+      { id: "pomegranate-ice", name: "Pomegranate Ice", swatchHex: "#b0283a", availability: "unknown", image: flavour("pomegranate-ice", "Pomegranate Ice"), sourceUrl: KIT_PAGE },
+      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#e8d02e", availability: "unknown", image: flavour("strawberry-banana", "Strawberry Banana"), sourceUrl: KIT_PAGE },
+      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#d8384a", availability: "unknown", image: flavour("strawberry-ice", "Strawberry Ice"), sourceUrl: KIT_PAGE },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#e6a0b8", availability: "unknown", image: flavour("strawberry-kiwi", "Strawberry Kiwi"), sourceUrl: KIT_PAGE },
+      { id: "strawberry-watermelon-ice", name: "Strawberry Watermelon Ice", swatchHex: "#e0506a", availability: "unknown", image: flavour("strawberry-watermelon-ice", "Strawberry Watermelon Ice"), sourceUrl: KIT_PAGE },
+      { id: "three-melons", name: "Three Melons", swatchHex: "#a8d070", availability: "unknown", image: flavour("three-melons", "Three Melons"), sourceUrl: KIT_PAGE },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#d8383f", availability: "unknown", image: flavour("watermelon-ice", "Watermelon Ice"), sourceUrl: KIT_PAGE },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "1200mAh", sourceStatus: "verified", sourceUrl: DEVICE_PAGE },

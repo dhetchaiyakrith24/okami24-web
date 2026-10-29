@@ -7333,26 +7333,26 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/img-2910/b2/fin-pink-berry.png",
+  "source": "_incoming/img-2910/b2/f3-pink-berry.png",
   "slug": "zero-cartridge",
   "role": "variant",
   "id": "pink-berry-50mg",
   "fileName": "variant-pink-berry.webp",
   "aiRender": {
-   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-pink-berry-reflect.png); OKami24 29/10 kept OUR passed variant-strawberry-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower2.js); reflection = mirror of the new pod's own bottom",
+   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-pink-berry-reflect.png); OKami24 29/10 kept OUR passed variant-strawberry-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower3.js: one global x-scale for the flavour section — checker #989 saw stair-steps on the window edge with the per-row map of lower2.js); reflection = mirror of the new pod's own bottom",
    "reference": "our variant-strawberry-v2.webp (shape) · Javis's Pink Berry pod (label word + band / lower block / stripe / base colours) — salthub.com has no photo of this flavour",
    "fidelitySheet": "_incoming/img-2910/b2/fid-pink-berry.png (IoU vs our base; colour cells differ on the flavour section by design) + cmp3.jpg / zoom2.jpg (label read by eye)"
   },
   "note": "images-all round 29/10 — Zero cartridge 50mg flavour with no photo before"
  },
  {
-  "source": "_incoming/img-2910/b2/fin-banana-strawberry.png",
+  "source": "_incoming/img-2910/b2/f3-banana-strawberry.png",
   "slug": "zero-cartridge",
   "role": "variant",
   "id": "banana-strawberry-50mg",
   "fileName": "variant-banana-strawberry.webp",
   "aiRender": {
-   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-banana-strawberry-reflect.png); OKami24 29/10 kept OUR passed variant-pineapple-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower2.js); reflection = mirror of the new pod's own bottom",
+   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-banana-strawberry-reflect.png); OKami24 29/10 kept OUR passed variant-pineapple-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower3.js: one global x-scale for the flavour section — checker #989 saw stair-steps on the window edge with the per-row map of lower2.js); reflection = mirror of the new pod's own bottom",
    "reference": "our variant-pineapple-v2.webp (shape) · Javis's Banana Strawberry pod (label word + band / lower block / stripe / base colours) — salthub.com has no photo of this flavour",
    "fidelitySheet": "_incoming/img-2910/b2/fid-banana-strawberry.png (IoU vs our base; colour cells differ on the flavour section by design) + cmp3.jpg / zoom2.jpg (label read by eye)"
   },
@@ -9091,6 +9091,166 @@
   "role": "variant",
   "id": "rose-gold",
   "note": "WOTOFO's own nexPOD 15K Pro Kit render Rose_Gold_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/blueberry-watermelon.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "blueberry-watermelon",
+  "fileName": "variant-blueberry-watermelon.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/blueberry_watermelon_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/forest-berries.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "forest-berries",
+  "fileName": "variant-forest-berries.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/forest_berries_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/grape-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "grape-ice",
+  "fileName": "variant-grape-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/grape_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/guava-kiwi-passion-fruit.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "guava-kiwi-passion-fruit",
+  "fileName": "variant-guava-kiwi-passion-fruit.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/guava_kiwi_passion_fruit_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/just-mint.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "just-mint",
+  "fileName": "variant-just-mint.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/just_mint_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/love-77.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "love-77",
+  "fileName": "variant-love-77.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/love_77_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/mango-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "mango-ice",
+  "fileName": "variant-mango-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/mango_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/melon-kiwi-banana.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "melon-kiwi-banana",
+  "fileName": "variant-melon-kiwi-banana.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/melon_kiwi_banana_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/mixed-berries.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "mixed-berries",
+  "fileName": "variant-mixed-berries.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/mixed_berries_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/monster-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "monster-ice",
+  "fileName": "variant-monster-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/monster_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/peach-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "peach-ice",
+  "fileName": "variant-peach-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/peach_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/peach-mango-watermelon.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "peach-mango-watermelon",
+  "fileName": "variant-peach-mango-watermelon.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/peach_mango_watermelon_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/pineapple-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "pineapple-ice",
+  "fileName": "variant-pineapple-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/pineapple_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/pomegranate-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "pomegranate-ice",
+  "fileName": "variant-pomegranate-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/pomegranate_ice_nexpod_15k_pro_kit.jpg (Pro Kit poster: device + kit box labelled Pomegranate Ice — WOTOFO has no pod poster of this flavour); fruit/ice dropped and the poster's own reflection kept by one template mask (_incoming/img-2910/b5/cutkit.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/strawberry-banana.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "strawberry-banana",
+  "fileName": "variant-strawberry-banana.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/strawberry_banana_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/strawberry-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "strawberry-ice",
+  "fileName": "variant-strawberry-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/strawberry_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/strawberry-kiwi.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "fileName": "variant-strawberry-kiwi.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/strawberry_kiwi_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/strawberry-watermelon-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "strawberry-watermelon-ice",
+  "fileName": "variant-strawberry-watermelon-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/strawberry_watermelon_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/three-melons.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "three-melons",
+  "fileName": "variant-three-melons.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/three_melons_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
+ },
+ {
+  "source": "_incoming/img-2910/b5/out/watermelon-ice.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "fileName": "variant-watermelon-ice.webp",
+  "note": "images-all round 29/10 — WOTOFO's own 2000px poster https://cdn.shopify.com/s/files/1/0038/8032/1113/files/watermelon_ice_nexpod_15k_prefilled_pod.jpg (pod + pod box); box = this poster, pod glass = the 15th-percentile of all 19 posters (clean.js — fruit seen through the translucent pod removed) + this poster’s printed flavour name, reflection = mirror of the result (_incoming/img-2910/b5/cut2.js · SOURCE.md) — no AI"
  },
  {
   "source": "_incoming/list19/lumi/card.png",
