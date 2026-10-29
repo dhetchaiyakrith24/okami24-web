@@ -397,8 +397,9 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
   phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.
 - **Delivery time (answer 3):** 1–3 days after dispatch.
 - **Shipping days (answer 4):** Monday–Saturday; no dispatch on Sundays and Thai public holidays.
-- **Carriers (answer 5):** Thailand Post (EMS) and Flash Express — chosen per destination. No
-  rule yet for which carrier goes where; do not invent one.
+- **Carriers (owner 2026-10-29, chat: "Ems - Dhl ขนส่งของทางร้านมีแค่ 2 เจ้านี้"; was EMS + Flash Express since answer 5):**
+  Thailand Post (EMS) and DHL. No rule yet for which carrier goes where; do not invent one. The staff carrier picker still
+  lists Flash until the tracking round changes it.
 - **Coverage (answer 6):** Thailand only. No international shipping.
 
 Customer-facing messaging should emphasize fast dispatch and tracking provided. Do not

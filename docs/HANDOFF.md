@@ -406,3 +406,8 @@ Muro Connector 20K (pods, Javis's photos) OK · SUP ZERO 22K price = the price p
 option photos where all flavours share one body = device + that flavour's box/pouch if we have one (cheapest), else + its fruit.
 **Higgsfield credits 29/10 (owner, chat "Yes, use them"):** approved for one batch only — RELX Pod Pro 2 11 flavours + Menthol Freeze + TPP-DM4 coil box (~13 images, ~2 credits each, cap ~40) · existing credits only, never buy · more = ask again ·
 Zero Pro Copper / Champagne = slot stays without a photo until a real one exists.
+**Owner 29/10 evening (chat):** Zero Menthol Freeze -v2 photo PASSED · TPP-DM4 (coil-38) REJECTED (cut edges not clean, options jump
+when switched — sizes differ) → images chat 4 · Higgsfield credits APPROVED for the whole remaining batch (58 images ≈ 116 credits, cap
+130, existing credits only, never buy) + RELX Pod Pro 2 missing flavours = search with Claude in Chrome · same-day cut-off = 12:30 (BSOT §10)
+· carriers = EMS + DHL only (BSOT §10) · a cancelled order whose slip was never confirmed promises no refund; only out-of-stock does ·
+price-check routine result seen by the owner · cookies / customer data / free-shipping tiers / admin Gmail / tracking = Friday plans with the owner.
