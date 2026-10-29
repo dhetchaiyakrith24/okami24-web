@@ -105,8 +105,11 @@ export type PlaceOrderResult =
   | {
       ok: false;
       error: string;
-      code: "empty-cart" | "cart-has-problems" | "address-not-found" | "idempotency-conflict";
+      code: "empty-cart" | "cart-has-problems" | "address-not-found" | "idempotency-conflict" | "shipping-changed";
     };
+
+/** Thrown inside the order transaction (so the key claim rolls back too) when the fee differs from the one the review step showed. */
+class ShippingChangedError extends Error {}
 
 /**
  * The one place an order is ever created. Re-resolves cart contents, price, and stock fresh
@@ -117,8 +120,18 @@ export type PlaceOrderResult =
  *
  * `customerNote` (cart UX batch C, owner 24/10): the optional note to the shop from the review step, stored as given after
  * `cleanCustomerNote` — never used for money, stock or the LINE alert.
+ *
+ * `shownShippingFee` (shipping tiers, owner 29/10): the fee the review step showed. When the tier decided here differs (another
+ * order took the month's or the first-order benefit meanwhile, or the visitor signed in or out in another tab) nothing is
+ * created and the result is `shipping-changed` — the customer sees the new fee and its reason before ordering, never after.
+ * Only ever compared, never charged: the fee charged is always the one computed here.
  */
-export async function placeOrder(addressId: number, idempotencyKey: string, customerNote: string | null = null): Promise<PlaceOrderResult> {
+export async function placeOrder(
+  addressId: number,
+  idempotencyKey: string,
+  customerNote: string | null = null,
+  shownShippingFee: number | null = null
+): Promise<PlaceOrderResult> {
   const customer = await requireCustomer();
   // Signed in as a member (queue Q4) = the order also belongs to that member and shows on /account. Guests: null, as before.
   const member = await getMember();
@@ -173,6 +186,7 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
 
       const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone], address });
       totals = computeOrderTotals(purchasableLines, history);
+      if (shownShippingFee !== null && totals.shippingFee !== shownShippingFee) throw new ShippingChangedError();
 
       const orderNumber = generateOrderNumber();
       const viewToken = crypto.randomBytes(16).toString("hex");
@@ -233,7 +247,10 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       return newOrderId;
     });
     orderId = createOrder();
-  } catch {
+  } catch (err) {
+    if (err instanceof ShippingChangedError) {
+      return { ok: false, error: "The shipping fee changed — review the order again.", code: "shipping-changed" };
+    }
     const winner = db.prepare("SELECT order_id FROM idempotency_keys WHERE key = ?").get(idempotencyKey) as
       | { order_id: number | null }
       | undefined;

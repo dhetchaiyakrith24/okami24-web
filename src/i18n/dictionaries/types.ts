@@ -530,6 +530,9 @@ export interface Dictionary {
     /** Cart, signed out: signing in gives the first order 0 shipping. The link opens /account/login and comes back. */
     shippingSignInNote: string;
     shippingSignInCta: string;
+    /** Signed out, but this phone / address already used a first-order benefit: the line only invites a member back in
+     *  (no promise of 0 shipping) — "Already a member?" + the same sign-in link. */
+    shippingSignInUsedNote: string;
     totalLabel: string;
     checkoutCta: string;
     fixIssuesNote: string;
@@ -619,6 +622,9 @@ export interface Dictionary {
     addressErrorPostal: string;
     placeErrorBusy: string;
     placeErrorAddress: string;
+    /** Shipping tiers (owner 29/10): the fee changed between showing the review step and pressing confirm — nothing was
+     *  ordered; the page now shows the new fee and its reason. */
+    placeErrorShippingChanged: string;
     /** Cart UX batch C (owner 24/10): the optional, closed-by-default note to the shop on the review step. */
     noteToggle: string;
     notePlaceholder: string;

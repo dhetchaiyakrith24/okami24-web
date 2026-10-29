@@ -168,6 +168,12 @@ check(
   "first-order benefit: same house no. + sub-district + postcode, other phone, other name → none (ต./แขวง and the street ignored)",
   histFor(5, ["0862222222"], { line1: "12/3 ซอยอื่น", subdistrict: "แขวงบางรัก", postalCode: "10500" }).firstOrderUsed === true
 );
+const guestAtThatPhone = histFor(null, ["0861111111"], null);
+check(
+  "a guest at that phone: firstOrderUsed is known (the cart's sign-in line then promises nothing), the fee is not touched",
+  guestAtThatPhone.firstOrderUsed === true && !guestAtThatPhone.isMember && show(decideShipping(300, guestAtThatPhone)) === "standard 50",
+  JSON.stringify(guestAtThatPhone)
+);
 check("first-order benefit: next-door house no. 12/4 → still given", histFor(5, ["0862222222"], { line1: "12/4 หมู่ 4", subdistrict: "บางรัก", postalCode: "10500" }).firstOrderUsed === false);
 check("first-order benefit: same house no., other postcode → still given", histFor(5, ["0862222222"], { line1: "12/3 หมู่ 4", subdistrict: "บางรัก", postalCode: "10330" }).firstOrderUsed === false);
 addOrder({ customer: 6, rule: "monthly_free", at: "2026-10-11T03:00:00.000Z", recipientPhone: "0863333333", addr: ["88 ถนนสุขุมวิท", "คลองตัน", "10110"] });

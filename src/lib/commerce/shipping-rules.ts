@@ -50,7 +50,8 @@ export const SHIPPING_SETTINGS: ShippingSettings = { monthlyFreeFor: MONTHLY_FRE
 export interface ShippingHistory {
   isMember: boolean;
   /** The first-order benefit is gone: the member already has an order that is not cancelled, or an earlier
-   *  `first_member_order` order shares this phone or address. */
+   *  `first_member_order` order shares this phone or address. Worked out for guests too (by phone / address only): the
+   *  cart then invites a member back in without promising 0 shipping. */
   firstOrderUsed: boolean;
   /** A `monthly_free` order (not cancelled) inside the window shares this member, phone or address. */
   monthlyFreeUsed: boolean;
@@ -169,7 +170,7 @@ export function loadShippingHistory(db: Db, who: ShippingIdentity, now: Date = n
   const address = who.address ?? null;
   const isMember = who.memberId !== null;
   const firstOrderUsed =
-    isMember && (db.prepare(MEMBER_HAS_ORDER_SQL).get(who.memberId) !== undefined || benefitUsed(db, "first_member_order", null, phones, null, address));
+    (isMember && db.prepare(MEMBER_HAS_ORDER_SQL).get(who.memberId) !== undefined) || benefitUsed(db, "first_member_order", null, phones, null, address);
   const monthlyFreeUsed = benefitUsed(db, "monthly_free", monthlyWindowStart(now, settings.monthlyWindow), phones, who.memberId, address);
   return { isMember, firstOrderUsed, monthlyFreeUsed };
 }

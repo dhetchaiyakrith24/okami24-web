@@ -114,6 +114,8 @@ export function ReviewStepView({
         <form action={formAction} className="flex flex-col gap-4">
           <input type="hidden" name="addressId" value={addressId} />
           <input type="hidden" name="idempotencyKey" value={idempotencyKey} />
+          {/* Compared, never charged: placeOrder refuses when its fee differs from the one shown above (owner 29/10 tiers). */}
+          <input type="hidden" name="shownShippingFee" value={cart.totals.shippingFee} />
           {/* Cart UX batch C (owner 24/10): an OPTIONAL note to the shop, closed by default so it never slows the order down.
               Staff see it on the order's staff page only (not the LINE alert). */}
           <details className="group rounded-xl border border-surface-border-soft bg-surface-1" open={note.length > 0 || undefined}>

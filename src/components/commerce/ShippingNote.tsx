@@ -28,7 +28,8 @@ export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippi
       : s;
   return (
     <div className="flex flex-col gap-1 text-xs leading-relaxed text-foreground-dim">
-      <p>{text(c.shippingNote[hint.noteKey])}</p>
+      {/* The reason is what the customer must read before paying (checker 29/10: at 390 the dim 12px line read too faint). */}
+      <p className="text-sm text-foreground-muted">{text(c.shippingNote[hint.noteKey])}</p>
       {next && (
         <p className="text-foreground-muted">
           {text((next.fee === 0 ? c.shippingNextFree : c.shippingNextReduced).replace("{n}", formatTHB(next.addMore)).replace("{fee}", String(next.fee)))}
@@ -36,7 +37,7 @@ export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippi
       )}
       {!hint.signedIn && (
         <p>
-          {text(c.shippingSignInNote)}{" "}
+          {text(hint.firstOrderUsed ? c.shippingSignInUsedNote : c.shippingSignInNote)}{" "}
           <Link href={`/account/login?next=${encodeURIComponent(signInNext)}`} className="text-ember underline underline-offset-2">
             {text(c.shippingSignInCta)}
           </Link>

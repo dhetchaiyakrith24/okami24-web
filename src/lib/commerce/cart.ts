@@ -141,10 +141,17 @@ export interface CartShippingHint {
   next: { addMore: number; fee: number } | null;
   /** Signed in as a member — when false, the cart offers the sign-in that unlocks the first-order benefit. */
   signedIn: boolean;
+  /** This phone / address already used a first-order benefit — the sign-in line then promises nothing. */
+  firstOrderUsed: boolean;
 }
 
 function shippingHint(totals: OrderTotals, history: ShippingHistory): CartShippingHint {
-  return { noteKey: shippingNoteKey(totals.shippingRule, history), next: nextShippingStep(totals.subtotal, history), signedIn: history.isMember };
+  return {
+    noteKey: shippingNoteKey(totals.shippingRule, history),
+    next: nextShippingStep(totals.subtotal, history),
+    signedIn: history.isMember,
+    firstOrderUsed: history.firstOrderUsed,
+  };
 }
 
 /** Total quantity in the visitor's cart, for the floating cart button's badge (cart UX batch B, owner 24/10). Read-only like
