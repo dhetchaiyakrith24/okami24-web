@@ -497,7 +497,7 @@ export const unbrandedProducts: Product[] = [
     systemType: "pod-cartridge",
     name: "Vazer One",
     displayName: "Vazer One",
-    // maxlist 21/10: Max Pod-115 "หัวพอต Vazer One" ฿59, 5 flavours; the maker sells 21 (the rest show sold out, no photo).
+    // maxlist 21/10: Max Pod-115 "หัวพอต Vazer One" ฿59, 5 flavours; the maker sells 21 (the rest show sold out).
     tagline: "Vazer One prefilled pod.",
     shortDescription: "The Vazer One prefilled replacement pod, in 21 flavors.",
     isFlagship: false,
@@ -508,9 +508,10 @@ export const unbrandedProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "N/A — cartridge only",
     },
-    // maxlist 21/10: card = Mango (in stock); the 5 warehouse flavours = OKami24 studio re-shoots (Higgsfield) of the flavour boxes on the maker's own
-    // posters as sold by maneevp.com (IMAGE_SPEC §0 item 7) — source, prompt and check per file in scripts/process-images.map.json `aiRender`. The maker's other 16
-    // flavours (its 20 posters + Blueberry on the line-up poster) are listed as the catalog completeness rule wants; they show the no-photo panel and sold out.
+    // maxlist 21/10: card = Mango (in stock). images-all 30/10: 20 of the 21 flavours = OKami24 studio re-shoots (Higgsfield) of the flavour boxes on the
+    // maker's own posters as sold by maneevp.com (IMAGE_SPEC §0 item 7), each an edit of the one Mango scene and cut with one shared matte, so switching
+    // flavours never moves the box — source, prompt and check per file in scripts/process-images.map.json `aiRender`. Blueberry (only a thumbnail on the
+    // line-up poster) shows the no-photo panel.
     assets: [
       {
         kind: "official-photo",
@@ -524,27 +525,27 @@ export const unbrandedProducts: Product[] = [
       },
     ],
     flavorVariants: [
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-grape.webp", alt: "Vazer One pod box, Grape, studio photo" } },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola.webp", alt: "Vazer One pod box, Cola, studio photo" } },
-      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#6a5a1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola-lemon.webp", alt: "Vazer One pod box, Cola Lemon, studio photo" } },
-      { id: "mix-berries", name: "Mix Berries", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mix-berries.webp", alt: "Vazer One pod box, Mix Berries, studio photo" } },
-      { id: "mango", name: "Mango", swatchHex: "#e08a3a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mango.webp", alt: "Vazer One pod box, Mango, studio photo" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-grape-v2.webp", alt: "Vazer One pod box, Grape, studio photo" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola-v2.webp", alt: "Vazer One pod box, Cola, studio photo" } },
+      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#6a5a1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola-lemon-v2.webp", alt: "Vazer One pod box, Cola Lemon, studio photo" } },
+      { id: "mix-berries", name: "Mix Berries", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mix-berries-v2.webp", alt: "Vazer One pod box, Mix Berries, studio photo" } },
+      { id: "mango", name: "Mango", swatchHex: "#e08a3a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mango-v2.webp", alt: "Vazer One pod box, Mango, studio photo" } },
       { id: "blueberry", name: "Blueberry", swatchHex: "#3a4a8e", availability: "unknown" },
-      { id: "grapefruit", name: "Grapefruit", swatchHex: "#e8805a", availability: "unknown" },
-      { id: "gummy-bear", name: "Gummy Bear", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "lemon-soda", name: "Lemon Soda", swatchHex: "#c9d94b", availability: "unknown" },
-      { id: "lychee", name: "Lychee", swatchHex: "#f0c0d0", availability: "unknown" },
-      { id: "melon", name: "Melon", swatchHex: "#b8d98a", availability: "unknown" },
-      { id: "milk-honey", name: "Milk Honey", swatchHex: "#d9a84a", availability: "unknown" },
-      { id: "mint", name: "Mint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown" },
-      { id: "pineapple", name: "Pineapple", swatchHex: "#e8c43a", availability: "unknown" },
-      { id: "raspberry", name: "Raspberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "rootbeer", name: "Rootbeer", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "strawberry-ice-cream", name: "Strawberry Ice-Cream", swatchHex: "#f0a0b8", availability: "unknown" },
-      { id: "vanilla-custard", name: "Vanilla Custard", swatchHex: "#f0e0a0", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "grapefruit", name: "Grapefruit", swatchHex: "#e8805a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-grapefruit.webp", alt: "Vazer One pod box, Grapefruit, studio photo" } },
+      { id: "gummy-bear", name: "Gummy Bear", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-gummy-bear.webp", alt: "Vazer One pod box, Gummy Bear, studio photo" } },
+      { id: "lemon-soda", name: "Lemon Soda", swatchHex: "#c9d94b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-lemon-soda.webp", alt: "Vazer One pod box, Lemon Soda, studio photo" } },
+      { id: "lychee", name: "Lychee", swatchHex: "#f0c0d0", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-lychee.webp", alt: "Vazer One pod box, Lychee, studio photo" } },
+      { id: "melon", name: "Melon", swatchHex: "#b8d98a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-melon.webp", alt: "Vazer One pod box, Melon, studio photo" } },
+      { id: "milk-honey", name: "Milk Honey", swatchHex: "#d9a84a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-milk-honey.webp", alt: "Vazer One pod box, Milk Honey, studio photo" } },
+      { id: "mint", name: "Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mint.webp", alt: "Vazer One pod box, Mint, studio photo" } },
+      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-peach.webp", alt: "Vazer One pod box, Peach, studio photo" } },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#e8c43a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-pineapple.webp", alt: "Vazer One pod box, Pineapple, studio photo" } },
+      { id: "raspberry", name: "Raspberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-raspberry.webp", alt: "Vazer One pod box, Raspberry, studio photo" } },
+      { id: "rootbeer", name: "Rootbeer", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-rootbeer.webp", alt: "Vazer One pod box, Rootbeer, studio photo" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-strawberry.webp", alt: "Vazer One pod box, Strawberry, studio photo" } },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice-Cream", swatchHex: "#f0a0b8", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-strawberry-ice-cream.webp", alt: "Vazer One pod box, Strawberry Ice-Cream, studio photo" } },
+      { id: "vanilla-custard", name: "Vanilla Custard", swatchHex: "#f0e0a0", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-vanilla-custard.webp", alt: "Vazer One pod box, Vanilla Custard, studio photo" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-watermelon.webp", alt: "Vazer One pod box, Watermelon, studio photo" } },
     ],
     specifications: [{ key: "format", label: "Format", value: "Prefilled replacement pod", sourceStatus: "verified" }],
     features: [],
