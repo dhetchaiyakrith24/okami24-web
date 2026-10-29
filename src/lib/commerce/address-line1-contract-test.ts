@@ -61,7 +61,9 @@ check("กทม. alone, no anchor, stays", trimLine1("9 ซอย 5 กทม."
 const pk = { subdistrict: "ป่าตอง", district: "กะทู้", province: "ภูเก็ต", postalCode: "83150" };
 check("country word at the end", trimLine1("99/1 ม.5 ต.ป่าตอง อ.กะทู้ จ.ภูเก็ต 83150 ประเทศไทย", pk), "99/1 ม.5");
 check("postcode glued to the province", trimLine1("99/1 ม.5 ต.ป่าตอง อ.กะทู้ ภูเก็ต83150", pk), "99/1 ม.5");
-check("country word alone stays", trimLine1("99/1 ม.5 ประเทศไทย", pk), "99/1 ม.5 ประเทศไทย");
+check("glued postcode on a street name stays whole (checker #1030)", trimLine1("12 ม.5 ถนน ภูเก็ต83150", pk), "12 ม.5 ถนน ภูเก็ต83150");
+check("glued postcode on a street name, boxes before it", trimLine1("12 ถนน ภูเก็ต83150", pk), "12 ถนน ภูเก็ต83150");
+check("country word alone stays",trimLine1("99/1 ม.5 ประเทศไทย", pk), "99/1 ม.5 ประเทศไทย");
 check("a number ending in the postcode digits stays", trimLine1("ห้อง 183150", pk), "ห้อง 183150");
 
 if (failed) {

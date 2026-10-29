@@ -35,12 +35,15 @@ export function trimLine1(
   // Equal to a box, or a part of one of 4+ letters ("นครสวรรค์" typed where the province box says "นครนครสวรรค์").
   const bangkok = BANGKOK.test(core(boxes.province));
   const matchesBox = (w: string) => cores.some((c) => c === w || (w.length >= 4 && c.includes(w))) || (bangkok && BANGKOK.test(w));
-  /** "anchor" = the postcode or a prefixed word; "plain" = an unprefixed repeat; null = not a repeat. */
-  const kind = (word: string): "anchor" | "plain" | null => {
+  /** "anchor" = the postcode or a prefixed word; "plain" = an unprefixed repeat; "glued" = an unprefixed repeat with the
+   *  postcode stuck on ("ภูเก็ต83150" — anchors, but still a street/building name after a place word); null = not a repeat. */
+  const kind = (word: string): "anchor" | "plain" | "glued" | null => {
     if (PREFIX_ONLY.test(word)) return "anchor";
     if (postcode && word === postcode) return "anchor";
-    // "ภูเก็ต83150": the postcode glued to a repeated name.
-    if (postcode && word.length > postcode.length && word.endsWith(postcode) && kind(word.slice(0, -postcode.length))) return "anchor";
+    if (postcode && word.length > postcode.length && word.endsWith(postcode)) {
+      const inner = kind(word.slice(0, -postcode.length));
+      return inner === "plain" || inner === "glued" ? "glued" : inner;
+    }
     if (COUNTRY.test(word)) return "plain";
     const w = core(word);
     if (!w) return null;
@@ -55,8 +58,9 @@ export function trimLine1(
     const k = kind(words[start - 1][0]);
     if (!k) break;
     // A plain name right after a place word is the street/building's own name — the run stops before it.
-    if (k === "plain" && PLACE_WORD.test(words[start - 2][0])) break;
-    if (k === "anchor") anchored = true;
+    // Checker #1030: the same holds when the postcode is glued on ("ถนน ภูเก็ต83150" keeps the street whole).
+    if ((k === "plain" || k === "glued") && PLACE_WORD.test(words[start - 2][0])) break;
+    if (k === "anchor" || k === "glued") anchored = true;
     start--;
   }
   if (!anchored || start === words.length) return line1.trim();
