@@ -208,13 +208,15 @@ export function OrderStatusView({
             Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
           <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-            <div ref={bandRef} className="relative h-[200px] w-full lg:h-[240px]">
+            {/* Owner 29/10 "หน้าหาย": a fixed 200/240 px band cropped the 716×400 picture to the kabuto and faded out the face.
+                The band now keeps the picture's own shape (face whole at every width) and fades only its last fifth. */}
+            <div ref={bandRef} className="relative aspect-[716/400] w-full">
               <Image
                 src="/brand/samurai-thanks-wide.webp"
                 alt=""
                 fill
                 sizes="(min-width: 640px) 576px, 100vw"
-                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+                className="object-cover object-top [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
               />
             </div>
             <div className="relative flex flex-col justify-center px-5 pb-6 lg:px-7 lg:pb-8">
