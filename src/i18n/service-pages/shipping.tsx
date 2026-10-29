@@ -9,10 +9,10 @@ export interface ShippingCopy {
   feeTitle: string;
   tableHeadTotal: string;
   tableHeadFee: string;
-  rowUnder: string;
-  rowUnderFee: string;
-  rowOver: string;
-  rowOverFee: string;
+  /** Shipping tiers (owner 29/10, BSOT §10) — one row per amount band; `free` rows show in the "verified" colour. */
+  rows: { total: string; fee: string; free?: boolean }[];
+  /** The first-order benefit for members (any amount), under the table. */
+  memberNote: ReactNode;
   feeNote: string;
   whenTitle: string;
   when1: ReactNode;
@@ -40,18 +40,21 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "การจัดส่ง",
     description: "ค่าส่งเท่าไหร่ กี่วันถึง ตามพัสดุได้ที่ไหน — บอกไว้ตรงนี้หมด ไม่มีค่าใช้จ่ายแอบซ่อนค่ะ",
     summary: [
-      { label: "ค่าส่ง", value: "50 บาท", note: "อัตราเดียวทั่วประเทศ · ฟรีเมื่อ 500 บาทขึ้นไป" },
+      { label: "ค่าส่ง", value: "50 บาท", note: "ครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง · ครบ 800 บาท ทุกออเดอร์" },
       { label: "ถึงมือใน", value: "1–3 วัน", note: "โอนก่อน 15:00 ส่งวันเดียวกัน" },
       { label: "ติดตามพัสดุ", value: "มีทุกคำสั่งซื้อ", note: "ได้เลขพัสดุเมื่อของออกจากร้าน" },
     ],
     feeTitle: "ค่าจัดส่ง",
     tableHeadTotal: "ยอดสั่งซื้อ",
     tableHeadFee: "ค่าจัดส่ง",
-    rowUnder: "ต่ำกว่า 500 บาท",
-    rowUnderFee: "50 บาท",
-    rowOver: "500 บาทขึ้นไป",
-    rowOverFee: "ฟรี",
-    feeNote: "ค่าส่งอัตราเดียวทั่วประเทศ และคุณจะเห็นยอดเต็มที่รวมค่าส่งแล้วก่อนโอนเสมอค่ะ",
+    rows: [
+      { total: "ต่ำกว่า 500 บาท", fee: "50 บาท" },
+      { total: "500–799 บาท ครั้งแรกของเดือน", fee: "ฟรี", free: true },
+      { total: "500–799 บาท ครั้งต่อไปในเดือนเดียวกัน", fee: "35 บาท" },
+      { total: "800 บาทขึ้นไป", fee: "ฟรี", free: true },
+    ],
+    memberNote: <><B>เข้าสู่ระบบด้วย LINE หรือ Google</B> ออเดอร์แรกของสมาชิกค่าส่ง 0 บาท ไม่ว่ายอดเท่าไหร่ค่ะ</>,
+    feeNote: "ค่าส่งอัตราเดียวกันทั่วประเทศ ออเดอร์ที่ยกเลิกไม่นับเป็นการใช้สิทธิ์ และก่อนโอนคุณจะเห็นค่าส่งพร้อมเหตุผลในตะกร้าเสมอค่ะ",
     whenTitle: "ส่งเมื่อไหร่",
     when1: "โอนแล้วของยังไม่ออกทันที แอดมินต้องเช็คยอดที่เข้าจริงก่อน ตรวจผ่านแล้วถึงแพ็กและส่งออกค่ะ อยากรู้ว่าถึงไหนแล้ว ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
     when2: <>ถ้าต้องการของด่วน <B>โอนและส่งสลิปก่อน 15:00 เราจัดส่งให้วันเดียวกัน</B> หลัง 15:00 จะส่งในวันทำการถัดไปค่ะ</>,
@@ -73,18 +76,21 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "Shipping",
     description: "What shipping costs, how long it takes, where to track it — it’s all here, with no hidden charges.",
     summary: [
-      { label: "Shipping", value: "฿50", note: "Flat rate nationwide · free on orders ฿500 and over" },
+      { label: "Shipping", value: "฿50", note: "฿0 once a month from ฿500 · every order from ฿800" },
       { label: "Arrives in", value: "1–3 days", note: "Transfer before 15:00 and we ship the same day" },
       { label: "Tracking", value: "On every order", note: "You get it when the parcel leaves the shop" },
     ],
     feeTitle: "Shipping cost",
     tableHeadTotal: "Order total",
     tableHeadFee: "Shipping",
-    rowUnder: "Under ฿500",
-    rowUnderFee: "฿50",
-    rowOver: "฿500 and over",
-    rowOverFee: "Free",
-    feeNote: "One flat rate for the whole country, and you always see the full amount, shipping included, before you transfer.",
+    rows: [
+      { total: "Under ฿500", fee: "฿50" },
+      { total: "฿500–799, your first such order of the month", fee: "Free", free: true },
+      { total: "฿500–799, later orders that month", fee: "฿35" },
+      { total: "฿800 and over", fee: "Free", free: true },
+    ],
+    memberNote: <><B>Sign in with LINE or Google</B> and your first order as a member ships for ฿0, whatever the total.</>,
+    feeNote: "The same rates apply across the country. A cancelled order doesn’t use up your ฿0 shipping, and the cart always shows the shipping fee and why before you transfer.",
     whenTitle: "When we ship",
     when1: "Transferring doesn’t send your parcel out straight away — an admin checks the money that actually arrived first, then we pack it and ship it. Want to know where your order stands? Just ask us on LINE.",
     when2: <>If you need it soon, <B>transfer and send your slip before 15:00, and we ship the same day.</B> After 15:00 it goes out the next working day.</>,
@@ -106,18 +112,21 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     title: "配送",
     description: "运费多少、几天送到、在哪查快递 —— 都写在这里，没有隐藏费用。",
     summary: [
-      { label: "运费", value: "50 铢", note: "全国统一价 · 满 500 铢免运费" },
+      { label: "运费", value: "50 铢", note: "满 500 铢每月一次运费 0 铢 · 满 800 铢每单 0 铢" },
       { label: "送达时间", value: "1–3 天", note: "15:00 前转账，当天发货" },
       { label: "快递查询", value: "每笔订单都有", note: "包裹寄出时提供" },
     ],
     feeTitle: "运费",
     tableHeadTotal: "订单金额",
     tableHeadFee: "运费",
-    rowUnder: "低于 500 铢",
-    rowUnderFee: "50 铢",
-    rowOver: "500 铢及以上",
-    rowOverFee: "免运费",
-    feeNote: "全国统一运费，转账前您一定会看到含运费的完整金额。",
+    rows: [
+      { total: "低于 500 铢", fee: "50 铢" },
+      { total: "500–799 铢，当月第一笔", fee: "免运费", free: true },
+      { total: "500–799 铢，当月之后的订单", fee: "35 铢" },
+      { total: "800 铢及以上", fee: "免运费", free: true },
+    ],
+    memberNote: <><B>用 LINE 或 Google 登录</B>，会员首单不论金额，运费 0 铢。</>,
+    feeNote: "全国统一运费标准。已取消的订单不占用运费 0 铢的名额；转账前，购物车一定会显示运费及其原因。",
     whenTitle: "什么时候发货",
     when1: "转账后不会立刻发货。管理员会先核对实际到账的金额，确认无误后才打包寄出。想知道进度，随时可以在 LINE 上问我们。",
     when2: <>着急用的话，<B>在 15:00 前转账并提交转账凭证，我们当天发货。</B>15:00 之后则顺延至下一个工作日。</>,

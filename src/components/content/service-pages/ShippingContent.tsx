@@ -25,17 +25,16 @@ export function ShippingContent() {
                   </tr>
                 </thead>
                 <tbody className="text-foreground">
-                  <tr className="border-t border-surface-border-soft">
-                    <td className="px-4 py-3">{c.rowUnder}</td>
-                    <td className="px-4 py-3 font-semibold">{c.rowUnderFee}</td>
-                  </tr>
-                  <tr className="border-t border-surface-border-soft">
-                    <td className="px-4 py-3">{c.rowOver}</td>
-                    <td className="px-4 py-3 font-semibold text-verified">{c.rowOverFee}</td>
-                  </tr>
+                  {c.rows.map((row) => (
+                    <tr key={row.total} className="border-t border-surface-border-soft">
+                      <td className="px-4 py-3">{row.total}</td>
+                      <td className={`whitespace-nowrap px-4 py-3 font-semibold${row.free ? " text-verified" : ""}`}>{row.fee}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
+            <p>{c.memberNote}</p>
             <p>{c.feeNote}</p>
           </ServiceSection>
 

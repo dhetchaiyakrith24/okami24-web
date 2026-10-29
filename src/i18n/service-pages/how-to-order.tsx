@@ -69,7 +69,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · สั่ง", value: "ใส่ตะกร้า ยืนยันเบอร์ กรอกที่อยู่", note: "ได้เลขคำสั่งซื้อทันที" },
       { label: "2 · จ่าย", value: "โอนธนาคาร หรือสแกน QR", note: "ไม่รับบัตร ไม่มีเก็บเงินปลายทาง" },
-      { label: "3 · รับของ", value: "แอดมินตรวจยอด แล้วส่งพร้อมเลขพัสดุ", note: "ค่าส่ง 50 บาท · ฟรีเมื่อ 500 บาทขึ้นไป" },
+      { label: "3 · รับของ", value: "แอดมินตรวจยอด แล้วส่งพร้อมเลขพัสดุ", note: "ค่าส่ง 50 บาท · ครบ 500 บาท ค่าส่ง 0 บาทเดือนละครั้ง · ครบ 800 บาท ทุกออเดอร์" },
     ],
     stepsTitle: "สั่งซื้อทีละขั้น",
     phase1: "01 · สั่ง",
@@ -77,7 +77,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     phase3: "03 · รับของ",
     orderSteps: [
       { title: "เลือกสินค้าใส่ตะกร้า", body: "เลือกรุ่น สี หรือกลิ่นที่ต้องการ แล้วกด “เพิ่มลงตะกร้า” จะซื้อกี่ชิ้นก็ได้ ปรับจำนวนในตะกร้าได้ตลอด" },
-      { title: "กด “ดำเนินการชำระเงิน”", body: "หน้าตะกร้าจะสรุปยอดสินค้าและค่าส่งให้ดูก่อน ถ้ายอดถึงเกณฑ์ส่งฟรี ระบบจะตัดค่าส่งให้เองตรงนี้" },
+      { title: "กด “ดำเนินการชำระเงิน”", body: "หน้าตะกร้าจะสรุปยอดสินค้าและค่าส่งให้ดูก่อน พร้อมบอกว่าค่าส่งเท่านี้เพราะอะไร ถ้ายอดถึงเกณฑ์ ระบบลดค่าส่งให้เองตรงนี้" },
       { title: "กรอกเบอร์มือถือ", body: "กรอกเบอร์มือถือแล้วกดไปต่อ ตอนนี้ยังไม่ต้องกรอกรหัสยืนยัน เราใช้เบอร์นี้ติดต่อเรื่องคำสั่งซื้อ และให้คุณกลับมาดูสถานะคำสั่งซื้อได้ทีหลังค่ะ" },
       { title: "กรอกที่อยู่จัดส่ง", body: "ใส่ชื่อผู้รับ เบอร์ติดต่อ ที่อยู่ ตำบล อำเภอ จังหวัด และรหัสไปรษณีย์ ที่อยู่นี้จะถูกบันทึกไว้ ครั้งหน้าสั่งซ้ำกดเลือกได้เลยไม่ต้องพิมพ์ใหม่" },
       { title: "ตรวจรายการอีกรอบ แล้วกด “ยืนยันคำสั่งซื้อ”", body: "หน้านี้จะโชว์สินค้า ที่อยู่ และยอดรวมทั้งหมด ดูให้ครบก่อนกดนะคะ ถ้าจะแก้ที่อยู่ยังกดย้อนกลับได้" },
@@ -154,7 +154,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · Order", value: "Add to cart, verify your phone, enter your address", note: "You get an order number straight away" },
       { label: "2 · Pay", value: "Bank transfer or scan the QR", note: "No card payment, no COD" },
-      { label: "3 · Get it", value: "An admin checks the amount, then ships with a tracking number", note: "Shipping ฿50 · free on orders ฿500 and over" },
+      { label: "3 · Get it", value: "An admin checks the amount, then ships with a tracking number", note: "Shipping ฿50 · ฿0 once a month from ฿500 · every order from ฿800" },
     ],
     stepsTitle: "Ordering, step by step",
     phase1: "01 · Order",
@@ -162,7 +162,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     phase3: "03 · Get it",
     orderSteps: [
       { title: "Add what you want to the cart", body: "Pick the model, colour or flavour you want, then tap “Add to cart”. Buy as many as you like — you can change the quantity in the cart at any time." },
-      { title: "Tap “Proceed to checkout”", body: "The cart shows your item total and shipping before you go any further. If your order reaches the free-shipping threshold, the fee is removed automatically right here." },
+      { title: "Tap “Proceed to checkout”", body: "The cart shows your item total and shipping, and why the shipping is what it is, before you go any further. If your order reaches a threshold, the fee comes down automatically right here." },
       { title: "Enter your mobile number", body: "Enter your mobile number and continue — no verification code is needed right now. We use it to contact you about your order and to let you check its status later." },
       { title: "Enter your shipping address", body: "Fill in the recipient’s name and phone number, the address, subdistrict, district, province and postal code. We save the address, so next time you can just select it instead of typing it again." },
       { title: "Check everything, then tap “Place order”", body: "This page shows your items, your address and the full total. Look it over before you tap — you can still go back and change the address." },
@@ -239,7 +239,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     summary: [
       { label: "1 · 下单", value: "加入购物车、验证手机号、填写地址", note: "立即获得订单编号" },
       { label: "2 · 付款", value: "银行转账或扫二维码", note: "不支持刷卡，无货到付款" },
-      { label: "3 · 收货", value: "管理员核对金额后发货，并提供快递单号", note: "运费 50 铢 · 满 500 铢免运费" },
+      { label: "3 · 收货", value: "管理员核对金额后发货，并提供快递单号", note: "运费 50 铢 · 满 500 铢每月一次运费 0 铢 · 满 800 铢每单 0 铢" },
     ],
     stepsTitle: "下单步骤",
     phase1: "01 · 下单",
@@ -247,7 +247,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     phase3: "03 · 收货",
     orderSteps: [
       { title: "选择商品加入购物车", body: "选好型号、颜色或口味，点击「加入购物车」。想买几件都可以，购物车里随时可以改数量。" },
-      { title: "点击「前往结算」", body: "购物车会先列出商品金额和运费。如果订单金额达到免运费门槛，系统会在这里自动减去运费。" },
+      { title: "点击「前往结算」", body: "购物车会先列出商品金额和运费，并说明运费的原因。订单金额达到门槛时，系统会在这里自动调整运费。" },
       { title: "填写手机号码", body: "填写手机号码后即可继续，目前无需输入验证码。我们用这个号码与您联系订单事宜，也方便您之后回来查看订单状态。" },
       { title: "填写收货地址", body: "填写收件人姓名、联系电话、详细地址、分区、区/县、府和邮政编码。地址会被保存，下次下单直接选用，不必重新输入。" },
       { title: "再核对一遍，然后点击「提交订单」", body: "此页面会显示商品、收货地址和总金额。点击前请看清楚，还可以返回修改地址。" },
