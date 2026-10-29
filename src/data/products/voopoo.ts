@@ -975,7 +975,7 @@ export const voopooProducts: Product[] = [
       // same S2 studio recipe (Brooklyn Gray keyed with matte2.js --protect over its dark side panel; its photo shows no side badge);
       // swatches = the median side-panel colour of those photos (same method as the 7 above). Map: look-batch/drag-new3-map.js.
       { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
-      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v5.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
+      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v6.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
       { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
