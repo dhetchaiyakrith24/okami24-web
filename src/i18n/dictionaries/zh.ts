@@ -470,7 +470,7 @@ export const zh: Dictionary = {
     addNewAddressTitle: "新增地址",
     recipientNameLabel: "收件人姓名",
     phoneFieldLabel: "联系电话",
-    line1Label: "详细地址",
+    line1Label: "门牌号、楼栋、街道",
     subdistrictLabel: "分区（Tambon）",
     districtLabel: "区/县（Amphoe）",
     provinceLabel: "府（Province）",

@@ -510,7 +510,7 @@ export const th: Dictionary = {
     addNewAddressTitle: "เพิ่มที่อยู่ใหม่",
     recipientNameLabel: "ชื่อผู้รับ",
     phoneFieldLabel: "เบอร์ติดต่อ",
-    line1Label: "ที่อยู่",
+    line1Label: "บ้านเลขที่ หมู่บ้าน/อาคาร ถนน ซอย",
     subdistrictLabel: "ตำบล/แขวง",
     districtLabel: "อำเภอ/เขต",
     provinceLabel: "จังหวัด",

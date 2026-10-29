@@ -478,7 +478,7 @@ export const en: Dictionary = {
     addNewAddressTitle: "New address",
     recipientNameLabel: "Recipient name",
     phoneFieldLabel: "Contact phone",
-    line1Label: "Address",
+    line1Label: "House no., building, street",
     subdistrictLabel: "Subdistrict",
     districtLabel: "District",
     provinceLabel: "Province",
