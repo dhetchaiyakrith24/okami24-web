@@ -52,6 +52,18 @@ check("unanchored tail word", trimLine1("77 ศรีสุข บุรี", { 
 check("temple word", trimLine1("4 วัด พระ", { subdistrict: "บางนา", district: "พระโขนง", province: "กรุงเทพมหานคร", postalCode: "10260" }), "4 วัด พระ");
 check("soi + district word", trimLine1("ซอย เมือง", nsw), "ซอย เมือง");
 
+// Owner 30/10 "ตรวจเรื่องที่อยู่ซ้ำ": short Bangkok, a country word at the end, a glued postcode.
+const bn = { subdistrict: "บางนาใต้", district: "บางนา", province: "กรุงเทพมหานคร", postalCode: "10260" };
+check("Bangkok written กทม.", trimLine1("55/1 ซอยอุดมสุข แขวงบางนาใต้ เขตบางนา กทม. 10260", bn), "55/1 ซอยอุดมสุข");
+check("Bangkok written กรุงเทพฯ", trimLine1("55/1 ซอยอุดมสุข แขวงบางนาใต้ เขตบางนา กรุงเทพฯ", bn), "55/1 ซอยอุดมสุข");
+check("a street named กรุงเทพ stays (after a place word)", trimLine1("9 ถนน กรุงเทพ", bn), "9 ถนน กรุงเทพ");
+check("กทม. alone, no anchor, stays", trimLine1("9 ซอย 5 กทม.", bn), "9 ซอย 5 กทม.");
+const pk = { subdistrict: "ป่าตอง", district: "กะทู้", province: "ภูเก็ต", postalCode: "83150" };
+check("country word at the end", trimLine1("99/1 ม.5 ต.ป่าตอง อ.กะทู้ จ.ภูเก็ต 83150 ประเทศไทย", pk), "99/1 ม.5");
+check("postcode glued to the province", trimLine1("99/1 ม.5 ต.ป่าตอง อ.กะทู้ ภูเก็ต83150", pk), "99/1 ม.5");
+check("country word alone stays", trimLine1("99/1 ม.5 ประเทศไทย", pk), "99/1 ม.5 ประเทศไทย");
+check("a number ending in the postcode digits stays", trimLine1("ห้อง 183150", pk), "ห้อง 183150");
+
 if (failed) {
   console.log(`\n${failed} check(s) failed`);
   process.exit(1);
