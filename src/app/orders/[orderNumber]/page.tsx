@@ -10,6 +10,7 @@ import { lineImage } from "@/lib/commerce/line-image";
 import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { isAutoCancelNote, paymentDeadline, sweepIfPastDeadline } from "@/lib/commerce/unpaid-expiry";
+import { unboxingNoticeFor } from "@/lib/commerce/unboxing-notice";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -62,6 +63,10 @@ export default async function OrderStatusPage({
   // Owner 29/10: a slip that was never confirmed (failed or fake) promises no refund — only an order whose money the shop
   // confirmed (it reached "approved") keeps the refund line, e.g. an out-of-stock cancel.
   const paymentConfirmed = order.statusHistory.some((h) => h.status === "approved");
+  // Owner 29/10: the unboxing-video notice shows once the slip is in, until the parcel arrives ("waiting"), then for the
+  // 7-day claim window after delivery ("received"). A shipped order nobody marks completed falls back to the ship date
+  // + 10 days (1–3 days on the road + the 7-day window), so an old order does not show it forever.
+  const unboxing = unboxingNoticeFor(order.status, order.statusHistory, new Date());
   // Cancelled by the unpaid sweep, not by staff — the page says why. The deadline line shows while it still waits.
   const autoCancelled = order.status === "cancelled" && order.statusHistory.some((h) => h.status === "cancelled" && isAutoCancelNote(h.note));
   const deadlineIso = order.status === "pending_payment" ? paymentDeadline(order.createdAt).toISOString() : null;
@@ -70,5 +75,5 @@ export default async function OrderStatusPage({
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} paymentConfirmed={paymentConfirmed} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} paymentConfirmed={paymentConfirmed} unboxing={unboxing} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
 }

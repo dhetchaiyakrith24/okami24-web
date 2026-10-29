@@ -9,6 +9,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { SlipUploadForm } from "@/components/commerce/SlipUploadForm";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
+import Link from "next/link";
 import { CONTACT } from "@/data/contact";
 import { CARRIERS } from "@/lib/commerce/carriers";
 import type { OrderDetail } from "@/lib/commerce/orders";
@@ -17,6 +18,7 @@ import type { LineImage } from "@/lib/commerce/line-image";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { StockIssueBox } from "@/components/commerce/StockIssueBox";
 import type { StockIssueView } from "@/lib/commerce/stock-issue-rules";
+import type { UnboxingNotice } from "@/lib/commerce/unboxing-notice";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
@@ -91,6 +93,7 @@ export function OrderStatusView({
   messages = [],
   paid = false,
   paymentConfirmed = false,
+  unboxing = null,
   autoCancelled = false,
   deadlineIso = null,
 }: {
@@ -108,6 +111,8 @@ export function OrderStatusView({
   /** True when the shop ever confirmed the payment ("approved"). Paid but never confirmed = the slip failed — no refund line (owner 29/10),
    *  unless an out-of-stock issue was opened (the owner's one exception — checker #1004 note a). */
   paymentConfirmed?: boolean;
+  /** Unboxing-video notice (owner 29/10) — resolved on the server page; null = not shown. */
+  unboxing?: UnboxingNotice;
   /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
   autoCancelled?: boolean;
   /** While waiting for payment: when the order cancels itself (ISO). Shown in Bangkok time in the page language — a
@@ -327,6 +332,18 @@ export function OrderStatusView({
                 </ol>
               </>
             )}
+          </div>
+        )}
+
+        {/* Owner 29/10 (admin's LINE note, rewritten short): claims need a continuous unboxing video — say so once paid. */}
+        {unboxing && (
+          <div className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+            <span className="label-mono text-xs text-foreground-dim">{t.unboxingTitle}</span>
+            <p className="text-foreground">{withLineLink(unboxing === "waiting" ? t.unboxingWaiting : t.unboxingReceived)}</p>
+            <p className="text-foreground-muted">
+              {t.unboxingRule}{" "}
+              <Link href="/warranty" className="text-foreground underline underline-offset-2 hover:text-ember">{t.unboxingLink}</Link>
+            </p>
           </div>
         )}
 

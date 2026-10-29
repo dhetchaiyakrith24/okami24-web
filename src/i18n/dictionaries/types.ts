@@ -787,6 +787,12 @@ export interface Dictionary {
     nextCancelledPaid: string;
     /** Cancelled after a slip was sent but before the payment was ever confirmed (slip failed / fake) — no refund promise (owner 29/10). */
     nextCancelledSlipRejected: string;
+    /** Unboxing-video notice (owner 29/10): after payment until the parcel arrives, then 7 days after delivery. */
+    unboxingTitle: string;
+    unboxingWaiting: string;
+    unboxingReceived: string;
+    unboxingRule: string;
+    unboxingLink: string;
     nextCancelledUnpaid: string;
     paymentDeadlineNote: string;
     nextCancelledRefunded: string;
