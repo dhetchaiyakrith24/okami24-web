@@ -651,6 +651,7 @@ export const en: Dictionary = {
     nextCompleted: "This order is complete.",
     nextCancelled: "This order has been cancelled.",
     nextCancelledPaid: "This order has been cancelled. We will contact you about your refund. Questions? Message us on LINE @okm24.",
+    nextCancelledSlipRejected: "This order has been cancelled because we could not confirm your payment. Questions? Message us on LINE @okm24.",
     nextCancelledUnpaid: "This order was cancelled automatically because we didn’t receive a transfer slip within 24 hours of ordering. If you’ve already transferred, message us on LINE @okm24 with your slip. If you still want the items, you’re welcome to order again.",
     paymentDeadlineNote: "Please transfer and attach your slip by {deadline}. After that, the order is cancelled automatically.",
     nextCancelledRefunded: "This order has been cancelled and your refund has been sent.",
