@@ -422,4 +422,12 @@ Next reads: 06/11 · 13/11 (+ GSC 01/11 · 15/11 as planned). What changed on th
 
 ## Round SEO pod (30/10/2026, round file `docs/rounds/รอบ-SEO-pod-system-30-10.txt`) - what changed before the 06/11 read
 
-- (filled per batch at merge)
+- PR #1019 (checker PASS 878211af, live after merge): /products/pod-systems gets a visible block under the grid — 3 families
+  (Caliburn · ARGUS/VMATE/VINCI · DRAG), a battery / top wattage / capacity table from verified spec rows, a 5-question FAQ in
+  `<details>`; JSON-LD = CollectionPage + mainEntity ItemList (23 models) + FAQPage. Head (title / meta / H1) unchanged (owner lock 09/10).
+  Main text 3,390 → 7,422 chars (head-audit). Links in <main>: to guides 3 → 6.
+- Cluster links (Friday step 3b): /guides/open-system-vs-disposable ("[Pod System] หรือพอตคิท") and /guides/disposable-vs-switch-pod
+  (opener) link the hub with "Pod System"; the hub links what-is · choosing · open-system-vs-disposable · disposable-vs-switch-pod.
+  No new article — every cluster word has an owner guide (SEO_LANDSCAPE §0); "พอต" / "พอตไฟฟ้า" had no GSC row (28 days to 27/10).
+- Read on 06/11 / 13/11: real result page (table above) for pod system · pod · พอตซิสเต็ม · pod system ราคา · pod system ตัวไหนดี;
+  GSC 01/11 · 15/11 for pod / pod system on /products/pod-systems (impressions, not only avg position) and "pod system คือ" on what-is.
