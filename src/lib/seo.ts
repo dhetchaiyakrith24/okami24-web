@@ -233,7 +233,7 @@ export function articleJsonLd(input: {
  * - flat 50 THB rate (`FLAT_SHIPPING_FEE_THB`), Thailand only, dispatch same/next working day
  *   (handling 0–1 day), delivery 1–3 days after dispatch. Carrier names are deliberately absent
  *   (owner 2026-09-07). 50 THB is the full rate before any tier; the tiers (owner 29/10: 0 / 35 THB by
- *   the first-order, 800 and once-a-month rules — src/lib/commerce/shipping-rules.ts) are NOT expressed:
+ *   the 800 rule and the members' once-a-month 300 rule — src/lib/commerce/shipping-rules.ts) are NOT expressed:
  *   they depend on the buyer's own orders, which a listing cannot state, and Google's merchant-listing
  *   parser does not read `freeShippingThreshold` on OfferShippingDetails. Quoting the full rate never
  *   understates what a shopper pays.
