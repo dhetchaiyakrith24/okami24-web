@@ -583,7 +583,6 @@ export const en: Dictionary = {
     paymentInstructionsTitle: "Payment instructions",
     paymentTransferTitle: "Transfer to this account",
     paymentCardTag: "PAYMENT CARD",
-    paymentAmountLabel: "Amount to transfer",
     paymentBankLabel: "Bank",
     paymentAccountNameLabel: "Account name",
     paymentAccountNumberLabel: "Account number",

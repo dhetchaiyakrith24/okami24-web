@@ -707,7 +707,6 @@ export interface Dictionary {
      *  dictionary — they come from the server-only src/data/payment.ts via page props. */
     paymentTransferTitle: string;
     paymentCardTag: string;
-    paymentAmountLabel: string;
     paymentBankLabel: string;
     paymentAccountNameLabel: string;
     paymentAccountNumberLabel: string;
