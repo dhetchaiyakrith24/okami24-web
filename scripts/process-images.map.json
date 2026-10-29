@@ -13211,7 +13211,7 @@
   "id": "pod-27-29",
   "fileName": "variant-pod-27-29.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 9bafd8c6-28a7-437c-a9e8-bf6dc2f63420; render _incoming/img-3010/rx/render/watermelon-ice.png; cut _incoming/img-3010/rx/cutpack2.js (4 straight edges; width:height = 0.505 like the live shop-design packs)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 00a94cf1-d42d-45f6-98bd-199c723e1a02 (first render 9bafd8c6 misspelled the small print, re-done); render _incoming/img-3010/rx/render/watermelon-ice.png; cut _incoming/img-3010/rx/cutpack2.js (4 straight edges; width:height = 0.505 like the live shop-design packs)",
    "reference": "(1) the pack cropped from the Thai shop's (thshop24.com) Watermelon Ice poster - prototype only, the shop logos around it are not used - _incoming/img-3010/rx/ref/watermelon-ice.png; (2) our live Pod-27-1 Tangy Grape pack - layout, camera and the English WARNING box",
    "fidelitySheet": "_incoming/img-3010/rx/sheet-vs-ref.jpg (render cut beside the shop poster pack, read by eye: header, nicotine %, name, art, warning spelling)"
   },
