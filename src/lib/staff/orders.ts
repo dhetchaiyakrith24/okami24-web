@@ -12,6 +12,7 @@ import { insertCustomerMessage } from "@/lib/commerce/order-messages";
 import { AUTO_CANCELLED_SQL } from "@/lib/commerce/unpaid-rules";
 import { ASSIGN_RUN_NUMBER_SQL } from "@/lib/commerce/run-number";
 import { jobOf, STAFF_JOB_ORDER, STAFF_JOBS, TODO_JOBS, type StaffJob } from "./jobs";
+import { trimLine1 } from "@/lib/commerce/address-line1";
 
 /**
  * The staff order list and its buttons (cart round 22/10, round batch 2). Reached only through /staff pages and
@@ -178,7 +179,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
       lines: shipLines,
       recipientName: a.recipientName,
       phone: a.phone,
-      address: `${a.line1} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
+      address: `${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
     }),
   };
 }
