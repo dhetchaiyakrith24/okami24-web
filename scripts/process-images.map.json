@@ -7333,26 +7333,26 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/img-2910/b2/fin-pink-berry.png",
+  "source": "_incoming/img-2910/b2/f3-pink-berry.png",
   "slug": "zero-cartridge",
   "role": "variant",
   "id": "pink-berry-50mg",
   "fileName": "variant-pink-berry.webp",
   "aiRender": {
-   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-pink-berry-reflect.png); OKami24 29/10 kept OUR passed variant-strawberry-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower2.js); reflection = mirror of the new pod's own bottom",
+   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-pink-berry-reflect.png); OKami24 29/10 kept OUR passed variant-strawberry-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower3.js: one global x-scale for the flavour section — checker #989 saw stair-steps on the window edge with the per-row map of lower2.js); reflection = mirror of the new pod's own bottom",
    "reference": "our variant-strawberry-v2.webp (shape) · Javis's Pink Berry pod (label word + band / lower block / stripe / base colours) — salthub.com has no photo of this flavour",
    "fidelitySheet": "_incoming/img-2910/b2/fid-pink-berry.png (IoU vs our base; colour cells differ on the flavour section by design) + cmp3.jpg / zoom2.jpg (label read by eye)"
   },
   "note": "images-all round 29/10 — Zero cartridge 50mg flavour with no photo before"
  },
  {
-  "source": "_incoming/img-2910/b2/fin-banana-strawberry.png",
+  "source": "_incoming/img-2910/b2/f3-banana-strawberry.png",
   "slug": "zero-cartridge",
   "role": "variant",
   "id": "banana-strawberry-50mg",
   "fileName": "variant-banana-strawberry.webp",
   "aiRender": {
-   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-banana-strawberry-reflect.png); OKami24 29/10 kept OUR passed variant-pineapple-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower2.js); reflection = mirror of the new pod's own bottom",
+   "tool": "Javis (owner assistant) 27-28/10: Higgsfield nano_banana_pro pod of this flavour from his Zero pod template + shop flavour refs (Javis photo studio products/marbo-zero/product.md; _working/assets/zero/pod-banana-strawberry-reflect.png); OKami24 29/10 kept OUR passed variant-pineapple-v2.webp (shell, top, silhouette, alpha) and took only the flavour section (label band to base) from Javis's pod, row-mapped to our outline (_incoming/img-2910/b2/place.js + lower3.js: one global x-scale for the flavour section — checker #989 saw stair-steps on the window edge with the per-row map of lower2.js); reflection = mirror of the new pod's own bottom",
    "reference": "our variant-pineapple-v2.webp (shape) · Javis's Banana Strawberry pod (label word + band / lower block / stripe / base colours) — salthub.com has no photo of this flavour",
    "fidelitySheet": "_incoming/img-2910/b2/fid-banana-strawberry.png (IoU vs our base; colour cells differ on the flavour section by design) + cmp3.jpg / zoom2.jpg (label read by eye)"
   },
