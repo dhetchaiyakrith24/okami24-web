@@ -47,9 +47,9 @@ function filterSql(filter: StaffOrderFilter): string {
   return inStatuses(STAFF_JOBS[filter].statuses);
 }
 
-/** Work that waits on the team is listed oldest first (the one waiting longest on top); the rest newest first. */
-function orderSql(filter: StaffOrderFilter): string {
-  return filter === "todo" || (filter !== "all" && STAFF_JOBS[filter].tone === "wait" && filter !== "unpaid") ? "o.id ASC" : "o.id DESC";
+/** Every list is newest first (owner 30/10 "อยากให้รายการออเดอร์ล่าสุดอยู่บนสุด"; it was oldest first for work waiting on the team). */
+function orderSql(): string {
+  return "o.id DESC";
 }
 
 export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
@@ -60,7 +60,7 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
               (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
         WHERE ${filterSql(filter)} AND NOT ${AUTO_CANCELLED_SQL}
-        ORDER BY ${orderSql(filter)} LIMIT 200`
+        ORDER BY ${orderSql()} LIMIT 200`
     )
     .all() as {
     order_number: string;
