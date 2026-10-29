@@ -232,10 +232,11 @@ export function articleJsonLd(input: {
  * constants the cart math uses where one exists:
  * - flat 50 THB rate (`FLAT_SHIPPING_FEE_THB`), Thailand only, dispatch same/next working day
  *   (handling 0–1 day), delivery 1–3 days after dispatch. Carrier names are deliberately absent
- *   (owner 2026-09-07). The 500 THB free-shipping threshold is NOT expressed: schema.org puts
- *   `freeShippingThreshold` on ShippingRateSettings, not on OfferShippingDetails, and Google's
- *   merchant-listing parser does not read it there — stating it would need a second Offer or
- *   prose, both outside this round.
+ *   (owner 2026-09-07). 50 THB is the full rate before any tier; the tiers (owner 29/10: 0 / 35 THB by
+ *   the first-order, 800 and once-a-month rules — src/lib/commerce/shipping-rules.ts) are NOT expressed:
+ *   they depend on the buyer's own orders, which a listing cannot state, and Google's merchant-listing
+ *   parser does not read `freeShippingThreshold` on OfferShippingDetails. Quoting the full rate never
+ *   understates what a shopper pays.
  * - 7-day claim window, item returned by post at the customer's cost (BSOT §12 item 14 →
  *   `ReturnFeesCustomerResponsibility`; Google: never together with returnShippingFeesAmount — the
  *   generic `ReturnShippingFees` made GSC ask for that amount on every listing, 2026-10-05),

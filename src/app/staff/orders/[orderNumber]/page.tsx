@@ -10,6 +10,7 @@ import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/o
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIER_IDS, CARRIERS } from "@/lib/commerce/carriers";
+import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
@@ -440,6 +441,10 @@ export default async function StaffOrderPage({
             <p className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold text-foreground">
               <span>รวม (ค่าส่ง {formatBaht(order.shippingFee)})</span>
               <span>{formatBaht(order.total)}</span>
+            </p>
+            {/* Which shipping tier set the fee (owner 29/10) — none on orders from before the tiers. */}
+            <p className="text-xs text-foreground-muted">
+              ค่าส่งคิดตาม: {order.shippingRule ? SHIPPING_RULE_STAFF_LABEL[order.shippingRule] : "กฎเดิม (ก่อน 29/10)"}
             </p>
             {order.status !== "approved" && (
               <div className="flex flex-col gap-2 border-t border-surface-border-soft pt-3">

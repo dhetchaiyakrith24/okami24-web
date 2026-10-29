@@ -5,6 +5,7 @@ import { requireCustomer, getSession } from "./session";
 import { isIdempotencyKey } from "./idempotency-key";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
+import { isShippingRule, loadShippingHistory, type ShippingRule } from "./shipping-rules";
 import { cleanCustomerNote } from "./customer-note";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
@@ -19,6 +20,8 @@ export interface OrderSummary {
   status: OrderStatus;
   subtotal: number;
   shippingFee: number;
+  /** Which shipping tier set the fee (migration 0022, owner 29/10) — null for orders placed before the tiers. */
+  shippingRule: ShippingRule | null;
   total: number;
   createdAt: string;
   /** The shop's running number (migration 0017) — null until staff confirm the payment. Format: run-number.ts. */
@@ -64,6 +67,7 @@ interface OrderRow {
   status: string;
   subtotal: number;
   shipping_fee: number;
+  shipping_rule?: string | null;
   total: number;
   created_at: string;
   tracking_number?: string | null;
@@ -79,6 +83,7 @@ function toSummary(row: OrderRow): OrderSummary {
     status: row.status as OrderStatus,
     subtotal: row.subtotal,
     shippingFee: row.shipping_fee,
+    shippingRule: isShippingRule(row.shipping_rule) ? row.shipping_rule : null,
     total: row.total,
     createdAt: row.created_at,
     runNumber: row.run_number ?? null,
@@ -100,8 +105,11 @@ export type PlaceOrderResult =
   | {
       ok: false;
       error: string;
-      code: "empty-cart" | "cart-has-problems" | "address-not-found" | "idempotency-conflict";
+      code: "empty-cart" | "cart-has-problems" | "address-not-found" | "idempotency-conflict" | "shipping-changed";
     };
+
+/** Thrown inside the order transaction (so the key claim rolls back too) when the fee differs from the one the review step showed. */
+class ShippingChangedError extends Error {}
 
 /**
  * The one place an order is ever created. Re-resolves cart contents, price, and stock fresh
@@ -112,8 +120,18 @@ export type PlaceOrderResult =
  *
  * `customerNote` (cart UX batch C, owner 24/10): the optional note to the shop from the review step, stored as given after
  * `cleanCustomerNote` — never used for money, stock or the LINE alert.
+ *
+ * `shownShippingFee` (shipping tiers, owner 29/10): the fee the review step showed. When the tier decided here differs (another
+ * order took the month's or the first-order benefit meanwhile, or the visitor signed in or out in another tab) nothing is
+ * created and the result is `shipping-changed` — the customer sees the new fee and its reason before ordering, never after.
+ * Only ever compared, never charged: the fee charged is always the one computed here.
  */
-export async function placeOrder(addressId: number, idempotencyKey: string, customerNote: string | null = null): Promise<PlaceOrderResult> {
+export async function placeOrder(
+  addressId: number,
+  idempotencyKey: string,
+  customerNote: string | null = null,
+  shownShippingFee: number | null = null
+): Promise<PlaceOrderResult> {
   const customer = await requireCustomer();
   // Signed in as a member (queue Q4) = the order also belongs to that member and shows on /account. Guests: null, as before.
   const member = await getMember();
@@ -153,7 +171,9 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
     };
   }
 
-  const totals = computeOrderTotals(purchasableLines);
+  // Assigned inside the transaction: the shipping tier (shipping-rules.ts) reads earlier orders, so it is decided in the same
+  // write lock that inserts this one — two quick orders cannot both take the once-a-month or first-order benefit.
+  let totals = computeOrderTotals(purchasableLines);
 
   let orderId: number;
   try {
@@ -164,14 +184,28 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       // order instead of erroring out.
       db.prepare("INSERT INTO idempotency_keys (key, order_id) VALUES (?, NULL)").run(idempotencyKey);
 
+      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone], address });
+      totals = computeOrderTotals(purchasableLines, history);
+      if (shownShippingFee !== null && totals.shippingFee !== shownShippingFee) throw new ShippingChangedError();
+
       const orderNumber = generateOrderNumber();
       const viewToken = crypto.randomBytes(16).toString("hex");
       const insertOrder = db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, total, payment_method, customer_note)
-           VALUES (?, ?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer', ?)`
+          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, customer_note)
+           VALUES (?, ?, ?, ?, 'pending_payment', ?, ?, ?, ?, 'bank_transfer', ?)`
         )
-        .run(orderNumber, viewToken, customer.id, member?.id ?? null, totals.subtotal, totals.shippingFee, totals.total, cleanCustomerNote(customerNote));
+        .run(
+          orderNumber,
+          viewToken,
+          customer.id,
+          member?.id ?? null,
+          totals.subtotal,
+          totals.shippingFee,
+          totals.shippingRule,
+          totals.total,
+          cleanCustomerNote(customerNote)
+        );
       const newOrderId = Number(insertOrder.lastInsertRowid);
 
       const insertItem = db.prepare(
@@ -213,7 +247,10 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       return newOrderId;
     });
     orderId = createOrder();
-  } catch {
+  } catch (err) {
+    if (err instanceof ShippingChangedError) {
+      return { ok: false, error: "The shipping fee changed — review the order again.", code: "shipping-changed" };
+    }
     const winner = db.prepare("SELECT order_id FROM idempotency_keys WHERE key = ?").get(idempotencyKey) as
       | { order_id: number | null }
       | undefined;

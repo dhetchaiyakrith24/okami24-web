@@ -1,4 +1,5 @@
 import type { HeroType } from "@/data/home-hero";
+import type { ShippingNoteKey } from "@/lib/commerce/shipping-rules";
 /**
  * Phase 3.2 first i18n slice — deliberately NOT the whole site. Covers: header/nav, footer nav,
  * the homepage hero, the search page + tool, and CatalogBrowser's generic controls. Brand names,
@@ -520,6 +521,18 @@ export interface Dictionary {
     subtotalLabel: string;
     shippingLabel: string;
     freeShippingLabel: string;
+    /** Shipping tiers (owner 29/10, BSOT §10): the line under the shipping row that says why the fee is what it is — keys =
+     *  `ShippingNoteKey` in src/lib/commerce/shipping-rules.ts. Shown on the cart and the review step, before paying. */
+    shippingNote: Record<ShippingNoteKey, string>;
+    /** "Add `{n}` more" — `{n}` = the baht still to add; `Free` when that brings shipping to 0, `Reduced` when to `{fee}` (a number; the unit is in the string). */
+    shippingNextFree: string;
+    shippingNextReduced: string;
+    /** Cart, signed out: signing in gives the first order 0 shipping. The link opens /account/login and comes back. */
+    shippingSignInNote: string;
+    shippingSignInCta: string;
+    /** Signed out, but this phone / address already used a first-order benefit: the line only invites a member back in
+     *  (no promise of 0 shipping) — "Already a member?" + the same sign-in link. */
+    shippingSignInUsedNote: string;
     totalLabel: string;
     checkoutCta: string;
     fixIssuesNote: string;
@@ -609,6 +622,9 @@ export interface Dictionary {
     addressErrorPostal: string;
     placeErrorBusy: string;
     placeErrorAddress: string;
+    /** Shipping tiers (owner 29/10): the fee changed between showing the review step and pressing confirm — nothing was
+     *  ordered; the page now shows the new fee and its reason. */
+    placeErrorShippingChanged: string;
     /** Cart UX batch C (owner 24/10): the optional, closed-by-default note to the shop on the review step. */
     noteToggle: string;
     notePlaceholder: string;

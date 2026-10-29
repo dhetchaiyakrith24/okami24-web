@@ -8,6 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { updateQuantityAction, removeItemAction } from "@/app/cart/actions";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { CartSuggestions } from "@/components/commerce/CartSuggestions";
+import { ShippingNote } from "@/components/commerce/ShippingNote";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { CartSuggestion } from "@/lib/commerce/cart-suggestions";
 
@@ -120,6 +121,7 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
                 <span>{dict.cart.shippingLabel}</span>
                 <span>{cart.totals.shippingFee === 0 ? dict.cart.freeShippingLabel : formatTHB(cart.totals.shippingFee)}</span>
               </div>
+              <ShippingNote hint={cart.shipping} formatTHB={formatTHB} signInNext="/cart" />
               <div className="flex items-center justify-between border-t border-surface-border-soft pt-2 text-base font-semibold text-foreground">
                 <span>{dict.cart.totalLabel}</span>
                 <span>{formatTHB(cart.totals.total)}</span>

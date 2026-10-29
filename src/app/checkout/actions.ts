@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect, RedirectType } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { requestOtp, signInWithoutOtp, verifyOtp } from "@/lib/commerce/auth";
 import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
@@ -114,7 +115,7 @@ export async function selectAddressAction(formData: FormData): Promise<void> {
 
 export interface PlaceOrderState {
   /** A key of `dict.checkout`, or null. */
-  errorKey: "placeErrorBusy" | "placeErrorAddress" | null;
+  errorKey: "placeErrorBusy" | "placeErrorAddress" | "placeErrorShippingChanged" | null;
 }
 
 /**
@@ -129,9 +130,17 @@ export async function placeOrderAction(_prev: PlaceOrderState, formData: FormDat
   const idempotencyKey = String(formData.get("idempotencyKey") ?? "");
   // Optional note to the shop (cart UX batch C) — cleaned and capped inside placeOrder.
   const customerNote = formData.get("customerNote");
-  const result = await placeOrder(addressId, idempotencyKey, typeof customerNote === "string" ? customerNote : null);
+  // The fee the review step showed (shipping tiers, owner 29/10) — compared inside placeOrder, never charged.
+  const shownRaw = formData.get("shownShippingFee");
+  const shown = typeof shownRaw === "string" && /^\d+$/.test(shownRaw) ? Number(shownRaw) : null;
+  const result = await placeOrder(addressId, idempotencyKey, typeof customerNote === "string" ? customerNote : null, shown);
   if (!result.ok) {
     if (result.code === "empty-cart" || result.code === "cart-has-problems") redirect("/cart", RedirectType.replace);
+    if (result.code === "shipping-changed") {
+      // Re-render the review step with the new fee and its reason; the typed note stays (controlled state on the page).
+      revalidatePath("/checkout/review");
+      return { errorKey: "placeErrorShippingChanged" };
+    }
     return { errorKey: result.code === "address-not-found" ? "placeErrorAddress" : "placeErrorBusy" };
   }
   // Replace: Back from the order page must not reopen a review step whose cart is already ordered.
