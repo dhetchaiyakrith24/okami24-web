@@ -971,7 +971,7 @@ export const salthubProducts: Product[] = [
       { id: "cola-50mg", name: "Cola 50mg", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-cola-v2.webp", alt: "SALTHUB Zero Cartridge, Cola 50mg", ownFloor: true } },
       { id: "pink-berry-50mg", name: "Pink Berry 50mg", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-pink-berry.webp", alt: "SALTHUB Zero Cartridge, Pink Berry 50mg", ownFloor: true } },
       { id: "banana-strawberry-50mg", name: "Banana Strawberry 50mg", swatchHex: "#e0a05a", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-banana-strawberry.webp", alt: "SALTHUB Zero Cartridge, Banana Strawberry 50mg", ownFloor: true } },
-      { id: "menthol-freeze-50mg", name: "Menthol Freeze 50mg", swatchHex: "#7fc8d8", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-menthol-freeze.webp", alt: "SALTHUB Zero Cartridge, Menthol Freeze 50mg", ownFloor: true } },
+      { id: "menthol-freeze-50mg", name: "Menthol Freeze 50mg", swatchHex: "#7fc8d8", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-menthol-freeze-v2.webp", alt: "SALTHUB Zero Cartridge, Menthol Freeze 50mg", ownFloor: true } },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
