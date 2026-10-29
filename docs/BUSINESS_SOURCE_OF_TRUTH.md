@@ -405,8 +405,7 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
 - **Delivery time (answer 3):** 1–3 days after dispatch.
 - **Shipping days (answer 4):** Monday–Saturday; no dispatch on Sundays and Thai public holidays.
 - **Carriers (owner 2026-10-29, chat: "Ems - Dhl ขนส่งของทางร้านมีแค่ 2 เจ้านี้"; was EMS + Flash Express since answer 5):**
-  Thailand Post (EMS) and DHL. No rule yet for which carrier goes where; do not invent one. The staff carrier picker still
-  lists Flash until the tracking round changes it.
+  Thailand Post (EMS) and DHL. **Which carrier goes where (the warehouse admin confirmed 29/10; the owner asked for it to be built 30/10, "EMS/DHL ตามลูกค้า: งั้นงานหลักจบทำระบบรอให้เสร็จ"):** ship-to postcode Phuket 83xxx and Bangkok 10220 / 10250 = DHL; every other address = EMS. The web picks it when the order is made, staff can change it before "ส่งรายการให้คลังแล้ว", and the order goes to Shipnity with the carrier name ("EMS" / "DHL") as the shipping name (PR #1029). Shipnity cannot map WooCommerce shipping methods, so the name is sent as plain text; the first real test order proves it (owner OK + the admin on stand-by). Flash Express is no longer a carrier. (A DHL order's page names DHL + the tracking button, like EMS — the owner ruling of 23/10 below.)
 - **Coverage (answer 6):** Thailand only. No international shipping.
 
 Customer-facing messaging should emphasize fast dispatch and tracking provided. Do not
