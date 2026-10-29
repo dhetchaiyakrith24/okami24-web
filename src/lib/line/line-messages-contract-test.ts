@@ -31,6 +31,7 @@ const ORDER: OrderDetail = {
   runNumber: null,
   subtotal: 500,
   shippingFee: 50,
+  shippingRule: null,
   total: 550,
   createdAt: "2026-10-22T07:00:00.000Z",
   items: [

@@ -5,6 +5,7 @@ import { requireCustomer, getSession } from "./session";
 import { isIdempotencyKey } from "./idempotency-key";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
+import { isShippingRule, loadShippingHistory, type ShippingRule } from "./shipping-rules";
 import { cleanCustomerNote } from "./customer-note";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
@@ -19,6 +20,8 @@ export interface OrderSummary {
   status: OrderStatus;
   subtotal: number;
   shippingFee: number;
+  /** Which shipping tier set the fee (migration 0022, owner 29/10) — null for orders placed before the tiers. */
+  shippingRule: ShippingRule | null;
   total: number;
   createdAt: string;
   /** The shop's running number (migration 0017) — null until staff confirm the payment. Format: run-number.ts. */
@@ -64,6 +67,7 @@ interface OrderRow {
   status: string;
   subtotal: number;
   shipping_fee: number;
+  shipping_rule?: string | null;
   total: number;
   created_at: string;
   tracking_number?: string | null;
@@ -79,6 +83,7 @@ function toSummary(row: OrderRow): OrderSummary {
     status: row.status as OrderStatus,
     subtotal: row.subtotal,
     shippingFee: row.shipping_fee,
+    shippingRule: isShippingRule(row.shipping_rule) ? row.shipping_rule : null,
     total: row.total,
     createdAt: row.created_at,
     runNumber: row.run_number ?? null,
@@ -153,7 +158,9 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
     };
   }
 
-  const totals = computeOrderTotals(purchasableLines);
+  // Assigned inside the transaction: the shipping tier (shipping-rules.ts) reads earlier orders, so it is decided in the same
+  // write lock that inserts this one — two quick orders cannot both take the once-a-month or first-order benefit.
+  let totals = computeOrderTotals(purchasableLines);
 
   let orderId: number;
   try {
@@ -164,14 +171,27 @@ export async function placeOrder(addressId: number, idempotencyKey: string, cust
       // order instead of erroring out.
       db.prepare("INSERT INTO idempotency_keys (key, order_id) VALUES (?, NULL)").run(idempotencyKey);
 
+      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone] });
+      totals = computeOrderTotals(purchasableLines, history);
+
       const orderNumber = generateOrderNumber();
       const viewToken = crypto.randomBytes(16).toString("hex");
       const insertOrder = db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, total, payment_method, customer_note)
-           VALUES (?, ?, ?, ?, 'pending_payment', ?, ?, ?, 'bank_transfer', ?)`
+          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, customer_note)
+           VALUES (?, ?, ?, ?, 'pending_payment', ?, ?, ?, ?, 'bank_transfer', ?)`
         )
-        .run(orderNumber, viewToken, customer.id, member?.id ?? null, totals.subtotal, totals.shippingFee, totals.total, cleanCustomerNote(customerNote));
+        .run(
+          orderNumber,
+          viewToken,
+          customer.id,
+          member?.id ?? null,
+          totals.subtotal,
+          totals.shippingFee,
+          totals.shippingRule,
+          totals.total,
+          cleanCustomerNote(customerNote)
+        );
       const newOrderId = Number(insertOrder.lastInsertRowid);
 
       const insertItem = db.prepare(

@@ -9,6 +9,8 @@ import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
 import { lineImage, lineNames, type LineImage } from "./line-image";
 import { MAX_LINE_QUANTITY } from "./cart-limits";
+import { loadShippingHistory, nextShippingStep, shippingNoteKey, type ShippingHistory, type ShippingNoteKey } from "./shipping-rules";
+import { getMember } from "@/lib/members/session";
 
 const CART_COOKIE = "okami24_cart";
 const cookieOpts = { httpOnly: true, sameSite: "lax" as const, path: "/", secure: process.env.NODE_ENV === "production" };
@@ -121,6 +123,21 @@ export interface CartView {
   totals: OrderTotals;
   /** A line is unavailable (`problem`) or above the warehouse count (`shortTo`) — checkout waits until it is fixed. */
   hasProblems: boolean;
+  /** Why the shipping fee is what it is, shown before paying (owner 29/10). Display only — the money is `totals`. */
+  shipping: CartShippingHint;
+}
+
+export interface CartShippingHint {
+  /** Dictionary key under `cart.shippingNote`. */
+  noteKey: ShippingNoteKey;
+  /** The next amount that lowers the fee ("add ฿n more"), or null when shipping is already 0. */
+  next: { addMore: number; fee: number } | null;
+  /** Signed in as a member — when false, the cart offers the sign-in that unlocks the first-order benefit. */
+  signedIn: boolean;
+}
+
+function shippingHint(totals: OrderTotals, history: ShippingHistory): CartShippingHint {
+  return { noteKey: shippingNoteKey(totals.shippingRule, history), next: nextShippingStep(totals.subtotal, history), signedIn: history.isMember };
 }
 
 /** Total quantity in the visitor's cart, for the floating cart button's badge (cart UX batch B, owner 24/10). Read-only like
@@ -132,10 +149,20 @@ export async function getCartCount(): Promise<number> {
   return row.n;
 }
 
-export async function getCart(): Promise<CartView> {
+/** What the shipping tiers (shipping-rules.ts) know about this visitor: the signed-in member, the checkout phone, and the
+ *  recipient's phone once an address is picked. Read-only, like the rest of `getCart`. */
+export async function visitorShippingHistory(recipientPhone: string | null = null): Promise<ShippingHistory> {
+  const [session, member] = await Promise.all([getSession(), getMember()]);
+  return loadShippingHistory(getDb(), { memberId: member?.id ?? null, phones: [session?.phone ?? "", recipientPhone ?? ""] });
+}
+
+/** `recipientPhone` = the chosen address's phone (review step) — the cart page has none yet. */
+export async function getCart(recipientPhone: string | null = null): Promise<CartView> {
   const cartId = await peekCartId();
+  const history = await visitorShippingHistory(recipientPhone);
   if (cartId === null) {
-    return { cartId: null, lines: [], totals: computeOrderTotals([]), hasProblems: false };
+    const totals = computeOrderTotals([], history);
+    return { cartId: null, lines: [], totals, hasProblems: false, shipping: shippingHint(totals, history) };
   }
   const rows = getDb()
     .prepare("SELECT id, product_slug, variant_id, quantity FROM cart_items WHERE cart_id = ? ORDER BY id")
@@ -169,8 +196,14 @@ export async function getCart(): Promise<CartView> {
     };
   });
 
-  const totals = computeOrderTotals(lines.filter((l): l is CartLineView & PricedLine => !("problem" in l && l.problem)));
-  return { cartId, lines, totals, hasProblems: lines.some((l) => l.problem !== undefined || l.shortTo !== undefined) };
+  const totals = computeOrderTotals(lines.filter((l): l is CartLineView & PricedLine => !("problem" in l && l.problem)), history);
+  return {
+    cartId,
+    lines,
+    totals,
+    hasProblems: lines.some((l) => l.problem !== undefined || l.shortTo !== undefined),
+    shipping: shippingHint(totals, history),
+  };
 }
 
 /** The most one line may hold: the usual cap, or the warehouse count when Shipnity reported fewer. */
