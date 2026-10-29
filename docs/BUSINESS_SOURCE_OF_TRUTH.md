@@ -390,16 +390,22 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
 
 - **Standard shipping fee:** 50 THB (owner, chat 2026-10-09: "พี่คิดลูกค้า 50 บาท" — was 60 THB). The warehouse (Shipnity Max,
   dropship) bills the shop 35 THB shipping per order ("คลังคิดพี่ 35 บาท") — internal cost, never shown to customers.
-- **Free shipping threshold:** 500 THB, every customer (owner, chat 2026-10-26: "ฟรีไปเลยครับ 500 ขึ้นไป" — the line had stood
-  unconfirmed since 2026-08-30). Members (once sign-up exists, queue Q4) may get free shipping from 300 THB (owner 2026-10-24) — not live.
-- **Cut-off (owner 2026-09-06, answer 3):** orders with payment made **and reported before 15:00**
-  ship the same day; later ones ship the next working day. (The owner wrote "สั่งก่อน 15:00"; the
-  site phrases it as "โอนและแจ้งชำระเงินก่อน 15:00" because nothing ships before the admin has
-  verified the payment — see §9. If the owner meant "order placed before 15:00", change both.)
+- **Free shipping (owner 2026-10-29, chat: "สมัครแล้วส่งฟรีครั้งแรก · ครบ ฿500 ส่งฟรีเดือนละครั้ง · ครบ ฿800 ส่งฟรีทุกครั้ง และครั้งที่ 500
+  แต่ไม่ได้ส่งฟรีในเดือนนั้น ๆ ให้คิดค่าส่งแค่ 35 บาท"; replaces ฿500-for-everyone of 2026-10-26 and the ฿300 member idea of 2026-10-24):**
+  (1) a member's first order after signing up = shipping 0, once · (2) subtotal ≥ 800 THB = 0, every order · (3) subtotal ≥ 500 THB
+  = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Owner 29/10 ("ตามแนะนำ"): rule 3 is for
+  everyone, counted per phone, calendar month (Bangkok) · a benefit already used cannot be reused when the PHONE or the ADDRESS
+  (house no. + sub-district + postcode) matches an order that used it — the recipient name alone never blocks · orders before
+  go-live do not count · info pages state only the first-order member benefit + "from ฿500, once a month" (never ฿35 or ฿800). LIVE 2026-10-29 (#1007). A member who
+  ordered before go-live has already used the first-order benefit (owner 29/10: "ไม่ได้ครับเพราะเขาได้ไปแล้วก่อนหน้านี้").
+- **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
+  orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
+  phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.
 - **Delivery time (answer 3):** 1–3 days after dispatch.
 - **Shipping days (answer 4):** Monday–Saturday; no dispatch on Sundays and Thai public holidays.
-- **Carriers (answer 5):** Thailand Post (EMS) and Flash Express — chosen per destination. No
-  rule yet for which carrier goes where; do not invent one.
+- **Carriers (owner 2026-10-29, chat: "Ems - Dhl ขนส่งของทางร้านมีแค่ 2 เจ้านี้"; was EMS + Flash Express since answer 5):**
+  Thailand Post (EMS) and DHL. No rule yet for which carrier goes where; do not invent one. The staff carrier picker still
+  lists Flash until the tracking round changes it.
 - **Coverage (answer 6):** Thailand only. No international shipping.
 
 Customer-facing messaging should emphasize fast dispatch and tracking provided. Do not

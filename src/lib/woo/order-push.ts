@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/seo";
 import { getStaffOrder } from "@/lib/staff/orders";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { pushBlock, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
+import { trimLine1 } from "@/lib/commerce/address-line1";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
 
 /**
@@ -42,7 +43,8 @@ export function pushOrderFor(orderNumber: string): PushOrder | null {
     lines,
     recipientName: a.recipientName,
     phone: a.phone,
-    line1: a.line1,
+    // Owner 29/10 (order C159): line 1 that repeats the boxes below showed twice in Shipnity — send it without the repeat.
+    line1: trimLine1(a.line1, a),
     subdistrict: a.subdistrict,
     district: a.district,
     province: a.province,

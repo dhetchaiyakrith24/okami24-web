@@ -8,6 +8,7 @@
 import type { OrderDetail } from "@/lib/commerce/orders";
 import type { SlipReason, SlipVerdict } from "@/lib/commerce/slip-decision";
 import type { SlipCheckResponse } from "@/lib/staff/slip-check-types";
+import { trimLine1 } from "@/lib/commerce/address-line1";
 
 const baht = (n: number) => `฿${n.toLocaleString("th-TH", { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
 
@@ -49,7 +50,7 @@ export function formatOrderAlert(order: OrderDetail, verdict: SlipVerdict, reaso
     `ยอด ${baht(order.total)}${order.shippingFee > 0 ? ` (รวมค่าส่ง ${baht(order.shippingFee)})` : " (ไม่มีค่าส่ง)"}`,
     verdictLine(verdict, reasons),
     `ผู้รับ: ${a.recipientName} · ${a.phone}`,
-    `ที่อยู่: ${a.line1} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
+    `ที่อยู่: ${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
     `เปิดดู: ${siteUrl}/staff/orders/${encodeURIComponent(order.orderNumber)}`,
   ].join("\n");
 }

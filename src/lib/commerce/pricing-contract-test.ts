@@ -1,8 +1,10 @@
 /**
  * Pure-function contract tests for the money math — no DB, no Next.js runtime, safe to run under
- * plain `tsx`. See docs/BUSINESS_SOURCE_OF_TRUTH.md §10 for the shipping rule this encodes.
+ * plain `tsx`. See docs/BUSINESS_SOURCE_OF_TRUTH.md §10 for the shipping rule this encodes — the tiers themselves
+ * (first order, 800, once a month) are held by shipping-rules-contract-test.ts; this file checks totals for a newcomer.
  */
-import { computeOrderTotals, priceLine, FLAT_SHIPPING_FEE_THB, FREE_SHIPPING_THRESHOLD_THB, type PricedLine } from "./pricing";
+import { computeOrderTotals, priceLine, FLAT_SHIPPING_FEE_THB, type PricedLine } from "./pricing";
+import { MONTHLY_FREE_THRESHOLD_THB } from "./shipping-rules";
 import type { ResolvedLine } from "./catalog-resolver";
 
 export interface PricingContractResult {
@@ -28,9 +30,9 @@ export function runPricingContractTests(): PricingContractResult[] {
   const check = (name: string, condition: boolean, detail: string) => results.push({ name, passed: condition, detail });
 
   check(
-    "FREE_SHIPPING_THRESHOLD_THB and FLAT_SHIPPING_FEE_THB match docs/BUSINESS_SOURCE_OF_TRUTH.md §10 exactly",
-    FREE_SHIPPING_THRESHOLD_THB === 500 && FLAT_SHIPPING_FEE_THB === 50,
-    `threshold=${FREE_SHIPPING_THRESHOLD_THB} fee=${FLAT_SHIPPING_FEE_THB}`
+    "MONTHLY_FREE_THRESHOLD_THB and FLAT_SHIPPING_FEE_THB match docs/BUSINESS_SOURCE_OF_TRUTH.md §10 exactly",
+    MONTHLY_FREE_THRESHOLD_THB === 500 && FLAT_SHIPPING_FEE_THB === 50,
+    `threshold=${MONTHLY_FREE_THRESHOLD_THB} fee=${FLAT_SHIPPING_FEE_THB}`
   );
 
   const belowThreshold = computeOrderTotals([line(200, 1)]);
@@ -42,7 +44,7 @@ export function runPricingContractTests(): PricingContractResult[] {
 
   const exactlyAtThreshold = computeOrderTotals([line(500, 1)]);
   check(
-    "a subtotal exactly AT the 500 THB threshold is free shipping (>=, not >)",
+    "a newcomer at exactly 500 THB gets the once-a-month 0 shipping (>=, not >)",
     exactlyAtThreshold.subtotal === 500 && exactlyAtThreshold.shippingFee === 0 && exactlyAtThreshold.total === 500,
     JSON.stringify(exactlyAtThreshold)
   );
