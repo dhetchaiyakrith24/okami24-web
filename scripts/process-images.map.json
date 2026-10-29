@@ -12128,7 +12128,7 @@
   "id": "pod-137-14",
   "fileName": "variant-pod-137-14.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job a305b4dc-aef6-4d8c-b94c-9d6e89f9903b; render _incoming/img-3010/cr/render/banana.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job a305b4dc-aef6-4d8c-b94c-9d6e89f9903b; render _incoming/img-3010/cr/render/banana.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the yellow pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 93077578-4855-48dd-bae3-dbfcd03e9677]; (2) a peeled banana added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12141,7 +12141,7 @@
   "id": "pod-137-5",
   "fileName": "variant-pod-137-5.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 9f9ab724-1e35-4317-b562-efff415cffd2; render _incoming/img-3010/cr/render/cola.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 9f9ab724-1e35-4317-b562-efff415cffd2; render _incoming/img-3010/cr/render/cola.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the yellow pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 93077578-4855-48dd-bae3-dbfcd03e9677]; (2) a glass of cola with ice added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12154,7 +12154,7 @@
   "id": "pod-137-10",
   "fileName": "variant-pod-137-10.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job e56b98e0-2ad1-442d-9c2b-bca6df676c14; render _incoming/img-3010/cr/render/jasmine-tea.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 01215baf-58a7-4402-8d77-c6cd53bec983 (first render e56b98e0 had a shadow slab and small flowers, re-done); render _incoming/img-3010/cr/render/jasmine-tea.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the yellow pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 93077578-4855-48dd-bae3-dbfcd03e9677]; (2) jasmine flowers and tea leaves added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12167,7 +12167,7 @@
   "id": "pod-137-7",
   "fileName": "variant-pod-137-7.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 0a62687e-0230-4268-a27d-ba9cf382cc38; render _incoming/img-3010/cr/render/lemon-candy-mint.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 0a62687e-0230-4268-a27d-ba9cf382cc38; render _incoming/img-3010/cr/render/lemon-candy-mint.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the yellow pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 93077578-4855-48dd-bae3-dbfcd03e9677]; (2) a lemon slice, hard candies and mint added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12180,7 +12180,7 @@
   "id": "pod-137-16",
   "fileName": "variant-pod-137-16.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 771a441c-3bc2-4da9-b012-ccc09cca67df; render _incoming/img-3010/cr/render/pineapple.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 771a441c-3bc2-4da9-b012-ccc09cca67df; render _incoming/img-3010/cr/render/pineapple.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the yellow pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 93077578-4855-48dd-bae3-dbfcd03e9677]; (2) pineapple pieces added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12193,7 +12193,7 @@
   "id": "pod-137-6",
   "fileName": "variant-pod-137-6.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job a0763f6b-1a45-4aa1-8b1a-17cad5906386; render _incoming/img-3010/cr/render/blueberry.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job a0763f6b-1a45-4aa1-8b1a-17cad5906386; render _incoming/img-3010/cr/render/blueberry.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the navy pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 502e51bb-7479-4c37-aad5-527e233122b4]; (2) blueberries added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12206,7 +12206,7 @@
   "id": "pod-137-4",
   "fileName": "variant-pod-137-4.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 7f46ff86-dfa8-43fe-8e4a-03f1286ad8e0; render _incoming/img-3010/cr/render/mixberry.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 7f46ff86-dfa8-43fe-8e4a-03f1286ad8e0; render _incoming/img-3010/cr/render/mixberry.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the navy pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 502e51bb-7479-4c37-aad5-527e233122b4]; (2) mixed berries added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12219,7 +12219,7 @@
   "id": "pod-137-2",
   "fileName": "variant-pod-137-2.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 3c723ba5-5b13-42e5-b064-7aff7eefbd02; render _incoming/img-3010/cr/render/double-mint.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 3c723ba5-5b13-42e5-b064-7aff7eefbd02; render _incoming/img-3010/cr/render/double-mint.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the dark green pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job a823b94d-b8f0-4fa5-b7a2-7f33daafae3a]; (2) mint leaves added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12232,7 +12232,7 @@
   "id": "pod-137-1",
   "fileName": "variant-pod-137-1.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job fa3e9aa3-d062-4657-9670-490fc92e1a2e; render _incoming/img-3010/cr/render/grape.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job fa3e9aa3-d062-4657-9670-490fc92e1a2e; render _incoming/img-3010/cr/render/grape.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the dark purple pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job 326cb64a-5020-4d86-8e0c-656b124a1841]; (2) grapes added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12245,7 +12245,7 @@
   "id": "pod-137-17",
   "fileName": "variant-pod-137-17.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 5f9b38dc-6430-48ab-8fc5-03639514e8d5; render _incoming/img-3010/cr/render/pink-guava.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 5f9b38dc-6430-48ab-8fc5-03639514e8d5; render _incoming/img-3010/cr/render/pink-guava.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the dark red pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job (card)]; (2) pink guava added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12258,7 +12258,7 @@
   "id": "pod-137-8",
   "fileName": "variant-pod-137-8.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 0f64db87-b756-4cdd-a11e-179d65c45a46; render _incoming/img-3010/cr/render/rainbow-candy.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job 0f64db87-b756-4cdd-a11e-179d65c45a46; render _incoming/img-3010/cr/render/rainbow-candy.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the dark red pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job (card)]; (2) rainbow hard candies added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
@@ -12271,7 +12271,7 @@
   "id": "pod-137-3",
   "fileName": "variant-pod-137-3.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job f8d17bee-d264-4756-9748-0a7146f511e7; render _incoming/img-3010/cr/render/watermelon.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + thin contact-shadow pass; the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job f8d17bee-d264-4756-9748-0a7146f511e7; render _incoming/img-3010/cr/render/watermelon.png; cut _incoming/img-3010/cr/frame.js (flood from the white backdrop + contact-shadow passes (grey grow, downward peel on banana/pineapple/lemon/watermelon); the WHOLE 1856x2304 frame is placed on 1000x1250, so the pod sits in the same spot in every file)",
    "reference": "(1) the live card.webp (red Creator pod fitted to the black Creator device, RELX key visual) = the scene; the dark red pod = same scene with the pod recoloured to the colour on the retailer flavour poster (pod9k.com/product/relx-creator-20k-pod, 600 px; the pod carries no flavour name) [colour render job (card)]; (2) a watermelon wedge added by AI as the flavour cue",
    "fidelitySheet": "_incoming/img-3010/cr/sheet-colours.jpg + sheet-all.jpg (pod colour beside the poster pod; geometry identical across files by edge overlay)"
   },
