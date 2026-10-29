@@ -16,6 +16,7 @@
 import { handle, readStockFields, type ApiRequest, type StockReportView, type WebhookInput, type WebhookView } from "./api";
 import { wooCatalog } from "./catalog";
 import { parseCredentials, redactSecrets, safeQuery } from "./credentials";
+import { minimiseOrderBody } from "./log-redact";
 import { pushBlock, wooOrderJson, type PushOrder } from "./order-json";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
@@ -156,6 +157,30 @@ check("orders list empty when nothing was sent", orders.status === 200 && Array.
 const sentOne = handle(req({ segments: ["wc", "v3", "orders", "41"], orders: { list: () => [{ id: 41 }] } }));
 check("a sent order reads back by id", sentOne.status === 200 && (sentOne.json as { id: number }).id === 41);
 check("an order not sent = 404", handle(req({ segments: ["wc", "v3", "orders", "40"], orders: { list: () => [{ id: 41 }] } })).status === 404);
+
+// notes and shipment trackings on a sent order (tracking sync step 1, owner 29/10): answered, nothing else changes
+const sent = { list: () => [{ id: 41 }] };
+const note = handle(req({ method: "POST", segments: ["wc", "v3", "orders", "41", "notes"], body: { note: "EMS EF123456789TH" }, orders: sent }));
+check("note on a sent order = 201, echoes the note", note.status === 201 && (note.json as { note: string }).note === "EMS EF123456789TH" && note.writes.length === 0 && !note.orderUpdates);
+check("note list on a sent order = []", handle(req({ segments: ["wc", "v3", "orders", "41", "notes"], orders: sent })).status === 200);
+check("note on an order not sent = 404", handle(req({ method: "POST", segments: ["wc", "v3", "orders", "40", "notes"], body: { note: "x" }, orders: sent })).status === 404);
+const trk = handle(
+  req({ method: "POST", segments: ["wc-shipment-tracking", "v3", "orders", "41", "shipment-trackings"], body: { tracking_provider: "EMS", tracking_number: "EF123456789TH" }, orders: sent })
+);
+check("tracking-plugin route on a sent order = 201", trk.status === 201 && (trk.json as { tracking_number: string }).tracking_number === "EF123456789TH");
+check("AST route answers too", handle(req({ method: "POST", segments: ["wc-ast", "v3", "orders", "41", "shipment-trackings"], body: {}, orders: sent })).status === 201);
+check("wc/v1 shipment-trackings answers", handle(req({ method: "POST", segments: ["wc", "v1", "orders", "41", "shipment-trackings"], body: {}, orders: sent })).status === 201);
+check("tracking namespace serves nothing else", handle(req({ segments: ["wc-shipment-tracking", "v3", "products"] })).status === 404);
+check("unsigned tracking write = 401", handle(req({ signed: false, method: "POST", segments: ["wc-ast", "v3", "orders", "41", "shipment-trackings"], orders: sent })).status === 401);
+
+// the staff download hides the customer
+const shown = JSON.stringify(
+  minimiseOrderBody(JSON.stringify({ status: "completed", shipping: { first_name: "สมชาย", phone: "0812345678", address_1: "1/1", postcode: "10220" }, meta_data: [{ key: "_tracking_number", value: "EF1TH" }] }))
+);
+check("download: name, phone, address hidden", !/สมชาย|0812345678|"1\/1"/.test(shown));
+check("download: postcode and tracking kept", shown.includes("10220") && shown.includes("EF1TH"));
+const cut = minimiseOrderBody('{"billing":{"first_name":"สมชาย","phone":"0812345678"},"meta_data":[{"key":"_trac') as string;
+check("download: a cut-short body is masked as text", typeof cut === "string" && !cut.includes("สมชาย") && !cut.includes("0812345678"));
 
 // webhooks (Shipnity registers order.created/updated/deleted on connect — log 28/10)
 const hooks = memHooks();

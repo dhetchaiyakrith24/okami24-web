@@ -7459,42 +7459,42 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/coil4/D-c38-dm2-v2.png",
+  "source": "_incoming/img-2910/b9/src-dm2.png",
   "slug": "coil-38",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px); colour inside the old cut kept from the 09/10 file (_incoming/coil4/D-c38-dm2-v2.png: side fine print and the upside-down coil word softened, light sharpening)",
    "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm2.png; render _incoming/coil4/out/c38-dm2-A.png)",
    "fidelitySheet": "_incoming/coil4/fid-c38-dm2-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render · card = the DM2 option shot",
-  "fileName": "card-v3.webp"
+  "note": "images-all 29/10 chat 4 — re-cut of the 09/10 DM2 re-shoot (clean edges, same frame as DM1/DM4) · card = the DM2 option shot",
+  "fileName": "card-v4.webp"
  },
  {
-  "source": "_incoming/coil4/D-c38-dm2-v2.png",
+  "source": "_incoming/img-2910/b9/src-dm2.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px); colour inside the old cut kept from the 09/10 file (_incoming/coil4/D-c38-dm2-v2.png: side fine print and the upside-down coil word softened, light sharpening)",
    "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm2.png; render _incoming/coil4/out/c38-dm2-A.png)",
    "fidelitySheet": "_incoming/coil4/fid-c38-dm2-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render",
-  "fileName": "variant-coil-38-2-v2.webp"
+  "note": "images-all 29/10 chat 4 — re-cut of the 09/10 DM2 re-shoot (clean edges, same frame as DM1/DM4)",
+  "fileName": "variant-coil-38-2-v3.webp"
  },
  {
-  "source": "_incoming/img-2910/b8/fin-dm4.png",
+  "source": "_incoming/img-2910/b9/src-dm4.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-4",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro via MCP generate_image, job d61fef8d-77db-4e4e-ab52-cfd1ddd9a0e5 (2 credits, owner yes 29/10 item 87): the TPP-DM4 box + 3 coils on a white sweep; cut by _incoming/img-2910/b8/dm4cut.js (white flood; box foot = the black face bottom, light bottom flap cut; coils cut below each column's lowest dark row on the front rings and at the darkest contact row under the bodies (median of ±6 columns) — no floor-shadow plates or wedges, checker #1001 rounds 1-2), specks dropped, then dm4place.js: box height = the DM2 box (698 px), box left 85, coils moved left to the DM2 group's right edge 919 in front of the box (the DM2 shot overlaps its coils on the box too)",
-   "reference": "Giant Vapes' TPP-DM4 box photo https://giantvapes.com/products/voopoo-tpp-coils + our live variant-coil-38-4-v2.webp (the earlier re-shoot of the same box, 12% smaller than DM2)",
-   "fidelitySheet": "_incoming/img-2910/b8/dm4sheet.jpg (DM2 | old DM4 | new DM4) + dm4zoom.png: VOOPOO, Max 40W, TPP-DM4, 0.3Ω | 3PCS, gold strip, coil shape read by eye"
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image 2K, job cb48d5b9-f0a2-4d8a-a686-d8f53b68fc8f (2nd of 2, 4 credits; owner approved the credit batch 29/10 evening): image 1 = the DM2 scene render (_incoming/coil4/out/c38-dm2-A.png), image 2 = Giant Vapes' TPP-DM4 box photo; prompt keeps camera/box/coils/light and changes only the box art (plain black front, Max 40W, TPP-DM4, 0.3Ω | 3PCS pill, gold bottom strip, barcode sticker on the side) and the coils to the silver DM4 coils; new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px)",
+   "reference": "Giant Vapes' TPP-DM4 box photo with its 3 silver coils https://giantvapes.com/products/voopoo-tpp-coils (input _incoming/coil4/in/c38-dm4.png)",
+   "fidelitySheet": "_incoming/img-2910/b9/proof/ (DM2 scene | DM4 render overlay, coil-shape overlay, 3x edge zooms): VOOPOO, Max 40W, coil drawing, TPP-DM4, 0.3Ω | 3PCS, gold strip, barcode sticker, silver mesh-face coils read by eye against the reference"
   },
-  "note": "images-all 29/10 chat 3 — DM4 box now the same size as DM2 (was 12% small)",
-  "fileName": "variant-coil-38-4-v3.webp"
+  "note": "images-all 29/10 chat 4 — DM4 re-shot in the DM2 scene (owner rejected v3: rough cut + jump between options)",
+  "fileName": "variant-coil-38-4-v4.webp"
  },
  {
   "source": "_incoming/img-1610/b1/key/D-c55.png",
@@ -12854,16 +12854,29 @@
   }
  },
  {
-  "source": "_incoming/iq/c38/out/dm1-b.png",
+  "source": "_incoming/img-2910/b9/src-dm1.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-1",
-  "fileName": "variant-coil-38-1.webp",
-  "note": "image run 23/10 (line 1, owner: options with no photo first) - VOOPOO TPP-DM1 0.15Ω coil box (Max Coil-38-1)",
+  "fileName": "variant-coil-38-1-v2.webp",
+  "note": "images-all 29/10 chat 4 — DM1 re-made in the DM2 scene so all three options share one frame (was cut with the old DM2 alpha)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited (0 credits): an edit in place of the live TPP-DM2 box shot (variant-coil-38-2-v2) changing only the box text to TPP-DM1 / 0.15Ω 3PCS / Max 80W (2nd render; the 1st zoomed out and added a mirror reflection); cut with the DM2 file's own alpha (fit-same.js, aspect 1.001), rim cleaned (edgefill.js + erode.js)",
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image 2K, job 145f3211-3bdd-4813-9545-99e117fd7f17 (2nd of 2, 4 credits): an edit of the DM2 scene render (_incoming/coil4/out/c38-dm2-A.png) changing only TPP-DM2 → TPP-DM1, 0.2Ω → 0.15Ω, Max 60W → Max 80W; new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px); side-panel fine print and the upside-down word on coil 3 softened (_incoming/img-2910/b9/soften.js — AI-invented wording, as on the DM2 file)",
    "reference": "Element Vape real photo of the TPP-DM1 box (https://d2svuhg8jeu25r.cloudfront.net/catalog/product/v/o/voopoo_tpp_replacement_coils_-_tpp_dm1_coils.png, 700 px; box crop _incoming/iq/c38/ref-dm1.png)",
-   "fidelitySheet": "_incoming/iq/c38/cmp2.jpg (live DM2 | new DM1 | text close-up)"
+   "fidelitySheet": "_incoming/img-2910/b9/proof/ — TPP-DM1, 0.15Ω 3PCS, Max 80W read by eye against the Element Vape photo"
+  }
+ },
+ {
+  "source": "_incoming/img-2910/b9/src-dm3.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-3",
+  "fileName": "variant-coil-38-3.webp",
+  "note": "images-all 29/10 chat 4 — TPP-DM3 had no photo (audit 29/10 A row 10); made in the DM2 scene like DM1/DM4 so all four options share one frame",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro via MCP generate_image 2K, 2 passes (owner-approved credit batch 29/10 evening): job 0e457128-e616-4a39-832b-327abc77a6a7 = edit of the DM2 scene render (_incoming/coil4/out/c38-dm2-A.png) to Max 100W / TPP-DM3 / 0.15Ω | 3PCS (pill came out beside the name), then job ce2a1a6a-bbdb-49dd-8952-2f8f1fe78bee = an edit of that render re-laying the print like the real box (name centred, pill under it); 8 credits for the 4 renders; box 0.7% vertical stretch about its bottom (warp2.js KY) so its top meets the other three; new clean cut _incoming/img-2910/b9/matte.js (images-all 29/10 chat 4, owner rejected the old set: rough cut edges + the photo jumped between options): sweep estimate from far pixels, border flood through sweep-like pixels with the box interior and shrunk coil shapes protected; box bottom = two measured lines (side panel cut above its pale paper flap · front panel bottom); coils below their axis = the measured coil shapes (_incoming/coil4/shapes-dm2.json); coil-3 rear end = an elliptical arc fitted to its rim; edge colours un-mixed from the sweep. All three option photos share the DM2 scene: each render registered onto the DM2 render (box band + per-coil gradient correlation, _incoming/img-2910/b9/regband.js · coilreg.js · warp2.js), so every option has the same frame (alpha>128 box within 1-2 px); side-panel fine print and the upside-down coil word softened (soften.js), as on DM1/DM2",
+   "reference": "Giant Vapes' TPP-DM3 box photo (600 px) https://cdn.shopify.com/s/files/1/0613/8472/0630/files/TppDM3.webp (variant image on https://giantvapes.com/products/voopoo-tpp-coils; copy _incoming/img-2910/b9/ref/gv-dm3.png) — the box shows no coils, so the coils are the DM1/DM2 scene coils",
+   "fidelitySheet": "_incoming/img-2910/b9/proof/ — VOOPOO, Max 100W, coil drawing, TPP-DM3, 0.15Ω | 3PCS under the name, WARNING panel, 21+ side mark read by eye against the Giant Vapes photo"
   }
  },
  {
