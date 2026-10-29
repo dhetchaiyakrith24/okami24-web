@@ -100,9 +100,9 @@ interface Db {
   prepare(sql: string): { get(...params: unknown[]): unknown; all(...params: unknown[]): unknown[] };
 }
 
-/** An order that used the member benefit (see the head comment for the first version's two rules). */
-const USED_BENEFIT_SQL =
-  "(o.shipping_rule IN ('member_monthly', 'first_member_order') OR (o.shipping_rule = 'monthly_free' AND o.member_id IS NOT NULL))";
+/** An order that used the member benefit (see the head comment for the first version's two rules — an 800+ order of
+ *  theirs would have shipped for 0 anyway, so it uses nothing up). */
+const USED_BENEFIT_SQL = `(o.shipping_rule = 'member_monthly' OR (o.subtotal < ${ALWAYS_FREE_THRESHOLD_THB} AND (o.shipping_rule = 'first_member_order' OR (o.shipping_rule = 'monthly_free' AND o.member_id IS NOT NULL))))`;
 
 /** Orders that used the benefit this month (not cancelled) and share the member, a phone, or the address's sub-district +
  *  postcode — the house number is compared in JS (houseNumber), SQLite cannot parse it. The checkout phone has no code

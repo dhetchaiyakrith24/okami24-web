@@ -178,6 +178,11 @@ addOrder({ customer: 6, rule: "monthly_free", at: "2026-10-09T05:00:00.000Z", re
 check("first version: monthly_free placed as a guest does not count", used(6, ["0866600000"]) === false);
 addOrder({ customer: 6, member: 6, rule: "monthly_used", at: "2026-10-09T06:00:00.000Z", recipientPhone: "0866600000" });
 check("first version: monthly_used (paid 35) does not count", used(6, ["0866600000"]) === false);
+db.prepare("INSERT INTO members (id) VALUES (9)").run();
+db.prepare("INSERT INTO customers (id, phone) VALUES (9, '0899000000')").run();
+const bigFirst = addOrder({ customer: 9, member: 9, rule: "first_member_order", at: "2026-10-09T07:00:00.000Z", recipientPhone: "0899000000" });
+db.prepare("UPDATE orders SET subtotal = 900, total = 900 WHERE id = ?").run(bigFirst);
+check("first version: a first_member_order of 800+ (0 anyway) does not count", used(9, ["0899000000"]) === false);
 
 // Anti-reuse (owner 29/10, BSOT §10): phone OR address (house no. + sub-district + postcode); the name never blocks.
 db.prepare("INSERT INTO members (id) VALUES (7), (8)").run();
