@@ -14,7 +14,10 @@ import type { WooProduct, WooVariation } from "@/lib/woo/catalog";
  *   - register / read / change / delete webhooks (Shipnity registers order.created/updated/deleted when it connects —
  *     log 28/10); an order goes to one only after staff approve it on /staff/shipnity (order-push.ts);
  *   - read the orders already sent to it (Woo order objects, no slip — owner 27/10); everything else is not listed;
- *   - read the shop's e-mail sender name (Shipnity asks on connect).
+ *   - read the shop's e-mail sender name (Shipnity asks on connect);
+ *   - add a note or a shipment tracking to an order it was sent (owner 29/10, tracking sync step 1): answered the way a
+ *     Woo shop with a tracking plugin would, so Shipnity does not stop at a 404 — the log keeps what it sent; nothing on
+ *     the order changes yet.
  * Every other field in a write is ignored; anything else answers WooCommerce's own "no route" 404.
  * Pure: the route does the database and the log.
  */
@@ -98,6 +101,8 @@ export function readOrderStatus(body: unknown): string | null {
 }
 
 const NAMESPACES = ["wc/v1", "wc/v2", "wc/v3"];
+/** Where the two common Woo tracking plugins answer (Shipment Tracking · Advanced Shipment Tracking) — order trackings only. */
+const TRACKING_NAMESPACES = ["wc-shipment-tracking/v3", "wc-ast/v3"];
 const DATE = "2026-10-27T00:00:00";
 const OPTION_LABEL = "ตัวเลือก";
 
@@ -277,7 +282,8 @@ export function handle(req: ApiRequest): ApiResponse {
     return ok({ name: "OKami24", description: "", url: req.siteUrl, home: req.siteUrl, namespaces: NAMESPACES, authentication: {}, routes: {} });
   }
   const ns = `${s0}/${s1}`;
-  if (!NAMESPACES.includes(ns)) return noRoute();
+  const trackingNs = TRACKING_NAMESPACES.includes(ns);
+  if (!NAMESPACES.includes(ns) && !trackingNs) return noRoute();
   if (rest.length === 0) return method === "GET" ? ok({ namespace: ns, routes: {} }) : noRoute();
   if (!req.signed) {
     return method === "GET"
@@ -299,6 +305,7 @@ export function handle(req: ApiRequest): ApiResponse {
   };
 
   const [r0, r1, r2, r3] = rest;
+  if (trackingNs && (r0 !== "orders" || r2 !== "shipment-trackings")) return noRoute();
 
   if (r0 === "system_status" && rest.length === 1 && method === "GET") {
     return ok({
@@ -438,6 +445,26 @@ export function handle(req: ApiRequest): ApiResponse {
       if (method === "GET") return ok(o);
       if (write) return { ...ok(o), orderUpdates: [{ orderId: o.id, status: readOrderStatus(req.body) }] };
       if (method === "DELETE") return { ...ok(o), orderUpdates: [{ orderId: o.id, status: "deleted" }] };
+    }
+    // /orders/<id>/notes and /orders/<id>/shipment-trackings — where a Woo shop takes a shipping note or a tracking number.
+    if (rest.length === 3 && (r2 === "notes" || r2 === "shipment-trackings")) {
+      const o = all.find((x) => x.id === Number(r1));
+      if (!o) return err(404, "woocommerce_rest_shop_order_invalid_id", "Invalid ID.");
+      if (method === "GET") return ok([]);
+      if (method !== "POST") return noRoute();
+      const b = (req.body && typeof req.body === "object" ? req.body : {}) as Record<string, unknown>;
+      const text = (k: string) => (typeof b[k] === "string" ? (b[k] as string).slice(0, 500) : "");
+      if (r2 === "notes") {
+        return ok({ id: 1, author: "Shipnity", date_created: DATE, note: text("note"), customer_note: b.customer_note === true }, undefined, [], 201);
+      }
+      const tracking = {
+        tracking_id: "1",
+        tracking_provider: text("tracking_provider") || text("custom_tracking_provider"),
+        tracking_link: text("custom_tracking_link"),
+        tracking_number: text("tracking_number"),
+        date_shipped: text("date_shipped") || DATE.slice(0, 10),
+      };
+      return ok(tracking, undefined, [], 201);
     }
     return noRoute();
   }

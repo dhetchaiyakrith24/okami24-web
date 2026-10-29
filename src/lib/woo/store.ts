@@ -4,7 +4,12 @@ import { getDb } from "@/lib/db/client";
 /** The call log and the stock numbers Shipnity reports (tables in migration 0019). */
 
 const BODY_LIMIT = 4096;
+/** An order Shipnity writes back can be a whole Woo order; tracking may sit at its end (meta_data), so keep more of it. */
+const ORDER_BODY_LIMIT = 32768;
 const KEEP_ROWS = 5000;
+/** Non-product calls are pruned on their own, so an hourly stock run of 700+ writes cannot push them out (owner 29/10). */
+const KEEP_OTHER_ROWS = 2000;
+const PRODUCT_PATH = "/wp-json/wc/v_/products%";
 
 export interface LogEntry {
   method: string;
@@ -32,11 +37,18 @@ export function logCall(e: LogEntry): void {
       e.keyId,
       e.ip?.slice(0, 64) ?? null,
       e.userAgent?.slice(0, 200) ?? null,
-      e.body === null ? null : e.body.slice(0, BODY_LIMIT)
+      e.body === null ? null : e.body.slice(0, e.path.includes("/orders") ? ORDER_BODY_LIMIT : BODY_LIMIT)
     );
     // Keep the newest rows only, so a stranger hammering the URL cannot fill the disk.
     if (++writes % 100 === 0) {
-      db.prepare("DELETE FROM woo_api_log WHERE id <= (SELECT MAX(id) FROM woo_api_log) - ?").run(KEEP_ROWS);
+      const prune = (match: string, keep: number) =>
+        db
+          .prepare(
+            `DELETE FROM woo_api_log WHERE path ${match} ? AND id < COALESCE((SELECT id FROM woo_api_log WHERE path ${match} ? ORDER BY id DESC LIMIT 1 OFFSET ?), 0)`
+          )
+          .run(PRODUCT_PATH, PRODUCT_PATH, keep - 1);
+      prune("LIKE", KEEP_ROWS);
+      prune("NOT LIKE", KEEP_OTHER_ROWS);
     }
   } catch {
     // the log must never be the reason a call fails
@@ -64,7 +76,14 @@ export function recentCalls(limit = 100): LogRow[] {
  *  longer push an order cancellation off the page (owner 28/10). */
 export function recentOtherCalls(limit = 100): LogRow[] {
   return getDb()
-    .prepare("SELECT * FROM woo_api_log WHERE path NOT LIKE '/wp-json/wc/v_/products%' ORDER BY id DESC LIMIT ?")
+    .prepare("SELECT * FROM woo_api_log WHERE path NOT LIKE ? ORDER BY id DESC LIMIT ?")
+    .all(PRODUCT_PATH, limit) as LogRow[];
+}
+
+/** Every write Shipnity made to an order (status · note · tracking), newest first — for the staff download (owner 29/10). */
+export function recentOrderWrites(limit = 300): LogRow[] {
+  return getDb()
+    .prepare("SELECT * FROM woo_api_log WHERE method <> 'GET' AND path LIKE '%/orders%' ORDER BY id DESC LIMIT ?")
     .all(limit) as LogRow[];
 }
 
