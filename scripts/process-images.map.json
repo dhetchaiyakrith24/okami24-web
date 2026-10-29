@@ -12940,6 +12940,149 @@
   }
  },
  {
+  "source": "_incoming/img-2910/b7/out/strawberryburst.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-2",
+  "fileName": "variant-pod-27-2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 8f0c2c42-0c8f-4355-b2c0-5ae966207f09; render _incoming/img-2910/b7/render/strawberryburst.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*StrawberryBurst-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/StrawberryBurst-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/ludouice.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-3",
+  "fileName": "variant-pod-27-3.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 7077f8c7-d087-453d-97bb-3f04f8826bb6; render _incoming/img-2910/b7/render/ludouice.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*LudouIce-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/LudouIce-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/orangesparkle.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-7",
+  "fileName": "variant-pod-27-7.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 2fd19782-d70b-4788-8b1e-e8d8750acd54; render _incoming/img-2910/b7/render/orangesparkle.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*OrangeSparkle-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/OrangeSparkle-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/smoothmango.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-8",
+  "fileName": "variant-pod-27-8.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job c5026240-d933-49ea-a07b-0581a8b93250; render _incoming/img-2910/b7/render/smoothmango.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*SmoothMango-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/SmoothMango-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/thaimilktea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-19",
+  "fileName": "variant-pod-27-19.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 6fc5dcf3-e40c-4cf8-8acf-46d985cf855e; render _incoming/img-2910/b7/render/thaimilktea.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*ThaiMilkTea-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/ThaiMilkTea-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/oolongicetea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-20",
+  "fileName": "variant-pod-27-20.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job d33e4495-5fca-4762-ac1c-651e5cb7f5e5; render _incoming/img-2910/b7/render/oolongicetea.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*OolongIceTea-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/OolongIceTea-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/icedblacktea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-22",
+  "fileName": "variant-pod-27-22.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 9a89867d-22c8-41aa-a68c-b29fe0163dd6; render _incoming/img-2910/b7/render/icedblacktea.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*IcedBlackTea-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/IcedBlackTea-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/classictobacco.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-24",
+  "fileName": "variant-pod-27-24.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 7a228863-e5e2-4801-9307-c21e0ce3c0f1; render _incoming/img-2910/b7/render/classictobacco.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*ClassicTobacco-50mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/ClassicTobacco-50mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/hibiscusicetea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-27",
+  "fileName": "variant-pod-27-27.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 51fe4a0a-24ca-42e3-b07b-a83c9849d0c0; render _incoming/img-2910/b7/render/hibiscusicetea.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.5465)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*HibiscusIceTea-30mg* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/HibiscusIceTea-30mg.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/jasminegreentea.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-37",
+  "fileName": "variant-pod-27-37.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 811dbd2a-9b9a-415c-9232-3193a5a346a4; render _incoming/img-2910/b7/render/jasminegreentea.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.3005)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*JasmineGreenTea* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/JasmineGreenTea.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
+  "source": "_incoming/img-2910/b7/out/freshpeach.png",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "pod-27-39",
+  "fileName": "variant-pod-27-39.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits (owner approved 29/10, item 87), job 1eaca3b4-f071-479e-91b2-0b71e6efda76; render _incoming/img-2910/b7/render/freshpeach.png; cut _incoming/img-2910/b7/cutpack2.js (4 straight edges; width:height = the real pack 0.3005)",
+   "reference": "(1) RELX Malaysia official pack front Package_Front__MY_*FreshPeach* (relxnow.my products.json, cdn.shopify.com/s/files/1/0268/7900/0689/files/; _incoming/img-2910/b7/ref/FreshPeach.png) — art, name, shape; (2) our live Pod-27-1 Tangy Grape pack — the English WARNING box the shop's packs carry (the MY pack prints a Malay warning)",
+   "fidelitySheet": "_incoming/img-2910/b7/sheet-vs-ref.jpg (render cut beside the official pack, read by eye: header, nicotine %, name, art, warning spelling)"
+  },
+  "note": "images-all round 29/10 — RELX Pod Pro 2 flavour with no photo before"
+ },
+ {
   "source": "_incoming/da/r1.png",
   "slug": "relx-infinity-2-plus",
   "role": "variant",
