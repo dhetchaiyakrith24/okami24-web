@@ -202,17 +202,13 @@ export function OrderStatusView({
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
             PageHeader's tight 0.95 would clip Thai vowels). */}
-        {/* Logo round batch 2 (owner 28/10 "ได้ ตามร่าง"; designer spec 28/10): the card carries the samurai — head, kabuto and
-            red moon only, cut above the shoulder blades — a band on top at every width: line 2 of the thank-you never wraps,
-            and this column is max-w-xl, so a picture beside the text put the red "OKami24" on the red moon at 1440 (Friday's
-            Owner-eye check 28/10). Faded into the card. */}
         {paidOrLater && (
           // Owner 30/10 (after #1023 live): "ไม่ต้องมีการ์ด … เน้นภาพใหญ่กว้างแบบหน้าสินค้ารวมไปเลย ปรับให้แมชและเหมาะ ดูดี" — no card:
           // the owner's full-body samurai (his own transparent cut) stands big and wide behind the thank-you, faded out toward the
           // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
           // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
           <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
-            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(100vw,820px)] -translate-x-1/2">
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2">
               <Image
                 src="/brand/samurai-thanks-full.webp"
                 alt=""
@@ -421,20 +417,23 @@ export function OrderStatusView({
             {payment && (
               <div className="flex flex-col gap-3">
                 <p className="text-sm font-semibold text-foreground">{dict.orderStatus.paymentTransferTitle}</p>
-                {/* Owner 30/10 (option B of the payment-card draft, "ขอแค่เพิ่มซามูไรให้มีเอกลักษณ์"; then "ไม่อยากให้มืดตามภาพ — ส่วนเดียวที่มืดคือ
-                    งานภาพตัวละคร"): the bank box keeps its layout and its own colour — nothing behind the figure darkens it. Only the
-                    character (the owner's transparent cut, no moon, no black backdrop) shows on the right, silver, faded toward the text. */}
+                {/* Owner 30/10: option B of the payment-card draft, "สูงขึ้นแบบ B" — the bank box gets B's picture band on top: the
+                    samurai and the moon in silver on near-black with B's fine vertical texture and its dark colours (his words: "ภาพ
+                    ในการ์ดใช้เป็นซามูไร texture detail สี ตามนี้ … สีเมนูปุ่ม ทุกอย่างเหมือน Web" and earlier "ไม่อยากให้มืดตามภาพ — ส่วนเดียวที่มืด
+                    คืองานภาพ"). The picture is the only dark part: the box, labels, values, copy button and borders keep the web's own
+                    colours, and the picture fades into the box colour under the first rows. */}
                 <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2">
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[46%] overflow-hidden">
+                  <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(70vw,320px)] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_bottom,black_58%,transparent)]">
+                    <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_3px)]" />
                     <Image
-                      src="/brand/samurai-thanks-full.webp"
+                      src="/brand/samurai-products-bg-v2.webp"
                       alt=""
                       fill
-                      sizes="(min-width: 640px) 346px, 60vw"
-                      className="origin-[56%_14%] scale-[1.3] object-cover object-[56%_0%] opacity-50 contrast-125 grayscale [mask-image:linear-gradient(to_right,transparent,black_50%)]"
+                      sizes="(min-width: 640px) 576px, 100vw"
+                      className="object-cover object-[50%_10%] opacity-75 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:radial-gradient(ellipse_58%_60%_at_50%_40%,#000_55%,transparent_100%)]"
                     />
                   </div>
-                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 text-sm">
+                  <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 pt-[min(34vw,170px)] text-sm">
                     <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
                     <dd className="text-foreground">{payment.bankName[locale]}</dd>
                     <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
