@@ -657,6 +657,7 @@ export const zh: Dictionary = {
     nextCompleted: "此订单已完成。",
     nextCancelled: "此订单已取消。",
     nextCancelledPaid: "此订单已取消，我们会就退款事宜联系您。如有疑问，请通过 LINE @okm24 联系我们。",
+    nextCancelledSlipRejected: "此订单已取消，因为我们无法确认您的付款。如有疑问，请通过 LINE @okm24 联系我们。",
     nextCancelledUnpaid: "由于下单后 24 小时内未收到转账凭证，此订单已自动取消。如您已经转账，请通过 LINE @okm24 把凭证发给我们；如仍需要商品，欢迎重新下单。",
     paymentDeadlineNote: "请在 {deadline} 前转账并上传凭证，超时订单将自动取消。",
     nextCancelledRefunded: "此订单已取消，退款已转出。",

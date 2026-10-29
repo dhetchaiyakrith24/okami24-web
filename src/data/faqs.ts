@@ -70,7 +70,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "How long does delivery take?",
     answer:
-      "Transfer and send your slip before 15:00 and we ship the same day; after 15:00 it goes out the next working day. We ship Monday to Saturday, not on Sundays or public holidays. Once it’s out, it arrives within 1–3 days, with a tracking number you can follow.",
+      "Transfer and send your slip before 12:30 and we ship the same day; after 12:30 it goes out the next working day. We ship Monday to Saturday, not on Sundays or public holidays. Once it’s out, it arrives within 1–3 days, with a tracking number you can follow.",
     action: { href: "/shipping", labelKey: "shipping" },
   },
   {
