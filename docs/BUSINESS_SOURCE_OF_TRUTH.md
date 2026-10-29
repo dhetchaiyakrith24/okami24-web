@@ -390,8 +390,12 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
 
 - **Standard shipping fee:** 50 THB (owner, chat 2026-10-09: "พี่คิดลูกค้า 50 บาท" — was 60 THB). The warehouse (Shipnity Max,
   dropship) bills the shop 35 THB shipping per order ("คลังคิดพี่ 35 บาท") — internal cost, never shown to customers.
-- **Free shipping threshold:** 500 THB, every customer (owner, chat 2026-10-26: "ฟรีไปเลยครับ 500 ขึ้นไป" — the line had stood
-  unconfirmed since 2026-08-30). Members (once sign-up exists, queue Q4) may get free shipping from 300 THB (owner 2026-10-24) — not live.
+- **Free shipping (owner 2026-10-29, chat: "สมัครแล้วส่งฟรีครั้งแรก · ครบ ฿500 ส่งฟรีเดือนละครั้ง · ครบ ฿800 ส่งฟรีทุกครั้ง และครั้งที่ 500
+  แต่ไม่ได้ส่งฟรีในเดือนนั้น ๆ ให้คิดค่าส่งแค่ 35 บาท"; replaces ฿500-for-everyone of 2026-10-26 and the ฿300 member idea of 2026-10-24):**
+  (1) a member's first order after signing up = shipping 0, once · (2) subtotal ≥ 800 THB = 0, every order · (3) subtotal ≥ 500 THB
+  = 0 once a month, later ≥ 500 orders that month = 35 THB · (4) below 500 THB = the standard 50 THB. Open with the owner (wait list
+  92): rule 3 for everyone by phone number or members only · calendar month or 30 days. NOT LIVE until the shipping-rules PR merges —
+  until then the site still applies ฿500 for everyone.
 - **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
   orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
   phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.
