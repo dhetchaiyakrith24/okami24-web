@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/auth";
 import { assignRole } from "@/lib/line/groups";
 import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
-import { applyStaffAction } from "@/lib/staff/orders";
+import { applyStaffAction, setPlannedCarrier } from "@/lib/staff/orders";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
@@ -75,6 +75,15 @@ export async function staffShipnityPushAction(formData: FormData): Promise<void>
   const step = applyStaffAction(orderNumber, "to-warehouse", { note: "ส่งเข้า Shipnity อัตโนมัติ" });
   // Sent, but the status moved meanwhile (another tab) — say so instead of a plain "done".
   redirect(step.ok ? `${back}done=shipnity` : `${back}error=shipnity-sent-status`);
+}
+
+/** "เปลี่ยนขนส่ง" (owner 30/10): staff change the carrier picked from the postcode, before the order goes to Shipnity. */
+export async function staffCarrierAction(formData: FormData): Promise<void> {
+  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const orderNumber = String(formData.get("orderNumber") ?? "");
+  const back = orderPage(orderNumber, formData);
+  const result = setPlannedCarrier(orderNumber, formData.get("carrier"));
+  redirect(result.ok ? `${back}done=carrier` : `${back}error=${result.error === "carrier" ? "carrier" : "carrier-locked"}`);
 }
 
 /** Out of stock after payment (cart UX batch E, owner 24/10): mark lines out (or ask again) · apply the customer's swap ·

@@ -2,7 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { getOrderDetailInternal, type OrderDetail } from "@/lib/commerce/orders";
 import type { OrderStatus } from "@/lib/commerce/order-status";
-import { toCarrierId } from "@/lib/commerce/carriers";
+import { toStaffCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 import { warehouseCode } from "./orders-export";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
@@ -195,8 +195,9 @@ export function applyStaffAction(
   const note = (input.note ?? "").trim().slice(0, 300);
   const tracking = action === "ship" ? cleanTracking(input.tracking ?? "") : null;
   if (action === "ship" && !tracking) return { ok: false, error: "tracking" };
-  // Staff pick the carrier with the number — never guessed from it (owner 23/10: the order page names it).
-  const carrier = action === "ship" ? toCarrierId(input.carrier) : null;
+  // Staff confirm the carrier with the number — never guessed from it (owner 23/10: the order page names it); EMS or DHL
+  // only since 29/10 (the form starts on the postcode pick, owner 30/10).
+  const carrier = action === "ship" ? toStaffCarrierId(input.carrier) : null;
   if (action === "ship" && !carrier) return { ok: false, error: "carrier" };
   // A cancellation always tells the CUSTOMER why (owner 24/10: "ยกเลิกเพราะอะไร และไปขั้นตอนไหนต่อ") — the message shows on
   // their order page; the staff note beside it stays staff-only and may be left empty (then the message is the history note).
@@ -227,4 +228,20 @@ export function applyStaffAction(
     if (message) insertCustomerMessage(row.id, message);
     return { ok: true };
   })();
+}
+
+/** Staff change the carrier the site picked from the postcode (owner 30/10) — only while the order is paid and not yet
+ *  sent to the warehouse, since Shipnity takes the carrier with the order. Not a status step: no history row (the
+ *  customer's timeline stays the same); the customer sees the carrier only once shipped. */
+export function setPlannedCarrier(orderNumber: string, raw: unknown): { ok: true } | { ok: false; error: "carrier" | "not-allowed" } {
+  const carrier = toStaffCarrierId(raw);
+  if (!carrier) return { ok: false, error: "carrier" };
+  const changed = getDb()
+    .prepare(
+      `UPDATE orders SET carrier = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now')
+       WHERE order_number = ? AND status = 'approved'
+         AND NOT EXISTS (SELECT 1 FROM woo_order_sends s WHERE s.order_id = orders.id AND s.status <> 'failed')`
+    )
+    .run(carrier, orderNumber).changes;
+  return changed === 1 ? { ok: true } : { ok: false, error: "not-allowed" };
 }

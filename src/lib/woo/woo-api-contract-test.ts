@@ -234,6 +234,12 @@ check("push allowed for approved, never sent, no stock problem", pushBlock({ sta
 check("push refused once sent (no duplicate)", pushBlock({ status: "approved", alreadySent: true, stockOpen: false }) === "already-sent");
 check("push refused while an out-of-stock problem is open", pushBlock({ status: "approved", alreadySent: false, stockOpen: true }) === "stock-open");
 check("order: marked paid (processing)", paid.status === "processing" && paid.set_paid === true);
+// the carrier (owner 30/10) — Shipnity's own names; no carrier = the old line
+check("order: no carrier = old shipping line, no meta", paid.shipping_lines[0].method_title === "ค่าส่ง" && paid.meta_data.length === 0);
+const ems = wooOrderJson({ ...base, carrier: "thailand-post" }, "https://okami24.store");
+check("order: EMS as the shipping line + meta", ems.shipping_lines[0].method_title === "EMS" && JSON.stringify(ems.meta_data) === JSON.stringify([{ id: 1, key: "shipping_carrier", value: "EMS" }]));
+const dhl = wooOrderJson({ ...base, postalCode: "83100", carrier: "dhl" }, "https://okami24.store");
+check("order: DHL as the shipping line, fee and total unchanged", dhl.shipping_lines[0].method_title === "DHL" && dhl.total === paid.total && dhl.shipping_total === paid.shipping_total);
 check("unknown product id = 404", handle(req({ segments: ["wc", "v3", "products", "5"] })).status === 404);
 check("unknown route = 404", handle(req({ segments: ["wc", "v3", "customers"] })).status === 404);
 check("unknown namespace = 404", handle(req({ segments: ["wp", "v2", "users"] })).status === 404);
