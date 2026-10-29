@@ -26,7 +26,7 @@ function formatTHB(value: number): string {
 
 /** Thai phrases of the unboxing notice that must not break mid-phrase at 390 (checker #1009: "ยังไม่แกะ / กล่อง",
  *  "นับจากวัน / ที่ได้รับของ"). Wrapped in no-wrap spans here, like withLineLink's lead word — no U+2060 in the copy. */
-const UNBOX_KEEP = /(แกะกล่อง|วันที่ได้รับของ)/;
+const UNBOX_KEEP = /(แกะกล่อง|นับจากวันที่ได้รับของ)/;
 
 function keepPhrases(text: string): ReactNode[] {
   return text.split(UNBOX_KEEP).map((part, i) =>
