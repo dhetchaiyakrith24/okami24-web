@@ -67,6 +67,9 @@ const text = warehouseText({
 check("warehouse text: code × quantity per line", text.includes("Disposable-25-3 × 2"), text);
 check("warehouse text: a missing code is said out loud", text.includes("[ไม่มีรหัสคลัง] × 1"), text);
 check("warehouse text: recipient, phone and address", text.includes("สมชาย ใจดี 0812345678") && text.includes("10110"), text);
+check("warehouse text: no carrier line unless given", !text.includes("ขนส่ง"), text);
+const withCarrier = warehouseText({ orderNumber: "OK-1", lines: [], recipientName: "ก", phone: "0800000000", address: "x 83150", carrier: "DHL" });
+check("warehouse text: carrier as the last line", withCarrier.split("\n").at(-1) === "ขนส่ง DHL", withCarrier);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

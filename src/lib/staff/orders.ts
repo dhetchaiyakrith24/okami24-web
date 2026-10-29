@@ -2,7 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { getOrderDetailInternal, type OrderDetail } from "@/lib/commerce/orders";
 import type { OrderStatus } from "@/lib/commerce/order-status";
-import { toStaffCarrierId } from "@/lib/commerce/carriers";
+import { pickCarrier, SHIPNITY_CARRIER_NAME, toStaffCarrierId } from "@/lib/commerce/carriers";
 import type { SlipVerdict } from "@/lib/commerce/slip-decision";
 import { warehouseCode } from "./orders-export";
 import { cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
@@ -180,6 +180,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
       recipientName: a.recipientName,
       phone: a.phone,
       address: `${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
+      carrier: SHIPNITY_CARRIER_NAME[toStaffCarrierId(order.carrier) ?? pickCarrier(a.postalCode)],
     }),
   };
 }

@@ -57,11 +57,14 @@ export function warehouseText(input: {
   recipientName: string;
   phone: string;
   address: string;
+  /** Shipnity's carrier name (EMS / DHL — owner 30/10), the last line when given. */
+  carrier?: string;
 }): string {
   return [
     `ออเดอร์เว็บ ${input.orderNumber}`,
     ...input.lines.map((l) => `${l.sku ?? "[ไม่มีรหัสคลัง]"} × ${l.quantity}  (${l.name})`),
     `ผู้รับ ${input.recipientName} ${input.phone}`,
     input.address,
+    ...(input.carrier ? [`ขนส่ง ${input.carrier}`] : []),
   ].join("\n");
 }
