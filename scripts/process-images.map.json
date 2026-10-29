@@ -11287,64 +11287,69 @@
   "fileName": "card.webp"
  },
  {
-  "source": "_incoming/list19/vazer/mango.png",
+  "source": "_incoming/img-3010/vz/mango.png",
   "slug": "vazer-one-pod",
   "role": "variant",
   "id": "mango",
-  "note": "maxlist 21/10 - Vazer One Mango (Max Pod-115)",
+  "note": "images-all 30/10 (chat 5) - Vazer One Mango, one frame for every flavour",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10 owner yes 'ครับตามนั้น', maxlist line 1), studio re-shoot of the Mango box cropped 2x from the maker's flavour poster as sold by maneevp.com (maxlist-2010/in/vazer-mango.png); pick vz-mango-1 (Higgsfield 174252 8ed0087e); keyed by flood (b17/floodkey.js T=22), floor reflection cut at the first transparent row under the box (maxlist-2010/vzcut.js), stray shadow columns trimmed, alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com Vazer One 2.2ml flavour poster Mango 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v16.jpg",
-   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-vz-mango.jpg (poster crop vs both renders: VAZER ONE / MANGO / NIC 3% / 2.2ML / WWW.VAZERPOD.COM / side panel letter by letter), _incoming/maxlist-2010/vz/sheet-c.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 render 8ed0087e (maxlist 21/10, account credits then), re-cut now: keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Mango 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v16.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  },
+  "fileName": "variant-mango-v2.webp"
  },
  {
-  "source": "_incoming/list19/vazer/grape.png",
+  "source": "_incoming/img-3010/vz/grape.png",
   "slug": "vazer-one-pod",
   "role": "variant",
   "id": "grape",
-  "note": "maxlist 21/10 - Vazer One Grape (Max Pod-115)",
+  "note": "images-all 30/10 (chat 5) - Vazer One Grape, one frame for every flavour",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10 owner yes 'ครับตามนั้น', maxlist line 1), studio re-shoot of the Grape box cropped 2x from the maker's flavour poster as sold by maneevp.com (maxlist-2010/in/vazer-grape.png); pick vz-grape-1 (Higgsfield 174325 703c4239); keyed by flood (b17/floodkey.js T=22), floor reflection cut at the first transparent row under the box (maxlist-2010/vzcut.js), stray shadow columns trimmed, alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com Vazer One 2.2ml flavour poster Grape 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v21.jpg",
-   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-vz-grape.jpg (poster crop vs both renders: VAZER ONE / GRAPE / NIC 3% / 2.2ML / WWW.VAZERPOD.COM / side panel letter by letter), _incoming/maxlist-2010/vz/sheet-c.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job d01d67f6: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Grape box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Grape 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v21.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  },
+  "fileName": "variant-grape-v2.webp"
  },
  {
-  "source": "_incoming/list19/vazer/cola.png",
+  "source": "_incoming/img-3010/vz/cola.png",
   "slug": "vazer-one-pod",
   "role": "variant",
   "id": "cola",
-  "note": "maxlist 21/10 - Vazer One Cola (Max Pod-115)",
+  "note": "images-all 30/10 (chat 5) - Vazer One Cola, one frame for every flavour",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10 owner yes 'ครับตามนั้น', maxlist line 1), studio re-shoot of the Cola box cropped 2x from the maker's flavour poster as sold by maneevp.com (maxlist-2010/in/vazer-cola.png); pick vz-cola-1 (Higgsfield 174443 29101f4b); keyed by flood (b17/floodkey.js T=6), floor reflection cut at the first transparent row under the box (maxlist-2010/vzcut.js), stray shadow columns trimmed, alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com Vazer One 2.2ml flavour poster Cola 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v22.jpg",
-   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-vz-cola.jpg (poster crop vs both renders: VAZER ONE / COLA / NIC 3% / 2.2ML / WWW.VAZERPOD.COM / side panel letter by letter), _incoming/maxlist-2010/vz/sheet-c.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job c569af18: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Cola box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Cola 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v22.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  },
+  "fileName": "variant-cola-v2.webp"
  },
  {
-  "source": "_incoming/list19/vazer/cola-lemon.png",
+  "source": "_incoming/img-3010/vz/cola-lemon.png",
   "slug": "vazer-one-pod",
   "role": "variant",
   "id": "cola-lemon",
-  "note": "maxlist 21/10 - Vazer One Cola Lemon (Max Pod-115)",
+  "note": "images-all 30/10 (chat 5) - Vazer One Cola Lemon, one frame for every flavour",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10 owner yes 'ครับตามนั้น', maxlist line 1), studio re-shoot of the Cola Lemon box cropped 2x from the maker's flavour poster as sold by maneevp.com (maxlist-2010/in/vazer-cola-lemon.png); pick vz-cola-lemon-1 (Higgsfield 174518 b2a9b8ac); keyed by flood (b17/floodkey.js T=22), floor reflection cut at the first transparent row under the box (maxlist-2010/vzcut.js), stray shadow columns trimmed, alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com Vazer One 2.2ml flavour poster Cola Lemon 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v23.jpg",
-   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-vz-cola-lemon.jpg (poster crop vs both renders: VAZER ONE / COLA LEMON / NIC 3% / 2.2ML / WWW.VAZERPOD.COM / side panel letter by letter), _incoming/maxlist-2010/vz/sheet-c.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job e745204b: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Cola Lemon box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Cola Lemon 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v23.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  },
+  "fileName": "variant-cola-lemon-v2.webp"
  },
  {
-  "source": "_incoming/list19/vazer/mix-berries.png",
+  "source": "_incoming/img-3010/vz/mix-berries.png",
   "slug": "vazer-one-pod",
   "role": "variant",
   "id": "mix-berries",
-  "note": "maxlist 21/10 - Vazer One Mix Berries (Max Pod-115)",
+  "note": "images-all 30/10 (chat 5) - Vazer One Mix Berries, one frame for every flavour",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10 owner yes 'ครับตามนั้น', maxlist line 1), studio re-shoot of the Mix Berries box cropped 2x from the maker's flavour poster as sold by maneevp.com (maxlist-2010/in/vazer-mix-berries.png); pick vz-mix-berries-2 (Higgsfield 174551 6bd1135f); keyed by flood (b17/floodkey.js T=22), floor reflection cut at the first transparent row under the box (maxlist-2010/vzcut.js), stray shadow columns trimmed, alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com Vazer One 2.2ml flavour poster Mix Berries 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v12.jpg",
-   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-vz-mix-berries.jpg (poster crop vs both renders: VAZER ONE / MIX BERRIES / NIC 3% / 2.2ML / WWW.VAZERPOD.COM / side panel letter by letter), _incoming/maxlist-2010/vz/sheet-c.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job d0c3b832: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Mix Berries box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Mix Berries 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v12.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  },
+  "fileName": "variant-mix-berries-v2.webp"
  },
  {
   "source": "_incoming/list19/doublemint/grape.png",
@@ -13795,6 +13800,186 @@
    "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label like the real long-name labels) - _incoming/img-3010/infy/relabel.js; same alpha as Strawberry, so the same frame",
    "reference": "two-layer (IMAGE_SPEC §0 item 7): pod = the shop's real INFY PLUS posters (maneevp, every flavour the same clear pod with pale liquid, only the label differs); flavour = the name in the warehouse data, its only image being the sudjud9 CG poster https://sudjud9.com/wp-content/uploads/2025/05/infy-plus-2.5-ml-cherry-strawberry-v1.webp (600 px, label unreadable) - _incoming/img-3010/infy/sudjud-posters.jpg",
    "fidelitySheet": "_incoming/img-3010/infy/labels-all.png (the 7 labels beside the original Strawberry label at 3x), cmp-label.png + fontcmp.png (font match)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/watermelon.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "images-all 30/10 (chat 5) - Vazer One Watermelon, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job d86f6b00: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Watermelon box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Watermelon 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v4.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/vanilla-custard.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "vanilla-custard",
+  "note": "images-all 30/10 (chat 5) - Vazer One Vanilla Custard, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 0a4a8668: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Vanilla Custard box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Vanilla Custard 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v5.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/strawberry.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "strawberry",
+  "note": "images-all 30/10 (chat 5) - Vazer One Strawberry, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job fb26e211: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Strawberry box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Strawberry 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v6.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/strawberry-ice-cream.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "strawberry-ice-cream",
+  "note": "images-all 30/10 (chat 5) - Vazer One Strawberry Ice-Cream, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job fbe5a59e: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Strawberry Ice-Cream box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Strawberry Ice-Cream 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v7.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/rootbeer.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "rootbeer",
+  "note": "images-all 30/10 (chat 5) - Vazer One Rootbeer, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job c7caae6f: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Rootbeer box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Rootbeer 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v8.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/raspberry.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "raspberry",
+  "note": "images-all 30/10 (chat 5) - Vazer One Raspberry, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 7262b08d: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Raspberry box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Raspberry 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v9.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/pineapple.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "pineapple",
+  "note": "images-all 30/10 (chat 5) - Vazer One Pineapple, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job e80968d8: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Pineapple box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Pineapple 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v10.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/peach.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "peach",
+  "note": "images-all 30/10 (chat 5) - Vazer One Peach, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 25c15fc3: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Peach box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Peach 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v11.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/mint.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "mint",
+  "note": "images-all 30/10 (chat 5) - Vazer One Mint, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 4e4605cf: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Mint box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Mint 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v13.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/milk-honey.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "milk-honey",
+  "note": "images-all 30/10 (chat 5) - Vazer One Milk Honey, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job cd97eb45: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Milk Honey box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Milk Honey 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v14.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/melon.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "melon",
+  "note": "images-all 30/10 (chat 5) - Vazer One Melon, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job ac3633e4: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Melon box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Melon 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v15.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/lychee.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "lychee",
+  "note": "images-all 30/10 (chat 5) - Vazer One Lychee, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 445da676: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Lychee box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Lychee 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v17.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/lemon-soda.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "lemon-soda",
+  "note": "images-all 30/10 (chat 5) - Vazer One Lemon Soda, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job fd3bb4d5: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Lemon Soda box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Lemon Soda 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v18.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/gummy-bear.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "gummy-bear",
+  "note": "images-all 30/10 (chat 5) - Vazer One Gummy Bear, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job 487d15d0: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Gummy Bear box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Gummy Bear 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v19.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
+  }
+ },
+ {
+  "source": "_incoming/img-3010/vz/grapefruit.png",
+  "slug": "vazer-one-pod",
+  "role": "variant",
+  "id": "grapefruit",
+  "note": "images-all 30/10 (chat 5) - Vazer One Grapefruit, one frame for every flavour",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 29/10 evening), job a214fe56: an EDIT of the Mango scene render 8ed0087e (image 1) with the maker's Grapefruit box artwork (image 2), so camera, box size and position are the Mango frame (keyed bbox within 2 px of Mango on all 20); keyed by flood (floodkey.js T=22) + vzcut.js, then ONE shared matte for all 20 flavours (per-pixel median of the 20 keyed alphas, eroded 1 px, both bottom edges straightened to a fitted line, 0.9 px blur - matte.js + straight.js, copies beside this source)",
+   "reference": "maneevp.com Vazer One 2.2ml flavour poster Grapefruit 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v20.jpg (main checkout), box crop x330-750 y165-745 at 2x",
+   "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
   }
  }
 ]
