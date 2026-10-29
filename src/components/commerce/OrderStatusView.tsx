@@ -210,9 +210,9 @@ export function OrderStatusView({
           <div className="okami-thanks relative overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
             {/* Owner 29/10 "หน้าหาย": a fixed 200/240 px band cropped the 716×400 picture to the kabuto and faded out the face.
                 The band now keeps the picture's own shape (face whole at every width) and fades only its last fifth. */}
-            {/* Owner 30/10: a new full-body samurai (his file, white background cut to transparent) replaces the head-and-moon
+            {/* Owner 30/10: a new full-body samurai (his own transparent cut) replaces the head-and-moon
                 picture — "ให้ใช้การ Fade out เหมือนหน้าสินค้าทั้งหมด": the figure fades out toward the text over its lower half,
-                the way the /products backdrop fades, instead of a fifth at the edge. The file is the top 820 px (head to hips). */}
+                the way the /products backdrop fades, instead of a fifth at the edge. The file is the top 820 px of his transparent cut (head to hips). */}
             <div ref={bandRef} className="relative aspect-[1024/760] w-full">
               <Image
                 src="/brand/samurai-thanks-full.webp"
@@ -429,7 +429,7 @@ export function OrderStatusView({
                       alt=""
                       fill
                       sizes="(min-width: 640px) 346px, 60vw"
-                      className="object-cover object-[50%_20%] opacity-70 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:linear-gradient(to_right,transparent,black_55%)]"
+                      className="object-cover object-[50%_20%] sm:object-[50%_26%] opacity-70 mix-blend-screen brightness-[.55] contrast-150 grayscale [mask-image:linear-gradient(to_right,transparent,black_55%)]"
                     />
                   </div>
                   <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 p-3 text-sm">
