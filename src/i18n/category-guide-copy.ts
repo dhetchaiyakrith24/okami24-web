@@ -34,7 +34,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "ARGUS VMATE และ VINCI จาก VOOPOO",
           body:
-            "เครื่องกลุ่มนี้ใช้หัวพอตแบบเติมด้านบน จ่ายได้สูงสุด 30–40 วัตต์แล้วแต่รุ่น ARGUS G4 · ARGUS G4 mini และ VMATE i3 มีปุ่มเลื่อนปรับลม ตั้งแต่ MTL ที่ลมแน่น ไปจนถึง RDL ที่ลมโล่งขึ้น ตัวเครื่อง ARGUS ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว ส่วน [VMATE i3](/products/vmate-i3) ใส่หัวพอต VMATE ได้ทุกหัว ในช่วง 0.4–1.2 โอห์ม อยากเปลี่ยนแนวการสูบก็เปลี่ยนไปใช้หัวพอตค่าโอห์มอื่นได้ ส่วนหัวพอต Multi-Ohm ของ [ARGUS G4](/products/argus-g4) แค่กลับด้านหัวพอต ค่าโอห์มก็เปลี่ยนจาก 0.7 เป็น 1.0 โอห์ม",
+            "เครื่องกลุ่มนี้ใช้หัวพอตแบบเติมด้านบน จ่ายได้สูงสุด 30–40 วัตต์แล้วแต่รุ่น ARGUS G4 · ARGUS G4 mini และ VMATE i3 มีปุ่มเลื่อนปรับลม ตั้งแต่ MTL ที่ลมแน่น ไปจนถึง RDL ที่ลมโล่งขึ้น ARGUS G4 · G4 mini และ P3 ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว ส่วน [VMATE i3](/products/vmate-i3) ใส่หัวพอต VMATE ได้ทุกหัว ในช่วง 0.4–1.2 โอห์ม อยากเปลี่ยนแนวการสูบก็เปลี่ยนไปใช้หัวพอตค่าโอห์มอื่นได้ ส่วนหัวพอต Multi-Ohm ของ [ARGUS G4](/products/argus-g4) แค่กลับด้านหัวพอต ค่าโอห์มก็เปลี่ยนจาก 0.7 เป็น 1.0 โอห์ม",
         },
         {
           heading: "DRAG จาก VOOPOO",
@@ -66,7 +66,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "หัวพอตใช้ข้ามรุ่นได้ไหม",
           answer:
-            "ได้ ถ้าอยู่ในระบบหัวพอตเดียวกันค่ะ เช่น หัวพอต GPP ของ UWELL ใช้ได้ทั้ง G4 และ G5 ของ Caliburn เครื่อง ARGUS ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว และ VMATE i3 ใส่หัวพอต VMATE ได้ทุกหัว ก่อนซื้อ เช็คแถวหัวพอตที่ใช้ได้ บนหน้าสินค้าของเครื่องอีกครั้งนะคะ แล้วเลือกหัวพอตได้ที่หน้า [หัวพอต](/products/pods-cartridges) ส่วนคอยล์ดูได้ที่หน้า [คอยล์และอุปกรณ์เสริม](/products/coils-accessories) ค่ะ",
+            "ได้ ถ้าอยู่ในระบบหัวพอตเดียวกันค่ะ เช่น หัวพอต GPP ของ UWELL ใช้ได้ทั้ง G4 และ G5 ของ Caliburn ส่วน ARGUS G4 · G4 mini และ P3 ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว และ VMATE i3 ใส่หัวพอต VMATE ได้ทุกหัว ก่อนซื้อ เช็คในหน้าสินค้าของเครื่องอีกครั้งนะคะ ว่าใส่หัวพอตรุ่นไหนได้ แล้วเลือกหัวพอตได้ที่หน้า [หัวพอต](/products/pods-cartridges) ส่วนคอยล์ดูได้ที่หน้า [คอยล์และอุปกรณ์เสริม](/products/coils-accessories) ค่ะ",
         },
         {
           question: "สั่งแล้วกี่วันถึง",
@@ -93,7 +93,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "VOOPOO ARGUS, VMATE and VINCI",
           body:
-            "These devices take top-fill pods and deliver up to 30–40W, depending on the model. The ARGUS G4, ARGUS G4 mini and VMATE i3 have an airflow slider that runs from a tight MTL draw to a looser RDL draw. ARGUS devices take every ARGUS-family cartridge, and the [VMATE i3](/products/vmate-i3) takes every VMATE cartridge from 0.4 to 1.2Ω, so a different pod gives you a different draw. With the Multi-Ohm cartridge on the [ARGUS G4](/products/argus-g4), just turn the cartridge around and the resistance changes from 0.7Ω to 1.0Ω.",
+            "These devices take top-fill pods and deliver up to 30–40W, depending on the model. The ARGUS G4, ARGUS G4 mini and VMATE i3 have an airflow slider that runs from a tight MTL draw to a looser RDL draw. The ARGUS G4, G4 mini and P3 take every ARGUS-family cartridge, and the [VMATE i3](/products/vmate-i3) takes every VMATE cartridge from 0.4 to 1.2Ω, so a different pod gives you a different draw. With the Multi-Ohm cartridge on the [ARGUS G4](/products/argus-g4), just turn the cartridge around and the resistance changes from 0.7Ω to 1.0Ω.",
         },
         {
           heading: "VOOPOO DRAG",
@@ -125,7 +125,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "Do pods fit across models?",
           answer:
-            "Yes, within the same pod system. The Caliburn G4 and G5 both use UWELL's GPP pods, ARGUS devices take every ARGUS-family cartridge, and the VMATE i3 takes every VMATE cartridge. Before you buy, check the “Pod platform” row on the device's page, then pick your pods on the [Pods & Cartridges](/products/pods-cartridges) page. Coils are on the [Coils & Accessories](/products/coils-accessories) page.",
+            "Yes, within the same pod system. The Caliburn G4 and G5 both use UWELL's GPP pods, the ARGUS G4, G4 mini and P3 take every ARGUS-family cartridge, and the VMATE i3 takes every VMATE cartridge. Before you buy, check the “Pod platform” row on the device's page, then pick your pods on the [Pods & Cartridges](/products/pods-cartridges) page. Coils are on the [Coils & Accessories](/products/coils-accessories) page.",
         },
         {
           question: "How soon will my order arrive?",
@@ -152,7 +152,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "VOOPOO ARGUS、VMATE 与 VINCI",
           body:
-            "这一类采用顶部注油的烟弹，最高输出 30–40W，视型号而定。ARGUS G4、ARGUS G4 mini 和 VMATE i3 配有进气滑块，从偏紧的 MTL 到更通透的 RDL 都能调。ARGUS 主机兼容整个 ARGUS 烟弹家族，[VMATE i3](/products/vmate-i3) 兼容全部 VMATE 烟弹，阻值 0.4–1.2Ω，换一颗烟弹就能换一种吸感。[ARGUS G4](/products/argus-g4) 搭配 Multi-Ohm 烟弹时，把烟弹调转方向插入，阻值就从 0.7Ω 变为 1.0Ω。",
+            "这一类采用顶部注油的烟弹，最高输出 30–40W，视型号而定。ARGUS G4、ARGUS G4 mini 和 VMATE i3 配有进气滑块，从偏紧的 MTL 到更通透的 RDL 都能调。ARGUS G4、G4 mini 和 P3 兼容整个 ARGUS 烟弹家族，[VMATE i3](/products/vmate-i3) 兼容全部 VMATE 烟弹，阻值 0.4–1.2Ω，换一颗烟弹就能换一种吸感。[ARGUS G4](/products/argus-g4) 搭配 Multi-Ohm 烟弹时，把烟弹调转方向插入，阻值就从 0.7Ω 变为 1.0Ω。",
         },
         {
           heading: "VOOPOO DRAG",
@@ -184,7 +184,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "烟弹可以跨型号通用吗？",
           answer:
-            "同一烟弹系统内可以通用。例如 Caliburn G4 与 G5 都使用 UWELL 的 GPP 烟弹，ARGUS 主机兼容整个 ARGUS 烟弹家族，VMATE i3 兼容全部 VMATE 烟弹。购买前请再核对设备页面规格表中的烟弹兼容一栏，然后到 [烟弹](/products/pods-cartridges) 页面选购；雾化芯请见 [雾化芯与配件](/products/coils-accessories)。",
+            "同一烟弹系统内可以通用。例如 Caliburn G4 与 G5 都使用 UWELL 的 GPP 烟弹，ARGUS G4、G4 mini 和 P3 兼容整个 ARGUS 烟弹家族，VMATE i3 兼容全部 VMATE 烟弹。购买前请再核对设备页面规格表中的烟弹兼容一栏，然后到 [烟弹](/products/pods-cartridges) 页面选购；雾化芯请见 [雾化芯与配件](/products/coils-accessories)。",
         },
         {
           question: "下单后多久能到？",
