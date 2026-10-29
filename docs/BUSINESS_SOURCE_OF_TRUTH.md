@@ -392,10 +392,9 @@ cancellation (the bot's monthly quota is small) — staff see it in /staff.
   dropship) bills the shop 35 THB shipping per order ("คลังคิดพี่ 35 บาท") — internal cost, never shown to customers.
 - **Free shipping threshold:** 500 THB, every customer (owner, chat 2026-10-26: "ฟรีไปเลยครับ 500 ขึ้นไป" — the line had stood
   unconfirmed since 2026-08-30). Members (once sign-up exists, queue Q4) may get free shipping from 300 THB (owner 2026-10-24) — not live.
-- **Cut-off (owner 2026-09-06, answer 3):** orders with payment made **and reported before 15:00**
-  ship the same day; later ones ship the next working day. (The owner wrote "สั่งก่อน 15:00"; the
-  site phrases it as "โอนและแจ้งชำระเงินก่อน 15:00" because nothing ships before the admin has
-  verified the payment — see §9. If the owner meant "order placed before 15:00", change both.)
+- **Cut-off (owner 2026-10-29, chat: "ปรับทั้งหมดจาก 15.00 เป็น 12.30 สั่งก่อน 12.30 ส่งภายในวันนี้"; was 15:00 since 2026-09-06):**
+  orders with payment made **and reported before 12:30** ship the same day; later ones ship the next working day. The site
+  phrases it as "โอนและส่งสลิปก่อน 12:30" because nothing ships before the admin has verified the payment — see §9.
 - **Delivery time (answer 3):** 1–3 days after dispatch.
 - **Shipping days (answer 4):** Monday–Saturday; no dispatch on Sundays and Thai public holidays.
 - **Carriers (answer 5):** Thailand Post (EMS) and Flash Express — chosen per destination. No
