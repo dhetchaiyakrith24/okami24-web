@@ -4,12 +4,13 @@
  *   1. the amounts: 299 / 300 / 499 / 500 / 799 / 800, for a guest, a member with the month's benefit open, and a member
  *      who already used it;
  *   2. the member benefit is once per calendar month (Bangkok): the second order of the month pays 35 / 50, the month
- *      rolls over at midnight Bangkok time, a cancelled order gives it back; 800+ orders never use it up;
+ *      rolls over at midnight Bangkok time, a cancelled order gives it back;
  *   3. it is counted per member, checkout phone, recipient phone (as typed, dashes and all) and address (house no. +
  *      sub-district + postcode, owner 29/10) — never by name; guests never get it, but their phone / address is still
  *      looked up so the cart's sign-in line can stop promising it;
- *   4. pre-tier (NULL) orders count for nothing; first-version (29/10 evening) orders count only when a member got 0
- *      below 800 (`first_member_order`, or `monthly_free` placed signed in);
+ *   4. what uses it up (owner 30/10 "นับรวมครับ เพราะมีการสั่งซื้อแม้ยอดจะเกิน"): any MEMBER order that shipped for 0 —
+ *      the 300 benefit, the 800 tier, the first version's (29/10 evening) member first order / 500 tier; guest orders, orders
+ *      that paid 35 / 50 and pre-tier (NULL) orders count for nothing;
  *   5. the cart's "add ฿n more" step and the note keys.
  *
  * The history part runs on a real SQLite database built in memory from every migration in src/lib/db/migrations/ — the
@@ -60,7 +61,7 @@ for (const [subtotal, history, rule, fee, label] of [
   [499, MEMBER, "member_monthly", 0, "member 499"],
   [500, MEMBER, "member_monthly", 0, "member 500"],
   [799, MEMBER, "member_monthly", 0, "member 799"],
-  [800, MEMBER, "over_800", 0, "member 800 (keeps the month's benefit)"],
+  [800, MEMBER, "over_800", 0, "member 800"],
   [299, MEMBER_USED, "standard", 50, "member, benefit used, 299"],
   [300, MEMBER_USED, "standard", 50, "member, benefit used, 300"],
   [499, MEMBER_USED, "standard", 50, "member, benefit used, 499"],
@@ -126,11 +127,13 @@ for (const f of files) db.exec(fs.readFileSync(path.join(MIGRATIONS, f), "utf8")
 db.prepare("INSERT INTO customers (id, phone) VALUES (1, '0811111111'), (2, '0822222222'), (3, '0833333333'), (4, '0844444444'), (5, '0855500000'), (6, '0866600000')").run();
 db.prepare("INSERT INTO members (id) VALUES (1), (2), (3), (4), (5), (6)").run();
 let nextId = 1;
+/** The fee each stored rule charged (NULL = pre-tier, stored 0 here so only the rule decides). */
+const FEE_OF: Record<string, number> = { over_500: 35, monthly_used: 35, standard: 50 };
 function addOrder(o: { customer: number; member?: number; rule: string | null; status?: string; at: string; recipientPhone?: string; addr?: [string, string, string] }): number {
   const id = nextId++;
   db.prepare(
-    "INSERT INTO orders (id, order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, created_at) VALUES (?, ?, 'tok', ?, ?, ?, 400, 0, ?, 400, ?)"
-  ).run(id, `OK-T-${id}`, o.customer, o.member ?? null, o.status ?? "pending_payment", o.rule, o.at);
+    "INSERT INTO orders (id, order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, created_at) VALUES (?, ?, 'tok', ?, ?, ?, 400, ?, ?, 400, ?)"
+  ).run(id, `OK-T-${id}`, o.customer, o.member ?? null, o.status ?? "pending_payment", FEE_OF[o.rule ?? ""] ?? 0, o.rule, o.at);
   db.prepare(
     "INSERT INTO order_shipping_addresses (order_id, recipient_name, phone, line1, subdistrict, district, province, postal_code) VALUES (?, 'ก', ?, ?, ?, 'อ', 'จ', ?)"
   ).run(id, o.recipientPhone ?? "0899999999", ...(o.addr ?? ["1", "ต", "10110"]));
@@ -163,11 +166,18 @@ check("a recipient phone matches an earlier order's checkout phone", used(3, ["0
 const guestThere = hist(null, ["0822222222"]);
 check("a guest at that phone: benefitUsed is known (the sign-in line then promises nothing), the fee is the guest fee", guestThere.benefitUsed && !guestThere.isMember && show(decideShipping(300, guestThere)) === "standard 50", JSON.stringify(guestThere));
 
-addOrder({ customer: 3, member: 3, rule: "over_800", at: "2026-10-07T03:00:00.000Z", recipientPhone: "0833333333" });
 addOrder({ customer: 3, member: 3, rule: null, at: "2026-10-08T03:00:00.000Z", recipientPhone: "0833333333" });
 addOrder({ customer: 3, member: 3, rule: "over_500", at: "2026-10-08T04:00:00.000Z", recipientPhone: "0833333333" });
 addOrder({ customer: 3, member: 3, rule: "standard", at: "2026-10-08T05:00:00.000Z", recipientPhone: "0833333333" });
-check("800+, 35, 50 and pre-tier (NULL) orders use nothing up", used(3, ["0833333333"]) === false);
+check("35, 50 and pre-tier (NULL) orders use nothing up", used(3, ["0833333333"]) === false);
+db.prepare("INSERT INTO members (id) VALUES (10)").run();
+db.prepare("INSERT INTO customers (id, phone) VALUES (10, '0810101010'), (11, '0811011011')").run();
+addOrder({ customer: 10, member: 10, rule: "over_800", at: "2026-10-07T04:00:00.000Z", recipientPhone: "0810101010" });
+check("owner 30/10: a member's 800+ order (0 shipping) uses this month's benefit up", used(10, ["0810101010"]) === true);
+check("…so that member's next 300 order this month pays 50, a 500 order 35", show(decideShipping(300, hist(10, []))) === "standard 50" && show(decideShipping(500, hist(10, []))) === "over_500 35");
+check("…and it is back on 1/11", show(decideShipping(300, hist(10, [], null, firstSecondOfNov))) === "member_monthly 0");
+addOrder({ customer: 11, rule: "over_800", at: "2026-10-07T05:00:00.000Z", recipientPhone: "0811011011" });
+check("a guest's 800+ order uses nothing up", used(null, ["0811011011"]) === false);
 
 // First version (29/10 evening) orders.
 addOrder({ customer: 4, member: 4, rule: "first_member_order", at: "2026-10-09T03:00:00.000Z", recipientPhone: "0844444444" });
@@ -182,7 +192,7 @@ db.prepare("INSERT INTO members (id) VALUES (9)").run();
 db.prepare("INSERT INTO customers (id, phone) VALUES (9, '0899000000')").run();
 const bigFirst = addOrder({ customer: 9, member: 9, rule: "first_member_order", at: "2026-10-09T07:00:00.000Z", recipientPhone: "0899000000" });
 db.prepare("UPDATE orders SET subtotal = 900, total = 900 WHERE id = ?").run(bigFirst);
-check("first version: a first_member_order of 800+ (0 anyway) does not count", used(9, ["0899000000"]) === false);
+check("first version: a first_member_order of 800+ counts too (owner 30/10)", used(9, ["0899000000"]) === true);
 
 // Anti-reuse (owner 29/10, BSOT §10): phone OR address (house no. + sub-district + postcode); the name never blocks.
 db.prepare("INSERT INTO members (id) VALUES (7), (8)").run();
