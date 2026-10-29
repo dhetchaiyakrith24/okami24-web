@@ -25,9 +25,9 @@ Rewritten 30/10 ~02:25 by the 2nd main chat (Friday, local_10d3f4d1) — the 1st
     checker re-check running; then RELX Creator 20K on its own branch (owner §18 rule: 5 coloured pods + per-flavour cue; 16 known-colour flavours) · SKE Crystal whole set
     (grey studio plate under every colour; Double Mint rendered, not listed) · later nexSwitch / MQ Bar / Marbo. Credits 40 left of 72. Hand-over note =
     `…\side-session-notes\local_dbb36e53…\images-chat5-notes.md` (AppData\Local\Claude-Data). 4 RELX flavours without the shop's pack design are left on purpose.
-  b tracking-sync (local_824f03fa-5eaa-405f-9139-929c79f0c3b9): NEW JOB 30/10 = EMS/DHL auto-pick (Phuket 83xxx + Bangkok 10220/10250 = DHL, else EMS) sent via
+  b tracking-sync (local_824f03fa-5eaa-405f-9139-929c79f0c3b9): DONE 30/10 — #1029 (carrier by postcode, merged f5e7dadd) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout, merged ccbf5e5e); the owner/admin test = รอพี่ตรวจ item 80. NEW JOB was 30/10 = EMS/DHL auto-pick (Phuket 83xxx + Bangkok 10220/10250 = DHL, else EMS) sent via
     method_title + tracking step-2 parser (not connected) + a DUPLICATE-ADDRESS check (it found 2 real gaps → its own small PR) + a plain-Thai "who does what" list for the
-    owner/admin (one test order, admin on stand-by, admin deletes it). Draft PR #1029. Steps 3 (auto-approve "pass" slips) = MONEY, not part of it: owner yes + EasySlip first.
+    owner/admin (one test order, admin on stand-by, admin deletes it). Steps 3 (auto-approve "pass" slips) = MONEY, not part of it: owner yes + EasySlip first.
   c Archived 30/10: images-5 · seo-push (#1019 #1016 done) · shipping-rules (#1024 done). seo-push's remaining dates (re-measure 06/11 · 13/11) belong to the new routine.
   d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
     request indexing (≤ 8 URLs) · short Thai report. Its permission mode was NOT saved → the owner sets Auto on the task (Scheduled) or presses "Run now" once.
@@ -35,7 +35,7 @@ Rewritten 30/10 ~02:25 by the 2nd main chat (Friday, local_10d3f4d1) — the 1st
   a DONE (#1023 #1025 #1028): the order-page art — wait for the owner's eye on the live page (taste note: at 390 the account rows run over the character's torso).
      THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
   b DONE: thank-you card. c DONE: SEO routine created (see 2 d).
-  d CARRIER AUTO-PICK = 2 b (in flight). After its PR: the owner OKs ONE test order → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
+  d CARRIER AUTO-PICK = built (2 b). NEXT: the owner OKs ONE test order (รอพี่ตรวจ 80) → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders: owner presses "ส่งรายการให้คลังแล้ว" (#0006 done; #0010 #0011 #0014 #0015 #0017 #0020 #0022 were left at 22:30).
   f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
      off-site backup (77) after the back office.
