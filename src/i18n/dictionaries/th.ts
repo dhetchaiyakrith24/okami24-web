@@ -614,6 +614,8 @@ export const th: Dictionary = {
     totalsTitle: "ยอดรวมทั้งหมด",
     paymentInstructionsTitle: "วิธีการชำระเงิน",
     paymentTransferTitle: "โอนเข้าบัญชีนี้",
+    paymentCardTag: "PAYMENT CARD",
+    paymentAmountLabel: "ยอดที่ต้องโอน",
     paymentBankLabel: "ธนาคาร",
     paymentAccountNameLabel: "ชื่อบัญชี",
     paymentAccountNumberLabel: "เลขที่บัญชี",

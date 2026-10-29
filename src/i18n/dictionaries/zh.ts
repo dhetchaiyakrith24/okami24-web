@@ -574,6 +574,8 @@ export const zh: Dictionary = {
     totalsTitle: "总计",
     paymentInstructionsTitle: "付款说明",
     paymentTransferTitle: "转账至以下账户",
+    paymentCardTag: "PAYMENT CARD",
+    paymentAmountLabel: "应转账金额",
     paymentBankLabel: "银行",
     paymentAccountNameLabel: "户名",
     paymentAccountNumberLabel: "账号",
