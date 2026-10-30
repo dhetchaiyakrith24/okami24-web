@@ -8,13 +8,13 @@ Child chat of the main chat (Friday). Everything below was checked against git /
 | #1048 | SKE Crystal B20000 — 8 flavours re-shot as edits of the Grape Yoyo scene, one shared matte, Double Mint listed | 14 | merged ccdb85da, live |
 | #1055 | Caliburn G3 Pro KOKO re-centred (stray specks in 7 sources) · INFY PLUS 2.5 ml 18 flavours relabelled onto the Strawberry photo | 0 | merged 0b610ea7, live |
 | #1066 | Nexswitch 16K kit (10 colours + card) · MQ Bar 22K (11 + card) · Marbo 10K lookalike (10 + card) — one-scene re-shoots | 68 | merged a234a084, live |
-| #1070 | Marbo 10K lookalike back to the shared SALTHUB M Bar 10K photos (owner 31/10 rejected the re-shoot) | 0 | in review at writing |
-| #1067 | KS / kardinal Quikpro 15K pod — 15 boxes straight-on from one scene + same pod | 30 | held: owner checks the comparison sheets first |
+| #1070 | Marbo 10K lookalike back to the shared SALTHUB M Bar 10K photos (owner 31/10 rejected the re-shoot) | 0 | merged 7f277088, live |
+| #1067 | KS / kardinal Quikpro 15K pod — 15 boxes straight-on from one scene + same pod (owner passed the "maker poster \| new photo" sheets 31/10) | 30 | merged 56b2397a |
 
 Credits: owner yes in the images chat 30/10 "อนุมัติไม่เกิน 106" → 98 used (1591.4 → 1493.4, equals the job count). SKE 14 came before that, from the earlier batch approval.
 
 ## Open
-- #1067 Kardinal: comparison sheets "maker poster | new photo" per box in the images-6 worktree `_incoming/img-3110/kardinal-compare/` (15 PNG + `_all.jpg`). Merge only after the owner's OK (relayed by Friday). Checker round 1 failed (Grape Lychee pink, pod halo) → fixed in ea0d5a67; round 2 still to run after merging main.
+- Nothing of this chat is left in flight. Kardinal comparison sheets stay in the images-6 worktree `_incoming/img-3110/kardinal-compare/` (checker rounds: 1 Grape Lychee pink + pod halo, 2 light line under the pod base, 3 PASS).
 - Marbo 10K lookalike: Watermelon Ice and Mocha Latte have no photo (no real colour source).
 - RELX Pod Pro 2: Lime Tobacco, Lemon Zest, Ice Tobacco, Blueberry Splash — no source found (Chrome search chat 5 + web search chat 7).
 
