@@ -2474,7 +2474,7 @@ const allGuides: Guide[] = [
         heading: "สายองุ่น: ชื่อที่มี Grape",
         paragraphs: [
           "องุ่นก็เป็นอีกสายที่ลูกค้าของร้านถามถึงบ่อย และหลายรุ่นก็มีองุ่นให้เลือกมากกว่าหนึ่งแบบ คนที่หาองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape ซึ่งมีในรุ่น MOOOD Monster 14K · Muro Connector 20K และ INFY 20K ส่วนองุ่นคู่กับลิ้นจี่ ชื่อในรายการคือ Grape Lychee มีใน RELX Smash Go 12K · MOOOD Monster 14K และ INFY 20K",
-          "ชื่อที่มีองุ่นคู่กับอย่างอื่นก็อยู่สายนี้ เช่น Grape Apple กับ Sakura Grape ใน TFIT M Power 20K · Funta Grape กับ Aloe Grape ใน JOIWAY F3 และ Grape Aloe ในหัวพอต [Zero Cartridge](/products/zero-cartridge) ส่วน Grape Ice ซึ่งมีทั้งในรุ่น JOIWAY F3 และ WOTOFO nexBAR 18K เราจัดไว้สายเย็น",
+          "ชื่อที่มีองุ่นคู่กับอย่างอื่นก็อยู่สายนี้ เช่น Grape Apple กับ Sakura Grape ใน TFIT M Power 20K · Aloe Grape ใน JOIWAY F3 และ Grape Aloe ในหัวพอต [Zero Cartridge](/products/zero-cartridge) ส่วน Grape Ice ซึ่งมีทั้งในรุ่น JOIWAY F3 และ WOTOFO nexBAR 18K เราจัดไว้สายเย็น",
           "อีกชื่อที่ควรรู้คือ Grapefruit ในรุ่น Zero Cartridge ชื่อมีคำว่า Grape ก็จริง แต่ Grapefruit คือเกรปฟรุต ผลไม้ตระกูลส้ม เราจึงจัดไว้สายผลไม้",
         ],
       },
