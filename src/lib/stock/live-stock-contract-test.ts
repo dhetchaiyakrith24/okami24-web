@@ -13,6 +13,7 @@
  */
 
 import { codeFor, liveQuantity, liveState, lookupFrom, quantityLookupFrom, type LiveReport } from "./live-rules";
+import { COUNT_CEILING, countKind, publicCount } from "./count-rules";
 import { lineNames } from "@/lib/commerce/line-image";
 import { resolveProductRef } from "@/lib/commerce/catalog-resolver";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
@@ -143,6 +144,10 @@ if (sellableLegacy) {
   check("count: lookup = the function", quantityLookupFrom(new Map([[code, rep(5)]]))(slug, id) === 5);
 }
 check("count: an option without a code → no cap", liveQuantity(new Map(), "no-such-product", "x") === null);
+check("shown count: 1..20 as is", publicCount(1) === 1 && publicCount(COUNT_CEILING) === COUNT_CEILING);
+check("shown count: above the ceiling leaves as ceiling + 1 (more than)", publicCount(187) === COUNT_CEILING + 1);
+check("shown count: 0 / none → nothing to show", publicCount(0) === null && publicCount(null) === null);
+check("shown count: 1..3 low · 4..20 a count · above 20 many", countKind(1) === "low" && countKind(3) === "low" && countKind(4) === "count" && countKind(20) === "count" && countKind(21) === "many");
 
 // 4. an unavailable cart line still shows the product and option names (not the slug)
 if (sellableLegacy) {

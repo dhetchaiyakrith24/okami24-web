@@ -58,11 +58,15 @@ export function MobileBuyBar({
   priceText,
   optionLabel,
   orderingEnabled,
+  lowText = null,
   children,
 }: {
   priceText: string | null;
   optionLabel: string | null;
   orderingEnabled: boolean;
+  /** Only at ≤ LOW_STOCK_AT (owner 30/10, designer 30/10): the short "เหลือ N" after the option name — the name truncates
+   *  first; on a product without options the full low-stock words stand alone. A plain count never shows here. */
+  lowText?: string | null;
   children: ReactNode;
 }) {
   return (
@@ -74,7 +78,12 @@ export function MobileBuyBar({
           inside keeps its 44px minimum. */}
       <div className="mx-auto flex min-h-14 w-full max-w-[1400px] items-center gap-3 px-5 py-1.5 sm:px-8">
         <div className="min-w-0 flex-1">
-          {optionLabel && <p className="truncate text-xs text-foreground-muted">{optionLabel}</p>}
+          {(optionLabel || lowText) && (
+            <p className="flex min-w-0 text-xs">
+              {optionLabel && <span className="min-w-0 truncate text-foreground-muted">{optionLabel}</span>}
+              {lowText && <span className="shrink-0 whitespace-pre text-low">{optionLabel ? ` · ${lowText}` : lowText}</span>}
+            </p>
+          )}
           {priceText && <p className="font-display text-lg font-bold leading-tight text-foreground">{priceText}</p>}
         </div>
         <CartBarButton orderingEnabled={orderingEnabled} />
