@@ -219,7 +219,6 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Apple Juice",
   "Black Berry",
   "Double Mint",
-  "Funta Grape",
   "Green Mango",
   "Green Slush",
   "Honey Lemon",
