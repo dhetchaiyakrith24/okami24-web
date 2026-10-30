@@ -37,6 +37,8 @@
   --state-verified: #7ed08a;
   --state-unverified: #d6ab52;
   --state-danger: #e2685f;
+  /* Low stock (owner 26/10, HANDOFF §18): the unverified amber under its own name — green in stock · amber low · red out. */
+  --state-low: #d6ab52;
 
   /* Type scale (fluid) */
   --text-display: clamp(2.75rem, 2rem + 3.5vw, 6rem);
@@ -73,6 +75,7 @@
   --color-verified: var(--state-verified);
   --color-unverified: var(--state-unverified);
   --color-danger: var(--state-danger);
+  --color-low: var(--state-low);
 
   --font-sans: var(--font-body);
   --font-display: var(--font-display);

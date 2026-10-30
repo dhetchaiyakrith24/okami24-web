@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
+import { CardSalesBadge } from "@/components/catalog/SalesBadge";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotName } from "@/i18n/product-names-en";
@@ -88,11 +89,15 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
         {/* Round 30.4ค batch 8: brand mark and category name keep the mono look in Thai (label-lang.ts). */}
         {/* A brandless product (owner ruling, Pod-180) shows no brand; the empty line keeps the card rows aligned. */}
-        {product.brandName ? (
-          <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang={labelLang(product.brandName)}>{product.brandName}</span>
-        ) : (
-          <span aria-hidden="true" className="label-mono min-h-[1lh] text-[0.65rem] max-lg:text-[0.6rem]" />
-        )}
+        {/* The sales badge sits at the right end of the brand line, never on the photo (designer 30/10). */}
+        <div className="flex min-w-0 items-center justify-between gap-2">
+          {product.brandName ? (
+            <span className="label-mono truncate text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang={labelLang(product.brandName)}>{product.brandName}</span>
+          ) : (
+            <span aria-hidden="true" className="label-mono min-h-[1lh] text-[0.65rem] max-lg:text-[0.6rem]" />
+          )}
+          <CardSalesBadge slug={product.slug} soldOut={product.availabilityStatus === "out-of-stock"} />
+        </div>
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{pilotName(product.slug, product.displayName, locale)}</h3>
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}

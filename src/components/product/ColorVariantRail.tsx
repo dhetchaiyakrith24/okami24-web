@@ -1,8 +1,10 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
+import { LowStockDot, useLowStockTitle } from "./StockCount";
 
 /**
  * Real manufacturer color/finish selector for a Legacy Product Detail hero (owner quality review,
@@ -39,6 +41,8 @@ export function ColorVariantRail({
   onSelectAll,
   allChips,
   outOfStockLabel,
+  counts,
+  countLine,
   className,
 }: {
   variants: ColorVariant[];
@@ -51,6 +55,10 @@ export function ColorVariantRail({
   /** More than one "all" image: one pill per image, in order (replaces `allLabel`/`isAllSelected`/`onSelectAll`). */
   allChips?: { label: string; selected: boolean; onSelect: () => void }[];
   outOfStockLabel?: string;
+  /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
+  counts?: Record<string, number>;
+  /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
+  countLine?: ReactNode;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -60,13 +68,15 @@ export function ColorVariantRail({
   const selectedPill = pills.find((p) => p.selected);
   const selected = variants.find((v) => v.id === selectedId);
   const anyAll = !!selectedPill;
+  const lowTitle = useLowStockTitle();
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock" }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id] }))}
         selectedId={anyAll ? null : selectedId}
+        countLine={countLine}
         onSelect={onSelect}
         label={label}
         pills={pills}
@@ -96,15 +106,16 @@ export function ColorVariantRail({
         ))}
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
+          const name = outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : lowTitle(v.name, counts?.[v.id]) ?? v.name;
           return (
             <button
               key={v.id}
               type="button"
               data-option-id={v.id}
               onClick={() => onSelect(v.id)}
-              aria-label={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
+              aria-label={name}
               aria-pressed={!anyAll && v.id === selectedId}
-              title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
+              title={name}
               className={cn(
                 "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
                 !anyAll && v.id === selectedId
@@ -123,6 +134,7 @@ export function ColorVariantRail({
                   aria-hidden
                 />
               )}
+              {!outOfStock && <LowStockDot left={counts?.[v.id]} />}
             </button>
           );
         })}
