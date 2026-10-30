@@ -284,7 +284,7 @@ const META_DESCRIPTION_MAX = 160;
  *  left hanging when the words after it were cut ("…มี 10", "…ส่วน", "…ของ VOOPOO" is fine, "…ของ"
  *  is not). Thai prose marks phrase boundaries with spaces only, so this is the second half of
  *  the boundary test: cut at a space, then back off past any dangling opener. */
-const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "มีให้เลือก", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
+const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "มีให้เลือก", "ถึง", "/", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
 const NUMERIC_TAIL = /^[\d,.]+$/u;
 
 /**
@@ -332,7 +332,7 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
-  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตสีดำบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
+  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
   // Round SEO D (07/10) — head-only lines that open with the model name (the page's own shortDescription stays as
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
@@ -345,15 +345,15 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
-  "caliburn-g3-pro": "Caliburn G3 Pro มีจอเต็มหน้าเครื่องบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ให้หัวพอต 0.4 กับ 0.9 โอห์มมาในกล่อง",
+  "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
   "caliburn-g4-classic": "Caliburn G4 Classic แบต 1400mAh ใช้สีไฟบอกแบตที่เหลือแทนจอ สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
-  "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้วบอกแบต วัตต์และโอห์ม ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
+  "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้ว ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
   "argus-g4-mini": "VOOPOO ARGUS G4 mini ตัวเครื่องเล็กลงแต่แบต 1650mAh เท่ารุ่นใหญ่ ปรับได้ 5–30 วัตต์ ไม่มีจอ และสูบได้เลยโดยไม่ต้องกดปุ่ม",
   "tfit-m-power-20k": "TFIT M Power 20K พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C ปรับช่องลมได้",
-  "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ รองรับสูงสุด 20,000 พัฟ มีจอ LED",
+  "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ สูงสุด 20,000 พัฟ มีจอ LED",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
-  "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
+  "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม และ TPP-DM4 0.3 โอห์ม ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
   "coil-54": "หัวพอตเปล่า Feelin Mini จากแบรนด์ NEVOKS สำหรับเครื่อง Feelin Mini ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
   "coil-55": "หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL สำหรับเครื่อง Caliburn G2 ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
   "coil-56": "หัวพอตเปล่า PnP-X จากแบรนด์ VOOPOO ความจุ 5mL สี Silver ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
@@ -366,10 +366,10 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-14 (LAMBDA's own page).
-  "iqosheet-14": "LAMBDA i8 เครื่องอุ่นยาสูบระบบเหนี่ยวนำ แบต 3200mAh ใช้ได้ 35–40 ก้านต่อการชาร์จ ปรับอุณหภูมิ 200–300°C ดูได้ทั้ง 6 สีที่ LAMBDA ทำออกมา",
+  "iqosheet-14": "LAMBDA i8 เครื่องอุ่นยาสูบระบบเหนี่ยวนำ แบต 3200mAh ใช้ได้ 35–40 ก้านต่อการชาร์จ ปรับอุณหภูมิ 200–300°C มี 6 สี",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-17.
-  "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 6 สีที่ IQOS ทำออกมา",
+  "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA เท่านั้น",
   "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
   "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
@@ -406,9 +406,14 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
-  "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ ตัวเครื่องมี 4 สี",
+  "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ มี 4 สี",
   "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",
   "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
+  // Meta ending 30/10 (owner: "สั่งบนเว็บหรือ LINE @okm24", 7 characters longer): these lines were cut by the 160 trim
+  // (seo-auditor 30/10: "DRAG 3", "มาโบ 9K" lost, 8 ended mid-phrase) — shortened to fit with the price line, same facts.
+  "m-bar-9k": "พอตใช้แล้วทิ้งชาร์จซ้ำได้ของ SALTHUB ใช้ salt nic 30mg มี 24 กลิ่น หลายร้านเรียกรุ่นนี้ว่า Marbo หรือมาโบ 9K",
+  "caliburn-g4-pro-koko": "พอตแบตเตอรี่ 2000mAh 35 วัตต์ จอทัชสกรีน 2 นิ้ว ระบบ Pro-FOCS 4.0 สลับโหมดได้ทั้ง Storm / Waves / Custom",
+  "argus-g3-mini": "พอตคิทเหมาะมือใหม่ แบตเตอรี่ 1350mAh สูงสุด 30 วัตต์ ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ ด้วยชิป GENE.AI ของ VOOPOO",
 };
 
 /** Rows C17 / C18 — keyed by guide id. Round SEO ข (owner เคาะ 2026-09-21): five more head-only
