@@ -120,8 +120,10 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // SEO ฉ batch 3: the 18K spec line is the product page's (wotofo-nexbar-18k); the first clause is the brand lede in
   // brands.ts. "สอบถาม", not "สั่ง": the model is sold out.
   wotofo: () => ({
-    title: `WOTOFO พอตใช้แล้วทิ้งตระกูล nexBAR${OKM_TITLE_SUFFIX}`,
-    description: "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR ดูสเปกและรายชื่อกลิ่นตามที่ผู้ผลิตประกาศไว้ได้ในหน้าสินค้า สอบถามเพิ่มเติมได้ทาง LINE @okm24",
+    // SEO brand push heads (30/10, thai-copy + seo-auditor 30/10): brand level, both lines (nexBAR disposables + the nexPOD
+    // switch-style kit); no model number (the product pages own them). Neither has a price on the site → "สอบถาม".
+    title: `WOTOFO ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
+    description: "WOTOFO มีทั้งพอตใช้แล้วทิ้ง nexBAR และพอตเปลี่ยนหัว nexPOD ที่ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
   }),
   nevoks: (priceOf) => {
     const p = priceOf("coil-54");
@@ -157,8 +159,10 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // — /products/infy-20k owns "infy 20k". Title kept exactly as the default (brandTitleTh + the layout suffix); the
   // description reuses the lede's first half (the one Thai-name sentence, owner 07/10) without the model. thai-copy 08/10.
   infy: () => ({
-    title: "INFY ของแท้ทุกรุ่นที่ร้านมี — OKami24",
-    description: "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ OKami24 มีพอตใช้แล้วทิ้งของแท้ พร้อมบอกราคาไว้บนหน้าเว็บ สั่งทาง LINE @okm24",
+    // SEO brand push heads (30/10, thai-copy): the page also sells the INFY POD device and INFY PLUS pods — the head names the
+    // three kinds, still no "20K" (row 8 of SEO_BASELINE, owned by /products/infy-20k). Title in the RELX pattern.
+    title: `INFY ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
+    description: "INFY หรือที่หลายคนเรียกว่าอินฟี่ มีทั้งพอตใช้แล้วทิ้ง ตัวเครื่องแบบเปลี่ยนหัว และหัวพอตคอยล์ในตัว น้ำยาหมดก็เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น",
   }),
 };
 
@@ -331,7 +335,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
   "caliburn-g3": "Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro เป็นพอตซิสเต็มจาก UWELL แบต 900mAh ปรับได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ หน้านี้รวมทุกสีที่ UWELL ผลิต",
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
-  "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตเติมน้ำยามาแล้ว 18mL คอยล์ 0.8Ω หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
+  "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอเต็มหน้าเครื่องบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ให้หัวพอต 0.4 กับ 0.9 โอห์มมาในกล่อง",
@@ -367,7 +371,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "eliquid-72": "Pepo Salt Nic น้ำยา salt nic มีให้เลือก 5 กลิ่น",
   "eliquid-73": "Dundu Salt Nic น้ำยา salt nic กลิ่นองุ่น",
   "pod-149": "SKE Crystal B20000 พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 20,000 พัฟ มีให้เลือก 8 กลิ่น",
-  "pod-169": "INFY PLUS หัวพอตความจุ 2.5ml คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ มีให้เลือก 28 กลิ่น",
+  "pod-169": "INFY PLUS หัวพอตความจุ 2.5mL คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ มีให้เลือก 28 กลิ่น",
   "pod-154": "Pop Up 10K หัวพอต หัวละสูงสุด 10,000 พัฟ ใช้กับฐานแบตเตอรี่ของ Pop Up มีให้เลือก 18 กลิ่น",
   "pod-142": "Reswa Sportcan 12K พอตใช้แล้วทิ้งทรงกระป๋อง ชื่อรุ่นระบุ 12,000 พัฟ มีให้เลือก 5 กลิ่น",
   "nexswitch-16k-kit": "Nexswitch 16K ชุดเครื่องพร้อมหัวพอต 1 หัว หัวละสูงสุด 16,000 พัฟ มีให้เลือก 10 กลิ่น",
@@ -382,7 +386,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "vazer-one-pod": "หัวพอต Vazer One มีให้เลือก 21 กลิ่น",
   "foli-bar-15k": "Foli Cool Bar 15K พอตใช้แล้วทิ้ง 15,000 พัฟ มีให้เลือก 12 กลิ่น",
   "super-cool-saltnic": "น้ำยา Super Cool นิโคตินแบบ salt nic มีให้เลือก 10 กลิ่น",
-  "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
+  "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C มีให้เลือก 19 สี",
   "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
   // SEO brand push 30/10: searchers type "relx pod pro 2" (the name printed on the pack); the fit is RELX's own sentence on the Infinity 2 Plus page.
   // 118 characters: + the price line it stays under the 160 ceiling (#1053's 126-character line lost "42 กลิ่น" to the trim).
