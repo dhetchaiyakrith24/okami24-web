@@ -28,6 +28,9 @@ import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
+import { StockCountLine } from "@/components/product/StockCount";
+import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { countKind, countText } from "@/lib/stock/count-rules";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
@@ -36,6 +39,11 @@ import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
+import { renderInline } from "@/components/content/ArticleBody";
+import type { ProductArticleCopy } from "@/data/product-articles";
+import type { Locale } from "@/i18n/config";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -73,7 +81,11 @@ export function PilotProductDetail({
   fitsDevices,
   lineCodes,
   brandHref,
+  articles,
 }: {
+  /** List-new 30/10 (nexBar Switch 15K): the product's article + FAQ per locale (src/data/product-articles.ts via
+   *  productDetailsCopy), from the server page. Absent / empty = neither section renders, so every other page is unchanged. */
+  articles?: Partial<Record<Locale, ProductArticleCopy>>;
   /** Round seo-push-2710: the brand page of this product (`/brands/<slug>`), when the brand has one — the brand chip links there. */
   brandHref?: string;
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
@@ -102,10 +114,11 @@ export function PilotProductDetail({
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the variants re-labelled from /api/stock.
-  const product = useLivePilotProduct(builtProduct);
+  const { product, counts: liveCounts } = useLivePilotProduct(builtProduct);
   const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
+  const article = articles?.[locale];
   // Image-fix round 2026-09-28 (owner: a colour/flavour without its own photo must never show another option's
   // photo): on a colour/flavour axis with 2+ options and no neutral fallback, an option without a photo gets the
   // NoOptionPhoto panel instead of the product card, and the page opens on the product photo with nothing
@@ -158,6 +171,17 @@ export function PilotProductDetail({
       ? inStock.length > 0
       : product.availabilityStatus === "in-stock";
   const showBuy = isPublished && product.sellingPrice !== null;
+  // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
+  const hasOptions = product.variants.length > 0;
+  const pickedLeft = available ? (hasOptions ? (selectedVariantId ? liveCounts.o[selectedVariantId] : undefined) : liveCounts.p ?? undefined) : undefined;
+  const pickedLowText =
+    pickedLeft !== undefined && countKind(pickedLeft) === "low"
+      ? hasOptions
+        ? dict.product.stockLeftShort.replace("{n}", String(pickedLeft))
+        : countText(dict.product, pickedLeft).text
+      : null;
+  // Keeps its height only while the answer is on its way (checker #1063 round 1). Phone: under the picker header.
+  const countLine = <StockCountLine left={pickedLeft} reserve={available && (!hasOptions || selectedVariantId !== null) && !liveCounts.settled} />;
 
   // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
   // neutral fallback → product card), so an option without its own photo shows the same image
@@ -246,6 +270,7 @@ export function PilotProductDetail({
               ))}
             {PRODUCT_NOTICE[product.slug] && <Badge tone="neutral">{PRODUCT_NOTICE[product.slug][locale]}</Badge>}
             {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
+            {isPublished && <HeadSalesBadge slug={product.slug} soldOut={product.availabilityStatus === "out-of-stock"} />}
           </div>
         }
       />
@@ -258,6 +283,7 @@ export function PilotProductDetail({
             <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
               <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
+              {!hasOptions && <StockCountLine left={pickedLeft} reserve={available && !liveCounts.settled} className="mt-1 lg:hidden" />}
             </div>
           ) : (
             <div className="max-lg:order-3">
@@ -277,11 +303,15 @@ export function PilotProductDetail({
             selectedId={selectedVariantId}
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
+            counts={liveCounts.o}
+            countLine={countLine}
             className="max-lg:order-2"
           />
 
           {showBuy && (
-            <div className="max-lg:hidden">
+            <div className="flex flex-col gap-3 max-lg:hidden">
+              {/* The picked option's count above the button it is about (designer 30/10); keeps its height until the answer. */}
+              {countLine}
               {/* Catalog-truth-vs-stock-truth mandate (owner, 2026-09-03): a verified real flavor
                   with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
                   as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"
@@ -414,6 +444,39 @@ export function PilotProductDetail({
           </div>
         </Container>
       )}
+      {/* List-new 30/10: the legacy page's "more details" article and FAQ, for a warehouse-listed product that has copy.
+          FAQ = <details> with the answers in the server HTML (the M Bar 9K editorial pattern, ProductEditorialFaq). */}
+      {articles && article && article.sections.length > 0 && (
+        <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20" aria-labelledby="more-details-title">
+          <Container className="flex flex-col gap-10 lg:gap-14">
+            <div>
+              <SectionHeading eyebrow={dict.product.featuresEyebrow} title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
+              <ProductArticleLede articles={articles} />
+            </div>
+            <ProductArticleBody articles={articles} />
+          </Container>
+        </section>
+      )}
+      {article?.faq && article.faq.length > 0 && (
+        <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
+          <Container>
+            <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{dict.product.faqTitle}</h2>
+            <div className="mt-8 max-w-3xl border-t border-surface-border">
+              {article.faq.map((f, i) => (
+                <details key={i} className="group border-b border-surface-border py-4" open={i === 0}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-medium text-foreground lg:text-lg [&::-webkit-details-marker]:hidden">
+                    <span>{locale === "th" ? thaiTypographyNode(f.question) : f.question}</span>
+                    <span className="mt-1 text-foreground-dim transition-transform group-open:rotate-180" aria-hidden>
+                      ↓
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-base leading-relaxed text-foreground-muted">{renderInline(f.answer, locale, `f${i}`)}</p>
+                </details>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
       {/* Structured, clickable compatibility — same component and same evidence-backed edge
           table the legacy product page uses, so a published ProductMaster part can link to the
           legacy device it fits and vice versa. Renders nothing when there are no verified links. */}
@@ -423,7 +486,7 @@ export function PilotProductDetail({
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
-        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled}>
+        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled} lowText={pickedLowText}>
           <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
