@@ -573,6 +573,34 @@ from official manufacturer specifications (see rule at the end of this section).
 - Marbo 9K
 - Marbo 10K
 
+**"ขายดี" badge — added by the owner 31/10** (his list, word for word; "VOOPOO Vmate Pro 2" was written twice, "SALTHUB Marbo Freebase3." = SALTHUB Marbo Freebase):
+- Caliburn G5
+- ARGUS G4
+- Caliburn G5 Lite
+- Caliburn G5 Lite SE
+- Caliburn G4 Pro KOKO
+- Caliburn G4 Pro
+- Caliburn G3
+- ARGUS G3 mini
+- VOOPOO Vmate Pro 2
+- M Bar 10K
+- RELX Smash Go 12K
+- M Bar 9K
+- WOTOFO nexBAR 18K
+- RELX LUMI 18K
+- SUP ZERO 22K
+- Zero Pro
+- RELX Creator Pod 20K
+- RELX Infinity Pro 2 Pod
+- UWELL คอยล์ Caliburn G4&G3 Series
+- VOOPOO คอยล์ Vmate Infinity Edition
+- Zero Cartridge
+- UWELL หัวเปล่า Caliburn X
+- SALTHUB Marbo Saltnic
+- Super Cool Salt Nic
+- Graple Freebase
+- SALTHUB Marbo Freebase
+
 **Higher problem rate:**
 - Muro Space 15K
 
