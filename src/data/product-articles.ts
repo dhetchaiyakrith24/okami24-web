@@ -2019,8 +2019,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // List-new 30/10 (nexBar Switch 15K, warehouse-listed): no maker site. Facts = nexBar's own posters — the 15-flavour
   // line-up the warehouse keeps (Shipnity Max image 2764487: nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the
   // 10-flavour poster series a Thai shop carries verbatim (vmaniath.com/en/product/1273962: nexMesh Coil · 15000 puffs ·
-  // 15ML; the pod prints the nexBar logo, "SWITCH" and a flavour label — the figure under SWITCH is not legible in any source, so it is not quoted). Which device the pod fits = retailer text only → not said
-  // (THAI_STYLE §5 "ขยายเป็นทุกที่บนเว็บ") until the owner confirms it from the shop's own stock.
+  // 15ML; the pod prints the nexBar logo, "SWITCH" and a flavour label — the figure under SWITCH is not legible in any source, so it is not quoted).
+  // Fit with SALTHUB M Switch (31/10, owner asked Friday to look it up — "ใช้ Chrome หาข้อมูลได้เลย"): no nexBar page exists;
+  // Thai shops (vmaniath · goatvapethai "ทำออกมาให้ใช้กับตัวพอตรุ่น M SWITCH เท่านั้น" · pod789 "สำหรับเครื่อง Marbo M switch" ·
+  // thshop24) + two reviewers plugging it into an M Switch on video (ปลัดอู๊ดพลังใบ 13/01/2569 · ชาคริต C9Vapor 15/01/2569) →
+  // written plainly, no "official" claim (owner-requested lookup, independent hands-on tests). Link only on this page.
   // SEO (owner 30/10): H1 = the model name · H2 "รายละเอียดเพิ่มเติม" → H3 buyer questions · H2 "คำถามที่พบบ่อย".
   "nexbar-switch-15k-pod": {
     th: {
@@ -2030,6 +2033,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "nexBar Switch 15K คืออะไร",
           paragraphs: [
             "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ หัวหนึ่งมีน้ำยา 15mL กับคอยล์ nexMesh อยู่ในตัว จึงไม่ต้องเติมน้ำยาหรือเปลี่ยนคอยล์เองเหมือนหัวพอตเปล่า",
+            "หัวรุ่นนี้ใส่กับเครื่อง [SALTHUB M Switch](/products/m-switch-kit) ได้ ใช้หมดหัวหนึ่งก็ถอดเปลี่ยนเป็นหัวใหม่ได้เลย",
             "เลข 15K ในชื่อรุ่นตรงกับตัวเลขบนโปสเตอร์ของ nexBar ที่ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ",
           ],
         },
@@ -2051,6 +2055,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
+          question: "nexBar Switch 15K ใช้กับเครื่องอะไร",
+          answer: "ใช้กับเครื่อง [SALTHUB M Switch](/products/m-switch-kit) ได้ค่ะ",
+        },
+        {
           question: "nexBar Switch 15K หัวหนึ่งสูบได้กี่พัฟ",
           answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคนนะคะ",
         },
@@ -2067,6 +2075,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "What is the nexBar Switch 15K?",
           paragraphs: [
             "The nexBar Switch 15K is a prefilled pod with 15mL of e-liquid and a built-in nexMesh coil, so there is no e-liquid to add and no coil to change as with an empty pod.",
+            "It fits the [SALTHUB M Switch](/products/m-switch-kit): when one pod runs out, take it off and put on a new one.",
             "The 15K in the name matches nexBar's poster, which rates each pod for up to 15,000 puffs.",
           ],
         },
@@ -2088,6 +2097,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
+          question: "Which device does the nexBar Switch 15K fit?",
+          answer: "It fits the [SALTHUB M Switch](/products/m-switch-kit).",
+        },
+        {
           question: "How many puffs does one nexBar Switch 15K pod give?",
           answer: "nexBar's poster rates each pod for up to 15,000 puffs. That is the maker's maximum; how many you actually get depends on how you vape.",
         },
@@ -2104,6 +2117,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "nexBar Switch 15K 是什么？",
           paragraphs: [
             "nexBar Switch 15K 是预装烟油的烟弹，每颗装有 15mL 烟油，并内置 nexMesh 线圈，不用像空烟弹那样自己加油、换线圈。",
+            "这款烟弹可以装在 [SALTHUB M Switch](/products/m-switch-kit) 主机上使用，一颗用完就取下换一颗新的。",
             "名字里的 15K 与 nexBar 海报上的数字一致：每颗烟弹最多 15,000 口。",
           ],
         },
@@ -2124,6 +2138,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
       ],
       faq: [
+        {
+          question: "nexBar Switch 15K 适用于哪款主机？",
+          answer: "可以装在 [SALTHUB M Switch](/products/m-switch-kit) 主机上使用。",
+        },
         {
           question: "nexBar Switch 15K 一颗能抽多少口？",
           answer: "nexBar 海报标注每颗最多 15,000 口。这是厂商给出的最大值，实际能抽多少取决于个人的抽吸习惯。",
