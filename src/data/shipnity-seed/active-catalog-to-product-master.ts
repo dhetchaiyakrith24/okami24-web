@@ -1148,6 +1148,21 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
+  // List-new (30/10): TEMPORARY card (owner 30/10 "ลงไปก่อนได้เลย เดี๋ยวงานรูป … มาตามแก้กันทีหลัง" · "ใช้ของผู้ผลิตไปก่อนก็ได้" ·
+  // "โหลดได้เลย") = the warehouse's own Shipnity Max image of Pod-181 (the 15-flavour line-up poster, 1000×832), fitted
+  // whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6). A studio card replaces it in the listing chat.
+  "NEXBAR-SWITCH-15K-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/nexbar-switch-15k-pod/card.webp",
+      alt: "nexBar Switch 15K refill pods, all 15 flavours line-up",
+      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2764487, read 30/10) — 15 pods, one per flavour.",
+      transparentBackground: false,
+      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
+      sourceUrl: "https://app.shipnitymax.com/",
+    },
+  ],
   // Round list19 (19/10): ESKO BAR SWITCH pod card = the Cola pod (same file family as pod-159's pod photos: one master pod, the
   // maker's flavour line re-typeset — image-fix round 2026-09-29).
   "ESKO-BAR-SWITCH-POD": [
