@@ -2056,7 +2056,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           question: "nexBar Switch 15K นิโคตินกี่ %",
-          answer: "โปสเตอร์ของ nexBar ระบุความเข้มข้นนิโคติน 3% ค่ะ",
+          answer: "nexBar ระบุความเข้มข้นนิโคตินไว้ 3% ค่ะ",
         },
       ],
     },
