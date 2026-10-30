@@ -13,7 +13,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 Updated 31/10 ~00:50 by the 5th main chat (Friday, session "อ่าน next-chat-3110 และ round-open skill") — children told to report here; weekly quota 91% (resets 01/11 ~22:00).
 
 1 main ≈ e6f86a68 31/10. CART IS ON. LIVE 29–31/10 [ตรวจแล้ว: checker PASS + deploy success]: cut-off 12:30 · unboxing notice · address dedupe · carrier by postcode ·
-  SHIPPING v2 (BSOT §10) · order-page art (#1051 desktop thank-you parked) · #1044 #1046 staff buttons/"ทีมงาน" pill · SEO #1019 #1053 #1054 #1056 #1058 · photos #1048 #1055 ·
+  SHIPPING v2 (BSOT §10) · order-page art · #1044 #1046 staff buttons/"ทีมงาน" pill · SEO #1019 #1053 #1054 #1056 #1058 · photos #1048 #1055 ·
   #1057 TRACKING SYNC (Shipnity writes the tracking back → the order ships itself; 9-order backfill DONE 30/10, owner's own OK) · #1059 SLIP re-ask + own QR read + JOIWAY Funta Green ·
   #1060 #1062 #1068 nexBar Switch 15K pods (Pod-181, ฿299, name/specs/article/FAQ; temp card) + centred "รายละเอียดเพิ่มเติม" heading on product pages ·
   #1063 #1069 BADGES: one "ขายดี" (BSOT §15 lists + every Muro but muro-space-15k; later = real order counts) with framed card + light sweep every 8 s (owner
@@ -22,12 +22,13 @@ Updated 31/10 ~00:50 by the 5th main chat (Friday, session "อ่าน next-ch
 2 CHILD CHATS (Opus 5.5 — §18 "Child chats"; they report to Friday; open the next chat with skill round-open "continue"):
   a Images chat 7 local_c8f85aac — QUEUE: ① REVERT marbo-10k-clone photos to the shared M Bar 10K ones (owner 31/10: "พี่ไม่ได้สั่งแก้รูปนิ … ขอบขาวหนักมาก สินค้าไม่คม
      แสงขาวฟุ้ง" — Friday's relay read "nexSwitch … ทำเลย" too wide) → ② #1067 Kardinal (checker round 2) → ③ re-check nexSwitch + MQ Bar for white fringe on the dark
-     site at 2× (fix 0 credits). Credits 98/106 used. Tell nexbar15k when Higgsfield in Chrome is free.
+     site at 2× (fix 0 credits). Credits 98/106 used. Owner 31/10: finish then CLOSE the chat (③ only if 0 credits); Kardinal needs the before/after sheet (IMAGE_SPEC §0.7) first.
   b nexbar15k-content local_0382539e: #1071 (fits SALTHUB M Switch — 4 shops + 2 hands-on reviewer videos; link to m-switch-kit) checker PASS, merges AFTER ①.
-     Photos: searched 3 places, none exist → Chrome Higgsfield Unlimited (0 credits) when images 7 frees it; MCP renders were blocked (nsfw filter, refunded). No watermark removal.
-  c badges-3010 local_93a873ba = done (A/B look still the owner's call). TRACKING local_dfdd063c = watching Shipnity's next real write (31/10).
-  d SEO chat local_56539076 at 70% → handoff written: `.claude/worktrees/tracking-sync-2910-c58898/_incoming/next-chat-seo.md` (branch seo-meta-suffix-3010 7b94d146,
-     verify PASS, head-audit: meta description changes on 106/178 pages only) — continuation NOT opened (owner on phone; app refuses) → open it (Opus 5.5 high) from the desktop.
+     Photos: none exist → owner 31/10 "สร้างผ่าน Mcp ได้" (credits OK for Nex15K only; Chrome not free) + before/after sheet to the owner before merge (IMAGE_SPEC §0.7);
+     no watermark removal · all live → CLOSE the chat.
+  c badges-3010 local_93a873ba = done; owner 31/10 "เอาให้จบละปิดงาน" → closing (A/B look still the owner's call). TRACKING local_dfdd063c = watching Shipnity's next real write (31/10).
+  d SEO line PARKED 31/10 (owner "สาย Seo ปิดงานก่อนครับ … เดี๋ยวมาทำต่อทีหลัง"): resume file = `docs/cloud-results/seo-meta-suffix-3010.md` (branch seo-meta-suffix-3010
+     7b94d146 pushed, PR not opened · keep worktree tracking-sync-2910-c58898) · old chat local_56539076 archived.
   e `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
 2N NEXT for the main chat (in this order):
   a Merge order: images 7 ① → #1071 → #1067 → docs branch `docs-3110-clean` (= `docs-sales-log-3010` squashed: §16 + IMAGE_SPEC §0.7 "check existing images first" + "other shops' images") ONE clean commit
@@ -44,9 +45,8 @@ Updated 31/10 ~00:50 by the 5th main chat (Friday, session "อ่าน next-ch
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
-     Left: broadcast "โฉมใหม่" = the OWNER sends · faint smear in the owner's PNG = a clean file from him fixes it, never retouch.
-  e BADGES + stock count = child 2d (questions = รอพี่ตรวจ 83).
-  f B5 "ใกล้หมด · เหลือ N ชิ้น" (§18) = being built by child 2d.
+     Left: owner sends the "โฉมใหม่" broadcast · PNG smear = his clean file, never retouch.
+  e/f BADGES + B5 stock count = LIVE (#1063 #1069; questions = รอพี่ตรวจ 83).
   g SALES LOG (owner 30/10: "อยากให้เว็บจดบันทึกรายยอดขายมีแค่บัญชีพี่ที่ดูได้") — owner-only
      view. Web orders split items/shipping; LINE orders = slip only → staff mark shipping charged. Plan with the owner.
      Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
