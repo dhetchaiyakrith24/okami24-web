@@ -142,7 +142,7 @@ caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k �
 
 ส่วนใหญ่เป็นคำแปรของกลุ่มเดิม → **เข้าหน้าเจ้าของเดิมในตาราง 0.1–0.3** (ไม่ต้องมีหน้าใหม่): caliburn g5 ราคา · calibirn g5 → caliburn-g5 · g5lite · uwell caliburn g5 lite → caliburn-g5-lite ·
 voopoo drag 6 kit · drag 6 kit · drag voopoo 6 → drag-6 · voopoo drag s3 · voopoo drag s 3 → drag-s3 · voopoo argus mini → argus-g4-mini · salthub 15k · salthub m switch → m-switch-kit ·
-marbo mint · marbo 10k → m-bar-10k · m zero nano → zero-nano · infy20k · 20k infy · เครื่อง infy · infy pod ใช้แล้วทิ้ง · infy pod · พอต infy → infy-20k · tfit m power 20k (ราคา) · m power 20k → tfit-m-power-20k ·
+marbo mint · marbo 10k → m-bar-10k · m zero nano → zero-nano · infy20k · 20k infy · infy pod ใช้แล้วทิ้ง · พอต infy → infy-20k · เครื่อง infy · infy pod (ตัวเครื่อง) → infy-pod (หน้าเกิดหลังแผนที่นี้ · seo-auditor 30/10) · หัว infy · infy plus → pod-169 · tfit m power 20k (ราคา) · m power 20k → tfit-m-power-20k ·
 relx smash go (12k) → relx-smash-go-12k · relx device → /brands/relx · nevoks vape → /brands/nevoks · dotmod coil → coil-70 · joiway twin · vape joiway → joiway-f4 / /brands/joiway ·
 pod device · pod open system · p o d s · p.o.d. → /products/pod-systems · พอตมินิ → /products/pod-kits [เชื่อว่า] · catrit pod (สะกดผิด cartridge) → /products/pods-cartridges · mtl rdl · mtl vs rdl → คู่มือ MTL ·
 pod system pantip → คู่มือเลือกเครื่องแรก · iluma i prime · iluma prime → /products/iqosheet-16 [เชื่อว่า: ตรวจชื่อรุ่นในหน้าก่อน]

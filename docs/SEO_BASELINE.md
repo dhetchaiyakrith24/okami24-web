@@ -431,3 +431,14 @@ Next reads: 06/11 · 13/11 (+ GSC 01/11 · 15/11 as planned). What changed on th
   No new article — every cluster word has an owner guide (SEO_LANDSCAPE §0); "พอต" / "พอตไฟฟ้า" had no GSC row (28 days to 27/10).
 - Read on 06/11 / 13/11: real result page (table above) for pod system · pod · พอตซิสเต็ม · pod system ราคา · pod system ตัวไหนดี;
   GSC 01/11 · 15/11 for pod / pod system on /products/pod-systems (impressions, not only avg position) and "pod system คือ" on what-is.
+
+## Brand push (30/10/2026, SEO child chat "seo-push", branch seo-brand-push-3010) - what changed before the 01/11 / 15/11 reads
+
+- Two cited device-to-pod links in the compat blocks: /products/relx-infinity-2-plus <-> /products/relx-infinity-pro-2-pod (RELX's Infinity 2 Plus
+  page lists RELX Pod Pro 2) and /products/infy-pod <-> /products/pod-169 (infy.my 2.5ML Cartridge page: "INFY Cube Box or INFY Device"). Not authored on
+  purpose: Zero Pro/Nano <-> Zero Cartridge (salthub.com does not state it) and RELX Creator <-> Creator Pod 20K (Thai retailers only).
+- Head (meta only): /products/relx-infinity-pro-2-pod now names "RELX Pod Pro 2" (the name printed on the pack; before: no page of ours carried the key
+  except the Infinity 2 Plus body). Title unchanged. Key owner = this pack page (SEO_LANDSCAPE §0 rule: model words = product page).
+- Body only: /brands/infy lede names INFY POD + INFY PLUS (was INFY 20K only); /brands/wotofo lede names nexPOD 15K Pro Kit (was nexBAR only);
+  /brands/relx lede unchanged (Thai); brand title/meta of infy + wotofo still the old brand-level lines (seo-auditor: do at the next head batch).
+- infy-20k and its watch row untouched (no new link to it). Read on 01/11 / 15/11: "relx pod pro 2", "infy pod", "nexpod", "infy plus" (no GSC row at open).
