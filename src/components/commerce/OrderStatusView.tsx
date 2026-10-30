@@ -212,6 +212,9 @@ export function OrderStatusView({
           // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
           // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
           <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
+            {/* Owner 30/10: "ฉากหลังดูมีอะไรหน่อย … แสงไฟสาดลงมาแบบ Smooth ไม่สว่างเกิน" (designer): a soft red-orange stage light behind the face, no blur,
+                no image, no animation; the samurai itself is at 20 % ("ความเข้ม 100 → 20") with the /products long fade tail. */}
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-[-2rem] -z-20 h-[110%] w-[min(calc(100vw-1rem),900px)] -translate-x-1/2 [background:radial-gradient(44%_60%_at_50%_12%,rgba(242,48,48,.16)_0%,rgba(255,106,44,.07)_40%,rgba(255,106,44,.02)_66%,transparent_90%)] [mask-image:linear-gradient(to_bottom,transparent_0%,#000_22%,#000_55%,transparent_100%)]" />
             <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2">
               <Image
                 src="/brand/samurai-thanks-full.webp"
@@ -219,7 +222,7 @@ export function OrderStatusView({
                 width={1024}
                 height={820}
                 sizes="(min-width: 820px) 820px, 100vw"
-                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in]"
+                className="block h-auto w-full opacity-20 [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,#000_0%,#000_40%,rgb(0_0_0/.83)_55%,rgb(0_0_0/.5)_68%,rgb(0_0_0/.25)_80%,rgb(0_0_0/.08)_91%,transparent_100%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in]"
               />
             </div>
             {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
@@ -236,7 +239,7 @@ export function OrderStatusView({
             </div>
           </div>
         )}
-        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm shadow-[inset_0_1px_0_rgba(255,106,44,.22)]">
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
@@ -426,10 +429,10 @@ export function OrderStatusView({
                     are back: logo, PAYMENT CARD tag, gold chip (top), the rows at the bottom like a real card at sm+ (credit-card proportion 1.586:1, max 440 px — owner 30/10 "ดูเป็นบัตร Credit"), a green dot on the bank — and NOT the amount or the running number (owner 30/10:
                     "ยอด-รหัส ไม่ใส่ลงในการ์ด … เรียบ แบบ Black card มีคาแรคเตอร์ ดูเป็นบัตร Credit"). The copy button has an orange LED frame (owner 30/10 "ปุ่มคัดลอก กรอบเป็น LED สีส้มตามธีม"). Box, labels,
                     values and borders keep the web's colours; the picture fades into the box colour toward the words. */}
-                <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2 sm:mx-auto sm:aspect-[1.586/1] sm:w-full sm:max-w-[440px]">
+                <div className="relative isolate overflow-hidden rounded-lg border border-[rgba(255,106,44,.42)] bg-surface-2 shadow-[0_0_0_1px_rgba(255,106,44,.08),0_0_20px_-6px_rgba(255,106,44,.35),0_12px_32px_-14px_rgba(242,48,48,.30)] sm:mx-auto sm:aspect-[1.586/1] sm:w-full sm:max-w-[440px]">
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[72%] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_right,transparent,black_42%)]"
+                    className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[72%] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#2b1f19_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_right,transparent,black_42%)]"
                   >
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_3px)]" />
                     <Image
