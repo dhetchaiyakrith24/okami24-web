@@ -139,4 +139,10 @@ New database tables = owner "ได้" 27/10.
 
 **Live 28/10:** Shipnity connected 18:06–18:09 (UA `shipnity-channel-gateway`): tested with `products?per-page=1` + `settings/email/woocommerce_email_from_name`, registered webhooks order.created / order.updated / order.deleted (delivery host `webhook-proxy-jx0d.onrender.com` — warehouse asked to confirm it is Shipnity's), then read every product page (`status=publish`, per_page 10) and each product's variations. No stock write yet (the warehouse has not pressed its update-stock button). Step 5 built 28/10: button "ส่งเข้าคลัง Shipnity" on the order page, sends only to a webhook staff approved on /staff/shipnity. The hourly order-entry routine is PAUSED since 28/10 ~18:55 (owner "หยุดงานรูทีนก่อนเลยระหว่างนี้").
 
+**Tracking back (seen live 29–30/10, owner 29/10 "ระบบดึงเลขพัสดุทำเลยครับ"):** when the warehouse ships, Shipnity sends
+`PUT /orders/<id> {"status":"completed"}` then `POST /orders/<id>/notes {"note":"Tracking Number: <number>","customer_note":true}`
+(EMS = S10 "..TH"; DHL = 10 digits, no carrier word). The site now ships the order itself from that note (`src/lib/woo/tracking-sync.ts`
+— only orders it sent, only forward, the staff `ship` step, history "Shipnity: ship"); Shipnity's "completed" never sets the site's
+"completed". Numbers that came before the sync = catch-up at `/staff/api/shipnity-tracking-sync` (GET dry run · POST `{"apply":true}`).
+
 Risk: Cloudflare sits in front of the site — if it challenges Shipnity's server, the log stays empty; then allow `/wp-json/*`.

@@ -1,16 +1,20 @@
 import type { CarrierId } from "@/lib/commerce/carriers";
 
 /**
- * Tracking sync step 2, prepared (owner 29/10 "ระบบดึงเลขพัสดุทำเลยครับ"): find a tracking number — and the carrier when
- * the body says — in a write Shipnity makes to an order the site sent. NOT WIRED to any order yet: no real body has been
- * seen (step 1, PR #1014, logs them for staff to download). Every shape below is a GUESS from how WooCommerce shops
- * commonly receive tracking, until a real Shipnity body confirms one:
+ * Tracking sync step 2 (owner 29/10 "ระบบดึงเลขพัสดุทำเลยครับ"): find a tracking number — and the carrier when the body
+ * says — in a write Shipnity makes to an order the site sent. Used by tracking-sync.ts.
+ * SEEN LIVE 29–30/10 (the staff download of the log, 11 shipped orders): when the warehouse ships, Shipnity sends
+ *   PUT /orders/<id> {"status":"completed"} and, a few ms later,
+ *   POST /orders/<id>/notes {"note":"Tracking Number: WB498800000TH","customer_note":true}
+ * — EMS orders get an S10 "..TH" number; a DHL order got 10 digits and no carrier word; the pair sometimes comes 2–3
+ * times; once the note was "Tracking Number: " with nothing after it. The other shapes are kept as guesses from how
+ * WooCommerce shops commonly receive tracking, in case Shipnity changes:
  *   1. POST /orders/<id>/shipment-trackings (Woo "Shipment Tracking" / "Advanced Shipment Tracking" plugins):
  *      { tracking_provider | custom_tracking_provider, tracking_number }
  *   2. PUT /orders/<id> (or a batch update) with `meta_data` entries whose key names a tracking number
  *      (_tracking_number · tracking_number · _aftership_tracking_number · …), or the plugins' list
  *      `_wc_shipment_tracking_items` = [{ tracking_provider, tracking_number }]; the same inside `shipping_lines[].meta_data`
- *   3. POST /orders/<id>/notes with a note such as "เลขพัสดุ EF123456789TH" / "Tracking: …"
+ *   3. POST /orders/<id>/notes with a note such as "Tracking Number: …" (the real one) / "เลขพัสดุ EF123456789TH"
  * Pure — tracking-parse-contract-test.ts holds it. Returns null when nothing looks like a tracking number.
  */
 

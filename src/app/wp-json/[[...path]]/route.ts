@@ -8,6 +8,7 @@ import { authenticate } from "@/lib/woo/keys";
 import { sentOrders } from "@/lib/woo/order-push";
 import { wooOrderJson } from "@/lib/woo/order-json";
 import { logCall, saveStockReport, stockReports } from "@/lib/woo/store";
+import { applyShipnityTrackings } from "@/lib/woo/tracking-sync";
 import { createWebhook, deleteWebhook, getWebhook, listWebhooks, updateWebhook } from "@/lib/woo/webhooks";
 import type { OrderSource, WebhookStore } from "@/lib/woo/api";
 
@@ -72,6 +73,9 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
   // Shipnity changed an order (e.g. cancelled — out of stock): record it and alert the team on LINE after answering.
   const updates = res.orderUpdates ?? [];
   if (updates.length > 0) after(() => recordOrderUpdates(updates));
+  // Shipnity wrote a tracking number (owner 29/10): the order takes it and moves to "shipped" (tracking-sync.ts).
+  const trackings = res.orderTrackings ?? [];
+  if (trackings.length > 0) after(() => applyShipnityTrackings(trackings));
 
   logCall({
     method: request.method,

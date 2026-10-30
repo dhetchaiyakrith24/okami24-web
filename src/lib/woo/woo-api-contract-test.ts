@@ -162,6 +162,22 @@ check("an order not sent = 404", handle(req({ segments: ["wc", "v3", "orders", "
 const sent = { list: () => [{ id: 41 }] };
 const note = handle(req({ method: "POST", segments: ["wc", "v3", "orders", "41", "notes"], body: { note: "EMS EF123456789TH" }, orders: sent }));
 check("note on a sent order = 201, echoes the note", note.status === 201 && (note.json as { note: string }).note === "EMS EF123456789TH" && note.writes.length === 0 && !note.orderUpdates);
+// tracking sync step 2: the tracking in the write goes to the route (real shape 30/10, digits changed)
+const realNote = handle(req({ method: "POST", segments: ["wc", "v3", "orders", "41", "notes"], body: { note: "Tracking Number: WB400000001TH", customer_note: true }, orders: sent }));
+check(
+  "real Shipnity note on a sent order = one tracking for that order",
+  realNote.status === 201 && realNote.orderTrackings?.length === 1 && realNote.orderTrackings[0].orderId === 41 && realNote.orderTrackings[0].tracking.number === "WB400000001TH"
+);
+check("empty 'Tracking Number: ' note = no tracking", handle(req({ method: "POST", segments: ["wc", "v3", "orders", "41", "notes"], body: { note: "Tracking Number: ", customer_note: true }, orders: sent })).orderTrackings?.length === 0);
+const statusOnly = handle(req({ method: "PUT", segments: ["wc", "v3", "orders", "41"], body: { status: "completed" }, orders: sent }));
+check("status-only PUT = an update, no tracking", statusOnly.orderUpdates?.[0]?.status === "completed" && statusOnly.orderTrackings?.length === 0);
+const notSentNote = handle(req({ method: "POST", segments: ["wc", "v3", "orders", "40", "notes"], body: { note: "Tracking Number: WB400000001TH" }, orders: sent }));
+check("tracking note on an order not sent = 404, no tracking", notSentNote.status === 404 && !notSentNote.orderTrackings);
+check(
+  "tracking route = tracking for the order",
+  handle(req({ method: "POST", segments: ["wc-ast", "v3", "orders", "41", "shipment-trackings"], body: { tracking_provider: "DHL", tracking_number: "5000000001" }, orders: sent }))
+    .orderTrackings?.[0]?.tracking.carrier === "dhl"
+);
 check("note list on a sent order = []", handle(req({ segments: ["wc", "v3", "orders", "41", "notes"], orders: sent })).status === 200);
 check("note on an order not sent = 404", handle(req({ method: "POST", segments: ["wc", "v3", "orders", "40", "notes"], body: { note: "x" }, orders: sent })).status === 404);
 const trk = handle(
