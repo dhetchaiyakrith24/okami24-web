@@ -672,7 +672,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2" (no maker page).
   "RELX-INFINITY-PRO-2-POD": {
     tagline: "หัวพอต RELX Infinity Pro 2",
-    shortDescription: "หัวพอต RELX Infinity Pro 2 ร้านมีให้เลือก 42 กลิ่น",
+    shortDescription: "หัวพอต RELX Infinity Pro 2 ที่แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ร้านมีให้เลือก 42 กลิ่น",
   },
   // line 2 max-sync (22/10): warehouse facts only — the Max name "Relx Creator Pod 20K"; "fits RELX Creator" = the Thai shops above (no maker page).
   "RELX-CREATOR-POD-20K": {
