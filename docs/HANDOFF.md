@@ -47,6 +47,7 @@ Updated 30/10 ~22:00 by the 4th main chat (Friday; weekly quota 84% at 21:00 —
   a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
      Left: broadcast "โฉมใหม่" = the OWNER sends · faint smear in the owner's PNG = a clean file from him fixes it, never retouch.
   e BADGES ขายดี · ใกล้หมด · แนะนำ (owner 30/10) — open questions = รอพี่ตรวจ 83 · ใกล้หมด = f.
+     "รายละเอียดเพิ่มเติม" heading on product pages (owner 30/10): centre on desktop — next listing/images chat.
   f B5 "ใกล้หมด · เหลือ N ชิ้น" (§18): live stock numbers exist (3u) → label at ≤ 3 left on option tiles + product page (designer places it).
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
@@ -54,10 +55,9 @@ Updated 30/10 ~22:00 by the 4th main chat (Friday; weekly quota 84% at 21:00 —
      (3) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) — PARKED, owner 27/10 "ยังไม่ทำตอนนี้";
      web-side costs (Render · GitHub · Higgsfield) go on the status page. (1) /วางแผน = skill `okami24-plan` · (2) assets folder = IMAGE_SPEC §0 item 7.
   Test orders OK-20261023-e25378 (+ maybe M Bar 9K ฿400) → cancel on /staff (reason "ทดสอบ") when the owner finishes testing.
-  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide 300/10 min cap) · after a partial refund no second
-     out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests · cart C (#795) Back
-     from review returns to review · a typed note is lost if placing fails · add form needs JS, double tap while pending adds twice ·
-     #807 notes a/d + cleanBankText keeps invisible characters · BSOT §9 line by #804 quotes the owner's 24/10 chat — confirm.
+  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
+     refund ref not the amount · no DB tests · cart Back from review loops · typed note lost if placing fails · add form needs JS (double
+     tap adds twice) · cleanBankText keeps invisible chars · BSOT §9 #804 line quotes the owner 24/10 — confirm.
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · manual sold-out list EMPTIED 28/10 (owner "ยกเลิกการปิดขาย อัพเดตสดตามจริง"; live stock decides,
      no-SKU options stay out) · EasySlip quota 497/1000 (23/10) — warn
      before it runs out · K+ slip misjudged 10/10 → EasySlip matchedAccount (owner step, รอพี่ตรวจ).
