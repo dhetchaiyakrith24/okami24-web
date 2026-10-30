@@ -4376,7 +4376,7 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-emerald-green.png",
+  "source": "_incoming/img-3110/g3k/g3k-emerald-green.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "emerald-green",
@@ -4385,8 +4385,8 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-emerald-green-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-emerald-green-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-uwell/site/g3k-light-silver.png",
@@ -4402,7 +4402,7 @@
   "fileName": "variant-light-silver-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-lilac-purple.png",
+  "source": "_incoming/img-3110/g3k/g3k-lilac-purple.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "lilac-purple",
@@ -4411,11 +4411,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-lilac-purple.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-lilac-purple-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-lilac-purple-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-luxury-gold.png",
+  "source": "_incoming/img-3110/g3k/g3k-luxury-gold.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "luxury-gold",
@@ -4424,11 +4424,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-luxury-gold.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-luxury-gold-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-luxury-gold-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-midnight-black.png",
+  "source": "_incoming/img-3110/g3k/g3k-midnight-black.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "midnight-black",
@@ -4437,11 +4437,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-midnight-black.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-midnight-black-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-midnight-black-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-rose-pink.png",
+  "source": "_incoming/img-3110/g3k/g3k-rose-pink.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "rose-pink",
@@ -4450,11 +4450,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-rose-pink.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-rose-pink-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-rose-pink-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-sky-blue.png",
+  "source": "_incoming/img-3110/g3k/g3k-sky-blue.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "sky-blue",
@@ -4463,11 +4463,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-sky-blue.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-sky-blue-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-sky-blue-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-space-gray.png",
+  "source": "_incoming/img-3110/g3k/g3k-space-gray.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "space-gray",
@@ -4476,8 +4476,8 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-space-gray.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-space-gray-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-space-gray-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-uwell/site/card-g3k.png",
