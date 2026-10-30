@@ -177,6 +177,7 @@ export function OrderStatusView({
   const statusText =
     stockStage === "waiting-choice" ? t.statusStockWaiting : stockStage === "chosen" ? t.statusStockChosen : orderStatusLabel(order.status, locale);
   const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
+  const trackingShown = !!order.trackingNumber && (order.status === "shipped" || order.status === "completed");
   const paidOrLater = order.status !== "pending_payment" && order.status !== "cancelled";
   const runNumber = formatRunNumber(order.runNumber);
   const numberRef = useRef<HTMLDivElement>(null);
@@ -201,7 +202,10 @@ export function OrderStatusView({
   return (
     <>
       <PageHeader eyebrow={dict.orderStatus.eyebrow} title={dict.orderStatus.pageTitle} />
-      <Container className="flex max-w-xl flex-col gap-8 py-12 lg:py-16">
+      {/* Desktop (lg+, owner 30/10 "จัดวางใหม่ให้เต็มจอ"): a two-column grid — thank-you words + status card LEFT, the samurai standing tall RIGHT
+          (spanning both), then the details in two columns (items + address | tracking / unboxing / payment). Phones keep the single
+          column untouched: every desktop rule is an lg: class and the DOM order is unchanged. */}
+      <Container className={`flex max-w-xl flex-col gap-8 py-12 lg:grid lg:max-w-[1400px] lg:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,620px))] ${paidOrLater ? "lg:grid-rows-[1fr_auto]" : "lg:grid-rows-[auto_1fr]"} lg:items-start lg:gap-x-10 lg:py-16 lg:[grid-auto-flow:row_dense] min-[1700px]:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,700px))]`}>
         {/* A thank-you once the slip is in — from "payment submitted" to "completed". Owner 24/10: his wording, big and bold
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
@@ -211,22 +215,22 @@ export function OrderStatusView({
           // the owner's full-body samurai (his own transparent cut) stands big and wide behind the thank-you, faded out toward the
           // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
           // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
-          <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
-            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2">
+          <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end lg:contents">
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2 lg:static lg:z-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:w-[128%] lg:max-w-none lg:translate-x-0 lg:self-start lg:justify-self-end lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]">
               <Image
                 src="/brand/samurai-thanks-full.webp"
                 alt=""
                 width={1024}
                 height={820}
                 sizes="(min-width: 820px) 820px, 100vw"
-                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in]"
+                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in] lg:[mask-image:linear-gradient(to_bottom,black_86%,transparent),linear-gradient(to_right,transparent,black_24%,black_95%,transparent)]"
               />
             </div>
             {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
-            <div ref={bandRef} aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[58%]" />
-            <div className="relative px-1 lg:px-2">
+            <div ref={bandRef} aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[58%] lg:relative lg:inset-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[1024/476] lg:h-auto lg:w-[128%] lg:self-start lg:justify-self-end" />
+            <div className="relative px-1 lg:z-10 lg:col-start-1 lg:row-start-1 lg:self-center lg:px-2 lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]">
               <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
-              <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem]">
+              <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem] xl:text-[2.75rem] min-[1700px]:text-[3.25rem]">
                 <span className="block">{dict.orderStatus.thankYouLead}</span>
                 <span className="block whitespace-nowrap">
                   {dict.orderStatus.thankYouTail}{" "}
@@ -236,7 +240,7 @@ export function OrderStatusView({
             </div>
           </div>
         )}
-        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
+        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm lg:relative lg:z-10 lg:col-start-1">
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
@@ -313,7 +317,7 @@ export function OrderStatusView({
 
         {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}
         {messages.length > 0 && (
-          <div className="flex flex-col gap-3 rounded-xl border border-ember/40 bg-surface-1 p-4 text-sm">
+          <div className="flex flex-col gap-3 rounded-xl border border-ember/40 bg-surface-1 p-4 text-sm lg:col-span-2">
             <span className="label-mono text-xs text-foreground-dim">{t.messagesTitle}</span>
             {messages.map((m, i) => (
               <div key={i} className={i > 0 ? "border-t border-surface-border-soft pt-3" : undefined}>
@@ -324,12 +328,18 @@ export function OrderStatusView({
           </div>
         )}
 
-        {stockIssue && <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />}
+        {stockIssue && (
+          <div className="lg:col-span-2">
+            <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />
+          </div>
+        )}
 
         {/* Entered by staff when the parcel leaves (cart round 22/10). Owner 23/10 (BSOT §10): once shipped, name the
             carrier and link to its own tracking page, with the 3 steps — the page opens without the number filled in.
             An order shipped before staff picked carriers has no carrier: the number alone, no button. */}
-        {order.trackingNumber && (order.status === "shipped" || order.status === "completed") && (
+        {(trackingShown || unboxing) && (
+        <div className="flex flex-col gap-8 lg:col-start-2">
+        {trackingShown && order.trackingNumber && (
           <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
             <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.trackTitle}</span>
             {order.carrier && (
@@ -376,7 +386,10 @@ export function OrderStatusView({
             </p>
           </div>
         )}
+        </div>
+        )}
 
+        <div className="flex flex-col gap-8 lg:col-start-1">
         <div className="flex flex-col gap-3">
           <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
@@ -414,9 +427,10 @@ export function OrderStatusView({
             </p>
           </div>
         </div>
+        </div>
 
         {order.status === "pending_payment" && (
-          <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
+          <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 lg:col-span-1 lg:col-start-2 lg:row-span-2">
             <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.paymentInstructionsTitle}</span>
             {payment && (
               <div className="flex flex-col gap-3">
@@ -491,7 +505,7 @@ export function OrderStatusView({
           </div>
         )}
 
-        {order.status === "payment_submitted" && <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentSubmittedNote}</p>}
+        {order.status === "payment_submitted" && <p className="text-sm text-foreground-muted lg:col-span-2">{dict.orderStatus.paymentSubmittedNote}</p>}
       </Container>
     </>
   );
