@@ -3016,7 +3016,7 @@ function attachVariantMedia(shipnityProductId: string, variants: ProductMasterIn
 const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: string }> = {
   "Pod-159": { name: "ESKO BAR SWITCH 20K", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-  // List-new 30/10: Max spells it "nexBar Switch 15k"; the pod prints "SWITCH 15K" (nexBar's posters — no maker site).
+  // List-new 30/10: Max spells it "nexBar Switch 15k"; the K follows the warehouse name and nexBar's rated 15,000 puffs (no maker site; the pod print under SWITCH is not legible).
   "NEXBAR-SWITCH-15K-POD": { name: "nexBar Switch 15K", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },

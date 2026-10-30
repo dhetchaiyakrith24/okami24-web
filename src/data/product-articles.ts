@@ -2019,7 +2019,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // List-new 30/10 (nexBar Switch 15K, warehouse-listed): no maker site. Facts = nexBar's own posters — the 15-flavour
   // line-up the warehouse keeps (Shipnity Max image 2764487: nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the
   // 10-flavour poster series a Thai shop carries verbatim (vmaniath.com/en/product/1273962: nexMesh Coil · 15000 puffs ·
-  // 15ML; the pod prints "nexBar SWITCH 15K" + a flavour label). Which device the pod fits = retailer text only → not said
+  // 15ML; the pod prints the nexBar logo, "SWITCH" and a flavour label — the figure under SWITCH is not legible in any source, so it is not quoted). Which device the pod fits = retailer text only → not said
   // (THAI_STYLE §5 "ขยายเป็นทุกที่บนเว็บ") until the owner confirms it from the shop's own stock.
   // SEO (owner 30/10): H1 = the model name · H2 "รายละเอียดเพิ่มเติม" → H3 buyer questions · H2 "คำถามที่พบบ่อย".
   "nexbar-switch-15k-pod": {
@@ -2045,7 +2045,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "nexBar Switch 15K ดูยังไงว่าหัวไหนเป็นกลิ่นอะไร",
           paragraphs: [
-            "ด้านหน้าหัวพอตพิมพ์โลโก้ nexBar กับคำว่า SWITCH 15K และมีป้ายบอกชื่อกลิ่นอยู่ด้วย ถ้าซื้อไปหลายกลิ่น ก็ดูจากป้ายนี้ได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
+            "ด้านหน้าหัวพอตพิมพ์โลโก้ nexBar กับคำว่า SWITCH และมีป้ายบอกชื่อกลิ่นอยู่ด้วย ถ้าซื้อไปหลายกลิ่น ก็ดูจากป้ายนี้ได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
           ],
         },
       ],
@@ -2082,7 +2082,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do I tell which flavour a nexBar Switch 15K pod is?",
           paragraphs: [
-            "The front of each pod is printed with the nexBar logo and SWITCH 15K, along with a flavour label. If you buy several flavours, the label tells you which pod is which.",
+            "The front of each pod is printed with the nexBar logo and the word SWITCH, along with a flavour label. If you buy several flavours, the label tells you which pod is which.",
           ],
         },
       ],
@@ -2119,7 +2119,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "nexBar Switch 15K 怎么分辨是哪种口味？",
           paragraphs: [
-            "烟弹正面印有 nexBar 标志和 SWITCH 15K 字样，并带有口味标签。买了好几种口味，看标签就知道哪颗是什么味道。",
+            "烟弹正面印有 nexBar 标志和 SWITCH 字样，并带有口味标签。买了好几种口味，看标签就知道哪颗是什么味道。",
           ],
         },
       ],
