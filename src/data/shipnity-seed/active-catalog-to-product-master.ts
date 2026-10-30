@@ -1128,7 +1128,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexswitch-16k-kit/card.webp",
+      src: "/assets/products/nexswitch-16k-kit/card-v2.webp",
       alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
