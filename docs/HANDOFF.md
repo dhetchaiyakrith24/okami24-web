@@ -20,24 +20,25 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
   — 300 benefit, ≥800, or v1 — uses that calendar month's benefit) · #1026 every staff order list newest first · #1019 /products/pod-systems body + ItemList + links
   (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 #1031 #1037 RELX packs.
 2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
-  a images-6 + tracking-sync: ARCHIVED 30/10 (owner "สั่งปิดแชทลูก") — no child chat is running. #1031 + #1037 (RELX Creator 20K, 15 flavours) merged.
-    PR #1040 SKE Crystal = DRAFT, NOT merged: checker round 3 (the last, 13.3 #7) on 03503b81 NOT passed [ตรวจแล้ว] — file 6 corner + bottom edge, flat base of 5 + 8, file 8 narrower, small corner steps
-    (evidence `_incoming/chk-ske1040c/`, tree wt-golive, branch claude/images-6-3010-d). ROOT CAUSE = 8 separate shoots. Owner 30/10 "ข้ามไปทำตัวอื่นก่อน" = PARKED.
-    Images chat 7 (local_c8f85aac, idle) wrote the re-shoot plan: 6 images ≈ 12 credits, none spent, balance 1743.4 — spend only on the owner's yes. RELX Pod Pro 2: Lime Ice already live (#1027), 4 flavours have no source.
+  a CHILD CHATS 30/10: images chat 7 (local_c8f85aac, idle) — SKE Crystal re-shot as ONE scene, 8 flavours, 14 credits, LIVE #1048 [checker PASS]; old #1040 (checker round 3 failed) is still an OPEN draft = superseded →
+     close it (auto mode refused `gh pr close` from chat: owner presses close or allows) · RELX Pod Pro 2: Lime Ice live (#1027), 4 flavours have no source · credits 1729.
+     SEO chat (local_56539076, working; brief = SALTHUB · RELX · INFY · nexBar): articles only exist for products with a maker story poster; others get FAQ from verified spec rows + links + brand pages + meta; a new look for
+     poster-less products = designer + owner decision (not asked yet) · it reports each merged PR.
   b tracking-sync work DONE: #1029 (carrier by postcode) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout); real-order test 31/10 = รอพี่ตรวจ item 80; admin JSON → tracking step 2 (parser written, not connected).
   d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
     request indexing (≤ 8 URLs) · short report. Permission mode NOT saved → owner sets Auto / presses "Run now" once.
 2N NEXT for the main chat:
-  a Order-page art is live (#1023 #1025 #1028). THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
+  a THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
   b PARKED: PR #1038 (DRAFT: samurai 20 % + red stage light + orange halo on the black card). Owner 30/10 late: "การ์ดขอบคุณที่ไว้วางใจเว้นเอาไว้ก่อน ยังไม่ต้องแก้" → do NOT rework, do NOT merge until he says so.
-     Card frame was "โอเคอยู่แล้ว"; the light read as a spot — when reopened: ONE wide smooth wash like his posters, no visible disc.
+     When reopened: card frame was OK; the light = ONE wide smooth wash like his posters, no visible disc.
   d CARRIER AUTO-PICK = built (2 b). OWNER 30/10: the admin keeps pressing "ส่งเข้าคลัง Shipnity" for now (the web only PRE-PICKS the carrier); real-order test 31/10 (รอพี่ตรวจ 80);
      only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022 at 22:30): the admin presses "ส่งรายการให้คลังแล้ว". f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
      off-site backup (77) after the back office.
-  g BACK OFFICE 30/10 (owner: buttons feel slow + wants a team button): PR #1044 (draft, gate running) = staff buttons say "กำลังทำ…" at once + /staff loading screen. TEAM BUTTON (name free, he will send Gmails or
-     take a simpler idea): Friday's proposal = a small "ทีมงาน" button on shop pages only on devices already logged in to /staff (marker cookie, read on the client so pages stay static); no Gmail list, customer login untouched.
-     Staff-by-Gmail = bigger (email scope; BSOT §11 keeps no email) — owner picks.
+  g BACK OFFICE 30/10 LIVE [ตรวจแล้ว: checker PASS + deploy success]: #1044 staff buttons say "กำลังทำ…" at once + /staff loading screen · #1046 "ทีมงาน" button on shop pages (marker cookie `okami24_team` set at
+     staff login, read in the browser by `src/components/layout/TeamShortcut.tsx`; pages stay static). Not tried on live by the team yet — if still slow, measure the server side (force-dynamic pages · SQLite · Shipnity).
+     Staff-by-Gmail NOT built (needs Google email scope; BSOT §11 keeps no email). RENDER (owner OK 30/10, set in his logged-in Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**` (service is Blueprint-managed:
+     if a sync resets it, add a build filter to render.yaml). Check: the first docs-only merge must NOT start a deploy.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
