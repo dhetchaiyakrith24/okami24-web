@@ -1,6 +1,7 @@
 /**
  * OKami24 — sales badges (owner 30/10, src/data/sales-badges.ts):
- *   1. every "ขายดี" slug is a live, priced product page (a typo would silently show nothing);
+ *   1. every "ขายดี" slug is a product page on the site (a typo would silently show nothing — an unpriced page, e.g. Caliburn
+ *      G3 on the owner's 31/10 list, still counts: the badge shows whenever its card does);
  *   2. the products the owner keeps out (Marbo lookalike · Muro Space 15K) never carry "ขายดี";
  *   3. "มาใหม่" lasts 14 days, shrinking toward 7 while a big batch would badge more than NEW_SHARE_CAP of the shop;
  *   4. one badge: new first, then best seller; a product sold out in every option carries none.
@@ -21,8 +22,8 @@ const results: Result[] = [];
 const check = (name: string, passed: boolean, detail = "") => results.push({ name, passed, detail });
 
 // 1
-const missing = [...OWNER_BEST_SELLERS].filter((slug) => getCatalogItem(slug)?.sellingPrice == null);
-check("best sellers: every slug is a priced product page", missing.length === 0, missing.join(", "));
+const missing = [...OWNER_BEST_SELLERS].filter((slug) => !getCatalogItem(slug));
+check("best sellers: every slug is a product page on the site", missing.length === 0, missing.join(", "));
 check("best sellers: the source is the owner's list (orders not built yet)", BEST_SELLER_SOURCE === "owner-list");
 
 // 2
