@@ -1,11 +1,12 @@
 import "server-only";
 import crypto from "node:crypto";
 import { PAYMENT_ACCOUNT } from "@/data/payment";
-import { getQuota, verifySlipImage } from "@/lib/staff/easyslip";
+import { getQuota, verifySlipImage, verifySlipPayload } from "@/lib/staff/easyslip";
 import { explainReceiver, type ShopAccount, type SlipParty } from "@/lib/staff/receiver-match";
 import type { PartyView, QuotaView, SlipCheckResponse } from "@/lib/staff/slip-check-types";
 import { findByImageHash, findByTransRef, recordFirstCheck, touchCheck } from "@/lib/staff/slip-checks";
-import { easySlipSeenBefore, verifyWithRetry } from "@/lib/staff/slip-retry";
+import { readSlipQr } from "@/lib/staff/slip-qr";
+import { easySlipSeenBefore, RETRY_TIMEOUT_MS, UNANSWERED_CODES, verifyWithRetry } from "@/lib/staff/slip-retry";
 
 /**
  * One slip check, shared by every place a slip arrives (cart round 22/10): the staff page (/staff/api/verify),
@@ -14,7 +15,8 @@ import { easySlipSeenBefore, verifyWithRetry } from "@/lib/staff/slip-retry";
  *   1. the exact same file checked before AND its receiver was the shop's → answered from our log, EasySlip is
  *      NOT called (any other earlier verdict is asked again — EasySlip answers a slip it already verified from
  *      its cache without using quota, and a fix to our receiver check then applies to it; 08/10);
- *   2. otherwise EasySlip verifies it (key on the server only) and we record transRef / amount / time.
+ *   2. otherwise EasySlip verifies it (key on the server only) and we record transRef / amount / time;
+ *   3. EasySlip finds no QR in the picture → we read the QR here and ask EasySlip by its text (30/10).
  * The caller does access control and size/type checks; the image stays in memory and is never written to disk.
  */
 
@@ -25,6 +27,10 @@ const SHOP: ShopAccount = {
   firstNameTh: PAYMENT_ACCOUNT.accountName.replace(/^(นาย|นางสาว|นาง)\s*/, "").split(/\s+/)[0],
   promptPayRef: PAYMENT_ACCOUNT.promptPayRef.replace(/\D/g, ""),
 };
+
+/** All EasySlip waiting in one check stays under this, so a LINE reply (picture fetch ≤ 10 s first) fits the reply
+ *  token's minute (slip-retry.ts head). The retry path alone is ≤ 36.5 s; the QR-text ask uses what is left. */
+const EASYSLIP_BUDGET_MS = 45_000;
 
 /** Shown for a slip answered from our log (verdict "match" only): the receiver is the shop's own account. */
 const SHOP_VIEW: PartyView = { name: PAYMENT_ACCOUNT.accountName, bank: PAYMENT_ACCOUNT.bankName.th, account: "บัญชีของร้าน" };
@@ -98,10 +104,27 @@ export async function checkSlip(input: {
   }
 
   // 2. EasySlip — asked a second time only when it says "wait a moment" (429) or did not answer at all (slip-retry.ts).
+  const started = Date.now();
   const blob = new Blob([new Uint8Array(bytes)], { type });
-  const { result, unanswered } = await verifyWithRetry((timeoutMs) => verifySlipImage(blob, fileName, timeoutMs));
+  let { result, unanswered } = await verifyWithRetry((timeoutMs) => verifySlipImage(blob, fileName, timeoutMs));
   if (unanswered)
     console.info(`[slip-check] EasySlip ${unanswered} on the first try — asked once more: ${result.ok ? "answered" : result.code}`);
+
+  // 3. EasySlip found no QR in the picture (a slip shown small, e.g. a photo of a chat) → we read the QR ourselves and
+  //    ask once by its text (slip-qr.ts), with the shorter limit so a LINE reply still fits its minute. EasySlip never
+  //    verified the picture, so an isDuplicate on this answer is a real earlier check (unanswered = null).
+  if (!result.ok && result.code === "SLIP_NOT_FOUND") {
+    const payload = await readSlipQr(bytes);
+    const left = EASYSLIP_BUDGET_MS - (Date.now() - started);
+    if (payload && left >= 5_000) {
+      const byPayload = await verifySlipPayload(payload, Math.min(RETRY_TIMEOUT_MS, left));
+      console.info(`[slip-check] no QR found by EasySlip — read here, asked by QR text: ${byPayload.ok ? "answered" : byPayload.code}`);
+      if (byPayload.ok || UNANSWERED_CODES.has(byPayload.code)) {
+        result = byPayload;
+        unanswered = null;
+      }
+    }
+  }
   if (!result.ok) return { ok: false, error: result.code, retryAfterSeconds: result.retryAfterSeconds };
 
   const raw = result.data.rawSlip;

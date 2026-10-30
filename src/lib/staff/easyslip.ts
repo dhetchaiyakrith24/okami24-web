@@ -103,6 +103,24 @@ export async function verifySlipImage(
   return result;
 }
 
+/** The same check from the QR text alone (JSON `payload`, 1–128 chars — /en/v2/verify/bank/ "Input methods"); used when
+ *  EasySlip could not find the QR in the picture but we could (slip-qr.ts). */
+export async function verifySlipPayload(payload: string, timeoutMs = TIMEOUT_MS): Promise<EasySlipResult<VerifyData>> {
+  const result = await call<VerifyData>(
+    "/verify/bank",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ payload, checkDuplicate: true, matchAccount: true }),
+    },
+    timeoutMs
+  );
+  if (!result.ok || !isVerifyData(result.data)) {
+    return result.ok ? { ok: false, code: "BAD_RESPONSE" } : result;
+  }
+  return result;
+}
+
 function isVerifyData(d: unknown): d is VerifyData {
   const v = d as VerifyData | null;
   return Boolean(
