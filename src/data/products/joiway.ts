@@ -58,7 +58,9 @@ export const joiwayProducts: Product[] = [
       { id: "cola-ice", name: "Cola Ice", swatchHex: "#5e3a20", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-ice.webp", alt: "JOIWAY F3, Cola Ice" } },
       { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#8a6b2a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-lemon.webp", alt: "JOIWAY F3, Cola Lemon" } },
       { id: "cool-mint-ice", name: "Cool Mint Ice", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cool-mint-ice.webp", alt: "JOIWAY F3, Cool Mint Ice" } },
-      { id: "funta-grape", name: "Funta Grape", swatchHex: "#6a4c93", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-funta-grape.webp", alt: "JOIWAY F3, Funta Grape" } },
+      // Owner 30/10 ("Funta Green ก็คือ Green"): this photo — JOIWAY's file "Funta Green" — was listed as "Funta Grape";
+      // it is Max Pod-133-15 Funta Green. JOIWAY's grape is "Grape Ice" below.
+      { id: "funta-green", name: "Funta Green", swatchHex: "#6aa84f", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-funta-green.webp", alt: "JOIWAY F3, Funta Green" } },
       { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-grape-ice.webp", alt: "JOIWAY F3, Grape Ice" } },
       { id: "green-apple-ice", name: "Green Apple Ice", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-green-apple-ice.webp", alt: "JOIWAY F3, Green Apple Ice" } },
       { id: "hokkaido-melon-ice", name: "Hokkaido Melon Ice", swatchHex: "#a8c53e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-melon-ice.webp", alt: "JOIWAY F3, Hokkaido Melon Ice" } },
@@ -72,8 +74,7 @@ export const joiwayProducts: Product[] = [
       // 2026-09-06 — the 14 flavours JOIWAY lists that our catalog lacked, added under the owner
       // rule "show every flavour the maker offers, stock or not". Names/photos straight from the
       // official Thai site API (thai.myjoiway.com, action detail id 85); stock unknown until
-      // Shipnity is wired. NOTE: the official file for our existing "Funta Grape" is named
-      // "Funta Green" — our name is kept on purpose (owner 2026-09-06); see HANDOFF.
+      // Shipnity is wired.
       { id: "aloe-grape", name: "Aloe Grape", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-aloe-grape-v2.webp", alt: "JOIWAY F3, Aloe Grape" } },
       { id: "berries-party", name: "Berries Party", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-berries-party-v2.webp", alt: "JOIWAY F3, Berries Party" } },
       { id: "blueberry-lime", name: "Blueberry Lime", swatchHex: "#4f7fb8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-blueberry-lime-v2.webp", alt: "JOIWAY F3, Blueberry Lime" } },
@@ -88,8 +89,6 @@ export const joiwayProducts: Product[] = [
       { id: "virginia-tobacco", name: "Virginia Tobacco", swatchHex: "#a0703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-virginia-tobacco-v2.webp", alt: "JOIWAY F3, Virginia Tobacco" } },
       { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v2.webp", alt: "JOIWAY F3, Vodak" } },
       { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange-v2.webp", alt: "JOIWAY F3, Watermelon Orange" } },
-      // line 2 max-sync (22/10, owner "1 ลง"): Max name, no maker page — no photo yet. Max Pod-133-15 "Funta Green". Owner list 24 (10/10): a different flavour from our "Funta Grape" (owner 06/09; JOIWAY's photo file for Funta Grape happens to be named "Funta Green").
-      { id: "funta-green", name: "Funta Green", swatchHex: "#6aa84f", availability: "unknown" },
     ],
     // Site-wide template round batch 4a (06/10): the G5 template — JOIWAY's own Thai posters, one per block (3840 px, down-sized only:
     // _incoming/sitewide-template/4/4a/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
