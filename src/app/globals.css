@@ -478,7 +478,7 @@ a[data-card-cut]:has([data-sales="best"])::before {
   }
   /* The product head pill glints 3 times and stops — it sits next to the page title. */
   .okami-best-pill[data-head]::after {
-    animation: okami-best-glint 8s linear -3s 3;
+    animation: okami-best-glint 8s linear -3s 3 forwards; /* ends past the pill edge, not across the words (checker #1069) */
   }
   /* Half the cards run half a cycle later — a brand page full of best sellers does not flash in step. */
   a[data-card-cut]:nth-child(2n):has([data-sales="best"])::before,
