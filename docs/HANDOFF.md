@@ -35,9 +35,9 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
      only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022 at 22:30): the admin presses "ส่งรายการให้คลังแล้ว". f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
      off-site backup (77) after the back office.
-  g BACK OFFICE 30/10 (owner: buttons feel slow + wants a team button): PR #1044 (draft, gate running) = staff buttons say "กำลังทำ…" at once + /staff loading screen. TEAM BUTTON (name free, he will send Gmails or
-     take a simpler idea): Friday's proposal = a small "ทีมงาน" button on shop pages only on devices already logged in to /staff (marker cookie, read on the client so pages stay static); no Gmail list, customer login untouched.
-     Staff-by-Gmail = bigger (email scope; BSOT §11 keeps no email) — owner picks.
+  g BACK OFFICE 30/10 LIVE [ตรวจแล้ว: checker PASS + deploy success]: #1044 staff buttons say "กำลังทำ…" at once + /staff loading screen · #1046 "ทีมงาน" button on shop pages (marker cookie `okami24_team` set at
+     staff login, read in the browser by `src/components/layout/TeamShortcut.tsx`; pages stay static). Not tried on live by the team yet — if still slow, measure the server side (force-dynamic pages · SQLite · Shipnity).
+     Staff-by-Gmail NOT built (needs Google email scope; BSOT §11 keeps no email). Render skip-deploy on docs-only merges → รอพี่ตรวจ 81.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
