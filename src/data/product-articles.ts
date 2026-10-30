@@ -2024,35 +2024,35 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // SEO (owner 30/10): H1 = the model name · H2 "รายละเอียดเพิ่มเติม" → H3 buyer questions · H2 "คำถามที่พบบ่อย".
   "nexbar-switch-15k-pod": {
     th: {
-      lede: "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ เลือกกลิ่นแล้วได้หัวที่มีน้ำยากลิ่นนั้นมาในตัว ด้านล่างเล่าจากโปสเตอร์ของ nexBar ว่าในหัวมีอะไร และ 15 กลิ่นแบ่งเป็นแนวไหนบ้าง",
+      lede: "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ แต่ละหัวมีน้ำยาของกลิ่นที่เลือกมาในตัว ด้านล่างสรุปจากโปสเตอร์ของ nexBar ไว้ให้ ว่าในหัวพอตมีอะไรบ้าง และ 15 กลิ่นแบ่งได้เป็นแนวไหน",
       sections: [
         {
           heading: "nexBar Switch 15K คืออะไร",
           paragraphs: [
             "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ หัวหนึ่งมีน้ำยา 15mL กับคอยล์ nexMesh อยู่ในตัว จึงไม่ต้องเติมน้ำยาหรือเปลี่ยนคอยล์เองเหมือนหัวพอตเปล่า",
-            "ส่วนเลข 15K ในชื่อรุ่นมาจากตัวเลขบนโปสเตอร์ของ nexBar ที่ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ",
+            "เลข 15K ในชื่อรุ่นตรงกับตัวเลขบนโปสเตอร์ของ nexBar ที่ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ",
           ],
         },
         {
           heading: "nexBar Switch 15K มีกลิ่นอะไรบ้าง",
           paragraphs: [
-            "รุ่นนี้มี 15 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 3 แนว",
-            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือเป็นมิ้นต์ ได้แก่ Blueberry Ice, Grape Ice, Watermelon Ice และ Mint",
-            "สายผลไม้ ได้แก่ Grape Lychee, Lychee, Mango Peach, Peach Strawberry, Pink Berry, Mixberry, Pineapple, Strawberry Banana และ Strawberry Watermelon",
+            "รุ่นนี้มีให้เลือก 15 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 3 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Blueberry Ice · Grape Ice · Watermelon Ice และ Mint",
+            "สายผลไม้ ได้แก่ Grape Lychee · Lychee · Mango Peach · Peach Strawberry · Pink Berry · Mixberry · Pineapple · Strawberry Banana และ Strawberry Watermelon",
             "แนวอื่นมี Cola กับ Strawberry Custard",
           ],
         },
         {
-          heading: "ดูยังไงว่าหัวที่ได้เป็นกลิ่นไหน",
+          heading: "nexBar Switch 15K ดูยังไงว่าหัวไหนเป็นกลิ่นอะไร",
           paragraphs: [
-            "ด้านหน้าของหัวพอตพิมพ์โลโก้ nexBar กับคำว่า SWITCH 15K และมีป้ายชื่อกลิ่นอยู่ด้านล่าง ซื้อไปหลายกลิ่นก็ดูชื่อบนป้ายได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
+            "ด้านหน้าหัวพอตพิมพ์โลโก้ nexBar กับคำว่า SWITCH 15K และมีป้ายบอกชื่อกลิ่นอยู่ด้วย ถ้าซื้อไปหลายกลิ่น ก็ดูจากป้ายนี้ได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
           ],
         },
       ],
       faq: [
         {
           question: "nexBar Switch 15K หัวหนึ่งสูบได้กี่พัฟ",
-          answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ตัวเลขนี้เป็นค่าสูงสุดที่ผู้ผลิตบอก สูบจริงได้มากน้อยแค่ไหนขึ้นกับวิธีสูบของแต่ละคนนะคะ",
+          answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ส่วนจำนวนที่สูบได้จริงขึ้นอยู่กับการสูบของแต่ละคนนะคะ",
         },
         {
           question: "nexBar Switch 15K นิโคตินกี่ %",
@@ -2061,28 +2061,28 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "The nexBar Switch 15K is a prefilled pod: pick a flavour and the pod comes with that e-liquid inside. Below, from nexBar's own posters, what is in the pod and how the 15 flavours group.",
+      lede: "The nexBar Switch 15K is a prefilled pod: each one comes with the e-liquid of the flavour you choose. Below is a summary from nexBar's own posters of what each pod holds and how the 15 flavours group.",
       sections: [
         {
           heading: "What is the nexBar Switch 15K?",
           paragraphs: [
             "The nexBar Switch 15K is a prefilled pod with 15mL of e-liquid and a built-in nexMesh coil, so there is no e-liquid to add and no coil to change as with an empty pod.",
-            "The 15K in the name comes from nexBar's poster, which rates each pod for up to 15,000 puffs.",
+            "The 15K in the name matches nexBar's poster, which rates each pod for up to 15,000 puffs.",
           ],
         },
         {
           heading: "Which flavours does the nexBar Switch 15K come in?",
           paragraphs: [
             "There are 15 flavours. Grouped by name, they fall into three sets.",
-            "Cool, with Ice in the name or mint: Blueberry Ice, Grape Ice, Watermelon Ice and Mint.",
+            "Cool, with Ice or Mint in the name: Blueberry Ice, Grape Ice, Watermelon Ice and Mint.",
             "Fruit: Grape Lychee, Lychee, Mango Peach, Peach Strawberry, Pink Berry, Mixberry, Pineapple, Strawberry Banana and Strawberry Watermelon.",
             "Others: Cola and Strawberry Custard.",
           ],
         },
         {
-          heading: "How do I tell which flavour a pod is?",
+          heading: "How do I tell which flavour a nexBar Switch 15K pod is?",
           paragraphs: [
-            "The front of the pod is printed with the nexBar logo and SWITCH 15K, with a flavour label below. If you buy several flavours, the label tells you which pod is which.",
+            "The front of each pod is printed with the nexBar logo and SWITCH 15K, along with a flavour label. If you buy several flavours, the label tells you which pod is which.",
           ],
         },
       ],
@@ -2104,22 +2104,22 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "nexBar Switch 15K 是什么？",
           paragraphs: [
             "nexBar Switch 15K 是预装烟油的烟弹，每颗装有 15mL 烟油，并内置 nexMesh 线圈，不用像空烟弹那样自己加油、换线圈。",
-            "名字里的 15K 来自 nexBar 海报上的数字：每颗烟弹最多 15,000 口。",
+            "名字里的 15K 与 nexBar 海报上的数字一致：每颗烟弹最多 15,000 口。",
           ],
         },
         {
           heading: "nexBar Switch 15K 有哪些口味？",
           paragraphs: [
             "共 15 种口味，按名称大致分为三类。",
-            "清凉系，名称带 Ice 或是薄荷：Blueberry Ice、Grape Ice、Watermelon Ice 和 Mint。",
+            "清凉系，名称带 Ice 或 Mint：Blueberry Ice、Grape Ice、Watermelon Ice 和 Mint。",
             "水果系：Grape Lychee、Lychee、Mango Peach、Peach Strawberry、Pink Berry、Mixberry、Pineapple、Strawberry Banana 和 Strawberry Watermelon。",
             "其他：Cola 和 Strawberry Custard。",
           ],
         },
         {
-          heading: "怎么分辨烟弹是哪种口味？",
+          heading: "nexBar Switch 15K 怎么分辨是哪种口味？",
           paragraphs: [
-            "烟弹正面印有 nexBar 标志和 SWITCH 15K 字样，下方有口味标签。买了好几种口味，看标签就知道哪颗是什么味道。",
+            "烟弹正面印有 nexBar 标志和 SWITCH 15K 字样，并带有口味标签。买了好几种口味，看标签就知道哪颗是什么味道。",
           ],
         },
       ],

@@ -612,7 +612,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // List-new (30/10): no maker page — the numbers are nexBar's own posters (VERIFIED_SPECIFICATIONS below). The device it
     // fits is retailer text only, so it is not said here.
     tagline: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K น้ำยา 15mL",
-    shortDescription: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL คอยล์ nexMesh ในตัว นิโคติน 3% ร้านมีให้เลือก 15 กลิ่น",
+    shortDescription: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL พร้อมคอยล์ nexMesh ในตัว นิโคติน 3% ร้านมีให้เลือก 15 กลิ่น",
   },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).

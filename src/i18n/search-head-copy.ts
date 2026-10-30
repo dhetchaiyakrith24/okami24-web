@@ -377,7 +377,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "nexswitch-16k-kit": "Nexswitch 16K ชุดเครื่องพร้อมหัวพอต 1 หัว หัวละสูงสุด 16,000 พัฟ มีให้เลือก 10 กลิ่น",
   "nexswitch-16k-pod": "Nexswitch 16K หัวพอต หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch มีให้เลือก 10 กลิ่น",
   // List-new 30/10: numbers = nexBar's posters (VERIFIED_SPECIFICATIONS) · no "ใช้กับ …" until the owner confirms the device.
-  "nexbar-switch-15k-pod": "nexBar Switch 15K หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL คอยล์ nexMesh นิโคติน 3% มีให้เลือก 15 กลิ่น",
+  "nexbar-switch-15k-pod": "nexBar Switch 15K หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL พร้อมคอยล์ nexMesh ในตัว นิโคติน 3% มีให้เลือก 15 กลิ่น",
   "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 4 สี",
