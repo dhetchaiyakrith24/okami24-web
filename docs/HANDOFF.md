@@ -26,20 +26,18 @@ Updated 30/10 ~23:40 by the 4th main chat (Friday; weekly quota 84% at 21:00, re
   d badges-3010 local_93a873ba (high): ใกล้หมด · มาใหม่ · ขายดี · ยอดนิยม + "เหลือ N ชิ้น" (owner 30/10). Building ใกล้หมด now; 3 questions sent to the
      owner 30/10 ~23:30 (source of ขายดี/ยอดนิยม = BSOT §15 lists · count on the product page, "มากกว่า 20" ceiling · มาใหม่ = 7 days) — all recommended A.
   e Images chat 7 local_c8f85aac: owner 30/10 GO for nexSwitch ≈20 · MQ Bar ≈22 · Marbo ≈20 · Kardinal ≈32 credits (if he meant nexSwitch only, stop the rest).
-     nexBAR SKU chat local_d3dfa304 + ORDER-DESKTOP local_d7ab6ad2 = done (archive on the owner's word). PR #1038 + #1040 = superseded drafts, never merge.
+     nexBAR SKU + ORDER-DESKTOP chats = done (owner deleted them). PR #1038 + #1040 = superseded drafts, never merge.
   f `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; Chrome logged in to GSC. Routine model/effort (§18): owner has NOT set it — ask.
 2N NEXT for the main chat (in this order):
-  a Owner status page (§17) — refresh after tonight's merges (last ~17:30 30/10). Slip case 30/10 18:35 = the bot answered SLIP_NOT_FOUND to a photo of a LINE
-     chat (owner's screenshot) → fixed by #1059's QR read; staff can also forward the full slip picture. Watch the server log line "[slip-check] no QR found by EasySlip".
+  a Slip case 30/10 (photo of a LINE chat → SLIP_NOT_FOUND) = fixed by #1059's QR read; watch the log line "[slip-check] no QR found by EasySlip".
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
      STAFF LOGIN PLAN (owner 30/10 ~21:30): "ทีมงาน Login ตามปกติเหมือนลูกค้า · หลัง Login จะมีหน้าต่าง Dashboard ใหม่ไม่เหมือนลูกค้า พี่จะออกแบบใหม่ระบบหลังบ้านเช่นกัน ·
      ลูกค้า-ทีมงานเห็นไม่เหมือนกันแต่ไม่รู้จะแยกอย่างไร". Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
      approves → staff dashboard (role on the member row; BSOT §11). Login = 13.3 #9 → plan with the owner first (okami24-plan + designer). The #1046 pill stays till then.
      FUTURE ROUND (owner 30/10): desktop thank-you page to use the wide space better ("จัดวางยังไม่ Perfect") — queued.
-  d tracking-sync step 2 = child 2b. CANCEL-ALERT TEST PASSED (owner 30/10 20:18): #0036 OK-20261030-28e0f1 pushed 20:12, cancelled in Shipnity → LINE "OKM Order" posted
-     "⚠️ คลังยกเลิกออเดอร์ #0036 …" with items + link. #0036 must be cancelled on /staff (reason "ทดสอบ"). Carrier auto-send only on the owner's word.
-     ROUTINE "new models research" = drafted, NOT created: `_incoming/new-models/routine-okami24-new-models-research.md`.
+  d Cancel-alert test PASSED 30/10 (#0036). Staff to-do: cancel #0036 (reason "ทดสอบ") · OK-20261028-ccd46d has an empty tracking note → staff fill it. Carrier auto-send only on the owner's word.
+     ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
   e RENDER (owner OK 30/10, set via his Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**` — works [ตรวจแล้ว: #1049 no deploy]; a docs PR must be ONE clean commit from latest main (merge-of-main commits DO deploy).
   f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row for the Latin label "PAYMENT CARD" at the next round close.
@@ -48,7 +46,9 @@ Updated 30/10 ~23:40 by the 4th main chat (Friday; weekly quota 84% at 21:00, re
      Left: broadcast "โฉมใหม่" = the OWNER sends · faint smear in the owner's PNG = a clean file from him fixes it, never retouch.
   e BADGES + stock count = child 2d (questions = รอพี่ตรวจ 83).
   f B5 "ใกล้หมด · เหลือ N ชิ้น" (§18) = being built by child 2d.
-  g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
+  g SALES LOG (owner 30/10: "อยากให้เว็บจดบันทึกรายยอดขายมีแค่บัญชีพี่ที่ดูได้") — owner-only
+     view. Web orders split items/shipping; LINE orders = slip only → staff mark shipping charged. Plan with the owner.
+     Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
      (3) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) — PARKED, owner 27/10 "ยังไม่ทำตอนนี้";
