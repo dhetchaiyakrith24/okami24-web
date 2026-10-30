@@ -190,7 +190,7 @@ export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" |
 export function applyStaffAction(
   orderNumber: string,
   action: StaffAction,
-  input: { tracking?: string; carrier?: string; note?: string; message?: string }
+  input: { tracking?: string; carrier?: string; note?: string; message?: string; by?: "shipnity" }
 ): StaffActionResult {
   const db = getDb();
   const note = (input.note ?? "").trim().slice(0, 300);
@@ -214,11 +214,13 @@ export function applyStaffAction(
     const steps = stepsFor(action, row.status);
     if (!steps) return { ok: false, error: "not-allowed" };
     const history = db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)");
+    // Who did it: staff, or Shipnity writing the tracking number back (src/lib/woo/tracking-sync.ts).
+    const who = input.by === "shipnity" ? "Shipnity" : "Staff";
     for (const status of steps) {
       const isLast = status === steps[steps.length - 1];
       const text = isLast
-        ? [`Staff: ${action}`, tracking ? `tracking ${tracking}` : null, carrier ? `carrier ${carrier}` : null, historyNote || null].filter(Boolean).join(" — ")
-        : `Staff: ${action}`;
+        ? [`${who}: ${action}`, tracking ? `tracking ${tracking}` : null, carrier ? `carrier ${carrier}` : null, historyNote || null].filter(Boolean).join(" — ")
+        : `${who}: ${action}`;
       history.run(row.id, status, text);
     }
     db.prepare(

@@ -1,4 +1,5 @@
 import type { WooProduct, WooVariation } from "@/lib/woo/catalog";
+import { parseTracking, type ParsedTracking } from "@/lib/woo/tracking-parse";
 
 /**
  * A WooCommerce REST API look-alike, just big enough for the warehouse's Shipnity (Shipnity link step 1, owner 27/10).
@@ -16,8 +17,8 @@ import type { WooProduct, WooVariation } from "@/lib/woo/catalog";
  *   - read the orders already sent to it (Woo order objects, no slip — owner 27/10); everything else is not listed;
  *   - read the shop's e-mail sender name (Shipnity asks on connect);
  *   - add a note or a shipment tracking to an order it was sent (owner 29/10, tracking sync step 1): answered the way a
- *     Woo shop with a tracking plugin would, so Shipnity does not stop at a 404 — the log keeps what it sent; nothing on
- *     the order changes yet.
+ *     Woo shop with a tracking plugin would, so Shipnity does not stop at a 404 — the log keeps what it sent, and a
+ *     tracking number found in it is handed to the route (`orderTrackings`), which ships the order (tracking-sync.ts).
  * Every other field in a write is ignored; anything else answers WooCommerce's own "no route" 404.
  * Pure: the route does the database and the log.
  */
@@ -85,6 +86,19 @@ export interface ApiResponse {
   writes: StockWrite[];
   /** Shipnity changed an order it was sent (status, or deleted) — the route records it and alerts staff. */
   orderUpdates?: OrderUpdate[];
+  /** A tracking number Shipnity wrote to an order it was sent (a note, a tracking route, or the order's meta). */
+  orderTrackings?: OrderTracking[];
+}
+
+export interface OrderTracking {
+  orderId: number;
+  tracking: ParsedTracking;
+}
+
+/** The tracking in a write to an order, as a one-item list for the route (empty when the body has none). */
+function trackingOf(orderId: number, kind: "order" | "note" | "tracking-route", body: unknown): OrderTracking[] {
+  const tracking = parseTracking(kind, body);
+  return tracking ? [{ orderId, tracking }] : [];
 }
 
 export interface OrderUpdate {
@@ -417,17 +431,19 @@ export function handle(req: ApiRequest): ApiResponse {
       return ok(items, headers);
     }
     // Shipnity's changes to an order it was sent (e.g. cancelled — out of stock at the warehouse, owner 28/10): answered
-    // with the order unchanged, and handed to the route as an update so staff hear about it on LINE. The site's own
-    // order status is never changed from here — staff decide with the customer.
+    // with the order unchanged, and handed to the route as an update so staff hear about it on LINE. A status alone never
+    // changes the site's order — staff decide with the customer; only a tracking number ships it (tracking-sync.ts).
     if (rest.length === 2 && r1 === "batch" && method === "POST") {
       const b = (req.body ?? {}) as { update?: unknown[]; delete?: unknown[] };
       const updates: OrderUpdate[] = [];
+      const trackings: OrderTracking[] = [];
       const answer = (id: number) => all.find((x) => x.id === id);
       const upd = (Array.isArray(b.update) ? b.update : []).map((u) => {
         const id = Number((u as { id?: unknown })?.id);
         const o = answer(id);
         if (!o) return { id, error: { code: "woocommerce_rest_shop_order_invalid_id", message: "Invalid ID.", data: { status: 400 } } };
         updates.push({ orderId: id, status: readOrderStatus(u) });
+        trackings.push(...trackingOf(id, "order", u));
         return o;
       });
       const del = (Array.isArray(b.delete) ? b.delete : []).map((d) => {
@@ -437,13 +453,14 @@ export function handle(req: ApiRequest): ApiResponse {
         updates.push({ orderId: id, status: "deleted" });
         return o;
       });
-      return { ...ok({ create: [], update: upd, delete: del }), orderUpdates: updates };
+      return { ...ok({ create: [], update: upd, delete: del }), orderUpdates: updates, orderTrackings: trackings };
     }
     if (rest.length === 2) {
       const o = all.find((x) => x.id === Number(r1));
       if (!o) return err(404, "woocommerce_rest_shop_order_invalid_id", "Invalid ID.");
       if (method === "GET") return ok(o);
-      if (write) return { ...ok(o), orderUpdates: [{ orderId: o.id, status: readOrderStatus(req.body) }] };
+      if (write)
+        return { ...ok(o), orderUpdates: [{ orderId: o.id, status: readOrderStatus(req.body) }], orderTrackings: trackingOf(o.id, "order", req.body) };
       if (method === "DELETE") return { ...ok(o), orderUpdates: [{ orderId: o.id, status: "deleted" }] };
     }
     // /orders/<id>/notes and /orders/<id>/shipment-trackings — where a Woo shop takes a shipping note or a tracking number.
@@ -455,7 +472,10 @@ export function handle(req: ApiRequest): ApiResponse {
       const b = (req.body && typeof req.body === "object" ? req.body : {}) as Record<string, unknown>;
       const text = (k: string) => (typeof b[k] === "string" ? (b[k] as string).slice(0, 500) : "");
       if (r2 === "notes") {
-        return ok({ id: 1, author: "Shipnity", date_created: DATE, note: text("note"), customer_note: b.customer_note === true }, undefined, [], 201);
+        return {
+          ...ok({ id: 1, author: "Shipnity", date_created: DATE, note: text("note"), customer_note: b.customer_note === true }, undefined, [], 201),
+          orderTrackings: trackingOf(o.id, "note", b),
+        };
       }
       const tracking = {
         tracking_id: "1",
@@ -464,7 +484,7 @@ export function handle(req: ApiRequest): ApiResponse {
         tracking_number: text("tracking_number"),
         date_shipped: text("date_shipped") || DATE.slice(0, 10),
       };
-      return ok(tracking, undefined, [], 201);
+      return { ...ok(tracking, undefined, [], 201), orderTrackings: trackingOf(o.id, "tracking-route", b) };
     }
     return noRoute();
   }
