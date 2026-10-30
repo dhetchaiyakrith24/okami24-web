@@ -29,12 +29,12 @@ Rewritten 30/10 ~19:00 by the 3rd main chat (Friday) — moved at 70% context an
      (cached, no quota) → a retry after a timeout must not read as a REUSED slip; read the decision code first. Money = checker full set; quota 497/1000 (23/10).
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
-  c JOIWAY F3: owner's 30/10 answer + Friday's finding + the open question = รอพี่ตรวจ 79 (asked); edit `src/data/products/joiway.ts` + sku-map only after his pick.
+  c JOIWAY F3 — OWNER ANSWERED 30/10 ("Funta Grape Ice ก็คือตัวนี้ Ice · Funta Green ก็คือ Green"): our green photo named "Funta Grape" IS Funta Green; grape = existing "Grape Ice".
+     DO (data PR + checker): green photo → option `funta-green` (Pod-133-15) · remove option `funta-grape` · fix "Funta Grape" in `src/data/guides.ts` · no new photo.
   d tracking-sync step 2 needs the admins' JSON (รอพี่ตรวจ 80, real-order test 31/10); unproven that Shipnity sends tracking back at all (survey doc: "not mentioned") · carrier auto-send only on the owner's word.
      CANCEL-ALERT TEST (owner, 30/10 ~19:00): he sends one order to Shipnity, the warehouse cancels it → expected (#958): LINE "OKM Order" alert once + a row under "ออเดอร์ที่คลังเปลี่ยน"; the web order does NOT change by itself
      (staff cancel it on /staff, reason "ทดสอบ"). Ask him for the result. ROUTINE "new models research" (owner 30/10) = drafted, NOT created (auto mode refused): `_incoming/new-models/routine-okami24-new-models-research.md`.
-  e RENDER (owner OK 30/10, set via his Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**`. The first docs merge (55c6fd6a) STILL started a deploy: its branch carried merge-of-main commits (code files) →
-     docs PRs must be ONE clean commit cut from the latest main, no merge-of-main. Test again with this PR; service is Blueprint-managed (a sync may reset it → render.yaml build filter).
+  e RENDER (owner OK 30/10, set via his Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**` — works [ตรวจแล้ว: #1049 no deploy]; a docs PR must be ONE clean commit from latest main (merge-of-main commits DO deploy).
   f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row for the Latin label "PAYMENT CARD" at the next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
