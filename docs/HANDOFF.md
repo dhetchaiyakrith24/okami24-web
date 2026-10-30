@@ -17,16 +17,17 @@ Rewritten 30/10 ~19:00 by the 3rd main chat (Friday) — moved at 70% context an
   #1044 staff buttons "กำลังทำ…" + /staff loading screen · #1046 "ทีมงาน" button (marker cookie `okami24_team` set at staff login, read by `src/components/layout/TeamShortcut.tsx`; pages stay static) ·
   /products/pod-systems SEO (#1019) · RELX / Vazer / INFY / SKE Crystal (#1048, 8 flavours in one scene, 14 credits) photos.
 2 CHILD CHATS (≤ 3; they report to Friday; open the next chat with skill round-open "continue"):
-  a SEO chat local_56539076 (idle at 19:00, was building RELX): brief = SALTHUB · RELX · INFY · nexBar; articles only exist for products with a maker story poster; others get FAQ from verified spec rows + links + brand
-     pages + meta; a new look for poster-less products = designer + owner decision (not asked) · it reports each merged PR.
+  a SEO chat local_56539076 (RELX PR in verify at 19:30): SALTHUB · RELX · INFY · nexBar — FAQ from verified specs + links + brand pages + meta (articles need a maker poster;
+     a new look for poster-less products = designer + owner, not asked).
   b ORDER-DESKTOP chat local_d7ab6ad2 (started 19:00): owner 30/10 "การ์ดขอบคุณบนคอมแก้เลย: คำขอบคุณซ้าย ซามูไรขวา เลื่อนลงเป็นรายละเอียดออเดอร์ ใช้พลังความคิดเต็มที่" — desktop only, designer options → 2 draft
      screenshots to Friday → Friday sends the owner → build. PR #1038 (old stage-light try) stays a DRAFT, never merge. Images chat 7 done (credits 1729); old SKE PR #1040 = OPEN draft, superseded, close it (auto mode refused
      `gh pr close`: owner presses close or allows).
-  c ROUTINE `okami24-seo-weekly` (Saturdays 15:00 — first run 31/10): owner presses "Run now" once / sets Auto, Chrome on and logged in to Search Console.
+  c `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; Chrome logged in to GSC.
 2N NEXT for the main chat (in this order):
   a SLIP "TIMEOUT" (owner 30/10: the LINE bot says "ตรวจสลิปไม่ได้ตอนนี้ (รหัส TIMEOUT)" 2–3 times today, re-check later works): EasySlip is called ONCE with a 20 s limit (`src/lib/staff/easyslip.ts`; callers
      `src/lib/line/webhook.ts` + `src/lib/staff/slip-checks.ts`). Plan: bounded retry/auto re-check for TIMEOUT / NETWORK / 5xx only — CAREFUL: EasySlip answers a repeat of an already-verified slip as isDuplicate:true
      (cached, no quota) → a retry after a timeout must not read as a REUSED slip; read the decision code first. Money = checker full set; quota 497/1000 (23/10).
+     CASE 30/10 18:35: Krungthai ฿1,100 → PromptPay (K+, masked) failed in LINE/web/scan, money WAS in → read its slip_checks row first.
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
   c JOIWAY F3 — OWNER ANSWERED 30/10 ("Funta Grape Ice ก็คือตัวนี้ Ice · Funta Green ก็คือ Green"): our green photo named "Funta Grape" IS Funta Green; grape = existing "Grape Ice".
