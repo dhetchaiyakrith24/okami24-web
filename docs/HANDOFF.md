@@ -46,8 +46,8 @@ Updated 30/10 ~22:00 by the 4th main chat (Friday; weekly quota 84% at 21:00 —
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
      Left: broadcast "โฉมใหม่" = the OWNER sends · faint smear in the owner's PNG = a clean file from him fixes it, never retouch.
-  f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log ENDED (routine deleted 28/10; Shipnity sends numbers) · ② DONE 28/10
-     = live stock from Shipnity (3u) · ③ label at ≤ 3 left on option tiles + product page (designer places it) — numbers now exist.
+  e BADGES ขายดี · ใกล้หมด · แนะนำ (owner 30/10) — open questions = รอพี่ตรวจ 83 · ใกล้หมด = f.
+  f B5 "ใกล้หมด · เหลือ N ชิ้น" (§18): live stock numbers exist (3u) → label at ≤ 3 left on option tiles + product page (designer places it).
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
