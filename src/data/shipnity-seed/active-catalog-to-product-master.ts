@@ -1719,7 +1719,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Pod-169": {
     specifications: [
-      { key: "capacity", label: "ความจุ", value: "2.5 ml", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุ", value: "2.5mL", sourceStatus: "verified" },
       { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตบรรจุสำเร็จ คอยล์ในตัว (ระบบปิด ใช้หมดแล้วเปลี่ยนหัวใหม่)", sourceStatus: "verified" },
     ],
     // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
