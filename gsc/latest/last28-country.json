@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-30",
-  "endDate": "2026-10-27",
+  "startDate": "2026-10-01",
+  "endDate": "2026-10-28",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 673,
-   "impressions": 5073,
-   "ctr": 0.13266311847033313,
-   "position": 10.236940666272423
+   "clicks": 649,
+   "impressions": 4850,
+   "ctr": 0.13381443298969073,
+   "position": 10.421443298969072
   },
   {
    "keys": [
@@ -39,9 +39,9 @@
     "lao"
    ],
    "clicks": 1,
-   "impressions": 8,
-   "ctr": 0.125,
-   "position": 6.625
+   "impressions": 7,
+   "ctr": 0.14285714285714285,
+   "position": 7.428571428571429
   },
   {
    "keys": [
@@ -129,9 +129,9 @@
     "irn"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 68.5
+   "position": 34
   },
   {
    "keys": [
@@ -192,9 +192,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 22,
+   "impressions": 19,
    "ctr": 0,
-   "position": 5.909090909090909
+   "position": 4.631578947368421
   },
   {
    "keys": [
