@@ -3,6 +3,7 @@ import { canOpenStockIssue, stockIssueStage } from "@/lib/commerce/stock-issue-r
 import type { StaffOrderDetail } from "@/lib/staff/orders";
 import { formatBaht, formatDateTime } from "@/app/staff/_components/order-bits";
 import { RefundSlipUpload } from "@/app/staff/_components/RefundSlipUpload";
+import { PendingButton } from "@/app/staff/_components/PendingButton";
 
 /**
  * "สินค้าหมดหลังลูกค้าโอน" on /staff/orders/<n> (cart UX batch E, owner 24/10). Staff tick the lines that are out → the
@@ -34,9 +35,9 @@ function OpenForm({ order, again }: { order: StaffOrderDetail; again: boolean })
           </label>
         ))}
       </fieldset>
-      <button type="submit" className={again ? `${ghost} self-start` : `${button} self-start`}>
+      <PendingButton className={again ? `${ghost} self-start` : `${button} self-start`}>
         {again ? "แจ้งใหม่ (ให้ลูกค้าเลือกอีกครั้ง)" : "แจ้งลูกค้าว่าสินค้าหมด"}
-      </button>
+      </PendingButton>
       <p className="text-xs text-foreground-dim">
         ลูกค้าจะเห็นในหน้าออเดอร์: เปลี่ยนเป็นสินค้าที่มีของราคาเท่ากัน หรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย
       </p>
@@ -53,9 +54,9 @@ function RefundForm({ order }: { order: StaffOrderDetail }) {
         โอนคืนแล้ว — เลขอ้างอิงจากแอปธนาคาร
         <input name="ref" required minLength={4} maxLength={60} autoComplete="off" className={input} />
       </label>
-      <button type="submit" className={`${button} self-start`}>
+      <PendingButton className={`${button} self-start`} pendingText="กำลังบันทึก…">
         บันทึกว่าคืนเงินแล้ว
-      </button>
+      </PendingButton>
       <p className="text-xs text-foreground-dim">บันทึกแล้วแนบรูปสลิปโอนคืนต่อได้ทันที — ลูกค้าจะเห็นสลิปในหน้าออเดอร์</p>
     </form>
   );
@@ -135,9 +136,7 @@ export function StockIssueSection({ order, asRow = false }: { order: StaffOrderD
             ))}
           </ul>
           <p className="text-xs text-foreground-dim">เช็คของจริงที่คลังก่อนกด — กดแล้วรายการในออเดอร์และข้อความส่งคลังเปลี่ยนตาม ยอดเงินเท่าเดิม</p>
-          <button type="submit" className={`${button} self-start`}>
-            ยืนยันเปลี่ยนสินค้าในออเดอร์
-          </button>
+          <PendingButton className={`${button} self-start`}>ยืนยันเปลี่ยนสินค้าในออเดอร์</PendingButton>
         </form>
       )}
 
