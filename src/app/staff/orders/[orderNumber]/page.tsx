@@ -24,6 +24,7 @@ const WAREHOUSE_CHANGE_TEXT: Record<string, string> = {
 };
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { CopyBlock } from "@/app/staff/_components/CopyBlock";
+import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
@@ -135,9 +136,9 @@ function CarrierPick({ order, from, planned, byPostcode }: { order: StaffOrderDe
       <form action={staffCarrierAction} className="flex flex-col gap-3 pt-2">
         <OrderFields order={order} from={from} />
         <CarrierRadios checked={planned} />
-        <button type="submit" className={quietButton}>
+        <PendingButton className={quietButton} pendingText="กำลังบันทึก…">
           บันทึกขนส่ง
-        </button>
+        </PendingButton>
       </form>
     </details>
   );
@@ -177,9 +178,7 @@ function ActionForm({
       <OrderFields order={order} from={from} />
       <input type="hidden" name="action" value={act} />
       {children}
-      <button type="submit" className={quiet ? quietButton : primary}>
-        {BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}
-      </button>
+      <PendingButton className={quiet ? quietButton : primary}>{BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}</PendingButton>
     </form>
   );
 }
@@ -347,9 +346,9 @@ export default async function StaffOrderPage({
           {shipnity && (
             <form action={staffShipnityPushAction} className="flex flex-col gap-2">
               <OrderFields order={order} from={from} />
-              <button type="submit" className={primary}>
+              <PendingButton className={primary} pendingText="กำลังส่งเข้า Shipnity…">
                 ส่งเข้าคลัง Shipnity
-              </button>
+              </PendingButton>
               <p className="text-xs text-foreground-dim">
                 ส่งชื่อ ที่อยู่ เบอร์ สินค้า และค่าส่ง ไม่ส่งสลิป
                 {sent?.status === "failed"
@@ -550,9 +549,12 @@ export default async function StaffOrderPage({
                 aria-label="ข้อความถึงลูกค้า"
                 className="w-full rounded-md border border-surface-border bg-surface-2 px-3 py-2.5 text-base text-foreground"
               />
-              <button type="submit" className="self-start rounded-full border border-surface-border px-5 py-2.5 text-sm font-semibold text-foreground hover:border-foreground-dim">
+              <PendingButton
+                className="self-start rounded-full border border-surface-border px-5 py-2.5 text-sm font-semibold text-foreground hover:border-foreground-dim"
+                pendingText="กำลังส่ง…"
+              >
                 ส่งข้อความ
-              </button>
+              </PendingButton>
             </form>
           </div>
         </details>
@@ -588,9 +590,9 @@ export default async function StaffOrderPage({
                 หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
                 <input name="note" autoComplete="off" maxLength={300} className={input} />
               </label>
-              <button type="submit" className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10">
+              <PendingButton className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10">
                 {STAFF_ACTIONS.cancel.label}
-              </button>
+              </PendingButton>
             </form>
           </details>
         )}
