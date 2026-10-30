@@ -450,7 +450,7 @@ export function PilotProductDetail({
         <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20" aria-labelledby="more-details-title">
           <Container className="flex flex-col gap-10 lg:gap-14">
             <div>
-              <SectionHeading eyebrow={dict.product.featuresEyebrow} title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
+              <SectionHeading align="center" eyebrow={dict.product.featuresEyebrow} title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
               <ProductArticleLede articles={articles} />
             </div>
             <ProductArticleBody articles={articles} />
