@@ -82,7 +82,12 @@ async function call<T>(path: string, init: RequestInit, timeoutMs = TIMEOUT_MS):
   };
 }
 
-export async function verifySlipImage(image: Blob, fileName: string): Promise<EasySlipResult<VerifyData>> {
+/** `timeoutMs` = how long to wait for EasySlip (slip-retry.ts sets it per try). */
+export async function verifySlipImage(
+  image: Blob,
+  fileName: string,
+  timeoutMs = TIMEOUT_MS
+): Promise<EasySlipResult<VerifyData>> {
   const form = new FormData();
   form.append("image", image, fileName);
   // Same branch + already verified = cached answer, isDuplicate: true, quota NOT consumed
@@ -91,7 +96,7 @@ export async function verifySlipImage(image: Blob, fileName: string): Promise<Ea
   // Only matches accounts the owner registered in the EasySlip portal; null otherwise. Our own receiver
   // check (receiver-match.ts) does not depend on it.
   form.append("matchAccount", "true");
-  const result = await call<VerifyData>("/verify/bank", { method: "POST", body: form });
+  const result = await call<VerifyData>("/verify/bank", { method: "POST", body: form }, timeoutMs);
   if (!result.ok || !isVerifyData(result.data)) {
     return result.ok ? { ok: false, code: "BAD_RESPONSE" } : result;
   }

@@ -5,6 +5,7 @@ import { getQuota, verifySlipImage } from "@/lib/staff/easyslip";
 import { explainReceiver, type ShopAccount, type SlipParty } from "@/lib/staff/receiver-match";
 import type { PartyView, QuotaView, SlipCheckResponse } from "@/lib/staff/slip-check-types";
 import { findByImageHash, findByTransRef, recordFirstCheck, touchCheck } from "@/lib/staff/slip-checks";
+import { easySlipSeenBefore, verifyWithRetry } from "@/lib/staff/slip-retry";
 
 /**
  * One slip check, shared by every place a slip arrives (cart round 22/10): the staff page (/staff/api/verify),
@@ -96,13 +97,11 @@ export async function checkSlip(input: {
     };
   }
 
-  // 2. EasySlip. One retry only when it asks us to wait a moment (429 with a short Retry-After).
-  let result = await verifySlipImage(new Blob([new Uint8Array(bytes)], { type }), fileName);
-  if (!result.ok && result.code === "RATE_LIMIT_EXCEEDED" && (result.retryAfterSeconds ?? 99) <= 3) {
-    const waitSeconds = result.retryAfterSeconds ?? 1;
-    await new Promise((resolve) => setTimeout(resolve, waitSeconds * 1000));
-    result = await verifySlipImage(new Blob([new Uint8Array(bytes)], { type }), fileName);
-  }
+  // 2. EasySlip — asked a second time only when it says "wait a moment" (429) or did not answer at all (slip-retry.ts).
+  const blob = new Blob([new Uint8Array(bytes)], { type });
+  const { result, unanswered } = await verifyWithRetry((timeoutMs) => verifySlipImage(blob, fileName, timeoutMs));
+  if (unanswered)
+    console.info(`[slip-check] EasySlip ${unanswered} on the first try — asked once more: ${result.ok ? "answered" : result.code}`);
   if (!result.ok) return { ok: false, error: result.code, retryAfterSeconds: result.retryAfterSeconds };
 
   const raw = result.data.rawSlip;
@@ -134,7 +133,7 @@ export async function checkSlip(input: {
     },
     duplicate: before
       ? { by: "log", firstCheckedAt: before.firstCheckedAt, previousChecks: before.checkCount }
-      : result.data.isDuplicate
+      : easySlipSeenBefore(result.data.isDuplicate, unanswered)
         ? { by: "easyslip" }
         : null,
     amountCheck: amountCheck(expected, record.amountSatang),
