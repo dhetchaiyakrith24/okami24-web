@@ -151,8 +151,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Coil-87": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   // REPUBLISHED round list19 (2026-10-18, owner "list everything", through Friday — also lifts the 22/10 GSC hold on /brands/infy):
   // an OKami24 re-shoot of one clear INFY PLUS pod (Grape Jelly, a flavour sold here) replaces the withdrawn box line-up.
-  // Price = Shipnity MAX "ราคาขาย" ฿129 for Pod-169 and every child (17/10 read).
-  "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-10-18" },
+  // Price ฿150 for Pod-169 and every child — OWNER OVERRIDE 2026-10-30: the owner forwarded admin ICE's request in chat
+  // ("แอดมินฝากงานแก้ราคามาครับ" · ICE: "พี่ครับเป็น150.- ให้หน่อยครับ", screenshot of this page at ฿129). Was Shipnity MAX ราคาขาย ฿129 (17/10 read).
+  "Pod-169": { sellingPrice: 150, lastPriceReview: "2026-10-30" },
   // History — the 2026-09-02 approval below was withdrawn 2026-09-06:
   // "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the card shows an INFY PLUS
