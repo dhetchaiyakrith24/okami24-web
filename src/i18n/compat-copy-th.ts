@@ -142,7 +142,7 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "หน้า M Switch Kit บนเว็บทางการของ SALTHUB แสดง M Switch Pod เป็นหัวพอตของเครื่องรุ่นนี้ (ข้อความกำกับรูปสินค้าเขียนว่า “M Switch Kit compatible cartridge”) และรายชื่อรส 16 รสของทั้งสองหน้าตรงกัน",
   // SEO brand push 30/10: Infinity 2 Plus ↔ the RELX Pod Pro 2 pack (the sentence RELX prints on its own device page).
   "RELX's Infinity 2 Plus page lists RELX Pod Pro 2 among the pods the device takes (1.9mL prefilled pods); the shop's pack prints \"RELX Pod Pro 2\".":
-    "RELX ระบุในหน้า Infinity 2 Plus ว่าเครื่องนี้ใส่หัวพอต RELX Pod Pro 2 ได้ ซึ่งเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL และแพ็กที่ร้านมีก็พิมพ์ชื่อ “RELX Pod Pro 2” ไว้",
+    "ตามที่ RELX ระบุในหน้า Infinity 2 Plus เครื่องนี้ใช้หัวพอต RELX Pod Pro 2 ได้ และแพ็กที่ร้านมีก็พิมพ์ชื่อนี้ไว้",
   "INFY's own 2.5ML Cartridge (INFY Plus) page says to insert the cartridge in the INFY Cube Box or the INFY Device.":
     "INFY ระบุในหน้าหัวพอต 2.5ML (INFY Plus) ว่าให้ใส่หัวพอตนี้ในตัวเครื่อง INFY Device หรือ INFY Cube Box",
   // Round 30.4ข close (owner, 2026-09-17): the two G/G2-generation pod ↔ coil edges (coil-55 · coil-74

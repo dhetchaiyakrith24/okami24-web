@@ -152,7 +152,7 @@ export const brands: Brand[] = [
     // 2026-09-30 (round "image-sitewide"): the brand went live with INFY 20K — its line shows on /about and /brands/infy.
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("อินฟี่", autocomplete 07/10), one mention.
-      "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ร้านมีทั้งพอตใช้แล้วทิ้ง INFY 20K และตัวเครื่อง INFY POD แบบเปลี่ยนหัวพอต แบต 400mAh ชาร์จผ่าน USB-C และมีให้เลือก 19 สี ส่วนหัวพอต INFY PLUS ความจุ 2.5mL นั้น INFY ระบุว่าใช้กับตัวเครื่องของ INFY ได้",
+      "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ร้านมีตัวเครื่อง INFY POD แบบเปลี่ยนหัวพอต และพอตใช้แล้วทิ้ง INFY 20K ด้วย ส่วนหัวพอตมี INFY PLUS ความจุ 2.5mL ซึ่ง INFY ระบุว่าใช้กับตัวเครื่องของ INFY ได้",
     referenceUrl: "https://www.infy.my/",
   },
   {
@@ -164,7 +164,7 @@ export const brands: Brand[] = [
     description:
       "A vape hardware manufacturer known for its atomizer lineup (RDAs/RTAs/RDTAs) and the nexBAR disposable series, and now the nexPOD 15K Pro Kit — a switch-pod device that recognises which pod is fitted and sets the starting wattage for it, so when a pod runs out you change only the pod.",
     descriptionTh:
-      "WOTOFO เป็นแบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR และเครื่องระบบสวิตช์ nexPOD 15K Pro Kit ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้ตามหัวพอตนั้น เมื่อน้ำยาหมดก็เปลี่ยนแค่หัวพอต ไม่ต้องเปลี่ยนทั้งเครื่อง",
+      "WOTOFO เป็นแบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR รวมถึงชุดเครื่อง nexPOD 15K Pro Kit ที่เปลี่ยนหัวพอตได้ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้เอง",
     referenceUrl: "https://www.wotofo.com/",
   },
   {
@@ -213,9 +213,9 @@ export const brands: Brand[] = [
     tagline: "A global closed-pod and disposable vape brand.",
     taglineTh: "พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว",
     description:
-      "A major international vape brand (relxnow.com). The shop carries the Smash Go 12K and LUMI 18K disposables, the RELX Creator and Infinity 2 Plus switch-pod devices, the Essential 2 device, and two prefilled pods: the RELX Creator Pod and the RELX Pod Pro 2, which RELX lists as compatible with the Infinity 2 Plus.",
+      "A major international vape brand (relxnow.com). The shop carries the Smash Go 12K and LUMI 18K disposables, and two switch-pod devices: the Infinity 2 Plus, which takes the RELX Pod family (including the RELX Pod Pro 2), and the RELX Creator, which takes RELX Creator Pods.",
     descriptionTh:
-      "RELX เป็นแบรนด์พอตรายใหญ่ระดับสากล ที่ร้านมีพอตใช้แล้วทิ้ง Smash Go 12K กับ LUMI 18K รวมถึงเครื่องระบบสวิตช์ RELX Creator กับ Infinity 2 Plus และตัวเครื่อง Essential 2 ส่วนหัวพอตบรรจุสำเร็จมี RELX Creator Pod กับ RELX Pod Pro 2 ซึ่ง RELX ระบุว่าใช้กับ Infinity 2 Plus ได้",
+      "RELX แบรนด์พอตรายใหญ่ระดับสากล ที่ร้านมีพอตใช้แล้วทิ้ง Smash Go 12K กับ LUMI 18K รวมถึงเครื่องระบบสวิตช์ RELX Creator กับ Infinity 2 Plus ที่ใช้หัวพอตบรรจุสำเร็จของ RELX",
     referenceUrl: "https://www.relxnow.com/",
   },
   {
