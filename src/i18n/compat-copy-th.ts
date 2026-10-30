@@ -140,6 +140,11 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "หน้าร้านค้าปลีกระบุว่า VMATE i3 ใส่ได้ทั้งหัวพอต VMATE Top Fill (0.4/0.7/1.0Ω 3ml) และ VMATE Cartridge V2 โดยในกล่องมีหัว Top Fill 0.7Ω มาให้ ร้านค้าปลีกในยุโรปรายหนึ่งระบุว่า Vmate V3 Top Fill 3ml ใช้ได้กับทุกรุ่นในสาย Vmate และ V.THRU",
   'SALTHUB\'s own M Switch Kit page presents the M Switch Pod as its cartridge (product-image alt text: "M Switch Kit compatible cartridge"), and the two pages list an identical 16-flavour set.':
     "หน้า M Switch Kit บนเว็บทางการของ SALTHUB แสดง M Switch Pod เป็นหัวพอตของเครื่องรุ่นนี้ (ข้อความกำกับรูปสินค้าเขียนว่า “M Switch Kit compatible cartridge”) และรายชื่อรส 16 รสของทั้งสองหน้าตรงกัน",
+  // SEO brand push 30/10: Infinity 2 Plus ↔ the RELX Pod Pro 2 pack (the sentence RELX prints on its own device page).
+  "RELX's Infinity 2 Plus page lists RELX Pod Pro 2 among the pods the device takes (1.9mL prefilled pods); the shop's pack prints \"RELX Pod Pro 2\".":
+    "RELX ระบุในหน้า Infinity 2 Plus ว่าเครื่องนี้ใส่หัวพอต RELX Pod Pro 2 ได้ ซึ่งเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL และแพ็กที่ร้านมีก็พิมพ์ชื่อ “RELX Pod Pro 2” ไว้",
+  "INFY's own 2.5ML Cartridge (INFY Plus) page says to insert the cartridge in the INFY Cube Box or the INFY Device.":
+    "INFY ระบุในหน้าหัวพอต 2.5ML (INFY Plus) ว่าให้ใส่หัวพอตนี้ในตัวเครื่อง INFY Device หรือ INFY Cube Box",
   // Round 30.4ข close (owner, 2026-09-17): the two G/G2-generation pod ↔ coil edges (coil-55 · coil-74
   // ↔ coil-53) are published, so the coil and both pod pages showed these notes in English on the
   // Thai site — the accessories pages sat outside the "53 product pages" scope of earlier rounds.
