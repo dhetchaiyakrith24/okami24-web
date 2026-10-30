@@ -4114,5 +4114,102 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "NEXBAR-SWITCH-15K-POD": {
+    "maxParentId": "Pod-181",
+    "name": "nexBar Switch 15k",
+    "operationalSellingPrice": 299,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-181-1",
+        "rawLabel": "Grape Ice",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-2",
+        "rawLabel": "Grape Lychee",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-3",
+        "rawLabel": "Mint",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-4",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-5",
+        "rawLabel": "Cola",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-6",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-7",
+        "rawLabel": "Pink Berry",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-8",
+        "rawLabel": "Blueberry Ice",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-9",
+        "rawLabel": "Mango Peach",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-10",
+        "rawLabel": "Peach Strawberry",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-11",
+        "rawLabel": "Lychee",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-12",
+        "rawLabel": "Strawberry Banana",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-13",
+        "rawLabel": "Strawberry Custard",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-14",
+        "rawLabel": "Strawberry Watermelon",
+        "sellingPrice": 299,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-181-15",
+        "rawLabel": "Pineapple",
+        "sellingPrice": 299,
+        "inStock": true
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD"];

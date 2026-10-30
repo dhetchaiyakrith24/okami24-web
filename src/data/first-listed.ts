@@ -9,6 +9,7 @@
  * Date = the deploy day (Bangkok), ISO yyyy-mm-dd.
  */
 export const FIRST_LISTED: Readonly<Record<string, string>> = {
+  "nexbar-switch-15k-pod": "2026-10-30",
   "marbo-10k-clone": "2026-10-27",
   "sup-zero-22k": "2026-10-26",
   "relx-creator-pod-20k": "2026-10-23",
