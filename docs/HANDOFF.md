@@ -100,6 +100,8 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
+  - IDEA to try (owner 31/10 "น่าสนใจจดไว้ เดี๋ยวมาลองใช้ระบบนี้กัน"): the Ultra plan's $200/month Claude API credits (claude.com/pricing) → a shop AI
+    on the Claude Platform, e.g. a customer-answer bot · not started; plan with skill okami24-plan first (any customer-facing reply = 13.3 "ส่งถึงคนนอก").
   - Own rounds (owner 07/10): typo-tolerant search · lifestyle strip on product pages (one sample shot first; answers in
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 (unchanged lists).
