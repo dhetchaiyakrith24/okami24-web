@@ -152,11 +152,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Muro Connector 20K" ฿259 → ฿300 · match was — active-parent-name: Shipnity "Muro Connector 20k" (Pod-171, 33 flavours, ฿259); 20 of 20 legacy flavours are in the Excel list',
   },
   "vazer-one-pod": {
-    sellingPrice: 80,
+    sellingPrice: 120,
     lastPriceReview: "2026-10-30",
     basis: "owner-confirmed",
     shipnityProductId: "Pod-115",
-    evidence: 'owner-confirmed 2026-10-30: chat "Vazer one แก้ราคาเป็นชิ้นละ 80 ครับ" (after Friday reported cost ฿80 vs sale ฿59 from the Shipnity Pro cost file) ฿59 → ฿80 · earlier: shipnity-max: "หัวพอต Vazer One" (Pod-115, ฿59 ราคาขาย, 5 flavours: Grape · Cola · Cola Lemon · Mix Berries · Mango) — Shipnity Max product list read 2026-10-20 (maxlist round); same price as the 2026-09-05 read',
+    evidence: 'owner-confirmed 2026-10-30: chat "Vazer One แก้เป็น 120 ครับ" ฿80 → ฿120 · earlier the same day: chat "Vazer one แก้ราคาเป็นชิ้นละ 80 ครับ" (after Friday reported cost ฿80 vs sale ฿59 from the Shipnity Pro cost file) ฿59 → ฿80 · earlier: shipnity-max: "หัวพอต Vazer One" (Pod-115, ฿59 ราคาขาย, 5 flavours: Grape · Cola · Cola Lemon · Mix Berries · Mango) — Shipnity Max product list read 2026-10-20 (maxlist round); same price as the 2026-09-05 read',
   },
   "reswa-sportcan-12k": {
     sellingPrice: 229,
