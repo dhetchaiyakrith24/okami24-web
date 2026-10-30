@@ -4376,7 +4376,7 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-emerald-green.png",
+  "source": "_incoming/img-3110/g3k/g3k-emerald-green.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "emerald-green",
@@ -4385,8 +4385,8 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-emerald-green-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-emerald-green-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-uwell/site/g3k-light-silver.png",
@@ -4402,7 +4402,7 @@
   "fileName": "variant-light-silver-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-lilac-purple.png",
+  "source": "_incoming/img-3110/g3k/g3k-lilac-purple.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "lilac-purple",
@@ -4411,11 +4411,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-lilac-purple.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-lilac-purple-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-lilac-purple-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-luxury-gold.png",
+  "source": "_incoming/img-3110/g3k/g3k-luxury-gold.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "luxury-gold",
@@ -4424,11 +4424,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-luxury-gold.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-luxury-gold-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-luxury-gold-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-midnight-black.png",
+  "source": "_incoming/img-3110/g3k/g3k-midnight-black.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "midnight-black",
@@ -4437,11 +4437,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-midnight-black.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-midnight-black-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-midnight-black-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-rose-pink.png",
+  "source": "_incoming/img-3110/g3k/g3k-rose-pink.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "rose-pink",
@@ -4450,11 +4450,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-rose-pink.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-rose-pink-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-rose-pink-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-sky-blue.png",
+  "source": "_incoming/img-3110/g3k/g3k-sky-blue.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "sky-blue",
@@ -4463,11 +4463,11 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-sky-blue.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-sky-blue-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-sky-blue-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g3k-space-gray.png",
+  "source": "_incoming/img-3110/g3k/g3k-space-gray.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "space-gray",
@@ -4476,8 +4476,8 @@
    "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-space-gray.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
    "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
   },
-  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
-  "fileName": "variant-space-gray-v2.webp"
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out · v3 31/10 (images chat 7): the same source with 2 stray specks right of the device removed (despeck.js, only alpha>8 bits outside the product box) — they widened the trim box, so the device sat 30 px left of Light Silver and jumped when the colour was switched",
+  "fileName": "variant-space-gray-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-uwell/site/card-g3k.png",
@@ -8899,52 +8899,56 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/list19/infy/gjelly.png",
+  "source": "_incoming/img-3110/infy/pod-169-1.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-1",
-  "note": "round list19 18/10 - Grape Jelly (Max Pod-169-1)",
+  "note": "round list19 18/10 - Grape Jelly (Max Pod-169-1) · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's Grape Jelly poster as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/p169-gjelly-B.png (A rejected: doubled INFY mark); a clear pod cannot be flood-keyed, so the silhouette was drawn from points read on the render (sides from the brightness-step profile, flat top with elliptical corners, base parabola) and the body keeps the backdrop it was shot on (list19/infy/clearkey.js, copy beside this source)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Grape Jelly poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/) - _incoming/img-1610/masters/src/pod-169/maneevp-infy-plus-09.jpg (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-169.jpg (poster beside renders A/B) - INFY PLUS mark, GRAPE JELLY label, pod shape and mouthpiece checked by eye; key edges list19/infy/edges.jpg"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-1-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/kyoho-grape.png",
+  "source": "_incoming/img-3110/infy/pod-169-2.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-2",
-  "note": "image sweep 22/10 - INFY PLUS Kyoho Grape pod",
+  "note": "image sweep 22/10 - INFY PLUS Kyoho Grape pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Kyoho Grape poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Kyoho-Grape.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/kyoho-grape.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-2-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/grape-bubblegum.png",
+  "source": "_incoming/img-3110/infy/pod-169-4.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-4",
-  "note": "image sweep 22/10 - INFY PLUS Grape Bubblegum pod",
+  "note": "image sweep 22/10 - INFY PLUS Grape Bubblegum pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Grape Bubblegum poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Grape-Bubblegum.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/grape-bubblegum.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-4-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/coke.png",
+  "source": "_incoming/img-3110/infy/pod-169-8.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-8",
-  "note": "image sweep 22/10 - INFY PLUS Coke pod",
+  "note": "image sweep 22/10 - INFY PLUS Coke pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Coke poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Coke.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/coke.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-8-v2.webp"
  },
  {
   "source": "_incoming/infy/final/mint.png",
@@ -8959,64 +8963,69 @@
   }
  },
  {
-  "source": "_incoming/infy/final/orange-soda.png",
+  "source": "_incoming/img-3110/infy/pod-169-10.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-10",
-  "note": "image sweep 22/10 - INFY PLUS Orange Soda pod",
+  "note": "image sweep 22/10 - INFY PLUS Orange Soda pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Orange Soda poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Orange-Soda-1.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/orange-soda-1.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-10-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/jasmine-tea.png",
+  "source": "_incoming/img-3110/infy/pod-169-19.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-19",
-  "note": "image sweep 22/10 - INFY PLUS Jasmine Tea pod",
+  "note": "image sweep 22/10 - INFY PLUS Jasmine Tea pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Jasmine Tea poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Jasmine-Tea.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/jasmine-tea.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-19-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/mango-peach.png",
+  "source": "_incoming/img-3110/infy/pod-169-25.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-25",
-  "note": "image sweep 22/10 - INFY PLUS Mango Peach pod",
+  "note": "image sweep 22/10 - INFY PLUS Mango Peach pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Mango Peach poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Mango-Peach.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/mango-peach.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-25-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/lychee-ice.png",
+  "source": "_incoming/img-3110/infy/pod-169-26.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-26",
-  "note": "image sweep 22/10 - INFY PLUS Lychee Ice pod",
+  "note": "image sweep 22/10 - INFY PLUS Lychee Ice pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Lychee Ice poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Lychee-Ice.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/lychee-ice.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-26-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/lychee-raspberry.png",
+  "source": "_incoming/img-3110/infy/pod-169-27.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-27",
-  "note": "image sweep 22/10 - INFY PLUS Lychee Raspberry pod",
+  "note": "image sweep 22/10 - INFY PLUS Lychee Raspberry pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2: real printed label, one INFY logo); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Lychee Raspberry poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Lychee-Raspberry.jpg, 1000 px, faint shop watermark not reproduced) - _incoming/infy/src/lychee-raspberry.jpg",
-   "fidelitySheet": "_incoming/infy/fid.jpg (poster crop beside render), labels.jpg / l2.jpg (label text), edges.jpg / edges2.jpg (cut on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-27-v2.webp"
  },
  {
   "source": "_incoming/p63/emerald/emerald-edition.png",
@@ -11593,40 +11602,43 @@
   }
  },
  {
-  "source": "_incoming/infy/final/grape-gummies.png",
+  "source": "_incoming/img-3110/infy/pod-169-3.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-3",
-  "note": "image sweep 22/10 - INFY PLUS Grape Gummies pod",
+  "note": "image sweep 22/10 - INFY PLUS Grape Gummies pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Grape Gummies poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Grape-Gummies.jpg, faint shop watermark not reproduced) - _incoming/infy/src/grape-gummies.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-3-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/grape-apple.png",
+  "source": "_incoming/img-3110/infy/pod-169-5.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-5",
-  "note": "image sweep 22/10 - INFY PLUS Grape Apple pod",
+  "note": "image sweep 22/10 - INFY PLUS Grape Apple pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Grape Apple poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Grape-Apple.jpg, faint shop watermark not reproduced) - _incoming/infy/src/grape-apple.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-5-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/red-apple.png",
+  "source": "_incoming/img-3110/infy/pod-169-7.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-7",
-  "note": "image sweep 22/10 - INFY PLUS Red Apple pod",
+  "note": "image sweep 22/10 - INFY PLUS Red Apple pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Red Apple poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Red-Apple.jpg, faint shop watermark not reproduced) - _incoming/infy/src/red-apple.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-7-v2.webp"
  },
  {
   "source": "_incoming/infy/final/strawberry.png",
@@ -11641,16 +11653,17 @@
   }
  },
  {
-  "source": "_incoming/infy/final/strawberry-grape.png",
+  "source": "_incoming/img-3110/infy/pod-169-13.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-13",
-  "note": "image sweep 22/10 - INFY PLUS Strawberry Grape pod",
+  "note": "image sweep 22/10 - INFY PLUS Strawberry Grape pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Strawberry Grape poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Strawberry-Grape.jpg, faint shop watermark not reproduced) - _incoming/infy/src/strawberry-grape.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-13-v2.webp"
  },
  {
   "source": "_incoming/infy/final/blueberry.png",
@@ -11665,64 +11678,69 @@
   }
  },
  {
-  "source": "_incoming/infy/final/sprite.png",
+  "source": "_incoming/img-3110/infy/pod-169-23.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-23",
-  "note": "image sweep 22/10 - INFY PLUS Sprite pod",
+  "note": "image sweep 22/10 - INFY PLUS Sprite pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Sprite poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Sprite.jpg, faint shop watermark not reproduced) - _incoming/infy/src/sprite.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-23-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/peach.png",
+  "source": "_incoming/img-3110/infy/pod-169-24.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-24",
-  "note": "image sweep 22/10 - INFY PLUS Peach pod",
+  "note": "image sweep 22/10 - INFY PLUS Peach pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Peach poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Peach.jpg, faint shop watermark not reproduced) - _incoming/infy/src/peach.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-24-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/watermelon-strawberry.png",
+  "source": "_incoming/img-3110/infy/pod-169-6.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-6",
-  "note": "image sweep 22/10 - INFY PLUS Watermelon Strawberry pod",
+  "note": "image sweep 22/10 - INFY PLUS Watermelon Strawberry pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Watermelon Strawberry poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Watermelon-Strawberry.jpg, faint shop watermark not reproduced) - _incoming/infy/src/watermelon-strawberry.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-6-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/watermelon-lychee.png",
+  "source": "_incoming/img-3110/infy/pod-169-28.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-28",
-  "note": "image sweep 22/10 - INFY PLUS Watermelon Lychee pod",
+  "note": "image sweep 22/10 - INFY PLUS Watermelon Lychee pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; pod-only studio re-shoot from the flavour's own poster (prompt window.__IP2 / __IP3: real printed label, one INFY logo, nothing seen through the pod); cut _incoming/infy/cut.js + rr.js (rounded-rectangle fit, base row read at 1:1)",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Watermelon Lychee poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Watermelon-Lychee.jpg, faint shop watermark not reproduced) - _incoming/infy/src/watermelon-lychee.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-28-v2.webp"
  },
  {
-  "source": "_incoming/infy/final/strawberry-ice-cream.png",
+  "source": "_incoming/img-3110/infy/pod-169-12.png",
   "slug": "pod-169",
   "role": "variant",
   "id": "pod-169-12",
-  "note": "image sweep 22/10 - INFY PLUS Strawberry Ice Cream pod",
+  "note": "image sweep 22/10 - INFY PLUS Strawberry Ice Cream pod · v2 31/10 (images chat 7): moved onto the approved Strawberry photo so all 28 flavours share one frame (the separate shoots were 208-257 px wide and jumped when switched)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; two-layer reference (IMAGE_SPEC §0 item 7): its own poster re-shot twice and both came out with a ghosted second INFY logo (the poster pod shows the box through it), so the pod body is a clean sibling INFY PLUS render and only the label text was set to the wording printed on this flavour's poster (prompt window.__ED); cut _incoming/infy/cut.js + rr.js",
+   "tool": "no new render (0 credits): the approved Strawberry photo variant-pod-169-11.webp (Higgsfield Nano Banana Pro 2K render 6d89f24d, 22/10) with its label text erased by per-column interpolation of the label paper and the flavour name set in Montserrat Bold (condensed 0.85, fitted to the label) - _incoming/img-3110/infy/relabel.js + run.sh; same alpha as Strawberry, so the same frame",
    "reference": "maneevp.com INFY PLUS Strawberry Ice Cream poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/ - wp-content/uploads/2024/03/หัวพอต-INFY-Plus-Strawberry-Ice-Cream.jpg, faint shop watermark not reproduced) - _incoming/infy/src/strawberry-ice-cream.jpg",
-   "fidelitySheet": "_incoming/infy/labels.jpg (label text), dark.jpg (cut on the site background), sheet.jpg (whole renders)"
-  }
+   "fidelitySheet": "_incoming/img-3110/infy/labels.jpg (every new label at 2x)"
+  },
+  "fileName": "variant-pod-169-12-v2.webp"
  },
  {
   "source": "_incoming/ks/final/watermelon.png",
