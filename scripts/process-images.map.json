@@ -8743,16 +8743,17 @@
   "fileName": "card.webp"
  },
  {
-  "source": "_incoming/list19/ske/ske.png",
+  "source": "_incoming/img-3010/ske7/src/6.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-6",
-  "note": "round list19 18/10 - Thai Milk Green Tea (Max Pod-149-6)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Thai Milk Green Tea, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/p149-tmgt-B.png; keyed off the grey sweep by b17/floodkey.js (T=14), the bottom silhouette rebuilt from points read on the base crop and the floor reflection cleared (list19/ske/cut.js, copy beside this source)",
-   "reference": "pod789 SKE Crystal B20000 Thai Milk Green Tea poster - _incoming/img-1610/masters/src/pod-149 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-149.jpg (poster beside renders A/B) - SKE logo, CRYSTAL B20000, display window, green body checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 1625d39d-919f-4db7-9444-462440cb58a3: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Thai Milk Green Tea poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-6-v2.webp"
  },
  {
   "source": "_incoming/list19/marbo-v3/red.png",
@@ -11772,76 +11773,82 @@
   }
  },
  {
-  "source": "_incoming/ske/final/grape-yoyo.png",
+  "source": "_incoming/img-3010/ske7/src/1.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-1",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Grape Yoyo (Max Pod-149-1)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Grape Yoyo, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Grape Yoyo poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Grape-yoyo.jpg, 600 px, no third-party watermark) - _incoming/ske/src/grape-yoyo.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 1cc75b80-2487-4d2d-9a1c-f36189294f84 (22/10 render, the base scene itself): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Grape Yoyo poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-1-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/watermelon.png",
+  "source": "_incoming/img-3010/ske7/src/3.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-3",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Watermelon (Max Pod-149-3)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Watermelon, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Watermelon poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Watermelon.jpg, 600 px, no third-party watermark) - _incoming/ske/src/watermelon.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 9f117165-6df9-487d-8012-60770a3ef3d9: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Watermelon poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-3-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/lemon-coke.png",
+  "source": "_incoming/img-3010/ske7/src/4.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-4",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Lemon Coke (Max Pod-149-4)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Lemon Coke, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Lemon Coke poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Lemon-coke.jpg, 600 px, no third-party watermark) - _incoming/ske/src/lemon-coke.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job af19b5e8-09f1-4433-b80f-ae02c2d85fb9: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Lemon Coke poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-4-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/strawberry.png",
+  "source": "_incoming/img-3010/ske7/src/5.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-5",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Strawberry (Max Pod-149-5)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Strawberry, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Strawberry poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-strawberry.jpg, 600 px, no third-party watermark) - _incoming/ske/src/strawberry.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 94aab069-9cab-445c-bd82-d8193c0ccafd: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Strawberry poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-5-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/tieguanyin-tea.png",
+  "source": "_incoming/img-3010/ske7/src/7.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-7",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Tieguanyin Tea (Max Pod-149-7)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Tieguanyin Tea, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Tieguanyin Tea poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-tieguanyin-tea.jpg, 600 px, no third-party watermark) - _incoming/ske/src/tieguanyin-tea.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 585c08e4-4472-4afb-bc26-45d55fb51162: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Tieguanyin Tea poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-7-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/mango.png",
+  "source": "_incoming/img-3010/ske7/src/8.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-8",
-  "note": "image sweep 22/10 - SKE Crystal B20000 Mango (Max Pod-149-8)",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Mango, all 8 flavours in one frame",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
-   "reference": "pod789.com SKE Crystal B20000 Mango poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Mango.jpg, 600 px, no third-party watermark) - _incoming/ske/src/mango.jpg",
-   "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job b7bc460e-e820-4b2e-a5e3-d89e5e90069c (second try; first try a029afd8 was larger than the set): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "pod789.com SKE Crystal B20000 Mango poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-8-v2.webp"
  },
  {
   "source": "_incoming/pepo/final/mint.png",
@@ -14293,5 +14300,18 @@
    "reference": "maneevp.com Vazer One 2.2ml flavour poster Grapefruit 1000 px (VAZER ONE's own artwork; https://maneevp.com/product/vazer-one-2-2ml/) - _incoming/maxlist-2010/ref/vazer/v20.jpg (main checkout), box crop x330-750 y165-745 at 2x",
    "fidelitySheet": "_incoming/img-3010/vz/pair0.jpg + pair1.jpg + pair2.jpg (poster box beside render: name bands, stripes, window photo, pod label, side panel by eye), ez2-vc.jpg + br2.jpg (shared cut at 2x/4x on the site background and magenta)"
   }
+ },
+ {
+  "source": "_incoming/img-3010/ske7/src/2.png",
+  "slug": "pod-149",
+  "role": "variant",
+  "id": "pod-149-2",
+  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Double Mint, all 8 flavours in one frame",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job f3145940-18d7-4968-9cdb-f40c6ba8f9e8 (chat 5, image 1 = base scene, image 2 = relxc9 Double Mint poster crop): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
+   "reference": "relxc9 SKE Crystal Double Mint poster crop (chat 5) (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
+   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+  },
+  "fileName": "variant-pod-149-2-v2.webp"
  }
 ]

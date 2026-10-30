@@ -10,34 +10,33 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved at 80% context (owner: "ไม่ Hand ก่อนหรอ"); the 3rd main chat starts here.
+Rewritten 30/10 ~19:00 by the 3rd main chat (Friday) — moved at 70% context and weekly quota 80%; the 4th main chat starts here.
 
-1 main ≈ 974a9d18 (#1037, + docs #1039) 30/10 ~15:40 [ตรวจแล้ว: deploy success]. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS, deploy success up to ee54ceb7; #1028 deploying at the time of writing]:
-  #1004 cut-off 12:30 + failed-slip line · #1009 unboxing notice · #1010 address dedupe · #1014 tracking step 1 · #1015 SHIPPING v2 (BSOT §10) ·
-  30/10: #1023 + #1025 + #1028 ORDER-PAGE ART (thank-you = no card, the owner's transparent full-body samurai big + wide, faded bottom + sides;
-  payment bank box = BLACK CARD: logo · PAYMENT CARD tag · gold chip · bank/name/number · copy button with an orange LED frame · character right ·
-  NO amount/running number on the card · credit-card proportion 1.586:1 from sm up) · #1024 SHIPPING "count all" (owner 30/10: any ฿0-shipping member order
-  — 300 benefit, ≥800, or v1 — uses that calendar month's benefit) · #1026 every staff order list newest first · #1019 /products/pod-systems body + ItemList + links
-  (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 #1031 #1037 RELX packs.
-2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
-  a images-6 + tracking-sync: ARCHIVED 30/10 (owner "สั่งปิดแชทลูก") — no child chat is running. #1031 + #1037 (RELX Creator 20K, 15 flavours) merged.
-    PR #1040 SKE Crystal = DRAFT, NOT merged: checker round 3 (the last, 13.3 #7) on 03503b81 NOT passed [ตรวจแล้ว] — file 6 corner + bottom edge, flat base of 5 + 8, file 8 narrower, small corner steps
-    (evidence `_incoming/chk-ske1040c/`, tree wt-golive, branch claude/images-6-3010-d). ROOT CAUSE = 8 separate shoots. Owner 30/10 "ข้ามไปทำตัวอื่นก่อน" = PARKED.
-    Images chat 7 (local_c8f85aac, idle) wrote the re-shoot plan: 6 images ≈ 12 credits, none spent, balance 1743.4 — spend only on the owner's yes. RELX Pod Pro 2: Lime Ice already live (#1027), 4 flavours have no source.
-  b tracking-sync work DONE: #1029 (carrier by postcode) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout); real-order test 31/10 = รอพี่ตรวจ item 80; admin JSON → tracking step 2 (parser written, not connected).
-  d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
-    request indexing (≤ 8 URLs) · short report. Permission mode NOT saved → owner sets Auto / presses "Run now" once.
-2N NEXT for the main chat:
-  a Order-page art is live (#1023 #1025 #1028). THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
-  b PARKED: PR #1038 (DRAFT: samurai 20 % + red stage light + orange halo on the black card). Owner 30/10 late: "การ์ดขอบคุณที่ไว้วางใจเว้นเอาไว้ก่อน ยังไม่ต้องแก้" → do NOT rework, do NOT merge until he says so.
-     Card frame was "โอเคอยู่แล้ว"; the light read as a spot — when reopened: ONE wide smooth wash like his posters, no visible disc.
-  d CARRIER AUTO-PICK = built (2 b). OWNER 30/10: the admin keeps pressing "ส่งเข้าคลัง Shipnity" for now (the web only PRE-PICKS the carrier); real-order test 31/10 (รอพี่ตรวจ 80);
-     only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
-  e Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022 at 22:30): the admin presses "ส่งรายการให้คลังแล้ว". f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
-     off-site backup (77) after the back office.
-  g BACK OFFICE 30/10 (owner: buttons feel slow + wants a team button): PR #1044 (draft, gate running) = staff buttons say "กำลังทำ…" at once + /staff loading screen. TEAM BUTTON (name free, he will send Gmails or
-     take a simpler idea): Friday's proposal = a small "ทีมงาน" button on shop pages only on devices already logged in to /staff (marker cookie, read on the client so pages stay static); no Gmail list, customer login untouched.
-     Staff-by-Gmail = bigger (email scope; BSOT §11 keeps no email) — owner picks.
+1 main ≈ 55c6fd6a 30/10. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS + deploy success]: cut-off 12:30 · unboxing notice · address dedupe (#1010 #1030) · tracking step 1 (#1014) ·
+  carrier by postcode (#1029) · SHIPPING v2 + "count all" (BSOT §10) · order-page art (#1023 #1025 #1028: thank-you = big samurai no card; black PAYMENT CARD) · staff lists newest first ·
+  #1044 staff buttons "กำลังทำ…" + /staff loading screen · #1046 "ทีมงาน" button (marker cookie `okami24_team` set at staff login, read by `src/components/layout/TeamShortcut.tsx`; pages stay static) ·
+  /products/pod-systems SEO (#1019) · RELX / Vazer / INFY / SKE Crystal (#1048, 8 flavours in one scene, 14 credits) photos.
+2 CHILD CHATS (≤ 3; they report to Friday; open the next chat with skill round-open "continue"):
+  a SEO chat local_56539076 (idle at 19:00, was building RELX): brief = SALTHUB · RELX · INFY · nexBar; articles only exist for products with a maker story poster; others get FAQ from verified spec rows + links + brand
+     pages + meta; a new look for poster-less products = designer + owner decision (not asked) · it reports each merged PR.
+  b ORDER-DESKTOP chat local_d7ab6ad2 (started 19:00): owner 30/10 "การ์ดขอบคุณบนคอมแก้เลย: คำขอบคุณซ้าย ซามูไรขวา เลื่อนลงเป็นรายละเอียดออเดอร์ ใช้พลังความคิดเต็มที่" — desktop only, designer options → 2 draft
+     screenshots to Friday → Friday sends the owner → build. PR #1038 (old stage-light try) stays a DRAFT, never merge. Images chat 7 done (credits 1729); old SKE PR #1040 = OPEN draft, superseded, close it (auto mode refused
+     `gh pr close`: owner presses close or allows).
+  c ROUTINE `okami24-seo-weekly` (Saturdays 15:00 — first run 31/10): owner presses "Run now" once / sets Auto, Chrome on and logged in to Search Console.
+2N NEXT for the main chat (in this order):
+  a SLIP "TIMEOUT" (owner 30/10: the LINE bot says "ตรวจสลิปไม่ได้ตอนนี้ (รหัส TIMEOUT)" 2–3 times today, re-check later works): EasySlip is called ONCE with a 20 s limit (`src/lib/staff/easyslip.ts`; callers
+     `src/lib/line/webhook.ts` + `src/lib/staff/slip-checks.ts`). Plan: bounded retry/auto re-check for TIMEOUT / NETWORK / 5xx only — CAREFUL: EasySlip answers a repeat of an already-verified slip as isDuplicate:true
+     (cached, no quota) → a retry after a timeout must not read as a REUSED slip; read the decision code first. Money = checker full set; quota 497/1000 (23/10).
+  b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
+     https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
+  c JOIWAY F3 — OWNER ANSWERED 30/10 ("Funta Grape Ice ก็คือตัวนี้ Ice · Funta Green ก็คือ Green"): our green photo named "Funta Grape" IS Funta Green; grape = existing "Grape Ice".
+     DO (data PR + checker): green photo → option `funta-green` (Pod-133-15) · remove option `funta-grape` · fix "Funta Grape" in `src/data/guides.ts` · no new photo.
+  d tracking-sync step 2 needs the admins' JSON (รอพี่ตรวจ 80, real-order test 31/10); unproven that Shipnity sends tracking back at all (survey doc: "not mentioned") · carrier auto-send only on the owner's word.
+     CANCEL-ALERT TEST (owner, 30/10 ~19:00): he sends one order to Shipnity, the warehouse cancels it → expected (#958): LINE "OKM Order" alert once + a row under "ออเดอร์ที่คลังเปลี่ยน"; the web order does NOT change by itself
+     (staff cancel it on /staff, reason "ทดสอบ"). Ask him for the result. ROUTINE "new models research" (owner 30/10) = drafted, NOT created (auto mode refused): `_incoming/new-models/routine-okami24-new-models-research.md`.
+  e RENDER (owner OK 30/10, set via his Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**` — works [ตรวจแล้ว: #1049 no deploy]; a docs PR must be ONE clean commit from latest main (merge-of-main commits DO deploy).
+  f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
+     staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row for the Latin label "PAYMENT CARD" at the next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
