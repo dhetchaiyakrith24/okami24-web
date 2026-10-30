@@ -21,11 +21,9 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
   (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 #1031 #1037 RELX packs.
 2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
   a images-6 + tracking-sync: ARCHIVED 30/10 (owner "สั่งปิดแชทลูก") — no child chat is running. #1031 + #1037 (RELX Creator 20K, 15 flavours) merged.
-    PR #1040 SKE Crystal (8 flavours re-cut, 0 credits, Double Mint listed) = DRAFT, NOT merged. Checker round 3 (the last, 13.3 #7) on 03503b81 = NOT passed [ตรวจแล้ว: checker; gate PASS + verify 57/57 there].
-    Fixed: grey wedge under files 1 2 3 4 7. Still fails: file 6 lower-right corner (diagonal cut + notch) and its bottom edge 10–13 px above the others · files 5 + 8 flat base · file 8 8–10 px narrower per side,
-    file 4 left edge off ±3 · small steps at the lower corners of 1–4, 7. Evidence `_incoming/chk-ske1040c/` · fix script `_incoming/order-art-3010/r3/ske-fix3.js` · tree = wt-golive, branch claude/images-6-3010-d.
-    ROOT CAUSE = 8 separate shoots → pixel edits cannot match the geometry. OWNER DECIDES (credits = money, 13.3 #2): re-shoot as ONE scene (≈12 credits, recommended) · keep the live set · merge as is. No merge before his word.
-    Images chat 5/6 notes = AppDataLocalClaude-Data…side-session-notes…images-chat5-notes.md.
+    PR #1040 SKE Crystal = DRAFT, NOT merged: checker round 3 (the last, 13.3 #7) on 03503b81 NOT passed [ตรวจแล้ว] — file 6 corner + bottom edge, flat base of 5 + 8, file 8 narrower, small corner steps
+    (evidence `_incoming/chk-ske1040c/`, tree wt-golive, branch claude/images-6-3010-d). ROOT CAUSE = 8 separate shoots. Owner 30/10 "ข้ามไปทำตัวอื่นก่อน" = PARKED.
+    Images chat 7 (local_c8f85aac, idle) wrote the re-shoot plan: 6 images ≈ 12 credits, none spent, balance 1743.4 — spend only on the owner's yes. RELX Pod Pro 2: Lime Ice already live (#1027), 4 flavours have no source.
   b tracking-sync work DONE: #1029 (carrier by postcode) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout); real-order test 31/10 = รอพี่ตรวจ item 80; admin JSON → tracking step 2 (parser written, not connected).
   d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
     request indexing (≤ 8 URLs) · short report. Permission mode NOT saved → owner sets Auto / presses "Run now" once.
@@ -37,7 +35,9 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
      only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022 at 22:30): the admin presses "ส่งรายการให้คลังแล้ว". f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
      off-site backup (77) after the back office.
-  Leftovers: Pod-180 back in Shipnity (nexBar CLEAR 18K → Disposable-46) · trimLine1 can cut a name after an unlisted place word (no data lost).
+  g BACK OFFICE 30/10 (owner: buttons feel slow + wants a team button): PR #1044 (draft, gate running) = staff buttons say "กำลังทำ…" at once + /staff loading screen. TEAM BUTTON (name free, he will send Gmails or
+     take a simpler idea): Friday's proposal = a small "ทีมงาน" button on shop pages only on devices already logged in to /staff (marker cookie, read on the client so pages stay static); no Gmail list, customer login untouched.
+     Staff-by-Gmail = bigger (email scope; BSOT §11 keeps no email) — owner picks.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
      Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
