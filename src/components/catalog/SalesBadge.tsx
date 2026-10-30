@@ -44,7 +44,7 @@ export function CardSalesBadge({ slug, soldOut = false }: { slug: string; soldOu
   if (!kind) return null;
   if (kind === "best") {
     return (
-      <span data-sales="best" className={cn(BEST_PILL, "-my-[2px] h-[19px] px-2 text-[11px] max-lg:px-1.5 lg:-my-[3px] lg:h-5 lg:px-2.5 lg:text-xs")}>
+      <span data-sales="best" className={cn(BEST_PILL, "-my-[3px] h-[19px] px-2 text-[11px] max-lg:px-1.5 lg:h-5 lg:px-2.5 lg:text-xs")}>
         <span className={cn(BEST_DOT, "max-lg:hidden")} aria-hidden />
         {dict.product.badgeBestSeller}
       </span>
