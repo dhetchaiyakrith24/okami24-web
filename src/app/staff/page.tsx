@@ -6,6 +6,7 @@ import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { staffLogoutAction } from "@/app/staff/actions";
 import { StaffLogin } from "@/app/staff/_components/StaffLogin";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
+import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { countByJob, listStaffOrders } from "@/lib/staff/orders";
 import { LIST_CLASS, OrderRow } from "@/app/staff/_components/OrderRow";
 import { jobOf, STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
@@ -100,9 +101,12 @@ export default async function StaffPage() {
       {/* The tools that sat in the folded "อื่น ๆ" row moved under the boxes at the top (owner 28/10): slip check → ตรวจสลิป,
           Shipnity · Excel · LINE groups → Okami dev. Log out stays here as one quiet line. */}
       <form action={staffLogoutAction}>
-        <button type="submit" className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground">
+        <PendingButton
+          className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground"
+          pendingText="กำลังออก…"
+        >
           ออกจากระบบ
-        </button>
+        </PendingButton>
       </form>
     </Container>
   );
