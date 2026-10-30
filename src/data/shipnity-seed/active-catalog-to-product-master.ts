@@ -2226,7 +2226,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-1-10": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-1.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Purple 50mg, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's Marbo Saltnic bottle photo" },
   },
   // SKE Crystal B20000 — Thai Milk Green Tea (list19 18/10) + 6 more (22/10), each re-shot from its own pod789 poster (the body tint differs per
-  // flavour). Double Mint shows the no-photo panel: its only image is a thumbnail in the group poster.
+  // flavour). Double Mint (Pod-149-2) was rendered 30/10 from the Grape Yoyo scene and listed; all 8 were re-cut 30/10 without the grey floor plate (v2 files).
   "Pod-149": {
     "Pod-149-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-1-v2.webp", alt: "SKE Crystal B20000 disposable, Grape Yoyo, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
     "Pod-149-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-2-v2.webp", alt: "SKE Crystal B20000 disposable, Double Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 Double Mint poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
