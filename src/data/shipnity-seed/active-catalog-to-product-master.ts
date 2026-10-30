@@ -873,11 +873,11 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/marbo-10k-clone/card.webp",
+      src: "/assets/products/m-bar-10k/card-v2.webp",
       alt: "Marbo 10K (เทียบแท้) disposable",
       angle: "Front — the site's M Bar 10K card photo, used for this lookalike on the owner's word (27/10, HANDOFF §18).",
       transparentBackground: true,
-      sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)",
+      sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)",
       sourceUrl: "https://okami24.store/products/marbo-10k-clone",
     },
   ],
@@ -1128,7 +1128,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexswitch-16k-kit/card-v2.webp",
+      src: "/assets/products/nexswitch-16k-kit/card.webp",
       alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2392,16 +2392,16 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Watermelon Ice (M Bar 10K has "Watermelon") and Mocha Latte (M Bar 10K has "Matcha Latte") have no same-name photo → no-photo
   // panel (IMAGE_SPEC "ห้ามยืมรูป").
   "MARBO-10K-CLONE": {
-    "Disposable-47-1": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-1.webp", alt: "Marbo 10K (เทียบแท้), Grape", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-3": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-3.webp", alt: "Marbo 10K (เทียบแท้), Watermelon Mint", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-4": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-4.webp", alt: "Marbo 10K (เทียบแท้), Menthol Blast", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-5": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-5.webp", alt: "Marbo 10K (เทียบแท้), Blue Ice", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-6": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-6.webp", alt: "Marbo 10K (เทียบแท้), Kyoho Grape", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-7": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-7.webp", alt: "Marbo 10K (เทียบแท้), Pink Berry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-8": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-8.webp", alt: "Marbo 10K (เทียบแท้), Cola", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-9": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-9.webp", alt: "Marbo 10K (เทียบแท้), All Berry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-10": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-10.webp", alt: "Marbo 10K (เทียบแท้), Yellow Mint", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
-    "Disposable-47-12": { kind: "official-photo", role: "detail", src: "/assets/products/marbo-10k-clone/variant-disposable-47-12.webp", alt: "Marbo 10K (เทียบแท้), Strawberry Kiwi", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) re-lit from the M Bar 10K photo (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-1": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-grape-v2.webp", alt: "Marbo 10K (เทียบแท้), Grape", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-3": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-watermelon-mint-v3.webp", alt: "Marbo 10K (เทียบแท้), Watermelon Mint", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-4": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-menthol-blast-v3.webp", alt: "Marbo 10K (เทียบแท้), Menthol Blast", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-5": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-blue-ice-v3.webp", alt: "Marbo 10K (เทียบแท้), Blue Ice", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-6": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-kyoho-grape-v3.webp", alt: "Marbo 10K (เทียบแท้), Kyoho Grape", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-7": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-pink-berry-v3.webp", alt: "Marbo 10K (เทียบแท้), Pink Berry", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-8": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-cola-v3.webp", alt: "Marbo 10K (เทียบแท้), Cola", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-9": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-all-berry-v3.webp", alt: "Marbo 10K (เทียบแท้), All Berry", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-10": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-yellow-mint-v3.webp", alt: "Marbo 10K (เทียบแท้), Yellow Mint", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
+    "Disposable-47-12": { kind: "official-photo", role: "detail", src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v4.webp", alt: "Marbo 10K (เทียบแท้), Strawberry Kiwi", transparentBackground: true, sourceName: "OKami24 photo of M Bar 10K (same device — owner 27/10, HANDOFF §18)", sourceUrl: "https://okami24.store/products/marbo-10k-clone" },
   },
   // Image-fix round 2026-09-29 (owner rulings, docs/IMAGE_SPEC.md §0 item 7): every ESKO BAR SWITCH pod is the same
   // black pod — only the printed flavour differs — so ONE Higgsfield master of the maker's own pod photo was made and each
