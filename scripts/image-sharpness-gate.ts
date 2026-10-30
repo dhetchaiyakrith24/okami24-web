@@ -21,7 +21,9 @@
  *                 card-v<n>.*), the added variant files are measured against that NEW card instead, provided the new
  *                 card earns it: it reaches >= 90% of the old card, OR the old card is not a product cut-out but an
  *                 opaque poster (its "product" fills >= 97% of its own box — a busy line-up poster scores far above a
- *                 plain studio pod, the wrong yardstick). Otherwise the old card stays the yardstick, unchanged.
+ *                 plain studio pod, the wrong yardstick) AND the new card is a shaped cut-out (fill <= 95%; a box-shaped
+ *                 product replaced by the same box fills its box both times and gets no shortcut). Otherwise the old
+ *                 card stays the yardstick, unchanged.
  *   --self-test — synthetic images prove the new-card rule picks the right yardstick both ways; exits 1 on a miss.
  *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
  *                 "restored" (putting back photos the site already showed, owner 28/09).
