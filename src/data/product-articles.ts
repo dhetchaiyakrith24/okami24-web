@@ -1,4 +1,4 @@
-import type { ArticleSubsection } from "@/types/catalog";
+import type { ArticleFAQItem, ArticleSubsection } from "@/types/catalog";
 import type { Locale } from "@/i18n/config";
 
 /**
@@ -20,6 +20,9 @@ import type { Locale } from "@/i18n/config";
 export interface ProductArticleCopy {
   lede?: string;
   sections: ArticleSubsection[];
+  /** Warehouse-listed (Shipnity seed) pages only — they have no `Product.faqs`; PilotProductDetail shows these under the
+   *  article and the server page builds FAQPage JSON-LD from the Thai copy (the M Bar 9K editorial pattern). */
+  faq?: ArticleFAQItem[];
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
@@ -2009,6 +2012,125 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "两款的用法不同：Muro SC 8000 是一次性设备，拆开就能抽；[Muro Connector 20K](/products/muro-connector-20k) 则是预装烟油的烟弹，标注最多 20,000 口，需要装在 Muro Creator 或 RELX Creator 主机上使用。如果已经有主机、抽得又多，可以看看 Connector 20K。",
           ],
+        },
+      ],
+    },
+  },
+  // List-new 30/10 (nexBar Switch 15K, warehouse-listed): no maker site. Facts = nexBar's own posters — the 15-flavour
+  // line-up the warehouse keeps (Shipnity Max image 2764487: nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the
+  // 10-flavour poster series a Thai shop carries verbatim (vmaniath.com/en/product/1273962: nexMesh Coil · 15000 puffs ·
+  // 15ML; the pod prints "nexBar SWITCH 15K" + a flavour label). Which device the pod fits = retailer text only → not said
+  // (THAI_STYLE §5 "ขยายเป็นทุกที่บนเว็บ") until the owner confirms it from the shop's own stock.
+  // SEO (owner 30/10): H1 = the model name · H2 "รายละเอียดเพิ่มเติม" → H3 buyer questions · H2 "คำถามที่พบบ่อย".
+  "nexbar-switch-15k-pod": {
+    th: {
+      lede: "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ เลือกกลิ่นแล้วได้หัวที่มีน้ำยากลิ่นนั้นมาในตัว ด้านล่างเล่าจากโปสเตอร์ของ nexBar ว่าในหัวมีอะไร และ 15 กลิ่นแบ่งเป็นแนวไหนบ้าง",
+      sections: [
+        {
+          heading: "nexBar Switch 15K คืออะไร",
+          paragraphs: [
+            "nexBar Switch 15K เป็นหัวพอตบรรจุสำเร็จ หัวหนึ่งมีน้ำยา 15mL กับคอยล์ nexMesh อยู่ในตัว จึงไม่ต้องเติมน้ำยาหรือเปลี่ยนคอยล์เองเหมือนหัวพอตเปล่า",
+            "ส่วนเลข 15K ในชื่อรุ่นมาจากตัวเลขบนโปสเตอร์ของ nexBar ที่ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ",
+          ],
+        },
+        {
+          heading: "nexBar Switch 15K มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "รุ่นนี้มี 15 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 3 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือเป็นมิ้นต์ ได้แก่ Blueberry Ice, Grape Ice, Watermelon Ice และ Mint",
+            "สายผลไม้ ได้แก่ Grape Lychee, Lychee, Mango Peach, Peach Strawberry, Pink Berry, Mixberry, Pineapple, Strawberry Banana และ Strawberry Watermelon",
+            "แนวอื่นมี Cola กับ Strawberry Custard",
+          ],
+        },
+        {
+          heading: "ดูยังไงว่าหัวที่ได้เป็นกลิ่นไหน",
+          paragraphs: [
+            "ด้านหน้าของหัวพอตพิมพ์โลโก้ nexBar กับคำว่า SWITCH 15K และมีป้ายชื่อกลิ่นอยู่ด้านล่าง ซื้อไปหลายกลิ่นก็ดูชื่อบนป้ายได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "nexBar Switch 15K หัวหนึ่งสูบได้กี่พัฟ",
+          answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ตัวเลขนี้เป็นค่าสูงสุดที่ผู้ผลิตบอก สูบจริงได้มากน้อยแค่ไหนขึ้นกับวิธีสูบของแต่ละคนนะคะ",
+        },
+        {
+          question: "nexBar Switch 15K นิโคตินกี่ %",
+          answer: "โปสเตอร์ของ nexBar ระบุความเข้มข้นนิโคติน 3% ค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The nexBar Switch 15K is a prefilled pod: pick a flavour and the pod comes with that e-liquid inside. Below, from nexBar's own posters, what is in the pod and how the 15 flavours group.",
+      sections: [
+        {
+          heading: "What is the nexBar Switch 15K?",
+          paragraphs: [
+            "The nexBar Switch 15K is a prefilled pod with 15mL of e-liquid and a built-in nexMesh coil, so there is no e-liquid to add and no coil to change as with an empty pod.",
+            "The 15K in the name comes from nexBar's poster, which rates each pod for up to 15,000 puffs.",
+          ],
+        },
+        {
+          heading: "Which flavours does the nexBar Switch 15K come in?",
+          paragraphs: [
+            "There are 15 flavours. Grouped by name, they fall into three sets.",
+            "Cool, with Ice in the name or mint: Blueberry Ice, Grape Ice, Watermelon Ice and Mint.",
+            "Fruit: Grape Lychee, Lychee, Mango Peach, Peach Strawberry, Pink Berry, Mixberry, Pineapple, Strawberry Banana and Strawberry Watermelon.",
+            "Others: Cola and Strawberry Custard.",
+          ],
+        },
+        {
+          heading: "How do I tell which flavour a pod is?",
+          paragraphs: [
+            "The front of the pod is printed with the nexBar logo and SWITCH 15K, with a flavour label below. If you buy several flavours, the label tells you which pod is which.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "How many puffs does one nexBar Switch 15K pod give?",
+          answer: "nexBar's poster rates each pod for up to 15,000 puffs. That is the maker's maximum; how many you actually get depends on how you vape.",
+        },
+        {
+          question: "What nicotine strength is the nexBar Switch 15K?",
+          answer: "nexBar's poster gives a nicotine strength of 3%.",
+        },
+      ],
+    },
+    zh: {
+      lede: "nexBar Switch 15K 是预装烟油的烟弹：选好口味，烟弹里就装着该口味的烟油。下面根据 nexBar 自己的海报，说明烟弹里有什么，以及 15 种口味怎么分。",
+      sections: [
+        {
+          heading: "nexBar Switch 15K 是什么？",
+          paragraphs: [
+            "nexBar Switch 15K 是预装烟油的烟弹，每颗装有 15mL 烟油，并内置 nexMesh 线圈，不用像空烟弹那样自己加油、换线圈。",
+            "名字里的 15K 来自 nexBar 海报上的数字：每颗烟弹最多 15,000 口。",
+          ],
+        },
+        {
+          heading: "nexBar Switch 15K 有哪些口味？",
+          paragraphs: [
+            "共 15 种口味，按名称大致分为三类。",
+            "清凉系，名称带 Ice 或是薄荷：Blueberry Ice、Grape Ice、Watermelon Ice 和 Mint。",
+            "水果系：Grape Lychee、Lychee、Mango Peach、Peach Strawberry、Pink Berry、Mixberry、Pineapple、Strawberry Banana 和 Strawberry Watermelon。",
+            "其他：Cola 和 Strawberry Custard。",
+          ],
+        },
+        {
+          heading: "怎么分辨烟弹是哪种口味？",
+          paragraphs: [
+            "烟弹正面印有 nexBar 标志和 SWITCH 15K 字样，下方有口味标签。买了好几种口味，看标签就知道哪颗是什么味道。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "nexBar Switch 15K 一颗能抽多少口？",
+          answer: "nexBar 海报标注每颗最多 15,000 口。这是厂商给出的最大值，实际能抽多少取决于个人的抽吸习惯。",
+        },
+        {
+          question: "nexBar Switch 15K 的尼古丁浓度是多少？",
+          answer: "nexBar 海报标注的尼古丁浓度为 3%。",
         },
       ],
     },

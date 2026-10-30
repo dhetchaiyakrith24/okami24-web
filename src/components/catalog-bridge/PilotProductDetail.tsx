@@ -36,6 +36,11 @@ import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/
 import { verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
+import { renderInline } from "@/components/content/ArticleBody";
+import type { ProductArticleCopy } from "@/data/product-articles";
+import type { Locale } from "@/i18n/config";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -73,7 +78,11 @@ export function PilotProductDetail({
   fitsDevices,
   lineCodes,
   brandHref,
+  articles,
 }: {
+  /** List-new 30/10 (nexBar Switch 15K): the product's article + FAQ per locale (src/data/product-articles.ts via
+   *  productDetailsCopy), from the server page. Absent / empty = neither section renders, so every other page is unchanged. */
+  articles?: Partial<Record<Locale, ProductArticleCopy>>;
   /** Round seo-push-2710: the brand page of this product (`/brands/<slug>`), when the brand has one — the brand chip links there. */
   brandHref?: string;
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
@@ -106,6 +115,7 @@ export function PilotProductDetail({
   const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
+  const article = articles?.[locale];
   // Image-fix round 2026-09-28 (owner: a colour/flavour without its own photo must never show another option's
   // photo): on a colour/flavour axis with 2+ options and no neutral fallback, an option without a photo gets the
   // NoOptionPhoto panel instead of the product card, and the page opens on the product photo with nothing
@@ -413,6 +423,39 @@ export function PilotProductDetail({
             <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, product.reviewVideo.title)} contextName={product.displayName} />
           </div>
         </Container>
+      )}
+      {/* List-new 30/10: the legacy page's "more details" article and FAQ, for a warehouse-listed product that has copy.
+          FAQ = <details> with the answers in the server HTML (the M Bar 9K editorial pattern, ProductEditorialFaq). */}
+      {articles && article && article.sections.length > 0 && (
+        <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20" aria-labelledby="more-details-title">
+          <Container className="flex flex-col gap-10 lg:gap-14">
+            <div>
+              <SectionHeading eyebrow={dict.product.featuresEyebrow} title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
+              <ProductArticleLede articles={articles} />
+            </div>
+            <ProductArticleBody articles={articles} />
+          </Container>
+        </section>
+      )}
+      {article?.faq && article.faq.length > 0 && (
+        <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
+          <Container>
+            <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{dict.product.faqTitle}</h2>
+            <div className="mt-8 max-w-3xl border-t border-surface-border">
+              {article.faq.map((f, i) => (
+                <details key={i} className="group border-b border-surface-border py-4" open={i === 0}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-medium text-foreground lg:text-lg [&::-webkit-details-marker]:hidden">
+                    <span>{locale === "th" ? thaiTypographyNode(f.question) : f.question}</span>
+                    <span className="mt-1 text-foreground-dim transition-transform group-open:rotate-180" aria-hidden>
+                      ↓
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-base leading-relaxed text-foreground-muted">{renderInline(f.answer, locale, `f${i}`)}</p>
+                </details>
+              ))}
+            </div>
+          </Container>
+        </section>
       )}
       {/* Structured, clickable compatibility — same component and same evidence-backed edge
           table the legacy product page uses, so a published ProductMaster part can link to the
