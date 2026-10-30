@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
+import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { formatCount, formatShortDateTime } from "@/app/staff/_components/format";
 import { SITE_URL } from "@/lib/seo";
 import { wooCatalog } from "@/lib/woo/catalog";
@@ -216,8 +217,7 @@ export default async function StaffShipnityPage() {
                   <form action={approveWebhookAction}>
                     <input type="hidden" name="id" value={h.id} />
                     <input type="hidden" name="approve" value={h.approvedAt ? "0" : "1"} />
-                    <button
-                      type="submit"
+                    <PendingButton
                       className={
                         h.approvedAt
                           ? "rounded-full border border-surface-border px-4 py-2 text-sm text-foreground transition-colors hover:border-danger hover:text-danger"
@@ -225,7 +225,7 @@ export default async function StaffShipnityPage() {
                       }
                     >
                       {h.approvedAt ? "หยุดส่ง" : "อนุญาต"}
-                    </button>
+                    </PendingButton>
                   </form>
                 )}
               </li>
@@ -255,12 +255,12 @@ export default async function StaffShipnityPage() {
                 ) : (
                   <form action={revokeWooKeyAction}>
                     <input type="hidden" name="id" value={k.id} />
-                    <button
-                      type="submit"
+                    <PendingButton
                       className="rounded-full border border-surface-border px-4 py-2 text-sm text-foreground transition-colors hover:border-danger hover:text-danger"
+                      pendingText="กำลังยกเลิก…"
                     >
                       ยกเลิกคีย์นี้
-                    </button>
+                    </PendingButton>
                   </form>
                 )}
               </li>

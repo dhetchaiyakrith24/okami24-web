@@ -1,4 +1,5 @@
 import { assignLineGroupAction } from "@/app/staff/actions";
+import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { getGroupName } from "@/lib/line/client";
 import { listGroups, type GroupRole } from "@/lib/line/groups";
 
@@ -33,26 +34,26 @@ export async function LineGroups() {
               <form action={assignLineGroupAction} className="flex flex-wrap gap-2">
                 <input type="hidden" name="groupId" value={g.groupId} />
                 {(["order", "slip"] as const).map((role) => (
-                  <button
+                  <PendingButton
                     key={role}
-                    type="submit"
                     name="role"
                     value={role}
                     disabled={g.role === role}
+                    pendingText="กำลังตั้ง…"
                     className="rounded-full border border-surface-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground-dim disabled:opacity-40"
                   >
                     ใช้เป็น{ROLE_LABEL[role]}
-                  </button>
+                  </PendingButton>
                 ))}
                 {g.role && (
-                  <button
-                    type="submit"
+                  <PendingButton
                     name="role"
                     value=""
+                    pendingText="กำลังตั้ง…"
                     className="rounded-full px-4 py-2 text-sm text-foreground-dim underline-offset-4 hover:text-foreground hover:underline"
                   >
                     เลิกใช้
-                  </button>
+                  </PendingButton>
                 )}
               </form>
             </li>
