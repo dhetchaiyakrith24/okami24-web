@@ -1149,19 +1149,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
-  // List-new (30/10): TEMPORARY card (owner 30/10 "ลงไปก่อนได้เลย เดี๋ยวงานรูป … มาตามแก้กันทีหลัง" · "ใช้ของผู้ผลิตไปก่อนก็ได้" ·
-  // "โหลดได้เลย") = the warehouse's own Shipnity Max image of Pod-181 (the 15-flavour line-up poster, 1000×832), fitted
-  // whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6). A studio card replaces it in the listing chat.
+  // Listing chat 31/10 (owner: "สร้างผ่าน Mcp ได้ครับ"): one studio render of the pod (Higgsfield GPT Image 2.5, job 2b051ed0,
+  // from the maker's product render a Thai shop uses — vmaniath.com/en/product/1273962) replaces the warehouse's line-up poster.
+  // card-v2: card.webp was the poster, already live (Cloudflare keeps /assets 30 days, LESSONS-images พ6).
   "NEXBAR-SWITCH-15K-POD": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexbar-switch-15k-pod/card.webp",
-      alt: "nexBar Switch 15K refill pods, all 15 flavours line-up",
-      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2764487, read 30/10) — 15 pods, one per flavour.",
-      transparentBackground: false,
-      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
-      sourceUrl: "https://app.shipnitymax.com/",
+      src: "/assets/products/nexbar-switch-15k-pod/card-v2.webp",
+      alt: "nexBar Switch 15K refill pod, Blueberry Ice, front view",
+      angle: "Front, isolated — OKami24 render (Higgsfield) of the maker's pod render; the flavour label re-typeset by script.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the maker's pod render",
+      sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     },
   ],
   // Round list19 (19/10): ESKO BAR SWITCH pod card = the Cola pod (same file family as pod-159's pod photos: one master pod, the
@@ -2429,6 +2429,19 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "pod-159-verified-watermelon-lime": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-watermelon-lime.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Lime", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     "pod-159-verified-yogurt": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
+  // Listing chat 31/10: nexBar Switch 15K — one master pod render, the flavour label re-typeset per flavour (names as printed
+  // on nexBar's posters), one matte for all 15 so the pod never moves between chips (LESSONS-images 11/32).
+  "NEXBAR-SWITCH-15K-POD": Object.fromEntries(
+    ([["Pod-181-1", "grape-ice", "Grape Ice"], ["Pod-181-2", "grape-lychee", "Grape Lychee"], ["Pod-181-3", "mint", "Mint"],
+      ["Pod-181-4", "watermelon-ice", "Watermelon Ice"], ["Pod-181-5", "cola", "Cola"], ["Pod-181-6", "mixberry", "Mixberry"],
+      ["Pod-181-7", "pink-berry", "Pink Berry"], ["Pod-181-8", "blueberry-ice", "Blueberry Ice"], ["Pod-181-9", "mango-peach", "Mango Peach"],
+      ["Pod-181-10", "peach-strawberry", "Peach Strawberry"], ["Pod-181-11", "lychee", "Lychee"], ["Pod-181-12", "strawberry-banana", "Strawberry Banana"],
+      ["Pod-181-13", "strawberry-custard", "Strawberry Custard"], ["Pod-181-14", "strawberry-watermelon", "Strawberry Watermelon"],
+      ["Pod-181-15", "pineapple", "Pineapple"]] as const).map(([code, file, name]) => [code, {
+      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
+      transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's pod render", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
+    } satisfies ProductAsset])
+  ),
   // Round list19 (19/10): ESKO BAR SWITCH pod — every flavour has its pod photo (the pod-159 sources, one master pod).
   "ESKO-BAR-SWITCH-POD": {
     "Pod-160-1": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-grape.webp", alt: "ESKO BAR SWITCH prefilled pod, Grape", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
