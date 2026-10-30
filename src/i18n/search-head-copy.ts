@@ -121,7 +121,7 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // brands.ts. "สอบถาม", not "สั่ง": the model is sold out.
   wotofo: () => ({
     // SEO brand push heads (30/10, thai-copy + seo-auditor 30/10): brand level, both lines (nexBAR disposables + the nexPOD
-    // switch-style kit); no model number (the product pages own them). Neither has a price on the site → "สอบถาม".
+    // switch-style kit); no model number (the product pages own them). nexBAR 18K is sold out and nexPOD 15K has no price → "สอบถาม".
     title: `WOTOFO ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
     description: "WOTOFO มีทั้งพอตใช้แล้วทิ้ง nexBAR และพอตเปลี่ยนหัว nexPOD ที่ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
   }),
@@ -156,7 +156,7 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     description: "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
   }),
   // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"
-  // — /products/infy-20k owns "infy 20k". Title kept exactly as the default (brandTitleTh + the layout suffix); the
+  // — /products/infy-20k owns "infy 20k". (Superseded 30/10: title + meta below = SEO brand push heads.) The old
   // description reuses the lede's first half (the one Thai-name sentence, owner 07/10) without the model. thai-copy 08/10.
   infy: () => ({
     // SEO brand push heads (30/10, thai-copy): the page also sells the INFY POD device and INFY PLUS pods — the head names the
