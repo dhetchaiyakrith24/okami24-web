@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
@@ -41,6 +42,7 @@ export function ColorVariantRail({
   allChips,
   outOfStockLabel,
   counts,
+  countLine,
   className,
 }: {
   variants: ColorVariant[];
@@ -55,6 +57,8 @@ export function ColorVariantRail({
   outOfStockLabel?: string;
   /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
   counts?: Record<string, number>;
+  /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
+  countLine?: ReactNode;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -72,6 +76,7 @@ export function ColorVariantRail({
         className="lg:hidden"
         options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id] }))}
         selectedId={anyAll ? null : selectedId}
+        countLine={countLine}
         onSelect={onSelect}
         label={label}
         pills={pills}

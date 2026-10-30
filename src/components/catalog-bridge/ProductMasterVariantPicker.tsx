@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import type { StorefrontVariantView } from "@/data/shipnity-seed/storefront-preview-read-model";
@@ -39,6 +40,7 @@ export function ProductMasterVariantPicker({
   onSelect,
   outOfStockLabel,
   counts,
+  countLine,
   className,
 }: {
   optionAxisLabel: string | null;
@@ -48,6 +50,8 @@ export function ProductMasterVariantPicker({
   outOfStockLabel?: string;
   /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
   counts?: Record<string, number>;
+  /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
+  countLine?: ReactNode;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -66,6 +70,7 @@ export function ProductMasterVariantPicker({
         className="lg:hidden"
         options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id] }))}
         selectedId={selectedId}
+        countLine={countLine}
         onSelect={handleSelect}
         label={optionAxisLabel}
       />

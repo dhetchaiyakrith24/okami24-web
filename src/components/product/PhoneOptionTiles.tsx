@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useChipAutoscroll } from "./use-chip-autoscroll";
-import { countText } from "@/lib/stock/count-rules";
+import { countKind } from "@/lib/stock/count-rules";
 
 /**
  * Phone option picker (queue Q5, owner 24/10 — mockups A/B/C in `_incoming/cartpolish-2410/picker/`). Below `lg` the
@@ -18,9 +18,10 @@ import { countText } from "@/lib/stock/count-rules";
  *     เล็กๆเพิ่ม … ถ้าลูกค้าไม่กดก็เลื่อนไปทางซ้ายได้เหมือนกัน");
  *   - the status pill is B's: green "มีของ" so stock reads at a glance, sold out = dimmed tile + "หมด".
  * An option without its own verified photo shows its swatch (or a plain dot) — never another option's photo.
- * The warehouse count (owner 30/10, live after load — `left`): the picked option's pill in the header reads the count words
- * (count-rules.ts — amber at ≤ 3, "มากกว่า 20 ชิ้น" above 20); a small tile only swaps "มีของ" for the short amber "เหลือ N"
- * at ≤ 3 — a tile is ~80 px wide (designer 30/10). No count yet = the plain green pill, same height, nothing jumps.
+ * The warehouse count (owner 30/10, live after load): the picked option's count words sit on their own line under the
+ * header (`countLine`, from the product page — the header row keeps its width, so "พร้อมส่ง x/y" never wraps when the
+ * answer lands: checker #1063 round 1); a small tile only swaps "มีของ" for the short amber "เหลือ N" at ≤ 3 (`left`) —
+ * a tile is ~80 px wide (designer 30/10), same pill height, nothing jumps.
  */
 export const TILE_LIMIT = 12; // Friday's cut of the owner's "8–12" (24/10), reversible
 
@@ -42,6 +43,7 @@ export function PhoneOptionTiles({
   pills = [],
   className,
   outDisabled = false,
+  countLine,
 }: {
   options: PhoneOption[];
   /** null while nothing (or an "all" pill) is picked. */
@@ -53,6 +55,8 @@ export function PhoneOptionTiles({
   className?: string;
   /** Sold-out tiles cannot be picked (the cart's quick add). The product page keeps them pickable to show the photo. */
   outDisabled?: boolean;
+  /** The picked option's count line (product page), right under the header row. */
+  countLine?: ReactNode;
 }) {
   const { dict } = useLocale();
   const t = dict.product;
@@ -70,13 +74,14 @@ export function PhoneOptionTiles({
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
         {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
-        {selected && <StockPill out={selected.out} left={selected.left} />}
+        {selected && <StockPill out={selected.out} />}
         {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
         {!selected && !pills.some((p) => p.selected) && <span className="text-foreground-muted">{t.optionPickPrompt}</span>}
         <span className="ml-auto text-xs text-foreground-dim">
           {t.optionStockCount.replace("{in}", String(inCount)).replace("{n}", String(options.length))}
         </span>
       </div>
+      {countLine}
       {pills.length > 0 && (
         <div className="flex flex-wrap gap-2">
           {pills.map((p) => (
@@ -174,10 +179,8 @@ export function PhoneOptionTiles({
 function StockPill({ out, small, left }: { out: boolean; small?: boolean; left?: number }) {
   const { dict } = useLocale();
   const t = dict.product;
-  const count = !out && left !== undefined ? countText(t, left) : null;
-  // A tile shows only the low state (short words); the header pill shows every count.
-  const shown = count && (!small || count.kind === "low") ? count : null;
-  const low = shown?.kind === "low";
+  // Only a small tile at ≤ 3 changes words (short amber "เหลือ N"); every other pill stays "มีของ" / "หมด".
+  const low = !out && left !== undefined && countKind(left) === "low";
   return (
     <span
       className={cn(
@@ -187,7 +190,7 @@ function StockPill({ out, small, left }: { out: boolean; small?: boolean; left?:
         out ? "text-foreground-dim" : low ? "border border-low/40 bg-low/10 text-low" : "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
       )}
     >
-      {out ? t.optionOut : shown ? (small ? t.stockLeftShort.replace("{n}", String(left)) : shown.text) : t.optionIn}
+      {out ? t.optionOut : low ? t.stockLeftShort.replace("{n}", String(left)) : t.optionIn}
     </span>
   );
 }

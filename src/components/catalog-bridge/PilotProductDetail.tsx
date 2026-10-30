@@ -170,6 +170,8 @@ export function PilotProductDetail({
         ? dict.product.stockLeftShort.replace("{n}", String(pickedLeft))
         : countText(dict.product, pickedLeft).text
       : null;
+  // Keeps its height only while the answer is on its way (checker #1063 round 1). Phone: under the picker header.
+  const countLine = <StockCountLine left={pickedLeft} reserve={available && (!hasOptions || selectedVariantId !== null) && !liveCounts.settled} />;
 
   // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
   // neutral fallback → product card), so an option without its own photo shows the same image
@@ -271,7 +273,7 @@ export function PilotProductDetail({
             <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
               <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
-              {!hasOptions && <StockCountLine left={pickedLeft} className="mt-1 lg:hidden" />}
+              {!hasOptions && <StockCountLine left={pickedLeft} reserve={available && !liveCounts.settled} className="mt-1 lg:hidden" />}
             </div>
           ) : (
             <div className="max-lg:order-3">
@@ -292,13 +294,14 @@ export function PilotProductDetail({
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
             counts={liveCounts.o}
+            countLine={countLine}
             className="max-lg:order-2"
           />
 
           {showBuy && (
             <div className="flex flex-col gap-3 max-lg:hidden">
               {/* The picked option's count above the button it is about (designer 30/10); keeps its height until the answer. */}
-              <StockCountLine left={pickedLeft} reserve={available && (!hasOptions || selectedVariantId !== null)} />
+              {countLine}
               {/* Catalog-truth-vs-stock-truth mandate (owner, 2026-09-03): a verified real flavor
                   with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
                   as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"

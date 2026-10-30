@@ -190,6 +190,10 @@ export function ProductHero({
         ? dict.product.stockLeftShort.replace("{n}", String(pickedLeft))
         : countText(dict.product, pickedLeft).text
       : null;
+  // The line keeps its height only while the answer is on its way, so a page that gets no number closes the gap (checker
+  // #1063 round 1) and one that gets a number does not jump. Phone: under the picker header; desktop: above the buy button.
+  const reserveCount = canAddToCart && !choiceMissing && !liveCounts.settled;
+  const countLine = <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} />;
   // Data round (owner 2026-09-24): a stat shows only when a verified spec row states the same number.
   const facts = verifiedAttributes(product);
   const hasVerifiedSpecs = verifiedRows(product.specifications).length > 0;
@@ -369,7 +373,7 @@ export function ProductHero({
             <div className="max-lg:order-5">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
               <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{sellingPrice.toLocaleString("th-TH")}</p>
-              {!hasOptions && <StockCountLine left={pickedLeft} className="mt-1 lg:hidden" />}
+              {!hasOptions && <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} className="mt-1 lg:hidden" />}
             </div>
           )}
 
@@ -388,6 +392,7 @@ export function ProductHero({
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
+              countLine={countLine}
               className="max-lg:order-4"
             />
           )}
@@ -406,6 +411,7 @@ export function ProductHero({
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
+              countLine={countLine}
               className="max-lg:order-4"
             />
           )}
@@ -414,7 +420,7 @@ export function ProductHero({
             <div className="flex flex-col gap-3 pt-1 max-lg:hidden">
               {/* The picked option's count, right above the button it is about (designer 30/10: on desktop the price
                   sits above the options); the line keeps its height before the answer lands. */}
-              <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={canAddToCart && !choiceMissing} />
+              {countLine}
               {/* One shared buy action for every product page and the mobile bar — see
                   ProductBuyAction.tsx (mobile round, 2026-09-08). The legacy form/note classes
                   are passed in so this renders exactly as it did when the branch lived here. */}
