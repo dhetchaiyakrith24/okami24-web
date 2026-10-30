@@ -28,6 +28,8 @@ export const BEST_SELLER_SOURCE: "owner-list" | "web-orders" = "owner-list";
  *     and with it every Muro product on the site except Muro Space 15K (BSOT §15 "Not recommended" — "แทบทุกตัว");
  *   Customer favorites — Nexbar Clear 18K (pod-180) · Marbo 10K = not on the site (marbo-10k-clone is the lookalike the owner
  *     keeps out of every pick — HANDOFF §18 — so it gets no badge).
+ * Owner 31/10 added his own list ("รายการติดป้ายที่เพิ่มตามนี้เลยครับ"), each name matched to its one page on the site — the
+ * second block below ("Vmate Pro 2" was listed twice; "SALTHUB Marbo Freebase3." = SALTHUB Marbo Freebase, the only one).
  */
 export const OWNER_BEST_SELLERS: ReadonlySet<string> = new Set([
   "pod-159",
@@ -40,6 +42,33 @@ export const OWNER_BEST_SELLERS: ReadonlySet<string> = new Set([
   "muro-sc-8000",
   "muro-freebase",
   "muro-salt-nic",
+  // owner 31/10
+  "caliburn-g5", // Caliburn G5
+  "argus-g4", // ARGUS G4
+  "caliburn-g5-lite", // Caliburn G5 Lite
+  "caliburn-g5-lite-se", // Caliburn G5 Lite SE
+  "caliburn-g4-pro-koko", // Caliburn G4 Pro KOKO
+  "caliburn-g4-pro", // Caliburn G4 Pro
+  "caliburn-g3", // Caliburn G3
+  "argus-g3-mini", // ARGUS G3 mini
+  "vmate-pro-2", // VOOPOO Vmate Pro 2
+  "m-bar-10k", // M Bar 10K
+  "relx-smash-go-12k", // RELX Smash Go 12K
+  "m-bar-9k", // M Bar 9K
+  "wotofo-nexbar-18k", // WOTOFO nexBAR 18K
+  "relx-lumi-18k", // RELX LUMI 18K
+  "sup-zero-22k", // SUP ZERO 22K
+  "zero-pro", // Zero Pro
+  "relx-creator-pod-20k", // RELX Creator Pod 20K
+  "relx-infinity-pro-2-pod", // RELX Infinity Pro 2 Pod
+  "coil-94", // UWELL คอยล์ Caliburn G4&G3 Series
+  "coil-72", // VOOPOO คอยล์ Vmate Infinity Edition
+  "zero-cartridge", // Zero Cartridge
+  "coil-74", // UWELL หัวเปล่า Caliburn X
+  "eliquid-1", // SALTHUB Marbo Saltnic
+  "super-cool-saltnic", // Super Cool Salt Nic
+  "graple-freebase", // Graple Freebase
+  "eliquid-109", // SALTHUB Marbo Freebase
 ]);
 
 export type SalesBadgeKind = "new" | "best";

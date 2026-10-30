@@ -143,9 +143,11 @@ export function ProductMoreDetails({ product, copy }: { product: Product; copy: 
       <Container className="pt-14 lg:pt-20">
         {/* G5 template fixes (owner 03/10): on the stage layout a floating cover sits close under the heading, no frame — but
             never over the heading or the lede (owner eye item 5: the wing tips reach the file's top edge, so no negative
-            margin); the text shadow stays for the feathers that come near it */}
+            margin); the text shadow stays for the feathers that come near it. Owner 30/10 (M Bar 10K desktop shot): the
+            eyebrow, heading, source line and lede sit centred; the blocks below keep their own alignment. */}
         <div className={cn(stage && cover?.transparent && "relative z-10 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_0_18px_rgba(0,0,0,0.85)]")}>
           <SectionHeading
+            align="center"
             eyebrow={dict.product.featuresEyebrow}
             title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
             description={sourceName ? dict.product.galleryNote.replace("{brand}", sourceName) : undefined}
