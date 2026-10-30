@@ -3,6 +3,7 @@ import crypto from "node:crypto";
 import { cookies, headers } from "next/headers";
 import { cache } from "react";
 import { getDb } from "@/lib/db/client";
+import { TEAM_MARKER_COOKIE } from "@/lib/staff/team-marker";
 
 /**
  * Staff access for the slip-check page (owner ruling 2026-10-07, docs/BUSINESS_SOURCE_OF_TRUTH.md §9):
@@ -109,6 +110,14 @@ export async function staffLogin(given: string): Promise<LoginResult> {
     expires: expiresAt,
     path: COOKIE_PATH,
   });
+  // The marker the shop pages read to show the "ทีมงาน" button (owner 30/10) — readable by the browser on purpose, same lifetime.
+  store.set(TEAM_MARKER_COOKIE, "1", {
+    httpOnly: false,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    expires: expiresAt,
+    path: "/",
+  });
   return { ok: true };
 }
 
@@ -119,6 +128,7 @@ export async function staffLogout(): Promise<void> {
     getDb().prepare("UPDATE staff_sessions SET revoked_at = ? WHERE token_hash = ?").run(new Date().toISOString(), sha256(token));
   }
   store.delete({ name: COOKIE, path: COOKIE_PATH });
+  store.delete({ name: TEAM_MARKER_COOKIE, path: "/" });
 }
 
 /** True when this request carries a live staff session opened with the CURRENT password. Every staff
