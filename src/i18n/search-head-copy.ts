@@ -19,6 +19,13 @@
 
 export const OKM_TITLE_SUFFIX = " — OKami24 (OKM)";
 
+/** How a Google description ends (owner 30/10: "ท้ายคำอธิบายบน Google สั่งได้ทั้ง 2 ทางตามลูกค้าสะดวก แต่เขียนให้ดูโปรกว่านี้"; wording =
+ *  thai-copy 30/10). `orderingOn` = the cart switch (src/lib/commerce/ordering-mode.ts), passed in by the page — this file
+ *  stays importable outside the server (it must not import that server-only module). Cart off = the old LINE-only line. */
+export function orderCloseTh(orderingOn: boolean): string {
+  return orderingOn ? "สั่งบนเว็บหรือ LINE @okm24" : "สั่งทาง LINE @okm24";
+}
+
 /** "฿1,190" — the same thousands comma THAI_STYLE §4 asks for in prose. */
 export function formatPriceTh(price: number): string {
   return `฿${price.toLocaleString("en-US")}`;
@@ -50,7 +57,7 @@ export const CONTACT_HEAD_TH = {
 } as const;
 
 /** Rows A7 (option ก) / A8 — `count` = products shown on /products, counted by the page. */
-export function productsHeadTh(count: number) {
+export function productsHeadTh(count: number, orderingOn = false) {
   // Round 9 B4 (thai-copy row 3, seo-auditor #1 "land now"): the all-products page leads with the
   // collective owner key "อุปกรณ์บุหรี่ไฟฟ้า" (0 titles before). Owner's answer 2026-09-23: "พอต" and
   // "คอยล์" go back in — seo-auditor #2 option A (59 characters at 53 products, 60 at 100+): keeps the
@@ -62,7 +69,7 @@ export function productsHeadTh(count: number) {
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
     // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
     // top, not a seller's phrase) — "พอต" already covers it.
-    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24`,
+    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
   };
 }
 
@@ -72,29 +79,29 @@ export type PriceOf = (slug: string) => string | null;
 /** Rows A9–A16 — the four brand pages whose title/description name real models and prices.
  *  Every other brand keeps `brandTitleTh()` + its `descriptionTh`. Prices come through `priceOf`
  *  (see the header comment); a null price drops just that " ฿…" fragment. */
-export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string; description: string }> = {
+export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boolean) => { title: string; description: string }> = {
   // Round SEO D batch 4 (07/10, keyword map SEO_LANDSCAPE §0): every brand title is brand-level — the model terms
   // ("15k", "joiway f4", "caliburn g5", "drag 6") belong to the product pages; GSC 21/09–05/10 showed brand pages
   // taking them. Wording = thai-copy 07/10, read by seo-auditor 07/10.
   // Round SEO ฉ batch 3 (12/10): relx / iqos / wotofo metas step back to brand level like joiway/infy in #354 — the model
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
-  relx: () => ({
+  relx: (_priceOf, orderingOn = false) => ({
     title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
-    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
-  salthub: () => ({
+  salthub: (_priceOf, orderingOn = false) => ({
     title: `SALTHUB M Bar (Marbo) ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: "SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero สั่งทาง LINE @okm24",
+    description: `SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ${orderCloseTh(orderingOn)}`,
   }),
-  voopoo: () => ({
+  voopoo: (_priceOf, orderingOn = false) => ({
     title: `VOOPOO ของแท้ พอตซิสเต็ม หัวพอต และคอยล์${OKM_TITLE_SUFFIX}`,
-    description: "VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
-  uwell: () => ({
+  uwell: (_priceOf, orderingOn = false) => ({
     title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
   // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the
@@ -104,16 +111,16 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // come through `priceOf` like the four entries above. relx/salthub stay as approved in SEO ก
   // (their Search Console lines are being measured until 2026-10-05).
   // "ไอคอส" = the Thai name with typing evidence (owner 07/10, sheet 35), same as "อินฟี่" in the infy meta below.
-  iqos: () => ({
+  iqos: (_priceOf, orderingOn = false) => ({
     title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
-    description: "IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก สั่งทาง LINE @okm24",
+    description: `IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก ${orderCloseTh(orderingOn)}`,
   }),
   // SEO all keys 20/10: "esko bar" sat at position 3.6 with 0 clicks (GSC 18/10) under a title that spoke only to the switch
   // device — the brand now has the ESKO BAR 20000 disposable, the Switch 20K device and its pods, so the head names both
   // formats, no model and no price (the product pages own "esko bar switch 20k" / "esko bar 20k"). Wording = thai-copy 20/10.
-  "esko-bar": () => ({
+  "esko-bar": (_priceOf, orderingOn = false) => ({
     title: `ESKO BAR พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว ของแท้${OKM_TITLE_SUFFIX}`,
-    description: "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ มีทั้งพอตใช้แล้วทิ้ง และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ มีทั้งพอตใช้แล้วทิ้ง และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
   // out — so no price and no stock claim here (owner "ตามแนะนำ").
@@ -125,25 +132,25 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     title: `WOTOFO ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
     description: "WOTOFO มีทั้งพอตใช้แล้วทิ้ง nexBAR และพอตเปลี่ยนหัว nexPOD ที่ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
   }),
-  nevoks: (priceOf) => {
+  nevoks: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-54");
     return {
       title: `NEVOKS หัวพอตเปล่า ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
-  rincoe: (priceOf) => {
+  rincoe: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-89");
     return {
       title: `RINCOE หัวพอต ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
-  dotmod: (priceOf) => {
+  dotmod: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-70");
     return {
       title: `DOTMOD คอยล์ ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
   // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names and prices left the title (batch 4)
@@ -151,9 +158,9 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // SEO all keys 20/10: "joiway" pos 6.2, 3 clicks / 179 impressions — title + meta carry the Thai name people type (จอยเวย์,
   // SEO_LANDSCAPE row 75); "คู่กลิ่น" stays out of the title — it is F4's selling point and the brand page already takes
   // "joiway f4" queries (row 76, seo-auditor 20/10). thai-copy 20/10.
-  joiway: () => ({
+  joiway: (_priceOf, orderingOn = false) => ({
     title: `JOIWAY จอยเวย์ พอตใช้แล้วทิ้ง ของแท้${OKM_TITLE_SUFFIX}`,
-    description: "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
+    description: `JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube ${orderCloseTh(orderingOn)}`,
   }),
   // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"
   // — /products/infy-20k owns "infy 20k". (Superseded 30/10: title + meta below = SEO brand push heads.) The old
@@ -177,8 +184,8 @@ export const BRAND_H1: Record<string, string> = {
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
 /** `genuine: false` = a page that makes no genuine claim (src/lib/genuine-claim.ts) — the suffix drops "ของแท้". */
-export function productPriceSuffixTh(price: number, genuine = true): string {
-  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
+export function productPriceSuffixTh(price: number, genuine = true, orderingOn = false): string {
+  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} ${orderCloseTh(orderingOn)}`;
 }
 
 /**
@@ -277,7 +284,7 @@ const META_DESCRIPTION_MAX = 160;
  *  left hanging when the words after it were cut ("…มี 10", "…ส่วน", "…ของ VOOPOO" is fine, "…ของ"
  *  is not). Thai prose marks phrase boundaries with spaces only, so this is the second half of
  *  the boundary test: cut at a space, then back off past any dangling opener. */
-const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
+const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "มีให้เลือก", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
 const NUMERIC_TAIL = /^[\d,.]+$/u;
 
 /**
@@ -286,9 +293,9 @@ const NUMERIC_TAIL = /^[\d,.]+$/u;
  * off past any dangling connective / bare number / unclosed bracket — never inside a word, and
  * never the price line. A product without a price keeps its description exactly as it was.
  */
-export function withPriceSuffixTh(base: string, price: number | null, genuine = true): string {
+export function withPriceSuffixTh(base: string, price: number | null, genuine = true, orderingOn = false): string {
   if (price === null) return base;
-  const suffix = productPriceSuffixTh(price, genuine);
+  const suffix = productPriceSuffixTh(price, genuine, orderingOn);
   const room = META_DESCRIPTION_MAX - suffix.length - 1;
   let head = base.trim();
   if (head.length > room) {

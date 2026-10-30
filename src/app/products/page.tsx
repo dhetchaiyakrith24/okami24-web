@@ -18,7 +18,7 @@ import { SamuraiBackdrop } from "@/components/brand/SamuraiBackdrop";
 // round ก rows A7/A8). Round 30.4's ruling still holds: no "น้ำยา" until that category has
 // products on the storefront (owner 2026-09-13, THAI_STYLE §6).
 const PRODUCTS_TOTAL_COUNT = allProducts.length + getPublishedProducts().length;
-const PRODUCTS_HEAD = productsHeadTh(PRODUCTS_TOTAL_COUNT);
+const PRODUCTS_HEAD = productsHeadTh(PRODUCTS_TOTAL_COUNT, ORDERING_ENABLED);
 
 export const metadata: Metadata = {
   title: { absolute: PRODUCTS_HEAD.title },
