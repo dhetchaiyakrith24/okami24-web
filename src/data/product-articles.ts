@@ -2052,7 +2052,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "nexBar Switch 15K หัวหนึ่งสูบได้กี่พัฟ",
-          answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ส่วนจำนวนที่สูบได้จริงขึ้นอยู่กับการสูบของแต่ละคนนะคะ",
+          answer: "โปสเตอร์ของ nexBar ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟค่ะ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคนนะคะ",
         },
         {
           question: "nexBar Switch 15K นิโคตินกี่ %",
