@@ -45,6 +45,14 @@ check("note with a spaced S10 number", note?.number === "EF123456789TH" && note.
 const noteDhl = parseTracking("note", { note: "Shipped by DHL. Tracking: 5098765432" });
 check("note with a labelled number + DHL", noteDhl?.number === "5098765432" && noteDhl.carrier === "dhl", show(noteDhl));
 
+// 1b. the shapes Shipnity really sent 29–30/10 (staff download of the log; digits changed)
+const realEms = parseTracking("note", { note: "Tracking Number: WB400000001TH", customer_note: true });
+check("real note, EMS order (S10)", realEms?.number === "WB400000001TH" && realEms.carrier === "thailand-post" && realEms.source === "note", show(realEms));
+const realDhl = parseTracking("note", { note: "Tracking Number: 0900000001", customer_note: true });
+check("real note, DHL order (10 digits, no carrier word)", realDhl?.number === "0900000001" && realDhl.carrier === null, show(realDhl));
+check("real empty note 'Tracking Number: ' = null", parseTracking("note", { note: "Tracking Number: ", customer_note: true }) === null);
+check("real status write = null", parseTracking("order", { status: "completed" }) === null);
+
 // 2. carrier words
 check("carrier words", carrierFromText("ไปรษณีย์ไทย") === "thailand-post" && carrierFromText("Thailand Post") === "thailand-post" && carrierFromText("dhl-ecommerce") === "dhl");
 check("unknown provider = null", carrierFromText("OTHER") === null && carrierFromText("Kerry") === null && carrierFromText(3) === null);
