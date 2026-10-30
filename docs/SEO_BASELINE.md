@@ -442,3 +442,6 @@ Next reads: 06/11 · 13/11 (+ GSC 01/11 · 15/11 as planned). What changed on th
 - Body only: /brands/infy lede names INFY POD + INFY PLUS (was INFY 20K only); /brands/wotofo lede names nexPOD 15K Pro Kit (was nexBAR only);
   /brands/relx lede unchanged (Thai); brand title/meta of infy + wotofo still the old brand-level lines (seo-auditor: do at the next head batch).
 - infy-20k and its watch row untouched (no new link to it). Read on 01/11 / 15/11: "relx pod pro 2", "infy pod", "nexpod", "infy plus" (no GSC row at open).
+- 30/10 later (PR #1056, live): /brands/infy + /brands/wotofo title/meta name every kind (brand level); metas nexpod-15k · infy-pod · pod-169 use the locked words.
+  Next PR (seo-infy-text-3010): INFY POD moves pod-systems → switch-pods (closed device for prefilled INFY cartridges, infy.my) — /products/pod-systems lists one model fewer
+  (its ItemList too), /products/switch-pods one more; read "infy pod" on 15/11 with that in mind.
