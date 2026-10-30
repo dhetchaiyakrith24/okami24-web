@@ -350,6 +350,34 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",
     tier: "official",
   },
+
+  // =================================================================================
+  // RELX — Infinity 2 Plus takes the RELX Pod family (SEO brand push 30/10). RELX's own Infinity 2 Plus
+  // device page lists RELX Pod, RELX Pod Pro and RELX Pod Pro 2 (1.9mL prefilled pods) — the same sentence
+  // already backs the device's "Pod platform" spec row (src/data/products/relx.ts, verified). The shop's
+  // pack (Max "หัวพอต RELX Infinity Pro 2", Pod-27) prints "RELX Pod Pro 2" (seed evidence, maxlist 20/10).
+  // Only the Pod Pro 2 pack is a catalog product; the RELX Pod / Pod Pro packs are not, so no edge for them.
+  // The RELX Creator ↔ Creator Pod 20K pair is NOT authored: its only source is Thai retailers (no maker page).
+  // =================================================================================
+  {
+    device: "relx-infinity-2-plus",
+    consumable: "relx-infinity-pro-2-pod",
+    role: "pod",
+    evidence: "RELX's Infinity 2 Plus page lists RELX Pod Pro 2 among the pods the device takes (1.9mL prefilled pods); the shop's pack prints \"RELX Pod Pro 2\".",
+    sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device",
+    tier: "official",
+  },
+
+  // INFY (SEO brand push 30/10): INFY's own 2.5ML Cartridge page (the INFY Plus) tells the buyer to insert it in
+  // "INFY Cube Box or INFY Device" (read 30/10). The device page itself names no cartridge, so the source is the cartridge page.
+  {
+    device: "infy-pod",
+    consumable: "pod-169",
+    role: "cartridge",
+    evidence: "INFY's own 2.5ML Cartridge (INFY Plus) page says to insert the cartridge in the INFY Cube Box or the INFY Device.",
+    sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/",
+    tier: "official",
+  },
 ];
 
 // ===================================================================================
