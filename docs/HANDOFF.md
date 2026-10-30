@@ -10,51 +10,53 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Rewritten 30/10 ~19:00 by the 3rd main chat (Friday) — moved at 70% context and weekly quota 80%; the 4th main chat starts here.
+Updated 30/10 ~23:40 by the 4th main chat (Friday; weekly quota 84% at 21:00, resets 01/11 ~22:00).
 
-1 main ≈ 55c6fd6a 30/10. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS + deploy success]: cut-off 12:30 · unboxing notice · address dedupe (#1010 #1030) · tracking step 1 (#1014) ·
-  carrier by postcode (#1029) · SHIPPING v2 + "count all" (BSOT §10) · order-page art (#1023 #1025 #1028: thank-you = big samurai no card; black PAYMENT CARD) · staff lists newest first ·
-  #1044 staff buttons "กำลังทำ…" + /staff loading screen · #1046 "ทีมงาน" button (marker cookie `okami24_team` set at staff login, read by `src/components/layout/TeamShortcut.tsx`; pages stay static) ·
-  /products/pod-systems SEO (#1019) · RELX / Vazer / INFY / SKE Crystal (#1048, 8 flavours in one scene, 14 credits) photos.
-2 CHILD CHATS (≤ 3; they report to Friday; open the next chat with skill round-open "continue"):
-  a SEO chat local_56539076 (RELX PR in verify at 19:30): SALTHUB · RELX · INFY · nexBar — FAQ from verified specs + links + brand pages + meta (articles need a maker poster;
-     a new look for poster-less products = designer + owner, not asked).
-  b ORDER-DESKTOP chat local_d7ab6ad2 (started 19:00): owner 30/10 "การ์ดขอบคุณบนคอมแก้เลย: คำขอบคุณซ้าย ซามูไรขวา เลื่อนลงเป็นรายละเอียดออเดอร์ ใช้พลังความคิดเต็มที่" — desktop only, designer options → 2 draft
-     screenshots to Friday → Friday sends the owner → build. PR #1038 (old stage-light try) stays a DRAFT, never merge. Images chat 7 done (credits 1729); old SKE PR #1040 = OPEN draft, superseded, close it (auto mode refused
-     `gh pr close`: owner presses close or allows).
-  c `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; Chrome logged in to GSC.
+1 main ≈ 1f653da9 30/10. CART IS ON. LIVE 29–30/10 [ตรวจแล้ว: checker PASS + deploy success]: cut-off 12:30 · unboxing notice · address dedupe (#1010 #1030) · tracking step 1 (#1014) ·
+  carrier by postcode (#1029) · SHIPPING v2 + "count all" (BSOT §10) · order-page art (#1023 #1025 #1028; #1051 desktop thank-you, owner "พอก่อน" = parked) ·
+  #1044 staff buttons + /staff loading · #1046 "ทีมงาน" button (cookie `okami24_team`, `src/components/layout/TeamShortcut.tsx`) · SEO #1019 #1053 #1054 #1056 #1058 ·
+  photos #1048 #1055 · #1057 TRACKING SYNC (Shipnity writes the tracking back → the order ships itself) · #1060 nexBar Switch 15K pods (Pod-181, ฿299, temp card) ·
+  #1059 SLIP: one re-ask when EasySlip does not answer + our own QR read when EasySlip finds none (photo-of-a-chat case 30/10) + JOIWAY Funta Green.
+2 CHILD CHATS (Opus 5.5 — §18 "Child chats"; they report to Friday; open the next chat with skill round-open "continue"):
+  a SEO chat local_56539076: meta suffix "สั่งบนเว็บหรือ LINE @okm24" (owner 30/10) on branch seo-meta-suffix-3010 — given "go" + 3412 at ~23:40; site-wide head.
+  b TRACKING chat local_dfdd063c: backfill of 9 orders (#0026 DHL · #0027–#0034 EMS; skip #0024 #0025) waits for the owner's own "ใส่ได้" IN THAT CHAT
+     (shipped cannot be undone from /staff; no message reaches the customer). Friday's 30-min pick did not count — the chat needs the owner's word.
+  c nexbar15k-content local_0382539e (high): photos · name 15K · details · FAQ · article + SEO outline (owner: "ทำเพื่อรอบ Seo ไปในตัว") · centre the
+     "รายละเอียดเพิ่มเติม" heading on product pages (owner 30/10). Brief `_incoming/next-chat-nexbar15k.md`. Credits need the owner's yes.
+  d badges-3010 local_93a873ba (high): ใกล้หมด · มาใหม่ · ขายดี · ยอดนิยม + "เหลือ N ชิ้น" (owner 30/10). Building ใกล้หมด now; 3 questions sent to the
+     owner 30/10 ~23:30 (source of ขายดี/ยอดนิยม = BSOT §15 lists · count on the product page, "มากกว่า 20" ceiling · มาใหม่ = 7 days) — all recommended A.
+  e Images chat 7 local_c8f85aac: owner 30/10 GO for nexSwitch ≈20 · MQ Bar ≈22 · Marbo ≈20 · Kardinal ≈32 credits (if he meant nexSwitch only, stop the rest).
+     nexBAR SKU chat local_d3dfa304 + ORDER-DESKTOP local_d7ab6ad2 = done (archive on the owner's word). PR #1038 + #1040 = superseded drafts, never merge.
+  f `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; Chrome logged in to GSC. Routine model/effort (§18): owner has NOT set it — ask.
 2N NEXT for the main chat (in this order):
-  a SLIP "TIMEOUT" (owner 30/10: the LINE bot says "ตรวจสลิปไม่ได้ตอนนี้ (รหัส TIMEOUT)" 2–3 times today, re-check later works): EasySlip is called ONCE with a 20 s limit (`src/lib/staff/easyslip.ts`; callers
-     `src/lib/line/webhook.ts` + `src/lib/staff/slip-checks.ts`). Plan: bounded retry/auto re-check for TIMEOUT / NETWORK / 5xx only — CAREFUL: EasySlip answers a repeat of an already-verified slip as isDuplicate:true
-     (cached, no quota) → a retry after a timeout must not read as a REUSED slip; read the decision code first. Money = checker full set; quota 497/1000 (23/10).
-     CASE 30/10 18:35: Krungthai ฿1,100 → PromptPay (K+, masked) failed in LINE/web/scan, money WAS in → read its slip_checks row first.
+  a Owner status page (§17) — refresh after tonight's merges (last ~17:30 30/10). Slip case 30/10 18:35 = the bot answered SLIP_NOT_FOUND to a photo of a LINE
+     chat (owner's screenshot) → fixed by #1059's QR read; staff can also forward the full slip picture. Watch the server log line "[slip-check] no QR found by EasySlip".
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
-  c JOIWAY F3 — OWNER ANSWERED 30/10 ("Funta Grape Ice ก็คือตัวนี้ Ice · Funta Green ก็คือ Green"): our green photo named "Funta Grape" IS Funta Green; grape = existing "Grape Ice".
-     DO (data PR + checker): green photo → option `funta-green` (Pod-133-15) · remove option `funta-grape` · fix "Funta Grape" in `src/data/guides.ts` · no new photo.
-  d tracking-sync step 2 needs the admins' JSON (รอพี่ตรวจ 80, real-order test 31/10); unproven that Shipnity sends tracking back at all (survey doc: "not mentioned") · carrier auto-send only on the owner's word.
-     CANCEL-ALERT TEST (owner, 30/10 ~19:00): he sends one order to Shipnity, the warehouse cancels it → expected (#958): LINE "OKM Order" alert once + a row under "ออเดอร์ที่คลังเปลี่ยน"; the web order does NOT change by itself
-     (staff cancel it on /staff, reason "ทดสอบ"). Ask him for the result. ROUTINE "new models research" (owner 30/10) = drafted, NOT created (auto mode refused): `_incoming/new-models/routine-okami24-new-models-research.md`.
+     STAFF LOGIN PLAN (owner 30/10 ~21:30): "ทีมงาน Login ตามปกติเหมือนลูกค้า · หลัง Login จะมีหน้าต่าง Dashboard ใหม่ไม่เหมือนลูกค้า พี่จะออกแบบใหม่ระบบหลังบ้านเช่นกัน ·
+     ลูกค้า-ทีมงานเห็นไม่เหมือนกันแต่ไม่รู้จะแยกอย่างไร". Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
+     approves → staff dashboard (role on the member row; BSOT §11). Login = 13.3 #9 → plan with the owner first (okami24-plan + designer). The #1046 pill stays till then.
+     FUTURE ROUND (owner 30/10): desktop thank-you page to use the wide space better ("จัดวางยังไม่ Perfect") — queued.
+  d tracking-sync step 2 = child 2b. CANCEL-ALERT TEST PASSED (owner 30/10 20:18): #0036 OK-20261030-28e0f1 pushed 20:12, cancelled in Shipnity → LINE "OKM Order" posted
+     "⚠️ คลังยกเลิกออเดอร์ #0036 …" with items + link. #0036 must be cancelled on /staff (reason "ทดสอบ"). Carrier auto-send only on the owner's word.
+     ROUTINE "new models research" = drafted, NOT created: `_incoming/new-models/routine-okami24-new-models-research.md`.
   e RENDER (owner OK 30/10, set via his Chrome): Build Filters → Ignored Paths `docs/**` + `.claude/**` — works [ตรวจแล้ว: #1049 no deploy]; a docs PR must be ONE clean commit from latest main (merge-of-main commits DO deploy).
   f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row for the Latin label "PAYMENT CARD" at the next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
-  a Q6 LOGO ROUND — CLOSED 28/10, tag logo-q6-2710 (batch 1 #915 · batch 2 samurai #961 · batch 3 LINE icon uploaded 27/10).
-     Owner's files = untracked `logo/` folder, never delete. Header: helmet mark under sm and lg–1439 px, lockup at sm–lg + ≥ 90rem.
-     Left: broadcast "โฉมใหม่" = the OWNER sends (outsiders, 13.3) · checker taste note: faint smear + grey seams in the owner's PNG
-     (visible only large, share image) — a clean file from the owner fixes it, never retouch.
-  f B5 STOCK QUANTITY + "ใกล้หมด · เหลือ N ชิ้น" (§18): ① count log ENDED (routine deleted 28/10; Shipnity sends numbers) · ② DONE 28/10
-     = live stock from Shipnity (3u) · ③ label at ≤ 3 left on option tiles + product page (designer places it) — numbers now exist.
+  a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
+     Left: broadcast "โฉมใหม่" = the OWNER sends · faint smear in the owner's PNG = a clean file from him fixes it, never retouch.
+  e BADGES + stock count = child 2d (questions = รอพี่ตรวจ 83).
+  f B5 "ใกล้หมด · เหลือ N ชิ้น" (§18) = being built by child 2d.
   g Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
      profile with past orders (members #854, orders.member_id vs phone orders, PDPA BSOT §11) — on /staff.
   h OWNER'S NEW TEAM TOOLS (owner 26/10): agent `visitor` not yet run for real — first use = the next big round or new look ·
      (3) shop accounts audit (income/costs/investment) = a SEPARATE project (central §12 item 32) — PARKED, owner 27/10 "ยังไม่ทำตอนนี้";
      web-side costs (Render · GitHub · Higgsfield) go on the status page. (1) /วางแผน = skill `okami24-plan` · (2) assets folder = IMAGE_SPEC §0 item 7.
   Test orders OK-20261023-e25378 (+ maybe M Bar 9K ฿400) → cancel on /staff (reason "ทดสอบ") when the owner finishes testing.
-  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare (shop-wide 300/10 min cap) · after a partial refund no second
-     out-of-stock issue (one row per order) · history keeps the refund ref, not the amount · no DB-level tests · cart C (#795) Back
-     from review returns to review · a typed note is lost if placing fails · add form needs JS, double tap while pending adds twice ·
-     #807 notes a/d + cleanBankText keeps invisible characters · BSOT §9 line by #804 quotes the owner's 24/10 chat — confirm.
+  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
+     refund ref not the amount · no DB tests · cart Back from review loops · typed note lost if placing fails · add form needs JS (double
+     tap adds twice) · cleanBankText keeps invisible chars · BSOT §9 #804 line quotes the owner 24/10 — confirm.
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · manual sold-out list EMPTIED 28/10 (owner "ยกเลิกการปิดขาย อัพเดตสดตามจริง"; live stock decides,
      no-SKU options stay out) · EasySlip quota 497/1000 (23/10) — warn
      before it runs out · K+ slip misjudged 10/10 → EasySlip matchedAccount (owner step, รอพี่ตรวจ).
@@ -78,11 +80,9 @@ Rewritten 30/10 ~19:00 by the 3rd main chat (Friday) — moved at 70% context an
   row (green · amber no push 24 h · red = no key / never / an order sent > 3 h ago (48 h lookback) with no push since) ·
   sweep 10 min (instrumentation) · LINE OKM Order once into red + once on recovery, retried while the push fails · state =
   <data dir>/woo-watch.json. TUNE after ~1 week: compare real first_sent_at vs the next product PUT (woo_api_log) — the 3 h
-  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). The 401
-  `GET /wp-json/wc/v3/orders` (19:06 + 20:42 28/10) were NOT Shipnity: ua curl/8.21.0 from a Thai home IPv6 (Shipnity = ua
-  shipnity-channel-gateway, ip 74.220.52.129) — our own no-key test, nothing missed. #0021 (order 33): Shipnity sent
-  PUT /orders/33 {"status":"cancelled"} at 20:00 28/10 — before #958 (cancel alert) went live 20:37, so no LINE and no row
-  under "ออเดอร์ที่คลังเปลี่ยน"; the web order still shows รอใส่เลขพัสดุ (by design the web never changes status itself).
+  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). Shipnity's calls = ua
+  shipnity-channel-gateway, ip 74.220.52.129 (a curl ua = our own test). #0021 was cancelled in Shipnity before the cancel alert
+  went live — the web order still shows รอใส่เลขพัสดุ (the web never changes status itself).
   Slip zip: NOT built (owner 29/10 "ตามแนะนำ" = the Excel slip columns + per-order slips are enough). New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
@@ -219,6 +219,11 @@ Scheduled tasks: unattended = TEAM_RULES 13.6 · a new task: "Run now" once whil
 
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in
 `docs/IMAGE_SPEC.md`; this list holds the rulings that have no other home. A ruling that is replaced = overwrite its line.
+
+**Child chats and routines — model + effort (owner 30/10):** every child chat runs Opus 5.5; effort **high** for work that needs
+thinking and moves sales (SEO, images), **medium** for docs, checks, looking for updates, products, prices, stock; scheduled
+routines follow the same table ("แชทลูกหลังจากนี้บังคับใช้ Opus 5.5 · งานที่ต้องใช้ความคิดและส่งผลกับยอดธุรกิจ ใช้ High เช่น SEO งานรูปภาพ ·
+งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"). Routine model/effort is set in the app, not in its SKILL.md.
 
 **Red for "no" (owner 26/10): every box or line on the site that says no / not passed / not approved / not allowed /
 refused uses the red `danger` colour, never the ember orange** ("ขอใช้เป็นสีแดงได้เลย ไม่ใช้สีส้มทั้งเว็บ"). Ember stays for
