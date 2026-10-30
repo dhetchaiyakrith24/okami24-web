@@ -8743,16 +8743,17 @@
   "fileName": "card.webp"
  },
  {
-  "source": "_incoming/list19/ske/ske.png",
+  "source": "_incoming/img-3010/ske/out/w6.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-6",
   "note": "round list19 18/10 - Thai Milk Green Tea (Max Pod-149-6)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/p149-tmgt-B.png; keyed off the grey sweep by b17/floodkey.js (T=14), the bottom silhouette rebuilt from points read on the base crop and the floor reflection cleared (list19/ske/cut.js, copy beside this source)",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/p149-tmgt-B.png; keyed off the grey sweep by b17/floodkey.js (T=14), the bottom silhouette rebuilt from points read on the base crop and the floor reflection cleared (list19/ske/cut.js, copy beside this source) | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*d3c80ed6.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789 SKE Crystal B20000 Thai Milk Green Tea poster - _incoming/img-1610/masters/src/pod-149 (index masters/src/index.json)",
    "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-149.jpg (poster beside renders A/B) - SKE logo, CRYSTAL B20000, display window, green body checked by eye"
-  }
+  },
+  "fileName": "variant-pod-149-6-v2.webp"
  },
  {
   "source": "_incoming/list19/marbo-v3/red.png",
@@ -11772,76 +11773,95 @@
   }
  },
  {
-  "source": "_incoming/ske/final/grape-yoyo.png",
+  "source": "_incoming/img-3010/ske/out/t1.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-1",
   "note": "image sweep 22/10 - SKE Crystal B20000 Grape Yoyo (Max Pod-149-1)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*1cc75b80.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Grape Yoyo poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Grape-yoyo.jpg, 600 px, no third-party watermark) - _incoming/ske/src/grape-yoyo.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-1-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/watermelon.png",
+  "source": "_incoming/img-3010/ske/out/u3.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-3",
   "note": "image sweep 22/10 - SKE Crystal B20000 Watermelon (Max Pod-149-3)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*1021a568.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Watermelon poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Watermelon.jpg, 600 px, no third-party watermark) - _incoming/ske/src/watermelon.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-3-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/lemon-coke.png",
+  "source": "_incoming/img-3010/ske/out/u4.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-4",
   "note": "image sweep 22/10 - SKE Crystal B20000 Lemon Coke (Max Pod-149-4)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*2a7f6a76.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Lemon Coke poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Lemon-coke.jpg, 600 px, no third-party watermark) - _incoming/ske/src/lemon-coke.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-4-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/strawberry.png",
+  "source": "_incoming/img-3010/ske/out/t5.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-5",
   "note": "image sweep 22/10 - SKE Crystal B20000 Strawberry (Max Pod-149-5)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*c9321941.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Strawberry poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-strawberry.jpg, 600 px, no third-party watermark) - _incoming/ske/src/strawberry.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-5-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/tieguanyin-tea.png",
+  "source": "_incoming/img-3010/ske/out/t7.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-7",
   "note": "image sweep 22/10 - SKE Crystal B20000 Tieguanyin Tea (Max Pod-149-7)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*bbb99fba.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Tieguanyin Tea poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-tieguanyin-tea.jpg, 600 px, no third-party watermark) - _incoming/ske/src/tieguanyin-tea.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-7-v2.webp"
  },
  {
-  "source": "_incoming/ske/final/mango.png",
+  "source": "_incoming/img-3010/ske/out/t8.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-8",
   "note": "image sweep 22/10 - SKE Crystal B20000 Mango (Max Pod-149-8)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device from the flavour's own poster (body tint + printed flavour line), with the existing Thai Milk Green Tea photo as the framing/style reference so the set matches (prompt window.__SK / __SKb); cut _incoming/ske/scut.js | RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*1a608327.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
    "reference": "pod789.com SKE Crystal B20000 Mango poster (https://pod789.com/product/ske-crystal-20000-puffs/ - wp-content/uploads/2024/12/SKE-Crystal-20000-Puffs-Mango.jpg, 600 px, no third-party watermark) - _incoming/ske/src/mango.jpg",
    "fidelitySheet": "_incoming/ske/fid.jpg (poster beside render), dark.jpg (cut on the site background)"
-  }
+  },
+  "fileName": "variant-pod-149-8-v2.webp"
+ },
+ {
+  "source": "_incoming/img-3010/ske/out/t2.png",
+  "slug": "pod-149",
+  "role": "variant",
+  "id": "pod-149-2",
+  "note": "images chat 6 30/10 - SKE Crystal B20000 Double Mint (Max Pod-149-2): rendered 30/10 by chat 5 but never listed",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2K 4:5 via MCP, 2 credits, job f3145940-18d7-4968-9cdb-f40c6ba8f9e8: edit of the Grape Yoyo render 1cc75b80 (same scene and geometry) with the shop's Double Mint poster; RE-CUT 30/10 (images chat 6, 0 credits): the saved render OKami24-assets/2026-10/ske-crystal/*f3145940.png cut again with _incoming/img-3010/ske/cut.js (backdrop flood across small neighbour steps, so the soft studio floor and reflection go and the clear shell stays), _incoming/img-3010/ske/norm.js (device scaled to 840 px tall, bottom-anchored, centred, same frame for the whole set) and a bottom fix after the checker (30/10: thin floor streaks removed by a vertical min filter, then a soft 9 px fade at the device's own bottom row; the curved base stays, no flat cut); files 3, 4 and 6 then open.js K=10 (thin streaks below the base curve) and, for 6, smooth.js (jagged corner)",
+   "reference": "pod789.com SKE Crystal B20000 Double Mint poster (wp-content/uploads/.../SKE-Crystal-20000-Puffs-Double-mint, 600 px) as the flavour reference + the approved Grape Yoyo render as the scene",
+   "fidelitySheet": "OKami24-assets/2026-10/ske-crystal/20261030-nano_banana_pro-f3145940.png beside the poster (printed 'Double Mint', blue body, striped CRYSTAL line) read by eye"
+  },
+  "fileName": "variant-pod-149-2-v2.webp"
  },
  {
   "source": "_incoming/pepo/final/mint.png",
