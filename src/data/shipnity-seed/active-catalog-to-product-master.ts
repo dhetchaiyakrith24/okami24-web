@@ -688,7 +688,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // the warehouse does not carry (VERIFIED_ADDITIONAL_VARIANTS).
   "INFY-POD": {
     tagline: "ตัวเครื่อง INFY POD",
-    shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
+    shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C มีให้เลือก 19 สี",
   },
   "VMATE-PRO-2": {
     tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
@@ -736,8 +736,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "Pod-169": {
     // Round list19 (18/10): infy.my's own 2.5ML Cartridge page (2.5ml, INFY PLUS) + Max's 28 flavours.
-    tagline: "หัวพอต INFY PLUS ความจุ 2.5ml",
-    shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5ml คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
+    tagline: "หัวพอต INFY PLUS ความจุ 2.5mL",
+    shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5mL คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
   },
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
@@ -1552,7 +1552,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "INFY-POD": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
-      { key: "charging", label: "การชาร์จ", value: "Type-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "indicator", label: "ไฟสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
