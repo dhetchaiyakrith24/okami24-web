@@ -385,7 +385,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
   "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
   // SEO brand push 30/10: searchers type "relx pod pro 2" (the name printed on the pack); the fit is RELX's own sentence on the Infinity 2 Plus page.
-  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 ที่แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ RELX Infinity 2 Plus ได้ตามที่ RELX ระบุ มีให้เลือก 42 กลิ่น",
+  // 117 characters: + the price line it stays under the 160 ceiling (#1053's 126-character line lost "42 กลิ่น" to the trim).
+  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ Infinity 2 Plus ได้ตามที่ RELX ระบุ มีให้เลือก 42 กลิ่น",
   "coil-21": "หัวพอต VOOPOO Argus Pod มีให้เลือก 4 แบบ",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
