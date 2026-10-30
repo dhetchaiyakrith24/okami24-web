@@ -738,7 +738,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "Pod-169": {
     // Round list19 (18/10): infy.my's own 2.5ML Cartridge page (2.5ml, INFY PLUS) + Max's 28 flavours.
-    tagline: "หัวพอต INFY PLUS ความจุ 2.5mL",
+    tagline: "หัวพอต INFY PLUS 2.5mL", // "ความจุ 2.5mL" left "2.5mL" alone on the last line of 1440 cards (wordbreak 30/10)
     shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5mL คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
   },
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
