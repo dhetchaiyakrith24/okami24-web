@@ -1,8 +1,8 @@
 # SEO line — PARKED 31/10 (owner: "สาย Seo ปิดงานก่อนครับ … เดี๋ยวมาทำต่อทีหลัง")
 
 Resume = a new SEO child chat (Opus 5.5, effort high) with skill `round-open` "continue", reading this file.
-Kept on purpose: branch `seo-meta-suffix-3010` (7b94d146, pushed, PR NOT opened) and worktree `.claude/worktrees/tracking-sync-2910-c58898`
-(real node_modules + jsqr; holds `_incoming/seo-brand/` helpers and `b4/` head-audit before/after) — do not delete either.
+Kept on purpose: branch `seo-meta-suffix-3010` (7b94d146, pushed, PR NOT opened) (do not delete). Helpers + `b4/` head-audit before/after copied 31/10 to the main folder's `_incoming/seo-meta-3010/` (outside git);
+the old worktree `.claude/worktrees/tracking-sync-2910-c58898` may be gone after archiving — a new worktree needs `node scripts/prepare-clone.js` (+ jsqr).
 Branch must merge latest main again before the gate (main moved after 7b94d146). Old chat local_56539076 archived 31/10.
 
 Hand-over of the old chat, verbatim:

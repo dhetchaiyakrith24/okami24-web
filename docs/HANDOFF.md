@@ -28,7 +28,7 @@ Updated 31/10 ~00:50 by the 5th main chat (Friday, session "อ่าน next-ch
      no watermark removal · all live → CLOSE the chat.
   c badges-3010 local_93a873ba = done; owner 31/10 "เอาให้จบละปิดงาน" → closing (A/B look still the owner's call). TRACKING local_dfdd063c = watching Shipnity's next real write (31/10).
   d SEO line PARKED 31/10 (owner "สาย Seo ปิดงานก่อนครับ … เดี๋ยวมาทำต่อทีหลัง"): resume file = `docs/cloud-results/seo-meta-suffix-3010.md` (branch seo-meta-suffix-3010
-     7b94d146 pushed, PR not opened · keep worktree tracking-sync-2910-c58898) · old chat local_56539076 archived.
+     7b94d146 pushed, PR not opened · helpers in main `_incoming/seo-meta-3010/`) · old chat local_56539076 archived.
   e `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
 2N NEXT for the main chat (in this order):
   a Merge order: images 7 ① → #1071 → #1067 → docs branch `docs-3110-clean` (= `docs-sales-log-3010` squashed: §16 + IMAGE_SPEC §0.7 "check existing images first" + "other shops' images") ONE clean commit
