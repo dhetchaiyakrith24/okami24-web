@@ -21,9 +21,9 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
   (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 #1031 #1037 RELX packs.
 2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
   a images-6 + tracking-sync: ARCHIVED 30/10 (owner "สั่งปิดแชทลูก") — no child chat is running. #1031 + #1037 (RELX Creator 20K, 15 flavours) merged.
-    PR #1040 SKE Crystal (8 flavours re-cut, 0 credits, Double Mint listed) = DRAFT in the checker loop: checker FAILED head f2bd3ff3 (hard 14 px trim made the base flat) → FIXED at
-    3439cddb (soft 9 px fade, streaks off, comment fixed; verify 57/57 + gate PASS) → RE-CHECK was RUNNING when this chat moved (old chat) → in the NEW chat: `gh pr view 1040` for a "Checker: PASS" line; none = run `node scripts/pre-checker-gate.js --done` in `_incoming/wt-golive` (branch claude/images-6-3010-d;
-    a test server may run on 3413: stop it by PID) then a fresh checker brief on 3439cddb (see the PR body); PASS → ready → checks → self-merge-check in that tree → merge pinned.
+    PR #1040 SKE Crystal (8 flavours re-cut, 0 credits, Double Mint listed) = DRAFT, checker round 2 on 3439cddb = NOT passed, 2 small items (PR comment has the detail): pale grey wedge left
+    under the base of files 1 2 3 4 7 (x 320-420, rows 900-912) · flavour 6 lower-right shell corner cut diagonally. Fix with `_incoming/order-art-3010/ske-fix.js` (input = normalised frames
+    n1..n8 in the old images-6 worktree) → verify 57/57 → gate → checker round 3 (the last, 13.4) → ready → merge. wt-golive = branch claude/images-6-3010-d; stop a test server on 3413 by PID.
     Hand-over of images chat 5/6 = AppDataLocalClaude-Data…side-session-notes…images-chat5-notes.md.
   b tracking-sync work DONE: #1029 (carrier by postcode) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout); real-order test 31/10 = รอพี่ตรวจ item 80; admin JSON → tracking step 2 (parser written, not connected).
   d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
