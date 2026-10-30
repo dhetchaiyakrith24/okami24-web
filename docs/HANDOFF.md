@@ -296,7 +296,11 @@ a cart line never holds more than Shipnity's live count for that option (20 when
 silently: a line above the count blocks checkout until the customer lowers it.
 
 **Low-stock label (owner 26/10, chat — answer to รอพี่ตรวจ 78):** the word is **"ใกล้หมด · เหลือ N ชิ้น"**, shown at ≤ 3 left
-(Friday's threshold, the owner picked the word with it). Not built yet — B5 in §16 item 3 c.
+(Friday's threshold, the owner picked the word with it). Live since 31/10 (#1063): ≤ 3 "ใกล้หมด" · 4–20 "เหลือ N ชิ้น" · > 20 "มากกว่า 20 ชิ้น",
+under the picked option, live /api/stock.
+
+**Product badges (owner 30/10 · live #1063 #1069):** "ขายดี" = one badge (= ยอดนิยม) from the BSOT §15 lists + every Muro except muro-space-15k ·
+"มาใหม่" = 7–14 days after listing, capped at 25% of a grid (Friday's reading) · later the best-seller list comes from real order counts (BEST_SELLER_SOURCE).
 
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
