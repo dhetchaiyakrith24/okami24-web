@@ -4,6 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import type { StorefrontVariantView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PhoneOptionTiles } from "@/components/product/PhoneOptionTiles";
+import { LowStockTag } from "@/components/product/StockCount";
 
 /**
  * Shared between the isolated `/preview/product-master` route (Phase 2.8) and the main
@@ -37,6 +38,7 @@ export function ProductMasterVariantPicker({
   selectedId: controlledSelectedId,
   onSelect,
   outOfStockLabel,
+  counts,
   className,
 }: {
   optionAxisLabel: string | null;
@@ -44,6 +46,8 @@ export function ProductMasterVariantPicker({
   selectedId?: string | null;
   onSelect?: (id: string) => void;
   outOfStockLabel?: string;
+  /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
+  counts?: Record<string, number>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -60,7 +64,7 @@ export function ProductMasterVariantPicker({
     <div data-option-picker className={cn("flex flex-col gap-2", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock" }))}
+        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id] }))}
         selectedId={selectedId}
         onSelect={handleSelect}
         label={optionAxisLabel}
@@ -88,6 +92,7 @@ export function ProductMasterVariantPicker({
             >
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>
               {outOfStock && outOfStockLabel && <span className="text-[0.6rem] uppercase tracking-wide">{outOfStockLabel}</span>}
+              {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
             </button>
           );
         })}

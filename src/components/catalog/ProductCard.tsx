@@ -4,6 +4,7 @@ import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
+import { CardSalesBadge } from "@/components/catalog/SalesBadge";
 import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName } from "@/lib/utils";
@@ -35,6 +36,9 @@ export function ProductCard({ product }: { product: Product }) {
   // The tagline switches language on the client (round 30.3, THAI_STYLE §6 item 1) — same reason
   // as the puff count above. The Thai line is the same human-checked entry the product page shows.
   const taglineTh = PRODUCT_COPY_TH[product.slug]?.tagline;
+  // Every option sold out (as built) = no sales badge (designer 30/10).
+  const options = [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])];
+  const soldOut = options.length > 0 ? options.every((v) => v.availability === "out-of-stock") : product.availability === "out-of-stock";
 
   return (
     <Link
@@ -61,9 +65,13 @@ export function ProductCard({ product }: { product: Product }) {
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
         {/* Round 30.4ค batch 8: brand marks and Latin stats keep the mono look in Thai (label-lang.ts). */}
-        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang="en">
-          {brandName(product.brandId)}
-        </span>
+        {/* The sales badge sits at the right end of the brand line, never on the photo (designer 30/10). */}
+        <div className="flex min-w-0 items-center justify-between gap-2">
+          <span className="label-mono truncate text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang="en">
+            {brandName(product.brandId)}
+          </span>
+          <CardSalesBadge slug={product.slug} soldOut={soldOut} />
+        </div>
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">
           {product.name}
         </h3>

@@ -14,7 +14,19 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 interface LiveAnswer {
   o: Record<string, "in" | "out">;
   p: "in" | "out" | null;
+  q?: Record<string, number>;
+  pq?: number | null;
 }
+
+/** The warehouse count per option (`o`) or for a product without options (`p`), as /api/stock sends it (capped there:
+ *  COUNT_CEILING + 1 = "more than"). Empty until the answer arrives — nothing is shown from the build. */
+export interface LiveCounts {
+  o: Record<string, number>;
+  p: number | null;
+}
+
+const NO_COUNTS: LiveCounts = { o: {}, p: null };
+const countsOf = (a: LiveAnswer | null): LiveCounts => (a ? { o: a.q ?? {}, p: a.pq ?? null } : NO_COUNTS);
 
 function useLiveAnswer(slug: string): LiveAnswer | null {
   const [answer, setAnswer] = useState<LiveAnswer | null>(null);
@@ -38,9 +50,9 @@ function useLiveAnswer(slug: string): LiveAnswer | null {
 const toAvail = (s: "in" | "out") => (s === "in" ? ("in-stock" as const) : ("out-of-stock" as const));
 
 /** A legacy product with its options' availability replaced by the live answer (same object until it arrives). */
-export function useLiveLegacyProduct(product: Product): Product {
+export function useLiveLegacyProduct(product: Product): { product: Product; counts: LiveCounts } {
   const live = useLiveAnswer(product.slug);
-  return useMemo(() => {
+  const relabelled = useMemo(() => {
     if (!live) return product;
     const relabel = <T extends { id: string; availability?: Product["availability"] }>(v: T): T =>
       live.o[v.id] ? { ...v, availability: toAvail(live.o[v.id]) } : v;
@@ -51,12 +63,13 @@ export function useLiveLegacyProduct(product: Product): Product {
       flavorVariants: product.flavorVariants?.map(relabel),
     };
   }, [product, live]);
+  return { product: relabelled, counts: useMemo(() => countsOf(live), [live]) };
 }
 
 /** A ProductMaster product with its variants' availability replaced by the live answer. */
-export function useLivePilotProduct(product: StorefrontProductView): StorefrontProductView {
+export function useLivePilotProduct(product: StorefrontProductView): { product: StorefrontProductView; counts: LiveCounts } {
   const live = useLiveAnswer(product.slug);
-  return useMemo(() => {
+  const relabelled = useMemo(() => {
     if (!live) return product;
     const variants = product.variants.map((v) => (live.o[v.id] ? { ...v, availabilityStatus: toAvail(live.o[v.id]) } : v));
     const productStatus =
@@ -71,4 +84,5 @@ export function useLivePilotProduct(product: StorefrontProductView): StorefrontP
             : product.availabilityStatus;
     return { ...product, variants, availabilityStatus: productStatus };
   }, [product, live]);
+  return { product: relabelled, counts: useMemo(() => countsOf(live), [live]) };
 }

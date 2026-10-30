@@ -28,6 +28,9 @@ import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
+import { StockCountLine } from "@/components/product/StockCount";
+import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { countKind, countText } from "@/lib/stock/count-rules";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
@@ -102,7 +105,7 @@ export function PilotProductDetail({
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the variants re-labelled from /api/stock.
-  const product = useLivePilotProduct(builtProduct);
+  const { product, counts: liveCounts } = useLivePilotProduct(builtProduct);
   const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
@@ -158,6 +161,15 @@ export function PilotProductDetail({
       ? inStock.length > 0
       : product.availabilityStatus === "in-stock";
   const showBuy = isPublished && product.sellingPrice !== null;
+  // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
+  const hasOptions = product.variants.length > 0;
+  const pickedLeft = available ? (hasOptions ? (selectedVariantId ? liveCounts.o[selectedVariantId] : undefined) : liveCounts.p ?? undefined) : undefined;
+  const pickedLowText =
+    pickedLeft !== undefined && countKind(pickedLeft) === "low"
+      ? hasOptions
+        ? dict.product.stockLeftShort.replace("{n}", String(pickedLeft))
+        : countText(dict.product, pickedLeft).text
+      : null;
 
   // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
   // neutral fallback → product card), so an option without its own photo shows the same image
@@ -246,6 +258,7 @@ export function PilotProductDetail({
               ))}
             {PRODUCT_NOTICE[product.slug] && <Badge tone="neutral">{PRODUCT_NOTICE[product.slug][locale]}</Badge>}
             {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
+            {isPublished && <HeadSalesBadge slug={product.slug} soldOut={product.availabilityStatus === "out-of-stock"} />}
           </div>
         }
       />
@@ -258,6 +271,7 @@ export function PilotProductDetail({
             <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
               <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
+              {!hasOptions && <StockCountLine left={pickedLeft} className="mt-1 lg:hidden" />}
             </div>
           ) : (
             <div className="max-lg:order-3">
@@ -277,11 +291,14 @@ export function PilotProductDetail({
             selectedId={selectedVariantId}
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
+            counts={liveCounts.o}
             className="max-lg:order-2"
           />
 
           {showBuy && (
-            <div className="max-lg:hidden">
+            <div className="flex flex-col gap-3 max-lg:hidden">
+              {/* The picked option's count above the button it is about (designer 30/10); keeps its height until the answer. */}
+              <StockCountLine left={pickedLeft} reserve={available && (!hasOptions || selectedVariantId !== null)} />
               {/* Catalog-truth-vs-stock-truth mandate (owner, 2026-09-03): a verified real flavor
                   with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
                   as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"
@@ -423,7 +440,7 @@ export function PilotProductDetail({
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
-        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled}>
+        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled} lowText={pickedLowText}>
           <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
