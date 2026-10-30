@@ -99,9 +99,10 @@ export function bangkokToday(now: number): string {
   return new Date(now + 7 * 3600_000).toISOString().slice(0, 10);
 }
 
-/** The one badge a product shows on `today` (yyyy-mm-dd), or null. A product sold out in every option shows none. */
+/** The one badge a product shows on `today` (yyyy-mm-dd), or null. A product sold out in every option keeps "ขายดี" (owner 31/10
+ *  "พี่หมายถึงป้ายสินค้าขายดีนะ แม้ของหมดก็ขึ้นเลย") but loses "มาใหม่". */
 export function salesBadge(slug: string, today: string, soldOut = false, listed: Readonly<Record<string, string>> = FIRST_LISTED): SalesBadgeKind | null {
-  if (soldOut) return null;
+  if (soldOut) return isBestSeller(slug) ? "best" : null;
   const day = listed[slug];
   if (day && day <= today && today < addDays(day, newWindowDays(today, listed))) return "new";
   return isBestSeller(slug) ? "best" : null;

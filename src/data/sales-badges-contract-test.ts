@@ -4,7 +4,7 @@
  *      G3 on the owner's 31/10 list, still counts: the badge shows whenever its card does);
  *   2. the products the owner keeps out (Marbo lookalike · Muro Space 15K) never carry "ขายดี";
  *   3. "มาใหม่" lasts 14 days, shrinking toward 7 while a big batch would badge more than NEW_SHARE_CAP of the shop;
- *   4. one badge: new first, then best seller; a product sold out in every option carries none.
+ *   4. one badge: new first, then best seller; a product sold out in every option keeps "ขายดี" only (owner 31/10).
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
@@ -50,7 +50,8 @@ const best = [...OWNER_BEST_SELLERS].find((s) => salesBadge(s, "2099-01-01") ===
 check("best: an old best seller reads best", best !== undefined);
 check("one badge: new wins over best", salesBadge("pod-180", "2026-01-01", false, { ...small, "pod-180": "2026-01-01" }) === "new");
 check("none: a product never listed and not a best seller", salesBadge("no-such-product", "2099-01-01") === null);
-check("sold out: no badge", salesBadge("a", "2026-10-01", true, small) === null && (best === undefined || salesBadge(best, "2099-01-01", true) === null));
+check("sold out: no \"มาใหม่\"", salesBadge("a", "2026-10-01", true, small) === null);
+check("sold out: \"ขายดี\" stays (owner 31/10)", best !== undefined && salesBadge(best, "2099-01-01", true) === "best");
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);
