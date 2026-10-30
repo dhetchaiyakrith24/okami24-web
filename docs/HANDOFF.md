@@ -13,7 +13,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิดงาน เก็บงาน จดอัพเดต … พรุ่งนี้ค่อยว่ากันใหม่") — no child chat open; weekly quota 91% (resets 01/11 ~22:00).
 
 1 main ≈ docs merge on c26fbd15 31/10. CART IS ON. LIVE 29–31/10 [ตรวจแล้ว: checker PASS + deploy success + curl]: cut-off 12:30 · unboxing notice · address dedupe · carrier by postcode ·
-  SHIPPING v2 (BSOT §10) · order-page art · #1044 #1046 staff pill · SEO #1019 #1053 #1054 #1056 #1058 · photos #1048 #1055 · #1057 TRACKING SYNC · #1059 SLIP re-ask + QR ·
+  SHIPPING v2 (BSOT §10) · order-page art · #1057 TRACKING SYNC · #1059 SLIP re-ask + QR ·
   nexBar Switch 15K pod-181 complete: #1060 #1062 #1068 copy/heading · #1071 fits SALTHUB M Switch · #1077 sharpness gate (an opaque full-frame poster card no longer judges
   new photos) · #1076 15 flavour photos + studio card (MCP, 3 credits, owner OK on the comparison sheet) · #1070 Marbo 10K clone back to the shared M Bar 10K photos ·
   #1067 Kardinal Quikpro 15 boxes straight-on (owner OK "1 ครับ") · BADGES #1063 #1069 #1075 (+26 owner models, BSOT §15) #1078 ("ขายดี" stays when sold out; "มาใหม่" does not —
@@ -24,12 +24,12 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   e `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
 2N NEXT for the main chat (in this order):
   a TOMORROW (owner 31/10 "ของบนหน้าเลื่อนตำแหน่ง … พี่เห็นมีอยู่นะในหน้าแรกเลยรวมถึงหน้าอื่นๆ … พรุ่งนี้ค่อยแก้"): layout-shift fix round. Measured 31/10 (`_incoming/cls-3110/`):
-     test server 13 pages × 390/1440 ≈ 0 except home 1440 (product imgs grow 98→201 px tall on load, 0.013) — the shifts he sees come from real network/live data
+     test server 13 pages × 390/1440 ≈ 0 except home 1440 (product imgs grow 98→201 px on load, 0.013)
      · live read (OKAMI24_LIVE_OK, fresh profile, 4 pages × 2 widths) = the same: only home 1440 0.013 (Google "good" < 0.1). So what he sees is NOT
      load-time shift → ask him to point at it (a phone screen recording or the spot); suspects: moving decoration (home hero travel · card hover zoom · badge sweep), shifts
      right after a tap (not counted by CLS), slow 4G image fill. Fix home 1440 card imgs (reserve height) in the same round. Tier B.
      Same round: "ขายดี" card light sweep runs 3 times then stops like the head pill (WCAG 2.2.2, Friday's pick — owner asked which reading he meant, no answer yet).
-     Rule PR #1072 (13.5 "รูปสินค้าใหม่", Checker PASS ef576a50) merges right after this docs PR. Watch "[slip-check] no QR found by EasySlip" in logs.
+     Watch "[slip-check] no QR found by EasySlip" in logs.
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
      STAFF LOGIN PLAN (owner 30/10: staff log in like customers, then see their own dashboard). Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
@@ -100,7 +100,10 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
-  - IDEA to try (owner 31/10 "น่าสนใจจดไว้ เดี๋ยวมาลองใช้ระบบนี้กัน"): the Ultra plan's $200/month Claude API credits (claude.com/pricing) → a shop AI
+  - QUEUED (owner 31/10, not started): (1) product CARDS read live stock like the product page — listing/category/brand pages, home rows and
+    recommendation cards still take sold-out from the build · (2) "ขายดี" from real web
+    orders, counting from 31/10 (owner: "เริ่มวัดระยะตั้งแต่ตอนนี้วันนี้ได้เลย"; threshold = owner's).
+  - IDEA to try (owner 31/10 "น่าสนใจจดไว้"): the Ultra plan's $200/month Claude API credits (claude.com/pricing) → a shop AI
     on the Claude Platform, e.g. a customer-answer bot · not started; plan with skill okami24-plan first (any customer-facing reply = 13.3 "ส่งถึงคนนอก").
   - Own rounds (owner 07/10): typo-tolerant search · lifestyle strip on product pages (one sample shot first; answers in
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
