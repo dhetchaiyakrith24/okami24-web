@@ -21,19 +21,18 @@ Rewritten 30/10 ~16:00 by the 2nd main chat (Friday, local_10d3f4d1) — moved a
   (SEO; head of the page unchanged) · #1027 RELX Pod Pro 2 +9 flavour packs · #1016 #1031 #1037 RELX packs.
 2 IN FLIGHT 30/10 ~02:25 (child chats ≤ 3; open the next chat with skill round-open "continue"):
   a images-6 + tracking-sync: ARCHIVED 30/10 (owner "สั่งปิดแชทลูก") — no child chat is running. #1031 + #1037 (RELX Creator 20K, 15 flavours) merged.
-    PR #1040 SKE Crystal (8 flavours re-cut, 0 credits, Double Mint listed) = DRAFT, checker round 2 on 3439cddb = NOT passed, 2 small items (PR comment has the detail): pale grey wedge left
-    under the base of files 1 2 3 4 7 (x 320-420, rows 900-912) · flavour 6 lower-right shell corner cut diagonally. Fix with `_incoming/order-art-3010/ske-fix.js` (input = normalised frames
-    n1..n8 in the old images-6 worktree) → verify 57/57 → gate → checker round 3 (the last, 13.4) → ready → merge. wt-golive = branch claude/images-6-3010-d; stop a test server on 3413 by PID.
-    Hand-over of images chat 5/6 = AppDataLocalClaude-Data…side-session-notes…images-chat5-notes.md.
+    PR #1040 SKE Crystal (8 flavours re-cut, 0 credits, Double Mint listed) = DRAFT, NOT merged. Checker round 3 (the last, 13.3 #7) on 03503b81 = NOT passed [ตรวจแล้ว: checker; gate PASS + verify 57/57 there].
+    Fixed: grey wedge under files 1 2 3 4 7. Still fails: file 6 lower-right corner (diagonal cut + notch) and its bottom edge 10–13 px above the others · files 5 + 8 flat base · file 8 8–10 px narrower per side,
+    file 4 left edge off ±3 · small steps at the lower corners of 1–4, 7. Evidence `_incoming/chk-ske1040c/` · fix script `_incoming/order-art-3010/r3/ske-fix3.js` · tree = wt-golive, branch claude/images-6-3010-d.
+    ROOT CAUSE = 8 separate shoots → pixel edits cannot match the geometry. OWNER DECIDES (credits = money, 13.3 #2): re-shoot as ONE scene (≈12 credits, recommended) · keep the live set · merge as is. No merge before his word.
+    Images chat 5/6 notes = AppDataLocalClaude-Data…side-session-notes…images-chat5-notes.md.
   b tracking-sync work DONE: #1029 (carrier by postcode) + #1030 (3 duplicate-address leaks + warn on Shipnity timeout); real-order test 31/10 = รอพี่ตรวจ item 80; admin JSON → tracking step 2 (parser written, not connected).
   d ROUTINE `okami24-seo-weekly` (Saturdays 15:00, created 30/10, owner OK "ตามนั้น"): head audit · real-SERP · GSC (owner's Chrome) · fix list as a DRAFT PR (on-site only) ·
     request indexing (≤ 8 URLs) · short report. Permission mode NOT saved → owner sets Auto / presses "Run now" once.
 2N NEXT for the main chat:
-  a DONE (#1023 #1025 #1028): the order-page art.
-     THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
-  b DONE: thank-you card (live). HELD 30/10: PR #1038 (DRAFT, not merged; the wide-wash rework f55c24f5 is pushed + pictures sent — WAIT for the owner's word, do not merge on your own) = samurai at 20 % + a soft red stage light + an orange outline/halo on the black card. Owner on it: the
-     card frame "อันนี้โอเคอยู่แล้ว" (keep what #1038 does there) but the stage light "มาเป็นดวง ๆ แบบไม่เวิร์ก" (reads as a spot) → "ปิดงาน พรุ่งนี้ค่อยแก้". TOMORROW: rework the light as ONE wide smooth wash
-     (like his posters), no visible disc; do not merge #1038 as it is. c DONE: SEO routine created (see 2 d).
+  a Order-page art is live (#1023 #1025 #1028). THAI_STYLE group-ก: add a row for the deliberate Latin label "PAYMENT CARD" at the next round close (checker's advice).
+  b PARKED: PR #1038 (DRAFT: samurai 20 % + red stage light + orange halo on the black card). Owner 30/10 late: "การ์ดขอบคุณที่ไว้วางใจเว้นเอาไว้ก่อน ยังไม่ต้องแก้" → do NOT rework, do NOT merge until he says so.
+     Card frame was "โอเคอยู่แล้ว"; the light read as a spot — when reopened: ONE wide smooth wash like his posters, no visible disc.
   d CARRIER AUTO-PICK = built (2 b). OWNER 30/10: the admin keeps pressing "ส่งเข้าคลัง Shipnity" for now (the web only PRE-PICKS the carrier); real-order test 31/10 (รอพี่ตรวจ 80);
      only when it is steady and sure the owner will say so, and then Friday makes the web send to the warehouse itself on "ยืนยันยอดเงินแล้ว" — do NOT start before his word. Auto-approve slips = a separate money decision → admin on the Shipnity side confirms the carrier name arrives → then tracking step 2.
   e Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022 at 22:30): the admin presses "ส่งรายการให้คลังแล้ว". f Back-office queue after that: customer cards (Gmail sign-in data + member perks — owner asked again 30/10, NOT started) · EMS/DHL tracking page + motion · LINE orders on web (later) ·
