@@ -214,7 +214,7 @@ export function OrderStatusView({
           <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end">
             {/* Owner 30/10: "ฉากหลังดูมีอะไรหน่อย … แสงไฟสาดลงมาแบบ Smooth ไม่สว่างเกิน" (designer): a soft red-orange stage light behind the face, no blur,
                 no image, no animation; the samurai itself is at 20 % ("ความเข้ม 100 → 20") with the /products long fade tail. */}
-            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-20 h-full w-[min(calc(100vw-1rem),900px)] -translate-x-1/2 [background:radial-gradient(52%_46%_at_56%_34%,rgba(242,48,48,.20)_0%,rgba(255,106,44,.08)_45%,transparent_75%)]" />
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-[-2rem] -z-20 h-[110%] w-[min(calc(100vw-1rem),900px)] -translate-x-1/2 [background:radial-gradient(44%_60%_at_50%_12%,rgba(242,48,48,.16)_0%,rgba(255,106,44,.07)_40%,rgba(255,106,44,.02)_66%,transparent_90%)] [mask-image:linear-gradient(to_bottom,transparent_0%,#000_22%,#000_55%,transparent_100%)]" />
             <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2">
               <Image
                 src="/brand/samurai-thanks-full.webp"
