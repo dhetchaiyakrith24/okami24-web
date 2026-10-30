@@ -285,14 +285,19 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         { name: publishedProduct.categoryName, path: `/products/${publishedProduct.categoryId}` },
         { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
       ];
+      // List-new 30/10: a warehouse-listed product with an article (product-articles.ts) gets the "more details" and FAQ
+      // sections; its FAQPage block is built from the Thai copy, like the editorial pages above.
+      const publishedArticles = productDetailsCopy(publishedProduct.slug).articles;
+      const publishedFaqJsonLd = articleFaqJsonLd(publishedArticles.th?.faq);
       return (
         <>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
+          {publishedFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedFaqJsonLd) }} />}
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
           <HashLinksKeepHistory />
           <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} articles={publishedArticles} />
         </>
       );
     }

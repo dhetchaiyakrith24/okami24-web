@@ -609,9 +609,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
   },
   "NEXBAR-SWITCH-15K-POD": {
-    // List-new (30/10): warehouse facts only — the Max name "nexBar Switch 15k" (refill pods, owner "หัว Switch"); no maker page.
-    tagline: "หัวพอต nexBar Switch 15K",
-    shortDescription: "หัวพอต nexBar Switch ชื่อรุ่นระบุ 15K ร้านมีให้เลือก 15 กลิ่น",
+    // List-new (30/10): no maker page — the numbers are nexBar's own posters (VERIFIED_SPECIFICATIONS below). The device it
+    // fits is retailer text only, so it is not said here.
+    tagline: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K น้ำยา 15mL",
+    shortDescription: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL พร้อมคอยล์ nexMesh ในตัว นิโคติน 3% ร้านมีให้เลือก 15 กลิ่น",
   },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
@@ -1626,12 +1627,17 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
-  // List-new (30/10): warehouse facts only (no maker page) — the Max name "nexBar Switch 15k".
+  // List-new (30/10): no maker site. Rows = nexBar's own posters: the 15-flavour line-up the warehouse keeps (Shipnity Max
+  // product image 2764487 — nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the 10-flavour poster series a Thai shop carries
+  // verbatim (nexMesh Coil · 15000 puffs · 15ML). Rows name no sourceUrl: a row URL must be a maker domain (verified-specs test).
   "NEXBAR-SWITCH-15K-POD": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุหัวพอต", value: "15mL", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "nexMesh", sourceStatus: "verified" },
+      { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified" },
     ],
-    sourceUrls: [],
+    sourceUrls: ["https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice"],
   },
   // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
   "RELX-LUMI-18K": {
@@ -3010,6 +3016,8 @@ function attachVariantMedia(shipnityProductId: string, variants: ProductMasterIn
 const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: string }> = {
   "Pod-159": { name: "ESKO BAR SWITCH 20K", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+  // List-new 30/10: Max spells it "nexBar Switch 15k"; the K follows the warehouse name and nexBar's rated 15,000 puffs (no maker site; the pod print under SWITCH is not legible).
+  "NEXBAR-SWITCH-15K-POD": { name: "nexBar Switch 15K", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
