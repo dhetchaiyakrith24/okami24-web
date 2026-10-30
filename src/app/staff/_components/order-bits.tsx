@@ -40,15 +40,16 @@ export function historyNoteTh(note: string): string {
     if (slip[1] === "check") return `ลูกค้าแนบสลิป — ⚠️ ต้องดูเอง (${(slip[2] ?? "").split(", ").map((r) => REASON_LABEL[r] ?? r).join(" · ")})`;
     return "ลูกค้าแนบสลิป — ⏳ ระบบตรวจไม่ได้";
   }
-  const staff = /^Staff: ([a-z-]+)(.*)$/.exec(note);
+  // "Shipnity: ship — …" = the warehouse's Shipnity wrote the tracking number back (src/lib/woo/tracking-sync.ts).
+  const staff = /^(Staff|Shipnity): ([a-z-]+)(.*)$/.exec(note);
   if (staff) {
-    const rest = staff[2]
+    const rest = staff[3]
       .replace(" — tracking ", " — เลขพัสดุ ")
       .replace(/ — carrier ([a-z-]+)/, (m, id: string) => {
         const c = toCarrierId(id);
         return c ? ` — ${CARRIERS[c].name.th}` : m;
       });
-    return `ทีมงาน: ${ACTION_TH[staff[1]] ?? staff[1]}${rest}`;
+    return `${staff[1] === "Shipnity" ? "คลัง (Shipnity)" : "ทีมงาน"}: ${ACTION_TH[staff[2]] ?? staff[2]}${rest}`;
   }
   // Out of stock after payment (cart UX batch E) — written by src/lib/commerce/stock-issues.ts.
   if (note.startsWith("Stock: out after payment")) return `ทีมงาน: แจ้งลูกค้าว่าสินค้าหมด${note.replace(/^Stock: out after payment — lines [\d,]+/, "")}`;
