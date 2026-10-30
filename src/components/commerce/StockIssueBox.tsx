@@ -152,6 +152,8 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
         </ul>
       </div>
 
+      {/* Desktop: the swap and the refund sit side by side so the box is not a long column (owner 30/10: too long for a thank-you page). `contents` = no box on phones. */}
+      <div className="contents lg:grid lg:grid-cols-2 lg:gap-x-8">
       {/* 1 — swap for a same-price item */}
       <form action={swapAction} className="flex flex-col gap-3 border-t border-surface-border-soft pt-4">
         {hidden}
@@ -284,6 +286,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
           </>
         )}
       </form>
+      </div>
 
       {/* The no-swap sentence already names LINE — say it once (designer 24/10). */}
       {anySwap && <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>}

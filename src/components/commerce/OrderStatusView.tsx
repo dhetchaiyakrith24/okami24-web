@@ -205,6 +205,47 @@ export function OrderStatusView({
       {/* Desktop (lg+, owner 30/10 "จัดวางใหม่ให้เต็มจอ"): a two-column grid — thank-you words + status card LEFT, the samurai standing tall RIGHT
           (spanning both), then the details in two columns (items + address | tracking / unboxing / payment). Phones keep the single
           column untouched: every desktop rule is an lg: class and the DOM order is unchanged. */}
+      <div className="relative isolate">
+        {paidOrLater && (
+          // Owner 30/10 (desktop): "ฉากหลังหน่อย … อะไรก็ได้ที่เหมาะกับเว็บเรา" — a wide ink-wash night: three misty ridges in the shop's dark wine-red, a few drifting petals,
+          // no moon and no light disc (he disliked the red stage light). Desktop only; it fades into the page at the top, the bottom and the sides.
+          <svg
+            aria-hidden
+            viewBox="0 0 1600 720"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[760px] w-full lg:block [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_14%,black_62%,transparent),linear-gradient(to_right,transparent,black_14%,black_86%,transparent)] [-webkit-mask-composite:source-in]"
+          >
+            <defs>
+              <linearGradient id="okm-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#0b0a0c" />
+                <stop offset="0.5" stopColor="#2a0f14" />
+                <stop offset="1" stopColor="#4a1a1f" />
+              </linearGradient>
+              <linearGradient id="okm-mist" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="#c9a7a0" stopOpacity="0" />
+                <stop offset="0.5" stopColor="#e0b8b0" stopOpacity="0.2" />
+                <stop offset="1" stopColor="#c9a7a0" stopOpacity="0" />
+              </linearGradient>
+              <filter id="okm-soft" x="-5%" y="-5%" width="110%" height="110%">
+                <feGaussianBlur stdDeviation="3" />
+              </filter>
+            </defs>
+            <rect width="1600" height="720" fill="url(#okm-sky)" />
+            <path filter="url(#okm-soft)" fill="#6b2a31" fillOpacity="0.75" d="M0 470 C120 420 190 380 300 410 C410 440 450 330 570 300 C690 270 720 360 840 380 C960 400 1010 300 1130 290 C1250 280 1330 390 1450 400 C1520 405 1570 380 1600 370 V720 H0Z" />
+            <rect y="380" width="1600" height="140" fill="url(#okm-mist)" />
+            <path filter="url(#okm-soft)" fill="#44191f" fillOpacity="0.9" d="M0 560 C150 500 260 470 380 510 C500 550 560 450 700 430 C840 410 900 520 1040 520 C1180 520 1260 430 1380 440 C1470 448 1550 500 1600 490 V720 H0Z" />
+            <rect y="470" width="1600" height="120" fill="url(#okm-mist)" />
+            <path fill="#1a0a0d" d="M0 640 C140 610 280 600 420 625 C560 650 680 600 820 596 C960 592 1080 640 1220 636 C1360 632 1480 600 1600 612 V720 H0Z" />
+            <g fill="#f23030" fillOpacity="0.5">
+              <ellipse cx="260" cy="250" rx="7" ry="3.6" transform="rotate(30 260 250)" />
+              <ellipse cx="420" cy="340" rx="5.5" ry="3" transform="rotate(-20 420 340)" />
+              <ellipse cx="1180" cy="210" rx="7" ry="3.6" transform="rotate(50 1180 210)" />
+              <ellipse cx="1330" cy="330" rx="5.5" ry="3" transform="rotate(10 1330 330)" />
+              <ellipse cx="980" cy="150" rx="5.5" ry="3" transform="rotate(-40 980 150)" />
+              <ellipse cx="150" cy="430" rx="5.5" ry="3" transform="rotate(25 150 430)" />
+            </g>
+          </svg>
+        )}
       <Container className={`flex max-w-xl flex-col gap-8 py-12 lg:grid lg:max-w-[1400px] lg:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,620px))] ${paidOrLater ? "lg:grid-rows-[1fr_auto]" : "lg:grid-rows-[auto_1fr]"} lg:items-start lg:gap-x-10 lg:py-16 lg:[grid-auto-flow:row_dense] min-[1700px]:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,700px))]`}>
         {/* A thank-you once the slip is in — from "payment submitted" to "completed". Owner 24/10: his wording, big and bold
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
@@ -223,7 +264,7 @@ export function OrderStatusView({
                 width={1024}
                 height={820}
                 sizes="(min-width: 820px) 820px, 100vw"
-                className="block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in] lg:[mask-image:linear-gradient(to_bottom,black_86%,transparent),linear-gradient(to_right,transparent,black_24%,black_95%,transparent)]"
+                className="block h-auto w-full lg:opacity-50 [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in] lg:[mask-image:linear-gradient(to_bottom,black_86%,transparent),linear-gradient(to_right,transparent,black_24%,black_95%,transparent)]"
               />
             </div>
             {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
@@ -507,6 +548,7 @@ export function OrderStatusView({
 
         {order.status === "payment_submitted" && <p className="text-sm text-foreground-muted lg:col-span-2">{dict.orderStatus.paymentSubmittedNote}</p>}
       </Container>
+      </div>
     </>
   );
 }
