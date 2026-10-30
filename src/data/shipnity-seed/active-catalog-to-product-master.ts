@@ -345,7 +345,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // line 2 max-sync (22/10, owner "หาข้อมูลเองเลย"): RELX Creator Pod 20K — Max-only record (Pod-137, 31 flavours incl. 5%, all sold out 22/10).
   "RELX-CREATOR-POD-20K": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Relx Creator Pod 20K" (Pod-137, 17/10; renamed "Relx เลโก้ 20000 คำ" 22/10), 31 flavour pods ฿349 + an empty device row ฿199 (not an option) — Thai shops sell it as the RELX Creator 20K pod for the RELX Creator battery: 7pods.shop/product/relx-creator-boost-20000-puffs-lego · pod9k.com/product/relx-creator-20k-pod · ezy-pods.net/product/relx-lego-20k · siam-pod.com (tier 2, read 22/10); no relxnow.com page — warehouse facts only, no spec numbers' },
   "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); no Essential 2 page on relxnow.com (searched 20/10) — warehouse facts only, device only' },
-  "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
+  // SEO brand push 30/10: INFY POD takes prefilled INFY cartridges (infy.my calls it a "Closed Pod System"; its 2.5ML page says
+  // insert the cartridge in the INFY Device) — the switch-pods definition (keep the device, swap prefilled pods), like RELX Essential 2.
+  "INFY-POD": { brandId: "infy", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
   "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
   "Eliquid-73": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Dundu Salt Nic" (Eliquid-73), 1 flavour; no maker site found — listed on warehouse facts only, without a brand' },
   "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. Trademark-risk hold above lifted for this record by the owner 18/10 ("list everything", through Friday) — listed on warehouse facts only.' },
@@ -688,7 +690,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // the warehouse does not carry (VERIFIED_ADDITIONAL_VARIANTS).
   "INFY-POD": {
     tagline: "ตัวเครื่อง INFY POD",
-    shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
+    shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C มีให้เลือก 19 สี",
   },
   "VMATE-PRO-2": {
     tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
@@ -736,8 +738,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "Pod-169": {
     // Round list19 (18/10): infy.my's own 2.5ML Cartridge page (2.5ml, INFY PLUS) + Max's 28 flavours.
-    tagline: "หัวพอต INFY PLUS ความจุ 2.5ml",
-    shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5ml คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
+    tagline: "หัวพอต INFY PLUS 2.5mL", // "ความจุ 2.5mL" left "2.5mL" alone on the last line of 1440 cards (wordbreak 30/10)
+    shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5mL คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
   },
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
@@ -1552,7 +1554,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "INFY-POD": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
-      { key: "charging", label: "การชาร์จ", value: "Type-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "indicator", label: "ไฟสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
@@ -1717,7 +1719,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Pod-169": {
     specifications: [
-      { key: "capacity", label: "ความจุ", value: "2.5 ml", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุ", value: "2.5mL", sourceStatus: "verified" },
       { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตบรรจุสำเร็จ คอยล์ในตัว (ระบบปิด ใช้หมดแล้วเปลี่ยนหัวใหม่)", sourceStatus: "verified" },
     ],
     // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
