@@ -257,6 +257,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
   "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
+  // List-new (30/10, owner "ลงไปก่อนได้เลย … ลงแค่ให้ระบบ Shipnity - เว็บเราเชื่อมต่อกันได้"; "เป็นหัว Switch"): Max-only record (Pod-181).
+  "NEXBAR-SWITCH-15K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "nexBar Switch 15k" (Pod-181), 15 flavours ฿299 (order-entry picker read 30/10 ~22:40); owner 30/10: refill pods ("หัว Switch"); no maker page found 30/10 (not a WOTOFO nexPOD 15K flavour list) — listed on warehouse facts only, without a brand, no card photo yet (owner: photos later)' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
@@ -605,6 +607,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // Round list19 (19/10): warehouse facts only — Max "หัวพอต <flavour>"; the pod prints "16K POD".
     tagline: "หัวพอต Nexswitch 16K",
     shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
+  },
+  "NEXBAR-SWITCH-15K-POD": {
+    // List-new (30/10): warehouse facts only — the Max name "nexBar Switch 15k" (refill pods, owner "หัว Switch"); no maker page.
+    tagline: "หัวพอต nexBar Switch 15K",
+    shortDescription: "หัวพอต nexBar Switch ชื่อรุ่นระบุ 15K ร้านมีให้เลือก 15 กลิ่น",
   },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
@@ -1141,6 +1148,21 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
+  // List-new (30/10): TEMPORARY card (owner 30/10 "ลงไปก่อนได้เลย เดี๋ยวงานรูป … มาตามแก้กันทีหลัง" · "ใช้ของผู้ผลิตไปก่อนก็ได้" ·
+  // "โหลดได้เลย") = the warehouse's own Shipnity Max image of Pod-181 (the 15-flavour line-up poster, 1000×832), fitted
+  // whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6). A studio card replaces it in the listing chat.
+  "NEXBAR-SWITCH-15K-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/nexbar-switch-15k-pod/card.webp",
+      alt: "nexBar Switch 15K refill pods, all 15 flavours line-up",
+      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2764487, read 30/10) — 15 pods, one per flavour.",
+      transparentBackground: false,
+      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
+      sourceUrl: "https://app.shipnitymax.com/",
+    },
+  ],
   // Round list19 (19/10): ESKO BAR SWITCH pod card = the Cola pod (same file family as pod-159's pod photos: one master pod, the
   // maker's flavour line re-typeset — image-fix round 2026-09-29).
   "ESKO-BAR-SWITCH-POD": [
@@ -1601,6 +1623,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "NEXSWITCH-16K-POD": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // List-new (30/10): warehouse facts only (no maker page) — the Max name "nexBar Switch 15k".
+  "NEXBAR-SWITCH-15K-POD": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },

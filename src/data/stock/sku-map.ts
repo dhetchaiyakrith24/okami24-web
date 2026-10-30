@@ -1332,5 +1332,24 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Disposable-46-19": "Disposable-46-19",
   } },
 
+  // List-new (30/10, owner "ลงไปก่อนได้เลย"): nexBar Switch 15K refill pod — Max Pod-181 (15 flavours ฿299, read 30/10 ~22:40).
+  "nexbar-switch-15k-pod": { parent: "Pod-181", options: {
+    "Pod-181-1": "Pod-181-1",
+    "Pod-181-2": "Pod-181-2",
+    "Pod-181-3": "Pod-181-3",
+    "Pod-181-4": "Pod-181-4",
+    "Pod-181-5": "Pod-181-5",
+    "Pod-181-6": "Pod-181-6",
+    "Pod-181-7": "Pod-181-7",
+    "Pod-181-8": "Pod-181-8",
+    "Pod-181-9": "Pod-181-9",
+    "Pod-181-10": "Pod-181-10",
+    "Pod-181-11": "Pod-181-11",
+    "Pod-181-12": "Pod-181-12",
+    "Pod-181-13": "Pod-181-13",
+    "Pod-181-14": "Pod-181-14",
+    "Pod-181-15": "Pod-181-15",
+  } },
+
   "coil-54": { parent: null, product: null },
 };
