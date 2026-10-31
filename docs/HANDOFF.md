@@ -38,7 +38,7 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   d Cancel-alert test PASSED 30/10 (#0036). Staff to-do: cancel #0036 (reason "ทดสอบ") · OK-20261028-ccd46d has an empty tracking note → staff fill it. Carrier auto-send only on the owner's word.
      ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main (merge-of-main commits deploy).
-  f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
+  f "รอส่งคลัง" queue CLEARED by the owner 31/10 (staff screen: ไม่มี) · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
