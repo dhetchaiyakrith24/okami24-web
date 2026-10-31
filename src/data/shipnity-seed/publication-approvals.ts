@@ -255,7 +255,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
-  "MQ-BAR-22K": { sellingPrice: 389, lastPriceReview: "2026-10-31" }, // image prints 389 (owner 30/10); Max cost 369 parent / 359 flavours read 31/10 = +5.4% / +8.4%
+  "MQ-BAR-22K": { sellingPrice: 389, lastPriceReview: "2026-10-31" }, // owner 31/10 "389 ตามภาพ": the image prints 389; Max ราคาขาย 369 parent / 359 flavours read 31/10 = +5.4% / +8.4%
   // Owner brief 26/10: SUP Zero 22K (Max-only "Disposable-45") — Max ราคาขาย ฿329 for the parent and its 15 flavours (read 2026-10-26 17:30).
   // owner-confirmed 2026-10-29: owner in chat "SUP ZERO 22K ราคาในรูปพิมพ์ ตามรูป" — the catalogue image prints ฿350 (Max cost ฿329 +6.4%) — was ฿329.
   "SUP-ZERO-22K": { sellingPrice: 350, lastPriceReview: "2026-10-29" },
