@@ -100,6 +100,7 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
+  - QUEUED (owner 31/10): list Pod-180 "หัว dude 3 ml." ("ลงได้เลย"; reverses 22/10) · price sync: Javis picture prices vs Excel vs site.
   - QUEUED (owner 31/10, not started): (1) product CARDS read live stock like the product page — listing/category/brand pages, home rows and
     recommendation cards still take sold-out from the build · (2) "ขายดี" from real web
     orders, counting from 31/10 (owner: "เริ่มวัดระยะตั้งแต่ตอนนี้วันนี้ได้เลย"; threshold = owner's).
@@ -109,7 +110,6 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 (unchanged lists).
   - Scan baseline re-measure on the test server = the next full round close (replaces the old item 6 baseline of 14/10).
-  - Proposal to make (owner 03/10, item D): move chats earlier in image rounds (~350–400K) = central rule → propose with reasons first.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
