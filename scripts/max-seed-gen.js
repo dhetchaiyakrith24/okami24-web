@@ -56,6 +56,7 @@ const MAX_ONLY_RECORDS = {
   "SUP-ZERO-22K": "Disposable-45", // SUP Zero 22K (owner brief 26/10)
   "MARBO-10K-CLONE": "Disposable-47", // Marbo 10k โคลน — sold as "Marbo 10K (เทียบแท้)" (owner 27/10, HANDOFF §18)
   "NEXBAR-SWITCH-15K-POD": "Pod-181", // nexBar Switch 15k — refill pods, 15 flavours (owner 30/10: list it so Shipnity and the site link up)
+  "DUDE-POD-3ML": "Pod-180", // หัว dude 3 ml. — 10 flavours (owner 31/10 "ลงได้เลย"); Max re-used Pod-180 (nexBar CLEAR 18K is Disposable-46)
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
