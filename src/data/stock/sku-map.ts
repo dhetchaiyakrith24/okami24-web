@@ -1351,5 +1351,20 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-181-15": "Pod-181-15",
   } },
 
+  // List-new (31/10, owner "ลงได้เลยและจัดการเรื่องรหัส Sku ให้เรียบร้อยถูกต้อง"): dude pod 3 ml — Max Pod-180 (10 flavours ฿129, read 31/10 ~18:25).
+  // Max re-used Pod-180: these codes belong HERE, never on /products/pod-180 (nexBar CLEAR 18K = Disposable-46 above).
+  "dude-pod-3ml": { parent: "Pod-180", options: {
+    "Pod-180-1": "Pod-180-1",
+    "Pod-180-2": "Pod-180-2",
+    "Pod-180-3": "Pod-180-3",
+    "Pod-180-4": "Pod-180-4",
+    "Pod-180-5": "Pod-180-5",
+    "Pod-180-6": "Pod-180-6",
+    "Pod-180-7": "Pod-180-7",
+    "Pod-180-8": "Pod-180-8",
+    "Pod-180-9": "Pod-180-9",
+    "Pod-180-10": "Pod-180-10",
+  } },
+
   "coil-54": { parent: null, product: null },
 };

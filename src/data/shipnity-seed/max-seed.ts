@@ -4211,5 +4211,72 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "DUDE-POD-3ML": {
+    "maxParentId": "Pod-180",
+    "name": "หัว dude 3 ml.",
+    "operationalSellingPrice": 129,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-180-1",
+        "rawLabel": "Grape Ice",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-2",
+        "rawLabel": "Blueberry",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-3",
+        "rawLabel": "Cola",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-4",
+        "rawLabel": "Mint",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-5",
+        "rawLabel": "Mineral Water",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-6",
+        "rawLabel": "Grape Aloe",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-7",
+        "rawLabel": "Taro Ice Cream",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-8",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-9",
+        "rawLabel": "Watermelon Lychee",
+        "sellingPrice": 129,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-180-10",
+        "rawLabel": "Strawberry Watermelon",
+        "sellingPrice": 129,
+        "inStock": true
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML"];

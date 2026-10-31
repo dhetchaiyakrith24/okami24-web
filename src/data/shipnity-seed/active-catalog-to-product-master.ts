@@ -259,6 +259,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   // List-new (30/10, owner "ลงไปก่อนได้เลย … ลงแค่ให้ระบบ Shipnity - เว็บเราเชื่อมต่อกันได้"; "เป็นหัว Switch"): Max-only record (Pod-181).
   "NEXBAR-SWITCH-15K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "nexBar Switch 15k" (Pod-181), 15 flavours ฿299 (order-entry picker read 30/10 ~22:40); owner 30/10: refill pods ("หัว Switch"); no maker page found 30/10 (not a WOTOFO nexPOD 15K flavour list) — listed on warehouse facts only, without a brand, no card photo yet (owner: photos later)' },
+  // List-new (31/10, owner "ลงได้เลยและจัดการเรื่องรหัส Sku ให้เรียบร้อยถูกต้อง"): Max-only record (Max re-used Pod-180; nexBar CLEAR 18K = Disposable-46).
+  "DUDE-POD-3ML": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัว dude 3 ml." (Pod-180), 10 flavour children ฿129 (product list read 31/10 ~18:25); the warehouse poster prints "dude PREMIUM PODS"; no maker site found 31/10 (dudethailand.com does not resolve) — listed on warehouse facts only, without a brand record' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
@@ -613,6 +615,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // fits is retailer text only, so it is not said here.
     tagline: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K น้ำยา 15mL",
     shortDescription: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL พร้อมคอยล์ nexMesh ในตัว นิโคติน 3% ร้านมีให้เลือก 15 กลิ่น",
+  },
+  "DUDE-POD-3ML": {
+    // List-new (31/10): warehouse facts only — the Max name "หัว dude 3 ml." (no maker page).
+    tagline: "หัวพอต dude 3ml",
+    shortDescription: "หัวพอต dude ชื่อรุ่นระบุ 3ml ร้านมีให้เลือก 10 กลิ่น",
   },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
@@ -1164,6 +1171,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     },
   ],
+  // List-new (31/10): TEMPORARY card = the warehouse's own Shipnity Max image of Pod-180 (the 10-flavour line-up poster,
+  // 750×1000), fitted whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6) — same route as nexBar Switch 15K (#1060).
+  "DUDE-POD-3ML": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/dude-pod-3ml/card.webp",
+      alt: "dude 3ml refill pods, all 10 flavours line-up",
+      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2761958, read 31/10 ~18:25) — 10 pods, one per flavour.",
+      transparentBackground: false,
+      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
+      sourceUrl: "https://app.shipnitymax.com/",
+    },
+  ],
   // Round list19 (19/10): ESKO BAR SWITCH pod card = the Cola pod (same file family as pod-159's pod photos: one master pod, the
   // maker's flavour line re-typeset — image-fix round 2026-09-29).
   "ESKO-BAR-SWITCH-POD": [
@@ -1638,6 +1659,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice"],
+  },
+  // List-new (31/10): warehouse facts only (no maker page) — the Max name "หัว dude 3 ml.".
+  "DUDE-POD-3ML": {
+    specifications: [
+      { key: "capacity", label: "ความจุหัวพอต", value: "3ml", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
   },
   // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
   "RELX-LUMI-18K": {
@@ -3031,6 +3059,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   // List-new 30/10: Max spells it "nexBar Switch 15k"; the K follows the warehouse name and nexBar's rated 15,000 puffs (no maker site; the pod print under SWITCH is not legible).
   "NEXBAR-SWITCH-15K-POD": { name: "nexBar Switch 15K", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice" },
+  // List-new 31/10: Max calls it "หัว dude 3 ml." (a Thai operational string); the brand prints lowercase "dude" on pod and box.
+  "DUDE-POD-3ML": { name: "dude Pod 3ml", sourceUrl: "https://app.shipnitymax.com/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
