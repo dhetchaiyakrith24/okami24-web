@@ -207,7 +207,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // List-new (30/10): nexBar Switch 15K pod (Max-only "Pod-181") — Max ราคาขาย ฿299 for the parent and its 15 flavours (read 30/10
   // ~22:40); BSOT §4 owner 16/10 "ใส่ตามคลัง" + owner 30/10 "ลงไปก่อนได้เลย".
-  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 299, lastPriceReview: "2026-10-30" },
+  // owner 31/10 "เคาะแล้วนะครับ nexBar Switch 15K 329 Javis กำลังทำรูป" — ฿329 = Max ราคาขาย ฿299 +10% (BSOT §5 31/10); was ฿299.
+  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 329, lastPriceReview: "2026-10-31" },
   // List-new (31/10): dude pod 3 ml (Max "Pod-180", re-used code) — Max ราคาขาย ฿129 for the parent and its 10 flavours (read 31/10 ~18:25).
   // BSOT §5 (owner 31/10): Max ราคาขาย + 6–12%; +8% rounded up to a 9 = ฿149 (+15.5%, over the 12% cap) → ฿139 (+7.8%), the 9-ending inside the band.
   "DUDE-POD-3ML": { sellingPrice: 139, lastPriceReview: "2026-10-31" },
@@ -258,7 +259,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
-  "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
+  "MQ-BAR-22K": { sellingPrice: 389, lastPriceReview: "2026-10-31" }, // owner 31/10 "389 ตามภาพ": the image prints 389; Max ราคาขาย 369 parent / 359 flavours read 31/10 = +5.4% / +8.4%
   // Owner brief 26/10: SUP Zero 22K (Max-only "Disposable-45") — Max ราคาขาย ฿329 for the parent and its 15 flavours (read 2026-10-26 17:30).
   // owner-confirmed 2026-10-29: owner in chat "SUP ZERO 22K ราคาในรูปพิมพ์ ตามรูป" — the catalogue image prints ฿350 (Max cost ฿329 +6.4%) — was ฿329.
   "SUP-ZERO-22K": { sellingPrice: 350, lastPriceReview: "2026-10-29" },
