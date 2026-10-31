@@ -38,7 +38,7 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   d Cancel-alert test PASSED 30/10 (#0036). Staff to-do: cancel #0036 (reason "ทดสอบ") · OK-20261028-ccd46d has an empty tracking note → staff fill it. Carrier auto-send only on the owner's word.
      ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main (merge-of-main commits deploy).
-  f Stuck "รอส่งคลัง" orders (#0010 #0011 #0014 #0015 #0017 #0020 #0022): admin presses "ส่งรายการให้คลังแล้ว" · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
+  f "รอส่งคลัง" queue CLEARED by the owner 31/10 (staff screen: ไม่มี) · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
@@ -100,6 +100,7 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
+  - QUEUED (owner 31/10): list Pod-180 "หัว dude 3 ml." ("ลงได้เลย"; reverses 22/10) · price sync: Javis picture prices vs Excel vs site.
   - QUEUED (owner 31/10, not started): (1) product CARDS read live stock like the product page — listing/category/brand pages, home rows and
     recommendation cards still take sold-out from the build · (2) "ขายดี" from real web
     orders, counting from 31/10 (owner: "เริ่มวัดระยะตั้งแต่ตอนนี้วันนี้ได้เลย"; threshold = owner's).
@@ -109,7 +110,6 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 (unchanged lists).
   - Scan baseline re-measure on the test server = the next full round close (replaces the old item 6 baseline of 14/10).
-  - Proposal to make (owner 03/10, item D): move chats earlier in image rounds (~350–400K) = central rule → propose with reasons first.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```

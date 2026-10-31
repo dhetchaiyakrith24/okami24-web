@@ -180,7 +180,12 @@ of 20 sticks, RELX Infinity 2 Plus ฿990, Esko Bar 20000 ฿389 (for its page w
 - **2026-10-29 — new pricing rule: warehouse cost + about 6–12% (owner, chat; adds to the rules above, replaces none of them):** the owner,
   in his own words: "พี่จะตั้งราคาสินค้าใหม่ทั้งหมดโดยอ้างอิง ราคาทุนจากคลังสมุติว่าคลังขาย 359 พี่อาจจะขาย 369-379 + ขึ้นมาประมาณ 6-10 %" and, on the
   rounding question, "ใช้ตาม Recommen ได้ครับ แต่ขยับแก็บ 6-12 %" (recommended = cost +8%, rounded up to end in 9, e.g. 359 → 389; from ฿1,000 the
-  ending is 90). "Cost" = the warehouse's Shipnity Max "ราคาขาย" (Max has no separate cost column). Scope (owner 29/10, "แก้ราคาแค่รูปใหม่ที่สร้างมา"):
+  ending is 90). The base is the WAREHOUSE'S SELLING PRICE (Shipnity Max "ราคาขาย"), not the shop's cost (owner 31/10: "เอาราคาหน้าร้านคลังมา + เพิ่ม 6-12 %
+ไม่ใช่เอาราคาทุนมา + เพิ่ม … เช่น ทุน 300 คลังขาย 350 พี่ขาย 390"). Words: ทุน / เรท = what the warehouse charges the shop, visible ONLY in Shipnity Pro
+(products moved to Max later = asked from the warehouse admin one by one, kept in the cost Excel outside git) · ราคาหน้าร้านคลัง = Max "ราคาขาย".
+Systems (owner 31/10): Shipnity **Max** = the source for everything (codes/SKU, names, stock, warehouse selling price) — the warehouse moved to it ·
+Shipnity **Pro** = cost (ทุน/เรท) only. New products listed before their black-background picture exists also take this formula (owner 31/10
+"ใช่ครับปรับตามนั้นได้เลย"); the picture price, once Javis makes it, is what the site then shows. Scope (owner 29/10, "แก้ราคาแค่รูปใหม่ที่สร้างมา"):
   only products that have a NEW catalogue picture (black background, the site's theme) are re-priced, and the site price equals the price the
   new picture prints (the owner picks it with the picture); every other product keeps its current price until its picture is redone. Applied
   29/10: INFY 20K, TFIT M Power 20K, RELX LUMI 18K, SALTHUB Zero Pro, Zero cartridge, SUP ZERO 22K (owner "ตามรูป" ฿350) — log: `docs/ปรับราคา-2026-10-29.md`. A daily check against
