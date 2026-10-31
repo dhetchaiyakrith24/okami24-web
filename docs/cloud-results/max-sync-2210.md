@@ -10,7 +10,7 @@ Owner scope 22/10 (via Friday): "สินค้าที่ Max มีเรา
 
 | Max code | Max name | ราคาขาย | Kids (in stock) | State / next step |
 |---|---|---|---|---|
-| Disposable-45 | SUP Zero 22K | 329 | 15 (15) | **owner-declined 22/10** ("2 ไม่ลง") — not listed. Research: brand "SUP ZERO", one Thai shop only (zeedcupvp.com, tier 2), no maker site |
+| Disposable-45 | SUP Zero 22K | 329 | 15 (15) | owner-declined 22/10 ("2 ไม่ลง") → **LISTED 31/10** (owner "ลงได้เลย") #1085 as `/products/dude-pod-3ml` ฿139, codes Pod-180-1…10. Research: brand "SUP ZERO", one Thai shop only (zeedcupvp.com, tier 2), no maker site |
 | Pod-180 | หัว dude 3 ml. | 129 | 10 (10) | **owner-declined 22/10** ("2 ไม่ลง") — not listed. Identity unknown (a DUDE brand sells 10K/16K disposables, no 3 ml refill pod found). Max re-used the code: the site's `pod-180` = nexBar CLEAR 18K from the old seed (see d) |
 | Pod-137 | Relx เลโก้ 20000 คำ - เครื่องเปล่า (pods ฿349) | 199 | 31 (0) | owner 22/10 "หาข้อมูลเองเลย" → research: Thai shops (7pods.shop, pod9k.com, ezy-pods.net, siam-pod.com, tier 2) sell it as **RELX Creator 20K pod / "RELX Lego 20000"** for the RELX Creator battery, ฿349, 3%/5%; no relxnow.com page (tier 1 silent). Verdict LIKELY — next: a Max-only page for the pods if Friday agrees; all 31 sold out in Max |
 

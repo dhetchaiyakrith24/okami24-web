@@ -100,7 +100,8 @@ Updated 31/10 ~05:00 by the 5th main chat (Friday) at day close (owner: "ปิ�
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
-  - QUEUED (owner 31/10): list Pod-180 "หัว dude 3 ml." ("ลงได้เลย"; reverses 22/10) · price sync: Javis picture prices vs Excel vs site.
+  - LIVE 31/10: #1082 MQ Bar 22K ฿389 + nexBar Switch 15K pod ฿329 (owner) · #1085 dude Pod 3ml ฿139 (Pod-180, temp card).
+  - QUEUED (owner 31/10): price sync — Javis picture prices vs Excel vs site.
   - QUEUED (owner 31/10, not started): (1) product CARDS read live stock like the product page — listing/category/brand pages, home rows and
     recommendation cards still take sold-out from the build · (2) "ขายดี" from real web
     orders, counting from 31/10 (owner: "เริ่มวัดระยะตั้งแต่ตอนนี้วันนี้ได้เลย"; threshold = owner's).
