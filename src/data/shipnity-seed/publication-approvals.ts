@@ -207,7 +207,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // List-new (30/10): nexBar Switch 15K pod (Max-only "Pod-181") — Max ราคาขาย ฿299 for the parent and its 15 flavours (read 30/10
   // ~22:40); BSOT §4 owner 16/10 "ใส่ตามคลัง" + owner 30/10 "ลงไปก่อนได้เลย".
-  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 299, lastPriceReview: "2026-10-30" },
+  // owner 31/10 "เคาะแล้วนะครับ nexBar Switch 15K 329 Javis กำลังทำรูป" — ฿329 = Max ราคาขาย ฿299 +10% (BSOT §5 31/10); was ฿299.
+  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 329, lastPriceReview: "2026-10-31" },
   // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
   // owner-confirmed 2026-10-19: owner in chat "Relax lumi 18k ราคา 399 ครับ แก้เลยครับ" — owner override (was ฿349). Max says ฿349 until the admin updates it.
   // owner-confirmed 2026-10-29: new LUMI catalogue image prints ฿379 (Max cost ฿349 +8.6%; owner kept it 29 Oct 04:41) — was ฿399.
