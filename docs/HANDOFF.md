@@ -253,6 +253,8 @@ holder name on the order page (BSOT §9) is the receiving account itself, not a 
 
 **Pods = INTERNATIONAL version (owner 26/10 "แบบสากลครับ", answers รอพี่ตรวจ 58):** Caliburn (UWELL) + VOOPOO pages state the international version only — pod/tank capacity (3 mL / 3.5 mL / 4.5 mL / 5 mL), dimensions, weight and in-box pods; no "(2 mL in the TPD version)", no INT/FDA/TPD/CRC splits. The maker compatibility lists ("also fits … CRC versions") stay as the maker wrote them.
 
+**Which category a pod goes in (owner 02/11):** "Pods & Cartridges" = replacement pods / cartridges of a refillable pod system (e.g. VOOPOO VMATE cartridge). The pre-filled pods of a switch-pod system (M Switch pod 15K · Muro Connector 20K · KS Quik Pro 15K cartridge · Pop Up 10K · ESKO BAR Switch 20K pod · RELX Connector pod 20K · nexBar Switch 15K · nexSwitch 16K pod — and every later one) go in **Switch Pods**, together with the switch-pod devices.
+
 **One "เทียบแท้" (lookalike) product — Marbo 10K (owner 27/10, through the main chat):** Max Disposable-47 "Marbo 10k โคลน" is an
 imitation of SALTHUB's M Bar 10K. Owner: "มันเป็นของก็อบอะอยากให้ลงด้วยนะแต่กำกับว่า *เทียบแท้* และราคาตามนั้นเลย", then
 "(แนะนำ) ลงได้ ชื่อสินค้า “Marbo 10K (เทียบแท้)” ราคา ฿299". Rules for that page only: name "Marbo 10K (เทียบแท้)", price = Max
