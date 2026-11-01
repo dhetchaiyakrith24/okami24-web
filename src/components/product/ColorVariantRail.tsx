@@ -5,6 +5,8 @@ import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
 import { LowStockDot, useLowStockTitle } from "./StockCount";
+import { OptionBestTag } from "@/components/catalog/SalesBadge";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 /**
  * Real manufacturer color/finish selector for a Legacy Product Detail hero (owner quality review,
@@ -43,6 +45,7 @@ export function ColorVariantRail({
   outOfStockLabel,
   counts,
   countLine,
+  bestIds,
   className,
 }: {
   variants: ColorVariant[];
@@ -59,6 +62,8 @@ export function ColorVariantRail({
   counts?: Record<string, number>;
   /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
   countLine?: ReactNode;
+  /** Best-selling colour ids (src/data/bestseller-options.ts — owner 02/11): "ขายดี" on the tile and by the picked name, a small ember dot on the swatch. */
+  bestIds?: ReadonlySet<string>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -69,12 +74,13 @@ export function ColorVariantRail({
   const selected = variants.find((v) => v.id === selectedId);
   const anyAll = !!selectedPill;
   const lowTitle = useLowStockTitle();
+  const { dict } = useLocale();
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id] }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id], best: bestIds?.has(v.id) }))}
         selectedId={anyAll ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}
@@ -84,6 +90,7 @@ export function ColorVariantRail({
       <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
         {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {!anyAll && selected && bestIds?.has(selected.id) && <OptionBestTag className="ml-2 align-middle" />}
         {selectedPill && <span className="ml-2 font-sans normal-case text-foreground-muted">{selectedPill.label}</span>}
       </span>
       <div className="flex flex-wrap items-center gap-2.5 max-lg:hidden">
@@ -106,7 +113,8 @@ export function ColorVariantRail({
         ))}
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
-          const name = outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : lowTitle(v.name, counts?.[v.id]) ?? v.name;
+          const base = outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : lowTitle(v.name, counts?.[v.id]) ?? v.name;
+          const name = bestIds?.has(v.id) ? `${base} · ${dict.product.badgeBestSeller}` : base;
           return (
             <button
               key={v.id}
@@ -135,6 +143,9 @@ export function ColorVariantRail({
                 />
               )}
               {!outOfStock && <LowStockDot left={counts?.[v.id]} />}
+              {bestIds?.has(v.id) && (
+                <span className="pointer-events-none absolute -left-1 -top-1 size-2.5 rounded-full border border-surface-1 bg-ember shadow-[0_0_6px_var(--color-ember)]" aria-hidden />
+              )}
             </button>
           );
         })}
