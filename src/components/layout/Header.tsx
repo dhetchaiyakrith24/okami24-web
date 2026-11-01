@@ -196,20 +196,20 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           </Link>
           {/* Member sign-in (owner 26/10: the word "เข้าสู่ระบบ" visible on the bar on every page, every width). A gold-outlined
               text pill, the members' accent (account-ui.tsx). Signed in, phones read the short word ("บัญชี") — the full
-              "บัญชีสมาชิก" is wider than "เข้าสู่ระบบ" and squeezed the logo at 360 (checker #857). */}
+              "บัญชีสมาชิก" is wider than "เข้าสู่ระบบ" and squeezed the logo at 360 (checker #857).
+              Owner 31/10–01/11 "ของบนหน้าเลื่อนตำแหน่ง … บนสุดช่วงแรกเลย": the answer comes after load, and the word swap
+              resized the pill, so for a signed-in visitor every icon left of it (and the desktop nav) jumped sideways on every
+              page. Both words of each width now sit in the same grid cell with the unused one hidden: the pill is as wide as
+              the longer word from the first paint, and the swap moves nothing. */}
           <Link
             href="/account"
             aria-label={accountLabel}
-            className="inline-flex items-center whitespace-nowrap rounded-full border border-[rgba(200,178,138,0.45)] px-2 py-1 text-xs text-[#e8dcc4] transition-colors hover:border-[#c8b28a] hover:text-white sm:px-3 sm:py-1.5 sm:text-[13px]"
+            className="inline-grid place-items-center whitespace-nowrap rounded-full border border-[rgba(200,178,138,0.45)] px-2 py-1 text-xs text-[#e8dcc4] transition-colors hover:border-[#c8b28a] hover:text-white sm:px-3 sm:py-1.5 sm:text-[13px]"
           >
-            {signedIn ? (
-              <>
-                <span className="sm:hidden">{dict.nav.accountShort}</span>
-                <span className="hidden sm:inline">{accountLabel}</span>
-              </>
-            ) : (
-              accountLabel
-            )}
+            <span className={cn("col-start-1 row-start-1 sm:hidden", signedIn && "invisible")}>{dict.nav.login}</span>
+            <span className={cn("col-start-1 row-start-1 sm:hidden", !signedIn && "invisible")}>{dict.nav.accountShort}</span>
+            <span className={cn("col-start-1 row-start-1 hidden sm:inline", signedIn && "invisible")}>{dict.nav.login}</span>
+            <span className={cn("col-start-1 row-start-1 hidden sm:inline", !signedIn && "invisible")}>{dict.nav.account}</span>
           </Link>
           {orderingEnabled && (
             <Link
