@@ -1500,7 +1500,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "M Switch Pod ใช้ยังไง",
           paragraphs: [
-            "ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ ส่วนหัวพอตมีน้ำยามาในตัว ใช้หมดแล้วก็เปลี่ยนเป็นหัวใหม่ได้เลย",
+            "ตัวเครื่องเก็บไว้ชาร์จแล้วใช้ต่อได้ ส่วนหัวพอตบรรจุน้ำยามาแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลย",
             "ถ้าเพิ่งเริ่มใช้ เริ่มจากชุด [M Switch Kit](/products/m-switch-kit) ก็ได้ ในชุดมีตัวเครื่องมาพร้อมหัวพอตหนึ่งหัว",
             "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
           ],
@@ -1630,7 +1630,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Zero Cartridge ใช้ยังไง",
           paragraphs: [
-            "SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือจะสลับไปลองกลิ่นอื่นก็ได้",
+            "SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือสลับไปลองกลิ่นอื่นได้",
           ],
         },
         {
