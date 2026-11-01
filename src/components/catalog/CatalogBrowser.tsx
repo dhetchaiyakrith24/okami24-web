@@ -352,13 +352,15 @@ export function CatalogBrowser({
               <StockParamSync onInStock={turnOnInStock} />
             </Suspense>
           )}
+          {/* lg: count first (pushes right), then this button, then sort — the button appears after load for members only, and
+              placed first it slid the count ~470 px across the bar (checker #1091 r1); next to sort it fills empty space. */}
           {showStock && (
             <button
               type="button"
               aria-pressed={inStockOnly}
               onClick={() => setInStockOnly((v) => !v)}
               className={cn(
-                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:mr-auto max-lg:px-3 lg:min-h-9",
+                "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:mr-auto max-lg:px-3 lg:order-2 lg:min-h-9",
                 inStockOnly ? "border-ember bg-ember/15 text-foreground" : "border-surface-border bg-surface-1 text-foreground hover:border-foreground-dim hover:bg-surface-2",
               )}
             >
@@ -367,12 +369,12 @@ export function CatalogBrowser({
             </button>
           )}
           <span aria-hidden className="hidden max-lg:order-2 max-lg:block max-lg:h-0 max-lg:basis-full" />
-          <p className="label-mono text-xs text-foreground-dim max-lg:order-3">
+          <p className="label-mono text-xs text-foreground-dim max-lg:order-3 lg:order-1 lg:mr-auto">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
           {/* Sorting nothing is as dead a control as filtering nothing (owner, 2026-09-22). */}
           {!isEmptyCategory && (
-          <div className="flex items-center gap-2 max-lg:order-4 max-lg:ml-auto">
+          <div className="flex items-center gap-2 max-lg:order-4 max-lg:ml-auto lg:order-3">
             {/* On phones the word "sort by" is read out but not drawn: the button, the count and
                 the select only fit on one bar (the owner asked for one bar) without it, and the
                 select shows the chosen order in full. Unchanged from `lg` up. */}
