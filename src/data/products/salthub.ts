@@ -607,6 +607,9 @@ export const salthubProducts: Product[] = [
     // No all-options image behind an "all" chip (owner 01/10: the made-up lineups go — back to the Caliburn way, one device
     // per option by swipe or chip).
     openOnCardPhoto: true,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it. No cover, no highlight posters (as M Bar 9K).
+    storyDetails: true,
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#ab8cf0", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-kyoho-grape-v4.webp", alt: "SALTHUB M Switch Pod, Kyoho Grape — pod" } },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-apple-aloe-v4.webp", alt: "SALTHUB M Switch Pod, Apple Aloe — pod" } },
@@ -933,6 +936,8 @@ export const salthubProducts: Product[] = [
     // Round "option photos" 06/10: now that every flavour has a photo the hero would lead with the first flavour — it keeps
     // opening on the card (SALTHUB's own Strawberry pod) as before, like every other SALTHUB page; flavours by swipe or chip.
     openOnCardPhoto: true,
+    // Round "queue 0211" articles (02/11): more-details section = all-flavours grid + the article (as m-switch-pod).
+    storyDetails: true,
     // Photos (round "option photos" 06/10): each pod cut from SALTHUB's own flavour poster with one outline common to all 21;
     // Strawberry (no poster) = the real Peach Strawberry pod + an AI-drawn Strawberry band after SALTHUB's home-card pod
     // (_incoming/option-photos/b2/). `availability: "unknown"` as every Legacy SALTHUB product.

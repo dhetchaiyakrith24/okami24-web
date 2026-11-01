@@ -1495,7 +1495,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Flavour groups = the 17 names on SALTHUB's page, sorted by name only (no taste claims).
   "m-switch-pod": {
     th: {
-      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และ 17 กลิ่นแบ่งได้เป็นแนวไหน",
+      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และกลิ่นทั้งหมดแบ่งได้เป็นแนวไหน",
       sections: [
         {
           heading: "M Switch Pod ใช้กับเครื่องอะไร",
@@ -1537,7 +1537,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "The M Switch Pod is a SALTHUB pod. Below is a summary from SALTHUB's own page and posters of how it is used, how many puffs it gives and how its 17 flavours group.",
+      lede: "The M Switch Pod is a SALTHUB pod. Below is a summary from SALTHUB's own page and posters of how it is used, how many puffs it gives and how its flavours group.",
       sections: [
         {
           heading: "Which device does the M Switch Pod fit?",
@@ -1578,7 +1578,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "M Switch Pod 是 SALTHUB 的烟弹。下面根据 SALTHUB 自己的网页和海报，介绍它的用法、每颗能抽多少口，以及 17 种口味如何分类。",
+      lede: "M Switch Pod 是 SALTHUB 的烟弹。下面根据 SALTHUB 自己的网页和海报，介绍它的用法、每颗能抽多少口，以及口味如何分类。",
       sections: [
         {
           heading: "M Switch Pod 适用于哪款主机？",
@@ -1637,7 +1637,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Zero Cartridge มีกลิ่นอะไรบ้าง",
           paragraphs: [
-            "บนเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 22 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 5 แนว",
+            "บนเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 22 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 5 แนว ส่วนตัวเลือกที่ลงท้ายด้วย 50mg บนหน้านี้ เป็นแบบนิโคติน 50mg ที่ร้านลงไว้เพิ่ม",
             "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Ice Sparkling และ Mint",
             "สายผลไม้ ได้แก่ Apple Aloe · Blueberry · Grape · Grape Aloe · Grapefruit · Honey Yuzu · Lychee · Mango · Mixberry · Peach · Peach Strawberry · Pineapple · Strawberry และ Watermelon",
             "สายชา ได้แก่ Fruit Tea และ Oolong Tea",
@@ -1673,7 +1673,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which flavours does the Zero Cartridge come in?",
           paragraphs: [
-            "SALTHUB's site lists 22 flavours for this pod. Grouped by name, they fall into five sets.",
+            "SALTHUB's site lists 22 flavours for this pod. Grouped by name, they fall into five sets. The options on this page ending in 50mg are 50mg-nicotine versions the shop lists as well.",
             "Cool, with Ice or Mint in the name: Ice Sparkling and Mint.",
             "Fruit: Apple Aloe, Blueberry, Grape, Grape Aloe, Grapefruit, Honey Yuzu, Lychee, Mango, Mixberry, Peach, Peach Strawberry, Pineapple, Strawberry and Watermelon.",
             "Tea: Fruit Tea and Oolong Tea.",
@@ -1708,7 +1708,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Zero Cartridge 有哪些口味？",
           paragraphs: [
-            "SALTHUB 官网列出这款烟弹的 22 种口味，按名称可分为五类。",
+            "SALTHUB 官网列出这款烟弹的 22 种口味，按名称可分为五类。本页名称以 50mg 结尾的选项，是本店另外上架的 50mg 尼古丁版本。",
             "清凉系，名称带 Ice 或 Mint：Ice Sparkling 和 Mint。",
             "水果系：Apple Aloe、Blueberry、Grape、Grape Aloe、Grapefruit、Honey Yuzu、Lychee、Mango、Mixberry、Peach、Peach Strawberry、Pineapple、Strawberry、Watermelon。",
             "茶系：Fruit Tea、Oolong Tea。",
