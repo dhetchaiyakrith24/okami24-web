@@ -1,6 +1,7 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
 import { requireCustomer } from "./session";
+import { checkPostcodePlace } from "./thai-postcodes";
 
 export interface AddressInput {
   recipientName: string;
@@ -57,7 +58,9 @@ function validate(input: AddressInput): AddressError | null {
   if (!/^0[689][0-9]{8}$/.test(phone) && !/^0[2-7][0-9]{7}$/.test(phone)) return "phone";
   // The courier needs a house number (owner 02/11): the address line must carry at least one digit, Arabic or Thai.
   if (!/[0-9๐-๙]/.test(input.line1)) return "houseNumber";
-  if (!/^[0-9]{5}$/.test(input.postalCode.trim())) return "postal";
+  // The postcode must serve the sub-district + district + province given (owner 02/11: a wrong postcode stops the order) —
+  // the form fills them from the code; a code the data lacks only has to match its province (thai-postcodes.ts).
+  if (checkPostcodePlace(input.postalCode, input) === "wrong") return "postal";
   return null;
 }
 

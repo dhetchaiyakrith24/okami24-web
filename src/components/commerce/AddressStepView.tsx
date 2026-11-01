@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { PostcodePlaceFields } from "@/components/commerce/PostcodePlaceFields";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
 import type { AddressRecord } from "@/lib/commerce/addresses";
@@ -128,23 +129,11 @@ export function AddressStepView({
             defaultValue={v.phone ?? defaultPhone}
             error={fieldError("phone")}
           />
+          <PostcodePlaceFields
+            initial={{ postalCode: v.postalCode, subdistrict: v.subdistrict, district: v.district, province: v.province }}
+            postalError={fieldError("postalCode")}
+          />
           <Field label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
-          <div className="grid grid-cols-2 gap-3">
-            <Field label={dict.checkout.subdistrictLabel} name="subdistrict" defaultValue={v.subdistrict} />
-            <Field label={dict.checkout.districtLabel} name="district" autoComplete="address-level2" defaultValue={v.district} />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label={dict.checkout.provinceLabel} name="province" autoComplete="address-level1" defaultValue={v.province} />
-            <Field
-              label={dict.checkout.postalCodeLabel}
-              name="postalCode"
-              pattern="[0-9]{5}"
-              inputMode="numeric"
-              autoComplete="postal-code"
-              defaultValue={v.postalCode}
-              error={fieldError("postalCode")}
-            />
-          </div>
           {error && !errorField && (
             <p role="alert" className="text-sm text-danger">
               {error}
