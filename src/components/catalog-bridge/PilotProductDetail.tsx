@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
+import { bestSellerOptions } from "@/data/bestseller-options";
 import { PilotRelatedProducts } from "./PilotRelatedProducts";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import type { RelatedArticle } from "@/lib/article-relevance";
@@ -305,6 +306,7 @@ export function PilotProductDetail({
             outOfStockLabel={dict.productActions.outOfStockLabel}
             counts={liveCounts.o}
             countLine={countLine}
+            bestIds={bestSellerOptions(product.slug)}
             className="max-lg:order-2"
           />
 

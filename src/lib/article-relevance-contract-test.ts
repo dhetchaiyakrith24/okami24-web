@@ -12,7 +12,7 @@ import { guides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
 import { allProducts, getProductsByBrand, getProductsByCategory } from "@/data/products";
 import { brands } from "@/data/brands";
-import { categories } from "@/data/categories";
+import { categories, kindCategoryId } from "@/data/categories";
 import {
   getPilotProductsByBrand,
   getPilotProductsByCategory,
@@ -84,13 +84,15 @@ export function runArticleRelevanceContractTests(): ArticleRelevanceContractResu
         if (a.why.includes("relatedProductSlugs")) continue;
         const specText = p.specifications.filter((s) => s.sourceStatus === "verified").map((s) => `${s.key}: ${s.value}`);
         const featureText = p.features.map((f) => `feature: ${f.title}`);
+        // the rules read what the product IS (kindCategoryId): a prefilled pod listed under switch-pods is still a pod (owner 02/11)
+        const kind = kindCategoryId(p);
         const attrText = [
-          `attributes.beginnerFriendly = ${p.attributes.beginnerFriendly}, category ${p.categoryId}`,
+          `attributes.beginnerFriendly = ${p.attributes.beginnerFriendly}, category ${kind}`,
           `attributes.batteryMah = ${p.attributes.batteryMah}`,
           `attributes.wattageMin/Max = ${p.attributes.wattageMin}–${p.attributes.wattageMax}`,
           `attributes.screenType = ${p.attributes.screenType}`,
-          `category ${p.categoryId}`,
-          `category ${p.categoryId} is one of the two formats the article compares`,
+          `category ${kind}`,
+          `category ${kind} is one of the two formats the article compares`,
         ];
         const derivable = [...specText, ...featureText, ...attrText].some((t) => a.why === t) || a.why.startsWith("resistance") || a.why.includes("verified resistance row");
         if (!derivable) bad.push(`${p.slug} → ${a.href}: "${a.why}"`);

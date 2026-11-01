@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import type { StorefrontVariantView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PhoneOptionTiles } from "@/components/product/PhoneOptionTiles";
 import { LowStockTag } from "@/components/product/StockCount";
+import { OptionBestTag } from "@/components/catalog/SalesBadge";
 
 /**
  * Shared between the isolated `/preview/product-master` route (Phase 2.8) and the main
@@ -41,6 +42,7 @@ export function ProductMasterVariantPicker({
   outOfStockLabel,
   counts,
   countLine,
+  bestIds,
   className,
 }: {
   optionAxisLabel: string | null;
@@ -52,6 +54,8 @@ export function ProductMasterVariantPicker({
   counts?: Record<string, number>;
   /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
   countLine?: ReactNode;
+  /** Best-selling variant ids (src/data/bestseller-options.ts — owner 02/11): "ขายดี" on their pill / tile and by the picked name. */
+  bestIds?: ReadonlySet<string>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -68,13 +72,18 @@ export function ProductMasterVariantPicker({
     <div data-option-picker className={cn("flex flex-col gap-2", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id] }))}
+        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id], best: bestIds?.has(v.id) }))}
         selectedId={selectedId}
         countLine={countLine}
         onSelect={handleSelect}
         label={optionAxisLabel}
       />
-      {optionAxisLabel && <span className="label-mono text-xs text-foreground-dim max-lg:hidden">{optionAxisLabel}</span>}
+      {optionAxisLabel && (
+        <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
+          {optionAxisLabel}
+          {selectedId && bestIds?.has(selectedId) && <OptionBestTag className="ml-2 align-middle" />}
+        </span>
+      )}
       <div className="flex flex-wrap gap-2 max-lg:hidden">
         {variants.map((v) => {
           const outOfStock = v.availabilityStatus !== "in-stock";
@@ -97,6 +106,7 @@ export function ProductMasterVariantPicker({
             >
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>
               {outOfStock && outOfStockLabel && <span className="text-[0.6rem] uppercase tracking-wide">{outOfStockLabel}</span>}
+              {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
             </button>
           );

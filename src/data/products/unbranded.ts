@@ -161,7 +161,7 @@ export const unbrandedProducts: Product[] = [
     slug: "muro-3ml",
     brandId: "Unbranded",
     familyId: "Muro",
-    categoryId: "pods-cartridges",
+    categoryId: "switch-pods",
     systemType: "pod-cartridge",
     name: "Muro 3ML",
     displayName: "Muro 3ML",
@@ -348,7 +348,7 @@ export const unbrandedProducts: Product[] = [
     familyId: "Muro",
     // 29/10 (owner via Javis): a CONNECTOR POD, not a disposable — the maker poster prints "CONNECTOR POD" + "USE WITH MURO
     // CREATOR DEVICE" and the battery device is sold apart; RELX Creator fit = the shop's own stock (relx-creator FAQ).
-    categoryId: "pods-cartridges",
+    categoryId: "switch-pods",
     systemType: "pod-cartridge",
     name: "Muro Connector 20K",
     displayName: "Muro Connector 20K",
@@ -493,7 +493,7 @@ export const unbrandedProducts: Product[] = [
     slug: "vazer-one-pod",
     brandId: "Unbranded",
     familyId: "Vazer",
-    categoryId: "pods-cartridges",
+    categoryId: "switch-pods",
     systemType: "pod-cartridge",
     name: "Vazer One",
     displayName: "Vazer One",

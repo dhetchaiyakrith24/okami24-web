@@ -23,6 +23,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { bestSellerOptions } from "@/data/bestseller-options";
 import { countKind, countText } from "@/lib/stock/count-rules";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -106,6 +107,7 @@ export function ProductHero({
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
   const { locale, dict } = useLocale();
+  const bestIds = bestSellerOptions(product.slug);
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
   // tagline/description from product-copy-th.ts INSTEAD of the English pair. Until this round the
   // English stayed above the Thai ("never replacing", Phase 3.2.2), which left two English lines in
@@ -393,6 +395,7 @@ export function ProductHero({
               outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
               countLine={countLine}
+              bestIds={bestIds}
               className="max-lg:order-4"
             />
           )}
@@ -412,6 +415,7 @@ export function ProductHero({
               outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
               countLine={countLine}
+              bestIds={bestIds}
               className="max-lg:order-4"
             />
           )}
