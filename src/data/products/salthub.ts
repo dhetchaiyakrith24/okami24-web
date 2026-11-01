@@ -635,6 +635,11 @@ export const salthubProducts: Product[] = [
       { key: "compat", label: "Compatible device", value: "M Switch Kit", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       // Data round chat 2 (real browser, 2026-09-24): the same "THE BENEFITS — M SWITCH POD" block states "Resistance 1.0 Ω".
       { key: "resistance", label: "Resistance", value: "1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      // Round "queue 0211" articles (02/11): the pod's own page posters print "15000 PUFFS" and "COTTON MESH"; the home
+      // "THE BENEFITS — M SWITCH POD" block states "Nicotine Salt 30mg" (_incoming/articles-0211/salthub-draft.md S1/S2).
+      { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-pod/" },
+      { key: "coil", label: "Coil", value: "Cotton mesh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-pod/" },
+      { key: "nicotine", label: "Nicotine strength", value: "30mg nicotine salt", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [],
     compatibility: [{ type: "cartridge", label: "M Switch Kit device body" }],
