@@ -709,7 +709,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "VMATE-PRO-2": {
     tagline: "พอตซิสเต็มจาก VOOPOO แบตเตอรี่ 1500mAh ในกล่องมีหัวพอต 0.4 และ 0.7 โอห์ม ใช้ได้ทั้งแนวการสูบ MTL และ RDL",
-    shortDescription: "พอตซิสเต็ม VOOPOO Vmate Pro 2 แบต 1500mAh กำลังไฟ 5–30W ใช้หัวพอต VMATE Top Fill 3mL มีให้เลือก 7 สี",
+    shortDescription: "พอตซิสเต็ม VOOPOO Vmate Pro 2 แบตเตอรี่ 1500mAh ปรับได้ 5–30 วัตต์ ใช้หัวพอต VMATE Top Fill 3mL มีให้เลือก 7 สี",
   },
   "Eliquid-64": {
     // maxlist (21/10): warehouse facts only — the Max name "Double Mint Salt Nic".
