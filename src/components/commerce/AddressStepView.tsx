@@ -129,7 +129,11 @@ export function AddressStepView({
             defaultValue={v.phone ?? defaultPhone}
             error={fieldError("phone")}
           />
+          {/* React resets the form after every submit; for these controlled fields that left the list showing its first
+              sub-district while the form still held the picked one (found 02/11). Each answer of the action carries a new
+              `attempt`, so they remount from it and what is shown is what is sent. */}
           <PostcodePlaceFields
+            key={state.attempt ?? 0}
             initial={{ postalCode: v.postalCode, subdistrict: v.subdistrict, district: v.district, province: v.province }}
             postalError={fieldError("postalCode")}
           />

@@ -91,16 +91,18 @@ export interface AddressFormState {
   errorKey: "addressErrorMissing" | "addressErrorPhone" | "addressErrorHouseNumber" | "addressErrorPostal" | null;
   /** What the customer typed — the form shows it again after a refusal instead of emptying every field (LESSONS พ45). */
   values: Partial<Record<(typeof ADDRESS_FIELDS)[number], string>>;
+  /** Counts refusals; the postcode fields remount on each so they show what the form sends (AddressStepView). */
+  attempt?: number;
 }
 
-export async function addAddressAction(_prev: AddressFormState, formData: FormData): Promise<AddressFormState> {
+export async function addAddressAction(prev: AddressFormState, formData: FormData): Promise<AddressFormState> {
   refuseWhileOrderingOff();
   const values = Object.fromEntries(ADDRESS_FIELDS.map((k) => [k, String(formData.get(k) ?? "")])) as Record<(typeof ADDRESS_FIELDS)[number], string>;
   const input: AddressInput = values;
   const result = await addAddress(input, true);
   if (!result.ok) {
     const errorKey = ({ phone: "addressErrorPhone", houseNumber: "addressErrorHouseNumber", postal: "addressErrorPostal", missing: "addressErrorMissing" } as const)[result.error];
-    return { errorKey, values };
+    return { errorKey, values, attempt: (prev.attempt ?? 0) + 1 };
   }
   // Replace: /checkout/address now jumps to review for a customer with an address, so a pushed entry here made Back
   // from review bounce straight back to it (checker #811, the #795 loop for a NEW customer).
