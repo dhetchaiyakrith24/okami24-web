@@ -10,10 +10,10 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 02/11 ~04:00 by the 6th main chat (local_6ad924b9). Weekly quota reset 01/11.
+Updated 02/11 ~05:30 by the 7th main chat (local_737f7a61). Weekly quota reset 01/11.
 
-1 main = 5d3a8719 02/11 (#1087 dude ฿159 · #1089 dude pictures · #1090 GSC docs · #1091 layout shift). CART IS ON. Older = `git log --merges origin/main`.
-2 CHILD CHATS (owner go 02/11 "เริ่มงานได้เลยครับ"; all report to local_6ad924b9; Opus 5.5):
+1 main = e7f38fa0 02/11 (#1087 dude ฿159 · #1089 dude pictures · #1090 GSC docs · #1091 layout shift · #1093 SEO docs · #1094 queue). CART IS ON. Older = `git log --merges origin/main`.
+2 CHILD CHATS (owner go 02/11 "เริ่มงานได้เลยครับ"; all report to local_737f7a61 since the 7th chat took over, told 02/11; Opus 5.5):
   images-0211 local_6d7da3b4 (high, credit cap 80): A Higg renders → TFIT M Power 20K · SUP ZERO · JOIWAY F3 (square body; owner photos
      `_incoming/img-0211/owner-photos/`) · B wrong model/logo → SKE Crystal B20000 (owner photos + pod789 page; supersedes #1040) · KS Quik Pro logo "KS" ·
      nexSwitch 16K pod · RELX Creator (yellow / triangle button) · RELX Creator Pro (red button, 4 colours) · audit pod-system pods (list first).
@@ -24,9 +24,14 @@ Updated 02/11 ~04:00 by the 6th main chat (local_6ad924b9). Weekly quota reset 0
      Plan ≤7 steps to Friday first. Old parked line = `docs/cloud-results/seo-meta-suffix-3010.md`.
   Archived 02/11: dude-images-0111 · gsc-read-0111. TRACKING local_dfdd063c = watching Shipnity's next real write.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
-2N NEW 02/11: owner queue of 10 (watermark · order e-mails · checkout address · map motion · bugs · sale prices · articles) = `docs/rounds/คิวงานเจ้าของ-02-11.md`,
-    not started — the 7th chat plans it with the owner (owner: "ไม่จำเป็นต้องมีแชทลูก 3 แชท"). Then: run the 3 children (relay sheets to the owner word for word) · close draft #1038 (its card frame went live in #1091; stage light parked) ·
-    #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page. Queue = "ค่อยๆแก้ทีละงาน".
+2N ROUND OPEN 02/11 (7th chat): owner queue of 10 = `docs/rounds/คิวงานเจ้าของ-02-11.md` ("ค่อยๆแก้ทีละงาน"; owner: "ไม่จำเป็นต้องมีแชทลูก 3 แชท").
+    Batches (tier): B1 bugs queue 3 (in-stock button back) · 8 (burger menu) · 7 (bestseller badge on flavour header) — B, small, checker light ·
+    B2 checkout address queue 4+5+6 — full set (13.5 #3), designer draft to the owner first, postcode-first + validation + new layout + SVG Thailand map motion ·
+    B3 watermark queue 1 — WAITS for images-0211 to finish; samples to Javis before live; new filenames (LESSONS-images พ6) ·
+    B4 articles queue 10 — its own child, coordinate with seo-0211 on keywords · NOT STARTED, waiting on the owner's answers: e-mails (queue 2: BSOT §11 keeps no e-mail + an e-mail service = owner, 13.3 #2 #3 #9; alt LINE OA) · sale prices (queue 9: real discounts only, no invented "was" price).
+    Open question to the owner: "ไม่จำเป็นต้องมีแชทลูก 3 แชท" — Friday reads it as "do small items in the main chat, children only where work is separate" (rec.).
+    Also: relay seo age-gate snippet question + SUP ZERO pictures question word for word · close draft #1038 (card frame live in #1091; stage light parked) ·
+    #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page v57 (read before publishing) · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.
   a LAYOUT SHIFT — LIVE 02/11 #1091 [checker PASS 3c953648, 3 rounds]: only a SIGNED-IN member saw it (31/10 scans were signed out). Header pill keeps one
      width ("เข้าสู่ระบบ"/"บัญชี" share a cell; members now read "บัญชี" at sm+, drawer + aria keep "บัญชีสมาชิก"; en signed-out pill +13 px) ·
      catalog toolbar at lg = count · in-stock button · sort (grid CLS 0.12 → 0) · payment-card frame from #1038. Tool `_incoming/cls-0111/film.js` (--signed
@@ -70,18 +75,10 @@ Updated 02/11 ~04:00 by the 6th main chat (local_6ad924b9). Weekly quota reset 0
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine DELETED 28/10 (owner). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
-  28/10 night: /staff/shipnity = Shipnity pushes on every change (PUT log, all 738 codes reported); Kyoho Grape + Muro
-  Watermelon are Shipnity 0 now (sold) — live is right. Excel +6 columns live (#963). Cart cap live (#967, owner "Cap it",
-  §18 "Stock"): a line ≤ the live count, `shortTo` blocks checkout, unavailable lines show names. Owner asks: slip zip
-  (รอพี่ตรวจ 82). New-product alert LIVE (#971, owner option A): the 15:00 run appends to `src/data/stock/warehouse-new.ts`
-  in the product PR → after deploy the 10-min sweep tells LINE "OKM Order" once per code:status (`woo-new-products.json`)
-  + Okami dev lists the last 10 · LINE comes after the deploy, not at the find (phone push at 15:00 unchanged). Stock light LIVE (#969, owner "ตามแนะนำ"): Okami dev box +
-  row (green · amber no push 24 h · red = no key / never / an order sent > 3 h ago (48 h lookback) with no push since) ·
-  sweep 10 min (instrumentation) · LINE OKM Order once into red + once on recovery, retried while the push fails · state =
-  <data dir>/woo-watch.json. TUNE after ~1 week: compare real first_sent_at vs the next product PUT (woo_api_log) — the 3 h
-  rule assumes Shipnity moves stock when it takes an order (unverified; owner told false reds are possible). Shipnity's calls = ua
-  shipnity-channel-gateway, ip 74.220.52.129 (a curl ua = our own test). #0021 was cancelled in Shipnity before the cancel alert
-  went live — the web order still shows รอใส่เลขพัสดุ (the web never changes status itself).
+  LIVE since 28/10: /staff/shipnity PUT log (738 codes) · Excel +6 cols (#963) · cart cap = live count, `shortTo` blocks checkout (#967, §18 "Stock") ·
+  new-product alert (#971: 15:00 run → `src/data/stock/warehouse-new.ts`, LINE "OKM Order" after deploy) · stock light on Okami dev (#969: red = no key /
+  never / order sent > 3 h with no push; 10-min sweep; state <data dir>/woo-watch.json; TUNE item 5). Shipnity calls = ua shipnity-channel-gateway, ip 74.220.52.129.
+  #0021 was cancelled in Shipnity before the cancel alert — the web still shows รอใส่เลขพัสดุ (the web never changes status itself).
   Slip zip: NOT built (owner 29/10 "ตามแนะนำ" = the Excel slip columns + per-order slips are enough). New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
