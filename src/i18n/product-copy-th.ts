@@ -588,7 +588,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       included: "หัวพอต VINCI S 0.8Ω (4.5mL)",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
-    tagline: "แบตเตอรี่ 2000mAh ในตัว ใช้ได้สูงสุด 40 วัตต์ พร้อมหัวพอต 4.5mL ที่เติมน้ำยาจากด้านบนได้",
+    tagline: "แบตเตอรี่ 2000mAh ในตัว ใช้ได้สูงสุด 40 วัตต์ พร้อมหัวพอต 4.5mL แบบเติมด้านบน",
     shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL ช่วง 0.3–3.0 โอห์ม",
     features: {
       "topside-fill": {
