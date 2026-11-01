@@ -199,4 +199,158 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       ],
     },
   },
+  // Round SEO rankings back (02/11, owner: "ตรวจสิเนื้อหาไหนสินค้าไหน ที่ยังขาดอะไรในการขึ้นไปสู้หน้า 1 ก็จัดการได้เลย"): the key
+  // "น้ำยาบุหรี่ไฟฟ้า" moves to this category page, the one that lists the bottles (Google's page 1 for it = shop grids).
+  // Facts = each product's verified nicotine-type row + flavour count on the site, Marbo Saltnic's 30ml bottle row; the
+  // salt nic / freebase / PG-VG lines repeat only what the two guides already say. The table stays hidden (no device rows).
+  // en/zh skip the two Thai-only guides. Wording: thai-copy 02/11.
+  "e-liquid": {
+    th: {
+      heading: "น้ำยาบุหรี่ไฟฟ้าบนหน้านี้ เลือกแบบไหนให้เข้ากับเครื่อง",
+      intro:
+        "หน้านี้รวมน้ำยาแบบขวดสำหรับพอตซิสเต็มที่เติมน้ำยาเอง น้ำยาแต่ละขวดใช้นิโคตินชนิดเดียว คือ salt nic หรือ freebase สองชนิดนี้เข้ากับเครื่องต่างกัน จึงควรดูเครื่องที่ใช้อยู่ก่อน แล้วค่อยเลือกกลิ่นที่ชอบ ด้านล่างนี้สรุปทั้งสองชนิดไว้สั้น ๆ พร้อมรายชื่อน้ำยาบนหน้านี้ ถ้าอยากอ่านละเอียดกว่านี้ ดูได้ที่บทความ [salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+      families: [
+        {
+          heading: "น้ำยา salt nic สำหรับพอตตัวเล็ก",
+          body:
+            "salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป ผู้ผลิตพอตหลายรายแนะนำให้ใช้กับพอตตัวเล็กที่ใช้วัตต์ต่ำ และสูบแบบ MTL คือดูดเข้าปากก่อน แล้วค่อยสูดลงปอด งานวิจัยก็พบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่า freebase น้ำยา salt nic บนหน้านี้มี [Marbo Saltnic](/products/eliquid-1) ของ SALTHUB ขวดขนาด 30ml มี 10 กลิ่น · [Super Cool Salt Nic](/products/super-cool-saltnic) 10 กลิ่น · [Muro Salt Nic](/products/muro-salt-nic) 6 กลิ่น · [Double Mint Salt Nic](/products/eliquid-64) 6 กลิ่น · [Pepo Salt Nic](/products/eliquid-72) 5 กลิ่น และ [Dundu Salt Nic](/products/eliquid-73) ที่มีกลิ่นเดียว",
+        },
+        {
+          heading: "น้ำยา freebase สำหรับเครื่องวัตต์สูง",
+          body:
+            "freebase คือนิโคตินในรูปเดิม ผู้ผลิตแนะนำให้ใช้กับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ จากที่ร้านเห็น คนที่เลือก freebase มักชอบรสชาติที่ชัด และควันที่ได้จากเครื่องวัตต์สูง ซึ่งเป็นการสูบอีกแนวหนึ่ง ไม่ได้แปลว่าแบบไหนดีกว่ากัน น้ำยา freebase บนหน้านี้มี [Muro Freebase](/products/muro-freebase) 6 กลิ่น · [Marbo Freebase](/products/eliquid-109) ของ SALTHUB 4 กลิ่น และ [Graple Freebase](/products/graple-freebase) ที่มีกลิ่นเดียว",
+        },
+        {
+          heading: "เลือกกลิ่น แล้วดู PG กับ VG ข้างขวด",
+          body:
+            "พอได้ชนิดนิโคตินที่เข้ากับเครื่องแล้ว ก็เลือกกลิ่นที่ชอบได้เลย เราแบ่งรสน้ำยาไว้ 5 กลุ่ม คือ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม และสไตล์ยาสูบ แต่ละกลุ่มให้รสแบบไหน ดูได้ที่หน้า [กลุ่มรสชาติน้ำยา](/e-liquid) ข้างขวดน้ำยามักบอกสัดส่วน PG กับ VG ไว้ด้วย Aspire อธิบายว่า PG พารสได้ชัดและให้ความรู้สึกแรงถึงคอ ส่วน VG ให้ควันหนาและนุ่มกว่า สัดส่วนนี้ควรเลือกให้เข้ากับคอยล์ของเครื่อง และตัวเลขอย่าง 70/30 แต่ละแบรนด์ก็เรียงลำดับไม่เหมือนกัน วิธีอ่านดูได้ที่ [PG VG คืออะไร](/guides/pg-vg-in-e-liquid)",
+        },
+      ],
+      table: {
+        heading: "สเปกหลักของแต่ละรุ่น",
+        note: "ตัวเลขในตารางมาจากข้อมูลของผู้ผลิต ช่องที่ขึ้น “—” คือค่าที่ยังไม่ยืนยัน",
+        model: "รุ่น",
+        battery: "แบตเตอรี่",
+        power: "วัตต์สูงสุด",
+        capacity: "ความจุ",
+        externalCell: "ใช้ถ่าน ซื้อแยก",
+      },
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "พอตใช้แล้วทิ้ง ต้องซื้อน้ำยามาเติมไหม",
+          answer:
+            "ไม่ต้องค่ะ พอตใช้แล้วทิ้งและหัวพอตบรรจุสำเร็จมีน้ำยามาในเครื่องแล้ว น้ำยาแบบขวดในหน้านี้ใช้กับพอตซิสเต็มที่เติมน้ำยาเอง ดูเครื่องแบบนี้ได้ที่หน้า [พอตซิสเต็ม](/products/pod-systems) ค่ะ",
+        },
+        {
+          question: "ไม่แน่ใจว่าเครื่องที่ใช้อยู่เข้ากับน้ำยาแบบไหน ดูยังไงดี",
+          answer:
+            "ดูวัตต์และคอยล์ของเครื่องก่อนค่ะ ถ้าเป็นพอตตัวเล็กที่ใช้วัตต์ต่ำ ผู้ผลิตมักแนะนำ salt nic ส่วนเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำจะเข้ากับ freebase มากกว่า ถ้าดูแล้วยังไม่แน่ใจ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+        {
+          question: "ซื้อน้ำยาแล้ว ควรมีอะไรเพิ่มไหม",
+          answer:
+            "ถ้าใช้พอตซิสเต็ม ควรมีหัวพอตหรือคอยล์สำรองไว้ด้วย พอคอยล์เสื่อมจะได้เปลี่ยนทันที หัวพอตดูได้ที่หน้า [หัวพอต](/products/pods-cartridges) ส่วนคอยล์อยู่ที่หน้า [คอยล์และอุปกรณ์เสริม](/products/coils-accessories) ก่อนซื้อเช็คให้ตรงกับรุ่นเครื่องอีกครั้งนะคะ",
+        },
+      ],
+    },
+    en: {
+      heading: "E-liquid on this page, and which kind suits your device",
+      intro:
+        "The e-liquids here come in bottles, for Pod Systems you fill yourself. Each bottle uses one nicotine type, salt nic or freebase, and the two suit different devices, so start with the device you use and then pick a flavor you like. Below is a short guide to each type, with the e-liquids on this page.",
+      families: [
+        {
+          heading: "Salt nic, for small pods",
+          body:
+            "Salt nic is nicotine that the maker has blended with an acid. Several pod makers recommend it for small, low-wattage pods and an MTL draw, where you draw into your mouth first and then inhale. Research has also found that, at the same strength, salt nic feels smoother than freebase. Salt nic on this page: SALTHUB's [Marbo Saltnic](/products/eliquid-1) in a 30ml bottle, 10 flavors · [Super Cool Salt Nic](/products/super-cool-saltnic), 10 · [Muro Salt Nic](/products/muro-salt-nic), 6 · [Double Mint Salt Nic](/products/eliquid-64), 6 · [Pepo Salt Nic](/products/eliquid-72), 5 · and [Dundu Salt Nic](/products/eliquid-73), in a single flavor.",
+        },
+        {
+          heading: "Freebase, for higher-wattage devices",
+          body:
+            "Freebase is nicotine in its original form. Makers recommend it for higher-wattage devices with low-ohm coils. In our experience, people who choose freebase tend to like a clear flavor and the vapor a high-wattage device gives. It's a different way to vape, not a better one. Freebase on this page: [Muro Freebase](/products/muro-freebase), 6 flavors · SALTHUB's [Marbo Freebase](/products/eliquid-109), 4 · and [Graple Freebase](/products/graple-freebase), in a single flavor.",
+        },
+        {
+          heading: "Flavor, and the PG/VG on the label",
+          body:
+            "Once the nicotine type suits your device, choose a flavor you enjoy. We group flavors into five families: fruit, menthol and cooling, dessert, beverage, and tobacco-style. What each one tastes like is on the [flavor families](/e-liquid) page. The label usually shows a PG/VG ratio too. Aspire explains that PG carries flavor clearly and gives more throat hit, while VG gives thicker, smoother vapor. Choose the ratio to suit your coil, and read the letters beside the numbers: brands order a figure like 70/30 differently.",
+        },
+      ],
+      table: {
+        heading: "Key specs by model",
+        note: "All figures come from the makers. A dash (—) means there is no verified number yet.",
+        model: "Model",
+        battery: "Battery",
+        power: "Max output",
+        capacity: "Capacity",
+        externalCell: "External cell, sold separately",
+      },
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "Does a disposable need refilling with e-liquid?",
+          answer:
+            "No. Disposables and prefilled pods come with the e-liquid already inside. The bottles on this page are for Pod Systems you fill yourself, which you'll find on the [Pod Systems](/products/pod-systems) page.",
+        },
+        {
+          question: "Not sure which type suits your device?",
+          answer:
+            "Start with its wattage and coil. Makers usually recommend salt nic for small, low-wattage pods, while higher-wattage devices with low-ohm coils suit freebase. If you're still unsure, message us on LINE @okm24.",
+        },
+        {
+          question: "Anything else I should have with the e-liquid?",
+          answer:
+            "If you use a Pod System, keep a spare pod or coil for when the coil wears, so you can change it straight away. Pods are on the [Pods & Cartridges](/products/pods-cartridges) page and coils on the [Coils & Accessories](/products/coils-accessories) page. Check that they match your device model before you buy.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页烟油，哪一种适合你的设备",
+      intro:
+        "本页的烟油均为瓶装，适用于自行注油的 Pod System。每瓶烟油只采用一种尼古丁类型：salt nic 或 freebase。两者适合的设备不同，建议先看手上的设备，再挑喜欢的口味。下面简要介绍两种类型，并列出本页对应的烟油。",
+      families: [
+        {
+          heading: "salt nic：适合小烟弹设备",
+          body:
+            "salt nic 是厂商在尼古丁中加入酸调配而成。多家烟弹设备厂商建议搭配低功率的小烟弹设备和 MTL 吸法，也就是先吸入口腔，再吸进肺部。研究也发现，在相同浓度下，salt nic 的口感比 freebase 更顺。本页的 salt nic 烟油有：SALTHUB 的 [Marbo Saltnic](/products/eliquid-1)，30ml 瓶装，10 种口味；[Super Cool Salt Nic](/products/super-cool-saltnic)，10 种；[Muro Salt Nic](/products/muro-salt-nic)，6 种；[Double Mint Salt Nic](/products/eliquid-64)，6 种；[Pepo Salt Nic](/products/eliquid-72)，5 种；以及只有一种口味的 [Dundu Salt Nic](/products/eliquid-73)。",
+        },
+        {
+          heading: "freebase：适合高功率设备",
+          body:
+            "freebase 是原本形态的尼古丁，厂商建议搭配使用低阻值雾化芯的高功率设备。就店里的观察，选择 freebase 的人多半偏好清晰的口味，以及高功率设备带来的烟雾。这是另一种抽法，并没有哪种更好。本页的 freebase 烟油有：[Muro Freebase](/products/muro-freebase)，6 种口味；SALTHUB 的 [Marbo Freebase](/products/eliquid-109)，4 种；以及只有一种口味的 [Graple Freebase](/products/graple-freebase)。",
+        },
+        {
+          heading: "选口味，再看瓶身的 PG/VG",
+          body:
+            "尼古丁类型和设备对上之后，就可以挑喜欢的口味了。我们把烟油口味分为五个系列：水果、薄荷与清凉、甜品、饮品和烟草风格，各系列的特点见 [烟油风味系列](/e-liquid) 页面。瓶身通常还会标注 PG 与 VG 的比例。Aspire 的说明是，PG 能让味道更清楚，喉感也更明显；VG 烟雾更浓、口感更柔和。比例应配合设备的雾化芯来选；像 70/30 这样的数字，各品牌的排列顺序并不相同，请留意数字旁边的字母。",
+        },
+      ],
+      table: {
+        heading: "各型号主要规格",
+        note: "表中数据均来自厂商；显示“—”表示暂无已核实的数据。",
+        model: "型号",
+        battery: "电池容量",
+        power: "最大功率",
+        capacity: "容量",
+        externalCell: "外置电芯，需另购",
+      },
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "一次性电子烟需要另外加烟油吗？",
+          answer:
+            "不需要。一次性电子烟和预注油烟弹出厂时已装好烟油。本页的瓶装烟油适用于自行注油的 Pod System，可在 [Pod System](/products/pod-systems) 页面查看。",
+        },
+        {
+          question: "不确定自己的设备适合哪一种烟油？",
+          answer:
+            "先看设备的功率和雾化芯。低功率的小烟弹设备，厂商通常建议使用 salt nic；使用低阻值雾化芯的高功率设备，则更适合 freebase。看完仍不确定，欢迎通过 LINE @okm24 咨询。",
+        },
+        {
+          question: "买了烟油，还需要准备什么？",
+          answer:
+            "如果使用 Pod System，建议备一颗烟弹或雾化芯，雾化芯用旧时可以直接换上。烟弹见 [烟弹](/products/pods-cartridges) 页面，雾化芯见 [雾化芯与配件](/products/coils-accessories)。购买前请再核对是否与设备型号对应。",
+        },
+      ],
+    },
+  },
 };

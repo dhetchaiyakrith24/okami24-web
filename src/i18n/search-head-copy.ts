@@ -235,6 +235,9 @@ const CATEGORY_TITLE_HEAD_TH: Record<string, string> = {
   // Round SEO ฉ batch 3 (12/10): "คอยล์พอต" was in no head on the site; the page lists coils only. 49 chars — at 50+
   // categoryTitleTh() silently falls back to the label title, so keep it ≤ 49 (seo-auditor 12/10).
   "coils-accessories": "Coils & Accessories / คอยล์พอต ของแท้ ราคาทุกรุ่น",
+  // Round SEO rankings back (02/11): "น้ำยาบุหรี่ไฟฟ้า" moves here from /e-liquid — the page that lists the bottles with
+  // prices (Google's page 1 for the key = shop grids). Same pattern as the two rows above; 46 characters (thai-copy 02/11).
+  "e-liquid": "E-Liquid / น้ำยาบุหรี่ไฟฟ้า ของแท้ ราคาทุกรุ่น",
 };
 
 export function categoryTitleTh(labelTh: string, categoryId?: string): string {
