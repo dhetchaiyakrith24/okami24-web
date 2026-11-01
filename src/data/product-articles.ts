@@ -1500,7 +1500,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "M Switch Pod ใช้กับเครื่องอะไร",
           paragraphs: [
-            "SALTHUB ระบุว่าหัวพอตรุ่นนี้ใช้กับเครื่อง M Switch ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ ส่วนหัวพอตมีน้ำยาและคอยล์มาในตัว ใช้หมดแล้วก็ถอดเปลี่ยนเป็นหัวใหม่ได้เลย",
+            "SALTHUB ระบุว่าหัวพอตรุ่นนี้ใช้กับเครื่อง M Switch ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ ส่วนหัวพอตมีน้ำยาและคอยล์มาในตัว ใช้หมดแล้วก็เปลี่ยนเป็นหัวใหม่ได้เลย",
             "ถ้าเพิ่งเริ่มใช้ เริ่มจากชุด [M Switch Kit](/products/m-switch-kit) ก็ได้ ในชุดมีตัวเครื่องมาพร้อมหัวพอตหนึ่งหัว",
             "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
           ],
@@ -1531,7 +1531,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "M Switch Pod ใช้และเก็บยังไงดี",
           paragraphs: [
-            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ข้างในอาจไหลเข้าปากได้",
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
           ],
         },
       ],
@@ -1625,7 +1625,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // packs + the home card's Strawberry pod, as listed on this page.
   "zero-cartridge": {
     th: {
-      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปจากหน้าเว็บของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้กับเครื่องไหน มีกลิ่นแนวไหนบ้าง และน้ำยาข้างในทำจากอะไร",
+      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้กับเครื่องไหน มีกลิ่นแนวไหนบ้าง และน้ำยาในหัวทำจากอะไร",
       sections: [
         {
           heading: "Zero Cartridge ใช้กับเครื่องอะไร",
@@ -1655,7 +1655,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Zero Cartridge ใช้และเก็บยังไงดี",
           paragraphs: [
-            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ข้างในอาจไหลเข้าปากได้",
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
           ],
         },
       ],
