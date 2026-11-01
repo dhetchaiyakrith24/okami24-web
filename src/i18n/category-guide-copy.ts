@@ -369,7 +369,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "M Switch และ Zero จาก SALTHUB",
           body:
-            "[M Switch Kit](/products/m-switch-kit) คือชุดตัวเครื่องพร้อมหัวพอตที่ร้านเราเรียกว่า M Bar 15K หรือ Marbo 15K ตัวเครื่องใช้คู่กับหัว [M Switch Pod](/products/m-switch-pod) ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ ใช้คอยล์ cotton mesh มีหน้าจอดิจิทัลบอกระดับแบต มีปุ่มเลื่อนปรับลม และชาร์จผ่าน USB-C ส่วนตระกูล Zero ใช้หัว [Zero Cartridge](/products/zero-cartridge) ขนาด 2.2mL หัวเดียวกันใส่ได้ทั้ง [Zero Pro](/products/zero-pro) และ [Zero Nano](/products/zero-nano) Zero Pro มี 3 โหมดให้สลับแรงสูบได้ แบต 380mAh และ Zero Nano ที่เป็นรุ่นตัวเล็กของตระกูล มีแบต 500mAh ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [SALTHUB](/brands/salthub)",
+            "[M Switch Kit](/products/m-switch-kit) คือชุดตัวเครื่องพร้อมหัวพอตที่ร้านเราเรียกว่า M Bar 15K หรือ Marbo 15K ตัวเครื่องใช้คู่กับหัว [M Switch Pod](/products/m-switch-pod) ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ ใช้คอยล์ cotton mesh มีหน้าจอดิจิทัลบอกระดับแบต มีปุ่มเลื่อนปรับลม และชาร์จผ่าน USB-C ส่วนตระกูล Zero มีหัว [Zero Cartridge](/products/zero-cartridge) ขนาด 2.2mL ตัวเครื่อง [Zero Pro](/products/zero-pro) มี 3 โหมดให้สลับแรงสูบได้ แบต 380mAh และ [Zero Nano](/products/zero-nano) ที่เป็นรุ่นตัวเล็กของตระกูล มีแบต 500mAh ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [SALTHUB](/brands/salthub)",
         },
         {
           heading: "Creator และ Infinity จาก RELX",
@@ -392,7 +392,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "หัวพอตใส่กับเครื่องรุ่นไหนได้บ้าง",
           answer:
-            "หัวพอตแต่ละรุ่นใส่ได้กับเครื่องที่ผู้ผลิตระบุไว้ค่ะ เช่น M Switch Pod ใช้กับ M Switch Kit และหัว KS Quikpro ใช้กับเครื่อง KS Quikpro บางรุ่นก็ใช้หัวร่วมกันได้ อย่าง Zero Cartridge ที่ใส่ได้ทั้ง Zero Pro และ Zero Nano หรือ RELX Infinity 2 Plus ที่ใส่ได้ทั้งหัว RELX Pod · Pod Pro และ Pod Pro 2 ส่วน RELX Creator ร้านยืนยันแล้วว่าใส่ได้ทั้ง RELX Creator Pod และ Muro Connector 20K และ [nexPOD 15K Pro Kit](/products/nexpod-15k) ของ WOTOFO ใส่ได้ทั้งหัวพอตบรรจุสำเร็จ และหัวแบบเติมน้ำยาเองที่ WOTOFO ขายแยก ก่อนซื้อหัวพอต เช็คชื่อรุ่นเครื่องในหน้าสินค้าอีกครั้งนะคะ",
+            "หัวพอตแต่ละรุ่นใส่ได้กับเครื่องที่ผู้ผลิตระบุไว้ค่ะ เช่น M Switch Pod ใช้กับ M Switch Kit และหัว KS Quikpro ใช้กับเครื่อง KS Quikpro บางรุ่นก็ใช้หัวร่วมกันได้ อย่าง RELX Infinity 2 Plus ที่ใส่ได้ทั้งหัว RELX Pod · Pod Pro และ Pod Pro 2 ส่วน RELX Creator ร้านยืนยันแล้วว่าใส่ได้ทั้ง RELX Creator Pod และ Muro Connector 20K และ [nexPOD 15K Pro Kit](/products/nexpod-15k) ของ WOTOFO ใส่ได้ทั้งหัวพอตบรรจุสำเร็จ และหัวแบบเติมน้ำยาเองที่ WOTOFO ขายแยก ก่อนซื้อหัวพอต เช็คชื่อรุ่นเครื่องในหน้าสินค้าอีกครั้งนะคะ",
         },
         {
           question: "พอตเปลี่ยนหัว ชาร์จได้ไหม",
@@ -402,7 +402,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "หัวพอตหนึ่งหัวใช้ได้กี่พัฟ",
           answer:
-            "ดูได้จากจำนวนพัฟที่ระบุไว้ในหน้าสินค้าค่ะ เช่น หัว Esko Bar Switch หัวละสูงสุด 20,000 พัฟ หัว Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ส่วน M Switch Pod หัว KS Quikpro และหัวของ nexPOD 15K ระบุไว้หัวละ 15,000 พัฟ ตัวเลขพัฟเป็นจำนวนที่ระบุไว้ จะสูบได้ใกล้แค่ไหนขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหนค่ะ",
+            "ดูได้จากจำนวนพัฟที่ระบุไว้ในหน้าสินค้าค่ะ เช่น หัว Esko Bar Switch หัวละสูงสุด 20,000 พัฟ หัว Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ส่วน M Switch Pod กับหัว KS Quikpro ระบุไว้หัวละสูงสุด 15,000 พัฟ และหัวของ nexPOD 15K ระบุไว้หัวละ 15,000 พัฟ ตัวเลขพัฟเป็นจำนวนที่ระบุไว้ จะสูบได้ใกล้แค่ไหนขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหนค่ะ",
         },
       ],
     },
@@ -414,7 +414,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "SALTHUB M Switch and Zero",
           body:
-            "The [M Switch Kit](/products/m-switch-kit) is a device with a pod, the set we sell as the M Bar 15K, or Marbo 15K. It takes the [M Switch Pod](/products/m-switch-pod), rated by SALTHUB at up to 15,000 puffs per pod, with a cotton mesh coil. The device has a digital battery display and an airflow slider, and charges over USB-C. The Zero family shares one pod: the 2.2mL [Zero Cartridge](/products/zero-cartridge) fits both the [Zero Pro](/products/zero-pro) and the [Zero Nano](/products/zero-nano). The Zero Pro has three power modes and a 380mAh battery; the Zero Nano is the compact one, with 500mAh. More from the brand is on the [SALTHUB](/brands/salthub) page.",
+            "The [M Switch Kit](/products/m-switch-kit) is a device with a pod, the set we sell as the M Bar 15K, or Marbo 15K. It takes the [M Switch Pod](/products/m-switch-pod), rated by SALTHUB at up to 15,000 puffs per pod, with a cotton mesh coil. The device has a digital battery display and an airflow slider, and charges over USB-C. The Zero family has the 2.2mL [Zero Cartridge](/products/zero-cartridge) pod; the [Zero Pro](/products/zero-pro) device has three power modes and a 380mAh battery, and the [Zero Nano](/products/zero-nano) is the compact one, with 500mAh. More from the brand is on the [SALTHUB](/brands/salthub) page.",
         },
         {
           heading: "RELX Creator and Infinity",
@@ -437,7 +437,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "Which devices does each pod fit?",
           answer:
-            "Each pod fits the devices its maker names: the M Switch Pod fits the M Switch Kit, and the KS Quikpro pod fits the KS Quikpro. Some pods are shared. The Zero Cartridge fits both the Zero Pro and the Zero Nano, the RELX Infinity 2 Plus takes RELX Pod, Pod Pro and Pod Pro 2, and the RELX Creator takes both RELX Creator Pods and Muro Connector 20K, as we have confirmed in store. WOTOFO's [nexPOD 15K Pro Kit](/products/nexpod-15k) takes its prefilled pod as well as the refillable pod WOTOFO sells separately. Before you buy a pod, check the device name on the product page.",
+            "Each pod fits the devices its maker names: the M Switch Pod fits the M Switch Kit, and the KS Quikpro pod fits the KS Quikpro. Some pods are shared. The RELX Infinity 2 Plus takes RELX Pod, Pod Pro and Pod Pro 2, and the RELX Creator takes both RELX Creator Pods and Muro Connector 20K, as we have confirmed in store. WOTOFO's [nexPOD 15K Pro Kit](/products/nexpod-15k) takes its prefilled pod as well as the refillable pod WOTOFO sells separately. Before you buy a pod, check the device name on the product page.",
         },
         {
           question: "Can a switch pod device be recharged?",
@@ -447,7 +447,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "How many puffs does one pod give?",
           answer:
-            "Look for the puff count on the product page. The Esko Bar Switch pod is rated at up to 20,000 puffs, the Nexswitch 16K pod at up to 16,000, and the M Switch Pod, KS Quikpro pod and nexPOD 15K pod at 15,000 each. These are stated figures; how close you get depends on how often and how long you draw.",
+            "Look for the puff count on the product page. The Esko Bar Switch pod is rated at up to 20,000 puffs, the Nexswitch 16K pod at up to 16,000, the M Switch Pod and KS Quikpro pod at up to 15,000 each, and the nexPOD 15K pod at 15,000. These are stated figures; how close you get depends on how often and how long you draw.",
         },
       ],
     },
@@ -459,7 +459,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "SALTHUB M Switch 与 Zero",
           body:
-            "[M Switch Kit](/products/m-switch-kit) 是主机加烟弹的套装，本店称之为 M Bar 15K，也叫 Marbo 15K。它搭配 [M Switch Pod](/products/m-switch-pod) 烟弹，SALTHUB 标称每颗最高 15,000 口，采用 cotton mesh 雾化芯；主机配有数字电量屏和进气滑块，USB-C 充电。Zero 系列共用一款烟弹：2.2mL 的 [Zero Cartridge](/products/zero-cartridge) 同时适配 [Zero Pro](/products/zero-pro) 和 [Zero Nano](/products/zero-nano)。Zero Pro 有三种功率模式，电池 380mAh；Zero Nano 是系列中的小巧款，电池 500mAh。更多产品见 [SALTHUB](/brands/salthub) 品牌页。",
+            "[M Switch Kit](/products/m-switch-kit) 是主机加烟弹的套装，本店称之为 M Bar 15K，也叫 Marbo 15K。它搭配 [M Switch Pod](/products/m-switch-pod) 烟弹，SALTHUB 标称每颗最高 15,000 口，采用 cotton mesh 雾化芯；主机配有数字电量屏和进气滑块，USB-C 充电。Zero 系列有 2.2mL 的 [Zero Cartridge](/products/zero-cartridge) 烟弹；[Zero Pro](/products/zero-pro) 主机有三种功率模式，电池 380mAh，[Zero Nano](/products/zero-nano) 是系列中的小巧款，电池 500mAh。更多产品见 [SALTHUB](/brands/salthub) 品牌页。",
         },
         {
           heading: "RELX Creator 与 Infinity",
@@ -482,7 +482,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "每款烟弹适配哪些主机？",
           answer:
-            "各款烟弹适配厂商标明的主机，例如 M Switch Pod 适配 M Switch Kit，KS Quikpro 烟弹适配 KS Quikpro 主机。部分烟弹可以共用：Zero Cartridge 同时适配 Zero Pro 与 Zero Nano；RELX Infinity 2 Plus 可用 RELX Pod、Pod Pro 和 Pod Pro 2；RELX Creator 可用 RELX Creator Pod 与 Muro Connector 20K，已经本店确认。WOTOFO 的 [nexPOD 15K Pro Kit](/products/nexpod-15k) 既可用预注油烟弹，也可用 WOTOFO 另售的可注油烟弹。购买烟弹前，请在产品页面再核对一次主机型号。",
+            "各款烟弹适配厂商标明的主机，例如 M Switch Pod 适配 M Switch Kit，KS Quikpro 烟弹适配 KS Quikpro 主机。部分烟弹可以共用：RELX Infinity 2 Plus 可用 RELX Pod、Pod Pro 和 Pod Pro 2；RELX Creator 可用 RELX Creator Pod 与 Muro Connector 20K，已经本店确认。WOTOFO 的 [nexPOD 15K Pro Kit](/products/nexpod-15k) 既可用预注油烟弹，也可用 WOTOFO 另售的可注油烟弹。购买烟弹前，请在产品页面再核对一次主机型号。",
         },
         {
           question: "换弹式设备可以充电吗？",
@@ -492,7 +492,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "一颗烟弹能抽多少口？",
           answer:
-            "请看产品页面标明的口数。Esko Bar Switch 烟弹每颗最高 20,000 口，Nexswitch 16K 烟弹每颗最高 16,000 口，M Switch Pod、KS Quikpro 烟弹和 nexPOD 15K 烟弹每颗 15,000 口。这些都是标称数字，实际能抽到多少，取决于每个人抽吸的频率和时长。",
+            "请看产品页面标明的口数。Esko Bar Switch 烟弹每颗最高 20,000 口，Nexswitch 16K 烟弹每颗最高 16,000 口，M Switch Pod 与 KS Quikpro 烟弹每颗最高 15,000 口，nexPOD 15K 烟弹每颗 15,000 口。这些都是标称数字，实际能抽到多少，取决于每个人抽吸的频率和时长。",
         },
       ],
     },
@@ -511,7 +511,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "ESKO BAR · TFIT และ WOTOFO",
           body:
-            "[ESKO BAR 20000](/products/esko-bar-20k) ผู้ผลิตระบุไว้สูงสุด 20,000 พัฟ น้ำยา 18mL ใช้คอยล์ mesh สองตัว 1.0 โอห์ม แบต 600mAh ชาร์จได้ และความเข้มข้นนิโคติน 3% [TFIT M Power 20K](/products/tfit-m-power-20k) ก็รองรับสูงสุด 20,000 พัฟเช่นกัน น้ำยา 18mL ใช้คอยล์ mesh สองตัว 0.8 โอห์ม แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ ส่วน [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) สูงสุด 18,000 พัฟ น้ำยา 21mL แบต 750mAh มีโหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ และมีจอ LED ที่บอกทั้งแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ อีกรุ่นที่ชื่อคล้ายกันคือ [nexBar CLEAR 18K](/products/pod-180) ตัวใส ซึ่งเป็นคนละรุ่นกับของ WOTOFO ระบุไว้สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh และมีโหมด Normal กับ Turbo",
+            "[ESKO BAR 20000](/products/esko-bar-20k) ผู้ผลิตระบุไว้สูงสุด 20,000 พัฟ น้ำยา 18mL ใช้คอยล์ mesh สองตัว 1.0 โอห์ม แบต 600mAh ชาร์จได้ และความเข้มข้นนิโคติน 3% [TFIT M Power 20K](/products/tfit-m-power-20k) ก็รองรับสูงสุด 20,000 พัฟเช่นกัน น้ำยา 18mL ใช้คอยล์ mesh สองตัว 0.8 โอห์ม แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ ส่วน [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) สูงสุด 18,000 พัฟ น้ำยา 21mL แบต 750mAh มีโหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ และมีจอ LED ที่บอกทั้งแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ อีกรุ่นที่ชื่อคล้ายกันคือ [nexBar CLEAR 18K](/products/pod-180) ตัวใส ซึ่งเป็นคนละรุ่นกับของ WOTOFO รุ่นนี้ระบุไว้สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh และมีโหมด Normal กับ Turbo",
         },
         {
           heading: "RELX · INFY และ JOIWAY",
