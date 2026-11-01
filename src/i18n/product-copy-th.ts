@@ -580,9 +580,15 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "2000mAh ในตัว",
       pod: "4.5mL",
       fill: "เติมด้านบน",
+      airflow: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
+      activation: "ไม่มีปุ่ม สูบได้เลย",
+      indicator: "ไฟ LED 3 สี",
+      charging: "USB-C 5V/1A · ไม่มีสายชาร์จในกล่อง",
+      platform: "หัวพอต VINCI S · VINCI E · PnP X (คอยล์ตั้งแต่ 0.3Ω)",
+      included: "หัวพอต VINCI S 0.8Ω (4.5mL)",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
-    tagline: "40 วัตต์ หัวพอตเติมด้านบน",
+    tagline: "พอตซิสเต็ม VINCI S จาก VOOPOO แบตเตอรี่ 2000mAh สูงสุด 40 วัตต์ หัวพอต 4.5mL เติมด้านบน",
     shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL ช่วง 0.3–3.0 โอห์ม",
     features: {
       "topside-fill": {
