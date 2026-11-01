@@ -1171,17 +1171,18 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     },
   ],
-  // List-new (31/10): TEMPORARY card = the warehouse's own Shipnity Max image of Pod-180 (the 10-flavour line-up poster,
-  // 750×1000), fitted whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6) — same route as nexBar Switch 15K (#1060).
+  // Listing chat 01/11 (owner "ให้แชทลูกลงสินค้าให้ดีเลยตามคู่มือการลงรูปบน Web"): one studio render of the pod alone
+  // (Higgsfield GPT Image 2.5, job 310c453e) replaces the warehouse's line-up poster — the poster (Shipnity Max image 2761958,
+  // 750×1000) is the only source found (no maker site, researcher 01/11). card-v2: card.webp is cached live 30 days (LESSONS-images พ6).
   "DUDE-POD-3ML": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/dude-pod-3ml/card.webp",
-      alt: "dude 3ml refill pods, all 10 flavours line-up",
-      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2761958, read 31/10 ~18:25) — 10 pods, one per flavour.",
-      transparentBackground: false,
-      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
+      src: "/assets/products/dude-pod-3ml/card-v2.webp",
+      alt: "dude 3ml refill pod, front view",
+      angle: "Front, isolated — OKami24 render (Higgsfield) of the pod on the warehouse's line-up poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster",
       sourceUrl: "https://app.shipnitymax.com/",
     },
   ],
@@ -2469,6 +2470,19 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
       kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
       transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's pod render", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     } satisfies ProductAsset])
+  ),
+  // Listing chat 01/11: dude Pod 3ml — pod + that flavour's box, as on the warehouse poster (the pod is the same for every
+  // flavour; the box names it). One master scene (Higgsfield GPT Image 2.5, job f23e25be, Blueberry), the other nine = the
+  // master with only the box artwork changed (LESSONS-images 32); one shared matte, so the pod never moves between chips.
+  "DUDE-POD-3ML": Object.fromEntries(
+    ([["Pod-180-1", "grape-ice", "Grape Ice"], ["Pod-180-2", "blueberry", "Blueberry"], ["Pod-180-3", "cola", "Cola"],
+      ["Pod-180-4", "mint", "Mint"], ["Pod-180-5", "mineral-water", "Mineral Water"], ["Pod-180-6", "grape-aloe", "Grape Aloe"],
+      ["Pod-180-7", "taro-ice-cream", "Taro Ice Cream"], ["Pod-180-8", "watermelon", "Watermelon"],
+      ["Pod-180-9", "watermelon-lychee", "Watermelon Lychee"], ["Pod-180-10", "strawberry-watermelon", "Strawberry Watermelon"]] as const)
+      .map(([code, file, name]) => [code, {
+        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
+        transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster", sourceUrl: "https://app.shipnitymax.com/",
+      } satisfies ProductAsset])
   ),
   // Round list19 (19/10): ESKO BAR SWITCH pod — every flavour has its pod photo (the pod-159 sources, one master pod).
   "ESKO-BAR-SWITCH-POD": {

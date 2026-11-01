@@ -21,8 +21,9 @@
  *                 card-v<n>.*), the added variant files are measured against that NEW card instead, provided the new
  *                 card earns it: it reaches >= 90% of the old card, OR the old card is not a product cut-out but an
  *                 opaque poster (its "product" fills >= 97% of its own box — a busy line-up poster scores far above a
- *                 plain studio pod, the wrong yardstick) AND the new card is a shaped cut-out (fill <= 95%; a box-shaped
- *                 product replaced by the same box fills its box both times and gets no shortcut). Otherwise the old
+ *                 plain studio pod, the wrong yardstick) AND the new card is a shaped cut-out (fill <= 95%) or a new
+ *                 shape (width:height 1.5x off the old card's — dude Pod 3ml 01/11: one capsule pod fills its box 0.964);
+ *                 a box-shaped product replaced by the same box keeps both and gets no shortcut. Otherwise the old
  *                 card stays the yardstick, unchanged.
  *   --self-test — synthetic images prove the new-card rule picks the right yardstick both ways; exits 1 on a miss.
  *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
@@ -44,18 +45,20 @@ const THEME = [17, 17, 19];
 const MIN_CANVAS = 1000;
 const RATIO = 0.9;
 const POSTER_FILL = 0.97; // an old card whose product fills its box this fully is a poster (or a box-shaped product)…
-const CUTOUT_FILL = 0.95; // …and the shortcut needs the new card to be a shaped cut-out, so a box replacing a box gets none
+const CUTOUT_FILL = 0.95; // …and the shortcut needs the new card to be a shaped cut-out, so a box replacing a box gets none…
+const SHAPE_CHANGE = 1.5; // …or a new shape: its width:height differs from the old card's by this factor (dude Pod 3ml 01/11 —
+// a 3:4 line-up poster replaced by one capsule pod 1:3 fills its box 0.964, a box-like pod, but it is no box replacing the same box)
 
 const git = (a: string[]) => execFileSync("git", a, { cwd: ROOT, encoding: "buffer", maxBuffer: 256 * 1024 * 1024 });
 
-async function phoneSharp(buf: Buffer): Promise<{ canvas: number; sharp: number; productLong: number; fill: number }> {
+async function phoneSharp(buf: Buffer): Promise<{ canvas: number; sharp: number; productLong: number; fill: number; aspect: number }> {
   const { data, info } = await sharp(buf).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const W = info.width, H = info.height;
   const opaque = !data.some((_, i) => i % 4 === 3 && data[i] < 255);
   let x0 = W, y0 = H, x1 = -1, y1 = -1;
   const inP = (p: number) => (opaque ? true : data[p * 4 + 3] >= 128);
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (inP(y * W + x)) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
-  if (x1 < 0) return { canvas: Math.max(W, H), sharp: 0, productLong: 0, fill: 0 };
+  if (x1 < 0) return { canvas: Math.max(W, H), sharp: 0, productLong: 0, fill: 0, aspect: 1 };
   const k = PHONE_BOX / Math.max(W, H);
   const pw = x1 - x0 + 1, ph = y1 - y0 + 1;
   const flat = Buffer.alloc(pw * ph * 3), mask = Buffer.alloc(pw * ph);
@@ -77,7 +80,7 @@ async function phoneSharp(buf: Buffer): Promise<{ canvas: number; sharp: number;
     lap += Math.abs(4 * g[p] - g[p - 1] - g[p + 1] - g[p - dw] - g[p + dw]);
     n++;
   }
-  return { canvas: Math.max(W, H), sharp: n ? Math.round((lap / n) * 100) / 100 : 0, productLong: Math.max(pw, ph), fill };
+  return { canvas: Math.max(W, H), sharp: n ? Math.round((lap / n) * 100) / 100 : 0, productLong: Math.max(pw, ph), fill, aspect: pw / ph };
 }
 
 type Measure = Awaited<ReturnType<typeof phoneSharp>>;
@@ -85,17 +88,18 @@ type Measure = Awaited<ReturnType<typeof phoneSharp>>;
 function newCardIsYardstick(oldCard: Measure, newCard: Measure): boolean {
   // poster shortcut only when the shape changes from a full box to a cut-out: a box-shaped product (carton, block device)
   // replaced by the same box fills its box both times and keeps the old card as the yardstick (checker #1077)
-  return newCard.sharp >= oldCard.sharp * RATIO || (oldCard.fill >= POSTER_FILL && newCard.fill <= CUTOUT_FILL);
+  const reshaped = Math.abs(Math.log(newCard.aspect / oldCard.aspect)) >= Math.log(SHAPE_CHANGE);
+  return newCard.sharp >= oldCard.sharp * RATIO || (oldCard.fill >= POSTER_FILL && (newCard.fill <= CUTOUT_FILL || reshaped));
 }
 
 async function selfTest(): Promise<void> {
   // busy opaque poster · plain transparent pod cut-out · the same pod blurred · a busy pod cut-out (sharp, transparent) ·
   // a box-shaped cut-out (a carton fills its own box like a poster does — checker #1077: relx-infinity-pro-2-pod 0.9998)
   const noise = (w: number, h: number) => { const b = Buffer.alloc(w * h * 4); for (let i = 0; i < w * h; i++) { const v = (i * 2654435761) >>> 24; b[i * 4] = v; b[i * 4 + 1] = 255 - v; b[i * 4 + 2] = (v * 7) & 255; b[i * 4 + 3] = 255; } return b; };
-  const pod = async (blur: number, busy: boolean, box = false) => {
+  const pod = async (blur: number, busy: boolean, box = false, half = 260) => {
     const W = 1000, H = 1250, b = Buffer.alloc(W * H * 4);
     for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) {
-      const inPod = box ? Math.abs(x - 500) < 260 && y > 200 && y < 1050 : ((x - 500) / 200) ** 2 + ((y - 625) / 480) ** 2 < 1, i = (y * W + x) * 4;
+      const inPod = box ? Math.abs(x - 500) < half && y > 200 && y < 1050 : ((x - 500) / 200) ** 2 + ((y - 625) / 480) ** 2 < 1, i = (y * W + x) * 4;
       if (!inPod) continue;
       const v = busy ? ((x * 31 + y * 17) * 2654435761) >>> 24 : 40 + ((x * 3) % 40);
       b[i] = b[i + 1] = b[i + 2] = v; b[i + 3] = 255;
@@ -107,11 +111,14 @@ async function selfTest(): Promise<void> {
   const poster = await phoneSharp(await sharp(noise(1000, 1250), { raw: { width: 1000, height: 1250, channels: 4 } }).png().toBuffer());
   const plain = await phoneSharp(await pod(0, false)), blurred = await phoneSharp(await pod(6, true)), busyPod = await phoneSharp(await pod(0, true));
   const boxCard = await phoneSharp(await pod(0, true, true)), boxBlurred = await phoneSharp(await pod(6, true, true));
+  const capsule = await phoneSharp(await pod(0, false, true, 140)); // a narrow box-like pod, 280 × 850 (fill ≈ 1)
   const cases: [string, boolean, boolean][] = [
     ["poster old card + plain new card → new card", newCardIsYardstick(poster, plain), true],
     ["sharp cut-out old card + blurred new card → old card", newCardIsYardstick(busyPod, blurred), false],
     ["sharp cut-out old card + equally sharp new card → new card", newCardIsYardstick(busyPod, busyPod), true],
     ["box-shaped cut-out old card + the same box blurred → old card", newCardIsYardstick(boxCard, boxBlurred), false],
+    ["poster old card + a narrow box-like pod (new shape) → new card", newCardIsYardstick(poster, capsule), true],
+    ["poster old card + a box of near the poster's shape → old card", newCardIsYardstick(poster, boxBlurred), false],
   ];
   let bad = 0;
   for (const [name, got, want] of cases) { const ok = got === want; if (!ok) bad++; console.log(`${ok ? "ok  " : "MISS"}  ${name}`); }
