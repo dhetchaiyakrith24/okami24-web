@@ -1536,6 +1536,24 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%"
           ]
+        },
+        {
+          heading: "RELX Smash Go 12K มีกลิ่นแนวไหนบ้าง",
+          paragraphs: [
+            "RELX บอกไว้ว่ากลิ่นของรุ่นนี้มีทั้งแนวผลไม้และแนวมินต์เย็น ถ้าแบ่งกลิ่นแบบ 3% บนหน้านี้ตามชื่อกลิ่นจะได้ 3 แนว",
+            "สายเย็น ได้แก่ Double Mint",
+            "สายผลไม้ ได้แก่ Apple · Blueberry · Grape · Grape Aloe · Grape Lychee · Green Mango · Lychee · Mixberry · Passion Fruit · Peach Strawberry · Pineapple · Pink Berry · Pink Guava · Strawberry และ Watermelon",
+            "แนวอื่นมี Cola · Oolong Tea และ Watermelon Bubblegum",
+            "ส่วนแบบ 5% มี Classic Tobacco · Cola · Cool Mint · Double Mint · Grape · Mixberry · Spearmint และ Watermelon",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)"
+          ]
+        },
+        {
+          heading: "คอยล์ MEGA MESH ของ RELX Smash Go 12K ช่วยอะไร",
+          paragraphs: [
+            "RELX อธิบายว่าคอยล์ MEGA MESH ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
+            "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)"
+          ]
         }
       ]
     },
@@ -1547,6 +1565,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version."
           ]
+        },
+        {
+          heading: "Which flavours does the RELX Smash Go 12K come in?",
+          paragraphs: [
+            "RELX describes the range as fruity blends and cool mint options. Grouped by name, the 3% flavours on this page fall into three sets.",
+            "Cool: Double Mint.",
+            "Fruit: Apple, Blueberry, Grape, Grape Aloe, Grape Lychee, Green Mango, Lychee, Mixberry, Passion Fruit, Peach Strawberry, Pineapple, Pink Berry, Pink Guava, Strawberry and Watermelon.",
+            "Others: Cola, Oolong Tea and Watermelon Bubblegum.",
+            "The 5% version comes in Classic Tobacco, Cola, Cool Mint, Double Mint, Grape, Mixberry, Spearmint and Watermelon."
+          ]
+        },
+        {
+          heading: "What does the MEGA MESH coil of the RELX Smash Go 12K do?",
+          paragraphs: [
+            "RELX says the MEGA MESH coil gives a smooth, consistent flavour and vaporises the e-liquid evenly.",
+            "How many days one lasts depends on how often you vape."
+          ]
         }
       ]
     },
@@ -1557,6 +1592,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "两种浓度可选",
           paragraphs: [
             "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K 有哪些口味？",
+          paragraphs: [
+            "RELX 介绍这款有水果和清凉薄荷两类口味。本页的 3% 口味按名称可分为三类。",
+            "清凉系：Double Mint。",
+            "水果系：Apple、Blueberry、Grape、Grape Aloe、Grape Lychee、Green Mango、Lychee、Mixberry、Passion Fruit、Peach Strawberry、Pineapple、Pink Berry、Pink Guava、Strawberry、Watermelon。",
+            "其他：Cola、Oolong Tea、Watermelon Bubblegum。",
+            "5% 版本有 Classic Tobacco、Cola、Cool Mint、Double Mint、Grape、Mixberry、Spearmint、Watermelon。"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K 的 MEGA MESH 线圈有什么作用？",
+          paragraphs: [
+            "RELX 表示 MEGA MESH 线圈让口味顺滑稳定，烟油雾化更均匀。",
+            "一支能用几天，取决于抽的频率。"
           ]
         }
       ]
