@@ -2358,6 +2358,83 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  "muro-3ml": {
+    th: {
+      lede: "ด้านล่างร้านจัดกลิ่นของ Muro 3ML เป็นสายไว้ให้เลือกได้ง่ายขึ้น และเล่าถึงคำที่พิมพ์อยู่ข้างกล่องของกลิ่น Muro Grape ไว้ด้วย",
+      sections: [
+        {
+          heading: "Muro 3ML กลิ่นไหนดี",
+          paragraphs: [
+            "เลือกจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่นที่พิมพ์ไว้บนกล่องของแต่ละกลิ่น สายเย็นมี Smooth Mint กลิ่นเดียว และเป็นชื่อเดียวในรายการที่มีคำว่า Mint",
+            "สายองุ่นมีให้เลือกสองกลิ่น คือ Grape กับ Muro Grape ส่วนสายผลไม้มี Watermelon · Very Strawberry · Mix Berries · Strawberry Peach และ Apple Juice ชื่อที่มีผลไม้คู่กับอย่างอื่น อย่าง Honey Lemon กับ Blueberry Bubblegum ร้านก็จัดไว้ในสายนี้ด้วย",
+            "แนวอื่นมี Cola · Mineral Water · Green Slush และ Double Shisha สี่ชื่อนี้ไม่ได้บอกผลไม้ตรง ๆ ร้านจึงแยกไว้อีกกลุ่ม วิธีเลือกกลิ่นจากชื่อแบบละเอียด อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "ทำไมกล่อง Muro Grape มีคำว่า VERY STRAWBERRY",
+          paragraphs: [
+            "ถ้าดูรูปกล่องของกลิ่น Muro Grape จะเห็นคำว่า VERY STRAWBERRY อยู่ที่ด้านข้างกล่อง คำนี้เป็นลายที่ผู้ผลิตพิมพ์มากับกล่องเอง ร้านจึงคงรูปไว้ตามต้นฉบับ กล่องนี้เป็นของกลิ่น Muro Grape ตามโปสเตอร์ของกลิ่นนั้น ส่วน Very Strawberry มีกล่องของตัวเองแยกเป็นอีกกลิ่นหนึ่ง",
+          ],
+        },
+        {
+          heading: "สูบกลิ่นเดิมจนลิ้นชิน ทำยังไงดี",
+          paragraphs: [
+            "จากที่ร้านเจอ พอสูบกลิ่นเดิมไปสักพัก ลิ้นจะเริ่มชิน จนรู้สึกว่ารสไม่ชัดเท่าตอนแรก หัวพอตของ Muro 3ML แยกกลิ่นกันหัวละกลิ่น ถ้าเป็นแบบนี้ ลองสลับไปกลิ่นในสายอื่นบ้างก็ได้ แล้วค่อยกลับมากลิ่นเดิมทีหลัง",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, the Muro 3ML flavours sorted into groups to make choosing easier, plus a note on the words printed on the side of the Muro Grape box.",
+      sections: [
+        {
+          heading: "Which Muro 3ML flavour should I pick?",
+          paragraphs: [
+            "Start with the kind of flavour you like. We grouped them by the words in the name printed on each flavour's box. The only cool one is Smooth Mint, the one name in the list with Mint in it.",
+            "There are two grapes, Grape and Muro Grape. Fruit has Watermelon, Very Strawberry, Mix Berries, Strawberry Peach and Apple Juice, and we keep Honey Lemon and Blueberry Bubblegum here too, as they pair a fruit with something else.",
+            "The rest are Cola, Mineral Water, Green Slush and Double Shisha, none of which names a fruit outright.",
+          ],
+        },
+        {
+          heading: "Why does the Muro Grape box say VERY STRAWBERRY?",
+          paragraphs: [
+            "In the Muro Grape box photo you'll see VERY STRAWBERRY on the side panel. That's part of the maker's own box artwork, so we've kept the image as it is. According to that flavour's poster, the box is Muro Grape; Very Strawberry has its own box as a separate flavour.",
+          ],
+        },
+        {
+          heading: "What if a flavour starts to taste flat?",
+          paragraphs: [
+            "In our experience, after a while on the same flavour your palate gets used to it and the taste seems less clear than at first. Each Muro 3ML pod is a single flavour, so try one from another group for a while, then come back.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面把 Muro 3ML 的口味按类型分好组，方便挑选，也说明 Muro Grape 包装盒侧面印的字。",
+      sections: [
+        {
+          heading: "Muro 3ML 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。我们按每个口味包装盒上印的名称来分组。清凉类只有 Smooth Mint 一款，也是列表里唯一带 Mint 的名称。",
+            "葡萄类有两款：Grape 和 Muro Grape。水果类有 Watermelon、Very Strawberry、Mix Berries、Strawberry Peach 和 Apple Juice；Honey Lemon 和 Blueberry Bubblegum 是水果搭配其他元素，也归在这一类。",
+            "其余是 Cola、Mineral Water、Green Slush 和 Double Shisha，名称没有直接写出水果。",
+          ],
+        },
+        {
+          heading: "为什么 Muro Grape 的包装盒上写着 VERY STRAWBERRY？",
+          paragraphs: [
+            "在 Muro Grape 的包装盒图片里，可以看到侧面印着 VERY STRAWBERRY。这是厂家包装本身的图案，所以我们保留了原样。根据该口味的海报，这个盒子就是 Muro Grape；Very Strawberry 另有自己的包装盒，是另一款口味。",
+          ],
+        },
+        {
+          heading: "同一个口味抽久了觉得味道变淡，怎么办？",
+          paragraphs: [
+            "根据我们店的经验，同一个口味抽一段时间后，舌头会慢慢习惯，觉得味道不如一开始明显。Muro 3ML 每个烟弹只有一种口味，可以先换另一类口味抽一阵，再换回来。",
+          ],
+        },
+      ],
+    },
+  },
   // List-new 30/10 (nexBar Switch 15K, warehouse-listed): no maker site. Facts = nexBar's own posters — the 15-flavour
   // line-up the warehouse keeps (Shipnity Max image 2764487: nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the
   // 10-flavour poster series a Thai shop carries verbatim (vmaniath.com/en/product/1273962: nexMesh Coil · 15000 puffs ·

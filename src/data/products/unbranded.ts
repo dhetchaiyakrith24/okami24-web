@@ -168,6 +168,9 @@ export const unbrandedProducts: Product[] = [
     tagline: "A 3mL prefilled pod cartridge.",
     shortDescription: "A 3mL prefilled replacement pod cartridge from the Muro line, available in 14 flavors.",
     isFlagship: false,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     attributes: {
       capacityMl: 3,
       screenType: "none",
