@@ -14,6 +14,7 @@ import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
 import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandTitleTh } from "@/i18n/search-titles";
 import { BRAND_H1, BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   // search for and their prices. The price is read from the catalog index here, at build, through
   // the same source the product page shows — never typed into the copy (owner: 6 of the 8 prices
   // are estimates the stock API will overwrite). No approved price → that fragment is dropped.
-  const headOverride = BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf);
+  const headOverride = BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, ORDERING_ENABLED);
   if (headOverride && !isEmpty) {
     return {
       title: { absolute: headOverride.title },
@@ -79,7 +80,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   // <title> says). Nothing visible changes.
   const isEmpty = products.length === 0 && publishedProducts.length === 0;
   const brandPath = `/brands/${brandSlug}`;
-  const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf);
+  const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, ORDERING_ENABLED);
   const brandPageName = headOverride?.title ?? (isEmpty ? brand.name : brandTitleTh(brand.name));
   const brandPageDescription = headOverride?.description ?? brand.descriptionTh ?? brand.description;
   // Round "clip": the page's shop clip (if any) + its VideoObject, described from the Thai dictionary like the product page's.

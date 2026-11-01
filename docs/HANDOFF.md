@@ -24,12 +24,11 @@ Updated 02/11 ~05:30 by the 7th main chat (local_737f7a61). Weekly quota reset 0
      Plan ≤7 steps to Friday first. Old parked line = `docs/cloud-results/seo-meta-suffix-3010.md`.
   Archived 02/11: dude-images-0111 · gsc-read-0111. TRACKING local_dfdd063c = watching Shipnity's next real write.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
-2N ROUND OPEN 02/11 (7th chat): owner queue of 10 = `docs/rounds/คิวงานเจ้าของ-02-11.md` ("ค่อยๆแก้ทีละงาน"; owner: "ไม่จำเป็นต้องมีแชทลูก 3 แชท").
-    Batches (tier): B1 bugs queue 3 (in-stock button back) · 8 (burger menu) · 7 (bestseller badge on flavour header) — B, small, checker light ·
-    B2 checkout address queue 4+5+6 — full set (13.5 #3), designer draft to the owner first, postcode-first + validation + new layout + SVG Thailand map motion ·
-    B3 watermark queue 1 — WAITS for images-0211 to finish; samples to Javis before live; new filenames (LESSONS-images พ6) ·
-    B4 articles queue 10 — its own child, coordinate with seo-0211 on keywords · NOT STARTED, waiting on the owner's answers: e-mails (queue 2: BSOT §11 keeps no e-mail + an e-mail service = owner, 13.3 #2 #3 #9; alt LINE OA) · sale prices (queue 9: real discounts only, no invented "was" price).
-    Owner line "ไม่จำเป็นต้องมีแชทลูก 3 แชท": Friday reads it as small items in the main chat, children only for separate work (asked 02/11, rec.).
+2N ROUND OPEN 02/11 "queue 0211" (7th chat; owner "ครับเริ่มงานได้เลย") = `docs/rounds/รอบคิวงานพี่-02-11.md` (answers, batches, bans) · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
+    Owner 02/11: order e-mails/LINE = C (not now) · struck-through label price +10–20% = BSOT §5 02/11 (owner OKs the list) · bestseller per flavour (research; owner allows picks) ·
+    watermark "แบบงานรูปที่ Javis ทำ" (samples both ways → Javis) · 3 children: images-0211 (+ watermark after) · seo-0211 · articles (new).
+    Batches: 1 bugs + flavour bestseller (main, light) → 2ก address validation (main, full) → 2ข address look + map (main, designer) → 3 watermark (images child) ·
+    4 label price (main, full) · 5 articles (child). WHERE IT STOPPED: batch 1 not started.
     SUP ZERO pictures: owner answered 02/11 "เดี๋ยวพี่ส่งให้" = he sends the files (images-0211 told to stop searching Higgsfield) · multi-flavour ruling 02/11 = IMAGE_SPEC (fruit behind the model; one sample sheet first).
     Also: relay seo age-gate snippet question (still unanswered) word for word · close draft #1038 (card frame live in #1091; stage light parked) ·
     #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page v57 (read before publishing) · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.

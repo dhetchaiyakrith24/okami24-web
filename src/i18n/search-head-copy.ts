@@ -19,6 +19,13 @@
 
 export const OKM_TITLE_SUFFIX = " — OKami24 (OKM)";
 
+/** How a Google description ends (owner 30/10: "ท้ายคำอธิบายบน Google สั่งได้ทั้ง 2 ทางตามลูกค้าสะดวก แต่เขียนให้ดูโปรกว่านี้"; wording =
+ *  thai-copy 30/10). `orderingOn` = the cart switch (src/lib/commerce/ordering-mode.ts), passed in by the page — this file
+ *  stays importable outside the server (it must not import that server-only module). Cart off = the old LINE-only line. */
+export function orderCloseTh(orderingOn: boolean): string {
+  return orderingOn ? "สั่งบนเว็บหรือ LINE @okm24" : "สั่งทาง LINE @okm24";
+}
+
 /** "฿1,190" — the same thousands comma THAI_STYLE §4 asks for in prose. */
 export function formatPriceTh(price: number): string {
   return `฿${price.toLocaleString("en-US")}`;
@@ -50,7 +57,7 @@ export const CONTACT_HEAD_TH = {
 } as const;
 
 /** Rows A7 (option ก) / A8 — `count` = products shown on /products, counted by the page. */
-export function productsHeadTh(count: number) {
+export function productsHeadTh(count: number, orderingOn = false) {
   // Round 9 B4 (thai-copy row 3, seo-auditor #1 "land now"): the all-products page leads with the
   // collective owner key "อุปกรณ์บุหรี่ไฟฟ้า" (0 titles before). Owner's answer 2026-09-23: "พอต" and
   // "คอยล์" go back in — seo-auditor #2 option A (59 characters at 53 products, 60 at 100+): keeps the
@@ -62,7 +69,7 @@ export function productsHeadTh(count: number) {
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
     // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
     // top, not a seller's phrase) — "พอต" already covers it.
-    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24`,
+    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
   };
 }
 
@@ -72,29 +79,29 @@ export type PriceOf = (slug: string) => string | null;
 /** Rows A9–A16 — the four brand pages whose title/description name real models and prices.
  *  Every other brand keeps `brandTitleTh()` + its `descriptionTh`. Prices come through `priceOf`
  *  (see the header comment); a null price drops just that " ฿…" fragment. */
-export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string; description: string }> = {
+export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boolean) => { title: string; description: string }> = {
   // Round SEO D batch 4 (07/10, keyword map SEO_LANDSCAPE §0): every brand title is brand-level — the model terms
   // ("15k", "joiway f4", "caliburn g5", "drag 6") belong to the product pages; GSC 21/09–05/10 showed brand pages
   // taking them. Wording = thai-copy 07/10, read by seo-auditor 07/10.
   // Round SEO ฉ batch 3 (12/10): relx / iqos / wotofo metas step back to brand level like joiway/infy in #354 — the model
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
-  relx: () => ({
+  relx: (_priceOf, orderingOn = false) => ({
     title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
-    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
-  salthub: () => ({
+  salthub: (_priceOf, orderingOn = false) => ({
     title: `SALTHUB M Bar (Marbo) ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: "SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero สั่งทาง LINE @okm24",
+    description: `SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ${orderCloseTh(orderingOn)}`,
   }),
-  voopoo: () => ({
+  voopoo: (_priceOf, orderingOn = false) => ({
     title: `VOOPOO ของแท้ พอตซิสเต็ม หัวพอต และคอยล์${OKM_TITLE_SUFFIX}`,
-    description: "VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
-  uwell: () => ({
+  uwell: (_priceOf, orderingOn = false) => ({
     title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
   // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the
@@ -104,16 +111,16 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // come through `priceOf` like the four entries above. relx/salthub stay as approved in SEO ก
   // (their Search Console lines are being measured until 2026-10-05).
   // "ไอคอส" = the Thai name with typing evidence (owner 07/10, sheet 35), same as "อินฟี่" in the infy meta below.
-  iqos: () => ({
+  iqos: (_priceOf, orderingOn = false) => ({
     title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
-    description: "IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก สั่งทาง LINE @okm24",
+    description: `IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก ${orderCloseTh(orderingOn)}`,
   }),
   // SEO all keys 20/10: "esko bar" sat at position 3.6 with 0 clicks (GSC 18/10) under a title that spoke only to the switch
   // device — the brand now has the ESKO BAR 20000 disposable, the Switch 20K device and its pods, so the head names both
   // formats, no model and no price (the product pages own "esko bar switch 20k" / "esko bar 20k"). Wording = thai-copy 20/10.
-  "esko-bar": () => ({
+  "esko-bar": (_priceOf, orderingOn = false) => ({
     title: `ESKO BAR พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว ของแท้${OKM_TITLE_SUFFIX}`,
-    description: "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ มีทั้งพอตใช้แล้วทิ้ง และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: `ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ มีทั้งพอตใช้แล้วทิ้ง และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
   // out — so no price and no stock claim here (owner "ตามแนะนำ").
@@ -125,25 +132,25 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     title: `WOTOFO ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
     description: "WOTOFO มีทั้งพอตใช้แล้วทิ้ง nexBAR และพอตเปลี่ยนหัว nexPOD ที่ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
   }),
-  nevoks: (priceOf) => {
+  nevoks: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-54");
     return {
       title: `NEVOKS หัวพอตเปล่า ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
-  rincoe: (priceOf) => {
+  rincoe: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-89");
     return {
       title: `RINCOE หัวพอต ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
-  dotmod: (priceOf) => {
+  dotmod: (priceOf, orderingOn = false) => {
     const p = priceOf("coil-70");
     return {
       title: `DOTMOD คอยล์ ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} ${orderCloseTh(orderingOn)}`,
     };
   },
   // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names and prices left the title (batch 4)
@@ -151,9 +158,9 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // SEO all keys 20/10: "joiway" pos 6.2, 3 clicks / 179 impressions — title + meta carry the Thai name people type (จอยเวย์,
   // SEO_LANDSCAPE row 75); "คู่กลิ่น" stays out of the title — it is F4's selling point and the brand page already takes
   // "joiway f4" queries (row 76, seo-auditor 20/10). thai-copy 20/10.
-  joiway: () => ({
+  joiway: (_priceOf, orderingOn = false) => ({
     title: `JOIWAY จอยเวย์ พอตใช้แล้วทิ้ง ของแท้${OKM_TITLE_SUFFIX}`,
-    description: "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
+    description: `JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube ${orderCloseTh(orderingOn)}`,
   }),
   // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"
   // — /products/infy-20k owns "infy 20k". (Superseded 30/10: title + meta below = SEO brand push heads.) The old
@@ -177,8 +184,8 @@ export const BRAND_H1: Record<string, string> = {
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
 /** `genuine: false` = a page that makes no genuine claim (src/lib/genuine-claim.ts) — the suffix drops "ของแท้". */
-export function productPriceSuffixTh(price: number, genuine = true): string {
-  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
+export function productPriceSuffixTh(price: number, genuine = true, orderingOn = false): string {
+  return `${genuine ? "ของแท้ " : ""}ราคา ${formatPriceTh(price)} ${orderCloseTh(orderingOn)}`;
 }
 
 /**
@@ -277,7 +284,7 @@ const META_DESCRIPTION_MAX = 160;
  *  left hanging when the words after it were cut ("…มี 10", "…ส่วน", "…ของ VOOPOO" is fine, "…ของ"
  *  is not). Thai prose marks phrase boundaries with spaces only, so this is the second half of
  *  the boundary test: cut at a space, then back off past any dangling opener. */
-const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
+const DANGLING_TAIL = new Set(["มี", "และ", "ของ", "ที่", "กับ", "พร้อม", "ส่วน", "ตอนนี้", "ให้", "ใช้", "จาก", "ต่อ", "หรือ", "แต่", "เป็น", "ใน", "โดย", "ระหว่างรุ่น", "ระหว่าง", "ตั้งแต่", "ไปจนถึง", "แบบ", "รุ่น", "สาย", "ซีรีส์", "สูงสุด", "รองรับสูงสุด", "มีให้เลือก", "ถึง", "/", "ประมาณ", "กว่า", "—", ":", "OKami24"]);
 const NUMERIC_TAIL = /^[\d,.]+$/u;
 
 /**
@@ -286,9 +293,9 @@ const NUMERIC_TAIL = /^[\d,.]+$/u;
  * off past any dangling connective / bare number / unclosed bracket — never inside a word, and
  * never the price line. A product without a price keeps its description exactly as it was.
  */
-export function withPriceSuffixTh(base: string, price: number | null, genuine = true): string {
+export function withPriceSuffixTh(base: string, price: number | null, genuine = true, orderingOn = false): string {
   if (price === null) return base;
-  const suffix = productPriceSuffixTh(price, genuine);
+  const suffix = productPriceSuffixTh(price, genuine, orderingOn);
   const room = META_DESCRIPTION_MAX - suffix.length - 1;
   let head = base.trim();
   if (head.length > room) {
@@ -325,7 +332,7 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
-  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตสีดำบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
+  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
   // Round SEO D (07/10) — head-only lines that open with the model name (the page's own shortDescription stays as
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
@@ -338,15 +345,15 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
-  "caliburn-g3-pro": "Caliburn G3 Pro มีจอเต็มหน้าเครื่องบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ให้หัวพอต 0.4 กับ 0.9 โอห์มมาในกล่อง",
+  "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
   "caliburn-g4-classic": "Caliburn G4 Classic แบต 1400mAh ใช้สีไฟบอกแบตที่เหลือแทนจอ สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
-  "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้วบอกแบต วัตต์และโอห์ม ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
+  "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้ว ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
   "argus-g4-mini": "VOOPOO ARGUS G4 mini ตัวเครื่องเล็กลงแต่แบต 1650mAh เท่ารุ่นใหญ่ ปรับได้ 5–30 วัตต์ ไม่มีจอ และสูบได้เลยโดยไม่ต้องกดปุ่ม",
   "tfit-m-power-20k": "TFIT M Power 20K พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C ปรับช่องลมได้",
-  "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ รองรับสูงสุด 20,000 พัฟ มีจอ LED",
+  "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ สูงสุด 20,000 พัฟ มีจอ LED",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
-  "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
+  "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม และ TPP-DM4 0.3 โอห์ม ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
   "coil-54": "หัวพอตเปล่า Feelin Mini จากแบรนด์ NEVOKS สำหรับเครื่อง Feelin Mini ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
   "coil-55": "หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL สำหรับเครื่อง Caliburn G2 ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
   "coil-56": "หัวพอตเปล่า PnP-X จากแบรนด์ VOOPOO ความจุ 5mL สี Silver ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
@@ -359,10 +366,10 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-14 (LAMBDA's own page).
-  "iqosheet-14": "LAMBDA i8 เครื่องอุ่นยาสูบระบบเหนี่ยวนำ แบต 3200mAh ใช้ได้ 35–40 ก้านต่อการชาร์จ ปรับอุณหภูมิ 200–300°C ดูได้ทั้ง 6 สีที่ LAMBDA ทำออกมา",
+  "iqosheet-14": "LAMBDA i8 เครื่องอุ่นยาสูบระบบเหนี่ยวนำ แบต 3200mAh ใช้ได้ 35–40 ก้านต่อการชาร์จ ปรับอุณหภูมิ 200–300°C มี 6 สี",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-17.
-  "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 6 สีที่ IQOS ทำออกมา",
+  "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA เท่านั้น",
   "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
   "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
@@ -393,7 +400,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
   // SEO brand push 30/10: searchers type "relx pod pro 2" (the name printed on the pack); the fit is RELX's own sentence on the Infinity 2 Plus page.
   // 118 characters: + the price line it stays under the 160 ceiling (#1053's 126-character line lost "42 กลิ่น" to the trim).
-  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ Infinity 2 Plus ได้ตามที่ RELX ระบุ มีให้เลือก 42 กลิ่น",
+  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ Infinity 2 Plus ได้ตามที่ RELX ระบุ มี 42 กลิ่น",
   "coil-21": "หัวพอต VOOPOO Argus Pod มีให้เลือก 4 แบบ",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
@@ -401,10 +408,15 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
-  "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
-  "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ ตัวเครื่องมี 4 สี",
+  "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
+  "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ มี 4 สี",
   "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",
-  "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
+  "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จ USB-C มี 2 โหมด Normal กับ Turbo",
+  // Meta ending 30/10 (owner: "สั่งบนเว็บหรือ LINE @okm24", 7 characters longer): these lines were cut by the 160 trim
+  // (seo-auditor 30/10: "DRAG 3", "มาโบ 9K" lost, 8 ended mid-phrase) — shortened to fit with the price line, same facts.
+  "m-bar-9k": "พอตใช้แล้วทิ้งชาร์จซ้ำได้ของ SALTHUB ใช้ salt nic 30mg มี 24 กลิ่น หลายร้านเรียกรุ่นนี้ว่า Marbo หรือมาโบ 9K",
+  "caliburn-g4-pro-koko": "พอตแบตเตอรี่ 2000mAh 35 วัตต์ จอทัชสกรีน 2 นิ้ว ระบบ Pro-FOCS 4.0 สลับโหมดได้ทั้ง Storm / Waves / Custom",
+  "argus-g3-mini": "พอตคิทเหมาะมือใหม่ แบตเตอรี่ 1350mAh สูงสุด 30 วัตต์ ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ ด้วยชิป GENE.AI ของ VOOPOO",
 };
 
 /** Rows C17 / C18 — keyed by guide id. Round SEO ข (owner เคาะ 2026-09-21): five more head-only
