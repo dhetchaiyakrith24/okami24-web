@@ -1496,7 +1496,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // page links there); the comparison query stays with the guide esko-bar-switch-vs-m-switch. FAQ = PilotProductDetail's.
   "pod-159": {
     th: {
-      lede: "Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ของ ESKO BAR ที่ตัวเครื่องกับหัวพอตแยกจากกัน พอน้ำยาหมดก็เปลี่ยนแค่หัว ด้านล่างสรุปจากหน้าเว็บของ ESKO BAR ไว้ให้ ว่าเครื่องนี้ปรับอะไรได้บ้าง และในกล่องมีอะไรบ้าง",
+      lede: "Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ของ ESKO BAR ที่ตัวเครื่องกับหัวพอตแยกจากกัน พอน้ำยาหมดก็เปลี่ยนแค่หัว ด้านล่างเป็นข้อมูลจากหน้าเว็บของ ESKO BAR ว่าเครื่องนี้ปรับอะไรได้ และในกล่องมีอะไรบ้าง",
       sections: [
         {
           heading: "Esko Bar Switch 20K ต่างจากพอตใช้แล้วทิ้งยังไง",
@@ -1508,7 +1508,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Esko Bar Switch 20K ปรับอะไรได้บ้าง",
           paragraphs: [
-            "กดปุ่มเดียวก็สลับโหมด High กับ Low ได้ ESKO BAR อธิบายว่าโหมด High ให้รสเข้มกว่า ส่วนโหมด Low สูบแล้วนุ่มกว่า",
+            "เครื่องมีสองโหมดให้เลือก กดปุ่มเดียวก็สลับได้ ทาง ESKO BAR อธิบายว่าโหมด High ให้รสเข้มกว่า ส่วนโหมด Low สูบแล้วนุ่มกว่า",
             "ที่ก้นพอตมีปุ่มหมุนปรับลม 3 ระดับ ตั้งแต่ลมแน่นไปจนถึงลมโล่ง เลือกได้ตามแนวการสูบที่ชอบ",
           ],
         },
@@ -1624,7 +1624,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "esko-bar-switch-pod": {
     th: {
-      lede: "หัวพอต Esko Bar Switch 20K เป็นหัวพอตบรรจุสำเร็จของ ESKO BAR แต่ละหัวมีน้ำยาของกลิ่นที่เลือกกับคอยล์คู่มาในตัว ด้านล่างสรุปจากหน้าเว็บของ ESKO BAR พร้อมแบ่งกลิ่นเป็นแนวไว้ให้เลือกง่ายขึ้น",
+      lede: "หัวพอต Esko Bar Switch 20K ของ ESKO BAR เป็นหัวพอตบรรจุสำเร็จ แต่ละหัวมีน้ำยาของกลิ่นที่เลือกกับคอยล์คู่มาในตัว ด้านล่างสรุปจากหน้าเว็บของ ESKO BAR พร้อมแบ่งกลิ่นเป็นแนวไว้ให้เลือกง่ายขึ้น",
       sections: [
         {
           heading: "หัวพอต Esko Bar Switch 20K สลับกลิ่นยังไง",
@@ -1636,8 +1636,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "หัวพอต Esko Bar Switch 20K หัวหนึ่งใช้ได้นานแค่ไหน",
           paragraphs: [
-            "ถังน้ำยาในหัวหนึ่งจุ 18mL ESKO BAR บอกว่าช่วยให้เปลี่ยนหัวห่างขึ้น ส่วนจะใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน",
-            "ข้างในเป็นคอยล์คู่ ร้อนพร้อมกันทั้งสองตัว ESKO BAR บอกว่าช่วยให้ได้ไอมากขึ้น และรสชาติออกมาคงที่",
+            "ถังน้ำยาในหัวหนึ่งจุ 18mL ESKO BAR บอกว่าช่วยให้เปลี่ยนหัวห่างขึ้น ส่วนจะใช้ได้กี่วันนั้น ขึ้นกับการสูบของแต่ละคน",
+            "ข้างในเป็นคอยล์คู่ที่ร้อนพร้อมกันทั้งสองตัว ทาง ESKO BAR บอกว่าช่วยให้ได้ไอมากขึ้น และรสชาติออกมาคงที่",
           ],
         },
         {
@@ -1653,11 +1653,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
-          question: "หัวพอต Esko Bar Switch 20K ใช้กับเครื่องอะไร",
+          question: "หัวพอต Esko Bar Switch 20K ใส่เครื่องอะไร",
           answer: "ใช้กับเครื่อง [Esko Bar Switch 20K](/products/pod-159) ค่ะ",
         },
         {
-          question: "หัวพอต Esko Bar Switch 20K หัวหนึ่งสูบได้กี่พัฟ",
+          question: "หัวพอต Esko Bar Switch 20K สูบได้กี่พัฟ",
           answer: "ESKO BAR ระบุว่าหัวหนึ่งสูบได้สูงสุด 20,000 พัฟค่ะ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคนนะคะ",
         },
         {
@@ -1788,7 +1788,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           question: "ESKO BAR 20000 กับ Esko Bar Switch 20K ต่างกันยังไง",
-          answer: "ESKO BAR 20000 ใช้หมดแล้วทิ้งทั้งเครื่อง ส่วน [Esko Bar Switch 20K](/products/pod-159) เก็บตัวเครื่องไว้ แล้วเปลี่ยนแค่หัวพอตค่ะ",
+          answer: "ESKO BAR 20000 ใช้หมดแล้วทิ้งทั้งเครื่อง ส่วน [Esko Bar Switch 20K](/products/pod-159) เก็บตัวเครื่องไว้ใช้ต่อได้ เปลี่ยนแค่หัวค่ะ",
         },
       ],
     },
