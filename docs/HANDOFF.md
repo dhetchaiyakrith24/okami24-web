@@ -24,7 +24,8 @@ Updated 02/11 ~04:00 by the 6th main chat (local_6ad924b9). Weekly quota reset 0
      Plan ≤7 steps to Friday first. Old parked line = `docs/cloud-results/seo-meta-suffix-3010.md`.
   Archived 02/11: dude-images-0111 · gsc-read-0111. TRACKING local_dfdd063c = watching Shipnity's next real write.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
-2N NEXT for the main chat: run the 3 children (relay sheets to the owner word for word) · close draft #1038 (its card frame went live in #1091; stage light parked) ·
+2N NEW 02/11: owner queue of 10 (watermark · order e-mails · checkout address · map motion · bugs · sale prices · articles) = `docs/rounds/คิวงานเจ้าของ-02-11.md`,
+    not started — the 7th chat plans it with the owner (owner: "ไม่จำเป็นต้องมีแชทลูก 3 แชท"). Then: run the 3 children (relay sheets to the owner word for word) · close draft #1038 (its card frame went live in #1091; stage light parked) ·
     #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page. Queue = "ค่อยๆแก้ทีละงาน".
   a LAYOUT SHIFT — LIVE 02/11 #1091 [checker PASS 3c953648, 3 rounds]: only a SIGNED-IN member saw it (31/10 scans were signed out). Header pill keeps one
      width ("เข้าสู่ระบบ"/"บัญชี" share a cell; members now read "บัญชี" at sm+, drawer + aria keep "บัญชีสมาชิก"; en signed-out pill +13 px) ·
