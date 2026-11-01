@@ -111,12 +111,14 @@ function StockParamSync({ onStock }: { onStock: (inStock: boolean) => void }) {
   return null;
 }
 
-/** Replaces the current history entry (no new Back step, no scroll) — Next keeps useSearchParams in sync with it. */
+/** Replaces the current history entry (no new Back step, no scroll). `null` state on purpose: Next only syncs
+ *  useSearchParams for a state it did not write — passing its own state back left the old ?stock in its router, which
+ *  then put the old URL back (the second tap after a Back did nothing). */
 function writeStockParam(inStock: boolean) {
   const url = new URL(window.location.href);
   if (inStock) url.searchParams.set("stock", "in");
   else url.searchParams.delete("stock");
-  window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+  window.history.replaceState(null, "", url.pathname + url.search + url.hash);
 }
 
 /** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
