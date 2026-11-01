@@ -10,26 +10,28 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 01/11 ~22:50 by the 5th main chat at 67% context → MOVE: the 6th main chat starts here (brief `_incoming/next-chat-0111.md`). Weekly quota reset 01/11 (0%).
+Updated 02/11 ~01:30 by the 6th main chat (local_6ad924b9). Weekly quota reset 01/11.
 
-1 main ≈ docs merge on c26fbd15 31/10. CART IS ON. LIVE 29–31/10 [ตรวจแล้ว: checker PASS + deploy success + curl]: cut-off 12:30 · unboxing notice · address dedupe · carrier by postcode ·
-  SHIPPING v2 (BSOT §10) · order-page art · #1057 TRACKING SYNC · #1059 SLIP re-ask + QR ·
-  nexBar Switch 15K pod-181 complete: #1060 #1062 #1068 copy/heading · #1071 fits SALTHUB M Switch · #1077 sharpness gate (an opaque full-frame poster card no longer judges
-  new photos) · #1076 15 flavour photos + studio card (MCP, 3 credits, owner OK on the comparison sheet) · #1070 Marbo 10K clone back to the shared M Bar 10K photos ·
-  #1067 Kardinal Quikpro 15 boxes straight-on (owner OK "1 ครับ") · BADGES #1063 #1069 #1075 (+26 owner models, BSOT §15) #1078 ("ขายดี" stays when sold out; "มาใหม่" does not —
-  owner 31/10) · PRICES #1064 #1065 · #1066 nexSwitch 16K kit + MQ Bar 22K photos (no white fringe, images 7 checked 31/10).
-2 CHILD CHATS: dude-images-0111 local_fdc7d1f3 = dude Pod 3ml ฿139→฿159 (owner 01/11) + full flavour pictures per IMAGE_SPEC (credits OK for this product; comparison sheet to the owner before merge). Closed 31/10: images 7 · nexbar15k · badges · dude-mqbar · SEO (parked). TRACKING local_dfdd063c = watching Shipnity's next real write.
+1 main = 913ca33c 02/11 (#1087 dude ฿159 · #1090 GSC docs). CART IS ON. What went live 29–31/10 = `git log --merges --since 2026-10-29 origin/main`.
+2 CHILD CHATS (report to the main chat local_6ad924b9): dude-images-0111 local_fdc7d1f3 = ฿159 LIVE (#1087) · pictures PR #1089 (card + 10 flavours, 34 credits, checker PASS 1bd8c41f)
+     WAITS for the owner's word on the comparison sheet (sent 02/11 `_incoming/dude-0111/sheets/overview.png`) — relay it word for word, the child merges.
+  gsc-read-0111 local_b4a17a2c DONE: #1090 (SEO_BASELINE "READ 01/11" = evidence). Drop from 27/10 = Google side [เชื่อว่า], site healthy. No code change ·
+     06/11 SERP read + "relx lumi 18k" / "voopoo drag 6" with SafeSearch on AND off · brand queries vanishing too = urgent.
+  Closed 31/10: images 7 · nexbar15k · badges · dude-mqbar · SEO (parked). TRACKING local_dfdd063c = watching Shipnity's next real write.
   d SEO line PARKED 31/10 (owner "สาย Seo ปิดงานก่อนครับ … เดี๋ยวมาทำต่อทีหลัง"): resume file = `docs/cloud-results/seo-meta-suffix-3010.md` (branch seo-meta-suffix-3010
      7b94d146 pushed, PR not opened · helpers in main `_incoming/seo-meta-3010/`).
   e `okami24-seo-weekly` (Sat 15:00, first run 31/10): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
 2N NEXT for the main chat (in this order):
-  0 OWNER 01/11: due items "ทำได้เลยครับ" → GSC read 01/11 + traffic-drop cause (brief in the next-chat file; child refused over Remote Control) · 02/11 B5 verdict ·
-    drafts #1040 SKE (needs the comparison sheet now) / #1038 order page (compare with live: duplicate = close). Queue = "ค่อยๆแก้ทีละงาน" (one at a time).
-  a LAYOUT SHIFT — owner 01/11 pointed at it: "หน้าแรกบนสุดช่วงแรกเลย ที่มี Motion" (the home hero, src/data/home-hero.ts switches). Round: Measured 31/10 (`_incoming/cls-3110/`):
-     test server 13 pages × 390/1440 ≈ 0 except home 1440 (product imgs grow 98→201 px on load, 0.013)
-     · live read (OKAMI24_LIVE_OK, fresh profile, 4 pages × 2 widths) = the same: only home 1440 0.013 (Google "good" < 0.1). So what he sees is NOT
-     load-time CLS → the hero motion moves things (DESKTOP_TRAVEL / PHONE_HERO animation) — record the hero on a phone frame by frame first. Fix home 1440 card imgs (reserve height) in the same round. Tier B.
-     Same round: "ขายดี" card sweep 3 runs then stop (WCAG 2.2.2) — owner not answered yet.
+  0 OWNER 01/11 due items: GSC = done (item 2) · "02/11 B5 verdict" was stale (B5 ① ended 28/10, ② live stock + ③ "ใกล้หมด · เหลือ N ชิ้น" LIVE) — nothing to decide ·
+    #1038 order page: NOT a duplicate (live has the later desktop layout); owner asked 01/11, no answer in 30 min → Friday's pick: its payment-card frame
+    (owner "อันนี้โอเคอยู่แล้ว") rides in PR #1091; close #1038 after #1091 merges; its thank-you stage light stays parked ("เว้นเอาไว้ก่อน").
+    #1040 SKE = รอพี่ตรวจ 84. Queue = "ค่อยๆแก้ทีละงาน" (one at a time).
+  a LAYOUT SHIFT — FOUND 01/11: only for a SIGNED-IN member (the 31/10 scans were signed out = 0). `useSignedIn` answers after load →
+     (1) header pill "เข้าสู่ระบบ"→"บัญชี"/"บัญชีสมาชิก" resized, icons + desktop nav jumped on every page · (2) catalog toolbar grew 3 px when the members'
+     "สินค้าพร้อมส่ง" button appeared → grid jumped, CLS 0.11–0.12 at 1440 on /products, categories, brands. Fix = PR #1091 (draft, GATE PASS 4f5c0e82,
+     checker running) — measured before/after signed in + out, 360–1440, 7 pages: all → 0 / 0.0004. Tool: `_incoming/cls-0111/film.js` (throttled
+     filmstrip + layout-shift sources; `--signed` mocks the sign-in answer, no account). Left as is: home 1280/1440 hero card photos report 0.013
+     (box resized then scaled back — nothing moves on screen) · "ขายดี" card sweep 3 runs then stop (WCAG 2.2.2) — owner not answered yet.
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
      STAFF LOGIN PLAN (owner 30/10: staff log in like customers, then see their own dashboard). Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
@@ -95,7 +97,7 @@ Updated 01/11 ~22:50 by the 5th main chat at 67% context → MOVE: the 6th main 
   §17 "Owner status page".
 5 open / dated:
   - 04/11 tune the stock light's red rule (3 h after an order sent with no push) from a week of real first_sent_at vs product PUTs.
-  - 01/11 GSC read (rows 9–21, 23) then 15/11 · 10/12 · 02/11 B5 verdict (item 3 f) · Search Console 2–4 weeks
+  - 06/11 SERP read + the 2 vanished queries with SafeSearch on/off (item 2) · GSC read 15/11 · 10/12 · Search Console 2–4 weeks
     after 12/10: no okami-24.com URL shows instead of .store.
   - GSC in the owner's Chrome: screenshots time out — drive by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio; a renamed clip → update its `title` in guides.ts.
