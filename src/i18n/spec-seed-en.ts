@@ -60,7 +60,6 @@ const LABELS_EN: Record<string, string> = {
   "การเติมน้ำยา": "Filling",
   "หัว 0.4Ω": "0.4Ω pod",
   "เป็นหัวพอตของ": "Pod of",
-  "ตัวสูบใช้ได้ติดกัน": "Holder, sticks in a row",
   "ไฟบอกสถานะ": "Status indicator",
 };
 
@@ -128,7 +127,6 @@ const VALUES_EN: Record<string, string> = {
   "ต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30W": "Needs a device with at least 30W output",
   "ชุด Caliburn X": "The Caliburn X kit",
   "ชุด Caliburn G2": "The Caliburn G2 kit",
-  "สูงสุด 3 ก้าน เฉพาะโหมด Performance ที่ไม่ได้เปิด Pause Mode": "Up to 3 sticks, in Performance Mode with Pause Mode off",
   "จอทัช · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)": "Touch Screen · Pause Mode · FlexBattery · FlexPuff (up to 4 extra puffs)",
   "ตัวเครื่อง · สาย USB-C · คู่มือ": "Device · USB-C cable · user manual",
   "หัวพอต INFY 2.5mL": "INFY 2.5mL pods",

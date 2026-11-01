@@ -30,7 +30,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-55": { tagline: "Empty 2mL top-fill pod for the UWELL Caliburn G2 that takes Caliburn G2 and Caliburn G coils" },
   "coil-56": { tagline: "Empty 5mL VOOPOO PnP X pod with side filling, for PnP X coils" },
   "coil-68": { tagline: "Empty 3.5mL top-fill VOOPOO ITO-X pod for ITO coils" },
-  "coil-70": { tagline: "DOTMOD dotAIO V2 coil, 0.7Ω single mesh, 5 per box" },
+  "coil-70": { tagline: "DOTMOD dotAIO V2 coil, 5 per box, 0.7Ω single mesh" },
   "coil-72": { tagline: "3mL VOOPOO VMATE pod with a built-in coil, available in side-fill and top-fill versions" },
   "coil-74": { tagline: "Empty 3mL pod for the UWELL Caliburn X that takes Caliburn G and G2 coils" },
   "coil-83": { tagline: "Argus P1 empty pod by VOOPOO" },

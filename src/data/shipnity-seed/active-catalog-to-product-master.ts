@@ -573,7 +573,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตรุ่น ITO-X จากแบรนด์ VOOPOO",
   },
   "Coil-70": {
-    tagline: "คอยล์ dotAIO V2 จาก DOTMOD ค่า 0.7 โอห์ม แบบ mesh เดี่ยว กล่องละ 5 หัว",
+    tagline: "คอยล์ dotAIO V2 จาก DOTMOD กล่องละ 5 หัว ค่า 0.7 โอห์ม แบบ mesh เดี่ยว",
     shortDescription: "คอยล์รุ่น Dotmod Aio V2 จากแบรนด์ DOTMOD",
   },
   "Coil-89": {
@@ -2074,7 +2074,6 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       // uses (charger)" · "*Only available in Performance Mode when pause is not activated" · "Advanced features: Touch Screen · Pause Mode ·
       // FlexBattery · FlexPuff" · "Enjoy up to 4 extra puffs".
       { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
-      { key: "consecutive", label: "ตัวสูบใช้ได้ติดกัน", value: "สูงสุด 3 ก้าน เฉพาะโหมด Performance ที่ไม่ได้เปิด Pause Mode", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       { key: "features", label: "ความสามารถ", value: "จอทัช · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
