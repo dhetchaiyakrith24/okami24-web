@@ -28,6 +28,7 @@
  * from the data and fails on a link to an article or product that does not exist.
  */
 import { guides } from "@/data/guides";
+import { kindCategoryId } from "@/data/categories";
 import { technologyEntries } from "@/data/technology";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
@@ -192,11 +193,11 @@ function withAuthoredFirst(slug: string, ruled: RelatedArticle[], opts: RelatedA
 }
 
 export function relatedArticlesForLegacy(product: Product, opts?: RelatedArticleOptions): RelatedArticle[] {
-  return withAuthoredFirst(product.slug, legacyRules(product), opts);
+  return withAuthoredFirst(product.slug, legacyRules({ ...product, categoryId: kindCategoryId(product) }), opts);
 }
 
 export function relatedArticlesForPublished(product: StorefrontProductView, opts?: RelatedArticleOptions): RelatedArticle[] {
-  return withAuthoredFirst(product.slug, publishedRules(product), opts);
+  return withAuthoredFirst(product.slug, publishedRules({ ...product, categoryId: kindCategoryId(product) }), opts);
 }
 
 /**

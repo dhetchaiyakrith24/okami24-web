@@ -58,6 +58,24 @@ export function CardSalesBadge({ slug, soldOut = false }: { slug: string; soldOu
   );
 }
 
+/** "ขายดี" on one flavour / colour (owner 02/11, src/data/bestseller-options.ts): the same ember capsule without the
+ *  moving light — a picker can hold several and twenty glints would fight the photo. Comes from the build, so it is in
+ *  the first paint (no hydration wait, nothing moves). */
+export function OptionBestTag({ className }: { className?: string }) {
+  const { dict } = useLocale();
+  return (
+    <span
+      data-option-best=""
+      className={cn(
+        "inline-flex shrink-0 items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 py-0.5 font-sans text-[10px] font-semibold leading-none tracking-normal text-ember-strong",
+        className,
+      )}
+    >
+      {dict.product.badgeBestSeller}
+    </span>
+  );
+}
+
 /** The product head version: a pill beside the brand / family badges (same shape as Badge, sans words for Thai). A best
  *  seller gets the same capsule as on the cards; its glint runs three times and stops (it sits by the page title). */
 export function HeadSalesBadge({ slug, soldOut = false }: { slug: string; soldOut?: boolean }) {

@@ -12,7 +12,7 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Updated 02/11 ~05:30 by the 7th main chat (local_737f7a61). Weekly quota reset 01/11.
 
-1 main = e7f38fa0 02/11 (#1087 dude ฿159 · #1089 dude pictures · #1090 GSC docs · #1091 layout shift · #1093 SEO docs · #1094 queue). CART IS ON. Older = `git log --merges origin/main`.
+1 main = 02/11 #1105 batch 1 · #1095 switch pods · #1097 SEO metas. CART IS ON. Older = `git log --merges origin/main`.
 2 CHILD CHATS (owner go 02/11; all report to local_737f7a61 since the 7th chat took over, told 02/11; Opus 5.5):
   images-0211 local_6d7da3b4 (high, credit cap 80): A Higg renders → TFIT M Power 20K · SUP ZERO · JOIWAY F3 (square body; owner photos
      `_incoming/img-0211/owner-photos/`) · B wrong model/logo → SKE Crystal B20000 (owner photos + pod789 page; supersedes #1040) · KS Quik Pro logo "KS" ·
@@ -28,7 +28,9 @@ Updated 02/11 ~05:30 by the 7th main chat (local_737f7a61). Weekly quota reset 0
     Owner 02/11: order e-mails/LINE = C (not now) · struck-through label price +10–20% = BSOT §5 02/11 (owner OKs the list) · bestseller per flavour (research; owner allows picks) ·
     watermark "แบบงานรูปที่ Javis ทำ" (samples both ways → Javis) · 3 children: images-0211 (+ watermark after) · seo-0211 · articles (new).
     Batches: 1 bugs + flavour bestseller (main, light) → 2ก address validation (main, full) → 2ข address look + map (main, designer) → 3 watermark (images child) ·
-    4 label price (main, full) · 5 articles (child). WHERE IT STOPPED: batch 1 not started.
+    4 label price (main, full) · 5 articles (child). WHERE IT STOPPED: batch 1 LIVE 02/11 #1105 (proof _incoming/queue-0211) → next 2ก.
+    #1095 switch pods LIVE (25 / 12 live). Waiting on the owner: TFIT #1098 + JOIWAY #1100 sheets (draft, checker PASS) · SEO questions (age gate · About "who we are" · e-liquid keyword).
+    MOVE images + articles children (≥600k; start_session needs one desktop message) — hand-overs in side-session-notes (images-0211-handover.md · articles-0211/HANDOVER.md).
     SUP ZERO pictures: owner answered 02/11 "เดี๋ยวพี่ส่งให้" = he sends the files (images-0211 told to stop searching Higgsfield) · multi-flavour ruling 02/11 = IMAGE_SPEC (fruit behind the model; one sample sheet first).
     Also: relay seo age-gate snippet question (still unanswered) word for word · close draft #1038 (card frame live in #1091; stage light parked) ·
     #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page v57 (read before publishing) · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.

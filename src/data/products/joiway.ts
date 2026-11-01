@@ -40,12 +40,14 @@ export const joiwayProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        // Image round img-1610 16/10: card-v2 = the Aloe Grape studio re-shoot (was JOIWAY's small main.png).
-        src: "/assets/products/joiway-f3/card-v2.webp",
+        // 02/11 (owner: "แก้รูปทั้งหมด ตัวเครื่องเหลี่ยม และรูป preview"): card-v3 + every flavour = the square-body F3 studio set
+        // rendered in Higgsfield 30/10 (20 flavours) + 10 green-label flavours made 02/11 from that set's Thai Tea frame; one shared
+        // matte per set, every device the same height (_incoming/img-0211/joiway). Was card-v2 (img-1610, narrow body).
+        src: "/assets/products/joiway-f3/card-v3.webp",
         alt: "JOIWAY F3 disposable, Aloe Grape unit, isolated product shot",
-        angle: "Front, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from JOIWAY's Aloe Grape photo",
+        angle: "Front, isolated — OKami24 Higgsfield studio render (IMAGE_SPEC §0 item 7), square F3 body as the real unit",
         transparentBackground: true,
-        sourceName: "OKami24 render (Higgsfield) from JOIWAY's photo (thai.myjoiway.com)",
+        sourceName: "OKami24 render (Higgsfield) from JOIWAY's label art (thai.myjoiway.com)",
         sourceUrl: "https://thai.myjoiway.com/web",
       },
     ],
@@ -53,42 +55,42 @@ export const joiwayProducts: Product[] = [
     // one was matched to JOIWAY's OWN per-flavour photo from the official Thai site API (30 flavours
     // total there), processed to the 1000×1000 spec — no more swatch-only entries on this product.
     flavorVariants: [
-      { id: "american-cookies", name: "American Cookies", swatchHex: "#a8703e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-american-cookies.webp", alt: "JOIWAY F3, American Cookies" } },
-      { id: "blueberry-ice", name: "Blueberry Ice", swatchHex: "#3f5fa8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-blueberry-ice.webp", alt: "JOIWAY F3, Blueberry Ice" } },
-      { id: "cola-ice", name: "Cola Ice", swatchHex: "#5e3a20", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-ice.webp", alt: "JOIWAY F3, Cola Ice" } },
-      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#8a6b2a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-lemon.webp", alt: "JOIWAY F3, Cola Lemon" } },
-      { id: "cool-mint-ice", name: "Cool Mint Ice", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cool-mint-ice.webp", alt: "JOIWAY F3, Cool Mint Ice" } },
+      { id: "american-cookies", name: "American Cookies", swatchHex: "#a8703e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-american-cookies-v3.webp", alt: "JOIWAY F3, American Cookies" } },
+      { id: "blueberry-ice", name: "Blueberry Ice", swatchHex: "#3f5fa8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-blueberry-ice-v3.webp", alt: "JOIWAY F3, Blueberry Ice" } },
+      { id: "cola-ice", name: "Cola Ice", swatchHex: "#5e3a20", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-ice-v3.webp", alt: "JOIWAY F3, Cola Ice" } },
+      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#8a6b2a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cola-lemon-v3.webp", alt: "JOIWAY F3, Cola Lemon" } },
+      { id: "cool-mint-ice", name: "Cool Mint Ice", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-cool-mint-ice-v3.webp", alt: "JOIWAY F3, Cool Mint Ice" } },
       // Owner 30/10 ("Funta Green ก็คือ Green"): this photo — JOIWAY's file "Funta Green" — was listed as "Funta Grape";
       // it is Max Pod-133-15 Funta Green. JOIWAY's grape is "Grape Ice" below.
-      { id: "funta-green", name: "Funta Green", swatchHex: "#6aa84f", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-funta-green.webp", alt: "JOIWAY F3, Funta Green" } },
-      { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-grape-ice.webp", alt: "JOIWAY F3, Grape Ice" } },
-      { id: "green-apple-ice", name: "Green Apple Ice", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-green-apple-ice.webp", alt: "JOIWAY F3, Green Apple Ice" } },
-      { id: "hokkaido-melon-ice", name: "Hokkaido Melon Ice", swatchHex: "#a8c53e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-melon-ice.webp", alt: "JOIWAY F3, Hokkaido Melon Ice" } },
-      { id: "lemon-tea", name: "Lemon Tea", swatchHex: "#c9a63e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-lemon-tea.webp", alt: "JOIWAY F3, Lemon Tea" } },
-      { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#e0a0b0", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-lychee-ice.webp", alt: "JOIWAY F3, Lychee Ice" } },
-      { id: "orange-soda", name: "Orange Soda", swatchHex: "#e07b39", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-orange-soda.webp", alt: "JOIWAY F3, Orange Soda" } },
-      { id: "passion-fruit", name: "Passion Fruit", swatchHex: "#e0a83e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-passion-fruit.webp", alt: "JOIWAY F3, Passion Fruit" } },
-      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-rainbow-candy.webp", alt: "JOIWAY F3, Rainbow Candy" } },
-      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#c23a4e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-strawberry-ice.webp", alt: "JOIWAY F3, Strawberry Ice" } },
-      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-ice.webp", alt: "JOIWAY F3, Watermelon Ice" } },
+      { id: "funta-green", name: "Funta Green", swatchHex: "#6aa84f", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-funta-green-v3.webp", alt: "JOIWAY F3, Funta Green" } },
+      { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-grape-ice-v3.webp", alt: "JOIWAY F3, Grape Ice" } },
+      { id: "green-apple-ice", name: "Green Apple Ice", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-green-apple-ice-v3.webp", alt: "JOIWAY F3, Green Apple Ice" } },
+      { id: "hokkaido-melon-ice", name: "Hokkaido Melon Ice", swatchHex: "#a8c53e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-melon-ice-v3.webp", alt: "JOIWAY F3, Hokkaido Melon Ice" } },
+      { id: "lemon-tea", name: "Lemon Tea", swatchHex: "#c9a63e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-lemon-tea-v3.webp", alt: "JOIWAY F3, Lemon Tea" } },
+      { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#e0a0b0", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-lychee-ice-v3.webp", alt: "JOIWAY F3, Lychee Ice" } },
+      { id: "orange-soda", name: "Orange Soda", swatchHex: "#e07b39", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-orange-soda-v3.webp", alt: "JOIWAY F3, Orange Soda" } },
+      { id: "passion-fruit", name: "Passion Fruit", swatchHex: "#e0a83e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-passion-fruit-v3.webp", alt: "JOIWAY F3, Passion Fruit" } },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-rainbow-candy-v3.webp", alt: "JOIWAY F3, Rainbow Candy" } },
+      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#c23a4e", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-strawberry-ice-v3.webp", alt: "JOIWAY F3, Strawberry Ice" } },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-ice-v3.webp", alt: "JOIWAY F3, Watermelon Ice" } },
       // 2026-09-06 — the 14 flavours JOIWAY lists that our catalog lacked, added under the owner
       // rule "show every flavour the maker offers, stock or not". Names/photos straight from the
       // official Thai site API (thai.myjoiway.com, action detail id 85); stock unknown until
       // Shipnity is wired.
-      { id: "aloe-grape", name: "Aloe Grape", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-aloe-grape-v2.webp", alt: "JOIWAY F3, Aloe Grape" } },
-      { id: "berries-party", name: "Berries Party", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-berries-party-v2.webp", alt: "JOIWAY F3, Berries Party" } },
-      { id: "blueberry-lime", name: "Blueberry Lime", swatchHex: "#4f7fb8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-blueberry-lime-v2.webp", alt: "JOIWAY F3, Blueberry Lime" } },
-      { id: "english-iced-tea", name: "English Iced Tea", swatchHex: "#b07a3a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-english-iced-tea-v2.webp", alt: "JOIWAY F3, English Iced Tea" } },
-      { id: "golden-energy", name: "Golden Energy", swatchHex: "#d4a017", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-golden-energy-v2.webp", alt: "JOIWAY F3, Golden Energy" } },
-      { id: "green-tangerine-mint", name: "Green Tangerine Mint", swatchHex: "#5fb46a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-green-tangerine-mint-v2.webp", alt: "JOIWAY F3, Green Tangerine Mint" } },
-      { id: "hokkaido-ice-cream", name: "Hokkaido Ice Cream", swatchHex: "#e8dcc8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-ice-cream-v2.webp", alt: "JOIWAY F3, Hokkaido Ice Cream" } },
-      { id: "hokkaido-peach", name: "Hokkaido Peach", swatchHex: "#f0a07a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-peach-v2.webp", alt: "JOIWAY F3, Hokkaido Peach" } },
-      { id: "japanese-sake", name: "Japanese Sake", swatchHex: "#d9d4c7", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-japanese-sake-v2.webp", alt: "JOIWAY F3, Japanese Sake" } },
-      { id: "thai-ovaltine", name: "Thai Ovaltine", swatchHex: "#8a5a3a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-ovaltine-v2.webp", alt: "JOIWAY F3, Thai Ovaltine" } },
-      { id: "thai-tea", name: "Thai Tea", swatchHex: "#d9822b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-tea-v2.webp", alt: "JOIWAY F3, Thai Tea" } },
-      { id: "virginia-tobacco", name: "Virginia Tobacco", swatchHex: "#a0703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-virginia-tobacco-v2.webp", alt: "JOIWAY F3, Virginia Tobacco" } },
-      { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v2.webp", alt: "JOIWAY F3, Vodak" } },
-      { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange-v2.webp", alt: "JOIWAY F3, Watermelon Orange" } },
+      { id: "aloe-grape", name: "Aloe Grape", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-aloe-grape-v3.webp", alt: "JOIWAY F3, Aloe Grape" } },
+      { id: "berries-party", name: "Berries Party", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-berries-party-v3.webp", alt: "JOIWAY F3, Berries Party" } },
+      { id: "blueberry-lime", name: "Blueberry Lime", swatchHex: "#4f7fb8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-blueberry-lime-v3.webp", alt: "JOIWAY F3, Blueberry Lime" } },
+      { id: "english-iced-tea", name: "English Iced Tea", swatchHex: "#b07a3a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-english-iced-tea-v3.webp", alt: "JOIWAY F3, English Iced Tea" } },
+      { id: "golden-energy", name: "Golden Energy", swatchHex: "#d4a017", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-golden-energy-v3.webp", alt: "JOIWAY F3, Golden Energy" } },
+      { id: "green-tangerine-mint", name: "Green Tangerine Mint", swatchHex: "#5fb46a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-green-tangerine-mint-v3.webp", alt: "JOIWAY F3, Green Tangerine Mint" } },
+      { id: "hokkaido-ice-cream", name: "Hokkaido Ice Cream", swatchHex: "#e8dcc8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-ice-cream-v3.webp", alt: "JOIWAY F3, Hokkaido Ice Cream" } },
+      { id: "hokkaido-peach", name: "Hokkaido Peach", swatchHex: "#f0a07a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-hokkaido-peach-v3.webp", alt: "JOIWAY F3, Hokkaido Peach" } },
+      { id: "japanese-sake", name: "Japanese Sake", swatchHex: "#d9d4c7", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-japanese-sake-v3.webp", alt: "JOIWAY F3, Japanese Sake" } },
+      { id: "thai-ovaltine", name: "Thai Ovaltine", swatchHex: "#8a5a3a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-ovaltine-v3.webp", alt: "JOIWAY F3, Thai Ovaltine" } },
+      { id: "thai-tea", name: "Thai Tea", swatchHex: "#d9822b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-tea-v3.webp", alt: "JOIWAY F3, Thai Tea" } },
+      { id: "virginia-tobacco", name: "Virginia Tobacco", swatchHex: "#a0703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-virginia-tobacco-v3.webp", alt: "JOIWAY F3, Virginia Tobacco" } },
+      { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v3.webp", alt: "JOIWAY F3, Vodak" } },
+      { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange-v3.webp", alt: "JOIWAY F3, Watermelon Orange" } },
     ],
     // Site-wide template round batch 4a (06/10): the G5 template — JOIWAY's own Thai posters, one per block (3840 px, down-sized only:
     // _incoming/sitewide-template/4/4a/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.

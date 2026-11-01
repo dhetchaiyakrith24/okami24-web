@@ -27,8 +27,10 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
       .filter((p) => p.categoryId === categoryId)
       .map((p) => ({ slug: p.slug, legacy: null, published: p })),
   ]);
+  const pods = new Set(items.filter((i) => (i.legacy ?? i.published)?.systemType === "pod-cartridge").map((i) => i.slug));
   const rank = (slug: string) => {
-    if (RAIL_LAST.has(slug)) return first.length + 1;
+    if (RAIL_LAST.has(slug)) return first.length + 2;
+    if (pods.has(slug)) return first.length + 1;
     const i = first.indexOf(slug);
     return i === -1 ? first.length : i;
   };
