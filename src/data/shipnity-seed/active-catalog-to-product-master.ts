@@ -499,21 +499,21 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
   // that must never read as a duplicate listing. See TAXONOMY_MATCHES["Coil-55"] for the evidence.
   "Coil-55": {
-    tagline: "หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL",
+    tagline: "หัวพอตเปล่าสำหรับ UWELL Caliburn G2 ความจุ 2mL เติมน้ำยาด้านบน ใช้คู่กับคอยล์ Caliburn G2 และ Caliburn G ได้",
     shortDescription: "หัวพอตเปล่ารุ่น Caliburn G2 (บรรจุ 2 ชิ้น) เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL แยกชิ้นจากคอยล์",
   },
   // Phase 2.8 correction — was worded as a coil ("คอยล์"); official VOOPOO evidence (matching
   // active variant colors) identifies this as the PnP X cartridge, not a coil. See
   // TAXONOMY_MATCHES["Coil-56"] for the evidence.
   "Coil-56": {
-    tagline: "หัวพอต Voopoo PnP-X",
+    tagline: "หัวพอตเปล่า PnP X จาก VOOPOO ความจุ 5mL เติมน้ำยาด้านข้าง ใช้คู่กับคอยล์ PnP X",
     shortDescription: "หัวพอตรุ่น PnP-X จากแบรนด์ VOOPOO",
   },
   // Phase 2.8 correction — was worded as a bare coil head ("หัวคอยล์เปล่า"); official UWELL
   // evidence describes the Caliburn X as a 3ml refillable pod. See
   // TAXONOMY_MATCHES["Coil-74"] for the evidence.
   "Coil-74": {
-    tagline: "หัวพอตเปล่า Caliburn X จากแบรนด์ UWELL",
+    tagline: "หัวพอตเปล่าสำหรับ UWELL Caliburn X ความจุ 3mL ใช้คู่กับคอยล์ Caliburn G และ G2 ได้",
     shortDescription: "หัวพอตเปล่ารุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
   // Phase 2.8 correction — was worded as a coil; the Shipnity name itself says "Pod", and
@@ -539,12 +539,12 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Vinci เป็นผลิตภัณฑ์ในกลุ่ม VINCI จากแบรนด์ VOOPOO",
   },
   "Coil-21": {
-    tagline: "หัวพอต Argus Pod จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต Argus Pod จาก VOOPOO มีคอยล์ในตัว 0.7 หรือ 1.2 โอห์ม สำหรับแนวการสูบ MTL",
     shortDescription: "คอยล์รุ่น Argus Pod เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
   },
   "Coil-72": {
-    tagline: "หัวพอต Vmate Infinity Edition จากแบรนด์ VOOPOO",
-    shortDescription: "หัวพอตรุ่น Vmate Infinity Edition จากแบรนด์ VOOPOO สำหรับเครื่อง VMATE คอยล์ในตัว มี 4 แบบ เติมข้าง 0.7 กับ 1.2 โอห์ม และเติมบน (Top Fill) 0.4 กับ 0.7 โอห์ม",
+    tagline: "หัวพอต VMATE จาก VOOPOO ความจุ 3mL มีคอยล์ในตัว เลือกได้ทั้งแบบเติมน้ำยาด้านข้างและด้านบน",
+    shortDescription: "หัวพอต VMATE จาก VOOPOO ความจุ 3mL มีคอยล์ในตัว แบบ V2 เติมด้านข้าง 0.7 กับ 1.2 โอห์ม และแบบ Top Fill เติมด้านบน 0.4 0.7 กับ 1.0 โอห์ม",
   },
   "Coil-83": {
     tagline: "หัวพอตเปล่า Argus P1 จากแบรนด์ VOOPOO",
@@ -554,8 +554,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // (exact 0.4Ω/0.6Ω/0.9Ω/1.2Ω match + retail box reading "INTEGRATED COIL CARTRIDGE") identifies
   // this as the pod, not a bare coil. See TAXONOMY_MATCHES["Coil-94"] for the evidence.
   "Coil-94": {
-    tagline: "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL",
-    shortDescription: "หัวพอตรุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "หัวพอต GPP จาก UWELL มีคอยล์ในตัว ใช้ได้กับเครื่องซีรีส์ Caliburn G5 G4 และ G3",
+    shortDescription: "หัวพอต GPP จาก UWELL มีคอยล์ในตัว ใช้ได้กับเครื่องซีรีส์ Caliburn G5 G4 และ G3 มี 0.4 0.6 0.9 และ 1.2 โอห์ม",
   },
   // Phase 3.5 — second batch. No familyId on any of these (TPP/ITO-X/Jelly Nano/Jellybox
   // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
@@ -708,8 +708,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C มีให้เลือก 19 สี",
   },
   "VMATE-PRO-2": {
-    tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
-    shortDescription: "ตัวเครื่อง VOOPOO Vmate Pro 2 ร้านมีให้เลือก 4 สี",
+    tagline: "พอตซิสเต็มจาก VOOPOO แบตเตอรี่ 1500mAh ในกล่องมีหัวพอต 0.4 และ 0.7 โอห์ม ใช้ได้ทั้งแนวการสูบ MTL และ RDL",
+    shortDescription: "พอตซิสเต็ม VOOPOO Vmate Pro 2 แบตเตอรี่ 1500mAh ปรับได้ 5–30 วัตต์ ใช้หัวพอต VMATE Top Fill 3mL มีให้เลือก 7 สี",
   },
   "Eliquid-64": {
     // maxlist (21/10): warehouse facts only — the Max name "Double Mint Salt Nic".
@@ -1596,6 +1596,36 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Details 02/11 (real browser): VOOPOO's own Vmate Pro 2 page, "Specification" + "Package List" read verbatim.
+  "VMATE-PRO-2": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "1500mAh ในตัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "wattage", label: "กำลังไฟ", value: "5–30W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "modes", label: "โหมดการทำงาน", value: "ECO กับ POWER กดปุ่มเดียวสลับได้", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "resistance-range", label: "ช่วงโอห์ม", value: "0.3–3.0Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "voltage", label: "แรงดันไฟ", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C 5V/2A", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "pods", label: "หัวพอตที่ใช้ได้", value: "VMATE Top Fill 3mL (0.4Ω · 0.7Ω)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "size", label: "ขนาด", value: "103 × 28.5 × 15.5 mm", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "materials", label: "วัสดุ", value: "ซิงค์อัลลอย (ตัวเครื่อง) + PC (หัวพอต)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+      { key: "in-the-box", label: "ในกล่อง", value: "ตัวเครื่อง · หัวพอต Top Fill 0.4Ω และ 0.7Ω · ใบแนะนำหัวพอตที่ใช้ร่วมกันได้ · สาย USB-C · สายคล้องคอ · คู่มือ", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/vmate-pro-2"],
+  },
+  // Details 02/11 (real browser): the warehouse's "Vmate Infinity Edition" pods are VOOPOO's two VMATE pods — Cartridge V2 (side fill,
+  // "3ml Capacity", "0.7ohm Or 1.2ohm", "For Vmate Infinity Edition / Vmate E / V.THRU Pro etc.") and Top Fill ("Capacity : 3 mL",
+  // "0.4Ω / 0.7Ω / 1.0Ω", "Top Filling", PCTG; "0.4 Ω requires at least 30 W output"); the Top Fill pair ships with the Vmate Pro 2.
+  "Coil-72": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "3mL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-top-fill-cartridge" },
+      { key: "coil", label: "คอยล์", value: "คอยล์ในตัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-cartridge-v2" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "V2 เติมด้านข้าง 0.7Ω · 1.2Ω / Top Fill เติมด้านบน 0.4Ω · 0.7Ω · 1.0Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-top-fill-cartridge" },
+      { key: "pod-0-4-device", label: "หัว 0.4Ω", value: "ต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-top-fill-cartridge" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "V2 เติมด้านข้าง: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill เติมด้านบน: Vmate Pro 2", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-cartridge-v2" },
+      { key: "materials", label: "วัสดุ", value: "Top Fill: PCTG", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vmate-top-fill-cartridge" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/vmate-cartridge-v2", "https://shop.voopoo.com/products/vmate-top-fill-cartridge", "https://shop.voopoo.com/products/vmate-pro-2"],
+  },
   // Image sweep (19/10): infy.my/infy-device — "Battery Capacity 400mAh", "Type-C charging port", a "multi-colored LED system" that shows
   // charging status, vaping activity and when a new cartridge is inserted.
   "INFY-POD": {
@@ -1787,6 +1817,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2.5mL", sourceStatus: "verified" },
       { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตบรรจุสำเร็จ คอยล์ในตัว (ระบบปิด ใช้หมดแล้วเปลี่ยนหัวใหม่)", sourceStatus: "verified" },
+      // Details 02/11: infy.my's 2.5ML Cartridge page — "designed specifically for the Cube Box and Closed Pod System", "insert it in
+      // INFY Cube Box or INFY Device".
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "INFY Device · INFY Cube Box", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
     ],
     // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
     // upgrade from the earlier 2ml cartridge. The prefilled/closed-system fact comes from a
@@ -1819,14 +1852,42 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.5Ω, RDL)", value: "20-28W", sourceStatus: "verified" }],
     sourceUrls: ["https://www.fogbuddies.com/products/rincoe-jellybox-nano-coil"],
   },
+  // Details 02/11 (real browser): VOOPOO's PnP X Cartridge page — "5ml capacity and easy side filling system", "PnP X Pod DTL Version
+  // is compatible with all PnP X Series Coil and PnP X Pod MTL Version is only fit for PnP X 0.3Ω/0.6Ω Coil", "Fit For … Drag S2/X2 Kit",
+  // "PCTG+Stainless Steel", "2pcs each pack", "Empty Pod Cartridge". Which version (DTL/MTL) the warehouse holds is not on the Max record.
   "Coil-56": {
-    specifications: [{ key: "capacity", label: "ความจุ", value: "5mL", sourceStatus: "verified" }],
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "5mL", sourceStatus: "verified" },
+      { key: "fill", label: "การเติมน้ำยา", value: "เติมด้านข้าง", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ PnP X", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+      { key: "coil-models", label: "รุ่นคอยล์", value: "DTL: PnP X ทุกค่า · MTL: PnP X 0.3Ω / 0.6Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG S2 / DRAG X2", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "2 หัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+      { key: "materials", label: "วัสดุ", value: "PCTG + สแตนเลส", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge" },
+    ],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-cartridge"],
   },
+  // Details 02/11 (real browser): VOOPOO's Argus Pod Cartridge page — "For Argus Pod Kit, Argus P1 Kit, Argus G Kit and Argus Z Kit etc.",
+  // "MTL users", "Integrated 0.7ohm Or 1.2ohm Coil", "Side Filling Design", "Capacity: 2ml", "Material: PCTG", "3 Pieces in each pack".
+  "Coil-21": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "coil", label: "คอยล์", value: "คอยล์ในตัว 0.7Ω หรือ 1.2Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "fill", label: "การเติมน้ำยา", value: "เติมด้านข้าง", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod / Argus P1 / Argus G / Argus Z", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "3 หัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "materials", label: "วัสดุ", value: "PCTG", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/argus-pod-cartridge"],
+  },
+  // Details 02/11 (real browser, https://www.myuwell.com/caliburn/caliburn-x): "COMPATIBLE WITH G SERIES COILS" · coil list "0.8 Ω CALIBURN G Coil (Pre-installed) ·
+  // 1.2 Ω CALIBURN G2 Coil (Spare) · 1.0 Ω CALIBURN G Coil (Sold Separately)" — the pod of the Caliburn X kit.
   "Coil-74": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "3mL (เติมน้ำยาได้)", sourceStatus: "verified" },
       { key: "coil-replacement", label: "คอยล์", value: "เปลี่ยนคอยล์แยกได้", sourceStatus: "verified" },
+      { key: "coil-models", label: "รุ่นคอยล์", value: "Caliburn G 0.8Ω · G 1.0Ω · G2 1.2Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-x" },
+      { key: "kit", label: "เป็นหัวพอตของ", value: "ชุด Caliburn X", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-x" },
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-x"],
   },
@@ -1874,6 +1935,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       // The old flat "2mL" came from a shop page (giantvapes.com) and read as if it contradicted the G5's 3mL.
       { key: "resistance-range", label: "ค่าโอห์ม", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (mesh)", sourceStatus: "verified" },
       { key: "capacity-by-type", label: "ความจุ", value: "2.0–3.0 mL แล้วแต่ชนิดหัว GPP (เติมข้าง/เติมบน · RDL/MTL)", sourceStatus: "verified" },
+      // Details 02/11 (real browser): "CALIBURN GPP cartridges which are fully compatible with the CALIBURN G5·G4·G3 series devices".
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "เครื่องซีรีส์ Caliburn G5 · G4 · G3", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+      { key: "coil", label: "คอยล์", value: "คอยล์ในตัว", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
     ],
     sourceUrls: ["https://www.myuwell.com/g-pod-platform"],
   },
@@ -1887,6 +1951,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Coil-55": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      // Details 02/11 (real browser, same page): "TOP FILLING" · "Except for the pre-installed meshed-H 1.2 Ω coil, Caliburn G2 is
+      // compatible with 1.0 Ω coil and 0.8 Ω coil of Caliburn G".
+      { key: "fill", label: "การเติมน้ำยา", value: "เติมด้านบน", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      { key: "coil-models", label: "รุ่นคอยล์", value: "Caliburn G2 1.2Ω · Caliburn G 0.8Ω · G 1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      { key: "kit", label: "เป็นหัวพอตของ", value: "ชุด Caliburn G2", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2"],
   },
@@ -1902,6 +1971,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
       { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ SPL10", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Feelin Mini", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
     ],
     sourceUrls: ["https://nevoks.com/products/nevoks-feelin-mini-pod-kit"],
   },
@@ -2759,6 +2829,16 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Details 02/11: VOOPOO's Vmate Pro 2 page lists 7 colours; the warehouse (Pod-176) carries 4.
+  "VMATE-PRO-2": [
+    { code: "glacier-silver", label: "Glacier Silver", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+    { code: "fresh-green", label: "Fresh Green", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+    { code: "lavender", label: "Lavender", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+  ],
+  // Details 02/11: VOOPOO sells the VMATE Top Fill pod in 0.4 / 0.7 / 1.0Ω; the warehouse (Coil-72) has no 1.0Ω.
+  "Coil-72": [
+    { code: "1-0ω-top-fill", label: "1.0 Ω Top Fill เติมบน", sourceUrl: "https://shop.voopoo.com/products/vmate-top-fill-cartridge" },
+  ],
   // Owner brief 26/10: the SUP ZERO line-up poster and zeedcupvp.com list 16 flavours; Apple Aloe Vera (3%) is not in Max (Disposable-45).
   "SUP-ZERO-22K": [
     { code: "apple-aloe-vera", label: "Apple Aloe Vera", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },

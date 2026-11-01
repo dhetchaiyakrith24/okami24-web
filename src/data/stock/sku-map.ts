@@ -707,6 +707,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-72-2": "Coil-72-2",
     "Coil-72-3": "Coil-72-3",
     "Coil-72-4": "Coil-72-4",
+    // Details 02/11: VOOPOO's Top Fill 1.0 ohm (maker page) — no warehouse SKU.
+    "coil-72-verified-1-0ω-top-fill": null,
   } },
   "coil-74": { parent: null, options: {
     "Coil-74-1": null,
@@ -1006,6 +1008,10 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-176-2": "Pod-176-2",
     "Pod-176-3": "Pod-176-3",
     "Pod-176-4": "Pod-176-4",
+    // Details 02/11: VOOPOO's 3 other colours (maker page) — no warehouse SKU.
+    "vmate-pro-2-verified-glacier-silver": null,
+    "vmate-pro-2-verified-fresh-green": null,
+    "vmate-pro-2-verified-lavender": null,
   } },
   // Image sweep (19/10): Punta Ice — Max eliquid-78, 7 flavours.
   "punta-ice": { parent: "eliquid-78", options: {
