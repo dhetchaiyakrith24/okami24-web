@@ -684,6 +684,9 @@ export const unbrandedProducts: Product[] = [
     tagline: "Muro freebase e-liquid.",
     shortDescription: "Muro freebase e-liquid in 6 flavors.",
     isFlagship: false,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     attributes: {
       capacityMl: 60,
       liquidBase: "freebase",
