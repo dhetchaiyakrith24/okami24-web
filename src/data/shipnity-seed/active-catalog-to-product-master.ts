@@ -704,7 +704,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // Image sweep (19/10): numbers = INFY's own device page (infy.my/infy-device: 400mAh, Type-C); colours = Max's 14 + the maker's 5
   // the warehouse does not carry (VERIFIED_ADDITIONAL_VARIANTS).
   "INFY-POD": {
-    tagline: "ตัวเครื่อง INFY POD",
+    tagline: "ตัวเครื่อง INFY แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C ใช้คู่กับหัวพอตบรรจุสำเร็จ INFY 2.5mL",
     shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จผ่าน USB-C มีให้เลือก 19 สี",
   },
   "VMATE-PRO-2": {
@@ -775,7 +775,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i",
+    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i มีจอสัมผัส พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับก้าน TEREA เท่านั้น",
     shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
@@ -1633,6 +1633,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "indicator", label: "ไฟสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      // Details 02/11: the device page's box line "the stylish INFY device, a Type-C charging cable... and a user manual"; the 2.5ML
+      // Cartridge page says to insert it in "INFY Cube Box or INFY Device".
+      { key: "in-the-box", label: "ในกล่อง", value: "ตัวเครื่อง · สาย USB-C · คู่มือ", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "pods", label: "หัวพอตที่ใช้ได้", value: "หัวพอต INFY 2.5mL", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
   },
@@ -2066,6 +2070,12 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       { key: "battery-holder", label: "แบตเตอรี่ตัวสูบ (Holder)", value: "300mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      // Details 02/11 (real browser, same page): "300 mAh Holder / 2700 mAh Charger battery capacity" · "Up to 3 consecutive uses (holder)*/20
+      // uses (charger)" · "*Only available in Performance Mode when pause is not activated" · "Advanced features: Touch Screen · Pause Mode ·
+      // FlexBattery · FlexPuff" · "Enjoy up to 4 extra puffs".
+      { key: "sticks-per-charge", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "กล่องชาร์จสูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "consecutive", label: "ตัวสูบใช้ติดกัน", value: "สูงสุด 3 ก้าน (โหมด Performance ที่ไม่ได้เปิด Pause)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "features", label: "ฟีเจอร์", value: "จอสัมผัส · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
   },
