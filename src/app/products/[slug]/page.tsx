@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
-import { categories, getCategory } from "@/data/categories";
+import { categories, getCategory, kindCategoryId } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
@@ -153,7 +153,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // catalog price on the title line for the pages not on the 2026-10-05 hold list
     // (productTitleWithPriceTh); og:title keeps its own price rule below.
     const legacyPrice = getLegacyApprovedPrice(product.slug);
-    const baseTitle = PRODUCT_TITLE_HEAD_TH[product.slug] ?? productTitleTh(product.displayName, product.categoryId);
+    const baseTitle = PRODUCT_TITLE_HEAD_TH[product.slug] ?? productTitleTh(product.displayName, kindCategoryId(product));
     const title = productTitleWithPriceTh(product.slug, baseTitle, legacyPrice);
     // SEO round ก (owner เคาะ 2026-09-21): a head-only override where the table gave one
     // (search-head-copy.ts), then the B2 price line — price from the same approval the page
@@ -175,7 +175,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const publishedProduct = getPublishedProduct(slug);
   if (publishedProduct) {
     // Same title template as the legacy branch; the tagline (the Thai source line) is the meta.
-    const baseTitle = PRODUCT_TITLE_HEAD_TH[publishedProduct.slug] ?? productTitleTh(publishedProduct.displayName, publishedProduct.categoryId);
+    const baseTitle = PRODUCT_TITLE_HEAD_TH[publishedProduct.slug] ?? productTitleTh(publishedProduct.displayName, kindCategoryId(publishedProduct));
     const title = productTitleWithPriceTh(publishedProduct.slug, baseTitle, publishedProduct.sellingPrice);
     // Same head-only override + B2 price line as the legacy branch above.
     const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
