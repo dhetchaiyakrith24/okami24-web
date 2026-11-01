@@ -26,7 +26,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-1": { tagline: "Vinci coil by VOOPOO" },
   "coil-38": { tagline: "VOOPOO TPP coil in 0.2 and 0.3Ω, for the TPP Pod" },
   "coil-53": { tagline: "UWELL Caliburn G-series coil, 0.8 / 1.0 / 1.2Ω" },
-  "coil-92": { tagline: "VOOPOO PnP X coil from 0.15 to 1.0Ω, for DRAG X2, S2, 4, X3 and S3" },
+  "coil-92": { tagline: "VOOPOO PnP X coil from 0.15 to 1.0Ω, for the DRAG X2, S2, X3, S3 and DRAG 4" },
   "coil-55": { tagline: "Empty 2mL top-fill pod for the UWELL Caliburn G2 that takes Caliburn G2 and Caliburn G coils" },
   "coil-56": { tagline: "Empty 5mL VOOPOO PnP X pod with side filling, for PnP X coils" },
   "coil-68": { tagline: "Empty 3.5mL top-fill VOOPOO ITO-X pod for ITO coils" },

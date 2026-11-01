@@ -523,7 +523,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
-    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 4 X3 และ S3",
+    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และ DRAG 4",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
   // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
@@ -561,7 +561,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
   // "เป็นผลิตภัณฑ์ในกลุ่ม X" clause — same convention as Coil-56/87/92 above.
   "Coil-38": {
-    tagline: "คอยล์ TPP จาก VOOPOO มี 0.2 และ 0.3 โอห์ม ใช้กับหัวพอต TPP Pod",
+    tagline: "คอยล์ TPP จาก VOOPOO มีให้เลือก 0.2 และ 0.3 โอห์ม ใช้คู่กับหัวพอต TPP Pod",
     shortDescription: "คอยล์รุ่น TPP จากแบรนด์ VOOPOO",
   },
   "Coil-63": {
@@ -573,7 +573,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตรุ่น ITO-X จากแบรนด์ VOOPOO",
   },
   "Coil-70": {
-    tagline: "คอยล์ dotAIO V2 จาก DOTMOD 0.7 โอห์ม คอยล์ mesh เดี่ยว กล่องละ 5 หัว",
+    tagline: "คอยล์ dotAIO V2 จาก DOTMOD ค่า 0.7 โอห์ม แบบ mesh เดี่ยว กล่องละ 5 หัว",
     shortDescription: "คอยล์รุ่น Dotmod Aio V2 จากแบรนด์ DOTMOD",
   },
   "Coil-89": {
@@ -775,7 +775,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i มีจอสัมผัส พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับก้าน TEREA เท่านั้น",
+    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i มีจอทัช พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับก้าน TEREA เท่านั้น",
     shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
@@ -1632,7 +1632,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
-      { key: "indicator", label: "ไฟสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "indicator", label: "ไฟบอกสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       // Details 02/11: the device page's box line "the stylish INFY device, a Type-C charging cable... and a user manual"; the 2.5ML
       // Cartridge page says to insert it in "INFY Cube Box or INFY Device".
       { key: "in-the-box", label: "ในกล่อง", value: "ตัวเครื่อง · สาย USB-C · คู่มือ", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
@@ -2060,7 +2060,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "battery", label: "แบตเตอรี่", value: "1728mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
       { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้านติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
       { key: "design", label: "ตัวเครื่อง", value: "ชิ้นเดียว พกใส่กระเป๋าได้ ผิวอะลูมิเนียม", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
-      { key: "features", label: "ฟีเจอร์", value: "Autostart / Autostop · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้งเมื่อก้านยังไม่หมด)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "features", label: "ความสามารถ", value: "Autostart / Autostop · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้งเมื่อก้านยังไม่หมด)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
       { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html", "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html"],
@@ -2073,9 +2073,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       // Details 02/11 (real browser, same page): "300 mAh Holder / 2700 mAh Charger battery capacity" · "Up to 3 consecutive uses (holder)*/20
       // uses (charger)" · "*Only available in Performance Mode when pause is not activated" · "Advanced features: Touch Screen · Pause Mode ·
       // FlexBattery · FlexPuff" · "Enjoy up to 4 extra puffs".
-      { key: "sticks-per-charge", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "กล่องชาร์จสูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
-      { key: "consecutive", label: "ตัวสูบใช้ติดกัน", value: "สูงสุด 3 ก้าน (โหมด Performance ที่ไม่ได้เปิด Pause)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
-      { key: "features", label: "ฟีเจอร์", value: "จอสัมผัส · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "consecutive", label: "ตัวสูบใช้ได้ติดกัน", value: "สูงสุด 3 ก้าน เฉพาะโหมด Performance ที่ไม่ได้เปิด Pause Mode", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "features", label: "ความสามารถ", value: "จอทัช · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
   },
