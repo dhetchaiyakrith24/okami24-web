@@ -445,3 +445,61 @@ Next reads: 06/11 · 13/11 (+ GSC 01/11 · 15/11 as planned). What changed on th
 - 30/10 later (PR #1056, live): /brands/infy + /brands/wotofo title/meta name every kind (brand level); metas nexpod-15k · infy-pod · pod-169 use the locked words.
   Next PR (seo-infy-text-3010): INFY POD moves pod-systems → switch-pods (closed device for prefilled INFY cartridges, infy.my) — /products/pod-systems lists one model fewer
   (its ItemList too), /products/switch-pods one more; read "infy pod" on 15/11 with that in mind.
+
+## READ 01/11 (child chat gsc-0111 · owner's Chrome, read-only) — rows 9–21, 23 · window 18/10–31/10 (14 days; GSC data ends 31/10)
+
+Method = READ 22/10 (Performance URL filters `page=!<url>` + breakdown by query, `query=!<exact>` / `*<contains>` + breakdown by page),
+read 01/11 evening. "anonymised" = GSC shows the page's totals but hides every query (too rare to list).
+**Read every row against the site-wide drop below** — from 27/10 almost all non-brand impressions are gone, so a row that
+"did not appear" says little about its own page this time.
+
+| # | query | result 18–31/10 (clicks/impr. · pos) | verdict |
+|---|---|---|---|
+| 9 | pod (exact) | pod-systems 8/65 · 13.6 · first-pod guide 0/5 · 35.6 · open-system-vs-disposable 0/4 · 33.5 · what-is 0/2 · 80. 21–25/10 5/42 · 19.7 → 27–31/10 0/0 | URL right (pod-systems), position not ≤ 6; zero since 27/10 (drop) |
+| 9 | pod system (exact) | pod-systems 5/29 · 4.8 (only page) | URL right, pos ≤ 6 |
+| 10 | pod system คือ | no row · what-is page 1/28 · 25 (caliburn g5 lite 1/2 · 2.0 · pod 0/2 · 80 · pod system pantip 0/1 · 41 · พอด · pod program) | not yet |
+| 11 | พอตไหม้ | no row · fixing-a-burnt-pod 0/11 · 5.4, queries anonymised | page shown near pos 5 for hidden queries |
+| 12 | หัวพอตรั่ว · พอตรั่ว | no row · fixing-a-leaking-pod 0/0 | not yet |
+| 13 | พอตดูดไม่ขึ้น · ไฟกะพริบ | no own row · guide 0/1 · 5.0 · `*ดูดไม่ขึ้น` = "esko bar switch 20k ดูดไม่ขึ้น" 0/1 · 19 | not yet |
+| 14 | ชาร์จพอต… | no row · battery-care-and-charging 1/41 · 6.8, queries anonymised | page shown near pos 7, queries hidden |
+| 15 | หัวพอตใช้ได้กี่วัน | no row · coil-and-pod-maintenance 0/6 · 7.0 anonymised · `*กี่วัน` = 0 site-wide | not yet |
+| 16 | พอตใช้แล้วทิ้ง ใช้ได้กี่วัน | no row · how-long-a-disposable-lasts 1/14 · 13.0 (น่าเชื่อถือมั้ย 0/1 · 9 · disposable 0/1 · 74) | not yet |
+| 17 | pod system ตัวไหนดี · ยี่ห้อไหนดี · แนะนำ · pantip | first-pod guide 1/16 · 28.8: pod 0/5 · 35.6 · pod system pantip 0/1 · 52 · pod system ยี่ห้อไหนดี 0/1 · 87 (`*ไหนดี` site-wide = this row only) | no move (start 62–87) |
+| 18 | salt nic กับ freebase | salt-nic-vs-freebase 0/0 · `*freebase` 0 · `*salt nic` 0/1 · 77 on /products/eliquid-1 | not yet; no sharing with /e-liquid seen |
+| 19 | ตั้งกี่วัตต์ดี · ค่าโอห์ม | no row · choosing-wattage-and-airflow 0/2 · 5.5 anonymised | none expected (as planned) |
+| 20 | พอตขึ้นเครื่องบินได้ไหม | no row · taking-a-pod-on-a-plane 0/21 · 6.0 anonymised · `*เครื่องบิน` = 0 | page shown near pos 6 for hidden queries |
+| 21 | เลิกบุหรี่ด้วยพอต | no row · quit-smoking-with-a-pod 0/1 · 9 | judge 10/12 (as planned) |
+| 23 | คอยล์พอต | no row · coils-accessories 0/8 · 49.4 anonymised · `*คอยล์` = "คอยล์บุหรี่ไฟฟ้า voopoo" 0/2 · 56 | not yet |
+
+Next: the same rows on 15/11 — only meaningful if site visibility has come back by then (below).
+
+### Site-wide drop from 27/10 (read 01/11)
+
+Daily site totals (clicks/impressions · pos): 20/10 26/247 · 10.1 · 21/10 18/245 · 9.8 · 22/10 25/297 · 14.3 · 23/10 20/254 · 18.2 ·
+24/10 28/191 · 8.3 · 25/10 30/236 · 12.6 · 26/10 22/179 · 9.3 · **27/10 15/28 · 3.5** · 28/10 3/12 · 4.2 · 29/10 11/26 · 5.2 · 30/10 10/17 · 4.2 · 31/10 4/12 · 6.7.
+27–31/10 vs 21–25/10: clicks 121 → 43 · impressions 1.22K → 95 · pos 12.9 → 4.6.
+- Device: mobile 96/922 · 7.4 → 20/58 · 5.9 · desktop 24/292 · 30.4 → 22/35 · 2.7 · tablet 1/9 → 1/2. Clicks lost = mobile.
+- Country: Thailand 121/1,197 → 43/94 (the rest is a few impressions). Search appearance: no rows either window.
+- Pages: `/` unchanged (26/40 → 24/40 · 2.6) — brand queries (okami24 · okami pod · okami vape) and "… ราคา" model queries
+  (voopoo drag 6 ราคา 5/10 · 1.8) still shown at pos 1–5. Gone: queries where the site ranked 2–20 — joiway 0/43 · 8.5 → 0 ·
+  pod 5/42 · 19.7 → 0 · voopoo drag 6 4/22 · 5.7 → 0 · relx lumi 18k 0/21 · 2.6 → 0 · pod system 3/17 · 5 → 0 · evobar 22k · joiway f4.
+  drag-6 50 → 11 impr. · pod-systems 109 → 33 · caliburn-g5 22 → 5 · disposables 30 → 19.
+- Generative-AI report (beta) falls on the same day (≈ 25/day → ≈ 9/day; read off its chart, 376 in 13–31/10) — the
+  impressions did not move to another report.
+- Not a fault on our side that GSC can see: Pages 173 indexed / 26 not (noindex 15 · redirect 5 · alternate canonical 1 ·
+  discovered 3 · crawled 2 · 5xx 0 = passed) · Manual actions: none · Security issues: none · crawl stats host status =
+  robots.txt and DNS OK, server connectivity "recent rate acceptable, high in the past" (failed-crawl chart ≈ 0 except two
+  tiny bumps ≈ 06/10 and ≈ 24/10) · URL Inspection /products/relx-lumi-18k = on Google, indexed, last crawl 31/10 08:54.
+- Live (curl, Googlebot-smartphone UA, 01/11): robots.txt `Allow: /` (Disallow /preview/ /api/) + sitemap (179 URLs, 200) ·
+  `/`, /products/pod-systems, /products/drag-6, /products/relx-lumi-18k, /brands/joiway = 200, own canonical, no robots meta,
+  no X-Robots-Tag, no redirect.
+- Merges 25–28/10 touching robots / sitemap / proxy / next.config: none · layout.tsx (#851 age-gate wording) · seo.ts (#915 logo
+  URL in Organization JSON-LD) · product page template (#927 brand-chip link, live 27/10 ~20:00) · heads of a few pages (#936
+  #940 #943 #944). Google crawled ≈ 30 HTML pages a day (crawl stats 07/09–30/10: 13.3K requests, HTML 11%), so no change
+  of ours can have been seen on every page on the same day — a one-day site-wide cut points at Google's side.
+- Google Search Status Dashboard: no ranking update after the September 2026 spam update (24/09, ~13 days).
+- Real result page: a single check of "relx lumi 18k" on 01/11 hit Google's CAPTCHA (the 30/10 burst may still count) → stopped,
+  nothing read. Next try = the weekly read 06/11 (method above).
+Verdict: [ตรวจแล้ว] no indexing / penalty / robots / canonical fault, and no deploy explains a one-day site-wide cut ·
+[เชื่อว่า] Google stopped showing the shop for generic and model queries from 27/10 (its side: a filter or reclassification of the
+site, hitting mobile hardest), brand + "ราคา" queries kept. Fix proposal + next checks = Friday's report 01/11.
