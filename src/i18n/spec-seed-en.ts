@@ -53,13 +53,14 @@ const LABELS_EN: Record<string, string> = {
   "ชนิดหัวพอต": "Pod type",
   "การใช้งาน": "Use",
   "กำลังไฟที่แนะนำ": "Recommended wattage",
-  "กำลังไฟ": "Output power",
+  "กำลังไฟ": "Output",
   "ช่วงโอห์ม": "Resistance range",
   "แรงดันไฟ": "Output voltage",
   "หัวพอตที่ใช้ได้": "Compatible pods",
   "ในกล่อง": "In the box",
   "การเติมน้ำยา": "Filling",
-  "กำลังไฟขั้นต่ำ": "Minimum wattage",
+  "หัว 0.4Ω": "0.4Ω pod",
+  "เป็นหัวพอตของ": "Pod of",
 };
 
 const VALUES_EN: Record<string, string> = {
@@ -123,7 +124,9 @@ const VALUES_EN: Record<string, string> = {
   "ตัวเครื่อง · หัวพอต Top Fill 0.4Ω และ 0.7Ω · ใบแนะนำหัวพอตที่ใช้ร่วมกันได้ · สาย USB-C · สายคล้องคอ · คู่มือ": "Device · Top Fill pods 0.4Ω and 0.7Ω · pod compatibility guide · USB-C cable · lanyard · user manual",
   "คอยล์ในตัว": "Built-in coil",
   "V2 เติมด้านข้าง 0.7Ω · 1.2Ω / Top Fill เติมด้านบน 0.4Ω · 0.7Ω · 1.0Ω": "V2 side fill 0.7Ω · 1.2Ω / Top Fill 0.4Ω · 0.7Ω · 1.0Ω",
-  "ตั้งแต่ 30W ขึ้นไป": "30W or more",
+  "ต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30W": "Needs a device with at least 30W output",
+  "ชุด Caliburn X": "The Caliburn X kit",
+  "ชุด Caliburn G2": "The Caliburn G2 kit",
   "V2 เติมด้านข้าง: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill เติมด้านบน: Vmate Pro 2": "V2 side fill: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill: Vmate Pro 2",
   "เครื่องซีรีส์ Caliburn G5 · G4 · G3": "Caliburn G5 · G4 · G3 series devices",
   "เติมด้านข้าง": "Side fill",
