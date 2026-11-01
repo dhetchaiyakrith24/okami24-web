@@ -379,11 +379,14 @@ export function CatalogBrowser({
             <label htmlFor="catalog-sort" className="label-mono text-xs text-foreground-dim max-lg:sr-only">
               {dict.catalog.sortLabel}
             </label>
+            {/* lg:min-h-9 = the members' "สินค้าพร้อมส่ง" button's height: that button appears only after load (useSignedIn),
+                and the bar used to grow 3 px then — the whole grid below jumped, CLS 0.12 for a signed-in visitor at 1440
+                (measured 01/11). The bar is now that tall from the first paint. */}
             <select
               id="catalog-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortMode)}
-              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11"
+              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11 lg:min-h-9"
             >
               <option value="featured">{dict.catalog.sortFeatured}</option>
               <option value="alphabetical">{dict.catalog.sortAlphabetical}</option>
