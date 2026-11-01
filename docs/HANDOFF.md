@@ -227,6 +227,11 @@ thinking and moves sales (SEO, images), **medium** for docs, checks, looking for
 routines follow the same table ("แชทลูกหลังจากนี้บังคับใช้ Opus 5.5 · งานที่ต้องใช้ความคิดและส่งผลกับยอดธุรกิจ ใช้ High เช่น SEO งานรูปภาพ ·
 งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"). Routine model/effort is set in the app, not in its SKILL.md.
 
+**Main chat moves by compact, not hand-off (owner 02/11, quoted exactly):** "แชทหลักนี้ Friday ไม่ต้อง Hand ใช้ Compact ได้เลยที่ 80-90 % ก่อน Compact
+จะสถานะงาน ความคืบหน้าสิ่งทมี่ต้องทำต่อกับแชทลูกให้เรียบร้อย ส่วนแชทลูก Hand ได้" — the MAIN chat no longer moves at 600–700k: it keeps going and compacts
+at 80–90 % context; BEFORE compacting it writes §16 (state · progress · what is next · every child chat and its PRs) + the status page.
+Child chats still hand off (skill okami24-handoff). Replaces TEAM_RULES 13.6 / central §12 item 29 "move at 700k" for the main chat only.
+
 **Red for "no" (owner 26/10): every box or line on the site that says no / not passed / not approved / not allowed /
 refused uses the red `danger` colour, never the ember orange** ("ขอใช้เป็นสีแดงได้เลย ไม่ใช้สีส้มทั้งเว็บ"). Ember stays for
 actions and accents (the how-to-order "ordering paused" note is information, not a no — stays ember). **Yellow (owner 26/10):
@@ -269,8 +274,11 @@ green "shipped" glow = the style for key-moment effects site-wide ("ยืนบ
 caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices") or when the stock API lands.
 
-**Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself and the refill how-to guide, whose title may read
-"เติมน้ำยาพอตยังไง" (owner 16/10, list item 66 — a how-to, not a page selling e-liquid) ·
+**Head copy and SEO:** REPLACED 02/11 — owner (typed in the SEO chat, quoted exactly): "แต่ร้านเรายังไม่ขายน้ำยา ทำไมจะไม่มีมีสิ แค่รายละเอียด เนื้อของของน้ำยาอาจจะยังไมไ่ด้ใส่
+ก็ตรวจสิเนื้อหาไหนสินค้าไหน ที่ยังขาดอะไรในการขึ้นไปสู้หน้า 1 ก็จัดการได้เลย รวมถึง คีย์หลักคีย์รอง เอาหมด" → "น้ำยา" / "น้ำยาบุหรี่ไฟฟ้า" may go into head copy and
+content where it helps rank (e-liquid product pages, /e-liquid, guides) — facts only, never a stock claim the live stock does not back (was: out of heads
+except /e-liquid + the refill how-to, owner 16/10 item 66) · seo-0211 maps main + secondary keywords for every page; product pages it would rewrite are split
+with the articles child by Friday first ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
 visible copy · brand names in Latin, incl. "Marbo" (the one exception + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
