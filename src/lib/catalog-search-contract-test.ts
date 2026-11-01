@@ -12,7 +12,7 @@
  */
 
 import { brands } from "@/data/brands";
-import { categories } from "@/data/categories";
+import { categories, kindCategoryId } from "@/data/categories";
 import { families } from "@/data/families";
 import { allProducts, hiddenProducts, legacySearchText, searchProducts } from "@/data/products";
 import { DORMANT_ALIAS_TERMS, TERM_SEARCH_ALIASES } from "@/data/search-aliases";
@@ -30,6 +30,8 @@ export interface CatalogSearchContractResult {
 interface Hit {
   slug: string;
   categoryId: string;
+  /** what it IS (kindCategoryId) — a prefilled pod is listed under switch-pods but stays a pod (owner 02/11) */
+  kind: string;
   brandId: string | null;
   familyId: string | null;
   name: string;
@@ -38,8 +40,8 @@ interface Hit {
 /** Every storefront product as one flat list with the search text /search ranks by. */
 function storefront(): { hit: Hit; text: ReturnType<typeof legacySearchText> }[] {
   return [
-    ...allProducts.map((p) => ({ hit: { slug: p.slug, categoryId: p.categoryId, brandId: p.brandId, familyId: p.familyId, name: p.displayName }, text: legacySearchText(p) })),
-    ...getPublishedProducts().map((p) => ({ hit: { slug: p.slug, categoryId: p.categoryId, brandId: p.brandId, familyId: null, name: p.displayName }, text: publishedSearchText(p) })),
+    ...allProducts.map((p) => ({ hit: { slug: p.slug, categoryId: p.categoryId, kind: kindCategoryId(p), brandId: p.brandId, familyId: p.familyId, name: p.displayName }, text: legacySearchText(p) })),
+    ...getPublishedProducts().map((p) => ({ hit: { slug: p.slug, categoryId: p.categoryId, kind: kindCategoryId(p), brandId: p.brandId, familyId: null, name: p.displayName }, text: publishedSearchText(p) })),
   ];
 }
 
@@ -111,7 +113,7 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   {
     const devices = new Set(["pod-systems", "switch-pods", "disposables", "heated-tobacco-devices"]);
     const got = all.filter((e) => queryScore("น้ำยา", e.text) > 0).map((e) => e.hit);
-    const wrong = got.filter((h) => devices.has(h.categoryId)).map((h) => h.slug);
+    const wrong = got.filter((h) => devices.has(h.kind)).map((h) => h.slug);
     check(`"น้ำยา" returns no device (pod system / switch pod / disposable / HNB device)`, wrong.length === 0, wrong.length ? `devices returned: ${wrong.join(", ")}` : `returned ${got.length}: ${got.map((h) => h.slug).join(", ") || "nothing"}`);
   }
 
@@ -199,7 +201,7 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   // ---- 8. Ranking: a product matched by what it IS comes before one matched by a spec line ----
   {
     const got = search("หัวพอต");
-    const pods = byCategory("pods-cartridges");
+    const pods = all.filter((e) => e.hit.kind === "pods-cartridges").map((e) => e.hit.slug);
     const head = got.slice(0, pods.filter((s) => got.includes(s)).length);
     const notPod = head.filter((s) => !pods.includes(s));
     check(`"หัวพอต" lists the pods (${pods.length}) before the devices whose spec names a pod`, notPod.length === 0, notPod.length ? `ahead of a pod: ${notPod.join(", ")}` : `first ${head.length} are pods, ${got.length} total`);

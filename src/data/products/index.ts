@@ -12,7 +12,7 @@ import { mooodProducts } from "./moood";
 import { unbrandedProducts } from "./unbranded";
 import { applySoldOut } from "@/data/stock/apply-sold-out";
 import { getBrand } from "@/data/brands";
-import { getCategory } from "@/data/categories";
+import { getCategory, kindCategoryId } from "@/data/categories";
 import { getFamily } from "@/data/families";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { rankByQuery, searchText, type SearchText } from "@/lib/catalog-search";
@@ -114,6 +114,7 @@ const SEARCH_TEXT = new Map<string, SearchText>(
     const brand = getBrand(p.brandId);
     const family = getFamily(p.familyId);
     const category = getCategory(p.categoryId);
+    const kind = getCategory(kindCategoryId(p));
     return [
       p.slug,
       searchText({
@@ -131,6 +132,7 @@ const SEARCH_TEXT = new Map<string, SearchText>(
           category?.name,
           category?.shortName,
           category?.labelTh,
+          ...(kind && kind !== category ? [kind.id, kind.name, kind.shortName, kind.labelTh] : []),
           ...(p.colorVariants ?? []).map((v) => v.name),
           ...(p.flavorVariants ?? []).map((v) => v.name),
         ],
