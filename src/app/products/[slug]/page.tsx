@@ -159,7 +159,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // (search-head-copy.ts), then the B2 price line — price from the same approval the page
     // shows, appended only when one exists, kept inside 160 characters (withPriceSuffixTh).
     const baseDescription = legacyBaseDescriptionTh(product);
-    const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug));
+    const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug), true, ORDERING_ENABLED);
     return {
       title,
       description,
@@ -179,7 +179,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const title = productTitleWithPriceTh(publishedProduct.slug, baseTitle, publishedProduct.sellingPrice);
     // Same head-only override + B2 price line as the legacy branch above.
     const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
-    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice, !NO_GENUINE_CLAIM_PATHS.has(path));
+    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice, !NO_GENUINE_CLAIM_PATHS.has(path), ORDERING_ENABLED);
     return {
       title,
       description,
