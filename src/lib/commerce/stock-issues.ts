@@ -2,6 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { allCatalogItems } from "@/lib/catalog-index";
 import { getProduct } from "@/data/products";
+import { kindCategoryId } from "@/data/categories";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { resolveProductRef } from "./catalog-resolver";
 import { liveLookup } from "@/lib/stock/live";
@@ -177,12 +178,13 @@ export function swapCandidates(line: Pick<StockIssueLine, "productSlug" | "varia
   const published = new Map(buildPublishedCatalog().map((p) => [p.slug, p.variants.map((v) => v.id)]));
   const groups: SwapGroup[] = [];
   const all = allCatalogItems();
-  const category = all.find((i) => i.slug === line.productSlug)?.categoryId ?? null;
+  const own = all.find((i) => i.slug === line.productSlug);
+  const category = own ? kindCategoryId(own) : null;
   const items = all
     .filter(
       (i) =>
         i.sellingPrice === line.unitPrice &&
-        (category === null || SAME_PRODUCT_ONLY.has(category) ? i.slug === line.productSlug : i.categoryId === category)
+        (category === null || SAME_PRODUCT_ONLY.has(category) ? i.slug === line.productSlug : kindCategoryId(i) === category)
     )
     .sort((a, b) => (a.slug === line.productSlug ? -1 : b.slug === line.productSlug ? 1 : a.name.localeCompare(b.name)));
   for (const item of items) {

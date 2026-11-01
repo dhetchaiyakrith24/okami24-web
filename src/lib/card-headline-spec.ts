@@ -1,5 +1,6 @@
 import type { Product, Specification } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import { kindCategoryId } from "@/data/categories";
 
 /**
  * Round 30.4ข batch 2 (owner's brief 2026-09-16): the one-line "headline spec" a product card
@@ -113,10 +114,10 @@ function pick(
 
 /** Legacy catalog product (src/data/products). */
 export function headlineSpecsForProduct(product: Product): HeadlineSpec[] {
-  return pick(product.categoryId, product.specifications, product.attributes);
+  return pick(kindCategoryId(product), product.specifications, product.attributes);
 }
 
 /** Published ProductMaster product (storefront bridge) — spec rows only, no attributes. */
 export function headlineSpecsForPublished(product: StorefrontProductView): HeadlineSpec[] {
-  return pick(product.categoryId, product.specifications);
+  return pick(kindCategoryId(product), product.specifications);
 }

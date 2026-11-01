@@ -17,16 +17,17 @@ export const categories: Category[] = [
   // refillable devices (VOOPOO ARGUS · DRAG · VINCI · VMATE) joined pod-systems above, and /products/pod-kits redirects
   // there (next.config.ts) — GSC split the bare query "pod" between the two pages. This one holds the devices you keep
   // while swapping PREFILLED pods, never filling (maker pages checked 19/10: M Switch · Zero · RELX Infinity 2 Plus ·
-  // RELX Creator · nexPOD 15K · ESKO BAR SWITCH · KS Quikpro; Nexswitch 16K has no maker page — warehouse facts). Their
-  // pods stay in pods-cartridges.
+  // RELX Creator · nexPOD 15K · ESKO BAR SWITCH · KS Quikpro; Nexswitch 16K has no maker page — warehouse facts).
+  // Owner 02/11 (HANDOFF §18 "Which category a pod goes in"): their PREFILLED pods are listed here too, next to the
+  // devices; the refillable pods stay in pods-cartridges. A pod listed here is still a pod — `kindCategoryId` below.
   {
     id: "switch-pods",
     slug: "switch-pods",
     name: "Switch Pod Devices",
     shortName: "Switch Pods",
     labelTh: "Switch Pod / พอตเปลี่ยนหัว",
-    description: "Keep the device, swap the pod. Each pod comes prefilled, so there's nothing to fill and no device to throw away. From SALTHUB, RELX, ESKO BAR, WOTOFO and KS.",
-    descriptionTh: "พอตเปลี่ยนหัว เก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยาเอง และไม่ต้องทิ้งทั้งเครื่อง มีทั้ง SALTHUB RELX ESKO BAR WOTOFO และ KS",
+    description: "Keep the device, swap the pod. Each pod comes prefilled, so there's nothing to fill and no device to throw away. Devices and their pods from SALTHUB, RELX, ESKO BAR, WOTOFO, KS and INFY.",
+    descriptionTh: "พอตเปลี่ยนหัว เก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยาเอง และไม่ต้องทิ้งทั้งเครื่อง มีทั้งตัวเครื่องและหัวพอตของ SALTHUB RELX ESKO BAR WOTOFO KS และ INFY",
     systemTypes: ["pod-kit"],
   },
   {
@@ -51,10 +52,11 @@ export const categories: Category[] = [
     // pos 5.2 with 0/112 clicks) and every brand the page lists (NEVOKS coil-54, RINCOE coil-89). thai-copy + seo-auditor 12/10.
     // Order of the three kinds re-cut after the checker (12/10): the first cut broke "คอยล์ใน|ตัว" at 1440 — this one was
     // measured at the lede's 350 px (390) and 672 px (1440) widths with no break inside a word.
+    // Owner 02/11: the prefilled pods (SALTHUB's among them) moved to switch-pods — the lede says where they went.
     description:
-      "Replacement pods from UWELL, VOOPOO, SALTHUB, NEVOKS and RINCOE: empty, with a built-in coil, or prefilled for switch-style devices. Check the model before ordering.",
+      "Refillable replacement pods from UWELL, VOOPOO, NEVOKS and RINCOE: empty, or with a built-in coil. Check the model before ordering. Prefilled pods are under Switch Pods.",
     descriptionTh:
-      "หัวพอตของ UWELL VOOPOO SALTHUB NEVOKS และ RINCOE มีทั้งหัวพอตเปล่า แบบที่มีคอยล์ในตัว และแบบบรรจุสำเร็จของเครื่องระบบสวิตช์ เช็คให้ตรงรุ่นเครื่องก่อนสั่ง",
+      "หัวพอตแบบเติมน้ำยาเองของ UWELL VOOPOO NEVOKS และ RINCOE มีทั้งหัวพอตเปล่าและแบบที่มีคอยล์ในตัว เช็คให้ตรงรุ่นเครื่องก่อนสั่ง ส่วนหัวพอตบรรจุสำเร็จอยู่ในหมวดพอตเปลี่ยนหัว",
     systemTypes: ["pod-cartridge"],
   },
   {
@@ -120,4 +122,11 @@ export const categories: Category[] = [
 
 export function getCategory(id: string): Category | undefined {
   return categories.find((c) => c.id === id || c.slug === id);
+}
+
+/** The category a product's own rules follow (card spec line, title word, articles, cart suggestions, stock alternatives,
+ *  search words) — what the product IS. Since 02/11 a prefilled pod is LISTED in switch-pods beside its device, yet it
+ *  stays a pod everywhere else, so every pod reads as pods-cartridges here. `categoryId` itself = where it is listed. */
+export function kindCategoryId(p: { categoryId: string; systemType: string | null }): string {
+  return p.systemType === "pod-cartridge" ? "pods-cartridges" : p.categoryId;
 }
