@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
 import type { AddressRecord } from "@/lib/commerce/addresses";
@@ -19,6 +20,7 @@ function Field({
   pattern,
   inputMode,
   autoComplete,
+  error,
 }: {
   label: string;
   name: string;
@@ -27,6 +29,8 @@ function Field({
   pattern?: string;
   inputMode?: "text" | "tel" | "numeric";
   autoComplete?: string;
+  /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers. */
+  error?: string | null;
 }) {
   return (
     <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor={name}>
@@ -40,11 +44,25 @@ function Field({
         autoComplete={autoComplete}
         defaultValue={defaultValue}
         required
-        className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${name}-error` : undefined}
+        className={cn("rounded-md border bg-surface-2 px-3 py-2 text-base text-foreground", error ? "border-danger" : "border-surface-border")}
       />
+      {error && (
+        <span id={`${name}-error`} role="alert" className="text-sm text-danger">
+          {error}
+        </span>
+      )}
     </label>
   );
 }
+
+/** Which field each refusal belongs to; "missing" stays the line above the button (any field can be the empty one). */
+const ERROR_FIELD: Partial<Record<NonNullable<AddressFormState["errorKey"]>, string>> = {
+  addressErrorPhone: "phone",
+  addressErrorHouseNumber: "line1",
+  addressErrorPostal: "postalCode",
+};
 
 /**
  * Address step. Cart-ready round 24/10: a refused address comes back as a Thai line (was an English sentence in the URL)
@@ -65,6 +83,8 @@ export function AddressStepView({
   const [state, formAction, pending] = useActionState(addAddressAction, initialAddressState);
   const v = state.values;
   const error = state.errorKey ? dict.checkout[state.errorKey] : addressMissing ? dict.checkout.placeErrorAddress : null;
+  const errorField = state.errorKey ? ERROR_FIELD[state.errorKey] : undefined;
+  const fieldError = (name: string) => (errorField === name ? error : null);
 
   return (
     <>
@@ -106,8 +126,9 @@ export function AddressStepView({
             inputMode="tel"
             autoComplete="tel"
             defaultValue={v.phone ?? defaultPhone}
+            error={fieldError("phone")}
           />
-          <Field label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} />
+          <Field label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
           <div className="grid grid-cols-2 gap-3">
             <Field label={dict.checkout.subdistrictLabel} name="subdistrict" defaultValue={v.subdistrict} />
             <Field label={dict.checkout.districtLabel} name="district" autoComplete="address-level2" defaultValue={v.district} />
@@ -121,9 +142,10 @@ export function AddressStepView({
               inputMode="numeric"
               autoComplete="postal-code"
               defaultValue={v.postalCode}
+              error={fieldError("postalCode")}
             />
           </div>
-          {error && (
+          {error && !errorField && (
             <p role="alert" className="text-sm text-danger">
               {error}
             </p>

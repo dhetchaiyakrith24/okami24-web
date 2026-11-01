@@ -88,7 +88,7 @@ const ADDRESS_FIELDS = ["recipientName", "phone", "line1", "subdistrict", "distr
 
 export interface AddressFormState {
   /** A key of `dict.checkout`, or null. */
-  errorKey: "addressErrorMissing" | "addressErrorPhone" | "addressErrorPostal" | null;
+  errorKey: "addressErrorMissing" | "addressErrorPhone" | "addressErrorHouseNumber" | "addressErrorPostal" | null;
   /** What the customer typed — the form shows it again after a refusal instead of emptying every field (LESSONS พ45). */
   values: Partial<Record<(typeof ADDRESS_FIELDS)[number], string>>;
 }
@@ -99,7 +99,7 @@ export async function addAddressAction(_prev: AddressFormState, formData: FormDa
   const input: AddressInput = values;
   const result = await addAddress(input, true);
   if (!result.ok) {
-    const errorKey = result.error === "phone" ? "addressErrorPhone" : result.error === "postal" ? "addressErrorPostal" : "addressErrorMissing";
+    const errorKey = ({ phone: "addressErrorPhone", houseNumber: "addressErrorHouseNumber", postal: "addressErrorPostal", missing: "addressErrorMissing" } as const)[result.error];
     return { errorKey, values };
   }
   // Replace: /checkout/address now jumps to review for a customer with an address, so a pushed entry here made Back

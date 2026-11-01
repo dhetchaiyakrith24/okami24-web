@@ -630,6 +630,7 @@ export interface Dictionary {
     shipToSavedTitle: string;
     addressErrorMissing: string;
     addressErrorPhone: string;
+    addressErrorHouseNumber: string;
     addressErrorPostal: string;
     placeErrorBusy: string;
     placeErrorAddress: string;
