@@ -2579,6 +2579,186 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Round "queue 0211" articles, Muro (02/11): no maker site exists — facts = the records in src/data/products/unbranded.ts only
+  // (flavour names, verified rows, what the maker's packs/posters print per the record notes), sorted by name only; spec rows
+  // marked unverified (bottle size · nicotine mg) are not stated. The Muro / RELX Creator fit already shows twice on the
+  // Connector page (shortDescription + whoIsThisFor), so the article leaves it out. Legacy pages render no article FAQ →
+  // none written. Thai = thai-copy 02/11.
+  "muro-connector-20k": {
+    th: {
+      lede: "Muro Connector 20K มีให้เลือก 33 กลิ่น ด้านล่างร้านเล่าไว้ว่าหัวพอตนี้ใช้งานยังไง จัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และอธิบายกลิ่นที่มี 50MG ต่อท้ายชื่อไว้ด้วย",
+      sections: [
+        {
+          heading: "หัวพอตแบบ Connector ใช้งานยังไง",
+          paragraphs: [
+            "โปสเตอร์ของ Muro พิมพ์ไว้ว่าเป็น CONNECTOR POD หมายถึงหัวพอตที่ต้องเสียบกับตัวเครื่องก่อนถึงจะสูบได้ ตัวหัวไม่มีแบตในตัว แบตอยู่ที่ตัวเครื่องซึ่งขายแยกจากหัว พอน้ำยาในหัวหมด ก็ถอดหัวเดิมออกแล้วใส่หัวใหม่ ส่วนตัวเครื่องใช้ต่อได้ตามเดิม",
+          ],
+        },
+        {
+          heading: "Muro Connector 20K กลิ่นไหนดี",
+          paragraphs: [
+            "แต่ละคนชอบรสไม่เหมือนกัน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี 4 กลิ่น คือ Double Mint · Cool Mint · Spear Mint และ Blue Ice ส่วนสายองุ่นมี Grape และ Kyoho Grape สำหรับคนที่หาองุ่นเคียวโฮ",
+            "สายผลไม้มี 11 กลิ่น มีทั้งผลไม้ชนิดเดียวอย่าง Watermelon กับ Pineapple ผลไม้สองชนิดคู่กันอย่าง Banana Strawberry กับ Strawberry Peach และยังมี Mix Berries · Pink Berry · Honey Lemon · Lemon Jeez · Apple Baraku กับ Fruit Punch ส่วน Strawberry Ice Cream ชื่อมีผลไม้คู่กับไอศกรีม ร้านก็จัดไว้ในสายนี้ด้วย",
+            "ถ้าชอบแนวชา นม และขนม ฝั่งชามี Green Tea กับ Peach Tea ฝั่งนมมี Yakult กับ Yakult Orange และฝั่งขนมมี Vanilla Ice Cream · Taro Ice Cream · Butterscotch กับ Chocolate Dubai คำว่า Ice Cream ในชื่อหมายถึงไอศกรีม ไม่ได้บอกว่าเป็นกลิ่นเย็น ส่วน Peach Tea กับ Yakult Orange มีผลไม้อยู่ในชื่อด้วย แต่ร้านจัดตามคำหลักของชื่อ",
+            "แนวอื่นมี Cola · Mineral Water และ Green Slush สามชื่อนี้ไม่ได้บอกผลไม้หรือขนมตรง ๆ วิธีเลือกกลิ่นจากชื่อแบบละเอียด อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "กลิ่นที่มี 50MG ต่อท้ายชื่อคืออะไร",
+          paragraphs: [
+            "ในรายการมี 5 กลิ่นที่ชื่อมี 50MG ต่อท้าย คือ Grape · Watermelon · Double Mint · Mix Berries และ Yakult ห้ากลิ่นนี้มีให้เลือกสองแบบ คือแบบที่มี 50MG ในชื่อ กับแบบที่ไม่มี ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
+          ],
+        },
+        {
+          heading: "หัวพอตหน้าตาเป็นยังไง",
+          paragraphs: [
+            "ตัวหัวด้านหนึ่งเป็นลายรังผึ้ง อีกด้านพิมพ์ชื่อกลิ่นไว้ ถ้าซื้อไปหลายกลิ่น ก็ดูจากชื่อบนตัวหัวได้เลยว่าหัวไหนเป็นกลิ่นอะไร คลิปของร้านบนหน้านี้เรียกหัวนี้ว่า LEGO ตามหน้าตาของตัวหัว และคำที่ Muro พิมพ์ไว้บนตัวหัวคือ “AWAKE YOUR NOSE.”",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Muro Connector 20K comes in 33 flavours. Below, how the pod works, the flavours sorted into groups to make choosing easier, and a note on the flavours with 50MG in the name.",
+      sections: [
+        {
+          heading: "How does a connector pod work?",
+          paragraphs: [
+            "Muro's poster calls it a CONNECTOR POD: a pod that has to go on a device before you can vape. The pod has no battery of its own; the battery is in the device, which is sold separately. When a pod runs out, take it off, put on a new one and keep using the same device.",
+          ],
+        },
+        {
+          heading: "Which Muro Connector 20K flavour should I pick?",
+          paragraphs: [
+            "Everyone's taste is different, so start with the kind you like. We grouped the flavours by the words in their names. The cool four are Double Mint, Cool Mint, Spear Mint and Blue Ice, and the grapes are Grape and Kyoho Grape.",
+            "Fruit has eleven: single fruits such as Watermelon and Pineapple, pairs such as Banana Strawberry and Strawberry Peach, plus Mix Berries, Pink Berry, Honey Lemon, Lemon Jeez, Apple Baraku and Fruit Punch. Strawberry Ice Cream pairs a fruit with ice cream, and we keep it here too.",
+            "For tea, milk and dessert there's Green Tea and Peach Tea, Yakult and Yakult Orange, and Vanilla Ice Cream, Taro Ice Cream, Butterscotch and Chocolate Dubai. Ice Cream in a name means ice cream, not a cooling flavour. Peach Tea and Yakult Orange name a fruit too, but we sort by the main word.",
+            "The rest are Cola, Mineral Water and Green Slush, none of which names a fruit or a dessert outright.",
+          ],
+        },
+        {
+          heading: "What are the flavours with 50MG in the name?",
+          paragraphs: [
+            "Five flavours have 50MG at the end of the name: Grape, Watermelon, Double Mint, Mix Berries and Yakult. Each of these five comes in two versions, one with 50MG in the name and one without, so check the name in the list before you choose.",
+          ],
+        },
+        {
+          heading: "What does the pod look like?",
+          paragraphs: [
+            "One face of the pod has a honeycomb pattern and the other carries the flavour name, so if you buy several flavours you can tell them apart at a glance. Our shop's video on this page calls it the LEGO pod, after its look, and the line Muro prints on the pod is “AWAKE YOUR NOSE.”",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Muro Connector 20K 共有 33 种口味。下面介绍这款烟弹怎么用，把口味按类型分好组方便挑选，并说明名称带 50MG 的口味。",
+      sections: [
+        {
+          heading: "Connector 烟弹怎么用？",
+          paragraphs: [
+            "Muro 的海报上印着 CONNECTOR POD，意思是烟弹要先装在主机上才能抽。烟弹本身没有电池，电池在主机里，主机需另外购买。烟弹里的烟油用完后，取下换上新的即可，主机可以继续使用。",
+          ],
+        },
+        {
+          heading: "Muro Connector 20K 哪个口味好？",
+          paragraphs: [
+            "每个人口味不同，可以先从喜欢的类型选起。我们按口味名称里的词来分组。清凉类有 4 款：Double Mint、Cool Mint、Spear Mint 和 Blue Ice；葡萄类有 Grape 和 Kyoho Grape。",
+            "水果类有 11 款：既有 Watermelon、Pineapple 这样的单一水果，也有 Banana Strawberry、Strawberry Peach 这样的组合，另外还有 Mix Berries、Pink Berry、Honey Lemon、Lemon Jeez、Apple Baraku 和 Fruit Punch。Strawberry Ice Cream 是水果搭配冰淇淋，也归在这一类。",
+            "茶、奶和甜点类：茶有 Green Tea 和 Peach Tea，奶有 Yakult 和 Yakult Orange，甜点有 Vanilla Ice Cream、Taro Ice Cream、Butterscotch 和 Chocolate Dubai。名称里的 Ice Cream 指冰淇淋，并不代表清凉口味。Peach Tea 和 Yakult Orange 名称里也有水果，我们按名称的主词来归类。",
+            "其余是 Cola、Mineral Water 和 Green Slush，名称没有直接写出水果或甜点。",
+          ],
+        },
+        {
+          heading: "名称带 50MG 的口味是什么？",
+          paragraphs: [
+            "有 5 款口味名称后面带 50MG：Grape、Watermelon、Double Mint、Mix Berries 和 Yakult。这 5 款各有两个版本：名称带 50MG 的和不带的，选购前请先核对列表里的名称。",
+          ],
+        },
+        {
+          heading: "烟弹长什么样？",
+          paragraphs: [
+            "烟弹一面是蜂窝纹，另一面印着口味名称，买了多种口味也能一眼分清。本页里我们店的视频把它叫作 LEGO 烟弹，取自它的外观；Muro 印在烟弹上的标语是“AWAKE YOUR NOSE.”。",
+          ],
+        },
+      ],
+    },
+  },
+  "muro-3ml": {
+    th: {
+      lede: "ด้านล่างร้านจัดกลิ่นของ Muro 3ML เป็นสายไว้ให้เลือกได้ง่ายขึ้น และเล่าถึงคำที่พิมพ์อยู่ข้างกล่องของกลิ่น Muro Grape ไว้ด้วย",
+      sections: [
+        {
+          heading: "Muro 3ML กลิ่นไหนดี",
+          paragraphs: [
+            "เลือกจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่นที่พิมพ์ไว้บนกล่องของแต่ละกลิ่น สายเย็นมี Smooth Mint กลิ่นเดียว และเป็นชื่อเดียวในรายการที่มีคำว่า Mint",
+            "สายองุ่นมีให้เลือกสองกลิ่น คือ Grape กับ Muro Grape ส่วนสายผลไม้มี Watermelon · Very Strawberry · Mix Berries · Strawberry Peach และ Apple Juice ชื่อที่มีผลไม้คู่กับอย่างอื่น อย่าง Honey Lemon กับ Blueberry Bubblegum ร้านก็จัดไว้ในสายนี้ด้วย",
+            "แนวอื่นมี Cola · Mineral Water · Green Slush และ Double Shisha สี่ชื่อนี้ไม่ได้บอกผลไม้ตรง ๆ ร้านจึงแยกไว้อีกกลุ่ม วิธีเลือกกลิ่นจากชื่อแบบละเอียด อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "ทำไมกล่อง Muro Grape มีคำว่า VERY STRAWBERRY",
+          paragraphs: [
+            "ถ้าดูรูปกล่องของกลิ่น Muro Grape จะเห็นคำว่า VERY STRAWBERRY อยู่ที่ด้านข้างกล่อง คำนี้เป็นลายที่ผู้ผลิตพิมพ์มากับกล่องเอง ร้านจึงคงรูปไว้ตามต้นฉบับ กล่องนี้เป็นของกลิ่น Muro Grape ตามโปสเตอร์ของกลิ่นนั้น ส่วน Very Strawberry มีกล่องของตัวเองแยกเป็นอีกกลิ่นหนึ่ง",
+          ],
+        },
+        {
+          heading: "สูบกลิ่นเดิมจนลิ้นชิน ทำยังไงดี",
+          paragraphs: [
+            "จากที่ร้านเจอ พอสูบกลิ่นเดิมไปสักพัก ลิ้นจะเริ่มชิน จนรู้สึกว่ารสไม่ชัดเท่าตอนแรก หัวพอตของ Muro 3ML แยกกลิ่นกันหัวละกลิ่น ถ้าเป็นแบบนี้ ลองสลับไปกลิ่นในสายอื่นบ้างก็ได้ แล้วค่อยกลับมากลิ่นเดิมทีหลัง",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, the Muro 3ML flavours sorted into groups to make choosing easier, plus a note on the words printed on the side of the Muro Grape box.",
+      sections: [
+        {
+          heading: "Which Muro 3ML flavour should I pick?",
+          paragraphs: [
+            "Start with the kind of flavour you like. We grouped them by the words in the name printed on each flavour's box. The only cool one is Smooth Mint, the one name in the list with Mint in it.",
+            "There are two grapes, Grape and Muro Grape. Fruit has Watermelon, Very Strawberry, Mix Berries, Strawberry Peach and Apple Juice, and we keep Honey Lemon and Blueberry Bubblegum here too, as they pair a fruit with something else.",
+            "The rest are Cola, Mineral Water, Green Slush and Double Shisha, none of which names a fruit outright.",
+          ],
+        },
+        {
+          heading: "Why does the Muro Grape box say VERY STRAWBERRY?",
+          paragraphs: [
+            "In the Muro Grape box photo you'll see VERY STRAWBERRY on the side panel. That's part of the maker's own box artwork, so we've kept the image as it is. According to that flavour's poster, the box is Muro Grape; Very Strawberry has its own box as a separate flavour.",
+          ],
+        },
+        {
+          heading: "What if a flavour starts to taste flat?",
+          paragraphs: [
+            "In our experience, after a while on the same flavour your palate gets used to it and the taste seems less clear than at first. Each Muro 3ML pod is a single flavour, so try one from another group for a while, then come back.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面把 Muro 3ML 的口味按类型分好组，方便挑选，也说明 Muro Grape 包装盒侧面印的字。",
+      sections: [
+        {
+          heading: "Muro 3ML 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。我们按每个口味包装盒上印的名称来分组。清凉类只有 Smooth Mint 一款，也是列表里唯一带 Mint 的名称。",
+            "葡萄类有两款：Grape 和 Muro Grape。水果类有 Watermelon、Very Strawberry、Mix Berries、Strawberry Peach 和 Apple Juice；Honey Lemon 和 Blueberry Bubblegum 是水果搭配其他元素，也归在这一类。",
+            "其余是 Cola、Mineral Water、Green Slush 和 Double Shisha，名称没有直接写出水果。",
+          ],
+        },
+        {
+          heading: "为什么 Muro Grape 的包装盒上写着 VERY STRAWBERRY？",
+          paragraphs: [
+            "在 Muro Grape 的包装盒图片里，可以看到侧面印着 VERY STRAWBERRY。这是厂家包装本身的图案，所以我们保留了原样。根据该口味的海报，这个盒子就是 Muro Grape；Very Strawberry 另有自己的包装盒，是另一款口味。",
+          ],
+        },
+        {
+          heading: "同一个口味抽久了觉得味道变淡，怎么办？",
+          paragraphs: [
+            "根据我们店的经验，同一个口味抽一段时间后，舌头会慢慢习惯，觉得味道不如一开始明显。Muro 3ML 每个烟弹只有一种口味，可以先换另一类口味抽一阵，再换回来。",
+          ],
+        },
+      ],
+    },
+  },
   // List-new 30/10 (nexBar Switch 15K, warehouse-listed): no maker site. Facts = nexBar's own posters — the 15-flavour
   // line-up the warehouse keeps (Shipnity Max image 2764487: nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the
   // 10-flavour poster series a Thai shop carries verbatim (vmaniath.com/en/product/1273962: nexMesh Coil · 15000 puffs ·
