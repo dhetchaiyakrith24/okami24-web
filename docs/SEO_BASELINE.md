@@ -503,3 +503,52 @@ Daily site totals (clicks/impressions · pos): 20/10 26/247 · 10.1 · 21/10 18/
 Verdict: [ตรวจแล้ว] no indexing / penalty / robots / canonical fault, and no deploy explains a one-day site-wide cut ·
 [เชื่อว่า] Google stopped showing the shop for generic and model queries from 27/10 (its side: a filter or reclassification of the
 site, hitting mobile hardest), brand + "ราคา" queries kept. Fix proposal + next checks = Friday's report 01/11.
+
+## Round SEO rankings back (02/11/2026, round file `docs/rounds/รอบ-SEO-อันดับคืน-02-11.txt`, child chat seo-0211) — cause + start point
+
+### Cause of the 27/10 drop — evidence read 02/11
+- [ตรวจแล้ว] **Google-side change on the same day:** Search Engine Roundtable 27/10 (07:51, updated 29/10) "Unconfirmed Google Search
+  Ranking Update" — a large spike starting ~12 h before the post, on ~15 trackers (Semrush, Mozcast, Sistrix …), after smaller
+  ones 16/10 · 20–21/10 · 24/10; still "more heated by the day" on 29/10. Google Search Status Dashboard: nothing after the
+  September 2026 spam update (read 02/11). So: an unannounced ranking change, not a site fault.
+- [ตรวจแล้ว] **Still indexed, demoted:** `site:okami24.store pod system` ≈ 175 results, our pages with their own titles/metas ·
+  GSC Pages 173 indexed, no manual action (READ 01/11 above). The pages are there; Google ranks them lower.
+- [ตรวจแล้ว] **Widening, not only generic:** real result page 02/11 (desktop, owner's Chrome, pws=0, ≥21 s between loads, no CAPTCHA):
+  "voopoo drag 6 ราคา" — GSC 13–26/10 pos 1.0, 13 clicks — is now NOT in the top 7 (shop.voopoo.com, vaping360, vmaniath ahead).
+  Only the shop name "okami24" stays #1.
+- [ตรวจแล้ว] **Age gate = Google's snippet for the home page:** query "okami24" shows the home result with the age-gate text
+  ("เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ 21 ปี… สั่งซื้อได้ทั้งเว็บ…" — the 26/10 wording of #851),
+  not the meta. The gate is client-only (`getServerSnapshot` = verified → absent from the server HTML, curl as Googlebot 02/11),
+  but Google's renderer has no localStorage → every rendered page = a full-screen dialog (`fixed inset-0 bg-surface-0/95`) over
+  the content. Gate unchanged in kind since 08/2026 → **not the cause of the 27/10 date**, but it is what Google "sees first" on
+  every page (and a likely drag on how Google reads main content). Allowed fix: `data-nosnippet` on the dialog (no cloaking).
+- [เชื่อว่า] **Why this site was hit:** new domain (live 08–09/2026), almost no inbound links (SEO_LANDSCAPE §3: none found
+  that are safe), ~179 URLs built and re-headed in ~6 weeks, competitors with years of history hold the slots. Sites that rank
+  early on a young domain often lose those slots when Google re-scores at an update; brand/navigational queries survive.
+  Not verifiable from outside Google.
+
+### Start point 02/11 (before any change of this round)
+GSC (Performance, Search, domain property; data ends 31/10). Site 03/10–30/10 (28 days): 605 clicks · 4.57K impressions · pos 11.
+27/10–31/10: 46 clicks · 100 impressions · pos 4.7 · queries left: okami24 6/9 · voopoo drag 6 ราคา 5/10 · okami pod 4/4 ·
+okami vape 2/4 · caliburn g5 lite 2/4 · voopoo argus g4 ราคา 2/3 · caliburn g5 ราคา 1/1 · caliburn 1/1 (14 queries in all).
+
+Target queries, 13–26/10 (14 days before the drop) — clicks / impressions / avg pos:
+
+| query | 13–26/10 | 27–31/10 | real page 02/11 (desktop) |
+|---|---|---|---|
+| pod | 11 / 144 / 11.9 | 0 | not in top 16 (read 2 pages) |
+| pod system | 11 / 50 / 4.4 | 0 | not in top 17 |
+| พอต | — (no row) | 0 | not in top 20 |
+| น้ำยาบุหรี่ไฟฟ้า | 0 / 11 / 69.0 | 0 | not in top 19 |
+| พอตใช้แล้วทิ้ง | 0 / 8 / 69.0 | 0 | not read |
+| relx | 0 / 7 / 81.6 | 0 | not in top 17 |
+| voopoo | 3 / 8 / 14.6 | 0 | not in top 14 |
+| voopoo drag 6 | 7 / 33 / 6.7 | 0 | not read (Friday 02/11: not in top 20) |
+| voopoo drag 6 ราคา | 13 / 19 / 1.0 | 5 / 10 | not in top 7 |
+| relx lumi 18k | 0 / 31 / 4.1 | 0 | not read (Friday 02/11: not in top 20) |
+| joiway | 1 / 53 / 8.4 | 0 | not read |
+| caliburn g5 | 1 / 16 / 7.9 | 0 | not read |
+| okami24 (control) | 6 / 11 / 1.0 | 6 / 9 | #1 (home) |
+
+Read again with the same method: GSC + real page **09/11 · 16/11 · 30/11** (desktop first; mobile only if no CAPTCHA that day).
+"Back" = the query has GSC impressions again at a position ≤ its 13–26/10 average, and the real page shows us in the top 20.
