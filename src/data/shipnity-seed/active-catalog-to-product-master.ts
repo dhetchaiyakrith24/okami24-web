@@ -519,11 +519,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // Phase 2.8 correction — was worded as a coil; the Shipnity name itself says "Pod", and
   // VOOPOO documents TPP Pod separately from TPP coils. See TAXONOMY_MATCHES["Coil-87"].
   "Coil-87": {
-    tagline: "หัวพอตเปล่า Voopoo TPP Pod",
+    tagline: "หัวพอตเปล่า TPP Pod จาก VOOPOO ความจุ 5.5mL ใช้คู่กับคอยล์ตระกูล TPP",
     shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
-    tagline: "คอยล์ Voopoo PnP X",
+    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 4 X3 และ S3",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
   // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
@@ -561,7 +561,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
   // "เป็นผลิตภัณฑ์ในกลุ่ม X" clause — same convention as Coil-56/87/92 above.
   "Coil-38": {
-    tagline: "คอยล์ TPP จากแบรนด์ VOOPOO",
+    tagline: "คอยล์ TPP จาก VOOPOO มี 0.2 และ 0.3 โอห์ม ใช้กับหัวพอต TPP Pod",
     shortDescription: "คอยล์รุ่น TPP จากแบรนด์ VOOPOO",
   },
   "Coil-63": {
@@ -569,11 +569,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Jelly Nano จากแบรนด์ RINCOE",
   },
   "Coil-68": {
-    tagline: "หัวพอต ITO-X จากแบรนด์ VOOPOO",
+    tagline: "หัวพอตเปล่า ITO-X จาก VOOPOO ความจุ 3.5mL เติมน้ำยาด้านบน ใช้คู่กับคอยล์ ITO",
     shortDescription: "หัวพอตรุ่น ITO-X จากแบรนด์ VOOPOO",
   },
   "Coil-70": {
-    tagline: "คอยล์ Dotmod Aio V2 จากแบรนด์ DOTMOD",
+    tagline: "คอยล์ dotAIO V2 จาก DOTMOD 0.7 โอห์ม คอยล์ mesh เดี่ยว กล่องละ 5 หัว",
     shortDescription: "คอยล์รุ่น Dotmod Aio V2 จากแบรนด์ DOTMOD",
   },
   "Coil-89": {
