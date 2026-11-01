@@ -552,3 +552,15 @@ Target queries, 13–26/10 (14 days before the drop) — clicks / impressions / 
 
 Read again with the same method: GSC + real page **09/11 · 16/11 · 30/11** (desktop first; mobile only if no CAPTCHA that day).
 "Back" = the query has GSC impressions again at a position ≤ its 13–26/10 average, and the real page shows us in the top 20.
+
+### Change 1 of the round — Google description ending (branch seo-meta-suffix-3010, owner 30/10 "สั่งได้ทั้ง 2 ทาง … ดูโปรกว่านี้")
+- Meta description only (head-audit 179 pages, main build vs branch build, 02/11): `desc` changed on 107 pages, nothing else
+  (title / H1 / canonical / robots / og:title / JSON-LD types unchanged). 105 product + brand + /products lines now end
+  "… ราคา ฿N สั่งบนเว็บหรือ LINE @okm24" (was "สั่งทาง LINE @okm24" while the cart is on) · /how-to-order says web or LINE.
+- 21 description heads are shorter so the 7 extra characters do not cut a key word (same facts; listed in the PR).
+  Side effect: their Product JSON-LD description is the shorter line too.
+- Expected effect on rank: none (meta is a snippet, not a ranking signal) — read for CTR only, from the day it is live.
+- LIVE: PR #1097 merged 02/11 (b108156f, checker PASS e1c62cff). Checker side note: the 5 /technology/* pages' JSON-LD
+  `dateModified` moved 31/10 → 02/11 with no content change (content-dates follows search-head-copy.ts) — expected, harmless.
+- Next variable before the 09/11 read: PR #1095 (switch-pod child) moves 14 prefilled pods pods-cartridges → switch-pods
+  (category metas, JSON-LD category + breadcrumb of those 14 pages, related boxes) — date = when it merges.
