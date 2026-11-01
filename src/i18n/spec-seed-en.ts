@@ -58,6 +58,8 @@ const LABELS_EN: Record<string, string> = {
   "แรงดันไฟ": "Output voltage",
   "หัวพอตที่ใช้ได้": "Compatible pods",
   "ในกล่อง": "In the box",
+  "การเติมน้ำยา": "Filling",
+  "กำลังไฟขั้นต่ำ": "Minimum wattage",
 };
 
 const VALUES_EN: Record<string, string> = {
@@ -118,12 +120,18 @@ const VALUES_EN: Record<string, string> = {
   "1500mAh ในตัว": "1500mAh, built-in",
   "ECO กับ POWER กดปุ่มเดียวสลับได้": "ECO and POWER, switched with one button",
   "ซิงค์อัลลอย (ตัวเครื่อง) + PC (หัวพอต)": "Zinc alloy (device) + PC (pod)",
-  "ตัวเครื่อง · หัวพอต Top Fill 0.4Ω และ 0.7Ω · สาย USB-C · สายคล้อง · คู่มือ · การ์ดรุ่นหัวพอตที่ใช้ร่วมกันได้": "Device · Top Fill pods 0.4Ω and 0.7Ω · USB-C cable · lanyard · user manual · VMATE pod compatibility guide",
+  "ตัวเครื่อง · หัวพอต Top Fill 0.4Ω และ 0.7Ω · ใบแนะนำหัวพอตที่ใช้ร่วมกันได้ · สาย USB-C · สายคล้องคอ · คู่มือ": "Device · Top Fill pods 0.4Ω and 0.7Ω · pod compatibility guide · USB-C cable · lanyard · user manual",
   "คอยล์ในตัว": "Built-in coil",
-  "เติมข้าง (V2) 0.7Ω · 1.2Ω / เติมบน (Top Fill) 0.4Ω · 0.7Ω · 1.0Ω": "Side fill (V2) 0.7Ω · 1.2Ω / top fill (Top Fill) 0.4Ω · 0.7Ω · 1.0Ω",
+  "V2 เติมด้านข้าง 0.7Ω · 1.2Ω / Top Fill เติมด้านบน 0.4Ω · 0.7Ω · 1.0Ω": "V2 side fill 0.7Ω · 1.2Ω / Top Fill 0.4Ω · 0.7Ω · 1.0Ω",
   "ตั้งแต่ 30W ขึ้นไป": "30W or more",
-  "เติมข้าง: Vmate Infinity Edition · Vmate E · V.THRU Pro / เติมบน: Vmate Pro 2": "Side fill: Vmate Infinity Edition · Vmate E · V.THRU Pro / top fill: Vmate Pro 2",
-  "Caliburn G5 · G4 · G3 ทุกรุ่นในซีรีส์": "Every Caliburn G5 · G4 · G3 series device",
+  "V2 เติมด้านข้าง: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill เติมด้านบน: Vmate Pro 2": "V2 side fill: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill: Vmate Pro 2",
+  "เครื่องซีรีส์ Caliburn G5 · G4 · G3": "Caliburn G5 · G4 · G3 series devices",
+  "เติมด้านข้าง": "Side fill",
+  "หัวพอตเปล่า ใช้กับคอยล์ PnP X": "Empty pod, takes PnP X coils",
+  "DTL: PnP X ทุกค่า · MTL: PnP X 0.3Ω / 0.6Ω": "DTL: every PnP X coil · MTL: PnP X 0.3Ω / 0.6Ω",
+  "PCTG + สแตนเลส": "PCTG + stainless steel",
+  "คอยล์ในตัว 0.7Ω หรือ 1.2Ω": "Built-in coil, 0.7Ω or 1.2Ω",
+  "3 หัว": "3 pods",
 };
 
 /** The English label for a Thai seed label ("กำลังไฟที่แนะนำ (0.8Ω)" keeps its bracket), or the label itself. */
