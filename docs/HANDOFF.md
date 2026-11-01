@@ -14,7 +14,7 @@ Updated 02/11 ~01:30 by the 6th main chat (local_6ad924b9). Weekly quota reset 0
 
 1 main = 913ca33c 02/11 (#1087 dude ฿159 · #1090 GSC docs). CART IS ON. What went live 29–31/10 = `git log --merges --since 2026-10-29 origin/main`.
 2 CHILD CHATS (report to the main chat local_6ad924b9): dude-images-0111 local_fdc7d1f3 = ฿159 LIVE (#1087) · pictures PR #1089 (card + 10 flavours, 34 credits, checker PASS 1bd8c41f)
-     WAITS for the owner's word on the comparison sheet (sent 02/11 `_incoming/dude-0111/sheets/overview.png`) — relay it word for word, the child merges.
+     owner OK 02/11 "ผ่านครับลงได้เลย" (relayed) → the child merges + reports.
   gsc-read-0111 local_b4a17a2c DONE: #1090 (SEO_BASELINE "READ 01/11" = evidence). Drop from 27/10 = Google side [เชื่อว่า], site healthy. No code change ·
      06/11 SERP read + "relx lumi 18k" / "voopoo drag 6" with SafeSearch on AND off · brand queries vanishing too = urgent.
   Closed 31/10: images 7 · nexbar15k · badges · dude-mqbar · SEO (parked). TRACKING local_dfdd063c = watching Shipnity's next real write.
