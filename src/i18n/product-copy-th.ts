@@ -584,7 +584,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       activation: "ไม่มีปุ่ม สูบได้เลย",
       indicator: "แถบไฟ LED 3 สี",
       charging: "USB-C 5V/1A · ไม่มีสายชาร์จมาในกล่อง",
-      platform: "VINCI S · VINCI E · PnP X ใช้คอยล์ได้ตั้งแต่ 0.3Ω ขึ้นไป",
+      platform: "VINCI S · VINCI E · PnP X ที่ใช้คอยล์ 0.3Ω ขึ้นไป",
       included: "หัวพอต VINCI S 0.8Ω (4.5mL)",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
