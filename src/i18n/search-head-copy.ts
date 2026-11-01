@@ -400,7 +400,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
   // SEO brand push 30/10: searchers type "relx pod pro 2" (the name printed on the pack); the fit is RELX's own sentence on the Infinity 2 Plus page.
   // 118 characters: + the price line it stays under the 160 ceiling (#1053's 126-character line lost "42 กลิ่น" to the trim).
-  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ Infinity 2 Plus ได้ตามที่ RELX ระบุ มีให้เลือก 42 กลิ่น",
+  "relx-infinity-pro-2-pod": "หัวพอต RELX Infinity Pro 2 แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ใส่กับ Infinity 2 Plus ได้ตามที่ RELX ระบุ มี 42 กลิ่น",
   "coil-21": "หัวพอต VOOPOO Argus Pod มีให้เลือก 4 แบบ",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
@@ -408,10 +408,10 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
-  "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
+  "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
   "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ มี 4 สี",
   "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",
-  "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
+  "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จ USB-C มี 2 โหมด Normal กับ Turbo",
   // Meta ending 30/10 (owner: "สั่งบนเว็บหรือ LINE @okm24", 7 characters longer): these lines were cut by the 160 trim
   // (seo-auditor 30/10: "DRAG 3", "มาโบ 9K" lost, 8 ended mid-phrase) — shortened to fit with the price line, same facts.
   "m-bar-9k": "พอตใช้แล้วทิ้งชาร์จซ้ำได้ของ SALTHUB ใช้ salt nic 30mg มี 24 กลิ่น หลายร้านเรียกรุ่นนี้ว่า Marbo หรือมาโบ 9K",
