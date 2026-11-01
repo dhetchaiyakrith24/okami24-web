@@ -36,6 +36,7 @@ const OPTION_LABELS_EN: Record<string, string> = {
   "1.2Ω ยางฟ้า": "1.2Ω blue rubber",
   "0.4 Ω Top Fill เติมบน": "0.4 Ω Top Fill",
   "0.7 Ω Top Fill เติมบน": "0.7 Ω Top Fill",
+  "1.0 Ω Top Fill เติมบน": "1.0 Ω Top Fill",
 };
 
 /** The product name a visitor reads: the English overlay on en/zh when one exists, otherwise the stored name. */
