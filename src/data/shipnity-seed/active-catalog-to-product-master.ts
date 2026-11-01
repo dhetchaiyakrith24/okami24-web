@@ -1614,6 +1614,16 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://relxnow.com/products/essential-device"],
   },
+  // Round "queue 0211" articles, RELX (02/11): relxnow.com/products/relx-infinity-2-plus-device — the device is "compatible with RELX,
+  // RELX Pod Pro, and RELX Pod Pro 2 pods, all with a 1.9ml capacity" (the shop's pack prints "RELX Pod Pro 2"). RELX Malaysia's Pod Pro 2
+  // page (relxnow.my) adds the RELX Infinity 2 — told in the article only (relxnow.my is not a row host).
+  "RELX-INFINITY-PRO-2-POD": {
+    specifications: [
+      { key: "capacity", label: "ความจุหัวพอต", value: "1.9mL", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "เครื่อง RELX Infinity 2 Plus", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device" },
+    ],
+    sourceUrls: ["https://relxnow.com/products/relx-infinity-2-plus-device"],
+  },
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-64": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },

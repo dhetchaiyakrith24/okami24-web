@@ -1685,6 +1685,119 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  "relx-infinity-pro-2-pod": {
+    th: {
+      lede: "หัวพอต RELX Infinity Pro 2 เป็นหัวพอตบรรจุสำเร็จ บนแพ็กพิมพ์ชื่อว่า RELX Pod Pro 2 และหน้าเว็บของ RELX ก็ใช้ชื่อนี้ ด้านล่างสรุปไว้ว่าหัวนี้ใช้กับโหมดไหนของเครื่องได้บ้าง พร้อมจัดกลิ่นเป็นแนวไว้ให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "ใช้ได้กับโหมดไหนของเครื่องบ้าง",
+          paragraphs: [
+            "RELX ระบุว่าหัวรุ่นนี้รองรับโหมด Eco · Smooth และ Boost ของเครื่อง",
+            "RELX อธิบายว่าโหมด Eco สูบเบาลงและช่วยให้แบตอึดขึ้น โหมด Smooth ให้รสที่นุ่ม ส่วนโหมด Boost ให้รสเข้มขึ้นและไอเยอะขึ้น",
+          ],
+        },
+        {
+          heading: "หัวพอต RELX Infinity Pro 2 มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "กลิ่นของรุ่นนี้แยกได้เป็นสองกลุ่ม กลุ่มแรกคือกลิ่นที่ชื่อไม่มีคำว่า 50mg ถ้าจัดตามชื่อกลิ่นจะได้ 4 แนว",
+            "สายชา ได้แก่ Hibiscus Ice Tea · Iced Black Tea · Jasmine Green Tea · Lemon Ice Tea · Longjing Ice Tea · Oolong Ice Tea และ Thai Milk Tea",
+            "สายผลไม้ ได้แก่ Banana Freeze · Blueberry Splash · Fresh Peach · Green Grape Ice · Honeydew Melon · Lemon Zest · Lime Ice · Lychee Ice · Orange Sparkle · Pink Guava · Smooth Mango · Strawberry Burst · Tangy Grape และ Watermelon Ice",
+            "สายยาสูบ ได้แก่ Ice Tobacco และ Lime Tobacco",
+            "แนวอื่นมี Dark Sparkle · Ludou Ice และ Taro Scoop",
+            "อีกกลุ่มคือกลิ่นที่ชื่อลงท้ายด้วย 50mg เป็นแบบความเข้มข้นนิโคติน 50mg ถ้าจัดตามชื่อกลิ่นก็ได้ 4 แนวเหมือนกัน",
+            "สายเย็นแบบ 50mg ได้แก่ Lemon Mint · Menthol Xtra · Mint Freeze · Peppermint · Raspberry Mint และ Spearmint",
+            "สายยาสูบแบบ 50mg ได้แก่ Classic Tobacco · Mint Tobacco และ Rich Tobacco",
+            "สายผลไม้แบบ 50mg ได้แก่ Citrus · Grape · Green Apple · Strawberry · Triple Berry และ Watermelon Ice",
+            "แนวอื่นแบบ 50mg มี Ice Sparking",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต RELX Infinity Pro 2 ใช้กับเครื่องอะไร",
+          answer: "RELX ระบุว่าหัวรุ่นนี้ใช้กับเครื่อง RELX Infinity 2 และ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้ค่ะ",
+        },
+        {
+          question: "หัวพอต RELX Infinity Pro 2 ต้องเติมน้ำยาเองไหม",
+          answer: "ไม่ต้องเติมค่ะ หัวพอตมีน้ำยามาในตัวแล้ว หัวละ 1.9mL ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Infinity Pro 2 pod is a prefilled pod. Its pack prints the name RELX Pod Pro 2, the same name RELX uses on its own pages. Below: which of the device's modes it works with, and the flavours grouped by name to make choosing easier.",
+      sections: [
+        {
+          heading: "Which of the device's modes does it work with?",
+          paragraphs: [
+            "RELX states the pod supports the device's Eco, Smooth and Boost modes.",
+            "In RELX's words, Eco gives a lighter puff and longer battery life, Smooth an ultra-smooth taste, and Boost a richer flavour with bigger clouds.",
+          ],
+        },
+        {
+          heading: "Which flavours does the RELX Infinity Pro 2 pod come in?",
+          paragraphs: [
+            "The flavours come in two groups. The first, with no 50mg in the name, sorts by name into four sets.",
+            "Tea: Hibiscus Ice Tea, Iced Black Tea, Jasmine Green Tea, Lemon Ice Tea, Longjing Ice Tea, Oolong Ice Tea and Thai Milk Tea.",
+            "Fruit: Banana Freeze, Blueberry Splash, Fresh Peach, Green Grape Ice, Honeydew Melon, Lemon Zest, Lime Ice, Lychee Ice, Orange Sparkle, Pink Guava, Smooth Mango, Strawberry Burst, Tangy Grape and Watermelon Ice.",
+            "Tobacco: Ice Tobacco and Lime Tobacco.",
+            "Others: Dark Sparkle, Ludou Ice and Taro Scoop.",
+            "The second group ends in 50mg: these are the 50mg-nicotine pods, and they also sort into four sets.",
+            "Mint and menthol, 50mg: Lemon Mint, Menthol Xtra, Mint Freeze, Peppermint, Raspberry Mint and Spearmint.",
+            "Tobacco, 50mg: Classic Tobacco, Mint Tobacco and Rich Tobacco.",
+            "Fruit, 50mg: Citrus, Grape, Green Apple, Strawberry, Triple Berry and Watermelon Ice.",
+            "Others, 50mg: Ice Sparking.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which device does the RELX Infinity Pro 2 pod fit?",
+          answer: "RELX states it fits the RELX Infinity 2 and the [RELX Infinity 2 Plus](/products/relx-infinity-2-plus).",
+        },
+        {
+          question: "Do I need to fill the RELX Infinity Pro 2 pod with e-liquid?",
+          answer: "No. Each pod comes filled with 1.9mL of e-liquid; when it runs out, put on a new one.",
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Infinity Pro 2 烟弹是预灌装烟弹，包装上印的名称是 RELX Pod Pro 2，RELX 官网用的也是这个名称。下面介绍它支持主机的哪些模式，并按名称把口味分好类，方便挑选。",
+      sections: [
+        {
+          heading: "支持主机的哪些模式？",
+          paragraphs: [
+            "RELX 标明这款烟弹支持主机的 Eco、Smooth 和 Boost 模式。",
+            "按 RELX 的介绍，Eco 吸感更轻、更省电；Smooth 口感顺滑；Boost 口味更浓、烟雾更多。",
+          ],
+        },
+        {
+          heading: "RELX Infinity Pro 2 烟弹有哪些口味？",
+          paragraphs: [
+            "口味分为两组。第一组是名称不带 50mg 的口味，按名称可分为四类。",
+            "茶系：Hibiscus Ice Tea、Iced Black Tea、Jasmine Green Tea、Lemon Ice Tea、Longjing Ice Tea、Oolong Ice Tea、Thai Milk Tea。",
+            "水果系：Banana Freeze、Blueberry Splash、Fresh Peach、Green Grape Ice、Honeydew Melon、Lemon Zest、Lime Ice、Lychee Ice、Orange Sparkle、Pink Guava、Smooth Mango、Strawberry Burst、Tangy Grape、Watermelon Ice。",
+            "烟草系：Ice Tobacco、Lime Tobacco。",
+            "其他：Dark Sparkle、Ludou Ice、Taro Scoop。",
+            "另一组是名称以 50mg 结尾的口味，尼古丁浓度为 50mg，按名称同样可分为四类。",
+            "50mg 薄荷系：Lemon Mint、Menthol Xtra、Mint Freeze、Peppermint、Raspberry Mint、Spearmint。",
+            "50mg 烟草系：Classic Tobacco、Mint Tobacco、Rich Tobacco。",
+            "50mg 水果系：Citrus、Grape、Green Apple、Strawberry、Triple Berry、Watermelon Ice。",
+            "50mg 其他：Ice Sparking。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Infinity Pro 2 烟弹适用于哪款主机？",
+          answer: "RELX 标明这款烟弹适用于 RELX Infinity 2 和 [RELX Infinity 2 Plus](/products/relx-infinity-2-plus)。",
+        },
+        {
+          question: "RELX Infinity Pro 2 烟弹需要自己加烟油吗？",
+          answer: "不需要，每颗烟弹出厂已装有 1.9mL 烟油，用完换一颗新的即可。",
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4c (06/10): from RELX's own Smash Go 12K page; Thai = thai-copy 06/10.
   "relx-smash-go-12k": {
     th: {
