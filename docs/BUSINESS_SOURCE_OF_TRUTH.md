@@ -190,6 +190,11 @@ Shipnity **Pro** = cost (ทุน/เรท) only. New products listed before t
   new picture prints (the owner picks it with the picture); every other product keeps its current price until its picture is redone. Applied
   29/10: INFY 20K, TFIT M Power 20K, RELX LUMI 18K, SALTHUB Zero Pro, Zero cartridge, SUP ZERO 22K (owner "ตามรูป" ฿350) — log: `docs/ปรับราคา-2026-10-29.md`. A daily check against
   the warehouse list only REPORTS (and may open a draft PR) — it never publishes a price; the owner's OK stays the final gate.
+- **2026-11-02 — struck-through "label" price above the real price (owner, chat, quoted exactly):** "ไมไ่ด้ลดจริงให้ X 10-20 จากราคาตามป้ายหลังที่แสดงมันเป็นกลยุทธ"
+  — the site may show a higher crossed-out price 10–20% above the selling price, with a sale badge, as a sales tactic; it is not a real discount.
+  Friday flagged it once as risky (Google trust / fabricated figure, queue 02/11 item 9); the owner keeps it (central §12 item 19 — not raised again).
+  The selling price, the cart, the order total and the JSON-LD/Google price stay the real selling price only. Which products and the exact
+  crossed-out figures = a list the owner OKs before it goes live (owner = price authority, above). Focus: products in stock first (queue item 9).
 
 ---
 
