@@ -259,6 +259,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   // List-new (30/10, owner "ลงไปก่อนได้เลย … ลงแค่ให้ระบบ Shipnity - เว็บเราเชื่อมต่อกันได้"; "เป็นหัว Switch"): Max-only record (Pod-181).
   "NEXBAR-SWITCH-15K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "nexBar Switch 15k" (Pod-181), 15 flavours ฿299 (order-entry picker read 30/10 ~22:40); owner 30/10: refill pods ("หัว Switch"); no maker page found 30/10 (not a WOTOFO nexPOD 15K flavour list) — listed on warehouse facts only, without a brand, no card photo yet (owner: photos later)' },
+  // List-new (31/10, owner "ลงได้เลยและจัดการเรื่องรหัส Sku ให้เรียบร้อยถูกต้อง"): Max-only record (Max re-used Pod-180; nexBar CLEAR 18K = Disposable-46).
+  "DUDE-POD-3ML": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัว dude 3 ml." (Pod-180), 10 flavour children ฿129 (product list read 31/10 ~18:25); the warehouse poster prints "dude PREMIUM PODS"; no maker site found 31/10 (dudethailand.com does not resolve) — listed on warehouse facts only, without a brand record' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
@@ -609,9 +611,15 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
   },
   "NEXBAR-SWITCH-15K-POD": {
-    // List-new (30/10): warehouse facts only — the Max name "nexBar Switch 15k" (refill pods, owner "หัว Switch"); no maker page.
-    tagline: "หัวพอต nexBar Switch 15K",
-    shortDescription: "หัวพอต nexBar Switch ชื่อรุ่นระบุ 15K ร้านมีให้เลือก 15 กลิ่น",
+    // List-new (30/10): no maker page — the numbers are nexBar's own posters (VERIFIED_SPECIFICATIONS below). The device it
+    // fits is retailer text only, so it is not said here.
+    tagline: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K น้ำยา 15mL",
+    shortDescription: "หัวพอตบรรจุสำเร็จ nexBar Switch 15K หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL พร้อมคอยล์ nexMesh ในตัว นิโคติน 3% ร้านมีให้เลือก 15 กลิ่น",
+  },
+  "DUDE-POD-3ML": {
+    // List-new (31/10): warehouse facts only — the Max name "หัว dude 3 ml." (no maker page).
+    tagline: "หัวพอต dude 3ml",
+    shortDescription: "หัวพอต dude ชื่อรุ่นระบุ 3ml ร้านมีให้เลือก 10 กลิ่น",
   },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
@@ -858,7 +866,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/mq-bar-22k/card.webp",
+      src: "/assets/products/mq-bar-22k/card-v2.webp",
       alt: "MQ Bar 22K disposable vape, studio photo",
       angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the device on the shop's Kyoho Grape poster.",
       transparentBackground: true,
@@ -1127,7 +1135,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexswitch-16k-kit/card.webp",
+      src: "/assets/products/nexswitch-16k-kit/card-v2.webp",
       alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1148,18 +1156,33 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
-  // List-new (30/10): TEMPORARY card (owner 30/10 "ลงไปก่อนได้เลย เดี๋ยวงานรูป … มาตามแก้กันทีหลัง" · "ใช้ของผู้ผลิตไปก่อนก็ได้" ·
-  // "โหลดได้เลย") = the warehouse's own Shipnity Max image of Pod-181 (the 15-flavour line-up poster, 1000×832), fitted
-  // whole on the 4:5 canvas without cutting (busy background, IMAGE_SPEC §6). A studio card replaces it in the listing chat.
+  // Listing chat 31/10 (owner: "สร้างผ่าน Mcp ได้ครับ"): one studio render of the pod (Higgsfield GPT Image 2.5, job 2b051ed0,
+  // from the maker's product render a Thai shop uses — vmaniath.com/en/product/1273962) replaces the warehouse's line-up poster.
+  // card-v2: card.webp was the poster, already live (Cloudflare keeps /assets 30 days, LESSONS-images พ6).
   "NEXBAR-SWITCH-15K-POD": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexbar-switch-15k-pod/card.webp",
-      alt: "nexBar Switch 15K refill pods, all 15 flavours line-up",
-      angle: "Line-up poster as the warehouse stores it (Shipnity Max product image 2764487, read 30/10) — 15 pods, one per flavour.",
-      transparentBackground: false,
-      sourceName: "Shipnity Max product image (the warehouse's line-up poster)",
+      src: "/assets/products/nexbar-switch-15k-pod/card-v2.webp",
+      alt: "nexBar Switch 15K refill pod, Blueberry Ice, front view",
+      angle: "Front, isolated — OKami24 render (Higgsfield) of the maker's pod render; the flavour label re-typeset by script.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the maker's pod render",
+      sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
+    },
+  ],
+  // Listing chat 01/11 (owner "ให้แชทลูกลงสินค้าให้ดีเลยตามคู่มือการลงรูปบน Web"): one studio render of the pod alone
+  // (Higgsfield GPT Image 2.5, job 310c453e) replaces the warehouse's line-up poster — the poster (Shipnity Max image 2761958,
+  // 750×1000) is the only source found (no maker site, researcher 01/11). card-v2: card.webp is cached live 30 days (LESSONS-images พ6).
+  "DUDE-POD-3ML": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/dude-pod-3ml/card-v2.webp",
+      alt: "dude 3ml refill pod, front view",
+      angle: "Front, isolated — OKami24 render (Higgsfield) of the pod on the warehouse's line-up poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster",
       sourceUrl: "https://app.shipnitymax.com/",
     },
   ],
@@ -1626,10 +1649,22 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
-  // List-new (30/10): warehouse facts only (no maker page) — the Max name "nexBar Switch 15k".
+  // List-new (30/10): no maker site. Rows = nexBar's own posters: the 15-flavour line-up the warehouse keeps (Shipnity Max
+  // product image 2764487 — nexMesh Coil · 15000 puffs · 15ML · Nic 3%) and the 10-flavour poster series a Thai shop carries
+  // verbatim (nexMesh Coil · 15000 puffs · 15ML). Rows name no sourceUrl: a row URL must be a maker domain (verified-specs test).
   "NEXBAR-SWITCH-15K-POD": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุหัวพอต", value: "15mL", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "nexMesh", sourceStatus: "verified" },
+      { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice"],
+  },
+  // List-new (31/10): warehouse facts only (no maker page) — the Max name "หัว dude 3 ml.".
+  "DUDE-POD-3ML": {
+    specifications: [
+      { key: "capacity", label: "ความจุหัวพอต", value: "3ml", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
@@ -2069,17 +2104,17 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Image sweep: MQ Bar 22K — Kyoho Grape has the card device (violet ring as on its poster, 19/10); the other 10 flavours = re-shoots of the shop's flavour posters (21/10), ring colour per poster.
   "MQ-BAR-22K": {
-    "Disposable-43-1": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-1.webp", alt: "MQ Bar 22K Kyoho Grape disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster", sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp" },
-    "Disposable-43-2": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-2.webp", alt: "MQ Bar 22K Grape Lychee disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-3": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-3.webp", alt: "MQ Bar 22K Blue Ice disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-4": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-4.webp", alt: "MQ Bar 22K Double Mint disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-5": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-5.webp", alt: "MQ Bar 22K Pink Berry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-6": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-6.webp", alt: "MQ Bar 22K Mixberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-7": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-7.webp", alt: "MQ Bar 22K Strawberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-8": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-8.webp", alt: "MQ Bar 22K Peach Strawberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-9": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-9.webp", alt: "MQ Bar 22K Watermelon disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-10": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-10.webp", alt: "MQ Bar 22K Cola disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
-    "Disposable-43-11": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-11.webp", alt: "MQ Bar 22K Rainbow Candy disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-1": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-1-v2.webp", alt: "MQ Bar 22K Kyoho Grape disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster", sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp" },
+    "Disposable-43-2": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-2-v2.webp", alt: "MQ Bar 22K Grape Lychee disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-3": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-3-v2.webp", alt: "MQ Bar 22K Blue Ice disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-4": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-4-v2.webp", alt: "MQ Bar 22K Double Mint disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-5": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-5-v2.webp", alt: "MQ Bar 22K Pink Berry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-6": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-6-v2.webp", alt: "MQ Bar 22K Mixberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-7": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-7-v2.webp", alt: "MQ Bar 22K Strawberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-8": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-8-v2.webp", alt: "MQ Bar 22K Peach Strawberry disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-9": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-9-v2.webp", alt: "MQ Bar 22K Watermelon disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-10": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-10-v2.webp", alt: "MQ Bar 22K Cola disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
+    "Disposable-43-11": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-11-v2.webp", alt: "MQ Bar 22K Rainbow Candy disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K flavour poster", sourceUrl: "https://maneevp.com/product/mq-bar-22k/" },
   },
   // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
   "GRAPLE-FREEBASE": {
@@ -2165,21 +2200,21 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // (re-shot from the shop's per-flavour pod poster, maneevp) beside the one shared pod (the card photo). Grape Berry (23/10): no pack photo anywhere →
   // our Grape Lychee photo recoloured to the hue of Kardinal's own 64 px Grape Berry flavour icon + BERRY on the label (colour = estimate).
   "Pod-150": {
-    "Pod-150-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-1.webp", alt: "KS Quikpro 15K pod, Blackcurrant Lychee, purple pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-2.webp", alt: "KS Quikpro 15K pod, Blueberry, periwinkle-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-3.webp", alt: "KS Quikpro 15K pod, Extra Menthol, royal-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-4.webp", alt: "KS Quikpro 15K pod, Watermelon, red-orange pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-5.webp", alt: "KS Quikpro 15K pod, Grape Lychee, pink-purple pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-6.webp", alt: "KS Quikpro 15K pod, Grape, deep-violet pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-7.webp", alt: "KS Quikpro 15K pod, Cola Lemon, terracotta pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-8.webp", alt: "KS Quikpro 15K pod, Lemon Soda, lemon-yellow pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-9": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-9.webp", alt: "KS Quikpro 15K pod, Lychee, coral-pink pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-10": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-10.webp", alt: "KS Quikpro 15K pod, Milk Tea, beige pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-11": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-11.webp", alt: "KS Quikpro 15K pod, Mineral, sky-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-12": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-12.webp", alt: "KS Quikpro 15K pod, Pineapple, golden-yellow pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-13": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-13.webp", alt: "KS Quikpro 15K pod, Sour Apple, lime-green pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-14": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-14.webp", alt: "KS Quikpro 15K pod, Strawberry, coral-red pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
-    "Pod-150-15": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-15.webp", alt: "KS Quikpro 15K pod, Yogurt, pale cream pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-1-v2.webp", alt: "KS Quikpro 15K pod, Blackcurrant Lychee, purple pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-2-v2.webp", alt: "KS Quikpro 15K pod, Blueberry, periwinkle-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-3-v2.webp", alt: "KS Quikpro 15K pod, Extra Menthol, royal-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-4-v2.webp", alt: "KS Quikpro 15K pod, Watermelon, red-orange pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-5-v2.webp", alt: "KS Quikpro 15K pod, Grape Lychee, pink-purple pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-6-v2.webp", alt: "KS Quikpro 15K pod, Grape, deep-violet pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-7-v2.webp", alt: "KS Quikpro 15K pod, Cola Lemon, terracotta pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-8-v2.webp", alt: "KS Quikpro 15K pod, Lemon Soda, lemon-yellow pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-9": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-9-v2.webp", alt: "KS Quikpro 15K pod, Lychee, coral-pink pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-10": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-10-v2.webp", alt: "KS Quikpro 15K pod, Milk Tea, beige pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-11": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-11-v2.webp", alt: "KS Quikpro 15K pod, Mineral, sky-blue pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-12": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-12-v2.webp", alt: "KS Quikpro 15K pod, Pineapple, golden-yellow pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-13": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-13-v2.webp", alt: "KS Quikpro 15K pod, Sour Apple, lime-green pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-14": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-14-v2.webp", alt: "KS Quikpro 15K pod, Strawberry, coral-red pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
+    "Pod-150-15": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-pod-150-15-v2.webp", alt: "KS Quikpro 15K pod, Yogurt, pale cream pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro pod poster", sourceUrl: "https://maneevp.com/product/ks-quik-pro-15000-puffs/" },
     "pod-150-verified-grape-berry": { kind: "official-photo", role: "detail", src: "/assets/products/pod-150/variant-grape-berry.webp", alt: "KS Quikpro 15K pod, Grape Berry, dark violet pod box beside the pod, studio photo", transparentBackground: true, sourceName: "OKami24 image (pack colour from Kardinal's Grape Berry flavour icon)", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   },
   // INFY PLUS — Grape Jelly (18/10) + 20 more (22/10): each one a re-shoot of the pod on that flavour's OWN poster (maneevp), so the printed
@@ -2279,16 +2314,16 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Round list19 (19/10): Nexswitch 16K kit — the body colour follows the flavour (shop's colour grid); one master render, the other
   // nine recoloured to the grid's colour of that flavour (aiRender in the map).
   "NEXSWITCH-16K-KIT": {
-    "Pod-161-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-1.webp", alt: "Nexswitch 16K kit, Grape Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-2.webp", alt: "Nexswitch 16K kit, Grape Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-3.webp", alt: "Nexswitch 16K kit, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-4.webp", alt: "Nexswitch 16K kit, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-5.webp", alt: "Nexswitch 16K kit, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-6.webp", alt: "Nexswitch 16K kit, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-7.webp", alt: "Nexswitch 16K kit, Cola Lemon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-1-v2.webp", alt: "Nexswitch 16K kit, Grape Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-2-v2.webp", alt: "Nexswitch 16K kit, Grape Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-3-v2.webp", alt: "Nexswitch 16K kit, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-4-v2.webp", alt: "Nexswitch 16K kit, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-5-v2.webp", alt: "Nexswitch 16K kit, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-6-v2.webp", alt: "Nexswitch 16K kit, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-7-v2.webp", alt: "Nexswitch 16K kit, Cola Lemon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8-v2.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9-v2.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10-v2.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
   // Round list19 (19/10): PnP X — the 0.15Ω option shows the card re-shoot (its own coil); the other resistances have no photo yet.
   "Coil-92": {
@@ -2423,6 +2458,32 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "pod-159-verified-watermelon-lime": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-watermelon-lime.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Lime", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     "pod-159-verified-yogurt": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
+  // Listing chat 31/10: nexBar Switch 15K — one master pod render, the flavour label re-typeset per flavour (names as printed
+  // on nexBar's posters), one matte for all 15 so the pod never moves between chips (LESSONS-images 11/32).
+  "NEXBAR-SWITCH-15K-POD": Object.fromEntries(
+    ([["Pod-181-1", "grape-ice", "Grape Ice"], ["Pod-181-2", "grape-lychee", "Grape Lychee"], ["Pod-181-3", "mint", "Mint"],
+      ["Pod-181-4", "watermelon-ice", "Watermelon Ice"], ["Pod-181-5", "cola", "Cola"], ["Pod-181-6", "mixberry", "Mixberry"],
+      ["Pod-181-7", "pink-berry", "Pink Berry"], ["Pod-181-8", "blueberry-ice", "Blueberry Ice"], ["Pod-181-9", "mango-peach", "Mango Peach"],
+      ["Pod-181-10", "peach-strawberry", "Peach Strawberry"], ["Pod-181-11", "lychee", "Lychee"], ["Pod-181-12", "strawberry-banana", "Strawberry Banana"],
+      ["Pod-181-13", "strawberry-custard", "Strawberry Custard"], ["Pod-181-14", "strawberry-watermelon", "Strawberry Watermelon"],
+      ["Pod-181-15", "pineapple", "Pineapple"]] as const).map(([code, file, name]) => [code, {
+      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
+      transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's pod render", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
+    } satisfies ProductAsset])
+  ),
+  // Listing chat 01/11: dude Pod 3ml — pod + that flavour's box, as on the warehouse poster (the pod is the same for every
+  // flavour; the box names it). One master scene (Higgsfield GPT Image 2.5, job f23e25be, Blueberry), the other nine = the
+  // master with only the box artwork changed (LESSONS-images 32); one shared matte, so the pod never moves between chips.
+  "DUDE-POD-3ML": Object.fromEntries(
+    ([["Pod-180-1", "grape-ice", "Grape Ice"], ["Pod-180-2", "blueberry", "Blueberry"], ["Pod-180-3", "cola", "Cola"],
+      ["Pod-180-4", "mint", "Mint"], ["Pod-180-5", "mineral-water", "Mineral Water"], ["Pod-180-6", "grape-aloe", "Grape Aloe"],
+      ["Pod-180-7", "taro-ice-cream", "Taro Ice Cream"], ["Pod-180-8", "watermelon", "Watermelon"],
+      ["Pod-180-9", "watermelon-lychee", "Watermelon Lychee"], ["Pod-180-10", "strawberry-watermelon", "Strawberry Watermelon"]] as const)
+      .map(([code, file, name]) => [code, {
+        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
+        transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster", sourceUrl: "https://app.shipnitymax.com/",
+      } satisfies ProductAsset])
+  ),
   // Round list19 (19/10): ESKO BAR SWITCH pod — every flavour has its pod photo (the pod-159 sources, one master pod).
   "ESKO-BAR-SWITCH-POD": {
     "Pod-160-1": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-grape.webp", alt: "ESKO BAR SWITCH prefilled pod, Grape", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
@@ -3010,6 +3071,10 @@ function attachVariantMedia(shipnityProductId: string, variants: ProductMasterIn
 const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: string }> = {
   "Pod-159": { name: "ESKO BAR SWITCH 20K", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+  // List-new 30/10: Max spells it "nexBar Switch 15k"; the K follows the warehouse name and nexBar's rated 15,000 puffs (no maker site; the pod print under SWITCH is not legible).
+  "NEXBAR-SWITCH-15K-POD": { name: "nexBar Switch 15K", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice" },
+  // List-new 31/10: Max calls it "หัว dude 3 ml." (a Thai operational string); the brand prints lowercase "dude" on pod and box.
+  "DUDE-POD-3ML": { name: "dude Pod 3ml", sourceUrl: "https://app.shipnitymax.com/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },

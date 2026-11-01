@@ -1,8 +1,10 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { FlavorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
+import { LowStockTag } from "./StockCount";
 
 /**
  * Real manufacturer flavor selector for a Legacy Product Detail hero (owner mandate, 2026-09-03 —
@@ -33,6 +35,8 @@ export function FlavorVariantGrid({
   isAllSelected,
   onSelectAll,
   outOfStockLabel,
+  counts,
+  countLine,
   className,
 }: {
   variants: FlavorVariant[];
@@ -48,6 +52,10 @@ export function FlavorVariantGrid({
   isAllSelected?: boolean;
   onSelectAll?: () => void;
   outOfStockLabel: string;
+  /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
+  counts?: Record<string, number>;
+  /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
+  countLine?: ReactNode;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -57,8 +65,9 @@ export function FlavorVariantGrid({
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock" }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id] }))}
         selectedId={isAllSelected ? null : selectedId}
+        countLine={countLine}
         onSelect={onSelect}
         label={label}
         pills={onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []}
@@ -113,6 +122,7 @@ export function FlavorVariantGrid({
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
               {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-danger" : "text-foreground-dim")}>{outOfStockLabel}</span>}
+              {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
             </button>
           );
         })}

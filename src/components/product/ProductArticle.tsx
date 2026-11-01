@@ -20,7 +20,8 @@ export function ProductArticleLede({ articles }: { articles: ArticlesByLocale })
   const { locale } = useLocale();
   const a = articles[locale];
   if (!a?.lede) return null;
-  return <p className="mt-6 max-w-2xl text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-foreground">{renderInline(a.lede, locale, "lede")}</p>;
+  // Centred under the centred "more details" heading (owner 30/10) — its only callers are that heading block on both page kinds.
+  return <p className="mx-auto mt-6 max-w-2xl text-center text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-foreground">{renderInline(a.lede, locale, "lede")}</p>;
 }
 
 export function ProductArticleBody({ articles }: { articles: ArticlesByLocale }) {

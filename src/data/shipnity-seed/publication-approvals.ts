@@ -151,8 +151,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Coil-87": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   // REPUBLISHED round list19 (2026-10-18, owner "list everything", through Friday — also lifts the 22/10 GSC hold on /brands/infy):
   // an OKami24 re-shoot of one clear INFY PLUS pod (Grape Jelly, a flavour sold here) replaces the withdrawn box line-up.
-  // Price = Shipnity MAX "ราคาขาย" ฿129 for Pod-169 and every child (17/10 read).
-  "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-10-18" },
+  // Price ฿150 for Pod-169 and every child — OWNER OVERRIDE 2026-10-30: the owner forwarded admin ICE's request in chat
+  // ("แอดมินฝากงานแก้ราคามาครับ" · ICE: "พี่ครับเป็น150.- ให้หน่อยครับ", screenshot of this page at ฿129). Was Shipnity MAX ราคาขาย ฿129 (17/10 read).
+  "Pod-169": { sellingPrice: 150, lastPriceReview: "2026-10-30" },
   // History — the 2026-09-02 approval below was withdrawn 2026-09-06:
   // "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the card shows an INFY PLUS
@@ -206,7 +207,12 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // List-new (30/10): nexBar Switch 15K pod (Max-only "Pod-181") — Max ราคาขาย ฿299 for the parent and its 15 flavours (read 30/10
   // ~22:40); BSOT §4 owner 16/10 "ใส่ตามคลัง" + owner 30/10 "ลงไปก่อนได้เลย".
-  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 299, lastPriceReview: "2026-10-30" },
+  // owner 31/10 "เคาะแล้วนะครับ nexBar Switch 15K 329 Javis กำลังทำรูป" — ฿329 = Max ราคาขาย ฿299 +10% (BSOT §5 31/10); was ฿299.
+  "NEXBAR-SWITCH-15K-POD": { sellingPrice: 329, lastPriceReview: "2026-10-31" },
+  // List-new (31/10): dude pod 3 ml (Max "Pod-180", re-used code) — Max ราคาขาย ฿129 for the parent and its 10 flavours (read 31/10 ~18:25).
+  // owner 01/11 "ราคาหัว dude ฿139 ปรับเป็น 159 ได้เลยครับ" — owner's own number (BSOT §5: owner = final price authority), ฿159 = Max ฿129 +23%,
+  // over the 6–12% band on purpose; was ฿139 (the band pick of 31/10).
+  "DUDE-POD-3ML": { sellingPrice: 159, lastPriceReview: "2026-11-01" },
   // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
   // owner-confirmed 2026-10-19: owner in chat "Relax lumi 18k ราคา 399 ครับ แก้เลยครับ" — owner override (was ฿349). Max says ฿349 until the admin updates it.
   // owner-confirmed 2026-10-29: new LUMI catalogue image prints ฿379 (Max cost ฿349 +8.6%; owner kept it 29 Oct 04:41) — was ฿399.
@@ -254,7 +260,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
-  "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
+  "MQ-BAR-22K": { sellingPrice: 389, lastPriceReview: "2026-10-31" }, // owner 31/10 "389 ตามภาพ": the image prints 389; Max ราคาขาย 369 parent / 359 flavours read 31/10 = +5.4% / +8.4%
   // Owner brief 26/10: SUP Zero 22K (Max-only "Disposable-45") — Max ราคาขาย ฿329 for the parent and its 15 flavours (read 2026-10-26 17:30).
   // owner-confirmed 2026-10-29: owner in chat "SUP ZERO 22K ราคาในรูปพิมพ์ ตามรูป" — the catalogue image prints ฿350 (Max cost ฿329 +6.4%) — was ฿329.
   "SUP-ZERO-22K": { sellingPrice: 350, lastPriceReview: "2026-10-29" },

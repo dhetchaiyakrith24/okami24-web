@@ -236,6 +236,17 @@ export interface Dictionary {
     optionIn: string;
     optionOut: string;
     optionStockCount: string;
+    /** Live warehouse count of the picked option (owner 26/10 word, HANDOFF §18 "Low-stock label") — `{n}` = pieces left, shown at ≤ 3. */
+    lowStock: string;
+    /** The picked option's live count between LOW_STOCK_AT and COUNT_CEILING (src/lib/stock/count-rules.ts) — `{n}` = pieces. */
+    stockLeft: string;
+    /** Above COUNT_CEILING — `{n}` = the ceiling (owner 30/10: "มากกว่า 20 ชิ้น"). */
+    stockMany: string;
+    /** The short low-stock word on one small option tile (no room for lowStock) — `{n}` = pieces. */
+    stockLeftShort: string;
+    /** Sales badges on cards and the product head (owner 30/10, src/data/sales-badges.ts): one per product. */
+    badgeNew: string;
+    badgeBestSeller: string;
     /** Past 12 options: open the photo strip into the full grid / close it again (owner 24/10). */
     optionShowAll: string;
     optionShowLess: string;

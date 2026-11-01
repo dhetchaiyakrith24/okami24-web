@@ -453,11 +453,13 @@ export function OrderStatusView({
                     fine vertical texture — the only dark part) sits to the RIGHT, the words stand up-left, and the card's own details
                     are back: logo, PAYMENT CARD tag, gold chip (top), the rows at the bottom like a real card at sm+ (credit-card proportion 1.586:1, max 440 px — owner 30/10 "ดูเป็นบัตร Credit"), a green dot on the bank — and NOT the amount or the running number (owner 30/10:
                     "ยอด-รหัส ไม่ใส่ลงในการ์ด … เรียบ แบบ Black card มีคาแรคเตอร์ ดูเป็นบัตร Credit"). The copy button has an orange LED frame (owner 30/10 "ปุ่มคัดลอก กรอบเป็น LED สีส้มตามธีม"). Box, labels,
-                    values and borders keep the web's colours; the picture fades into the box colour toward the words. */}
-                <div className="relative isolate overflow-hidden rounded-lg border border-surface-border-soft bg-surface-2 sm:mx-auto sm:aspect-[1.586/1] sm:w-full sm:max-w-[440px]">
+                    values and borders keep the web's colours; the picture fades into the box colour toward the words.
+                    The thin orange outline + soft halo and the warm tint behind the picture = the card frame of draft #1038 (owner 30/10:
+                    "อันนี้โอเคอยู่แล้ว"); that draft's thank-you stage light stays parked (owner "เว้นเอาไว้ก่อน"). */}
+                <div className="relative isolate overflow-hidden rounded-lg border border-[rgba(255,106,44,.42)] bg-surface-2 shadow-[0_0_0_1px_rgba(255,106,44,.08),0_0_20px_-6px_rgba(255,106,44,.35),0_12px_32px_-14px_rgba(242,48,48,.30)] sm:mx-auto sm:aspect-[1.586/1] sm:w-full sm:max-w-[440px]">
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[72%] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#26272b_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_right,transparent,black_42%)]"
+                    className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-[72%] overflow-hidden bg-[radial-gradient(120%_80%_at_80%_0%,#2b1f19_0%,#151619_55%,#101113_100%)] [mask-image:linear-gradient(to_right,transparent,black_42%)]"
                   >
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.02)_0_1px,transparent_1px_3px)]" />
                     <Image

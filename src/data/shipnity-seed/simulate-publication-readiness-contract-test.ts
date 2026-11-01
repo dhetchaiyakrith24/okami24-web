@@ -138,8 +138,8 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   // ฿130 → ฿150 owner override 2026-10-24.
   checkGenuinelyPublished("Coil-92", 150, 7);
   checkWithdrawn("Coil-63");
-  // Pod-169 INFY PLUS republished round list19 (2026-10-18) with an OKami24 re-shoot of one clear pod: the 28 Max flavours at ฿129.
-  checkGenuinelyPublished("Pod-169", 129, 28);
+  // Pod-169 INFY PLUS republished round list19 (2026-10-18) with an OKami24 re-shoot of one clear pod: the 28 Max flavours at ฿150 (owner override 30/10, was ฿129).
+  checkGenuinelyPublished("Pod-169", 150, 28);
   // IQOSHEET-14 republished round list19 (2026-10-17) with LAMBDA's own per-colour photos: 2 Shipnity children + 4 verified colours.
   // Max IQOSHEET-14-2 "Silver" = White (23/10) — no 5th extra colour, so 6.
   checkGenuinelyPublished("IQOSHEET-14", 2390, 6);

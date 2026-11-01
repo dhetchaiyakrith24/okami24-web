@@ -21,6 +21,9 @@ import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
+import { StockCountLine } from "@/components/product/StockCount";
+import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { countKind, countText } from "@/lib/stock/count-rules";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
@@ -101,7 +104,7 @@ export function ProductHero({
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
-  const product = useLiveLegacyProduct(builtProduct);
+  const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
   const { locale, dict } = useLocale();
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
   // tagline/description from product-copy-th.ts INSTEAD of the English pair. Until this round the
@@ -179,6 +182,18 @@ export function ProductHero({
     ? [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock")
     : product.availability === "out-of-stock";
   const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
+  // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
+  const pickedLeft = hasOptions ? (cartVariantId ? liveCounts.o[cartVariantId] : undefined) : liveCounts.p ?? undefined;
+  const pickedLowText =
+    pickedLeft !== undefined && countKind(pickedLeft) === "low"
+      ? hasOptions
+        ? dict.product.stockLeftShort.replace("{n}", String(pickedLeft))
+        : countText(dict.product, pickedLeft).text
+      : null;
+  // The line keeps its height only while the answer is on its way, so a page that gets no number closes the gap (checker
+  // #1063 round 1) and one that gets a number does not jump. Phone: under the picker header; desktop: above the buy button.
+  const reserveCount = canAddToCart && !choiceMissing && !liveCounts.settled;
+  const countLine = <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} />;
   // Data round (owner 2026-09-24): a stat shows only when a verified spec row states the same number.
   const facts = verifiedAttributes(product);
   const hasVerifiedSpecs = verifiedRows(product.specifications).length > 0;
@@ -342,6 +357,7 @@ export function ProductHero({
             )}
             <Badge tone="neutral">{familyName(product.familyId)}</Badge>
             <EditorialTagBadge tag={product.editorialTag} />
+            <HeadSalesBadge slug={product.slug} soldOut={everyOptionSoldOut} />
           </div>
           <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground max-lg:order-2 max-lg:text-[1.75rem] max-lg:leading-[1.1]">
             {product.name}
@@ -357,6 +373,7 @@ export function ProductHero({
             <div className="max-lg:order-5">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
               <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{sellingPrice.toLocaleString("th-TH")}</p>
+              {!hasOptions && <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} className="mt-1 lg:hidden" />}
             </div>
           )}
 
@@ -374,6 +391,8 @@ export function ProductHero({
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
+              counts={liveCounts.o}
+              countLine={countLine}
               className="max-lg:order-4"
             />
           )}
@@ -391,12 +410,17 @@ export function ProductHero({
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
+              counts={liveCounts.o}
+              countLine={countLine}
               className="max-lg:order-4"
             />
           )}
 
           {sellingPrice !== null && (
             <div className="flex flex-col gap-3 pt-1 max-lg:hidden">
+              {/* The picked option's count, right above the button it is about (designer 30/10: on desktop the price
+                  sits above the options); the line keeps its height before the answer lands. */}
+              {countLine}
               {/* One shared buy action for every product page and the mobile bar — see
                   ProductBuyAction.tsx (mobile round, 2026-09-08). The legacy form/note classes
                   are passed in so this renders exactly as it did when the branch lived here. */}
@@ -495,7 +519,7 @@ export function ProductHero({
       </Container>
     </section>
     {sellingPrice !== null && (
-      <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled}>
+      <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled} lowText={canAddToCart ? pickedLowText : null}>
         <ProductBuyAction
           available={canAddToCart}
                 choiceMissingLabel={choiceMissingLabel}

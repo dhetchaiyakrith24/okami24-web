@@ -9454,136 +9454,146 @@
   "note": "ESKO BAR's own flavour render o.png, alt \"ESKO BAR 498 berry grape\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
  },
  {
-  "source": "_incoming/list19/nex/kit-mixberry.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-3.png",
   "slug": "nexswitch-16k-kit",
   "role": "card",
-  "note": "round list19 19/10 - card = the Mixberry (blue) master re-shoot",
+  "note": "images 30/10 (chat 7) - card = the Mixberry re-shoot",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
   },
-  "fileName": "card.webp"
+  "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-grape-ice.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-1.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-1",
-  "note": "round list19 19/10 - Grape Ice kit (Max Pod-161-1)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-1: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-1-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-grape-lychee.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-2.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-2",
-  "note": "round list19 19/10 - Grape Lychee kit (Max Pod-161-2)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-2: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-2-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-mixberry.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-3.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-3",
-  "note": "round list19 19/10 - Mixberry kit (Max Pod-161-3)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-3: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-3-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-strawberry-watermelon.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-4.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-4",
-  "note": "round list19 19/10 - Strawberry Watermelon kit (Max Pod-161-4)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-4: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-4-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-mineral.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-5.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-5",
-  "note": "round list19 19/10 - Mineral kit (Max Pod-161-5)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-5: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-5-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-honeydew-melon.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-6.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-6",
-  "note": "round list19 19/10 - Honeydew Melon kit (Max Pod-161-6)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-6: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-6-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-cola-lemon.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-7.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-7",
-  "note": "round list19 19/10 - Cola Lemon kit (Max Pod-161-7)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-7: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-7-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-mint.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-8.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-8",
-  "note": "round list19 19/10 - Mint kit (Max Pod-161-8)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-8: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-8-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-pink-berry.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-9.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-9",
-  "note": "round list19 19/10 - Pink Berry kit (Max Pod-161-9)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-9: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-9-v2.webp"
  },
  {
-  "source": "_incoming/list19/nex/kit-watermelon.png",
+  "source": "_incoming/img-3110/reshoot/nex/pod-161-10.png",
   "slug": "nexswitch-16k-kit",
   "role": "variant",
   "id": "pod-161-10",
-  "note": "round list19 19/10 - Watermelon kit (Max Pod-161-10)",
+  "note": "images 30/10 (chat 7) - Nexswitch 16K kit Pod-161-10: photographic one-scene re-shoot (the old set was a flat script recolour)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
-   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
-   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes in the images chat 30/10 'อนุมัติไม่เกิน 106'): ONE master studio render 474a0c0e (image 1 = the live Mixberry kit photo for layout, image 2 = the shop's Mixberry poster for materials) and every colour an EDIT of that master with the shop's colour-grid crop of that kit (masters/in/nex/kit-*.png) as the colour reference - Mixberry's blue then moved to the live/grid blue by recolor-blue.js, then (checker #1066) nine colours moved (round 2: + Cola Lemon, Grape Lychee, Mineral, Mint) to the shop colour-grid in HSL and the matte clipped under the bottom rim by nex-fix.js; one shared matte for the whole set (per-render flood key across neighbour steps < 3 on a blur 1.5 (gradient backdrop), per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + Mixberry poster - _incoming/img-1610/masters/src/pod-161 (main checkout) · https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-3110/reshoot/nex-set.jpg"
+  },
+  "fileName": "variant-pod-161-10-v2.webp"
  },
  {
   "source": "_incoming/list19/reswa/icecola.png",
@@ -10398,148 +10408,159 @@
   }
  },
  {
-  "source": "_incoming/list19/mq/mq.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-1.png",
   "slug": "mq-bar-22k",
   "role": "card",
-  "note": "image sweep 19/10 - MQ Bar 22K (Max Disposable-43, Kyoho Grape in stock)",
+  "note": "images 30/10 (chat 7) - card = the Kyoho Grape re-shoot",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10 - the Pro run of the model test, list19/g/mt/nbpro.png, 2 credits already spent then), studio re-shoot of the device on the shop Kyoho Grape poster (list19/i/in/mq-kyoho.png = device cropped, 3x), prompt in list19/g/mt/RESULT.md; body cut by shape (list19/e1/shape.js GAP 2108 + e/wallfill.js), black base drawn (list19/h/basefix.js GAP 2104 L 714 R 1141 RX 0.21 RY 0.165), alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com MQ Bar 22K Kyoho Grape poster 800 px - _incoming/img-1610/masters/src/disposable-43-mq/kyoho.jpg",
-   "fidelitySheet": "_incoming/img-1610/list19/g/mt/label-sheet-5.jpg (22K PUFF / MQBAR / display icons vs the poster), list19/i/mq-edges.jpg + mq-base.jpg + mq-base2.jpg (tip, collar, base corners at 1:1 on the site background)"
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
   },
-  "fileName": "card.webp"
+  "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/list19/mq/mq.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-1.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-1",
-  "note": "image sweep 19/10 - MQ Bar 22K Kyoho Grape (Max Disposable-43-1): the card device, violet ring as on the Kyoho Grape poster",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-1: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10 - the Pro run of the model test, list19/g/mt/nbpro.png, 2 credits already spent then), studio re-shoot of the device on the shop Kyoho Grape poster (list19/i/in/mq-kyoho.png = device cropped, 3x), prompt in list19/g/mt/RESULT.md; body cut by shape (list19/e1/shape.js GAP 2108 + e/wallfill.js), black base drawn (list19/h/basefix.js GAP 2104 L 714 R 1141 RX 0.21 RY 0.165), alpha erode 2 px - copy beside this source",
-   "reference": "maneevp.com MQ Bar 22K Kyoho Grape poster 800 px - _incoming/img-1610/masters/src/disposable-43-mq/kyoho.jpg",
-   "fidelitySheet": "_incoming/img-1610/list19/g/mt/label-sheet-5.jpg (22K PUFF / MQBAR / display icons vs the poster), list19/i/mq-edges.jpg + mq-base.jpg + mq-base2.jpg (tip, collar, base corners at 1:1 on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-1-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-2.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-2.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-2",
-  "note": "image sweep 21/10 - MQ Bar 22K Grape Lychee (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-2: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-grape-lychee-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-grape-lychee, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-2-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-3.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-3.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-3",
-  "note": "image sweep 21/10 - MQ Bar 22K Blue Ice (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-3: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-blue-ice-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-blue-ice, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-3-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-4.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-4.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-4",
-  "note": "image sweep 21/10 - MQ Bar 22K Double Mint (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-4: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-double-mint-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-double-mint, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-4-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-5.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-5.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-5",
-  "note": "image sweep 21/10 - MQ Bar 22K Pink Berry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-5: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-pink-berry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-pink-berry, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-5-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-6.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-6.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-6",
-  "note": "image sweep 21/10 - MQ Bar 22K Mixberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-6: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-mixberry-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-mixberry, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-6-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-7.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-7.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-7",
-  "note": "image sweep 21/10 - MQ Bar 22K Strawberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-7: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-strawberry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-strawberry, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-7-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-8.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-8.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-8",
-  "note": "image sweep 21/10 - MQ Bar 22K Peach Strawberry (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-8: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-peach-strawberry-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-peach-strawberry, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-8-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-9.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-9.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-9",
-  "note": "image sweep 21/10 - MQ Bar 22K Watermelon (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-9: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-watermelon-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-watermelon, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-9-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-10.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-10.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-10",
-  "note": "image sweep 21/10 - MQ Bar 22K Cola (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-10: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-cola-1.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-cola, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-10-v2.webp"
  },
  {
-  "source": "_incoming/q2/final/mq-bar-22k-disposable-43-11.png",
+  "source": "_incoming/img-3110/reshoot/mq/disposable-43-11.png",
   "slug": "mq-bar-22k",
   "role": "variant",
   "id": "disposable-43-11",
-  "note": "image sweep 21/10 - MQ Bar 22K Rainbow Candy (owner credit yes 21/10 \"ทั้ง 3 ข้อ 72 เครดิต\")",
+  "note": "images 30/10 (chat 7) - MQ Bar 22K Disposable-43-11: one-scene re-shoot with rim light",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10), studio re-shoot of the disposable vape only, straightened, same light as Marbo v3 (mid-grey backdrop); render _incoming/q2/r/mq-rainbow-candy-2.png; cut _incoming/q2/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/q2/br-*.jpg, 2 px erode)",
-   "reference": "maneevp.com MQ Bar 22K flavour poster (https://maneevp.com/product/mq-bar-22k/ - wp-content/uploads/2026/09/mqbar-mq-bar-22k-rainbow-candy, 800 px, text over the poster) - _incoming/q2/mq/",
-   "fidelitySheet": "_incoming/q2/fid-mq.jpg (reference crop vs picked render), edges-m.jpg (cap tip and base corners on the site background)"
-  }
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10): master re-light a4d315d1 of the live Kyoho Grape photo (rim lights so the black body reads on the dark site; first try a4157557 rejected - poster props), every flavour an EDIT of that master changing only the LED ring colour to the live photo of that flavour; one shared matte for the whole set (per-render flood key T=10, per-pixel median of the keyed alphas, largest component, holes filled, eroded 1 px, 0.9 px blur - smatte.js/smatte2.js beside this source)",
+   "reference": "the live MQ Bar 22K flavour photos (maneevp.com posters, https://maneevp.com/product/mq-bar-22k/) - ring colours compared side by side in mq-rings.jpg",
+   "fidelitySheet": "_incoming/img-3110/reshoot/mq-set.jpg + mq-rings.jpg"
+  },
+  "fileName": "variant-disposable-43-11-v2.webp"
  },
  {
   "source": "_incoming/list19/vmate/gilt-black.png",
@@ -11929,184 +11950,199 @@
   }
  },
  {
-  "source": "_incoming/ksp/final/blackcurrant-lychee.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-1.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-1",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Blackcurrant Lychee (Max Pod-150-1): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Blackcurrant Lychee (Max Pod-150-1): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Blackcurrant Lychee (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Blackcurrant-Lychee.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Blackcurrant-Lychee.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-1-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/blueberry.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-2.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-2",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Blueberry (Max Pod-150-2): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Blueberry (Max Pod-150-2): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Blueberry (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Blueberry.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Blueberry.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-2-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/extra-menthol.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-3.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-3",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Extra Menthol (Max Pod-150-3): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Extra Menthol (Max Pod-150-3): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Extra Menthol (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Extra-Menthol.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Extra-Menthol.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-3-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/watermelon.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-4.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-4",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Watermelon (Max Pod-150-4): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Watermelon (Max Pod-150-4): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Watermelon (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Watermelon.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Watermelon.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-4-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/grape-lychee.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-5.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-5",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Grape Lychee (Max Pod-150-5): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Grape Lychee (Max Pod-150-5): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Grape Lychee (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Grape-Lychee.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Grape-Lychee.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-5-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/grape.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-6.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-6",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Grape (Max Pod-150-6): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Grape (Max Pod-150-6): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Grape (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Grape.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Grape.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-6-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/cola-lemon.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-7.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-7",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Cola Lemon (Max Pod-150-7): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Cola Lemon (Max Pod-150-7): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Cola Lemon (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Cola-Lemon.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Cola-Lemon.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-7-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/lemon-soda.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-8.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-8",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Lemon Soda (Max Pod-150-8): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Lemon Soda (Max Pod-150-8): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Lemon Soda (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Lemon-Soda.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Lemon-Soda.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-8-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/lychee.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-9.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-9",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Lychee (Max Pod-150-9): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Lychee (Max Pod-150-9): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Lychee (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Lychee.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Lychee.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-9-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/milk-tea.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-10.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-10",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Milk Tea (Max Pod-150-10): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Milk Tea (Max Pod-150-10): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Milk Tea (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Milk-Tea.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Milk-Tea.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-10-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/mineral.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-11.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-11",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Mineral (Max Pod-150-11): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Mineral (Max Pod-150-11): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Mineral (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Mineral.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Mineral.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-11-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/pineapple.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-12.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-12",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Pineapple (Max Pod-150-12): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Pineapple (Max Pod-150-12): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Pineapple (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Pineapple.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Pineapple.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-12-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/sour-apple.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-13.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-13",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Sour Apple (Max Pod-150-13): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Sour Apple (Max Pod-150-13): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Sour Apple (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Sour-Apple.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Sour-Apple.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-13-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/strawberry.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-14.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-14",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Strawberry (Max Pod-150-14): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Strawberry (Max Pod-150-14): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Strawberry (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Strawberry.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Strawberry.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-14-v2.webp"
  },
  {
-  "source": "_incoming/ksp/final/yogurt.png",
+  "source": "_incoming/img-3110/reshoot/ks/pod-150-15.png",
   "slug": "pod-150",
   "role": "variant",
   "id": "pod-150-15",
-  "note": "image sweep 22/10 - KS Quikpro 15K pod Yogurt (Max Pod-150-15): that flavour's pod-pack box beside the pod",
+  "note": "image sweep 22/10 - KS Quikpro 15K pod Yogurt (Max Pod-150-15): that flavour's pod-pack box beside the pod · v2 30/10 (images chat 7): box re-shot straight-on from one scene so every flavour has the same box size and the pod no longer jumps",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the flavour's QUIKpod pack box from its own poster (image 2) in the #712 kit-photo layout (image 1 = the live Cola Lemon kit photo); cut _incoming/ksp/k2cut.js; the box kept and the ONE shared pod placed beside it (_incoming/ksp/compose.js, the live pod-150 card photo, POD_RATIO 0.793, GAP 0.08) so every flavour shows the identical pod",
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (account credits, owner yes 30/10): ONE straight-on studio render of the Yogurt box 71d532b5 (from the live photo's box) and every flavour an EDIT of it with that flavour's live box as the artwork/colour reference (jobs in _incoming/img-3110/reshoot/jobs7.txt); one rectangle matte for all boxes (ks-rect.js, x 524-1324 y 125-2296, 6 px corners); the same shared pod (sweep-2310/ks/pod.png) placed beside each box (ks-compose.js, pod 0.793 x box height, gap 0.08 x box width) · checker #1067 round 1: pod edge colour-decontaminated (no light halo) in ks-compose.js; Grape Lychee box hue rotated -56 deg back to the live lilac-purple (ks-gl.js) · round 2: pod outline (3 px) and base rows recoloured from the pod interior, no light rim left",
    "reference": "maneevp.com KS Quik Pro 15000 Puffs pod poster, Yogurt (https://maneevp.com/product/ks-quik-pro-15000-puffs/ - wp-content/uploads/2024/12/<Thai \"pod\">-KS-Quik-Pro-15000-Puffs-Yogurt.jpg, 1000 px, no shop watermark) - _incoming/ksp/src/Yogurt.jpg",
-   "fidelitySheet": "_incoming/ksp/fid.jpg (poster crop beside the final) + dark.jpg (the set on the site background)"
-  }
+   "fidelitySheet": "_incoming/img-3110/reshoot/ks/set.jpg (flavour names checked by eye against the live boxes)"
+  },
+  "fileName": "variant-pod-150-15-v2.webp"
  },
  {
   "source": "_incoming/m9k/rc/final/blueberry-mint.png",
