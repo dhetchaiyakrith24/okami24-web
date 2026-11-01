@@ -10,30 +10,25 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 02/11 ~05:30 by the 7th main chat (local_737f7a61). Weekly quota reset 01/11.
+Updated 02/11 ~05:30 (pre-compact) by the 7th main chat (local_737f7a61). Weekly quota reset 01/11.
 
 1 main = 02/11 #1105 batch 1 · #1095 switch pods · #1097 SEO metas. CART IS ON. Older = `git log --merges origin/main`.
-2 CHILD CHATS (owner go 02/11; all report to local_737f7a61 since the 7th chat took over, told 02/11; Opus 5.5):
-  images-0211 local_6d7da3b4 (high, credit cap 80): A Higg renders → TFIT M Power 20K · SUP ZERO · JOIWAY F3 (square body; owner photos
-     `_incoming/img-0211/owner-photos/`) · B wrong model/logo → SKE Crystal B20000 (owner photos + pod789 page; supersedes #1040) · KS Quik Pro logo "KS" ·
-     nexSwitch 16K pod · RELX Creator (yellow / triangle button) · RELX Creator Pro (red button, 4 colours) · audit pod-system pods (list first).
-     Every sheet → owner OK before merge.
-  switchpod-cat-0211 local_3ed4b752 (medium): 8 switch-pod cartridges → Switch Pods (§18 "Which category a pod goes in"), audit the rest; product URLs unchanged.
-  seo-0211 local_8ac06ce8 (high): rankings back for pod / pod system / พอต / น้ำยาบุหรี่ไฟฟ้า + brand names. 02/11 Friday SERP check (owner Chrome, pws=0):
-     not SafeSearch — site:okami24.store shows our pages with SafeSearch on; we are out of the top 20 for "relx lumi 18k" + "voopoo drag 6" = ranking drop.
-     Plan ≤7 steps to Friday first. Old parked line = `docs/cloud-results/seo-meta-suffix-3010.md`.
+2 CHILD CHATS = item 2N "CHILDREN 02/11" (all report to local_737f7a61 · Opus 5.5 · ports: never 3412, each its own 2nd server).
   Archived 02/11: dude-images-0111 · gsc-read-0111. TRACKING local_dfdd063c = watching Shipnity's next real write.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
-2N ROUND OPEN 02/11 "queue 0211" (7th chat; owner "ครับเริ่มงานได้เลย") = `docs/rounds/รอบคิวงานพี่-02-11.md` (answers, batches, bans) · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
-    Owner 02/11: order e-mails/LINE = C (not now) · struck-through label price +10–20% = BSOT §5 02/11 (owner OKs the list) · bestseller per flavour (research; owner allows picks) ·
-    watermark "แบบงานรูปที่ Javis ทำ" (samples both ways → Javis) · 3 children: images-0211 (+ watermark after) · seo-0211 · articles (new).
-    Batches: 1 bugs + flavour bestseller (main, light) → 2ก address validation (main, full) → 2ข address look + map (main, designer) → 3 watermark (images child) ·
-    4 label price (main, full) · 5 articles (child). WHERE IT STOPPED: batch 1 LIVE 02/11 #1105 (proof _incoming/queue-0211) → next 2ก.
-    #1095 switch pods LIVE (25 / 12 live). Waiting on the owner: TFIT #1098 + JOIWAY #1100 sheets (draft, checker PASS) · SEO questions (age gate · About "who we are" · e-liquid keyword).
-    MOVE images + articles children (≥600k; start_session needs one desktop message) — hand-overs in side-session-notes (images-0211-handover.md · articles-0211/HANDOVER.md).
-    SUP ZERO pictures: owner answered 02/11 "เดี๋ยวพี่ส่งให้" = he sends the files (images-0211 told to stop searching Higgsfield) · multi-flavour ruling 02/11 = IMAGE_SPEC (fruit behind the model; one sample sheet first).
-    Also: relay seo age-gate snippet question (still unanswered) word for word · close draft #1038 (card frame live in #1091; stage light parked) ·
-    #1040 SKE = superseded by images-0211 (รอพี่ตรวจ 84) · status page v57 (read before publishing) · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.
+2N ROUND OPEN 02/11 "queue 0211" (7th chat, continues after COMPACT — owner 02/11 §18) = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
+    Owner answers: no order notices (C) · label price +10–20% (BSOT §5; owner OKs the list) · watermark mix (transparent = on product only, opaque = tiled like Javis) ·
+    dude 3ml = switch pod · NEW: "มาใหม่" capsule in a colour pairing with ember/black on every new product + show BOTH badges (Super Cool new + best seller).
+    LIVE 02/11: #1105 batch 1 · #1095 switch pods · #1098 TFIT · #1100 JOIWAY · #1107 SEO metas. Proof `_incoming/queue-0211/`.
+    IN FLIGHT (main): 2ก address = branch claude/queue-0211-b2a in `_incoming/wt-q0211` (head e97c6463, test `_incoming/queue-0211/b2a-test.js` 8/8 at 390+1440 on
+      3413) → NEXT: verify --full (stop my 3413 first; owner interrupted that stop once — ask/confirm) → pre-checker-gate → checker FULL set (13.5 #3) + agent visitor → merge.
+    · PR #1112 dude → switch-pods (draft; verify running in `_incoming/wt-main0211`) → gate → checker → merge → curl /products/switch-pods (26) + pods-cartridges (11).
+    · designer agent proposing "มาใหม่" colours → pick → owner sheet → build badge batch. Then 2ข address look + map (designer draft to owner) → label price list.
+    CHILDREN (talk to each other; all report here; ports: never 3412): images-0211b local_67ec6cc2 (#1110 KS card → owner sheet; watermark pilot brand; owner
+    to answer: RELX Creator top photo · nexSwitch trial · credits) · articles-0211b local_4c56c27d (#1103 SALTHUB CONFLICTING → child merges main · #1104 ESKO) ·
+    details-0211 local_bc99e6b7 (gap list `side-session-notes/…/details-0211-gap-list.md`; best sellers → in stock; packaging photos count as maker source) ·
+    seo-0211 local_8ac06ce8 (whole-site SEO; e-liquid keyword allowed §18 02/11; asked owner: age-gate snippet · About "who we are").
+    Also: close draft #1038 · #1040 SKE superseded · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.
   a LAYOUT SHIFT — LIVE 02/11 #1091 [checker PASS 3c953648, 3 rounds]: only a SIGNED-IN member saw it (31/10 scans were signed out). Header pill keeps one
      width ("เข้าสู่ระบบ"/"บัญชี" share a cell; members now read "บัญชี" at sm+, drawer + aria keep "บัญชีสมาชิก"; en signed-out pill +13 px) ·
      catalog toolbar at lg = count · in-stock button · sort (grid CLS 0.12 → 0) · payment-card frame from #1038. Tool `_incoming/cls-0111/film.js` (--signed
