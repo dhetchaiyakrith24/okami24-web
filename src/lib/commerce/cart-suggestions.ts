@@ -1,5 +1,6 @@
 import "server-only";
 import { getProduct } from "@/data/products";
+import { kindCategoryId } from "@/data/categories";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
@@ -118,7 +119,9 @@ function likeFor(slug: string, catalog: CatalogItem[]): { close: CatalogItem[]; 
   const own = getCatalogItem(slug);
   if (!own) return { close: [], loose: [] };
   const bySlug = (slugs: string[]) => slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined).sort(byLead);
-  const sameCategory = catalog.filter((i) => i.categoryId === own.categoryId).sort(byLead);
+  // kind, not listing: a prefilled pod listed beside the switch devices (owner 02/11) is still a part, not a device.
+  const kind = kindCategoryId(own);
+  const sameCategory = catalog.filter((i) => kindCategoryId(i) === kind).sort(byLead);
   return {
     close: [
       ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
@@ -129,7 +132,7 @@ function likeFor(slug: string, catalog: CatalogItem[]): { close: CatalogItem[]; 
     ],
     // A pod / coil / stick of another make fits other devices — shown as "like" it reads as a spare for the cart's
     // device (checker #960). Parts get only what fits and their own make (tiers 1–4); devices keep tier 5.
-    loose: CONSUMABLE_CATEGORIES.has(own.categoryId) ? [] : sameCategory,
+    loose: CONSUMABLE_CATEGORIES.has(kind) ? [] : sameCategory,
   };
 }
 
@@ -158,7 +161,7 @@ export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   const taken = new Set(cartSlugs);
   const ok = (item: CatalogItem | undefined): item is CatalogItem =>
     item !== undefined && !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug);
-  const picks = () => [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(i.categoryId));
+  const picks = () => [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(kindCategoryId(i)));
 
   let chosen: CatalogItem[] = [];
   if (cartSlugs.length > 0) {

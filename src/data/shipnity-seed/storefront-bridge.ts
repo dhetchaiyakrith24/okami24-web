@@ -34,7 +34,7 @@ import {
   type StorefrontProductView,
 } from "./storefront-preview-read-model";
 import { getBrand } from "@/data/brands";
-import { getCategory } from "@/data/categories";
+import { getCategory, kindCategoryId } from "@/data/categories";
 import { rankByQuery, searchText, type SearchText } from "@/lib/catalog-search";
 
 function pilotBridgeEnabled(): boolean {
@@ -127,6 +127,7 @@ export function getPublishedRelatedProducts(product: StorefrontProductView): Sto
 export function publishedSearchText(p: StorefrontProductView): SearchText {
   const brand = p.brandId ? getBrand(p.brandId) : undefined;
   const category = getCategory(p.categoryId);
+  const kind = getCategory(kindCategoryId(p));
   return searchText({
     slug: p.slug,
     primary: [
@@ -139,6 +140,7 @@ export function publishedSearchText(p: StorefrontProductView): SearchText {
       category?.name,
       category?.shortName,
       category?.labelTh,
+      ...(kind && kind !== category ? [kind.id, kind.name, kind.shortName, kind.labelTh] : []),
       ...p.variants.map((v) => v.label),
     ],
     secondary: [p.tagline, ...p.specifications.map((s) => s.value)],
