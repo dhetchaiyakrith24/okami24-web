@@ -208,7 +208,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
     th: {
       heading: "น้ำยาบุหรี่ไฟฟ้าบนหน้านี้ เลือกแบบไหนให้เข้ากับเครื่อง",
       intro:
-        "หน้านี้รวมน้ำยาแบบขวดสำหรับพอตซิสเต็มที่เติมน้ำยาเอง น้ำยาแต่ละขวดใช้นิโคตินชนิดเดียว คือ salt nic หรือ freebase สองชนิดนี้เข้ากับเครื่องต่างกัน จึงควรดูเครื่องที่ใช้อยู่ก่อน แล้วค่อยเลือกกลิ่นที่ชอบ ด้านล่างนี้สรุปทั้งสองชนิดไว้สั้น ๆ พร้อมรายชื่อน้ำยาบนหน้านี้ ถ้าอยากอ่านละเอียดกว่านี้ ดูได้ที่บทความ [salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+        "หน้านี้รวมน้ำยาแบบขวดสำหรับพอตซิสเต็มที่เติมน้ำยาเอง นิโคตินในน้ำยาแบ่งเป็นสองชนิด คือ salt nic กับ freebase สองชนิดนี้เข้ากับเครื่องต่างกัน จึงควรดูเครื่องที่ใช้อยู่ก่อน แล้วค่อยเลือกกลิ่นที่ชอบ ด้านล่างนี้สรุปทั้งสองชนิดไว้สั้น ๆ พร้อมรายชื่อน้ำยาแต่ละชนิดบนหน้านี้ ถ้าอยากอ่านละเอียดกว่านี้ ดูได้ที่บทความ [salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
       families: [
         {
           heading: "น้ำยา salt nic สำหรับพอตตัวเล็ก",
@@ -257,7 +257,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
     en: {
       heading: "E-liquid on this page, and which kind suits your device",
       intro:
-        "The e-liquids here come in bottles, for Pod Systems you fill yourself. Each bottle uses one nicotine type, salt nic or freebase, and the two suit different devices, so start with the device you use and then pick a flavor you like. Below is a short guide to each type, with the e-liquids on this page.",
+        "The e-liquids here come in bottles, for Pod Systems you fill yourself. Nicotine in e-liquid comes in two types, salt nic and freebase, and the two suit different devices, so start with the device you use and then pick a flavor you like. Below is a short guide to each type, with the e-liquids of each type on this page.",
       families: [
         {
           heading: "Salt nic, for small pods",
@@ -306,7 +306,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
     zh: {
       heading: "本页烟油，哪一种适合你的设备",
       intro:
-        "本页的烟油均为瓶装，适用于自行注油的 Pod System。每瓶烟油只采用一种尼古丁类型：salt nic 或 freebase。两者适合的设备不同，建议先看手上的设备，再挑喜欢的口味。下面简要介绍两种类型，并列出本页对应的烟油。",
+        "本页的烟油均为瓶装，适用于自行注油的 Pod System。烟油中的尼古丁分为两种：salt nic 和 freebase。两者适合的设备不同，建议先看手上的设备，再挑喜欢的口味。下面简要介绍两种类型，并列出本页各类型对应的烟油。",
       families: [
         {
           heading: "salt nic：适合小烟弹设备",

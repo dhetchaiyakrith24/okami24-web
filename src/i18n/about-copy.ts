@@ -43,7 +43,7 @@ export interface AboutCopy {
   who: string;
   /** Round SEO rankings back (02/11, owner "ร้านเราคือใคร ตามแนะนำ" = option A, the team, no person's name): who runs the
    *  shop, from BSOT §1 (history line + "curated by experienced seller") · §3 (YouTube @OKMYARZ, LINE every day 24 h) · §13
-   *  (2 admins, the warehouse packs, the owner = content + final pricing). The guide byline already links here. */
+   *  (2 admins, the owner = content + final pricing; the outside warehouse is NOT named — BSOT §13 "do not expose unnecessary internal warehouse or logistics details", checker 02/11). The guide byline already links here. */
   teamTitle: string;
   team: { beforeChannel: string; channel: string; afterChannel: string; more: string[] };
   selectionTitle: string;
@@ -82,10 +82,9 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     team: {
       beforeChannel: "OKami24 ขายออนไลน์มาก่อนจะมีเว็บนี้ เจ้าของร้านเป็นคนคัดสินค้า ดูแลข้อมูลบนเว็บ และตั้งราคาเอง ส่วนช่อง YouTube ",
       channel: "OKM YARZ",
-      afterChannel: " ของร้านรีวิวเครื่องจากการใช้งานจริงค่ะ",
+      afterChannel: " ของร้าน มีคลิปรีวิวและเทียบรุ่นพอตให้ดูก่อนเลือก",
       more: [
-        "แอดมิน 2 คนดูแลแชท ออเดอร์ การเช็คสต๊อก และการอัปเดตเลขพัสดุ ทักไลน์มาได้ทุกวัน ตลอด 24 ชั่วโมงค่ะ",
-        "เมื่อออเดอร์เข้าระบบแล้ว คลังสินค้าที่ร้านใช้บริการจะแพ็กและจัดส่งให้ค่ะ",
+        "แอดมิน 2 คนดูแลแชท ออเดอร์ การเช็คสต๊อก และการอัปเดตเลขพัสดุ ทักไลน์มาได้ทุกวัน ตลอด 24 ชั่วโมง",
       ],
     },
     selectionTitle: "สินค้าที่เราคัดสรร",
@@ -126,10 +125,9 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     team: {
       beforeChannel: "OKami24 sold online before this site. The owner chooses the products, looks after what you read here and sets the prices, and our YouTube channel, ",
       channel: "OKM YARZ",
-      afterChannel: ", reviews devices from real use.",
+      afterChannel: ", has pod reviews and model comparisons to watch before you choose.",
       more: [
         "Two admins look after the chat, orders, stock checks and tracking updates, and you can message us on LINE any day, around the clock.",
-        "Once an order is in the system, the warehouse we work with packs and ships it.",
       ],
     },
     selectionTitle: "The products we’ve selected",
@@ -171,10 +169,9 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     team: {
       beforeChannel: "OKami24 在有这个网站之前就已经在网上销售。店主亲自选品、负责站内内容并制定价格，店铺的 YouTube 频道 ",
       channel: "OKM YARZ",
-      afterChannel: " 则根据实际使用来测评设备。",
+      afterChannel: " 有电子烟测评和型号对比视频，可在选购前观看。",
       more: [
         "两位管理员负责聊天咨询、订单、库存核对和物流单号更新，LINE 每天 24 小时都可以联系我们。",
-        "订单录入系统后，由合作仓库负责打包和发货。",
       ],
     },
     selectionTitle: "我们精选的产品",
