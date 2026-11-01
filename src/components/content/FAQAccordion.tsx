@@ -81,31 +81,31 @@ export function FAQAccordion({ items, orderingEnabled = true }: { items: Item[];
               <span className="font-display text-lg font-semibold text-foreground">{locale === "th" ? thaiTypographyNode(item.question) : item.question}</span>
               <ChevronDown size={18} className={`shrink-0 text-foreground-dim transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
             </button>
-            {open && (
-              <div className="flex max-w-2xl flex-col items-start gap-3 pb-5">
-                <p className="text-sm leading-relaxed text-foreground-muted">{locale === "th" ? thaiTypographyNode(item.answer) : item.answer}</p>
-                {item.action &&
-                  (isExternal ? (
-                    <a
-                      href={item.action.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember hover:text-ember-strong"
-                    >
-                      {actionLabel(dict, item.action.labelKey)}
-                      <ArrowRight size={14} aria-hidden />
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.action.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember hover:text-ember-strong"
-                    >
-                      {actionLabel(dict, item.action.labelKey)}
-                      <ArrowRight size={14} aria-hidden />
-                    </Link>
-                  ))}
-              </div>
-            )}
+            {/* Round SEO rankings back (02/11): the answer stays in the server HTML while closed (display none), as the
+                <details> FAQs do — before, a closed answer was not rendered at all, so Google read the questions only. */}
+            <div className={`${open ? "flex" : "hidden"} max-w-2xl flex-col items-start gap-3 pb-5`}>
+              <p className="text-sm leading-relaxed text-foreground-muted">{locale === "th" ? thaiTypographyNode(item.answer) : item.answer}</p>
+              {item.action &&
+                (isExternal ? (
+                  <a
+                    href={item.action.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember hover:text-ember-strong"
+                  >
+                    {actionLabel(dict, item.action.labelKey)}
+                    <ArrowRight size={14} aria-hidden />
+                  </a>
+                ) : (
+                  <Link
+                    href={item.action.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-ember hover:text-ember-strong"
+                  >
+                    {actionLabel(dict, item.action.labelKey)}
+                    <ArrowRight size={14} aria-hidden />
+                  </Link>
+                ))}
+            </div>
           </div>
         );
       })}
