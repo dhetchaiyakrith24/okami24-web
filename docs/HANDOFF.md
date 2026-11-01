@@ -227,6 +227,11 @@ thinking and moves sales (SEO, images), **medium** for docs, checks, looking for
 routines follow the same table ("แชทลูกหลังจากนี้บังคับใช้ Opus 5.5 · งานที่ต้องใช้ความคิดและส่งผลกับยอดธุรกิจ ใช้ High เช่น SEO งานรูปภาพ ·
 งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"). Routine model/effort is set in the app, not in its SKILL.md.
 
+**Main chat moves by compact, not hand-off (owner 02/11, quoted exactly):** "แชทหลักนี้ Friday ไม่ต้อง Hand ใช้ Compact ได้เลยที่ 80-90 % ก่อน Compact
+จะสถานะงาน ความคืบหน้าสิ่งทมี่ต้องทำต่อกับแชทลูกให้เรียบร้อย ส่วนแชทลูก Hand ได้" — the MAIN chat no longer moves at 600–700k: it keeps going and compacts
+at 80–90 % context; BEFORE compacting it writes §16 (state · progress · what is next · every child chat and its PRs) + the status page.
+Child chats still hand off (skill okami24-handoff). Replaces TEAM_RULES 13.6 / central §12 item 29 "move at 700k" for the main chat only.
+
 **Red for "no" (owner 26/10): every box or line on the site that says no / not passed / not approved / not allowed /
 refused uses the red `danger` colour, never the ember orange** ("ขอใช้เป็นสีแดงได้เลย ไม่ใช้สีส้มทั้งเว็บ"). Ember stays for
 actions and accents (the how-to-order "ordering paused" note is information, not a no — stays ember). **Yellow (owner 26/10):
