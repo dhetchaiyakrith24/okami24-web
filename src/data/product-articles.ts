@@ -1495,12 +1495,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Flavour groups = the 17 names on SALTHUB's page, sorted by name only (no taste claims).
   "m-switch-pod": {
     th: {
-      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และกลิ่นทั้งหมดแบ่งได้เป็นแนวไหน",
+      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ข้อมูลในส่วนนี้สรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และกลิ่นทั้งหมดแบ่งได้เป็นแนวไหน",
       sections: [
         {
-          heading: "M Switch Pod ใช้กับเครื่องอะไร",
+          heading: "M Switch Pod ใช้ยังไง",
           paragraphs: [
-            "SALTHUB ระบุว่าหัวพอตรุ่นนี้ใช้กับเครื่อง M Switch ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ ส่วนหัวพอตมีน้ำยาและคอยล์มาในตัว ใช้หมดแล้วก็เปลี่ยนเป็นหัวใหม่ได้เลย",
+            "ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ ส่วนหัวพอตมีน้ำยามาในตัว ใช้หมดแล้วก็เปลี่ยนเป็นหัวใหม่ได้เลย",
             "ถ้าเพิ่งเริ่มใช้ เริ่มจากชุด [M Switch Kit](/products/m-switch-kit) ก็ได้ ในชุดมีตัวเครื่องมาพร้อมหัวพอตหนึ่งหัว",
             "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
           ],
@@ -1540,9 +1540,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "The M Switch Pod is a SALTHUB pod. Below is a summary from SALTHUB's own page and posters of how it is used, how many puffs it gives and how its flavours group.",
       sections: [
         {
-          heading: "Which device does the M Switch Pod fit?",
+          heading: "How do you use the M Switch Pod?",
           paragraphs: [
-            "SALTHUB states this pod fits the M Switch. You keep the device and recharge it; each pod comes with its e-liquid and coil built in, so when one runs out you simply put on a new one.",
+            "You keep the device and recharge it; each pod comes with its e-liquid built in, so when one runs out you simply put on a new one.",
             "Starting out? The [M Switch Kit](/products/m-switch-kit) comes with the device and one pod.",
           ],
         },
@@ -1581,9 +1581,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "M Switch Pod 是 SALTHUB 的烟弹。下面根据 SALTHUB 自己的网页和海报，介绍它的用法、每颗能抽多少口，以及口味如何分类。",
       sections: [
         {
-          heading: "M Switch Pod 适用于哪款主机？",
+          heading: "M Switch Pod 怎么用？",
           paragraphs: [
-            "SALTHUB 标明这款烟弹适用于 M Switch 主机。主机留着充电继续用，烟弹自带烟油和线圈，用完直接换一颗新的即可。",
+            "主机留着充电继续用，烟弹自带烟油，用完直接换一颗新的即可。",
             "第一次用？可以从 [M Switch Kit](/products/m-switch-kit) 开始，套装含主机和一颗烟弹。",
           ],
         },
@@ -1628,10 +1628,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้กับเครื่องไหน มีกลิ่นแนวไหนบ้าง และน้ำยาในหัวทำจากอะไร",
       sections: [
         {
-          heading: "Zero Cartridge ใช้กับเครื่องอะไร",
+          heading: "Zero Cartridge ใช้ยังไง",
           paragraphs: [
-            "บนหน้าแรกของเว็บ SALTHUB กลิ่นของหัวพอตรุ่นนี้อยู่ในชุดกลิ่นของ [Zero Pro](/products/zero-pro) และ SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือจะสลับไปลองกลิ่นอื่นก็ได้",
-            "ตามโปสเตอร์ของ SALTHUB เครื่อง Zero Pro ที่ใช้หัวนี้มีโหมด Low-end · Mid-range และ High-end มีช่องลมเข้าอยู่ด้านข้าง และชาร์จผ่าน USB-C",
+            "SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือจะสลับไปลองกลิ่นอื่นก็ได้",
           ],
         },
         {
@@ -1643,6 +1642,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "สายชา ได้แก่ Fruit Tea และ Oolong Tea",
             "สายเครื่องดื่ม ได้แก่ Cola · Lemonade และ Yakult",
             "แนวอื่นมี Cigar กลิ่นเดียว",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
           ],
         },
         {
@@ -1664,10 +1664,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "The Zero Cartridge is the pod of SALTHUB's Zero line. Below is a summary from SALTHUB's own site of which device it fits, how its flavours group and what the e-liquid inside is made of.",
       sections: [
         {
-          heading: "Which device does the Zero Cartridge fit?",
+          heading: "How do you use the Zero Cartridge?",
           paragraphs: [
-            "On its home page SALTHUB lists this pod's flavours with the [Zero Pro](/products/zero-pro) and calls it a changeable cartridge: when one runs out, put in a new one or switch to another flavour.",
-            "According to SALTHUB's posters, the Zero Pro that takes this pod has Low-end, Mid-range and High-end modes, an air inlet on the side and USB-C charging.",
+            "SALTHUB calls it a changeable cartridge: when one runs out, put in a new one or switch to another flavour.",
           ],
         },
         {
@@ -1699,10 +1698,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "Zero Cartridge 是 SALTHUB Zero 系列的烟弹。下面根据 SALTHUB 官网的资料，介绍它适用于哪款主机、口味如何分类，以及烟油的成分。",
       sections: [
         {
-          heading: "Zero Cartridge 适用于哪款主机？",
+          heading: "Zero Cartridge 怎么用？",
           paragraphs: [
-            "SALTHUB 在官网首页把这款烟弹的口味归在 [Zero Pro](/products/zero-pro) 之下，并称它为可更换的烟弹：一颗用完，换一颗新的，或换个口味都可以。",
-            "根据 SALTHUB 的海报，使用这款烟弹的 Zero Pro 有 Low-end、Mid-range、High-end 模式，侧面进气，USB-C 充电。",
+            "SALTHUB 称它为可更换的烟弹：一颗用完，换一颗新的，或换个口味都可以。",
           ],
         },
         {
