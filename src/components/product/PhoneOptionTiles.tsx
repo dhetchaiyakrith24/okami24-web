@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useChipAutoscroll } from "./use-chip-autoscroll";
 import { countKind } from "@/lib/stock/count-rules";
+import { OptionBestTag } from "@/components/catalog/SalesBadge";
 
 /**
  * Phone option picker (queue Q5, owner 24/10 — mockups A/B/C in `_incoming/cartpolish-2410/picker/`). Below `lg` the
@@ -33,6 +34,9 @@ export interface PhoneOption {
   out: boolean;
   /** Live warehouse count (/api/stock, capped there); undefined until it arrives or when there is none. */
   left?: number;
+  /** A best-selling option (src/data/bestseller-options.ts): a small "ขายดี" capsule on its photo. The cart's quick add
+   *  passes none, so the badge stays on the product page. */
+  best?: boolean;
 }
 
 export function PhoneOptionTiles({
@@ -74,6 +78,7 @@ export function PhoneOptionTiles({
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
         {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
+        {selected?.best && <OptionBestTag className="px-2 py-1 text-xs" />}
         {selected && <StockPill out={selected.out} />}
         {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
         {!selected && !pills.some((p) => p.selected) && <span className="text-foreground-muted">{t.optionPickPrompt}</span>}
@@ -141,6 +146,7 @@ export function PhoneOptionTiles({
                     aria-hidden
                   />
                 )}
+                {o.best && <OptionBestTag className="absolute left-1 top-1" />}
               </span>
               <span
                 className={cn(

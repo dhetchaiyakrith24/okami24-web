@@ -5,6 +5,7 @@ import type { FlavorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
 import { LowStockTag } from "./StockCount";
+import { OptionBestTag } from "@/components/catalog/SalesBadge";
 
 /**
  * Real manufacturer flavor selector for a Legacy Product Detail hero (owner mandate, 2026-09-03 —
@@ -37,6 +38,7 @@ export function FlavorVariantGrid({
   outOfStockLabel,
   counts,
   countLine,
+  bestIds,
   className,
 }: {
   variants: FlavorVariant[];
@@ -56,6 +58,8 @@ export function FlavorVariantGrid({
   counts?: Record<string, number>;
   /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
   countLine?: ReactNode;
+  /** Best-selling flavour ids (src/data/bestseller-options.ts — owner 02/11): "ขายดี" on their pill / tile and by the picked name. */
+  bestIds?: ReadonlySet<string>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
@@ -65,7 +69,7 @@ export function FlavorVariantGrid({
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id] }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id], best: bestIds?.has(v.id) }))}
         selectedId={isAllSelected ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}
@@ -75,6 +79,7 @@ export function FlavorVariantGrid({
       <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
         {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {!isAllSelected && selected && bestIds?.has(selected.id) && <OptionBestTag className="ml-2 align-middle" />}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
       <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto pr-1 max-lg:hidden">
@@ -122,6 +127,7 @@ export function FlavorVariantGrid({
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
               {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-danger" : "text-foreground-dim")}>{outOfStockLabel}</span>}
+              {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
             </button>
           );
