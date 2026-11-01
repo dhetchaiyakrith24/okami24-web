@@ -1272,7 +1272,7 @@ export const voopooProducts: Product[] = [
     systemType: "pod-kit",
     name: "VINCI S",
     displayName: "VOOPOO VINCI S",
-    tagline: "VOOPOO pod system with a 2000mAh battery, up to 40W and a 4.5mL top-fill pod.",
+    tagline: "2000mAh built in, up to 40W, and a 4.5mL cartridge that fills from the top.",
     shortDescription:
       "A 2000mAh, 5–40W pod kit with a 4.5mL topside-fill cartridge and a 0.3–3.0Ω resistance range.",
     isFlagship: false,
@@ -1353,7 +1353,7 @@ export const voopooProducts: Product[] = [
       { key: "indicator", label: "Status indicator", value: "3-colour LED light bar", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
       { key: "charging", label: "Charging", value: "USB-C, 5V/1A · cable not in the box", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
       { key: "chip", label: "Chipset", value: "GENE.TT 2.0", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
-      { key: "platform", label: "Pod platform", value: "VINCI S Cartridge · VINCI E Cartridge · PnP X Pod (coils from 0.3Ω)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
+      { key: "platform", label: "Pod platform", value: "VINCI S Cartridge · VINCI E Cartridge · PnP X Pod (coils of 0.3Ω and up)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
       { key: "included", label: "Included pod", value: "VINCI S Cartridge 0.8Ω (4.5mL)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
       { key: "size", label: "Dimensions", value: "106.2 × 30.2 × 21.3 mm", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
       { key: "weight", label: "Weight", value: "69g", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/vinci-s" },
