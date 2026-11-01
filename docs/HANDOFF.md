@@ -274,8 +274,11 @@ green "shipped" glow = the style for key-moment effects site-wide ("ยืนบ
 caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices") or when the stock API lands.
 
-**Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself and the refill how-to guide, whose title may read
-"เติมน้ำยาพอตยังไง" (owner 16/10, list item 66 — a how-to, not a page selling e-liquid) ·
+**Head copy and SEO:** REPLACED 02/11 — owner (typed in the SEO chat, quoted exactly): "แต่ร้านเรายังไม่ขายน้ำยา ทำไมจะไม่มีมีสิ แค่รายละเอียด เนื้อของของน้ำยาอาจจะยังไมไ่ด้ใส่
+ก็ตรวจสิเนื้อหาไหนสินค้าไหน ที่ยังขาดอะไรในการขึ้นไปสู้หน้า 1 ก็จัดการได้เลย รวมถึง คีย์หลักคีย์รอง เอาหมด" → "น้ำยา" / "น้ำยาบุหรี่ไฟฟ้า" may go into head copy and
+content where it helps rank (e-liquid product pages, /e-liquid, guides) — facts only, never a stock claim the live stock does not back (was: out of heads
+except /e-liquid + the refill how-to, owner 16/10 item 66) · seo-0211 maps main + secondary keywords for every page; product pages it would rewrite are split
+with the articles child by Friday first ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
 visible copy · brand names in Latin, incl. "Marbo" (the one exception + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
