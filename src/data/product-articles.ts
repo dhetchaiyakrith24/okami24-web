@@ -1490,6 +1490,245 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Round "queue 0211" articles, SALTHUB (02/11): from SALTHUB's M Switch Pod page + posters, its home page ("M Switch Pod"
+  // card and "THE BENEFITS — M SWITCH POD") and its FAQ page — source per sentence: _incoming/articles-0211/salthub-draft.md.
+  // Flavour groups = the 17 names on SALTHUB's page, sorted by name only (no taste claims).
+  "m-switch-pod": {
+    th: {
+      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ข้อมูลในส่วนนี้สรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และกลิ่นทั้งหมดแบ่งได้เป็นแนวไหน",
+      sections: [
+        {
+          heading: "M Switch Pod ใช้ยังไง",
+          paragraphs: [
+            "ตัวเครื่องเก็บไว้ชาร์จแล้วใช้ต่อได้ ส่วนหัวพอตบรรจุน้ำยามาแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลย",
+            "ถ้าเพิ่งเริ่มใช้ เริ่มจากชุด [M Switch Kit](/products/m-switch-kit) ก็ได้ ในชุดมีตัวเครื่องมาพร้อมหัวพอตหนึ่งหัว",
+            "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
+          ],
+        },
+        {
+          heading: "M Switch Pod หัวหนึ่งสูบได้กี่พัฟ",
+          paragraphs: [
+            "โปสเตอร์ของ SALTHUB ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคน",
+            "ข้างในใช้คอยล์ cotton mesh 1.0 โอห์ม ส่วนน้ำยาเป็น salt nic ความเข้มข้น 30mg ตามข้อมูลบนโปสเตอร์และหน้าแรกของเว็บ SALTHUB",
+          ],
+        },
+        {
+          heading: "M Switch Pod มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "บนหน้าเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 17 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 4 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Blue Ice และ Doublemint",
+            "สายองุ่น ได้แก่ Kyoho Grape · Grape · Grape Aloe และ Grape Lychee",
+            "สายผลไม้อื่น ได้แก่ Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon และ Watermelon",
+            "แนวอื่นมี Cola กับ Watermelon Bubblegum",
+          ],
+        },
+        {
+          heading: "M Switch Pod ดูยังไงว่าหัวไหนเป็นกลิ่นอะไร",
+          paragraphs: [
+            "หัวพอตทุกกลิ่นเป็นสีดำเหมือนกัน แต่ละกลิ่นจะมีโลโก้ M คนละสี และมีป้ายชื่อกลิ่นอยู่ด้านหน้า ถ้าซื้อไปหลายกลิ่น ก็ดูจากป้ายนี้ได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
+          ],
+        },
+        {
+          heading: "M Switch Pod ใช้และเก็บยังไงดี",
+          paragraphs: [
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The M Switch Pod is a SALTHUB pod. Below is a summary from SALTHUB's own page and posters of how it is used, how many puffs it gives and how its flavours group.",
+      sections: [
+        {
+          heading: "How do you use the M Switch Pod?",
+          paragraphs: [
+            "You keep the device and recharge it; each pod comes with its e-liquid built in, so when one runs out you simply put on a new one.",
+            "Starting out? The [M Switch Kit](/products/m-switch-kit) comes with the device and one pod.",
+          ],
+        },
+        {
+          heading: "How many puffs does one M Switch Pod give?",
+          paragraphs: [
+            "SALTHUB's poster rates one pod at up to 15,000 puffs; what you actually get depends on how you vape.",
+            "Inside is a 1.0Ω cotton mesh coil, and the e-liquid is 30mg nicotine salt, according to SALTHUB's posters and home page.",
+          ],
+        },
+        {
+          heading: "Which flavours does the M Switch Pod come in?",
+          paragraphs: [
+            "SALTHUB's page lists 17 flavours. Grouped by name, they fall into four sets.",
+            "Cool, with Ice or Mint in the name: Blue Ice and Doublemint.",
+            "Grape: Kyoho Grape, Grape, Grape Aloe and Grape Lychee.",
+            "Other fruit: Apple Aloe, Black Berry, Mango Passion, Mixberry, Peach Strawberry, Pink Berry, Strawberry, Strawberry Watermelon and Watermelon.",
+            "Others: Cola and Watermelon Bubblegum.",
+          ],
+        },
+        {
+          heading: "How do I tell which flavour an M Switch Pod is?",
+          paragraphs: [
+            "Every pod is the same black. Each flavour has its own colour of M logo and a flavour name tag on the front, so with several flavours at hand you can read which is which.",
+          ],
+        },
+        {
+          heading: "How should you use and store the M Switch Pod?",
+          paragraphs: [
+            "SALTHUB advises against keeping the device upside down, whether you are vaping or not, as e-liquid droplets inside could run into your mouth.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "M Switch Pod 是 SALTHUB 的烟弹。下面根据 SALTHUB 自己的网页和海报，介绍它的用法、每颗能抽多少口，以及口味如何分类。",
+      sections: [
+        {
+          heading: "M Switch Pod 怎么用？",
+          paragraphs: [
+            "主机留着充电继续用，烟弹自带烟油，用完直接换一颗新的即可。",
+            "第一次用？可以从 [M Switch Kit](/products/m-switch-kit) 开始，套装含主机和一颗烟弹。",
+          ],
+        },
+        {
+          heading: "一颗 M Switch Pod 能抽多少口？",
+          paragraphs: [
+            "SALTHUB 海报标注每颗最多 15,000 口，实际口数取决于个人的抽吸习惯。",
+            "内部为 1.0Ω cotton mesh 线圈，烟油为 30mg 盐尼古丁，以上见 SALTHUB 的海报和官网首页。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 有哪些口味？",
+          paragraphs: [
+            "SALTHUB 网页列出 17 种口味，按名称可分为四类。",
+            "清凉系，名称带 Ice 或 Mint：Blue Ice 和 Doublemint。",
+            "葡萄系：Kyoho Grape、Grape、Grape Aloe、Grape Lychee。",
+            "其他水果：Apple Aloe、Black Berry、Mango Passion、Mixberry、Peach Strawberry、Pink Berry、Strawberry、Strawberry Watermelon、Watermelon。",
+            "其他：Cola、Watermelon Bubblegum。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 怎么分辨是哪种口味？",
+          paragraphs: [
+            "所有烟弹都是同样的黑色，每种口味的 M 标志颜色不同，正面还贴有口味名称标签，买了多种口味也能一眼认出。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 使用和存放要注意什么？",
+          paragraphs: [
+            "SALTHUB 建议无论抽吸还是存放，都不要把设备倒置，以免内部的烟油液滴流进嘴里。",
+          ],
+        },
+      ],
+    },
+  },
+  // Same round (02/11): from SALTHUB's home page ("ZERO CARTRIDGE" card, the "FLAVORS — ZERO PRO" slider), its Zero Pro
+  // posters (modes · side air intake · USB-C) and its FAQ page (e-juice ingredients · upside down). The capacity is left to
+  // the spec table: the Zero Pro poster prints 2ML against the home card's 2.2mL (lesson พ18). 22 flavours = the 21 slider
+  // packs + the home card's Strawberry pod, as listed on this page.
+  "zero-cartridge": {
+    th: {
+      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้ยังไง มีกลิ่นแนวไหนบ้าง และน้ำยาทำจากอะไร",
+      sections: [
+        {
+          heading: "Zero Cartridge ใช้ยังไง",
+          paragraphs: [
+            "SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือสลับไปลองกลิ่นอื่นได้",
+          ],
+        },
+        {
+          heading: "Zero Cartridge มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "บนเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 22 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 5 แนว ส่วนตัวเลือกที่ลงท้ายด้วย 50mg บนหน้านี้ เป็นแบบนิโคติน 50mg ที่ร้านลงไว้เพิ่ม",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Ice Sparkling และ Mint",
+            "สายผลไม้ ได้แก่ Apple Aloe · Blueberry · Grape · Grape Aloe · Grapefruit · Honey Yuzu · Lychee · Mango · Mixberry · Peach · Peach Strawberry · Pineapple · Strawberry และ Watermelon",
+            "สายชา ได้แก่ Fruit Tea และ Oolong Tea",
+            "สายเครื่องดื่ม ได้แก่ Cola · Lemonade และ Yakult",
+            "แนวอื่นมี Cigar กลิ่นเดียว",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "น้ำยาใน Zero Cartridge ทำจากอะไร",
+          paragraphs: [
+            "SALTHUB ระบุไว้ในหน้าคำถามที่พบบ่อยว่าน้ำยาของแบรนด์มีส่วนผสมคือ VG · PG · นิโคตินแบบ salt nic และสารแต่งกลิ่นทั้งแบบธรรมชาติและแบบสังเคราะห์",
+            "ถ้าอยากรู้จัก PG กับ VG มากขึ้น ร้านเขียนไว้ที่ [PG VG คืออะไร ต่างกันยังไง](/guides/pg-vg-in-e-liquid)",
+          ],
+        },
+        {
+          heading: "Zero Cartridge ใช้และเก็บยังไงดี",
+          paragraphs: [
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Zero Cartridge is the pod of SALTHUB's Zero line. Below is a summary from SALTHUB's own site of how it is used, how its flavours group and what the e-liquid inside is made of.",
+      sections: [
+        {
+          heading: "How do you use the Zero Cartridge?",
+          paragraphs: [
+            "SALTHUB calls it a changeable cartridge: when one runs out, put in a new one or switch to another flavour.",
+          ],
+        },
+        {
+          heading: "Which flavours does the Zero Cartridge come in?",
+          paragraphs: [
+            "SALTHUB's site lists 22 flavours for this pod. Grouped by name, they fall into five sets. The options on this page ending in 50mg are 50mg-nicotine versions the shop lists as well.",
+            "Cool, with Ice or Mint in the name: Ice Sparkling and Mint.",
+            "Fruit: Apple Aloe, Blueberry, Grape, Grape Aloe, Grapefruit, Honey Yuzu, Lychee, Mango, Mixberry, Peach, Peach Strawberry, Pineapple, Strawberry and Watermelon.",
+            "Tea: Fruit Tea and Oolong Tea.",
+            "Drinks: Cola, Lemonade and Yakult.",
+            "Other: Cigar.",
+          ],
+        },
+        {
+          heading: "What is the e-liquid in the Zero Cartridge made of?",
+          paragraphs: [
+            "SALTHUB's FAQ page states that its e-liquid contains VG, PG, nicotine salt and natural and artificial flavourings.",
+          ],
+        },
+        {
+          heading: "How should you use and store the Zero Cartridge?",
+          paragraphs: [
+            "SALTHUB advises against keeping the device upside down, whether you are vaping or not, as e-liquid droplets inside could run into your mouth.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Zero Cartridge 是 SALTHUB Zero 系列的烟弹。下面根据 SALTHUB 官网的资料，介绍它的用法、口味如何分类，以及烟油的成分。",
+      sections: [
+        {
+          heading: "Zero Cartridge 怎么用？",
+          paragraphs: [
+            "SALTHUB 称它为可更换的烟弹：一颗用完，换一颗新的，或换个口味都可以。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 有哪些口味？",
+          paragraphs: [
+            "SALTHUB 官网列出这款烟弹的 22 种口味，按名称可分为五类。本页名称以 50mg 结尾的选项，是本店另外上架的 50mg 尼古丁版本。",
+            "清凉系，名称带 Ice 或 Mint：Ice Sparkling 和 Mint。",
+            "水果系：Apple Aloe、Blueberry、Grape、Grape Aloe、Grapefruit、Honey Yuzu、Lychee、Mango、Mixberry、Peach、Peach Strawberry、Pineapple、Strawberry、Watermelon。",
+            "茶系：Fruit Tea、Oolong Tea。",
+            "饮品系：Cola、Lemonade、Yakult。",
+            "其他：Cigar。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 的烟油是什么成分？",
+          paragraphs: [
+            "SALTHUB 在常见问题页面说明，其烟油成分为 VG、PG、盐尼古丁，以及天然和人工香料。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 使用和存放要注意什么？",
+          paragraphs: [
+            "SALTHUB 建议无论抽吸还是存放，都不要把设备倒置，以免内部的烟油液滴流进嘴里。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4a (06/10): from JOIWAY's own F3 posters; Thai = thai-copy 06/10.
   "joiway-f3": {
     th: {
