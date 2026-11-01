@@ -2499,6 +2499,128 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Round "queue 0211" articles, Muro e-liquids (02/11): no maker site exists — facts = the records in src/data/products/unbranded.ts
+  // only: the nicotine type (verified, it is in the name) and the flavour names (one set for both). Bottle size and nicotine mg rows
+  // are unverified → not stated; salt nic vs freebase itself = the shop guide, linked, not retold. Legacy pages render no article
+  // FAQ → none written. Thai = thai-copy 02/11 (worded apart so the sibling pages do not duplicate).
+  "muro-salt-nic": {
+    th: {
+      lede: "ด้านล่างร้านจัดกลิ่นของ Muro Salt Nic เป็นสายไว้ให้ดูง่ายขึ้น และเล่าว่ารุ่นนี้ต่างจาก Muro Freebase ตรงไหน",
+      sections: [
+        {
+          heading: "Muro Salt Nic กับ Muro Freebase ต่างกันยังไง",
+          paragraphs: [
+            "สองรุ่นนี้ใช้ชื่อกลิ่นชุดเดียวกันทุกกลิ่น ที่ต่างกันคือชนิดของนิโคติน Muro Salt Nic ใช้นิโคตินแบบ salt nic ส่วน [Muro Freebase](/products/muro-freebase) ใช้แบบ freebase จะเลือกรุ่นไหน จึงดูจากเครื่องที่ใช้ก่อนได้เลย แล้วค่อยเลือกกลิ่นที่ชอบ",
+            "สองแบบนี้เป็นนิโคตินคนละชนิด และเข้ากับเครื่องคนละแบบด้วย ถ้ายังไม่แน่ใจว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน อ่านต่อได้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "มีกลิ่นแนวไหนให้เลือกบ้าง",
+          paragraphs: [
+            "ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี Click Mint สายองุ่นมี Grape ส่วนสายผลไม้มี Watermelon · Strawberry Twist และ Peach ที่เหลือคือ Big Cola ชื่อนี้ไม่ได้บอกผลไม้ ร้านจึงจัดไว้แนวอื่น",
+            "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง กลิ่นอยู่ที่น้ำยา ไม่ได้ผูกกับตัวเครื่อง อยากลองกลิ่นอื่นก็ไม่ต้องเปลี่ยนเครื่อง วิธีเติมน้ำยาทีละขั้น ร้านเล่าไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, the Muro Salt Nic flavours sorted into groups, and how it differs from Muro Freebase.",
+      sections: [
+        {
+          heading: "Muro Salt Nic or Muro Freebase?",
+          paragraphs: [
+            "The two share the same set of flavour names. The difference is the nicotine: Muro Salt Nic uses salt nic, while [Muro Freebase](/products/muro-freebase) uses freebase. So let your device decide which one to take first, then pick the flavour you like.",
+            "Salt nic and freebase are two different forms of nicotine, and each suits a different kind of device, so it's worth checking what your device's maker recommends.",
+          ],
+        },
+        {
+          heading: "Which flavours are there?",
+          paragraphs: [
+            "We grouped them by the words in their names. Click Mint is the cool one and Grape the grape; fruit has Watermelon, Strawberry Twist and Peach. Big Cola doesn't name a fruit, so it sits on its own.",
+            "In a pod system you refill yourself, the flavour is in the e-liquid rather than the device, so trying another flavour doesn't mean changing devices.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面把 Muro Salt Nic 的口味按类型分好组，并说明它和 Muro Freebase 有什么不同。",
+      sections: [
+        {
+          heading: "Muro Salt Nic 和 Muro Freebase 有什么不同？",
+          paragraphs: [
+            "两款的口味名称完全相同，区别在于尼古丁类型：Muro Salt Nic 采用盐尼古丁，[Muro Freebase](/products/muro-freebase) 则采用游离碱尼古丁。所以可以先按所用设备决定选哪一款，再挑喜欢的口味。",
+            "盐尼古丁和游离碱尼古丁是两种不同形式的尼古丁，适合的设备也不同，建议参考设备厂家的推荐。",
+          ],
+        },
+        {
+          heading: "有哪些口味可选？",
+          paragraphs: [
+            "我们按口味名称里的词来分组：清凉类是 Click Mint，葡萄类是 Grape，水果类有 Watermelon、Strawberry Twist 和 Peach。Big Cola 的名称不是水果，单独归为其他。",
+            "如果使用可自行注油的开放式设备，口味在烟油里，与主机无关，想换口味不必更换设备。",
+          ],
+        },
+      ],
+    },
+  },
+  "muro-freebase": {
+    th: {
+      lede: "ด้านล่างร้านเล่าว่า Muro Freebase ต่างจาก Muro Salt Nic ตรงไหน พร้อมจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "ต่างจาก Muro Salt Nic ตรงไหน",
+          paragraphs: [
+            "Muro Freebase กับ [Muro Salt Nic](/products/muro-salt-nic) มีชื่อกลิ่นเหมือนกันทุกกลิ่น สิ่งที่ต่างคือชนิดของนิโคติน รุ่นนี้เป็นแบบ freebase ส่วนอีกรุ่นเป็นแบบ salt nic เวลาเลือกระหว่างสองรุ่นนี้ ให้ดูเครื่องที่ใช้อยู่เป็นหลัก แล้วกลิ่นที่ชอบก็มีให้เลือกในรุ่นนั้นเหมือนกัน",
+            "freebase กับ salt nic เป็นนิโคตินคนละชนิด และเข้ากับเครื่องคนละแบบ ความต่างของทั้งสองแบบ รวมถึงวิธีดูว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ร้านรวมไว้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "Muro Freebase กลิ่นไหนดี",
+          paragraphs: [
+            "เลือกจากแนวที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น ถ้าชอบความเย็น ชื่อที่มีคำว่า Mint คือ Click Mint ถ้าชอบองุ่นมี Grape และถ้าชอบผลไม้มี Watermelon · Strawberry Twist กับ Peach ส่วน Big Cola เป็นชื่อเครื่องดื่ม ไม่ได้บอกผลไม้ ร้านจัดไว้แนวอื่น",
+            "ถ้าใช้เครื่องที่ปรับวัตต์ได้ วิธีตั้งวัตต์และช่องลมให้เข้ากับแนวการสูบ อ่านได้ที่[เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, how Muro Freebase differs from Muro Salt Nic, and its flavours sorted into groups to make choosing easier.",
+      sections: [
+        {
+          heading: "How is it different from Muro Salt Nic?",
+          paragraphs: [
+            "Muro Freebase and [Muro Salt Nic](/products/muro-salt-nic) share the same flavour names; what differs is the nicotine. This one is freebase, the other is salt nic. Let your device decide which one to take, and the flavour you like is there in either.",
+            "Because freebase and salt nic suit different kinds of device, your device maker's recommendation is the best guide.",
+          ],
+        },
+        {
+          heading: "Which Muro Freebase flavour should I pick?",
+          paragraphs: [
+            "Start with what you like. We grouped the flavours by the words in their names: for cool, Click Mint; for grape, Grape; for fruit, Watermelon, Strawberry Twist and Peach. Big Cola is named after a drink rather than a fruit, so we list it separately.",
+            "If your device lets you set the wattage, [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow) explains how to match wattage and airflow to the way you vape.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面说明 Muro Freebase 和 Muro Salt Nic 的区别，并把口味按类型分好组，方便挑选。",
+      sections: [
+        {
+          heading: "和 Muro Salt Nic 有什么不同？",
+          paragraphs: [
+            "Muro Freebase 和 [Muro Salt Nic](/products/muro-salt-nic) 的口味名称完全相同，不同的是尼古丁：这款是游离碱尼古丁，另一款是盐尼古丁。先根据设备决定选哪一款，喜欢的口味两款都有。",
+            "游离碱尼古丁和盐尼古丁适合的设备类型不同，建议参考设备厂家的推荐。",
+          ],
+        },
+        {
+          heading: "Muro Freebase 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。我们按口味名称里的词来分组：清凉类是 Click Mint，葡萄类是 Grape，水果类有 Watermelon、Strawberry Twist 和 Peach。Big Cola 是饮品名称而不是水果，单独列出。",
+            "如果设备可以调功率，怎样让功率和进气配合自己的吸法，详见[如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
+          ],
+        },
+      ],
+    },
+  },
   "muro-sc-8000": {
     th: {
       lede: "Muro SC 8000 มีให้เลือก 12 กลิ่น ด้านล่างร้านจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น พร้อมเรื่องการชาร์จ และความต่างจาก Muro รุ่นที่พัฟเยอะกว่า",
