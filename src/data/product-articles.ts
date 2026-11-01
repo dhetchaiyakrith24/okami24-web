@@ -1526,6 +1526,165 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Round "queue 0211" articles, RELX (02/11): the two published RELX pages, from RELX's own pages — R2 relxnow.com/products/
+  // essential-device · R7 relxnow.com/products/relx-pod-pro · R6 relxnow.my/products/relx-pod-pro-2-fresh-peach (RELX Malaysia) ·
+  // R1 relxnow.com/products/relx-infinity-2-plus-device. RELX's own figures that have no spec row (55 °C · 0.2 s · 6–7.5 mg ·
+  // 11 layers · 500 vs 600 puffs) are told without the number; thai-copy 02/11.
+  "relx-essential-2": {
+    th: {
+      lede: "RELX Essential 2 เป็นเครื่องระบบสวิตช์ที่ใช้คู่กับหัวพอตบรรจุสำเร็จ ด้านล่างเป็นข้อมูลจากหน้าเว็บของ RELX ไล่ตั้งแต่หัวพอตที่ใช้ได้ไปจนถึงการชาร์จ",
+      sections: [
+        {
+          heading: "RELX Essential 2 ใช้กับหัวพอตรุ่นไหน",
+          paragraphs: [
+            "RELX ระบุว่าเครื่องนี้ใช้ได้กับหัวพอต RELX Pod และ RELX Pod Pro ซึ่งเป็นหัวพอตทรงสมมาตรทั้งสองรุ่น",
+            "หน้าเว็บของ RELX บอกด้วยว่า RELX Pod Pro ใช้กับเครื่อง [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้เช่นกัน",
+          ],
+        },
+        {
+          heading: "RELX Pod กับ RELX Pod Pro ต่างกันตรงไหน",
+          paragraphs: [
+            "สองรุ่นนี้ใช้คอยล์ต่างกัน RELX Pod Pro ใช้คอยล์เซรามิก ส่วน RELX Pod ใช้คอยล์สำลี และ RELX ยังบอกด้วยว่า Pod Pro ปรับมาให้กันรั่วได้ดีขึ้น",
+          ],
+        },
+        {
+          heading: "สูบแล้วเป็นยังไง",
+          paragraphs: [
+            "เครื่องนี้ใช้ระบบที่ RELX เรียกว่า Super Smooth ซึ่งคุมอุณหภูมิของไอไม่ให้ร้อนเกินไป เพื่อช่วยเลี่ยงรสไหม้",
+            "RELX บอกด้วยว่าพอเริ่มสูบ เครื่องก็ทำงานแทบจะทันที และแต่ละพัฟให้ไอแน่น",
+          ],
+        },
+        {
+          heading: "ออกแบบให้กันรั่วยังไง",
+          paragraphs: [
+            "RELX ออกแบบด้านในเป็นโครงสร้างซ้อนกันหลายชั้น เพื่อช่วยกันน้ำยารั่ว และกันไม่ให้หยดน้ำยาไปเกาะค้างอยู่ข้างใน",
+          ],
+        },
+        {
+          heading: "ชาร์จยังไง",
+          paragraphs: [
+            "เครื่องนี้มีแบตเตอรี่ 380mAh อยู่ในตัว และชาร์จซ้ำได้ผ่านช่อง USB-C",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Essential 2 มีสีอะไรบ้าง",
+          answer: "ร้านมีให้เลือก Black · Steel silver · Grey · Nebula Blue และ Orange ค่ะ",
+        },
+        {
+          question: "RELX Essential 2 ต้องเติมน้ำยาเองไหม",
+          answer: "ไม่ต้องเติมค่ะ หัวพอตที่ใช้กับเครื่องนี้มีน้ำยามาในตัวแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+        },
+        {
+          question: "RELX Essential 2 ใช้กับหัวพอต RELX Infinity Pro 2 ได้ไหม",
+          answer: "หน้าเว็บของ RELX ระบุหัวพอตที่ใช้กับเครื่องนี้ไว้สองรุ่น คือ RELX Pod กับ RELX Pod Pro ส่วน RELX Pod Pro 2 ซึ่งเป็นชื่อบนแพ็กของหัวพอต [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ไม่ได้อยู่ในรายชื่อนี้ค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Essential 2 is a switch-style device that takes prefilled pods. Below is what RELX's own page says about it, from the pods it takes to how it charges.",
+      sections: [
+        {
+          heading: "Which pods does the RELX Essential 2 take?",
+          paragraphs: [
+            "RELX lists two pods for it, RELX Pod and RELX Pod Pro, both of a symmetrical design.",
+            "RELX's page adds that the RELX Pod Pro also fits the [RELX Infinity 2 Plus](/products/relx-infinity-2-plus).",
+          ],
+        },
+        {
+          heading: "RELX Pod or RELX Pod Pro: what's the difference?",
+          paragraphs: [
+            "They use different coils: the RELX Pod Pro has a ceramic coil and the RELX Pod a cotton one. RELX also says the Pod Pro has improved leak resistance.",
+          ],
+        },
+        {
+          heading: "What is it like to vape?",
+          paragraphs: [
+            "It uses what RELX calls Super Smooth, which keeps the vapour from running too hot to help avoid a burnt taste.",
+            "RELX also says it fires almost the instant you draw, with dense vapour in every puff.",
+          ],
+        },
+        {
+          heading: "How is it built against leaks?",
+          paragraphs: [
+            "RELX builds the inside in several layers, to help keep e-liquid from leaking and droplets from collecting inside.",
+          ],
+        },
+        {
+          heading: "How do you charge it?",
+          paragraphs: [
+            "The 380mAh battery is built in and recharges over USB-C.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which colours does the RELX Essential 2 come in?",
+          answer: "The shop lists Black, Steel silver, Grey, Nebula Blue and Orange.",
+        },
+        {
+          question: "Do I need to fill the RELX Essential 2 with e-liquid?",
+          answer: "No. Its pods come filled, so when one runs out you simply put on a new one.",
+        },
+        {
+          question: "Does the RELX Essential 2 take the RELX Infinity Pro 2 pod?",
+          answer: "RELX lists two pods for this device, RELX Pod and RELX Pod Pro. RELX Pod Pro 2, the name printed on the [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) pack, is not on that list.",
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Essential 2 是一款换弹式主机，搭配预灌装烟弹使用。下面根据 RELX 官网的介绍，从适用的烟弹一直讲到充电方式。",
+      sections: [
+        {
+          heading: "RELX Essential 2 适用哪些烟弹？",
+          paragraphs: [
+            "RELX 标明它适用 RELX Pod 和 RELX Pod Pro 两款烟弹，两款都是对称式设计。",
+            "RELX 官网还表示，RELX Pod Pro 也适用于 [RELX Infinity 2 Plus](/products/relx-infinity-2-plus)。",
+          ],
+        },
+        {
+          heading: "RELX Pod 和 RELX Pod Pro 有什么不同？",
+          paragraphs: [
+            "两款的线圈不同：RELX Pod Pro 用陶瓷线圈，RELX Pod 用棉芯线圈。RELX 还表示，Pod Pro 的防漏性能做了优化。",
+          ],
+        },
+        {
+          heading: "抽起来怎么样？",
+          paragraphs: [
+            "它采用 RELX 称为 Super Smooth 的技术，让烟雾温度不会过高，帮助避免焦味。",
+            "RELX 还表示，一吸几乎立即启动，每一口烟雾都很饱满。",
+          ],
+        },
+        {
+          heading: "防漏是怎么设计的？",
+          paragraphs: [
+            "RELX 把内部设计成多层结构，帮助防止漏油，也避免油滴凝结在内部。",
+          ],
+        },
+        {
+          heading: "怎么充电？",
+          paragraphs: [
+            "主机内置 380mAh 电池，可通过 USB-C 充电。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Essential 2 有哪些颜色？",
+          answer: "本店列出的颜色有 Black、Steel silver、Grey、Nebula Blue 和 Orange。",
+        },
+        {
+          question: "RELX Essential 2 需要自己加烟油吗？",
+          answer: "不需要。适用的烟弹出厂已装好烟油，用完换一颗新的即可。",
+        },
+        {
+          question: "RELX Essential 2 能用 RELX Infinity Pro 2 烟弹吗？",
+          answer: "RELX 官网为这台主机标明的适用烟弹是 RELX Pod 和 RELX Pod Pro 两款。[RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) 包装上印的名称 RELX Pod Pro 2 不在这份列表里。",
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4c (06/10): from RELX's own Smash Go 12K page; Thai = thai-copy 06/10.
   "relx-smash-go-12k": {
     th: {

@@ -1604,6 +1604,16 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
   },
+  // Round "queue 0211" articles, RELX (02/11): relxnow.com/products/essential-device ("RELX Essential 2 Device") — "Compatible Pod: RELX
+  // Pod and RELX Pod Pro", "380mAh", "USB-C". The 20/10 note "no Essential 2 page" is out of date — the page exists now.
+  "RELX-ESSENTIAL-2": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "380mAh", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "compatible-pods", label: "ใช้กับหัวพอต", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+    ],
+    sourceUrls: ["https://relxnow.com/products/essential-device"],
+  },
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-64": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
