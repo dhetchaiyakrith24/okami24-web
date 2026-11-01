@@ -41,6 +41,11 @@ export interface AboutCopy {
   lede: string;
   whoTitle: string;
   who: string;
+  /** Round SEO rankings back (02/11, owner "ร้านเราคือใคร ตามแนะนำ" = option A, the team, no person's name): who runs the
+   *  shop, from BSOT §1 (history line + "curated by experienced seller") · §3 (YouTube @OKMYARZ, LINE every day 24 h) · §13
+   *  (2 admins, the warehouse packs, the owner = content + final pricing). The guide byline already links here. */
+  teamTitle: string;
+  team: { beforeChannel: string; channel: string; afterChannel: string; more: string[] };
   selectionTitle: string;
   /** Split around the live brand count the component renders. Owner 05/10: the spec sentence = the /faq answer (maker
    *  material "เป็นหลัก", every value's source checked) — the verified/unverified badge words went with the badges. */
@@ -73,6 +78,16 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     lede: "การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้ จากคนขายที่รู้จักสินค้าจริง",
     whoTitle: "OKami24 คือใคร",
     who: "OKami24 (ย่อว่า OKM) ขายพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ ตั้งราคาตรง ๆ ไม่ปั่นราคา ทักมาแล้วแอดมินตัวจริงเป็นคนตอบ",
+    teamTitle: "ทีมที่ดูแลร้าน",
+    team: {
+      beforeChannel: "OKami24 ขายออนไลน์มาก่อนจะมีเว็บนี้ เจ้าของร้านเป็นคนคัดสินค้า ดูแลข้อมูลบนเว็บ และตั้งราคาเอง ส่วนช่อง YouTube ",
+      channel: "OKM YARZ",
+      afterChannel: " ของร้านรีวิวเครื่องจากการใช้งานจริงค่ะ",
+      more: [
+        "แอดมิน 2 คนดูแลแชท ออเดอร์ การเช็คสต๊อก และการอัปเดตเลขพัสดุ ทักไลน์มาได้ทุกวัน ตลอด 24 ชั่วโมงค่ะ",
+        "เมื่อออเดอร์เข้าระบบแล้ว คลังสินค้าที่ร้านใช้บริการจะแพ็กและจัดส่งให้ค่ะ",
+      ],
+    },
     selectionTitle: "สินค้าที่เราคัดสรร",
     selection: {
       beforeCount: "เว็บนี้รวมพอตซิสเต็ม พอตเปลี่ยนหัว พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS จาก ",
@@ -107,6 +122,16 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     lede: "Good service is what OKami24 gives you — genuine pod systems, disposables and e-liquid, from a seller who actually knows the products.",
     whoTitle: "Who is OKami24?",
     who: "OKami24 (OKM for short) sells genuine pod systems, disposables and e-liquid from brands we trust. The price you see is the price we charge — no games. Message us and the admin replies, not a bot.",
+    teamTitle: "The team behind the shop",
+    team: {
+      beforeChannel: "OKami24 sold online before this site. The owner chooses the products, looks after what you read here and sets the prices, and our YouTube channel, ",
+      channel: "OKM YARZ",
+      afterChannel: ", reviews devices from real use.",
+      more: [
+        "Two admins look after the chat, orders, stock checks and tracking updates, and you can message us on LINE any day, around the clock.",
+        "Once an order is in the system, the warehouse we work with packs and ships it.",
+      ],
+    },
     selectionTitle: "The products we’ve selected",
     selection: {
       beforeCount: "This site brings together pod systems, switch pods, disposables, replacement pods, coils and IQOS from ",
@@ -142,6 +167,16 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     lede: "好的服务，就是 OKami24 给你的 —— 正品烟弹系统、一次性烟具与烟油，来自真正懂产品的卖家。",
     whoTitle: "OKami24 是谁",
     who: "OKami24（简称 OKM）销售正品烟弹系统、一次性烟具与烟油，品牌都是我们信得过的。页面标价就是售价，不炒价。你来消息，真人回复，不是机器人。",
+    teamTitle: "店铺背后的团队",
+    team: {
+      beforeChannel: "OKami24 在有这个网站之前就已经在网上销售。店主亲自选品、负责站内内容并制定价格，店铺的 YouTube 频道 ",
+      channel: "OKM YARZ",
+      afterChannel: " 则根据实际使用来测评设备。",
+      more: [
+        "两位管理员负责聊天咨询、订单、库存核对和物流单号更新，LINE 每天 24 小时都可以联系我们。",
+        "订单录入系统后，由合作仓库负责打包和发货。",
+      ],
+    },
     selectionTitle: "我们精选的产品",
     selection: {
       beforeCount: "本站汇集了来自我们精选的 ",
