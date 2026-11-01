@@ -1625,7 +1625,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // packs + the home card's Strawberry pod, as listed on this page.
   "zero-cartridge": {
     th: {
-      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้กับเครื่องไหน มีกลิ่นแนวไหนบ้าง และน้ำยาในหัวทำจากอะไร",
+      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้ยังไง มีกลิ่นแนวไหนบ้าง และน้ำยาทำจากอะไร",
       sections: [
         {
           heading: "Zero Cartridge ใช้ยังไง",
@@ -1661,7 +1661,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "The Zero Cartridge is the pod of SALTHUB's Zero line. Below is a summary from SALTHUB's own site of which device it fits, how its flavours group and what the e-liquid inside is made of.",
+      lede: "The Zero Cartridge is the pod of SALTHUB's Zero line. Below is a summary from SALTHUB's own site of how it is used, how its flavours group and what the e-liquid inside is made of.",
       sections: [
         {
           heading: "How do you use the Zero Cartridge?",
@@ -1695,7 +1695,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "Zero Cartridge 是 SALTHUB Zero 系列的烟弹。下面根据 SALTHUB 官网的资料，介绍它适用于哪款主机、口味如何分类，以及烟油的成分。",
+      lede: "Zero Cartridge 是 SALTHUB Zero 系列的烟弹。下面根据 SALTHUB 官网的资料，介绍它的用法、口味如何分类，以及烟油的成分。",
       sections: [
         {
           heading: "Zero Cartridge 怎么用？",
