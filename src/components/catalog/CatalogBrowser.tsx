@@ -100,14 +100,23 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
   return [...legacyEntries, ...publishedEntries];
 }
 
-/** The header's "พร้อมส่ง" button links to ?stock=in (owner 24/10 night). Read in its own Suspense child so the grid
- *  page stays prerendered, and on every in-site navigation — a tap while already on this page still switches it on. */
-function StockParamSync({ onInStock }: { onInStock: () => void }) {
+/** ?stock=in is the toggle's one memory: the header's "พร้อมส่ง" button links to it (owner 24/10 night) and the
+ *  toolbar button writes it (`writeStockParam`), so Back from a product page restores the filter either way (owner 02/11).
+ *  Read in its own Suspense child so the grid page stays prerendered. */
+function StockParamSync({ onStock }: { onStock: (inStock: boolean) => void }) {
   const stock = useSearchParams().get("stock");
   useEffect(() => {
-    if (stock === "in") onInStock();
-  }, [stock, onInStock]);
+    onStock(stock === "in");
+  }, [stock, onStock]);
   return null;
+}
+
+/** Replaces the current history entry (no new Back step, no scroll) — Next keeps useSearchParams in sync with it. */
+function writeStockParam(inStock: boolean) {
+  const url = new URL(window.location.href);
+  if (inStock) url.searchParams.set("stock", "in");
+  else url.searchParams.delete("stock");
+  window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
 }
 
 /** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
@@ -161,8 +170,13 @@ export function CatalogBrowser({
   const signedIn = useSignedIn();
   const showStock = Boolean(inStockKeys) && !isEmptyCategory && signedIn;
   const inStockSet = useMemo(() => new Set(inStockKeys ?? []), [inStockKeys]);
-  // Stable, so the URL listener runs only when ?stock changes — never undoing the visitor's own tap on the toggle.
-  const turnOnInStock = useCallback(() => setInStockOnly(true), []);
+  // Stable, so the URL listener runs only when ?stock changes; the tap writes the URL first, so the two never disagree.
+  const syncInStock = useCallback((inStock: boolean) => setInStockOnly(inStock), []);
+  const toggleInStock = () => {
+    const next = !inStockOnly;
+    writeStockParam(next);
+    setInStockOnly(next);
+  };
   const [sort, setSort] = useState<SortMode>("featured");
 
   // Phone sheet (M4). Groups start with only the brand list open — it is the facet a shopper
@@ -349,7 +363,7 @@ export function CatalogBrowser({
               above is only for the sheet's button label. */}
           {showStock && (
             <Suspense fallback={null}>
-              <StockParamSync onInStock={turnOnInStock} />
+              <StockParamSync onStock={syncInStock} />
             </Suspense>
           )}
           {/* lg: count first (pushes right), then this button, then sort — the button appears after load for members only, and
@@ -358,7 +372,7 @@ export function CatalogBrowser({
             <button
               type="button"
               aria-pressed={inStockOnly}
-              onClick={() => setInStockOnly((v) => !v)}
+              onClick={toggleInStock}
               className={cn(
                 "inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold tracking-tight transition-colors max-lg:mr-auto max-lg:px-3 lg:order-2 lg:min-h-9",
                 inStockOnly ? "border-ember bg-ember/15 text-foreground" : "border-surface-border bg-surface-1 text-foreground hover:border-foreground-dim hover:bg-surface-2",
