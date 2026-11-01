@@ -702,6 +702,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "600mAh",
+      "puffs-per-pod": "สูงสุด 15,000",
+      coil: "cotton mesh",
+      nicotine: "30mg salt nic",
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit ซึ่งร้านเราเรียกว่า M Bar 15K",

@@ -1227,17 +1227,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/",
     },
   ],
-  // Round list19 (18/10): Kardinal's own Quikpro render (Black, transparent PNG) from kardinal.com/products/quikpro.
+  // images-0211b (02/11, owner: the logo must be "KS"): the card was Kardinal's own render of the overseas edition (round
+  // badge at the base); the shop sells the Thai edition with the glowing "KS" mark — the device is now cut from the same
+  // 21/10 studio render set as the flavour photos (aiRender in scripts/process-images.map.json).
   "KS-QUIKPRO-KIT": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/ks-quikpro-kit/card.webp",
-      alt: "KS Quikpro device with cartridge, Black, official product render",
-      angle: "Front, upright — Kardinal's official Quikpro render (Black_Individual, 2674x3342 transparent PNG) from kardinal.com/products/quikpro.",
+      src: "/assets/products/ks-quikpro-kit/card-v2.webp",
+      alt: "KS Quikpro device with cartridge, Black, glowing KS mark, studio photo",
+      angle: "Front, upright — the device from OKami24's 21/10 studio re-shoot of the shop's KS Quikpro Starter Kit poster (the set the flavour photos use).",
       transparentBackground: true,
-      sourceName: "Kardinal (official brand site)",
-      sourceUrl: "https://www.kardinal.com/products/quikpro",
+      sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit poster",
+      sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/",
     },
   ],
   // Round list19 (18/10): the maker's only cartridge image is a line-art diagram, so the card is an OKami24 re-shoot of the pod
