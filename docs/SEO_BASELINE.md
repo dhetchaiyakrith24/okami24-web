@@ -560,3 +560,7 @@ Read again with the same method: GSC + real page **09/11 · 16/11 · 30/11** (de
 - 21 description heads are shorter so the 7 extra characters do not cut a key word (same facts; listed in the PR).
   Side effect: their Product JSON-LD description is the shorter line too.
 - Expected effect on rank: none (meta is a snippet, not a ranking signal) — read for CTR only, from the day it is live.
+- LIVE: PR #1097 merged 02/11 (b108156f, checker PASS e1c62cff). Checker side note: the 5 /technology/* pages' JSON-LD
+  `dateModified` moved 31/10 → 02/11 with no content change (content-dates follows search-head-copy.ts) — expected, harmless.
+- Next variable before the 09/11 read: PR #1095 (switch-pod child) moves 14 prefilled pods pods-cartridges → switch-pods
+  (category metas, JSON-LD category + breadcrumb of those 14 pages, related boxes) — date = when it merges.
