@@ -499,7 +499,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
   // that must never read as a duplicate listing. See TAXONOMY_MATCHES["Coil-55"] for the evidence.
   "Coil-55": {
-    tagline: "หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL",
+    tagline: "หัวพอตเปล่าสำหรับ UWELL Caliburn G2 ความจุ 2mL เติมน้ำยาด้านบน ใช้คู่กับคอยล์ Caliburn G2 และ Caliburn G ได้",
     shortDescription: "หัวพอตเปล่ารุ่น Caliburn G2 (บรรจุ 2 ชิ้น) เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL แยกชิ้นจากคอยล์",
   },
   // Phase 2.8 correction — was worded as a coil ("คอยล์"); official VOOPOO evidence (matching
@@ -1815,6 +1815,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2.5mL", sourceStatus: "verified" },
       { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตบรรจุสำเร็จ คอยล์ในตัว (ระบบปิด ใช้หมดแล้วเปลี่ยนหัวใหม่)", sourceStatus: "verified" },
+      // Details 02/11: infy.my's 2.5ML Cartridge page — "designed specifically for the Cube Box and Closed Pod System", "insert it in
+      // INFY Cube Box or INFY Device".
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "INFY Device · INFY Cube Box", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
     ],
     // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
     // upgrade from the earlier 2ml cartridge. The prefilled/closed-system fact comes from a
@@ -1946,6 +1949,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Coil-55": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      // Details 02/11 (real browser, same page): "TOP FILLING" · "Except for the pre-installed meshed-H 1.2 Ω coil, Caliburn G2 is
+      // compatible with 1.0 Ω coil and 0.8 Ω coil of Caliburn G".
+      { key: "fill", label: "การเติมน้ำยา", value: "เติมด้านบน", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      { key: "coil-models", label: "รุ่นคอยล์", value: "Caliburn G2 1.2Ω · Caliburn G 0.8Ω · G 1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G2", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2"],
   },
@@ -1961,6 +1969,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
       { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ SPL10", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Feelin Mini", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
     ],
     sourceUrls: ["https://nevoks.com/products/nevoks-feelin-mini-pod-kit"],
   },

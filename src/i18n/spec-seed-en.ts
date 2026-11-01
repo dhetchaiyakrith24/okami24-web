@@ -132,6 +132,7 @@ const VALUES_EN: Record<string, string> = {
   "PCTG + สแตนเลส": "PCTG + stainless steel",
   "คอยล์ในตัว 0.7Ω หรือ 1.2Ω": "Built-in coil, 0.7Ω or 1.2Ω",
   "3 หัว": "3 pods",
+  "เติมด้านบน": "Top fill",
 };
 
 /** The English label for a Thai seed label ("กำลังไฟที่แนะนำ (0.8Ω)" keeps its bracket), or the label itself. */

@@ -27,7 +27,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-38": { tagline: "TPP coil by VOOPOO" },
   "coil-53": { tagline: "UWELL Caliburn G-series coil, 0.8 / 1.0 / 1.2Ω" },
   "coil-92": { tagline: "VOOPOO PnP X replacement coil" },
-  "coil-55": { tagline: "Caliburn G2 empty pod by UWELL" },
+  "coil-55": { tagline: "Empty 2mL top-fill pod for the UWELL Caliburn G2 that takes Caliburn G2 and Caliburn G coils" },
   "coil-56": { tagline: "Empty 5mL VOOPOO PnP X pod with side filling, for PnP X coils" },
   "coil-68": { tagline: "ITO-X pod by VOOPOO" },
   "coil-70": { tagline: "Dotmod Aio V2 coil by DOTMOD" },
