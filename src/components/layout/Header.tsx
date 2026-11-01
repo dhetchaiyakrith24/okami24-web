@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -16,7 +17,16 @@ import { useSignedIn } from "@/components/account/use-signed-in";
  *  2026-09-07): while online ordering is off, the cart icon and the mobile-menu cart link are not
  *  rendered at all, because /cart would only redirect. Defaults to true so nothing else changes. */
 export function Header({ orderingEnabled = true, categories }: { orderingEnabled?: boolean; categories: NavCategory[] }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // Owner 02/11: with the menu open, the other buttons "กดไม่ได้ ต้องปิดเมนูก่อน" — a tap on the bar went to the next page
+  // under the still-open menu. The menu now belongs to the page it was opened on (a new page = closed), and any tap
+  // outside it — a header button, Esc, or the page beside the narrower panel from sm — closes it while the tap still
+  // does its own job.
+  const pathname = usePathname();
+  const [menuOpenOn, setMenuOpenOn] = useState<string | null>(null);
+  const mobileOpen = menuOpenOn === pathname;
+  const closeMenu = () => setMenuOpenOn(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
   const [productsOpen, setProductsOpen] = useState(false);
   // Touch screens at lg+ (tablets, touch laptops): the first tap on "สินค้า" opens the menu instead of leaving the page —
   // remembered at pointerdown, before the browser's emulated mouseenter opens it (checker note #817).
@@ -61,9 +71,37 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
     };
   }, [mobileOpen]);
 
+  // Esc, or a press anywhere outside the panel and the bar (the bar closes it itself, below), closes the menu. The press
+  // is not swallowed: the button or link under it still works on the same tap.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpenOn(null);
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (menuPanelRef.current?.contains(target) || menuButtonRef.current?.contains(target)) return;
+      if ((target as Element).closest?.("header")) return;
+      setMenuOpenOn(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [mobileOpen]);
+
   return (
     <>
-    <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
+    <header
+      className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md"
+      onClickCapture={(e) => {
+        // Any link or button on the bar except the menu button itself closes the open menu, then does its own job.
+        const hit = (e.target as HTMLElement).closest("a, button");
+        if (hit && hit !== menuButtonRef.current) closeMenu();
+      }}
+    >
       <Container className="flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-6 lg:gap-4 min-[1400px]:gap-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label="OKami24">
           {/* Q6 logo (owner 24/10): the full lockup is ~2.8x wider than the old sticker logo. Where the row is already full
@@ -221,10 +259,12 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             </Link>
           )}
           <button
+            ref={menuButtonRef}
             className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 xl:hidden"
-            onClick={() => setMobileOpen((v) => !v)}
+            onClick={() => setMenuOpenOn((open) => (open === pathname ? null : pathname))}
             aria-label={mobileOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
           </button>
@@ -232,9 +272,14 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
       </Container>
     </header>
 
+      {/* Phones: the whole screen under the bar. From sm a panel on the right, so the page beside it stays in view and
+          a tap on it works and closes the menu. `inert` while closed: its links no longer take keyboard focus off screen. */}
       <div
+        id="mobile-menu"
+        ref={menuPanelRef}
+        inert={!mobileOpen}
         className={cn(
-          "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface-0 transition-transform duration-300 xl:hidden",
+          "fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface-0 transition-transform duration-300 sm:left-auto sm:w-full sm:max-w-sm sm:border-l sm:border-surface-border-soft sm:shadow-2xl xl:hidden",
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -242,7 +287,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           className="flex flex-col gap-1 p-6"
           aria-label="Mobile"
           onClick={(e) => {
-            if ((e.target as HTMLElement).closest("a")) setMobileOpen(false);
+            if ((e.target as HTMLElement).closest("a")) closeMenu();
           }}
         >
           <span className="label-mono px-3 py-2 text-xs text-foreground-dim">{dict.nav.products}</span>
