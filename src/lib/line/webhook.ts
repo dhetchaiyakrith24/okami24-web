@@ -15,10 +15,8 @@ import { formatRestartSlipReply, formatSlipReply } from "./messages";
  *   - everything else (text, stickers, 1:1 chats, rooms, the order group, an unassigned group) → ignored, no answer.
  * Message text is never read or stored.
  *
- * Restarts (03/11): an event id already handled is skipped (LINE "Webhook redelivery" + network duplicates), and a
- * redelivered slip is still answered by reply only — if LINE refuses its reply token the failure is logged and NO push
- * is sent (push uses the monthly quota — the owner's call). Running slip checks are counted, and one still running
- * 18 s after SIGTERM is answered "send it again" before Render kills the old server at 30 s (event-guard.ts).
+ * Restarts (03/11): running slip checks are counted, and one still running 18 s after SIGTERM is answered "send it
+ * again" by reply before Render kills the old server at 30 s (event-guard.ts). No push fallback (owner 03/11).
  */
 
 const guard = createEventGuard();
@@ -42,8 +40,6 @@ interface LineSource {
 
 export interface LineEvent {
   type?: string;
-  webhookEventId?: string;
-  deliveryContext?: { isRedelivery?: boolean };
   replyToken?: string;
   source?: LineSource;
   message?: { type?: string; id?: string };
@@ -75,18 +71,11 @@ async function handleSlipImage(event: LineEvent): Promise<void> {
   const verdict = await guard.raceShutdown(slipVerdictText(messageId));
   if (verdict === null) console.warn("[line] slip check cut by the restart — answered 'send it again'");
   const sent = await replyText(replyToken, verdict ?? formatRestartSlipReply(startedAt));
-  // A redelivered event's reply token may be refused (LINE: usable "except in certain cases") — no push fallback.
-  const redelivered = event.deliveryContext?.isRedelivery === true;
-  if (!sent.ok) console.error(`[line] slip reply failed (${sent.status ?? "network"})${redelivered ? " — redelivered event, no push sent" : ""}`);
-  else if (redelivered) console.info("[line] slip answered from a redelivered event");
+  if (!sent.ok) console.error(`[line] slip reply failed (${sent.status ?? "network"})`);
 }
 
 export async function handleEvents(events: LineEvent[]): Promise<void> {
   for (const event of events) {
-    if (!guard.firstSighting(event.webhookEventId)) {
-      console.info(`[line] event ${event.type ?? "?"} already handled — duplicate skipped${event.deliveryContext?.isRedelivery ? " (redelivery)" : ""}`);
-      continue;
-    }
     try {
       const groupId = event.source?.type === "group" ? event.source.groupId : undefined;
       if (!groupId) continue;
