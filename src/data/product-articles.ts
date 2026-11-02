@@ -1459,7 +1459,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What does the screen show, and how does the airflow adjust?",
           paragraphs: [
-            "A 0.54-inch OLED on the side shows the battery left, the wattage in use and the resistance of the fitted pod. It fires as you draw, with no button to press, and the airflow adjusts steplessly from tight to open.",
+            "A 0.54-inch OLED on the side shows the battery left, the wattage in use and the resistance of the fitted pod. It fires as you draw, without pressing a button, and the airflow adjusts steplessly from tight to open.",
           ],
         },
         {
@@ -1490,7 +1490,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "屏幕显示什么？气流怎么调？",
           paragraphs: [
-            "机身侧面有一块 0.54 英寸 OLED 屏，显示剩余电量、当前功率和所装烟弹的阻值。吸即可用，无需按键；气流支持无级调节，可从紧调到松。",
+            "机身侧面有一块 0.54 英寸 OLED 屏，显示剩余电量、当前功率和所装烟弹的阻值。吸即可用，无需按键启动；气流支持无级调节，可从紧调到松。",
           ],
         },
         {
