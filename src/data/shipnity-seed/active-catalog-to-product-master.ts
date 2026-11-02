@@ -911,7 +911,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/graple-freebase/card.webp",
+      src: "/assets/products/graple-freebase/card-wm2.webp",
       alt: "Graple freebase e-liquid bottle, studio photo",
       angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the front bottle on the shop's Graple poster.",
       transparentBackground: true,
@@ -2231,7 +2231,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
   "GRAPLE-FREEBASE": {
-    "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },
+    "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1-wm2.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },
   },
   // Image sweep (19/10): Vmate Pro 2 — all 4 warehouse colours have a photo (re-shoots of VOOPOO's line-up render). VOOPOO's line-up also
   // shows Glacier Silver, Fresh Green and Lavender, not in the warehouse; voopoo.com does not resolve from here, so they wait for a maker page.
