@@ -19,6 +19,7 @@ const LABELS_EN: Record<string, string> = {
   "ความจุหัวพอต": "Pod capacity",
   "ขนาดขวด": "Bottle size",
   "ใช้ได้กับ": "Compatible devices",
+  "เครื่อง RELX Infinity 2 Plus": "RELX Infinity 2 Plus device",
   "ใช้ได้กับอุปกรณ์": "Compatible devices",
   "ใช้ได้กับก้าน": "Compatible sticks",
   "แบตเตอรี่": "Battery",
