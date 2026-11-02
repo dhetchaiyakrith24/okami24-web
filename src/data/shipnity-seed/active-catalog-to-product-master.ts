@@ -778,7 +778,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "IQOSHEET-18": {
     tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i มีจอทัช พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับก้าน TEREA เท่านั้น",
-    shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
     // Round list19 (17/10): the record is the ILUMA i ONE (TAXONOMY_MATCHES comment). Every fact = iqos.com/ph ILUMA i ONE pages.

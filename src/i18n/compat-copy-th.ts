@@ -117,8 +117,8 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "VOOPOO ระบุในหน้า ARGUS G4 mini ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Multi-Ohm · Snap และ ARGUS Top Fill Cartridge V2 ขนาด 2mL กับ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ที่นับรุ่น CRC ไว้ด้วย",
   "VOOPOO's ARGUS P3 page: every ARGUS pod-family cartridge — Snap, Top Fill Cartridge V2, Top Fill Cartridge and CRC versions (check resistance and output).":
     "VOOPOO ระบุในหน้า ARGUS P3 ว่าใช้หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Snap · ARGUS Top Fill Cartridge V2 และรุ่นก่อนหน้า รวมถึงรุ่น CRC โดยแนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
-  "VOOPOO's ARGUS G3 mini page (FAQ + specs): it takes the ARGUS Top Fill Cartridge, resistance range 0.4/0.7/1.0Ω — coil-21's Top Fill 0.4Ω and 0.7Ω options fit; its 1.2Ω side-fill option is outside that range.":
-    "หน้า ARGUS G3 mini ของ VOOPOO ระบุว่าใช้หัวพอต ARGUS แบบเติมด้านบนได้ ช่วงโอห์ม 0.4 · 0.7 และ 1.0 โอห์ม ตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์มของหน้านี้จึงใช้ได้ ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงนั้น",
+  "VOOPOO's ARGUS G3 mini page (FAQ + specs): it takes the ARGUS Top Fill Cartridge, resistance range 0.4/0.7/1.0Ω — coil-21's Top Fill 0.4Ω, 0.7Ω and 1.0Ω options fit; its side-fill options (0.7Ω and 1.2Ω) are a different pod that VOOPOO does not name for it.":
+    "หน้า ARGUS G3 mini ของ VOOPOO ระบุว่าใช้หัวพอต ARGUS แบบเติมด้านบนได้ ช่วงโอห์ม 0.4 · 0.7 และ 1.0 โอห์ม ตัวเลือกหัวเติมด้านบน 0.4 · 0.7 และ 1.0 โอห์มของหน้านี้จึงใช้ได้ ส่วนตัวเลือกหัวเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกแบบ ซึ่ง VOOPOO ไม่ได้ระบุให้ใช้กับรุ่นนี้",
   // Round list19 (19/10): the three DRAG ↔ PnP X coil edges show on coil-92 now that the coil page is published again.
   "VOOPOO's own DRAG 6 page states the kit's UFORCE-X Tank II takes every PnP X coil, and the kit ships with PnP X 0.15Ω and 0.3Ω coils.":
     "VOOPOO ระบุในหน้า DRAG 6 ว่าถังน้ำยา UFORCE-X ของชุดนี้ใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15Ω กับ 0.3Ω",
