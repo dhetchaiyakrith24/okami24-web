@@ -16,7 +16,8 @@ import { formatRestartSlipReply, formatSlipReply } from "./messages";
  * Message text is never read or stored.
  *
  * Restarts (03/11): running slip checks are counted, and one still running 18 s after SIGTERM is answered "send it
- * again" by reply before Render kills the old server at 30 s (event-guard.ts). No push fallback (owner 03/11).
+ * again" by reply before Render kills the old server at 30 s (event-guard.ts). An event id already handled is skipped
+ * (network duplicates; dormant guard for LINE "Webhook redelivery", parked by the owner 03/11). No push fallback.
  */
 
 const guard = createEventGuard();
@@ -40,6 +41,8 @@ interface LineSource {
 
 export interface LineEvent {
   type?: string;
+  webhookEventId?: string;
+  deliveryContext?: { isRedelivery?: boolean };
   replyToken?: string;
   source?: LineSource;
   message?: { type?: string; id?: string };
@@ -76,6 +79,10 @@ async function handleSlipImage(event: LineEvent): Promise<void> {
 
 export async function handleEvents(events: LineEvent[]): Promise<void> {
   for (const event of events) {
+    if (!guard.firstSighting(event.webhookEventId)) {
+      console.info(`[line] event ${event.type ?? "?"} already handled — duplicate skipped${event.deliveryContext?.isRedelivery ? " (redelivery)" : ""}`);
+      continue;
+    }
     try {
       const groupId = event.source?.type === "group" ? event.source.groupId : undefined;
       if (!groupId) continue;
