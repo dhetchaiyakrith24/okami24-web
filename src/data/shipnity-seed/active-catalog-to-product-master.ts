@@ -1234,7 +1234,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/ks-quikpro-kit/card-v2.webp",
+      src: "/assets/products/ks-quikpro-kit/card-v2-wm.webp",
       alt: "KS Quikpro device with cartridge, Black, glowing KS mark, studio photo",
       angle: "Front, upright — the device from OKami24's 21/10 studio re-shoot of the shop's KS Quikpro Starter Kit poster (the set the flavour photos use).",
       transparentBackground: true,
@@ -2292,10 +2292,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // KS Quikpro kit (22/10): one photo per flavour = that flavour's Starter Kit box beside the black device (the device is the same
   // for every flavour; only the box shows it), re-shot from the shop's per-flavour posters (pod789).
   "KS-QUIKPRO-KIT": {
-    "Variation 2216": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-watermelon.webp", alt: "KS Quikpro 15K Starter Kit, Watermelon, coral-red box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2213": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-grape.webp", alt: "KS Quikpro 15K Starter Kit, Grape, purple box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2215": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-cola-lemon.webp", alt: "KS Quikpro 15K Starter Kit, Cola Lemon, peach-orange box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2217": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-extra-menthol.webp", alt: "KS Quikpro 15K Starter Kit, Extra Menthol, blue box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2216": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-watermelon-wm.webp", alt: "KS Quikpro 15K Starter Kit, Watermelon, coral-red box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2213": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-grape-wm.webp", alt: "KS Quikpro 15K Starter Kit, Grape, purple box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2215": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-cola-lemon-wm.webp", alt: "KS Quikpro 15K Starter Kit, Cola Lemon, peach-orange box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2217": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-extra-menthol-wm.webp", alt: "KS Quikpro 15K Starter Kit, Extra Menthol, blue box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
   },
   // KS Quikpro 15K pod (22/10): the pod is the same plain black cartridge for every flavour, so each flavour = its OWN QUIKpod pack box
   // (re-shot from the shop's per-flavour pod poster, maneevp) beside the one shared pod (the card photo). Grape Berry (23/10): no pack photo anywhere →
