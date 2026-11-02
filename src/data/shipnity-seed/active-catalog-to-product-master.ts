@@ -1803,14 +1803,17 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // ---------------------------------------------------------------------------------
   "Coil-70": {
     specifications: [
-      { key: "resistance", label: "ค่าโอห์ม", value: "0.7Ω", sourceStatus: "verified" },
-      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "14-20W", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.15Ω · 0.3Ω · 0.6Ω · 0.7Ω", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "0.7Ω: 14-20W", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "5 หัว (บรรจุแยกซองละหัว)", sourceStatus: "verified" },
       { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์ mesh เดี่ยว", sourceStatus: "verified" },
       { key: "compatible-devices", label: "ใช้ได้กับ", value: "dotAIO V2 / dotAIO V2 Lite / dotStick Revo / dotPod Max / dotTank 25mm", sourceStatus: "verified" },
     ],
     // Wattage/resistance are read directly off the retail box in this record's own card photo;
     // pack size, brass construction and the device list are from dotmod's own dotCoils page.
+    // Details 03/11: dotmod's dotCoils page now offers "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" (its product JSON); the
+    // 0.7Ω the shop sells is on dotmod's own retail box and was in the 2026-09-02 dotAIO V2 line-up (0.3/0.7/0.9Ω) — an
+    // earlier dotmod value, kept. The current three are listed below as maker options (VERIFIED_ADDITIONAL_VARIANTS).
     sourceUrls: ["https://dotmod.com/products/dotcoils", "https://www.elementvape.com/dotmod-dotaio-v2-dotcoils"],
   },
   "Coil-83": {
@@ -2886,6 +2889,25 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   // Owner brief 26/10: the SUP ZERO line-up poster and zeedcupvp.com list 16 flavours; Apple Aloe Vera (3%) is not in Max (Disposable-45).
   "SUP-ZERO-22K": [
     { code: "apple-aloe-vera", label: "Apple Aloe Vera", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
+  ],
+  // Details 03/11 (catalog completeness): RELX Malaysia sells the shop's "RELX Infinity Pro 2" pods as "RELX Pod Pro 2" — its flavour
+  // selector (relxnow.my/products/relx-pod-pro-2, "Peach Mint (Peach Ice)" etc.: the name in brackets is the flavour) and its own
+  // product pages add these 7 flavours to Max's 42 (Pod-27). "Root Brew" = its own page's title (the selector says "Root Beer").
+  // Nicotine strength is not split: RELX MY names no 50mg line.
+  "RELX-INFINITY-PRO-2-POD": [
+    { code: "lime-sparkle", label: "Lime Sparkle", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-lime-sparkle" },
+    { code: "crisp-apple", label: "Crisp Apple", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-crisp-apple" },
+    { code: "root-brew", label: "Root Brew", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-root-brew" },
+    { code: "peach-ice", label: "Peach Ice", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-jasmine-tea", label: "Ice Jasmine Tea", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "lychee-frost", label: "Lychee Frost", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-tieguanyin", label: "Ice Tieguanyin", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+  ],
+  // Details 03/11: dotmod's current dotCoils resistances (dotmod.com/products/dotcoils) — the warehouse's 0.7Ω is an earlier value.
+  "Coil-70": [
+    { code: "0-15ω", label: "0.15Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
+    { code: "0-3ω", label: "0.3Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
+    { code: "0-6ω", label: "0.6Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
   ],
   // maxlist (20/10): RELX Essential 2 — Max (Pod-157) carries 4 colours; Orange is not in the warehouse. Details 02/11: RELX's own page sells Orange.
   "RELX-ESSENTIAL-2": [
