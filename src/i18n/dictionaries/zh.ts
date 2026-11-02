@@ -197,6 +197,7 @@ export const zh: Dictionary = {
     stockLeftShort: "剩 {n}",
     badgeNew: "新品",
     badgeBestSeller: "热销",
+    badgeBestSellerShort: "热销",
     optionShowAll: "查看全部 {n} 款",
     optionShowLess: "收起",
     optionPickPrompt: "点选图片",

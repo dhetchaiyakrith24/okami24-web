@@ -56,7 +56,8 @@ export function CardSalesBadge({ slug, soldOut = false }: { slug: string; soldOu
         kind === "best" ? (
           <span key={kind} data-sales="best" className={cn(BEST_PILL, CARD_PILL)}>
             <span className={cn(BEST_DOT, "max-lg:hidden")} aria-hidden />
-            {dict.product.badgeBestSeller}
+            <span className="lg:hidden">{dict.product.badgeBestSellerShort}</span>
+            <span className="max-lg:hidden">{dict.product.badgeBestSeller}</span>
           </span>
         ) : (
           <span key={kind} data-sales="new" className={cn(NEW_PILL, CARD_PILL)}>

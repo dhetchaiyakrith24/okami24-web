@@ -203,6 +203,7 @@ export const en: Dictionary = {
     stockLeftShort: "{n} left",
     badgeNew: "New",
     badgeBestSeller: "Best seller",
+    badgeBestSellerShort: "Hot",
     optionShowAll: "Show all {n}",
     optionShowLess: "Show less",
     optionPickPrompt: "Tap a photo to choose",
