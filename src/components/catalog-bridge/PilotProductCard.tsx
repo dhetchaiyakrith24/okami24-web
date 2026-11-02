@@ -7,6 +7,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { CardSalesBadge } from "@/components/catalog/SalesBadge";
+import { CardPrice } from "@/components/catalog/SaleLabel";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotName } from "@/i18n/product-names-en";
@@ -108,9 +109,8 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
           <CardHeadlineSpec specs={headline} compact />
           {phoneOptionCount && <span className="label-mono">{optionCount}</span>}
         </p>
-        <p className="min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground lg:text-lg" data-card-price>
-          {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
-        </p>
+        {/* + the struck-through label price and "−N%" on approved products (owner 03/11, SaleLabel.tsx) — same line, same height. */}
+        <CardPrice slug={product.slug} price={sellingPrice} soldOut={product.availabilityStatus === "out-of-stock"} />
         <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="published">
           <CardHeadlineSpec specs={headline} />
           {showOptionCount && (

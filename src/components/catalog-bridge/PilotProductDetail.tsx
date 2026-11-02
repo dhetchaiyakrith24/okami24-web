@@ -31,6 +31,7 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { HeadPrice } from "@/components/catalog/SaleLabel";
 import { countKind, countText } from "@/lib/stock/count-rules";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
 import { pilotVariantOptions } from "@/components/product/variant-options";
@@ -283,7 +284,8 @@ export function PilotProductDetail({
           {isPublished && product.sellingPrice !== null ? (
             <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
-              <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
+              {/* + the struck-through label price and "−N%" (owner 03/11, SaleLabel.tsx) — from the BUILT stock, never changes after paint. */}
+              <HeadPrice slug={product.slug} price={product.sellingPrice} soldOut={builtProduct.availabilityStatus === "out-of-stock"} />
               {!hasOptions && <StockCountLine left={pickedLeft} reserve={available && !liveCounts.settled} className="mt-1 lg:hidden" />}
             </div>
           ) : (
