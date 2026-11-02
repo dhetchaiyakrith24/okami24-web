@@ -1006,7 +1006,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/relx-essential-2/card.webp",
+      src: "/assets/products/relx-essential-2/card-wm.webp",
       alt: "RELX Essential 2 device, Nebula Blue, studio photo",
       angle: "Front, upright — studio re-shoot (maxlist 20/10, IMAGE_SPEC §0 item 7) of the shop's colour line-up photo. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2267,11 +2267,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
   "RELX-ESSENTIAL-2": {
-    "Pod-157-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-1.webp", alt: "RELX Essential 2 device, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-2": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-2.webp", alt: "RELX Essential 2 device, Steel Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-3": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-3.webp", alt: "RELX Essential 2 device, Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-4": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-4.webp", alt: "RELX Essential 2 device, Nebula Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "relx-essential-2-verified-orange": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-orange.webp", alt: "RELX Essential 2 device, Orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-1-wm.webp", alt: "RELX Essential 2 device, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-2": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-2-wm.webp", alt: "RELX Essential 2 device, Steel Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-3": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-3-wm.webp", alt: "RELX Essential 2 device, Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-4": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-4-wm.webp", alt: "RELX Essential 2 device, Nebula Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "relx-essential-2-verified-orange": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-orange-wm.webp", alt: "RELX Essential 2 device, Orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   },
   // Image sweep (19/10): INFY POD — 18 of 19 colours have a photo (re-shoots of INFY's own colour photos). Max's "Frost Pink" (Pod-158-11)
   // is not on infy.my → no-photo panel (infy.my sells "Floss Pink", kept as its own maker colour — whether they are one colour is unconfirmed).
