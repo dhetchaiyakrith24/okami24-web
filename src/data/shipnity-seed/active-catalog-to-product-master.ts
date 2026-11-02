@@ -1266,7 +1266,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-70/card-v4.webp",
+      src: "/assets/products/coil-70/card-v4-wm.webp",
       alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo",
       angle: "Card re-centred on its visual weight 23/10 (image line 1: same render moved 77 px right, 0.6 of the gap, as coil-53 card-v4). Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1393,7 +1393,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-54/card-v2.webp",
+      src: "/assets/products/coil-54/card-v2-wm.webp",
       alt: "NEVOKS Feelin Mini empty refillable pod cartridges, pair, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of evolutionvaping.co.uk's photo of the 2-pack (600 px, the largest clean pod-only photo found 08/10); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1409,7 +1409,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-14/card-v2.webp",
+      src: "/assets/products/iqosheet-14/card-v2-wm.webp",
       alt: "LAMBDA i8 heat-not-burn device, Red, official product photo",
       angle: "Front, upright, screen on — LAMBDA's own store gallery photo of the Red i8 (lambdasmoke.com, 1000x1000 on white; white cut off by scripts/process-images.ts). Red = one of the two colours the warehouse holds (Shipnity Max IQOSHEET-14-4).",
       transparentBackground: true,
@@ -1493,7 +1493,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-89/card-v2.webp",
+      src: "/assets/products/coil-89/card-v2-wm.webp",
       alt: "RINCOE Jellybox V pod cartridges, Mesh 0.8Ω (red stripes) and Mesh 1.0Ω, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2665,11 +2665,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
   },
   "Coil-70": {
-    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
+    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
   },
   "Coil-89": {
-    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
-    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
   },
   "Coil-53": {
     "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
@@ -2777,12 +2777,12 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // above), superseding the earlier note here that claimed a usable crop wasn't available.
   // Round list19 (17/10): one LAMBDA store photo per colour (the 6 colours LAMBDA lists).
   "IQOSHEET-14": {
-    "IQOSHEET-14-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-red.webp", alt: "LAMBDA i8 heat-not-burn device, Red", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "IQOSHEET-14-6": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gold.webp", alt: "LAMBDA i8 heat-not-burn device, Gold", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "iqosheet-14-verified-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-black.webp", alt: "LAMBDA i8 heat-not-burn device, Black", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "iqosheet-14-verified-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-green.webp", alt: "LAMBDA i8 heat-not-burn device, Green", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "iqosheet-14-verified-gray": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gray.webp", alt: "LAMBDA i8 heat-not-burn device, Gray", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "iqosheet-14-verified-white": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-white.webp", alt: "LAMBDA i8 heat-not-burn device, White", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "IQOSHEET-14-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-red-wm.webp", alt: "LAMBDA i8 heat-not-burn device, Red", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "IQOSHEET-14-6": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gold-wm.webp", alt: "LAMBDA i8 heat-not-burn device, Gold", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-black-wm.webp", alt: "LAMBDA i8 heat-not-burn device, Black", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-green-wm.webp", alt: "LAMBDA i8 heat-not-burn device, Green", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-gray": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gray-wm.webp", alt: "LAMBDA i8 heat-not-burn device, Gray", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-white": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-white-wm.webp", alt: "LAMBDA i8 heat-not-burn device, White", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   },
 };
 
