@@ -2181,7 +2181,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // FAQ → none written. Thai = thai-copy 02/11 (worded apart so the sibling pages do not duplicate).
   "muro-salt-nic": {
     th: {
-      lede: "ด้านล่างร้านจัดกลิ่นของ Muro Salt Nic เป็นสายไว้ให้ดูง่ายขึ้น และเล่าว่ารุ่นนี้ต่างจาก Muro Freebase ตรงไหน",
+      lede: "ด้านล่างร้านจัดกลิ่นของ Muro Salt Nic เป็นสายให้ดูง่ายขึ้น และเล่าว่าต่างจาก Muro Freebase ตรงไหน",
       sections: [
         {
           heading: "Muro Salt Nic กับ Muro Freebase ต่างกันยังไง",
