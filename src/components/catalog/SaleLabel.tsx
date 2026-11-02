@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * The price with its struck-through label and "−N%" chip (owner 03/11, rules in src/data/sale-label.ts). Look = designer 03/11
- * option A: one line, real price first (every card's price keeps its left edge), then the struck label, then a solid red
+ * option A: one line, real price first (every card's price keeps its left edge), then the struck label, then a solid fuchsia
  * chip — square-ish corners, no dot, no glow, so it never reads as one of the rounded "มาใหม่" / "ขายดี" / stock capsules.
  * Nothing is added below the price: a labelled card is exactly as tall as its neighbours. Decided from the build (the slug,
  * the approved price, the built stock), so it is in the first paint and nothing moves after hydration. A product with no

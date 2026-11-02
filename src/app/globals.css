@@ -29,9 +29,9 @@
   --accent-night-strong: #b49cff;
   --accent-night-line: #7a5cd6;
   --accent-night-soft: #33265a;
-  /* Sale red = the "−N%" chip beside a struck-through label price only (owner 03/11; designer 03/11 option A): a solid
-     chip, white numerals ~4.9:1 — not brand red (identity only) and not danger (errors, "หมด"). */
-  --accent-sale: #d92b2b;
+  /* Sale fuchsia = the "−N%" chip beside a struck-through label price only (owner 03/11; designer 03/11): a solid chip,
+     white numerals ~5.5:1. Not red — red is every "no / sold out" on the site (HANDOFF §18, owner 26/10). */
+  --accent-sale: #c21d84;
 
   /* Brand identity red — sampled from the real OKami24 logo (public/brand/okami-logo-red.png).
      Used ONLY for brand-identity moments (logo, favicon, a few explicit "this is OKami24"
