@@ -1436,7 +1436,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-16/card-v2-wm.webp",
+      src: "/assets/products/iqosheet-16/card-v2-wm2.webp",
       alt: "IQOS ILUMA i PRIME, Aspen Green, isolated official product render",
       angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA i PRIME Aspen Green\" product page (via that page's own og:image meta tag, confirmed page-specific, not a generic/shared image). Aspen Green is one of this parent's 3 real active colors (also Midnight Black, Breeze Blue) — shown as the representative shot per the same one-static-card-image convention used elsewhere; not claimed to show all 3.",
       transparentBackground: true,
@@ -2754,15 +2754,15 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "iqosheet-15-verified-black-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-black-purple-pack2-wm.webp", alt: "IQOS TEREA Black Purple pack, studio photo — official flavor note: Forest Berry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a photo of the real TEREA Black Purple pack", sourceUrl: "https://vapdeals.ae/wp-content/uploads/2026/10/IQOS-Terea-Black-Purple-From-Indonesia.jpg" },
   },
   "IQOSHEET-16": {
-    "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2-wm.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
-    "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2-v2-wm.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
-    "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3-v2-wm.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+    "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2-wm2.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
+    "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2-v2-wm2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
+    "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3-v2-wm2.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
     // Round "option photos + IQOS colours" 2026-10-06: the colours IQOS sells that Shipnity does not stock
     // (VERIFIED_ADDITIONAL_VARIANTS below), same angle and framing as the three above
     // (_incoming/option-photos/iqos/make.js). iqos.com has no angled photo of PRIME Electric Purple, only an
     // upright one: our render keeps the shape of the Garnet Red photo and the colour of the Electric Purple one.
-    "iqosheet-16-verified-garnet-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/garnet-red-wm.webp", alt: "IQOS ILUMA i PRIME, Garnet Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
-    "iqosheet-16-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/electric-purple-wm.webp", alt: "IQOS ILUMA i PRIME, Electric Purple", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Electric Purple photo", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
+    "iqosheet-16-verified-garnet-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/garnet-red-wm2.webp", alt: "IQOS ILUMA i PRIME, Garnet Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
+    "iqosheet-16-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/electric-purple-wm2.webp", alt: "IQOS ILUMA i PRIME, Electric Purple", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Electric Purple photo", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
   },
   "IQOSHEET-18": {
     "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2-wm.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
