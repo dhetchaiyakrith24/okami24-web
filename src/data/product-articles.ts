@@ -120,6 +120,103 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): INFY device — every fact = infy.my (device, 2.5ML + 2ML cartridge and authenticity pages,
+  // WebFetch 02/11; quotes in the batch notes). No colour count: INFY's own page gives "3" and "19" designs. Finishes line not
+  // used ("go beyond matte, glossy, and gradient" does not say the device comes in those). Magnet = the 2ML page only, said so.
+  // INFY Plus → this device is already in the tagline + fit card, so section 3 only adds the 2 mL pod (fact-twice rule). Thai = thai-copy 02/11.
+  "infy-pod": {
+    th: {
+      lede: "ด้านล่างนี้สรุปจากเว็บของ INFY ว่าไฟบนตัวเครื่องบอกอะไร ใส่หัวพอตยังไง ใช้กับหัวพอตแบบไหนได้บ้าง และเช็คของแท้ได้ยังไง",
+      sections: [
+        {
+          heading: "ไฟบนเครื่องบอกอะไร",
+          paragraphs: [
+            "INFY อธิบายว่าไฟ LED หลายสีบนตัวเครื่องจะบอกสถานะให้รู้ ทั้งตอนชาร์จ ตอนสูบ และตอนที่ใส่หัวพอตใหม่เข้าไป ถ้าเห็นไฟสีแดงกะพริบ แปลว่าแบตเหลือไม่เกิน 30% ส่วนไฟสีขาวแปลว่าแบตยังเหลือมากกว่า 70%",
+            "INFY บอกว่าแบต 400mAh ของตัวเครื่องช่วยให้สูบได้ต่อเนื่องโดยไม่ต้องหยุดชาร์จบ่อย และชาร์จผ่าน USB-C ส่วนวิธีชาร์จและดูแลแบตให้ใช้ได้นาน อ่านต่อได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม ชาร์จข้ามคืนได้ไหม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
+          ],
+        },
+        {
+          heading: "ใส่หัวพอตยังไง",
+          paragraphs: [
+            "ก่อนใส่หัวพอต ให้ดึงซีลยางที่ปิดด้านบนและด้านล่างของหัวออก แล้วค่อยเสียบเข้าเครื่อง ในหน้าหัวพอต 2mL INFY บอกว่าหัวพอตยึดกับตัวเครื่องด้วยแม่เหล็ก ใส่แล้วแน่นและไม่เลอะ",
+          ],
+        },
+        {
+          heading: "ใช้กับหัวพอตแบบไหนได้",
+          paragraphs: [
+            "นอกจากหัว INFY Plus แล้ว หน้าหัวพอต 2mL ของ INFY ก็ระบุว่าหัว 2mL ใส่ในเครื่องนี้ได้เหมือนกัน และใส่ในเครื่อง INFY Cube Box ได้ด้วย ร้านเรามี [หัวพอต INFY PLUS](/products/pod-169) ให้เลือกหลายกลิ่น",
+          ],
+        },
+        {
+          heading: "เช็คของแท้ยังไง",
+          paragraphs: [
+            "INFY บอกว่าสินค้าของแบรนด์ทุกชิ้นมีรหัสไว้เช็คของแท้ ที่กล่องจะมีสติกเกอร์ซีเรียลติดอยู่ ให้ขูดชั้นเคลือบออกจนเห็น QR code แล้วสแกนด้วยกล้องมือถือ จากนั้นกรอกรหัสที่เห็นลงในเว็บของ INFY เพื่อตรวจสอบ",
+            "ถ้าอยากดูวิธีเช็คของแท้ของแบรนด์อื่นด้วย อ่านต่อได้ที่ [พอตของแท้ ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์](/guides/checking-a-genuine-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from INFY's own site: what the lights mean, how to fit a pod, which pods it takes, and how to check it is genuine.",
+      sections: [
+        {
+          heading: "What do the lights mean?",
+          paragraphs: [
+            "INFY says the multi-coloured LEDs on the device show when it is charging, when you are vaping and when a new pod goes in. A flashing red light means 30% battery or less; a white light means more than 70%.",
+            "INFY says the 400mAh battery keeps you vaping for longer without stopping to charge often, and it charges over USB-C. For charging and battery care, see [Battery Care & Charging Basics](/guides/battery-care-and-charging).",
+          ],
+        },
+        {
+          heading: "How do I fit a pod?",
+          paragraphs: [
+            "Pull the rubber seals off the top and bottom of the pod, then push it into the device. On its 2 mL pod page, INFY says the pod connects to the device by magnet, for a secure, mess-free fit.",
+          ],
+        },
+        {
+          heading: "Which pods does it take?",
+          paragraphs: [
+            "Besides the INFY Plus, INFY's 2 mL pod page says that pod fits this device too, and the INFY Cube Box as well. We carry the [INFY PLUS pods](/products/pod-169) in a range of flavours.",
+          ],
+        },
+        {
+          heading: "How do I check it is genuine?",
+          paragraphs: [
+            "INFY says every INFY product carries an authenticity code. Find the serial-number sticker on the box, scratch off the coating to reveal a QR code, scan it with your phone camera, then enter the code on INFY's website to verify it.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 INFY 官网：机身灯光代表什么、怎么装烟弹、适用哪些烟弹，以及如何验证正品。",
+      sections: [
+        {
+          heading: "灯光代表什么？",
+          paragraphs: [
+            "INFY 表示，机身的多色 LED 会显示充电、抽吸以及装入新烟弹的状态。红灯闪烁表示电量在 30% 或以下；白灯表示电量高于 70%。",
+            "INFY 表示，400mAh 电池可支持较长时间连续使用，无需频繁中断充电；机身通过 USB-C 充电。充电与电池保养方法见[电池保养与充电基础](/guides/battery-care-and-charging)。",
+          ],
+        },
+        {
+          heading: "怎么装烟弹？",
+          paragraphs: [
+            "先取下烟弹顶部和底部的橡胶塞，再插入机身。INFY 在 2 mL 烟弹页面中表示，烟弹与机身以磁吸连接，装得稳、不弄脏。",
+          ],
+        },
+        {
+          heading: "适用哪些烟弹？",
+          paragraphs: [
+            "除了 INFY Plus，INFY 的 2 mL 烟弹页面也写明，这款烟弹同样能装在这台设备上，也适用于 INFY Cube Box。本店有多种口味的 [INFY PLUS 烟弹](/products/pod-169)。",
+          ],
+        },
+        {
+          heading: "如何验证正品？",
+          paragraphs: [
+            "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
+          ],
+        },
+      ],
+    },
+  },
   // Batch 1 (02/10): written from UWELL's G5 page, its spec sheet and the G5 Lite page (sources per sentence:
   // docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md §5). Owner format A. G5 template round 03/10: the sections that
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
