@@ -1457,7 +1457,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-17/card-v2.webp",
+      src: "/assets/products/iqosheet-17/card-v2-wm.webp",
       alt: "IQOS ILUMA i ONE, Breeze Blue, official product render",
       angle: "Official manufacturer render (round list19, 17/10): iqos.com/ph's ILUMA i ONE Breeze Blue kit page og:image pmi_G0002077_00, fetched as a 2048 px transparent PNG; the IQOS caption line printed under the device is cropped off (scripts/process-images.map.json). Breeze Blue = the warehouse's in-stock colour.",
       transparentBackground: true,
@@ -2765,12 +2765,12 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Round list19 (17/10): ILUMA i ONE — each colour = that colour's own iqos.com/ph kit page og:image (2048 px transparent PNG).
   "IQOSHEET-17": {
-    "IQOSHEET-17-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-breeze-blue.webp", alt: "IQOS ILUMA i ONE, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
-    "iqosheet-17-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-digital-violet.webp", alt: "IQOS ILUMA i ONE, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
-    "iqosheet-17-verified-vivid-terracotta": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-vivid-terracotta.webp", alt: "IQOS ILUMA i ONE, Vivid Terracotta", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html" },
-    "iqosheet-17-verified-midnight-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-midnight-black.webp", alt: "IQOS ILUMA i ONE, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html" },
-    "iqosheet-17-verified-spring-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-spring-green.webp", alt: "IQOS ILUMA i ONE, Spring Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
-    "iqosheet-17-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-electric-purple.webp", alt: "IQOS ILUMA i ONE, Electric Purple", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
+    "IQOSHEET-17-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-breeze-blue-wm.webp", alt: "IQOS ILUMA i ONE, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
+    "iqosheet-17-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-digital-violet-wm.webp", alt: "IQOS ILUMA i ONE, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
+    "iqosheet-17-verified-vivid-terracotta": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-vivid-terracotta-wm.webp", alt: "IQOS ILUMA i ONE, Vivid Terracotta", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html" },
+    "iqosheet-17-verified-midnight-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-midnight-black-wm.webp", alt: "IQOS ILUMA i ONE, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html" },
+    "iqosheet-17-verified-spring-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-spring-green-wm.webp", alt: "IQOS ILUMA i ONE, Spring Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
+    "iqosheet-17-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-electric-purple-wm.webp", alt: "IQOS ILUMA i ONE, Electric Purple", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
   },
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
