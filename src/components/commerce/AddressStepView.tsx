@@ -9,7 +9,7 @@ import { PostcodePlaceFields, type Place } from "@/components/commerce/PostcodeP
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
 import { AddressSummaryCard, CartFold, PlaceWithMap } from "@/components/commerce/AddressOrderSummary";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { addAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
+import { addAddressAction, deleteAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 
@@ -97,9 +97,22 @@ export function AddressStepView({
   const { dict } = useLocale();
   const [state, formAction, pending] = useActionState(addAddressAction, initialAddressState);
   const [place, setPlace] = useState<Place | null>(null);
-  const v = state.values;
-  const error = state.errorKey ? dict.checkout[state.errorKey] : addressMissing ? dict.checkout.placeErrorAddress : null;
-  const errorField = state.errorKey ? ERROR_FIELD[state.errorKey] : undefined;
+  // Edit / delete a saved address (owner 03/11): "แก้ไข" loads it into the form below (same fields, same checks), "ลบ" asks once.
+  const [editing, setEditing] = useState<AddressRecord | null>(null);
+  const [confirmDelete, setConfirmDelete] = useState<number | null>(null);
+  const editId = editing?.id ?? 0;
+  // A refusal's values belong to the form that was sent (new or the one being edited); switching form starts from its own.
+  const refusedHere = (state.editId ?? 0) === editId && state.attempt !== undefined;
+  const v: AddressFormState["values"] = refusedHere ? state.values : editing ?? {};
+  const shownState = refusedHere ? state : initialAddressState;
+  const error = shownState.errorKey ? dict.checkout[shownState.errorKey] : addressMissing ? dict.checkout.placeErrorAddress : null;
+  const startEdit = (a: AddressRecord) => {
+    setEditing(a);
+    setConfirmDelete(null);
+    requestAnimationFrame(() => document.getElementById("address-form")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
+  const errorField = shownState.errorKey ? ERROR_FIELD[shownState.errorKey] : undefined;
+  const formKey = `${editId}-${shownState.attempt ?? 0}`;
   const fieldError = (name: string) => (errorField === name ? error : null);
 
   return (
@@ -117,34 +130,77 @@ export function AddressStepView({
               <div className="flex flex-col gap-3">
                 <span className="label-mono text-xs text-foreground-dim">{dict.checkout.savedAddressesTitle}</span>
                 {addresses.map((a) => (
-                  <form
+                  <div
                     key={a.id}
-                    action={selectAddressAction}
-                    className="flex flex-col items-start gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 sm:flex-row sm:items-center sm:justify-between"
+                    className={cn(
+                      "flex flex-col gap-3 rounded-xl border bg-surface-1 p-4",
+                      editId === a.id ? "border-ember" : "border-surface-border-soft"
+                    )}
                   >
-                    <input type="hidden" name="addressId" value={a.id} />
-                    <div className="text-sm text-foreground">
-                      <p className="font-medium">
-                        {a.recipientName} · {a.phone}
-                      </p>
-                      <p className="text-foreground-muted">
-                        {a.line1}, {a.subdistrict}, {a.district}, {a.province} {a.postalCode}
-                      </p>
+                    <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="min-w-0 text-sm text-foreground">
+                        <p className="font-medium">
+                          {a.recipientName} · {a.phone}
+                        </p>
+                        <p className="text-foreground-muted">
+                          {a.line1}, {a.subdistrict}, {a.district}, {a.province} {a.postalCode}
+                        </p>
+                      </div>
+                      <form action={selectAddressAction} className="shrink-0">
+                        <input type="hidden" name="addressId" value={a.id} />
+                        <Button type="submit" variant="secondary" className="px-4 py-2 text-sm">
+                          {dict.checkout.useThisAddressCta}
+                        </Button>
+                      </form>
                     </div>
-                    <Button type="submit" variant="secondary" className="shrink-0 px-4 py-2 text-sm">
-                      {dict.checkout.useThisAddressCta}
-                    </Button>
-                  </form>
+                    {confirmDelete === a.id ? (
+                      <form action={deleteAddressAction} className="flex flex-wrap items-center gap-3 border-t border-surface-border-soft pt-3 text-sm">
+                        <input type="hidden" name="addressId" value={a.id} />
+                        <span className="text-foreground">{dict.checkout.deleteAddressConfirm}</span>
+                        <span className="flex gap-2">
+                          <Button type="submit" variant="secondary" className="px-3 py-1.5 text-sm text-danger">
+                            {dict.checkout.deleteAddressYes}
+                          </Button>
+                          <Button type="button" variant="ghost" className="px-3 py-1.5 text-sm" onClick={() => setConfirmDelete(null)}>
+                            {dict.checkout.cancelEditCta}
+                          </Button>
+                        </span>
+                      </form>
+                    ) : (
+                      <div className="flex gap-4 border-t border-surface-border-soft pt-3 text-sm">
+                        <button type="button" className="py-1 text-foreground-muted underline-offset-4 hover:text-foreground hover:underline" onClick={() => startEdit(a)}>
+                          {dict.checkout.editAddressCta}
+                        </button>
+                        <button type="button" className="py-1 text-foreground-muted underline-offset-4 hover:text-danger hover:underline" onClick={() => setConfirmDelete(a.id)}>
+                          {dict.checkout.deleteAddressCta}
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             )}
 
-            <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-6">
-              <span className="label-mono text-xs text-foreground-dim">{dict.checkout.addNewAddressTitle}</span>
+            {/* key = which address + attempt: picking "แก้ไข" or getting an answer from the action remounts the fields, so they
+                start from that address / show the new refusal even on an edited field. */}
+            <form
+              id="address-form"
+              key={formKey}
+              action={formAction}
+              className={cn("flex scroll-mt-24 flex-col gap-3 rounded-xl border bg-surface-1 p-6", editing ? "border-ember" : "border-surface-border-soft")}
+            >
+              <div className="flex items-center justify-between gap-3">
+                <span className="label-mono text-xs text-foreground-dim">{editing ? dict.checkout.editAddressTitle : dict.checkout.addNewAddressTitle}</span>
+                {editing && (
+                  <button type="button" className="py-1 text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline" onClick={() => setEditing(null)}>
+                    {dict.checkout.cancelEditCta}
+                  </button>
+                )}
+              </div>
+              {editing && <input type="hidden" name="editId" value={editing.id} />}
               <Field label={dict.checkout.recipientNameLabel} name="recipientName" autoComplete="name" defaultValue={v.recipientName} />
-              {/* key = attempt: each answer of the action remounts the fields, so a new refusal shows even on an edited field. */}
               <Field
-                key={`phone-${state.attempt ?? 0}`}
+                key={`phone-${formKey}`}
                 label={dict.checkout.phoneFieldLabel}
                 name="phone"
                 type="tel"
@@ -157,7 +213,7 @@ export function AddressStepView({
                   sub-district while the form still held the picked one (found 02/11). Each answer of the action carries a new
                   `attempt`, so they remount from it and what is shown is what is sent. */}
               <PostcodePlaceFields
-                key={state.attempt ?? 0}
+                key={formKey}
                 initial={{ postalCode: v.postalCode, subdistrict: v.subdistrict, district: v.district, province: v.province }}
                 postalError={fieldError("postalCode")}
                 onPlaceChange={setPlace}
@@ -167,7 +223,7 @@ export function AddressStepView({
                   <PlaceWithMap place={place} />
                 </div>
               )}
-              <Field key={`line1-${state.attempt ?? 0}`} label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
+              <Field key={`line1-${formKey}`} label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
               {error && !errorField && (
                 <p role="alert" className="text-sm text-danger">
                   {error}

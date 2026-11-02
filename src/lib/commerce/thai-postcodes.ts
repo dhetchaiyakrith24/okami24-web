@@ -28,12 +28,56 @@ export function placesForPostcode(code: string): Place[] {
   return (rows ?? []).map(([subdistrict, district, province]) => ({ subdistrict, district, province }));
 }
 
-/** What the server accepts for an address: "place" = the exact sub-district + district + province the postcode serves;
- *  anything else (a malformed code, a code the data does not list, a place the code does not serve) = "wrong". */
-export function checkPostcodePlace(code: string, place: Place): "place" | "wrong" {
+// "ต. คลองเตย" / "แขวงคลองเตย" / "จ.เชียงใหม่" → the bare name the data holds, so a place typed by hand still matches it.
+const PREFIX = /^(ตำบล|แขวง|ต\.|อำเภอ|เขต|อ\.|จังหวัด|จ\.)\s*/;
+const bare = (s: string) => clean(s).replace(PREFIX, "");
+const sameName = (typed: string, name: string) => bare(typed) === name || (name === "กรุงเทพมหานคร" && /^(กรุงเทพ|กทม\.?)$/.test(bare(typed)));
+
+/**
+ * What the server accepts for an address, and the place it stores (owner 03/11: the customer may type the sub-district,
+ * district and province by hand instead of picking them):
+ *   "place"  = the code serves this sub-district + district + province (prefixes such as "ต." / "แขวง" allowed);
+ *   "manual" = the code is real and the province is one it serves, but the sub-district or district is not in the data
+ *              (a spelling of their own, or a place the data lacks) — kept as typed;
+ *   "wrong"  = a malformed code, a code the data does not list (owner 02/11 "รหัสไม่มีจริง = ไปต่อไม่ได้"), or a province the
+ *              code does not serve.
+ * `place` = what to store: the data's own spelling wherever a name matches it, so the once-a-month free-shipping check
+ * (shipping-rules.ts, keyed on sub-district + postcode) sees one address, not two spellings of it.
+ */
+export function checkPostcodePlace(code: string, place: Place): { kind: "place" | "manual"; place: Place } | { kind: "wrong" } {
   const c = code.trim();
   const rows = /^[0-9]{5}$/.test(c) ? CODES[c] : undefined;
-  if (!rows) return "wrong";
-  const p = { subdistrict: clean(place.subdistrict), district: clean(place.district), province: clean(place.province) };
-  return rows.some(([s, d, pr]) => s === p.subdistrict && d === p.district && pr === p.province) ? "place" : "wrong";
+  if (!rows) return { kind: "wrong" };
+  const exact = rows.find(([s, d, pr]) => sameName(place.subdistrict, s) && sameName(place.district, d) && sameName(place.province, pr));
+  if (exact) return { kind: "place", place: { subdistrict: exact[0], district: exact[1], province: exact[2] } };
+  const inProvince = rows.filter(([, , pr]) => sameName(place.province, pr));
+  if (inProvince.length === 0) return { kind: "wrong" };
+  const district = inProvince.find(([, d]) => sameName(place.district, d))?.[1];
+  const subdistrict = inProvince.find(([s]) => sameName(place.subdistrict, s))?.[0];
+  return {
+    kind: "manual",
+    place: { subdistrict: subdistrict ?? clean(place.subdistrict), district: district ?? clean(place.district), province: inProvince[0][2] },
+  };
+}
+
+export interface PlaceHit extends Place {
+  postalCode: string;
+}
+
+const ALL: (PlaceHit & { text: string })[] = Object.entries(CODES).flatMap(([postalCode, rows]) =>
+  rows.map(([subdistrict, district, province]) => ({ postalCode, subdistrict, district, province, text: `${subdistrict} ${district} ${province} ${postalCode}` }))
+);
+
+/**
+ * Places that match what the customer typed in the address search (owner 03/11 "มีช่องไว้สำหรับพิมพ์ค้นหา"): every word of the
+ * query must appear in "sub-district district province postcode"; sub-districts whose name starts with the first word come
+ * first. Fewer than 2 characters = nothing (every row would match).
+ */
+export function searchPlaces(query: string, limit = 8): PlaceHit[] {
+  const words = clean(query).split(" ").map(bare).filter(Boolean);
+  if (words.join("").length < 2) return [];
+  const hits = ALL.filter((r) => words.every((w) => r.text.includes(w)));
+  const head = words[0];
+  hits.sort((a, b) => Number(!a.subdistrict.startsWith(head)) - Number(!b.subdistrict.startsWith(head)));
+  return hits.slice(0, limit).map(({ postalCode, subdistrict, district, province }) => ({ postalCode, subdistrict, district, province }));
 }

@@ -644,6 +644,16 @@ export interface Dictionary {
     postcodeNotFound: string;
     postcodePlaceLabel: string;
     postcodePickPrompt: string;
+    addressSearchLabel: string,
+    addressSearchPlaceholder: string,
+    addressSearchHint: string,
+    addressSearchEmpty: string,
+    editAddressCta: string,
+    deleteAddressCta: string,
+    deleteAddressConfirm: string,
+    deleteAddressYes: string,
+    editAddressTitle: string,
+    cancelEditCta: string,
     addressErrorPostal: string;
     placeErrorBusy: string;
     placeErrorAddress: string;
