@@ -774,7 +774,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "บุหรี่ TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
   },
   "IQOSHEET-16": {
-    tagline: "เครื่องจ่ายความร้อน IQOS ILUMA i PRIME",
+    // HNB words 03/11: "IQOS" dropped here — the card title right above already reads "IQOS ILUMA i PRIME", and the longer
+    // "เครื่องจ่ายความร้อน" pushed "PRIME" alone onto a second line at 1440 (linecmp 1 → 2 lines).
+    tagline: "เครื่องจ่ายความร้อน ILUMA i PRIME",
     shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับบุหรี่ TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
