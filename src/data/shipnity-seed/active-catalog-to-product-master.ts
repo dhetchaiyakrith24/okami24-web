@@ -1393,7 +1393,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-54/card-v2.webp",
+      src: "/assets/products/coil-54/card-v2-wm.webp",
       alt: "NEVOKS Feelin Mini empty refillable pod cartridges, pair, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of evolutionvaping.co.uk's photo of the 2-pack (600 px, the largest clean pod-only photo found 08/10); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
