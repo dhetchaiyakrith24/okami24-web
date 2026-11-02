@@ -23,6 +23,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
+import { HeadPrice } from "@/components/catalog/SaleLabel";
 import { bestSellerOptions } from "@/data/bestseller-options";
 import { countKind, countText } from "@/lib/stock/count-rules";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
@@ -184,6 +185,8 @@ export function ProductHero({
     ? [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock")
     : product.availability === "out-of-stock";
   const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
+  const builtOptions = [...(builtProduct.colorVariants ?? []), ...(builtProduct.flavorVariants ?? [])];
+  const builtSoldOut = builtOptions.length > 0 ? builtOptions.every((v) => v.availability === "out-of-stock") : builtProduct.availability === "out-of-stock";
   // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
   const pickedLeft = hasOptions ? (cartVariantId ? liveCounts.o[cartVariantId] : undefined) : liveCounts.p ?? undefined;
   const pickedLowText =
@@ -374,7 +377,8 @@ export function ProductHero({
           {sellingPrice !== null && (
             <div className="max-lg:order-5">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
-              <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{sellingPrice.toLocaleString("th-TH")}</p>
+              {/* + the struck-through label price and "−N%" (owner 03/11) — from the BUILT stock, so it never changes after paint. */}
+              <HeadPrice slug={product.slug} price={sellingPrice} soldOut={builtSoldOut} />
               {!hasOptions && <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} className="mt-1 lg:hidden" />}
             </div>
           )}

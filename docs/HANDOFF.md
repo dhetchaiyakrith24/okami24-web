@@ -10,12 +10,13 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 03/11 ~01:30 by the 7th main chat (local_737f7a61) at context 82% — PRE-COMPACT (owner rule: main compacts, never hands off). Weekly quota 26%.
+Updated 03/11 ~02:30 by the 7th main chat (local_737f7a61) at ~88% — HANDED OFF on the owner's word 03/11 ("Hand แชทหลักละค่อนสานงานต่อ"). Quota 26%.
 
-1 main = 743ae3b9 (#1147 INFY watermark). CART IS ON. Older = `git log --merges origin/main`.
+1 main = 56020ff6 (#1149 RELX watermark). CART IS ON. Older = `git log --merges origin/main`.
 2 CHILD CHATS (all report to local_737f7a61 · Opus 5.5 · ports: never 3412 outside your slot, each its own 2nd server):
-  images-0211b local_67ec6cc2 (watermark) · details-0211 local_bc99e6b7 (NOW: batch 4 label prices) · articles-0211c local_096c5c76 (DONE — archive it;
-  every remaining brand parked with reasons in its HANDOVER.md). TRACKING local_dfdd063c = Shipnity watch.
+  images-0211b local_67ec6cc2 (stronger watermark -wm2, draft #1154 flagship 72 photos — WAITS FOR THE OWNER's OK on the 22/18 sheet) ·
+  label-price-0311 local_b64f9a62 (batch 4, started 03/11) · details-0211 local_bc99e6b7 (~60%: box photos via its browser, owner "ใช้ Chrome หาเลย") ·
+  articles-0211c ARCHIVED 03/11 (queue done; parked brands in its HANDOVER.md). TRACKING local_dfdd063c = Shipnity watch.
   TEST-MACHINE QUEUE (3412 + checker lock shared): Friday announces each slot; the slot owner asks Friday to hold merges into main until its gate passes.
   start_session is refused while the owner is on Remote Control.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
@@ -31,7 +32,11 @@ Updated 03/11 ~01:30 by the 7th main chat (local_737f7a61) at context 82% — PR
     NEXT, in order:
     · images #1149 RELX 96 (checker running; merge when PASS) → then the -wm2 stronger redo.
     · details: batch 4 label price + % badge (full set, designer + thai-copy + visitor) — brief sent 03/11.
-    · 2ข address look: drafts A/B/C https://claude.ai/artifact/WaLGDrdue1nsAYeoZV1ZhT (rec. A) — owner picks, then build (designer specs in the drafts page).
+    · 2ข address look: OWNER PICKED A 03/11 (drafts https://claude.ai/artifact/WaLGDrdue1nsAYeoZV1ZhT; designer spec = the drafts page + this main chat's
+      designer report: 7/12 form · 5/12 sticky card · Natural Earth 10m admin-1 map (public domain) · pin travels · "คิดในขั้นถัดไป" for member_monthly ·
+      step bar on all 3 steps · mobile folded cart total). KEEP every current function of cart/address/payment — this is a re-layout + map, nothing removed
+      (owner 03/11). FUTURE (owner, noted): a smooth 3D map motion like Apple/Google maps per address — needs a map service (Google Maps 3D / Mapbox =
+      account + cost, 13.3 #2); a Higgsfield video can only be a fixed clip, not per address → plan with the owner later.
     · Spec-list dt wrap: parked (3 tries failed; needs the locked thai-typography glue — owner OK). Branch claude/spec-dt-0211 not PR'd.
     · Unwatermarked originals still public under public/assets (checker note) → a cleanup PR after the -wm2 redo (originals stay in git history + keep folder).
     · house-clean worktrees (`_incoming/wt-badge0211` half-deleted: path too long) · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง.
