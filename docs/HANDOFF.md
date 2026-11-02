@@ -10,37 +10,33 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 02/11 ~23:30 by the 7th main chat (local_737f7a61, context ~55%). Weekly quota reset 01/11 (22% used 02/11 night).
+Updated 03/11 ~01:30 by the 7th main chat (local_737f7a61) at context 82% — PRE-COMPACT (owner rule: main compacts, never hands off). Weekly quota 26%.
 
-1 main = 85abf969 (#1137 badge polish). CART IS ON. Older = `git log --merges origin/main`.
+1 main = 743ae3b9 (#1147 INFY watermark). CART IS ON. Older = `git log --merges origin/main`.
 2 CHILD CHATS (all report to local_737f7a61 · Opus 5.5 · ports: never 3412 outside your slot, each its own 2nd server):
-  images-0211b local_67ec6cc2 (watermark rollouts) · articles-0211c local_096c5c76 (replaced articles-0211b, archived) · details-0211 local_bc99e6b7 (idle).
-  TEST-MACHINE QUEUE (3412 + checker lock shared): Friday announces each slot by message; the slot owner asks Friday to hold merges into main
-  until its gate passes (a main merge mid-verify = "does not contain origin/main"). start_session is refused while the owner is on Remote Control.
-  TRACKING local_dfdd063c = watching Shipnity's next real write.
+  images-0211b local_67ec6cc2 (watermark) · details-0211 local_bc99e6b7 (NOW: batch 4 label prices) · articles-0211c local_096c5c76 (DONE — archive it;
+  every remaining brand parked with reasons in its HANDOVER.md). TRACKING local_dfdd063c = Shipnity watch.
+  TEST-MACHINE QUEUE (3412 + checker lock shared): Friday announces each slot; the slot owner asks Friday to hold merges into main until its gate passes.
+  start_session is refused while the owner is on Remote Control.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
 2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
-    Owner answers: no order notices (C) · label price +10–20% (BSOT §5; owner OKs the list) · watermark mix (transparent = on product only, opaque = tiled) ·
-    WATERMARK STRENGTH = 18/12 (sample d-12-18, owner 02/11 "12-18 ได้ทั้งคู่เลย" — both picture kinds) · dude 3ml = switch pod · "มาใหม่" badge purple A + both
-    badges together · "ขายดี" sweep 3 runs, keep badge B · age-gate nosnippet done (#1121) · About "who we are" = A team name (#1121) · SKE: go on if it matches the maker.
-    LIVE 02/11: #1105 batch 1 · #1095 · #1098 TFIT · #1100 JOIWAY · #1107 + #1121 SEO · #1110 KS · #1112 Dude → switch-pods · #1114 + #1123 + #1133 details ·
-      articles #1103 SALTHUB · #1104 ESKO · #1116 RELX · #1117 + #1118 Muro · #1129 nexBar CLEAR · #1130 UWELL coils · #1126 LESSONS พ64 ·
-      2ก ADDRESS #1125 (postcode first; unknown code refused → "สอบถามทาง LINE"; checker 3 rounds + visitor) · BADGES #1128 + #1137 (มาใหม่ purple +
-      ขายดี together · card light 3 runs then still line · en "Hot" on phone cards) · WATERMARK 18/12 #1115 Rincoe + #1127 #1131 #1135 #1136 = 140 photos.
-      Proof `_incoming/queue-0211/` (badge-shots · spec-shots) · `_incoming/chk-b2a-b10e/` · `_incoming/chk-badge0211/`.
+    Owner answers (02–03/11): no order notices (C) · dude 3ml = switch pod · "มาใหม่" purple + both badges (new = FIRST_LISTED, 14→7 days, not restock) ·
+    "ขายดี" sweep 3 runs, badge B · age-gate nosnippet + About A done (#1121) · SKE = maker match · Vazer pod price is right (03/11) ·
+    LABEL PRICE APPROVED 03/11 ("รันตามนั้นเลยได้และใส่ %") = table artifact Ebto6LZgDNHf866cViWktB + a "−N%" badge, no real discount ·
+    WATERMARK STRONGER 03/11: product-only 22 text / 18 helmet, tiled posters 18 (zone 22) — redo ALL from originals as -wm2, order: flagship → best
+    sellers → new → in stock → rest; first batch sheet goes to the owner. Articles = inside the product page "more details", not guide pages (owner confirmed).
+    LIVE 02–03/11 (all curled): address #1125 · badges #1128 #1137 · watermark 18/12 #1115 #1127 #1131 #1135 #1136 #1138 #1141 #1143 #1147 = 389 photos ·
+      articles #1103 #1104 #1116 #1117 #1118 #1129 #1130 #1132 #1134 #1139 #1145 #1146 #1151 · details #1114 #1123 #1133 #1142 #1144 #1148 #1150 · docs #1124
+      #1126 #1140 #1152. Proof `_incoming/queue-0211/` · `_incoming/chk-*`.
     NEXT, in order:
-    · images: #1138 WOTOFO 51 (gating now) → JOIWAY 60 → ESKO BAR 65 … (images chat runs them; Friday merges).
-    · articles-0211c: #1132 coil-55 → #1134 IQOS ×3 → VOOPOO from facts files (voopoo.com blocked in browser) → INFY → MOOOD → KS → Lambda → SKE → Dotmod/Rincoe/Nevoks.
-      Hand-over `side-session-notes/local_737f7a61…/articles-0211c/HANDOVER.md`. Replace the chat at ~70% (needs the owner on the desktop app).
-    · 2ข address look + Thai map: designer drafts asked 02/11 night → send the owner 2–3 drafts; no reference picture = full build waits (13.3).
-    · Batch 4 label prices: review page https://claude.ai/artifact/Ebto6LZgDNHf866cViWktB (95 priced, +13–19 %, generator `_incoming/queue-0211/label-prices*.{ts,js}`)
-      → owner passes the table → build (switch, cards + product page, cart/JSON-LD = real price, full set 13.5 #3).
-    · Spec-list dt wrap: 3 tries failed (45% cap · 5.5rem floor · nowrap one-word — each broke other rows; nowrap also hit "แบตเตอรี่กล่องชาร์จ (Pocket
-      Charger)", whose space is not \s at runtime) → parked, branch claude/spec-dt-0211 not PR'd. Better route = glue in the locked thai-typography file (owner OK).
-    · vmate card wrap at 1440 · THAI_STYLE group ก entry หนามแท่ง/โนนหนามแท่ง (gate word allow) · house-clean worktrees (`_incoming/wt-badge0211` half-deleted:
-      path too long) · `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-*` · child worktrees after their PRs merge.
-    Owner to answer = docs/รอพี่ตรวจ.md (86 saved-address exposure · 87 label prices · 78 keep/rollback new address step + badges · 88 stray folder C-drive \c).
-    Data follow-ups = HANDOVER.md files (not fixed).
+    · images #1149 RELX 96 (checker running; merge when PASS) → then the -wm2 stronger redo.
+    · details: batch 4 label price + % badge (full set, designer + thai-copy + visitor) — brief sent 03/11.
+    · 2ข address look: drafts A/B/C https://claude.ai/artifact/WaLGDrdue1nsAYeoZV1ZhT (rec. A) — owner picks, then build (designer specs in the drafts page).
+    · Spec-list dt wrap: parked (3 tries failed; needs the locked thai-typography glue — owner OK). Branch claude/spec-dt-0211 not PR'd.
+    · Unwatermarked originals still public under public/assets (checker note) → a cleanup PR after the -wm2 redo (originals stay in git history + keep folder).
+    · house-clean worktrees (`_incoming/wt-badge0211` half-deleted: path too long) · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง.
+    Owner to answer = docs/รอพี่ตรวจ.md (86 saved-address exposure: rec. OTP back on · 78 keep/rollback new address step + badges · 88 C-drive c —
+      the safety check blocks Friday; the owner deletes it · 13 box photos list on the status page).
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
      STAFF LOGIN PLAN (owner 30/10: staff log in like customers, then see their own dashboard). Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
