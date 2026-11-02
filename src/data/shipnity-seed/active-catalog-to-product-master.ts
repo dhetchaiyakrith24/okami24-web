@@ -763,29 +763,29 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
   "IQOSHEET-14": {
     // Round list19 (17/10): every number = a verified spec row (LAMBDA's own i8 page). The name is the card title already.
-    tagline: "เครื่องอุ่นยาสูบระบบเหนี่ยวนำ ปรับอุณหภูมิได้",
-    shortDescription: "เครื่องอุ่นยาสูบของแบรนด์ LAMBDA ไม่ใช่ IQOS แบต 3200mAh ชาร์จเต็มใช้ได้ 35–40 ก้าน ปรับอุณหภูมิได้ 200–300°C และปรับเวลาต่อก้านได้ 3–6 นาที LAMBDA ระบุว่าใช้กับก้าน TEREA และ SENTIA ได้",
+    tagline: "เครื่องจ่ายความร้อนระบบเหนี่ยวนำ ปรับอุณหภูมิได้",
+    shortDescription: "เครื่องจ่ายความร้อนของแบรนด์ LAMBDA ไม่ใช่ IQOS แบต 3200mAh ชาร์จเต็มสูบได้ 35–40 มวน ปรับอุณหภูมิได้ 200–300°C และปรับเวลาสูบต่อมวนได้ 3–6 นาที LAMBDA ระบุว่าใช้กับบุหรี่ TEREA และ SENTIA ได้",
   },
   "IQOSHEET-15": {
     // Checker #583 r1: the page shows the tagline, not shortDescription — the per-pack unit sits here so ฿220 is never
     // read as a price per stick or per carton.
-    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA ราคาต่อซอง ซองละ 20 ก้าน",
+    tagline: "บุหรี่ TEREA สำหรับ IQOS ILUMA ราคาต่อซอง ซองละ 20 มวน",
     // Round p63 16/10 (owner item 69): the price is per pack - said here so it is never read as a carton price.
-    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
+    shortDescription: "บุหรี่ TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
   },
   "IQOSHEET-16": {
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME",
-    shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
+    tagline: "เครื่องจ่ายความร้อน IQOS ILUMA i PRIME",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับบุหรี่ TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i มีจอทัช พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับก้าน TEREA เท่านั้น",
-    shortDescription: "อุปกรณ์รุ่น ILUMA i จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
+    tagline: "เครื่องจ่ายความร้อน IQOS ILUMA i มีจอทัช พักการสูบแล้วกลับมาสูบต่อได้ ใช้กับบุหรี่ TEREA เท่านั้น",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i จากแบรนด์ IQOS ใช้ร่วมกับบุหรี่ TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
     // Round list19 (17/10): the record is the ILUMA i ONE (TAXONOMY_MATCHES comment). Every fact = iqos.com/ph ILUMA i ONE pages.
     // The name is the card title already; a tagline that repeats it broke "ILUMA i | ONE" on the 1440 card (wordbreak scan).
-    tagline: "เครื่องอุ่นยาสูบตัวเดียวจบ พกใส่กระเป๋าได้",
-    shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มีระบบ Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น",
+    tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ พกใส่กระเป๋าได้",
+    shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มสูบได้ 20 มวนติดกัน มีระบบ Autostart และ FlexPuff ใช้กับบุหรี่ TEREA เท่านั้น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -2045,12 +2045,12 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "IQOSHEET-14": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "35–40 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "35–40 มวน", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "charge-time", label: "การชาร์จ", value: "5V / 2A ชาร์จเต็มประมาณ 2.5 ชั่วโมง", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200–300°C", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-      { key: "session-time", label: "เวลาต่อก้าน", value: "ปรับได้ 3–6 นาที", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "session-time", label: "เวลาสูบต่อมวน", value: "ปรับได้ 3–6 นาที", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "heating", label: "ระบบอุ่น", value: "Smart Induction · จอ LED", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA / SENTIA", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "materials", label: "วัสดุ", value: "อะลูมิเนียมอัลลอย + PPSU + PEEK", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "dimensions", label: "ขนาด", value: "102.8 × 28.9 × 20.8 mm", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "weight", label: "น้ำหนัก", value: "83 กรัม", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
@@ -2060,7 +2060,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "IQOSHEET-15": {
     // Round p63 (18/10): the sale unit, first, so ฿220 reads per pack at every width (the 390 hero hides the tagline).
     // iqos.com/gb buy-terea: "Each pack contains 20 sticks".
-    specifications: [{ key: "pack-size", label: "ขายเป็น", value: "1 ซอง (20 ก้าน)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html" }, { key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
+    specifications: [{ key: "pack-size", label: "ขายเป็น", value: "1 ซอง (20 มวน)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html" }, { key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
     sourceUrls: [
       "https://www.iqos.com/id/en/news/information/find-the-terea-tobacco-stick-flavor-variant-that-suits-for-you.html",
       "https://www.iqos.com/gb/en/blog/difference-between-iqos-iluma-and-iqos-3-duo.html",
@@ -2078,8 +2078,8 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
       { key: "battery-holder", label: "แบตเตอรี่ตัวสูบ (Holder)", value: "300mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
       { key: "charging", label: "การชาร์จ", value: "ผ่านสาย USB-C (มีในกล่อง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
-      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html"],
   },
@@ -2090,10 +2090,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "IQOSHEET-17": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "1728mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
-      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้านติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวนติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
       { key: "design", label: "ตัวเครื่อง", value: "ชิ้นเดียว พกใส่กระเป๋าได้ ผิวอะลูมิเนียม", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
-      { key: "features", label: "ความสามารถ", value: "Autostart / Autostop · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้งเมื่อก้านยังไม่หมด)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "features", label: "ความสามารถ", value: "Autostart / Autostop · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้งเมื่อยาสูบในมวนยังไม่หมด)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html", "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html"],
   },
@@ -2101,11 +2101,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       { key: "battery-holder", label: "แบตเตอรี่ตัวสูบ (Holder)", value: "300mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       // Details 02/11 (real browser, same page): "300 mAh Holder / 2700 mAh Charger battery capacity" · "Up to 3 consecutive uses (holder)*/20
       // uses (charger)" · "*Only available in Performance Mode when pause is not activated" · "Advanced features: Touch Screen · Pause Mode ·
       // FlexBattery · FlexPuff" · "Enjoy up to 4 extra puffs".
-      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
       { key: "features", label: "ความสามารถ", value: "จอทัช · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
