@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
 //   node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] /assets/products/<slug>/<file> ...
-// Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 2%; "OKAMI24.STORE"
-// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 250 / rows 64) at 2% over the picture, 4% on the
-// product. Style per file (owner + Javis 02/11, from the two-style sample sheet):
+// Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 12%; "OKAMI24.STORE"
+// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 250 / rows 64) at 12% over the picture, 18% on the
+// product. Strength = owner 02/11 "12-18 ได้ทั้งคู่เลย" from the 4-level sheet: the first 2/4% vanished once
+// /_next/image re-encodes at 750 wide webp q75. Style per file (owner + Javis 02/11, from the two-style sample sheet):
 //   transparent photo (card · colour · flavour) = on the product's own pixels only: the transparent margin stays clean and
 //     alpha never changes, so the product box src/lib/media-quality.ts measures (alpha trim 10) cannot move;
-//   opaque poster = Javis's way, the whole picture at 2% (+ 4% inside --zone when given).
+//   opaque poster = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
 // Writes <name>-wm.webp (q82) beside the original — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) —
 // points every reference under src/ at it, then deletes the original from public/ (git history + the --keep copy are the
 // way back). A name already ending in -wm is skipped. Photos from Javis's studio carry this mark already: leave them off.
@@ -17,7 +18,7 @@ const sharp = require("sharp");
 const ROOT = process.env.WM_ROOT || path.join(__dirname, "..");
 const FONT = path.join(__dirname, "lib/watermark/BarlowCondensed-600.ttf");
 const HELMET = path.join(__dirname, "lib/watermark/okami-helmet-white.png");
-const TEXT_ALL = 0.02, TEXT_PRODUCT = 0.04, HELMET_OP = 0.02;
+const TEXT_ALL = 0.12, TEXT_PRODUCT = 0.18, HELMET_OP = 0.12;
 
 async function textMask(W, H) {
   const k = W / 1080, px = 22 * k;
