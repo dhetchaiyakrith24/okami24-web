@@ -490,8 +490,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
     // Round list19 (19/10): Max sells three values under "Coil Caliburn G2" — UWELL names all three "CALIBURN G series' coils"
-    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. The old "1.0Ω works with G2" line cited the G2
-    // page, which no longer says so (19/10) → dropped.
+    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. Compatibility (details 02/11, read in the browser):
+    // the G2 page says "Except for the pre-installed meshed-H 1.2 Ω coil, Caliburn G2 is compatible with 1.0 Ω coil and
+    // 0.8 Ω coil of Caliburn G" and the X page "The device is compatible with CALIBURN G series coils" — so all three
+    // values fit GK2, G2 and X (the 19/10 note that the G2 page dropped 1.0Ω was wrong).
     tagline: "คอยล์ UWELL ตระกูล Caliburn G มีให้เลือก 0.8, 1.0 และ 1.2 โอห์ม",
     shortDescription: "คอยล์ UWELL ตระกูล Caliburn G ร้านมีให้เลือก 3 ค่า ได้แก่ 0.8 โอห์ม 1.0 โอห์ม และ 1.2 โอห์ม (คอยล์ Caliburn G2) เครื่อง Caliburn GK2 ใช้ได้ทั้ง 3 ค่า",
   },
@@ -1940,9 +1942,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "resistance", label: "ค่าโอห์ม", value: "0.8Ω / 1.0Ω / 1.2Ω", sourceStatus: "verified" },
       { key: "coil", label: "รุ่นคอยล์", value: "G 0.8Ω · G 1.0Ω · G2 1.2Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-gk2" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 (ทุกค่า) · G2 (0.8/1.2Ω)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 · G2 · X (ทุกค่า)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
     ],
-    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2"],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2", "https://www.myuwell.com/caliburn/caliburn-x"],
   },
   "Coil-89": {
     specifications: [
