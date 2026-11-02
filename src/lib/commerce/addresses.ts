@@ -1,6 +1,7 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
 import { requireCustomer } from "./session";
+import { checkPostcodePlace } from "./thai-postcodes";
 
 export interface AddressInput {
   recipientName: string;
@@ -45,14 +46,21 @@ function fromRow(row: AddressRow): AddressRecord {
 
 /** Why an address was refused — the address step shows the matching dictionary line (`dict.checkout.addressError*`).
  *  Was an English sentence passed through the URL (cart-ready round 24/10). */
-export type AddressError = "missing" | "phone" | "postal";
+export type AddressError = "missing" | "phone" | "houseNumber" | "postal";
 
 function validate(input: AddressInput): AddressError | null {
   const required = [input.recipientName, input.phone, input.line1, input.subdistrict, input.district, input.province];
   if (required.some((v) => !v.trim())) return "missing";
   // A number the courier can call: 9–10 digits starting with 0 (mobile or landline), dashes and spaces allowed.
-  if (!/^0[0-9]{8,9}$/.test(input.phone.replace(/[\s-]/g, ""))) return "phone";
-  if (!/^[0-9]{5}$/.test(input.postalCode.trim())) return "postal";
+  // Owner 02/11 ("เบอร์ขาด 1 ตัว" must not go through): one 9–10 digit rule let a mobile one digit short pass as a landline,
+  // so a mobile (06/08/09) needs 10 digits and a landline (02–07) 9.
+  const phone = input.phone.replace(/[\s-]/g, "");
+  if (!/^0[689][0-9]{8}$/.test(phone) && !/^0[2-7][0-9]{7}$/.test(phone)) return "phone";
+  // The courier needs a house number (owner 02/11): the address line must carry at least one digit, Arabic or Thai.
+  if (!/[0-9๐-๙]/.test(input.line1)) return "houseNumber";
+  // The postcode must serve the sub-district + district + province given (owner 02/11: a wrong postcode stops the order) —
+  // the form fills them from the code; a code the data lacks only has to match its province (thai-postcodes.ts).
+  if (checkPostcodePlace(input.postalCode, input) === "wrong") return "postal";
   return null;
 }
 
