@@ -74,7 +74,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "vazer-one-pod": { tagline: "Vazer One prefilled pod" },
   "relx-infinity-pro-2-pod": { tagline: "RELX Infinity Pro 2 pods" },
   "relx-creator-pod-20k": { tagline: "RELX Creator Pod 20K" },
-  "coil-21": { tagline: "VOOPOO Argus Pod with a built-in 0.7Ω or 1.2Ω coil, for MTL vaping" },
+  "coil-21": { tagline: "VOOPOO ARGUS pods in a side-fill version and a top-fill (Top Fill) version" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },
   "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },
 };
