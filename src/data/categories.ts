@@ -86,9 +86,12 @@ export const categories: Category[] = [
     name: "E-Liquid",
     shortName: "E-Liquid",
     labelTh: "E-Liquid / น้ำยา",
-    description: "Bottled e-liquid for refillable devices — flavor, nicotine formulation, and bottle size, sourced from real operational stock.",
+    // Round SEO rankings back (02/11): the lede (= this page's meta) carries "น้ำยาบุหรี่ไฟฟ้า", which moved here from /e-liquid
+    // (thai-copy 02/11). Every bottle on the page shows a price, so "ราคา" holds.
+    description:
+      "Bottled e-liquid for pods you fill yourself, in salt nic or freebase. Salt nic suits small, low-wattage pods; freebase suits higher-wattage devices. Flavors and prices are on this page.",
     descriptionTh:
-      "น้ำยาสำหรับพอตที่เติมเองได้ แบ่งเป็น salt nic กับ freebase เหมาะกับเครื่องคนละแบบ นิโคตินและขนาดขวดดูในหน้าสินค้า ไม่แน่ใจว่าเครื่องคุณใช้แบบไหน ถามทางไลน์ได้",
+      "น้ำยาบุหรี่ไฟฟ้าแบบขวด สำหรับพอตที่เติมน้ำยาเอง มีทั้ง salt nic ที่เข้ากับพอตตัวเล็กวัตต์ต่ำ และ freebase ที่เข้ากับเครื่องวัตต์สูง ดูกลิ่นและราคาได้ในหน้านี้",
     systemTypes: [],
   },
   // Full-catalog mission — heated tobacco is a physically different product category from vapor

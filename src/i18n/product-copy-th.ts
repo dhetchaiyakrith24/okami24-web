@@ -580,9 +580,15 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "2000mAh ในตัว",
       pod: "4.5mL",
       fill: "เติมด้านบน",
+      airflow: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น",
+      activation: "ไม่มีปุ่ม สูบได้เลย",
+      indicator: "แถบไฟ LED 3 สี",
+      charging: "USB-C 5V/1A · ไม่มีสายชาร์จมาในกล่อง",
+      platform: "VINCI S · VINCI E · PnP X ที่ใช้คอยล์ 0.3Ω ขึ้นไป",
+      included: "หัวพอต VINCI S 0.8Ω (4.5mL)",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
-    tagline: "40 วัตต์ หัวพอตเติมด้านบน",
+    tagline: "แบตเตอรี่ 2000mAh ในตัว ใช้ได้สูงสุด 40 วัตต์ พร้อมหัวพอต 4.5mL แบบเติมด้านบน",
     shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL ช่วง 0.3–3.0 โอห์ม",
     features: {
       "topside-fill": {
@@ -702,6 +708,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "600mAh",
+      "puffs-per-pod": "สูงสุด 15,000",
+      coil: "cotton mesh",
+      nicotine: "30mg salt nic",
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit ซึ่งร้านเราเรียกว่า M Bar 15K",
