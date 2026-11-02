@@ -3436,6 +3436,84 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): KS (Kardinal) Quikpro pod — every fact = kardinal.com/products/quikpro (FAQ, overview;
+  // WebFetch 02/11). Capacity, puffs, size and weight stay with the tagline, short description and spec rows. The coil is
+  // credited to the Quikpro system (the maker does not say it sits in the pod); charge time stays on the kit page. Thai = thai-copy 02/11.
+  "pod-150": {
+    th: {
+      lede: "ด้านล่างร้านสรุปไว้จากเว็บของ Kardinal ว่า Quikpro ใช้คอยล์แบบไหน หัวพอตเติมน้ำยาเองได้ไหม และใส่กับเครื่องไหนได้บ้าง",
+      sections: [
+        {
+          heading: "Quikpro ใช้คอยล์แบบไหน",
+          paragraphs: [
+            "ระบบ Quikpro ใช้คอยล์ ceraKoil ของ Kardinal ซึ่งรวมเซรามิกกับ mesh ไว้ด้วยกัน ตามที่ Kardinal อธิบาย เซรามิกให้รสชาติที่ชัด ส่วน mesh ช่วยให้ร้อนไว ไอจึงออกมาสม่ำเสมอตั้งแต่ต้นจนจบ",
+          ],
+        },
+        {
+          heading: "หัวพอตเติมน้ำยาเองได้ไหม",
+          paragraphs: [
+            "หัวนี้เติมน้ำยาเองไม่ได้ ซึ่ง Kardinal บอกว่าช่วยรักษาคุณภาพและความสะอาดของหัวพอตไว้",
+            "Kardinal บอกด้วยว่าระบบที่เปลี่ยนแค่หัวแล้วใช้ตัวเครื่องเดิมต่อแบบนี้ ช่วยลดขยะเมื่อเทียบกับพอตใช้แล้วทิ้ง และทำให้ตัวเครื่องใช้ได้นานขึ้น",
+          ],
+        },
+        {
+          heading: "ใส่กับเครื่องไหนได้",
+          paragraphs: [
+            "Kardinal ระบุว่าหัวนี้ออกแบบมาสำหรับเครื่อง Quikpro โดยเฉพาะ ส่วนหัว KSpod ที่ Kardinal ทำให้เครื่อง Lumina และหัวพอตของแบรนด์อื่น ใส่กับ Quikpro ไม่ได้ ถ้ายังไม่มีตัวเครื่อง ดูได้ที่หน้า [ชุดเครื่อง Quikpro](/products/ks-quikpro-kit)",
+            "ถ้ายังเลือกกลิ่นไม่ถูก อ่านต่อได้ที่ [พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below is a summary from Kardinal's own site: which coil the Quikpro uses, whether the pod can be refilled, and which device it fits.",
+      sections: [
+        {
+          heading: "Which coil does the Quikpro use?",
+          paragraphs: [
+            "The Quikpro system uses Kardinal's ceraKoil, a coil that brings ceramic and mesh together. As Kardinal explains it, the ceramic gives clear flavour and the mesh heats up quickly, so vapour comes out consistent from start to finish.",
+          ],
+        },
+        {
+          heading: "Can I refill the pod?",
+          paragraphs: [
+            "No. This pod can't be refilled, which Kardinal says keeps it intact and hygienic.",
+            "Kardinal adds that changing just the pod and keeping the same device cuts waste compared with disposables and helps the device last longer.",
+          ],
+        },
+        {
+          heading: "Which device does it fit?",
+          paragraphs: [
+            "Kardinal says this pod is designed specifically for the Quikpro. The KSpod Kardinal makes for the Lumina and pods from other brands don't fit the Quikpro. If you don't have the device yet, see the [Quikpro kit](/products/ks-quikpro-kit).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下是本店根据 Kardinal 官网整理的内容：Quikpro 用的是哪种线圈、烟弹能否自行补油，以及适用哪款设备。",
+      sections: [
+        {
+          heading: "Quikpro 用的是哪种线圈？",
+          paragraphs: [
+            "Quikpro 采用 Kardinal 的 ceraKoil 线圈，把陶瓷和网状结构结合在一起。按 Kardinal 的说法，陶瓷带来清晰的口味，网状结构升温快，烟雾因此从头到尾都很稳定。",
+          ],
+        },
+        {
+          heading: "烟弹可以自行补油吗？",
+          paragraphs: [
+            "不可以。这款烟弹不能自行补油，Kardinal 表示这样能保持产品的品质与卫生。",
+            "Kardinal 还表示，只换烟弹、继续使用同一台主机，与一次性电子烟相比能减少废弃物，也能延长主机的使用寿命。",
+          ],
+        },
+        {
+          heading: "适用哪款设备？",
+          paragraphs: [
+            "Kardinal 表示，这款烟弹专为 Quikpro 设计。Kardinal 为 Lumina 推出的 KSpod 以及其他品牌的烟弹，都不能用于 Quikpro。还没有主机的话，可以看看 [Quikpro 套装](/products/ks-quikpro-kit)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
   "joiway-f4": {
     th: {
