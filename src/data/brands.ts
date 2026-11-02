@@ -196,12 +196,12 @@ export const brands: Brand[] = [
     name: "IQOS",
     fullName: "IQOS (Philip Morris International)",
     tagline: "Heat-not-burn tobacco system.",
-    taglineTh: "เครื่องอุ่นยาสูบ",
+    taglineTh: "เครื่องจ่ายความร้อน",
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("ไอคอส", autocomplete 07/10), one mention.
-      "IQOS ของ Philip Morris International หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบด้วยความร้อน ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i · ILUMA i PRIME และ ILUMA i ONE",
+      "IQOS ของ Philip Morris International หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องจ่ายความร้อนที่ใช้ได้กับบุหรี่ TEREA เท่านั้น ที่ร้านมี ILUMA i · ILUMA i PRIME และ ILUMA i ONE",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
@@ -253,10 +253,10 @@ export const brands: Brand[] = [
     name: "LAMBDA",
     fullName: "LAMBDA",
     tagline: "Smart Induction Heating System.",
-    taglineTh: "เครื่องอุ่นยาสูบระบบเหนี่ยวนำ",
+    taglineTh: "เครื่องจ่ายความร้อนระบบเหนี่ยวนำ",
     // Round list19 (17/10): first LAMBDA product on the site (i8) — the brand page shows from now on.
     descriptionTh:
-      "LAMBDA เป็นผู้ผลิตเครื่องอุ่นยาสูบจากเซินเจิ้น คนละบริษัทกับ Philip Morris International เจ้าของ IQOS และ LAMBDA ระบุว่าเครื่องของตนใช้กับก้าน TEREA และ SENTIA ได้",
+      "LAMBDA เป็นผู้ผลิตเครื่องจ่ายความร้อนจากเซินเจิ้น คนละบริษัทกับ Philip Morris International เจ้าของ IQOS และ LAMBDA ระบุว่าเครื่องของตนใช้กับบุหรี่ TEREA และ SENTIA ได้",
     description:
       "A Shenzhen-based heat-not-burn device manufacturer, not affiliated with Philip Morris International — its devices (e.g. the i8) are third-party heaters marketed as compatible with TEREA and SENTIA Smartcore sticks, not official IQOS hardware.",
     referenceUrl: "https://www.lambdasmoke.com/",

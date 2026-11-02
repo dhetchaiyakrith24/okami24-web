@@ -112,8 +112,8 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   // (their Search Console lines are being measured until 2026-10-05).
   // "ไอคอส" = the Thai name with typing evidence (owner 07/10, sheet 35), same as "อินฟี่" in the infy meta below.
   iqos: (_priceOf, orderingOn = false) => ({
-    title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
-    description: `IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก ${orderCloseTh(orderingOn)}`,
+    title: `IQOS ของแท้ เครื่องจ่ายความร้อน ILUMA${OKM_TITLE_SUFFIX}`,
+    description: `IQOS หรือที่คนไทยเรียกว่าไอคอส เป็นเครื่องจ่ายความร้อนที่ใช้ได้กับบุหรี่ TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก ${orderCloseTh(orderingOn)}`,
   }),
   // SEO all keys 20/10: "esko bar" sat at position 3.6 with 0 clicks (GSC 18/10) under a title that spoke only to the switch
   // device — the brand now has the ESKO BAR 20000 disposable, the Switch 20K device and its pods, so the head names both
@@ -369,11 +369,11 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-14 (LAMBDA's own page).
-  "iqosheet-14": "LAMBDA i8 เครื่องอุ่นยาสูบระบบเหนี่ยวนำ แบต 3200mAh ใช้ได้ 35–40 ก้านต่อการชาร์จ ปรับอุณหภูมิ 200–300°C มี 6 สี",
-  "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
+  "iqosheet-14": "LAMBDA i8 เครื่องจ่ายความร้อนระบบเหนี่ยวนำ แบต 3200mAh สูบได้ 35–40 มวนต่อการชาร์จ ปรับอุณหภูมิ 200–300°C มี 6 สี",
+  "iqosheet-16": "เครื่องจ่ายความร้อน IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วสูบได้สูงสุด 20 มวน ใช้กับบุหรี่ TEREA เท่านั้น",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-17.
-  "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA",
-  "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
+  "iqosheet-17": "IQOS ILUMA i ONE เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA",
+  "iqosheet-18": "IQOS ILUMA i เครื่องจ่ายความร้อน ใช้ได้กับบุหรี่ TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
   "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
   "eliquid-109": "Marbo Freebase น้ำยา freebase ขวดยาว มีให้เลือก 4 กลิ่น",
@@ -517,7 +517,7 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "choosing-a-terea-flavor":
     "TEREA กลิ่นไหนดี เริ่มจากกลุ่มที่ชอบก่อน IQOS แบ่งไว้สี่กลุ่ม คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูล รวมความต่างของแต่ละกลิ่น และวิธีบีบแคปซูลของกลิ่น Pearl",
   "iqos-iluma-i-one-vs-iluma-i":
-    "ILUMA i ONE กับ ILUMA i ต่างกันยังไง i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ i PRIME มีสองชิ้น พร้อมจอทัชและโหมดหยุดพัก",
+    "ILUMA i ONE กับ ILUMA i ต่างกันยังไง i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 มวน ส่วน ILUMA i และ i PRIME มีสองชิ้น พร้อมจอทัชและโหมดหยุดพัก",
 };
 
 /** Row C19 — keyed by technology entry id. */
