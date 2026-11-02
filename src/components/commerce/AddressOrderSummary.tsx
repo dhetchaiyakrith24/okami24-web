@@ -79,7 +79,7 @@ export function AddressSummaryCard({ cart, place }: { cart: CartViewData; place:
   const more = cart.lines.length - thumbs.length;
   return (
     <aside className="flex flex-col gap-4 rounded-xl border border-surface-border-soft bg-surface-1 p-6 lg:sticky lg:top-24">
-      <ThaiShipMap province={place?.province ?? null} className="mx-auto h-72 w-auto xl:h-80" />
+      <ThaiShipMap province={place?.province ?? null} className="mx-auto h-60 w-auto xl:h-64" />
       <Destination place={place} />
       {cart.lines.length > 0 && (
         <>
@@ -137,7 +137,7 @@ export function PlaceWithMap({ place }: { place: Place }) {
   const { dict } = useLocale();
   return (
     <div className="flex items-center gap-3 rounded-lg border border-surface-border-soft bg-surface-2 p-2.5">
-      <ThaiShipMap province={place.province} className="h-16 w-auto shrink-0" />
+      <ThaiShipMap province={place.province} compact className="h-20 w-auto shrink-0" />
       <p className="text-sm text-foreground-muted">
         <span className="block text-xs text-foreground-dim">{dict.checkout.shipToProvince}</span>
         {place.subdistrict} · {place.district} · <b className="font-semibold text-foreground">{place.province}</b>

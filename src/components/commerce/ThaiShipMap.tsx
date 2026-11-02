@@ -19,7 +19,9 @@ interface MapData {
 let cached: Promise<MapData> | null = null;
 const loadMap = () => (cached ??= import("@/data/thai-address/thai-map.json").then((m) => m.default as unknown as MapData));
 
-export function ThaiShipMap({ province, className }: { province: string | null; className?: string }) {
+/** `compact` = the thumbnail beside the picked place on phones (~80 px tall): at that size 77 outlines blur into grey, so the
+ *  country is one quiet silhouette, the province a solid ember patch and the pin a plain dot (checked 390, 03/11). */
+export function ThaiShipMap({ province, compact = false, className }: { province: string | null; compact?: boolean; className?: string }) {
   const [map, setMap] = useState<MapData | null>(null);
   useEffect(() => {
     let live = true;
@@ -34,15 +36,23 @@ export function ThaiShipMap({ province, className }: { province: string | null; 
   const [w, h] = map.viewBox;
   return (
     <svg aria-hidden viewBox={`0 0 ${w} ${h}`} className={cn("block h-auto w-full", className)}>
+      {/* non-scaling strokes: the border widths are screen pixels whatever size the map is drawn at */}
       {Object.entries(map.provinces).map(([name, p]) => (
         <path
           key={name}
           d={p.d}
+          vectorEffect="non-scaling-stroke"
           className={cn(
             "motion-safe:transition-colors motion-safe:duration-500",
-            name === province ? "fill-ember-soft stroke-ember" : "fill-transparent stroke-foreground-dim/60",
+            compact
+              ? name === province
+                ? "fill-ember stroke-ember"
+                : "fill-foreground-dim/45 stroke-foreground-dim/45"
+              : name === province
+                ? "fill-ember-soft stroke-ember"
+                : "fill-surface-2 stroke-foreground-dim/70",
           )}
-          strokeWidth={name === province ? 1.2 : 0.6}
+          strokeWidth={compact ? 0.5 : name === province ? 1.5 : 0.75}
           strokeLinejoin="round"
         />
       ))}
@@ -53,8 +63,11 @@ export function ThaiShipMap({ province, className }: { province: string | null; 
           style={{ transform: `translate(${target.c[0]}px, ${target.c[1]}px)` }}
           className="motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out"
         >
-          <circle r={9} className="fill-none stroke-ember/40 motion-safe:animate-ping" style={{ transformBox: "fill-box", transformOrigin: "center" }} />
-          <circle r={4.5} className="fill-ember stroke-surface-1" strokeWidth={1.5} />
+          {/* radii in map units (the map is 605 tall): ~8 px dot on the 240–256 px card, ~8 px on the 80 px thumbnail */}
+          {!compact && (
+            <circle r={18} vectorEffect="non-scaling-stroke" className="fill-none stroke-ember/50 motion-safe:animate-ping" strokeWidth={1.5} style={{ transformBox: "fill-box", transformOrigin: "center" }} />
+          )}
+          <circle r={compact ? 30 : 9} vectorEffect="non-scaling-stroke" className="fill-ember-strong stroke-surface-1" strokeWidth={1.5} />
         </g>
       )}
     </svg>
