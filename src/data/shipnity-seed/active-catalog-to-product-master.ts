@@ -1802,7 +1802,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // ---------------------------------------------------------------------------------
   "Coil-70": {
     specifications: [
-      { key: "resistance", label: "ค่าโอห์ม", value: "0.15Ω · 0.3Ω · 0.6Ω · 0.7Ω", sourceStatus: "verified", sourceUrl: "https://dotmod.com/products/dotcoils" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.15Ω · 0.3Ω · 0.6Ω · 0.7Ω", sourceStatus: "verified" },
       { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "0.7Ω: 14-20W", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "5 หัว (บรรจุแยกซองละหัว)", sourceStatus: "verified" },
       { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์ mesh เดี่ยว", sourceStatus: "verified" },
