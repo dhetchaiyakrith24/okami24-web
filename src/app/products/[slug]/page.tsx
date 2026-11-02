@@ -350,6 +350,11 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const editorial = PRODUCT_EDITORIAL[product.slug];
   const editorialSibling = editorial?.siblingSlug ? getProduct(editorial.siblingSlug) : undefined;
   const editorialFaqJsonLd = editorial ? articleFaqJsonLd(editorial.copy.th.faq.items) : null;
+  // Round SEO rankings back (02/11): the plain ProductFAQ got no FAQPage block — built from the same Q/A it renders
+  // for the Thai page (the Thai overlay per item, English where an item has none).
+  const productFaqJsonLd = editorial
+    ? null
+    : articleFaqJsonLd(product.faqs.map((f) => ({ question: copyTh?.faqs?.[f.id]?.question ?? f.question, answer: copyTh?.faqs?.[f.id]?.answer ?? f.answer })));
   const legacyTrail = [
     { name: "Home", path: "/" },
     { name: categoryNameOf(product.categoryId), path: `/products/${product.categoryId}` },
@@ -361,6 +366,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
+      {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />

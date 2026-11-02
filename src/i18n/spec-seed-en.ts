@@ -41,12 +41,11 @@ const LABELS_EN: Record<string, string> = {
   "ขายเป็น": "Sold as",
   "ขนาด": "Dimensions",
   "ขนาดหัว": "Pod dimensions",
-  "ไฟสถานะ": "Status indicator",
   "โครงสร้าง": "Construction",
   "อุณหภูมิ": "Temperature",
   "สีตัวเครื่อง": "Device colours",
   "ระบบอุ่น": "Heating system",
-  "ฟีเจอร์": "Features",
+  "ความสามารถ": "Features",
   "น้ำหนัก": "Weight",
   "น้ำหนักหัว": "Pod weight",
   "ตัวเครื่อง": "Device",
@@ -61,6 +60,7 @@ const LABELS_EN: Record<string, string> = {
   "การเติมน้ำยา": "Filling",
   "หัว 0.4Ω": "0.4Ω pod",
   "เป็นหัวพอตของ": "Pod of",
+  "ไฟบอกสถานะ": "Status indicator",
 };
 
 const VALUES_EN: Record<string, string> = {
@@ -127,6 +127,9 @@ const VALUES_EN: Record<string, string> = {
   "ต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30W": "Needs a device with at least 30W output",
   "ชุด Caliburn X": "The Caliburn X kit",
   "ชุด Caliburn G2": "The Caliburn G2 kit",
+  "จอทัช · Pause Mode · FlexBattery · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้ง)": "Touch Screen · Pause Mode · FlexBattery · FlexPuff (up to 4 extra puffs)",
+  "ตัวเครื่อง · สาย USB-C · คู่มือ": "Device · USB-C cable · user manual",
+  "หัวพอต INFY 2.5mL": "INFY 2.5mL pods",
   "V2 เติมด้านข้าง: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill เติมด้านบน: Vmate Pro 2": "V2 side fill: Vmate Infinity Edition · Vmate E · V.THRU Pro / Top Fill: Vmate Pro 2",
   "เครื่องซีรีส์ Caliburn G5 · G4 · G3": "Caliburn G5 · G4 · G3 series devices",
   "เติมด้านข้าง": "Side fill",

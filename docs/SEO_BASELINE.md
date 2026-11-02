@@ -564,3 +564,15 @@ Read again with the same method: GSC + real page **09/11 · 16/11 · 30/11** (de
   `dateModified` moved 31/10 → 02/11 with no content change (content-dates follows search-head-copy.ts) — expected, harmless.
 - Next variable before the 09/11 read: PR #1095 (switch-pod child) moves 14 prefilled pods pods-cartridges → switch-pods
   (category metas, JSON-LD category + breadcrumb of those 14 pages, related boxes) — date = when it merges.
+
+### Change 2 of the round — content + keys (PR #1121, merged + live 02/11, merge 62dda5f9 · checker PASS 6d9d37f2)
+- "น้ำยาบุหรี่ไฟฟ้า" moved from /e-liquid (flavour hub, 0 products, avg pos 67.9 over 3 months) to /products/e-liquid (the 10 bottles with
+  prices): title "E-Liquid / น้ำยาบุหรี่ไฟฟ้า ของแท้ ราคาทุกรุ่น" · lede/meta · guide block + FAQPage. /e-liquid title → "กลิ่นน้ำยามีอะไรบ้าง
+  แบ่งรสชาติเป็น 5 กลุ่ม" (H1 "กลุ่มรสชาติของน้ำยา"). Read on 09/11: which URL Google shows for the key, and its position.
+- Guide blocks + FAQPage under /products/switch-pods ("พอตเปลี่ยนหัว") and /products/disposables ("พอตใช้แล้วทิ้ง", pos 61.6) — read both keys.
+- FAQ answers now in the server HTML (were rendered only after a click) + FAQPage on 9 device pages (caliburn-g5 · caliburn-g5-lite ·
+  caliburn-g4-pro-koko · argus-g4 · drag-6 · drag-x3 · m-bar-10k · relx-creator · infy-20k) — /faq and every guide gained their answers too.
+- Age gate `data-nosnippet` → read the home snippet for "okami24" (was the 21+ dialog text). /about "ทีมที่ดูแลร้าน" (E-E-A-T).
+- Same window, other lines: #1095 (14 switch pods → switch-pods, merged 02/11 03:47 Thai time, 21a25d74) · details-0211 product
+  copy (#1114 merged 02/11 05:34, more to come) — keep in mind when reading 09/11.
+- Before/after shots: `_incoming/seo-0211/b2/pairs/` (not in git).
