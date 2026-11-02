@@ -217,6 +217,84 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): INFY PLUS 2.5mL pod — every fact = infy.my (2.5ML + 2ML cartridge, device and
+  // authenticity pages, WebFetch 02/11). Flavour count left out (INFY: "7 New Flavors"; the shop lists its own). Magnet line not
+  // used: it is on the 2ML page only. Thai = thai-copy 02/11.
+  "pod-169": {
+    th: {
+      lede: "ด้านล่างนี้สรุปจากเว็บของ INFY ว่าหัว INFY Plus ต่างจากหัว 2mL ยังไง ใช้กับเครื่องไหนได้ ใช้ยังไง และเช็คของแท้ได้ยังไง",
+      sections: [
+        {
+          heading: "INFY Plus ต่างจากหัว 2mL ยังไง",
+          paragraphs: [
+            "INFY บอกว่าหัว INFY Plus จุน้ำยาได้ 2.5mL มากกว่าหัว 2mL ของแบรนด์ หัวหนึ่งจึงสูบได้นานขึ้นก่อนจะต้องเปลี่ยนหัวใหม่",
+            "ส่วนตัวหัว INFY Plus เอง INFY ยังบอกด้วยว่าให้รสชาติชัดและคงที่ตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย และใช้คอยล์ที่ออกแบบมาให้ใช้ได้นาน",
+          ],
+        },
+        {
+          heading: "ใช้กับเครื่องไหน และใช้ยังไง",
+          paragraphs: [
+            "INFY ออกแบบหัวนี้มาสำหรับระบบหัวพอตปิดของแบรนด์โดยเฉพาะ ใส่ได้ทั้งในตัวเครื่อง INFY Device และเครื่อง INFY Cube Box เช่นเดียวกับหัว 2mL",
+            "ก่อนใช้ ให้ดึงซีลยางที่ปิดด้านบนและด้านล่างของหัวออก แล้วเสียบเข้าเครื่องได้เลย พอใส่หัวใหม่เข้าไป ไฟ LED บนตัวเครื่อง INFY Device ก็จะบอกให้รู้ว่ามีหัวใหม่ใส่เข้ามาแล้ว ถ้ายังไม่มีเครื่อง ดูได้ที่หน้า [ตัวเครื่อง INFY](/products/infy-pod)",
+            "ถ้ายังเลือกกลิ่นไม่ถูก อ่านต่อได้ที่ [พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "เช็คของแท้ยังไง",
+          paragraphs: [
+            "INFY บอกว่าสินค้าของแบรนด์ทุกชิ้นมีรหัสไว้เช็คของแท้ ที่กล่องจะมีสติกเกอร์ซีเรียลติดอยู่ ให้ขูดชั้นเคลือบออกจนเห็น QR code แล้วสแกนด้วยกล้องมือถือ จากนั้นกรอกรหัสที่เห็นลงในเว็บของ INFY เพื่อตรวจสอบ",
+            "ถ้าอยากดูวิธีเช็คของแท้ของแบรนด์อื่นด้วย อ่านต่อได้ที่ [พอตของแท้ ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์](/guides/checking-a-genuine-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from INFY's own site: how the INFY Plus differs from the 2 mL pod, which devices it fits, how to use it, and how to check it is genuine.",
+      sections: [
+        {
+          heading: "How is the INFY Plus different from the 2 mL pod?",
+          paragraphs: [
+            "INFY says the INFY Plus holds 2.5 mL, more than its 2 mL pod, so each pod lasts longer before you need a new one. INFY also says the INFY Plus gives full, consistent flavour from the first puff to the last, and uses a coil designed to last.",
+          ],
+        },
+        {
+          heading: "Which devices, and how do I use it?",
+          paragraphs: [
+            "INFY designed it specifically for its closed pod system, and like the 2 mL pod it fits both the INFY Device and the INFY Cube Box. Pull the rubber seals off the top and bottom, then push the pod in; when a new pod goes in, the LEDs on the INFY Device show it. If you don't have a device yet, see the [INFY device](/products/infy-pod).",
+          ],
+        },
+        {
+          heading: "How do I check it is genuine?",
+          paragraphs: [
+            "INFY says every INFY product carries an authenticity code. Find the serial-number sticker on the box, scratch off the coating to reveal a QR code, scan it with your phone camera, then enter the code on INFY's website to verify it.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 INFY 官网：INFY Plus 与 2 mL 烟弹的区别、适用设备和使用方法，以及如何验证正品。",
+      sections: [
+        {
+          heading: "INFY Plus 和 2 mL 烟弹有什么不同？",
+          paragraphs: [
+            "INFY 表示，INFY Plus 可装 2.5 mL 烟油，比 INFY 的 2 mL 烟弹装得更多，一颗烟弹可以用得更久再换。INFY 还表示，INFY Plus 从第一口到最后一口口味都饱满稳定，并采用经久耐用的线圈设计。",
+          ],
+        },
+        {
+          heading: "适用哪些设备？怎么使用？",
+          paragraphs: [
+            "这款烟弹专为 INFY 封闭式烟弹系统设计，和 2 mL 烟弹一样，可用于 INFY Device 和 INFY Cube Box。先取下顶部和底部的橡胶塞，再把烟弹插入设备；装入新烟弹时，INFY Device 机身上的 LED 会有提示。还没有设备的话，可以看看 [INFY 主机](/products/infy-pod)。",
+          ],
+        },
+        {
+          heading: "如何验证正品？",
+          paragraphs: [
+            "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
+          ],
+        },
+      ],
+    },
+  },
   // Batch 1 (02/10): written from UWELL's G5 page, its spec sheet and the G5 Lite page (sources per sentence:
   // docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md §5). Owner format A. G5 template round 03/10: the sections that
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
