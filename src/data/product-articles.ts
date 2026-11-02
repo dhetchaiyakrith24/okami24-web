@@ -1187,7 +1187,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
-            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) มีหัว ARGUS Top Fill เติมด้านบน 0.4, 0.7 และ 1.0 โอห์มให้เลือก ซึ่ง VOOPOO ระบุว่าใช้กับ G3 mini ได้ ส่วนหัวแบบเติมด้านข้าง 0.7 และ 1.2 โอห์มในหน้าเดียวกันเป็นหัวอีกรุ่น ที่ VOOPOO ไม่ได้ระบุไว้สำหรับ G3 mini"
+            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) มีหัวพอตให้เลือกสองแบบ แบบ Top Fill เติมด้านบน 0.4, 0.7 และ 1.0 โอห์ม คือแบบที่ VOOPOO ระบุว่าใช้กับ G3 mini ได้ ส่วนแบบเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกรุ่นซึ่ง VOOPOO ไม่ได้ระบุไว้สำหรับรุ่นนี้"
           ]
         },
         {
