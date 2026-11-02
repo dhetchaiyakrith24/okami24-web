@@ -1524,9 +1524,6 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         en: "Up to 12,000 puffs, on a 400mAh battery you can recharge.",
         zh: "最多 12,000 口，400mAh 电池可以充电。",
       },
-      points: [
-        { text: { th: "บรรจุน้ำยา 20mL", en: "20mL e-liquid", zh: "20mL 烟油" }, specKey: "capacity" },
-      ],
     },
     "pocket": {
       title: { th: "สูบสบายปาก พกไปได้ทุกที่", en: "Comfortable to vape, easy to carry", zh: "吸着舒服，带着方便" },

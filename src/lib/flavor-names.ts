@@ -131,6 +131,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Pink Berry 50mg",
   "Watermelon 50mg",
   "Grape Lychee 5%", // SUP ZERO 22K (26/10)
+  "Ice Jasmine Tea",
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -159,6 +160,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Orange Sparkle",
   "Spearmint 50mg",
   "Blueberry Mint",
+  "Ice Tieguanyin",
   "Riviera Pearl",
   "Berries Party",
   "Blueberry Ice",
@@ -208,6 +210,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Spearmint 5%",
   "Black Purple",
   "Grape Ice 5%", // SUP ZERO 22K (26/10)
+  "Lime Sparkle",
+  "Lychee Frost",
   "Mocha Latte",
   "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
@@ -251,6 +255,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Yakult 50MG",
   "Mixberry 5%",
   "Funta Green",
+  "Crisp Apple",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
@@ -307,6 +312,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Peach Tea",
   "Cola 50mg",
   "Mint 50mg",
+  "Root Brew",
   "Blue Ice",
   "Cola Ice",
   "Thai Tea",

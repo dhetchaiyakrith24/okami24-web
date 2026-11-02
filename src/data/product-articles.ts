@@ -120,6 +120,182 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): INFY device — every fact = infy.my (device, 2.5ML + 2ML cartridge and authenticity pages,
+  // WebFetch 02/11; quotes in the batch notes). No colour count: INFY's own page gives "3" and "19" designs. Finishes line not
+  // used ("go beyond matte, glossy, and gradient" does not say the device comes in those). Magnet = the 2ML page only, said so.
+  // INFY Plus → this device is already in the tagline + fit card, so section 3 only adds the 2 mL pod (fact-twice rule). Thai = thai-copy 02/11.
+  "infy-pod": {
+    th: {
+      lede: "ด้านล่างนี้สรุปจากเว็บของ INFY ว่าไฟบนตัวเครื่องบอกอะไร ใส่หัวพอตยังไง ใช้กับหัวพอตแบบไหนได้บ้าง และเช็คของแท้ได้ยังไง",
+      sections: [
+        {
+          heading: "ไฟบนเครื่องบอกอะไร",
+          paragraphs: [
+            "INFY อธิบายว่าไฟ LED หลายสีบนตัวเครื่องจะบอกสถานะให้รู้ ทั้งตอนชาร์จ ตอนสูบ และตอนที่ใส่หัวพอตใหม่เข้าไป ถ้าเห็นไฟสีแดงกะพริบ แปลว่าแบตเหลือ 30% หรือน้อยกว่า ส่วนไฟสีขาวแปลว่าแบตเหลือมากกว่า 70%",
+            "INFY บอกว่าแบต 400mAh ชาร์จผ่าน USB-C และช่วยให้สูบได้ต่อเนื่องโดยไม่ต้องหยุดชาร์จบ่อย",
+            "วิธีชาร์จและดูแลแบตให้ใช้ได้นาน อ่านต่อได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม ชาร์จข้ามคืนได้ไหม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
+          ],
+        },
+        {
+          heading: "ใส่หัวพอตยังไง",
+          paragraphs: [
+            "ก่อนใส่หัวพอต ให้ดึงซีลยางที่ปิดด้านบนและด้านล่างของหัวออก แล้วค่อยเสียบเข้าเครื่อง ในหน้าหัวพอต 2mL ของ INFY บอกไว้ว่าหัวพอตยึดกับตัวเครื่องด้วยแม่เหล็ก ใส่แล้วแน่นและไม่เลอะ",
+          ],
+        },
+        {
+          heading: "ใช้กับหัวพอตแบบไหนได้",
+          paragraphs: [
+            "นอกจากหัว INFY Plus แล้ว หน้าหัวพอต 2mL ของ INFY ก็ระบุว่าหัว 2mL ใส่ในเครื่องนี้ได้เหมือนกัน และใส่ในเครื่อง INFY Cube Box ได้ด้วย ร้านเรามี [หัวพอต INFY PLUS](/products/pod-169) ให้เลือกหลายกลิ่น",
+          ],
+        },
+        {
+          heading: "เช็คของแท้ยังไง",
+          paragraphs: [
+            "สินค้าทุกชิ้นของ INFY มีรหัสไว้เช็คของแท้ ที่กล่องจะมีสติกเกอร์ซีเรียลติดอยู่ ให้ขูดชั้นเคลือบออก แล้วสแกน QR code ที่อยู่ข้างใต้ด้วยกล้องมือถือ จากนั้นนำรหัสที่เห็นไปกรอกในเว็บของ INFY เพื่อตรวจสอบ",
+            "วิธีเช็คของแท้ของแบรนด์อื่น ๆ อ่านต่อได้ที่ [พอตของแท้ ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์](/guides/checking-a-genuine-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from INFY's own site: what the lights mean, how to fit a pod, which pods it takes, and how to check it is genuine.",
+      sections: [
+        {
+          heading: "What do the lights mean?",
+          paragraphs: [
+            "INFY says the multi-coloured LEDs on the device show when it is charging, when you are vaping and when a new pod goes in. A flashing red light means 30% battery or less; a white light means more than 70%.",
+            "INFY says the 400mAh battery keeps you vaping for longer without stopping to charge often, and it charges over USB-C. For charging and battery care, see [Battery Care & Charging Basics](/guides/battery-care-and-charging).",
+          ],
+        },
+        {
+          heading: "How do I fit a pod?",
+          paragraphs: [
+            "Pull the rubber seals off the top and bottom of the pod, then push it into the device. On its 2 mL pod page, INFY says the pod connects to the device by magnet, for a secure, mess-free fit.",
+          ],
+        },
+        {
+          heading: "Which pods does it take?",
+          paragraphs: [
+            "Besides the INFY Plus, INFY's 2 mL pod page says that pod fits this device too, and the INFY Cube Box as well. We carry the [INFY PLUS pods](/products/pod-169) in a range of flavours.",
+          ],
+        },
+        {
+          heading: "How do I check it is genuine?",
+          paragraphs: [
+            "INFY says every INFY product carries an authenticity code. Find the serial-number sticker on the box, scratch off the coating to reveal a QR code, scan it with your phone camera, then enter the code on INFY's website to verify it.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 INFY 官网：机身灯光代表什么、怎么装烟弹、适用哪些烟弹，以及如何验证正品。",
+      sections: [
+        {
+          heading: "灯光代表什么？",
+          paragraphs: [
+            "INFY 表示，机身的多色 LED 会显示充电、抽吸以及装入新烟弹的状态。红灯闪烁表示电量在 30% 或以下；白灯表示电量高于 70%。",
+            "INFY 表示，400mAh 电池可支持较长时间连续使用，无需频繁中断充电；机身通过 USB-C 充电。充电与电池保养方法见[电池保养与充电基础](/guides/battery-care-and-charging)。",
+          ],
+        },
+        {
+          heading: "怎么装烟弹？",
+          paragraphs: [
+            "先取下烟弹顶部和底部的橡胶塞，再插入机身。INFY 在 2 mL 烟弹页面中表示，烟弹与机身以磁吸连接，装得稳、不弄脏。",
+          ],
+        },
+        {
+          heading: "适用哪些烟弹？",
+          paragraphs: [
+            "除了 INFY Plus，INFY 的 2 mL 烟弹页面也写明，这款烟弹同样能装在这台设备上，也适用于 INFY Cube Box。本店有多种口味的 [INFY PLUS 烟弹](/products/pod-169)。",
+          ],
+        },
+        {
+          heading: "如何验证正品？",
+          paragraphs: [
+            "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): INFY PLUS 2.5mL pod — every fact = infy.my (2.5ML + 2ML cartridge, device and
+  // authenticity pages, WebFetch 02/11). Flavour count left out (INFY: "7 New Flavors"; the shop lists its own). Magnet line not
+  // used: it is on the 2ML page only. Thai = thai-copy 02/11.
+  "pod-169": {
+    th: {
+      lede: "ด้านล่างนี้สรุปจากเว็บของ INFY ว่าหัว INFY Plus ต่างจากหัว 2mL ยังไง ใช้กับเครื่องไหนได้ ใช้ยังไง และเช็คของแท้ได้ยังไง",
+      sections: [
+        {
+          heading: "INFY Plus ต่างจากหัว 2mL ยังไง",
+          paragraphs: [
+            "INFY บอกว่าหัว INFY Plus จุน้ำยาได้ 2.5mL มากกว่าหัว 2mL ของแบรนด์ หัวหนึ่งจึงสูบได้นานขึ้นก่อนจะต้องเปลี่ยนหัวใหม่",
+            "ส่วนตัวหัว INFY Plus เอง INFY ยังบอกด้วยว่าให้รสชาติชัดและคงที่ตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย และใช้คอยล์ที่ออกแบบมาให้ใช้ได้นาน",
+          ],
+        },
+        {
+          heading: "ใช้กับเครื่องไหน และใช้ยังไง",
+          paragraphs: [
+            "INFY ออกแบบหัวนี้มาสำหรับระบบหัวพอตปิดของแบรนด์โดยเฉพาะ ใส่ได้ทั้งในตัวเครื่อง INFY Device และเครื่อง INFY Cube Box เช่นเดียวกับหัว 2mL",
+            "ก่อนใช้ ให้ดึงซีลยางที่ปิดด้านบนและด้านล่างของหัวออก แล้วเสียบเข้าเครื่องได้เลย พอใส่หัวใหม่เข้าไป ไฟ LED ของ INFY Device ก็จะบอกให้รู้ว่ามีหัวใหม่ใส่เข้ามาแล้ว ถ้ายังไม่มีเครื่อง ดูได้ที่หน้า [ตัวเครื่อง INFY](/products/infy-pod)",
+            "ถ้ายังเลือกกลิ่นไม่ถูก อ่านต่อได้ที่ [พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "เช็คของแท้ยังไง",
+          paragraphs: [
+            "สินค้าทุกชิ้นของ INFY มีรหัสไว้เช็คของแท้ ที่กล่องจะมีสติกเกอร์ซีเรียลติดอยู่ ให้ขูดชั้นเคลือบออก แล้วสแกน QR code ที่อยู่ข้างใต้ด้วยกล้องมือถือ จากนั้นนำรหัสที่เห็นไปกรอกในเว็บของ INFY เพื่อตรวจสอบ",
+            "วิธีเช็คของแท้ของแบรนด์อื่น ๆ อ่านต่อได้ที่ [พอตของแท้ ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์](/guides/checking-a-genuine-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from INFY's own site: how the INFY Plus differs from the 2 mL pod, which devices it fits, how to use it, and how to check it is genuine.",
+      sections: [
+        {
+          heading: "How is the INFY Plus different from the 2 mL pod?",
+          paragraphs: [
+            "INFY says the INFY Plus holds 2.5 mL, more than its 2 mL pod, so each pod lasts longer before you need a new one. INFY also says the INFY Plus gives full, consistent flavour from the first puff to the last, and uses a coil designed to last.",
+          ],
+        },
+        {
+          heading: "Which devices, and how do I use it?",
+          paragraphs: [
+            "INFY designed it specifically for its closed pod system, and like the 2 mL pod it fits both the INFY Device and the INFY Cube Box. Pull the rubber seals off the top and bottom, then push the pod in; when a new pod goes in, the LEDs on the INFY Device show it. If you don't have a device yet, see the [INFY device](/products/infy-pod).",
+          ],
+        },
+        {
+          heading: "How do I check it is genuine?",
+          paragraphs: [
+            "INFY says every INFY product carries an authenticity code. Find the serial-number sticker on the box, scratch off the coating to reveal a QR code, scan it with your phone camera, then enter the code on INFY's website to verify it.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 INFY 官网：INFY Plus 与 2 mL 烟弹的区别、适用设备和使用方法，以及如何验证正品。",
+      sections: [
+        {
+          heading: "INFY Plus 和 2 mL 烟弹有什么不同？",
+          paragraphs: [
+            "INFY 表示，INFY Plus 可装 2.5 mL 烟油，比 INFY 的 2 mL 烟弹装得更多，一颗烟弹可以用得更久再换。INFY 还表示，INFY Plus 从第一口到最后一口口味都饱满稳定，并采用经久耐用的线圈设计。",
+          ],
+        },
+        {
+          heading: "适用哪些设备？怎么使用？",
+          paragraphs: [
+            "这款烟弹专为 INFY 封闭式烟弹系统设计，和 2 mL 烟弹一样，可用于 INFY Device 和 INFY Cube Box。先取下顶部和底部的橡胶塞，再把烟弹插入设备；装入新烟弹时，INFY Device 机身上的 LED 会有提示。还没有设备的话，可以看看 [INFY 主机](/products/infy-pod)。",
+          ],
+        },
+        {
+          heading: "如何验证正品？",
+          paragraphs: [
+            "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
+          ],
+        },
+      ],
+    },
+  },
   // Batch 1 (02/10): written from UWELL's G5 page, its spec sheet and the G5 Lite page (sources per sentence:
   // docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md §5). Owner format A. G5 template round 03/10: the sections that
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
@@ -1187,7 +1363,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
-            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์ม อยู่ในช่วง 0.4–1.0 โอห์มที่ VOOPOO ระบุไว้สำหรับ G3 mini ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้"
+            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) มีหัวพอตให้เลือกสองแบบ แบบ Top Fill เติมด้านบน 0.4, 0.7 และ 1.0 โอห์ม คือแบบที่ VOOPOO ระบุว่าใช้กับ G3 mini ได้ ส่วนแบบเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกรุ่นซึ่ง VOOPOO ไม่ได้ระบุไว้สำหรับรุ่นนี้"
           ]
         },
         {
@@ -1212,7 +1388,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "The ARGUS Top Fill Cartridge V2 fits the whole ARGUS pod family; VOOPOO asks you to check the resistance and output against the device.",
-            "Our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4 and 0.7Ω, inside the 0.4–1.0Ω range VOOPOO gives for the G3 mini; its 1.2Ω option is a side-fill pod, outside that range."
+            "Our [VOOPOO Argus Pod cartridges](/products/coil-21) page lists the ARGUS Top Fill cartridge at 0.4, 0.7 and 1.0Ω, which VOOPOO names for the G3 mini; the side-fill pod on the same page (0.7 and 1.2Ω) is a different cartridge that VOOPOO does not list for the G3 mini."
           ]
         },
         {
@@ -1237,7 +1413,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹，去哪里买？",
           paragraphs: [
             "ARGUS Top Fill Cartridge V2 兼容整个 ARGUS 烟弹家族；VOOPOO 提醒按阻值和功率确认是否适配。",
-            "本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 和 0.7 欧姆的 Top Fill 选项，在 VOOPOO 为 G3 mini 标注的 0.4–1.0 欧姆范围内；1.2 欧姆选项是侧注式烟弹，不在这一范围内。"
+            "本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 页面有 0.4、0.7 和 1.0 欧姆的 ARGUS Top Fill 烟弹，VOOPOO 标明可用于 G3 mini；同页的侧注式烟弹（0.7 和 1.2 欧姆）是另一款，VOOPOO 没有列明适用于 G3 mini。"
           ]
         },
         {
