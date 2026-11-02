@@ -8544,11 +8544,16 @@
   "fileName": "card.webp"
  },
  {
-  "source": "_incoming/list19/ks/device-black.png",
+  "source": "_incoming/img-0211b/ks/card-ks-new.png",
   "slug": "ks-quikpro-kit",
   "role": "card",
-  "note": "round list19 18/10 - Kardinal official Quikpro render Black_Individual (2674x3342 transparent PNG) from kardinal.com/products/quikpro",
-  "fileName": "card.webp"
+  "note": "images-0211b 02/11 - owner: the logo must be KS; replaces Kardinal's overseas-edition render (round badge, card.webp, round list19 18/10). Device only, 1175 px tall like the card it replaces",
+  "aiRender": {
+   "tool": "no new render (0 credits): the device cut out of Higgsfield Nano Banana Pro job af2a9501 (21/10, Unlimited, the Cola Lemon Starter Kit re-shoot of the flavour-photo set) - crop 980,420 520x1840, light backdrop flood cut by _incoming/img-0211/scripts/whitecut2.js (LMIN=120); base edge on the right mirrored from the clean left edge + floor specks under it cleared (checker #1110: floor wedge), 0.757x lanczos onto the 1000x1250 card canvas",
+   "reference": "pod789.com KS Quik Pro 15000 Puffs Starter Kit posters (wp-content/uploads/2024/12/Quik-Pro-15000-Puffs-Watermelon.jpg) - the Thai edition with the glowing KS mark",
+   "fidelitySheet": "_incoming/img-0211b/ks/ks-owner-sheet.png (poster | old card | new card, logo zoom)"
+  },
+  "fileName": "card-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/coke.png",

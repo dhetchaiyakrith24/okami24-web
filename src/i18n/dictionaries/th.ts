@@ -415,8 +415,9 @@ export const th: Dictionary = {
   },
   eliquid: {
     eyebrow: "น้ำยา",
-    // Round SEO ฉ batch 3 (12/10): the H1 names the page's query ("น้ำยาบุหรี่ไฟฟ้า" — /e-liquid is the one page allowed "น้ำยา").
-    pageTitle: "กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า",
+    // Round SEO rankings back (02/11): "น้ำยาบุหรี่ไฟฟ้า" moved to /products/e-liquid (the page that lists the bottles); this hub
+    // H1 keeps the flavour-family words only (was "กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า", round SEO ฉ batch 3).
+    pageTitle: "กลุ่มรสชาติของน้ำยา",
     pageDescription:
       "หน้านี้อธิบายว่าน้ำยาแต่ละกลุ่มรสให้รสแบบไหน ส่วนน้ำยาที่ร้านมีขาย ดูราคาและกลิ่นได้ที่หน้าสินค้าของแต่ละรุ่น",
     disclaimer:

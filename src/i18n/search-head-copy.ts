@@ -235,6 +235,9 @@ const CATEGORY_TITLE_HEAD_TH: Record<string, string> = {
   // Round SEO ฉ batch 3 (12/10): "คอยล์พอต" was in no head on the site; the page lists coils only. 49 chars — at 50+
   // categoryTitleTh() silently falls back to the label title, so keep it ≤ 49 (seo-auditor 12/10).
   "coils-accessories": "Coils & Accessories / คอยล์พอต ของแท้ ราคาทุกรุ่น",
+  // Round SEO rankings back (02/11): "น้ำยาบุหรี่ไฟฟ้า" moves here from /e-liquid — the page that lists the bottles with
+  // prices (Google's page 1 for the key = shop grids). Same pattern as the two rows above; 46 characters (thai-copy 02/11).
+  "e-liquid": "E-Liquid / น้ำยาบุหรี่ไฟฟ้า ของแท้ ราคาทุกรุ่น",
 };
 
 export function categoryTitleTh(labelTh: string, categoryId?: string): string {
@@ -388,7 +391,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "dude-pod-3ml": "dude หัวพอต ชื่อรุ่นระบุ 3ml มีให้เลือก 10 กลิ่น",
   "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
-  "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 4 สี",
+  // 02/11: VOOPOO lists 7 colours — #1114 (details-0211) added Glacier Silver · Fresh Green · Lavender to the page.
+  "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 7 สี",
   "punta-ice": "น้ำยา Punta Ice มีให้เลือก 7 กลิ่น",
   "next-pro-2-beyond": "Next Pro 2 Beyond ตัวเครื่องพอต มีให้เลือก 6 สี",
   "muro-salt-nic": "Muro Salt Nic น้ำยา salt nic มีให้เลือก 6 กลิ่น",

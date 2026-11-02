@@ -1490,6 +1490,626 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Round "queue 0211" articles, SALTHUB (02/11): from SALTHUB's M Switch Pod page + posters, its home page ("M Switch Pod"
+  // card and "THE BENEFITS — M SWITCH POD") and its FAQ page — source per sentence: _incoming/articles-0211/salthub-draft.md.
+  // Flavour groups = the 17 names on SALTHUB's page, sorted by name only (no taste claims).
+  "m-switch-pod": {
+    th: {
+      lede: "M Switch Pod เป็นหัวพอตของ SALTHUB ข้อมูลในส่วนนี้สรุปจากหน้าเว็บและโปสเตอร์ของ SALTHUB ไว้ให้ ว่าหัวนี้ใช้ยังไง สูบได้กี่พัฟ และกลิ่นทั้งหมดแบ่งได้เป็นแนวไหน",
+      sections: [
+        {
+          heading: "M Switch Pod ใช้ยังไง",
+          paragraphs: [
+            "ตัวเครื่องเก็บไว้ชาร์จแล้วใช้ต่อได้ ส่วนหัวพอตบรรจุน้ำยามาแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลย",
+            "ถ้าเพิ่งเริ่มใช้ เริ่มจากชุด [M Switch Kit](/products/m-switch-kit) ก็ได้ ในชุดมีตัวเครื่องมาพร้อมหัวพอตหนึ่งหัว",
+            "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
+          ],
+        },
+        {
+          heading: "M Switch Pod หัวหนึ่งสูบได้กี่พัฟ",
+          paragraphs: [
+            "โปสเตอร์ของ SALTHUB ระบุว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคน",
+            "ข้างในใช้คอยล์ cotton mesh 1.0 โอห์ม ส่วนน้ำยาเป็น salt nic ความเข้มข้น 30mg ตามข้อมูลบนโปสเตอร์และหน้าแรกของเว็บ SALTHUB",
+          ],
+        },
+        {
+          heading: "M Switch Pod มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "บนหน้าเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 17 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 4 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Blue Ice และ Doublemint",
+            "สายองุ่น ได้แก่ Kyoho Grape · Grape · Grape Aloe และ Grape Lychee",
+            "สายผลไม้อื่น ได้แก่ Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon และ Watermelon",
+            "แนวอื่นมี Cola กับ Watermelon Bubblegum",
+          ],
+        },
+        {
+          heading: "M Switch Pod ดูยังไงว่าหัวไหนเป็นกลิ่นอะไร",
+          paragraphs: [
+            "หัวพอตทุกกลิ่นเป็นสีดำเหมือนกัน แต่ละกลิ่นจะมีโลโก้ M คนละสี และมีป้ายชื่อกลิ่นอยู่ด้านหน้า ถ้าซื้อไปหลายกลิ่น ก็ดูจากป้ายนี้ได้เลยว่าหัวไหนเป็นกลิ่นอะไร",
+          ],
+        },
+        {
+          heading: "M Switch Pod ใช้และเก็บยังไงดี",
+          paragraphs: [
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The M Switch Pod is a SALTHUB pod. Below is a summary from SALTHUB's own page and posters of how it is used, how many puffs it gives and how its flavours group.",
+      sections: [
+        {
+          heading: "How do you use the M Switch Pod?",
+          paragraphs: [
+            "You keep the device and recharge it; each pod comes with its e-liquid built in, so when one runs out you simply put on a new one.",
+            "Starting out? The [M Switch Kit](/products/m-switch-kit) comes with the device and one pod.",
+          ],
+        },
+        {
+          heading: "How many puffs does one M Switch Pod give?",
+          paragraphs: [
+            "SALTHUB's poster rates one pod at up to 15,000 puffs; what you actually get depends on how you vape.",
+            "Inside is a 1.0Ω cotton mesh coil, and the e-liquid is 30mg nicotine salt, according to SALTHUB's posters and home page.",
+          ],
+        },
+        {
+          heading: "Which flavours does the M Switch Pod come in?",
+          paragraphs: [
+            "SALTHUB's page lists 17 flavours. Grouped by name, they fall into four sets.",
+            "Cool, with Ice or Mint in the name: Blue Ice and Doublemint.",
+            "Grape: Kyoho Grape, Grape, Grape Aloe and Grape Lychee.",
+            "Other fruit: Apple Aloe, Black Berry, Mango Passion, Mixberry, Peach Strawberry, Pink Berry, Strawberry, Strawberry Watermelon and Watermelon.",
+            "Others: Cola and Watermelon Bubblegum.",
+          ],
+        },
+        {
+          heading: "How do I tell which flavour an M Switch Pod is?",
+          paragraphs: [
+            "Every pod is the same black. Each flavour has its own colour of M logo and a flavour name tag on the front, so with several flavours at hand you can read which is which.",
+          ],
+        },
+        {
+          heading: "How should you use and store the M Switch Pod?",
+          paragraphs: [
+            "SALTHUB advises against keeping the device upside down, whether you are vaping or not, as e-liquid droplets inside could run into your mouth.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "M Switch Pod 是 SALTHUB 的烟弹。下面根据 SALTHUB 自己的网页和海报，介绍它的用法、每颗能抽多少口，以及口味如何分类。",
+      sections: [
+        {
+          heading: "M Switch Pod 怎么用？",
+          paragraphs: [
+            "主机留着充电继续用，烟弹自带烟油，用完直接换一颗新的即可。",
+            "第一次用？可以从 [M Switch Kit](/products/m-switch-kit) 开始，套装含主机和一颗烟弹。",
+          ],
+        },
+        {
+          heading: "一颗 M Switch Pod 能抽多少口？",
+          paragraphs: [
+            "SALTHUB 海报标注每颗最多 15,000 口，实际口数取决于个人的抽吸习惯。",
+            "内部为 1.0Ω cotton mesh 线圈，烟油为 30mg 盐尼古丁，以上见 SALTHUB 的海报和官网首页。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 有哪些口味？",
+          paragraphs: [
+            "SALTHUB 网页列出 17 种口味，按名称可分为四类。",
+            "清凉系，名称带 Ice 或 Mint：Blue Ice 和 Doublemint。",
+            "葡萄系：Kyoho Grape、Grape、Grape Aloe、Grape Lychee。",
+            "其他水果：Apple Aloe、Black Berry、Mango Passion、Mixberry、Peach Strawberry、Pink Berry、Strawberry、Strawberry Watermelon、Watermelon。",
+            "其他：Cola、Watermelon Bubblegum。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 怎么分辨是哪种口味？",
+          paragraphs: [
+            "所有烟弹都是同样的黑色，每种口味的 M 标志颜色不同，正面还贴有口味名称标签，买了多种口味也能一眼认出。",
+          ],
+        },
+        {
+          heading: "M Switch Pod 使用和存放要注意什么？",
+          paragraphs: [
+            "SALTHUB 建议无论抽吸还是存放，都不要把设备倒置，以免内部的烟油液滴流进嘴里。",
+          ],
+        },
+      ],
+    },
+  },
+  // Same round (02/11): from SALTHUB's home page ("ZERO CARTRIDGE" card, the "FLAVORS — ZERO PRO" slider), its Zero Pro
+  // posters (modes · side air intake · USB-C) and its FAQ page (e-juice ingredients · upside down). The capacity is left to
+  // the spec table: the Zero Pro poster prints 2ML against the home card's 2.2mL (lesson พ18). 22 flavours = the 21 slider
+  // packs + the home card's Strawberry pod, as listed on this page.
+  "zero-cartridge": {
+    th: {
+      lede: "Zero Cartridge เป็นหัวพอตในตระกูล Zero ของ SALTHUB ด้านล่างสรุปไว้ให้จากเว็บของ SALTHUB เอง ว่าหัวนี้ใช้ยังไง มีกลิ่นแนวไหนบ้าง และน้ำยาทำจากอะไร",
+      sections: [
+        {
+          heading: "Zero Cartridge ใช้ยังไง",
+          paragraphs: [
+            "SALTHUB เรียกหัวนี้ว่าหัวที่ถอดเปลี่ยนได้ ใช้หมดหัวหนึ่งก็เปลี่ยนเป็นหัวใหม่ หรือสลับไปลองกลิ่นอื่นได้",
+          ],
+        },
+        {
+          heading: "Zero Cartridge มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "บนเว็บของ SALTHUB หัวพอตรุ่นนี้มีให้เลือก 22 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 5 แนว ส่วนตัวเลือกที่ลงท้ายด้วย 50mg บนหน้านี้ เป็นแบบนิโคติน 50mg ที่ร้านลงไว้เพิ่ม",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice หรือ Mint ได้แก่ Ice Sparkling และ Mint",
+            "สายผลไม้ ได้แก่ Apple Aloe · Blueberry · Grape · Grape Aloe · Grapefruit · Honey Yuzu · Lychee · Mango · Mixberry · Peach · Peach Strawberry · Pineapple · Strawberry และ Watermelon",
+            "สายชา ได้แก่ Fruit Tea และ Oolong Tea",
+            "สายเครื่องดื่ม ได้แก่ Cola · Lemonade และ Yakult",
+            "แนวอื่นมี Cigar กลิ่นเดียว",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "น้ำยาใน Zero Cartridge ทำจากอะไร",
+          paragraphs: [
+            "SALTHUB ระบุไว้ในหน้าคำถามที่พบบ่อยว่าน้ำยาของแบรนด์มีส่วนผสมคือ VG · PG · นิโคตินแบบ salt nic และสารแต่งกลิ่นทั้งแบบธรรมชาติและแบบสังเคราะห์",
+            "ถ้าอยากรู้จัก PG กับ VG มากขึ้น ร้านเขียนไว้ที่ [PG VG คืออะไร ต่างกันยังไง](/guides/pg-vg-in-e-liquid)",
+          ],
+        },
+        {
+          heading: "Zero Cartridge ใช้และเก็บยังไงดี",
+          paragraphs: [
+            "SALTHUB แนะนำให้เลี่ยงการคว่ำเครื่องเอาหัวลง ทั้งตอนสูบและตอนวางเก็บ เพราะหยดน้ำยาที่เกาะอยู่ภายในอาจไหลเข้าปากได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Zero Cartridge is the pod of SALTHUB's Zero line. Below is a summary from SALTHUB's own site of how it is used, how its flavours group and what the e-liquid inside is made of.",
+      sections: [
+        {
+          heading: "How do you use the Zero Cartridge?",
+          paragraphs: [
+            "SALTHUB calls it a changeable cartridge: when one runs out, put in a new one or switch to another flavour.",
+          ],
+        },
+        {
+          heading: "Which flavours does the Zero Cartridge come in?",
+          paragraphs: [
+            "SALTHUB's site lists 22 flavours for this pod. Grouped by name, they fall into five sets. The options on this page ending in 50mg are 50mg-nicotine versions the shop lists as well.",
+            "Cool, with Ice or Mint in the name: Ice Sparkling and Mint.",
+            "Fruit: Apple Aloe, Blueberry, Grape, Grape Aloe, Grapefruit, Honey Yuzu, Lychee, Mango, Mixberry, Peach, Peach Strawberry, Pineapple, Strawberry and Watermelon.",
+            "Tea: Fruit Tea and Oolong Tea.",
+            "Drinks: Cola, Lemonade and Yakult.",
+            "Other: Cigar.",
+          ],
+        },
+        {
+          heading: "What is the e-liquid in the Zero Cartridge made of?",
+          paragraphs: [
+            "SALTHUB's FAQ page states that its e-liquid contains VG, PG, nicotine salt and natural and artificial flavourings.",
+          ],
+        },
+        {
+          heading: "How should you use and store the Zero Cartridge?",
+          paragraphs: [
+            "SALTHUB advises against keeping the device upside down, whether you are vaping or not, as e-liquid droplets inside could run into your mouth.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Zero Cartridge 是 SALTHUB Zero 系列的烟弹。下面根据 SALTHUB 官网的资料，介绍它的用法、口味如何分类，以及烟油的成分。",
+      sections: [
+        {
+          heading: "Zero Cartridge 怎么用？",
+          paragraphs: [
+            "SALTHUB 称它为可更换的烟弹：一颗用完，换一颗新的，或换个口味都可以。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 有哪些口味？",
+          paragraphs: [
+            "SALTHUB 官网列出这款烟弹的 22 种口味，按名称可分为五类。本页名称以 50mg 结尾的选项，是本店另外上架的 50mg 尼古丁版本。",
+            "清凉系，名称带 Ice 或 Mint：Ice Sparkling 和 Mint。",
+            "水果系：Apple Aloe、Blueberry、Grape、Grape Aloe、Grapefruit、Honey Yuzu、Lychee、Mango、Mixberry、Peach、Peach Strawberry、Pineapple、Strawberry、Watermelon。",
+            "茶系：Fruit Tea、Oolong Tea。",
+            "饮品系：Cola、Lemonade、Yakult。",
+            "其他：Cigar。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 的烟油是什么成分？",
+          paragraphs: [
+            "SALTHUB 在常见问题页面说明，其烟油成分为 VG、PG、盐尼古丁，以及天然和人工香料。",
+          ],
+        },
+        {
+          heading: "Zero Cartridge 使用和存放要注意什么？",
+          paragraphs: [
+            "SALTHUB 建议无论抽吸还是存放，都不要把设备倒置，以免内部的烟油液滴流进嘴里。",
+          ],
+        },
+      ],
+    },
+  },
+  // Round "queue 0211" articles, ESKO BAR (02/11): the three published ESKO BAR pages, from the maker's two product pages —
+  // E1 eskobarvape.com/product/pod-system/ (device + pod) and E2 eskobarvape.com/product/eskobar ("ESKO BAR 498", the
+  // disposable). Source per sentence: _incoming/articles-0211/esko-draft.md. Flavour groups on the pod page only (the kit
+  // page links there); the comparison query stays with the guide esko-bar-switch-vs-m-switch. FAQ = PilotProductDetail's.
+  "pod-159": {
+    th: {
+      lede: "Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ของ ESKO BAR ที่ตัวเครื่องกับหัวพอตแยกจากกัน พอน้ำยาหมดก็เปลี่ยนแค่หัว ด้านล่างเป็นข้อมูลจากหน้าเว็บของ ESKO BAR ว่าเครื่องนี้ปรับอะไรได้ และในกล่องมีอะไรบ้าง",
+      sections: [
+        {
+          heading: "Esko Bar Switch 20K ต่างจากพอตใช้แล้วทิ้งยังไง",
+          paragraphs: [
+            "ESKO BAR ออกแบบให้แบตเตอรี่กับถังน้ำยาแยกจากกัน เวลาน้ำยาหมดหรืออยากเปลี่ยนกลิ่น ก็เปลี่ยนแค่หัวพอต ส่วนตัวเครื่องเก็บไว้ชาร์จแล้วใช้ต่อได้",
+            "หัวพอตของรุ่นนี้มีขายแยกที่หน้า [หัวพอต Esko Bar Switch 20K](/products/esko-bar-switch-pod) ถ้ายังลังเลว่าแบบไหนเหมาะกว่า อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+          ],
+        },
+        {
+          heading: "Esko Bar Switch 20K ปรับอะไรได้บ้าง",
+          paragraphs: [
+            "เครื่องมีสองโหมดให้เลือก กดปุ่มเดียวก็สลับได้ ทาง ESKO BAR อธิบายว่าโหมด High ให้รสเข้มกว่า ส่วนโหมด Low สูบแล้วนุ่มกว่า",
+            "ที่ก้นตัวเครื่องมีปุ่มหมุนปรับลม 3 ระดับ ตั้งแต่ลมแน่นไปจนถึงลมโล่ง เลือกได้ตามแนวการสูบที่ชอบ",
+          ],
+        },
+        {
+          heading: "หน้าจอของ Esko Bar Switch 20K บอกอะไร",
+          paragraphs: [
+            "หน้าจอดิจิทัลบนตัวเครื่องบอกระดับแบตกับโหมดที่กำลังใช้อยู่ ส่วนที่ก้นตัวเครื่องมีวงไฟประดับอยู่ด้วย",
+          ],
+        },
+        {
+          heading: "ในกล่อง Esko Bar Switch 20K มีอะไรบ้าง",
+          paragraphs: [
+            "ตามรายการที่ ESKO BAR ลงไว้ ในกล่องมีตัวเครื่อง สายคล้องคอ และหัวพอต อย่างละหนึ่งชิ้น",
+            "หัวพอตที่ให้มาเป็นแบบคอยล์คู่ ร้อนพร้อมกันทั้งสองตัว ESKO BAR บอกว่าช่วยให้ได้ไอมากขึ้น และรสชาติออกมาคงที่",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Esko Bar Switch 20K ใช้หัวพอตแบบไหน",
+          answer: "ใช้หัวพอต Esko Bar Switch 20K ค่ะ ESKO BAR ระบุว่าหัวหนึ่งมีน้ำยา 18mL สูบได้สูงสุด 20,000 พัฟ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคนนะคะ",
+        },
+        {
+          question: "Esko Bar Switch 20K แบตกี่ mAh",
+          answer: "แบตเตอรี่อยู่ในตัวเครื่อง ความจุ 850mAh และชาร์จซ้ำได้ค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The Esko Bar Switch 20K is ESKO BAR's switch-style device: the body and the pod are separate, so when the e-liquid runs out you change only the pod. Below is a summary from ESKO BAR's own page of what you can adjust and what comes in the box.",
+      sections: [
+        {
+          heading: "How is the Esko Bar Switch 20K different from a disposable?",
+          paragraphs: [
+            "ESKO BAR keeps the battery and the e-liquid tank separate. When the e-liquid runs out or you want another flavour, you change only the pod and keep the device to recharge and use again.",
+            "Its pods are sold separately on the [Esko Bar Switch 20K pod](/products/esko-bar-switch-pod) page.",
+          ],
+        },
+        {
+          heading: "What can you adjust on the Esko Bar Switch 20K?",
+          paragraphs: [
+            "One button switches between High and Low mode. ESKO BAR describes High as the bolder flavour and Low as the smoother draw.",
+            "A dial at the base turns the airflow through three settings, from a tight draw to a wide-open one, to suit how you like to vape.",
+          ],
+        },
+        {
+          heading: "What does the Esko Bar Switch 20K screen show?",
+          paragraphs: [
+            "The digital screen shows the battery level and the mode in use, and an ambient light ring circles the base.",
+          ],
+        },
+        {
+          heading: "What comes in the Esko Bar Switch 20K box?",
+          paragraphs: [
+            "According to ESKO BAR's packing list, the box holds one device, one lanyard and one pod.",
+            "The pod in the box has two coils that heat at once, which ESKO BAR says gives more vapour and a steady flavour.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which pod does the Esko Bar Switch 20K take?",
+          answer: "It takes the Esko Bar Switch 20K pod. ESKO BAR states one pod holds 18mL of e-liquid and gives up to 20,000 puffs; what you actually get depends on how you vape.",
+        },
+        {
+          question: "What battery does the Esko Bar Switch 20K have?",
+          answer: "The device has a built-in, rechargeable 850mAh battery.",
+        },
+      ],
+    },
+    zh: {
+      lede: "Esko Bar Switch 20K 是 ESKO BAR 的换弹式主机，主机和烟弹分开，烟油用完只需换烟弹。下面根据 ESKO BAR 自己的网页，介绍这款主机可以调节什么、盒内有什么。",
+      sections: [
+        {
+          heading: "Esko Bar Switch 20K 和一次性电子烟有什么不同？",
+          paragraphs: [
+            "ESKO BAR 把电池和烟油仓分开设计。烟油用完或想换口味时，只换烟弹，主机留着充电继续用。",
+            "这款主机的烟弹另有单独出售，详见 [Esko Bar Switch 20K 烟弹](/products/esko-bar-switch-pod) 页面。",
+          ],
+        },
+        {
+          heading: "Esko Bar Switch 20K 可以调节什么？",
+          paragraphs: [
+            "一个按键即可在 High 和 Low 模式之间切换。ESKO BAR 说明 High 口味更浓，Low 抽起来更柔顺。",
+            "机身底部有旋钮，可调三档进气，从紧到松，按自己的抽吸习惯选择。",
+          ],
+        },
+        {
+          heading: "Esko Bar Switch 20K 的屏幕显示什么？",
+          paragraphs: [
+            "主机的数字屏幕会显示电量和当前模式，底部还有一圈氛围灯。",
+          ],
+        },
+        {
+          heading: "Esko Bar Switch 20K 盒内有什么？",
+          paragraphs: [
+            "根据 ESKO BAR 列出的包装清单，盒内有主机、挂绳和烟弹各一件。",
+            "盒内附带的烟弹采用双线圈同时加热，ESKO BAR 表示这样烟雾更多，口味更稳定。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Esko Bar Switch 20K 用哪种烟弹？",
+          answer: "使用 Esko Bar Switch 20K 烟弹。ESKO BAR 标明每颗装有 18mL 烟油，最多可抽 20,000 口；实际口数取决于个人的抽吸习惯。",
+        },
+        {
+          question: "Esko Bar Switch 20K 电池容量多大？",
+          answer: "主机内置 850mAh 可充电电池。",
+        },
+      ],
+    },
+  },
+  "esko-bar-switch-pod": {
+    th: {
+      lede: "หัวพอต Esko Bar Switch 20K ของ ESKO BAR เป็นหัวพอตบรรจุสำเร็จ แต่ละหัวมีน้ำยาของกลิ่นที่เลือกกับคอยล์คู่มาในตัว ด้านล่างสรุปจากหน้าเว็บของ ESKO BAR พร้อมแบ่งกลิ่นเป็นแนวไว้ให้เลือกง่ายขึ้น",
+      sections: [
+        {
+          heading: "หัวพอต Esko Bar Switch 20K สลับกลิ่นยังไง",
+          paragraphs: [
+            "ESKO BAR ออกแบบให้ถังน้ำยาแยกจากแบตเตอรี่ และเรียกระบบนี้ว่าการเปลี่ยนหัวพอตแบบรวดเร็ว",
+            "พอน้ำยาหมดก็ถอดหัวเก่าออกแล้วใส่หัวใหม่ได้เลย ถ้าซื้อไว้หลายกลิ่น ก็สลับกลิ่นกันได้โดยใช้ตัวเครื่องเดิม",
+          ],
+        },
+        {
+          heading: "หัวพอต Esko Bar Switch 20K หัวหนึ่งใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "ถังน้ำยาในหัวหนึ่งจุ 18mL ESKO BAR บอกว่าช่วยให้เปลี่ยนหัวห่างขึ้น ส่วนจะใช้ได้กี่วันนั้น ขึ้นกับการสูบของแต่ละคน",
+            "ข้างในเป็นคอยล์คู่ที่ร้อนพร้อมกันทั้งสองตัว ทาง ESKO BAR บอกว่าช่วยให้ได้ไอมากขึ้น และรสชาติออกมาคงที่",
+          ],
+        },
+        {
+          heading: "หัวพอต Esko Bar Switch 20K มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "หน้าเว็บของ ESKO BAR ลงหัวพอตรุ่นนี้ไว้ 20 กลิ่น ถ้าแบ่งตามชื่อกลิ่นจะได้ 3 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Mint · Ice หรือ Menthol ได้แก่ Cool Mint · Chocolate Mint · Watermelon Ice และ Extra Menthol",
+            "สายผลไม้ ได้แก่ Apple Aloe · Blueberry · Coconut · Grape · Honeydew · Lychee · Mango · Mix Berry · Pineapple · Pink Guava · Strawberry · Strawberry Banana และ Watermelon Lime",
+            "แนวอื่นมี Blueberry Jam · Cola และ Yogurt",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต Esko Bar Switch 20K ใส่เครื่องอะไร",
+          answer: "ใช้กับเครื่อง [Esko Bar Switch 20K](/products/pod-159) ค่ะ",
+        },
+        {
+          question: "หัวพอต Esko Bar Switch 20K สูบได้กี่พัฟ",
+          answer: "ESKO BAR ระบุว่าหัวหนึ่งสูบได้สูงสุด 20,000 พัฟค่ะ ส่วนที่สูบได้จริงขึ้นกับการสูบของแต่ละคนนะคะ",
+        },
+        {
+          question: "หัวพอต Esko Bar Switch 20K ต้องเติมน้ำยาเองไหม",
+          answer: "หัวพอตมีน้ำยามาในตัวแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The Esko Bar Switch 20K pod is ESKO BAR's prefilled pod: each one holds the e-liquid of the flavour you pick, with two coils built in. Below is a summary from ESKO BAR's own page, with the flavours grouped to make choosing easier.",
+      sections: [
+        {
+          heading: "How do you switch flavours with the Esko Bar Switch 20K pod?",
+          paragraphs: [
+            "ESKO BAR keeps the e-liquid tank separate from the battery and calls this quick pod-swap.",
+            "When a pod runs out, take it off and put a new one on. With several flavours at hand, you can move between them on the same device.",
+          ],
+        },
+        {
+          heading: "How long does one Esko Bar Switch 20K pod last?",
+          paragraphs: [
+            "Each pod holds 18mL of e-liquid, which ESKO BAR says means changing pods less often. How many days one lasts depends on how often you vape.",
+            "Inside, two coils heat at once, which ESKO BAR says gives more vapour and a steady flavour.",
+          ],
+        },
+        {
+          heading: "Which flavours does the Esko Bar Switch 20K pod come in?",
+          paragraphs: [
+            "ESKO BAR's page lists 20 flavours for this pod. Grouped by name, they fall into three sets.",
+            "Cool, with Mint, Ice or Menthol in the name: Cool Mint, Chocolate Mint, Watermelon Ice and Extra Menthol.",
+            "Fruit: Apple Aloe, Blueberry, Coconut, Grape, Honeydew, Lychee, Mango, Mix Berry, Pineapple, Pink Guava, Strawberry, Strawberry Banana and Watermelon Lime.",
+            "Others: Blueberry Jam, Cola and Yogurt.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which device does the Esko Bar Switch 20K pod fit?",
+          answer: "It fits the [Esko Bar Switch 20K](/products/pod-159).",
+        },
+        {
+          question: "How many puffs does one Esko Bar Switch 20K pod give?",
+          answer: "ESKO BAR states one pod gives up to 20,000 puffs; what you actually get depends on how you vape.",
+        },
+        {
+          question: "Do you refill the Esko Bar Switch 20K pod yourself?",
+          answer: "No, it comes filled. When it runs out, put on a new pod.",
+        },
+      ],
+    },
+    zh: {
+      lede: "Esko Bar Switch 20K 烟弹是 ESKO BAR 的预灌装烟弹，每颗都装有所选口味的烟油，并内置双线圈。下面根据 ESKO BAR 自己的网页整理，并把口味分类，方便挑选。",
+      sections: [
+        {
+          heading: "Esko Bar Switch 20K 烟弹怎么换口味？",
+          paragraphs: [
+            "ESKO BAR 把烟油仓和电池分开设计，并称之为快速换弹。",
+            "烟油用完时，取下旧烟弹、换上新的即可；手边备几种口味，就能用同一台主机轮换着抽。",
+          ],
+        },
+        {
+          heading: "一颗 Esko Bar Switch 20K 烟弹能用多久？",
+          paragraphs: [
+            "每颗烟弹装有 18mL 烟油，ESKO BAR 表示这样可以减少换弹次数。一颗能用几天，取决于抽的频率。",
+            "内部双线圈同时加热，ESKO BAR 表示这样烟雾更多，口味更稳定。",
+          ],
+        },
+        {
+          heading: "Esko Bar Switch 20K 烟弹有哪些口味？",
+          paragraphs: [
+            "ESKO BAR 网页列出这款烟弹的 20 种口味，按名称可分为三类。",
+            "清凉系（名称带 Mint、Ice 或 Menthol）：Cool Mint、Chocolate Mint、Watermelon Ice、Extra Menthol。",
+            "水果系：Apple Aloe、Blueberry、Coconut、Grape、Honeydew、Lychee、Mango、Mix Berry、Pineapple、Pink Guava、Strawberry、Strawberry Banana、Watermelon Lime。",
+            "其他：Blueberry Jam、Cola、Yogurt。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Esko Bar Switch 20K 烟弹适用于哪款主机？",
+          answer: "适用于 [Esko Bar Switch 20K](/products/pod-159)。",
+        },
+        {
+          question: "一颗 Esko Bar Switch 20K 烟弹能抽多少口？",
+          answer: "ESKO BAR 标明每颗最多可抽 20,000 口；实际口数取决于个人的抽吸习惯。",
+        },
+        {
+          question: "Esko Bar Switch 20K 烟弹需要自己加烟油吗？",
+          answer: "不需要，烟弹出厂已装好烟油，用完换一颗新的即可。",
+        },
+      ],
+    },
+  },
+  "esko-bar-20k": {
+    th: {
+      lede: "ESKO BAR 20000 เป็นพอตใช้แล้วทิ้งของ ESKO BAR ซึ่งบนเว็บของแบรนด์ใช้ชื่อรุ่นว่า ESKO BAR 498 ด้านล่างสรุปจากหน้าเว็บนั้นไว้ให้ ว่าเครื่องนี้ชาร์จได้ไหมและใช้คอยล์แบบไหน พร้อมแบ่งกลิ่นที่มีให้เลือกบนหน้านี้เป็นแนว",
+      sections: [
+        {
+          heading: "ESKO BAR 20000 ชาร์จได้ไหม",
+          paragraphs: [
+            "ชาร์จได้ แบตเตอรี่อยู่ในตัวเครื่อง ESKO BAR ระบุว่าเป็นแบตความหนาแน่นสูงที่ชาร์จได้เร็ว ถ้าแบตหมดก่อนน้ำยา ก็เสียบชาร์จแล้วสูบต่อจนน้ำยาหมดได้",
+            "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+        {
+          heading: "ESKO BAR 20000 ใช้คอยล์แบบไหน",
+          paragraphs: [
+            "ข้างในเป็นคอยล์ mesh คู่ ค่า 1.0 โอห์ม ESKO BAR บอกว่าคอยล์นี้ช่วยให้รสและกลิ่นของน้ำยาชัดขึ้น และเป็นคอยล์ mesh แบบมีส่วนทำความร้อนในตัว",
+            "ตามสเปกที่ ESKO BAR ลงไว้ ตัวเครื่องมีขนาด 126 × 30 × 30 mm และทำจาก PCTG · PC กับสเตนเลส",
+          ],
+        },
+        {
+          heading: "ESKO BAR 20000 มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "บนหน้านี้มีให้เลือก 22 กลิ่น ในจำนวนนี้ 15 กลิ่นตรงกับที่ ESKO BAR ลงไว้บนหน้าเว็บของแบรนด์ ถ้าแบ่งตามชื่อกลิ่นจะได้ 4 แนว",
+            "สายเย็น ชื่อกลิ่นมีคำว่า Ice · Mint หรือ Menthol ได้แก่ Blueberry Ice · Watermelon Ice · Double Mint และ Extra Menthol 5%",
+            "สายองุ่น ได้แก่ Purple Grape · Grape และ Berry Grape",
+            "สายผลไม้อื่น ได้แก่ Apple Aloe · E-Melon · Lychee · Mango · Mixberry · Pink Guava · Sour Strawberry · Strawberry Banana · Strawberry Kiwi และ Watermelon Strawberry",
+            "แนวอื่นมี Banana Icecream · Bubblegum · Cola · Mineral และ Red Lemon Soda",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "ESKO BAR 20000 นิโคตินกี่ %",
+          answer: "ESKO BAR ระบุความเข้มข้นนิโคตินไว้ 3% ค่ะ",
+        },
+        {
+          question: "ESKO BAR 20000 กับ Esko Bar Switch 20K ต่างกันยังไง",
+          answer: "ESKO BAR 20000 ใช้หมดแล้วทิ้งทั้งเครื่อง ส่วน [Esko Bar Switch 20K](/products/pod-159) เก็บตัวเครื่องไว้ใช้ต่อได้ เปลี่ยนแค่หัวค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The ESKO BAR 20000 is ESKO BAR's disposable, listed on the brand's own site as the ESKO BAR 498. Below is a summary from that page of whether it recharges and which coil it uses, followed by the flavours on this page in groups.",
+      sections: [
+        {
+          heading: "Can you recharge the ESKO BAR 20000?",
+          paragraphs: [
+            "Yes. The battery is built in, and ESKO BAR calls it a high-density battery that charges fast. If the battery runs out before the e-liquid, plug it in and keep vaping until the e-liquid is gone.",
+            "How many days one lasts depends on how often you vape.",
+          ],
+        },
+        {
+          heading: "Which coil does the ESKO BAR 20000 use?",
+          paragraphs: [
+            "Inside is a 1.0Ω dual mesh coil, which ESKO BAR says brings out a clearer flavour and aroma; ESKO BAR describes it as a mesh coil with integrated heating.",
+            "Per ESKO BAR's spec list, the body measures 126 × 30 × 30 mm and is made of PCTG, PC and stainless steel.",
+          ],
+        },
+        {
+          heading: "Which flavours does the ESKO BAR 20000 come in?",
+          paragraphs: [
+            "This page offers 22 flavours, 15 of which match the ones ESKO BAR lists on its own site. Grouped by name, they fall into four sets.",
+            "Cool, with Ice, Mint or Menthol in the name: Blueberry Ice, Watermelon Ice, Double Mint and Extra Menthol 5%.",
+            "Grape: Purple Grape, Grape and Berry Grape.",
+            "Other fruit: Apple Aloe, E-Melon, Lychee, Mango, Mixberry, Pink Guava, Sour Strawberry, Strawberry Banana, Strawberry Kiwi and Watermelon Strawberry.",
+            "Others: Banana Icecream, Bubblegum, Cola, Mineral and Red Lemon Soda.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "What is the nicotine strength of the ESKO BAR 20000?",
+          answer: "ESKO BAR lists a nicotine strength of 3%.",
+        },
+        {
+          question: "How is the ESKO BAR 20000 different from the Esko Bar Switch 20K?",
+          answer: "The ESKO BAR 20000 is thrown away once it is used up; with the [Esko Bar Switch 20K](/products/pod-159) you keep the device and change only the pod.",
+        },
+      ],
+    },
+    zh: {
+      lede: "ESKO BAR 20000 是 ESKO BAR 的一次性电子烟，品牌官网上的型号名为 ESKO BAR 498。下面根据该网页介绍它能否充电、用什么线圈，并把本页的口味分类列出。",
+      sections: [
+        {
+          heading: "ESKO BAR 20000 可以充电吗？",
+          paragraphs: [
+            "可以。电池内置于机身，ESKO BAR 称之为高密度电池，充电速度快。如果电池比烟油先用完，充上电就能继续抽，直到烟油用完。",
+            "一支能用几天，取决于抽的频率。",
+          ],
+        },
+        {
+          heading: "ESKO BAR 20000 用什么线圈？",
+          paragraphs: [
+            "内部是 1.0Ω 的 dual mesh 线圈，ESKO BAR 表示能让口味和香气更清晰，并称之为集成加热的 mesh 线圈。",
+            "根据 ESKO BAR 列出的规格，机身尺寸为 126 × 30 × 30 mm，材质为 PCTG、PC 和不锈钢。",
+          ],
+        },
+        {
+          heading: "ESKO BAR 20000 有哪些口味？",
+          paragraphs: [
+            "本页共有 22 种口味，其中 15 种与 ESKO BAR 官网列出的一致，按名称可分为四类。",
+            "清凉系（名称带 Ice、Mint 或 Menthol）：Blueberry Ice、Watermelon Ice、Double Mint、Extra Menthol 5%。",
+            "葡萄系：Purple Grape、Grape、Berry Grape。",
+            "其他水果：Apple Aloe、E-Melon、Lychee、Mango、Mixberry、Pink Guava、Sour Strawberry、Strawberry Banana、Strawberry Kiwi、Watermelon Strawberry。",
+            "其他：Banana Icecream、Bubblegum、Cola、Mineral、Red Lemon Soda。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "ESKO BAR 20000 的尼古丁浓度是多少？",
+          answer: "ESKO BAR 标注的尼古丁浓度为 3%。",
+        },
+        {
+          question: "ESKO BAR 20000 和 Esko Bar Switch 20K 有什么不同？",
+          answer: "ESKO BAR 20000 用完后整支丢弃；[Esko Bar Switch 20K](/products/pod-159) 则保留主机，只换烟弹。",
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4a (06/10): from JOIWAY's own F3 posters; Thai = thai-copy 06/10.
   "joiway-f3": {
     th: {
