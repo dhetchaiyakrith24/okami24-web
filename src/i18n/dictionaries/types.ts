@@ -249,6 +249,12 @@ export interface Dictionary {
     badgeBestSeller: string;
     /** The best-seller word on a phone-width card, beside "New" in the brand line (en "Best seller" pushed RELX to "RE…"). */
     badgeBestSellerShort: string;
+    /** The struck-through label price (owner 03/11, src/data/sale-label.ts): the "−N%" chip (`{n}`), what a screen reader
+     *  says for the chip and for the struck price (`{price}` = "฿1,290"), and for the real price on a card (no visible "Price"). */
+    saleBadge: string;
+    saleBadgeSr: string;
+    listPriceSr: string;
+    sellingPriceSr: string;
     /** Past 12 options: open the photo strip into the full grid / close it again (owner 24/10). */
     optionShowAll: string;
     optionShowLess: string;

@@ -5,6 +5,7 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
 import { CardSalesBadge } from "@/components/catalog/SalesBadge";
+import { CardPrice } from "@/components/catalog/SaleLabel";
 import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName } from "@/lib/utils";
@@ -92,9 +93,8 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="legacy">
           <CardHeadlineSpec specs={headline} compact />
         </p>
-        <p className="min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground lg:text-lg" data-card-price>
-          {sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
-        </p>
+        {/* + the struck-through label price and "−N%" on approved products (owner 03/11, SaleLabel.tsx) — same line, same height. */}
+        <CardPrice slug={product.slug} price={sellingPrice} soldOut={soldOut} />
         <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="legacy">
           <CardHeadlineSpec specs={headline} />
         </div>
