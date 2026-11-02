@@ -16,7 +16,7 @@ const flavour = (id: string, name: string, swatchHex: string) => ({
   name,
   swatchHex,
   availability: "unknown" as const,
-  image: { src: `/assets/products/mood-monster-14k/variant-${id}.webp`, alt: `MOOOD Monster 14K, ${name} — device` },
+  image: { src: `/assets/products/mood-monster-14k/variant-${id}-wm.webp`, alt: `MOOOD Monster 14K, ${name} — device` },
 });
 
 export const mooodProducts: Product[] = [
@@ -49,7 +49,7 @@ export const mooodProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/mood-monster-14k/card.webp",
+        src: "/assets/products/mood-monster-14k/card-wm.webp",
         alt: "MOOOD Monster 14K disposable, Berry Garden — device",
         angle: "Front, upright",
         transparentBackground: true,
