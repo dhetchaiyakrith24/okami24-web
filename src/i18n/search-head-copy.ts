@@ -372,7 +372,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "iqosheet-14": "LAMBDA i8 เครื่องจ่ายความร้อนระบบเหนี่ยวนำ แบต 3200mAh สูบได้ 35–40 มวนต่อการชาร์จ ปรับอุณหภูมิ 200–300°C มี 6 สี",
   "iqosheet-16": "เครื่องจ่ายความร้อน IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วสูบได้สูงสุด 20 มวน ใช้กับบุหรี่ TEREA เท่านั้น",
   // Round list19 (17/10): every number = a verified spec row of iqosheet-17.
-  "iqosheet-17": "IQOS ILUMA i ONE เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน มี Autostart และ FlexPuff ใช้กับบุหรี่ TEREA",
+  "iqosheet-17": "IQOS ILUMA i ONE เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA",
   "iqosheet-18": "IQOS ILUMA i เครื่องจ่ายความร้อน ใช้ได้กับบุหรี่ TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
   "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
