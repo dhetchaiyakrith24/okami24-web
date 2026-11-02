@@ -1408,6 +1408,84 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): VOOPOO VMATE pods — facts = VOOPOO's VMATE Cartridge V2 and VMATE Top Fill pages (in-app
+  // browser 02/11 via the details chat: V2 side slot + coil pre-installed, "For Vmate Infinity Edition / Vmate E / V.THRU Pro etc.";
+  // Top Fill "Top Filling", 0.4/0.7/1.0Ω, the 0.4Ω "requires at least 30 W"; the Top Fill pair ships with the Vmate Pro 2) + VOOPOO
+  // text found by search only (0.4Ω RDL 18–30W, 0.7Ω MTL). Left out: "magnetic" (search only) and 0.7Ω's wattage (VOOPOO's pages
+  // disagree). Capacity and PCTG stay with the tagline + spec rows. Thai = thai-copy 02/11.
+  "coil-72": {
+    th: {
+      lede: "หน้านี้มีหัวพอต VMATE ให้เลือกสองแบบ ด้านล่างสรุปตามข้อมูลของ VOOPOO ว่าทั้งสองแบบต่างกันตรงไหน ใช้กับเครื่องรุ่นไหน และค่าโอห์มไหนเหมาะกับการสูบแบบไหน",
+      sections: [
+        {
+          heading: "หัว V2 กับหัว Top Fill ต่างกันตรงไหน",
+          paragraphs: [
+            "หัว VMATE Cartridge V2 เติมน้ำยาทางช่องด้านข้าง และมีคอยล์ติดตั้งมาในหัวแล้ว ส่วนหัว VMATE Top Fill ใช้วิธีเติมด้านบน",
+          ],
+        },
+        {
+          heading: "เลือกหัวพอตให้ตรงกับเครื่องที่ใช้",
+          paragraphs: [
+            "VOOPOO ทำหัว V2 มาให้ใช้กับเครื่องอย่าง Vmate Infinity Edition, Vmate E และ V.THRU Pro ส่วนหัว Top Fill เป็นหัวที่มากับ [Vmate Pro 2](/products/vmate-pro-2)",
+            "VOOPOO ระบุว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30 วัตต์ขึ้นไป ถ้าจะใช้หัวนี้ก็ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ก่อน",
+          ],
+        },
+        {
+          heading: "หัว Top Fill ค่าไหนเหมาะกับการสูบแบบไหน",
+          paragraphs: [
+            "ตามข้อมูลของ VOOPOO หัว Top Fill 0.4 โอห์มใช้สูบแบบ RDL ที่ 18–30 วัตต์ ส่วนหัว 0.7 โอห์มใช้สูบแบบ MTL นอกจากสองค่านี้ หัว Top Fill ยังมีแบบ 1.0 โอห์มด้วย",
+            "ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl) ส่วนวิธีดูแลหัวพอตให้ใช้ได้นาน อ่านได้ที่ [หัวพอตใช้ได้กี่วัน เปลี่ยนเมื่อไหร่](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "This page carries two kinds of VMATE pod. Below, based on VOOPOO's own information: how they differ, which devices each one fits, and which resistance suits which draw style.",
+      sections: [
+        {
+          heading: "How do the V2 and Top Fill pods differ?",
+          paragraphs: [
+            "The VMATE Cartridge V2 fills through a side slot and comes with its coil pre-installed; the VMATE Top Fill fills from the top.",
+          ],
+        },
+        {
+          heading: "Which one fits my device?",
+          paragraphs: [
+            "VOOPOO makes the V2 for devices such as the Vmate Infinity Edition, Vmate E and V.THRU Pro, while the Top Fill is the pod that comes with the [Vmate Pro 2](/products/vmate-pro-2). VOOPOO states that the Top Fill 0.4Ω needs a device that puts out at least 30W, so check your device's maximum output before fitting it.",
+          ],
+        },
+        {
+          heading: "Which Top Fill resistance suits which style?",
+          paragraphs: [
+            "VOOPOO rates the Top Fill 0.4Ω for RDL at 18–30W and the 0.7Ω for MTL; the Top Fill also comes in 1.0Ω. If you're not sure which style suits you, see [MTL vs. DTL](/guides/understanding-mtl-vs-dtl), and for making a pod last, [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "本页有两种 VMATE 烟弹可选。下面根据 VOOPOO 的资料，介绍两者的区别、各自适用的设备，以及哪个阻值适合哪种抽法。",
+      sections: [
+        {
+          heading: "V2 和 Top Fill 有什么不同？",
+          paragraphs: [
+            "VMATE Cartridge V2 从侧面注油口注油，线圈已预装在烟弹内；VMATE Top Fill 则从顶部注油。",
+          ],
+        },
+        {
+          heading: "怎么选到适合自己设备的烟弹？",
+          paragraphs: [
+            "VOOPOO 的 V2 适用于 Vmate Infinity Edition、Vmate E、V.THRU Pro 等设备；Top Fill 是 [Vmate Pro 2](/products/vmate-pro-2) 随机附带的烟弹。VOOPOO 提示，Top Fill 0.4Ω 需要输出至少 30W 的设备，使用前请先确认自己设备的最大输出功率。",
+          ],
+        },
+        {
+          heading: "Top Fill 哪个阻值适合哪种抽法？",
+          paragraphs: [
+            "VOOPOO 标注 Top Fill 0.4Ω 用于 RDL，功率 18–30W；0.7Ω 用于 MTL；Top Fill 另有 1.0Ω 版本。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)；延长烟弹寿命的方法见[雾化芯与烟弹保养基础](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 2g (05/10): from VOOPOO's ARGUS G4 page and posters; Thai = thai-copy 05/10.
   "argus-g4": {
     th: {
