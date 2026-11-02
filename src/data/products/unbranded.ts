@@ -704,7 +704,7 @@ export const unbrandedProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/muro-freebase/card.webp",
+        src: "/assets/products/muro-freebase/card-wm2.webp",
         alt: "Muro Freebase e-liquid bottle, Watermelon, studio photo",
         angle: "Front, studio re-shoot (image sweep 21/10, IMAGE_SPEC §0 item 7) of the retailer's Muro Freebase poster.",
         transparentBackground: true,
@@ -713,12 +713,12 @@ export const unbrandedProducts: Product[] = [
       },
     ],
     flavorVariants: [
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-grape.webp", alt: "Muro Freebase e-liquid bottle, Grape, studio photo" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-watermelon.webp", alt: "Muro Freebase e-liquid bottle, Watermelon, studio photo" } },
-      { id: "click-mint", name: "Click Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-click-mint.webp", alt: "Muro Freebase e-liquid bottle, Click Mint, studio photo" } },
-      { id: "strawberry-twist", name: "Strawberry Twist", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-strawberry-twist.webp", alt: "Muro Freebase e-liquid bottle, Strawberry Twist, studio photo" } },
-      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-peach.webp", alt: "Muro Freebase e-liquid bottle, Peach, studio photo" } },
-      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-big-cola.webp", alt: "Muro Freebase e-liquid bottle, Big Cola, studio photo" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-grape-wm2.webp", alt: "Muro Freebase e-liquid bottle, Grape, studio photo" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-watermelon-wm2.webp", alt: "Muro Freebase e-liquid bottle, Watermelon, studio photo" } },
+      { id: "click-mint", name: "Click Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-click-mint-wm2.webp", alt: "Muro Freebase e-liquid bottle, Click Mint, studio photo" } },
+      { id: "strawberry-twist", name: "Strawberry Twist", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-strawberry-twist-wm2.webp", alt: "Muro Freebase e-liquid bottle, Strawberry Twist, studio photo" } },
+      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-peach-wm2.webp", alt: "Muro Freebase e-liquid bottle, Peach, studio photo" } },
+      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-freebase/variant-big-cola-wm2.webp", alt: "Muro Freebase e-liquid bottle, Big Cola, studio photo" } },
     ],
     specifications: [
       { key: "type", label: "Nicotine type", value: "Freebase", sourceStatus: "verified" },
