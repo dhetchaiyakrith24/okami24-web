@@ -316,7 +316,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   // row of each device in src/data/products/voopoo.ts (sourceStatus verified). Family-level
   // claim: the pages name Top Fill (V2) cartridges outright, the side-fill Pod Cartridge only as
   // a member of the family. The G3 mini page is narrower (checker FAIL 931e86b2): it takes the
-  // ARGUS Top Fill Cartridge, 0.4/0.7/1.0Ω — only coil-21's Top Fill options fit it.
+  // ARGUS Top Fill Cartridge, 0.4/0.7/1.0Ω — only coil-21's Top Fill options fit it (side-fill 0.7Ω and 1.2Ω do not; details 02/11).
   // =================================================================================
   {
     device: "argus-g4",
@@ -346,7 +346,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     device: "argus-g3-mini",
     consumable: "coil-21",
     role: "cartridge",
-    evidence: "VOOPOO's ARGUS G3 mini page (FAQ + specs): it takes the ARGUS Top Fill Cartridge, resistance range 0.4/0.7/1.0Ω — coil-21's Top Fill 0.4Ω and 0.7Ω options fit; its 1.2Ω side-fill option is outside that range.",
+    evidence: "VOOPOO's ARGUS G3 mini page (FAQ + specs): it takes the ARGUS Top Fill Cartridge, resistance range 0.4/0.7/1.0Ω — coil-21's Top Fill 0.4Ω, 0.7Ω and 1.0Ω options fit; its side-fill options (0.7Ω and 1.2Ω) are a different pod that VOOPOO does not name for it.",
     sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",
     tier: "official",
   },

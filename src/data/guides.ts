@@ -179,7 +179,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
           "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL, with the iCOSM CODE 2.0 anti-leak system.",
-          "VOOPOO says the G3 mini takes ARGUS Top Fill cartridges, rated 0.4, 0.7 and 1.0Ω — check the resistance and output first. When you need more pods, our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4Ω and 0.7Ω; its 1.2Ω option is a side-fill pod, outside the G3 mini's range.",
+          "VOOPOO says the G3 mini takes ARGUS Top Fill cartridges, rated 0.4, 0.7 and 1.0Ω — check the resistance and output first. When you need more pods, our [VOOPOO Argus Pod cartridges](/products/coil-21) listing has Top Fill options at 0.4, 0.7 and 1.0Ω, which suit it; its side-fill options (0.7Ω and 1.2Ω) are a different pod that VOOPOO does not name for the G3 mini.",
         ],
         image: SECTION_IMAGES_EN.argusG3MiniTiny,
       },
@@ -494,7 +494,7 @@ const allGuides: Guide[] = [
       {
         heading: "A wide resistance range does not always mean the pod is for sale",
         paragraphs: [
-          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but the [VOOPOO Argus Pod cartridges](/products/coil-21) on our site come in 0.4, 0.7 and 1.2Ω, not every value in that range. VOOPOO lists the ARGUS G4, ARGUS G4 mini and ARGUS P3 as taking this pod family; the ARGUS G3 mini takes its Top Fill cartridges (0.4–1.0Ω), so the 1.2Ω side-fill pod is outside its range.",
+          "Back to the pod line on the ARGUS G4. The 0.4–3.0Ω range is wide, and the device takes ARGUS pods in several resistances — but the [VOOPOO Argus Pod cartridges](/products/coil-21) on our site come in 0.4, 0.7, 1.0 and 1.2Ω, not every value in that range. VOOPOO lists the ARGUS G4, ARGUS G4 mini and ARGUS P3 as taking this pod family; the ARGUS G3 mini takes its Top Fill cartridges (0.4–1.0Ω), so the side-fill pods (0.7Ω and 1.2Ω) are not for it.",
           "The Caliburn side works the same way: the [GPP pod](/products/coil-94) is on the site and states exactly which devices it fits. The resistance range on a spec sheet is only half the answer; the other half is whether the pod you would put in it can actually be bought. Read those two lines together before choosing a device — or, if you have not started choosing yet, start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
       },
