@@ -473,6 +473,11 @@ a[data-card-cut]:has([data-sales="best"])::before {
     background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 35%, #fff1ec 50%, var(--accent-ember-strong) 65%, transparent);
     animation: okami-best-edge 8s linear 3 forwards; /* three runs, then still (owner 02/11 "วิ่ง 3 ตามแนะนำ") */
   }
+  /* After the three runs the top edge settles into the still line the reduced-motion card shows (checker 02/11: the card
+     ended with no top light at all). Later in the list = wins over the last frame of the runs. */
+  a[data-card-cut]:has([data-sales="best"])::before {
+    animation: okami-best-edge 8s linear 3 forwards, okami-best-settle 0.8s ease-out 24s forwards;
+  }
   a[data-card-cut]:has([data-sales="best"])::after {
     top: auto;
     bottom: 0;
@@ -491,10 +496,12 @@ a[data-card-cut]:has([data-sales="best"])::before {
     animation: okami-best-glint 8s linear -3s 3 forwards; /* ends past the pill edge, not across the words (checker #1069) */
   }
   /* Half the cards run half a cycle later — a brand page full of best sellers does not flash in step. */
-  a[data-card-cut]:nth-child(2n):has([data-sales="best"])::before,
   a[data-card-cut]:nth-child(2n):has([data-sales="best"])::after,
   a[data-card-cut]:nth-child(2n) .okami-best-pill::after {
     animation-delay: -4s;
+  }
+  a[data-card-cut]:nth-child(2n):has([data-sales="best"])::before {
+    animation-delay: -4s, 20s;
   }
 }
 @keyframes okami-best-edge {
@@ -504,6 +511,10 @@ a[data-card-cut]:has([data-sales="best"])::before {
 @keyframes okami-best-edge-back {
   0%, 24% { transform: translateX(225%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
   46%, 100% { transform: translateX(-100%); }
+}
+@keyframes okami-best-settle {
+  from { transform: none; width: 100%; opacity: 0; }
+  to { transform: none; width: 100%; opacity: 0.9; }
 }
 @keyframes okami-best-glint {
   0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }

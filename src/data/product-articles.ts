@@ -2634,7 +2634,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ถ้าชอบผลไม้ที่เย็นด้วย ก็มี Grape Ice ที่เป็นองุ่นสดกับน้ำแข็ง และ Watermelon Ice ที่เป็นแตงโมฉ่ำ ๆ เย็นแบบน้ำแข็ง",
             "สายผลไม้มี Lychee ลิ้นจี่หวานฉ่ำ Honeydew Melon เมลอนที่ผู้ผลิตบรรยายว่านุ่ม สด และฉ่ำ Grape Lychee องุ่นฉ่ำคู่กับลิ้นจี่ และ Mixberry เบอร์รี่หลายชนิดรวมกัน รสหวานและสดชื่น",
             "สตรอเบอร์รี่คู่กับผลไม้อีกชนิดมีสี่กลิ่น คือ Strawberry Watermelon คู่กับแตงโม Strawberry Kiwi คู่กับกีวีสด Strawberry Banana คู่กับกล้วยที่บรรยายว่าครีมมี่ และ Peach Strawberry คู่กับพีชหวาน",
-            "ถ้าอยากได้รสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum ที่เป็นแตงโมหวานกับหมากฝรั่ง",
+            "ถ้าชอบรสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum แตงโมหวานกับหมากฝรั่ง",
           ],
         },
         {
@@ -3520,6 +3520,239 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           question: "nexBar Switch 15K 的尼古丁浓度是多少？",
           answer: "nexBar 海报标注的尼古丁浓度为 3%。",
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): UWELL GPP pod — every fact = UWELL's G Pod Platform page (myuwell.com/g-pod-platform).
+  // "Fits G5 · G4 · G3" and what the product is stay out: tagline + short description say them twice already (HANDOFF §18).
+  // U² Anti-Leak's "150%" is not repeated (no spec row). UWELL's "new GPP cartridges coming in 2026" is not repeated (stale by
+  // 11/2026). "The 4-resistance pods here are the refillable kind" = the shop's reading of UWELL's table (pre-filled = 0.9Ω only).
+  "coil-94": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้า G Pod Platform ของ UWELL ว่า GPP คืออะไร หัว GPP มีกี่ชนิด และ UWELL ใส่อะไรไว้ในตัวหัวบ้าง",
+      sections: [
+        {
+          heading: "GPP คืออะไร ดูยังไงว่าเป็นหัว GPP",
+          paragraphs: [
+            "GPP ย่อมาจาก G Pod Platform เป็นชื่อที่ UWELL ใช้เรียกระบบหัวพอตของ Caliburn กลุ่มนี้ทั้งหมด หัวในกลุ่มนี้มีคำว่า GPP พิมพ์ไว้บนกล่อง ถ้าอยากรู้ว่าหัวที่มีอยู่เป็นหัว GPP หรือเปล่า ก็ดูที่กล่องได้เลย",
+          ],
+        },
+        {
+          heading: "หัว GPP มีกี่ชนิด",
+          paragraphs: [
+            "หน้า G Pod Platform ของ UWELL แบ่งหัว GPP ไว้ 3 ชนิด",
+            "สองชนิดแรกเป็นหัวที่เติมน้ำยาเอง ต่างกันตรงตำแหน่งช่องเติม ชนิดหนึ่งเติมด้านข้าง มีความจุ 3.0mL กับ 2.5mL อีกชนิดเติมด้านบน มีความจุ 3.0mL กับ 2.0mL และทั้งสองชนิดมีให้เลือก 4 ค่าโอห์ม",
+            "ชนิดที่สามเป็นหัวพอตบรรจุสำเร็จ มีค่าเดียวคือ 0.9 โอห์ม หัวบนหน้านี้จึงเป็นชนิดที่เติมน้ำยาเอง เพราะมีให้เลือก 4 ค่าโอห์ม ใครยังไม่เคยเติม มีวิธีเติมทีละขั้นอยู่ที่ [เติมพอตยังไง](/guides/refilling-a-pod)",
+          ],
+        },
+        {
+          heading: "UWELL ใส่อะไรไว้ในหัว GPP",
+          paragraphs: [
+            "เรื่องกันรั่ว UWELL ใช้ระบบที่เรียกว่า U² Anti-Leak ซึ่งมีอยู่สองส่วน ส่วนแรกคือ ultrasonic welding ที่ UWELL บอกว่าช่วยให้หัวกันรั่วได้ดีขึ้น ส่วนที่สองคือช่องลมรูปตัว U ที่ช่วยให้ลมไหลได้ดีขึ้น",
+            "อีกส่วนคือ PRO-FOCS ระบบปรับรสชาติที่ UWELL บอกว่าผ่านการทดสอบมาอย่างเข้มงวด ช่วยคงรสเดิมของน้ำยาไว้ และใช้ได้กับน้ำยาหลายความเข้มข้น ทั้งนิโคตินแบบ freebase และแบบ salt nic ถ้าอยากรู้ว่านิโคตินสองแบบต่างกันยังไง อ่านต่อได้ที่ [นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, a summary of UWELL's G Pod Platform page: what GPP is, how many kinds of GPP pod there are, and what UWELL builds into them.",
+      sections: [
+        {
+          heading: "What is GPP, and how do I know a pod is GPP?",
+          paragraphs: [
+            "GPP stands for G Pod Platform, UWELL's name for this whole family of Caliburn pods. The boxes of these pods are marked GPP, so if you're not sure whether a pod you have is GPP, the box will tell you.",
+          ],
+        },
+        {
+          heading: "How many kinds of GPP pod are there?",
+          paragraphs: [
+            "UWELL's G Pod Platform page lists three kinds. Two are refillable and differ in where you fill them: side refill comes in 3.0 mL and 2.5 mL, top refill in 3.0 mL and 2.0 mL, and both come in four resistances. The third kind is pre-filled, in 0.9Ω only. The pods on this page come in four resistances, so they are the refillable kind.",
+          ],
+        },
+        {
+          heading: "What does UWELL build into GPP pods?",
+          paragraphs: [
+            "For leaks, UWELL uses what it calls U² Anti-Leak, made up of two parts: ultrasonic welding, which UWELL says improves leak protection, and a U-shaped channel that improves airflow. UWELL also builds in PRO-FOCS, a flavour system it describes as rigorously tested, made to keep the e-liquid's original taste and to work with a range of nicotine strengths, in both freebase and nicotine-salt form.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 UWELL 的 G Pod Platform 页面，介绍 GPP 是什么、GPP 烟弹有几种，以及 UWELL 在烟弹里用了哪些设计。",
+      sections: [
+        {
+          heading: "GPP 是什么？怎么确认是 GPP 烟弹？",
+          paragraphs: [
+            "GPP 是 G Pod Platform 的缩写，是 UWELL 对这一整个 Caliburn 烟弹系列的称呼。这些烟弹的包装盒上都印有 GPP，不确定手上的烟弹是不是 GPP，看一下盒子即可。",
+          ],
+        },
+        {
+          heading: "GPP 烟弹有几种？",
+          paragraphs: [
+            "UWELL 的 G Pod Platform 页面把 GPP 烟弹分为 3 种。前两种是可自行注油的烟弹，区别在注油口位置：侧注油有 3.0 mL 和 2.5 mL，顶注油有 3.0 mL 和 2.0 mL，两种都有 4 种阻值。第三种是预注油烟弹，只有 0.9Ω 一种。本页烟弹有 4 种阻值可选，所以属于可注油的类型。",
+          ],
+        },
+        {
+          heading: "UWELL 在 GPP 烟弹里用了什么？",
+          paragraphs: [
+            "防漏方面，UWELL 采用 U² Anti-Leak 技术，由两部分组成：一是超声波焊接，UWELL 表示能提升防漏表现；二是 U 形气道，让气流更顺畅。UWELL 还在烟弹中加入了 PRO-FOCS 口味优化技术，UWELL 称其经过严格测试，能保留烟油原本的味道，并适用于多种浓度的游离碱尼古丁和尼古丁盐。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G coils — facts = UWELL's Caliburn G2, GK2 and X pages (in-app browser
+  // 02/11). The bare 0.8 / 1.0 / 1.2 list stays out (tagline + short description give it). UWELL's G2 page (02/11) also says the G2
+  // takes the Caliburn G 1.0Ω coil; details PR #1133 then made the spec row "ใช้ได้กับ" say so, so the article leaves G2 + 1.0Ω
+  // to the table under it.
+  "coil-53": {
+    th: {
+      lede: "คอยล์สามค่านี้ UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
+      sections: [
+        {
+          heading: "แต่ละค่าเป็นคอยล์รุ่นไหน",
+          paragraphs: [
+            "UWELL เรียกคอยล์ 1.2 โอห์มว่าคอยล์ Caliburn G2 ส่วนอีกสองค่าเรียกว่าคอยล์ Caliburn G และทั้งสามค่าทำจาก FeCrAl",
+            "บนหน้า Caliburn G2 UWELL บอกว่าในกล่องเครื่องมีคอยล์ mesh มาให้สองตัว คือ 1.2 กับ 0.8 โอห์ม ตัว 1.2 โอห์มสำหรับสูบแบบ MTL ส่วนตัว 0.8 โอห์มสำหรับสูบ DTL แบบลมแน่น สองแนวการสูบนี้ต่างกันตรงไหน ร้านอธิบายไว้ที่ [MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "เครื่องรุ่นไหนใส่ได้",
+          paragraphs: [
+            "Caliburn GK2 ใส่ได้ทั้งสามค่า ในกล่องมี 1.2 โอห์มติดเครื่องมา และมี 0.8 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยก",
+            "Caliburn X ก็ใช้คอยล์ตระกูล Caliburn G ในกล่องมี 0.8 โอห์มติดเครื่องมา และมี 1.2 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยกเหมือนกัน",
+            "ถ้ากำลังหาหัวพอตเปล่าที่ใช้กับคอยล์เหล่านี้ บนเว็บมี [หัวพอต Caliburn X](/products/coil-74) และ [หัวพอต Caliburn G2](/products/coil-55)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "These three coils carry different UWELL names, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
+      sections: [
+        {
+          heading: "Which coil is each resistance?",
+          paragraphs: [
+            "UWELL calls the 1.2Ω coil the Caliburn G2 coil and the other two Caliburn G coils; all three are FeCrAl. On its Caliburn G2 page, UWELL says the kit includes two mesh coils, 1.2Ω and 0.8Ω: the 1.2Ω for MTL vaping and the 0.8Ω for a restricted DTL draw. Not sure how the two draws differ? See [MTL vs DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "Which devices take them?",
+          paragraphs: [
+            "The Caliburn GK2 takes all three: 1.2Ω fitted, 0.8Ω as a spare, 1.0Ω sold separately. The Caliburn X uses Caliburn G-family coils too: 0.8Ω fitted, 1.2Ω as a spare, 1.0Ω sold separately.",
+            "Looking for an empty pod for these coils? The site has the [Caliburn X pod](/products/coil-74) and the [Caliburn G2 pod](/products/coil-55).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "这三颗线圈在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
+      sections: [
+        {
+          heading: "每种阻值是哪款线圈？",
+          paragraphs: [
+            "UWELL 把 1.2Ω 线圈称为 Caliburn G2 线圈，另外两种称为 Caliburn G 线圈，三款都是 FeCrAl 材质。UWELL 在 Caliburn G2 页面上说明，套装附带 1.2Ω 和 0.8Ω 两颗网状线圈：1.2Ω 用于 MTL 口吸，0.8Ω 用于偏紧的 DTL 肺吸。两种吸法的区别请看[MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "哪些设备可以用？",
+          paragraphs: [
+            "Caliburn GK2 三种都能用：出厂装 1.2Ω，附备用 0.8Ω，1.0Ω 需另购。Caliburn X 同样使用 Caliburn G 系列线圈：出厂装 0.8Ω，附备用 1.2Ω，1.0Ω 需另购。",
+            "想找能装这些线圈的空烟弹，本站有 [Caliburn X 烟弹](/products/coil-74) 和 [Caliburn G2 烟弹](/products/coil-55)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): UWELL Caliburn X empty pod — facts = UWELL's Caliburn X page (+ the G2 page / coil-55's
+  // spec rows for the comparison paragraph). "หัวพอตเปล่า" = THAI_STYLE §3 (no coil in the box). Thai = thai-copy 02/11.
+  "coil-74": {
+    th: {
+      lede: "ด้านล่างบอกว่าหัวพอตเปล่านี้ใส่คอยล์รุ่นไหนได้ น้ำยาเต็มหัวใช้ได้นานแค่ไหนตามที่ UWELL บอก และต่างจากหัวของ Caliburn G2 ตรงไหน",
+      sections: [
+        {
+          heading: "หัวพอตเปล่าคืออะไร",
+          paragraphs: [
+            "หัวพอตเปล่าคือหัวพอตที่มาแต่ตัวหัว คอยล์เลือกค่าที่ต้องการแล้วใส่เอง จากนั้นก็เติมน้ำยาที่ชอบได้เลย คอยล์กับหัวเป็นคนละชิ้นกัน พอถึงรอบเปลี่ยนคอยล์ก็เปลี่ยนแค่คอยล์ แล้วใช้หัวเดิมต่อได้",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์รุ่นไหนได้",
+          paragraphs: [
+            "ในกล่องชุด Caliburn X มีคอยล์ Caliburn G 0.8 โอห์มติดมากับเครื่อง และคอยล์ Caliburn G2 1.2 โอห์มเป็นตัวสำรอง ส่วนคอยล์ Caliburn G 1.0 โอห์มขายแยก",
+            "คอยล์ทั้งสามค่านี้ดูได้ที่หน้า [คอยล์ Caliburn G](/products/coil-53)",
+          ],
+        },
+        {
+          heading: "น้ำยาเต็มหัวใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "UWELL เขียนไว้บนหน้า Caliburn X ว่าแบต 850mAh ของเครื่องกับน้ำยา 3mL ในหัวนี้ สูบได้นานกว่าหนึ่งวัน ไม่ต้องคอยชาร์จหรือเติมน้ำยาบ่อย ส่วนจะอยู่ได้นานแค่ไหนจริง ๆ ก็ขึ้นอยู่กับว่าสูบถี่แค่ไหน",
+          ],
+        },
+        {
+          heading: "ต่างจากหัวของ Caliburn G2 ตรงไหน",
+          paragraphs: [
+            "หัวของ Caliburn G2 ก็ใช้คอยล์ชุดเดียวกันนี้ได้ ที่ต่างกันชัดคือความจุ หัวนั้นจุน้ำยา 2mL ส่วนหัวนี้จุได้มากกว่า ทั้งสองเป็นหัวพอตของคนละชุด จึงควรเลือกให้ตรงกับเครื่องที่ใช้อยู่ ถ้าใช้ Caliburn G2 ดู [หัวพอต Caliburn G2](/products/coil-55) แทนได้เลย",
+            "ส่วนวิธีเติมน้ำยาและการดูแลคอยล์ให้ใช้ได้นานขึ้น อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below: which coils this empty pod takes, how long a full pod lasts by UWELL's account, and how it differs from the Caliburn G2 pod.",
+      sections: [
+        {
+          heading: "What is an empty pod?",
+          paragraphs: [
+            "An empty pod comes as the pod alone: you choose the coil you want, fit it yourself, then fill it with the e-liquid you like. The coil and the pod are separate parts, so when it's time for a new coil you change just the coil and keep the same pod.",
+          ],
+        },
+        {
+          heading: "Which coils does it take?",
+          paragraphs: [
+            "The Caliburn X kit comes with the Caliburn G 0.8Ω coil fitted and the Caliburn G2 1.2Ω coil as a spare; the Caliburn G 1.0Ω coil is sold separately. All three are on the [Caliburn G coils](/products/coil-53) page.",
+          ],
+        },
+        {
+          heading: "How long does a full pod last?",
+          paragraphs: [
+            "UWELL's Caliburn X page says the device's 850mAh battery and the 3 mL in this pod give more than a day of vaping, without frequent charging or refilling. How long it really lasts depends on how often you vape.",
+          ],
+        },
+        {
+          heading: "How is it different from the Caliburn G2 pod?",
+          paragraphs: [
+            "The Caliburn G2 pod takes the same coils. The clear difference is capacity: the G2 pod holds 2 mL and this one holds more. Each is the pod of its own kit, so pick the one that matches your device; on a Caliburn G2, see the [Caliburn G2 pod](/products/coil-55) instead. For refilling and coil care, see [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面介绍这款空烟弹能装哪些线圈、按 UWELL 的说法一仓烟油能用多久，以及与 Caliburn G2 烟弹的区别。",
+      sections: [
+        {
+          heading: "什么是空烟弹？",
+          paragraphs: [
+            "空烟弹只有烟弹本身，线圈按需要的阻值另选、自己装上，再注入喜欢的烟油即可。线圈和烟弹是分开的部件，到了该换线圈的时候只换线圈，烟弹可以继续用。",
+          ],
+        },
+        {
+          heading: "能装哪些线圈？",
+          paragraphs: [
+            "Caliburn X 套装出厂装 Caliburn G 0.8Ω 线圈，附备用 Caliburn G2 1.2Ω 线圈；Caliburn G 1.0Ω 线圈需另购。三款都在[Caliburn G 线圈](/products/coil-53)页面。",
+          ],
+        },
+        {
+          heading: "一仓烟油能用多久？",
+          paragraphs: [
+            "UWELL 在 Caliburn X 页面上写道，设备的 850mAh 电池加上这款烟弹的 3 mL 烟油，可以用一天以上，不必频繁充电或注油。实际能用多久取决于抽吸频率。",
+          ],
+        },
+        {
+          heading: "和 Caliburn G2 烟弹有什么不同？",
+          paragraphs: [
+            "Caliburn G2 烟弹也能用同样这几款线圈，明显的区别在容量：Caliburn G2 烟弹装 2 mL，这款装得更多。两者分属不同套装，请按自己的设备选择；用 Caliburn G2 的话，请看 [Caliburn G2 烟弹](/products/coil-55)。注油和线圈保养请看[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
         },
       ],
     },
