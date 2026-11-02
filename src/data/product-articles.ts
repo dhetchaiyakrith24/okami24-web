@@ -2184,7 +2184,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ชาร์จยังไง",
           paragraphs: [
-            "เครื่องนี้มีแบตเตอรี่ 380mAh และชาร์จซ้ำได้ผ่านช่อง USB-C",
+            "RELX ระบุแบตเตอรี่ไว้ที่ 380mAh และชาร์จซ้ำได้ผ่านช่อง USB-C",
             "เรื่องชาร์จนานแค่ไหนและดูแลแบตยังไง ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
           ],
         },
