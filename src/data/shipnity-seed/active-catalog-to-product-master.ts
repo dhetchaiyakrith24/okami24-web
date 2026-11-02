@@ -925,7 +925,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/vmate-pro-2/card.webp",
+      src: "/assets/products/vmate-pro-2/card-wm2.webp",
       alt: "VOOPOO Vmate Pro 2 device, Gilt Black, studio photo",
       angle: "Front three-quarter, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of VOOPOO's own Gilt Black render.",
       transparentBackground: true,
@@ -2236,10 +2236,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Image sweep (19/10): Vmate Pro 2 — all 4 warehouse colours have a photo (re-shoots of VOOPOO's line-up render). VOOPOO's line-up also
   // shows Glacier Silver, Fresh Green and Lavender, not in the warehouse; voopoo.com does not resolve from here, so they wait for a maker page.
   "VMATE-PRO-2": {
-    "Pod-176-1": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-1.webp", alt: "VOOPOO Vmate Pro 2 device, Gilt Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
-    "Pod-176-2": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-2.webp", alt: "VOOPOO Vmate Pro 2 device, Space Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
-    "Pod-176-3": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-3.webp", alt: "VOOPOO Vmate Pro 2 device, Navy Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
-    "Pod-176-4": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-4.webp", alt: "VOOPOO Vmate Pro 2 device, Neon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-1": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-1-wm2.webp", alt: "VOOPOO Vmate Pro 2 device, Gilt Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-2": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-2-wm2.webp", alt: "VOOPOO Vmate Pro 2 device, Space Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-3": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-3-wm2.webp", alt: "VOOPOO Vmate Pro 2 device, Navy Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-4": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-4-wm2.webp", alt: "VOOPOO Vmate Pro 2 device, Neon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
   },
   // Image sweep: Punta Ice — Peach Ice has the card bottle (19/10); the other 6 flavours = re-shoots of the shop's flavour photos (21/10).
   "PUNTA-ICE": {
