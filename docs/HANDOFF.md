@@ -229,7 +229,8 @@ Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/T
 **Child chats and routines — model + effort (owner 30/10):** every child chat runs Opus 5.5; effort **high** for work that needs
 thinking and moves sales (SEO, images), **medium** for docs, checks, looking for updates, products, prices, stock; scheduled
 routines follow the same table ("แชทลูกหลังจากนี้บังคับใช้ Opus 5.5 · งานที่ต้องใช้ความคิดและส่งผลกับยอดธุรกิจ ใช้ High เช่น SEO งานรูปภาพ ·
-งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"). Routine model/effort is set in the app, not in its SKILL.md.
+งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"; 03/11 again: "แชทลูกใช้ Opus 5.5 medium นะถ้าไม่ใช่งานสำคัญเช่น ออกแบบ ดีไซน์ Seo"
+= design work is high too). Routine model/effort is set in the app, not in its SKILL.md.
 
 **Main chat moves by compact, not hand-off (owner 02/11, quoted exactly):** "แชทหลักนี้ Friday ไม่ต้อง Hand ใช้ Compact ได้เลยที่ 80-90 % ก่อน Compact
 จะสถานะงาน ความคืบหน้าสิ่งทมี่ต้องทำต่อกับแชทลูกให้เรียบร้อย ส่วนแชทลูก Hand ได้" — the MAIN chat no longer moves at 600–700k: it keeps going and compacts
