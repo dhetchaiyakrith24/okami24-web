@@ -60,7 +60,7 @@ export const SECTION_IMAGES = {
   // SEO push 27/10 batch 3: the official IQOS photos the ILUMA product pages already show (IQOS (official brand site), see
   // active-catalog-to-product-master.ts variant media) — for the three IQOS guides that had no picture.
   ilumaIOne: { src: "/assets/products/iqosheet-17/variant-midnight-black-wm2.webp", alt: "ภาพของ IQOS: ILUMA i ONE สี Midnight Black เครื่องชิ้นเดียวที่สูบได้ในตัว", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html", width: 1000, height: 1000, transparent: true },
-  ilumaI: { src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2-wm.webp", alt: "ภาพของ IQOS: ILUMA i สี Midnight Black ที่ชาร์จพกพา Pocket Charger กับ Holder ที่มีจอทัช", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html", width: 1613, height: 1238, transparent: true },
+  ilumaI: { src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2-wm2.webp", alt: "ภาพของ IQOS: ILUMA i สี Midnight Black ที่ชาร์จพกพา Pocket Charger กับ Holder ที่มีจอทัช", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html", width: 1613, height: 1238, transparent: true },
   ilumaIPrime: { src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2-wm2.webp", alt: "ภาพของ IQOS: ILUMA i PRIME สี Midnight Black ที่ชาร์จพกพาหุ้มผ้า กับ Holder ที่มีจอทัช", sourceName: "IQOS", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html", width: 1772, height: 1173, transparent: true },
 } satisfies Record<string, StoryImage>;
 
