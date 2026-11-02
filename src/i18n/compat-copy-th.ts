@@ -161,11 +161,11 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   // Round p63 (18/10): TEREA (iqosheet-15) goes on sale, so its four edges show on the TEREA page and on the
   // ILUMA i / i PRIME / i ONE / LAMBDA i8 pages. Same facts as the English strings; the LAMBDA one keeps its attribution.
   "IQOS states TEREA sticks are designed exclusively for IQOS ILUMA devices, and that ILUMA is designed to be used only with TEREA sticks — the SMARTCORE induction system heats the stick from within, so earlier IQOS generations cannot use them.":
-    "IQOS ระบุว่าก้าน TEREA ออกแบบมาให้ใช้กับเครื่อง ILUMA เท่านั้น และเครื่อง ILUMA ใช้กับก้าน TEREA เท่านั้น ระบบ SMARTCORE ให้ความร้อนจากด้านในก้าน เครื่อง IQOS รุ่นก่อนหน้าจึงใช้ก้านนี้ไม่ได้",
+    "IQOS ระบุว่าบุหรี่ TEREA ออกแบบมาให้ใช้กับเครื่อง ILUMA เท่านั้น และเครื่อง ILUMA ก็ใช้ได้กับ TEREA เท่านั้น ระบบ SMARTCORE ให้ความร้อนจากด้านในมวน เครื่อง IQOS รุ่นก่อนหน้าจึงใช้ TEREA ไม่ได้",
   "IQOS's ILUMA i ONE page: \"Designed to be used with TEREA tobacco sticks\" and its model table row \"Used with TEREA\" (round list19, 17/10).":
-    "IQOS ระบุในหน้า ILUMA i ONE ว่าเครื่องนี้ออกแบบมาให้ใช้กับก้าน TEREA และตารางเทียบรุ่นก็ระบุว่าใช้กับ TEREA",
+    "IQOS ระบุในหน้า ILUMA i ONE ว่าเครื่องนี้ออกแบบมาให้ใช้กับบุหรี่ TEREA และตารางเทียบรุ่นก็ระบุว่าใช้กับ TEREA",
   "LAMBDA's own product page markets the i8 as compatible with TEREA and SENTIA SMARTCORE sticks. This is LAMBDA's manufacturer claim about its own device — IQOS does not endorse third-party hardware and states TEREA is designed for IQOS ILUMA devices.":
-    "LAMBDA ระบุในหน้าสินค้าของตัวเองว่า i8 ใช้กับก้าน TEREA และ SENTIA แบบ SMARTCORE ได้ ข้อนี้เป็นคำของ LAMBDA เกี่ยวกับเครื่องของตัวเอง IQOS ไม่ได้รับรองเครื่องจากแบรนด์อื่น และระบุว่า TEREA ออกแบบมาสำหรับเครื่อง IQOS ILUMA",
+    "LAMBDA ระบุในหน้าสินค้าของตัวเองว่า i8 ใช้กับบุหรี่ TEREA และ SENTIA แบบ SMARTCORE ได้ ข้อนี้เป็นคำของ LAMBDA เกี่ยวกับเครื่องของตัวเอง IQOS ไม่ได้รับรองเครื่องจากแบรนด์อื่น และระบุว่า TEREA ออกแบบมาสำหรับเครื่อง IQOS ILUMA",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */
