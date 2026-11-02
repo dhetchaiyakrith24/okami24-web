@@ -26,6 +26,100 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
+  // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G2 empty pod — every fact = UWELL's Caliburn G2 page
+  // (myuwell.com/caliburn/caliburn-g2, in-app browser 02/11; quotes in the batch notes). "หัวพอตเปล่า" = THAI_STYLE §3 ·
+  // "ช่องใสให้ดูน้ำยา" = the site's existing term (story-copy). Thai = thai-copy 02/11.
+  "coil-55": {
+    th: {
+      lede: "ด้านล่างเล่าตามข้อมูลของ UWELL ว่าช่องเติมแบบนี้ดียังไง ช่องใสให้ดูน้ำยาช่วยอะไร หัวนี้ใส่คอยล์ค่าไหนได้บ้าง และต่างจากหัวพอตของ Caliburn X ตรงไหน",
+      sections: [
+        {
+          heading: "ทำไมช่องเติมถึงอยู่ด้านบน",
+          paragraphs: [
+            "UWELL บอกว่าการเติมแบบนี้ทำได้ง่าย ไม่ต้องออกแรงมาก และไม่เสียเวลา จะเติมน้ำยาตอนอยู่นอกบ้านก็สะดวก นอกจากนั้นช่องเติมตรงนี้ยังช่วยให้หัวกันรั่วได้ดีขึ้นด้วย",
+          ],
+        },
+        {
+          heading: "ช่องใสให้ดูน้ำยามีไว้ทำอะไร",
+          paragraphs: [
+            "ตัวเครื่อง Caliburn G2 มีช่องใสให้ดูน้ำยา มองเห็นได้ว่าน้ำยาเหลืออยู่เท่าไร UWELL บอกว่าช่องนี้ช่วยลดโอกาสที่น้ำยาจะหมดก่อนได้เติม",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ค่าไหนได้บ้าง",
+          paragraphs: [
+            "ในกล่องชุด Caliburn G2 มีคอยล์ mesh มาให้สองตัว ตัว 1.2 โอห์มติดมากับเครื่อง ใช้สูบแบบ MTL ส่วนตัว 0.8 โอห์มเป็นคอยล์ Caliburn G ใช้สูบ DTL แบบลมแน่น นอกจากสองตัวนี้ UWELL บอกว่าเครื่องนี้ใช้คอยล์ Caliburn G 1.0 โอห์มได้ด้วย",
+            "คอยล์ทั้งสามค่ามีให้เลือกที่หน้า [คอยล์ Caliburn G](/products/coil-53)",
+          ],
+        },
+        {
+          heading: "ต่างจากหัวของ Caliburn X ตรงไหน",
+          paragraphs: [
+            "หัวของ Caliburn X ใช้คอยล์ตระกูลเดียวกันนี้ได้ ที่ต่างกันคือหัวนั้นจุน้ำยาได้ 3mL มากกว่าหัวนี้ และเป็นหัวพอตของอีกชุดหนึ่ง ถ้าใช้เครื่อง Caliburn X อยู่ หัวที่ตรงรุ่นคือ [หัวพอต Caliburn X](/products/coil-74)",
+            "ถ้าอยากรู้ว่าคอยล์ถึงรอบเปลี่ยนเมื่อไหร่ และใส่คอยล์ใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, based on UWELL's own information: why the fill port sits where it does, what the check window is for, which coils this pod takes, and how it differs from the Caliburn X pod.",
+      sections: [
+        {
+          heading: "Why is the fill port on top?",
+          paragraphs: [
+            "UWELL says filling this way is easy, takes less effort and saves time, which makes it well suited to refilling on the go. Placing the port there also makes the pod more leak-resistant.",
+          ],
+        },
+        {
+          heading: "What is the liquid check window for?",
+          paragraphs: [
+            "The Caliburn G2 has an e-liquid check window, so you can see how much e-liquid is left. UWELL says it makes running out before you've refilled less likely.",
+          ],
+        },
+        {
+          heading: "Which coils does it take?",
+          paragraphs: [
+            "The Caliburn G2 kit comes with two mesh coils: the 1.2Ω, fitted, for MTL vaping, and the 0.8Ω, a Caliburn G coil, for a restricted DTL draw. UWELL says the Caliburn G2 also takes the Caliburn G 1.0Ω coil. All three resistances are available on the [Caliburn G coils](/products/coil-53) page.",
+          ],
+        },
+        {
+          heading: "How is it different from the Caliburn X pod?",
+          paragraphs: [
+            "The Caliburn X pod takes the same family of coils. The difference is that it holds 3 mL, more than this pod, and belongs to a different kit. If your device is a Caliburn X, the [Caliburn X pod](/products/coil-74) is the one to choose. To tell when a coil is due for a change, and how to prime a freshly filled pod, see [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 UWELL 的资料，介绍注油口为什么这样设计、观察窗有什么用、这款烟弹能装哪些线圈，以及与 Caliburn X 烟弹的区别。",
+      sections: [
+        {
+          heading: "为什么注油口在顶部？",
+          paragraphs: [
+            "UWELL 表示，这样注油方便省力、节省时间，在外补油也很合适；注油口设在这个位置，还能让烟弹更防漏。",
+          ],
+        },
+        {
+          heading: "观察窗有什么用？",
+          paragraphs: [
+            "Caliburn G2 机身设有烟油观察窗，可以看到烟油还剩多少。UWELL 表示，它能减少烟油用完却还没来得及补油的情况。",
+          ],
+        },
+        {
+          heading: "能装哪些线圈？",
+          paragraphs: [
+            "Caliburn G2 套装附带两颗网状线圈：出厂装好的 1.2Ω 用于 MTL 口吸，另一颗 0.8Ω 是 Caliburn G 线圈，用于偏紧的 DTL 肺吸。UWELL 表示 Caliburn G2 还能用 Caliburn G 的 1.0Ω 线圈。三款线圈可在[Caliburn G 线圈](/products/coil-53)页面查看。",
+          ],
+        },
+        {
+          heading: "和 Caliburn X 烟弹有什么不同？",
+          paragraphs: [
+            "Caliburn X 烟弹用的是同一系列线圈，区别在于它能装 3 mL 烟油，比这款多，而且属于另一套设备。如果用的是 Caliburn X，请选择 [Caliburn X 烟弹](/products/coil-74)。想知道线圈什么时候该换、新烟弹注油后要静置多久，请看[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
   // Batch 1 (02/10): written from UWELL's G5 page, its spec sheet and the G5 Lite page (sources per sentence:
   // docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md §5). Owner format A. G5 template round 03/10: the sections that
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
