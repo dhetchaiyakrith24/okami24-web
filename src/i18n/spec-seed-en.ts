@@ -73,7 +73,7 @@ const VALUES_EN: Record<string, string> = {
   "หัวละสูงสุด 16,000": "Up to 16,000 per pod",
   "หัวละสูงสุด 20,000": "Up to 20,000 per pod",
   "ปรับได้": "Adjustable",
-  "ปรับได้ 3 ระดับ หมุนที่ก้นพอต": "3 levels, turned at the base of the pod",
+  "ปรับได้ 3 ระดับ หมุนที่ก้นตัวเครื่อง": "3 levels, turned at the base of the device",
   "600mAh ชาร์จได้": "600mAh, rechargeable",
   "2700mAh ชาร์จเต็มประมาณ 135 นาที": "2700mAh, full charge in about 135 minutes",
   "3.0mL เติมด้านข้าง": "3.0mL, side fill",
