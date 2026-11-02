@@ -24,6 +24,7 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
   if (!c) return null;
   const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const dash = <span className="text-foreground-dim">—</span>;
+  const table = c.table;
 
   return (
     <>
@@ -38,17 +39,17 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
               </div>
             ))}
           </div>
-          {rows.length > 0 && (
+          {table && rows.length > 0 && (
             <div className="flex flex-col gap-4">
-              <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground">{t(c.table.heading)}</h3>
+              <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground">{t(table.heading)}</h3>
               <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
                 <table className="w-full min-w-[30rem] border-collapse text-sm">
                   <thead>
                     <tr className="border-b border-surface-border">
-                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.model)}</th>
-                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.battery)}</th>
-                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(c.table.power)}</th>
-                      <th scope="col" className="whitespace-nowrap py-3 text-left font-medium text-foreground-muted">{t(c.table.capacity)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(table.model)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(table.battery)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(table.power)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 text-left font-medium text-foreground-muted">{t(table.capacity)}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -59,7 +60,7 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
                             {r.name}
                           </Link>
                         </th>
-                        <td className="py-3 pr-3 whitespace-nowrap text-foreground">{r.battery === "external" ? t(c.table.externalCell) : (r.battery ?? dash)}</td>
+                        <td className="py-3 pr-3 whitespace-nowrap text-foreground">{r.battery === "external" ? t(table.externalCell) : (r.battery ?? dash)}</td>
                         <td className="py-3 pr-3 whitespace-nowrap text-foreground">{r.power ?? dash}</td>
                         <td className="py-3 whitespace-nowrap text-foreground">{r.capacity ?? dash}</td>
                       </tr>
@@ -67,7 +68,7 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
                   </tbody>
                 </table>
               </div>
-              <p className="text-xs text-foreground-dim">{t(c.table.note)}</p>
+              <p className="text-xs text-foreground-dim">{t(table.note)}</p>
             </div>
           )}
         </Container>
