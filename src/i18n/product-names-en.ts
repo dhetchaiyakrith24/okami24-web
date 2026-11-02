@@ -34,6 +34,13 @@ const NAMES_EN: Record<string, string> = {
 const OPTION_LABELS_EN: Record<string, string> = {
   "1.2Ω ยางขาว": "1.2Ω white rubber",
   "1.2Ω ยางฟ้า": "1.2Ω blue rubber",
+  // Details 03/11: the other Vinci coil (coil-1) options the en/zh scan found in Thai.
+  "0.45Ω ยางแดง": "0.45Ω red rubber",
+  "0.6Ω ยางขาว": "0.6Ω white rubber",
+  "0.6Ω ยางฟ้า": "0.6Ω blue rubber",
+  "0.6Ω ยางแดง": "0.6Ω red rubber",
+  "0.8Ω ยางขาว": "0.8Ω white rubber",
+  "0.8Ω ยางฟ้า": "0.8Ω blue rubber",
   "0.4 Ω Top Fill เติมบน": "0.4 Ω Top Fill",
   "0.7 Ω Top Fill เติมบน": "0.7 Ω Top Fill",
   "1.0 Ω Top Fill เติมบน": "1.0 Ω Top Fill",
