@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/commerce/session";
 import { listAddresses, lastUsedAddressId } from "@/lib/commerce/addresses";
+import { getCart } from "@/lib/commerce/cart";
 import { AddressStepView } from "@/components/commerce/AddressStepView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
@@ -31,6 +32,7 @@ export default async function CheckoutAddressPage({
     const lastId = await lastUsedAddressId(addresses);
     if (lastId !== null) redirect(`/checkout/review?addressId=${lastId}&saved=1`);
   }
-  const session = await getSession();
-  return <AddressStepView addresses={addresses} addressMissing={error === "not-found"} defaultPhone={session?.phone ?? ""} />;
+  const [session, cart] = await Promise.all([getSession(), getCart()]);
+  // The cart beside the form is display only (look A, owner 03/11); no address yet, so the review step re-works the fee.
+  return <AddressStepView addresses={addresses} addressMissing={error === "not-found"} defaultPhone={session?.phone ?? ""} cart={cart} />;
 }

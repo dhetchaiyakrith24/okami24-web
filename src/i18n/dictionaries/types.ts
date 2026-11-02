@@ -648,6 +648,20 @@ export interface Dictionary {
     noteToggle: string;
     notePlaceholder: string;
     noteHint: string;
+    /** Checkout step bar + the address step's map/summary (look A, owner 03/11). */
+    stepsLabel: string;
+    stepPhone: string;
+    stepAddress: string;
+    stepReview: string;
+    stepPay: string;
+    /** {n} = this step, {total} = number of steps. */
+    stepOf: string;
+    shipToProvince: string;
+    mapPrompt: string;
+    /** {n} = number of pieces in the cart. */
+    summaryItems: string;
+    shippingNextStep: string;
+    viewItemsCta: string;
   };
   /** `/orders/[orderNumber]` — order confirmation/status. */
   /** /orders "ติดตามคำสั่งซื้อ" (owner 24/10: find your orders by phone number only). */

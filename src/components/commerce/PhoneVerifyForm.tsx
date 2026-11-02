@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
 import { otpStepAction, type OtpFormState } from "@/app/checkout/actions";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -36,6 +37,7 @@ export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
         description={otpEnabled ? undefined : dict.checkout.noOtpNote}
       />
       <Container className="flex max-w-md flex-col gap-4 py-12 lg:py-16">
+        <CheckoutSteps current={1} className="mb-2" />
         {state.step === "phone" ? (
           <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
             <input type="hidden" name="intent" value="request" />

@@ -10,25 +10,28 @@ import { cn } from "@/lib/utils";
  * guessed), none = the code is refused (the hint says check it or message the shop on LINE). The three place values travel as the same form fields as before
  * (`subdistrict`, `district`, `province`) and the address action re-checks them against the code on the server.
  * Controlled inputs on purpose: a refused submit must not empty them (LESSONS พ45) — the starting values come back from
- * the action's answer.
+ * the action's answer. `onPlaceChange` hears the place once it is one the code really serves (null until then) — the
+ * address step's map and summary follow it (look A, owner 03/11); what is sent stays these hidden fields.
  */
 
-interface Place {
+export interface Place {
   subdistrict: string;
   district: string;
   province: string;
 }
 
 const INPUT = "rounded-md border bg-surface-2 px-3 py-2 text-base text-foreground";
-const placeLabel = (p: Place) => `${p.subdistrict} · ${p.district} · ${p.province}`;
+export const placeLabel = (p: Place) => `${p.subdistrict} · ${p.district} · ${p.province}`;
 const samePlace = (a: Place, b: Place) => a.subdistrict === b.subdistrict && a.district === b.district && a.province === b.province;
 
 export function PostcodePlaceFields({
   initial,
   postalError,
+  onPlaceChange,
 }: {
   initial: { postalCode?: string; subdistrict?: string; district?: string; province?: string };
   postalError?: string | null;
+  onPlaceChange?: (place: Place | null) => void;
 }) {
   const { dict } = useLocale();
   const t = dict.checkout;
@@ -67,6 +70,11 @@ export function PostcodePlaceFields({
   const looking = complete && loading;
   const notFound = shown !== null && shown.length === 0 && !looking;
   const pickedIndex = shown ? shown.findIndex((p) => samePlace(p, place)) : -1;
+
+  // Tell the parent (map + summary) about a real pick only; `shown` and `place` are state, so this runs when they change.
+  useEffect(() => {
+    onPlaceChange?.(shown?.find((p) => samePlace(p, place)) ?? null);
+  }, [shown, place, onPlaceChange]);
 
   return (
     <div className="flex flex-col gap-3">
@@ -126,8 +134,8 @@ export function PostcodePlaceFields({
             ))}
           </select>
           {/* A closed select cuts its text at phone width — and the cut end is the province, which tells apart a code that
-              spans two provinces (83000 Phuket / Phang Nga). Below sm the picked place is repeated in full (checker 02/11). */}
-          {pickedIndex >= 0 && <span className="text-sm text-foreground sm:hidden">{placeLabel(shown[pickedIndex])}</span>}
+              spans two provinces (83000 Phuket / Phang Nga). The address step repeats the picked place in full right below,
+              beside the small map (checker 02/11; look A 03/11). */}
           <input type="hidden" name="subdistrict" value={place.subdistrict} />
           <input type="hidden" name="district" value={place.district} />
           <input type="hidden" name="province" value={place.province} />
