@@ -2874,7 +2874,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // comparison), in-app browser 02/11. The page's "two sticks one after the other" vs "up to 3 consecutive uses" conflict = no number.
   "iqosheet-16": {
     th: {
-      lede: "ILUMA i PRIME ใช้ระบบเดียวกับ ILUMA i จุดที่ต่างอยู่ที่วัสดุ ขนาดกล่องชาร์จ และอุปกรณ์แต่งเครื่อง ข้อมูลด้านล่างสรุปจากหน้าของ IQOS ว่าในกล่องมีอะไร สองรุ่นนี้ต่างกันตรงไหน และตัวสูบทำอะไรได้บ้าง",
+      lede: "ILUMA i PRIME ใช้ระบบเดียวกับ ILUMA i จุดที่ต่างอยู่ที่วัสดุ ขนาดกล่องชาร์จ และของแต่งกล่องชาร์จ ข้อมูลด้านล่างสรุปจากหน้าของ IQOS ว่าในกล่องมีอะไร สองรุ่นนี้ต่างกันตรงไหน และตัวสูบทำอะไรได้บ้าง",
       sections: [
         {
           heading: "ในกล่องมีอะไรบ้าง",
@@ -2886,7 +2886,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ILUMA i PRIME ต่างจาก ILUMA i ตรงไหน",
           paragraphs: [
             "ตัวสูบและกล่องชาร์จของ PRIME ใช้อะลูมิเนียมร่วมกับกลไกล็อกที่ทำจากวัสดุหลายชนิด ส่วน ILUMA i มีอะลูมิเนียมเฉพาะที่ตัวสูบ ตัวกล่องชาร์จเป็นพลาสติก",
-            "อุปกรณ์แต่งเครื่องของ PRIME มี Ring Sets สำหรับตัวสูบ และ Wraps สำหรับหุ้มกล่องชาร์จ ตัวเครื่องมีให้เลือก 4 สี คือ Breeze Blue · Aspen Green · Garnet Red และ Midnight Black โดยตัวสูบของทุกสีเป็นสีไล่เฉด",
+            "ทั้งสองรุ่นมี Ring Sets ไว้แต่งตัวสูบเหมือนกัน ส่วนกล่องชาร์จของ PRIME มี Wraps ไว้หุ้ม และตัวสูบของ PRIME เป็นสีไล่เฉด",
             "ตัวสูบมีขนาดเท่ากับของ ILUMA i คือเส้นผ่านศูนย์กลาง 14.5mm สูง 101mm หนัก 31 กรัม ส่วนกล่องชาร์จของ PRIME กว้าง 44.7mm สูง 117.2mm และหนัก 134 กรัม เทียบกับกล่องชาร์จของ ILUMA i ที่กว้าง 47mm สูง 121.5mm และหนัก 112 กรัม",
           ],
         },
@@ -2901,7 +2901,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "The ILUMA i PRIME runs on the same system as the ILUMA i; it differs in materials, charger size and accessories. Below, from IQOS's own page: what's in the box, how the two compare, and what the Holder can do.",
+      lede: "The ILUMA i PRIME runs on the same system as the ILUMA i; it differs in materials, charger size and charger accessories. Below, from IQOS's own page: what's in the box, how the two compare, and what the Holder can do.",
       sections: [
         {
           heading: "What's in the box?",
@@ -2912,7 +2912,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How is the ILUMA i PRIME different from the ILUMA i?",
           paragraphs: [
-            "The PRIME's Holder and Pocket Charger combine aluminium with a locking mechanism made of various materials; on the ILUMA i, only the Holder is aluminium and the Pocket Charger is plastic. For personalisation, the PRIME takes Ring Sets on the Holder and Wraps on the Pocket Charger. It comes in 4 colours, Breeze Blue, Aspen Green, Garnet Red and Midnight Black, each with a gradient effect on the Holder.",
+            "The PRIME's Holder and Pocket Charger combine aluminium with a locking mechanism made of various materials; on the ILUMA i, only the Holder is aluminium and the Pocket Charger is plastic. Both take Ring Sets on the Holder; the PRIME's Pocket Charger also takes Wraps, and its Holder has a gradient finish.",
             "The Holder is the same size as the ILUMA i's: 14.5 mm across, 101 mm tall, 31 g. The PRIME's Pocket Charger is 44.7 mm wide, 117.2 mm tall and 134 g, against 47 mm, 121.5 mm and 112 g for the ILUMA i.",
           ],
         },
@@ -2925,7 +2925,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "ILUMA i PRIME 与 ILUMA i 采用同一套系统，不同之处在于材质、充电盒尺寸和配件。以下内容整理自 IQOS 官方页面：盒内有什么、两款有何不同，以及烟具有哪些功能。",
+      lede: "ILUMA i PRIME 与 ILUMA i 采用同一套系统，不同之处在于材质、充电盒尺寸和充电盒配件。以下内容整理自 IQOS 官方页面：盒内有什么、两款有何不同，以及烟具有哪些功能。",
       sections: [
         {
           heading: "盒内有什么？",
@@ -2936,7 +2936,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ILUMA i PRIME 和 ILUMA i 有什么不同？",
           paragraphs: [
-            "PRIME 的烟具和充电盒采用铝材，并搭配由多种材质制成的锁扣结构；ILUMA i 只有烟具为铝制，充电盒为塑料。配件方面，PRIME 的烟具可搭配 Ring Sets，充电盒可搭配 Wraps。共有 4 种颜色：Breeze Blue、Aspen Green、Garnet Red 和 Midnight Black，烟具均为渐变色。",
+            "PRIME 的烟具和充电盒采用铝材，并搭配由多种材质制成的锁扣结构；ILUMA i 只有烟具为铝制，充电盒为塑料。两款的烟具都可搭配 Ring Sets；PRIME 的充电盒还可搭配 Wraps，烟具为渐变色。",
             "烟具尺寸与 ILUMA i 相同：直径 14.5 mm、高 101 mm、重 31 g。PRIME 充电盒宽 44.7 mm、高 117.2 mm、重 134 g；ILUMA i 的充电盒则为宽 47 mm、高 121.5 mm、重 112 g。",
           ],
         },
@@ -2951,6 +2951,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i ONE — iqos.com/ph ILUMA i ONE kit page (in-app browser 02/11). One-piece is in
   // the tagline + short description already (not repeated). Autostart is named, not defined, on IQOS's page — said no further.
+  // No colour count here or on iqosheet-16: the page's own colour options list every colour, and IQOS's count differs from them.
   "iqosheet-17": {
     th: {
       lede: "ILUMA i ONE มีอะไรมาในกล่อง ชาร์จนานแค่ไหน ปรับแต่งอะไรได้บ้าง และใช้งานต่างจาก ILUMA i และ i PRIME ตรงไหน เราสรุปจากหน้าของ IQOS ไว้ด้านล่างนี้",
@@ -2970,15 +2971,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Autostart กับ FlexPuff ทำงานยังไง",
+          heading: "FlexPuff ทำงานยังไง",
           paragraphs: [
-            "ระบบ Autostart / Autostop ทำให้เครื่องเริ่มอุ่นและหยุดอุ่นได้เอง ส่วน FlexPuff จะคอยเช็คตอนใกล้หมดก้านว่ายาสูบยังเหลืออยู่ไหม ถ้ายังเหลือก็เพิ่มให้อีกสูงสุด 4 พัฟ จำนวนพัฟที่ได้จะต่างกันไปตามการสูบของแต่ละคน และบางก้านก็อาจไม่ได้พัฟเพิ่มเลย",
+            "เครื่องนี้มีระบบ Autostart / Autostop และ FlexPuff โดย FlexPuff จะคอยเช็คตอนใกล้หมดก้านว่ายาสูบยังเหลืออยู่ไหม ถ้ายังเหลือก็เพิ่มให้อีกสูงสุด 4 พัฟ จำนวนพัฟที่ได้จะต่างกันไปตามการสูบของแต่ละคน และบางก้านก็อาจไม่ได้พัฟเพิ่มเลย",
           ],
         },
         {
           heading: "ปรับแต่งอะไรได้บ้าง",
           paragraphs: [
-            "ตั้งค่าไฟและการสั่นของเครื่องได้ตามที่ชอบ และ IQOS ยังมีปลอกสวมที่ช่วยปกป้องตัวเครื่องอีกชั้นด้วย ตัวเครื่องมีให้เลือก 5 สี คือ Vivid Terracotta · Breeze Blue · Digital Violet · Midnight Black และ Spring Green",
+            "ตั้งค่าไฟและการสั่นของเครื่องได้ตามที่ชอบ และ IQOS ยังมีปลอกสวมที่ช่วยปกป้องตัวเครื่องอีกชั้นด้วย",
           ],
         },
       ],
@@ -2999,15 +3000,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "How do Autostart and FlexPuff work?",
+          heading: "How does FlexPuff work?",
           paragraphs: [
-            "Autostart / Autostop means the device starts and stops heating on its own. FlexPuff checks near the end of a stick whether any tobacco is left and, if so, adds up to 4 more puffs. The number varies with individual use, and some sticks may get no extra puffs at all.",
+            "The device has Autostart / Autostop and FlexPuff. FlexPuff checks near the end of a stick whether any tobacco is left and, if so, adds up to 4 more puffs. The number varies with individual use, and some sticks may get no extra puffs at all.",
           ],
         },
         {
           heading: "What can I personalise?",
           paragraphs: [
-            "You can set the lights and vibration, and IQOS makes sleeves that also add protection. The device comes in 5 colours: Breeze Blue, Digital Violet, Vivid Terracotta, Midnight Black and Spring Green.",
+            "You can set the lights and vibration, and IQOS makes sleeves that also add protection.",
           ],
         },
       ],
@@ -3028,15 +3029,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Autostart 和 FlexPuff 怎么运作？",
+          heading: "FlexPuff 怎么运作？",
           paragraphs: [
-            "Autostart / Autostop 让设备自动开始和停止加热。FlexPuff 会在临近结束时检查烟草是否还有剩余，如有则最多再增加 4 口。额外口数因个人使用习惯而异，有些烟支可能不会增加。",
+            "设备具备 Autostart / Autostop 和 FlexPuff。FlexPuff 会在临近结束时检查烟草是否还有剩余，如有则最多再增加 4 口。额外口数因个人使用习惯而异，有些烟支可能不会增加。",
           ],
         },
         {
           heading: "可以怎样个性化？",
           paragraphs: [
-            "可以设置灯光和振动，IQOS 也推出了保护套，能为机身多加一层保护。机身有 5 种颜色：Breeze Blue、Digital Violet、Vivid Terracotta、Midnight Black 和 Spring Green。",
+            "可以设置灯光和振动，IQOS 也推出了保护套，能为机身多加一层保护。",
           ],
         },
       ],
