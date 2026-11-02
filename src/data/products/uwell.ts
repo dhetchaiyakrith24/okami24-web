@@ -274,7 +274,7 @@ export const uwellProducts: Product[] = [
       },
     ],
     relatedProductSlugs: ["caliburn-g5-lite", "caliburn-g4-pro-koko", "caliburn-g4-pro"],
-    sourceUrls: ["https://www.myuwell.com/", "https://www.myuwell.com/caliburn/caliburn-g5-koko"],
+    sourceUrls: ["https://www.myuwell.com/", "https://www.myuwell.com/caliburn/caliburn-g5"], // details 03/11: was the G5 KOKO page (another model)
   },
   {
     id: "caliburn-g5-lite",

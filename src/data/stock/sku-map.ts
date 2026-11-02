@@ -1157,6 +1157,14 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-27-40": "Pod-27-40",
     "Pod-27-41": "Pod-27-41",
     "Pod-27-42": "Pod-27-42",
+    // Details 03/11: RELX Pod Pro 2 flavours from relxnow.my not in the warehouse — no SKU.
+    "relx-infinity-pro-2-pod-verified-lime-sparkle": null,
+    "relx-infinity-pro-2-pod-verified-crisp-apple": null,
+    "relx-infinity-pro-2-pod-verified-root-brew": null,
+    "relx-infinity-pro-2-pod-verified-peach-ice": null,
+    "relx-infinity-pro-2-pod-verified-ice-jasmine-tea": null,
+    "relx-infinity-pro-2-pod-verified-lychee-frost": null,
+    "relx-infinity-pro-2-pod-verified-ice-tieguanyin": null,
   } },
   // line 1 (23/10): RELX Creator Pod 20K — Max Pod-137-1..31 (published with its card, #753).
   "relx-creator-pod-20k": { parent: "Pod-137", options: {

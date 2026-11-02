@@ -2884,6 +2884,19 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   "SUP-ZERO-22K": [
     { code: "apple-aloe-vera", label: "Apple Aloe Vera", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
   ],
+  // Details 03/11 (catalog completeness): RELX Malaysia sells the shop's "RELX Infinity Pro 2" pods as "RELX Pod Pro 2" — its flavour
+  // selector (relxnow.my/products/relx-pod-pro-2, "Peach Mint (Peach Ice)" etc.: the name in brackets is the flavour) and its own
+  // product pages add these 7 flavours to Max's 42 (Pod-27). "Root Brew" = its own page's title (the selector says "Root Beer").
+  // Nicotine strength is not split: RELX MY names no 50mg line.
+  "RELX-INFINITY-PRO-2-POD": [
+    { code: "lime-sparkle", label: "Lime Sparkle", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-lime-sparkle" },
+    { code: "crisp-apple", label: "Crisp Apple", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-crisp-apple" },
+    { code: "root-brew", label: "Root Brew", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-root-brew" },
+    { code: "peach-ice", label: "Peach Ice", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-jasmine-tea", label: "Ice Jasmine Tea", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "lychee-frost", label: "Lychee Frost", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-tieguanyin", label: "Ice Tieguanyin", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+  ],
   // maxlist (20/10): the shop's RELX Essential 2 colour line-up shows 5 colours; Max (Pod-157) carries 4 — Orange is not in the warehouse.
   "RELX-ESSENTIAL-2": [
     { code: "orange", label: "Orange", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
