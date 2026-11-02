@@ -2830,6 +2830,99 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i ONE — iqos.com/ph ILUMA i ONE kit page (in-app browser 02/11). One-piece is in
+  // the tagline + short description already (not repeated). Autostart is named, not defined, on IQOS's page — said no further.
+  "iqosheet-17": {
+    th: {
+      lede: "ILUMA i ONE มีอะไรมาในกล่อง ชาร์จนานแค่ไหน ใช้งานต่างจาก ILUMA i และ i PRIME ตรงไหน และปรับแต่งอะไรได้บ้าง เราสรุปจากหน้าของ IQOS ไว้ด้านล่างนี้",
+      sections: [
+        {
+          heading: "ในกล่องมีอะไร ชาร์จนานแค่ไหน",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ILUMA i ONE กับสาย USB-C และ IQOS ระบุว่าชาร์จเต็มใช้เวลาประมาณ 1 ชั่วโมง 30 นาที",
+            "ตัวเครื่องสูง 122.4mm หนัก 73.9 กรัม และผิวเป็นอะลูมิเนียมเนียนเรียบ",
+          ],
+        },
+        {
+          heading: "ต่างจาก ILUMA i กับ i PRIME ตรงไหน",
+          paragraphs: [
+            "ILUMA i และ i PRIME ใช้ตัวสูบคู่กับกล่องชาร์จ ตัวสูบของสองรุ่นนั้นใช้ต่อกันได้ไม่เกิน 3 ก้าน แล้วต้องวางกลับลงไปชาร์จในกล่อง ส่วน ILUMA i ONE สูบต่อกันได้ราว 20 ก้านโดยไม่ต้องชาร์จคั่น",
+            "ในตารางเทียบรุ่นของ IQOS รุ่น ONE ไม่มีจอทัช การพักการสูบ และ FlexBattery แบบที่สองรุ่นนั้นมี ถ้าอยากได้จอที่บอกเวลาที่เหลือ หรืออยากพักการสูบแล้วกลับมาสูบต่อได้ ลองดู [IQOS ILUMA i](/products/iqosheet-18) ส่วนการเทียบสามรุ่นทีละเรื่อง อ่านต่อได้ที่ [IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างไหม](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          ],
+        },
+        {
+          heading: "Autostart กับ FlexPuff ทำงานยังไง",
+          paragraphs: [
+            "ระบบ Autostart / Autostop ทำให้เครื่องเริ่มอุ่นและหยุดอุ่นได้เอง ส่วน FlexPuff จะคอยเช็คตอนใกล้หมดก้านว่ายาสูบยังเหลืออยู่ไหม ถ้ายังเหลือก็เพิ่มให้อีกสูงสุด 4 พัฟ จำนวนพัฟที่ได้จะต่างกันไปตามการสูบของแต่ละคน และบางก้านก็อาจไม่ได้พัฟเพิ่มเลย",
+          ],
+        },
+        {
+          heading: "ปรับแต่งอะไรได้บ้าง",
+          paragraphs: [
+            "ตั้งค่าไฟและการสั่นของเครื่องได้ตามที่ชอบ และ IQOS ยังมีปลอกสวมที่ช่วยปกป้องตัวเครื่องอีกชั้นด้วย ตัวเครื่องมีให้เลือก 5 สี คือ Breeze Blue · Digital Violet · Vivid Terracotta · Midnight Black และ Spring Green",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "What comes in the ILUMA i ONE box, how long it takes to charge, how it differs from the ILUMA i and i PRIME, and what you can personalise, all summarised below from IQOS's own page.",
+      sections: [
+        {
+          heading: "What is in the box, and how long does it charge?",
+          paragraphs: [
+            "Just the ILUMA i ONE and a USB-C cable. IQOS says a full charge takes about 1 hour 30 minutes. The device is 122.4 mm tall, weighs 73.9 g and has a smooth aluminium finish.",
+          ],
+        },
+        {
+          heading: "How is it different from the ILUMA i and i PRIME?",
+          paragraphs: [
+            "The ILUMA i and i PRIME pair a Holder with a Pocket Charger; the Holder manages up to 3 sticks in a row before it goes back in to charge. The ILUMA i ONE goes for about 20 sticks with no charging in between. In IQOS's comparison table, the ONE does not have the Touch Screen, Pause Mode or FlexBattery of the other two. If you want a screen that shows the time left, or the option to pause and resume, take a look at the [IQOS ILUMA i](/products/iqosheet-18).",
+          ],
+        },
+        {
+          heading: "How do Autostart and FlexPuff work?",
+          paragraphs: [
+            "Autostart / Autostop means the device starts and stops heating on its own. FlexPuff checks near the end of a stick whether any tobacco is left and, if so, adds up to 4 more puffs. The number varies with individual use, and some sticks may get no extra puffs at all.",
+          ],
+        },
+        {
+          heading: "What can I personalise?",
+          paragraphs: [
+            "You can set the lights and vibration, and IQOS makes sleeves that also add protection. The device comes in 5 colours: Breeze Blue, Digital Violet, Vivid Terracotta, Midnight Black and Spring Green.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "ILUMA i ONE 盒内有什么、充电要多久、与 ILUMA i 和 i PRIME 有何不同、可以怎样个性化，以下根据 IQOS 官方页面整理。",
+      sections: [
+        {
+          heading: "盒内有什么？充电要多久？",
+          paragraphs: [
+            "盒内只有 ILUMA i ONE 主机和 USB-C 充电线。IQOS 表示充满约需 1 小时 30 分钟。机身高 122.4 mm、重 73.9 g，外壳为顺滑的铝制表面。",
+          ],
+        },
+        {
+          heading: "和 ILUMA i、i PRIME 有什么不同？",
+          paragraphs: [
+            "ILUMA i 和 i PRIME 由烟具和充电盒组成，烟具最多连续使用 3 支后，就要放回充电盒充电；ILUMA i ONE 则可连续使用约 20 支，中途无需充电。在 IQOS 的型号对比表中，ONE 没有另外两款的触控屏、暂停模式和 FlexBattery。如果想要能显示剩余时间的屏幕，或希望可以暂停后继续，可以看看 [IQOS ILUMA i](/products/iqosheet-18)。",
+          ],
+        },
+        {
+          heading: "Autostart 和 FlexPuff 怎么运作？",
+          paragraphs: [
+            "Autostart / Autostop 让设备自动开始和停止加热。FlexPuff 会在临近结束时检查烟草是否还有剩余，如有则最多再增加 4 口。额外口数因个人使用习惯而异，有些烟支可能不会增加。",
+          ],
+        },
+        {
+          heading: "可以怎样个性化？",
+          paragraphs: [
+            "可以设置灯光和振动，IQOS 也推出了保护套，能为机身多加一层保护。机身有 5 种颜色：Breeze Blue、Digital Violet、Vivid Terracotta、Midnight Black 和 Spring Green。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
   "joiway-f4": {
     th: {
