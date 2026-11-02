@@ -1109,6 +1109,9 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-21-2": "Coil-21-2",
     "Coil-21-3": "Coil-21-3",
     "Coil-21-4": "Coil-21-4",
+    // Details 02/11 (b6): VOOPOO's side-fill 0.7 ohm and Top Fill 1.0 ohm (maker pages) — no warehouse SKU.
+    "coil-21-verified-0-7ω": null,
+    "coil-21-verified-top-fill-1-0ω": null,
   } },
   // maxlist (20/10): RELX Infinity Pro 2 pods — Max Pod-27-1..42.
   "relx-infinity-pro-2-pod": { parent: "Pod-27", options: {
