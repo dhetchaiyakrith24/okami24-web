@@ -3545,6 +3545,99 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): UWELL Caliburn X empty pod — facts = UWELL's Caliburn X page (+ the G2 page / coil-55's
+  // spec rows for the comparison paragraph). "หัวพอตเปล่า" = THAI_STYLE §3 (no coil in the box). Thai = thai-copy 02/11.
+  "coil-74": {
+    th: {
+      lede: "ด้านล่างบอกว่าหัวพอตเปล่านี้ใส่คอยล์รุ่นไหนได้ น้ำยาเต็มหัวใช้ได้นานแค่ไหนตามที่ UWELL บอก และต่างจากหัวของ Caliburn G2 ตรงไหน",
+      sections: [
+        {
+          heading: "หัวพอตเปล่าคืออะไร",
+          paragraphs: [
+            "หัวพอตเปล่าคือหัวพอตที่มาแต่ตัวหัว คอยล์เลือกค่าที่ต้องการแล้วใส่เอง จากนั้นก็เติมน้ำยาที่ชอบได้เลย คอยล์กับหัวเป็นคนละชิ้นกัน พอถึงรอบเปลี่ยนคอยล์ก็เปลี่ยนแค่คอยล์ แล้วใช้หัวเดิมต่อได้",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์รุ่นไหนได้",
+          paragraphs: [
+            "UWELL บอกว่า Caliburn X ใช้คอยล์ตระกูล Caliburn G ในกล่องชุด Caliburn X มีคอยล์ Caliburn G 0.8 โอห์มติดมากับเครื่อง และคอยล์ Caliburn G2 1.2 โอห์มเป็นตัวสำรอง ส่วนคอยล์ Caliburn G 1.0 โอห์มขายแยก",
+            "คอยล์ทั้งสามค่านี้ดูได้ที่หน้า [คอยล์ Caliburn G](/products/coil-53)",
+          ],
+        },
+        {
+          heading: "น้ำยาเต็มหัวใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "UWELL เขียนไว้บนหน้า Caliburn X ว่าแบต 850mAh ของเครื่องกับน้ำยา 3mL ในหัวนี้ สูบได้นานกว่าหนึ่งวัน ไม่ต้องคอยชาร์จหรือเติมน้ำยาบ่อย ส่วนจะอยู่ได้นานแค่ไหนจริง ๆ ก็ขึ้นอยู่กับว่าสูบถี่แค่ไหน",
+          ],
+        },
+        {
+          heading: "ต่างจากหัวของ Caliburn G2 ตรงไหน",
+          paragraphs: [
+            "หัวของ Caliburn G2 ก็ใช้คอยล์ชุดเดียวกันนี้ได้ ที่ต่างกันชัดคือความจุ หัวนั้นจุน้ำยา 2mL ส่วนหัวนี้จุได้มากกว่า ทั้งสองเป็นหัวพอตของคนละชุด จึงควรเลือกให้ตรงกับเครื่องที่ใช้อยู่ ถ้าใช้ Caliburn G2 ดู [หัวพอต Caliburn G2](/products/coil-55) แทนได้เลย",
+            "ส่วนวิธีเติมน้ำยาและดูแลคอยล์ให้ใช้ได้นานขึ้น อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below: which coils this empty pod takes, how long a full pod lasts by UWELL's account, and how it differs from the Caliburn G2 pod.",
+      sections: [
+        {
+          heading: "What is an empty pod?",
+          paragraphs: [
+            "An empty pod comes as the pod alone: you choose the coil you want, fit it yourself, then fill it with the e-liquid you like. The coil and the pod are separate parts, so when it's time for a new coil you change just the coil and keep the same pod.",
+          ],
+        },
+        {
+          heading: "Which coils does it take?",
+          paragraphs: [
+            "UWELL says the Caliburn X uses Caliburn G-family coils. The Caliburn X kit comes with the Caliburn G 0.8Ω coil fitted and the Caliburn G2 1.2Ω coil as a spare; the Caliburn G 1.0Ω coil is sold separately. All three are on the [Caliburn G coils](/products/coil-53) page.",
+          ],
+        },
+        {
+          heading: "How long does a full pod last?",
+          paragraphs: [
+            "UWELL's Caliburn X page says the device's 850mAh battery and the 3 mL in this pod give more than a day of vaping, without frequent charging or refilling. How long it really lasts depends on how often you vape.",
+          ],
+        },
+        {
+          heading: "How is it different from the Caliburn G2 pod?",
+          paragraphs: [
+            "The Caliburn G2 pod takes the same coils. The clear difference is capacity: the G2 pod holds 2 mL and this one holds more. Each is the pod of its own kit, so pick the one that matches your device; on a Caliburn G2, see the [Caliburn G2 pod](/products/coil-55) instead. For refilling and coil care, see [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面介绍这款空烟弹能装哪些线圈、按 UWELL 的说法一仓烟油能用多久，以及与 Caliburn G2 烟弹的区别。",
+      sections: [
+        {
+          heading: "什么是空烟弹？",
+          paragraphs: [
+            "空烟弹只有烟弹本身，线圈按需要的阻值另选、自己装上，再注入喜欢的烟油即可。线圈和烟弹是分开的部件，到了该换线圈的时候只换线圈，烟弹可以继续用。",
+          ],
+        },
+        {
+          heading: "能装哪些线圈？",
+          paragraphs: [
+            "UWELL 表示 Caliburn X 使用 Caliburn G 系列线圈。Caliburn X 套装出厂装 Caliburn G 0.8Ω 线圈，附备用 Caliburn G2 1.2Ω 线圈；Caliburn G 1.0Ω 线圈需另购。三款都在[Caliburn G 线圈](/products/coil-53)页面。",
+          ],
+        },
+        {
+          heading: "一仓烟油能用多久？",
+          paragraphs: [
+            "UWELL 在 Caliburn X 页面上写道，设备的 850mAh 电池加上这款烟弹的 3 mL 烟油，可以用一天以上，不必频繁充电或注油。实际能用多久取决于抽吸频率。",
+          ],
+        },
+        {
+          heading: "和 Caliburn G2 烟弹有什么不同？",
+          paragraphs: [
+            "Caliburn G2 烟弹也能用同样这几款线圈，明显的区别在容量：Caliburn G2 烟弹装 2 mL，这款装得更多。两者分属不同套装，请按自己的设备选择；用 Caliburn G2 的话，请看 [Caliburn G2 烟弹](/products/coil-55)。注油和线圈保养请看[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
