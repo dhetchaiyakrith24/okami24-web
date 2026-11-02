@@ -251,7 +251,8 @@ exactly as today — new order in the order group, slip attached in the slip gro
 only the admin stops keying the order into Shipnity by hand. Slips never go to the warehouse.
 
 **Slip-check bot after a deploy (owner 03/11, "ตามแนะนำ" + "เรื่องบอทส่งซ้ำเอาไว้ก่อน"):** the bot answers by reply only — no push
-fallback (push = LINE quota) · LINE "Webhook redelivery" stays OFF for now (parked by the owner) · no deploys 18:00–24:00 (TEAM_RULES 13.7).
+fallback (push = LINE quota) · LINE "Webhook redelivery" stays OFF for now (parked by the owner; turning it on first needs the
+`webhookEventId` dedupe guard — parked code in PR #1170's history, commit 5aa67a59) · no deploys 18:00–24:00 (TEAM_RULES 13.7).
 
 **onrender.com stays open (owner 26/10):** the service's `*.onrender.com` address is the back door "ในกรณีที่หน้าเว็บหลักเข้าไม่ได้" —
 never disable it.
