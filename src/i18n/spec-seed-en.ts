@@ -136,8 +136,12 @@ const VALUES_EN: Record<string, string> = {
   "หัวพอตเปล่า ใช้กับคอยล์ PnP X": "Empty pod, takes PnP X coils",
   "DTL: PnP X ทุกค่า · MTL: PnP X 0.3Ω / 0.6Ω": "DTL: every PnP X coil · MTL: PnP X 0.3Ω / 0.6Ω",
   "PCTG + สแตนเลส": "PCTG + stainless steel",
-  "คอยล์ในตัว 0.7Ω หรือ 1.2Ω": "Built-in coil, 0.7Ω or 1.2Ω",
-  "3 หัว": "3 pods",
+  "แบบเติมด้านข้าง: 2mL": "Side-fill version: 2mL",
+  "แบบเติมด้านข้าง: คอยล์ในตัว 0.7Ω หรือ 1.2Ω": "Side-fill version: built-in coil, 0.7Ω or 1.2Ω",
+  "Top Fill เติมด้านบน 0.4Ω · 0.7Ω · 1.0Ω": "Top Fill: 0.4Ω · 0.7Ω · 1.0Ω",
+  "แบบเติมด้านข้าง: Argus Pod / Argus P1 / Argus G / Argus Z": "Side-fill version: Argus Pod / Argus P1 / Argus G / Argus Z",
+  "แบบเติมด้านข้าง: 3 หัว": "Side-fill version: 3 pods",
+  "แบบเติมด้านข้าง: PCTG": "Side-fill version: PCTG",
   "เติมด้านบน": "Top fill",
 };
 
