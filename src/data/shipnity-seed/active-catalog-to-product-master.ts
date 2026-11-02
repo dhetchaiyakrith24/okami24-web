@@ -688,7 +688,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง SUP ZERO 22K",
     shortDescription: "พอตใช้แล้วทิ้ง SUP ZERO ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 15 กลิ่น",
   },
-  // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2" (no maker page).
+  // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2". RELX's pages (02/11) name the pods "RELX Pod Pro 2" — rows below.
   "RELX-INFINITY-PRO-2-POD": {
     tagline: "หัวพอต RELX Infinity Pro 2",
     shortDescription: "หัวพอต RELX Infinity Pro 2 ที่แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ร้านมีให้เลือก 42 กลิ่น",
@@ -698,7 +698,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "หัวพอต RELX Creator Pod 20K",
     shortDescription: "หัวพอต RELX Creator Pod 20K ใช้กับเครื่อง RELX Creator ร้านมีให้เลือก 31 กลิ่น",
   },
-  // maxlist (20/10): warehouse facts only — the Max name "Relx Essential 2" (no maker page); colours = Max's 4 + the shop's 5th (Orange).
+  // maxlist (20/10): the Max name "Relx Essential 2"; colours = Max's 4 + Orange. Details 02/11: RELX's own lists carry all five —
+  // relxnow.my/products/essential-device (Essential 2: Black · Grey · Nebula Blue · Steel Silver) + relxnow.com (Orange · Grey).
   "RELX-ESSENTIAL-2": {
     tagline: "ตัวเครื่อง RELX Essential 2",
     shortDescription: "ตัวเครื่อง RELX Essential 2 ร้านมีให้เลือก 5 สี",
@@ -1648,7 +1649,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "380mAh", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
       { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
-      { key: "compatible-pods", label: "ใช้กับหัวพอต", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "compatible-pods", label: "หัวพอตที่ใช้ได้", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
     ],
     sourceUrls: ["https://relxnow.com/products/essential-device"],
   },
@@ -1802,14 +1803,17 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // ---------------------------------------------------------------------------------
   "Coil-70": {
     specifications: [
-      { key: "resistance", label: "ค่าโอห์ม", value: "0.7Ω", sourceStatus: "verified" },
-      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "14-20W", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.15Ω · 0.3Ω · 0.6Ω · 0.7Ω", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "0.7Ω: 14-20W", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "5 หัว (บรรจุแยกซองละหัว)", sourceStatus: "verified" },
       { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์ mesh เดี่ยว", sourceStatus: "verified" },
       { key: "compatible-devices", label: "ใช้ได้กับ", value: "dotAIO V2 / dotAIO V2 Lite / dotStick Revo / dotPod Max / dotTank 25mm", sourceStatus: "verified" },
     ],
     // Wattage/resistance are read directly off the retail box in this record's own card photo;
     // pack size, brass construction and the device list are from dotmod's own dotCoils page.
+    // Details 03/11: dotmod's dotCoils page now offers "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" (its product JSON); the
+    // 0.7Ω the shop sells is on dotmod's own retail box and was in the 2026-09-02 dotAIO V2 line-up (0.3/0.7/0.9Ω) — an
+    // earlier dotmod value, kept. The current three are listed below as maker options (VERIFIED_ADDITIONAL_VARIANTS).
     sourceUrls: ["https://dotmod.com/products/dotcoils", "https://www.elementvape.com/dotmod-dotaio-v2-dotcoils"],
   },
   "Coil-83": {
@@ -2017,6 +2021,8 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "airflow", label: "ช่องลม", value: "ปรับได้ 3 ระดับ หมุนที่ก้นตัวเครื่อง", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "modes", label: "โหมดการทำงาน", value: "High กับ Low กดปุ่มเดียวสลับได้", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "coil", label: "คอยล์", value: "คอยล์คู่ ทำงานพร้อมกัน", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      // Details 02/11: the same page's "Colors PURPLE YELLOW BLACK" — the device body; the page's options are the kit's pod flavours.
+      { key: "device-colors", label: "สีตัวเครื่อง", value: "Purple · Yellow · Black", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     ],
     sourceUrls: ["https://eskobarvape.com/product/pod-system/"],
   },
@@ -2884,9 +2890,28 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   "SUP-ZERO-22K": [
     { code: "apple-aloe-vera", label: "Apple Aloe Vera", sourceUrl: "https://zeedcupvp.com/product/sup-zero-22000-puffs/" },
   ],
-  // maxlist (20/10): the shop's RELX Essential 2 colour line-up shows 5 colours; Max (Pod-157) carries 4 — Orange is not in the warehouse.
+  // Details 03/11 (catalog completeness): RELX Malaysia sells the shop's "RELX Infinity Pro 2" pods as "RELX Pod Pro 2" — its flavour
+  // selector (relxnow.my/products/relx-pod-pro-2, "Peach Mint (Peach Ice)" etc.: the name in brackets is the flavour) and its own
+  // product pages add these 7 flavours to Max's 42 (Pod-27). "Root Brew" = its own page's title (the selector says "Root Beer").
+  // Nicotine strength is not split: RELX MY names no 50mg line.
+  "RELX-INFINITY-PRO-2-POD": [
+    { code: "lime-sparkle", label: "Lime Sparkle", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-lime-sparkle" },
+    { code: "crisp-apple", label: "Crisp Apple", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-crisp-apple" },
+    { code: "root-brew", label: "Root Brew", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2-root-brew" },
+    { code: "peach-ice", label: "Peach Ice", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-jasmine-tea", label: "Ice Jasmine Tea", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "lychee-frost", label: "Lychee Frost", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+    { code: "ice-tieguanyin", label: "Ice Tieguanyin", sourceUrl: "https://relxnow.my/products/relx-pod-pro-2" },
+  ],
+  // Details 03/11: dotmod's current dotCoils resistances (dotmod.com/products/dotcoils) — the warehouse's 0.7Ω is an earlier value.
+  "Coil-70": [
+    { code: "0-15ω", label: "0.15Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
+    { code: "0-3ω", label: "0.3Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
+    { code: "0-6ω", label: "0.6Ω", sourceUrl: "https://dotmod.com/products/dotcoils" },
+  ],
+  // maxlist (20/10): RELX Essential 2 — Max (Pod-157) carries 4 colours; Orange is not in the warehouse. Details 02/11: RELX's own page sells Orange.
   "RELX-ESSENTIAL-2": [
-    { code: "orange", label: "Orange", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    { code: "orange", label: "Orange", sourceUrl: "https://relxnow.com/products/essential-device" },
   ],
   // Image sweep (19/10): infy.my sells the INFY Device in 19 colours (product pages infy-closed-pod-<colour>); these 5 are not in Max (Pod-158).
   "INFY-POD": [

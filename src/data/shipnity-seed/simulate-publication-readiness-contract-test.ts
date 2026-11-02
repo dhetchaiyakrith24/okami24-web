@@ -121,7 +121,8 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   checkGenuinelyPublished("Coil-74", 250, 1);
   checkGenuinelyPublished("Coil-89", 350, 2);
   // Storefront quality-correction pass (2026-09-02) additions.
-  checkGenuinelyPublished("Coil-70", 390, 1);
+  // Coil-70: 1 Shipnity child (0.7Ω) + dotmod's current 0.15 / 0.3 / 0.6Ω (details 03/11) = 4.
+  checkGenuinelyPublished("Coil-70", 390, 4);
   checkGenuinelyPublished("Coil-83", 250, 0);
   checkGenuinelyPublished("Coil-87", 250, 1);
 
