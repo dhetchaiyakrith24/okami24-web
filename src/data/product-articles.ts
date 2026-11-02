@@ -3604,8 +3604,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G coils — facts = UWELL's Caliburn G2, GK2 and X pages (in-app browser
   // 02/11). The bare 0.8 / 1.0 / 1.2 list stays out (tagline + short description give it). UWELL's G2 page (02/11) also says the G2
-  // takes the Caliburn G 1.0Ω coil, but this page's spec row "ใช้ได้กับ" still reads "G2 (0.8/1.2Ω)" — that line waits for the
-  // spec row (details chat) so the article never contradicts the table under it.
+  // takes the Caliburn G 1.0Ω coil; details PR #1133 then made the spec row "ใช้ได้กับ" say so, so the article leaves G2 + 1.0Ω
+  // to the table under it.
   "coil-53": {
     th: {
       lede: "คอยล์สามค่านี้ UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
@@ -3679,7 +3679,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใส่คอยล์รุ่นไหนได้",
           paragraphs: [
-            "UWELL บอกว่า Caliburn X ใช้คอยล์ตระกูล Caliburn G ในกล่องชุด Caliburn X มีคอยล์ Caliburn G 0.8 โอห์มติดมากับเครื่อง และคอยล์ Caliburn G2 1.2 โอห์มเป็นตัวสำรอง ส่วนคอยล์ Caliburn G 1.0 โอห์มขายแยก",
+            "ในกล่องชุด Caliburn X มีคอยล์ Caliburn G 0.8 โอห์มติดมากับเครื่อง และคอยล์ Caliburn G2 1.2 โอห์มเป็นตัวสำรอง ส่วนคอยล์ Caliburn G 1.0 โอห์มขายแยก",
             "คอยล์ทั้งสามค่านี้ดูได้ที่หน้า [คอยล์ Caliburn G](/products/coil-53)",
           ],
         },
@@ -3710,7 +3710,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which coils does it take?",
           paragraphs: [
-            "UWELL says the Caliburn X uses Caliburn G-family coils. The Caliburn X kit comes with the Caliburn G 0.8Ω coil fitted and the Caliburn G2 1.2Ω coil as a spare; the Caliburn G 1.0Ω coil is sold separately. All three are on the [Caliburn G coils](/products/coil-53) page.",
+            "The Caliburn X kit comes with the Caliburn G 0.8Ω coil fitted and the Caliburn G2 1.2Ω coil as a spare; the Caliburn G 1.0Ω coil is sold separately. All three are on the [Caliburn G coils](/products/coil-53) page.",
           ],
         },
         {
@@ -3739,7 +3739,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "能装哪些线圈？",
           paragraphs: [
-            "UWELL 表示 Caliburn X 使用 Caliburn G 系列线圈。Caliburn X 套装出厂装 Caliburn G 0.8Ω 线圈，附备用 Caliburn G2 1.2Ω 线圈；Caliburn G 1.0Ω 线圈需另购。三款都在[Caliburn G 线圈](/products/coil-53)页面。",
+            "Caliburn X 套装出厂装 Caliburn G 0.8Ω 线圈，附备用 Caliburn G2 1.2Ω 线圈；Caliburn G 1.0Ω 线圈需另购。三款都在[Caliburn G 线圈](/products/coil-53)页面。",
           ],
         },
         {
