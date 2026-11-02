@@ -244,9 +244,11 @@ export interface Dictionary {
     stockMany: string;
     /** The short low-stock word on one small option tile (no room for lowStock) — `{n}` = pieces. */
     stockLeftShort: string;
-    /** Sales badges on cards and the product head (owner 30/10, src/data/sales-badges.ts): one per product. */
+    /** Sales badges on cards and the product head (owner 30/10, src/data/sales-badges.ts); both can show (owner 02/11). */
     badgeNew: string;
     badgeBestSeller: string;
+    /** The best-seller word on a phone-width card, beside "New" in the brand line (en "Best seller" pushed RELX to "RE…"). */
+    badgeBestSellerShort: string;
     /** Past 12 options: open the photo strip into the full grid / close it again (owner 24/10). */
     optionShowAll: string;
     optionShowLess: string;

@@ -217,6 +217,7 @@ export const th: Dictionary = {
     stockLeftShort: "เหลือ {n}",
     badgeNew: "มาใหม่",
     badgeBestSeller: "ขายดี",
+    badgeBestSellerShort: "ขายดี",
     optionShowAll: "ดูทั้งหมด {n} แบบ",
     optionShowLess: "ย่อกลับ",
     optionPickPrompt: "แตะรูปเพื่อเลือก",

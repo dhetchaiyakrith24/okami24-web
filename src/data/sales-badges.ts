@@ -7,8 +7,9 @@ import { FIRST_LISTED } from "@/data/first-listed";
  *     "ตอนนี้อ้างอิงคำตัดสินเก่า"); LATER counted from real web orders ("อนาคตใช้การนับออเดอร์") — switch BEST_SELLER_SOURCE
  *     and add the order count there (not built: the cart opened 22/10, too few orders yet; the threshold is his to set);
  *   - "มาใหม่" = "7-14 วัน" after the product went live (src/data/first-listed.ts) — see newWindowDays.
- * One badge per product (designer 30/10): "มาใหม่" first — it runs out on its own — then "ขายดี". Small and import-light on
- * purpose: product cards also render inside client components (catalog browser, search, favourites).
+ * Both badges together (owner 02/11 "ป้ายมาใหม่ … โชว์ทั้ง 2 ป้าย" — replaces designer 30/10 "one badge"): a new best seller reads
+ * [มาใหม่][ขายดี]. Small and import-light on purpose: product cards also render inside client components (catalog browser,
+ * search, favourites).
  */
 
 /** "มาใหม่" lasts NEW_MAX_DAYS after the first-listed day, never fewer than NEW_MIN_DAYS (owner 30/10 "7-14 วัน"). */
@@ -99,11 +100,12 @@ export function bangkokToday(now: number): string {
   return new Date(now + 7 * 3600_000).toISOString().slice(0, 10);
 }
 
-/** The one badge a product shows on `today` (yyyy-mm-dd), or null. A product sold out in every option keeps "ขายดี" (owner 31/10
- *  "พี่หมายถึงป้ายสินค้าขายดีนะ แม้ของหมดก็ขึ้นเลย") but loses "มาใหม่". */
-export function salesBadge(slug: string, today: string, soldOut = false, listed: Readonly<Record<string, string>> = FIRST_LISTED): SalesBadgeKind | null {
-  if (soldOut) return isBestSeller(slug) ? "best" : null;
+/** The badges a product shows on `today` (yyyy-mm-dd), left to right: "มาใหม่" then "ขายดี" (best keeps the right end). A product
+ *  sold out in every option keeps "ขายดี" (owner 31/10 "พี่หมายถึงป้ายสินค้าขายดีนะ แม้ของหมดก็ขึ้นเลย") but loses "มาใหม่". */
+export function salesBadges(slug: string, today: string, soldOut = false, listed: Readonly<Record<string, string>> = FIRST_LISTED): SalesBadgeKind[] {
+  const out: SalesBadgeKind[] = [];
   const day = listed[slug];
-  if (day && day <= today && today < addDays(day, newWindowDays(today, listed))) return "new";
-  return isBestSeller(slug) ? "best" : null;
+  if (!soldOut && day && day <= today && today < addDays(day, newWindowDays(today, listed))) out.push("new");
+  if (isBestSeller(slug)) out.push("best");
+  return out;
 }
