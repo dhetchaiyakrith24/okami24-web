@@ -220,6 +220,18 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
 .okh-float img {
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 106, 44, 0.12));
 }
+/* phones (owner clip 03/11: scrolling back up, the hero showed black for 2–3 frames before it popped in): every slot kept
+   its own blurred, drop-shadowed, animating layer although only one shows, so Safari had four of them to raster when the
+   hero came back. A slot that is not showing is now not painted at all — `visibility` rides the fade (hidden only once the
+   fade-out ends, visible as the fade-in starts) — and a slot waiting its turn does not run its drift. Looks the same. */
+@media (max-width: 63.99rem) {
+  .okh-prod {
+    visibility: hidden;
+    transition-property: opacity, transform, filter, visibility;
+  }
+  .okh-prod[data-state="on"] { visibility: visible; }
+  .okh-prod:not([data-state]) .okh-float { animation: none; will-change: auto; }
+}
 /* one thin warm reflection crosses the device as it arrives — clipped to its own silhouette. The
    band moves by transform (compositor only); animating background-position repainted every frame. */
 .okh-sheen {

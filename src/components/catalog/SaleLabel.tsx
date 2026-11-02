@@ -27,7 +27,7 @@ export function CardPrice({ slug, price, soldOut = false }: { slug: string; pric
     <p className={cn(base, "flex items-baseline gap-1.5 overflow-hidden whitespace-nowrap lg:gap-2")} data-card-price data-sale-pct={sale.pct}>
       <span className="sr-only">{dict.product.sellingPriceSr.replace("{price}", baht(price))}</span>
       <span aria-hidden>{baht(price)}</span>
-      <s className="text-[11px] font-medium text-foreground-muted decoration-foreground-muted/70 lg:text-sm" data-list-price>
+      <s className="text-xs font-medium text-foreground-muted decoration-foreground-muted/70 lg:text-sm" data-list-price>
         <span className="sr-only">{dict.product.listPriceSr.replace("{price}", baht(sale.label))}</span>
         <span aria-hidden>{baht(sale.label)}</span>
       </s>

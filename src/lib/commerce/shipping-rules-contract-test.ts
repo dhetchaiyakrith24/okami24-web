@@ -29,6 +29,7 @@ import {
   nextShippingStep,
   shippingNoteKey,
   SHIPPING_RULE_STAFF_LABEL,
+  subdistrictKey,
   UNKNOWN_VISITOR,
   type ShippingHistory,
 } from "./shipping-rules";
@@ -210,6 +211,15 @@ check(
   "same house no. + postcode, other sub-district → still given",
   hist(8, ["0862222222"], { line1: "12/3 หมู่ 4", subdistrict: "สีลม", postalCode: "10500" }).benefitUsed === false
 );
+// Hand-typed places (owner 03/11, #1169): a sub-district the postcode does not serve must not make the address new.
+// Stand-in for thai-postcodes.ts isPostcodeSubdistrict: 10500 serves บางรัก and สีลม here.
+const known = (code: string, s: string) => code === "10500" && ["บางรัก", "สีลม"].includes(subdistrictKey(s));
+const histK = (address: { line1: string; subdistrict: string; postalCode: string }) =>
+  loadShippingHistory(db, { memberId: 8, phones: ["0862222222"], address }, mid, known).benefitUsed;
+check("hand-typed made-up sub-district, same house no. + postcode → none (sub-district not compared)", histK({ line1: "12/3 หมู่ 4", subdistrict: "บางรักใหม่", postalCode: "10500" }) === true);
+check("…an invisible character does not help either", histK({ line1: "12/3 หมู่ 4", subdistrict: "บางรัก\u200B", postalCode: "10500" }) === true);
+check("…a real other sub-district of that postcode is still a different address → given", histK({ line1: "12/3 หมู่ 4", subdistrict: "สีลม", postalCode: "10500" }) === false);
+check("…next-door house no. with a made-up sub-district → given", histK({ line1: "12/4 หมู่ 4", subdistrict: "บางรักใหม่", postalCode: "10500" }) === false);
 check("houseNumber: '99/1 ถนน…' → '99/1' · 'เลขที่ 7-2 …' → '7-2'", houseNumber("99/1 ถนนทดสอบ") === "99/1" && houseNumber("เลขที่ 7-2 ซอย 1") === "7-2", `${houseNumber("99/1 ถนนทดสอบ")} ${houseNumber("เลขที่ 7-2 ซอย 1")}`);
 
 addOrder({ customer: 1, member: 1, rule: "member_monthly", at: "2026-09-21T05:00:00.000Z", recipientPhone: "0812121212" });
