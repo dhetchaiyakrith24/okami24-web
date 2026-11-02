@@ -115,7 +115,7 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
           if (!v) return null;
           return (
             <div key={r.label} className="flex justify-between gap-4 border-b border-surface-border-soft py-3 text-sm">
-              <dt className="text-foreground-muted">{t(r.label)}</dt>
+              <dt className="max-w-[45%] shrink-0 text-foreground-muted">{t(r.label)}</dt>
               <dd className="text-right text-foreground">{t(v)}</dd>
             </div>
           );
