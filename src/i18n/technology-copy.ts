@@ -58,7 +58,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สเปกบอกว่าเครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ แปลว่าระบบรองรับหัวพอตมากกว่าค่าเดียว",
           "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
-          "VOOPOO ระบุว่า G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบนได้ ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 โอห์ม ต่ำกว่าหัวในกล่อง และ 0.7 โอห์ม ค่าเดียวกับหัวในกล่อง ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของ G3 mini",
+          "VOOPOO ระบุว่า G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบนได้ ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 โอห์ม ต่ำกว่าหัวในกล่อง 0.7 โอห์ม ค่าเดียวกับหัวในกล่อง และ 1.0 โอห์ม สูงกว่าหัวในกล่อง ส่วนตัวเลือกหัวเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกแบบ ซึ่ง VOOPOO ไม่ได้ระบุให้ใช้กับ G3 mini",
           "ส่วน MTL กับ RDL ที่พูดถึงข้างบนให้ความรู้สึกต่างกันยังไง อ่านที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl)",
         ],
       },
@@ -137,7 +137,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) ใช้ชิป GENE.AI เป็นระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สูบแล้วเครื่องทำงานเอง วัตต์ปรับให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ ไม่มีเมนูให้ตั้ง",
           "แบตในตัว 1350mAh ตัวเครื่อง 97.9 × 25.8 × 13.7 mm หนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม มีระบบกันรั่ว iCOSM CODE 2.0",
-          "ถ้าอยากเปลี่ยนค่าโอห์ม VOOPOO ระบุให้ G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบน ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 โอห์ม ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้ โดย VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
+          "ถ้าอยากเปลี่ยนค่าโอห์ม VOOPOO ระบุให้ G3 mini ใช้หัวพอต ARGUS แบบเติมด้านบน ในช่วง 0.4 · 0.7 และ 1.0 โอห์ม หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 1.0 โอห์ม ส่วนตัวเลือกหัวเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกแบบ ซึ่ง VOOPOO ไม่ได้ระบุให้ใช้กับรุ่นนี้ โดย VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้",
           "สองเครื่องนี้คือสองขั้วของงานที่ชิปทำ DRAG 6 ยกการตั้งค่าให้คุณคุมเอง ARGUS G3 mini ให้ชิปคุมแทน ถ้ายังไม่แน่ใจว่าอยากคุมวัตต์เองไหม อ่านที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
         ],
       },
@@ -230,7 +230,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 是一台 auto-draw 换弹主机，没有点火键。规格表写明功率会按所装烟弹自动调节，最高 30W——也就是说平台支持不止一种阻值。",
           "但盒内只有一种：ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL，配 iCOSM CODE 2.0 防漏系统，电池 1350mAh。",
-          "按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆。本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 Top Fill 0.4 欧姆（比盒内的更低）和 0.7 欧姆（与盒内相同）两个选项；其中的 1.2 欧姆选项是侧注式烟弹，不在 G3 mini 的范围内。",
+          "按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆。本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 Top Fill 0.4 欧姆（比盒内的更低）、0.7 欧姆（与盒内相同）和 1.0 欧姆（比盒内的更高）三个选项；页面上的侧注式选项（0.7 和 1.2 欧姆）是另一种烟弹，VOOPOO 并未将其列为 G3 mini 可用的烟弹。",
           "上面提到的 MTL 和 RDL 吸法感受有何不同，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
         ],
       },
@@ -297,7 +297,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) 搭载 GENE.AI 芯片，是 auto-draw 设计：没有点火键，吸气即启动，功率按所装烟弹自动调节，最高 30W，没有菜单需要设置。",
           "1350mAh 内置电池，机身 97.9 × 25.8 × 13.7 mm、重 40.85 g。盒内烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆，配 iCOSM CODE 2.0 防漏系统。",
-          "想换阻值的话，按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆；本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 欧姆的 Top Fill 选项，其中的 1.2 欧姆选项是侧注式烟弹，不在 G3 mini 的范围内。VOOPOO 提醒使用前先核对阻值和功率。",
+          "想换阻值的话，按 VOOPOO 的说明，G3 mini 适用 ARGUS Top Fill 烟弹，阻值范围为 0.4、0.7 和 1.0 欧姆；本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 和 1.0 欧姆的 Top Fill 选项；页面上的侧注式选项（0.7 和 1.2 欧姆）是另一种烟弹，VOOPOO 并未将其列为 G3 mini 可用的烟弹。VOOPOO 提醒使用前先核对阻值和功率。",
           "这两台设备是芯片能力的两端：DRAG 6 把设定交给你，ARGUS G3 mini 让芯片替你决定。还不确定自己想不想亲自调功率，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
         ],
       },
