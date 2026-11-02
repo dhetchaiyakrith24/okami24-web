@@ -342,7 +342,7 @@ export function PilotProductDetail({
                 {verifiedRows(product.specifications).map((spec) => (
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
                     {/* The seed stores these rows in Thai; English/Chinese visitors read spec-seed-en.ts (21/10). */}
-                    <dt className="max-w-[45%] shrink-0 text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
+                    <dt className="min-w-[5.5rem] text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
                     <dd className="text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
                   </div>
                 ))}
