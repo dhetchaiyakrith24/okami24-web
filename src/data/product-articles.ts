@@ -3027,6 +3027,297 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       sections: []
     },
   },
+  // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i — every fact = iqos.com/ph ILUMA i kit page (in-app browser 02/11; quotes in
+  // side-session notes articles-0211c/iqos-facts.md). "TEREA only" stays out (tagline + short description say it twice). No health
+  // or cigarette comparisons. Thai-only guides are linked from th only. Thai = thai-copy 02/11.
+  "iqosheet-18": {
+    th: {
+      lede: "ข้อมูลด้านล่างสรุปจากหน้าของ IQOS เอง ตั้งแต่ของที่อยู่ในกล่อง ILUMA i จำนวนก้านที่สูบต่อกันได้ และการทำงานของแต่ละความสามารถ ไปจนถึงเรื่องการทำความสะอาดเครื่อง",
+      sections: [
+        {
+          heading: "ในกล่อง ILUMA i มีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีของสามชิ้น คือตัวสูบ กล่องชาร์จพกพา และสาย USB-C ตัวสูบทำจากอะลูมิเนียม ส่วนกล่องชาร์จเป็นพลาสติกที่ทนทานและทนความร้อน มาในทรงที่คุ้นตาของ IQOS",
+            "ก่อนใช้ครั้งแรก IQOS แนะนำให้ชาร์จตัวสูบ 12 นาที ส่วนกล่องชาร์จใช้เวลาชาร์จเต็มประมาณ 2 ชั่วโมง 15 นาที และแบตของกล่องชาร์จเมื่อเต็มแล้วใช้ได้รวมราว 20 ก้าน",
+          ],
+        },
+        {
+          heading: "สูบต่อกันได้กี่ก้าน",
+          paragraphs: [
+            "ถ้าใช้โหมด Performance และไม่ได้พักการสูบ ตัวสูบของ ILUMA i จะสูบต่อกันได้สูงสุด 3 ก้าน ก่อนจะต้องวางกลับลงไปชาร์จในกล่อง",
+            "โหมด Performance เป็นค่าเริ่มต้นของเครื่อง ส่วนโหมด Eco เปลี่ยนได้ผ่าน IQOS web app การเลือกระหว่างสองโหมดนี้ IQOS เรียกว่า FlexBattery และระบุว่าถ้าใช้โหมด Eco มาตลอด ตัวสูบจะใช้งานได้นานขึ้น แต่ผลที่ได้จริงจะต่างกันไปตามการใช้งานของแต่ละคน",
+          ],
+        },
+        {
+          heading: "จอทัชบอกอะไร พักการสูบได้นานแค่ไหน",
+          paragraphs: [
+            "จอบนตัวสูบจะบอกว่ากำลังอุ่นเครื่องอยู่หรืออุ่นเสร็จแล้ว ก้านที่สูบอยู่เหลือเวลาอีกเท่าไหร่ และยังสูบต่อได้อีกหนึ่งหรือสองก้าน",
+            "ระหว่างสูบ พักไว้ได้นานสุด 8 นาทีแล้วกลับมาสูบต่อจากเดิม ถ้าไม่กลับมาภายใน 8 นาที ตัวสูบจะปิดเองและก้านนั้นก็จบไป",
+            "การพักใช้ได้เฉพาะในโหมด Performance ช่วง 3 นาทีแรกหรือ 8 พัฟแรกของก้าน และเมื่อพักไปแล้ว ตัวสูบจะสูบต่อกันได้สูงสุดสองก้าน โดยพักได้เพียงก้านเดียวในสองก้านนั้น",
+          ],
+        },
+        {
+          heading: "FlexPuff ทำงานตอนไหน",
+          paragraphs: [
+            "พอใกล้หมดก้าน เครื่องจะเช็คเองว่ายาสูบในก้านใช้หมดแล้วหรือยัง ถ้ายังเหลือ เครื่องจะเพิ่มให้อีก 4 พัฟโดยอัตโนมัติ และวงไฟบนจอจะยาวขึ้นทวนเข็มนาฬิกาไปถึงตำแหน่ง 9 นาฬิกา ทั้งหมดนี้เครื่องทำให้เอง",
+            "IQOS ระบุว่าการทำงานและจำนวนพัฟที่ได้เพิ่มจะต่างกันไปตามการสูบของแต่ละคน บางก้านจึงอาจไม่ได้พัฟเพิ่ม FlexPuff ทำงานในโหมด Eco ได้ด้วย แต่ก้านที่พักการสูบไปแล้วจะไม่มี FlexPuff",
+          ],
+        },
+        {
+          heading: "ต้องทำความสะอาดไหม",
+          paragraphs: [
+            "SMARTCORE INDUCTION SYSTEM ของ ILUMA i อุ่นยาสูบโดยไม่ใช้ใบมีดให้ความร้อน ส่วนเรื่องการทำความสะอาด IQOS ระบุว่าไม่มีเศษยาสูบตกค้าง และไม่ต้องทำความสะอาด",
+            "ถ้าชาร์จไม่เข้า อยากรีเซ็ตเครื่อง หรืออยากรู้ว่าสัญลักษณ์บนจอหมายถึงอะไร อ่านต่อได้ที่ [IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า](/guides/iqos-iluma-i-reset-and-charging)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Everything below comes from IQOS's own page: what's in the ILUMA i box, how many sticks you can use in a row, how each feature works, and whether the device needs cleaning.",
+      sections: [
+        {
+          heading: "What's in the ILUMA i box?",
+          paragraphs: [
+            "Three things: the Holder, the Pocket Charger and a USB-C cable. The Holder is aluminium; the Pocket Charger is durable, heat-resistant plastic in IQOS's familiar shape. IQOS recommends charging the Holder for 12 minutes before first use. The Pocket Charger takes about 2 hours 15 minutes to charge fully, and a full charge covers about 20 sticks in total.",
+          ],
+        },
+        {
+          heading: "How many sticks in a row?",
+          paragraphs: [
+            "With Performance Mode on and no pause used, the ILUMA i Holder gives up to 3 sticks in a row before it goes back in the Pocket Charger. Performance Mode is the default; you can switch to Eco Mode in the IQOS web app. IQOS calls this choice FlexBattery and says that using Eco Mode throughout helps the Holder last longer, though results vary with personal use.",
+          ],
+        },
+        {
+          heading: "What does the Touch Screen show, and how long can I pause?",
+          paragraphs: [
+            "The screen shows the pre-heating status, the time left on the stick in use, and whether one or two more sticks are available.",
+            "You can pause for up to 8 minutes and pick up where you left off. If you don't resume within 8 minutes, the Holder switches off and that stick is finished. Pause works only in Performance Mode, during the first 3 minutes or 8 puffs of a stick. Once you pause, the Holder gives up to two sticks in a row, and only one of them can be paused.",
+          ],
+        },
+        {
+          heading: "When does FlexPuff kick in?",
+          paragraphs: [
+            "Near the end of a stick, the device checks whether the tobacco has been fully used. If not, it adds 4 extra puffs automatically, and the light ring on the screen extends counter-clockwise to the 9 o'clock position to show it. You don't need to do anything. IQOS says activation and the number of puffs depend on individual use, so not every stick gets them. FlexPuff also works in Eco Mode, but not on a stick you have paused.",
+          ],
+        },
+        {
+          heading: "Does it need cleaning?",
+          paragraphs: [
+            "The ILUMA i heats tobacco with the SMARTCORE INDUCTION SYSTEM, which uses no heating blade. IQOS says there is no tobacco residue and no cleaning needed.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 IQOS 官方页面：ILUMA i 盒内有什么、可以连续使用几支、各项功能如何运作，以及设备是否需要清洁。",
+      sections: [
+        {
+          heading: "ILUMA i 盒内有什么？",
+          paragraphs: [
+            "盒内有三样：烟具、便携充电盒和 USB-C 充电线。烟具为铝制，充电盒采用 IQOS 经典外形，由耐用、耐热的塑料制成。IQOS 建议首次使用前先给烟具充电 12 分钟；充电盒充满约需 2 小时 15 分钟，充满后总共可供约 20 支使用。",
+          ],
+        },
+        {
+          heading: "可以连续使用几支？",
+          paragraphs: [
+            "在 Performance 模式下且未使用暂停时，ILUMA i 烟具最多可连续使用 3 支，之后需放回充电盒充电。Performance 是默认模式，也可以在 IQOS web app 中切换为 Eco 模式。IQOS 把这两种模式的选择称为 FlexBattery，并表示一直使用 Eco 模式能延长烟具的使用寿命，实际效果因个人使用情况而异。",
+          ],
+        },
+        {
+          heading: "触控屏显示什么？可以暂停多久？",
+          paragraphs: [
+            "屏幕会显示预热状态、当前这支还剩多少时间，以及还能再用一支还是两支。",
+            "抽吸中可暂停最长 8 分钟，再从中断处继续；8 分钟内未恢复，烟具会自动关机，这支即结束。暂停仅在 Performance 模式下、每支的前 3 分钟或前 8 口内可用。使用暂停后，烟具最多可连续使用两支，且只有其中一支能暂停。",
+          ],
+        },
+        {
+          heading: "FlexPuff 什么时候起作用？",
+          paragraphs: [
+            "临近结束时，设备会自动判断这支是否已充分使用；如果还没有，会自动增加 4 口，屏幕上的光环会逆时针延伸到 9 点钟位置，无需任何操作。IQOS 表示是否触发及额外口数因个人使用习惯而异，并非每支都会有。Eco 模式下也可使用 FlexPuff，但暂停过的那一支不会触发。",
+          ],
+        },
+        {
+          heading: "需要清洁吗？",
+          paragraphs: [
+            "ILUMA i 采用 SMARTCORE INDUCTION SYSTEM 加热烟草，无需加热片。IQOS 表示设备不会残留烟草，也无需清洁。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i PRIME — iqos.com/ph ILUMA i PRIME kit page (+ the ILUMA i page for the charger
+  // comparison), in-app browser 02/11. The page's "two sticks one after the other" vs "up to 3 consecutive uses" conflict = no number.
+  "iqosheet-16": {
+    th: {
+      lede: "ILUMA i PRIME ใช้ระบบเดียวกับ ILUMA i จุดที่ต่างอยู่ที่วัสดุ ขนาดกล่องชาร์จ และของแต่งกล่องชาร์จ ข้อมูลด้านล่างสรุปจากหน้าของ IQOS ว่าในกล่องมีอะไร สองรุ่นนี้ต่างกันตรงไหน และตัวสูบทำอะไรได้บ้าง",
+      sections: [
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวสูบ กล่องชาร์จพกพา และสาย USB-C มาให้ ตัวสูบชาร์จเต็มในราว 12 นาที ส่วนกล่องชาร์จใช้เวลาประมาณ 2 ชั่วโมง 15 นาที และเมื่อเต็มแล้วใช้ได้รวมราว 20 ก้าน",
+          ],
+        },
+        {
+          heading: "ILUMA i PRIME ต่างจาก ILUMA i ตรงไหน",
+          paragraphs: [
+            "ตัวสูบและกล่องชาร์จของ PRIME ใช้อะลูมิเนียมร่วมกับกลไกล็อกที่ทำจากวัสดุหลายชนิด ส่วน ILUMA i มีอะลูมิเนียมเฉพาะที่ตัวสูบ ตัวกล่องชาร์จเป็นพลาสติก",
+            "ทั้งสองรุ่นมี Ring Sets ไว้แต่งตัวสูบเหมือนกัน ส่วนกล่องชาร์จของ PRIME มี Wraps ไว้หุ้ม และตัวสูบของ PRIME เป็นสีไล่เฉด",
+            "ตัวสูบมีขนาดเท่ากับของ ILUMA i คือเส้นผ่านศูนย์กลาง 14.5mm สูง 101mm หนัก 31 กรัม ส่วนกล่องชาร์จของ PRIME กว้าง 44.7mm สูง 117.2mm และหนัก 134 กรัม เทียบกับกล่องชาร์จของ ILUMA i ที่กว้าง 47mm สูง 121.5mm และหนัก 112 กรัม",
+          ],
+        },
+        {
+          heading: "ตัวสูบทำอะไรได้บ้าง",
+          paragraphs: [
+            "บนตัวสูบมีจอทัชที่บอกสถานะการอุ่นเครื่อง เวลาที่เหลือของก้าน และจำนวนก้านที่ยังสูบต่อได้ ถ้าต้องหยุดกลางคัน ก็พักไว้ได้นานสุด 8 นาทีแล้วค่อยกลับมาสูบต่อ โดยพักได้ในโหมด Performance ช่วง 3 นาทีแรกหรือ 8 พัฟแรกของก้าน",
+            "เรื่องแบต IQOS มี FlexBattery ให้เลือกระหว่างโหมด Performance ที่ตั้งมาเป็นค่าเริ่มต้น กับโหมด Eco ผ่าน IQOS web app ส่วน FlexPuff จะเพิ่มให้อีก 4 พัฟเองเมื่อเครื่องเช็คแล้วว่าก้านยังใช้ไม่หมด โดยไม่ต้องกดอะไร แต่บางก้านอาจไม่ได้พัฟเพิ่ม เพราะขึ้นกับการสูบของแต่ละคน",
+            "ถ้ากำลังชั่งใจระหว่าง PRIME กับ ILUMA i ONE ซึ่งเป็นเครื่องชิ้นเดียว อ่านต่อได้ที่ [IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างไหม](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The ILUMA i PRIME runs on the same system as the ILUMA i; it differs in materials, charger size and charger accessories. Below, from IQOS's own page: what's in the box, how the two compare, and what the Holder can do.",
+      sections: [
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The Holder, the Pocket Charger and a USB-C cable. The Holder charges fully in about 12 minutes; the Pocket Charger takes about 2 hours 15 minutes and, once full, covers about 20 sticks.",
+          ],
+        },
+        {
+          heading: "How is the ILUMA i PRIME different from the ILUMA i?",
+          paragraphs: [
+            "The PRIME's Holder and Pocket Charger combine aluminium with a locking mechanism made of various materials; on the ILUMA i, only the Holder is aluminium and the Pocket Charger is plastic. Both take Ring Sets on the Holder; the PRIME's Pocket Charger also takes Wraps, and its Holder has a gradient finish.",
+            "The Holder is the same size as the ILUMA i's: 14.5 mm across, 101 mm tall, 31 g. The PRIME's Pocket Charger is 44.7 mm wide, 117.2 mm tall and 134 g, against 47 mm, 121.5 mm and 112 g for the ILUMA i.",
+          ],
+        },
+        {
+          heading: "What can the Holder do?",
+          paragraphs: [
+            "The Holder's Touch Screen shows the pre-heating status, the time left and how many more sticks you can use. If you need to stop midway, you can pause for up to 8 minutes and resume, in Performance Mode during the first 3 minutes or 8 puffs of a stick. FlexBattery lets you choose between Performance Mode, the default, and Eco Mode in the IQOS web app. FlexPuff adds 4 puffs on its own when the device finds the stick not fully used, with nothing to press, though not every stick gets them, as it depends on individual use.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "ILUMA i PRIME 与 ILUMA i 采用同一套系统，不同之处在于材质、充电盒尺寸和充电盒配件。以下内容整理自 IQOS 官方页面：盒内有什么、两款有何不同，以及烟具有哪些功能。",
+      sections: [
+        {
+          heading: "盒内有什么？",
+          paragraphs: [
+            "盒内有烟具、便携充电盒和 USB-C 充电线。烟具约 12 分钟充满；充电盒约需 2 小时 15 分钟，充满后总共可供约 20 支使用。",
+          ],
+        },
+        {
+          heading: "ILUMA i PRIME 和 ILUMA i 有什么不同？",
+          paragraphs: [
+            "PRIME 的烟具和充电盒采用铝材，并搭配由多种材质制成的锁扣结构；ILUMA i 只有烟具为铝制，充电盒为塑料。两款的烟具都可搭配 Ring Sets；PRIME 的充电盒还可搭配 Wraps，烟具为渐变色。",
+            "烟具尺寸与 ILUMA i 相同：直径 14.5 mm、高 101 mm、重 31 g。PRIME 充电盒宽 44.7 mm、高 117.2 mm、重 134 g；ILUMA i 的充电盒则为宽 47 mm、高 121.5 mm、重 112 g。",
+          ],
+        },
+        {
+          heading: "烟具有哪些功能？",
+          paragraphs: [
+            "烟具上的触控屏会显示预热状态、剩余时间和还能连续使用的支数。中途需要停下时，可暂停最长 8 分钟再继续，限 Performance 模式下每支的前 3 分钟或前 8 口。FlexBattery 可在 IQOS web app 中选择默认的 Performance 模式或 Eco 模式；FlexPuff 在判断这支尚未充分使用时会自动增加 4 口，无需任何操作，但因个人使用习惯不同，并非每支都会有。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i ONE — iqos.com/ph ILUMA i ONE kit page (in-app browser 02/11). One-piece is in
+  // the tagline + short description already (not repeated). Autostart is named, not defined, on IQOS's page — said no further.
+  // No colour count here or on iqosheet-16: the page's own colour options list every colour, and IQOS's count differs from them.
+  "iqosheet-17": {
+    th: {
+      lede: "ILUMA i ONE มีอะไรมาในกล่อง ชาร์จนานแค่ไหน ปรับแต่งอะไรได้บ้าง และใช้งานต่างจาก ILUMA i และ i PRIME ตรงไหน เราสรุปจากหน้าของ IQOS ไว้ด้านล่างนี้",
+      sections: [
+        {
+          heading: "ในกล่องมีอะไร ชาร์จนานแค่ไหน",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ILUMA i ONE กับสาย USB-C และ IQOS ระบุว่าชาร์จเต็มใช้เวลาประมาณ 1 ชั่วโมง 30 นาที",
+            "ตัวเครื่องสูง 122.4mm หนัก 73.9 กรัม และผิวเป็นอะลูมิเนียมเนียนเรียบ",
+          ],
+        },
+        {
+          heading: "ต่างจาก ILUMA i กับ i PRIME ตรงไหน",
+          paragraphs: [
+            "ILUMA i และ i PRIME ใช้ตัวสูบคู่กับกล่องชาร์จ ตัวสูบของสองรุ่นนั้นใช้ต่อกันได้ไม่เกิน 3 ก้าน แล้วต้องวางกลับลงไปชาร์จในกล่อง ส่วน ILUMA i ONE สูบต่อกันได้ราว 20 ก้านโดยไม่ต้องชาร์จคั่น",
+            "ในตารางเทียบรุ่นของ IQOS รุ่น ONE ไม่มีจอทัช การพักการสูบ และ FlexBattery แบบที่สองรุ่นนั้นมี ถ้าอยากได้จอที่บอกเวลาที่เหลือ หรืออยากพักการสูบแล้วกลับมาสูบต่อได้ ลองดู [IQOS ILUMA i](/products/iqosheet-18) ส่วนการเทียบสามรุ่นทีละเรื่อง อ่านต่อได้ที่ [IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างไหม](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          ],
+        },
+        {
+          heading: "FlexPuff ทำงานยังไง",
+          paragraphs: [
+            "เครื่องนี้มี Autostart / Autostop และ FlexPuff พอใกล้หมดก้าน FlexPuff จะเช็คว่ายาสูบยังเหลือไหม ถ้ายังมีก็เพิ่มให้อีกสูงสุด 4 พัฟ แต่จำนวนพัฟที่ได้จะต่างกันในแต่ละคน และบางก้านอาจไม่มีพัฟเพิ่ม",
+          ],
+        },
+        {
+          heading: "ปรับแต่งอะไรได้บ้าง",
+          paragraphs: [
+            "ตั้งค่าไฟและการสั่นของเครื่องได้ตามที่ชอบ และ IQOS ยังมีปลอกสวมที่ช่วยปกป้องตัวเครื่องอีกชั้นด้วย",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "What comes in the ILUMA i ONE box, how long it takes to charge, how it differs from the ILUMA i and i PRIME, and what you can personalise, all summarised below from IQOS's own page.",
+      sections: [
+        {
+          heading: "What is in the box, and how long does it charge?",
+          paragraphs: [
+            "Just the ILUMA i ONE and a USB-C cable. IQOS says a full charge takes about 1 hour 30 minutes. The device is 122.4 mm tall, weighs 73.9 g and has a smooth aluminium finish.",
+          ],
+        },
+        {
+          heading: "How is it different from the ILUMA i and i PRIME?",
+          paragraphs: [
+            "The ILUMA i and i PRIME pair a Holder with a Pocket Charger; the Holder manages up to 3 sticks in a row before it goes back in to charge. The ILUMA i ONE goes for about 20 sticks with no charging in between. In IQOS's comparison table, the ONE does not have the Touch Screen, Pause Mode or FlexBattery of the other two. If you want a screen that shows the time left, or the option to pause and resume, take a look at the [IQOS ILUMA i](/products/iqosheet-18).",
+          ],
+        },
+        {
+          heading: "How does FlexPuff work?",
+          paragraphs: [
+            "The device has Autostart / Autostop and FlexPuff. FlexPuff checks near the end of a stick whether any tobacco is left and, if so, adds up to 4 more puffs. The number varies with individual use, and some sticks may get no extra puffs at all.",
+          ],
+        },
+        {
+          heading: "What can I personalise?",
+          paragraphs: [
+            "You can set the lights and vibration, and IQOS makes sleeves that also add protection.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "ILUMA i ONE 盒内有什么、充电要多久、与 ILUMA i 和 i PRIME 有何不同、可以怎样个性化，以下根据 IQOS 官方页面整理。",
+      sections: [
+        {
+          heading: "盒内有什么？充电要多久？",
+          paragraphs: [
+            "盒内只有 ILUMA i ONE 主机和 USB-C 充电线。IQOS 表示充满约需 1 小时 30 分钟。机身高 122.4 mm、重 73.9 g，外壳为顺滑的铝制表面。",
+          ],
+        },
+        {
+          heading: "和 ILUMA i、i PRIME 有什么不同？",
+          paragraphs: [
+            "ILUMA i 和 i PRIME 由烟具和充电盒组成，烟具最多连续使用 3 支后，就要放回充电盒充电；ILUMA i ONE 则可连续使用约 20 支，中途无需充电。在 IQOS 的型号对比表中，ONE 没有另外两款的触控屏、暂停模式和 FlexBattery。如果想要能显示剩余时间的屏幕，或希望可以暂停后继续，可以看看 [IQOS ILUMA i](/products/iqosheet-18)。",
+          ],
+        },
+        {
+          heading: "FlexPuff 怎么运作？",
+          paragraphs: [
+            "设备具备 Autostart / Autostop 和 FlexPuff。FlexPuff 会在临近结束时检查烟草是否还有剩余，如有则最多再增加 4 口。额外口数因个人使用习惯而异，有些烟支可能不会增加。",
+          ],
+        },
+        {
+          heading: "可以怎样个性化？",
+          paragraphs: [
+            "可以设置灯光和振动，IQOS 也推出了保护套，能为机身多加一层保护。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
   "joiway-f4": {
     th: {
