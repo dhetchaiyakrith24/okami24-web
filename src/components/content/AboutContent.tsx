@@ -48,6 +48,24 @@ export function AboutContent({ brands, orderingEnabled = true }: { brands: Brand
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">{c.who}</p>
           </section>
 
+          {/* Round SEO rankings back (02/11): who runs the shop (owner: option A, the team). New copy, so it gets the
+              render-time Thai typography like the brand ledes below; the channel name links to the shop's YouTube (BSOT §3). */}
+          <section>
+            <h2 className="font-display text-2xl font-semibold text-foreground">{c.teamTitle}</h2>
+            <p className="mt-3 text-base leading-relaxed text-foreground-muted">
+              <ThaiText>{c.team.beforeChannel}</ThaiText>
+              <Link href={CONTACT.youtubeUrl} target="_blank" rel="noopener noreferrer" className={link}>
+                {c.team.channel}
+              </Link>
+              <ThaiText>{c.team.afterChannel}</ThaiText>
+            </p>
+            {c.team.more.map((line, i) => (
+              <p key={i} className="mt-3 text-base leading-relaxed text-foreground-muted">
+                <ThaiText>{line}</ThaiText>
+              </p>
+            ))}
+          </section>
+
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">{c.selectionTitle}</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
