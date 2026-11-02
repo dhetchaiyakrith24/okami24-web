@@ -66,6 +66,16 @@ export function formatStockChoiceAlert(orderNumber: string, choice: "swap" | "re
   ].join("\n");
 }
 
+/** The bot's answer when the website is restarting for an update and a slip check would not finish before the old
+ *  server is stopped (03/11). The unfinished check may already be logged, so the re-sent slip can read "seen before"
+ *  with about this time — the second line tells staff that is this attempt, not a reused slip. */
+export function formatRestartSlipReply(nowIso: string): string {
+  return [
+    "⏳ เว็บกำลังอัปเดต ตรวจสลิปนี้ไม่ทัน — ส่งรูปสลิปเดิมอีกครั้งในอีก 2–3 นาที",
+    `ถ้าผลรอบใหม่บอกว่า "เคยตรวจแล้ว" ครั้งแรกราว ${bangkokTime(nowIso)} = ครั้งนี้เอง ไม่ใช่สลิปซ้ำ`,
+  ].join("\n");
+}
+
 /** The bot's answer to a slip dropped into the "OKM Slip" group — the same verdicts as the staff page. */
 export function formatSlipReply(result: SlipCheckResponse, attachedOrder: string | null): string {
   if (!result.ok) {
