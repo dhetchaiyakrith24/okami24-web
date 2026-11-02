@@ -1266,7 +1266,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-70/card-v4.webp",
+      src: "/assets/products/coil-70/card-v4-wm.webp",
       alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo",
       angle: "Card re-centred on its visual weight 23/10 (image line 1: same render moved 77 px right, 0.6 of the gap, as coil-53 card-v4). Box back, studio re-shoot 10/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photo of the 0.7Ω box back and its blister of 5 (dotmod no longer lists 0.7Ω, so no maker photo exists); box art, every printed mark and the coil shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2645,7 +2645,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
   },
   "Coil-70": {
-    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
+    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
   },
   "Coil-89": {
     "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
