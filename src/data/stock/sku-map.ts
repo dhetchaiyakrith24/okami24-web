@@ -701,6 +701,10 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   } },
   "coil-70": { parent: null, options: {
     "Coil-70-2": null,
+    // Details 03/11: dotmod's current dotCoils values — no SKU.
+    "coil-70-verified-0-15ω": null,
+    "coil-70-verified-0-3ω": null,
+    "coil-70-verified-0-6ω": null,
   } },
   "coil-72": { parent: "Coil-72", options: {
     "Coil-72-1": "Coil-72-1",
