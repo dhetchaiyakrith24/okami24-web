@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-03",
-  "endDate": "2026-10-30",
+  "startDate": "2026-10-04",
+  "endDate": "2026-10-31",
   "dimensions": [
    "query",
    "page"
@@ -13,10 +13,10 @@
     "voopoo drag 6 ราคา",
     "https://okami24.store/products/drag-6"
    ],
-   "clicks": 21,
-   "impressions": 40,
-   "ctr": 0.525,
-   "position": 1.75
+   "clicks": 22,
+   "impressions": 41,
+   "ctr": 0.5365853658536586,
+   "position": 1.7560975609756098
   },
   {
    "keys": [
@@ -24,9 +24,19 @@
     "https://okami24.store/products/pod-systems"
    ],
    "clicks": 20,
-   "impressions": 69,
-   "ctr": 0.2898550724637681,
-   "position": 4.434782608695652
+   "impressions": 66,
+   "ctr": 0.30303030303030304,
+   "position": 4.4393939393939394
+  },
+  {
+   "keys": [
+    "okami24",
+    "https://okami24.store/"
+   ],
+   "clicks": 19,
+   "impressions": 33,
+   "ctr": 0.5757575757575758,
+   "position": 1
   },
   {
    "keys": [
@@ -34,19 +44,9 @@
     "https://okami24.store/products/drag-6"
    ],
    "clicks": 19,
-   "impressions": 75,
-   "ctr": 0.25333333333333335,
-   "position": 6.92
-  },
-  {
-   "keys": [
-    "okami24",
-    "https://okami24.store/"
-   ],
-   "clicks": 17,
-   "impressions": 31,
-   "ctr": 0.5483870967741935,
-   "position": 1
+   "impressions": 73,
+   "ctr": 0.2602739726027397,
+   "position": 6.917808219178082
   },
   {
    "keys": [
@@ -83,10 +83,10 @@
     "voopoo argus g4 ราคา",
     "https://okami24.store/products/argus-g4"
    ],
-   "clicks": 7,
-   "impressions": 14,
-   "ctr": 0.5,
-   "position": 1.7857142857142856
+   "clicks": 8,
+   "impressions": 15,
+   "ctr": 0.5333333333333333,
+   "position": 1.7333333333333334
   },
   {
    "keys": [
@@ -100,33 +100,23 @@
   },
   {
    "keys": [
+    "caliburn g5 ราคา",
+    "https://okami24.store/products/caliburn-g5"
+   ],
+   "clicks": 6,
+   "impressions": 12,
+   "ctr": 0.5,
+   "position": 1.3333333333333333
+  },
+  {
+   "keys": [
     "voopoo",
     "https://okami24.store/brands/voopoo"
    ],
    "clicks": 6,
-   "impressions": 16,
-   "ctr": 0.375,
-   "position": 15.0625
-  },
-  {
-   "keys": [
-    "voopoo vmate i3",
-    "https://okami24.store/products/vmate-i3"
-   ],
-   "clicks": 6,
-   "impressions": 8,
-   "ctr": 0.75,
-   "position": 12.375
-  },
-  {
-   "keys": [
-    "caliburn g5 ราคา",
-    "https://okami24.store/products/caliburn-g5"
-   ],
-   "clicks": 5,
-   "impressions": 11,
-   "ctr": 0.45454545454545453,
-   "position": 1.3636363636363638
+   "impressions": 14,
+   "ctr": 0.42857142857142855,
+   "position": 14.785714285714286
   },
   {
    "keys": [
@@ -144,9 +134,9 @@
     "https://okami24.store/products/pod-kits"
    ],
    "clicks": 5,
-   "impressions": 57,
-   "ctr": 0.08771929824561403,
-   "position": 7
+   "impressions": 31,
+   "ctr": 0.16129032258064516,
+   "position": 9.35483870967742
   },
   {
    "keys": [
@@ -154,9 +144,19 @@
     "https://okami24.store/products/drag-6"
    ],
    "clicks": 4,
-   "impressions": 21,
-   "ctr": 0.19047619047619047,
-   "position": 9.047619047619047
+   "impressions": 19,
+   "ctr": 0.21052631578947367,
+   "position": 9.31578947368421
+  },
+  {
+   "keys": [
+    "voopoo vmate i3",
+    "https://okami24.store/products/vmate-i3"
+   ],
+   "clicks": 4,
+   "impressions": 6,
+   "ctr": 0.6666666666666666,
+   "position": 12.5
   },
   {
    "keys": [
@@ -184,9 +184,9 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 3,
-   "impressions": 187,
-   "ctr": 0.016042780748663103,
-   "position": 6.475935828877005
+   "impressions": 170,
+   "ctr": 0.01764705882352941,
+   "position": 6.358823529411764
   },
   {
    "keys": [
@@ -234,9 +234,9 @@
     "https://okami24.store/products/argus-g4-mini"
    ],
    "clicks": 2,
-   "impressions": 13,
-   "ctr": 0.15384615384615385,
-   "position": 9.307692307692308
+   "impressions": 8,
+   "ctr": 0.25,
+   "position": 11.375
   },
   {
    "keys": [
@@ -254,9 +254,9 @@
     "https://okami24.store/products/caliburn-g4-pro"
    ],
    "clicks": 2,
-   "impressions": 3,
-   "ctr": 0.6666666666666666,
-   "position": 11
+   "impressions": 2,
+   "ctr": 1,
+   "position": 12
   },
   {
    "keys": [
@@ -274,9 +274,9 @@
     "https://okami24.store/products/infy-20k"
    ],
    "clicks": 2,
-   "impressions": 67,
-   "ctr": 0.029850746268656716,
-   "position": 12.507462686567164
+   "impressions": 60,
+   "ctr": 0.03333333333333333,
+   "position": 12.833333333333334
   },
   {
    "keys": [
@@ -284,9 +284,9 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 2,
-   "impressions": 52,
-   "ctr": 0.038461538461538464,
-   "position": 10.326923076923077
+   "impressions": 51,
+   "ctr": 0.0392156862745098,
+   "position": 10.333333333333334
   },
   {
    "keys": [
@@ -370,33 +370,13 @@
   },
   {
    "keys": [
-    "voopoo drag 6 ราคา",
-    "https://okami24.store/brands/voopoo"
-   ],
-   "clicks": 2,
-   "impressions": 3,
-   "ctr": 0.6666666666666666,
-   "position": 12.333333333333334
-  },
-  {
-   "keys": [
-    "voopoo drag6",
-    "https://okami24.store/products/drag-6"
-   ],
-   "clicks": 2,
-   "impressions": 5,
-   "ctr": 0.4,
-   "position": 9.2
-  },
-  {
-   "keys": [
     "argus g4 mini",
     "https://okami24.store/products/argus-g4-mini"
    ],
    "clicks": 1,
-   "impressions": 9,
-   "ctr": 0.1111111111111111,
-   "position": 4.888888888888889
+   "impressions": 6,
+   "ctr": 0.16666666666666666,
+   "position": 5.666666666666667
   },
   {
    "keys": [
@@ -510,16 +490,6 @@
   },
   {
    "keys": [
-    "dotmod",
-    "https://okami24.store/brands/dotmod"
-   ],
-   "clicks": 1,
-   "impressions": 4,
-   "ctr": 0.25,
-   "position": 47.5
-  },
-  {
-   "keys": [
     "dotmod thailand",
     "https://okami24.store/brands/dotmod"
    ],
@@ -564,9 +534,9 @@
     "https://okami24.store/brands/infy"
    ],
    "clicks": 1,
-   "impressions": 6,
-   "ctr": 0.16666666666666666,
-   "position": 75.33333333333333
+   "impressions": 4,
+   "ctr": 0.25,
+   "position": 64.5
   },
   {
    "keys": [
@@ -620,16 +590,6 @@
   },
   {
    "keys": [
-    "nexbar clear 18k",
-    "https://okami24.store/brands/wotofo"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 51
-  },
-  {
-   "keys": [
     "okami pod",
     "https://okami24.store/products/disposables"
    ],
@@ -644,8 +604,8 @@
     "https://okami24.store/products/disposables"
    ],
    "clicks": 1,
-   "impressions": 19,
-   "ctr": 0.05263157894736842,
+   "impressions": 21,
+   "ctr": 0.047619047619047616,
    "position": 1
   },
   {
@@ -674,9 +634,9 @@
     "https://okami24.store/products/relx-creator"
    ],
    "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 21
+   "impressions": 1,
+   "ctr": 1,
+   "position": 38
   },
   {
    "keys": [
@@ -760,6 +720,26 @@
   },
   {
    "keys": [
+    "voopoo drag 6 ราคา",
+    "https://okami24.store/brands/voopoo"
+   ],
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 11
+  },
+  {
+   "keys": [
+    "voopoo drag6",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 1,
+   "impressions": 4,
+   "ctr": 0.25,
+   "position": 9
+  },
+  {
+   "keys": [
     "voopoo g4 mini",
     "https://okami24.store/products/argus-g4-mini"
    ],
@@ -800,16 +780,6 @@
   },
   {
    "keys": [
-    "เครื่อง ดูด บุหรี่ hnb ราคา",
-    "https://okami24.store/products/heated-tobacco-devices"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 5
-  },
-  {
-   "keys": [
     "20k infy",
     "https://okami24.store/products/infy-20k"
    ],
@@ -844,9 +814,9 @@
     "https://okami24.store/products/argus-g3-mini"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 3
+   "position": 1
   },
   {
    "keys": [
@@ -934,29 +904,9 @@
     "https://okami24.store/brands/uwell"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 63.25
-  },
-  {
-   "keys": [
-    "caliburn g 3",
-    "https://okami24.store/brands/uwell"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 15
-  },
-  {
-   "keys": [
-    "caliburn g 3",
-    "https://okami24.store/products/caliburn-g3-pro-koko"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 5
+   "position": 66.33333333333333
   },
   {
    "keys": [
@@ -987,16 +937,6 @@
    "impressions": 2,
    "ctr": 0,
    "position": 6
-  },
-  {
-   "keys": [
-    "caliburn g3",
-    "https://okami24.store/products/caliburn-g3-pro-koko"
-   ],
-   "clicks": 0,
-   "impressions": 2,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [
@@ -1164,9 +1104,9 @@
     "https://okami24.store/products/pods-cartridges"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 5.666666666666667
+   "position": 6.5
   },
   {
    "keys": [
@@ -1250,6 +1190,16 @@
   },
   {
    "keys": [
+    "dotmod",
+    "https://okami24.store/brands/dotmod"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 64
+  },
+  {
+   "keys": [
     "dotmod atomizer",
     "https://okami24.store/brands/dotmod"
    ],
@@ -1304,9 +1254,9 @@
     "https://okami24.store/products/drag-6"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 6,
    "ctr": 0,
-   "position": 8.714285714285715
+   "position": 9
   },
   {
    "keys": [
@@ -1384,9 +1334,9 @@
     "https://okami24.store/brands/esko-bar"
    ],
    "clicks": 0,
-   "impressions": 11,
+   "impressions": 2,
    "ctr": 0,
-   "position": 4.090909090909091
+   "position": 5
   },
   {
    "keys": [
@@ -1407,16 +1357,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 19
-  },
-  {
-   "keys": [
-    "esko bar switch ราคา",
-    "https://okami24.store/brands/esko-bar"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
   },
   {
    "keys": [
@@ -1714,9 +1654,9 @@
     "https://okami24.store/products/infy-20k"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 6
+   "position": 10
   },
   {
    "keys": [
@@ -1884,9 +1824,9 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 2,
    "ctr": 0,
-   "position": 9.25
+   "position": 8.5
   },
   {
    "keys": [
@@ -1904,9 +1844,9 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 5.666666666666667
+   "position": 5
   },
   {
    "keys": [
@@ -1934,9 +1874,9 @@
     "https://okami24.store/brands/joiway"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 7.25
+   "position": 6.666666666666667
   },
   {
    "keys": [
@@ -2017,16 +1957,6 @@
    "impressions": 3,
    "ctr": 0,
    "position": 9.666666666666666
-  },
-  {
-   "keys": [
-    "m bar 15k",
-    "https://okami24.store/brands/salthub"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [
@@ -2206,7 +2136,7 @@
    "clicks": 0,
    "impressions": 2,
    "ctr": 0,
-   "position": 9
+   "position": 13.5
   },
   {
    "keys": [
@@ -2434,7 +2364,7 @@
     "https://okami24.store/contact"
    ],
    "clicks": 0,
-   "impressions": 14,
+   "impressions": 15,
    "ctr": 0,
    "position": 1
   },
@@ -2464,7 +2394,7 @@
     "https://okami24.store/faq"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 10,
    "ctr": 0,
    "position": 1
   },
@@ -2484,7 +2414,7 @@
     "https://okami24.store/how-to-order"
    ],
    "clicks": 0,
-   "impressions": 12,
+   "impressions": 14,
    "ctr": 0,
    "position": 1
   },
@@ -2504,7 +2434,7 @@
     "https://okami24.store/products"
    ],
    "clicks": 0,
-   "impressions": 13,
+   "impressions": 15,
    "ctr": 0,
    "position": 1
   },
@@ -2534,7 +2464,7 @@
     "https://okami24.store/products/e-liquid"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 6,
    "ctr": 0,
    "position": 1
   },
@@ -2554,7 +2484,7 @@
     "https://okami24.store/products/pod-systems"
    ],
    "clicks": 0,
-   "impressions": 25,
+   "impressions": 27,
    "ctr": 0,
    "position": 1
   },
@@ -2704,9 +2634,9 @@
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 17,
+   "impressions": 14,
    "ctr": 0,
-   "position": 35.8235294117647
+   "position": 36.142857142857146
   },
   {
    "keys": [
@@ -2914,9 +2844,9 @@
     "https://okami24.store/products/pods-cartridges"
    ],
    "clicks": 0,
-   "impressions": 15,
+   "impressions": 9,
    "ctr": 0,
-   "position": 4.866666666666667
+   "position": 6.222222222222222
   },
   {
    "keys": [
@@ -2947,16 +2877,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 12
-  },
-  {
-   "keys": [
-    "rdl vs mtl",
-    "https://okami24.store/guides/understanding-mtl-vs-dtl"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 80
   },
   {
    "keys": [
@@ -3087,16 +3007,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 41
-  },
-  {
-   "keys": [
-    "rincoe",
-    "https://okami24.store/brands/rincoe"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 40
   },
   {
    "keys": [
@@ -3484,9 +3394,9 @@
     "https://okami24.store/products/caliburn-g3-pro-koko"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 4.333333333333334
+   "position": 4.5
   },
   {
    "keys": [
@@ -3554,9 +3464,9 @@
     "https://okami24.store/products/muro-connector-20k"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 7.5
+   "position": 8
   },
   {
    "keys": [
@@ -3724,7 +3634,7 @@
     "https://okami24.store/guides/understanding-mtl-vs-dtl"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
    "position": 99
   },
@@ -3827,26 +3737,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 32
-  },
-  {
-   "keys": [
-    "ขอรูปประกอบหน่อยครับ",
-    "https://okami24.store/brands/esko-bar"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 18
-  },
-  {
-   "keys": [
-    "ขอรูปประกอบหน่อยครับ",
-    "https://okami24.store/products/infy-20k"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 41
   },
   {
    "keys": [
@@ -4160,16 +4050,6 @@
   },
   {
    "keys": [
-    "พอ ต joiway ราคา",
-    "https://okami24.store/brands/joiway"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 8
-  },
-  {
-   "keys": [
     "พอด",
     "https://okami24.store/guides/what-is-a-pod-system"
    ],
@@ -4187,16 +4067,6 @@
    "impressions": 2,
    "ctr": 0,
    "position": 45
-  },
-  {
-   "keys": [
-    "พอต m switch",
-    "https://okami24.store/products/m-switch-kit"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 96
   },
   {
    "keys": [
@@ -4411,16 +4281,6 @@
   {
    "keys": [
     "ราคา",
-    "https://okami24.store/brands/voopoo"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 1
-  },
-  {
-   "keys": [
-    "ราคา",
     "https://okami24.store/products/disposables"
    ],
    "clicks": 0,
@@ -4457,6 +4317,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 6
+  },
+  {
+   "keys": [
+    "ราคา",
+    "https://okami24.store/products/m-switch-kit"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 18
   },
   {
    "keys": [
@@ -4644,9 +4514,9 @@
     "https://okami24.store/products/coil-74"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 9.666666666666666
+   "position": 5.5
   },
   {
    "keys": [
