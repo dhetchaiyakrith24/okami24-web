@@ -97,12 +97,12 @@ export const relxProducts: Product[] = [
     specifications: [
       // Data round (2026-09-24, real browser): relxnow.com "Specifications" — Battery 400mAh · Size 20ml · Charging Port
       // Type-C · Puffs 12000 · Nicotine 3% / 5% · "Upgraded Mega MESH". It states no resistance, so "1.0Ω" is dropped;
-      // "Size 20ml" now settles the capacity row that was left unverified as 18-vs-20mL.
+      // Details 02/11: the same page's description says "a generous 18ml e-liquid capacity" while the table says "Size 20ml" —
+      // RELX contradicts itself, so the capacity row is dropped until a pack or RELX settles it.
       { key: "puffs", label: "Rated puffs", value: "Up to 12,000", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "battery", label: "Battery", value: "400mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "coil", label: "Coil", value: "MEGA MESH coil", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "nicotine", label: "Nicotine strength", value: "3% or 5% nicotine salt", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
-      { key: "capacity", label: "E-liquid capacity", value: "20mL", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
     ],
     features: [
       {

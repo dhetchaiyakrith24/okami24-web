@@ -884,6 +884,8 @@ export const salthubProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "500mAh", sourceStatus: "verified" },
       { key: "format", label: "Format", value: "Ultra-compact reusable body, Zero Cartridge compatible", sourceStatus: "verified" },
+      // Details 02/11: SALTHUB's home page — "Zero Nano Mini portable vape bar with 4 color options"; it names none of them.
+      { key: "colors", label: "Device colours", value: "4 colour options", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [
       {

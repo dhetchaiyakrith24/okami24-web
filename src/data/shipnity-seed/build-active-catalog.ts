@@ -114,6 +114,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "Pod-158-13": "Champagne Gold",
   // Image sweep (19/10): Vmate Pro 2 — Max "Glit Black"; the device and VOOPOO's line-up print "Gilt Black".
   "Pod-176-1": "Gilt Black",
+  // Details 02/11: RELX Essential 2 — Max "Steel silver"; RELX's own colour list (relxnow.my/products/essential-device) spells "Steel Silver".
+  "Pod-157-2": "Steel Silver",
   // List-new (27/10): nexBar CLEAR 18K — Max "Watermelon"; the old seed (Pod-180-4) and the shop page name it Watermelon Ice.
   "Disposable-46-5": "Watermelon Ice",
   // List-new (27/10): Marbo 10K (เทียบแท้) — Max spells "Mocha Latee"; only the "Latte" spelling is corrected.
