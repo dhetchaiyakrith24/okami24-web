@@ -1034,7 +1034,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/eliquid-109/card.webp",
+      src: "/assets/products/eliquid-109/card-wm2.webp",
       alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2384,10 +2384,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Round list19 (19/10): Marbo Freebase — every flavour has a photo: Ice Sparkling (listing round) + Purple · Gold · Pink (image sweep 19/10,
   // from the shop's Freebase posters: the purple bottle prints "Ice Grape", the pink one "Ice Strawberry", the gold one "GOLD").
   "Eliquid-109": {
-    "ELQ-3-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-1.webp", alt: "Marbo Freebase tall-bottle e-liquid, Purple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
-    "ELQ-3-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-2.webp", alt: "Marbo Freebase tall-bottle e-liquid, Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
-    "ELQ-3-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-3.webp", alt: "Marbo Freebase tall-bottle e-liquid, Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
-    "ELQ-3-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-4.webp", alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
+    "ELQ-3-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-1-wm2.webp", alt: "Marbo Freebase tall-bottle e-liquid, Purple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
+    "ELQ-3-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-2-wm2.webp", alt: "Marbo Freebase tall-bottle e-liquid, Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
+    "ELQ-3-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-3-wm2.webp", alt: "Marbo Freebase tall-bottle e-liquid, Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
+    "ELQ-3-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-4-wm2.webp", alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
   },
   // Marbo Saltnic — every flavour has a photo (image sweep 21/10, owner 19/10: every flavour must show): one studio re-shoot per bottle, same light on all.
   // Purple / Black = the warehouse's own ELQ-1 listing photo (the bottles print "Marboro" + "Ice Grape" / "Ice Blast"); Green = ihavevape;
