@@ -2814,7 +2814,7 @@ const NEUTRAL_VARIANT_FALLBACK: Record<string, ProductAsset> = {
   "IQOSHEET-15": {
     kind: "official-photo",
     role: "detail",
-    src: "/assets/products/iqosheet-15/variant-fallback-wm.webp",
+    src: "/assets/products/iqosheet-15/variant-fallback.webp",
     alt: "IQOS TEREA tobacco stick construction — a neutral, non-flavor-specific view",
     angle: "Official manufacturer product-anatomy diagram (iqos.com/ph's own \"TEREA-components\" asset, found on the same official TEREA-variants listing page as the per-flavor pack photos). Shows the real physical stick construction with zero flavor name/color visible anywhere — deliberately chosen so it cannot be mistaken for representing any specific one of the 10 flavors that don't have their own verified photo.",
     transparentBackground: true, // background cut 2026-09-05 by scripts/process-images.ts --fix-opaque (flat white/dark bg → alpha); pixels of the product untouched,
