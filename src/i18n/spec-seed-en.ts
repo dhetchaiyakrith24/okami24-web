@@ -93,7 +93,7 @@ const VALUES_EN: Record<string, string> = {
   "หัวพอตเปล่า ใช้กับคอยล์ TPP": "Empty pod, takes TPP coils",
   "เปลี่ยนคอยล์แยกได้": "Replaceable coil",
   "DRAG 3 Kit, DRAG X Plus Kit (ใช้ร่วมกับคอยล์ตระกูล TPP)": "DRAG 3 Kit, DRAG X Plus Kit (with the TPP coil family)",
-  "GK2 (ทุกค่า) · G2 (0.8/1.2Ω)": "GK2 (all values) · G2 (0.8/1.2Ω)",
+  "GK2 · G2 · X (ทุกค่า)": "GK2 · G2 · X (all values)",
   "เครื่อง KS Quikpro": "KS Quikpro device",
   "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้": "IQOS ILUMA (every model) only — not earlier models",
   "TEREA เท่านั้น": "TEREA only",
