@@ -24,6 +24,11 @@
   --accent-steel: #6fb8d8;
   --accent-steel-strong: #8ccbe6;
   --accent-steel-soft: #1c3038;
+  /* "Night" purple = "มาใหม่" only (owner 02/11 "หาคู่สีเลยว่าอะไรเหมาะกับส้มดำ"; designer 02/11 option A — a triad of ember). */
+  --accent-night: #8b6cf0;
+  --accent-night-strong: #b49cff;
+  --accent-night-line: #7a5cd6;
+  --accent-night-soft: #33265a;
 
   /* Brand identity red — sampled from the real OKami24 logo (public/brand/okami-logo-red.png).
      Used ONLY for brand-identity moments (logo, favicon, a few explicit "this is OKami24"
@@ -67,6 +72,10 @@
   --color-steel: var(--accent-steel);
   --color-steel-strong: var(--accent-steel-strong);
   --color-steel-soft: var(--accent-steel-soft);
+  --color-night: var(--accent-night);
+  --color-night-strong: var(--accent-night-strong);
+  --color-night-line: var(--accent-night-line);
+  --color-night-soft: var(--accent-night-soft);
 
   --color-red: var(--accent-red);
   --color-red-strong: var(--accent-red-strong);
@@ -420,7 +429,8 @@ html:lang(th) .label-mono:not(:lang(en)) {
 /* "ขายดี" stands out (owner 31/10: "ใส่กรอบ Effect ทั้งป้ายขายดีและตัวกล่อง-การ์ด"; designer 31/10 direction B "ชักดาบ").
    A card carrying the best-seller pill (SalesBadge.tsx sets data-sales after hydration) gets an ember gradient frame, a warm
    under-glow and a hot line on its top edge — the border stays 1px, so nothing moves when the pill lands. With motion
-   allowed, a light runs along the top edge then back along the bottom and the pill catches it, once per 8s (transform only);
+   allowed, a light runs along the top edge then back along the bottom and the pill catches it, once per 8s, three times then
+   stops (owner 02/11 — WCAG 2.2.2; transform only);
    reduced motion = the still frame (direction A). Red stays "no", amber stays "low" (HANDOFF §18). */
 a[data-card-cut]:has([data-sales="best"]) {
   isolation: isolate;
@@ -461,7 +471,7 @@ a[data-card-cut]:has([data-sales="best"])::before {
     pointer-events: none;
     opacity: 1;
     background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 35%, #fff1ec 50%, var(--accent-ember-strong) 65%, transparent);
-    animation: okami-best-edge 8s linear infinite;
+    animation: okami-best-edge 8s linear 3 forwards; /* three runs, then still (owner 02/11 "วิ่ง 3 ตามแนะนำ") */
   }
   a[data-card-cut]:has([data-sales="best"])::after {
     top: auto;
@@ -474,7 +484,7 @@ a[data-card-cut]:has([data-sales="best"])::before {
     inset: 0;
     z-index: -1; /* under the words, over the pill fill (the pill is isolate) */
     background: linear-gradient(105deg, transparent 30%, rgb(255 241 236 / 0.35) 50%, transparent 70%);
-    animation: okami-best-glint 8s linear infinite;
+    animation: okami-best-glint 8s linear 3 forwards;
   }
   /* The product head pill glints 3 times and stops — it sits next to the page title. */
   .okami-best-pill[data-head]::after {
