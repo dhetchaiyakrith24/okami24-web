@@ -28,7 +28,9 @@
  *                 card stays the yardstick, unchanged.
  *   --self-test — synthetic images prove the new-card rule picks the right yardstick both ways; exits 1 on a miss.
  *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
- *                 "restored" (putting back photos the site already showed, owner 28/09).
+ *                 "restored" (putting back photos the site already showed, owner 28/09); so does an added file at a
+ *                 path <base>'s history held, byte-identical to an earlier version there (a clean maker original
+ *                 coming back in place of its -wm copy, owner 03/11 — the mark's texture would otherwise read sharper).
  * Prints one line per file and ends with PASS or FAIL. It judges pixels, not taste — the owner still sees the 3x /
  * 1440 before/after in the report after the merge (IMAGE_SPEC §7, owner 30/09).
  */
@@ -165,7 +167,7 @@ function cardOf(dir: string): string | null {
   for (const [st, f] of rows) {
     const name = path.basename(f);
     const isDetail = /^(angle|detail)-/.test(name);
-    const restored = st === "M" ? restoredFrom(f) : null;
+    const restored = st === "M" || st === "A" ? restoredFrom(f) : null;
     if (restored) { console.log(`ok    ${f}  restored — byte-identical to ${restored.slice(0, 7)} (${base} history)`); continue; }
     const now = await phoneSharp(readFileSync(path.join(ROOT, f)));
     const problems: string[] = [];

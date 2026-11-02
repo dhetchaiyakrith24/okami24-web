@@ -9,6 +9,7 @@ import { placeOrderAction, type PlaceOrderState } from "@/app/checkout/actions";
 import { CUSTOMER_NOTE_MAX } from "@/lib/commerce/customer-note";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { ShippingNote } from "@/components/commerce/ShippingNote";
+import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 
@@ -46,6 +47,7 @@ export function ReviewStepView({
     <>
       <PageHeader eyebrow={dict.checkout.reviewEyebrow} title={dict.checkout.reviewTitle} />
       <Container className="flex max-w-xl flex-col gap-8 py-12 lg:py-16">
+        <CheckoutSteps current={3} />
         <div className="flex flex-col gap-3">
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">

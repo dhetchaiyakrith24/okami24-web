@@ -77,7 +77,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     title: "ของแท้ ราคาตรง บริการจริง",
     lede: "การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้ จากคนขายที่รู้จักสินค้าจริง",
     whoTitle: "OKami24 คือใคร",
-    who: "OKami24 (ย่อว่า OKM) ขายพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ ตั้งราคาตรง ๆ ไม่ปั่นราคา ทักมาแล้วแอดมินตัวจริงเป็นคนตอบ",
+    who: "OKami24 (ย่อว่า OKM) ขายพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ ทักมาแล้วแอดมินตัวจริงเป็นคนตอบ",
     teamTitle: "ทีมที่ดูแลร้าน",
     team: {
       beforeChannel: "OKami24 ขายออนไลน์มาก่อนจะมีเว็บนี้ เจ้าของร้านเป็นคนคัดสินค้า ดูแลข้อมูลบนเว็บ และตั้งราคาเอง ส่วนช่อง YouTube ",
@@ -120,7 +120,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     title: "Genuine products, honest prices, real service",
     lede: "Good service is what OKami24 gives you — genuine pod systems, disposables and e-liquid, from a seller who actually knows the products.",
     whoTitle: "Who is OKami24?",
-    who: "OKami24 (OKM for short) sells genuine pod systems, disposables and e-liquid from brands we trust. The price you see is the price we charge — no games. Message us and the admin replies, not a bot.",
+    who: "OKami24 (OKM for short) sells genuine pod systems, disposables and e-liquid from brands we trust. Every order is charged at our listed selling price. Message us and the admin replies, not a bot.",
     teamTitle: "The team behind the shop",
     team: {
       beforeChannel: "OKami24 sold online before this site. The owner chooses the products, looks after what you read here and sets the prices, and our YouTube channel, ",
@@ -164,7 +164,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     title: "正品，价格透明，服务实在",
     lede: "好的服务，就是 OKami24 给你的 —— 正品烟弹系统、一次性烟具与烟油，来自真正懂产品的卖家。",
     whoTitle: "OKami24 是谁",
-    who: "OKami24（简称 OKM）销售正品烟弹系统、一次性烟具与烟油，品牌都是我们信得过的。页面标价就是售价，不炒价。你来消息，真人回复，不是机器人。",
+    who: "OKami24（简称 OKM）销售正品烟弹系统、一次性烟具与烟油，品牌都是我们信得过的。每笔订单都按网站标示的售价结算。你来消息，真人回复，不是机器人。",
     teamTitle: "店铺背后的团队",
     team: {
       beforeChannel: "OKami24 在有这个网站之前就已经在网上销售。店主亲自选品、负责站内内容并制定价格，店铺的 YouTube 频道 ",
