@@ -6,6 +6,7 @@ import { isIdempotencyKey } from "./idempotency-key";
 import { getCart, clearCart } from "./cart";
 import { computeOrderTotals } from "./pricing";
 import { isShippingRule, loadShippingHistory, type StoredShippingRule } from "./shipping-rules";
+import { isPostcodeSubdistrict } from "./thai-postcodes";
 import { cleanCustomerNote } from "./customer-note";
 import { getOwnedAddress } from "./addresses";
 import { syncOrderToShipnity } from "@/lib/shipnity/adapter";
@@ -184,7 +185,7 @@ export async function placeOrder(
       // order instead of erroring out.
       db.prepare("INSERT INTO idempotency_keys (key, order_id) VALUES (?, NULL)").run(idempotencyKey);
 
-      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone], address });
+      const history = loadShippingHistory(db, { memberId: member?.id ?? null, phones: [customer.phone, address.phone], address }, new Date(), isPostcodeSubdistrict);
       totals = computeOrderTotals(purchasableLines, history);
       if (shownShippingFee !== null && totals.shippingFee !== shownShippingFee) throw new ShippingChangedError();
 
