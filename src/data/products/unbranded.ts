@@ -168,6 +168,9 @@ export const unbrandedProducts: Product[] = [
     tagline: "A 3mL prefilled pod cartridge.",
     shortDescription: "A 3mL prefilled replacement pod cartridge from the Muro line, available in 14 flavors.",
     isFlagship: false,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     attributes: {
       capacityMl: 3,
       screenType: "none",
@@ -385,6 +388,9 @@ export const unbrandedProducts: Product[] = [
     ],
     // Every flavour photo is the same pod pose (honeycomb face + printed label side); the card opens the gallery.
     openOnCardPhoto: true,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     flavorVariants: [
       { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-grape.webp", alt: "Muro Connector 20K pod, Grape" } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-watermelon.webp", alt: "Muro Connector 20K pod, Watermelon" } },
@@ -684,6 +690,9 @@ export const unbrandedProducts: Product[] = [
     tagline: "Muro freebase e-liquid.",
     shortDescription: "Muro freebase e-liquid in 6 flavors.",
     isFlagship: false,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     attributes: {
       capacityMl: 60,
       liquidBase: "freebase",
@@ -736,6 +745,9 @@ export const unbrandedProducts: Product[] = [
     tagline: "Muro salt nic e-liquid.",
     shortDescription: "Muro salt nic e-liquid in 6 flavors.",
     isFlagship: false,
+    // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
+    // — a legacy page shows its article only inside it (as muro-sc-8000).
+    storyDetails: true,
     attributes: {
       capacityMl: 30,
       liquidBase: "salt-nic",
