@@ -342,7 +342,8 @@ export function PilotProductDetail({
                 {verifiedRows(product.specifications).map((spec) => (
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
                     {/* The seed stores these rows in Thai; English/Chinese visitors read spec-seed-en.ts (21/10). */}
-                    <dt className="min-w-[5.5rem] text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
+                    {/* A one-word label never breaks inside the word beside a long value ("ความ|สามารถ" at 390, details chat 02/11). */}
+                    <dt className={/s/.test(spec.label) ? "text-foreground-muted" : "whitespace-nowrap text-foreground-muted"}>{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
                     <dd className="text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
                   </div>
                 ))}
