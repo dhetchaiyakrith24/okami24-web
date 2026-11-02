@@ -1307,6 +1307,107 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Articles queue 0211 batch 5 (02/11): VOOPOO Vmate Pro 2 — facts = VOOPOO's Vmate Pro 2 and VMATE Top Fill pages (shop.voopoo.com,
+  // in-app browser 02/11 via the details chat: the 0.4Ω pod added "to satisfy both RDL and MTL", the 0.4Ω "requires at least 30 W",
+  // Top Fill 0.4/0.7/1.0Ω) + VOOPOO text found by search only (ECO adapts the wattage, side 0.54" OLED, auto-draw, stepless airflow,
+  // 0.4Ω RDL 18–30W, 40-minute full charge). 0.7Ω's wattage left out: VOOPOO's pages disagree (15–25W vs 5–25W). Battery, wattage,
+  // the in-box list and the 7 colours stay with the tagline, spec rows and option list. Thai = thai-copy 02/11.
+  "vmate-pro-2": {
+    th: {
+      lede: "ด้านล่างเล่าตามข้อมูลของ VOOPOO ว่าหัวพอตสองค่าที่ให้มาใช้ต่างกันยังไง โหมด ECO ช่วยอะไร จอบอกอะไรบ้าง ปรับลมได้แบบไหน และชาร์จนานแค่ไหน",
+      sections: [
+        {
+          heading: "หัวพอตสองค่าที่ให้มาใช้ต่างกันยังไง",
+          paragraphs: [
+            "VOOPOO บอกว่าเพิ่มหัวพอต 0.4 โอห์มเข้ามาคู่กับหัว 0.7 โอห์ม เพื่อให้เครื่องเดียวสูบได้ทั้งสองแบบ หัว 0.4 โอห์มใช้สูบแบบ RDL ที่ 18–30 วัตต์ ส่วนหัว 0.7 โอห์มใช้สูบแบบ MTL",
+            "VOOPOO เตือนไว้ว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้อย่างน้อย 30 วัตต์ ถ้าจะนำหัวนี้ไปใช้กับเครื่องอื่น ก็ควรเช็ควัตต์สูงสุดของเครื่องนั้นก่อน",
+            "VOOPOO ยังทำหัว Top Fill แบบ 1.0 โอห์มด้วย ส่วนหัวพอตสำรองของรุ่นนี้ดูได้ที่หน้า [หัวพอต VMATE](/products/coil-72) และถ้าอยากรู้ว่าการสูบสองแบบนี้รู้สึกต่างกันแค่ไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "โหมด ECO ช่วยอะไร",
+          paragraphs: [
+            "VOOPOO บอกว่าโหมด ECO จะปรับวัตต์ให้เข้ากับวิธีสูบของแต่ละคน และกดปุ่มครั้งเดียวก็สลับไปโหมด POWER ได้",
+          ],
+        },
+        {
+          heading: "จอบอกอะไรบ้าง และปรับลมได้แบบไหน",
+          paragraphs: [
+            "ด้านข้างเครื่องมีจอ OLED ขนาด 0.54 นิ้ว ไว้บอกแบตที่เหลือ วัตต์ที่ใช้ และค่าโอห์มของหัวพอตที่ใส่อยู่",
+            "เครื่องนี้สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น จะให้ลมแน่นหรือโล่งก็ปรับได้ตามที่ชอบ",
+          ],
+        },
+        {
+          heading: "ชาร์จนานแค่ไหน",
+          paragraphs: [
+            "VOOPOO บอกว่าชาร์จจนเต็มใช้เวลาประมาณ 40 นาที ส่วนวิธีชาร์จและดูแลแบตให้ใช้ได้นาน อ่านต่อได้ที่ [ชาร์จข้ามคืนได้ไหม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, based on VOOPOO's own information: how the two included pods differ, what ECO mode does, what the screen shows and how the airflow adjusts, and how long a charge takes.",
+      sections: [
+        {
+          heading: "How do the two included pods differ?",
+          paragraphs: [
+            "VOOPOO says it added a 0.4Ω pod alongside the 0.7Ω so one device covers both styles: the 0.4Ω is for RDL at 18–30W, the 0.7Ω for MTL.",
+            "VOOPOO notes that the Top Fill 0.4Ω pod needs a device that can put out at least 30W, so check a device's maximum output before moving the pod to it.",
+            "VOOPOO also makes the Top Fill in 1.0Ω. Spare pods for this kit are on the [VMATE pods](/products/coil-72) page, and how the two draw styles feel different is covered in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "What does ECO mode do?",
+          paragraphs: [
+            "VOOPOO says ECO mode adjusts the wattage to the way you vape, and a single press of the button switches to POWER mode.",
+          ],
+        },
+        {
+          heading: "What does the screen show, and how does the airflow adjust?",
+          paragraphs: [
+            "A 0.54-inch OLED on the side shows the battery left, the wattage in use and the resistance of the fitted pod. It fires as you draw, with no button to press, and the airflow adjusts steplessly from tight to open.",
+          ],
+        },
+        {
+          heading: "How long does a charge take?",
+          paragraphs: [
+            "VOOPOO says a full charge takes about 40 minutes. For keeping the battery healthy, see [battery care and charging](/guides/battery-care-and-charging).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 的资料，介绍随附两颗烟弹的区别、ECO 模式的作用、屏幕显示什么与气流如何调节，以及充电需要多久。",
+      sections: [
+        {
+          heading: "随附的两颗烟弹有什么区别？",
+          paragraphs: [
+            "VOOPOO 表示，在 0.7Ω 之外加入 0.4Ω 烟弹，让一台设备兼顾两种抽法：0.4Ω 用于 RDL，功率 18–30W；0.7Ω 用于 MTL。",
+            "VOOPOO 提醒，Top Fill 0.4Ω 烟弹需要输出至少 30W 的设备，换到其他设备使用前，请先确认该设备的最大输出功率。",
+            "VOOPOO 的 Top Fill 烟弹还有 1.0Ω 版本。本套装的备用烟弹见[VMATE 烟弹](/products/coil-72)页面；两种抽法的感受有何不同，见[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "ECO 模式有什么用？",
+          paragraphs: [
+            "VOOPOO 表示，ECO 模式会根据个人的抽吸习惯调整功率；按一下按键即可切换到 POWER 模式。",
+          ],
+        },
+        {
+          heading: "屏幕显示什么？气流怎么调？",
+          paragraphs: [
+            "机身侧面有一块 0.54 英寸 OLED 屏，显示剩余电量、当前功率和所装烟弹的阻值。吸即可用，无需按键；气流支持无级调节，可从紧调到松。",
+          ],
+        },
+        {
+          heading: "充电需要多久？",
+          paragraphs: [
+            "VOOPOO 表示，充满电约需 40 分钟。电池保养方法见[电池保养与充电](/guides/battery-care-and-charging)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 2g (05/10): from VOOPOO's ARGUS G4 page and posters; Thai = thai-copy 05/10.
   "argus-g4": {
     th: {
