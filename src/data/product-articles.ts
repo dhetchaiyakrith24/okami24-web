@@ -2262,20 +2262,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // none written. Thai = thai-copy 02/11.
   "muro-connector-20k": {
     th: {
-      lede: "Muro Connector 20K มีให้เลือก 33 กลิ่น ด้านล่างร้านเล่าไว้ว่าหัวพอตนี้ใช้งานยังไง จัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และอธิบายกลิ่นที่มี 50MG ต่อท้ายชื่อไว้ด้วย",
+      lede: "Muro Connector 20K มีให้เลือก 33 กลิ่น ด้านล่างร้านอธิบายการใช้งานของหัวพอตนี้ จัดกลิ่นเป็นสายให้เลือกง่ายขึ้น และเล่าถึงกลิ่นที่มี 50MG ต่อท้ายชื่อด้วย",
       sections: [
         {
           heading: "หัวพอตแบบ Connector ใช้งานยังไง",
           paragraphs: [
-            "โปสเตอร์ของ Muro พิมพ์ไว้ว่าเป็น CONNECTOR POD หมายถึงหัวพอตที่ต้องเสียบกับตัวเครื่องก่อนถึงจะสูบได้ ตัวหัวไม่มีแบตในตัว แบตอยู่ที่ตัวเครื่องซึ่งขายแยกจากหัว พอน้ำยาในหัวหมด ก็ถอดหัวเดิมออกแล้วใส่หัวใหม่ ส่วนตัวเครื่องใช้ต่อได้ตามเดิม",
+            "โปสเตอร์ของ Muro พิมพ์ไว้ว่าเป็น CONNECTOR POD คือหัวพอตที่ต้องเสียบกับตัวเครื่องก่อนถึงจะสูบได้",
+            "ตัวหัวไม่มีแบตในตัว แบตอยู่ที่ตัวเครื่องซึ่งขายแยกจากหัว พอน้ำยาในหัวหมด ก็ถอดหัวเดิมออกแล้วใส่หัวใหม่ ส่วนตัวเครื่องใช้ต่อได้ตามเดิม",
           ],
         },
         {
           heading: "Muro Connector 20K กลิ่นไหนดี",
           paragraphs: [
             "แต่ละคนชอบรสไม่เหมือนกัน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี 4 กลิ่น คือ Double Mint · Cool Mint · Spear Mint และ Blue Ice ส่วนสายองุ่นมี Grape และ Kyoho Grape สำหรับคนที่หาองุ่นเคียวโฮ",
-            "สายผลไม้มี 11 กลิ่น มีทั้งผลไม้ชนิดเดียวอย่าง Watermelon กับ Pineapple ผลไม้สองชนิดคู่กันอย่าง Banana Strawberry กับ Strawberry Peach และยังมี Mix Berries · Pink Berry · Honey Lemon · Lemon Jeez · Apple Baraku กับ Fruit Punch ส่วน Strawberry Ice Cream ชื่อมีผลไม้คู่กับไอศกรีม ร้านก็จัดไว้ในสายนี้ด้วย",
-            "ถ้าชอบแนวชา นม และขนม ฝั่งชามี Green Tea กับ Peach Tea ฝั่งนมมี Yakult กับ Yakult Orange และฝั่งขนมมี Vanilla Ice Cream · Taro Ice Cream · Butterscotch กับ Chocolate Dubai คำว่า Ice Cream ในชื่อหมายถึงไอศกรีม ไม่ได้บอกว่าเป็นกลิ่นเย็น ส่วน Peach Tea กับ Yakult Orange มีผลไม้อยู่ในชื่อด้วย แต่ร้านจัดตามคำหลักของชื่อ",
+            "สายผลไม้มี 11 กลิ่น มีทั้งผลไม้ชนิดเดียวอย่าง Watermelon กับ Pineapple ผลไม้สองชนิดคู่กันอย่าง Strawberry Peach กับ Banana Strawberry และยังมี Mix Berries · Pink Berry · Honey Lemon · Lemon Jeez · Apple Baraku กับ Fruit Punch",
+            "ส่วน Strawberry Ice Cream ชื่อมีผลไม้คู่กับไอศกรีม ร้านก็จัดไว้ในสายนี้ด้วย",
+            "ถ้าชอบแนวชา นม และขนม ฝั่งชามี Green Tea กับ Peach Tea ฝั่งนมมี Yakult กับ Yakult Orange และฝั่งขนมมี Vanilla Ice Cream · Taro Ice Cream · Butterscotch กับ Chocolate Dubai",
+            "คำว่า Ice Cream ในชื่อหมายถึงไอศกรีม ไม่ได้บอกว่าเป็นกลิ่นเย็น ส่วน Peach Tea กับ Yakult Orange แม้มีผลไม้ในชื่อ ร้านก็จัดตามคำหลักของชื่อ",
             "แนวอื่นมี Cola · Mineral Water และ Green Slush สามชื่อนี้ไม่ได้บอกผลไม้หรือขนมตรง ๆ วิธีเลือกกลิ่นจากชื่อแบบละเอียด อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
           ],
         },
@@ -2371,7 +2374,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ทำไมกล่อง Muro Grape มีคำว่า VERY STRAWBERRY",
+          heading: "ทำไมกล่อง Muro Grape พิมพ์ VERY STRAWBERRY",
           paragraphs: [
             "ถ้าดูรูปกล่องของกลิ่น Muro Grape จะเห็นคำว่า VERY STRAWBERRY อยู่ที่ด้านข้างกล่อง คำนี้เป็นลายที่ผู้ผลิตพิมพ์มากับกล่องเอง ร้านจึงคงรูปไว้ตามต้นฉบับ กล่องนี้เป็นของกลิ่น Muro Grape ตามโปสเตอร์ของกลิ่นนั้น ส่วน Very Strawberry มีกล่องของตัวเองแยกเป็นอีกกลิ่นหนึ่ง",
           ],
