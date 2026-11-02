@@ -8,7 +8,7 @@ const OFFICIAL_50MG = "https://www.wotofo.com/products/wotofo-nexbar-18k-50mg";
 /** Photo of one flavour — OKami24's Higgsfield remake of WOTOFO's own gallery photo (map entries in
  *  scripts/process-images.map.json carry the job, the reference and the fidelity sheet). */
 const photo = (id: string, name: string) => ({
-  src: `/assets/products/wotofo-nexbar-18k/variant-${id}.webp`,
+  src: `/assets/products/wotofo-nexbar-18k/variant-${id}-wm.webp`,
   alt: `WOTOFO nexBAR 18K, ${name}`,
 });
 
@@ -63,7 +63,7 @@ export const wotofoProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/wotofo-nexbar-18k/card.webp",
+        src: "/assets/products/wotofo-nexbar-18k/card-wm.webp",
         alt: "WOTOFO nexBAR 18K, Watermelon Ice, isolated product shot",
         angle:
           "Three-quarter front, isolated — OKami24's Higgsfield remake (image-fix round, owner ruling IMAGE_SPEC §0 item 7) of WOTOFO's own gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice); IoU 0.996 against the maker photo.",
@@ -132,21 +132,21 @@ export const wotofoProducts: Product[] = [
         title: "What the screen tells you",
         description: "When the battery or the e-liquid is getting low, the screen tells you first.",
         subline: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.",
-        image: { src: "/assets/products/wotofo-nexbar-18k/story-screen.webp", alt: "WOTOFO's nexBAR 18K picture — clear display, the LED screen up close", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-screen-wm.webp", alt: "WOTOFO's nexBAR 18K picture — clear display, the LED screen up close", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
       {
         id: "mouthpiece",
         title: "Shaped for your lips",
         description: "It feels comfortable on the lips when you vape.",
         subline: "WOTOFO made this model's mouthpiece from silicone.",
-        image: { src: "/assets/products/wotofo-nexbar-18k/story-mouthpiece.webp", alt: "WOTOFO's nexBAR 18K picture — ergonomic mouthpiece", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-mouthpiece-wm.webp", alt: "WOTOFO's nexBAR 18K picture — ergonomic mouthpiece", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
       {
         id: "airflow",
         title: "Set the airflow the way you like",
         description: "Prefer a loose, easy draw, or something a little tighter? Pick whichever feels comfortable.",
         subline: "WOTOFO made the airflow slider large, so it's easy to find and adjust.",
-        image: { src: "/assets/products/wotofo-nexbar-18k/story-airflow.webp", alt: "WOTOFO's nexBAR 18K picture — adjustment airflow at the base", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-airflow-wm.webp", alt: "WOTOFO's nexBAR 18K picture — adjustment airflow at the base", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
     ],
     compatibility: [typeC],
