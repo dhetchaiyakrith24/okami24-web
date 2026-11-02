@@ -1565,6 +1565,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ชาร์จยังไง",
           paragraphs: [
             "เครื่องนี้มีแบตเตอรี่ 380mAh อยู่ในตัว และชาร์จซ้ำได้ผ่านช่อง USB-C",
+            "เรื่องชาร์จนานแค่ไหนและดูแลแบตยังไง ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
           ],
         },
       ],
@@ -1721,7 +1722,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           question: "หัวพอต RELX Infinity Pro 2 ต้องเติมน้ำยาไหม",
-          answer: "ไม่ต้องเติมค่ะ หัวพอตมีน้ำยามาในตัวแล้ว หัวละ 1.9mL ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+          answer: "ไม่ต้องเติมค่ะ หัวพอตมีน้ำยามาในตัวแล้ว หัวละ 1.9mL พอใช้หมดก็ถอดหัวเก่าออกแล้วเปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
         },
       ],
     },
