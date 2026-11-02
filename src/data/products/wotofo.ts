@@ -18,13 +18,13 @@ const DEVICE_PAGE = "https://wotofo.com/products/nexpod-15k-pro-device";
 const POD_PAGE = "https://wotofo.com/products/nexpod-15k-prefilled-pod-20mg";
 /** One colour = the device cut from WOTOFO's own 2000px kit render of that colour (pure black backdrop keyed out). */
 const kit = (id: string, name: string) => ({
-  src: `/assets/products/nexpod-15k/variant-${id}-wm.webp`,
+  src: `/assets/products/nexpod-15k/variant-${id}-wm2.webp`,
   alt: `WOTOFO nexPOD 15K Pro, ${name}, with a prefilled pod fitted`,
 });
 
 /** One flavour = WOTOFO's own pod + pod-box poster with the fruit dropped (Pomegranate Ice: the Pro Kit poster — no pod poster). */
 const flavour = (id: string, name: string) => ({
-  src: `/assets/products/nexpod-15k/variant-${id}-wm.webp`,
+  src: `/assets/products/nexpod-15k/variant-${id}-wm2.webp`,
   alt: id === "pomegranate-ice" ? `WOTOFO nexPOD 15K Pro Kit, ${name}, with its box` : `WOTOFO nexPOD 15K prefilled pod, ${name}, with its box`,
   ownFloor: true as const,
 });
@@ -182,7 +182,7 @@ export const wotofoProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/nexpod-15k/card-wm.webp",
+        src: "/assets/products/nexpod-15k/card-wm2.webp",
         alt: "WOTOFO nexPOD 15K Pro, Black, with a prefilled pod fitted",
         angle: "front, isolated — cut from WOTOFO's own 2000px kit render (Black_nexpod_15k_pro_kit.jpg, pure black backdrop keyed out)",
         transparentBackground: true,
