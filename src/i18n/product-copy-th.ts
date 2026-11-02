@@ -743,12 +743,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "zero-nano": {
     whoIsThisFor: {
-      0: "อยากได้เครื่องระบบสวิตช์สาย Zero ตัวเล็ก ๆ ไว้พกติดตัว",
+      0: "อยากได้เครื่องระบบสวิตช์ตระกูล Zero ตัวเล็ก ๆ ไว้พกติดตัว",
     },
     specifications: {
       format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
+      colors: "มีให้เลือก 4 สี",
     },
-    tagline: "เครื่องระบบสวิตช์สาย Zero ตัวเล็ก แบตเตอรี่ 500mAh ในตัว",
+    tagline: "เครื่องระบบสวิตช์ตระกูล Zero ตัวเล็ก แบตเตอรี่ 500mAh ในตัว",
     shortDescription: "อุปกรณ์ใช้ซ้ำได้ตัวเล็ก แบตเตอรี่ 500mAh ใช้ระบบหัวพอต Zero เดียวกับ Zero Pro",
     features: {
       "smallest-zero": {
@@ -776,7 +777,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "400mAh ชาร์จซ้ำได้ผ่าน USB-C",
       coil: "MEGA MESH",
       nicotine: "3% หรือ 5% salt nic",
-      capacity: "20mL",
     },
     tagline: "พอตใช้แล้วทิ้งของ RELX มีอยู่ในเว็บทางการ คอยล์ MEGA MESH",
     shortDescription:
@@ -979,7 +979,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ส่วนเครื่องตัวเองใช้ได้ไหม ถามก่อนได้ทางไลน์ @okm24",
     },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro มีให้เลือก 14 รส",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro มีให้เลือก 14 กลิ่น",
   },
   "muro-sc-8000": {
     whoIsThisFor: {
@@ -990,7 +990,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
     },
     tagline: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 8,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro ซีรีส์ “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ",
   },
   "muro-connector-20k": {
     whoIsThisFor: {
@@ -1000,6 +1000,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 20,000",
     },
     tagline: "หัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ",
-    shortDescription: "หัวพอตบรรจุสำเร็จจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ใช้กับเครื่อง Muro Creator และร้านยืนยันจากของจริงแล้วว่าใส่กับ RELX Creator ได้",
+    shortDescription: "หัวพอตบรรจุสำเร็จจาก Muro ซีรีส์ “Connector” รองรับสูงสุด 20,000 พัฟ ใช้กับเครื่อง Muro Creator และร้านยืนยันจากของจริงแล้วว่าใส่กับ RELX Creator ได้",
   },
 };

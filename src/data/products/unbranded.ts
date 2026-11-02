@@ -705,7 +705,7 @@ export const unbrandedProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/muro-freebase/card.webp",
-        alt: "Muro Freebase 60ml e-liquid bottle, Watermelon, studio photo",
+        alt: "Muro Freebase e-liquid bottle, Watermelon, studio photo",
         angle: "Front, studio re-shoot (image sweep 21/10, IMAGE_SPEC §0 item 7) of the retailer's Muro Freebase poster.",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from a retailer's Muro Freebase poster",

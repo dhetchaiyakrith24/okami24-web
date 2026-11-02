@@ -22,6 +22,7 @@
  */
 export const SPEC_LABELS_TH: Record<string, string> = {
   Battery: "แบตเตอรี่",
+  "Device colours": "สีตัวเครื่อง",
   "Battery capacity": "แบตเตอรี่",
   Display: "หน้าจอ",
   "Pod platform": "หัวพอตที่ใช้ได้",
