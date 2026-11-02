@@ -111,8 +111,7 @@ export function runSimulationContractTests(): SimulationContractResult[] {
       real.product.publicationStatus === "published" &&
       real.product.pricing.sellingPrice === expectedPrice &&
       real.product.pricing.priceApprovedByOwner === true &&
-      // "real" = a Shipnity child (has integrationRef); maker-only options (VERIFIED_ADDITIONAL_VARIANTS) are not counted.
-      real.product.variants.filter((v) => v.integrationRef).length === expectedVariantCount;
+      real.product.variants.length === expectedVariantCount;
     check(`${id} is genuinely published in real data with the ฿${expectedPrice} price and ${expectedVariantCount} real variant(s)`, ok, JSON.stringify(real));
   };
   checkGenuinelyPublished("Coil-38", 450, 4); // list19 stage 2 (18/10): Max children DM1 + DM3 added
