@@ -7,7 +7,7 @@
 // /_next/image re-encodes at 750 wide webp q75. Style per file (owner + Javis 02/11, from the two-style sample sheet):
 //   transparent photo (card · colour · flavour) = on the product's own pixels only: the transparent margin stays clean and
 //     alpha never changes, so the product box src/lib/media-quality.ts measures (alpha trim 10) cannot move;
-//   opaque poster = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
+//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
 // Writes <name>-wm.webp (q82) beside the original — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) —
 // points every reference under src/ at it, then deletes the original from public/ (git history + the --keep copy are the
 // way back). A name already ending in -wm is skipped. Photos from Javis's studio carry this mark already: leave them off.
@@ -55,9 +55,12 @@ async function mark(file, zone) {
   const meta = await sharp(file).metadata();
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const W = info.width, H = info.height, t = await textMask(W, H), h = await helmetMask(W, H);
+  // a cut-out has transparent pixels; an alpha channel alone does not make one (story banners carry alpha, all 255)
+  let cutout = false;
+  if (meta.hasAlpha) for (let i = 3; i < data.length; i += 4) if (data[i] === 0) { cutout = true; break; }
   for (let p = 0, i = 0; p < W * H; p++, i += 4) {
     let op;
-    if (meta.hasAlpha) {
+    if (cutout) {
       if (data[i + 3] === 0) continue;
       op = TEXT_PRODUCT;
     } else {
@@ -69,7 +72,7 @@ async function mark(file, zone) {
   }
   let img = sharp(data, { raw: { width: W, height: H, channels: 4 } });
   if (!meta.hasAlpha) img = img.removeAlpha();
-  return { buf: await img.webp({ quality: 82 }).toBuffer(), hasAlpha: meta.hasAlpha };
+  return { buf: await img.webp({ quality: 82 }).toBuffer(), hasAlpha: cutout };
 }
 
 function sourceFiles(dir, out = []) {
