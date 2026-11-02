@@ -154,7 +154,7 @@ function cardOf(dir: string): string | null {
   const rows = all.filter(([st, f]) => /^[AM]$/.test(st) && /\.(webp|png|jpe?g)$/i.test(f));
   // option photos deleted in this diff, keyed by product dir + lower-case id: the file a renamed variant-<id> replaces
   const productDir = (f: string) => f.split("/").slice(0, 4).join("/");
-  const idOf = (f: string) => path.basename(f).replace(/\.[^.]+$/, "").replace(/^variant-/i, "").replace(/-wmd*$/i, "").toLowerCase();
+  const idOf = (f: string) => path.basename(f).replace(/\.[^.]+$/, "").replace(/^variant-/i, "").replace(/-wm\d*$/i, "").toLowerCase();
   const deleted = new Map<string, string>();
   for (const [st, f] of all) if (st === "D" && /\.(webp|png|jpe?g)$/i.test(f)) deleted.set(`${productDir(f)}|${idOf(f)}`, f);
   if (!rows.length) { console.log(`no product image added or modified since ${base}\nPASS`); return; }
