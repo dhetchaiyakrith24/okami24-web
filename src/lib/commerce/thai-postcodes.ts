@@ -20,7 +20,9 @@ export interface Place {
 
 const CODES = (data as unknown as { codes: Record<string, [string, string, string][]> }).codes;
 
-const clean = (s: string) => s.trim().replace(/\s+/g, " ");
+// Invisible characters out (checker #1169: "คลองเตย" + U+200B passed as a hand-typed place and so as a second address for
+// the once-a-month free-shipping check), runs of spaces to one, and a hand-typed name capped at 80 characters.
+const clean = (s: string) => s.replace(/[​-‍⁠﻿]/g, "").replace(/\s+/g, " ").trim().slice(0, 80);
 
 /** The places a 5-digit postcode serves; empty when the code is malformed or not in the data. */
 export function placesForPostcode(code: string): Place[] {
@@ -58,6 +60,13 @@ export function checkPostcodePlace(code: string, place: Place): { kind: "place" 
     kind: "manual",
     place: { subdistrict: subdistrict ?? clean(place.subdistrict), district: district ?? clean(place.district), province: inProvince[0][2] },
   };
+}
+
+/** Is this sub-district one the postcode really serves (prefixes allowed)? The free-shipping check asks it: a hand-typed
+ *  sub-district the data does not know must not make an address look new (shipping-rules.ts `benefitUsed`). */
+export function isPostcodeSubdistrict(code: string, subdistrict: string): boolean {
+  const rows = CODES[code.trim()];
+  return !!rows && rows.some(([s]) => sameName(subdistrict, s));
 }
 
 export interface PlaceHit extends Place {
