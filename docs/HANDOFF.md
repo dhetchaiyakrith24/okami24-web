@@ -10,38 +10,39 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 03/11 ~02:30 by the 7th main chat (local_737f7a61) at ~88% — HANDED OFF on the owner's word 03/11 ("Hand แชทหลักละค่อนสานงานต่อ"). Quota 26%.
+Updated 03/11 ~02:50 by the 8th main chat (local_1681c276) at ~45% — owner 03/11: NO hand-off, the app COMPACTS this chat, then Friday
+finishes everything below in the same chat ("หลังจาก Compact รันงานต่อให้เสร็จ"). After the compact: re-read the rules + this item, then go on.
 
-1 main = 56020ff6 (#1149 RELX watermark). CART IS ON. Older = `git log --merges origin/main`.
-2 CHILD CHATS (all report to local_737f7a61 · Opus 5.5 · ports: never 3412 outside your slot, each its own 2nd server):
-  images-0211b local_67ec6cc2 (stronger watermark -wm2, draft #1154 flagship 72 photos — WAITS FOR THE OWNER's OK on the 22/18 sheet) ·
-  label-price-0311 local_b64f9a62 (batch 4, started 03/11) · details-0211 local_bc99e6b7 (~60%: box photos via its browser, owner "ใช้ Chrome หาเลย") ·
-  articles-0211c ARCHIVED 03/11 (queue done; parked brands in its HANDOVER.md). TRACKING local_dfdd063c = Shipnity watch.
-  TEST-MACHINE QUEUE (3412 + checker lock shared): Friday announces each slot; the slot owner asks Friday to hold merges into main until its gate passes.
-  start_session is refused while the owner is on Remote Control.
-  e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
+1 main = 54a00f72 (#1164). CART IS ON. Merged by chat 8 on 03/11: #1157 label price + −N% chip (54 products show; 40 sold out) · #1158 29 maker
+  banners back to unmarked originals · #1162 #1164 docs (watermark rulings, owner answers). Older = `git log --merges origin/main`.
+  #1158 deploy (5b9788c9) was in_progress at 02:42 → curl /products/joiway-f3: story-*.webp must have no "-wm" (not checked yet).
+2 CHILD CHATS (report to local_1681c276 · Opus 5.5 · medium except design/SEO/images = high, §18):
+  images-0211b local_67ec6cc2 (high): watermark gen 2 (22/18 APPROVED) only on images the shop made (IMAGE_SPEC §0) · drafts, in merge order:
+    #1160 (70 maker cut-outs back to originals) → #1154 (tool + 41) → #1156 (57) → #1163 (115 flagship) → #1166 (95 best sellers; 244 more to come, ≤100/PR).
+  label-price-0311 local_b64f9a62 (medium): #1165 draft = BOM fix · struck price 12 px · trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ"
+    (owner "2 1" 03/11) — its verify needs 3412 down; scans on its own 3417/3418.
+  details-0211 (local_bc99e6b7…): not found in the session list 03/11 — check `list_sessions` once; its last work = #1150.
+  TEST-MACHINE QUEUE (3412 + checker lock; verify --full refuses while 3412 is up): #1159 checker (NOW) → #1165 → #1160 → #1161 (Friday)
+    → #1154 → #1156 → #1163 → #1166. Friday messages each slot owner at its turn and at --done. 3413 = Friday's "before" server
+    (`_incoming/wt-main0211` = main 0fb444e8, `npx next start -p 3413`, data $TEMP/okami24-3413-data, PID 40224) — stop by that PID when done.
+  start_session refused while the owner is on Remote Control. `okami24-seo-weekly` (Sat 15:00): owner sets Auto once.
 2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
-    Owner answers (02–03/11): no order notices (C) · dude 3ml = switch pod · "มาใหม่" purple + both badges (new = FIRST_LISTED, 14→7 days, not restock) ·
-    "ขายดี" sweep 3 runs, badge B · age-gate nosnippet + About A done (#1121) · SKE = maker match · Vazer pod price is right (03/11) ·
-    LABEL PRICE APPROVED 03/11 ("รันตามนั้นเลยได้และใส่ %") = table artifact Ebto6LZgDNHf866cViWktB + a "−N%" badge, no real discount ·
-    WATERMARK STRONGER 03/11: product-only 22 text / 18 helmet, tiled posters 18 (zone 22) — redo ALL from originals as -wm2, order: flagship → best
-    sellers → new → in stock → rest; first batch sheet goes to the owner. Articles = inside the product page "more details", not guide pages (owner confirmed).
-    LIVE 02–03/11 (all curled): address #1125 · badges #1128 #1137 · watermark 18/12 #1115 #1127 #1131 #1135 #1136 #1138 #1141 #1143 #1147 = 389 photos ·
-      articles #1103 #1104 #1116 #1117 #1118 #1129 #1130 #1132 #1134 #1139 #1145 #1146 #1151 · details #1114 #1123 #1133 #1142 #1144 #1148 #1150 · docs #1124
-      #1126 #1140 #1152. Proof `_incoming/queue-0211/` · `_incoming/chk-*`.
-    NEXT, in order:
-    · images #1149 RELX 96 (checker running; merge when PASS) → then the -wm2 stronger redo.
-    · details: batch 4 label price + % badge (full set, designer + thai-copy + visitor) — brief sent 03/11.
-    · 2ข address look: OWNER PICKED A 03/11 (drafts https://claude.ai/artifact/WaLGDrdue1nsAYeoZV1ZhT; designer spec = the drafts page + this main chat's
-      designer report: 7/12 form · 5/12 sticky card · Natural Earth 10m admin-1 map (public domain) · pin travels · "คิดในขั้นถัดไป" for member_monthly ·
-      step bar on all 3 steps · mobile folded cart total). KEEP every current function of cart/address/payment — this is a re-layout + map, nothing removed
-      (owner 03/11). FUTURE (owner, noted): a smooth 3D map motion like Apple/Google maps per address — needs a map service (Google Maps 3D / Mapbox =
-      account + cost, 13.3 #2); a Higgsfield video can only be a fixed clip, not per address → plan with the owner later.
-    · Spec-list dt wrap: parked (3 tries failed; needs the locked thai-typography glue — owner OK). Branch claude/spec-dt-0211 not PR'd.
-    · Unwatermarked originals still public under public/assets (checker note) → a cleanup PR after the -wm2 redo (originals stay in git history + keep folder).
-    · house-clean worktrees (`_incoming/wt-badge0211` half-deleted: path too long) · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง.
-    Owner to answer = docs/รอพี่ตรวจ.md (86 saved-address exposure: rec. OTP back on · 78 keep/rollback new address step + badges · 88 C-drive c —
-      the safety check blocks Friday; the owner deletes it · 13 box photos list on the status page).
+    Owner answers 02–03/11 live in their homes (BSOT §5 · IMAGE_SPEC §0 watermark · THAI_STYLE HNB words · §18) · no order notices (C) · look A.
+    IN FLIGHT (Friday):
+    · 2ข ADDRESS LOOK A = PR #1159 (draft) head a48e1878 · verify --full 62/62 · GATE PASS (note live, wt-cart tree) · checker agent running.
+      Proof `_incoming/queue-0211/addr-a/` (before = 3413, after = 3412 · pair-390.png · pair-1440.png) · walk = `addr-a-walk.js <base> <out> 390|1440 [--no-cart]`
+      · stock seed `addr-a-seed-stock.js [dataDir]` (run from a tree with node_modules; wait 12 s). Brief = `addr-a-checker-brief.md`.
+      On PASS: PR body line → ready → green → self-merge-check IN `_incoming/wt-cart` → merge → gate --done → stop 3412 → #1165's slot.
+    · HNB WORDS = PR #1161 (draft, head 7683d970 on 0fb444e8): 92 literals + THAI_STYLE/LOG. Every page holds the category name → 13.5 #5
+      whole sitemap. BEFORE done on 3413: head-audit `_incoming/hnb-words-0311/head-before/` · visible-text `vt-before/` (179×3×2, 0 failures).
+      Next at its slot: merge origin/main → verify --full in a test tree → test-server build (cart on) → after: head-audit · visible-text scan + diff ·
+      scan.js · wordbreak-scan (390/1440, sitemap) · thai-check gates → gate → checker → merge. Tools + table = `_incoming/hnb-words-0311/`.
+    · HOME JANK on phones (owner clip 03/11) = `_incoming/jank-0311/NOTES.md` (findings, suspects, plan: trace 390 before/after a phones-only
+      CSS cut → PR → owner films again).
+    PARKED / LATER: spec-list dt wrap (needs thai-typography glue, owner OK; branch claude/spec-dt-0211) · unwatermarked originals still public
+      under public/assets → cleanup PR after the gen-2 redo · house-clean worktrees (`_incoming/wt-badge0211` path too long) · THAI_STYLE group ก
+      หนามแท่ง/โนนหนามแท่ง · FUTURE 3D map motion per address = map service + cost (13.3 #2) → plan with the owner.
+    Owner to answer = docs/รอพี่ตรวจ.md (86 saved-address exposure: rec. OTP back on · 78 looks not yet approved · 88 C-drive c).
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer; he has designs to send.
      STAFF LOGIN PLAN (owner 30/10: staff log in like customers, then see their own dashboard). Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
@@ -107,8 +108,7 @@ Updated 03/11 ~02:30 by the 7th main chat (local_737f7a61) at ~88% — HANDED OF
   - QUEUED (owner 31/10, not started): (1) product CARDS read live stock like the product page — listing/category/brand pages, home rows and
     recommendation cards still take sold-out from the build · (2) "ขายดี" from real web
     orders, counting from 31/10 (owner: "เริ่มวัดระยะตั้งแต่ตอนนี้วันนี้ได้เลย"; threshold = owner's).
-  - IDEA to try (owner 31/10 "น่าสนใจจดไว้"): the Ultra plan's $200/month Claude API credits (claude.com/pricing) → a shop AI
-    on the Claude Platform, e.g. a customer-answer bot · not started; plan with skill okami24-plan first (any customer-facing reply = 13.3 "ส่งถึงคนนอก").
+  - IDEA (owner 31/10): Ultra's $200/month API credits → a shop AI (customer-answer bot) · plan first (okami24-plan · 13.3 "ส่งถึงคนนอก").
   - Own rounds (owner 07/10): typo-tolerant search · lifestyle strip on product pages (one sample shot first; answers in
     https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr "answers") · every product gets an SEO article in "more details" (owner 01/10).
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5 (unchanged lists).
@@ -229,7 +229,8 @@ Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/T
 **Child chats and routines — model + effort (owner 30/10):** every child chat runs Opus 5.5; effort **high** for work that needs
 thinking and moves sales (SEO, images), **medium** for docs, checks, looking for updates, products, prices, stock; scheduled
 routines follow the same table ("แชทลูกหลังจากนี้บังคับใช้ Opus 5.5 · งานที่ต้องใช้ความคิดและส่งผลกับยอดธุรกิจ ใช้ High เช่น SEO งานรูปภาพ ·
-งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"). Routine model/effort is set in the app, not in its SKILL.md.
+งานที่เป็นเอกสาร ตรวจงาน หาอัพเดต สินค้า ราคา สต๊อก ใช้ Medium"; 03/11 again: "แชทลูกใช้ Opus 5.5 medium นะถ้าไม่ใช่งานสำคัญเช่น ออกแบบ ดีไซน์ Seo"
+= design work is high too). Routine model/effort is set in the app, not in its SKILL.md.
 
 **Main chat moves by compact, not hand-off (owner 02/11, quoted exactly):** "แชทหลักนี้ Friday ไม่ต้อง Hand ใช้ Compact ได้เลยที่ 80-90 % ก่อน Compact
 จะสถานะงาน ความคืบหน้าสิ่งทมี่ต้องทำต่อกับแชทลูกให้เรียบร้อย ส่วนแชทลูก Hand ได้" — the MAIN chat no longer moves at 600–700k: it keeps going and compacts
@@ -248,6 +249,10 @@ lg–1439 px, helmet + wordmark at sm–lg and ≥ 90rem; no smaller lockup at 1
 **Orders to the warehouse (owner 27/10, chat "API"):** when web orders flow into Shipnity by themselves, the LINE alerts stay
 exactly as today — new order in the order group, slip attached in the slip group ("การแจ้งเตือนทางไลน์ยังเหมือนเดิม แนบใบสลิปเหมือนเดิม") —
 only the admin stops keying the order into Shipnity by hand. Slips never go to the warehouse.
+
+**Slip-check bot after a deploy (owner 03/11, "ตามแนะนำ" + "เรื่องบอทส่งซ้ำเอาไว้ก่อน"):** the bot answers by reply only — no push
+fallback (push = LINE quota) · LINE "Webhook redelivery" stays OFF for now (parked by the owner; turning it on first needs the
+`webhookEventId` dedupe guard — parked code in PR #1170's history, commit 5aa67a59) · no deploys 18:00–24:00 (TEAM_RULES 13.7).
 
 **onrender.com stays open (owner 26/10):** the service's `*.onrender.com` address is the back door "ในกรณีที่หน้าเว็บหลักเข้าไม่ได้" —
 never disable it.

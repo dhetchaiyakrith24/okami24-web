@@ -131,11 +131,27 @@ interface CandidateRow {
   postal: string | null;
 }
 
-function benefitUsed(db: Db, since: string, phones: string[], memberId: number | null, address: ShippingAddressKey | null): boolean {
+/** `knownSubdistrict(postcode, subdistrict)`: is it a sub-district that postcode really serves? (thai-postcodes.ts, passed in
+ *  by the server callers so this module stays free of the postcode data). Since 03/11 a customer may type the place by hand
+ *  (#1169): when either side's sub-district is not a real one for the postcode, the sub-district is not compared — house
+ *  number + postcode decide — so a made-up spelling cannot renew the benefit. Stricter only; real names compare as before. */
+export type KnownSubdistrict = (postcode: string, subdistrict: string) => boolean;
+
+function benefitUsed(
+  db: Db,
+  since: string,
+  phones: string[],
+  memberId: number | null,
+  address: ShippingAddressKey | null,
+  knownSubdistrict?: KnownSubdistrict
+): boolean {
   if (phones.length === 0 && memberId === null && address === null) return false;
   const params: unknown[] = [since, ...phones, ...phones, ...(memberId !== null ? [memberId] : []), ...(address ? [address.postalCode.trim()] : [])];
   const rows = db.prepare(benefitCandidatesSql(phones.length, memberId !== null, address !== null)).all(...params) as CandidateRow[];
   const digits = (p: string | null) => (p ?? "").replace(/[^0-9]/g, "");
+  const sameSubdistrict = (theirs: string, code: string) =>
+    subdistrictKey(theirs) === subdistrictKey(address?.subdistrict ?? "") ||
+    (!!knownSubdistrict && (!knownSubdistrict(code, theirs) || !knownSubdistrict(code, address?.subdistrict ?? "")));
   return rows.some(
     (r) =>
       phones.includes(r.cphone) ||
@@ -143,17 +159,17 @@ function benefitUsed(db: Db, since: string, phones: string[], memberId: number |
       (memberId !== null && r.member_id === memberId) ||
       (address !== null &&
         r.postal === address.postalCode.trim() &&
-        subdistrictKey(r.subdistrict ?? "") === subdistrictKey(address.subdistrict) &&
+        sameSubdistrict(r.subdistrict ?? "", address.postalCode.trim()) &&
         houseNumber(r.line1 ?? "") === houseNumber(address.line1))
   );
 }
 
-export function loadShippingHistory(db: Db, who: ShippingIdentity, now: Date = new Date()): ShippingHistory {
+export function loadShippingHistory(db: Db, who: ShippingIdentity, now: Date = new Date(), knownSubdistrict?: KnownSubdistrict): ShippingHistory {
   // Addresses keep the phone as typed (dashes, spaces); customers.phone is already digits only (phone.ts).
   const phones = [...new Set(who.phones.map((p) => p.replace(/[^0-9]/g, "")).filter((p) => p.length > 0))];
   return {
     isMember: who.memberId !== null,
-    benefitUsed: benefitUsed(db, monthlyWindowStart(now), phones, who.memberId, who.address ?? null),
+    benefitUsed: benefitUsed(db, monthlyWindowStart(now), phones, who.memberId, who.address ?? null, knownSubdistrict),
   };
 }
 

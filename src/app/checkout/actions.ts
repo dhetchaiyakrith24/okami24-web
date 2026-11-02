@@ -14,7 +14,7 @@ import { allowPhoneAttempt } from "@/lib/commerce/phone-rate-limit";
 function refuseWhileOrderingOff(): void {
   if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
 }
-import { addAddress, type AddressInput } from "@/lib/commerce/addresses";
+import { addAddress, deleteAddress, updateAddress, type AddressInput } from "@/lib/commerce/addresses";
 import { placeOrder } from "@/lib/commerce/orders";
 
 export interface OtpFormState {
@@ -93,20 +93,34 @@ export interface AddressFormState {
   values: Partial<Record<(typeof ADDRESS_FIELDS)[number], string>>;
   /** Counts refusals; the postcode fields remount on each so they show what the form sends (AddressStepView). */
   attempt?: number;
+  /** The saved address being edited when the refusal came (0 = a new address), so the values go back to the same form. */
+  editId?: number;
 }
 
+/** One action for a new address and for editing a saved one (owner 03/11): a hidden `editId` = update that address (scoped to
+ *  the customer in updateAddress); none = add it as the default. Either way the customer goes on to review with it. */
 export async function addAddressAction(prev: AddressFormState, formData: FormData): Promise<AddressFormState> {
   refuseWhileOrderingOff();
   const values = Object.fromEntries(ADDRESS_FIELDS.map((k) => [k, String(formData.get(k) ?? "")])) as Record<(typeof ADDRESS_FIELDS)[number], string>;
   const input: AddressInput = values;
-  const result = await addAddress(input, true);
+  const editId = Number(formData.get("editId") ?? 0);
+  const result = editId > 0 ? await updateAddress(editId, input) : await addAddress(input, true);
   if (!result.ok) {
+    // The address being edited is gone (deleted in another tab, or not this customer's): back to the list with the notice.
+    if (result.error === "not-found") redirect("/checkout/address?choose=1&error=not-found", RedirectType.replace);
     const errorKey = ({ phone: "addressErrorPhone", houseNumber: "addressErrorHouseNumber", postal: "addressErrorPostal", missing: "addressErrorMissing" } as const)[result.error];
-    return { errorKey, values, attempt: (prev.attempt ?? 0) + 1 };
+    return { errorKey, values, attempt: (prev.attempt ?? 0) + 1, editId };
   }
   // Replace: /checkout/address now jumps to review for a customer with an address, so a pushed entry here made Back
   // from review bounce straight back to it (checker #811, the #795 loop for a NEW customer).
   redirect(`/checkout/review?addressId=${result.id}`, RedirectType.replace);
+}
+
+/** Delete a saved address (owner 03/11) — scoped to the customer in deleteAddress; back to the list either way. */
+export async function deleteAddressAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
+  await deleteAddress(Number(formData.get("addressId")));
+  redirect("/checkout/address?choose=1", RedirectType.replace);
 }
 
 export async function selectAddressAction(formData: FormData): Promise<void> {
