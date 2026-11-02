@@ -520,7 +520,7 @@ export const en: Dictionary = {
     addressErrorHouseNumber: "Please include the house number in the address.",
     postcodeHint: "Enter the 5-digit postal code, then pick your sub-district.",
     postcodeLoading: "Looking up this postal code…",
-    postcodeNotFound: "This postal code is not in our list. Check it again, or type the sub-district, district and province yourself.",
+    postcodeNotFound: "We can't find this postal code. Please check it again — if it is right, message the shop on LINE.",
     postcodePlaceLabel: "Sub-district · District · Province",
     postcodePickPrompt: "Pick the sub-district for this code",
     addressErrorPostal: "The postal code is wrong or does not match the sub-district, district and province.",

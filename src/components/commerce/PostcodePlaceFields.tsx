@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 /**
  * Postcode first, then the place (owner queue 02/11 item 4: "ให้รหัสไปรษณีย์อยู่ต้นๆ ใส่แล้วขึ้นจังหวัดเลย"). Five digits ask
  * /api/address/postcode/<code> for the sub-districts it serves: one = filled in, several = a list to pick from (nothing is
- * guessed), none = the customer may type the place by hand. The three place values travel as the same form fields as before
+ * guessed), none = the code is refused (the hint says check it or message the shop on LINE). The three place values travel as the same form fields as before
  * (`subdistrict`, `district`, `province`) and the address action re-checks them against the code on the server.
  * Controlled inputs on purpose: a refused submit must not empty them (LESSONS พ45) — the starting values come back from
  * the action's answer.
@@ -60,7 +60,9 @@ export function PostcodePlaceFields({
   }, [code, complete]);
 
   const shown = complete ? places : null;
-  const manual = shown !== null && shown.length === 0 && !loading;
+  // Loading only counts for a complete code: a code cut back to 4 digits mid-fetch must not leave "looking up…" behind.
+  const looking = complete && loading;
+  const notFound = shown !== null && shown.length === 0 && !looking;
   const pickedIndex = shown ? shown.findIndex((p) => samePlace(p, place)) : -1;
 
   return (
@@ -87,7 +89,7 @@ export function PostcodePlaceFields({
           </span>
         ) : (
           <span id="postalCode-hint" className="text-xs text-foreground-dim">
-            {loading ? t.postcodeLoading : manual ? t.postcodeNotFound : t.postcodeHint}
+            {looking ? t.postcodeLoading : notFound ? t.postcodeNotFound : t.postcodeHint}
           </span>
         )}
       </label>
@@ -122,28 +124,8 @@ export function PostcodePlaceFields({
         </label>
       )}
 
-      {/* A code the data does not list: the three fields are typed by hand (the server checks the province against the
-          code's first two digits). Until the code has 5 digits nothing shows — the postcode comes first. */}
-      {manual && (
-        <div className="grid grid-cols-2 gap-3">
-          {(["subdistrict", "district", "province"] as const).map((name) => (
-            <label key={name} className={cn("flex flex-col gap-1.5 text-sm text-foreground-muted", name === "province" && "col-span-2")} htmlFor={name}>
-              {name === "subdistrict" ? t.subdistrictLabel : name === "district" ? t.districtLabel : t.provinceLabel}
-              <input
-                id={name}
-                name={name}
-                required
-                autoComplete={name === "district" ? "address-level2" : name === "province" ? "address-level1" : undefined}
-                value={place[name]}
-                onChange={(e) => setPlace((cur) => ({ ...cur, [name]: e.target.value }))}
-                className={cn(INPUT, "border-surface-border")}
-              />
-            </label>
-          ))}
-        </div>
-      )}
-      {/* Waiting for the code: the place travels empty, so a submit now is refused as "missing" on the server. */}
-      {!manual && !(shown && shown.length > 0) && (
+      {/* Waiting for the code, or a code not found: the place travels as it is and the server refuses it (missing / postal). */}
+      {!(shown && shown.length > 0) && (
         <>
           <input type="hidden" name="subdistrict" value={place.subdistrict} />
           <input type="hidden" name="district" value={place.district} />

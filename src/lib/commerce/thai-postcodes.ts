@@ -7,8 +7,9 @@ import data from "@/data/thai-address/postcodes.json";
  * so browsers ask /api/address/postcode/<code> for one code instead of downloading it.
  *
  * One postcode often covers several sub-districts, sometimes in two provinces (83000 = Phuket town and Ko Yao, Phang Nga),
- * so the customer always picks — nothing is guessed. A few real codes are missing from the data (building codes such as
- * 10501): those go through the manual path, checked only against the provinces the code's first two digits belong to.
+ * so the customer always picks — nothing is guessed. A code the data does not list is refused (owner 02/11 "รหัสไม่มีจริง =
+ * ไปต่อไม่ได้"; checker 02/11: a prefix-only manual path let made-up codes such as 10999 through) — the field tells the
+ * customer to check it again or message the shop on LINE. Licence of the data: LICENSE-thai-province-data.txt beside it.
  */
 
 export interface Place {
@@ -19,14 +20,6 @@ export interface Place {
 
 const CODES = (data as unknown as { codes: Record<string, [string, string, string][]> }).codes;
 
-/** Provinces per postcode prefix (first two digits), for codes the data does not list. */
-const PREFIX_PROVINCES = new Map<string, Set<string>>();
-for (const [code, rows] of Object.entries(CODES)) {
-  const set = PREFIX_PROVINCES.get(code.slice(0, 2)) ?? new Set<string>();
-  for (const r of rows) set.add(r[2]);
-  PREFIX_PROVINCES.set(code.slice(0, 2), set);
-}
-
 const clean = (s: string) => s.trim().replace(/\s+/g, " ");
 
 /** The places a 5-digit postcode serves; empty when the code is malformed or not in the data. */
@@ -36,14 +29,11 @@ export function placesForPostcode(code: string): Place[] {
 }
 
 /** What the server accepts for an address: "place" = the exact sub-district + district + province the postcode serves;
- *  "manual" = a code the data does not list, whose province matches the code's first two digits; anything else = "wrong". */
-export function checkPostcodePlace(code: string, place: Place): "place" | "manual" | "wrong" {
+ *  anything else (a malformed code, a code the data does not list, a place the code does not serve) = "wrong". */
+export function checkPostcodePlace(code: string, place: Place): "place" | "wrong" {
   const c = code.trim();
-  if (!/^[0-9]{5}$/.test(c)) return "wrong";
-  const rows = CODES[c];
-  if (rows) {
-    const p = { subdistrict: clean(place.subdistrict), district: clean(place.district), province: clean(place.province) };
-    return rows.some(([s, d, pr]) => s === p.subdistrict && d === p.district && pr === p.province) ? "place" : "wrong";
-  }
-  return PREFIX_PROVINCES.get(c.slice(0, 2))?.has(clean(place.province)) ? "manual" : "wrong";
+  const rows = /^[0-9]{5}$/.test(c) ? CODES[c] : undefined;
+  if (!rows) return "wrong";
+  const p = { subdistrict: clean(place.subdistrict), district: clean(place.district), province: clean(place.province) };
+  return rows.some(([s, d, pr]) => s === p.subdistrict && d === p.district && pr === p.province) ? "place" : "wrong";
 }

@@ -512,7 +512,7 @@ export const zh: Dictionary = {
     addressErrorHouseNumber: "请在地址中填写门牌号。",
     postcodeHint: "输入 5 位邮政编码，然后选择分区。",
     postcodeLoading: "正在查找该邮编的地区…",
-    postcodeNotFound: "列表中没有这个邮编。请再核对一次，或自行填写分区、区县和府。",
+    postcodeNotFound: "找不到这个邮编，请再核对一次；如确认无误，请通过 LINE 联系店铺。",
     postcodePlaceLabel: "分区 · 区县 · 府",
     postcodePickPrompt: "选择该邮编所属的分区",
     addressErrorPostal: "邮政编码有误，或与所选的分区、区县、府不符。",
