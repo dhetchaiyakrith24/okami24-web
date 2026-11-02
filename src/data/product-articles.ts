@@ -1420,14 +1420,14 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "หัว V2 กับหัว Top Fill ต่างกันตรงไหน",
           paragraphs: [
-            "หัว VMATE Cartridge V2 เติมน้ำยาทางช่องด้านข้าง และมีคอยล์ติดตั้งมาในหัวแล้ว ส่วนหัว VMATE Top Fill ใช้วิธีเติมด้านบน",
+            "หัว Top Fill ใช้วิธีเติมด้านบน ส่วนหัว V2 เติมน้ำยาทางช่องด้านข้าง และมีคอยล์ติดมาในหัวแล้ว",
           ],
         },
         {
           heading: "เลือกหัวพอตให้ตรงกับเครื่องที่ใช้",
           paragraphs: [
-            "VOOPOO ทำหัว V2 มาให้ใช้กับเครื่องอย่าง Vmate Infinity Edition, Vmate E และ V.THRU Pro ส่วนหัว Top Fill เป็นหัวที่มากับ [Vmate Pro 2](/products/vmate-pro-2)",
-            "VOOPOO ระบุว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30 วัตต์ขึ้นไป ถ้าจะใช้หัวนี้ก็ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ก่อน",
+            "หัว V2 ใช้ได้กับ Vmate Infinity Edition, Vmate E, V.THRU Pro เป็นต้น ส่วนหัว Top Fill เป็นหัวที่ [Vmate Pro 2](/products/vmate-pro-2) ให้มาในกล่อง",
+            "VOOPOO ระบุว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30 วัตต์ขึ้นไป ก่อนใช้หัวนี้ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่",
           ],
         },
         {
