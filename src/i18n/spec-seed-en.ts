@@ -19,7 +19,6 @@ const LABELS_EN: Record<string, string> = {
   "ความจุหัวพอต": "Pod capacity",
   "ขนาดขวด": "Bottle size",
   "ใช้ได้กับ": "Compatible devices",
-  "เครื่อง RELX Infinity 2 Plus": "RELX Infinity 2 Plus device",
   "ใช้ได้กับอุปกรณ์": "Compatible devices",
   "ใช้ได้กับก้าน": "Compatible sticks",
   "แบตเตอรี่": "Battery",
@@ -144,6 +143,7 @@ const VALUES_EN: Record<string, string> = {
   "แบบเติมด้านข้าง: 3 หัว": "Side-fill version: 3 pods",
   "แบบเติมด้านข้าง: PCTG": "Side-fill version: PCTG",
   "เติมด้านบน": "Top fill",
+  "เครื่อง RELX Infinity 2 Plus": "RELX Infinity 2 Plus device",
 };
 
 /** The English label for a Thai seed label ("กำลังไฟที่แนะนำ (0.8Ω)" keeps its bracket), or the label itself. */
