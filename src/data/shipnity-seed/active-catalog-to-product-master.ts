@@ -1980,15 +1980,15 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     sourceUrls: ["https://nevoks.com/products/nevoks-feelin-mini-pod-kit"],
   },
   // Data round (2026-09-24, chat 2, real browser): ESKO's own SWITCH page — "Specifications" block (18ml CARTRIDGE
-  // CAPACITY · 850MAH BATTERY CAPACITY · 5V 0.85A CHARGING CURRENT) and the feature text ("20,000 puffs", "three distinct
-  // airflow settings", "High (H) mode … Low (L) mode", "simultaneous dual-coil heating"). Nothing else is claimed.
+  // CAPACITY · 850MAH BATTERY CAPACITY · 5V 0.85A CHARGING CURRENT) and the feature text ("20,000 puffs", "A rotary adjustment dial at the base
+  // provides three distinct airflow settings" [the device base, not the pod], "High (H) mode … Low (L) mode", "simultaneous dual-coil heating"). Nothing else is claimed.
   "Pod-159": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "battery", label: "แบตเตอรี่", value: "850mAh", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "capacity", label: "ความจุหัวพอต", value: "18mL", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "charging", label: "การชาร์จ", value: "5V 0.85A", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-      { key: "airflow", label: "ช่องลม", value: "ปรับได้ 3 ระดับ หมุนที่ก้นพอต", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "airflow", label: "ช่องลม", value: "ปรับได้ 3 ระดับ หมุนที่ก้นตัวเครื่อง", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "modes", label: "โหมดการทำงาน", value: "High กับ Low กดปุ่มเดียวสลับได้", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
       { key: "coil", label: "คอยล์", value: "คอยล์คู่ ทำงานพร้อมกัน", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     ],
