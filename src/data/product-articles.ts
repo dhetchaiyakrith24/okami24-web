@@ -2467,7 +2467,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "RELX Essential 2 มีสีอะไรบ้าง",
-          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel silver และ Nebula Blue ค่ะ",
+          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel Silver และ Nebula Blue ค่ะ",
         },
         {
           question: "RELX Essential 2 ต้องเติมน้ำยาเองไหม",
@@ -2518,7 +2518,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "Which colours does the RELX Essential 2 come in?",
-          answer: "The shop lists Black, Steel silver, Grey, Nebula Blue and Orange.",
+          answer: "The shop lists Black, Steel Silver, Grey, Nebula Blue and Orange.",
         },
         {
           question: "Do I need to fill the RELX Essential 2 with e-liquid?",
@@ -2569,7 +2569,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "RELX Essential 2 有哪些颜色？",
-          answer: "本店列出的颜色有 Black、Steel silver、Grey、Nebula Blue 和 Orange。",
+          answer: "本店列出的颜色有 Black、Steel Silver、Grey、Nebula Blue 和 Orange。",
         },
         {
           question: "RELX Essential 2 需要自己加烟油吗？",
