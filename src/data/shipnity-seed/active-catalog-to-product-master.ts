@@ -1649,7 +1649,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "380mAh", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
       { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
-      { key: "compatible-pods", label: "ใช้กับหัวพอต", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "compatible-pods", label: "หัวพอตที่ใช้ได้", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
     ],
     sourceUrls: ["https://relxnow.com/products/essential-device"],
   },
