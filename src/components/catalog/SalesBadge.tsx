@@ -89,7 +89,8 @@ export function OptionBestTag({ className }: { className?: string }) {
 }
 
 /** The product head version: pills beside the brand / family badges (same shape as Badge, sans words for Thai), kept on
- *  one line together. The best-seller glint runs three times and stops (it sits by the page title). */
+ *  one line together. leading-none after text-xs: tailwind-merge drops the pill's leading-none when text-xs
+ *  follows, and a 26px pill grew the row after hydration (checker 02/11). The best-seller glint runs three times and stops (it sits by the page title). */
 export function HeadSalesBadge({ slug, soldOut = false }: { slug: string; soldOut?: boolean }) {
   const { dict } = useLocale();
   const kinds = useBadges(slug, soldOut);
@@ -98,12 +99,12 @@ export function HeadSalesBadge({ slug, soldOut = false }: { slug: string; soldOu
     <span className="inline-flex flex-nowrap items-center gap-1.5">
       {kinds.map((kind) =>
         kind === "best" ? (
-          <span key={kind} data-head="" className={cn(BEST_PILL, "gap-1.5 px-2.5 py-1 text-xs")}>
+          <span key={kind} data-head="" className={cn(BEST_PILL, "gap-1.5 px-2.5 py-1 text-xs leading-none")}>
             <span className={BEST_DOT} aria-hidden />
             {dict.product.badgeBestSeller}
           </span>
         ) : (
-          <span key={kind} className={cn(NEW_PILL, "gap-1.5 px-2.5 py-1 text-xs")}>
+          <span key={kind} className={cn(NEW_PILL, "gap-1.5 px-2.5 py-1 text-xs leading-none")}>
             <span className={NEW_DOT} aria-hidden />
             {dict.product.badgeNew}
           </span>
