@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -30,9 +30,12 @@ function Field({
   pattern?: string;
   inputMode?: "text" | "tel" | "numeric";
   autoComplete?: string;
-  /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers. */
+  /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers.
+   *  It goes away once the customer edits the field (checker 02/11: a fixed field stayed red until the next save). */
   error?: string | null;
 }) {
+  const [edited, setEdited] = useState(false);
+  const shown = edited ? null : error;
   return (
     <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor={name}>
       {label}
@@ -45,13 +48,14 @@ function Field({
         autoComplete={autoComplete}
         defaultValue={defaultValue}
         required
-        aria-invalid={error ? true : undefined}
-        aria-describedby={error ? `${name}-error` : undefined}
-        className={cn("rounded-md border bg-surface-2 px-3 py-2 text-base text-foreground", error ? "border-danger" : "border-surface-border")}
+        onChange={() => setEdited(true)}
+        aria-invalid={shown ? true : undefined}
+        aria-describedby={shown ? `${name}-error` : undefined}
+        className={cn("rounded-md border bg-surface-2 px-3 py-2 text-base text-foreground", shown ? "border-danger" : "border-surface-border")}
       />
-      {error && (
+      {shown && (
         <span id={`${name}-error`} role="alert" className="text-sm text-danger">
-          {error}
+          {shown}
         </span>
       )}
     </label>
@@ -120,7 +124,9 @@ export function AddressStepView({
         <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-6">
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.addNewAddressTitle}</span>
           <Field label={dict.checkout.recipientNameLabel} name="recipientName" autoComplete="name" defaultValue={v.recipientName} />
+          {/* key = attempt: each answer of the action remounts the fields, so a new refusal shows even on an edited field. */}
           <Field
+            key={`phone-${state.attempt ?? 0}`}
             label={dict.checkout.phoneFieldLabel}
             name="phone"
             type="tel"
@@ -137,7 +143,7 @@ export function AddressStepView({
             initial={{ postalCode: v.postalCode, subdistrict: v.subdistrict, district: v.district, province: v.province }}
             postalError={fieldError("postalCode")}
           />
-          <Field label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
+          <Field key={`line1-${state.attempt ?? 0}`} label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
           {error && !errorField && (
             <p role="alert" className="text-sm text-danger">
               {error}

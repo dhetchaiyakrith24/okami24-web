@@ -549,7 +549,7 @@ export const th: Dictionary = {
     changeSavedAddressCta: "ใช้ที่อยู่อื่น",
     shipToSavedTitle: "จัดส่งไปที่อยู่เดิมของคุณค่ะ",
     addressErrorMissing: "กรุณากรอกข้อมูลให้ครบทุกช่องค่ะ",
-    addressErrorPhone: "เบอร์ติดต่อยังไม่ครบ เบอร์มือถือมี 10 หลัก เบอร์บ้านมี 9 หลัก ขึ้นต้นด้วย 0 นะคะ",
+    addressErrorPhone: "เบอร์ติดต่อยังไม่ครบ มือถือ 10 หลัก เบอร์บ้าน 9 หลัก ขึ้นต้นด้วย 0 ค่ะ",
     addressErrorHouseNumber: "รบกวนใส่บ้านเลขที่ในช่องที่อยู่ด้วยนะคะ",
     postcodeHint: "ใส่รหัสไปรษณีย์ 5 หลัก แล้วเลือกตำบล/แขวงได้เลยค่ะ",
     postcodeLoading: "กำลังค้นหาพื้นที่ของรหัสนี้…",

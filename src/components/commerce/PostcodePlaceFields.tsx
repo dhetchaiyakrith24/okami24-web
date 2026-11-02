@@ -36,6 +36,9 @@ export function PostcodePlaceFields({
   const [places, setPlaces] = useState<Place[] | null>(null);
   const [place, setPlace] = useState<Place>({ subdistrict: initial.subdistrict ?? "", district: initial.district ?? "", province: initial.province ?? "" });
   const [loading, setLoading] = useState(false);
+  // The refusal under the code goes away once the code is edited (the parent remounts this per answer).
+  const [codeEdited, setCodeEdited] = useState(false);
+  const codeError = codeEdited ? null : postalError;
   const complete = /^[0-9]{5}$/.test(code);
 
   useEffect(() => {
@@ -78,14 +81,17 @@ export function PostcodePlaceFields({
           maxLength={5}
           required
           value={code}
-          onChange={(e) => setCode(e.target.value.replace(/[^0-9]/g, "").slice(0, 5))}
-          aria-invalid={postalError ? true : undefined}
-          aria-describedby={postalError ? "postalCode-error" : "postalCode-hint"}
-          className={cn(INPUT, postalError ? "border-danger" : "border-surface-border")}
+          onChange={(e) => {
+            setCode(e.target.value.replace(/[^0-9]/g, "").slice(0, 5));
+            setCodeEdited(true);
+          }}
+          aria-invalid={codeError ? true : undefined}
+          aria-describedby={codeError ? "postalCode-error" : "postalCode-hint"}
+          className={cn(INPUT, codeError ? "border-danger" : "border-surface-border")}
         />
-        {postalError ? (
+        {codeError ? (
           <span id="postalCode-error" role="alert" className="text-sm text-danger">
-            {postalError}
+            {codeError}
           </span>
         ) : (
           <span id="postalCode-hint" className="text-xs text-foreground-dim">
@@ -118,6 +124,9 @@ export function PostcodePlaceFields({
               </option>
             ))}
           </select>
+          {/* A closed select cuts its text at phone width — and the cut end is the province, which tells apart a code that
+              spans two provinces (83000 Phuket / Phang Nga). Below sm the picked place is repeated in full (checker 02/11). */}
+          {pickedIndex >= 0 && <span className="text-sm text-foreground sm:hidden">{placeLabel(shown[pickedIndex])}</span>}
           <input type="hidden" name="subdistrict" value={place.subdistrict} />
           <input type="hidden" name="district" value={place.district} />
           <input type="hidden" name="province" value={place.province} />
