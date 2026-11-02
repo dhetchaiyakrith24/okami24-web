@@ -1187,7 +1187,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
           paragraphs: [
             "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
-            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) บนเว็บเรามีตัวเลือกหัวเติมด้านบน 0.4 และ 0.7 โอห์ม อยู่ในช่วง 0.4–1.0 โอห์มที่ VOOPOO ระบุไว้สำหรับ G3 mini ส่วนตัวเลือก 1.2 โอห์มเป็นหัวเติมด้านข้าง อยู่นอกช่วงของรุ่นนี้"
+            "หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21) มีหัวพอตให้เลือกสองแบบ แบบ Top Fill เติมด้านบน 0.4, 0.7 และ 1.0 โอห์ม คือแบบที่ VOOPOO ระบุว่าใช้กับ G3 mini ได้ ส่วนแบบเติมด้านข้าง 0.7 และ 1.2 โอห์มเป็นหัวอีกรุ่นซึ่ง VOOPOO ไม่ได้ระบุไว้สำหรับรุ่นนี้"
           ]
         },
         {
@@ -1212,7 +1212,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods fit, and where do I get them?",
           paragraphs: [
             "The ARGUS Top Fill Cartridge V2 fits the whole ARGUS pod family; VOOPOO asks you to check the resistance and output against the device.",
-            "Our [VOOPOO Argus Pod cartridges](/products/coil-21) listing includes Top Fill cartridges at 0.4 and 0.7Ω, inside the 0.4–1.0Ω range VOOPOO gives for the G3 mini; its 1.2Ω option is a side-fill pod, outside that range."
+            "Our [VOOPOO Argus Pod cartridges](/products/coil-21) page lists the ARGUS Top Fill cartridge at 0.4, 0.7 and 1.0Ω, which VOOPOO names for the G3 mini; the side-fill pod on the same page (0.7 and 1.2Ω) is a different cartridge that VOOPOO does not list for the G3 mini."
           ]
         },
         {
@@ -1237,7 +1237,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能用哪些烟弹，去哪里买？",
           paragraphs: [
             "ARGUS Top Fill Cartridge V2 兼容整个 ARGUS 烟弹家族；VOOPOO 提醒按阻值和功率确认是否适配。",
-            "本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 有 0.4 和 0.7 欧姆的 Top Fill 选项，在 VOOPOO 为 G3 mini 标注的 0.4–1.0 欧姆范围内；1.2 欧姆选项是侧注式烟弹，不在这一范围内。"
+            "本店的 [VOOPOO Argus Pod 烟弹](/products/coil-21) 页面有 0.4、0.7 和 1.0 欧姆的 ARGUS Top Fill 烟弹，VOOPOO 标明可用于 G3 mini；同页的侧注式烟弹（0.7 和 1.2 欧姆）是另一款，VOOPOO 没有列明适用于 G3 mini。"
           ]
         },
         {
