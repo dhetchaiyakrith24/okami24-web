@@ -94,7 +94,8 @@ export function PostcodePlaceFields({
             {codeError}
           </span>
         ) : (
-          <span id="postalCode-hint" className="text-xs text-foreground-dim">
+          /* A code not found reads as a refusal (red, polite), not a grey hint (visitor 02/11: easy to miss on a computer). */
+          <span id="postalCode-hint" role={notFound ? "alert" : undefined} className={notFound ? "text-sm text-danger" : "text-xs text-foreground-dim"}>
             {looking ? t.postcodeLoading : notFound ? t.postcodeNotFound : t.postcodeHint}
           </span>
         )}
