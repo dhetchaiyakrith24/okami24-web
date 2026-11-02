@@ -303,7 +303,7 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g5-lite/card-v3.webp",
+        src: "/assets/products/caliburn-g5-lite/card-v3-wm2.webp",
         alt: "UWELL Caliburn G5 Lite, Coral Orange colourway, isolated product shot",
         angle: "Round img-1610 (16/10): studio re-shoot with Nano Banana Pro (Higgsfield web app, Unlimited plan - no credits) from UWELL's own Coral Orange render (the maker strip crop the site used since 03/09), 2 renders per colour, the closer one keyed; upright on 4:5 like before. Prompt + keying: _incoming/img-1610/prompts.md (G5 Lite) and b6/.",
         transparentBackground: true,
@@ -318,7 +318,7 @@ export const uwellProducts: Product[] = [
     lineupImage: {
       // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
       // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
-      src: "/assets/products/caliburn-g5-lite/lineup-v3.webp",
+      src: "/assets/products/caliburn-g5-lite/lineup-v3-wm2.webp",
       alt: "UWELL Caliburn G5 Lite, all 8 colours",
       sourceName: "OKami24 composite (from the img-1610 studio re-shoots of UWELL's own colour renders)",
     },
@@ -342,49 +342,49 @@ export const uwellProducts: Product[] = [
         id: "candy-pink",
         name: "Candy Pink",
         swatchHex: "#f3adbb",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink-v3.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
       },
       {
         id: "coral-orange",
         name: "Coral Orange",
         swatchHex: "#f2794f",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-coral-orange-v3.webp", alt: "UWELL Caliburn G5 Lite, Coral Orange" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-coral-orange-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Coral Orange" },
       },
       {
         id: "creamy-celadon",
         name: "Creamy Celadon",
         swatchHex: "#d4d3d4",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon-v3.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
       },
       {
         id: "knight-black",
         name: "Knight Black",
         swatchHex: "#5e5e5e",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black-v3.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
       },
       {
         id: "lemon-green",
         name: "Lemon Green",
         swatchHex: "#c4d94a",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-lemon-green-v3.webp", alt: "UWELL Caliburn G5 Lite, Lemon Green" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-lemon-green-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Lemon Green" },
       },
       {
         id: "mint-green",
         name: "Mint Green",
         swatchHex: "#cde4bd",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green-v3.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
       },
       {
         id: "ocean-blue",
         name: "Ocean Blue",
         swatchHex: "#a1bff7",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue-v3.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
       },
       {
         id: "starry-gray",
         name: "Starry Gray",
         swatchHex: "#c4c3c9",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray-v3.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray-v3-wm2.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
       },
     ],
     specifications: [
