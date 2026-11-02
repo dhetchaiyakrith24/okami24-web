@@ -2184,7 +2184,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ชาร์จยังไง",
           paragraphs: [
-            "เครื่องนี้มีแบตเตอรี่ 380mAh อยู่ในตัว และชาร์จซ้ำได้ผ่านช่อง USB-C",
+            "เครื่องนี้มีแบตเตอรี่ 380mAh และชาร์จซ้ำได้ผ่านช่อง USB-C",
             "เรื่องชาร์จนานแค่ไหนและดูแลแบตยังไง ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
           ],
         },
@@ -2236,7 +2236,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do you charge it?",
           paragraphs: [
-            "The 380mAh battery is built in and recharges over USB-C.",
+            "It has a 380mAh battery that recharges over USB-C.",
           ],
         },
       ],
@@ -2287,7 +2287,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "怎么充电？",
           paragraphs: [
-            "主机内置 380mAh 电池，可通过 USB-C 充电。",
+            "主机配备 380mAh 电池，可通过 USB-C 充电。",
           ],
         },
       ],
@@ -2444,9 +2444,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "คอยล์ MEGA MESH ของ Smash Go 12K ช่วยอะไร",
+          heading: "คอยล์ของ Smash Go 12K ช่วยอะไร",
           paragraphs: [
-            "RELX อธิบายว่าคอยล์ MEGA MESH ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
+            "RELX อธิบายว่าคอยล์รุ่นนี้ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
             "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)"
           ]
         }
@@ -2472,9 +2472,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "What does the MEGA MESH coil of the RELX Smash Go 12K do?",
+          heading: "What does the Smash Go 12K's coil do?",
           paragraphs: [
-            "RELX says the MEGA MESH coil gives a smooth, consistent flavour and vaporises the e-liquid evenly.",
+            "RELX says this coil gives a smooth, consistent flavour and vaporises the e-liquid evenly.",
             "How many days one lasts depends on how often you vape."
           ]
         }
@@ -2500,9 +2500,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "RELX Smash Go 12K 的 MEGA MESH 线圈有什么作用？",
+          heading: "RELX Smash Go 12K 的线圈有什么作用？",
           paragraphs: [
-            "RELX 表示 MEGA MESH 线圈让口味顺滑稳定，烟油雾化更均匀。",
+            "RELX 表示这款线圈让口味顺滑稳定，烟油雾化更均匀。",
             "一支能用几天，取决于抽的频率。"
           ]
         }
