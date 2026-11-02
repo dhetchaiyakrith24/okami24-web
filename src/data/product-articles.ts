@@ -1765,6 +1765,280 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Round "queue 0211" articles, RELX (02/11): the two published RELX pages, from RELX's own pages — R2 relxnow.com/products/
+  // essential-device · R7 relxnow.com/products/relx-pod-pro · R6 relxnow.my/products/relx-pod-pro-2-fresh-peach (RELX Malaysia) ·
+  // R1 relxnow.com/products/relx-infinity-2-plus-device. RELX's own figures that have no spec row (55 °C · 0.2 s · 6–7.5 mg ·
+  // 11 layers · 500 vs 600 puffs) are told without the number; thai-copy 02/11.
+  "relx-essential-2": {
+    th: {
+      lede: "RELX Essential 2 เป็นเครื่องระบบสวิตช์ ใช้คู่กับหัวพอตบรรจุสำเร็จ ด้านล่างเป็นข้อมูลจากเว็บของ RELX ตั้งแต่หัวพอตที่ใช้ได้ไปจนถึงการชาร์จ",
+      sections: [
+        {
+          heading: "RELX Essential 2 ใช้กับหัวพอตรุ่นไหน",
+          paragraphs: [
+            "RELX ระบุว่าเครื่องนี้ใช้ได้กับหัวพอต RELX Pod และ RELX Pod Pro ซึ่งเป็นหัวพอตทรงสมมาตรทั้งสองรุ่น",
+            "หน้าเว็บของ RELX บอกด้วยว่า Pod Pro ใส่เครื่อง [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้เช่นกัน",
+          ],
+        },
+        {
+          heading: "RELX Pod กับ RELX Pod Pro ต่างกันตรงไหน",
+          paragraphs: [
+            "RELX Pod Pro ใช้คอยล์เซรามิก ส่วน RELX Pod ใช้คอยล์สำลี",
+            "RELX บอกด้วยว่า Pod Pro ปรับมาให้กันรั่วได้ดีขึ้น",
+          ],
+        },
+        {
+          heading: "สูบแล้วเป็นยังไง",
+          paragraphs: [
+            "เครื่องนี้ใช้ระบบที่ RELX เรียกว่า Super Smooth ซึ่งคุมไอไม่ให้ร้อนเกินไป เพื่อช่วยเลี่ยงรสไหม้",
+            "RELX บอกด้วยว่าพอเริ่มสูบ เครื่องก็ทำงานแทบจะทันที และแต่ละพัฟให้ไอแน่น",
+          ],
+        },
+        {
+          heading: "ออกแบบให้กันรั่วยังไง",
+          paragraphs: [
+            "RELX ออกแบบด้านในเป็นโครงสร้างซ้อนกันหลายชั้น เพื่อช่วยกันน้ำยารั่ว และกันไม่ให้หยดน้ำยาไปเกาะค้างอยู่ข้างใน",
+          ],
+        },
+        {
+          heading: "ชาร์จยังไง",
+          paragraphs: [
+            "เครื่องนี้มีแบตเตอรี่ 380mAh อยู่ในตัว และชาร์จซ้ำได้ผ่านช่อง USB-C",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Essential 2 มีสีอะไรบ้าง",
+          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel silver และ Nebula Blue ค่ะ",
+        },
+        {
+          question: "RELX Essential 2 ต้องเติมน้ำยาเองไหม",
+          answer: "ไม่ต้องเติมค่ะ หัวพอตที่ใช้กับเครื่องนี้มีน้ำยามาในตัวแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+        },
+        {
+          question: "RELX Essential 2 ใส่หัว RELX Infinity Pro 2 ได้ไหม",
+          answer: "RELX ระบุว่าเครื่องนี้ใช้กับหัวพอต RELX Pod และ RELX Pod Pro ส่วนหัว [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ที่แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ไม่ได้อยู่ในรายชื่อนี้ค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Essential 2 is a switch-style device that takes prefilled pods. Below is what RELX's own page says about it, from the pods it takes to how it charges.",
+      sections: [
+        {
+          heading: "Which pods does the RELX Essential 2 take?",
+          paragraphs: [
+            "RELX lists two pods for it, RELX Pod and RELX Pod Pro, both of a symmetrical design.",
+            "RELX's page adds that the RELX Pod Pro also fits the [RELX Infinity 2 Plus](/products/relx-infinity-2-plus).",
+          ],
+        },
+        {
+          heading: "RELX Pod or RELX Pod Pro: what's the difference?",
+          paragraphs: [
+            "They use different coils: the RELX Pod Pro has a ceramic coil and the RELX Pod a cotton one. RELX also says the Pod Pro has improved leak resistance.",
+          ],
+        },
+        {
+          heading: "What is it like to vape?",
+          paragraphs: [
+            "It uses what RELX calls Super Smooth, which keeps the vapour from running too hot to help avoid a burnt taste.",
+            "RELX also says it fires almost the instant you draw, with dense vapour in every puff.",
+          ],
+        },
+        {
+          heading: "How is it built against leaks?",
+          paragraphs: [
+            "RELX builds the inside in several layers, to help keep e-liquid from leaking and droplets from collecting inside.",
+          ],
+        },
+        {
+          heading: "How do you charge it?",
+          paragraphs: [
+            "The 380mAh battery is built in and recharges over USB-C.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which colours does the RELX Essential 2 come in?",
+          answer: "The shop lists Black, Steel silver, Grey, Nebula Blue and Orange.",
+        },
+        {
+          question: "Do I need to fill the RELX Essential 2 with e-liquid?",
+          answer: "No. Its pods come filled, so when one runs out you simply put on a new one.",
+        },
+        {
+          question: "Does the RELX Essential 2 take the RELX Infinity Pro 2 pod?",
+          answer: "RELX lists two pods for this device, RELX Pod and RELX Pod Pro. RELX Pod Pro 2, the name printed on the [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) pack, is not on that list.",
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Essential 2 是一款换弹式主机，搭配预灌装烟弹使用。下面根据 RELX 官网的介绍，从适用的烟弹一直讲到充电方式。",
+      sections: [
+        {
+          heading: "RELX Essential 2 适用哪些烟弹？",
+          paragraphs: [
+            "RELX 标明它适用 RELX Pod 和 RELX Pod Pro 两款烟弹，两款都是对称式设计。",
+            "RELX 官网还表示，RELX Pod Pro 也适用于 [RELX Infinity 2 Plus](/products/relx-infinity-2-plus)。",
+          ],
+        },
+        {
+          heading: "RELX Pod 和 RELX Pod Pro 有什么不同？",
+          paragraphs: [
+            "两款的线圈不同：RELX Pod Pro 用陶瓷线圈，RELX Pod 用棉芯线圈。RELX 还表示，Pod Pro 的防漏性能做了优化。",
+          ],
+        },
+        {
+          heading: "抽起来怎么样？",
+          paragraphs: [
+            "它采用 RELX 称为 Super Smooth 的技术，让烟雾温度不会过高，帮助避免焦味。",
+            "RELX 还表示，一吸几乎立即启动，每一口烟雾都很饱满。",
+          ],
+        },
+        {
+          heading: "防漏是怎么设计的？",
+          paragraphs: [
+            "RELX 把内部设计成多层结构，帮助防止漏油，也避免油滴凝结在内部。",
+          ],
+        },
+        {
+          heading: "怎么充电？",
+          paragraphs: [
+            "主机内置 380mAh 电池，可通过 USB-C 充电。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Essential 2 有哪些颜色？",
+          answer: "本店列出的颜色有 Black、Steel silver、Grey、Nebula Blue 和 Orange。",
+        },
+        {
+          question: "RELX Essential 2 需要自己加烟油吗？",
+          answer: "不需要。适用的烟弹出厂已装好烟油，用完换一颗新的即可。",
+        },
+        {
+          question: "RELX Essential 2 能用 RELX Infinity Pro 2 烟弹吗？",
+          answer: "RELX 官网为这台主机标明的适用烟弹是 RELX Pod 和 RELX Pod Pro 两款。[RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) 包装上印的名称 RELX Pod Pro 2 不在这份列表里。",
+        },
+      ],
+    },
+  },
+  "relx-infinity-pro-2-pod": {
+    th: {
+      lede: "หัวพอต RELX Infinity Pro 2 มีน้ำยามาในตัว แพ็กและหน้าเว็บของ RELX ใช้ชื่อว่า RELX Pod Pro 2 ด้านล่างสรุปว่าหัวนี้ใช้กับโหมดไหนของเครื่อง พร้อมจัดกลิ่นเป็นแนวให้เลือกง่ายขึ้น",
+      sections: [
+        {
+          heading: "ใช้ได้กับโหมดไหนของเครื่องบ้าง",
+          paragraphs: [
+            "RELX ระบุว่าหัวรุ่นนี้รองรับโหมด Eco · Smooth และ Boost ของเครื่อง",
+            "RELX อธิบายว่าโหมด Eco สูบเบาลงและช่วยให้แบตอึดขึ้น โหมด Smooth ให้รสที่นุ่ม ส่วนโหมด Boost ให้รสเข้มขึ้นและไอเยอะขึ้น",
+          ],
+        },
+        {
+          heading: "หัวพอต RELX Infinity Pro 2 มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "กลิ่นของรุ่นนี้แยกได้เป็นสองกลุ่ม กลุ่มแรกคือกลิ่นที่ชื่อไม่มีคำว่า 50mg ถ้าจัดตามชื่อกลิ่นจะได้ 4 แนว",
+            "สายชา ได้แก่ Hibiscus Ice Tea · Iced Black Tea · Jasmine Green Tea · Lemon Ice Tea · Longjing Ice Tea · Oolong Ice Tea และ Thai Milk Tea",
+            "สายผลไม้ ได้แก่ Banana Freeze · Blueberry Splash · Fresh Peach · Green Grape Ice · Honeydew Melon · Lemon Zest · Lime Ice · Lychee Ice · Orange Sparkle · Pink Guava · Smooth Mango · Strawberry Burst · Tangy Grape และ Watermelon Ice",
+            "สายยาสูบ ได้แก่ Ice Tobacco และ Lime Tobacco",
+            "แนวอื่นมี Dark Sparkle · Ludou Ice และ Taro Scoop",
+            "อีกกลุ่มคือกลิ่นที่ชื่อลงท้ายด้วย 50mg เป็นแบบนิโคติน 50mg ถ้าจัดตามชื่อกลิ่นก็ได้ 4 แนวเช่นกัน",
+            "สายเย็นแบบ 50mg ได้แก่ Spearmint · Peppermint · Lemon Mint · Mint Freeze · Menthol Xtra และ Raspberry Mint",
+            "สายยาสูบแบบ 50mg ได้แก่ Classic Tobacco · Mint Tobacco และ Rich Tobacco",
+            "สายผลไม้แบบ 50mg ได้แก่ Citrus · Grape · Green Apple · Strawberry · Triple Berry และ Watermelon Ice",
+            "แนวอื่นแบบ 50mg มี Ice Sparking",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต RELX Infinity Pro 2 ใช้กับเครื่องอะไร",
+          answer: "RELX ระบุว่าหัวรุ่นนี้ใช้กับเครื่อง RELX Infinity 2 และ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้ค่ะ",
+        },
+        {
+          question: "หัวพอต RELX Infinity Pro 2 ต้องเติมน้ำยาไหม",
+          answer: "ไม่ต้องเติมค่ะ หัวพอตมีน้ำยามาในตัวแล้ว หัวละ 1.9mL ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Infinity Pro 2 pod is a prefilled pod. Its pack prints the name RELX Pod Pro 2, the same name RELX uses on its own pages. Below: which of the device's modes it works with, and the flavours grouped by name to make choosing easier.",
+      sections: [
+        {
+          heading: "Which of the device's modes does it work with?",
+          paragraphs: [
+            "RELX states the pod supports the device's Eco, Smooth and Boost modes.",
+            "In RELX's words, Eco gives a lighter puff and longer battery life, Smooth an ultra-smooth taste, and Boost a richer flavour with bigger clouds.",
+          ],
+        },
+        {
+          heading: "Which flavours does the RELX Infinity Pro 2 pod come in?",
+          paragraphs: [
+            "The flavours come in two groups. The first, with no 50mg in the name, sorts by name into four sets.",
+            "Tea: Hibiscus Ice Tea, Iced Black Tea, Jasmine Green Tea, Lemon Ice Tea, Longjing Ice Tea, Oolong Ice Tea and Thai Milk Tea.",
+            "Fruit: Banana Freeze, Blueberry Splash, Fresh Peach, Green Grape Ice, Honeydew Melon, Lemon Zest, Lime Ice, Lychee Ice, Orange Sparkle, Pink Guava, Smooth Mango, Strawberry Burst, Tangy Grape and Watermelon Ice.",
+            "Tobacco: Ice Tobacco and Lime Tobacco.",
+            "Others: Dark Sparkle, Ludou Ice and Taro Scoop.",
+            "The second group ends in 50mg: these are the 50mg-nicotine pods, and they also sort into four sets.",
+            "Mint and menthol, 50mg: Lemon Mint, Menthol Xtra, Mint Freeze, Peppermint, Raspberry Mint and Spearmint.",
+            "Tobacco, 50mg: Classic Tobacco, Mint Tobacco and Rich Tobacco.",
+            "Fruit, 50mg: Citrus, Grape, Green Apple, Strawberry, Triple Berry and Watermelon Ice.",
+            "Others, 50mg: Ice Sparking.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which device does the RELX Infinity Pro 2 pod fit?",
+          answer: "RELX states it fits the RELX Infinity 2 and the [RELX Infinity 2 Plus](/products/relx-infinity-2-plus).",
+        },
+        {
+          question: "Do I need to fill the RELX Infinity Pro 2 pod with e-liquid?",
+          answer: "No. Each pod comes filled with 1.9mL of e-liquid; when it runs out, put on a new one.",
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Infinity Pro 2 烟弹是预灌装烟弹，包装上印的名称是 RELX Pod Pro 2，RELX 官网用的也是这个名称。下面介绍它支持主机的哪些模式，并按名称把口味分好类，方便挑选。",
+      sections: [
+        {
+          heading: "支持主机的哪些模式？",
+          paragraphs: [
+            "RELX 标明这款烟弹支持主机的 Eco、Smooth 和 Boost 模式。",
+            "按 RELX 的介绍，Eco 吸感更轻、更省电；Smooth 口感顺滑；Boost 口味更浓、烟雾更多。",
+          ],
+        },
+        {
+          heading: "RELX Infinity Pro 2 烟弹有哪些口味？",
+          paragraphs: [
+            "口味分为两组。第一组是名称不带 50mg 的口味，按名称可分为四类。",
+            "茶系：Hibiscus Ice Tea、Iced Black Tea、Jasmine Green Tea、Lemon Ice Tea、Longjing Ice Tea、Oolong Ice Tea、Thai Milk Tea。",
+            "水果系：Banana Freeze、Blueberry Splash、Fresh Peach、Green Grape Ice、Honeydew Melon、Lemon Zest、Lime Ice、Lychee Ice、Orange Sparkle、Pink Guava、Smooth Mango、Strawberry Burst、Tangy Grape、Watermelon Ice。",
+            "烟草系：Ice Tobacco、Lime Tobacco。",
+            "其他：Dark Sparkle、Ludou Ice、Taro Scoop。",
+            "另一组是名称以 50mg 结尾的口味，尼古丁浓度为 50mg，按名称同样可分为四类。",
+            "50mg 薄荷系：Lemon Mint、Menthol Xtra、Mint Freeze、Peppermint、Raspberry Mint、Spearmint。",
+            "50mg 烟草系：Classic Tobacco、Mint Tobacco、Rich Tobacco。",
+            "50mg 水果系：Citrus、Grape、Green Apple、Strawberry、Triple Berry、Watermelon Ice。",
+            "50mg 其他：Ice Sparking。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX Infinity Pro 2 烟弹适用于哪款主机？",
+          answer: "RELX 标明这款烟弹适用于 RELX Infinity 2 和 [RELX Infinity 2 Plus](/products/relx-infinity-2-plus)。",
+        },
+        {
+          question: "RELX Infinity Pro 2 烟弹需要自己加烟油吗？",
+          answer: "不需要，每颗烟弹出厂已装有 1.9mL 烟油，用完换一颗新的即可。",
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4c (06/10): from RELX's own Smash Go 12K page; Thai = thai-copy 06/10.
   "relx-smash-go-12k": {
     th: {
@@ -1774,6 +2048,24 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ความเข้มข้นมีให้เลือกสองแบบ",
           paragraphs: [
             "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K มีกลิ่นแนวไหนบ้าง",
+          paragraphs: [
+            "RELX บอกไว้ว่ากลิ่นของรุ่นนี้มีทั้งผลไม้และมินต์เย็น ถ้าแบ่งกลิ่นแบบ 3% ตามชื่อกลิ่น จะได้ 3 แนว",
+            "สายเย็น ได้แก่ Double Mint",
+            "สายผลไม้ ได้แก่ Apple · Blueberry · Grape · Grape Aloe · Grape Lychee · Green Mango · Lychee · Mixberry · Passion Fruit · Peach Strawberry · Pineapple · Pink Berry · Pink Guava · Strawberry และ Watermelon",
+            "แนวอื่นมี Cola · Oolong Tea และ Watermelon Bubblegum",
+            "ส่วนแบบ 5% มี Classic Tobacco · Cola · Cool Mint · Double Mint · Grape · Mixberry · Spearmint และ Watermelon",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)"
+          ]
+        },
+        {
+          heading: "คอยล์ MEGA MESH ของ Smash Go 12K ช่วยอะไร",
+          paragraphs: [
+            "RELX อธิบายว่าคอยล์ MEGA MESH ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
+            "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)"
           ]
         }
       ]
@@ -1786,6 +2078,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version."
           ]
+        },
+        {
+          heading: "Which flavours does the RELX Smash Go 12K come in?",
+          paragraphs: [
+            "RELX describes the range as fruity blends and cool mint options. Grouped by name, the 3% flavours on this page fall into three sets.",
+            "Cool: Double Mint.",
+            "Fruit: Apple, Blueberry, Grape, Grape Aloe, Grape Lychee, Green Mango, Lychee, Mixberry, Passion Fruit, Peach Strawberry, Pineapple, Pink Berry, Pink Guava, Strawberry and Watermelon.",
+            "Others: Cola, Oolong Tea and Watermelon Bubblegum.",
+            "The 5% version comes in Classic Tobacco, Cola, Cool Mint, Double Mint, Grape, Mixberry, Spearmint and Watermelon."
+          ]
+        },
+        {
+          heading: "What does the MEGA MESH coil of the RELX Smash Go 12K do?",
+          paragraphs: [
+            "RELX says the MEGA MESH coil gives a smooth, consistent flavour and vaporises the e-liquid evenly.",
+            "How many days one lasts depends on how often you vape."
+          ]
         }
       ]
     },
@@ -1796,6 +2105,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "两种浓度可选",
           paragraphs: [
             "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K 有哪些口味？",
+          paragraphs: [
+            "RELX 介绍这款有水果和清凉薄荷两类口味。本页的 3% 口味按名称可分为三类。",
+            "清凉系：Double Mint。",
+            "水果系：Apple、Blueberry、Grape、Grape Aloe、Grape Lychee、Green Mango、Lychee、Mixberry、Passion Fruit、Peach Strawberry、Pineapple、Pink Berry、Pink Guava、Strawberry、Watermelon。",
+            "其他：Cola、Oolong Tea、Watermelon Bubblegum。",
+            "5% 版本有 Classic Tobacco、Cola、Cool Mint、Double Mint、Grape、Mixberry、Spearmint、Watermelon。"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K 的 MEGA MESH 线圈有什么作用？",
+          paragraphs: [
+            "RELX 表示 MEGA MESH 线圈让口味顺滑稳定，烟油雾化更均匀。",
+            "一支能用几天，取决于抽的频率。"
           ]
         }
       ]
