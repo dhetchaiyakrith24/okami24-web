@@ -118,6 +118,10 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "เครื่องพอต": ["พอตซิสเต็ม", "พอตเปลี่ยนหัว", "พอตใช้แล้วทิ้ง"],
   "พอตทิ้ง": ["พอตใช้แล้วทิ้ง"],
   // "พอตเปลี่ยนหัว" is a category label since 19/10 (switch-pods) — it matches its own devices, no alias.
+  // Owner 03/11: the site now says "เครื่องจ่ายความร้อน" and "บุหรี่ TEREA" — the old words customers still type find the same
+  // products (checker #1161: both returned nothing after the rename).
+  "เครื่องอุ่นยาสูบ": ["เครื่องจ่ายความร้อน"],
+  "ก้าน": ["terea"],
   "หัวเปล่า": ["หัวพอต"],
   "แทงค์": ["หัวพอต"],
   // ── round 7 "SEO ค" B4 (2026-09-23): spellings people actually typed into Google and reached
