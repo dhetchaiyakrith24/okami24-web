@@ -541,8 +541,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Vinci เป็นผลิตภัณฑ์ในกลุ่ม VINCI จากแบรนด์ VOOPOO",
   },
   "Coil-21": {
-    tagline: "หัวพอต Argus Pod จาก VOOPOO มีคอยล์ในตัว 0.7 หรือ 1.2 โอห์ม สำหรับแนวการสูบ MTL",
-    shortDescription: "คอยล์รุ่น Argus Pod เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต ARGUS จาก VOOPOO เลือกได้ทั้งแบบเติมน้ำยาด้านข้างและแบบ Top Fill เติมด้านบน",
+    shortDescription: "หัวพอต ARGUS จาก VOOPOO แบบ Argus Pod เติมด้านข้าง ความจุ 2mL คอยล์ในตัว 0.7 หรือ 1.2 โอห์ม และแบบ Top Fill เติมด้านบน 0.4 0.7 กับ 1.0 โอห์ม",
   },
   "Coil-72": {
     tagline: "หัวพอต VMATE จาก VOOPOO ความจุ 3mL มีคอยล์ในตัว เลือกได้ทั้งแบบเติมน้ำยาด้านข้างและด้านบน",
@@ -1895,16 +1895,20 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   // Details 02/11 (real browser): VOOPOO's Argus Pod Cartridge page — "For Argus Pod Kit, Argus P1 Kit, Argus G Kit and Argus Z Kit etc.",
   // "MTL users", "Integrated 0.7ohm Or 1.2ohm Coil", "Side Filling Design", "Capacity: 2ml", "Material: PCTG", "3 Pieces in each pack".
+  // Details 02/11 (b6): the listing sells TWO VOOPOO pods — that side-fill Argus Pod Cartridge (warehouse "1.2Ω") and the ARGUS Top Fill
+  // Cartridge (warehouse "Top Fill 0.4Ω / 0.7Ω 2ml"; VOOPOO's ARGUS G3 mini page, read in cart fit 27/10 — see catalog-relationships.ts:
+  // "ARGUS Top Fill Cartridge, resistance range 0.4/0.7/1.0Ω"). Every side-fill-only fact is scoped "แบบเติมด้านข้าง". "Argus mix" names no
+  // VOOPOO product and stays the warehouse's own label, unexplained.
   "Coil-21": {
     specifications: [
-      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
-      { key: "coil", label: "คอยล์", value: "คอยล์ในตัว 0.7Ω หรือ 1.2Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
-      { key: "fill", label: "การเติมน้ำยา", value: "เติมด้านข้าง", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod / Argus P1 / Argus G / Argus Z", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
-      { key: "pack", label: "จำนวนต่อกล่อง", value: "3 หัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
-      { key: "materials", label: "วัสดุ", value: "PCTG", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "capacity", label: "ความจุ", value: "แบบเติมด้านข้าง: 2mL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "coil", label: "คอยล์", value: "แบบเติมด้านข้าง: คอยล์ในตัว 0.7Ω หรือ 1.2Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "Top Fill เติมด้านบน 0.4Ω · 0.7Ω · 1.0Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "แบบเติมด้านข้าง: Argus Pod / Argus P1 / Argus G / Argus Z", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "แบบเติมด้านข้าง: 3 หัว", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+      { key: "materials", label: "วัสดุ", value: "แบบเติมด้านข้าง: PCTG", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
     ],
-    sourceUrls: ["https://shop.voopoo.com/products/argus-pod-cartridge"],
+    sourceUrls: ["https://shop.voopoo.com/products/argus-pod-cartridge", "https://shop.voopoo.com/products/argus-g3-mini"],
   },
   // Details 02/11 (real browser, https://www.myuwell.com/caliburn/caliburn-x): "COMPATIBLE WITH G SERIES COILS" · coil list "0.8 Ω CALIBURN G Coil (Pre-installed) ·
   // 1.2 Ω CALIBURN G2 Coil (Spare) · 1.0 Ω CALIBURN G Coil (Sold Separately)" — the pod of the Caliburn X kit.
@@ -2865,6 +2869,12 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "glacier-silver", label: "Glacier Silver", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
     { code: "fresh-green", label: "Fresh Green", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
     { code: "lavender", label: "Lavender", sourceUrl: "https://shop.voopoo.com/products/vmate-pro-2" },
+  ],
+  // Details 02/11 (b6): VOOPOO makes the side-fill Argus Pod Cartridge in 0.7 and 1.2Ω and the ARGUS Top Fill Cartridge in 0.4 / 0.7 / 1.0Ω;
+  // the warehouse (Coil-21) has neither the side-fill 0.7Ω nor the Top Fill 1.0Ω.
+  "Coil-21": [
+    { code: "0-7ω", label: "0.7Ω", sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge" },
+    { code: "top-fill-1-0ω", label: "Top Fill 1.0Ω", sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini" },
   ],
   // Details 02/11: VOOPOO sells the VMATE Top Fill pod in 0.4 / 0.7 / 1.0Ω; the warehouse (Coil-72) has no 1.0Ω.
   "Coil-72": [
