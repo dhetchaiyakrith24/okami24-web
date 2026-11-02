@@ -2633,6 +2633,124 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       sections: []
     },
   },
+  // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i — every fact = iqos.com/ph ILUMA i kit page (in-app browser 02/11; quotes in
+  // side-session notes articles-0211c/iqos-facts.md). "TEREA only" stays out (tagline + short description say it twice). No health
+  // or cigarette comparisons. Thai-only guides are linked from th only. Thai = thai-copy 02/11.
+  "iqosheet-18": {
+    th: {
+      lede: "ข้อมูลด้านล่างสรุปจากหน้าของ IQOS เอง ตั้งแต่ของที่อยู่ในกล่อง ILUMA i จำนวนก้านที่สูบต่อกันได้ และการทำงานของแต่ละความสามารถ ไปจนถึงเรื่องการทำความสะอาดเครื่อง",
+      sections: [
+        {
+          heading: "ในกล่อง ILUMA i มีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีของสามชิ้น คือตัวสูบ กล่องชาร์จพกพา และสาย USB-C ตัวสูบทำจากอะลูมิเนียม ส่วนกล่องชาร์จเป็นพลาสติกที่ทนทานและทนความร้อน มาในทรงที่คุ้นตาของ IQOS",
+            "ก่อนใช้ครั้งแรก IQOS แนะนำให้ชาร์จตัวสูบ 12 นาที ส่วนกล่องชาร์จใช้เวลาชาร์จเต็มประมาณ 2 ชั่วโมง 15 นาที และแบตของกล่องชาร์จเมื่อเต็มแล้วใช้ได้รวมราว 20 ก้าน",
+          ],
+        },
+        {
+          heading: "สูบต่อกันได้กี่ก้าน",
+          paragraphs: [
+            "ถ้าใช้โหมด Performance และไม่ได้พักการสูบ ตัวสูบของ ILUMA i จะสูบต่อกันได้สูงสุด 3 ก้าน ก่อนจะต้องวางกลับลงไปชาร์จในกล่อง",
+            "โหมด Performance เป็นค่าเริ่มต้นของเครื่อง ถ้าอยากเปลี่ยนเป็นโหมด Eco ก็ตั้งได้ผ่าน IQOS web app การเลือกระหว่างสองโหมดนี้ IQOS เรียกว่า FlexBattery และระบุว่าถ้าใช้โหมด Eco มาตลอด ตัวสูบจะใช้งานได้นานขึ้น แต่ผลจริงจะต่างกันไปตามการใช้งานของแต่ละคน",
+          ],
+        },
+        {
+          heading: "จอทัชบอกอะไร และพักการสูบได้นานแค่ไหน",
+          paragraphs: [
+            "จอบนตัวสูบจะบอกว่ากำลังอุ่นเครื่องอยู่หรืออุ่นเสร็จแล้ว ก้านที่สูบอยู่เหลือเวลาอีกเท่าไหร่ และยังสูบต่อได้อีกหนึ่งหรือสองก้าน",
+            "ระหว่างสูบ พักไว้ได้นานสุด 8 นาทีแล้วกลับมาสูบต่อจากเดิม ถ้าไม่กลับมาภายใน 8 นาที ตัวสูบจะปิดเองและก้านนั้นก็จบไป",
+            "การพักใช้ได้เฉพาะในโหมด Performance ช่วง 3 นาทีแรกหรือ 8 พัฟแรกของก้าน และเมื่อพักไปแล้ว ตัวสูบจะสูบต่อกันได้สูงสุดสองก้าน โดยพักได้เพียงก้านเดียวในสองก้านนั้น",
+          ],
+        },
+        {
+          heading: "FlexPuff ทำงานตอนไหน",
+          paragraphs: [
+            "พอใกล้หมดก้าน เครื่องจะเช็คเองว่ายาสูบในก้านใช้ไปหมดแล้วหรือยัง ถ้ายังเหลือ เครื่องก็จะเพิ่มให้อีก 4 พัฟโดยอัตโนมัติ และวงไฟบนจอจะยาวขึ้นทวนเข็มนาฬิกาไปจนถึงตำแหน่ง 9 นาฬิกาให้เห็น ระหว่างนี้ไม่ต้องกดหรือตั้งค่าอะไรเลย",
+            "IQOS ระบุว่าการทำงานและจำนวนพัฟที่ได้เพิ่มจะต่างกันไปตามการสูบของแต่ละคน บางก้านจึงอาจไม่ได้พัฟเพิ่ม FlexPuff ทำงานในโหมด Eco ได้ด้วย แต่ก้านที่พักการสูบไปแล้วจะไม่มี FlexPuff",
+          ],
+        },
+        {
+          heading: "ต้องทำความสะอาดไหม",
+          paragraphs: [
+            "ILUMA i อุ่นยาสูบด้วย SMARTCORE INDUCTION SYSTEM ที่ไม่ใช้ใบมีดให้ความร้อน และ IQOS ระบุว่าเครื่องนี้ไม่มีเศษยาสูบตกค้าง และไม่ต้องทำความสะอาด",
+            "ถ้าชาร์จไม่เข้า อยากรีเซ็ตเครื่อง หรืออยากรู้ว่าสัญลักษณ์บนจอหมายถึงอะไร อ่านต่อได้ที่ [IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า](/guides/iqos-iluma-i-reset-and-charging)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Everything below comes from IQOS's own page: what's in the ILUMA i box, how many sticks you can use in a row, how each feature works, and whether the device needs cleaning.",
+      sections: [
+        {
+          heading: "What's in the ILUMA i box?",
+          paragraphs: [
+            "Three things: the Holder, the Pocket Charger and a USB-C cable. The Holder is aluminium; the Pocket Charger is durable, heat-resistant plastic in IQOS's familiar shape. IQOS recommends charging the Holder for 12 minutes before first use. The Pocket Charger takes about 2 hours 15 minutes to charge fully, and a full charge covers about 20 sticks in total.",
+          ],
+        },
+        {
+          heading: "How many sticks in a row?",
+          paragraphs: [
+            "With Performance Mode on and no pause used, the ILUMA i Holder gives up to 3 sticks in a row before it goes back in the Pocket Charger. Performance Mode is the default; you can switch to Eco Mode in the IQOS web app. IQOS calls this choice FlexBattery and says that using Eco Mode throughout helps the Holder last longer, though results vary with personal use.",
+          ],
+        },
+        {
+          heading: "What does the Touch Screen show, and how long can I pause?",
+          paragraphs: [
+            "The screen shows the pre-heating status, the time left on the stick in use, and whether one or two more sticks are available.",
+            "You can pause for up to 8 minutes and pick up where you left off. If you don't resume within 8 minutes, the Holder switches off and that stick is finished. Pause works only in Performance Mode, during the first 3 minutes or 8 puffs of a stick. Once you pause, the Holder gives up to two sticks in a row, and only one of them can be paused.",
+          ],
+        },
+        {
+          heading: "When does FlexPuff kick in?",
+          paragraphs: [
+            "Near the end of a stick, the device checks whether the tobacco has been fully used. If not, it adds 4 extra puffs automatically, and the light ring on the screen extends counter-clockwise to the 9 o'clock position to show it. You don't need to do anything. IQOS says activation and the number of puffs depend on individual use, so not every stick gets them. FlexPuff also works in Eco Mode, but not on a stick you have paused.",
+          ],
+        },
+        {
+          heading: "Does it need cleaning?",
+          paragraphs: [
+            "The ILUMA i heats tobacco with the SMARTCORE INDUCTION SYSTEM, which uses no heating blade. IQOS says there is no tobacco residue and no cleaning needed.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下内容整理自 IQOS 官方页面：ILUMA i 盒内有什么、可以连续使用几支、各项功能如何运作，以及设备是否需要清洁。",
+      sections: [
+        {
+          heading: "ILUMA i 盒内有什么？",
+          paragraphs: [
+            "盒内有三样：烟具、便携充电盒和 USB-C 充电线。烟具为铝制，充电盒采用 IQOS 经典外形，由耐用、耐热的塑料制成。IQOS 建议首次使用前先给烟具充电 12 分钟；充电盒充满约需 2 小时 15 分钟，充满后总共可供约 20 支使用。",
+          ],
+        },
+        {
+          heading: "可以连续使用几支？",
+          paragraphs: [
+            "在 Performance 模式下且未使用暂停时，ILUMA i 烟具最多可连续使用 3 支，之后需放回充电盒充电。Performance 是默认模式，也可以在 IQOS web app 中切换为 Eco 模式。IQOS 把这两种模式的选择称为 FlexBattery，并表示一直使用 Eco 模式能延长烟具的使用寿命，实际效果因个人使用情况而异。",
+          ],
+        },
+        {
+          heading: "触控屏显示什么？可以暂停多久？",
+          paragraphs: [
+            "屏幕会显示预热状态、当前这支还剩多少时间，以及还能再用一支还是两支。",
+            "抽吸中可暂停最长 8 分钟，再从中断处继续；8 分钟内未恢复，烟具会自动关机，这支即结束。暂停仅在 Performance 模式下、每支的前 3 分钟或前 8 口内可用。使用暂停后，烟具最多可连续使用两支，且只有其中一支能暂停。",
+          ],
+        },
+        {
+          heading: "FlexPuff 什么时候起作用？",
+          paragraphs: [
+            "临近结束时，设备会自动判断这支是否已充分使用；如果还没有，会自动增加 4 口，屏幕上的光环会逆时针延伸到 9 点钟位置，无需任何操作。IQOS 表示是否触发及额外口数因个人使用习惯而异，并非每支都会有。Eco 模式下也可使用 FlexPuff，但暂停过的那一支不会触发。",
+          ],
+        },
+        {
+          heading: "需要清洁吗？",
+          paragraphs: [
+            "ILUMA i 采用 SMARTCORE INDUCTION SYSTEM 加热烟草，无需加热片。IQOS 表示设备不会残留烟草，也无需清洁。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
   "joiway-f4": {
     th: {
