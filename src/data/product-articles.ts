@@ -2634,7 +2634,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ถ้าชอบผลไม้ที่เย็นด้วย ก็มี Grape Ice ที่เป็นองุ่นสดกับน้ำแข็ง และ Watermelon Ice ที่เป็นแตงโมฉ่ำ ๆ เย็นแบบน้ำแข็ง",
             "สายผลไม้มี Lychee ลิ้นจี่หวานฉ่ำ Honeydew Melon เมลอนที่ผู้ผลิตบรรยายว่านุ่ม สด และฉ่ำ Grape Lychee องุ่นฉ่ำคู่กับลิ้นจี่ และ Mixberry เบอร์รี่หลายชนิดรวมกัน รสหวานและสดชื่น",
             "สตรอเบอร์รี่คู่กับผลไม้อีกชนิดมีสี่กลิ่น คือ Strawberry Watermelon คู่กับแตงโม Strawberry Kiwi คู่กับกีวีสด Strawberry Banana คู่กับกล้วยที่บรรยายว่าครีมมี่ และ Peach Strawberry คู่กับพีชหวาน",
-            "ถ้าอยากได้รสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum ที่เป็นแตงโมหวานกับหมากฝรั่ง",
+            "ถ้าชอบรสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum แตงโมหวานกับหมากฝรั่ง",
           ],
         },
         {
