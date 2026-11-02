@@ -2657,7 +2657,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "แต่ละคนชอบรสไม่เหมือนกัน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี 4 กลิ่น คือ Double Mint · Cool Mint · Spear Mint และ Blue Ice ส่วนสายองุ่นมี Grape และ Kyoho Grape สำหรับคนที่หาองุ่นเคียวโฮ",
             "สายผลไม้มี 11 กลิ่น มีทั้งผลไม้ชนิดเดียวอย่าง Watermelon กับ Pineapple ผลไม้สองชนิดคู่กันอย่าง Strawberry Peach กับ Banana Strawberry และยังมี Mix Berries · Pink Berry · Honey Lemon · Lemon Jeez · Apple Baraku กับ Fruit Punch",
-            "ส่วน Strawberry Ice Cream ชื่อมีผลไม้คู่กับไอศกรีม ร้านก็จัดไว้ในสายนี้ด้วย",
+            "กลิ่นที่ 11 คือ Strawberry Ice Cream ชื่อมีผลไม้คู่กับไอศกรีม ร้านก็จัดไว้ในสายนี้ด้วย",
             "ถ้าชอบแนวชา นม และขนม ฝั่งชามี Green Tea กับ Peach Tea ฝั่งนมมี Yakult กับ Yakult Orange และฝั่งขนมมี Vanilla Ice Cream · Taro Ice Cream · Butterscotch กับ Chocolate Dubai",
             "คำว่า Ice Cream ในชื่อหมายถึงไอศกรีม ไม่ได้บอกว่าเป็นกลิ่นเย็น ส่วน Peach Tea กับ Yakult Orange แม้มีผลไม้ในชื่อ ร้านก็จัดตามคำหลักของชื่อ",
             "แนวอื่นมี Cola · Mineral Water และ Green Slush สามชื่อนี้ไม่ได้บอกผลไม้หรือขนมตรง ๆ วิธีเลือกกลิ่นจากชื่อแบบละเอียด อ่านต่อได้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
@@ -2757,7 +2757,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ทำไมกล่อง Muro Grape มี VERY STRAWBERRY",
           paragraphs: [
-            "ถ้าดูรูปกล่องของกลิ่น Muro Grape จะเห็นคำว่า VERY STRAWBERRY อยู่ที่ด้านข้างกล่อง คำนี้เป็นลายที่ผู้ผลิตพิมพ์มากับกล่องเอง ร้านจึงคงรูปไว้ตามต้นฉบับ กล่องนี้เป็นของกลิ่น Muro Grape ตามโปสเตอร์ของกลิ่นนั้น ส่วน Very Strawberry มีกล่องของตัวเองแยกเป็นอีกกลิ่นหนึ่ง",
+            "ถ้าดูรูปกล่องของกลิ่น Muro Grape จะเห็นคำว่า VERY STRAWBERRY อยู่ที่ด้านข้างกล่อง คำนี้เป็นลายที่ผู้ผลิตพิมพ์มากับกล่องเอง ร้านจึงคงรูปไว้ตามต้นฉบับ กล่องนี้เป็นของกลิ่น Muro Grape ตามชื่อที่พิมพ์หน้ากล่อง ส่วน Very Strawberry มีกล่องของตัวเองแยกเป็นอีกกลิ่นหนึ่ง",
           ],
         },
         {
@@ -2782,7 +2782,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Why does the Muro Grape box say VERY STRAWBERRY?",
           paragraphs: [
-            "In the Muro Grape box photo you'll see VERY STRAWBERRY on the side panel. That's part of the maker's own box artwork, so we've kept the image as it is. According to that flavour's poster, the box is Muro Grape; Very Strawberry has its own box as a separate flavour.",
+            "In the Muro Grape box photo you'll see VERY STRAWBERRY on the side panel. That's part of the maker's own box artwork, so we've kept the image as it is. The name printed on the front says Muro Grape; Very Strawberry has its own box as a separate flavour.",
           ],
         },
         {
@@ -2807,7 +2807,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "为什么 Muro Grape 的包装盒上写着 VERY STRAWBERRY？",
           paragraphs: [
-            "在 Muro Grape 的包装盒图片里，可以看到侧面印着 VERY STRAWBERRY。这是厂家包装本身的图案，所以我们保留了原样。根据该口味的海报，这个盒子就是 Muro Grape；Very Strawberry 另有自己的包装盒，是另一款口味。",
+            "在 Muro Grape 的包装盒图片里，可以看到侧面印着 VERY STRAWBERRY。这是厂家包装本身的图案，所以我们保留了原样。盒子正面印的名称就是 Muro Grape；Very Strawberry 另有自己的包装盒，是另一款口味。",
           ],
         },
         {
