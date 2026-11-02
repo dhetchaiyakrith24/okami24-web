@@ -516,7 +516,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "RELX · INFY และ JOIWAY",
           body:
-            "[RELX Smash Go 12K](/products/relx-smash-go-12k) รองรับสูงสุด 12,000 พัฟ ใช้คอยล์ MEGA MESH แบต 400mAh ชาร์จผ่าน USB-C และมีความเข้มข้นให้เลือก 3% หรือ 5% ส่วน [RELX LUMI 18K](/products/relx-lumi-18k) ชื่อรุ่นระบุ 18,000 พัฟ [INFY 20K](/products/infy-20k) ร้านยืนยันความจุน้ำยาไว้ที่ 20mL และยืนยันว่าปรับช่องลมได้ ฝั่ง JOIWAY มี [Joiway F4](/products/joiway-f4) ที่มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น ระบุไว้สูงสุด 20,000 พัฟ แบ่งเป็นฝั่งละ 10,000 พัฟ แบต 650mAh และมีจอ LED ส่วน [Joiway F3](/products/joiway-f3) เป็นรุ่นกลิ่นเดียว ระบุไว้ 12,000 พัฟขึ้นไป ใช้นาโนคอยล์ และชาร์จผ่าน USB-C",
+            "[RELX Smash Go 12K](/products/relx-smash-go-12k) รองรับสูงสุด 12,000 พัฟ แบต 400mAh ชาร์จผ่าน USB-C ใช้คอยล์ MEGA MESH และมีความเข้มข้นให้เลือก 3% หรือ 5% ส่วน [RELX LUMI 18K](/products/relx-lumi-18k) ชื่อรุ่นระบุ 18,000 พัฟ [INFY 20K](/products/infy-20k) ร้านยืนยันความจุน้ำยาไว้ที่ 20mL และยืนยันว่าปรับช่องลมได้ ฝั่ง JOIWAY มี [Joiway F4](/products/joiway-f4) ที่มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น ระบุไว้สูงสุด 20,000 พัฟ แบ่งเป็นฝั่งละ 10,000 พัฟ แบต 650mAh และมีจอ LED ส่วน [Joiway F3](/products/joiway-f3) เป็นรุ่นกลิ่นเดียว ระบุไว้ 12,000 พัฟขึ้นไป ใช้นาโนคอยล์ และชาร์จผ่าน USB-C",
         },
       ],
       faqHeading: "คำถามที่พบบ่อย",

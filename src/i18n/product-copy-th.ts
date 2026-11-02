@@ -743,7 +743,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "zero-nano": {
     whoIsThisFor: {
-      0: "อยากได้เครื่องระบบสวิตช์ตระกูล Zero ตัวเล็ก ๆ ไว้พกติดตัว",
+      0: "อยากได้เครื่องตระกูล Zero ตัวเล็ก ๆ ไว้พกติดตัว",
     },
     specifications: {
       format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
