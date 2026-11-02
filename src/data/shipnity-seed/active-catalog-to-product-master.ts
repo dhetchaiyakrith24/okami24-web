@@ -1484,7 +1484,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-74/card-v3.webp",
+      src: "/assets/products/coil-74/card-v3-wm2.webp",
       alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo",
       angle: "Box front with its two pods, studio re-shoot 11/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from a retailer's 1652 px photo of the CALIBURN X 3 ml box (2 PCS) and its pods (myuwell.com no longer lists the CALIBURN X); box art, every printed word and number and the pod shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2687,7 +2687,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
   },
   "Coil-74": {
-    "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
+    "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2-wm2.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
   },
   "Coil-38": {
     "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
