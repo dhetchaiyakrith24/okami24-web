@@ -36,9 +36,10 @@ export const th: Dictionary = {
     ariaLabel: "ทำไมต้องซื้อกับ OKami24",
     items: [
       { title: "ของแท้", body: "จากแบรนด์ที่เรามั่นใจ" },
-      // Owner 2026-09-17 (round close): "…ที่ขายจริง" so the phone line breaks before "ไม่ปั่นราคา"
-      // instead of after "ไม่" (390px 2×2 grid); en/zh unchanged.
-      { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" },
+      // Owner 03/11 ("ตามแนะนำ"; thai-copy option A): "ไม่ปั่นราคา" / "the price you see" contradicted the struck-through
+      // label price (BSOT §5 2026-11-02) — the line now says only what is true on every page: orders are charged at the
+      // selling price. 390 break aimed at "…ราคาขาย | ที่แสดงบนเว็บ".
+      { title: "ราคาตรง", body: "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" },
       { title: "บริการจริง", body: "ทักไลน์มา แอดมินตอบเอง ไม่ใช่บอท" },
       // Owner 05/10: the old body ("สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา") explained missing facts — HANDOFF §18 06/10 pm.
       // checker #296: "มาจากข้อมูลแบรนด์เอง" overstated on the Unbranded pages + the §18 named exceptions — the line says what
@@ -561,7 +562,17 @@ export const th: Dictionary = {
     postcodeNotFound: "ไม่พบรหัสนี้ ลองตรวจรหัสอีกครั้งนะคะ ถ้ารหัสถูกแล้ว สอบถามทาง LINE ได้เลยค่ะ",
     postcodePlaceLabel: "ตำบล/แขวง · อำเภอ/เขต · จังหวัด",
     postcodePickPrompt: "เลือกตำบล/แขวงของรหัสนี้",
-    addressErrorPostal: "รหัสไปรษณีย์ไม่ถูกต้อง หรือไม่ตรงกับตำบล อำเภอ จังหวัดที่เลือกค่ะ",
+    addressSearchLabel: "ค้นหาที่อยู่",
+    addressSearchPlaceholder: "พิมพ์ชื่อตำบล อำเภอ จังหวัด หรือรหัสไปรษณีย์",
+    addressSearchHint: "เลือกจากรายการ ระบบจะกรอกช่องด้านล่างให้ หรือจะกรอกเองก็ได้ค่ะ",
+    addressSearchEmpty: "ไม่พบที่อยู่นี้ กรอกเองในช่องด้านล่างได้เลยค่ะ",
+    editAddressCta: "แก้ไข",
+    deleteAddressCta: "ลบ",
+    deleteAddressConfirm: "ลบที่อยู่นี้ใช่ไหมคะ ออเดอร์ที่สั่งไปแล้วยังใช้ที่อยู่เดิมค่ะ",
+    deleteAddressYes: "ลบที่อยู่",
+    editAddressTitle: "แก้ไขที่อยู่",
+    cancelEditCta: "ยกเลิก",
+    addressErrorPostal: "รหัสไปรษณีย์ไม่ถูกต้อง หรือไม่ตรงกับจังหวัดที่กรอกค่ะ",
     placeErrorBusy: "กำลังส่งคำสั่งซื้อนี้อยู่ รอสักครู่แล้วกดยืนยันอีกครั้งนะคะ",
     placeErrorAddress: "ไม่พบที่อยู่นี้แล้ว กรุณาเลือกหรือเพิ่มที่อยู่จัดส่งอีกครั้งนะคะ",
     placeErrorShippingChanged: "ค่าส่งของคำสั่งซื้อนี้เปลี่ยนแล้ว ยอดใหม่อยู่ด้านบน ตรวจดูอีกครั้งแล้วกดยืนยันได้เลยค่ะ",
