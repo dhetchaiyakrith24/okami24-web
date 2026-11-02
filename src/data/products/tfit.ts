@@ -37,7 +37,7 @@ export const tfitProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/tfit-m-power-20k/card-wm.webp",
+        src: "/assets/products/tfit-m-power-20k/card.webp",
         alt: "TFIT M Power 20K disposable, Watermelon, official isolated product shot",
         angle: "Front, isolated",
         transparentBackground: true,
