@@ -3457,6 +3457,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
+          heading: "หัวหนึ่งใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "Kardinal บอกว่าหัวหนึ่งสูบได้สูงสุด 15,000 พัฟ แล้วแต่การใช้งานของแต่ละคน และระบุว่าหัวของ Quikpro ออกแบบมาให้ใช้ได้นานกว่าพอตใช้แล้วทิ้งทั่วไปและพอตระบบปิด",
+            "ระบบ Quikpro มีช่องดูน้ำยา จึงเห็นได้ว่าน้ำยาในหัวเหลืออีกเท่าไรก่อนถึงเวลาเปลี่ยนหัว ส่วนแบตของตัวเครื่องชาร์จซ้ำได้ผ่าน USB-C ในราว 30 นาที Kardinal บอกว่าช่วยให้ใช้น้ำยาในหัวได้จนหมด ไม่ต้องสะดุดเพราะแบตหมดกลางทาง",
+          ],
+        },
+        {
           heading: "ใส่กับเครื่องไหนได้",
           paragraphs: [
             "Kardinal ระบุว่าหัวนี้ออกแบบมาสำหรับเครื่อง Quikpro โดยเฉพาะ ส่วนหัว KSpod ที่ Kardinal ทำให้เครื่อง Lumina และหัวพอตของแบรนด์อื่น ใส่กับ Quikpro ไม่ได้ ถ้ายังไม่มีตัวเครื่อง ดูได้ที่หน้า [ชุดเครื่อง Quikpro](/products/ks-quikpro-kit)",
@@ -3482,6 +3489,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
+          heading: "How long does a pod last?",
+          paragraphs: [
+            "Kardinal says each pod gives up to 15,000 puffs, depending on how you use it, and that Quikpro pods are designed to last longer than typical disposables and closed-pod systems. The Quikpro has an e-liquid window, so you can see how much is left before it is time for a new pod, and the device's rechargeable battery charges over USB-C in about 30 minutes, which Kardinal says lets you use each pod to the end without running out of power midway.",
+          ],
+        },
+        {
           heading: "Which device does it fit?",
           paragraphs: [
             "Kardinal says this pod is designed specifically for the Quikpro. The KSpod Kardinal makes for the Lumina and pods from other brands don't fit the Quikpro. If you don't have the device yet, see the [Quikpro kit](/products/ks-quikpro-kit).",
@@ -3503,6 +3516,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "不可以。这款烟弹不能自行补油，Kardinal 表示这样能保持产品的品质与卫生。",
             "Kardinal 还表示，只换烟弹、继续使用同一台主机，与一次性电子烟相比能减少废弃物，也能延长主机的使用寿命。",
+          ],
+        },
+        {
+          heading: "一颗烟弹能用多久？",
+          paragraphs: [
+            "Kardinal 表示，视个人使用情况，每颗烟弹最多可抽 15,000 口，并称 Quikpro 烟弹的设计比一般一次性电子烟和封闭式烟弹更耐用。Quikpro 设有烟油观察窗，换烟弹前可以看到烟油还剩多少；主机的可充电电池通过 USB-C 约 30 分钟充满，Kardinal 表示这样每颗烟弹都能用到最后，不会中途没电。",
           ],
         },
         {
