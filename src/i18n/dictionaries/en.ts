@@ -534,7 +534,7 @@ export const en: Dictionary = {
     addressSearchEmpty: "No match — you can type the address in the boxes below.",
     editAddressCta: "Edit",
     deleteAddressCta: "Delete",
-    deleteAddressConfirm: "Delete this address? Orders already placed stay as they are.",
+    deleteAddressConfirm: "Delete this address? Orders already placed keep their address.",
     deleteAddressYes: "Delete address",
     editAddressTitle: "Edit address",
     cancelEditCta: "Cancel",

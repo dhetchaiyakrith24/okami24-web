@@ -568,7 +568,7 @@ export const th: Dictionary = {
     addressSearchEmpty: "ไม่พบที่อยู่นี้ กรอกเองในช่องด้านล่างได้เลยค่ะ",
     editAddressCta: "แก้ไข",
     deleteAddressCta: "ลบ",
-    deleteAddressConfirm: "ลบที่อยู่นี้ใช่ไหมคะ ออเดอร์ที่สั่งไปแล้วไม่เปลี่ยนค่ะ",
+    deleteAddressConfirm: "ลบที่อยู่นี้ใช่ไหมคะ ออเดอร์ที่สั่งไปแล้วยังใช้ที่อยู่เดิมค่ะ",
     deleteAddressYes: "ลบที่อยู่",
     editAddressTitle: "แก้ไขที่อยู่",
     cancelEditCta: "ยกเลิก",

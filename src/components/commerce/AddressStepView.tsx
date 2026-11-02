@@ -168,10 +168,10 @@ export function AddressStepView({
                       </form>
                     ) : (
                       <div className="flex gap-4 border-t border-surface-border-soft pt-3 text-sm">
-                        <button type="button" className="py-1 text-foreground-muted underline-offset-4 hover:text-foreground hover:underline" onClick={() => startEdit(a)}>
+                        <button type="button" className="min-h-10 px-1 py-2 text-foreground-muted underline-offset-4 hover:text-foreground hover:underline" onClick={() => startEdit(a)}>
                           {dict.checkout.editAddressCta}
                         </button>
-                        <button type="button" className="py-1 text-foreground-muted underline-offset-4 hover:text-danger hover:underline" onClick={() => setConfirmDelete(a.id)}>
+                        <button type="button" className="min-h-10 px-1 py-2 text-foreground-muted underline-offset-4 hover:text-danger hover:underline" onClick={() => setConfirmDelete(a.id)}>
                           {dict.checkout.deleteAddressCta}
                         </button>
                       </div>

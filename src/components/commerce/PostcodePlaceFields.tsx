@@ -181,6 +181,12 @@ export function PostcodePlaceFields({
             }}
             onFocus={() => setOpen(true)}
             onKeyDown={(e) => {
+              // Esc closes the list only — a search box would otherwise empty itself too (checker #1169).
+              if (e.key === "Escape") {
+                e.preventDefault();
+                setOpen(false);
+                return;
+              }
               if (!listShown || hits.length === 0) return;
               if (e.key === "ArrowDown" || e.key === "ArrowUp") {
                 e.preventDefault();
@@ -189,8 +195,6 @@ export function PostcodePlaceFields({
                 // Enter picks the row instead of sending the whole form half filled.
                 e.preventDefault();
                 choose(hits[active]);
-              } else if (e.key === "Escape") {
-                setOpen(false);
               }
             }}
             className={cn(INPUT, "border-surface-border")}
@@ -295,15 +299,15 @@ export function PostcodePlaceFields({
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <label className={LABEL} htmlFor="subdistrict">
           {t.subdistrictLabel}
-          <input id="subdistrict" name="subdistrict" required autoComplete="off" value={place.subdistrict} onChange={(e) => setPlace((p) => ({ ...p, subdistrict: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
+          <input id="subdistrict" name="subdistrict" required maxLength={60} autoComplete="off" value={place.subdistrict} onChange={(e) => setPlace((p) => ({ ...p, subdistrict: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
         </label>
         <label className={LABEL} htmlFor="district">
           {t.districtLabel}
-          <input id="district" name="district" required autoComplete="off" value={place.district} onChange={(e) => setPlace((p) => ({ ...p, district: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
+          <input id="district" name="district" required maxLength={60} autoComplete="off" value={place.district} onChange={(e) => setPlace((p) => ({ ...p, district: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
         </label>
         <label className={cn(LABEL, "sm:col-span-2")} htmlFor="province">
           {t.provinceLabel}
-          <input id="province" name="province" required autoComplete="address-level1" value={place.province} onChange={(e) => setPlace((p) => ({ ...p, province: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
+          <input id="province" name="province" required maxLength={60} autoComplete="address-level1" value={place.province} onChange={(e) => setPlace((p) => ({ ...p, province: e.target.value }))} className={cn(INPUT, "border-surface-border")} />
         </label>
       </div>
     </div>

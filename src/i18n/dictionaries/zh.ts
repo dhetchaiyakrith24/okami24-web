@@ -526,7 +526,7 @@ export const zh: Dictionary = {
     addressSearchEmpty: "未找到该地址，可在下方各栏自行填写。",
     editAddressCta: "编辑",
     deleteAddressCta: "删除",
-    deleteAddressConfirm: "确定删除此地址吗？已下的订单不受影响。",
+    deleteAddressConfirm: "确定删除此地址吗？已下的订单仍使用原地址。",
     deleteAddressYes: "删除地址",
     editAddressTitle: "编辑地址",
     cancelEditCta: "取消",
