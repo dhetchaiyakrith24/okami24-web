@@ -1,16 +1,18 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
-//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] /assets/products/<slug>/<file> ...
+//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...
 // Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 12%; "OKAMI24.STORE"
 // (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 250 / rows 64) at 12% over the picture, 18% on the
 // product. Strength = owner 02/11 "12-18 ได้ทั้งคู่เลย" from the 4-level sheet: the first 2/4% vanished once
 // /_next/image re-encodes at 750 wide webp q75. Style per file (owner + Javis 02/11, from the two-style sample sheet):
 //   transparent photo (card · colour · flavour) = on the product's own pixels only: the transparent margin stays clean and
 //     alpha never changes, so the product box src/lib/media-quality.ts measures (alpha trim 10) cannot move;
-//   opaque poster = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
+//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
 // Writes <name>-wm.webp (q82) beside the original — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) —
 // points every reference under src/ at it, then deletes the original from public/ (git history + the --keep copy are the
-// way back). A name already ending in -wm is skipped. Photos from Javis's studio carry this mark already: leave them off.
+// way back). A file no src/ line names literally is refused: its path is built by a template (e.g. `variant-${id}.webp`)
+// that this tool cannot rewrite — fix the template by hand in the same commit and pass --template-refs.
+// A name already ending in -wm is skipped. Photos from Javis's studio carry this mark already: leave them off.
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
@@ -55,9 +57,12 @@ async function mark(file, zone) {
   const meta = await sharp(file).metadata();
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const W = info.width, H = info.height, t = await textMask(W, H), h = await helmetMask(W, H);
+  // a cut-out has transparent pixels; an alpha channel alone does not make one (story banners carry alpha, all 255)
+  let cutout = false;
+  if (meta.hasAlpha) for (let i = 3; i < data.length; i += 4) if (data[i] === 0) { cutout = true; break; }
   for (let p = 0, i = 0; p < W * H; p++, i += 4) {
     let op;
-    if (meta.hasAlpha) {
+    if (cutout) {
       if (data[i + 3] === 0) continue;
       op = TEXT_PRODUCT;
     } else {
@@ -69,7 +74,7 @@ async function mark(file, zone) {
   }
   let img = sharp(data, { raw: { width: W, height: H, channels: 4 } });
   if (!meta.hasAlpha) img = img.removeAlpha();
-  return { buf: await img.webp({ quality: 82 }).toBuffer(), hasAlpha: meta.hasAlpha };
+  return { buf: await img.webp({ quality: 82 }).toBuffer(), hasAlpha: cutout };
 }
 
 function sourceFiles(dir, out = []) {
@@ -84,11 +89,11 @@ function sourceFiles(dir, out = []) {
 (async () => {
   const args = process.argv.slice(2);
   const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
-  const dry = args.includes("--dry-run"), keep = opt("--keep"), zone = opt("--zone") && opt("--zone").split(",").map(Number);
+  const dry = args.includes("--dry-run"), templateRefs = args.includes("--template-refs"), keep = opt("--keep"), zone = opt("--zone") && opt("--zone").split(",").map(Number);
   // Git Bash rewrites a leading "/assets/…" into a Windows path, so take anything that holds assets/products/
   const list = args.filter((a) => /assets[\\/]products[\\/]/.test(a)).map((a) => "/" + a.slice(a.search(/assets[\\/]products[\\/]/)).replace(/\\/g, "/"));
   if (!list.length) {
-    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] /assets/products/<slug>/<file> ...");
+    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...");
     process.exit(2);
   }
   const sources = sourceFiles(path.join(ROOT, "src"));
@@ -103,6 +108,7 @@ function sourceFiles(dir, out = []) {
     const boxes = hasAlpha ? [await productBox(before), await productBox(buf)] : null;
     if (boxes && boxes[0] !== boxes[1]) { console.log(`FAIL   ${pub}  product box moved ${boxes[0]} → ${boxes[1]}`); refused++; continue; }
     const refs = sources.filter((f) => fs.readFileSync(f, "utf8").includes(pub));
+    if (!refs.length && !templateRefs) { console.log(`FAIL   ${pub}  no src/ file names it — template-built path? fix the template, then --template-refs`); refused++; continue; }
     console.log(`${dry ? "would " : "marked"} ${pub} → ${path.basename(next)} · ${hasAlpha ? "product only" : "whole picture"} · ` +
       `${(before.length / 1024).toFixed(0)} → ${(buf.length / 1024).toFixed(0)} KB · ${boxes ? `box ${boxes[1]}` : "opaque"} · ${refs.length} ref file(s)`);
     if (dry) continue;
