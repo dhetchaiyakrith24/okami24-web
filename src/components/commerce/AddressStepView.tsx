@@ -1,9 +1,11 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+import { PostcodePlaceFields } from "@/components/commerce/PostcodePlaceFields";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
 import type { AddressRecord } from "@/lib/commerce/addresses";
@@ -19,6 +21,7 @@ function Field({
   pattern,
   inputMode,
   autoComplete,
+  error,
 }: {
   label: string;
   name: string;
@@ -27,7 +30,12 @@ function Field({
   pattern?: string;
   inputMode?: "text" | "tel" | "numeric";
   autoComplete?: string;
+  /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers.
+   *  It goes away once the customer edits the field (checker 02/11: a fixed field stayed red until the next save). */
+  error?: string | null;
 }) {
+  const [edited, setEdited] = useState(false);
+  const shown = edited ? null : error;
   return (
     <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor={name}>
       {label}
@@ -40,11 +48,26 @@ function Field({
         autoComplete={autoComplete}
         defaultValue={defaultValue}
         required
-        className="rounded-md border border-surface-border bg-surface-2 px-3 py-2 text-base text-foreground"
+        onChange={() => setEdited(true)}
+        aria-invalid={shown ? true : undefined}
+        aria-describedby={shown ? `${name}-error` : undefined}
+        className={cn("rounded-md border bg-surface-2 px-3 py-2 text-base text-foreground", shown ? "border-danger" : "border-surface-border")}
       />
+      {shown && (
+        <span id={`${name}-error`} role="alert" className="text-sm text-danger">
+          {shown}
+        </span>
+      )}
     </label>
   );
 }
+
+/** Which field each refusal belongs to; "missing" stays the line above the button (any field can be the empty one). */
+const ERROR_FIELD: Partial<Record<NonNullable<AddressFormState["errorKey"]>, string>> = {
+  addressErrorPhone: "phone",
+  addressErrorHouseNumber: "line1",
+  addressErrorPostal: "postalCode",
+};
 
 /**
  * Address step. Cart-ready round 24/10: a refused address comes back as a Thai line (was an English sentence in the URL)
@@ -65,6 +88,8 @@ export function AddressStepView({
   const [state, formAction, pending] = useActionState(addAddressAction, initialAddressState);
   const v = state.values;
   const error = state.errorKey ? dict.checkout[state.errorKey] : addressMissing ? dict.checkout.placeErrorAddress : null;
+  const errorField = state.errorKey ? ERROR_FIELD[state.errorKey] : undefined;
+  const fieldError = (name: string) => (errorField === name ? error : null);
 
   return (
     <>
@@ -99,31 +124,27 @@ export function AddressStepView({
         <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-6">
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.addNewAddressTitle}</span>
           <Field label={dict.checkout.recipientNameLabel} name="recipientName" autoComplete="name" defaultValue={v.recipientName} />
+          {/* key = attempt: each answer of the action remounts the fields, so a new refusal shows even on an edited field. */}
           <Field
+            key={`phone-${state.attempt ?? 0}`}
             label={dict.checkout.phoneFieldLabel}
             name="phone"
             type="tel"
             inputMode="tel"
             autoComplete="tel"
             defaultValue={v.phone ?? defaultPhone}
+            error={fieldError("phone")}
           />
-          <Field label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} />
-          <div className="grid grid-cols-2 gap-3">
-            <Field label={dict.checkout.subdistrictLabel} name="subdistrict" defaultValue={v.subdistrict} />
-            <Field label={dict.checkout.districtLabel} name="district" autoComplete="address-level2" defaultValue={v.district} />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Field label={dict.checkout.provinceLabel} name="province" autoComplete="address-level1" defaultValue={v.province} />
-            <Field
-              label={dict.checkout.postalCodeLabel}
-              name="postalCode"
-              pattern="[0-9]{5}"
-              inputMode="numeric"
-              autoComplete="postal-code"
-              defaultValue={v.postalCode}
-            />
-          </div>
-          {error && (
+          {/* React resets the form after every submit; for these controlled fields that left the list showing its first
+              sub-district while the form still held the picked one (found 02/11). Each answer of the action carries a new
+              `attempt`, so they remount from it and what is shown is what is sent. */}
+          <PostcodePlaceFields
+            key={state.attempt ?? 0}
+            initial={{ postalCode: v.postalCode, subdistrict: v.subdistrict, district: v.district, province: v.province }}
+            postalError={fieldError("postalCode")}
+          />
+          <Field key={`line1-${state.attempt ?? 0}`} label={dict.checkout.line1Label} name="line1" autoComplete="address-line1" defaultValue={v.line1} error={fieldError("line1")} />
+          {error && !errorField && (
             <p role="alert" className="text-sm text-danger">
               {error}
             </p>
