@@ -2617,6 +2617,125 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Articles queue 0211 batch 5 (02/11): nexBar CLEAR 18K, no brand (owner 29/09). No maker site — every product fact = the
+  // maker's own posters (owner-supplied overview + the 15 per-flavour posters, also carried on ihavevape.net / pod789.com;
+  // copies in _incoming/nexbar-clear/src). Taste lines = each poster's tagline. Kyoho Grape · Pineapple · Mango · Cola Lemon =
+  // the warehouse list (Max Disposable-46), not on the posters. Clear tank · modes · puffs · battery stay out: the tagline and
+  // short description already say them (one fact at most twice, HANDOFF §18). Thai = thai-copy 02/11.
+  "pod-180": {
+    th: {
+      lede: "nexBar CLEAR 18K มีให้เลือก 19 กลิ่นบนหน้านี้ ด้านล่างร้านจัดกลิ่นเป็นสายตามคำบรรยายบนโปสเตอร์ของผู้ผลิต และบอกว่าดูชื่อกลิ่นบนตัวเครื่องได้จากตรงไหน",
+      sections: [
+        {
+          heading: "nexBar CLEAR 18K กลิ่นไหนดี",
+          paragraphs: [
+            "ผู้ผลิตทำโปสเตอร์แยกให้ทุกกลิ่นในรายการ 15 กลิ่นของรุ่นนี้ และเขียนคำบรรยายรสสั้น ๆ ไว้ใต้ชื่อกลิ่น ร้านจึงจัดสายตามคำบรรยายนั้น",
+            "สายเย็นมี Mint ที่ผู้ผลิตบรรยายว่าเย็นและสดชื่น White Slush ที่บรรยายไว้แบบเดียวกัน และ Blueberry ที่บรรยายว่าเป็นบลูเบอร์รี่เย็น ๆ กับเมนทอล",
+            "ถ้าชอบผลไม้ที่เย็นด้วย ก็มี Grape Ice ที่เป็นองุ่นสดกับน้ำแข็ง และ Watermelon Ice ที่เป็นแตงโมฉ่ำ ๆ เย็นแบบน้ำแข็ง",
+            "สายผลไม้มี Lychee ลิ้นจี่หวานฉ่ำ Honeydew Melon เมลอนที่ผู้ผลิตบรรยายว่านุ่ม สด และฉ่ำ Grape Lychee องุ่นฉ่ำคู่กับลิ้นจี่ และ Mixberry เบอร์รี่หลายชนิดรวมกัน รสหวานและสดชื่น",
+            "สตรอเบอร์รี่คู่กับผลไม้อีกชนิดมีสี่กลิ่น คือ Strawberry Watermelon คู่กับแตงโม Strawberry Kiwi คู่กับกีวีสด Strawberry Banana คู่กับกล้วยที่บรรยายว่าครีมมี่ และ Peach Strawberry คู่กับพีชหวาน",
+            "ถ้าอยากได้รสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum ที่เป็นแตงโมหวานกับหมากฝรั่ง",
+          ],
+        },
+        {
+          heading: "อีก 4 กลิ่นบนหน้านี้",
+          paragraphs: [
+            "บนหน้านี้ยังมี Kyoho Grape · Pineapple · Mango และ Cola Lemon ให้เลือกด้วย สี่กลิ่นนี้ร้านลงเพิ่มจากรายการของผู้ผลิต และจัดสายตามชื่อกลิ่น",
+            "Kyoho Grape คือองุ่นเคียวโฮ ถ้าชอบองุ่น ก็เลือกดูคู่กับ Grape Ice และ Grape Lychee ได้ Pineapple กับ Mango อยู่สายผลไม้ ส่วน Cola Lemon ชื่อบอกว่าเป็นโคล่ากับมะนาว",
+            "ถ้ายังเลือกไม่ได้ว่าจะเริ่มจากสายไหน ก็อ่านวิธีเลือกกลิ่นจากชื่อได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+        {
+          heading: "ดูชื่อกลิ่นบนตัวเครื่องได้ตรงไหน",
+          paragraphs: [
+            "ครึ่งล่างของตัวเครื่องเป็นสีดำ พิมพ์คำว่า nexBar CLEAR ชื่อกลิ่น และ 18K ไว้ ถ้าซื้อไปหลายกลิ่น ก็ดูจากตรงนี้ได้เลยว่าเครื่องไหนเป็นกลิ่นอะไร ส่วนคำที่ผู้ผลิตใช้บนโปสเตอร์คือ “STAY LOW. LIVE HIGH.”",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "nexBar CLEAR 18K กับ WOTOFO nexBAR 18K เป็นรุ่นเดียวกันไหม",
+          answer: "คนละรุ่นค่ะ ชื่อคล้ายกัน แต่รุ่นบนหน้านี้คือ nexBar CLEAR 18K ส่วน [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เป็นรุ่นของ WOTOFO ที่มีหน้าแยกของตัวเองค่ะ",
+        },
+        {
+          question: "Blueberry กับ Blueberry Ice ของ nexBar CLEAR 18K คือกลิ่นเดียวกันไหม",
+          answer: "กลิ่นเดียวกันค่ะ รายการกลิ่นของผู้ผลิตเขียนว่า Blueberry ส่วนโปสเตอร์ของกลิ่นนี้และตัวเครื่องพิมพ์ว่า BLUEBERRY ICE บนหน้านี้จึงใช้ชื่อ Blueberry ตามรายการค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The nexBar CLEAR 18K comes in 19 flavours on this page. Below, we group them using the maker's own poster descriptions and show where the flavour name is printed on the device.",
+      sections: [
+        {
+          heading: "Which nexBar CLEAR 18K flavour should I pick?",
+          paragraphs: [
+            "The maker gives each of the 15 flavours on its list a poster of its own, with a short taste line under the flavour name. We grouped them from those lines.",
+            "The cool ones are Mint and White Slush, both described as cool and refreshing, and Blueberry, cool blueberry with refreshing menthol. For fruit with a chill, Grape Ice is fresh grape with ice and Watermelon Ice is juicy watermelon with icy coolness.",
+            "Fruit: Lychee (sweet and juicy), Honeydew Melon (smooth, fresh and juicy), Grape Lychee (juicy grape with lychee) and Mixberry (a burst of mixed berries, sweet and refreshing). Four pair strawberry with another fruit: Strawberry Watermelon with watermelon, Strawberry Kiwi with fresh kiwi, Strawberry Banana with creamy banana, and Peach Strawberry with sweet peach.",
+            "For a dessert-style sweet, Strawberry Custard is sweet strawberry with creamy custard, and Watermelon Bubblegum is sweet watermelon with bubblegum.",
+          ],
+        },
+        {
+          heading: "The other 4 flavours on this page",
+          paragraphs: [
+            "We also list Kyoho Grape, Pineapple, Mango and Cola Lemon on this page, added to the maker's list and grouped by name. Kyoho Grape is the Kyoho variety, so if you like grape, look at it alongside Grape Ice and Grape Lychee. Pineapple and Mango are fruit, and Cola Lemon is cola with lemon.",
+          ],
+        },
+        {
+          heading: "Where is the flavour name on the device?",
+          paragraphs: [
+            "The bottom half of the device is black and printed with nexBar CLEAR, the flavour name and 18K, so if you buy several flavours you can tell them apart at a glance. The line on the maker's posters is “STAY LOW. LIVE HIGH.”",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Is the nexBar CLEAR 18K the same as the WOTOFO nexBAR 18K?",
+          answer: "No. The names are alike, but this page is the nexBar CLEAR 18K; the [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) is a WOTOFO model with its own page.",
+        },
+        {
+          question: "Are Blueberry and Blueberry Ice the same nexBar CLEAR 18K flavour?",
+          answer: "Yes. The maker's flavour list says Blueberry, while this flavour's poster and the device print BLUEBERRY ICE. This page follows the list and uses Blueberry.",
+        },
+      ],
+    },
+    zh: {
+      lede: "本页的 nexBar CLEAR 18K 共有 19 种口味。下面按厂商海报上的口味描述分组，并说明机身上哪里印着口味名称。",
+      sections: [
+        {
+          heading: "nexBar CLEAR 18K 哪个口味好？",
+          paragraphs: [
+            "厂商为口味清单上的 15 种口味各做了一张海报，口味名称下方有一句简短的口感描述，我们按这些描述来分组。",
+            "清凉类有 Mint 和 White Slush，厂商对两者的描述都是清凉提神，还有 Blueberry（清凉蓝莓配清爽薄荷）。想要带凉感的水果，可以选 Grape Ice（新鲜葡萄加冰）或 Watermelon Ice（多汁西瓜，冰爽清凉）。",
+            "水果类：Lychee（香甜多汁）、Honeydew Melon（柔和、新鲜、多汁）、Grape Lychee（多汁葡萄配荔枝）和 Mixberry（多种莓果，香甜清爽）。草莓配另一种水果的有四款：Strawberry Watermelon 配西瓜，Strawberry Kiwi 配新鲜猕猴桃，Strawberry Banana 配奶香香蕉，Peach Strawberry 配香甜蜜桃。",
+            "偏甜点、糖果风味的有 Strawberry Custard（香甜草莓配奶香卡仕达）和 Watermelon Bubblegum（香甜西瓜配泡泡糖）。",
+          ],
+        },
+        {
+          heading: "本页另外 4 种口味",
+          paragraphs: [
+            "本页另有 Kyoho Grape、Pineapple、Mango 和 Cola Lemon，这几款是在厂商清单之外加上的，我们按名称来归类：Kyoho Grape 是巨峰葡萄，喜欢葡萄的话可以和 Grape Ice、Grape Lychee 一起比较；Pineapple 和 Mango 归水果类；Cola Lemon 是可乐加柠檬。",
+          ],
+        },
+        {
+          heading: "机身哪里印着口味名称？",
+          paragraphs: [
+            "机身下半部是黑色，印有 nexBar CLEAR、口味名称和 18K，买了多种口味也能一眼分清。厂商海报上的标语是“STAY LOW. LIVE HIGH.”。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "nexBar CLEAR 18K 和 WOTOFO nexBAR 18K 是同一款吗？",
+          answer: "不是。两者名称相近，但本页是 nexBar CLEAR 18K，[WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) 是 WOTOFO 的型号，另有单独页面。",
+        },
+        {
+          question: "nexBar CLEAR 18K 的 Blueberry 和 Blueberry Ice 是同一个口味吗？",
+          answer: "是的。厂商的口味清单写作 Blueberry，该口味的海报和机身印的是 BLUEBERRY ICE，本页按清单使用 Blueberry。",
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 3c (06/10): from SALTHUB's M Bar 10K posters; Thai = thai-copy 05–06/10.
   // Owner 06/10 pm: its only section ("nicotine — not on the posters, ask LINE") went → lede only, no buyer-question block.
   "m-bar-10k": {
@@ -3401,125 +3520,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           question: "nexBar Switch 15K 的尼古丁浓度是多少？",
           answer: "nexBar 海报标注的尼古丁浓度为 3%。",
-        },
-      ],
-    },
-  },
-  // Articles queue 0211 batch 5 (02/11): nexBar CLEAR 18K, no brand (owner 29/09). No maker site — every product fact = the
-  // maker's own posters (owner-supplied overview + the 15 per-flavour posters, also carried on ihavevape.net / pod789.com;
-  // copies in _incoming/nexbar-clear/src). Taste lines = each poster's tagline. Kyoho Grape · Pineapple · Mango · Cola Lemon =
-  // the warehouse list (Max Disposable-46), not on the posters. Clear tank · modes · puffs · battery stay out: the tagline and
-  // short description already say them (one fact at most twice, HANDOFF §18). Thai = thai-copy 02/11.
-  "pod-180": {
-    th: {
-      lede: "nexBar CLEAR 18K มีให้เลือก 19 กลิ่นบนหน้านี้ ด้านล่างร้านจัดกลิ่นเป็นสายตามคำบรรยายบนโปสเตอร์ของผู้ผลิต และบอกว่าดูชื่อกลิ่นบนตัวเครื่องได้จากตรงไหน",
-      sections: [
-        {
-          heading: "nexBar CLEAR 18K กลิ่นไหนดี",
-          paragraphs: [
-            "ผู้ผลิตทำโปสเตอร์แยกให้ทุกกลิ่นในรายการ 15 กลิ่นของรุ่นนี้ และเขียนคำบรรยายรสสั้น ๆ ไว้ใต้ชื่อกลิ่น ร้านจึงจัดสายตามคำบรรยายนั้น",
-            "สายเย็นมี Mint ที่ผู้ผลิตบรรยายว่าเย็นและสดชื่น White Slush ที่บรรยายไว้แบบเดียวกัน และ Blueberry ที่บรรยายว่าเป็นบลูเบอร์รี่เย็น ๆ กับเมนทอล",
-            "ถ้าชอบผลไม้ที่เย็นด้วย ก็มี Grape Ice ที่เป็นองุ่นสดกับน้ำแข็ง และ Watermelon Ice ที่เป็นแตงโมฉ่ำ ๆ เย็นแบบน้ำแข็ง",
-            "สายผลไม้มี Lychee ลิ้นจี่หวานฉ่ำ Honeydew Melon เมลอนที่ผู้ผลิตบรรยายว่านุ่ม สด และฉ่ำ Grape Lychee องุ่นฉ่ำคู่กับลิ้นจี่ และ Mixberry เบอร์รี่หลายชนิดรวมกัน รสหวานและสดชื่น",
-            "สตรอเบอร์รี่คู่กับผลไม้อีกชนิดมีสี่กลิ่น คือ Strawberry Watermelon คู่กับแตงโม Strawberry Kiwi คู่กับกีวีสด Strawberry Banana คู่กับกล้วยที่บรรยายว่าครีมมี่ และ Peach Strawberry คู่กับพีชหวาน",
-            "ถ้าอยากได้รสหวานแนวขนม ก็มี Strawberry Custard ที่เป็นสตรอเบอร์รี่หวานกับคัสตาร์ดเนื้อครีม และ Watermelon Bubblegum ที่เป็นแตงโมหวานกับหมากฝรั่ง",
-          ],
-        },
-        {
-          heading: "อีก 4 กลิ่นบนหน้านี้",
-          paragraphs: [
-            "บนหน้านี้ยังมี Kyoho Grape · Pineapple · Mango และ Cola Lemon ให้เลือกด้วย สี่กลิ่นนี้ร้านลงเพิ่มจากรายการของผู้ผลิต และจัดสายตามชื่อกลิ่น",
-            "Kyoho Grape คือองุ่นเคียวโฮ ถ้าชอบองุ่น ก็เลือกดูคู่กับ Grape Ice และ Grape Lychee ได้ Pineapple กับ Mango อยู่สายผลไม้ ส่วน Cola Lemon ชื่อบอกว่าเป็นโคล่ากับมะนาว",
-            "ถ้ายังเลือกไม่ได้ว่าจะเริ่มจากสายไหน ก็อ่านวิธีเลือกกลิ่นจากชื่อได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
-          ],
-        },
-        {
-          heading: "ดูชื่อกลิ่นบนตัวเครื่องได้ตรงไหน",
-          paragraphs: [
-            "ครึ่งล่างของตัวเครื่องเป็นสีดำ พิมพ์คำว่า nexBar CLEAR ชื่อกลิ่น และ 18K ไว้ ถ้าซื้อไปหลายกลิ่น ก็ดูจากตรงนี้ได้เลยว่าเครื่องไหนเป็นกลิ่นอะไร ส่วนคำที่ผู้ผลิตใช้บนโปสเตอร์คือ “STAY LOW. LIVE HIGH.”",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "nexBar CLEAR 18K กับ WOTOFO nexBAR 18K เป็นรุ่นเดียวกันไหม",
-          answer: "คนละรุ่นค่ะ ชื่อคล้ายกัน แต่รุ่นบนหน้านี้คือ nexBar CLEAR 18K ส่วน [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เป็นรุ่นของ WOTOFO ที่มีหน้าแยกของตัวเองค่ะ",
-        },
-        {
-          question: "Blueberry กับ Blueberry Ice ของ nexBar CLEAR 18K คือกลิ่นเดียวกันไหม",
-          answer: "กลิ่นเดียวกันค่ะ รายการกลิ่นของผู้ผลิตเขียนว่า Blueberry ส่วนโปสเตอร์ของกลิ่นนี้และตัวเครื่องพิมพ์ว่า BLUEBERRY ICE บนหน้านี้จึงใช้ชื่อ Blueberry ตามรายการค่ะ",
-        },
-      ],
-    },
-    en: {
-      lede: "The nexBar CLEAR 18K comes in 19 flavours on this page. Below, we group them using the maker's own poster descriptions and show where the flavour name is printed on the device.",
-      sections: [
-        {
-          heading: "Which nexBar CLEAR 18K flavour should I pick?",
-          paragraphs: [
-            "The maker gives each of the 15 flavours on its list a poster of its own, with a short taste line under the flavour name. We grouped them from those lines.",
-            "The cool ones are Mint and White Slush, both described as cool and refreshing, and Blueberry, cool blueberry with refreshing menthol. For fruit with a chill, Grape Ice is fresh grape with ice and Watermelon Ice is juicy watermelon with icy coolness.",
-            "Fruit: Lychee (sweet and juicy), Honeydew Melon (smooth, fresh and juicy), Grape Lychee (juicy grape with lychee) and Mixberry (a burst of mixed berries, sweet and refreshing). Four pair strawberry with another fruit: Strawberry Watermelon with watermelon, Strawberry Kiwi with fresh kiwi, Strawberry Banana with creamy banana, and Peach Strawberry with sweet peach.",
-            "For a dessert-style sweet, Strawberry Custard is sweet strawberry with creamy custard, and Watermelon Bubblegum is sweet watermelon with bubblegum.",
-          ],
-        },
-        {
-          heading: "The other 4 flavours on this page",
-          paragraphs: [
-            "We also list Kyoho Grape, Pineapple, Mango and Cola Lemon on this page, added to the maker's list and grouped by name. Kyoho Grape is the Kyoho variety, so if you like grape, look at it alongside Grape Ice and Grape Lychee. Pineapple and Mango are fruit, and Cola Lemon is cola with lemon.",
-          ],
-        },
-        {
-          heading: "Where is the flavour name on the device?",
-          paragraphs: [
-            "The bottom half of the device is black and printed with nexBar CLEAR, the flavour name and 18K, so if you buy several flavours you can tell them apart at a glance. The line on the maker's posters is “STAY LOW. LIVE HIGH.”",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "Is the nexBar CLEAR 18K the same as the WOTOFO nexBAR 18K?",
-          answer: "No. The names are alike, but this page is the nexBar CLEAR 18K; the [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) is a WOTOFO model with its own page.",
-        },
-        {
-          question: "Are Blueberry and Blueberry Ice the same nexBar CLEAR 18K flavour?",
-          answer: "Yes. The maker's flavour list says Blueberry, while this flavour's poster and the device print BLUEBERRY ICE. This page follows the list and uses Blueberry.",
-        },
-      ],
-    },
-    zh: {
-      lede: "本页的 nexBar CLEAR 18K 共有 19 种口味。下面按厂商海报上的口味描述分组，并说明机身上哪里印着口味名称。",
-      sections: [
-        {
-          heading: "nexBar CLEAR 18K 哪个口味好？",
-          paragraphs: [
-            "厂商为口味清单上的 15 种口味各做了一张海报，口味名称下方有一句简短的口感描述，我们按这些描述来分组。",
-            "清凉类有 Mint 和 White Slush，厂商对两者的描述都是清凉提神，还有 Blueberry（清凉蓝莓配清爽薄荷）。想要带凉感的水果，可以选 Grape Ice（新鲜葡萄加冰）或 Watermelon Ice（多汁西瓜，冰爽清凉）。",
-            "水果类：Lychee（香甜多汁）、Honeydew Melon（柔和、新鲜、多汁）、Grape Lychee（多汁葡萄配荔枝）和 Mixberry（多种莓果，香甜清爽）。草莓配另一种水果的有四款：Strawberry Watermelon 配西瓜，Strawberry Kiwi 配新鲜猕猴桃，Strawberry Banana 配奶香香蕉，Peach Strawberry 配香甜蜜桃。",
-            "偏甜点、糖果风味的有 Strawberry Custard（香甜草莓配奶香卡仕达）和 Watermelon Bubblegum（香甜西瓜配泡泡糖）。",
-          ],
-        },
-        {
-          heading: "本页另外 4 种口味",
-          paragraphs: [
-            "本页另有 Kyoho Grape、Pineapple、Mango 和 Cola Lemon，这几款是在厂商清单之外加上的，我们按名称来归类：Kyoho Grape 是巨峰葡萄，喜欢葡萄的话可以和 Grape Ice、Grape Lychee 一起比较；Pineapple 和 Mango 归水果类；Cola Lemon 是可乐加柠檬。",
-          ],
-        },
-        {
-          heading: "机身哪里印着口味名称？",
-          paragraphs: [
-            "机身下半部是黑色，印有 nexBar CLEAR、口味名称和 18K，买了多种口味也能一眼分清。厂商海报上的标语是“STAY LOW. LIVE HIGH.”。",
-          ],
-        },
-      ],
-      faq: [
-        {
-          question: "nexBar CLEAR 18K 和 WOTOFO nexBAR 18K 是同一款吗？",
-          answer: "不是。两者名称相近，但本页是 nexBar CLEAR 18K，[WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) 是 WOTOFO 的型号，另有单独页面。",
-        },
-        {
-          question: "nexBar CLEAR 18K 的 Blueberry 和 Blueberry Ice 是同一个口味吗？",
-          answer: "是的。厂商的口味清单写作 Blueberry，该口味的海报和机身印的是 BLUEBERRY ICE，本页按清单使用 Blueberry。",
         },
       ],
     },
