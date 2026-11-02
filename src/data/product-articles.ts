@@ -3483,6 +3483,68 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G coils — facts = UWELL's Caliburn G2, GK2 and X pages (in-app browser
+  // 02/11). The bare 0.8 / 1.0 / 1.2 list stays out (tagline + short description give it). UWELL's G2 page (02/11) also says the G2
+  // takes the Caliburn G 1.0Ω coil, but this page's spec row "ใช้ได้กับ" still reads "G2 (0.8/1.2Ω)" — that line waits for the
+  // spec row (details chat) so the article never contradicts the table under it.
+  "coil-53": {
+    th: {
+      lede: "คอยล์สามค่านี้ UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
+      sections: [
+        {
+          heading: "แต่ละค่าเป็นคอยล์รุ่นไหน",
+          paragraphs: [
+            "UWELL เรียกคอยล์ 1.2 โอห์มว่าคอยล์ Caliburn G2 ส่วนอีกสองค่าเรียกว่าคอยล์ Caliburn G และทั้งสามค่าทำจาก FeCrAl",
+            "บนหน้า Caliburn G2 UWELL บอกว่าในกล่องเครื่องมีคอยล์ mesh มาให้สองตัว คือ 1.2 กับ 0.8 โอห์ม ตัว 1.2 โอห์มสำหรับสูบแบบ MTL ส่วนตัว 0.8 โอห์มสำหรับสูบ DTL แบบลมแน่น ถ้ายังไม่แน่ใจว่าสองแนวการสูบนี้ต่างกันตรงไหน ร้านอธิบายไว้ที่ [MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "เครื่องรุ่นไหนใส่ได้",
+          paragraphs: [
+            "Caliburn GK2 ใส่ได้ทั้งสามค่า ในกล่องมี 1.2 โอห์มติดเครื่องมา และมี 0.8 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยก",
+            "Caliburn X ก็ใช้คอยล์ตระกูล Caliburn G ในกล่องมี 0.8 โอห์มติดเครื่องมา และมี 1.2 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยกเหมือนกัน",
+            "ถ้ากำลังหาหัวพอตเปล่าที่ใช้กับคอยล์เหล่านี้ บนเว็บมี [หัวพอต Caliburn X](/products/coil-74) และ [หัวพอต Caliburn G2](/products/coil-55)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "These three coils carry different UWELL names, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
+      sections: [
+        {
+          heading: "Which coil is each resistance?",
+          paragraphs: [
+            "UWELL calls the 1.2Ω coil the Caliburn G2 coil and the other two Caliburn G coils; all three are FeCrAl. On its Caliburn G2 page, UWELL says the kit includes two mesh coils, 1.2Ω and 0.8Ω: the 1.2Ω for MTL vaping and the 0.8Ω for a restricted DTL draw. Not sure how the two draws differ? See [MTL vs DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "Which devices take them?",
+          paragraphs: [
+            "The Caliburn GK2 takes all three: 1.2Ω fitted, 0.8Ω as a spare, 1.0Ω sold separately. The Caliburn X uses Caliburn G-family coils too: 0.8Ω fitted, 1.2Ω as a spare, 1.0Ω sold separately.",
+            "Looking for an empty pod for these coils? The site has the [Caliburn X pod](/products/coil-74) and the [Caliburn G2 pod](/products/coil-55).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "这三颗线圈在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
+      sections: [
+        {
+          heading: "每种阻值是哪款线圈？",
+          paragraphs: [
+            "UWELL 把 1.2Ω 线圈称为 Caliburn G2 线圈，另外两种称为 Caliburn G 线圈，三款都是 FeCrAl 材质。UWELL 在 Caliburn G2 页面上说明，套装附带 1.2Ω 和 0.8Ω 两颗网状线圈：1.2Ω 用于 MTL 口吸，0.8Ω 用于偏紧的 DTL 肺吸。两种吸法的区别请看[MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "哪些设备可以用？",
+          paragraphs: [
+            "Caliburn GK2 三种都能用：出厂装 1.2Ω，附备用 0.8Ω，1.0Ω 需另购。Caliburn X 同样使用 Caliburn G 系列线圈：出厂装 0.8Ω，附备用 1.2Ω，1.0Ω 需另购。",
+            "想找能装这些线圈的空烟弹，本站有 [Caliburn X 烟弹](/products/coil-74) 和 [Caliburn G2 烟弹](/products/coil-55)。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
