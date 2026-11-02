@@ -37,7 +37,7 @@ export const en: Dictionary = {
     ariaLabel: "Why buy from OKami24",
     items: [
       { title: "Genuine products", body: "From brands we trust." },
-      { title: "Honest prices", body: "The price you see is the price we charge — no games." },
+      { title: "Honest prices", body: "Every order is charged at our listed selling price." },
       { title: "Real service", body: "Message us on LINE — the admin replies, not a bot." },
       { title: "Specs checked", body: "Every spec is checked at its source before it goes on the page." },
     ],

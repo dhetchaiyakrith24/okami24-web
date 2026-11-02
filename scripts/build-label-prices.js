@@ -20,7 +20,7 @@ if (!src) {
   console.error("usage: node scripts/build-label-prices.js <label-prices.tsv>");
   process.exit(1);
 }
-const lines = fs.readFileSync(src, "utf8").replace(/^﻿/, "").split(/\r?\n/).filter((l) => l.trim() !== "");
+const lines = fs.readFileSync(src, "utf8").replace(/^\uFEFF/, "").split(/\r?\n/).filter((l) => l.trim() !== "");
 const head = lines.shift().split("\t");
 const col = (name) => {
   const i = head.indexOf(name);
