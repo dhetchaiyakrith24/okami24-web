@@ -93,7 +93,7 @@ export const relxProducts: Product[] = [
     // _incoming/sitewide-template/4/4c/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's KV.
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/relx-smash-go-12k/story-cover-wm.webp", alt: "RELX's Smash Go 12K key visual — supreme taste, five pens", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 2512, height: 1134 },
+    storyCover: { src: "/assets/products/relx-smash-go-12k/story-cover.webp", alt: "RELX's Smash Go 12K key visual — supreme taste, five pens", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 2512, height: 1134 },
     specifications: [
       // Data round (2026-09-24, real browser): relxnow.com "Specifications" — Battery 400mAh · Size 20ml · Charging Port
       // Type-C · Puffs 12000 · Nicotine 3% / 5% · "Upgraded Mega MESH". It states no resistance, so "1.0Ω" is dropped;
@@ -110,14 +110,14 @@ export const relxProducts: Product[] = [
         title: "What's inside",
         description: "Up to 12,000 puffs, on a 400mAh battery you can recharge.",
         subline: "RELX shows its coil up close.",
-        image: { src: "/assets/products/relx-smash-go-12k/story-inside-wm.webp", alt: "RELX's Smash Go 12K picture — the coil, up close", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+        image: { src: "/assets/products/relx-smash-go-12k/story-inside.webp", alt: "RELX's Smash Go 12K picture — the coil, up close", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
       },
       {
         id: "pocket",
         title: "Comfortable to vape, easy to carry",
         description: "It's pocket-sized, so it comes along wherever you go.",
         subline: "RELX designed the mouthpiece to be comfortable on the lips.",
-        image: { src: "/assets/products/relx-smash-go-12k/story-pocket-wm.webp", alt: "RELX's Smash Go 12K picture — comfortable mouthpiece design, pocket size", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+        image: { src: "/assets/products/relx-smash-go-12k/story-pocket.webp", alt: "RELX's Smash Go 12K picture — comfortable mouthpiece design, pocket size", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
       },
     ],
     compatibility: [typeC],
@@ -276,9 +276,9 @@ export const relxProducts: Product[] = [
     // _incoming/sitewide-template/4/4d/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's UK one-pager.
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/relx-creator/story-cover-wm.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
+    storyCover: { src: "/assets/products/relx-creator/story-cover.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
     // Phones: RELX's A4 portrait version of the same one-pager — the wide one's tile text is unreadable at 390 (checker #281).
-    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile-wm.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
+    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
     specifications: [
       { key: "format", label: "Format", value: "Device only — prefilled pods sold separately", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "battery", label: "Battery", value: "800mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
@@ -294,21 +294,21 @@ export const relxProducts: Product[] = [
         title: "Check the battery any time",
         description: "Check before you head out and you'll know whether there's plenty left or it's nearly flat, without guessing.",
         subline: "RELX set it up so one click shows the battery level on the screen.",
-        image: { src: "/assets/products/relx-creator/story-button-wm.webp", alt: "RELX's Creator Pro picture — one click checks the battery on the pixel screen", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-button.webp", alt: "RELX's Creator Pro picture — one click checks the battery on the pixel screen", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
       {
         id: "modes",
         title: "Normal or Boost, your choice",
         description: "Each mode puts a different picture on the screen, so a quick glance tells you which one is on.",
         subline: "RELX set it up so a double click on the button switches between the two.",
-        image: { src: "/assets/products/relx-creator/story-modes-wm.webp", alt: "RELX's Creator Pro picture — a double click adjusts power, Normal mode and Boost mode", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-modes.webp", alt: "RELX's Creator Pro picture — a double click adjusts power, Normal mode and Boost mode", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
       {
         id: "airflow",
         title: "Set your airflow",
         description: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
         subline: "RELX lets you set the airflow anywhere from fully open to its tightest.",
-        image: { src: "/assets/products/relx-creator/story-airflow-wm.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-airflow.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
     ],
     // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
