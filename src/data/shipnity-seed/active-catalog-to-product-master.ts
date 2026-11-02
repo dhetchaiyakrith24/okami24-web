@@ -490,8 +490,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
     // Round list19 (19/10): Max sells three values under "Coil Caliburn G2" — UWELL names all three "CALIBURN G series' coils"
-    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. The old "1.0Ω works with G2" line cited the G2
-    // page, which no longer says so (19/10) → dropped.
+    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. Compatibility (details 02/11, read in the browser):
+    // the G2 page says "Except for the pre-installed meshed-H 1.2 Ω coil, Caliburn G2 is compatible with 1.0 Ω coil and
+    // 0.8 Ω coil of Caliburn G" and the X page "The device is compatible with CALIBURN G series coils" — so all three
+    // values fit GK2, G2 and X (the 19/10 note that the G2 page dropped 1.0Ω was wrong).
     tagline: "คอยล์ UWELL ตระกูล Caliburn G มีให้เลือก 0.8, 1.0 และ 1.2 โอห์ม",
     shortDescription: "คอยล์ UWELL ตระกูล Caliburn G ร้านมีให้เลือก 3 ค่า ได้แก่ 0.8 โอห์ม 1.0 โอห์ม และ 1.2 โอห์ม (คอยล์ Caliburn G2) เครื่อง Caliburn GK2 ใช้ได้ทั้ง 3 ค่า",
   },
@@ -1095,7 +1097,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/pod-149/card.webp",
+      src: "/assets/products/pod-149/card-wm.webp",
       alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo",
       angle: "Front three-quarter, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1940,9 +1942,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "resistance", label: "ค่าโอห์ม", value: "0.8Ω / 1.0Ω / 1.2Ω", sourceStatus: "verified" },
       { key: "coil", label: "รุ่นคอยล์", value: "G 0.8Ω · G 1.0Ω · G2 1.2Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-gk2" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 (ทุกค่า) · G2 (0.8/1.2Ω)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 · G2 · X (ทุกค่า)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
     ],
-    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2"],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2", "https://www.myuwell.com/caliburn/caliburn-x"],
   },
   "Coil-89": {
     specifications: [
@@ -2395,14 +2397,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // SKE Crystal B20000 — Thai Milk Green Tea (list19 18/10) + 6 more (22/10), each re-shot from its own pod789 poster (the body tint differs per
   // flavour). Double Mint (Pod-149-2) was rendered 30/10 from the Grape Yoyo scene and listed; all 8 were re-cut 30/10 without the grey floor plate (v2 files).
   "Pod-149": {
-    "Pod-149-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-1-v2.webp", alt: "SKE Crystal B20000 disposable, Grape Yoyo, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-2-v2.webp", alt: "SKE Crystal B20000 disposable, Double Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 Double Mint poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-3-v2.webp", alt: "SKE Crystal B20000 disposable, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-4-v2.webp", alt: "SKE Crystal B20000 disposable, Lemon Coke, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-5-v2.webp", alt: "SKE Crystal B20000 disposable, Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6-v2.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-7-v2.webp", alt: "SKE Crystal B20000 disposable, Tieguanyin Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-8-v2.webp", alt: "SKE Crystal B20000 disposable, Mango, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-1-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Grape Yoyo, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-2-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Double Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 Double Mint poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-3-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-4-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Lemon Coke, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-5-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-7-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Tieguanyin Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-8-v2-wm.webp", alt: "SKE Crystal B20000 disposable, Mango, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
   },
   // Round list19 (19/10): Reswa Sportcan 12K — one re-shoot per flavour poster (4 of 5). Red Bull shows the no-photo panel: its can
   // carries another company's trademark (the Red Bull logo), so it is not reproduced (Friday's decision 18/10).
