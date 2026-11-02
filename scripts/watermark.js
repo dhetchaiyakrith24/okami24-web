@@ -1,26 +1,31 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
-//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...
-// Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 12%; "OKAMI24.STORE"
-// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 250 / rows 64) at 12% over the picture, 18% on the
-// product. Strength = owner 02/11 "12-18 ได้ทั้งคู่เลย" from the 4-level sheet: the first 2/4% vanished once
-// /_next/image re-encodes at 750 wide webp q75. Style per file (owner + Javis 02/11, from the two-style sample sheet):
+//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...
+// Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 18%; "OKAMI24.STORE"
+// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 250 / rows 64) at 18% over the picture, 22% on the
+// product. Strength = owner 03/11 "ลายน้ำเพิ่มความเข้มครับ ถ้าตอนนี้ 12 ใช้เป็น 18 ถ้าตอนนี้ 18 ใช้เป็น 22" (generation 2;
+// generation 1 = 02/11 "12-18", names -wm — the first 2/4% vanished once /_next/image re-encodes at 750 wide webp q75).
+// Style per file (owner + Javis 02/11, from the two-style sample sheet):
 //   transparent photo (card · colour · flavour) = on the product's own pixels only: the transparent margin stays clean and
 //     alpha never changes, so the product box src/lib/media-quality.ts measures (alpha trim 10) cannot move;
-//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture at 12% (+ 18% inside --zone when given).
-// Writes <name>-wm.webp (q82) beside the original — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) —
-// points every reference under src/ at it, then deletes the original from public/ (git history + the --keep copy are the
-// way back). A file no src/ line names literally is refused: its path is built by a template (e.g. `variant-${id}.webp`)
+//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture at 18% (+ 22% inside --zone when given).
+// Writes <name>-wm2.webp (q82) — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) — points every reference
+// under src/ at it, then deletes the file it replaces from public/ (git history + the --keep copy are the way back).
+// The pixels always come from the UNMARKED original, never from an earlier mark: a path that is still the original is read
+// as it is; a generation-1 path (<name>-wm.webp) is read from <--originals dir>/assets/products/… (the --keep folder of the
+// first pass) or, failing that, from the last git commit that still had public/<name>.<ext>. A file no src/ line names literally is refused: its path is built by a template (e.g. `variant-${id}.webp`)
 // that this tool cannot rewrite — fix the template by hand in the same commit and pass --template-refs.
-// A name already ending in -wm is skipped. Photos from Javis's studio carry this mark already: leave them off.
+// A name already ending in -wm2 is skipped. Photos from Javis's studio carry this mark already: leave them off.
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
+const { execFileSync } = require("child_process");
 
 const ROOT = process.env.WM_ROOT || path.join(__dirname, "..");
 const FONT = path.join(__dirname, "lib/watermark/BarlowCondensed-600.ttf");
 const HELMET = path.join(__dirname, "lib/watermark/okami-helmet-white.png");
-const TEXT_ALL = 0.12, TEXT_PRODUCT = 0.18, HELMET_OP = 0.12;
+const TEXT_ALL = 0.18, TEXT_PRODUCT = 0.22, HELMET_OP = 0.18;
+const SUFFIX = "-wm2", EARLIER = /-wm$/; // this generation's name tag · the tag an earlier generation left
 
 async function textMask(W, H) {
   const k = W / 1080, px = 22 * k;
@@ -77,6 +82,26 @@ async function mark(file, zone) {
   return { buf: await img.webp({ quality: 82 }).toBuffer(), hasAlpha: cutout };
 }
 
+/** The unmarked original behind a public path: itself, or (for an earlier generation's -wm name) the --originals copy or
+ *  the last git commit that still held it. Returns { buf, from } or null. */
+function originalOf(pub, originals) {
+  const stem = pub.replace(/\.\w+$/, "");
+  if (!EARLIER.test(stem)) { const file = path.join(ROOT, "public", pub); return fs.existsSync(file) ? { buf: fs.readFileSync(file), from: "public" } : null; }
+  const base = stem.replace(EARLIER, "");
+  for (const ext of [".webp", ".png", ".jpg"]) {
+    const kept = originals && path.join(originals, base + ext);
+    if (kept && fs.existsSync(kept)) return { buf: fs.readFileSync(kept), from: "originals" };
+  }
+  for (const ext of [".webp", ".png", ".jpg"]) {
+    const rel = "public" + base + ext;
+    try {
+      const gone = execFileSync("git", ["log", "-1", "--format=%H", "--diff-filter=D", "--", rel], { cwd: ROOT }).toString().trim();
+      if (gone) return { buf: execFileSync("git", ["show", `${gone}^:${rel}`], { cwd: ROOT, maxBuffer: 64 << 20 }), from: `git ${gone.slice(0, 8)}^` };
+    } catch { /* not a git checkout, or never there */ }
+  }
+  return null;
+}
+
 function sourceFiles(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -89,30 +114,32 @@ function sourceFiles(dir, out = []) {
 (async () => {
   const args = process.argv.slice(2);
   const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
-  const dry = args.includes("--dry-run"), templateRefs = args.includes("--template-refs"), keep = opt("--keep"), zone = opt("--zone") && opt("--zone").split(",").map(Number);
+  const dry = args.includes("--dry-run"), templateRefs = args.includes("--template-refs"), keep = opt("--keep"), originals = opt("--originals"), zone = opt("--zone") && opt("--zone").split(",").map(Number);
   // Git Bash rewrites a leading "/assets/…" into a Windows path, so take anything that holds assets/products/
   const list = args.filter((a) => /assets[\\/]products[\\/]/.test(a)).map((a) => "/" + a.slice(a.search(/assets[\\/]products[\\/]/)).replace(/\\/g, "/"));
   if (!list.length) {
-    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...");
+    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...");
     process.exit(2);
   }
   const sources = sourceFiles(path.join(ROOT, "src"));
   let refused = 0;
   for (const pub of list) {
     const file = path.join(ROOT, "public", pub);
-    const next = pub.replace(/\.\w+$/, "") + "-wm.webp";
-    if (/-wm\.\w+$/.test(pub)) { console.log(`skip   ${pub}  already marked`); continue; }
+    const next = pub.replace(/\.\w+$/, "").replace(EARLIER, "") + SUFFIX + ".webp";
+    if (new RegExp(SUFFIX + "\\.\\w+$").test(pub)) { console.log(`skip   ${pub}  already marked`); continue; }
     if (!fs.existsSync(file)) { console.log(`FAIL   ${pub}  not in public/`); refused++; continue; }
-    const before = fs.readFileSync(file);
-    const { buf, hasAlpha } = await mark(file, zone);
+    const orig = originalOf(pub, originals);
+    if (!orig) { console.log(`FAIL   ${pub}  no unmarked original (--originals or git history)`); refused++; continue; }
+    const before = orig.buf;
+    const { buf, hasAlpha } = await mark(before, zone);
     const boxes = hasAlpha ? [await productBox(before), await productBox(buf)] : null;
     if (boxes && boxes[0] !== boxes[1]) { console.log(`FAIL   ${pub}  product box moved ${boxes[0]} → ${boxes[1]}`); refused++; continue; }
     const refs = sources.filter((f) => fs.readFileSync(f, "utf8").includes(pub));
     if (!refs.length && !templateRefs) { console.log(`FAIL   ${pub}  no src/ file names it — template-built path? fix the template, then --template-refs`); refused++; continue; }
     console.log(`${dry ? "would " : "marked"} ${pub} → ${path.basename(next)} · ${hasAlpha ? "product only" : "whole picture"} · ` +
-      `${(before.length / 1024).toFixed(0)} → ${(buf.length / 1024).toFixed(0)} KB · ${boxes ? `box ${boxes[1]}` : "opaque"} · ${refs.length} ref file(s)`);
+      `${(before.length / 1024).toFixed(0)} → ${(buf.length / 1024).toFixed(0)} KB · ${boxes ? `box ${boxes[1]}` : "opaque"} · ${refs.length} ref file(s) · from ${orig.from}`);
     if (dry) continue;
-    if (keep) { fs.mkdirSync(path.dirname(path.join(keep, pub)), { recursive: true }); fs.copyFileSync(file, path.join(keep, pub)); }
+    if (keep && orig.from === "public") { fs.mkdirSync(path.dirname(path.join(keep, pub)), { recursive: true }); fs.copyFileSync(file, path.join(keep, pub)); }
     fs.writeFileSync(path.join(ROOT, "public", next), buf);
     for (const f of refs) fs.writeFileSync(f, fs.readFileSync(f, "utf8").split(pub).join(next));
     fs.unlinkSync(file);
