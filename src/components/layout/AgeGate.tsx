@@ -93,6 +93,10 @@ export function AgeGate({ orderingEnabled = true }: { orderingEnabled?: boolean 
       // it does not (plain `items-center` clips the top of an overflowing flex child instead).
       className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-surface-0/95 px-5 py-8 backdrop-blur-sm"
       role="dialog"
+      // Round SEO rankings back (02/11, owner "กล่องยืนยันอายุ 21+ ทำ"): Google's renderer has no localStorage, so it sees this
+      // dialog on every page and used its text as the home page's search snippet. data-nosnippet keeps the text out of
+      // snippets only — the wording and the look stay exactly as they are (age/nicotine warnings = HANDOFF §17 Do not touch).
+      data-nosnippet=""
       aria-modal="true"
       aria-labelledby="age-gate-title"
       aria-describedby="age-gate-desc"
