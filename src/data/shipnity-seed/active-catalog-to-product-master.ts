@@ -343,12 +343,12 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // List-new (27/10, owner ruling HANDOFF §18): Max "Marbo 10k โคลน" (Disposable-47) = a lookalike of SALTHUB's M Bar 10K, sold as
   // "Marbo 10K (เทียบแท้)" — NOT a SALTHUB product, so no brand (never salthub, never a link to /brands/salthub).
   "MARBO-10K-CLONE": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Marbo 10k โคลน" (Disposable-47), 12 flavours ฿299 (product list read 27/10); owner 27/10: a copy of M Bar 10K, listed as "Marbo 10K (เทียบแท้)" (HANDOFF §18) — not SALTHUB, no maker to cite: warehouse names only, no spec rows, no card photo yet (the only Max image is SALTHUB own poster)' },
-  // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
-  // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; relxnow.com has no page for these pods.
-  "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; no page on relxnow.com — warehouse facts only' },
+  // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; RELX's own Essential 2 page = relxnow.com/products/essential-device (found 02/11).
+  // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; the pods are named on relxnow.com/products/relx-infinity-2-plus-device and relxnow.my (02/11).
+  "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; the maker pages = relxnow.com/products/relx-infinity-2-plus-device (1.9ml, fits the Infinity 2 Plus) + relxnow.my/products/relx-pod-pro-2-* (02/11)' },
   // line 2 max-sync (22/10, owner "หาข้อมูลเองเลย"): RELX Creator Pod 20K — Max-only record (Pod-137, 31 flavours incl. 5%, all sold out 22/10).
   "RELX-CREATOR-POD-20K": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Relx Creator Pod 20K" (Pod-137, 17/10; renamed "Relx เลโก้ 20000 คำ" 22/10), 31 flavour pods ฿349 + an empty device row ฿199 (not an option) — Thai shops sell it as the RELX Creator 20K pod for the RELX Creator battery: 7pods.shop/product/relx-creator-boost-20000-puffs-lego · pod9k.com/product/relx-creator-20k-pod · ezy-pods.net/product/relx-lego-20k · siam-pod.com (tier 2, read 22/10); no relxnow.com page — warehouse facts only, no spec numbers' },
-  "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); no Essential 2 page on relxnow.com (searched 20/10) — warehouse facts only, device only' },
+  "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); the maker page relxnow.com/products/essential-device (found 02/11; the 20/10 search missed it) — device only' },
   // SEO brand push 30/10: INFY POD takes prefilled INFY cartridges (infy.my calls it a "Closed Pod System"; its 2.5ML page says
   // insert the cartridge in the INFY Device) — the switch-pods definition (keep the device, swap prefilled pods), like RELX Essential 2.
   "INFY-POD": { brandId: "infy", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
@@ -1639,6 +1639,26 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "pods", label: "หัวพอตที่ใช้ได้", value: "หัวพอต INFY 2.5mL", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
+  },
+  // Round "queue 0211" articles, RELX (02/11): relxnow.com/products/essential-device ("RELX Essential 2 Device") — "Compatible Pod: RELX
+  // Pod and RELX Pod Pro", "380mAh", "USB-C". The 20/10 note "no Essential 2 page" is out of date — the page exists now.
+  "RELX-ESSENTIAL-2": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "380mAh", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+      { key: "compatible-pods", label: "ใช้กับหัวพอต", value: "RELX Pod / RELX Pod Pro", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/essential-device" },
+    ],
+    sourceUrls: ["https://relxnow.com/products/essential-device"],
+  },
+  // Round "queue 0211" articles, RELX (02/11): relxnow.com/products/relx-infinity-2-plus-device — the device is "compatible with RELX,
+  // RELX Pod Pro, and RELX Pod Pro 2 pods, all with a 1.9ml capacity" (the shop's pack prints "RELX Pod Pro 2"). RELX Malaysia's Pod Pro 2
+  // page (relxnow.my) adds the RELX Infinity 2 — told in the article only (relxnow.my is not a row host).
+  "RELX-INFINITY-PRO-2-POD": {
+    specifications: [
+      { key: "capacity", label: "ความจุหัวพอต", value: "1.9mL", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "เครื่อง RELX Infinity 2 Plus", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device" },
+    ],
+    sourceUrls: ["https://relxnow.com/products/relx-infinity-2-plus-device"],
   },
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-64": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },

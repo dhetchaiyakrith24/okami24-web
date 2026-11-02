@@ -10,25 +10,32 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 02/11 ~05:30 (pre-compact) by the 7th main chat (local_737f7a61). Weekly quota reset 01/11.
+Updated 02/11 ~11:30 by the 7th main chat (local_737f7a61) — owner shut the PC down ("ปิดงานทั้งหมดก่อน"); all chats idle. Weekly quota reset 01/11.
 
-1 main = 02/11 #1105 batch 1 · #1095 switch pods · #1097 SEO metas. CART IS ON. Older = `git log --merges origin/main`.
-2 CHILD CHATS = item 2N "CHILDREN 02/11" (all report to local_737f7a61 · Opus 5.5 · ports: never 3412, each its own 2nd server).
-  Archived 02/11: dude-images-0111 · gsc-read-0111. TRACKING local_dfdd063c = watching Shipnity's next real write.
+1 main = 39339a34 (#1118 Muro e-liquids). CART IS ON. Older = `git log --merges origin/main`.
+2 CHILD CHATS (all report to local_737f7a61 · Opus 5.5 · ports: never 3412, each its own 2nd server) — all IDLE at shut-down:
+  images-0211b local_67ec6cc2 · articles-0211b local_4c56c27d (context FULL → replace, see 2N) · details-0211 local_bc99e6b7.
+  TRACKING local_dfdd063c = watching Shipnity's next real write.
   e `okami24-seo-weekly` (Sat 15:00): owner sets Auto once; routine model/effort (§18) not set by the owner yet — ask.
-2N ROUND OPEN 02/11 "queue 0211" (7th chat, continues after COMPACT — owner 02/11 §18) = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
-    Owner answers: no order notices (C) · label price +10–20% (BSOT §5; owner OKs the list) · watermark mix (transparent = on product only, opaque = tiled like Javis) ·
-    dude 3ml = switch pod · NEW: "มาใหม่" capsule in a colour pairing with ember/black on every new product + show BOTH badges (Super Cool new + best seller).
-    LIVE 02/11: #1105 batch 1 · #1095 switch pods · #1098 TFIT · #1100 JOIWAY · #1107 SEO metas. Proof `_incoming/queue-0211/`.
-    IN FLIGHT (main): 2ก address = branch claude/queue-0211-b2a in `_incoming/wt-q0211` (head e97c6463, test `_incoming/queue-0211/b2a-test.js` 8/8 at 390+1440 on
-      3413) → NEXT: verify --full (stop my 3413 first; owner interrupted that stop once — ask/confirm) → pre-checker-gate → checker FULL set (13.5 #3) + agent visitor → merge.
-    · PR #1112 dude → switch-pods (draft; verify running in `_incoming/wt-main0211`) → gate → checker → merge → curl /products/switch-pods (26) + pods-cartridges (11).
-    · designer agent proposing "มาใหม่" colours → pick → owner sheet → build badge batch. Then 2ข address look + map (designer draft to owner) → label price list.
-    CHILDREN (talk to each other; all report here; ports: never 3412): images-0211b local_67ec6cc2 (#1110 KS card → owner sheet; watermark pilot brand; owner
-    to answer: RELX Creator top photo · nexSwitch trial · credits) · articles-0211b local_4c56c27d (#1103 SALTHUB CONFLICTING → child merges main · #1104 ESKO) ·
-    details-0211 local_bc99e6b7 (gap list `side-session-notes/…/details-0211-gap-list.md`; best sellers → in stock; packaging photos count as maker source) ·
-    seo-0211 local_8ac06ce8 (whole-site SEO; e-liquid keyword allowed §18 02/11; asked owner: age-gate snippet · About "who we are").
-    Also: close draft #1038 · #1040 SKE superseded · house-clean worktrees `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-before` · `_incoming/cls-0111/wt-docs`.
+2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
+    Owner answers: no order notices (C) · label price +10–20% (BSOT §5; owner OKs the list) · watermark mix (transparent = on product only, opaque = tiled) ·
+    WATERMARK STRENGTH = 18/12 (sample d-12-18, owner 02/11 "12-18 ได้ทั้งคู่เลย" — both picture kinds) · dude 3ml = switch pod · "มาใหม่" badge purple A + both
+    badges together · "ขายดี" sweep 3 runs, keep badge B · age-gate nosnippet done (#1121) · About "who we are" = A team name (#1121) · SKE: go on if it matches the maker.
+    LIVE 02/11: #1105 batch 1 · #1095 · #1098 TFIT · #1100 JOIWAY · #1107 + #1121 SEO · #1110 KS · #1112 Dude → switch-pods · #1114 + #1123 details · articles
+      #1103 SALTHUB · #1104 ESKO · #1116 RELX · #1117 + #1118 Muro. Proof `_incoming/queue-0211/`.
+    NEXT, in order:
+    · articles: start a NEW child "articles-0211c" (start_session is refused while the owner is on Remote Control → the owner types once in the desktop app)
+      from `side-session-notes/local_737f7a61…/articles-0211b/HANDOVER.md` (queue WOTOFO/nexBar → UWELL coils → VOOPOO → …; first job = the port-3415 LESSONS
+      entry) · worktree true · effort high · then archive local_4c56c27d.
+    · images: regenerate draft #1115 (Rincoe watermark pilot) at 18/12 → narrow checker (font file = 13.7 (1)) → merge → brand-by-brand rollout PRs.
+      SKE 4 flavours = owner approves in the images chat. Draft #1040 SKE = superseded → close.
+    · main 2ก address = branch claude/queue-0211-b2a in `_incoming/wt-q0211` (head e97c6463, test `_incoming/queue-0211/b2a-test.js` 8/8 on 3413) →
+      merge main → verify --full (use a free port, not 3413 unless stopped) → gate → checker FULL (13.5 #3) + agent visitor → merge.
+    · "มาใหม่" badge batch (`_incoming/queue-0211/new-badge-design.md`) → 2ข address look + map → label price list → spec-list dt wrap · vmate card wrap at 1440 ·
+      THAI_STYLE label count · close draft #1038 · house-clean worktrees `_incoming/wt-main0211` (merged) · `_incoming/wt-cls-0111` · `_incoming/cls-0111/wt-*`.
+    Owner still to answer (status page "รอพี่ตอบ"): RELX cards on mobile (1 spec row, rec.) · split long category paragraphs (rec. split) · box photos for 13 models ·
+      RELX Creator top photo · nexSwitch/Creator Pro trials · cost prices.
+    Data follow-ups from articles = HANDOVER.md "Data follow-ups" (not fixed).
   a LAYOUT SHIFT — LIVE 02/11 #1091 [checker PASS 3c953648, 3 rounds]: only a SIGNED-IN member saw it (31/10 scans were signed out). Header pill keeps one
      width ("เข้าสู่ระบบ"/"บัญชี" share a cell; members now read "บัญชี" at sm+, drawer + aria keep "บัญชีสมาชิก"; en signed-out pill +13 px) ·
      catalog toolbar at lg = count · in-stock button · sort (grid CLS 0.12 → 0) · payment-card frame from #1038. Tool `_incoming/cls-0111/film.js` (--signed
