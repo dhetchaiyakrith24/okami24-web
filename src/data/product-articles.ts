@@ -1515,7 +1515,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "หัว V2 กับหัว Top Fill ต่างกันตรงไหน",
           paragraphs: [
             "หัว Top Fill ใช้วิธีเติมด้านบน ส่วนหัว V2 เติมน้ำยาทางช่องด้านข้าง และมีคอยล์ติดมาในหัวแล้ว",
-            "หัวทั้งสองแบบจุน้ำยาได้ 3mL เท่ากัน และตัวหัว Top Fill ทำจาก PCTG",
+            "หัว Top Fill ทำจาก PCTG และหัวทั้งสองแบบจุน้ำยาได้ 3mL เท่ากัน",
           ],
         },
         {
