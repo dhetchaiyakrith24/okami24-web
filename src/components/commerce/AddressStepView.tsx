@@ -107,8 +107,10 @@ export function AddressStepView({
       <PageHeader eyebrow={dict.checkout.addressEyebrow} title={dict.checkout.addressTitle} />
       <Container className="flex max-w-xl flex-col gap-6 py-12 lg:max-w-6xl lg:py-16">
         <CheckoutSteps current={2} />
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
-          <div className="flex flex-col gap-8 lg:col-span-7">
+        {/* grid-cols-1 + min-w-0: a grid track otherwise grows to the widest child, and a long sub-district name in the
+            select pushed the whole form past a 390 screen (checker 03/11). */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+          <div className="flex min-w-0 flex-col gap-8 lg:col-span-7">
             <CartFold cart={cart} className="lg:hidden" />
 
             {addresses.length > 0 && (
@@ -178,7 +180,7 @@ export function AddressStepView({
           </div>
 
           {/* Stretched to the row so the card inside can stay sticky while the form scrolls past. */}
-          <div className="hidden lg:col-span-5 lg:block lg:self-stretch">
+          <div className="hidden min-w-0 lg:col-span-5 lg:block lg:self-stretch">
             <AddressSummaryCard cart={cart} place={place} />
           </div>
         </div>
