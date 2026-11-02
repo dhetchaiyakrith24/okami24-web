@@ -770,7 +770,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-6/card-v2.webp",
+        src: "/assets/products/drag-6/card-v2-wm2.webp",
         alt: "VOOPOO DRAG 6, Brown, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -797,18 +797,18 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-6/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 2800, height: 844 },
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2.webp", alt: "VOOPOO DRAG 6, Silver" } },
-      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2.webp", alt: "VOOPOO DRAG 6, Blue" } },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2.webp", alt: "VOOPOO DRAG 6, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm2.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm2.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm2.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/drag-6/variant-brown-v2.webp", alt: "VOOPOO DRAG 6, Brown" },
+        image: { src: "/assets/products/drag-6/variant-brown-v2-wm2.webp", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2.webp", alt: "VOOPOO DRAG 6, Red" } },
-      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2.webp", alt: "VOOPOO DRAG 6, Green" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
+      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm2.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm2.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
     // All-colours images (IMAGE_SPEC §0 item 5). 16/10 (round img-1610): the hybrid lineup-v3 of 04/10 was still "too small"
     // and "still graphic" (owner) → two groups (4 + 3, maker order) of NEW studio re-shoots standing on the floor in one row,
@@ -818,12 +818,12 @@ export const voopooProducts: Product[] = [
     // (look-batch/drag-6/footcut.js), row by look-batch/lineup-row.js --row --pick. The colour photos above are unchanged
     // (owner-passed exception, IMAGE_SPEC §0 item 8). Picks + checks: _incoming/img-1610/b11/.
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v4.webp",
+      src: "/assets/products/drag-6/lineup-v4-wm2.webp",
       alt: "VOOPOO DRAG 6, colours 1–4 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-6/lineup2-v4.webp",
+      src: "/assets/products/drag-6/lineup2-v4-wm2.webp",
       alt: "VOOPOO DRAG 6, colours 5–7 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
