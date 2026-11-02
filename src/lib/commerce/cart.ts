@@ -17,6 +17,7 @@ import {
   type ShippingHistory,
   type ShippingNoteKey,
 } from "./shipping-rules";
+import { isPostcodeSubdistrict } from "./thai-postcodes";
 import { getMember } from "@/lib/members/session";
 
 const CART_COOKIE = "okami24_cart";
@@ -170,11 +171,12 @@ export type CartShippingAddress = ShippingAddressKey & { phone: string };
  *  once an address is picked — the recipient's phone and the address. Read-only, like the rest of `getCart`. */
 export async function visitorShippingHistory(address: CartShippingAddress | null = null): Promise<ShippingHistory> {
   const [session, member] = await Promise.all([getSession(), getMember()]);
-  return loadShippingHistory(getDb(), {
-    memberId: member?.id ?? null,
-    phones: [session?.phone ?? "", address?.phone ?? ""],
-    address,
-  });
+  return loadShippingHistory(
+    getDb(),
+    { memberId: member?.id ?? null, phones: [session?.phone ?? "", address?.phone ?? ""], address },
+    new Date(),
+    isPostcodeSubdistrict
+  );
 }
 
 /** `address` = the chosen address (review step) — the cart page has none yet. */
