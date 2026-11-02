@@ -2643,7 +2643,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "RELX Essential 2 มีสีอะไรบ้าง",
-          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel silver และ Nebula Blue ค่ะ",
+          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel Silver และ Nebula Blue ค่ะ",
         },
         {
           question: "RELX Essential 2 ต้องเติมน้ำยาเองไหม",
@@ -2694,7 +2694,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "Which colours does the RELX Essential 2 come in?",
-          answer: "The shop lists Black, Steel silver, Grey, Nebula Blue and Orange.",
+          answer: "The shop lists Black, Steel Silver, Grey, Nebula Blue and Orange.",
         },
         {
           question: "Do I need to fill the RELX Essential 2 with e-liquid?",
@@ -2745,7 +2745,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "RELX Essential 2 有哪些颜色？",
-          answer: "本店列出的颜色有 Black、Steel silver、Grey、Nebula Blue 和 Orange。",
+          answer: "本店列出的颜色有 Black、Steel Silver、Grey、Nebula Blue 和 Orange。",
         },
         {
           question: "RELX Essential 2 需要自己加烟油吗？",
@@ -3489,6 +3489,221 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "可以怎样个性化？",
           paragraphs: [
             "可以设置灯光和振动，IQOS 也推出了保护套，能为机身多加一层保护。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): KS (Kardinal) Quikpro kit — every fact = kardinal.com/products/quikpro (overview, spec list,
+  // FAQ, in the box; WebFetch 02/11, quotes in the batch notes ks-facts.md). Not used: the FAQ's "smoother nicotine delivery" and
+  // "smart alternative" lines, the "lasts significantly longer than disposables and closed-pod systems" line (comparison with no
+  // number), and the maker's flavour count (the option list carries the flavours). "1 หัว"/"one pod" stays with the tagline and
+  // short description (2 already). Thai = thai-copy 02/11.
+  "ks-quikpro-kit": {
+    th: {
+      lede: "ด้านล่างร้านสรุปจากเว็บของ Kardinal ว่ามีอะไรมาในกล่อง คอยล์ ceraKoil คืออะไร หัวพอตเติมน้ำยาได้ไหม ใช้หัวพอตรุ่นอื่นได้ไหม และชาร์จนานแค่ไหน",
+      sections: [
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "Kardinal ใส่เครื่อง Quikpro สาย USB-C และเอกสารประกอบมาในกล่องของตัวเครื่อง ส่วนหัวพอตในชุด เลือกกลิ่นได้จากตัวเลือกด้านบน",
+          ],
+        },
+        {
+          heading: "คอยล์ ceraKoil คืออะไร",
+          paragraphs: [
+            "Quikpro ใช้คอยล์ที่ Kardinal เรียกว่า ceraKoil เป็นคอยล์ที่รวมเซรามิกกับ mesh ไว้ในตัวเดียว Kardinal บอกว่าได้รสชาติที่ชัดแบบคอยล์เซรามิก และร้อนไวแบบคอยล์ mesh ไอที่ได้จึงสม่ำเสมอตั้งแต่ต้นจนจบ",
+          ],
+        },
+        {
+          heading: "หัวพอตเติมน้ำยาได้ไหม",
+          paragraphs: [
+            "หัวพอตของ Quikpro เติมน้ำยาเองไม่ได้ ซึ่ง Kardinal บอกว่าช่วยให้หัวพอตคงคุณภาพและสะอาด แต่ละหัวบรรจุน้ำยา 15ml และสูบได้สูงสุด 15,000 พัฟ แล้วแต่การใช้งานของแต่ละคน",
+            "พอน้ำยาหมดก็เปลี่ยนแค่หัวใหม่ ใช้ตัวเครื่องเดิมต่อได้ Kardinal บอกว่าระบบเปลี่ยนหัวแบบนี้ช่วยลดขยะเมื่อเทียบกับพอตใช้แล้วทิ้ง และทำให้ตัวเครื่องใช้ได้นานขึ้นด้วย หัวพอตสำหรับเปลี่ยนดูได้ที่หน้า [หัวพอต Quikpro](/products/pod-150)",
+          ],
+        },
+        {
+          heading: "ใช้หัวพอตรุ่นอื่นได้ไหม",
+          paragraphs: [
+            "ไม่ได้ Kardinal ระบุว่า Quikpro ใช้หัวพอตที่ออกแบบมาสำหรับรุ่นนี้โดยเฉพาะ แม้แต่หัว KSpod ที่ Kardinal ทำให้เครื่อง Lumina ก็ใส่ไม่ได้ และหัวพอตของแบรนด์อื่นก็ใส่ไม่ได้เช่นกัน",
+          ],
+        },
+        {
+          heading: "ชาร์จนานแค่ไหน และดูน้ำยายังไง",
+          paragraphs: [
+            "แบต 600mAh ชาร์จผ่าน USB-C เต็มในราว 30 นาที Kardinal บอกว่าแบตที่ชาร์จซ้ำได้แบบนี้ช่วยให้ใช้น้ำยาในหัวได้จนหมดโดยแบตไม่หมดกลางทาง และ Quikpro ยังมีช่องดูน้ำยาไว้เช็คว่าน้ำยาเหลือเท่าไร",
+            "วิธีชาร์จและดูแลแบตให้ใช้ได้นาน อ่านต่อได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม ชาร์จข้ามคืนได้ไหม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below is a summary from Kardinal's own site: what's in the box, what the ceraKoil coil is, whether the pods can be refilled, whether other pods fit, and how long a charge takes.",
+      sections: [
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "In the device box, Kardinal includes the Quikpro, a USB-C charging cable and documentation. For the pod in the kit, pick a flavour from the options above.",
+          ],
+        },
+        {
+          heading: "What is the ceraKoil coil?",
+          paragraphs: [
+            "The Quikpro uses a coil Kardinal calls ceraKoil, which combines ceramic and mesh in a single coil. Kardinal says it gives the clear flavour of a ceramic coil and the quick heat-up of a mesh coil, so vapour stays consistent from start to finish.",
+          ],
+        },
+        {
+          heading: "Can I refill the pods?",
+          paragraphs: [
+            "No. Quikpro pods can't be refilled, which Kardinal says keeps the pod intact and hygienic. Each pod holds 15ml and gives up to 15,000 puffs, depending on how you use it.",
+            "When the e-liquid runs out, you change just the pod and keep the same device. Kardinal says this replaceable-pod system cuts waste compared with disposables and helps the device last longer. Replacement pods are on the [Quikpro pod](/products/pod-150) page.",
+          ],
+        },
+        {
+          heading: "Can I use other pods?",
+          paragraphs: [
+            "No. Kardinal says the Quikpro uses pods designed specifically for this model. Even the KSpod Kardinal makes for the Lumina won't fit, and neither will pods from other brands.",
+          ],
+        },
+        {
+          heading: "How long does it take to charge, and how do I see how much e-liquid is left?",
+          paragraphs: [
+            "The 600mAh battery charges over USB-C in about 30 minutes. Kardinal says a rechargeable battery like this lets you use each pod to the end without running out of power midway. The Quikpro also has an e-liquid window, so you can see how much is left.",
+            "For charging habits that help the battery last, see [Battery Care & Charging Basics](/guides/battery-care-and-charging).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下是本店根据 Kardinal 官网整理的内容：包装里有什么、ceraKoil 线圈是什么、烟弹能否补油、能否换用其他烟弹，以及充电需要多久。",
+      sections: [
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "Kardinal 在主机包装内放有 Quikpro 主机、USB-C 充电线和说明文件。套装附带的烟弹，可在上方选项中选择口味。",
+          ],
+        },
+        {
+          heading: "ceraKoil 线圈是什么？",
+          paragraphs: [
+            "Quikpro 采用 Kardinal 称为 ceraKoil 的线圈，把陶瓷和网状结构结合在同一个线圈里。Kardinal 表示，它兼具陶瓷线圈清晰的口味和网状线圈升温快的特点，烟雾从头到尾都很稳定。",
+          ],
+        },
+        {
+          heading: "烟弹可以补油吗？",
+          paragraphs: [
+            "不可以。Quikpro 烟弹不能自行补油，Kardinal 表示这样能保持产品的品质与卫生。每颗烟弹容量 15ml，视个人使用情况最多可抽 15,000 口。",
+            "烟油用完后只需更换烟弹，主机可以继续使用。Kardinal 表示，与一次性电子烟相比，这种可换烟弹的设计能减少废弃物，也能延长主机的使用寿命。替换烟弹见 [Quikpro 烟弹](/products/pod-150)页面。",
+          ],
+        },
+        {
+          heading: "可以用其他烟弹吗？",
+          paragraphs: [
+            "不可以。Kardinal 表示，Quikpro 使用专为这款机型设计的烟弹，就连 Kardinal 为 Lumina 推出的 KSpod 也装不上，其他品牌的烟弹同样不能用。",
+          ],
+        },
+        {
+          heading: "充电要多久？怎么看剩余烟油？",
+          paragraphs: [
+            "600mAh 电池通过 USB-C 约 30 分钟充满。Kardinal 表示，这样的可充电电池能让每颗烟弹用到最后，不会中途没电。Quikpro 还设有烟油观察窗，可以看到烟油还剩多少。",
+            "充电习惯与电池保养方法，详见[电池保养与充电基础](/guides/battery-care-and-charging)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5 (02/11): KS (Kardinal) Quikpro pod — every fact = kardinal.com/products/quikpro (FAQ, overview;
+  // WebFetch 02/11). Capacity, puffs, size and weight stay with the tagline, short description and spec rows. The coil is
+  // credited to the Quikpro system (the maker does not say it sits in the pod); charge time stays on the kit page. Thai = thai-copy 02/11.
+  "pod-150": {
+    th: {
+      lede: "ด้านล่างร้านสรุปไว้จากเว็บของ Kardinal ว่า Quikpro ใช้คอยล์แบบไหน หัวพอตเติมน้ำยาเองได้ไหม และใส่กับเครื่องไหนได้บ้าง",
+      sections: [
+        {
+          heading: "Quikpro ใช้คอยล์แบบไหน",
+          paragraphs: [
+            "ระบบ Quikpro ใช้คอยล์ ceraKoil ของ Kardinal ซึ่งรวมเซรามิกกับ mesh ไว้ด้วยกัน ตามที่ Kardinal อธิบาย เซรามิกให้รสชาติที่ชัด ส่วน mesh ช่วยให้ร้อนไว ไอจึงออกมาสม่ำเสมอตั้งแต่ต้นจนจบ",
+          ],
+        },
+        {
+          heading: "หัวพอตเติมน้ำยาเองได้ไหม",
+          paragraphs: [
+            "หัวนี้เติมน้ำยาเองไม่ได้ ซึ่ง Kardinal บอกว่าช่วยรักษาคุณภาพและความสะอาดของหัวพอตไว้",
+            "Kardinal บอกด้วยว่าระบบที่เปลี่ยนแค่หัวแล้วใช้ตัวเครื่องเดิมต่อแบบนี้ ช่วยลดขยะเมื่อเทียบกับพอตใช้แล้วทิ้ง และทำให้ตัวเครื่องใช้ได้นานขึ้น",
+          ],
+        },
+        {
+          heading: "หัวหนึ่งใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "Kardinal บอกว่าหัวหนึ่งสูบได้มากถึง 15,000 พัฟ แล้วแต่การใช้งานของแต่ละคน และระบุว่าหัวของ Quikpro ออกแบบมาให้ใช้ได้นานกว่าพอตใช้แล้วทิ้งทั่วไปและพอตระบบปิด",
+            "ระบบ Quikpro มีช่องดูน้ำยา จึงเห็นได้ว่าน้ำยาในหัวเหลืออีกเท่าไรก่อนถึงเวลาเปลี่ยนหัว ส่วนแบตชาร์จซ้ำได้ผ่าน USB-C ในราว 30 นาที ซึ่ง Kardinal บอกว่าช่วยให้ใช้น้ำยาได้จนหมดหัวโดยแบตไม่หมดก่อน",
+          ],
+        },
+        {
+          heading: "ใส่กับเครื่องไหนได้",
+          paragraphs: [
+            "Kardinal ระบุว่าหัวนี้ออกแบบมาสำหรับเครื่อง Quikpro โดยเฉพาะ ส่วนหัว KSpod ที่ Kardinal ทำให้เครื่อง Lumina และหัวพอตของแบรนด์อื่น ใส่กับ Quikpro ไม่ได้ ถ้ายังไม่มีตัวเครื่อง ดูได้ที่หน้า [ชุดเครื่อง Quikpro](/products/ks-quikpro-kit)",
+            "ถ้ายังเลือกกลิ่นไม่ถูก อ่านต่อได้ที่ [พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ](/guides/choosing-a-pod-flavor)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below is a summary from Kardinal's own site: which coil the Quikpro uses, whether the pod can be refilled, and which device it fits.",
+      sections: [
+        {
+          heading: "Which coil does the Quikpro use?",
+          paragraphs: [
+            "The Quikpro system uses Kardinal's ceraKoil, a coil that brings ceramic and mesh together. As Kardinal explains it, the ceramic gives clear flavour and the mesh heats up quickly, so vapour comes out consistent from start to finish.",
+          ],
+        },
+        {
+          heading: "Can I refill the pod?",
+          paragraphs: [
+            "No. This pod can't be refilled, which Kardinal says keeps it intact and hygienic.",
+            "Kardinal adds that changing just the pod and keeping the same device cuts waste compared with disposables and helps the device last longer.",
+          ],
+        },
+        {
+          heading: "How long does a pod last?",
+          paragraphs: [
+            "Kardinal says each pod gives up to 15,000 puffs, depending on how you use it, and that Quikpro pods are designed to last longer than typical disposables and closed-pod systems. The Quikpro has an e-liquid window, so you can see how much is left before it is time for a new pod, and the device's rechargeable battery charges over USB-C in about 30 minutes, which Kardinal says lets you use each pod to the end without running out of power midway.",
+          ],
+        },
+        {
+          heading: "Which device does it fit?",
+          paragraphs: [
+            "Kardinal says this pod is designed specifically for the Quikpro. The KSpod Kardinal makes for the Lumina and pods from other brands don't fit the Quikpro. If you don't have the device yet, see the [Quikpro kit](/products/ks-quikpro-kit).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "以下是本店根据 Kardinal 官网整理的内容：Quikpro 用的是哪种线圈、烟弹能否自行补油，以及适用哪款设备。",
+      sections: [
+        {
+          heading: "Quikpro 用的是哪种线圈？",
+          paragraphs: [
+            "Quikpro 采用 Kardinal 的 ceraKoil 线圈，把陶瓷和网状结构结合在一起。按 Kardinal 的说法，陶瓷带来清晰的口味，网状结构升温快，烟雾因此从头到尾都很稳定。",
+          ],
+        },
+        {
+          heading: "烟弹可以自行补油吗？",
+          paragraphs: [
+            "不可以。这款烟弹不能自行补油，Kardinal 表示这样能保持产品的品质与卫生。",
+            "Kardinal 还表示，只换烟弹、继续使用同一台主机，与一次性电子烟相比能减少废弃物，也能延长主机的使用寿命。",
+          ],
+        },
+        {
+          heading: "一颗烟弹能用多久？",
+          paragraphs: [
+            "Kardinal 表示，视个人使用情况，每颗烟弹最多可抽 15,000 口，并称 Quikpro 烟弹的设计比一般一次性电子烟和封闭式烟弹更耐用。Quikpro 设有烟油观察窗，换烟弹前可以看到烟油还剩多少；主机的可充电电池通过 USB-C 约 30 分钟充满，Kardinal 表示这样每颗烟弹都能用到最后，不会中途没电。",
+          ],
+        },
+        {
+          heading: "适用哪款设备？",
+          paragraphs: [
+            "Kardinal 表示，这款烟弹专为 Quikpro 设计。Kardinal 为 Lumina 推出的 KSpod 以及其他品牌的烟弹，都不能用于 Quikpro。还没有主机的话，可以看看 [Quikpro 套装](/products/ks-quikpro-kit)。",
           ],
         },
       ],
