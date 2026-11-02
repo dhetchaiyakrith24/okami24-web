@@ -1532,25 +1532,26 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // 11 layers · 500 vs 600 puffs) are told without the number; thai-copy 02/11.
   "relx-essential-2": {
     th: {
-      lede: "RELX Essential 2 เป็นเครื่องระบบสวิตช์ที่ใช้คู่กับหัวพอตบรรจุสำเร็จ ด้านล่างเป็นข้อมูลจากหน้าเว็บของ RELX ไล่ตั้งแต่หัวพอตที่ใช้ได้ไปจนถึงการชาร์จ",
+      lede: "RELX Essential 2 เป็นเครื่องระบบสวิตช์ ใช้คู่กับหัวพอตบรรจุสำเร็จ ด้านล่างเป็นข้อมูลจากเว็บของ RELX ตั้งแต่หัวพอตที่ใช้ได้ไปจนถึงการชาร์จ",
       sections: [
         {
           heading: "RELX Essential 2 ใช้กับหัวพอตรุ่นไหน",
           paragraphs: [
             "RELX ระบุว่าเครื่องนี้ใช้ได้กับหัวพอต RELX Pod และ RELX Pod Pro ซึ่งเป็นหัวพอตทรงสมมาตรทั้งสองรุ่น",
-            "หน้าเว็บของ RELX บอกด้วยว่า RELX Pod Pro ใช้กับเครื่อง [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้เช่นกัน",
+            "หน้าเว็บของ RELX บอกด้วยว่า Pod Pro ใส่เครื่อง [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้เช่นกัน",
           ],
         },
         {
           heading: "RELX Pod กับ RELX Pod Pro ต่างกันตรงไหน",
           paragraphs: [
-            "สองรุ่นนี้ใช้คอยล์ต่างกัน RELX Pod Pro ใช้คอยล์เซรามิก ส่วน RELX Pod ใช้คอยล์สำลี และ RELX ยังบอกด้วยว่า Pod Pro ปรับมาให้กันรั่วได้ดีขึ้น",
+            "RELX Pod Pro ใช้คอยล์เซรามิก ส่วน RELX Pod ใช้คอยล์สำลี",
+            "RELX บอกด้วยว่า Pod Pro ปรับมาให้กันรั่วได้ดีขึ้น",
           ],
         },
         {
           heading: "สูบแล้วเป็นยังไง",
           paragraphs: [
-            "เครื่องนี้ใช้ระบบที่ RELX เรียกว่า Super Smooth ซึ่งคุมอุณหภูมิของไอไม่ให้ร้อนเกินไป เพื่อช่วยเลี่ยงรสไหม้",
+            "เครื่องนี้ใช้ระบบที่ RELX เรียกว่า Super Smooth ซึ่งคุมไอไม่ให้ร้อนเกินไป เพื่อช่วยเลี่ยงรสไหม้",
             "RELX บอกด้วยว่าพอเริ่มสูบ เครื่องก็ทำงานแทบจะทันที และแต่ละพัฟให้ไอแน่น",
           ],
         },
@@ -1570,15 +1571,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "RELX Essential 2 มีสีอะไรบ้าง",
-          answer: "ร้านมีให้เลือก Black · Steel silver · Grey · Nebula Blue และ Orange ค่ะ",
+          answer: "ร้านมีให้เลือก Black · Grey · Orange · Steel silver และ Nebula Blue ค่ะ",
         },
         {
           question: "RELX Essential 2 ต้องเติมน้ำยาเองไหม",
           answer: "ไม่ต้องเติมค่ะ หัวพอตที่ใช้กับเครื่องนี้มีน้ำยามาในตัวแล้ว ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
         },
         {
-          question: "RELX Essential 2 ใช้กับหัวพอต RELX Infinity Pro 2 ได้ไหม",
-          answer: "หน้าเว็บของ RELX ระบุหัวพอตที่ใช้กับเครื่องนี้ไว้สองรุ่น คือ RELX Pod กับ RELX Pod Pro ส่วน RELX Pod Pro 2 ซึ่งเป็นชื่อบนแพ็กของหัวพอต [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ไม่ได้อยู่ในรายชื่อนี้ค่ะ",
+          question: "RELX Essential 2 ใส่หัว RELX Infinity Pro 2 ได้ไหม",
+          answer: "RELX ระบุว่าเครื่องนี้ใช้กับหัวพอต RELX Pod และ RELX Pod Pro ส่วนหัว [RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ที่แพ็กพิมพ์ชื่อ RELX Pod Pro 2 ไม่ได้อยู่ในรายชื่อนี้ค่ะ",
         },
       ],
     },
@@ -1687,7 +1688,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "relx-infinity-pro-2-pod": {
     th: {
-      lede: "หัวพอต RELX Infinity Pro 2 เป็นหัวพอตบรรจุสำเร็จ บนแพ็กพิมพ์ชื่อว่า RELX Pod Pro 2 และหน้าเว็บของ RELX ก็ใช้ชื่อนี้ ด้านล่างสรุปไว้ว่าหัวนี้ใช้กับโหมดไหนของเครื่องได้บ้าง พร้อมจัดกลิ่นเป็นแนวไว้ให้เลือกได้ง่ายขึ้น",
+      lede: "หัวพอต RELX Infinity Pro 2 มีน้ำยามาในตัว แพ็กและหน้าเว็บของ RELX ใช้ชื่อว่า RELX Pod Pro 2 ด้านล่างสรุปว่าหัวนี้ใช้กับโหมดไหนของเครื่อง พร้อมจัดกลิ่นเป็นแนวให้เลือกง่ายขึ้น",
       sections: [
         {
           heading: "ใช้ได้กับโหมดไหนของเครื่องบ้าง",
@@ -1704,11 +1705,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "สายผลไม้ ได้แก่ Banana Freeze · Blueberry Splash · Fresh Peach · Green Grape Ice · Honeydew Melon · Lemon Zest · Lime Ice · Lychee Ice · Orange Sparkle · Pink Guava · Smooth Mango · Strawberry Burst · Tangy Grape และ Watermelon Ice",
             "สายยาสูบ ได้แก่ Ice Tobacco และ Lime Tobacco",
             "แนวอื่นมี Dark Sparkle · Ludou Ice และ Taro Scoop",
-            "อีกกลุ่มคือกลิ่นที่ชื่อลงท้ายด้วย 50mg เป็นแบบความเข้มข้นนิโคติน 50mg ถ้าจัดตามชื่อกลิ่นก็ได้ 4 แนวเหมือนกัน",
-            "สายเย็นแบบ 50mg ได้แก่ Lemon Mint · Menthol Xtra · Mint Freeze · Peppermint · Raspberry Mint และ Spearmint",
+            "อีกกลุ่มคือกลิ่นที่ชื่อลงท้ายด้วย 50mg เป็นแบบนิโคติน 50mg ถ้าจัดตามชื่อกลิ่นก็ได้ 4 แนวเช่นกัน",
+            "สายเย็นแบบ 50mg ได้แก่ Spearmint · Peppermint · Lemon Mint · Mint Freeze · Menthol Xtra และ Raspberry Mint",
             "สายยาสูบแบบ 50mg ได้แก่ Classic Tobacco · Mint Tobacco และ Rich Tobacco",
             "สายผลไม้แบบ 50mg ได้แก่ Citrus · Grape · Green Apple · Strawberry · Triple Berry และ Watermelon Ice",
             "แนวอื่นแบบ 50mg มี Ice Sparking",
+            "ยังไม่แน่ใจว่าจะเริ่มจากแนวไหน อ่านวิธีเลือกกลิ่นได้ที่ [พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor)",
           ],
         },
       ],
@@ -1718,7 +1720,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           answer: "RELX ระบุว่าหัวรุ่นนี้ใช้กับเครื่อง RELX Infinity 2 และ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ได้ค่ะ",
         },
         {
-          question: "หัวพอต RELX Infinity Pro 2 ต้องเติมน้ำยาเองไหม",
+          question: "หัวพอต RELX Infinity Pro 2 ต้องเติมน้ำยาไหม",
           answer: "ไม่ต้องเติมค่ะ หัวพอตมีน้ำยามาในตัวแล้ว หัวละ 1.9mL ใช้หมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
         },
       ],
@@ -1812,7 +1814,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "RELX Smash Go 12K มีกลิ่นแนวไหนบ้าง",
           paragraphs: [
-            "RELX บอกไว้ว่ากลิ่นของรุ่นนี้มีทั้งแนวผลไม้และแนวมินต์เย็น ถ้าแบ่งกลิ่นแบบ 3% บนหน้านี้ตามชื่อกลิ่นจะได้ 3 แนว",
+            "RELX บอกไว้ว่ากลิ่นของรุ่นนี้มีทั้งผลไม้และมินต์เย็น ถ้าแบ่งกลิ่นแบบ 3% ตามชื่อกลิ่น จะได้ 3 แนว",
             "สายเย็น ได้แก่ Double Mint",
             "สายผลไม้ ได้แก่ Apple · Blueberry · Grape · Grape Aloe · Grape Lychee · Green Mango · Lychee · Mixberry · Passion Fruit · Peach Strawberry · Pineapple · Pink Berry · Pink Guava · Strawberry และ Watermelon",
             "แนวอื่นมี Cola · Oolong Tea และ Watermelon Bubblegum",
@@ -1821,7 +1823,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "คอยล์ MEGA MESH ของ RELX Smash Go 12K ช่วยอะไร",
+          heading: "คอยล์ MEGA MESH ของ Smash Go 12K ช่วยอะไร",
           paragraphs: [
             "RELX อธิบายว่าคอยล์ MEGA MESH ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
             "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)"
