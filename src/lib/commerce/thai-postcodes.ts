@@ -22,7 +22,7 @@ const CODES = (data as unknown as { codes: Record<string, [string, string, strin
 
 // Invisible characters out (checker #1169: "คลองเตย" + U+200B passed as a hand-typed place and so as a second address for
 // the once-a-month free-shipping check), runs of spaces to one, and a hand-typed name capped at 80 characters.
-const clean = (s: string) => s.replace(/[​-‍⁠﻿]/g, "").replace(/\s+/g, " ").trim().slice(0, 80);
+const clean = (s: string) => s.replace(/[\u200B-\u200D\u2060\uFEFF]/g, "").replace(/\s+/g, " ").trim().slice(0, 80);
 
 /** The places a 5-digit postcode serves; empty when the code is malformed or not in the data. */
 export function placesForPostcode(code: string): Place[] {
