@@ -3405,6 +3405,84 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5 (02/11): UWELL GPP pod — every fact = UWELL's G Pod Platform page (myuwell.com/g-pod-platform).
+  // "Fits G5 · G4 · G3" and what the product is stay out: tagline + short description say them twice already (HANDOFF §18).
+  // U² Anti-Leak's "150%" is not repeated (no spec row). UWELL's "new GPP cartridges coming in 2026" is not repeated (stale by
+  // 11/2026). "The 4-resistance pods here are the refillable kind" = the shop's reading of UWELL's table (pre-filled = 0.9Ω only).
+  "coil-94": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้า G Pod Platform ของ UWELL ว่า GPP คืออะไร หัว GPP มีกี่ชนิด และ UWELL ใส่อะไรไว้ในตัวหัวบ้าง",
+      sections: [
+        {
+          heading: "GPP คืออะไร ดูยังไงว่าเป็นหัว GPP",
+          paragraphs: [
+            "GPP ย่อมาจาก G Pod Platform เป็นชื่อที่ UWELL ใช้เรียกระบบหัวพอตของ Caliburn กลุ่มนี้ทั้งหมด หัวในกลุ่มนี้มีคำว่า GPP พิมพ์ไว้บนกล่อง ถ้าอยากรู้ว่าหัวที่มีอยู่เป็นหัว GPP หรือเปล่า ก็ดูที่กล่องได้เลย",
+          ],
+        },
+        {
+          heading: "หัว GPP มีกี่ชนิด",
+          paragraphs: [
+            "หน้า G Pod Platform ของ UWELL แบ่งหัว GPP ไว้ 3 ชนิด",
+            "สองชนิดแรกเป็นหัวที่เติมน้ำยาเอง ต่างกันตรงตำแหน่งช่องเติม ชนิดหนึ่งเติมด้านข้าง มีความจุ 3.0mL กับ 2.5mL อีกชนิดเติมด้านบน มีความจุ 3.0mL กับ 2.0mL และทั้งสองชนิดมีให้เลือก 4 ค่าโอห์มเหมือนกัน",
+            "ชนิดที่สามเป็นหัวพอตบรรจุสำเร็จ มีค่าเดียวคือ 0.9 โอห์ม หัวบนหน้านี้มีให้เลือก 4 ค่าโอห์ม จึงเป็นชนิดที่เติมน้ำยาเอง ถ้ายังไม่เคยเติม วิธีเติมทีละขั้นอยู่ที่ [เติมพอตยังไง](/guides/refilling-a-pod)",
+          ],
+        },
+        {
+          heading: "UWELL ใส่อะไรไว้ในหัว GPP",
+          paragraphs: [
+            "เรื่องกันรั่ว UWELL ใช้ระบบที่เรียกว่า U² Anti-Leak ซึ่งมีอยู่สองส่วน ส่วนแรกคือ ultrasonic welding ที่ UWELL บอกว่าช่วยให้หัวกันรั่วได้ดีขึ้น ส่วนที่สองคือช่องลมรูปตัว U ที่ช่วยให้ลมไหลได้ดีขึ้น",
+            "อีกส่วนคือ PRO-FOCS ระบบปรับรสชาติที่ UWELL บอกว่าผ่านการทดสอบมาอย่างเข้มงวด ช่วยคงรสเดิมของน้ำยาไว้ และใช้ได้กับน้ำยาหลายความเข้มข้น ทั้งนิโคตินแบบ freebase และแบบ salt nic ถ้ายังไม่แน่ใจว่าสองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, a summary of UWELL's G Pod Platform page: what GPP is, how many kinds of GPP pod there are, and what UWELL builds into them.",
+      sections: [
+        {
+          heading: "What is GPP, and how do I know a pod is GPP?",
+          paragraphs: [
+            "GPP stands for G Pod Platform, UWELL's name for this whole family of Caliburn pods. The boxes of these pods are marked GPP, so if you're not sure whether a pod you have is GPP, the box will tell you.",
+          ],
+        },
+        {
+          heading: "How many kinds of GPP pod are there?",
+          paragraphs: [
+            "UWELL's G Pod Platform page lists three kinds. Two are refillable and differ in where you fill them: side refill comes in 3.0 mL and 2.5 mL, top refill in 3.0 mL and 2.0 mL, and both come in four resistances. The third kind is pre-filled, in 0.9Ω only. The pods on this page come in four resistances, so they are the refillable kind.",
+          ],
+        },
+        {
+          heading: "What does UWELL build into GPP pods?",
+          paragraphs: [
+            "For leaks, UWELL uses what it calls U² Anti-Leak, made up of two parts: ultrasonic welding, which UWELL says improves leak protection, and a U-shaped channel that improves airflow. UWELL also builds in PRO-FOCS, a flavour system it describes as rigorously tested, made to keep the e-liquid's original taste and to work with a range of nicotine strengths, in both freebase and nicotine-salt form.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 UWELL 的 G Pod Platform 页面，介绍 GPP 是什么、GPP 烟弹有几种，以及 UWELL 在烟弹里用了哪些设计。",
+      sections: [
+        {
+          heading: "GPP 是什么？怎么确认是 GPP 烟弹？",
+          paragraphs: [
+            "GPP 是 G Pod Platform 的缩写，是 UWELL 对这一整个 Caliburn 烟弹系列的称呼。这些烟弹的包装盒上都印有 GPP，不确定手上的烟弹是不是 GPP，看一下盒子即可。",
+          ],
+        },
+        {
+          heading: "GPP 烟弹有几种？",
+          paragraphs: [
+            "UWELL 的 G Pod Platform 页面把 GPP 烟弹分为 3 种。前两种是可自行注油的烟弹，区别在注油口位置：侧注油有 3.0 mL 和 2.5 mL，顶注油有 3.0 mL 和 2.0 mL，两种都有 4 种阻值。第三种是预注油烟弹，只有 0.9Ω 一种。本页烟弹有 4 种阻值可选，所以属于可注油的类型。",
+          ],
+        },
+        {
+          heading: "UWELL 在 GPP 烟弹里用了什么？",
+          paragraphs: [
+            "防漏方面，UWELL 采用 U² Anti-Leak 技术，由两部分组成：一是超声波焊接，UWELL 表示能提升防漏表现；二是 U 形气道，让气流更顺畅。UWELL 还在烟弹中加入了 PRO-FOCS 口味优化技术，UWELL 称其经过严格测试，能保留烟油原本的味道，并适用于多种浓度的游离碱尼古丁和尼古丁盐。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
