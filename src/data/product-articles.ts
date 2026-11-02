@@ -1515,6 +1515,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "หัว V2 กับหัว Top Fill ต่างกันตรงไหน",
           paragraphs: [
             "หัว Top Fill ใช้วิธีเติมด้านบน ส่วนหัว V2 เติมน้ำยาทางช่องด้านข้าง และมีคอยล์ติดมาในหัวแล้ว",
+            "หัวทั้งสองแบบจุน้ำยาได้ 3mL เท่ากัน และตัวหัว Top Fill ทำจาก PCTG",
           ],
         },
         {
@@ -1522,6 +1523,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "หัว V2 ใช้ได้กับ Vmate Infinity Edition, Vmate E, V.THRU Pro เป็นต้น ส่วนหัว Top Fill เป็นหัวที่ [Vmate Pro 2](/products/vmate-pro-2) ให้มาในกล่อง",
             "VOOPOO ระบุว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30 วัตต์ขึ้นไป ก่อนใช้หัวนี้ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่",
+            "ในกล่อง Vmate Pro 2 มีใบแนะนำหัวพอตตระกูล VMATE ที่ใช้ร่วมกันได้มาให้ด้วย ถ้ามีเครื่องนี้อยู่แล้ว ก็เปิดดูจากใบนี้ได้ว่าหัวรุ่นไหนใช้กับเครื่องไหนได้บ้าง",
           ],
         },
         {
@@ -1539,13 +1541,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do the V2 and Top Fill pods differ?",
           paragraphs: [
-            "The VMATE Cartridge V2 fills through a side slot and comes with its coil pre-installed; the VMATE Top Fill fills from the top.",
+            "The VMATE Cartridge V2 fills through a side slot and comes with its coil pre-installed; the VMATE Top Fill fills from the top. Both hold 3 mL, and the Top Fill is made of PCTG.",
           ],
         },
         {
           heading: "Which one fits my device?",
           paragraphs: [
-            "VOOPOO makes the V2 for devices such as the Vmate Infinity Edition, Vmate E and V.THRU Pro, while the Top Fill is the pod that comes with the [Vmate Pro 2](/products/vmate-pro-2). VOOPOO states that the Top Fill 0.4Ω needs a device that puts out at least 30W, so check your device's maximum output before fitting it.",
+            "VOOPOO makes the V2 for devices such as the Vmate Infinity Edition, Vmate E and V.THRU Pro, while the Top Fill is the pod that comes with the [Vmate Pro 2](/products/vmate-pro-2). VOOPOO states that the Top Fill 0.4Ω needs a device that puts out at least 30W, so check your device's maximum output before fitting it. The Vmate Pro 2 box also includes VOOPOO's VMATE pod-family compatibility guide, which shows which pod fits which device.",
           ],
         },
         {
@@ -1562,13 +1564,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "V2 和 Top Fill 有什么不同？",
           paragraphs: [
-            "VMATE Cartridge V2 从侧面注油口注油，线圈已预装在烟弹内；VMATE Top Fill 则从顶部注油。",
+            "VMATE Cartridge V2 从侧面注油口注油，线圈已预装在烟弹内；VMATE Top Fill 则从顶部注油。两款都能装 3 mL 烟油，Top Fill 采用 PCTG 材质。",
           ],
         },
         {
           heading: "怎么选到适合自己设备的烟弹？",
           paragraphs: [
-            "VOOPOO 的 V2 适用于 Vmate Infinity Edition、Vmate E、V.THRU Pro 等设备；Top Fill 是 [Vmate Pro 2](/products/vmate-pro-2) 随机附带的烟弹。VOOPOO 提示，Top Fill 0.4Ω 需要输出至少 30W 的设备，使用前请先确认自己设备的最大输出功率。",
+            "VOOPOO 的 V2 适用于 Vmate Infinity Edition、Vmate E、V.THRU Pro 等设备；Top Fill 是 [Vmate Pro 2](/products/vmate-pro-2) 随机附带的烟弹。VOOPOO 提示，Top Fill 0.4Ω 需要输出至少 30W 的设备，使用前请先确认自己设备的最大输出功率。Vmate Pro 2 盒内还附有 VOOPOO 的 VMATE 烟弹兼容指南，可以查看哪款烟弹适用于哪款设备。",
           ],
         },
         {
