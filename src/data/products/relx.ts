@@ -242,7 +242,7 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-creator/card-v3.webp",
+        src: "/assets/products/relx-creator/card-v3-wm.webp",
         alt: "RELX Creator Pro device, grey body with a yellow base and pixel smiley screen, upright three-quarter view",
         angle: "3/4, upright — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10)",
         transparentBackground: true,
@@ -254,19 +254,19 @@ export const relxProducts: Product[] = [
     // photos; v4 (07/10 night) = the five colours as one zig-zag group (1/3/5 in front, 2/4 behind) — the one-row v3 left
     // the square half empty at 390 (look-batch/lineup-zig.js --zig --pick).
     lineupImage: {
-      src: "/assets/products/relx-creator/lineup-v4.webp",
+      src: "/assets/products/relx-creator/lineup-v4-wm.webp",
       alt: "RELX Creator Pro device, all 5 colours — black, white, grey yellow, green, yellow",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v4.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
-      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v4.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v4-wm.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v4-wm.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       // Batch 4d-2 (06/10): RELX's other three colours (relxnow.com lists Black / White / Green / Yellow) — catalog completeness;
       // photos = see the "Photos" comment above. The shop's stock is unknown.
-      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v4.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v4.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v4.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v4-wm.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v4-wm.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v4-wm.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
     ],
     // RELX's own Creator Pro Device page (relxnow.com, read 2026-09-30): 800mAh, Type-C fast charging, one button — one
     // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
@@ -276,9 +276,9 @@ export const relxProducts: Product[] = [
     // _incoming/sitewide-template/4/4d/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's UK one-pager.
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/relx-creator/story-cover.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
+    storyCover: { src: "/assets/products/relx-creator/story-cover-wm.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
     // Phones: RELX's A4 portrait version of the same one-pager — the wide one's tile text is unreadable at 390 (checker #281).
-    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
+    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile-wm.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
     specifications: [
       { key: "format", label: "Format", value: "Device only — prefilled pods sold separately", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "battery", label: "Battery", value: "800mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
@@ -294,21 +294,21 @@ export const relxProducts: Product[] = [
         title: "Check the battery any time",
         description: "Check before you head out and you'll know whether there's plenty left or it's nearly flat, without guessing.",
         subline: "RELX set it up so one click shows the battery level on the screen.",
-        image: { src: "/assets/products/relx-creator/story-button.webp", alt: "RELX's Creator Pro picture — one click checks the battery on the pixel screen", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-button-wm.webp", alt: "RELX's Creator Pro picture — one click checks the battery on the pixel screen", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
       {
         id: "modes",
         title: "Normal or Boost, your choice",
         description: "Each mode puts a different picture on the screen, so a quick glance tells you which one is on.",
         subline: "RELX set it up so a double click on the button switches between the two.",
-        image: { src: "/assets/products/relx-creator/story-modes.webp", alt: "RELX's Creator Pro picture — a double click adjusts power, Normal mode and Boost mode", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-modes-wm.webp", alt: "RELX's Creator Pro picture — a double click adjusts power, Normal mode and Boost mode", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
       {
         id: "airflow",
         title: "Set your airflow",
         description: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
         subline: "RELX lets you set the airflow anywhere from fully open to its tightest.",
-        image: { src: "/assets/products/relx-creator/story-airflow.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+        image: { src: "/assets/products/relx-creator/story-airflow-wm.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
     ],
     // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
