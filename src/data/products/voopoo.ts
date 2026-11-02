@@ -595,7 +595,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g3-mini/card-v2.webp",
+        src: "/assets/products/argus-g3-mini/card-v2-wm2.webp",
         alt: "VOOPOO ARGUS G3 mini, Sky Blue, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -621,12 +621,12 @@ export const voopooProducts: Product[] = [
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g3-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g3-mini/lineup-v3.webp",
+      src: "/assets/products/argus-g3-mini/lineup-v3-wm2.webp",
       alt: "VOOPOO ARGUS G3 mini, colours 1–5 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g3-mini/lineup2-v3.webp",
+      src: "/assets/products/argus-g3-mini/lineup2-v3-wm2.webp",
       alt: "VOOPOO ARGUS G3 mini, colours 6–9 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -635,55 +635,55 @@ export const voopooProducts: Product[] = [
         id: "sky-blue",
         name: "Sky Blue",
         swatchHex: "#8cb1d5",
-        image: { src: "/assets/products/argus-g3-mini/variant-sky-blue-v2.webp", alt: "VOOPOO ARGUS G3 mini, Sky Blue" },
+        image: { src: "/assets/products/argus-g3-mini/variant-sky-blue-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Sky Blue" },
       },
       {
         id: "grass-green",
         name: "Grass Green",
         swatchHex: "#a7c696",
-        image: { src: "/assets/products/argus-g3-mini/variant-grass-green-v2.webp", alt: "VOOPOO ARGUS G3 mini, Grass Green" },
+        image: { src: "/assets/products/argus-g3-mini/variant-grass-green-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Grass Green" },
       },
       {
         id: "midnight-black",
         name: "Midnight Black",
         swatchHex: "#353333",
-        image: { src: "/assets/products/argus-g3-mini/variant-midnight-black-v2.webp", alt: "VOOPOO ARGUS G3 mini, Midnight Black" },
+        image: { src: "/assets/products/argus-g3-mini/variant-midnight-black-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Midnight Black" },
       },
       {
         id: "space-gray",
         name: "Space Gray",
         swatchHex: "#585a5e",
-        image: { src: "/assets/products/argus-g3-mini/variant-space-gray-v2.webp", alt: "VOOPOO ARGUS G3 mini, Space Gray" },
+        image: { src: "/assets/products/argus-g3-mini/variant-space-gray-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Space Gray" },
       },
       {
         id: "moonlight-silver",
         name: "Moonlight Silver",
         swatchHex: "#c9c6c7",
-        image: { src: "/assets/products/argus-g3-mini/variant-moonlight-silver-v2.webp", alt: "VOOPOO ARGUS G3 mini, Moonlight Silver" },
+        image: { src: "/assets/products/argus-g3-mini/variant-moonlight-silver-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Moonlight Silver" },
       },
       {
         id: "scarlet-red",
         name: "Scarlet Red",
         swatchHex: "#be1d21",
-        image: { src: "/assets/products/argus-g3-mini/variant-scarlet-red-v2.webp", alt: "VOOPOO ARGUS G3 mini, Scarlet Red" },
+        image: { src: "/assets/products/argus-g3-mini/variant-scarlet-red-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Scarlet Red" },
       },
       {
         id: "rose-gold",
         name: "Rose Gold",
         swatchHex: "#d6b0a8",
-        image: { src: "/assets/products/argus-g3-mini/variant-rose-gold-v2.webp", alt: "VOOPOO ARGUS G3 mini, Rose Gold" },
+        image: { src: "/assets/products/argus-g3-mini/variant-rose-gold-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Rose Gold" },
       },
       {
         id: "lilac-purple",
         name: "Lilac Purple",
         swatchHex: "#b8a1c0",
-        image: { src: "/assets/products/argus-g3-mini/variant-lilac-purple-v2.webp", alt: "VOOPOO ARGUS G3 mini, Lilac Purple" },
+        image: { src: "/assets/products/argus-g3-mini/variant-lilac-purple-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Lilac Purple" },
       },
       {
         id: "hot-pink",
         name: "Hot Pink",
         swatchHex: "#d42e9d",
-        image: { src: "/assets/products/argus-g3-mini/variant-hot-pink-v2.webp", alt: "VOOPOO ARGUS G3 mini, Hot Pink" },
+        image: { src: "/assets/products/argus-g3-mini/variant-hot-pink-v2-wm2.webp", alt: "VOOPOO ARGUS G3 mini, Hot Pink" },
       },
     ],
     specifications: [
