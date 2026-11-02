@@ -104,10 +104,10 @@ export const categories: Category[] = [
     slug: "heated-tobacco-devices",
     name: "Heated Tobacco Devices",
     shortName: "HNB Devices",
-    labelTh: "Heated Tobacco Devices / เครื่องอุ่นยาสูบ",
+    labelTh: "Heated Tobacco Devices / เครื่องจ่ายความร้อน",
     description: "Heated tobacco devices from IQOS — ILUMA i ONE, ILUMA i and ILUMA i PRIME — which take TEREA sticks only. The LAMBDA i8 comes from a separate maker and is not an IQOS device; LAMBDA says it works with both TEREA and SENTIA sticks.",
     descriptionTh:
-      "เครื่องอุ่นยาสูบ IQOS ILUMA i ONE · ILUMA i และ ILUMA i PRIME ใช้ก้าน TEREA เท่านั้น ส่วน LAMBDA i8 ไม่ใช่ IQOS ทาง LAMBDA ระบุว่าใช้ได้ทั้ง TEREA และ SENTIA",
+      "เครื่องจ่ายความร้อน IQOS ILUMA i ONE · ILUMA i และ ILUMA i PRIME ใช้บุหรี่ TEREA เท่านั้น ส่วน LAMBDA i8 ไม่ใช่ IQOS ทาง LAMBDA ระบุว่าใช้ได้ทั้ง TEREA และ SENTIA",
     systemTypes: [],
   },
   {
@@ -115,10 +115,10 @@ export const categories: Category[] = [
     slug: "heated-tobacco-consumables",
     name: "Heated Tobacco Sticks",
     shortName: "HNB Sticks",
-    labelTh: "Heated Tobacco Sticks / ก้าน TEREA",
+    labelTh: "Heated Tobacco Sticks / บุหรี่ TEREA",
     description: "Tobacco sticks for heat-not-burn devices — the consumable side of the heated-tobacco ecosystem.",
     descriptionTh:
-      "ก้าน TEREA สำหรับเครื่อง IQOS ILUMA ใส่กับ IQOS รุ่นก่อน ILUMA ไม่ได้ ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
+      "บุหรี่ TEREA สำหรับเครื่อง IQOS ILUMA ใส่กับ IQOS รุ่นก่อน ILUMA ไม่ได้ ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
     systemTypes: [],
   },
 ];
