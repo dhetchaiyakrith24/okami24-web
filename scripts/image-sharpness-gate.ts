@@ -13,7 +13,7 @@
  *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant-<id> file
  *                 that replaces an option photo deleted in the same diff (same product, same <id> in any case, e.g.
  *                 variants/Coil-1-1.webp -> variant-coil-1-1.webp — a new name keeps the CDN from serving the old file;
- *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm, replaces variant-<id> the same way)
+ *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm or -wm2, replaces variant-<id> / an earlier mark the same way)
  *                 must reach >= 90% of that deleted file (IMAGE_SPEC "ของรูปที่มันแทน", round "3 coil photos" 08/10);
  *                 any other added variant file must reach >= 90% of the product's own card (what the customer saw
  *                 before the new photo). Lineups: canvas
@@ -154,7 +154,7 @@ function cardOf(dir: string): string | null {
   const rows = all.filter(([st, f]) => /^[AM]$/.test(st) && /\.(webp|png|jpe?g)$/i.test(f));
   // option photos deleted in this diff, keyed by product dir + lower-case id: the file a renamed variant-<id> replaces
   const productDir = (f: string) => f.split("/").slice(0, 4).join("/");
-  const idOf = (f: string) => path.basename(f).replace(/\.[^.]+$/, "").replace(/^variant-/i, "").replace(/-wm$/i, "").toLowerCase();
+  const idOf = (f: string) => path.basename(f).replace(/\.[^.]+$/, "").replace(/^variant-/i, "").replace(/-wmd*$/i, "").toLowerCase();
   const deleted = new Map<string, string>();
   for (const [st, f] of all) if (st === "D" && /\.(webp|png|jpe?g)$/i.test(f)) deleted.set(`${productDir(f)}|${idOf(f)}`, f);
   if (!rows.length) { console.log(`no product image added or modified since ${base}\nPASS`); return; }
