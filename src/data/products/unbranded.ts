@@ -642,7 +642,7 @@ export const unbrandedProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/next-pro-2-beyond/card.webp",
+        src: "/assets/products/next-pro-2-beyond/card-wm2.webp",
         alt: "Next Pro 2 Beyond pod device, Twilight Sky, studio photo",
         angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the retailer's line-up photo.",
         transparentBackground: true,
@@ -656,12 +656,12 @@ export const unbrandedProducts: Product[] = [
     // to state as fact (near-universal agreement across unrelated sellers), same bar already used
     // elsewhere in this catalog for tier-2/3 evidence.
     colorVariants: [
-      { id: "razer-black", name: "Razer Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/next-pro-2-beyond/variant-razer-black.webp", alt: "Next Pro 2 Beyond, Razer Black — device" } },
-      { id: "supreme-red", name: "Supreme Red", swatchHex: "#b83a3a", image: { src: "/assets/products/next-pro-2-beyond/variant-supreme-red.webp", alt: "Next Pro 2 Beyond, Supreme Red — device" } },
-      { id: "white-lava", name: "White Lava", swatchHex: "#e8e4de", image: { src: "/assets/products/next-pro-2-beyond/variant-white-lava.webp", alt: "Next Pro 2 Beyond, White Lava — device" } },
-      { id: "aurora", name: "Aurora", swatchHex: "#6b8ec9", image: { src: "/assets/products/next-pro-2-beyond/variant-aurora.webp", alt: "Next Pro 2 Beyond, Aurora — device" } },
-      { id: "lemon-mint", name: "Lemon Mint", swatchHex: "#c9d94b", image: { src: "/assets/products/next-pro-2-beyond/variant-lemon-mint.webp", alt: "Next Pro 2 Beyond, Lemon Mint — device" } },
-      { id: "twilight-sky", name: "Twilight Sky", swatchHex: "#4a5a9e", image: { src: "/assets/products/next-pro-2-beyond/variant-twilight-sky.webp", alt: "Next Pro 2 Beyond, Twilight Sky — device" } },
+      { id: "razer-black", name: "Razer Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/next-pro-2-beyond/variant-razer-black-wm2.webp", alt: "Next Pro 2 Beyond, Razer Black — device" } },
+      { id: "supreme-red", name: "Supreme Red", swatchHex: "#b83a3a", image: { src: "/assets/products/next-pro-2-beyond/variant-supreme-red-wm2.webp", alt: "Next Pro 2 Beyond, Supreme Red — device" } },
+      { id: "white-lava", name: "White Lava", swatchHex: "#e8e4de", image: { src: "/assets/products/next-pro-2-beyond/variant-white-lava-wm2.webp", alt: "Next Pro 2 Beyond, White Lava — device" } },
+      { id: "aurora", name: "Aurora", swatchHex: "#6b8ec9", image: { src: "/assets/products/next-pro-2-beyond/variant-aurora-wm2.webp", alt: "Next Pro 2 Beyond, Aurora — device" } },
+      { id: "lemon-mint", name: "Lemon Mint", swatchHex: "#c9d94b", image: { src: "/assets/products/next-pro-2-beyond/variant-lemon-mint-wm2.webp", alt: "Next Pro 2 Beyond, Lemon Mint — device" } },
+      { id: "twilight-sky", name: "Twilight Sky", swatchHex: "#4a5a9e", image: { src: "/assets/products/next-pro-2-beyond/variant-twilight-sky-wm2.webp", alt: "Next Pro 2 Beyond, Twilight Sky — device" } },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "440mAh built-in, USB-C", sourceStatus: "unverified" },
