@@ -967,7 +967,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-21/card.webp",
+      src: "/assets/products/coil-21/card-wm2.webp",
       alt: "VOOPOO Argus Pod cartridge, studio photo",
       angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of a shop photo of the Argus Pod cartridge. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2271,7 +2271,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // maxlist (21/10): Argus Pod — the Argus mix option shows the cartridge re-shoot; the 1.2Ω and the two Top Fill options have no photo yet (the Top Fill cartridge is a different part).
   "Coil-21": {
-    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
+    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1-wm2.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
   },
   // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
   "RELX-ESSENTIAL-2": {
