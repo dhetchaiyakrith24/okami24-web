@@ -7,13 +7,15 @@ import { SHIPNITY_CARRIER_NAME, type CarrierId } from "@/lib/commerce/carriers";
  * the body a Woo shop POSTs to its "order.created" webhook and answers on GET /orders/<id>. Pure, so the contract test
  * can hold it to the rules (Shipnity link, owner 27/10 + 28/10):
  *   - only what the warehouse needs to pack and ship: items with the Shipnity code as `sku`, the recipient, the address,
- *     the shipping fee; no slip, no refund account, no customer note, no email, no member id;
+ *     the shipping fee; no slip, no refund account, no customer note of the customer's, no email, no member id;
  *   - the real shipping fee on its own line every time; free shipping = a shop-paid discount line (BSOT §10, survey
  *     "Order push") — the order total stays what the customer paid;
  *   - lines refunded after an out-of-stock (batch E) are not sent (same rule as the copy-to-warehouse text);
  *   - the carrier (owner 30/10: DHL for Phuket 83xxx + Bangkok 10220 / 10250, EMS for the rest) rides as the shipping
  *     line's title in Shipnity's own words (EMS / DHL) and as order meta `shipping_carrier` — Shipnity cannot map Woo
  *     shipping methods (admin 30/10), so one real test order shows which it reads; without a carrier the line keeps "ค่าส่ง".
+ *     The first real DHL order (03/11) still landed as EMS — Shipnity uses its account's default carrier — so until it can
+ *     map ours, a DHL order also carries a note for the packer (owner 03/11 "ทำหมายเหตุชั่วคราวไปก่อน"), in `customer_note`.
  * Thai address → Woo: address_1 = house/street, address_2 = sub-district, city = district, state = province.
  */
 
@@ -57,6 +59,9 @@ export function pushBlock(o: { status: string; alreadySent: boolean; stockOpen: 
 }
 
 const money = (n: number) => n.toFixed(2);
+/** The note a DHL order carries to the warehouse until Shipnity reads the carrier itself (owner 03/11, temporary). */
+export const DHL_PACKER_NOTE = "ส่ง DHL — เปลี่ยนขนส่งใน Shipnity เป็น DHL ก่อนออกเลขพัสดุ";
+
 const wooDate = (iso: string) => iso.replace(/\.\d+Z$/, "").replace(/Z$/, "");
 
 export function wooOrderJson(o: PushOrder, siteUrl: string) {
@@ -65,6 +70,8 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
   const discount = Math.max(0, shippingReal - o.shippingFee);
   const total = itemsTotal + shippingReal - discount;
   const carrierName = o.carrier ? SHIPNITY_CARRIER_NAME[o.carrier] : null;
+  // Temporary (owner 03/11): Shipnity imports every web order as its default carrier (EMS), so the DHL ones say so in the note.
+  const packerNote = o.carrier === "dhl" ? DHL_PACKER_NOTE : "";
   const address = {
     first_name: o.recipientName,
     last_name: "",
@@ -101,7 +108,7 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
     total_tax: "0.00",
     prices_include_tax: false,
     customer_id: 0,
-    customer_note: "",
+    customer_note: packerNote,
     billing: { ...address, email: "" },
     shipping: address,
     payment_method: "bacs",

@@ -17,7 +17,7 @@ import { handle, readStockFields, type ApiRequest, type StockReportView, type We
 import { wooCatalog } from "./catalog";
 import { parseCredentials, redactSecrets, safeQuery } from "./credentials";
 import { minimiseOrderBody } from "./log-redact";
-import { pushBlock, wooOrderJson, type PushOrder } from "./order-json";
+import { DHL_PACKER_NOTE, pushBlock, wooOrderJson, type PushOrder } from "./order-json";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 
@@ -256,6 +256,7 @@ const ems = wooOrderJson({ ...base, carrier: "thailand-post" }, "https://okami24
 check("order: EMS as the shipping line + meta", ems.shipping_lines[0].method_title === "EMS" && JSON.stringify(ems.meta_data) === JSON.stringify([{ id: 1, key: "shipping_carrier", value: "EMS" }]));
 const dhl = wooOrderJson({ ...base, postalCode: "83100", carrier: "dhl" }, "https://okami24.store");
 check("order: DHL as the shipping line, fee and total unchanged", dhl.shipping_lines[0].method_title === "DHL" && dhl.total === paid.total && dhl.shipping_total === paid.shipping_total);
+check("order: DHL carries the packer note (temporary, owner 03/11); EMS and no carrier carry none", dhl.customer_note === DHL_PACKER_NOTE && ems.customer_note === "" && paid.customer_note === "");
 check("unknown product id = 404", handle(req({ segments: ["wc", "v3", "products", "5"] })).status === 404);
 check("unknown route = 404", handle(req({ segments: ["wc", "v3", "customers"] })).status === 404);
 check("unknown namespace = 404", handle(req({ segments: ["wp", "v2", "users"] })).status === 404);
