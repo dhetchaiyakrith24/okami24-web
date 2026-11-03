@@ -1073,7 +1073,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "Each VOOPOO PnP X coil has its own draw style, airflow setting and e-liquid in VOOPOO's guidance. Below, from VOOPOO's own pages, one topic at a time.",
+      lede: "Each VOOPOO PnP X coil comes with its own recommended draw style, airflow setting and e-liquid. Below, from VOOPOO's own pages, one topic at a time.",
       sections: [
         {
           heading: "Which PnP X coil suits which draw?",
@@ -1171,7 +1171,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "คอยล์ TPP ใช้กับน้ำยาแบบไหน",
+          heading: "ใช้กับน้ำยาแบบไหน",
           paragraphs: [
             "VOOPOO แนะนำให้ใช้คอยล์ TPP ทั้งสี่รุ่นกับน้ำยาที่มีความเข้มข้นนิโคตินไม่เกิน 10mg",
           ],
@@ -1210,7 +1210,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which e-liquid suits TPP coils?",
+          heading: "Which e-liquid?",
           paragraphs: [
             "VOOPOO recommends e-liquid of up to 10 mg nicotine strength for all four.",
           ],
@@ -1245,7 +1245,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "TPP 线圈配什么烟油？",
+          heading: "配什么烟油？",
           paragraphs: [
             "VOOPOO 建议四款都搭配尼古丁浓度不超过 10 mg 的烟油。",
           ],
@@ -5443,7 +5443,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // coil aligns with locating slot on the pod"). No Caliburn G product on the site → no link.
   "coil-53": {
     th: {
-      lede: "คอยล์ UWELL Caliburn G2 ในหน้านี้มีสามค่า แต่ละค่า UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
+      lede: "คอยล์ UWELL Caliburn G2 ในหน้านี้มีให้เลือกสามค่า แต่ UWELL ตั้งชื่อรุ่นของแต่ละค่าไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
       sections: [
         {
           heading: "แต่ละค่าเป็นคอยล์รุ่นไหน",
@@ -5455,13 +5455,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "UN2 Meshed-H คืออะไร",
           paragraphs: [
-            "บนหน้า Caliburn G2 กับหน้า Caliburn X UWELL เขียนชื่อเต็มของคอยล์ 0.8 โอห์มและ 1.2 โอห์มไว้ว่า UN2 Meshed-H ส่วนคอยล์ 1.0 โอห์มไม่ได้ใช้ชื่อนี้",
-            "หน้า Caliburn G ของ UWELL ระบุว่าเครื่องรุ่นนั้นใช้คอยล์ UN2 Meshed-H 0.8 โอห์ม และอธิบายคอยล์ตัวนี้ว่าใช้ได้นาน ร้อนสม่ำเสมอจนน้ำยากลายเป็นไอได้เต็มที่ และให้รสของน้ำยาออกมาเต็มตามรสเดิม",
-            "หน้าเดียวกันนี้แนะนำด้วยว่า เวลาเปลี่ยนคอยล์ให้จัดคอยล์ให้ตรงกับร่องบอกตำแหน่งในหัวพอตก่อนใส่",
+            "UWELL เขียนชื่อเต็มของคอยล์ 0.8 กับ 1.2 โอห์มไว้บนหน้า Caliburn G2 และหน้า Caliburn X ว่า UN2 Meshed-H ส่วนคอยล์ 1.0 โอห์มไม่ได้ใช้ชื่อนี้",
+            "หน้า Caliburn G ของ UWELL ระบุว่าเครื่องรุ่นนั้นใช้คอยล์ UN2 Meshed-H 0.8 โอห์ม และอธิบายคอยล์ตัวนี้ว่าใช้ได้นาน ร้อนสม่ำเสมอจนน้ำยากลายเป็นไอได้เต็มที่ และให้รสที่เต็มและตรงกับรสเดิมของน้ำยา",
+            "หน้าเดียวกันนี้ยังแนะนำว่า เวลาเปลี่ยนคอยล์ ให้วางคอยล์ตรงกับร่องบอกตำแหน่งในหัวพอตก่อนใส่ลงไป",
           ],
         },
         {
-          heading: "คอยล์ Caliburn G ใส่กับเครื่องรุ่นไหนได้",
+          heading: "คอยล์ Caliburn G และ G2 ใช้กับเครื่องรุ่นไหน",
           paragraphs: [
             "Caliburn GK2 ใส่ได้ทั้งสามค่า ในกล่องมี 1.2 โอห์มติดเครื่องมา และมี 0.8 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยก",
             "Caliburn X ก็ใช้คอยล์ตระกูล Caliburn G ในกล่องมี 0.8 โอห์มติดเครื่องมา และมี 1.2 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยกเหมือนกัน",
@@ -5482,11 +5482,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What is UN2 Meshed-H?",
           paragraphs: [
-            "On its Caliburn G2 and Caliburn X pages, UWELL gives the full name of the 0.8Ω and 1.2Ω coils as UN2 Meshed-H; the 1.0Ω coil does not carry that name. UWELL's Caliburn G page lists the UN2 Meshed-H 0.8Ω coil for that device and describes it as long-lasting, heating evenly to fully vaporise the e-liquid and presenting its full, original flavour. The same page says to line the coil up with the locating slot in the pod when you replace it.",
+            "On its Caliburn G2 and Caliburn X pages, UWELL gives the full name of the 0.8Ω and 1.2Ω coils as UN2 Meshed-H; the 1.0Ω coil does not carry that name. UWELL's Caliburn G page lists the UN2 Meshed-H 0.8Ω coil for that device and describes it as long-lasting, heating evenly to fully vaporise the e-liquid and bringing out the e-liquid's full, original flavour. The same page says to line the coil up with the locating slot in the pod when you replace it.",
           ],
         },
         {
-          heading: "Which devices take Caliburn G coils?",
+          heading: "Which devices take Caliburn G and G2 coils?",
           paragraphs: [
             "The Caliburn GK2 takes all three: 1.2Ω fitted, 0.8Ω as a spare, 1.0Ω sold separately. The Caliburn X uses Caliburn G-family coils too: 0.8Ω fitted, 1.2Ω as a spare, 1.0Ω sold separately.",
             "Looking for an empty pod for these coils? The site has the [Caliburn X pod](/products/coil-74) and the [Caliburn G2 pod](/products/coil-55).",
@@ -5495,7 +5495,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "本页的 UWELL Caliburn G2 线圈有三种阻值，在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
+      lede: "本页的 UWELL Caliburn G2 线圈有三种阻值，UWELL 给每种阻值的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
       sections: [
         {
           heading: "每种阻值是哪款线圈？",
@@ -5510,7 +5510,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "哪些设备可以用 Caliburn G 线圈？",
+          heading: "哪些设备可以用 Caliburn G 和 G2 线圈？",
           paragraphs: [
             "Caliburn GK2 三种都能用：出厂装 1.2Ω，附备用 0.8Ω，1.0Ω 需另购。Caliburn X 同样使用 Caliburn G 系列线圈：出厂装 0.8Ω，附备用 1.2Ω，1.0Ω 需另购。",
             "想找能装这些线圈的空烟弹，本站有 [Caliburn X 烟弹](/products/coil-74) 和 [Caliburn G2 烟弹](/products/coil-55)。",
@@ -5742,7 +5742,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // 18650 sold apart, 80W, PnP-RBA. Legacy page → no article FAQ.
   "drag-x": {
     th: {
-      lede: "สรุปเรื่อง VOOPOO DRAG X จากหน้าเว็บของ VOOPOO ว่าโหมด SCORE คืออะไร ปรับลมได้แค่ไหน คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
+      lede: "ด้านล่างสรุปเรื่อง VOOPOO DRAG X จากหน้าเว็บของแบรนด์ ว่าโหมด SCORE คืออะไร ปรับลมได้แค่ไหน คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
       sections: [
         {
           heading: "โหมด SCORE ของ DRAG X คืออะไร",
@@ -5758,7 +5758,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "คอยล์ DRAG X สองตัวในกล่องต่างกันยังไง",
+          heading: "คอยล์สองตัวในกล่องต่างกันยังไง",
           paragraphs: [
             "ในกล่องมีคอยล์ mesh มาให้สองตัว ตัวแรกคือ PnP-VM6 0.15 โอห์ม ที่ VOOPOO พัฒนามาให้ DRAG X โดยเฉพาะ และบอกว่าให้ไอก้อนใหญ่กับรสที่ชัด ส่วนตัวที่สองคือ PnP-VM1 0.3 โอห์ม ที่ใช้วัตต์น้อยกว่า",
             "VOOPOO แนะนำให้ใช้คอยล์ทั้งสองตัวนี้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
@@ -5801,7 +5801,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which other coils fit the DRAG X?",
+          heading: "Can the DRAG X take other coils?",
           paragraphs: [
             "Yes — pull the old coil out and push the new one in. VOOPOO's PnP coil page lists MTL coils such as the PnP-R1 0.8Ω and PnP-R2 1.0Ω for the DRAG X too, the ones to pick for a tighter draw. Other PnP coils are on the [VOOPOO PnP coils](/products/coil-1) page. PnP X coils, made for VOOPOO's newer devices, are a different system that VOOPOO says does not fit original PnP devices.",
           ],
@@ -5856,7 +5856,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // it apart from the DRAG S2/X2 PnP X pod. Legacy page → no article FAQ.
   "vinci-s": {
     th: {
-      lede: "สรุปเรื่อง VOOPOO VINCI S จากหน้าเว็บของ VOOPOO ว่าแบตใช้ได้นานแค่ไหน ต้องตั้งวัตต์เองไหม ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
+      lede: "ด้านล่างสรุปเรื่อง VOOPOO VINCI S จากหน้าเว็บของแบรนด์ ว่าแบตใช้ได้นานแค่ไหน ต้องตั้งวัตต์เองไหม ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
       sections: [
         {
           heading: "VINCI S แบตอยู่ได้นานแค่ไหน",
