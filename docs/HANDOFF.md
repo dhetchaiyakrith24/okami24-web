@@ -10,29 +10,27 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 03/11 ~06:50 by the 8th main chat (local_1681c276), after the owner's compact, ~40% — same chat goes on (owner: compact, no hand-off).
+Updated 03/11 ~10:55 by the 8th main chat (local_1681c276), ~45% — owner shut the PC down ("ปิดงานก่อน เดี๋ยวค่อยมาต่อ"); same chat resumes.
 
-1 main = cf6842d4 (#1168). CART IS ON. Merged 03/11 after the compact: #1159 address look A (step bar + Thai map card) · #1165 label-price
+1 main = 129f07fc (#1154). CART IS ON. Merged 03/11 after the compact (later: #1160 70 maker cut-outs unmarked · #1161 HNB words ·
+  #1154 watermark tool + 41 images at 22/18): #1159 address look A (step bar + Thai map card) · #1165 label-price
   follow-up (trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" + 12 px struck price) · #1171 RULE 13.7 no deploys 18:00–24:00 · #1169 address
   search + own place boxes + edit/delete saved addresses (+ hand-typed sub-district cannot renew the monthly free shipping) · #1170 slip bot
   answers "เว็บกำลังอัปเดต ส่งรูปสลิปเดิมอีกครั้ง" when a restart cuts a check (dormant webhookEventId dedupe on main) · #1168 home hero:
   phones paint only the shown slot (owner clip). Live-checked by curl.
 2 CHILD CHATS (report to local_1681c276 · Opus 5.5 · medium except design/SEO/images = high, §18 · owner 03/11: 3–4 lines allowed):
-  images-0211b local_67ec6cc2 (high): watermark gen 2 (22/18 APPROVED, shop-made images only, IMAGE_SPEC §0) · drafts, in merge order:
-    #1160 (70 maker cut-outs back to originals) → #1154 (tool + 41) → #1156 (57) → #1163 (115 flagship) → #1166 (95 best sellers; ≤100/PR).
+  images-0211b local_67ec6cc2 (high): watermark gen 2 (22/18 APPROVED, shop-made images only, IMAGE_SPEC §0) · LEFT, drafts in merge order,
+    all pushed + trees clean: #1156 (57, wt `_incoming/wt-wm22b`) → #1163 (115, `wt-wm22c`) → #1166 (95, `wt-wm22d`). None gated yet (no Checker line).
+    Child was idle at the shutdown; on resume Friday messages it to take #1156: merge main → verify --full → gate → checker → --done → Friday merges.
   slip-bot-0311 local_5c237036 (medium): done (#1170 merged) · label-price-0311 local_b64f9a62: done (#1165 merged) — both may be archived.
-  TEST-MACHINE QUEUE (3412 + checker lock; verify --full refuses while 3412 is up): #1160 (images, next) → #1161 (Friday)
-    → #1154 → #1156 → #1163 → #1166. Friday messages each slot owner at its turn and at --done. 3413/3414/3415 servers stopped 03/11.
+  TEST MACHINE (3412) free · no gate note open. Queue: #1156 → #1163 → #1166 (images child).
   NO MERGES 18:00–24:00 Thai (13.7, owner 03/11) except a broken live site — ready PRs wait for after midnight.
 2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
     Owner answers 02–03/11 live in their homes (BSOT §5 · IMAGE_SPEC §0 · THAI_STYLE HNB words · §18 slip bot + deploy window).
     IN FLIGHT (Friday):
     · HOME JANK merged (#1168): emulation 390 CPU×4 = long frames 5 → 2 (trend, 3 runs), DroppedFrame halved, paint not lower
       (`_incoming/jank-0311/measure-*.json`). WAITING: the owner films the home page again on his iPhone — the real proof.
-    · HNB WORDS = PR #1161 (draft, head 7683d970 on 0fb444e8): 92 literals + THAI_STYLE/LOG. Every page holds the category name → 13.5 #5
-      whole sitemap. BEFORE data saved: head-audit `_incoming/hnb-words-0311/head-before/` · visible-text `vt-before/` (179×3×2).
-      At its slot: merge origin/main → verify --full → test-server build (cart on) → after scans (head-audit · visible-text diff · scan.js ·
-      wordbreak 390/1440 sitemap · thai-check) → gate → checker → merge. Tools + table = `_incoming/hnb-words-0311/`.
+    · HNB WORDS merged (#1161, live-checked by curl). Old words still find the products (search aliases).
     Owner asked 03/11 (status page "รอพี่ตอบ"): do LINE orders also pay the site price? yes = keep the trust line · no = "ทุกออเดอร์บนเว็บ…".
     PARKED / LATER: LINE Webhook redelivery (owner "เอาไว้ก่อน" 03/11; dedupe guard already on main) · address error "ค่ะ" alone on a line at
       390 (needs thai-typography glue = owner OK) · spec-list dt wrap (same) · unwatermarked originals under public/assets → cleanup after gen-2
