@@ -329,7 +329,6 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า เทียบสองแบบนี้ละเอียดอ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
         image: SECTION_IMAGES.mBar15kSwap,
-        video: SECTION_CLIPS.mSwitch,
       },
     ],
     faq: [
@@ -1013,7 +1012,6 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "与整台丢弃的 M Bar 10K 相比，M Switch 只丢弃烟弹——同样简单（不注油、不换雾化芯），每次更换产生的废弃物更少。还没决定要哪种形态？回到 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 从头开始。",
         ],
         image: SECTION_IMAGES_ZH.mBar15kSwap,
-        video: SECTION_CLIPS.mSwitch,
       },
     ],
     faq: [
