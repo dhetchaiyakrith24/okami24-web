@@ -4,6 +4,7 @@ import { useSyncExternalStore } from "react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { bangkokToday, salesBadges, type SalesBadgeKind } from "@/data/sales-badges";
 import { cn } from "@/lib/utils";
+import { useLiveSoldOut } from "@/components/catalog/useLiveCardStock";
 
 /**
  * "มาใหม่" / "ขายดี" (owner 30/10 — rules and sources in src/data/sales-badges.ts; look = designer 30/10 + 02/11). The day is
@@ -45,10 +46,11 @@ const CARD_PILL = "-my-[3px] h-[19px] px-2 text-[11px] max-lg:px-1.5 lg:h-5 lg:p
 
 /** The card version, right end of the brand line (the brand name truncates first); a best seller also frames its card
  *  (`data-sales="best"`, read by `a[data-card-cut]:has(...)`). Dots show from lg only — at 390 two capsules leave the brand
- *  little room. */
+ *  little room. `soldOut` = as built; the warehouse's live answer overrides it after load (owner 31/10, useLiveCardStock), the
+ *  same answer the product head reads. */
 export function CardSalesBadge({ slug, soldOut = false }: { slug: string; soldOut?: boolean }) {
   const { dict } = useLocale();
-  const kinds = useBadges(slug, soldOut);
+  const kinds = useBadges(slug, useLiveSoldOut(slug, soldOut));
   if (kinds.length === 0) return null;
   return (
     <span className="inline-flex shrink-0 items-center gap-1">
