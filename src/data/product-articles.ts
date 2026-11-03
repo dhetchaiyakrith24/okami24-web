@@ -1028,7 +1028,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "คอยล์ VOOPOO PnP X แต่ละค่ามีแนวการสูบ การเปิดช่องลม และน้ำยาที่ VOOPOO แนะนำไว้ต่างกัน ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
-          heading: "คอยล์ PnP X ค่าไหนเหมาะกับการสูบแบบไหน",
+          heading: "ค่าไหนของคอยล์ PnP X เหมาะกับการสูบแบบไหน",
           paragraphs: [
             "VOOPOO แบ่งไว้ว่า 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DTL คือดูดลงปอดตรง ๆ 0.3 โอห์มใช้ได้ทั้ง DTL และ RDL ส่วน 0.45 โอห์มเป็นแบบ RDL",
             "ถัดขึ้นไป 0.6 โอห์มใช้ได้ทั้ง MTL และ RDL ส่วน 0.8 โอห์มกับ 1.0 โอห์มเป็นคอยล์ MTL ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
@@ -1184,7 +1184,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "คอยล์ TPP ใช้กับเครื่องหรือหัวพอตไหนได้บ้าง",
+          heading: "คอยล์ TPP ใช้กับเครื่องหรือหัวพอตไหน",
           paragraphs: [
             "หัวพอตที่ใช้คู่กับคอยล์ตระกูลนี้คือ TPP Pod ของ VOOPOO ดูหัวพอตเปล่ารุ่นนี้ได้ที่หน้า [หัวพอตเปล่า VOOPOO TPP Pod](/products/coil-87)",
             "ส่วนเครื่อง DRAG X PRO ของ VOOPOO มากับคอยล์ TPP สองตัวในกล่อง คือตัว 0.15 โอห์มกับตัว 0.2 โอห์ม",
@@ -5644,7 +5644,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "คอยล์ VOOPOO PnP ใช้กับเครื่องรุ่นไหนได้บ้าง",
+          heading: "คอยล์ VOOPOO PnP ใช้กับเครื่องไหนได้บ้าง",
           paragraphs: [
             "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่นในตระกูล VINCI และ DRAG เช่น VINCI X และ [DRAG X](/products/drag-x) รวมถึงหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
             "VOOPOO บอกไว้ด้วยว่ารายชื่อนี้มีไว้ใช้อ้างอิง และการสูบจริงอาจต่างกันไปตามเครื่อง",
