@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import { pilotStatusAfterLive } from "@/lib/stock/card-stock";
 
 /**
  * Live warehouse stock on a prerendered product page (Shipnity link step 4, owner 28/10). The page renders with the
@@ -77,16 +78,8 @@ export function useLivePilotProduct(product: StorefrontProductView): { product: 
   const relabelled = useMemo(() => {
     if (!live) return product;
     const variants = product.variants.map((v) => (live.o[v.id] ? { ...v, availabilityStatus: toAvail(live.o[v.id]) } : v));
-    const productStatus =
-      variants.length === 0
-        ? live.p
-          ? toAvail(live.p)
-          : product.availabilityStatus
-        : variants.some((v) => v.availabilityStatus === "in-stock")
-          ? ("in-stock" as const)
-          : variants.every((v) => v.availabilityStatus === "out-of-stock")
-            ? ("out-of-stock" as const)
-            : product.availabilityStatus;
+    // The same rule the product cards use (src/lib/stock/card-stock.ts), so a card and its page never disagree.
+    const productStatus = pilotStatusAfterLive(variants, product.availabilityStatus, live.p);
     return { ...product, variants, availabilityStatus: productStatus };
   }, [product, live]);
   return { product: relabelled, counts: useMemo(() => countsOf(live, settled), [live, settled]) };
