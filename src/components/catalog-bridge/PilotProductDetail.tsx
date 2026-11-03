@@ -344,8 +344,9 @@ export function PilotProductDetail({
                 {verifiedRows(product.specifications).map((spec) => (
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
                     {/* The seed stores these rows in Thai; English/Chinese visitors read spec-seed-en.ts (21/10). */}
-                    <dt className="text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
-                    <dd className="text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
+                    {/* shrink-0: the short label keeps its one line; the value wraps instead ("ความ | สามารถ" at 390, 03/11). */}
+                    <dt className="shrink-0 text-foreground-muted">{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
+                    <dd className="min-w-0 text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
                   </div>
                 ))}
               </dl>
