@@ -4748,7 +4748,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
           paragraphs: [
-            "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่น เช่น VINCI, VINCI R, VINCI X, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI และหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
+            "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่นในตระกูล VINCI และ DRAG เช่น VINCI X และ [DRAG X](/products/drag-x) รวมถึงหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
             "VOOPOO บอกไว้ด้วยว่ารายชื่อนี้มีไว้ใช้อ้างอิง และการสูบจริงอาจต่างกันไปตามเครื่อง",
             "เครื่องรุ่นใหม่อย่าง VINCI S และ DRAG X3 ใช้คอยล์อีกระบบหนึ่งคือ PnP X ซึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้ เครื่อง PnP รุ่นเดิมจึงต้องใช้คอยล์ PnP อย่างตระกูล VM หรือตระกูล TW",
             "แม้หน้านี้จะใช้ชื่อว่า Coil Vinci แต่ VOOPOO ไม่ได้ใส่คอยล์ PnP รุ่นเดิมไว้ในรายการที่ใช้กับ VINCI S ถ้าใช้เครื่องรุ่นใหม่อยู่ ดูคอยล์ได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92) และถ้าใช้ VINCI S อยู่ ให้เลือกคอยล์ PnP X ค่า 0.3 โอห์มขึ้นไปเท่านั้น",
