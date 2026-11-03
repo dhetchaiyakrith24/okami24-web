@@ -4714,6 +4714,256 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): DRAG X — every fact = VOOPOO's DRAG X page (voopoo.com/drag-series/drag-x.html,
+  // WebFetch 03/11) + its PnP coil page (voopoo.com/pnpplatform.html) for the R1/R2 fit; quotes in the side-session notes
+  // articles-0311/voopoo-facts.md. Left out (already twice on the page): the 0.001 s chip, the magnetic 4.5mL pod, the
+  // 18650 sold apart, 80W, PnP-RBA. Legacy page → no article FAQ.
+  "drag-x": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าโหมด SCORE กับระบบลมของ DRAG X ทำงานยังไง คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
+      sections: [
+        {
+          heading: "โหมด SCORE ของ DRAG X คืออะไร",
+          paragraphs: [
+            "นอกจากโหมด SMART แล้ว ชิปของ DRAG X ยังมีโหมดอื่นให้ใช้ด้วย อย่างโหมด PUFF และโหมด SCORE",
+            "โหมด SCORE จะดูขนาดไอของการสูบแต่ละครั้ง แล้วปลดล็อกระดับใหม่ไปเรื่อย ๆ ตั้งแต่ระดับ IRON ไปจนถึงระดับ KING",
+          ],
+        },
+        {
+          heading: "ปรับลมได้แค่ไหน",
+          paragraphs: [
+            "ระบบลมของ DRAG X มีชื่อว่า Infinite Airflow System ปรับขนาดช่องลมได้ตามที่ต้องการ และ VOOPOO บอกว่าจะใส่คอยล์แบบไหนหรือตั้งค่าไว้เท่าไร ก็ปรับลมให้สูบได้สบายเหมือนกัน",
+          ],
+        },
+        {
+          heading: "คอยล์สองตัวในกล่องต่างกันยังไง",
+          paragraphs: [
+            "ในกล่องมีคอยล์ mesh มาให้สองตัว ตัวแรกคือ PnP-VM6 0.15 โอห์ม ที่ VOOPOO พัฒนามาให้ DRAG X โดยเฉพาะ และบอกว่าให้ไอก้อนใหญ่กับรสที่ชัด ส่วนตัวที่สองคือ PnP-VM1 0.3 โอห์ม ที่ใช้วัตต์น้อยกว่า",
+            "VOOPOO แนะนำให้ใช้คอยล์ทั้งสองตัวนี้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ตัวอื่นได้ไหม",
+          paragraphs: [
+            "ได้ เปลี่ยนคอยล์ทำได้ง่าย แค่ดึงตัวเก่าออกแล้วกดตัวใหม่เข้าไป หน้าคอยล์ PnP ของ VOOPOO ยังระบุว่าคอยล์ MTL อย่าง PnP-R1 0.8 โอห์มกับ PnP-R2 1.0 โอห์มใช้กับ DRAG X ได้ด้วย ถ้าชอบสูบแบบ MTL ที่ลมแน่นกว่า ก็เลือกสองตัวนี้ได้",
+            "คอยล์ PnP ค่าอื่น ๆ มีให้เลือกที่หน้า [คอยล์ VOOPOO PnP](/products/coil-1) ส่วนคอยล์ PnP X ของเครื่องรุ่นใหม่เป็นอีกระบบหนึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้",
+          ],
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง หัวพอต 1 ชิ้น คอยล์สองตัวที่พูดถึงข้างบน สาย USB-C คู่มือ และ Chip Card อีกหนึ่งใบ",
+          ],
+        },
+        {
+          heading: "เครื่องมีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "VOOPOO ใส่ระบบป้องกันไว้ 8 อย่าง ได้แก่ ตัดไฟเมื่อยิงค้างนานเกิน ซึ่ง VOOPOO บอกว่าช่วยไม่ให้คอยล์กับสำลีไหม้ กันไฟช็อต กันชาร์จเกิน ไม่ให้ปรับวัตต์เกินค่าสูงสุด ตัดไฟเมื่อกระแสออกเกิน กันถ่านคายประจุจนต่ำเกินไป กันความร้อนเกิน และกันใส่ถ่านกลับขั้ว",
+            "เรื่องถ่าน VOOPOO แนะนำให้เลือกถ่านที่ได้มาตรฐาน ชาร์จตามเงื่อนไขที่ระบุไว้เท่านั้น ไม่บีบหรือดัดแปลงตัวถ่าน และเก็บให้ห่างจากของที่เป็นโลหะ",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from VOOPOO's own page: how the DRAG X's SCORE mode and airflow work, how the two coils in the box differ, which other coils fit, and what comes in the box.",
+      sections: [
+        {
+          heading: "What is SCORE mode?",
+          paragraphs: [
+            "Besides SMART mode, the DRAG X's chip offers other functions such as PUFF and SCORE modes. SCORE mode reads the cloud size of each puff and unlocks new levels as you go, from IRON all the way to KING.",
+          ],
+        },
+        {
+          heading: "How far does the airflow adjust?",
+          paragraphs: [
+            "The DRAG X's airflow is called the Infinite Airflow System: the airway can be set to any size, and VOOPOO says you can get a comfortable draw whichever coil you fit and whatever settings you use.",
+          ],
+        },
+        {
+          heading: "How do the two coils in the box differ?",
+          paragraphs: [
+            "Both are mesh coils. The PnP-VM6 0.15Ω was developed specially for the DRAG X, and VOOPOO says it gives big clouds with strong flavour; the PnP-VM1 0.3Ω runs at lower wattage. VOOPOO recommends e-liquid of up to 10 mg nicotine strength for both.",
+          ],
+        },
+        {
+          heading: "Can I fit other coils?",
+          paragraphs: [
+            "Yes — pull the old coil out and push the new one in. VOOPOO's PnP coil page lists MTL coils such as the PnP-R1 0.8Ω and PnP-R2 1.0Ω for the DRAG X too, the ones to pick for a tighter draw. Other PnP coils are on the [VOOPOO PnP coils](/products/coil-1) page. PnP X coils, made for VOOPOO's newer devices, are a different system that VOOPOO says does not fit original PnP devices.",
+          ],
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The box holds the device, one pod, the two coils above, a USB-C cable, the user manual and a chip card.",
+          ],
+        },
+        {
+          heading: "What protections does it have?",
+          paragraphs: [
+            "VOOPOO lists eight: overtime (which VOOPOO says keeps the coil and cotton from burning), short-circuit, overcharge, maximum power, output over-current, over-discharge, over-temperature and battery-reverse protection. On the battery, VOOPOO asks you to use a qualified cell, charge it only as specified, never crush or modify it, and keep it away from metal objects.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 官网的资料，介绍 DRAG X 的 SCORE 模式和气流怎么用、盒内两颗线圈有什么区别、还能换哪些线圈，以及盒里有什么。",
+      sections: [
+        {
+          heading: "SCORE 模式是什么？",
+          paragraphs: [
+            "除了 SMART 模式，DRAG X 的芯片还提供 PUFF、SCORE 等功能模式。SCORE 模式会根据每一口的烟雾大小，一级级解锁新等级，从 IRON 一直到 KING。",
+          ],
+        },
+        {
+          heading: "气流能调到什么程度？",
+          paragraphs: [
+            "DRAG X 的气流系统名为 Infinite Airflow System，气道大小可以随意调节；VOOPOO 表示无论装哪种线圈、设什么参数，都能获得舒适的吸感。",
+          ],
+        },
+        {
+          heading: "盒内两颗线圈有什么区别？",
+          paragraphs: [
+            "两颗都是网状线圈。PnP-VM6 0.15Ω 是 VOOPOO 专为 DRAG X 开发的，官方表示烟雾大、口感浓郁；PnP-VM1 0.3Ω 所需功率较低。VOOPOO 建议两颗都搭配尼古丁不超过 10 mg 的烟油。",
+          ],
+        },
+        {
+          heading: "能换其他线圈吗？",
+          paragraphs: [
+            "可以，拔出旧线圈、推入新线圈即可。VOOPOO 的 PnP 线圈页面也把 PnP-R1 0.8Ω 和 PnP-R2 1.0Ω 这类 MTL 线圈列为 DRAG X 适用，想要紧一点的吸感可以选它们。其他 PnP 线圈见 [VOOPOO PnP 线圈](/products/coil-1)。新款设备用的 PnP X 线圈是另一套系统，VOOPOO 表示它不适用于原版 PnP 设备。",
+          ],
+        },
+        {
+          heading: "盒里有什么？",
+          paragraphs: [
+            "盒内包含主机、烟弹 1 个、上面提到的两颗线圈、USB-C 数据线、说明书和芯片卡。",
+          ],
+        },
+        {
+          heading: "有哪些保护功能？",
+          paragraphs: [
+            "VOOPOO 列出八项：超时保护（官方称可避免线圈和棉芯烧焦）、短路保护、过充保护、最大功率保护、输出过流保护、过放保护、过温保护和电池反接保护。电池方面，VOOPOO 提醒使用合格电池，只按规定条件充电，不要挤压或改装，并远离金属物品。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): VINCI S — every fact = VOOPOO's VINCI S page (voopoo.com/vinci-series/vinci-s,
+  // WebFetch 03/11; quotes in articles-0311/voopoo-facts.md). Left out (already twice): 2000mAh, 40W, the 4.5mL topside fill.
+  // "Seven layers of safety" is not quoted (the page lists six). The VINCI PnP X cartridge is not linked to coil-56: VOOPOO names
+  // it apart from the DRAG S2/X2 PnP X pod. Legacy page → no article FAQ.
+  "vinci-s": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่า VINCI S ใช้แบตได้นานแค่ไหน ทำไมไม่ต้องตั้งวัตต์เอง ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
+      sections: [
+        {
+          heading: "VINCI S แบตอยู่ได้นานแค่ไหน",
+          paragraphs: [
+            "VOOPOO บอกว่าแบตของ VINCI S ถ้าสูบจัดจะใช้ได้ 3 วัน ถ้าสูบเบา ๆ อยู่ได้ถึงหนึ่งสัปดาห์ ส่วนจะใช้ได้จริงกี่วันก็ขึ้นกับการสูบของแต่ละคน",
+            "VOOPOO ออกแบบ VINCI S ให้เป็นพอตคิทดีไซน์เรียบสำหรับใช้ทุกวัน ตั้งใจให้ใช้ได้นานขึ้น รสชาติดีขึ้น และใช้ง่ายขึ้น ตัวเครื่องทำจากอะลูมิเนียมอัลลอยกับ PC และหนัก 69 กรัม",
+          ],
+        },
+        {
+          heading: "ต้องตั้งวัตต์เองไหม",
+          paragraphs: [
+            "ไม่ต้อง ชิป GENE.TT 2.0 อ่านค่าโอห์มของหัวพอตที่เสียบอยู่ แล้วเลือกวัตต์ที่เหมาะให้เอง เวลาเปลี่ยนไปใช้หัวพอตอีกแบบก็ไม่ต้องตั้งค่าใหม่ เสียบหัวแล้วสูบต่อได้เลย",
+            "ไฟ LED บนตัวเครื่องบอกระดับแบตให้เห็น และลมก็ปรับเองได้ด้วยปุ่มเลื่อนปรับลม ที่ปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
+          ],
+        },
+        {
+          heading: "ใส่หัวพอตแบบไหนได้บ้าง",
+          paragraphs: [
+            "VOOPOO ระบุว่า VINCI S ใช้หัวพอตได้สามแบบ แบบแรกคือหัวพอต VINCI S ที่มีคอยล์ในตัว มีค่า 0.6 โอห์มกับ 0.8 โอห์ม แบบที่สองคือหัวพอต VINCI E ที่มีคอยล์ในตัวเหมือนกัน มีค่า 0.3 โอห์ม 0.6 โอห์ม และ 0.8 โอห์ม",
+            "แบบที่สามคือหัวพอต VINCI PnP X ที่เปลี่ยนคอยล์ได้ มีทั้งรุ่น DTL และรุ่น MTL แต่ VOOPOO บอกว่าเครื่องนี้ไม่รองรับหัวพอตหรือคอยล์ที่ต่ำกว่า 0.3 โอห์ม คอยล์ PnP X 0.15 โอห์มกับ 0.2 โอห์มจึงใช้กับเครื่องนี้ไม่ได้",
+            "คอยล์ PnP X ค่าอื่นมีให้เลือกที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92) ส่วนคอยล์ PnP รุ่นเดิม รวมถึงคอยล์ที่ร้านลงไว้ในชื่อ Coil Vinci นั้น VOOPOO ไม่ได้ใส่ไว้ในรายการที่ใช้กับเครื่องนี้",
+          ],
+        },
+        {
+          heading: "หัวพอตในกล่องดีขึ้นตรงไหน",
+          paragraphs: [
+            "หัวพอตที่ให้มาในกล่องเป็นหัว VINCI S 0.8 โอห์ม ใช้โครงสร้าง iCOSM CODE 2.0 ที่ VOOPOO บอกว่ากันรั่วได้ดีขึ้น และให้รสที่นุ่มสม่ำเสมอ",
+            "ข้างในหัวยังมีอีกสามส่วนที่ VOOPOO พูดถึง คือซีลกันน้ำยา Liquid-Seal Shield แกนคอยล์ Mega-Core และสำลี Golden Cotton ที่ VOOPOO บอกว่าใช้กับน้ำยาได้ถึง 100mL",
+          ],
+        },
+        {
+          heading: "ในกล่องมีอะไร และเครื่องมีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง หัวพอต 1 ชิ้น และคู่มือ ไม่มีสายชาร์จมาให้ จึงต้องเตรียมสาย USB-C ไว้เอง",
+            "VOOPOO ระบุระบบป้องกันไว้ ได้แก่ ตัดไฟเมื่อดูดค้างเกิน 8 วินาที กันไฟช็อต กันชาร์จเกิน ตัดไฟเมื่อกระแสออกเกิน ตัดไฟเมื่อแบตต่ำ และกันความร้อนเกิน",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from VOOPOO's own page: how long the VINCI S battery lasts, why there's no wattage to set, which pods it takes, and what's new in the pod in the box.",
+      sections: [
+        {
+          heading: "How long does the battery last?",
+          paragraphs: [
+            "VOOPOO says the VINCI S battery holds steady for three days of heavy use and lasts up to a week of lighter use; real-world time depends on how you vape. VOOPOO designed it as a minimalist pod kit for every day — longer-lasting, better-tasting and simpler to operate — in aluminium alloy and PC, at 69 g.",
+          ],
+        },
+        {
+          heading: "Do I need to set the wattage?",
+          paragraphs: [
+            "No. The GENE.TT 2.0 chip reads the resistance of the pod you fit and picks the power for you, and there's nothing to reset when you switch to a different pod. An LED shows the battery level, and a slider sets the airflow as tight or open as you like.",
+          ],
+        },
+        {
+          heading: "Which pods fit?",
+          paragraphs: [
+            "VOOPOO lists three kinds: the VINCI S cartridge (coil built in, 0.6Ω or 0.8Ω), the VINCI E cartridge (coil built in, 0.3Ω, 0.6Ω or 0.8Ω) and the VINCI PnP X cartridge with replaceable coils, in DTL and MTL versions. VOOPOO also states that the VINCI S does not support cartridges or coils below 0.3Ω, so the 0.15Ω and 0.2Ω PnP X coils are not for this device. The others are on the [VOOPOO PnP X coils](/products/coil-92) page; VOOPOO does not list the original PnP coils — including the ones this shop lists as Coil Vinci — for the VINCI S.",
+          ],
+        },
+        {
+          heading: "What's new in the included pod?",
+          paragraphs: [
+            "The pod in the box is a VINCI S 0.8Ω cartridge built on iCOSM CODE 2.0, which VOOPOO says improves leak resistance and gives smooth, consistent flavour. VOOPOO also names three parts inside: the Liquid-Seal Shield, the Mega-Core and Golden Cotton, rated for up to 100 mL of e-liquid.",
+          ],
+        },
+        {
+          heading: "What's in the box, and which protections are there?",
+          paragraphs: [
+            "The box holds the device, one pod and the user manual — no charging cable, so have a USB-C cable ready. VOOPOO lists these protections: 8-second overtime cut-off, short-circuit, overcharge, output over-current, low-battery and over-temperature.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 官网的资料，介绍 VINCI S 的续航有多久、为什么不用自己调功率、能装哪些烟弹，以及盒内烟弹有哪些改进。",
+      sections: [
+        {
+          heading: "电池能用多久？",
+          paragraphs: [
+            "VOOPOO 表示，VINCI S 重度使用电量可稳定支撑 3 天，轻度使用最长可用一周，实际时间取决于个人抽吸习惯。VOOPOO 把它设计成日常使用的简约烟弹套装，目标是更耐用、口感更好、操作更简单，机身为铝合金加 PC，重 69 g。",
+          ],
+        },
+        {
+          heading: "需要自己调功率吗？",
+          paragraphs: [
+            "不需要。GENE.TT 2.0 芯片会读取所装烟弹的阻值并自动匹配功率，换用其他烟弹时也无需重新设置。机身的 LED 灯显示电量，气流可通过滑块按喜好调节。",
+          ],
+        },
+        {
+          heading: "能装哪些烟弹？",
+          paragraphs: [
+            "VOOPOO 列出三种：VINCI S 烟弹（一体式线圈，0.6Ω 或 0.8Ω）、VINCI E 烟弹（一体式线圈，0.3Ω、0.6Ω 或 0.8Ω），以及可换线圈的 VINCI PnP X 烟弹，分 DTL 和 MTL 两版。VOOPOO 同时注明 VINCI S 不支持低于 0.3Ω 的烟弹或线圈，因此 0.15Ω 和 0.2Ω 的 PnP X 线圈不能用在这台机器上。其他阻值见 [VOOPOO PnP X 线圈](/products/coil-92)；VOOPOO 没有把原版 PnP 线圈（包括本店以 Coil Vinci 为名的线圈）列为 VINCI S 适用。",
+          ],
+        },
+        {
+          heading: "盒内烟弹有哪些改进？",
+          paragraphs: [
+            "盒内附带的是 VINCI S 0.8Ω 烟弹，采用 iCOSM CODE 2.0 结构，VOOPOO 表示防漏性能更好，口感顺滑稳定。VOOPOO 还提到内部三个部件：Liquid-Seal Shield 密封结构、Mega-Core 雾化芯，以及标称可用至 100 mL 烟油的 Golden Cotton 棉芯。",
+          ],
+        },
+        {
+          heading: "盒里有什么？有哪些保护功能？",
+          paragraphs: [
+            "盒内有主机、烟弹 1 个和说明书，不含充电线，请自备 USB-C 线。VOOPOO 列出的保护功能有：8 秒超时保护、短路保护、过充保护、输出过流保护、低电量保护和过温保护。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

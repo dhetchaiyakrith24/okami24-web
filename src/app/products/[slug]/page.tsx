@@ -12,6 +12,7 @@ import { ProductReviewSection } from "@/components/product/ProductReviewSection"
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { ProductMoreDetails } from "@/components/product/ProductMoreDetails";
+import { ProductArticleSection } from "@/components/product/ProductArticle";
 import { productDetailsCopy } from "@/lib/product-details-copy";
 import { SpecSheet } from "@/components/product/SpecSheet";
 import { CompatibilitySection } from "@/components/product/CompatibilitySection";
@@ -387,6 +388,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               <ProductGallery product={product} />
               {product.isFlagship && <ProductAnatomy product={product} />}
               <FeatureGrid product={product} copyTh={copyTh} />
+              <ProductArticleSection articles={productDetailsCopy(product.slug).articles} />
             </>
           )}
           <SpecSheet product={product} copyTh={copyTh} />
