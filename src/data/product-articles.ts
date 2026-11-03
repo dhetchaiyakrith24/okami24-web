@@ -5751,14 +5751,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ในกล่องมีอะไรบ้าง",
           paragraphs: [
-            "ในกล่องมีตัวเครื่อง หัวพอต 1 ชิ้น คอยล์สองตัวที่พูดถึงข้างบน สาย USB-C คู่มือ และ Chip Card อีกหนึ่งใบ",
-          ],
-        },
-        {
-          heading: "เครื่องมีระบบป้องกันอะไรบ้าง",
-          paragraphs: [
-            "VOOPOO ใส่ระบบป้องกันไว้ 8 อย่าง ได้แก่ ตัดไฟเมื่อยิงค้างนานเกิน ซึ่ง VOOPOO บอกว่าช่วยไม่ให้คอยล์กับสำลีไหม้ กันไฟช็อต กันชาร์จเกิน ไม่ให้ปรับวัตต์เกินค่าสูงสุด ตัดไฟเมื่อกระแสออกเกิน กันถ่านคายประจุจนต่ำเกินไป กันความร้อนเกิน และป้องกันการใส่ถ่านกลับขั้ว",
-            "เรื่องถ่าน VOOPOO แนะนำให้เลือกถ่านที่ได้มาตรฐาน ชาร์จตามเงื่อนไขที่ระบุไว้เท่านั้น ไม่บีบหรือดัดแปลงตัวถ่าน และเก็บให้ห่างจากของที่เป็นโลหะ",
+            "ในกล่องมีตัวเครื่อง หัวพอตหนึ่งหัว คอยล์สองตัวที่พูดถึงข้างบน สาย USB-C คู่มือ และการ์ดอีกสองใบ คือ Warranty Card กับ Chip Card",
           ],
         },
       ],
@@ -5793,13 +5786,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What's in the box?",
           paragraphs: [
-            "The box holds the device, one pod, the two coils above, a USB-C cable, the user manual and a chip card.",
-          ],
-        },
-        {
-          heading: "What protections does it have?",
-          paragraphs: [
-            "VOOPOO lists eight: overtime (which VOOPOO says keeps the coil and cotton from burning), short-circuit, overcharge, maximum power, output over-current, over-discharge, over-temperature and battery-reverse protection. On the battery, VOOPOO asks you to use a qualified cell, charge it only as specified, never crush or modify it, and keep it away from metal objects.",
+            "The box holds the device, one pod, the two coils above, a USB-C cable, the user manual, a warranty card and a chip card.",
           ],
         },
       ],
@@ -5834,13 +5821,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "盒里有什么？",
           paragraphs: [
-            "盒内包含主机、烟弹 1 个、上面提到的两颗线圈、USB-C 数据线、说明书和芯片卡。",
-          ],
-        },
-        {
-          heading: "有哪些保护功能？",
-          paragraphs: [
-            "VOOPOO 列出八项：超时保护（官方称可避免线圈和棉芯烧焦）、短路保护、过充保护、最大功率保护、输出过流保护、过放保护、过温保护和电池反接保护。电池方面，VOOPOO 提醒使用合格电池，只按规定条件充电，不要挤压或改装，并远离金属物品。",
+            "盒内包含主机、烟弹 1 个、上面提到的两颗线圈、USB-C 数据线、说明书、保修卡和芯片卡。",
           ],
         },
       ],
@@ -5865,7 +5846,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ต้องตั้งวัตต์เองไหม",
           paragraphs: [
             "ไม่ต้อง ชิป GENE.TT 2.0 อ่านค่าโอห์มของหัวพอตที่เสียบอยู่ แล้วเลือกวัตต์ที่เหมาะให้เอง ถ้าเปลี่ยนไปใส่หัวพอตอีกแบบก็ไม่ต้องตั้งค่าใหม่ เสียบหัวแล้วสูบต่อได้เลย",
-            "ไฟ LED บนตัวเครื่องบอกระดับแบตให้เห็น และลมก็ปรับเองได้ด้วยปุ่มเลื่อนปรับลม ที่ปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
+            "ไฟ LED บนตัวเครื่องบอกระดับแบตให้เห็น และ VOOPOO บอกว่าปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งลมได้ตามที่ชอบ",
           ],
         },
         {
@@ -5880,14 +5861,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "หัวพอตในกล่องดีขึ้นตรงไหน",
           paragraphs: [
             "หัวพอตที่ให้มาในกล่องเป็นหัว VINCI S 0.8 โอห์ม ใช้โครงสร้าง iCOSM CODE 2.0 ที่ VOOPOO บอกว่ากันรั่วได้ดีขึ้น และให้รสที่นุ่มสม่ำเสมอ",
-            "ข้างในหัวยังมีอีกสามส่วนที่ VOOPOO พูดถึง คือซีลกันน้ำยา Liquid-Seal Shield แกนคอยล์ Mega-Core และสำลี Golden Cotton ที่ VOOPOO บอกว่าใช้กับน้ำยาได้ถึง 100mL",
+            "ข้างในหัวยังมีอีกสามส่วนที่ VOOPOO ตั้งชื่อไว้ คือ Golden Cotton, Liquid-Seal Shield และ Mega-Core ส่วนตัวเลขความทนของหัวรุ่นนี้ VOOPOO ระบุไว้ที่ 100mL",
           ],
         },
         {
-          heading: "ในกล่องมีอะไร และเครื่องมีระบบป้องกันอะไรบ้าง",
+          heading: "ในกล่องมีอะไรบ้าง",
           paragraphs: [
-            "ในกล่องมีตัวเครื่อง หัวพอต 1 ชิ้น และคู่มือ ไม่มีสายชาร์จมาให้ จึงต้องเตรียมสาย USB-C ไว้เอง",
-            "VOOPOO ระบุระบบป้องกันไว้ ได้แก่ ตัดไฟเมื่อดูดค้างเกิน 8 วินาที กันไฟช็อต กันชาร์จเกิน ตัดไฟเมื่อกระแสออกเกิน ตัดไฟเมื่อแบตต่ำ และกันความร้อนเกิน",
+            "รายการในกล่องของ VOOPOO มีตัวเครื่อง หัวพอตหนึ่งหัว และคู่มือ ไม่มีสายชาร์จอยู่ในรายการ จึงควรเตรียมสาย USB-C ไว้เอง",
           ],
         },
       ],
@@ -5904,7 +5884,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Do I need to set the wattage?",
           paragraphs: [
-            "No. The GENE.TT 2.0 chip reads the resistance of the pod you fit and picks the power for you, and there's nothing to reset when you switch to a different pod. An LED shows the battery level, and a slider sets the airflow as tight or open as you like.",
+            "No. The GENE.TT 2.0 chip reads the resistance of the pod you fit and picks the power for you, and there's nothing to reset when you switch to a different pod. An LED shows the battery level, and VOOPOO says the airflow adjusts steplessly to your liking.",
           ],
         },
         {
@@ -5916,13 +5896,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What's new in the included pod?",
           paragraphs: [
-            "The pod in the box is a VINCI S 0.8Ω cartridge built on iCOSM CODE 2.0, which VOOPOO says improves leak resistance and gives smooth, consistent flavour. VOOPOO also names three parts inside: the Liquid-Seal Shield, the Mega-Core and Golden Cotton, rated for up to 100 mL of e-liquid.",
+            "The pod in the box is a VINCI S 0.8Ω cartridge built on iCOSM CODE 2.0, which VOOPOO says improves leak resistance and gives smooth, consistent flavour. VOOPOO also names three parts inside — the Liquid-Seal Shield, the Mega-Core and Golden Cotton — and gives the cartridge a 100 mL endurance figure.",
           ],
         },
         {
-          heading: "What's in the box, and which protections are there?",
+          heading: "What's in the box?",
           paragraphs: [
-            "The box holds the device, one pod and the user manual — no charging cable, so have a USB-C cable ready. VOOPOO lists these protections: 8-second overtime cut-off, short-circuit, overcharge, output over-current, low-battery and over-temperature.",
+            "VOOPOO's box list has the device, one pod and the user manual — no charging cable is listed, so have a USB-C cable ready.",
           ],
         },
       ],
@@ -5939,7 +5919,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "需要自己调功率吗？",
           paragraphs: [
-            "不需要。GENE.TT 2.0 芯片会读取所装烟弹的阻值并自动匹配功率，换用其他烟弹时也无需重新设置。机身的 LED 灯显示电量，气流可通过滑块按喜好调节。",
+            "不需要。GENE.TT 2.0 芯片会读取所装烟弹的阻值并自动匹配功率，换用其他烟弹时也无需重新设置。机身的 LED 灯显示电量，VOOPOO 表示气流可无级调节，按喜好设定。",
           ],
         },
         {
@@ -5951,13 +5931,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "盒内烟弹有哪些改进？",
           paragraphs: [
-            "盒内附带的是 VINCI S 0.8Ω 烟弹，采用 iCOSM CODE 2.0 结构，VOOPOO 表示防漏性能更好，口感顺滑稳定。VOOPOO 还提到内部三个部件：Liquid-Seal Shield 密封结构、Mega-Core 雾化芯，以及标称可用至 100 mL 烟油的 Golden Cotton 棉芯。",
+            "盒内附带的是 VINCI S 0.8Ω 烟弹，采用 iCOSM CODE 2.0 结构，VOOPOO 表示防漏性能更好，口感顺滑稳定。VOOPOO 还提到内部三个有名称的部件：Liquid-Seal Shield、Mega-Core 和 Golden Cotton，并给出 100 mL 的耐用数据。",
           ],
         },
         {
-          heading: "盒里有什么？有哪些保护功能？",
+          heading: "盒里有什么？",
           paragraphs: [
-            "盒内有主机、烟弹 1 个和说明书，不含充电线，请自备 USB-C 线。VOOPOO 列出的保护功能有：8 秒超时保护、短路保护、过充保护、输出过流保护、低电量保护和过温保护。",
+            "VOOPOO 列出的盒内物品有主机、烟弹 1 个和说明书，清单中没有充电线，请自备 USB-C 线。",
           ],
         },
       ],
