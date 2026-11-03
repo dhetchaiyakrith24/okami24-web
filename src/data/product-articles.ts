@@ -1025,10 +1025,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // articles-0311/voopoo-facts.md. Watts per coil stay in the spec table; the 0.6Ω VG (50–60% vs 50% on the same page) is unsaid.
   "coil-92": {
     th: {
-      lede: "VOOPOO แนะนำแนวการสูบ การเปิดช่องลม และน้ำยาของคอยล์ PnP X ไว้ต่างกันในแต่ละค่า ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
+      lede: "คอยล์ VOOPOO PnP X แต่ละค่ามีแนวการสูบ การเปิดช่องลม และน้ำยาที่ VOOPOO แนะนำไว้ต่างกัน ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
-          heading: "ค่าไหนเหมาะกับการสูบแบบไหน",
+          heading: "ค่าไหนของคอยล์ PnP X เหมาะกับการสูบแบบไหน",
           paragraphs: [
             "VOOPOO แบ่งไว้ว่า 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DTL คือดูดลงปอดตรง ๆ 0.3 โอห์มใช้ได้ทั้ง DTL และ RDL ส่วน 0.45 โอห์มเป็นแบบ RDL",
             "ถัดขึ้นไป 0.6 โอห์มใช้ได้ทั้ง MTL และ RDL ส่วน 0.8 โอห์มกับ 1.0 โอห์มเป็นคอยล์ MTL ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
@@ -1062,7 +1062,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ใช้กับเครื่องไหนได้บ้าง",
+          heading: "คอยล์ PnP X ใช้กับเครื่องไหนได้บ้าง",
           paragraphs: [
             "VOOPOO บอกว่าคอยล์ PnP X ใช้กับเครื่องตระกูล DRAG และ VINCI ได้หลายรุ่น และใช้กับหัวพอต PnP X ได้ทั้งรุ่น DTL และ MTL แต่หัวรุ่น MTL ใส่ได้เฉพาะคอยล์ 0.3 โอห์มกับ 0.6 โอห์ม",
             "ก่อนเลือกค่า ควรดูว่าหัวที่ใช้อยู่เป็นรุ่น DTL หรือรุ่น MTL ส่วนหัวพอตเปล่าสำหรับคอยล์นี้ ดูได้ที่หน้า [หัวพอตเปล่า VOOPOO PnP X](/products/coil-56)",
@@ -1073,7 +1073,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "VOOPOO gives each PnP X coil its own draw style, airflow setting and e-liquid. Below, from VOOPOO's own pages, one topic at a time.",
+      lede: "Each VOOPOO PnP X coil comes with its own recommended draw style, airflow setting and e-liquid. Below, from VOOPOO's own pages, one topic at a time.",
       sections: [
         {
           heading: "Which PnP X coil suits which draw?",
@@ -1106,7 +1106,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which devices do they fit?",
+          heading: "Which devices do PnP X coils fit?",
           paragraphs: [
             "VOOPOO says PnP X coils fit many DRAG and VINCI devices and both versions of the PnP X pod, DTL and MTL — though the MTL pod takes only the 0.3Ω and 0.6Ω, so check which one you have before you pick a resistance. Empty pods are on the [VOOPOO PnP X empty pod](/products/coil-56) page. On a VINCI S, pick 0.3Ω or above: VOOPOO says it does not support coils below 0.3Ω. PnP X coils do not fit older VOOPOO devices built on the original PnP coils — for those, see [VOOPOO PnP coils](/products/coil-1).",
           ],
@@ -1114,10 +1114,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "VOOPOO 为每个阻值的 PnP X 线圈分别给出了抽法、气流和烟油建议。下面根据 VOOPOO 官网的资料，一项项说明。",
+      lede: "VOOPOO PnP X 线圈的每个阻值，VOOPOO 都分别给出了抽法、气流和烟油建议。下面根据 VOOPOO 官网的资料，一项项说明。",
       sections: [
         {
-          heading: "哪个阻值适合哪种抽法？",
+          heading: "PnP X 线圈哪个阻值适合哪种抽法？",
           paragraphs: [
             "VOOPOO 把 0.15Ω 和 0.2Ω 标为 DTL，0.3Ω 为 DTL 与 RDL，0.45Ω 为 RDL，0.6Ω 为 MTL 与 RDL，0.8Ω 和 1.0Ω 为 MTL。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
           ],
@@ -1147,7 +1147,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "适用哪些设备？",
+          heading: "PnP X 线圈适用哪些设备？",
           paragraphs: [
             "VOOPOO 表示 PnP X 线圈适用于多款 DRAG 和 VINCI 设备，以及 DTL、MTL 两版 PnP X 烟弹，但 MTL 版只能用 0.3Ω 和 0.6Ω，选阻值前请先确认手上的烟弹是哪一版。空烟弹见 [VOOPOO PnP X 空烟弹](/products/coil-56)。用 VINCI S 的话请选 0.3Ω 及以上，VOOPOO 表示它不支持低于 0.3Ω 的线圈。PnP X 线圈不适用于使用原版 PnP 线圈的旧款 VOOPOO 设备，这类设备请看 [VOOPOO PnP 线圈](/products/coil-1)。",
           ],
@@ -1161,7 +1161,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // coil — said of the TPP-X pod, not repeated here); rest / first-use = voopoo.com/faq.html; WebFetch 03/11, quotes in articles-0311/voopoo-facts.md. Pack count is not on a VOOPOO page → unsaid.
   "coil-38": {
     th: {
-      lede: "VOOPOO ทำคอยล์ TPP ไว้สี่รุ่น ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละรุ่นต่างกันตรงไหน ใช้วัตต์เท่าไร ใช้กับน้ำยาแบบไหน และคอยล์ตระกูลนี้มีอะไรพิเศษ",
+      lede: "คอยล์ VOOPOO TPP มีสี่รุ่น ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละรุ่นต่างกันตรงไหน ใช้วัตต์เท่าไร ใช้กับน้ำยาแบบไหน และคอยล์ตระกูลนี้มีอะไรพิเศษ",
       sections: [
         {
           heading: "คอยล์ TPP สี่รุ่นต่างกันยังไง",
@@ -1184,7 +1184,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ใช้กับเครื่องหรือหัวพอตไหนได้บ้าง",
+          heading: "คอยล์ TPP ใช้กับเครื่องหรือหัวพอตไหน",
           paragraphs: [
             "หัวพอตที่ใช้คู่กับคอยล์ตระกูลนี้คือ TPP Pod ของ VOOPOO ดูหัวพอตเปล่ารุ่นนี้ได้ที่หน้า [หัวพอตเปล่า VOOPOO TPP Pod](/products/coil-87)",
             "ส่วนเครื่อง DRAG X PRO ของ VOOPOO มากับคอยล์ TPP สองตัวในกล่อง คือตัว 0.15 โอห์มกับตัว 0.2 โอห์ม",
@@ -1201,7 +1201,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "VOOPOO makes four TPP coils. Below, from VOOPOO's own pages: how they differ, what wattage each needs, which e-liquid suits them and what's special about the range.",
+      lede: "VOOPOO TPP coils come in four models. Below, from VOOPOO's own pages: how they differ, what wattage each needs, which e-liquid suits them and what's special about the range.",
       sections: [
         {
           heading: "How do the four TPP coils differ?",
@@ -1222,7 +1222,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which devices and pods do they fit?",
+          heading: "Which devices and pods do TPP coils fit?",
           paragraphs: [
             "The TPP Pod is the pod listed for these coils; an empty one is on the [VOOPOO TPP Pod](/products/coil-87) page. VOOPOO's DRAG X PRO comes with two TPP coils, a 0.15Ω and a 0.2Ω. Low-resistance, high-wattage coils need a device that can be set that high, so check your device's maximum first.",
           ],
@@ -1236,7 +1236,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "VOOPOO 的 TPP 线圈共有四款。下面根据 VOOPOO 官网的资料，介绍它们的区别、各需多大功率、适合哪种烟油，以及这个系列有什么特别之处。",
+      lede: "VOOPOO TPP 线圈共有四款。下面根据 VOOPOO 官网的资料，介绍它们的区别、各需多大功率、适合哪种烟油，以及这个系列有什么特别之处。",
       sections: [
         {
           heading: "四款 TPP 线圈有什么区别？",
@@ -1257,7 +1257,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "适用哪些设备和烟弹？",
+          heading: "TPP 线圈适用哪些设备和烟弹？",
           paragraphs: [
             "适用的烟弹是 VOOPOO 的 TPP Pod，空烟弹见 [VOOPOO TPP Pod](/products/coil-87)。VOOPOO 的 DRAG X PRO 盒内附带两颗 TPP 线圈：0.15Ω 和 0.2Ω。低阻值、高功率的线圈需要能设到相应功率的设备，选购前请先确认设备的最大功率。",
           ],
@@ -1278,10 +1278,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // in the spec row. Page stays under 1,000 Thai chars: VOOPOO says little about this pod (Friday 03/11).
   "coil-87": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอต TPP ต่อกับเครื่องยังไง ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน",
+      lede: "หัวพอตเปล่า VOOPOO TPP Pod ต่อกับเครื่องแบบไหน ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
-          heading: "ต่อกับเครื่องยังไง",
+          heading: "หัวพอต TPP ต่อกับเครื่องยังไง",
           paragraphs: [
             "หน้า DRAG X Plus ของ VOOPOO บอกว่าหัวพอต TPP ต่อกับเครื่องด้วยขั้วต่อแบบ 510",
           ],
@@ -1311,10 +1311,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "Below, from VOOPOO's own pages: how the TPP pod connects, which coils it takes and how long to wait after filling.",
+      lede: "The VOOPOO TPP Pod is an empty pod. Below, from VOOPOO's own pages: how it connects, which coils it takes and how long to wait after filling.",
       sections: [
         {
-          heading: "How does it connect?",
+          heading: "How does the TPP Pod connect?",
           paragraphs: [
             "VOOPOO's DRAG X Plus page describes the TPP pod tank as having a 510 interface.",
           ],
@@ -1340,10 +1340,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "下面根据 VOOPOO 官网的资料，介绍 TPP 烟弹怎么连接主机、能装哪些线圈，以及注油后要等多久。",
+      lede: "VOOPOO TPP Pod 是空烟弹。下面根据 VOOPOO 官网的资料，介绍它怎么连接主机、能装哪些线圈，以及注油后要等多久。",
       sections: [
         {
-          heading: "怎么连接主机？",
+          heading: "TPP 烟弹怎么连接主机？",
           paragraphs: [
             "VOOPOO 的 DRAG X Plus 页面提到 TPP 烟弹带 510 接口。",
           ],
@@ -1464,10 +1464,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // claimed. 5mL · side fill · DRAG S2 / X2 · 2 per pack stay in the tagline + spec rows.
   "coil-56": {
     th: {
-      lede: "หัวพอต PnP X ของ VOOPOO มีสองรุ่น คือรุ่น DTL กับรุ่น MTL ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง ตั้งแต่สองรุ่นต่างกันตรงไหน ไปจนถึงการใส่คอยล์และเติมน้ำยาครั้งแรก",
+      lede: "หัวพอตเปล่า VOOPOO PnP X มีสองรุ่น คือรุ่น DTL กับรุ่น MTL ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง ตั้งแต่สองรุ่นต่างกันตรงไหน ไปจนถึงการใส่คอยล์และเติมน้ำยาครั้งแรก",
       sections: [
         {
-          heading: "รุ่น DTL กับรุ่น MTL ต่างกันยังไง",
+          heading: "หัวพอต PnP X รุ่น DTL กับ MTL ต่างกันยังไง",
           paragraphs: [
             "หัวพอตรุ่น DTL ใช้กับคอยล์ PnP X ได้ทุกค่า VOOPOO แนะนำให้ใช้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
             "ส่วนรุ่น MTL ใช้ได้เฉพาะคอยล์ PnP X 0.3 โอห์มกับ 0.6 โอห์ม ความเข้มข้นนิโคตินที่แนะนำคือไม่เกิน 35mg และมีปากดูดแบบ 510 ที่ถอดเปลี่ยนได้",
@@ -1510,10 +1510,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "VOOPOO makes its empty PnP X pod in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how the coils resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
+      lede: "The VOOPOO PnP X empty pod comes in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how the coils resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
       sections: [
         {
-          heading: "How do the DTL and MTL pods differ?",
+          heading: "How do the PnP X DTL and MTL pods differ?",
           paragraphs: [
             "The DTL pod takes every PnP X coil, and VOOPOO recommends e-liquid up to 10 mg nicotine strength for it. The MTL pod takes only the PnP X 0.3Ω and 0.6Ω coils, with up to 35 mg recommended, and has a replaceable 510 drip tip. VOOPOO recommends 50–70% VG for both.",
           ],
@@ -1551,10 +1551,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "VOOPOO 的 PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、线圈怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
+      lede: "VOOPOO PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、线圈怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
       sections: [
         {
-          heading: "DTL 版和 MTL 版有什么区别？",
+          heading: "PnP X 空烟弹 DTL 版和 MTL 版有什么区别？",
           paragraphs: [
             "DTL 版兼容所有 PnP X 线圈，VOOPOO 建议搭配尼古丁浓度不超过 10 mg 的烟油。MTL 版只能用 PnP X 0.3Ω 和 0.6Ω 线圈，建议尼古丁浓度不超过 35 mg，并配可更换的 510 烟嘴。VOOPOO 建议两版都用 50–70% VG 的烟油。",
           ],
@@ -2250,7 +2250,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // "Argus mix" is not a VOOPOO name → unsaid. "Side fill + Top Fill" stays at tagline + lede (twice).
   "coil-21": {
     th: {
-      lede: "หน้านี้มีหัวพอต ARGUS ของ VOOPOO ให้เลือกสองแบบ คือแบบเติมด้านข้างกับแบบ Top Fill เนื้อหาด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และจะเลือกให้ตรงกับเครื่องยังไง",
+      lede: "หัวพอต VOOPOO ARGUS Pod ในหน้านี้มีให้เลือกสองแบบ คือแบบ Top Fill กับแบบเติมด้านข้าง เนื้อหาด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และจะเลือกให้ตรงกับเครื่องยังไง",
       sections: [
         {
           heading: "หัวแบบเติมด้านข้างใช้วัตต์เท่าไร",
@@ -2288,7 +2288,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "เลือกหัวให้ตรงกับเครื่องยังไง",
+          heading: "เลือกหัวพอต ARGUS ให้ตรงกับเครื่องยังไง",
           paragraphs: [
             "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับเครื่องในตระกูล ARGUS Pod และระบุชื่อรุ่นของหัวแบบเติมด้านข้างไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
             "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ หน้า ARGUS G3 mini ของ VOOPOO ระบุหัว Top Fill ไว้ ส่วนหัวแบบเติมด้านข้างไม่ได้อยู่ในรายการของหน้านั้น",
@@ -2304,7 +2304,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "This page carries two kinds of VOOPOO ARGUS pod: side-fill and Top Fill. Below, from VOOPOO's own pages: the wattage for each, how to fill, how long a pod lasts and how to match one to your device.",
+      lede: "The VOOPOO ARGUS Pod cartridges on this page come in two kinds: side-fill and Top Fill. Below, from VOOPOO's own pages: the wattage for each, how to fill, how long a pod lasts and how to match one to your device.",
       sections: [
         {
           heading: "What wattage do the side-fill pods need?",
@@ -2337,7 +2337,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "How do I match a pod to my device?",
+          heading: "How do I match an ARGUS pod to my device?",
           paragraphs: [
             "VOOPOO says ARGUS cartridges fit the ARGUS Pod Family, and names the ARGUS G, ARGUS POD, ARGUS P1 and ARGUS Z for the side-fill pods. On an [ARGUS G3 mini](/products/argus-g3-mini), note that VOOPOO's ARGUS G3 mini page lists the Top Fill pods and does not list the side-fill ARGUS POD Cartridge. To change just the coil and keep the pod, VOOPOO also makes an empty ARGUS POD cartridge that takes ITO coils: see [the ARGUS P1 empty pod](/products/coil-83).",
           ],
@@ -2351,7 +2351,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "本页有两种 VOOPOO ARGUS 烟弹：侧注油和 Top Fill 顶部注油。下面根据 VOOPOO 官网的资料，介绍各自的功率、注油方法、一颗能用多久，以及怎么选到适合自己设备的款式。",
+      lede: "本页的 VOOPOO ARGUS Pod 烟弹有两种：侧注油和 Top Fill 顶部注油。下面根据 VOOPOO 官网的资料，介绍各自的功率、注油方法、一颗能用多久，以及怎么选到适合自己设备的款式。",
       sections: [
         {
           heading: "侧注油烟弹需要多大功率？",
@@ -2384,7 +2384,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "怎么选到适合自己设备的烟弹？",
+          heading: "怎么选到适合自己设备的 ARGUS 烟弹？",
           paragraphs: [
             "VOOPOO 表示 ARGUS 烟弹适用于 ARGUS Pod 系列设备，侧注油烟弹则点名适用 ARGUS G、ARGUS POD、ARGUS P1 和 ARGUS Z。用 [ARGUS G3 mini](/products/argus-g3-mini) 的话请注意：VOOPOO 的 ARGUS G3 mini 页面列出了 Top Fill 烟弹，侧注油的 ARGUS POD Cartridge 不在该页列表中。想只换线圈、继续用原烟弹的话，VOOPOO 还有可装 ITO 线圈的 ARGUS POD 空烟弹，见 [Argus P1 空烟弹](/products/coil-83)。",
           ],
@@ -2404,10 +2404,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // (a retailer source) → not repeated. Fit with ARGUS POD / P1 / Z / G / A stays in the spec row.
   "coil-83": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอตรุ่นนี้มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และดูแลคอยล์ยังไง",
+      lede: "หัวพอตเปล่า VOOPOO ARGUS P1 มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และควรดูแลคอยล์ยังไง ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
-          heading: "หัวพอตเปล่านี้มากับเครื่องรุ่นไหน",
+          heading: "หัวพอตเปล่า ARGUS P1 มากับเครื่องรุ่นไหน",
           paragraphs: [
             "หน้า ARGUS P1 ของ VOOPOO บอกของในกล่องไว้สองชุด ชุด ARGUS POD มากับหัวพอตที่มีคอยล์ในตัว 0.7 และ 1.2 โอห์ม",
             "ส่วนชุด ARGUS P1 มากับหัวพอตเปล่าแบบนี้ 1 หัว และคอยล์ ITO-M1 0.7 โอห์มกับ ITO-M3 1.2 โอห์มอย่างละตัว",
@@ -2445,10 +2445,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "VOOPOO calls this pod the ARGUS POD Empty Cartridge. Below, from VOOPOO's own pages: which kit it comes with, which ITO coils fit, which draw each suits and how to look after the coil.",
+      lede: "VOOPOO calls the ARGUS P1 empty pod the ARGUS POD Empty Cartridge. Below, from VOOPOO's own pages: which kit it comes with, which ITO coils fit, which draw each suits and how to look after the coil.",
       sections: [
         {
-          heading: "Which kit does this empty pod come with?",
+          heading: "Which kit does the ARGUS P1 empty pod come with?",
           paragraphs: [
             "VOOPOO's ARGUS P1 page lists two kit boxes: the ARGUS POD kit comes with built-in-coil pods (0.7Ω and 1.2Ω), while the ARGUS P1 kit comes with one of these empty pods plus one ITO-M1 0.7Ω and one ITO-M3 1.2Ω coil. If you'd rather not change coils, built-in-coil pods are on the [VOOPOO Argus Pod](/products/coil-21) page.",
           ],
@@ -2480,10 +2480,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "VOOPOO 把这款烟弹称为 ARGUS POD Empty Cartridge。下面根据 VOOPOO 官网的资料，介绍它随哪款套装附带、能装哪些 ITO 线圈、各自适合哪种抽法，以及线圈怎么保养。",
+      lede: "VOOPOO 把 ARGUS P1 空烟弹称为 ARGUS POD Empty Cartridge。下面根据 VOOPOO 官网的资料，介绍它随哪款套装附带、能装哪些 ITO 线圈、各自适合哪种抽法，以及线圈怎么保养。",
       sections: [
         {
-          heading: "这款空烟弹随哪款套装附带？",
+          heading: "ARGUS P1 空烟弹随哪款套装附带？",
           paragraphs: [
             "VOOPOO 的 ARGUS P1 页面列出两套包装：ARGUS POD 套装附带一体式线圈烟弹（0.7Ω 和 1.2Ω），而 ARGUS P1 套装附带 1 个这种空烟弹，加上 ITO-M1 0.7Ω 和 ITO-M3 1.2Ω 线圈各一颗。不想自己换线圈的话，一体式烟弹见 [VOOPOO Argus Pod 烟弹](/products/coil-21)。",
           ],
@@ -2521,7 +2521,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // state → not repeated. Worded apart from coil-83 (same ITO coils).
   "coil-68": {
     th: {
-      lede: "หัว ITO-X เป็นหัวพอตของเครื่อง DRAG Q จาก VOOPOO ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวนี้ทำจากอะไร ยึดกับเครื่องยังไง กันรั่วยังไง ใส่คอยล์ ITO ค่าไหนได้บ้าง และนอกจาก DRAG Q แล้วยังใช้กับเครื่องไหนได้อีก",
+      lede: "หัวพอตเปล่า VOOPOO ITO-X เป็นหัวพอตของเครื่อง DRAG Q ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวนี้ทำจากอะไร ยึดกับเครื่องยังไง กันรั่วยังไง ใส่คอยล์ ITO ค่าไหนได้บ้าง และนอกจาก DRAG Q แล้วยังใช้กับเครื่องไหนได้อีก",
       sections: [
         {
           heading: "หัว ITO-X ทำจากอะไร",
@@ -2532,7 +2532,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "กันรั่วยังไง",
+          heading: "หัว ITO-X กันรั่วยังไง",
           paragraphs: [
             "VOOPOO บอกว่าหัว ITO-X มีแหวนซิลิโคน 4 ชั้นที่ช่วยกันรั่ว",
             "ส่วนคอยล์ ITO ออกแบบให้เสียบเข้าหัวในทิศทางเดียว ซึ่ง VOOPOO บอกว่าช่วยให้ลมเดินตรงและรสชาติคงที่",
@@ -2563,7 +2563,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "The ITO-X is VOOPOO's pod for the DRAG Q. Below, from VOOPOO's own pages: what it's made of, how it locks on, how it resists leaks, which ITO coils fit and which devices besides the DRAG Q take it.",
+      lede: "The VOOPOO ITO-X empty pod is VOOPOO's pod for the DRAG Q. Below, from VOOPOO's own pages: what it's made of, how it locks on, how it resists leaks, which ITO coils fit and which devices besides the DRAG Q take it.",
       sections: [
         {
           heading: "What is the ITO-X pod made of?",
@@ -2572,7 +2572,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "How does it resist leaks?",
+          heading: "How does the ITO-X resist leaks?",
           paragraphs: [
             "VOOPOO says four layers of silicone ring form the leak-proof structure. The ITO coil is inserted in one direction, which VOOPOO says keeps the airflow direct and the taste stable.",
           ],
@@ -2598,7 +2598,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "ITO-X 是 VOOPOO 为 DRAG Q 设计的烟弹。下面根据 VOOPOO 官网的资料，介绍它的材质、怎么固定在主机上、怎么防漏、能装哪些 ITO 线圈，以及除了 DRAG Q 还适用哪些设备。",
+      lede: "VOOPOO ITO-X 空烟弹是 VOOPOO 为 DRAG Q 设计的烟弹。下面根据 VOOPOO 官网的资料，介绍它的材质、怎么固定在主机上、怎么防漏、能装哪些 ITO 线圈，以及除了 DRAG Q 还适用哪些设备。",
       sections: [
         {
           heading: "ITO-X 烟弹是什么材质？",
@@ -2607,7 +2607,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "怎么防漏？",
+          heading: "ITO-X 怎么防漏？",
           paragraphs: [
             "VOOPOO 表示四层硅胶圈构成有效的防漏结构；ITO 线圈按定向方式插入，官方称这样气流更直接、口感更稳定。",
           ],
@@ -5437,10 +5437,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G coils — facts = UWELL's Caliburn G2, GK2 and X pages (in-app browser
   // 02/11). The bare 0.8 / 1.0 / 1.2 list stays out (tagline + short description give it). UWELL's G2 page (02/11) also says the G2
   // takes the Caliburn G 1.0Ω coil; details PR #1133 then made the spec row "ใช้ได้กับ" say so, so the article leaves G2 + 1.0Ω
-  // to the table under it.
+  // to the table under it. 03/11 (articles-0311b): "UN2 Meshed-H" section = UWELL's Caliburn G2 + Caliburn X spec rows (full coil
+  // names; the 1.0Ω row carries no such name) + UWELL's Caliburn G page (myuwell.com/caliburn/caliburn-g, curl 03/11: "FeCrAl UN2
+  // Meshed-H 0.8 Ω" · "Long lasting · Heat evenly and fully atomize the juice · Present full and original flavor" · "make sure the
+  // coil aligns with locating slot on the pod"). No Caliburn G product on the site → no link.
   "coil-53": {
     th: {
-      lede: "คอยล์สามค่านี้ UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
+      lede: "คอยล์ UWELL Caliburn G2 ในหน้านี้มีให้เลือกสามค่า แต่ UWELL ตั้งชื่อรุ่นของแต่ละค่าไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
       sections: [
         {
           heading: "แต่ละค่าเป็นคอยล์รุ่นไหน",
@@ -5450,7 +5453,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "เครื่องรุ่นไหนใส่ได้",
+          heading: "UN2 Meshed-H คืออะไร",
+          paragraphs: [
+            "UWELL เขียนชื่อเต็มของคอยล์ 0.8 กับ 1.2 โอห์มไว้บนหน้า Caliburn G2 และหน้า Caliburn X ว่า UN2 Meshed-H ส่วนคอยล์ 1.0 โอห์มไม่ได้ใช้ชื่อนี้",
+            "หน้า Caliburn G ของ UWELL ระบุว่าเครื่องรุ่นนั้นใช้คอยล์ UN2 Meshed-H 0.8 โอห์ม และอธิบายคอยล์ตัวนี้ว่าใช้ได้นาน ร้อนสม่ำเสมอจนน้ำยากลายเป็นไอได้เต็มที่ และให้รสที่เต็มและตรงกับรสเดิมของน้ำยา",
+            "หน้าเดียวกันนี้ยังแนะนำว่า เวลาเปลี่ยนคอยล์ ให้วางคอยล์ตรงกับร่องบอกตำแหน่งในหัวพอตก่อนใส่ลงไป",
+          ],
+        },
+        {
+          heading: "คอยล์ Caliburn G และ G2 ใช้กับเครื่องรุ่นไหน",
           paragraphs: [
             "Caliburn GK2 ใส่ได้ทั้งสามค่า ในกล่องมี 1.2 โอห์มติดเครื่องมา และมี 0.8 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยก",
             "Caliburn X ก็ใช้คอยล์ตระกูล Caliburn G ในกล่องมี 0.8 โอห์มติดเครื่องมา และมี 1.2 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยกเหมือนกัน",
@@ -5460,7 +5471,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "These three coils carry different UWELL names, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
+      lede: "The UWELL Caliburn G2 coils on this page come in three resistances, each with its own UWELL name, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
       sections: [
         {
           heading: "Which coil is each resistance?",
@@ -5469,7 +5480,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which devices take them?",
+          heading: "What is UN2 Meshed-H?",
+          paragraphs: [
+            "On its Caliburn G2 and Caliburn X pages, UWELL gives the full name of the 0.8Ω and 1.2Ω coils as UN2 Meshed-H; the 1.0Ω coil does not carry that name. UWELL's Caliburn G page lists the UN2 Meshed-H 0.8Ω coil for that device and describes it as long-lasting, heating evenly to fully vaporise the e-liquid and bringing out the e-liquid's full, original flavour. The same page says to line the coil up with the locating slot in the pod when you replace it.",
+          ],
+        },
+        {
+          heading: "Which devices take Caliburn G and G2 coils?",
           paragraphs: [
             "The Caliburn GK2 takes all three: 1.2Ω fitted, 0.8Ω as a spare, 1.0Ω sold separately. The Caliburn X uses Caliburn G-family coils too: 0.8Ω fitted, 1.2Ω as a spare, 1.0Ω sold separately.",
             "Looking for an empty pod for these coils? The site has the [Caliburn X pod](/products/coil-74) and the [Caliburn G2 pod](/products/coil-55).",
@@ -5478,7 +5495,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "这三颗线圈在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
+      lede: "本页的 UWELL Caliburn G2 线圈有三种阻值，UWELL 给每种阻值的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
       sections: [
         {
           heading: "每种阻值是哪款线圈？",
@@ -5487,7 +5504,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "哪些设备可以用？",
+          heading: "UN2 Meshed-H 是什么？",
+          paragraphs: [
+            "UWELL 在 Caliburn G2 和 Caliburn X 页面上把 0.8Ω、1.2Ω 线圈的全名写作 UN2 Meshed-H，1.0Ω 线圈则没有用这个名字。UWELL 的 Caliburn G 页面列出该设备使用 UN2 Meshed-H 0.8Ω 线圈，并介绍它耐用、受热均匀、能充分雾化烟油，呈现饱满、原本的口味。同一页面还提醒，更换线圈时要让线圈对准烟弹里的定位槽。",
+          ],
+        },
+        {
+          heading: "哪些设备可以用 Caliburn G 和 G2 线圈？",
           paragraphs: [
             "Caliburn GK2 三种都能用：出厂装 1.2Ω，附备用 0.8Ω，1.0Ω 需另购。Caliburn X 同样使用 Caliburn G 系列线圈：出厂装 0.8Ω，附备用 1.2Ω，1.0Ω 需另购。",
             "想找能装这些线圈的空烟弹，本站有 [Caliburn X 烟弹](/products/coil-74) 和 [Caliburn G2 烟弹](/products/coil-55)。",
@@ -5597,7 +5620,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // is not on VOOPOO's page → not repeated. No article FAQ.
   "coil-1": {
     th: {
-      lede: "คอยล์ Vinci ในหน้านี้คือคอยล์ PnP รุ่นเดิมของ VOOPOO ที่มีให้เลือกหลายค่า ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าคอยล์ระบบนี้คืออะไร แต่ละค่าเหมาะกับการสูบแบบไหน ใช้กับน้ำยานิโคตินเท่าไร ใส่กับเครื่องรุ่นไหนได้ และควรเปลี่ยนเมื่อไหร่",
+      lede: "คอยล์ VOOPOO Vinci ในหน้านี้คือคอยล์ PnP รุ่นเดิมที่มีให้เลือกหลายค่า ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าคอยล์ระบบนี้คืออะไร แต่ละค่าเหมาะกับการสูบแบบไหน ใช้กับน้ำยานิโคตินเท่าไร ใส่กับเครื่องรุ่นไหนได้ และควรเปลี่ยนเมื่อไหร่",
       sections: [
         {
           heading: "คอยล์ PnP คืออะไร",
@@ -5621,7 +5644,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+          heading: "คอยล์ VOOPOO PnP ใช้กับเครื่องไหนได้บ้าง",
           paragraphs: [
             "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่นในตระกูล VINCI และ DRAG เช่น VINCI X และ [DRAG X](/products/drag-x) รวมถึงหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
             "VOOPOO บอกไว้ด้วยว่ารายชื่อนี้มีไว้ใช้อ้างอิง และการสูบจริงอาจต่างกันไปตามเครื่อง",
@@ -5630,16 +5653,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "เปลี่ยนคอยล์เมื่อไหร่ ใส่ตัวใหม่แล้วต้องทำอะไร",
+          heading: "เปลี่ยนคอยล์ VOOPOO เมื่อไหร่ ใส่ตัวใหม่แล้วต้องทำอะไร",
           paragraphs: [
             "คู่มือเปลี่ยนคอยล์ของ VOOPOO บอกว่าไม่มีกำหนดตายตัว ให้สังเกตจากอาการ เช่น สูบแล้วมีรสไหม้ รสจางลง ไอน้อยลง น้ำยารั่วหรือมีเสียงน้ำยาดังจ๊อก ๆ หรือน้ำยาในหัวพอตเปลี่ยนเป็นสีเข้ม",
-            "พอใส่คอยล์ใหม่ ให้หยดน้ำยาลงรูสำลีของคอยล์สักสองสามหยดก่อน แล้วเติมน้ำยาทิ้งไว้ 5–10 นาทีให้สำลีชุ่ม ระหว่างใช้ก็ตั้งวัตต์ให้อยู่ในช่วงที่ VOOPOO แนะนำ และไม่สูบรัว คอยล์ก็จะใช้ได้นานขึ้น",
+            "พอใส่คอยล์ใหม่ ให้หยดน้ำยาลงรูสำลีของคอยล์สักสองสามหยดก่อน แล้วเติมน้ำยาทิ้งไว้ 5–10 นาทีให้สำลีชุ่ม ระหว่างใช้ก็ตั้งวัตต์ให้อยู่ในช่วงที่ VOOPOO แนะนำ และไม่สูบรัว [คอยล์ก็จะใช้ได้นานขึ้น](/guides/coil-and-pod-maintenance)",
           ],
         },
       ],
     },
     en: {
-      lede: "This page carries many of VOOPOO's original PnP coils. Below, from VOOPOO's own pages: what the system is, which resistance suits which draw, what nicotine strength each is made for, which devices they fit and when to change one.",
+      lede: "The VOOPOO Vinci coils on this page are VOOPOO's original PnP coils, in many resistances. Below, from VOOPOO's own pages: what the system is, which resistance suits which draw, what nicotine strength each is made for, which devices they fit and when to change one.",
       sections: [
         {
           heading: "What is a PnP coil?",
@@ -5661,7 +5684,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which devices do they fit?",
+          heading: "Which devices do VOOPOO PnP coils fit?",
           paragraphs: [
             "VOOPOO's PnP coil page lists the PnP-R1 and PnP-R2 for devices such as the VINCI, VINCI R, VINCI X, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI and the PnP 22 and PnP 20 tanks; for some coils VOOPOO names specific devices, like the PnP-VM6 made for the DRAG X and the PnP-VM5 listed for the VINCI X and DRAG S. VOOPOO adds that the list is for reference and the experience can vary by device.",
             "Newer devices such as the VINCI S and DRAG X3 use a different system, PnP X, which VOOPOO says does not fit original PnP devices — so original PnP devices need PnP coils such as the VM or TW series. Although this page is named Coil Vinci, VOOPOO does not list original PnP coils for the VINCI S. For a newer device, see [VOOPOO PnP X coils](/products/coil-92); on a VINCI S, pick 0.3Ω or above.",
@@ -5670,13 +5693,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "When should I change a coil, and what do I do with a new one?",
           paragraphs: [
-            "VOOPOO's coil guide says there's no fixed schedule — watch for a burnt or muted taste, less vapour, leaking or gurgling, or e-liquid turning dark. Prime a new coil with a few drops of e-liquid into the wick holes, then let the filled pod sit 5–10 minutes. Staying within the recommended wattage and not chain vaping makes a coil last longer.",
+            "VOOPOO's coil guide says there's no fixed schedule — watch for a burnt or muted taste, less vapour, leaking or gurgling, or e-liquid turning dark. Prime a new coil with a few drops of e-liquid into the wick holes, then let the filled pod sit 5–10 minutes. Staying within the recommended wattage and not chain vaping [makes a coil last longer](/guides/coil-and-pod-maintenance).",
           ],
         },
       ],
     },
     zh: {
-      lede: "本页有多款 VOOPOO 原版 PnP 线圈。下面根据 VOOPOO 官网的资料，介绍这套系统是什么、哪个阻值适合哪种抽法、各自适合多少尼古丁、适用哪些设备，以及什么时候该换。",
+      lede: "本页的 VOOPOO Vinci 线圈是 VOOPOO 原版 PnP 线圈，有多种阻值可选。下面根据 VOOPOO 官网的资料，介绍这套系统是什么、哪个阻值适合哪种抽法、各自适合多少尼古丁、适用哪些设备，以及什么时候该换。",
       sections: [
         {
           heading: "PnP 线圈是什么？",
@@ -5698,7 +5721,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "适用哪些设备？",
+          heading: "VOOPOO PnP 线圈适用哪些设备？",
           paragraphs: [
             "VOOPOO 的 PnP 线圈页面列出，PnP-R1 和 PnP-R2 适用于 VINCI、VINCI R、VINCI X、DRAG S、[DRAG X](/products/drag-x)、DRAG Baby、FIND Trio、NAVI 以及 PnP 22 和 PnP 20 雾化器；部分线圈 VOOPOO 标注了特定设备，例如专为 DRAG X 做的 PnP-VM6，以及标注 VINCI X 和 DRAG S 的 PnP-VM5。VOOPOO 也说明该列表仅供参考，实际体验会因设备而异。",
             "VINCI S、DRAG X3 等新款设备用的是另一套 PnP X 系统，VOOPOO 表示它不适用于原版 PnP 设备，因此原版 PnP 设备需要使用 VM、TW 系列等 PnP 线圈。本页虽名为 Coil Vinci，但 VOOPOO 并未把原版 PnP 线圈列为 VINCI S 适用。用新款设备的话，请看 [VOOPOO PnP X 线圈](/products/coil-92)；VINCI S 请选 0.3Ω 及以上。",
@@ -5707,7 +5730,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "什么时候换线圈？新线圈要怎么处理？",
           paragraphs: [
-            "VOOPOO 的换线圈指南说没有固定周期，出现焦味、味道变淡、烟雾变少、漏油或咕噜声、烟油颜色变深时就该换了。新线圈先在导油孔滴几滴烟油，注油后静置 5–10 分钟让棉芯充分吸油。功率保持在推荐范围内、避免连续猛抽，线圈会更耐用。",
+            "VOOPOO 的换线圈指南说没有固定周期，出现焦味、味道变淡、烟雾变少、漏油或咕噜声、烟油颜色变深时就该换了。新线圈先在导油孔滴几滴烟油，注油后静置 5–10 分钟让棉芯充分吸油。功率保持在推荐范围内、避免连续猛抽，[线圈会更耐用](/guides/coil-and-pod-maintenance)。",
           ],
         },
       ],
@@ -5719,7 +5742,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // 18650 sold apart, 80W, PnP-RBA. Legacy page → no article FAQ.
   "drag-x": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าโหมด SCORE กับระบบลมของ DRAG X ทำงานยังไง คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
+      lede: "ด้านล่างสรุปเรื่อง VOOPOO DRAG X จากหน้าเว็บของแบรนด์ ว่าโหมด SCORE คืออะไร ปรับลมได้แค่ไหน คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
       sections: [
         {
           heading: "โหมด SCORE ของ DRAG X คืออะไร",
@@ -5729,9 +5752,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ปรับลมได้แค่ไหน",
+          heading: "DRAG X ปรับลมได้แค่ไหน",
           paragraphs: [
-            "Infinite Airflow System คือชื่อระบบลมของ DRAG X ปรับขนาดช่องลมได้ตามที่ต้องการ และ VOOPOO บอกว่าจะใส่คอยล์แบบไหนหรือตั้งค่าไว้เท่าไร ก็ปรับลมให้สูบได้สบายเหมือนกัน",
+            "Infinite Airflow System คือชื่อระบบลมของ DRAG X [ปรับขนาดช่องลมได้ตามที่ต้องการ](/guides/choosing-wattage-and-airflow) และ VOOPOO บอกว่าจะใส่คอยล์แบบไหนหรือตั้งค่าไว้เท่าไร ก็ปรับลมให้สูบได้สบายเหมือนกัน",
           ],
         },
         {
@@ -5742,7 +5765,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "ใส่คอยล์ตัวอื่นได้ไหม",
+          heading: "DRAG X ใส่คอยล์ตัวอื่นได้ไหม",
           paragraphs: [
             "ได้ เปลี่ยนคอยล์ทำได้ง่าย แค่ดึงตัวเก่าออกแล้วกดตัวใหม่เข้าไป หน้าคอยล์ PnP ของ VOOPOO ยังระบุว่าคอยล์ MTL อย่าง PnP-R1 0.8 โอห์มกับ PnP-R2 1.0 โอห์มใช้กับ DRAG X ได้ด้วย ถ้าชอบสูบแบบ MTL ที่ลมแน่นกว่า ก็เลือกสองตัวนี้ได้",
             "คอยล์ PnP ค่าอื่น ๆ มีให้เลือกที่หน้า [คอยล์ VOOPOO PnP](/products/coil-1) ส่วนคอยล์ PnP X ของเครื่องรุ่นใหม่เป็นอีกระบบหนึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้",
@@ -5757,7 +5780,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "Below, from VOOPOO's own page: how the DRAG X's SCORE mode and airflow work, how the two coils in the box differ, which other coils fit, and what comes in the box.",
+      lede: "The VOOPOO DRAG X, from VOOPOO's own page: how its SCORE mode and airflow work, how the two coils in the box differ, which other coils fit, and what comes in the box.",
       sections: [
         {
           heading: "What is SCORE mode?",
@@ -5768,7 +5791,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How far does the airflow adjust?",
           paragraphs: [
-            "The DRAG X's airflow is called the Infinite Airflow System: the airway can be set to any size, and VOOPOO says you can get a comfortable draw whichever coil you fit and whatever settings you use.",
+            "The DRAG X's airflow is called the Infinite Airflow System: [the airway can be set to any size](/guides/choosing-wattage-and-airflow), and VOOPOO says you can get a comfortable draw whichever coil you fit and whatever settings you use.",
           ],
         },
         {
@@ -5778,7 +5801,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Can I fit other coils?",
+          heading: "Can the DRAG X take other coils?",
           paragraphs: [
             "Yes — pull the old coil out and push the new one in. VOOPOO's PnP coil page lists MTL coils such as the PnP-R1 0.8Ω and PnP-R2 1.0Ω for the DRAG X too, the ones to pick for a tighter draw. Other PnP coils are on the [VOOPOO PnP coils](/products/coil-1) page. PnP X coils, made for VOOPOO's newer devices, are a different system that VOOPOO says does not fit original PnP devices.",
           ],
@@ -5792,7 +5815,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "下面根据 VOOPOO 官网的资料，介绍 DRAG X 的 SCORE 模式和气流怎么用、盒内两颗线圈有什么区别、还能换哪些线圈，以及盒里有什么。",
+      lede: "下面根据 VOOPOO 官网的资料，介绍 VOOPOO DRAG X 的 SCORE 模式和气流怎么用、盒内两颗线圈有什么区别、还能换哪些线圈，以及盒里有什么。",
       sections: [
         {
           heading: "SCORE 模式是什么？",
@@ -5803,7 +5826,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "气流能调到什么程度？",
           paragraphs: [
-            "DRAG X 的气流系统名为 Infinite Airflow System，气道大小可以随意调节；VOOPOO 表示无论装哪种线圈、设什么参数，都能获得舒适的吸感。",
+            "DRAG X 的气流系统名为 Infinite Airflow System，[气道大小可以随意调节](/guides/choosing-wattage-and-airflow)；VOOPOO 表示无论装哪种线圈、设什么参数，都能获得舒适的吸感。",
           ],
         },
         {
@@ -5813,7 +5836,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "能换其他线圈吗？",
+          heading: "DRAG X 能换其他线圈吗？",
           paragraphs: [
             "可以，拔出旧线圈、推入新线圈即可。VOOPOO 的 PnP 线圈页面也把 PnP-R1 0.8Ω 和 PnP-R2 1.0Ω 这类 MTL 线圈列为 DRAG X 适用，想要紧一点的吸感可以选它们。其他 PnP 线圈见 [VOOPOO PnP 线圈](/products/coil-1)。新款设备用的 PnP X 线圈是另一套系统，VOOPOO 表示它不适用于原版 PnP 设备。",
           ],
@@ -5833,7 +5856,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // it apart from the DRAG S2/X2 PnP X pod. Legacy page → no article FAQ.
   "vinci-s": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่า VINCI S ใช้แบตได้นานแค่ไหน ทำไมจึงไม่ต้องตั้งวัตต์เอง ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
+      lede: "ด้านล่างสรุปเรื่อง VOOPOO VINCI S จากหน้าเว็บของแบรนด์ ว่าแบตใช้ได้นานแค่ไหน ต้องตั้งวัตต์เองไหม ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
       sections: [
         {
           heading: "VINCI S แบตอยู่ได้นานแค่ไหน",
@@ -5846,11 +5869,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ต้องตั้งวัตต์เองไหม",
           paragraphs: [
             "ไม่ต้อง ชิป GENE.TT 2.0 อ่านค่าโอห์มของหัวพอตที่เสียบอยู่ แล้วเลือกวัตต์ที่เหมาะให้เอง ถ้าเปลี่ยนไปใส่หัวพอตอีกแบบก็ไม่ต้องตั้งค่าใหม่ เสียบหัวแล้วสูบต่อได้เลย",
-            "ไฟ LED บนตัวเครื่องบอกระดับแบตให้เห็น และ VOOPOO บอกว่าปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งลมได้ตามที่ชอบ",
+            "ไฟ LED บนตัวเครื่องบอกระดับแบตให้เห็น และ VOOPOO บอกว่า[ปรับช่องลมได้ละเอียดแบบไม่มีขั้น](/guides/choosing-wattage-and-airflow) ตั้งลมได้ตามที่ชอบ",
           ],
         },
         {
-          heading: "ใส่หัวพอตแบบไหนได้บ้าง",
+          heading: "VINCI S ใส่หัวพอตแบบไหนได้บ้าง",
           paragraphs: [
             "VOOPOO ระบุว่า VINCI S ใช้หัวพอตได้สามแบบ แบบแรกคือหัวพอต VINCI S ที่มีคอยล์ในตัว มีค่า 0.6 โอห์มกับ 0.8 โอห์ม แบบที่สองคือหัวพอตของ VINCI E ซึ่งมีคอยล์ในตัวเหมือนกัน มีค่า 0.3 โอห์ม 0.6 โอห์ม และ 0.8 โอห์ม",
             "แบบที่สามคือหัวพอต VINCI PnP X ที่เปลี่ยนคอยล์ได้ มีทั้งรุ่น DTL และรุ่น MTL แต่ VOOPOO บอกว่าเครื่องนี้ไม่รองรับหัวพอตหรือคอยล์ที่ต่ำกว่า 0.3 โอห์ม คอยล์ PnP X 0.15 โอห์มกับ 0.2 โอห์มจึงใช้กับเครื่องนี้ไม่ได้",
@@ -5873,7 +5896,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "Below, from VOOPOO's own page: how long the VINCI S battery lasts, why there's no wattage to set, which pods it takes, and what's new in the pod in the box.",
+      lede: "The VOOPOO VINCI S, from VOOPOO's own page: how long the battery lasts, why there's no wattage to set, which pods it takes, and what's new in the pod in the box.",
       sections: [
         {
           heading: "How long does the battery last?",
@@ -5884,11 +5907,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Do I need to set the wattage?",
           paragraphs: [
-            "No. The GENE.TT 2.0 chip reads the resistance of the pod you fit and picks the power for you, and there's nothing to reset when you switch to a different pod. An LED shows the battery level, and VOOPOO says the airflow adjusts steplessly to your liking.",
+            "No. The GENE.TT 2.0 chip reads the resistance of the pod you fit and picks the power for you, and there's nothing to reset when you switch to a different pod. An LED shows the battery level, and VOOPOO says [the airflow adjusts steplessly](/guides/choosing-wattage-and-airflow) to your liking.",
           ],
         },
         {
-          heading: "Which pods fit?",
+          heading: "Which pods fit the VINCI S?",
           paragraphs: [
             "VOOPOO lists three kinds: the VINCI S cartridge (coil built in, 0.6Ω or 0.8Ω), the VINCI E cartridge (coil built in, 0.3Ω, 0.6Ω or 0.8Ω) and the VINCI PnP X cartridge with replaceable coils, in DTL and MTL versions. VOOPOO also states that the VINCI S does not support cartridges or coils below 0.3Ω, so the 0.15Ω and 0.2Ω PnP X coils are not for this device. The others are on the [VOOPOO PnP X coils](/products/coil-92) page; VOOPOO does not list the original PnP coils — including the ones this shop lists as Coil Vinci — for the VINCI S.",
           ],
@@ -5908,7 +5931,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "下面根据 VOOPOO 官网的资料，介绍 VINCI S 的续航有多久、为什么不用自己调功率、能装哪些烟弹，以及盒内烟弹有哪些改进。",
+      lede: "下面根据 VOOPOO 官网的资料，介绍 VOOPOO VINCI S 的续航有多久、为什么不用自己调功率、能装哪些烟弹，以及盒内烟弹有哪些改进。",
       sections: [
         {
           heading: "电池能用多久？",
@@ -5919,11 +5942,11 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "需要自己调功率吗？",
           paragraphs: [
-            "不需要。GENE.TT 2.0 芯片会读取所装烟弹的阻值并自动匹配功率，换用其他烟弹时也无需重新设置。机身的 LED 灯显示电量，VOOPOO 表示气流可无级调节，按喜好设定。",
+            "不需要。GENE.TT 2.0 芯片会读取所装烟弹的阻值并自动匹配功率，换用其他烟弹时也无需重新设置。机身的 LED 灯显示电量，VOOPOO 表示[气流可无级调节](/guides/choosing-wattage-and-airflow)，按喜好设定。",
           ],
         },
         {
-          heading: "能装哪些烟弹？",
+          heading: "VINCI S 能装哪些烟弹？",
           paragraphs: [
             "VOOPOO 列出三种：VINCI S 烟弹（一体式线圈，0.6Ω 或 0.8Ω）、VINCI E 烟弹（一体式线圈，0.3Ω、0.6Ω 或 0.8Ω），以及可换线圈的 VINCI PnP X 烟弹，分 DTL 和 MTL 两版。VOOPOO 同时注明 VINCI S 不支持低于 0.3Ω 的烟弹或线圈，因此 0.15Ω 和 0.2Ω 的 PnP X 线圈不能用在这台机器上。其他阻值见 [VOOPOO PnP X 线圈](/products/coil-92)；VOOPOO 没有把原版 PnP 线圈（包括本店以 Coil Vinci 为名的线圈）列为 VINCI S 适用。",
           ],
