@@ -10,31 +10,34 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 03/11 ~10:55 by the 8th main chat (local_1681c276), ~45% — owner shut the PC down ("ปิดงานก่อน เดี๋ยวค่อยมาต่อ"); same chat resumes.
+Updated 03/11 ~23:15 by the 8th main chat (local_1681c276), ~60% — owner: "Hand แชทนี้ก่อนละค่อยจัดการงานที่เหลือต่อ" → the owner opens the 9th main chat.
+EVENING MERGES ARE ALLOWED TONIGHT 03/11 (owner ~18:05 "ได้ครับ ขึ้นตอนนี้เลยก็ได้ครับ") — one-off; each PR carries a comment quoting it. From 04/11 the 13.7 window rule applies again.
 
-1 main = 129f07fc (#1154). CART IS ON. Merged 03/11 after the compact (later: #1160 70 maker cut-outs unmarked · #1161 HNB words ·
-  #1154 watermark tool + 41 images at 22/18): #1159 address look A (step bar + Thai map card) · #1165 label-price
-  follow-up (trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" + 12 px struck price) · #1171 RULE 13.7 no deploys 18:00–24:00 · #1169 address
-  search + own place boxes + edit/delete saved addresses (+ hand-typed sub-district cannot renew the monthly free shipping) · #1170 slip bot
-  answers "เว็บกำลังอัปเดต ส่งรูปสลิปเดิมอีกครั้ง" when a restart cuts a check (dormant webhookEventId dedupe on main) · #1168 home hero:
-  phones paint only the shown slot (owner clip). Live-checked by curl.
-2 CHILD CHATS (report to local_1681c276 · Opus 5.5 · medium except design/SEO/images = high, §18 · owner 03/11: 3–4 lines allowed):
-  images-0211b local_67ec6cc2 (high): watermark gen 2 (22/18 APPROVED, shop-made images only, IMAGE_SPEC §0) · LEFT, drafts in merge order,
-    all pushed + trees clean: #1156 (57, wt `_incoming/wt-wm22b`) → #1163 (115, `wt-wm22c`) → #1166 (95, `wt-wm22d`). None gated yet (no Checker line).
-    Child was idle at the shutdown; on resume Friday messages it to take #1156: merge main → verify --full → gate → checker → --done → Friday merges.
-  slip-bot-0311 local_5c237036 (medium): done (#1170 merged) · label-price-0311 local_b64f9a62: done (#1165 merged) — both may be archived.
-  TEST MACHINE (3412) free · no gate note open. Queue: #1156 → #1163 → #1166 (images child).
-  NO MERGES 18:00–24:00 Thai (13.7, owner 03/11) except a broken live site — ready PRs wait for after midnight.
+1 main = e03f1ea2 (#1193). CART IS ON. Merged 03/11 (all live-checked by curl/Render): watermark gen 2 at 22/18 #1154 #1156 #1163 #1166 #1176 #1177 (+#1178 folded in)
+  #1184 #1191 #1192 #1193 (maker pictures untouched) · pod logos #1188 #1189 #1190 (owner approved the sheets) · articles #1179 (VOOPOO 8 coil/pod pages, #1180–#1182 folded in) · #1183 article section on legacy
+  pages + DRAG X / VINCI S · #1185 RELX Infinity 2 Plus · #1187 checkout: search lives INSIDE the "ตำบล/แขวง · อำเภอ/เขต · จังหวัด" picker, the
+  separate box above the postcode is gone (owner correction 03/11)
+2 OPEN PRs: #1195 (Friday, draft, tree `_incoming/wt-dhl-0311`, branch claude/dhl-note-0311 @ 241d8c63, cut from main 19a403af — merge main first):
+    DHL orders carry customer_note "ส่ง DHL — เปลี่ยนขนส่งใน Shipnity เป็น DHL ก่อนออกเลขพัสดุ" (owner "ทำหมายเหตุชั่วคราวไปก่อน"). Contract 82/82,
+    eslint ok; verify --full 62/63: tsc "LayoutProps" only (fresh worktree, Next route types not generated — `npx next typegen` there, then re-verify after a main merge); then test-server build → gate → checker → merge. NOT checked yet. See item 5 "DHL" before merging.
+  #1194 (images child, draft, in-stock batch 6d, 60 pictures): waits for 3412 after #1195.
+  CHILD CHATS (report to the main chat · Opus 5.5 · high for images/SEO):
+  images-0211b local_67ec6cc2: watermark left = #1194 then the "rest" ~180 pictures (≤100/PR; `self-merge-check --pr` fails over 300 files) · blocked: Higgsfield generation needs the owner to type the approval IN THAT CHAT (owner said it
+    here; that chat's permission system only accepts its own) — scope approved: SKE B20000 4 flavours + 1 trial nexSwitch 16K pod + 1 trial RELX
+    Creator Pro + 1 trial grey-yellow Creator (head 1 silver stud + 1 yellow button, RELX MY renders) — sheets to the owner before merge. Parked: Caliburn G2 pod logo · DRAG X3 white jag.
+  articles-0311 local_8b434bed: STOPPED at ~94% context — hand-over `C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_1681c276-32a2-4966-a26a-5a41d99683ec\articles-0311\handover.md`
+    (+ state.md, tools/). 35 short pages left (`_incoming/articles-0311/short-pages.md`); "maker says too little" list in the hand-over; next = the
+    VOOPOO SEO follow-up (10 merged pages, lede/headings only) then brands. Open a NEW articles child (start_session needs a message typed in the
+    desktop app) and archive local_8b434bed once it runs. Owner pack photos `_incoming/owner-photos-0311/` + README (maker facts).
+  TEST MACHINE 3412: Friday's for #1195 → then images #1194. Gate notes: none open at hand-off.
 2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`.
-    Owner answers 02–03/11 live in their homes (BSOT §5 · IMAGE_SPEC §0 · THAI_STYLE HNB words · §18 slip bot + deploy window).
-    IN FLIGHT (Friday):
-    · HOME JANK merged (#1168): emulation 390 CPU×4 = long frames 5 → 2 (trend, 3 runs), DroppedFrame halved, paint not lower
-      (`_incoming/jank-0311/measure-*.json`). WAITING: the owner films the home page again on his iPhone — the real proof.
-    · HNB WORDS merged (#1161, live-checked by curl). Old words still find the products (search aliases).
-    Owner asked 03/11 (status page "รอพี่ตอบ"): do LINE orders also pay the site price? yes = keep the trust line · no = "ทุกออเดอร์บนเว็บ…".
+    Owner answers 02–03/11 live in their homes (BSOT §5 · IMAGE_SPEC §0 · THAI_STYLE HNB words · §18 slip bot + deploy window + SEO articles).
+    Owner waits = status page "รอพี่ตอบ" + docs/รอพี่ตรวจ.md (LINE-price trust line · iPhone home clip · try the new address picker).
     PARKED / LATER: LINE Webhook redelivery (owner "เอาไว้ก่อน" 03/11; dedupe guard already on main) · address error "ค่ะ" alone on a line at
       390 (needs thai-typography glue = owner OK) · spec-list dt wrap (same) · unwatermarked originals under public/assets → cleanup after gen-2
-      redo · house-clean the many old worktree folders · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง ·
+      redo · house-clean the many old worktree folders · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง · retailer-sourced facts on coil-56 (alt) /
+      coil-83 (fit row "Argus A", healthcabin) → details pass · ZERO PRO "Copper/Champagne" + INFY "Frost Pink" colour names not on the makers'
+      sites → details check ·
       FUTURE 3D map motion per address = map service + cost (13.3 #2) → plan with the owner.
     Owner to answer = docs/รอพี่ตรวจ.md (86 saved-address exposure — now also edit/delete: rec. OTP back on · 78 looks · 88 C-drive c).
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
@@ -42,15 +45,13 @@ Updated 03/11 ~10:55 by the 8th main chat (local_1681c276), ~45% — owner shut 
      STAFF LOGIN PLAN (owner 30/10: staff log in like customers, then see their own dashboard). Friday's proposal: staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → the owner
      approves → staff dashboard (role on the member row; BSOT §11). Login = 13.3 #9 → plan with the owner first (okami24-plan + designer). The #1046 pill stays till then.
      FUTURE ROUND (owner 30/10): desktop thank-you page to use the wide space better ("จัดวางยังไม่ Perfect") — queued.
-  d Cancel-alert test PASSED 30/10 (#0036). Staff to-do: cancel #0036 (reason "ทดสอบ") · OK-20261028-ccd46d has an empty tracking note → staff fill it. Carrier auto-send only on the owner's word.
+  d Staff to-do: cancel #0036 ("ทดสอบ") · OK-20261028-ccd46d empty tracking note → staff fill it.
      ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main (merge-of-main commits deploy).
   f "รอส่งคลัง" queue CLEARED by the owner 31/10 (staff screen: ไม่มี) · back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion ·
      staff-by-Gmail NOT built (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
 3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
-  a Q6 LOGO ROUND — CLOSED 28/10 (tag logo-q6-2710; header = §18). Owner's files = untracked `logo/` folder, never delete.
-     Left: owner sends the "โฉมใหม่" broadcast · PNG smear = his clean file, never retouch.
-  e/f BADGES + B5 stock count = LIVE (#1063 #1069; questions = รอพี่ตรวจ 83).
+  a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
   g SALES LOG (owner 30/10: "อยากให้เว็บจดบันทึกรายยอดขายมีแค่บัญชีพี่ที่ดูได้") — owner-only
      view. Web orders split items/shipping; LINE orders = slip only → staff mark shipping charged. Plan with the owner.
      Q9 staff dashboard [PLAN WITH THE OWNER FIRST]: live visitors (no Analytics/cookies — owner 07/10) · member sign-ups · customer
@@ -70,17 +71,15 @@ Updated 03/11 ~10:55 by the 8th main chat (local_1681c276), ~45% — owner shut 
 3w Home (closed rounds = their tags). Home switches
   `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
 3u STOCK — Shipnity pushes stock numbers to /wp-json (woo_stock_reports) and the site reads them at runtime (live stock, 28/10).
-  Hourly `okami24-stock-daily` DELETED 28/10 (owner; prompt backup `_incoming/stock-api/okami24-stock-daily.SKILL.md.bak`). NEW: daily
+  Daily
   `okami24-new-products-daily` (12:00, Auto) reads the order-entry picker for codes not in sku-map.ts → `_incoming/stock-api/new-products.md`
   + push to the owner "เปิดแชทหลักแล้วพิมพ์ ลงสินค้าใหม่"; never changes the site. Friday lists them, clears lines once listed.
   SHIPNITY LINK (owner 27/10, chat "API"): no paid Shipnity API — the site answers WooCommerce's REST calls itself and the warehouse
   types Url · ck · cs into Shipnity (warehouse 27/10: those 3 fields). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
-  "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Hourly routine DELETED 28/10 (owner). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
+  "Shipnity link". Live 28/10: #937 door · #957 order button · #958 cancel alert + compare · live stock (runtime; build read = fallback). Still build-time: listing cards, the in-stock filter, JSON-LD (next build). 【ห้ามแตะ】 coil-1/72/94 photos · every price file.
   LIVE since 28/10: /staff/shipnity PUT log (738 codes) · Excel +6 cols (#963) · cart cap = live count, `shortTo` blocks checkout (#967, §18 "Stock") ·
-  new-product alert (#971: 15:00 run → `src/data/stock/warehouse-new.ts`, LINE "OKM Order" after deploy) · stock light on Okami dev (#969: red = no key /
-  never / order sent > 3 h with no push; 10-min sweep; state <data dir>/woo-watch.json; TUNE item 5). Shipnity calls = ua shipnity-channel-gateway, ip 74.220.52.129.
-  #0021 was cancelled in Shipnity before the cancel alert — the web still shows รอใส่เลขพัสดุ (the web never changes status itself).
-  Slip zip: NOT built (owner 29/10 "ตามแนะนำ" = the Excel slip columns + per-order slips are enough). New-products run (15:00) needs the PC on.
+  new-product alert (#971: 15:00 run → `src/data/stock/warehouse-new.ts`, LINE "OKM Order" after deploy) · stock light on Okami dev (#969; TUNE item 5). Shipnity calls = ua shipnity-channel-gateway, ip 74.220.52.129.
+  New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro (next allowed price-file touch) · at 390 the small pill
   sits on the IQOS ILUMA i cap (iqosheet-18) — Friday's pick at the next touch = a free band above full-frame photos.
 3i PARKED 20/10 round "image sweep" (`docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt`): left = 21 warehouse products (รอพี่ตรวจ).
@@ -93,6 +92,10 @@ Updated 03/11 ~10:55 by the 8th main chat (local_1681c276), ~45% — owner shut 
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here. Status page for the owner's phone =
   §17 "Owner status page".
 5 open / dated:
+  - 04/11 DHL → Shipnity: the site sends "DHL" (upper case, as the warehouse asked) as shipping-line title + meta shipping_carrier + the copy text;
+    Shipnity's docs name no Woo carrier mapping (only an account default). Warehouse 03/11: "sometimes DHL, sometimes not", then ~22:53 "seems
+    changed now" — nothing carrier-related changed on the site then. Owner asked to confirm with the next DHL order; asked the warehouse what they
+    changed. Owner to choose: merge #1195 now (rec.) or wait · wanted: 2 order numbers (one DHL, one EMS) or /staff logged in his Chrome.
   - 04/11 tune the stock light's red rule (3 h after an order sent with no push) from a week of real first_sent_at vs product PUTs.
   - 06/11 SERP read + the 2 vanished queries with SafeSearch on/off (item 2) · GSC read 15/11 · 10/12 · Search Console 2–4 weeks
     after 12/10: no okami-24.com URL shows instead of .store.
