@@ -678,7 +678,7 @@ export const salthubProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/m-bar-pod/card.webp",
-        alt: "SALTHUB M Bar Pod, matte black cartridge with Grape Aloe flavor label, isolated product shot",
+        alt: "SALTHUB M Bar Pod, clear cartridge with the white M and a Cola flavor label, isolated product shot",
         angle: "3/4, isolated",
         transparentBackground: false,
         sourceName: "SALTHUB",
