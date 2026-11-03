@@ -5437,10 +5437,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G coils — facts = UWELL's Caliburn G2, GK2 and X pages (in-app browser
   // 02/11). The bare 0.8 / 1.0 / 1.2 list stays out (tagline + short description give it). UWELL's G2 page (02/11) also says the G2
   // takes the Caliburn G 1.0Ω coil; details PR #1133 then made the spec row "ใช้ได้กับ" say so, so the article leaves G2 + 1.0Ω
-  // to the table under it.
+  // to the table under it. 03/11 (articles-0311b): "UN2 Meshed-H" section = UWELL's Caliburn G2 + Caliburn X spec rows (full coil
+  // names; the 1.0Ω row carries no such name) + UWELL's Caliburn G page (myuwell.com/caliburn/caliburn-g, curl 03/11: "FeCrAl UN2
+  // Meshed-H 0.8 Ω" · "Long lasting · Heat evenly and fully atomize the juice · Present full and original flavor" · "make sure the
+  // coil aligns with locating slot on the pod"). No Caliburn G product on the site → no link.
   "coil-53": {
     th: {
-      lede: "คอยล์สามค่านี้ UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
+      lede: "คอยล์ UWELL Caliburn G2 ในหน้านี้มีสามค่า แต่ละค่า UWELL ตั้งชื่อรุ่นไว้ต่างกัน และเครื่องแต่ละรุ่นก็ให้คอยล์มาในกล่องคนละแบบ ด้านล่างสรุปไว้ทีละข้อตามที่ UWELL เขียนไว้บนหน้าเครื่องแต่ละรุ่น",
       sections: [
         {
           heading: "แต่ละค่าเป็นคอยล์รุ่นไหน",
@@ -5450,7 +5453,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "เครื่องรุ่นไหนใส่ได้",
+          heading: "UN2 Meshed-H คืออะไร",
+          paragraphs: [
+            "บนหน้า Caliburn G2 กับหน้า Caliburn X UWELL เขียนชื่อเต็มของคอยล์ 0.8 โอห์มและ 1.2 โอห์มไว้ว่า UN2 Meshed-H ส่วนคอยล์ 1.0 โอห์มไม่ได้ใช้ชื่อนี้",
+            "หน้า Caliburn G ของ UWELL ระบุว่าเครื่องรุ่นนั้นใช้คอยล์ UN2 Meshed-H 0.8 โอห์ม และอธิบายคอยล์ตัวนี้ว่าใช้ได้นาน ร้อนสม่ำเสมอจนน้ำยากลายเป็นไอได้เต็มที่ และให้รสของน้ำยาออกมาเต็มตามรสเดิม",
+            "หน้าเดียวกันนี้แนะนำด้วยว่า เวลาเปลี่ยนคอยล์ให้จัดคอยล์ให้ตรงกับร่องบอกตำแหน่งในหัวพอตก่อนใส่",
+          ],
+        },
+        {
+          heading: "คอยล์ Caliburn G ใส่กับเครื่องรุ่นไหนได้",
           paragraphs: [
             "Caliburn GK2 ใส่ได้ทั้งสามค่า ในกล่องมี 1.2 โอห์มติดเครื่องมา และมี 0.8 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยก",
             "Caliburn X ก็ใช้คอยล์ตระกูล Caliburn G ในกล่องมี 0.8 โอห์มติดเครื่องมา และมี 1.2 โอห์มเป็นตัวสำรอง ส่วน 1.0 โอห์มต้องซื้อแยกเหมือนกัน",
@@ -5460,7 +5471,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "These three coils carry different UWELL names, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
+      lede: "The UWELL Caliburn G2 coils on this page come in three resistances, each with its own UWELL name, and each device comes with a different set of them in the box. Below, one point at a time, as UWELL states on each device's page.",
       sections: [
         {
           heading: "Which coil is each resistance?",
@@ -5469,7 +5480,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "Which devices take them?",
+          heading: "What is UN2 Meshed-H?",
+          paragraphs: [
+            "On its Caliburn G2 and Caliburn X pages, UWELL gives the full name of the 0.8Ω and 1.2Ω coils as UN2 Meshed-H; the 1.0Ω coil does not carry that name. UWELL's Caliburn G page lists the UN2 Meshed-H 0.8Ω coil for that device and describes it as long-lasting, heating evenly to fully vaporise the e-liquid and presenting its full, original flavour. The same page says to line the coil up with the locating slot in the pod when you replace it.",
+          ],
+        },
+        {
+          heading: "Which devices take Caliburn G coils?",
           paragraphs: [
             "The Caliburn GK2 takes all three: 1.2Ω fitted, 0.8Ω as a spare, 1.0Ω sold separately. The Caliburn X uses Caliburn G-family coils too: 0.8Ω fitted, 1.2Ω as a spare, 1.0Ω sold separately.",
             "Looking for an empty pod for these coils? The site has the [Caliburn X pod](/products/coil-74) and the [Caliburn G2 pod](/products/coil-55).",
@@ -5478,7 +5495,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "这三颗线圈在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
+      lede: "本页的 UWELL Caliburn G2 线圈有三种阻值，在 UWELL 的命名各不相同，各款设备盒内附带的组合也不一样。下面根据 UWELL 各设备页面逐项说明。",
       sections: [
         {
           heading: "每种阻值是哪款线圈？",
@@ -5487,7 +5504,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "哪些设备可以用？",
+          heading: "UN2 Meshed-H 是什么？",
+          paragraphs: [
+            "UWELL 在 Caliburn G2 和 Caliburn X 页面上把 0.8Ω、1.2Ω 线圈的全名写作 UN2 Meshed-H，1.0Ω 线圈则没有用这个名字。UWELL 的 Caliburn G 页面列出该设备使用 UN2 Meshed-H 0.8Ω 线圈，并介绍它耐用、受热均匀、能充分雾化烟油，呈现饱满、原本的口味。同一页面还提醒，更换线圈时要让线圈对准烟弹里的定位槽。",
+          ],
+        },
+        {
+          heading: "哪些设备可以用 Caliburn G 线圈？",
           paragraphs: [
             "Caliburn GK2 三种都能用：出厂装 1.2Ω，附备用 0.8Ω，1.0Ω 需另购。Caliburn X 同样使用 Caliburn G 系列线圈：出厂装 0.8Ω，附备用 1.2Ω，1.0Ω 需另购。",
             "想找能装这些线圈的空烟弹，本站有 [Caliburn X 烟弹](/products/coil-74) 和 [Caliburn G2 烟弹](/products/coil-55)。",
