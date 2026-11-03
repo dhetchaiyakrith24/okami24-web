@@ -17,6 +17,10 @@ import type { Product, Specification } from "@/types/catalog";
 
 type Row = Pick<Specification, "value" | "sourceStatus">;
 
+/** A spec label this short (characters of the Thai label) never shrinks below one line in a spec row — at 390 the
+ *  row squeezed "ความสามารถ" / "ชนิดหัวพอต" until the word split (03/11). Longer labels wrap as before (scan 04/11). */
+export const SHORT_SPEC_LABEL = 16;
+
 export function verifiedRows<T extends Row>(rows: readonly T[]): T[] {
   return rows.filter((r) => r.sourceStatus === "verified");
 }
