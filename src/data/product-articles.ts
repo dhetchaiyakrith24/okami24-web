@@ -1944,7 +1944,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "เติมน้ำยายังไง และคอยล์ใช้ได้นานแค่ไหน",
+          heading: "เติมน้ำยายังไง คอยล์ใช้ได้กี่ครั้ง",
           paragraphs: [
             "วิธีเติมตามหน้า ARGUS P1 ของ VOOPOO คือดึงหัวออกจากเครื่อง แล้วเปิดจุกที่ตัวหัวเพื่อเติมน้ำยา",
             "ส่วนคอยล์ ITO นั้น VOOPOO ประเมินไว้ในหน้า DRAG Q ว่าหนึ่งตัวเติมน้ำยาใช้ได้ราว 10 ครั้ง",
