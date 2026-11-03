@@ -300,6 +300,12 @@ position ("ไม่ใช่เชิงชวนซื้อขาย แต�
 
 **Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
 the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
+**SEO on every product article (owner 03/11 "อย่าลืมใส่ใจเรื่อง SEO … คำหลักคำรอง" → "จัดการได้เลย"):** the shop's article standard
+(`docs/SEO_LANDSCAPE.md` "มาตรฐานบทความของร้าน") applies to product-page articles too: ONE main keyword per page (what people type
+for that product — §0 owner map + §9 + SEO_BASELINE GSC rows; a word another page owns is never the main keyword, link to its owner) in
+the lede · 2–4 secondary phrases from real searches as H2/H3 or their first sentence, natural Thai, no stuffing · length = the band above,
+no word-count chasing · each product named links on first mention + 2–4 guides · the PR body lists per page: main keyword · secondary
+phrases · where each sits · where the phrase came from.
 
 **Stock (owner 08/10):** stock truth = Shipnity Max only (`app.shipnitymax.com`) — the WAREHOUSE's account, not the shop's (we
 only read it, to open the cart later) · the old Shipnity (`shipnity.com`, source of the September seed and of the Pod-181 re-code)
