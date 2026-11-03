@@ -245,8 +245,9 @@ export function PostcodePlaceFields({
               if (e.key === "ArrowDown" || e.key === "ArrowUp") {
                 e.preventDefault();
                 setActive((i) => (i + (e.key === "ArrowDown" ? 1 : rows.length - 1)) % rows.length);
-              } else if (e.key === "Enter") {
-                // Enter picks the row (the first one when none is marked) instead of sending the whole form half filled.
+              } else if (e.key === "Enter" && (active >= 0 || typed)) {
+                // Enter picks the marked row (the first one once something is typed) instead of sending the form half filled;
+                // Enter on a fresh focus with nothing marked or typed leaves boxes the customer already typed alone.
                 e.preventDefault();
                 choose(rows[active >= 0 ? active : 0]);
               }
@@ -263,6 +264,8 @@ export function PostcodePlaceFields({
             role="listbox"
             tabIndex={-1}
             aria-label={t.postcodePlaceLabel}
+            // A press anywhere on the list (a row, its scrollbar) must not take the focus off the picker — that would close it.
+            onPointerDown={(e) => e.preventDefault()}
             className="absolute inset-x-0 top-full z-20 mt-1 max-h-72 overflow-y-auto rounded-md border border-surface-border bg-surface-1 py-1 shadow-lg"
           >
             {rows.length === 0 ? (
@@ -274,11 +277,9 @@ export function PostcodePlaceFields({
                   id={`${listId}-${i}`}
                   role="option"
                   aria-selected={i === active}
-                  // pointerdown, not click: the search box keeps focus, so the list does not close before the pick lands.
-                  onPointerDown={(e) => {
-                    e.preventDefault();
-                    choose(h);
-                  }}
+                  // click, not pointerdown: a finger that swipes to scroll the list must not pick the row it started on
+                  // (checker #1187); the list's pointerdown keeps the focus here, so the list is still open when the tap lands.
+                  onClick={() => choose(h)}
                   onPointerEnter={() => setActive(i)}
                   className={cn("cursor-pointer px-3 py-2 text-sm text-foreground", i === active && "bg-surface-2")}
                 >
