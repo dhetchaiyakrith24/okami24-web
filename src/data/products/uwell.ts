@@ -118,7 +118,7 @@ export const uwellProducts: Product[] = [
     // Mystic Forest big in front on the left, the other six behind in two upright tiers, a soft contact shadow and a
     // faint reflection kept as semi-transparent pixels (IMAGE_SPEC §0 item 8) — _incoming/image-sitewide/g5/poster.js.
     lineupImage: {
-      src: "/assets/products/caliburn-g5/lineup-v2.webp",
+      src: "/assets/products/caliburn-g5/lineup-v2-wm2.webp",
       alt: "UWELL Caliburn G5, all 7 colours",
       sourceName: "OKami24 composite (from UWELL's own per-colour renders)",
     },
