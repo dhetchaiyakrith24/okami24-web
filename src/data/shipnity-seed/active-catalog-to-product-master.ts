@@ -967,7 +967,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-21/card-wm2.webp",
+      src: "/assets/products/coil-21/card-v2-wm2.webp",
       alt: "VOOPOO Argus Pod cartridge, studio photo",
       angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of a shop photo of the Argus Pod cartridge. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
