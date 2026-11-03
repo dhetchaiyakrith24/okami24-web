@@ -4977,14 +4977,14 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "คอยล์ PnP คืออะไร",
           paragraphs: [
-            "PnP คือระบบคอยล์ของ VOOPOO ที่ใช้ขั้วเสียบแบบมาตรฐานเดียวกัน คอยล์ตัวเดียวจึงใช้ได้กับเครื่อง VOOPOO หลายรุ่น เปลี่ยนคอยล์ก็ง่าย แค่ดึงตัวเก่าออกแล้วกดตัวใหม่เข้าไป VOOPOO บอกว่าใช้เวลาแค่หนึ่งวินาที",
+            "PnP คือระบบคอยล์ของ VOOPOO ที่ใช้ขั้วเสียบแบบมาตรฐานเดียวกัน คอยล์ตัวเดียวจึงใช้ได้กับเครื่อง VOOPOO หลายรุ่น เปลี่ยนคอยล์ก็ง่าย แค่ดึงตัวเก่าออกแล้วกดตัวใหม่เข้าไป ซึ่ง VOOPOO บอกว่าใช้เวลาเปลี่ยนแค่หนึ่งวินาทีเท่านั้น",
             "VOOPOO ทำคอยล์ระบบนี้ไว้หลายค่า เพื่อให้สลับได้ตามใจ ว่าวันนี้อยากได้ไอเยอะหรืออยากได้รสชัด",
           ],
         },
         {
           heading: "ค่าโอห์มไหนเหมาะกับการสูบแบบไหน",
           paragraphs: [
-            "ตามตารางของ VOOPOO คอยล์ค่าต่ำอย่าง 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DL คือดูดลงปอดตรง ๆ และต้องใช้วัตต์สูง เช่น PnP-TW15 0.15 โอห์มอยู่ที่ 55–70 วัตต์ และ PnP-TW20 0.2 โอห์มอยู่ที่ 40–55 วัตต์ ถัดขึ้นมาคือ PnP-TW30 0.3 โอห์ม ที่ VOOPOO จัดไว้ทั้งแบบ DL และ RDL ใช้ 28–36 วัตต์",
+            "ตามตารางของ VOOPOO คอยล์ค่าต่ำอย่าง 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DL คือดูดลงปอดตรง ๆ และต้องใช้วัตต์สูง เช่น PnP-TW15 0.15 โอห์มอยู่ที่ 55–70 วัตต์ และ PnP-TW20 0.2 โอห์มอยู่ที่ 40–55 วัตต์ ถัดขึ้นมาคือ PnP-TW30 0.3 โอห์ม ใช้ 28–36 วัตต์ และ VOOPOO จัดให้ตัวนี้สูบได้ทั้งแบบ DL และแบบ RDL",
             "ช่วง 0.45 ถึง 0.6 โอห์ม VOOPOO จัดไว้เป็นแบบ RDL เกือบทุกตัว เช่น PnP-DW60 0.6 โอห์มใช้ 18–23 วัตต์ ส่วนคอยล์ 0.8 ถึง 1.2 โอห์มเป็นคอยล์สำหรับสูบแบบ MTL ที่ลมแน่นกว่าและใช้วัตต์ต่ำ เช่น PnP-R2 1.0 โอห์มใช้ 10–15 วัตต์",
             "ก่อนเลือกค่า ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ด้วย เพราะคอยล์ค่าต่ำต้องใช้เครื่องที่จ่ายไฟได้สูง",
           ],
@@ -4998,10 +4998,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
           paragraphs: [
-            "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับ VINCI, VINCI R, VINCI X, VINCI AIR, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI และหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
+            "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่น เช่น VINCI, VINCI R, VINCI X, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI และหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
             "VOOPOO บอกไว้ด้วยว่ารายชื่อนี้มีไว้ใช้อ้างอิง และการสูบจริงอาจต่างกันไปตามเครื่อง",
-            "เครื่องรุ่นใหม่อย่าง VINCI S, DRAG X3 และ DRAG S3 ใช้คอยล์อีกระบบหนึ่งคือ PnP X ซึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้ เครื่อง PnP รุ่นเดิมจึงต้องใช้คอยล์ PnP อย่างตระกูล VM หรือ TW แทน",
-            "แม้หน้านี้จะใช้ชื่อว่า Coil Vinci แต่ VOOPOO ไม่ได้ใส่คอยล์ PnP รุ่นเดิมไว้ในรายการที่ใช้กับ VINCI S ถ้าใช้เครื่องรุ่นใหม่อยู่ ดูคอยล์ได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92) และถ้าเป็น VINCI S ให้เลือกค่าตั้งแต่ 0.3 โอห์มขึ้นไป",
+            "เครื่องรุ่นใหม่อย่าง VINCI S และ DRAG X3 ใช้คอยล์อีกระบบหนึ่งคือ PnP X ซึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้ เครื่อง PnP รุ่นเดิมจึงต้องใช้คอยล์ PnP อย่างตระกูล VM หรือตระกูล TW",
+            "แม้หน้านี้จะใช้ชื่อว่า Coil Vinci แต่ VOOPOO ไม่ได้ใส่คอยล์ PnP รุ่นเดิมไว้ในรายการที่ใช้กับ VINCI S ถ้าใช้เครื่องรุ่นใหม่อยู่ ดูคอยล์ได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92) และถ้าใช้ VINCI S อยู่ ให้เลือกคอยล์ PnP X ค่า 0.3 โอห์มขึ้นไปเท่านั้น",
           ],
         },
         {
@@ -5025,7 +5025,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which resistance suits which draw?",
           paragraphs: [
-            "In VOOPOO's table the low resistances, 0.15Ω and 0.2Ω, are for an open DL draw at high wattage: the PnP-TW15 0.15Ω runs at 55–70W and the PnP-TW20 0.2Ω at 40–55W. The PnP-TW30 0.3Ω is rated for both DL and RDL at 28–36W.",
+            "In VOOPOO's table the low resistances, 0.15Ω and 0.2Ω, are for an open DL draw at high wattage: the PnP-TW15 0.15Ω runs at 55–70W and the PnP-TW20 0.2Ω at 40–55W. The PnP-TW30 0.3Ω runs at 28–36W and is rated for both DL and RDL.",
             "From 0.45Ω to 0.6Ω VOOPOO rates almost every coil RDL, such as the PnP-DW60 0.6Ω at 18–23W; from 0.8Ω to 1.2Ω they are tighter MTL coils at low wattage, such as the PnP-R2 1.0Ω at 10–15W. Check your device's maximum output first — the low-resistance coils need a device that can deliver high power.",
           ],
         },
@@ -5038,8 +5038,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which devices do they fit?",
           paragraphs: [
-            "VOOPOO's PnP coil page lists the PnP-R1 and PnP-R2 for the VINCI, VINCI R, VINCI X, VINCI AIR, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI and the PnP 22 and PnP 20 tanks; for some coils VOOPOO names specific devices, like the PnP-VM6 made for the DRAG X and the PnP-VM5 listed for the VINCI X and DRAG S. VOOPOO adds that the list is for reference and the experience can vary by device.",
-            "Newer devices such as the VINCI S, DRAG X3 and DRAG S3 use a different system, PnP X, which VOOPOO says does not fit original PnP devices — so original PnP devices need PnP coils such as the VM or TW series. Although this page is named Coil Vinci, VOOPOO does not list original PnP coils for the VINCI S. For a newer device, see [VOOPOO PnP X coils](/products/coil-92); on a VINCI S, pick 0.3Ω or above.",
+            "VOOPOO's PnP coil page lists the PnP-R1 and PnP-R2 for devices such as the VINCI, VINCI R, VINCI X, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI and the PnP 22 and PnP 20 tanks; for some coils VOOPOO names specific devices, like the PnP-VM6 made for the DRAG X and the PnP-VM5 listed for the VINCI X and DRAG S. VOOPOO adds that the list is for reference and the experience can vary by device.",
+            "Newer devices such as the VINCI S and DRAG X3 use a different system, PnP X, which VOOPOO says does not fit original PnP devices — so original PnP devices need PnP coils such as the VM or TW series. Although this page is named Coil Vinci, VOOPOO does not list original PnP coils for the VINCI S. For a newer device, see [VOOPOO PnP X coils](/products/coil-92); on a VINCI S, pick 0.3Ω or above.",
           ],
         },
         {
@@ -5075,8 +5075,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "适用哪些设备？",
           paragraphs: [
-            "VOOPOO 的 PnP 线圈页面列出，PnP-R1 和 PnP-R2 适用于 VINCI、VINCI R、VINCI X、VINCI AIR、DRAG S、[DRAG X](/products/drag-x)、DRAG Baby、FIND Trio、NAVI 以及 PnP 22 和 PnP 20 雾化器；部分线圈 VOOPOO 标注了特定设备，例如专为 DRAG X 做的 PnP-VM6，以及标注 VINCI X 和 DRAG S 的 PnP-VM5。VOOPOO 也说明该列表仅供参考，实际体验会因设备而异。",
-            "VINCI S、DRAG X3、DRAG S3 等新款设备用的是另一套 PnP X 系统，VOOPOO 表示它不适用于原版 PnP 设备，因此原版 PnP 设备需要使用 VM、TW 系列等 PnP 线圈。本页虽名为 Coil Vinci，但 VOOPOO 并未把原版 PnP 线圈列为 VINCI S 适用。用新款设备的话，请看 [VOOPOO PnP X 线圈](/products/coil-92)；VINCI S 请选 0.3Ω 及以上。",
+            "VOOPOO 的 PnP 线圈页面列出，PnP-R1 和 PnP-R2 适用于 VINCI、VINCI R、VINCI X、DRAG S、[DRAG X](/products/drag-x)、DRAG Baby、FIND Trio、NAVI 以及 PnP 22 和 PnP 20 雾化器；部分线圈 VOOPOO 标注了特定设备，例如专为 DRAG X 做的 PnP-VM6，以及标注 VINCI X 和 DRAG S 的 PnP-VM5。VOOPOO 也说明该列表仅供参考，实际体验会因设备而异。",
+            "VINCI S、DRAG X3 等新款设备用的是另一套 PnP X 系统，VOOPOO 表示它不适用于原版 PnP 设备，因此原版 PnP 设备需要使用 VM、TW 系列等 PnP 线圈。本页虽名为 Coil Vinci，但 VOOPOO 并未把原版 PnP 线圈列为 VINCI S 适用。用新款设备的话，请看 [VOOPOO PnP X 线圈](/products/coil-92)；VINCI S 请选 0.3Ω 及以上。",
           ],
         },
         {
