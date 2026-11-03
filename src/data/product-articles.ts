@@ -5945,9 +5945,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Articles queue 0211 batch 5, RELX (03/11): Infinity 2 Plus — every fact = RELX's own product page
   // (relxnow.com/products/relx-infinity-2-plus-device, curl 03/11; WebFetch was rate-limited): what each mode is for, Boost "up to
-  // 15% more vapor than Smooth mode", the Infinity 2's 5.5 / 6.5 / 8W, the orange button + "Plus" icon, "3 Power Levels, 1 Simple
-  // Click", the RELX Pod / Pod Pro / Pod Pro 2 fit, RELX + WAKA flavours. Left out (already twice on the page): the Plus's own
-  // watts, 440mAh, 15 min → 80%, the 4-level indicator, 1.9mL / 600 puffs. Legacy page → no article FAQ.
+  // 15% more vapor than Smooth mode", the Infinity 2's 5.5 / 6.5 / 8W, the orange button + "Plus" icon, the RELX Pod / Pod Pro /
+  // Pod Pro 2 fit, RELX + WAKA flavours. Not said: that one click switches modes (the page has only the heading "3 Power Levels,
+  // 1 Simple Click" — checker #1185). Left out (already twice on the page): the Plus's own watts, 440mAh, 15 min → 80%, the
+  // 4-level indicator, 1.9mL / 600 puffs. Shop article standard (owner 03/11): main keyword "RELX Infinity 2 Plus". Legacy page → no FAQ.
   "relx-infinity-2-plus": {
     th: {
       lede: "ด้านล่างสรุปจากหน้าเว็บของ RELX ว่าโหมดของ RELX Infinity 2 Plus แต่ละโหมดเหมาะกับการสูบแบบไหน รุ่นนี้ต่างจาก Infinity 2 ตรงไหน และเลือกหัวกับกลิ่นได้จากไหนบ้าง",
@@ -5956,7 +5957,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "RELX Infinity 2 Plus แต่ละโหมดต่างกันยังไง",
           paragraphs: [
             "RELX อธิบายไว้ว่าโหมด Eco สูบได้เบา ๆ และช่วยประหยัดแบต โหมด Smooth ให้รสนุ่มแบบที่คุ้นเคย ส่วนโหมด Boost ให้รสเข้มขึ้น และให้ควันมากกว่าโหมด Smooth ได้ถึง 15%",
-            "กดปุ่มครั้งเดียวก็เปลี่ยนโหมดได้ จะสลับไปมาระหว่างวันก็ทำได้ง่าย",
             "อยากรู้ว่าวัตต์เท่าไรเหมาะกับตัวเอง อ่านต่อได้ที่ [เลือกวัตต์และการปรับลม](/guides/choosing-wattage-and-airflow) ส่วนวิธีดูแลแบตอยู่ที่ [ดูแลแบตและการชาร์จ](/guides/battery-care-and-charging)",
           ],
         },
@@ -5982,7 +5982,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do the RELX Infinity 2 Plus modes differ?",
           paragraphs: [
-            "RELX describes Eco as the mode that saves battery with lighter puffs, Smooth as the one for a familiar, smooth flavour, and Boost as the one for a more intense flavour with up to 15% more vapour than Smooth. A single click switches between them. Not sure which wattage suits you? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow), and for making the battery last, [battery care and charging](/guides/battery-care-and-charging).",
+            "RELX describes Eco as the mode that saves battery with lighter puffs, Smooth as the one for a familiar, smooth flavour, and Boost as the one for a more intense flavour with up to 15% more vapour than Smooth. Not sure which wattage suits you? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow), and for making the battery last, [battery care and charging](/guides/battery-care-and-charging).",
           ],
         },
         {
@@ -6005,7 +6005,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "RELX Infinity 2 Plus 各模式有什么区别？",
           paragraphs: [
-            "RELX 介绍：Eco 模式抽吸更轻，也更省电；Smooth 模式口感顺滑、熟悉；Boost 模式口味更浓，烟雾量最多比 Smooth 模式多 15%。按一下按键即可切换模式。不确定多大功率适合自己，可以看[功率与气流怎么选](/guides/choosing-wattage-and-airflow)；电池保养见[电池保养与充电](/guides/battery-care-and-charging)。",
+            "RELX 介绍：Eco 模式抽吸更轻，也更省电；Smooth 模式口感顺滑、熟悉；Boost 模式口味更浓，烟雾量最多比 Smooth 模式多 15%。不确定多大功率适合自己，可以看[功率与气流怎么选](/guides/choosing-wattage-and-airflow)；电池保养见[电池保养与充电](/guides/battery-care-and-charging)。",
           ],
         },
         {
