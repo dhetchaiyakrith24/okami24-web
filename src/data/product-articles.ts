@@ -1758,6 +1758,357 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ARGUS Pod Cartridge listing — facts = VOOPOO's ARGUS POD SE page (side-fill
+  // pod: watts, nicotine, leak-proof, full view, fit), ARGUS P1 page (fill), ARGUS G page (Top Fill watts, the 0.4Ω / 30W line,
+  // whole-family fit, ~14 mL per pod) and voopoo.com/faq.html (5–6 refills); WebFetch 03/11, quotes in
+  // articles-0311/voopoo-facts.md. VOOPOO's freebase / salt nic labels are not tied to a resistance on any page → unsaid.
+  // "Argus mix" is not a VOOPOO name → unsaid. "Side fill + Top Fill" stays at tagline + lede (twice).
+  "coil-21": {
+    th: {
+      lede: "หน้านี้มีหัวพอต ARGUS ของ VOOPOO ให้เลือกสองแบบ คือหัวที่มีคอยล์ในตัวแบบเติมด้านข้าง กับหัว Top Fill ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และเลือกให้ตรงกับเครื่องยังไง",
+      sections: [
+        {
+          heading: "หัวที่มีคอยล์ในตัวใช้วัตต์เท่าไร",
+          paragraphs: [
+            "VOOPOO ระบุว่าหัว ARGUS POD 0.7 โอห์มใช้ 14–18 วัตต์ ส่วนหัว 1.2 โอห์มใช้ 9–12 วัตต์ และแนะนำให้ใช้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 50mg",
+          ],
+        },
+        {
+          heading: "เติมน้ำยายังไง แล้วดูน้ำยาที่เหลือได้ไหม",
+          paragraphs: [
+            "เวลาเติม ให้ดึงหัวออกจากเครื่อง แล้วเปิดจุกเติมน้ำยาที่ตัวหัว",
+            "ตัวหัวเป็นแบบใสมองเห็นได้รอบ VOOPOO บอกว่าดูน้ำยาที่เหลือได้ตลอด โดยไม่ต้องดึงหัวออกมา",
+          ],
+        },
+        {
+          heading: "หัว ARGUS POD กันรั่วยังไง",
+          paragraphs: [
+            "VOOPOO ใส่โครงสร้างกันรั่วหลายชั้นไว้ในหัว ARGUS POD และบอกว่าโครงสร้างแบบสี่รูช่วยกักน้ำยาไว้ข้างในหัวได้แน่น",
+          ],
+        },
+        {
+          heading: "หัวหนึ่งใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "หน้า ARGUS G ของ VOOPOO บอกว่าคอยล์หนึ่งตัว หรือหัวที่มีคอยล์ในตัวหนึ่งหัว ใช้กับน้ำยาได้ราว 14mL ส่วนหน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เปลี่ยนคอยล์ใหม่หลังเติมน้ำยาไปราว 5–6 ครั้ง",
+          ],
+        },
+        {
+          heading: "หัว Top Fill มีค่าไหนบ้าง",
+          paragraphs: [
+            "หัว Top Fill มีสามค่า หัว 0.4 โอห์มใช้ 18–30 วัตต์ หัว 0.7 โอห์มใช้ 14–18 วัตต์ และหัว 1.0 โอห์มใช้ 10–14 วัตต์",
+            "VOOPOO บอกว่าหัว Top Fill 0.4 โอห์มต้องใช้กับเครื่องในตระกูล ARGUS Pod ที่จ่ายไฟได้ 30 วัตต์ ก่อนเลือกค่านี้จึงควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ก่อนนะคะ",
+          ],
+        },
+        {
+          heading: "เลือกหัวให้ตรงกับเครื่องยังไง",
+          paragraphs: [
+            "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับเครื่องในตระกูล ARGUS Pod ส่วนหัวแบบเติมด้านข้าง VOOPOO ระบุชื่อรุ่นไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
+            "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ ให้เลือกหัว Top Fill เพราะหน้าของรุ่นนั้นระบุไว้แค่หัว Top Fill ส่วนใครอยากเปลี่ยนคอยล์เองได้ VOOPOO มีหัว ARGUS POD แบบเปล่าที่ใส่คอยล์ ITO ดูได้ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต ARGUS ใช้กับ ARGUS G4 ได้ไหม",
+          answer: "ได้ค่ะ หน้า ARGUS G4 ของ VOOPOO ระบุว่าเครื่องนี้ใช้หัวพอตในตระกูล ARGUS ได้ทุกแบบ รวมถึงหัว Top Fill ด้วยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "This page carries two kinds of VOOPOO ARGUS pod: side-fill pods with a built-in coil, and Top Fill pods. Below, from VOOPOO's own pages: the wattage for each, how to fill, how long a pod lasts and how to match one to your device.",
+      sections: [
+        {
+          heading: "What wattage do the built-in-coil pods need?",
+          paragraphs: [
+            "VOOPOO rates the ARGUS POD cartridge 0.7Ω at 14–18W and the 1.2Ω at 9–12W, and recommends e-liquid of up to 50 mg nicotine strength.",
+          ],
+        },
+        {
+          heading: "How do I fill it, and can I see what's left?",
+          paragraphs: [
+            "Pull the pod out of the device and open the fill plug. The pod is full-view, so VOOPOO says you can check the level at any time without pulling it out.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "VOOPOO builds a multi-layer leak-proof design into the ARGUS POD cartridge and says its four-hole structure locks the e-liquid firmly inside.",
+          ],
+        },
+        {
+          heading: "How long does one pod last?",
+          paragraphs: [
+            "VOOPOO's ARGUS G page says one coil or one built-in-coil pod lasts for about 14 mL of e-liquid, and VOOPOO's FAQ suggests a new coil after 5–6 refills.",
+          ],
+        },
+        {
+          heading: "Which Top Fill resistances are there?",
+          paragraphs: [
+            "Three: 0.4Ω at 18–30W, 0.7Ω at 14–18W and 1.0Ω at 10–14W. VOOPOO says the 0.4Ω Top Fill is only for ARGUS Pod Family devices with 30W output, so check your device's maximum first.",
+          ],
+        },
+        {
+          heading: "How do I match a pod to my device?",
+          paragraphs: [
+            "VOOPOO says ARGUS cartridges fit the ARGUS Pod Family, and names the ARGUS G, ARGUS POD, ARGUS P1 and ARGUS Z for the side-fill pods. On an [ARGUS G3 mini](/products/argus-g3-mini), choose a Top Fill pod — that model's page names only Top Fill. To change coils yourself, VOOPOO also makes an empty ARGUS POD cartridge that takes ITO coils: see [the ARGUS P1 empty pod](/products/coil-83).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "本页有两种 VOOPOO ARGUS 烟弹：侧注油、线圈一体的烟弹，以及 Top Fill 顶部注油烟弹。下面根据 VOOPOO 官网的资料，介绍各自的功率、注油方法、一颗能用多久，以及怎么选到适合自己设备的款式。",
+      sections: [
+        {
+          heading: "一体式线圈烟弹需要多大功率？",
+          paragraphs: [
+            "VOOPOO 标注 ARGUS POD 烟弹 0.7Ω 为 14–18W，1.2Ω 为 9–12W，并建议搭配尼古丁浓度不超过 50 mg 的烟油。",
+          ],
+        },
+        {
+          heading: "怎么注油？能看到剩余烟油吗？",
+          paragraphs: [
+            "把烟弹从主机上拔下，打开注油塞即可注油。烟弹为全透明设计，VOOPOO 表示无需拔出就能随时查看剩余油量。",
+          ],
+        },
+        {
+          heading: "防漏做得怎么样？",
+          paragraphs: [
+            "VOOPOO 在 ARGUS POD 烟弹里采用多层防漏设计，并表示四孔结构能把烟油牢牢锁在烟弹内。",
+          ],
+        },
+        {
+          heading: "一颗烟弹能用多久？",
+          paragraphs: [
+            "VOOPOO 的 ARGUS G 页面写道，一颗线圈或一颗一体式烟弹大约可用 14 mL 烟油；VOOPOO 的常见问题也建议注油 5–6 次后更换新线圈。",
+          ],
+        },
+        {
+          heading: "Top Fill 有哪些阻值？",
+          paragraphs: [
+            "共三种：0.4Ω 为 18–30W，0.7Ω 为 14–18W，1.0Ω 为 10–14W。VOOPOO 注明 0.4Ω Top Fill 只适用于输出可达 30W 的 ARGUS Pod 系列设备，选购前请先确认设备的最大功率。",
+          ],
+        },
+        {
+          heading: "怎么选到适合自己设备的烟弹？",
+          paragraphs: [
+            "VOOPOO 表示 ARGUS 烟弹适用于 ARGUS Pod 系列设备，侧注油烟弹则点名适用 ARGUS G、ARGUS POD、ARGUS P1 和 ARGUS Z。用 [ARGUS G3 mini](/products/argus-g3-mini) 的话请选 Top Fill，因为该机型页面只列出 Top Fill。想自己换线圈的话，VOOPOO 还有可装 ITO 线圈的 ARGUS POD 空烟弹，见 [Argus P1 空烟弹](/products/coil-83)。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "ARGUS 烟弹能用在 ARGUS G4 上吗？",
+          answer: "可以。VOOPOO 的 ARGUS G4 页面写明这台机器适用所有 ARGUS 系列烟弹，包括 Top Fill。",
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ARGUS POD empty cartridge ("Argus P1 empty pod") — facts = VOOPOO's ARGUS P1 page
+  // (the two kits' box lists, the ITO-M0…M3 coils, fill), its DRAG Q page (ITO coil table: draw, watts, nicotine, mesh, ~10 fills)
+  // and voopoo.com/faq.html (70% fill, 5 min, low wattage first); WebFetch 03/11. Capacity / pack count = the spec rows
+  // (a retailer source) → not repeated. Fit with ARGUS POD / P1 / Z / G / A stays in the spec row.
+  "coil-83": {
+    th: {
+      lede: "หัวนี้คือหัว ARGUS POD แบบเปล่า ไม่มีคอยล์ติดมา ต้องใส่คอยล์ ITO เอง ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวแบบนี้มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับการสูบแบบไหน และดูแลคอยล์ยังไง",
+      sections: [
+        {
+          heading: "หัวเปล่านี้มากับเครื่องรุ่นไหน",
+          paragraphs: [
+            "ในหน้าเดียวกันของ VOOPOO เครื่อง ARGUS POD มากับหัวที่มีคอยล์ในตัว ส่วน ARGUS P1 มากับหัวเปล่าแบบนี้ 1 หัว พร้อมคอยล์ ITO-M1 0.7 โอห์มกับ ITO-M3 1.2 โอห์ม",
+            "ถ้าอยากได้หัวที่มีคอยล์ในตัว ไม่ต้องเปลี่ยนคอยล์เอง หัวแบบนั้นมีให้เลือกที่หน้า [หัวพอต ARGUS](/products/coil-21)",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ ITO ค่าไหนได้บ้าง",
+          paragraphs: [
+            "หน้า ARGUS P1 ของ VOOPOO ระบุคอยล์ ITO ไว้สี่ค่า คือ ITO-M0 0.5 โอห์ม ITO-M1 0.7 โอห์ม ITO-M2 1.0 โอห์ม และ ITO-M3 1.2 โอห์ม ทั้งสี่ตัวเป็นคอยล์ mesh",
+            "ตามตารางคอยล์ ITO ของ VOOPOO ตัว ITO-M0 สูบแบบ RDL ใช้ 18–25 วัตต์ ITO-M1 เป็น MTL แบบลมไม่แน่นมาก ใช้ 14–18 วัตต์ ITO-M2 เป็น MTL ใช้ 10–14 วัตต์ และ ITO-M3 เป็น MTL ลมแน่น ใช้ 8–12 วัตต์",
+          ],
+        },
+        {
+          heading: "ค่าไหนเหมาะกับน้ำยาแบบไหน",
+          paragraphs: [
+            "VOOPOO แนะนำความเข้มข้นนิโคตินไว้ตามค่าคอยล์ด้วย ITO-M0 ไม่เกิน 20mg ITO-M1 อยู่ที่ 20–30mg ITO-M2 อยู่ที่ 30–50mg และ ITO-M3 ไม่เกิน 50mg",
+            "ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "เติมน้ำยายังไง และคอยล์ใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "เวลาเติม ให้ดึงหัวออกจากเครื่อง แล้วเปิดจุกเติมน้ำยาที่ตัวหัว VOOPOO ประเมินไว้ว่าคอยล์ ITO หนึ่งตัวใช้ได้ราว 10 ครั้งที่เติมน้ำยา",
+            "พอใส่คอยล์ใหม่ หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% ของหัว ทิ้งไว้ 5 นาทีก่อนสูบ และสูบด้วยวัตต์ต่ำในช่วงแรก",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวเปล่า Argus P1 มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ หัวนี้เป็นหัวเปล่า ต้องใส่คอยล์ ITO ก่อนใช้นะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "This is VOOPOO's empty ARGUS POD cartridge: no coil comes in it, you fit an ITO coil yourself. Below, from VOOPOO's own pages: which kit it comes with, which ITO coils fit, which draw each suits and how to look after the coil.",
+      sections: [
+        {
+          heading: "Which kit does this empty pod come with?",
+          paragraphs: [
+            "On the same VOOPOO page, the ARGUS POD kit comes with built-in-coil pods, while the ARGUS P1 kit comes with one of these empty pods plus an ITO-M1 0.7Ω and an ITO-M3 1.2Ω coil. If you'd rather not change coils, built-in-coil pods are on the [ARGUS pods](/products/coil-21) page.",
+          ],
+        },
+        {
+          heading: "Which ITO coils fit?",
+          paragraphs: [
+            "VOOPOO's ARGUS P1 page lists four ITO coils, all mesh: ITO-M0 0.5Ω, ITO-M1 0.7Ω, ITO-M2 1.0Ω and ITO-M3 1.2Ω. In VOOPOO's ITO table the M0 is RDL at 18–25W, the M1 a loose MTL at 14–18W, the M2 MTL at 10–14W and the M3 a tight MTL at 8–12W.",
+          ],
+        },
+        {
+          heading: "Which coil for which e-liquid?",
+          paragraphs: [
+            "VOOPOO gives a nicotine strength per coil: up to 20 mg for the M0, 20–30 mg for the M1, 30–50 mg for the M2 and up to 50 mg for the M3. Not sure which draw you like? See [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "How do I fill it, and how long does a coil last?",
+          paragraphs: [
+            "Pull the pod out of the device and open the fill plug. VOOPOO estimates one ITO coil for about 10 fills. With a new coil, VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping and taking the first few puffs at low wattage.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "这是 VOOPOO 的 ARGUS POD 空烟弹，内部不带线圈，需要自己装 ITO 线圈。下面根据 VOOPOO 官网的资料，介绍它随哪款套装附带、能装哪些 ITO 线圈、各自适合哪种抽法，以及线圈怎么保养。",
+      sections: [
+        {
+          heading: "这款空烟弹随哪款套装附带？",
+          paragraphs: [
+            "在 VOOPOO 同一页面上，ARGUS POD 套装附带一体式线圈烟弹，而 ARGUS P1 套装附带 1 个这种空烟弹，加上 ITO-M1 0.7Ω 和 ITO-M3 1.2Ω 两颗线圈。不想自己换线圈的话，一体式烟弹见 [ARGUS 烟弹](/products/coil-21)。",
+          ],
+        },
+        {
+          heading: "能装哪些 ITO 线圈？",
+          paragraphs: [
+            "VOOPOO 的 ARGUS P1 页面列出四款 ITO 线圈，都是网状线圈：ITO-M0 0.5Ω、ITO-M1 0.7Ω、ITO-M2 1.0Ω 和 ITO-M3 1.2Ω。按 VOOPOO 的 ITO 表格，M0 为 RDL，18–25W；M1 为偏松的 MTL，14–18W；M2 为 MTL，10–14W；M3 为紧 MTL，8–12W。",
+          ],
+        },
+        {
+          heading: "哪颗线圈配哪种烟油？",
+          paragraphs: [
+            "VOOPOO 按线圈给出尼古丁浓度建议：M0 不超过 20 mg，M1 为 20–30 mg，M2 为 30–50 mg，M3 不超过 50 mg。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "怎么注油？线圈能用多久？",
+          paragraphs: [
+            "把烟弹从主机上拔下，打开注油塞即可注油。VOOPOO 估计一颗 ITO 线圈约可注油 10 次。装上新线圈后，VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，前几口用低功率。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ITO-X empty pod — facts = VOOPOO's DRAG Q page (the ITO-X pod: material, size,
+  // 3.5 mL "less filling", steel base, directional coil, 4 silicone rings, "all ITO coils", the ITO table, ~10 fills) and its DORIC Q
+  // page (ITO-X Pod in the compatible list); WebFetch 03/11. Top fill = the tagline + a spec row VOOPOO's DRAG Q page does not
+  // state → not repeated. Worded apart from coil-83 (same ITO coils).
+  "coil-68": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้า DRAG Q ของ VOOPOO ว่าหัว ITO-X ทำจากอะไร ยึดกับเครื่องยังไง กันรั่วยังไง ใส่คอยล์ ITO ค่าไหนได้ และนอกจาก DRAG Q แล้วยังใช้กับเครื่องไหนได้อีก",
+      sections: [
+        {
+          heading: "หัว ITO-X ทำจากอะไร",
+          paragraphs: [
+            "หัว ITO-X ทำจากสเตนเลสกับ PCTG ขนาด 51.45 × 21.5 × 21.5 มม. VOOPOO บอกว่าหัวที่จุได้ 3.5mL ช่วยให้สูบได้นานขึ้น และเติมน้ำยาน้อยครั้งลง",
+            "ฐานของหัวเป็นสเตนเลส VOOPOO ออกแบบให้ล็อกเข้ากับตัวเครื่องได้แน่น",
+          ],
+        },
+        {
+          heading: "กันรั่วยังไง",
+          paragraphs: [
+            "คอยล์ ITO เสียบเข้าหัวได้ทางเดียว VOOPOO บอกว่าช่วยให้ลมเดินตรงและรสคงที่ ส่วนรอบคอยล์มีแหวนซิลิโคน 4 ชั้นที่ทำหน้าที่กันรั่ว",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ ITO ค่าไหนได้บ้าง",
+          paragraphs: [
+            "VOOPOO บอกว่า DRAG Q ใช้คอยล์ ITO ได้ทุกตัว คอยล์ตระกูลนี้มีสี่ตัว เป็นคอยล์ mesh ทั้งหมด ไล่ตั้งแต่ 0.5 ถึง 1.2 โอห์ม ครอบคลุมตั้งแต่การสูบแบบ RDL ไปจนถึง MTL",
+            "ตัว 0.5 โอห์มคือ ITO-M0 สูบแบบ RDL ที่ 18–25 วัตต์ ส่วน ITO-M1 0.7 โอห์ม ITO-M2 1.0 โอห์ม และ ITO-M3 1.2 โอห์ม เป็นแบบ MTL ที่ลมแน่นขึ้นตามลำดับ ใช้วัตต์ต่ำลงจนถึง 8–12 วัตต์ของ ITO-M3",
+            "VOOPOO ประเมินไว้ว่าคอยล์ ITO หนึ่งตัวใช้ได้ราว 10 ครั้งที่เติมน้ำยา ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "นอกจาก DRAG Q แล้วใช้กับเครื่องไหนได้อีก",
+          paragraphs: [
+            "หน้า DORIC Q ของ VOOPOO ใส่ ITO-X Pod ไว้ในรายการหัวที่ใช้ร่วมกันได้ด้วย ถ้าใช้ DORIC Q อยู่ หัวนี้จึงเป็นอีกทางเลือกหนึ่ง",
+            "ส่วนเครื่อง ARGUS P1 ใช้คอยล์ ITO ชุดเดียวกันนี้ แต่ใช้หัวเปล่าอีกแบบ ดูได้ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวเปล่า ITO-X มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ หัวนี้เป็นหัวเปล่า ต้องใส่คอยล์ ITO ก่อนใช้นะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from VOOPOO's DRAG Q page: what the ITO-X pod is made of, how it locks on, how it resists leaks, which ITO coils fit and which devices besides the DRAG Q take it.",
+      sections: [
+        {
+          heading: "What is the ITO-X pod made of?",
+          paragraphs: [
+            "Stainless steel and PCTG, 51.45 × 21.5 × 21.5 mm. VOOPOO says the 3.5 mL capacity gives longer vaping with less filling, and the stainless-steel base is designed to buckle firmly onto the device.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "The ITO coil goes in one way only, which VOOPOO says keeps the airflow direct and the taste stable, and four layers of silicone ring form the leak-proof seal.",
+          ],
+        },
+        {
+          heading: "Which ITO coils fit?",
+          paragraphs: [
+            "VOOPOO says the DRAG Q takes every ITO coil: four mesh coils from 0.5Ω to 1.2Ω, covering RDL to MTL. The ITO-M0 0.5Ω is RDL at 18–25W; the ITO-M1 0.7Ω, ITO-M2 1.0Ω and ITO-M3 1.2Ω are MTL, tighter and lower in wattage down to the M3's 8–12W. VOOPOO estimates one ITO coil for about 10 fills. Not sure which draw you like? See [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "Which devices besides the DRAG Q take it?",
+          paragraphs: [
+            "VOOPOO's DORIC Q page lists the ITO-X Pod among its compatible cartridges too. The ARGUS P1 uses the same ITO coils but a different empty pod — see [the ARGUS P1 empty pod](/products/coil-83).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 的 DRAG Q 页面，介绍 ITO-X 烟弹的材质、怎么固定在主机上、怎么防漏、能装哪些 ITO 线圈，以及除了 DRAG Q 还适用哪些设备。",
+      sections: [
+        {
+          heading: "ITO-X 烟弹是什么材质？",
+          paragraphs: [
+            "不锈钢加 PCTG，尺寸 51.45 × 21.5 × 21.5 mm。VOOPOO 表示 3.5 mL 的容量让抽得更久、注油次数更少；不锈钢底座则能与主机牢牢扣合。",
+          ],
+        },
+        {
+          heading: "怎么防漏？",
+          paragraphs: [
+            "ITO 线圈只能按一个方向插入，VOOPOO 表示这样气流更直接、口感更稳定；四层硅胶圈构成防漏结构。",
+          ],
+        },
+        {
+          heading: "能装哪些 ITO 线圈？",
+          paragraphs: [
+            "VOOPOO 表示 DRAG Q 兼容所有 ITO 线圈：共四款网状线圈，阻值 0.5Ω 到 1.2Ω，覆盖 RDL 到 MTL。ITO-M0 0.5Ω 为 RDL，18–25W；ITO-M1 0.7Ω、ITO-M2 1.0Ω 和 ITO-M3 1.2Ω 为 MTL，吸感依次更紧、功率更低，M3 为 8–12W。VOOPOO 估计一颗 ITO 线圈约可注油 10 次。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "除了 DRAG Q 还适用哪些设备？",
+          paragraphs: [
+            "VOOPOO 的 DORIC Q 页面也把 ITO-X Pod 列为兼容烟弹。ARGUS P1 用的是同样的 ITO 线圈，但空烟弹是另一款，见 [Argus P1 空烟弹](/products/coil-83)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 2g (05/10): from VOOPOO's ARGUS G4 page and posters; Thai = thai-copy 05/10.
   "argus-g4": {
     th: {
