@@ -1158,7 +1158,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Articles queue 0211 batch 5, VOOPOO (03/11): TPP coils — facts = VOOPOO's DRAG X PRO page (TPP-DM1…DM4 table: draw style,
   // ohms, watts, ≤10 mg; "two TPP coils of 0.15 Ω and 0.2 Ω"), its DRAG X Plus page (the patented TPP coil tech) and its TPP
   // platform page (voopoo.com/fr/tpp-platform/tpp-dm3.html: mesh "Dual In One", DM3 & DM4 newly improved, the pod takes every TPP
-  // coil, rest 3–5 min); WebFetch 03/11, quotes in articles-0311/voopoo-facts.md. Pack count is not on a VOOPOO page → unsaid.
+  // coil — said of the TPP-X pod, not repeated here); rest / first-use = voopoo.com/faq.html; WebFetch 03/11, quotes in articles-0311/voopoo-facts.md. Pack count is not on a VOOPOO page → unsaid.
   "coil-38": {
     th: {
       lede: "VOOPOO ทำคอยล์ TPP ไว้สี่รุ่น ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละรุ่นต่างกันตรงไหน ใช้วัตต์เท่าไร ใช้กับน้ำยาแบบไหน และคอยล์ตระกูลนี้มีอะไรพิเศษ",
@@ -1167,7 +1167,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "คอยล์ TPP สี่รุ่นต่างกันยังไง",
           paragraphs: [
             "ตามตารางของ VOOPOO TPP-DM1 กับ TPP-DM3 เป็น 0.15 โอห์มเท่ากัน แต่ใช้วัตต์ต่างกัน DM1 ใช้ 60–80 วัตต์ ส่วน DM3 ใช้ 80–100 วัตต์ ทั้งสองตัวและ TPP-DM2 เป็นคอยล์สำหรับสูบแบบดูดลงปอดตรง ๆ ที่ VOOPOO เรียกว่า DL",
-            "ส่วน TPP-DM4 VOOPOO จัดไว้เป็นแบบ Half DL และใช้วัตต์ต่ำที่สุดในสี่รุ่นนี้ VOOPOO ยังระบุด้วยว่า DM3 กับ DM4 เป็นสองรุ่นที่ปรับปรุงใหม่",
+            "ส่วน TPP-DM4 เป็นแบบ Half DL ใช้ 32–40 วัตต์ ซึ่งต่ำกว่าอีกสามรุ่น นอกจากนี้ VOOPOO ระบุว่า DM3 กับ DM4 เป็นสองรุ่นที่ปรับปรุงใหม่",
           ],
         },
         {
@@ -1194,7 +1194,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใส่คอยล์ใหม่แล้วต้องรอไหม",
           paragraphs: [
-            "VOOPOO แนะนำให้พักน้ำยาไว้ 3–5 นาทีหลังเติมก่อนสูบ และให้สูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำ",
+            "หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% ทิ้งไว้ 5 นาทีก่อนสูบ และให้สูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำ",
             "ถ้าอยากรู้ว่าคอยล์ถึงรอบเปลี่ยนเมื่อไหร่ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
           ],
         },
@@ -1206,7 +1206,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do the four TPP coils differ?",
           paragraphs: [
-            "In VOOPOO's table the TPP-DM1 and TPP-DM3 are both 0.15Ω but run at different wattages — 60–80W for the DM1, 80–100W for the DM3. Those two and the TPP-DM2 are what VOOPOO calls DL coils, for a direct-lung draw. The TPP-DM4 is rated Half DL and needs the least wattage of the four. VOOPOO marks the DM3 and DM4 as newly improved.",
+            "In VOOPOO's table the TPP-DM1 and TPP-DM3 are both 0.15Ω but run at different wattages — 60–80W for the DM1, 80–100W for the DM3. Those two and the TPP-DM2 are what VOOPOO calls DL coils, for a direct-lung draw. The TPP-DM4 is rated Half DL at 32–40W, lower than the other three. VOOPOO marks the DM3 and DM4 as newly improved.",
           ],
         },
         {
@@ -1230,7 +1230,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Do I need to wait after fitting a new coil?",
           paragraphs: [
-            "VOOPOO recommends letting the e-liquid rest 3–5 minutes after filling, and taking the first few puffs on a new coil at low wattage. When to change a coil is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+            "VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping, and taking the first few puffs on a new coil at low wattage. When to change a coil is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
           ],
         },
       ],
@@ -1241,7 +1241,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "四款 TPP 线圈有什么区别？",
           paragraphs: [
-            "按 VOOPOO 的表格，TPP-DM1 和 TPP-DM3 都是 0.15Ω，但功率不同：DM1 为 60–80W，DM3 为 80–100W。这两款和 TPP-DM2 都属于 VOOPOO 标注的 DL 直肺线圈。TPP-DM4 标为 Half DL，是四款里功率最低的。VOOPOO 注明 DM3 和 DM4 是新升级的型号。",
+            "按 VOOPOO 的表格，TPP-DM1 和 TPP-DM3 都是 0.15Ω，但功率不同：DM1 为 60–80W，DM3 为 80–100W。这两款和 TPP-DM2 都属于 VOOPOO 标注的 DL 直肺线圈。TPP-DM4 标为 Half DL，功率 32–40W，低于另外三款。VOOPOO 注明 DM3 和 DM4 是新升级的型号。",
           ],
         },
         {
@@ -1265,17 +1265,17 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "装新线圈后要等吗？",
           paragraphs: [
-            "VOOPOO 建议注油后让烟油静置 3–5 分钟再抽，新线圈的前几口用低功率。什么时候该换线圈，见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+            "VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，新线圈的前几口用低功率。什么时候该换线圈，见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
           ],
         },
       ],
     },
   },
-  // Articles queue 0211 batch 5, VOOPOO (03/11): TPP Pod (empty) — facts = VOOPOO's TPP platform page
-  // (voopoo.com/fr/tpp-platform/tpp-dm3.html: the platform's 5.5 ml magnetic pod, side fill, stainless steel + PCTG, 510 base, 360°
-  // + bottom airflow, "compatible with all TPP coils", rest 3–5 min), its DRAG X Plus page ("TPP pod tank with 510 interface") and the
-  // DRAG X PRO page (TPP-DM1…DM4 table); WebFetch 03/11. VOOPOO's page names the platform pod "TPP-X Pod" — the article quotes it as
-  // the platform page's pod, never claims a model name for the shop's listing. The DRAG 3 / DRAG X Plus fit stays in the spec row.
+  // Articles queue 0211 batch 5, VOOPOO (03/11): TPP Pod (empty) — facts = VOOPOO's DRAG X Plus page ("TPP pod tank with 510
+  // interface"; the patented TPP coil tech), its DRAG X PRO page (TPP-DM1…DM4 table) and voopoo.com/faq.html (70% fill, 5 min, low
+  // wattage first); WebFetch 03/11. VOOPOO's TPP platform page describes the TPP-X Pod (magnetic, side fill, steel + PCTG, 360°
+  // airflow, 3–5 min rest) — a different pod, so none of it is said here (checker #1179 552d2398). The DRAG 3 / DRAG X Plus fit stays
+  // in the spec row. Page stays under 1,000 Thai chars: VOOPOO says little about this pod (Friday 03/11).
   "coil-87": {
     th: {
       lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอต TPP ต่อกับเครื่องยังไง ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน",
@@ -1289,7 +1289,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใส่คอยล์ TPP รุ่นไหนได้บ้าง",
           paragraphs: [
-            "หัวนี้ใช้กับคอยล์ตระกูล TPP ซึ่งตามตารางของ VOOPOO มีสี่รุ่น คือ TPP-DM1 0.15 โอห์มใช้ 60–80 วัตต์ TPP-DM2 0.2 โอห์มใช้ 40–60 วัตต์ TPP-DM3 0.15 โอห์มใช้ 80–100 วัตต์ และ TPP-DM4 0.3 โอห์มใช้ 32–40 วัตต์",
+            "หัวนี้ใช้กับคอยล์ตระกูล TPP",
+            "หน้า DRAG X PRO ของ VOOPOO ระบุคอยล์ TPP ไว้สี่รุ่น คือ TPP-DM1 0.15 โอห์มใช้ 60–80 วัตต์ TPP-DM2 0.2 โอห์มใช้ 40–60 วัตต์ TPP-DM3 0.15 โอห์มใช้ 80–100 วัตต์ และ TPP-DM4 0.3 โอห์มใช้ 32–40 วัตต์",
             "คอยล์ทุกรุ่นนี้ VOOPOO แนะนำให้ใช้กับน้ำยาที่มีความเข้มข้นนิโคตินไม่เกิน 10mg ส่วนรายละเอียดของแต่ละรุ่นดูได้ที่หน้า [คอยล์ VOOPOO TPP](/products/coil-38)",
             "VOOPOO บอกด้วยว่าคอยล์ตระกูล TPP ใช้เทคโนโลยีใหม่ที่จดสิทธิบัตรไว้ ซึ่งช่วยให้คอยล์ร้อนได้เร็วขึ้น",
           ],
@@ -1297,7 +1298,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "เติมน้ำยาแล้วต้องรอไหม",
           paragraphs: [
-            "หลังเติมน้ำยา VOOPOO แนะนำให้พักไว้ 3–5 นาทีก่อนสูบ และหน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้สูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำก่อน",
+            "หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% แล้วทิ้งไว้ 5 นาทีก่อนสูบ และสูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำก่อน",
           ],
         },
         {
@@ -1321,13 +1322,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which TPP coils fit?",
           paragraphs: [
-            "It takes TPP coils. VOOPOO's table lists four: TPP-DM1 0.15Ω at 60–80W, TPP-DM2 0.2Ω at 40–60W, TPP-DM3 0.15Ω at 80–100W and TPP-DM4 0.3Ω at 32–40W, all recommended for e-liquid up to 10 mg nicotine strength. Details for each are on the [VOOPOO TPP coils](/products/coil-38) page. VOOPOO also says the TPP series uses a new patented technology that speeds up heating.",
+            "It takes TPP coils; VOOPOO's DRAG X PRO page lists four: TPP-DM1 0.15Ω at 60–80W, TPP-DM2 0.2Ω at 40–60W, TPP-DM3 0.15Ω at 80–100W and TPP-DM4 0.3Ω at 32–40W, all recommended for e-liquid up to 10 mg nicotine strength. Details for each are on the [VOOPOO TPP coils](/products/coil-38) page. VOOPOO also says the TPP series uses a new patented technology that speeds up heating.",
           ],
         },
         {
           heading: "Do I need to wait after filling?",
           paragraphs: [
-            "VOOPOO recommends letting the e-liquid rest 3–5 minutes before vaping, and its FAQ suggests the first few puffs on a new coil at low wattage.",
+            "VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping and taking the first few puffs on a new coil at low wattage.",
           ],
         },
         {
@@ -1350,13 +1351,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "能装哪些 TPP 线圈？",
           paragraphs: [
-            "这款烟弹使用 TPP 线圈。VOOPOO 的表格列出四款：TPP-DM1 0.15Ω 为 60–80W，TPP-DM2 0.2Ω 为 40–60W，TPP-DM3 0.15Ω 为 80–100W，TPP-DM4 0.3Ω 为 32–40W，都建议搭配尼古丁浓度不超过 10 mg 的烟油。各款详情见 [VOOPOO TPP 线圈](/products/coil-38)。VOOPOO 还表示 TPP 系列采用新的专利技术，加热更快。",
+            "这款烟弹使用 TPP 线圈。VOOPOO 的 DRAG X PRO 页面列出四款：TPP-DM1 0.15Ω 为 60–80W，TPP-DM2 0.2Ω 为 40–60W，TPP-DM3 0.15Ω 为 80–100W，TPP-DM4 0.3Ω 为 32–40W，都建议搭配尼古丁浓度不超过 10 mg 的烟油。各款详情见 [VOOPOO TPP 线圈](/products/coil-38)。VOOPOO 还表示 TPP 系列采用新的专利技术，加热更快。",
           ],
         },
         {
           heading: "注油后要等吗？",
           paragraphs: [
-            "VOOPOO 建议注油后让烟油静置 3–5 分钟再抽，常见问题也建议新线圈的前几口用低功率。",
+            "VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，新线圈的前几口用低功率。",
           ],
         },
         {
@@ -1474,10 +1475,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "หัวพอต PnP X กันรั่วยังไง",
+          heading: "คอยล์ PnP X กันรั่วยังไง",
           paragraphs: [
-            "ข้างในหัวพอต VOOPOO แยกทางลม ส่วนที่ทำความร้อน และช่องอากาศไว้คนละชั้น เพื่อกันไม่ให้น้ำยาไหลซึมลงด้านล่าง",
-            "ที่ก้นหัวพอตมีโครงสร้างรูปตัว L สองตัว VOOPOO บอกว่าช่วยให้แรงดันข้างในสมดุล และกันไม่ให้หยดน้ำยาที่ค้างอยู่ซึมออกมา",
+            "ข้างในคอยล์ PnP X VOOPOO แยกทางลม ส่วนที่ทำความร้อน และช่องอากาศไว้คนละชั้น เพื่อกันไม่ให้น้ำยาไหลซึมลงด้านล่าง",
+            "ที่ฐานของคอยล์มีโครงสร้างรูปตัว L สองตัว VOOPOO บอกว่าช่วยให้แรงดันข้างในสมดุล และกันไม่ให้หยดน้ำยาที่ค้างอยู่ซึมออกมา",
           ],
         },
         {
@@ -1509,7 +1510,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "VOOPOO makes its empty PnP X pod in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how they resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
+      lede: "VOOPOO makes its empty PnP X pod in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how the coils resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
       sections: [
         {
           heading: "How do the DTL and MTL pods differ?",
@@ -1520,7 +1521,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How does it resist leaks?",
           paragraphs: [
-            "VOOPOO separates the airway, heating zone and air cavity into different layers so e-liquid doesn't run down, and a dual L-shape structure in the base keeps the pressure balanced so condensate doesn't leak.",
+            "VOOPOO builds the PnP X coil with the airway, heating zone and air cavity in separate layers so e-liquid doesn't run down, and a dual L-shape structure at the coil's base keeps the pressure balanced so condensate doesn't leak.",
           ],
         },
         {
@@ -1550,7 +1551,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "VOOPOO 的 PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
+      lede: "VOOPOO 的 PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、线圈怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
       sections: [
         {
           heading: "DTL 版和 MTL 版有什么区别？",
@@ -1561,7 +1562,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "怎么防漏？",
           paragraphs: [
-            "VOOPOO 把气道、加热区和空腔分在不同层，防止烟油往下漏；底部的双 L 形结构保持压力平衡，防止冷凝液渗漏。",
+            "VOOPOO 在 PnP X 线圈里把气道、加热区和空腔分在不同层，防止烟油往下漏；线圈底部的双 L 形结构保持压力平衡，防止冷凝液渗漏。",
           ],
         },
         {
@@ -2290,7 +2291,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "เลือกหัวให้ตรงกับเครื่องยังไง",
           paragraphs: [
             "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับเครื่องในตระกูล ARGUS Pod และระบุชื่อรุ่นของหัวแบบเติมด้านข้างไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
-            "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ ให้เลือกหัว Top Fill เพราะหน้า ARGUS G3 mini ของ VOOPOO ระบุไว้เฉพาะหัวแบบนี้",
+            "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ หน้า ARGUS G3 mini ของ VOOPOO ระบุหัว Top Fill ไว้ ส่วนหัวแบบเติมด้านข้างไม่ได้อยู่ในรายการของหน้านั้น",
             "ส่วนใครอยากเปลี่ยนแค่คอยล์แล้วใช้หัวเดิมต่อ VOOPOO มีหัวพอตเปล่า ARGUS POD ที่ใส่คอยล์ ITO ได้ อยู่ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
           ],
         },
@@ -2338,7 +2339,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How do I match a pod to my device?",
           paragraphs: [
-            "VOOPOO says ARGUS cartridges fit the ARGUS Pod Family, and names the ARGUS G, ARGUS POD, ARGUS P1 and ARGUS Z for the side-fill pods. On an [ARGUS G3 mini](/products/argus-g3-mini), choose a Top Fill pod — VOOPOO's ARGUS G3 mini page names only that kind. To change just the coil and keep the pod, VOOPOO also makes an empty ARGUS POD cartridge that takes ITO coils: see [the ARGUS P1 empty pod](/products/coil-83).",
+            "VOOPOO says ARGUS cartridges fit the ARGUS Pod Family, and names the ARGUS G, ARGUS POD, ARGUS P1 and ARGUS Z for the side-fill pods. On an [ARGUS G3 mini](/products/argus-g3-mini), note that VOOPOO's ARGUS G3 mini page lists the Top Fill pods and does not list the side-fill ARGUS POD Cartridge. To change just the coil and keep the pod, VOOPOO also makes an empty ARGUS POD cartridge that takes ITO coils: see [the ARGUS P1 empty pod](/products/coil-83).",
           ],
         },
       ],
@@ -2385,7 +2386,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "怎么选到适合自己设备的烟弹？",
           paragraphs: [
-            "VOOPOO 表示 ARGUS 烟弹适用于 ARGUS Pod 系列设备，侧注油烟弹则点名适用 ARGUS G、ARGUS POD、ARGUS P1 和 ARGUS Z。用 [ARGUS G3 mini](/products/argus-g3-mini) 的话请选 Top Fill，因为 VOOPOO 的 ARGUS G3 mini 页面只列出这一种。想只换线圈、继续用原烟弹的话，VOOPOO 还有可装 ITO 线圈的 ARGUS POD 空烟弹，见 [Argus P1 空烟弹](/products/coil-83)。",
+            "VOOPOO 表示 ARGUS 烟弹适用于 ARGUS Pod 系列设备，侧注油烟弹则点名适用 ARGUS G、ARGUS POD、ARGUS P1 和 ARGUS Z。用 [ARGUS G3 mini](/products/argus-g3-mini) 的话请注意：VOOPOO 的 ARGUS G3 mini 页面列出了 Top Fill 烟弹，侧注油的 ARGUS POD Cartridge 不在该页列表中。想只换线圈、继续用原烟弹的话，VOOPOO 还有可装 ITO 线圈的 ARGUS POD 空烟弹，见 [Argus P1 空烟弹](/products/coil-83)。",
           ],
         },
       ],
@@ -5608,7 +5609,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ค่าโอห์มไหนเหมาะกับการสูบแบบไหน",
           paragraphs: [
-            "ตามตารางของ VOOPOO คอยล์ค่าต่ำอย่าง 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DL คือดูดลงปอดตรง ๆ และต้องใช้วัตต์สูง เช่น PnP-TW15 0.15 โอห์มอยู่ที่ 55–70 วัตต์ และ PnP-TW20 0.2 โอห์มอยู่ที่ 40–55 วัตต์ ถัดขึ้นมาคือ PnP-TW30 0.3 โอห์ม ใช้ 28–36 วัตต์ และ VOOPOO จัดให้ตัวนี้สูบได้ทั้งแบบ DL และแบบ RDL",
+            "ตามตารางของ VOOPOO คอยล์ค่าต่ำอย่าง 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DL คือดูดลงปอดตรง ๆ และต้องใช้วัตต์สูง เช่น PnP-TW15 0.15 โอห์มอยู่ที่ 55–70 วัตต์ และ PnP-TW20 0.2 โอห์มอยู่ที่ 40–55 วัตต์ ถัดขึ้นมาคือ PnP-TW30 0.3 โอห์ม ที่ VOOPOO จัดไว้เป็นแบบ DL/RTL ใช้ 28–36 วัตต์",
             "ช่วง 0.45 ถึง 0.6 โอห์ม VOOPOO จัดไว้เป็นแบบ RDL เกือบทุกตัว เช่น PnP-DW60 0.6 โอห์มใช้ 18–23 วัตต์ ส่วนคอยล์ 0.8 ถึง 1.2 โอห์มเป็นคอยล์สำหรับสูบแบบ MTL ที่ลมแน่นกว่าและใช้วัตต์ต่ำ เช่น PnP-R2 1.0 โอห์มใช้ 10–15 วัตต์",
             "ก่อนเลือกค่า ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ด้วย เพราะคอยล์ค่าต่ำต้องใช้เครื่องที่จ่ายไฟได้สูง",
           ],
@@ -5649,7 +5650,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which resistance suits which draw?",
           paragraphs: [
-            "In VOOPOO's table the low resistances, 0.15Ω and 0.2Ω, are for an open DL draw at high wattage: the PnP-TW15 0.15Ω runs at 55–70W and the PnP-TW20 0.2Ω at 40–55W. The PnP-TW30 0.3Ω runs at 28–36W and is rated for both DL and RDL.",
+            "In VOOPOO's table the low resistances, 0.15Ω and 0.2Ω, are for an open DL draw at high wattage: the PnP-TW15 0.15Ω runs at 55–70W and the PnP-TW20 0.2Ω at 40–55W. The PnP-TW30 0.3Ω, which VOOPOO labels DL/RTL, runs at 28–36W.",
             "From 0.45Ω to 0.6Ω VOOPOO rates almost every coil RDL, such as the PnP-DW60 0.6Ω at 18–23W; from 0.8Ω to 1.2Ω they are tighter MTL coils at low wattage, such as the PnP-R2 1.0Ω at 10–15W. Check your device's maximum output first — the low-resistance coils need a device that can deliver high power.",
           ],
         },
@@ -5686,7 +5687,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "哪个阻值适合哪种抽法？",
           paragraphs: [
-            "按 VOOPOO 的表格，0.15Ω、0.2Ω 这类低阻值用于直肺（DL），需要高功率：PnP-TW15 0.15Ω 为 55–70W，PnP-TW20 0.2Ω 为 40–55W；PnP-TW30 0.3Ω 同时标注 DL 和 RDL，功率 28–36W。",
+            "按 VOOPOO 的表格，0.15Ω、0.2Ω 这类低阻值用于直肺（DL），需要高功率：PnP-TW15 0.15Ω 为 55–70W，PnP-TW20 0.2Ω 为 40–55W；PnP-TW30 0.3Ω 标为 DL/RTL，功率 28–36W。",
             "0.45Ω 到 0.6Ω 的线圈 VOOPOO 几乎都标为 RDL，例如 PnP-DW60 0.6Ω 为 18–23W；0.8Ω 到 1.2Ω 是吸感较紧的 MTL，功率较低，例如 PnP-R2 1.0Ω 为 10–15W。请先确认自己设备的最大输出功率，低阻值线圈需要能输出高功率的设备。",
           ],
         },
