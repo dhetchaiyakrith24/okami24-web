@@ -42,7 +42,7 @@ export function Scene4Hero({ progress }: { progress: MotionValue<number> }) {
         />
         <HeroProduct
           progress={progress}
-          src="/assets/products/m-switch-kit/hero-scene4.webp"
+          src="/assets/products/m-switch-kit/hero-scene4-wm2.webp"
           alt="SaltHub M Switch Kit"
           sizeClass="h-[50vh] w-[25vh] sm:h-[58vh] sm:w-[29vh]"
           glow="rgba(255,60,60,0.45)"
