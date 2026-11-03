@@ -1183,7 +1183,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/dude-pod-3ml/card-v2.webp",
+      src: "/assets/products/dude-pod-3ml/card-v2-wm2.webp",
       alt: "dude 3ml refill pod, front view",
       angle: "Front, isolated — OKami24 render (Higgsfield) of the pod on the warehouse's line-up poster.",
       transparentBackground: true,
@@ -2595,7 +2595,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
       ["Pod-180-7", "taro-ice-cream", "Taro Ice Cream"], ["Pod-180-8", "watermelon", "Watermelon"],
       ["Pod-180-9", "watermelon-lychee", "Watermelon Lychee"], ["Pod-180-10", "strawberry-watermelon", "Strawberry Watermelon"]] as const)
       .map(([code, file, name]) => [code, {
-        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
+        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}-wm2.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
         transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster", sourceUrl: "https://app.shipnitymax.com/",
       } satisfies ProductAsset])
   ),
