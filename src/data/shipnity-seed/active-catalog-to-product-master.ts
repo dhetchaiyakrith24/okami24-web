@@ -940,7 +940,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/punta-ice/card.webp",
+      src: "/assets/products/punta-ice/card-wm2.webp",
       alt: "Punta Ice Peach Ice e-liquid bottle, studio photo",
       angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the bottle on the shop's Peach Ice photo.",
       transparentBackground: true,
@@ -967,7 +967,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-21/card.webp",
+      src: "/assets/products/coil-21/card-wm2.webp",
       alt: "VOOPOO Argus Pod cartridge, studio photo",
       angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of a shop photo of the Argus Pod cartridge. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1009,7 +1009,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/relx-essential-2/card-wm.webp",
+      src: "/assets/products/relx-essential-2/card-wm2.webp",
       alt: "RELX Essential 2 device, Nebula Blue, studio photo",
       angle: "Front, upright — studio re-shoot (maxlist 20/10, IMAGE_SPEC §0 item 7) of the shop's colour line-up photo. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1051,7 +1051,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/eliquid-64/card.webp",
+      src: "/assets/products/eliquid-64/card-wm2.webp",
       alt: "Double Mint Salt Nic e-liquid bottle, Watermelon, studio photo",
       angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of the shop's bottle poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1168,7 +1168,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexbar-switch-15k-pod/card-v2.webp",
+      src: "/assets/products/nexbar-switch-15k-pod/card-v2-wm2.webp",
       alt: "nexBar Switch 15K refill pod, Blueberry Ice, front view",
       angle: "Front, isolated — OKami24 render (Higgsfield) of the maker's pod render; the flavour label re-typeset by script.",
       transparentBackground: true,
@@ -1183,7 +1183,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/dude-pod-3ml/card-v2.webp",
+      src: "/assets/products/dude-pod-3ml/card-v2-wm2.webp",
       alt: "dude 3ml refill pod, front view",
       angle: "Front, isolated — OKami24 render (Higgsfield) of the pod on the warehouse's line-up poster.",
       transparentBackground: true,
@@ -2245,13 +2245,13 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Image sweep: Punta Ice — Peach Ice has the card bottle (19/10); the other 6 flavours = re-shoots of the shop's flavour photos (21/10).
   "PUNTA-ICE": {
-    "eliquid-78-7": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-7.webp", alt: "Punta Ice Peach Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo", sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp" },
-    "eliquid-78-1": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-1.webp", alt: "Punta Ice Grape Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
-    "eliquid-78-2": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-2.webp", alt: "Punta Ice Mint Bubblegum e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
-    "eliquid-78-3": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-3.webp", alt: "Punta Ice Guava Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
-    "eliquid-78-4": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-4.webp", alt: "Punta Ice Bubblegum Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
-    "eliquid-78-5": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-5.webp", alt: "Punta Ice Peach Mango Watermelon e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
-    "eliquid-78-6": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-6.webp", alt: "Punta Ice Mango Bubblegum e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-7": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-7-wm2.webp", alt: "Punta Ice Peach Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo", sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp" },
+    "eliquid-78-1": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-1-wm2.webp", alt: "Punta Ice Grape Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-2": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-2-wm2.webp", alt: "Punta Ice Mint Bubblegum e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-3": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-3-wm2.webp", alt: "Punta Ice Guava Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-4": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-4-wm2.webp", alt: "Punta Ice Bubblegum Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-5": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-5-wm2.webp", alt: "Punta Ice Peach Mango Watermelon e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
+    "eliquid-78-6": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-6-wm2.webp", alt: "Punta Ice Mango Bubblegum e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice flavour photo", sourceUrl: "https://ihavevape.net/product/punta-ice/" },
   },
   // Image sweep (19/10): Super Cool — Grape Blast has the card bottle; Laimoon, Strawberry Frost, White Polo and Black Hexx = re-shoots of the
   // same shop's flavour photos; Shine Muscat, Yacool, King Melon (21/10) = re-shoots of a retailer's bottle photos (its DEALERVAPE mark not reproduced);
@@ -2271,15 +2271,15 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // maxlist (21/10): Argus Pod — the Argus mix option shows the cartridge re-shoot; the 1.2Ω and the two Top Fill options have no photo yet (the Top Fill cartridge is a different part).
   "Coil-21": {
-    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
+    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1-wm2.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
   },
   // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
   "RELX-ESSENTIAL-2": {
-    "Pod-157-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-1-wm.webp", alt: "RELX Essential 2 device, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-2": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-2-wm.webp", alt: "RELX Essential 2 device, Steel Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-3": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-3-wm.webp", alt: "RELX Essential 2 device, Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "Pod-157-4": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-4-wm.webp", alt: "RELX Essential 2 device, Nebula Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
-    "relx-essential-2-verified-orange": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-orange-wm.webp", alt: "RELX Essential 2 device, Orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-1-wm2.webp", alt: "RELX Essential 2 device, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-2": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-2-wm2.webp", alt: "RELX Essential 2 device, Steel Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-3": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-3-wm2.webp", alt: "RELX Essential 2 device, Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-4": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-4-wm2.webp", alt: "RELX Essential 2 device, Nebula Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "relx-essential-2-verified-orange": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-orange-wm2.webp", alt: "RELX Essential 2 device, Orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   },
   // Image sweep (19/10): INFY POD — 18 of 19 colours have a photo (re-shoots of INFY's own colour photos). Max's "Frost Pink" (Pod-158-11)
   // is not on infy.my → no-photo panel (infy.my sells "Floss Pink", kept as its own maker colour — whether they are one colour is unconfirmed).
@@ -2369,12 +2369,12 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Round list19 (19/10): Pepo — one re-shoot per bottle on the shop's group poster (4 of 5); Mint added 22/10 from its own shop poster.
   "Eliquid-64": {
-    "ELQ-64-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-1.webp", alt: "Double Mint Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
-    "ELQ-64-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
-    "ELQ-64-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-3.webp", alt: "Double Mint Salt Nic e-liquid bottle, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
-    "ELQ-64-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-4.webp", alt: "Double Mint Salt Nic e-liquid bottle, Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
-    "ELQ-64-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-5.webp", alt: "Double Mint Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
-    "ELQ-64-6": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-6.webp", alt: "Double Mint Salt Nic e-liquid bottle, Green Apple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-1-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-2-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-3-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-4-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-5-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-6": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-6-wm2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Green Apple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
   },
   "Eliquid-72": {
     "ELQ-5-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-1.webp", alt: "Pepo Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
@@ -2582,7 +2582,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
       ["Pod-181-10", "peach-strawberry", "Peach Strawberry"], ["Pod-181-11", "lychee", "Lychee"], ["Pod-181-12", "strawberry-banana", "Strawberry Banana"],
       ["Pod-181-13", "strawberry-custard", "Strawberry Custard"], ["Pod-181-14", "strawberry-watermelon", "Strawberry Watermelon"],
       ["Pod-181-15", "pineapple", "Pineapple"]] as const).map(([code, file, name]) => [code, {
-      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
+      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}-wm2.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
       transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's pod render", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     } satisfies ProductAsset])
   ),
@@ -2595,7 +2595,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
       ["Pod-180-7", "taro-ice-cream", "Taro Ice Cream"], ["Pod-180-8", "watermelon", "Watermelon"],
       ["Pod-180-9", "watermelon-lychee", "Watermelon Lychee"], ["Pod-180-10", "strawberry-watermelon", "Strawberry Watermelon"]] as const)
       .map(([code, file, name]) => [code, {
-        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
+        kind: "official-photo", role: "detail", src: `/assets/products/dude-pod-3ml/variant-${file}-wm2.webp`, alt: `dude 3ml refill pod with its box, ${name}`,
         transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's line-up poster", sourceUrl: "https://app.shipnitymax.com/",
       } satisfies ProductAsset])
   ),
