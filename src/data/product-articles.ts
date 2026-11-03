@@ -6051,47 +6051,47 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // airflow key … tighter or airier draw", "Choose the Pro Device if you / Choose the Standard Device if you") ·
   // nexpod-15k-prefilled-pod-20mg ("professionally blended by Wotofo flavor experts", "smooth and rich flavor from the first puff
   // until the last drop", "Transparent Pod Design … avoid dry hits", "one-piece sealed shell … zero mess or leaks") ·
-  // nexpod-15k-refillable-pod ("Not compatible with the nexPOD 15K Device", "Up to 10ml" / "Up to 30ml", "Dual nexMESH", "0.5Ω",
+  // nexpod-15k-refillable-pod ("Easy Side Fill Design", "Not compatible with the nexPOD 15K Device", "Up to 10ml" / "Up to 30ml", "Dual nexMESH", "0.5Ω",
   // "wait 3 minutes", "Fill the pod fully(10ml) on first use"). Left out (already twice on the page): 1200mAh · aluminium · the
   // 16/12W and 25/20W levels · pod recognition · 18mL / 0.8Ω / 15,000 puffs · "swap the pod, keep the device". No cost or eco
   // claims (WOTOFO's "Cost Savings" / "Eco-Friendly" stay out). Legacy page → no article FAQ. refilling-a-pod is thaiOnly → th only.
   "nexpod-15k": {
     th: {
-      lede: "WOTOFO nexPOD 15K Pro Kit มากับตัวเครื่องรุ่น Pro และหัวพอตเติมมาแล้วหนึ่งหัว ด้านล่างสรุปจากหน้าเว็บของ WOTOFO ว่าเปิดเครื่องและปรับลมแบบไหน หัวพอตที่ให้มามีจุดเด่นอะไร ใช้กับหัวพอตเติมเองได้ไหม และตัวเครื่อง Pro ต่างจากตัวเครื่องธรรมดาตรงไหน",
+      lede: "WOTOFO nexPOD 15K Pro Kit เปิดเครื่องและปรับลมยังไง หัวพอตที่ให้มาในกล่องมีจุดเด่นอะไร ใช้กับหัวพอตเติมเองได้ไหม และตัวเครื่อง Pro ต่างจากรุ่นธรรมดาตรงไหน ด้านล่างสรุปให้ทีละเรื่องจากหน้าเว็บของผู้ผลิต",
       sections: [
         {
-          heading: "nexPOD 15K เปิดเครื่องและปรับลมแบบไหน",
+          heading: "nexPOD 15K เปิดเครื่องและปรับลมยังไง",
           paragraphs: [
-            "เปิดหรือปิดเครื่องด้วยการกดปุ่ม 5 ครั้งภายใน 2 วินาที",
-            "ปุ่มปรับลมอยู่ที่ด้านข้างตัวเครื่อง กดสลับได้ระหว่างลมแน่นกับลมโล่ง ถ้ายังไม่แน่ใจว่าแบบไหนเหมาะกับตัวเอง ร้านอธิบายไว้ที่ [เลือกวัตต์และปรับลมยังไง](/guides/choosing-wattage-and-airflow)",
+            "จะเปิดหรือปิดเครื่อง ให้กดปุ่ม 5 ครั้งภายใน 2 วินาที",
+            "ปุ่มปรับลมอยู่ด้านข้างตัวเครื่อง ใช้สลับลมได้สองแบบ คือลมแน่นกับลมโล่ง ถ้ายังไม่แน่ใจว่าแบบไหนเหมาะกับตัวเอง ร้านอธิบายไว้ที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
           ],
         },
         {
-          heading: "หัวพอตเติมมาแล้วมีจุดเด่นอะไร",
+          heading: "หัวพอตที่ให้มาในกล่องมีจุดเด่นอะไร",
           paragraphs: [
-            "WOTOFO บอกว่าน้ำยาแต่ละกลิ่นผสมโดยทีมผู้เชี่ยวชาญด้านกลิ่นของ WOTOFO เอง รสจึงคงที่ตั้งแต่ต้นจนหมดหัว และคอยล์ในหัวให้รสนุ่มเต็มตั้งแต่พัฟแรกจนน้ำยาหยดสุดท้าย",
-            "ตัวหัวเป็นพลาสติกใส มองเห็นน้ำยาที่เหลือได้ตลอด จะได้ไม่สูบตอนน้ำยาแห้ง ส่วนตัวหัวเป็นเปลือกชิ้นเดียวปิดสนิท ซึ่ง WOTOFO บอกว่าช่วยให้หัวสะอาด ไม่เลอะและไม่รั่ว",
+            "WOTOFO ให้ทีมผู้เชี่ยวชาญด้านกลิ่นของแบรนด์ผสมน้ำยาแต่ละกลิ่นเอง เพื่อให้รสคงที่ไปจนหมดหัว ส่วนคอยล์ในหัว WOTOFO บอกว่าให้รสนุ่มและชัดตั้งแต่พัฟแรกไปจนน้ำยาหยดสุดท้าย",
+            "หัวพอตเป็นแบบใส มองเห็นน้ำยาที่เหลือได้ตลอด จะได้รู้ก่อนว่าน้ำยาใกล้หมดและไม่สูบจนได้รสไหม้ เปลือกของหัวเป็นชิ้นเดียวและปิดสนิท WOTOFO บอกว่าแบบนี้ช่วยให้หัวสะอาด ไม่เลอะ และไม่รั่ว",
           ],
         },
         {
           heading: "ใช้กับหัวพอตเติมเองได้ไหม",
           paragraphs: [
-            "ได้ WOTOFO มีหัวพอต nexPOD 15K แบบเติมเองขายแยก หัวนี้ใช้ได้กับตัวเครื่อง Pro เท่านั้น WOTOFO ระบุว่าใช้กับตัวเครื่อง nexPOD 15K รุ่นธรรมดาไม่ได้",
-            "หัวพอตเติมเองใช้คอยล์ mesh คู่ ค่า 0.5 โอห์ม เติมน้ำยาได้ครั้งละ 10mL และใช้น้ำยาได้รวมสูงสุด 30mL ต่อหัว ก่อนเปลี่ยนหัวใหม่",
-            "วิธีเติมคือเปิดจุกซิลิโคนด้านข้าง เติมน้ำยาให้เต็ม ปิดจุก แล้วรอราว 3 นาทีให้น้ำยาซึมเข้าคอยล์ก่อนใส่เข้าเครื่อง ครั้งแรกที่ใช้ WOTOFO แนะนำให้เติมเต็ม 10mL เพื่อให้คอยล์ชุ่มทั่ว วิธีเติมทั่วไปดูได้ที่ [เติมน้ำยาพอตยังไง](/guides/refilling-a-pod)",
+            "ได้ WOTOFO มีหัวพอต nexPOD 15K แบบเติมเองขายแยก หัวนี้ทำมาสำหรับตัวเครื่อง Pro โดยเฉพาะ และ WOTOFO ระบุไว้ว่าใช้กับตัวเครื่อง nexPOD 15K รุ่นธรรมดาไม่ได้",
+            "หัวพอตเติมเองใช้คอยล์ mesh สองตัว 0.5 โอห์ม เติมน้ำยาได้ครั้งละสูงสุด 10mL และ WOTOFO ระบุว่าหัวหนึ่งเติมได้รวมสูงสุด 30mL",
+            "หัวนี้เติมน้ำยาทางด้านข้าง วิธีเติมคือเปิดจุกซิลิโคน เติมน้ำยาให้เต็ม ปิดจุก แล้วรอราว 3 นาทีให้น้ำยาซึมเข้าคอยล์ก่อนใส่เข้าตัวเครื่อง WOTOFO แนะนำให้เติมเต็ม 10mL ตั้งแต่ครั้งแรกที่ใช้ เพื่อให้คอยล์ชุ่มน้ำยาทั่วทั้งตัว วิธีเติมทั่วไปดูได้ที่ [เติมน้ำยาพอตยังไง](/guides/refilling-a-pod)",
           ],
         },
         {
-          heading: "ตัวเครื่อง Pro ต่างจากตัวเครื่องธรรมดายังไง",
+          heading: "ตัวเครื่อง Pro ต่างจากรุ่นธรรมดายังไง",
           paragraphs: [
             "WOTOFO แนะนำให้เลือกตัวเครื่อง Pro ถ้าชอบไอหนา อยากสลับระหว่างการสูบแบบนุ่มกับแบบแรง หรือจะใช้หัวพอตเติมเอง",
-            "ส่วนตัวเครื่องรุ่นธรรมดา WOTOFO บอกว่าเหมาะกับคนที่อยากได้เครื่องใช้ง่ายไว้ใช้ทุกวัน จ่ายไฟนุ่มและคงที่",
+            "ส่วนตัวเครื่องรุ่นธรรมดา WOTOFO บอกว่าเหมาะกับคนที่อยากได้เครื่องใช้ง่าย ไม่ยุ่งยาก ไว้สูบทุกวัน และชอบการสูบที่นุ่มและสม่ำเสมอ",
           ],
         },
       ],
     },
     en: {
-      lede: "The WOTOFO nexPOD 15K Pro Kit comes with the Pro device and one prefilled pod. Below, from WOTOFO's own pages: how to switch it on and set the airflow, what the included pod offers, whether it takes a refillable pod, and how the Pro device differs from the standard one.",
+      lede: "Below, from WOTOFO's own pages: how to switch the WOTOFO nexPOD 15K Pro Kit on and set its airflow, what the pod in the box offers, whether it takes a refillable pod, and how the Pro device differs from the standard one.",
       sections: [
         {
           heading: "How do I switch the nexPOD 15K on and set the airflow?",
@@ -6100,16 +6100,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "What does the prefilled pod offer?",
+          heading: "What does the pod in the box offer?",
           paragraphs: [
-            "WOTOFO says each flavour is blended by its own flavour experts for a consistent taste from start to finish, and the pod's coil gives smooth, rich flavour from the first puff to the last drop. The pod is transparent, so you can always see the e-liquid level and avoid vaping it dry, and its one-piece sealed shell is, in WOTOFO's words, clean, with zero mess or leaks.",
+            "WOTOFO has its own flavour experts blend each flavour for a consistent taste from start to finish, and says the pod's coil gives smooth, rich flavour from the first puff to the last drop. The pod is transparent, so you can always see how much e-liquid is left and avoid a dry hit. Its one-piece sealed shell, WOTOFO says, keeps the pod clean, with no mess or leaks.",
           ],
         },
         {
           heading: "Does it take a refillable pod?",
           paragraphs: [
-            "Yes. WOTOFO sells a nexPOD 15K Refillable Pod separately; it fits the Pro device only, and WOTOFO says it is not compatible with the standard nexPOD 15K Device. It uses dual mesh coils at 0.5Ω, holds up to 10 mL per fill and up to 30 mL in total per pod before you replace it.",
-            "To fill it, open the silicone stopper on the side, fill the tank, close the stopper and wait about 3 minutes for the coil to saturate before inserting the pod. On first use, WOTOFO recommends filling it fully (10 mL) so the coil is fully saturated.",
+            "Yes. WOTOFO sells a nexPOD 15K Refillable Pod separately; it fits the Pro device only, and WOTOFO says it is not compatible with the standard nexPOD 15K Device. It uses dual mesh coils at 0.5Ω, takes up to 10 mL per fill, and WOTOFO rates each pod for up to 30 mL of refills in total.",
+            "It fills from the side: open the silicone stopper, fill the tank, close the stopper and wait about 3 minutes for the coil to saturate before inserting the pod. WOTOFO recommends filling it fully (10 mL) from the very first use so the coil is fully saturated.",
           ],
         },
         {
@@ -6121,7 +6121,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "WOTOFO nexPOD 15K Pro Kit 附带 Pro 主机和一颗预注油烟弹。下面根据 WOTOFO 官网的资料，介绍怎么开关机和调气流、附带的烟弹有什么特点、能不能用自注油烟弹，以及 Pro 主机和标准主机有什么区别。",
+      lede: "下面根据 WOTOFO 官网的资料，介绍 WOTOFO nexPOD 15K Pro Kit 怎么开关机和调气流、盒内烟弹有什么特点、能不能用自注油烟弹，以及 Pro 主机和标准主机有什么区别。",
       sections: [
         {
           heading: "nexPOD 15K 怎么开机、怎么调气流？",
@@ -6130,16 +6130,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
         {
-          heading: "预注油烟弹有什么特点？",
+          heading: "盒内的烟弹有什么特点？",
           paragraphs: [
-            "WOTOFO 表示每款口味都由自家调香师调配，从头到尾口味一致；烟弹里的线圈让口感顺滑饱满，从第一口到最后一滴。烟弹为透明设计，随时能看到剩余烟油，避免干烧；一体密封外壳按 WOTOFO 的说法干净、不脏手、不漏油。",
+            "WOTOFO 的每款口味都由自家调香师调配，让口味从头到尾保持一致；WOTOFO 还表示，烟弹里的线圈从第一口到最后一滴都能带来顺滑饱满的口感。烟弹为透明设计，随时能看到剩余烟油，避免干烧。外壳为一体式密封设计，WOTOFO 表示能让烟弹保持干净，不脏手、不漏油。",
           ],
         },
         {
           heading: "能用自注油烟弹吗？",
           paragraphs: [
-            "可以。WOTOFO 另售 nexPOD 15K 自注油烟弹，只适用于 Pro 主机，WOTOFO 注明它不适用于标准版 nexPOD 15K 主机。它采用 0.5Ω 双网状线圈，每次可注 10 mL，每颗累计最多可用 30 mL 后再更换。",
-            "注油方法：打开侧面的硅胶塞，注满烟油，盖好塞子，等约 3 分钟让线圈吸饱后再装入主机。首次使用时，WOTOFO 建议注满 10 mL，让线圈充分浸润。",
+            "可以。WOTOFO 另售 nexPOD 15K 自注油烟弹，只适用于 Pro 主机，WOTOFO 注明它不适用于标准版 nexPOD 15K 主机。它采用 0.5Ω 双网状线圈，每次最多可注 10 mL，WOTOFO 标注每颗累计最多可注 30 mL。",
+            "它从侧面注油：打开硅胶塞，注满烟油，盖好塞子，等约 3 分钟让线圈吸饱后再装入主机。WOTOFO 建议从第一次使用起就注满 10 mL，让线圈充分浸润。",
           ],
         },
         {
