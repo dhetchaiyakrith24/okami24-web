@@ -1278,7 +1278,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // in the spec row. Page stays under 1,000 Thai chars: VOOPOO says little about this pod (Friday 03/11).
   "coil-87": {
     th: {
-      lede: "หัวพอตเปล่า VOOPOO TPP Pod ต่อกับเครื่องยังไง ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
+      lede: "หัวพอตเปล่า VOOPOO TPP Pod ต่อกับเครื่องแบบไหน ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
           heading: "หัวพอต TPP ต่อกับเครื่องยังไง",
@@ -1467,7 +1467,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "หัวพอตเปล่า VOOPOO PnP X มีสองรุ่น คือรุ่น DTL กับรุ่น MTL ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง ตั้งแต่สองรุ่นต่างกันตรงไหน ไปจนถึงการใส่คอยล์และเติมน้ำยาครั้งแรก",
       sections: [
         {
-          heading: "หัวพอต PnP X รุ่น DTL กับรุ่น MTL ต่างกันยังไง",
+          heading: "หัวพอต PnP X รุ่น DTL กับ MTL ต่างกันยังไง",
           paragraphs: [
             "หัวพอตรุ่น DTL ใช้กับคอยล์ PnP X ได้ทุกค่า VOOPOO แนะนำให้ใช้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
             "ส่วนรุ่น MTL ใช้ได้เฉพาะคอยล์ PnP X 0.3 โอห์มกับ 0.6 โอห์ม ความเข้มข้นนิโคตินที่แนะนำคือไม่เกิน 35mg และมีปากดูดแบบ 510 ที่ถอดเปลี่ยนได้",
@@ -2250,7 +2250,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // "Argus mix" is not a VOOPOO name → unsaid. "Side fill + Top Fill" stays at tagline + lede (twice).
   "coil-21": {
     th: {
-      lede: "หัวพอต VOOPOO ARGUS Pod ในหน้านี้มีให้เลือกสองแบบ คือแบบเติมด้านข้างกับแบบ Top Fill เนื้อหาด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และจะเลือกให้ตรงกับเครื่องยังไง",
+      lede: "หัวพอต VOOPOO ARGUS Pod ในหน้านี้มีให้เลือกสองแบบ คือแบบ Top Fill กับแบบเติมด้านข้าง เนื้อหาด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และจะเลือกให้ตรงกับเครื่องยังไง",
       sections: [
         {
           heading: "หัวแบบเติมด้านข้างใช้วัตต์เท่าไร",
@@ -2290,7 +2290,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "เลือกหัวพอต ARGUS ให้ตรงกับเครื่องยังไง",
           paragraphs: [
-            "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับ[เครื่องในตระกูล ARGUS Pod](/guides/comparing-voopoo-argus-models) และระบุชื่อรุ่นของหัวแบบเติมด้านข้างไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
+            "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับเครื่องในตระกูล ARGUS Pod และระบุชื่อรุ่นของหัวแบบเติมด้านข้างไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
             "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ หน้า ARGUS G3 mini ของ VOOPOO ระบุหัว Top Fill ไว้ ส่วนหัวแบบเติมด้านข้างไม่ได้อยู่ในรายการของหน้านั้น",
             "ส่วนใครอยากเปลี่ยนแค่คอยล์แล้วใช้หัวเดิมต่อ VOOPOO มีหัวพอตเปล่า ARGUS POD ที่ใส่คอยล์ ITO ได้ อยู่ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
           ],
@@ -2404,7 +2404,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // (a retailer source) → not repeated. Fit with ARGUS POD / P1 / Z / G / A stays in the spec row.
   "coil-83": {
     th: {
-      lede: "หัวพอตเปล่า VOOPOO ARGUS P1 มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และดูแลคอยล์ยังไง ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
+      lede: "หัวพอตเปล่า VOOPOO ARGUS P1 มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และควรดูแลคอยล์ยังไง ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
       sections: [
         {
           heading: "หัวพอตเปล่า ARGUS P1 มากับเครื่องรุ่นไหน",
@@ -5719,7 +5719,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // 18650 sold apart, 80W, PnP-RBA. Legacy page → no article FAQ.
   "drag-x": {
     th: {
-      lede: "สรุปเรื่อง VOOPOO DRAG X จากหน้าเว็บของ VOOPOO ว่าโหมด SCORE กับระบบลมทำงานยังไง คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
+      lede: "สรุปเรื่อง VOOPOO DRAG X จากหน้าเว็บของ VOOPOO ว่าโหมด SCORE คืออะไร ปรับลมได้แค่ไหน คอยล์สองตัวในกล่องต่างกันตรงไหน ใส่คอยล์ตัวอื่นได้ไหม และในกล่องมีอะไรมาให้บ้าง",
       sections: [
         {
           heading: "โหมด SCORE ของ DRAG X คืออะไร",
@@ -5833,7 +5833,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // it apart from the DRAG S2/X2 PnP X pod. Legacy page → no article FAQ.
   "vinci-s": {
     th: {
-      lede: "สรุปเรื่อง VOOPOO VINCI S จากหน้าเว็บของ VOOPOO ว่าแบตใช้ได้นานแค่ไหน ทำไมจึงไม่ต้องตั้งวัตต์เอง ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
+      lede: "สรุปเรื่อง VOOPOO VINCI S จากหน้าเว็บของ VOOPOO ว่าแบตใช้ได้นานแค่ไหน ต้องตั้งวัตต์เองไหม ใส่หัวพอตแบบไหนได้บ้าง และหัวพอตที่ให้มาในกล่องดีขึ้นตรงไหน",
       sections: [
         {
           heading: "VINCI S แบตอยู่ได้นานแค่ไหน",
