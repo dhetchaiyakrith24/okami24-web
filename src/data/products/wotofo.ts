@@ -8,7 +8,7 @@ const OFFICIAL_50MG = "https://www.wotofo.com/products/wotofo-nexbar-18k-50mg";
 /** Photo of one flavour — OKami24's Higgsfield remake of WOTOFO's own gallery photo (map entries in
  *  scripts/process-images.map.json carry the job, the reference and the fidelity sheet). */
 const photo = (id: string, name: string) => ({
-  src: `/assets/products/wotofo-nexbar-18k/variant-${id}-wm.webp`,
+  src: `/assets/products/wotofo-nexbar-18k/variant-${id}-wm2.webp`,
   alt: `WOTOFO nexBAR 18K, ${name}`,
 });
 
@@ -63,7 +63,7 @@ export const wotofoProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/wotofo-nexbar-18k/card-wm.webp",
+        src: "/assets/products/wotofo-nexbar-18k/card-wm2.webp",
         alt: "WOTOFO nexBAR 18K, Watermelon Ice, isolated product shot",
         angle:
           "Three-quarter front, isolated — OKami24's Higgsfield remake (image-fix round, owner ruling IMAGE_SPEC §0 item 7) of WOTOFO's own gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice); IoU 0.996 against the maker photo.",
