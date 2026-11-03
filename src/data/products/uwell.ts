@@ -1061,7 +1061,7 @@ export const uwellProducts: Product[] = [
     lineupImage: {
       // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
       // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
-      src: "/assets/products/caliburn-g4/lineup-v2.webp",
+      src: "/assets/products/caliburn-g4/lineup-v2-wm2.webp",
       alt: "UWELL Caliburn G4, all 8 colours",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
@@ -1840,7 +1840,7 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3-pro-koko/card-v2.webp",
+        src: "/assets/products/caliburn-g3-pro-koko/card-v2-wm2.webp",
         alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's images of this model",
         transparentBackground: true,
@@ -1868,12 +1868,12 @@ export const uwellProducts: Product[] = [
     // boxes "looked too small" (owner 02/10) — "cluster" layout (Emerald Green big in front in group 1), pills "ทั้งหมด 1" / "ทั้งหมด 2";
     // _incoming/image-sitewide/dsx/koko-two.js.
     lineupImage: {
-      src: "/assets/products/caliburn-g3-pro-koko/lineup-v3.webp",
+      src: "/assets/products/caliburn-g3-pro-koko/lineup-v3-wm2.webp",
       alt: "UWELL Caliburn G3 Pro KOKO, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/caliburn-g3-pro-koko/lineup2-v3.webp",
+      src: "/assets/products/caliburn-g3-pro-koko/lineup2-v3-wm2.webp",
       alt: "UWELL Caliburn G3 Pro KOKO, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -1882,49 +1882,49 @@ export const uwellProducts: Product[] = [
         id: "emerald-green",
         name: "Emerald Green",
         swatchHex: "#82f490",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green" },
       },
       {
         id: "light-silver",
         name: "Light Silver",
         swatchHex: "#e5e5e5",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-light-silver-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Light Silver" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-light-silver-v2-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Light Silver" },
       },
       {
         id: "lilac-purple",
         name: "Lilac Purple",
         swatchHex: "#aba6cd",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-lilac-purple-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Lilac Purple" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-lilac-purple-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Lilac Purple" },
       },
       {
         id: "luxury-gold",
         name: "Luxury Gold",
         swatchHex: "#e7c490",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-luxury-gold-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Luxury Gold" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-luxury-gold-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Luxury Gold" },
       },
       {
         id: "midnight-black",
         name: "Midnight Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-midnight-black-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Midnight Black" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-midnight-black-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Midnight Black" },
       },
       {
         id: "rose-pink",
         name: "Rose Pink",
         swatchHex: "#f6acb7",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-rose-pink-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Rose Pink" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-rose-pink-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Rose Pink" },
       },
       {
         id: "sky-blue",
         name: "Sky Blue",
         swatchHex: "#4dd1f4",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-sky-blue-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Sky Blue" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-sky-blue-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Sky Blue" },
       },
       {
         id: "space-gray",
         name: "Space Gray",
         swatchHex: "#a2a2a2",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-space-gray-v3.webp", alt: "UWELL Caliburn G3 Pro KOKO, Space Gray" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-space-gray-v3-wm2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Space Gray" },
       },
     ],
     specifications: [
