@@ -179,6 +179,9 @@ const REPEAT_MARK = / ๆ/g;
 // sits alone on a line — binding the home lede's "พอตซิสเต็ม" moved its last break to "… ไลน์ |
 // @okm24" at 390. The handle is bound to the word before it, like a unit to its number.
 const LINE_HANDLE = / (@okm24)/g;
+// Owner 03/11 ("แก้ได้"): a closing polite particle never sits alone on a line — the checkout phone error broke
+// "… ขึ้นต้นด้วย 0 | ค่ะ" at 390. Bound to the word before it, like the LINE handle; the lookahead keeps "คะแนน" whole.
+const POLITE_PARTICLE = / (ค่ะ|คะ|ครับ)(?=$|[\s.!?)])/gu;
 const bindUnit = (m: string) => m.replace(RANGE_DASH, `$1${WJ}`).replace(" ", NBSP);
 
 /**
@@ -198,6 +201,7 @@ function typeset(text: string): string {
   for (const n of NEVER_SPLIT) out = out.split(n.word).join(n.joined);
   out = out.replace(REPEAT_MARK, `${NBSP}ๆ`);
   out = out.replace(LINE_HANDLE, `${NBSP}$1`);
+  out = out.replace(POLITE_PARTICLE, `${NBSP}$1`);
   out = out.replace(NUMBER_UNIT_TH, bindUnit);
   out = out.replace(NUMBER_UNIT_EN, bindUnit);
   for (const name of MODEL_NAMES) out = out.split(name).join(name.split(" ").join(NBSP));

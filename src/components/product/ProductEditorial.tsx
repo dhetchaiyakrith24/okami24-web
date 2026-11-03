@@ -8,7 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { renderInline } from "@/components/content/ArticleBody";
 import type { EditorialCopy, EditorialImage } from "@/data/product-editorial";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
-import { verifiedRows } from "@/lib/verified-specs";
+import { SHORT_SPEC_LABEL, verifiedRows } from "@/lib/verified-specs";
 import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import { cn } from "@/lib/utils";
 import { ProductReviewSection } from "@/components/product/ProductReviewSection";
@@ -115,8 +115,8 @@ export function ProductEditorialMain({ product, sibling, copy, copyTh, siblingCo
           if (!v) return null;
           return (
             <div key={r.label} className="flex justify-between gap-4 border-b border-surface-border-soft py-3 text-sm">
-              <dt className="text-foreground-muted">{t(r.label)}</dt>
-              <dd className="text-right text-foreground">{t(v)}</dd>
+              <dt className={`${r.label.length <= SHORT_SPEC_LABEL ? "shrink-0 " : ""}text-foreground-muted`}>{t(r.label)}</dt>
+              <dd className="min-w-0 text-right text-foreground">{t(v)}</dd>
             </div>
           );
         })}
