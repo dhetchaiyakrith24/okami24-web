@@ -1770,7 +1770,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "หัวแบบเติมด้านข้างใช้วัตต์เท่าไร",
           paragraphs: [
-            "VOOPOO เรียกหัวแบบเติมด้านข้างว่า ARGUS POD Cartridge และระบุว่าหัว 0.7 โอห์มใช้ที่ 14–18 วัตต์ ส่วนหัว 1.2 โอห์มใช้ที่ 9–12 วัตต์",
+            "ARGUS POD Cartridge คือชื่อที่ VOOPOO เรียกหัวแบบเติมด้านข้าง โดยหัว 0.7 โอห์มใช้ที่ 14–18 วัตต์ ส่วนหัว 1.2 โอห์มใช้ที่ 9–12 วัตต์",
             "เรื่องน้ำยา หน้า ARGUS POD SE ของ VOOPOO แนะนำให้ใช้ความเข้มข้นนิโคตินไม่เกิน 50mg",
           ],
         },
@@ -1814,7 +1814,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "หัวพอต ARGUS ใช้กับ ARGUS G4 ได้ไหม",
-          answer: "ได้ค่ะ หน้า ARGUS G4 ของ VOOPOO ระบุว่าเครื่องนี้ใช้หัวพอตตระกูล ARGUS ได้ทุกแบบ รวมถึงหัว Top Fill ด้วย",
+          answer: "ได้ค่ะ หน้า ARGUS G4 ของ VOOPOO ระบุว่าเครื่องนี้ใช้ได้กับหัวพอตทุกแบบในตระกูล ARGUS รวมถึงหัว Top Fill",
         },
       ],
     },
@@ -1919,7 +1919,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // (a retailer source) → not repeated. Fit with ARGUS POD / P1 / Z / G / A stays in the spec row.
   "coil-83": {
     th: {
-      lede: "หัวพอตรุ่นนี้ VOOPOO เรียกว่า ARGUS POD Empty Cartridge ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวแบบนี้มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และดูแลคอยล์ยังไง",
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอตรุ่นนี้มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และดูแลคอยล์ยังไง",
       sections: [
         {
           heading: "หัวพอตเปล่านี้มากับเครื่องรุ่นไหน",
@@ -1933,13 +1933,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ใส่คอยล์ ITO ค่าไหนได้บ้าง",
           paragraphs: [
             "หน้า ARGUS P1 ของ VOOPOO ระบุคอยล์ ITO ไว้สี่ค่า คือ ITO-M0 0.5 โอห์ม ITO-M1 0.7 โอห์ม ITO-M2 1.0 โอห์ม และ ITO-M3 1.2 โอห์ม ทั้งสี่ตัวเป็นคอยล์ mesh",
-            "ตามตารางคอยล์ ITO ของ VOOPOO ตัว ITO-M0 สูบแบบ RDL ที่ 18–25 วัตต์ ITO-M1 เป็น MTL แบบลมโล่งที่ 14–18 วัตต์ ITO-M2 เป็น MTL ที่ 10–14 วัตต์ และ ITO-M3 เป็น MTL แบบแน่นที่ 8–12 วัตต์",
+            "ตามตารางคอยล์ ITO ของ VOOPOO ตัว ITO-M0 สูบแบบ RDL ใช้ 18–25 วัตต์ ITO-M1 เป็น MTL แบบลมโล่ง ใช้ 14–18 วัตต์ ITO-M2 เป็น MTL ใช้ 10–14 วัตต์ และ ITO-M3 เป็น MTL แบบแน่น ใช้ 8–12 วัตต์",
           ],
         },
         {
-          heading: "คอยล์แต่ละค่าเหมาะกับน้ำยาความเข้มข้นเท่าไร",
+          heading: "คอยล์แต่ละค่าเหมาะกับนิโคตินเท่าไร",
           paragraphs: [
-            "VOOPOO แนะนำความเข้มข้นนิโคตินแยกตามคอยล์ไว้ด้วย คือ ITO-M0 ไม่เกิน 20mg ITO-M1 20–30mg ITO-M2 30–50mg และ ITO-M3 ไม่เกิน 50mg",
+            "VOOPOO แนะนำความเข้มข้นนิโคตินแยกตามคอยล์ไว้ด้วย คือ ITO-M0 ไม่เกิน 20mg ITO-M1 อยู่ที่ 20–30mg ITO-M2 อยู่ที่ 30–50mg และ ITO-M3 ไม่เกิน 50mg",
             "ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
           ],
         },
@@ -2050,7 +2050,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "กันรั่วยังไง",
           paragraphs: [
             "VOOPOO บอกว่าหัว ITO-X มีแหวนซิลิโคน 4 ชั้นที่ช่วยกันรั่ว",
-            "ส่วนคอยล์ ITO ออกแบบให้เสียบเข้าหัวในทิศทางเดียว VOOPOO บอกว่าช่วยให้ลมเดินตรงและรสชาติคงที่",
+            "ส่วนคอยล์ ITO ออกแบบให้เสียบเข้าหัวในทิศทางเดียว ซึ่ง VOOPOO บอกว่าช่วยให้ลมเดินตรงและรสชาติคงที่",
           ],
         },
         {
@@ -2066,7 +2066,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "นอกจาก DRAG Q แล้วใช้กับเครื่องไหนได้อีก",
           paragraphs: [
             "หน้า DORIC Q ของ VOOPOO ใส่ ITO-X Pod ไว้ในรายการหัวที่ใช้ร่วมกันได้ด้วย ถ้าใช้ DORIC Q อยู่ หัวนี้จึงเป็นอีกทางเลือกหนึ่ง",
-            "ส่วนเครื่อง ARGUS P1 ใช้คอยล์ ITO ชุดเดียวกันนี้ แต่ใช้หัวพอตเปล่าอีกแบบ ดูได้ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
+            "ส่วนเครื่อง ARGUS P1 ก็ใช้คอยล์ ITO ชุดเดียวกันนี้ แต่ใช้หัวพอตเปล่าอีกแบบ ดูได้ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
           ],
         },
       ],
