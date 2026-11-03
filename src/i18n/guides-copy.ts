@@ -7,8 +7,7 @@
  * reads "35 วัตต์" / "0.8 โอห์ม"; W and Ω stay only inside spec tables.
  */
 import type { ArticleFAQItem, GuideSection } from "@/types/catalog";
-// Owner 05/10: a section's shop clip lives in every locale's array (they replace each other) — one definition, in guides.ts.
-import { SECTION_CLIPS, SECTION_IMAGES, SECTION_IMAGES_ZH } from "@/data/guides";
+import { SECTION_IMAGES, SECTION_IMAGES_ZH } from "@/data/guides";
 
 export interface GuideCopy {
   title: string;
