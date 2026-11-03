@@ -5943,6 +5943,85 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Articles queue 0211 batch 5, RELX (03/11): Infinity 2 Plus — every fact = RELX's own product page
+  // (relxnow.com/products/relx-infinity-2-plus-device, curl 03/11; WebFetch was rate-limited): what each mode is for, Boost "up to
+  // 15% more vapor than Smooth mode", the Infinity 2's 5.5 / 6.5 / 8W, the orange button + "Plus" icon, "3 Power Levels, 1 Simple
+  // Click", the RELX Pod / Pod Pro / Pod Pro 2 fit, RELX + WAKA flavours. Left out (already twice on the page): the Plus's own
+  // watts, 440mAh, 15 min → 80%, the 4-level indicator, 1.9mL / 600 puffs. Legacy page → no article FAQ.
+  "relx-infinity-2-plus": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ RELX ว่าแต่ละโหมดของ Infinity 2 Plus เหมาะกับการสูบแบบไหน รุ่นนี้ต่างจาก Infinity 2 ตรงไหน และใช้กับหัวพอตรุ่นไหนได้บ้าง",
+      sections: [
+        {
+          heading: "สามโหมดต่างกันยังไง",
+          paragraphs: [
+            "RELX อธิบายไว้ว่าโหมด Eco ช่วยประหยัดแบต เหมาะกับการสูบเบา ๆ โหมด Smooth ให้รสนุ่มแบบที่คุ้นเคย ส่วนโหมด Boost ให้รสเข้มขึ้น และ RELX บอกว่าให้ควันมากกว่าโหมด Smooth ได้ถึง 15%",
+            "เปลี่ยนโหมดได้ด้วยการกดปุ่มเดียว จะสลับไปมาตามจังหวะการสูบของแต่ละวันก็ทำได้ง่าย",
+          ],
+        },
+        {
+          heading: "ต่างจาก Infinity 2 ตรงไหน",
+          paragraphs: [
+            "RELX เทียบไว้ว่า Infinity 2 รุ่นก่อนใช้ 5.5 วัตต์ 6.5 วัตต์ และ 8 วัตต์ในสามโหมด รุ่น Plus จึงแรงขึ้นในทุกโหมด",
+            "หน้าตาก็ต่างกันด้วย Infinity 2 Plus มีปุ่มสีส้ม และมีไอคอน Plus อยู่บนตัวเครื่อง ดูออกได้ทันทีว่าไม่ใช่ Infinity 2",
+          ],
+        },
+        {
+          heading: "ใช้กับหัวพอตรุ่นไหนได้บ้าง",
+          paragraphs: [
+            "RELX ระบุว่าเครื่องนี้ใช้กับหัว RELX Pod, RELX Pod Pro และ RELX Pod Pro 2 ได้ ส่วนเรื่องกลิ่น RELX บอกว่าเลือกได้ทั้งกลิ่นของ RELX และของ WAKA",
+            "หัว RELX Pod Pro 2 มีให้เลือกหลายกลิ่นที่หน้า [หัวพอต RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from RELX's own page: what each Infinity 2 Plus mode is for, how it differs from the Infinity 2, and which pods it takes.",
+      sections: [
+        {
+          heading: "How do the three modes differ?",
+          paragraphs: [
+            "RELX describes Eco as the mode that saves battery with lighter puffs, Smooth as a familiar, smooth flavour, and Boost as a more intense flavour with up to 15% more vapour than Smooth. One click switches between them.",
+          ],
+        },
+        {
+          heading: "How is it different from the Infinity 2?",
+          paragraphs: [
+            "RELX compares it with the Infinity 2, which ran at 5.5W, 6.5W and 8W in its three modes — so the Plus is stronger in every mode. It also looks different: an orange button and a \"Plus\" icon on the body set it apart.",
+          ],
+        },
+        {
+          heading: "Which pods does it take?",
+          paragraphs: [
+            "RELX lists RELX Pod, RELX Pod Pro and RELX Pod Pro 2 pods, and says you can choose from both RELX and WAKA flavours. RELX Pod Pro 2 flavours are on the [RELX Infinity Pro 2 pod](/products/relx-infinity-pro-2-pod) page.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 RELX 官网的资料，介绍 Infinity 2 Plus 各模式适合怎样的抽吸、与 Infinity 2 有何不同，以及能用哪些烟弹。",
+      sections: [
+        {
+          heading: "三种模式有什么区别？",
+          paragraphs: [
+            "RELX 介绍：Eco 模式省电，适合轻抽；Smooth 模式口感顺滑、熟悉；Boost 模式口味更浓，烟雾比 Smooth 模式多出最高 15%。一键即可切换。",
+          ],
+        },
+        {
+          heading: "和 Infinity 2 有什么不同？",
+          paragraphs: [
+            "RELX 对比说明，Infinity 2 的三种模式为 5.5W、6.5W 和 8W，Plus 在每个模式下都更强。外观也不同：橙色按键和机身上的“Plus”标识让它一眼可辨。",
+          ],
+        },
+        {
+          heading: "能用哪些烟弹？",
+          paragraphs: [
+            "RELX 列出可用 RELX Pod、RELX Pod Pro 和 RELX Pod Pro 2 烟弹，并表示可在 RELX 与 WAKA 的口味中选择。RELX Pod Pro 2 的口味见 [RELX Infinity Pro 2 烟弹](/products/relx-infinity-pro-2-pod)。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
