@@ -1107,6 +1107,128 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): PnP X empty pod — facts = VOOPOO's PnP X platform page (voopoo.com/pnpx-platform:
+  // the DTL and MTL cartridges — ohms, nicotine, 510 drip tip, coils each takes; the layered airway and dual L-shape base; scale
+  // line; directional coil; 2/3 fill + plug + 5 min; 100 mL per coil + the lab-conditions note); WebFetch 03/11, quotes in
+  // articles-0311/voopoo-facts.md. Which of the two the shop's "Silver" listing is, VOOPOO does not say → both described, none
+  // claimed. 5mL · side fill · DRAG S2 / X2 · 2 per pack stay in the tagline + spec rows.
+  "coil-56": {
+    th: {
+      lede: "หัวพอตเปล่า PnP X ของ VOOPOO มีสองรุ่น คือรุ่น DTL กับรุ่น MTL ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าสองรุ่นต่างกันตรงไหน กันรั่วยังไง ปรับลมยังไง และใส่คอยล์กับเติมน้ำยาครั้งแรกยังไง",
+      sections: [
+        {
+          heading: "รุ่น DTL กับรุ่น MTL ต่างกันยังไง",
+          paragraphs: [
+            "หัวรุ่น DTL ใช้กับคอยล์ PnP X ได้ทุกค่า และ VOOPOO แนะนำให้ใช้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
+            "หัวรุ่น MTL ใช้ได้เฉพาะคอยล์ PnP X 0.3 โอห์มกับ 0.6 โอห์ม แนะนำนิโคตินไม่เกิน 35mg และมีปากดูดแบบ 510 ที่ถอดเปลี่ยนได้ VOOPOO แนะนำน้ำยา VG 50–70% สำหรับหัวทั้งสองรุ่น",
+          ],
+        },
+        {
+          heading: "หัว PnP X กันรั่วยังไง",
+          paragraphs: [
+            "VOOPOO แยกทางลม ส่วนที่ทำความร้อน และช่องอากาศไว้คนละชั้น เพื่อไม่ให้น้ำยาไหลลงข้างล่าง",
+            "ที่ก้นหัวมีโครงสร้างรูปตัว L สองชั้น VOOPOO บอกว่าช่วยรักษาแรงดันให้สมดุล ไอน้ำที่กลั่นตัวจึงไม่รั่วออกมา",
+          ],
+        },
+        {
+          heading: "ปรับลมยังไง",
+          paragraphs: [
+            "ช่องลมด้านบนของหัวมีขีดบอกระดับไว้ ช่วยให้ปรับลมได้แม่นขึ้น VOOPOO แนะนำให้เปิดลมตามค่าคอยล์ คอยล์ 0.15 โอห์มเปิดเต็มที่ 0.2 โอห์มเปิดราวสองในสาม ส่วนคอยล์ 0.3 ถึง 0.8 โอห์มเปิดราวหนึ่งในสาม",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์และเติมน้ำยาครั้งแรกยังไง",
+          paragraphs: [
+            "คอยล์ PnP X เสียบได้ทางเดียว กดเข้าไปจนก้นคอยล์ชิดก้นหัวพอตพอดี ไม่มีช่องว่าง คอยล์ทุกค่ามีให้เลือกที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92)",
+            "VOOPOO แนะนำให้เติมน้ำยาราวสองในสามของหัว ปิดจุกเติมให้เรียบร้อย แล้วทิ้งไว้ 5 นาทีก่อนใช้",
+          ],
+        },
+        {
+          heading: "คอยล์หนึ่งตัวใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "VOOPOO บอกว่าคอยล์ PnP X หนึ่งตัวใช้กับน้ำยาได้ถึง 100mL โดยไม่ไหม้และไม่รั่ว และหมายเหตุไว้ว่าตัวเลขนี้มาจากการทดสอบในสภาพที่ควบคุมไว้ ส่วนที่ใช้ได้จริงขึ้นกับการใช้งานของแต่ละคน",
+            "วิธีดูแลหัวพอตและคอยล์ให้ใช้ได้นาน อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวเปล่า PnP-X มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ หัวนี้เป็นหัวเปล่า ต้องใส่คอยล์ PnP X ก่อนใช้นะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "VOOPOO makes its empty PnP X pod in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how they resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
+      sections: [
+        {
+          heading: "How do the DTL and MTL pods differ?",
+          paragraphs: [
+            "The DTL pod takes every PnP X coil, and VOOPOO recommends e-liquid up to 10 mg nicotine strength for it. The MTL pod takes only the PnP X 0.3Ω and 0.6Ω, is rated for up to 35 mg, and has a replaceable 510 drip tip. VOOPOO recommends 50–70% VG for both.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "VOOPOO separates the airway, heating zone and air cavity into different layers so e-liquid doesn't run down, and a dual L-shape structure in the base keeps the pressure balanced so condensate doesn't leak.",
+          ],
+        },
+        {
+          heading: "How is the airflow set?",
+          paragraphs: [
+            "The pod's top airway carries a scale line for precise setting. VOOPOO pairs a setting with each coil: fully open for the 0.15Ω, about two-thirds for the 0.2Ω, and about one-third for the 0.3Ω to 0.8Ω.",
+          ],
+        },
+        {
+          heading: "How do I fit a coil and fill it the first time?",
+          paragraphs: [
+            "PnP X coils go in one way only — push until the coil's base sits flush with the bottom of the pod. Every resistance is on the [VOOPOO PnP X coils](/products/coil-92) page. VOOPOO recommends filling to about two-thirds, closing the plug and letting the pod sit 5 minutes before use.",
+          ],
+        },
+        {
+          heading: "How long does one coil last?",
+          paragraphs: [
+            "VOOPOO says each PnP X coil handles up to 100 mL of e-liquid without burning or leaking, noting the figure comes from tests under professional conditions and real use varies. Looking after pods and coils is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "VOOPOO 的 PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
+      sections: [
+        {
+          heading: "DTL 版和 MTL 版有什么区别？",
+          paragraphs: [
+            "DTL 版兼容所有 PnP X 线圈，VOOPOO 建议搭配尼古丁浓度不超过 10 mg 的烟油。MTL 版只能用 PnP X 0.3Ω 和 0.6Ω，可到 35 mg，并配可更换的 510 烟嘴。VOOPOO 建议两版都用 50–70% VG 的烟油。",
+          ],
+        },
+        {
+          heading: "怎么防漏？",
+          paragraphs: [
+            "VOOPOO 把气道、加热区和空腔分在不同层，防止烟油往下漏；底部的双 L 形结构保持压力平衡，防止冷凝液渗漏。",
+          ],
+        },
+        {
+          heading: "气流怎么调？",
+          paragraphs: [
+            "烟弹顶部气道带刻度线，方便精准调节。VOOPOO 为每个阻值配了建议：0.15Ω 全开，0.2Ω 约开三分之二，0.3Ω 到 0.8Ω 约开三分之一。",
+          ],
+        },
+        {
+          heading: "第一次怎么装线圈、怎么注油？",
+          paragraphs: [
+            "PnP X 线圈只能按一个方向插入，推到线圈底部与烟弹底部齐平即可。各阻值见 [VOOPOO PnP X 线圈](/products/coil-92)。VOOPOO 建议注油约三分之二，盖好注油塞，静置 5 分钟再用。",
+          ],
+        },
+        {
+          heading: "一颗线圈能用多久？",
+          paragraphs: [
+            "VOOPOO 表示每颗 PnP X 线圈可支撑最多 100 mL 烟油而不烧焦、不漏油，并注明该数据来自专业条件下的测试，实际视使用情况而定。烟弹和线圈的保养见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 2d (04/10): from VOOPOO's DRAG S3 / X3 pages and posters; Thai = thai-copy 04/10.
   "drag-s3": {
     th: {
