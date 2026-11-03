@@ -99,6 +99,10 @@ export const relxProducts: Product[] = [
       // Type-C · Puffs 12000 · Nicotine 3% / 5% · "Upgraded Mega MESH". It states no resistance, so "1.0Ω" is dropped;
       // Details 02/11: the same page's description says "a generous 18ml e-liquid capacity" while the table says "Size 20ml" —
       // RELX contradicts itself, so the capacity row is dropped until a pack or RELX settles it.
+      // 04/11 (Friday: settle from the maker page; curl relxnow.com): "18ml" is the only figure RELX calls e-liquid — "a generous
+      // 18ml e-liquid capacity" in the description, the meta description and the product JSON-LD; the table cell is labelled
+      // "Size", not e-liquid. RELX's other pages have no "Size" cell to compare. Row = the e-liquid figure, quoted.
+      { key: "capacity", label: "E-liquid capacity", value: "18mL", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "puffs", label: "Rated puffs", value: "Up to 12,000", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "battery", label: "Battery", value: "400mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
       { key: "coil", label: "Coil", value: "MEGA MESH coil", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },

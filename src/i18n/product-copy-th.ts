@@ -775,6 +775,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       puffs: "สูงสุด 12,000",
       battery: "400mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      capacity: "18mL",
       coil: "MEGA MESH",
       nicotine: "3% หรือ 5% salt nic",
     },
