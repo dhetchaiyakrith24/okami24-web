@@ -1019,6 +1019,356 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): PnP X coils — facts = VOOPOO's PnP X platform page (voopoo.com/pnpx-platform:
+  // draw style, airflow setting and VG per coil, 100 mL + the lab-conditions note, directional insertion, 2/3 fill, 5 min, DTL/MTL
+  // cartridges) + its coil guide (PnP X ≠ original PnP, pull straight out) + the VINCI S page (0.3Ω floor); WebFetch 03/11, quotes in
+  // articles-0311/voopoo-facts.md. Watts per coil stay in the spec table; the 0.6Ω VG (50–60% vs 50% on the same page) is unsaid.
+  "coil-92": {
+    th: {
+      lede: "VOOPOO แนะนำแนวการสูบ การเปิดช่องลม และน้ำยาของคอยล์ PnP X ไว้ต่างกันในแต่ละค่า ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ค่าไหนเหมาะกับการสูบแบบไหน",
+          paragraphs: [
+            "VOOPOO แบ่งไว้ว่า 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DTL คือดูดลงปอดตรง ๆ 0.3 โอห์มใช้ได้ทั้ง DTL และ RDL ส่วน 0.45 โอห์มเป็นแบบ RDL",
+            "ถัดขึ้นไป 0.6 โอห์มใช้ได้ทั้ง MTL และ RDL ส่วน 0.8 โอห์มกับ 1.0 โอห์มเป็นคอยล์ MTL ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "ควรเปิดช่องลมแค่ไหน",
+          paragraphs: [
+            "VOOPOO บอกไว้ด้วยว่าคอยล์แต่ละค่าควรเปิดช่องลมเข้าแค่ไหน 0.15 โอห์มให้เปิดเต็มที่ 0.2 โอห์มเปิดสองในสาม ส่วน 0.3 ถึง 0.8 โอห์มเปิดหนึ่งในสาม",
+            "ช่องลมด้านบนของหัวพอต PnP X มีขีดบอกระดับไว้ ช่วยให้ปรับลมได้ตรงตามนี้ง่ายขึ้น",
+          ],
+        },
+        {
+          heading: "ใช้กับน้ำยาแบบไหน",
+          paragraphs: [
+            "VOOPOO แนะนำน้ำยา VG 50–70% สำหรับคอยล์ 0.15 ถึง 0.45 โอห์ม ส่วนคอยล์ 0.8 โอห์มกับ 1.0 โอห์มแนะนำน้ำยา VG 50%",
+          ],
+        },
+        {
+          heading: "คอยล์หนึ่งตัวใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "VOOPOO บอกว่าคอยล์ PnP X หนึ่งตัวใช้กับน้ำยาได้ถึง 100mL โดยไม่ไหม้และไม่รั่ว แต่ก็เขียนหมายเหตุไว้ว่าตัวเลขนี้มาจากการทดสอบในสภาพที่ควบคุมไว้ ใช้จริงได้นานแค่ไหนจึงขึ้นกับการใช้งานของแต่ละคน",
+            "คู่มือเปลี่ยนคอยล์ของ VOOPOO ให้สังเกตอาการแทนการนับวัน เช่น สูบแล้วมีรสไหม้ รสจางลง ควันน้อยลง หรือน้ำยารั่ว ถ้าเริ่มเป็นแบบนี้ก็ถึงเวลาเปลี่ยนตัวใหม่",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ใหม่ยังไง",
+          paragraphs: [
+            "VOOPOO ออกแบบคอยล์ PnP X ให้เสียบได้ทางเดียว เวลาเปลี่ยนให้ดึงตัวเก่าออกตรง ๆ แล้วกดตัวใหม่เข้าไปจนก้นคอยล์เสมอกับก้นหัวพอต ไม่มีช่องว่าง",
+            "ใส่คอยล์ใหม่แล้ว ให้หยดน้ำยาลงรูสำลีของคอยล์สักสองสามหยด เติมน้ำยาให้ได้สองในสามของหัวพอต ปิดจุกเติม แล้วตั้งทิ้งไว้ 5 นาทีก่อนสูบ",
+          ],
+        },
+        {
+          heading: "ใช้กับเครื่องไหนได้บ้าง",
+          paragraphs: [
+            "VOOPOO บอกว่าคอยล์ PnP X ใช้กับเครื่องตระกูล DRAG และ VINCI ได้หลายรุ่น และใช้กับหัวพอต PnP X ได้ทั้งรุ่น DTL และ MTL แต่หัวรุ่น MTL ใส่ได้เฉพาะคอยล์ 0.3 โอห์มกับ 0.6 โอห์ม",
+            "ก่อนเลือกค่า ควรดูว่าหัวที่ใช้อยู่เป็นรุ่น DTL หรือรุ่น MTL ส่วนหัวพอตเปล่าสำหรับคอยล์นี้ ดูได้ที่หน้า [หัวพอตเปล่า VOOPOO PnP X](/products/coil-56)",
+            "ถ้าใช้ VINCI S อยู่ ให้เลือกค่าตั้งแต่ 0.3 โอห์มขึ้นไป เพราะ VOOPOO บอกว่าเครื่องรุ่นนี้ไม่รองรับคอยล์ที่ค่าต่ำกว่านั้น",
+            "คอยล์ PnP X ใส่กับเครื่อง VOOPOO รุ่นก่อนที่ใช้คอยล์ PnP แบบเดิมไม่ได้ ถ้าเครื่องของคุณเป็นแบบนั้น ดูคอยล์ได้ที่หน้า [คอยล์ VOOPOO PnP](/products/coil-1)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "VOOPOO gives each PnP X coil its own draw style, airflow setting and e-liquid. Below, from VOOPOO's own pages, one topic at a time.",
+      sections: [
+        {
+          heading: "Which PnP X coil suits which draw?",
+          paragraphs: [
+            "VOOPOO rates the 0.15Ω and 0.2Ω for DTL, the 0.3Ω for DTL and RDL, the 0.45Ω for RDL, the 0.6Ω for MTL and RDL, and the 0.8Ω and 1.0Ω for MTL. Not sure which you like? See [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "How far should the airflow be open?",
+          paragraphs: [
+            "VOOPOO pairs an air-inlet setting with each coil: fully open for the 0.15Ω, two-thirds for the 0.2Ω, and one-third for the 0.3Ω to 0.8Ω. The PnP X pod's top airway carries a scale line to help you set it.",
+          ],
+        },
+        {
+          heading: "Which e-liquid?",
+          paragraphs: [
+            "VOOPOO recommends 50–70% VG for the 0.15Ω to 0.45Ω coils and 50% VG for the 0.8Ω and 1.0Ω.",
+          ],
+        },
+        {
+          heading: "How long does one coil last?",
+          paragraphs: [
+            "VOOPOO says each PnP X coil handles up to 100 mL of e-liquid without burning or leaking, and notes the figure comes from tests under professional conditions — real use varies. Its coil guide says to watch for the signs instead of counting days: a burnt or muted taste, less vapour or leaking.",
+          ],
+        },
+        {
+          heading: "How do I fit a new coil?",
+          paragraphs: [
+            "VOOPOO designs PnP X coils to insert one way only: pull the old one straight out and push the new one in until its base sits flush with the bottom of the pod. Then put a few drops into the wick holes, fill the pod to two-thirds, close the plug and let it sit 5 minutes before vaping.",
+          ],
+        },
+        {
+          heading: "Which devices do they fit?",
+          paragraphs: [
+            "VOOPOO says PnP X coils fit many DRAG and VINCI devices and both versions of the PnP X pod, DTL and MTL — though the MTL pod takes only the 0.3Ω and 0.6Ω, so check which one you have before you pick a resistance. Empty pods are on the [VOOPOO PnP X empty pod](/products/coil-56) page. On a VINCI S, pick 0.3Ω or above: VOOPOO says it does not support coils below 0.3Ω. PnP X coils do not fit older VOOPOO devices built on the original PnP coils — for those, see [VOOPOO PnP coils](/products/coil-1).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "VOOPOO 为每个阻值的 PnP X 线圈分别给出了抽法、气流和烟油建议。下面根据 VOOPOO 官网的资料，一项项说明。",
+      sections: [
+        {
+          heading: "哪个阻值适合哪种抽法？",
+          paragraphs: [
+            "VOOPOO 把 0.15Ω 和 0.2Ω 标为 DTL，0.3Ω 为 DTL 与 RDL，0.45Ω 为 RDL，0.6Ω 为 MTL 与 RDL，0.8Ω 和 1.0Ω 为 MTL。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "气流该开多大？",
+          paragraphs: [
+            "VOOPOO 为每个阻值配了进气建议：0.15Ω 全开，0.2Ω 开三分之二，0.3Ω 到 0.8Ω 开三分之一。PnP X 烟弹顶部气道带刻度线，方便按建议调节。",
+          ],
+        },
+        {
+          heading: "配什么烟油？",
+          paragraphs: [
+            "VOOPOO 建议 0.15Ω 到 0.45Ω 用 50–70% VG 的烟油，0.8Ω 和 1.0Ω 用 50% VG。",
+          ],
+        },
+        {
+          heading: "一颗线圈能用多久？",
+          paragraphs: [
+            "VOOPOO 表示每颗 PnP X 线圈可支撑最多 100 mL 烟油而不烧焦、不漏油，并注明该数据来自专业条件下的测试，实际表现视使用情况而定。它的换线圈指南建议看症状而不是数天数：出现焦味、味道变淡、烟雾变少或漏油时就该换了。",
+          ],
+        },
+        {
+          heading: "怎么装新线圈？",
+          paragraphs: [
+            "VOOPOO 把 PnP X 线圈设计为只能按一个方向插入：把旧线圈直接拔出，新线圈推到底，使线圈底部与烟弹底部齐平、没有缝隙。然后在导油孔滴几滴烟油，注油至三分之二，盖好注油塞，静置 5 分钟再抽。",
+          ],
+        },
+        {
+          heading: "适用哪些设备？",
+          paragraphs: [
+            "VOOPOO 表示 PnP X 线圈适用于多款 DRAG 和 VINCI 设备，以及 DTL、MTL 两版 PnP X 烟弹，但 MTL 版只能用 0.3Ω 和 0.6Ω，选阻值前请先确认手上的烟弹是哪一版。空烟弹见 [VOOPOO PnP X 空烟弹](/products/coil-56)。用 VINCI S 的话请选 0.3Ω 及以上，VOOPOO 表示它不支持低于 0.3Ω 的线圈。PnP X 线圈不适用于使用原版 PnP 线圈的旧款 VOOPOO 设备，这类设备请看 [VOOPOO PnP 线圈](/products/coil-1)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): TPP coils — facts = VOOPOO's DRAG X PRO page (TPP-DM1…DM4 table: draw style,
+  // ohms, watts, ≤10 mg; "two TPP coils of 0.15 Ω and 0.2 Ω"), its DRAG X Plus page (the patented TPP coil tech) and its TPP
+  // platform page (voopoo.com/fr/tpp-platform/tpp-dm3.html: mesh "Dual In One", DM3 & DM4 newly improved, the pod takes every TPP
+  // coil — said of the TPP-X pod, not repeated here); rest / first-use = voopoo.com/faq.html; WebFetch 03/11, quotes in articles-0311/voopoo-facts.md. Pack count is not on a VOOPOO page → unsaid.
+  "coil-38": {
+    th: {
+      lede: "VOOPOO ทำคอยล์ TPP ไว้สี่รุ่น ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละรุ่นต่างกันตรงไหน ใช้วัตต์เท่าไร ใช้กับน้ำยาแบบไหน และคอยล์ตระกูลนี้มีอะไรพิเศษ",
+      sections: [
+        {
+          heading: "คอยล์ TPP สี่รุ่นต่างกันยังไง",
+          paragraphs: [
+            "ตามตารางของ VOOPOO TPP-DM1 กับ TPP-DM3 เป็น 0.15 โอห์มเท่ากัน แต่ใช้วัตต์ต่างกัน DM1 ใช้ 60–80 วัตต์ ส่วน DM3 ใช้ 80–100 วัตต์ ทั้งสองตัวและ TPP-DM2 เป็นคอยล์สำหรับสูบแบบดูดลงปอดตรง ๆ ที่ VOOPOO เรียกว่า DL",
+            "ส่วน TPP-DM4 เป็นแบบ Half DL ใช้ 32–40 วัตต์ ซึ่งต่ำกว่าอีกสามรุ่น นอกจากนี้ VOOPOO ระบุว่า DM3 กับ DM4 เป็นสองรุ่นที่ปรับปรุงใหม่",
+          ],
+        },
+        {
+          heading: "ใช้กับน้ำยาแบบไหน",
+          paragraphs: [
+            "VOOPOO แนะนำให้ใช้คอยล์ TPP ทั้งสี่รุ่นกับน้ำยาที่มีความเข้มข้นนิโคตินไม่เกิน 10mg",
+          ],
+        },
+        {
+          heading: "คอยล์ TPP มีอะไรพิเศษ",
+          paragraphs: [
+            "VOOPOO บอกว่าคอยล์ตระกูล TPP ใช้เทคโนโลยีใหม่ที่จดสิทธิบัตรไว้ ช่วยให้พื้นที่ที่ใช้ทำควันข้างในคอยล์กว้างขึ้น และคอยล์ร้อนเร็วขึ้น",
+            "ตัวคอยล์เป็นแบบ mesh และใช้เทคโนโลยีที่ VOOPOO เรียกว่า Dual In One",
+          ],
+        },
+        {
+          heading: "ใช้กับเครื่องหรือหัวพอตไหนได้บ้าง",
+          paragraphs: [
+            "หัวพอตที่ใช้คู่กับคอยล์ตระกูลนี้คือ TPP Pod ของ VOOPOO ดูหัวพอตเปล่ารุ่นนี้ได้ที่หน้า [หัวพอตเปล่า VOOPOO TPP Pod](/products/coil-87)",
+            "ส่วนเครื่อง DRAG X PRO ของ VOOPOO มากับคอยล์ TPP สองตัวในกล่อง คือตัว 0.15 โอห์มกับตัว 0.2 โอห์ม",
+            "คอยล์โอห์มต่ำที่ใช้วัตต์สูงแบบนี้ต้องใช้กับเครื่องที่ตั้งวัตต์ได้ถึงช่วงนั้น ก่อนเลือกรุ่นจึงควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ด้วย",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ใหม่แล้วต้องรอไหม",
+          paragraphs: [
+            "หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% ทิ้งไว้ 5 นาทีก่อนสูบ และให้สูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำ",
+            "ถ้าอยากรู้ว่าคอยล์ถึงรอบเปลี่ยนเมื่อไหร่ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "VOOPOO makes four TPP coils. Below, from VOOPOO's own pages: how they differ, what wattage each needs, which e-liquid suits them and what's special about the range.",
+      sections: [
+        {
+          heading: "How do the four TPP coils differ?",
+          paragraphs: [
+            "In VOOPOO's table the TPP-DM1 and TPP-DM3 are both 0.15Ω but run at different wattages — 60–80W for the DM1, 80–100W for the DM3. Those two and the TPP-DM2 are what VOOPOO calls DL coils, for a direct-lung draw. The TPP-DM4 is rated Half DL at 32–40W, lower than the other three. VOOPOO marks the DM3 and DM4 as newly improved.",
+          ],
+        },
+        {
+          heading: "Which e-liquid?",
+          paragraphs: [
+            "VOOPOO recommends e-liquid of up to 10 mg nicotine strength for all four.",
+          ],
+        },
+        {
+          heading: "What's special about TPP coils?",
+          paragraphs: [
+            "VOOPOO says the TPP series uses a new patented technology that enlarges the atomising area inside the coil and speeds up heating. The coils are mesh, built on what VOOPOO calls Dual In One technology.",
+          ],
+        },
+        {
+          heading: "Which devices and pods do they fit?",
+          paragraphs: [
+            "The TPP Pod is the pod listed for these coils; an empty one is on the [VOOPOO TPP Pod](/products/coil-87) page. VOOPOO's DRAG X PRO comes with two TPP coils, a 0.15Ω and a 0.2Ω. Low-resistance, high-wattage coils need a device that can be set that high, so check your device's maximum first.",
+          ],
+        },
+        {
+          heading: "Do I need to wait after fitting a new coil?",
+          paragraphs: [
+            "VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping, and taking the first few puffs on a new coil at low wattage. When to change a coil is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "VOOPOO 的 TPP 线圈共有四款。下面根据 VOOPOO 官网的资料，介绍它们的区别、各需多大功率、适合哪种烟油，以及这个系列有什么特别之处。",
+      sections: [
+        {
+          heading: "四款 TPP 线圈有什么区别？",
+          paragraphs: [
+            "按 VOOPOO 的表格，TPP-DM1 和 TPP-DM3 都是 0.15Ω，但功率不同：DM1 为 60–80W，DM3 为 80–100W。这两款和 TPP-DM2 都属于 VOOPOO 标注的 DL 直肺线圈。TPP-DM4 标为 Half DL，功率 32–40W，低于另外三款。VOOPOO 注明 DM3 和 DM4 是新升级的型号。",
+          ],
+        },
+        {
+          heading: "配什么烟油？",
+          paragraphs: [
+            "VOOPOO 建议四款都搭配尼古丁浓度不超过 10 mg 的烟油。",
+          ],
+        },
+        {
+          heading: "TPP 线圈有什么特别？",
+          paragraphs: [
+            "VOOPOO 表示 TPP 系列采用新的专利技术，扩大了线圈内部的雾化面积，并加快了加热速度。线圈为网状结构，采用 VOOPOO 所说的 Dual In One 技术。",
+          ],
+        },
+        {
+          heading: "适用哪些设备和烟弹？",
+          paragraphs: [
+            "适用的烟弹是 VOOPOO 的 TPP Pod，空烟弹见 [VOOPOO TPP Pod](/products/coil-87)。VOOPOO 的 DRAG X PRO 盒内附带两颗 TPP 线圈：0.15Ω 和 0.2Ω。低阻值、高功率的线圈需要能设到相应功率的设备，选购前请先确认设备的最大功率。",
+          ],
+        },
+        {
+          heading: "装新线圈后要等吗？",
+          paragraphs: [
+            "VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，新线圈的前几口用低功率。什么时候该换线圈，见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): TPP Pod (empty) — facts = VOOPOO's DRAG X Plus page ("TPP pod tank with 510
+  // interface"; the patented TPP coil tech), its DRAG X PRO page (TPP-DM1…DM4 table) and voopoo.com/faq.html (70% fill, 5 min, low
+  // wattage first); WebFetch 03/11. VOOPOO's TPP platform page describes the TPP-X Pod (magnetic, side fill, steel + PCTG, 360°
+  // airflow, 3–5 min rest) — a different pod, so none of it is said here (checker #1179 552d2398). The DRAG 3 / DRAG X Plus fit stays
+  // in the spec row. Page stays under 1,000 Thai chars: VOOPOO says little about this pod (Friday 03/11).
+  "coil-87": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอต TPP ต่อกับเครื่องยังไง ใส่คอยล์รุ่นไหนได้บ้าง และหลังเติมน้ำยาต้องรอนานแค่ไหน",
+      sections: [
+        {
+          heading: "ต่อกับเครื่องยังไง",
+          paragraphs: [
+            "หน้า DRAG X Plus ของ VOOPOO บอกว่าหัวพอต TPP ต่อกับเครื่องด้วยขั้วต่อแบบ 510",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ TPP รุ่นไหนได้บ้าง",
+          paragraphs: [
+            "หัวนี้ใช้กับคอยล์ตระกูล TPP",
+            "หน้า DRAG X PRO ของ VOOPOO ระบุคอยล์ TPP ไว้สี่รุ่น คือ TPP-DM1 0.15 โอห์มใช้ 60–80 วัตต์ TPP-DM2 0.2 โอห์มใช้ 40–60 วัตต์ TPP-DM3 0.15 โอห์มใช้ 80–100 วัตต์ และ TPP-DM4 0.3 โอห์มใช้ 32–40 วัตต์",
+            "คอยล์ทุกรุ่นนี้ VOOPOO แนะนำให้ใช้กับน้ำยาที่มีความเข้มข้นนิโคตินไม่เกิน 10mg ส่วนรายละเอียดของแต่ละรุ่นดูได้ที่หน้า [คอยล์ VOOPOO TPP](/products/coil-38)",
+            "VOOPOO บอกด้วยว่าคอยล์ตระกูล TPP ใช้เทคโนโลยีใหม่ที่จดสิทธิบัตรไว้ ซึ่งช่วยให้คอยล์ร้อนได้เร็วขึ้น",
+          ],
+        },
+        {
+          heading: "เติมน้ำยาแล้วต้องรอไหม",
+          paragraphs: [
+            "หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% แล้วทิ้งไว้ 5 นาทีก่อนสูบ และสูบพัฟแรก ๆ ของคอยล์ใหม่ด้วยวัตต์ต่ำก่อน",
+          ],
+        },
+        {
+          heading: "หัวนี้มีคอยล์มาให้ไหม",
+          paragraphs: [
+            "ต้องใส่คอยล์ TPP เองก่อนใช้ วิธีเลือกคือเช็ควัตต์สูงสุดของเครื่องก่อน แล้วเลือกรุ่นที่ช่วงวัตต์อยู่ในระดับที่เครื่องตั้งได้",
+            "ส่วนการดูแลหัวพอตกับคอยล์ให้ใช้ได้นาน อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, from VOOPOO's own pages: how the TPP pod connects, which coils it takes and how long to wait after filling.",
+      sections: [
+        {
+          heading: "How does it connect?",
+          paragraphs: [
+            "VOOPOO's DRAG X Plus page describes the TPP pod tank as having a 510 interface.",
+          ],
+        },
+        {
+          heading: "Which TPP coils fit?",
+          paragraphs: [
+            "It takes TPP coils; VOOPOO's DRAG X PRO page lists four: TPP-DM1 0.15Ω at 60–80W, TPP-DM2 0.2Ω at 40–60W, TPP-DM3 0.15Ω at 80–100W and TPP-DM4 0.3Ω at 32–40W, all recommended for e-liquid up to 10 mg nicotine strength. Details for each are on the [VOOPOO TPP coils](/products/coil-38) page. VOOPOO also says the TPP series uses a new patented technology that speeds up heating.",
+          ],
+        },
+        {
+          heading: "Do I need to wait after filling?",
+          paragraphs: [
+            "VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping and taking the first few puffs on a new coil at low wattage.",
+          ],
+        },
+        {
+          heading: "Does it come with a coil?",
+          paragraphs: [
+            "No coil comes with it — fit a TPP coil first. Check your device's maximum wattage and pick a coil whose range it can reach. Looking after pods and coils is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 官网的资料，介绍 TPP 烟弹怎么连接主机、能装哪些线圈，以及注油后要等多久。",
+      sections: [
+        {
+          heading: "怎么连接主机？",
+          paragraphs: [
+            "VOOPOO 的 DRAG X Plus 页面提到 TPP 烟弹带 510 接口。",
+          ],
+        },
+        {
+          heading: "能装哪些 TPP 线圈？",
+          paragraphs: [
+            "这款烟弹使用 TPP 线圈。VOOPOO 的 DRAG X PRO 页面列出四款：TPP-DM1 0.15Ω 为 60–80W，TPP-DM2 0.2Ω 为 40–60W，TPP-DM3 0.15Ω 为 80–100W，TPP-DM4 0.3Ω 为 32–40W，都建议搭配尼古丁浓度不超过 10 mg 的烟油。各款详情见 [VOOPOO TPP 线圈](/products/coil-38)。VOOPOO 还表示 TPP 系列采用新的专利技术，加热更快。",
+          ],
+        },
+        {
+          heading: "注油后要等吗？",
+          paragraphs: [
+            "VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，新线圈的前几口用低功率。",
+          ],
+        },
+        {
+          heading: "带线圈吗？",
+          paragraphs: [
+            "不带线圈，使用前需先装 TPP 线圈。请先确认设备的最大功率，再选功率范围在其之内的线圈。烟弹和线圈的保养见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
   // Site-wide template round batch 2c (04/10): from VOOPOO's DRAG 6 page and posters; Thai = thai-copy 04/10.
   "drag-6": {
     th: {
@@ -1105,6 +1455,141 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         }
       ]
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): PnP X empty pod — facts = VOOPOO's PnP X platform page (voopoo.com/pnpx-platform:
+  // the DTL and MTL cartridges — ohms, nicotine, 510 drip tip, coils each takes; the layered airway and dual L-shape base; scale
+  // line; directional coil; 2/3 fill + plug + 5 min; 100 mL per coil + the lab-conditions note); WebFetch 03/11, quotes in
+  // articles-0311/voopoo-facts.md. Which of the two the shop's "Silver" listing is, VOOPOO does not say → both described, none
+  // claimed. 5mL · side fill · DRAG S2 / X2 · 2 per pack stay in the tagline + spec rows.
+  "coil-56": {
+    th: {
+      lede: "หัวพอต PnP X ของ VOOPOO มีสองรุ่น คือรุ่น DTL กับรุ่น MTL ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ให้ดูทีละเรื่อง ตั้งแต่สองรุ่นต่างกันตรงไหน ไปจนถึงการใส่คอยล์และเติมน้ำยาครั้งแรก",
+      sections: [
+        {
+          heading: "รุ่น DTL กับรุ่น MTL ต่างกันยังไง",
+          paragraphs: [
+            "หัวพอตรุ่น DTL ใช้กับคอยล์ PnP X ได้ทุกค่า VOOPOO แนะนำให้ใช้กับน้ำยาความเข้มข้นนิโคตินไม่เกิน 10mg",
+            "ส่วนรุ่น MTL ใช้ได้เฉพาะคอยล์ PnP X 0.3 โอห์มกับ 0.6 โอห์ม ความเข้มข้นนิโคตินที่แนะนำคือไม่เกิน 35mg และมีปากดูดแบบ 510 ที่ถอดเปลี่ยนได้",
+            "VOOPOO แนะนำให้ใช้น้ำยาที่มี VG 50–70% กับหัวพอตทั้งสองรุ่น",
+          ],
+        },
+        {
+          heading: "คอยล์ PnP X กันรั่วยังไง",
+          paragraphs: [
+            "ข้างในคอยล์ PnP X VOOPOO แยกทางลม ส่วนที่ทำความร้อน และช่องอากาศไว้คนละชั้น เพื่อกันไม่ให้น้ำยาไหลซึมลงด้านล่าง",
+            "ที่ฐานของคอยล์มีโครงสร้างรูปตัว L สองตัว VOOPOO บอกว่าช่วยให้แรงดันข้างในสมดุล และกันไม่ให้หยดน้ำยาที่ค้างอยู่ซึมออกมา",
+          ],
+        },
+        {
+          heading: "เปิดลมแค่ไหนดี",
+          paragraphs: [
+            "ช่องลมด้านบนของหัวพอตมีขีดบอกระดับ ช่วยให้ปรับลมได้แม่นขึ้น ส่วนระดับที่ควรเปิด VOOPOO ให้ไว้ตามค่าคอยล์ คอยล์ 0.15 โอห์มเปิดสุด คอยล์ 0.2 โอห์มเปิดประมาณสองในสาม และคอยล์ 0.3–0.8 โอห์มเปิดประมาณหนึ่งในสาม",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์และเติมน้ำยาครั้งแรกยังไง",
+          paragraphs: [
+            "คอยล์ PnP X ออกแบบให้เสียบได้ทางเดียว พอกดเข้าไปจนสุด ก้นคอยล์ก็จะเสมอกับก้นหัวพอตพอดี ค่าคอยล์ที่มีให้เลือกดูได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92)",
+            "VOOPOO แนะนำให้เติมน้ำยาสองในสามของหัวพอต ปิดจุกเติมให้สนิท แล้วตั้งทิ้งไว้ 5 นาทีก่อนเริ่มสูบ",
+          ],
+        },
+        {
+          heading: "คอยล์หนึ่งตัวใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "VOOPOO ระบุว่าคอยล์ PnP X หนึ่งตัวใช้กับน้ำยาได้ถึง 100mL โดยไม่ไหม้และไม่รั่ว ตัวเลขนี้มาจากการทดสอบในสภาพที่ควบคุมไว้ ส่วนที่ใช้ได้จริงขึ้นกับการใช้งานของแต่ละคน",
+            "ถ้าอยากให้หัวพอตและคอยล์ใช้ได้นานขึ้น อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอตเปล่า PnP X มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ ต้องซื้อคอยล์ PnP X แยก โดยเลือกค่าโอห์มให้ตรงกับรุ่นของหัวพอตนะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "VOOPOO makes its empty PnP X pod in two versions, DTL and MTL. Below, from VOOPOO's PnP X page: how the two differ, how the coils resist leaks, how the airflow is set and how to fit a coil and fill for the first time.",
+      sections: [
+        {
+          heading: "How do the DTL and MTL pods differ?",
+          paragraphs: [
+            "The DTL pod takes every PnP X coil, and VOOPOO recommends e-liquid up to 10 mg nicotine strength for it. The MTL pod takes only the PnP X 0.3Ω and 0.6Ω coils, with up to 35 mg recommended, and has a replaceable 510 drip tip. VOOPOO recommends 50–70% VG for both.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "VOOPOO builds the PnP X coil with the airway, heating zone and air cavity in separate layers so e-liquid doesn't run down, and a dual L-shape structure at the coil's base keeps the pressure balanced so condensate doesn't leak.",
+          ],
+        },
+        {
+          heading: "How is the airflow set?",
+          paragraphs: [
+            "The pod's top airway carries a scale line for precise setting. VOOPOO pairs a setting with each coil: fully open for the 0.15Ω, about two-thirds for the 0.2Ω, and about one-third for the 0.3Ω to 0.8Ω.",
+          ],
+        },
+        {
+          heading: "How do I fit a coil and fill it the first time?",
+          paragraphs: [
+            "PnP X coils go in one way only — push until the coil's base sits flush with the bottom of the pod. The resistances on offer are on the [VOOPOO PnP X coils](/products/coil-92) page. VOOPOO recommends filling to about two-thirds, closing the plug and letting the pod sit 5 minutes before use.",
+          ],
+        },
+        {
+          heading: "How long does one coil last?",
+          paragraphs: [
+            "VOOPOO says each PnP X coil handles up to 100 mL of e-liquid without burning or leaking, noting the figure comes from tests under professional conditions and real use varies. Looking after pods and coils is covered in [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does the PnP X empty pod come with a coil?",
+          answer: "No. PnP X coils are sold separately — pick a resistance that matches your pod version.",
+        },
+      ],
+    },
+    zh: {
+      lede: "VOOPOO 的 PnP X 空烟弹分 DTL 和 MTL 两版。下面根据 VOOPOO 的 PnP X 页面，介绍两版的区别、线圈怎么防漏、气流怎么调，以及第一次装线圈和注油的方法。",
+      sections: [
+        {
+          heading: "DTL 版和 MTL 版有什么区别？",
+          paragraphs: [
+            "DTL 版兼容所有 PnP X 线圈，VOOPOO 建议搭配尼古丁浓度不超过 10 mg 的烟油。MTL 版只能用 PnP X 0.3Ω 和 0.6Ω 线圈，建议尼古丁浓度不超过 35 mg，并配可更换的 510 烟嘴。VOOPOO 建议两版都用 50–70% VG 的烟油。",
+          ],
+        },
+        {
+          heading: "怎么防漏？",
+          paragraphs: [
+            "VOOPOO 在 PnP X 线圈里把气道、加热区和空腔分在不同层，防止烟油往下漏；线圈底部的双 L 形结构保持压力平衡，防止冷凝液渗漏。",
+          ],
+        },
+        {
+          heading: "气流怎么调？",
+          paragraphs: [
+            "烟弹顶部气道带刻度线，方便精准调节。VOOPOO 为每个阻值配了建议：0.15Ω 全开，0.2Ω 约开三分之二，0.3Ω 到 0.8Ω 约开三分之一。",
+          ],
+        },
+        {
+          heading: "第一次怎么装线圈、怎么注油？",
+          paragraphs: [
+            "PnP X 线圈只能按一个方向插入，推到线圈底部与烟弹底部齐平即可。可选阻值见 [VOOPOO PnP X 线圈](/products/coil-92)。VOOPOO 建议注油约三分之二，盖好注油塞，静置 5 分钟再用。",
+          ],
+        },
+        {
+          heading: "一颗线圈能用多久？",
+          paragraphs: [
+            "VOOPOO 表示每颗 PnP X 线圈可支撑最多 100 mL 烟油而不烧焦、不漏油，并注明该数据来自专业条件下的测试，实际视使用情况而定。烟弹和线圈的保养见[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "PnP X 空烟弹带线圈吗？",
+          answer: "不带，PnP X 线圈需另购，请选择与烟弹版本相符的阻值。",
+        },
+      ],
     },
   },
   // Site-wide template round batch 2d (04/10): from VOOPOO's DRAG S3 / X3 pages and posters; Thai = thai-copy 04/10.
@@ -1754,6 +2239,396 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "VOOPOO 标注 Top Fill 0.4Ω 用于 RDL，功率 18–30W；0.7Ω 用于 MTL；Top Fill 另有 1.0Ω 版本。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)；延长烟弹寿命的方法见[雾化芯与烟弹保养基础](/guides/coil-and-pod-maintenance)。",
           ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ARGUS Pod Cartridge listing — facts = VOOPOO's ARGUS POD SE page (side-fill
+  // pod: watts, nicotine, leak-proof, full view, fit), ARGUS P1 page (fill), ARGUS G page (Top Fill watts, the 0.4Ω / 30W line,
+  // whole-family fit, ~14 mL per pod) and voopoo.com/faq.html (5–6 refills); WebFetch 03/11, quotes in
+  // articles-0311/voopoo-facts.md. VOOPOO's freebase / salt nic labels are not tied to a resistance on any page → unsaid.
+  // "Argus mix" is not a VOOPOO name → unsaid. "Side fill + Top Fill" stays at tagline + lede (twice).
+  "coil-21": {
+    th: {
+      lede: "หน้านี้มีหัวพอต ARGUS ของ VOOPOO ให้เลือกสองแบบ คือแบบเติมด้านข้างกับแบบ Top Fill เนื้อหาด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าแต่ละค่าใช้วัตต์เท่าไร เติมน้ำยายังไง หัวหนึ่งใช้ได้นานแค่ไหน และจะเลือกให้ตรงกับเครื่องยังไง",
+      sections: [
+        {
+          heading: "หัวแบบเติมด้านข้างใช้วัตต์เท่าไร",
+          paragraphs: [
+            "ARGUS POD Cartridge คือชื่อที่ VOOPOO เรียกหัวแบบเติมด้านข้าง โดยหัว 0.7 โอห์มใช้ที่ 14–18 วัตต์ ส่วนหัว 1.2 โอห์มใช้ที่ 9–12 วัตต์",
+            "เรื่องน้ำยา หน้า ARGUS POD SE ของ VOOPOO แนะนำให้ใช้ความเข้มข้นนิโคตินไม่เกิน 50mg",
+          ],
+        },
+        {
+          heading: "เติมน้ำยายังไง แล้วดูน้ำยาที่เหลือได้ไหม",
+          paragraphs: [
+            "หัวแบบเติมด้านข้าง ให้ดึงหัวออกจากเครื่องก่อน แล้วเปิดจุกที่ตัวหัวเพื่อเติมน้ำยา",
+            "VOOPOO บอกว่าหัวแบบนี้ใสทั้งหัว จึงดูน้ำยาที่เหลือได้ตลอดเวลาโดยไม่ต้องดึงหัวออกจากเครื่อง",
+          ],
+        },
+        {
+          heading: "หัว ARGUS POD กันรั่วยังไง",
+          paragraphs: [
+            "VOOPOO ออกแบบหัว ARGUS POD ให้มีชั้นกันรั่วหลายชั้น และบอกว่าโครงสร้างแบบสี่รูช่วยเก็บน้ำยาไว้ในหัวได้แน่น",
+          ],
+        },
+        {
+          heading: "หัวหนึ่งใช้ได้นานแค่ไหน",
+          paragraphs: [
+            "หน้า ARGUS G ของ VOOPOO บอกว่าหัวที่มีคอยล์ในตัวหนึ่งหัว ใช้กับน้ำยาได้ราว 14mL",
+            "ส่วนหน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เปลี่ยนคอยล์หลังเติมน้ำยาไปราว 5–6 ครั้ง",
+          ],
+        },
+        {
+          heading: "หัว Top Fill มีค่าไหนบ้าง",
+          paragraphs: [
+            "ตามหน้า ARGUS G ของ VOOPOO หัว Top Fill มีสามค่า คือ 0.4 โอห์มที่ 18–30 วัตต์ 0.7 โอห์มที่ 14–18 วัตต์ และ 1.0 โอห์มที่ 10–14 วัตต์",
+            "VOOPOO ระบุว่าหัว Top Fill 0.4 โอห์มใช้ได้เฉพาะเครื่องในตระกูล ARGUS Pod ที่จ่ายไฟได้ 30 วัตต์ และบอกไว้ในหน้า ARGUS G ว่าค่านี้ไม่ใช่หัวของ ARGUS G",
+            "ก่อนเลือกหัว 0.4 โอห์มจึงควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่",
+          ],
+        },
+        {
+          heading: "เลือกหัวให้ตรงกับเครื่องยังไง",
+          paragraphs: [
+            "VOOPOO บอกว่าหัว ARGUS ใช้ได้กับเครื่องในตระกูล ARGUS Pod และระบุชื่อรุ่นของหัวแบบเติมด้านข้างไว้ว่าใช้กับ ARGUS G, ARGUS POD, ARGUS P1 และ ARGUS Z ได้",
+            "ถ้าใช้ [ARGUS G3 mini](/products/argus-g3-mini) อยู่ หน้า ARGUS G3 mini ของ VOOPOO ระบุหัว Top Fill ไว้ ส่วนหัวแบบเติมด้านข้างไม่ได้อยู่ในรายการของหน้านั้น",
+            "ส่วนใครอยากเปลี่ยนแค่คอยล์แล้วใช้หัวเดิมต่อ VOOPOO มีหัวพอตเปล่า ARGUS POD ที่ใส่คอยล์ ITO ได้ อยู่ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต ARGUS ใช้กับ ARGUS G4 ได้ไหม",
+          answer: "ได้ค่ะ หน้า ARGUS G4 ของ VOOPOO ระบุว่าเครื่องนี้ใช้ได้กับหัวพอตทุกแบบในตระกูล ARGUS รวมถึงหัว Top Fill",
+        },
+      ],
+    },
+    en: {
+      lede: "This page carries two kinds of VOOPOO ARGUS pod: side-fill and Top Fill. Below, from VOOPOO's own pages: the wattage for each, how to fill, how long a pod lasts and how to match one to your device.",
+      sections: [
+        {
+          heading: "What wattage do the side-fill pods need?",
+          paragraphs: [
+            "VOOPOO calls the side-fill pod the ARGUS POD Cartridge and rates the 0.7Ω at 14–18W and the 1.2Ω at 9–12W. VOOPOO's ARGUS POD SE page recommends e-liquid of up to 50 mg nicotine strength.",
+          ],
+        },
+        {
+          heading: "How do I fill it, and can I see what's left?",
+          paragraphs: [
+            "The side-fill pod: pull it out of the device and open the plug to fill. VOOPOO says the full-view pod lets you check the level at any time without pulling it out.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "VOOPOO builds a multi-layer leak-proof design into the ARGUS POD cartridge and says its four-hole structure locks the e-liquid firmly inside.",
+          ],
+        },
+        {
+          heading: "How long does one pod last?",
+          paragraphs: [
+            "VOOPOO's ARGUS G page says one built-in-coil pod lasts for about 14 mL of e-liquid, and VOOPOO's FAQ suggests a new coil after 5–6 refills.",
+          ],
+        },
+        {
+          heading: "Which Top Fill resistances are there?",
+          paragraphs: [
+            "Per VOOPOO's ARGUS G page, three: 0.4Ω at 18–30W, 0.7Ω at 14–18W and 1.0Ω at 10–14W. VOOPOO says the 0.4Ω Top Fill is only for ARGUS Pod Family devices with 30W output, and that page says it is not for the ARGUS G — so check your device's maximum first.",
+          ],
+        },
+        {
+          heading: "How do I match a pod to my device?",
+          paragraphs: [
+            "VOOPOO says ARGUS cartridges fit the ARGUS Pod Family, and names the ARGUS G, ARGUS POD, ARGUS P1 and ARGUS Z for the side-fill pods. On an [ARGUS G3 mini](/products/argus-g3-mini), note that VOOPOO's ARGUS G3 mini page lists the Top Fill pods and does not list the side-fill ARGUS POD Cartridge. To change just the coil and keep the pod, VOOPOO also makes an empty ARGUS POD cartridge that takes ITO coils: see [the ARGUS P1 empty pod](/products/coil-83).",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Do ARGUS pods fit the ARGUS G4?",
+          answer: "Yes. VOOPOO's ARGUS G4 page says the device takes every ARGUS pod-family cartridge, Top Fill included.",
+        },
+      ],
+    },
+    zh: {
+      lede: "本页有两种 VOOPOO ARGUS 烟弹：侧注油和 Top Fill 顶部注油。下面根据 VOOPOO 官网的资料，介绍各自的功率、注油方法、一颗能用多久，以及怎么选到适合自己设备的款式。",
+      sections: [
+        {
+          heading: "侧注油烟弹需要多大功率？",
+          paragraphs: [
+            "VOOPOO 把侧注油烟弹称为 ARGUS POD Cartridge，标注 0.7Ω 为 14–18W，1.2Ω 为 9–12W。VOOPOO 的 ARGUS POD SE 页面建议搭配尼古丁浓度不超过 50 mg 的烟油。",
+          ],
+        },
+        {
+          heading: "怎么注油？能看到剩余烟油吗？",
+          paragraphs: [
+            "侧注油烟弹：从主机上拔下，打开注油塞即可注油。VOOPOO 表示这款全透明烟弹无需拔出就能随时查看剩余油量。",
+          ],
+        },
+        {
+          heading: "防漏做得怎么样？",
+          paragraphs: [
+            "VOOPOO 在 ARGUS POD 烟弹里采用多层防漏设计，并表示四孔结构能把烟油牢牢锁在烟弹内。",
+          ],
+        },
+        {
+          heading: "一颗烟弹能用多久？",
+          paragraphs: [
+            "VOOPOO 的 ARGUS G 页面写道，一颗一体式烟弹大约可用 14 mL 烟油；VOOPOO 的常见问题也建议注油 5–6 次后更换新线圈。",
+          ],
+        },
+        {
+          heading: "Top Fill 有哪些阻值？",
+          paragraphs: [
+            "按 VOOPOO 的 ARGUS G 页面，共三种：0.4Ω 为 18–30W，0.7Ω 为 14–18W，1.0Ω 为 10–14W。VOOPOO 注明 0.4Ω Top Fill 只适用于输出可达 30W 的 ARGUS Pod 系列设备，该页面也写明它不适用于 ARGUS G，选购前请先确认设备的最大功率。",
+          ],
+        },
+        {
+          heading: "怎么选到适合自己设备的烟弹？",
+          paragraphs: [
+            "VOOPOO 表示 ARGUS 烟弹适用于 ARGUS Pod 系列设备，侧注油烟弹则点名适用 ARGUS G、ARGUS POD、ARGUS P1 和 ARGUS Z。用 [ARGUS G3 mini](/products/argus-g3-mini) 的话请注意：VOOPOO 的 ARGUS G3 mini 页面列出了 Top Fill 烟弹，侧注油的 ARGUS POD Cartridge 不在该页列表中。想只换线圈、继续用原烟弹的话，VOOPOO 还有可装 ITO 线圈的 ARGUS POD 空烟弹，见 [Argus P1 空烟弹](/products/coil-83)。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "ARGUS 烟弹能用在 ARGUS G4 上吗？",
+          answer: "可以。VOOPOO 的 ARGUS G4 页面写明这台机器适用所有 ARGUS 系列烟弹，包括 Top Fill。",
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ARGUS POD empty cartridge ("Argus P1 empty pod") — facts = VOOPOO's ARGUS P1 page
+  // (the two kits' box lists, the ITO-M0…M3 coils, fill), its DRAG Q page (ITO coil table: draw, watts, nicotine, mesh, ~10 fills)
+  // and voopoo.com/faq.html (70% fill, 5 min, low wattage first); WebFetch 03/11. Capacity / pack count = the spec rows
+  // (a retailer source) → not repeated. Fit with ARGUS POD / P1 / Z / G / A stays in the spec row.
+  "coil-83": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวพอตรุ่นนี้มากับเครื่องรุ่นไหน ใส่คอยล์ ITO ค่าไหนได้บ้าง แต่ละค่าเหมาะกับแนวการสูบแบบไหน และดูแลคอยล์ยังไง",
+      sections: [
+        {
+          heading: "หัวพอตเปล่านี้มากับเครื่องรุ่นไหน",
+          paragraphs: [
+            "หน้า ARGUS P1 ของ VOOPOO บอกของในกล่องไว้สองชุด ชุด ARGUS POD มากับหัวพอตที่มีคอยล์ในตัว 0.7 และ 1.2 โอห์ม",
+            "ส่วนชุด ARGUS P1 มากับหัวพอตเปล่าแบบนี้ 1 หัว และคอยล์ ITO-M1 0.7 โอห์มกับ ITO-M3 1.2 โอห์มอย่างละตัว",
+            "ถ้าอยากได้หัวที่มีคอยล์มาในตัวเลย ไม่ต้องเปลี่ยนคอยล์เอง ดูได้ที่หน้า [หัวพอต VOOPOO Argus Pod](/products/coil-21)",
+          ],
+        },
+        {
+          heading: "ใส่คอยล์ ITO ค่าไหนได้บ้าง",
+          paragraphs: [
+            "หน้า ARGUS P1 ของ VOOPOO ระบุคอยล์ ITO ไว้สี่ค่า คือ ITO-M0 0.5 โอห์ม ITO-M1 0.7 โอห์ม ITO-M2 1.0 โอห์ม และ ITO-M3 1.2 โอห์ม ทั้งสี่ตัวเป็นคอยล์ mesh",
+            "ตามตารางคอยล์ ITO ของ VOOPOO ตัว ITO-M0 สูบแบบ RDL ใช้ 18–25 วัตต์ ITO-M1 เป็น MTL แบบลมโล่ง ใช้ 14–18 วัตต์ ITO-M2 เป็น MTL ใช้ 10–14 วัตต์ และ ITO-M3 เป็น MTL แบบแน่น ใช้ 8–12 วัตต์",
+          ],
+        },
+        {
+          heading: "คอยล์แต่ละค่าเหมาะกับนิโคตินเท่าไร",
+          paragraphs: [
+            "VOOPOO แนะนำความเข้มข้นนิโคตินแยกตามคอยล์ไว้ด้วย คือ ITO-M0 ไม่เกิน 20mg ITO-M1 อยู่ที่ 20–30mg ITO-M2 อยู่ที่ 30–50mg และ ITO-M3 ไม่เกิน 50mg",
+            "ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "เติมน้ำยายังไง คอยล์ใช้ได้กี่ครั้ง",
+          paragraphs: [
+            "วิธีเติมตามหน้า ARGUS P1 ของ VOOPOO คือดึงหัวออกจากเครื่อง แล้วเปิดจุกที่ตัวหัวเพื่อเติมน้ำยา",
+            "ส่วนคอยล์ ITO นั้น VOOPOO ประเมินไว้ในหน้า DRAG Q ว่าหนึ่งตัวเติมน้ำยาใช้ได้ราว 10 ครั้ง",
+            "หลังใส่คอยล์ใหม่ หน้าคำถามที่พบบ่อยของ VOOPOO แนะนำให้เติมน้ำยาราว 70% ของหัว ทิ้งไว้ 5 นาทีก่อนสูบ และใช้วัตต์ต่ำในช่วงพัฟแรก ๆ",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอตเปล่า Argus P1 มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ หัวนี้เป็นหัวพอตเปล่า ต้องซื้อคอยล์ ITO แยกมาใส่ก่อนใช้นะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "VOOPOO calls this pod the ARGUS POD Empty Cartridge. Below, from VOOPOO's own pages: which kit it comes with, which ITO coils fit, which draw each suits and how to look after the coil.",
+      sections: [
+        {
+          heading: "Which kit does this empty pod come with?",
+          paragraphs: [
+            "VOOPOO's ARGUS P1 page lists two kit boxes: the ARGUS POD kit comes with built-in-coil pods (0.7Ω and 1.2Ω), while the ARGUS P1 kit comes with one of these empty pods plus one ITO-M1 0.7Ω and one ITO-M3 1.2Ω coil. If you'd rather not change coils, built-in-coil pods are on the [VOOPOO Argus Pod](/products/coil-21) page.",
+          ],
+        },
+        {
+          heading: "Which ITO coils fit?",
+          paragraphs: [
+            "VOOPOO's ARGUS P1 page lists four ITO coils, all mesh: ITO-M0 0.5Ω, ITO-M1 0.7Ω, ITO-M2 1.0Ω and ITO-M3 1.2Ω. In VOOPOO's ITO table the M0 is RDL at 18–25W, the M1 a loose MTL at 14–18W, the M2 MTL at 10–14W and the M3 a tight MTL at 8–12W.",
+          ],
+        },
+        {
+          heading: "Which nicotine strength for each coil?",
+          paragraphs: [
+            "VOOPOO gives a nicotine strength per coil: up to 20 mg for the M0, 20–30 mg for the M1, 30–50 mg for the M2 and up to 50 mg for the M3. Not sure which draw you like? See [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "How do I fill it, and how long does a coil last?",
+          paragraphs: [
+            "Per VOOPOO's ARGUS P1 page, pull the pod out of the device and open the plug to fill. On its DRAG Q page VOOPOO estimates one ITO coil for about 10 fills. With a new coil, VOOPOO's FAQ suggests filling to about 70%, waiting 5 minutes before vaping and taking the first few puffs at low wattage.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does the Argus P1 empty pod come with a coil?",
+          answer: "No. It's an empty pod — ITO coils are sold separately and fitted before use.",
+        },
+      ],
+    },
+    zh: {
+      lede: "VOOPOO 把这款烟弹称为 ARGUS POD Empty Cartridge。下面根据 VOOPOO 官网的资料，介绍它随哪款套装附带、能装哪些 ITO 线圈、各自适合哪种抽法，以及线圈怎么保养。",
+      sections: [
+        {
+          heading: "这款空烟弹随哪款套装附带？",
+          paragraphs: [
+            "VOOPOO 的 ARGUS P1 页面列出两套包装：ARGUS POD 套装附带一体式线圈烟弹（0.7Ω 和 1.2Ω），而 ARGUS P1 套装附带 1 个这种空烟弹，加上 ITO-M1 0.7Ω 和 ITO-M3 1.2Ω 线圈各一颗。不想自己换线圈的话，一体式烟弹见 [VOOPOO Argus Pod 烟弹](/products/coil-21)。",
+          ],
+        },
+        {
+          heading: "能装哪些 ITO 线圈？",
+          paragraphs: [
+            "VOOPOO 的 ARGUS P1 页面列出四款 ITO 线圈，都是网状线圈：ITO-M0 0.5Ω、ITO-M1 0.7Ω、ITO-M2 1.0Ω 和 ITO-M3 1.2Ω。按 VOOPOO 的 ITO 表格，M0 为 RDL，18–25W；M1 为偏松的 MTL，14–18W；M2 为 MTL，10–14W；M3 为紧 MTL，8–12W。",
+          ],
+        },
+        {
+          heading: "每颗线圈适合多大尼古丁浓度？",
+          paragraphs: [
+            "VOOPOO 按线圈给出尼古丁浓度建议：M0 不超过 20 mg，M1 为 20–30 mg，M2 为 30–50 mg，M3 不超过 50 mg。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "怎么注油？线圈能用多久？",
+          paragraphs: [
+            "按 VOOPOO 的 ARGUS P1 页面，把烟弹从主机上拔下，打开注油塞即可注油。VOOPOO 在 DRAG Q 页面估计一颗 ITO 线圈约可注油 10 次。装上新线圈后，VOOPOO 的常见问题建议注油约七成，静置 5 分钟再抽，前几口用低功率。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Argus P1 空烟弹带线圈吗？",
+          answer: "不带。这是空烟弹，ITO 线圈需另购，装好后再使用。",
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): ITO-X empty pod — facts = VOOPOO's DRAG Q page (the ITO-X pod: material, size,
+  // 3.5 mL "less filling", steel base, directional coil, 4 silicone rings, "all ITO coils", the ITO table, ~10 fills) and its DORIC Q
+  // page (ITO-X Pod in the compatible list); WebFetch 03/11. Top fill = the tagline + a spec row VOOPOO's DRAG Q page does not
+  // state → not repeated. Worded apart from coil-83 (same ITO coils).
+  "coil-68": {
+    th: {
+      lede: "หัว ITO-X เป็นหัวพอตของเครื่อง DRAG Q จาก VOOPOO ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าหัวนี้ทำจากอะไร ยึดกับเครื่องยังไง กันรั่วยังไง ใส่คอยล์ ITO ค่าไหนได้บ้าง และนอกจาก DRAG Q แล้วยังใช้กับเครื่องไหนได้อีก",
+      sections: [
+        {
+          heading: "หัว ITO-X ทำจากอะไร",
+          paragraphs: [
+            "หัว ITO-X ทำจากสแตนเลสกับ PCTG และมีขนาด 51.45 × 21.5 × 21.5 mm",
+            "VOOPOO บอกว่าความจุ 3.5mL ช่วยให้สูบได้นานขึ้นโดยไม่ต้องเติมน้ำยาบ่อย",
+            "VOOPOO ทำฐานของหัวเป็นสแตนเลส และออกแบบให้ยึดเข้ากับตัวเครื่องได้แน่น",
+          ],
+        },
+        {
+          heading: "กันรั่วยังไง",
+          paragraphs: [
+            "VOOPOO บอกว่าหัว ITO-X มีแหวนซิลิโคน 4 ชั้นที่ช่วยกันรั่ว",
+            "ส่วนคอยล์ ITO ออกแบบให้เสียบเข้าหัวในทิศทางเดียว ซึ่ง VOOPOO บอกว่าช่วยให้ลมเดินตรงและรสชาติคงที่",
+          ],
+        },
+        {
+          heading: "หัว ITO-X ใช้คอยล์ตัวไหนได้บ้าง",
+          paragraphs: [
+            "VOOPOO บอกว่า DRAG Q ใช้คอยล์ ITO ได้ทุกตัว และหน้า DRAG Q ระบุคอยล์ mesh ไว้สี่ตัว ตั้งแต่ 0.5 ถึง 1.2 โอห์ม ครอบคลุมการสูบตั้งแต่ RDL ไปจนถึง MTL",
+            "ITO-M0 0.5 โอห์มสูบแบบ RDL ที่ 18–25 วัตต์ ส่วน ITO-M1 0.7 โอห์ม ITO-M2 1.0 โอห์ม และ ITO-M3 1.2 โอห์ม เป็น MTL ที่ลมแน่นขึ้นและใช้วัตต์ต่ำลงตามลำดับ โดย ITO-M3 ใช้ที่ 8–12 วัตต์",
+            "คอยล์ ITO แต่ละตัว VOOPOO ประเมินว่าใช้ได้ราว 10 รอบการเติมน้ำยา",
+            "ถ้ายังไม่แน่ใจว่าชอบสูบแบบไหน อ่านต่อได้ที่ [MTL กับ DTL สูบต่างกันยังไง แล้ว RDL คืออะไร](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "นอกจาก DRAG Q แล้วใช้กับเครื่องไหนได้อีก",
+          paragraphs: [
+            "หน้า DORIC Q ของ VOOPOO ใส่ ITO-X Pod ไว้ในรายการหัวที่ใช้ร่วมกันได้ด้วย ถ้าใช้ DORIC Q อยู่ หัวนี้จึงเป็นอีกทางเลือกหนึ่ง",
+            "ส่วนเครื่อง ARGUS P1 ก็ใช้คอยล์ ITO ชุดเดียวกันนี้ แต่ใช้หัวพอตเปล่าอีกแบบ ดูได้ที่หน้า [หัวเปล่า Argus P1](/products/coil-83)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอตเปล่า ITO-X มีคอยล์มาให้ไหม",
+          answer: "ไม่มีค่ะ ITO-X เป็นหัวพอตเปล่า คอยล์ ITO ต้องซื้อแยกแล้วใส่เองก่อนใช้นะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "The ITO-X is VOOPOO's pod for the DRAG Q. Below, from VOOPOO's own pages: what it's made of, how it locks on, how it resists leaks, which ITO coils fit and which devices besides the DRAG Q take it.",
+      sections: [
+        {
+          heading: "What is the ITO-X pod made of?",
+          paragraphs: [
+            "Stainless steel and PCTG, 51.45 × 21.5 × 21.5 mm. VOOPOO says the 3.5 mL capacity gives longer vaping with less filling, and the stainless-steel base is designed to buckle firmly onto the device.",
+          ],
+        },
+        {
+          heading: "How does it resist leaks?",
+          paragraphs: [
+            "VOOPOO says four layers of silicone ring form the leak-proof structure. The ITO coil is inserted in one direction, which VOOPOO says keeps the airflow direct and the taste stable.",
+          ],
+        },
+        {
+          heading: "Which coils does the ITO-X take?",
+          paragraphs: [
+            "VOOPOO says the DRAG Q takes every ITO coil, and its DRAG Q page lists four mesh coils from 0.5Ω to 1.2Ω, covering RDL to MTL. The ITO-M0 0.5Ω is RDL at 18–25W; the ITO-M1 0.7Ω, ITO-M2 1.0Ω and ITO-M3 1.2Ω are MTL, tighter and lower in wattage in that order, the M3 at 8–12W. VOOPOO estimates one ITO coil for about 10 fills. Not sure which draw you like? See [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "Which devices besides the DRAG Q take it?",
+          paragraphs: [
+            "VOOPOO's DORIC Q page lists the ITO-X Pod among its compatible cartridges too. The ARGUS P1 uses the same ITO coils but a different empty pod — see [the ARGUS P1 empty pod](/products/coil-83).",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does the ITO-X empty pod come with a coil?",
+          answer: "No. The ITO-X is an empty pod — buy ITO coils separately and fit one before use.",
+        },
+      ],
+    },
+    zh: {
+      lede: "ITO-X 是 VOOPOO 为 DRAG Q 设计的烟弹。下面根据 VOOPOO 官网的资料，介绍它的材质、怎么固定在主机上、怎么防漏、能装哪些 ITO 线圈，以及除了 DRAG Q 还适用哪些设备。",
+      sections: [
+        {
+          heading: "ITO-X 烟弹是什么材质？",
+          paragraphs: [
+            "不锈钢加 PCTG，尺寸 51.45 × 21.5 × 21.5 mm。VOOPOO 表示 3.5 mL 的容量让抽得更久、注油次数更少；不锈钢底座则能与主机牢牢扣合。",
+          ],
+        },
+        {
+          heading: "怎么防漏？",
+          paragraphs: [
+            "VOOPOO 表示四层硅胶圈构成有效的防漏结构；ITO 线圈按定向方式插入，官方称这样气流更直接、口感更稳定。",
+          ],
+        },
+        {
+          heading: "ITO-X 能装哪些线圈？",
+          paragraphs: [
+            "VOOPOO 表示 DRAG Q 兼容所有 ITO 线圈，DRAG Q 页面列出四款网状线圈，阻值 0.5Ω 到 1.2Ω，覆盖 RDL 到 MTL。ITO-M0 0.5Ω 为 RDL，18–25W；ITO-M1 0.7Ω、ITO-M2 1.0Ω 和 ITO-M3 1.2Ω 为 MTL，吸感依次更紧、功率更低，M3 为 8–12W。VOOPOO 估计一颗 ITO 线圈约可注油 10 次。还不确定自己适合哪种抽法，可以看[MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "除了 DRAG Q 还适用哪些设备？",
+          paragraphs: [
+            "VOOPOO 的 DORIC Q 页面也把 ITO-X Pod 列为兼容烟弹。ARGUS P1 用的是同样的 ITO 线圈，但空烟弹是另一款，见 [Argus P1 空烟弹](/products/coil-83)。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "ITO-X 空烟弹带线圈吗？",
+          answer: "不带。ITO-X 是空烟弹，ITO 线圈需另购，装好后再使用。",
         },
       ],
     },
@@ -4709,6 +5584,130 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "和 Caliburn G2 烟弹有什么不同？",
           paragraphs: [
             "Caliburn G2 烟弹也能用同样这几款线圈，明显的区别在容量：Caliburn G2 烟弹装 2 mL，这款装得更多。两者分属不同套装，请按自己的设备选择；用 Caliburn G2 的话，请看 [Caliburn G2 烟弹](/products/coil-55)。注油和线圈保养请看[线圈与烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Articles queue 0211 batch 5, VOOPOO (03/11): VOOPOO PnP coils ("Coil Vinci") — facts = VOOPOO's PnP coil page
+  // (voopoo.com/pnpplatform.html: per-model draw style, watts, nicotine, device list), the VINCI 3 page ("pull and push") and
+  // VOOPOO's coil guide (voopoo.com/guides/vape-coil-replacement-guide.html: PnP X ≠ original PnP, signs, priming); WebFetch
+  // 03/11, quotes in articles-0311/voopoo-facts.md. The O-ring colours in the option names are not explained by VOOPOO → unsaid;
+  // no option is mapped to a model name (the article quotes VOOPOO's own table by model). PnP-C1 (spec row, a retailer source)
+  // is not on VOOPOO's page → not repeated. No article FAQ.
+  "coil-1": {
+    th: {
+      lede: "คอยล์ Vinci ในหน้านี้คือคอยล์ PnP รุ่นเดิมของ VOOPOO ที่มีให้เลือกหลายค่า ด้านล่างสรุปจากหน้าเว็บของ VOOPOO ว่าคอยล์ระบบนี้คืออะไร แต่ละค่าเหมาะกับการสูบแบบไหน ใช้กับน้ำยานิโคตินเท่าไร ใส่กับเครื่องรุ่นไหนได้ และควรเปลี่ยนเมื่อไหร่",
+      sections: [
+        {
+          heading: "คอยล์ PnP คืออะไร",
+          paragraphs: [
+            "PnP คือระบบคอยล์ของ VOOPOO ที่ใช้ขั้วเสียบแบบมาตรฐานเดียวกัน คอยล์ตัวเดียวจึงใช้ได้กับเครื่อง VOOPOO หลายรุ่น เปลี่ยนคอยล์ก็ง่าย แค่ดึงตัวเก่าออกแล้วกดตัวใหม่เข้าไป ซึ่ง VOOPOO บอกว่าใช้เวลาเปลี่ยนแค่หนึ่งวินาทีเท่านั้น",
+            "VOOPOO ทำคอยล์ระบบนี้ไว้หลายค่า เพื่อให้สลับได้ตามใจ ว่าวันนี้อยากได้ไอเยอะหรืออยากได้รสชัด",
+          ],
+        },
+        {
+          heading: "ค่าโอห์มไหนเหมาะกับการสูบแบบไหน",
+          paragraphs: [
+            "ตามตารางของ VOOPOO คอยล์ค่าต่ำอย่าง 0.15 โอห์มกับ 0.2 โอห์มเป็นคอยล์สำหรับสูบแบบ DL คือดูดลงปอดตรง ๆ และต้องใช้วัตต์สูง เช่น PnP-TW15 0.15 โอห์มอยู่ที่ 55–70 วัตต์ และ PnP-TW20 0.2 โอห์มอยู่ที่ 40–55 วัตต์ ถัดขึ้นมาคือ PnP-TW30 0.3 โอห์ม ที่ VOOPOO จัดไว้เป็นแบบ DL/RTL ใช้ 28–36 วัตต์",
+            "ช่วง 0.45 ถึง 0.6 โอห์ม VOOPOO จัดไว้เป็นแบบ RDL เกือบทุกตัว เช่น PnP-DW60 0.6 โอห์มใช้ 18–23 วัตต์ ส่วนคอยล์ 0.8 ถึง 1.2 โอห์มเป็นคอยล์สำหรับสูบแบบ MTL ที่ลมแน่นกว่าและใช้วัตต์ต่ำ เช่น PnP-R2 1.0 โอห์มใช้ 10–15 วัตต์",
+            "ก่อนเลือกค่า ควรเช็ควัตต์สูงสุดของเครื่องที่ใช้อยู่ด้วย เพราะคอยล์ค่าต่ำต้องใช้เครื่องที่จ่ายไฟได้สูง",
+          ],
+        },
+        {
+          heading: "ใช้กับน้ำยานิโคตินเท่าไร",
+          paragraphs: [
+            "VOOPOO แนะนำความเข้มข้นนิโคตินไว้ต่างกันตามรุ่นคอยล์ คอยล์ mesh ค่าต่ำอย่าง PnP-VM6 0.15 โอห์ม PnP-VM5 0.2 โอห์ม และ PnP-VM1 0.3 โอห์ม แนะนำไว้ไม่เกิน 10mg ส่วน PnP-VM3 0.45 โอห์มกับ PnP-VM4 0.6 โอห์มไม่เกิน 25mg และคอยล์ MTL อย่าง PnP-R1 0.8 โอห์มกับ PnP-R2 1.0 โอห์มใช้ได้ถึง 35mg",
+          ],
+        },
+        {
+          heading: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+          paragraphs: [
+            "หน้าคอยล์ PnP ของ VOOPOO ระบุว่า PnP-R1 กับ PnP-R2 ใช้ได้กับเครื่องหลายรุ่นในตระกูล VINCI และ DRAG เช่น VINCI X และ [DRAG X](/products/drag-x) รวมถึงหัว PnP 22 กับ PnP 20 ส่วนคอยล์บางรุ่น VOOPOO ระบุเครื่องไว้เฉพาะ เช่น PnP-VM6 ที่ทำมาให้ DRAG X และ PnP-VM5 ที่ระบุไว้กับ VINCI X และ DRAG S",
+            "VOOPOO บอกไว้ด้วยว่ารายชื่อนี้มีไว้ใช้อ้างอิง และการสูบจริงอาจต่างกันไปตามเครื่อง",
+            "เครื่องรุ่นใหม่อย่าง VINCI S และ DRAG X3 ใช้คอยล์อีกระบบหนึ่งคือ PnP X ซึ่ง VOOPOO บอกว่าใช้กับเครื่อง PnP รุ่นเดิมไม่ได้ เครื่อง PnP รุ่นเดิมจึงต้องใช้คอยล์ PnP อย่างตระกูล VM หรือตระกูล TW",
+            "แม้หน้านี้จะใช้ชื่อว่า Coil Vinci แต่ VOOPOO ไม่ได้ใส่คอยล์ PnP รุ่นเดิมไว้ในรายการที่ใช้กับ VINCI S ถ้าใช้เครื่องรุ่นใหม่อยู่ ดูคอยล์ได้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92) และถ้าใช้ VINCI S อยู่ ให้เลือกคอยล์ PnP X ค่า 0.3 โอห์มขึ้นไปเท่านั้น",
+          ],
+        },
+        {
+          heading: "เปลี่ยนคอยล์เมื่อไหร่ ใส่ตัวใหม่แล้วต้องทำอะไร",
+          paragraphs: [
+            "คู่มือเปลี่ยนคอยล์ของ VOOPOO บอกว่าไม่มีกำหนดตายตัว ให้สังเกตจากอาการ เช่น สูบแล้วมีรสไหม้ รสจางลง ไอน้อยลง น้ำยารั่วหรือมีเสียงน้ำยาดังจ๊อก ๆ หรือน้ำยาในหัวพอตเปลี่ยนเป็นสีเข้ม",
+            "พอใส่คอยล์ใหม่ ให้หยดน้ำยาลงรูสำลีของคอยล์สักสองสามหยดก่อน แล้วเติมน้ำยาทิ้งไว้ 5–10 นาทีให้สำลีชุ่ม ระหว่างใช้ก็ตั้งวัตต์ให้อยู่ในช่วงที่ VOOPOO แนะนำ และไม่สูบรัว คอยล์ก็จะใช้ได้นานขึ้น",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "This page carries many of VOOPOO's original PnP coils. Below, from VOOPOO's own pages: what the system is, which resistance suits which draw, what nicotine strength each is made for, which devices they fit and when to change one.",
+      sections: [
+        {
+          heading: "What is a PnP coil?",
+          paragraphs: [
+            "PnP is VOOPOO's coil system with one standard connection, so the same coil fits many VOOPOO devices. Changing one is a pull and a push — VOOPOO says it takes a second — and the range is wide enough to switch between big clouds and stronger flavour whenever you like.",
+          ],
+        },
+        {
+          heading: "Which resistance suits which draw?",
+          paragraphs: [
+            "In VOOPOO's table the low resistances, 0.15Ω and 0.2Ω, are for an open DL draw at high wattage: the PnP-TW15 0.15Ω runs at 55–70W and the PnP-TW20 0.2Ω at 40–55W. The PnP-TW30 0.3Ω, which VOOPOO labels DL/RTL, runs at 28–36W.",
+            "From 0.45Ω to 0.6Ω VOOPOO rates almost every coil RDL, such as the PnP-DW60 0.6Ω at 18–23W; from 0.8Ω to 1.2Ω they are tighter MTL coils at low wattage, such as the PnP-R2 1.0Ω at 10–15W. Check your device's maximum output first — the low-resistance coils need a device that can deliver high power.",
+          ],
+        },
+        {
+          heading: "What nicotine strength are they for?",
+          paragraphs: [
+            "VOOPOO gives a ceiling per model: the low-resistance mesh coils — PnP-VM6 0.15Ω, PnP-VM5 0.2Ω and PnP-VM1 0.3Ω — up to 10 mg; the PnP-VM3 0.45Ω and PnP-VM4 0.6Ω up to 25 mg; and MTL coils such as the PnP-R1 0.8Ω and PnP-R2 1.0Ω up to 35 mg.",
+          ],
+        },
+        {
+          heading: "Which devices do they fit?",
+          paragraphs: [
+            "VOOPOO's PnP coil page lists the PnP-R1 and PnP-R2 for devices such as the VINCI, VINCI R, VINCI X, DRAG S, [DRAG X](/products/drag-x), DRAG Baby, FIND Trio, NAVI and the PnP 22 and PnP 20 tanks; for some coils VOOPOO names specific devices, like the PnP-VM6 made for the DRAG X and the PnP-VM5 listed for the VINCI X and DRAG S. VOOPOO adds that the list is for reference and the experience can vary by device.",
+            "Newer devices such as the VINCI S and DRAG X3 use a different system, PnP X, which VOOPOO says does not fit original PnP devices — so original PnP devices need PnP coils such as the VM or TW series. Although this page is named Coil Vinci, VOOPOO does not list original PnP coils for the VINCI S. For a newer device, see [VOOPOO PnP X coils](/products/coil-92); on a VINCI S, pick 0.3Ω or above.",
+          ],
+        },
+        {
+          heading: "When should I change a coil, and what do I do with a new one?",
+          paragraphs: [
+            "VOOPOO's coil guide says there's no fixed schedule — watch for a burnt or muted taste, less vapour, leaking or gurgling, or e-liquid turning dark. Prime a new coil with a few drops of e-liquid into the wick holes, then let the filled pod sit 5–10 minutes. Staying within the recommended wattage and not chain vaping makes a coil last longer.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "本页有多款 VOOPOO 原版 PnP 线圈。下面根据 VOOPOO 官网的资料，介绍这套系统是什么、哪个阻值适合哪种抽法、各自适合多少尼古丁、适用哪些设备，以及什么时候该换。",
+      sections: [
+        {
+          heading: "PnP 线圈是什么？",
+          paragraphs: [
+            "PnP 是 VOOPOO 采用统一标准接口的线圈系统，同一颗线圈可用于多款 VOOPOO 设备。换线圈只需一拔一推，VOOPOO 表示一秒就能完成；阻值选择很多，想要大烟雾还是浓口感可以随时切换。",
+          ],
+        },
+        {
+          heading: "哪个阻值适合哪种抽法？",
+          paragraphs: [
+            "按 VOOPOO 的表格，0.15Ω、0.2Ω 这类低阻值用于直肺（DL），需要高功率：PnP-TW15 0.15Ω 为 55–70W，PnP-TW20 0.2Ω 为 40–55W；PnP-TW30 0.3Ω 标为 DL/RTL，功率 28–36W。",
+            "0.45Ω 到 0.6Ω 的线圈 VOOPOO 几乎都标为 RDL，例如 PnP-DW60 0.6Ω 为 18–23W；0.8Ω 到 1.2Ω 是吸感较紧的 MTL，功率较低，例如 PnP-R2 1.0Ω 为 10–15W。请先确认自己设备的最大输出功率，低阻值线圈需要能输出高功率的设备。",
+          ],
+        },
+        {
+          heading: "适合多少尼古丁的烟油？",
+          paragraphs: [
+            "VOOPOO 按型号给出上限：低阻值网状线圈 PnP-VM6 0.15Ω、PnP-VM5 0.2Ω 和 PnP-VM1 0.3Ω 为 10 mg 以内；PnP-VM3 0.45Ω 和 PnP-VM4 0.6Ω 为 25 mg 以内；PnP-R1 0.8Ω、PnP-R2 1.0Ω 等 MTL 线圈可到 35 mg。",
+          ],
+        },
+        {
+          heading: "适用哪些设备？",
+          paragraphs: [
+            "VOOPOO 的 PnP 线圈页面列出，PnP-R1 和 PnP-R2 适用于 VINCI、VINCI R、VINCI X、DRAG S、[DRAG X](/products/drag-x)、DRAG Baby、FIND Trio、NAVI 以及 PnP 22 和 PnP 20 雾化器；部分线圈 VOOPOO 标注了特定设备，例如专为 DRAG X 做的 PnP-VM6，以及标注 VINCI X 和 DRAG S 的 PnP-VM5。VOOPOO 也说明该列表仅供参考，实际体验会因设备而异。",
+            "VINCI S、DRAG X3 等新款设备用的是另一套 PnP X 系统，VOOPOO 表示它不适用于原版 PnP 设备，因此原版 PnP 设备需要使用 VM、TW 系列等 PnP 线圈。本页虽名为 Coil Vinci，但 VOOPOO 并未把原版 PnP 线圈列为 VINCI S 适用。用新款设备的话，请看 [VOOPOO PnP X 线圈](/products/coil-92)；VINCI S 请选 0.3Ω 及以上。",
+          ],
+        },
+        {
+          heading: "什么时候换线圈？新线圈要怎么处理？",
+          paragraphs: [
+            "VOOPOO 的换线圈指南说没有固定周期，出现焦味、味道变淡、烟雾变少、漏油或咕噜声、烟油颜色变深时就该换了。新线圈先在导油孔滴几滴烟油，注油后静置 5–10 分钟让棉芯充分吸油。功率保持在推荐范围内、避免连续猛抽，线圈会更耐用。",
           ],
         },
       ],
