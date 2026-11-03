@@ -1168,7 +1168,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexbar-switch-15k-pod/card-v2.webp",
+      src: "/assets/products/nexbar-switch-15k-pod/card-v2-wm2.webp",
       alt: "nexBar Switch 15K refill pod, Blueberry Ice, front view",
       angle: "Front, isolated — OKami24 render (Higgsfield) of the maker's pod render; the flavour label re-typeset by script.",
       transparentBackground: true,
@@ -2582,7 +2582,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
       ["Pod-181-10", "peach-strawberry", "Peach Strawberry"], ["Pod-181-11", "lychee", "Lychee"], ["Pod-181-12", "strawberry-banana", "Strawberry Banana"],
       ["Pod-181-13", "strawberry-custard", "Strawberry Custard"], ["Pod-181-14", "strawberry-watermelon", "Strawberry Watermelon"],
       ["Pod-181-15", "pineapple", "Pineapple"]] as const).map(([code, file, name]) => [code, {
-      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
+      kind: "official-photo", role: "detail", src: `/assets/products/nexbar-switch-15k-pod/variant-${file}-wm2.webp`, alt: `nexBar Switch 15K refill pod, ${name}`,
       transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's pod render", sourceUrl: "https://www.vmaniath.com/en/product/1273962/nexbar-switch-pod-juice",
     } satisfies ProductAsset])
   ),
