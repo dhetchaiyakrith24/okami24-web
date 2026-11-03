@@ -151,6 +151,8 @@ export const joiwayProducts: Product[] = [
       "You like a device with some colour to it, with lights that come on as you vape.",
     ],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "F5Szd_gI52k", title: "JOIWAY F3 รุ่นเก่าที่เคยฮิต ยังน่าใช้อยู่ไหมในปี 2026?", channelName: "OKM YARZ", publishedAt: "2026-10-08" },
     relatedProductSlugs: ["joiway-f4"],
     sourceUrls: ["https://myjoiway.com/", "https://thai.myjoiway.com/"],
   },
