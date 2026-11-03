@@ -1,0 +1,50 @@
+/* Samurai backdrop on /products (SamuraiBackdrop.tsx). Owner 04/11: the full-colour samurai "เด่น … ดูเป็นเว็บ Game … ไม่โต"
+   → "สีเดียวกันกับการ์ดโอน" — the transfer PAYMENT CARD's own treatment (OrderStatusView): the same picture greyed, darkened
+   and screened onto a warm charcoal, so the red moon and mist drop to black and only a faint silver figure is left, under
+   the card's fine vertical lines. The charcoal fades to the page colour before the first card row (the cards #17181b would
+   melt into a card-coloured floor). The figure keeps its old place: phone 180% wide (capped at 44rem) centred on the
+   character; wide screens the right half, also fading toward the title. Screen blending needs the charcoal in the same
+   layer as the picture, so the fade sits on the outer layer and the figure's wrapper has no mask or opacity. */
+.samurai-backdrop {
+  --samurai-fade: linear-gradient(to bottom, #000 0%, #000 30%, rgb(0 0 0 / 0.6) 50%, rgb(0 0 0 / 0.25) 68%,
+    transparent 85%);
+  background: radial-gradient(90% 40% at 78% 0%, #2b1f19 0%, #151619 55%, var(--color-surface-0) 100%);
+  -webkit-mask-image: var(--samurai-fade);
+  mask-image: var(--samurai-fade);
+}
+/* the card's engraving lines, over the charcoal and the figure alike */
+.samurai-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgb(0 0 0 / 0.3) 0 1px, transparent 1px 3px);
+}
+.samurai-backdrop-figure {
+  /* 180% of a phone, capped so a tablet (640–1023 px) gets the phone's size, not a giant crop; the face (57% across the
+     picture) sits ~60% across the screen */
+  width: min(180%, 44rem);
+  margin-left: calc(60% - min(180%, 44rem) * 0.57);
+}
+.samurai-backdrop-figure img {
+  /* the payment card's filter set; the soft ellipse keeps the helmet and face, the bare back and kimono flowers fall away */
+  --samurai-focus: radial-gradient(ellipse 62% 48% at 57% 30%, #000 45%, transparent 100%);
+  filter: grayscale(1) brightness(0.55) contrast(1.5);
+  mix-blend-mode: screen;
+  opacity: 0.16;
+  -webkit-mask-image: var(--samurai-focus);
+  mask-image: var(--samurai-focus);
+}
+@media (min-width: 1024px) {
+  .samurai-backdrop-figure {
+    width: 74%;
+    margin-left: auto;
+    margin-top: -5rem;
+  }
+  .samurai-backdrop-figure img {
+    opacity: 0.22;
+    -webkit-mask-image: var(--samurai-focus), linear-gradient(to right, transparent 0%, #000 45%);
+    -webkit-mask-composite: source-in;
+    mask-image: var(--samurai-focus), linear-gradient(to right, transparent 0%, #000 45%);
+    mask-composite: intersect;
+  }
+}
