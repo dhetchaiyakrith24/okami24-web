@@ -137,7 +137,8 @@ export function PostcodePlaceFields({
   const typed = (query ?? "").trim();
   // The code's own places first (all of them while nothing is typed, filtered by what is typed); the country search answers
   // only when none of them match or there is no code yet.
-  const own: Hit[] = (shown ?? []).filter((p) => !typed || placeLabel(p).includes(typed)).map((p) => ({ ...p, postalCode: code }));
+  // Not while a new code is loading: the old code's places must not show under the new code for that moment.
+  const own: Hit[] = (looking ? [] : (shown ?? [])).filter((p) => !typed || placeLabel(p).includes(typed)).map((p) => ({ ...p, postalCode: code }));
   const rows: Hit[] = own.length > 0 ? own : typed.length >= 2 && searched ? hits : [];
   const listShown = open && (own.length > 0 || (typed.length >= 2 && searched));
   const picked = pickedIndex >= 0 && shown ? placeLabel(shown[pickedIndex]) : "";
@@ -227,7 +228,12 @@ export function PostcodePlaceFields({
               setOpen(true);
               e.currentTarget.select();
             }}
-            onBlur={() => setQuery(null)}
+            // Leaving the picker (Tab, the phone keyboard's "next") closes the list so it never sits over the boxes below
+            // (checker #1187); a pick is not lost — the rows answer on pointerdown and keep the focus here.
+            onBlur={() => {
+              setQuery(null);
+              setOpen(false);
+            }}
             onKeyDown={(e) => {
               // Esc closes the list only — a search box would otherwise empty itself too (checker #1169).
               if (e.key === "Escape") {
@@ -239,10 +245,10 @@ export function PostcodePlaceFields({
               if (e.key === "ArrowDown" || e.key === "ArrowUp") {
                 e.preventDefault();
                 setActive((i) => (i + (e.key === "ArrowDown" ? 1 : rows.length - 1)) % rows.length);
-              } else if (e.key === "Enter" && active >= 0) {
-                // Enter picks the row instead of sending the whole form half filled.
+              } else if (e.key === "Enter") {
+                // Enter picks the row (the first one when none is marked) instead of sending the whole form half filled.
                 e.preventDefault();
-                choose(rows[active]);
+                choose(rows[active >= 0 ? active : 0]);
               }
             }}
             className={cn(INPUT, "border-surface-border")}
@@ -255,6 +261,7 @@ export function PostcodePlaceFields({
           <ul
             id={listId}
             role="listbox"
+            tabIndex={-1}
             aria-label={t.postcodePlaceLabel}
             className="absolute inset-x-0 top-full z-20 mt-1 max-h-72 overflow-y-auto rounded-md border border-surface-border bg-surface-1 py-1 shadow-lg"
           >
