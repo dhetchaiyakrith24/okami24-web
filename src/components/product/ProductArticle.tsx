@@ -1,6 +1,8 @@
 "use client";
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Locale } from "@/i18n/config";
 import { renderInline } from "@/components/content/ArticleBody";
 import type { ProductArticleCopy } from "@/data/product-articles";
@@ -20,8 +22,29 @@ export function ProductArticleLede({ articles }: { articles: ArticlesByLocale })
   const { locale } = useLocale();
   const a = articles[locale];
   if (!a?.lede) return null;
-  // Centred under the centred "more details" heading (owner 30/10) — its only callers are that heading block on both page kinds.
+  // Centred under the centred "more details" heading (owner 30/10) — every caller puts it under that heading.
   return <p className="mx-auto mt-6 max-w-2xl text-center text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-foreground">{renderInline(a.lede, locale, "lede")}</p>;
+}
+
+/**
+ * Articles queue 0211 batch 5 (Friday 03/11, option A): a legacy page without `storyDetails` has no ProductMoreDetails to
+ * carry its article, so the page renders this after FeatureGrid — the same heading, lede and body, nothing new to look at.
+ * No article = nothing rendered, so every legacy page without one stays as it was.
+ */
+export function ProductArticleSection({ articles }: { articles: ArticlesByLocale }) {
+  const { dict, locale } = useLocale();
+  if (!articles[locale]) return null;
+  return (
+    <section className="border-b border-surface-border-soft bg-surface-0" aria-labelledby="more-details-title">
+      <Container className="pt-14 pb-10 lg:pt-20 lg:pb-14">
+        <SectionHeading align="center" title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
+        <ProductArticleLede articles={articles} />
+      </Container>
+      <Container className="pb-14 lg:pb-20">
+        <ProductArticleBody articles={articles} />
+      </Container>
+    </section>
+  );
 }
 
 export function ProductArticleBody({ articles }: { articles: ArticlesByLocale }) {
