@@ -15,7 +15,7 @@
 // as it is; a generation-1 path (<name>-wm.webp) is read from <--originals dir>/assets/products/… (the --keep folder of the
 // first pass) or, failing that, from the last git commit that still had public/<name>.<ext>. A file no src/ line names literally is refused: its path is built by a template (e.g. `variant-${id}.webp`)
 // that this tool cannot rewrite — fix the template by hand in the same commit and pass --template-refs.
-// A name already ending in -wm2 is skipped. Photos from Javis's studio carry this mark already: leave them off.
+// A name already ending in -wm2 is skipped. Skip files that already carry the mark (check the file — a Javis studio photo is not marked just by being one, owner 03/11).
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
