@@ -6,8 +6,10 @@ import { cn } from "@/lib/utils";
 
 /**
  * The price with its struck-through label and "−N%" chip (owner 03/11, rules in src/data/sale-label.ts). Look = designer 03/11
- * option A: one line, real price first (every card's price keeps its left edge), then the struck label, then a solid fuchsia
- * chip — square-ish corners, no dot, no glow, so it never reads as one of the rounded "มาใหม่" / "ขายดี" / stock capsules.
+ * option A: one line, real price first (every card's price keeps its left edge), then the struck label, then a fuchsia chip —
+ * a soft tint with a thin line since owner 03/11 night ("ขอให้สีไม่เด่นมาก"), square-ish corners, no dot, no glow, so it never
+ * reads as one of the rounded "มาใหม่" / "ขายดี" / stock capsules. The line adds 2px, so the leading and padding are 1px less
+ * each side: the chip keeps its old height and width.
  * Nothing is added below the price: a labelled card is exactly as tall as its neighbours. Decided from the build (the slug,
  * the approved price, the built stock), so it is in the first paint and nothing moves after hydration. A product with no
  * label renders the price line exactly as before. Words = thai-copy 03/11: "ราคาป้าย", never "ราคาปกติ" — the label was
@@ -31,7 +33,7 @@ export function CardPrice({ slug, price, soldOut = false }: { slug: string; pric
         <span className="sr-only">{dict.product.listPriceSr.replace("{price}", baht(sale.label))}</span>
         <span aria-hidden>{baht(sale.label)}</span>
       </s>
-      <SaleChip pct={sale.pct} className="rounded-[4px] px-1 text-[10px] leading-[14px] lg:px-1.5 lg:text-xs lg:leading-4" />
+      <SaleChip pct={sale.pct} className="rounded-[4px] px-[3px] text-[10px] leading-[12px] lg:px-[5px] lg:text-xs lg:leading-[14px]" />
     </p>
   );
 }
@@ -50,7 +52,7 @@ export function HeadPrice({ slug, price, soldOut = false }: { slug: string; pric
         <span className="sr-only">{dict.product.listPriceSr.replace("{price}", baht(sale.label))}</span>
         <span aria-hidden>{baht(sale.label)}</span>
       </s>
-      <SaleChip pct={sale.pct} className="rounded-md px-2 font-display text-sm leading-6 max-lg:px-1.5 max-lg:text-xs max-lg:leading-5" />
+      <SaleChip pct={sale.pct} className="rounded-md px-[7px] font-display text-sm leading-[22px] max-lg:px-[5px] max-lg:text-xs max-lg:leading-[18px]" />
     </p>
   );
 }
@@ -58,7 +60,7 @@ export function HeadPrice({ slug, price, soldOut = false }: { slug: string; pric
 function SaleChip({ pct, className }: { pct: number; className: string }) {
   const { dict } = useLocale();
   return (
-    <span className={cn("self-center bg-sale font-bold text-white", className)} data-sale-badge="">
+    <span className={cn("self-center border border-sale/60 bg-sale-soft font-bold text-sale-strong", className)} data-sale-badge="">
       <span className="sr-only">{dict.product.saleBadgeSr.replace("{n}", String(pct))}</span>
       <span aria-hidden>{dict.product.saleBadge.replace("{n}", String(pct))}</span>
     </span>
