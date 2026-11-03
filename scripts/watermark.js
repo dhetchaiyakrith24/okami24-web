@@ -1,18 +1,19 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
-//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...
+//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...
 // Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 18%; "OKAMI24.STORE"
-// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 289 / rows 74) at 18% over a poster, 20% on the product.
-// Generation 3 = owner 04/11 (sample sheets wm3-sample 1–3): "จาก 22 เหลือ 20" on the product · ~25% fewer repeats ("10 ลาย …
-// เหลือ 7.5") = spacing ×1.155 both ways · and on a cut-out the text spills past the product edge: "20 คือพื้นที่ … ความเข้มให้เริ่ม
-// 20 หลุดออกจากตัวเครื่อง … นับถอยหลังจนสุดปลายขอบ … เหลือแค่ 3%" = a band 20% of the product's width wide, 20% opacity at
-// the edge falling to 3% at its end, nothing past it. (Generation 2 = 03/11 22/18, names -wm2; generation 1 = 02/11, -wm.)
+// (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 289 / rows 74), the rows alternating 20% / 18%.
+// Generation 3 = owner 04/11, sample sheet _incoming/img-0211b/wm3-sample4 version A ("ล่าสุดคือ 390 ใช่ไหม ถ้าใช่ ตามนั้นเลยครับ"):
+// "ความเข้ม 18-20% สลับไปมา" = every other text row 18%, the rest 20% · "ความถี่เอาแบบที่ปรับมาใหม่ 7-8" = ~7–8 repeats where
+// generation 2 had 10 (spacing ×1.155 both ways) · "ให้เหลืออยู่แค่ในตัวสินค้าเหมือนเดิม แค่ให้หลุดเลยตัวสินค้ามาได้นิดหน่อยพอ" =
+// on a cut-out the mark stays on the product with only a thin soft spill past its edge (1.2% of the width, ~12 px at 1000 px,
+// fading to 0). Samples 1–3 (wider spill zones) were rejected. (Generation 2 = 03/11 22/18, -wm2; generation 1 = 02/11, -wm.)
 // Style per file:
-//   transparent photo (card · colour · flavour) = on the product's own pixels (alpha kept) + the spill band, white text on the
-//     fully transparent margin only — no pixel the original had (alpha > 0) changes its alpha. The spill widens the alpha box,
-//     so the unmarked original's box is written to src/data/product-boxes.json and src/lib/media-quality.ts uses it: every
-//     card keeps the product at exactly today's size ("ทุกอย่างต้องเหมือนเดิมแค่มีลายน้ำเพิ่มเข้าไป", owner 04/11);
-//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture at 18% (+ 20% inside --zone when given).
+//   transparent photo (card · colour · flavour) = on the product's own pixels (alpha kept) + the thin spill, white text written
+//     into fully transparent pixels only — no pixel the original had (alpha > 0) changes its alpha. The spill still widens the
+//     alpha box a little, so the unmarked original's box is written to src/data/product-boxes.json and src/lib/media-quality.ts
+//     uses it: every card keeps the product at exactly today's size ("ทุกอย่างต้องเหมือนเดิมแค่มีลายน้ำเพิ่มเข้าไป", owner 04/11);
+//   opaque poster (no transparent pixel, alpha channel or not) = Javis's way, the whole picture with the same alternating rows.
 // Writes <name>-wm3.webp (q82) — a new name, Cloudflare keeps an old one 30 days (LESSONS-images พ6) — points every reference
 // under src/ at it, then deletes the file it replaces from public/ (git history + the --keep copy are the way back).
 // The pixels always come from the UNMARKED original, never from an earlier mark: a path that is still the original is read
@@ -29,24 +30,29 @@ const { execFileSync } = require("child_process");
 const ROOT = process.env.WM_ROOT || path.join(__dirname, "..");
 const FONT = path.join(__dirname, "lib/watermark/BarlowCondensed-600.ttf");
 const HELMET = path.join(__dirname, "lib/watermark/okami-helmet-white.png");
-const TEXT_ALL = 0.18, TEXT_PRODUCT = 0.20, HELMET_OP = 0.18, SPACING = 1.155;
-const SPILL_REACH = 0.2, SPILL_START = 0.2, SPILL_END = 0.03; // band = 20% of the product width · opacity 20% at the edge → 3% at its end
+const TEXT_A = 0.20, TEXT_B = 0.18, HELMET_OP = 0.18, SPACING = 1.155; // text rows alternate A / B
+const FEATHER = 0.012; // the spill past a cut-out's edge: 1.2% of the width, fading to 0
 const SUFFIX = "-wm3", EARLIER = /-wm2?$/; // this generation's name tag · the tags earlier generations left
 const BOXES = path.join(ROOT, "src/data/product-boxes.json"); // unmarked product box per marked file, read by media-quality.ts
 
-async function textMask(W, H) {
+/** Two masks of the text tiling: the even rows (TEXT_A) and the odd rows (TEXT_B). */
+async function textMasks(W, H) {
   const k = W / 1080, px = 22 * k;
   const { data: tile, info: ti } = await sharp({
     text: { text: `<span foreground="white" letter_spacing="${Math.round(0.22 * px * 1024)}">OKAMI24.STORE</span>`,
       fontfile: FONT, font: `Barlow Condensed SemiBold ${px.toFixed(2)}`, dpi: 72, rgba: true },
   }).png().toBuffer({ resolveWithObject: true });
-  const D = Math.ceil(Math.hypot(W, H)) + Math.ceil(600 * k), comps = [];
-  for (let y = 0; y < D; y += 64 * SPACING * k) for (let x = 0; x < D; x += 250 * SPACING * k) comps.push({ input: tile, left: Math.round(x), top: Math.round(y) });
-  const plane = await sharp({ create: { width: D + ti.width, height: D + ti.height, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
-    .composite(comps).png().toBuffer();
-  const rot = await sharp(plane).rotate(-28, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer({ resolveWithObject: true });
-  return sharp(rot.data).extract({ left: Math.round((rot.info.width - W) / 2), top: Math.round((rot.info.height - H) / 2), width: W, height: H })
-    .extractChannel(3).raw().toBuffer();
+  const D = Math.ceil(Math.hypot(W, H)) + Math.ceil(600 * k), rows = [[], []];
+  let row = 0;
+  for (let y = 0; y < D; y += 64 * SPACING * k, row++) for (let x = 0; x < D; x += 250 * SPACING * k) rows[row % 2].push({ input: tile, left: Math.round(x), top: Math.round(y) });
+  const one = async (comps) => {
+    const plane = await sharp({ create: { width: D + ti.width, height: D + ti.height, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+      .composite(comps).png().toBuffer();
+    const rot = await sharp(plane).rotate(-28, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer({ resolveWithObject: true });
+    return sharp(rot.data).extract({ left: Math.round((rot.info.width - W) / 2), top: Math.round((rot.info.height - H) / 2), width: W, height: H })
+      .extractChannel(3).raw().toBuffer();
+  };
+  return [await one(rows[0]), await one(rows[1])];
 }
 
 async function helmetMask(W, H) {
@@ -76,40 +82,34 @@ async function alphaChanged(before, after) {
   return n;
 }
 
-/** Opacity of the spill band per pixel (0 inside the product and past the band): two-pass chamfer distance from the
- *  product's opaque pixels, the band SPILL_REACH × the product width wide, SPILL_START at the edge falling to SPILL_END. */
-function spillBand(data, W, H) {
-  const INF = 1e9, d = new Float32Array(W * H); let x0 = W, x1 = -1;
-  for (let p = 0; p < W * H; p++) { const on = data[p * 4 + 3] > 128; d[p] = on ? 0 : INF; if (on) { const x = p % W; if (x < x0) x0 = x; if (x > x1) x1 = x; } }
+/** Weight (0..1) of the thin spill outside a cut-out: two-pass chamfer distance from the product's opaque pixels, 1 at the
+ *  edge falling to 0 at FEATHER × the width. 0 inside the product. */
+function featherBand(data, W, H) {
+  const INF = 1e9, d = new Float32Array(W * H);
+  for (let p = 0; p < W * H; p++) d[p] = data[p * 4 + 3] > 128 ? 0 : INF;
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const p = y * W + x; let v = d[p]; if (x > 0) v = Math.min(v, d[p - 1] + 3); if (y > 0) { v = Math.min(v, d[p - W] + 3); if (x > 0) v = Math.min(v, d[p - W - 1] + 4); if (x < W - 1) v = Math.min(v, d[p - W + 1] + 4); } d[p] = v; }
   for (let y = H - 1; y >= 0; y--) for (let x = W - 1; x >= 0; x--) { const p = y * W + x; let v = d[p]; if (x < W - 1) v = Math.min(v, d[p + 1] + 3); if (y < H - 1) { v = Math.min(v, d[p + W] + 3); if (x < W - 1) v = Math.min(v, d[p + W + 1] + 4); if (x > 0) v = Math.min(v, d[p + W - 1] + 4); } d[p] = v; }
-  const R = SPILL_REACH * Math.max(1, x1 - x0 + 1), op = new Float32Array(W * H);
-  for (let p = 0; p < W * H; p++) { const r = d[p] / 3 / R; op[p] = d[p] === 0 || r >= 1 ? 0 : SPILL_END + (SPILL_START - SPILL_END) * Math.pow(1 - r, 1.3); }
-  return op;
+  const R = FEATHER * W, w = new Float32Array(W * H);
+  for (let p = 0; p < W * H; p++) { const r = d[p] / 3 / R; w[p] = d[p] === 0 || r >= 1 ? 0 : Math.pow(1 - r, 1.5); }
+  return w;
 }
 
-async function mark(file, zone) {
+async function mark(file) {
   const meta = await sharp(file).metadata();
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const W = info.width, H = info.height, t = await textMask(W, H), h = await helmetMask(W, H);
+  const W = info.width, H = info.height, [tA, tB] = await textMasks(W, H), h = await helmetMask(W, H);
   // a cut-out has transparent pixels; an alpha channel alone does not make one (story banners carry alpha, all 255)
   let cutout = false;
   if (meta.hasAlpha) for (let i = 3; i < data.length; i += 4) if (data[i] === 0) { cutout = true; break; }
-  const band = cutout ? spillBand(data, W, H) : null;
+  const band = cutout ? featherBand(data, W, H) : null;
   for (let p = 0, i = 0; p < W * H; p++, i += 4) {
-    let op;
-    if (cutout) {
-      if (data[i + 3] === 0) { // the transparent margin: white text only (no helmet) inside the spill band
-        const sa = (t[p] / 255) * band[p];
-        if (sa > 0) { data[i] = data[i + 1] = data[i + 2] = 255; data[i + 3] = Math.round(sa * 255); }
-        continue;
-      }
-      op = TEXT_PRODUCT;
-    } else {
-      const x = p % W, y = (p / W) | 0;
-      op = zone && x >= zone[0] && x < zone[2] && y >= zone[1] && y < zone[3] ? TEXT_PRODUCT : TEXT_ALL;
+    const text = (tA[p] / 255) * TEXT_A + (tB[p] / 255) * TEXT_B;
+    if (cutout && data[i + 3] === 0) { // the transparent margin: white text only (no helmet) inside the thin spill
+      const sa = text * band[p];
+      if (sa > 0) { data[i] = data[i + 1] = data[i + 2] = 255; data[i + 3] = Math.round(sa * 255); }
+      continue;
     }
-    const a = Math.min(1, (t[p] / 255) * op + (h[p] / 255) * HELMET_OP);
+    const a = Math.min(1, text + (h[p] / 255) * HELMET_OP);
     for (let c = 0; c < 3; c++) data[i + c] = Math.round(data[i + c] * (1 - a) + 255 * a);
   }
   let img = sharp(data, { raw: { width: W, height: H, channels: 4 } });
@@ -149,11 +149,11 @@ function sourceFiles(dir, out = []) {
 (async () => {
   const args = process.argv.slice(2);
   const opt = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
-  const dry = args.includes("--dry-run"), templateRefs = args.includes("--template-refs"), keep = opt("--keep"), originals = opt("--originals"), zone = opt("--zone") && opt("--zone").split(",").map(Number);
+  const dry = args.includes("--dry-run"), templateRefs = args.includes("--template-refs"), keep = opt("--keep"), originals = opt("--originals");
   // Git Bash rewrites a leading "/assets/…" into a Windows path, so take anything that holds assets/products/
   const list = args.filter((a) => /assets[\\/]products[\\/]/.test(a)).map((a) => "/" + a.slice(a.search(/assets[\\/]products[\\/]/)).replace(/\\/g, "/"));
   if (!list.length) {
-    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--zone x0,y0,x1,y1] [--template-refs] /assets/products/<slug>/<file> ...");
+    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...");
     process.exit(2);
   }
   const sources = sourceFiles(path.join(ROOT, "src"));
@@ -166,7 +166,7 @@ function sourceFiles(dir, out = []) {
     const orig = originalOf(pub, originals);
     if (!orig) { console.log(`FAIL   ${pub}  no unmarked original (--originals or git history)`); refused++; continue; }
     const before = orig.buf;
-    const { buf, hasAlpha } = await mark(before, zone);
+    const { buf, hasAlpha } = await mark(before);
     const box = hasAlpha ? await productBox(before) : null, moved = hasAlpha ? await alphaChanged(before, buf) : 0;
     if (moved) { console.log(`FAIL   ${pub}  the mark changed the alpha of ${moved} product pixel(s)`); refused++; continue; }
     const refs = sources.filter((f) => fs.readFileSync(f, "utf8").includes(pub));
