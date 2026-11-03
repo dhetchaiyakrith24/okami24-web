@@ -5950,24 +5950,25 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // watts, 440mAh, 15 min → 80%, the 4-level indicator, 1.9mL / 600 puffs. Legacy page → no article FAQ.
   "relx-infinity-2-plus": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ RELX ว่าแต่ละโหมดของ Infinity 2 Plus เหมาะกับการสูบแบบไหน รุ่นนี้ต่างจาก Infinity 2 ตรงไหน และใช้กับหัวพอตรุ่นไหนได้บ้าง",
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ RELX ว่าโหมดของ RELX Infinity 2 Plus แต่ละโหมดเหมาะกับการสูบแบบไหน รุ่นนี้ต่างจาก Infinity 2 ตรงไหน และเลือกหัวกับกลิ่นได้จากไหนบ้าง",
       sections: [
         {
-          heading: "สามโหมดต่างกันยังไง",
+          heading: "RELX Infinity 2 Plus แต่ละโหมดต่างกันยังไง",
           paragraphs: [
             "RELX อธิบายไว้ว่าโหมด Eco สูบได้เบา ๆ และช่วยประหยัดแบต โหมด Smooth ให้รสนุ่มแบบที่คุ้นเคย ส่วนโหมด Boost ให้รสเข้มขึ้น และให้ควันมากกว่าโหมด Smooth ได้ถึง 15%",
             "กดปุ่มครั้งเดียวก็เปลี่ยนโหมดได้ จะสลับไปมาระหว่างวันก็ทำได้ง่าย",
+            "ถ้ายังไม่แน่ใจว่าวัตต์เท่าไรเหมาะกับตัวเอง อ่านต่อได้ที่ [เลือกวัตต์และการปรับลม](/guides/choosing-wattage-and-airflow) ส่วนการดูแลแบตให้ใช้ได้นาน อ่านได้ที่ [ดูแลแบตและการชาร์จ](/guides/battery-care-and-charging)",
           ],
         },
         {
-          heading: "ต่างจาก Infinity 2 ตรงไหน",
+          heading: "Infinity 2 Plus ต่างจาก Infinity 2 ตรงไหน",
           paragraphs: [
             "RELX เทียบให้ดูทีละโหมดว่า Infinity 2 รุ่นก่อนใช้ 5.5 วัตต์ 6.5 วัตต์ และ 8 วัตต์ตามลำดับ ส่วน Infinity 2 Plus ใช้วัตต์สูงกว่าในทุกโหมด",
             "หน้าตาก็ต่างกันด้วย Infinity 2 Plus มีปุ่มสีส้ม และมีไอคอน Plus อยู่บนตัวเครื่อง ดูออกได้ทันทีว่าไม่ใช่ Infinity 2",
           ],
         },
         {
-          heading: "เลือกกลิ่นได้จากไหนบ้าง",
+          heading: "Infinity 2 Plus ใช้หัวอะไร เลือกกลิ่นได้จากไหน",
           paragraphs: [
             "นอกจากหัวพอตสามรุ่นที่บอกไว้ด้านบน RELX ยังบอกว่าเลือกกลิ่นได้ทั้งของ RELX และของ WAKA",
             "หัว RELX Pod Pro 2 ร้านลงไว้ในชื่อ [หัวพอต RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ดูกลิ่นที่มีให้เลือกได้ที่หน้านั้น",
@@ -5976,22 +5977,22 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     en: {
-      lede: "Below, from RELX's own page: what each Infinity 2 Plus mode is for, how it differs from the Infinity 2, and which pods it takes.",
+      lede: "Below, from RELX's own page: what each RELX Infinity 2 Plus mode is for, how it differs from the Infinity 2, and where its pods and flavours come from.",
       sections: [
         {
-          heading: "How do the three modes differ?",
+          heading: "How do the RELX Infinity 2 Plus modes differ?",
           paragraphs: [
-            "RELX describes Eco as the mode that saves battery with lighter puffs, Smooth as the one for a familiar, smooth flavour, and Boost as the one for a more intense flavour with up to 15% more vapour than Smooth. A single click switches between them.",
+            "RELX describes Eco as the mode that saves battery with lighter puffs, Smooth as the one for a familiar, smooth flavour, and Boost as the one for a more intense flavour with up to 15% more vapour than Smooth. A single click switches between them. Not sure which wattage suits you? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow), and for making the battery last, [battery care and charging](/guides/battery-care-and-charging).",
           ],
         },
         {
-          heading: "How is it different from the Infinity 2?",
+          heading: "How is the Infinity 2 Plus different from the Infinity 2?",
           paragraphs: [
             "RELX compares the two mode by mode: the Infinity 2 runs at 5.5W, 6.5W and 8W, and the Infinity 2 Plus runs at a higher wattage in every mode. It also looks different: an orange button and a \"Plus\" icon on the body set it apart.",
           ],
         },
         {
-          heading: "Where do the flavours come from?",
+          heading: "Which pods and flavours for the Infinity 2 Plus?",
           paragraphs: [
             "Beyond the three pod types above, RELX says you can choose from both RELX and WAKA flavours. We list the RELX Pod Pro 2 as the [RELX Infinity Pro 2 pod](/products/relx-infinity-pro-2-pod), where you can see every flavour on offer.",
           ],
@@ -5999,22 +6000,22 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
     zh: {
-      lede: "下面根据 RELX 官网的资料，介绍 Infinity 2 Plus 各模式适合怎样的抽吸、与 Infinity 2 有何不同，以及能用哪些烟弹。",
+      lede: "下面根据 RELX 官网的资料，介绍 RELX Infinity 2 Plus 各模式适合怎样的抽吸、与 Infinity 2 有何不同，以及烟弹和口味从哪里选。",
       sections: [
         {
-          heading: "三种模式有什么区别？",
+          heading: "RELX Infinity 2 Plus 各模式有什么区别？",
           paragraphs: [
-            "RELX 介绍：Eco 模式抽吸更轻，也更省电；Smooth 模式口感顺滑、熟悉；Boost 模式口味更浓，烟雾量最多比 Smooth 模式多 15%。按一下按键即可切换模式。",
+            "RELX 介绍：Eco 模式抽吸更轻，也更省电；Smooth 模式口感顺滑、熟悉；Boost 模式口味更浓，烟雾量最多比 Smooth 模式多 15%。按一下按键即可切换模式。不确定多大功率适合自己，可以看[功率与气流怎么选](/guides/choosing-wattage-and-airflow)；电池保养见[电池保养与充电](/guides/battery-care-and-charging)。",
           ],
         },
         {
-          heading: "和 Infinity 2 有什么不同？",
+          heading: "Infinity 2 Plus 和 Infinity 2 有什么不同？",
           paragraphs: [
             "RELX 逐个模式做了对比：Infinity 2 分别为 5.5W、6.5W 和 8W，Infinity 2 Plus 每个模式的功率都更高。外观也不同：橙色按键和机身上的“Plus”标识，让它一眼就能和 Infinity 2 区分开。",
           ],
         },
         {
-          heading: "口味从哪里选？",
+          heading: "Infinity 2 Plus 用什么烟弹？口味从哪里选？",
           paragraphs: [
             "除上面提到的三种烟弹外，RELX 还表示可在 RELX 与 WAKA 的口味中选择。本店的 RELX Pod Pro 2 以 [RELX Infinity Pro 2 烟弹](/products/relx-infinity-pro-2-pod) 的名称上架，可在该页查看全部口味。",
           ],
