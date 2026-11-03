@@ -5957,18 +5957,18 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "RELX อธิบายไว้ว่าโหมด Eco สูบได้เบา ๆ และช่วยประหยัดแบต โหมด Smooth ให้รสนุ่มแบบที่คุ้นเคย ส่วนโหมด Boost ให้รสเข้มขึ้น และให้ควันมากกว่าโหมด Smooth ได้ถึง 15%",
             "กดปุ่มครั้งเดียวก็เปลี่ยนโหมดได้ จะสลับไปมาระหว่างวันก็ทำได้ง่าย",
-            "ถ้ายังไม่แน่ใจว่าวัตต์เท่าไรเหมาะกับตัวเอง อ่านต่อได้ที่ [เลือกวัตต์และการปรับลม](/guides/choosing-wattage-and-airflow) ส่วนการดูแลแบตให้ใช้ได้นาน อ่านได้ที่ [ดูแลแบตและการชาร์จ](/guides/battery-care-and-charging)",
+            "อยากรู้ว่าวัตต์เท่าไรเหมาะกับตัวเอง อ่านต่อได้ที่ [เลือกวัตต์และการปรับลม](/guides/choosing-wattage-and-airflow) ส่วนวิธีดูแลแบตอยู่ที่ [ดูแลแบตและการชาร์จ](/guides/battery-care-and-charging)",
           ],
         },
         {
           heading: "Infinity 2 Plus ต่างจาก Infinity 2 ตรงไหน",
           paragraphs: [
             "RELX เทียบให้ดูทีละโหมดว่า Infinity 2 รุ่นก่อนใช้ 5.5 วัตต์ 6.5 วัตต์ และ 8 วัตต์ตามลำดับ ส่วน Infinity 2 Plus ใช้วัตต์สูงกว่าในทุกโหมด",
-            "หน้าตาก็ต่างกันด้วย Infinity 2 Plus มีปุ่มสีส้ม และมีไอคอน Plus อยู่บนตัวเครื่อง ดูออกได้ทันทีว่าไม่ใช่ Infinity 2",
+            "หน้าตาก็ต่างกันด้วย Infinity 2 Plus มีปุ่มสีส้ม และมีไอคอน Plus อยู่บนตัวเครื่อง ทำให้แยกออกจาก Infinity 2 ได้ทันที",
           ],
         },
         {
-          heading: "Infinity 2 Plus ใช้หัวอะไร เลือกกลิ่นได้จากไหน",
+          heading: "Infinity 2 Plus ใช้หัวอะไร เลือกกลิ่นได้ที่ไหน",
           paragraphs: [
             "นอกจากหัวพอตสามรุ่นที่บอกไว้ด้านบน RELX ยังบอกว่าเลือกกลิ่นได้ทั้งของ RELX และของ WAKA",
             "หัว RELX Pod Pro 2 ร้านลงไว้ในชื่อ [หัวพอต RELX Infinity Pro 2](/products/relx-infinity-pro-2-pod) ดูกลิ่นที่มีให้เลือกได้ที่หน้านั้น",
