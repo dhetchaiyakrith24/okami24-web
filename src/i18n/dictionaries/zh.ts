@@ -520,7 +520,6 @@ export const zh: Dictionary = {
     postcodeNotFound: "找不到这个邮编，请再核对一次；如确认无误，请通过 LINE 联系店铺。",
     postcodePlaceLabel: "分区 · 区县 · 府",
     postcodePickPrompt: "选择该邮编所属的分区",
-    addressSearchLabel: "搜索地址",
     addressSearchPlaceholder: "输入分区、区县、府或邮政编码",
     addressSearchHint: "从结果中选择即可自动填写下方各栏，也可以自行填写。",
     addressSearchEmpty: "未找到该地址，可在下方各栏自行填写。",

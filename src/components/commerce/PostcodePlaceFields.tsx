@@ -5,12 +5,12 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { cn } from "@/lib/utils";
 
 /**
- * The place part of the address form (owner 03/11: "ช่องไว้สำหรับพิมพ์ค้นหา … กล่องของแต่ละหมวดหมู่ … ถ้าลูกค้าไม่กดค้นหาก็
- * Manual เองได้"):
- *   1. a search box — type a sub-district, district, province or postcode, pick a row of /api/address/search and the boxes
- *      below fill themselves;
- *   2. the postcode, as before (owner queue 02/11 item 4): five digits ask /api/address/postcode/<code>; one place = filled
- *      in, several = a list to pick from, none = refused (check it or message the shop on LINE);
+ * The place part of the address form (owner 03/11: the postcode list as before, plus a search INSIDE the "ตำบล/แขวง ·
+ * อำเภอ/เขต · จังหวัด" picker — not a box of its own above the postcode; the three typing boxes stay where they are):
+ *   1. the postcode (owner queue 02/11 item 4): five digits ask /api/address/postcode/<code>; one place = filled in, none =
+ *      refused (check it or message the shop on LINE);
+ *   2. the picker: focus = the code's places to pick from; typing filters them, and when none match (or there is no code yet)
+ *      it searches the whole country through /api/address/search — a pick there fills the code too;
  *   3. sub-district · district · province as plain boxes the customer may type in themselves.
  * The four boxes are the form fields (`postalCode`, `subdistrict`, `district`, `province`); the server re-checks them
  * (src/lib/commerce/addresses.ts: the code must be real and serve the province; the names are stored in the data's spelling
@@ -59,8 +59,9 @@ export function PostcodePlaceFields({
   const codeError = codeEdited ? null : postalError;
   const complete = /^[0-9]{5}$/.test(code);
 
-  // Search box: what is typed, the rows it found, which row the arrow keys are on, and whether the list is open.
-  const [query, setQuery] = useState("");
+  // Picker: what is typed (null = not typing, the box shows the picked place), the rows the country search found, which row
+  // the arrow keys are on, and whether the list is open.
+  const [query, setQuery] = useState<string | null>(null);
   const [hits, setHits] = useState<Hit[]>([]);
   const [active, setActive] = useState(-1);
   const [open, setOpen] = useState(false);
@@ -99,7 +100,7 @@ export function PostcodePlaceFields({
   }, [code, complete]);
 
   useEffect(() => {
-    const q = query.trim();
+    const q = (query ?? "").trim();
     if (q.length < 2) return;
     const ctrl = new AbortController();
     const timer = setTimeout(() => {
@@ -133,7 +134,13 @@ export function PostcodePlaceFields({
   const looking = complete && loading;
   const notFound = shown !== null && shown.length === 0 && !looking;
   const pickedIndex = shown ? shown.findIndex((p) => samePlace(p, place)) : -1;
-  const listShown = open && query.trim().length >= 2 && searched;
+  const typed = (query ?? "").trim();
+  // The code's own places first (all of them while nothing is typed, filtered by what is typed); the country search answers
+  // only when none of them match or there is no code yet.
+  const own: Hit[] = (shown ?? []).filter((p) => !typed || placeLabel(p).includes(typed)).map((p) => ({ ...p, postalCode: code }));
+  const rows: Hit[] = own.length > 0 ? own : typed.length >= 2 && searched ? hits : [];
+  const listShown = open && (own.length > 0 || (typed.length >= 2 && searched));
+  const picked = pickedIndex >= 0 && shown ? placeLabel(shown[pickedIndex]) : "";
 
   // The place the map and summary show: the data's own row when the boxes match one, else the boxes as typed once their
   // province is one the code serves (spelled as the data spells it). `shown` and `place` are state, so this runs when they change.
@@ -149,96 +156,12 @@ export function PostcodePlaceFields({
     setCode(h.postalCode);
     setCodeEdited(true);
     setPlace({ subdistrict: h.subdistrict, district: h.district, province: h.province });
-    setQuery(`${placeLabel(h)} ${h.postalCode}`);
+    setQuery(null);
     setOpen(false);
   };
 
   return (
     <div className="flex min-w-0 flex-col gap-3">
-      <div ref={boxRef} className="relative">
-        <label className={LABEL} htmlFor="addressSearch">
-          {t.addressSearchLabel}
-          <input
-            id="addressSearch"
-            type="search"
-            role="combobox"
-            autoComplete="off"
-            enterKeyHint="search"
-            aria-expanded={listShown}
-            aria-controls={listId}
-            aria-autocomplete="list"
-            aria-activedescendant={listShown && active >= 0 ? `${listId}-${active}` : undefined}
-            aria-describedby="addressSearch-hint"
-            placeholder={t.addressSearchPlaceholder}
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setOpen(true);
-              if (e.target.value.trim().length < 2) {
-                setHits([]);
-                setSearched(false);
-              }
-            }}
-            onFocus={() => setOpen(true)}
-            onKeyDown={(e) => {
-              // Esc closes the list only — a search box would otherwise empty itself too (checker #1169).
-              if (e.key === "Escape") {
-                e.preventDefault();
-                setOpen(false);
-                return;
-              }
-              if (!listShown || hits.length === 0) return;
-              if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-                e.preventDefault();
-                setActive((i) => (i + (e.key === "ArrowDown" ? 1 : hits.length - 1)) % hits.length);
-              } else if (e.key === "Enter" && active >= 0) {
-                // Enter picks the row instead of sending the whole form half filled.
-                e.preventDefault();
-                choose(hits[active]);
-              }
-            }}
-            className={cn(INPUT, "border-surface-border")}
-          />
-          <span id="addressSearch-hint" className="text-xs text-foreground-dim">
-            {t.addressSearchHint}
-          </span>
-        </label>
-        {listShown && (
-          <ul
-            id={listId}
-            role="listbox"
-            aria-label={t.addressSearchLabel}
-            className="absolute inset-x-0 top-full z-20 mt-1 max-h-72 overflow-y-auto rounded-md border border-surface-border bg-surface-1 py-1 shadow-lg"
-          >
-            {hits.length === 0 ? (
-              <li className="px-3 py-2 text-sm text-foreground-muted">{t.addressSearchEmpty}</li>
-            ) : (
-              hits.map((h, i) => (
-                <li
-                  key={`${h.postalCode}-${placeLabel(h)}`}
-                  id={`${listId}-${i}`}
-                  role="option"
-                  aria-selected={i === active}
-                  // pointerdown, not click: the search box keeps focus, so the list does not close before the pick lands.
-                  onPointerDown={(e) => {
-                    e.preventDefault();
-                    choose(h);
-                  }}
-                  onPointerEnter={() => setActive(i)}
-                  className={cn("cursor-pointer px-3 py-2 text-sm text-foreground", i === active && "bg-surface-2")}
-                >
-                  <span className="font-medium">{h.subdistrict}</span>
-                  <span className="text-foreground-muted">
-                    {" · "}
-                    {h.district} · {h.province} · {h.postalCode}
-                  </span>
-                </li>
-              ))
-            )}
-          </ul>
-        )}
-      </div>
-
       <label className={LABEL} htmlFor="postalCode">
         {t.postalCodeLabel}
         <input
@@ -270,31 +193,99 @@ export function PostcodePlaceFields({
         )}
       </label>
 
-      {shown && shown.length > 1 && (
+      <div ref={boxRef} className="relative">
         <label className={LABEL} htmlFor="postcodePlace">
           {t.postcodePlaceLabel}
-          <select
+          <input
             id="postcodePlace"
-            value={pickedIndex >= 0 ? String(pickedIndex) : ""}
+            type="search"
+            role="combobox"
+            autoComplete="off"
+            enterKeyHint="search"
+            aria-expanded={listShown}
+            aria-controls={listId}
+            aria-autocomplete="list"
+            aria-activedescendant={listShown && active >= 0 ? `${listId}-${active}` : undefined}
+            aria-describedby="postcodePlace-hint"
+            placeholder={shown && shown.length > 1 && !picked ? t.postcodePickPrompt : t.addressSearchPlaceholder}
+            value={query ?? picked}
             onChange={(e) => {
-              const p = shown[Number(e.target.value)];
-              if (p) setPlace(p);
+              setQuery(e.target.value);
+              setOpen(true);
+              setActive(0);
+              if (e.target.value.trim().length < 2) {
+                setHits([]);
+                setSearched(false);
+              }
+            }}
+            onFocus={(e) => {
+              // Focus starts a fresh pick: the code's whole list shows; the picked place stays until another is chosen.
+              setQuery("");
+              setHits([]);
+              setSearched(false);
+              setActive(-1);
+              setOpen(true);
+              e.currentTarget.select();
+            }}
+            onBlur={() => setQuery(null)}
+            onKeyDown={(e) => {
+              // Esc closes the list only — a search box would otherwise empty itself too (checker #1169).
+              if (e.key === "Escape") {
+                e.preventDefault();
+                setOpen(false);
+                return;
+              }
+              if (!listShown || rows.length === 0) return;
+              if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+                e.preventDefault();
+                setActive((i) => (i + (e.key === "ArrowDown" ? 1 : rows.length - 1)) % rows.length);
+              } else if (e.key === "Enter" && active >= 0) {
+                // Enter picks the row instead of sending the whole form half filled.
+                e.preventDefault();
+                choose(rows[active]);
+              }
             }}
             className={cn(INPUT, "border-surface-border")}
-          >
-            {pickedIndex < 0 && (
-              <option value="" disabled>
-                {t.postcodePickPrompt}
-              </option>
-            )}
-            {shown.map((p, i) => (
-              <option key={placeLabel(p)} value={i}>
-                {placeLabel(p)}
-              </option>
-            ))}
-          </select>
+          />
+          <span id="postcodePlace-hint" className="text-xs text-foreground-dim">
+            {t.addressSearchHint}
+          </span>
         </label>
-      )}
+        {listShown && (
+          <ul
+            id={listId}
+            role="listbox"
+            aria-label={t.postcodePlaceLabel}
+            className="absolute inset-x-0 top-full z-20 mt-1 max-h-72 overflow-y-auto rounded-md border border-surface-border bg-surface-1 py-1 shadow-lg"
+          >
+            {rows.length === 0 ? (
+              <li className="px-3 py-2 text-sm text-foreground-muted">{t.addressSearchEmpty}</li>
+            ) : (
+              rows.map((h, i) => (
+                <li
+                  key={`${h.postalCode}-${placeLabel(h)}`}
+                  id={`${listId}-${i}`}
+                  role="option"
+                  aria-selected={i === active}
+                  // pointerdown, not click: the search box keeps focus, so the list does not close before the pick lands.
+                  onPointerDown={(e) => {
+                    e.preventDefault();
+                    choose(h);
+                  }}
+                  onPointerEnter={() => setActive(i)}
+                  className={cn("cursor-pointer px-3 py-2 text-sm text-foreground", i === active && "bg-surface-2")}
+                >
+                  <span className="font-medium">{h.subdistrict}</span>
+                  <span className="text-foreground-muted">
+                    {" · "}
+                    {h.district} · {h.province} · {h.postalCode}
+                  </span>
+                </li>
+              ))
+            )}
+          </ul>
+        )}
+      </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <label className={LABEL} htmlFor="subdistrict">

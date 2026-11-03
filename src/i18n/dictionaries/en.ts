@@ -528,7 +528,6 @@ export const en: Dictionary = {
     postcodeNotFound: "We can't find this postal code. Please check it again — if it is right, message the shop on LINE.",
     postcodePlaceLabel: "Sub-district · District · Province",
     postcodePickPrompt: "Pick the sub-district for this code",
-    addressSearchLabel: "Find your address",
     addressSearchPlaceholder: "Type a sub-district, district, province or postal code",
     addressSearchHint: "Pick a result to fill the boxes below, or type them yourself.",
     addressSearchEmpty: "No match — you can type the address in the boxes below.",

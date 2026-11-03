@@ -562,7 +562,6 @@ export const th: Dictionary = {
     postcodeNotFound: "ไม่พบรหัสนี้ ลองตรวจรหัสอีกครั้งนะคะ ถ้ารหัสถูกแล้ว สอบถามทาง LINE ได้เลยค่ะ",
     postcodePlaceLabel: "ตำบล/แขวง · อำเภอ/เขต · จังหวัด",
     postcodePickPrompt: "เลือกตำบล/แขวงของรหัสนี้",
-    addressSearchLabel: "ค้นหาที่อยู่",
     addressSearchPlaceholder: "พิมพ์ชื่อตำบล อำเภอ จังหวัด หรือรหัสไปรษณีย์",
     addressSearchHint: "เลือกจากรายการ ระบบจะกรอกช่องด้านล่างให้ หรือจะกรอกเองก็ได้ค่ะ",
     addressSearchEmpty: "ไม่พบที่อยู่นี้ กรอกเองในช่องด้านล่างได้เลยค่ะ",
