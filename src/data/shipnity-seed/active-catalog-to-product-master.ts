@@ -1063,7 +1063,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/eliquid-72/card-wm2.webp",
+      src: "/assets/products/eliquid-72/card-wm3.webp",
       alt: "Pepo Salt Nic e-liquid bottle, Grape, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1075,7 +1075,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/eliquid-73/card-wm2.webp",
+      src: "/assets/products/eliquid-73/card-wm3.webp",
       alt: "Dundu Salt Nic e-liquid bottle, Grape, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1100,7 +1100,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/pod-149/card-wm2.webp",
+      src: "/assets/products/pod-149/card-wm3.webp",
       alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo",
       angle: "Front three-quarter, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1113,7 +1113,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/pod-142/card-wm2.webp",
+      src: "/assets/products/pod-142/card-wm3.webp",
       alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Reswa Sportcan flavour poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1140,7 +1140,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexswitch-16k-kit/card-v2-wm2.webp",
+      src: "/assets/products/nexswitch-16k-kit/card-v2-wm3.webp",
       alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1239,7 +1239,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/ks-quikpro-kit/card-v2-wm2.webp",
+      src: "/assets/products/ks-quikpro-kit/card-v2-wm3.webp",
       alt: "KS Quikpro device with cartridge, Black, glowing KS mark, studio photo",
       angle: "Front, upright — the device from OKami24's 21/10 studio re-shoot of the shop's KS Quikpro Starter Kit poster (the set the flavour photos use).",
       transparentBackground: true,
@@ -1295,7 +1295,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-87/card-v2-wm2.webp",
+      src: "/assets/products/coil-87/card-v2-wm3.webp",
       alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of 3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1326,7 +1326,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-68/card-v2-wm2.webp",
+      src: "/assets/products/coil-68/card-v2-wm3.webp",
       alt: "VOOPOO ITO-X pod cartridge, black, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of VOOPOO's own product photo of the black ITO-X (1000 px, VOOPOO's Shopline store); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1474,7 +1474,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-56/card-v2-wm2.webp",
+      src: "/assets/products/coil-56/card-v2-wm3.webp",
       alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the silver PnP X Cartridge MTL (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1498,7 +1498,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-89/card-v2-wm2.webp",
+      src: "/assets/products/coil-89/card-v2-wm3.webp",
       alt: "RINCOE Jellybox V pod cartridges, Mesh 0.8Ω (red stripes) and Mesh 1.0Ω, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1510,7 +1510,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-38/card-v4-wm2.webp",
+      src: "/assets/products/coil-38/card-v4-wm3.webp",
       alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo",
       angle: "Front, studio re-shoot 09/10 (coil-94 box-shot direction, owner passed 09/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' TPP-DM2 box photo: the box upright with its three coils out of the blister lying in front; every printed mark checked by eye against that photo. Card = the DM2 option shot. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1524,7 +1524,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-92/card-v2-wm2.webp",
+      src: "/assets/products/coil-92/card-v2-wm3.webp",
       alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of a shop photo of the 0.15Ω coil; the etched 0.15Ω / 60-80W checked by eye. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1548,7 +1548,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-53/card-v4-wm2.webp",
+      src: "/assets/products/coil-53/card-v4-wm3.webp",
       alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo",
       angle: "Card re-centred on its visual weight 16/10 (round img-1610, process-images `balance`). Front, studio re-shoot 09/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photos of the 1 Ω box and its blister of 4 (round cotton holes of the 1 Ω coil); the render's three coils + one copied coil = the 4 of the box; box art, every printed mark and the coil shape checked by eye against those photos. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2306,10 +2306,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // KS Quikpro kit (22/10): one photo per flavour = that flavour's Starter Kit box beside the black device (the device is the same
   // for every flavour; only the box shows it), re-shot from the shop's per-flavour posters (pod789).
   "KS-QUIKPRO-KIT": {
-    "Variation 2216": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-watermelon-wm2.webp", alt: "KS Quikpro 15K Starter Kit, Watermelon, coral-red box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2213": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-grape-wm2.webp", alt: "KS Quikpro 15K Starter Kit, Grape, purple box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2215": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-cola-lemon-wm2.webp", alt: "KS Quikpro 15K Starter Kit, Cola Lemon, peach-orange box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
-    "Variation 2217": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-extra-menthol-wm2.webp", alt: "KS Quikpro 15K Starter Kit, Extra Menthol, blue box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2216": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-watermelon-wm3.webp", alt: "KS Quikpro 15K Starter Kit, Watermelon, coral-red box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2213": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-grape-wm3.webp", alt: "KS Quikpro 15K Starter Kit, Grape, purple box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2215": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-cola-lemon-wm3.webp", alt: "KS Quikpro 15K Starter Kit, Cola Lemon, peach-orange box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
+    "Variation 2217": { kind: "official-photo", role: "detail", src: "/assets/products/ks-quikpro-kit/variant-extra-menthol-wm3.webp", alt: "KS Quikpro 15K Starter Kit, Extra Menthol, blue box beside the black device, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's KS Quikpro Starter Kit flavour poster", sourceUrl: "https://pod789.com/product/ks-quik-pro-15000-puffs/" },
   },
   // KS Quikpro 15K pod (22/10): the pod is the same plain black cartridge for every flavour, so each flavour = its OWN QUIKpod pack box
   // (re-shot from the shop's per-flavour pod poster, maneevp) beside the one shared pod (the card photo). Grape Berry (23/10): no pack photo anywhere →
@@ -2377,11 +2377,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-64-6": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-6-wm3.webp", alt: "Double Mint Salt Nic e-liquid bottle, Green Apple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
   },
   "Eliquid-72": {
-    "ELQ-5-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-1-wm2.webp", alt: "Pepo Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
-    "ELQ-5-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-2-wm2.webp", alt: "Pepo Salt Nic e-liquid bottle, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic Mint poster", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
-    "ELQ-5-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-3-wm2.webp", alt: "Pepo Salt Nic e-liquid bottle, Mixed Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
-    "ELQ-5-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-4-wm2.webp", alt: "Pepo Salt Nic e-liquid bottle, Pineapple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
-    "ELQ-5-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-5-wm2.webp", alt: "Pepo Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+    "ELQ-5-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-1-wm3.webp", alt: "Pepo Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+    "ELQ-5-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-2-wm3.webp", alt: "Pepo Salt Nic e-liquid bottle, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic Mint poster", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+    "ELQ-5-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-3-wm3.webp", alt: "Pepo Salt Nic e-liquid bottle, Mixed Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+    "ELQ-5-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-4-wm3.webp", alt: "Pepo Salt Nic e-liquid bottle, Pineapple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+    "ELQ-5-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-5-wm3.webp", alt: "Pepo Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
   },
   // Round list19 (19/10): Marbo Freebase — every flavour has a photo: Ice Sparkling (listing round) + Purple · Gold · Pink (image sweep 19/10,
   // from the shop's Freebase posters: the purple bottle prints "Ice Grape", the pink one "Ice Strawberry", the gold one "GOLD").
@@ -2409,43 +2409,43 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // SKE Crystal B20000 — Thai Milk Green Tea (list19 18/10) + 6 more (22/10), each re-shot from its own pod789 poster (the body tint differs per
   // flavour). Double Mint (Pod-149-2) was rendered 30/10 from the Grape Yoyo scene and listed; all 8 were re-cut 30/10 without the grey floor plate (v2 files).
   "Pod-149": {
-    "Pod-149-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-1-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Grape Yoyo, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-2-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Double Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 Double Mint poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-3-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-4-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Lemon Coke, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-5-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-7-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Tieguanyin Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
-    "Pod-149-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-8-v2-wm2.webp", alt: "SKE Crystal B20000 disposable, Mango, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-1-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Grape Yoyo, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-2-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Double Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 Double Mint poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-3-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-4-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Lemon Coke, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-5-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-7": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-7-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Tieguanyin Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+    "Pod-149-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-8-v2-wm3.webp", alt: "SKE Crystal B20000 disposable, Mango, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
   },
   // Round list19 (19/10): Reswa Sportcan 12K — one re-shoot per flavour poster (4 of 5). Red Bull shows the no-photo panel: its can
   // carries another company's trademark (the Red Bull logo), so it is not reproduced (Friday's decision 18/10).
   "Pod-142": {
-    "Pod-142-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-2-wm2.webp", alt: "Reswa Sportcan 12K disposable, Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
-    "Pod-142-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-3-wm2.webp", alt: "Reswa Sportcan 12K disposable, Oolong Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
-    "Pod-142-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-4-wm2.webp", alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
-    "Pod-142-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-5-wm2.webp", alt: "Reswa Sportcan 12K disposable, Lemon Soda, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-2-wm3.webp", alt: "Reswa Sportcan 12K disposable, Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-3-wm3.webp", alt: "Reswa Sportcan 12K disposable, Oolong Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-4-wm3.webp", alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-5-wm3.webp", alt: "Reswa Sportcan 12K disposable, Lemon Soda, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
   },
   // Round list19 (19/10): Nexswitch 16K kit — the body colour follows the flavour (shop's colour grid); one master render, the other
   // nine recoloured to the grid's colour of that flavour (aiRender in the map).
   "NEXSWITCH-16K-KIT": {
-    "Pod-161-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-1-v2-wm2.webp", alt: "Nexswitch 16K kit, Grape Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-2-v2-wm2.webp", alt: "Nexswitch 16K kit, Grape Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-3-v2-wm2.webp", alt: "Nexswitch 16K kit, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-4-v2-wm2.webp", alt: "Nexswitch 16K kit, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-5-v2-wm2.webp", alt: "Nexswitch 16K kit, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-6-v2-wm2.webp", alt: "Nexswitch 16K kit, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-7-v2-wm2.webp", alt: "Nexswitch 16K kit, Cola Lemon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8-v2-wm2.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9-v2-wm2.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
-    "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10-v2-wm2.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-1-v2-wm3.webp", alt: "Nexswitch 16K kit, Grape Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-2-v2-wm3.webp", alt: "Nexswitch 16K kit, Grape Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-3-v2-wm3.webp", alt: "Nexswitch 16K kit, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-4-v2-wm3.webp", alt: "Nexswitch 16K kit, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-5-v2-wm3.webp", alt: "Nexswitch 16K kit, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-6-v2-wm3.webp", alt: "Nexswitch 16K kit, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-7-v2-wm3.webp", alt: "Nexswitch 16K kit, Cola Lemon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8-v2-wm3.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9-v2-wm3.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10-v2-wm3.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
   // Round list19 (19/10): PnP X — the 0.15Ω option shows the card re-shoot (its own coil); the other resistances have no photo yet.
   "Coil-92": {
-    "Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm2.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-2-wm2.webp", alt: "VOOPOO PnP X replacement coil, 0.2Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.2Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-3-wm2.webp", alt: "VOOPOO PnP X replacement coil, 0.3Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.3Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-4-wm2.webp", alt: "VOOPOO PnP X replacement coil, 0.6Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.6Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-2-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.2Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.2Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-3-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.3Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.3Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-4-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.6Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.6Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
   },
   // Round list19 (19/10): Nexswitch 16K refill pod — one body (the Watermelon render) for every flavour, each label moved onto it
   // from that flavour's own render (labellift.js). Grape Lychee · Cola Lemon · Mint · Pink Berry added 22/10 the same way (_incoming/nex/lift.js).
@@ -2530,7 +2530,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Images-all round 29/10: Dundu sells one flavour here — the Grape option shows the card photo (IMAGE_SPEC §4: a one-option product
   // may use its card as the option photo), so the option no longer shows the no-photo panel.
   "Eliquid-73": {
-    "Eliquid-73-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-73/card-wm2.webp", alt: "Dundu Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Dundu Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/dundu-salt-nic/" },
+    "Eliquid-73-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-73/card-wm3.webp", alt: "Dundu Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Dundu Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/dundu-salt-nic/" },
   },
   // List-new (27/10, owner — HANDOFF §18): Marbo 10K (เทียบแท้) reuses the M Bar 10K device photo of the SAME flavour name only.
   // Watermelon Ice (M Bar 10K has "Watermelon") and Mocha Latte (M Bar 10K has "Matcha Latte") have no same-name photo → no-photo
@@ -2679,32 +2679,32 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp-v2-wm3.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
   },
   "Coil-70": {
-    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm2.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
+    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm3.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
   },
   "Coil-89": {
-    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm2.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
-    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm2.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm3.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm3.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
   },
   "Coil-53": {
-    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2-wm2.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
+    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2-wm3.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
   },
   "Coil-74": {
     "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2-wm3.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
   },
   "Coil-38": {
-    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2-wm2.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
-    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v3-wm2.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
-    "Coil-38-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-3-wm2.webp", alt: "VOOPOO TPP-DM3 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM3 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
-    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4-wm2.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2-wm3.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
+    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v3-wm3.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-3-wm3.webp", alt: "VOOPOO TPP-DM3 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM3 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4-wm3.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
   },
   "Coil-87": {
-    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1-wm2.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
+    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1-wm3.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
   },
   "Coil-68": {
-    "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1-wm2.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
+    "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1-wm3.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
   },
   "Coil-56": {
-    "Coil-56-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-56/variant-coil-56-3-wm2.webp", alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo", sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg" },
+    "Coil-56-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-56/variant-coil-56-3-wm3.webp", alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo", sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg" },
   },
   // IQOSHEET-15 — FULL REBUILD (owner quality review, 2026-09-02). 11 of this parent's 12
   // selectable flavors now have a real, current, exact-name official photo — up from 6, and every
