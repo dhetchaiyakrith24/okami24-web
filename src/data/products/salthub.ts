@@ -724,7 +724,7 @@ export const salthubProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // Image round img-1610 16/10: the old card was the small shop photo — card-v2 = a studio re-shoot of it (same tilt).
-        src: "/assets/products/zero-pro/card-v2-wm2.webp",
+        src: "/assets/products/zero-pro/card-v2-wm3.webp",
         alt: "SALTHUB Zero Pro, black-to-red pen-style device with M logo, isolated product shot",
         angle: "3/4, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from the shop photo",
         transparentBackground: true,
@@ -768,12 +768,12 @@ export const salthubProducts: Product[] = [
     storyLayout: "stage",
     storyStartRight: true,
     lineupImage: {
-      src: "/assets/products/zero-pro/lineup-a-wm2.webp",
+      src: "/assets/products/zero-pro/lineup-a-wm3.webp",
       alt: "SALTHUB Zero Pro, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/zero-pro/lineup-b-wm2.webp",
+      src: "/assets/products/zero-pro/lineup-b-wm3.webp",
       alt: "SALTHUB Zero Pro, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
