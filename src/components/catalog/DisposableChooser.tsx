@@ -73,7 +73,7 @@ export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | 
 
   return (
     <section className="flex flex-col gap-8 border-t border-surface-border-soft pt-10 lg:gap-10 lg:pt-12">
-      <SectionHeading title={t(c.heading)} titleClassName="leading-[1.15]" description={data.minPrice !== null ? t(c.lede.replace("{min}", baht(data.minPrice))) : undefined} />
+      <SectionHeading title={t(c.heading)} titleClassName="leading-[1.15] [text-wrap:balance]" description={data.minPrice !== null ? t(c.lede.replace("{min}", baht(data.minPrice))) : undefined} />
       <div className="flex flex-col gap-4">
         <div className="grid gap-4 lg:grid-cols-2 lg:items-start lg:gap-6">
           <Groups title={c.puffPanelTitle} groups={data.puffGroups} meta={puffMeta} copy={c} unit={unit} t={t} />

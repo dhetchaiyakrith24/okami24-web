@@ -57,7 +57,7 @@ export function CategoryGuide({ copy, rows, brands = [] }: { copy: Partial<Recor
           {brandTable && brands.length > 0 && (
             <div className="grid gap-4 lg:grid-cols-3 lg:gap-8">
               <div className="flex flex-col gap-3">
-                <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground">{t(brandTable.heading)}</h3>
+                <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground [text-wrap:balance]">{t(brandTable.heading)}</h3>
                 <p className="text-sm leading-relaxed text-foreground-muted">{renderInline(brandTable.lede, locale, "brand-lede")}</p>
               </div>
               <div className="lg:col-span-2">
