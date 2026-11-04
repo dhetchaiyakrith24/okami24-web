@@ -3724,11 +3724,12 @@
   "slug": "relx-creator",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k (job 71fecf67-0dfc-44cf-80b7-08bd7a5f5ed9) = the owner's grey-and-yellow photo re-rendered sharp in the same pose → background cut by GPT Image 2.5 high 2k transparent (job a4ed9608-627d-4f88-9123-bfd6da11a52e; the light grey body keys badly with scripts/flatcut.js) → faint glow alpha<60 dropped by _incoming/image-sitewide/relx/dehalo.js → tilted -10 degrees in 2D by _incoming/image-sitewide/tilt-card.js",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job b412f9a5: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "the owner's photo of the grey-and-yellow device (chat 30/09, _incoming/image-sitewide/relx/owner/3.jpg = refs/owner-greyyellow-34.png)",
    "fidelitySheet": "_incoming/image-sitewide/relx/gy-compare.png (owner photo | render: body, RELX logo, four studs with the amber one, yellow base, pixel smiley) + relx/final-sheet.png"
   },
-  "note": "image-sitewide round 2026-09-30 — RELX Creator re-published as the Creator Pro device (owner ruling §16 item 4 (20)+(21)); the page was hidden for want of a card photo"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "card-v4.webp"
  },
  {
   "source": "_incoming/image-sitewide/relx/gen/gy-final.png",
@@ -3736,11 +3737,12 @@
   "role": "variant",
   "id": "grey-yellow",
   "aiRender": {
-   "tool": "as the card above, untilted",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job b412f9a5: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
    "fidelitySheet": "_incoming/image-sitewide/relx/gy-compare.png"
   },
-  "note": "image-sitewide round 2026-09-30 — the colour the shop sold first (owner 30/09)"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-grey-yellow-v5.webp"
  },
  {
   "source": "_incoming/image-sitewide/relx/gen/bk-final.png",
@@ -3748,11 +3750,12 @@
   "role": "variant",
   "id": "black",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k: job 777a264c (grey-yellow render as pose + RELX's black render for colours) came back with two red studs; job f2348bba repeated it; GPT Image 2.5 edit f6e0470e fixed the studs at 1024 px; job 6b562d53-9cb5-4b17-9913-3029c1196cf6 re-made that at 4K in the grey-yellow pose (three dark grey studs + one red, as the grey-yellow has three silver + one amber) → cut with scripts/flatcut.js",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job c6d5542c: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's own black Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-black.jpg (device crop _incoming/image-sitewide/relx/refs/official-black.png) + the owner's black photo relx/owner/1.png",
    "fidelitySheet": "_incoming/image-sitewide/relx/bk4-sheet.png (grey-yellow | black | stud close-up)"
   },
-  "note": "image-sitewide round 2026-09-30 — the black the shop sells (owner 30/09; RELX's official photos OK'd by the owner)"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-black-v5.webp"
  },
  {
   "source": "_incoming/sitewide-template/4/4d2/gen/white-d1-final.png",
@@ -3760,11 +3763,12 @@
   "role": "variant",
   "id": "white",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k job 170450ad-91cb-4138-9bc0-38cd9bc115d3 (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's white render for colours, on a dark charcoal background so the light top face keys cleanly — checker #282 r1 found the first white's studs cut on the studio grey) → scripts/flatcut.js → _incoming/sitewide-template/4/4d2/despeck.js",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 004a256b: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's own white Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-white.jpg (device crop _incoming/image-sitewide/relx/refs/official-white.png)",
    "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/wd-top-dark.jpg, wd-top-mag.jpg, wd-bottom-mag.jpg, edges-white2.png (white) · edges-2.png (green, yellow)"
   },
-  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-white-v5.webp"
  },
  {
   "source": "_incoming/sitewide-template/4/4d2/gen/green-2-final.png",
@@ -3772,11 +3776,12 @@
   "role": "variant",
   "id": "green",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k job 4a3a488c-45f6-4f5c-802f-91505f8890c3 (first try 70dabacc moved the studs) (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's green render for colours; three studs in the body colour + one red, as the black) → Higgsfield image_background_remover d6645d69 + _incoming/image-sitewide/b-edge/choke.js → _incoming/sitewide-template/4/4d2/despeck.js",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 95da7a29: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's own green Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-green.jpg (device crop _incoming/image-sitewide/relx/refs/official-green.png)",
    "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/edges.png, edges-white.png, edges-2.png (4x edge zoom)"
   },
-  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-green-v5.webp"
  },
  {
   "source": "_incoming/sitewide-template/4/4d2/gen/yellow-1-final.png",
@@ -3784,11 +3789,12 @@
   "role": "variant",
   "id": "yellow",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k job 9b0c360c-53d8-4d33-bb95-c1daf79ecd2c (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's yellow render for colours; three studs in the body colour + one red, as the black) → Higgsfield image_background_remover a38b58f3 + _incoming/image-sitewide/b-edge/choke.js (flatcut left a grey halo on top) → _incoming/sitewide-template/4/4d2/despeck.js",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 9429c6fa: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's own yellow Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-yellow.jpg (device crop _incoming/image-sitewide/relx/refs/official-yellow.png)",
    "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/edges.png, edges-white.png, edges-2.png (4x edge zoom)"
   },
-  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-yellow-v5.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/v4/final/apple-aloe.png",
@@ -6782,12 +6788,12 @@
   "role": "variant",
   "id": "grey-yellow",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the owner's own 3/4 photo (_incoming/image-sitewide/relx/owner/3.jpg, upscaled → _incoming/look-batch/relx-creator/orig-grey-yellow.png) as the only image; prompt = IMAGE_PROMPTS v3 light, front-left key (tab helper __RELX2); render _incoming/look-batch/relx-creator/grey-yellow-S3.png; the yellow base pulled back to the photo's lemon yellow by look-batch/hue-match.js (render came out mustard); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job b412f9a5: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-grey-yellow-S3h.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-grey-yellow-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-grey-yellow-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-white-S2d.png",
@@ -6795,12 +6801,12 @@
   "role": "variant",
   "id": "white",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own white render (image 2 = _incoming/look-batch/relx-creator/orig-white.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/white-S2.png; logo darkened to RELX's charcoal by relx-creator/logo-dark.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 004a256b: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official white Creator Pro render (_incoming/image-sitewide/relx/refs/official-white.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-white-S2d.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-white-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-white-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-green-S2h.png",
@@ -6808,12 +6814,12 @@
   "role": "variant",
   "id": "green",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own green render (image 2 = _incoming/look-batch/relx-creator/orig-green.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/green-S2.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 95da7a29: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official green Creator Pro render (_incoming/image-sitewide/relx/refs/official-green.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-green-S2h.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-green-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-green-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-yellow-S1g.png",
@@ -6821,12 +6827,12 @@
   "role": "variant",
   "id": "yellow",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own yellow render (image 2 = _incoming/look-batch/relx-creator/orig-yellow.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/yellow-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 9429c6fa: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official yellow Creator Pro render (_incoming/image-sitewide/relx/refs/official-yellow.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-yellow-S1g.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-yellow-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-yellow-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-black-S1h.png",
@@ -6834,24 +6840,24 @@
   "role": "variant",
   "id": "black",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own black render (image 2 = _incoming/look-batch/relx-creator/orig-black.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/black-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job c6d5542c: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official black Creator Pro render (_incoming/image-sitewide/relx/refs/official-black.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-black-S1h.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-black-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-black-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/D-grey-yellow-S3-card.png",
   "slug": "relx-creator",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the owner's own 3/4 photo (_incoming/image-sitewide/relx/owner/3.jpg, upscaled → _incoming/look-batch/relx-creator/orig-grey-yellow.png) as the only image; prompt = IMAGE_PROMPTS v3 light, front-left key (tab helper __RELX2); render _incoming/look-batch/relx-creator/grey-yellow-S3.png; the yellow base pulled back to the photo's lemon yellow by look-batch/hue-match.js (render came out mustard); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor); card = the same render keyed at full size with the floor cut at the foot line (matte2.js --device), upright; floor shadow clipped to the device columns by look-batch/card-clip.js so the card centres",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job b412f9a5: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-grey-yellow-S3h.png"
   },
-  "note": "image-look J4 07/10 — card from the grey-yellow pick, upright like the colour photos",
-  "fileName": "card-v3.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "card-v4.webp"
  },
  {
   "source": "_incoming/look-batch/argus-g4-mini/M-black-S2s.png",
@@ -6975,12 +6981,12 @@
   "role": "variant",
   "id": "grey-yellow",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the owner's own 3/4 photo (_incoming/image-sitewide/relx/owner/3.jpg, upscaled → _incoming/look-batch/relx-creator/orig-grey-yellow.png) as the only image; prompt = IMAGE_PROMPTS v3 light, front-left key (tab helper __RELX2); render _incoming/look-batch/relx-creator/grey-yellow-S3.png; the yellow base pulled back to the photo's lemon yellow by look-batch/hue-match.js (render came out mustard); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job b412f9a5: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-grey-yellow-S3hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
-  "fileName": "variant-grey-yellow-v4.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-grey-yellow-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-white-S2ds.png",
@@ -6988,12 +6994,12 @@
   "role": "variant",
   "id": "white",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own white render (image 2 = _incoming/look-batch/relx-creator/orig-white.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/white-S2.png; logo darkened to RELX's charcoal by relx-creator/logo-dark.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 004a256b: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official white Creator Pro render (_incoming/image-sitewide/relx/refs/official-white.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-white-S2ds.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
-  "fileName": "variant-white-v4.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-white-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-green-S2hs.png",
@@ -7001,12 +7007,12 @@
   "role": "variant",
   "id": "green",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own green render (image 2 = _incoming/look-batch/relx-creator/orig-green.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/green-S2.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 95da7a29: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official green Creator Pro render (_incoming/image-sitewide/relx/refs/official-green.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-green-S2hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
-  "fileName": "variant-green-v4.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-green-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-yellow-S1gs.png",
@@ -7014,12 +7020,12 @@
   "role": "variant",
   "id": "yellow",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own yellow render (image 2 = _incoming/look-batch/relx-creator/orig-yellow.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/yellow-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job 9429c6fa: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official yellow Creator Pro render (_incoming/image-sitewide/relx/refs/official-yellow.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-yellow-S1gs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
-  "fileName": "variant-yellow-v4.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-yellow-v5.webp"
  },
  {
   "source": "_incoming/look-batch/relx-creator/M-black-S1hs.png",
@@ -7027,12 +7033,12 @@
   "role": "variant",
   "id": "black",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own black render (image 2 = _incoming/look-batch/relx-creator/orig-black.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/black-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 02+05/11), job c6d5542c: the earlier v3 render with only the top face corrected to RELX's two contacts; cut with scripts/lab/option-photos-matte3.js --ft 8 --protect",
    "reference": "RELX's official black Creator Pro render (_incoming/image-sitewide/relx/refs/official-black.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
    "fidelitySheet": "_incoming/look-batch/relx-creator/C-black-S1hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
-  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
-  "fileName": "variant-black-v4.webp"
+  "note": "images-fix 05/11 - top face corrected",
+  "fileName": "variant-black-v5.webp"
  },
  {
   "source": "_incoming/look-batch/zero-cartridge/M-apple-aloe-Q1fs.png",
@@ -7501,12 +7507,12 @@
   "slug": "coil-55",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --fblur 2 --grow 1.5 --device, foot slab trimmed, floor line under the base cleared, specks dropped",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --fblur 2 --grow 1.5 --device, foot slab trimmed, floor line under the base cleared, specks dropped; logo area replaced 05/11 from GPT Image 2.5 medium 2K job 79a7ce92 (owner yes 05/11)",
    "reference": "Vapesourcing's front photo of the CALIBURN G2 pod (larger than the 08/10 one; PRO FOCS / MAX / UWELL moulding visible) (input: _incoming/img-1610/b1/in/c55.png from _incoming/option-photos/b4/in/c55v.png; render _incoming/img-1610/b1/out/c55-A.png)",
    "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c55.png — reference outline (red) lies on the render's edges; IoU 0.716 understates (the clear tank of the white-background reference is lost in its cut, LESSONS-images 29); cap, tank, PRO FOCS mark, base and red tab checked by eye"
   },
   "note": "round img-1610 16/10 — re-shot large in frame (the 08/10 render had the pod small in a 2K frame, so the card was soft)",
-  "fileName": "card-v3.webp"
+  "fileName": "card-v4.webp"
  },
  {
   "source": "_incoming/coil7/D-c74-v2.png",
@@ -8559,206 +8565,272 @@
   "source": "_incoming/list19/p154/coke.png",
   "slug": "pod-154",
   "role": "card",
-  "note": "round list19 18/10 - card = the Coke pod re-shoot (in stock)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Coke) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
   },
-  "fileName": "card.webp"
+  "fileName": "card-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/grape.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-1",
-  "note": "round list19 18/10 - Grape (Max Pod-154-1)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Grape) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-1-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/watermelon.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-2",
-  "note": "round list19 18/10 - Watermelon (Max Pod-154-2)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Watermelon) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-2-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/coke.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-3",
-  "note": "round list19 18/10 - Coke (Max Pod-154-3)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Coke) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-3-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/mint-extra.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-4",
-  "note": "round list19 18/10 - Mint Extra (Max Pod-154-4)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Mint Extra) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-4-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/hales-blue-boy.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-5",
-  "note": "round list19 18/10 - Hales Blue Boy (Max Pod-154-5)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Hales Blue Boy) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-5-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/mangosteen.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-8",
-  "note": "round list19 18/10 - Mangosteen (Max Pod-154-8)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Mangosteen) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-8-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/malee.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-9",
-  "note": "round list19 18/10 - Malee (Max Pod-154-9)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Malee) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-9-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/peach.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-10",
-  "note": "round list19 18/10 - Peach (Max Pod-154-10)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Peach) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-10-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/sugus-pineapple.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-11",
-  "note": "round list19 18/10 - Sugus Pineapple (Max Pod-154-11)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Sugus Pineapple) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-11-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/sugus-raspberry.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-12",
-  "note": "round list19 18/10 - Sugus Raspberry (Max Pod-154-12)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Sugus Raspberry) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-12-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/orange-soda.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-13",
-  "note": "round list19 18/10 - Orange Soda (Max Pod-154-13)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Orange Soda) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-13-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/blueberry.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-14",
-  "note": "round list19 18/10 - Blueberry (Max Pod-154-14)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Blueberry) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-14-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/jele-lychee.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-17",
-  "note": "round list19 18/10 - Jele Lychee (Max Pod-154-17)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Jele Lychee) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-17-v2.webp"
  },
  {
   "source": "_incoming/list19/p154/jelly-bear.png",
   "slug": "pod-154",
   "role": "variant",
   "id": "pod-154-18",
-  "note": "round list19 18/10 - Jelly Bear (Max Pod-154-18)",
+  "note": "images-fix 05/11 - studio set, one mouthpiece on all 18 by script",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster",
    "reference": "ihavevape.net Pop Up 10K flavour poster (Jelly Bear) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
-  }
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-18-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/pu/strawberry.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-6",
+  "note": "images-fix 05/11 - flavour had no picture; studio set, one mouthpiece on all 18 by script",
+  "aiRender": {
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster, job e3b6630d",
+   "reference": "a shop poster of the flavour (goatvape, noted in OKami24-assets manifest.csv)",
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-6-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/pu/mixberry.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-7",
+  "note": "images-fix 05/11 - flavour had no picture; studio set, one mouthpiece on all 18 by script",
+  "aiRender": {
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster, job b538725f",
+   "reference": "a shop poster of the flavour (goatvape, noted in OKami24-assets manifest.csv)",
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-7-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/pu/lime-soda.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-15",
+  "note": "images-fix 05/11 - flavour had no picture; studio set, one mouthpiece on all 18 by script",
+  "aiRender": {
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster, job b084ea0c",
+   "reference": "a shop poster of the flavour (goatvape, noted in OKami24-assets manifest.csv)",
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-15-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/pu/guava-kiwi.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-16",
+  "note": "images-fix 05/11 - flavour had no picture; studio set, one mouthpiece on all 18 by script",
+  "aiRender": {
+   "tool": "OKami24-assets 2026-10/pop-up/studio (nano_banana_pro renders 31/10 + 02/11, manifest.csv); mouthpiece = the Grape render on all 18, tinted per flavour by script 05/11; Guava Kiwi label reprinted in Lobster, job feffc602",
+   "reference": "a shop poster of the flavour (goatvape, noted in OKami24-assets manifest.csv)",
+   "fidelitySheet": "_incoming/img-fix-0511/out/popup.png + popup-mouthpiece.png"
+  },
+  "fileName": "variant-pod-154-16-v2.webp"
  },
  {
   "source": "_incoming/list19/ske/ske.png",
   "slug": "pod-149",
   "role": "card",
-  "note": "round list19 18/10 - SKE Crystal B20000 Thai Milk Green Tea re-shoot (in stock)",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/p149-tmgt-B.png; keyed off the grey sweep by b17/floodkey.js (T=14), the bottom silhouette rebuilt from points read on the base crop and the floor reflection cleared (list19/ske/cut.js, copy beside this source)",
-   "reference": "pod789 SKE Crystal B20000 Thai Milk Green Tea poster - _incoming/img-1610/masters/src/pod-149 (index masters/src/index.json)",
-   "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-149.jpg (poster beside renders A/B) - SKE logo, CRYSTAL B20000, display window, green body checked by eye"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 073f73d5; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "card.webp"
+  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/6.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-6",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Thai Milk Green Tea, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 1625d39d-919f-4db7-9444-462440cb58a3: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Thai Milk Green Tea poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 073f73d5; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-6-v2.webp"
+  "fileName": "variant-pod-149-6-v3.webp"
  },
  {
   "source": "_incoming/list19/marbo-v3/red.png",
@@ -9664,73 +9736,78 @@
   "source": "_incoming/list19/nexpod/pod-watermelon.png",
   "slug": "nexswitch-16k-pod",
   "role": "card",
-  "note": "round list19 19/10 - card = the Watermelon pod (the shared body)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
   },
-  "fileName": "card.webp"
+  "fileName": "card-v2.webp"
  },
  {
   "source": "_incoming/list19/nexpod/pod-mixberry.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-3",
-  "note": "round list19 19/10 - Mixberry pod (Max Pod-162-3)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
-  }
+  },
+  "fileName": "variant-pod-162-3-v2.webp"
  },
  {
   "source": "_incoming/list19/nexpod/pod-strawberry-watermelon.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-4",
-  "note": "round list19 19/10 - Strawberry Watermelon pod (Max Pod-162-4)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
-  }
+  },
+  "fileName": "variant-pod-162-4-v2.webp"
  },
  {
   "source": "_incoming/list19/nexpod/pod-mineral.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-5",
-  "note": "round list19 19/10 - Mineral pod (Max Pod-162-5)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
-  }
+  },
+  "fileName": "variant-pod-162-5-v2.webp"
  },
  {
   "source": "_incoming/list19/nexpod/pod-honeydew-melon.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-6",
-  "note": "round list19 19/10 - Honeydew Melon pod (Max Pod-162-6)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
-  }
+  },
+  "fileName": "variant-pod-162-6-v2.webp"
  },
  {
   "source": "_incoming/list19/nexpod/pod-watermelon.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-10",
-  "note": "round list19 19/10 - Watermelon pod (Max Pod-162-10)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
-  }
+  },
+  "fileName": "variant-pod-162-10-v2.webp"
  },
  {
   "source": "_incoming/list19/pepo/grape.png",
@@ -11821,78 +11898,78 @@
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-1",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Grape Yoyo, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 1cc75b80-2487-4d2d-9a1c-f36189294f84 (22/10 render, the base scene itself): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Grape Yoyo poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job ebf0aadc = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-1-v2.webp"
+  "fileName": "variant-pod-149-1-v3.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/3.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-3",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Watermelon, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 9f117165-6df9-487d-8012-60770a3ef3d9: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Watermelon poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 84d51443 = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-3-v2.webp"
+  "fileName": "variant-pod-149-3-v3.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/4.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-4",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Lemon Coke, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job af19b5e8-09f1-4433-b80f-ae02c2d85fb9: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Lemon Coke poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job e9b2ab73 = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-4-v2.webp"
+  "fileName": "variant-pod-149-4-v3.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/5.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-5",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Strawberry, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 94aab069-9cab-445c-bd82-d8193c0ccafd: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Strawberry poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 379ffcac = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-5-v2.webp"
+  "fileName": "variant-pod-149-5-v3.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/7.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-7",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Tieguanyin Tea, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job 585c08e4-4472-4afb-bc26-45d55fb51162: an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Tieguanyin Tea poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 228d6ace = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour; body moved toward the poster colour by script (owner 05/11)",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-7-v2.webp"
+  "fileName": "variant-pod-149-7-v4.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/8.png",
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-8",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Mango, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job b7bc460e-e820-4b2e-a5e3-d89e5e90069c (second try; first try a029afd8 was larger than the set): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "pod789.com SKE Crystal B20000 Mango poster (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job ae384f9f = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-8-v2.webp"
+  "fileName": "variant-pod-149-8-v3.webp"
  },
  {
   "source": "_incoming/pepo/final/mint.png",
@@ -11911,48 +11988,52 @@
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-2",
-  "note": "image sweep 22/10 - Nexswitch 16K pod Grape Lychee (Max Pod-162-2)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch Grape Lychee poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Grape-Lychee.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Grape-Lychee.jpg",
    "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
-  }
+  },
+  "fileName": "variant-pod-162-2-v2.webp"
  },
  {
   "source": "_incoming/nex/final/cola-lemon.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-7",
-  "note": "image sweep 22/10 - Nexswitch 16K pod Cola Lemon (Max Pod-162-7)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch Cola Lemon poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Cola-Lemont.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Cola-Lemont.jpg",
    "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
-  }
+  },
+  "fileName": "variant-pod-162-7-v2.webp"
  },
  {
   "source": "_incoming/nex/final/mint.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-8",
-  "note": "image sweep 22/10 - Nexswitch 16K pod Mint (Max Pod-162-8)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch Mint poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Mint.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Mint.jpg",
    "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
-  }
+  },
+  "fileName": "variant-pod-162-8-v2.webp"
  },
  {
   "source": "_incoming/nex/final/pink-berry.png",
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-9",
-  "note": "image sweep 22/10 - Nexswitch 16K pod Pink Berry (Max Pod-162-9)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; one render per flavour with the live Watermelon pod photo (body/framing) + that flavour's poster crop (label); the label was then moved onto the live Watermelon body (_incoming/nex/lift.js) so the set keeps one body, as in the 19/10 set",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch Pink Berry poster (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Pink-Berryl.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/nex/src/Pink-Berryl.jpg",
    "fidelitySheet": "_incoming/nex/fid.jpg (poster pod beside the final, label text + fruit picture checked by eye) + dark.jpg (the set on the site background)"
-  }
+  },
+  "fileName": "variant-pod-162-9-v2.webp"
  },
  {
   "source": "_incoming/img-3110/reshoot/ks/pod-150-1.png",
@@ -12793,12 +12874,13 @@
   "slug": "nexswitch-16k-pod",
   "role": "variant",
   "id": "pod-162-1",
-  "note": "image sweep 23/10 - Nexswitch 16K pod Grape Ice (Max Pod-162-1)",
+  "note": "images-fix 05/11 - real square body",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K, Unlimited plan (0 credits), web app through Chrome; one render from the live Watermelon pod photo (body/framing) + the Grape Ice poster crop (label); the label was then moved onto the live Watermelon body (_incoming/sweep-2310/nex/lift.js, copied from the 22/10 set) so the set keeps one body",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes), job 67456005: one body matching the shop poster; each flavour label moved onto it by script from the earlier render",
    "reference": "pod789.com Nexswitch poster filed as Grape but printed GRAPE ICE (https://pod789.com/product/nex-switch-snowwolf-16k/ - wp-content/uploads/2025/10/Nex-Switch-Snowwolf-16000-Grape.jpg, 600 px, the loose pod at lower right, no shop watermark) - _incoming/sweep-2310/nex/Grape.jpg",
    "fidelitySheet": "_incoming/sweep-2310/nex/fid-gi.png (final, poster crop, label close-up)"
-  }
+  },
+  "fileName": "variant-pod-162-1-v2.webp"
  },
  {
   "source": "_incoming/sweep-2310/ks/gb-label.png",
@@ -14365,12 +14447,77 @@
   "slug": "pod-149",
   "role": "variant",
   "id": "pod-149-2",
-  "note": "images 30/10 (chat 7) - SKE Crystal B20000 Double Mint, all 8 flavours in one frame",
+  "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (account credits, owner yes 30/10), job f3145940-18d7-4968-9cdb-f40c6ba8f9e8 (chat 5, image 1 = base scene, image 2 = relxc9 Double Mint poster crop): an EDIT of the Grape Yoyo scene render 1cc75b80 (image 1) with the saved 22/10 render of this flavour (image 2) for body colour and printed line, so camera, size and position are the Grape Yoyo frame (contour rows within 2 px on all 8); keyed by flood (floodkey.js T=9), then ONE shared matte for all 8 flavours (per-pixel median of the 8 keyed alphas, clipped left/right by the contour rows read from the renders, bottom by the base contour minus 14 px, eroded 1 px, 0.9 px blur - matte3.js beside this source), then RGB sharpened sigma 1.8 (sharpen.js; the pale bodies were under 90% of the card in the sharpness gate)",
-   "reference": "relxc9 SKE Crystal Double Mint poster crop (chat 5) (600 px, SKE's own artwork; https://pod789.com/product/ske-crystal-20000-puffs/) - _incoming/img-1610/masters/src/pod-149 (main checkout)",
-   "fidelitySheet": "_incoming/img-3010/ske7/set.jpg (all 8 side by side) + bot3.jpg (base at 1:1 on magenta)"
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 96e0515c = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour; yellow circuit + small SKE recoloured sky blue by script",
+   "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
+   "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-2-v2.webp"
+  "fileName": "variant-pod-149-2-v3.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-peach-ice",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-peach-ice",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job fac42a90: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline; strength reprinted 2% by script (RELX MY pack = 20 mg/ml, owner 05/11)",
+   "reference": "relxnow.my pack picture of Peach Ice",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-peach-ice-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-root-brew",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-root-brew",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 883e3853: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline; strength reprinted 2% by script (RELX MY pack = 20 mg/ml, owner 05/11)",
+   "reference": "relxnow.my pack picture of Root Brew",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-root-brew-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-ice-jasmine-tea",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-ice-jasmine-tea",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 2c16c508: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline; strength reprinted 2% by script (RELX MY pack = 20 mg/ml, owner 05/11)",
+   "reference": "relxnow.my pack picture of Ice Jasmine Tea",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-ice-jasmine-tea-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-lychee-frost",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-lychee-frost",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 47440618: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline; strength reprinted 2% by script (RELX MY pack = 20 mg/ml, owner 05/11)",
+   "reference": "relxnow.my pack picture of Lychee Frost",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-lychee-frost-v2.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-ice-tieguanyin",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-ice-tieguanyin",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job a5092332: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline; strength reprinted 2% by script (RELX MY pack = 20 mg/ml, owner 05/11)",
+   "reference": "relxnow.my pack picture of Ice Tieguanyin",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-ice-tieguanyin-v2.webp"
  }
 ]
