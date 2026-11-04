@@ -11889,11 +11889,11 @@
   "id": "pod-149-7",
   "note": "images-fix 05/11 - re-shot to match the real pack",
   "aiRender": {
-   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 228d6ace = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour",
+   "tool": "Higgsfield GPT Image 2.5 medium 2K 3:4 (credits, owner yes), job 228d6ace = master 073f73d5 + the flavour poster; cut with scripts/lab/option-photos-matte3.js --ft 8 --device; 840 px tall on the same line in every flavour; body moved toward the poster colour by script (owner 05/11)",
    "reference": "owner's photo of the real SKE Crystal B20000 pack (02/11) + SKE's poster of the flavour, pod789.com",
    "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
-  "fileName": "variant-pod-149-7-v3.webp"
+  "fileName": "variant-pod-149-7-v4.webp"
  },
  {
   "source": "_incoming/img-3010/ske7/src/8.png",
