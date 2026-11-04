@@ -1,7 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useSyncExternalStore } from "react";
-import { CinematicIntro } from "./cinematic/CinematicIntro";
+
+/**
+ * Loaded only when it is rendered (same pattern as HeroClassic.tsx). A static import put the whole intro and
+ * framer-motion (144 KB raw, 46 KB gzip, measured 04/11) into every home page visit while DESKTOP_INTRO is false — the
+ * page imports this file either way. Server-rendered as before when the switch is on (next/dynamic keeps SSR).
+ */
+const CinematicIntro = dynamic(() => import("./cinematic/CinematicIntro").then((m) => m.CinematicIntro));
 
 /**
  * Mobile round C — MOBILE_SPEC [M1]: the scroll-scrubbed cinematic intro is DESKTOP ONLY.

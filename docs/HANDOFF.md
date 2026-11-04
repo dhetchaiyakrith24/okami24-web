@@ -10,37 +10,40 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 04/11 ~03:45 by the 9th main chat (local_624502cf) after the owner's /compact. Owner 04/11 ~03:30: child chats up to 5 (one-off over 13.6's 3);
-the main chat does not hand off, children may hand off themselves.
-13.7 deploy window (no merges 18:00–24:00) applies again from 04/11. MERGE ORDER TONIGHT = one PR at a time (each merge voids the others'
-verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204 → backdrop PR → gen-3 rollout PRs.
+Updated 04/11 ~21:40 by the 9th main chat (local_624502cf) at the owner's hand-off. The computer lost power ~20:45; nothing was lost [checked]. Re-read this + TEAM_RULES.
+CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
+in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
+BEFORE REOPENING, close the shipping point in 2g.
+Owner 04/11: child chats up to 5 (one-off over 13.6's 3). Owner 04/11 evening, for this queue: "ขึ้นเว็บตอนไหนก็ขึ้นไปเลย" = the 18:00–24:00 window does not hold it up.
+MERGE ORDER = one PR at a time, Friday sends "go": main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
 
-1 main = c0743392 (#1200). Merged 03–04/11 night: #1194 #1199 watermark gen 2 (all our pictures) · #1195 DHL packer note (temporary; carrier
-  stays by postcode, owner 04/11) · #1197 calm sale chip · #1198 VOOPOO SEO + UWELL coil-53 · #1200 WOTOFO nexPOD 15K article +
-  "หัวพอตบรรจุสำเร็จ" · #1201 docs. Closed unmerged: #1203 RELX Smash Go capacity (20 vs 18 mL unprovable → pack photo needed).
-  Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet
-  (site sync fine; owner asks the warehouse whether 2–3/11 orders got numbers).
-2 OPEN WORK (all draft unless said):
-  a Friday — branch claude/thai-glue-particle-0411 head a9c1b734 (tree `_incoming/wt-dhl-0311`) = draft PR #1205; verify 63/63 was on a9c1b734 — re-run after merging main:
-    ค่ะ/คะ/ครับ glue (thai-typography POLITE_PARTICLE, 【แตะได้】 owner 03/11) · spec labels ≤ 16 chars never shrink (SHORT_SPEC_LABEL) ·
-    4 Thai category intros in 2 paragraphs (owner "ตามเหมาะสม SEO"). Evidence `_incoming/glue-0411/`: full-site wb before/after, product
-    pages wb-diff3 (17 fixed / 0 new), category wb-diff4 (2 fixed / 1 new: e-liquid "บทความ" alone before its link — judge on the shots),
-    shots/ before (main c0743392) + after for pod-169 + e-liquid at 390/1440. Shots read by Friday 04/11: pass (crops in `_incoming/glue-0411/crops/`). Gate failed `locked` only because this block's round line
-    was labelled "2N" — `scripts/lib/round-file.js` reads the round from a line matching `3[a-z]? OPEN`; relabelled "3o" here.
-    NEXT: merge this docs PR → merge main into the glue branch → verify --full → gate → checker → merge.
-  b #1202 label-price child (local_b64f9a62): product cards + in-stock filter read LIVE stock (owner queue 31/10) · BIG · waits for "go".
-  c #1204 images child (local_67ec6cc2): watermark gen 3 = owner-approved sample 4A (04/11 ~02:55): mark on the product as gen 2, ~12 px soft
-    spill, 18/20% alternating per row, 7–8 repeats (was 10); product box from the unmarked original keeps every card's size identical.
-    After merge: gen-3 rollout ≤100 pictures/PR. Higgsfield generation still blocked (owner: switch that chat out of Auto — รอพี่ตรวจ 89).
-  d articles child (local_1655fd9c, renamed "ฉากหลังหน้าสินค้าทั้งหมด → โทนการ์ดชำระเงิน"): NEW owner 04/11 ~03:00 — /products backdrop
-    (SamuraiBackdrop: colour samurai + red mist reads "game") → monochrome grey/black, payment-card texture, faint. Drafts A (engraved
-    line-art samurai on brushed charcoal) / B (texture only) → owner picked A → built: branch claude/products-backdrop-0411 5b44c5f9,
-    proof `_incoming/art0311b-bg/proof-before-after.png` (visible text 0 changes) → waits for "go" (verify on 3412 after #1204).
-  e NEW child seo-full-0411 (local_4afff633): owner 04/11 "SEO จัดเต็ม" — indexing state, score gaps, green-key article audit + next keys,
-    YouTube coverage → fix as draft PRs, report to Friday.
-  f NEW child speed-sec-0411 (local_c2dd8fa6): owner 04/11 — speed (Lighthouse), security headers, polish + product-detail coverage
-    (article / spec / pictures) → fix as draft PRs, report to Friday.
-  TEST MACHINE 3412: queue = glue #1205 → #1202 → #1204 → backdrop → rollout; children e/f measure on their own ports.
+1 main = 397f9807 (#1213). Merged 04/11: #1213 home intro loads only when its switch is on (home JS 1049→905 KB, look unchanged) · #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
+  #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
+  (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
+  (pod-losing-flavor · pod-low-vapor · types-of-pods; indexing requested in GSC) · #1206 #1207 docs. Earlier night: #1194–#1201, see git log.
+  Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet (site sync fine; owner asks the warehouse).
+2 OPEN WORK, in merge order:
+  a #1227 Friday, branch claude/warehouse-ship-35 head e1dd4e69, tree `_incoming/wt-dhl-0311`, READY (not draft): orders carry the warehouse's ฿35 shipping line, customer total unchanged
+    (paid 0 = discount 35 · 35 = none · 50 = fee line 15); orders sent before WAREHOUSE_RATE_SINCE 2026-11-04T15:00Z read back as sent (50). verify 65/65, checker round 1 FAIL (read-back), round 2 + 3 PASS, body = PASS e1dd4e69.
+    NEXT: GitHub checks green → `node scripts/self-merge-check.js --pr 1227` in that tree → merge --match-head-commit AFTER 15:00Z (22:00 Thai), or move the constant. Not proven: how Shipnity treats fee_lines → read the first real ฿50 order after the cart reopens.
+  b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
+    Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
+  d #1215 child speed-sec-0411: --foreground-dim #78777c→#87868b (owner "ปรับเล็กน้อย") · proof gaps closed · draft, waits for "go".
+  e gen-3 watermark batches 3–11, child images-0211b (local_67ec6cc2), drafts stacked on each other: #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 · each needs
+    merge main → verify → gate → checker → ready. nexSwitch 16K pod + RELX Creator get marked after their pictures are redone (Higgsfield blocked, รอพี่ตรวจ 89).
+  g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
+    Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
+    Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
+    Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
+    Rates 22–31/10 vs ours: 38 products, all match after the cost file `ต้นทุนสินค้า/ต้นทุนสินค้า-OKami24-2026-11-04.xlsx` (outside git; TFIT 240, RELX Infinity Pro 2 Pod 100, dude 85). No loss-makers; under 10%: Reswa Sportcan 12K (hidden). 29 products have no rate; 4 with stock are asked in รอพี่ตรวจ.
+  h ORDER CHECK PLAN (owner agreed 04/11; nothing built): 1 round Excel Saturday 13:00 → Saturday 13:00 (warehouse order no, code, qty, rate, ship 35), proved against a bill · 2 cost table into the back office ·
+    3 daily sales page · 4 paste the warehouse file, list what differs · 5 LINE orders · 6 scheduled run Saturday after 13:00 + morning summary. Owner answers: only the owner sees cost and profit · LINE = daily sales from slips, cost/profit weekly from the bill ·
+    accounts on the web back office, no separate app (Google/LINE sign-in + roles: owner all · admin orders, no profit · Friday read-only). Login work = 13.3 #9, write the plan for the owner first. Admin's proof file holds rates: settle what admin may see.
+    Warehouse bill columns: "(ว่าง)" = web · "Okami" = LINE keyed by admin (217 orders ฿126,010; 16 of them not ฿35 shipping, unread) · H = rate + shipping.
+  Children seo-full-0411 (local_4afff633) and articles-0311b (local_1655fd9c) are finished — archive only on the owner's OK. SEO findings: Google hid us on general terms since 27/10
+    (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
+  Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
+    zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers · "IQOS รุ่นก่อน" vs the searched "รุ่นเก่า".
 3o OPEN ROUND 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`. Blocks 1 · 2ก · 2ข · 4
     live; block 3 (watermark) live at gen 2, gen-3 change pending the owner's sample OK; block 5 (articles) ends with #1200.
     Close (skill round-close, tag queue-0211) after #1200 + the glue PR + the gen-3 watermark decision.
@@ -62,7 +65,9 @@ verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main.
   f back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion · staff-by-Gmail NOT built
      (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
-3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
+3 OWNER ASKED 04/11 (later, plan first): a back-office button showing web orders per day, sales, profit · owner-pressable switches: cart, API, close the site temporarily ·
+  back office the owner runs himself (hide products etc.) · daily income / sales / profit from the slip room covering LINE + web (slip amount − cost − ฿35 warehouse shipping per order).
+  OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
   g SALES LOG (owner 30/10, owner-only view) · Q9 staff dashboard [PLAN WITH THE OWNER FIRST] — unchanged, see git show 37a1b052:docs/HANDOFF.md §16 3g.
   h agent `visitor` not yet run for real — first use = the next big round or new look · shop accounts audit = separate project, PARKED.
@@ -73,8 +78,7 @@ verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · EasySlip quota 497/1000 (23/10) — warn before it runs out.
 3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77).
 3w Home switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Still build-time:
-  listing cards, the in-stock filter, JSON-LD → child 2c is moving cards to live. Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
+3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Still build-time: JSON-LD and the struck price / −N% (cards went live 04/11, #1202). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". 【ห้ามแตะ】 coil-1/72/94 photos · every price file. New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18).
 3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
