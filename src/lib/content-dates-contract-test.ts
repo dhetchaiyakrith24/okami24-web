@@ -7,17 +7,23 @@
  * (`npm run verify:catalog`, part of every round close): for every path the JSON lists it asks
  * git for the newest commit and demands the same answer. A copy commit without a regenerated JSON
  * therefore fails the close, which is the whole point.
+ *
+ * Owner 05/11: "pages" in the JSON dates each page by what a reader gets on it (scripts/lib/page-substance.ts). Section 6
+ * proves on the real catalog that a picture rename moves no date and a text change moves exactly its own page.
  */
 
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import contentDates from "@/data/content-dates.json";
-import { allProducts } from "@/data/products";
+import sitemap from "@/app/sitemap";
 import { guides, heldGuides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
-import { allContentPaths, CONTENT_SOURCES, contentLastModified, familyLastModified, familyModifiedDate, GUIDE_EXTRA_SOURCES, guideModifiedDate, legacyProductSource } from "@/lib/content-dates";
+import { allContentPaths, CONTENT_SOURCES, contentLastModified, familyLastModified, familyModifiedDate, GUIDE_EXTRA_SOURCES, guideModifiedDate } from "@/lib/content-dates";
+import { SITE_URL } from "@/lib/seo";
 import { computeGuideDates } from "../../scripts/lib/guide-dates";
+import { loadPageSources } from "../../scripts/lib/page-sources";
+import { fingerprint, nextPages, pageSubstances, SUBSTANCE_VERSION, type PageDate } from "../../scripts/lib/page-substance";
 
 export interface ContentDatesContractResult {
   name: string;
@@ -32,6 +38,14 @@ function gitDate(relPath: string): string {
   // Same as scripts/content-dates.ts: the AUTHOR date (kept by the post-commit amend, owner 30/09); newer git prints a
   // UTC date as "…Z", older git as "…+00:00".
   return execFileSync("git", ["log", "-1", "--format=%aI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim().replace(/Z$/, "+00:00");
+}
+
+/** A copy of `value` with `edit` applied to every string under every key, at any depth. */
+function mapStrings(value: unknown, edit: (text: string, key: string) => string, key = ""): unknown {
+  if (typeof value === "string") return edit(value, key);
+  if (Array.isArray(value)) return value.map((v) => mapStrings(v, edit, key));
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, mapStrings(v, edit, k)]));
+  return value;
 }
 
 export function runContentDatesContractTests(): ContentDatesContractResult[] {
@@ -76,11 +90,6 @@ export function runContentDatesContractTests(): ContentDatesContractResult[] {
       detail = String(e);
     }
     check(`family "${family}" resolves to a past commit date`, ok, detail);
-  }
-  for (const p of allProducts) {
-    const file = legacyProductSource(p.brandId)[0];
-    const src = readFileSync(path.join(ROOT, file), "utf8");
-    check(`legacy product ${p.slug} is dated by the file that defines it (${path.basename(file)})`, src.includes(`slug: "${p.slug}"`), src.includes(`slug: "${p.slug}"`) ? "" : `slug not found in ${file}`);
   }
 
   // ---- 4. Article dateModified: a calendar date, on or after datePublished, before today+1 ----
@@ -130,6 +139,45 @@ export function runContentDatesContractTests(): ContentDatesContractResult[] {
       return true;
     }
   })(), "");
+
+  // ---- 6. Page dates (owner 05/11): every page dated, the JSON current, and only substance moves a date ----
+  const recordedPages = (contentDates as { pages?: Record<string, PageDate> }).pages ?? {};
+  const sources = loadPageSources();
+  const substances = pageSubstances(sources);
+  const fingerprints = Object.fromEntries(Object.keys(substances).map((p) => [p, fingerprint(substances[p])]));
+  const entries = sitemap();
+  const pathOf = (url: string) => url.slice(SITE_URL.length) || "/";
+  const sitemapPaths = entries.map((e) => pathOf(e.url));
+  const undated = entries.filter((e) => !e.lastModified).map((e) => pathOf(e.url));
+  check(`every sitemap URL has a date (${entries.length})`, undated.length === 0, undated.join(", ") || "all dated");
+  const notInSitemap = Object.keys(fingerprints).filter((p) => !sitemapPaths.includes(p));
+  check(`every page dated by substance is a sitemap URL`, notInSitemap.length === 0, notInSitemap.join(", ") || "all listed");
+  check(`"pages" was written by this definition of substance (version ${SUBSTANCE_VERSION})`, (contentDates as { pagesVersion?: number }).pagesVersion === SUBSTANCE_VERSION, "");
+  const stalePages = Object.keys(fingerprints).filter((p) => recordedPages[p]?.fp !== fingerprints[p]);
+  const gonePages = Object.keys(recordedPages).filter((p) => !(p in fingerprints));
+  check(`"pages" matches the catalog (run: npx tsx scripts/content-dates.ts)`, stalePages.length + gonePages.length === 0, [...stalePages, ...gonePages].join(", ") || `${Object.keys(fingerprints).length} pages current`);
+  const commitDates = new Set(execFileSync("git", ["log", "--format=%aI", "HEAD"], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 26 }).split("\n").map((d) => d.trim().replace(/Z$/, "+00:00")));
+  const inventedDates = Object.entries(recordedPages).filter(([, r]) => !commitDates.has(r.date)).map(([p, r]) => `${p} ${r.date}`);
+  check(`every page date is the date of a real commit (never typed, never "now")`, inventedDates.length === 0, inventedDates.join(", ") || "all real");
+
+  const moved = (edit: (text: string, key: string) => string) => {
+    const edited = mapStrings(JSON.parse(JSON.stringify(substances)), edit) as Record<string, unknown>;
+    return Object.keys(edited).filter((p) => fingerprint(edited[p]) !== fingerprints[p]);
+  };
+  const renamed = moved((text, key) => (key === "alt" ? `${text} new` : text.replace(/\.(webp|png|jpe?g|mp4)\b/g, "-wm9.$1")));
+  check(`renaming every picture on the site moves no page date`, renamed.length === 0, renamed.slice(0, 5).join(", ") || `${Object.keys(substances).length} pages held`);
+  const sample = sources.legacyProducts[0];
+  const pagePath = `/products/${sample.slug}`;
+  const reworded = { ...substances, [pagePath]: mapStrings(JSON.parse(JSON.stringify(substances[pagePath])), (text, key) => (key === "tagline" ? `${text} new` : text)) };
+  const rewordedPages = Object.keys(reworded).filter((p) => fingerprint(reworded[p]) !== fingerprints[p]);
+  check(`rewording one product moves that page only`, rewordedPages.length === 1 && rewordedPages[0] === pagePath, rewordedPages.join(", "));
+  const priced = JSON.parse(JSON.stringify(substances[pagePath]));
+  priced.record.sellingPrice = 1;
+  priced.record.availabilityStatus = "out-of-stock";
+  check(`a price or stock change moves no page date`, fingerprint(priced) === fingerprints[pagePath], "");
+  const was = { "/a": { date: "old", fp: "1" }, "/b": { date: "old", fp: "2" }, "/gone": { date: "old", fp: "3" } };
+  const next = nextPages(was, { "/a": "1", "/b": "9", "/new": "4" }, "stamp");
+  check(`only a moved or new fingerprint takes the new date, and gone pages leave`, next["/a"].date === "old" && next["/b"].date === "stamp" && next["/new"].date === "stamp" && !("/gone" in next), JSON.stringify(next));
 
   return results;
 }
