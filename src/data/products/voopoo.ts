@@ -1189,7 +1189,7 @@ export const voopooProducts: Product[] = [
     // "ยกเว้นให้ Drag"), "EVEREST LAB" badge re-set in real type (look-batch/everest-patch.js), floor clipped to the device
     // columns, own contact shadow kept (ownFloor); line-ups v3 = every colour standing in one row (look-batch/x3-lineup-floor.js).
     lineupImage: {
-      src: "/assets/products/drag-x3/lineup-v3-wm3.webp",
+      src: "/assets/products/drag-x3/lineup-v4-wm3.webp",
       alt: "VOOPOO DRAG X3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
