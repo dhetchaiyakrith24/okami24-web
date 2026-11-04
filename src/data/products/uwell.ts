@@ -1061,7 +1061,7 @@ export const uwellProducts: Product[] = [
     lineupImage: {
       // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
       // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
-      src: "/assets/products/caliburn-g4/lineup-v2-wm2.webp",
+      src: "/assets/products/caliburn-g4/lineup-v2-wm3.webp",
       alt: "UWELL Caliburn G4, all 8 colours",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
