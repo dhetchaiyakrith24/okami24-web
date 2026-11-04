@@ -98,6 +98,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import productBoxes from "@/data/product-boxes.json";
 
 /** A representative large-desktop rendering of the real `aspect-[4/5]` hero container — see this
  *  file's header for why the fill-vs-intrinsic decision must be aspect-aware, not a flat width
@@ -154,7 +155,12 @@ export async function getImageDisplayInfo(publicSrc: string): Promise<ImageDispl
     // filling is safe; otherwise it would visibly enlarge the source.
     const scaleToFill = Math.min(HERO_BOX_WIDTH / meta.width, HERO_BOX_HEIGHT / meta.height);
     const info: ImageDisplayInfo = { width: meta.width, height: meta.height, fillHero: scaleToFill <= MAX_ACCEPTABLE_UPSCALE };
-    if (meta.hasAlpha) {
+    // A generation-3 watermark spills faint text into the transparent margin, which would widen the alpha box: for those
+    // files scripts/watermark.js stores the unmarked original's long side, so the card keeps today's product size
+    // (owner 04/11 "ทุกอย่างต้องเหมือนเดิมแค่มีลายน้ำเพิ่มเข้าไป").
+    const stored = (productBoxes as Record<string, number>)[publicSrc];
+    if (meta.hasAlpha && stored) info.productLong = stored;
+    else if (meta.hasAlpha) {
       // trim() on the alpha channel alone = the product's bounding box (the transparent margin is the same value as the corner).
       const { info: box } = await sharp(buf).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
       if (box.width < meta.width || box.height < meta.height) info.productLong = Math.max(box.width, box.height);
