@@ -16,7 +16,8 @@ import type { LineupRow } from "@/lib/disposable-lineup";
  * dash: a figure no verified row states is never filled in. Rows are this page's slice (server props, LESSONS 37).
  */
 const numberCell = "border-b border-surface-border-soft py-3 pl-2.5 text-right font-display text-[15px] leading-tight font-semibold tabular-nums whitespace-nowrap text-foreground lg:text-base";
-const headCell = "pb-2 pl-2.5 text-right align-bottom text-xs font-medium whitespace-nowrap text-foreground-muted";
+const headBase = "border-b border-surface-border pb-2 align-bottom text-xs font-medium whitespace-nowrap text-foreground-muted";
+const headCell = `${headBase} pl-2.5 text-right`;
 
 export function DisposableCompareTable({ copy, rows }: { copy: CompareTableCopy; rows: LineupRow[] }) {
   const { locale } = useLocale();
@@ -38,7 +39,7 @@ export function DisposableCompareTable({ copy, rows }: { copy: CompareTableCopy;
             <caption className="sr-only">{copy.heading}</caption>
             <thead>
               <tr>
-                <th scope="col" className={`${headCell} pl-0 text-left`}>{t(copy.model)}</th>
+                <th scope="col" className={`${headBase} text-left`}>{t(copy.model)}</th>
                 <th scope="col" className={headCell}>{t(copy.puffs)}</th>
                 <th scope="col" className={headCell}>{copy.ml}</th>
                 <th scope="col" className={headCell}>{copy.mah}</th>
