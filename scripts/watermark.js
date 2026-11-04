@@ -167,6 +167,7 @@ function sourceFiles(dir, out = []) {
     const file = path.join(ROOT, "public", pub);
     const next = pub.replace(/\.\w+$/, "").replace(EARLIER, "") + SUFFIX + ".webp";
     if (new RegExp(SUFFIX + "\\.\\w+$").test(pub)) { console.log(`skip   ${pub}  already marked`); continue; }
+    if (GEN === 3 && /-wm4\.\w+$/.test(pub)) { console.log(`FAIL   ${pub}  already generation 4; a lower generation would stack names`); refused++; continue; }
     if (!fs.existsSync(file)) { console.log(`FAIL   ${pub}  not in public/`); refused++; continue; }
     const orig = originalOf(pub, originals);
     if (!orig) { console.log(`FAIL   ${pub}  no unmarked original (--originals or git history)`); refused++; continue; }
