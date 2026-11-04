@@ -340,6 +340,8 @@ export const unbrandedProducts: Product[] = [
     compatibility: [{ type: "charging", label: "USB-C", note: "Rechargeable via USB-C." }],
     whoIsThisFor: ["Vapers who want a rechargeable disposable rather than a single-charge unit."],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "QMzrz5_E4Ps", title: "MURO SC 8K ใช้แล้วทิ้งอร่อยแบบง่ายๆ", channelName: "OKM YARZ", publishedAt: "2026-02-11" },
     relatedProductSlugs: ["muro-space-15k", "muro-3ml", "muro-connector-20k", "muro-freebase", "muro-salt-nic"],
     // Exact confirmed product path (this session's research fetched this page directly).
     sourceUrls: ["https://vapemun.com/product/muro-sc-8k/", "https://pod789.com/product/muro-sc-8k/"],

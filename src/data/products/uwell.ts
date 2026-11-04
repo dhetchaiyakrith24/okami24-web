@@ -2003,6 +2003,8 @@ export const uwellProducts: Product[] = [
       "Anyone who wants the G3 Pro's pods and 35W with a bigger battery.",
     ],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "aP-VXz9bWJU", title: "30 วันกับ UWELL CALIBURN G3 PRO KOKO แบบฮาร์ทคอร์?", channelName: "OKM YARZ", publishedAt: "2026-01-19" },
     relatedProductSlugs: ["caliburn-g3-pro"],
     sourceUrls: ["https://www.myuwell.com/"],
   },

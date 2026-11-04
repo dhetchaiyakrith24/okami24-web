@@ -3033,6 +3033,9 @@ export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: st
   "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
   // Round p63 (19/10): the same OKM YARZ clip reviews both ESKO BAR 20K models ("เล็กเจอใหญ่").
   "ESKO-BAR-20K": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
+  // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+  "VMATE-PRO-2": { videoId: "szNmzRDAJkk", title: "30 วันกับ VOOPOO VMATE PRO2 ตัวท็อปสาย MTL", channelName: "OKAMI", publishedAt: "2026-05-13" },
+  "RELX-ESSENTIAL-2": { videoId: "sJ8CcIvTXjw", title: "RELX ESSENTIAL 2 CLOSE SYSTEM สายประหยัด", channelName: "OKAMI", publishedAt: "2025-09-20" },
 };
 
 /**

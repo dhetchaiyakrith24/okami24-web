@@ -740,6 +740,8 @@ export const voopooProducts: Product[] = [
       "Anyone who wants a light pod that fits in the palm of the hand.",
     ],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "phnR-wTh7kM", title: "หลังใช้งาน 30 วัน VOOPOO ARGUS G3 MINI รุ่นเล็กที่ไม่ธรรมดา?", channelName: "OKM YARZ", publishedAt: "2026-05-15" },
     relatedProductSlugs: ["argus-g4-mini", "vmate-i3"],
     sourceUrls: ["https://www.voopoo.com/argus-series/argus-g3-mini", G3M_PAGE, "https://www.voopoo.com/blog/argus-g3-mini-upgrade-from-disposables/"],
   },
@@ -1509,6 +1511,8 @@ export const voopooProducts: Product[] = [
       "Vapers who move between MTL and RDL and want one device for both.",
     ],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "R4uetxkKcDI", title: "หลังใช้งาน 30 วัน VOOPOO VMATE i3 แจ๋วๆแบบเรียบง่าย", channelName: "OKM YARZ", publishedAt: "2026-05-29" },
     relatedProductSlugs: ["argus-g3-mini", "vinci-s"],
     sourceUrls: ["https://www.voopoo.com/v-series/vmate-i3", I3_PAGE, "https://www.voopoo.com/news/471.html"],
   },
