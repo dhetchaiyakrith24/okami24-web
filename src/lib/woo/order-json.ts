@@ -1,4 +1,3 @@
-import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { wooId } from "@/lib/woo/catalog";
 import { SHIPNITY_CARRIER_NAME, type CarrierId } from "@/lib/commerce/carriers";
 
@@ -8,8 +7,9 @@ import { SHIPNITY_CARRIER_NAME, type CarrierId } from "@/lib/commerce/carriers";
  * can hold it to the rules (Shipnity link, owner 27/10 + 28/10):
  *   - only what the warehouse needs to pack and ship: items with the Shipnity code as `sku`, the recipient, the address,
  *     the shipping fee; no slip, no refund account, no customer note of the customer's, no email, no member id;
- *   - the real shipping fee on its own line every time; free shipping = a shop-paid discount line (BSOT §10, survey
- *     "Order push") — the order total stays what the customer paid;
+ *   - the warehouse's shipping rate on its own line every time, because the warehouse bills the shop what this line says
+ *     (bill 22–31/10: 50 on 14 web orders, owner 04/11 "ให้คิดค่าส่ง 35 บาท"; BSOT §10). Free shipping = a shop-paid discount
+ *     line, a customer who paid above the rate = a fee line for the rest — the order total stays what the customer paid;
  *   - lines refunded after an out-of-stock (batch E) are not sent (same rule as the copy-to-warehouse text);
  *   - the carrier (owner 30/10: DHL for Phuket 83xxx + Bangkok 10220 / 10250, EMS for the rest) rides as the shipping
  *     line's title in Shipnity's own words (EMS / DHL) and as order meta `shipping_carrier` — Shipnity cannot map Woo
@@ -58,6 +58,9 @@ export function pushBlock(o: { status: string; alreadySent: boolean; stockOpen: 
   return null;
 }
 
+/** What the warehouse bills the shop for shipping one order, whatever the customer paid (BSOT §10). */
+export const WAREHOUSE_SHIPPING_FEE_THB = 35;
+
 const money = (n: number) => n.toFixed(2);
 /** The note a DHL order carries to the warehouse until Shipnity reads the carrier itself (owner 03/11, temporary). */
 export const DHL_PACKER_NOTE = "ส่ง DHL — เปลี่ยนขนส่งใน Shipnity เป็น DHL ก่อนออกเลขพัสดุ";
@@ -66,9 +69,10 @@ const wooDate = (iso: string) => iso.replace(/\.\d+Z$/, "").replace(/Z$/, "");
 
 export function wooOrderJson(o: PushOrder, siteUrl: string) {
   const itemsTotal = o.lines.reduce((n, l) => n + l.lineTotal, 0);
-  const shippingReal = FLAT_SHIPPING_FEE_THB;
+  const shippingReal = WAREHOUSE_SHIPPING_FEE_THB;
   const discount = Math.max(0, shippingReal - o.shippingFee);
-  const total = itemsTotal + shippingReal - discount;
+  const extraShipping = Math.max(0, o.shippingFee - shippingReal);
+  const total = itemsTotal + shippingReal - discount + extraShipping;
   const carrierName = o.carrier ? SHIPNITY_CARRIER_NAME[o.carrier] : null;
   // Temporary (owner 03/11): Shipnity imports every web order as its default carrier (EMS), so the DHL ones say so in the note.
   const packerNote = o.carrier === "dhl" ? DHL_PACKER_NOTE : "";
@@ -136,7 +140,7 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
     shipping_lines: [
       { id: 1, method_title: carrierName ?? "ค่าส่ง", method_id: "flat_rate", total: money(shippingReal), total_tax: "0.00", taxes: [], meta_data: [] },
     ],
-    fee_lines: [],
+    fee_lines: extraShipping > 0 ? [{ id: 1, name: "ค่าส่งส่วนที่ลูกค้าจ่ายเกินเรตคลัง", tax_class: "", tax_status: "none", total: money(extraShipping), total_tax: "0.00", taxes: [], meta_data: [] }] : [],
     coupon_lines: discount > 0 ? [{ id: 1, code: "free-shipping", discount: money(discount), discount_tax: "0.00", meta_data: [] }] : [],
     refunds: [],
     _links: { self: [{ href: `${siteUrl}/wp-json/wc/v3/orders/${o.id}` }] },
