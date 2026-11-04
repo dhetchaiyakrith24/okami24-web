@@ -17,7 +17,7 @@ import { handle, readStockFields, type ApiRequest, type StockReportView, type We
 import { wooCatalog } from "./catalog";
 import { parseCredentials, redactSecrets, safeQuery } from "./credentials";
 import { minimiseOrderBody } from "./log-redact";
-import { DHL_PACKER_NOTE, pushBlock, wooOrderJson, type PushOrder } from "./order-json";
+import { DHL_PACKER_NOTE, pushBlock, shippingLineWhenSent, WAREHOUSE_RATE_SINCE, WAREHOUSE_SHIPPING_FEE_THB, wooOrderJson, type PushOrder } from "./order-json";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 
@@ -233,13 +233,20 @@ const base: PushOrder = {
 };
 const paid = wooOrderJson(base, "https://okami24.store");
 check("order: sku = Shipnity code", paid.line_items[0].sku === "ELQ-4-1");
-check("order: real shipping on its own line", paid.shipping_lines[0].total === FLAT_SHIPPING_FEE_THB.toFixed(2));
-check("order: paid shipping = no discount, total = customer total", paid.discount_total === "0.00" && paid.total === (250 + FLAT_SHIPPING_FEE_THB).toFixed(2));
+check("order: the warehouse rate on its own line, whatever the customer paid", WAREHOUSE_SHIPPING_FEE_THB === 35 && paid.shipping_lines[0].total === "35.00" && paid.shipping_total === "35.00");
+check("order: customer paid above the rate = a fee line for the rest, no discount, total = customer total", paid.discount_total === "0.00" && paid.fee_lines.length === 1 && paid.fee_lines[0].total === "15.00" && paid.total === (250 + FLAT_SHIPPING_FEE_THB).toFixed(2));
+const atRate = wooOrderJson({ ...base, shippingFee: 35 }, "https://okami24.store");
+check("order: customer paid the rate = no fee, no discount, total = customer total", atRate.fee_lines.length === 0 && atRate.discount_total === "0.00" && atRate.total === "285.00");
 const free = wooOrderJson({ ...base, shippingFee: 0, lines: [{ ...base.lines[0], quantity: 2, lineTotal: 500 }] }, "https://okami24.store");
 check(
   "order: free shipping = shop-paid discount, total = customer total",
-  free.shipping_total === FLAT_SHIPPING_FEE_THB.toFixed(2) && free.discount_total === FLAT_SHIPPING_FEE_THB.toFixed(2) && free.total === "500.00" && free.coupon_lines.length === 1
+  free.shipping_total === "35.00" && free.discount_total === "35.00" && free.fee_lines.length === 0 && free.total === "500.00" && free.coupon_lines.length === 1
 );
+const above = wooOrderJson({ ...base, shippingFee: 60 }, "https://okami24.store");
+check("order: any other fee keeps the customer total", above.shipping_total === "35.00" && above.fee_lines[0].total === "25.00" && above.total === "310.00");
+check("order: sent before the rate change reads back as it was sent", shippingLineWhenSent("2026-10-30T05:00:00.000Z") === 50 && shippingLineWhenSent(WAREHOUSE_RATE_SINCE) === undefined && shippingLineWhenSent(null) === undefined);
+const sentOld = wooOrderJson({ ...base, shippingFee: 0, shippingLine: 50 }, "https://okami24.store");
+check("order: an old free-shipping order = 50 line + 50 discount, no fee", sentOld.shipping_total === "50.00" && sentOld.discount_total === "50.00" && sentOld.fee_lines.length === 0 && sentOld.total === "250.00");
 check("order: address mapped (Thai fields)", paid.shipping.address_2 === "ตำบล" && paid.shipping.city === "อำเภอ" && paid.shipping.state === "จังหวัด" && paid.shipping.country === "TH");
 const orderText = JSON.stringify(paid);
 check("order: no e-mail, note or slip", paid.billing.email === "" && paid.customer_note === "" && !/slip|สลิป|refund_|promptpay/i.test(orderText));

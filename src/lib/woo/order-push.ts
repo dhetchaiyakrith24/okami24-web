@@ -4,7 +4,7 @@ import { getDb } from "@/lib/db/client";
 import { SITE_URL } from "@/lib/seo";
 import { getStaffOrder } from "@/lib/staff/orders";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
-import { pushBlock, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
+import { pushBlock, shippingLineWhenSent, wooOrderJson, type PushOrder } from "@/lib/woo/order-json";
 import { trimLine1 } from "@/lib/commerce/address-line1";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
 import { pickCarrier, toStaffCarrierId } from "@/lib/commerce/carriers";
@@ -157,9 +157,12 @@ export function sendState(orderId: number): SendState | null {
 /** The orders Shipnity may read back on GET /orders: only orders already sent to it. */
 export function sentOrders(): PushOrder[] {
   const rows = getDb()
-    .prepare("SELECT o.order_number FROM woo_order_sends s JOIN orders o ON o.id = s.order_id WHERE s.first_sent_at IS NOT NULL ORDER BY s.order_id DESC LIMIT 200")
-    .all() as { order_number: string }[];
-  return rows.map((r) => pushOrderFor(r.order_number)).filter((x): x is PushOrder => x !== null);
+    .prepare("SELECT o.order_number, s.first_sent_at FROM woo_order_sends s JOIN orders o ON o.id = s.order_id WHERE s.first_sent_at IS NOT NULL ORDER BY s.order_id DESC LIMIT 200")
+    .all() as { order_number: string; first_sent_at: string }[];
+  return rows.flatMap((r) => {
+    const o = pushOrderFor(r.order_number);
+    return o ? [{ ...o, shippingLine: shippingLineWhenSent(r.first_sent_at) }] : [];
+  });
 }
 
 export function shipnityReady(): boolean {
