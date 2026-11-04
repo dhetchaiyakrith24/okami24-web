@@ -13,29 +13,14 @@
  * `content-dates-contract-test.ts` fails `npm run verify:catalog` when the JSON is older than git
  * for any path, so a round cannot close with stale dates.
  *
- * Granularity is the source FILE: editing one guide in guides-copy.ts moves the date of all
- * seven guides. That is still the truth ("the file behind this page changed on X"), just coarser
- * than one date per article; per-record dates would need a git blame per entry — not worth it
- * until the articles live in one file each.
+ * Granularity is the source FILE, which is only true for a page that has a file of its own (service pages). Pages built
+ * from shared data are dated by what a reader gets on them: guides by their own text (scripts/lib/guide-dates.ts), and
+ * products, categories, brands and the article indexes by "pages" in the JSON (scripts/lib/page-substance.ts, owner 05/11:
+ * one watermark rename had re-dated 148 of 182 URLs). A picture, price or stock change moves neither.
  */
 import contentDates from "@/data/content-dates.json";
 
 const DATES: Record<string, string> = contentDates.paths;
-
-/** The legacy catalog is one data file per brand (src/data/products/index.ts is code, not content —
- *  a search change there must not re-date every category page). */
-const LEGACY_PRODUCT_FILES: Record<string, string> = {
-  uwell: "uwell.ts",
-  voopoo: "voopoo.ts",
-  salthub: "salthub.ts",
-  relx: "relx.ts",
-  wotofo: "wotofo.ts",
-  joiway: "joiway.ts",
-  tfit: "tfit.ts",
-  infy: "infy.ts",
-  moood: "moood.ts",
-};
-const LEGACY_PRODUCT_DATA = [...Object.values(LEGACY_PRODUCT_FILES), "unbranded.ts"].map((f) => `src/data/products/${f}`);
 
 /** Source paths per page family, relative to the repo root. A directory means "any file in it".
  *  Files that shape EVERY page (layout, header, footer, dictionaries) are deliberately not listed:
@@ -46,29 +31,17 @@ const LEGACY_PRODUCT_DATA = [...Object.values(LEGACY_PRODUCT_FILES), "unbranded.
  *  the pages still exist and the mapping stays true; if one is ever made indexable it goes back
  *  into STATIC_ROUTES with its date already correct. */
 export const CONTENT_SOURCES = {
-  home: ["src/app/page.tsx", "src/components/home", "src/i18n/search-head-copy.ts"],
-  productsIndex: ["src/app/products/page.tsx", ...LEGACY_PRODUCT_DATA, "src/data/shipnity-seed/active-catalog-source.ts", "src/i18n/search-head-copy.ts"],
-  category: ["src/data/categories.ts", ...LEGACY_PRODUCT_DATA, "src/data/shipnity-seed/active-catalog-source.ts", "src/i18n/search-head-copy.ts"],
-  brand: ["src/data/brands.ts", ...LEGACY_PRODUCT_DATA, "src/data/shipnity-seed/active-catalog-source.ts", "src/i18n/search-head-copy.ts"],
-  publishedProduct: [
-    "src/data/shipnity-seed/active-catalog-source.ts",
-    "src/data/shipnity-seed/active-catalog-to-product-master.ts",
-    "src/data/shipnity-seed/publication-approvals.ts",
-    "src/i18n/product-copy-en.ts",
-    "src/i18n/search-head-copy.ts",
-  ],
-  legacyProductShared: ["src/i18n/product-copy-th.ts", "src/i18n/search-head-copy.ts", "src/data/shipnity-seed/legacy-price-approvals.ts"],
+  home: ["src/app/page.tsx", "src/components/home"],
   guides: ["src/data/guides.ts", "src/i18n/guides-copy.ts", "src/i18n/search-head-copy.ts"],
   technology: ["src/data/technology.ts", "src/i18n/technology-copy.ts", "src/i18n/search-head-copy.ts"],
-  eLiquid: ["src/data/flavors.ts", "src/i18n/flavor-copy.ts", "src/app/e-liquid", "src/i18n/search-head-copy.ts"],
   compare: ["src/app/compare", "src/components/tools/CompareTool.tsx"],
   finder: ["src/app/finder", "src/components/tools/FinderTool.tsx", "src/i18n/finder-copy.ts", "src/lib/finder.ts"],
   faq: ["src/app/faq", "src/data/faqs.ts", "src/i18n/faq-copy.ts"],
-  about: ["src/app/about", "src/i18n/search-head-copy.ts"],
+  about: ["src/app/about"],
   howToOrder: ["src/app/how-to-order", "src/i18n/service-pages/how-to-order.tsx", "src/i18n/service-pages/shared.tsx"],
   shipping: ["src/app/shipping", "src/i18n/service-pages/shipping.tsx", "src/i18n/service-pages/shared.tsx"],
   warranty: ["src/app/warranty", "src/i18n/service-pages/claims-policy.tsx", "src/i18n/service-pages/shared.tsx"],
-  contact: ["src/app/contact", "src/i18n/service-pages/contact.tsx", "src/data/contact.ts", "src/i18n/search-head-copy.ts"],
+  contact: ["src/app/contact", "src/i18n/service-pages/contact.tsx", "src/data/contact.ts"],
   privacy: ["src/app/privacy", "src/i18n/service-pages/privacy.tsx"],
   search: ["src/app/search", "src/components/tools/SearchTool.tsx", "src/lib/catalog-search.ts", "src/data/search-aliases.ts"],
   favorites: ["src/app/favorites", "src/components/tools/FavoritesList.tsx"],
@@ -76,17 +49,10 @@ export const CONTENT_SOURCES = {
 
 export type ContentFamily = keyof typeof CONTENT_SOURCES;
 
-/** A legacy product's own date is its brand file's; brand ids not listed (the "Unbranded" pool)
- *  live in unbranded.ts. */
-export function legacyProductSource(brandId: string): string[] {
-  return [`src/data/products/${LEGACY_PRODUCT_FILES[brandId] ?? "unbranded.ts"}`, ...CONTENT_SOURCES.legacyProductShared];
-}
-
 /** Every path any page can cite — what scripts/content-dates.ts asks git about. */
 export function allContentPaths(): string[] {
   const set = new Set<string>();
   for (const paths of Object.values(CONTENT_SOURCES)) for (const p of paths) set.add(p);
-  for (const p of LEGACY_PRODUCT_DATA) set.add(p);
   return [...set].sort();
 }
 
@@ -106,6 +72,18 @@ export function contentLastModified(paths: readonly string[]): Date {
 
 export function familyLastModified(family: ContentFamily): Date {
   return contentLastModified(CONTENT_SOURCES[family]);
+}
+
+const PAGE_DATES: Record<string, { date: string }> = (contentDates as { pages?: Record<string, { date: string }> }).pages ?? {};
+
+/** A sitemap page's date: the last time its substance changed (scripts/lib/page-substance.ts), or its own files' last
+ *  commit if that is newer. A page with neither gets no date at all: an honest gap, never "now". The contract test
+ *  fails while any sitemap page is in that state, so this only ever happens on a build nobody verified. */
+export function pageLastModified(path: string, family?: ContentFamily): Date | undefined {
+  const own = PAGE_DATES[path] ? Date.parse(PAGE_DATES[path].date) : 0;
+  const files = family ? familyLastModified(family).getTime() : 0;
+  const newest = Math.max(own, files);
+  return newest > 0 ? new Date(newest) : undefined;
 }
 
 /** Calendar date (YYYY-MM-DD, Bangkok time — the shop's day, like the hand-typed value it
