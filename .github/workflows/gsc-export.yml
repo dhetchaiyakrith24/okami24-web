@@ -5,6 +5,7 @@
 #   → scripts/gsc-export.js with the key from the GitHub environment "gsc" (secret GSC_SERVICE_ACCOUNT_JSON + variable
 #     GSC_SITE — the environment is limited to main, so a workflow on any other branch cannot read the secret)
 #   → the data files (no key) are committed to branch gsc-data: gsc/latest/*.json + gsc/<date>/*.json
+#     (inspection.json = when Google last read each sitemap page, owner 05/11; compare: scripts/gsc-unread.ts)
 # Read it from any chat: `git fetch origin gsc-data` then `git show origin/gsc-data:gsc/latest/meta.json`.
 # Setup (owner, once, Thai step by step): docs/GSC_SETUP.md. No key yet = the job says so and ends green.
 # Stop it: Actions → "gsc-export" → ⋯ → Disable workflow. Remove access: GSC → Settings → Users → remove the account.
@@ -22,6 +23,7 @@ jobs:
   export:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     environment: gsc
     steps:
       - uses: actions/checkout@v7
