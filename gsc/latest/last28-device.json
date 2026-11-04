@@ -11,28 +11,28 @@
    "keys": [
     "MOBILE"
    ],
-   "clicks": 396,
-   "impressions": 3019,
-   "ctr": 0.13116926134481616,
-   "position": 7.790659158661809
+   "clicks": 399,
+   "impressions": 3027,
+   "ctr": 0.13181367690782952,
+   "position": 7.789890981169474
   },
   {
    "keys": [
     "DESKTOP"
    ],
-   "clicks": 148,
-   "impressions": 937,
-   "ctr": 0.15795090715048027,
-   "position": 22.370330843116328
+   "clicks": 151,
+   "impressions": 944,
+   "ctr": 0.15995762711864406,
+   "position": 22.21292372881356
   },
   {
    "keys": [
     "TABLET"
    ],
-   "clicks": 8,
-   "impressions": 50,
-   "ctr": 0.16,
-   "position": 7.16
+   "clicks": 9,
+   "impressions": 51,
+   "ctr": 0.17647058823529413,
+   "position": 7.03921568627451
   }
  ]
 }

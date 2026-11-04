@@ -13,9 +13,9 @@
     "okami24",
     "https://okami24.store/"
    ],
-   "clicks": 22,
-   "impressions": 39,
-   "ctr": 0.5641025641025641,
+   "clicks": 24,
+   "impressions": 42,
+   "ctr": 0.5714285714285714,
    "position": 1
   },
   {
@@ -540,6 +540,16 @@
   },
   {
    "keys": [
+    "joysway f4",
+    "https://okami24.store/products/joiway-f4"
+   ],
+   "clicks": 1,
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
+   "position": 5.666666666666667
+  },
+  {
+   "keys": [
     "lumi 18k",
     "https://okami24.store/products/relx-lumi-18k"
    ],
@@ -564,8 +574,8 @@
     "https://okami24.store/products/disposables"
    ],
    "clicks": 1,
-   "impressions": 27,
-   "ctr": 0.037037037037037035,
+   "impressions": 29,
+   "ctr": 0.034482758620689655,
    "position": 1
   },
   {
@@ -1780,16 +1790,6 @@
   },
   {
    "keys": [
-    "joysway f4",
-    "https://okami24.store/products/joiway-f4"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 5
-  },
-  {
-   "keys": [
     "joywey",
     "https://okami24.store/brands/joiway"
    ],
@@ -2244,7 +2244,7 @@
     "https://okami24.store/contact"
    ],
    "clicks": 0,
-   "impressions": 20,
+   "impressions": 21,
    "ctr": 0,
    "position": 1
   },
@@ -2294,7 +2294,7 @@
     "https://okami24.store/how-to-order"
    ],
    "clicks": 0,
-   "impressions": 20,
+   "impressions": 21,
    "ctr": 0,
    "position": 1
   },
@@ -2304,7 +2304,7 @@
     "https://okami24.store/privacy"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 5,
    "ctr": 0,
    "position": 1
   },
@@ -2314,7 +2314,7 @@
     "https://okami24.store/products"
    ],
    "clicks": 0,
-   "impressions": 20,
+   "impressions": 22,
    "ctr": 0,
    "position": 1
   },
@@ -2404,7 +2404,7 @@
     "https://okami24.store/technology"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
    "position": 1
   },
@@ -3680,6 +3680,16 @@
   },
   {
    "keys": [
+    "ที่ซื้อใกล้ฉัน",
+    "https://okami24.store/products/pods-cartridges"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 24
+  },
+  {
+   "keys": [
     "น่าเชื่อถือมั้ย",
     "https://okami24.store/"
    ],
@@ -4007,6 +4017,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 2
+  },
+  {
+   "keys": [
+    "ราคา",
+    "https://okami24.store/products/infy-20k"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
   },
   {
    "keys": [

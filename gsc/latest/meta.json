@@ -12,12 +12,20 @@
     }
   },
   "rows": {
-    "last28-query": 319,
+    "last28-query": 320,
     "last28-page": 159,
-    "last28-query-page": 436,
+    "last28-query-page": 438,
     "last28-device": 3,
     "last28-country": 31,
-    "last90-date": 57
+    "last90-date": 58
   },
-  "ranAt": "2026-11-04T03:07:19.467Z"
+  "ranAt": "2026-11-04T19:21:52.488Z",
+  "inspection": {
+    "urlSource": "sitemap",
+    "urls": 182,
+    "inspected": 182,
+    "withCrawlDate": 178,
+    "failed": 0,
+    "stoppedByQuota": false
+  }
 }
