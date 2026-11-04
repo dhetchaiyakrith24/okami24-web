@@ -14392,5 +14392,70 @@
    "fidelitySheet": "_incoming/img-fix-0511/out/ske-1.png + ske-2.png"
   },
   "fileName": "variant-pod-149-2-v3.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-peach-ice",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-peach-ice",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job fac42a90: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline",
+   "reference": "relxnow.my pack picture of Peach Ice",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-peach-ice.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-root-brew",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-root-brew",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 883e3853: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline",
+   "reference": "relxnow.my pack picture of Root Brew",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-root-brew.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-ice-jasmine-tea",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-ice-jasmine-tea",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 2c16c508: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline",
+   "reference": "relxnow.my pack picture of Ice Jasmine Tea",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-ice-jasmine-tea.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-lychee-frost",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-lychee-frost",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job 47440618: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline",
+   "reference": "relxnow.my pack picture of Lychee Frost",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-lychee-frost.webp"
+ },
+ {
+  "source": "_incoming/img-fix-0511/gen/rp2-ice-tieguanyin",
+  "slug": "relx-infinity-pro-2-pod",
+  "role": "variant",
+  "id": "relx-infinity-pro-2-pod-verified-ice-tieguanyin",
+  "note": "images-fix 05/11 - flavour had no picture",
+  "aiRender": {
+   "tool": "Higgsfield GPT Image 2.5 medium 2K (credits, owner yes 05/11), job a5092332: our Lychee Ice pack as the layout + RELX Malaysia's pack band for the flavour art; placed on that pack's exact outline",
+   "reference": "relxnow.my pack picture of Ice Tieguanyin",
+   "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
+  },
+  "fileName": "variant-ice-tieguanyin.webp"
  }
 ]
