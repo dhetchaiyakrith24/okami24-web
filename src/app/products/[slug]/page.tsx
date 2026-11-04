@@ -292,7 +292,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       const publishedFaqJsonLd = articleFaqJsonLd(publishedArticles.th?.faq);
       return (
         <>
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
+          {publishedJsonLd.offers && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />}
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           {publishedFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedFaqJsonLd) }} />}
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
@@ -343,7 +343,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     category: categoryNameOf(product.categoryId),
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
-    // Product type itself still has no price field; never fabricated.
+    // Product type itself still has no price field; never fabricated. No price = no Product block at all (SEO 04/11:
+    // GSC flagged caliburn-g3 / drag-x / nexpod-15k invalid — Google needs offers, review or aggregateRating).
     offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...(legacyAllSoldOut ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   // Round "M Bar 9K redesign" (owner 23/10): a slug in product-editorial.ts gets the editorial body instead of the
@@ -364,7 +365,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {jsonLd.offers && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
