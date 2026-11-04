@@ -15,7 +15,9 @@
   /* Foreground */
   --foreground: #f3f1ec;
   --foreground-muted: #b1afb2;
-  --foreground-dim: #78777c;
+  /* #78777c until 04/11: 3.99:1 on surface-1, under WCAG 4.5:1 for small text (Lighthouse color-contrast). Owner "ปรับเล็กน้อย":
+     the gentlest same-hue step that reads 4.5:1 on surface-0/1/2 (5.34 / 4.91 / 4.51) — designer 04/11. */
+  --foreground-dim: #87868b;
 
   /* Accents */
   --accent-ember: #ff6a2c;
