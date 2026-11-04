@@ -16,6 +16,7 @@ import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 import { useSignedIn } from "@/components/account/use-signed-in";
+import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
 
 type SortMode = "featured" | "alphabetical" | "family";
 
@@ -171,7 +172,19 @@ export function CatalogBrowser({
   // Owner 28/10: "สินค้าพร้อมส่ง" is for signed-in members only — a guest sees no button and ?stock=in shows everything.
   const signedIn = useSignedIn();
   const showStock = Boolean(inStockKeys) && !isEmptyCategory && signedIn;
-  const inStockSet = useMemo(() => new Set(inStockKeys ?? []), [inStockKeys]);
+  // The build's list with the warehouse's live answer laid over it (owner 31/10, useLiveCardStock): a product that sold out
+  // or came back since the build leaves or joins the filter without a rebuild.
+  const liveStock = useLiveCardStock();
+  const inStockSet = useMemo(() => {
+    const set = new Set(inStockKeys ?? []);
+    for (const [slug, c] of Object.entries(liveStock ?? {})) {
+      for (const key of [`legacy:${slug}`, `published:${slug}`]) {
+        if (c.s) set.add(key);
+        else set.delete(key);
+      }
+    }
+    return set;
+  }, [inStockKeys, liveStock]);
   // Stable, so the URL listener runs only when ?stock changes; the tap writes the URL first, so the two never disagree.
   const syncInStock = useCallback((inStock: boolean) => setInStockOnly(inStock), []);
   const toggleInStock = () => {

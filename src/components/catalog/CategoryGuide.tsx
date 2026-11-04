@@ -30,7 +30,19 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
     <>
       <section className="border-t border-surface-border-soft py-14 lg:py-20">
         <Container className="flex flex-col gap-10">
-          <SectionHeading title={t(c.heading)} description={<span className="block max-w-3xl">{renderInline(c.intro, locale, "intro")}</span>} />
+          {/* "\n\n" in an intro = a new short paragraph (owner 04/11: the intros read 9–15 lines on a phone). */}
+          <SectionHeading
+            title={t(c.heading)}
+            description={
+              <span className="block max-w-3xl">
+                {c.intro.split("\n\n").map((para, i) => (
+                  <span key={i} className={i ? "mt-3 block" : "block"}>
+                    {renderInline(para, locale, `intro-${i}`)}
+                  </span>
+                ))}
+              </span>
+            }
+          />
           <div className="grid gap-8 md:grid-cols-3">
             {c.families.map((f, i) => (
               <div key={i} className="flex flex-col gap-3">

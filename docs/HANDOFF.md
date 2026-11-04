@@ -10,34 +10,38 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 04/11 ~01:45 by the 9th main chat (local_624502cf), ~45% context, owner awake (night work, owner "จัดการงานต่อได้เลย เอางานค้างสำคัญให้จบ แชทลูกเปิดได้เลย").
-13.7 deploy window (no merges 18:00–24:00) applies again from 04/11.
+Updated 04/11 ~03:45 by the 9th main chat (local_624502cf) after the owner's /compact. Owner 04/11 ~03:30: child chats up to 5 (one-off over 13.6's 3);
+the main chat does not hand off, children may hand off themselves.
+13.7 deploy window (no merges 18:00–24:00) applies again from 04/11. MERGE ORDER TONIGHT = one PR at a time (each merge voids the others'
+verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204 → backdrop PR → gen-3 rollout PRs.
 
-1 main = 2b951b84+ (check `git log origin/main`). Merged 03–04/11 night (live-checked by curl): #1194 + #1199 watermark gen 2 (every picture of
-  ours now marked; left = nexSwitch 16K pod + RELX Creator after new pictures) · #1195 DHL packer note in customer_note (temporary; owner
-  "ใส่หมายเหตุสำรองไปก่อน หากปกติแล้วยกเลิกได้"; carrier stays by postcode — owner 04/11 "คงตามรหัสไปรษณีย์") · #1197 calm sale chip
-  (soft tint #3b1430 / numerals #f38bc6) · #1198 VOOPOO 10-page SEO pass + UWELL coil-53 article.
-  Warehouse "103" = Woo id of order #0075 (Amnat Charoen, EMS, correct) — not a DHL example; still want one DHL order number.
-2 OPEN WORK:
-  a Friday: branch claude/thai-glue-particle-0411 (tree `_incoming/wt-dhl-0311`) = (1) closing ค่ะ/คะ/ครับ glued to the word before
-    (thai-typography POLITE_PARTICLE; round file 【แตะได้】 thai-typography.ts, owner 03/11 "แก้ได้") (2) spec rows: labels ≤ 16 chars never
-    shrink (SHORT_SPEC_LABEL in verified-specs) (3) cherry-picked: 4 Thai category-guide intros split in 2 paragraphs at "ด้านล่างนี้"
-    (owner 04/11 "ตามเหมาะสม SEO"). Scans in `_incoming/glue-0411/`: full site before/after = particle glue no new flags; product pages
-    wb-diff3 = 17 fixed, 0 new. NEXT: verify --full on the head (after the articles child's two verifies) → build → wordbreak on the 4 category
-    pages + tier-B shots (checkout phone error 390 · a spec row 390 · a category intro 390/1440, before = main build) → gate → checker → merge.
-  b articles child articles-0311b (local_1655fd9c): #1200 WOTOFO nexPOD 15K article + "หัวพอตบรรจุสำเร็จ" fix (checker FAIL once, fixed) and
-    branch claude/catalog-0411-relx-smashgo (E-liquid capacity 18mL row) — both verifying (~50 min from 01:40). Last article of the round:
-    the rest of the short list has no maker source. Data checks done: Zero Nano colours = need an owner pack photo · Esko 3 colours belong to
-    the SWITCH page pod-159 (already in its spec row; making them selectable needs colour SKUs = owner/warehouse call) · cart-fit stale branch
-    = obsolete (cart suggestions already on main); deleting origin/cart-fit-2610 was refused by the auto-mode classifier — local ref
-    archive/cart-fit-2610 kept; owner/next chat may delete it.
-  c label-price child (local_b64f9a62): product CARDS read LIVE stock (owner queue 31/10) — BIG stock PR, full set; asks Friday for "go".
-  d images child (local_67ec6cc2): NEW owner 04/11 ~01:10 watermark change — on-product level 22 → 20, a slight feathered spill past the
-    product edge, ~25% fewer repeats ("10 → 7.5") — SAMPLE sheet of 4 pictures first → owner OK → generation-3 rollout (new filenames).
-    Higgsfield generation (SKE 4 + trial nexSwitch pod + RELX Creator Pro + grey-yellow Creator, 7 credits approved) is blocked by the
-    auto-mode classifier in that chat: the owner must switch that chat out of Auto (or allow the two generate_image tools) himself.
-  TEST MACHINE 3412 queue: articles child (2 verifies) → Friday glue PR → label-price child → images child.
-2N ROUND OPEN 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`. Blocks 1 · 2ก · 2ข · 4
+1 main = c0743392 (#1200). Merged 03–04/11 night: #1194 #1199 watermark gen 2 (all our pictures) · #1195 DHL packer note (temporary; carrier
+  stays by postcode, owner 04/11) · #1197 calm sale chip · #1198 VOOPOO SEO + UWELL coil-53 · #1200 WOTOFO nexPOD 15K article +
+  "หัวพอตบรรจุสำเร็จ" · #1201 docs. Closed unmerged: #1203 RELX Smash Go capacity (20 vs 18 mL unprovable → pack photo needed).
+  Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet
+  (site sync fine; owner asks the warehouse whether 2–3/11 orders got numbers).
+2 OPEN WORK (all draft unless said):
+  a Friday — branch claude/thai-glue-particle-0411 head a9c1b734 (tree `_incoming/wt-dhl-0311`) = draft PR #1205; verify 63/63 was on a9c1b734 — re-run after merging main:
+    ค่ะ/คะ/ครับ glue (thai-typography POLITE_PARTICLE, 【แตะได้】 owner 03/11) · spec labels ≤ 16 chars never shrink (SHORT_SPEC_LABEL) ·
+    4 Thai category intros in 2 paragraphs (owner "ตามเหมาะสม SEO"). Evidence `_incoming/glue-0411/`: full-site wb before/after, product
+    pages wb-diff3 (17 fixed / 0 new), category wb-diff4 (2 fixed / 1 new: e-liquid "บทความ" alone before its link — judge on the shots),
+    shots/ before (main c0743392) + after for pod-169 + e-liquid at 390/1440. Shots read by Friday 04/11: pass (crops in `_incoming/glue-0411/crops/`). Gate failed `locked` only because this block's round line
+    was labelled "2N" — `scripts/lib/round-file.js` reads the round from a line matching `3[a-z]? OPEN`; relabelled "3o" here.
+    NEXT: merge this docs PR → merge main into the glue branch → verify --full → gate → checker → merge.
+  b #1202 label-price child (local_b64f9a62): product cards + in-stock filter read LIVE stock (owner queue 31/10) · BIG · waits for "go".
+  c #1204 images child (local_67ec6cc2): watermark gen 3 = owner-approved sample 4A (04/11 ~02:55): mark on the product as gen 2, ~12 px soft
+    spill, 18/20% alternating per row, 7–8 repeats (was 10); product box from the unmarked original keeps every card's size identical.
+    After merge: gen-3 rollout ≤100 pictures/PR. Higgsfield generation still blocked (owner: switch that chat out of Auto — รอพี่ตรวจ 89).
+  d articles child (local_1655fd9c, renamed "ฉากหลังหน้าสินค้าทั้งหมด → โทนการ์ดชำระเงิน"): NEW owner 04/11 ~03:00 — /products backdrop
+    (SamuraiBackdrop: colour samurai + red mist reads "game") → monochrome grey/black, payment-card texture, faint. Drafts A (engraved
+    line-art samurai on brushed charcoal) / B (texture only) → owner picked A → built: branch claude/products-backdrop-0411 5b44c5f9,
+    proof `_incoming/art0311b-bg/proof-before-after.png` (visible text 0 changes) → waits for "go" (verify on 3412 after #1204).
+  e NEW child seo-full-0411 (local_4afff633): owner 04/11 "SEO จัดเต็ม" — indexing state, score gaps, green-key article audit + next keys,
+    YouTube coverage → fix as draft PRs, report to Friday.
+  f NEW child speed-sec-0411 (local_c2dd8fa6): owner 04/11 — speed (Lighthouse), security headers, polish + product-detail coverage
+    (article / spec / pictures) → fix as draft PRs, report to Friday.
+  TEST MACHINE 3412: queue = glue #1205 → #1202 → #1204 → backdrop → rollout; children e/f measure on their own ports.
+3o OPEN ROUND 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`. Blocks 1 · 2ก · 2ข · 4
     live; block 3 (watermark) live at gen 2, gen-3 change pending the owner's sample OK; block 5 (articles) ends with #1200.
     Close (skill round-close, tag queue-0211) after #1200 + the glue PR + the gen-3 watermark decision.
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
