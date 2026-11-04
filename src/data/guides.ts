@@ -3370,6 +3370,105 @@ const allGuides: Guide[] = [
       { question: "ปิดช่องลมแล้วควันเยอะขึ้นไหม", answer: "ผู้ผลิตพูดไว้ต่างกัน Aspire บอกว่าลมที่ถูกบีบให้แคบมักให้ควันน้อยลง ส่วน Lost Vape บอกว่าลมที่แคบลงทำให้คอยล์ร้อนขึ้นและได้ควันที่แน่นขึ้น ถ้าตอนนี้ช่องลมเกือบปิดอยู่ ลองค่อย ๆ เปิดทีละขั้นแล้วดูว่าแบบไหนพอดีกับตัวเอง" },
     ],
   },
+  {
+    // SEO 04/11 (owner "เขียนต่อเลย" via Friday): Google autocomplete TH 04/11 "พอตมีกี่แบบ" · "บุหรี่ไฟฟ้ามีกี่แบบ" · "พอตกับบุหรี่ไฟฟ้าต่างกันยังไง" ·
+    // "iqos กับบุหรี่ไฟฟ้าต่างกันยังไง" · "บุหรี่ hnb คือ" · "terea คืออะไร" (+ GSC "เครื่อง ดูด บุหรี่ hnb ราคา" landing on the home page). The map of
+    // families; the two-way comparisons and the ILUMA / TEREA guides keep their own keywords. Maker facts only, every quote re-read on the maker's own
+    // page 04/11: RELX https://relxnow.com/blogs/vape-knowledge/how-do-vape-pods-work (pod instead of tank · cartridge + battery · closed cannot be
+    // refilled, disposed of when finished · open refilled and reused) · Aspire https://www.aspirecig.com/community/auto-draw-vs-manual-e-cigarette-an-explanation-of-how-it-works/
+    // (coil heats, vapour from e-liquid) · Innokin https://www.innokin.com/blog/types-of-vapes (disposable pre-charged and pre-filled · pod in a
+    // removable plastic pod; its own list counts more types than the shop sells — no official number is stated) · PMI
+    // https://www.pmi.com/glossary-section/glossary/heated-tobacco-products ("only heat tobacco") + https://www.pmi.com/our-science/difference-between-heated-tobacco-products-and-ecigarettes ·
+    // IQOS https://www.iqos.com/gb/en/blog/what-is-heated-tobacco.html (no e-liquids) · IQOS CH https://ch.iqos.com/en/iluma-smartcore-induction-technology
+    // (heats from within the TEREA stick by induction · bladeless, no cleaning) · IQOS PH https://www.iqos.com/ph/en/support/faqs/terea-tobacco-sticks.html
+    // (SMARTCORE · not with IQOS 3 DUO or earlier · induction vs resistive) · IQOS AM .../146-how-does-iqos-iluma-heat-the-tobacco (stainless steel) ·
+    // IQOS GB https://www.iqos.com/gb/en/blog/what-are-terea-tobacco-sticks.html (ILUMA only · sealed on both ends). No health line (owner rule).
+    // Wording: thai-copy 04/11.
+    id: "types-of-pods",
+    slug: "types-of-pods",
+    title: "พอตมีกี่แบบ บุหรี่ไฟฟ้าแต่ละแบบต่างกันยังไง และ IQOS ต่างจากพอตตรงไหน",
+    dek: "พอตมีกี่แบบ ถ้านับตามที่ร้านเรามี แบ่งได้เป็นพอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็มที่เติมน้ำยาเอง ส่วน IQOS เป็นอีกแบบหนึ่งที่อุ่นยาสูบจริงโดยไม่ใช้น้ำยา บทความนี้เล่าว่าแต่ละแบบทำงานยังไง ต่างกันตรงไหน และเหมาะกับใคร",
+    category: "getting-started",
+    readingTimeMin: 6,
+    publishedAt: "2026-11-04",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "พอตมีกี่แบบ",
+        paragraphs: [
+          "พอตมีกี่แบบ ไม่มีตัวเลขเดียวที่ตายตัว เพราะผู้ผลิตแต่ละรายแบ่งไว้ไม่เท่ากัน บางรายนับเครื่องทรงปากกาและ mod รวมไว้ด้วย",
+          "บทความนี้จึงแบ่งตามของที่ร้านเรามี เป็นพอตสามแบบ คือ พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็มที่เติมน้ำยาเอง กับอีกกลุ่มหนึ่งคือ IQOS ซึ่งไม่ใช่พอต แต่เป็นเครื่องจ่ายความร้อนที่อุ่นยาสูบ หัวข้อถัดไปเล่าทีละแบบว่าทำงานยังไงและต่างกันตรงไหน",
+        ],
+      },
+      {
+        heading: "พอตกับบุหรี่ไฟฟ้า ต่างกันยังไง",
+        paragraphs: [
+          "พอตไม่ได้เป็นของคนละอย่างกับบุหรี่ไฟฟ้า RELX อธิบายว่าพอตคือบุหรี่ไฟฟ้าแบบที่ใช้หัวพอตแทนถังน้ำยา และมีส่วนหลักอยู่สองชิ้น คือหัวพอตกับแบต",
+          "ส่วนวิธีทำงาน Aspire อธิบายว่าเมื่อดูด คอยล์จะร้อนขึ้นและเปลี่ยนน้ำยาให้กลายเป็นไอ พอตทั้งสามแบบที่ร้านเรามีใช้น้ำยาเหมือนกัน ต่างกันที่วิธีใส่น้ำยาและสิ่งที่ต้องดูแล ส่วนแต่ละชิ้นในเครื่องทำหน้าที่อะไร อ่านต่อได้ที่ [Pod System คืออะไร](/guides/what-is-a-pod-system)",
+        ],
+      },
+      {
+        heading: "พอตใช้แล้วทิ้ง: แกะกล่องแล้วสูบได้เลย",
+        paragraphs: [
+          "Innokin อธิบายว่าพอตใช้แล้วทิ้งชาร์จแบตและบรรจุน้ำยามาให้เรียบร้อย แกะกล่องแล้วสูบได้ทันที ไม่มีอะไรต้องเติม และไม่ต้องตั้งค่าก่อนใช้",
+          "ดูรุ่นทั้งหมดได้ในหมวด[พอตใช้แล้วทิ้ง](/products/disposables) และถ้ากำลังเลือกแบรนด์ อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง ยี่ห้อไหนดี](/guides/choosing-a-disposable)",
+        ],
+        image: SECTION_IMAGES.mBar10kNonstop,
+      },
+      {
+        heading: "พอตเปลี่ยนหัว: หัวพอตมีน้ำยามาให้แล้ว",
+        paragraphs: [
+          "พอตเปลี่ยนหัวใช้หัวพอตบรรจุสำเร็จ Innokin อธิบายว่าน้ำยาอยู่ในหัวพอตที่ถอดออกจากตัวเครื่องได้ ส่วน RELX บอกว่าหัวพอตแบบนี้มีน้ำยามาในหัวแล้ว เติมเองไม่ได้ ใช้หมดก็ทิ้งหัวนั้นไป",
+          "ตัวเครื่องที่เป็นแบตเก็บไว้ชาร์จใช้ต่อได้ อยากเปลี่ยนกลิ่นก็แค่เปลี่ยนหัวใหม่ ดูรุ่นได้ในหมวด[พอตเปลี่ยนหัว](/products/switch-pods) อ่านวิธีเลือกรุ่นได้ที่ [พอตเปลี่ยนหัว รุ่นไหนดี](/guides/choosing-a-switch-pod) และถ้ายังชั่งใจระหว่างสองแบบแรก อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+        ],
+        image: SECTION_IMAGES.mBar15kSwap,
+      },
+      {
+        heading: "พอตซิสเต็ม: เปิดหัวพอตเติมน้ำยาเองได้",
+        paragraphs: [
+          "RELX อธิบายว่าหัวพอตของพอตซิสเต็มเปิดออกเพื่อเติมน้ำยาและใช้ซ้ำได้ จึงเลือกน้ำยาที่ชอบได้เอง ส่วนหัวพอตหรือคอยล์ก็เปลี่ยนใหม่เมื่อเริ่มเสื่อม",
+          "ถ้าเพิ่งเริ่มเติมเอง ดูวิธีทีละขั้นได้ที่ [เติมพอตยังไง](/guides/refilling-a-pod) ถ้ายังไม่มีเครื่อง อ่าน [Pod System ตัวไหนดี](/guides/choosing-your-first-pod-system) หรือดูรุ่นทั้งหมดในหมวด[พอตซิสเต็ม](/products/pod-systems) และถ้ากำลังชั่งใจกับพอตใช้แล้วทิ้ง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable)",
+        ],
+        image: SECTION_IMAGES.caliburnG4ClassicRefill,
+      },
+      {
+        heading: "IQOS กับบุหรี่ไฟฟ้า ต่างกันยังไง",
+        paragraphs: [
+          "IQOS ต่างจากบุหรี่ไฟฟ้าตั้งแต่สิ่งที่ใช้ PMI อธิบายว่าบุหรี่ไฟฟ้าทำให้น้ำยาที่มีนิโคตินและกลิ่นกลายเป็นไอ ส่วน IQOS ระบุว่าระบบอุ่นยาสูบของตัวเองไม่ใช้น้ำยา แต่อุ่นยาสูบจริง",
+          "สินค้ากลุ่มนี้เรียกกันว่า heat-not-burn หรือ HNB ส่วน PMI เรียกอีกชื่อว่า heated tobacco products และอธิบายว่าสินค้ากลุ่มนี้ทำงานด้วยการอุ่นยาสูบ",
+          "เครื่องตระกูล ILUMA อุ่นยาสูบด้วยระบบเหนี่ยวนำที่ IQOS เรียกว่า SMARTCORE INDUCTION SYSTEM ความร้อนมาจากชิ้นโลหะในมวน TEREA ที่อุ่นยาสูบจากด้านใน ในเครื่องจึงไม่มีใบมีดให้ความร้อน และ IQOS ระบุว่าไม่ต้องทำความสะอาด",
+          "บนเว็บเรามี ILUMA i สามรุ่น คือ [ILUMA i ONE](/products/iqosheet-17) · [ILUMA i](/products/iqosheet-18) และ [ILUMA i PRIME](/products/iqosheet-16) ความต่างของแต่ละรุ่นอ่านได้ที่ [ILUMA i ONE vs ILUMA i](/guides/iqos-iluma-i-one-vs-iluma-i) หรือดูเครื่องทั้งหมดในหมวด[เครื่องจ่ายความร้อน](/products/heated-tobacco-devices)",
+        ],
+        image: SECTION_IMAGES.ilumaI,
+      },
+      {
+        heading: "TEREA คืออะไร",
+        paragraphs: [
+          "TEREA คือบุหรี่ที่ IQOS ทำมาให้ใช้กับเครื่องตระกูล ILUMA เท่านั้น ปลายทั้งสองด้านของมวนปิดซีลไว้ และข้างในมีชิ้นโลหะให้ความร้อนที่ IQOS เรียกว่า SMARTCORE ชิ้นนี้เคลือบด้วยสแตนเลส",
+          "ถ้ามีเครื่อง IQOS รุ่นก่อนอยู่แล้ว IQOS ระบุว่าไม่ให้ใช้ ILUMA และ TEREA ร่วมกับ IQOS 3 DUO หรือรุ่นก่อนหน้านั้น เพราะ ILUMA อุ่นยาสูบด้วยระบบเหนี่ยวนำ ส่วนเครื่องรุ่นก่อนให้ความร้อนอีกแบบหนึ่ง",
+          "อยากรู้ว่าแต่ละกลิ่นต่างกันยังไง อ่านต่อได้ที่ [TEREA กลิ่นไหนดี](/guides/choosing-a-terea-flavor) หรือดูกลิ่นทั้งหมดในหมวด[บุหรี่ TEREA](/products/heated-tobacco-consumables)",
+        ],
+      },
+      {
+        heading: "เลือกแบบไหนดี",
+        paragraphs: [
+          "ถ้าอยากได้แบบที่แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมและไม่ต้องตั้งค่า เริ่มจากพอตใช้แล้วทิ้ง ถ้าอยากเก็บตัวเครื่องไว้ใช้ต่อแล้วเปลี่ยนกลิ่นด้วยการเปลี่ยนหัว พอตเปลี่ยนหัวตรงกับการใช้งานแบบนี้",
+          "ถ้าอยากเลือกน้ำยาเองและปรับเครื่องได้ตามความต้องการ พอตซิสเต็มที่เติมน้ำยาเองเหมาะกว่า และถ้าอยากใช้ยาสูบแทนน้ำยา ลองดู IQOS ILUMA ที่ใช้คู่กับบุหรี่ TEREA",
+          "ในคลิปของร้าน เราเล่าเรื่องที่มือใหม่มักเข้าใจผิดว่าพอตทุกแบบเหมือนกัน ทั้งที่แต่ละแบบใช้และดูแลไม่เหมือนกัน ดูได้ในคลิปบนหน้านี้ ถ้ายังไม่แน่ใจว่าแบบไหนเหมาะกับตัวเอง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
+        ],
+      },
+    ],
+    faq: [
+      { question: "พอตมีกี่แบบ", answer: "ผู้ผลิตแต่ละรายนับไม่เท่ากัน พอตที่ร้านเรามีแบ่งได้เป็นสามแบบ คือ พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็มที่เติมน้ำยาเอง และยังมี IQOS อีกกลุ่มหนึ่งที่อุ่นยาสูบแทนการใช้น้ำยา" },
+      { question: "พอตกับบุหรี่ไฟฟ้าเหมือนกันไหม", answer: "พอตเป็นบุหรี่ไฟฟ้าแบบหนึ่ง RELX อธิบายว่าพอตใช้หัวพอตแทนถังน้ำยา และมีส่วนหลักสองชิ้นคือหัวพอตกับแบต ส่วน Aspire อธิบายว่าเมื่อดูด คอยล์จะร้อนขึ้นและเปลี่ยนน้ำยาให้กลายเป็นไอ" },
+      { question: "IQOS ใช้น้ำยาไหม", answer: "ไม่ใช้ IQOS ระบุว่าระบบอุ่นยาสูบของตัวเองไม่ใช้น้ำยา แต่อุ่นยาสูบจริง อย่างเครื่องตระกูล ILUMA ก็ใช้คู่กับ TEREA ต่างจากบุหรี่ไฟฟ้า ที่ PMI อธิบายว่าทำให้น้ำยาซึ่งมีนิโคตินและกลิ่นกลายเป็นไอ" },
+      { question: "บุหรี่ HNB คืออะไร", answer: "HNB ย่อมาจาก heat-not-burn เป็นชื่อเรียกสินค้าที่ PMI เรียกอีกชื่อว่า heated tobacco products PMI อธิบายว่าสินค้ากลุ่มนี้ทำงานด้วยการอุ่นยาสูบ ตัวอย่างคือ IQOS ILUMA ที่ใช้คู่กับบุหรี่ TEREA" },
+      { question: "TEREA ใช้กับ IQOS รุ่นก่อนได้ไหม", answer: "ไม่ได้ IQOS ระบุว่า TEREA ทำมาให้ใช้กับเครื่องตระกูล ILUMA เท่านั้น และไม่ให้นำมาใช้กับ IQOS 3 DUO หรือรุ่นก่อนหน้านั้น เพราะ ILUMA อุ่นยาสูบด้วยระบบเหนี่ยวนำ ส่วนเครื่องรุ่นก่อนให้ความร้อนอีกแบบหนึ่ง" },
+    ],
+    // The shop's own clip on exactly this topic — what beginners get wrong about the pod types (@OKM_24); title / channel / upload date read from
+    // YouTube's watch page 04/11.
+    reviewVideo: { videoId: "XA1eP6WuAmM", title: "เรื่องที่มือใหม่มักเข้าใจผิดเกี่ยวกับพอต?", channelName: "OKAMI", publishedAt: "2025-10-10" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */

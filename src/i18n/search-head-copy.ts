@@ -524,6 +524,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // SEO 04/11: thai-copy's head line for the new guide.
   "pod-low-vapor":
     "พอตควันน้อย เกิดจากอะไร ไล่เช็คแบต หัวพอตหรือคอยล์ น้ำยา และช่องลมตามที่ผู้ผลิตแนะนำ พร้อมวิธีแก้ และพอตแบบไหนที่ให้ควันเยอะตั้งแต่แรก",
+  // SEO 04/11: thai-copy's head line for the new guide.
+  "types-of-pods":
+    "พอตมีกี่แบบ ที่ร้านเรามีแบ่งเป็นพอตใช้แล้วทิ้ง พอตเปลี่ยนหัว และพอตซิสเต็มที่เติมน้ำยาเอง แต่ละแบบต่างกันยังไง และ IQOS ต่างจากบุหรี่ไฟฟ้าตรงไหน",
 };
 
 /** Row C19 — keyed by technology entry id. */
