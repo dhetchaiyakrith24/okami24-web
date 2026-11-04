@@ -521,6 +521,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // SEO 04/11: thai-copy's head line for the new guide.
   "pod-losing-flavor":
     "พอตรสชาติหาย ดูดแล้วจืด หรือไม่มีรสชาติ เกิดได้จากหัวพอตหรือคอยล์ใกล้หมดอายุ น้ำยาเหลือน้อย สูบรัว หรือลิ้นชิน ไล่ดูทีละสาเหตุพร้อมวิธีแก้ตามคำแนะนำของผู้ผลิต",
+  // SEO 04/11: thai-copy's head line for the new guide.
+  "pod-low-vapor":
+    "พอตควันน้อย เกิดจากอะไร ไล่เช็คแบต หัวพอตหรือคอยล์ น้ำยา และช่องลมตามที่ผู้ผลิตแนะนำ พร้อมวิธีแก้ และพอตแบบไหนที่ให้ควันเยอะตั้งแต่แรก",
 };
 
 /** Row C19 — keyed by technology entry id. */

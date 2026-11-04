@@ -3261,6 +3261,115 @@ const allGuides: Guide[] = [
     // The shop's own clip on the disposable case of this topic (@OKMYARZ); title / channel / upload date read from YouTube's watch page 04/11.
     reviewVideo: { videoId: "n0FCGY43RhQ", title: "พอตใช้แล้วทิ้งช่วงท้ายทำไมกลิ่นเริ่มจางลง?", channelName: "OKM YARZ", publishedAt: "2026-09-30" },
   },
+  {
+    // SEO 04/11 (owner "เขียนต่อเลย" via Friday): Google autocomplete TH 04/11 "พอตควันน้อย" · "พอตควันออกน้อย" · "ทำไมพอตควันน้อย" ·
+    // "พอตควันเยอะ" · "พอตรุ่นไหนควันเยอะ"; no page answered it ("it works but the vapour is thin" — fixing-no-draw owns "nothing comes out").
+    // Maker facts only, every quote re-read on the maker's own page 04/11: Aspire troubleshooting
+    // https://www.aspirecig.com/community/troubleshooting-guide-6-common-vaping-problems-and-solutions/ (not producing vapour: charge · coil · thick
+    // liquid · refill · airflow) · Innokin https://www.innokin.com/blog/how-to-tell-if-a-disposable-vape-is-burnt (low voltage → vapour drops ·
+    // disposables usually not regulated) · Aspire https://www.aspirecig.com/community/when-should-you-replace-your-vape-coils/ (vapour decreased =
+    // coil worn) · GeekVape https://store.geekvape.com/blogs/faq-products/faq-geekvape-n-cartridge-replacement-pods (reduced vapour = change) ·
+    // Innokin https://www.innokin.com/blog/vape-lighting-up-but-not-hitting (pod isn't empty · bubbles · airflow vent not closed) · Innokin
+    // https://www.innokin.com/blog/how-to-know-when-your-disposable-vape-is-almost-empty (clouds smaller near empty) · Aspire
+    // https://www.aspirecig.com/community/the-most-common-vaping-terms/ (restricted airflow less vapour) · Lost Vape
+    // https://lostvape.com/2025/03/25/how-does-vape-cartridge-airflow-affect-flavor-and-vapor-production/ (restricted → thicker: the makers differ, FAQ says so) ·
+    // GeekVape https://store.geekvape.com/blogs/faq-products/faq-geekvape-b100-aegis-boost-pro-2-kit-100w (lower wattage less vapour) · Innokin
+    // https://www.innokin.com/blog/what-wattage-should-i-vape-at (higher wattage bigger clouds) · GeekVape https://store.geekvape.com/pages/faq
+    // (clean the contacts) · GeekVape https://store.geekvape.com/blogs/vaping-guide/decoding-vaping-a-comprehensive-guide-to-mtl-dtl-rdl-and-rdtl
+    // (DTL large clouds, MTL low) · Innokin https://www.innokin.com/blog/pg-vs.-vg-whats-the-difference (high PG smaller clouds) · GeekVape
+    // https://store.geekvape.com/blogs/vaping-guide/geekvape-coil-guide-everything-you-need-to-know-about-vape-coils (low resistance: large clouds,
+    // higher wattage, high VG). "Higher ohm = less vapour" left out: its GeekVape page would not open 04/11. M Bar 10K modes / ARGUS G4 Multi-Ohm =
+    // the SALTHUB / VOOPOO posters already in SECTION_IMAGES. No shop clip on this topic (three channels searched 04/11). Wording: thai-copy 04/11.
+    id: "pod-low-vapor",
+    slug: "pod-low-vapor",
+    title: "พอตควันน้อย เกิดจากอะไร แก้ยังไง และพอตแบบไหนควันเยอะ",
+    dek: "พอตควันน้อยลงจากเดิม ผู้ผลิตแนะนำให้เช็คแบต หัวพอตหรือคอยล์ น้ำยา และช่องลมก่อน บทความนี้ไล่ดูทีละเรื่องว่าแก้ยังไง และพอตแบบไหนที่ทำมาให้ควันเยอะตั้งแต่แรก",
+    category: "maintenance",
+    readingTimeMin: 6,
+    publishedAt: "2026-11-04",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "พอตควันน้อย เกิดจากอะไร",
+        paragraphs: [
+          "พอตควันน้อยมีอยู่สองแบบที่ควรแยกกันก่อน แบบแรกคือพอตควันออกน้อยลงจากที่เคยเป็น แบบนี้มักมีอะไรสักอย่างเปลี่ยนไป เช่น แบตใกล้หมด คอยล์เริ่มเสื่อม น้ำยาเหลือน้อย หรือช่องลมถูกปิดไว้ แบบที่สองคือควันบางมาตั้งแต่วันแรก ซึ่งมักเป็นเพราะเครื่อง หัวพอต หรือน้ำยาทำมาแบบนั้นเอง เช่น เครื่องที่สูบแบบ MTL หรือน้ำยาที่ PG สูง",
+          "ถ้าเป็นแบบแรก Aspire แนะนำให้ไล่เช็คตามนี้ ชาร์จแบตให้เต็ม เปลี่ยนคอยล์ถ้าคอยล์เสีย ไหม้ หรืออุดตัน ดูว่าน้ำยาข้นเกินไปหรือเปล่า เติมน้ำยา และเปิดช่องลม หัวข้อด้านล่างเล่าทีละเรื่องตามลำดับนี้",
+          "แต่ถ้าดูดแล้วไม่มีควันออกมาเลย หรือไฟกะพริบ เป็นอีกอาการหนึ่ง อ่านต่อได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+        ],
+      },
+      {
+        heading: "แบตใกล้หมด ควันเลยออกน้อยลง",
+        paragraphs: [
+          "เริ่มจากแบตก่อน Innokin อธิบายว่าเมื่อแรงดันไฟของแบตต่ำลง ควันก็จะออกน้อยลงตามไปด้วย และบอกด้วยว่าพอตใช้แล้วทิ้งส่วนใหญ่ไม่ได้คุมไฟให้คงที่",
+          "ถ้าเครื่องชาร์จได้ ให้ชาร์จจนเต็มแล้วลองสูบใหม่ ชาร์จนานแค่ไหนและดูแลแบตยังไง อ่านได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม](/guides/battery-care-and-charging)",
+        ],
+        image: SECTION_IMAGES.mSwitchCharge,
+      },
+      {
+        heading: "หัวพอตหรือคอยล์ใกล้หมดอายุ",
+        paragraphs: [
+          "ถ้าแบตเต็มแล้วควันยังน้อย ให้ดูที่หัวพอตหรือคอยล์ต่อ Aspire บอกว่าควันที่ออกน้อยลงมักเป็นสัญญาณว่าคอยล์เริ่มเสื่อม หรือใช้มานานจนหมดสภาพแล้ว GeekVape ก็บอกถึงหัวพอตของตัวเองไว้คล้ายกันว่า ถ้าควันน้อยลง รสดรอป หรือเริ่มมีรสไหม้ ก็ถึงเวลาเปลี่ยนหัวใหม่",
+          "ทางแก้คือเปลี่ยนหัวพอตหรือคอยล์ใหม่ให้ตรงรุ่นเครื่อง ดูได้ในหมวด[หัวพอต](/products/pods-cartridges) และ[คอยล์และอุปกรณ์เสริม](/products/coils-accessories) ส่วนหัวพอตหนึ่งหัวใช้ได้นานแค่ไหน อ่านต่อได้ที่ [หัวพอตใช้ได้กี่วัน](/guides/coil-and-pod-maintenance)",
+          "ถ้าควันน้อยลงพร้อมกับรสที่จางหายไปด้วย อ่านเรื่องนี้ต่อได้ที่ [พอตรสชาติหาย](/guides/pod-losing-flavor)",
+        ],
+      },
+      {
+        heading: "น้ำยาเหลือน้อย หรือไหลไม่ถึงคอยล์",
+        paragraphs: [
+          "Innokin แนะนำให้เช็คก่อนว่าน้ำยาในหัวพอตหมดหรือยัง และสำหรับหัวพอตที่เติมน้ำยาเอง ฟองอากาศที่ค้างอยู่ข้างในอาจกั้นไม่ให้น้ำยาไหลไปถึงคอยล์ได้",
+          "ถ้าใช้พอตใช้แล้วทิ้ง ควันที่น้อยลงอาจบอกว่าเครื่องใกล้หมดแล้ว Innokin บอกว่าช่วงท้ายของพอตใช้แล้วทิ้ง รสจะอ่อนลงและควันจะน้อยลง อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง วิธีเติมทีละขั้นอยู่ที่ [เติมพอตยังไง](/guides/refilling-a-pod)",
+        ],
+      },
+      {
+        heading: "ช่องลมปิดอยู่ หรือแคบเกินไป",
+        paragraphs: [
+          "สำหรับเครื่องที่ปรับลมได้ Innokin ให้เช็คว่าช่องลมไม่ได้ปิดอยู่ ส่วน Aspire อธิบายว่าลมที่เข้าได้โล่งมักให้ควันมากกว่า และลมที่ถูกบีบให้แคบจะให้ควันน้อยกว่า",
+          "ถ้าช่องลมปิดอยู่หรือเกือบปิด ให้ค่อย ๆ เปิดทีละขั้นแล้วลองสูบไปด้วย จนได้ควันและแรงดูดที่พอดีกับตัวเอง",
+        ],
+        image: SECTION_IMAGES.mSwitchAirflow,
+      },
+      {
+        heading: "ลองสลับโหมดหรือปรับวัตต์",
+        paragraphs: [
+          "ถ้าเครื่องปรับวัตต์ได้ วัตต์ก็มีผลกับควันเหมือนกัน GeekVape บอกว่าวัตต์ที่ต่ำลงอาจให้ควันน้อยลง ส่วน Innokin บอกว่าวัตต์ที่สูงขึ้นให้ควันเยอะขึ้นและอุ่นขึ้น",
+          "ลองขยับวัตต์ขึ้นทีละนิด แต่ให้อยู่ในช่วงวัตต์ที่คอยล์ระบุไว้ วิธีเลือกวัตต์ให้เข้ากับคอยล์อ่านได้ที่ [ตั้งกี่วัตต์ดี](/guides/choosing-wattage-and-airflow)",
+          "พอตใช้แล้วทิ้งบางรุ่นก็มีโหมดให้เลือก อย่าง [M Bar 10K](/products/m-bar-10k) ของ SALTHUB สลับได้สามโหมด คือ Eco Soft และ Boost ด้วยการกดปุ่มที่ก้นพอตสองครั้งติดกัน ลองสลับดูว่าโหมดไหนให้ความรู้สึกที่พอดีกับตัวเอง",
+        ],
+        image: SECTION_IMAGES.mBar10kModes,
+      },
+      {
+        heading: "ขั้วสัมผัสหัวพอตสกปรก",
+        paragraphs: [
+          "สำหรับเครื่องที่ถอดหัวพอตได้ GeekVape แนะนำให้ทำความสะอาดขั้วสัมผัสที่ก้นหัวพอต และขั้วสัมผัสในช่องเสียบหัวพอตบนตัวเครื่องด้วย แล้วค่อยเสียบหัวพอตกลับเข้าไป",
+        ],
+      },
+      {
+        heading: "เครื่องบางแบบออกแบบมาให้ควันน้อยตั้งแต่แรก",
+        paragraphs: [
+          "ถ้าควันบางมาตั้งแต่วันแรก ลองดูที่ชนิดของเครื่องก่อน GeekVape อธิบายว่าการสูบแบบ DTL คือดูดลงปอดตรง ๆ และให้ควันเยอะ ส่วนการสูบแบบ MTL คือดูดเข้าปากก่อนแล้วค่อยสูดลงปอด ซึ่งในตารางเทียบของ GeekVape จัดปริมาณควันไว้ในระดับน้อย",
+          "น้ำยาก็มีผลเหมือนกัน Innokin บอกว่าน้ำยาที่ PG สูงจะให้ควันก้อนเล็กและบางกว่า",
+          "เครื่องเล็กที่สูบแบบ MTL จึงให้ควันบางได้ตามที่ออกแบบไว้ ไม่ได้แปลว่าเครื่องเสีย ความต่างของการสูบสองแบบอ่านได้ที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) และวิธีอ่านสัดส่วนน้ำยาอยู่ที่ [PG VG คืออะไร](/guides/pg-vg-in-e-liquid)",
+        ],
+      },
+      {
+        heading: "พอตแบบไหนควันเยอะ",
+        paragraphs: [
+          "ถ้าอยากได้พอตควันเยอะตั้งแต่แรก ให้ดูที่โอห์มของคอยล์ วัตต์ และน้ำยา GeekVape บอกว่าคอยล์โอห์มต่ำเหมาะกับการสูบให้ควันเยอะและใช้วัตต์สูงขึ้น และน้ำยาที่ VG สูงก็เหมาะกับการสูบให้ควันเยอะเช่นกัน ส่วน Innokin บอกว่าวัตต์ที่สูงขึ้นให้ควันเยอะขึ้น",
+          "ตัวอย่างหนึ่งคือ VOOPOO [ARGUS G4](/products/argus-g4) ที่ใช้หัวพอต Multi-Ohm กลับด้านหัวพอตเพื่อเลือก 1.0 หรือ 0.7 โอห์ม และกดปุ่มสองครั้งติดกันเพื่อเปลี่ยนเป็น 0.4 โอห์ม จะสูบแบบโอห์มสูงหรือโอห์มต่ำก็เลือกได้ในหัวพอตเดียว",
+          "ถ้ายังไม่แน่ใจว่าเครื่องแบบไหนเหมาะกับวิธีสูบของตัวเอง อ่าน [Pod System ตัวไหนดี](/guides/choosing-your-first-pod-system) หรือดูรุ่นทั้งหมดในหมวด[พอตซิสเต็ม](/products/pod-systems) และติดต่อสอบถามเพิ่มเติมได้ที่ @okm24",
+        ],
+        image: SECTION_IMAGES.argusG4Ohm,
+      },
+    ],
+    faq: [
+      { question: "พอตควันน้อย ทำไง", answer: "เริ่มจากเรื่องที่ Aspire แนะนำให้เช็คก่อน ชาร์จแบตให้เต็ม เปลี่ยนคอยล์ถ้าเสื่อมหรือไหม้ เช็คว่ามีน้ำยาพอ และเปิดช่องลม ถ้าเครื่องปรับวัตต์ได้ ลองขยับวัตต์ขึ้นโดยให้อยู่ในช่วงที่คอยล์ระบุไว้" },
+      { question: "ทำไมพอตควันน้อยลงทั้งที่เพิ่งเปลี่ยนหัว", answer: "ถ้าหัวพอตยังใหม่ ลองไล่เรื่องอื่นที่ไม่ใช่หัวพอต ทั้งแบตที่ใกล้หมด ช่องลมที่ปิดอยู่ และขั้วสัมผัสที่สกปรก ถ้าเป็นหัวพอตที่เติมเอง Innokin บอกว่าฟองอากาศข้างในอาจกั้นไม่ให้น้ำยาไหลถึงคอยล์" },
+      { question: "พอตใช้แล้วทิ้งควันน้อยลง ใกล้หมดหรือยัง", answer: "เป็นไปได้ Innokin บอกว่าช่วงท้ายของพอตใช้แล้วทิ้ง รสจะอ่อนลงและควันจะน้อยลง และเมื่อแบตเหลือน้อยควันก็ลดลงได้เหมือนกัน ถ้ารุ่นนั้นชาร์จได้ ลองชาร์จให้เต็มก่อน ถ้าชาร์จแล้วควันยังน้อยและรสจางลงด้วย ก็ตรงกับอาการช่วงท้ายที่ Innokin อธิบายไว้" },
+      { question: "พอตรุ่นไหนควันเยอะ", answer: "ดูที่สเปกมากกว่าชื่อรุ่น GeekVape บอกว่าคอยล์โอห์มต่ำที่ใช้วัตต์สูงขึ้น และน้ำยาที่ VG สูง เหมาะกับการสูบให้ควันเยอะ ส่วนในตารางของ GeekVape การสูบแบบ DTL ให้ควันเยอะกว่า MTL ถ้าอยากได้เครื่องที่เลือกโอห์มได้ VOOPOO ARGUS G4 ใช้หัวพอต Multi-Ohm ที่เลือกได้ 1.0 0.7 หรือ 0.4 โอห์ม" },
+      { question: "ปิดช่องลมแล้วควันเยอะขึ้นไหม", answer: "ผู้ผลิตพูดไว้ต่างกัน Aspire บอกว่าลมที่ถูกบีบให้แคบมักให้ควันน้อยลง ส่วน Lost Vape บอกว่าลมที่แคบลงทำให้คอยล์ร้อนขึ้นและได้ควันที่แน่นขึ้น ถ้าตอนนี้ช่องลมเกือบปิดอยู่ ลองค่อย ๆ เปิดทีละขั้นแล้วดูว่าแบบไหนพอดีกับตัวเอง" },
+    ],
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
