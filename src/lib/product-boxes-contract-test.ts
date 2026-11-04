@@ -27,7 +27,7 @@ export async function runProductBoxesContractTests(): Promise<ProductBoxesContra
   const bad: string[] = [];
   for (const [src, long] of entries) {
     const file = path.join(process.cwd(), "public", src.replace(/^\//, ""));
-    if (!/-wm[34].webp$/.test(src)) { bad.push(`${src}: not a generation-3 or 4 (-wm3, -wm4) file`); continue; }
+    if (!/-wm[34]\.webp$/.test(src)) { bad.push(`${src}: not a generation-3 or 4 (-wm3, -wm4) file`); continue; }
     if (!existsSync(file)) { bad.push(`${src}: file missing`); continue; }
     const meta = await sharp(file).metadata();
     const { info: box } = await sharp(file).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
