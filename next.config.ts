@@ -110,6 +110,15 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "microphone=(), geolocation=(), payment=(), usb=()" },
         ],
       },
+      /**
+       * Config headers beat the ones a route sets, so the block above would replace the slip route's own stricter
+       * `no-referrer` (src/app/api/line/slip/[token]/route.ts — the address itself is the key to a customer's slip).
+       * The last matching entry wins, so this one has to stay below the block above.
+       */
+      {
+        source: "/api/line/slip/:token",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
       {
         source: "/assets/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
