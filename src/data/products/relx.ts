@@ -200,6 +200,8 @@ export const relxProducts: Product[] = [
     compatibility: [{ type: "pod", label: "RELX Pod · Pod Pro · Pod Pro 2", note: "RELX prefilled pods, 1.9mL each." }, typeC],
     whoIsThisFor: ["You already use RELX Pod or Pod Pro pods and want the current Infinity body they fit."],
     faqs: [],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "hyJ4CkvKMec", title: "หลังใช้งาน 30 วัน RELX INFINITY 2 PLUS อัพเกรดใหม่ปรับได้แล้วทุกหัว!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2024-12-02" },
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: [INFINITY_PAGE],
   },

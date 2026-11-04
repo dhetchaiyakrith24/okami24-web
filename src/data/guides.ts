@@ -11,7 +11,6 @@ import type { ArticleReviewVideo, Guide, StoryImage } from "@/types/catalog";
 export const SECTION_CLIPS = {
   caliburnG4Pro: { videoId: "Hpifl9weNTc", title: "หลังใช้งาน UWELL CALIBURN G4 PRO ตัวจบพร้อมระบบสัมผัส!", channelName: "OKM YARZ", publishedAt: "2026-08-14" },
   argusG4: { videoId: "eUdbZyvV4Y0", title: "หลังใช้งาน VOOPOO ARGUS G4 เปลี่ยนค่าโอห์มได้ในหัวเดียว!", channelName: "OKAMI", publishedAt: "2026-08-15" },
-  mSwitch: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-12" },
 } satisfies Record<string, ArticleReviewVideo>;
 
 const VOOPOO_SHOP = "https://shop.voopoo.com/products/";
@@ -342,10 +341,11 @@ const allGuides: Guide[] = [
           "Compared with an M Bar 10K, where the whole device is discarded, an M Switch discards only the pod — the same simplicity (no filling, no coil changes) with less waste per swap. Still undecided on the format? Start again from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
         image: SECTION_IMAGES_EN.mBar15kSwap,
-        video: SECTION_CLIPS.mSwitch,
       },
     ],
     relatedProductSlugs: ["caliburn-g5-lite", "m-bar-10k", "m-switch-kit"],
+    // SEO 04/11 (Friday's call, reversible): the shop's clip on exactly this article's topic replaces the M Switch section clip (one clip per guide) — title, channel and upload date read from YouTube's watch page 04/11.
+    reviewVideo: { videoId: "V04-6i3ArsY", title: "ความแตกต่างระหว่าง พอตใช้แล้วทิ้ง กับ POD SYSTEM?", channelName: "OKAMI", publishedAt: "2025-04-11" },
     faq: [
       {
         question: "How is the M Bar 10K different from the M Switch?",

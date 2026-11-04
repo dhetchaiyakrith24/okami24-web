@@ -124,6 +124,8 @@ export const infyProducts: Product[] = [
           "INFY does not list the 20K on its own sites yet. The 20mL capacity and the adjustable airflow on this page are confirmed by the shop; other figures Thai shops quote are not shown. To check against the real unit, ask on LINE @okm24.",
       },
     ],
+    // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
+    reviewVideo: { videoId: "3SsOYwo6mX0", title: "INFY 20K ใช้แล้วทิ้งกระป๋องรุ่นใหม่ จุใจ มีจอ!", channelName: "OKAMI", publishedAt: "2026-03-02" },
     relatedProductSlugs: [],
     sourceUrls: ["https://www.infy.my/"],
   },
