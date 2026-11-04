@@ -51,7 +51,7 @@ export const voopooProducts: Product[] = [
         role: "card",
         // 05/10 (owner: "รูปการ์ดเล็กไป"): card-v2 = the same VOOPOO Orange photo at 2533 px, cut out and tilted 12° on the
         // 1000x1250 card canvas like every VOOPOO card (_incoming/sitewide-template/2/2fimg/g4card/).
-        src: "/assets/products/argus-g4/card-v3-wm2.webp",
+        src: "/assets/products/argus-g4/card-v3-wm3.webp",
         alt: "VOOPOO ARGUS G4, Orange colourway, studio photo",
         angle: "Front, upright studio re-shoot 16/10 (round img-1610) - OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7-8) of VOOPOO's Orange gallery photo; source, prompt and check in scripts/process-images.map.json aiRender. Before: Front, tilted 12°. Re-processed 2026-09-06 (LAUNCH_AUDIT 11): same official shop.voopoo.com gallery fetched at its native 2533×2533 — the standalone device cropped off the box shot is now ≈1441px on the 1000px canvas (was 519px, blurry on the home page). Earlier history: QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
         transparentBackground: true,
@@ -113,12 +113,12 @@ export const voopooProducts: Product[] = [
     storyStartRight: true,
     storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 beside the ARGUS G4 mini", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 2133, height: 1194 },
     lineupImage: {
-      src: "/assets/products/argus-g4/lineup-v5-wm2.webp",
+      src: "/assets/products/argus-g4/lineup-v5-wm3.webp",
       alt: "VOOPOO ARGUS G4, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g4/lineup2-v5-wm2.webp",
+      src: "/assets/products/argus-g4/lineup2-v5-wm3.webp",
       alt: "VOOPOO ARGUS G4, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -127,43 +127,43 @@ export const voopooProducts: Product[] = [
         id: "orange",
         name: "Orange",
         swatchHex: "#d4692a",
-        image: { src: "/assets/products/argus-g4/variant-orange-v2-wm2.webp", alt: "VOOPOO ARGUS G4, Orange" },
+        image: { src: "/assets/products/argus-g4/variant-orange-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Orange" },
       },
       {
         id: "black",
         name: "Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/argus-g4/variant-black-v2-wm2.webp", alt: "VOOPOO ARGUS G4, Black" },
+        image: { src: "/assets/products/argus-g4/variant-black-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Black" },
       },
       {
         id: "purple",
         name: "Purple",
         swatchHex: "#6b4a8e",
-        image: { src: "/assets/products/argus-g4/variant-purple-v3-wm2.webp", alt: "VOOPOO ARGUS G4, Purple" },
+        image: { src: "/assets/products/argus-g4/variant-purple-v3-wm3.webp", alt: "VOOPOO ARGUS G4, Purple" },
       },
       {
         id: "silver",
         name: "Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/argus-g4/variant-silver-v4-wm2.webp", alt: "VOOPOO ARGUS G4, Silver" },
+        image: { src: "/assets/products/argus-g4/variant-silver-v4-wm3.webp", alt: "VOOPOO ARGUS G4, Silver" },
       },
       {
         id: "blue",
         name: "Blue",
         swatchHex: "#2a6fbd",
-        image: { src: "/assets/products/argus-g4/variant-blue-v3-wm2.webp", alt: "VOOPOO ARGUS G4, Blue" },
+        image: { src: "/assets/products/argus-g4/variant-blue-v3-wm3.webp", alt: "VOOPOO ARGUS G4, Blue" },
       },
       {
         id: "gray",
         name: "Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/argus-g4/variant-gray-v4-wm2.webp", alt: "VOOPOO ARGUS G4, Gray" },
+        image: { src: "/assets/products/argus-g4/variant-gray-v4-wm3.webp", alt: "VOOPOO ARGUS G4, Gray" },
       },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/argus-g4/variant-brown-v2-wm2.webp", alt: "VOOPOO ARGUS G4, Brown" },
+        image: { src: "/assets/products/argus-g4/variant-brown-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Brown" },
       },
       {
         // Added 2026-09-06 — VOOPOO's own shop now lists an 8th colourway, Green (variant option +
@@ -174,7 +174,7 @@ export const voopooProducts: Product[] = [
         id: "green",
         name: "Green",
         swatchHex: "#5caba5",
-        image: { src: "/assets/products/argus-g4/variant-green-v2-wm2.webp", alt: "VOOPOO ARGUS G4, Green" },
+        image: { src: "/assets/products/argus-g4/variant-green-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Green" },
       },
     ],
     specifications: [
@@ -439,7 +439,7 @@ export const voopooProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // 02/10: card-v2 = the Blue Leather render of this page's colour photos, tilted 12° (map: scripts/process-images.map.json).
-        src: "/assets/products/argus-p3/card-v2-wm2.webp",
+        src: "/assets/products/argus-p3/card-v2-wm3.webp",
         alt: "VOOPOO ARGUS P3, Blue Leather, tilted product shot",
         angle: "Front, tilted 12°",
         transparentBackground: true,
@@ -482,12 +482,12 @@ export const voopooProducts: Product[] = [
     // p3-green.js). "ทั้งหมด" = two groups of 4 in the page order (owner 05/10: the one image of 7 was too small) — the box
     // "cluster" layout, _incoming/image-sitewide/set1/boxy.js argus-p3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-p3/lineup-v3-wm2.webp",
+      src: "/assets/products/argus-p3/lineup-v3-wm3.webp",
       alt: "VOOPOO ARGUS P3, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-p3/lineup2-v3-wm2.webp",
+      src: "/assets/products/argus-p3/lineup2-v3-wm3.webp",
       alt: "VOOPOO ARGUS P3, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -496,15 +496,15 @@ export const voopooProducts: Product[] = [
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#2a4fb0",
-        image: { src: "/assets/products/argus-p3/variant-blue-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
+        image: { src: "/assets/products/argus-p3/variant-blue-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
       },
-      { id: "black-leather", name: "Black Leather", swatchHex: "#323232", image: { src: "/assets/products/argus-p3/variant-black-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
-      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
-      { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
-      { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
-      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
-      { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
-      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2-wm2.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
+      { id: "black-leather", name: "Black Leather", swatchHex: "#323232", image: { src: "/assets/products/argus-p3/variant-black-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
+      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
+      { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
+      { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
+      { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
+      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
     specifications: [
       // Batch 2f (05/10): every row re-read from VOOPOO's shop page + its long poster + www.voopoo.com, piece by piece
@@ -772,7 +772,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-6/card-v2-wm2.webp",
+        src: "/assets/products/drag-6/card-v2-wm3.webp",
         alt: "VOOPOO DRAG 6, Brown, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -799,18 +799,18 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-6/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 2800, height: 844 },
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm2.webp", alt: "VOOPOO DRAG 6, Silver" } },
-      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm2.webp", alt: "VOOPOO DRAG 6, Blue" } },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm2.webp", alt: "VOOPOO DRAG 6, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm3.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm3.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm3.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/drag-6/variant-brown-v2-wm2.webp", alt: "VOOPOO DRAG 6, Brown" },
+        image: { src: "/assets/products/drag-6/variant-brown-v2-wm3.webp", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm2.webp", alt: "VOOPOO DRAG 6, Red" } },
-      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm2.webp", alt: "VOOPOO DRAG 6, Green" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
+      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm3.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm3.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm3.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
     // All-colours images (IMAGE_SPEC §0 item 5). 16/10 (round img-1610): the hybrid lineup-v3 of 04/10 was still "too small"
     // and "still graphic" (owner) → two groups (4 + 3, maker order) of NEW studio re-shoots standing on the floor in one row,
@@ -820,12 +820,12 @@ export const voopooProducts: Product[] = [
     // (look-batch/drag-6/footcut.js), row by look-batch/lineup-row.js --row --pick. The colour photos above are unchanged
     // (owner-passed exception, IMAGE_SPEC §0 item 8). Picks + checks: _incoming/img-1610/b11/.
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v4-wm2.webp",
+      src: "/assets/products/drag-6/lineup-v4-wm3.webp",
       alt: "VOOPOO DRAG 6, colours 1–4 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-6/lineup2-v4-wm2.webp",
+      src: "/assets/products/drag-6/lineup2-v4-wm3.webp",
       alt: "VOOPOO DRAG 6, colours 5–7 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
