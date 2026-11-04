@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ArticleFAQItem, ArticleReviewVideo, GuideSection, StoryImage } from "@/types/catalog";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypographyNode } from "@/lib/thai-typography";
+import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -51,7 +51,8 @@ export function renderInline(text: string, locale: string, keyPrefix: string): R
     const long = label.length > LONG_LINK_LABEL;
     const cls = `${long ? "" : "whitespace-nowrap "}font-medium text-foreground underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember`;
     const body = long
-      ? label.split(" ").map((word, i) => (
+      ? // Typography first: a model name is bound with no-break spaces, so "Esko Bar Switch 20K" stays one piece.
+        (locale === "th" ? thaiTypography(label) : label).split(" ").map((word, i) => (
           <Fragment key={i}>
             {i > 0 && " "}
             <span className="whitespace-nowrap">{t(word)}</span>
