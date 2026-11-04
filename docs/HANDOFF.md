@@ -140,6 +140,7 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
+  gsc-unread.ts (pages Google has not read since they changed; skill seo-after-publish) ·
   pre-checker-gate.js (13.4 — before every checker · `--done` after its report · `--self-test` = every lock on a planted example) ·
   house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · stale-work.js (stuck/due work — agent follow-up, session-sync, daily 13:00 task) · lab/js-weight.js (first-paint JS per page) ·
   poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
