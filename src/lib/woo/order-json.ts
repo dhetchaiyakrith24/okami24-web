@@ -46,6 +46,8 @@ export interface PushOrder {
   postalCode: string;
   /** The carrier the order goes with (staff's pick, else from the postcode); absent = the line title stays "ค่าส่ง". */
   carrier?: CarrierId;
+  /** The shipping line this order was sent with, when it is not today's rate (see shippingLineWhenSent). */
+  shippingLine?: number;
 }
 
 /** Why an order may NOT go to the warehouse now — null = it may. Only a paid order (staff confirmed the money →
@@ -60,6 +62,12 @@ export function pushBlock(o: { status: string; alreadySent: boolean; stockOpen: 
 
 /** What the warehouse bills the shop for shipping one order, whatever the customer paid (BSOT §10). */
 export const WAREHOUSE_SHIPPING_FEE_THB = 35;
+/** Orders sent before this went out with the 50 line. Shipnity may read a sent order back, so it must read what it got. */
+export const WAREHOUSE_RATE_SINCE = "2026-11-04T15:00:00.000Z";
+
+export function shippingLineWhenSent(firstSentAt: string | null): number | undefined {
+  return firstSentAt !== null && firstSentAt < WAREHOUSE_RATE_SINCE ? 50 : undefined;
+}
 
 const money = (n: number) => n.toFixed(2);
 /** The note a DHL order carries to the warehouse until Shipnity reads the carrier itself (owner 03/11, temporary). */
@@ -69,7 +77,7 @@ const wooDate = (iso: string) => iso.replace(/\.\d+Z$/, "").replace(/Z$/, "");
 
 export function wooOrderJson(o: PushOrder, siteUrl: string) {
   const itemsTotal = o.lines.reduce((n, l) => n + l.lineTotal, 0);
-  const shippingReal = WAREHOUSE_SHIPPING_FEE_THB;
+  const shippingReal = o.shippingLine ?? WAREHOUSE_SHIPPING_FEE_THB;
   const discount = Math.max(0, shippingReal - o.shippingFee);
   const extraShipping = Math.max(0, o.shippingFee - shippingReal);
   const total = itemsTotal + shippingReal - discount + extraShipping;

@@ -17,7 +17,7 @@ import { handle, readStockFields, type ApiRequest, type StockReportView, type We
 import { wooCatalog } from "./catalog";
 import { parseCredentials, redactSecrets, safeQuery } from "./credentials";
 import { minimiseOrderBody } from "./log-redact";
-import { DHL_PACKER_NOTE, pushBlock, WAREHOUSE_SHIPPING_FEE_THB, wooOrderJson, type PushOrder } from "./order-json";
+import { DHL_PACKER_NOTE, pushBlock, shippingLineWhenSent, WAREHOUSE_RATE_SINCE, WAREHOUSE_SHIPPING_FEE_THB, wooOrderJson, type PushOrder } from "./order-json";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
 
@@ -242,6 +242,11 @@ check(
   "order: free shipping = shop-paid discount, total = customer total",
   free.shipping_total === "35.00" && free.discount_total === "35.00" && free.fee_lines.length === 0 && free.total === "500.00" && free.coupon_lines.length === 1
 );
+const above = wooOrderJson({ ...base, shippingFee: 60 }, "https://okami24.store");
+check("order: any other fee keeps the customer total", above.shipping_total === "35.00" && above.fee_lines[0].total === "25.00" && above.total === "310.00");
+check("order: sent before the rate change reads back as it was sent", shippingLineWhenSent("2026-10-30T05:00:00.000Z") === 50 && shippingLineWhenSent(WAREHOUSE_RATE_SINCE) === undefined && shippingLineWhenSent(null) === undefined);
+const sentOld = wooOrderJson({ ...base, shippingFee: 0, shippingLine: 50 }, "https://okami24.store");
+check("order: an old free-shipping order = 50 line + 50 discount, no fee", sentOld.shipping_total === "50.00" && sentOld.discount_total === "50.00" && sentOld.fee_lines.length === 0 && sentOld.total === "250.00");
 check("order: address mapped (Thai fields)", paid.shipping.address_2 === "ตำบล" && paid.shipping.city === "อำเภอ" && paid.shipping.state === "จังหวัด" && paid.shipping.country === "TH");
 const orderText = JSON.stringify(paid);
 check("order: no e-mail, note or slip", paid.billing.email === "" && paid.customer_note === "" && !/slip|สลิป|refund_|promptpay/i.test(orderText));
