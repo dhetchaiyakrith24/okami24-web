@@ -13,7 +13,10 @@
  *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant-<id> file
  *                 that replaces an option photo deleted in the same diff (same product, same <id> in any case, e.g.
  *                 variants/Coil-1-1.webp -> variant-coil-1-1.webp — a new name keeps the CDN from serving the old file;
- *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm or -wm2, replaces variant-<id> / an earlier mark the same way)
+ *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm / -wm2 / -wm3, replaces variant-<id> / an earlier mark the
+ *                 same way; a RE-MARK — a -wmN copy replacing an earlier -wmM copy of the same picture — is measured against the
+ *                 unmarked original in <base>'s history instead: the earlier, denser mark's texture reads as detail (generation 3,
+ *                 owner 04/11, is lighter than generation 2), so a lighter mark on the same pixels would fail for being lighter)
  *                 must reach >= 90% of that deleted file (IMAGE_SPEC "ของรูปที่มันแทน", round "3 coil photos" 08/10);
  *                 any other added variant file must reach >= 90% of the product's own card (what the customer saw
  *                 before the new photo). Lineups: canvas
@@ -142,6 +145,21 @@ function restoredFrom(f: string): string | null {
   return null;
 }
 
+/** The unmarked original behind a watermark copy (<name>-wm<N>.webp): the last version of <dir>/<name>.<ext> that <base>'s
+ *  history held before it was deleted. Null when it is not a watermark copy or the original is not in history. */
+function unmarkedOf(f: string): Buffer | null {
+  const m = /^(.*)-wm\d*\.[^.]+$/.exec(f);
+  if (!m) return null;
+  for (const ext of [".webp", ".png", ".jpg"]) {
+    const p = m[1] + ext;
+    try {
+      const c = git(["log", "-1", "--format=%H", "--diff-filter=D", base, "--", p]).toString().trim();
+      if (c) return git(["show", `${c}^:${p}`]);
+    } catch { /* not in history */ }
+  }
+  return null;
+}
+
 function cardOf(dir: string): string | null {
   for (const n of ["card.webp", "card.png", "card.jpg"]) {
     try { git(["cat-file", "-e", `${base}:${dir}/${n}`]); return `${dir}/${n}`; } catch { /* next */ }
@@ -172,7 +190,7 @@ function cardOf(dir: string): string | null {
     const now = await phoneSharp(readFileSync(path.join(ROOT, f)));
     const problems: string[] = [];
     if (!isDetail && now.canvas < MIN_CANVAS) problems.push(`canvas ${now.canvas} < ${MIN_CANVAS}`);
-    let ref: string | null = null, refSharp: number | null = null, refFromTree = false;
+    let ref: string | null = null, refSharp: number | null = null, refFromTree = false, refBuf: Buffer | null = null;
     let refKind = st === "M" ? "the file it replaces" : "the product card";
     // a lineup's layout can change (strip → grid): the number then measures layout, not blur — canvas check only,
     // the owner judges a lineup by eye on the 3x / 1440 before/after
@@ -182,6 +200,11 @@ function cardOf(dir: string): string | null {
       const replaced = deleted.get(`${productDir(f)}|${idOf(f)}`);
       ref = replaced ?? cardOf(path.posix.dirname(f));
       if (replaced) refKind = "the option photo it replaces";
+      // a re-mark of the same picture: judge it against the unmarked original, not the earlier mark (header)
+      if (replaced && /-wm\d*\.[^.]+$/.test(replaced) && /-wm\d*\.[^.]+$/.test(f)) {
+        refBuf = unmarkedOf(replaced);
+        if (refBuf) refKind = "its unmarked original (re-mark of the same picture)";
+      }
       const newCard = newCardOf.get(path.posix.dirname(f));
       if (!replaced && ref && newCard) {
         const oldM = await phoneSharp(git(["show", `${base}:${ref}`])), newM = await phoneSharp(readFileSync(path.join(ROOT, newCard)));
@@ -192,7 +215,7 @@ function cardOf(dir: string): string | null {
       }
     }
     if (ref) {
-      refSharp = (await phoneSharp(refFromTree ? readFileSync(path.join(ROOT, ref)) : git(["show", `${base}:${ref}`]))).sharp;
+      refSharp = (await phoneSharp(refBuf ?? (refFromTree ? readFileSync(path.join(ROOT, ref)) : git(["show", `${base}:${ref}`])))).sharp;
       if (now.sharp < refSharp * RATIO) problems.push(`phoneSharp ${now.sharp} < 90% of ${refKind} (${refSharp})`);
     }
     if (problems.length) fail++;
