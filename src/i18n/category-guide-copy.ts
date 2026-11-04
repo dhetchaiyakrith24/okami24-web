@@ -11,8 +11,29 @@ export interface CategoryGuideCopy {
   families: { heading: string; body: string }[];
   /** Omitted = no line-up table on that page (its products have no battery / wattage / capacity trio, e.g. disposables). */
   table?: { heading: string; note: string; model: string; battery: string; power: string; capacity: string; externalCell: string };
+  /** Disposables only (round "disposable pod", 05/11): the brand table under the families. Figures are read from the catalog. */
+  brandTable?: { heading: string; lede: string; brand: string; models: string; from: string; topPuffs: string; bestSeller: string; note: string };
+  /** Disposables only: the puffs + budget chooser (DisposableChooser). {min} · {n} · {a} · {b} · {p} are filled by code. */
+  chooser?: ChooserCopy;
   faqHeading: string;
   faq: { question: string; answer: string }[];
+}
+
+export interface ChooserCopy {
+  heading: string;
+  lede: string;
+  puffPanelTitle: string;
+  budgetPanelTitle: string;
+  puffsUpFrom: string;
+  puffsRange: string;
+  puffsUpTo: string;
+  puffsExact: string;
+  priceUpTo: string;
+  priceRange: string;
+  priceUpFrom: string;
+  modelCount: string;
+  modelCountOne: string;
+  note: string;
 }
 
 // Facts re-checked against the verified rows 30/10: airflow slider = ARGUS G4 · G4 mini · VMATE i3 only (G3 mini fixed,
@@ -519,6 +540,32 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
             "[RELX Smash Go 12K](/products/relx-smash-go-12k) รองรับสูงสุด 12,000 พัฟ แบต 400mAh ชาร์จผ่าน USB-C ใช้คอยล์ MEGA MESH และมีความเข้มข้นให้เลือก 3% หรือ 5% ส่วน [RELX LUMI 18K](/products/relx-lumi-18k) ชื่อรุ่นระบุ 18,000 พัฟ [INFY 20K](/products/infy-20k) ร้านยืนยันความจุน้ำยาไว้ที่ 20mL และยืนยันว่าปรับช่องลมได้ ฝั่ง JOIWAY มี [Joiway F4](/products/joiway-f4) ที่มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น ระบุไว้สูงสุด 20,000 พัฟ แบ่งเป็นฝั่งละ 10,000 พัฟ แบต 650mAh และมีจอ LED ส่วน [Joiway F3](/products/joiway-f3) เป็นรุ่นกลิ่นเดียว ระบุไว้ 12,000 พัฟขึ้นไป ใช้นาโนคอยล์ และชาร์จผ่าน USB-C",
         },
       ],
+      brandTable: {
+        heading: "เทียบแต่ละยี่ห้อจากจำนวนรุ่น ราคา และพัฟ",
+        lede: "ตารางนี้สรุปแต่ละยี่ห้อจากรุ่นที่ร้านลงไว้บนหน้านี้ ให้เทียบกันได้ในที่เดียว ส่วนถ้าอยากเลือกจากจอ ช่องลม หรือสองกลิ่นในเครื่องเดียว ร้านเล่าไว้ที่ [พอตใช้แล้วทิ้ง ยี่ห้อไหนดี](/guides/choosing-a-disposable)",
+        brand: "ยี่ห้อ",
+        models: "รุ่น",
+        from: "ราคาเริ่ม",
+        topPuffs: "พัฟสูงสุด",
+        bestSeller: "ขายดี",
+        note: "ช่องที่ขึ้น “—” คือค่าที่ยังไม่ยืนยัน ป้าย “ขายดี” คือยี่ห้อที่มีรุ่นขายดีของร้าน ส่วนรุ่นอื่นบนหน้านี้ไม่ได้ระบุยี่ห้อ จึงไม่อยู่ในตารางนี้",
+      },
+      chooser: {
+        heading: "เลือกพอตใช้แล้วทิ้งตามพัฟหรืองบ",
+        lede: "ราคาบนหน้านี้เริ่มที่ {min} ถ้ามีจำนวนพัฟหรืองบในใจอยู่แล้ว ก็ดูรุ่นที่ตรงกันได้ด้านล่างนี้",
+        puffPanelTitle: "จำนวนพัฟที่อยากได้",
+        budgetPanelTitle: "งบที่ตั้งไว้",
+        puffsUpFrom: "{n} พัฟขึ้นไป",
+        puffsRange: "{a}–{b} พัฟ",
+        puffsUpTo: "ไม่เกิน {n} พัฟ",
+        puffsExact: "{n} พัฟ",
+        priceUpTo: "ไม่เกิน {p}",
+        priceRange: "{a}–{b}",
+        priceUpFrom: "{p} ขึ้นไป",
+        modelCount: "{n} รุ่น",
+        modelCountOne: "{n} รุ่น",
+        note: "ตัวเลขพัฟคือจำนวนสูงสุดที่ผู้ผลิตระบุ หรือตัวเลขในชื่อรุ่น ส่วนรุ่นที่ยังไม่ยืนยันจำนวนพัฟจะอยู่เฉพาะในรายการตามงบ",
+      },
       faqHeading: "คำถามที่พบบ่อย",
       faq: [
         {
@@ -564,6 +611,32 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
             "The [RELX Smash Go 12K](/products/relx-smash-go-12k) is rated at up to 12,000 puffs, with a MEGA MESH coil, a 400mAh battery that charges over USB-C, and a choice of 3% or 5% nicotine. The [RELX LUMI 18K](/products/relx-lumi-18k) carries 18,000 puffs in its model name. For the [INFY 20K](/products/infy-20k), we have confirmed a 20mL capacity and adjustable airflow ourselves. From JOIWAY, the [Joiway F4](/products/joiway-f4) has two tanks with one flavor each; turn the mouthpiece to switch. It is rated at up to 20,000 puffs, 10,000 per side, with a 650mAh battery and an LED display. The [Joiway F3](/products/joiway-f3) is the single-flavor model, rated at 12,000+ puffs, with a nano coil and USB-C charging.",
         },
       ],
+      brandTable: {
+        heading: "Brands compared by models, price and puffs",
+        lede: "This table sums up each brand from the models we list on this page, so you can compare them in one place. Screen, airflow and dual-tank details are on each product page.",
+        brand: "Brand",
+        models: "Models",
+        from: "From",
+        topPuffs: "Max puffs",
+        bestSeller: "Best seller",
+        note: "A dash (—) means there is no verified number yet. The “Best seller” tag marks a brand with one of our best-selling models. Other models on this page list no brand, so they are not in this table.",
+      },
+      chooser: {
+        heading: "Choose by puffs or budget",
+        lede: "Prices on this page start at {min}, and the models below are grouped by puff count and by budget.",
+        puffPanelTitle: "By puff count",
+        budgetPanelTitle: "By budget",
+        puffsUpFrom: "{n} puffs and up",
+        puffsRange: "{a}–{b} puffs",
+        puffsUpTo: "Up to {n} puffs",
+        puffsExact: "{n} puffs",
+        priceUpTo: "Up to {p}",
+        priceRange: "{a}–{b}",
+        priceUpFrom: "{p} and up",
+        modelCount: "{n} models",
+        modelCountOne: "{n} model",
+        note: "Puff figures are the top number the maker gives, or the number in the model name. Models with no verified puff figure appear only in the budget list.",
+      },
       faqHeading: "Common questions",
       faq: [
         {
@@ -609,6 +682,32 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
             "[RELX Smash Go 12K](/products/relx-smash-go-12k) 标称最高 12,000 口，MEGA MESH 雾化芯，400mAh 电池 USB-C 充电，尼古丁浓度可选 3% 或 5%。[RELX LUMI 18K](/products/relx-lumi-18k) 的型号名标明 18,000 口。[INFY 20K](/products/infy-20k) 经本店确认容量 20mL，进气可调。JOIWAY 的 [Joiway F4](/products/joiway-f4) 内有两个油仓，各装一种口味，转动烟嘴即可切换，标称最高 20,000 口，每侧 10,000 口，电池 650mAh，配 LED 屏；[Joiway F3](/products/joiway-f3) 是单一口味款，标称 12,000 口以上，采用 nano 雾化芯，USB-C 充电。",
         },
       ],
+      brandTable: {
+        heading: "按款数、价格和口数对比各品牌",
+        lede: "本表汇总本页所列型号，方便在同一处对比各品牌。屏幕、进气调节和双油仓等信息，请查看各产品页面。",
+        brand: "品牌",
+        models: "款数",
+        from: "起价",
+        topPuffs: "最高口数",
+        bestSeller: "热销",
+        note: "显示“—”表示暂无已核实的数据。“热销”标签表示该品牌有本店热销型号。本页其余型号未标注品牌，因此未列入此表。",
+      },
+      chooser: {
+        heading: "按口数或预算挑选",
+        lede: "本页价格 {min} 起，下方已按口数和预算分好组，可直接查看符合需求的型号。",
+        puffPanelTitle: "按口数",
+        budgetPanelTitle: "按预算",
+        puffsUpFrom: "{n} 口及以上",
+        puffsRange: "{a}–{b} 口",
+        puffsUpTo: "{n} 口以内",
+        puffsExact: "{n} 口",
+        priceUpTo: "{p} 以内",
+        priceRange: "{a}–{b}",
+        priceUpFrom: "{p} 及以上",
+        modelCount: "{n} 款",
+        modelCountOne: "{n} 款",
+        note: "口数取厂商标称的最高数值或型号名称中的数字；暂无已核实口数的型号仅列在“按预算”一栏。",
+      },
       faqHeading: "常见问题",
       faq: [
         {

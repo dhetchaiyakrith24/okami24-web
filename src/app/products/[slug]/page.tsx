@@ -63,6 +63,8 @@ import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
+import { DisposableChooser } from "@/components/catalog/DisposableChooser";
+import { disposableBrands, disposableChooser, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -218,6 +220,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const guideCopy = isEmptyCategory ? undefined : CATEGORY_GUIDE_COPY[category.id];
     const guideFaqJsonLd = guideCopy?.th ? articleFaqJsonLd(guideCopy.th.faq) : null;
     const listItems = guideCopy ? [...products, ...publishedProducts].map((p) => ({ name: p.displayName, path: `/products/${p.slug}` })) : undefined;
+    // Round "disposable pod" (05/11): the chooser and brand table read the live catalog; other categories have neither.
+    const lineup = category.id === "disposables" && !isEmptyCategory ? disposableLineup(products, publishedProducts) : null;
     return (
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
@@ -244,9 +248,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             inStockKeys={inStockEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
+          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
-        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} />}
+        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} />}
         {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
         {!isEmptyCategory && (
           <RelatedArticles
