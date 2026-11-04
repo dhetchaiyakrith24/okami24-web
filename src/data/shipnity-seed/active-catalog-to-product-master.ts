@@ -2467,8 +2467,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-162-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-9-v2-wm3.webp", alt: "Nexswitch 16K refill pod, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-162-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-10-v2-wm3.webp", alt: "Nexswitch 16K refill pod, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
-  // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
-  // Guava Kiwi have no poster, they show the no-photo panel).
+  // Pop Up 10K: all 18 flavours from the 31/10 + 02/11 studio set, one mouthpiece (the Grape render) on all 18, tinted per flavour by script (owner 05/11).
   "Pod-154": {
     "Pod-154-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-1-v2-wm3.webp", alt: "Pop Up 10K pod on its battery base, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
     "Pod-154-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-2-v2-wm3.webp", alt: "Pop Up 10K pod on its battery base, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
