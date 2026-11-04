@@ -10,37 +10,30 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 04/11 ~03:45 by the 9th main chat (local_624502cf) after the owner's /compact. Owner 04/11 ~03:30: child chats up to 5 (one-off over 13.6's 3);
-the main chat does not hand off, children may hand off themselves.
-13.7 deploy window (no merges 18:00–24:00) applies again from 04/11. MERGE ORDER TONIGHT = one PR at a time (each merge voids the others'
-verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204 → backdrop PR → gen-3 rollout PRs.
+Updated 04/11 ~11:45 by the 9th main chat (local_624502cf) — OWNER SHUT THE COMPUTER DOWN mid-queue, will come back. Re-read this + TEAM_RULES.
+Owner 04/11: child chats up to 5 (one-off over 13.6's 3); the main chat does not hand off, children may hand off themselves.
+13.7 deploy window: no merges 18:00–24:00. MERGE ORDER = one PR at a time, Friday sends "go" (each merge voids the others' verify stamps; verify --full refuses while 3412 is up).
 
-1 main = c0743392 (#1200). Merged 03–04/11 night: #1194 #1199 watermark gen 2 (all our pictures) · #1195 DHL packer note (temporary; carrier
-  stays by postcode, owner 04/11) · #1197 calm sale chip · #1198 VOOPOO SEO + UWELL coil-53 · #1200 WOTOFO nexPOD 15K article +
-  "หัวพอตบรรจุสำเร็จ" · #1201 docs. Closed unmerged: #1203 RELX Smash Go capacity (20 vs 18 mL unprovable → pack photo needed).
-  Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet
-  (site sync fine; owner asks the warehouse whether 2–3/11 orders got numbers).
-2 OPEN WORK (all draft unless said):
-  a Friday — branch claude/thai-glue-particle-0411 head a9c1b734 (tree `_incoming/wt-dhl-0311`) = draft PR #1205; verify 63/63 was on a9c1b734 — re-run after merging main:
-    ค่ะ/คะ/ครับ glue (thai-typography POLITE_PARTICLE, 【แตะได้】 owner 03/11) · spec labels ≤ 16 chars never shrink (SHORT_SPEC_LABEL) ·
-    4 Thai category intros in 2 paragraphs (owner "ตามเหมาะสม SEO"). Evidence `_incoming/glue-0411/`: full-site wb before/after, product
-    pages wb-diff3 (17 fixed / 0 new), category wb-diff4 (2 fixed / 1 new: e-liquid "บทความ" alone before its link — judge on the shots),
-    shots/ before (main c0743392) + after for pod-169 + e-liquid at 390/1440. Shots read by Friday 04/11: pass (crops in `_incoming/glue-0411/crops/`). Gate failed `locked` only because this block's round line
-    was labelled "2N" — `scripts/lib/round-file.js` reads the round from a line matching `3[a-z]? OPEN`; relabelled "3o" here.
-    NEXT: merge this docs PR → merge main into the glue branch → verify --full → gate → checker → merge.
-  b #1202 label-price child (local_b64f9a62): product cards + in-stock filter read LIVE stock (owner queue 31/10) · BIG · waits for "go".
-  c #1204 images child (local_67ec6cc2): watermark gen 3 = owner-approved sample 4A (04/11 ~02:55): mark on the product as gen 2, ~12 px soft
-    spill, 18/20% alternating per row, 7–8 repeats (was 10); product box from the unmarked original keeps every card's size identical.
-    After merge: gen-3 rollout ≤100 pictures/PR. Higgsfield generation still blocked (owner: switch that chat out of Auto — รอพี่ตรวจ 89).
-  d articles child (local_1655fd9c, renamed "ฉากหลังหน้าสินค้าทั้งหมด → โทนการ์ดชำระเงิน"): NEW owner 04/11 ~03:00 — /products backdrop
-    (SamuraiBackdrop: colour samurai + red mist reads "game") → monochrome grey/black, payment-card texture, faint. Drafts A (engraved
-    line-art samurai on brushed charcoal) / B (texture only) → owner picked A → built: branch claude/products-backdrop-0411 5b44c5f9,
-    proof `_incoming/art0311b-bg/proof-before-after.png` (visible text 0 changes) → waits for "go" (verify on 3412 after #1204).
-  e NEW child seo-full-0411 (local_4afff633): owner 04/11 "SEO จัดเต็ม" — indexing state, score gaps, green-key article audit + next keys,
-    YouTube coverage → fix as draft PRs, report to Friday.
-  f NEW child speed-sec-0411 (local_c2dd8fa6): owner 04/11 — speed (Lighthouse), security headers, polish + product-detail coverage
-    (article / spec / pictures) → fix as draft PRs, report to Friday.
-  TEST MACHINE 3412: queue = glue #1205 → #1202 → #1204 → backdrop → rollout; children e/f measure on their own ports.
+1 main = 230d43b8 (#1220). Merged 04/11: #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
+  #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
+  (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
+  (pod-losing-flavor · pod-low-vapor · types-of-pods; indexing requested in GSC) · #1206 #1207 docs. Earlier night: #1194–#1201, see git log.
+  Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet (site sync fine; owner asks the warehouse).
+2 OPEN WORK, in merge order:
+  a #1225 Friday, branch claude/long-link-wrap-0411 head 04dd5640, tree `_incoming/wt-dhl-0311` = LIVE BUG: a long inline article link was nowrap and widened the page
+    (/products/pod-169 431 px at 375; every page with a long label). Fix in renderInline: long label (>28) wraps at spaces only, typography first so model names stay bound.
+    verify 65/65 stamped 04dd5640 · checker round 1 FAIL on 9fa5a7dc (model names split) → fixed in 04dd5640 · checker round 2 NOT RUN.
+    Proof `_incoming/glue-0411/`: width-measure.md (th 390/375 ok, 320 one page 323 px: /products/heated-tobacco-devices, cause unchecked · en ok · zh first 26 pages only),
+    crops/link-pod169-390.png. Screens must be re-shot on 04dd5640 only if the checker asks. NEXT: merge main in → verify → gate → checker (narrow: the 4 labels + width file) → merge.
+  b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset · BIG (next.config) · draft, waits for "go". CSP plan in its notes (not built).
+  c #1213 same child: home intro loaded only when its switch is on (JS 1049→905 KB, look unchanged) · draft, waits for "go".
+  d #1215 same child: --foreground-dim #78777c→#87868b (owner "ปรับเล็กน้อย") · proof gaps closed · draft, waits for "go".
+  e gen-3 watermark batches 3–11, child images-0211b (local_67ec6cc2), drafts stacked on each other: #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 · each needs
+    merge main → verify → gate → checker → ready. nexSwitch 16K pod + RELX Creator get marked after their pictures are redone (Higgsfield blocked, รอพี่ตรวจ 89).
+  Children seo-full-0411 (local_4afff633) and articles-0311b (local_1655fd9c) are finished — archive only on the owner's OK. SEO findings: Google hid us on general terms since 27/10
+    (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
+  Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
+    zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers · "IQOS รุ่นก่อน" vs the searched "รุ่นเก่า".
 3o OPEN ROUND 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`. Blocks 1 · 2ก · 2ข · 4
     live; block 3 (watermark) live at gen 2, gen-3 change pending the owner's sample OK; block 5 (articles) ends with #1200.
     Close (skill round-close, tag queue-0211) after #1200 + the glue PR + the gen-3 watermark decision.
@@ -73,8 +66,7 @@ verify stamps): this docs PR (gate fix below) → glue #1205 → #1202 → #1204
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · EasySlip quota 497/1000 (23/10) — warn before it runs out.
 3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77).
 3w Home switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Still build-time:
-  listing cards, the in-stock filter, JSON-LD → child 2c is moving cards to live. Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
+3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Still build-time: JSON-LD and the struck price / −N% (cards went live 04/11, #1202). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". 【ห้ามแตะ】 coil-1/72/94 photos · every price file. New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18).
 3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
