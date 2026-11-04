@@ -13,7 +13,7 @@
  *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant-<id> file
  *                 that replaces an option photo deleted in the same diff (same product, same <id> in any case, e.g.
  *                 variants/Coil-1-1.webp -> variant-coil-1-1.webp — a new name keeps the CDN from serving the old file;
- *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm / -wm2 / -wm3, replaces variant-<id> / an earlier mark the
+ *                 a watermarked copy from scripts/watermark.js, variant-<id>-wm / -wm2 / -wm3 / -wm4, replaces variant-<id> / an earlier mark the
  *                 same way; a RE-MARK — a -wmN copy replacing an earlier -wmM copy of the same picture — is measured against the
  *                 unmarked original in <base>'s history instead: the earlier, denser mark's texture reads as detail (generation 3,
  *                 owner 04/11, is lighter than generation 2), so a lighter mark on the same pixels would fail for being lighter)

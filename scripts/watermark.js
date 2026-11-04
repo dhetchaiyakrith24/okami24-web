@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
-//   node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...
+//   node scripts/watermark.js [--gen 3|4] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...
+// Generation 4 (default, owner 05/11 "แปะแค่ลายน้ำ 2 พอครับ หมวกไม่ต้องใส่หลังจากนี้") = the text rows only, no helmet, -wm4. Its strength is the
+// one pair GENERATIONS[4].text below: change it and re-run from the originals. --gen 3 = the helmet set already on the site.
 // Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 18%; "OKAMI24.STORE"
 // (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 289 / rows 74), the rows alternating 20% / 18%.
 // Generation 3 = owner 04/11, sample sheet _incoming/img-0211b/wm3-sample4 version A ("ล่าสุดคือ 390 ใช่ไหม ถ้าใช่ ตามนั้นเลยครับ"):
@@ -30,9 +32,12 @@ const { execFileSync } = require("child_process");
 const ROOT = process.env.WM_ROOT || path.join(__dirname, "..");
 const FONT = path.join(__dirname, "lib/watermark/BarlowCondensed-600.ttf");
 const HELMET = path.join(__dirname, "lib/watermark/okami-helmet-white.png");
-const TEXT_A = 0.20, TEXT_B = 0.18, HELMET_OP = 0.18, SPACING = 1.155; // text rows alternate A / B
+const GENERATIONS = { 3: { text: [0.20, 0.18], helmet: 0.18 }, 4: { text: [0.20, 0.18], helmet: 0 } };
+const GEN = (() => { const i = process.argv.indexOf("--gen"); return i >= 0 ? Number(process.argv[i + 1]) : 4; })();
+if (!GENERATIONS[GEN]) { console.error(`unknown --gen ${GEN}`); process.exit(2); }
+const [TEXT_A, TEXT_B] = GENERATIONS[GEN].text, HELMET_OP = GENERATIONS[GEN].helmet, SPACING = 1.155; // text rows alternate A / B
 const FEATHER = 0.012; // the spill past a cut-out's edge: 1.2% of the width, fading to 0
-const SUFFIX = "-wm3", EARLIER = /-wm2?$/; // this generation's name tag · the tags earlier generations left
+const SUFFIX = `-wm${GEN}`, EARLIER = GEN === 4 ? /-wm[23]?$/ : /-wm2?$/; // this generation's name tag · the tags earlier generations left
 const BOXES = path.join(ROOT, "src/data/product-boxes.json"); // unmarked product box per marked file, read by media-quality.ts
 
 /** Two masks of the text tiling: the even rows (TEXT_A) and the odd rows (TEXT_B). */
@@ -97,7 +102,7 @@ function featherBand(data, W, H) {
 async function mark(file) {
   const meta = await sharp(file).metadata();
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const W = info.width, H = info.height, [tA, tB] = await textMasks(W, H), h = await helmetMask(W, H);
+  const W = info.width, H = info.height, [tA, tB] = await textMasks(W, H), h = HELMET_OP ? await helmetMask(W, H) : null;
   // a cut-out has transparent pixels; an alpha channel alone does not make one (story banners carry alpha, all 255)
   let cutout = false;
   if (meta.hasAlpha) for (let i = 3; i < data.length; i += 4) if (data[i] === 0) { cutout = true; break; }
@@ -109,7 +114,7 @@ async function mark(file) {
       if (sa > 0) { data[i] = data[i + 1] = data[i + 2] = 255; data[i + 3] = Math.round(sa * 255); }
       continue;
     }
-    const a = Math.min(1, text + (h[p] / 255) * HELMET_OP);
+    const a = Math.min(1, text + (h ? (h[p] / 255) * HELMET_OP : 0));
     for (let c = 0; c < 3; c++) data[i + c] = Math.round(data[i + c] * (1 - a) + 255 * a);
   }
   let img = sharp(data, { raw: { width: W, height: H, channels: 4 } });
@@ -153,7 +158,7 @@ function sourceFiles(dir, out = []) {
   // Git Bash rewrites a leading "/assets/…" into a Windows path, so take anything that holds assets/products/
   const list = args.filter((a) => /assets[\\/]products[\\/]/.test(a)).map((a) => "/" + a.slice(a.search(/assets[\\/]products[\\/]/)).replace(/\\/g, "/"));
   if (!list.length) {
-    console.error("usage: node scripts/watermark.js [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...");
+    console.error("usage: node scripts/watermark.js [--gen 3|4] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...");
     process.exit(2);
   }
   const sources = sourceFiles(path.join(ROOT, "src"));
