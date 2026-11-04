@@ -10,26 +10,30 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 04/11 ~11:45 by the 9th main chat (local_624502cf) — OWNER SHUT THE COMPUTER DOWN mid-queue, will come back. Re-read this + TEAM_RULES.
+Updated 04/11 ~21:00 by the 9th main chat (local_624502cf). The computer lost power ~20:45; nothing was lost (checked). Re-read this + TEAM_RULES.
+CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
+in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
+BEFORE REOPENING, close the shipping point in 2g.
 Owner 04/11: child chats up to 5 (one-off over 13.6's 3); the main chat does not hand off, children may hand off themselves.
 13.7 deploy window: no merges 18:00–24:00. MERGE ORDER = one PR at a time, Friday sends "go" (each merge voids the others' verify stamps; verify --full refuses while 3412 is up).
 
-1 main = 230d43b8 (#1220). Merged 04/11: #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
+1 main = 40e55b12 (#1225). Merged 04/11: #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
   #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
   (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
   (pod-losing-flavor · pod-low-vapor · types-of-pods; indexing requested in GSC) · #1206 #1207 docs. Earlier night: #1194–#1201, see git log.
   Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet (site sync fine; owner asks the warehouse).
 2 OPEN WORK, in merge order:
-  a #1225 Friday, branch claude/long-link-wrap-0411 head 04dd5640, tree `_incoming/wt-dhl-0311` = LIVE BUG: a long inline article link was nowrap and widened the page
-    (/products/pod-169 431 px at 375; every page with a long label). Fix in renderInline: long label (>28) wraps at spaces only, typography first so model names stay bound.
-    verify 65/65 stamped 04dd5640 · checker round 1 FAIL on 9fa5a7dc (model names split) → fixed in 04dd5640 · checker round 2 NOT RUN.
-    Proof `_incoming/glue-0411/`: width-measure.md (th 390/375 ok, 320 one page 323 px: /products/heated-tobacco-devices, cause unchecked · en ok · zh first 26 pages only),
-    crops/link-pod169-390.png. Screens must be re-shot on 04dd5640 only if the checker asks. NEXT: merge main in → verify → gate → checker (narrow: the 4 labels + width file) → merge.
-  b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset · BIG (next.config) · draft, waits for "go". CSP plan in its notes (not built).
+  a #1213 + #1215, then the batches in e: queue from 00:05 Thai.
+  b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
+    Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
   c #1213 same child: home intro loaded only when its switch is on (JS 1049→905 KB, look unchanged) · draft, waits for "go".
   d #1215 same child: --foreground-dim #78777c→#87868b (owner "ปรับเล็กน้อย") · proof gaps closed · draft, waits for "go".
   e gen-3 watermark batches 3–11, child images-0211b (local_67ec6cc2), drafts stacked on each other: #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 · each needs
     merge main → verify → gate → checker → ready. nexSwitch 16K pod + RELX Creator get marked after their pictures are redone (Higgsfield blocked, รอพี่ตรวจ 89).
+  g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
+    Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
+    Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
+    Owner chose "ask for 35"; Friday drafted the message, the owner sends it. Site fix waits for the warehouse's answer (can they set 35 themselves?). TFIT M Power 20K: rate 240, the owner's cost Excel says 230 (not edited).
   Children seo-full-0411 (local_4afff633) and articles-0311b (local_1655fd9c) are finished — archive only on the owner's OK. SEO findings: Google hid us on general terms since 27/10
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
@@ -55,7 +59,9 @@ Owner 04/11: child chats up to 5 (one-off over 13.6's 3); the main chat does not
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main.
   f back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion · staff-by-Gmail NOT built
      (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
-3 OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
+3 OWNER ASKED 04/11 (later, plan first): a back-office button showing web orders per day, sales, profit · owner-pressable switches: cart, API, close the site temporarily ·
+  back office the owner runs himself (hide products etc.) · daily income / sales / profit from the slip room covering LINE + web (slip amount − cost − ฿35 warehouse shipping per order).
+  OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
   g SALES LOG (owner 30/10, owner-only view) · Q9 staff dashboard [PLAN WITH THE OWNER FIRST] — unchanged, see git show 37a1b052:docs/HANDOFF.md §16 3g.
   h agent `visitor` not yet run for real — first use = the next big round or new look · shop accounts audit = separate project, PARKED.
