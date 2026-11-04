@@ -15,11 +15,26 @@ export interface CategoryGuideCopy {
   brandTable?: { heading: string; lede: string; brand: string; models: string; from: string; topPuffs: string; bestSeller: string; note: string };
   /** Disposables only: the puffs + budget chooser (DisposableChooser). {min} · {n} · {a} · {b} · {p} are filled by code. */
   chooser?: ChooserCopy;
+  /** Disposables only: the table of every model on the page. */
+  compareTable?: CompareTableCopy;
   faqHeading: string;
   faq: { question: string; answer: string }[];
 }
 
+export interface CompareTableCopy {
+  heading: string;
+  model: string;
+  puffs: string;
+  ml: string;
+  mah: string;
+  price: string;
+  note: string;
+  unconfirmed: string;
+}
+
 export interface ChooserCopy {
+  /** The link at the chooser's foot, to the table of every model. */
+  jump: string;
   heading: string;
   lede: string;
   puffPanelTitle: string;
@@ -551,6 +566,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         note: "ช่องที่ขึ้น “—” คือค่าที่ยังไม่ยืนยัน ป้าย “ขายดี” คือยี่ห้อที่มีรุ่นขายดีของร้าน ส่วนรุ่นอื่นบนหน้านี้ไม่ได้ระบุยี่ห้อ จึงไม่อยู่ในตารางนี้",
       },
       chooser: {
+        jump: "ดูตารางเทียบทุกรุ่น",
         heading: "เลือกพอตใช้แล้วทิ้งตามพัฟหรืองบ",
         lede: "ราคาบนหน้านี้เริ่มที่ {min} ถ้ามีจำนวนพัฟหรืองบในใจอยู่แล้ว ก็ดูรุ่นที่ตรงกันได้ด้านล่างนี้",
         puffPanelTitle: "จำนวนพัฟที่อยากได้",
@@ -565,6 +581,16 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         modelCount: "{n} รุ่น",
         modelCountOne: "{n} รุ่น",
         note: "ตัวเลขพัฟคือจำนวนสูงสุดที่ผู้ผลิตระบุ หรือตัวเลขในชื่อรุ่น ส่วนรุ่นที่ยังไม่ยืนยันจำนวนพัฟจะอยู่เฉพาะในรายการตามงบ",
+      },
+      compareTable: {
+        heading: "สเปกหลักของทุกรุ่นบนหน้านี้",
+        model: "รุ่น",
+        puffs: "พัฟ",
+        ml: "mL",
+        mah: "mAh",
+        price: "ราคา",
+        note: "เรียงตามจำนวนพัฟจากมากไปน้อย ตัวเลขสเปกมาจากข้อมูลของผู้ผลิต ยกเว้นความจุของ INFY 20K ที่ร้านยืนยันเอง ช่องที่ขึ้น “—” คือค่าที่ยังไม่ยืนยัน",
+        unconfirmed: "ยังไม่ยืนยัน",
       },
       faqHeading: "คำถามที่พบบ่อย",
       faq: [
@@ -622,6 +648,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         note: "A dash (—) means there is no verified number yet. The “Best seller” tag marks a brand with one of our best-selling models. Other models on this page list no brand, so they are not in this table.",
       },
       chooser: {
+        jump: "See the full table",
         heading: "Choose by puffs or budget",
         lede: "Prices on this page start at {min}, and the models below are grouped by puff count and by budget.",
         puffPanelTitle: "By puff count",
@@ -636,6 +663,16 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         modelCount: "{n} models",
         modelCountOne: "{n} model",
         note: "Puff figures are the top number the maker gives, or the number in the model name. Models with no verified puff figure appear only in the budget list.",
+      },
+      compareTable: {
+        heading: "Key specs for every model on this page",
+        model: "Model",
+        puffs: "Puffs",
+        ml: "mL",
+        mah: "mAh",
+        price: "Price",
+        note: "Sorted by puffs, highest first. Spec figures come from the makers, except the INFY 20K's capacity, which we confirmed ourselves. A dash (—) means there is no verified number yet.",
+        unconfirmed: "Not verified yet",
       },
       faqHeading: "Common questions",
       faq: [
@@ -693,6 +730,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         note: "显示“—”表示暂无已核实的数据。“热销”标签表示该品牌有本店热销型号。本页其余型号未标注品牌，因此未列入此表。",
       },
       chooser: {
+        jump: "查看完整对比表",
         heading: "按口数或预算挑选",
         lede: "本页价格 {min} 起，下方已按口数和预算分好组，可直接查看符合需求的型号。",
         puffPanelTitle: "按口数",
@@ -707,6 +745,16 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         modelCount: "{n} 款",
         modelCountOne: "{n} 款",
         note: "口数取厂商标称的最高数值或型号名称中的数字；暂无已核实口数的型号仅列在“按预算”一栏。",
+      },
+      compareTable: {
+        heading: "本页各型号主要规格",
+        model: "型号",
+        puffs: "口数",
+        ml: "mL",
+        mah: "mAh",
+        price: "价格",
+        note: "按口数从高到低排列。规格数据均来自厂商，INFY 20K 的容量经本店确认；显示“—”表示暂无已核实的数据。",
+        unconfirmed: "未核实",
       },
       faqHeading: "常见问题",
       faq: [

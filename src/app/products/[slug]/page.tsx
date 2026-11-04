@@ -64,7 +64,7 @@ import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { DisposableChooser } from "@/components/catalog/DisposableChooser";
-import { disposableBrands, disposableChooser, disposableLineup } from "@/lib/disposable-lineup";
+import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -251,7 +251,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
-        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} />}
+        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}
         {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
         {!isEmptyCategory && (
           <RelatedArticles

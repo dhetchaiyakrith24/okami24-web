@@ -73,6 +73,12 @@ export function disposableLineup(products: readonly Product[], published: readon
   ];
 }
 
+/** The table of every model: puffs high to low, then price; no verified puffs after them by price; the lookalike last, so
+ *  a low price never lifts it into a place that reads as a pick. */
+export function disposableCompareRows(lineup: readonly LineupRow[]): LineupRow[] {
+  return [...lineup].sort((x, y) => Number(x.listOnly) - Number(y.listOnly) || byPuffsThenPrice(x, y));
+}
+
 /** A chooser group. `kind` + `a`/`b` pick the label template. Band edges are constants; who sits in a band and every figure
  *  shown are read from the rows, so a price change moves the model and an empty band disappears. */
 export interface ChooserGroup {

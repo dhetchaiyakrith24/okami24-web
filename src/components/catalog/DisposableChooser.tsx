@@ -80,6 +80,9 @@ export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | 
           <Groups title={c.budgetPanelTitle} groups={data.budgetGroups} meta={budgetMeta} copy={c} unit={unit} t={t} />
         </div>
         <p className="text-xs text-foreground-dim">{t(c.note)}</p>
+        <a href="#all-models" className="w-fit text-sm font-medium text-ember underline-offset-4 hover:underline">
+          {t(c.jump)}
+        </a>
       </div>
     </section>
   );

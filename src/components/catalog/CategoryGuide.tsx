@@ -8,7 +8,8 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { CategoryGuideCopy } from "@/i18n/category-guide-copy";
 import type { CategorySpecRow } from "@/lib/category-spec-table";
-import type { BrandRow } from "@/lib/disposable-lineup";
+import type { BrandRow, LineupRow } from "@/lib/disposable-lineup";
+import { DisposableCompareTable } from "@/components/catalog/DisposableCompareTable";
 import { baht, thousands } from "@/components/catalog/lineup-format";
 
 /**
@@ -20,7 +21,7 @@ import { baht, thousands } from "@/components/catalog/lineup-format";
  * Parts reused from pages that already passed: SectionHeading, the editorial FAQ markup, the article inline-link renderer and the
  * editorial compare-table rules.
  */
-export function CategoryGuide({ copy, rows, brands = [] }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[] }) {
+export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[]; lineup?: LineupRow[] }) {
   const { locale } = useLocale();
   const c = copy[locale] ?? copy.en ?? copy.th;
   if (!c) return null;
@@ -94,6 +95,7 @@ export function CategoryGuide({ copy, rows, brands = [] }: { copy: Partial<Recor
               </div>
             </div>
           )}
+          {c.compareTable && lineup.length > 0 && <DisposableCompareTable copy={c.compareTable} rows={lineup} />}
           {table && rows.length > 0 && (
             <div className="flex flex-col gap-4">
               <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground">{t(table.heading)}</h3>

@@ -13,7 +13,7 @@ import { getProductsByCategory } from "@/data/products";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { getPublishedProductsByCategory } from "@/data/shipnity-seed/storefront-bridge";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
-import { disposableBrands, disposableChooser, disposableLineup } from "@/lib/disposable-lineup";
+import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { verifiedRows } from "@/lib/verified-specs";
 
 interface Result {
@@ -51,6 +51,10 @@ check("every priced model sits in exactly one budget band", inBudget.length === 
 const inPuffs = chooser.puffGroups.flatMap((g) => g.rows.map((r) => r.slug));
 const shouldPuffs = lineup.filter((r) => !r.listOnly && r.price !== null && r.puffs !== null).map((r) => r.slug);
 check("every model with verified puffs sits in exactly one puff group", inPuffs.length === shouldPuffs.length && new Set(inPuffs).size === inPuffs.length && shouldPuffs.every((s) => inPuffs.includes(s)));
+
+const table = disposableCompareRows(lineup);
+check("the table lists every model on the page", table.length === lineup.length);
+check("the table ends with the lookalike", table[table.length - 1]?.listOnly === true);
 
 const copy = CATEGORY_GUIDE_COPY.disposables;
 for (const locale of ["th", "en", "zh"] as const) {
