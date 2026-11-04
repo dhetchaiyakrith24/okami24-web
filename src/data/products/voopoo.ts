@@ -1408,7 +1408,7 @@ export const voopooProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // 05/10 (batch 2f-img): card-v2 = the Cyan Blue photo of the colour set below, tilted 12° like every VOOPOO card.
-        src: "/assets/products/vmate-i3/card-v2-wm2.webp",
+        src: "/assets/products/vmate-i3/card-v2-wm3.webp",
         alt: "VOOPOO VMATE i3, Cyan Blue, tilted product shot",
         angle: "Front, tilted 12°",
         transparentBackground: true,
@@ -1432,27 +1432,27 @@ export const voopooProducts: Product[] = [
     // owner passed the draft 05/10. Swatches = the median body colour of each photo (Neon = violet, not lime).
     // Scripts + fidelity sheet: _incoming/sitewide-template/2/2fimg/i3/ (i3-site.js, fid-sheet.png).
     colorVariants: [
-      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#83bec3", image: { src: "/assets/products/vmate-i3/variant-cyan-blue-v2-wm2.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
-      { id: "silver-black", name: "Silver Black", swatchHex: "#8f8d94", image: { src: "/assets/products/vmate-i3/variant-silver-black-v2-wm2.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
-      { id: "purple", name: "Purple", swatchHex: "#d7bbda", image: { src: "/assets/products/vmate-i3/variant-purple-v2-wm2.webp", alt: "VOOPOO VMATE i3, Purple" } },
-      { id: "neon", name: "Neon", swatchHex: "#953bdf", image: { src: "/assets/products/vmate-i3/variant-neon-v2-wm2.webp", alt: "VOOPOO VMATE i3, Neon" } },
-      { id: "pink", name: "Pink", swatchHex: "#d4949a", image: { src: "/assets/products/vmate-i3/variant-pink-v2-wm2.webp", alt: "VOOPOO VMATE i3, Pink" } },
-      { id: "black", name: "Black", swatchHex: "#433f44", image: { src: "/assets/products/vmate-i3/variant-black-v2-wm2.webp", alt: "VOOPOO VMATE i3, Black" } },
-      { id: "red", name: "Red", swatchHex: "#cb4346", image: { src: "/assets/products/vmate-i3/variant-red-v2-wm2.webp", alt: "VOOPOO VMATE i3, Red" } },
-      { id: "yellow-orange-gradient", name: "Yellow-orange Gradient", swatchHex: "#f39476", image: { src: "/assets/products/vmate-i3/variant-yellow-orange-gradient-v2-wm2.webp", alt: "VOOPOO VMATE i3, Yellow-orange Gradient" } },
-      { id: "green-gold-gradient", name: "Green-gold Gradient", swatchHex: "#bacbb4", image: { src: "/assets/products/vmate-i3/variant-green-gold-gradient-v2-wm2.webp", alt: "VOOPOO VMATE i3, Green-gold Gradient" } },
-      { id: "forest-green", name: "Forest Green", swatchHex: "#75aca3", image: { src: "/assets/products/vmate-i3/variant-forest-green-v2-wm2.webp", alt: "VOOPOO VMATE i3, Forest Green" } },
-      { id: "starlight-red", name: "Starlight Red", swatchHex: "#f16580", image: { src: "/assets/products/vmate-i3/variant-starlight-red-v2-wm2.webp", alt: "VOOPOO VMATE i3, Starlight Red" } },
+      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#83bec3", image: { src: "/assets/products/vmate-i3/variant-cyan-blue-v2-wm3.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
+      { id: "silver-black", name: "Silver Black", swatchHex: "#8f8d94", image: { src: "/assets/products/vmate-i3/variant-silver-black-v2-wm3.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
+      { id: "purple", name: "Purple", swatchHex: "#d7bbda", image: { src: "/assets/products/vmate-i3/variant-purple-v2-wm3.webp", alt: "VOOPOO VMATE i3, Purple" } },
+      { id: "neon", name: "Neon", swatchHex: "#953bdf", image: { src: "/assets/products/vmate-i3/variant-neon-v2-wm3.webp", alt: "VOOPOO VMATE i3, Neon" } },
+      { id: "pink", name: "Pink", swatchHex: "#d4949a", image: { src: "/assets/products/vmate-i3/variant-pink-v2-wm3.webp", alt: "VOOPOO VMATE i3, Pink" } },
+      { id: "black", name: "Black", swatchHex: "#433f44", image: { src: "/assets/products/vmate-i3/variant-black-v2-wm3.webp", alt: "VOOPOO VMATE i3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#cb4346", image: { src: "/assets/products/vmate-i3/variant-red-v2-wm3.webp", alt: "VOOPOO VMATE i3, Red" } },
+      { id: "yellow-orange-gradient", name: "Yellow-orange Gradient", swatchHex: "#f39476", image: { src: "/assets/products/vmate-i3/variant-yellow-orange-gradient-v2-wm3.webp", alt: "VOOPOO VMATE i3, Yellow-orange Gradient" } },
+      { id: "green-gold-gradient", name: "Green-gold Gradient", swatchHex: "#bacbb4", image: { src: "/assets/products/vmate-i3/variant-green-gold-gradient-v2-wm3.webp", alt: "VOOPOO VMATE i3, Green-gold Gradient" } },
+      { id: "forest-green", name: "Forest Green", swatchHex: "#75aca3", image: { src: "/assets/products/vmate-i3/variant-forest-green-v2-wm3.webp", alt: "VOOPOO VMATE i3, Forest Green" } },
+      { id: "starlight-red", name: "Starlight Red", swatchHex: "#f16580", image: { src: "/assets/products/vmate-i3/variant-starlight-red-v2-wm3.webp", alt: "VOOPOO VMATE i3, Starlight Red" } },
     ],
     // "ทั้งหมด" = two groups in voopoo.com order (6 + 5), the VOOPOO pod layout: _incoming/image-sitewide/dsx/vp-relx2.js
     // vmate-i3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/vmate-i3/lineup-v2-wm2.webp",
+      src: "/assets/products/vmate-i3/lineup-v2-wm3.webp",
       alt: "VOOPOO VMATE i3, colours 1–6 of 11",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/vmate-i3/lineup2-v2-wm2.webp",
+      src: "/assets/products/vmate-i3/lineup2-v2-wm3.webp",
       alt: "VOOPOO VMATE i3, colours 7–11 of 11",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
