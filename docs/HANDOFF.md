@@ -10,27 +10,26 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 04/11 ~21:40 by the 9th main chat (local_624502cf) at the owner's hand-off. The computer lost power ~20:45; nothing was lost [checked]. Re-read this + TEAM_RULES.
+Updated 05/11 ~01:50 by the 10th main chat (local_7b34781b), mid-queue. Re-read this + TEAM_RULES.
 CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
 in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
 BEFORE REOPENING, close the shipping point in 2g.
 Owner 04/11: child chats up to 5 (one-off over 13.6's 3). Owner 04/11 evening, for this queue: "ขึ้นเว็บตอนไหนก็ขึ้นไปเลย" = the 18:00–24:00 window does not hold it up.
-MERGE ORDER = one PR at a time, Friday sends "go": main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
+MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
+MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
 
-1 main = 397f9807 (#1213). Merged 04/11: #1213 home intro loads only when its switch is on (home JS 1049→905 KB, look unchanged) · #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
+1 main = 22479905 (#1224). Merged 04/11–05/11 by the 10th chat: #1227 ฿35 line (customer total unchanged; not proven: how Shipnity treats fee_lines, read the first real ฿50 order) · #1215 grey #87868b (surface-3 hover 3.91:1, below 4.5, checker note) · gen-3 watermark batches 3–11 #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 as one series (13.5 #1): final checker PASS 1976f65f, 831 pictures re-made byte-identical, evidence `_incoming/wm3-final-check-1976f65f/`, 1,003 of 1,003 now -wm3.
+  Merged 04/11 earlier: #1213 home intro loads only when its switch is on (home JS 1049→905 KB, look unchanged) · #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
   #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
   (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
   (pod-losing-flavor · pod-low-vapor · types-of-pods; indexing requested in GSC) · #1206 #1207 docs. Earlier night: #1194–#1201, see git log.
   Warehouse "103" = order #0075 (EMS, correct). Tracking: Shipnity's last write-back 2/11 22:39 → #0062–#0077 have no tracking yet (site sync fine; owner asks the warehouse).
 2 OPEN WORK, in merge order:
-  a #1227 Friday, branch claude/warehouse-ship-35 head e1dd4e69, tree `_incoming/wt-dhl-0311`, READY (not draft): orders carry the warehouse's ฿35 shipping line, customer total unchanged
-    (paid 0 = discount 35 · 35 = none · 50 = fee line 15); orders sent before WAREHOUSE_RATE_SINCE 2026-11-04T15:00Z read back as sent (50). verify 65/65, checker round 1 FAIL (read-back), round 2 + 3 PASS, body = PASS e1dd4e69.
-    NEXT: GitHub checks green → `node scripts/self-merge-check.js --pr 1227` in that tree → merge --match-head-commit AFTER 15:00Z (22:00 Thai), or move the constant. Not proven: how Shipnity treats fee_lines → read the first real ฿50 order after the cart reopens.
   b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
     Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
-  d #1215 child speed-sec-0411: --foreground-dim #78777c→#87868b (owner "ปรับเล็กน้อย") · proof gaps closed · draft, waits for "go".
-  e gen-3 watermark batches 3–11, child images-0211b (local_67ec6cc2), drafts stacked on each other: #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 · each needs
-    merge main → verify → gate → checker → ready. nexSwitch 16K pod + RELX Creator get marked after their pictures are redone (Higgsfield blocked, รอพี่ตรวจ 89).
+  c #1229 child images-fix-0511 (local_0b072cd4), draft, head 1b847cb0+: SKE 8 flavours · Pop Up 18 (owner "ใช้ทั้ง 18 รูป", mouthpieces levelled by script) · RELX Creator 5 colours + lineup · Pod Pro 2 5 flavours · Caliburn G2 pod · nexSwitch 16K pod. Credits 16 used (7 + 9). Waits on the owner: round-2 sheets · Pod Pro 2 printed "3%" vs maker 20MG/ML (rec. 2%) · DRAG X3 1 credit. Then send it "go" (merge main, verify, gate, checker). JOIWAY F4 kept. Do NOT generate ZERO PRO Copper/Champagne, INFY Frost Pink (warehouse names, look unknown).
+  d #1230 sitemap dates per page + #1231 crawl-status tool + skill seo-after-publish, child seo-system-0511 (local_cec483ca), drafts, checker round 3. Owner approved 05/11 "ผ่านตามแนะนำ" (sitemap named, Do-not-touch waived for this). Live sitemap before: 148 of 182 URLs dated 04/11.
+  e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`, child disposable-0511 (local_d2c06ba5): blocks 1–3 in progress. Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
   g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
     Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
     Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
@@ -45,8 +44,8 @@ MERGE ORDER = one PR at a time, Friday sends "go": main has moved = merge main i
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
     zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers · "IQOS รุ่นก่อน" vs the searched "รุ่นเก่า".
 3o OPEN ROUND 02/11 "queue 0211" = `docs/rounds/รอบคิวงานพี่-02-11.md` · queue = `docs/rounds/คิวงานเจ้าของ-02-11.md`. Blocks 1 · 2ก · 2ข · 4
-    live; block 3 (watermark) live at gen 2, gen-3 change pending the owner's sample OK; block 5 (articles) ends with #1200.
-    Close (skill round-close, tag queue-0211) after #1200 + the glue PR + the gen-3 watermark decision.
+    live; block 3 (watermark) done at gen 3; block 5 (articles) ended with #1200.
+    Close (skill round-close, tag queue-0211) is due: everything is merged or parked.
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
     the web price (trust line stays, §18) · RELX Essential 2 / Infinity Pro 2 cards keep the spec row (Friday's call, owner "ตามมืออาชีพ").
@@ -84,9 +83,9 @@ MERGE ORDER = one PR at a time, Friday sends "go": main has moved = merge main i
 3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md`. Status page for the owner's phone = §17 "Owner status page".
 5 open / dated:
-  - 04/11 tune the stock light's red rule (3 h after an order sent with no push) from a week of real first_sent_at vs product PUTs.
+  - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
-  - 06/11 SERP read + the 2 vanished queries · GSC read 15/11 · 10/12 · Search Console 2–4 weeks after 12/10.
+  - 09/11 SERP + rank read incl. disposable terms · GSC read 15/11 · 10/12 · Search Console 2–4 weeks after 12/10.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
   - QUEUED (owner 31/10): price sync — Javis picture prices vs Excel vs site · "ขายดี" from real web orders since 31/10 (threshold = owner's).
   - IDEA (owner 31/10): Ultra's $200/month API credits → a shop AI (customer-answer bot) · plan first.
@@ -168,8 +167,7 @@ Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait,
 Work folders: round work = `_incoming/<round>/` (not in git) · what Friday may move or delete alone = skill house-clean
   "รายการเดียว" (its one home) · image provenance keeps pointing at `_incoming/` (§18).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
-  and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
-  GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
+  and click Generate in one go · the free "365 Unlimited" route is CLOSED (read 05/11: switch off, it opens a paid $12/$23 offer, MCP says unlim unavailable; nothing bought), so every picture costs credits (owner's yes first) · refs = the Chrome extension's
   file_upload on the uploads panel's hidden input (the app's built-in browser pane has no upload tool: 3 KB base64 chunks +
   sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS-images 29)
 Live site (moved from §16 26/10): ALWAYS after a merge check the deploy reached success (`gh api
