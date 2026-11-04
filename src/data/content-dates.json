@@ -76,7 +76,7 @@
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
     "what-is-a-pod-system": "2026-11-04T10:19:06+07:00"
   },
-  "pagesVersion": 2,
+  "pagesVersion": 3,
   "pages": {
     "/": {
       "date": "2026-09-23T09:51:40+07:00",
@@ -192,63 +192,63 @@
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "31904206cb34"
+      "fp": "8a9a52219f06"
     },
     "/products/argus-g4": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "f0e3fa503394"
+      "fp": "4d3bf8996752"
     },
     "/products/argus-g4-mini": {
       "date": "2026-10-27T15:49:40+07:00",
-      "fp": "8d35535779f4"
+      "fp": "5ebd6ed45498"
     },
     "/products/argus-p3": {
       "date": "2026-10-27T15:49:40+07:00",
-      "fp": "b25cfbdeba07"
+      "fp": "badd9d2d7eca"
     },
     "/products/caliburn-g3": {
       "date": "2026-10-27T23:51:32+07:00",
-      "fp": "7577edb08b3e"
+      "fp": "5a9ccb9c313d"
     },
     "/products/caliburn-g3-pro": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "01f81333d22a"
+      "fp": "5666167abf51"
     },
     "/products/caliburn-g3-pro-koko": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "9f4e4ecd2db2"
+      "fp": "90a86cd0965b"
     },
     "/products/caliburn-g4": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "17c11b8154f1"
+      "fp": "787c423e88df"
     },
     "/products/caliburn-g4-classic": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "897cc97e299f"
+      "fp": "3da88bcf5e8b"
     },
     "/products/caliburn-g4-mini": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "e41bdb53095f"
+      "fp": "fecae6709cf0"
     },
     "/products/caliburn-g4-pro": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "19f7ecb36d3e"
+      "fp": "73e6cd089c63"
     },
     "/products/caliburn-g4-pro-koko": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "114a8bab904a"
+      "fp": "014a971667d5"
     },
     "/products/caliburn-g5": {
       "date": "2026-11-03T01:07:53+07:00",
-      "fp": "c598e15c85ee"
+      "fp": "f096d0539f19"
     },
     "/products/caliburn-g5-lite": {
       "date": "2026-10-14T01:33:05+07:00",
-      "fp": "240ba18dbbde"
+      "fp": "0d0192bb4472"
     },
     "/products/caliburn-g5-lite-se": {
       "date": "2026-10-14T01:33:05+07:00",
-      "fp": "9e0ce3162a9c"
+      "fp": "96a924e76e37"
     },
     "/products/coil-1": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -256,7 +256,7 @@
     },
     "/products/coil-21": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "c7bb9e073486"
+      "fp": "85d6360150b7"
     },
     "/products/coil-38": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -264,7 +264,7 @@
     },
     "/products/coil-53": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "bd2b7ac69a77"
+      "fp": "97660cc6d321"
     },
     "/products/coil-54": {
       "date": "2026-11-02T05:34:06+07:00",
@@ -272,7 +272,7 @@
     },
     "/products/coil-55": {
       "date": "2026-11-02T22:42:17+07:00",
-      "fp": "33714362b1a1"
+      "fp": "ab9c35a2d5a3"
     },
     "/products/coil-56": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -288,11 +288,11 @@
     },
     "/products/coil-72": {
       "date": "2026-11-02T23:41:10+07:00",
-      "fp": "37307495cbb8"
+      "fp": "5dc51118b5f3"
     },
     "/products/coil-74": {
       "date": "2026-11-02T22:02:51+07:00",
-      "fp": "ef838b1073e0"
+      "fp": "65392ac64a9b"
     },
     "/products/coil-83": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -308,11 +308,11 @@
     },
     "/products/coil-92": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "788f6c823417"
+      "fp": "6aefaee61016"
     },
     "/products/coil-94": {
       "date": "2026-11-02T22:02:51+07:00",
-      "fp": "f77408d6c1df"
+      "fp": "3a2120dd9079"
     },
     "/products/coils-accessories": {
       "date": "2026-11-03T01:07:53+07:00",
@@ -324,11 +324,11 @@
     },
     "/products/drag-6": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "ba17d281f090"
+      "fp": "eee90800c03c"
     },
     "/products/drag-s3": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "e9d3df1d7ea2"
+      "fp": "8b5e7fd7ef71"
     },
     "/products/drag-x": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -336,7 +336,7 @@
     },
     "/products/drag-x3": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "cba551a883a4"
+      "fp": "b4cc431025b3"
     },
     "/products/dude-pod-3ml": {
       "date": "2026-11-02T05:29:33+07:00",
@@ -396,27 +396,27 @@
     },
     "/products/infy-pod": {
       "date": "2026-11-03T01:03:09+07:00",
-      "fp": "0da815bfafd0"
+      "fp": "383b483b4655"
     },
     "/products/iqosheet-14": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "25555f7f0a78"
+      "fp": "93a9297ced63"
     },
     "/products/iqosheet-15": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "f60adeb792d0"
+      "fp": "8f85c422d244"
     },
     "/products/iqosheet-16": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "a90687f803ea"
+      "fp": "480f3c374d70"
     },
     "/products/iqosheet-17": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "0d62211e5ed8"
+      "fp": "0af6fd1125fe"
     },
     "/products/iqosheet-18": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "dcd63ce1e3df"
+      "fp": "d53943915329"
     },
     "/products/joiway-f3": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -440,11 +440,11 @@
     },
     "/products/m-switch-kit": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "6f12412e0d6f"
+      "fp": "e1a98daae217"
     },
     "/products/m-switch-pod": {
       "date": "2026-11-02T05:16:42+07:00",
-      "fp": "99d0fcd49c93"
+      "fp": "933b055d9158"
     },
     "/products/marbo-10k-clone": {
       "date": "2026-10-27T22:40:18+07:00",
@@ -520,7 +520,7 @@
     },
     "/products/pod-169": {
       "date": "2026-11-03T01:03:09+07:00",
-      "fp": "f24cbdfeea41"
+      "fp": "9f0ae912ac0a"
     },
     "/products/pod-180": {
       "date": "2026-11-02T22:02:51+07:00",
@@ -552,11 +552,11 @@
     },
     "/products/relx-infinity-2-plus": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "36c5159deffd"
+      "fp": "7b3a5a0d06a7"
     },
     "/products/relx-infinity-pro-2-pod": {
       "date": "2026-11-03T01:07:53+07:00",
-      "fp": "1c92e8d1c5c5"
+      "fp": "711d8fdad0a4"
     },
     "/products/relx-lumi-18k": {
       "date": "2026-10-19T00:02:04+07:00",
@@ -592,7 +592,7 @@
     },
     "/products/vmate-i3": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "86dd3fc272b1"
+      "fp": "8e6dce3f50f6"
     },
     "/products/vmate-pro-2": {
       "date": "2026-11-04T09:00:12+07:00",

@@ -31,14 +31,14 @@ const gd = opt("@/data/guides"), gc = opt("@/i18n/guides-copy"), td = opt("@/dat
 const fd = opt("@/data/flavors"), fc = opt("@/i18n/flavor-copy"), th = opt("@/i18n/product-copy-th"), en = opt("@/i18n/product-copy-en");
 const ed = opt("@/data/product-editorial"), dc = opt("@/lib/product-details-copy"), cg = opt("@/i18n/category-guide-copy");
 const vids = opt("@/data/collection-videos"), head = opt("@/i18n/search-head-copy");
-const rel = opt("@/data/catalog-relationships"), specs = opt("@/lib/category-spec-table");
+const rel = opt("@/data/catalog-relationships"), specs = opt("@/lib/category-spec-table"), compat = opt("@/i18n/compat-copy-th");
 const pages = pageSubstances({
   legacyProducts: products.allProducts,
   publishedProducts: bridge.getPublishedProducts?.() ?? [],
   productCopy: (slug: string) => ({
     th: th.PRODUCT_COPY_TH?.[slug], en: en.PRODUCT_COPY_EN?.[slug], editorial: ed.PRODUCT_EDITORIAL?.[slug], details: dc.productDetailsCopy?.(slug),
     title: head.PRODUCT_TITLE_HEAD_TH?.[slug], description: head.PRODUCT_DESCRIPTION_HEAD_TH?.[slug],
-    compatible: [...(rel.getCompatibleConsumables?.(slug) ?? []), ...(rel.getCompatibleDevices?.(slug) ?? [])].map((c: any) => [c.ref.slug, c.role]),
+    compatible: [...(rel.getCompatibleConsumables?.(slug) ?? []), ...(rel.getCompatibleDevices?.(slug) ?? [])].map((c: any) => [c.ref.slug, c.role, c.evidence, compat.compatEvidenceTh?.(c.evidence)]),
   }),
   cardTagline: (slug: string) => th.PRODUCT_COPY_TH?.[slug]?.tagline,
   categories: cv.categoriesWithProducts?.() ?? [],

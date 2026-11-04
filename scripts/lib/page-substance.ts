@@ -14,7 +14,7 @@
  */
 import { createHash } from "node:crypto";
 
-export const SUBSTANCE_VERSION = 2;
+export const SUBSTANCE_VERSION = 3;
 
 /** Keys that carry no reader substance, at any depth. Owner table 05/11: picture/price = nothing. */
 const NOT_SUBSTANCE = new Set([

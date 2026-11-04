@@ -1,6 +1,7 @@
 /** OKami24 — fills PageSources (scripts/lib/page-substance.ts) from the live catalog: the same lists sitemap.ts offers. */
 import { allProducts, getProductsByCategory } from "@/data/products";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
+import { compatEvidenceTh } from "@/i18n/compat-copy-th";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { categoriesWithProducts } from "@/lib/category-visibility";
 import { brandsWithProducts } from "@/lib/brand-visibility";
@@ -31,7 +32,7 @@ export function loadPageSources(): PageSources {
       details: productDetailsCopy(slug),
       title: head.PRODUCT_TITLE_HEAD_TH[slug],
       description: head.PRODUCT_DESCRIPTION_HEAD_TH[slug],
-      compatible: [...getCompatibleConsumables(slug), ...getCompatibleDevices(slug)].map((c) => [c.ref.slug, c.role]),
+      compatible: [...getCompatibleConsumables(slug), ...getCompatibleDevices(slug)].map((c) => [c.ref.slug, c.role, c.evidence, compatEvidenceTh(c.evidence)]),
     }),
     cardTagline: (slug) => PRODUCT_COPY_TH[slug]?.tagline,
     categories: categoriesWithProducts(),
