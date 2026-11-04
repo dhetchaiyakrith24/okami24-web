@@ -14,16 +14,18 @@
  */
 import { createHash } from "node:crypto";
 
-export const SUBSTANCE_VERSION = 1;
+export const SUBSTANCE_VERSION = 2;
 
 /** Keys that carry no reader substance, at any depth. Owner table 05/11: picture/price = nothing. */
 const NOT_SUBSTANCE = new Set([
   // pictures and how they sit
   "assets", "image", "images", "variantFallbackImage", "src", "alt", "width", "height", "x", "y", "transparent",
   "transparentBackground", "openOnCardPhoto", "ownFloor", "swatchHex", "glyphKind", "storyLayout", "storyStartRight",
-  "storyColoursAfter", "storyDetails",
+  "storyColoursAfter",
   // where a picture or a value came from (not shown as text)
   "angle", "sourceName", "sourceUrl", "referenceUrl",
+  // internal codes a reader never sees
+  "id", "shipnityProductId",
   // price and stock: their own systems, not a re-read of the page
   "availability", "availabilityStatus", "sellingPrice", "priceReferenceValue", "priceReferenceSource", "publicationStatus",
 ]);
@@ -56,7 +58,15 @@ export function fingerprint(value: unknown): string {
   return createHash("sha1").update(JSON.stringify(substance(value)) ?? "").digest("hex").slice(0, 12);
 }
 
-interface Member { slug: string; displayName: string }
+/** What a card shows of a product on a listing page. */
+interface Member {
+  slug: string;
+  displayName: string;
+  tagline: string;
+  colorVariants?: { name: string }[];
+  flavorVariants?: { name: string }[];
+  variants?: { label: string }[];
+}
 interface Keyed { id: string; slug: string }
 
 /** Everything a page's substance is read from: scripts/lib/page-sources.ts fills it from the catalog. */
@@ -65,8 +75,12 @@ export interface PageSources {
   publishedProducts: (Member & { brandId: string | null; categoryId: string })[];
   /** Per-slug text that lives outside the product record: copy overlays, article, story, editorial, head rows. */
   productCopy: (slug: string) => unknown;
+  /** The Thai tagline a card shows. */
+  cardTagline: (slug: string) => unknown;
   categories: Keyed[];
   categoryCopy: (id: string) => unknown;
+  /** The spec table on a category page, from its products' specs. */
+  categorySpecs: (id: string) => unknown;
   brands: Keyed[];
   brandCopy: (id: string) => unknown;
   /** The clip shown on a brand or category page, keyed by page path. */
@@ -80,8 +94,6 @@ export interface PageSources {
   head: { home: unknown; about: unknown; contact: unknown; products: unknown };
 }
 
-const listed = (list: Member[]) => list.map((m) => [m.slug, m.displayName]).sort((a, b) => (a[0] < b[0] ? -1 : 1));
-
 /** What the /technology index shows of an entry: its name and summary, not the article body. */
 function listing(entry: unknown): unknown {
   const { name, summary } = (entry ?? {}) as { name?: unknown; summary?: unknown };
@@ -90,14 +102,22 @@ function listing(entry: unknown): unknown {
 
 /** Page path → its substance, for every page dated by substance. Guides keep their own dates (scripts/lib/guide-dates.ts);
  *  service pages and the like have no data behind them and stay dated by their files (CONTENT_SOURCES). A listing page's
- *  substance is its own text + WHICH products it lists, so one product's new sentence does not re-date its category. */
+ *  substance is its own text + what its cards and tables show, so a new sentence deep in one product's article does not
+ *  re-date its category. */
 export function pageSubstances(s: PageSources): Record<string, unknown> {
   const pages: Record<string, unknown> = {};
   const all = [...s.legacyProducts, ...s.publishedProducts];
+  const listed = (list: Member[]) =>
+    list
+      .map((m) => {
+        const options = [...(m.colorVariants ?? []), ...(m.flavorVariants ?? [])].map((o) => o.name);
+        return [m.slug, m.displayName, m.tagline, s.cardTagline(m.slug), options, (m.variants ?? []).map((v) => v.label)];
+      })
+      .sort((a, b) => (a[0]! < b[0]! ? -1 : 1));
   for (const p of all) pages[`/products/${p.slug}`] = { record: p, copy: s.productCopy(p.slug) };
   for (const c of s.categories) {
     const path = `/products/${c.slug}`;
-    pages[path] = { record: c, copy: s.categoryCopy(c.id), clip: s.collectionVideos[path], listed: listed(all.filter((p) => p.categoryId === c.id)) };
+    pages[path] = { record: c, copy: s.categoryCopy(c.id), specs: s.categorySpecs(c.id), clip: s.collectionVideos[path], listed: listed(all.filter((p) => p.categoryId === c.id)) };
   }
   for (const b of s.brands) {
     const path = `/brands/${b.slug}`;

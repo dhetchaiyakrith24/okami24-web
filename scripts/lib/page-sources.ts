@@ -1,5 +1,7 @@
 /** OKami24 — fills PageSources (scripts/lib/page-substance.ts) from the live catalog: the same lists sitemap.ts offers. */
-import { allProducts } from "@/data/products";
+import { allProducts, getProductsByCategory } from "@/data/products";
+import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
+import { categorySpecRows } from "@/lib/category-spec-table";
 import { categoriesWithProducts } from "@/lib/category-visibility";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
@@ -29,9 +31,12 @@ export function loadPageSources(): PageSources {
       details: productDetailsCopy(slug),
       title: head.PRODUCT_TITLE_HEAD_TH[slug],
       description: head.PRODUCT_DESCRIPTION_HEAD_TH[slug],
+      compatible: [...getCompatibleConsumables(slug), ...getCompatibleDevices(slug)].map((c) => [c.ref.slug, c.role]),
     }),
+    cardTagline: (slug) => PRODUCT_COPY_TH[slug]?.tagline,
     categories: categoriesWithProducts(),
     categoryCopy: (id) => ({ guide: CATEGORY_GUIDE_COPY[id], title: head.categoryTitleTh("", id) }),
+    categorySpecs: (id) => categorySpecRows(getProductsByCategory(id)),
     brands: brandsWithProducts(),
     // No price in the substance: the head row asks for a price by slug and gets none.
     brandCopy: (id) => ({ head: head.BRAND_HEAD_TH[id]?.(() => null), h1: head.BRAND_H1[id] }),

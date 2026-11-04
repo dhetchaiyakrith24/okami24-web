@@ -171,6 +171,14 @@ export function runContentDatesContractTests(): ContentDatesContractResult[] {
   const reworded = { ...substances, [pagePath]: mapStrings(JSON.parse(JSON.stringify(substances[pagePath])), (text, key) => (key === "tagline" ? `${text} new` : text)) };
   const rewordedPages = Object.keys(reworded).filter((p) => fingerprint(reworded[p]) !== fingerprints[p]);
   check(`rewording one product moves that page only`, rewordedPages.length === 1 && rewordedPages[0] === pagePath, rewordedPages.join(", "));
+  const fitted = sources.legacyProducts.find((p) => ((sources.productCopy(p.slug) as { compatible: unknown[] }).compatible ?? []).length > 0);
+  const fittedPath = `/products/${fitted?.slug}`;
+  const unfitted = JSON.parse(JSON.stringify(substances[fittedPath] ?? {}));
+  if (unfitted.copy) unfitted.copy.compatible = [];
+  check(`what a product works with counts as substance`, Boolean(fitted) && fingerprint(unfitted) !== fingerprints[fittedPath], fittedPath);
+  const carded = JSON.parse(JSON.stringify(substances))[`/products/${sources.categories[0].slug}`];
+  carded.listed = mapStrings(carded.listed, (text, key) => text + (key === "" ? " new" : ""));
+  check(`a listing page's card text counts as substance`, fingerprint(carded) !== fingerprints[`/products/${sources.categories[0].slug}`], "");
   const priced = JSON.parse(JSON.stringify(substances[pagePath]));
   priced.record.sellingPrice = 1;
   priced.record.availabilityStatus = "out-of-stock";

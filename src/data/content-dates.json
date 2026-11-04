@@ -76,7 +76,7 @@
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
     "what-is-a-pod-system": "2026-11-04T10:19:06+07:00"
   },
-  "pagesVersion": 1,
+  "pagesVersion": 2,
   "pages": {
     "/": {
       "date": "2026-09-23T09:51:40+07:00",
@@ -87,72 +87,72 @@
       "fp": "f957e16ef366"
     },
     "/brands/dotmod": {
-      "date": "2026-09-23T16:51:21+07:00",
-      "fp": "b12803eeca17"
+      "date": "2026-11-03T01:07:53+07:00",
+      "fp": "f2f991bcda32"
     },
     "/brands/esko-bar": {
       "date": "2026-10-20T23:01:16+07:00",
-      "fp": "376a5b652f41"
+      "fp": "b8e62f2b5023"
     },
     "/brands/infy": {
-      "date": "2026-10-30T20:28:30+07:00",
-      "fp": "f07c8dc0e95e"
+      "date": "2026-11-02T05:54:16+07:00",
+      "fp": "553aa8f431cd"
     },
     "/brands/iqos": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "9ab17fb3aa66"
+      "fp": "8b283683403d"
     },
     "/brands/joiway": {
-      "date": "2026-10-20T23:01:16+07:00",
-      "fp": "f8688f441c96"
+      "date": "2026-10-30T22:13:37+07:00",
+      "fp": "5a9908615db7"
     },
     "/brands/kardinal-stick": {
       "date": "2026-10-18T01:51:46+07:00",
-      "fp": "21ac27192674"
+      "fp": "c80aa682c01f"
     },
     "/brands/lambda": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "4a34e21e0721"
+      "fp": "ac65329880e5"
     },
     "/brands/moood": {
-      "date": "2026-10-06T07:14:30+07:00",
-      "fp": "6fc04bb9d7c6"
+      "date": "2026-10-22T22:51:23+07:00",
+      "fp": "45d125cd8016"
     },
     "/brands/nevoks": {
       "date": "2026-09-23T09:51:40+07:00",
-      "fp": "ca02d327c1ee"
+      "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-10-30T19:31:54+07:00",
-      "fp": "aa0ad96fd582"
+      "date": "2026-11-03T01:07:53+07:00",
+      "fp": "1cede5c7e03b"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
-      "fp": "6607b8cc8a46"
+      "fp": "9fe1b134bd56"
     },
     "/brands/salthub": {
-      "date": "2026-10-19T17:16:57+07:00",
-      "fp": "ce381ae340db"
+      "date": "2026-11-03T00:40:32+07:00",
+      "fp": "cdc174643297"
     },
     "/brands/ske": {
       "date": "2026-10-18T02:14:56+07:00",
-      "fp": "e15409ad1b9c"
+      "fp": "f2851dc267db"
     },
     "/brands/tfit": {
       "date": "2026-10-06T00:41:04+07:00",
-      "fp": "76889ceffc5e"
+      "fp": "f409fb3c3c5a"
     },
     "/brands/uwell": {
-      "date": "2026-10-16T18:43:58+07:00",
-      "fp": "7339f7eb4467"
+      "date": "2026-11-02T05:34:06+07:00",
+      "fp": "26926b7474aa"
     },
     "/brands/voopoo": {
-      "date": "2026-10-21T00:35:08+07:00",
-      "fp": "30b3d88b77f4"
+      "date": "2026-11-02T23:29:24+07:00",
+      "fp": "68859c05121b"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
-      "fp": "501c4ca112e3"
+      "fp": "7b64caf91964"
     },
     "/contact": {
       "date": "2026-09-21T15:31:01+07:00",
@@ -160,459 +160,459 @@
     },
     "/e-liquid": {
       "date": "2026-09-21T15:31:01+07:00",
-      "fp": "7d58c97cda44"
+      "fp": "654ae8d4c550"
     },
     "/e-liquid/beverage": {
       "date": "2026-09-16T15:47:44+07:00",
-      "fp": "e1a85e746e28"
+      "fp": "3e89b70f8987"
     },
     "/e-liquid/dessert": {
       "date": "2026-09-21T15:31:01+07:00",
-      "fp": "f0efe3efd517"
+      "fp": "4ee921369827"
     },
     "/e-liquid/fruit": {
       "date": "2026-09-21T15:31:01+07:00",
-      "fp": "ae3e1bcd89f6"
+      "fp": "bd285095bbb4"
     },
     "/e-liquid/menthol-cooling": {
       "date": "2026-09-16T15:47:44+07:00",
-      "fp": "1f138750f841"
+      "fp": "4c6bbe4b836f"
     },
     "/e-liquid/tobacco-style": {
       "date": "2026-09-17T03:47:32+07:00",
-      "fp": "7110008352ec"
+      "fp": "e9524f1602d1"
     },
     "/guides": {
       "date": "2026-11-04T10:31:07+07:00",
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-10-31T18:49:46+07:00",
-      "fp": "55e76dec2efe"
+      "date": "2026-11-03T06:20:45+07:00",
+      "fp": "a02daa5e1619"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "a7156179ff19"
+      "fp": "31904206cb34"
     },
     "/products/argus-g4": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "658fd0004e57"
+      "fp": "f0e3fa503394"
     },
     "/products/argus-g4-mini": {
       "date": "2026-10-27T15:49:40+07:00",
-      "fp": "8238a1e2da96"
+      "fp": "8d35535779f4"
     },
     "/products/argus-p3": {
       "date": "2026-10-27T15:49:40+07:00",
-      "fp": "4df02c11ef8b"
+      "fp": "b25cfbdeba07"
     },
     "/products/caliburn-g3": {
       "date": "2026-10-27T23:51:32+07:00",
-      "fp": "314ec9ca1e56"
+      "fp": "7577edb08b3e"
     },
     "/products/caliburn-g3-pro": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "d3fdee1819e6"
+      "fp": "01f81333d22a"
     },
     "/products/caliburn-g3-pro-koko": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "f0398e7da412"
+      "fp": "9f4e4ecd2db2"
     },
     "/products/caliburn-g4": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "d7f0fcdcaf70"
+      "fp": "17c11b8154f1"
     },
     "/products/caliburn-g4-classic": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "fc131a23391b"
+      "fp": "897cc97e299f"
     },
     "/products/caliburn-g4-mini": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "6a6ad22644aa"
+      "fp": "e41bdb53095f"
     },
     "/products/caliburn-g4-pro": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "755b431400ec"
+      "fp": "19f7ecb36d3e"
     },
     "/products/caliburn-g4-pro-koko": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "7cce0429f166"
+      "fp": "114a8bab904a"
     },
     "/products/caliburn-g5": {
       "date": "2026-11-03T01:07:53+07:00",
-      "fp": "39af8ce9b275"
+      "fp": "c598e15c85ee"
     },
     "/products/caliburn-g5-lite": {
       "date": "2026-10-14T01:33:05+07:00",
-      "fp": "c57ef1c32089"
+      "fp": "240ba18dbbde"
     },
     "/products/caliburn-g5-lite-se": {
       "date": "2026-10-14T01:33:05+07:00",
-      "fp": "993bdd28e137"
+      "fp": "9e0ce3162a9c"
     },
     "/products/coil-1": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "6103816b33b1"
+      "fp": "c663a574ee37"
     },
     "/products/coil-21": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "6ae486a12aa4"
+      "fp": "c7bb9e073486"
     },
     "/products/coil-38": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "99b1c6cbb350"
+      "fp": "84040b5b6995"
     },
     "/products/coil-53": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "753f4f6affa1"
+      "fp": "bd2b7ac69a77"
     },
     "/products/coil-54": {
       "date": "2026-11-02T05:34:06+07:00",
-      "fp": "58a7fe6d2e43"
+      "fp": "d7829206d5b8"
     },
     "/products/coil-55": {
       "date": "2026-11-02T22:42:17+07:00",
-      "fp": "1e7d0f8e120c"
+      "fp": "33714362b1a1"
     },
     "/products/coil-56": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "d98120d8bcd3"
+      "fp": "41dca3886deb"
     },
     "/products/coil-68": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "add4471a01a0"
+      "fp": "63565d0bd93f"
     },
     "/products/coil-70": {
       "date": "2026-11-03T01:07:53+07:00",
-      "fp": "7c8804503042"
+      "fp": "3e872c4b8de6"
     },
     "/products/coil-72": {
       "date": "2026-11-02T23:41:10+07:00",
-      "fp": "aff3e89e8b00"
+      "fp": "37307495cbb8"
     },
     "/products/coil-74": {
       "date": "2026-11-02T22:02:51+07:00",
-      "fp": "d06d0d30c5d4"
+      "fp": "ef838b1073e0"
     },
     "/products/coil-83": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "4d1f78a3cabf"
+      "fp": "b4d925f72ff0"
     },
     "/products/coil-87": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "ebc032d18391"
+      "fp": "384bf02fc4ba"
     },
     "/products/coil-89": {
       "date": "2026-09-25T01:29:38+07:00",
-      "fp": "1360bb4fb41b"
+      "fp": "381dd6010c0e"
     },
     "/products/coil-92": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "0514b55f1a5d"
+      "fp": "788f6c823417"
     },
     "/products/coil-94": {
       "date": "2026-11-02T22:02:51+07:00",
-      "fp": "54ea639d4475"
+      "fp": "f77408d6c1df"
     },
     "/products/coils-accessories": {
-      "date": "2026-10-27T22:32:42+07:00",
-      "fp": "3f62725292db"
+      "date": "2026-11-03T01:07:53+07:00",
+      "fp": "6e79b0bcb8e3"
     },
     "/products/disposables": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "d2222c134cc7"
+      "fp": "43fc1b7f771d"
     },
     "/products/drag-6": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "74e58d9d1a48"
+      "fp": "ba17d281f090"
     },
     "/products/drag-s3": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "dc1a896f4d25"
+      "fp": "e9d3df1d7ea2"
     },
     "/products/drag-x": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "8057cae350d5"
+      "fp": "fe905aebbf88"
     },
     "/products/drag-x3": {
       "date": "2026-10-26T07:07:40+07:00",
-      "fp": "56922a446fa7"
+      "fp": "cba551a883a4"
     },
     "/products/dude-pod-3ml": {
       "date": "2026-11-02T05:29:33+07:00",
-      "fp": "2761a8372c7c"
+      "fp": "c76a3f2c0f9e"
     },
     "/products/e-liquid": {
       "date": "2026-11-02T07:06:03+07:00",
-      "fp": "97191ea13ba3"
+      "fp": "58b325f56f64"
     },
     "/products/eliquid-1": {
       "date": "2026-10-18T03:42:41+07:00",
-      "fp": "5350cfddcd78"
+      "fp": "bfb1edcbf9d8"
     },
     "/products/eliquid-109": {
       "date": "2026-10-19T17:16:57+07:00",
-      "fp": "c074149741da"
+      "fp": "66221b1b8d63"
     },
     "/products/eliquid-64": {
       "date": "2026-10-21T02:22:48+07:00",
-      "fp": "aea9c3d8c536"
+      "fp": "a73bca106910"
     },
     "/products/eliquid-72": {
       "date": "2026-10-19T02:58:26+07:00",
-      "fp": "1f5bc948f130"
+      "fp": "6f65f6929ea0"
     },
     "/products/eliquid-73": {
       "date": "2026-10-19T02:58:26+07:00",
-      "fp": "3ed88463391f"
+      "fp": "13e4758d27d3"
     },
     "/products/esko-bar-20k": {
       "date": "2026-11-02T07:54:44+07:00",
-      "fp": "8ac96961b18c"
+      "fp": "f08c7ca30e29"
     },
     "/products/esko-bar-switch-pod": {
       "date": "2026-11-02T07:54:44+07:00",
-      "fp": "8b41176911c0"
+      "fp": "da4e4cddbc37"
     },
     "/products/foli-bar-15k": {
       "date": "2026-10-21T16:59:06+07:00",
-      "fp": "331550382361"
+      "fp": "b720305c84e3"
     },
     "/products/graple-freebase": {
       "date": "2026-10-19T22:09:42+07:00",
-      "fp": "4346f4acea59"
+      "fp": "dd459b3a54db"
     },
     "/products/heated-tobacco-consumables": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "cd3df8403086"
+      "fp": "d46acd550084"
     },
     "/products/heated-tobacco-devices": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "409f4161c7cc"
+      "fp": "ada169dd1b33"
     },
     "/products/infy-20k": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "b6d279a8c9ec"
+      "fp": "25c3ef11cc0d"
     },
     "/products/infy-pod": {
       "date": "2026-11-03T01:03:09+07:00",
-      "fp": "c9abb57357ff"
+      "fp": "0da815bfafd0"
     },
     "/products/iqosheet-14": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "12fccedfbc60"
+      "fp": "25555f7f0a78"
     },
     "/products/iqosheet-15": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "1c2bc4616d06"
+      "fp": "f60adeb792d0"
     },
     "/products/iqosheet-16": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "a5fe96acc842"
+      "fp": "a90687f803ea"
     },
     "/products/iqosheet-17": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "729cc7e116fd"
+      "fp": "0d62211e5ed8"
     },
     "/products/iqosheet-18": {
       "date": "2026-11-03T06:20:45+07:00",
-      "fp": "bc6187af18ac"
+      "fp": "dcd63ce1e3df"
     },
     "/products/joiway-f3": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "44c0fa963fac"
+      "fp": "791576390799"
     },
     "/products/joiway-f4": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "a6797584b5c3"
+      "fp": "fe090a9486cd"
     },
     "/products/ks-quikpro-kit": {
       "date": "2026-11-03T01:13:22+07:00",
-      "fp": "58448f5e9d78"
+      "fp": "2aaae3df9483"
     },
     "/products/m-bar-10k": {
       "date": "2026-10-14T01:33:05+07:00",
-      "fp": "44021444d425"
+      "fp": "a85fffaac86c"
     },
     "/products/m-bar-9k": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "373472b2cfdd"
+      "fp": "bd60bf972eb8"
     },
     "/products/m-switch-kit": {
       "date": "2026-11-02T02:45:23+07:00",
-      "fp": "008c9a31b04d"
+      "fp": "6f12412e0d6f"
     },
     "/products/m-switch-pod": {
       "date": "2026-11-02T05:16:42+07:00",
-      "fp": "b806e5233ab2"
+      "fp": "99d0fcd49c93"
     },
     "/products/marbo-10k-clone": {
       "date": "2026-10-27T22:40:18+07:00",
-      "fp": "c202715b06bd"
+      "fp": "af2724cfa5a4"
     },
     "/products/mood-monster-14k": {
       "date": "2026-10-22T22:51:23+07:00",
-      "fp": "c7a23c8f6865"
+      "fp": "855a109b4b54"
     },
     "/products/mq-bar-22k": {
       "date": "2026-10-19T23:18:43+07:00",
-      "fp": "e2c13b36a9e5"
+      "fp": "405c567fa9a3"
     },
     "/products/muro-3ml": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "fe279a4fa330"
+      "fp": "a8815d17a6b0"
     },
     "/products/muro-connector-20k": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "9930e457a770"
+      "fp": "dbdf0f5755a8"
     },
     "/products/muro-freebase": {
       "date": "2026-11-02T09:50:30+07:00",
-      "fp": "340c1d3e9baf"
+      "fp": "3674b154a773"
     },
     "/products/muro-salt-nic": {
       "date": "2026-11-02T09:50:30+07:00",
-      "fp": "6788e7f5a315"
+      "fp": "5a63dbcb366f"
     },
     "/products/muro-sc-8000": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "c1906cbf686b"
+      "fp": "05f4fca6beb9"
     },
     "/products/nexbar-switch-15k-pod": {
       "date": "2026-11-02T03:47:57+07:00",
-      "fp": "27aeb20e845a"
+      "fp": "d3e96e67d871"
     },
     "/products/nexpod-15k": {
       "date": "2026-11-04T02:02:36+07:00",
-      "fp": "c78d2c8a569d"
+      "fp": "d771ec636a66"
     },
     "/products/nexswitch-16k-kit": {
       "date": "2026-10-19T02:17:50+07:00",
-      "fp": "0bfc3ed38168"
+      "fp": "4a0f0e616e3e"
     },
     "/products/nexswitch-16k-pod": {
       "date": "2026-11-02T03:47:57+07:00",
-      "fp": "04e49d155373"
+      "fp": "31a1a18c7c87"
     },
     "/products/next-pro-2-beyond": {
       "date": "2026-10-20T00:29:08+07:00",
-      "fp": "d32f3a2e7a25"
+      "fp": "dd41914c63ec"
     },
     "/products/pod-142": {
       "date": "2026-10-19T00:54:11+07:00",
-      "fp": "43a7acaa9216"
+      "fp": "352f53a43acb"
     },
     "/products/pod-149": {
       "date": "2026-10-18T02:14:56+07:00",
-      "fp": "dc5f48b8c782"
+      "fp": "e41988b29019"
     },
     "/products/pod-150": {
       "date": "2026-11-03T01:13:22+07:00",
-      "fp": "26de5f3ee2d4"
+      "fp": "2ac33b02be4b"
     },
     "/products/pod-154": {
       "date": "2026-11-02T03:47:57+07:00",
-      "fp": "0919d9e7f7bb"
+      "fp": "d8d785362176"
     },
     "/products/pod-159": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "440330901208"
+      "fp": "81e15d65c5d2"
     },
     "/products/pod-169": {
       "date": "2026-11-03T01:03:09+07:00",
-      "fp": "56624d696799"
+      "fp": "f24cbdfeea41"
     },
     "/products/pod-180": {
       "date": "2026-11-02T22:02:51+07:00",
-      "fp": "8c759f4cb7e6"
+      "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-10-30T21:18:19+07:00",
-      "fp": "63b5f7e2dac0"
+      "date": "2026-11-02T06:06:07+07:00",
+      "fp": "04357b64339c"
     },
     "/products/pods-cartridges": {
-      "date": "2026-11-02T05:29:33+07:00",
-      "fp": "4b3dbf6e58a3"
+      "date": "2026-11-02T23:29:24+07:00",
+      "fp": "aa9abe1b4ffc"
     },
     "/products/punta-ice": {
       "date": "2026-10-20T00:22:12+07:00",
-      "fp": "75508e2d6526"
+      "fp": "1ab2da0b0561"
     },
     "/products/relx-creator": {
       "date": "2026-10-27T22:32:42+07:00",
-      "fp": "043cf0502721"
+      "fp": "448025b36145"
     },
     "/products/relx-creator-pod-20k": {
       "date": "2026-11-02T03:47:57+07:00",
-      "fp": "5f1e6e134dab"
+      "fp": "3e6aca76728d"
     },
     "/products/relx-essential-2": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "909e59d2a6ea"
+      "fp": "430c3c65757f"
     },
     "/products/relx-infinity-2-plus": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "0d877df4eee4"
+      "fp": "36c5159deffd"
     },
     "/products/relx-infinity-pro-2-pod": {
       "date": "2026-11-03T01:07:53+07:00",
-      "fp": "0b81c9b41ab2"
+      "fp": "1c92e8d1c5c5"
     },
     "/products/relx-lumi-18k": {
       "date": "2026-10-19T00:02:04+07:00",
-      "fp": "3c3e8e62e584"
+      "fp": "c4f15e89caef"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "c9039f35356b"
+      "fp": "0fc2c40e2905"
     },
     "/products/sup-zero-22k": {
       "date": "2026-10-26T18:23:29+07:00",
-      "fp": "679c4121ba02"
+      "fp": "3f8be8183004"
     },
     "/products/super-cool-saltnic": {
       "date": "2026-10-20T00:34:44+07:00",
-      "fp": "6457e1c92231"
+      "fp": "123a8693a780"
     },
     "/products/switch-pods": {
-      "date": "2026-11-02T08:02:44+07:00",
-      "fp": "ecb33894be70"
+      "date": "2026-11-03T01:07:53+07:00",
+      "fp": "4df1f4478473"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-10-27T22:32:42+07:00",
-      "fp": "041e9c3924f5"
+      "fp": "c6d154c4a941"
     },
     "/products/vazer-one-pod": {
       "date": "2026-11-02T03:47:57+07:00",
-      "fp": "60b86ad121b6"
+      "fp": "c9fb672f6057"
     },
     "/products/vinci-s": {
       "date": "2026-11-04T00:04:42+07:00",
-      "fp": "7bad5e81a5a3"
+      "fp": "36e4af87e4cb"
     },
     "/products/vmate-i3": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "a8b8da71e8b9"
+      "fp": "86dd3fc272b1"
     },
     "/products/vmate-pro-2": {
       "date": "2026-11-04T09:00:12+07:00",
-      "fp": "5105bff067fc"
+      "fp": "c47733d199d3"
     },
     "/products/wotofo-nexbar-18k": {
       "date": "2026-10-27T22:32:42+07:00",
-      "fp": "718c6dd55c6d"
+      "fp": "9dd105478269"
     },
     "/products/zero-cartridge": {
       "date": "2026-11-02T05:16:42+07:00",
-      "fp": "92c0518dadae"
+      "fp": "5f2b24087b6e"
     },
     "/products/zero-nano": {
       "date": "2026-11-03T00:40:32+07:00",
-      "fp": "f94ee4a23200"
+      "fp": "56b59ce7ee73"
     },
     "/products/zero-pro": {
       "date": "2026-10-23T00:01:34+07:00",
-      "fp": "d0d1e150b41d"
+      "fp": "3b4c600cf873"
     },
     "/technology": {
       "date": "2026-09-22T01:46:00+07:00",
@@ -620,23 +620,23 @@
     },
     "/technology/gesture-and-triple-tap-control": {
       "date": "2026-09-25T01:29:38+07:00",
-      "fp": "34543cff2f0b"
+      "fp": "aba82f7265a2"
     },
     "/technology/high-output-chip-platforms": {
       "date": "2026-11-02T23:45:09+07:00",
-      "fp": "d1c123a68f7a"
+      "fp": "0f0fcfb8ed18"
     },
     "/technology/mesh-coil-systems": {
       "date": "2026-10-19T23:57:38+07:00",
-      "fp": "2c61d658518d"
+      "fp": "6c76db9f06cb"
     },
     "/technology/multi-resistance-cartridges": {
       "date": "2026-11-02T23:45:09+07:00",
-      "fp": "b2255e4ea29d"
+      "fp": "20f28597b9ce"
     },
     "/technology/onboard-touch-displays": {
       "date": "2026-10-27T15:49:40+07:00",
-      "fp": "07876c4e236f"
+      "fp": "a3d495732ba9"
     }
   }
 }
