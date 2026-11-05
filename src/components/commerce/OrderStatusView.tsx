@@ -168,7 +168,7 @@ export function OrderStatusView({
     approved: t.nextApproved,
     processing: t.nextProcessing,
     // No carrier picked = no "check the parcel" button below (checker #807 note b) — the line points at the number instead.
-    shipped: order.carrier ? t.nextShipped : t.nextShippedNoCarrier,
+    shipped: !order.trackingNumber ? t.nextShippedNoTracking : order.carrier ? t.nextShipped : t.nextShippedNoCarrier,
     completed: t.nextCompleted,
     cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid && !paymentConfirmed && !stockIssue ? t.nextCancelledSlipRejected : paid ? t.nextCancelledPaid : autoCancelled ? t.nextCancelledUnpaid : t.nextCancelled,
   };

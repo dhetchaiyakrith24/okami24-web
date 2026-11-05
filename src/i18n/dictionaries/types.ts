@@ -849,6 +849,7 @@ export interface Dictionary {
     nextProcessing: string;
     nextShipped: string;
     nextShippedNoCarrier: string;
+    nextShippedNoTracking: string;
     nextCompleted: string;
     nextCancelled: string;
     nextCancelledPaid: string;

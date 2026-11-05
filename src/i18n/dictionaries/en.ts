@@ -702,6 +702,7 @@ export const en: Dictionary = {
     nextApproved: "Payment confirmed. We are sending your order to the warehouse for packing.",
     nextProcessing: "The warehouse is packing your order. Once it ships, the tracking number appears on this page.",
     nextShipped: "Your parcel has left the warehouse. Use the button below to see where it is.",
+    nextShippedNoTracking: "Your parcel has left the warehouse. This delivery has no tracking number. Message us on LINE @okm24 with any question.",
     nextShippedNoCarrier: "Your parcel has left the warehouse. Use the tracking number below to check its status with the carrier, or message us on LINE @okm24 if you’re not sure which carrier it is.",
     nextCompleted: "This order is complete.",
     nextCancelled: "This order has been cancelled.",

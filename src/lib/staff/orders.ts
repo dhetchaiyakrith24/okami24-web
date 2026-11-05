@@ -190,12 +190,13 @@ export type StaffActionResult = { ok: true } | { ok: false; error: "not-found" |
 export function applyStaffAction(
   orderNumber: string,
   action: StaffAction,
-  input: { tracking?: string; carrier?: string; note?: string; message?: string; by?: "shipnity" }
+  input: { tracking?: string; noTracking?: boolean; carrier?: string; note?: string; message?: string; by?: "shipnity" }
 ): StaffActionResult {
   const db = getDb();
   const note = (input.note ?? "").trim().slice(0, 300);
   const tracking = action === "ship" ? cleanTracking(input.tracking ?? "") : null;
-  if (action === "ship" && !tracking) return { ok: false, error: "tracking" };
+  // Only the Shipnity sync may ship without a number (a phone number came back instead, tracking-sync-rules.ts).
+  if (action === "ship" && !tracking && !(input.noTracking && input.by === "shipnity")) return { ok: false, error: "tracking" };
   // Staff confirm the carrier with the number — never guessed from it (owner 23/10: the order page names it); EMS or DHL
   // only since 29/10 (the form starts on the postcode pick, owner 30/10).
   const carrier = action === "ship" ? toStaffCarrierId(input.carrier) : null;

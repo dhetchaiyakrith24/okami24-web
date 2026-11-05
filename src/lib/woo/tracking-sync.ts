@@ -5,7 +5,7 @@ import { formatRunNumber } from "@/lib/commerce/run-number";
 import type { OrderStatus } from "@/lib/commerce/order-status";
 import { applyStaffAction } from "@/lib/staff/orders";
 import type { OrderTracking } from "@/lib/woo/api";
-import { decideShip, trackingsInLoggedWrite, type ShipDecision } from "@/lib/woo/tracking-sync-rules";
+import { decideShip, isPhoneShaped, trackingsInLoggedWrite, type ShipDecision } from "@/lib/woo/tracking-sync-rules";
 
 /**
  * Tracking sync step 2 (owner 29/10 "ระบบดึงเลขพัสดุทำเลยครับ"): a tracking number Shipnity writes to an order the site sent
@@ -62,7 +62,12 @@ function syncOne(t: OrderTracking, apply: boolean): SyncResult | null {
   let applied = false;
   if (apply && decision.ship) {
     // The staff step re-reads the status inside its own transaction, so a repeat or a race is refused there too.
-    applied = applyStaffAction(row.order_number, "ship", { tracking: decision.tracking, carrier: decision.carrier, by: "shipnity" }).ok;
+    applied = applyStaffAction(row.order_number, "ship", {
+      tracking: decision.tracking ?? undefined,
+      noTracking: decision.tracking === null,
+      carrier: decision.carrier,
+      by: "shipnity",
+    }).ok;
   }
   return {
     orderNumber: row.order_number,
@@ -80,7 +85,7 @@ export function applyShipnityTrackings(list: OrderTracking[]): void {
     try {
       const r = syncOne(t, true);
       if (!r) continue;
-      if (r.applied) console.log(`[shipnity] order ${r.orderNumber}: shipped, tracking ${r.tracking} (${r.decision.ship ? r.decision.carrier : ""})`);
+      if (r.applied) console.log(`[shipnity] order ${r.orderNumber}: shipped, tracking ${r.decision.ship ? (r.decision.tracking ?? "none") : ""} (${r.decision.ship ? r.decision.carrier : ""})`);
       else if (!r.decision.ship && r.decision.reason !== "same-number")
         console.warn(`[shipnity] order ${r.orderNumber}: tracking ${r.tracking} not applied (${r.decision.reason})`);
     } catch (err) {
@@ -106,4 +111,20 @@ export function catchUpFromLog(apply: boolean): SyncResult[] {
     if (r) out.push(r);
   }
   return out;
+}
+
+/** Orders that already took a phone number as their parcel number (before the rule existed): the number comes off, the
+ *  status stays. `apply` false = only list them. */
+export function phoneTrackings(apply: boolean): string[] {
+  const rows = getDb().prepare("SELECT id, order_number, tracking_number FROM orders WHERE tracking_number IS NOT NULL").all() as {
+    id: number;
+    order_number: string;
+    tracking_number: string;
+  }[];
+  const hits = rows.filter((r) => isPhoneShaped(r.tracking_number));
+  if (apply) {
+    const clear = getDb().prepare("UPDATE orders SET tracking_number = NULL, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?");
+    for (const r of hits) clear.run(r.id);
+  }
+  return hits.map((r) => r.order_number);
 }
