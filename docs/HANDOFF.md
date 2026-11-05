@@ -10,7 +10,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 06/11 ~00:45 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
+Updated 06/11 ~02:30 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
 CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
 in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
 BEFORE REOPENING, close the shipping point in 2g.
@@ -20,11 +20,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
 1 main = see git log. Merged 06/11: #1237 disposables page: chooser by puffs or budget + pill link above the grid, brand table, table of every model, links from product pages and guides (customer walk 05/11 missed the chooser) · #1238 order fix below + security headers + DRAG X3 10 pictures wm4 + IQOS wording.
   Merged 05/11: #1229 52 pictures in wm4 (SKE 8 · Pop Up 18 · RELX Creator 5 + lineup · Pod Pro 2 5 · Caliburn G2 pod · nexSwitch 16K pod; before/after sent, 6 pages curl-checked; 17 credits, 1 lost on DRAG X3, withdrawn) · #1230 sitemap dates per page (live 23 distinct dates, top day 49 of 182; was 148 on one day) · #1231 crawl-status tool `scripts/gsc-unread.ts` + skill seo-after-publish (first run: 182 inspected, 178 with a crawl date, 86 unread; 5 requests used 05/11, `_incoming/seo-requests.log`) · #1232 docs.
   Merged 04/11–05/11 by the 10th chat: #1227 ฿35 line (customer total unchanged; not proven: how Shipnity treats fee_lines, read the first real ฿50 order) · #1215 grey #87868b (surface-3 hover 3.91:1, below 4.5, checker note) · gen-3 watermark batches 3–11 #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 as one series (13.5 #1): final checker PASS 1976f65f, 831 pictures re-made byte-identical, evidence `_incoming/wm3-final-check-1976f65f/`, 1,003 of 1,003 now -wm3.
-  Merged 04/11 earlier: #1213 home intro loads only when its switch is on (home JS 1049→905 KB, look unchanged) · #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
-  #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
-  (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
-  (pod-losing-flavor · pod-low-vapor · types-of-pods; indexing requested in GSC) · #1206 #1207 docs. Earlier night: #1194–#1201, see git log.
-  TRACKING (05/11, read live on /staff/api/shipnity-tracking-sync): sync works, 33 EMS orders carry real numbers. Shipnity wrote the owner's other phone number as the tracking number on 20 orders (warehouse "DHL (ส่งเอง)"): 18 sat in processing, #0026 held it, #0062 has a staff number. #1238: a Thai mobile number ships the order with no number, a real number can join later (sync or staff form). NOT RUN YET: POST {"apply":true} to that endpoint moves the 18 and clears #0026: waits for the owner's word. Owner asks the warehouse where the number comes from. 7 more have no number at all: #0083 #0066 #0065 #0064 #0048 #0036 (test) #0023.
+  TRACKING (05/11, read live on /staff/api/shipnity-tracking-sync): sync works, 33 EMS orders carry real numbers. Shipnity wrote the owner's other phone number as the tracking number on 20 orders: 18 sat in processing (#0057 #0063 #0067–#0082), #0026 held it, #0062 has a staff number. The picture shows C2596 as warehouse "DHL (ส่งเอง)", but the site sent those 18 as EMS: unknown whether all went DHL, the owner asks the warehouse. #1238: a Thai mobile number ships the order with no number, a real number can join later (sync or staff form). NOT RUN: POST {"apply":true} to that endpoint from a staff session moves the 18 and clears #0026, only on the owner's word (รอพี่ตรวจ 104; owner 06/11 ~02:20 "พรุ่งนี้ค่อยว่ากัน"). After it, open one customer order page: the wording was never seen in a browser. 7 more have no number (รอพี่ตรวจ 106).
 2 OPEN WORK, in merge order:
   b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
     Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
@@ -48,7 +44,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
     the web price (trust line stays, §18) · RELX Essential 2 / Infinity Pro 2 cards keep the spec row (Friday's call, owner "ตามมืออาชีพ").
     PARKED / LATER: LINE Webhook redelivery (owner "เอาไว้ก่อน" 03/11) · unwatermarked originals under public/assets → cleanup after gen 3 ·
-      house-clean the many old worktree folders · THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง · coil-56 / coil-83 retailer facts → details pass ·
+      THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง · coil-56 / coil-83 retailer facts → details pass ·
       ZERO PRO "Copper/Champagne" + INFY "Frost Pink" names not on the makers' sites
       · MURO Space 15K stays hidden (retailer pictures) · Reswa Sportcan 12K is live at ฿229, check whether its pictures are our own.
     Owner to answer = docs/รอพี่ตรวจ.md.
@@ -57,7 +53,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
      STAFF LOGIN PLAN (owner 30/10): staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → owner approves → staff dashboard
      (role on the member row; BSOT §11). Login = 13.3 #9 → plan with the owner first. The #1046 pill stays till then.
      FUTURE ROUND (owner 30/10): desktop thank-you page to use the wide space better — queued.
-  d Staff to-do: cancel #0036 ("ทดสอบ") · OK-20261028-ccd46d empty tracking note → staff fill it.
+  d Staff to-do: OK-20261028-ccd46d empty tracking note → staff fill it.
      ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
   e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main.
   f back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion · staff-by-Gmail NOT built
@@ -85,6 +81,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - Customer walk 05/11 fixes, small batch next: cart shipping line reads as 3 prices · address search placeholder cut at 390 · LINE button over the hint under it · late-number form button still says "บันทึกว่าส่งของแล้ว".
+  - HOUSE ROUND = LAST, after the work above (owner 06/11): done = worktrees 106→34, 155+2 branches, 154 folders archived. Left = `_incoming/house-20261106/todo-next.md`.
   - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
   - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
   - 09/11 SERP + rank read incl. disposable terms · GSC read 15/11 · 10/12 · Search Console 2–4 weeks after 12/10.
