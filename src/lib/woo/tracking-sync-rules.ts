@@ -46,8 +46,10 @@ export function decideShip(order: SyncOrder, found: ParsedTracking | null): Ship
   if (!found) return { ship: false, reason: "no-number" };
   if (!order.sentToShipnity) return { ship: false, reason: "not-sent" };
   if (order.tracking) return { ship: false, reason: order.tracking === found.number ? "same-number" : "other-number" };
-  if (!stepsFor("ship", order.status)) return { ship: false, reason: "status" };
-  if (isPhoneShaped(found.number)) return { ship: true, tracking: null, carrier: order.sentCarrier };
+  // Shipped with no number (a phone number came first): a real number may still arrive and join the order.
+  const late = order.status === "shipped";
+  if (!late && !stepsFor("ship", order.status)) return { ship: false, reason: "status" };
+  if (isPhoneShaped(found.number)) return late ? { ship: false, reason: "no-number" } : { ship: true, tracking: null, carrier: order.sentCarrier };
   const carrier =
     found.carrier === "thailand-post" || found.carrier === "dhl"
       ? found.carrier

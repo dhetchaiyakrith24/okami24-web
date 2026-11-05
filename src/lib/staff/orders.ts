@@ -208,10 +208,16 @@ export function applyStaffAction(
   const historyNote = note || (message ? message.replace(/\s+/g, " ").slice(0, 300) : "");
 
   return db.transaction((): StaffActionResult => {
-    const row = db.prepare("SELECT id, status FROM orders WHERE order_number = ?").get(orderNumber) as
-      | { id: number; status: OrderStatus }
+    const row = db.prepare("SELECT id, status, tracking_number FROM orders WHERE order_number = ?").get(orderNumber) as
+      | { id: number; status: OrderStatus; tracking_number: string | null }
       | undefined;
     if (!row) return { ok: false, error: "not-found" };
+    // Shipped with no number, and the real number turned up: it joins the order. Not a status step, so no history row
+    // (the customer's timeline stays the same).
+    if (action === "ship" && tracking && row.status === "shipped" && row.tracking_number === null) {
+      db.prepare("UPDATE orders SET tracking_number = ?, carrier = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE id = ?").run(tracking, carrier, row.id);
+      return { ok: true };
+    }
     const steps = stepsFor(action, row.status);
     if (!steps) return { ok: false, error: "not-allowed" };
     const history = db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)");

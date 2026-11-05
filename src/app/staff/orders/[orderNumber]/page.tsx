@@ -378,10 +378,10 @@ export default async function StaffOrderPage({
           )}
         </section>
       )}
-      {order.status === "processing" && !stockOpen && (
+      {((order.status === "processing" && !stockOpen) || (order.status === "shipped" && !order.trackingNumber)) && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.tracking.label}</h2>
-          {steps.includes("ship") && (
+          {(steps.includes("ship") || order.status === "shipped") && (
             <ActionForm order={order} from={from} act="ship">
               {/* Staff confirm the carrier (owner 23/10: the customer sees it) — starts on the postcode pick, never guessed from the number. */}
               <fieldset className="flex flex-col gap-2">
