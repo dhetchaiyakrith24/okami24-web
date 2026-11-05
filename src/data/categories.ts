@@ -118,7 +118,7 @@ export const categories: Category[] = [
     labelTh: "Heated Tobacco Sticks / บุหรี่ TEREA",
     description: "Tobacco sticks for heat-not-burn devices — the consumable side of the heated-tobacco ecosystem.",
     descriptionTh:
-      "บุหรี่ TEREA สำหรับเครื่อง IQOS ILUMA ใส่กับ IQOS รุ่นก่อน ILUMA ไม่ได้ ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
+      "บุหรี่ TEREA ใช้กับเครื่อง IQOS ILUMA เท่านั้น ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
     systemTypes: [],
   },
 ];
