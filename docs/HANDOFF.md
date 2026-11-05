@@ -7,6 +7,9 @@
 
 ## 16. Paste block for the next chat
 
+
+**Newest (05/11 12:10, emergency stop):** #1229 #1230 #1231 live. Disposable #1234 #1235 #1233 = drafts, PASS on main 6d194c88, not merged: combine into one head (never built together), verify, checker, merge once. Left: close queue-0211 + tag · IMAGE_SPEC wm gen 4 no helmet, text 20/18 · remove รอพี่ตรวจ 84 · LESSONS · status page · owner question card · daily indexing.
+
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
