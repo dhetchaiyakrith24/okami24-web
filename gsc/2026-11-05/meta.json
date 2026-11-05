@@ -1,0 +1,31 @@
+{
+  "site": "sc-domain:okami24.store",
+  "account": "…@okami24-gsc.iam.gserviceaccount.com",
+  "ranges": {
+    "last28": {
+      "startDate": "2026-10-07",
+      "endDate": "2026-11-03"
+    },
+    "last90": {
+      "startDate": "2026-08-06",
+      "endDate": "2026-11-03"
+    }
+  },
+  "rows": {
+    "last28-query": 310,
+    "last28-page": 154,
+    "last28-query-page": 422,
+    "last28-device": 3,
+    "last28-country": 31,
+    "last90-date": 58
+  },
+  "ranAt": "2026-11-05T03:39:14.720Z",
+  "inspection": {
+    "urlSource": "sitemap",
+    "urls": 182,
+    "inspected": 182,
+    "withCrawlDate": 179,
+    "failed": 0,
+    "stoppedByQuota": false
+  }
+}

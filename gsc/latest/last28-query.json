@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-06",
-  "endDate": "2026-11-02",
+  "startDate": "2026-10-07",
+  "endDate": "2026-11-03",
   "dimensions": [
    "query"
   ]
@@ -11,28 +11,19 @@
    "keys": [
     "okami24"
    ],
-   "clicks": 24,
-   "impressions": 42,
-   "ctr": 0.5714285714285714,
+   "clicks": 23,
+   "impressions": 40,
+   "ctr": 0.575,
    "position": 1
   },
   {
    "keys": [
     "voopoo drag 6 ราคา"
    ],
-   "clicks": 22,
-   "impressions": 39,
-   "ctr": 0.5641025641025641,
-   "position": 1.6923076923076923
-  },
-  {
-   "keys": [
-    "okami pod"
-   ],
-   "clicks": 19,
-   "impressions": 20,
-   "ctr": 0.95,
-   "position": 2.05
+   "clicks": 21,
+   "impressions": 38,
+   "ctr": 0.5526315789473685,
+   "position": 1.6578947368421053
   },
   {
    "keys": [
@@ -45,21 +36,30 @@
   },
   {
    "keys": [
+    "okami pod"
+   ],
+   "clicks": 18,
+   "impressions": 19,
+   "ctr": 0.9473684210526315,
+   "position": 2.052631578947368
+  },
+  {
+   "keys": [
     "voopoo drag 6"
    ],
-   "clicks": 19,
-   "impressions": 65,
-   "ctr": 0.2923076923076923,
-   "position": 6.7846153846153845
+   "clicks": 17,
+   "impressions": 62,
+   "ctr": 0.27419354838709675,
+   "position": 6.741935483870968
   },
   {
    "keys": [
     "pod"
    ],
-   "clicks": 17,
-   "impressions": 180,
-   "ctr": 0.09444444444444444,
-   "position": 12.15
+   "clicks": 16,
+   "impressions": 168,
+   "ctr": 0.09523809523809523,
+   "position": 12.172619047619047
   },
   {
    "keys": [
@@ -108,21 +108,12 @@
   },
   {
    "keys": [
-    "drag 6"
-   ],
-   "clicks": 4,
-   "impressions": 16,
-   "ctr": 0.25,
-   "position": 9.8125
-  },
-  {
-   "keys": [
     "argus g4"
    ],
    "clicks": 3,
-   "impressions": 12,
-   "ctr": 0.25,
-   "position": 8.5
+   "impressions": 11,
+   "ctr": 0.2727272727272727,
+   "position": 8.90909090909091
   },
   {
    "keys": [
@@ -135,21 +126,12 @@
   },
   {
    "keys": [
-    "joiway"
-   ],
-   "clicks": 3,
-   "impressions": 112,
-   "ctr": 0.026785714285714284,
-   "position": 7.169642857142857
-  },
-  {
-   "keys": [
     "joiway f4"
    ],
    "clicks": 3,
-   "impressions": 74,
-   "ctr": 0.04054054054054054,
-   "position": 9.905405405405405
+   "impressions": 60,
+   "ctr": 0.05,
+   "position": 9.85
   },
   {
    "keys": [
@@ -189,12 +171,21 @@
   },
   {
    "keys": [
+    "drag 6"
+   ],
+   "clicks": 2,
+   "impressions": 11,
+   "ctr": 0.18181818181818182,
+   "position": 5.2727272727272725
+  },
+  {
+   "keys": [
     "infy 20k"
    ],
    "clicks": 2,
-   "impressions": 49,
-   "ctr": 0.04081632653061224,
-   "position": 12.693877551020408
+   "impressions": 41,
+   "ctr": 0.04878048780487805,
+   "position": 12.536585365853659
   },
   {
    "keys": [
@@ -231,15 +222,6 @@
    "impressions": 12,
    "ctr": 0.16666666666666666,
    "position": 6.5
-  },
-  {
-   "keys": [
-    "pod kit"
-   ],
-   "clicks": 2,
-   "impressions": 3,
-   "ctr": 0.6666666666666666,
-   "position": 2
   },
   {
    "keys": [
@@ -327,9 +309,9 @@
     "caliburn g4 pro ราคา"
    ],
    "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 20
+   "impressions": 1,
+   "ctr": 1,
+   "position": 21
   },
   {
    "keys": [
@@ -360,15 +342,6 @@
   },
   {
    "keys": [
-    "drag voopoo 6"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 5
-  },
-  {
-   "keys": [
     "infy"
    ],
    "clicks": 1,
@@ -387,6 +360,15 @@
   },
   {
    "keys": [
+    "joiway"
+   ],
+   "clicks": 1,
+   "impressions": 90,
+   "ctr": 0.011111111111111112,
+   "position": 7.188888888888889
+  },
+  {
+   "keys": [
     "joysway f4"
    ],
    "clicks": 1,
@@ -402,6 +384,15 @@
    "impressions": 17,
    "ctr": 0.058823529411764705,
    "position": 6.647058823529412
+  },
+  {
+   "keys": [
+    "pod kit"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 2
   },
   {
    "keys": [
@@ -438,24 +429,6 @@
    "impressions": 12,
    "ctr": 0.08333333333333333,
    "position": 8.333333333333332
-  },
-  {
-   "keys": [
-    "uwell caliburn g3"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 5
-  },
-  {
-   "keys": [
-    "uwell caliburn g3 pro"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 4
   },
   {
    "keys": [
@@ -624,9 +597,9 @@
     "caliburn g3"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 7.333333333333333
+   "position": 6
   },
   {
    "keys": [
@@ -702,21 +675,12 @@
   },
   {
    "keys": [
-    "darg 6"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
-  },
-  {
-   "keys": [
     "disposable"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 18
+   "position": 19.4
   },
   {
    "keys": [
@@ -795,9 +759,9 @@
     "drag6"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 3,
    "ctr": 0,
-   "position": 9
+   "position": 8.333333333333332
   },
   {
    "keys": [
@@ -849,9 +813,9 @@
     "esko bar switch"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 43.5
+   "position": 33
   },
   {
    "keys": [
@@ -1011,9 +975,9 @@
     "g5lite"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 3.3333333333333335
+   "position": 3.5
   },
   {
    "keys": [
@@ -1083,9 +1047,9 @@
     "infy pod"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 6,
    "ctr": 0,
-   "position": 66.42857142857143
+   "position": 69.83333333333333
   },
   {
    "keys": [
@@ -1182,9 +1146,9 @@
     "joi way"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 7.25
+   "position": 7.333333333333333
   },
   {
    "keys": [
@@ -1200,7 +1164,7 @@
     "joiway pod"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
    "position": 5
   },
@@ -1236,9 +1200,9 @@
     "joway pod"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 8
+   "position": 7.333333333333333
   },
   {
    "keys": [
@@ -1299,9 +1263,9 @@
     "m power 20k"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 10.666666666666666
+   "position": 5.2
   },
   {
    "keys": [
@@ -1503,15 +1467,6 @@
   },
   {
    "keys": [
-    "muro connector 20k"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 25
-  },
-  {
-   "keys": [
     "muro mixto"
    ],
    "clicks": 0,
@@ -1587,9 +1542,9 @@
     "p.o.d."
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 10.666666666666666
+   "position": 13
   },
   {
    "keys": [
@@ -1731,9 +1686,9 @@
     "pods"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 4,
    "ctr": 0,
-   "position": 12
+   "position": 16.5
   },
   {
    "keys": [
@@ -1884,9 +1839,9 @@
     "salthub"
    ],
    "clicks": 0,
-   "impressions": 14,
+   "impressions": 12,
    "ctr": 0,
-   "position": 28
+   "position": 26.416666666666668
   },
   {
    "keys": [
@@ -2289,9 +2244,9 @@
     "คืออะไร"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 16.5
+   "position": 31
   },
   {
    "keys": [
@@ -2475,15 +2430,6 @@
   },
   {
    "keys": [
-    "น้ํายาบุหรี่ไฟฟ้า"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 68
-  },
-  {
-   "keys": [
     "บุหรี่ไฟฟ้า joiway"
    ],
    "clicks": 0,
@@ -2511,24 +2457,6 @@
   },
   {
    "keys": [
-    "พอต infy"
-   ],
-   "clicks": 0,
-   "impressions": 2,
-   "ctr": 0,
-   "position": 45
-  },
-  {
-   "keys": [
-    "พอต voopoo"
-   ],
-   "clicks": 0,
-   "impressions": 2,
-   "ctr": 0,
-   "position": 74.5
-  },
-  {
-   "keys": [
     "พอต เอสโคบาร์"
    ],
    "clicks": 0,
@@ -2544,15 +2472,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 89
-  },
-  {
-   "keys": [
-    "พอตมินิ"
-   ],
-   "clicks": 0,
-   "impressions": 2,
-   "ctr": 0,
-   "position": 8
   },
   {
    "keys": [
@@ -2691,15 +2610,6 @@
   },
   {
    "keys": [
-    "รุ่นอะไร"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 1
-  },
-  {
-   "keys": [
     "ร้านราคาถูก"
    ],
    "clicks": 0,
@@ -2802,9 +2712,9 @@
     "เครื่อง infy"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 44.5
+   "position": 81
   },
   {
    "keys": [

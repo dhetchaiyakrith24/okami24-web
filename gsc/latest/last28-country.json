@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-06",
-  "endDate": "2026-11-02",
+  "startDate": "2026-10-07",
+  "endDate": "2026-11-03",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 555,
-   "impressions": 3928,
-   "ctr": 0.14129327902240327,
-   "position": 10.878818737270876
+   "clicks": 527,
+   "impressions": 3720,
+   "ctr": 0.14166666666666666,
+   "position": 10.94516129032258
   },
   {
    "keys": [
@@ -93,9 +93,9 @@
     "bra"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 53.25
+   "position": 48.333333333333336
   },
   {
    "keys": [
@@ -174,7 +174,7 @@
     "kor"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
    "position": 10
   },
@@ -183,9 +183,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 14,
+   "impressions": 13,
    "ctr": 0,
-   "position": 5.285714285714286
+   "position": 5.076923076923077
   },
   {
    "keys": [

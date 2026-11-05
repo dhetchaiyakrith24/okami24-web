@@ -1,5 +1,5 @@
 {
- "ranAt": "2026-11-04T19:29:21.714Z",
+ "ranAt": "2026-11-05T03:44:07.187Z",
  "site": "sc-domain:okami24.store",
  "urlSource": "sitemap",
  "rows": [
@@ -775,7 +775,7 @@
   },
   {
    "url": "https://okami24.store/products/caliburn-g4-mini",
-   "lastCrawl": "2026-10-24T16:48:09Z",
+   "lastCrawl": "2026-11-04T22:50:39Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -805,7 +805,7 @@
   },
   {
    "url": "https://okami24.store/products/caliburn-g5",
-   "lastCrawl": "2026-10-29T02:13:16Z",
+   "lastCrawl": "2026-11-05T01:20:40Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1055,13 +1055,13 @@
   },
   {
    "url": "https://okami24.store/products/dude-pod-3ml",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+   "lastCrawl": "2026-11-04T19:33:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/dude-pod-3ml",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/e-liquid",
@@ -1345,7 +1345,7 @@
   },
   {
    "url": "https://okami24.store/products/mq-bar-22k",
-   "lastCrawl": "2026-11-01T04:14:02Z",
+   "lastCrawl": "2026-11-05T00:05:39Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1415,7 +1415,7 @@
   },
   {
    "url": "https://okami24.store/products/nexpod-15k",
-   "lastCrawl": "2026-11-04T17:28:33Z",
+   "lastCrawl": "2026-11-04T21:14:23Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
