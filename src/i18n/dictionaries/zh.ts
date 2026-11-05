@@ -260,6 +260,8 @@ export const zh: Dictionary = {
     readMoreEyebrow: "了解更多",
     relatedEyebrow: "相关推荐",
     relatedTitle: "你可能还会喜欢。",
+    disposablesCrumb: "一次性电子烟",
+    disposablesAllLink: "查看全部一次性电子烟",
     sourceNoteLabel: "参考来源",
     officialSite: "官方网站 ↗",
     gallerySourceLinkLabel: "来源",

@@ -487,7 +487,7 @@ export function PilotProductDetail({
           legacy device it fits and vice versa. Renders nothing when there are no verified links. */}
       <CompatibleProducts direction="works-with" items={worksWith} />
       <CompatibleProducts direction="fits-devices" items={fitsDevices} />
-      <PilotRelatedProducts products={related} />
+      <PilotRelatedProducts products={related} categoryId={product.categoryId} />
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (

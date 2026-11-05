@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory, kindCategoryId } from "@/data/categories";
@@ -63,6 +64,8 @@ import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
+import { DisposableChooser, DisposableChooserJump } from "@/components/catalog/DisposableChooser";
+import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -71,6 +74,7 @@ import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOIN
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
 import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -115,6 +119,16 @@ function legacyProductImageSrcs(product: Product): (string | undefined)[] {
 /** The option photos that carry their own studio floor — only these need the body measurement (OptionScaledCard). */
 function legacyOwnFloorSrcs(product: Product): (string | undefined)[] {
   return [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].map((v) => (v.image?.ownFloor ? v.image.src : undefined));
+}
+
+/** Round "disposable pod" block 2 (05/11): the disposable pages' crumb and BreadcrumbList say the term the category owns
+ *  (Thai, as the page's other schema does); other categories keep their name. The visible crumb follows the language. */
+function categoryCrumbName(categoryId: string, fallback: string): string {
+  return categoryId === "disposables" ? getDictionary("th").product.disposablesCrumb : fallback;
+}
+
+function localisedCategoryCrumb<T extends { name: string; path: string }>(trail: T[], categoryId: string): (Omit<T, "name"> & { name: ReactNode })[] {
+  return trail.map((t, i) => (i === 1 && categoryId === "disposables" ? { ...t, name: <DisposablesCrumb /> } : t));
 }
 
 export function generateStaticParams() {
@@ -218,6 +232,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const guideCopy = isEmptyCategory ? undefined : CATEGORY_GUIDE_COPY[category.id];
     const guideFaqJsonLd = guideCopy?.th ? articleFaqJsonLd(guideCopy.th.faq) : null;
     const listItems = guideCopy ? [...products, ...publishedProducts].map((p) => ({ name: p.displayName, path: `/products/${p.slug}` })) : undefined;
+    // Round "disposable pod" (05/11): the chooser and brand table read the live catalog; other categories have neither.
+    const lineup = category.id === "disposables" && !isEmptyCategory ? disposableLineup(products, publishedProducts) : null;
     return (
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
@@ -228,6 +244,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
+          {lineup && guideCopy && <DisposableChooserJump copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} />}
           {/* A genuinely published ProductMaster product is a real catalog product — it belongs in
               the SAME grid/filter/sort experience as a legacy one, not a separate "Now Available"
               block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
@@ -244,9 +261,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             inStockKeys={inStockEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
+          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
-        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} />}
+        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}
         {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
         {!isEmptyCategory && (
           <RelatedArticles
@@ -283,7 +301,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
         { name: "Home", path: "/" },
-        { name: publishedProduct.categoryName, path: `/products/${publishedProduct.categoryId}` },
+        { name: categoryCrumbName(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
         { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
       ];
       // List-new 30/10: a warehouse-listed product with an article (product-articles.ts) gets the "more details" and FAQ
@@ -297,7 +315,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {publishedFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedFaqJsonLd) }} />}
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
           <HashLinksKeepHistory />
-          <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
+          <Breadcrumbs trail={localisedCategoryCrumb(publishedTrail, publishedProduct.categoryId).map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={publishedProduct.displayName} /> } : t))} />
           <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} articles={publishedArticles} />
         </>
       );
@@ -359,7 +377,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     : articleFaqJsonLd(product.faqs.map((f) => ({ question: copyTh?.faqs?.[f.id]?.question ?? f.question, answer: copyTh?.faqs?.[f.id]?.answer ?? f.answer })));
   const legacyTrail = [
     { name: "Home", path: "/" },
-    { name: categoryNameOf(product.categoryId), path: `/products/${product.categoryId}` },
+    { name: categoryCrumbName(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
     { name: product.displayName, path: `/products/${product.slug}` },
   ];
 
@@ -370,7 +388,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
-      <Breadcrumbs trail={legacyTrail} />
+      <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
       {editorial ? (
         <>
@@ -402,7 +420,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <RelatedProducts products={related} />
+      <RelatedProducts products={related} categoryId={product.categoryId} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
       <RelatedArticles articles={relatedArticlesForLegacy(product)} otherLocaleArticles={relatedArticlesForLegacy(product, { skipThaiOnly: true })} />

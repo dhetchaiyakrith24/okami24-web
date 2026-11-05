@@ -8,6 +8,9 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { CategoryGuideCopy } from "@/i18n/category-guide-copy";
 import type { CategorySpecRow } from "@/lib/category-spec-table";
+import type { BrandRow, LineupRow } from "@/lib/disposable-lineup";
+import { DisposableCompareTable } from "@/components/catalog/DisposableCompareTable";
+import { baht, thousands } from "@/components/catalog/lineup-format";
 
 /**
  * Round SEO pod (30/10): the text block page-1 rivals carry under their category grid and ours lacked
@@ -18,13 +21,14 @@ import type { CategorySpecRow } from "@/lib/category-spec-table";
  * Parts reused from pages that already passed: SectionHeading, the editorial FAQ markup, the article inline-link renderer and the
  * editorial compare-table rules.
  */
-export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[] }) {
+export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[]; lineup?: LineupRow[] }) {
   const { locale } = useLocale();
   const c = copy[locale] ?? copy.en ?? copy.th;
   if (!c) return null;
   const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const dash = <span className="text-foreground-dim">—</span>;
   const table = c.table;
+  const brandTable = c.brandTable;
 
   return (
     <>
@@ -51,6 +55,47 @@ export function CategoryGuide({ copy, rows }: { copy: Partial<Record<"th" | "en"
               </div>
             ))}
           </div>
+          {brandTable && brands.length > 0 && (
+            <div className="grid gap-4 lg:grid-cols-3 lg:gap-8">
+              <div className="flex flex-col gap-3">
+                <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground [text-wrap:balance]">{t(brandTable.heading)}</h3>
+                <p className="text-sm leading-relaxed text-foreground-muted">{renderInline(brandTable.lede, locale, "brand-lede")}</p>
+              </div>
+              <div className="lg:col-span-2">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b border-surface-border">
+                      <th scope="col" className="whitespace-nowrap py-3 pr-3 text-left font-medium text-foreground-muted">{t(brandTable.brand)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pl-2 text-right font-medium text-foreground-muted">{t(brandTable.models)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pl-3 text-right font-medium text-foreground-muted">{t(brandTable.from)}</th>
+                      <th scope="col" className="whitespace-nowrap py-3 pl-3 text-right font-medium text-foreground-muted">{t(brandTable.topPuffs)}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {brands.map((b) => (
+                      <tr key={b.slug} className="border-b border-surface-border-soft">
+                        <th scope="row" className="py-3 pr-3 text-left font-medium text-foreground">
+                          <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <Link href={`/brands/${b.slug}`} className="whitespace-nowrap underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember">
+                              {b.name}
+                            </Link>
+                            {b.bestSeller && <span className="inline-flex h-[19px] items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 text-[11px] leading-none font-semibold whitespace-nowrap text-ember-strong">{t(brandTable.bestSeller)}</span>}
+                          </span>
+                        </th>
+                        <td className="py-3 pl-2 text-right font-display text-[15px] font-semibold tabular-nums text-foreground">{b.models}</td>
+                        <td className="py-3 pl-3 text-right font-display text-[15px] font-semibold tabular-nums whitespace-nowrap text-foreground">{b.fromPrice !== null ? baht(b.fromPrice) : dash}</td>
+                        <td className="py-3 pl-3 text-right font-display text-[15px] font-semibold tabular-nums whitespace-nowrap text-foreground">
+                          {b.topPuffs !== null ? `${thousands(b.topPuffs)}${b.topPuffsPlus ? "+" : ""}` : dash}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="mt-4 text-xs text-foreground-dim">{t(brandTable.note)}</p>
+              </div>
+            </div>
+          )}
+          {c.compareTable && lineup.length > 0 && <DisposableCompareTable copy={c.compareTable} rows={lineup} />}
           {table && rows.length > 0 && (
             <div className="flex flex-col gap-4">
               <h3 className="font-display text-2xl leading-tight font-semibold tracking-tight text-foreground">{t(table.heading)}</h3>
