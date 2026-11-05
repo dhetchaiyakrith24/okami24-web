@@ -10,15 +10,16 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 05/11 ~01:50 by the 10th main chat (local_7b34781b), mid-queue. Re-read this + TEAM_RULES.
+Updated 05/11 ~22:40 by the 10th main chat (local_7b34781b), owner back after shutting the PC at noon. Re-read this + TEAM_RULES.
 CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
 in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
 BEFORE REOPENING, close the shipping point in 2g.
-Owner 04/11: child chats up to 5 (one-off over 13.6's 3). Owner 04/11 evening, for this queue: "ขึ้นเว็บตอนไหนก็ขึ้นไปเลย" = the 18:00–24:00 window does not hold it up.
+Owner 04/11: child chats up to 5 (one-off over 13.6's 3). Owner 04/11 evening, for this queue: "ขึ้นเว็บตอนไหนก็ขึ้นไปเลย" = the 18:00–24:00 window does not hold it up. That waiver was for the queue only: disposable merges after 00:00.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
 MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
 
-1 main = 22479905 (#1224). Merged 04/11–05/11 by the 10th chat: #1227 ฿35 line (customer total unchanged; not proven: how Shipnity treats fee_lines, read the first real ฿50 order) · #1215 grey #87868b (surface-3 hover 3.91:1, below 4.5, checker note) · gen-3 watermark batches 3–11 #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 as one series (13.5 #1): final checker PASS 1976f65f, 831 pictures re-made byte-identical, evidence `_incoming/wm3-final-check-1976f65f/`, 1,003 of 1,003 now -wm3.
+1 main = see git log. Merged 05/11: #1229 52 pictures in wm4 (SKE 8 · Pop Up 18 · RELX Creator 5 + lineup · Pod Pro 2 5 · Caliburn G2 pod · nexSwitch 16K pod; before/after sent, 6 pages curl-checked; 17 credits, 1 lost on DRAG X3, withdrawn) · #1230 sitemap dates per page (live 23 distinct dates, top day 49 of 182; was 148 on one day) · #1231 crawl-status tool `scripts/gsc-unread.ts` + skill seo-after-publish (first run: 182 inspected, 178 with a crawl date, 86 unread; 5 requests used 05/11, `_incoming/seo-requests.log`) · #1232 docs.
+  Merged 04/11–05/11 by the 10th chat: #1227 ฿35 line (customer total unchanged; not proven: how Shipnity treats fee_lines, read the first real ฿50 order) · #1215 grey #87868b (surface-3 hover 3.91:1, below 4.5, checker note) · gen-3 watermark batches 3–11 #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 as one series (13.5 #1): final checker PASS 1976f65f, 831 pictures re-made byte-identical, evidence `_incoming/wm3-final-check-1976f65f/`, 1,003 of 1,003 now -wm3.
   Merged 04/11 earlier: #1213 home intro loads only when its switch is on (home JS 1049→905 KB, look unchanged) · #1225 long inline link labels wrap at spaces, the page no longer runs wider than a phone (live: pod-169 375 at 375) · #1205 ค่ะ/คะ/ครับ glue + short spec labels + 4 category intros in 2 paragraphs · #1202 cards + in-stock filter read LIVE stock ·
   #1204 watermark gen-3 tool (sample 4A) · #1210 /products backdrop A (grey samurai) · #1209 SEO: clips on 9 product pages, 3 pages' incomplete Product data removed
   (no price changed, 95 offers diffed), links into 2 orphan articles, clip swap · #1211 #1212 gen-3 batches 1–2 (172 of 1,003 pictures) · #1220 3 new green-key articles
@@ -27,9 +28,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
 2 OPEN WORK, in merge order:
   b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
     Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
-  c #1229 child images-fix-0511 (local_0b072cd4), draft, head 1b847cb0+: SKE 8 flavours · Pop Up 18 (owner "ใช้ทั้ง 18 รูป", mouthpieces levelled by script) · RELX Creator 5 colours + lineup · Pod Pro 2 5 flavours · Caliburn G2 pod · nexSwitch 16K pod. Credits 16 used (7 + 9). Waits on the owner: round-2 sheets · Pod Pro 2 printed "3%" vs maker 20MG/ML (rec. 2%) · DRAG X3 1 credit. Then send it "go" (merge main, verify, gate, checker). JOIWAY F4 kept. Do NOT generate ZERO PRO Copper/Champagne, INFY Frost Pink (warehouse names, look unknown).
-  d #1230 sitemap dates per page + #1231 crawl-status tool + skill seo-after-publish, child seo-system-0511 (local_cec483ca), drafts, checker round 3. Owner approved 05/11 "ผ่านตามแนะนำ" (sitemap named, Do-not-touch waived for this). Live sitemap before: 148 of 182 URLs dated 04/11.
-  e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`, child disposable-0511 (local_d2c06ba5): blocks 1–3 in progress. Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
+  e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`, child disposable-0511 (local_d2c06ba5) finished blocks 1–3: #1234 1a434e72 → #1235 7f7a1fd1 → #1233 205bd6ff, each checker PASS on main 6d194c88, all drafts, never built together. Main chat combines them into one head on #1235 (one verify + checker, one deploy), merges after 00:00, closes #1233 #1234 as included. After live: request indexing for /products/disposables + changed pages; block 4 reads 09/11 · 15/11 · 10/12.
+    Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
   g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
     Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
     Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
@@ -85,6 +85,9 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
 5 open / dated:
   - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
+  - Daily indexing: `npx tsx scripts/gsc-unread.ts`, owner's Chrome only, stop at quota, log it. Next: salt-nic guide · nexbar-switch-15k-pod · marbo-10k-clone, then best sellers.
+  - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
+  - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
   - 09/11 SERP + rank read incl. disposable terms · GSC read 15/11 · 10/12 · Search Console 2–4 weeks after 12/10.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
   - QUEUED (owner 31/10): price sync — Javis picture prices vs Excel vs site · "ขายดี" from real web orders since 31/10 (threshold = owner's).
