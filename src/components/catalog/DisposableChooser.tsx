@@ -65,7 +65,7 @@ export function DisposableChooserJump({ copy }: { copy: Partial<Record<"th" | "e
   const c = copy[locale] ?? copy.en ?? copy.th;
   if (!c) return null;
   return (
-    <a href="#choose" className="-mb-6 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-ember underline-offset-4 hover:underline lg:-mb-8">
+    <a href="#choose" className="-mb-6 inline-flex min-h-11 w-fit items-center gap-2 rounded-full border border-ember/50 bg-ember/10 px-4 text-sm font-medium text-foreground transition-colors hover:border-ember lg:-mb-8">
       {locale === "th" ? thaiTypographyNode(c.topJump) : c.topJump}
       <span aria-hidden>↓</span>
     </a>
