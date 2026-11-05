@@ -65,7 +65,7 @@ export function Footer({ categories, brands, dnsGuideId, orderingEnabled = true 
       <Container className="grid grid-cols-1 gap-10 py-14 max-sm:gap-0 sm:grid-cols-4 lg:grid-cols-6 lg:py-20">
         <div className="flex flex-col gap-4 max-sm:pb-8 sm:col-span-2 lg:col-span-2">
           <Link href="/" className="flex items-center" aria-label="OKami24">
-            <Image src="/brand/okami-logo.png" alt="OKami24" width={1416} height={429} className="h-10 w-auto" />
+            <Image src="/brand/okami-logo.png" alt="OKami24" width={1416} height={429} sizes="132px" className="h-10 w-auto" />
           </Link>
           {/* the slogan line says "ของแท้" — left out where the page makes no genuine claim (src/lib/genuine-claim.ts) */}
           {!NO_GENUINE_CLAIM_PATHS.has(pathname) && <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">{dict.footer.tagline}</p>}
