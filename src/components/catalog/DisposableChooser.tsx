@@ -59,6 +59,19 @@ function Groups({ title, groups, meta, copy, unit, t }: { title: string; groups:
   );
 }
 
+/** The link above the grid, down to the chooser. */
+export function DisposableChooserJump({ copy }: { copy: Partial<Record<"th" | "en" | "zh", ChooserCopy>> }) {
+  const { locale } = useLocale();
+  const c = copy[locale] ?? copy.en ?? copy.th;
+  if (!c) return null;
+  return (
+    <a href="#choose" className="-mb-6 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-ember underline-offset-4 hover:underline lg:-mb-8">
+      {locale === "th" ? thaiTypographyNode(c.topJump) : c.topJump}
+      <span aria-hidden>↓</span>
+    </a>
+  );
+}
+
 export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | "en" | "zh", ChooserCopy>>; data: DisposableChooserData }) {
   const { locale, dict } = useLocale();
   const c = copy[locale] ?? copy.en ?? copy.th;
@@ -72,7 +85,7 @@ export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | 
   const budgetMeta = (g: ChooserGroup) => withCount(g.rows.length, g.lo === null ? "" : `${span(g.lo, g.hi, thousands)} ${unit}`);
 
   return (
-    <section className="flex flex-col gap-8 border-t border-surface-border-soft pt-10 lg:gap-10 lg:pt-12">
+    <section id="choose" className="flex scroll-mt-24 flex-col gap-8 border-t border-surface-border-soft pt-10 lg:gap-10 lg:pt-12">
       <SectionHeading title={t(c.heading)} titleClassName="leading-[1.15] [text-wrap:balance]" description={data.minPrice !== null ? t(c.lede.replace("{min}", baht(data.minPrice))) : undefined} />
       <div className="flex flex-col gap-4">
         <div className="grid gap-4 lg:grid-cols-2 lg:items-start lg:gap-6">

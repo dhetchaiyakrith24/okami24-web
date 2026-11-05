@@ -35,6 +35,8 @@ export interface CompareTableCopy {
 export interface ChooserCopy {
   /** The link at the chooser's foot, to the table of every model. */
   jump: string;
+  /** The link above the product grid, down to the chooser (a customer walk missed it five screens below the grid). */
+  topJump: string;
   heading: string;
   lede: string;
   puffPanelTitle: string;
@@ -567,6 +569,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       },
       chooser: {
         jump: "ดูตารางเทียบทุกรุ่น",
+        topJump: "เลือกตามจำนวนพัฟหรืองบ",
         heading: "เลือกพอตใช้แล้วทิ้งตามพัฟหรืองบ",
         lede: "ราคาบนหน้านี้เริ่มที่ {min} ถ้ามีจำนวนพัฟหรืองบในใจอยู่แล้ว ก็ดูรุ่นที่ตรงกันได้ด้านล่างนี้",
         puffPanelTitle: "จำนวนพัฟที่อยากได้",
@@ -649,6 +652,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       },
       chooser: {
         jump: "See the full table",
+        topJump: "Choose by puffs or budget",
         heading: "Choose by puffs or budget",
         lede: "Prices on this page start at {min}, and the models below are grouped by puff count and by budget.",
         puffPanelTitle: "By puff count",
@@ -731,6 +735,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       },
       chooser: {
         jump: "查看完整对比表",
+        topJump: "按口数或预算挑选",
         heading: "按口数或预算挑选",
         lede: "本页价格 {min} 起，下方已按口数和预算分好组，可直接查看符合需求的型号。",
         puffPanelTitle: "按口数",

@@ -64,7 +64,7 @@ import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
-import { DisposableChooser } from "@/components/catalog/DisposableChooser";
+import { DisposableChooser, DisposableChooserJump } from "@/components/catalog/DisposableChooser";
 import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
@@ -244,6 +244,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
+          {lineup && guideCopy && <DisposableChooserJump copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} />}
           {/* A genuinely published ProductMaster product is a real catalog product — it belongs in
               the SAME grid/filter/sort experience as a legacy one, not a separate "Now Available"
               block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
