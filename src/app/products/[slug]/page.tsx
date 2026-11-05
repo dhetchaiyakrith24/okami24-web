@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory, kindCategoryId } from "@/data/categories";
@@ -73,6 +74,7 @@ import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOIN
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
 import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -117,6 +119,16 @@ function legacyProductImageSrcs(product: Product): (string | undefined)[] {
 /** The option photos that carry their own studio floor — only these need the body measurement (OptionScaledCard). */
 function legacyOwnFloorSrcs(product: Product): (string | undefined)[] {
   return [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].map((v) => (v.image?.ownFloor ? v.image.src : undefined));
+}
+
+/** Round "disposable pod" block 2 (05/11): the disposable pages' crumb and BreadcrumbList say the term the category owns
+ *  (Thai, as the page's other schema does); other categories keep their name. The visible crumb follows the language. */
+function categoryCrumbName(categoryId: string, fallback: string): string {
+  return categoryId === "disposables" ? getDictionary("th").product.disposablesCrumb : fallback;
+}
+
+function localisedCategoryCrumb<T extends { name: string; path: string }>(trail: T[], categoryId: string): (Omit<T, "name"> & { name: ReactNode })[] {
+  return trail.map((t, i) => (i === 1 && categoryId === "disposables" ? { ...t, name: <DisposablesCrumb /> } : t));
 }
 
 export function generateStaticParams() {
@@ -288,7 +300,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
         { name: "Home", path: "/" },
-        { name: publishedProduct.categoryName, path: `/products/${publishedProduct.categoryId}` },
+        { name: categoryCrumbName(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
         { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
       ];
       // List-new 30/10: a warehouse-listed product with an article (product-articles.ts) gets the "more details" and FAQ
@@ -302,7 +314,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {publishedFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedFaqJsonLd) }} />}
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
           <HashLinksKeepHistory />
-          <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
+          <Breadcrumbs trail={localisedCategoryCrumb(publishedTrail, publishedProduct.categoryId).map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={publishedProduct.displayName} /> } : t))} />
           <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} articles={publishedArticles} />
         </>
       );
@@ -364,7 +376,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     : articleFaqJsonLd(product.faqs.map((f) => ({ question: copyTh?.faqs?.[f.id]?.question ?? f.question, answer: copyTh?.faqs?.[f.id]?.answer ?? f.answer })));
   const legacyTrail = [
     { name: "Home", path: "/" },
-    { name: categoryNameOf(product.categoryId), path: `/products/${product.categoryId}` },
+    { name: categoryCrumbName(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
     { name: product.displayName, path: `/products/${product.slug}` },
   ];
 
@@ -375,7 +387,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {editorialFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(editorialFaqJsonLd) }} />}
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
-      <Breadcrumbs trail={legacyTrail} />
+      <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
       {editorial ? (
         <>
@@ -407,7 +419,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <RelatedProducts products={related} />
+      <RelatedProducts products={related} categoryId={product.categoryId} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
       <RelatedArticles articles={relatedArticlesForLegacy(product)} otherLocaleArticles={relatedArticlesForLegacy(product, { skipThaiOnly: true })} />

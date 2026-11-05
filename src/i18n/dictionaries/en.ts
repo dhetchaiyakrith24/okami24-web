@@ -266,6 +266,8 @@ export const en: Dictionary = {
     readMoreEyebrow: "Read more",
     relatedEyebrow: "Related",
     relatedTitle: "You might also consider.",
+    disposablesCrumb: "Disposables",
+    disposablesAllLink: "See all disposables",
     sourceNoteLabel: "Reference sources",
     officialSite: "Official site ↗",
     gallerySourceLinkLabel: "source",

@@ -5,8 +5,9 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductRail } from "@/components/catalog/ProductRail";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { DisposablesAllLink } from "@/components/catalog/DisposablesLinks";
 
-export function RelatedProducts({ products }: { products: Product[] }) {
+export function RelatedProducts({ products, categoryId }: { products: Product[]; categoryId?: string }) {
   const { dict } = useLocale();
   if (products.length === 0) return null;
 
@@ -17,6 +18,7 @@ export function RelatedProducts({ products }: { products: Product[] }) {
       </Container>
       <Container>
         <ProductRail products={products} />
+        {categoryId === "disposables" && <DisposablesAllLink />}
       </Container>
     </section>
   );

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PilotProductRail } from "./PilotProductRail";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { DisposablesAllLink } from "@/components/catalog/DisposablesLinks";
 
 /**
  * Same shell as the legacy `RelatedProducts`, fed by `getPilotRelatedProducts` (same-categoryId
@@ -12,7 +13,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  * matches, same as the legacy component — never padded with a weaker relation to fill the
  * section.
  */
-export function PilotRelatedProducts({ products }: { products: StorefrontProductView[] }) {
+export function PilotRelatedProducts({ products, categoryId }: { products: StorefrontProductView[]; categoryId?: string }) {
   const { dict } = useLocale();
   if (products.length === 0) return null;
 
@@ -23,6 +24,7 @@ export function PilotRelatedProducts({ products }: { products: StorefrontProduct
       </Container>
       <Container>
         <PilotProductRail products={products} />
+        {categoryId === "disposables" && <DisposablesAllLink />}
       </Container>
     </section>
   );

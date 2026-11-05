@@ -289,6 +289,8 @@ export const th: Dictionary = {
     readMoreEyebrow: "อ่านต่อ",
     relatedEyebrow: "สินค้าใกล้เคียง",
     relatedTitle: "สินค้าที่เกี่ยวข้อง",
+    disposablesCrumb: "พอตใช้แล้วทิ้ง",
+    disposablesAllLink: "ดูพอตใช้แล้วทิ้งทุกรุ่น",
     sourceNoteLabel: "แหล่งอ้างอิง",
     officialSite: "เว็บไซต์ทางการ ↗",
     gallerySourceLinkLabel: "แหล่งที่มา",
