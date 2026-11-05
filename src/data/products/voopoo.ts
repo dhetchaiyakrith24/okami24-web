@@ -1139,7 +1139,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-x3/card-v3-wm3.webp",
+        src: "/assets/products/drag-x3/card-v3-wm4.webp",
         alt: "VOOPOO DRAG X3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -1170,18 +1170,18 @@ export const voopooProducts: Product[] = [
     storyStartRight: true,
     storyCover: { src: "/assets/products/drag-x3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG X3", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 2800, height: 1128 },
     colorVariants: [
-      { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v3-wm3.webp", alt: "VOOPOO DRAG X3, Gray Metal", ownFloor: true } },
+      { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v3-wm4.webp", alt: "VOOPOO DRAG X3, Gray Metal", ownFloor: true } },
       {
         id: "spray-black",
         name: "Spray Black",
         swatchHex: "#3a3a3a",
-        image: { src: "/assets/products/drag-x3/variant-spray-black-v3-wm3.webp", alt: "VOOPOO DRAG X3, Spray Black", ownFloor: true },
+        image: { src: "/assets/products/drag-x3/variant-spray-black-v3-wm4.webp", alt: "VOOPOO DRAG X3, Spray Black", ownFloor: true },
       },
-      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e5cfd0", image: { src: "/assets/products/drag-x3/variant-glow-pink-v3-wm3.webp", alt: "VOOPOO DRAG X3, Glow Pink", ownFloor: true } },
-      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e1dfd4", image: { src: "/assets/products/drag-x3/variant-champagne-golden-v3-wm3.webp", alt: "VOOPOO DRAG X3, Champagne Golden", ownFloor: true } },
-      { id: "sky-blue", name: "Sky Blue", swatchHex: "#2b9dd2", image: { src: "/assets/products/drag-x3/variant-sky-blue-v3-wm3.webp", alt: "VOOPOO DRAG X3, Sky Blue", ownFloor: true } },
-      { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v3-wm3.webp", alt: "VOOPOO DRAG X3, Moss Green", ownFloor: true } },
-      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v3-wm3.webp", alt: "VOOPOO DRAG X3, Aurora Purple", ownFloor: true } },
+      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e5cfd0", image: { src: "/assets/products/drag-x3/variant-glow-pink-v3-wm4.webp", alt: "VOOPOO DRAG X3, Glow Pink", ownFloor: true } },
+      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e1dfd4", image: { src: "/assets/products/drag-x3/variant-champagne-golden-v3-wm4.webp", alt: "VOOPOO DRAG X3, Champagne Golden", ownFloor: true } },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#2b9dd2", image: { src: "/assets/products/drag-x3/variant-sky-blue-v3-wm4.webp", alt: "VOOPOO DRAG X3, Sky Blue", ownFloor: true } },
+      { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v3-wm4.webp", alt: "VOOPOO DRAG X3, Moss Green", ownFloor: true } },
+      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v3-wm4.webp", alt: "VOOPOO DRAG X3, Aurora Purple", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-x3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -1189,12 +1189,12 @@ export const voopooProducts: Product[] = [
     // "ยกเว้นให้ Drag"), "EVEREST LAB" badge re-set in real type (look-batch/everest-patch.js), floor clipped to the device
     // columns, own contact shadow kept (ownFloor); line-ups v3 = every colour standing in one row (look-batch/x3-lineup-floor.js).
     lineupImage: {
-      src: "/assets/products/drag-x3/lineup-v3-wm3.webp",
+      src: "/assets/products/drag-x3/lineup-v3-wm4.webp",
       alt: "VOOPOO DRAG X3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-x3/lineup2-v3-wm3.webp",
+      src: "/assets/products/drag-x3/lineup2-v3-wm4.webp",
       alt: "VOOPOO DRAG X3, colours 5–7 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
