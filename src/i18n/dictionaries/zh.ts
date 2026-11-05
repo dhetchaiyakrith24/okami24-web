@@ -694,6 +694,7 @@ export const zh: Dictionary = {
     nextApproved: "付款已确认，我们正在把订单交给仓库打包。",
     nextProcessing: "仓库正在打包，发货后快递单号会显示在本页。",
     nextShipped: "包裹已从仓库发出，点击下方按钮查看包裹位置。",
+    nextShippedNoTracking: "包裹已从仓库发出。此次配送没有快递单号，如有疑问请通过 LINE @okm24 联系我们。",
     nextShippedNoCarrier: "包裹已从仓库发出。可用下方快递单号向快递公司查询；如不确定是哪家快递，请通过 LINE @okm24 联系我们。",
     nextCompleted: "此订单已完成。",
     nextCancelled: "此订单已取消。",

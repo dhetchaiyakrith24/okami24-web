@@ -115,6 +115,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             width={1416}
             height={429}
             priority
+            // `sizes` = the widest it is drawn (h-12 → 158 px). Without it the browser was sent the 1920-wide file (34 KB)
+            // for a 158-px logo, preloaded on every page ahead of the page's own first picture (Lighthouse 04/11).
+            sizes="160px"
             className="hidden h-12 w-auto sm:block xl:hidden min-[90rem]:block min-[90rem]:h-10"
           />
           <Image
@@ -123,6 +126,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             width={460}
             height={429}
             priority
+            sizes="52px"
             className="h-10 w-auto sm:hidden xl:block xl:h-12 min-[90rem]:hidden"
           />
         </Link>

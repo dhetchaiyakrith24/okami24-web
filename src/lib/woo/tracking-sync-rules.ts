@@ -17,6 +17,8 @@ import { parseTracking, type ParsedTracking } from "./tracking-parse";
  *     carrier with that format); otherwise only DHL can be meant when the order went to Shipnity as DHL (Shipnity's
  *     DHL number has no carrier word, seen 30/10). A bare number on an order sent as EMS is NOT an EMS number — left
  *     for staff instead of guessing.
+ * A Thai mobile number is never a parcel number: the warehouse's "DHL (ส่งเอง)" orders came back with one phone number on
+ * every order (05/11). The order still moves to "shipped", because the warehouse did send it, but keeps no number.
  * Shipnity's own "completed" means the parcel left the warehouse, not that the customer has it, so it never sets the
  * site's "completed" (staff press "ลูกค้าได้รับของแล้ว" as before).
  */
@@ -33,13 +35,21 @@ export interface SyncOrder {
 
 export type SkipReason = "no-number" | "not-sent" | "same-number" | "other-number" | "status" | "carrier-unclear";
 
-export type ShipDecision = { ship: true; tracking: string; carrier: "thailand-post" | "dhl" } | { ship: false; reason: SkipReason };
+/** 10 digits starting 06 · 08 · 09: a Thai mobile number, which no carrier uses as a parcel number. */
+export function isPhoneShaped(number: string | null): boolean {
+  return !!number && /^0[689][0-9]{8}$/.test(number);
+}
+
+export type ShipDecision = { ship: true; tracking: string | null; carrier: "thailand-post" | "dhl" } | { ship: false; reason: SkipReason };
 
 export function decideShip(order: SyncOrder, found: ParsedTracking | null): ShipDecision {
   if (!found) return { ship: false, reason: "no-number" };
   if (!order.sentToShipnity) return { ship: false, reason: "not-sent" };
   if (order.tracking) return { ship: false, reason: order.tracking === found.number ? "same-number" : "other-number" };
-  if (!stepsFor("ship", order.status)) return { ship: false, reason: "status" };
+  // Shipped with no number (a phone number came first): a real number may still arrive and join the order.
+  const late = order.status === "shipped";
+  if (!late && !stepsFor("ship", order.status)) return { ship: false, reason: "status" };
+  if (isPhoneShaped(found.number)) return late ? { ship: false, reason: "no-number" } : { ship: true, tracking: null, carrier: order.sentCarrier };
   const carrier =
     found.carrier === "thailand-post" || found.carrier === "dhl"
       ? found.carrier

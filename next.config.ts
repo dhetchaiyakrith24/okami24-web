@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /** No `x-powered-by: Next.js` on responses (owner 04/11 security pass): it only tells a scanner what to try. */
+  poweredByHeader: false,
+
   experimental: {
     /**
      * Hold the image optimizer to two workers (2026-09-06).
@@ -85,6 +88,37 @@ const nextConfig: NextConfig = {
    */
   async headers() {
     return [
+      /**
+       * Security headers on every response (owner 04/11 "ความปลอดภัยของเว็บ"). Before this, `curl -D -` on the live
+       * home and /products returned none of them. Each one is a browser-side rule only — nothing the pages render changes:
+       * - HSTS: browsers go straight to https (http:// already 301s at Cloudflare). One year, no `includeSubDomains`
+       *   and no `preload`, so no other host name is bound by it.
+       * - nosniff: a file is only ever read as the type the server says (an uploaded slip cannot run as a script).
+       * - SAMEORIGIN: no other site can show these pages inside a frame (clickjacking on the cart and staff pages).
+       *   Nothing on the site frames itself or is framed elsewhere (videos open on YouTube, never in an iframe).
+       * - Referrer-Policy: the browsers' own default, stated so an old browser cannot send full URLs (order links) on.
+       * - Permissions-Policy: no page uses the microphone, location, payment or USB APIs. The camera is left alone —
+       *   the slip upload uses a file input, which this header does not govern.
+       */
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "microphone=(), geolocation=(), payment=(), usb=()" },
+        ],
+      },
+      /**
+       * Config headers beat the ones a route sets, so the block above would replace the slip route's own stricter
+       * `no-referrer` (src/app/api/line/slip/[token]/route.ts — the address itself is the key to a customer's slip).
+       * The last matching entry wins, so this one has to stay below the block above.
+       */
+      {
+        source: "/api/line/slip/:token",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
       {
         source: "/assets/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
