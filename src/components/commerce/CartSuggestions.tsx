@@ -55,6 +55,12 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [pendingSlug, setPendingSlug] = useState<string | null>(null);
   const [, startTransition] = useTransition();
+  const statusRef = useRef<HTMLParagraphElement>(null);
+
+  // A refused add is said where the visitor is looking: the line sits above two rows of cards at ≥640.
+  useEffect(() => {
+    if (status?.failed) statusRef.current?.scrollIntoView({ block: "center" });
+  }, [status]);
 
   useEffect(() => {
     if (!status) return;
@@ -113,7 +119,7 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
           {dict.cart.suggestionsTitle}
         </h2>
       )}
-      <p aria-live="polite" className={`mb-3 mt-1 min-h-5 text-sm ${status?.failed ? "text-danger" : "text-foreground-muted"}`}>
+      <p ref={statusRef} aria-live="polite" className={`mb-3 mt-1 min-h-5 text-sm ${status?.failed ? "text-danger" : "text-foreground-muted"}`}>
         {status?.text}
       </p>
       <ul className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-3 overflow-x-auto px-5 pb-1 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-4 [&::-webkit-scrollbar]:hidden">
