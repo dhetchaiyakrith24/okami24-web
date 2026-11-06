@@ -447,6 +447,7 @@ export const zh: Dictionary = {
     shippingNextReduced: "还差 {n}，运费可降至 {fee} 铢",
     shippingSignInNote: "会员满 300 铢，每月可享一次运费 0 铢。",
     shippingSignInCta: "用 LINE 或 Google 登录",
+    shippingLowerHeading: "减少运费的方式",
     shippingSignInUsedNote: "已经是会员？",
     totalLabel: "总计",
     checkoutCta: "去结算",

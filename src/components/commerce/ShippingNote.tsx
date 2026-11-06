@@ -30,18 +30,25 @@ export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippi
     <div className="flex flex-col gap-1 text-xs leading-relaxed text-foreground-dim">
       {/* The reason is what the customer must read before paying (checker 29/10: at 390 the dim 12px line read too faint). */}
       <p className="text-sm text-foreground-muted">{text(c.shippingNote[hint.noteKey])}</p>
-      {next && (
-        <p className="text-foreground-muted">
-          {text((next.fee === 0 ? c.shippingNextFree : c.shippingNextReduced).replace("{n}", formatTHB(next.addMore)).replace("{fee}", String(next.fee)))}
-        </p>
-      )}
-      {!hint.signedIn && (
-        <p>
-          {text(hint.benefitUsed ? c.shippingSignInUsedNote : c.shippingSignInNote)}{" "}
-          <Link href={`/account/login?next=${encodeURIComponent(signInNext)}`} className="text-ember underline underline-offset-2">
-            {text(c.shippingSignInCta)}
-          </Link>
-        </p>
+      {/* Customer walk 05/11: fee row ฿50, then "35" and "0" straight under it read as three prices for one order. The
+          offers now sit apart under their own heading; the reason line above stays the only line about this order's fee. */}
+      {(next || !hint.signedIn) && (
+        <div className="mt-1 flex flex-col gap-1 rounded-lg border border-surface-border px-3 py-2">
+          {hint.noteKey !== "over800" && <p className="font-semibold text-foreground-muted">{text(c.shippingLowerHeading)}</p>}
+          {next && (
+            <p className="text-foreground-muted">
+              {text((next.fee === 0 ? c.shippingNextFree : c.shippingNextReduced).replace("{n}", formatTHB(next.addMore)).replace("{fee}", String(next.fee)))}
+            </p>
+          )}
+          {!hint.signedIn && (
+            <p>
+              {text(hint.benefitUsed ? c.shippingSignInUsedNote : c.shippingSignInNote)}{" "}
+              <Link href={`/account/login?next=${encodeURIComponent(signInNext)}`} className="text-ember underline underline-offset-2">
+                {text(c.shippingSignInCta)}
+              </Link>
+            </p>
+          )}
+        </div>
       )}
     </div>
   );
