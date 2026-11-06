@@ -62,7 +62,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "RELX LUMI 18K กับ SUP ZERO 22K ต่างกันยังไง",
           paragraphs: [
             "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้งเหมือนกัน ต่างกันที่ตัวเลขบนซองและแนวกลิ่น [SUP ZERO 22K](/products/sup-zero-22k) พิมพ์จำนวนพัฟไว้สูงกว่าที่ 22,000 พัฟ แบต 850mAh ส่วนรุ่นนี้แบต 670mAh",
-            "ซอง SUP ZERO 22K ยังบอกปริมาณน้ำยาไว้ 25mL แต่ซองของ LUMI ไม่ได้พิมพ์ตัวเลขนี้ จึงเทียบกันตรงนี้ไม่ได้ ถ้าชอบแนวชาหรือขนม รุ่นนี้มี Jasmine Green Tea กับ Gummy ส่วนกลิ่นที่ชื่อมีคำว่า Ice จะอยู่ฝั่ง SUP ZERO 22K",
+            "ปริมาณน้ำยาพิมพ์ไว้เฉพาะบนซอง SUP ZERO 22K ที่ 25mL จึงเทียบกับ LUMI ตรงนี้ไม่ได้ ถ้าชอบแนวชาหรือขนม รุ่นนี้มี Jasmine Green Tea กับ Gummy ส่วนกลิ่นที่ชื่อมีคำว่า Ice จะอยู่ฝั่ง SUP ZERO 22K",
             "ถ้าอยากดู RELX อีกรุ่น [RELX Smash Go 12K](/products/relx-smash-go-12k) ก็เป็นพอตใช้แล้วทิ้งเช่นกัน RELX ระบุไว้สูงสุด 12,000 พัฟ แบต 400mAh",
           ],
         },
@@ -232,7 +232,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           question: "SUP ZERO 22K น้ำยากี่ mL",
-          answer: "ซองพิมพ์ไว้ 25mL ค่ะ แต่ละยี่ห้อระบุตัวเลขพัฟไม่เหมือนกัน เวลาเทียบกับรุ่นอื่นจึงควรดูตัวเลขนี้คู่กันไปด้วยนะคะ",
+          answer: "ซองพิมพ์ไว้ 25mL ค่ะ แต่ละยี่ห้อระบุตัวเลขพัฟต่างกัน เวลาเทียบกับรุ่นอื่นจึงควรดูตัวเลขนี้คู่กันไปด้วยนะคะ",
         },
       ],
     },
