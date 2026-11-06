@@ -4,6 +4,8 @@
 //   node scripts/stale-work.js --brief  only the count line + the findings, for session-sync at chat open
 //   node scripts/stale-work.js --json   machine-readable
 // Read only: never edits, fetches nothing but `gh` reads. Offline / no gh = says so and still checks the files.
+// HANDOFF and รอพี่ตรวจ are read from origin/main, not the disk: a checkout left on an old finished branch brought answered
+// items back at chat open (house round 06/11: 9 items shown, 7 true, the 2 owner items had already moved). No origin/main = the disk, with a note.
 // What counts (TEAM_RULES 13.2 follow-up · thresholds = owner 26/10):
 //   1 dated   a due day in HANDOFF §16 item 5 "open / dated" (a dd/mm at the start of a bullet or after " · ") that is past
 //             (up to 14 days back) or is today/tomorrow — dates elsewhere say when something was said, not when it is due
@@ -34,8 +36,11 @@ const notes = [];
 
 // 1 dated items in HANDOFF §16
 let handoff = "";
+const onMain = run("git", ["rev-parse", "--verify", "--quiet", "origin/main"]).ok;
+if (!onMain) notes.push("no origin/main here — read the files on disk, they may be old");
 try {
-  handoff = fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8").replace(/\r\n/g, "\n");
+  const r = onMain ? run("git", ["show", "origin/main:docs/HANDOFF.md"]) : { ok: false };
+  handoff = (r.ok ? r.out : fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8")).replace(/\r\n/g, "\n");
 } catch {
   notes.push("docs/HANDOFF.md not readable — dated items and branch names not checked");
 }
@@ -65,7 +70,7 @@ for (const line of dated) {
 
 // 2 owner-waiting items older than 7 days (git blame of the line)
 const WAIT = "docs/รอพี่ตรวจ.md";
-const blame = run("git", ["blame", "--line-porcelain", "--", WAIT]);
+const blame = run("git", ["blame", "--line-porcelain", ...(onMain ? ["origin/main"] : []), "--", WAIT]);
 if (blame.ok) {
   let t = 0;
   let live = false;

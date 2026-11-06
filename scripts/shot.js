@@ -67,7 +67,9 @@ for (let i = 2; i < args.length; i++) {
 const port = 9333 + Math.floor(Math.random() * 500);
 // one throw-away profile per run — a shared profile is locked by any Chrome still alive from an
 // earlier run, and Chrome then exits silently (the DevTools endpoint never appears)
-const profile = process.env.CHROME_PROFILE || `${TMP}/okami-shot-profile-${process.pid}`;
+// Git Bash's /c/Users/... reaches Node as it is under MSYS_NO_PATHCONV, and Windows reads it as C:\c\Users\... (house round 06/11).
+const winPath = (p) => (process.platform === "win32" ? p.replace(/^\/([a-zA-Z])\//, "$1:/") : p);
+const profile = winPath(process.env.CHROME_PROFILE || `${TMP}/okami-shot-profile-${process.pid}`);
 const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function getJson(p) { return new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej)); }
