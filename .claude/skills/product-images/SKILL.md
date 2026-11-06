@@ -94,17 +94,17 @@ Which pictures, strength, and when = IMAGE_SPEC §3. Maker pictures used as they
 2. `node scripts/watermark.js --dry-run --keep C:\Users\dhetc\OKami24-assets\<YYYY-MM>\watermark-originals <paths>`, then the real run.
 3. A path built by a template = fix it by hand in the same commit and pass `--template-refs` (head of the script).
 
-The watermark renames files and their references, so it runs before the checker: `Checker: PASS` must name the final head (13.4).
+Run `npx tsx scripts/image-sharpness-gate.ts --base origin/main` again on the result. The watermark renames files and their references, so it runs before the checker: `Checker: PASS` must name the final head (13.4).
 
 ## Step 9 — Checker
 
-Draft PR → `node scripts/pre-checker-gate.js` → `checker` (13.4 · 13.7). Proof level = 13.5. The PR stays draft until the owner's yes: `gh pr ready` once (13.7).
+Draft PR → `node scripts/pre-checker-gate.js` → `checker` (13.4 · 13.7). Proof level = 13.5. `gh pr ready` once after the checker passes (13.7); the merge waits for Step 10.
 
 ## Step 10 — Comparison image to the owner (wait 2)
 
 Rule = 13.5 "รูปสินค้าใหม่". Merge waits for the owner's yes, with no 30-minute default (13.3 last list).
 
-1. Send the `ai-fidelity-sheet` file of **every** new picture in the chat, built from the `--keep` originals. Model = the maker's picture or the best other shop's.
+1. Send the `ai-fidelity-sheet` file of **every** new picture in the chat, built from the final files in the PR, the ones that go live with their watermark. The `--keep` originals serve only to compare shape. Model = the maker's picture or the best other shop's.
 2. One line per picture: "รุ่นตรงไหม เพี้ยนตรงไหน คมแค่ไหน" (§7).
 3. Say so in that message when the form is new to the owner, or the model may not be the shop's real version (§7).
 4. No comparison needed = the cases 13.5 lists.

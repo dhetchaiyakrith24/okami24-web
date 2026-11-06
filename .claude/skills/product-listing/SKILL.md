@@ -48,7 +48,7 @@ Daily task limit: at most 3 new products per run, oldest first. The rest wait fo
 
 ## Step 3 — Price
 
-Authority and formula = BSOT §5, the only place. The owner has the final word. Use only what BSOT §5 and the price files it names allow.
+Authority and formula = BSOT §5, the only place. Shipnity's ราคาขาย is a reference only unless BSOT §5 says otherwise. The owner has the final word. Use only what BSOT §5 and the price files it names allow.
 Never touch the price of an existing product. Price unclear = prepare the product unpublished and ask in the report (13.3 #3 · #8).
 
 ## Step 4 — Pictures
@@ -79,14 +79,15 @@ One commit per product (13.7).
 The normal flow, nothing skipped (13.4 · 13.5 · 13.7; order = HANDOFF §17 "Test trees + PR flow"):
 
 1. Draft PR (`gh pr create --draft`), one PR per brand in the daily task (13.7 "PR ละ 1–3 สินค้า").
-2. `npx tsx scripts/verify-catalog.ts --full` on the exact head in a test tree with real node_modules.
-3. Test server up (LESSONS พ72), then `node scripts/pre-checker-gate.js` = `GATE PASS`.
-4. `checker` (13.4). `Checker: PASS <sha>` in the PR body.
-5. New picture in the PR = skill `product-images` Steps 8–9 here, before `gh pr ready`.
+2. New picture in the PR = skill `product-images` Steps 7–8 first: the watermark changes files and the head.
+3. `npx tsx scripts/verify-catalog.ts --full` on the exact head in a test tree with real node_modules.
+4. Test server up (LESSONS พ72), then `node scripts/pre-checker-gate.js` = `GATE PASS`.
+5. `checker` (13.4, which also says what to do when the agent will not load). `Checker: PASS <sha>` in the PR body.
 6. `gh pr ready` once. Green checks.
-7. `node scripts/self-merge-check.js --pr <n>` alone; last line not `BLOCKED`.
-8. `gh pr merge --merge --match-head-commit <sha>`, inside the hours 13.7 allows; ready too late = waits for after midnight.
-9. Deploy success, then curl the new page for 200 (HANDOFF §17 "Live site").
+7. New picture = skill `product-images` Step 10: comparison to the owner, and the merge waits for the yes (13.5).
+8. `node scripts/self-merge-check.js --pr <n>` alone; last line not `BLOCKED`.
+9. `gh pr merge --merge --match-head-commit <sha>`, inside the hours 13.7 allows; ready too late = waits for after midnight.
+10. Deploy success, then curl the new page for 200 (HANDOFF §17 "Live site").
 
 Checker still failing after its rounds (13.4) = leave the draft, 13.3 #7. A permission check refuses an action = stop that action and
 report it; never reach the same result another way (13.7).
