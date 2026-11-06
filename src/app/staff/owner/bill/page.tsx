@@ -56,6 +56,29 @@ function Round({ round }: { round: StoredRound }) {
       <p className="text-sm leading-relaxed text-foreground-muted">
         กำไร LINE คิดจากสลิปในรอบหักบิลในรอบ ถ้าลูกค้าโอนก่อนรอบปิดแต่คลังคีย์หลังรอบปิด ตัวเลขจะขยับข้ามสัปดาห์ และคืนเงินทาง LINE ระบบไม่เห็น
       </p>
+      {round.orders.length > 0 && (
+        <details className="group">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-sm text-foreground-muted hover:text-foreground [&::-webkit-details-marker]:hidden">
+            <span>ออเดอร์เว็บในรอบ {round.orders.length} รายการ</span>
+            <span aria-hidden className="transition-transform group-open:rotate-90">
+              ›
+            </span>
+          </summary>
+          <ul className={LIST_CLASS}>
+            {round.orders.map((o) => (
+              <li key={o.run} className="flex items-baseline justify-between gap-3 px-4 py-2 text-sm tabular-nums">
+                <span className="min-w-0 truncate text-foreground">
+                  {o.run} <span className="text-foreground-dim">{o.no ?? "ไม่อยู่ในบิล"}</span>
+                </span>
+                <span className="shrink-0 text-foreground-muted">
+                  จ่าย {baht(o.paid)}
+                  {o.billed !== null && ` · บิล ${baht(o.billed)}`}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
       {diffs.length === 0 ? (
         <p className="text-sm text-verified">ไม่มีจุดไม่ตรง</p>
       ) : (
