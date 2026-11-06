@@ -31,5 +31,5 @@ line first, then take the better way unless the owner says "as told" — TEAM_RU
 (2) the rules — central §5–12 and `.claude/TEAM_RULES.md`; the team rules add web detail and may not contradict the
 central rules except on a line that names the central item it replaces ("แทนกฎกลาง …"), (3)
 `docs/BUSINESS_SOURCE_OF_TRUTH.md` — a conflict with it is not resolved silently: ask, the conflicting part waits, the rest goes on (13.3 #3),
-(4) `docs/THAI_STYLE.md` for anything about Thai wording on the site, (5) this file, (6) implementation assumptions.
+(4) the owner's permanent rulings in their homes: `docs/HANDOFF.md` §18, `docs/THAI_STYLE.md` for Thai wording on the site, `docs/IMAGE_SPEC.md`, `docs/SEO_LANDSCAPE.md`, (5) this file, (6) implementation assumptions.
 Never silently overwrite business rules in the source-of-truth doc.

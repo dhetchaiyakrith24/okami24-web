@@ -153,10 +153,7 @@ Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules �
   check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
 Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its file in `.claude/agents/`) · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
-Stock PR anomaly = draft + ask the owner (TEAM_RULES 13.7 · the prompt follows this list): more than 15 products change at once, or more than 60 codes
-  flip in one run · a code in sku-map missing from the read, or far fewer read than last run · the reader reports a problem or contradicts itself ·
-  the diff touches any file but the stock file (`src/data/content-dates.json` moved by the hook does not count). Reading the product-list page
-  alone (not order entry) = may close only; reopening waits for the owner, then `--reopen`. How to read (read only) = header of `scripts/order-entry-stock.js`.
+Stock: the hourly routine ended (owner 06/11, live stock replaced it). `scripts/order-entry-stock.js` + `scripts/stock-sync.js` stay for a manual read; how = their heads.
 Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield MCP: `generate_image`
   is ALLOWED (owner 20/10, #661); every other credit-spending Higgsfield tool stays DENIED in `.claude/settings.json` · credits =
   IMAGE_SPEC §0 item 7.
@@ -178,7 +175,7 @@ Live site: ALWAYS after a merge check the deploy reached success (`gh api
   "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member) · staff
   guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · order numbers use the UTC date (noted, not changed).
 Test trees + PR flow: reuse `_incoming/wt-golive` · `_incoming/wt-cart` (real node_modules incl. jsqr;
-  `_incoming/wt-stock` = the hourly routine's). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
+ ). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
   junctioned node_modules break Turbopack builds · gate `full` needs a verify stamp of the EXACT head → merge origin/main + all extra
   commits BEFORE the verify run (~20 min each) · flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready`
   once → checks → `self-merge-check --pr` alone, IN the PR's tree → merge --match-head-commit → deploy success. A deploy skipped while draft = `gh pr ready --undo`, then `gh pr ready`.
@@ -241,8 +238,7 @@ linked to or from the genuine M Bar 10K page. The only exception to BSOT "Genuin
 Photos (owner 27/10, the warehouse confirmed the item is identical): "ใช้รูป M Bar 10K ที่เว็บมีอยู่ได้เลย เพราะของเหมือนกันเป๊ะ" — the
 page shows the site's M Bar 10K card and the device photo of each SAME-named flavour; a flavour whose name differs gets no photo.
 **Shop and ordering:** cart on or off = §16 · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock without a rebuild = live since 28/10 (§16 3u) · checkout = phone only, no OTP · LINE orders are charged the same price as the web (owner 04/11 "ใช่ ราคาเดียวกัน (คงไว้)" — the trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" stays)
-(owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
-without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
+(owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are touched only when the owner asks or a BSOT fact they state changes (owner 26/10, house round) and carry no JSON-LD on purpose (item 49) ·
 **Shipping fees = BSOT §10 (live 30/10).** A new promo's start date = the owner types it; Friday never starts one alone (owner 27/10, answer 80) · copy stating the real policy may say "ส่งฟรี" (THAI_STYLE §3, owner's OK = the house round 26/10) ·
 green "shipped" glow = the style for key-moment effects site-wide ("ยืนบนความเรียบหรู", owner 23–24/10) · IQOS colour names = Friday decides ·
