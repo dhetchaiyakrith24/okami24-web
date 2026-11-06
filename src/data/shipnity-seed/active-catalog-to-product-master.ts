@@ -1283,7 +1283,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-83/card-v2-wm3.webp",
+      src: "/assets/products/coil-83/card-v2-wm4.webp",
       alt: "VOOPOO ARGUS POD empty refillable pod cartridge, 2 mL, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of the ARGUS POD empty cartridge (800 px, SKU VAPC20221025); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1295,7 +1295,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-87/card-v2-wm3.webp",
+      src: "/assets/products/coil-87/card-v2-wm4.webp",
       alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of 3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1326,7 +1326,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-68/card-v2-wm3.webp",
+      src: "/assets/products/coil-68/card-v2-wm4.webp",
       alt: "VOOPOO ITO-X pod cartridge, black, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of VOOPOO's own product photo of the black ITO-X (1000 px, VOOPOO's Shopline store); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1362,7 +1362,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-72/card-v2-wm3.webp",
+      src: "/assets/products/coil-72/card-v2-wm4.webp",
       alt: "VOOPOO VMATE Cartridge V2 (side fill) and VMATE Top Fill Cartridge, studio photo",
       angle: "Front, studio re-shoot (round \"3 coil photos\", 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same); shape checked against that photo (scripts/ai-fidelity-sheet.js outline overlay) and every printed mark by eye; card = the V2 0.7Ω and Top Fill renders staggered by stagger.js (no AI). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1374,7 +1374,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-94/card-gpp-v2-wm3.webp",
+      src: "/assets/products/coil-94/card-gpp-v2-wm4.webp",
       alt: "UWELL CALIBURN GPP Integrated Coil Cartridge, box and 3 pods, studio photo",
       angle: "Front, studio re-shoot 16/10 (round img-1610: the shop now sells the new GPP 3-pack, admin 16/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of the shop's own stock photo of each resistance: the box upright with its 3 pods standing in front; every printed word and the ring colour checked by eye against that photo; card = the 0.4Ω pack. Was the CALIBURN G3 Refillable Pod (4 pods). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1474,7 +1474,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-56/card-v2-wm3.webp",
+      src: "/assets/products/coil-56/card-v2-wm4.webp",
       alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the silver PnP X Cartridge MTL (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1486,7 +1486,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-74/card-v3-wm3.webp",
+      src: "/assets/products/coil-74/card-v3-wm4.webp",
       alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo",
       angle: "Box front with its two pods, studio re-shoot 11/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from a retailer's 1652 px photo of the CALIBURN X 3 ml box (2 PCS) and its pods (myuwell.com no longer lists the CALIBURN X); box art, every printed word and number and the pod shape checked by eye against that photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1498,7 +1498,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-89/card-v2-wm3.webp",
+      src: "/assets/products/coil-89/card-v2-wm4.webp",
       alt: "RINCOE Jellybox V pod cartridges, Mesh 0.8Ω (red stripes) and Mesh 1.0Ω, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1524,7 +1524,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-92/card-v2-wm3.webp",
+      src: "/assets/products/coil-92/card-v2-wm4.webp",
       alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of a shop photo of the 0.15Ω coil; the etched 0.15Ω / 60-80W checked by eye. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2453,10 +2453,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // Round list19 (19/10): PnP X — the 0.15Ω option shows the card re-shoot (its own coil); the other resistances have no photo yet.
   "Coil-92": {
-    "Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-2-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.2Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.2Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-3-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.3Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.3Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
-    "Coil-92-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-4-wm3.webp", alt: "VOOPOO PnP X replacement coil, 0.6Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.6Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm4.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-2-wm4.webp", alt: "VOOPOO PnP X replacement coil, 0.2Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.2Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-3-wm4.webp", alt: "VOOPOO PnP X replacement coil, 0.3Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.3Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+    "Coil-92-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-4-wm4.webp", alt: "VOOPOO PnP X replacement coil, 0.6Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.6Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
   },
   // Round list19 (19/10): Nexswitch 16K refill pod — one body (the Watermelon render) for every flavour, each label moved onto it
   // from that flavour's own render (labellift.js). Grape Lychee · Cola Lemon · Mint · Pink Berry added 22/10 the same way (_incoming/nex/lift.js).
@@ -2681,29 +2681,29 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-1-15": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-wm4.webp", alt: "VOOPOO PnP-TW15 coil 0.15Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
   },
   "Coil-72": {
-    "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-1-wm3.webp", alt: "VOOPOO VMATE Cartridge V2 0.7Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
-    "Coil-72-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-2-wm3.webp", alt: "VOOPOO VMATE Cartridge V2 1.2Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
-    "Coil-72-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-3-wm3.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
-    "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-4-wm3.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-1-wm4.webp", alt: "VOOPOO VMATE Cartridge V2 0.7Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-2-wm4.webp", alt: "VOOPOO VMATE Cartridge V2 1.2Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-3-wm4.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-4-wm4.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
   },
   "Coil-94": {
-    "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-1-gpp-v2-wm3.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.4Ω, box and 3 pods (red ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
-    "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-2-gpp-v2-wm3.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.6Ω, box and 3 pods (orange ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
-    "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-3-gpp-v2-wm3.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.9Ω, box and 3 pods (yellow ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
-    "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp-v2-wm3.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-1-gpp-v2-wm4.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.4Ω, box and 3 pods (red ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-2-gpp-v2-wm4.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.6Ω, box and 3 pods (orange ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-3-gpp-v2-wm4.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.9Ω, box and 3 pods (yellow ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp-v2-wm4.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
   },
   "Coil-70": {
-    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm3.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
+    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2-wm4.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
   },
   "Coil-89": {
-    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm3.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
-    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm3.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1-wm4.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
+    "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm4.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
   },
   "Coil-53": {
     "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2-wm4.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
   },
   "Coil-74": {
-    "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2-wm3.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
+    "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2-wm4.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
   },
   "Coil-38": {
     "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2-wm4.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
@@ -2712,13 +2712,13 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4-wm4.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
   },
   "Coil-87": {
-    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1-wm3.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
+    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1-wm4.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
   },
   "Coil-68": {
-    "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1-wm3.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
+    "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1-wm4.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
   },
   "Coil-56": {
-    "Coil-56-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-56/variant-coil-56-3-wm3.webp", alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo", sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg" },
+    "Coil-56-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-56/variant-coil-56-3-wm4.webp", alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo", sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg" },
   },
   // IQOSHEET-15 — FULL REBUILD (owner quality review, 2026-09-02). 11 of this parent's 12
   // selectable flavors now have a real, current, exact-name official photo — up from 6, and every

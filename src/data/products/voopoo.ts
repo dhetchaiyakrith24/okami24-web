@@ -772,7 +772,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-6/card-v2-wm3.webp",
+        src: "/assets/products/drag-6/card-v2-wm4.webp",
         alt: "VOOPOO DRAG 6, Brown, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -799,18 +799,18 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-6/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 2800, height: 844 },
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm3.webp", alt: "VOOPOO DRAG 6, Silver" } },
-      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm3.webp", alt: "VOOPOO DRAG 6, Blue" } },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm3.webp", alt: "VOOPOO DRAG 6, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm4.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm4.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm4.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/drag-6/variant-brown-v2-wm3.webp", alt: "VOOPOO DRAG 6, Brown" },
+        image: { src: "/assets/products/drag-6/variant-brown-v2-wm4.webp", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm3.webp", alt: "VOOPOO DRAG 6, Red" } },
-      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm3.webp", alt: "VOOPOO DRAG 6, Green" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm3.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
+      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm4.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm4.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm4.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
     // All-colours images (IMAGE_SPEC §0 item 5). 16/10 (round img-1610): the hybrid lineup-v3 of 04/10 was still "too small"
     // and "still graphic" (owner) → two groups (4 + 3, maker order) of NEW studio re-shoots standing on the floor in one row,
@@ -820,12 +820,12 @@ export const voopooProducts: Product[] = [
     // (look-batch/drag-6/footcut.js), row by look-batch/lineup-row.js --row --pick. The colour photos above are unchanged
     // (owner-passed exception, IMAGE_SPEC §0 item 8). Picks + checks: _incoming/img-1610/b11/.
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v4-wm3.webp",
+      src: "/assets/products/drag-6/lineup-v4-wm4.webp",
       alt: "VOOPOO DRAG 6, colours 1–4 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-6/lineup2-v4-wm3.webp",
+      src: "/assets/products/drag-6/lineup2-v4-wm4.webp",
       alt: "VOOPOO DRAG 6, colours 5–7 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
@@ -945,7 +945,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-s3/card-v4-wm3.webp",
+        src: "/assets/products/drag-s3/card-v4-wm4.webp",
         alt: "VOOPOO DRAG S3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -975,20 +975,20 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-s3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 2800, height: 1456 },
     colorVariants: [
-      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5-wm3.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
-      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5-wm3.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
-      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v6-wm3.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
-      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5-wm3.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
-      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6-wm3.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
-      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5-wm3.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5-wm3.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5-wm4.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
+      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5-wm4.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v6-wm4.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
+      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5-wm4.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6-wm4.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
+      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5-wm4.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5-wm4.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
       // 07/10 eve: 3 more DRAG S3 colours (vapeuk.co.uk + legionofvapers.com list the same 10; the maker page was not reachable
       // from the research tools) — catalog completeness rule. Image 1 = legionofvapers.com's photo (vapevo has only the old 7),
       // same S2 studio recipe (Brooklyn Gray keyed with matte2.js --protect over its dark side panel; its photo shows no side badge);
       // swatches = the median side-panel colour of those photos (same method as the 7 above). Map: look-batch/drag-new3-map.js.
-      { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5-wm3.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
-      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v6-wm3.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
-      { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5-wm3.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
+      { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5-wm4.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
+      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v6-wm4.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
+      { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5-wm4.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -999,12 +999,12 @@ export const voopooProducts: Product[] = [
     // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick);
     // v7 (07/10 eve) = 5 + 5 since the 3 new colours.
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v7-wm3.webp",
+      src: "/assets/products/drag-s3/lineup-v7-wm4.webp",
       alt: "VOOPOO DRAG S3, colours 1–5 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v7-wm3.webp",
+      src: "/assets/products/drag-s3/lineup2-v7-wm4.webp",
       alt: "VOOPOO DRAG S3, colours 6–10 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
