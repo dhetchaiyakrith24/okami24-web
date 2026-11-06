@@ -422,7 +422,7 @@ Customer-facing messaging should emphasize fast dispatch and tracking provided. 
 expose unnecessary internal warehouse or logistics details in customer-facing content.
 
 **Carrier names are NOT shown to customers (owner decision 2026-09-07).** The shipping page and
-its meta description must not name EMS / Thailand Post / Flash Express. Say only
+its meta description must not name EMS / Thailand Post / DHL. Say only
 "ส่งไว 1–3 วัน มีเลข Track ให้เช็ค". The carriers listed above are internal knowledge for the team.
 The owner said this in the original interview ("ไม่อยากให้ขึ้น … อยากโชว์เรื่องส่งไว") and re-confirmed
 it on 2026-09-07 after the live /shipping page was found to name both carriers. **The wording change
@@ -430,12 +430,12 @@ is queued as point 4 of LAUNCH_AUDIT item 30 (the Thai language pass) — the pa
 
 **Owner ruling 2026-10-23 — exception for a shipped order's own page (overrides the rule above there only).** In the
 owner's words: "A ครับ เพราะลูกค้าโอนแล้วเราถึงแจ้งเรื่องการตรวจสอบพัสดุ". Once a web order is shipped, its order page
-(`/orders/<n>`) names the carrier (Thailand Post EMS or Flash Express), shows the tracking number with a copy button and
+(`/orders/<n>`) names the carrier (Thailand Post EMS or DHL), shows the tracking number with a copy button and
 a "เช็คสถานะพัสดุ" button that opens that carrier's own tracking page, plus a 3-step how-to (the carrier pages do not
 fill the number in). Staff pick the carrier on /staff when they enter the number. A number Shipnity writes back names the carrier by its shape, whichever way the order went out: S10 "..TH" = Thailand Post, 10+ digits = DHL, any other shape waits for staff (owner 06/11: "ถ้า Track ส่งมาแบบไหนก็แปลว่าคลังส่งของขนส่งนั้น").
 The rule above still holds for the public pages (/shipping and its meta description): before payment the site sells
 "fast dispatch + tracking", not carrier names. **Later (owner 23/10):** show the tracking status inside our own site
-(no jump to the carrier) — needs the Thailand Post Track & Trace API and the Flash Express merchant API, each with an
+(no jump to the carrier) — needs the Thailand Post Track & Trace API and the DHL tracking API, each with an
 account/token from the owner; not built yet.
 
 ---
