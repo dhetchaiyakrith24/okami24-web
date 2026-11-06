@@ -47,7 +47,16 @@ export function StaffTiles({ active }: { active: StaffTab }) {
       tab: "sales",
       href: "/staff/sales",
       label: "ยอดขาย",
-      line: <span className="tabular-nums text-foreground-dim">วันนี้ {formatSatang(sales.totalSatang)}</span>,
+      // Designer 07/11: the phone's full-width box answers "how much today" without a tap; the small line from sm up.
+      line: (
+        <>
+          <span className="flex items-baseline gap-2 sm:hidden">
+            <span className="text-foreground-dim">วันนี้</span>
+            <span className="font-display text-xl font-bold tabular-nums text-foreground">{formatSatang(sales.totalSatang)}</span>
+          </span>
+          <span className="hidden tabular-nums text-foreground-dim sm:inline">วันนี้ {formatSatang(sales.totalSatang)}</span>
+        </>
+      ),
       wide: true,
     },
   ];
@@ -61,7 +70,7 @@ export function StaffTiles({ active }: { active: StaffTab }) {
             key={t.tab}
             href={t.href}
             aria-current={on ? "page" : undefined}
-            className={`flex min-h-20 flex-col justify-between gap-2 rounded-xl border p-3 lg:min-h-24 lg:p-4 ${t.wide ? "col-span-2 sm:col-span-1" : ""} ${
+            className={`flex justify-between gap-2 rounded-xl border p-3 lg:min-h-24 lg:p-4 ${t.wide ? "col-span-2 min-h-14 flex-row items-center sm:col-span-1 sm:min-h-20 sm:flex-col sm:items-stretch" : "min-h-20 flex-col"} ${
               on ? "border-ember bg-surface-2" : "border-surface-border-soft bg-surface-1 hover:bg-surface-2"
             }`}
           >

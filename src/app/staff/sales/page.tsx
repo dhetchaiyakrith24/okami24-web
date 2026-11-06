@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { salesDays } from "@/lib/staff/daily-sales";
+import { SALES_DAYS, salesDays } from "@/lib/staff/daily-sales";
 import type { DaySales, SalesSlip } from "@/lib/staff/daily-sales-rules";
 import { countByJob } from "@/lib/staff/orders";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
@@ -25,8 +25,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };
 
-const DAYS_SHOWN = 31;
-
 const DAY_LABEL = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", weekday: "short", day: "numeric", month: "short" });
 const TIME = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", hour: "2-digit", minute: "2-digit" });
 
@@ -34,16 +32,30 @@ const dayLabel = (date: string) => DAY_LABEL.format(new Date(`${date}T12:00:00+0
 const timeOf = (iso: string) => TIME.format(new Date(iso));
 const sum = (days: DaySales[], pick: (d: DaySales) => number) => days.reduce((n, d) => n + pick(d), 0);
 
-function Figure({ label, days }: { label: string; days: DaySales[] }) {
+/** Designer 07/11: today is the one number on the page that wins; no box, so it does not read as one more link box. */
+function Today({ day }: { day: DaySales }) {
   return (
-    <div className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-3 lg:p-4">
-      <span className="text-sm text-foreground-muted">{label}</span>
-      <span className="font-display text-2xl font-bold tabular-nums leading-tight text-foreground">{formatSatang(sum(days, (d) => d.totalSatang))}</span>
-      <span className="flex flex-col text-xs tabular-nums text-foreground-muted">
-        <span>เว็บ {formatSatang(sum(days, (d) => d.webSatang))}</span>
-        <span>LINE {formatSatang(sum(days, (d) => d.lineSatang))}</span>
+    <section aria-label="ยอดวันนี้" className="flex flex-col gap-1">
+      <span className="text-sm text-foreground-muted">วันนี้</span>
+      <span className="font-display text-4xl font-bold tabular-nums leading-tight text-foreground">{formatSatang(day.totalSatang)}</span>
+      <span className="text-sm tabular-nums text-foreground-muted">
+        เว็บ {formatSatang(day.webSatang)} · LINE {formatSatang(day.lineSatang)}
       </span>
-    </div>
+    </section>
+  );
+}
+
+function Week({ days }: { days: DaySales[] }) {
+  return (
+    <section aria-label="ยอด 7 วันล่าสุด" className="flex items-center justify-between gap-3 border-t border-surface-border-soft pt-3">
+      <span className="text-sm text-foreground-muted">7 วันล่าสุด</span>
+      <span className="flex flex-col items-end">
+        <span className="font-semibold tabular-nums text-foreground">{formatSatang(sum(days, (d) => d.totalSatang))}</span>
+        <span className="text-xs tabular-nums text-foreground-muted">
+          เว็บ {formatSatang(sum(days, (d) => d.webSatang))} · LINE {formatSatang(sum(days, (d) => d.lineSatang))}
+        </span>
+      </span>
+    </section>
   );
 }
 
@@ -82,7 +94,10 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
     <li>
       <details className="group">
         <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
-          <span className="min-w-0 text-sm font-semibold text-foreground">{name}</span>
+          <span className="flex min-w-0 flex-col">
+            <span className="text-sm font-semibold text-foreground">{name}</span>
+            {day.unclear.length > 0 && <span className="text-xs text-unverified">ไม่แน่ใจ {day.unclear.length} ใบ</span>}
+          </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">
               <span className="font-semibold tabular-nums text-foreground">{formatSatang(day.totalSatang)}</span>
@@ -140,7 +155,7 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
 export default async function StaffSalesPage() {
   if (!staffAreaEnabled()) notFound();
   if (!(await isStaff())) redirect("/staff");
-  const days = salesDays(DAYS_SHOWN);
+  const days = salesDays();
   const waitingSlips = countByJob().slip;
   const unclear = days.flatMap((d) => d.unclear);
   const unclearSatang = unclear.reduce((n, s) => n + s.amountSatang, 0);
@@ -150,27 +165,25 @@ export default async function StaffSalesPage() {
       <StaffBar tab="sales" />
       <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ยอดขาย</h1>
 
-      <section aria-label="ยอดรวม" className="grid grid-cols-2 gap-2 lg:gap-3">
-        <Figure label="วันนี้" days={days.slice(0, 1)} />
-        <Figure label="7 วันล่าสุด" days={days.slice(0, 7)} />
-      </section>
+      <Today day={days[0]} />
+      <Week days={days.slice(0, 7)} />
 
       {(waitingSlips > 0 || unclear.length > 0) && (
         <div className="flex flex-col gap-1 text-sm">
           {waitingSlips > 0 && (
-            <Link href="/staff/orders?f=slip" className="w-fit text-unverified hover:underline">
+            <Link href="/staff/orders?f=slip" className="inline-flex min-h-11 w-fit items-center text-unverified hover:underline">
               ออเดอร์เว็บรอตรวจสลิป {waitingSlips} รายการ ยังไม่นับในยอด →
             </Link>
           )}
           {unclear.length > 0 && (
             <p className="text-unverified">
-              สลิปที่ไม่แน่ใจว่าเข้าบัญชีร้าน {unclear.length} ใบ {formatSatang(unclearSatang)} ยังไม่นับในยอด
+              ใน {SALES_DAYS} วัน มีสลิปที่ไม่แน่ใจว่าเข้าบัญชีร้าน {unclear.length} ใบ {formatSatang(unclearSatang)} ยังไม่นับในยอด
             </p>
           )}
         </div>
       )}
 
-      <section aria-label={`ยอดรายวัน ${DAYS_SHOWN} วัน`} className="flex flex-col gap-2">
+      <section aria-label={`ยอดรายวัน ${SALES_DAYS} วัน`} className="flex flex-col gap-2">
         <h2 className="text-lg font-semibold text-foreground">รายวัน</h2>
         <ul className={LIST_CLASS}>
           {days.map((day, i) => (

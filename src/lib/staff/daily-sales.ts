@@ -8,6 +8,8 @@ import { bangkokDate, CONFIRMED_ORDER_STATUSES, dailySales, lastDates, type DayS
  */
 
 const CLAIM_MARGIN_DAYS = 3;
+/** Every reader takes the same window: whether a slip fits an order depends on the orders in it, so two windows could disagree on today. */
+export const SALES_DAYS = 31;
 
 function readSales(dates: string[]): DaySales[] {
   const db = getDb();
@@ -45,11 +47,11 @@ function readSales(dates: string[]): DaySales[] {
   return dailySales(dates, salesOrders, salesSlips, new Set(linked.map((l) => l.ref)));
 }
 
-/** The last `count` days, today first (Bangkok). */
-export function salesDays(count: number): DaySales[] {
-  return readSales(lastDates(bangkokDate(new Date().toISOString())!, count));
+/** The last SALES_DAYS days, today first (Bangkok). */
+export function salesDays(): DaySales[] {
+  return readSales(lastDates(bangkokDate(new Date().toISOString())!, SALES_DAYS));
 }
 
 export function salesToday(): DaySales {
-  return salesDays(1)[0];
+  return salesDays()[0];
 }
