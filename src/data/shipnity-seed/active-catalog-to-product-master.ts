@@ -262,7 +262,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // List-new (31/10, owner "ลงได้เลยและจัดการเรื่องรหัส Sku ให้เรียบร้อยถูกต้อง"): Max-only record (Max re-used Pod-180; nexBar CLEAR 18K = Disposable-46).
   "DUDE-POD-3ML": { brandId: null, brandless: true, categoryId: "switch-pods", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัว dude 3 ml." (Pod-180), 10 flavour children ฿129 (product list read 31/10 ~18:25); the warehouse poster prints "dude PREMIUM PODS"; no maker site found 31/10 (dudethailand.com does not resolve) — listed on warehouse facts only, without a brand record · Switch Pods: owner 02/11 "หัวพอต Dude ก็ถือเป็นพอตเปลี่ยนหัวนะ"' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
-  // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
+  // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts plus the pack the owner photographed 03/11 (battery, nicotine); the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
   // Round p63 (19/10, owner item 69 "ใส่ตามคลัง"): Esko Bar 20000 — Max-only record (Max "Pod-130" "Esko Bar 20000 Puffs", 22 flavours, ฿389).
   // Round list19 (19/10, owner "list everything"): the refill pod of the ESKO BAR SWITCH (pod-159) — Max-only "Pod-160" "หัวพอต Esko Bar

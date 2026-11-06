@@ -605,7 +605,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "พอตใช้แล้วทิ้งใช้ได้กี่พัฟ ดูจากตรงไหน",
           answer:
-            "ดูได้จากจำนวนพัฟที่ระบุไว้ในหน้าสินค้าค่ะ บางรุ่นผู้ผลิตระบุไว้เอง เช่น TFIT M Power 20K สูงสุด 20,000 พัฟ บางรุ่นอย่าง SKE Crystal B20000 กับ SUP ZERO 22K ตัวเลขมาจากชื่อรุ่น ตัวเลขพัฟเป็นจำนวนสูงสุด จะสูบได้ใกล้แค่ไหนขึ้นกับวิธีสูบของแต่ละคน จึงควรดูความจุน้ำยาที่บอกเป็น mL ประกอบด้วย อ่านเพิ่มได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts) ค่ะ",
+            "ดูได้จากจำนวนพัฟที่ระบุไว้ในหน้าสินค้าค่ะ บางรุ่นผู้ผลิตระบุไว้เอง เช่น TFIT M Power 20K สูงสุด 20,000 พัฟ และ SUP ZERO 22K ที่พิมพ์ 22,000 พัฟไว้บนซอง บางรุ่นอย่าง SKE Crystal B20000 ตัวเลขมาจากชื่อรุ่น ตัวเลขพัฟเป็นจำนวนสูงสุด จะสูบได้ใกล้แค่ไหนขึ้นกับวิธีสูบของแต่ละคน จึงควรดูความจุน้ำยาที่บอกเป็น mL ประกอบด้วย อ่านเพิ่มได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts) ค่ะ",
         },
         {
           question: "พอตใช้แล้วทิ้ง กับพอตเปลี่ยนหัว ต่างกันยังไง",
@@ -688,7 +688,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "How many puffs will I get, and how do I read the number?",
           answer:
-            "Check the puff count on the product page. Some figures come from the maker, such as up to 20,000 for the TFIT M Power 20K; for others, like the SKE Crystal B20000 and SUP ZERO 22K, the number comes from the model name. Puff counts are maximums, and how close you get depends on how you vape, so it is worth looking at the e-liquid capacity in mL as well.",
+            "Check the puff count on the product page. Some figures come from the maker, such as up to 20,000 for the TFIT M Power 20K and the 22,000 printed on the SUP ZERO 22K pack; for others, like the SKE Crystal B20000, the number comes from the model name. Puff counts are maximums, and how close you get depends on how you vape, so it is worth looking at the e-liquid capacity in mL as well.",
         },
         {
           question: "How is a disposable different from a switch pod?",
@@ -771,7 +771,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "能抽多少口？口数怎么看？",
           answer:
-            "请看产品页面标明的口数。有些是厂商标称，例如 TFIT M Power 20K 最高 20,000 口；有些如 SKE Crystal B20000、SUP ZERO 22K，数字来自型号名称。口数都是最高值，实际能抽多少取决于个人抽法，所以建议同时参考以 mL 标示的烟油容量。",
+            "请看产品页面标明的口数。有些是厂商标称，例如 TFIT M Power 20K 最高 20,000 口，SUP ZERO 22K 的包装印有 22,000 口；有些如 SKE Crystal B20000，数字来自型号名称。口数都是最高值，实际能抽多少取决于个人抽法，所以建议同时参考以 mL 标示的烟油容量。",
         },
         {
           question: "一次性电子烟和换弹式设备有什么不同？",
