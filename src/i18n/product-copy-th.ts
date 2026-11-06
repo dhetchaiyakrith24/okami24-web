@@ -548,6 +548,39 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "nexPOD 15K Pro Kit ของ WOTOFO มีตัวเครื่องอะลูมิเนียม 1200mAh ใช้ซ้ำได้ กับหัวพอตบรรจุสำเร็จ 1 ชิ้น (18mL คอยล์ nexMESH 0.8Ω หัวละ 15,000 พัฟ) ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหนแล้วตั้งวัตต์ให้",
   },
+  "drag-x2": {
+    whoIsThisFor: {
+      0: "กำลังหา DRAG X2 ตัวนี้โดยเฉพาะ ไม่ใช่ DRAG X หรือ X3 และอยากดูสเปกกับสีทั้งหมดที่ VOOPOO ทำออกมา",
+    },
+    specifications: {
+      battery: "ถ่าน 18650 หนึ่งก้อน ซื้อแยก",
+      pod: "5.0mL หัว PnP X Cartridge DTL (รุ่นมาตรฐานและรุ่น US)",
+      coils: "คอยล์ PnP X ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.2Ω",
+      materials: "ซิงค์อัลลอยและหนัง",
+      chip: "GENE.TT 2.0 มีโหมด Smart, RBA และ ECO",
+    },
+    features: {
+      platform: {
+        title: "พอตม็อดถ่านแยกตัวแรกของ VOOPOO บน PnP X",
+        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตม็อดถ่านแยกรุ่นแรกที่ใช้แพลตฟอร์ม PnP X",
+      },
+      modes: {
+        title: "3 โหมดใช้งาน",
+        description: "Smart เลือกกำลังไฟให้เอง RBA ตั้งเองได้ 5 ถึง 80 วัตต์ และ ECO ช่วยยืดแบตได้มากกว่า 10%",
+      },
+      cartridge: {
+        title: "หัวพอต 5mL รับลมด้านบน",
+        description: "หัว PnP X รับลมจากด้านบน และมีวงแหวนปรับลมมาให้",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง หัว PnP X DTL คอยล์ PnP X 0.15 และ 0.2 โอห์ม สาย Type-C คู่มือ และการ์ด PnP Platform ส่วนถ่านต้องซื้อแยก",
+      },
+    },
+    tagline: "DRAG X2 ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ถึง 80 วัตต์ ใช้คอยล์ PnP X",
+    shortDescription:
+      "DRAG X2 ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนที่ต้องซื้อแยก ปรับได้ 5–80 วัตต์ หัวพอต PnP X จุ 5mL และมีหน้าจอเมนูพร้อม 3 โหมด",
+  },
   "drag-x3": {
     faqs: {
       "dragx3-battery": {

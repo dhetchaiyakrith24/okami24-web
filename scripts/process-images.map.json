@@ -14519,5 +14519,140 @@
    "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
   },
   "fileName": "variant-ice-tieguanyin-v2.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/colorful-silver.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "colorful-silver",
+  "fileName": "variant-colorful-silver.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (8) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/pearl-white.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "pearl-white",
+  "fileName": "variant-pearl-white.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (12) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/sky-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "sky-blue",
+  "fileName": "variant-sky-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (13) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/modern-red.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "modern-red",
+  "fileName": "variant-modern-red.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (11) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/glow-pink.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "glow-pink",
+  "fileName": "variant-glow-pink.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (9) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/gray-metal.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "gray-metal",
+  "fileName": "variant-gray-metal.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (10) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/spray-black.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "spray-black",
+  "fileName": "variant-spray-black.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (14) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/champagne-golden.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "champagne-golden",
+  "fileName": "variant-champagne-golden.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (1) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/moss-green.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "moss-green",
+  "fileName": "variant-moss-green.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (2) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/snow-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "snow-blue",
+  "fileName": "variant-snow-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (3) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/checkered-black.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "checkered-black",
+  "fileName": "variant-checkered-black.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT base (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/retro.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "retro",
+  "fileName": "variant-retro.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (6) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/masala.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "masala",
+  "fileName": "variant-masala.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (5) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/carbon-fiber.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "carbon-fiber",
+  "fileName": "variant-carbon-fiber.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (4) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/classic.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "classic",
+  "fileName": "variant-classic.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT CLASSIC (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/galaxy-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "galaxy-blue",
+  "fileName": "variant-galaxy-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (15) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/sky-blue.png",
+  "slug": "drag-x2",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (13) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
  }
 ]

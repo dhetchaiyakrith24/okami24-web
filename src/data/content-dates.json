@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T01:01:02+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T03:28:52+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -147,8 +147,8 @@
       "fp": "26926b7474aa"
     },
     "/brands/voopoo": {
-      "date": "2026-11-02T23:29:24+07:00",
-      "fp": "68859c05121b"
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "c6ac43163312"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "93e09368bc3c"
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "f7eab25e81c2"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -331,12 +331,16 @@
       "fp": "8b5e7fd7ef71"
     },
     "/products/drag-x": {
-      "date": "2026-11-04T00:04:42+07:00",
-      "fp": "fe905aebbf88"
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "9b0677f77a7e"
+    },
+    "/products/drag-x2": {
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "ce1dde8a95e1"
     },
     "/products/drag-x3": {
-      "date": "2026-10-26T07:07:40+07:00",
-      "fp": "b4cc431025b3"
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "47366c76fd6a"
     },
     "/products/dude-pod-3ml": {
       "date": "2026-11-02T05:29:33+07:00",
@@ -527,8 +531,8 @@
       "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-11-02T06:06:07+07:00",
-      "fp": "04357b64339c"
+      "date": "2026-11-07T03:28:52+07:00",
+      "fp": "5d55ca2b5f32"
     },
     "/products/pods-cartridges": {
       "date": "2026-11-02T23:29:24+07:00",
