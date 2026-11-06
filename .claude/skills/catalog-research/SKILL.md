@@ -123,6 +123,8 @@ thumbnail.
 retailer's page merely *claims* manufacturer-supplied photography, cite that as the retailer's own
 unverified claim, don't launder it into a stronger claim than the evidence supports.
 
+(Listing a new warehouse product end to end = skill `product-listing`; new pictures = skill `product-images`.)
+
 ## Step 5 — Report findings, don't silently decide
 
 Findings go back to whoever's making the catalog-data change (this session, or the dispatching

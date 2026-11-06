@@ -144,7 +144,7 @@ src files the skills use (the one list — skills may not name a file under src/
   "Catalog reconciliation methodology" · [legacy-products] `src/data/products/*.ts` · [taxonomy]
   `src/data/shipnity-seed/active-catalog-to-product-master.ts` (`TAXONOMY_MATCHES`) · [spec-gate]
   `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts` · [approvals]
-  `src/data/shipnity-seed/publication-approvals.ts` · [active-catalog] `src/data/shipnity-seed/active-catalog-source.ts`
+  `src/data/shipnity-seed/publication-approvals.ts` · [active-catalog] `src/data/shipnity-seed/active-catalog-source.ts` · [sku-map] `src/data/stock/sku-map.ts` · [warehouse-new] `src/data/stock/warehouse-new.ts`
 Verify: which set = 13.5 · the full list with commands = skill `round-close` step 3 · pass = what each script prints ·
   the last full-set counts = the latest round-close log
 Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules · Thai text via `git commit -F <file>` ·
