@@ -226,7 +226,7 @@ export const brands: Brand[] = [
     tagline: "Disposable vapes and vaping accessories.",
     taglineTh: "พอตใช้แล้วทิ้งและอุปกรณ์เสริม",
     description:
-      "JOIWAY makes disposables. This site lists two kinds: a single-flavour model with 12,000+ puffs, and a dual-flavour model with a rotating mouthpiece and up to 20,000 puffs. OKami24 has a review clip of each on YouTube.",
+      "JOIWAY makes disposables. This site lists two kinds: a single-flavor model with 12,000+ puffs, and a dual-flavor model with a rotating mouthpiece and up to 20,000 puffs. OKami24 has a review clip of each on YouTube.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("จอยเวย์", autocomplete 07/10), one mention; F3 is
       // the single-flavour model — the old line read as if both switched two.

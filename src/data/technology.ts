@@ -181,7 +181,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "Real example: the Caliburn G5's actual numbers, with Smart Triple-Tap",
         paragraphs: [
-          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a top-fill pod. Control is Smart Triple-Tap Control — modes are switched by tapping.",
+          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a side-refill pod. Control is Smart Triple-Tap Control — modes are switched by tapping.",
           "The 0.85\" colour screen is what makes tap control usable: after a tap it shows which mode you are in, the wattage, and the battery level.",
           "Not chosen a device yet? The G5 is the main example in [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],

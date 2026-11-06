@@ -20,12 +20,12 @@
     "src/components/tools/SearchTool.tsx": "2026-09-22T04:29:29+07:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
     "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
-    "src/data/guides.ts": "2026-11-06T17:49:18+07:00",
+    "src/data/guides.ts": "2026-11-06T17:57:59+07:00",
     "src/data/search-aliases.ts": "2026-11-03T06:11:30+07:00",
-    "src/data/technology.ts": "2026-11-02T23:27:33+07:00",
+    "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
-    "src/i18n/guides-copy.ts": "2026-11-06T17:49:18+07:00",
+    "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
     "src/i18n/search-head-copy.ts": "2026-11-06T17:29:51+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
@@ -33,7 +33,7 @@
     "src/i18n/service-pages/privacy.tsx": "2026-10-26T16:35:56+07:00",
     "src/i18n/service-pages/shared.tsx": "2026-10-26T14:31:42+07:00",
     "src/i18n/service-pages/shipping.tsx": "2026-10-29T23:58:41+07:00",
-    "src/i18n/technology-copy.ts": "2026-11-02T23:27:33+07:00",
+    "src/i18n/technology-copy.ts": "2026-11-06T17:57:59+07:00",
     "src/lib/catalog-search.ts": "2026-09-22T15:46:52+07:00",
     "src/lib/finder.ts": "2026-09-25T00:04:57+07:00"
   },
@@ -49,7 +49,7 @@
     "choosing-a-terea-flavor": "2026-11-03T02:27:30+07:00",
     "choosing-wattage-and-airflow": "2026-10-26T06:48:28+07:00",
     "choosing-your-first-pod-system": "2026-11-06T17:49:18+07:00",
-    "coil-and-pod-maintenance": "2026-10-20T00:08:12+07:00",
+    "coil-and-pod-maintenance": "2026-11-06T17:57:59+07:00",
     "comparing-caliburn-models": "2026-10-27T22:36:02+07:00",
     "comparing-voopoo-argus-models": "2026-10-27T13:45:24+07:00",
     "comparing-voopoo-drag-models": "2026-10-27T22:36:02+07:00",
@@ -103,8 +103,8 @@
       "fp": "8b283683403d"
     },
     "/brands/joiway": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "ff56de8b65c6"
+      "date": "2026-11-06T17:57:59+07:00",
+      "fp": "eeaae6922bf3"
     },
     "/brands/kardinal-stick": {
       "date": "2026-10-18T01:51:46+07:00",
@@ -619,8 +619,8 @@
       "fp": "b41c7293974a"
     },
     "/technology/gesture-and-triple-tap-control": {
-      "date": "2026-09-25T01:29:38+07:00",
-      "fp": "aba82f7265a2"
+      "date": "2026-11-06T17:57:59+07:00",
+      "fp": "12197a28e3fa"
     },
     "/technology/high-output-chip-platforms": {
       "date": "2026-11-02T23:45:09+07:00",
