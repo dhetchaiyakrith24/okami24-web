@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T01:01:02+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T02:46:27+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -367,8 +367,8 @@
       "fp": "13e4758d27d3"
     },
     "/products/esko-bar-20k": {
-      "date": "2026-11-02T07:54:44+07:00",
-      "fp": "f08c7ca30e29"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "f409602cc9a0"
     },
     "/products/esko-bar-switch-pod": {
       "date": "2026-11-02T07:54:44+07:00",
@@ -419,8 +419,8 @@
       "fp": "d53943915329"
     },
     "/products/joiway-f3": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "6a615e7e3b99"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "d963d2cef052"
     },
     "/products/joiway-f4": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -431,20 +431,20 @@
       "fp": "2aaae3df9483"
     },
     "/products/m-bar-10k": {
-      "date": "2026-10-14T01:33:05+07:00",
-      "fp": "a85fffaac86c"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "3dee1bc19548"
     },
     "/products/m-bar-9k": {
-      "date": "2026-11-02T02:45:23+07:00",
-      "fp": "bd60bf972eb8"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "9c2d9e8738a8"
     },
     "/products/m-switch-kit": {
-      "date": "2026-11-02T02:45:23+07:00",
-      "fp": "e1a98daae217"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "a53aaf7d9298"
     },
     "/products/m-switch-pod": {
-      "date": "2026-11-02T05:16:42+07:00",
-      "fp": "933b055d9158"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "c462d0bdf7c5"
     },
     "/products/marbo-10k-clone": {
       "date": "2026-10-27T22:40:18+07:00",
@@ -539,8 +539,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-creator": {
-      "date": "2026-10-27T22:32:42+07:00",
-      "fp": "448025b36145"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "875ad3bdb2ff"
     },
     "/products/relx-creator-pod-20k": {
       "date": "2026-11-02T03:47:57+07:00",
