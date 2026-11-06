@@ -70,12 +70,20 @@ export function runI18nContractTests(): I18nContractResult[] {
   // pinned here token for token (block comments and whitespace ignored): any change to what it matches or reads —
   // a wider matcher, another header, the URL, cookies, the client IP — fails this check until someone rewrites the
   // pin on purpose. (A pattern-based check was tried first; the checker bypassed it four ways, PR #113.)
+  // Rewritten 07/11 (round SEO full, batch 4): a second job, old product picture names answer 301. It reads the picture
+  // path and the optimizer's url parameter only, nothing about the visitor.
   const PROXY_PIN =
     'import { NextResponse } from "next/server"; import type { NextRequest } from "next/server"; ' +
-    'export function proxy(request: NextRequest) { const accept = request.headers.get("accept") ?? ""; ' +
+    'import MOVED_IMAGES from "@/data/moved-images.json"; const moved = MOVED_IMAGES as Record<string, string>; ' +
+    'function movedTo(location: string): NextResponse { return new NextResponse(null, { status: 301, headers: { Location: location, "Cache-Control": "public, max-age=2592000" } }); } ' +
+    'export function proxy(request: NextRequest) { const { pathname, searchParams } = request.nextUrl; ' +
+    'if (pathname.startsWith("/assets/products/")) { const target = moved[pathname]; return target ? movedTo(target) : NextResponse.next(); } ' +
+    'const source = searchParams.get("url"); const replaced = source ? moved[source] : undefined; ' +
+    'if (replaced) { const params = new URLSearchParams(searchParams); params.set("url", replaced); return movedTo(`${pathname}?${params.toString()}`); } ' +
+    'const accept = request.headers.get("accept") ?? ""; ' +
     'if (accept.includes("image/webp")) return NextResponse.next(); const headers = new Headers(request.headers); ' +
     'headers.set("accept", accept ? `image/webp,${accept}` : "image/webp,*/*"); return NextResponse.next({ request: { headers } }); } ' +
-    'export const config = { matcher: "/_next/image", };';
+    'export const config = { matcher: ["/_next/image", "/assets/products/:path*"], };';
   const pinText = (src: string) => src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\s+/g, " ").trim();
   const proxyPath = path.join(process.cwd(), "src", "proxy.ts");
   const proxySrc = fs.existsSync(proxyPath) ? readFileSync(proxyPath, "utf-8") : null;
