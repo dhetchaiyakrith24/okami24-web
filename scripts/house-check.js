@@ -65,6 +65,11 @@ for (const e of (text[".claude/LESSONS.md"] || "").split(/\n(?=## )/).slice(1)) 
   const lines = body.filter((l) => l.trim() && !/^#/.test(l));
   if (lines.length === 1 && /^→ /.test(lines[0].trim())) { console.log(`  LESSONS stub: ${head.slice(3, 70)}`); shape++; }
 }
+for (const f of [".claude/LESSONS.md", ".claude/LESSONS-images.md"]) {
+  const seen = {};
+  for (const m of (text[f] || "").matchAll(/^## ([พช]?\d+)\./gm)) seen[m[1]] = (seen[m[1]] || 0) + 1;
+  for (const [n, c] of Object.entries(seen)) if (c > 1) { console.log(`  ${f}: number ${n} used ${c} times`); shape++; }
+}
 if (!shape) console.log("  none");
 
 // 1c. ceilings — the one home of the per-file size ceilings (owner 26/10 "9 ABC ได้": A = ceilings flagged here, report
@@ -97,7 +102,7 @@ for (const [f, t] of Object.entries(text)) {
       // the line hid every dead pointer on it
       const end = m.index + m[0].length;
       const near = line.slice(Math.max(0, m.index - 15), m.index) + " " + line.slice(end, end + 50);
-      if (!fs.existsSync(p) && !/\$|<|\{|\*/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(near)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
+      if (!fs.existsSync(p) && !/\$|<|\{|\*|^\.claude\/worktrees/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(near)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
     }
     // a pointer to a HEADING by its words: <FILE> [§N] "heading" — the words must still be in that file (in §N when given).
     // 15/10: house-clean pointed at HANDOFF §18 "Answered 15/10" after the heading was renamed; nothing caught it.
@@ -115,7 +120,8 @@ for (const [f, t] of Object.entries(text)) {
       if (!body.replace(/\*/g, "").toLowerCase().includes(want)) { dead++; console.log(`  ${f}:${i + 1}  ${m[1]}${m[2] ? ` §${m[2]}` : ""} has no "${m[3]}"`); }
     }
     if (/\.md$/.test(f) && f !== "docs/THAI_STYLE.md") {
-      for (const m of line.matchAll(/(?<![\d.§])13\.(\d{1,2})(?![\d.]\d)/g)) {
+      // 13.0 in the data files is a rank or a price, never a rule: the headings start at 13.1
+      for (const m of line.matchAll(/(?<![\d.§])13\.([1-9]\d?)(?![\d.]\d)/g)) {
         if (!heads.has(`13.${m[1]}`)) { dead++; console.log(`  ${f}:${i + 1}  no heading 13.${m[1]} in TEAM_RULES`); }
       }
     }
@@ -137,7 +143,8 @@ const cands = [
   ...tracked.filter((f) => /^\.claude\/agents\/.+\.md$/.test(f)).map((f) => [f, path.basename(f, ".md")]),
   ...tracked.filter((f) => /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(f)).map((f) => [f, f.split("/")[2]]),
 ];
-const orphans = cands.filter(([f, n]) => !refd(n, f));
+// docs/ปรับราคา-<date>.md = the price log: written by the daily price-check task, kept as the record of what the owner set
+const orphans = cands.filter(([f, n]) => !refd(n, f) && !/^docs\/ปรับราคา-/.test(f));
 for (const [f, n] of orphans) console.log(`  ${f}${refd(n, f, false) ? "  (only history mentions it)" : ""}`);
 if (!orphans.length) console.log("  none");
 
@@ -201,6 +208,7 @@ console.log("\n## loose files/folders at the repo root (not in git, not a known 
 const KNOWN_ROOT = new Set(["_incoming", "node_modules", ".next", ".data", ".git", ".agents", "next-env.d.ts", "tsconfig.tsbuildinfo", "รายงานจากแอดมิน แชท", "Higgs Okm"]);
 const topTracked = new Set(tracked.map((f) => f.split("/")[0]));
 const loose = fs.readdirSync(".").filter((n) => !topTracked.has(n) && !KNOWN_ROOT.has(n));
+if (fs.existsSync("C:/c/Users")) console.log("  C:\\c  stray copies from a /c/... path under MSYS_NO_PATHCONV (HANDOFF §17 Windows shell) — outside git: the owner decides");
 for (const n of loose) {
   const st = fs.statSync(n);
   console.log(`  ${n.padEnd(30)} ${((st.isDirectory() ? size(n) : st.size) / 1048576).toFixed(1).padStart(8)} MB  ${st.mtime.toISOString().slice(0, 10)}  → move under _incoming/ or the owner decides`);
@@ -250,10 +258,12 @@ for (const n of require("./lib/checker-lock").readAll(ROOT)) console.log(`  chec
 // 7. rules followed — PRs merged in the last 7 days (needs `gh` = the computer) · TEAM_RULES 13.4 / 13.7
 console.log("\n## rules followed — PRs merged in the last 7 days");
 try {
-  const since = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
-  const prs = JSON.parse(
-    execSync(`gh pr list --state merged --limit 200 --search "merged:>=${since}" --json number,body,mergeCommit,files`, { encoding: "utf8" }),
-  );
+  // one query a day: 7 days at once (bodies + file lists) timed out at GitHub with a 504 (06/11)
+  const prs = [];
+  for (let d = 0; d < 7; d++) {
+    const day = new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
+    prs.push(...JSON.parse(execSync(`gh pr list --state merged --limit 100 --search "merged:${day}" --json number,body,mergeCommit,files`, { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 })));
+  }
   const docsOnly = (p) => p.files.every((f) => /^(docs\/|\.claude\/LESSONS(-images)?\.md$|\.claude\/memory\/)/.test(f.path));
   let mergeCommits = 0;
   let withLine = 0;
@@ -277,12 +287,31 @@ try {
 }
 
 // 8. this project's scheduled-task folders — names okami24-* / friday-* only (other projects' tasks are not read, central §12 item 32)
+console.log("\n## open questions a home may already answer (a hint: read that line before asking — scripts/asked-before.js)");
+try {
+  const rows = require("./asked-before").openChecks(ROOT);
+  for (const r of rows) console.log(`  รอพี่ตรวจ ${r.item}: ${r.what}\n    → ${r.matches[0].file}:${r.matches[0].line}  ${r.matches[0].text.slice(0, 90)}`);
+  if (!rows.length) console.log("  none");
+} catch (e) {
+  console.log(`  not measured here (${String(e.message).slice(0, 80)})`);
+}
+
 console.log("\n## scheduled-task folders of this project (~/.claude/scheduled-tasks)");
 const st = path.join(require("os").homedir(), ".claude", "scheduled-tasks");
 const mine = fs.existsSync(st) ? fs.readdirSync(st).filter((n) => /^(okami24|friday)-/.test(n)) : [];
 for (const n of mine) {
   const f = path.join(st, n, "SKILL.md");
   console.log(`  ${n.padEnd(34)} ${fs.existsSync(f) ? `prompt saved ${fs.statSync(f).mtime.toISOString().slice(0, 10)}` : "(no SKILL.md)"}`);
+  // These prompts live outside git, so no checker ever reads them (rule-audit row 54).
+  if (!fs.existsSync(f)) continue;
+  const prompt = rd(f);
+  const desc = (prompt.match(/^description:.*$/m) || [""])[0];
+  if (/\bModel\s*=|\b(Sonnet|Haiku|Opus)\s+\d/.test(desc)) console.log("    flag: names a model in its description (model + effort live in the app, HANDOFF §18)");
+  if (/\bgh pr merge\b|\bmerges? it\b/i.test(prompt) && !prompt.includes("18:00")) console.log("    flag: can merge but never names the 18:00–24:00 window (TEAM_RULES 13.7)");
+  for (const m of prompt.matchAll(/\b(?:until|expires?|removes? this)[^\n]{0,60}?(\d{2})\/(\d{2})(?![\d/])/gi)) {
+    const d = new Date(new Date().getFullYear(), Number(m[2]) - 1, Number(m[1]));
+    if (d < new Date()) console.log(`    flag: line past its date ${m[1]}/${m[2]}: ${m[0].slice(0, 70)}`);
+  }
 }
 if (!mine.length) console.log("  none");
 console.log("  (enabled or not = the app's list_scheduled_tasks — a folder whose task is gone from the app is a leftover)");

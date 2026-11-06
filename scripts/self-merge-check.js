@@ -114,6 +114,7 @@ function unquoteGitPath(line) {
 // head it checked (≥ 7 hex chars), or `Checker: SKIP <reason>` for a PR that needs no checker (docs-only · self-review · after-pass · series —
 // skipReasonProblem below). Returns why the line fails, or "" when it is fine. --pr mode only (needs `gh`).
 function checkerLineProblem(body, prHead) {
+  if ((body.match(/^\s*Checker:\s*(PASS|SKIP)\b/gim) || []).length > 1) return "more than one `Checker:` line in the PR description: keep one (LESSONS, TEAM_RULES 13.4)";
   const m = body.match(/^\s*Checker:\s*(PASS|SKIP)\b[ \t]*(.*)$/im);
   if (!m) return "no `Checker: PASS <sha>` / `Checker: SKIP <reason>` line in the PR description (TEAM_RULES 13.4)";
   const rest = m[2].trim();

@@ -31,6 +31,10 @@
 //   J  `_incoming/next-chat*.md` overwritten (Write tool, or a > redirect) while its first line is still `status: ready` —
 //      the new chat has not picked the brief up yet (TEAM_RULES 13.6) · a Write whose first line is `status: started` passes → deny
 //
+// House round 06/11 (rule-audit row 53):
+//   K  `gh pr merge` 18:00–24:00 Thai time when the PR makes Render deploy (anything outside docs/ and .claude/, the only paths Render
+//      ignores) — the slip bot misses slips while the site restarts (TEAM_RULES 13.7, 02/11). A real break = OKAMI24_NIGHT_OK=<reason> in front → deny
+//
 // Input: the hook JSON on stdin ({ tool_name, tool_input, cwd }). Output: a PreToolUse decision on stdout, or nothing
 // (= carry on as usual). Fails open on its own errors — a broken guard must not stop all work; the git pre-push
 // hook (scripts/push-guard.js) still stops B. Every lock has a planted example in `node scripts/pre-checker-gate.js --self-test`.
@@ -40,6 +44,17 @@ const { LOCKED, allowedByRound } = require("./lib/round-file");
 const checkerLock = require("./lib/checker-lock");
 
 const ROOT = path.resolve(__dirname, "..");
+// K: files of a PR, or null when GitHub cannot say (null = treated as a deploy). GUARD_TEST_* = the gate's --self-test only.
+function prFiles(n) {
+  if (process.env.GUARD_TEST_FILES !== undefined) return process.env.GUARD_TEST_FILES.split(",").filter(Boolean);
+  if (!n) return null;
+  try {
+    const out = require("child_process").execFileSync("gh", ["pr", "view", n, "--json", "files", "-q", ".files[].path"], { encoding: "utf8", timeout: 9000, cwd: ROOT, stdio: ["ignore", "pipe", "ignore"] });
+    return out.split("\n").map((l) => l.trim()).filter(Boolean);
+  } catch {
+    return null;
+  }
+}
 // C in a shell command: the locked file must be the TARGET of a write (owner 01/10: a commit message that merely
 // mentions render.yaml must not trip it). Text is judged after heredoc bodies, here-strings and quoted strings holding
 // spaces (messages) are blanked; a quoted path without spaces stays.
@@ -141,6 +156,17 @@ function checkShell(cmd, cwd) {
     const at = placeOf(all, cwd)[i];
     for (const t of redirectTargets(seg)) if (briefStillReady(resolveArg(at, t))) decide("deny", BRIEF_MSG);
   });
+  // K
+  if (/\bgh\s+pr\s+merge\b/.test(plain) && !/OKAMI24_NIGHT_OK=\S/.test(cmd)) {
+    const hour = Number(process.env.GUARD_TEST_HOUR ?? new Date(Date.now() + 7 * 3600e3).getUTCHours());
+    if (hour >= 18) {
+      const args = (plain.match(/\bgh\s+pr\s+merge\b([^\n;&|]*)/) || [])[1] || "";
+      const files = prFiles((args.match(/(?:^|\s)(\d+)(?=\s|$)|\/pull\/(\d+)/) || []).slice(1).find(Boolean));
+      if (!files || files.some((f) => !/^(docs|\.claude)\//.test(f))) {
+        decide("deny", "No merge that makes Render deploy 18:00–24:00 Thai time: the slip bot misses slips while the site restarts (TEAM_RULES 13.7). Hold it until after midnight. Broken live site or a wrong price = put OKAMI24_NIGHT_OK=<reason> in front.");
+      }
+    }
+  }
   // F
   if (/self-merge-check/.test(plain) &&/\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge(?![-\w])/.test(plain)) {
     decide("deny", "Run `node scripts/self-merge-check.js` ALONE, read its last line (BLOCKED = no merge), then merge in a separate command (TEAM_RULES 13.7).");
