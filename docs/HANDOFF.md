@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 06/11 ~23:00 by the house-round chat. Re-read this + TEAM_RULES.
+Updated 07/11 ~00:15 by the house-round chat. Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -34,7 +34,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
     zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
-3o OPEN ROUND house 06/11 = `docs/rounds/รอบเก็บบ้าน-06-11.md`, skill house-clean (ข). Worktree of tools = PR house-0611r; status + slim PRs follow; evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows).
+3o No round open. House round 06/11 closed 07/11, tag house-0611 (files: `git show house-0611:docs/rounds/รอบเก็บบ้าน-06-11.md`), evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows, usage-agents-skills.txt, house-check-final.txt).
+    Left from it: line-break tool (owner approved 06/11, promote `scripts/lab/seo-cand-driver.js`, needs a real build to prove) · ceilings question = รอพี่ตรวจ 126 · 2 unmerged worktrees wt-golive and wt-staff-lag kept (their branches tagged archive/) · audit rows not done: 5-style pointers to §18 stubs are 2-step · 34 docs/seo-audit vs skill seo-audit not diffed · 25 LINE/Google still test mode?
   Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
@@ -76,7 +77,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
-  - OWNER'S ORDER 06/11 ~20:00, after the notice: 1 house round (`_incoming/house-20261106/todo-next.md`; done so far = worktrees 106→34, 155+2 branches, 154 folders archived) · 2 the big jobs: order check + sales + profit + weekly summary (2h) · SEO state and what to improve · pictures: all there, new ones, flaw fixes · back office switches (item 3) · 3 one list of the small items the owner dropped in mid-work and asked Friday to note: show it to the owner.
+  - OWNER'S ORDER 06/11: next = order check + sales + profit + weekly summary · SEO state and what to improve · pictures: all there, new ones, flaw fixes · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
   - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
   - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
