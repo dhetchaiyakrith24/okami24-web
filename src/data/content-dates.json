@@ -23,7 +23,7 @@
     "src/data/guides.ts": "2026-11-06T17:57:59+07:00",
     "src/data/search-aliases.ts": "2026-11-03T06:11:30+07:00",
     "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
+    "src/i18n/faq-copy.ts": "2026-11-07T03:13:17+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
     "src/i18n/search-head-copy.ts": "2026-11-07T02:46:27+07:00",
@@ -367,8 +367,8 @@
       "fp": "13e4758d27d3"
     },
     "/products/esko-bar-20k": {
-      "date": "2026-11-07T02:46:27+07:00",
-      "fp": "f409602cc9a0"
+      "date": "2026-11-07T03:13:17+07:00",
+      "fp": "341cd005a7c7"
     },
     "/products/esko-bar-switch-pod": {
       "date": "2026-11-02T07:54:44+07:00",
@@ -431,16 +431,16 @@
       "fp": "2aaae3df9483"
     },
     "/products/m-bar-10k": {
-      "date": "2026-11-07T02:46:27+07:00",
-      "fp": "3dee1bc19548"
+      "date": "2026-11-07T03:13:17+07:00",
+      "fp": "a28e6022bc4f"
     },
     "/products/m-bar-9k": {
       "date": "2026-11-07T02:46:27+07:00",
       "fp": "9c2d9e8738a8"
     },
     "/products/m-switch-kit": {
-      "date": "2026-11-07T02:46:27+07:00",
-      "fp": "a53aaf7d9298"
+      "date": "2026-11-07T03:13:17+07:00",
+      "fp": "1101b8cdeb98"
     },
     "/products/m-switch-pod": {
       "date": "2026-11-07T02:46:27+07:00",
@@ -539,8 +539,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-creator": {
-      "date": "2026-11-07T02:46:27+07:00",
-      "fp": "875ad3bdb2ff"
+      "date": "2026-11-07T03:13:17+07:00",
+      "fp": "06eacd137d98"
     },
     "/products/relx-creator-pod-20k": {
       "date": "2026-11-02T03:47:57+07:00",
