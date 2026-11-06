@@ -30,9 +30,11 @@ export function formatBaht(amount: number): string {
 
 const WHOLE_BAHT = new Intl.NumberFormat("th-TH");
 
-/** "฿1,250" · "฿1,250.50": the sales page sums whole-baht orders with slips that can carry satang. */
+/** "฿1,250" · "฿1,250.50" · "-฿1,250": the sales pages sum whole-baht orders with slips that can carry satang, and a week can lose. */
 export function formatSatang(satang: number): string {
-  return satang % 100 === 0 ? `฿${WHOLE_BAHT.format(satang / 100)}` : formatBaht(satang / 100);
+  const sign = satang < 0 ? "-" : "";
+  const size = Math.abs(satang);
+  return sign + (size % 100 === 0 ? `฿${WHOLE_BAHT.format(size / 100)}` : formatBaht(size / 100));
 }
 
 const COUNT = new Intl.NumberFormat("th-TH");
