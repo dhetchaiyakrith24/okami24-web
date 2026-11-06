@@ -1,6 +1,6 @@
 ---
 name: product-images
-description: Make new product pictures for the OKami24 site in one order — search what already exists → find the model photo → credits → 1–3 samples → the full set → picture gates → watermark → checker → comparison image to the owner → watermark → merge. Use it before any Higgsfield credit is spent or any `generate_image` call for a product picture, when the owner says "ทำรูป", "สร้างรูป", "รูปสินค้าใหม่", "รูปกลิ่น", "รูปการ์ด", and from skill product-listing when a product has no usable picture. It points at IMAGE_SPEC and TEAM_RULES 13.5 and holds no rule of its own. Not for putting an old picture back (13.5 — no comparison needed).
+description: Make new product pictures for the OKami24 site in one order — search what already exists → find the model photo → credits → 1–3 samples → the full set → picture gates → watermark → checker → comparison image to the owner → merge. Use it before any Higgsfield credit is spent or any `generate_image` call for a product picture, when the owner says "ทำรูป", "สร้างรูป", "รูปสินค้าใหม่", "รูปกลิ่น", "รูปการ์ด", and from skill product-listing when a product has no usable picture. It points at IMAGE_SPEC and TEAM_RULES 13.5 and holds no rule of its own. Not for putting an old picture back (13.5 — no comparison needed).
 ---
 
 # Product images
