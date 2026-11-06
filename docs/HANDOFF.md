@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 07/11 ~02:30. Main chat: rounds SEO full + popular models open, child chats below, order/back-office plan next with the owner. Re-read this + TEAM_RULES.
+Updated 07/11 ~03:00. Main chat holds 4 children (owner allowed a 4th, remove this block when they end). Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -26,16 +26,12 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
     Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
     Rates 22–31/10 match ours, no loss-makers (detail: git show 036fab46:docs/HANDOFF.md §16 2g); 29 products have no rate, 4 with stock in รอพี่ตรวจ.
-  h ORDER CHECK PLAN (owner agreed 04/11; nothing built): 1 round Excel Saturday 13:00 → Saturday 13:00 (warehouse order no, code, qty, rate, ship 35), proved against a bill · 2 cost table into the back office ·
-    3 daily sales page · 4 paste the warehouse file, list what differs · 5 LINE orders · 6 scheduled run Saturday after 13:00 + morning summary. Owner answers: only the owner sees cost and profit · LINE = daily sales from slips, cost/profit weekly from the bill ·
-    accounts on the web back office, no separate app (Google/LINE sign-in + roles: owner all · admin orders, no profit · Friday read-only). Login work = 13.3 #9, write the plan for the owner first. Admin's proof file holds rates: settle what admin may see.
     Warehouse bill columns: "(ว่าง)" = web · "Okami" = LINE keyed by admin (217 orders ฿126,010; 16 of them not ฿35 shipping, unread) · H = rate + shipping.
   SEO findings: Google hid us on general terms since 27/10
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
     zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
 3o No round open. House round 06/11 closed 07/11, tag house-0611 (files: `git show house-0611:docs/rounds/รอบเก็บบ้าน-06-11.md`), evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows, usage-agents-skills.txt, house-check-final.txt).
-    Left: child local_3e295e5e builds `scripts/line-candidates.js` (no PR yet) and carries house-check CEILINGS 75 · 70 · 63 so the site restarts once; unconfirmed, main still says 60 · `_incoming/wt-house-0711` = leftover folder, archive it.
     Audit rows not done (rule-audit.md): 16 warehouse-stock.ts stopped 30/10 and still feeds JSON-LD [เชื่อว่า: check first] · 25 LINE/Google sign-in may be test mode · 21 · 34 · 59 · 60.
   Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
@@ -78,8 +74,13 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
-  - NEXT JOB A: order check, sales, profit vs the warehouse bill. Owner's goal: "อยากดูได้จากระบบหลังบ้านเว็บและก็ตรวจได้ทุกวัน ทุก Week". Plan = 2h · method = 2g + LESSONS พ71 · `_incoming/sales-0411/` · `ต้นทุนสินค้า/`. LINE is most of the bill (22–31/10: web ฿8,285, LINE ฿126,010). Login = 13.3 #9.
   - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
+  - CHILDREN 07/11 (Friday merges all PRs, none before 00:00–18:00 Thai if the site deploys):
+    watermark-gen4 local_73ffb3ed, PR 1269: owner picked spacing 1.7 + shift text right off the left edge, every marked picture incl. nexBar, new generation; PR 1269 at gen 4 must not merge as it is.
+    seo-full local_61acafdd, round SEO full: key table v1 `side-session-notes/local_de553e7b.../seo-keys-v1-0711.md`; 1-2 days = 20 pages, 10 best sellers, top articles, the rest queued.
+    popular-models local_f36f63b5: real pages for models we do not stock. backoffice local_4d9c3c59, round file on main: batches 3-5 (login, DB) wait for the owner's yes; batch 1 waits for the bill after Saturday 13:00.
+  - Done 07/11: Pop Up ฿219 label ฿229 badge 5% · Freebase ฿169 · Saltnic 9 · nexBar 15K pictures · line-candidates. Owner: new labels use round badges 5-50 (BSOT §5).
+  - DataForSEO: account verified, credit left about $0.39, top-up minimum $50 needs the owner, read the full terms first. The owner's API password was shown in chat and reset failed: ask again later. Friday told support the shop sells pods; keep that short next time.
   - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
   - Watermark: owner 07/11 = every picture gen 4 (text only). Child watermark-gen4, PR 1269, covers the 968 gen-3 files; Friday merges.
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
