@@ -26,6 +26,313 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
+  // Pack facts = the owner's pouch photos 03/11 (RELX LUMI 18K Aloe Grape, front + back). Flavours = max-seed "RELX-LUMI-18K",
+  // grouped by the shop from the words in each name. No charging, coil, airflow or days-of-use claim: nothing printed or confirmed.
+  // The pack's QR and verify code stay out until someone scans one (relxnow.com has no LUMI page). The 5% rows: only the flavour
+  // names say so, no 5% pouch seen. en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. thai-copy 06/11.
+  "relx-lumi-18k": {
+    th: {
+      lede: "ถ้ากำลังเลือก RELX LUMI 18K อยู่ ด้านล่างร้านเล่าให้ฟังว่าตัวเลขและคำบนซองหมายถึงอะไร จัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นใกล้เคียงด้วย",
+      sections: [
+        {
+          heading: "RELX LUMI 18K สูบได้กี่พัฟ",
+          paragraphs: [
+            "ด้านหน้าซองพิมพ์ตัวเลขไว้ชัดเจนว่า 18,000 พัฟ ส่วนด้านหลังซองมีหมายเหตุสั้น ๆ ว่า Based on consumption จะสูบได้ใกล้ตัวเลขนี้แค่ไหนจึงขึ้นกับการใช้งานของแต่ละคน",
+            "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+        {
+          heading: "RELX LUMI 18K กลิ่นไหนดี",
+          paragraphs: [
+            "กลิ่นไหนดีขึ้นอยู่กับว่าชอบแนวไหน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น จึงเป็นการจัดของร้านเอง ไม่ใช่การแบ่งของ RELX",
+            "สายเย็นมี Double Mint ส่วนสายองุ่นมี Grape กับ Aloe Grape",
+            "สายผลไม้มี 5 กลิ่น คือ Watermelon · Mixberry · Apple Aloe · Pink Guava และ Lychee",
+            "แนวอื่นมี Jasmine Green Tea · Gummy · Mineral Water · Sea Salt Lemon Candy และ Cola ชื่อในกลุ่มนี้เป็นชา ขนม และเครื่องดื่ม ส่วน Sea Salt Lemon Candy แม้มีมะนาวในชื่อ ร้านก็จัดตามคำหลักของชื่อ",
+            "Double Mint · Watermelon และ Grape มีอีกแบบที่ชื่อมี 5% ต่อท้ายด้วย รวมเป็น 16 กลิ่น ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
+          ],
+        },
+        {
+          heading: "คำบนซอง RELX LUMI 18K หมายถึงอะไร",
+          paragraphs: [
+            "Clear Tank หมายถึงถังน้ำยาใส รูปเครื่องบนซองก็เห็นส่วนบนเป็นสีใสตามชื่อ ส่วน POCKET SIZE หมายถึงขนาดที่พกใส่กระเป๋าได้ และ Rich & Smooth เป็นคำโปรยของ RELX แปลตรงตัวว่าเข้มและนุ่ม",
+            "ด้านหลังซองยังพิมพ์ชื่อ RELX Lumi รหัสรุ่น M01CMA และชื่อบริษัท Shenzhen RELX Technology Co.,Ltd ไว้ด้วย ถ้าอยากดูให้ตรงรุ่น ก็เช็คจากตรงนี้ได้",
+          ],
+        },
+        {
+          heading: "RELX LUMI 18K กับ SUP ZERO 22K ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้งเหมือนกัน ต่างกันที่ตัวเลขบนซองและแนวกลิ่น [SUP ZERO 22K](/products/sup-zero-22k) พิมพ์จำนวนพัฟไว้สูงกว่าที่ 22,000 พัฟ แบต 850mAh ส่วนรุ่นนี้แบต 670mAh",
+            "ปริมาณน้ำยาพิมพ์ไว้เฉพาะบนซอง SUP ZERO 22K ที่ 25mL จึงเทียบกับ LUMI ตรงนี้ไม่ได้ ถ้าชอบแนวชาหรือขนม รุ่นนี้มี Jasmine Green Tea กับ Gummy ส่วนกลิ่นที่ชื่อมีคำว่า Ice จะอยู่ฝั่ง SUP ZERO 22K",
+            "ถ้าอยากดู RELX อีกรุ่น [RELX Smash Go 12K](/products/relx-smash-go-12k) ก็เป็นพอตใช้แล้วทิ้งเช่นกัน RELX ระบุไว้สูงสุด 12,000 พัฟ แบต 400mAh",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX LUMI 18K นิโคตินกี่ %",
+          answer: "ซองกลิ่น Aloe Grape พิมพ์ไว้ 3% ค่ะ และในรายการมีอีก 3 กลิ่นที่ชื่อมี 5% ต่อท้าย ก่อนสั่งลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ",
+        },
+        {
+          question: "RELX LUMI 18K กลิ่นไหนเย็น",
+          answer: "ถ้าดูจากชื่อ กลิ่นที่ร้านจัดไว้ในสายเย็นคือ Double Mint ซึ่งมีแบบ Double Mint 5% ด้วยค่ะ",
+        },
+        {
+          question: "RELX LUMI 18K มีส่วนผสมอะไรบ้าง",
+          answer: "ด้านหลังซองระบุ Glycerin · Propylene Glycol · Flavors · Nicotine และ Benzoic Acid ค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "Choosing a RELX LUMI 18K? Below, we explain what the numbers and words on the pouch mean, sort the flavours into groups to make picking easier, and compare it with nearby models.",
+      sections: [
+        {
+          heading: "How many puffs does the RELX LUMI 18K give?",
+          paragraphs: [
+            "The front of the pouch prints 18000 PUFFS, and a short note on the back reads “Based on consumption”, so how close you get depends on how you vape.",
+          ],
+        },
+        {
+          heading: "Which RELX LUMI 18K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind of flavour you like. The groups below are ours, based on the words in each name, not RELX's own.",
+            "Cool is Double Mint, and grape is Grape and Aloe Grape.",
+            "Fruit has five: Watermelon, Mixberry, Apple Aloe, Pink Guava and Lychee.",
+            "The rest are Jasmine Green Tea, Gummy, Mineral Water, Sea Salt Lemon Candy and Cola, named after a tea, sweets and drinks. Sea Salt Lemon Candy has a fruit in its name, but we group it by the main word.",
+            "Double Mint, Watermelon and Grape each have a second version with 5% at the end of the name, which brings the list to 16. Check the name in the list before you choose.",
+          ],
+        },
+        {
+          heading: "What do the words on the pouch mean?",
+          paragraphs: [
+            "Clear Tank means a see-through e-liquid tank, and the device pictured on the pouch does have a clear top section. POCKET SIZE means it's small enough for a pocket, and Rich & Smooth is RELX's own tagline.",
+            "The back also prints the name RELX Lumi, the model code M01CMA and the company, Shenzhen RELX Technology Co.,Ltd, so you can check you have the right model.",
+          ],
+        },
+        {
+          heading: "RELX LUMI 18K or SUP ZERO 22K?",
+          paragraphs: [
+            "Both are disposables. They differ in the numbers on the pack and in their flavours. The [SUP ZERO 22K](/products/sup-zero-22k) prints a higher puff figure, 22,000, and an 850mAh battery, against 670mAh here.",
+            "It also prints 25mL of e-liquid. The LUMI pouch gives no e-liquid figure, so that can't be compared. For tea or sweets, the LUMI has Jasmine Green Tea and Gummy; for names with Ice in them, look at the SUP ZERO 22K.",
+            "For another RELX, the [RELX Smash Go 12K](/products/relx-smash-go-12k) is also a disposable, rated by RELX for up to 12,000 puffs with a 400mAh battery.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "What nicotine strength is the RELX LUMI 18K?",
+          answer: "The Aloe Grape pouch prints 3%. Three more flavours in the list have 5% at the end of the name, so check the name before you order.",
+        },
+        {
+          question: "Which RELX LUMI 18K flavour is cool?",
+          answer: "Going by the names, Double Mint, which also comes as Double Mint 5%.",
+        },
+        {
+          question: "What are the RELX LUMI 18K's ingredients?",
+          answer: "The back of the pouch lists glycerin, propylene glycol, flavors, nicotine and benzoic acid.",
+        },
+      ],
+    },
+    zh: {
+      lede: "正在考虑 RELX LUMI 18K？下面说明包装上的数字和文字是什么意思，把口味分好组方便挑选，并和相近的型号做个比较。",
+      sections: [
+        {
+          heading: "RELX LUMI 18K 能抽多少口？",
+          paragraphs: [
+            "包装袋正面印有 18000 PUFFS，背面有一行小字“Based on consumption”，所以实际能抽多少取决于个人使用情况。",
+          ],
+        },
+        {
+          heading: "RELX LUMI 18K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。下面的分组是本店按口味名称里的词整理的，并非 RELX 官方分类。",
+            "清凉类是 Double Mint，葡萄类有 Grape 和 Aloe Grape。",
+            "水果类有 5 款：Watermelon、Mixberry、Apple Aloe、Pink Guava 和 Lychee。",
+            "其余是 Jasmine Green Tea、Gummy、Mineral Water、Sea Salt Lemon Candy 和 Cola，名称分别是茶、糖果和饮品。Sea Salt Lemon Candy 的名称里虽然有柠檬，我们按主词归在这一类。",
+            "Double Mint、Watermelon 和 Grape 还各有一款名称后带 5% 的版本，一共 16 个选项。下单前请再核对一下列表里的名称。",
+          ],
+        },
+        {
+          heading: "包装上的文字是什么意思？",
+          paragraphs: [
+            "Clear Tank 指透明油仓，包装上的机身图片顶部也是透明的。POCKET SIZE 指大小可以放进口袋，Rich & Smooth 是 RELX 印在包装上的宣传语。",
+            "背面还印有名称 RELX Lumi、型号 M01CMA 和公司名 Shenzhen RELX Technology Co.,Ltd，可以据此核对型号。",
+          ],
+        },
+        {
+          heading: "RELX LUMI 18K 和 SUP ZERO 22K 怎么选？",
+          paragraphs: [
+            "两款都是一次性设备，不同在包装上的数字和口味。[SUP ZERO 22K](/products/sup-zero-22k) 标注的口数更高，为 22,000 口，电池 850mAh，这款是 670mAh。",
+            "SUP ZERO 22K 还标明烟油 25mL，而 LUMI 的包装没有印这个数字，这一项无法比较。喜欢茶或糖果类，LUMI 有 Jasmine Green Tea 和 Gummy；想找名称里带 Ice 的口味，可以看 SUP ZERO 22K。",
+            "还想看 RELX 的其他型号，[RELX Smash Go 12K](/products/relx-smash-go-12k) 同样是一次性设备，RELX 标称最高 12,000 口，电池 400mAh。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "RELX LUMI 18K 尼古丁浓度是多少？",
+          answer: "Aloe Grape 的包装印有 3%。列表里另有 3 款名称后带 5%，下单前请核对名称。",
+        },
+        {
+          question: "RELX LUMI 18K 哪个口味清凉？",
+          answer: "从名称看是 Double Mint，另有 Double Mint 5% 版本。",
+        },
+        {
+          question: "RELX LUMI 18K 有哪些成分？",
+          answer: "包装背面列出的成分是甘油、丙二醇、香料、尼古丁和苯甲酸。",
+        },
+      ],
+    },
+  },
+  // Pack facts = the owner's pouch photos 03/11 (SUP ZERO 22K Grape Lychee, two sides); there is no back-panel photo. Flavours = max-seed
+  // "SUP-ZERO-22K", grouped by the shop. No charging, coil, airflow, days-of-use, maker or ingredient claim. Stock states stay with the
+  // cart, so the list names Apple Aloe Vera without saying it is out of stock. en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. thai-copy 06/11.
+  "sup-zero-22k": {
+    th: {
+      lede: "ก่อนเลือก SUP ZERO 22K ด้านล่างร้านสรุปตัวเลขบนซองให้อ่านง่าย จัดกลิ่นเป็นสายให้เลือกได้สะดวกขึ้น และเทียบให้ดูกับรุ่นใกล้เคียงว่าต่างกันตรงไหน",
+      sections: [
+        {
+          heading: "SUP ZERO 22K สูบได้กี่พัฟ",
+          paragraphs: [
+            "ตัวเลข 22K ที่เห็นตัวใหญ่บนซองคือจำนวนพัฟ เพราะด้านล่างของซองพิมพ์กำกับไว้ว่า 22,000 พัฟ จะสูบได้ใกล้ตัวเลขนี้แค่ไหนก็ขึ้นกับวิธีสูบของแต่ละคน",
+            "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K กลิ่นไหนดี",
+          paragraphs: [
+            "แต่ละคนชอบรสไม่เหมือนกัน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น จึงเป็นการจัดของร้านเอง ไม่ได้มาจากบนซอง",
+            "สายเย็นมี 5 กลิ่น ชื่อมีคำว่า Ice หรือ Mint คือ Grape Ice · Strawberry Ice · Blueberry Ice · Lychee Ice และ Double Mint",
+            "สายผลไม้มี Grape Lychee · Watermelon · Peach Strawberry · Mixberry และ Apple Aloe Vera ส่วนแนวอื่นมี Cola",
+            "ห้ากลิ่นมีอีกแบบที่ชื่อมี 5% ต่อท้าย คือ Grape Ice 5% · Grape Lychee 5% · Mixberry 5% · Watermelon 5% และ Double Mint 5% ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K หน้าตาเป็นยังไง",
+          paragraphs: [
+            "รูปบนซองเป็นตัวเครื่องสีดำทรงกระบอก มีโลโก้ตัว Z กับชื่อ SUP ZERO และมีสัญลักษณ์ไพ่สี่ดอกเรียงอยู่ใต้ชื่อ ส่วนตัวอักษรญี่ปุ่นที่พิมพ์กำกับไว้อ่านว่า Royal Flush ซึ่งเข้ากับลายไพ่บนซองและตัวเครื่อง",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K กับ RELX LUMI 18K ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้งเหมือนกัน ต่างกันที่ตัวเลขบนซองและแนวกลิ่น รุ่นนี้พิมพ์แบต 850mAh และน้ำยา 25mL ส่วน [RELX LUMI 18K](/products/relx-lumi-18k) พิมพ์ 18,000 พัฟ แบต 670mAh และไม่ได้บอกปริมาณน้ำยาไว้บนซอง จึงเทียบกันตรงนี้ไม่ได้",
+            "ถ้าชอบกลิ่นที่ชื่อมีคำว่า Ice รุ่นนี้มีให้เลือกหลายกลิ่น ส่วนถ้าชอบแนวชาหรือขนม LUMI มี Jasmine Green Tea กับ Gummy",
+            "ถ้าอยากเทียบกับอีกแบรนด์ [ESKO BAR 20000](/products/esko-bar-20k) ก็เป็นพอตใช้แล้วทิ้งเหมือนกัน ESKO BAR ระบุไว้สูงสุด 20,000 พัฟ แบต 600mAh และน้ำยา 18mL",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "SUP ZERO 22K นิโคตินกี่ %",
+          answer: "ซองกลิ่น Grape Lychee พิมพ์ไว้ 3% ค่ะ และในรายการมีอีก 5 กลิ่นที่ชื่อมี 5% ต่อท้าย ก่อนสั่งลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ",
+        },
+        {
+          question: "SUP ZERO 22K กลิ่นไหนเย็น",
+          answer: "ถ้าดูจากชื่อ สายเย็นมี Grape Ice · Strawberry Ice · Blueberry Ice · Lychee Ice และ Double Mint ค่ะ",
+        },
+        {
+          question: "SUP ZERO 22K น้ำยากี่ mL",
+          answer: "ซองพิมพ์ไว้ 25mL ค่ะ แต่ละยี่ห้อระบุตัวเลขพัฟต่างกัน เวลาเทียบกับรุ่นอื่นจึงควรดูตัวเลขนี้คู่กันไปด้วยนะคะ",
+        },
+      ],
+    },
+    en: {
+      lede: "Before you choose a SUP ZERO 22K, here are the numbers on the pouch in plain terms, the flavours sorted into groups, and how it compares with nearby models.",
+      sections: [
+        {
+          heading: "How many puffs does the SUP ZERO 22K give?",
+          paragraphs: [
+            "The big 22K on the pouch is the puff count: the lower part of the pouch prints 22000 PUFFS. How close you get depends on how you vape.",
+          ],
+        },
+        {
+          heading: "Which SUP ZERO 22K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind of flavour you like. The groups below are ours, based on the words in each name; they aren't printed on the pack.",
+            "Cool has five, with Ice or Mint in the name: Grape Ice, Strawberry Ice, Blueberry Ice, Lychee Ice and Double Mint.",
+            "Fruit is Grape Lychee, Watermelon, Peach Strawberry, Mixberry and Apple Aloe Vera, and the other flavour is Cola.",
+            "Five also come with 5% at the end of the name: Grape Ice 5%, Grape Lychee 5%, Mixberry 5%, Watermelon 5% and Double Mint 5%. Check the name in the list before you choose.",
+          ],
+        },
+        {
+          heading: "What does the SUP ZERO 22K look like?",
+          paragraphs: [
+            "The pouch shows a black cylindrical device with a Z logo and the name SUP ZERO, with the four card suits in a row beneath the name. The Japanese text printed with the name reads Royal Flush, which fits the playing-card theme.",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K or RELX LUMI 18K?",
+          paragraphs: [
+            "Both are disposables. They differ in the numbers on the pack and in their flavours. This one prints an 850mAh battery and 25mL of e-liquid, while the [RELX LUMI 18K](/products/relx-lumi-18k) prints 18,000 puffs and a 670mAh battery. Its pouch gives no e-liquid figure, so that can't be compared.",
+            "For names with Ice in them, this one has several. For tea or sweets, the LUMI has Jasmine Green Tea and Gummy.",
+            "To compare another brand, the [ESKO BAR 20000](/products/esko-bar-20k) is also a disposable, rated by ESKO BAR for up to 20,000 puffs with a 600mAh battery and 18mL of e-liquid.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "What nicotine strength is the SUP ZERO 22K?",
+          answer: "The Grape Lychee pouch prints 3%. Five more flavours in the list have 5% at the end of the name, so check the name before you order.",
+        },
+        {
+          question: "Which SUP ZERO 22K flavours are cool?",
+          answer: "Going by the names: Grape Ice, Strawberry Ice, Blueberry Ice, Lychee Ice and Double Mint.",
+        },
+        {
+          question: "How much e-liquid does the SUP ZERO 22K hold?",
+          answer: "The pouch prints 25mL. Brands state puff counts differently, so it helps to compare this figure as well.",
+        },
+      ],
+    },
+    zh: {
+      lede: "选购 SUP ZERO 22K 之前，下面帮你读懂包装上的数字，把口味分好组，并和相近的型号做个比较。",
+      sections: [
+        {
+          heading: "SUP ZERO 22K 能抽多少口？",
+          paragraphs: [
+            "包装上的大字 22K 指的是口数，包装下方印有 22000 PUFFS。实际能抽多少，取决于个人的抽法。",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。下面的分组是本店按口味名称里的词整理的，包装上并没有这样的分类。",
+            "清凉类有 5 款，名称里带 Ice 或 Mint：Grape Ice、Strawberry Ice、Blueberry Ice、Lychee Ice 和 Double Mint。",
+            "水果类有 Grape Lychee、Watermelon、Peach Strawberry、Mixberry 和 Apple Aloe Vera，其余一款是 Cola。",
+            "另有 5 款名称后带 5%：Grape Ice 5%、Grape Lychee 5%、Mixberry 5%、Watermelon 5% 和 Double Mint 5%。下单前请再核对一下列表里的名称。",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K 长什么样？",
+          paragraphs: [
+            "包装上的机身是黑色圆柱形，印有 Z 字标志和 SUP ZERO 名称，名称下方排列着四种扑克花色。名称旁的日文读作 Royal Flush，正好呼应扑克牌的设计。",
+          ],
+        },
+        {
+          heading: "SUP ZERO 22K 和 RELX LUMI 18K 怎么选？",
+          paragraphs: [
+            "两款都是一次性设备，不同在包装上的数字和口味。这款印有 850mAh 电池和 25mL 烟油；[RELX LUMI 18K](/products/relx-lumi-18k) 印有 18,000 口和 670mAh 电池，包装上没有烟油容量，这一项无法比较。",
+            "想找名称里带 Ice 的口味，这款有好几种；喜欢茶或糖果类，LUMI 有 Jasmine Green Tea 和 Gummy。",
+            "想比较其他品牌，[ESKO BAR 20000](/products/esko-bar-20k) 同样是一次性设备，ESKO BAR 标称最高 20,000 口，电池 600mAh，烟油 18mL。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "SUP ZERO 22K 尼古丁浓度是多少？",
+          answer: "Grape Lychee 的包装印有 3%。列表里另有 5 款名称后带 5%，下单前请核对名称。",
+        },
+        {
+          question: "SUP ZERO 22K 哪些口味清凉？",
+          answer: "从名称看，有 Grape Ice、Strawberry Ice、Blueberry Ice、Lychee Ice 和 Double Mint。",
+        },
+        {
+          question: "SUP ZERO 22K 烟油有多少？",
+          answer: "包装印有 25mL。各品牌标注口数的方式不同，比较时建议同时看这个数字。",
+        },
+      ],
+    },
+  },
   // Articles queue 0211 batch 5 (02/11): UWELL Caliburn G2 empty pod — every fact = UWELL's Caliburn G2 page
   // (myuwell.com/caliburn/caliburn-g2, in-app browser 02/11; quotes in the batch notes). "หัวพอตเปล่า" = THAI_STYLE §3 ·
   // "ช่องใสให้ดูน้ำยา" = the site's existing term (story-copy). Thai = thai-copy 02/11.

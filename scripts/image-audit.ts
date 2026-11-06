@@ -127,7 +127,7 @@ async function main() {
     { item: "cinematic Scene2 (UWELL) — Caliburn G5", src: "/assets/products/caliburn-g5/card.png" },
     { item: "cinematic Scene2 (UWELL) — Caliburn G4 Pro KOKO", src: "/assets/products/caliburn-g4-pro-koko/card.png" },
     { item: "cinematic Scene3 (VOOPOO) — ARGUS G4", src: "/assets/products/argus-g4/card.webp" },
-    { item: "cinematic Scene3 (VOOPOO) — DRAG 6", src: "/assets/products/drag-6/card.png" },
+    { item: "cinematic Scene3 (VOOPOO) — DRAG 6", src: "/assets/products/drag-6/card-v2-wm3.webp" },
     { item: "cinematic Scene4 (Hero) — M Bar 10K", src: "/assets/products/m-bar-10k/card.webp" },
     { item: "cinematic Scene4 (Hero) — M Switch Kit", src: "/assets/products/m-switch-kit/hero-scene4.webp" },
     { item: "โลโก้ (Header/Footer)", src: "/brand/okami-logo.png" },

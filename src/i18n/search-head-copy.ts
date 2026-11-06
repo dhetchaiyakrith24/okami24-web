@@ -340,6 +340,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
   "caliburn-g5": "UWELL Caliburn G5 พอตซิสเต็มที่มีจอสี 0.85 นิ้ว แตะสามครั้งเพื่อสลับโหมดวัตต์ แบต 1600mAh ปรับได้ 5–35 วัตต์",
+  // Audit 06/11: the page had no line here, so its meta opened without the model name. Numbers = verified rows.
+  "drag-6": "VOOPOO DRAG 6 แบตในตัว 4400mAh สูงสุด 220 วัตต์ ชิป GENE.TT 3.0 จอ TFT 1.66 นิ้ว ใช้ถัง UFORCE-X Tank II 5mL กับคอยล์ PnP X",
   // Round p63 (16/10): searched as "relx infinity" — RELX's store sells only the Infinity 2 Plus now.
   "relx-infinity-2-plus": "RELX Infinity รุ่นปัจจุบันคือ Infinity 2 Plus เครื่องระบบสวิตช์ที่มี 3 โหมด 6.5–10 วัตต์ แบต 440mAh และใช้ได้กับหัวพอต RELX Pod · Pod Pro · Pod Pro 2",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
@@ -389,7 +391,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // List-new 30/10: numbers = nexBar's posters (VERIFIED_SPECIFICATIONS) · no "ใช้กับ …" until the owner confirms the device.
   "nexbar-switch-15k-pod": "nexBar Switch 15K หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL คอยล์ nexMesh นิโคติน 3% มีให้เลือก 15 กลิ่น",
   "dude-pod-3ml": "dude หัวพอต ชื่อรุ่นระบุ 3ml มีให้เลือก 10 กลิ่น",
-  "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
+  "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ซองระบุ 18,000 พัฟ แบต 670mAh มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   // 02/11: VOOPOO lists 7 colours — #1114 (details-0211) added Glacier Silver · Fresh Green · Lavender to the page.
   "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 7 สี",
@@ -409,7 +411,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
   "marbo-10k-clone": "Marbo 10K เทียบแท้ พอตใช้แล้วทิ้ง ไม่ใช่สินค้าของ SALTHUB มีให้เลือก 12 กลิ่น",
-  "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
+  "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ซองระบุ 22,000 พัฟ น้ำยา 25mL มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",

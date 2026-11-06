@@ -89,7 +89,7 @@ export const joiwayProducts: Product[] = [
       { id: "thai-ovaltine", name: "Thai Ovaltine", swatchHex: "#8a5a3a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-ovaltine-v3-wm3.webp", alt: "JOIWAY F3, Thai Ovaltine" } },
       { id: "thai-tea", name: "Thai Tea", swatchHex: "#d9822b", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-thai-tea-v3-wm3.webp", alt: "JOIWAY F3, Thai Tea" } },
       { id: "virginia-tobacco", name: "Virginia Tobacco", swatchHex: "#a0703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-virginia-tobacco-v3-wm3.webp", alt: "JOIWAY F3, Virginia Tobacco" } },
-      { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v3-wm3.webp", alt: "JOIWAY F3, Vodak" } },
+      { id: "vodak", name: "Vodka", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak-v3-wm3.webp", alt: "JOIWAY F3, Vodka" } },
       { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange-v3-wm3.webp", alt: "JOIWAY F3, Watermelon Orange" } },
     ],
     // Site-wide template round batch 4a (06/10): the G5 template — JOIWAY's own Thai posters, one per block (3840 px, down-sized only:
