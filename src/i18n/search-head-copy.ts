@@ -377,7 +377,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "iqosheet-17": "IQOS ILUMA i ONE เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน มี Autostart และ FlexPuff ใช้กับ TEREA",
   "iqosheet-18": "IQOS ILUMA i เครื่องจ่ายความร้อน ใช้ได้กับบุหรี่ TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
-  "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
+  "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 9 กลิ่น",
   "eliquid-109": "Marbo Freebase น้ำยา freebase ขวดยาว มีให้เลือก 4 กลิ่น",
   "eliquid-64": "Double Mint Salt Nic น้ำยา salt nic มีให้เลือก 6 กลิ่น",
   "eliquid-72": "Pepo Salt Nic น้ำยา salt nic มีให้เลือก 5 กลิ่น",

@@ -20,3 +20,12 @@ export function pilotAxisLabel(dict: Dictionary, product: StorefrontProductView)
   const key = product.optionAxisCode ? AXIS_CODE_KEYS[product.optionAxisCode as keyof typeof AXIS_CODE_KEYS] : undefined;
   return key ? dict.pilot[key] : product.optionAxisLabel;
 }
+
+/**
+ * How many options a card says a product has. On a flavour axis the same flavour sold at a second strength ("Purple" +
+ * "Purple 50mg") is one flavour, so the strength suffix does not add to the count; the option list itself keeps both.
+ */
+export function pilotOptionCount(product: StorefrontProductView): number {
+  if (product.optionAxisCode !== "flavor") return product.variants.length;
+  return new Set(product.variants.map((v) => v.label.replace(/\s*\d+(\.\d+)?\s*mg\s*$/i, "").trim().toLowerCase())).size;
+}
