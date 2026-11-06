@@ -134,7 +134,9 @@ img {
   /* M3 (owner, real-phone test 2026-09-08): with the buy bar on screen the phone's floating LINE
      button is redundant — hide it. Phone widths only; the tablet pill just stays lifted. */
   @media (max-width: 39.98rem) {
-    body:has(.mobile-buy-bar) .okami-line-fab {
+    body:has(.mobile-buy-bar) .okami-line-fab,
+    /* Customer walk 05/11: it sat over the hint and the save button of the address form; the footer keeps @okm24. */
+    body:has(#postcodePlace) .okami-line-fab {
       display: none;
     }
   }
