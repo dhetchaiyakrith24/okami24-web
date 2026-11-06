@@ -6,7 +6,7 @@
  *
  * Which carrier takes an order (owner 30/10, admin confirmed): ship-to postcode in Phuket (83xxx) or Bangkok 10220 /
  * 10250 = DHL, every other address = EMS — `pickCarrier`. Staff may change the pick on /staff before the order goes to
- * the warehouse, and still confirm the carrier with the tracking number when it ships — never guessed from the number.
+ * the warehouse, and still confirm the carrier with the tracking number when it ships. Shipnity's own writes take the carrier from the number's shape (tracking-sync-rules.ts).
  * The links open each carrier's official tracking page without the number filled in (none documents a prefill
  * parameter), so the order page shows a 3-step how-to: copy the number, open the page, paste and search.
  * Pure, no I/O — the client order page imports it.
