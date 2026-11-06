@@ -20,12 +20,12 @@
     "src/components/tools/SearchTool.tsx": "2026-09-22T04:29:29+07:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
     "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
-    "src/data/guides.ts": "2026-11-05T23:14:29+07:00",
+    "src/data/guides.ts": "2026-11-06T17:49:18+07:00",
     "src/data/search-aliases.ts": "2026-11-03T06:11:30+07:00",
     "src/data/technology.ts": "2026-11-02T23:27:33+07:00",
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
-    "src/i18n/guides-copy.ts": "2026-11-04T10:19:06+07:00",
+    "src/i18n/guides-copy.ts": "2026-11-06T17:49:18+07:00",
     "src/i18n/search-head-copy.ts": "2026-11-06T17:29:51+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
@@ -48,7 +48,7 @@
     "choosing-a-switch-pod": "2026-11-05T01:48:05+07:00",
     "choosing-a-terea-flavor": "2026-11-03T02:27:30+07:00",
     "choosing-wattage-and-airflow": "2026-10-26T06:48:28+07:00",
-    "choosing-your-first-pod-system": "2026-11-02T23:27:33+07:00",
+    "choosing-your-first-pod-system": "2026-11-06T17:49:18+07:00",
     "coil-and-pod-maintenance": "2026-10-20T00:08:12+07:00",
     "comparing-caliburn-models": "2026-10-27T22:36:02+07:00",
     "comparing-voopoo-argus-models": "2026-10-27T13:45:24+07:00",
@@ -103,8 +103,8 @@
       "fp": "8b283683403d"
     },
     "/brands/joiway": {
-      "date": "2026-11-06T17:09:36+07:00",
-      "fp": "0ffe7bfa5719"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "ff56de8b65c6"
     },
     "/brands/kardinal-stick": {
       "date": "2026-10-18T01:51:46+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-06T17:09:36+07:00",
-      "fp": "d1fe72dcad32"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "93e09368bc3c"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -239,8 +239,8 @@
       "fp": "014a971667d5"
     },
     "/products/caliburn-g5": {
-      "date": "2026-11-03T01:07:53+07:00",
-      "fp": "f096d0539f19"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "71d63dbc1289"
     },
     "/products/caliburn-g5-lite": {
       "date": "2026-10-14T01:33:05+07:00",
@@ -319,12 +319,12 @@
       "fp": "6e79b0bcb8e3"
     },
     "/products/disposables": {
-      "date": "2026-11-06T17:12:47+07:00",
-      "fp": "e60f02db95b0"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "e766d4f96a74"
     },
     "/products/drag-6": {
-      "date": "2026-11-06T17:29:45+07:00",
-      "fp": "167967d349f1"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "eacb02ce910f"
     },
     "/products/drag-s3": {
       "date": "2026-10-26T07:07:40+07:00",
@@ -419,12 +419,12 @@
       "fp": "d53943915329"
     },
     "/products/joiway-f3": {
-      "date": "2026-11-06T17:09:36+07:00",
-      "fp": "5337fcf7318f"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "6a615e7e3b99"
     },
     "/products/joiway-f4": {
-      "date": "2026-11-02T02:45:23+07:00",
-      "fp": "fe090a9486cd"
+      "date": "2026-11-06T17:49:18+07:00",
+      "fp": "f70504dadbc5"
     },
     "/products/ks-quikpro-kit": {
       "date": "2026-11-03T01:13:22+07:00",

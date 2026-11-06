@@ -226,11 +226,11 @@ export const brands: Brand[] = [
     tagline: "Disposable vapes and vaping accessories.",
     taglineTh: "พอตใช้แล้วทิ้งและอุปกรณ์เสริม",
     description:
-      "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
+      "JOIWAY makes disposables. This site lists two kinds: a single-flavour model with 12,000+ puffs, and a dual-flavour model with a rotating mouthpiece and up to 20,000 puffs. OKami24 has a review clip of each on YouTube.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("จอยเวย์", autocomplete 07/10), one mention; F3 is
       // the single-flavour model — the old line read as if both switched two.
-      "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ เป็นผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 รุ่นกลิ่นเดียว และ F4 ที่สลับได้สองกลิ่นในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
+      "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ เป็นผู้ผลิตพอตใช้แล้วทิ้ง บนเว็บนี้มีสองแบบ รุ่นกลิ่นเดียวสูบได้ 12,000+ พัฟ และรุ่นคู่กลิ่นที่หมุนปากดูดเพื่อสลับกลิ่น สูงสุด 20,000 พัฟ ทั้งสองรุ่นมีคลิปรีวิวจาก OKami24 บน YouTube",
     referenceUrl: "https://myjoiway.com/",
   },
   {

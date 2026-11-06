@@ -160,7 +160,7 @@ const allGuides: Guide[] = [
       {
         heading: "Real example: an open-system pod like the Caliburn G5",
         paragraphs: [
-          "The [Caliburn G5](/products/caliburn-g5) is the current Caliburn flagship: a 1600mAh battery, 5–35W output, a 0.85-inch colour screen and a top-fill pod.",
+          "The [Caliburn G5](/products/caliburn-g5) has a 1600mAh battery, 5–35W output, a 0.85-inch colour screen and a side-refill pod.",
           "There is no row of buttons for switching modes — a Smart Triple-Tap gesture sensor handles mode switching and status readout instead.",
           "How the tap control works, and why it needs a screen alongside it, is in [Gesture & Triple-Tap Control](/technology/gesture-and-triple-tap-control).",
         ],

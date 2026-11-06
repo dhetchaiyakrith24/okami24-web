@@ -79,7 +79,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "Smart Triple-Tap Control แตะสามครั้งสลับโหมดวัตต์ ไม่ต้องกดปุ่ม",
     shortDescription:
-      "รุ่นเรือธงล่าสุดของตระกูล Caliburn: พอตซิสเต็มแบตเตอรี่ 1600mAh พร้อมจอสี 0.85 นิ้ว และระบบสั่งงานด้วยการแตะสามครั้งสำหรับสลับโหมดโดยไม่ต้องใช้ปุ่ม",
+      "UWELL Caliburn G5 เป็นพอตซิสเต็มแบต 1600mAh มีจอสี 0.85 นิ้ว และสลับโหมดได้ด้วยการแตะสามครั้งโดยไม่ต้องกดปุ่ม",
   },
   "caliburn-g5-lite": {
     faqs: {
@@ -448,6 +448,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         question: "DRAG 6 ใช้คอยล์อะไรได้บ้าง",
         answer: "ถังน้ำยา UFORCE-X Tank II ที่มากับชุดใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15 โอห์ม กับ 0.3 โอห์มมาให้ด้วย",
       },
+      "drag6-battery": {
+        question: "VOOPOO DRAG 6 แบตกี่ mAh ชาร์จนานไหม",
+        answer: "VOOPOO DRAG 6 มีแบตในตัว 4400mAh แบ่งเป็นสองก้อน ก้อนละ 2200mAh ชาร์จผ่าน USB-C แบบ 5V/3A ใช้เวลา 2–3 ชั่วโมง และไม่ต้องถอดแบตออกจากเครื่อง",
+      },
+      "drag6-wattage": {
+        question: "VOOPOO DRAG 6 ตั้งวัตต์ได้เท่าไหร่ และสูบแบบไหนได้บ้าง",
+        answer: "ตั้งได้ 5–220 วัตต์ด้วยล้อปรับวัตต์ละเอียด มีโหมด SMART RBA และ TC-TCR ใช้กับคอยล์ 0.05–3.0 โอห์ม และสูบได้ทั้งแบบ DTL และ MTL",
+      },
     },
     whoIsThisFor: {
       0: "ชอบตั้งวัตต์เอง และอยากได้แบตก้อนใหญ่ในตัว มากกว่าต้องคอยเปลี่ยนถ่าน",
@@ -467,7 +475,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "220 วัตต์ ชิป GENE.TT 3.0 ปรับวัตต์ละเอียดด้วยล้อหมุน",
     shortDescription:
-      "รุ่นเรือธงล่าสุดของสาย DRAG: แบตเตอรี่ในตัว 4400mAh (ถ่าน 2200mAh สองก้อน) สูงสุด 220 วัตต์ จอ TFT ขนาด 1.66 นิ้ว และปุ่มยิงมีเซ็นเซอร์แตะไว้ปลดล็อกเครื่อง",
+      "VOOPOO DRAG 6 เป็นเครื่องแบตในตัว 4400mAh แบ่งเป็นสองก้อน ก้อนละ 2200mAh ตั้งได้สูงสุด 220 วัตต์ มีจอ TFT ขนาด 1.66 นิ้ว และปุ่มยิงที่มีเซ็นเซอร์แตะไว้ปลดล็อกเครื่อง",
   },
   "drag-s3": {
     whoIsThisFor: {
@@ -857,9 +865,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       charging: "USB-C",
       coil: "นาโนคอยล์",
     },
-    tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว",
+    tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นกลิ่นเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว ถ้าอยากได้ 2 รสในเครื่องเดียว ดูรุ่น F4",
+      "พอตใช้แล้วทิ้งจาก Joiway รุ่นกลิ่นเดียว ถ้าอยากได้ 2 กลิ่นในเครื่องเดียว ดูรุ่น F4",
   },
   "joiway-f4": {
     whoIsThisFor: {
@@ -874,9 +882,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "flavor-modes": "แยกสองถัง หมุนปากดูดเพื่อสลับ",
       display: "จอ LED",
     },
-    tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
+    tagline: "พอตใช้แล้วทิ้ง 2 กลิ่นในเครื่องเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้งจาก Joiway 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
+      "พอตใช้แล้วทิ้งจาก Joiway 2 กลิ่นในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
   },
   "tfit-m-power-20k": {
     whoIsThisFor: {

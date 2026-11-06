@@ -756,7 +756,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO DRAG 6",
     tagline: "220W, GENE.TT 3.0, and a precision adjustment wheel.",
     shortDescription:
-      "The current DRAG-series flagship: a 4400mAh built-in battery (two 2200mAh cells), 220W max output, a 1.66\" TFT screen, and a capacitive-unlock fire button.",
+      "The VOOPOO DRAG 6 is a built-in-battery mod: 4400mAh across two 2200mAh cells, up to 220W, a 1.66\" TFT screen, and a fire button that unlocks at a touch.",
     isFlagship: false,
     attributes: {
       batteryMah: 4400,
@@ -901,6 +901,16 @@ export const voopooProducts: Product[] = [
         id: "drag6-coils",
         question: "Which coils does the DRAG 6 take?",
         answer: "The UFORCE-X Tank II in the kit takes every PnP X coil, and PnP X 0.15Ω and 0.3Ω coils come in the box.",
+      },
+      {
+        id: "drag6-battery",
+        question: "How big is the VOOPOO DRAG 6 battery, and how long does it take to charge?",
+        answer: "It has a 4400mAh built-in battery made up of two 2200mAh cells. It charges over USB-C at 5V/3A and takes 2–3 hours, with no cells to take out.",
+      },
+      {
+        id: "drag6-wattage",
+        question: "What wattage does the VOOPOO DRAG 6 go up to, and which draw styles does it suit?",
+        answer: "It sets from 5 to 220W with the Precision Control Wheel, has SMART, RBA and TC-TCR modes, works with coils from 0.05 to 3.0Ω, and suits both DTL and MTL.",
       },
     ],
     relatedProductSlugs: ["drag-s3", "drag-x3"],

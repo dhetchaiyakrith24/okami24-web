@@ -40,7 +40,7 @@ export const uwellProducts: Product[] = [
     displayName: "UWELL CALIBURN G5",
     tagline: "Smart Triple-Tap Control, tuned for every draw.",
     shortDescription:
-      "The current-generation Caliburn flagship: a 1600mAh open-system pod with a 0.85\" colour display and a triple-tap gesture control for switching modes without buttons.",
+      "The UWELL Caliburn G5 is a 1600mAh open-system pod with a 0.85\" colour display and a triple-tap gesture control for switching modes without buttons.",
     isFlagship: true,
     editorialTag: "Flagship",
     attributes: {
