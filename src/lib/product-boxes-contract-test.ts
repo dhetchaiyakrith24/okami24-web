@@ -27,7 +27,7 @@ export async function runProductBoxesContractTests(): Promise<ProductBoxesContra
   const bad: string[] = [];
   for (const [src, long] of entries) {
     const file = path.join(process.cwd(), "public", src.replace(/^\//, ""));
-    if (!/-wm[34]\.webp$/.test(src)) { bad.push(`${src}: not a generation-3 or 4 (-wm3, -wm4) file`); continue; }
+    if (!/-wm[34]\.webp$/.test(src)) { bad.push(`${src}: not a generation 3, 4 or 5 (-wm3, -wm4, -wm5) file`); continue; }
     if (!existsSync(file)) { bad.push(`${src}: file missing`); continue; }
     const meta = await sharp(file).metadata();
     const { info: box } = await sharp(file).extractChannel(3).trim({ threshold: 10 }).toBuffer({ resolveWithObject: true });
@@ -35,7 +35,7 @@ export async function runProductBoxesContractTests(): Promise<ProductBoxesContra
     if (long > Math.max(meta.width ?? 0, meta.height ?? 0)) bad.push(`${src}: stored ${long} > canvas`);
     else if (long > measured) bad.push(`${src}: stored ${long} > measured ${measured} (the spill can only widen the box)`);
   }
-  check(`every stored box (${entries.length}) names an existing -wm3 or -wm4 file and is ≤ its measured box`, bad.length === 0, bad.slice(0, 10).join("\n      "));
+  check(`every stored box (${entries.length}) names an existing -wm3, -wm4 or -wm5 file and is ≤ its measured box`, bad.length === 0, bad.slice(0, 10).join("\n      "));
   return results;
 }
 
