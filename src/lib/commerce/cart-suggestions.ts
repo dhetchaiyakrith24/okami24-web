@@ -4,6 +4,7 @@ import { kindCategoryId } from "@/data/categories";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
+import { NEVER_SUGGEST } from "@/data/similar-models";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import { resolveProductRef } from "./catalog-resolver";
@@ -42,8 +43,7 @@ const ROW = 4;
  *  nexBar CLEAR 18K (pod-180) had no market signal; it stays last on the owner's word (BSOT §15 "Customer favorites"). */
 const SHOP_PICKS = ["m-bar-10k", "pod-159", "m-switch-kit", "m-bar-9k", "muro-connector-20k", "esko-bar-20k", "infy-20k", "relx-lumi-18k", "pod-180"];
 
-/** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18: never in cart suggestions or shop picks). */
-const NEVER = new Set(["muro-space-15k", "marbo-10k-clone"]);
+const NEVER = NEVER_SUGGEST;
 
 /** Parts that fit only some devices (src/data/categories.ts) — never a shop pick for an empty cart. */
 const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);

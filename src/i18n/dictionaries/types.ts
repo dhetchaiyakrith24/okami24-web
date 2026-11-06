@@ -326,6 +326,9 @@ export interface Dictionary {
     readMoreEyebrow: string;
     relatedEyebrow: string;
     relatedTitle: string;
+    similarInStockEyebrow: string;
+    similarInStockTitle: string;
+    similarInStockLink: string;
     disposablesCrumb: string;
     disposablesAllLink: string;
     sourceNoteLabel: string;

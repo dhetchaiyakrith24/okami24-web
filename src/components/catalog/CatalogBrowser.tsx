@@ -17,6 +17,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 import { useSignedIn } from "@/components/account/use-signed-in";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 
 type SortMode = "featured" | "alphabetical" | "family";
 
@@ -57,6 +58,8 @@ interface CatalogEntry {
   categoryId: string;
   isFlagship: boolean;
   hasEditorialTag: boolean;
+  /** No price = nothing to buy: sits after every model that has one in the default order (round popular models 07/11). */
+  noPrice: boolean;
   familyId: string | null;
   screenType: ScreenType | null;
   portability: Portability | null;
@@ -76,6 +79,7 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
     hasEditorialTag: Boolean(p.editorialTag),
+    noPrice: getLegacyApprovedPrice(p.slug) === null,
     familyId: p.familyId,
     screenType: p.attributes.screenType ?? null,
     portability: p.attributes.portability ?? null,
@@ -92,6 +96,7 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
     hasEditorialTag: false,
+    noPrice: p.sellingPrice === null,
     familyId: null,
     screenType: null,
     portability: null,
@@ -238,7 +243,7 @@ export function CatalogBrowser({
       const familyLabel = (e: CatalogEntry) => (e.familyId ? familyName(e.familyId) : "");
       sorted.sort((a, b) => familyLabel(a).localeCompare(familyLabel(b)) || a.name.localeCompare(b.name));
     } else {
-      sorted.sort((a, b) => Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
+      sorted.sort((a, b) => Number(a.noPrice) - Number(b.noPrice) || Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
   }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort]);

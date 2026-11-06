@@ -71,6 +71,7 @@ function initialOption<T extends { id: string; availability?: string; image?: un
 export function ProductHero({
   product: builtProduct,
   sellingPrice = null,
+  similarHref,
   imageDisplayInfo,
   imageDisplayMap,
   orderingEnabled = true,
@@ -96,6 +97,8 @@ export function ProductHero({
   /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
    *  price, no cart action — exactly how every legacy product rendered before that date. */
   sellingPrice?: number | null;
+  /** A no-price page: where the closest models we have sit (round popular models 07/11). Undefined = nothing to offer. */
+  similarHref?: string;
   imageDisplayInfo?: ImageDisplayInfo | null;
   /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
    *  described the CARD photo, so selecting a color/flavor whose own image is smaller than the
@@ -447,8 +450,26 @@ export function ProductHero({
             </div>
           )}
 
+          {/* No price: the same sold-out line and LINE enquiry as a priced product that sold out (BSOT §6), never a buy button. */}
+          {sellingPrice === null && (
+            <div className="flex flex-col items-start gap-3 pt-1 max-lg:order-5">
+              <ProductBuyAction
+                available={false}
+                choiceMissingLabel={null}
+                orderingEnabled={orderingEnabled}
+                slug={product.slug}
+                variantId={null}
+                productCode={lineCodes?.fallback}
+                pageUrl={lineCodes?.pageUrl}
+                productName={product.displayName}
+                variantLabel={null}
+              />
+              {similarHref && <Button href={similarHref}>{dict.product.similarInStockLink}</Button>}
+            </div>
+          )}
+
           <div className={`flex flex-wrap gap-3 max-lg:order-9 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
-            <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null ? "secondary" : "primary"}>
+            <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null || similarHref ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>
             {hasVerifiedSpecs && (

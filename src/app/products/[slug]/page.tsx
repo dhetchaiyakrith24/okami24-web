@@ -20,6 +20,7 @@ import { CompatibilitySection } from "@/components/product/CompatibilitySection"
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { SimilarInStock } from "@/components/product/SimilarInStock";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
 import { EditorialClip, ProductEditorialFaq, ProductEditorialMain } from "@/components/product/ProductEditorial";
@@ -72,6 +73,7 @@ import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
+import { similarInStock } from "@/lib/similar-in-stock";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
@@ -344,6 +346,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
+  // No price = the warehouse has never had it: nothing to buy here, so the closest models we do have sit right under the head.
+  const similar = legacySellingPrice === null ? similarInStock(product.slug) : [];
   // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
   // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
   // its own `availability` (no SKU, stock round batch 2b).
@@ -389,7 +393,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} similarHref={similar.length > 0 ? "#similar-in-stock" : undefined} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
+      {similar.length > 0 && <SimilarInStock items={similar} />}
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
