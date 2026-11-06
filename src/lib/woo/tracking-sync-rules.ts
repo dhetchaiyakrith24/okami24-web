@@ -14,11 +14,12 @@ import { parseTracking, type ParsedTracking } from "./tracking-parse";
  *   - an order already shipped with the same number = nothing to do (Shipnity repeats its writes 2–3 times); with a
  *     different number = left alone (staff typed it — they decide);
  *   - carrier: the number's own format or the provider text when it names one (S10 "..TH" = Thailand Post, the only
- *     carrier with that format); otherwise only DHL can be meant when the order went to Shipnity as DHL (Shipnity's
- *     DHL number has no carrier word, seen 30/10). A bare number on an order sent as EMS is NOT an EMS number — left
- *     for staff instead of guessing.
+ *     carrier with that format); otherwise 10+ digits = DHL (Shipnity's DHL number has no carrier word, seen 30/10),
+ *     and any other bare shape counts as DHL only when the order went to Shipnity as DHL; else it is left for staff.
  * A Thai mobile number is never a parcel number: the warehouse's "DHL (ส่งเอง)" orders came back with one phone number on
  * every order (05/11). The order still moves to "shipped", because the warehouse did send it, but keeps no number.
+ * The number names the carrier whichever way the order went out (owner 06/11): the shop has two carriers (BSOT "Carriers"), S10 "..TH" is
+ * Thailand Post and 10+ digits is DHL, so an order sent as EMS that left by DHL still takes its number. Any other shape stays with staff.
  * Shipnity's own "completed" means the parcel left the warehouse, not that the customer has it, so it never sets the
  * site's "completed" (staff press "ลูกค้าได้รับของแล้ว" as before).
  */
@@ -40,6 +41,10 @@ export function isPhoneShaped(number: string | null): boolean {
   return !!number && /^0[689][0-9]{8}$/.test(number);
 }
 
+/** DHL's numbers as seen 30/10: 10 digits and no carrier word. Ten or more keeps out a date (20261105) or a short warehouse code;
+ *  S10 numbers carry letters, and a phone number is out before this. */
+const ALL_DIGITS = /^[0-9]{10,}$/;
+
 export type ShipDecision = { ship: true; tracking: string | null; carrier: "thailand-post" | "dhl" } | { ship: false; reason: SkipReason };
 
 export function decideShip(order: SyncOrder, found: ParsedTracking | null): ShipDecision {
@@ -53,7 +58,7 @@ export function decideShip(order: SyncOrder, found: ParsedTracking | null): Ship
   const carrier =
     found.carrier === "thailand-post" || found.carrier === "dhl"
       ? found.carrier
-      : found.carrier === null && order.sentCarrier === "dhl"
+      : found.carrier === null && (order.sentCarrier === "dhl" || late || ALL_DIGITS.test(found.number))
         ? "dhl"
         : null;
   if (!carrier) return { ship: false, reason: "carrier-unclear" };

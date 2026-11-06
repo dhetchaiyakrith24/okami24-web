@@ -50,7 +50,14 @@ for (const s of ["cancelled", "completed", "pending_payment", "payment_submitted
 check("already shipped with the same number → same-number (repeat write)", reason(order({ status: "shipped", tracking: "WB400000001TH" })) === "same-number");
 check("staff already typed another number → other-number, left alone", reason(order({ status: "shipped", tracking: "EF999999999TH" })) === "other-number");
 check("cancelled with a number → still never moved", reason(order({ status: "cancelled", tracking: "EF999999999TH" })) === "other-number");
-check("bare number on an order sent as EMS → carrier-unclear", reason(order(), dhlNote) === "carrier-unclear");
+const digitsOnEms = decideShip(order(), dhlNote);
+check("all digits on an order sent as EMS → ships as DHL (the number names the carrier)", digitsOnEms.ship && digitsOnEms.carrier === "dhl" && digitsOnEms.tracking === dhlNote?.number, show(digitsOnEms));
+const oddNote = parseTracking("note", { note: "Tracking Number: AB1234567", customer_note: true });
+check("a shape that is neither S10 nor digits on an order sent as EMS → carrier-unclear, left for staff", reason(order(), oddNote) === "carrier-unclear");
+const dateNote = parseTracking("note", { note: "Tracking Number: 20261105", customer_note: true });
+check("8 digits such as a date on an order sent as EMS → carrier-unclear, left for staff", reason(order(), dateNote) === "carrier-unclear");
+const s10OnDhlOrder = decideShip(order({ sentCarrier: "dhl" }), emsNote);
+check("S10 on an order sent as DHL → Thailand Post, the number wins", s10OnDhlOrder.ship && s10OnDhlOrder.carrier === "thailand-post", show(s10OnDhlOrder));
 
 // 05/11: one phone number came back on every "DHL (ส่งเอง)" order: the order ships, the phone number is never kept.
 const phoneNote = parseTracking("note", { note: "Tracking Number: 0900000001", customer_note: true });
@@ -62,6 +69,8 @@ check("phone number on a cancelled order → status", reason(order({ status: "ca
 check("phone number on an order not sent → not-sent", reason(order({ sentToShipnity: false }), phoneNote) === "not-sent");
 const lateReal = decideShip(order({ status: "shipped" }), emsNote);
 check("shipped with no number, the real number arrives → joins the order", lateReal.ship && lateReal.tracking === "WB400000001TH", show(lateReal));
+const lateDhl = decideShip(order({ status: "shipped" }), dhlNote);
+check("shipped with no number, a bare number arrives on an order sent as EMS → joins as DHL", lateDhl.ship && lateDhl.carrier === "dhl" && lateDhl.tracking === dhlNote?.number, show(lateDhl));
 check("shipped with no number, the phone number repeats → nothing", reason(order({ status: "shipped" }), phoneNote) === "no-number");
 check("completed order never moves", reason(order({ status: "completed" }), emsNote) === "status");
 check("an S10 number is not phone-shaped", !isPhoneShaped("WB400000001TH") && !isPhoneShaped("1900000001") && !isPhoneShaped(null) && isPhoneShaped("0612345678"));
