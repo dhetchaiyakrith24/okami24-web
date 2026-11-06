@@ -19,6 +19,7 @@ import { parseTracking, type ParsedTracking } from "./tracking-parse";
  *     for staff instead of guessing.
  * A Thai mobile number is never a parcel number: the warehouse's "DHL (ส่งเอง)" orders came back with one phone number on
  * every order (05/11). The order still moves to "shipped", because the warehouse did send it, but keeps no number.
+ * A bare number that arrives later on such an order is DHL: a phone number only ever came from that warehouse route (owner 06/11).
  * Shipnity's own "completed" means the parcel left the warehouse, not that the customer has it, so it never sets the
  * site's "completed" (staff press "ลูกค้าได้รับของแล้ว" as before).
  */
@@ -53,7 +54,7 @@ export function decideShip(order: SyncOrder, found: ParsedTracking | null): Ship
   const carrier =
     found.carrier === "thailand-post" || found.carrier === "dhl"
       ? found.carrier
-      : found.carrier === null && order.sentCarrier === "dhl"
+      : found.carrier === null && (order.sentCarrier === "dhl" || late)
         ? "dhl"
         : null;
   if (!carrier) return { ship: false, reason: "carrier-unclear" };

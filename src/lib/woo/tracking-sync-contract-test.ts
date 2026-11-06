@@ -62,6 +62,8 @@ check("phone number on a cancelled order → status", reason(order({ status: "ca
 check("phone number on an order not sent → not-sent", reason(order({ sentToShipnity: false }), phoneNote) === "not-sent");
 const lateReal = decideShip(order({ status: "shipped" }), emsNote);
 check("shipped with no number, the real number arrives → joins the order", lateReal.ship && lateReal.tracking === "WB400000001TH", show(lateReal));
+const lateDhl = decideShip(order({ status: "shipped" }), dhlNote);
+check("shipped with no number, a bare number arrives on an order sent as EMS → joins as DHL", lateDhl.ship && lateDhl.carrier === "dhl" && lateDhl.tracking === dhlNote?.number, show(lateDhl));
 check("shipped with no number, the phone number repeats → nothing", reason(order({ status: "shipped" }), phoneNote) === "no-number");
 check("completed order never moves", reason(order({ status: "completed" }), emsNote) === "status");
 check("an S10 number is not phone-shaped", !isPhoneShaped("WB400000001TH") && !isPhoneShaped("1900000001") && !isPhoneShaped(null) && isPhoneShaped("0612345678"));
