@@ -2,9 +2,8 @@ import "server-only";
 import { getProduct } from "@/data/products";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import type { CatalogItem } from "@/lib/catalog-index";
-import { NEVER, suggestionOrder } from "@/lib/related-order";
+import { rowFor } from "@/lib/related-order";
 import { RELATED_SLOTS } from "@/lib/related-row";
-import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 import type { LiveLookup } from "@/lib/stock/live-rules";
 import { resolveProductRef } from "./catalog-resolver";
 import { liveLookup } from "@/lib/stock/live";
@@ -45,14 +44,6 @@ export interface CartSuggestion {
   options: SuggestionOption[];
 }
 
-/** The rule behind the buy button and the cards' stock (src/lib/stock/card-stock.ts), with the warehouse's live answer. */
-function sellable(slug: string, live: LiveLookup): boolean {
-  const legacy = getProduct(slug);
-  if (legacy) return legacyCardStock(legacy, live).inStock;
-  const published = getPublishedProductBySlug(slug);
-  return published ? publishedCardStock(published, live).inStock : false;
-}
-
 function optionsOf(item: CatalogItem, live: LiveLookup): Pick<CartSuggestion, "axis" | "options"> {
   const can = (variantId: string) => resolveProductRef({ origin: item.origin, slug: item.slug, variantId }, live).ok;
   const legacy = getProduct(item.slug);
@@ -77,8 +68,7 @@ function toCard(item: CatalogItem, live: LiveLookup): CartSuggestion {
 
 export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
   const live = liveLookup();
-  const taken = new Set(cartSlugs);
-  const chosen = suggestionOrder(cartSlugs, (item) => !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug, live));
+  const chosen = rowFor(cartSlugs, live);
   // Phones swipe a single row, so any count fits there; from 640 px the cards sit in rows of 4, so 5–7 round down to 4
   // (no half-empty second row). Fewer than 4 all show — a single fitting part still shows (cart fit 27/10).
   const shown = chosen.length >= RELATED_SLOTS ? RELATED_SLOTS : chosen.length >= ROW ? ROW : chosen.length;

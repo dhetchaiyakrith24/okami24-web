@@ -6,6 +6,7 @@ import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { RELATED_SLOTS } from "@/lib/related-row";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
+import type { LiveLookup } from "@/lib/stock/live-rules";
 import type { Product } from "@/types/catalog";
 
 /**
@@ -22,7 +23,8 @@ import type { Product } from "@/types/catalog";
  * Tiers 2 and 4 both read "same category": the brand is what tells them apart, so no card can sit in both.
  * Parts: a pod / coil of another make, or one with no verified fit for a device in the cart, is never offered (a part that
  * does not fit is the one wrong suggestion that costs the customer money). Fit data missing = the part is left out, not guessed.
- * Stock is the caller's: `ok` decides what may be offered (the cart passes live stock, the prerendered page the build's).
+ * Stock: `rowFor` is the one row for both places, so the same stock gives the same cards. The server passes the warehouse's live
+ * lookup; only the prerendered page's first paint uses the build (no lookup), and /api/related/<slug> replaces it after load.
  */
 
 /** Market order (owner 26/10: "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"). ESTIMATE, not sales figures: researcher 27/10
@@ -35,7 +37,7 @@ import type { Product } from "@/types/catalog";
 const SHOP_PICKS = ["m-bar-10k", "pod-159", "m-switch-kit", "m-bar-9k", "muro-connector-20k", "esko-bar-20k", "infy-20k", "relx-lumi-18k", "pod-180"];
 
 /** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18: never in cart suggestions or shop picks). */
-export const NEVER = new Set(["muro-space-15k", "marbo-10k-clone"]);
+const NEVER = new Set(["muro-space-15k", "marbo-10k-clone"]);
 
 /** Parts that fit only some devices (src/data/categories.ts) — never a shop pick for an empty cart. */
 const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
@@ -129,8 +131,8 @@ function shopPicks(ok: (item: CatalogItem) => boolean): CatalogItem[] {
 }
 
 /** The whole suggestion order for these products (one: a product page · several: the cart's lines · none: the empty cart,
- *  the shop's picks alone). Tier by tier; inside a tier the lines take turns. `handPicked` joins tier 2. */
-export function suggestionOrder(slugs: string[], ok: (item: CatalogItem) => boolean, handPicked: string[] = []): CatalogItem[] {
+ *  the shop's picks alone). Tier by tier; inside a tier the lines take turns. */
+export function suggestionOrder(slugs: string[], ok: (item: CatalogItem) => boolean): CatalogItem[] {
   if (slugs.length === 0) return shopPicks(ok);
   const catalog = allCatalogItems();
   const own = slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined);
@@ -138,7 +140,13 @@ export function suggestionOrder(slugs: string[], ok: (item: CatalogItem) => bool
   const devices = new Set(own.filter((i) => !isPart(i)).map((i) => i.slug));
   // With a device in the list, a part of the same make may still not fit it: only a verified fit stays.
   const fitsDevices = (i: CatalogItem) => !isPart(i) || devices.size === 0 || getCompatibleDevices(i.slug).some((d) => devices.has(d.ref.slug));
-  const hand = handPicked.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined && ok(i));
+  const hand = slugs
+    .flatMap((s) => {
+      const legacy = getProduct(s);
+      return legacy ? getRelatedProducts(legacy).map((p) => p.slug) : [];
+    })
+    .map((s) => getCatalogItem(s))
+    .filter((i): i is CatalogItem => i !== undefined && ok(i));
   const heated = own.some(isHeated);
   const picks = shopPicks(ok);
   const disposables = [...picks, ...catalog.filter(ok).sort(byLead)].filter((i) => kindCategoryId(i) === DISPOSABLES);
@@ -151,20 +159,30 @@ export function suggestionOrder(slugs: string[], ok: (item: CatalogItem) => bool
   return row;
 }
 
-/** One card of the product page's block: the shop's own card data, and whether the build could sell it (the page lays
- *  the live answer over that in the browser — src/components/product/RelatedProducts.tsx). */
+/** Can a customer buy this now: the rule behind the buy button and the cards' stock (src/lib/stock/card-stock.ts), live when
+ *  `live` is given, as built when it is not. */
+function canSell(slug: string, live?: LiveLookup): boolean {
+  const legacy = getProduct(slug);
+  if (legacy) return legacyCardStock(legacy, live).inStock;
+  const published = getPublishedProductBySlug(slug);
+  return published ? publishedCardStock(published, live).inStock : false;
+}
+
+/** The row for these products: the cart's lines, or one product on its page. Every card can be bought (owner 07/11:
+ *  "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น … Auto ตลอด"), has an approved price, is not one of `slugs` and not on the "never" list. */
+export function rowFor(slugs: string[], live?: LiveLookup): CatalogItem[] {
+  const taken = new Set(slugs);
+  return suggestionOrder(slugs, (i) => !taken.has(i.slug) && !NEVER.has(i.slug) && i.sellingPrice !== null && canSell(i.slug, live)).slice(0, RELATED_SLOTS);
+}
+
+/** One card of the product page's block: the shop's own card data. */
 export interface RelatedItem {
   slug: string;
   legacy?: Product;
   published?: StorefrontProductView;
+  /** As built: what a page that never asks the server starts from (guide and technology pages). */
   inStock: boolean;
 }
-
-/** More buyable candidates than seats, so a card that sells out after the build leaves another to take its place. */
-const STOCKED_CANDIDATES = RELATED_SLOTS + 2;
-/** Verified fits the build could not sell, kept for a restock. Few: coil-94 fits eleven devices, and when those filled every
- *  candidate its block came out empty. */
-const WAITING_CANDIDATES = 4;
 
 /** What ProductCard does not read: the text of the product's own page. The block's cards reach the browser in every
  *  product page, and these fields were most of their weight. */
@@ -185,18 +203,10 @@ export const legacyRelatedItems = (products: Product[]): RelatedItem[] =>
 export const publishedRelatedItems = (products: StorefrontProductView[]): RelatedItem[] =>
   products.map((p) => ({ slug: p.slug, published: p, inStock: publishedCardStock(p).inStock }));
 
-/** The product page's block. A sold-out product stays a candidate only when it is a verified fit: the part that fits is
- *  worth keeping for the moment the warehouse restocks it, and the browser hides it until then. Everything else starts
- *  from the build's stock, so the page does not carry cards it will only hide. */
-export function relatedFor(slug: string): RelatedItem[] {
-  const verified = new Set([...getCompatibleConsumables(slug).map((c) => c.ref.slug), ...getCompatibleDevices(slug).map((d) => d.ref.slug)]);
-  const ok = (i: CatalogItem) => i.slug !== slug && !NEVER.has(i.slug) && i.sellingPrice !== null && (verified.has(i.slug) || relatedItem(i.slug)?.inStock === true);
-  const legacy = getProduct(slug);
-  const handPicked = legacy ? getRelatedProducts(legacy).map((p) => p.slug) : [];
-  const items = suggestionOrder([slug], ok, handPicked)
+/** The product page's block: the same row as a cart holding this one product, with its card data. The page ships only the
+ *  build's row, so its weight stays at eight cards; a card the build could not offer arrives from /api/related when it is needed. */
+export function relatedFor(slug: string, live?: LiveLookup): RelatedItem[] {
+  return rowFor([slug], live)
     .map((i) => relatedItem(i.slug))
     .filter((i): i is RelatedItem => i !== null);
-  const stocked = items.filter((i) => i.inStock).slice(0, STOCKED_CANDIDATES);
-  const waiting = items.filter((i) => !i.inStock).slice(0, WAITING_CANDIDATES);
-  return items.filter((i) => stocked.includes(i) || waiting.includes(i));
 }

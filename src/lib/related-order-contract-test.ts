@@ -7,8 +7,9 @@
  *   3. a cart of two categories: both lines show, and no part with no verified fit for the device in the cart;
  *   4. stock: a product the warehouse reports sold out leaves the suggestions with no list kept by hand, on the live rule the
  *      cards and the buy button use; nothing in stock = nothing to show;
- *   5. the product page's candidates, over the whole catalog: never itself, never "not recommended", none twice;
- *   6. wiring: the cart reads live stock, the prerendered block lays the live answer over the build.
+ *   5. the product page and the cart give the same row for the same stock, on every product, stock back after the build included;
+ *   6. the block: nothing renders when every tier is sold out, and cards do render when one can be bought;
+ *   7. wiring: the cart reads live stock on every call, the page asks the server's row.
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
@@ -17,10 +18,15 @@ import { readFileSync } from "fs";
 import path from "path";
 import { allProducts, getProduct } from "@/data/products";
 import { kindCategoryId } from "@/data/categories";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { RelatedRow } from "@/components/product/RelatedProducts";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
-import { NEVER, relatedFor, suggestionOrder } from "./related-order";
+import { relatedFor, rowFor, suggestionOrder, type RelatedItem } from "./related-order";
+import { shownRow } from "./related-row";
 import { legacyCardStock } from "./stock/card-stock";
 import type { LiveLookup } from "./stock/live-rules";
 
@@ -34,7 +40,7 @@ const check = (name: string, passed: boolean, detail = "") => results.push({ nam
 const slugs = (list: { slug: string }[]) => list.map((i) => i.slug).join(",");
 const lastIndex = (list: CatalogItem[], test: (i: CatalogItem) => boolean) => list.reduce((at, i, n) => (test(i) ? n : at), -1);
 const firstIndex = (list: CatalogItem[], test: (i: CatalogItem) => boolean) => list.findIndex(test);
-const buyable = (i: CatalogItem) => i.sellingPrice !== null && !NEVER.has(i.slug);
+const buyable = (i: CatalogItem) => i.sellingPrice !== null && !["muro-space-15k", "marbo-10k-clone"].includes(i.slug);
 const isPartKind = (i: CatalogItem) => ["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"].includes(kindCategoryId(i));
 
 // 1 — the order
@@ -89,30 +95,49 @@ check("M Bar 10K sold out in the warehouse leaves the picks", !offered(onlyMBarO
 check("the other picks stay", offered(onlyMBarOut).length > 0);
 check("everything sold out = nothing offered", offered(everythingOut).length === 0, slugs(offered(everythingOut)));
 
-// 5 — the product page's candidates, every product
+// 5 — the product page and the cart, the same row for the same stock
+const all = [...allProducts.map((p) => p.slug), ...getPublishedProducts().map((p) => p.slug)];
 const bad: string[] = [];
-for (const slug of [...allProducts.map((p) => p.slug), ...getPublishedProducts().map((p) => p.slug)]) {
-  const items = relatedFor(slug);
-  const verified = new Set([...getCompatibleConsumables(slug).map((c) => c.ref.slug), ...getCompatibleDevices(slug).map((d) => d.ref.slug)]);
-  if (new Set(items.map((i) => i.slug)).size !== items.length) bad.push(`${slug}: a card twice`);
-  for (const i of items) {
-    if (i.slug === slug) bad.push(`${slug}: offers itself`);
-    if (NEVER.has(i.slug)) bad.push(`${slug}: offers ${i.slug}`);
-    if (!i.legacy && !i.published) bad.push(`${slug}: ${i.slug} has no card data`);
-    if (!i.inStock && !verified.has(i.slug)) bad.push(`${slug}: sold-out ${i.slug} is not a verified fit`);
+const backInStock: LiveLookup = () => "in";
+const stocks: [string, LiveLookup | undefined][] = [["the build", undefined], ["M Bar 10K sold out", onlyMBarOut], ["everything back in stock", backInStock], ["everything sold out", everythingOut]];
+for (const slug of all) {
+  for (const [name, live] of stocks) {
+    const page = relatedFor(slug, live).map((i) => i.slug);
+    const cart = rowFor([slug], live).map((i) => i.slug);
+    if (page.join() !== cart.join()) bad.push(`${slug} on ${name}: page ${page.join()} · cart ${cart.join()}`);
+    if (new Set(page).size !== page.length) bad.push(`${slug} on ${name}: a card twice`);
+    if (page.includes(slug)) bad.push(`${slug}: offers itself`);
+    if (page.some((s) => s === "muro-space-15k" || s === "marbo-10k-clone")) bad.push(`${slug}: offers a not-recommended product`);
   }
-  if (!items.some((i) => i.inStock)) bad.push(`${slug}: the block has nothing to sell`);
+  if (rowFor([slug]).length === 0) bad.push(`${slug}: nothing to sell at build`);
 }
-check("every product page: never itself, never not-recommended, no sold-out card past a verified fit, something to sell on every page", bad.length === 0, bad.slice(0, 5).join(" · "));
-const argusBlock = relatedFor("argus-g4");
+check("every product, four stocks: the page's row is the cart's row, none twice, never itself, never not-recommended, never empty at build", bad.length === 0, bad.slice(0, 4).join(" · "));
+const back = relatedFor("argus-g4", backInStock).map((i) => i.slug);
+check("stock back after the build: another pod system reaches the page", relatedFor("argus-g4").every((i) => i.published?.categoryId !== "pod-systems" && i.legacy?.categoryId !== "pod-systems") ? back.some((s) => getCatalogItem(s)?.categoryId === "pod-systems") : true, back.join(","));
+const argusBlock = relatedFor("argus-g4", backInStock);
 check("the Argus G4 page offers the coil and e-liquid first", argusBlock[0]?.slug === coil && argusBlock[1]?.published?.categoryId === "e-liquid", slugs(argusBlock));
 
-// 6 — wiring
+// 6 — the block itself
+const render = (row: RelatedItem[]) => renderToStaticMarkup(createElement(LocaleProvider, null, createElement(RelatedRow, { row })));
+const built = relatedFor("m-bar-9k");
+const outChanges = Object.fromEntries(built.map((i) => [i.slug, { s: false }]));
+check("live answer says every card is sold out: the row is empty", built.length > 0 && shownRow(built, outChanges, null).length === 0);
+check("the server's row is empty: the row is empty", shownRow(built, null, { s: [], c: [] }).length === 0);
+check("the block renders nothing at all when every tier is sold out", render(shownRow(built, outChanges, null)) === "");
+check("the block renders the section when a card can be bought", render(shownRow(built, null, null)).includes("<section"));
+check("a card that came back arrives from the server's answer", shownRow(built.slice(0, 1), null, { s: [built[1].slug], c: [built[1]] })[0]?.slug === built[1].slug);
+check("no live answer yet: the build's row, sold-out cards off", shownRow([{ ...built[0], inStock: false }, built[1]], null, null).length === 1);
+
+// 7 — wiring
 const src = (rel: string) => readFileSync(path.join(process.cwd(), "src", rel), "utf8");
 const cart = src("lib/commerce/cart-suggestions.ts");
-check("the cart reads the live lookup on every call, not the build", cart.includes("const live = liveLookup();") && cart.includes("legacyCardStock(legacy, live)") && cart.includes("publishedCardStock(published, live)") && !cart.includes("inStockEntryKeys"));
+check("the cart reads the live lookup on every call, through the shared row", cart.includes("const live = liveLookup();") && cart.includes("rowFor(cartSlugs, live)"));
 const block = src("components/product/RelatedProducts.tsx");
-check("the prerendered block lays the live answer over the build", block.includes("useLiveCardStock()") && block.includes("canBuyNow(live, i)"));
+check("the block asks the server's row and falls back to the stock answer", block.includes("/api/related/") && block.includes("useLiveCardStock()"));
+const api = src("app/api/related/[slug]/route.ts");
+check("the row API reads live stock and sends card data only for what the page lacks", api.includes("relatedFor(slug, liveLookup())") && api.includes("!built.has(i.slug)"));
+const page = src("app/products/[slug]/page.tsx");
+check("the product page names its slug, or it would never ask", page.includes("slug={product.slug}"));
 const row = src("components/commerce/CartSuggestions.tsx");
 check("the picker follows the fresh cards and never keeps a sold-out pick", row.includes("items.find((i) => i.slug === pickingSlug)") && row.includes("o.id === selectedId && o.sellable"));
 

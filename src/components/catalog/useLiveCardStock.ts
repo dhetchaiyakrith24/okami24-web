@@ -54,11 +54,6 @@ export function useLiveCardStock(): CardStockChanges | null {
   );
 }
 
-/** Whether a suggestion can be bought now: live when the warehouse answered for it, else as built (the rule = card-stock.ts). */
-export function canBuyNow(changes: CardStockChanges | null, item: { slug: string; inStock: boolean }): boolean {
-  return changes?.[item.slug]?.s ?? item.inStock;
-}
-
 /** One card's "every option sold out", live when the warehouse answered for it, else as built. */
 export function useLiveSoldOut(slug: string, builtSoldOut: boolean): boolean {
   return useLiveCardStock()?.[slug]?.o ?? builtSoldOut;

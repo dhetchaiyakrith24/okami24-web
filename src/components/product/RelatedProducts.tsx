@@ -1,26 +1,47 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { DisposablesAllLink } from "@/components/catalog/DisposablesLinks";
-import { canBuyNow, useLiveCardStock } from "@/components/catalog/useLiveCardStock";
-import { RELATED_SLOTS } from "@/lib/related-row";
+import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { shownRow, type RelatedAnswer } from "@/lib/related-row";
 import type { RelatedItem } from "@/lib/related-order";
 
 /**
- * "สินค้าใกล้เคียง" on product, guide and technology pages. The page picks the candidates best first (`relatedFor`,
- * src/lib/related-order.ts: four tiers, what goes with the product first). These pages are prerendered, so what can be
- * bought is decided here: the build's stock first, then the warehouse's live answer (/api/stock, the one request every card
- * on the page shares) — owner 07/11 "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น … Auto ตลอด". Renders nothing when no candidate can be
- * bought — never a sold-out card to fill the section. Same rail classes as ProductRail, for both kinds of card.
+ * "สินค้าใกล้เคียง" on product, guide and technology pages (owner 07/11: "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น … Auto ตลอด"). These pages
+ * are prerendered, so they paint the build's row, then a product page (`slug`) asks /api/related/<slug>: the server's row from
+ * live stock, the same code as the cart's, with the card data of anything the page was not built with. A failed request
+ * leaves the build's row with the /api/stock answer over it; so do guide and technology pages, which name their own products.
+ * Renders nothing when no card can be bought — never a sold-out card to fill the section.
  */
-export function RelatedProducts({ items, categoryId }: { items: RelatedItem[]; categoryId?: string }) {
+export function RelatedProducts({ items, slug, categoryId }: { items: RelatedItem[]; slug?: string; categoryId?: string }) {
+  const changes = useLiveCardStock();
+  const [answer, setAnswer] = useState<RelatedAnswer<RelatedItem> | null>(null);
+  useEffect(() => {
+    if (!slug) return;
+    let alive = true;
+    fetch(`/api/related/${encodeURIComponent(slug)}`, { credentials: "omit" })
+      .then((r) => (r.ok ? (r.json() as Promise<RelatedAnswer<RelatedItem>>) : null))
+      .then((a) => {
+        if (alive && a && Array.isArray(a.s) && Array.isArray(a.c)) setAnswer(a);
+      })
+      .catch(() => {
+        /* no live answer — the page's own row stays */
+      });
+    return () => {
+      alive = false;
+    };
+  }, [slug]);
+  return <RelatedRow row={shownRow(items, changes, answer)} categoryId={categoryId} />;
+}
+
+/** Same rail classes as ProductRail, for both kinds of card. */
+export function RelatedRow({ row, categoryId }: { row: RelatedItem[]; categoryId?: string }) {
   const { dict } = useLocale();
-  const live = useLiveCardStock();
-  const row = items.filter((i) => canBuyNow(live, i)).slice(0, RELATED_SLOTS);
   if (row.length === 0) return null;
 
   return (
