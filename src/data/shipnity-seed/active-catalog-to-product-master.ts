@@ -730,9 +730,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "น้ำยา Dundu นิโคตินแบบ salt nic กลิ่นองุ่น",
   },
   "ELIQUID-1": {
-    // Round list19 (18/10): warehouse facts only — the old Shipnity name "SALT NIC 30 ML", Max's 10 flavours; the brand in Latin only.
+    // Round list19 (18/10): warehouse facts only — the old Shipnity name "SALT NIC 30 ML", Max's 9 flavours (Purple also comes in 50mg, a 10th option); the brand in Latin only.
     tagline: "น้ำยา Marbo Saltnic ขวด 30ml",
-    shortDescription: "น้ำยา Marbo Saltnic ขวด 30ml นิโคตินแบบ salt nic ร้านมีให้เลือก 10 กลิ่น",
+    shortDescription: "น้ำยา Marbo Saltnic ขวด 30ml นิโคตินแบบ salt nic ร้านมีให้เลือก 9 กลิ่น",
   },
   "Eliquid-109": {
     // Round list19 (19/10): warehouse facts only — the Max name "Marbo Freebase ขวดยาว", Max's 4 flavours; the brand in Latin only.

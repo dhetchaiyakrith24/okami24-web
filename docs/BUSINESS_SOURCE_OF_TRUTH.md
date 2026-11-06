@@ -195,6 +195,8 @@ Shipnity **Pro** = cost (ทุน/เรท) only. New products listed before t
   Friday flagged it once as risky (Google trust / fabricated figure, queue 02/11 item 9); the owner keeps it (central §12 item 19 — not raised again).
   The selling price, the cart, the order total and the JSON-LD/Google price stay the real selling price only. Which products and the exact
   crossed-out figures = a list the owner OKs before it goes live (owner = price authority, above). Focus: products in stock first (queue item 9).
+- **2026-11-07 — round badge numbers (owner, chat, quoted exactly):** "ใส่ได้ครับและขอให้หลังจากนี้เลขกลมๆสวยๆ เช่น 5-10-15-20-25-30 ไปจนถึง 50" — new labels from now on show a round badge (5 · 10 · 15 … 50);
+  labels already on the site keep theirs. Pop Up 10K: ฿219 under ฿229 shows "ลด 5%" (the real gap is 4.6%; the owner said to put it on). This replaces the 10–20% band for rows with a round badge only.
 
 ---
 

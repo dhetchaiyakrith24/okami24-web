@@ -5,7 +5,8 @@
  *      LINE/email messages, the API routes and the head/JSON-LD never do (an allow-list, so a new importer fails here);
  *   2. the cart's money boundary (resolveProductRef) prices every labelled product at its selling price, never the label;
  *   3. the product page's JSON-LD Offer prices come from the selling price;
- *   4. the table: every label 10–20 % above the price it was approved against, the owner's price ending (9 · price from ฿1,000: 90),
+ *   4. the table: every label 10–20 % above the price it was approved against (a row with an owner-set round badge: the badge
+ *      is 5 · 10 … 50 and within 1 point of the real gap), the owner's price ending (9 · price from ฿1,000: 90),
  *      that price is still the catalog's selling price (a later price change hides the label — reported here), and the
  *      Marbo lookalike is not on it;
  *   5. saleLabel(): the badge never says more than the printed prices; the switch, sold-out and unknown products give null.
@@ -93,8 +94,10 @@ check(
 // 4 — the table
 const catalog = new Map(allCatalogItems().map((i) => [i.slug, i.sellingPrice]));
 const rows = Object.entries(LABEL_PRICES);
-const outOfBand = rows.filter(([, r]) => r.label < r.price * 1.1 || r.label > r.price * 1.2).map(([s]) => s);
+const outOfBand = rows.filter(([, r]) => r.badge === undefined && (r.label < r.price * 1.1 || r.label > r.price * 1.2)).map(([s]) => s);
 check("table: every label is 10–20 % above its price", outOfBand.length === 0, outOfBand.join(", "));
+const badBadge = rows.filter(([, r]) => r.badge !== undefined && (r.badge % 5 !== 0 || r.badge < 5 || r.badge > 50 || Math.abs(r.badge - ((r.label - r.price) / r.label) * 100) > 1)).map(([s]) => s);
+check("table: an owner-set badge is a round 5–50 within 1 point of the real gap", badBadge.length === 0, badBadge.join(", "));
 // The approved generator keyed the ending on the SELLING price (฿890 → ฿1,029 stays inside 10–20 %; ฿1,090 would be 22 %).
 const badEnding = rows.filter(([, r]) => (r.price >= 1000 ? r.label % 100 !== 90 : r.label % 10 !== 9)).map(([s, r]) => `${s} ${r.label}`);
 check("table: labels follow the owner's price ending (9 · price from ฿1,000: 90)", badEnding.length === 0, badEnding.join(", "));
@@ -108,8 +111,8 @@ const sample = rows[0];
 const pcts = rows.map(([s, r]) => ({ s, r, l: saleLabel(s, r.price) }));
 check("saleLabel: every approved product at its approved price gets a label", !SALE_LABEL_ON || pcts.every((x) => x.l?.label === x.r.label));
 check(
-  "saleLabel: the badge never says more than the two prices show",
-  pcts.every((x) => !x.l || (x.l.pct >= 1 && x.l.pct <= ((x.r.label - x.r.price) / x.r.label) * 100)),
+  "saleLabel: without an owner-set badge, the badge never says more than the two prices show",
+  pcts.every((x) => !x.l || x.r.badge !== undefined || (x.l.pct >= 1 && x.l.pct <= ((x.r.label - x.r.price) / x.r.label) * 100)),
 );
 check("saleLabel: sold out = none", saleLabel(sample[0], sample[1].price, true) === null);
 check("saleLabel: a changed selling price = none", saleLabel(sample[0], sample[1].price + 10) === null);

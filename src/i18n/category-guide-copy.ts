@@ -252,7 +252,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "น้ำยา salt nic สำหรับพอตตัวเล็ก",
           body:
-            "salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป ผู้ผลิตพอตหลายรายแนะนำให้ใช้กับพอตตัวเล็กที่ใช้วัตต์ต่ำ และสูบแบบ MTL คือดูดเข้าปากก่อน แล้วค่อยสูดลงปอด งานวิจัยก็พบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่า freebase น้ำยา salt nic บนหน้านี้มี [Marbo Saltnic](/products/eliquid-1) ของ SALTHUB ขวดขนาด 30ml มี 10 กลิ่น · [Super Cool Salt Nic](/products/super-cool-saltnic) 10 กลิ่น · [Muro Salt Nic](/products/muro-salt-nic) 6 กลิ่น · [Double Mint Salt Nic](/products/eliquid-64) 6 กลิ่น · [Pepo Salt Nic](/products/eliquid-72) 5 กลิ่น และ [Dundu Salt Nic](/products/eliquid-73) ที่มีกลิ่นเดียว",
+            "salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป ผู้ผลิตพอตหลายรายแนะนำให้ใช้กับพอตตัวเล็กที่ใช้วัตต์ต่ำ และสูบแบบ MTL คือดูดเข้าปากก่อน แล้วค่อยสูดลงปอด งานวิจัยก็พบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่า freebase น้ำยา salt nic บนหน้านี้มี [Marbo Saltnic](/products/eliquid-1) ของ SALTHUB ขวดขนาด 30ml มี 9 กลิ่น · [Super Cool Salt Nic](/products/super-cool-saltnic) 10 กลิ่น · [Muro Salt Nic](/products/muro-salt-nic) 6 กลิ่น · [Double Mint Salt Nic](/products/eliquid-64) 6 กลิ่น · [Pepo Salt Nic](/products/eliquid-72) 5 กลิ่น และ [Dundu Salt Nic](/products/eliquid-73) ที่มีกลิ่นเดียว",
         },
         {
           heading: "น้ำยา freebase สำหรับเครื่องวัตต์สูง",
@@ -301,7 +301,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "Salt nic, for small pods",
           body:
-            "Salt nic is nicotine that the maker has blended with an acid. Several pod makers recommend it for small, low-wattage pods and an MTL draw, where you draw into your mouth first and then inhale. Research has also found that, at the same strength, salt nic feels smoother than freebase. Salt nic on this page: SALTHUB's [Marbo Saltnic](/products/eliquid-1) in a 30ml bottle, 10 flavors · [Super Cool Salt Nic](/products/super-cool-saltnic), 10 · [Muro Salt Nic](/products/muro-salt-nic), 6 · [Double Mint Salt Nic](/products/eliquid-64), 6 · [Pepo Salt Nic](/products/eliquid-72), 5 · and [Dundu Salt Nic](/products/eliquid-73), in a single flavor.",
+            "Salt nic is nicotine that the maker has blended with an acid. Several pod makers recommend it for small, low-wattage pods and an MTL draw, where you draw into your mouth first and then inhale. Research has also found that, at the same strength, salt nic feels smoother than freebase. Salt nic on this page: SALTHUB's [Marbo Saltnic](/products/eliquid-1) in a 30ml bottle, 9 flavors · [Super Cool Salt Nic](/products/super-cool-saltnic), 10 · [Muro Salt Nic](/products/muro-salt-nic), 6 · [Double Mint Salt Nic](/products/eliquid-64), 6 · [Pepo Salt Nic](/products/eliquid-72), 5 · and [Dundu Salt Nic](/products/eliquid-73), in a single flavor.",
         },
         {
           heading: "Freebase, for higher-wattage devices",
@@ -350,7 +350,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "salt nic：适合小烟弹设备",
           body:
-            "salt nic 是厂商在尼古丁中加入酸调配而成。多家烟弹设备厂商建议搭配低功率的小烟弹设备和 MTL 吸法，也就是先吸入口腔，再吸进肺部。研究也发现，在相同浓度下，salt nic 的口感比 freebase 更顺。本页的 salt nic 烟油有：SALTHUB 的 [Marbo Saltnic](/products/eliquid-1)，30ml 瓶装，10 种口味；[Super Cool Salt Nic](/products/super-cool-saltnic)，10 种；[Muro Salt Nic](/products/muro-salt-nic)，6 种；[Double Mint Salt Nic](/products/eliquid-64)，6 种；[Pepo Salt Nic](/products/eliquid-72)，5 种；以及只有一种口味的 [Dundu Salt Nic](/products/eliquid-73)。",
+            "salt nic 是厂商在尼古丁中加入酸调配而成。多家烟弹设备厂商建议搭配低功率的小烟弹设备和 MTL 吸法，也就是先吸入口腔，再吸进肺部。研究也发现，在相同浓度下，salt nic 的口感比 freebase 更顺。本页的 salt nic 烟油有：SALTHUB 的 [Marbo Saltnic](/products/eliquid-1)，30ml 瓶装，9 种口味；[Super Cool Salt Nic](/products/super-cool-saltnic)，10 种；[Muro Salt Nic](/products/muro-salt-nic)，6 种；[Double Mint Salt Nic](/products/eliquid-64)，6 种；[Pepo Salt Nic](/products/eliquid-72)，5 种；以及只有一种口味的 [Dundu Salt Nic](/products/eliquid-73)。",
         },
         {
           heading: "freebase：适合高功率设备",
