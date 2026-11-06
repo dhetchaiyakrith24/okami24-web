@@ -69,7 +69,7 @@ export const relxProducts: Product[] = [
       "You came looking for the DIVA by name, or you like a rounded disposable you can pick by flavour.",
     ],
     faqs: [],
-    relatedProductSlugs: ["relx-lumi-18k", "relx-smash-go-12k"],
+    relatedProductSlugs: ["relx-smash-go-12k"],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
     sourceUrls: ["https://okami24.store/products/relx-diva-30k"],
   },
