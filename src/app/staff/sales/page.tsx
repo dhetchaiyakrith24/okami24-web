@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { ownerAreaEnabled } from "@/lib/owner/auth";
 import { SALES_DAYS, salesDays } from "@/lib/staff/daily-sales";
 import type { DaySales, SalesSlip } from "@/lib/staff/daily-sales-rules";
 import { countByJob } from "@/lib/staff/orders";
@@ -196,6 +197,11 @@ export default async function StaffSalesPage() {
         ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว นับตามวันที่สั่ง ไม่รวมออเดอร์ที่ยกเลิก · ยอด LINE = สลิปที่เข้าบัญชีร้าน นับตามวันที่โอน
         ไม่รวมสลิปของออเดอร์เว็บ
       </p>
+      {ownerAreaEnabled() && (
+        <Link href="/staff/owner" className="inline-flex min-h-11 w-fit items-center text-sm text-foreground-dim hover:text-foreground">
+          ส่วนเจ้าของ →
+        </Link>
+      )}
     </Container>
   );
 }
