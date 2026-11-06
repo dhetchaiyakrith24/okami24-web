@@ -19,7 +19,7 @@ model: sonnet
    `gh pr list --state all --limit 30` ไม่มีอะไรขยับเรื่องนั้นเลย = "รับปากแล้วไม่มีใครทำ"
 3. `gh pr list -R dhetchaiyakrith24/smogz-rules --state all --limit 5` — PR กฎกลางที่ merge แล้วแต่สำเนายังไม่เข้ารีโปนี้
    (`.claude/rules-source.json` commit ไม่ตรง) หรือ PR ที่ค้างเปิด
-4. งานตั้งเวลา: อ่าน `docs/HANDOFF.md` §16 ข้อ 3u + skill `house-clean` (ก) แล้วเทียบกับ `_incoming/house-*/` ล่าสุดในโฟลเดอร์หลัก
+4. งานตั้งเวลาทุกตัว: `~/.claude/scheduled-tasks/okami24-*/` เทียบกับรอบตั้งเวลาในชื่อแต่ละงาน และผลล่าสุดใต้ `_incoming/` ในโฟลเดอร์หลัก (เปิดหรือปิดอยู่ไหม = ถาม Friday · เอเจนต์นี้เห็นแอปไม่ได้) · skill `house-clean` (ก) + `_incoming/house-*/` ล่าสุดในโฟลเดอร์หลัก
    `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` — เก็บบ้านรายสัปดาห์ (อาทิตย์ 20:00) ไม่มีโฟลเดอร์ของอาทิตย์ล่าสุด = "ถูกข้าม"
 5. `docs/รอพี่ตรวจ.md` — ข้อที่ตอบแล้วแต่ยังไม่ลบ (คำตอบอยู่ใน §18 หรือ BSOT แล้ว)
 

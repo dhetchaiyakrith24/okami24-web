@@ -100,9 +100,8 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
   "fix" it in passing. A claim you cannot
   trace to the data or to BUSINESS_SOURCE_OF_TRUTH does not go into a sentence (e.g. round 30.3
   dropped "22K" from a tagline because the spec was marked unverified).
-- **The cart is open since 24/10 (owner)** — copy may point to the cart and to ordering on the site; LINE @okm24 is the
-  back-up channel (BSOT §8). If `OKAMI24_ORDERING` is switched off again, copy that points to the cart must follow the
-  switch (as /how-to-order does) — THAI_STYLE §3.
+- **Cart on or off = HANDOFF §16** — while on, copy may point to the cart and to ordering on the site; LINE @okm24 is the
+  back-up channel (BSOT §8). Copy that points to the cart must follow the `OKAMI24_ORDERING` switch (as /how-to-order does) — THAI_STYLE §3.
 - **Do not edit files** (see the box at the top). Do not propose edits to anything in THAI_STYLE §5 group ก —
   the whole table as it stands today, not a remembered subset — point at the table and move on.
 - **No keyword stuffing.** A title or meta that reads like a list of search terms is wrong for the

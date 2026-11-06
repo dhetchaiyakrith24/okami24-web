@@ -34,8 +34,8 @@ words. Anything else = the round does not close: do it — ask the owner only wh
 ## Step 2 — Designer once, only per 13.5 #6
 
 A new look, slot or component in the round → `designer` **one time** with the flagged crops only. Otherwise skip.
-Something a customer sees changed in the round → agent `visitor` once on the test build (TEAM_RULES 13.2 — brief = the test address + a
-customer's goal only). Nothing a customer sees changed = skip.
+Something a customer sees changed in the round → agent `visitor` once on the test build, advice like every agent but the checker (TEAM_RULES 13.2 — brief = the test address + a
+customer's goal only; skipped = say why in the report). Nothing a customer sees changed = skip.
 
 ## Step 3 — Verify set (names only)
 
