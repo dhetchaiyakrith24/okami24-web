@@ -6,6 +6,74 @@ const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable v
 
 export const relxProducts: Product[] = [
   {
+    // Round popular models 07/11: searched, not in the warehouse, no maker page anywhere (relxnow.com does not list it), so no
+    // price and no cart. Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops agree. Shops that agree:
+    // goatvapethai, maneevp and zeedcupvp (counted as one, same spec text), vapedumpthailand.store: the 30K in the name and the flavour list.
+    // No spec row: the row gate takes a maker source only. Flavour pictures: none yet (IMAGE_SPEC §4).
+    id: "relx-diva-30k",
+    slug: "relx-diva-30k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Diva 30K",
+    displayName: "RELX DIVA 30K",
+    tagline: "A pebble-shaped disposable with a two-tone body and a small display.",
+    shortDescription:
+      "A rounded, two-tone disposable with a teardrop display on the front. Pick from the flavours below; each one shows whether it comes in the stronger version.",
+    isFlagship: false,
+    attributes: {
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-diva-30k/card-wm4.webp",
+        alt: "RELX Diva 30K, lilac top and pink-blue body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-diva-30k",
+      },
+    ],
+    flavorVariants: [
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "fresh-melon", name: "Fresh Melon", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "mango-passion-fruit", name: "Mango Passion Fruit", swatchHex: "#f2a93b", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-splash", name: "Orange Splash", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "spearmint", name: "Spearmint", swatchHex: "#5fbf9a", availability: "unknown" },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f2a2b5", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "cola-5", name: "Cola 5%", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "copico-coffee-5", name: "Copico Coffee 5%", swatchHex: "#7a5238", availability: "unknown" },
+      { id: "double-mint-5", name: "Double Mint 5%", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-5", name: "Grape 5%", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "watermelon-5", name: "Watermelon 5%", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "30,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "shape", title: "A body that sits in the hand", description: "It is short and rounded, closer to a pebble than a stick, so it stays small in the palm or a pocket." },
+      { id: "display", title: "A teardrop display", description: "The black teardrop on the front is what you check, rather than guessing how much is left." },
+      { id: "choice", title: "If you want one today", description: "If you would rather buy today, the models in stock sit near the top of this page." },
+    ],
+    compatibility: [],
+    whoIsThisFor: [
+      "You came looking for the DIVA by name, or you like a rounded disposable you can pick by flavour.",
+    ],
+    faqs: [],
+    relatedProductSlugs: ["relx-lumi-18k", "relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-diva-30k"],
+  },
+  {
     id: "relx-smash-go-12k",
     slug: "relx-smash-go-12k",
     brandId: "relx",

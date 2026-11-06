@@ -776,6 +776,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "relx-diva-30k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา DIVA รุ่นนี้ หรือชอบพอตใช้แล้วทิ้งทรงมน ๆ ที่เลือกจากกลิ่นได้เลย",
+    },
+    features: {
+      shape: {
+        title: "ทรงที่พอดีมือ",
+        description: "ตัวเครื่องสั้นและมน ใกล้เคียงก้อนกรวดมากกว่าทรงแท่งยาว จึงอยู่ในฝ่ามือหรือกระเป๋าได้สบาย",
+      },
+      display: {
+        title: "จอรูปหยดน้ำ",
+        description: "ดูจากหยดน้ำสีดำด้านหน้าได้เลย ไม่ต้องเดาว่าเหลืออีกเท่าไร",
+      },
+      choice: {
+        title: "ถ้าอยากได้ของวันนี้",
+        description: "รุ่นใกล้เคียงที่มีของอยู่ด้านบนของหน้านี้แล้ว เลือกดูต่อได้เลย",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งทรงมน ตัวเครื่องสองสี พร้อมจอเล็กด้านหน้า",
+    shortDescription:
+      "พอตใช้แล้วทิ้งทรงมน ตัวเครื่องไล่สองสี มีจอรูปหยดน้ำอยู่ด้านหน้า เลือกกลิ่นจากรายการด้านล่างได้ และดูได้ว่ากลิ่นไหนมีแบบแรงกว่า",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
