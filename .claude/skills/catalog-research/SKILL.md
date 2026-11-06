@@ -103,7 +103,7 @@ Source real photos, then reject anything that fails ANY of:
       one place for AI images — owner 2026-09-28.)
 - [ ] Is this watermarked? If yes: is there a watermark-free region of the SAME real photo to
       crop to (`extractThenTrim()` in `scripts/product-image.ts`)? If not, reject it as a source —
-      a remake only through IMAGE_SPEC §0 item 7.
+      a remake only through IMAGE_SPEC §0 item 7. Another shop's picture is a reference only and is never published as it is (same item).
 - [ ] Does it show the EXACT variant (resistance/color/flavor) being verified, not a generic
       group shot or a different variant of the same product line?
 - [ ] Is it a genuine product photo, not a marketing banner/lifestyle scene with decorative text

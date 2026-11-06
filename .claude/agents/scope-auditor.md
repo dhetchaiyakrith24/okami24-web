@@ -29,7 +29,7 @@ someone remembered.
    `src/data/products` + every published ProductMaster product (`src/data/shipnity-seed/storefront-bridge.ts`
    `getPublishedProducts()`) + brands with products (`src/lib/brand-visibility.ts`) + guides + technology
    entries + flavour families. Count them. The live site publishes the same list at
-   `https://okami24.store/sitemap.xml` (105 URLs on 2026-09-17) — fetch it once and reconcile;
+   `https://okami24.store/sitemap.xml` — fetch it once and reconcile (one list, not a scan: the one exception to "live site = curl after a merge", TEAM_RULES 13.5);
    if the two counts differ, report both and say which is ahead.
 2. **Read the round's instruction file** (the main agent gives you the path) and list every
    change it orders: which strings, components, data files, layouts.

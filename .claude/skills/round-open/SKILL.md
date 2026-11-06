@@ -14,8 +14,7 @@ a round already open = Step 1 + Step 2, then Step 5, continuing from the batch �
 ## Step 1 — Read first (the one "read first" list)
 
 Always:
-- `docs/HANDOFF.md` **§16** (state) — and before ANY question to the owner, search its topic in §18 + `docs/THAI_STYLE.md` +
-  `docs/BUSINESS_SOURCE_OF_TRUTH.md` first (a settled ruling is never asked again — central §12 item 17).
+- `docs/HANDOFF.md` **§16** (state) — and before ANY question to the owner, run `node scripts/asked-before.js --file <question>` first: it searches every home of settled answers (central §12 item 17).
 - The round instruction file. Git is its master (`docs/rounds/README.md`): copy it into `docs/rounds/` at open (computer:
   the attached file · cloud: branch `inbox`) and commit it with the round's first docs commit; a copy that differs from
   the one attached = say so.
@@ -62,7 +61,7 @@ Split the goal into checkable batches, each with "how we know it is done" and it
 or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (13.1 #3; ≤7 steps = central §12 item 12). Tell the owner
 3–5 lines of what in what order and **start**. Helper files → `_incoming/<round>/` or `scripts/`.
 
-Write the round into `docs/HANDOFF.md` §16 item 3 (instruction file · batches with tiers · where it stopped — spec:
+Write the round into `docs/HANDOFF.md` §16 item 3 (the `3o OPEN ROUND` line with the instruction file · batches with tiers · where it stopped — spec:
 skill `okami24-handoff`), and keep it current at every batch close.
 
 ## When to stop and ask
