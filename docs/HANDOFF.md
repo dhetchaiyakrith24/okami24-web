@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 07/11 ~03:00. Main chat holds 4 children (owner allowed a 4th, remove this block when they end). Re-read this + TEAM_RULES.
+Updated 07/11 ~03:10. Main chat holds 5 children (owner allowed them, remove this block when they end). Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -76,7 +76,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
   - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
   - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
-    watermark-gen4 local_73ffb3ed, PR 1269: owner picked spacing 1.7 + shift text right off the left edge, every marked picture incl. nexBar, new generation; PR 1269 at gen 4 must not merge as it is.
+    watermark-gen4 local_73ffb3ed, branch `claude/watermark-gen5-sitewide` (PR 1269 closed): generation 5, spacing 1.7, pattern shifted right, 1,030 pictures, last rename. Deletes -wm3 and -wm4 from public, so seo-full's 301s from the old-names table in `scripts/data/` must ship in the same deploy.
+    cart-instock local_fe42b3f3, branch `claude/cart-suggest-instock-8eba95`: suggestions in stock only, order = compatible (Argus G4 → coil, e-liquid) → same category → other choices.
     seo-full local_61acafdd, round SEO full: key table v1 `side-session-notes/local_de553e7b.../seo-keys-v1-0711.md`; 1-2 days = 20 pages, 10 best sellers, top articles, the rest queued.
     popular-models local_f36f63b5: real pages for models we do not stock. backoffice local_4d9c3c59, round file on main: batches 3-5 (login, DB) wait for the owner's yes; batch 1 waits for the bill after Saturday 13:00.
   - Done 07/11: Pop Up ฿219 label ฿229 badge 5% · Freebase ฿169 · Saltnic 9 · nexBar 15K pictures · line-candidates. Owner: new labels use round badges 5-50 (BSOT §5).
@@ -200,8 +201,8 @@ Scheduled tasks: unattended = mode Auto in the app (edit the task → mode) · r
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in
 `docs/IMAGE_SPEC.md`, SEO in `docs/SEO_LANDSCAPE.md`; this list holds the rulings that have no other home. A ruling that is replaced = overwrite its line.
 
-**Main chat moves by compact, not hand-off (owner 02/11, quoted exactly):** "แชทหลักนี้ Friday ไม่ต้อง Hand ใช้ Compact ได้เลยที่ 80-90 % ก่อน Compact
-จะสถานะงาน ความคืบหน้าสิ่งทมี่ต้องทำต่อกับแชทลูกให้เรียบร้อย ส่วนแชทลูก Hand ได้" — the rule = TEAM_RULES 13.6 "แชทหลักไม่ย้ายแชท".
+**Main chat moves by compact, not hand-off (owner 07/11, quoted exactly):** "แชทลูกใช้กฏกลางนะถึง 60-70 Hand และย้ายแชทได้เลยพี่อนุญาตส่วนแชทเราตรงนี้ไม่ Hand ใช้ Compact
+เมื่อถึง 70-80 นะ friday" — before compact: state, progress, next work and children written down (owner 02/11) · the rule = TEAM_RULES 13.6 "แชทหลักไม่ย้าย
 
 **Red for "no" (owner 26/10): every box or line on the site that says no / not passed / not approved / not allowed /
 refused uses the red `danger` colour, never the ember orange** ("ขอใช้เป็นสีแดงได้เลย ไม่ใช้สีส้มทั้งเว็บ"). Ember stays for
