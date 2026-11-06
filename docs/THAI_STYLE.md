@@ -200,6 +200,18 @@ mesh coil · coil · **คอยล์ mesh / คอยล์ cotton mesh** (ใ
 
 ### กลุ่ม ข — ตัดสินครบ 2026-09-10 · ตารางและเหตุผลย้ายไป `docs/THAI_STYLE_LOG.md` หัวข้อ "ย้ายจาก THAI_STYLE 15/10" (ประโยคจริง = LOG §7 "รอบ 30.3 ก" A1–A5)
 
+### คำตัดสินข้อความจาก HANDOFF §18 (ย้าย 06/11 · ข้อความเดิม)
+
+**Copy and wording:** words already on the site without a key are not "new words" · `readMoreEyebrow` = "อ่านต่อ", not
+`footer.learn` · en/zh age-gate wording and en/zh `/about` copy APPROVED · the dialog nicotine sentence stays plain group ก ·
+SALTHUB wording = option ข-1, no "แท้" · SALTHUB owns Marbo/M Bar (BSOT §21) · the 8 words locked as one set in THAI_STYLE §3 ·
+WORD JOINER bindings = only the list in THAI_STYLE §5 · zh H1 wrapping mid-word (服/务) at 390 — leave it · collapsed
+LINE pill off-centre icon — the owner's own list · no NBSP outside the list · an empty product card may show a real maker
+fact or the desktop-style option count, never placeholder text · spec-table header on INFY / RELX ("ข้อมูลที่ยืนยันได้จริง …")
+— no label, leave as is (01/10).
+
+**Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
+
 ---
 
 ## 6. เรื่องที่ยังเปิดอยู่ — ไม่อยู่ในไฟล์กฎแล้ว (15/10)
