@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 07/11 ~00:30. Next = a planning chat Friday opens; it plans A + B in detail WITH the owner, then opens 2 child chats, one per job (owner 07/11). Re-read this + TEAM_RULES.
+Updated 07/11 ~02:30. Main chat: rounds SEO full + popular models open, child chats below, order/back-office plan next with the owner. Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -79,9 +79,9 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
   - NEXT JOB A: order check, sales, profit vs the warehouse bill. Owner's goal: "อยากดูได้จากระบบหลังบ้านเว็บและก็ตรวจได้ทุกวัน ทุก Week". Plan = 2h · method = 2g + LESSONS พ71 · `_incoming/sales-0411/` · `ต้นทุนสินค้า/`. LINE is most of the bill (22–31/10: web ฿8,285, LINE ฿126,010). Login = 13.3 #9.
-  - NEXT JOB B: SEO. Owner's goal: "Google ซ่อนเราจากคำกลุ่มนี้ แล้ว Google ซ่อนเราทำไม". Also asks: คีย์หลักคีย์รองคืออะไรเข้าใจจริงๆใช่ไหม · คีย์สินค้า คีย์ค้นหา ทำครบจริงๆแล้วหรอ · ดัชนีขอหรือยัง · พลาดขอซ้ำหน้าที่เคยขอไปแล้วหรือเปล่า. Answer from evidence: SEO_LANDSCAPE §0 · GSC + SERP · `scripts/gsc-unread.ts` · `_incoming/seo-requests.log` for repeats. Nothing checked yet.
+  - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
   - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
-  - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
+  - Watermark: owner 07/11 = every picture gen 4 (text only). Child watermark-gen4, PR 1269, covers the 968 gen-3 files; Friday merges.
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
   - OWNER-REQUEST AUDIT 06/11 (report `_incoming/house-20261106/owner-audit-0611.md`). Closed 06/11: picture source audit (1,358 files shown on 182 pages: 1,029 marked, all OKami24 renders by their records, 105 of them traced by folder sample only; 329 unmarked = maker art; no shop picture shown as it is, IMAGE_SPEC 'รูปร้านอื่น') · unmarked orphans · SUP ZERO guide copy.
     Brand completeness closed: ESKO, JOIWAY F3 + F4, TFIT 10 flavours, INFY POD match the maker. No official list exists to check: INFY PLUS 2.5ML, INFY 20K. IQOS read from foreign pages only (no Thai page, 404): Leaf Green vs Spring Green on ILUMA i ONE unproven. JOIWAY lists F4 PLUS (16 pairs), not in our catalog and not in the warehouse list.
