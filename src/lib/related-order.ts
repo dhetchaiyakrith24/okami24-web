@@ -16,7 +16,8 @@ import type { Product } from "@/types/catalog";
  *     taken in turns so both reach the first seats ("ลูกค้าเลือก Argus g4 สินค้าใกล้เคียงต้องมี Coil - น้ำยา");
  *   2 the same category, its own brand (and a legacy product's hand-picked list) — "แนะนำในหมวดเดียวกัน";
  *   3 other choices: more e-liquid for a refillable device ("น้ำยาอื่นๆ");
- *   4 the other models of that category, then the shop's picks ("ถ้ามี Pod system ตัวอื่นก็แนะนำเพิ่มได้ ไม่ก็ดันพอตใช้แล้วทิ้งแทน").
+ *   4 the other models of that category, then disposables, the shop's picks first ("ถ้ามี Pod system ตัวอื่นก็แนะนำเพิ่มได้ ไม่ก็ดัน
+ *     พอตใช้แล้วทิ้งแทน"): real disposables, not whatever else the picks hold. A heat-not-burn shopper gets the heated picks instead.
  * Tiers 2 and 4 both read "same category": the brand is what tells them apart, so no card can sit in both.
  * Parts: a pod / coil of another make, or one with no verified fit for a device in the cart, is never offered (a part that
  * does not fit is the one wrong suggestion that costs the customer money). Fit data missing = the part is left out, not guessed.
@@ -41,12 +42,13 @@ const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "
 /** Fill-your-own devices (categories.ts: refillable VOOPOO joined pod-systems; switch-pods are prefilled, never filled). */
 const REFILLABLE_CATEGORY = "pod-systems";
 const E_LIQUID_CATEGORY = "e-liquid";
+const DISPOSABLES = "disposables";
 /** E-liquids in tier 1 and in tier 3: two each, so a refillable device's row is never all e-liquid (owner 28/10). */
 const LIKE_LIQUIDS = 2;
 const MORE_LIQUIDS = 2;
 
-/** Heat-not-burn and vapour are different shoppers: the shop's picks show the product's own family first (checker #960 —
- *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family. */
+/** Heat-not-burn and vapour are different shoppers (checker #960 — a vape cart got three IQOS devices when the vape picks
+ *  were sold out): a vape row never gets a heated card from tier 4, a heated row at most one disposable. */
 const HEATED_TOBACCO = new Set(["heated-tobacco-devices", "heated-tobacco-consumables"]);
 const isHeated = (i: CatalogItem) => HEATED_TOBACCO.has(i.categoryId);
 const isPart = (i: CatalogItem) => CONSUMABLE_CATEGORIES.has(kindCategoryId(i));
@@ -138,12 +140,13 @@ export function suggestionOrder(slugs: string[], ok: (item: CatalogItem) => bool
   const hand = handPicked.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined && ok(i));
   const heated = own.some(isHeated);
   const picks = shopPicks(ok);
+  const disposables = [...picks, ...catalog.filter(ok).sort(byLead)].filter((i) => kindCategoryId(i) === DISPOSABLES);
   const row: CatalogItem[] = [];
   roundRobin(lines.map((l) => l.fits), row);
   roundRobin([...lines.map((l) => l.brand.filter(fitsDevices)), hand.filter(fitsDevices)], row);
   roundRobin(lines.map((l) => l.moreLiquids), row);
   roundRobin(lines.map((l) => l.rest), row);
-  roundRobin([[...picks.filter((i) => isHeated(i) === heated), ...picks.filter((i) => isHeated(i) !== heated).slice(0, 1)]], row);
+  roundRobin([heated ? [...picks.filter(isHeated), ...disposables.slice(0, 1)] : disposables], row);
   return row;
 }
 

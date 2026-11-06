@@ -51,7 +51,10 @@ check("tier 4: disposables after the other pod systems", lastIndex(argus, (i) =>
 check("no card twice", new Set(argus.map((i) => i.slug)).size === argus.length);
 check("a row is never all e-liquid: four at most", argus.filter((i) => i.categoryId === "e-liquid").length === 4, slugs(argus));
 const noPods = suggestionOrder(["argus-g4"], (i) => i.slug !== "argus-g4" && buyable(i) && i.categoryId !== "pod-systems");
-check("no other pod system in stock: the disposables step up", noPods.some((i) => i.categoryId === "disposables"), slugs(noPods));
+const noPodsAfterLiquids = noPods.slice(lastIndex(noPods, (i) => i.categoryId === "e-liquid") + 1);
+check("no other pod system in stock: tier 4 is real disposables, nothing else", noPodsAfterLiquids.length > 0 && noPodsAfterLiquids.every((i) => kindCategoryId(i) === "disposables"), slugs(noPods));
+const heatedRow = suggestionOrder(["iqosheet-17"], (i) => i.slug !== "iqosheet-17" && buyable(i));
+check("a heat-not-burn row: heated first, one disposable at most", heatedRow[0]?.categoryId.startsWith("heated") && heatedRow.filter((i) => kindCategoryId(i) === "disposables").length <= 1, slugs(heatedRow));
 const disposable = suggestionOrder(["m-bar-9k"], (i) => i.slug !== "m-bar-9k" && buyable(i));
 check("a disposable stays with its own kind first, no e-liquid", kindCategoryId(disposable[0]) === "disposables" && !disposable.some((i) => i.categoryId === "e-liquid"), slugs(disposable));
 
