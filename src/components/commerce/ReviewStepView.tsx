@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useCallback, useRef, useState, type FormEvent } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -10,6 +10,8 @@ import { CUSTOMER_NOTE_MAX } from "@/lib/commerce/customer-note";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { ShippingNote } from "@/components/commerce/ShippingNote";
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
+import { ShippingDelayBanner, ShippingDelayDialog } from "@/components/commerce/ShippingDelayNotice";
+import { shippingDelayActive } from "@/lib/commerce/shipping-delay";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 
@@ -42,12 +44,28 @@ export function ReviewStepView({
   const { dict } = useLocale();
   const [state, formAction, pending] = useActionState(placeOrderAction, initialPlaceState);
   const [note, setNote] = useState("");
+  // Temporary delay notice (owner 06/11): the first press asks; no order exists until the customer accepts.
+  const formRef = useRef<HTMLFormElement>(null);
+  const accepted = useRef(false);
+  const [askDelay, setAskDelay] = useState(false);
+  const closeDelay = useCallback(() => setAskDelay(false), []);
+  function onPlace(e: FormEvent<HTMLFormElement>) {
+    if (accepted.current || !shippingDelayActive()) return;
+    e.preventDefault();
+    setAskDelay(true);
+  }
+  function acceptDelay() {
+    accepted.current = true;
+    setAskDelay(false);
+    formRef.current?.requestSubmit();
+  }
 
   return (
     <>
       <PageHeader eyebrow={dict.checkout.reviewEyebrow} title={dict.checkout.reviewTitle} />
       <Container className="flex max-w-xl flex-col gap-8 py-12 lg:py-16">
         <CheckoutSteps current={3} />
+        <ShippingDelayBanner />
         <div className="flex flex-col gap-3">
           <span className="label-mono text-xs text-foreground-dim">{dict.checkout.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
@@ -113,7 +131,7 @@ export function ReviewStepView({
           </ul>
         </div>
 
-        <form action={formAction} className="flex flex-col gap-4">
+        <form ref={formRef} action={formAction} onSubmit={onPlace} className="flex flex-col gap-4">
           <input type="hidden" name="addressId" value={addressId} />
           <input type="hidden" name="idempotencyKey" value={idempotencyKey} />
           {/* Compared, never charged: placeOrder refuses when its fee differs from the one shown above (owner 29/10 tiers). */}
@@ -148,6 +166,7 @@ export function ReviewStepView({
             {dict.checkout.placeOrderCta}
           </Button>
         </form>
+        {askDelay && <ShippingDelayDialog onAccept={acceptDelay} onClose={closeDelay} />}
       </Container>
     </>
   );
