@@ -432,7 +432,7 @@ is queued as point 4 of LAUNCH_AUDIT item 30 (the Thai language pass) — the pa
 owner's words: "A ครับ เพราะลูกค้าโอนแล้วเราถึงแจ้งเรื่องการตรวจสอบพัสดุ". Once a web order is shipped, its order page
 (`/orders/<n>`) names the carrier (Thailand Post EMS or Flash Express), shows the tracking number with a copy button and
 a "เช็คสถานะพัสดุ" button that opens that carrier's own tracking page, plus a 3-step how-to (the carrier pages do not
-fill the number in). Staff pick the carrier on /staff when they enter the number — it is never guessed from the number.
+fill the number in). Staff pick the carrier on /staff when they enter the number. A number Shipnity writes back names the carrier by its shape, whichever way the order went out: S10 "..TH" = Thailand Post, 10+ digits = DHL, any other shape waits for staff (owner 06/11: "ถ้า Track ส่งมาแบบไหนก็แปลว่าคลังส่งของขนส่งนั้น").
 The rule above still holds for the public pages (/shipping and its meta description): before payment the site sells
 "fast dispatch + tracking", not carrier names. **Later (owner 23/10):** show the tracking status inside our own site
 (no jump to the carrier) — needs the Thailand Post Track & Trace API and the Flash Express merchant API, each with an
