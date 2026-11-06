@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T03:28:52+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T03:29:44+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -331,16 +331,16 @@
       "fp": "8b5e7fd7ef71"
     },
     "/products/drag-x": {
-      "date": "2026-11-07T03:28:52+07:00",
-      "fp": "9b0677f77a7e"
+      "date": "2026-11-07T03:29:44+07:00",
+      "fp": "fe905aebbf88"
     },
     "/products/drag-x2": {
       "date": "2026-11-07T03:28:52+07:00",
       "fp": "ce1dde8a95e1"
     },
     "/products/drag-x3": {
-      "date": "2026-11-07T03:28:52+07:00",
-      "fp": "47366c76fd6a"
+      "date": "2026-11-07T03:29:44+07:00",
+      "fp": "b4cc431025b3"
     },
     "/products/dude-pod-3ml": {
       "date": "2026-11-02T05:29:33+07:00",
