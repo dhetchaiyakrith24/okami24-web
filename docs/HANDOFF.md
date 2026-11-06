@@ -174,8 +174,7 @@ Live site: ALWAYS after a merge check the deploy reached success (`gh api
   check" = slip check · a join event lost during a deploy = remove the bot from the group and invite again (DEPLOY-RENDER §8) · LINE OA
   "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member) · staff
   guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · order numbers use the UTC date (noted, not changed).
-Test trees + PR flow: reuse `_incoming/wt-golive` · `_incoming/wt-cart` (real node_modules incl. jsqr;
- ). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
+Test trees + PR flow: reuse `_incoming/wt-golive` · `_incoming/wt-cart` (real node_modules incl. jsqr). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
   junctioned node_modules break Turbopack builds · gate `full` needs a verify stamp of the EXACT head → merge origin/main + all extra
   commits BEFORE the verify run (~20 min each) · flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready`
   once → checks → `self-merge-check --pr` alone, IN the PR's tree → merge --match-head-commit → deploy success. A deploy skipped while draft = `gh pr ready --undo`, then `gh pr ready`.
