@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T01:01:02+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T03:17:33+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -143,8 +143,8 @@
       "fp": "f409fb3c3c5a"
     },
     "/brands/uwell": {
-      "date": "2026-11-02T05:34:06+07:00",
-      "fp": "26926b7474aa"
+      "date": "2026-11-07T03:17:33+07:00",
+      "fp": "cbc256f51cfa"
     },
     "/brands/voopoo": {
       "date": "2026-11-02T23:29:24+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "93e09368bc3c"
+      "date": "2026-11-07T03:17:33+07:00",
+      "fp": "3c87cc4e5f05"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -209,6 +209,10 @@
     "/products/caliburn-g3": {
       "date": "2026-10-27T23:51:32+07:00",
       "fp": "5a9ccb9c313d"
+    },
+    "/products/caliburn-g3-lite": {
+      "date": "2026-11-07T03:17:33+07:00",
+      "fp": "adea6b4e861a"
     },
     "/products/caliburn-g3-pro": {
       "date": "2026-11-02T02:45:23+07:00",
@@ -527,8 +531,8 @@
       "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-11-02T06:06:07+07:00",
-      "fp": "04357b64339c"
+      "date": "2026-11-07T03:17:33+07:00",
+      "fp": "e1c249de0856"
     },
     "/products/pods-cartridges": {
       "date": "2026-11-02T23:29:24+07:00",

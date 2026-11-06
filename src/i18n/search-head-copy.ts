@@ -345,6 +345,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): searched as "relx infinity" — RELX's store sells only the Infinity 2 Plus now.
   "relx-infinity-2-plus": "RELX Infinity รุ่นปัจจุบันคือ Infinity 2 Plus เครื่องระบบสวิตช์ที่มี 3 โหมด 6.5–10 วัตต์ แบต 440mAh และใช้ได้กับหัวพอต RELX Pod · Pod Pro · Pod Pro 2",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
+  "caliburn-g3-lite": "Caliburn G3 Lite ไม่มีจอและไม่มีปุ่ม เป็นพอตซิสเต็มจาก UWELL แบต 1200mAh ปรับได้สูงสุด 25 วัตต์ ดูดแล้วทำงานเอง ใช้หัวพอตชุด Caliburn G3",
   "caliburn-g3": "Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro เป็นพอตซิสเต็มจาก UWELL แบต 900mAh ปรับได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ หน้านี้รวมทุกสีที่ UWELL ผลิต",
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",

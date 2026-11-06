@@ -22,6 +22,7 @@ const g3PodCompatibility = {
 
 const usbC = { type: "charging" as const, label: "USB-C", note: "5V/2A charging on current-generation devices." };
 const G3_OFFICIAL = "https://www.myuwell.com/products/pod-system/caliburn-g3.html";
+const G3_LITE_OFFICIAL = "https://www.myuwell.com/caliburn/caliburn-g3-lite";
 // Round 30.4ค batch 3 (owner 2026-09-15): the 5V/2A note stays only on the three devices whose spec
 // sheet carries a 2A charging figure (G4 · G4 Mini · G3 Pro). The other seven Caliburn devices have
 // no charging figure in their specifications, so the note — unverifiable for them — is dropped in
@@ -1661,6 +1662,83 @@ export const uwellProducts: Product[] = [
     // Not caliburn-g5 / -lite (SEO watch rows frozen until 22/10 — round p63 file).
     relatedProductSlugs: ["caliburn-g3-pro", "caliburn-g4"],
     sourceUrls: [G3_OFFICIAL, "https://www.myuwell.com/g-pod-platform"],
+  },
+  {
+    // Round popular models 07/11: searched, not in the warehouse, so no price and no cart (BSOT §4). Facts: UWELL's own G3 Lite page,
+    // whose text sits in its pictures (G POD PLATFORM strip, battery strip, parts diagram, refill and airflow tiles, colour chart).
+    id: "caliburn-g3-lite",
+    slug: "caliburn-g3-lite",
+    brandId: "uwell",
+    familyId: "caliburn",
+    categoryId: "pod-systems",
+    systemType: "open-pod",
+    name: "Caliburn G3 Lite",
+    displayName: "UWELL CALIBURN G3 LITE",
+    tagline: "The Caliburn with no button: draw to vape, 1200mAh in the body.",
+    shortDescription:
+      "1200mAh, up to 25W, auto draw, dual airflow and a window on the cartridge, on the Caliburn G3 cartridges of 0.6Ω, 0.9Ω and 1.2Ω.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 1200,
+      wattageMax: 25,
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; no colour is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g3-lite/card-wm4.webp",
+        alt: "UWELL Caliburn G3 Lite, Chili Red",
+        angle: "three-quarter, isolated: studio remake of UWELL's colour chart",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from UWELL's colour chart",
+        sourceUrl: G3_LITE_OFFICIAL,
+      },
+    ],
+    openOnCardPhoto: true,
+    // UWELL's 14 colours in its own order, each name printed under its device on UWELL's colour chart.
+    colorVariants: [
+      { id: "space-black", name: "Space Black", swatchHex: "#35363a", image: { src: "/assets/products/caliburn-g3-lite/variant-space-black-wm4.webp", alt: "UWELL Caliburn G3 Lite, Space Black" } },
+      { id: "basalt-gray", name: "Basalt Gray", swatchHex: "#6f7f9c", image: { src: "/assets/products/caliburn-g3-lite/variant-basalt-gray-wm4.webp", alt: "UWELL Caliburn G3 Lite, Basalt Gray" } },
+      { id: "chili-red", name: "Chili Red", swatchHex: "#d8393c", image: { src: "/assets/products/caliburn-g3-lite/variant-chili-red-wm4.webp", alt: "UWELL Caliburn G3 Lite, Chili Red" } },
+      { id: "pearl-white", name: "Pearl White", swatchHex: "#e8e6e4", image: { src: "/assets/products/caliburn-g3-lite/variant-pearl-white-wm4.webp", alt: "UWELL Caliburn G3 Lite, Pearl White" } },
+      { id: "pastel-pink", name: "Pastel Pink", swatchHex: "#efc3c6", image: { src: "/assets/products/caliburn-g3-lite/variant-pastel-pink-wm4.webp", alt: "UWELL Caliburn G3 Lite, Pastel Pink" } },
+      { id: "ice-blue", name: "Ice Blue", swatchHex: "#a4e0dc", image: { src: "/assets/products/caliburn-g3-lite/variant-ice-blue-wm4.webp", alt: "UWELL Caliburn G3 Lite, Ice Blue" } },
+      { id: "pale-purple", name: "Pale Purple", swatchHex: "#d7a9e6", image: { src: "/assets/products/caliburn-g3-lite/variant-pale-purple-wm4.webp", alt: "UWELL Caliburn G3 Lite, Pale Purple" } },
+      { id: "mint-green", name: "Mint Green", swatchHex: "#b3d6b4", image: { src: "/assets/products/caliburn-g3-lite/variant-mint-green-wm4.webp", alt: "UWELL Caliburn G3 Lite, Mint Green" } },
+      { id: "canvas-green", name: "Canvas Green", swatchHex: "#9fe8c8", image: { src: "/assets/products/caliburn-g3-lite/variant-canvas-green-wm4.webp", alt: "UWELL Caliburn G3 Lite, Canvas Green" } },
+      { id: "canvas-blue", name: "Canvas Blue", swatchHex: "#79c4ea", image: { src: "/assets/products/caliburn-g3-lite/variant-canvas-blue-wm4.webp", alt: "UWELL Caliburn G3 Lite, Canvas Blue" } },
+      { id: "rose-bloom", name: "Rose Bloom", swatchHex: "#f3b6d2", image: { src: "/assets/products/caliburn-g3-lite/variant-rose-bloom-wm4.webp", alt: "UWELL Caliburn G3 Lite, Rose Bloom" } },
+      { id: "violet-blossom", name: "Violet Blossom", swatchHex: "#7a5cc8", image: { src: "/assets/products/caliburn-g3-lite/variant-violet-blossom-wm4.webp", alt: "UWELL Caliburn G3 Lite, Violet Blossom" } },
+      { id: "weave", name: "Weave", swatchHex: "#3fa9a4", image: { src: "/assets/products/caliburn-g3-lite/variant-weave-wm4.webp", alt: "UWELL Caliburn G3 Lite, Weave" } },
+      { id: "vision", name: "Vision", swatchHex: "#efe8d8", image: { src: "/assets/products/caliburn-g3-lite/variant-vision-wm4.webp", alt: "UWELL Caliburn G3 Lite, Vision" } },
+    ],
+    specifications: [
+      { key: "battery", label: "Battery", value: "1200mAh built-in", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "output", label: "Max output", value: "25W", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "charge-time", label: "Charging", value: "USB-C", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "firing", label: "Firing", value: "Auto draw", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "airflow", label: "Airflow", value: "Dual airflow system", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "pod-compat", label: "Pod platform", value: "Caliburn G3 integrated coil cartridges: 0.6Ω / 0.9Ω / 1.2Ω", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "refill", label: "Fill style", value: "Side refill or top refill, one type per kit", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+      { key: "battery-light", label: "Battery light", value: "LED: green 60-100%, blue 30-60%, red 0-30%", sourceStatus: "verified", sourceUrl: G3_LITE_OFFICIAL },
+    ],
+    features: [
+      { id: "battery", title: "1200mAh in the body", description: "UWELL says the battery is 20% bigger and lasts up to three days on one charge." },
+      { id: "auto-draw", title: "No button", description: "It fires when you draw, with two airflow settings on the cartridge." },
+      { id: "window", title: "See the e-liquid from any side", description: "UWELL calls it a 360° view window, so the level shows all the way round." },
+      { id: "pods", title: "Three cartridge values", description: "0.6Ω, 0.9Ω and 1.2Ω, from fuller draws to tighter ones, all from the Caliburn G3 cartridge range." },
+    ],
+    compatibility: [{ type: "pod" as const, label: "Caliburn G3 pod", note: "Caliburn G3 integrated coil cartridges." }, { type: "charging" as const, label: "USB-C", note: "Type-C charging port." }],
+    whoIsThisFor: [
+      "You want the simple Caliburn: no screen, no button, a big battery, and the same G3 cartridges.",
+    ],
+    faqs: [],
+    relatedProductSlugs: ["caliburn-g3", "caliburn-g3-pro"],
+    sourceUrls: [G3_LITE_OFFICIAL],
   },
   {
     id: "caliburn-g3-pro",
