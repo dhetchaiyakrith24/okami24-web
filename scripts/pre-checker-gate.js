@@ -396,6 +396,7 @@ function selfTest() {
   const pm = (c) => sh(c, wt);
   ok(guard(pm("gh pr merge 12 --merge"), nightSite) === "deny", "K 22:00 + a file Render builds → deny");
   ok(guard(pm("gh pr merge 12 --merge"), nightDocs) === "none", "K 22:00 + docs/ and .claude/ only → allowed");
+  ok(guard(pm("gh pr merge --merge --match-head-commit abc 12"), nightDocs) === "none", "K the PR number after the flags → still read");
   ok(guard(pm("gh pr merge 12 --merge"), daySite) === "none", "K 09:00 → allowed");
   ok(guard(pm("OKAMI24_NIGHT_OK=price-wrong gh pr merge 12 --merge"), nightSite) === "none", "K a stated reason → allowed");
   // H+ (house round 26/10): plain shell writes into the read tree

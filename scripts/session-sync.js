@@ -65,7 +65,7 @@ if (branch === "HEAD") {
   ctx.push(`Branch ${branch} has no upstream — not updated. origin/main = ${short("origin/main")}, ${count("HEAD..origin/main")} commit(s) not in this branch.`);
   // No update can reach this checkout, so what it holds stays old: say which rules differ and where the truth is (house round 06/11).
   if (count("HEAD..origin/main")) {
-    const old = git("diff", "--name-only", "HEAD", "origin/main").out.split("\n").filter((p) => LOADED.some((re) => re.test(p)));
+    const old = git("diff", "--name-only", "HEAD...origin/main").out.split("\n").filter((p) => LOADED.some((re) => re.test(p)));
     ctx.push(
       "OLD CHECKOUT: HANDOFF, round files and tools on this disk are behind main — read them with git show origin/main:<file> or work in a worktree from origin/main." +
         (old.length ? ` RE-READ NOW, the rules loaded are the old copy: ${old.join(" · ")}` : ""),

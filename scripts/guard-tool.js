@@ -160,7 +160,8 @@ function checkShell(cmd, cwd) {
   if (/\bgh\s+pr\s+merge\b/.test(plain) && !/OKAMI24_NIGHT_OK=\S/.test(cmd)) {
     const hour = Number(process.env.GUARD_TEST_HOUR ?? new Date(Date.now() + 7 * 3600e3).getUTCHours());
     if (hour >= 18) {
-      const files = prFiles((plain.match(/\bgh\s+pr\s+merge\s+(\d+)/) || [])[1]);
+      const args = (plain.match(/\bgh\s+pr\s+merge\b([^\n;&|]*)/) || [])[1] || "";
+      const files = prFiles((args.match(/(?:^|\s)(\d+)(?=\s|$)|\/pull\/(\d+)/) || []).slice(1).find(Boolean));
       if (!files || files.some((f) => !/^(docs|\.claude)\//.test(f))) {
         decide("deny", "No merge that makes Render deploy 18:00–24:00 Thai time: the slip bot misses slips while the site restarts (TEAM_RULES 13.7). Hold it until after midnight. Broken live site or a wrong price = put OKAMI24_NIGHT_OK=<reason> in front.");
       }

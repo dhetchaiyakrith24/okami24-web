@@ -260,7 +260,7 @@ console.log("\n## rules followed — PRs merged in the last 7 days");
 try {
   // one query a day: 7 days at once (bodies + file lists) timed out at GitHub with a 504 (06/11)
   const prs = [];
-  for (let d = 0; d <= 7; d++) {
+  for (let d = 0; d < 7; d++) {
     const day = new Date(Date.now() - d * 864e5).toISOString().slice(0, 10);
     prs.push(...JSON.parse(execSync(`gh pr list --state merged --limit 100 --search "merged:${day}" --json number,body,mergeCommit,files`, { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 })));
   }

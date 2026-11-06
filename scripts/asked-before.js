@@ -104,7 +104,7 @@ function openChecks(root = ROOT) {
     if (l.startsWith("## ")) live = /รอพี่ตัดสิน|งานที่พี่ต้องทำเอง/.test(l);
     const m = l.match(/^(\d+)\. (.+)/);
     if (!live || !m) continue;
-    const matches = search(m[2], all, { min: 0.4, minHits: 3, top: 2 });
+    const matches = search(m[2], all, { min: 0.55, minHits: 3, top: 2 });
     if (matches.length) res.push({ item: m[1], what: m[2].slice(0, 70), matches });
   }
   return res;
