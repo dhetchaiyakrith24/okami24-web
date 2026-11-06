@@ -18,7 +18,7 @@ export function CostUpload() {
       <form action={previewAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
         <label className="flex flex-col gap-1.5 text-sm text-foreground-muted">
           ไฟล์ทุน (.xlsx)
-          <input name="file" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground" />
+          <input name="file" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground file:mr-3 file:min-h-11 file:rounded-full file:border file:border-surface-border-soft file:bg-surface-2 file:px-4 file:text-sm file:text-foreground" />
         </label>
         <button type="submit" disabled={previewing} className={BUTTON}>
           {previewing ? "กำลังอ่าน…" : "อ่านไฟล์"}

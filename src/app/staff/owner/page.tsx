@@ -4,11 +4,13 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { isOwner, ownerAreaEnabled } from "@/lib/owner/auth";
-import { listRounds } from "@/lib/owner/bills";
+import { lastRound } from "@/lib/owner/bill-rules";
+import { listRounds, type StoredRound } from "@/lib/owner/bills";
 import { profitDays } from "@/lib/owner/costs";
 import type { DayProfit } from "@/lib/owner/cost-rules";
 import { salesToday } from "@/lib/staff/daily-sales";
 import { PendingButton } from "@/app/staff/_components/PendingButton";
+import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatSatang } from "@/app/staff/_components/format";
 import { LIST_CLASS } from "@/app/staff/_components/OrderRow";
 import { ownerLogoutAction } from "@/app/staff/owner/actions";
@@ -30,6 +32,41 @@ export const metadata: Metadata = {
 const PROFIT_DAYS = 14;
 const DAY_LABEL = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", weekday: "short", day: "numeric", month: "short" });
 const dayLabel = (date: string) => DAY_LABEL.format(new Date(`${date}T12:00:00+07:00`));
+
+/** Designer 07/11: the second question of the page, so it always answers, also when there is nothing or only an old week to show. */
+function WeekProfitRow({ round }: { round: StoredRound | undefined }) {
+  if (!round) {
+    return (
+      <Link href="/staff/owner/bill#new" className="flex min-h-16 items-center justify-between gap-3 border-y border-surface-border-soft py-3 hover:bg-surface-2">
+        <span className="text-sm text-foreground-muted">กำไรรายสัปดาห์</span>
+        <span className="text-sm text-unverified">ยังไม่มีรอบที่เทียบ · วางไฟล์บิล →</span>
+      </Link>
+    );
+  }
+  const profit = round.week.totalProfit;
+  const stale = round.to < lastRound().to;
+  const noSlips = round.week.lineSales === 0 && round.totals.lineBill > 0;
+  return (
+    <Link href={`/staff/owner/bill?round=${round.id}`} className="flex min-h-16 items-center justify-between gap-3 border-y border-surface-border-soft py-3 hover:bg-surface-2">
+      <span className="flex min-w-0 flex-col text-sm text-foreground-muted">
+        <span>
+          กำไรรอบ {round.from.slice(8, 10)}/{round.from.slice(5, 7)} ถึง {round.to.slice(8, 10)}/{round.to.slice(5, 7)}
+        </span>
+        {stale && <span className="text-unverified">รอบล่าสุดยังไม่ได้เทียบ</span>}
+        {noSlips && <span className="text-unverified">ไม่มียอดสลิปในรอบนี้ กำไร LINE ยังเชื่อไม่ได้</span>}
+      </span>
+      <span className="flex shrink-0 items-center gap-2">
+        <span className="flex flex-col items-end">
+          <span className={`font-display text-2xl font-bold tabular-nums leading-tight ${profit < 0 ? "text-danger" : "text-foreground"}`}>{formatSatang(Math.round(profit * 100))}</span>
+          {round.diffs.length > 0 && <span className="text-xs text-unverified">ไม่ตรง {round.diffs.length} จุด</span>}
+        </span>
+        <span aria-hidden className="text-foreground-dim">
+          ›
+        </span>
+      </span>
+    </Link>
+  );
+}
 
 function ProfitRow({ day }: { day: DayProfit }) {
   if (day.orders.length === 0) {
@@ -84,6 +121,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
   if (!(await isOwner())) {
     return (
       <Container className="flex max-w-xl flex-col gap-6 pb-28 pt-8 lg:pt-12">
+        <StaffBar />
         <header className="flex flex-col gap-2">
           <span className="label-mono text-xs text-ember">OKami24 · เจ้าของ</span>
           <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">ส่วนเจ้าของ</h1>
@@ -109,6 +147,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
+      <StaffBar />
       <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ส่วนเจ้าของ</h1>
 
       <section aria-label="ยอดขายวันนี้" className="flex flex-col gap-1">
@@ -119,21 +158,11 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
         </span>
       </section>
 
-      {round && (
-        <Link href={`/staff/owner/bill?round=${round.id}`} className="flex min-h-16 items-center justify-between gap-3 border-y border-surface-border-soft py-3 hover:bg-surface-2">
-          <span className="text-sm text-foreground-muted">
-            กำไรรอบล่าสุด {round.from.slice(8, 10)}/{round.from.slice(5, 7)} ถึง {round.to.slice(8, 10)}/{round.to.slice(5, 7)}
-          </span>
-          <span className="flex flex-col items-end">
-            <span className="font-semibold tabular-nums text-foreground">{formatSatang(Math.round(round.week.totalProfit * 100))}</span>
-            {round.diffs.length > 0 && <span className="text-xs text-unverified">ไม่ตรง {round.diffs.length} จุด</span>}
-          </span>
-        </Link>
-      )}
+      <WeekProfitRow round={round} />
 
       <nav aria-label="เมนูเจ้าของ" className="grid grid-cols-2 gap-2 lg:gap-3">
         {[
-          { href: "/staff/owner/bill", label: "เทียบบิลคลัง", line: "วางไฟล์ทุกเสาร์" },
+          { href: "/staff/owner/bill#new", label: "เทียบบิลคลัง", line: "วางไฟล์ทุกเสาร์" },
           { href: "/staff/owner/costs", label: "ตารางทุน", line: "อัปเดตทุน" },
         ].map((t) => (
           <Link key={t.href} href={t.href} className="flex min-h-20 flex-col justify-between gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-3 hover:bg-surface-2 lg:p-4">

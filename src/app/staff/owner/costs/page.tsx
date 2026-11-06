@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { requireOwner } from "@/lib/owner/auth";
 import { codesWithoutCost, currentCosts } from "@/lib/owner/costs";
+import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { CostUpload } from "@/app/staff/owner/costs/CostUpload";
 
 /** /staff/owner/costs — the cost table (back-office round 07/11, batch 4): the owner's Excel in, costs on the server's disk, never in git. */
@@ -21,6 +22,7 @@ export default async function OwnerCostsPage() {
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
+      <StaffBar />
       <Link href="/staff/owner" className="-ml-2 inline-flex min-h-11 w-fit items-center gap-1.5 rounded-full px-2 text-sm font-semibold text-foreground hover:bg-surface-2">
         <span aria-hidden>←</span> ส่วนเจ้าของ
       </Link>

@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { requireOwner } from "@/lib/owner/auth";
 import { lastRound } from "@/lib/owner/bill-rules";
 import { listRounds, type StoredRound } from "@/lib/owner/bills";
+import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatSatang } from "@/app/staff/_components/format";
 import { LIST_CLASS } from "@/app/staff/_components/OrderRow";
 import { BillUpload } from "@/app/staff/owner/bill/BillUpload";
@@ -40,11 +41,41 @@ function Round({ round }: { round: StoredRound }) {
       <h2 className="text-lg font-semibold text-foreground">รอบ {roundName(round)}</h2>
       <div className="flex flex-col gap-1">
         <span className="text-sm text-foreground-muted">กำไรรวม</span>
-        <span className="font-display text-4xl font-bold tabular-nums leading-tight text-foreground">{baht(week.totalProfit)}</span>
+        <span className={`font-display text-4xl font-bold tabular-nums leading-tight ${week.totalProfit < 0 ? "text-danger" : "text-foreground"}`}>{baht(week.totalProfit)}</span>
         <span className="text-sm tabular-nums text-foreground-muted">
           เว็บ {baht(week.webProfit)} · LINE {baht(week.lineProfit)}
         </span>
+        {week.lineSales === 0 && t.lineBill > 0 && <span className="text-sm text-unverified">ไม่มียอดสลิปในรอบนี้ กำไร LINE ยังเชื่อไม่ได้</span>}
       </div>
+      {diffs.length === 0 ? (
+        <p className="text-sm text-verified">ไม่มีจุดไม่ตรง</p>
+      ) : (
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold text-unverified">จุดไม่ตรง {diffs.length} จุด</h3>
+          <ul className={LIST_CLASS}>
+            {kinds.map((kind) => {
+              const rows = diffs.filter((d) => d.kind === kind);
+              return (
+                <li key={kind}>
+                  <details className="group">
+                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2 text-sm text-foreground hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
+                      <span>{kind}</span>
+                      <span className="tabular-nums text-foreground-muted">{rows.length}</span>
+                    </summary>
+                    <ul className="flex flex-col gap-1 border-t border-surface-border-soft px-4 py-3 text-sm text-foreground-muted">
+                      {rows.map((d, i) => (
+                        <li key={i}>
+                          <span className="tabular-nums text-foreground">{d.where}</span> {d.detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
       <ul className={LIST_CLASS}>
         <Row label={`เว็บ ลูกค้าจ่าย · ${t.webBilled} จาก ${t.webOrders} ออเดอร์อยู่ในบิล`} value={baht(t.webPaidBilled)} />
         <Row label="เว็บ คลังเก็บ" value={baht(t.webBill)} />
@@ -79,35 +110,6 @@ function Round({ round }: { round: StoredRound }) {
           </ul>
         </details>
       )}
-      {diffs.length === 0 ? (
-        <p className="text-sm text-verified">ไม่มีจุดไม่ตรง</p>
-      ) : (
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold text-unverified">จุดไม่ตรง {diffs.length} จุด</h3>
-          <ul className={LIST_CLASS}>
-            {kinds.map((kind) => {
-              const rows = diffs.filter((d) => d.kind === kind);
-              return (
-                <li key={kind}>
-                  <details className="group">
-                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2 text-sm text-foreground hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
-                      <span>{kind}</span>
-                      <span className="tabular-nums text-foreground-muted">{rows.length}</span>
-                    </summary>
-                    <ul className="flex flex-col gap-1 border-t border-surface-border-soft px-4 py-3 text-sm text-foreground-muted">
-                      {rows.map((d, i) => (
-                        <li key={i}>
-                          <span className="tabular-nums text-foreground">{d.where}</span> {d.detail}
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
     </section>
   );
 }
@@ -121,6 +123,7 @@ export default async function OwnerBillPage({ searchParams }: { searchParams: Pr
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
+      <StaffBar />
       <Link href="/staff/owner" className="-ml-2 inline-flex min-h-11 w-fit items-center gap-1.5 rounded-full px-2 text-sm font-semibold text-foreground hover:bg-surface-2">
         <span aria-hidden>←</span> ส่วนเจ้าของ
       </Link>
@@ -129,7 +132,7 @@ export default async function OwnerBillPage({ searchParams }: { searchParams: Pr
         <p className="text-sm text-foreground-muted">รอบเสาร์ 13:00 ถึงเสาร์ 13:00 · เทียบรอบเดิมซ้ำจะแทนผลเก่า</p>
       </div>
       {shown && <Round round={shown} />}
-      <section className="flex flex-col gap-2">
+      <section id="new" className="flex scroll-mt-20 flex-col gap-2">
         <h2 className="text-lg font-semibold text-foreground">เทียบรอบใหม่</h2>
         <BillUpload from={next.from} to={next.to} />
       </section>

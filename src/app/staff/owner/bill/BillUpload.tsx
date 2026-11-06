@@ -14,11 +14,11 @@ export function BillUpload({ from, to }: { from: string; to: string }) {
     <form action={action} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
       <label className={FIELD}>
         บิลคลัง (.xlsx)
-        <input name="bill" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground" />
+        <input name="bill" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground file:mr-3 file:min-h-11 file:rounded-full file:border file:border-surface-border-soft file:bg-surface-2 file:px-4 file:text-sm file:text-foreground" />
       </label>
       <label className={FIELD}>
         ไฟล์เรตรอบเดียวกัน (.xlsx)
-        <input name="rates" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground" />
+        <input name="rates" type="file" accept=".xlsx" required className="min-h-11 text-sm text-foreground file:mr-3 file:min-h-11 file:rounded-full file:border file:border-surface-border-soft file:bg-surface-2 file:px-4 file:text-sm file:text-foreground" />
       </label>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className={FIELD}>
