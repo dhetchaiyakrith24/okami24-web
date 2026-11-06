@@ -160,7 +160,7 @@ const allGuides: Guide[] = [
       {
         heading: "Real example: an open-system pod like the Caliburn G5",
         paragraphs: [
-          "The [Caliburn G5](/products/caliburn-g5) is the current Caliburn flagship: a 1600mAh battery, 5–35W output, a 0.85-inch colour screen and a top-fill pod.",
+          "The [Caliburn G5](/products/caliburn-g5) has a 1600mAh battery, 5–35W output, a 0.85-inch colour screen and a side-refill pod.",
           "There is no row of buttons for switching modes — a Smart Triple-Tap gesture sensor handles mode switching and status readout instead.",
           "How the tap control works, and why it needs a screen alongside it, is in [Gesture & Triple-Tap Control](/technology/gesture-and-triple-tap-control).",
         ],
@@ -548,7 +548,7 @@ const allGuides: Guide[] = [
       {
         heading: "Which devices take the GPP pod",
         paragraphs: [
-          "UWELL's GPP (G Pod Platform) pod is the top-fill pod shared across the current Caliburn line. According to UWELL's own pages it fits the Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro and G3 Pro KOKO.",
+          "UWELL's GPP (G Pod Platform) pod is the pod shared across the current Caliburn line. According to UWELL's own pages it fits the Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro and G3 Pro KOKO.",
           "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL Coil Caliburn G4&G3 Series” (written in Thai there), but it fits the G5 line as well.",
           "How a mesh coil differs from round wire is in [Mesh Coil Systems](/technology/mesh-coil-systems).",
           "One caution: the same Caliburn name does not mean the parts interchange. Caliburn G2-generation pods and GPP pods do not fit each other. If your device is a [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) or [Caliburn G4 Pro](/products/caliburn-g4-pro), GPP is the pod on the list above.",

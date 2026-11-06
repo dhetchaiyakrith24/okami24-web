@@ -167,7 +167,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
       {
         heading: "ตัวอย่างจริง: สเปก Caliburn G5 ที่มาพร้อม Smart Triple-Tap",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) แบตในตัว 1600mAh จ่ายไฟ 5–35 วัตต์ จอสี 0.85 นิ้ว ชาร์จผ่าน USB-C หัวพอตเติมด้านบน ส่วนการควบคุมคือ Smart Triple-Tap Control สลับโหมดด้วยการแตะ",
+          "[Caliburn G5](/products/caliburn-g5) แบตในตัว 1600mAh จ่ายไฟ 5–35 วัตต์ จอสี 0.85 นิ้ว ชาร์จผ่าน USB-C หัวพอตเติมด้านข้าง ส่วนการควบคุมคือ Smart Triple-Tap Control สลับโหมดด้วยการแตะ",
           "จอสี 0.85 นิ้วคือส่วนที่ทำให้ระบบแตะใช้งานได้จริง แตะแล้วดูบนจอได้เลยว่าอยู่โหมดไหน วัตต์เท่าไหร่ แบตเหลือแค่ไหน",
           "ถ้ายังเลือกเครื่องไม่ถูก อ่านที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) บทนั้นใช้ G5 เป็นตัวอย่างหลัก",
         ],
@@ -321,7 +321,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
       {
         heading: "实例：配备 Smart Triple-Tap 的 Caliburn G5 实际数据",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5)：1600mAh 内置电池、5–35W 输出、0.85 英寸彩屏、USB-C 充电，烟弹顶部注油；操控方式是 Smart Triple-Tap Control，以点击切换模式。",
+          "[Caliburn G5](/products/caliburn-g5)：1600mAh 内置电池、5–35W 输出、0.85 英寸彩屏、USB-C 充电，烟弹侧面注油；操控方式是 Smart Triple-Tap Control，以点击切换模式。",
           "0.85 英寸彩屏正是让点击操控真正可用的部分：点击之后，当前模式、功率和剩余电量直接显示在屏幕上。",
           "还没选好设备？G5 是 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 里的主要例子。",
         ],

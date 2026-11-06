@@ -142,7 +142,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ตัวอย่างจริง: พอตซิสเต็มอย่าง Caliburn G5",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) เป็นรุ่นเรือธงปัจจุบันของตระกูล Caliburn แบต 1600mAh จ่ายไฟ 5–35 วัตต์ มีจอสี 0.85 นิ้ว หัวพอตเติมด้านบน",
+          "[Caliburn G5](/products/caliburn-g5) ใช้แบต 1600mAh จ่ายไฟ 5–35 วัตต์ มีจอสี 0.85 นิ้ว และใช้หัวพอตเติมด้านข้าง",
           "ไม่มีปุ่มสลับโหมด ใช้ Smart Triple-Tap แตะสามครั้งสลับโหมดวัตต์และเช็คสถานะเครื่องแทน",
           "ระบบแตะนี้ทำงานยังไง แล้วทำไมต้องมีจอคู่กัน อ่านที่ [ระบบแตะสามครั้ง](/technology/gesture-and-triple-tap-control)",
         ],
@@ -568,7 +568,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "หัวพอตแบบ GPP ใช้ได้กับเครื่องรุ่นไหนบ้าง",
         paragraphs: [
-          "หัวพอต GPP ของ UWELL ชื่อเต็มคือ G Pod Platform เป็นหัวพอตเติมด้านบนที่ใช้ร่วมกันทั้งตระกูล Caliburn รุ่นปัจจุบัน ตามข้อมูลจาก UWELL เอง ใช้ได้กับ Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro และ G3 Pro KOKO",
+          "หัวพอต GPP ของ UWELL ชื่อเต็มคือ G Pod Platform เป็นหัวพอตที่ใช้ร่วมกันทั้งตระกูล Caliburn รุ่นปัจจุบัน ตามข้อมูลจาก UWELL เอง ใช้ได้กับ Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro และ G3 Pro KOKO",
           "ในร้านหัวพอตนี้คือ [หัวพอต GPP](/products/coil-94) มี 4 ค่าโอห์มคือ 0.4 / 0.6 / 0.9 / 1.2 โอห์ม เป็นคอยล์ mesh ชื่อสินค้าบนหน้าเว็บเขียนว่า “UWELL คอยล์ Caliburn G4&G3 Series” แต่ของจริงใช้กับสาย G5 ได้ด้วย",
           "คอยล์ mesh ต่างจากคอยล์ลวดกลมตรงไหน อ่านที่ [ระบบคอยล์แบบ Mesh](/technology/mesh-coil-systems)",
           "ข้อควรระวัง ชื่อ Caliburn เหมือนกันไม่ได้แปลว่าใส่กันได้ หัวพอตรุ่น Caliburn G2 กับหัวพอต GPP ใส่แทนกันไม่ได้ ถ้าเครื่องคุณคือ [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) หรือ [Caliburn G4 Pro](/products/caliburn-g4-pro) หัวพอตที่ใช้คือ GPP ตามรายการข้างบน",
@@ -870,7 +870,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "实例：Caliburn G5 这样的开放式换弹设备",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) 是 Caliburn 系列的现款旗舰：1600mAh 电池、5–35W 输出、0.85 英寸彩屏，以及顶部注油的烟弹。",
+          "[Caliburn G5](/products/caliburn-g5) 配备 1600mAh 电池、5–35W 输出、0.85 英寸彩屏，以及侧面注油的烟弹。",
           "它没有一排切换模式的按键，改由 Smart Triple-Tap 触控感应来切换输出模式和查看设备状态。",
           "这套点击操控如何工作、为什么要搭配屏幕，见 [手势与三击操控](/technology/gesture-and-triple-tap-control)。",
         ],
@@ -1134,7 +1134,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "GPP 烟弹适配哪些设备",
         paragraphs: [
-          "UWELL 的 GPP（G Pod Platform）烟弹是现款 Caliburn 系列共用的顶部注油烟弹。根据 UWELL 官方页面，它适配 Caliburn G5、G5 Lite、G5 Lite SE、G4 Pro、G4 Pro KOKO、G4、G4 Mini、G4 Classic、G3 Pro 和 G3 Pro KOKO。",
+          "UWELL 的 GPP（G Pod Platform）烟弹是现款 Caliburn 系列共用的烟弹。根据 UWELL 官方页面，它适配 Caliburn G5、G5 Lite、G5 Lite SE、G4 Pro、G4 Pro KOKO、G4、G4 Mini、G4 Classic、G3 Pro 和 G3 Pro KOKO。",
           "在本站，这款烟弹就是 [GPP 烟弹](/products/coil-94)，有四种阻值：0.4、0.6、0.9 和 1.2Ω，为网状芯。页面上的商品名写的是「UWELL Coil Caliburn G4&G3 Series」（页面上以泰文显示），但它同样适配 G5 系列。",
           "网状雾化芯与圆形绕线有何不同，见 [网状雾化芯系统](/technology/mesh-coil-systems)。",
           "提醒一点：同样叫 Caliburn，不代表零件可以互换。Caliburn G2 世代的烟弹与 GPP 烟弹互不兼容。如果你的设备是 [Caliburn G5](/products/caliburn-g5)、[Caliburn G3 Pro](/products/caliburn-g3-pro) 或 [Caliburn G4 Pro](/products/caliburn-g4-pro)，要用的就是上面列表中的 GPP。",
