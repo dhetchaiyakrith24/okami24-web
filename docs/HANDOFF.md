@@ -10,7 +10,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 06/11 ~22:30 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
+Updated 06/11 ~23:00 by the house-round chat. Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -35,7 +35,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
     zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
-3o No other round open. Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
+3o OPEN ROUND house 06/11 = `docs/rounds/รอบเก็บบ้าน-06-11.md`, skill house-clean (ข). Worktree of tools = PR house-0611r; status + slim PRs follow; evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows).
+  Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
     the web price (trust line stays, §18) · RELX Essential 2 / Infinity Pro 2 cards keep the spec row (Friday's call, owner "ตามมืออาชีพ").
@@ -77,7 +78,6 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - OWNER'S ORDER 06/11 ~20:00, after the notice: 1 house round (`_incoming/house-20261106/todo-next.md`; done so far = worktrees 106→34, 155+2 branches, 154 folders archived) · 2 the big jobs: order check + sales + profit + weekly summary (2h) · SEO state and what to improve · pictures: all there, new ones, flaw fixes · back office switches (item 3) · 3 one list of the small items the owner dropped in mid-work and asked Friday to note: show it to the owner.
-    HOUSE ROUND approved 06/11, not started = `docs/rounds/รอบเก็บบ้าน-06-11.md` (owner's goals + 6 steps), skill house-clean (ข).
   - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
   - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
@@ -86,9 +86,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     Box photos searched 06/11 in Chrome: Muro Salt 28mg + Freebase 4mg found. Nothing usable for Muro 3ML, Graple, RELX Creator Pod 20K, Nexswitch 16K. Only dealer posters (not pack, not used): Super Cool 30ml nic35, Marbo Freebase 30ml 6mg. RELX Smash Go page still says 20ml in the table and 18ml in the text, row stays out. salthub.com names no Zero Nano colours.
     Left: 5% flavour names on LUMI and SUP ZERO while the nicotine row says 3% (no 5% pouch seen) · 27 product pages without an article (list: articles not in PRODUCT_ARTICLES vs sitemap; most have warehouse facts only).
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
-  - QUEUED (owner 31/10): price sync — Javis picture prices vs Excel vs site · "ขายดี" from real web orders since 31/10 (threshold = owner's).
-  - IDEA (owner 31/10): Ultra's $200/month API credits → a shop AI (customer-answer bot) · plan first.
-  - Own rounds (owner 07/10): typo-tolerant search · lifestyle strip on product pages · every product gets an SEO article.
+  - The owner's small asks and ideas = one list, `docs/รอพี่ตรวจ.md` "งานเล็กที่พี่ฝากไว้".
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
@@ -251,11 +249,11 @@ page, title, meta or JSON-LD · the /warranty authenticity refund does not cover
 linked to or from the genuine M Bar 10K page. The only exception to BSOT "Genuine products"; any other lookalike = ask the owner.
 Photos (owner 27/10, the warehouse confirmed the item is identical): "ใช้รูป M Bar 10K ที่เว็บมีอยู่ได้เลย เพราะของเหมือนกันเป๊ะ" — the
 page shows the site's M Bar 10K card and the device photo of each SAME-named flavour; a flavour whose name differs gets no photo.
-**Shop and ordering:** cart on or off = §16 · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock without a rebuild IS planned — B5 (owner 26/10, low-stock label) replaces the 24/10 "stock-PR deploys are fine, no need" (house round 26/10) · checkout = phone only, no OTP · LINE orders are charged the same price as the web (owner 04/11 "ใช่ ราคาเดียวกัน (คงไว้)" — the trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" stays)
+**Shop and ordering:** cart on or off = §16 · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock without a rebuild = live since 28/10 (§16 3u) · checkout = phone only, no OTP · LINE orders are charged the same price as the web (owner 04/11 "ใช่ ราคาเดียวกัน (คงไว้)" — the trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" stays)
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · stock PRs merge
 without the owner (owner 24/10, TEAM_RULES 13.7) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are touched only when the owner asks or a BSOT fact they state changes (owner 26/10, house round) and carry no JSON-LD on purpose (item 49) ·
-**free shipping ฿500 (owner 26/10):** the start date = the owner types it; Friday never starts it alone (owner 27/10, answer 80) · the day the promo really starts, Friday adds it to BSOT and the "ส่งฟรี" / payment wording ban of THAI_STYLE §3 lifts for copy that states the real policy (owner's OK = the house round 26/10; until then the ban stays) ·
+**Shipping fees = BSOT §10 (live 30/10).** A new promo's start date = the owner types it; Friday never starts one alone (owner 27/10, answer 80) · copy stating the real policy may say "ส่งฟรี" (THAI_STYLE §3, owner's OK = the house round 26/10) ·
 green "shipped" glow = the style for key-moment effects site-wide ("ยืนบนความเรียบหรู", owner 23–24/10) · IQOS colour names = Friday decides ·
 caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices").
@@ -266,7 +264,7 @@ content where it helps rank (e-liquid product pages, /e-liquid, guides) — fact
 except /e-liquid + the refill how-to, owner 16/10 item 66) · seo-0211 maps main + secondary keywords for every page; product pages it would rewrite are split
 with the articles child by Friday first ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
-visible copy · brand names in Latin, incl. "Marbo" (the one exception + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
+visible copy · brand names in Latin, incl. "Marbo" (the two exceptions + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
 (THAI_STYLE_LOG §7) · round 7 (SEO ค, owner via Cowork 23/09): home page top word "Pod System", "บุหรี่ไฟฟ้า" second · "Marbo" and
 "M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
@@ -352,8 +350,7 @@ by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"):
 to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5).
 **Review sheet + image work (owner 07/10 night, chat):** "ใบตรวจแบบที่ทำมาล่าสุดไม่ต้องทำแล้ว … เอาไว้งานใหญ่ที่ต้องดู Before - after จริงๆ
 เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
-(the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
-live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
+(the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · no review page: new product pictures wait for the owner's yes on the comparison in chat (TEAM_RULES 13.5), other image work = checker passes → merge → live · a before/after review page ONLY for a big, hard case (a product that is hard to
 fix, a broken source photo) · image routes and credits = IMAGE_SPEC §0 item 7.
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
@@ -389,7 +386,7 @@ with its brand and footer link; its brand page = Friday decides, never an empty 
 device) and Blueberry (maker's list) — both kept (30/09 "ตามนั้นเลย").
 Search: many alias spellings per brand are fine, one direction only, never rendered; every brand on sale needs a Thai alias ·
 "น้ำยา" keeps returning its 3 prefilled items (m-switch-pod · muro-3ml · coil-74) while e-liquid stock is 0.
-Head copy, clips: "(Marbo)" stays in the 4 M Bar titles · one clip per article (round SEO ข) · en/zh caption under a clip whose Thai
+Head copy, clips: "(Marbo)" stays in the M Bar titles (THAI_STYLE §3 รอบ 8) · one clip per article (round SEO ข) · en/zh caption under a clip whose Thai
 title is hidden = "Hands-on review (in Thai)" / "真机试用（泰语讲解）" · VideoObject `uploadDate` carries the zone
 (`YYYY-MM-DDT00:00:00+07:00`, owner from GSC 26/09) · @PODSYSTEM-OKAMI-II is the owner's second YouTube channel (researchers may cite it).
 Copy: "แท้" only ever as a sweep of all brand ledes, never one brand · brand ledes say "ที่ร้านมี", not "ที่ร้านตอนนี้มี" · gallery
