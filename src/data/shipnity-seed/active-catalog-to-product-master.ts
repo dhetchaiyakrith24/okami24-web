@@ -967,7 +967,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-21/card-v2-wm3.webp",
+      src: "/assets/products/coil-21/card-v2-wm4.webp",
       alt: "VOOPOO Argus Pod cartridge, studio photo",
       angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of a shop photo of the Argus Pod cartridge. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1350,7 +1350,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-1/card-v2-wm3.webp",
+      src: "/assets/products/coil-1/card-v2-wm4.webp",
       alt: "VOOPOO PnP coils PnP-TW15 0.15Ω, PnP-DW60 0.6Ω and PnP-TR1 1.2Ω side by side, studio photo",
       angle: "Front, studio re-shoot (round \"3 coil photos\", 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px); shape checked against that photo (scripts/ai-fidelity-sheet.js outline overlay) and every printed mark by eye; card = the coils of the three option renders lined up by row.js (no AI). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1398,7 +1398,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-54/card-v2-wm3.webp",
+      src: "/assets/products/coil-54/card-v2-wm4.webp",
       alt: "NEVOKS Feelin Mini empty refillable pod cartridges, pair, studio photo",
       angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of evolutionvaping.co.uk's photo of the 2-pack (600 px, the largest clean pod-only photo found 08/10); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1510,7 +1510,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-38/card-v4-wm3.webp",
+      src: "/assets/products/coil-38/card-v4-wm4.webp",
       alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo",
       angle: "Front, studio re-shoot 09/10 (coil-94 box-shot direction, owner passed 09/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' TPP-DM2 box photo: the box upright with its three coils out of the blister lying in front; every printed mark checked by eye against that photo. Card = the DM2 option shot. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1548,7 +1548,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-53/card-v4-wm3.webp",
+      src: "/assets/products/coil-53/card-v4-wm4.webp",
       alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo",
       angle: "Card re-centred on its visual weight 16/10 (round img-1610, process-images `balance`). Front, studio re-shoot 09/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photos of the 1 Ω box and its blister of 4 (round cotton holes of the 1 Ω coil); the render's three coils + one copied coil = the 4 of the box; box art, every printed mark and the coil shape checked by eye against those photos. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -2282,7 +2282,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   },
   // maxlist (21/10): Argus Pod — the Argus mix option shows the cartridge re-shoot; the 1.2Ω and the two Top Fill options have no photo yet (the Top Fill cartridge is a different part).
   "Coil-21": {
-    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1-wm3.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
+    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1-wm4.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
   },
   // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
   "RELX-ESSENTIAL-2": {
@@ -2664,21 +2664,21 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-130-10": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-berry-grape.webp", alt: "ESKO BAR 498 (20000 puffs), Berry Grape, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   },
   "Coil-1": {
-    "Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-vm6-wm3.webp", alt: "VOOPOO PnP-VM6 coil 0.15Ω (black ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-14-wm3.webp", alt: "VOOPOO PnP-DW60 coil 0.6Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
-    "Coil-1-11": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-11-c1-wm3.webp", alt: "VOOPOO PnP-C1 ceramic coil 1.2Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-12": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-12-wm3.webp", alt: "VOOPOO PnP-TR1 coil 1.2Ω (teal-blue ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
-    "Coil-1-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-2-wm3.webp", alt: "VOOPOO PnP-VM5 coil 0.2Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-3-wm3.webp", alt: "VOOPOO PnP-VM1 coil 0.3Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-4-wm3.webp", alt: "VOOPOO PnP-M2 coil 0.6Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-5": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-5-wm3.webp", alt: "VOOPOO PnP-R1 coil 0.8Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-6": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-6-wm3.webp", alt: "VOOPOO PnP-VM4 coil 0.6Ω (red ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-7": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-7-wm3.webp", alt: "VOOPOO PnP-TM1 coil 0.6Ω (blue ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-9": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-9-wm3.webp", alt: "VOOPOO PnP-VM3 coil 0.45Ω (red ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-10": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-10-wm3.webp", alt: "VOOPOO PnP-R2 coil 1.0Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-13": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-13-wm3.webp", alt: "VOOPOO PnP-TW30 coil 0.3Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-16": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-16-wm3.webp", alt: "VOOPOO PnP-TW20 coil 0.2Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
-    "Coil-1-15": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-wm3.webp", alt: "VOOPOO PnP-TW15 coil 0.15Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
+    "Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-vm6-wm4.webp", alt: "VOOPOO PnP-VM6 coil 0.15Ω (black ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-14-wm4.webp", alt: "VOOPOO PnP-DW60 coil 0.6Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
+    "Coil-1-11": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-11-c1-wm4.webp", alt: "VOOPOO PnP-C1 ceramic coil 1.2Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-12": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-12-wm4.webp", alt: "VOOPOO PnP-TR1 coil 1.2Ω (teal-blue ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
+    "Coil-1-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-2-wm4.webp", alt: "VOOPOO PnP-VM5 coil 0.2Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-3-wm4.webp", alt: "VOOPOO PnP-VM1 coil 0.3Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-4-wm4.webp", alt: "VOOPOO PnP-M2 coil 0.6Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-5": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-5-wm4.webp", alt: "VOOPOO PnP-R1 coil 0.8Ω (white ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-6": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-6-wm4.webp", alt: "VOOPOO PnP-VM4 coil 0.6Ω (red ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-7": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-7-wm4.webp", alt: "VOOPOO PnP-TM1 coil 0.6Ω (blue ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-9": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-9-wm4.webp", alt: "VOOPOO PnP-VM3 coil 0.45Ω (red ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-10": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-10-wm4.webp", alt: "VOOPOO PnP-R2 coil 1.0Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-13": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-13-wm4.webp", alt: "VOOPOO PnP-TW30 coil 0.3Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-16": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-16-wm4.webp", alt: "VOOPOO PnP-TW20 coil 0.2Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+    "Coil-1-15": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-wm4.webp", alt: "VOOPOO PnP-TW15 coil 0.15Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
   },
   "Coil-72": {
     "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-1-wm3.webp", alt: "VOOPOO VMATE Cartridge V2 0.7Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
@@ -2700,16 +2700,16 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2-wm3.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
   },
   "Coil-53": {
-    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2-wm3.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
+    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2-wm4.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
   },
   "Coil-74": {
     "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1-v2-wm3.webp", alt: "UWELL CALIBURN X 3 mL empty pod cartridge box with two pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's box photo", sourceUrl: "https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg" },
   },
   "Coil-38": {
-    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2-wm3.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
-    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v3-wm3.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
-    "Coil-38-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-3-wm3.webp", alt: "VOOPOO TPP-DM3 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM3 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
-    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4-wm3.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-1-v2-wm4.webp", alt: "VOOPOO TPP-DM1 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's TPP-DM1 box photo, in the DM2 scene", sourceUrl: "https://www.elementvape.com/voopoo-tpp-coils" },
+    "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2-v3-wm4.webp", alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-3-wm4.webp", alt: "VOOPOO TPP-DM3 0.15Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM3 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
+    "Coil-38-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-4-v4-wm4.webp", alt: "VOOPOO TPP-DM4 0.3Ω coil box with three coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' TPP-DM4 box photo, in the DM2 scene", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
   },
   "Coil-87": {
     "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1-wm3.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
