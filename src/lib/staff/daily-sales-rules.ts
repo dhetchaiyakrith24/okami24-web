@@ -78,6 +78,24 @@ function slipsHeldAsWeb(orders: SalesOrder[], slips: SalesSlip[]): Set<string> {
   return held;
 }
 
+export interface SortedSlips {
+  line: SalesSlip[];
+  unclear: SalesSlip[];
+  heldAsWeb: SalesSlip[];
+}
+
+/** The rules of the head, as one sorting of the slips. */
+export function sortSlips(orders: SalesOrder[], slips: SalesSlip[], linkedRefs: ReadonlySet<string>): SortedSlips {
+  const free = slips.filter((s) => !linkedRefs.has(s.transRef));
+  const shop = free.filter((s) => s.receiverStatus === "match");
+  const held = slipsHeldAsWeb(orders, shop);
+  return {
+    line: shop.filter((s) => !held.has(s.transRef)),
+    unclear: free.filter((s) => s.receiverStatus === "unclear"),
+    heldAsWeb: shop.filter((s) => held.has(s.transRef)),
+  };
+}
+
 /**
  * One row per date in `dates`, in that order. `linkedRefs` = every bank reference on a payment attached to an order.
  * `orders` = confirmed orders only (the query's job), from a few days before the first date, so an order just before the
@@ -93,18 +111,15 @@ export function dailySales(dates: string[], orders: SalesOrder[], slips: SalesSl
     day.webSatang += order.total * 100;
     day.orders.push(order);
   }
-  const free = slips.filter((s) => !linkedRefs.has(s.transRef));
-  const held = slipsHeldAsWeb(orders, free.filter((s) => s.receiverStatus === "match"));
-  for (const slip of free) {
-    const day = days.get(bangkokDate(slip.transferredAt) ?? "");
+  const sorted = sortSlips(orders, slips, linkedRefs);
+  const dayOf = (slip: SalesSlip) => days.get(bangkokDate(slip.transferredAt) ?? "");
+  for (const slip of sorted.unclear) dayOf(slip)?.unclear.push(slip);
+  for (const slip of sorted.heldAsWeb) dayOf(slip)?.heldAsWeb.push(slip);
+  for (const slip of sorted.line) {
+    const day = dayOf(slip);
     if (!day) continue;
-    if (slip.receiverStatus === "unclear") day.unclear.push(slip);
-    else if (slip.receiverStatus !== "match") continue;
-    else if (held.has(slip.transRef)) day.heldAsWeb.push(slip);
-    else {
-      day.lineSatang += slip.amountSatang;
-      day.slips.push(slip);
-    }
+    day.lineSatang += slip.amountSatang;
+    day.slips.push(slip);
   }
   for (const day of days.values()) {
     day.totalSatang = day.webSatang + day.lineSatang;

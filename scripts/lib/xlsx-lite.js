@@ -1,84 +1,14 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
-// xlsx-lite.js — read and write simple .xlsx files with Node alone (the repo has no Excel package, and a new one would
-// be a package.json change for a tool that never runs on the site). Values only: no styles, no formulas kept.
+// xlsx-lite.js — write simple .xlsx files with Node alone (the repo has no Excel package, and a new one would be a
+// package.json change for a tool that never runs on the site). Values only. Reading = src/lib/owner/xlsx-read.ts.
 //
-//   readXlsx(path)  → [{ name, rows: [{ A: "text", B: "12" }, …] }, …]   path = an .xlsx file or an unzipped folder
 //   writeXlsx(path, [{ name, rows: [[cell, …], …], widths: [chars, …] }, …])   numbers stay numbers, the rest is text
-//   crc32 · zipEntries are exported for the self-test of scripts/weekly-bill-check.js.
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const zlib = require("zlib");
 
-const decode = (s) => s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
 const encode = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-/** Every file of a zip by its central directory (the local headers may leave sizes out). */
-function zipEntries(buf) {
-  let end = buf.length - 22;
-  while (end >= 0 && buf.readUInt32LE(end) !== 0x06054b50) end--;
-  if (end < 0) throw new Error("not a zip file");
-  const count = buf.readUInt16LE(end + 10);
-  let at = buf.readUInt32LE(end + 16);
-  const files = {};
-  for (let i = 0; i < count; i++) {
-    const method = buf.readUInt16LE(at + 10);
-    const packed = buf.readUInt32LE(at + 20);
-    const nameLen = buf.readUInt16LE(at + 28);
-    const extraLen = buf.readUInt16LE(at + 30);
-    const commentLen = buf.readUInt16LE(at + 32);
-    const local = buf.readUInt32LE(at + 42);
-    const name = buf.toString("utf8", at + 46, at + 46 + nameLen);
-    const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28);
-    const body = buf.subarray(start, start + packed);
-    files[name.replace(/\\/g, "/")] = method === 0 ? body : zlib.inflateRawSync(body);
-    at += 46 + nameLen + extraLen + commentLen;
-  }
-  return files;
-}
-
-function folderEntries(dir, base = dir, out = {}) {
-  for (const f of fs.readdirSync(dir)) {
-    const p = path.join(dir, f);
-    if (fs.statSync(p).isDirectory()) folderEntries(p, base, out);
-    else out[path.relative(base, p).replace(/\\/g, "/")] = fs.readFileSync(p);
-  }
-  return out;
-}
-
-function parseRows(xml, shared) {
-  return [...xml.matchAll(/<row[^>]*>([\s\S]*?)<\/row>/g)].map((m) => {
-    const row = {};
-    for (const c of m[1].matchAll(/<c r="([A-Z]+)\d+"([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g)) {
-      const inner = c[3] || "";
-      const v = inner.match(/<v>([\s\S]*?)<\/v>/);
-      const inline = [...inner.matchAll(/<t[^>]*>([\s\S]*?)<\/t>/g)].map((t) => t[1]).join("");
-      if (/t="s"/.test(c[2]) && v) row[c[1]] = shared[+v[1]] ?? "";
-      else if (inline) row[c[1]] = decode(inline);
-      else row[c[1]] = v ? decode(v[1]) : "";
-    }
-    return row;
-  });
-}
-
-function readXlsx(file) {
-  const files = fs.statSync(file).isDirectory() ? folderEntries(file) : zipEntries(fs.readFileSync(file));
-  const text = (n) => (files[n] ? files[n].toString("utf8") : "");
-  const shared = [...text("xl/sharedStrings.xml").matchAll(/<si>([\s\S]*?)<\/si>/g)].map((m) =>
-    decode([...m[1].matchAll(/<t[^>]*>([\s\S]*?)<\/t>/g)].map((t) => t[1]).join(""))
-  );
-  const rels = Object.fromEntries(
-    [...text("xl/_rels/workbook.xml.rels").matchAll(/<Relationship [^>]*>/g)].map((m) => [m[0].match(/Id="([^"]+)"/)?.[1], m[0].match(/Target="([^"]+)"/)?.[1]])
-  );
-  const sheets = [...text("xl/workbook.xml").matchAll(/<sheet [^>]*>/g)].map((m) => ({
-    name: decode(m[0].match(/name="([^"]+)"/)?.[1] ?? ""),
-    target: rels[m[0].match(/r:id="([^"]+)"/)?.[1]],
-  }));
-  return sheets.map((s, i) => {
-    const part = s.target ? `xl/${s.target.replace(/^\/?(xl\/)?/, "")}` : `xl/worksheets/sheet${i + 1}.xml`;
-    return { name: s.name, rows: parseRows(text(part), shared) };
-  });
-}
 
 const CRC = Array.from({ length: 256 }, (_, n) => {
   let c = n;
@@ -174,4 +104,4 @@ function writeXlsx(file, sheets) {
   fs.writeFileSync(file, zip(files));
 }
 
-module.exports = { readXlsx, writeXlsx, crc32, zipEntries };
+module.exports = { writeXlsx };

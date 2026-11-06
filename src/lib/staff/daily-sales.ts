@@ -1,6 +1,6 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
-import { bangkokDate, CONFIRMED_ORDER_STATUSES, dailySales, lastDates, type DaySales, type SalesOrder, type SalesSlip } from "@/lib/staff/daily-sales-rules";
+import { bangkokDate, CONFIRMED_ORDER_STATUSES, dailySales, lastDates, sortSlips, type DaySales, type SalesOrder, type SalesSlip } from "@/lib/staff/daily-sales-rules";
 
 /**
  * Reads what /staff/sales shows. Only reads; the rules of what counts = daily-sales-rules.ts. Reached through staff pages,
@@ -11,10 +11,9 @@ const CLAIM_MARGIN_DAYS = 3;
 /** Every reader takes the same window: whether a slip fits an order depends on the orders in it, so two windows could disagree on today. */
 export const SALES_DAYS = 31;
 
-function readSales(dates: string[]): DaySales[] {
+function readInputs(fromMs: number): { orders: SalesOrder[]; slips: SalesSlip[]; linked: Set<string> } {
   const db = getDb();
-  const oldest = dates[dates.length - 1];
-  const since = new Date(Date.parse(`${oldest}T00:00:00+07:00`) - CLAIM_MARGIN_DAYS * 86_400_000).toISOString();
+  const since = new Date(fromMs - CLAIM_MARGIN_DAYS * 86_400_000).toISOString();
   const statuses = CONFIRMED_ORDER_STATUSES.map((s) => `'${s}'`).join(",");
   const orders = db
     .prepare(
@@ -29,7 +28,7 @@ function readSales(dates: string[]): DaySales[] {
   const slips = db
     .prepare("SELECT trans_ref, amount_satang, transferred_at, receiver_status FROM slip_checks WHERE first_checked_at >= ?")
     .all(since) as { trans_ref: string; amount_satang: number; transferred_at: string; receiver_status: string }[];
-  const linked = db.prepare("SELECT DISTINCT slip_trans_ref AS ref FROM order_payment_submissions WHERE slip_trans_ref IS NOT NULL").all() as { ref: string }[];
+  const linkedRows = db.prepare("SELECT DISTINCT slip_trans_ref AS ref FROM order_payment_submissions WHERE slip_trans_ref IS NOT NULL").all() as { ref: string }[];
 
   const salesOrders: SalesOrder[] = orders.map((o) => ({
     orderNumber: o.order_number,
@@ -44,7 +43,22 @@ function readSales(dates: string[]): DaySales[] {
     transferredAt: s.transferred_at,
     receiverStatus: s.receiver_status,
   }));
-  return dailySales(dates, salesOrders, salesSlips, new Set(linked.map((l) => l.ref)));
+  return { orders: salesOrders, slips: salesSlips, linked: new Set(linkedRows.map((l) => l.ref)) };
+}
+
+function readSales(dates: string[]): DaySales[] {
+  const { orders, slips, linked } = readInputs(Date.parse(`${dates[dates.length - 1]}T00:00:00+07:00`));
+  return dailySales(dates, orders, slips, linked);
+}
+
+/** LINE sales of a stretch of time, for the weekly check: the same sorting as the page, by transfer time. */
+export function lineSalesBetween(fromIso: string, toIso: string): number {
+  const from = Date.parse(fromIso);
+  const to = Date.parse(toIso);
+  const { orders, slips, linked } = readInputs(from);
+  return sortSlips(orders, slips, linked)
+    .line.filter((s) => Date.parse(s.transferredAt) >= from && Date.parse(s.transferredAt) < to)
+    .reduce((n, s) => n + s.amountSatang, 0);
 }
 
 /** The last SALES_DAYS days, today first (Bangkok). */
