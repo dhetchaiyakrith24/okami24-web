@@ -75,7 +75,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
   - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
-  - CHILDREN 07/11 (Friday merges all PRs, none before 00:00–18:00 Thai if the site deploys):
+  - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
     watermark-gen4 local_73ffb3ed, PR 1269: owner picked spacing 1.7 + shift text right off the left edge, every marked picture incl. nexBar, new generation; PR 1269 at gen 4 must not merge as it is.
     seo-full local_61acafdd, round SEO full: key table v1 `side-session-notes/local_de553e7b.../seo-keys-v1-0711.md`; 1-2 days = 20 pages, 10 best sellers, top articles, the rest queued.
     popular-models local_f36f63b5: real pages for models we do not stock. backoffice local_4d9c3c59, round file on main: batches 3-5 (login, DB) wait for the owner's yes; batch 1 waits for the bill after Saturday 13:00.
