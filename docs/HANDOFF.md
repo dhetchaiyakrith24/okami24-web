@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 07/11 ~00:15 by the house-round chat. Re-read this + TEAM_RULES.
+Updated 07/11 ~00:30. Next = a planning chat Friday opens; it plans A + B in detail WITH the owner, then opens 2 child chats, one per job (owner 07/11). Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -25,7 +25,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
     Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
     Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
-    Rates 22–31/10 vs ours: 38 products, all match after the cost file `ต้นทุนสินค้า/ต้นทุนสินค้า-OKami24-2026-11-04.xlsx` (outside git; TFIT 240, RELX Infinity Pro 2 Pod 100, dude 85). No loss-makers; under 10%: Reswa Sportcan 12K (live at ฿229, own re-shoots; the legacy page stays hidden). 29 products have no rate; 4 with stock are asked in รอพี่ตรวจ.
+    Rates 22–31/10 match ours, no loss-makers (detail: git show 036fab46:docs/HANDOFF.md §16 2g); 29 products have no rate, 4 with stock in รอพี่ตรวจ.
   h ORDER CHECK PLAN (owner agreed 04/11; nothing built): 1 round Excel Saturday 13:00 → Saturday 13:00 (warehouse order no, code, qty, rate, ship 35), proved against a bill · 2 cost table into the back office ·
     3 daily sales page · 4 paste the warehouse file, list what differs · 5 LINE orders · 6 scheduled run Saturday after 13:00 + morning summary. Owner answers: only the owner sees cost and profit · LINE = daily sales from slips, cost/profit weekly from the bill ·
     accounts on the web back office, no separate app (Google/LINE sign-in + roles: owner all · admin orders, no profit · Friday read-only). Login work = 13.3 #9, write the plan for the owner first. Admin's proof file holds rates: settle what admin may see.
@@ -35,7 +35,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
     zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
 3o No round open. House round 06/11 closed 07/11, tag house-0611 (files: `git show house-0611:docs/rounds/รอบเก็บบ้าน-06-11.md`), evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows, usage-agents-skills.txt, house-check-final.txt).
-    Left from it: line-break tool (owner approved 06/11, promote `scripts/lab/seo-cand-driver.js`, needs a real build to prove) · new ceilings 75 · 70 · 63 (owner 07/11, ตามแนะนำ) travel with the line-break tool PR · 2 unmerged worktrees wt-golive and wt-staff-lag kept (their branches tagged archive/) · audit rows not done: 5-style pointers to §18 stubs are 2-step · 34 docs/seo-audit vs skill seo-audit not diffed · 25 LINE/Google still test mode?
+    Left: child local_3e295e5e builds `scripts/line-candidates.js` (no PR yet) and carries house-check CEILINGS 75 · 70 · 63 so the site restarts once; unconfirmed, main still says 60 · `_incoming/wt-house-0711` = leftover folder, archive it.
+    Audit rows not done (rule-audit.md): 16 warehouse-stock.ts stopped 30/10 and still feeds JSON-LD [เชื่อว่า: check first] · 25 LINE/Google sign-in may be test mode · 21 · 34 · 59 · 60.
   Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
@@ -60,7 +61,6 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
   a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
   g SALES LOG (owner 30/10, owner-only view) · Q9 staff dashboard [PLAN WITH THE OWNER FIRST] — unchanged, see git show 37a1b052:docs/HANDOFF.md §16 3g.
-  h shop accounts audit = separate project, PARKED.
   Test orders (OK-20261023-e25378…) → cancel on /staff "ทดสอบ" when the owner is done.
   Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
      refund ref not the amount · no DB tests · cart Back from review loops · typed note lost if placing fails · add form needs JS (double
@@ -77,9 +77,11 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
-  - OWNER'S ORDER 06/11: next = order check + sales + profit + weekly summary · SEO state and what to improve · pictures: all there, new ones, flaw fixes · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
+  - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
+  - NEXT JOB A: order check, sales, profit vs the warehouse bill. Owner's goal: "อยากดูได้จากระบบหลังบ้านเว็บและก็ตรวจได้ทุกวัน ทุก Week". Plan = 2h · method = 2g + LESSONS พ71 · `_incoming/sales-0411/` · `ต้นทุนสินค้า/`. LINE is most of the bill (22–31/10: web ฿8,285, LINE ฿126,010). Login = 13.3 #9.
+  - NEXT JOB B: SEO. Owner's goal: "Google ซ่อนเราจากคำกลุ่มนี้ แล้ว Google ซ่อนเราทำไม". Also asks: คีย์หลักคีย์รองคืออะไรเข้าใจจริงๆใช่ไหม · คีย์สินค้า คีย์ค้นหา ทำครบจริงๆแล้วหรอ · ดัชนีขอหรือยัง · พลาดขอซ้ำหน้าที่เคยขอไปแล้วหรือเปล่า. Answer from evidence: SEO_LANDSCAPE §0 · GSC + SERP · `scripts/gsc-unread.ts` · `_incoming/seo-requests.log` for repeats. Nothing checked yet.
+  - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
   - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
-  - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
   - OWNER-REQUEST AUDIT 06/11 (report `_incoming/house-20261106/owner-audit-0611.md`). Closed 06/11: picture source audit (1,358 files shown on 182 pages: 1,029 marked, all OKami24 renders by their records, 105 of them traced by folder sample only; 329 unmarked = maker art; no shop picture shown as it is, IMAGE_SPEC 'รูปร้านอื่น') · unmarked orphans · SUP ZERO guide copy.
     Brand completeness closed: ESKO, JOIWAY F3 + F4, TFIT 10 flavours, INFY POD match the maker. No official list exists to check: INFY PLUS 2.5ML, INFY 20K. IQOS read from foreign pages only (no Thai page, 404): Leaf Green vs Spring Green on ILUMA i ONE unproven. JOIWAY lists F4 PLUS (16 pairs), not in our catalog and not in the warehouse list.
