@@ -14,6 +14,17 @@ import { SHIPPING_DELAY_COPY } from "@/i18n/shipping-delay-copy";
  */
 const subscribeNever = () => () => {};
 
+/** Thai pieces each stay on one line, so a line can only end between them; en/zh are one piece and wrap as usual. */
+function Pieces({ text }: { text: string[] }) {
+  if (text.length === 1) return <>{text[0]}</>;
+  return text.map((piece, i) => (
+    <span key={piece}>
+      {i > 0 && " "}
+      <span className="inline-block whitespace-nowrap">{piece}</span>
+    </span>
+  ));
+}
+
 export function ShippingDelayBanner({ className = "" }: { className?: string }) {
   const { locale } = useLocale();
   const active = useSyncExternalStore(subscribeNever, () => shippingDelayActive(), () => false);
@@ -22,7 +33,9 @@ export function ShippingDelayBanner({ className = "" }: { className?: string }) 
   return (
     <div role="note" className={`rounded-lg border border-ember bg-surface-2 px-4 py-3 text-sm leading-relaxed ${className}`}>
       <p className="font-semibold text-ember">{copy.title}</p>
-      <p className="mt-1 text-foreground">{copy.body}</p>
+      <p className="mt-1 text-foreground">
+        <Pieces text={copy.body} />
+      </p>
     </div>
   );
 }
@@ -86,9 +99,11 @@ export function ShippingDelayDialog({ onAccept, onClose }: { onAccept: () => voi
           {copy.title}
         </h2>
         <p id="ship-delay-desc" className="mt-3 text-base leading-relaxed text-foreground">
-          {copy.body}
+          <Pieces text={copy.body} />
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{copy.question}</p>
+        <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+          <Pieces text={copy.question} />
+        </p>
         <div className="mt-6 flex flex-col gap-3">
           <button
             ref={acceptRef}
