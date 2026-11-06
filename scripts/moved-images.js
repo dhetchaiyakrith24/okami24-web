@@ -32,7 +32,9 @@ for (const old of new Set(ever)) {
   const here = bySlug.get(slugOf(old));
   if (!here) { noFolder++; continue; }
   const s = stem(old);
-  let target = here.find((p) => stem(p) === s);
+  const sameVersion = (p) => path.posix.basename(p).replace(/\.[a-z0-9]+$/i, "").replace(/-wm\d?$/, "").toLowerCase();
+  // Newest version number wins when the old name's own version is gone: files sort -v2 before -v3.
+  let target = here.find((p) => sameVersion(p) === sameVersion(old)) ?? here.filter((p) => stem(p) === s).sort().pop();
   if (!target) {
     const w = words(old);
     let best = 0;
