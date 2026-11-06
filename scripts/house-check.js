@@ -75,8 +75,8 @@ if (!shape) console.log("  none");
 // 1c. ceilings — the one home of the per-file size ceilings (owner 26/10 "9 ABC ได้": A = ceilings flagged here, report
 // only · C = skill house-clean (ก) may open a draft PR that slims a file over its ceiling). UTF-8 bytes, 1 KB = 1,000.
 const CEILINGS = [
-  [".claude/TEAM_RULES.md", 55], [".claude/LESSONS.md", 60], ["docs/THAI_STYLE.md", 60], // owner 26/10 · TEAM_RULES 40 → 55 owner 27/10
-  [".claude/LESSONS-images.md", 60], ["docs/IMAGE_SPEC.md", 60], ["docs/HANDOFF.md", 50], // Friday 27/10
+  [".claude/TEAM_RULES.md", 55], [".claude/LESSONS.md", 75], ["docs/THAI_STYLE.md", 70], // owner 26/10 · TEAM_RULES 40 → 55 owner 27/10 · LESSONS 75 THAI_STYLE 70 owner 07/11
+  [".claude/LESSONS-images.md", 60], ["docs/IMAGE_SPEC.md", 63], ["docs/HANDOFF.md", 50], // Friday 27/10 · IMAGE_SPEC 63 owner 07/11
   ...tracked.filter((f) => /^\.claude\/(agents\/[^/]+\.md|skills\/[^/]+\/SKILL\.md)$/.test(f)).map((f) => [f, 30]),
 ];
 console.log("\n## ceilings (KB = 1,000 UTF-8 bytes · report only — skill house-clean (ก) slims a file over its ceiling)");
