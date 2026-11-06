@@ -22,6 +22,23 @@
 | pod · pod system | **คีย์ใหญ่ที่สุดของร้าน — ขุมพลัง กว้าง ค้นเยอะ** (เจ้าของ 08/10) → รักษาอันดับ + ดันขึ้นต่อเป็น**เรื่องแรกของรอบ SEO ถัดไป** · หน้าเจ้าของ = `/products/pod-systems` (แถวในข้อ 0) | "ไม่มีคำตัดสินใหม่" เดิมของ pod |
 | พอด · คอยล์ · freebase · uwell | ไม่มีคำตัดสินใหม่ — คงเดิม | — |
 
+### คำตัดสิน head copy และ SEO (ย้ายจาก HANDOFF §18 06/11 · ข้อความเดิม)
+
+**Head copy and SEO:** REPLACED 02/11 — owner (typed in the SEO chat, quoted exactly): "แต่ร้านเรายังไม่ขายน้ำยา ทำไมจะไม่มีมีสิ แค่รายละเอียด เนื้อของของน้ำยาอาจจะยังไมไ่ด้ใส่
+ก็ตรวจสิเนื้อหาไหนสินค้าไหน ที่ยังขาดอะไรในการขึ้นไปสู้หน้า 1 ก็จัดการได้เลย รวมถึง คีย์หลักคีย์รอง เอาหมด" → "น้ำยา" / "น้ำยาบุหรี่ไฟฟ้า" may go into head copy and
+content where it helps rank (e-liquid product pages, /e-liquid, guides) — facts only, never a stock claim the live stock does not back (was: out of heads
+except /e-liquid + the refill how-to, owner 16/10 item 66) · seo-0211 maps main + secondary keywords for every page; product pages it would rewrite are split
+with the articles child by Friday first ·
+"พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
+visible copy · brand names in Latin, incl. "Marbo" (the two exceptions + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
+boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
+(THAI_STYLE_LOG §7) · round 7 (SEO ค, owner via Cowork 23/09): home page top word "Pod System", "บุหรี่ไฟฟ้า" second · "Marbo" and
+"M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
+"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount; its question may use the word "ราคาส่ง" (owner 16/10, list item 64) · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
+in-site count, no cookies, nothing sent outside ·
+new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` (code name of the home section "Pod Kit / พอตคิท") keeps its name — a rename changes nothing a visitor sees (Friday 15/10) · no `OKAMI24_METRICS_TOKEN` — read the
+Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
+
 ---
 
 ## 0. แผนที่คีย์ — หนึ่งกลุ่มคำ = หนึ่งหน้าเจ้าของ (รอบ SEO ง · 07/10 · ที่เดียวของ "คำนี้หน้าไหน")
@@ -448,6 +465,15 @@ relx ไม่มี นิโคติน (ไม่เขียนคำอ้
 | 26 | Search Console: ขอ index หน้าใหม่/หน้าที่แก้ (คิวละหน้า มีโควตาต่อวัน ส่งซ้ำไม่ช่วย) | ⬜ ก้อน 7 | sc/9012289 |
 
 **มาตรฐานบทความของร้าน (เจ้าของ 19/10 — 1 เรื่อง 1 บทความ · ย้ายจากสกิล seo-audit / site-architecture 26/10):** one page = one main search question · primary keyword in title, H1, first paragraph, slug · secondary phrases from real queries in H2s · depth, no word-count target (the 1,000–3,500 of HANDOFF §18 "Text length per product page" = product pages only) · one image per main section that shows the text · one main shop clip · every product named links to its live product page on first mention + 2–4 related guides. · never link an unpublished product.
+
+**Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
+the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
+**SEO on every product article (owner 03/11 "อย่าลืมใส่ใจเรื่อง SEO … คำหลักคำรอง" → "จัดการได้เลย"):** the shop's article standard
+(`docs/SEO_LANDSCAPE.md` "มาตรฐานบทความของร้าน") applies to product-page articles too: ONE main keyword per page (what people type
+for that product — §0 owner map + §9 + SEO_BASELINE GSC rows; a word another page owns is never the main keyword, link to its owner) in
+the lede · 2–4 secondary phrases from real searches as H2/H3 or their first sentence, natural Thai, no stuffing · length = the band above,
+no word-count chasing · each product named links on first mention + 2–4 guides · the PR body lists per page: main keyword · secondary
+phrases · where each sits · where the phrase came from.
 
 **Google บอกเองว่าไม่ช่วยอันดับ:** meta keywords · priority/changefreq ใน sitemap · ความยาวบทความ (ตั้งเป้าจำนวนคำ = สัญญาณไม่ดี) · ลำดับ/จำนวนหัวข้อ ·
 E-E-A-T ไม่ใช่ตัวคะแนนตรง (แต่ความน่าเชื่อถือสำคัญที่สุด) · CWV คะแนนเต็มไม่การันตีอันดับ · ขอ index ซ้ำไม่เร่ง

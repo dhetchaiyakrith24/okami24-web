@@ -156,6 +156,23 @@
 - **แผ่นไล่ดูทีละส่วน (anatomy sheet):** ตัวหนังสือทุกตัวบนแผ่น = ข้อความของหน้า (HTML/SVG 3 ภาษา) · AI วาดแค่ตัวเครื่อง/ชิ้นส่วน ·
   ภาพโปร่ง (X-ray) โชว์ได้แค่เปลือกนอก ห้ามวาดของข้างใน · แผ่นแรก (M Bar 10K) = แม่แบบของสินค้าอื่น
 
+### คำตัดสินจาก HANDOFF §18 (ย้าย 06/11 · ข้อความเดิม)
+
+**Images:** watermark = IMAGE_SPEC §3 · the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
+by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
+to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5).
+**Review sheet + image work (owner 07/10 night, chat):** "ใบตรวจแบบที่ทำมาล่าสุดไม่ต้องทำแล้ว … เอาไว้งานใหญ่ที่ต้องดู Before - after จริงๆ
+เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
+(the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · no review page: new product pictures wait for the owner's yes on the comparison in chat (TEAM_RULES 13.5), other image work = checker passes → merge → live · a before/after review page ONLY for a big, hard case (a product that is hard to
+fix, a broken source photo) · image routes and credits = IMAGE_SPEC §0 item 7.
+
+**01/10 (owner, chat):** UWELL G4 Pro KOKO — UWELL's own site is the reference for its look ("อ้างอิงเว็บหลักได้เลย") · M Bar 10K opens on the card ·
+จอพิกเซล / หน้าอีโมจิ approved (THAI_STYLE §3) · later the same day: the KOKO sheet "ทำเลย" · the G4 Pro KOKO card may change
+the caliburn-g5 baseline page's related box ("ไม่รอผล ทำเลย") · Desert Gold / Golden Carbon back views via Higgsfield (stored,
+not on the site) · unclear source = skip.
+
+**Answered 03/10 (moved from §16 04/10):** logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip.
+
 ## 5. การจับคู่รูปกับข้อมูลสินค้า
 
 - ชื่อสี/รสในข้อมูลสินค้า (`src/data/products/*.ts`) **ห้ามเปลี่ยน** เพื่อให้ตรงกับชื่อในรูป (HANDOFF §17 "Do not touch") — ชื่อไม่ตรง = TEAM_RULES 13.3 #4

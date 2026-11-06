@@ -56,6 +56,8 @@ Long logs → `_incoming/<round>/`, cite the paths. **A cloud round** writes its
 totals, error text quoted exactly) to `docs/cloud-results/<round>.md`; a computer round only when a cloud chat will
 need it. Secret-scan any text file before it goes into git; screenshots stay in `_incoming/<round>/` and go to the owner with the report, never git.
 
+- Lighthouse, only when 13.5 #4 applies: phone, local build, before and after, 3 runs per page, the median. A drop beyond the normal swing = report it; it is not a failed gate.
+
 ## A gate the round added — see it red once before trusting it
 
 Any new pass/fail that runs by itself (script gate · git hook · Claude Code hook · contract test), in the batch that
