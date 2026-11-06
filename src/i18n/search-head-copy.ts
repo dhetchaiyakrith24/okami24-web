@@ -340,6 +340,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
   "caliburn-g5": "UWELL Caliburn G5 พอตซิสเต็มที่มีจอสี 0.85 นิ้ว แตะสามครั้งเพื่อสลับโหมดวัตต์ แบต 1600mAh ปรับได้ 5–35 วัตต์",
+  // Audit 06/11: the page had no line here, so its meta opened without the model name. Numbers = verified rows.
+  "drag-6": "VOOPOO DRAG 6 แบตในตัว 4400mAh สูงสุด 220 วัตต์ ชิป GENE.TT 3.0 จอ TFT 1.66 นิ้ว ใช้ถัง UFORCE-X Tank II 5mL กับคอยล์ PnP X",
   // Round p63 (16/10): searched as "relx infinity" — RELX's store sells only the Infinity 2 Plus now.
   "relx-infinity-2-plus": "RELX Infinity รุ่นปัจจุบันคือ Infinity 2 Plus เครื่องระบบสวิตช์ที่มี 3 โหมด 6.5–10 วัตต์ แบต 440mAh และใช้ได้กับหัวพอต RELX Pod · Pod Pro · Pod Pro 2",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
