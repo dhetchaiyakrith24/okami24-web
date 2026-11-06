@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { inStockEntryKeys } from "@/lib/in-stock";
+import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory, kindCategoryId } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
@@ -260,7 +260,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             // do have something instead of ending the visit. Read from the catalog, so it needs
             // no upkeep and makes no promise about this category.
             alternativeCategories={isEmptyCategory ? categoriesWithProducts() : []}
-            inStockKeys={inStockEntryKeys(products, publishedProducts)}
+            inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
           {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
