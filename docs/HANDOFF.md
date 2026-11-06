@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Updated 06/11 ~21:30 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
-CART IS OFF until the owner says "เปิดตะกร้า" (Render OKAMI24_ORDERING = off; set on, Save rebuild deploy ~6 min). Owner 06/11 will reopen with the delay notice (#1248, ends by itself after 9/11, src/lib/commerce/shipping-delay.ts) while the warehouse catches up. /cart + /checkout redirect to /products?order=line until then; stock push, tracking sync, stock watch, order pages stay on.
-Owner may reopen before the warehouse answers on ฿35 (2g): customers pay the same, the shop may be billed ฿50.
+CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
+Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
 MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
 
