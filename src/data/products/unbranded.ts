@@ -734,7 +734,8 @@ export const unbrandedProducts: Product[] = [
     specifications: [
       { key: "type", label: "Nicotine type", value: "Freebase", sourceStatus: "verified" },
       { key: "capacity", label: "Bottle size", value: "60mL (per retailer research, not independently confirmed)", sourceStatus: "unverified" },
-      { key: "nicotine", label: "Nicotine strength", value: "~4mg (per retailer research, not independently confirmed)", sourceStatus: "unverified" },
+      // 06/11: printed on the maker's poster ("NICOTINE 4 MG · MADE BY VAPE MAKER"), read from the file ihavevape.co hosts.
+      { key: "nicotine", label: "Nicotine strength", value: "4mg", sourceStatus: "verified", sourceUrl: "https://ihavevape.co/product/muro-freebase/" },
     ],
     features: [],
     compatibility: [],
@@ -789,7 +790,8 @@ export const unbrandedProducts: Product[] = [
     specifications: [
       { key: "type", label: "Nicotine type", value: "Salt nicotine", sourceStatus: "verified" },
       { key: "capacity", label: "Bottle size", value: "30mL (per retailer research, not independently confirmed)", sourceStatus: "unverified" },
-      { key: "nicotine", label: "Nicotine strength", value: "~28mg (per retailer research, not independently confirmed)", sourceStatus: "unverified" },
+      // 06/11: printed on the maker's poster ("NICOTINE 28 MG · SALT · MADE BY VAPE MAKER"), read from the file ihavevape.co hosts.
+      { key: "nicotine", label: "Nicotine strength", value: "28mg", sourceStatus: "verified", sourceUrl: "https://ihavevape.co/product/muro-salt-nic/" },
     ],
     features: [],
     compatibility: [],
