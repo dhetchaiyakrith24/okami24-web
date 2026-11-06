@@ -335,6 +335,10 @@ export const unbrandedProducts: Product[] = [
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 8,000", sourceStatus: "verified" },
       { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },
+      // The maker's pouch, the owner's own photo 03/11 (PARAMETERS block).
+      { key: "nicotine", label: "Nicotine strength", value: "30mg", sourceStatus: "verified" },
+      { key: "resistance", label: "Resistance", value: "0.9Ω", sourceStatus: "verified" },
+      { key: "size", label: "Dimensions", value: "105 × 28 mm", sourceStatus: "verified" },
     ],
     features: [],
     compatibility: [{ type: "charging", label: "USB-C", note: "Rechargeable via USB-C." }],
@@ -430,7 +434,12 @@ export const unbrandedProducts: Product[] = [
       { id: "mix-berries-50mg", name: "Mix Berries 50MG", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-mix-berries-50mg-wm3.webp", alt: "Muro Connector 20K pod, Mix Berries 50MG" } },
       { id: "yakult-50mg", name: "Yakult 50MG", swatchHex: "#f0e4c0", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/pod-yakult-50mg-wm3.webp", alt: "Muro Connector 20K pod, Yakult 50MG" } },
     ],
-    specifications: [{ key: "puffs", label: "Rated puffs", value: "Up to 20,000", sourceStatus: "verified" }],
+    specifications: [
+      { key: "puffs", label: "Rated puffs", value: "Up to 20,000", sourceStatus: "verified" },
+      // The maker's box, the owner's own photo 03/11 (3% NICOTINE · DUAL MESH COIL).
+      { key: "nicotine", label: "Nicotine strength", value: "3%", sourceStatus: "verified" },
+      { key: "coil", label: "Coil", value: "Dual Mesh", sourceStatus: "verified" },
+    ],
     features: [],
     compatibility: [],
     whoIsThisFor: ["Muro Creator or RELX Creator owners who want a high-puff pod with a wide flavour lineup."],

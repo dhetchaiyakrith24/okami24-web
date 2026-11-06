@@ -1730,16 +1730,22 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     sourceUrls: [],
   },
   // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
+  // Numbers = the maker's pouch, the owner's own photo 03/11 (Model M01CMA · 3% nicotine · Battery capacity 670mAh).
   "RELX-LUMI-18K": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "670mAh", sourceStatus: "verified" },
+      { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
-  // Owner brief 26/10: warehouse facts only (no maker page) — the Max name "SUP Zero 22K".
+  // Owner brief 26/10: no maker page — the Max name "SUP Zero 22K". Numbers = the maker's pouch, the owner's own photo 03/11 (25 ml · 850mAh · N. 3%).
   "SUP-ZERO-22K": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 22,000", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุน้ำยา", value: "25ml", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "850mAh", sourceStatus: "verified" },
+      { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
