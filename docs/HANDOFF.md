@@ -10,27 +10,25 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 06/11 ~02:30 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
+Updated 06/11 ~16:00 by the 10th main chat (local_7b34781b). Re-read this + TEAM_RULES.
 CART IS OFF (owner 04/11 ~18:50, "the warehouse cannot ship", about 1–2 days): Render OKAMI24_ORDERING = off, rebuilt, live checked (/cart + /checkout redirect to /products?order=line,
 in-stock buy bar = LINE). Everything else stays on: stock push, tracking sync, stock watch, order pages (they do not read the switch). Owner says "เปิดตะกร้า" = set it back to on, Save rebuild deploy (~6 min).
 BEFORE REOPENING, close the shipping point in 2g.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
 MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
 
-1 main = see git log. Merged 06/11: #1237 disposables page: chooser by puffs or budget + pill link above the grid, brand table, table of every model, links from product pages and guides (customer walk 05/11 missed the chooser) · #1238 order fix below + security headers + DRAG X3 10 pictures wm4 + IQOS wording.
+1 main = see git log. Merged 06/11: #1237 disposables page: chooser by puffs or budget + pill link above the grid, brand table, table of every model, links from product pages and guides (customer walk 05/11 missed the chooser) · #1238 order fix below + security headers + DRAG X3 10 pictures wm4 + IQOS wording. · #1241 customer walk 05/11: 4 spots · #1242 pack-photo specs on 4 products.
   Merged 05/11: #1229 52 pictures in wm4 (SKE 8 · Pop Up 18 · RELX Creator 5 + lineup · Pod Pro 2 5 · Caliburn G2 pod · nexSwitch 16K pod; before/after sent, 6 pages curl-checked; 17 credits, 1 lost on DRAG X3, withdrawn) · #1230 sitemap dates per page (live 23 distinct dates, top day 49 of 182; was 148 on one day) · #1231 crawl-status tool `scripts/gsc-unread.ts` + skill seo-after-publish (first run: 182 inspected, 178 with a crawl date, 86 unread; 5 requests used 05/11, `_incoming/seo-requests.log`) · #1232 docs.
   Merged 04/11–05/11 by the 10th chat: #1227 ฿35 line (customer total unchanged; not proven: how Shipnity treats fee_lines, read the first real ฿50 order) · #1215 grey #87868b (surface-3 hover 3.91:1, below 4.5, checker note) · gen-3 watermark batches 3–11 #1214 #1216 #1217 #1218 #1219 #1221 #1222 #1223 #1224 as one series (13.5 #1): final checker PASS 1976f65f, 831 pictures re-made byte-identical, evidence `_incoming/wm3-final-check-1976f65f/`, 1,003 of 1,003 now -wm3.
   TRACKING (05/11, read live on /staff/api/shipnity-tracking-sync): sync works, 33 EMS orders carry real numbers. Shipnity wrote the owner's other phone number as the tracking number on 20 orders: 18 sat in processing (#0057 #0063 #0067–#0082), #0026 held it, #0062 has a staff number. The picture shows C2596 as warehouse "DHL (ส่งเอง)", but the site sent those 18 as EMS: unknown whether all went DHL, the owner asks the warehouse. #1238: a Thai mobile number ships the order with no number, a real number can join later (sync or staff form). NOT RUN: POST {"apply":true} to that endpoint from a staff session moves the 18 and clears #0026, only on the owner's word (รอพี่ตรวจ 104; owner 06/11 ~02:20 "พรุ่งนี้ค่อยว่ากัน"). After it, open one customer order page: the wording was never seen in a browser. 7 more have no number (รอพี่ตรวจ 106).
 2 OPEN WORK, in merge order:
-  b #1208 child speed-sec-0411 (local_c2dd8fa6): 5 security headers + logo srcset = PARKED by the owner 04/11 ("not urgent, hold"). Stays a draft, no "ready" until the owner says go.
-    Passed verify + gate + checker at 542bd400 locally; GitHub still showed 41bc378a at 21:00 (push not landed during the outage) — push again, then redo verify on the go.
   e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live (#1237). Left: request indexing for /products/disposables + changed pages, block 4 reads 09/11 · 15/11 · 10/12, then close with tag disposable-0511.
     Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
   g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
     Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
     Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
     Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
-    Rates 22–31/10 vs ours: 38 products, all match after the cost file `ต้นทุนสินค้า/ต้นทุนสินค้า-OKami24-2026-11-04.xlsx` (outside git; TFIT 240, RELX Infinity Pro 2 Pod 100, dude 85). No loss-makers; under 10%: Reswa Sportcan 12K (hidden). 29 products have no rate; 4 with stock are asked in รอพี่ตรวจ.
+    Rates 22–31/10 vs ours: 38 products, all match after the cost file `ต้นทุนสินค้า/ต้นทุนสินค้า-OKami24-2026-11-04.xlsx` (outside git; TFIT 240, RELX Infinity Pro 2 Pod 100, dude 85). No loss-makers; under 10%: Reswa Sportcan 12K (live at ฿229, own re-shoots; the legacy page stays hidden). 29 products have no rate; 4 with stock are asked in รอพี่ตรวจ.
   h ORDER CHECK PLAN (owner agreed 04/11; nothing built): 1 round Excel Saturday 13:00 → Saturday 13:00 (warehouse order no, code, qty, rate, ship 35), proved against a bill · 2 cost table into the back office ·
     3 daily sales page · 4 paste the warehouse file, list what differs · 5 LINE orders · 6 scheduled run Saturday after 13:00 + morning summary. Owner answers: only the owner sees cost and profit · LINE = daily sales from slips, cost/profit weekly from the bill ·
     accounts on the web back office, no separate app (Google/LINE sign-in + roles: owner all · admin orders, no profit · Friday read-only). Login work = 13.3 #9, write the plan for the owner first. Admin's proof file holds rates: settle what admin may see.
@@ -38,7 +36,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   SEO findings: Google hid us on general terms since 27/10
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
-    zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers · "IQOS รุ่นก่อน" vs the searched "รุ่นเก่า".
+    zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
 3o No other round open. Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
@@ -46,7 +44,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     PARKED / LATER: LINE Webhook redelivery (owner "เอาไว้ก่อน" 03/11) · unwatermarked originals under public/assets → cleanup after gen 3 ·
       THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง · coil-56 / coil-83 retailer facts → details pass ·
       ZERO PRO "Copper/Champagne" + INFY "Frost Pink" names not on the makers' sites
-      · MURO Space 15K stays hidden (retailer pictures) · Reswa Sportcan 12K is live at ฿229, check whether its pictures are our own.
+      · MURO Space 15K stays hidden (retailer pictures).
     Owner to answer = docs/รอพี่ตรวจ.md.
   b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
      https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer.
@@ -80,11 +78,11 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
-  - Customer walk 05/11 fixes, small batch next: cart shipping line reads as 3 prices · address search placeholder cut at 390 · LINE button over the hint under it · late-number form button still says "บันทึกว่าส่งของแล้ว".
   - HOUSE ROUND = LAST, after the work above (owner 06/11): done = worktrees 106→34, 155+2 branches, 154 folders archived. Left = `_incoming/house-20261106/todo-next.md`.
   - Watermark: new pictures = gen 4 (no helmet). The 1,003 live gen-3 pictures keep the helmet until the owner says go back ("เดี๋ยวค่อยกลับไปตามแก้").
   - Map `source` lines of 14 Pop Up flavours name the old input (process-images map).
-  - 09/11 SERP + rank read incl. disposable terms · GSC read 15/11 · 10/12 · Search Console 2–4 weeks after 12/10.
+  - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
+  - OWNER-REQUEST AUDIT 06/11 (437 owner messages against main; main chats 1–9 were deleted = its limit; report `_incoming/house-20261106/owner-audit-0611.md`). Friday's open items: box photos for 13 products the owner told Friday to find by Chrome 03/11, search stopped, Muro Connector poster found, rows not added · brand completeness pass not closed (JOIWAY TFIT INFY IQOS ESKO) · per-page key work for drag-6, caliburn-g5, relx-lumi-18k, /brands/joiway · relx-lumi-18k has no article · source audit of live pictures vs "ห้ามนำรูปคนอื่นมาใช้" (03/11) · 741 unmarked files under public/assets/products (about 423 orphans, cleanup after gen 3) · guide copy says SUP ZERO's number comes from the name, the pouch prints it.
   - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
   - QUEUED (owner 31/10): price sync — Javis picture prices vs Excel vs site · "ขายดี" from real web orders since 31/10 (threshold = owner's).
   - IDEA (owner 31/10): Ultra's $200/month API credits → a shop AI (customer-answer bot) · plan first.
