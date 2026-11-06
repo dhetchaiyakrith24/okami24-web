@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
@@ -9,12 +10,31 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { SimilarItem } from "@/lib/similar-in-stock";
 
 /** Directly under the head of a page with nothing to buy: up to 4 close models a customer can buy now (round popular
- *  models 07/11). The list comes from the build; a card the live stock has since sold out drops out here. */
-export function SimilarInStock({ items }: { items: SimilarItem[] }) {
+ *  models 07/11). The list comes from the build; a card the live stock has since sold out drops out here, the block goes
+ *  when this page's own product is back in stock, and a page built with stock asks for its list once the live stock empties it. */
+export function SimilarInStock({ slug, items }: { slug: string; items: SimilarItem[] }) {
   const { dict } = useLocale();
   const live = useLiveCardStock();
-  const shown = items.filter((i) => live?.[i.slug]?.s !== false).slice(0, 4);
-  if (shown.length === 0) return null;
+  const own = live?.[slug];
+  const emptiedSinceBuild = items.length === 0 && own?.o === true;
+  const [fetched, setFetched] = useState<SimilarItem[]>([]);
+  useEffect(() => {
+    if (!emptiedSinceBuild) return;
+    let gone = false;
+    fetch(`/api/similar?slug=${encodeURIComponent(slug)}`, { credentials: "omit" })
+      .then((r) => (r.ok ? (r.json() as Promise<{ items?: SimilarItem[] }>) : null))
+      .then((a) => {
+        if (!gone && a?.items) setFetched(a.items);
+      })
+      .catch(() => {
+        /* no list: the page shows no block */
+      });
+    return () => {
+      gone = true;
+    };
+  }, [emptiedSinceBuild, slug]);
+  const shown = (items.length > 0 ? items : fetched).filter((i) => live?.[i.slug]?.s !== false).slice(0, 4);
+  if (shown.length === 0 || own?.s === true) return null;
 
   return (
     <section id="similar-in-stock" className="scroll-mt-24 border-b border-surface-border-soft bg-surface-0 py-10 lg:py-14">

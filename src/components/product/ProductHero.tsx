@@ -97,7 +97,7 @@ export function ProductHero({
   /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
    *  price, no cart action — exactly how every legacy product rendered before that date. */
   sellingPrice?: number | null;
-  /** A no-price page: where the closest models we have sit (round popular models 07/11). Undefined = nothing to offer. */
+  /** Where the closest models we have sit, once there is nothing to buy here (round popular models 07/11). */
   similarHref?: string;
   imageDisplayInfo?: ImageDisplayInfo | null;
   /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
@@ -469,6 +469,7 @@ export function ProductHero({
           )}
 
           <div className={`flex flex-wrap gap-3 max-lg:order-9 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
+            {similarHref && sellingPrice !== null && everyOptionSoldOut && <Button href={similarHref}>{dict.product.similarInStockLink}</Button>}
             <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null || similarHref ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>
