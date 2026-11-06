@@ -41,8 +41,9 @@ const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "
 /** Fill-your-own devices (categories.ts: refillable VOOPOO joined pod-systems; switch-pods are prefilled, never filled). */
 const REFILLABLE_CATEGORY = "pod-systems";
 const E_LIQUID_CATEGORY = "e-liquid";
-/** E-liquids in tier 1: two, so a refillable device's row is never all e-liquid (owner 28/10); the rest are tier 3. */
+/** E-liquids in tier 1 and in tier 3: two each, so a refillable device's row is never all e-liquid (owner 28/10). */
 const LIKE_LIQUIDS = 2;
+const MORE_LIQUIDS = 2;
 
 /** Heat-not-burn and vapour are different shoppers: the shop's picks show the product's own family first (checker #960 —
  *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family. */
@@ -109,7 +110,7 @@ function tiersOf(slug: string, catalog: CatalogItem[], ok: (item: CatalogItem) =
   return {
     fits: inTurns(verified, liquids.slice(0, LIKE_LIQUIDS)),
     brand: own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : [],
-    moreLiquids: liquids.slice(LIKE_LIQUIDS),
+    moreLiquids: liquids.slice(LIKE_LIQUIDS, LIKE_LIQUIDS + MORE_LIQUIDS),
     // A pod / coil / stick of another make fits other devices — shown beside a device it reads as a spare for it (checker #960).
     rest: isPart(own) ? [] : sameCategory,
   };
@@ -156,7 +157,7 @@ export interface RelatedItem {
 }
 
 /** More candidates than seats, so a card that sells out after the build leaves another to take its place. */
-const CANDIDATES = 12;
+const CANDIDATES = 10;
 
 /** What ProductCard does not read: the text of the product's own page. The block's cards reach the browser in every
  *  product page, and these fields were most of their weight. */

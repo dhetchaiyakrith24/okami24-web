@@ -49,6 +49,7 @@ check("tier 2 before tier 3: its own brand before more e-liquid", lastIndex(argu
 check("tier 3 before tier 4: more e-liquid before other pod systems", lastIndex(argus, (i) => i.categoryId === "e-liquid") < firstPodOther, slugs(argus));
 check("tier 4: disposables after the other pod systems", lastIndex(argus, (i) => i.categoryId === "pod-systems") < firstIndex(argus, (i) => i.categoryId === "disposables"), slugs(argus));
 check("no card twice", new Set(argus.map((i) => i.slug)).size === argus.length);
+check("a row is never all e-liquid: four at most", argus.filter((i) => i.categoryId === "e-liquid").length === 4, slugs(argus));
 const noPods = suggestionOrder(["argus-g4"], (i) => i.slug !== "argus-g4" && buyable(i) && i.categoryId !== "pod-systems");
 check("no other pod system in stock: the disposables step up", noPods.some((i) => i.categoryId === "disposables"), slugs(noPods));
 const disposable = suggestionOrder(["m-bar-9k"], (i) => i.slug !== "m-bar-9k" && buyable(i));
