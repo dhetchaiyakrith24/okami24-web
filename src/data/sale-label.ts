@@ -14,7 +14,8 @@ export interface SaleLabel {
   /** The struck-through price. */
   label: number;
   /** The badge number: how far the selling price sits below the label, rounded DOWN so the badge never says more than the
-   *  two printed prices show (฿1,090 under ฿1,290 = 15.5 % → "−15%"). */
+   *  two printed prices show (฿1,090 under ฿1,290 = 15.5 % → "−15%"). A row with its own `badge` shows that round number
+   *  instead (owner 07/11: 5 · 10 · 15 … 50), within 1 point of the real gap. */
   pct: number;
 }
 
@@ -28,5 +29,5 @@ export function saleLabel(slug: string, sellingPrice: number | null | undefined,
   if (!SALE_LABEL_ON || soldOut || sellingPrice == null) return null;
   const row = LABEL_PRICES[slug];
   if (!row || row.price !== sellingPrice || row.label <= sellingPrice) return null;
-  return { label: row.label, pct: Math.floor(((row.label - sellingPrice) / row.label) * 100) };
+  return { label: row.label, pct: row.badge ?? Math.floor(((row.label - sellingPrice) / row.label) * 100) };
 }
