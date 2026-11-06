@@ -198,7 +198,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (18/10): KS Quikpro kit (Max-only, "Product 780") — Max "ราคาขาย" ฿389 for the parent and its 4 kit options (same read).
   "KS-QUIKPRO-KIT": { sellingPrice: 389, lastPriceReview: "2026-10-18" },
   // Round list19 (18/10): Pop Up 10K pod — Max "ราคาขาย" ฿199 for the parent and every flavour (same 17/10 read).
-  "Pod-154": { sellingPrice: 199, lastPriceReview: "2026-10-18" },
+  // price-check 2026-11-07: the new catalogue image (passed 31/10, owner picked ฿219) prints ฿219; Max ราคาขาย ฿199 read 2026-11-07 = +10.1%; was ฿199.
+  "Pod-154": { sellingPrice: 219, lastPriceReview: "2026-11-07" },
   // Round list19 (19/10): Reswa Sportcan 12000 (Max "Product 1129596") — Max ราคาขาย ฿229 for the parent and its 5 flavours (read 2026-10-17).
   "Pod-142": { sellingPrice: 229, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Nexswitch 16000 (Max "Product 1176446") — Max ราคาขาย ฿419 for the kit options Pod-161-* and ฿269 for the
@@ -237,7 +238,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109) — Max ราคาขาย ฿159 for the parent and its 4 flavours (read 2026-10-17).
-  "Eliquid-109": { sellingPrice: 159, lastPriceReview: "2026-10-19" },
+  // price-check 2026-11-07: the new catalogue image (owner approved ฿169 on 03/11, passed 04/11) prints ฿169; Max ราคาขาย ฿159 read 2026-11-07 = +6.3%; was ฿159.
+  "Eliquid-109": { sellingPrice: 169, lastPriceReview: "2026-11-07" },
   // Round list19 (19/10): Super Cool Salt Nic (Max ELQ-6) — Max ราคาขาย ฿269 for the parent and its 10 flavours (read 2026-10-17).
   // owner-confirmed 2026-10-22: admin ICE's LINE 22/10 15.00 "SUPERCOOL SALTNIC ปรับเป็นขวดละ 280.-", forwarded by the owner "แก้เรื่องราคา
   // ตามแอดมินพี่แจ้งมา" — owner override (was ฿269), every flavour. Max says ฿269 until the admin updates it.

@@ -4,7 +4,7 @@
  * slug → the selling price the label was approved against + the struck-through label price. Display only: nothing that
  * charges, totals, sends or describes a price to Google reads this file (src/data/label-prices-contract-test.ts).
  */
-export const LABEL_PRICES: Readonly<Record<string, { price: number; label: number }>> = {
+export const LABEL_PRICES: Readonly<Record<string, { price: number; label: number; badge?: number }>> = {
   "argus-g3-mini": { price: 790, label: 909 },
   "argus-g4": { price: 1100, label: 1290 },
   "argus-g4-mini": { price: 890, label: 1029 },
@@ -40,7 +40,7 @@ export const LABEL_PRICES: Readonly<Record<string, { price: number; label: numbe
   "drag-x3": { price: 1590, label: 1890 },
   "dude-pod-3ml": { price: 159, label: 189 },
   "eliquid-1": { price: 290, label: 339 },
-  "eliquid-109": { price: 159, label: 189 },
+  "eliquid-109": { price: 169, label: 189 },
   "eliquid-64": { price: 300, label: 349 },
   "eliquid-72": { price: 300, label: 349 },
   "eliquid-73": { price: 300, label: 349 },
@@ -76,7 +76,7 @@ export const LABEL_PRICES: Readonly<Record<string, { price: number; label: numbe
   "pod-142": { price: 229, label: 269 },
   "pod-149": { price: 329, label: 379 },
   "pod-150": { price: 299, label: 349 },
-  "pod-154": { price: 199, label: 229 },
+  "pod-154": { price: 219, label: 229, badge: 5 },
   "pod-159": { price: 550, label: 639 },
   "pod-169": { price: 150, label: 179 },
   "pod-180": { price: 359, label: 419 },
