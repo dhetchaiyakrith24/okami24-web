@@ -1,7 +1,7 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
-const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm3.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
+const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm5.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
@@ -159,7 +159,7 @@ export const relxProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // Image round img-1610 16/10: card-v3 = studio re-shoot with the real cap (grey disc + V groove; checker #540 r2 taste note on card-v2).
-        src: "/assets/products/relx-infinity-2-plus/card-v3-wm3.webp",
+        src: "/assets/products/relx-infinity-2-plus/card-v3-wm5.webp",
         alt: "RELX Infinity 2 Plus, Black Sapphire, front view",
         angle: "front, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from RELX's own Black Sapphire front render",
         transparentBackground: true,
@@ -244,7 +244,7 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-creator/card-v4-wm4.webp",
+        src: "/assets/products/relx-creator/card-v4-wm5.webp",
         alt: "RELX Creator Pro device, grey body with a yellow base and pixel smiley screen, upright three-quarter view",
         angle: "3/4, upright — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10)",
         transparentBackground: true,
@@ -256,19 +256,19 @@ export const relxProducts: Product[] = [
     // photos; v4 (07/10 night) = the five colours as one zig-zag group (1/3/5 in front, 2/4 behind) — the one-row v3 left
     // the square half empty at 390 (look-batch/lineup-zig.js --zig --pick).
     lineupImage: {
-      src: "/assets/products/relx-creator/lineup-v5-wm4.webp",
+      src: "/assets/products/relx-creator/lineup-v5-wm5.webp",
       alt: "RELX Creator Pro device, all 5 colours — black, white, grey yellow, green, yellow",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v5-wm4.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
-      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v5-wm4.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v5-wm5.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v5-wm5.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       // Batch 4d-2 (06/10): RELX's other three colours (relxnow.com lists Black / White / Green / Yellow) — catalog completeness;
       // photos = see the "Photos" comment above. The shop's stock is unknown.
-      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v5-wm4.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v5-wm4.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v5-wm4.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v5-wm5.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v5-wm5.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v5-wm5.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
     ],
     // RELX's own Creator Pro Device page (relxnow.com, read 2026-09-30): 800mAh, Type-C fast charging, one button — one
     // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
