@@ -65,6 +65,11 @@ for (const e of (text[".claude/LESSONS.md"] || "").split(/\n(?=## )/).slice(1)) 
   const lines = body.filter((l) => l.trim() && !/^#/.test(l));
   if (lines.length === 1 && /^→ /.test(lines[0].trim())) { console.log(`  LESSONS stub: ${head.slice(3, 70)}`); shape++; }
 }
+for (const f of [".claude/LESSONS.md", ".claude/LESSONS-images.md"]) {
+  const seen = {};
+  for (const m of (text[f] || "").matchAll(/^## ([พช]?\d+)\./gm)) seen[m[1]] = (seen[m[1]] || 0) + 1;
+  for (const [n, c] of Object.entries(seen)) if (c > 1) { console.log(`  ${f}: number ${n} used ${c} times`); shape++; }
+}
 if (!shape) console.log("  none");
 
 // 1c. ceilings — the one home of the per-file size ceilings (owner 26/10 "9 ABC ได้": A = ceilings flagged here, report
@@ -97,7 +102,7 @@ for (const [f, t] of Object.entries(text)) {
       // the line hid every dead pointer on it
       const end = m.index + m[0].length;
       const near = line.slice(Math.max(0, m.index - 15), m.index) + " " + line.slice(end, end + 50);
-      if (!fs.existsSync(p) && !/\$|<|\{|\*/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(near)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
+      if (!fs.existsSync(p) && !/\$|<|\{|\*|^\.claude\/worktrees/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(near)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
     }
     // a pointer to a HEADING by its words: <FILE> [§N] "heading" — the words must still be in that file (in §N when given).
     // 15/10: house-clean pointed at HANDOFF §18 "Answered 15/10" after the heading was renamed; nothing caught it.
@@ -297,6 +302,16 @@ const mine = fs.existsSync(st) ? fs.readdirSync(st).filter((n) => /^(okami24|fri
 for (const n of mine) {
   const f = path.join(st, n, "SKILL.md");
   console.log(`  ${n.padEnd(34)} ${fs.existsSync(f) ? `prompt saved ${fs.statSync(f).mtime.toISOString().slice(0, 10)}` : "(no SKILL.md)"}`);
+  // These prompts live outside git, so no checker ever reads them (rule-audit row 54).
+  if (!fs.existsSync(f)) continue;
+  const prompt = rd(f);
+  const desc = (prompt.match(/^description:.*$/m) || [""])[0];
+  if (/\bModel\s*=|\b(Sonnet|Haiku|Opus)\s+\d/.test(desc)) console.log("    flag: names a model in its description (model + effort live in the app, HANDOFF §18)");
+  if (/\bgh pr merge\b|\bmerges? it\b/i.test(prompt) && !prompt.includes("18:00")) console.log("    flag: can merge but never names the 18:00–24:00 window (TEAM_RULES 13.7)");
+  for (const m of prompt.matchAll(/\b(?:until|expires?|removes? this)[^\n]{0,60}?(\d{2})\/(\d{2})(?![\d/])/gi)) {
+    const d = new Date(new Date().getFullYear(), Number(m[2]) - 1, Number(m[1]));
+    if (d < new Date()) console.log(`    flag: line past its date ${m[1]}/${m[2]}: ${m[0].slice(0, 70)}`);
+  }
 }
 if (!mine.length) console.log("  none");
 console.log("  (enabled or not = the app's list_scheduled_tasks — a folder whose task is gone from the app is a leftover)");

@@ -389,6 +389,15 @@ function selfTest() {
   ok(guard(sh("git checkout main 2>&1 | tee _incoming/x.log"), env) === "deny", "พ22 note on → a log under _incoming/ does not excuse a checkout → deny");
   ok(guard(sh("git checkout main", wt), env) === "none", "พ22 note on → the shell sits in another worktree → allowed");
   ok(guard(sh("node scripts/pre-checker-gate.js --done"), env) === "none", "พ22 note on → --done → allowed");
+  // K (house round 06/11): a merge that makes Render deploy, 18:00–24:00 Thai time
+  const nightSite = { ...env, GUARD_TEST_HOUR: "22", GUARD_TEST_FILES: "src/app/page.tsx,docs/a.md" };
+  const nightDocs = { ...env, GUARD_TEST_HOUR: "22", GUARD_TEST_FILES: "docs/a.md,.claude/LESSONS.md" };
+  const daySite = { ...env, GUARD_TEST_HOUR: "9", GUARD_TEST_FILES: "src/app/page.tsx" };
+  const pm = (c) => sh(c, wt);
+  ok(guard(pm("gh pr merge 12 --merge"), nightSite) === "deny", "K 22:00 + a file Render builds → deny");
+  ok(guard(pm("gh pr merge 12 --merge"), nightDocs) === "none", "K 22:00 + docs/ and .claude/ only → allowed");
+  ok(guard(pm("gh pr merge 12 --merge"), daySite) === "none", "K 09:00 → allowed");
+  ok(guard(pm("OKAMI24_NIGHT_OK=price-wrong gh pr merge 12 --merge"), nightSite) === "none", "K a stated reason → allowed");
   // H+ (house round 26/10): plain shell writes into the read tree
   ok(guard(sh("rm docs/old.md"), env) === "deny", "H+ note on → rm in the read tree → deny");
   ok(guard(sh("sed -i 's/a/b/' docs/HANDOFF.md"), env) === "deny", "H+ note on → sed -i in the read tree → deny");
