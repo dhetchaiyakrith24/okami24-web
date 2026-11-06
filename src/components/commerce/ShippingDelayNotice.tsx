@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
+import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { shippingDelayActive } from "@/lib/commerce/shipping-delay";
 import { SHIPPING_DELAY_COPY } from "@/i18n/shipping-delay-copy";
@@ -87,6 +88,7 @@ export function ShippingDelayDialog({ onAccept, onClose }: { onAccept: () => voi
         <p id="ship-delay-desc" className="mt-3 text-base leading-relaxed text-foreground">
           {copy.body}
         </p>
+        <p className="mt-3 text-sm leading-relaxed text-foreground-muted">{copy.question}</p>
         <div className="mt-6 flex flex-col gap-3">
           <button
             ref={acceptRef}
@@ -96,6 +98,15 @@ export function ShippingDelayDialog({ onAccept, onClose }: { onAccept: () => voi
           >
             {copy.accept}
           </button>
+          <a
+            href={CONTACT.lineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-line-spot="delay-card"
+            className="rounded-full border border-ember px-5 py-3 text-center text-sm font-semibold text-foreground transition-colors hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember"
+          >
+            {copy.line}{String.fromCharCode(0xa0)}{CONTACT.lineId}
+          </a>
           <Link
             href="/cart"
             className="rounded-full border border-surface-border px-5 py-3 text-center text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
