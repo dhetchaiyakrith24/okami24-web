@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-07",
-  "endDate": "2026-11-03",
+  "startDate": "2026-10-08",
+  "endDate": "2026-11-04",
   "dimensions": [
    "page"
   ]
@@ -11,64 +11,55 @@
    "keys": [
     "https://okami24.store/"
    ],
-   "clicks": 136,
-   "impressions": 226,
-   "ctr": 0.6017699115044248,
-   "position": 2.4557522123893802
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/drag-6"
-   ],
-   "clicks": 58,
-   "impressions": 181,
-   "ctr": 0.32044198895027626,
-   "position": 6.165745856353591
+   "clicks": 135,
+   "impressions": 227,
+   "ctr": 0.5947136563876652,
+   "position": 2.4537444933920707
   },
   {
    "keys": [
     "https://okami24.store/products/pod-systems"
    ],
-   "clicks": 55,
-   "impressions": 421,
-   "ctr": 0.13064133016627077,
-   "position": 7.0997624703087885
+   "clicks": 54,
+   "impressions": 417,
+   "ctr": 0.12949640287769784,
+   "position": 7.093525179856115
+  },
+  {
+   "keys": [
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 52,
+   "impressions": 163,
+   "ctr": 0.31901840490797545,
+   "position": 6.2024539877300615
   },
   {
    "keys": [
     "https://okami24.store/products/caliburn-g5"
    ],
-   "clicks": 27,
-   "impressions": 73,
-   "ctr": 0.3698630136986301,
-   "position": 4.328767123287671
+   "clicks": 29,
+   "impressions": 74,
+   "ctr": 0.3918918918918919,
+   "position": 4.243243243243244
   },
   {
    "keys": [
     "https://okami24.store/brands/uwell"
    ],
-   "clicks": 26,
-   "impressions": 138,
-   "ctr": 0.18840579710144928,
-   "position": 13.282608695652174
-  },
-  {
-   "keys": [
-    "https://okami24.store/brands/voopoo"
-   ],
-   "clicks": 12,
-   "impressions": 62,
-   "ctr": 0.1935483870967742,
-   "position": 16.887096774193548
+   "clicks": 25,
+   "impressions": 137,
+   "ctr": 0.18248175182481752,
+   "position": 13.343065693430656
   },
   {
    "keys": [
     "https://okami24.store/products/argus-g4"
    ],
-   "clicks": 12,
-   "impressions": 59,
-   "ctr": 0.2033898305084746,
-   "position": 6.864406779661017
+   "clicks": 11,
+   "impressions": 55,
+   "ctr": 0.2,
+   "position": 6.6
   },
   {
    "keys": [
@@ -81,39 +72,21 @@
   },
   {
    "keys": [
-    "https://okami24.store/brands/joiway"
+    "https://okami24.store/brands/voopoo"
    ],
    "clicks": 9,
-   "impressions": 263,
-   "ctr": 0.034220532319391636,
-   "position": 8.281368821292777
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/argus-g4-mini"
-   ],
-   "clicks": 9,
-   "impressions": 57,
-   "ctr": 0.15789473684210525,
-   "position": 6.684210526315789
+   "impressions": 43,
+   "ctr": 0.20930232558139536,
+   "position": 19.558139534883722
   },
   {
    "keys": [
     "https://okami24.store/products/caliburn-g4-pro"
    ],
    "clicks": 8,
-   "impressions": 50,
-   "ctr": 0.16,
-   "position": 24.9
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/disposables"
-   ],
-   "clicks": 8,
-   "impressions": 156,
-   "ctr": 0.05128205128205128,
-   "position": 11.64102564102564
+   "impressions": 49,
+   "ctr": 0.16326530612244897,
+   "position": 25.285714285714285
   },
   {
    "keys": [
@@ -126,39 +99,48 @@
   },
   {
    "keys": [
-    "https://okami24.store/about"
+    "https://okami24.store/products/m-switch-pod"
    ],
-   "clicks": 7,
-   "impressions": 100,
-   "ctr": 0.07,
-   "position": 6.56
+   "clicks": 8,
+   "impressions": 70,
+   "ctr": 0.11428571428571428,
+   "position": 8.885714285714286
   },
   {
    "keys": [
-    "https://okami24.store/brands/esko-bar"
+    "https://okami24.store/about"
    ],
    "clicks": 7,
-   "impressions": 83,
-   "ctr": 0.08433734939759036,
-   "position": 13.819277108433734
+   "impressions": 95,
+   "ctr": 0.07368421052631578,
+   "position": 6.5473684210526315
+  },
+  {
+   "keys": [
+    "https://okami24.store/brands/joiway"
+   ],
+   "clicks": 7,
+   "impressions": 214,
+   "ctr": 0.03271028037383177,
+   "position": 8.598130841121495
   },
   {
    "keys": [
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 7,
-   "impressions": 62,
-   "ctr": 0.11290322580645161,
-   "position": 6.5
+   "impressions": 60,
+   "ctr": 0.11666666666666667,
+   "position": 6.6
   },
   {
    "keys": [
-    "https://okami24.store/products/m-switch-pod"
+    "https://okami24.store/products/disposables"
    ],
    "clicks": 7,
-   "impressions": 71,
-   "ctr": 0.09859154929577464,
-   "position": 8.732394366197184
+   "impressions": 156,
+   "ctr": 0.04487179487179487,
+   "position": 11.621794871794872
   },
   {
    "keys": [
@@ -174,18 +156,36 @@
     "https://okami24.store/products/tfit-m-power-20k"
    ],
    "clicks": 7,
-   "impressions": 162,
-   "ctr": 0.043209876543209874,
-   "position": 7.62962962962963
+   "impressions": 163,
+   "ctr": 0.04294478527607362,
+   "position": 7.638036809815951
   },
   {
    "keys": [
     "https://okami24.store/products/vmate-i3"
    ],
    "clicks": 7,
-   "impressions": 12,
-   "ctr": 0.5833333333333334,
-   "position": 9.5
+   "impressions": 11,
+   "ctr": 0.6363636363636364,
+   "position": 10.090909090909092
+  },
+  {
+   "keys": [
+    "https://okami24.store/brands/esko-bar"
+   ],
+   "clicks": 6,
+   "impressions": 78,
+   "ctr": 0.07692307692307693,
+   "position": 14.26923076923077
+  },
+  {
+   "keys": [
+    "https://okami24.store/products/argus-g4-mini"
+   ],
+   "clicks": 6,
+   "impressions": 54,
+   "ctr": 0.1111111111111111,
+   "position": 6.611111111111111
   },
   {
    "keys": [
@@ -201,9 +201,9 @@
     "https://okami24.store/products/caliburn-g5-lite-se"
    ],
    "clicks": 6,
-   "impressions": 40,
-   "ctr": 0.15,
-   "position": 10.675
+   "impressions": 41,
+   "ctr": 0.14634146341463414,
+   "position": 10.560975609756097
   },
   {
    "keys": [
@@ -216,39 +216,12 @@
   },
   {
    "keys": [
-    "https://okami24.store/products/argus-g3-mini"
-   ],
-   "clicks": 5,
-   "impressions": 21,
-   "ctr": 0.23809523809523808,
-   "position": 17
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/caliburn-g4-mini"
-   ],
-   "clicks": 5,
-   "impressions": 27,
-   "ctr": 0.18518518518518517,
-   "position": 12.703703703703704
-  },
-  {
-   "keys": [
     "https://okami24.store/products/e-liquid"
    ],
    "clicks": 5,
    "impressions": 29,
    "ctr": 0.1724137931034483,
    "position": 6.137931034482759
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/infy-20k"
-   ],
-   "clicks": 5,
-   "impressions": 116,
-   "ctr": 0.04310344827586207,
-   "position": 10.862068965517242
   },
   {
    "keys": [
@@ -279,21 +252,21 @@
   },
   {
    "keys": [
-    "https://okami24.store/products/caliburn-g4"
+    "https://okami24.store/products/argus-g3-mini"
    ],
    "clicks": 4,
-   "impressions": 15,
-   "ctr": 0.26666666666666666,
-   "position": 27.066666666666666
+   "impressions": 20,
+   "ctr": 0.2,
+   "position": 17.55
   },
   {
    "keys": [
-    "https://okami24.store/products/pod-kits"
+    "https://okami24.store/products/infy-20k"
    ],
    "clicks": 4,
-   "impressions": 29,
-   "ctr": 0.13793103448275862,
-   "position": 17.344827586206897
+   "impressions": 101,
+   "ctr": 0.039603960396039604,
+   "position": 11.128712871287128
   },
   {
    "keys": [
@@ -309,27 +282,36 @@
     "https://okami24.store/brands/salthub"
    ],
    "clicks": 3,
-   "impressions": 78,
-   "ctr": 0.038461538461538464,
-   "position": 21.512820512820515
+   "impressions": 70,
+   "ctr": 0.04285714285714286,
+   "position": 15.82857142857143
   },
   {
    "keys": [
     "https://okami24.store/guides/comparing-caliburn-models"
    ],
    "clicks": 3,
-   "impressions": 14,
-   "ctr": 0.21428571428571427,
-   "position": 5.714285714285714
+   "impressions": 13,
+   "ctr": 0.23076923076923078,
+   "position": 5.384615384615385
   },
   {
    "keys": [
     "https://okami24.store/products"
    ],
    "clicks": 3,
-   "impressions": 110,
-   "ctr": 0.02727272727272727,
-   "position": 6.827272727272727
+   "impressions": 112,
+   "ctr": 0.026785714285714284,
+   "position": 6.741071428571429
+  },
+  {
+   "keys": [
+    "https://okami24.store/products/caliburn-g4"
+   ],
+   "clicks": 3,
+   "impressions": 14,
+   "ctr": 0.21428571428571427,
+   "position": 28.785714285714285
   },
   {
    "keys": [
@@ -345,9 +327,9 @@
     "https://okami24.store/products/m-bar-10k"
    ],
    "clicks": 3,
-   "impressions": 112,
-   "ctr": 0.026785714285714284,
-   "position": 10.142857142857142
+   "impressions": 110,
+   "ctr": 0.02727272727272727,
+   "position": 8.581818181818182
   },
   {
    "keys": [
@@ -357,15 +339,6 @@
    "impressions": 11,
    "ctr": 0.18181818181818182,
    "position": 37.18181818181818
-  },
-  {
-   "keys": [
-    "https://okami24.store/brands/tfit"
-   ],
-   "clicks": 2,
-   "impressions": 15,
-   "ctr": 0.13333333333333333,
-   "position": 15.8
   },
   {
    "keys": [
@@ -390,9 +363,18 @@
     "https://okami24.store/privacy"
    ],
    "clicks": 2,
-   "impressions": 30,
-   "ctr": 0.06666666666666667,
-   "position": 6
+   "impressions": 31,
+   "ctr": 0.06451612903225806,
+   "position": 5.838709677419355
+  },
+  {
+   "keys": [
+    "https://okami24.store/products/caliburn-g4-mini"
+   ],
+   "clicks": 2,
+   "impressions": 22,
+   "ctr": 0.09090909090909091,
+   "position": 14.136363636363637
   },
   {
    "keys": [
@@ -426,18 +408,18 @@
     "https://okami24.store/products/heated-tobacco-devices"
    ],
    "clicks": 2,
-   "impressions": 16,
-   "ctr": 0.125,
-   "position": 5.25
+   "impressions": 15,
+   "ctr": 0.13333333333333333,
+   "position": 5.133333333333334
   },
   {
    "keys": [
     "https://okami24.store/products/m-switch-kit"
    ],
    "clicks": 2,
-   "impressions": 88,
-   "ctr": 0.022727272727272728,
-   "position": 10.806818181818182
+   "impressions": 86,
+   "ctr": 0.023255813953488372,
+   "position": 9.13953488372093
   },
   {
    "keys": [
@@ -447,6 +429,15 @@
    "impressions": 5,
    "ctr": 0.4,
    "position": 4.8
+  },
+  {
+   "keys": [
+    "https://okami24.store/products/pod-kits"
+   ],
+   "clicks": 2,
+   "impressions": 15,
+   "ctr": 0.13333333333333333,
+   "position": 27.6
   },
   {
    "keys": [
@@ -471,36 +462,36 @@
     "https://okami24.store/brands/relx"
    ],
    "clicks": 1,
-   "impressions": 30,
-   "ctr": 0.03333333333333333,
-   "position": 37.03333333333333
+   "impressions": 29,
+   "ctr": 0.034482758620689655,
+   "position": 36.89655172413793
   },
   {
    "keys": [
-    "https://okami24.store/brands/rincoe"
+    "https://okami24.store/brands/tfit"
    ],
    "clicks": 1,
-   "impressions": 6,
-   "ctr": 0.16666666666666666,
-   "position": 7.666666666666667
+   "impressions": 13,
+   "ctr": 0.07692307692307693,
+   "position": 17.46153846153846
   },
   {
    "keys": [
     "https://okami24.store/contact"
    ],
    "clicks": 1,
-   "impressions": 50,
-   "ctr": 0.02,
-   "position": 5.94
+   "impressions": 54,
+   "ctr": 0.018518518518518517,
+   "position": 5.574074074074074
   },
   {
    "keys": [
     "https://okami24.store/e-liquid"
    ],
    "clicks": 1,
-   "impressions": 14,
-   "ctr": 0.07142857142857142,
-   "position": 60.142857142857146
+   "impressions": 13,
+   "ctr": 0.07692307692307693,
+   "position": 59.61538461538461
   },
   {
    "keys": [
@@ -525,9 +516,9 @@
     "https://okami24.store/guides/choosing-a-marbo-flavor"
    ],
    "clicks": 1,
-   "impressions": 99,
-   "ctr": 0.010101010101010102,
-   "position": 8.11111111111111
+   "impressions": 84,
+   "ctr": 0.011904761904761904,
+   "position": 6.5476190476190474
   },
   {
    "keys": [
@@ -561,9 +552,9 @@
     "https://okami24.store/guides/esko-bar-switch-vs-m-switch"
    ],
    "clicks": 1,
-   "impressions": 104,
-   "ctr": 0.009615384615384616,
-   "position": 7.990384615384615
+   "impressions": 100,
+   "ctr": 0.01,
+   "position": 8.01
   },
   {
    "keys": [
@@ -591,15 +582,6 @@
    "impressions": 48,
    "ctr": 0.020833333333333332,
    "position": 26.875
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/argus-p3"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 19
   },
   {
    "keys": [
@@ -642,9 +624,9 @@
     "https://okami24.store/products/drag-x3"
    ],
    "clicks": 1,
-   "impressions": 13,
-   "ctr": 0.07692307692307693,
-   "position": 24.307692307692307
+   "impressions": 12,
+   "ctr": 0.08333333333333333,
+   "position": 25.5
   },
   {
    "keys": [
@@ -687,8 +669,8 @@
     "https://okami24.store/products/muro-connector-20k"
    ],
    "clicks": 1,
-   "impressions": 8,
-   "ctr": 0.125,
+   "impressions": 7,
+   "ctr": 0.14285714285714285,
    "position": 13
   },
   {
@@ -705,9 +687,9 @@
     "https://okami24.store/products/relx-smash-go-12k"
    ],
    "clicks": 1,
-   "impressions": 10,
-   "ctr": 0.1,
-   "position": 19.7
+   "impressions": 9,
+   "ctr": 0.1111111111111111,
+   "position": 20.88888888888889
   },
   {
    "keys": [
@@ -750,9 +732,18 @@
     "https://okami24.store/brands/moood"
    ],
    "clicks": 0,
-   "impressions": 28,
+   "impressions": 27,
    "ctr": 0,
-   "position": 12.428571428571429
+   "position": 12.555555555555555
+  },
+  {
+   "keys": [
+    "https://okami24.store/brands/rincoe"
+   ],
+   "clicks": 0,
+   "impressions": 4,
+   "ctr": 0,
+   "position": 5.75
   },
   {
    "keys": [
@@ -768,9 +759,9 @@
     "https://okami24.store/brands/wotofo"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 6,
    "ctr": 0,
-   "position": 4.888888888888889
+   "position": 3.6666666666666665
   },
   {
    "keys": [
@@ -813,9 +804,9 @@
     "https://okami24.store/guides"
    ],
    "clicks": 0,
-   "impressions": 36,
+   "impressions": 33,
    "ctr": 0,
-   "position": 6.222222222222222
+   "position": 6.242424242424242
   },
   {
    "keys": [
@@ -993,18 +984,18 @@
     "https://okami24.store/how-to-order"
    ],
    "clicks": 0,
-   "impressions": 74,
+   "impressions": 75,
    "ctr": 0,
-   "position": 4.445945945945946
+   "position": 4.04
   },
   {
    "keys": [
     "https://okami24.store/products/caliburn-g3-pro-koko"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 6,
    "ctr": 0,
-   "position": 36.142857142857146
+   "position": 41.5
   },
   {
    "keys": [
@@ -1065,9 +1056,9 @@
     "https://okami24.store/products/eliquid-73"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 8
+   "position": 6.666666666666667
   },
   {
    "keys": [
@@ -1155,9 +1146,9 @@
     "https://okami24.store/products/mood-monster-14k"
    ],
    "clicks": 0,
-   "impressions": 27,
+   "impressions": 25,
    "ctr": 0,
-   "position": 7.814814814814815
+   "position": 7.6
   },
   {
    "keys": [
@@ -1236,18 +1227,18 @@
     "https://okami24.store/products/pod-180"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 8,
    "ctr": 0,
-   "position": 9.571428571428571
+   "position": 9.125
   },
   {
    "keys": [
     "https://okami24.store/products/pods-cartridges"
    ],
    "clicks": 0,
-   "impressions": 33,
+   "impressions": 17,
    "ctr": 0,
-   "position": 17.636363636363637
+   "position": 30.470588235294116
   },
   {
    "keys": [
@@ -1317,18 +1308,9 @@
     "https://okami24.store/products/zero-nano"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 4,
    "ctr": 0,
-   "position": 13.4
-  },
-  {
-   "keys": [
-    "https://okami24.store/products/zero-pro"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 10
+   "position": 15.5
   },
   {
    "keys": [
@@ -1344,18 +1326,18 @@
     "https://okami24.store/technology"
    ],
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 12,
    "ctr": 0,
-   "position": 4.125
+   "position": 3.0833333333333335
   },
   {
    "keys": [
     "https://okami24.store/technology/gesture-and-triple-tap-control"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 4,
    "ctr": 0,
-   "position": 6.333333333333333
+   "position": 6.75
   },
   {
    "keys": [
