@@ -86,13 +86,14 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   // Round SEO ฉ batch 3 (12/10): relx / iqos / wotofo metas step back to brand level like joiway/infy in #354 — the model
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
   relx: (_priceOf, orderingOn = false) => ({
-    title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
+    title: `RELX ของแท้ พอตใช้แล้วทิ้ง หัวพอต ตัวเครื่อง${OKM_TITLE_SUFFIX}`,
     description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
+  // Owner 07/11 via Friday: มาโบ 6,600 + พอตมาโบ 4,400 a month. "บอกราคาทุกรุ่น" goes so the title stays inside 60 characters on a phone.
   salthub: (_priceOf, orderingOn = false) => ({
-    title: `SALTHUB M Bar (Marbo) ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
+    title: `SALTHUB M Bar (Marbo / พอตมาโบ) ของแท้${OKM_TITLE_SUFFIX}`,
     description: `SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ${orderCloseTh(orderingOn)}`,
   }),
   voopoo: (_priceOf, orderingOn = false) => ({
@@ -231,6 +232,9 @@ export function productTitleWithPriceTh(slug: string, baseTitle: string, price: 
  * is unchanged. "disposable pod" was on 0 of 99 pages; thai-copy row 1, seo-auditor #1 "land now".
  */
 const CATEGORY_TITLE_HEAD_TH: Record<string, string> = {
+  // Owner 07/11 via Friday (lifts the 09/10 lock on this head): พอตไฟฟ้า 4,400 a month against pod system 170. "Pod System" stays first, it is the
+  // word this page earns clicks on, and it stays the H1 and the menu label.
+  "pod-systems": "Pod System / พอตไฟฟ้า ของแท้ บอกราคาทุกรุ่น",
   disposables: "Disposable Pod / พอตใช้แล้วทิ้ง ของแท้ ราคาทุกรุ่น",
   // Round SEO ฉ batch 3 (12/10): "คอยล์พอต" was in no head on the site; the page lists coils only. 49 chars — at 50+
   // categoryTitleTh() silently falls back to the label title, so keep it ≤ 49 (seo-auditor 12/10).
@@ -258,17 +262,20 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   // Round SEO full 07/11 (keyword map SEO_LANDSCAPE §0): marbo 9k 8,100 · มาโบ 9k 6,600 · marbo 10k + มาโบ 10k 5,400 each · m switch 15k 4,400 ·
   // มาโบ 15k 1,600 searches a month. "SALTHUB" leaves these titles so the price still fits 60 characters; the brand page owns it (THAI_STYLE §3 exception 2).
-  "m-bar-9k": "M BAR 9K (Marbo 9K / มาโบ 9K) ของแท้",
-  "m-bar-10k": "M BAR 10K (Marbo 10K / มาโบ 10K) ของแท้",
+  "m-bar-9k": "พอต M BAR 9K (Marbo 9K / มาโบ 9K) ของแท้",
+  "m-bar-10k": "พอต M BAR 10K (Marbo 10K / มาโบ 10K) ของแท้",
   // List-new (27/10, HANDOFF §18): the lookalike — its title must not carry the default " ของแท้" (search-titles.ts).
   "marbo-10k-clone": "Marbo 10K (เทียบแท้) พอตใช้แล้วทิ้ง",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
   // the Pod opens with the locked type word, like the coil/pod rows below.
-  "m-switch-kit": "M SWITCH 15K (Marbo 15K / มาโบ 15K) ของแท้",
-  "m-switch-pod": "หัวพอต M SWITCH 15K (หัวมาโบ 15K) ของแท้",
+  "m-switch-kit": "M SWITCH 15K (M BAR 15K / มาโบ 15K) ของแท้",
+  "m-switch-pod": "หัวพอต M SWITCH POD (M BAR 15K / หัวมาโบ) ของแท้",
   // Round SEO full 07/11: esko bar 20k 5,400 a month, the page name says 20000. Joiway F3 is the 12,000-puff model people search as joiway 12k (1,000).
   "esko-bar-20k": "ESKO BAR 20K (20000) พอตใช้แล้วทิ้ง ของแท้",
   "joiway-f3": "JOIWAY F3 12K พอตใช้แล้วทิ้ง ของแท้",
+  // Round SEO full 07/11, seo-auditor: หัว esko bar switch · หัวพอต esko bar · พอตเปลี่ยนหัว infy · เครื่อง infy.
+  "esko-bar-switch-pod": "หัวพอต ESKO BAR SWITCH 20K ของแท้",
+  "infy-pod": "INFY POD ตัวเครื่อง พอตเปลี่ยนหัว ของแท้",
   "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
   "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
   "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
@@ -339,7 +346,7 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round SEO full 07/11: พอตเลโก้ 1,600 · relx lego 1,300 a month = this device (results read 07/11), one line per THAI_STYLE layer 1 exception 1.
-  "relx-creator": "RELX Creator หรือที่หลายคนเรียกว่าพอตเลโก้ ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก หัวหมดก็เปลี่ยนแค่หัว มีจอพิกเซลโชว์หน้าอีโมจิ",
+  "relx-creator": "RELX Creator หรือที่หลายคนเรียกว่าพอตเลโก้ ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก หัวหมดก็เปลี่ยนแค่หัว",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
   "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
