@@ -165,12 +165,14 @@ function ActionForm({
   from,
   act,
   quiet = false,
+  label,
   children,
 }: {
   order: StaffOrderDetail;
   from: string;
   act: StaffAction;
   quiet?: boolean;
+  label?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -178,7 +180,7 @@ function ActionForm({
       <OrderFields order={order} from={from} />
       <input type="hidden" name="action" value={act} />
       {children}
-      <PendingButton className={quiet ? quietButton : primary}>{BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}</PendingButton>
+      <PendingButton className={quiet ? quietButton : primary}>{label ?? BUTTON_LABEL[act] ?? STAFF_ACTIONS[act].label}</PendingButton>
     </form>
   );
 }
@@ -382,7 +384,7 @@ export default async function StaffOrderPage({
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.tracking.label}</h2>
           {(steps.includes("ship") || order.status === "shipped") && (
-            <ActionForm order={order} from={from} act="ship">
+            <ActionForm order={order} from={from} act="ship" label={order.status === "shipped" ? "บันทึกเลขพัสดุ" : undefined}>
               {/* Staff confirm the carrier (owner 23/10: the customer sees it) — starts on the postcode pick, never guessed from the number. */}
               <fieldset className="flex flex-col gap-2">
                 <legend className="mb-1 text-foreground-muted">ขนส่ง</legend>
