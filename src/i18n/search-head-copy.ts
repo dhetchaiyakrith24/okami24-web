@@ -389,7 +389,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // List-new 30/10: numbers = nexBar's posters (VERIFIED_SPECIFICATIONS) · no "ใช้กับ …" until the owner confirms the device.
   "nexbar-switch-15k-pod": "nexBar Switch 15K หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ น้ำยา 15mL คอยล์ nexMesh นิโคติน 3% มีให้เลือก 15 กลิ่น",
   "dude-pod-3ml": "dude หัวพอต ชื่อรุ่นระบุ 3ml มีให้เลือก 10 กลิ่น",
-  "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
+  "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ซองระบุ 18,000 พัฟ แบต 670mAh มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   // 02/11: VOOPOO lists 7 colours — #1114 (details-0211) added Glacier Silver · Fresh Green · Lavender to the page.
   "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 7 สี",
@@ -409,7 +409,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   // List-new (27/10, HANDOFF §18): thai-copy 27/10 — no "ของแท้"; says it is not SALTHUB.
   "marbo-10k-clone": "Marbo 10K เทียบแท้ พอตใช้แล้วทิ้ง ไม่ใช่สินค้าของ SALTHUB มีให้เลือก 12 กลิ่น",
-  "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22,000 พัฟ มีให้เลือก 15 กลิ่น",
+  "sup-zero-22k": "SUP ZERO 22K พอตใช้แล้วทิ้ง ซองระบุ 22,000 พัฟ น้ำยา 25mL มีให้เลือก 15 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",

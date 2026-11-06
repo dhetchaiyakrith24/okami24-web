@@ -624,9 +624,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอต dude ชื่อรุ่นระบุ 3ml ร้านมีให้เลือก 10 กลิ่น",
   },
   "RELX-LUMI-18K": {
-    // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
+    // Round list19 (19/10): the Max name "RELX LUMI 18k"; no maker page, so the numbers come from the pack (owner's photos 03/11).
     tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
-    shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ชื่อรุ่นระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
+    shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ซองระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
   },
   // Round list19 (19/10): numbers = the maker's pod542 page (per pod: up to 20,000 puffs, 18ml).
   "ESKO-BAR-SWITCH-POD": {
@@ -686,7 +686,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "SUP-ZERO-22K": {
     tagline: "พอตใช้แล้วทิ้ง SUP ZERO 22K",
-    shortDescription: "พอตใช้แล้วทิ้ง SUP ZERO ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 15 กลิ่น",
+    shortDescription: "พอตใช้แล้วทิ้ง SUP ZERO ซองระบุ 22,000 พัฟ ร้านมีให้เลือก 15 กลิ่น",
   },
   // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2". RELX's pages (02/11) name the pods "RELX Pod Pro 2" — rows below.
   "RELX-INFINITY-PRO-2-POD": {

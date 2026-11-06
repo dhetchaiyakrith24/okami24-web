@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-04T10:19:06+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-04T08:39:47+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-06T17:12:47+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -319,8 +319,8 @@
       "fp": "6e79b0bcb8e3"
     },
     "/products/disposables": {
-      "date": "2026-11-06T17:09:36+07:00",
-      "fp": "77f2840c81ab"
+      "date": "2026-11-06T17:12:47+07:00",
+      "fp": "e60f02db95b0"
     },
     "/products/drag-6": {
       "date": "2026-10-26T07:07:40+07:00",
@@ -559,16 +559,16 @@
       "fp": "711d8fdad0a4"
     },
     "/products/relx-lumi-18k": {
-      "date": "2026-11-06T15:32:49+07:00",
-      "fp": "db8cc3421930"
+      "date": "2026-11-06T17:12:47+07:00",
+      "fp": "cb1dc34658df"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-03T00:40:32+07:00",
       "fp": "0fc2c40e2905"
     },
     "/products/sup-zero-22k": {
-      "date": "2026-11-06T15:32:49+07:00",
-      "fp": "0230f504f858"
+      "date": "2026-11-06T17:12:47+07:00",
+      "fp": "9b13bb9e4d16"
     },
     "/products/super-cool-saltnic": {
       "date": "2026-10-20T00:34:44+07:00",
