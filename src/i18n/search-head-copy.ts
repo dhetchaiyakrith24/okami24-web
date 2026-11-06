@@ -256,14 +256,19 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
  * iqosheet / pod-159 pages keep their generated titles so `<title>`, Product.name and H1 agree.
  */
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
-  "m-bar-9k": "SALTHUB M BAR 9K (Marbo / มาโบ 9K) ของแท้",
-  "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
+  // Round SEO full 07/11 (keyword map SEO_LANDSCAPE §0): marbo 9k 8,100 · มาโบ 9k 6,600 · marbo 10k + มาโบ 10k 5,400 each · m switch 15k 4,400 ·
+  // มาโบ 15k 1,600 searches a month. "SALTHUB" leaves these titles so the price still fits 60 characters; the brand page owns it (THAI_STYLE §3 exception 2).
+  "m-bar-9k": "M BAR 9K (Marbo 9K / มาโบ 9K) ของแท้",
+  "m-bar-10k": "M BAR 10K (Marbo 10K / มาโบ 10K) ของแท้",
   // List-new (27/10, HANDOFF §18): the lookalike — its title must not carry the default " ของแท้" (search-titles.ts).
   "marbo-10k-clone": "Marbo 10K (เทียบแท้) พอตใช้แล้วทิ้ง",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
   // the Pod opens with the locked type word, like the coil/pod rows below.
-  "m-switch-kit": "SALTHUB M SWITCH KIT (M BAR 15K) ของแท้",
-  "m-switch-pod": "หัวพอต M SWITCH POD (M BAR 15K) ของแท้",
+  "m-switch-kit": "M SWITCH 15K (Marbo 15K / มาโบ 15K) ของแท้",
+  "m-switch-pod": "หัวพอต M SWITCH 15K (หัวมาโบ 15K) ของแท้",
+  // Round SEO full 07/11: esko bar 20k 5,400 a month, the page name says 20000. Joiway F3 is the 12,000-puff model people search as joiway 12k (1,000).
+  "esko-bar-20k": "ESKO BAR 20K (20000) พอตใช้แล้วทิ้ง ของแท้",
+  "joiway-f3": "JOIWAY F3 12K พอตใช้แล้วทิ้ง ของแท้",
   "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
   "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
   "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
@@ -333,6 +338,8 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 /** Rows A17 + C1–C16 — product meta descriptions that replace the tagline / shortDescription in
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
+  // Round SEO full 07/11: พอตเลโก้ 1,600 · relx lego 1,300 a month = this device (results read 07/11), one line per THAI_STYLE layer 1 exception 1.
+  "relx-creator": "RELX Creator หรือที่หลายคนเรียกว่าพอตเลโก้ ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก หัวหมดก็เปลี่ยนแค่หัว มีจอพิกเซลโชว์หน้าอีโมจิ",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
   "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
