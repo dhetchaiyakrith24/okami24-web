@@ -551,6 +551,7 @@ export interface Dictionary {
     /** Cart, signed out: signing in gives 0 shipping once a month from 300 THB. The link opens /account/login and comes back. */
     shippingSignInNote: string;
     shippingSignInCta: string;
+    shippingLowerHeading: string;
     /** Signed out, but this phone / address already used this month's member benefit: the line only invites a member back in
      *  (no promise of 0 shipping) — "Already a member?" + the same sign-in link. */
     shippingSignInUsedNote: string;
