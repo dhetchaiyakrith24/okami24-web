@@ -1,11 +1,11 @@
 import "server-only";
 import { getProduct } from "@/data/products";
-import { kindCategoryId } from "@/data/categories";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
-import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
-import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
-import { inStockEntryKeys } from "@/lib/in-stock";
+import type { CatalogItem } from "@/lib/catalog-index";
+import { NEVER, suggestionOrder } from "@/lib/related-order";
+import { RELATED_SLOTS } from "@/lib/related-row";
+import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
+import type { LiveLookup } from "@/lib/stock/live-rules";
 import { resolveProductRef } from "./catalog-resolver";
 import { liveLookup } from "@/lib/stock/live";
 
@@ -13,44 +13,15 @@ import { liveLookup } from "@/lib/stock/live";
  * The cart page's "สินค้าที่คุณอาจสนใจ" row. Picked here on the server so the client cart gets only the few small cards
  * (never the catalog).
  *
- * Cart with items (owner 28/10: "เอาให้คล้าย 50 อีก 50 แนะนำอื่นๆได้" — 26/10's fits-only row came out too thin, or all
- * e-liquid for a refillable device, and a disposable has nothing that fits). Half the row is LIKE the cart, half the shop's picks:
- *   like the cart, taken in turns across the cart lines (one card per line per turn, so every line shows; tiers 1–4 of
- *   every line before any tier 5) — what fits it first, never an invented pairing (BSOT §17):
- *     (1) the pods / coils / sticks the relationship table verifies for that device (BSOT §14 device → consumable),
- *     (2) the device a pod / coil / stick in the cart is verified to fit (the derived reverse of the same table),
- *     (3) one e-liquid when the line is a refillable device (category pod-systems = fill-your-own, src/data/categories.ts),
- *     then (4) the same brand in the same category, (5) the same category — "like it", claimed as nothing more;
- *   the other half: SHOP_PICKS then the homepage lead models, devices only (as the empty cart).
- * Either half short = the other fills in. The like-the-cart cards come first.
+ * The order = src/lib/related-order.ts (owner 07/11: four tiers); an empty cart gets the shop's picks alone.
  *
- * Empty cart: SHOP_PICKS (market order, below), then the homepage lead models as a reserve — used only as an order: the heading claims
- * nothing (owner 20/10: no "best seller" wording, there are no sales figures).
- * Every card: sellable today (the product page's buy rule, in-stock.ts), an approved price, not already in the cart, not
- * on BSOT §15 "Not recommended". Deterministic (no shuffle) — the same cart always shows the same row.
+ * Every card can be bought right now: the live stock the buy buttons use (owner 07/11: "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น …
+ * Auto ตลอด"), read on every render of this page, so no list is kept by hand and no rebuild is needed. Also an approved
+ * price, not already in the cart, not on BSOT §15 "Not recommended". Nothing qualifies = no cards, and the row hides.
+ * Deterministic (no shuffle) — the same cart and the same stock always show the same row.
  */
-/** Up to 8 cards (owner 27/10: "เพิ่มการ์ดจาก 4 เป็น 8 บนมือถือให้ปัดด้วยนิ้วขวาซ้ายได้") — phones swipe one row, ≥640 shows rows of 4. */
-const SLOTS = 8;
+/** phones swipe one row, ≥640 shows rows of 4. */
 const ROW = 4;
-
-/** Market order (owner 26/10: "ยึดจากแหล่งตลาด ใช้การคาดเดาได้ — เฉพาะเรื่องนี้"). ESTIMATE, not sales figures: researcher 27/10
- *  counted Thai vape shops' own "สินค้าขายดี / ยอดนิยม" blocks (pod789.com · ihavevape.net · vapemun.com · 17pod.shop ·
- *  pod9k.com · zeedcupvp.com · goatvapethai.com; the first three look like one template, so not independent), weighted by
- *  position. Strong (4–5 shops): M BAR 10K · ESKO BAR SWITCH 20K kit (pod-159) · M SWITCH kit · M BAR 9K — the same four the
- *  owner's BSOT §15 names. Medium (2–3 shops): Muro Connector 20K — also the owner's "Relx Connector 20K" [estimate: the only
- *  "Connector" in Thai shops; pod789 sells it as a pod that fits the RELX Creator] · ESKO BAR 20000 · INFY 20K · RELX LUMI 18K.
- *  nexBar CLEAR 18K (pod-180) had no market signal; it stays last on the owner's word (BSOT §15 "Customer favorites"). */
-const SHOP_PICKS = ["m-bar-10k", "pod-159", "m-switch-kit", "m-bar-9k", "muro-connector-20k", "esko-bar-20k", "infy-20k", "relx-lumi-18k", "pod-180"];
-
-/** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18: never in cart suggestions or shop picks). */
-const NEVER = new Set(["muro-space-15k", "marbo-10k-clone"]);
-
-/** Parts that fit only some devices (src/data/categories.ts) — never a shop pick for an empty cart. */
-const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
-
-/** Fill-your-own devices (categories.ts: refillable VOOPOO joined pod-systems; switch-pods are prefilled, never filled). */
-const REFILLABLE_CATEGORY = "pod-systems";
-const E_LIQUID_CATEGORY = "e-liquid";
 
 /** One colour / flavour / variant of a suggestion, for the card's quick add (owner 26/10: "กดตะกร้าปุ๊บก็มีสีให้เลือกเลย"). */
 export interface SuggestionOption {
@@ -74,24 +45,15 @@ export interface CartSuggestion {
   options: SuggestionOption[];
 }
 
-function sellable(slug: string): boolean {
+/** The rule behind the buy button and the cards' stock (src/lib/stock/card-stock.ts), with the warehouse's live answer. */
+function sellable(slug: string, live: LiveLookup): boolean {
   const legacy = getProduct(slug);
-  if (legacy) return inStockEntryKeys([legacy], []).length > 0;
+  if (legacy) return legacyCardStock(legacy, live).inStock;
   const published = getPublishedProductBySlug(slug);
-  return published ? inStockEntryKeys([], [published]).length > 0 : false;
+  return published ? publishedCardStock(published, live).inStock : false;
 }
 
-/** Homepage lead order first (Friday's flagship picks per type), then by name — a stable order inside each tier. */
-const LEAD = HOME_TYPE_SECTIONS.flatMap((s) => s.first);
-function byLead(a: CatalogItem, b: CatalogItem): number {
-  const ia = LEAD.indexOf(a.slug);
-  const ib = LEAD.indexOf(b.slug);
-  if (ia !== ib) return (ia < 0 ? Infinity : ia) - (ib < 0 ? Infinity : ib);
-  return a.name.localeCompare(b.name);
-}
-
-function optionsOf(item: CatalogItem): Pick<CartSuggestion, "axis" | "options"> {
-  const live = liveLookup();
+function optionsOf(item: CatalogItem, live: LiveLookup): Pick<CartSuggestion, "axis" | "options"> {
   const can = (variantId: string) => resolveProductRef({ origin: item.origin, slug: item.slug, variantId }, live).ok;
   const legacy = getProduct(item.slug);
   if (legacy) {
@@ -109,85 +71,16 @@ function optionsOf(item: CatalogItem): Pick<CartSuggestion, "axis" | "options"> 
   };
 }
 
-function toCard(item: CatalogItem): CartSuggestion {
-  return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item) };
+function toCard(item: CatalogItem, live: LiveLookup): CartSuggestion {
+  return { slug: item.slug, href: item.href, name: item.name, image: item.image, price: item.sellingPrice as number, ...optionsOf(item, live) };
 }
-
-/** What is like one cart line, in tier order (see the file header): `close` = what fits it (1–3) and its own brand in its
- *  category (4); `loose` = the rest of its category (5), which only says "the same kind of thing". */
-function likeFor(slug: string, catalog: CatalogItem[]): { close: CatalogItem[]; loose: CatalogItem[] } {
-  const own = getCatalogItem(slug);
-  if (!own) return { close: [], loose: [] };
-  const bySlug = (slugs: string[]) => slugs.map((s) => getCatalogItem(s)).filter((i): i is CatalogItem => i !== undefined).sort(byLead);
-  // kind, not listing: a prefilled pod listed beside the switch devices (owner 02/11) is still a part, not a device.
-  const kind = kindCategoryId(own);
-  const sameCategory = catalog.filter((i) => kindCategoryId(i) === kind).sort(byLead);
-  return {
-    close: [
-      ...bySlug(getCompatibleConsumables(slug).map((c) => c.ref.slug)),
-      ...bySlug(getCompatibleDevices(slug).map((d) => d.ref.slug)),
-      // one e-liquid only: the half is 4 cards, and a refillable device's row was all e-liquid before (owner 28/10)
-      ...(own.categoryId === REFILLABLE_CATEGORY ? catalog.filter((i) => i.categoryId === E_LIQUID_CATEGORY && sellable(i.slug)).sort(byLead).slice(0, 1) : []),
-      ...(own.brandId ? sameCategory.filter((i) => i.brandId === own.brandId) : []),
-    ],
-    // A pod / coil / stick of another make fits other devices — shown as "like" it reads as a spare for the cart's
-    // device (checker #960). Parts get only what fits and their own make (tiers 1–4); devices keep tier 5.
-    loose: CONSUMABLE_CATEGORIES.has(kind) ? [] : sameCategory,
-  };
-}
-
-/** Take one card per list in turn (cart order) until every list is used up — so the second and third cart lines get
- *  their own cards instead of the first line filling the whole half (checker #960). */
-function roundRobin(lists: CatalogItem[][], into: CatalogItem[]): void {
-  const at = lists.map(() => 0);
-  for (let more = true; more; ) {
-    more = false;
-    lists.forEach((list, n) => {
-      while (at[n] < list.length && into.some((x) => x.slug === list[at[n]].slug)) at[n]++;
-      if (at[n] < list.length) {
-        into.push(list[at[n]++]);
-        more = true;
-      }
-    });
-  }
-}
-
-/** Heat-not-burn and vapour are different shoppers: the "other" half shows the cart's own family first (checker #960 —
- *  a vape cart got three IQOS devices when the vape picks were sold out); at most ONE card of the other family. */
-const HEATED_TOBACCO = new Set(["heated-tobacco-devices", "heated-tobacco-consumables"]);
-const isHeated = (i: CatalogItem) => HEATED_TOBACCO.has(i.categoryId);
 
 export function cartSuggestions(cartSlugs: string[]): CartSuggestion[] {
+  const live = liveLookup();
   const taken = new Set(cartSlugs);
-  const ok = (item: CatalogItem | undefined): item is CatalogItem =>
-    item !== undefined && !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug);
-  const picks = () => [...new Set([...SHOP_PICKS, ...LEAD])].map((slug) => getCatalogItem(slug)).filter(ok).filter((i) => !CONSUMABLE_CATEGORIES.has(kindCategoryId(i)));
-
-  let chosen: CatalogItem[] = [];
-  if (cartSlugs.length > 0) {
-    const catalog = allCatalogItems();
-    const lines = cartSlugs.map((slug) => likeFor(slug, catalog));
-    const like: CatalogItem[] = [];
-    roundRobin(lines.map((l) => l.close.filter(ok)), like);
-    roundRobin(lines.map((l) => l.loose.filter(ok)), like);
-    const heatedCart = cartSlugs.some((slug) => {
-      const own = getCatalogItem(slug);
-      return own !== undefined && isHeated(own);
-    });
-    // The other half keeps its 4 seats (owner "50 อีก 50"; checker #960 round 2: excluding every like card emptied it):
-    // only the like half's own 4 cards are taken out of the picks, then whichever half runs short is filled by the other.
-    const half = SLOTS / 2;
-    const likeHead = like.slice(0, half);
-    const rest = picks().filter((i) => !likeHead.some((x) => x.slug === i.slug));
-    const other = [...rest.filter((i) => isHeated(i) === heatedCart), ...rest.filter((i) => isHeated(i) !== heatedCart).slice(0, 1)];
-    const otherChosen = other.slice(0, Math.max(half, SLOTS - like.length));
-    const likeChosen = like.filter((i) => !otherChosen.some((x) => x.slug === i.slug)).slice(0, SLOTS - otherChosen.length);
-    chosen = [...likeChosen, ...otherChosen];
-  } else {
-    chosen = picks();
-  }
+  const chosen = suggestionOrder(cartSlugs, (item) => !taken.has(item.slug) && !NEVER.has(item.slug) && item.sellingPrice !== null && sellable(item.slug, live));
   // Phones swipe a single row, so any count fits there; from 640 px the cards sit in rows of 4, so 5–7 round down to 4
   // (no half-empty second row). Fewer than 4 all show — a single fitting part still shows (cart fit 27/10).
-  const shown = chosen.length >= SLOTS ? SLOTS : chosen.length >= ROW ? ROW : chosen.length;
-  return chosen.slice(0, shown).map(toCard);
+  const shown = chosen.length >= RELATED_SLOTS ? RELATED_SLOTS : chosen.length >= ROW ? ROW : chosen.length;
+  return chosen.slice(0, shown).map((item) => toCard(item, live));
 }

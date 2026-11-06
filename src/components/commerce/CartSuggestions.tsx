@@ -42,11 +42,15 @@ async function addOne(slug: string, variantId: string | null): Promise<boolean> 
  * never ember, the page's one orange button is the checkout. One sellable option (or none) = one tap adds it; more = a
  * picker (bottom sheet on phones, a centred dialog ≥ lg) with the product page's photo tiles, sold-out options shown but
  * not tappable. After an add the page stays where it is and a status line under the heading says what was added.
+ *
+ * Sold out while this page was open (owner 07/11): the server refuses the add and this row says so; opening the picker asks
+ * the server for the row again, so the picker always shows the cards as they stand now, and a product that left the row
+ * closes its picker with the same message. The last card leaving keeps that line on screen until it has been read.
  */
 export function CartSuggestions({ items, className = "" }: { items: CartSuggestion[]; className?: string }) {
   const { dict, locale } = useLocale();
   const router = useRouter();
-  const [picking, setPicking] = useState<CartSuggestion | null>(null);
+  const [pickingSlug, setPickingSlug] = useState<string | null>(null);
   const [status, setStatus] = useState<{ text: string; failed: boolean } | null>(null);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [pendingSlug, setPendingSlug] = useState<string | null>(null);
@@ -54,11 +58,19 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
 
   useEffect(() => {
     if (!status) return;
-    const t = setTimeout(() => setStatus(null), 4000);
+    const t = setTimeout(() => setStatus(null), status.failed ? 8000 : 4000);
     return () => clearTimeout(t);
   }, [status]);
 
-  if (items.length === 0) return null;
+  // The cards come fresh from the server on every refresh, so the picker reads them by slug. Gone from the row while the
+  // picker was open = it sold out: close it and say so (React's "adjust state during render").
+  const picking = pickingSlug === null ? null : (items.find((i) => i.slug === pickingSlug) ?? null);
+  if (pickingSlug !== null && picking === null) {
+    setPickingSlug(null);
+    setStatus({ text: dict.cart.suggestionAddFailed, failed: true });
+  }
+
+  if (items.length === 0 && !status) return null;
 
   const nameOf = (item: CartSuggestion) => pilotName(item.slug, item.name, locale);
 
@@ -76,7 +88,8 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
     // Any colour / flavour choice opens the picker, even when only one is in stock (owner: "มีสีให้ขึ้นเลือก"); a
     // product without options adds at once.
     if (item.options.length > 1) {
-      setPicking(item);
+      setPickingSlug(item.slug);
+      router.refresh();
       return;
     }
     const only = item.options[0] ?? null;
@@ -94,10 +107,12 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
 
   // min-w-0: in the cart page grid this section is a grid item; without it the phone swipe row (nowrap) widens the whole page (checker #928).
   return (
-    <section aria-labelledby="cart-suggestions" className={`min-w-0 ${className}`}>
-      <h2 id="cart-suggestions" className="font-display text-xl font-semibold text-foreground">
-        {dict.cart.suggestionsTitle}
-      </h2>
+    <section aria-labelledby={items.length > 0 ? "cart-suggestions" : undefined} className={`min-w-0 ${className}`}>
+      {items.length > 0 && (
+        <h2 id="cart-suggestions" className="font-display text-xl font-semibold text-foreground">
+          {dict.cart.suggestionsTitle}
+        </h2>
+      )}
       <p aria-live="polite" className={`mb-3 mt-1 min-h-5 text-sm ${status?.failed ? "text-danger" : "text-foreground-muted"}`}>
         {status?.text}
       </p>
@@ -138,11 +153,10 @@ export function CartSuggestions({ items, className = "" }: { items: CartSuggesti
           key={picking.slug}
           item={picking}
           name={nameOf(picking)}
-          onClose={() => setPicking(null)}
+          onClose={() => setPickingSlug(null)}
           onAdded={(optionName) => {
-            const item = picking;
-            setPicking(null);
-            added(item, optionName);
+            setPickingSlug(null);
+            added(picking, optionName);
           }}
         />
       )}
@@ -169,7 +183,8 @@ function OptionPicker({ item, name, onClose, onAdded }: { item: CartSuggestion; 
     if (desktop) dialogRef.current?.showModal();
   }, [desktop]);
 
-  const selected = item.options.find((o) => o.id === selectedId) ?? null;
+  // An option that sold out since it was picked (the refresh on opening, or a refused add) stops being the pick.
+  const selected = item.options.find((o) => o.id === selectedId && o.sellable) ?? null;
   const photo = selected?.image ?? item.image;
   const axisLabel = item.axis === "color" ? dict.product.colorLabel : item.axis === "flavor" ? dict.product.flavorLabel : null;
 
