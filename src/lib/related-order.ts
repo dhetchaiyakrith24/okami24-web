@@ -4,6 +4,7 @@ import { getPublishedProductBySlug, type StorefrontProductView } from "@/data/sh
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
+import { RELATED_SLOTS } from "@/lib/related-row";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 import type { Product } from "@/types/catalog";
 
@@ -159,8 +160,11 @@ export interface RelatedItem {
   inStock: boolean;
 }
 
-/** More candidates than seats, so a card that sells out after the build leaves another to take its place. */
-const CANDIDATES = 10;
+/** More buyable candidates than seats, so a card that sells out after the build leaves another to take its place. */
+const STOCKED_CANDIDATES = RELATED_SLOTS + 2;
+/** Verified fits the build could not sell, kept for a restock. Few: coil-94 fits eleven devices, and when those filled every
+ *  candidate its block came out empty. */
+const WAITING_CANDIDATES = 4;
 
 /** What ProductCard does not read: the text of the product's own page. The block's cards reach the browser in every
  *  product page, and these fields were most of their weight. */
@@ -189,8 +193,10 @@ export function relatedFor(slug: string): RelatedItem[] {
   const ok = (i: CatalogItem) => i.slug !== slug && !NEVER.has(i.slug) && i.sellingPrice !== null && (verified.has(i.slug) || relatedItem(i.slug)?.inStock === true);
   const legacy = getProduct(slug);
   const handPicked = legacy ? getRelatedProducts(legacy).map((p) => p.slug) : [];
-  return suggestionOrder([slug], ok, handPicked)
-    .slice(0, CANDIDATES)
+  const items = suggestionOrder([slug], ok, handPicked)
     .map((i) => relatedItem(i.slug))
     .filter((i): i is RelatedItem => i !== null);
+  const stocked = items.filter((i) => i.inStock).slice(0, STOCKED_CANDIDATES);
+  const waiting = items.filter((i) => !i.inStock).slice(0, WAITING_CANDIDATES);
+  return items.filter((i) => stocked.includes(i) || waiting.includes(i));
 }

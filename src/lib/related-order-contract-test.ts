@@ -101,8 +101,9 @@ for (const slug of [...allProducts.map((p) => p.slug), ...getPublishedProducts()
     if (!i.legacy && !i.published) bad.push(`${slug}: ${i.slug} has no card data`);
     if (!i.inStock && !verified.has(i.slug)) bad.push(`${slug}: sold-out ${i.slug} is not a verified fit`);
   }
+  if (!items.some((i) => i.inStock)) bad.push(`${slug}: the block has nothing to sell`);
 }
-check("every product page: never itself, never not-recommended, no sold-out card past a verified fit", bad.length === 0, bad.slice(0, 5).join(" · "));
+check("every product page: never itself, never not-recommended, no sold-out card past a verified fit, something to sell on every page", bad.length === 0, bad.slice(0, 5).join(" · "));
 const argusBlock = relatedFor("argus-g4");
 check("the Argus G4 page offers the coil and e-liquid first", argusBlock[0]?.slug === coil && argusBlock[1]?.published?.categoryId === "e-liquid", slugs(argusBlock));
 
