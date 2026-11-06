@@ -18,7 +18,7 @@ const get = (u) => fetch(base + u, { redirect: "manual", headers: { accept: "ima
 const targets = new Map();
 async function one([from, to], i) {
   const r = await get(from);
-  if (r.status === 301 && r.headers.get("location") === to) seen.ok301++;
+  if (r.status === 301 && new URL(r.headers.get("location") ?? "/", base).pathname === to) seen.ok301++;
   else fails.push(`${from}: ${r.status} ${r.headers.get("location") ?? ""}`);
   const q = `/_next/image?url=${encodeURIComponent(from)}&w=640&q=75`;
   const o = await get(q);
@@ -26,7 +26,8 @@ async function one([from, to], i) {
   if (o.status === 301 && loc.includes(encodeURIComponent(to))) seen.opt301++;
   else fails.push(`${q}: ${o.status} ${loc}`);
   if (i < sample) {
-    const f = await get(loc);
+    const next = new URL(loc, base);
+    const f = await get(next.pathname + next.search);
     if (f.status === 200) seen.opt200++;
     else fails.push(`follow ${loc}: ${f.status}`);
   }

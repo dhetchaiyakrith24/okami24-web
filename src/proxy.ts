@@ -22,27 +22,32 @@ import MOVED_IMAGES from "@/data/moved-images.json";
 /**
  * Round SEO full 07/11, batch 4: product pictures were renamed by each watermark generation and every old name answered 404,
  * including the names Google Images held before 27/10. An old name, alone or inside an optimizer URL, now answers 301 to the
- * picture that replaced it. The relative Location keeps the host out of it (Render sits behind Cloudflare). The table comes
+ * picture that replaced it. The table comes
  * from scripts/moved-images.js and every target exists today, so one request never meets a second redirect.
  */
 const moved = MOVED_IMAGES as Record<string, string>;
 
-function movedTo(location: string): NextResponse {
-  return new NextResponse(null, { status: 301, headers: { Location: location, "Cache-Control": "public, max-age=2592000" } });
+function movedTo(url: NextRequest["nextUrl"]): NextResponse {
+  const response = NextResponse.redirect(url, 301);
+  response.headers.set("Cache-Control", "public, max-age=2592000");
+  return response;
 }
 
 export function proxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
   if (pathname.startsWith("/assets/products/")) {
     const target = moved[pathname];
-    return target ? movedTo(target) : NextResponse.next();
+    if (!target) return NextResponse.next();
+    const url = request.nextUrl.clone();
+    url.pathname = target;
+    return movedTo(url);
   }
   const source = searchParams.get("url");
   const replaced = source ? moved[source] : undefined;
   if (replaced) {
-    const params = new URLSearchParams(searchParams);
-    params.set("url", replaced);
-    return movedTo(`${pathname}?${params.toString()}`);
+    const url = request.nextUrl.clone();
+    url.searchParams.set("url", replaced);
+    return movedTo(url);
   }
   const accept = request.headers.get("accept") ?? "";
   if (accept.includes("image/webp")) return NextResponse.next();

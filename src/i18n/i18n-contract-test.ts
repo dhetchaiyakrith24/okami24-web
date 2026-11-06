@@ -75,11 +75,11 @@ export function runI18nContractTests(): I18nContractResult[] {
   const PROXY_PIN =
     'import { NextResponse } from "next/server"; import type { NextRequest } from "next/server"; ' +
     'import MOVED_IMAGES from "@/data/moved-images.json"; const moved = MOVED_IMAGES as Record<string, string>; ' +
-    'function movedTo(location: string): NextResponse { return new NextResponse(null, { status: 301, headers: { Location: location, "Cache-Control": "public, max-age=2592000" } }); } ' +
+    'function movedTo(url: NextRequest["nextUrl"]): NextResponse { const response = NextResponse.redirect(url, 301); response.headers.set("Cache-Control", "public, max-age=2592000"); return response; } ' +
     'export function proxy(request: NextRequest) { const { pathname, searchParams } = request.nextUrl; ' +
-    'if (pathname.startsWith("/assets/products/")) { const target = moved[pathname]; return target ? movedTo(target) : NextResponse.next(); } ' +
+    'if (pathname.startsWith("/assets/products/")) { const target = moved[pathname]; if (!target) return NextResponse.next(); const url = request.nextUrl.clone(); url.pathname = target; return movedTo(url); } ' +
     'const source = searchParams.get("url"); const replaced = source ? moved[source] : undefined; ' +
-    'if (replaced) { const params = new URLSearchParams(searchParams); params.set("url", replaced); return movedTo(`${pathname}?${params.toString()}`); } ' +
+    'if (replaced) { const url = request.nextUrl.clone(); url.searchParams.set("url", replaced); return movedTo(url); } ' +
     'const accept = request.headers.get("accept") ?? ""; ' +
     'if (accept.includes("image/webp")) return NextResponse.next(); const headers = new Headers(request.headers); ' +
     'headers.set("accept", accept ? `image/webp,${accept}` : "image/webp,*/*"); return NextResponse.next({ request: { headers } }); } ' +
