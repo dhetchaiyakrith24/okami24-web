@@ -24,25 +24,28 @@
 //   · Only the text of `current` is swapped, inside a throwaway clone of its block, never el.textContent = …: the rest of
 //     the block keeps its links, no-break spaces and whitespace-nowrap spans. A candidate gets the site's real typography
 //     first (scripts/lib/thai-runs.ts calls thaiTypographyNode) so it is glued as it would be on the page. One limit: a
-//     JOINED entry whose `within` phrase reaches outside `current` does not fire; the fidelity check below shows it.
+//     JOINED entry whose `within` phrase reaches outside `current` does not fire; the fidelity check below stops that.
 //   · Flags = everything wordbreak-scan raises (its own in-page code, scoped to the block) + what it cannot see across
 //     text nodes: a split word from line-words.json, a number apart from its unit, ไม่/ยัง at a line end, a short word left
 //     before a glued word, a Latin term split, one short word alone on the last line.
 //   · Fidelity: `current` is also put back through the same swap; its lines must equal the untouched page. "FIDELITY" in
-//     the report = the lines of that spot cannot be trusted, usually a `within` phrase (see above).
+//     the report = that spot's lines cannot be trusted, so its candidates are NOT MEASURED: usually a `within` phrase (see
+//     above), so give a longer `current` that holds the whole phrase.
 // A flag is not the whole verdict: a split compound missing from line-words.json is still judged by eye, so read the
 // lines printed for the winner, and add the word when the checker catches one.
 //
 // Prints per item: the current text and each candidate with flags, then lines at 390/1440 for each one that passed.
-// Writes the full result to --out (default _incoming/line-candidates/<file name>). A candidate PASSES only with no flag on
-// every page × width × place. Exit: 0 every item has a passing candidate · 1 an item has none · 2 bad input, text not
-// found, or no server. Local builds only — refuses the live site and port 3000 (the owner's dev server).
+// Writes the full result to --out (default <repo>/_incoming/line-candidates/<file name>). A candidate PASSES only with no
+// flag on every page × width × place. Exit: 0 every item has a passing candidate · 1 an item has none · 2 bad input, an
+// item NOT MEASURED (text not found, crosses an element, fidelity), or no server. Local builds only — refuses the live site
+// and port 3000 (the owner's dev server). Chrome, its profile and the temp files go on every exit, Ctrl+C included.
 "use strict";
 const { spawn, spawnSync } = require("child_process");
 const fs = require("fs");
 const http = require("http");
 const path = require("path");
-const { CHROME, FLAGS, TMP } = require("./lib/chrome");
+const chromeLib = require("./lib/chrome"); // reading .CHROME takes the one-Chrome-job lock, so bad input never waits for it
+const { FLAGS, TMP } = chromeLib;
 const { waitReady, docStamp } = require("./page-ready");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -52,12 +55,38 @@ const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : def; };
 const file = args.find((a, i) => !a.startsWith("--") && !args[i - 1]?.startsWith("--"));
 const base = opt("--base", "http://localhost:3412").replace(/\/$/, "");
-const settle = +opt("--settle", 6000);
-const fail = (msg) => { console.error(`line-candidates: ${msg}`); process.exit(2); };
+const settle = Number(opt("--settle", 6000));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Whatever ends this process (fail, a throw, Ctrl+C) runs cleanup through the "exit" event.
+let chrome = null, profile = null;
+const tempFiles = [];
+// A killed Chrome holds its profile for about a second; rmSync's own retry did not outlast that here, so wait between tries.
+function removeSoon(f) {
+  for (let i = 0; i < 20; i++) {
+    try { fs.rmSync(f, { recursive: true, force: true }); return; } catch (e) {
+      if (i === 19) console.error(`line-candidates: left in the temp folder: ${f} (${e.code})`);
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 500);
+    }
+  }
+}
+function cleanup() {
+  if (chrome?.pid && chrome.exitCode === null) {
+    if (process.platform === "win32") spawnSync("taskkill", ["/PID", String(chrome.pid), "/T", "/F"], { stdio: "ignore" }); // Chrome's helper processes too
+    else chrome.kill();
+  }
+  chrome = null;
+  for (const f of [...tempFiles.splice(0), profile]) if (f) removeSoon(f);
+  profile = null;
+}
+process.on("exit", cleanup);
+process.on("SIGINT", () => process.exit(130));
+process.on("SIGTERM", () => process.exit(143));
+const fail = (msg) => { console.error(`line-candidates: ${msg}`); process.exit(2); };
 
 function readInput() {
   if (!file) fail("usage: node scripts/line-candidates.js <file.json> [--base <url>] [--out <file>] [--settle <ms>]");
+  if (!Number.isFinite(settle) || settle < 0) fail("--settle needs a number of milliseconds");
   const u = new URL(base);
   if (!/^(localhost|127\.0\.0\.1)$/.test(u.hostname) || u.port === "3000") fail(`${base} is not a test server (a built page on localhost, not port 3000)`);
   const input = JSON.parse(fs.readFileSync(file, "utf8"));
@@ -74,6 +103,7 @@ function glue(items) {
   const inFile = `${TMP}/line-cand-in-${process.pid}.json`;
   const outFile = `${TMP}/line-cand-out-${process.pid}.json`;
   const texts = items.flatMap((it) => [it.current, ...it.candidates]);
+  tempFiles.push(inFile, outFile);
   fs.writeFileSync(inFile, JSON.stringify(texts));
   const cmd = `npx tsx scripts/lib/thai-runs.ts "${inFile}" "${outFile}"`;
   const r = process.platform === "win32"
@@ -81,8 +111,6 @@ function glue(items) {
     : spawnSync("sh", ["-c", cmd], { cwd: ROOT, encoding: "utf8" });
   if (r.status !== 0) fail(`thai-runs failed: ${r.stderr || r.stdout}`);
   const runs = JSON.parse(fs.readFileSync(outFile, "utf8"));
-  fs.rmSync(inFile, { force: true });
-  fs.rmSync(outFile, { force: true });
   let at = 0;
   return items.map((it) => { const n = it.candidates.length + 1; const part = runs.slice(at, at + n); at += n; return part; });
 }
@@ -121,8 +149,8 @@ window.__LC = (() => {
     let s = ""; const map = [];
     for (const n of nodes) for (let i = 0; i < n.data.length; i++) {
       let c = n.data[i];
-      if (c === "⁠") continue;
-      if (/[\s ]/.test(c)) { if (s.endsWith(" ")) continue; c = " "; }
+      if (c === "\u2060") continue;
+      if (/[\s\u00a0]/.test(c)) { if (s.endsWith(" ")) continue; c = " "; }
       s += c; map.push([n, i]);
     }
     return { s, map };
@@ -156,7 +184,7 @@ window.__LC = (() => {
     const out = []; let cur = null; const r = document.createRange();
     for (const n of ownNodes(block)) for (let i = 0; i < n.data.length; i++) {
       const ch = n.data[i];
-      if (ch === "⁠") continue;
+      if (ch === "\u2060") continue;
       if (/[ \t\r\n]/.test(ch)) { if (cur) cur.t += " "; continue; }
       r.setStart(n, i); r.setEnd(n, i + 1);
       const b = r.getClientRects()[0];
@@ -169,7 +197,7 @@ window.__LC = (() => {
   const lastWord = (s) => [...seg.segment(s)].filter((w) => w.isWordLike).pop()?.segment || "";
   function breakFlags(a, b, words) {
     const flags = [];
-    const L = a.t.replace(/ /g, " "), R = b.t.replace(/ /g, " ");
+    const L = a.t.replace(/\u00a0/g, " "), R = b.t.replace(/\u00a0/g, " ");
     const left = L.trimEnd(), right = R.trimStart(), gap = L !== left;
     const mark = left.slice(-7) + "|" + right.slice(0, 7);
     if (/(\d|หนึ่ง|สอง|สาม|สี่|ห้า|สิบ)$/.test(left) && /^(ก้อน|ลิตร|นาที|วัน|ชั่วโมง|คน|ตัว|ใบ|ครั้ง|mL|Wh|มวน)/.test(right)) flags.push("number-unit:" + mark);
@@ -187,7 +215,7 @@ window.__LC = (() => {
     const L = lines(block);
     for (let j = 0; j < L.length - 1; j++) flags.push(...breakFlags(L[j], L[j + 1], words));
     if (/^(P|LI)$/.test(block.tagName) && L.length > 1 && L[L.length - 1].t.replace(/\s/g, "").length <= 7) flags.push("short-last-line:" + L[L.length - 1].t.trim());
-    return { flags: [...new Set(flags)], lines: L.map((l) => l.t.replace(/ /g, "~").trim()) };
+    return { flags: [...new Set(flags)], lines: L.map((l) => l.t.replace(/\u00a0/g, "~").trim()) };
   }
   function fragment(runs) {
     const f = document.createDocumentFragment();
@@ -254,13 +282,18 @@ function serverUp() {
   return new Promise((res) => { const q = http.get(base + "/", (r) => { r.resume(); res(r.statusCode < 500); }); q.on("error", () => res(false)); q.setTimeout(20000, () => { q.destroy(); res(false); }); });
 }
 async function open() {
-  const port = 9700 + Math.floor(Math.random() * 200);
-  const profile = `${TMP}/line-cand-profile-${process.pid}`;
-  const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
-  const close = () => { chrome.kill(); };
+  profile = `${TMP}/line-cand-profile-${process.pid}`;
+  // port 0 = Chrome picks a free port and writes it to DevToolsActivePort, so a port in use cannot stop this run
+  chrome = spawn(chromeLib.CHROME, [...FLAGS, "--remote-debugging-port=0", "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
   let target = null;
-  for (let i = 0; i < 60 && !target; i++) { try { target = (await getJson(port, "/json/list")).find((t) => t.type === "page"); } catch { /* not up yet */ } if (!target) await sleep(500); }
-  if (!target) { close(); fail("Chrome DevTools endpoint never appeared"); }
+  for (let i = 0; i < 60 && !target; i++) {
+    try {
+      const port = Number(fs.readFileSync(`${profile}/DevToolsActivePort`, "utf8").split("\n")[0]);
+      target = (await getJson(port, "/json/list")).find((t) => t.type === "page");
+    } catch { /* not up yet */ }
+    if (!target) await sleep(500);
+  }
+  if (!target) fail("Chrome DevTools endpoint never appeared");
   const ws = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((r) => (ws.onopen = r));
   let id = 0; const pending = new Map();
@@ -269,7 +302,7 @@ async function open() {
   const ev = async (expression) => { const r = await send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true }); if (r.result?.exceptionDetails) throw new Error(JSON.stringify(r.result.exceptionDetails).slice(0, 600)); return r.result?.result?.value; };
   await send("Page.enable"); await send("Runtime.enable");
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
-  return { send, ev, close: () => { ws.close(); close(); setTimeout(() => fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5 }), 400); } };
+  return { send, ev };
 }
 async function setWidth(send, w) {
   const desktop = w >= 1000;
@@ -289,21 +322,23 @@ function report(input, measured) {
     console.log(`\n## ${it.id}  ${it.current.slice(0, 50)}`);
     for (const m of lost) console.log(`   NOT FOUND ${m.page} @${m.width} (in the page ${m.found} time(s), none shown)`);
     for (const c of crossed) console.log(`   CROSSES ${c}: give the part beside that element`);
-    if (lost.length || crossed.length) missing++;
-    for (const r of rows) if (!r.faithful) console.log(`   FIDELITY ${r.at}: the swap moved the lines of the current text — live «${r.live.lines.join(" ▌ ")}» swapped «${r.echo.join(" ▌ ")}»`);
+    const unfaithful = rows.filter((r) => !r.faithful);
+    const blocked = lost.length > 0 || crossed.length > 0 || unfaithful.length > 0 || !rows.length;
+    if (blocked) missing++;
+    for (const r of unfaithful) console.log(`   FIDELITY ${r.at}: the swap moved the lines of the current text, so this item is not measured — live «${r.live.lines.join(" ▌ ")}» swapped «${r.echo.join(" ▌ ")}»`);
     const nowFlags = [...new Set(rows.flatMap((r) => r.live.flags))];
     if (rows.length) console.log(`   current: ${nowFlags.length ? "flags " + nowFlags.join(" · ") : "clean"}`);
     const passed = [];
     it.candidates.forEach((text, i) => {
       const flags = rows.flatMap((r) => r.cands[i].flags.map((f) => `${f} [${r.at}]`));
-      const ok = rows.length > 0 && !flags.length && !lost.length && !crossed.length;
+      const ok = !blocked && !flags.length;
       if (ok) passed.push(i);
-      console.log(`   ${i}: ${ok ? "PASS" : "FAIL"}  ${text.slice(0, 60)}`);
+      console.log(`   ${i}: ${blocked ? "NOT MEASURED" : ok ? "PASS" : "FAIL"}  ${text.slice(0, 60)}`);
       for (const f of flags) console.log(`        ${f}`);
       if (ok) for (const r of rows) console.log(`        ${r.at}: ${r.cands[i].lines.join(" ▌ ")}`);
     });
-    if (!passed.length) stuck++;
-    verdicts[it.id] = { passed, candidates: it.candidates.length };
+    if (!passed.length && !blocked) stuck++;
+    verdicts[it.id] = { passed, candidates: it.candidates.length, notMeasured: blocked };
   }
   return { stuck, missing, verdicts };
 }
@@ -317,30 +352,27 @@ function report(input, measured) {
   const items = input.items.map((it, i) => ({ ...it, words, runs: runs[i] }));
   const pages = [...new Set(items.flatMap((it) => it.pages))];
   const scanner = scannerEval();
-  const { send, ev, close } = await open();
+  const { send, ev } = await open();
   const measured = [];
-  try {
-    for (const width of WIDTHS) {
-      await setWidth(send, width);
-      for (const page of pages) {
-        const stamp = await docStamp(send);
-        await send("Page.navigate", { url: base + page });
-        await waitReady(send, stamp);
-        await ev("document.fonts.ready.then(()=>1)");
-        await sleep(settle);
-        await ev(`window.__LC_EVAL=${JSON.stringify(scanner)};${PAGE};1`);
-        const todo = items.filter((it) => it.pages.includes(page));
-        const res = JSON.parse(await ev(`window.__LC.run(${JSON.stringify(todo)})`));
-        for (const [id, r] of Object.entries(res)) measured.push({ id, page, width, ...r });
-      }
+  for (const width of WIDTHS) {
+    await setWidth(send, width);
+    for (const page of pages) {
+      const stamp = await docStamp(send);
+      await send("Page.navigate", { url: base + page });
+      await waitReady(send, stamp);
+      await ev("document.fonts.ready.then(()=>1)");
+      await sleep(settle);
+      await ev(`window.__LC_EVAL=${JSON.stringify(scanner)};${PAGE};1`);
+      const todo = items.filter((it) => it.pages.includes(page));
+      const res = JSON.parse(await ev(`window.__LC.run(${JSON.stringify(todo)})`));
+      for (const [id, r] of Object.entries(res)) measured.push({ id, page, width, ...r });
     }
-  } finally {
-    close();
   }
+  cleanup();
   const { stuck, missing, verdicts } = report(input, measured);
-  const out = opt("--out", `_incoming/line-candidates/${path.basename(file)}`);
+  const out = opt("--out", path.join(ROOT, "_incoming", "line-candidates", path.basename(file)));
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify({ base, widths: WIDTHS, date: new Date().toISOString(), verdicts, measured }, null, 1));
   console.log(`\n${missing ? `NOT MEASURED ${missing} item(s)` : stuck ? `NO WINNER ${stuck} item(s)` : `PASS every item has a candidate`} — full result ${out}`);
-  setTimeout(() => process.exit(missing ? 2 : stuck ? 1 : 0), 600);
+  process.exit(missing ? 2 : stuck ? 1 : 0);
 })().catch((e) => { console.error(e.message || e); process.exit(2); });
