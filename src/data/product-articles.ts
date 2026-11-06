@@ -185,7 +185,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Pack facts = the owner's pouch photos 03/11 (SUP ZERO 22K Grape Lychee, two sides); there is no back-panel photo. Flavours = max-seed
   // "SUP-ZERO-22K", grouped by the shop. No charging, coil, airflow, days-of-use, maker or ingredient claim. Stock states stay with the
-  // cart, so Apple Aloe Vera is not discussed here. en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. thai-copy 06/11.
+  // cart, so the list names Apple Aloe Vera without saying it is out of stock. en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. thai-copy 06/11.
   "sup-zero-22k": {
     th: {
       lede: "ก่อนเลือก SUP ZERO 22K ด้านล่างร้านสรุปตัวเลขบนซองให้อ่านง่าย จัดกลิ่นเป็นสายให้เลือกได้สะดวกขึ้น และเทียบให้ดูกับรุ่นใกล้เคียงว่าต่างกันตรงไหน",
@@ -202,7 +202,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "แต่ละคนชอบรสไม่เหมือนกัน ลองเริ่มจากสายที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น จึงเป็นการจัดของร้านเอง ไม่ได้มาจากบนซอง",
             "สายเย็นมี 5 กลิ่น ชื่อมีคำว่า Ice หรือ Mint คือ Grape Ice · Strawberry Ice · Blueberry Ice · Lychee Ice และ Double Mint",
-            "สายผลไม้มี Grape Lychee · Watermelon · Peach Strawberry และ Mixberry ส่วนแนวอื่นมี Cola",
+            "สายผลไม้มี Grape Lychee · Watermelon · Peach Strawberry · Mixberry และ Apple Aloe Vera ส่วนแนวอื่นมี Cola",
             "ห้ากลิ่นมีอีกแบบที่ชื่อมี 5% ต่อท้าย คือ Grape Ice 5% · Grape Lychee 5% · Mixberry 5% · Watermelon 5% และ Double Mint 5% ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
           ],
         },
@@ -250,7 +250,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "Start with the kind of flavour you like. The groups below are ours, based on the words in each name; they aren't printed on the pack.",
             "Cool has five, with Ice or Mint in the name: Grape Ice, Strawberry Ice, Blueberry Ice, Lychee Ice and Double Mint.",
-            "Fruit is Grape Lychee, Watermelon, Peach Strawberry and Mixberry, and the other flavour is Cola.",
+            "Fruit is Grape Lychee, Watermelon, Peach Strawberry, Mixberry and Apple Aloe Vera, and the other flavour is Cola.",
             "Five also come with 5% at the end of the name: Grape Ice 5%, Grape Lychee 5%, Mixberry 5%, Watermelon 5% and Double Mint 5%. Check the name in the list before you choose.",
           ],
         },
@@ -298,7 +298,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "可以先从喜欢的类型选起。下面的分组是本店按口味名称里的词整理的，包装上并没有这样的分类。",
             "清凉类有 5 款，名称里带 Ice 或 Mint：Grape Ice、Strawberry Ice、Blueberry Ice、Lychee Ice 和 Double Mint。",
-            "水果类有 Grape Lychee、Watermelon、Peach Strawberry 和 Mixberry，其余一款是 Cola。",
+            "水果类有 Grape Lychee、Watermelon、Peach Strawberry、Mixberry 和 Apple Aloe Vera，其余一款是 Cola。",
             "另有 5 款名称后带 5%：Grape Ice 5%、Grape Lychee 5%、Mixberry 5%、Watermelon 5% 和 Double Mint 5%。下单前请再核对一下列表里的名称。",
           ],
         },
