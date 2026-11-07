@@ -298,13 +298,15 @@ npm run qr:upload-text
     เปิดให้ลูกค้าใช้ = กดสถานะเป็น **Published**
 58. **Google:** console.cloud.google.com → โปรเจกต์ **okami24-gsc** → Google Auth Platform → Branding: ชื่อแอป OKami24 ·
     อีเมลฝ่ายช่วยเหลือและอีเมลติดต่อ = okamisalt@gmail.com · โดเมน okami24.store · Clients → **"OKami24 website sign-in"** (Web) →
-    Authorized redirect URI = `https://okami24.store/api/auth/google/callback` · Audience อยู่โหมด Testing = เข้าได้เฉพาะ test users →
-    เปิดให้ลูกค้าใช้ = **Publish app** (ขอแค่ `openid profile` — ไม่ต้องยื่นตรวจ ตราบใดที่ไม่อัปโหลดโลโก้)
+    Authorized redirect URI = `https://okami24.store/api/auth/google/callback` · Audience = **In production** แล้ว (ตรวจ 07/11) ·
+    ขอแค่ `openid profile` · ส่วนเจ้าของขอ `openid email` เพิ่ม — ไม่ต้องยื่นตรวจ ตราบใดที่ไม่อัปโหลดโลโก้
 59. Render → **okami24** → **Environment** → เพิ่ม 4 ค่า (ความลับ 2 ตัว = เจ้าของวางเอง):
     - `OKAMI24_LINE_LOGIN_CHANNEL_ID` → Channel ID · `OKAMI24_LINE_LOGIN_CHANNEL_SECRET` → Channel secret (LINE แท็บ Basic settings)
     - `OKAMI24_GOOGLE_CLIENT_ID` → Client ID · `OKAMI24_GOOGLE_CLIENT_SECRET` → Client secret (Google ให้ดูครั้งเดียวตอนสร้าง ·
       หายแล้ว = หน้า client → Add secret)
     → Save (ค่าจะมีผลกับการ deploy ครั้งถัดไป) · `OKAMI24_AUTH_ORIGIN` ไม่ต้องตั้งบน Render (ใช้เฉพาะเครื่องทดสอบ)
+60. **ส่วนเจ้าของ `/staff/owner`:** Render → Environment → `OKAMI24_OWNER_GOOGLE_EMAIL` → Gmail ของเจ้าของ · ไม่ตั้ง = หน้า 404 ทั้งส่วน ·
+    ลบค่า = ปิดส่วนเจ้าของทันทีหลัง deploy ถัดไป · ไม่ใช่ความลับ แต่ไม่เขียนลง git
 
 ## เรื่องที่ต้องรู้ไว้ ไม่ต้องทำอะไรตอนนี้
 
