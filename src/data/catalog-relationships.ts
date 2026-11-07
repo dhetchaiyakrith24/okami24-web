@@ -378,6 +378,28 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/",
     tier: "official",
   },
+
+  // Fit gaps of the suggestions round (07/11), both maker pages read 07/11. The maker lists no separate part page, so which Max
+  // code is that part is the shop's record ("KS Quikpro 15K หัวพอต" · the ESKO BAR SWITCH refill, round list19).
+  // Held, not authored: vmate-pro-2 -> coil-72 (only the Top Fill options fit, an edge cannot say so on the card and VOOPOO's page
+  // could not be re-read) · relx-essential-2 -> Pod Pro 2 · m-switch-kit -> nexbar-switch-15k-pod · vazer-one-pod -> infy-pod (one
+  // retailer each) · relx-creator -> relx-creator-pod-20k (RELX names the pod family, not this code).
+  {
+    device: "ks-quikpro-kit",
+    consumable: "pod-150",
+    role: "cartridge",
+    evidence: "Kardinal says the Quikpro uses a proprietary replaceable 15ml cartridge made for this model, and that neither the Lumina's KSpod nor other brands' cartridges fit it.",
+    sourceUrl: "https://kardinal.com/products/quikpro",
+    tier: "official",
+  },
+  {
+    device: "pod-159",
+    consumable: "esko-bar-switch-pod",
+    role: "pod",
+    evidence: "ESKO BAR's SWITCH page describes one system: a replaceable pod on the device, with a single replacement pod in the range.",
+    sourceUrl: "https://eskobarvape.com/product/pod-system/",
+    tier: "official",
+  },
 ];
 
 // ===================================================================================
