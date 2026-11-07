@@ -3,6 +3,8 @@ import { authOrigin, finishSignIn, isMemberProvider } from "@/lib/members/provid
 import { clearPendingCookie, PENDING_COOKIE, readPendingCookie } from "@/lib/members/pending-cookie";
 import { createMemberSession, upsertMemberFromIdentity } from "@/lib/members/session";
 import { safeReturnPath } from "@/lib/members/id-token";
+import { createOwnerSession, ownerEmailSetting } from "@/lib/owner/auth";
+import { isOwnerIdentity } from "@/lib/owner/identity";
 
 /**
  * Member sign-in, step 2 (queue Q4): the provider sends the visitor back here with `code` + `state`. The state must equal
@@ -14,9 +16,9 @@ export const dynamic = "force-dynamic";
 
 const HEADERS = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } as const;
 
-function toLogin(reason: string, provider: string): NextResponse {
-  console.warn(`[member-sign-in] ${provider}: ${reason}`);
-  const response = NextResponse.redirect(`${authOrigin()}/account/login?error=1`, { status: 302, headers: HEADERS });
+function toLogin(reason: string, provider: string, owner = false): NextResponse {
+  console.warn(`[${owner ? "owner" : "member"}-sign-in] ${provider}: ${reason}`);
+  const response = NextResponse.redirect(`${authOrigin()}${owner ? "/staff/owner?denied=1" : "/account/login?error=1"}`, { status: 302, headers: HEADERS });
   clearPendingCookie(response);
   return response;
 }
@@ -27,13 +29,23 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
   const query = request.nextUrl.searchParams;
   const pending = readPendingCookie(request.cookies.get(PENDING_COOKIE)?.value);
-  if (query.get("error")) return toLogin(`provider error ${query.get("error")}`, provider);
+  const owner = pending?.purpose === "owner";
+  if (query.get("error")) return toLogin(`provider error ${query.get("error")}`, provider, owner);
   if (!pending || pending.provider !== provider) return toLogin("no pending sign-in", provider);
   const code = query.get("code");
-  if (!code || query.get("state") !== pending.state) return toLogin("state mismatch", provider);
+  if (!code || query.get("state") !== pending.state) return toLogin("state mismatch", provider, owner);
 
   const result = await finishSignIn(pending, code);
-  if (!result.ok) return toLogin(result.reason, provider);
+  if (!result.ok) return toLogin(result.reason, provider, owner);
+
+  // The owner's sign-in (src/lib/owner/auth.ts) leaves no member row, whoever it turns out to be.
+  if (owner) {
+    if (provider !== "google" || !isOwnerIdentity(result.claims, ownerEmailSetting())) return toLogin("not the owner", provider, true);
+    const toOwner = NextResponse.redirect(`${authOrigin()}/staff/owner`, { status: 302, headers: HEADERS });
+    clearPendingCookie(toOwner);
+    createOwnerSession(toOwner);
+    return toOwner;
+  }
 
   const memberId = upsertMemberFromIdentity(provider, result.claims.sub, result.claims.name);
   // The cookie is unsigned — re-check the return path here as a second lock (checker #854 n1).

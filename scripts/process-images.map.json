@@ -14521,6 +14521,262 @@
   "fileName": "variant-ice-tieguanyin-v2.webp"
  },
  {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "variant",
+  "id": "black-wave",
+  "fileName": "variant-black-wave.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-vape-device-black-wave-with-box.png",
+  "slug": "relx-artisan-plus",
+  "role": "detail",
+  "id": "box",
+  "fileName": "detail-box.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 1226x1224)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-vape-kit-watermelon-steel-silver.png",
+  "slug": "relx-ultra-kit",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-kit-watermelon-steel-silver-front.png",
+  "slug": "relx-ultra-kit",
+  "role": "variant",
+  "id": "watermelon",
+  "fileName": "variant-watermelon.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-kit-sunrise-lemon-lime-steel-silver-front.png",
+  "slug": "relx-ultra-kit",
+  "role": "variant",
+  "id": "sunrise-lemon-lime",
+  "fileName": "variant-sunrise-lemon-lime.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-watermelon-flavor-vape-pack.png",
+  "slug": "relx-ultra-pod",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-watermelon-flavor-vape-pack.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "watermelon",
+  "fileName": "variant-watermelon.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-blueberry-sour-raspberry-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "blueberry-sour-raspberry",
+  "fileName": "variant-blueberry-sour-raspberry.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-cherry-cola-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "cherry-cola",
+  "fileName": "variant-cherry-cola.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-sunrise-lemon-lime-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "sunrise-lemon-lime",
+  "fileName": "variant-sunrise-lemon-lime.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/colorful-silver.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "colorful-silver",
+  "fileName": "variant-colorful-silver.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (8) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/pearl-white.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "pearl-white",
+  "fileName": "variant-pearl-white.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (12) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/sky-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "sky-blue",
+  "fileName": "variant-sky-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (13) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/modern-red.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "modern-red",
+  "fileName": "variant-modern-red.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (11) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/glow-pink.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "glow-pink",
+  "fileName": "variant-glow-pink.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (9) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/gray-metal.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "gray-metal",
+  "fileName": "variant-gray-metal.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (10) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/spray-black.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "spray-black",
+  "fileName": "variant-spray-black.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (14) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/champagne-golden.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "champagne-golden",
+  "fileName": "variant-champagne-golden.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (1) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/moss-green.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "moss-green",
+  "fileName": "variant-moss-green.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (2) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/snow-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "snow-blue",
+  "fileName": "variant-snow-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (3) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/checkered-black.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "checkered-black",
+  "fileName": "variant-checkered-black.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT base (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/retro.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "retro",
+  "fileName": "variant-retro.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (6) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/masala.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "masala",
+  "fileName": "variant-masala.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (5) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/carbon-fiber.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "carbon-fiber",
+  "fileName": "variant-carbon-fiber.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (4) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/classic.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "classic",
+  "fileName": "variant-classic.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT CLASSIC (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/galaxy-blue.png",
+  "slug": "drag-x2",
+  "role": "variant",
+  "id": "galaxy-blue",
+  "fileName": "variant-galaxy-blue.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (15) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/dx2/sky-blue.png",
+  "slug": "drag-x2",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "VOOPOO's own shop photo DRAG-X2-KIT (13) (2002x2002): the device cut from the box shot, no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/diva/diva.png",
+  "slug": "relx-diva-30k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits, job f84b23c8-ed40-42e8-afe7-c3c2eeed9fe9), studio remake",
+   "reference": "Shop poster crop, maneevp.com RELX-DIVA-30K-1.webp (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-diva-30k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/sparta/sparta.png",
+  "slug": "relx-sparta-20k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job e37bca71-f14b-472b-8d82-1e748d74a610), studio remake",
+   "reference": "Shop poster crop, relxth.co relx-Sparta-20k-relxth.webp (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-sparta-20k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/novo/novo.png",
+  "slug": "relx-novo-14k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job c75e9a78-283c-4508-9371-55d8bc5e2319), studio remake",
+   "reference": "Shop poster, vapedeliverybkk.com relx-novo-astronault.jpg (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-novo-14k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
   "source": "_incoming/popular-0711/nexas/nexas.png",
   "slug": "nexas-booster-16k",
   "role": "card",

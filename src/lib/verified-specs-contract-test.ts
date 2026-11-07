@@ -68,6 +68,9 @@ export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */
 const CROSS_PRODUCT_MENTIONS: Record<string, string[]> = {
   "nexas-booster-16k": ["16,000 พัฟ", "16,000 puffs", "20mL", "800mAh"], // Round popular models 07/11: 3 shops agree, copy only
+  "relx-novo-14k": ["14,000 พัฟ", "14,000 puffs", "500mAh"], // Round popular models 07/11: 3 shops agree, copy only
+  // Round popular models 07/11, owner: no maker page = facts from 3 independent shops, in the copy, never a spec row.
+  "relx-sparta-20k": ["20,000 พัฟ", "20,000 puffs", "750mAh"],
   // "…don't need the full 35W ceiling" — the ARGUS G4's 35W (argus-g4 verified row), the Mini's own ceiling is 30W.
   "argus-g4-mini": ["35W", "35 วัตต์"],
 };

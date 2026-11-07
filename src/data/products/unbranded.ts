@@ -328,7 +328,23 @@ export const unbrandedProducts: Product[] = [
     features: [],
     compatibility: [],
     whoIsThisFor: ["Owners of a compatible pod device restocking flavor cartridges."],
-    faqs: [],
+    faqs: [
+      {
+        id: "muro-3ml-what",
+        question: "Is the Muro 3ML a device or a pod?",
+        answer: "It's a pod. Each Muro 3ML comes prefilled with 3mL of e-liquid in a single flavor, and the device is a separate product.",
+      },
+      {
+        id: "muro-3ml-flavors",
+        question: "What flavors does the Muro 3ML come in?",
+        answer: "There are 14. The cool one is Smooth Mint, the grapes are Grape and Muro Grape, and the fruit side includes Watermelon, Very Strawberry and Mix Berries. Others include Cola and Mineral Water, and the full list is in the options on this page.",
+      },
+      {
+        id: "muro-3ml-grape",
+        question: "Are Muro Grape and Grape the same flavor?",
+        answer: "No, they're two separate options in the grape group, each with its own box. Check the name on the box before you choose.",
+      },
+    ],
     relatedProductSlugs: ["muro-space-15k", "muro-sc-8000", "muro-connector-20k", "muro-freebase", "muro-salt-nic"],
     sourceUrls: ["https://vapemun.com/", "https://ecigelm.com/", "https://ihavevape.net/product/close-system-muro-3-ml/", "https://vapeclubth.org/muro-pod-juice.html"],
   },
@@ -510,7 +526,28 @@ export const unbrandedProducts: Product[] = [
     features: [],
     compatibility: [],
     whoIsThisFor: ["Muro Creator or RELX Creator owners who want a high-puff pod with a wide flavour lineup."],
-    faqs: [],
+    faqs: [
+      {
+        id: "muro-connector-20k-device",
+        question: "Which devices does the Muro Connector 20K fit?",
+        answer: "It's made for the Muro Creator device, and we've confirmed from our own stock that it also fits the RELX Creator.",
+      },
+      {
+        id: "muro-connector-20k-puffs",
+        question: "How many puffs does the Muro Connector 20K give?",
+        answer: "It's rated for up to 20,000 puffs, and the number you actually get varies with how you vape.",
+      },
+      {
+        id: "muro-connector-20k-coil",
+        question: "What coil does the Muro Connector 20K use?",
+        answer: "A Dual Mesh coil. The pod comes prefilled, so when the e-liquid runs out you simply fit a new one.",
+      },
+      {
+        id: "muro-connector-20k-flavors",
+        question: "How many flavours does the Muro Connector 20K have?",
+        answer: "33. If you like a cool flavour, Double Mint, Cool Mint, Spear Mint and Blue Ice are a good place to start.",
+      },
+    ],
     relatedProductSlugs: ["relx-creator", "muro-3ml", "muro-space-15k", "muro-sc-8000", "muro-freebase", "muro-salt-nic"],
     sourceUrls: ["https://ihavevape.net/product/muro-connector-20k/", "https://vapemun.com/"],
   },
@@ -749,7 +786,18 @@ export const unbrandedProducts: Product[] = [
     features: [],
     compatibility: [],
     whoIsThisFor: ["Anyone choosing the Next Pro 2 Beyond device in one of its 6 colors."],
-    faqs: [],
+    faqs: [
+      {
+        id: "next-pro-2-beyond-type",
+        question: "What kind of pod is the Next Pro 2 Beyond?",
+        answer: "It's a pod device we list under Switch Pods. With this type, you change only the prefilled pod when the e-liquid runs out and keep using the same device.",
+      },
+      {
+        id: "next-pro-2-beyond-colors",
+        question: "What colours does the Next Pro 2 Beyond come in?",
+        answer: "Six: Razer Black, Supreme Red, White Lava, Aurora, Lemon Mint and Twilight Sky.",
+      },
+    ],
     relatedProductSlugs: [],
     // Only source located this pass is a Facebook photo album (owner-supplied, 2026-09-04) — real
     // and citable, but not a manufacturer or retailer storefront.

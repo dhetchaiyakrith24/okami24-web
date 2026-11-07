@@ -39,7 +39,8 @@ export function readPendingCookie(raw: string | undefined): PendingSignIn | null
     ) {
       return null;
     }
-    return { provider: v.provider, state: v.state, nonce: v.nonce, verifier: v.verifier, returnTo: v.returnTo };
+    // The cookie is unsigned, and that is fine here too: "owner" only changes what a successful Google answer is compared with.
+    return { provider: v.provider, state: v.state, nonce: v.nonce, verifier: v.verifier, returnTo: v.returnTo, purpose: v.purpose === "owner" ? "owner" : "member" };
   } catch {
     return null;
   }
