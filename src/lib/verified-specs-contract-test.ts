@@ -39,7 +39,7 @@ export const SOURCED_ROW_PRODUCTS = [
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */
 const MANUFACTURER_HOSTS = [
   "salthub.com", "img.salthub.com", "relxnow.com", "myuwell.com", "files.myuwell.com", "manuals.plus", "eskobarvape.com",
-  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com",
+  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com", "smoktech.com", "store.smoktech.com",
   // batch 4a (06/10): JOIWAY's Thai site — it serves JOIWAY's product API + poster files (_incoming/joiway/SOURCE.md)
   "thai.myjoiway.com",
   // round list19 (17/10): LAMBDA's own store (lambdasmoke.com, "Shenzhen Original Technology Co., Ltd.")
