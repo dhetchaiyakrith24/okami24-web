@@ -3473,7 +3473,7 @@ const allGuides: Guide[] = [
     // repeated use) rest on https://narcotic.fda.moph.go.th/information-about-drugs/nicotine. Evidence: facts-knowledge.md lines 6-10.
     id: "what-is-nicotine",
     slug: "what-is-nicotine",
-    title: "นิโคตินคืออะไร มาจากไหน ติดแล้วเป็นยังไง",
+    title: "นิโคตินคืออะไร และอาการติดนิโคติน",
     dek: "นิโคตินคือสารจากพืชสกุล Nicotiana โดยเฉพาะต้นยาสูบ บทความนี้เล่าว่าสารนี้อยู่ในร่างกายนานแค่ไหน และ WHO กับ CDC อธิบายการติดนิโคตินไว้อย่างไร",
     category: "getting-started",
     readingTimeMin: 4,
