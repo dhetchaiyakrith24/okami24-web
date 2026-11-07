@@ -112,6 +112,13 @@ for (const slug of all) {
   if (rowFor([slug]).length === 0) bad.push(`${slug}: nothing to sell at build`);
 }
 check("every product, four stocks: the page's row is the cart's row, none twice, never itself, never not-recommended, never empty at build", bad.length === 0, bad.slice(0, 4).join(" · "));
+// HANDOFF §18: the lookalike and the genuine model it copies never link to each other, on any stock.
+const apartBad = stocks.flatMap(([name, live]) => [
+  ...(relatedFor("marbo-10k-clone", live).some((i) => i.slug === "m-bar-10k") ? [`lookalike page offers M Bar 10K on ${name}`] : []),
+  ...(relatedFor("m-bar-10k", live).some((i) => i.slug === "marbo-10k-clone") ? [`M Bar 10K page offers the lookalike on ${name}`] : []),
+  ...(rowFor(["marbo-10k-clone", "pod-159"], live).some((i) => i.slug === "m-bar-10k") ? [`a cart with the lookalike offers M Bar 10K on ${name}`] : []),
+]);
+check("the lookalike and M Bar 10K never sit beside each other", apartBad.length === 0, apartBad.join("; "));
 const back = relatedFor("argus-g4", backInStock).map((i) => i.slug);
 check("stock back after the build: another pod system reaches the page", relatedFor("argus-g4").every((i) => i.published?.categoryId !== "pod-systems" && i.legacy?.categoryId !== "pod-systems") ? back.some((s) => getCatalogItem(s)?.categoryId === "pod-systems") : true, back.join(","));
 const argusBlock = relatedFor("argus-g4", backInStock);

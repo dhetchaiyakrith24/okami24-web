@@ -15,3 +15,7 @@ export const IN_STOCK_ALTERNATIVES: Record<string, string[]> = {
 
 /** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18): never offered as a suggestion or a shop pick. */
 export const NEVER_SUGGEST = new Set(["muro-space-15k", "marbo-10k-clone"]);
+
+/** HANDOFF §18: the lookalike and the genuine model it copies are never linked, either way. NEVER_SUGGEST keeps the lookalike
+ *  off the genuine page; this keeps the genuine model off the lookalike's page and off a cart holding it. */
+export const NEVER_BESIDE: Readonly<Record<string, string>> = { "marbo-10k-clone": "m-bar-10k" };
