@@ -30,6 +30,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // list-new (27/10): + Marbo 10K (เทียบแท้) Mocha Latte (Max Disposable-47-11), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
+  "Blueberry Sour Raspberry",
   "Watermelon Dragon Fruit",
   "Peach Mango Watermelon",
   "Banana Strawberry 50mg",
@@ -67,6 +68,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Hawaiian Shore Ice",
   "Tropical Mix Fruit",
   "Classic Tobacco 5%",
+  "Sunrise Lemon Lime",
   "Banana Strawberry",
   "Strawberry Banana",
   "Vanilla Ice Cream",
@@ -263,6 +265,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Funta Green",
   "Crisp Apple",
   "Fresh Melon",
+  "Cherry Cola",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",

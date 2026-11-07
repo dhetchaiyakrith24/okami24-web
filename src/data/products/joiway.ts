@@ -150,7 +150,33 @@ export const joiwayProducts: Product[] = [
       "You vape disposables regularly and want one that lasts a good while before you need a new one.",
       "You like a device with some colour to it, with lights that come on as you vape.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "joiway-f3-12k",
+        question: "Is the JOIWAY 12K the same as the JOIWAY F3?",
+        answer: "Yes. Many people call the F3 the JOIWAY 12K, after the 12,000+ puffs JOIWAY rates it at. It's the brand's single-flavor disposable.",
+      },
+      {
+        id: "joiway-f3-f4",
+        question: "What's the difference between the JOIWAY F3 and F4?",
+        answer: "The main difference is the number of flavors in the device. The F3 holds one, while the F4 holds two, and you turn the mouthpiece to change between them.",
+      },
+      {
+        id: "joiway-f3-days",
+        question: "How long does a 12000-puff JOIWAY last?",
+        answer: "It depends on how often you vape. JOIWAY rates it at 12,000+ puffs, and everyone gets through that at a different pace. The clear tank under the mouthpiece lets you see when you're getting near the end.",
+      },
+      {
+        id: "joiway-f3-charge",
+        question: "Can the JOIWAY F3 be recharged?",
+        answer: "Yes, it charges over USB-C. If the battery runs out before the liquid does, plug it in for a while and carry on with what's left.",
+      },
+      {
+        id: "joiway-f3-airflow",
+        question: "Can you adjust the airflow on the JOIWAY F3?",
+        answer: "Yes. The adjuster sits at the base of the device, so you can open it up for an easier draw or narrow it for a tighter one.",
+      },
+    ],
     // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
     reviewVideo: { videoId: "F5Szd_gI52k", title: "JOIWAY F3 รุ่นเก่าที่เคยฮิต ยังน่าใช้อยู่ไหมในปี 2026?", channelName: "OKM YARZ", publishedAt: "2026-10-08" },
     relatedProductSlugs: ["joiway-f4"],
