@@ -970,7 +970,7 @@ export const unbrandedProducts: Product[] = [
     specifications: [{ key: "puffs", label: "Rated puffs", value: "15,000", sourceStatus: "unverified" }],
     features: [
       { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head, so a new flavour only takes a new head." },
-      { id: "air", title: "Airflow and mesh coil", description: "Shops that sell it agree it has a mesh coil and adjustable airflow." },
+      { id: "air", title: "Mesh coil and airflow", description: "Shops that sell it agree it has a mesh coil and adjustable airflow." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 15,000 puffs, 18mL, a 600mAh battery, 3% nicotine and USB-C charging." },
     ],
     compatibility: [],

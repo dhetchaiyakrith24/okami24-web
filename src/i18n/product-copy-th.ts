@@ -1162,7 +1162,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         description: "น้ำยาอยู่ในหัวพอตบรรจุสำเร็จ อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว",
       },
       air: {
-        title: "ปรับลมและคอยล์ mesh",
+        title: "คอยล์ mesh และการปรับรูลม",
         description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่าใช้คอยล์ mesh และปรับรูลมได้",
       },
       figures: {
