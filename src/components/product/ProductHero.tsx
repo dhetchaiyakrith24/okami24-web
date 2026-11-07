@@ -22,6 +22,7 @@ import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { useEmptiedSimilar } from "@/components/product/useEmptiedSimilar";
 import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
@@ -114,7 +115,8 @@ export function ProductHero({
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
   // The jump button goes with its block: the same rule on the same live answer.
   const liveCards = useLiveCardStock();
-  const similarLeft = shownSimilar(similarSlugs ?? [], liveCards).length > 0;
+  const emptiedSimilar = useEmptiedSimilar(product.slug, similarSlugs?.length ?? 0, liveCards);
+  const similarLeft = shownSimilar(similarSlugs?.length ? similarSlugs : emptiedSimilar.map((i) => i.slug), liveCards).length > 0;
   const { locale, dict } = useLocale();
   const bestIds = bestSellerOptions(product.slug);
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { useEmptiedSimilar } from "@/components/product/useEmptiedSimilar";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Container } from "@/components/ui/Container";
@@ -17,23 +17,7 @@ export function SimilarInStock({ slug, items }: { slug: string; items: SimilarIt
   const { dict } = useLocale();
   const live = useLiveCardStock();
   const own = live?.[slug];
-  const emptiedSinceBuild = items.length === 0 && own?.o === true;
-  const [fetched, setFetched] = useState<SimilarItem[]>([]);
-  useEffect(() => {
-    if (!emptiedSinceBuild) return;
-    let gone = false;
-    fetch(`/api/similar?slug=${encodeURIComponent(slug)}`, { credentials: "omit" })
-      .then((r) => (r.ok ? (r.json() as Promise<{ items?: SimilarItem[] }>) : null))
-      .then((a) => {
-        if (!gone && a?.items) setFetched(a.items);
-      })
-      .catch(() => {
-        /* no list: the page shows no block */
-      });
-    return () => {
-      gone = true;
-    };
-  }, [emptiedSinceBuild, slug]);
+  const fetched = useEmptiedSimilar(slug, items.length, live);
   const list = items.length > 0 ? items : fetched;
   const slugs = shownSimilar(list.map((i) => i.slug), live);
   const shown = list.filter((i) => slugs.includes(i.slug));
