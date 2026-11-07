@@ -7,10 +7,10 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 // works unchanged for both the legacy catalog and the ProductMaster pilot's `StorefrontProductView`
 // (production-readiness audit: reused here instead of a duplicate pilot-only component).
 export function SourceNote({ product }: { product: { sourceUrls: string[] } }) {
+  const { dict } = useLocale();
   // A model with no maker page carries our own address only: nothing to cite.
   const urls = product.sourceUrls.filter((url) => !url.includes("okami24.store"));
   if (urls.length === 0) return null;
-  const { dict } = useLocale();
   return (
     <section className="bg-surface-1 py-8">
       <Container>
