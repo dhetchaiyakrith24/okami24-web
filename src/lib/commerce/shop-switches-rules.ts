@@ -42,9 +42,15 @@ export function staysOpenWhileClosed(pathname: string): boolean {
   return /^\/(orders|account\/login)(\/|$)/.test(pathname);
 }
 
-/** The slug a product page address names, when that product is hidden. */
+/** The slug a product page address names, when that product is hidden. Decoded first: /products/%61bc is /products/abc. */
 export function hiddenProductOf(pathname: string, hidden: readonly string[]): string | null {
-  const slug = /^\/products\/([^/]+)\/?$/.exec(pathname)?.[1];
+  let path = pathname;
+  try {
+    path = decodeURIComponent(pathname);
+  } catch {
+    // A broken escape is no product's address.
+  }
+  const slug = /^\/products\/([^/]+)\/?$/.exec(path)?.[1]?.toLowerCase();
   return slug && hidden.includes(slug) ? slug : null;
 }
 

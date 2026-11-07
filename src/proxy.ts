@@ -49,7 +49,7 @@ function switched(request: NextRequest): NextResponse | null {
   const { siteClosed, hidden } = readSwitches();
   if (siteClosed && !staysOpenWhileClosed(pathname)) return closedPage();
   if (hiddenProductOf(pathname, hidden)) {
-    /* A slug no product has: the page's own not-found answer, status 404. */
+    // A slug no product has: the page's own not-found answer, status 404.
     const url = request.nextUrl.clone();
     url.pathname = "/products/not-a-product";
     return NextResponse.rewrite(url);
@@ -82,7 +82,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  /* The last line = every page, for the owner's switches: not /api and /staff, which must outlive a closed site (slip bot, stock
-     feed, the way back), not build files, and not anything with a file extension (sitemap, robots, pictures). */
-  matcher: ["/_next/image", "/assets/products/:path*", "/((?!api/|staff|_next/|assets/|.*\\.[a-z0-9]+$).*)"],
+  // The last line = every page, for the owner's switches: not /api, /wp-json (Shipnity's stock, orders and tracking) and /staff,
+  // which must outlive a closed site, not build files, and not anything with a file extension (sitemap, robots, pictures).
+  matcher: ["/_next/image", "/assets/products/:path*", "/((?!api/|wp-json|staff|_next/|assets/|.*\\.[a-z0-9]+$).*)"],
 };

@@ -32,7 +32,7 @@ export function readSwitches(): ShopSwitches {
 /** Written whole through a temporary file, so a reader never meets half a file. */
 export function writeSwitches(next: ShopSwitches): void {
   fs.mkdirSync(dataDir(), { recursive: true });
-  const temp = `${filePath()}.tmp`;
+  const temp = `${filePath()}.${process.pid}.${Date.now()}.tmp`;
   fs.writeFileSync(temp, JSON.stringify(next));
   fs.renameSync(temp, filePath());
   cache = { at: Date.now(), value: next };

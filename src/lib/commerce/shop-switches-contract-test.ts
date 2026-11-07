@@ -24,6 +24,8 @@ check("sign-in stays open while closed", staysOpenWhileClosed("/account/login"))
 check("shop pages do not", !staysOpenWhileClosed("/") && !staysOpenWhileClosed("/products") && !staysOpenWhileClosed("/ordersx") && !staysOpenWhileClosed("/cart"));
 
 check("a hidden product page is found", hiddenProductOf("/products/x-1", ["x-1"]) === "x-1" && hiddenProductOf("/products/x-1/", ["x-1"]) === "x-1");
+check("an encoded or upper-case address is the same product", hiddenProductOf("/products/%61-1", ["a-1"]) === "a-1" && hiddenProductOf("/products/A-1", ["a-1"]) === "a-1");
+check("a broken escape is no product", hiddenProductOf("/products/%E0%A4%A", ["a-1"]) === null);
 check("other pages are not", hiddenProductOf("/products/y", ["x-1"]) === null && hiddenProductOf("/products", ["x-1"]) === null && hiddenProductOf("/brands/x-1", ["x-1"]) === null);
 
 check("no hidden products = no rule", hiddenCardsCss([]) === "");
@@ -32,7 +34,7 @@ check("a bad slug never reaches the rule", hiddenCardsCss(['x"]{}']) === "");
 
 const proxy = fs.readFileSync(path.resolve(process.cwd(), "src/proxy.ts"), "utf8");
 const matcher = /matcher:\s*\[([\s\S]*?)\]/.exec(proxy)?.[1] ?? "";
-check("the proxy leaves /staff, /api and files alone", matcher.includes("api/") && matcher.includes("staff") && matcher.includes("_next/"));
+check("the proxy leaves /staff, /api, /wp-json and files alone", matcher.includes("api/") && matcher.includes("wp-json") && matcher.includes("staff") && matcher.includes("_next/"));
 
 console.log(failed === 0 ? "shop switches: PASS" : `shop switches: FAIL (${failed})`);
 process.exit(failed === 0 ? 0 : 1);

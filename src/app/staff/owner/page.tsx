@@ -112,7 +112,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           counts={counts}
           oldest={oldestOrders()}
           canOpenOrders={canOpenOrders}
-          stock={stockSummary(stockBook(), isBestSeller, soldOptions(30))}
+          stock={stockSummary(stockBook().filter((p) => !switches.hidden.includes(p.slug)), isBestSeller, soldOptions(30))}
           feed={feed}
           now={now}
         />
