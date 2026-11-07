@@ -7,6 +7,7 @@ import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { shownSimilar } from "@/lib/related-row";
 import type { SimilarItem } from "@/lib/similar-in-stock";
 
 /** Directly under the head of a page with nothing to buy: up to 4 close models a customer can buy now (round popular
@@ -15,26 +16,9 @@ import type { SimilarItem } from "@/lib/similar-in-stock";
 export function SimilarInStock({ slug, items }: { slug: string; items: SimilarItem[] }) {
   const { dict } = useLocale();
   const live = useLiveCardStock();
-  const own = live?.[slug];
-  const emptiedSinceBuild = items.length === 0 && own?.o === true;
-  const [fetched, setFetched] = useState<SimilarItem[]>([]);
-  useEffect(() => {
-    if (!emptiedSinceBuild) return;
-    let gone = false;
-    fetch(`/api/similar?slug=${encodeURIComponent(slug)}`, { credentials: "omit" })
-      .then((r) => (r.ok ? (r.json() as Promise<{ items?: SimilarItem[] }>) : null))
-      .then((a) => {
-        if (!gone && a?.items) setFetched(a.items);
-      })
-      .catch(() => {
-        /* no list: the page shows no block */
-      });
-    return () => {
-      gone = true;
-    };
-  }, [emptiedSinceBuild, slug]);
-  const shown = (items.length > 0 ? items : fetched).filter((i) => live?.[i.slug]?.s !== false).slice(0, 4);
-  if (shown.length === 0 || own?.s === true) return null;
+  const slugs = shownSimilar(items.map((i) => i.slug), live);
+  const shown = items.filter((i) => slugs.includes(i.slug));
+  if (shown.length === 0) return null;
 
   return (
     <section id="similar-in-stock" className="scroll-mt-24 border-b border-surface-border-soft bg-surface-0 py-10 lg:py-14">
