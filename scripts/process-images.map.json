@@ -14519,5 +14519,41 @@
    "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
   },
   "fileName": "variant-ice-tieguanyin-v2.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/diva/diva.png",
+  "slug": "relx-diva-30k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits, job f84b23c8-ed40-42e8-afe7-c3c2eeed9fe9), studio remake",
+   "reference": "Shop poster crop, maneevp.com RELX-DIVA-30K-1.webp (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-diva-30k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/sparta/sparta.png",
+  "slug": "relx-sparta-20k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job e37bca71-f14b-472b-8d82-1e748d74a610), studio remake",
+   "reference": "Shop poster crop, relxth.co relx-Sparta-20k-relxth.webp (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-sparta-20k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/novo/novo.png",
+  "slug": "relx-novo-14k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job c75e9a78-283c-4508-9371-55d8bc5e2319), studio remake",
+   "reference": "Shop poster, vapedeliverybkk.com relx-novo-astronault.jpg (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-novo-14k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
  }
 ]

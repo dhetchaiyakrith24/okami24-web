@@ -6,6 +6,204 @@ const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable v
 
 export const relxProducts: Product[] = [
   {
+    // Round popular models 07/11: searched (relx novo 590 a month), not in the warehouse, no price, no cart, no maker page (relxnow.com does not
+    // list it). Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in the browser: maneevp ·
+    // yaivapestore · vapedeliverybkk: 14,000 puffs, 500mAh, a display, these 14 flavours. Not agreed, so
+    // not written: liquid (12 or 20mL), Cola and adjustable airflow (two shops each).
+    id: "relx-novo-14k",
+    slug: "relx-novo-14k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Novo 14K",
+    displayName: "RELX NOVO 14K",
+    searchAliases: ["RELX Novo","Novo 14K","Novo 14000"],
+    tagline: "A disposable in brushed grey with a dot display down one side.",
+    shortDescription:
+      "A rounded disposable with a brushed grey body and a black panel that lights up in dots. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-novo-14k/card-wm5.webp",
+        alt: "RELX Novo 14K, brushed grey body with a dot display, three-quarter view",
+        angle: "three-quarter, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-novo-14k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "longjing-ice-tea", name: "LongJing Ice Tea", swatchHex: "#a8b56a", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-soda", name: "Orange Soda", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "sea-salt-lemon", name: "Sea Salt Lemon", swatchHex: "#e6d44f", availability: "unknown" },
+      { id: "sour-berry", name: "Sour Berry", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-bubblegum", name: "Sour Bubblegum", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "sour-lime-ice", name: "Sour Lime Ice", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "14,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "panel", title: "A lit panel on the side", description: "The black panel lights up in dots and shows a number, so the state of the device is easy to read." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 14,000 puffs and a 500mAh battery." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Novo by name, or you like a rounded disposable with a lit panel."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-novo-14k"],
+  },
+  {
+    // Round popular models 07/11: the most searched model we lack (relx sparta 20k 2,400 a month). Not in the warehouse, no price, no cart; no
+    // maker page anywhere (relxnow.com does not list it). Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops
+    // agree, written in the copy, never as a spec row. Read 07/11 in the browser: goatvapethai · maneevp (with zeedcupvp and yaivapestore,
+    // same wording) · relxth.co (with sudjudpod, same flavour order). All three: 20,000 puffs, 750mAh, Type-C, a display, airflow and power
+    // you can adjust, these 16 flavours. Not agreed, so not written: liquid (18 or 20mL), nicotine, and the 5 flavours in two groups only
+    // (Grape Aloe, Watermelon Bubblegum, Polar Mint, Pink Berry, Lychee).
+    id: "relx-sparta-20k",
+    slug: "relx-sparta-20k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Sparta 20K",
+    displayName: "RELX SPARTA 20K",
+    searchAliases: ["RELX Sparta", "Sparta 20K", "Sparta 20000"],
+    tagline: "A disposable with a scaled black body and a small display.",
+    shortDescription:
+      "A disposable in a black body with a scaled pattern and a round display near the base. Airflow and power both adjust. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-sparta-20k/card-wm5.webp",
+        alt: "RELX Sparta 20K, black scaled body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-sparta-20k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b08ac4", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "oolong-ice-tea", name: "Oolong Ice Tea", swatchHex: "#b5853f", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#f2c53b", availability: "unknown" },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "raspberry-mint", name: "Raspberry Mint", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#c8d94a", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "display", title: "A display near the base", description: "The round display shows the liquid and the battery left, so you are not guessing." },
+      { id: "adjust", title: "Airflow and power", description: "You can set the airflow and step the power up or down, rather than taking one fixed draw." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 20,000 puffs, a 750mAh battery and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Sparta by name, or you want a high-puff disposable with a display."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-sparta-20k"],
+  },
+  {
+    // Round popular models 07/11: searched, not in the warehouse, no maker page anywhere (relxnow.com does not list it), so no
+    // price and no cart. Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops agree. Shops that agree:
+    // goatvapethai, maneevp and zeedcupvp (counted as one, same spec text), vapedumpthailand.store: the 30K in the name and the flavour list.
+    // No spec row: the row gate takes a maker source only. Flavour pictures: none yet (IMAGE_SPEC §4).
+    id: "relx-diva-30k",
+    slug: "relx-diva-30k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Diva 30K",
+    displayName: "RELX DIVA 30K",
+    tagline: "A pebble-shaped disposable with a two-tone body and a small display.",
+    shortDescription:
+      "A rounded, two-tone disposable with a teardrop display on the front. Pick from the flavours below; each one shows whether it comes in the stronger version.",
+    isFlagship: false,
+    attributes: {
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-diva-30k/card-wm5.webp",
+        alt: "RELX Diva 30K, lilac top and pink-blue body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-diva-30k",
+      },
+    ],
+    flavorVariants: [
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "fresh-melon", name: "Fresh Melon", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "mango-passion-fruit", name: "Mango Passion Fruit", swatchHex: "#f2a93b", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-splash", name: "Orange Splash", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "spearmint", name: "Spearmint", swatchHex: "#5fbf9a", availability: "unknown" },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f2a2b5", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "cola-5", name: "Cola 5%", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "copico-coffee-5", name: "Copico Coffee 5%", swatchHex: "#7a5238", availability: "unknown" },
+      { id: "double-mint-5", name: "Double Mint 5%", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-5", name: "Grape 5%", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "watermelon-5", name: "Watermelon 5%", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "30,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "shape", title: "A body that sits in the hand", description: "It is short and rounded, like a pebble, so it stays small in the palm or a pocket." },
+      { id: "display", title: "A teardrop display", description: "The black teardrop on the front is what you check, rather than guessing how much is left." },
+    ],
+    compatibility: [],
+    whoIsThisFor: [
+      "You came looking for the DIVA by name, or you like a rounded disposable you can pick by flavour.",
+    ],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-diva-30k"],
+  },
+  {
     id: "relx-smash-go-12k",
     slug: "relx-smash-go-12k",
     brandId: "relx",
