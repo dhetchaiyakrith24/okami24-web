@@ -249,6 +249,9 @@ TaskStop ปิดแค่ shell ของ `npx …` บน Windows ลูก�
 
 # สิ่งที่เจ้าของชอบ / ไม่ชอบ (หมวด 12 ข้อ 27 — เจ้าของพูดเอง = จดเลย)
 
+## พ78. PR เกิน 300 ไฟล์: `self-merge-check --pr` ล้มเพราะ GitHub ไม่ส่ง diff
+07/11 PR รูป 2,083 ไฟล์ · อาการ = HTTP 406 ไม่ใช่ verdict · ทาง = `git fetch origin main` แล้วรัน `node scripts/self-merge-check.js` ไม่ใส่ `--pr` ใน worktree ที่ HEAD = หัว PR · ด่าน GitHub กับบรรทัด Checker ต้องดูเอง เพราะโหมดนี้ไม่อ่าน · ยังไม่แก้ตัวสคริปต์
+
 ## ช5. ไอเดียนอกคำสั่งที่เจ้าของชอบมาก: แถบชื่อแบรนด์เลื่อนช้า ๆ บนหน้าแรกมือถือ (เจ้าของพูดเอง 01/10)
 
 แถบ VOOPOO · SALTHUB · UWELL ที่เลื่อนช้า ๆ ใต้การ์ดสินค้าเด่นบนหน้าแรกมือถือ (`src/components/home/BrandMarquee.tsx`,
