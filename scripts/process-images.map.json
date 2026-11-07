@@ -14531,5 +14531,17 @@
   },
   "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/sparta/sparta.png",
+  "slug": "relx-sparta-20k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job e37bca71-f14b-472b-8d82-1e748d74a610), studio remake",
+   "reference": "Shop poster crop, relxth.co relx-Sparta-20k-relxth.webp (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-relx-sparta-20k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
  }
 ]

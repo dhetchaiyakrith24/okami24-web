@@ -6,6 +6,74 @@ const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable v
 
 export const relxProducts: Product[] = [
   {
+    // Round popular models 07/11: the most searched model we lack (relx sparta 20k 2,400 a month). Not in the warehouse, no price, no cart; no
+    // maker page anywhere (relxnow.com does not list it). Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops
+    // agree, written in the copy, never as a spec row. Read 07/11 in the browser: goatvapethai · maneevp (with zeedcupvp and yaivapestore,
+    // same wording) · relxth.co (with sudjudpod, same flavour order). All three: 20,000 puffs, 750mAh, Type-C, a display, airflow and power
+    // you can adjust, these 16 flavours. Not agreed, so not written: liquid (18 or 20mL), nicotine, and the 5 flavours in two groups only
+    // (Grape Aloe, Watermelon Bubblegum, Polar Mint, Pink Berry, Lychee).
+    id: "relx-sparta-20k",
+    slug: "relx-sparta-20k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Sparta 20K",
+    displayName: "RELX SPARTA 20K",
+    searchAliases: ["RELX Sparta", "Sparta 20K", "Sparta 20000"],
+    tagline: "A disposable with a scaled black body and a small display.",
+    shortDescription:
+      "A disposable in a black body with a scaled pattern and a round display near the base. Airflow and power both adjust. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-sparta-20k/card-wm5.webp",
+        alt: "RELX Sparta 20K, black scaled body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-sparta-20k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b08ac4", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "oolong-ice-tea", name: "Oolong Ice Tea", swatchHex: "#b5853f", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#f2c53b", availability: "unknown" },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "raspberry-mint", name: "Raspberry Mint", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#c8d94a", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "display", title: "A display near the base", description: "The round display shows the liquid and the battery left, so you are not guessing." },
+      { id: "adjust", title: "Airflow and power", description: "You can set the airflow and step the power up or down, rather than taking one fixed draw." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 20,000 puffs, a 750mAh battery and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Sparta by name, or you want a high-puff disposable with a display."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-sparta-20k"],
+  },
+  {
     // Round popular models 07/11: searched, not in the warehouse, no maker page anywhere (relxnow.com does not list it), so no
     // price and no cart. Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops agree. Shops that agree:
     // goatvapethai, maneevp and zeedcupvp (counted as one, same spec text), vapedumpthailand.store: the 30K in the name and the flavour list.

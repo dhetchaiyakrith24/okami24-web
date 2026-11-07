@@ -776,6 +776,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "relx-sparta-20k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา Sparta รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งจำนวนพัฟสูงที่มีจอบอกสถานะ",
+    },
+    features: {
+      display: {
+        title: "จอบอกสถานะใกล้ฐาน",
+        description: "จอกลมด้านล่างบอกน้ำยาและแบตที่เหลือ จึงไม่ต้องเดาว่าเหลืออีกเท่าไร",
+      },
+      adjust: {
+        title: "ปรับลมและปรับวัตต์ได้",
+        description: "ตั้งช่องลมและปรับวัตต์ขึ้นลงได้ ไม่ต้องสูบแบบเดียวตลอด",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "RELX ไม่มีหน้าของรุ่นนี้ ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 20,000 พัฟ แบต 750mAh และชาร์จผ่าน USB-C",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งตัวเครื่องสีดำลายเกล็ด พร้อมจอเล็กด้านล่าง",
+    shortDescription:
+      "พอตใช้แล้วทิ้งตัวเครื่องสีดำลายเกล็ด มีจอกลมอยู่ใกล้ฐาน ปรับได้ทั้งลมและวัตต์ เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
   "relx-diva-30k": {
     whoIsThisFor: {
       0: "ตั้งใจมาหา DIVA รุ่นนี้ หรือชอบพอตใช้แล้วทิ้งทรงมน ๆ ที่เลือกจากกลิ่นได้เลย",
