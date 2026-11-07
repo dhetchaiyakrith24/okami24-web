@@ -138,7 +138,7 @@ export function PhoneOptionTiles({
                 )}
               >
                 {o.image ? (
-                  <Image src={o.image.src} alt="" fill sizes="96px" className="object-contain p-1.5" />
+                  <Image src={o.image.src} alt={o.image.alt} fill sizes="96px" className="object-contain p-1.5" />
                 ) : (
                   <span
                     className="block h-1/2 w-1/2 rounded-full border border-black/10 shadow-inner"

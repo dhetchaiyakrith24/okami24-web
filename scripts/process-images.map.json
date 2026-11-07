@@ -14521,6 +14521,91 @@
   "fileName": "variant-ice-tieguanyin-v2.webp"
  },
  {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "variant",
+  "id": "black-wave",
+  "fileName": "variant-black-wave.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-vape-device-black-wave-with-box.png",
+  "slug": "relx-artisan-plus",
+  "role": "detail",
+  "id": "box",
+  "fileName": "detail-box.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 1226x1224)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-vape-kit-watermelon-steel-silver.png",
+  "slug": "relx-ultra-kit",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-kit-watermelon-steel-silver-front.png",
+  "slug": "relx-ultra-kit",
+  "role": "variant",
+  "id": "watermelon",
+  "fileName": "variant-watermelon.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-kit-sunrise-lemon-lime-steel-silver-front.png",
+  "slug": "relx-ultra-kit",
+  "role": "variant",
+  "id": "sunrise-lemon-lime",
+  "fileName": "variant-sunrise-lemon-lime.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-ultra-kit, used as it is, no AI, no mark (round popular models 07/11, 1100x1100)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-watermelon-flavor-vape-pack.png",
+  "slug": "relx-ultra-pod",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-watermelon-flavor-vape-pack.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "watermelon",
+  "fileName": "variant-watermelon.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-blueberry-sour-raspberry-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "blueberry-sour-raspberry",
+  "fileName": "variant-blueberry-sour-raspberry.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-cherry-cola-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "cherry-cola",
+  "fileName": "variant-cherry-cola.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-ultra-pod-sunrise-lemon-lime-18mg-1-pod.png",
+  "slug": "relx-ultra-pod",
+  "role": "variant",
+  "id": "sunrise-lemon-lime",
+  "fileName": "variant-sunrise-lemon-lime.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-maxgo-ultra-pod, used as it is, no AI, no mark (round popular models 07/11, 900x900)"
+ },
+ {
   "source": "_incoming/popular-0711/dx2/colorful-silver.png",
   "slug": "drag-x2",
   "role": "variant",
