@@ -6,6 +6,70 @@ const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable v
 
 export const relxProducts: Product[] = [
   {
+    // Round popular models 07/11: searched (relx novo 590 a month), not in the warehouse, no price, no cart, no maker page (relxnow.com does not
+    // list it). Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in the browser: maneevp ·
+    // yaivapestore · vapedeliverybkk: 14,000 puffs, 500mAh, a display, adjustable airflow; these 14 flavours per the researcher's pass. Not agreed, so
+    // not written: liquid (12 or 20mL), Cola (two shops).
+    id: "relx-novo-14k",
+    slug: "relx-novo-14k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Novo 14K",
+    displayName: "RELX NOVO 14K",
+    searchAliases: ["RELX Novo","Novo 14K","Novo 14000"],
+    tagline: "A disposable in brushed grey with a dot display down one side.",
+    shortDescription:
+      "A rounded disposable with a brushed grey body and a black panel that lights up in dots. The airflow adjusts. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-novo-14k/card-wm5.webp",
+        alt: "RELX Novo 14K, brushed grey body with a dot display, three-quarter view",
+        angle: "three-quarter, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-novo-14k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "longjing-ice-tea", name: "LongJing Ice Tea", swatchHex: "#a8b56a", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-soda", name: "Orange Soda", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "sea-salt-lemon", name: "Sea Salt Lemon", swatchHex: "#e6d44f", availability: "unknown" },
+      { id: "sour-berry", name: "Sour Berry", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-bubblegum", name: "Sour Bubblegum", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "sour-lime-ice", name: "Sour Lime Ice", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "14,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "panel", title: "A lit panel on the side", description: "The black panel lights up in dots and shows a number, so the state of the device is easy to read." },
+      { id: "airflow", title: "Airflow you can set", description: "You can adjust the airflow instead of taking one fixed draw." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 14,000 puffs and a 500mAh battery." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Novo by name, or you like a rounded disposable with a lit panel."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-novo-14k"],
+  },
+  {
     // Round popular models 07/11: the most searched model we lack (relx sparta 20k 2,400 a month). Not in the warehouse, no price, no cart; no
     // maker page anywhere (relxnow.com does not list it). Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops
     // agree, written in the copy, never as a spec row. Read 07/11 in the browser: goatvapethai · maneevp (with zeedcupvp and yaivapestore,

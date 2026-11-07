@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T11:34:31+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:41:18+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -123,8 +123,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-07T11:26:51+07:00",
-      "fp": "517b5df8a43f"
+      "date": "2026-11-07T11:34:31+07:00",
+      "fp": "2c5f20517211"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-07T11:26:51+07:00",
-      "fp": "154cd8fc20b1"
+      "date": "2026-11-07T11:34:31+07:00",
+      "fp": "3f371d6d9b34"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -319,8 +319,8 @@
       "fp": "6e79b0bcb8e3"
     },
     "/products/disposables": {
-      "date": "2026-11-07T11:26:51+07:00",
-      "fp": "9439a7ad9843"
+      "date": "2026-11-07T11:34:31+07:00",
+      "fp": "3f596903a3e2"
     },
     "/products/drag-6": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -565,6 +565,10 @@
     "/products/relx-lumi-18k": {
       "date": "2026-11-06T17:20:40+07:00",
       "fp": "07bb82f7d0a7"
+    },
+    "/products/relx-novo-14k": {
+      "date": "2026-11-07T11:34:31+07:00",
+      "fp": "d6b6532a11a1"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-03T00:40:32+07:00",

@@ -351,6 +351,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้งตัวเครื่องสีดำลายเกล็ด มีจอบอกน้ำยาและแบต ปรับลมและปรับวัตต์ได้ มี 16 กลิ่น",
+  "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้งทรงมนสีเทา มีแผงไฟด้านข้าง ปรับลมได้ มี 14 กลิ่น",
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
