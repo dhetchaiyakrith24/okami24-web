@@ -7,11 +7,12 @@ import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
+import type { RelatedItem } from "@/lib/related-order";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
 import { bestSellerOptions } from "@/data/bestseller-options";
-import { PilotRelatedProducts } from "./PilotRelatedProducts";
+import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import type { RelatedArticle } from "@/lib/article-relevance";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
@@ -94,7 +95,7 @@ export function PilotProductDetail({
   lineCodes?: LineOrderCodes;
 
   product: StorefrontProductView;
-  related: StorefrontProductView[];
+  related: RelatedItem[];
   /** The compatibility lists (`getCompatibleConsumables` / `getCompatibleDevices`), computed by the server page:
    *  calling them here put the whole catalog and its zod check into the browser bundle of every
    *  /products/* page (round SEO ฉ batch 4, 14/10). */
@@ -487,7 +488,7 @@ export function PilotProductDetail({
           legacy device it fits and vice versa. Renders nothing when there are no verified links. */}
       <CompatibleProducts direction="works-with" items={worksWith} />
       <CompatibleProducts direction="fits-devices" items={fitsDevices} />
-      <PilotRelatedProducts products={related} categoryId={product.categoryId} />
+      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} />
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (

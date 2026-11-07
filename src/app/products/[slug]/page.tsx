@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory, kindCategoryId } from "@/data/categories";
-import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
+import { allProducts, getProduct, getProductsByCategory } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { catalogSearchTexts } from "@/lib/catalog-search-entries";
@@ -21,6 +21,7 @@ import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { SimilarInStock } from "@/components/product/SimilarInStock";
+import { publishedRelatedItems, relatedFor } from "@/lib/related-order";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
 import { EditorialClip, ProductEditorialFaq, ProductEditorialMain } from "@/components/product/ProductEditorial";
@@ -35,7 +36,6 @@ import {
   getPublishedProduct,
   getPublishedProducts,
   getPublishedProductsByCategory,
-  getPublishedRelatedProducts,
 } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
@@ -66,7 +66,7 @@ import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { DisposableChooser, DisposableChooserJump } from "@/components/catalog/DisposableChooser";
-import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
+import { disposableBrands, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -263,7 +263,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
-          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
+          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} rows={lineup} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
         {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}
@@ -318,19 +318,19 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
           <HashLinksKeepHistory />
           <Breadcrumbs trail={localisedCategoryCrumb(publishedTrail, publishedProduct.categoryId).map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={publishedProduct.displayName} /> } : t))} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} articles={publishedArticles} />
+          <PilotProductDetail product={publishedProduct} related={relatedFor(publishedProduct.slug)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} brandHref={publishedBrandHref} articles={publishedArticles} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(pilotProduct.slug)} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
+      return <PilotProductDetail product={pilotProduct} related={publishedRelatedItems(getPilotRelatedProducts(pilotProduct))} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(pilotProduct.slug)} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
     }
     notFound();
   }
 
-  const related = getRelatedProducts(product);
+  const related = relatedFor(product.slug);
   const brand = getBrand(product.brandId);
   // The product's own Thai copy, handed to the Client Components below as a prop (SEO ฉ batch 4, 14/10 — importing
   // PRODUCT_COPY_TH in them shipped every product's Thai text to the browser of every product page).
@@ -346,13 +346,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
-  // No price = the warehouse has never had it: nothing to buy here, so the closest models we do have sit right under the head.
-  const similar = legacySellingPrice === null ? similarInStock(product.slug) : [];
   // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
   // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
   // its own `availability` (no SKU, stock round batch 2b).
   const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
   const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
+  // Nothing to buy at build time (no price, or every option out): the closest models we do have sit right under the head.
+  // A page built with stock asks for them only if the live stock empties it (SimilarInStock).
+  const similar = legacySellingPrice === null || legacyAllSoldOut ? similarInStock(product.slug) : [];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -394,7 +395,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
-      {similar.length > 0 && <SimilarInStock items={similar} />}
+      <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
@@ -425,7 +426,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <RelatedProducts products={related} categoryId={product.categoryId} />
+      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} similarSlugs={similar.map((item) => item.slug)} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
       <RelatedArticles articles={relatedArticlesForLegacy(product)} otherLocaleArticles={relatedArticlesForLegacy(product, { skipThaiOnly: true })} />
