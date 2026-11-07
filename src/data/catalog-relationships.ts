@@ -396,7 +396,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     device: "pod-159",
     consumable: "esko-bar-switch-pod",
     role: "pod",
-    evidence: "ESKO BAR's SWITCH page describes one system: a replaceable pod on the device, with a single replacement pod in the range.",
+    evidence: "ESKO BAR's SWITCH page calls the pod replaceable and lists one ESKO BAR pod in the box beside the device.",
     sourceUrl: "https://eskobarvape.com/product/pod-system/",
     tier: "official",
   },
