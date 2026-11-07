@@ -8,6 +8,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeader";
 import { guideHeadCopy } from "@/lib/guide-head-copy";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { legacyRelatedItems } from "@/lib/related-order";
 import { ThaiOnlyGuideGate } from "@/components/content/ThaiOnlyGuideGate";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
@@ -83,7 +84,7 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
             />
           )}
         </Container>
-        <RelatedProducts products={related} />
+        <RelatedProducts items={legacyRelatedItems(related)} />
       </ThaiOnlyGuideGate>
     </>
   );
