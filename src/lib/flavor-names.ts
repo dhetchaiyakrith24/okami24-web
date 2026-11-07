@@ -194,9 +194,9 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Thai Milk Tea",
   "Yakult Orange",
   "Mixberry 50mg",
-  "Red Bull Ice", // maxlist 21/10: Foli Bar 15K
   "Orange Splash",
   "Sour Lime Ice",
+  "Red Bull Ice", // maxlist 21/10: Foli Bar 15K
   "Purple Grape",
   "Apple Baraku",
   "Apple Shisha",
