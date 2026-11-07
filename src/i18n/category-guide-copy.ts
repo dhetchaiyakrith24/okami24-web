@@ -1122,7 +1122,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
   },
   "heated-tobacco-devices": {
     th: {
-      heading: "เครื่องจ่ายความร้อนบนหน้านี้มี IQOS ILUMA สามรุ่น และ LAMBDA i8 อีกหนึ่งรุ่น",
+      heading: "เครื่องจ่ายความร้อนบนหน้านี้ มี IQOS ILUMA สามรุ่นกับ LAMBDA i8",
       intro:
         "ตัวเครื่องบนหน้านี้มาจากสองแบรนด์ IQOS ILUMA ทั้งสามรุ่นใช้บุหรี่ TEREA เท่านั้น ส่วน LAMBDA i8 ทาง LAMBDA ระบุว่าใช้ได้ทั้ง TEREA และ SENTIA ถ้ากำลังเลือกเครื่อง ลองเริ่มจากบุหรี่ที่จะใช้ก่อน แล้วค่อยดูว่าอยากพกกี่ชิ้นและอยากสูบต่อกันได้กี่มวน",
       families: [
@@ -1150,7 +1150,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
             "เครื่องจ่ายความร้อนอุ่นยาสูบในบุหรี่อย่าง TEREA ส่วนพอตใช้น้ำยาค่ะ ของที่ต้องใช้คู่กับเครื่องจึงต่างกันด้วย คือบุหรี่สำหรับเครื่องจ่ายความร้อน และน้ำยาหรือหัวพอตสำหรับพอตค่ะ",
         },
         {
-          question: "ILUMA i ONE กับ ILUMA i PRIME ต่างกันยังไง",
+          question: "ILUMA i ONE ต่างจาก ILUMA i PRIME ยังไง",
           answer:
             "ต่างกันที่จำนวนชิ้นเป็นหลักค่ะ ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 มวน ส่วน [ILUMA i PRIME](/products/iqosheet-16) ใช้ตัวสูบคู่กล่องชาร์จ สูบต่อกันได้สูงสุด 3 มวน และมีจอทัชด้วยค่ะ",
         },

@@ -1415,11 +1415,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ และมีให้เลือกหลายกลิ่น",
     faqs: {
       "mood-monster-14k-name": {
-        question: "MOOOD 14K คือรุ่นเดียวกับ MOOOD Monster 14K ไหม",
+        question: "MOOOD 14K กับ MOOOD Monster 14K คือรุ่นเดียวกันไหม",
         answer: "ใช่ค่ะ MOOOD 14K คือชื่อสั้น ๆ ของพอตใช้แล้วทิ้งรุ่นนี้ในซีรีส์ Monster ชื่อแบรนด์สะกดด้วยตัว O สามตัว ถ้าเห็นคนเขียนว่า Mood 14K ก็หมายถึงรุ่นนี้เช่นกันค่ะ",
       },
       "mood-monster-14k-puffs": {
-        question: "MOOOD Monster 14K สูบได้กี่พัฟ ใช้คอยล์อะไร",
+        question: "MOOOD Monster 14K สูบได้กี่พัฟ คอยล์แบบไหน",
         answer: "MOOOD ระบุไว้ที่สูงสุด 14,000 พัฟ และใช้คอยล์แบบ DUO MESH ค่ะ ส่วนจะสูบได้เท่าไรในการใช้งานจริง แล้วแต่แนวการสูบของแต่ละคนค่ะ",
       },
       "mood-monster-14k-refill": {
@@ -1427,7 +1427,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         answer: "ไม่ได้ค่ะ รุ่นนี้เป็นพอตใช้แล้วทิ้งที่บรรจุน้ำยาสำเร็จมา 16mL พอน้ำยาหมดก็เปลี่ยนเครื่องใหม่ได้เลยค่ะ",
       },
       "mood-monster-14k-nicotine": {
-        question: "MOOOD Monster 14K ความเข้มข้นนิโคตินเท่าไหร่",
+        question: "MOOOD Monster 14K นิโคตินกี่ %",
         answer: "MOOOD ระบุไว้ที่ 3% ค่ะ บางกลิ่นมี N5% ต่อท้ายชื่อและเป็นอีกตัวเลือกหนึ่ง ก่อนกดเลือกจึงควรดูชื่อกลิ่นให้ตรงกับที่ต้องการนะคะ",
       },
       "mood-monster-14k-flavors": {

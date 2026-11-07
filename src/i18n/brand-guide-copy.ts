@@ -1608,7 +1608,7 @@ export const BRAND_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "zh",
   },
   nevoks: {
     th: {
-      heading: "หัวพอต NEVOKS บนหน้านี้เป็นหัวเปล่าสำหรับ Feelin Mini และต้องใช้คอยล์ SPL10",
+      heading: "หัวเปล่า NEVOKS สำหรับ Feelin Mini ใช้คู่กับคอยล์ SPL10",
       intro:
         "สินค้า NEVOKS บนหน้านี้คือหัวพอตเปล่าของเครื่อง Feelin Mini หัวพอตเปล่ามาเฉพาะตัวหัว จึงต้องมีคอยล์ SPL10 แยกต่างหากก่อนใช้งาน",
       families: [
