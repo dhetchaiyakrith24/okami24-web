@@ -16,9 +16,28 @@ import type { SimilarItem } from "@/lib/similar-in-stock";
 export function SimilarInStock({ slug, items }: { slug: string; items: SimilarItem[] }) {
   const { dict } = useLocale();
   const live = useLiveCardStock();
-  const slugs = shownSimilar(items.map((i) => i.slug), live);
-  const shown = items.filter((i) => slugs.includes(i.slug));
-  if (shown.length === 0) return null;
+  const own = live?.[slug];
+  const emptiedSinceBuild = items.length === 0 && own?.o === true;
+  const [fetched, setFetched] = useState<SimilarItem[]>([]);
+  useEffect(() => {
+    if (!emptiedSinceBuild) return;
+    let gone = false;
+    fetch(`/api/similar?slug=${encodeURIComponent(slug)}`, { credentials: "omit" })
+      .then((r) => (r.ok ? (r.json() as Promise<{ items?: SimilarItem[] }>) : null))
+      .then((a) => {
+        if (!gone && a?.items) setFetched(a.items);
+      })
+      .catch(() => {
+        /* no list: the page shows no block */
+      });
+    return () => {
+      gone = true;
+    };
+  }, [emptiedSinceBuild, slug]);
+  const list = items.length > 0 ? items : fetched;
+  const slugs = shownSimilar(list.map((i) => i.slug), live);
+  const shown = list.filter((i) => slugs.includes(i.slug));
+  if (shown.length === 0 || own?.s === true) return null;
 
   return (
     <section id="similar-in-stock" className="scroll-mt-24 border-b border-surface-border-soft bg-surface-0 py-10 lg:py-14">
