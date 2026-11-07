@@ -27,8 +27,9 @@ export function Alerts({ alerts, view }: { alerts: Alert[]; view: string }) {
   const more = live.length - shown.length;
   return (
     <ul aria-label="เรื่องที่ควรดู" className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-      {shown.map((a) => (
-        <li key={a.text} className={a.hideOn ? "lg:hidden" : undefined}>
+      {shown.map((a, i) => (
+        // On a phone the third chip makes way for "+N" when more wait, so "+N" never sits alone on a second line.
+        <li key={a.text} className={`${a.hideOn ? "lg:hidden" : ""} ${more > 0 && i === SHOWN - 1 ? "max-sm:hidden" : ""}`}>
           {a.href ? (
             <Link href={a.href} className={`inline-flex min-h-11 items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 text-sm font-medium hover:bg-white/10 ${TONE[a.tone]}`}>
               {a.text} <span aria-hidden>›</span>
@@ -44,7 +45,8 @@ export function Alerts({ alerts, view }: { alerts: Alert[]; view: string }) {
       {more > 0 && (
         <li>
           <button type="button" onClick={() => setAll(true)} className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-foreground-muted hover:text-foreground">
-            +{more}
+            <span className="sm:hidden">+{more + 1}</span>
+            <span className="max-sm:hidden">+{more}</span>
           </button>
         </li>
       )}
