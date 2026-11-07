@@ -748,7 +748,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       platform: {
         title: "พอตคิทแบบใส่ถ่านรุ่นแรกของ VOOPOO ที่ใช้ PnP X",
-        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตคิทแบบใส่ถ่านรุ่นแรกที่ใช้ระบบหัวพอต PnP X",
+        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตคิทแบบใส่ถ่านรุ่นแรกที่ใช้หัวพอต PnP X",
       },
       modes: {
         title: "3 โหมดใช้งาน",
