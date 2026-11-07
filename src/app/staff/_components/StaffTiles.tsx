@@ -3,21 +3,25 @@ import { countByJob } from "@/lib/staff/orders";
 import { TODO_JOBS } from "@/lib/staff/jobs";
 import { feedHealth } from "@/lib/woo/watch";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
+import { salesToday } from "@/lib/staff/daily-sales";
+import { formatSatang } from "@/app/staff/_components/format";
 
-export type StaffTab = "orders" | "slip" | "stock" | "dev";
+export type StaffTab = "orders" | "slip" | "stock" | "dev" | "sales";
 
 /**
  * The boxes at the top of the staff pages (owner 28/10: "อยากให้มีปุ่มหรือกล่องด้านบน … ออเดอร์ - ตรวจใบสลิป - Okami
  * dev"; designer spec 28/10 · "เช็คสต็อก" added 29/10, two by two on a phone). Each box is one section of the staff side, the open one marked; every staff tool lives under
  * exactly one box: ออเดอร์ = the job list and the order pages · ตรวจสลิป = the slip check from LINE · Okami dev = the warehouse
- * link, stock read, ordering switch (read only), Excel and LINE groups · เช็คสต็อก = what each model has left. Shown on the section pages only — the order
+ * link, stock read, ordering switch (read only), Excel and LINE groups · เช็คสต็อก = what each model has left · ยอดขาย = web + LINE per day
+ * (owner 04/11, back-office round 07/11 — the fifth box takes the whole last row on a phone). Shown on the section pages only — the order
  * pages keep their one way back.
  */
 export function StaffTiles({ active }: { active: StaffTab }) {
   const counts = countByJob();
   const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
   const feed = FEED_LIGHT[feedHealth().state];
-  const tiles: { tab: StaffTab; href: string; label: string; line: React.ReactNode }[] = [
+  const sales = salesToday();
+  const tiles: { tab: StaffTab; href: string; label: string; line: React.ReactNode; wide?: boolean }[] = [
     {
       tab: "orders",
       href: "/staff",
@@ -39,10 +43,26 @@ export function StaffTiles({ active }: { active: StaffTab }) {
         </span>
       ),
     },
+    {
+      tab: "sales",
+      href: "/staff/sales",
+      label: "ยอดขาย",
+      // Designer 07/11: the phone's full-width box answers "how much today" without a tap; the small line from sm up.
+      line: (
+        <>
+          <span className="flex items-baseline gap-2 sm:hidden">
+            <span className="text-foreground-dim">วันนี้</span>
+            <span className="font-display text-xl font-bold tabular-nums text-foreground">{formatSatang(sales.totalSatang)}</span>
+          </span>
+          <span className="hidden tabular-nums text-foreground-dim sm:inline">วันนี้ {formatSatang(sales.totalSatang)}</span>
+        </>
+      ),
+      wide: true,
+    },
   ];
 
   return (
-    <nav aria-label="หมวดงาน" className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:gap-3">
+    <nav aria-label="หมวดงาน" className="grid grid-cols-2 gap-2 sm:grid-cols-5 lg:gap-3">
       {tiles.map((t) => {
         const on = t.tab === active;
         return (
@@ -50,7 +70,7 @@ export function StaffTiles({ active }: { active: StaffTab }) {
             key={t.tab}
             href={t.href}
             aria-current={on ? "page" : undefined}
-            className={`flex min-h-20 flex-col justify-between gap-2 rounded-xl border p-3 lg:min-h-24 lg:p-4 ${
+            className={`flex justify-between gap-2 rounded-xl border p-3 lg:min-h-24 lg:p-4 ${t.wide ? "col-span-2 min-h-14 flex-row items-center sm:col-span-1 sm:min-h-20 sm:flex-col sm:items-stretch" : "min-h-20 flex-col"} ${
               on ? "border-ember bg-surface-2" : "border-surface-border-soft bg-surface-1 hover:bg-surface-2"
             }`}
           >
