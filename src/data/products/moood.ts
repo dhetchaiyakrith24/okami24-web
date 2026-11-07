@@ -100,7 +100,33 @@ export const mooodProducts: Product[] = [
     features: [],
     compatibility: [],
     whoIsThisFor: ["Vapers looking for a high-puff-count disposable with a wide flavor lineup."],
-    faqs: [],
+    faqs: [
+      {
+        id: "mood-monster-14k-name",
+        question: "Is the MOOOD 14K the same as the MOOOD Monster 14K?",
+        answer: "Yes. MOOOD 14K is the short name for this disposable from the Monster series. The brand is spelled with three Os, so if you see it written as Mood 14K, that means this model too.",
+      },
+      {
+        id: "mood-monster-14k-puffs",
+        question: "How many puffs does the MOOOD Monster 14K give, and what coil does it use?",
+        answer: "MOOOD rates it at up to 14,000 puffs and uses a DUO MESH coil. What you get in real use comes down to how you vape.",
+      },
+      {
+        id: "mood-monster-14k-refill",
+        question: "Can you refill the MOOOD Monster 14K?",
+        answer: "No. It's a disposable that comes prefilled with 16mL of e-liquid, so once that runs out you move on to a new device.",
+      },
+      {
+        id: "mood-monster-14k-nicotine",
+        question: "What's the nicotine strength of the MOOOD Monster 14K?",
+        answer: "MOOOD lists 3%. Some flavors have N5% after the name and are a separate option, so check the flavor name before you choose.",
+      },
+      {
+        id: "mood-monster-14k-flavors",
+        question: "What flavors does the MOOOD Monster come in?",
+        answer: "There are fruit flavors such as Watermelon, Mango Peach and Lychee, grape flavors such as Grape and Kyoho Grape, a cool Mint, and others such as Cola and Lemon Tea. The full list is in the options on this page.",
+      },
+    ],
     relatedProductSlugs: [],
     sourceUrls: [MAKER_ARCHIVE],
   },

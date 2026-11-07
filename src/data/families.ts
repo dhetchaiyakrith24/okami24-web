@@ -134,6 +134,28 @@ export const families: ProductFamily[] = [
     description: "SMOK's RPM line of refillable pod mods; this generation is the RPM 5.",
   },
   {
+    // Round popular models 07/11: RELX Ultra Kit + Ultra Pod (relxnow.com).
+    id: "relx-ultra",
+    slug: "relx-ultra",
+    brandId: "relx",
+    categoryId: "switch-pods",
+    name: "RELX Ultra",
+    tagline: "A device you keep, prefilled pods you swap.",
+    description:
+      "RELX's Ultra line: a 10W device and 2mL prefilled pods with a mesh coil.",
+  },
+  {
+    // Round popular models 07/11: RELX Artisan Plus (relxnow.com).
+    id: "relx-artisan",
+    slug: "relx-artisan",
+    brandId: "relx",
+    categoryId: "switch-pods",
+    name: "RELX Artisan",
+    tagline: "A device you keep, prefilled pods you swap.",
+    description:
+      "RELX's Artisan device takes RELX Pod and Pod Pro prefilled pods; this generation is the Artisan Plus.",
+  },
+  {
     // 2026-09-30 (round "image-sitewide"): the RELX Creator is a device + prefilled pods, not a disposable (owner 30/09).
     id: "relx-creator",
     slug: "relx-creator",

@@ -1208,4 +1208,479 @@ export const BRAND_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "zh",
       ],
     },
   },
+  "kardinal-stick": {
+    th: {
+      heading: "พอต KS บนหน้านี้คือ Quikpro 15K แบบเปลี่ยนหัว มีทั้งตัวเครื่องและหัวพอต",
+      intro:
+        "รุ่น KS บนหน้านี้คือตระกูล Quikpro ของ Kardinal Stick หัวพอตมีน้ำยามาในตัว พอน้ำยาหมดก็เปลี่ยนแค่หัว ส่วนตัวเครื่องใช้ต่อได้ ถ้ายังไม่มีเครื่องให้เริ่มจากชุดเครื่อง แต่ถ้ามีเครื่องอยู่แล้วก็เลือกเฉพาะหัวพอตได้เลย",
+      families: [
+        {
+          heading: "ชุดเครื่องพร้อมหัวพอต",
+          body:
+            "[KS Quikpro 15K Kit](/products/ks-quikpro-kit) ได้ตัวเครื่องพร้อมหัวพอต 1 หัว และหน้าสินค้ารวมกลิ่นของหัวในชุดไว้ 4 กลิ่น ตัวเครื่องแบต 600mAh ชาร์จผ่าน USB-C ในราว 30 นาที และผู้ผลิตทำไว้สี่สี คือ Black · Blue · Grey และ Red",
+        },
+        {
+          heading: "หัวพอตแยก",
+          body:
+            "[KS Quikpro 15K Cartridge](/products/pod-150) ใช้กับเครื่อง KS Quikpro จุน้ำยา 15ml และผู้ผลิตระบุไว้หัวละสูงสุด 15,000 พัฟ หน้าสินค้ารวมไว้ 16 กลิ่น จะซื้อเผื่อไว้หรือเปลี่ยนกลิ่นในครั้งถัดไปก็เลือกได้ตามที่ชอบ",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "พอต KS คือยี่ห้ออะไร",
+          answer:
+            "KS หรือ Kardinal Stick เป็นผู้ผลิตบุหรี่ไฟฟ้าจากเมืองมะละกา ประเทศมาเลเซียค่ะ ก่อตั้งเมื่อปี 2017 และรุ่นบนหน้านี้คือ Quikpro 15K ค่ะ",
+        },
+        {
+          question: "KS Quik กับ Quikpro เหมือนกันไหม",
+          answer:
+            "อยู่ในตระกูลเดียวกันของ KS ค่ะ ตระกูลนี้มีทั้งแบบใช้แล้วทิ้งและแบบเปลี่ยนหัว โดยรุ่นบนหน้านี้คือ Quikpro 15K แบบเปลี่ยนหัว ถ้ากำลังมองหา Quik 2000 หรือ Quik 5000 ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+        {
+          question: "พอต KS เปลี่ยนหัวได้ไหม",
+          answer:
+            "รุ่น Quikpro 15K บนหน้านี้เปลี่ยนหัวได้ค่ะ ตัวเครื่องใช้ต่อได้ แล้วเลือก [หัวพอต Quikpro](/products/pod-150) หัวใหม่มาใส่แทนหัวเดิม โดยหัวนี้ใช้คู่กับเครื่อง KS Quikpro ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "KS pods here are the Quikpro 15K switch pod: the device and its pods",
+      intro:
+        "The KS on this page is the Quikpro line from Kardinal Stick. Each pod comes filled with e-liquid, and when it runs out you change the pod and keep the device. New to Quikpro? Start with the kit. Already have the device? Just choose your pods.",
+      families: [
+        {
+          heading: "Device kit with a pod",
+          body:
+            "The [KS Quikpro 15K Kit](/products/ks-quikpro-kit) includes the device and one pod, with 4 flavors listed for that pod. Its 600mAh battery charges over USB-C in about 30 minutes, and the maker offers the device in Black, Blue, Grey and Red.",
+        },
+        {
+          heading: "Pods on their own",
+          body:
+            "The [KS Quikpro 15K Cartridge](/products/pod-150) is for the KS Quikpro device. Each pod holds 15ml and is rated by the maker at up to 15,000 puffs. The product page lists 16 flavors, so you can keep a spare or try something new next time.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "What brand is a KS pod?",
+          answer:
+            "KS, or Kardinal Stick, is an e-cigarette manufacturer from Malacca, Malaysia, founded in 2017. The model on this page is the Quikpro 15K.",
+        },
+        {
+          question: "Are KS Quik and Quikpro the same?",
+          answer:
+            "They belong to the same KS line, which includes both disposable and replaceable-pod models. The one on this page is the replaceable-pod Quikpro 15K. If you're looking for the Quik 2000 or Quik 5000, message us on LINE @okm24.",
+        },
+        {
+          question: "Can KS pods be changed?",
+          answer:
+            "Yes, on the Quikpro 15K here. Keep the device and fit a new [Quikpro pod](/products/pod-150) in place of the old one. These pods are for the KS Quikpro device.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页的 KS 是换弹式 Quikpro 15K，主机和烟弹都有",
+      intro:
+        "本页的 KS 是 Kardinal Stick 的 Quikpro 系列。烟弹出厂已装好烟油，用完只需换烟弹，主机可以继续使用。还没有主机的话，从套装开始；已有主机，直接选烟弹即可。",
+      families: [
+        {
+          heading: "主机烟弹套装",
+          body:
+            "[KS Quikpro 15K Kit](/products/ks-quikpro-kit) 包含主机和 1 个烟弹，烟弹列有 4 种口味。电池 600mAh，USB-C 充电约 30 分钟，厂商提供 Black、Blue、Grey、Red 四种主机颜色。",
+        },
+        {
+          heading: "单独烟弹",
+          body:
+            "[KS Quikpro 15K Cartridge](/products/pod-150) 用于 KS Quikpro 主机，容量 15ml，厂商标称每个最高 15,000 口。产品页列有 16 种口味，可以留作备用，也可以下次换个口味。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "KS 是什么品牌？",
+          answer:
+            "KS 即 Kardinal Stick，是来自马来西亚马六甲的电子烟制造商，成立于 2017 年。本页型号为 Quikpro 15K。",
+        },
+        {
+          question: "KS Quik 和 Quikpro 一样吗？",
+          answer:
+            "两者同属 KS 的一个系列，该系列既有一次性款，也有换弹款。本页型号是换弹式 Quikpro 15K。如果在找 Quik 2000 或 Quik 5000，欢迎通过 LINE @okm24 咨询。",
+        },
+        {
+          question: "KS 可以换烟弹吗？",
+          answer:
+            "本页的 Quikpro 15K 可以。主机继续使用，换上新的 [Quikpro 烟弹](/products/pod-150) 即可，这款烟弹用于 KS Quikpro 主机。",
+        },
+      ],
+    },
+  },
+  wotofo: {
+    th: {
+      heading: "WOTOFO บนหน้านี้มีสองแบบ คือ nexBAR แบบใช้แล้วทิ้ง และ nexPOD แบบเปลี่ยนหัว",
+      intro:
+        "พอต nexBAR บนหน้านี้คือรุ่น nexBAR 18K ของ WOTOFO ใช้จนน้ำยาหมดแล้วก็เปลี่ยนเครื่องใหม่ ส่วน nexPOD 15K Pro Kit เป็นพอตเปลี่ยนหัวที่เก็บตัวเครื่องไว้ใช้ต่อได้ ทั้งสองรุ่นใช้คอยล์ nexMESH และปรับช่องลมได้ 2 ระดับ ตัวเลขทั้งหมดด้านล่างมาจากข้อมูลของ WOTOFO",
+      families: [
+        {
+          heading: "nexBAR 18K แบบใช้แล้วทิ้ง",
+          body:
+            "[WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) มีน้ำยามาให้ 21mL ระบุไว้สูงสุด 18,000 พัฟ แบต 750mAh ชาร์จซ้ำได้ และมีจอ LED บอกแบต น้ำยา และโหมดที่ใช้อยู่ สลับได้ระหว่างโหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ส่วนนิโคตินมีให้เลือก 20mg หรือ 50mg",
+        },
+        {
+          heading: "nexPOD 15K แบบเปลี่ยนหัว",
+          body:
+            "[WOTOFO nexPOD 15K Pro Kit](/products/nexpod-15k) ได้ตัวเครื่องแบต 1200mAh พร้อมหัวพอตบรรจุสำเร็จ 1 หัว หัวพอตจุน้ำยา 18mL นิโคติน 20mg และระบุไว้หัวละ 15,000 พัฟ เมื่อใส่หัวบรรจุสำเร็จ ตัวเครื่องจ่ายได้ 16 หรือ 12 วัตต์ และจอบนตัวเครื่องจะบอกระดับแบตกับวัตต์ที่ใช้อยู่",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "nexBAR เป็นของแบรนด์อะไร",
+          answer:
+            "nexBAR เป็นตระกูลพอตใช้แล้วทิ้งของ WOTOFO ค่ะ และรุ่นบนหน้านี้คือ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) ค่ะ",
+        },
+        {
+          question: "WOTOFO nexBAR 18K กับ nexBar CLEAR 18K เหมือนกันไหม",
+          answer:
+            "ไม่เหมือนกันค่ะ สองรุ่นนี้ชื่อใกล้กันแต่เป็นคนละเครื่อง รุ่นของ WOTOFO อยู่บนหน้านี้ ส่วน [nexBar CLEAR 18K](/products/pod-180) มีหน้าสินค้าของตัวเองแยกไว้ค่ะ",
+        },
+        {
+          question: "nexBAR กับ nexPOD เลือกแบบไหนดี",
+          answer:
+            "ถ้าอยากแกะกล่องแล้วสูบได้เลย และเปลี่ยนเครื่องเมื่อน้ำยาหมด nexBAR 18K จะตรงกว่าค่ะ ถ้าอยากเก็บตัวเครื่องไว้และเปลี่ยนแค่หัวพอต nexPOD 15K Pro Kit จะตรงกว่า อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "WOTOFO comes two ways here: the disposable nexBAR and the switch-pod nexPOD",
+      intro:
+        "The nexBAR on this page is WOTOFO's nexBAR 18K, a disposable you use until the e-liquid runs out. The nexPOD 15K Pro Kit is a switch-pod device you keep, changing only the pod. Both use nexMESH coils and 2-level adjustable airflow, and every figure below comes from WOTOFO.",
+      families: [
+        {
+          heading: "nexBAR 18K disposable",
+          body:
+            "The [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) comes with 21mL of e-liquid and is rated at up to 18,000 puffs. Its 750mAh battery recharges, an LED screen shows battery, e-liquid level and mode, and you can switch between NORM at 16W and TURBO at 19W. Nicotine comes in 20mg or 50mg.",
+        },
+        {
+          heading: "nexPOD 15K switch pod",
+          body:
+            "The [WOTOFO nexPOD 15K Pro Kit](/products/nexpod-15k) pairs a 1200mAh device with one prefilled pod. The pod holds 18mL at 20mg nicotine and is rated at 15,000 puffs. With a prefilled pod fitted, the device runs at 16W or 12W, and its display shows battery level and wattage.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "Which brand makes nexBAR?",
+          answer:
+            "nexBAR is WOTOFO's disposable line. The model on this page is the [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k).",
+        },
+        {
+          question: "Are the WOTOFO nexBAR 18K and nexBar CLEAR 18K the same?",
+          answer:
+            "No. The names are close, but they are different devices. The WOTOFO model is on this page, and the [nexBar CLEAR 18K](/products/pod-180) has its own product page.",
+        },
+        {
+          question: "nexBAR or nexPOD: which should I choose?",
+          answer:
+            "If you'd like to open the box and start, then replace the device when the e-liquid runs out, the nexBAR 18K is the closer fit. If you'd rather keep the device and change only the pod, choose the nexPOD 15K Pro Kit.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页的 WOTOFO 有两种：一次性 nexBAR 和换弹式 nexPOD",
+      intro:
+        "本页的 nexBAR 是 WOTOFO 的 nexBAR 18K，属于一次性产品，烟油用完后整支更换。nexPOD 15K Pro Kit 是换弹式设备，主机保留，只换烟弹。两款都采用 nexMESH 雾化芯，进气可调 2 档，下文数据均来自 WOTOFO。",
+      families: [
+        {
+          heading: "一次性 nexBAR 18K",
+          body:
+            "[WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) 预装 21mL 烟油，标称最高 18,000 口。750mAh 电池可重复充电，LED 屏显示电量、烟油余量和模式，可在 NORM 16W 与 TURBO 19W 之间切换。尼古丁有 20mg 和 50mg 两种。",
+        },
+        {
+          heading: "换弹式 nexPOD 15K",
+          body:
+            "[WOTOFO nexPOD 15K Pro Kit](/products/nexpod-15k) 包含 1200mAh 主机和 1 个预装烟弹。烟弹容量 18mL，尼古丁 20mg，标称 15,000 口。使用预装烟弹时，主机输出 16W 或 12W，屏幕显示电量和功率。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "nexBAR 是哪个品牌的？",
+          answer:
+            "nexBAR 是 WOTOFO 的一次性产品系列，本页型号为 [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k)。",
+        },
+        {
+          question: "WOTOFO nexBAR 18K 和 nexBar CLEAR 18K 一样吗？",
+          answer:
+            "不一样。两者名称相近，但不是同一款设备。WOTOFO 的型号在本页，[nexBar CLEAR 18K](/products/pod-180) 另有单独的产品页。",
+        },
+        {
+          question: "nexBAR 和 nexPOD 怎么选？",
+          answer:
+            "想拆开即用、烟油用完整支更换，nexBAR 18K 更合适；想保留主机、只换烟弹，nexPOD 15K Pro Kit 更合适。",
+        },
+      ],
+    },
+  },
+  rincoe: {
+    th: {
+      heading: "หัวพอต RINCOE บนหน้านี้ใช้ได้กับเครื่อง Jellybox V1 · V2 และ V3",
+      intro:
+        "พอต Jellybox หรือ Jelly Box เป็นตระกูลของ RINCOE และสินค้าบนหน้านี้คือหัวพอตของเครื่อง Jellybox V ชื่อสินค้าจะใช้คำว่า Coil แต่ตัวสินค้าเป็นหัวพอตที่มีคอยล์อยู่ในตัว พอคอยล์เสื่อมก็เปลี่ยนใหม่ทั้งหัว ส่วนตัวเครื่องใช้ต่อได้",
+      families: [
+        {
+          heading: "หัวพอต Jellybox V",
+          body:
+            "[RINCOE Coil Jellybox V](/products/coil-89) จุน้ำยาได้ 3.0mL เติมจากด้านข้าง และมีให้เลือกสองค่า คือ 0.8 กับ 1.0 โอห์ม เมื่อใส่แล้วเครื่องจะปรับวัตต์ให้เองตามโอห์มในช่วง 10–16 วัตต์",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "Jellybox ใช้หัวพอตรุ่นไหน",
+          answer:
+            "เครื่อง Jellybox V1 · V2 และ V3 ใช้ [หัวพอต Jellybox V](/products/coil-89) บนหน้านี้ได้ค่ะ แนะนำให้ดูชื่อรุ่นของเครื่องก่อนเลือกนะคะ",
+        },
+        {
+          question: "Jellybox Nano ใช้หัวพอตนี้ได้ไหม",
+          answer:
+            "หัวพอตนี้ระบุไว้สำหรับ Jellybox V1 · V2 และ V3 ค่ะ ถ้าใช้ Jellybox Nano หรือรุ่นอื่น ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+        {
+          question: "ตัวเครื่อง Jellybox มีบนหน้านี้ไหม",
+          answer:
+            "หน้านี้มีเฉพาะหัวพอตค่ะ จึงเหมาะกับคนที่มีเครื่อง Jellybox อยู่แล้ว ส่วนเรื่องตัวเครื่อง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "The RINCOE pod here fits Jellybox V1, V2 and V3 devices",
+      intro:
+        "Jellybox, also written Jelly Box, is RINCOE's pod line, and the product on this page is the pod for the Jellybox V. Its name says Coil, but it is a pod with the coil built in. When the coil wears out, you replace the whole pod and keep the device.",
+      families: [
+        {
+          heading: "Jellybox V pod",
+          body:
+            "The [RINCOE Coil Jellybox V](/products/coil-89) holds 3.0mL, fills from the side and comes in two values, 0.8Ω and 1.0Ω. Once it's fitted, the device sets the wattage itself according to the ohms, within 10–16W.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "Which pod does a Jellybox use?",
+          answer:
+            "Jellybox V1, V2 and V3 devices take the [Jellybox V pod](/products/coil-89) on this page. It's worth checking your device's model name before you choose.",
+        },
+        {
+          question: "Does this pod fit the Jellybox Nano?",
+          answer:
+            "This pod is listed for the Jellybox V1, V2 and V3. If you use a Jellybox Nano or another model, message us on LINE @okm24.",
+        },
+        {
+          question: "Is the Jellybox device on this page?",
+          answer:
+            "This page has the pod only, so it suits anyone who already owns a Jellybox. For the device itself, message us on LINE @okm24.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页 RINCOE 烟弹适配 Jellybox V1、V2 和 V3",
+      intro:
+        "Jellybox 也写作 Jelly Box，是 RINCOE 的设备系列，本页产品是 Jellybox V 的烟弹。产品名虽带 Coil 一词，实际是内置雾化芯的烟弹，雾化芯老化后整个烟弹更换，主机可以继续使用。",
+      families: [
+        {
+          heading: "Jellybox V 烟弹",
+          body:
+            "[RINCOE Coil Jellybox V](/products/coil-89) 容量 3.0mL，侧面注油，有 0.8Ω 和 1.0Ω 两种可选。装上后，主机会根据阻值自动调节功率，范围为 10–16W。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "Jellybox 用哪种烟弹？",
+          answer:
+            "Jellybox V1、V2 和 V3 可使用本页的 [Jellybox V 烟弹](/products/coil-89)。下单前请先确认主机型号。",
+        },
+        {
+          question: "这款烟弹能用于 Jellybox Nano 吗？",
+          answer:
+            "这款烟弹标明适用于 Jellybox V1、V2 和 V3。如果使用的是 Jellybox Nano 或其他型号，欢迎通过 LINE @okm24 咨询。",
+        },
+        {
+          question: "本页有 Jellybox 主机吗？",
+          answer:
+            "本页只有烟弹，适合已有 Jellybox 主机的用户。想了解主机，欢迎通过 LINE @okm24 咨询。",
+        },
+      ],
+    },
+  },
+  dotmod: {
+    th: {
+      heading: "คอยล์ DOTMOD บนหน้านี้ใช้ได้กับ dotAIO V2 และอีกสี่รุ่น",
+      intro:
+        "DOTMOD เป็นผู้ผลิตอุปกรณ์สูบพอตที่ทำมาตั้งแต่ปี 2013 และเป็นที่รู้จักจากพอต dotAIO กับคอยล์ dotCoils สินค้าบนหน้านี้คือคอยล์สำหรับคนที่มีเครื่องอยู่แล้ว เมื่อคอยล์เสื่อมก็เปลี่ยนเฉพาะคอยล์ แล้วใช้เครื่องเดิมต่อได้",
+      families: [
+        {
+          heading: "คอยล์ dotAIO V2",
+          body:
+            "[คอยล์ Dotmod Aio V2](/products/coil-70) ใช้ร่วมกันได้ทั้ง dotAIO V2 · dotAIO V2 Lite · dotStick Revo · dotPod Max และ dotTank 25mm ถ้ามีหลายเครื่องในกลุ่มนี้ก็ใช้คอยล์ชนิดเดียวกันได้ กล่องหนึ่งมี 5 หัว และเลือกได้สี่ค่า ตั้งแต่ 0.15 ถึง 0.7 โอห์ม",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "พอต DOTMOD มีรุ่นไหนบ้าง",
+          answer:
+            "DOTMOD ทำทั้ง dotAIO · dotPod และ box mod ค่ะ ส่วนสินค้าบนหน้านี้คือ [คอยล์ dotAIO V2](/products/coil-70) สำหรับคนที่มีเครื่องอยู่แล้ว ถ้าสนใจตัวเครื่อง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+        {
+          question: "DOTMOD V2 ใช้คอยล์อะไร",
+          answer:
+            "dotAIO V2 และ dotAIO V2 Lite ใช้ [คอยล์ Dotmod Aio V2](/products/coil-70) ได้ค่ะ ตัวคอยล์เป็น mesh เดี่ยว และเลือกได้ตั้งแต่ 0.15 ถึง 0.7 โอห์มค่ะ",
+        },
+        {
+          question: "คอยล์ DOTMOD เลือกโอห์มไหนดี",
+          answer:
+            "เริ่มจากแนวการสูบที่ชอบค่ะ ค่าโอห์มต่ำจะสูบโล่งกว่า ส่วนค่าโอห์มสูงจะสูบแน่นกว่า ถ้ายังลังเล อ่านต่อได้ที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow) ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "The DOTMOD coils here fit the dotAIO V2 and four other models",
+      intro:
+        "DOTMOD has been making vaping devices since 2013 and is known for its dotAIO pods and dotCoils. The product on this page is a coil for people who already own a device: when the coil wears out, you change just the coil and carry on with the same device.",
+      families: [
+        {
+          heading: "dotAIO V2 coils",
+          body:
+            "The [Dotmod Aio V2 Coil](/products/coil-70) is shared across the dotAIO V2, dotAIO V2 Lite, dotStick Revo, dotPod Max and dotTank 25mm, so one coil type covers any of these you own. Each box holds 5, and you can choose from four values between 0.15Ω and 0.7Ω.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "Which DOTMOD pods are there?",
+          answer:
+            "DOTMOD makes the dotAIO, the dotPod and box mods. The product on this page is the [dotAIO V2 coil](/products/coil-70), for people who already own a device. If you're interested in a device, message us on LINE @okm24.",
+        },
+        {
+          question: "What coil does the DOTMOD V2 use?",
+          answer:
+            "The dotAIO V2 and dotAIO V2 Lite take the [Dotmod Aio V2 Coil](/products/coil-70). It's a single mesh coil, available from 0.15Ω to 0.7Ω.",
+        },
+        {
+          question: "Which ohm should I pick for a DOTMOD coil?",
+          answer:
+            "Start with how you like to draw. Lower ohms give an airier draw and higher ohms a tighter one. [Choosing wattage and airflow](/guides/choosing-wattage-and-airflow) explains more.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页 DOTMOD 雾化芯适配 dotAIO V2 及另外四款型号",
+      intro:
+        "DOTMOD 自 2013 年起生产电子烟设备，以 dotAIO 烟弹设备和 dotCoils 雾化芯为人熟知。本页产品是雾化芯，适合已有设备的用户：雾化芯老化后只需更换雾化芯，原设备可继续使用。",
+      families: [
+        {
+          heading: "dotAIO V2 雾化芯",
+          body:
+            "[Dotmod Aio V2 Coil](/products/coil-70) 通用于 dotAIO V2、dotAIO V2 Lite、dotStick Revo、dotPod Max 和 dotTank 25mm，同时拥有其中几款设备也能共用一种雾化芯。每盒 5 颗，有 0.15Ω 至 0.7Ω 共四种阻值可选。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "DOTMOD 有哪些烟弹设备？",
+          answer:
+            "DOTMOD 生产 dotAIO、dotPod 和 box mod。本页产品是 [dotAIO V2 雾化芯](/products/coil-70)，适合已有设备的用户。如果对设备感兴趣，欢迎通过 LINE @okm24 咨询。",
+        },
+        {
+          question: "DOTMOD V2 用什么雾化芯？",
+          answer:
+            "dotAIO V2 和 dotAIO V2 Lite 使用 [Dotmod Aio V2 Coil](/products/coil-70)。这是单网状雾化芯，阻值从 0.15Ω 到 0.7Ω 可选。",
+        },
+        {
+          question: "DOTMOD 雾化芯选多少欧姆？",
+          answer:
+            "先看自己喜欢的吸感。阻值低，吸阻更松；阻值高，吸阻更紧。更多内容见 [如何选择功率和进气](/guides/choosing-wattage-and-airflow)。",
+        },
+      ],
+    },
+  },
+  nevoks: {
+    th: {
+      heading: "หัวเปล่า NEVOKS สำหรับ Feelin Mini ใช้คู่กับคอยล์ SPL10",
+      intro:
+        "สินค้า NEVOKS บนหน้านี้คือหัวพอตเปล่าของเครื่อง Feelin Mini หัวพอตเปล่ามาเฉพาะตัวหัว จึงต้องมีคอยล์ SPL10 แยกต่างหากก่อนใช้งาน",
+      families: [
+        {
+          heading: "หัวพอตเปล่า Feelin Mini",
+          body:
+            "[NEVOKS หัวเปล่า Feelin Mini](/products/coil-54) จุน้ำยาได้ 2mL ระบุไว้สำหรับเครื่อง Feelin Mini และใช้คู่กับคอยล์ SPL10",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "หัวพอตเปล่า Feelin Mini มีคอยล์มาให้ไหม",
+          answer:
+            "หัวพอตเปล่ามาเฉพาะตัวหัวค่ะ คอยล์ SPL10 ต้องซื้อแยกต่างหากนะคะ",
+        },
+        {
+          question: "หัวพอตนี้ใช้กับ Feelin C1 ได้ไหม",
+          answer:
+            "หัวนี้ระบุไว้สำหรับ Feelin Mini ค่ะ ถ้าใช้ Feelin C1 หรือเครื่องอื่นของ NEVOKS ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "The NEVOKS pod here is an empty pod for the Feelin Mini and needs an SPL10 coil",
+      intro:
+        "The NEVOKS product on this page is the empty pod for the Feelin Mini. Empty means the pod comes on its own, so you'll need an SPL10 coil before you can use it.",
+      families: [
+        {
+          heading: "Feelin Mini empty pod",
+          body:
+            "The [NEVOKS Feelin Mini Empty Pod](/products/coil-54) holds 2mL, is listed for the Feelin Mini device and takes SPL10 coils.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "Does the Feelin Mini empty pod come with a coil?",
+          answer:
+            "The empty pod comes on its own, so you'll need an SPL10 coil, bought separately.",
+        },
+        {
+          question: "Will this pod fit the Feelin C1?",
+          answer:
+            "This pod is listed for the Feelin Mini. If you use a Feelin C1 or another NEVOKS device, message us on LINE @okm24.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页 NEVOKS 是 Feelin Mini 空烟弹，需搭配 SPL10 雾化芯",
+      intro:
+        "本页的 NEVOKS 产品是 Feelin Mini 空烟弹。空烟弹只有烟弹本身，使用前需要另备 SPL10 雾化芯。",
+      families: [
+        {
+          heading: "Feelin Mini 空烟弹",
+          body:
+            "[NEVOKS Feelin Mini Empty Pod](/products/coil-54) 容量 2mL，标明适用于 Feelin Mini 主机，搭配 SPL10 雾化芯使用。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "Feelin Mini 空烟弹带雾化芯吗？",
+          answer:
+            "空烟弹只有烟弹本身，需要另外购买 SPL10 雾化芯。",
+        },
+        {
+          question: "这款烟弹能用于 Feelin C1 吗？",
+          answer:
+            "这款烟弹标明适用于 Feelin Mini。如果使用的是 Feelin C1 或其他 NEVOKS 设备，欢迎通过 LINE @okm24 咨询。",
+        },
+      ],
+    },
+  },
 };

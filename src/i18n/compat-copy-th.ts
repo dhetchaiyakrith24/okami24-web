@@ -38,6 +38,10 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "Muro Connector pod": "หัวพอต Muro Connector",
   // Round popular models 07/11: SMOK Nord 5 + RPM 5.
   "RPM 3 Meshed coils": "คอยล์ RPM 3 Meshed",
+  // Round popular models 07/11: RELX Ultra + Artisan Plus, from relxnow.com.
+  "RELX Ultra · Artisan · Infinity · Essential · WAKA": "ใช้กับ WAKA และเครื่อง RELX Ultra · Artisan · Infinity · Essential",
+  "RELX Ultra Pod": "หัวพอต RELX Ultra Pod",
+  "RELX Pod · RELX Pod Pro": "หัวพอต RELX Pod · RELX Pod Pro",
   // Round p63 (18/10): WOTOFO nexPOD 15K Pro Kit.
   "nexPOD 15K pods": "หัวพอต nexPOD 15K",
 };
@@ -59,6 +63,10 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "5V/3A charging.": "ชาร์จ 5V/3A",
   // Round popular models 07/11: SMOK Nord 5 + RPM 5.
   "0.15Ω and 0.23Ω come in the kit.": "มี 0.15Ω และ 0.23Ω มาในกล่อง",
+  // Round popular models 07/11: RELX Ultra + Artisan Plus.
+  "Device lists from RELX's store page.": "รายชื่อเครื่องตามเว็บทางการของ RELX",
+  "One in the box; RELX's store page says the kit works best with it.": "มีมาในกล่อง 1 ชิ้น และ RELX แนะนำให้ใช้กับหัวนี้",
+  "Pods from RELX's store page.": "ตามเว็บทางการของ RELX",
   // Round p63 (16/10): RELX Infinity 2 Plus.
   "RELX prefilled pods, 1.9mL each.": "หัวพอตบรรจุสำเร็จของ RELX หัวละ 1.9mL",
   // Round p63 (16/10): Caliburn G3 — UWELL's page says "2A Fast Charging", no voltage.
@@ -170,6 +178,11 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "IQOS ระบุในหน้า ILUMA i ONE ว่าเครื่องนี้ออกแบบมาให้ใช้กับบุหรี่ TEREA และตารางเทียบรุ่นก็ระบุว่าใช้กับ TEREA",
   "LAMBDA's own product page markets the i8 as compatible with TEREA and SENTIA SMARTCORE sticks. This is LAMBDA's manufacturer claim about its own device — IQOS does not endorse third-party hardware and states TEREA is designed for IQOS ILUMA devices.":
     "LAMBDA ระบุในหน้าสินค้าของตัวเองว่า i8 ใช้กับบุหรี่ TEREA และ SENTIA แบบ SMARTCORE ได้ ข้อนี้เป็นคำของ LAMBDA เกี่ยวกับเครื่องของตัวเอง IQOS ไม่ได้รับรองเครื่องจากแบรนด์อื่น และระบุว่า TEREA ออกแบบมาสำหรับเครื่อง IQOS ILUMA",
+  // Fit gaps of the suggestions round (07/11): both are the maker's own page.
+  "Kardinal says the Quikpro uses a proprietary replaceable 15ml cartridge made for this model, and that neither the Lumina's KSpod nor other brands' cartridges fit it.":
+    "Kardinal ระบุว่า Quikpro ใช้หัวพอตขนาด 15mL ที่ออกแบบมาสำหรับรุ่นนี้โดยเฉพาะ หัวพอต KSpod ของ Lumina และหัวพอตยี่ห้ออื่นใส่ไม่ได้",
+  "ESKO BAR's SWITCH page calls the pod replaceable and lists one ESKO BAR pod in the box beside the device.":
+    "ESKO BAR ระบุในหน้า SWITCH ว่าหัวพอตเปลี่ยนได้ และในกล่องมีหัวพอตมาคู่กับตัวเครื่อง",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */

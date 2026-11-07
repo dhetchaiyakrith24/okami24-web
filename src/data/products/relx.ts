@@ -1,10 +1,402 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
+const ULTRA_POD_PAGE = "https://relxnow.com/products/relx-maxgo-ultra-pod";
+const ULTRA_KIT_PAGE = "https://relxnow.com/products/relx-ultra-kit";
+const ARTISAN_PLUS_PAGE = "https://relxnow.com/products/relx-artisan-plus-device";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm5.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
+  {
+    // Round popular models 07/11: the most searched model we lack (relx sparta 20k 2,400 a month). Not in the warehouse, no price, no cart; no
+    // maker page anywhere (relxnow.com does not list it). Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops
+    // agree, written in the copy, never as a spec row. Read 07/11 in the browser: goatvapethai · maneevp (with zeedcupvp and yaivapestore,
+    // same wording) · relxth.co (with sudjudpod, same flavour order). All three: 20,000 puffs, 750mAh, Type-C, a display, airflow and power
+    // you can adjust, these 16 flavours. Not agreed, so not written: liquid (18 or 20mL), nicotine, and the 5 flavours in two groups only
+    // (Grape Aloe, Watermelon Bubblegum, Polar Mint, Pink Berry, Lychee).
+    id: "relx-sparta-20k",
+    slug: "relx-sparta-20k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Sparta 20K",
+    displayName: "RELX SPARTA 20K",
+    searchAliases: ["RELX Sparta", "Sparta 20K", "Sparta 20000"],
+    tagline: "A RELX disposable with a display, adjustable airflow and power modes.",
+    shortDescription:
+      "A disposable from RELX with a display, airflow you can set and more than one power mode. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-sparta-20k/card-wm5.webp",
+        alt: "RELX Sparta 20K, black scaled body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-sparta-20k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b08ac4", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "oolong-ice-tea", name: "Oolong Ice Tea", swatchHex: "#b5853f", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#f2c53b", availability: "unknown" },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "raspberry-mint", name: "Raspberry Mint", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#c8d94a", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
+      { id: "adjust", title: "Airflow and power", description: "You can set the airflow and change the power mode." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 20,000 puffs, a 750mAh battery and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Sparta by name, or you want a high-puff disposable with a display."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-sparta-20k"],
+  },
+  {
+    // Round popular models 07/11: searched (relx novo 590 a month), not in the warehouse, no price, no cart, no maker page (relxnow.com does not
+    // list it). Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in the browser: maneevp ·
+    // yaivapestore · vapedeliverybkk: 14,000 puffs, 500mAh, a display, these 14 flavours. Not agreed, so
+    // not written: liquid (12 or 20mL), Cola and adjustable airflow (two shops each).
+    id: "relx-novo-14k",
+    slug: "relx-novo-14k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Novo 14K",
+    displayName: "RELX NOVO 14K",
+    searchAliases: ["RELX Novo","Novo 14K","Novo 14000"],
+    tagline: "A RELX disposable with a display on the body.",
+    shortDescription:
+      "A disposable from RELX with a display on the body and USB-C charging. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-novo-14k/card-wm5.webp",
+        alt: "RELX Novo 14K, three-quarter view",
+        angle: "three-quarter, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-novo-14k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple", name: "Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#4a5fb0", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "longjing-ice-tea", name: "LongJing Ice Tea", swatchHex: "#a8b56a", availability: "unknown" },
+      { id: "mix-berry", name: "Mixed Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-soda", name: "Orange Soda", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "sea-salt-lemon", name: "Sea Salt Lemon", swatchHex: "#e6d44f", availability: "unknown" },
+      { id: "sour-berry", name: "Sour Berry", swatchHex: "#c9456f", availability: "unknown" },
+      { id: "sour-bubblegum", name: "Sour Bubblegum", swatchHex: "#e86fb0", availability: "unknown" },
+      { id: "sour-lime-ice", name: "Sour Lime Ice", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "14,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
+      { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 14,000 puffs and a 500mAh battery." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Novo by name, or you want a RELX disposable with a display."],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-novo-14k"],
+  },
+  {
+    // Round popular models 07/11: searched, not in the warehouse, no maker page anywhere (relxnow.com does not list it), so no
+    // price and no cart. Owner 07/11: list it anyway, our own words, a fact only where 3 independent shops agree. Shops that agree:
+    // goatvapethai, maneevp and zeedcupvp (counted as one, same spec text), vapedumpthailand.store: the 30K in the name and the flavour list.
+    // No spec row: the row gate takes a maker source only. Flavour pictures: none yet (IMAGE_SPEC §4).
+    id: "relx-diva-30k",
+    slug: "relx-diva-30k",
+    brandId: "relx",
+    familyId: "relx-disposables",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "RELX Diva 30K",
+    displayName: "RELX DIVA 30K",
+    tagline: "A RELX disposable with a display and ECO and BOOST modes.",
+    shortDescription:
+      "A disposable from RELX with a display and two modes, ECO and BOOST. Pick from the flavours below; each one shows whether it comes in the stronger version.",
+    isFlagship: false,
+    attributes: {
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-diva-30k/card-wm5.webp",
+        alt: "RELX Diva 30K, lilac top and pink-blue body, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/relx-diva-30k",
+      },
+    ],
+    flavorVariants: [
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "fresh-melon", name: "Fresh Melon", swatchHex: "#a6d66b", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9a8bc4", availability: "unknown" },
+      { id: "mango-passion-fruit", name: "Mango Passion Fruit", swatchHex: "#f2a93b", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "orange-splash", name: "Orange Splash", swatchHex: "#f28a2e", availability: "unknown" },
+      { id: "spearmint", name: "Spearmint", swatchHex: "#5fbf9a", availability: "unknown" },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f2a2b5", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "cola-5", name: "Cola 5%", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "copico-coffee-5", name: "Copico Coffee 5%", swatchHex: "#7a5238", availability: "unknown" },
+      { id: "double-mint-5", name: "Double Mint 5%", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-5", name: "Grape 5%", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "watermelon-5", name: "Watermelon 5%", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "30,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "modes", title: "ECO and BOOST", description: "Shops that sell it list an ECO mode and a BOOST mode." },
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
+    ],
+    compatibility: [],
+    whoIsThisFor: [
+      "You came looking for the DIVA by name, or you want a RELX disposable you can pick by flavour.",
+    ],
+    faqs: [],
+    relatedProductSlugs: ["relx-smash-go-12k"],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/relx-diva-30k"],
+  },
+  {
+    // Round popular models 07/11: searched ("relx ultra pod", "หัว relx ultra"), not in the warehouse, so no price and no cart
+    // (BSOT §4). Facts and pictures: RELX's own store. The box calls it "Ultra Pod", the store "MAXGO Ultra Pod": same thing.
+    id: "relx-ultra-pod",
+    slug: "relx-ultra-pod",
+    brandId: "relx",
+    familyId: "relx-ultra",
+    categoryId: "switch-pods",
+    systemType: "pod-cartridge",
+    name: "RELX Ultra Pod",
+    displayName: "RELX ULTRA POD",
+    searchAliases: ["RELX MAXGO Ultra Pod", "MAXGO Ultra Pod", "RELX Ultra"],
+    tagline: "RELX's 2mL prefilled pod with a mesh coil at 10W.",
+    shortDescription:
+      "A 2mL prefilled pod from RELX with a mesh coil running at 10W, rated at up to 5,000 puffs. It comes in four flavours at 18mg/ml, and RELX lists it for its Ultra, Artisan, Infinity and Essential devices.",
+    isFlagship: false,
+    attributes: {
+      capacityMl: 2,
+      screenType: "none",
+      portability: "ultra-compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "N/A — cartridge only",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-ultra-pod/card.webp",
+        alt: "RELX Ultra Pod, Watermelon, retail box",
+        angle: "retail box, isolated",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: ULTRA_POD_PAGE,
+      },
+    ],
+    // RELX's four flavours in its store's order; each photo is the box of that flavour from the same page.
+    flavorVariants: [
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e23a43", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-watermelon.webp", alt: "RELX Ultra Pod, Watermelon, retail box" } },
+      { id: "blueberry-sour-raspberry", name: "Blueberry Sour Raspberry", swatchHex: "#5cc0c4", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-blueberry-sour-raspberry.webp", alt: "RELX Ultra Pod, Blueberry Sour Raspberry, retail box" } },
+      { id: "cherry-cola", name: "Cherry Cola", swatchHex: "#a32a3f", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-cherry-cola.webp", alt: "RELX Ultra Pod, Cherry Cola, retail box" } },
+      { id: "sunrise-lemon-lime", name: "Sunrise Lemon Lime", swatchHex: "#efb20f", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-sunrise-lemon-lime.webp", alt: "RELX Ultra Pod, Sunrise Lemon Lime, retail box" } },
+    ],
+    specifications: [
+      { key: "capacity", label: "E-liquid capacity", value: "2mL", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "puffs", label: "Rated puffs", value: "Up to 5,000", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "coil", label: "Coil", value: "Mesh coil, 10W", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "devices", label: "Compatible devices", value: "RELX Ultra, Artisan, Infinity and Essential series · WAKA", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+    ],
+    features: [
+      { id: "coil", title: "Mesh coil at 10W", description: "RELX runs a mesh coil at 10W in this pod and tunes it for a fuller taste from first puff to last." },
+      { id: "window", title: "See what's left", description: "The liquid shows through the pod, so you can see how much of the 2mL remains before the taste drops off." },
+      { id: "fit", title: "Which devices it fits", description: "RELX lists it for its Ultra, Artisan, Infinity and Essential devices, and for WAKA devices too." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Ultra · Artisan · Infinity · Essential · WAKA", note: "Device lists from RELX's store page." }],
+    whoIsThisFor: ["You're looking for the RELX Ultra pod by name and want its flavours and the devices RELX lists for it."],
+    faqs: [],
+    relatedProductSlugs: ["relx-ultra-kit", "relx-infinity-2-plus"],
+    sourceUrls: [ULTRA_POD_PAGE],
+  },
+  {
+    // Round popular models 07/11: not in the warehouse, so no price and no cart (BSOT §4). Facts and pictures: RELX's own store.
+    // That page's short line says "1 Essential 2 & 1 Ultra Pod" while its box list and FAQ say Ultra device: the page does not settle
+    // what the body is called, so the copy only says device. Options are the flavour of the pod in the box; the body is Steel Silver.
+    id: "relx-ultra-kit",
+    slug: "relx-ultra-kit",
+    brandId: "relx",
+    familyId: "relx-ultra",
+    categoryId: "switch-pods",
+    systemType: "pod-kit",
+    name: "RELX Ultra Kit",
+    displayName: "RELX ULTRA KIT",
+    searchAliases: ["RELX MAXGO Ultra Kit", "MAXGO Ultra Kit", "RELX Ultra"],
+    tagline: "A 10W RELX device in aluminium alloy, with an Ultra Pod in the box.",
+    shortDescription:
+      "RELX's starter kit: a 10W device with a 380mAh battery in a Steel Silver aluminium alloy body, plus one Ultra Pod in the flavour on the box. It charges over Type-C, reaching 80% in 30 minutes by RELX's figure.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 380,
+      wattageMax: 10,
+      capacityMl: 2,
+      screenType: "led-indicator",
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-ultra-kit/card.webp",
+        alt: "RELX Ultra Kit, Steel Silver with Watermelon pod, retail box",
+        angle: "retail box three-quarter, isolated",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: ULTRA_KIT_PAGE,
+      },
+    ],
+    flavorVariants: [
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e23a43", availability: "unknown", image: { src: "/assets/products/relx-ultra-kit/variant-watermelon.webp", alt: "RELX Ultra Kit, Watermelon, retail box" } },
+      { id: "sunrise-lemon-lime", name: "Sunrise Lemon Lime", swatchHex: "#efb20f", availability: "unknown", image: { src: "/assets/products/relx-ultra-kit/variant-sunrise-lemon-lime.webp", alt: "RELX Ultra Kit, Sunrise Lemon Lime, retail box" } },
+    ],
+    specifications: [
+      { key: "power", label: "Max output", value: "10W", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "battery", label: "Battery", value: "380mAh", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "charging", label: "Charging", value: "Type-C · 80% in 30 minutes (RELX's figure)", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "materials", label: "Materials", value: "Aluminium alloy", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "pod", label: "Included pod", value: "RELX Ultra Pod · 2mL · 18mg/ml · up to 5,000 puffs (RELX's figures)", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+    ],
+    features: [
+      { id: "charging", title: "80% in 30 minutes", description: "The 380mAh battery charges over Type-C, and RELX quotes 30 minutes to reach 80%." },
+      { id: "body", title: "Aluminium alloy body", description: "The body is aluminium alloy with a comfort grip, in Steel Silver." },
+      { id: "indicator", title: "A light near the base", description: "A small indicator light near the base shows the device's status and battery." },
+      { id: "in-the-box", title: "What's in the box", description: "The device, a Type-C cable, the manual and one Ultra Pod in the flavour on the box." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Ultra Pod", note: "One in the box; RELX's store page says the kit works best with it." }, typeC],
+    whoIsThisFor: ["You're looking for the RELX Ultra device by name and want its numbers and the two flavours the kit comes in."],
+    faqs: [],
+    relatedProductSlugs: ["relx-ultra-pod", "relx-infinity-2-plus"],
+    sourceUrls: [ULTRA_KIT_PAGE],
+  },
+  {
+    // Round popular models 07/11: searched ("relx artisan"), not in the warehouse, so no price and no cart (BSOT §4). Facts and
+    // pictures: RELX's own store. The older Artisan (nine finishes, every one sold out at RELX) has no page here: the key lands on this one.
+    id: "relx-artisan-plus",
+    slug: "relx-artisan-plus",
+    brandId: "relx",
+    familyId: "relx-artisan",
+    categoryId: "switch-pods",
+    systemType: "pod-kit",
+    name: "RELX Artisan Plus",
+    displayName: "RELX ARTISAN PLUS",
+    searchAliases: ["RELX Artisan", "Artisan Plus"],
+    tagline: "RELX's sculpted device, now at 8W and 440mAh.",
+    shortDescription:
+      "A pod device from RELX with a sculpted body in Black Wave. It runs at 8W on a 440mAh battery, charges over Type-C and shows the battery in four steps. It takes RELX Pod and RELX Pod Pro.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 440,
+      wattageMax: 8,
+      screenType: "led-indicator",
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-artisan-plus/card.webp",
+        alt: "RELX Artisan Plus, Black Wave, front view",
+        angle: "front, isolated",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: ARTISAN_PLUS_PAGE,
+      },
+      {
+        kind: "official-photo",
+        role: "detail",
+        src: "/assets/products/relx-artisan-plus/detail-box.webp",
+        alt: "RELX Artisan Plus, Black Wave, beside its retail box",
+        angle: "device and retail box",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: ARTISAN_PLUS_PAGE,
+      },
+    ],
+    colorVariants: [
+      { id: "black-wave", name: "Black Wave", swatchHex: "#2b2b2e", image: { src: "/assets/products/relx-artisan-plus/variant-black-wave.webp", alt: "RELX Artisan Plus, Black Wave" } },
+    ],
+    specifications: [
+      { key: "power", label: "Max output", value: "8W", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "battery", label: "Battery", value: "440mAh", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "charging", label: "Charging", value: "Type-C", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "indicator", label: "Display", value: "4-stage battery indicator", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "pods", label: "Pod platform", value: "RELX Pod · RELX Pod Pro", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+    ],
+    features: [
+      { id: "upgrade", title: "What changed from the Artisan", description: "More power and a bigger battery than the Artisan." },
+      { id: "indicator", title: "4-stage battery indicator", description: "Each bar stands for 25%. At one bar left, RELX says it's time to charge." },
+      { id: "in-the-box", title: "What's in the box", description: "The device, a Type-C cable and the manual. Pods are separate." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Pod · RELX Pod Pro", note: "Pods from RELX's store page." }, typeC],
+    whoIsThisFor: ["You're looking for the RELX Artisan by name and want the current model's numbers."],
+    faqs: [],
+    relatedProductSlugs: ["relx-infinity-2-plus", "relx-ultra-pod"],
+    sourceUrls: [ARTISAN_PLUS_PAGE],
+  },
   {
     id: "relx-smash-go-12k",
     slug: "relx-smash-go-12k",
@@ -225,7 +617,33 @@ export const relxProducts: Product[] = [
     ],
     compatibility: [{ type: "pod", label: "RELX Pod · Pod Pro · Pod Pro 2", note: "RELX prefilled pods, 1.9mL each." }, typeC],
     whoIsThisFor: ["You already use RELX Pod or Pod Pro pods and want the current Infinity body they fit."],
-    faqs: [],
+    faqs: [
+      {
+        id: "relx-infinity-2-plus-what",
+        question: "What kind of device is the RELX Infinity 2 Plus?",
+        answer: "It's the current device in RELX's Infinity line, a reusable switch-style device with a built-in 440mAh battery. When the e-liquid runs out, you change only the prefilled pod and keep using the same device.",
+      },
+      {
+        id: "relx-infinity-2-plus-vs-2",
+        question: "How is the RELX Infinity 2 Plus different from the Infinity 2?",
+        answer: "It runs at a higher wattage in every mode: Eco 6.5W, Smooth 8W and Boost 10W. You can also tell it apart by the orange button and the Plus icon on the body.",
+      },
+      {
+        id: "relx-infinity-2-plus-modes",
+        question: "What do the three modes on the RELX Infinity Plus do?",
+        answer: "RELX describes Eco as the lighter mode that helps save battery, Smooth as the one for a smooth flavor, and Boost as the one for a stronger flavor. Boost gives up to 15% more vapor than Smooth.",
+      },
+      {
+        id: "relx-infinity-2-plus-pods",
+        question: "Which pods fit the RELX Infinity 2 Plus?",
+        answer: "Three do: RELX Pod, RELX Pod Pro and RELX Pod Pro 2. RELX rates each at 1.9mL and up to 600 puffs, so if you already have any of these, they will go straight into this device.",
+      },
+      {
+        id: "relx-infinity-2-plus-charge",
+        question: "How long does the RELX Infinity 2 Plus take to charge?",
+        answer: "By RELX's figure, 15 minutes over USB-C takes it to 80%. The 4-stage indicator on the device shows how much battery is left.",
+      },
+    ],
     // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
     reviewVideo: { videoId: "hyJ4CkvKMec", title: "หลังใช้งาน 30 วัน RELX INFINITY 2 PLUS อัพเกรดใหม่ปรับได้แล้วทุกหัว!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2024-12-02" },
     relatedProductSlugs: ["relx-creator"],

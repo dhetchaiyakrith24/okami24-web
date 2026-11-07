@@ -6,6 +6,7 @@ const S3_PAGE = "https://shop.voopoo.com/products/drag-s3";
 const X3_PAGE = "https://shop.voopoo.com/products/drag-x3";
 // VOOPOO's own page; read 16/10 through its web.archive.org snapshot of 18/01/2026 (www.voopoo.com does not resolve from the shop's ISP).
 const DRAG_X_PAGE = "https://www.voopoo.com/drag-series/drag-x.html";
+const DRAG_X2_PAGE = "https://shop.voopoo.com/products/drag-x2";
 const G4M_PAGE = "https://shop.voopoo.com/products/argus-g4-mini";
 const G3M_PAGE = "https://shop.voopoo.com/products/argus-g3-mini";
 const P3_PAGE = "https://shop.voopoo.com/products/argus-p3";
@@ -1076,7 +1077,33 @@ export const voopooProducts: Product[] = [
       "Vapers who want a small DRAG to reach for every day.",
       "Mostly-MTL vapers who sometimes swap coils for an RDL or light DTL draw.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "drag-s3-battery",
+        question: "Does the VOOPOO DRAG S3 use removable batteries?",
+        answer: "The 3000mAh battery is built in. When it runs low, plug a USB-C cable straight into the device; it charges at 5V/2A.",
+      },
+      {
+        id: "drag-s3-coil",
+        question: "Which pod and coils does the DRAG S3 use?",
+        answer: "The PnP X Cartridge, which holds 5mL and fills from the side, with any PnP X coil from 0.15Ω to 1.0Ω. The kit comes with a 0.6Ω and a 0.8Ω coil.",
+      },
+      {
+        id: "drag-s3-style",
+        question: "What draw styles suit the DRAG S3?",
+        answer: "MTL, RDL and light DTL. Change the coil and slide the top airflow to suit the way you vape.",
+      },
+      {
+        id: "drag-s3-unlock",
+        question: "How do I unlock the DRAG S3?",
+        answer: "Touch the sensor on the fire button to unlock it, and it locks again when you let go. Five presses turn it on or off, and three open the menu.",
+      },
+      {
+        id: "drag-s3-modes",
+        question: "What modes does the DRAG S3 have?",
+        answer: "Three: SMART keeps the wattage in the right range for your coil, RBA leaves every setting to you, and ECO saves battery. The device runs from 5W to 60W.",
+      },
+    ],
     relatedProductSlugs: ["drag-x3", "drag-6"],
     sourceUrls: ["https://www.voopoo.com/drag-series/drag-s3", S3_PAGE],
   },
@@ -1138,9 +1165,113 @@ export const voopooProducts: Product[] = [
     ],
     compatibility: [{ type: "coil", label: "PnP coils", note: "PnP-VM1 0.3Ω and PnP-VM6 0.15Ω come in the kit; PnP-RBA fits." }, { type: "charging", label: "USB-C", note: "USB-C fast charging." }],
     whoIsThisFor: ["You're looking for the DRAG X itself, not the DRAG X3, and want the full spec VOOPOO lists."],
-    faqs: [],
+    faqs: [
+      {
+        id: "drag-x-battery",
+        question: "What battery does the VOOPOO DRAG X use?",
+        answer: "A single 18650 cell, which you buy separately. You can charge it in the device over USB-C, with fast charging.",
+      },
+      {
+        id: "drag-x-wattage",
+        question: "What's the DRAG X's wattage range?",
+        answer: "5–80W, at 3.2–4.2V, and it works with coils from 0.1Ω to 3.0Ω.",
+      },
+      {
+        id: "drag-x-coil-wattage",
+        question: "What wattage should I use for the coils in the DRAG X box?",
+        answer: "Run the PnP-VM1 0.3Ω at 32–40W and the PnP-VM6 0.15Ω at 60–80W.",
+      },
+      {
+        id: "drag-x-pod",
+        question: "How much e-liquid does the DRAG X pod hold?",
+        answer: "4.5mL. The pod is PCTG and held on by magnets.",
+      },
+      {
+        id: "drag-x-smart",
+        question: "What does SMART mode do on the DRAG X?",
+        answer: "It suggests a starting wattage. Fit a coil, the device reads it, and it also remembers the wattage you last set.",
+      },
+    ],
     relatedProductSlugs: ["drag-x3", "drag-s3"],
     sourceUrls: [DRAG_X_PAGE],
+  },
+  {
+    // Round popular models 07/11: not in the warehouse, so no price and no cart (BSOT §4). Facts: VOOPOO's own shop page.
+    // That page's spec block says standard coils 0.15Ω / 0.3Ω, its box list says 0.15Ω / 0.2Ω: the box list is what the row uses.
+    id: "drag-x2",
+    slug: "drag-x2",
+    brandId: "voopoo",
+    familyId: "drag",
+    categoryId: "pod-systems",
+    systemType: "pod-kit",
+    name: "DRAG X2",
+    displayName: "VOOPOO DRAG X2",
+    tagline: "The DRAG X2: a single 18650, up to 80W, on PnP X coils.",
+    shortDescription:
+      "VOOPOO's DRAG X2 runs on one 18650 cell, sold separately, from 5 to 80W. It holds 5mL in a PnP X cartridge and has a menu screen with three modes.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: undefined,
+      wattageMin: 5,
+      wattageMax: 80,
+      capacityMl: 5,
+      portability: "standard",
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/drag-x2/card.webp",
+        alt: "VOOPOO DRAG X2, Sky Blue, screen side",
+        angle: "front three-quarter, isolated: the device cut from VOOPOO's own box shot",
+        transparentBackground: true,
+        sourceName: "VOOPOO",
+        sourceUrl: DRAG_X2_PAGE,
+      },
+    ],
+    openOnCardPhoto: true,
+    // VOOPOO's 16 colours; each name comes from the shop's option list, each photo from the image that option selects.
+    colorVariants: [
+      { id: "colorful-silver", name: "Colorful Silver", swatchHex: "#d9d8dc", image: { src: "/assets/products/drag-x2/variant-colorful-silver.webp", alt: "VOOPOO DRAG X2, Colorful Silver" } },
+      { id: "pearl-white", name: "Pearl White", swatchHex: "#e9eeec", image: { src: "/assets/products/drag-x2/variant-pearl-white.webp", alt: "VOOPOO DRAG X2, Pearl White" } },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#5fd8cf", image: { src: "/assets/products/drag-x2/variant-sky-blue.webp", alt: "VOOPOO DRAG X2, Sky Blue" } },
+      { id: "modern-red", name: "Modern Red", swatchHex: "#e23a6a", image: { src: "/assets/products/drag-x2/variant-modern-red.webp", alt: "VOOPOO DRAG X2, Modern Red" } },
+      { id: "glow-pink", name: "Glow Pink", swatchHex: "#f5b9c6", image: { src: "/assets/products/drag-x2/variant-glow-pink.webp", alt: "VOOPOO DRAG X2, Glow Pink" } },
+      { id: "gray-metal", name: "Gray Metal", swatchHex: "#6d6f73", image: { src: "/assets/products/drag-x2/variant-gray-metal.webp", alt: "VOOPOO DRAG X2, Gray Metal" } },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#232427", image: { src: "/assets/products/drag-x2/variant-spray-black.webp", alt: "VOOPOO DRAG X2, Spray Black" } },
+      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e6e0c2", image: { src: "/assets/products/drag-x2/variant-champagne-golden.webp", alt: "VOOPOO DRAG X2, Champagne Golden" } },
+      { id: "moss-green", name: "Moss Green", swatchHex: "#1f8a5c", image: { src: "/assets/products/drag-x2/variant-moss-green.webp", alt: "VOOPOO DRAG X2, Moss Green" } },
+      { id: "snow-blue", name: "Snow Blue", swatchHex: "#a5dcd9", image: { src: "/assets/products/drag-x2/variant-snow-blue.webp", alt: "VOOPOO DRAG X2, Snow Blue" } },
+      { id: "checkered-black", name: "Checkered Black", swatchHex: "#3a3b3e", image: { src: "/assets/products/drag-x2/variant-checkered-black.webp", alt: "VOOPOO DRAG X2, Checkered Black" } },
+      { id: "retro", name: "Retro", swatchHex: "#a4542a", image: { src: "/assets/products/drag-x2/variant-retro.webp", alt: "VOOPOO DRAG X2, Retro" } },
+      { id: "masala", name: "Masala", swatchHex: "#7d1f2e", image: { src: "/assets/products/drag-x2/variant-masala.webp", alt: "VOOPOO DRAG X2, Masala" } },
+      { id: "carbon-fiber", name: "Carbon Fiber", swatchHex: "#1d1e20", image: { src: "/assets/products/drag-x2/variant-carbon-fiber.webp", alt: "VOOPOO DRAG X2, Carbon Fiber" } },
+      { id: "classic", name: "Classic", swatchHex: "#26272a", image: { src: "/assets/products/drag-x2/variant-classic.webp", alt: "VOOPOO DRAG X2, Classic" } },
+      { id: "galaxy-blue", name: "Galaxy Blue", swatchHex: "#1f2c66", image: { src: "/assets/products/drag-x2/variant-galaxy-blue.webp", alt: "VOOPOO DRAG X2, Galaxy Blue" } },
+    ],
+    specifications: [
+      { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "battery", label: "Battery", value: "Single external 18650 cell (not included)", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "pod", label: "Pod capacity", value: "5.0mL, PnP X Cartridge DTL (standard and US versions)", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "coils", label: "Coil", value: "PnP X coils · in the box: 0.15Ω (fitted) and 0.2Ω", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "materials", label: "Materials", value: "Zinc alloy and leather", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+      { key: "chip", label: "Chipset", value: "GENE.TT 2.0 · Smart, RBA and ECO modes", sourceStatus: "verified", sourceUrl: DRAG_X2_PAGE },
+    ],
+    features: [
+      { id: "platform", title: "VOOPOO's first external-battery pod mod on PnP X", description: "VOOPOO calls the DRAG X2 its first external-battery pod mod on the PnP X platform." },
+      { id: "modes", title: "Three modes", description: "Smart picks the power for you, RBA lets you set 5 to 80W, and ECO stretches the battery by more than 10%." },
+      { id: "cartridge", title: "5mL top-airflow cartridge", description: "The PnP X cartridge takes its air from the top, with an adjustable airflow ring." },
+      { id: "in-the-box", title: "What's in the box", description: "The device, a PnP X DTL cartridge, 0.15Ω and 0.2Ω PnP X coils, a Type-C cable, the manual and a PnP Platform card. The battery is not included." },
+    ],
+    compatibility: [{ type: "coil", label: "PnP X coils", note: "0.15Ω and 0.2Ω come in the kit." }, { type: "charging", label: "USB-C", note: "Type-C USB cable in the box." }],
+    whoIsThisFor: ["You're looking for the DRAG X2 itself, not the DRAG X or X3, and want the full spec and every colour VOOPOO lists."],
+    faqs: [],
+    relatedProductSlugs: ["drag-x", "drag-x3"],
+    sourceUrls: [DRAG_X2_PAGE],
   },
   {
     id: "drag-x3",

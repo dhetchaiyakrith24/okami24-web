@@ -13,6 +13,9 @@ import crypto from "node:crypto";
 export interface IdTokenClaims {
   sub: string;
   name: string | null;
+  /** Only when the sign-in asked for `email`: the owner's sign-in, compared and never stored (src/lib/owner/identity.ts). */
+  email: string | null;
+  emailVerified: boolean;
 }
 
 export type IdTokenCheck = { ok: true; claims: IdTokenClaims } | { ok: false; reason: string };
@@ -57,7 +60,15 @@ export function checkIdToken(idToken: string, expect: IdTokenExpect): IdTokenChe
   if (payload.nonce !== expect.nonce) return { ok: false, reason: "nonce" };
   if (typeof payload.sub !== "string" || payload.sub.length === 0) return { ok: false, reason: "sub" };
 
-  return { ok: true, claims: { sub: payload.sub, name: typeof payload.name === "string" ? payload.name : null } };
+  return {
+    ok: true,
+    claims: {
+      sub: payload.sub,
+      name: typeof payload.name === "string" ? payload.name : null,
+      email: typeof payload.email === "string" ? payload.email : null,
+      emailVerified: payload.email_verified === true,
+    },
+  };
 }
 
 /** Only same-site paths may be a "back to" target after sign-in — never `//host` or a full URL (open redirect). */
