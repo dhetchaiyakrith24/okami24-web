@@ -239,6 +239,8 @@ page, title, meta or JSON-LD · the /warranty authenticity refund does not cover
 linked to or from the genuine M Bar 10K page. The only exception to BSOT "Genuine products"; any other lookalike = ask the owner.
 Photos (owner 27/10, the warehouse confirmed the item is identical): "ใช้รูป M Bar 10K ที่เว็บมีอยู่ได้เลย เพราะของเหมือนกันเป๊ะ" — the
 page shows the site's M Bar 10K card and the device photo of each SAME-named flavour; a flavour whose name differs gets no photo.
+**Suggestions (owner 07/11, replaces 28/10):** cart and product page show one row: fits first (coil, e-liquid; a part only with a verified fit, nothing guessed), then the same category, then other choices (other e-liquid, disposables), only what has stock now, from live stock with no hand list and no rebuild. Finder and the disposable chooser follow the same in-stock rule; the table of every model keeps sold-out models. Code head = `src/lib/related-order.ts`.
+
 **Shop and ordering:** cart on or off = §16 · refunds go to a PromptPay number OR a bank account + the bank's name, no branch needed (owner 24/10 evening, BSOT §9) · stock without a rebuild = live since 28/10 (§16 3u) · checkout = phone only, no OTP · LINE orders are charged the same price as the web (owner 04/11 "ใช่ ราคาเดียวกัน (คงไว้)" — the trust line "ทุกออเดอร์คิดตามราคาขายที่แสดงบนเว็บ" stays)
 (owner 23/10) · a customer finds their orders by PHONE NUMBER ONLY (owner 24/10 "เบอร์โทรครับ" — name/address masked) · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are touched only when the owner asks or a BSOT fact they state changes (owner 26/10, house round) and carry no JSON-LD on purpose (item 49) ·
