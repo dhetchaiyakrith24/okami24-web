@@ -24,9 +24,9 @@ export const relxProducts: Product[] = [
     name: "RELX Sparta 20K",
     displayName: "RELX SPARTA 20K",
     searchAliases: ["RELX Sparta", "Sparta 20K", "Sparta 20000"],
-    tagline: "A disposable with a scaled black body and a small display.",
+    tagline: "A RELX disposable with a display, adjustable airflow and power modes.",
     shortDescription:
-      "A disposable in a black body with a scaled pattern and a round display near the base. Airflow and power both adjust. Pick from the flavours below.",
+      "A disposable from RELX with a display, airflow you can set and more than one power mode. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -65,8 +65,8 @@ export const relxProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
     features: [
-      { id: "display", title: "A display near the base", description: "The round display shows the liquid and the battery left, so you are not guessing." },
-      { id: "adjust", title: "Airflow and power", description: "You can set the airflow and step the power up or down, rather than taking one fixed draw." },
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
+      { id: "adjust", title: "Airflow and power", description: "You can set the airflow and change the power mode." },
       { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 20,000 puffs, a 750mAh battery and USB-C charging." },
     ],
     compatibility: [],
@@ -90,9 +90,9 @@ export const relxProducts: Product[] = [
     name: "RELX Novo 14K",
     displayName: "RELX NOVO 14K",
     searchAliases: ["RELX Novo","Novo 14K","Novo 14000"],
-    tagline: "A disposable in brushed grey with a dot display down one side.",
+    tagline: "A RELX disposable with a display on the body.",
     shortDescription:
-      "A rounded disposable with a brushed grey body and a black panel that lights up in dots. Pick from the flavours below.",
+      "A disposable from RELX with a display on the body and USB-C charging. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -104,7 +104,7 @@ export const relxProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/relx-novo-14k/card-wm5.webp",
-        alt: "RELX Novo 14K, brushed grey body with a dot display, three-quarter view",
+        alt: "RELX Novo 14K, three-quarter view",
         angle: "three-quarter, isolated: studio remake",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
@@ -118,7 +118,7 @@ export const relxProducts: Product[] = [
       { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown" },
       { id: "grape-apple", name: "Grape Apple", swatchHex: "#9a8bc4", availability: "unknown" },
       { id: "longjing-ice-tea", name: "LongJing Ice Tea", swatchHex: "#a8b56a", availability: "unknown" },
-      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "mix-berry", name: "Mixed Berry", swatchHex: "#a24a7e", availability: "unknown" },
       { id: "orange-soda", name: "Orange Soda", swatchHex: "#f28a2e", availability: "unknown" },
       { id: "sea-salt-lemon", name: "Sea Salt Lemon", swatchHex: "#e6d44f", availability: "unknown" },
       { id: "sour-berry", name: "Sour Berry", swatchHex: "#c9456f", availability: "unknown" },
@@ -129,11 +129,11 @@ export const relxProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "14,000", sourceStatus: "unverified" }],
     features: [
-      { id: "panel", title: "A lit panel on the side", description: "The black panel lights up in dots and shows a number, so the state of the device is easy to read." },
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
       { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 14,000 puffs and a 500mAh battery." },
     ],
     compatibility: [],
-    whoIsThisFor: ["You came looking for the Novo by name, or you like a rounded disposable with a lit panel."],
+    whoIsThisFor: ["You came looking for the Novo by name, or you want a RELX disposable with a display."],
     faqs: [],
     relatedProductSlugs: ["relx-smash-go-12k"],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
@@ -152,9 +152,9 @@ export const relxProducts: Product[] = [
     systemType: "disposable",
     name: "RELX Diva 30K",
     displayName: "RELX DIVA 30K",
-    tagline: "A pebble-shaped disposable with a two-tone body and a small display.",
+    tagline: "A RELX disposable with a display and ECO and BOOST modes.",
     shortDescription:
-      "A rounded, two-tone disposable with a teardrop display on the front. Pick from the flavours below; each one shows whether it comes in the stronger version.",
+      "A disposable from RELX with a display and two modes, ECO and BOOST. Pick from the flavours below; each one shows whether it comes in the stronger version.",
     isFlagship: false,
     attributes: {
       portability: "compact",
@@ -181,7 +181,7 @@ export const relxProducts: Product[] = [
       { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9a8bc4", availability: "unknown" },
       { id: "mango-passion-fruit", name: "Mango Passion Fruit", swatchHex: "#f2a93b", availability: "unknown" },
       { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
-      { id: "mix-berry", name: "Mixed Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
       { id: "orange-splash", name: "Orange Splash", swatchHex: "#f28a2e", availability: "unknown" },
       { id: "spearmint", name: "Spearmint", swatchHex: "#5fbf9a", availability: "unknown" },
       { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f2a2b5", availability: "unknown" },
@@ -194,12 +194,12 @@ export const relxProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "30,000", sourceStatus: "unverified" }],
     features: [
-      { id: "shape", title: "A body that sits in the hand", description: "It is short and rounded, like a pebble, so it stays small in the palm or a pocket." },
-      { id: "display", title: "A teardrop display", description: "The black teardrop on the front is what you check, rather than guessing how much is left." },
+      { id: "modes", title: "ECO and BOOST", description: "Shops that sell it list an ECO mode and a BOOST mode." },
+      { id: "display", title: "A display on the body", description: "Shops that sell it list a display on the device." },
     ],
     compatibility: [],
     whoIsThisFor: [
-      "You came looking for the DIVA by name, or you like a rounded disposable you can pick by flavour.",
+      "You came looking for the DIVA by name, or you want a RELX disposable you can pick by flavour.",
     ],
     faqs: [],
     relatedProductSlugs: ["relx-smash-go-12k"],

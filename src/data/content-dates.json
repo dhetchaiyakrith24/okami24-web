@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T02:09:49+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T02:41:27+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -127,8 +127,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "bd5c41d7b443"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "77edfee12f9b"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -191,8 +191,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "538faae399c0"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "6dd893852a46"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -323,8 +323,8 @@
       "fp": "46ca3eb3948f"
     },
     "/products/disposables": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "42604557e6ec"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "afcfdc8c1399"
     },
     "/products/drag-6": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -559,8 +559,8 @@
       "fp": "341119cd6a9d"
     },
     "/products/relx-diva-30k": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "e81819a53bb8"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "7af4da430b7f"
     },
     "/products/relx-essential-2": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -579,16 +579,16 @@
       "fp": "07bb82f7d0a7"
     },
     "/products/relx-novo-14k": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "762d63ec6756"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "69cc48baf421"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-07T11:43:43+07:00",
       "fp": "fc9d25792417"
     },
     "/products/relx-sparta-20k": {
-      "date": "2026-11-08T02:09:49+07:00",
-      "fp": "2443b56ef09f"
+      "date": "2026-11-08T02:41:27+07:00",
+      "fp": "173404b6f677"
     },
     "/products/relx-ultra-kit": {
       "date": "2026-11-07T15:32:01+07:00",
