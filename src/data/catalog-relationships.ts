@@ -356,7 +356,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   // device page lists RELX Pod, RELX Pod Pro and RELX Pod Pro 2 (1.9mL prefilled pods) — the same sentence
   // already backs the device's "Pod platform" spec row (src/data/products/relx.ts, verified). The shop's
   // pack (Max "หัวพอต RELX Infinity Pro 2", Pod-27) prints "RELX Pod Pro 2" (seed evidence, maxlist 20/10).
-  // Only the Pod Pro 2 pack is a catalog product; the RELX Pod / Pod Pro packs are not, so no edge for them.
+  // Only the Pod Pro 2 pack is sold here. RELX Pod and RELX Pod Pro have pages with nothing to buy (08/11), so no edge for them.
   // The RELX Creator ↔ Creator Pod 20K pair is NOT authored: its only source is Thai retailers (no maker page).
   // =================================================================================
   {

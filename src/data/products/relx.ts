@@ -3,6 +3,9 @@ import type { Product } from "@/types/catalog";
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
 const ULTRA_POD_PAGE = "https://relxnow.com/products/relx-maxgo-ultra-pod";
 const ULTRA_KIT_PAGE = "https://relxnow.com/products/relx-ultra-kit";
+const RELX_POD_PAGE = "https://relxnow.com/products/relx-pod-autoship";
+const POD_PRO_PAGE = "https://relxnow.com/products/relx-pod-pro";
+const ESSENTIAL_PAGE = "https://relxnow.com/products/essential-device";
 const ARTISAN_PLUS_PAGE = "https://relxnow.com/products/relx-artisan-plus-device";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm5.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
@@ -205,6 +208,175 @@ export const relxProducts: Product[] = [
     relatedProductSlugs: ["relx-smash-go-12k"],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
     sourceUrls: ["https://okami24.store/products/relx-diva-30k"],
+  },
+  {
+    // Round popular models 08/11, owner: "Relx ลงเป็นสินค้าแยกเลย" and check whether it is a swap pod or a throwaway. RELX's own store: a prefilled pod
+    // you swap on a device (pack of 2), so switch-pods, pod-cartridge. No Max code found: the 20/10 list has none and Max asked for a sign-in on 08/11,
+    // so no price and no cart (BSOT §4). This is the plain RELX Pod with the cotton coil, not the first "Classic" pod RELX's UK store says fits only the
+    // Classic device. Flavours: the gallery of RELX's own store listing, which names each one in the file name; the store sells three of them now.
+    // Pictures: a box with no gold PRO tab only. RELX shows Watermelon Ice only in the PRO box, and Menthol Xtra only at 600px: both stay with no picture.
+    // Puffs left out: RELX's Pod Pro page says 500 a pod, its Infinity page up to 600.
+    id: "relx-pod",
+    slug: "relx-pod",
+    brandId: "relx",
+    familyId: "relx-infinity",
+    categoryId: "switch-pods",
+    systemType: "pod-cartridge",
+    name: "RELX Pod",
+    displayName: "RELX POD",
+    searchAliases: ["หัว RELX Pod", "หัวพอต RELX Pod", "RELX Pod cotton coil"],
+    tagline: "RELX's 1.9mL prefilled pod with a cotton coil.",
+    shortDescription:
+      "A 1.9mL prefilled pod from RELX with a cotton coil, sold in packs of two at 18mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Essential 2, Infinity 2 Plus and Artisan Plus devices.",
+    isFlagship: false,
+    attributes: {
+      capacityMl: 1.9,
+      screenType: "none",
+      portability: "ultra-compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "N/A — cartridge only",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-pod/card.webp",
+        alt: "RELX Pod, Pineapple Delight, retail box and two pods",
+        angle: "retail box, isolated",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: RELX_POD_PAGE,
+      },
+    ],
+    flavorVariants: [
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#e8444f", availability: "unknown" },
+      { id: "pineapple-delight", name: "Pineapple Delight", swatchHex: "#f7c84a", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-pineapple-delight.webp", alt: "RELX Pod, Pineapple Delight, retail box" } },
+      { id: "strawberry-burst", name: "Strawberry Burst", swatchHex: "#ea5560", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-strawberry-burst.webp", alt: "RELX Pod, Strawberry Burst, retail box" } },
+      { id: "blueberry-splash", name: "Blueberry Splash", swatchHex: "#a9c2e4", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-blueberry-splash.webp", alt: "RELX Pod, Blueberry Splash, retail box" } },
+      { id: "heisenberry", name: "Heisenberry", swatchHex: "#2f6fce", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-heisenberry.webp", alt: "RELX Pod, Heisenberry, retail box" } },
+      { id: "juicy-apple", name: "Juicy Apple", swatchHex: "#c6473f", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-juicy-apple.webp", alt: "RELX Pod, Juicy Apple, retail box" } },
+      { id: "menthol-xtra", name: "Menthol Xtra", swatchHex: "#a6d034", availability: "unknown" },
+      { id: "lemon-mint", name: "Lemon Mint", swatchHex: "#3fb79a", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-lemon-mint.webp", alt: "RELX Pod, Lemon Mint, retail box" } },
+      { id: "cherry-lime", name: "Cherry Lime", swatchHex: "#8da63f", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-cherry-lime.webp", alt: "RELX Pod, Cherry Lime, retail box" } },
+    ],
+    specifications: [
+      { key: "capacity", label: "E-liquid capacity", value: "1.9mL", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: RELX_POD_PAGE },
+      { key: "coil", label: "Coil", value: "Cotton coil", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+      { key: "devices", label: "Compatible devices", value: "RELX Essential 2 · Infinity 2 Plus · Artisan Plus", sourceStatus: "verified", sourceUrl: ESSENTIAL_PAGE },
+    ],
+    features: [
+      { id: "swap", title: "A pod you swap", description: "It comes filled with liquid. When it runs out you fit a new one and keep the device." },
+      { id: "coil", title: "Cotton coil", description: "RELX says RELX Pod uses a cotton coil, where RELX Pod Pro uses a ceramic one." },
+      { id: "fit", title: "Which devices it fits", description: "RELX lists it for the Essential 2, the Infinity 2 Plus and the Artisan Plus." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Essential 2 · Infinity 2 Plus · Artisan Plus", note: "Device lists from RELX's store page." }],
+    whoIsThisFor: ["You're looking for RELX Pod by name and want its flavours and the devices RELX lists for it."],
+    faqs: [],
+    relatedProductSlugs: ["relx-pod-pro", "relx-infinity-2-plus", "relx-ultra-pod"],
+    sourceUrls: [RELX_POD_PAGE, POD_PRO_PAGE, ESSENTIAL_PAGE, INFINITY_PAGE, ARTISAN_PLUS_PAGE],
+  },
+  {
+    // Round popular models 08/11, same order as RELX Pod above: a prefilled pod you swap, so switch-pods, pod-cartridge. No Max code found, no price, no cart.
+    // Flavours: the 34 on RELX's store listing plus the store's flavour pages and Autoship list, all shown whether or not RELX has them now.
+    // RELX now photographs most of this listing in a box printed "Pod Pro 2", which is our Pod Pro 2 pack (relx-infinity-pro-2-pod), and this page must not
+    // look like that one: so only boxes with the gold PRO tab go up, and the other flavours stay names with no picture. Blueberry Splash, Orange Sparkle
+    // and Strawberry Burst: RELX shows them only in a box with no tab or a Pod Pro 2 box, so no picture. Puffs left out, see RELX Pod.
+    id: "relx-pod-pro",
+    slug: "relx-pod-pro",
+    brandId: "relx",
+    familyId: "relx-infinity",
+    categoryId: "switch-pods",
+    systemType: "pod-cartridge",
+    name: "RELX Pod Pro",
+    displayName: "RELX POD PRO",
+    searchAliases: ["หัว RELX Pod Pro", "หัวพอต RELX Pod Pro", "RELX Pod Pro ceramic coil"],
+    tagline: "RELX's 1.9mL prefilled pod with a ceramic coil.",
+    shortDescription:
+      "A 1.9mL prefilled pod from RELX with a ceramic coil, sold in packs of two at 18mg/ml, in 42 flavours. You swap it when it runs out and keep the device. RELX lists it for its Infinity 2 Plus, Essential 2 and Artisan Plus devices.",
+    isFlagship: false,
+    attributes: {
+      capacityMl: 1.9,
+      screenType: "none",
+      portability: "ultra-compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "N/A — cartridge only",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-pod-pro/card.webp",
+        alt: "RELX Pod Pro, Tangy Grape, retail box and two pods",
+        angle: "retail box, isolated",
+        transparentBackground: true,
+        sourceName: "RELX",
+        sourceUrl: POD_PRO_PAGE,
+      },
+    ],
+    flavorVariants: [
+      { id: "tangy-grape", name: "Tangy Grape", swatchHex: "#7d3f8c", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-tangy-grape.webp", alt: "RELX Pod Pro, Tangy Grape, retail box" } },
+      { id: "guava-ice", name: "Guava Ice", swatchHex: "#ec82b4", availability: "unknown" },
+      { id: "hokkaido-melon", name: "Hokkaido Melon", swatchHex: "#c9d96b", availability: "unknown" },
+      { id: "lemon-pineapple", name: "Lemon Pineapple", swatchHex: "#e8d832", availability: "unknown" },
+      { id: "paradise-mango", name: "Paradise Mango", swatchHex: "#8fd27a", availability: "unknown" },
+      { id: "juicy-strawberry", name: "Juicy Strawberry", swatchHex: "#e8413f", availability: "unknown" },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#e8444f", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-watermelon-ice.webp", alt: "RELX Pod Pro, Watermelon Ice, retail box" } },
+      { id: "lime-ice", name: "Lime Ice", swatchHex: "#c3df7a", availability: "unknown" },
+      { id: "mango-ice", name: "Mango Ice", swatchHex: "#f2b01e", availability: "unknown" },
+      { id: "hawthorn-ice", name: "Hawthorn Ice", swatchHex: "#c8452e", availability: "unknown" },
+      { id: "green-grape", name: "Green Grape", swatchHex: "#b4dc7c", availability: "unknown" },
+      { id: "iced-orangeade", name: "Iced Orangeade", swatchHex: "#f5a03c", availability: "unknown" },
+      { id: "iced-tropical-pineapple", name: "Iced Tropical Pineapple", swatchHex: "#f8cd4e", availability: "unknown" },
+      { id: "green-apple-ice", name: "Green Apple Ice", swatchHex: "#9fcf4e", availability: "unknown" },
+      { id: "sea-salt-lychee", name: "Sea Salt Lychee", swatchHex: "#ea9077", availability: "unknown" },
+      { id: "pineapple-delight", name: "Pineapple Delight", swatchHex: "#f7c95a", availability: "unknown" },
+      { id: "green-melon", name: "Green Melon", swatchHex: "#b6dc8a", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-green-melon.webp", alt: "RELX Pod Pro, Green Melon, retail box" } },
+      { id: "fresh-peach", name: "Fresh Peach", swatchHex: "#f07a8a", availability: "unknown" },
+      { id: "strawberry-burst", name: "Strawberry Burst", swatchHex: "#ea4b56", availability: "unknown" },
+      { id: "ruby-raspberry", name: "Ruby Raspberry", swatchHex: "#df3a56", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-ruby-raspberry.webp", alt: "RELX Pod Pro, Ruby Raspberry, retail box" } },
+      { id: "menthol-plus", name: "Menthol Plus", swatchHex: "#46b071", availability: "unknown" },
+      { id: "hibiscus-ice-tea", name: "Hibiscus Ice Tea", swatchHex: "#c41550", availability: "unknown" },
+      { id: "iced-jasmine-green-tea", name: "Iced Jasmine Green Tea", swatchHex: "#6cc544", availability: "unknown" },
+      { id: "jasmine-longjing-tea", name: "Jasmine Longjing Tea", swatchHex: "#efe9c8", availability: "unknown" },
+      { id: "oolong-ice-tea", name: "Oolong Ice Tea", swatchHex: "#a97f3e", availability: "unknown" },
+      { id: "lemon-ice-tea", name: "Lemon Ice Tea", swatchHex: "#c9502a", availability: "unknown" },
+      { id: "matcha-frappe", name: "Matcha Frappe", swatchHex: "#3f6b35", availability: "unknown" },
+      { id: "classic-tobacco", name: "Classic Tobacco", swatchHex: "#b5793c", availability: "unknown" },
+      { id: "orange-sparkle", name: "Orange Sparkle", swatchHex: "#f28a24", availability: "unknown" },
+      { id: "iced-pocary", name: "Iced Pocary", swatchHex: "#3f86d6", availability: "unknown" },
+      { id: "cucumber-lemonade", name: "Cucumber Lemonade", swatchHex: "#b7dc6c", availability: "unknown" },
+      { id: "dark-sparkle", name: "Dark Sparkle", swatchHex: "#e0604e", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-dark-sparkle.webp", alt: "RELX Pod Pro, Dark Sparkle, retail box" } },
+      { id: "ludou-ice", name: "Ludou Ice", swatchHex: "#5e8a3a", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-ludou-ice.webp", alt: "RELX Pod Pro, Ludou Ice, retail box" } },
+      { id: "banana-freeze", name: "Banana Freeze", swatchHex: "#dfe7ea", availability: "unknown" },
+      { id: "icy-coconut-water", name: "Icy Coconut Water", swatchHex: "#2fbcc4", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-icy-coconut-water.webp", alt: "RELX Pod Pro, Icy Coconut Water, retail box" } },
+      { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#e0404a", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-lychee-ice.webp", alt: "RELX Pod Pro, Lychee Ice, retail box" } },
+      { id: "taro-scoop", name: "Taro Scoop", swatchHex: "#b49ad8", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-taro-scoop.webp", alt: "RELX Pod Pro, Taro Scoop, retail box" } },
+      { id: "blueberry-splash", name: "Blueberry Splash", swatchHex: "#a9c2e4", availability: "unknown" },
+      { id: "precious-plum", name: "Precious Plum", swatchHex: "#a07cc4", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-precious-plum.webp", alt: "RELX Pod Pro, Precious Plum, retail box" } },
+      { id: "mango-orange", name: "Mango Orange", swatchHex: "#f6a623", availability: "unknown" },
+      { id: "menthol-xtra", name: "Menthol Xtra", swatchHex: "#3fa9b5", availability: "unknown", image: { src: "/assets/products/relx-pod-pro/variant-menthol-xtra.webp", alt: "RELX Pod Pro, Menthol Xtra, retail box" } },
+      { id: "juicy-apple", name: "Juicy Apple", swatchHex: "#d9463f", availability: "unknown" },
+    ],
+    specifications: [
+      { key: "capacity", label: "E-liquid capacity", value: "1.9mL", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+      { key: "coil", label: "Coil", value: "Ceramic coil", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+      { key: "devices", label: "Compatible devices", value: "RELX Infinity 2 Plus · Essential 2 · Artisan Plus", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+    ],
+    features: [
+      { id: "swap", title: "A pod you swap", description: "It comes filled with liquid. When it runs out you fit a new one and keep the device." },
+      { id: "coil", title: "Ceramic coil", description: "RELX says RELX Pod Pro uses a ceramic coil, where RELX Pod uses a cotton one, and that it improved leak resistance." },
+      { id: "fit", title: "Which devices it fits", description: "RELX lists it for the Infinity 2 Plus, the Essential 2 and the Artisan Plus." },
+      { id: "name", title: "RELX Pod Pro and Pod Pro 2", description: "RELX's store now shows many of these flavours in a box printed Pod Pro 2. We picture only boxes printed PRO, so some flavours here have no picture." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Infinity 2 Plus · Essential 2 · Artisan Plus", note: "Device lists from RELX's store page." }],
+    whoIsThisFor: ["You're looking for RELX Pod Pro by name and want its flavours and the devices RELX lists for it."],
+    faqs: [],
+    relatedProductSlugs: ["relx-pod", "relx-infinity-2-plus", "relx-ultra-pod"],
+    sourceUrls: [POD_PRO_PAGE],
   },
   {
     // Round popular models 07/11: searched ("relx ultra pod", "หัว relx ultra"), not in the warehouse, so no price and no cart

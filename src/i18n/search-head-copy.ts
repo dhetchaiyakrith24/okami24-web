@@ -366,6 +366,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",
   "drag-x2": "VOOPOO DRAG X2 เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP X และมีหัวพอต 5mL",
   // Round popular models 07/11: numbers = verified spec rows from relxnow.com.
+  "relx-pod": "RELX Pod หัวพอตบรรจุสำเร็จ 1.9mL คอยล์สำลี แพ็กละ 2 หัว 9 กลิ่น เปลี่ยนหัวใหม่ได้เมื่อน้ำยาหมด ใช้กับ Essential 2 · Infinity 2 Plus และ Artisan Plus ตามที่ RELX ระบุ",
+  "relx-pod-pro": "RELX Pod Pro หัวพอตบรรจุสำเร็จ 1.9mL คอยล์เซรามิก แพ็กละ 2 หัว 42 กลิ่น เปลี่ยนหัวใหม่ได้เมื่อน้ำยาหมด ใช้กับ Infinity 2 Plus · Essential 2 และ Artisan Plus ตามที่ RELX ระบุ",
   "relx-ultra-pod": "RELX Ultra Pod หัวพอตบรรจุสำเร็จ 2mL คอยล์ mesh 10 วัตต์ รองรับสูงสุด 5,000 พัฟ มี 4 กลิ่น ใช้ได้กับเครื่อง RELX Ultra · Artisan · Infinity และ Essential",
   "relx-ultra-kit": "RELX Ultra Kit ตัวเครื่องอะลูมิเนียมอัลลอยสี Steel Silver 10 วัตต์ แบต 380mAh ชาร์จผ่าน USB-C 30 นาทีได้ 80% พร้อมหัวพอต Ultra 1 ชิ้น",
   "relx-artisan-plus": "RELX Artisan Plus เครื่องระบบสวิตช์สี Black Wave 8 วัตต์ แบต 440mAh ไฟบอกแบต 4 ระดับ ชาร์จผ่าน USB-C ใช้ได้กับหัวพอต RELX Pod และ RELX Pod Pro",
