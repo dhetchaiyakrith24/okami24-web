@@ -363,7 +363,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้งตัวเครื่องสีดำลายเกล็ด มีจอบอกน้ำยาและแบต ปรับลมและปรับวัตต์ได้ มี 16 กลิ่น",
-  "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้งทรงมนสีเทา มีจอพิกเซลด้านข้าง 14,000 พัฟ แบต 500mAh ชาร์จผ่าน USB-C มี 14 กลิ่น",
+  "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้งทรงมนสีเทา มีจอพิกเซลด้านข้าง ชาร์จผ่าน USB-C มี 14 กลิ่น",
   "drag-x2": "VOOPOO DRAG X2 เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP X และมีหัวพอต 5mL",
   // Round popular models 07/11: numbers = verified spec rows from relxnow.com.
   "relx-ultra-pod": "RELX Ultra Pod หัวพอตบรรจุสำเร็จ 2mL คอยล์ mesh 10 วัตต์ รองรับสูงสุด 5,000 พัฟ มี 4 กลิ่น ใช้ได้กับเครื่อง RELX Ultra · Artisan · Infinity และ Essential",
