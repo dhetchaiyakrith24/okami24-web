@@ -553,33 +553,33 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "กำลังหา DRAG X2 ตัวนี้โดยเฉพาะ ไม่ใช่ DRAG X หรือ X3 และอยากดูสเปกกับสีทั้งหมดที่ VOOPOO ทำออกมา",
     },
     specifications: {
-      battery: "ถ่าน 18650 หนึ่งก้อน ซื้อแยก",
-      pod: "5.0mL หัว PnP X Cartridge DTL (รุ่นมาตรฐานและรุ่น US)",
+      battery: "ถ่าน 18650 หนึ่งก้อน (ไม่รวมในกล่อง)",
+      pod: "5.0mL หัวพอต PnP X Cartridge DTL (เวอร์ชันมาตรฐานและเวอร์ชัน US)",
       coils: "คอยล์ PnP X ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.2Ω",
       materials: "ซิงค์อัลลอยและหนัง",
-      chip: "GENE.TT 2.0 มีโหมด Smart, RBA และ ECO",
+      chip: "GENE.TT 2.0 มีโหมด Smart RBA และ ECO",
     },
     features: {
       platform: {
-        title: "พอตม็อดถ่านแยกตัวแรกของ VOOPOO บน PnP X",
-        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตม็อดถ่านแยกรุ่นแรกที่ใช้แพลตฟอร์ม PnP X",
+        title: "พอตคิทแบบใส่ถ่านรุ่นแรกของ VOOPOO ที่ใช้ PnP X",
+        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตคิทแบบใส่ถ่านรุ่นแรกที่ใช้ระบบหัวพอต PnP X",
       },
       modes: {
         title: "3 โหมดใช้งาน",
-        description: "Smart เลือกกำลังไฟให้เอง RBA ตั้งเองได้ 5 ถึง 80 วัตต์ และ ECO ช่วยยืดแบตได้มากกว่า 10%",
+        description: "Smart เลือกวัตต์ให้เอง RBA ตั้งเองได้ 5 ถึง 80 วัตต์ และ ECO ช่วยยืดแบตได้มากกว่า 10%",
       },
       cartridge: {
         title: "หัวพอต 5mL รับลมด้านบน",
-        description: "หัว PnP X รับลมจากด้านบน และมีวงแหวนปรับลมมาให้",
+        description: "หัวพอต PnP X รับลมจากด้านบน และมีแหวนปรับลมมาให้",
       },
       "in-the-box": {
         title: "ในกล่องมีอะไรบ้าง",
-        description: "ในกล่องมีตัวเครื่อง หัว PnP X DTL คอยล์ PnP X 0.15 และ 0.2 โอห์ม สาย Type-C คู่มือ และการ์ด PnP Platform ส่วนถ่านต้องซื้อแยก",
+        description: "ในกล่องมีตัวเครื่อง หัวพอต PnP X DTL คอยล์ PnP X 0.15 และ 0.2 โอห์ม สาย USB-C คู่มือ และการ์ด PnP Platform ส่วนถ่านไม่รวมอยู่ด้วย",
       },
     },
     tagline: "DRAG X2 ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ถึง 80 วัตต์ ใช้คอยล์ PnP X",
     shortDescription:
-      "DRAG X2 ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนที่ต้องซื้อแยก ปรับได้ 5–80 วัตต์ หัวพอต PnP X จุ 5mL และมีหน้าจอเมนูพร้อม 3 โหมด",
+      "DRAG X2 ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนซึ่งไม่รวมในกล่อง ปรับได้ 5–80 วัตต์ หัวพอต PnP X จุ 5mL และเลือกได้ 3 โหมดจากเมนูบนจอ",
   },
   "drag-x3": {
     faqs: {
