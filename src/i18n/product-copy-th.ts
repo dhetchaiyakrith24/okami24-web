@@ -1419,7 +1419,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         answer: "ใช่ค่ะ MOOOD 14K คือชื่อสั้น ๆ ของพอตใช้แล้วทิ้งรุ่นนี้ในซีรีส์ Monster ชื่อแบรนด์สะกดด้วยตัว O สามตัว ถ้าเห็นคนเขียนว่า Mood 14K ก็หมายถึงรุ่นนี้เช่นกันค่ะ",
       },
       "mood-monster-14k-puffs": {
-        question: "MOOOD Monster 14K สูบได้กี่พัฟ คอยล์แบบไหน",
+        question: "MOOOD Monster 14K ได้กี่พัฟ คอยล์แบบไหน",
         answer: "MOOOD ระบุไว้ที่สูงสุด 14,000 พัฟ และใช้คอยล์แบบ DUO MESH ค่ะ ส่วนจะสูบได้เท่าไรในการใช้งานจริง แล้วแต่แนวการสูบของแต่ละคนค่ะ",
       },
       "mood-monster-14k-refill": {
