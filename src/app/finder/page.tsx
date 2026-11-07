@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { FinderTool } from "@/components/tools/FinderTool";
 import { FinderPageHeader } from "@/components/tools/FinderPageHeader";
+import { allProducts } from "@/data/products";
+import { noPriceEntryKeys } from "@/lib/in-stock";
 import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -19,7 +21,7 @@ export default function FinderPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/finder")) }} />
       <FinderPageHeader />
       <Container className="py-12 lg:py-20">
-        <FinderTool />
+        <FinderTool noPriceSlugs={noPriceEntryKeys(allProducts, []).map((key) => key.replace("legacy:", ""))} />
       </Container>
     </>
   );

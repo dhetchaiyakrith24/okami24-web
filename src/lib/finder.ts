@@ -147,8 +147,10 @@ export function unscoredCatalogMatches(answers: FinderAnswers): CatalogItem[] {
   return allCatalogItems().filter((item) => item.origin === "product-master" && item.systemType === answers.format);
 }
 
-export function matchProducts(answers: FinderAnswers): { matches: FinderMatch[]; alternatives: FinderMatch[] } {
+/** `skipSlugs`: models with no price, from the server, so the price table stays out of the browser. A model nobody can buy is no answer. */
+export function matchProducts(answers: FinderAnswers, skipSlugs: readonly string[] = []): { matches: FinderMatch[]; alternatives: FinderMatch[] } {
   const scored = allProducts
+    .filter((product) => !skipSlugs.includes(product.slug))
     .map((product) => {
       const { score, reasons } = scoreProduct(product, answers);
       return { product, score, reasons };

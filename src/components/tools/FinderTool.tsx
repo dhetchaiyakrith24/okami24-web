@@ -125,13 +125,13 @@ function localizeQuestion(question: Question<keyof FinderAnswers>, locale: strin
   };
 }
 
-export function FinderTool() {
+export function FinderTool({ noPriceSlugs = [] }: { noPriceSlugs?: string[] }) {
   const { dict, locale } = useLocale();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
 
   const isComplete = step >= QUESTIONS.length;
-  const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers) : null), [isComplete, answers]);
+  const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers, noPriceSlugs) : null), [isComplete, answers, noPriceSlugs]);
   // Real, purchasable ProductMaster devices the scored quiz structurally cannot rank — see
   // `unscoredCatalogMatches`. Shown separately and unranked rather than excluded or fake-scored.
   const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(answers as FinderAnswers) : []), [isComplete, answers]);
