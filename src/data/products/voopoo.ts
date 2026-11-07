@@ -405,7 +405,28 @@ export const voopooProducts: Product[] = [
       "Vapers who move between a tight MTL and a looser RDL draw.",
       "Anyone who wants a small, screen-free device with a big battery.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "argus-g4-mini-resistance",
+        question: "How do you switch the ARGUS G4 mini between 0.7Ω and 1.0Ω?",
+        answer: "Turn the Multi-Ohm cartridge 180° and put it back in. Inserted as it comes, it runs at 0.7Ω. Turned around, it runs at 1.0Ω, and the device reads which way it sits by itself.",
+      },
+      {
+        id: "argus-g4-mini-lights",
+        question: "What do the lights on the ARGUS G4 mini mean?",
+        answer: "White means 0.7Ω and green means 1.0Ω. The four bars show the battery, 25% each.",
+      },
+      {
+        id: "argus-g4-mini-refill",
+        question: "How do you refill the ARGUS G4 mini?",
+        answer: "Fill from the top with the cartridge still in the device. The Multi-Ohm cartridge holds 3.5mL.",
+      },
+      {
+        id: "argus-g4-mini-draw",
+        question: "Do you need to press a button on the ARGUS G4 mini?",
+        answer: "No, it fires when you draw. The stepless airflow slider takes it from MTL to RDL.",
+      },
+    ],
     relatedProductSlugs: ["argus-g4", "argus-g3-mini"],
     sourceUrls: ["https://www.voopoo.com/argus-series/argus-g4-mini", G4M_PAGE],
   },
@@ -1599,7 +1620,28 @@ export const voopooProducts: Product[] = [
       "Anyone who wants an easy device for everyday vaping.",
       "Vapers who move between MTL and RDL and want one device for both.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "vmate-i3-cartridge-choice",
+        question: "Which resistance should I pick for the VMATE i3?",
+        answer: "Go by how you like to draw. For a tight MTL draw, the Top Fill 1.0Ω runs at 12–18W and the Cartridge V2 1.2Ω at 8–15W. For a looser RDL draw, there's the Top Fill 0.4Ω, which VOOPOO says needs 30W or more. VOOPOO asks you to check the resistance and output before use.",
+      },
+      {
+        id: "vmate-i3-light",
+        question: "What do the colours on the VMATE i3 light strip mean?",
+        answer: "They show the battery: green from 70% up, blue from 30% to 70%, and red at 30% or below.",
+      },
+      {
+        id: "vmate-i3-coil-life",
+        question: "How long does a VMATE i3 cartridge last?",
+        answer: "In VOOPOO's own lab tests, the iCOSM CODE coil lasted for 90mL of e-liquid. How many days that is varies from person to person.",
+      },
+      {
+        id: "vmate-i3-charge",
+        question: "Does the VMATE i3 have fast charging?",
+        answer: "Yes, over USB-C at 5V/2A, for its 1500mAh built-in battery.",
+      },
+    ],
     // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
     reviewVideo: { videoId: "R4uetxkKcDI", title: "หลังใช้งาน 30 วัน VOOPOO VMATE i3 แจ๋วๆแบบเรียบง่าย", channelName: "OKM YARZ", publishedAt: "2026-05-29" },
     relatedProductSlugs: ["argus-g3-mini", "vinci-s"],
