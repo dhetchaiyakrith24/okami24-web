@@ -14521,7 +14521,7 @@
   "fileName": "variant-ice-tieguanyin-v2.webp"
  },
  {
-  "source": "_incoming/popular-0711/vazer/vazer-2.png",
+  "source": "_incoming/popular-0711/vazer/vazer-cut.png",
   "slug": "vazer-reload-15k",
   "role": "card",
   "aiRender": {
@@ -14533,7 +14533,7 @@
   "fileName": "card.webp"
  },
  {
-  "source": "_incoming/popular-0711/86/bar86-2.png",
+  "source": "_incoming/popular-0711/86/bar86-cut.png",
   "slug": "86-bar-20k",
   "role": "card",
   "aiRender": {
