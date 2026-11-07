@@ -67,10 +67,12 @@ export interface StockAlert {
   /** Null = the option cannot be ordered and the warehouse gave no count. */
   qty: number | null;
   out: boolean;
+  best: boolean;
 }
 
 export interface StockSummary {
   low: number;
+  /** Out now, among the options that sold in the window: the catalog lists every colour, most never stocked. */
   out: number;
   /** Best sellers first, what cannot be ordered at the top of each group. */
   urgent: StockAlert[];
@@ -78,9 +80,10 @@ export interface StockSummary {
 
 /**
  * Counted per option, because that is what a customer picks. The catalog shows every colour and flavour the maker offers
- * (owner 06/09), so "out" can be long: the list leads with what the shop really sells.
+ * (owner 06/09), so most options were never stocked: "out" counts only options that sold lately (`sold` = optionKey of each),
+ * and the list holds best sellers and what sold lately, best sellers first.
  */
-export function stockSummary(products: StockProduct[], isBest: (slug: string) => boolean, limit = 8): StockSummary {
+export function stockSummary(products: StockProduct[], isBest: (slug: string) => boolean, sold: ReadonlySet<string>, limit = 8): StockSummary {
   let low = 0;
   let out = 0;
   const rows: (StockAlert & { best: boolean })[] = [];
@@ -88,20 +91,24 @@ export function stockSummary(products: StockProduct[], isBest: (slug: string) =>
     for (const option of product.options) {
       const isOut = !option.sells;
       const isLow = option.sells && option.qty !== null && option.qty <= LOW_STOCK_AT;
-      if (isOut) out++;
+      const recent = sold.has(optionKey(product.slug, option.id));
+      const best = isBest(product.slug);
+      if (isOut && recent) out++;
       if (isLow) low++;
-      if (!isOut && !isLow) continue;
+      if (!(isLow || (isOut && (recent || best)))) continue;
       const name = option.id === null ? product.name : `${product.name} · ${option.name}`;
-      rows.push({ name, qty: option.qty, out: isOut, best: isBest(product.slug) });
+      rows.push({ name, qty: option.qty, out: isOut, best });
     }
   }
   const rank = (r: { best: boolean; out: boolean }) => (r.best ? 0 : 2) + (r.out ? 0 : 1);
-  const urgent = rows
+  const urgent: StockAlert[] = rows
     .sort((a, b) => rank(a) - rank(b) || (a.qty ?? 0) - (b.qty ?? 0) || a.name.localeCompare(b.name, "th"))
-    .slice(0, limit)
-    .map(({ name, qty, out: isOut }) => ({ name, qty, out: isOut }));
+    .slice(0, limit);
   return { low, out, urgent };
 }
+
+/** One option of one product, as order lines and the stock book both name it. */
+export const optionKey = (slug: string, optionId: string | null) => `${slug}|${optionId ?? ""}`;
 
 export interface GoogleWeek {
   /** Last day of the week, YYYY-MM-DD. */

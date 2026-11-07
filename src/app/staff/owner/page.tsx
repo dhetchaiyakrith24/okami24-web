@@ -11,7 +11,7 @@ import { isOwner, ownerAreaEnabled } from "@/lib/owner/auth";
 import { lastRound } from "@/lib/owner/bill-rules";
 import { listRounds } from "@/lib/owner/bills";
 import { codesWithoutCost, profitDays } from "@/lib/owner/costs";
-import { cartsNotOrdered, lineClicks, oldestOrders, topWebProducts } from "@/lib/owner/dashboard";
+import { cartsNotOrdered, lineClicks, oldestOrders, soldOptions, topWebProducts } from "@/lib/owner/dashboard";
 import { sameHourLastWeek, stockSummary, sumSales } from "@/lib/owner/dashboard-rules";
 import { isStaff } from "@/lib/staff/auth";
 import { salesDays } from "@/lib/staff/daily-sales";
@@ -106,7 +106,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           counts={counts}
           oldest={oldestOrders()}
           canOpenOrders={canOpenOrders}
-          stock={stockSummary(stockBook(), isBestSeller)}
+          stock={stockSummary(stockBook(), isBestSeller, soldOptions(30))}
           feed={feed}
           now={now}
         />
@@ -117,16 +117,15 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
       label: "สัปดาห์",
       content: <WeekPanel rounds={rounds} due={due} week={week} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
     },
-    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel ordering={ORDERING_ENABLED} noCost={noCost} teamHome={canOpenOrders} /> },
+    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel ordering={ORDERING_ENABLED} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} /> },
   ];
 
   return (
-    <Container className="flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
+    <Container className="relative isolate flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
       <StaffBar />
       <Vapour />
       <h1 className="text-sm font-normal text-foreground-muted">ส่วนเจ้าของ · {dayLabel(sales[0].date)}</h1>
-      <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} />
-      <HowCounted />
+      <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} footer={<HowCounted />} footerHiddenOn={["control"]} />
     </Container>
   );
 }

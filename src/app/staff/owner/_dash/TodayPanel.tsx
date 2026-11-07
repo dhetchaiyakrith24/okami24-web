@@ -21,7 +21,7 @@ const split = (d: DaySales) => `เว็บ ${formatSatang(d.webSatang)} · LIN
 function compareNote(hour: SameHour | null) {
   if (!hour || hour.percent === null || hour.percent === 0) return undefined;
   const word = hour.percent > 0 ? "มากกว่า" : "น้อยกว่า";
-  return { text: `${word}อาทิตย์ก่อน เวลาเดียวกัน ${Math.abs(hour.percent)}%`, good: hour.percent > 0 };
+  return { text: `${word}อาทิตย์ก่อน เวลาเดียวกัน ${Math.abs(hour.percent)}% (อาทิตย์ก่อน ${formatSatang(hour.thenSatang)})`, good: hour.percent > 0 };
 }
 
 /** For the day list: "—" when no order of the day has a cost yet. */
@@ -123,8 +123,8 @@ function Stock({ stock, feed }: { stock: StockSummary; feed: FeedHealth }) {
           <span className="font-display text-3xl font-bold tabular-nums text-unverified">{stock.low}</span>
         </div>
         <div className="flex flex-col">
-          <span className="text-sm text-foreground-muted">สั่งไม่ได้ตอนนี้</span>
-          <span className="font-display text-3xl font-bold tabular-nums text-danger">{stock.out}</span>
+          <span className="text-sm text-foreground-muted">หมด ที่ขายใน 30 วัน</span>
+          <span className="font-display text-3xl font-bold tabular-nums text-foreground">{stock.out}</span>
         </div>
       </div>
       {stock.urgent.length > 0 && (
@@ -139,7 +139,7 @@ function Stock({ stock, feed }: { stock: StockSummary; feed: FeedHealth }) {
             {stock.urgent.map((row) => (
               <li key={row.name} className="flex items-baseline justify-between gap-3 py-2 text-sm">
                 <span className="min-w-0 text-foreground">{row.name}</span>
-                <span className={`shrink-0 tabular-nums ${row.out ? "text-danger" : "text-unverified"}`}>{row.out ? "สั่งไม่ได้" : `เหลือ ${row.qty}`}</span>
+                <span className={`shrink-0 tabular-nums ${row.out ? (row.best ? "text-danger" : "text-foreground-muted") : "text-unverified"}`}>{row.out ? (row.best ? "ขายดี หมด" : "หมด") : `เหลือ ${row.qty}`}</span>
               </li>
             ))}
           </ul>

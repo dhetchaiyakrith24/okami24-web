@@ -16,7 +16,22 @@ export interface DashView {
  * purpose: it would fight the chart under the finger. The alerts sit above, so a view that already shows one can drop it.
  * Takes no data of its own, so the customer pages can use it too.
  */
-export function ViewSwitch({ views, initial, label, alerts = [] }: { views: DashView[]; initial: string; label: string; alerts?: Alert[] }) {
+export function ViewSwitch({
+  views,
+  initial,
+  label,
+  alerts = [],
+  footer,
+  footerHiddenOn = [],
+}: {
+  views: DashView[];
+  initial: string;
+  label: string;
+  alerts?: Alert[];
+  footer?: ReactNode;
+  /** Phone views where the footer has nothing to say. */
+  footerHiddenOn?: string[];
+}) {
   const [active, setActive] = useState(views.some((v) => v.id === initial) ? initial : views[0].id);
 
   function pick(id: string) {
@@ -50,6 +65,7 @@ export function ViewSwitch({ views, initial, label, alerts = [] }: { views: Dash
           </section>
         ))}
       </div>
+      {footer && <div className={footerHiddenOn.includes(active) ? "max-lg:hidden" : undefined}>{footer}</div>}
     </>
   );
 }

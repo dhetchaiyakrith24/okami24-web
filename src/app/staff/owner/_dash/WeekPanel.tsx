@@ -48,7 +48,7 @@ function RoundHero({ rounds, due }: { rounds: StoredRound[]; due: { from: string
       {change !== null && before && (
         <span className={`text-sm tabular-nums ${change > 0 ? "text-verified" : "text-foreground-muted"}`}>
           {change > 0 ? "+" : change < 0 ? "-" : ""}
-          {baht(Math.abs(change))} จากรอบก่อน (รอบก่อน {baht(before.week.totalProfit)})
+          {baht(Math.abs(change))} จากรอบก่อน ({baht(before.week.totalProfit)})
         </span>
       )}
       {noSlips && <span className="text-sm text-unverified">ไม่มียอดสลิปในรอบนี้ กำไร LINE ยังเชื่อไม่ได้</span>}

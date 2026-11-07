@@ -4,6 +4,7 @@ import { AUTO_CANCELLED_SQL } from "@/lib/commerce/unpaid-rules";
 import { hasLineClicksTable, summarizeLineClicks } from "@/lib/metrics/line-click-summary";
 import { CONFIRMED_ORDER_STATUSES } from "@/lib/staff/daily-sales-rules";
 import { STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
+import { optionKey } from "@/lib/owner/dashboard-rules";
 
 /** What the owner dashboard reads besides sales and profit (owner 08/11). Only reads, and only counts: no customer detail. */
 
@@ -32,6 +33,16 @@ export function cartsNotOrdered(days: number): number {
     .prepare("SELECT COUNT(DISTINCT c.id) AS n FROM carts c JOIN cart_items i ON i.cart_id = c.id WHERE datetime(c.updated_at) >= datetime(?)")
     .get(since) as { n: number };
   return row.n;
+}
+
+/** Every option a confirmed web order held in the last `days` days, as optionKey (dashboard-rules.ts). */
+export function soldOptions(days: number): Set<string> {
+  const since = new Date(Date.now() - days * 86_400_000).toISOString();
+  const statuses = CONFIRMED_ORDER_STATUSES.map((s) => `'${s}'`).join(",");
+  const rows = getDb()
+    .prepare(`SELECT DISTINCT i.product_slug AS slug, i.variant_id AS id FROM order_items i JOIN orders o ON o.id = i.order_id WHERE o.status IN (${statuses}) AND o.created_at >= ?`)
+    .all(since) as { slug: string; id: string | null }[];
+  return new Set(rows.map((r) => optionKey(r.slug, r.id)));
 }
 
 export interface TopProduct {

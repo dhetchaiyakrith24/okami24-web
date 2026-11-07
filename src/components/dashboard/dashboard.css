@@ -3,14 +3,22 @@
  * Loaded only by pages that use these parts. The glass is painted, not blurred: backdrop-filter on every card is slow on a
  * phone, and small Thai needs a calm surface, so a card is an opaque-enough fill and only the sticky switch blurs.
  */
+/* Inside the dashboard box (its parent is relative + isolate), fading out before the site's footer, so no solid band
+   ever cuts it in a straight line. Clipped by its own box, so it can never make the page scroll sideways. */
 .dash-vapour {
-  position: fixed;
-  inset: -20% -30%;
+  position: absolute;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
   pointer-events: none;
-  background:
-    radial-gradient(42% 30% at 18% 34%, rgb(255 131 71 / 0.12), transparent 74%),
-    radial-gradient(50% 30% at 82% 78%, rgb(255 106 44 / 0.1), transparent 76%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 85%);
+}
+.dash-vapour::before {
+  content: "";
+  position: absolute;
+  inset: -10% -20%;
+  background: radial-gradient(42% 30% at 18% 22%, rgb(255 131 71 / 0.12), transparent 74%);
   animation: dash-drift 24s ease-in-out infinite alternate;
 }
 
@@ -110,7 +118,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dash-vapour,
+  .dash-vapour::before,
   .dash-panel,
   .dash-rise,
   .dash-line,

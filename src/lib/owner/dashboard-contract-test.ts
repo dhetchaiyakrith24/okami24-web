@@ -3,7 +3,7 @@
  * The owner dashboard's sums, on made-up figures.
  */
 import type { DaySales } from "@/lib/staff/daily-sales-rules";
-import { ageText, sameHourLastWeek, shortBaht, stockSummary, sumSales } from "./dashboard-rules";
+import { ageText, optionKey, sameHourLastWeek, shortBaht, stockSummary, sumSales } from "./dashboard-rules";
 
 let failed = 0;
 function check(name: string, ok: boolean): void {
@@ -46,9 +46,12 @@ const stock = stockSummary(
       { id: "e", name: "E", sells: true, qty: null },
     ]),
   ],
-  (slug) => slug === "best"
+  (slug) => slug === "best",
+  new Set([optionKey("best", "b")])
 );
-check("low counts options at or under the owner's line, out counts what cannot be ordered", stock.low === 2 && stock.out === 2);
+check("low counts options at or under the owner's line, out counts only what sold lately", stock.low === 2 && stock.out === 1);
+check("an out option that never sold and is no best seller stays off the list", !stock.urgent.some((r) => r.name.endsWith("· D")));
+check("a best seller keeps its flag for the red", stock.urgent[0].best && stock.urgent.some((r) => !r.best));
 check("an option with no count is not called low", !stock.urgent.some((r) => r.name.endsWith("· E")));
 check("best sellers lead, what cannot be ordered first", stock.urgent[0].name === "best · B" && stock.urgent[1].name === "best · A");
 check("a product with no options reads as its own name", stock.urgent.some((r) => r.name === "other"));
