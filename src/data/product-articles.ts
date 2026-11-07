@@ -26,6 +26,33 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
+  // Round SEO full 07/11: FAQ only, the page has no article yet. เลโก้ once, as the name people type (SEO_LANDSCAPE 0.4).
+  "relx-creator-pod-20k": {
+    th: {
+      sections: [],
+      faq: [
+        { question: "RELX Creator Pod 20K หรือที่หลายคนเรียกว่าหัวพอตเลโก้ ใช้กับเครื่องไหน", answer: "ใช้กับเครื่อง [RELX Creator](/products/relx-creator) ค่ะ ร้านยืนยันจากของจริงที่มีอยู่ ก่อนซื้อ เช็คชื่อรุ่นเครื่องของตัวเองอีกครั้งนะคะ" },
+        { question: "หัว RELX Creator มีกลิ่นอะไรบ้าง", answer: "หน้านี้รวมไว้ 31 กลิ่นค่ะ ถ้าแบ่งตามชื่อกลิ่น สายเย็นมีอย่าง Double Mint · Cool Mint และ Spearmint สายผลไม้มีอย่าง Grape · Watermelon · Lychee และ Pink Guava แนวอื่นมีอย่าง Cola · Jasmine Tea และ Rainbow Candy ส่วนการแบ่งสายนี้ร้านจัดเองจากชื่อกลิ่นค่ะ" },
+        { question: "หัว RELX Creator 20K มีแบบ 5% ไหม", answer: "ในรายการกลิ่นมี 8 กลิ่นที่ชื่อมี 5% ต่อท้ายค่ะ เช่น Grape 5% · Double Mint 5% และ Classic Tobacco 5% ก่อนกดเลือก ลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ" },
+      ],
+    },
+    en: {
+      sections: [],
+      faq: [
+        { question: "Which device does the RELX Creator Pod 20K fit?", answer: "The [RELX Creator](/products/relx-creator). We have confirmed this with our own stock. Check your device name before you buy." },
+        { question: "Which flavours do RELX Creator pods come in?", answer: "This page lists 31. Going by the names, cool ones include Double Mint, Cool Mint and Spearmint, fruit includes Grape, Watermelon, Lychee and Pink Guava, and others include Cola, Jasmine Tea and Rainbow Candy. The groups are ours, not RELX's." },
+        { question: "Do RELX Creator 20K pods come in 5%?", answer: "The list has 8 flavours with 5% at the end of the name, such as Grape 5%, Double Mint 5% and Classic Tobacco 5%. Check the name before you choose." },
+      ],
+    },
+    zh: {
+      sections: [],
+      faq: [
+        { question: "RELX Creator Pod 20K 适配哪款主机？", answer: "适配 [RELX Creator](/products/relx-creator)，已经本店以实物确认。购买前请再核对一次自己的主机型号。" },
+        { question: "RELX Creator 烟弹有哪些口味？", answer: "本页共列出 31 种口味。按名称来分，清凉系有 Double Mint、Cool Mint、Spearmint 等，水果系有 Grape、Watermelon、Lychee、Pink Guava 等，其他还有 Cola、Jasmine Tea、Rainbow Candy 等。分类由本店按名称整理，并非 RELX 官方分类。" },
+        { question: "RELX Creator 20K 烟弹有 5% 的吗？", answer: "口味列表里有 8 种名称以 5% 结尾的口味，例如 Grape 5%、Double Mint 5%、Classic Tobacco 5%。选择前请再核对一次名称。" },
+      ],
+    },
+  },
   // Pack facts = the owner's pouch photos 03/11 (RELX LUMI 18K Aloe Grape, front + back). Flavours = max-seed "RELX-LUMI-18K",
   // grouped by the shop from the words in each name. No charging, coil, airflow or days-of-use claim: nothing printed or confirmed.
   // The pack's QR and verify code stay out until someone scans one (relxnow.com has no LUMI page). The 5% rows: only the flavour

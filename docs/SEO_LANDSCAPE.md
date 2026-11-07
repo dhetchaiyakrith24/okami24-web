@@ -74,7 +74,7 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 | pod ใช้แล้วทิ้ง | 590 | — |  | 0/4 #69.0 | p/disposables | head |
 | เครื่องพอต | 590 | — |  |  | p/pod-systems | head |
 | พอต 20k | 590 | ไม่ได้วัด |  |  | p/disposables | head |
-| หัวพอต infy | 590 | ไม่ได้วัด |  |  | p/pods-cartridges | head |
+| หัวพอต infy | 590 | ไม่ได้วัด |  |  | p/pod-169 | มีหน้าแล้ว |
 | ตัวพอต | 480 | — | #8 |  | p/pod-systems | head |
 | vape แปล | 480 | ไม่ได้วัด |  |  | / | head |
 | vapex | 480 | ไม่ได้วัด |  |  | / | head |
@@ -117,11 +117,11 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 | คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
 |---|---|---|---|---|---|---|
-| นิโคติน | 9900 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| นิโคติน | 9900 | ไม่ได้วัด |  |  | g/what-is-nicotine | มีหน้าแล้ว |
 | vape คือ | 1300 | — |  |  | g/what-is-a-pod-system | head |
 | vapes คือ | 1300 | ไม่ได้วัด |  |  | g/what-is-a-pod-system | head |
 | pod คือ | 1000 | — |  |  | g/what-is-a-pod-system | head |
-| นิโคตินคือ | 880 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| นิโคตินคือ | 880 | ไม่ได้วัด |  |  | g/what-is-nicotine | มีหน้าแล้ว |
 | พอตคืออะไร | 720 | — |  |  | g/what-is-a-pod-system | head |
 | น้ำยาซอลนิค | 590 | — |  |  | g/salt-nic-vs-freebase | head |
 | น้ำยาฟรีเบส | 590 | — |  |  | g/salt-nic-vs-freebase | head |
@@ -129,7 +129,7 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 | พอตดูดไม่ขึ้น | 480 | ไม่ได้วัด |  |  | g/fixing-no-draw-and-blinking-light | ลิงก์เข้า · ความน่าเชื่อถือ |
 | พอตชาร์จไม่เข้า | 390 | — |  |  | g/battery-care-and-charging | head |
 | สแกนมาโบ | 320 | — |  |  | g/checking-a-genuine-pod | head |
-| ดูดพอตแล้วปวดหัว | 320 | — |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| ดูดพอตแล้วปวดหัว | 320 | — |  |  | g/headache-after-vaping | มีหน้าแล้ว |
 | พอตดูดไม่ขึ้นแต่ไฟติด | 320 | — |  |  | g/fixing-no-draw-and-blinking-light | head |
 | พอตไหม้แก้ยังไง | 260 | — |  |  | g/fixing-a-burnt-pod | head |
 | มาโบคืออะไร | 260 | ไม่ได้วัด |  |  | b/salthub | head |
@@ -305,6 +305,7 @@ GSC ไม่มีคำค้นอักษรไทยของชื่อ�
 **เอสโคบาร์** (สะกด "โค" — "เอสโคบาร์ 20k เปลี่ยนหัว") → `/brands/esko-bar` · **อินฟี่** ("อินฟี่ 20000 คํา" "อินฟี่เปลี่ยนหัว") → `/products/infy-20k` ·
 **จอยเวย์** ("จอยเวย์ f4/f3") → `/brands/joiway` · **ไอคอส** ("ไอคอส ราคา") → `/brands/iqos` · หลักฐานเบา: มาโบ้ · คาลิเบิร์น (→ `/brands/uwell`) · ซอลฮับ ·
 **พอตเลโก้** (= RELX Creator · พอตเลโก้ 1,600 · relx lego 1,300 ต่อเดือน · ผล Google มือถือ 07/11: `https://vppods.com/product/relx-creator-boost-20000-puffs/` "RELX Creator Boost 20000 Puffs พอตใช้แล้วทิ้ง Relx เลโก้ 20000คำ" · `https://pod9k.com/blog/pod-lego/` "พอตเลโก้ คืออะไร? รวมรุ่น ราคา และวิธีเลือกซื้อ" · `https://www.lazada.co.th/tag/relx-creator-lego-pod/` "ช้อป Relx Creator Lego Pod ออนไลน์ในราคาที่ดีกว่า" · ป้ายคลัง "Relx เลโก้ 20000 คำ") → `/products/relx-creator` ·
+**หัวพอตเลโก้** (= หัวของ RELX Creator · หัวพอตเลโก้ 210 · หัวเลโก้ relx 110 ต่อเดือน) → `/products/relx-creator-pod-20k` ใช้ประโยคเดียวในคำถาม FAQ ของหน้านั้น (07/11 · ก้อน 3)
 **ไม่พบ/ปนความหมายอื่น (ไม่ใส่):** มาร์โบ (Marlboro) · ดราก/แดรก · อาร์กัส · วูพู/วูปู · รีแล็กซ์ · เน็กซ์บาร์ · ทีฟิต · วินชี่ · วีเมท · พอตซิสเต็ม · พอดซิสเต็ม
 **ที่ลงจริง (ก้อน 5 `c5b23f2` ตามคำตัดสินเจ้าของ 07/10 ใบตรวจ 35 = 1 · THAI_STYLE §2 ชั้น 1):** ประโยคเดียวในคำนำหน้าแบรนด์ 5 หน้า — มาโบ (salthub) ·
 เอสโคบาร์ (esko-bar) · จอยเวย์ (joiway) · ไอคอส (iqos) · **อินฟี่ ลงหน้าแบรนด์ `/brands/infy` ไม่ใช่หน้าสินค้า** · เอ็มบาร์ / คาลิเบิร์น ไม่ได้ลง

@@ -699,7 +699,33 @@ export const salthubProducts: Product[] = [
     features: [],
     compatibility: [{ type: "cartridge", label: "M Switch Kit device body" }],
     whoIsThisFor: ["M Switch Kit owners restocking flavor cartridges."],
-    faqs: [],
+    faqs: [
+      {
+        id: "m-switch-pod-name",
+        question: "Are the Marbo 15K pod and the M Switch 15K pod the same?",
+        answer: "In our shop, yes. Both names mean the M Switch Pod, SALTHUB's black pod for the M Switch Kit device, which we also call the M Bar 15K.",
+      },
+      {
+        id: "m-switch-pod-device",
+        question: "Can I buy just the pod if I don't have the device yet?",
+        answer: "The pod needs an M Switch Kit device to work. If you're just starting, buying the kit is easier, as the M Switch Kit comes with the device and one pod.",
+      },
+      {
+        id: "m-switch-pod-days",
+        question: "How many days does one M Switch Pod last?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. SALTHUB rates each pod at up to 15,000 puffs, so the days depend on how often you vape and how long each draw is.",
+      },
+      {
+        id: "m-switch-pod-flavours",
+        question: "Which flavours does the Marbo 15K pod come in?",
+        answer: "SALTHUB lists 17, including cool flavours like Blue Ice, grape like Kyoho Grape, other fruit like Mango Passion, and others like Cola. The flavour list on this page has the names.",
+      },
+      {
+        id: "m-switch-pod-strength",
+        question: "What nicotine strength is the M Switch Pod?",
+        answer: "SALTHUB gives 30mg, and the e-liquid inside is nicotine salt.",
+      },
+    ],
     relatedProductSlugs: ["m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/"],
   },
