@@ -170,7 +170,7 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   "Kardinal says the Quikpro uses a proprietary replaceable 15ml cartridge made for this model, and that neither the Lumina's KSpod nor other brands' cartridges fit it.":
     "Kardinal ระบุว่า Quikpro ใช้หัวพอตขนาด 15mL ที่ออกแบบมาสำหรับรุ่นนี้โดยเฉพาะ หัวพอต KSpod ของ Lumina และหัวพอตยี่ห้ออื่นใส่ไม่ได้",
   "ESKO BAR's SWITCH page calls the pod replaceable and lists one ESKO BAR pod in the box beside the device.":
-    "ESKO BAR ระบุในหน้า SWITCH ว่าหัวพอตเปลี่ยนได้ และในกล่องมีหัวพอต ESKO BAR 1 ชิ้นคู่กับตัวเครื่อง",
+    "ESKO BAR ระบุในหน้า SWITCH ว่าหัวพอตเปลี่ยนได้ และในกล่องมีหัวพอตมาคู่กับตัวเครื่อง",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */
