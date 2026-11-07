@@ -22,6 +22,7 @@ import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { useEmptiedSimilar } from "@/components/product/useEmptiedSimilar";
 import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
@@ -99,7 +100,7 @@ export function ProductHero({
   /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
    *  price, no cart action — exactly how every legacy product rendered before that date. */
   sellingPrice?: number | null;
-  /** A no-price page: the models in its #similar-in-stock block (round popular models 07/11). Empty or absent = no block. */
+  /** A page with nothing to buy: the models in its #similar-in-stock block, from the build (round popular models 07/11). Empty or absent = no jump button. */
   similarSlugs?: string[];
   imageDisplayInfo?: ImageDisplayInfo | null;
   /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
@@ -114,7 +115,8 @@ export function ProductHero({
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
   // The jump button goes with its block: the same rule on the same live answer.
   const liveCards = useLiveCardStock();
-  const similarLeft = shownSimilar(similarSlugs ?? [], liveCards).length > 0;
+  const emptiedSimilar = useEmptiedSimilar(product.slug, similarSlugs?.length ?? 0, liveCards);
+  const similarLeft = shownSimilar(similarSlugs?.length ? similarSlugs : emptiedSimilar.map((i) => i.slug), liveCards).length > 0;
   const { locale, dict } = useLocale();
   const bestIds = bestSellerOptions(product.slug);
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
@@ -474,6 +476,7 @@ export function ProductHero({
           )}
 
           <div className={`flex flex-wrap gap-3 max-lg:order-9 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
+            {similarLeft && sellingPrice !== null && everyOptionSoldOut && <Button href="#similar-in-stock">{dict.product.similarInStockLink}</Button>}
             <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null || similarLeft ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>

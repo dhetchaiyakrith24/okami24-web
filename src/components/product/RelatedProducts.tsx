@@ -8,6 +8,7 @@ import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { DisposablesAllLink } from "@/components/catalog/DisposablesLinks";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { useEmptiedSimilar } from "@/components/product/useEmptiedSimilar";
 import { shownRow, shownSimilar, type RelatedAnswer } from "@/lib/related-row";
 import type { RelatedItem } from "@/lib/related-order";
 
@@ -37,7 +38,10 @@ export function RelatedProducts({ items, slug, categoryId, similarSlugs = [] }: 
       alive = false;
     };
   }, [slug]);
-  const above = shownSimilar(similarSlugs, changes);
+  const fetched = useEmptiedSimilar(slug, similarSlugs.length, changes);
+  // The block goes when this product is back in stock (SimilarInStock), so its cards come back to this row.
+  const backInStock = slug ? changes?.[slug]?.s === true : false;
+  const above = backInStock ? [] : shownSimilar(similarSlugs.length > 0 ? similarSlugs : fetched.map((i) => i.slug), changes);
   return <RelatedRow row={shownRow(items, changes, answer).filter((i) => !above.includes(i.slug))} categoryId={categoryId} />;
 }
 
