@@ -66,7 +66,7 @@ import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { DisposableChooser, DisposableChooserJump } from "@/components/catalog/DisposableChooser";
-import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
+import { disposableBrands, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -263,7 +263,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
-          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
+          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} rows={lineup} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
         {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}

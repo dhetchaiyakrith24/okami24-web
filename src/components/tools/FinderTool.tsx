@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { FinderAnswers, FinderReasonKey } from "@/lib/finder";
 import { matchProducts, unscoredCatalogMatches } from "@/lib/finder";
 import { ProductCard } from "@/components/catalog/ProductCard";
+import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { Button } from "@/components/ui/Button";
@@ -131,10 +132,11 @@ export function FinderTool() {
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
 
   const isComplete = step >= QUESTIONS.length;
-  const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers) : null), [isComplete, answers]);
+  const stock = useLiveCardStock();
+  const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers, stock) : null), [isComplete, answers, stock]);
   // Real, purchasable ProductMaster devices the scored quiz structurally cannot rank — see
   // `unscoredCatalogMatches`. Shown separately and unranked rather than excluded or fake-scored.
-  const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(answers as FinderAnswers) : []), [isComplete, answers]);
+  const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(answers as FinderAnswers, stock) : []), [isComplete, answers, stock]);
 
   function selectAnswer(key: keyof FinderAnswers, value: FinderAnswers[keyof FinderAnswers]) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -150,7 +152,7 @@ export function FinderTool() {
     return (
       <div className="flex flex-col gap-12">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h2 className="font-display text-2xl font-semibold text-foreground">{dict.finder.topMatches}</h2>
+          {results.matches.length > 0 && <h2 className="font-display text-2xl font-semibold text-foreground">{dict.finder.topMatches}</h2>}
           <Button variant="secondary" onClick={restart}>
             {dict.finder.startOver}
           </Button>

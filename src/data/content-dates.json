@@ -16,7 +16,7 @@
     "src/components/home": "2026-11-04T21:01:16+07:00",
     "src/components/tools/CompareTool.tsx": "2026-11-05T02:01:12+07:00",
     "src/components/tools/FavoritesList.tsx": "2026-09-14T00:37:20+07:00",
-    "src/components/tools/FinderTool.tsx": "2026-09-23T19:44:00+07:00",
+    "src/components/tools/FinderTool.tsx": "2026-11-07T13:20:14+07:00",
     "src/components/tools/SearchTool.tsx": "2026-09-22T04:29:29+07:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
     "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
@@ -35,7 +35,7 @@
     "src/i18n/service-pages/shipping.tsx": "2026-10-29T23:58:41+07:00",
     "src/i18n/technology-copy.ts": "2026-11-06T17:57:59+07:00",
     "src/lib/catalog-search.ts": "2026-09-22T15:46:52+07:00",
-    "src/lib/finder.ts": "2026-09-25T00:04:57+07:00"
+    "src/lib/finder.ts": "2026-11-07T13:25:11+07:00"
   },
   "guides": {
     "are-pods-harmful": "2026-11-07T11:39:13+07:00",
