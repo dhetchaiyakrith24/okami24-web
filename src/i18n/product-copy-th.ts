@@ -778,7 +778,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
   "nexas-booster-16k": {
     whoIsThisFor: {
-      0: "ตั้งใจมาหา NEXAS Booster รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งทรงสูงจำนวนพัฟเยอะ",
+      0: "ตั้งใจมาหา NEXAS Booster รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งทรงสูงที่พัฟเยอะ",
     },
     features: {
       tank: {
