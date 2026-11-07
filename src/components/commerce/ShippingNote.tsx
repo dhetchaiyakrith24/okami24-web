@@ -13,7 +13,9 @@ import type { CartShippingHint } from "@/lib/commerce/cart";
 export function ShippingNote({ hint, formatTHB, signInNext }: { hint: CartShippingHint; formatTHB: (n: number) => string; signInNext: string }) {
   const { dict, locale } = useLocale();
   const c = dict.cart;
-  const next = hint.next;
+  // Visitor walk 07/11: at ฿299 a guest read "฿201 more for 35" above "members 0 at 300" as two rules, the first the
+  // worse one. While the member benefit is open, the guest sees that offer alone; the 0 at 800 stays, it is for everyone.
+  const next = hint.next && (hint.signedIn || hint.benefitUsed || hint.next.fee === 0) ? hint.next : null;
   // Thai: break only at the spaces between phrases — in this narrow box the browser's segmenter split "ค่า | ส่ง" (tier-B
   // scan 29/10). The phrases are short, so a nowrap run never overflows; en breaks at spaces anyway, zh has none.
   const text = (s: string) =>
