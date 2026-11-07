@@ -962,13 +962,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       coil: "mesh 10 วัตต์",
-      devices: "RELX ตระกูล Ultra · Artisan · Infinity และ Essential · WAKA",
+      devices: "WAKA และ RELX ตระกูล Ultra · Artisan · Infinity · Essential",
       puffs: "สูงสุด 5,000",
     },
     features: {
       coil: {
         title: "คอยล์ mesh 10 วัตต์",
-        description: "หัวพอตนี้ใช้คอยล์ mesh 10 วัตต์ และ RELX ปรับมาให้รสชาติเต็มตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย",
+        description: "หัวพอตนี้ใช้คอยล์ mesh 10 วัตต์ และ RELX ออกแบบให้รสชาติเต็มตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย",
       },
       window: {
         title: "มองเห็นน้ำยาที่เหลือ",

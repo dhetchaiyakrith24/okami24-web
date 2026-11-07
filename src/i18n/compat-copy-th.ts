@@ -37,7 +37,7 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "RELX Creator Pod": "หัวพอต RELX Creator Pod",
   "Muro Connector pod": "หัวพอต Muro Connector",
   // Round popular models 07/11: RELX Ultra + Artisan Plus, from relxnow.com.
-  "RELX Ultra · Artisan · Infinity · Essential · WAKA": "เครื่อง RELX Ultra · Artisan · Infinity · Essential · WAKA",
+  "RELX Ultra · Artisan · Infinity · Essential · WAKA": "ใช้กับ WAKA และเครื่อง RELX Ultra · Artisan · Infinity · Essential",
   "RELX Ultra Pod": "หัวพอต RELX Ultra Pod",
   "RELX Pod · RELX Pod Pro": "หัวพอต RELX Pod · RELX Pod Pro",
   // Round p63 (18/10): WOTOFO nexPOD 15K Pro Kit.
