@@ -1120,4 +1120,218 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       ],
     },
   },
+  "heated-tobacco-devices": {
+    th: {
+      heading: "เครื่องจ่ายความร้อนบนหน้านี้มี IQOS ILUMA สามรุ่น และ LAMBDA i8 อีกหนึ่งรุ่น",
+      intro:
+        "ตัวเครื่องบนหน้านี้มาจากสองแบรนด์ IQOS ILUMA ทั้งสามรุ่นใช้บุหรี่ TEREA เท่านั้น ส่วน LAMBDA i8 ทาง LAMBDA ระบุว่าใช้ได้ทั้ง TEREA และ SENTIA ถ้ากำลังเลือกเครื่อง ลองเริ่มจากบุหรี่ที่จะใช้ก่อน แล้วค่อยดูว่าอยากพกกี่ชิ้นและอยากสูบต่อกันได้กี่มวน",
+      families: [
+        {
+          heading: "ILUMA i และ ILUMA i PRIME แบบสองชิ้น",
+          body:
+            "[ILUMA i](/products/iqosheet-18) และ [ILUMA i PRIME](/products/iqosheet-16) ใช้ตัวสูบคู่กับกล่องชาร์จพกพา สูบต่อกันได้สูงสุด 3 มวนแล้ววางตัวสูบกลับลงกล่องเพื่อชาร์จ และกล่องชาร์จที่เต็มแล้วรองรับได้สูงสุด 20 มวน ทั้งสองรุ่นมีจอทัช ส่วน PRIME ใช้อะลูมิเนียมทั้งตัวสูบและกล่องชาร์จ",
+        },
+        {
+          heading: "ILUMA i ONE แบบชิ้นเดียว",
+          body:
+            "[ILUMA i ONE](/products/iqosheet-17) เป็นเครื่องชิ้นเดียวที่พกใส่กระเป๋าได้ แบต 1728mAh สูบต่อกันได้สูงสุด 20 มวนโดยไม่ต้องมีกล่องชาร์จ ส่วนจอทัชกับการพักการสูบมีเฉพาะสองรุ่นด้านบน",
+        },
+        {
+          heading: "LAMBDA i8 อีกแบรนด์หนึ่ง",
+          body:
+            "[LAMBDA i8](/products/iqosheet-14) เป็นเครื่องของ LAMBDA ซึ่งเป็นคนละบริษัทกับ Philip Morris International เจ้าของ IQOS แบต 3200mAh สูบได้ 35–40 มวนต่อการชาร์จ ปรับอุณหภูมิได้ 200–300°C และปรับเวลาสูบต่อมวนได้ 3–6 นาที ตัวเครื่องใช้ระบบเหนี่ยวนำและมีจอ LED",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "เครื่องจ่ายความร้อนต่างจากพอตยังไง",
+          answer:
+            "เครื่องจ่ายความร้อนอุ่นยาสูบในบุหรี่อย่าง TEREA ส่วนพอตใช้น้ำยาค่ะ ของที่ต้องใช้คู่กับเครื่องจึงต่างกันด้วย คือบุหรี่สำหรับเครื่องจ่ายความร้อน และน้ำยาหรือหัวพอตสำหรับพอตค่ะ",
+        },
+        {
+          question: "ILUMA i ONE กับ ILUMA i PRIME ต่างกันยังไง",
+          answer:
+            "ต่างกันที่จำนวนชิ้นเป็นหลักค่ะ ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 มวน ส่วน [ILUMA i PRIME](/products/iqosheet-16) ใช้ตัวสูบคู่กล่องชาร์จ สูบต่อกันได้สูงสุด 3 มวน และมีจอทัชด้วยค่ะ",
+        },
+        {
+          question: "LAMBDA i8 เป็นเครื่อง IQOS ไหม",
+          answer:
+            "ไม่ใช่ค่ะ [LAMBDA i8](/products/iqosheet-14) เป็นเครื่องของ LAMBDA เอง ทาง LAMBDA ระบุว่าใช้กับ TEREA และ SENTIA ได้ ส่วน IQOS ระบุว่า TEREA ใช้กับตระกูล ILUMA เท่านั้น ก่อนเลือกจึงควรดูข้อมูลของทั้งสองฝั่งนะคะ",
+        },
+      ],
+    },
+    en: {
+      heading: "This page holds three IQOS ILUMA models and the LAMBDA i8",
+      intro:
+        "The heated tobacco devices here come from two brands. All three IQOS ILUMA models take TEREA sticks only, while LAMBDA says its i8 works with both TEREA and SENTIA. If you're choosing, start with the stick you plan to use, then decide how many pieces you want to carry and how many sticks you'd like in a row.",
+      families: [
+        {
+          heading: "ILUMA i and ILUMA i PRIME: two pieces",
+          body:
+            "The [ILUMA i](/products/iqosheet-18) and [ILUMA i PRIME](/products/iqosheet-16) pair a Holder with a Pocket Charger. You get up to 3 sticks in a row before the Holder goes back to charge, and a full Pocket Charger supports up to 20. Both have a touchscreen, and the PRIME uses aluminum on the charger as well as the Holder.",
+        },
+        {
+          heading: "ILUMA i ONE: one piece",
+          body:
+            "The [ILUMA i ONE](/products/iqosheet-17) is a single pocket-sized device with no separate charger. Its 1728mAh battery gives up to 20 sticks in a row. The touchscreen and pause belong to the two models above.",
+        },
+        {
+          heading: "LAMBDA i8: a separate brand",
+          body:
+            "The [LAMBDA i8](/products/iqosheet-14) comes from LAMBDA, a separate company from Philip Morris International, which owns IQOS. Its 3200mAh battery gives 35–40 sticks per charge, and you can set the temperature from 200–300°C and the session time from 3–6 minutes. It uses induction heating and has an LED display.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "How does a heated tobacco device differ from a pod?",
+          answer:
+            "A heated tobacco device heats the tobacco in a stick such as TEREA, while a pod runs on e-liquid. So what goes with each differs too: sticks for the heated tobacco device, and e-liquid or replacement pods for the pod.",
+        },
+        {
+          question: "How do the ILUMA i ONE and ILUMA i PRIME differ?",
+          answer:
+            "Mainly in the number of pieces. The ILUMA i ONE is one piece and offers up to 20 sticks in a row. The [ILUMA i PRIME](/products/iqosheet-16) pairs a Holder with a Pocket Charger, offers up to 3 in a row and adds a touchscreen.",
+        },
+        {
+          question: "Is the LAMBDA i8 an IQOS device?",
+          answer:
+            "No. The [LAMBDA i8](/products/iqosheet-14) is LAMBDA's own device. LAMBDA says it works with TEREA and SENTIA, while IQOS says TEREA is for the ILUMA family only, so it's worth reading both before you choose.",
+        },
+      ],
+    },
+    zh: {
+      heading: "本页有三款 IQOS ILUMA 和一款 LAMBDA i8",
+      intro:
+        "本页的加热烟草设备来自两个品牌。三款 IQOS ILUMA 只能使用 TEREA 烟支；LAMBDA 则表示 i8 可搭配 TEREA 和 SENTIA。选购时可以先确定要用的烟支，再考虑想带几件设备、希望连续抽几支。",
+      families: [
+        {
+          heading: "ILUMA i 与 ILUMA i PRIME：两件式",
+          body:
+            "[ILUMA i](/products/iqosheet-18) 和 [ILUMA i PRIME](/products/iqosheet-16) 由 Holder 和 Pocket Charger 组成。Holder 最多连续使用 3 支，之后放回充电；Pocket Charger 充满后最多支持 20 支。两款都有触控屏，PRIME 的 Holder 和 Pocket Charger 都采用铝材。",
+        },
+        {
+          heading: "ILUMA i ONE：一体式",
+          body:
+            "[ILUMA i ONE](/products/iqosheet-17) 是一件式设备，可放入口袋，无需另带 Pocket Charger。电池 1728mAh，最多可连续使用 20 支。触控屏和暂停功能为上面两款所有。",
+        },
+        {
+          heading: "LAMBDA i8：另一品牌",
+          body:
+            "[LAMBDA i8](/products/iqosheet-14) 来自 LAMBDA，与拥有 IQOS 的 Philip Morris International 是不同的公司。电池 3200mAh，每次充电可用 35–40 支，温度可在 200–300°C 之间调节，单支时长可在 3–6 分钟之间调节，采用感应加热，配 LED 显示屏。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "加热烟草设备和电子烟有什么不同？",
+          answer:
+            "加热烟草设备加热的是 TEREA 这类烟支中的烟草，电子烟使用的是烟油。因此配套耗材也不同：前者用烟支，后者用烟油或烟弹。",
+        },
+        {
+          question: "ILUMA i ONE 和 ILUMA i PRIME 有什么不同？",
+          answer:
+            "主要区别在件数。ILUMA i ONE 是一体式，最多可连续使用 20 支；[ILUMA i PRIME](/products/iqosheet-16) 是两件式，最多连续 3 支，并配有触控屏。",
+        },
+        {
+          question: "LAMBDA i8 是 IQOS 设备吗？",
+          answer:
+            "不是。[LAMBDA i8](/products/iqosheet-14) 是 LAMBDA 自家的设备。LAMBDA 表示它可搭配 TEREA 和 SENTIA，而 IQOS 表示 TEREA 仅用于 ILUMA 系列，选购前建议两边的说明都看一下。",
+        },
+      ],
+    },
+  },
+  "heated-tobacco-consumables": {
+    th: {
+      heading: "TEREA คือบุหรี่สำหรับเครื่อง IQOS ILUMA มีกลิ่นให้เลือกสี่กลุ่ม",
+      intro:
+        "หมวดนี้มีบุหรี่ TEREA ของ IQOS หนึ่งซองมี 20 มวน และหน้าสินค้ารวมไว้ 23 กลิ่น วิธีเลือกที่ง่ายคือเริ่มจากกลุ่มรสที่ชอบก่อน แล้วค่อยดูชื่อกลิ่นในกลุ่มนั้น",
+      families: [
+        {
+          heading: "ยาสูบคลาสสิกและเมนทอล",
+          body:
+            "ถ้าชอบรสยาสูบเป็นหลัก กลุ่มคลาสสิกมีกลิ่นอย่าง Bronze · Sienna และ Dimensions Apricity ส่วนคนที่ชอบความเย็น กลุ่มเมนทอลมีกลิ่นอย่าง Blue · Green · Bright Wave · Black Green · Purple Wave และ Black Ruby",
+        },
+        {
+          heading: "กานพลู",
+          body:
+            "กลุ่มนี้มีกานพลูอยู่ในรสยาสูบ อย่าง Golden Edition กับ Auburn Edition และถ้าอยากได้ความเย็นเพิ่มด้วย ก็มี Berrine Edition กับ Mulint Edition ที่ผสมเมนทอลเย็นมาให้",
+        },
+        {
+          heading: "แคปซูล Pearl",
+          body:
+            "Oasis Pearl · Sun Pearl · Passion Fruit Pearl และ Strawberry Pearl มีแคปซูลอยู่ในก้นกรอง พอบีบจนแคปซูลแตก กลิ่นในแคปซูลก็จะออกมา รายละเอียดของแต่ละกลิ่นอ่านต่อได้ที่ [TEREA กลิ่นไหนดี](/guides/choosing-a-terea-flavor)",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "ซื้อ TEREA แล้วต้องมีเครื่องอะไร",
+          answer:
+            "IQOS ระบุให้ใช้ TEREA กับเครื่องตระกูล ILUMA ค่ะ ส่วน LAMBDA ระบุว่า LAMBDA i8 ของตนใช้ TEREA ได้ด้วย ตัวเครื่องดูได้ที่หน้า [เครื่องจ่ายความร้อน](/products/heated-tobacco-devices) ค่ะ",
+        },
+      ],
+    },
+    en: {
+      heading: "TEREA is the stick for IQOS ILUMA devices, in four flavor groups",
+      intro:
+        "This category holds TEREA sticks from IQOS. Each pack has 20 sticks and the product page lists 23 flavors. The easy way to choose is to start with the taste group you like, then look through the names in that group.",
+      families: [
+        {
+          heading: "Classic tobacco and menthol",
+          body:
+            "If tobacco is what you're after, the classic group includes Bronze, Sienna and Dimensions Apricity. If you like it cool, the menthol group includes Blue, Green, Bright Wave, Black Green, Purple Wave and Black Ruby.",
+        },
+        {
+          heading: "Clove",
+          body:
+            "This group has clove in the tobacco taste, as in Golden Edition and Auburn Edition. Berrine Edition and Mulint Edition add cool menthol as well.",
+        },
+        {
+          heading: "Pearl capsules",
+          body:
+            "Oasis Pearl, Sun Pearl, Passion Fruit Pearl and Strawberry Pearl have a capsule in the filter. Squeeze the filter until the capsule breaks and its flavor comes through.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "What device do I need for TEREA?",
+          answer:
+            "IQOS says TEREA is for the ILUMA family, and LAMBDA says its LAMBDA i8 takes TEREA too. You'll find the devices on the [Heated Tobacco Devices](/products/heated-tobacco-devices) page.",
+        },
+      ],
+    },
+    zh: {
+      heading: "TEREA 是 IQOS ILUMA 设备使用的烟支，口味分四组",
+      intro:
+        "本分类是 IQOS 的 TEREA 烟支，每盒 20 支，产品页列有 23 种口味。选购时先从喜欢的口味分组入手，再看组内的具体名称，会更容易。",
+      families: [
+        {
+          heading: "经典烟草与薄荷",
+          body:
+            "喜欢烟草味，经典组有 Bronze、Sienna、Dimensions Apricity 等；喜欢清凉感，薄荷组有 Blue、Green、Bright Wave、Black Green、Purple Wave、Black Ruby 等。",
+        },
+        {
+          heading: "丁香",
+          body:
+            "这一组的烟草味中带有丁香，例如 Golden Edition 和 Auburn Edition；Berrine Edition 和 Mulint Edition 则再加入了清凉的薄荷。",
+        },
+        {
+          heading: "Pearl 爆珠",
+          body:
+            "Oasis Pearl、Sun Pearl、Passion Fruit Pearl 和 Strawberry Pearl 的滤嘴内有爆珠，捏破后，爆珠中的味道就会释放出来。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "买 TEREA 需要什么设备？",
+          answer:
+            "IQOS 表示 TEREA 用于 ILUMA 系列，LAMBDA 也表示自家的 LAMBDA i8 可以使用 TEREA。设备见 [加热烟草设备](/products/heated-tobacco-devices) 页面。",
+        },
+      ],
+    },
+  },
 };
