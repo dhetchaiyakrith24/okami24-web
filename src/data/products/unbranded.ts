@@ -159,8 +159,8 @@ export const unbrandedProducts: Product[] = [
   {
     // Round popular models 07/11: searched (nexas booster 16k 880 a month), not in the warehouse, no price, no cart, no maker site found, so
     // Unbranded like the rest of this file. Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in
-    // the browser: goatvapethai · maneevp · yaivapestore: 16,000 puffs, 800mAh, 20mL, USB-C, 3-step airflow, 4 LED lights, these 18 flavours (the first
-    // two shops list them; vbth3 too). Not agreed, so not written: which flavours come at 5%, coil ohms.
+    // the browser: goatvapethai · maneevp · yaivapestore: 16,000 puffs, 800mAh, 20mL, USB-C, 3-step airflow, these 18 flavours (the first
+    // two list them, yaivapestore names them all; vbth3 lacks Yoyo Grape). Not agreed, so not written: which flavours come at 5%, coil ohms, the count of lights (two shops).
     id: "nexas-booster-16k",
     slug: "nexas-booster-16k",
     brandId: "Unbranded",
@@ -170,9 +170,9 @@ export const unbrandedProducts: Product[] = [
     name: "NEXAS Booster 16K",
     displayName: "NEXAS BOOSTER 16K",
     searchAliases: ["Nexas","Nexas Booster","Nexas 16000","Nexas 16K"],
-    tagline: "A tall disposable with a clear tank on top and four battery lights.",
+    tagline: "A tall disposable with a clear tank on top and battery lights on the body.",
     shortDescription:
-      "A tall disposable with a tinted tank that shows the liquid, four battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
+      "A tall disposable with a tinted tank that shows the liquid, battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -214,7 +214,7 @@ export const unbrandedProducts: Product[] = [
     specifications: [{ key: "puffs", label: "Rated puffs", value: "16,000", sourceStatus: "unverified" }],
     features: [
       { id: "tank", title: "A tank you can see into", description: "The top of the body is a clear tinted tank, so you can see the liquid inside." },
-      { id: "lights", title: "Four battery lights", description: "Four small lights on the body show the battery, and the airflow sets in three steps." },
+      { id: "lights", title: "Battery lights and airflow", description: "Small lights on the body show the battery, and the airflow sets in three steps." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 16,000 puffs, 20mL, an 800mAh battery and USB-C charging." },
     ],
     compatibility: [],

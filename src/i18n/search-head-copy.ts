@@ -349,7 +349,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
-  "nexas-booster-16k": "NEXAS Booster 16K พอตใช้แล้วทิ้งทรงสูง ถังใสมองเห็นน้ำยา ไฟบอกแบต 4 จุด ปรับลมได้ มี 18 กลิ่น",
+  "nexas-booster-16k": "NEXAS Booster 16K พอตใช้แล้วทิ้งทรงสูง ถังใสมองเห็นน้ำยา มีไฟบอกแบต ปรับลมได้ 3 ระดับ มี 18 กลิ่น",
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
