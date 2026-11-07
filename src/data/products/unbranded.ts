@@ -201,7 +201,7 @@ export const unbrandedProducts: Product[] = [
       { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#f2b5c4", availability: "unknown" },
       { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
       { id: "mint-extra", name: "Mint Extra", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "mixberry", name: "Mix Berries", swatchHex: "#a24a7e", availability: "unknown" },
       { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#b5853f", availability: "unknown" },
       { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
       { id: "red-soda", name: "Red Soda", swatchHex: "#d9394e", availability: "unknown" },
