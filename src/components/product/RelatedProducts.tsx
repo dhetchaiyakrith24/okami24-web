@@ -39,7 +39,9 @@ export function RelatedProducts({ items, slug, categoryId, similarSlugs = [] }: 
     };
   }, [slug]);
   const fetched = useEmptiedSimilar(slug, similarSlugs.length, changes);
-  const above = shownSimilar(similarSlugs.length > 0 ? similarSlugs : fetched.map((i) => i.slug), changes);
+  // The block goes when this product is back in stock (SimilarInStock), so its cards come back to this row.
+  const backInStock = slug ? changes?.[slug]?.s === true : false;
+  const above = backInStock ? [] : shownSimilar(similarSlugs.length > 0 ? similarSlugs : fetched.map((i) => i.slug), changes);
   return <RelatedRow row={shownRow(items, changes, answer).filter((i) => !above.includes(i.slug))} categoryId={categoryId} />;
 }
 
