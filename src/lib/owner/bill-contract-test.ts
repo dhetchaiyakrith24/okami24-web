@@ -62,6 +62,21 @@ try {
   refused = true;
 }
 check("xlsx: a file that is not one is refused", refused);
+const refusal = (buf: Buffer): string => {
+  try {
+    readXlsx(buf);
+    return "";
+  } catch (e) {
+    return e instanceof Error ? e.message : "";
+  }
+};
+const manyParts: Record<string, string> = {};
+for (let i = 0; i < 501; i++) manyParts[`p${i}`] = "x";
+check("xlsx: too many parts are refused", refusal(zipOf(manyParts)) === "ไฟล์ใหญ่เกินไป");
+// Each part fits under the limit alone; only the whole file goes over it.
+const big = "0".repeat(12 * 1024 * 1024);
+check("xlsx: parts that add up past the limit are refused", refusal(zipOf({ a: big, b: big, c: big })) === "ไฟล์เสียหรือใหญ่เกินไป");
+check("xlsx: parts under the limit still read", refusal(zipOf({ a: big, b: big })) === "");
 
 // ---------------------------------------------------------------- cost
 const costSheet: Sheet = {
