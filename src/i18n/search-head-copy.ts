@@ -362,6 +362,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
+  "nexas-booster-16k": "NEXAS Booster 16K พอตใช้แล้วทิ้ง มีไฟบอกแบต ปรับลมได้ 3 ระดับ ชาร์จผ่าน USB-C มี 18 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงได้ในหน้านี้",
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ปรับลมและเลือกโหมดการใช้งานได้ ชาร์จผ่าน USB-C มี 16 กลิ่นให้ดูในหน้านี้",
   "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",

@@ -1134,6 +1134,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "nexas-booster-16k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา NEXAS Booster รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งพัฟเยอะที่ปรับลมได้",
+    },
+    features: {
+      lights: {
+        title: "ไฟบอกแบตและปรับลม",
+        description: "ไฟบนตัวเครื่องบอกแบตที่เหลือ และปรับลมได้ 3 ระดับ",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "ไม่พบเว็บของผู้ผลิต ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 16,000 พัฟ น้ำยา 20mL แบต 800mAh และชาร์จผ่าน USB-C",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้ง มีไฟบอกแบต และปรับลมได้ 3 ระดับ",
+    shortDescription:
+      "พอตใช้แล้วทิ้ง มีไฟบอกแบตบนตัวเครื่อง และปรับลมได้ 3 ระดับ เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
   "relx-ultra-pod": {
     whoIsThisFor: {
       0: "กำลังหาหัวพอต RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
