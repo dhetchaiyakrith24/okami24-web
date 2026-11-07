@@ -8,8 +8,8 @@ export const relxProducts: Product[] = [
   {
     // Round popular models 07/11: searched (relx novo 590 a month), not in the warehouse, no price, no cart, no maker page (relxnow.com does not
     // list it). Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in the browser: maneevp ·
-    // yaivapestore · vapedeliverybkk: 14,000 puffs, 500mAh, a display, adjustable airflow; these 14 flavours per the researcher's pass. Not agreed, so
-    // not written: liquid (12 or 20mL), Cola (two shops).
+    // yaivapestore · vapedeliverybkk: 14,000 puffs, 500mAh, a display, these 14 flavours. Not agreed, so
+    // not written: liquid (12 or 20mL), Cola and adjustable airflow (two shops each).
     id: "relx-novo-14k",
     slug: "relx-novo-14k",
     brandId: "relx",
@@ -21,7 +21,7 @@ export const relxProducts: Product[] = [
     searchAliases: ["RELX Novo","Novo 14K","Novo 14000"],
     tagline: "A disposable in brushed grey with a dot display down one side.",
     shortDescription:
-      "A rounded disposable with a brushed grey body and a black panel that lights up in dots. The airflow adjusts. Pick from the flavours below.",
+      "A rounded disposable with a brushed grey body and a black panel that lights up in dots. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -59,7 +59,6 @@ export const relxProducts: Product[] = [
     specifications: [{ key: "puffs", label: "Rated puffs", value: "14,000", sourceStatus: "unverified" }],
     features: [
       { id: "panel", title: "A lit panel on the side", description: "The black panel lights up in dots and shows a number, so the state of the device is easy to read." },
-      { id: "airflow", title: "Airflow you can set", description: "You can adjust the airflow instead of taking one fixed draw." },
       { id: "figures", title: "The figures shops agree on", description: "RELX has no page for this model, so these come from shops that sell it and agree: 14,000 puffs and a 500mAh battery." },
     ],
     compatibility: [],

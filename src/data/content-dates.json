@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T11:41:18+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:47:48+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -567,8 +567,8 @@
       "fp": "07bb82f7d0a7"
     },
     "/products/relx-novo-14k": {
-      "date": "2026-11-07T11:34:31+07:00",
-      "fp": "d6b6532a11a1"
+      "date": "2026-11-07T11:47:48+07:00",
+      "fp": "925272cf4d25"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-03T00:40:32+07:00",
