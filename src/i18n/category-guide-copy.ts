@@ -786,4 +786,338 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
       ],
     },
   },
+  "pods-cartridges": {
+    th: {
+      heading: "หัวพอตเปล่ากับหัวพอตที่มีคอยล์ในตัว ต่างกันตรงไหน",
+      intro:
+        "หัวพอตทุกรุ่นบนหน้านี้เป็นแบบเติมน้ำยาเอง หรือที่หลายคนเรียกว่าหัวพอตรีฟิล และแบ่งได้เป็นสองแบบ หัวพอตที่มีคอยล์ในตัว พอคอยล์หมดสภาพก็เปลี่ยนทั้งหัว ส่วนหัวพอตเปล่าใส่คอยล์แยกเอง พอคอยล์หมดสภาพก็เปลี่ยนแค่คอยล์ ตัวหัวพอตยังใช้ต่อได้\n\nก่อนเลือก ควรเช็คชื่อรุ่นเครื่องให้ตรง เพราะหัวพอตแต่ละแบบใช้ได้เฉพาะกับเครื่องที่ระบุไว้ในหน้าสินค้า ด้านล่างนี้สรุปแต่ละตระกูลไว้สั้น ๆ ส่วนหัวพอตบรรจุสำเร็จอยู่ที่หน้า [พอตเปลี่ยนหัว](/products/switch-pods)",
+      families: [
+        {
+          heading: "หัวพอต Caliburn จาก UWELL",
+          body:
+            "[หัวพอต GPP](/products/coil-94) มีคอยล์ mesh ในตัว เลือกได้ 0.4 · 0.6 · 0.9 และ 1.2 โอห์ม จุน้ำยา 2.0–3.0mL แล้วแต่ชนิดหัว และ UWELL ระบุว่าใช้ได้กับเครื่องซีรีส์ Caliburn G5 · G4 · G3 ส่วน Caliburn G2 กับ Caliburn X ใช้หัวพอตเปล่า โดย[หัวพอต Caliburn G2](/products/coil-55) จุ 2mL เติมด้านบน และ[หัวพอต Caliburn X](/products/coil-74) จุ 3mL ทั้งสองหัวใช้คู่กับ [คอยล์ Caliburn G](/products/coil-53) ได้ คือ G 0.8 โอห์ม · G 1.0 โอห์ม และ G2 1.2 โอห์ม ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [UWELL](/brands/uwell)",
+        },
+        {
+          heading: "หัวพอต ARGUS และ VMATE จาก VOOPOO",
+          body:
+            "[หัวพอต ARGUS](/products/coil-21) มีสองแบบ แบบเติมด้านข้างจุ 2mL มีคอยล์ในตัว 0.7 หรือ 1.2 โอห์ม กล่องละ 3 หัว ส่วนแบบ Top Fill เติมด้านบนมี 0.4 · 0.7 และ 1.0 โอห์ม VOOPOO ระบุว่า ARGUS G4 · G4 mini และ P3 ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว และ ARGUS G3 mini ใช้แบบ Top Fill ทั้งสามค่านี้ [หัวพอต VMATE](/products/coil-72) จุ 3mL มีคอยล์ในตัวเช่นกัน แบบ V2 เติมด้านข้างมี 0.7 และ 1.2 โอห์ม แบบ Top Fill เติมด้านบนมี 0.4 · 0.7 และ 1.0 โอห์ม และ VMATE i3 ใส่หัวพอต VMATE ได้ทุกหัว ส่วน[หัวพอต Argus P1](/products/coil-83) เป็นหัวพอตเปล่า จุ 2.0mL กล่องละ 2 หัว ใช้กับ Argus Pod · P1 · Z · G · A และต้องซื้อคอยล์ ITO แยก ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [VOOPOO](/brands/voopoo)",
+        },
+        {
+          heading: "หัวพอตสำหรับ DRAG · Feelin และ Jellybox",
+          body:
+            "บนหน้านี้มีหัวพอตเปล่าสำหรับเครื่อง DRAG สามแบบ และแต่ละแบบใช้กับเครื่องคนละรุ่น [หัวพอต PnP X](/products/coil-56) จุ 5mL เติมด้านข้าง กล่องละ 2 หัว ใช้กับ DRAG S2 และ DRAG X2 คู่กับคอยล์ PnP X ส่วน [TPP Pod](/products/coil-87) จุ 5.5mL ใช้กับ DRAG 3 Kit และ DRAG X Plus Kit คู่กับคอยล์ตระกูล TPP และ[หัวพอต ITO-X](/products/coil-68) จุ 3.5mL เติมด้านบน ใช้กับ DRAG Q Pod Kit คู่กับคอยล์ ITO ฝั่ง NEVOKS มี[หัวพอต Feelin Mini](/products/coil-54) เป็นหัวพอตเปล่าจุ 2mL ใช้กับเครื่อง Feelin Mini คู่กับคอยล์ SPL10 และ RINCOE มี[หัวพอต Jellybox V](/products/coil-89) จุ 3.0mL เติมด้านข้าง เลือกได้ 0.8 หรือ 1.0 โอห์ม ใช้กับ Jellybox V1 · V2 และ V3 ดูรุ่นอื่นได้ที่หน้า [NEVOKS](/brands/nevoks) และ [RINCOE](/brands/rincoe)",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "หัวพอตเปล่าต้องซื้ออะไรเพิ่ม",
+          answer:
+            "ต้องมีคอยล์ที่ตรงกับหัวนั้นค่ะ เพราะหัวพอตเปล่ามาแค่ตัวหัว หัว Caliburn G2 กับ Caliburn X ใช้คอยล์ Caliburn G และ G2 · หัว PnP X ใช้คอยล์ PnP X · TPP Pod ใช้คอยล์ตระกูล TPP ซึ่งเลือกได้ที่หน้า [คอยล์และอุปกรณ์เสริม](/products/coils-accessories) ส่วนหัว ITO-X กับ Argus P1 ใช้คอยล์ ITO และ Feelin Mini ใช้คอยล์ SPL10 ค่ะ",
+        },
+        {
+          question: "หัวพอตรีฟิลคืออะไร",
+          answer:
+            "คือหัวพอตที่เติมน้ำยาเองได้ค่ะ ซึ่งก็คือหัวพอตทุกรุ่นบนหน้านี้ มีทั้งแบบเติมด้านบนและแบบเติมด้านข้าง เลือกน้ำยาที่ชอบมาเติม แล้วใช้ไปจนถึงรอบเปลี่ยนหัวพอตหรือคอยล์",
+        },
+        {
+          question: "รู้ได้ยังไงว่าหัวพอตไหนใส่กับเครื่องของเราได้",
+          answer:
+            "เริ่มจากชื่อรุ่นเครื่องค่ะ ในหน้าหัวพอตดูแถว “ใช้ได้กับ” หรือ “เป็นหัวพอตของ” ส่วนในหน้าเครื่องดูแถว “หัวพอตที่ใช้ได้” ถ้าชื่อเครื่องของคุณอยู่ในรายการก็เลือกหัวนั้นได้เลย ถ้ายังไม่แน่ใจ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+        },
+        {
+          question: "หัวพอตจากอีกระบบ ใส่แทนกันได้ไหม",
+          answer:
+            "ใส่ได้เฉพาะในระบบเดียวกันค่ะ หัวพอตแต่ละระบบทำมาให้ใช้กับเครื่องในระบบนั้น ชื่อที่คล้ายกันจึงยังต้องเช็คก่อน อย่างหัวพอตของ Caliburn G2 กับหัวพอต GPP ที่เป็นคนละระบบกัน แม้จะชื่อ Caliburn เหมือนกัน ดูว่าเครื่องแต่ละกลุ่มใช้หัวพอตระบบไหนได้ที่หน้า [พอตซิสเต็ม](/products/pod-systems) ค่ะ",
+        },
+        {
+          question: "หัวพอตกี่โอห์มดี เลือกยังไง",
+          answer:
+            "เลือกตามแนวการสูบที่ชอบค่ะ โอห์มต่ำสูบโล่งและใช้วัตต์สูง ส่วนโอห์มสูงสูบแน่นแบบ MTL และใช้วัตต์ต่ำ อย่างบน Caliburn G3 Pro หัว 0.4 โอห์มใช้ได้ 5–35 วัตต์ ส่วนหัว 0.9 โอห์มใช้ได้ 5–15 วัตต์ ก่อนเลือกโอห์มต่ำควรเช็คเครื่องด้วย เช่น หัว VMATE 0.4 โอห์มต้องใช้กับเครื่องที่จ่ายไฟได้ตั้งแต่ 30 วัตต์ อ่านต่อได้ที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
+        },
+        {
+          question: "หัวพอตควรเปลี่ยนเมื่อไหร่",
+          answer:
+            "เมื่อรสเริ่มบาดคอหรือมีรสไหม้ ควันน้อยลง หรือมีเสียงน้ำยาดังจ๊อก ๆ ตอนสูบค่ะ สามอย่างนี้บอกว่าสำลีในคอยล์หมดสภาพแล้ว หัวพอตที่มีคอยล์ในตัวก็เปลี่ยนทั้งหัว ส่วนหัวพอตเปล่าเปลี่ยนแค่คอยล์ จากที่ร้านใช้เอง หัวพอตที่มีคอยล์ในตัวมักอยู่ได้ราว 1–3 สัปดาห์ แล้วแต่วิธีสูบและน้ำยาที่ใช้ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+        },
+      ],
+    },
+    en: {
+      heading: "Empty pods and built-in coil pods, and how they differ",
+      intro:
+        "Every pod on this page is refillable: you fill it with the e-liquid you choose. A pod with a built-in coil is replaced whole when the coil wears out. An empty pod takes a separate coil, so you change only the coil and keep the pod.\n\nBefore you choose, check your device model, as each pod fits only the devices listed on its product page. Below is a short guide to each family. Prefilled pods are on the [Switch Pods](/products/switch-pods) page.",
+      families: [
+        {
+          heading: "UWELL Caliburn pods",
+          body:
+            "The [GPP pod](/products/coil-94) has a built-in mesh coil in 0.4, 0.6, 0.9 or 1.2Ω and holds 2.0–3.0mL, depending on the type. UWELL lists it for the Caliburn G5, G4 and G3 series. The Caliburn G2 and Caliburn X use empty pods: the [Caliburn G2 pod](/products/coil-55) holds 2mL and fills from the top, and the [Caliburn X pod](/products/coil-74) holds 3mL. Both work with [Caliburn G coils](/products/coil-53): G 0.8Ω, G 1.0Ω and G2 1.2Ω. More from the brand is on the [UWELL](/brands/uwell) page.",
+        },
+        {
+          heading: "VOOPOO ARGUS and VMATE pods",
+          body:
+            "The [ARGUS pod](/products/coil-21) comes in two types. The side-fill pod holds 2mL, has a built-in 0.7Ω or 1.2Ω coil and comes in boxes of 3. The Top Fill comes in 0.4, 0.7 and 1.0Ω. VOOPOO states that the ARGUS G4, G4 mini and P3 take every ARGUS-family cartridge, and that the ARGUS G3 mini takes these three Top Fill options. The [VMATE pod](/products/coil-72) holds 3mL and also has a built-in coil: 0.7Ω or 1.2Ω in the side-fill V2, and 0.4, 0.7 or 1.0Ω in the Top Fill. The VMATE i3 takes every VMATE cartridge. The [Argus P1 pod](/products/coil-83) is an empty pod that holds 2.0mL, comes in boxes of 2 and fits the Argus Pod, P1, Z, G and A, with ITO coils bought separately. More from the brand is on the [VOOPOO](/brands/voopoo) page.",
+        },
+        {
+          heading: "Pods for DRAG, Feelin and Jellybox",
+          body:
+            "This page has three empty pods for DRAG devices, each for different models. The [PnP X pod](/products/coil-56) holds 5mL, fills from the side and comes in boxes of 2; it fits the DRAG S2 and DRAG X2 and takes PnP X coils. The [TPP Pod](/products/coil-87) holds 5.5mL, fits the DRAG 3 Kit and DRAG X Plus Kit and takes TPP-family coils. The [ITO-X pod](/products/coil-68) holds 3.5mL, fills from the top, fits the DRAG Q Pod Kit and takes ITO coils. From NEVOKS, the [Feelin Mini pod](/products/coil-54) is an empty 2mL pod for the Feelin Mini that takes SPL10 coils. From RINCOE, the [Jellybox V pod](/products/coil-89) holds 3.0mL, fills from the side, comes in 0.8Ω or 1.0Ω and fits the Jellybox V1, V2 and V3. More is on the [NEVOKS](/brands/nevoks) and [RINCOE](/brands/rincoe) pages.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "What else do I need with an empty pod?",
+          answer:
+            "A coil that matches it, since an empty pod comes without one. The Caliburn G2 and Caliburn X pods take Caliburn G and G2 coils, the PnP X pod takes PnP X coils, and the TPP Pod takes TPP-family coils; you'll find these on the [Coils & Accessories](/products/coils-accessories) page. The ITO-X and Argus P1 pods take ITO coils, and the Feelin Mini pod takes SPL10 coils.",
+        },
+        {
+          question: "What is a refill pod?",
+          answer:
+            "A pod you fill yourself, which is every pod on this page. Some fill from the top and others from the side. Choose the e-liquid you like and use the pod until it is time to change the pod or coil.",
+        },
+        {
+          question: "How do I know which pod fits my device?",
+          answer:
+            "Start with your device model. On a pod's page, look for the “Compatible devices” or “Pod of” row; on a device's page, look for the “Pod platform” row. If your device is listed, that pod is the one to choose. If you're still unsure, message us on LINE @okm24.",
+        },
+        {
+          question: "Will a pod from another system fit?",
+          answer:
+            "Pods fit only within their own system, because each system is made for its own devices. Similar names still need checking: the Caliburn G2 pod and the GPP pod are separate systems, even though both belong to Caliburn devices. The [Pod Systems](/products/pod-systems) page shows which pods each group of devices uses.",
+        },
+        {
+          question: "Which resistance should I choose?",
+          answer:
+            "Choose by the draw you like. Lower ohms give an airier draw and use more watts, while higher ohms give a tighter MTL draw and use fewer. On the Caliburn G3 Pro, for example, the 0.4Ω pod runs at 5–35W and the 0.9Ω pod at 5–15W. Check your device before choosing a low-ohm pod: the VMATE 0.4Ω pod needs a device that delivers at least 30W. There's more in [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow).",
+        },
+        {
+          question: "When should I change a pod?",
+          answer:
+            "When the taste turns harsh or burnt, vapor drops, or you hear gurgling on the draw. These are the usual signs that the wicking material in the coil is worn out. Replace a built-in coil pod whole; with an empty pod, change only the coil. In our own use, a pod with a built-in coil usually lasts about 1–3 weeks, depending on how you vape and the e-liquid you use. See [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+        },
+      ],
+    },
+    zh: {
+      heading: "空烟弹与内置雾化芯烟弹，区别在哪里",
+      intro:
+        "本页的烟弹都可以自行注油。内置雾化芯的烟弹，雾化芯用旧后整颗更换；空烟弹需要另装雾化芯，用旧后只换雾化芯，烟弹本身可以继续使用。\n\n选购前请先核对设备型号，每款烟弹只适配产品页面列出的设备。下面按系列简要说明。预注油烟弹请见 [换弹式设备](/products/switch-pods) 页面。",
+      families: [
+        {
+          heading: "UWELL Caliburn 烟弹",
+          body:
+            "[GPP 烟弹](/products/coil-94) 内置网状雾化芯，有 0.4、0.6、0.9 和 1.2Ω 可选，容量 2.0–3.0mL，视烟弹类型而定。UWELL 标明它适配 Caliburn G5、G4 和 G3 系列设备。Caliburn G2 和 Caliburn X 使用空烟弹：[Caliburn G2 烟弹](/products/coil-55) 容量 2mL，顶部注油；[Caliburn X 烟弹](/products/coil-74) 容量 3mL。两者都可搭配 [Caliburn G 雾化芯](/products/coil-53)，包括 G 0.8Ω、G 1.0Ω 和 G2 1.2Ω。更多产品见 [UWELL](/brands/uwell) 品牌页。",
+        },
+        {
+          heading: "VOOPOO ARGUS 与 VMATE 烟弹",
+          body:
+            "[ARGUS 烟弹](/products/coil-21) 分两种：侧注款容量 2mL，内置 0.7Ω 或 1.2Ω 雾化芯，每盒 3 颗；Top Fill 顶部注油款有 0.4、0.7 和 1.0Ω。VOOPOO 标明 ARGUS G4、G4 mini 和 P3 兼容整个 ARGUS 烟弹家族，ARGUS G3 mini 可用这三种 Top Fill 烟弹。[VMATE 烟弹](/products/coil-72) 容量 3mL，同样内置雾化芯：V2 侧注款有 0.7 和 1.2Ω，Top Fill 顶部注油款有 0.4、0.7 和 1.0Ω。VMATE i3 兼容全部 VMATE 烟弹。[Argus P1 烟弹](/products/coil-83) 是空烟弹，容量 2.0mL，每盒 2 颗，适配 Argus Pod、P1、Z、G 和 A，ITO 雾化芯需另购。更多产品见 [VOOPOO](/brands/voopoo) 品牌页。",
+        },
+        {
+          heading: "DRAG、Feelin 与 Jellybox 烟弹",
+          body:
+            "本页有三款适用于 DRAG 设备的空烟弹，分别对应不同型号。[PnP X 烟弹](/products/coil-56) 容量 5mL，侧面注油，每盒 2 颗，适配 DRAG S2 和 DRAG X2，搭配 PnP X 雾化芯。[TPP Pod](/products/coil-87) 容量 5.5mL，适配 DRAG 3 Kit 和 DRAG X Plus Kit，搭配 TPP 系列雾化芯。[ITO-X 烟弹](/products/coil-68) 容量 3.5mL，顶部注油，适配 DRAG Q Pod Kit，搭配 ITO 雾化芯。NEVOKS 的 [Feelin Mini 烟弹](/products/coil-54) 是 2mL 空烟弹，用于 Feelin Mini，搭配 SPL10 雾化芯。RINCOE 的 [Jellybox V 烟弹](/products/coil-89) 容量 3.0mL，侧面注油，有 0.8Ω 和 1.0Ω 可选，适配 Jellybox V1、V2 和 V3。更多产品见 [NEVOKS](/brands/nevoks) 与 [RINCOE](/brands/rincoe) 品牌页。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "空烟弹还需要另外买什么？",
+          answer:
+            "需要与之匹配的雾化芯，因为空烟弹不带雾化芯。Caliburn G2 和 Caliburn X 烟弹使用 Caliburn G 与 G2 雾化芯，PnP X 烟弹使用 PnP X 雾化芯，TPP Pod 使用 TPP 系列雾化芯，这些都可以在 [雾化芯与配件](/products/coils-accessories) 页面选购。ITO-X 和 Argus P1 烟弹使用 ITO 雾化芯，Feelin Mini 烟弹使用 SPL10 雾化芯。",
+        },
+        {
+          question: "什么是可注油烟弹？",
+          answer:
+            "就是可以自己加注烟油的烟弹，本页所有烟弹都属于这一类，有顶部注油和侧面注油两种。选好喜欢的烟油注入，用到该换烟弹或雾化芯的时候再更换。",
+        },
+        {
+          question: "怎么知道哪款烟弹适配我的设备？",
+          answer:
+            "先确认设备型号。烟弹页面和设备页面的规格表里，都写明了可以互相搭配的型号；只要你的设备在列表中，就可以选这款烟弹。看完仍不确定，欢迎通过 LINE @okm24 咨询。",
+        },
+        {
+          question: "其他系统的烟弹能通用吗？",
+          answer:
+            "烟弹只能在同一系统内通用，因为每个系统都是为对应的设备设计的。名字相近也要核对：Caliburn G2 烟弹和 GPP 烟弹是两个不同的系统，虽然都用于 Caliburn 设备。各类设备使用哪种烟弹系统，可在 [Pod System](/products/pod-systems) 页面查看。",
+        },
+        {
+          question: "阻值怎么选？",
+          answer:
+            "按喜欢的吸法来选。阻值低，吸感更通透，功率也更高；阻值高，吸感偏紧，适合 MTL，功率也更低。以 Caliburn G3 Pro 为例，0.4Ω 烟弹的功率范围是 5–35W，0.9Ω 烟弹是 5–15W。选低阻值前也要看设备：VMATE 0.4Ω 烟弹需要搭配输出 30W 及以上的设备。详见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
+        },
+        {
+          question: "烟弹什么时候该换？",
+          answer:
+            "口感变得粗糙或有焦味、烟雾变少，或吸的时候听到咕噜声，都是雾化芯导油棉已经损耗的常见信号。内置雾化芯的烟弹整颗更换，空烟弹只换雾化芯。根据本店自己的使用经验，内置雾化芯的烟弹通常能用约 1–3 周，具体取决于吸法和所用烟油。详见 [雾化芯与烟弹保养](/guides/coil-and-pod-maintenance)。",
+        },
+      ],
+    },
+  },
+  "coils-accessories": {
+    th: {
+      heading: "คอยล์พอตแต่ละแบรนด์ เลือกยังไงให้ตรงกับเครื่อง",
+      intro:
+        "คอยล์คือชิ้นที่ร้อนขึ้นแล้วทำให้น้ำยากลายเป็นไอ และเป็นของสิ้นเปลืองที่ต้องเปลี่ยนเมื่อหมดสภาพ คอยล์พอตแต่ละตระกูลทำมาให้ใช้กับหัวพอตหรือถังน้ำยาของตระกูลนั้น จึงควรเลือกจากรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น\n\nด้านล่างนี้สรุปคอยล์ของแต่ละแบรนด์ไว้สั้น ๆ ถ้าเครื่องของคุณใช้หัวพอตที่มีคอยล์ในตัว ซึ่งเปลี่ยนทั้งหัว ดูได้ที่หน้า [หัวพอต](/products/pods-cartridges)",
+      families: [
+        {
+          heading: "คอยล์ VOOPOO PnP X · Vinci และ TPP",
+          body:
+            "[คอยล์ PnP X](/products/coil-92) มีให้เลือก 7 ค่า ตั้งแต่ 0.15 ถึง 1.0 โอห์ม ตัว 0.15 โอห์มแนะนำไว้ที่ 60–80 วัตต์ ส่วนตัว 1.0 โอห์มอยู่ที่ 10–13 วัตต์ ใช้กับเครื่อง DRAG X2 · S2 · X3 · S3 และ DRAG 4 ส่วน [คอยล์ Vinci](/products/coil-1) มีให้เลือกตั้งแต่ 0.15 ถึง 1.2 โอห์ม ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio และ [คอยล์ TPP](/products/coil-38) มี 0.15 · 0.2 และ 0.3 โอห์ม ตัว 0.2 โอห์มแนะนำไว้ที่ 40–60 วัตต์ ตัว 0.3 โอห์มอยู่ที่ 32–40 วัตต์ ใช้คู่กับ [TPP Pod](/products/coil-87) ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [VOOPOO](/brands/voopoo)",
+        },
+        {
+          heading: "คอยล์ Caliburn G และ G2 จาก UWELL",
+          body:
+            "[คอยล์ Caliburn G](/products/coil-53) มีให้เลือกสามค่า คือ G 0.8 โอห์ม · G 1.0 โอห์ม และ G2 1.2 โอห์ม ทุกค่าใช้ได้กับเครื่อง Caliburn GK2 · G2 และ X ถ้ากำลังหาหัวพอตเปล่าที่ใช้คู่กับคอยล์ตระกูลนี้ เลือกได้ทั้ง[หัวพอต Caliburn G2](/products/coil-55) และ[หัวพอต Caliburn X](/products/coil-74) คอยล์ตระกูลนี้เป็นคนละระบบกับหัวพอต GPP ของซีรีส์ Caliburn G5 · G4 · G3 ซึ่งมีคอยล์ในตัวและเปลี่ยนทั้งหัว ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [UWELL](/brands/uwell)",
+        },
+        {
+          heading: "คอยล์ dotAIO V2 จาก DOTMOD",
+          body:
+            "[คอยล์ dotAIO V2](/products/coil-70) มีให้เลือก 0.15 · 0.3 · 0.6 และ 0.7 โอห์ม กล่องละ 5 หัว บรรจุแยกซองละหัว ตัวเรือนเป็นทองเหลือง และใช้คอยล์ mesh เดี่ยว ตัว 0.7 โอห์มแนะนำไว้ที่ 14–20 วัตต์ ใช้ได้กับ dotAIO V2 · dotAIO V2 Lite · dotStick Revo · dotPod Max และ dotTank 25mm ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+        },
+      ],
+      faqHeading: "คำถามที่พบบ่อย",
+      faq: [
+        {
+          question: "คอยล์พอตควรเปลี่ยนเมื่อไหร่",
+          answer:
+            "ควรเปลี่ยนเมื่อรสเริ่มบาดคอหรือมีรสไหม้ ควันน้อยลง หรือมีเสียงน้ำยาดังจ๊อก ๆ ตอนสูบค่ะ สามอย่างนี้เป็นสัญญาณว่าสำลีในคอยล์หมดสภาพแล้ว ส่วนจะใช้ได้กี่วันขึ้นกับคนใช้ Vaporesso บอกไว้ราว 1–2 สัปดาห์สำหรับคนสูบปานกลาง และสั้นลงถ้าสูบหนัก ใช้น้ำยาหวาน หรือตั้งวัตต์สูง อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+        },
+        {
+          question: "คอยล์โอห์มต่ำกับโอห์มสูงต่างกันยังไง",
+          answer:
+            "โอห์มต่ำสูบโล่งและใช้วัตต์สูง ส่วนโอห์มสูงสูบแน่นแบบ MTL และใช้วัตต์ต่ำค่ะ ดูได้จากคอยล์ PnP X ที่ตัว 0.15 โอห์มแนะนำไว้ที่ 60–80 วัตต์ ส่วนตัว 1.0 โอห์มแนะนำไว้ที่ 10–13 วัตต์ ก่อนเลือกโอห์มต่ำควรเช็ควัตต์สูงสุดของเครื่องด้วย และตอนตั้งวัตต์ ร้านเราเริ่มที่ค่าต่ำสุดของช่วงก่อน แล้วค่อยขยับขึ้นทีละนิดจนได้รสและควันที่ชอบ อ่านต่อได้ที่ [เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
+        },
+        {
+          question: "ทำไมคอยล์ต้องตรงตระกูลกับหัวพอตหรือถังน้ำยา",
+          answer:
+            "เพราะคอยล์แต่ละตระกูลทำมาให้ใช้กับหัวพอตหรือถังน้ำยาของตระกูลนั้นค่ะ อย่าง TPP Pod ที่ใส่คอยล์แบบกดล็อกก็รองรับคอยล์ตระกูล TPP แม้เป็นแบรนด์เดียวกัน คอยล์แต่ละตระกูลก็ใช้กับเครื่องคนละชุด อย่างคอยล์ PnP X กับคอยล์ TPP ของ VOOPOO จึงควรเช็คตระกูลก่อนซื้อทุกครั้งนะคะ",
+        },
+        {
+          question: "คอยล์ VOOPOO ตัวไหนใช้กับเครื่องอะไร",
+          answer:
+            "คอยล์ PnP X ใช้กับ DRAG X2 · S2 · X3 · S3 และ DRAG 4 รวมถึง DRAG 6 ที่ VOOPOO ระบุว่าถังน้ำยาของชุดใส่คอยล์ PnP X ได้ทุกตัวค่ะ คอยล์ Vinci ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio ส่วนคอยล์ TPP ใช้กับ TPP Pod · DRAG 3 Kit และ DRAG X Plus Kit ก่อนซื้อ เช็คแถว “ใช้ได้กับ” ในหน้าคอยล์ให้ตรงกับเครื่องอีกครั้งนะคะ",
+        },
+        {
+          question: "ใส่คอยล์ใหม่แล้ว ต้องรอก่อนสูบไหม",
+          answer:
+            "ควรรอให้สำลีในคอยล์ซึมน้ำยาให้ทั่วก่อนค่ะ แต่ละแบรนด์บอกเวลาไว้ต่างกัน ถ้าเป็น Caliburn ทาง UWELL แนะนำให้ตั้งเครื่องทิ้งไว้ 10 นาทีหลังใส่หัวพอตหรือคอยล์ใหม่ ส่วนรุ่นของแบรนด์อื่นให้ดูเวลาตามคู่มือของรุ่นนั้น พอถึงพัฟแรก ๆ ก็สูบสั้น ๆ เบา ๆ ไปก่อนนะคะ",
+        },
+        {
+          question: "คอยล์ไหม้แล้ว ต้องทำยังไง",
+          answer:
+            "ถ้ารสขม ฝาด บาดคอ หรือมีกลิ่นไหม้ติดปลายลิ้น ทางแก้คือเปลี่ยนคอยล์ตัวใหม่ค่ะ ถ้าถังน้ำยาถอดล้างได้ ล้างให้สะอาดแล้วปล่อยให้แห้งสนิทก่อนใส่คอยล์ใหม่ เพราะน้ำยาเก่าที่ติดขอบถังจะพากลิ่นไหม้ตามมาด้วย สาเหตุและวิธีกันอ่านได้ที่ [พอตไหม้ เกิดจากอะไร](/guides/fixing-a-burnt-pod)",
+        },
+      ],
+    },
+    en: {
+      heading: "Pod coils by brand, and how to match yours",
+      intro:
+        "A coil is the part that heats up and turns e-liquid into vapor, and it is a consumable you replace once it wears out. Coils in each family are made for that family's pods or tanks, so start with your device model, then choose the ohms by how you vape: lower is airier, higher is tighter.\n\nBelow is a short guide to the coils from each brand. If your device uses a pod with a built-in coil, which is replaced whole, see the [Pods & Cartridges](/products/pods-cartridges) page.",
+      families: [
+        {
+          heading: "VOOPOO PnP X, Vinci and TPP coils",
+          body:
+            "[PnP X coils](/products/coil-92) come in seven values from 0.15Ω to 1.0Ω. The 0.15Ω coil is rated at 60–80W and the 1.0Ω at 10–13W. They fit the DRAG X2, S2, X3, S3 and DRAG 4. [Vinci coils](/products/coil-1) run from 0.15Ω to 1.2Ω and fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. [TPP coils](/products/coil-38) come in 0.15, 0.2 and 0.3Ω; the 0.2Ω is rated at 40–60W and the 0.3Ω at 32–40W, and they go with the [TPP Pod](/products/coil-87). More from the brand is on the [VOOPOO](/brands/voopoo) page.",
+        },
+        {
+          heading: "UWELL Caliburn G and G2 coils",
+          body:
+            "[Caliburn G coils](/products/coil-53) come in three values: G 0.8Ω, G 1.0Ω and G2 1.2Ω. All three fit the Caliburn GK2, G2 and X. If you need an empty pod for them, choose the [Caliburn G2 pod](/products/coil-55) or the [Caliburn X pod](/products/coil-74). This family is a separate system from the GPP pods of the Caliburn G5, G4 and G3 series, which have a built-in coil and are replaced whole. More from the brand is on the [UWELL](/brands/uwell) page.",
+        },
+        {
+          heading: "DOTMOD dotAIO V2 coils",
+          body:
+            "[dotAIO V2 coils](/products/coil-70) come in 0.15, 0.3, 0.6 and 0.7Ω, in boxes of 5, each individually packed. They have a brass housing and a single mesh coil, and the 0.7Ω is rated at 14–20W. They fit the dotAIO V2, dotAIO V2 Lite, dotStick Revo, dotPod Max and dotTank 25mm. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+        },
+      ],
+      faqHeading: "Common questions",
+      faq: [
+        {
+          question: "When should I change a coil?",
+          answer:
+            "When the taste turns harsh or burnt, vapor drops, or you hear gurgling on the draw. These are the signs that the wicking material is worn out. How long that takes depends on you: Vaporesso says about 1–2 weeks for moderate use, and less with heavy use, sweet e-liquids or high wattage. See [coil and pod maintenance](/guides/coil-and-pod-maintenance).",
+        },
+        {
+          question: "What do low-ohm and high-ohm coils change?",
+          answer:
+            "Low-ohm coils give an airier draw and use more watts; high-ohm coils give a tighter MTL draw and use fewer. PnP X coils show the range: the 0.15Ω is rated at 60–80W and the 1.0Ω at 10–13W. Before choosing a low-ohm coil, check your device's maximum wattage. When setting the wattage, we start at the bottom of the range and move up a little at a time until the flavor and vapor feel right. There's more in [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow).",
+        },
+        {
+          question: "Why must a coil match the pod or tank family?",
+          answer:
+            "Each coil family is made for the pods or tanks of that family. The TPP Pod, for example, uses a press-fit coil and takes TPP-family coils. Even within one brand, coil families fit different devices, as VOOPOO's PnP X and TPP coils do, so check the family before you buy.",
+        },
+        {
+          question: "Which VOOPOO coil fits which device?",
+          answer:
+            "PnP X coils fit the DRAG X2, S2, X3, S3 and DRAG 4, and VOOPOO states that the DRAG 6 kit's tank takes every PnP X coil. Vinci coils fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. TPP coils fit the TPP Pod, DRAG 3 Kit and DRAG X Plus Kit. Before you buy, check the “Compatible devices” row on the coil's page.",
+        },
+        {
+          question: "Should I wait before vaping on a new coil?",
+          answer:
+            "Yes, give the wicking material time to soak through. Brands suggest different times. For Caliburn, UWELL recommends leaving the device for 10 minutes after fitting a new pod or coil; for other brands, follow the manual for your model. Keep the first few puffs short and gentle.",
+        },
+        {
+          question: "What should I do when a coil burns?",
+          answer:
+            "If the taste turns bitter, dry or harsh, or leaves a burnt note on your tongue, fit a new coil. If the tank can be taken apart for washing, clean it and let it dry fully before the new coil goes in, because old e-liquid left on the tank wall carries the burnt taste over.",
+        },
+      ],
+    },
+    zh: {
+      heading: "各品牌雾化芯，如何选对设备",
+      intro:
+        "雾化芯是通电发热、把烟油变成烟雾的部件，属于耗材，用旧后需要更换。每个系列的雾化芯都是为同系列的烟弹或油仓设计的，因此请先看设备型号，再按吸法选阻值：阻值低吸感通透，阻值高吸感偏紧。\n\n下面按品牌简要说明。如果你的设备使用内置雾化芯的烟弹，需要整颗更换，请见 [烟弹](/products/pods-cartridges) 页面。",
+      families: [
+        {
+          heading: "VOOPOO PnP X、Vinci 与 TPP 雾化芯",
+          body:
+            "[PnP X 雾化芯](/products/coil-92) 有 7 种阻值，从 0.15Ω 到 1.0Ω，其中 0.15Ω 的建议功率为 60–80W，1.0Ω 为 10–13W，适配 DRAG X2、S2、X3、S3 和 DRAG 4。[Vinci 雾化芯](/products/coil-1) 阻值从 0.15Ω 到 1.2Ω，适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。[TPP 雾化芯](/products/coil-38) 有 0.15、0.2 和 0.3Ω，其中 0.2Ω 的建议功率为 40–60W，0.3Ω 为 32–40W，搭配 [TPP Pod](/products/coil-87) 使用。更多产品见 [VOOPOO](/brands/voopoo) 品牌页。",
+        },
+        {
+          heading: "UWELL Caliburn G 与 G2 雾化芯",
+          body:
+            "[Caliburn G 雾化芯](/products/coil-53) 有三种：G 0.8Ω、G 1.0Ω 和 G2 1.2Ω，都适配 Caliburn GK2、G2 和 X。如需搭配空烟弹，可选 [Caliburn G2 烟弹](/products/coil-55) 或 [Caliburn X 烟弹](/products/coil-74)。这个系列与 Caliburn G5、G4、G3 系列所用的 GPP 烟弹是两个不同的系统，GPP 烟弹内置雾化芯，需要整颗更换。更多产品见 [UWELL](/brands/uwell) 品牌页。",
+        },
+        {
+          heading: "DOTMOD dotAIO V2 雾化芯",
+          body:
+            "[dotAIO V2 雾化芯](/products/coil-70) 有 0.15、0.3、0.6 和 0.7Ω 可选，每盒 5 颗，独立包装，黄铜外壳，采用单网状雾化芯，其中 0.7Ω 的建议功率为 14–20W。适配 dotAIO V2、dotAIO V2 Lite、dotStick Revo、dotPod Max 和 dotTank 25mm。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+        },
+      ],
+      faqHeading: "常见问题",
+      faq: [
+        {
+          question: "雾化芯什么时候该换？",
+          answer:
+            "口感变得粗糙或有焦味、烟雾变少，或吸的时候听到咕噜声，都说明导油棉已经损耗。能用多久因人而异：Vaporesso 的说法是中度使用约 1–2 周，抽得多、用偏甜的烟油或功率设得高时会更短。详见 [雾化芯与烟弹保养](/guides/coil-and-pod-maintenance)。",
+        },
+        {
+          question: "低阻值和高阻值雾化芯有什么不同？",
+          answer:
+            "低阻值吸感通透，功率较高；高阻值吸感偏紧，适合 MTL，功率较低。以 PnP X 雾化芯为例，0.15Ω 的建议功率为 60–80W，1.0Ω 为 10–13W。选低阻值前请先确认设备的最高功率。设置功率时，我们会从建议范围的下限开始，再一点点调高，直到口感和烟雾合适。详见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
+        },
+        {
+          question: "为什么雾化芯要和烟弹或油仓同系列？",
+          answer:
+            "因为每个系列的雾化芯都是为同系列的烟弹或油仓设计的。例如 TPP Pod 采用按压式安装，支持 TPP 系列雾化芯。即使是同一品牌，不同系列适配的设备也不一样，比如 VOOPOO 的 PnP X 和 TPP 雾化芯，所以购买前请先核对系列。",
+        },
+        {
+          question: "VOOPOO 哪款雾化芯适配哪些设备？",
+          answer:
+            "PnP X 雾化芯适配 DRAG X2、S2、X3、S3 和 DRAG 4，VOOPOO 也标明 DRAG 6 套装的油仓支持全部 PnP X 雾化芯。Vinci 雾化芯适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。TPP 雾化芯适配 TPP Pod、DRAG 3 Kit 和 DRAG X Plus Kit。购买前请再核对雾化芯页面规格表中列出的设备。",
+        },
+        {
+          question: "换上新雾化芯后要等一会儿再抽吗？",
+          answer:
+            "要，先让导油棉充分吸满烟油。各品牌建议的时间不同：Caliburn 方面，UWELL 建议装上新烟弹或雾化芯后静置 10 分钟；其他品牌请按该型号的说明书操作。前几口请抽得短一些、轻一些。",
+        },
+        {
+          question: "雾化芯烧焦了怎么办？",
+          answer:
+            "如果味道发苦、发涩、刮喉，或舌尖留有焦味，就需要换新的雾化芯。油仓可以拆洗的话，先洗干净并彻底晾干再装新雾化芯，否则残留在仓壁上的旧烟油会把焦味带过来。",
+        },
+      ],
+    },
+  },
 };
