@@ -6,6 +6,7 @@ import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { shownSimilar } from "@/lib/related-row";
 import type { SimilarItem } from "@/lib/similar-in-stock";
 
 /** Directly under the head of a page with nothing to buy: up to 4 close models a customer can buy now (round popular
@@ -13,7 +14,8 @@ import type { SimilarItem } from "@/lib/similar-in-stock";
 export function SimilarInStock({ items }: { items: SimilarItem[] }) {
   const { dict } = useLocale();
   const live = useLiveCardStock();
-  const shown = items.filter((i) => live?.[i.slug]?.s !== false).slice(0, 4);
+  const slugs = shownSimilar(items.map((i) => i.slug), live);
+  const shown = items.filter((i) => slugs.includes(i.slug));
   if (shown.length === 0) return null;
 
   return (

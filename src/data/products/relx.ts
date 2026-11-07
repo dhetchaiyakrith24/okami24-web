@@ -513,9 +513,24 @@ export const relxProducts: Product[] = [
     whoIsThisFor: ["Vapers who want a device they keep, with prefilled pods they swap instead of filling e-liquid."],
     faqs: [
       {
+        id: "relx-creator-what",
+        question: "What is the RELX Creator?",
+        answer: "The RELX Creator, often called the RELX LEGO, is a reusable RELX device that takes prefilled pods. It's the device RELX lists on its own site as the Creator Pro Device.",
+      },
+      {
         id: "relx-creator-pods",
         question: "Which pods fit the RELX Creator?",
         answer: "RELX Creator Pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
+      },
+      {
+        id: "relx-creator-price",
+        question: "How much is the RELX Creator?",
+        answer: "The price is shown in the price box near the top of this page. It's for the device alone; pods are sold separately.",
+      },
+      {
+        id: "relx-creator-no-draw",
+        question: "The RELX Creator won't draw. What should I do?",
+        answer: "We'd start with one click on the button to check the battery. If it's flat, charge it over USB-C. If there's charge left, take the pod out, seat it firmly again and wipe the contacts with a dry cotton swab or tissue. If it still won't draw, ask us on LINE @okm24.",
       },
     ],
     relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],

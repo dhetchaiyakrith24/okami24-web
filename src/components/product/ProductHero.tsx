@@ -22,6 +22,7 @@ import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
@@ -111,9 +112,9 @@ export function ProductHero({
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
-  // The jump button goes with its block: SimilarInStock drops the same cards on the same live answer.
+  // The jump button goes with its block: the same rule on the same live answer.
   const liveCards = useLiveCardStock();
-  const similarLeft = similarSlugs?.some((slug) => liveCards?.[slug]?.s !== false) ?? false;
+  const similarLeft = shownSimilar(similarSlugs ?? [], liveCards).length > 0;
   const { locale, dict } = useLocale();
   const bestIds = bestSellerOptions(product.slug);
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
