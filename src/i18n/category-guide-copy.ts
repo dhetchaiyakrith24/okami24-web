@@ -1122,7 +1122,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
   },
   "heated-tobacco-devices": {
     th: {
-      heading: "เครื่องจ่ายความร้อนบนหน้านี้ มี IQOS ILUMA สามรุ่นกับ LAMBDA i8",
+      heading: "เครื่องจ่ายความร้อนบนหน้านี้ มี ILUMA สามรุ่นกับ LAMBDA i8",
       intro:
         "ตัวเครื่องบนหน้านี้มาจากสองแบรนด์ IQOS ILUMA ทั้งสามรุ่นใช้บุหรี่ TEREA เท่านั้น ส่วน LAMBDA i8 ทาง LAMBDA ระบุว่าใช้ได้ทั้ง TEREA และ SENTIA ถ้ากำลังเลือกเครื่อง ลองเริ่มจากบุหรี่ที่จะใช้ก่อน แล้วค่อยดูว่าอยากพกกี่ชิ้นและอยากสูบต่อกันได้กี่มวน",
       families: [
