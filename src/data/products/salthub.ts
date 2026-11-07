@@ -921,7 +921,33 @@ export const salthubProducts: Product[] = [
       "Vapers who want to change between a softer and a stronger draw on one small device.",
       "Anyone who likes a slim, pen-shaped device.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "zero-pro-marbo",
+        question: "Is the Marbo Zero Pro the same as the SALTHUB Zero Pro?",
+        answer: "Yes, it's the same device. Zero Pro is the name on SALTHUB's site, and Marbo Zero Pro is the name many people still use.",
+      },
+      {
+        id: "zero-pro-pods",
+        question: "Which pods does the Marbo Zero use?",
+        answer: "It takes the Zero Cartridge. The Zero Nano uses the same pod, so if you own both devices you can swap pods between them.",
+      },
+      {
+        id: "zero-pro-modes",
+        question: "How many modes does the Zero Pro have?",
+        answer: "Three: Low-end, Mid-range and High-end. You can go from a softer draw to a stronger one on the same device, depending on what you feel like that day.",
+      },
+      {
+        id: "zero-pro-puffs",
+        question: "How many puffs does the Zero Pro give?",
+        answer: "SALTHUB's own Zero Pro poster gives 5,000 puffs. The number you actually get will vary with how you use it.",
+      },
+      {
+        id: "zero-pro-battery",
+        question: "What's the battery on the Zero Pro, and how does it charge?",
+        answer: "It has a built-in 380mAh battery that charges over USB-C, and SALTHUB describes it as fast charging.",
+      },
+    ],
     relatedProductSlugs: ["zero-nano", "zero-cartridge", "m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/zero-pro/"],
   },

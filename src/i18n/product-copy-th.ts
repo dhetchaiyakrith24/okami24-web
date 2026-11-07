@@ -348,6 +348,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "Caliburn ทรงเพรียว พร้อมจอ OLED ที่บอกวัตต์และจำนวนพัฟ",
     shortDescription:
       "แบต 900mAh ในตัว ปรับได้สูงสุด 25 วัตต์ มีจอ OLED ไว้ตั้งวัตต์และดูจำนวนพัฟ และชาร์จเร็วผ่าน USB-C ที่ 2A",
+    faqs: {
+      "caliburn-g3-coil": {
+        question: "Caliburn G3 คอยล์เปลี่ยนยังไง",
+        answer: "คอยล์ของ Caliburn G3 อยู่ในหัวพอตค่ะ พอรสชาติเริ่มดรอปก็เปลี่ยนเป็นหัวพอตใหม่ทั้งหัว ส่วนตัวเครื่องใช้ต่อได้เหมือนเดิมค่ะ",
+      },
+      "caliburn-g3-pods": {
+        question: "Caliburn G3 ใช้หัวพอตแบบไหน",
+        answer: "ใช้หัวพอต Caliburn G3 ที่มีคอยล์ mesh ในตัวค่ะ หัวหนึ่งจุน้ำยาได้ 2.5mL และแบ่งเป็น 0.6 โอห์ม 0.9 โอห์ม กับ 1.2 โอห์ม ตามความแน่นของลมที่ชอบค่ะ",
+      },
+      "caliburn-g3-battery": {
+        question: "Caliburn G3 แบตกี่ mAh ชาร์จยังไง",
+        answer: "Caliburn G3 มีแบต 900mAh อยู่ในตัวค่ะ เสียบสาย USB-C ชาร์จได้เลย และชาร์จเร็วได้ที่ 2A ค่ะ",
+      },
+      "caliburn-g3-wattage": {
+        question: "Caliburn G3 ปรับวัตต์ได้ไหม",
+        answer: "ปรับได้ค่ะ จอ OLED บนเครื่องใช้ตั้งวัตต์ได้สูงสุด 25 วัตต์ ดูจำนวนพัฟ และเลือกระบบยิงได้ 3 แบบด้วยค่ะ",
+      },
+      "caliburn-g3-size": {
+        question: "UWELL Caliburn G3 ขนาดเท่าไร หนักกี่กรัม",
+        answer: "ตัวเครื่องมีขนาด 115.5 × 24 × 13.9 mm และหนักประมาณ 47 กรัมค่ะ ตัวเครื่องทำจากอะลูมิเนียมอัลลอย ส่วนหัวพอตเป็น PCTG ค่ะ",
+      },
+    },
   },
   "caliburn-g3-pro": {
     whoIsThisFor: {
@@ -372,6 +394,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง",
     shortDescription:
       "แบต 1000mAh สูงสุด 35 วัตต์ ปรับลมได้ละเอียด มีหัวพอต 0.4 และ 0.9 โอห์มมาในกล่อง",
+    faqs: {
+      "caliburn-g3-pro-pods": {
+        question: "Caliburn G3 Pro ใช้หัวพอตรุ่นไหน",
+        answer: "หัวพอต Caliburn G3 ในระบบ GPP ใส่กับเครื่องนี้ได้ทุกหัวค่ะ ตั้งแต่ 0.4 ถึง 1.2 โอห์ม จะเป็นแบบเติมด้านบนหรือเติมด้านข้างก็ได้ ส่วนหัวที่มากับเครื่องคือ 0.4 และ 0.9 โอห์ม แบบเติมด้านข้างค่ะ",
+      },
+      "caliburn-g3-pro-wattage": {
+        question: "Caliburn G3 Pro ปรับได้กี่วัตต์",
+        answer: "Caliburn G3 Pro ปรับได้ 5–35 วัตต์ค่ะ ส่วนวัตต์สูงสุดเปลี่ยนตามหัวพอตที่ใส่ หัว 0.4 โอห์มไปได้ถึง 35 วัตต์ หัว 0.6 โอห์มถึง 25 วัตต์ และหัว 0.9 โอห์มถึง 15 วัตต์ค่ะ",
+      },
+      "caliburn-g3-pro-lock": {
+        question: "Caliburn G3 Pro ล็อกปุ่มยังไง",
+        answer: "กดปุ่มสองครั้งติดกันก็ล็อกปุ่มได้เลยค่ะ เครื่องจะยิงตอนสูบอย่างเดียว ส่วนกด 3 ครั้งใช้ตั้งวัตต์ และกด 5 ครั้งใช้เปิดหรือปิดเครื่องค่ะ",
+      },
+      "caliburn-g3-pro-screen": {
+        question: "UWELL Caliburn G3 Pro จอบอกอะไรบ้าง",
+        answer: "จอ LCD เต็มหน้าเครื่องบอกวัตต์ แบตแบบ 4 ขีด และจำนวนพัฟได้ถึง 999 ค่ะ",
+      },
+      "caliburn-g3-pro-battery": {
+        question: "G3 Pro แบตกี่ mAh",
+        answer: "G3 Pro ใช้แบตในตัว 1000mAh ค่ะ และชาร์จผ่าน USB-C ที่ 2A ค่ะ",
+      },
+    },
   },
 
   "caliburn-g3-pro-koko": {
@@ -597,6 +641,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
     shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จผ่าน USB-C",
+    faqs: {
+      "drag-s3-battery": {
+        question: "VOOPOO DRAG S3 ใช้ถ่านไหม",
+        answer: "DRAG S3 มีแบต 3000mAh อยู่ในตัวค่ะ เวลาแบตใกล้หมดก็เสียบสาย USB-C ชาร์จที่ตัวเครื่องได้เลย ชาร์จที่ 5V/2A ค่ะ",
+      },
+      "drag-s3-coil": {
+        question: "DRAG S3 ใช้หัวพอตและคอยล์อะไร",
+        answer: "ใช้หัวพอต PnP X Cartridge จุ 5mL แบบเติมด้านข้างค่ะ คอยล์ใส่ PnP X ได้ทุกตัวตั้งแต่ 0.15 ถึง 1.0 โอห์ม และในกล่องมี 0.6 กับ 0.8 โอห์มมาให้ค่ะ",
+      },
+      "drag-s3-style": {
+        question: "DRAG S3 สูบแบบไหนได้บ้าง",
+        answer: "สูบได้ทั้ง MTL RDL และ DTL แบบเบา ๆ ค่ะ เปลี่ยนคอยล์แล้วเลื่อนช่องลมด้านบนให้เข้ากับแนวการสูบที่ชอบได้เลยค่ะ",
+      },
+      "drag-s3-unlock": {
+        question: "DRAG S3 ปลดล็อกปุ่มยังไง",
+        answer: "แตะเซ็นเซอร์ที่ปุ่มยิง เครื่องก็จะปลดล็อกค่ะ พอปล่อยนิ้วก็ล็อกกลับเอง ส่วนกด 5 ครั้งใช้เปิดหรือปิดเครื่อง และกด 3 ครั้งใช้เข้าเมนูค่ะ",
+      },
+      "drag-s3-modes": {
+        question: "DRAG S3 มีโหมดอะไรบ้าง",
+        answer: "มี 3 โหมดค่ะ SMART ช่วยคุมวัตต์ให้อยู่ในช่วงที่เหมาะกับคอยล์ RBA ให้ตั้งค่าเองทุกอย่าง และ ECO ช่วยประหยัดแบต ส่วนตัวเครื่องตั้งได้ 5–60 วัตต์ค่ะ",
+      },
+    },
   },
   "drag-x": {
     whoIsThisFor: {
@@ -619,6 +685,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "DRAG X ของ VOOPOO ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ถึง 80 วัตต์",
     shortDescription:
       "DRAG X ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนที่ต้องซื้อแยก ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้รวมถึง PnP-RBA และมีหัวพอต 4.5mL ที่ยึดกับตัวเครื่องด้วยแม่เหล็ก",
+    faqs: {
+      "drag-x-battery": {
+        question: "VOOPOO DRAG X ใช้ถ่านอะไร",
+        answer: "DRAG X ใช้ถ่าน 18650 ก้อนเดียวค่ะ ตัวถ่านซื้อแยกจากเครื่อง และชาร์จเร็วในเครื่องผ่าน USB-C ได้ค่ะ",
+      },
+      "drag-x-wattage": {
+        question: "DRAG X ปรับได้กี่วัตต์",
+        answer: "ปรับได้ 5–80 วัตต์ค่ะ แรงดันไฟอยู่ที่ 3.2–4.2V และใช้คอยล์ได้ตั้งแต่ 0.1–3.0 โอห์มค่ะ",
+      },
+      "drag-x-coil-wattage": {
+        question: "คอยล์ในกล่อง DRAG X ตั้งกี่วัตต์ดี",
+        answer: "คอยล์ PnP-VM1 0.3 โอห์มใช้ที่ 32–40 วัตต์ค่ะ ส่วน PnP-VM6 0.15 โอห์มใช้ที่ 60–80 วัตต์ค่ะ",
+      },
+      "drag-x-pod": {
+        question: "DRAG X หัวพอตจุน้ำยาเท่าไร",
+        answer: "หัวพอตจุน้ำยาได้ 4.5mL ค่ะ ตัวหัวเป็น PCTG และยึดกับเครื่องด้วยแม่เหล็กค่ะ",
+      },
+      "drag-x-smart": {
+        question: "โหมด SMART ของ DRAG X ทำอะไรได้บ้าง",
+        answer: "โหมด SMART ช่วยแนะนำวัตต์ให้ค่ะ พอใส่คอยล์ เครื่องจะอ่านค่าแล้วบอกวัตต์ที่ควรเริ่ม และยังจำวัตต์ที่ตั้งไว้ครั้งล่าสุดด้วยค่ะ",
+      },
+    },
   },
   // Round p63 (owner item 68, 18/10): WOTOFO nexPOD 15K Pro Kit — maker facts only (wotofo.com kit / device / pod pages).
   "nexpod-15k": {
@@ -645,6 +733,39 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "เครื่องระบบสวิตช์ของ WOTOFO แบต 1200mAh ใช้หัวพอต nexPOD 15K ขนาด 18mL",
     shortDescription:
       "nexPOD 15K Pro Kit ของ WOTOFO มีตัวเครื่องอะลูมิเนียม 1200mAh ใช้ซ้ำได้ กับหัวพอตบรรจุสำเร็จ 1 ชิ้น (18mL คอยล์ nexMESH 0.8Ω หัวละ 15,000 พัฟ) ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหนแล้วตั้งวัตต์ให้",
+  },
+  "drag-x2": {
+    whoIsThisFor: {
+      0: "กำลังหา DRAG X2 ตัวนี้โดยเฉพาะ ไม่ใช่ DRAG X หรือ X3 และอยากดูสเปกกับสีทั้งหมดที่ VOOPOO ทำออกมา",
+    },
+    specifications: {
+      battery: "ถ่าน 18650 หนึ่งก้อน (ไม่รวมในกล่อง)",
+      pod: "5.0mL หัวพอต PnP X Cartridge DTL (เวอร์ชันมาตรฐานและเวอร์ชัน US)",
+      coils: "คอยล์ PnP X ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.2Ω",
+      materials: "ซิงค์อัลลอยและหนัง",
+      chip: "GENE.TT 2.0 มีโหมด Smart RBA และ ECO",
+    },
+    features: {
+      platform: {
+        title: "พอตคิทแบบใส่ถ่านรุ่นแรกของ VOOPOO ที่ใช้ PnP X",
+        description: "VOOPOO บอกว่า DRAG X2 เป็นพอตคิทแบบใส่ถ่านรุ่นแรกที่ใช้หัวพอต PnP X",
+      },
+      modes: {
+        title: "3 โหมดใช้งาน",
+        description: "Smart เลือกวัตต์ให้เอง RBA ตั้งเองได้ 5 ถึง 80 วัตต์ และ ECO ช่วยยืดแบตได้มากกว่า 10%",
+      },
+      cartridge: {
+        title: "หัวพอต 5mL รับลมด้านบน",
+        description: "หัวพอต PnP X รับลมจากด้านบน และมีแหวนปรับลมมาให้",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง หัวพอต PnP X DTL คอยล์ PnP X 0.15 และ 0.2 โอห์ม สาย USB-C คู่มือ และการ์ด PnP Platform ส่วนถ่านไม่รวมอยู่ด้วย",
+      },
+    },
+    tagline: "DRAG X2 ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ถึง 80 วัตต์ ใช้คอยล์ PnP X",
+    shortDescription:
+      "DRAG X2 ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนซึ่งไม่รวมในกล่อง ปรับได้ 5–80 วัตต์ หัวพอต PnP X จุ 5mL และเลือกได้ 3 โหมดจากเมนูบนจอ",
   },
   "drag-x3": {
     faqs: {
@@ -928,6 +1049,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "3 โหมด ในตัวเครื่องระบบสวิตช์ใช้ซ้ำได้",
     shortDescription: "เครื่องระบบสวิตช์ใช้ซ้ำได้ มี 3 โหมดวัตต์ ใช้หัวพอต Zero Cartridge รองรับสูงสุด 5,000 พัฟต่อหัวพอต",
+    faqs: {
+      "zero-pro-marbo": {
+        question: "Marbo Zero Pro กับ SALTHUB Zero Pro เป็นรุ่นเดียวกันไหม",
+        answer: "เป็นรุ่นเดียวกันค่ะ Zero Pro คือชื่อบนเว็บของ SALTHUB ส่วน Marbo Zero Pro เป็นชื่อที่หลายคนยังเรียกกันอยู่ค่ะ",
+      },
+      "zero-pro-pods": {
+        question: "Marbo Zero ใช้หัวพอตอะไร",
+        answer: "ใช้หัวพอต Zero Cartridge ค่ะ หัวรุ่นนี้ใช้กับเครื่อง Zero Nano ได้ด้วย ถ้ามีทั้งสองเครื่องก็สลับหัวกันใช้ได้เลยค่ะ",
+      },
+      "zero-pro-modes": {
+        question: "Zero Pro มีกี่โหมด",
+        answer: "มี 3 โหมดค่ะ คือ Low-end · Mid-range และ High-end วันไหนอยากสูบเบา ๆ หรืออยากได้แรงขึ้นอีกนิด ก็สลับโหมดจากเครื่องเดียวกันได้เลยค่ะ",
+      },
+      "zero-pro-puffs": {
+        question: "Zero Pro สูบได้กี่พัฟ",
+        answer: "5,000 พัฟค่ะ ตัวเลขนี้มาจากโปสเตอร์ Zero Pro ของ SALTHUB เอง ส่วนจำนวนที่ใช้ได้จริงจะต่างกันไปตามการใช้งานค่ะ",
+      },
+      "zero-pro-battery": {
+        question: "Zero Pro แบตกี่ mAh ชาร์จยังไง",
+        answer: "แบตในตัว 380mAh ค่ะ ชาร์จผ่าน USB-C และ SALTHUB ระบุว่าเป็นการชาร์จเร็วค่ะ",
+      },
+    },
   },
   "zero-nano": {
     whoIsThisFor: {
@@ -996,6 +1139,148 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้ง ใช้คอยล์ mesh มีจอ และปรับลมได้ เลือกดูกลิ่นได้จากรายการด้านล่าง",
   },
+  "relx-ultra-pod": {
+    whoIsThisFor: {
+      0: "กำลังหาหัวพอต RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
+    },
+    specifications: {
+      coil: "mesh 10 วัตต์",
+      devices: "WAKA และ RELX ตระกูล Ultra · Artisan · Infinity · Essential",
+      puffs: "สูงสุด 5,000",
+    },
+    features: {
+      coil: {
+        title: "คอยล์ mesh 10 วัตต์",
+        description: "หัวพอตนี้ใช้คอยล์ mesh 10 วัตต์ และ RELX ออกแบบให้รสชาติเต็มตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย",
+      },
+      window: {
+        title: "มองเห็นน้ำยาที่เหลือ",
+        description: "มองเห็นน้ำยาผ่านตัวหัวพอตได้ จึงรู้ได้ว่าจาก 2mL ยังเหลืออีกเท่าไรก่อนที่รสจะเริ่มดรอป",
+      },
+      fit: {
+        title: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+        description: "RELX ระบุว่าใช้ได้กับเครื่องตระกูล Ultra · Artisan · Infinity และ Essential รวมถึงเครื่อง WAKA ด้วย",
+      },
+    },
+    tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 2mL คอยล์ mesh 10 วัตต์",
+    shortDescription:
+      "หัวพอตบรรจุสำเร็จ 2mL ของ RELX ใช้คอยล์ mesh 10 วัตต์ รองรับสูงสุด 5,000 พัฟ มี 4 กลิ่น นิโคติน 18mg/ml และ RELX ระบุว่าใช้ได้กับเครื่องตระกูล Ultra · Artisan · Infinity และ Essential",
+  },
+  "relx-ultra-kit": {
+    whoIsThisFor: {
+      0: "กำลังหาเครื่อง RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูสเปกกับ 2 กลิ่นที่มากับชุด",
+    },
+    specifications: {
+      charging: "USB-C · 80% ใน 30 นาที (ตัวเลขของ RELX)",
+      materials: "อะลูมิเนียมอัลลอย",
+      pod: "RELX Ultra Pod · 2mL · 18mg/ml · สูงสุด 5,000 พัฟ (ตัวเลขของ RELX)",
+    },
+    features: {
+      charging: {
+        title: "ชาร์จ 30 นาที ได้แบต 80%",
+        description: "แบต 380mAh ชาร์จผ่าน USB-C และ RELX ระบุว่าใช้เวลา 30 นาทีก็ได้ 80%",
+      },
+      body: {
+        title: "ตัวเครื่องอะลูมิเนียมอัลลอย",
+        description: "ตัวเครื่องสี Steel Silver ทำจากอะลูมิเนียมอัลลอย และ RELX ออกแบบให้จับได้ถนัดมือ",
+      },
+      indicator: {
+        title: "ไฟบอกสถานะใกล้ฐาน",
+        description: "ไฟเล็ก ๆ ใกล้ฐานเครื่องบอกสถานะการทำงานและแบตเตอรี่",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง สาย USB-C คู่มือ และหัวพอต Ultra 1 ชิ้นตามกลิ่นบนกล่อง",
+      },
+    },
+    tagline: "ตัวเครื่อง RELX 10 วัตต์ ทำจากอะลูมิเนียมอัลลอย พร้อมหัวพอต Ultra ในกล่อง",
+    shortDescription:
+      "ชุดเริ่มต้นของ RELX มีตัวเครื่องอะลูมิเนียมอัลลอยสี Steel Silver 10 วัตต์ แบต 380mAh พร้อมหัวพอต Ultra 1 ชิ้นตามกลิ่นบนกล่อง ชาร์จผ่าน USB-C และ RELX ระบุว่า 30 นาทีได้ 80%",
+  },
+  "relx-artisan-plus": {
+    whoIsThisFor: {
+      0: "กำลังหา RELX Artisan อยู่ และอยากดูสเปกของรุ่นปัจจุบัน",
+    },
+    specifications: {
+      indicator: "ไฟบอกแบต 4 ระดับ",
+      charging: "USB-C",
+    },
+    features: {
+      upgrade: {
+        title: "ต่างจาก Artisan รุ่นก่อนตรงไหน",
+        description: "รุ่นนี้วัตต์สูงขึ้น และแบตจุกว่ารุ่น Artisan เดิม",
+      },
+      indicator: {
+        title: "ไฟบอกแบต 4 ระดับ",
+        description: "แต่ละขีดเท่ากับ 25% และเมื่อเหลือขีดเดียว RELX แนะนำให้ชาร์จได้แล้ว",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง สาย USB-C และคู่มือ ส่วนหัวพอตแยกต่างหาก",
+      },
+    },
+    tagline: "เครื่อง RELX ทรงโค้งเว้า 8 วัตต์ แบต 440mAh",
+    shortDescription:
+      "เครื่องระบบสวิตช์ของ RELX ทรงโค้งเว้าสี Black Wave 8 วัตต์ แบต 440mAh ชาร์จผ่าน USB-C มีไฟบอกแบต 4 ระดับ และใช้ได้กับหัวพอต RELX Pod กับ RELX Pod Pro",
+  },
+  "relx-sparta-20k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา Sparta รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งพัฟเยอะที่มีจอ",
+    },
+    features: {
+      display: {
+        title: "มีจอบนตัวเครื่อง",
+        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่ามีจอบนตัวเครื่อง",
+      },
+      adjust: {
+        title: "ปรับลมและเลือกโหมดได้",
+        description: "ปรับช่องลมและเปลี่ยนโหมดการใช้งานได้ตามที่ชอบ",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "RELX ไม่มีหน้าของรุ่นนี้ ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 20,000 พัฟ แบต 750mAh และชาร์จผ่าน USB-C",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งของ RELX มีจอ ปรับลมและเลือกโหมดได้",
+    shortDescription:
+      "พอตใช้แล้วทิ้งจาก RELX มีจอบนตัวเครื่อง ปรับลมได้ และเลือกโหมดการใช้งานได้ เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
+  "relx-novo-14k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา Novo รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งของ RELX ที่มีจอ",
+    },
+    features: {
+      display: {
+        title: "มีจอบนตัวเครื่อง",
+        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่ามีจอบนตัวเครื่อง",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "RELX ไม่มีหน้าของรุ่นนี้ ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 14,000 พัฟ และแบต 500mAh",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งของ RELX มีจอบนตัวเครื่อง",
+    shortDescription:
+      "พอตใช้แล้วทิ้งจาก RELX มีจอบนตัวเครื่อง และชาร์จผ่าน USB-C เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
+  "relx-diva-30k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา DIVA รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งของ RELX ที่เลือกได้ตามกลิ่น",
+    },
+    features: {
+      modes: {
+        title: "โหมด ECO และ BOOST",
+        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่ามีโหมด ECO และโหมด BOOST",
+      },
+      display: {
+        title: "มีจอบนตัวเครื่อง",
+        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่ามีจอบนตัวเครื่อง",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งของ RELX มีจอ และมีโหมด ECO กับ BOOST",
+    shortDescription:
+      "พอตใช้แล้วทิ้งจาก RELX มีจอบนตัวเครื่อง และมีโหมด ECO กับ BOOST เลือกดูกลิ่นได้จากรายการด้านล่าง และดูได้ว่ากลิ่นไหนมีแบบความเข้มข้นสูงกว่า",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
@@ -1051,6 +1336,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "Infinity รุ่นปัจจุบันของ RELX สลับได้ 3 โหมด ตั้งแต่ 6.5 ถึง 10 วัตต์",
     shortDescription:
       "เครื่องระบบสวิตช์ของ RELX มี 3 โหมด Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ แบต 440mAh ชาร์จ 15 นาทีได้ถึง 80% ใช้กับหัวพอตบรรจุสำเร็จของ RELX ทั้ง RELX Pod, Pod Pro และ Pod Pro 2",
+    faqs: {
+      "relx-infinity-2-plus-what": {
+        question: "RELX Infinity 2 Plus เป็นเครื่องแบบไหน",
+        answer: "เป็นเครื่องระบบสวิตช์รุ่นปัจจุบันในตระกูล Infinity ของ RELX ค่ะ ตัวเครื่องมีแบต 440mAh ในตัวและชาร์จซ้ำได้ พอน้ำยาหมดก็เปลี่ยนแค่หัวพอตบรรจุสำเร็จ แล้วใช้เครื่องเดิมต่อได้ค่ะ",
+      },
+      "relx-infinity-2-plus-vs-2": {
+        question: "RELX Infinity 2 กับ Infinity 2 Plus ต่างกันยังไง",
+        answer: "Infinity 2 Plus ใช้วัตต์สูงกว่าในทุกโหมดค่ะ คือ Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ ส่วนหน้าตาก็ดูออกได้จากปุ่มสีส้มและไอคอน Plus บนตัวเครื่องค่ะ",
+      },
+      "relx-infinity-2-plus-modes": {
+        question: "RELX Infinity Plus มีกี่โหมด แต่ละโหมดต่างกันยังไง",
+        answer: "มี 3 โหมดค่ะ Eco สูบได้เบา ๆ และช่วยประหยัดแบต Smooth ให้รสนุ่ม ส่วน Boost ให้รสเข้มขึ้น และ RELX บอกว่าให้ควันมากกว่าโหมด Smooth ได้ถึง 15% ค่ะ",
+      },
+      "relx-infinity-2-plus-pods": {
+        question: "หัว RELX Infinity ใช้รุ่นไหนได้บ้าง",
+        answer: "ใส่ได้สามรุ่นค่ะ คือ RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ตัวเลขของ RELX อยู่ที่หัวละ 1.9mL สูงสุด 600 พัฟ ถ้ามีหัวรุ่นเหล่านี้อยู่แล้ว ก็ใส่เครื่องนี้ต่อได้เลยค่ะ",
+      },
+      "relx-infinity-2-plus-charge": {
+        question: "RELX Infinity 2 Plus ชาร์จนานไหม",
+        answer: "ตามตัวเลขของ RELX ชาร์จผ่าน USB-C 15 นาที ก็ได้แบตถึง 80% ค่ะ ส่วนแบตที่เหลืออยู่ ดูได้จากไฟบอกแบต 4 ระดับบนตัวเครื่องค่ะ",
+      },
+    },
   },
   "relx-creator": {
     whoIsThisFor: {
@@ -1140,6 +1447,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นกลิ่นเดียว",
     shortDescription:
       "พอตใช้แล้วทิ้งจาก Joiway รุ่นกลิ่นเดียว ถ้าอยากได้ 2 กลิ่นในเครื่องเดียว ดูรุ่น F4",
+    faqs: {
+      "joiway-f3-12k": {
+        question: "JOIWAY 12K คือรุ่นเดียวกับ JOIWAY F3 ไหม",
+        answer: "ใช่ค่ะ หลายคนเรียก JOIWAY F3 ว่า JOIWAY 12K ตามตัวเลข 12,000+ พัฟที่แบรนด์ระบุไว้ และรุ่นนี้เป็นพอตใช้แล้วทิ้งแบบกลิ่นเดียวค่ะ",
+      },
+      "joiway-f3-f4": {
+        question: "JOIWAY F3 กับ F4 ต่างกันยังไง",
+        answer: "ที่ต่างกันหลัก ๆ คือจำนวนกลิ่นในเครื่องค่ะ JOIWAY F3 มีกลิ่นเดียว ส่วน JOIWAY F4 มีสองกลิ่นในเครื่องเดียว และหมุนปากดูดเพื่อสลับกลิ่นได้ค่ะ",
+      },
+      "joiway-f3-days": {
+        question: "JOIWAY 12000 พัฟ ใช้ได้กี่วัน",
+        answer: "ขึ้นอยู่กับความถี่ในการสูบค่ะ JOIWAY ระบุไว้ที่ 12,000+ พัฟ ซึ่งแต่ละคนจะใช้หมดเร็วหรือช้าต่างกันไป ระหว่างใช้ดูน้ำยาที่เหลือได้จากถังใสใต้ปากดูด จึงรู้ล่วงหน้าว่าใกล้ถึงเวลาเปลี่ยนเครื่องใหม่ค่ะ",
+      },
+      "joiway-f3-charge": {
+        question: "JOIWAY F3 ชาร์จได้ไหม",
+        answer: "ชาร์จได้ค่ะ เครื่องใช้ช่องชาร์จ USB-C ถ้าแบตหมดก่อนน้ำยา ก็เสียบชาร์จสักพัก แล้วสูบน้ำยาที่เหลือต่อได้เลยค่ะ",
+      },
+      "joiway-f3-airflow": {
+        question: "JOIWAY F3 ปรับลมได้ไหม",
+        answer: "ปรับได้ค่ะ ช่องปรับลมอยู่ที่ฐานเครื่อง เปิดกว้างจะได้ลมโล่งและดูดเบาขึ้น ถ้าปรับให้แคบลงลมก็จะแน่นขึ้นค่ะ",
+      },
+    },
   },
   "joiway-f4": {
     whoIsThisFor: {
@@ -1252,6 +1581,16 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     whoIsThisFor: {
       0: "ผู้ที่ต้องการตัวเครื่อง Next Pro 2 Beyond ในสีที่ชอบ ร้านมีให้เลือก 6 สี",
     },
+    faqs: {
+      "next-pro-2-beyond-type": {
+        question: "พอต Next Pro 2 Beyond เป็นแบบไหน",
+        answer: "Next Pro 2 Beyond เป็นตัวเครื่องพอตที่ร้านจัดไว้ในหมวดพอตเปลี่ยนหัวค่ะ พอน้ำยาหมดก็เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ส่วนตัวเครื่องเก็บไว้ใช้ต่อได้ค่ะ",
+      },
+      "next-pro-2-beyond-colors": {
+        question: "Next Pro 2 Beyond มีสีอะไรบ้าง",
+        answer: "Next Pro 2 Beyond มี 6 สี คือ Razer Black · Supreme Red · White Lava · Aurora · Lemon Mint และ Twilight Sky ค่ะ",
+      },
+    },
   },
   "infy-20k": {
     // 2026-09-30: the page went live — the who-for line and the FAQ (Thai text moved here from infy.ts, unchanged).
@@ -1289,6 +1628,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 14,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ และมีให้เลือกหลายกลิ่น",
+    faqs: {
+      "mood-monster-14k-name": {
+        question: "MOOOD 14K กับ MOOOD Monster 14K คือรุ่นเดียวกันไหม",
+        answer: "ใช่ค่ะ MOOOD 14K คือชื่อสั้น ๆ ของพอตใช้แล้วทิ้งรุ่นนี้ในซีรีส์ Monster ชื่อแบรนด์สะกดด้วยตัว O สามตัว ถ้าเห็นคนเขียนว่า Mood 14K ก็หมายถึงรุ่นนี้เช่นกันค่ะ",
+      },
+      "mood-monster-14k-puffs": {
+        question: "MOOOD Monster 14K ได้กี่พัฟ คอยล์แบบไหน",
+        answer: "MOOOD ระบุไว้ที่สูงสุด 14,000 พัฟ และใช้คอยล์แบบ DUO MESH ค่ะ ส่วนจะสูบได้เท่าไรในการใช้งานจริง แล้วแต่แนวการสูบของแต่ละคนค่ะ",
+      },
+      "mood-monster-14k-refill": {
+        question: "MOOOD Monster 14K เติมน้ำยาได้ไหม",
+        answer: "ไม่ได้ค่ะ รุ่นนี้เป็นพอตใช้แล้วทิ้งที่บรรจุน้ำยาสำเร็จมา 16mL พอน้ำยาหมดก็เปลี่ยนเครื่องใหม่ได้เลยค่ะ",
+      },
+      "mood-monster-14k-nicotine": {
+        question: "MOOOD Monster 14K นิโคตินกี่ %",
+        answer: "MOOOD ระบุไว้ที่ 3% ค่ะ บางกลิ่นมี N5% ต่อท้ายชื่อและเป็นอีกตัวเลือกหนึ่ง ก่อนกดเลือกจึงควรดูชื่อกลิ่นให้ตรงกับที่ต้องการนะคะ",
+      },
+      "mood-monster-14k-flavors": {
+        question: "MOOOD Monster มีกลิ่นอะไรบ้าง",
+        answer: "มีทั้งสายผลไม้อย่าง Watermelon · Mango Peach และ Lychee สายองุ่นอย่าง Grape กับ Kyoho Grape สายเย็นอย่าง Mint และแนวอื่นอย่าง Cola กับ Lemon Tea ค่ะ รายชื่อเต็มดูได้จากตัวเลือกในหน้านี้นะคะ",
+      },
+    },
   },
   "muro-3ml": {
     whoIsThisFor: {
@@ -1296,6 +1657,20 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro มีให้เลือก 14 กลิ่น",
+    faqs: {
+      "muro-3ml-what": {
+        question: "Muro 3ML เป็นเครื่องหรือหัวพอต",
+        answer: "เป็นหัวพอตค่ะ Muro 3ML บรรจุน้ำยาสำเร็จหัวละ 3mL และแยกกลิ่นกันหัวละกลิ่น ส่วนตัวเครื่องเป็นคนละสินค้ากันค่ะ",
+      },
+      "muro-3ml-flavors": {
+        question: "Muro 3ML มีกลิ่นอะไรบ้าง",
+        answer: "มี 14 กลิ่นค่ะ สายเย็นมี Smooth Mint สายองุ่นมี Grape กับ Muro Grape สายผลไม้อย่าง Watermelon · Very Strawberry และ Mix Berries ส่วนแนวอื่นอย่าง Cola กับ Mineral Water รายชื่อเต็มอยู่ในตัวเลือกของหน้านี้ค่ะ",
+      },
+      "muro-3ml-grape": {
+        question: "Muro Grape กับ Grape เป็นกลิ่นเดียวกันไหม",
+        answer: "เป็นคนละตัวเลือกกันค่ะ ทั้งสองอยู่ในสายองุ่นและมีกล่องแยกกัน ก่อนกดเลือกดูชื่อบนกล่องให้ตรงกับที่ต้องการนะคะ",
+      },
+    },
   },
   "muro-sc-8000": {
     whoIsThisFor: {
@@ -1317,5 +1692,23 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "หัวพอตบรรจุสำเร็จ รองรับสูงสุด 20,000 พัฟ",
     shortDescription: "หัวพอตบรรจุสำเร็จจาก Muro ซีรีส์ “Connector” รองรับสูงสุด 20,000 พัฟ ใช้กับเครื่อง Muro Creator และร้านยืนยันจากของจริงแล้วว่าใส่กับ RELX Creator ได้",
+    faqs: {
+      "muro-connector-20k-device": {
+        question: "Muro Connector 20K ใช้กับเครื่องอะไร",
+        answer: "หัวนี้ทำมาสำหรับเครื่อง Muro Creator ค่ะ และร้านยืนยันจากของจริงแล้วว่าใส่กับ RELX Creator ได้ด้วยค่ะ",
+      },
+      "muro-connector-20k-puffs": {
+        question: "Muro Connector 20K สูบได้กี่พัฟ",
+        answer: "รองรับสูงสุด 20,000 พัฟค่ะ พัฟที่ได้จริงจะต่างกันไปตามการสูบของแต่ละคนค่ะ",
+      },
+      "muro-connector-20k-coil": {
+        question: "Muro Connector 20K ใช้คอยล์แบบไหน",
+        answer: "หัวนี้ใช้คอยล์ Dual Mesh ค่ะ และเป็นแบบบรรจุสำเร็จ พอน้ำยาหมดก็เปลี่ยนเป็นหัวใหม่ได้เลยค่ะ",
+      },
+      "muro-connector-20k-flavors": {
+        question: "Muro Connector 20K มีกี่กลิ่น",
+        answer: "Muro Connector 20K มี 33 กลิ่นค่ะ ถ้าชอบสายเย็น ลองเริ่มดูจาก Double Mint · Cool Mint · Spear Mint และ Blue Ice ได้ค่ะ",
+      },
+    },
   },
 };

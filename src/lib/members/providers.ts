@@ -89,9 +89,11 @@ export interface PendingSignIn {
   nonce: string;
   verifier: string;
   returnTo: string;
+  /** "owner" = the sign-in of /staff/owner (src/lib/owner/auth.ts): no member row, compared with the owner's address. */
+  purpose: "member" | "owner";
 }
 
-export function beginSignIn(provider: MemberProvider, returnTo: string): { url: string; pending: PendingSignIn } | null {
+export function beginSignIn(provider: MemberProvider, returnTo: string, purpose: PendingSignIn["purpose"] = "member"): { url: string; pending: PendingSignIn } | null {
   const config = providerConfig(provider);
   if (!config) return null;
   const pending: PendingSignIn = {
@@ -100,13 +102,15 @@ export function beginSignIn(provider: MemberProvider, returnTo: string): { url: 
     nonce: crypto.randomBytes(16).toString("base64url"),
     verifier: crypto.randomBytes(32).toString("base64url"),
     returnTo,
+    purpose,
   };
   const challenge = crypto.createHash("sha256").update(pending.verifier).digest("base64url");
   const params = new URLSearchParams({
     response_type: "code",
     client_id: config.clientId,
     redirect_uri: callbackUrl(provider),
-    scope: "openid profile",
+    // Members: `openid profile` and no email (BSOT §11). Only the owner's own sign-in asks for the address it must match.
+    scope: purpose === "owner" ? "openid email" : "openid profile",
     state: pending.state,
     nonce: pending.nonce,
     code_challenge: challenge,

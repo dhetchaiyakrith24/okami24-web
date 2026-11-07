@@ -69,7 +69,7 @@ export function productsHeadTh(count: number, orderingOn = false) {
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
     // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
     // top, not a seller's phrase) — "พอต" already covers it.
-    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
+    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคารุ่นที่ขายอยู่ ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
   };
 }
 
@@ -87,7 +87,7 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
   relx: (_priceOf, orderingOn = false) => ({
     title: `RELX ของแท้ พอตใช้แล้วทิ้ง หัวพอต ตัวเครื่อง${OKM_TITLE_SUFFIX}`,
-    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
@@ -98,11 +98,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   }),
   voopoo: (_priceOf, orderingOn = false) => ({
     title: `VOOPOO ของแท้ พอตซิสเต็ม หัวพอต และคอยล์${OKM_TITLE_SUFFIX}`,
-    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   uwell: (_priceOf, orderingOn = false) => ({
     title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
   // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the
@@ -361,6 +361,14 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
+  // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
+  "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ปรับลมและเลือกโหมดการใช้งานได้ ชาร์จผ่าน USB-C มี 16 กลิ่นให้ดูในหน้านี้",
+  "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",
+  "drag-x2": "VOOPOO DRAG X2 เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP X และมีหัวพอต 5mL",
+  // Round popular models 07/11: numbers = verified spec rows from relxnow.com.
+  "relx-ultra-pod": "RELX Ultra Pod หัวพอตบรรจุสำเร็จ 2mL คอยล์ mesh 10 วัตต์ รองรับสูงสุด 5,000 พัฟ มี 4 กลิ่น ใช้ได้กับเครื่อง RELX Ultra · Artisan · Infinity และ Essential",
+  "relx-ultra-kit": "RELX Ultra Kit ตัวเครื่องอะลูมิเนียมอัลลอยสี Steel Silver 10 วัตต์ แบต 380mAh ชาร์จผ่าน USB-C 30 นาทีได้ 80% พร้อมหัวพอต Ultra 1 ชิ้น",
+  "relx-artisan-plus": "RELX Artisan Plus เครื่องระบบสวิตช์สี Black Wave 8 วัตต์ แบต 440mAh ไฟบอกแบต 4 ระดับ ชาร์จผ่าน USB-C ใช้ได้กับหัวพอต RELX Pod และ RELX Pod Pro",
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",

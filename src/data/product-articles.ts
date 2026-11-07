@@ -26,6 +26,90 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
+  // Round SEO full 07/11: FAQ only, the page has no article yet.
+  "super-cool-saltnic": {
+    th: {
+      sections: [],
+      faq: [
+        { question: "Super Cool เป็นน้ำยา salt nic ไหม", answer: "ใช่ค่ะ Super Cool Salt Nic เป็นน้ำยาที่ใช้นิโคตินแบบ salt nic ความต่างจาก freebase อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase) ค่ะ" },
+        { question: "Super Cool มีกลิ่นอะไรบ้าง", answer: "Super Cool Salt Nic มี 10 กลิ่น คือ Grape Blast · Shine Muscat · Yacool · Laimoon · Blueraz Berry · Pinky Blush · King Melon · Strawberry Frost · White Polo และ Black Hexx ค่ะ" },
+        { question: "น้ำยา Super Cool ใช้กับเครื่องแบบไหน", answer: "น้ำยา Super Cool เหมาะกับพอตซิสเต็มตัวเล็กที่เติมน้ำยาเองและใช้วัตต์ต่ำค่ะ เพราะผู้ผลิตพอตหลายรายแนะนำ salt nic ไว้สำหรับเครื่องแบบนี้ ถ้าอยากให้ช่วยดูเครื่องที่ใช้อยู่ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+      ],
+    },
+    en: {
+      sections: [],
+      faq: [
+        { question: "Is Super Cool a salt nic e-liquid?", answer: "Yes. Super Cool Salt Nic is an e-liquid with nicotine in salt nic form." },
+        { question: "What flavours does Super Cool come in?", answer: "Ten: Grape Blast, Shine Muscat, Yacool, Laimoon, Blueraz Berry, Pinky Blush, King Melon, Strawberry Frost, White Polo and Black Hexx." },
+        { question: "What kind of device suits Super Cool e-liquid?", answer: "A small, low-wattage Pod System you fill yourself, the kind several pod makers recommend salt nic for. If you'd like us to check your device, message us on LINE @okm24." },
+      ],
+    },
+    zh: {
+      sections: [],
+      faq: [
+        { question: "Super Cool 是 salt nic 烟油吗？", answer: "是的，Super Cool Salt Nic 是尼古丁类型为 salt nic 的烟油。" },
+        { question: "Super Cool 有哪些口味？", answer: "共 10 种口味：Grape Blast、Shine Muscat、Yacool、Laimoon、Blueraz Berry、Pinky Blush、King Melon、Strawberry Frost、White Polo 和 Black Hexx。" },
+        { question: "Super Cool 烟油适合什么设备？", answer: "适合自行注油的低功率小型 Pod System，多家烟弹设备厂商都建议这类设备使用 salt nic。想确认手上的设备是否合适，欢迎通过 LINE @okm24 咨询。" },
+      ],
+    },
+  },
+  // Round SEO full 07/11: FAQ only, the page has no article yet.
+  "mq-bar-22k": {
+    th: {
+      sections: [],
+      faq: [
+        { question: "MQ Bar 22K คือพอตแบบไหน", answer: "MQ Bar 22K เป็นพอตใช้แล้วทิ้งค่ะ ชื่อรุ่นระบุ 22K และถ้าเห็นคนเรียก MQ Bar 22000 ก็หมายถึงรุ่นนี้เช่นกันค่ะ" },
+        { question: "MQ Bar 22K มีกลิ่นอะไรบ้าง", answer: "รุ่นนี้มี 11 กลิ่นให้เลือกค่ะ สายเย็นมี Blue Ice กับ Double Mint สายองุ่นมี Kyoho Grape กับ Grape Lychee สายผลไม้อย่าง Watermelon · Strawberry และ Mixberry ส่วนแนวอื่นมี Cola กับ Rainbow Candy ค่ะ" },
+      ],
+    },
+    en: {
+      sections: [],
+      faq: [
+        { question: "What is the MQ Bar 22K?", answer: "It's a disposable in the MQ Bar name, with 22K in the model name. If you see it called the MQ Bar 22000, that means this one too." },
+        { question: "What flavours does the MQ Bar 22K come in?", answer: "There are 11 to choose from. Blue Ice and Double Mint are the cooler ones, Kyoho Grape and Grape Lychee are the grapes, and the fruit side includes Watermelon, Strawberry and Mixberry. Cola and Rainbow Candy round out the list." },
+      ],
+    },
+    zh: {
+      sections: [],
+      faq: [
+        { question: "MQ Bar 22K 是什么样的产品？", answer: "这是一款一次性电子烟，型号名称标有 22K。如果看到有人叫它 MQ Bar 22000，指的也是这一款。" },
+        { question: "MQ Bar 22K 有哪些口味？", answer: "共有 11 种可选。清凉款有 Blue Ice、Double Mint，葡萄味有 Kyoho Grape、Grape Lychee，水果味有 Watermelon、Strawberry、Mixberry 等，另外还有 Cola 和 Rainbow Candy。" },
+      ],
+    },
+  },
+  // Round SEO full 07/11: FAQ only, the page has no article yet.
+  "iqosheet-15": {
+    th: {
+      sections: [],
+      faq: [
+        { question: "TEREA ใช้กับเครื่องอะไรได้บ้าง", answer: "TEREA ใช้กับเครื่องจ่ายความร้อนตระกูล IQOS ILUMA ค่ะ IQOS ระบุว่าออกแบบมาสำหรับเครื่องตระกูลนี้โดยเฉพาะ ส่วน LAMBDA i8 เป็นเครื่องคนละแบรนด์ ซึ่ง LAMBDA ระบุว่าใช้กับ TEREA ได้เช่นกันค่ะ" },
+        { question: "TEREA มีกลิ่นอะไรบ้าง", answer: "23 กลิ่นบนหน้านี้แบ่งได้เป็นสี่สายตามที่ IQOS จัดไว้ คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูลค่ะ ถ้าอยากรู้ว่าแต่ละสายต่างกันยังไง อ่านต่อได้ที่ [TEREA กลิ่นไหนดี](/guides/choosing-a-terea-flavor) นะคะ" },
+        { question: "TEREA 1 ซองมีกี่มวน", answer: "1 ซองมี 20 มวนค่ะ ตัวเลือกในหน้านี้แยกตามกลิ่น และขายเป็นซองค่ะ" },
+        { question: "TEREA ใช้กับเครื่อง IQOS 3 DUO ได้ไหม", answer: "ไม่ได้ค่ะ IQOS ระบุว่า TEREA ใช้กับตระกูล ILUMA เท่านั้น เพราะระบบ SMARTCORE อุ่นยาสูบจากด้านในมวน ก่อนซื้อ ลองเช็คชื่อรุ่นเครื่องที่มีอยู่อีกครั้งนะคะ" },
+        { question: "TEREA Japan เหมือนกับ TEREA หน้านี้ไหม", answer: "อาจต่างกันบ้างค่ะ เพราะชื่อกลิ่นและไลน์อัพของ TEREA ต่างกันไปตามประเทศ ถ้ามองหากลิ่นไหนอยู่ ให้เช็คจากชื่อกลิ่นในตัวเลือกของหน้านี้ได้เลยนะคะ" },
+      ],
+    },
+    en: {
+      sections: [],
+      faq: [
+        { question: "Which devices work with TEREA?", answer: "TEREA sticks are for IQOS ILUMA heated tobacco devices, and IQOS says it designed them for that line alone. The LAMBDA i8 comes from a different brand, and LAMBDA says it takes TEREA as well." },
+        { question: "What flavours does TEREA come in?", answer: "The 23 flavours on this page fall into the four groups IQOS uses: classic tobacco, menthol, clove and capsule. You can see each one in the options on this page." },
+        { question: "How many sticks are in a pack of TEREA?", answer: "Each pack holds 20 sticks. The options on this page are sorted by flavour and sold by the pack." },
+        { question: "Does TEREA work with the IQOS 3 DUO?", answer: "No. IQOS says TEREA is for the ILUMA family only, because ILUMA's SMARTCORE system heats the tobacco from inside the stick. Check your device's model name before you buy." },
+        { question: "Is TEREA Japan the same as the TEREA on this page?", answer: "Not always, because TEREA's flavour names and line-up change from country to country. If you have a flavour in mind, look for its name in the options on this page." },
+      ],
+    },
+    zh: {
+      sections: [],
+      faq: [
+        { question: "TEREA 可以搭配哪些设备？", answer: "TEREA 烟支用于 IQOS ILUMA 系列加热烟草设备，IQOS 表示它专为该系列设计。LAMBDA i8 是另一品牌的设备，LAMBDA 表示也可使用 TEREA。" },
+        { question: "TEREA 有哪些口味？", answer: "本页的 23 种口味可按 IQOS 的分类归为四组：经典烟草、薄荷、丁香和爆珠。每种口味都可以在本页选项中查看。" },
+        { question: "一盒 TEREA 有多少支？", answer: "每盒 20 支。本页选项按口味区分，以盒为单位销售。" },
+        { question: "TEREA 能用于 IQOS 3 DUO 吗？", answer: "不能。IQOS 表示 TEREA 仅适用于 ILUMA 系列，因为 SMARTCORE 系统是从烟支内部加热烟草。购买前请再核对设备型号。" },
+        { question: "日本版 TEREA 和本页的 TEREA 一样吗？", answer: "不一定。TEREA 的口味名称和产品阵容因国家而异。如果您有想要的口味，请在本页选项中查找对应名称。" },
+      ],
+    },
+  },
   // Round SEO full 07/11: FAQ only, the page has no article yet. เลโก้ once, as the name people type (SEO_LANDSCAPE 0.4).
   "relx-creator-pod-20k": {
     th: {
@@ -490,6 +574,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "เครื่อง INFY ใช้หัว INFY รุ่นไหนได้", answer: "ใช้หัว INFY ขนาด 2.5mL ได้ค่ะ ร้านลงไว้ในชื่อ [หัวพอต INFY PLUS](/products/pod-169) และ INFY ยังระบุว่าหัวขนาดเล็กกว่าของแบรนด์ก็ใส่เครื่องนี้ได้เช่นกันค่ะ" },
+        { question: "INFY POD เป็นพอตเปลี่ยนหัวใช่ไหม", answer: "ใช่ค่ะ INFY POD เป็นพอตเปลี่ยนหัว หรือที่เว็บเราเรียกว่าเครื่องระบบสวิตช์ มีแบต 400mAh ชาร์จผ่าน USB-C พอน้ำยาในหัวหมดก็เปลี่ยนเฉพาะหัว แล้วใช้เครื่องเดิมต่อได้ค่ะ" },
+        { question: "INFY POD มีหัวพอตมาในกล่องไหม", answer: "ไม่มีค่ะ ในกล่องมีตัวเครื่อง สาย USB-C และคู่มือ ส่วนหัวพอตเลือกกลิ่นที่ชอบแยกต่างหากได้เลยค่ะ" },
+        { question: "เครื่อง INFY ไฟสีแดงกะพริบแปลว่าอะไร", answer: "แปลว่าแบตเหลือน้อยแล้วค่ะ เสียบชาร์จผ่าน USB-C ได้เลย ส่วนไฟสีขาวแปลว่าแบตยังเหลือมากค่ะ" },
+      ],
     },
     en: {
       lede: "Below, from INFY's own site: what the lights mean, how to fit a pod, which pods it takes, and how to check it is genuine.",
@@ -520,6 +610,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "Which INFY pods does the INFY device take?", answer: "It takes the 2.5mL INFY pod, which we list as the [INFY PLUS pod](/products/pod-169). INFY says its smaller pod fits this device too." },
+        { question: "Is the INFY POD a device with replaceable pods?", answer: "Yes. The INFY POD is a reusable device with a 400mAh battery and USB-C charging. When a pod runs out, you change only the pod and keep the same device." },
+        { question: "Does the INFY POD come with a pod in the box?", answer: "No. The box holds the device, a USB-C cable and a manual, and you choose your pod flavour separately." },
+        { question: "What does a flashing red light on the INFY device mean?", answer: "It means the battery is low, so it's time to charge over USB-C. A white light means there's still plenty left." },
+      ],
     },
     zh: {
       lede: "以下内容整理自 INFY 官网：机身灯光代表什么、怎么装烟弹、适用哪些烟弹，以及如何验证正品。",
@@ -549,6 +645,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
           ],
         },
+      ],
+      faq: [
+        { question: "INFY 主机能用哪款 INFY 烟弹？", answer: "可以使用 2.5mL 的 INFY 烟弹，本店以 [INFY PLUS 烟弹](/products/pod-169) 的名称上架。INFY 还表示，品牌容量较小的烟弹同样可以装在这台主机上。" },
+        { question: "INFY POD 是换弹式主机吗？", answer: "是的。INFY POD 是可重复使用的换弹式主机，电池 400mAh，USB-C 充电。烟弹用完后只需更换烟弹，主机可以继续使用。" },
+        { question: "INFY POD 盒内有烟弹吗？", answer: "没有。盒内是主机、USB-C 线和说明书，烟弹可以按喜欢的口味另外选购。" },
+        { question: "INFY 主机红灯闪烁是什么意思？", answer: "表示电量较低，可以用 USB-C 充电了。白灯则表示电量还很充足。" },
       ],
     },
   },
@@ -582,6 +684,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "หัวพอต INFY ใส่กับเครื่องไหนได้บ้าง", answer: "หัว INFY Plus ใส่ได้ทั้ง INFY Device และ INFY Cube Box ค่ะ ถ้ากำลังมองหาตัวเครื่องอยู่ ดูได้ที่หน้า [INFY POD](/products/infy-pod) นะคะ" },
+        { question: "หัวพอต INFY มีกลิ่นอะไรบ้าง", answer: "หัว INFY Plus มีให้ดู 28 กลิ่นค่ะ สายองุ่นอย่าง Kyoho Grape กับ Grape Jelly สายเย็นอย่าง Mint กับ Lychee Ice และแนวอื่นอย่าง Coke · Sprite กับ Jasmine Tea รายชื่อเต็มอยู่ในตัวเลือกของหน้านี้ค่ะ" },
+        { question: "INFY Plus ต่างจากหัว INFY ธรรมดายังไง", answer: "ต่างกันที่ปริมาณน้ำยาค่ะ หัว INFY Plus จุได้ 2.5mL มากกว่าหัวขนาดเล็กของแบรนด์ หัวหนึ่งจึงสูบได้นานขึ้นก่อนต้องเปลี่ยนใหม่ค่ะ" },
+        { question: "หัวพอต INFY เติมน้ำยาเองได้ไหม", answer: "ไม่ได้ค่ะ หัว INFY Plus ออกแบบมาเป็นระบบปิด น้ำยา 2.5mL กับคอยล์อยู่ในหัวเดียวกัน ใช้จนน้ำยาหมดแล้วจึงเปลี่ยนหัวใหม่ และใช้ตัวเครื่องเดิมต่อได้ค่ะ" },
+        { question: "หัวพอต INFY ของแท้ เช็คยังไง", answer: "ดูที่สติกเกอร์ซีเรียลบนกล่องค่ะ ขูดชั้นเคลือบออกแล้วสแกน QR code ด้วยกล้องมือถือ จากนั้นนำรหัสที่ได้ไปกรอกในเว็บของ INFY เพื่อตรวจสอบนะคะ" },
+      ],
     },
     en: {
       lede: "Below, from INFY's own site: how the INFY Plus differs from the 2 mL pod, which devices it fits, how to use it, and how to check it is genuine.",
@@ -605,6 +714,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "Which devices does the INFY pod fit?", answer: "The INFY Plus fits both the INFY Device and the INFY Cube Box. If you're looking for a device, see the [INFY POD](/products/infy-pod)." },
+        { question: "What flavours do INFY pods come in?", answer: "The INFY Plus comes in 28 flavours. Grape fans can look at Kyoho Grape or Grape Jelly, Mint and Lychee Ice are the cooler picks, and Coke, Sprite and Jasmine Tea are among the others. The full list is in the options on this page." },
+        { question: "How is the INFY Plus different from a standard INFY pod?", answer: "The main difference is how much it holds. At 2.5mL, the INFY Plus carries more e-liquid than INFY's smaller pod, so each one lasts longer before you need a new one." },
+        { question: "Can you refill an INFY pod yourself?", answer: "No. The INFY Plus is a closed pod, with its 2.5mL of e-liquid and its coil in one unit. Use it until the e-liquid runs out, then fit a new pod and keep using the same device." },
+        { question: "How do I check an INFY pod is genuine?", answer: "Start with the serial sticker on the box. Scratch off the coating, scan the QR code with your phone camera, then enter the code you get on INFY's website." },
+      ],
     },
     zh: {
       lede: "以下内容整理自 INFY 官网：INFY Plus 与 2 mL 烟弹的区别、适用设备和使用方法，以及如何验证正品。",
@@ -627,6 +743,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "INFY 表示每件 INFY 产品都附有防伪码：在包装上找到序列号贴纸，刮开涂层露出二维码，用手机相机扫描，再到 INFY 官网输入刮开后显示的编码进行验证。",
           ],
         },
+      ],
+      faq: [
+        { question: "INFY 烟弹适用于哪些设备？", answer: "INFY Plus 可用于 INFY Device 和 INFY Cube Box。如果您正在挑选主机，可以看看 [INFY POD](/products/infy-pod)。" },
+        { question: "INFY 烟弹有哪些口味？", answer: "INFY Plus 共有 28 种口味。葡萄味有 Kyoho Grape、Grape Jelly，清凉款有 Mint、Lychee Ice，另外还有 Coke、Sprite、Jasmine Tea 等。完整列表见本页选项。" },
+        { question: "INFY Plus 和普通 INFY 烟弹有什么不同？", answer: "主要区别在于烟油量。INFY Plus 容量 2.5mL，比品牌容量较小的烟弹装得更多，每颗可以用得更久再换。" },
+        { question: "INFY 烟弹可以自己加烟油吗？", answer: "不可以。INFY Plus 采用封闭式设计，2.5mL 烟油和线圈都在同一颗烟弹内。烟油用完后换新烟弹，主机可以继续使用。" },
+        { question: "怎么验证 INFY 烟弹是不是正品？", answer: "先看包装上的序列号贴纸。刮开涂层后用手机相机扫描二维码，再把得到的编码输入 INFY 官网核对。" },
       ],
     },
   },
@@ -2433,6 +2556,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "Vmate Pro 2 ใช้หัวพอตรุ่นไหน", answer: "ใช้หัวพอต VMATE Top Fill จุ 3mL ค่ะ ในกล่องมีหัว 0.4 โอห์มกับ 0.7 โอห์มมาให้ และหัวสำรองดูได้ที่หน้า [หัวพอต VMATE](/products/coil-72) ค่ะ" },
+        { question: "Vmate Pro 2 แบตเท่าไร ชาร์จแบบไหน", answer: "Vmate Pro 2 มีแบต 1500mAh ในตัวค่ะ ชาร์จผ่าน USB-C ที่ 5V/2A ค่ะ" },
+        { question: "Vmate Pro 2 ปรับวัตต์ได้เท่าไร", answer: "ปรับได้ 5–30 วัตต์ค่ะ และมีโหมด ECO กับ POWER ที่กดปุ่มเดียวก็สลับกันได้ค่ะ" },
+        { question: "Vmate Pro 2 มีสีอะไรบ้าง", answer: "Vmate Pro 2 มี 7 สี คือ Gilt Black · Space Grey · Navy Blue · Neon · Glacier Silver · Fresh Green และ Lavender ค่ะ" },
+        { question: "Vmate Pro 2 ในกล่องมีอะไรบ้าง", answer: "ในกล่องมีตัวเครื่อง หัวพอต Top Fill 0.4 โอห์มกับ 0.7 โอห์ม สาย USB-C สายคล้องคอ คู่มือ และใบแนะนำหัวพอตที่ใช้ร่วมกันได้ค่ะ" },
+      ],
     },
     en: {
       lede: "Below, based on VOOPOO's own information: how the two included pods differ, what ECO mode does, what the screen shows and how the airflow adjusts, and how long a charge takes.",
@@ -2464,6 +2594,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "Which pods does the Vmate Pro 2 use?", answer: "VMATE Top Fill pods, which hold 3mL. A 0.4Ω and a 0.7Ω pod come in the box, and spares are on the [VMATE pods](/products/coil-72) page." },
+        { question: "How big is the Vmate Pro 2's battery, and how does it charge?", answer: "It has a 1500mAh built-in battery and charges over USB-C at 5V/2A." },
+        { question: "What wattage does the Vmate Pro 2 run at?", answer: "5–30W, with ECO and POWER modes you switch between with a single button press." },
+        { question: "What colours does the Vmate Pro 2 come in?", answer: "Seven: Gilt Black, Space Grey, Navy Blue, Neon, Glacier Silver, Fresh Green and Lavender." },
+        { question: "What's in the Vmate Pro 2 box?", answer: "The device, Top Fill pods in 0.4Ω and 0.7Ω, a USB-C cable, a lanyard, the manual and a card listing compatible pods." },
+      ],
     },
     zh: {
       lede: "下面根据 VOOPOO 的资料，介绍随附两颗烟弹的区别、ECO 模式的作用、屏幕显示什么与气流如何调节，以及充电需要多久。",
@@ -2494,6 +2631,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "VOOPOO 表示，充满电约需 40 分钟。电池保养方法见[电池保养与充电](/guides/battery-care-and-charging)。",
           ],
         },
+      ],
+      faq: [
+        { question: "Vmate Pro 2 用什么烟弹？", answer: "使用容量 3mL 的 VMATE Top Fill 烟弹。盒内附 0.4Ω 和 0.7Ω 两颗，备用烟弹请看 [VMATE 烟弹](/products/coil-72) 页面。" },
+        { question: "Vmate Pro 2 电池多大？怎么充电？", answer: "内置 1500mAh 电池，通过 USB-C 以 5V/2A 充电。" },
+        { question: "Vmate Pro 2 功率能调多少？", answer: "功率 5–30W，另有 ECO 和 POWER 两种模式，按一下按键即可切换。" },
+        { question: "Vmate Pro 2 有哪些颜色？", answer: "共 7 种颜色：Gilt Black、Space Grey、Navy Blue、Neon、Glacier Silver、Fresh Green 和 Lavender。" },
+        { question: "Vmate Pro 2 盒内有什么？", answer: "主机、0.4Ω 和 0.7Ω 的 Top Fill 烟弹各一颗、USB-C 线、挂绳、说明书，以及一张烟弹兼容指南。" },
       ],
     },
   },
@@ -4845,6 +4989,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "KS Quik Pro กับ Quikpro คือรุ่นเดียวกันไหม", answer: "เป็นรุ่นเดียวกันค่ะ Kardinal เจ้าของแบรนด์ KS เขียนชื่อรุ่นติดกันว่า Quikpro ส่วน KS Quik Pro เป็นคำที่หลายคนพิมพ์แยกกันเวลาค้นหาค่ะ" },
+        { question: "ชุด KS Quikpro 15K ได้หัวพอตกี่หัว", answer: "ได้หัวพอต 1 หัวคู่กับตัวเครื่องค่ะ เลือกกลิ่นของหัวได้จาก Watermelon · Grape · Cola Lemon และ Extra Menthol ส่วนหัวสำหรับเปลี่ยนดูได้ที่หน้า [หัวพอต Quikpro](/products/pod-150) ค่ะ" },
+        { question: "KS Quikpro หัวหนึ่งสูบได้กี่พัฟ", answer: "หัวหนึ่งจุน้ำยา 15ml และ Kardinal ระบุว่าสูบได้สูงสุด 15,000 พัฟค่ะ ตัวเลขจริงแล้วแต่วิธีสูบของแต่ละคนนะคะ" },
+        { question: "KS Quikpro ต้องชาร์จไหม", answer: "ต้องชาร์จค่ะ แบต 600mAh อยู่ในตัวเครื่อง เสียบสาย USB-C ราว 30 นาทีก็เต็มค่ะ" },
+        { question: "KS Quikpro มีสีอะไรบ้าง", answer: "Kardinal ทำตัวเครื่องไว้ 4 สีค่ะ คือ Black · Blue · Grey และ Red ส่วนตัวเลือกบนหน้านี้เป็นกลิ่นของหัวพอต ถ้าอยากเช็คสีก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+      ],
     },
     en: {
       lede: "Below is a summary from Kardinal's own site: what's in the box, what the ceraKoil coil is, whether the pods can be refilled, whether other pods fit, and how long a charge takes.",
@@ -4882,6 +5033,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ],
         },
       ],
+      faq: [
+        { question: "Are the KS Quik Pro and the KS Quikpro the same model?", answer: "Yes. Kardinal, the maker of KS, writes the name as one word, Quikpro, and many people simply type it as two words when they search." },
+        { question: "How many pods come with the KS Quikpro 15K kit?", answer: "One. The kit is the device with one pod, and you choose its flavour: Watermelon, Grape, Cola Lemon or Extra Menthol. Replacement pods are on the [Quikpro pod](/products/pod-150) page." },
+        { question: "How many puffs do you get from one KS Quikpro pod?", answer: "Kardinal rates each pod at up to 15,000 puffs from its 15ml of e-liquid. What you actually get depends on how you vape." },
+        { question: "Does the KS Quikpro need charging?", answer: "Yes. The 600mAh battery is in the device, and a full charge over USB-C takes about 30 minutes." },
+        { question: "What colours does the KS Quikpro come in?", answer: "Kardinal makes the device in four colours: Black, Blue, Grey and Red. The options on this page are pod flavours, so to check a colour before you order, message us on LINE @okm24." },
+      ],
     },
     zh: {
       lede: "以下是本店根据 Kardinal 官网整理的内容：包装里有什么、ceraKoil 线圈是什么、烟弹能否补油、能否换用其他烟弹，以及充电需要多久。",
@@ -4918,6 +5076,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "充电习惯与电池保养方法，详见[电池保养与充电基础](/guides/battery-care-and-charging)。",
           ],
         },
+      ],
+      faq: [
+        { question: "KS Quik Pro 和 KS Quikpro 是同一款吗？", answer: "是同一款。KS 的厂商 Kardinal 把型号写成一个词 Quikpro，很多人搜索时习惯分开写成 Quik Pro。" },
+        { question: "KS Quikpro 15K 套装含几颗烟弹？", answer: "一颗。套装是主机加一颗烟弹，口味可选 Watermelon、Grape、Cola Lemon 或 Extra Menthol。替换烟弹请看 [Quikpro 烟弹](/products/pod-150) 页面。" },
+        { question: "KS Quikpro 一颗烟弹能抽多少口？", answer: "Kardinal 标注每颗烟弹最多 15,000 口，烟油容量 15ml。实际口数因个人抽吸习惯而异。" },
+        { question: "KS Quikpro 需要充电吗？", answer: "需要。600mAh 电池在主机内，通过 USB-C 充电，约 30 分钟充满。" },
+        { question: "KS Quikpro 有哪些颜色？", answer: "Kardinal 的主机有 Black、Blue、Grey 和 Red 四种颜色。本页的选项是烟弹口味，下单前想确认颜色，欢迎通过 LINE @okm24 咨询。" },
       ],
     },
   },
