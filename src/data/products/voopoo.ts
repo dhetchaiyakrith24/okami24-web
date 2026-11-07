@@ -51,7 +51,7 @@ export const voopooProducts: Product[] = [
         role: "card",
         // 05/10 (owner: "รูปการ์ดเล็กไป"): card-v2 = the same VOOPOO Orange photo at 2533 px, cut out and tilted 12° on the
         // 1000x1250 card canvas like every VOOPOO card (_incoming/sitewide-template/2/2fimg/g4card/).
-        src: "/assets/products/argus-g4/card-v3-wm3.webp",
+        src: "/assets/products/argus-g4/card-v3-wm5.webp",
         alt: "VOOPOO ARGUS G4, Orange colourway, studio photo",
         angle: "Front, upright studio re-shoot 16/10 (round img-1610) - OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7-8) of VOOPOO's Orange gallery photo; source, prompt and check in scripts/process-images.map.json aiRender. Before: Front, tilted 12°. Re-processed 2026-09-06 (LAUNCH_AUDIT 11): same official shop.voopoo.com gallery fetched at its native 2533×2533 — the standalone device cropped off the box shot is now ≈1441px on the 1000px canvas (was 519px, blurry on the home page). Earlier history: QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
         transparentBackground: true,
@@ -113,12 +113,12 @@ export const voopooProducts: Product[] = [
     storyStartRight: true,
     storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 beside the ARGUS G4 mini", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 2133, height: 1194 },
     lineupImage: {
-      src: "/assets/products/argus-g4/lineup-v5-wm3.webp",
+      src: "/assets/products/argus-g4/lineup-v5-wm5.webp",
       alt: "VOOPOO ARGUS G4, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g4/lineup2-v5-wm3.webp",
+      src: "/assets/products/argus-g4/lineup2-v5-wm5.webp",
       alt: "VOOPOO ARGUS G4, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -127,43 +127,43 @@ export const voopooProducts: Product[] = [
         id: "orange",
         name: "Orange",
         swatchHex: "#d4692a",
-        image: { src: "/assets/products/argus-g4/variant-orange-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Orange" },
+        image: { src: "/assets/products/argus-g4/variant-orange-v2-wm5.webp", alt: "VOOPOO ARGUS G4, Orange" },
       },
       {
         id: "black",
         name: "Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/argus-g4/variant-black-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Black" },
+        image: { src: "/assets/products/argus-g4/variant-black-v2-wm5.webp", alt: "VOOPOO ARGUS G4, Black" },
       },
       {
         id: "purple",
         name: "Purple",
         swatchHex: "#6b4a8e",
-        image: { src: "/assets/products/argus-g4/variant-purple-v3-wm3.webp", alt: "VOOPOO ARGUS G4, Purple" },
+        image: { src: "/assets/products/argus-g4/variant-purple-v3-wm5.webp", alt: "VOOPOO ARGUS G4, Purple" },
       },
       {
         id: "silver",
         name: "Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/argus-g4/variant-silver-v4-wm3.webp", alt: "VOOPOO ARGUS G4, Silver" },
+        image: { src: "/assets/products/argus-g4/variant-silver-v4-wm5.webp", alt: "VOOPOO ARGUS G4, Silver" },
       },
       {
         id: "blue",
         name: "Blue",
         swatchHex: "#2a6fbd",
-        image: { src: "/assets/products/argus-g4/variant-blue-v3-wm3.webp", alt: "VOOPOO ARGUS G4, Blue" },
+        image: { src: "/assets/products/argus-g4/variant-blue-v3-wm5.webp", alt: "VOOPOO ARGUS G4, Blue" },
       },
       {
         id: "gray",
         name: "Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/argus-g4/variant-gray-v4-wm3.webp", alt: "VOOPOO ARGUS G4, Gray" },
+        image: { src: "/assets/products/argus-g4/variant-gray-v4-wm5.webp", alt: "VOOPOO ARGUS G4, Gray" },
       },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/argus-g4/variant-brown-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Brown" },
+        image: { src: "/assets/products/argus-g4/variant-brown-v2-wm5.webp", alt: "VOOPOO ARGUS G4, Brown" },
       },
       {
         // Added 2026-09-06 — VOOPOO's own shop now lists an 8th colourway, Green (variant option +
@@ -174,7 +174,7 @@ export const voopooProducts: Product[] = [
         id: "green",
         name: "Green",
         swatchHex: "#5caba5",
-        image: { src: "/assets/products/argus-g4/variant-green-v2-wm3.webp", alt: "VOOPOO ARGUS G4, Green" },
+        image: { src: "/assets/products/argus-g4/variant-green-v2-wm5.webp", alt: "VOOPOO ARGUS G4, Green" },
       },
     ],
     specifications: [
@@ -294,7 +294,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g4-mini/card-v3-wm3.webp",
+        src: "/assets/products/argus-g4-mini/card-v3-wm5.webp",
         alt: "VOOPOO ARGUS G4 mini, Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of VOOPOO's own Black photo",
         transparentBackground: true,
@@ -327,24 +327,24 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 mini beside the ARGUS G4", sourceName: "VOOPOO", sourceUrl: G4M_PAGE, width: 2133, height: 1194 },
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Black", ownFloor: true } },
-      { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Green", ownFloor: true } },
-      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Orange", ownFloor: true } },
-      { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Purple", ownFloor: true } },
-      { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Silver", ownFloor: true } },
-      { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish", ownFloor: true } },
-      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Cyan", ownFloor: true } },
-      { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v3-wm3.webp", alt: "VOOPOO ARGUS G4 mini, Blue", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Black", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Green", ownFloor: true } },
+      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Orange", ownFloor: true } },
+      { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Purple", ownFloor: true } },
+      { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Silver", ownFloor: true } },
+      { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish", ownFloor: true } },
+      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Cyan", ownFloor: true } },
+      { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v3-wm5.webp", alt: "VOOPOO ARGUS G4 mini, Blue", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g4-mini/lineup-v4-wm3.webp",
+      src: "/assets/products/argus-g4-mini/lineup-v4-wm5.webp",
       alt: "VOOPOO ARGUS G4 mini, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g4-mini/lineup2-v4-wm3.webp",
+      src: "/assets/products/argus-g4-mini/lineup2-v4-wm5.webp",
       alt: "VOOPOO ARGUS G4 mini, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -439,7 +439,7 @@ export const voopooProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // 02/10: card-v2 = the Blue Leather render of this page's colour photos, tilted 12° (map: scripts/process-images.map.json).
-        src: "/assets/products/argus-p3/card-v2-wm3.webp",
+        src: "/assets/products/argus-p3/card-v2-wm5.webp",
         alt: "VOOPOO ARGUS P3, Blue Leather, tilted product shot",
         angle: "Front, tilted 12°",
         transparentBackground: true,
@@ -482,12 +482,12 @@ export const voopooProducts: Product[] = [
     // p3-green.js). "ทั้งหมด" = two groups of 4 in the page order (owner 05/10: the one image of 7 was too small) — the box
     // "cluster" layout, _incoming/image-sitewide/set1/boxy.js argus-p3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-p3/lineup-v3-wm3.webp",
+      src: "/assets/products/argus-p3/lineup-v3-wm5.webp",
       alt: "VOOPOO ARGUS P3, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-p3/lineup2-v3-wm3.webp",
+      src: "/assets/products/argus-p3/lineup2-v3-wm5.webp",
       alt: "VOOPOO ARGUS P3, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -496,15 +496,15 @@ export const voopooProducts: Product[] = [
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#2a4fb0",
-        image: { src: "/assets/products/argus-p3/variant-blue-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
+        image: { src: "/assets/products/argus-p3/variant-blue-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
       },
-      { id: "black-leather", name: "Black Leather", swatchHex: "#323232", image: { src: "/assets/products/argus-p3/variant-black-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
-      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
-      { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
-      { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
-      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
-      { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
-      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2-wm3.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
+      { id: "black-leather", name: "Black Leather", swatchHex: "#323232", image: { src: "/assets/products/argus-p3/variant-black-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
+      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
+      { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
+      { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
+      { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
+      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2-wm5.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
     specifications: [
       // Batch 2f (05/10): every row re-read from VOOPOO's shop page + its long poster + www.voopoo.com, piece by piece
@@ -595,7 +595,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g3-mini/card-v2-wm3.webp",
+        src: "/assets/products/argus-g3-mini/card-v2-wm5.webp",
         alt: "VOOPOO ARGUS G3 mini, Sky Blue, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -621,12 +621,12 @@ export const voopooProducts: Product[] = [
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g3-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g3-mini/lineup-v3-wm3.webp",
+      src: "/assets/products/argus-g3-mini/lineup-v3-wm5.webp",
       alt: "VOOPOO ARGUS G3 mini, colours 1–5 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g3-mini/lineup2-v3-wm3.webp",
+      src: "/assets/products/argus-g3-mini/lineup2-v3-wm5.webp",
       alt: "VOOPOO ARGUS G3 mini, colours 6–9 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -635,55 +635,55 @@ export const voopooProducts: Product[] = [
         id: "sky-blue",
         name: "Sky Blue",
         swatchHex: "#8cb1d5",
-        image: { src: "/assets/products/argus-g3-mini/variant-sky-blue-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Sky Blue" },
+        image: { src: "/assets/products/argus-g3-mini/variant-sky-blue-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Sky Blue" },
       },
       {
         id: "grass-green",
         name: "Grass Green",
         swatchHex: "#a7c696",
-        image: { src: "/assets/products/argus-g3-mini/variant-grass-green-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Grass Green" },
+        image: { src: "/assets/products/argus-g3-mini/variant-grass-green-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Grass Green" },
       },
       {
         id: "midnight-black",
         name: "Midnight Black",
         swatchHex: "#353333",
-        image: { src: "/assets/products/argus-g3-mini/variant-midnight-black-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Midnight Black" },
+        image: { src: "/assets/products/argus-g3-mini/variant-midnight-black-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Midnight Black" },
       },
       {
         id: "space-gray",
         name: "Space Gray",
         swatchHex: "#585a5e",
-        image: { src: "/assets/products/argus-g3-mini/variant-space-gray-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Space Gray" },
+        image: { src: "/assets/products/argus-g3-mini/variant-space-gray-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Space Gray" },
       },
       {
         id: "moonlight-silver",
         name: "Moonlight Silver",
         swatchHex: "#c9c6c7",
-        image: { src: "/assets/products/argus-g3-mini/variant-moonlight-silver-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Moonlight Silver" },
+        image: { src: "/assets/products/argus-g3-mini/variant-moonlight-silver-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Moonlight Silver" },
       },
       {
         id: "scarlet-red",
         name: "Scarlet Red",
         swatchHex: "#be1d21",
-        image: { src: "/assets/products/argus-g3-mini/variant-scarlet-red-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Scarlet Red" },
+        image: { src: "/assets/products/argus-g3-mini/variant-scarlet-red-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Scarlet Red" },
       },
       {
         id: "rose-gold",
         name: "Rose Gold",
         swatchHex: "#d6b0a8",
-        image: { src: "/assets/products/argus-g3-mini/variant-rose-gold-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Rose Gold" },
+        image: { src: "/assets/products/argus-g3-mini/variant-rose-gold-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Rose Gold" },
       },
       {
         id: "lilac-purple",
         name: "Lilac Purple",
         swatchHex: "#b8a1c0",
-        image: { src: "/assets/products/argus-g3-mini/variant-lilac-purple-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Lilac Purple" },
+        image: { src: "/assets/products/argus-g3-mini/variant-lilac-purple-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Lilac Purple" },
       },
       {
         id: "hot-pink",
         name: "Hot Pink",
         swatchHex: "#d42e9d",
-        image: { src: "/assets/products/argus-g3-mini/variant-hot-pink-v2-wm3.webp", alt: "VOOPOO ARGUS G3 mini, Hot Pink" },
+        image: { src: "/assets/products/argus-g3-mini/variant-hot-pink-v2-wm5.webp", alt: "VOOPOO ARGUS G3 mini, Hot Pink" },
       },
     ],
     specifications: [
@@ -772,7 +772,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-6/card-v2-wm3.webp",
+        src: "/assets/products/drag-6/card-v2-wm5.webp",
         alt: "VOOPOO DRAG 6, Brown, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
@@ -799,18 +799,18 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-6/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 2800, height: 844 },
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm3.webp", alt: "VOOPOO DRAG 6, Silver" } },
-      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm3.webp", alt: "VOOPOO DRAG 6, Blue" } },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm3.webp", alt: "VOOPOO DRAG 6, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2-wm5.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2-wm5.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2-wm5.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/drag-6/variant-brown-v2-wm3.webp", alt: "VOOPOO DRAG 6, Brown" },
+        image: { src: "/assets/products/drag-6/variant-brown-v2-wm5.webp", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm3.webp", alt: "VOOPOO DRAG 6, Red" } },
-      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm3.webp", alt: "VOOPOO DRAG 6, Green" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm3.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
+      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2-wm5.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2-wm5.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2-wm5.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
     // All-colours images (IMAGE_SPEC §0 item 5). 16/10 (round img-1610): the hybrid lineup-v3 of 04/10 was still "too small"
     // and "still graphic" (owner) → two groups (4 + 3, maker order) of NEW studio re-shoots standing on the floor in one row,
@@ -820,12 +820,12 @@ export const voopooProducts: Product[] = [
     // (look-batch/drag-6/footcut.js), row by look-batch/lineup-row.js --row --pick. The colour photos above are unchanged
     // (owner-passed exception, IMAGE_SPEC §0 item 8). Picks + checks: _incoming/img-1610/b11/.
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v4-wm3.webp",
+      src: "/assets/products/drag-6/lineup-v4-wm5.webp",
       alt: "VOOPOO DRAG 6, colours 1–4 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-6/lineup2-v4-wm3.webp",
+      src: "/assets/products/drag-6/lineup2-v4-wm5.webp",
       alt: "VOOPOO DRAG 6, colours 5–7 of 7",
       sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
@@ -945,7 +945,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-s3/card-v4-wm3.webp",
+        src: "/assets/products/drag-s3/card-v4-wm5.webp",
         alt: "VOOPOO DRAG S3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -975,20 +975,20 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-s3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 2800, height: 1456 },
     colorVariants: [
-      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5-wm3.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
-      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5-wm3.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
-      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v6-wm3.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
-      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5-wm3.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
-      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6-wm3.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
-      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5-wm3.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5-wm3.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5-wm5.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
+      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5-wm5.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v6-wm5.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
+      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5-wm5.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6-wm5.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
+      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5-wm5.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5-wm5.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
       // 07/10 eve: 3 more DRAG S3 colours (vapeuk.co.uk + legionofvapers.com list the same 10; the maker page was not reachable
       // from the research tools) — catalog completeness rule. Image 1 = legionofvapers.com's photo (vapevo has only the old 7),
       // same S2 studio recipe (Brooklyn Gray keyed with matte2.js --protect over its dark side panel; its photo shows no side badge);
       // swatches = the median side-panel colour of those photos (same method as the 7 above). Map: look-batch/drag-new3-map.js.
-      { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5-wm3.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
-      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v6-wm3.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
-      { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5-wm3.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
+      { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5-wm5.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
+      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v6-wm5.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
+      { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5-wm5.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -999,12 +999,12 @@ export const voopooProducts: Product[] = [
     // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick);
     // v7 (07/10 eve) = 5 + 5 since the 3 new colours.
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v7-wm3.webp",
+      src: "/assets/products/drag-s3/lineup-v7-wm5.webp",
       alt: "VOOPOO DRAG S3, colours 1–5 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v7-wm3.webp",
+      src: "/assets/products/drag-s3/lineup2-v7-wm5.webp",
       alt: "VOOPOO DRAG S3, colours 6–10 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -1149,7 +1149,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-x3/card-v3-wm4.webp",
+        src: "/assets/products/drag-x3/card-v3-wm5.webp",
         alt: "VOOPOO DRAG X3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -1180,18 +1180,18 @@ export const voopooProducts: Product[] = [
     storyStartRight: true,
     storyCover: { src: "/assets/products/drag-x3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG X3", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 2800, height: 1128 },
     colorVariants: [
-      { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v3-wm4.webp", alt: "VOOPOO DRAG X3, Gray Metal", ownFloor: true } },
+      { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v3-wm5.webp", alt: "VOOPOO DRAG X3, Gray Metal", ownFloor: true } },
       {
         id: "spray-black",
         name: "Spray Black",
         swatchHex: "#3a3a3a",
-        image: { src: "/assets/products/drag-x3/variant-spray-black-v3-wm4.webp", alt: "VOOPOO DRAG X3, Spray Black", ownFloor: true },
+        image: { src: "/assets/products/drag-x3/variant-spray-black-v3-wm5.webp", alt: "VOOPOO DRAG X3, Spray Black", ownFloor: true },
       },
-      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e5cfd0", image: { src: "/assets/products/drag-x3/variant-glow-pink-v3-wm4.webp", alt: "VOOPOO DRAG X3, Glow Pink", ownFloor: true } },
-      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e1dfd4", image: { src: "/assets/products/drag-x3/variant-champagne-golden-v3-wm4.webp", alt: "VOOPOO DRAG X3, Champagne Golden", ownFloor: true } },
-      { id: "sky-blue", name: "Sky Blue", swatchHex: "#2b9dd2", image: { src: "/assets/products/drag-x3/variant-sky-blue-v3-wm4.webp", alt: "VOOPOO DRAG X3, Sky Blue", ownFloor: true } },
-      { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v3-wm4.webp", alt: "VOOPOO DRAG X3, Moss Green", ownFloor: true } },
-      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v3-wm4.webp", alt: "VOOPOO DRAG X3, Aurora Purple", ownFloor: true } },
+      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e5cfd0", image: { src: "/assets/products/drag-x3/variant-glow-pink-v3-wm5.webp", alt: "VOOPOO DRAG X3, Glow Pink", ownFloor: true } },
+      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e1dfd4", image: { src: "/assets/products/drag-x3/variant-champagne-golden-v3-wm5.webp", alt: "VOOPOO DRAG X3, Champagne Golden", ownFloor: true } },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#2b9dd2", image: { src: "/assets/products/drag-x3/variant-sky-blue-v3-wm5.webp", alt: "VOOPOO DRAG X3, Sky Blue", ownFloor: true } },
+      { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v3-wm5.webp", alt: "VOOPOO DRAG X3, Moss Green", ownFloor: true } },
+      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v3-wm5.webp", alt: "VOOPOO DRAG X3, Aurora Purple", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-x3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -1199,12 +1199,12 @@ export const voopooProducts: Product[] = [
     // "ยกเว้นให้ Drag"), "EVEREST LAB" badge re-set in real type (look-batch/everest-patch.js), floor clipped to the device
     // columns, own contact shadow kept (ownFloor); line-ups v3 = every colour standing in one row (look-batch/x3-lineup-floor.js).
     lineupImage: {
-      src: "/assets/products/drag-x3/lineup-v3-wm4.webp",
+      src: "/assets/products/drag-x3/lineup-v3-wm5.webp",
       alt: "VOOPOO DRAG X3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-x3/lineup2-v3-wm4.webp",
+      src: "/assets/products/drag-x3/lineup2-v3-wm5.webp",
       alt: "VOOPOO DRAG X3, colours 5–7 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -1303,7 +1303,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vinci-s/card-v3-wm3.webp",
+        src: "/assets/products/vinci-s/card-v3-wm5.webp",
         alt: "VOOPOO VINCI S, Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -1327,14 +1327,14 @@ export const voopooProducts: Product[] = [
     // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v4-wm3.webp", alt: "VOOPOO VINCI S, Black", ownFloor: true } },
-      { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v3-wm3.webp", alt: "VOOPOO VINCI S, Silver", ownFloor: true } },
-      { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v3-wm3.webp", alt: "VOOPOO VINCI S, Grey", ownFloor: true } },
-      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v3-wm3.webp", alt: "VOOPOO VINCI S, Blue Gradient", ownFloor: true } },
-      { id: "green-gradient", name: "Green Gradient", swatchHex: "#76ab74", image: { src: "/assets/products/vinci-s/variant-green-gradient-v3-wm3.webp", alt: "VOOPOO VINCI S, Green Gradient", ownFloor: true } },
-      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#be8953", image: { src: "/assets/products/vinci-s/variant-gold-gradient-v3-wm3.webp", alt: "VOOPOO VINCI S, Gold Gradient", ownFloor: true } },
-      { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v3-wm3.webp", alt: "VOOPOO VINCI S, Neon", ownFloor: true } },
-      { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v3-wm3.webp", alt: "VOOPOO VINCI S, Pink", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v4-wm5.webp", alt: "VOOPOO VINCI S, Black", ownFloor: true } },
+      { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v3-wm5.webp", alt: "VOOPOO VINCI S, Silver", ownFloor: true } },
+      { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v3-wm5.webp", alt: "VOOPOO VINCI S, Grey", ownFloor: true } },
+      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v3-wm5.webp", alt: "VOOPOO VINCI S, Blue Gradient", ownFloor: true } },
+      { id: "green-gradient", name: "Green Gradient", swatchHex: "#76ab74", image: { src: "/assets/products/vinci-s/variant-green-gradient-v3-wm5.webp", alt: "VOOPOO VINCI S, Green Gradient", ownFloor: true } },
+      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#be8953", image: { src: "/assets/products/vinci-s/variant-gold-gradient-v3-wm5.webp", alt: "VOOPOO VINCI S, Gold Gradient", ownFloor: true } },
+      { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v3-wm5.webp", alt: "VOOPOO VINCI S, Neon", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v3-wm5.webp", alt: "VOOPOO VINCI S, Pink", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js vinci-s-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -1342,12 +1342,12 @@ export const voopooProducts: Product[] = [
     // the Drag exception does not apply), upright, floor clipped to the device columns, own contact shadow kept (ownFloor);
     // line-ups v3 = every colour standing in one row (look-batch/vinci-lineup-floor.js --row --pick).
     lineupImage: {
-      src: "/assets/products/vinci-s/lineup-v3-wm3.webp",
+      src: "/assets/products/vinci-s/lineup-v3-wm5.webp",
       alt: "VOOPOO VINCI S, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/vinci-s/lineup2-v3-wm3.webp",
+      src: "/assets/products/vinci-s/lineup2-v3-wm5.webp",
       alt: "VOOPOO VINCI S, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -1418,7 +1418,7 @@ export const voopooProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // 05/10 (batch 2f-img): card-v2 = the Cyan Blue photo of the colour set below, tilted 12° like every VOOPOO card.
-        src: "/assets/products/vmate-i3/card-v2-wm3.webp",
+        src: "/assets/products/vmate-i3/card-v2-wm5.webp",
         alt: "VOOPOO VMATE i3, Cyan Blue, tilted product shot",
         angle: "Front, tilted 12°",
         transparentBackground: true,
@@ -1442,27 +1442,27 @@ export const voopooProducts: Product[] = [
     // owner passed the draft 05/10. Swatches = the median body colour of each photo (Neon = violet, not lime).
     // Scripts + fidelity sheet: _incoming/sitewide-template/2/2fimg/i3/ (i3-site.js, fid-sheet.png).
     colorVariants: [
-      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#83bec3", image: { src: "/assets/products/vmate-i3/variant-cyan-blue-v2-wm3.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
-      { id: "silver-black", name: "Silver Black", swatchHex: "#8f8d94", image: { src: "/assets/products/vmate-i3/variant-silver-black-v2-wm3.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
-      { id: "purple", name: "Purple", swatchHex: "#d7bbda", image: { src: "/assets/products/vmate-i3/variant-purple-v2-wm3.webp", alt: "VOOPOO VMATE i3, Purple" } },
-      { id: "neon", name: "Neon", swatchHex: "#953bdf", image: { src: "/assets/products/vmate-i3/variant-neon-v2-wm3.webp", alt: "VOOPOO VMATE i3, Neon" } },
-      { id: "pink", name: "Pink", swatchHex: "#d4949a", image: { src: "/assets/products/vmate-i3/variant-pink-v2-wm3.webp", alt: "VOOPOO VMATE i3, Pink" } },
-      { id: "black", name: "Black", swatchHex: "#433f44", image: { src: "/assets/products/vmate-i3/variant-black-v2-wm3.webp", alt: "VOOPOO VMATE i3, Black" } },
-      { id: "red", name: "Red", swatchHex: "#cb4346", image: { src: "/assets/products/vmate-i3/variant-red-v2-wm3.webp", alt: "VOOPOO VMATE i3, Red" } },
-      { id: "yellow-orange-gradient", name: "Yellow-orange Gradient", swatchHex: "#f39476", image: { src: "/assets/products/vmate-i3/variant-yellow-orange-gradient-v2-wm3.webp", alt: "VOOPOO VMATE i3, Yellow-orange Gradient" } },
-      { id: "green-gold-gradient", name: "Green-gold Gradient", swatchHex: "#bacbb4", image: { src: "/assets/products/vmate-i3/variant-green-gold-gradient-v2-wm3.webp", alt: "VOOPOO VMATE i3, Green-gold Gradient" } },
-      { id: "forest-green", name: "Forest Green", swatchHex: "#75aca3", image: { src: "/assets/products/vmate-i3/variant-forest-green-v2-wm3.webp", alt: "VOOPOO VMATE i3, Forest Green" } },
-      { id: "starlight-red", name: "Starlight Red", swatchHex: "#f16580", image: { src: "/assets/products/vmate-i3/variant-starlight-red-v2-wm3.webp", alt: "VOOPOO VMATE i3, Starlight Red" } },
+      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#83bec3", image: { src: "/assets/products/vmate-i3/variant-cyan-blue-v2-wm5.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
+      { id: "silver-black", name: "Silver Black", swatchHex: "#8f8d94", image: { src: "/assets/products/vmate-i3/variant-silver-black-v2-wm5.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
+      { id: "purple", name: "Purple", swatchHex: "#d7bbda", image: { src: "/assets/products/vmate-i3/variant-purple-v2-wm5.webp", alt: "VOOPOO VMATE i3, Purple" } },
+      { id: "neon", name: "Neon", swatchHex: "#953bdf", image: { src: "/assets/products/vmate-i3/variant-neon-v2-wm5.webp", alt: "VOOPOO VMATE i3, Neon" } },
+      { id: "pink", name: "Pink", swatchHex: "#d4949a", image: { src: "/assets/products/vmate-i3/variant-pink-v2-wm5.webp", alt: "VOOPOO VMATE i3, Pink" } },
+      { id: "black", name: "Black", swatchHex: "#433f44", image: { src: "/assets/products/vmate-i3/variant-black-v2-wm5.webp", alt: "VOOPOO VMATE i3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#cb4346", image: { src: "/assets/products/vmate-i3/variant-red-v2-wm5.webp", alt: "VOOPOO VMATE i3, Red" } },
+      { id: "yellow-orange-gradient", name: "Yellow-orange Gradient", swatchHex: "#f39476", image: { src: "/assets/products/vmate-i3/variant-yellow-orange-gradient-v2-wm5.webp", alt: "VOOPOO VMATE i3, Yellow-orange Gradient" } },
+      { id: "green-gold-gradient", name: "Green-gold Gradient", swatchHex: "#bacbb4", image: { src: "/assets/products/vmate-i3/variant-green-gold-gradient-v2-wm5.webp", alt: "VOOPOO VMATE i3, Green-gold Gradient" } },
+      { id: "forest-green", name: "Forest Green", swatchHex: "#75aca3", image: { src: "/assets/products/vmate-i3/variant-forest-green-v2-wm5.webp", alt: "VOOPOO VMATE i3, Forest Green" } },
+      { id: "starlight-red", name: "Starlight Red", swatchHex: "#f16580", image: { src: "/assets/products/vmate-i3/variant-starlight-red-v2-wm5.webp", alt: "VOOPOO VMATE i3, Starlight Red" } },
     ],
     // "ทั้งหมด" = two groups in voopoo.com order (6 + 5), the VOOPOO pod layout: _incoming/image-sitewide/dsx/vp-relx2.js
     // vmate-i3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/vmate-i3/lineup-v2-wm3.webp",
+      src: "/assets/products/vmate-i3/lineup-v2-wm5.webp",
       alt: "VOOPOO VMATE i3, colours 1–6 of 11",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/vmate-i3/lineup2-v2-wm3.webp",
+      src: "/assets/products/vmate-i3/lineup2-v2-wm5.webp",
       alt: "VOOPOO VMATE i3, colours 7–11 of 11",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },

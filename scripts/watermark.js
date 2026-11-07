@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // OKami24 watermark on product photos (owner 02/11, queue item 1 · round queue-0211 batch 3 · IMAGE_SPEC §3).
-//   node scripts/watermark.js [--gen 3|4] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...
-// Generation 4 (default, owner 05/11 "แปะแค่ลายน้ำ 2 พอครับ หมวกไม่ต้องใส่หลังจากนี้") = the text rows only, no helmet, -wm4. Its strength is the
-// one pair GENERATIONS[4].text below: change it and re-run from the originals. --gen 3 = the helmet set already on the site.
+//   node scripts/watermark.js [--gen 3|4|5] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...
+// Generation 5 (default, owner 07/11 "B ห่างขึ้นแต่ปรับให้แถวฝั่งซ้ายที่มีส่วนหลุดตัว Model ไปแล้วขยับมาทั้งขวาหน่อยและปรับใช้ทั้งเว็บ") = the text rows only, no helmet,
+// spacing ×1.7, and on a cut-out the pattern slides per picture (fitShift) so words sit on the product instead of being cut at
+// its left edge, -wm5. Strength and spacing live in GENERATIONS: change them and re-run from the originals.
+// Generation 4 (owner 05/11 "แปะแค่ลายน้ำ 2 พอครับ หมวกไม่ต้องใส่หลังจากนี้") = the same text at ×1.155, no slide. --gen 3 = with the helmet.
 // Spec at a 1080-wide image, scaled by the image width: the white OKAMI helmet centred, 30% wide, at 18%; "OKAMI24.STORE"
 // (Barlow Condensed 600, 22 px, letter-spacing 0.22em, -28°, columns 289 / rows 74), the rows alternating 20% / 18%.
 // Generation 3 = owner 04/11, sample sheet _incoming/img-0211b/wm3-sample4 version A ("ล่าสุดคือ 390 ใช่ไหม ถ้าใช่ ตามนั้นเลยครับ"):
@@ -32,16 +34,16 @@ const { execFileSync } = require("child_process");
 const ROOT = process.env.WM_ROOT || path.join(__dirname, "..");
 const FONT = path.join(__dirname, "lib/watermark/BarlowCondensed-600.ttf");
 const HELMET = path.join(__dirname, "lib/watermark/okami-helmet-white.png");
-const GENERATIONS = { 3: { text: [0.20, 0.18], helmet: 0.18 }, 4: { text: [0.20, 0.18], helmet: 0 } };
-const GEN = (() => { const i = process.argv.indexOf("--gen"); return i >= 0 ? Number(process.argv[i + 1]) : 4; })();
+const GENERATIONS = { 3: { text: [0.20, 0.18], helmet: 0.18, spacing: 1.155 }, 4: { text: [0.20, 0.18], helmet: 0, spacing: 1.155 }, 5: { text: [0.20, 0.18], helmet: 0, spacing: 1.7, fit: true } };
+const GEN = (() => { const i = process.argv.indexOf("--gen"); return i >= 0 ? Number(process.argv[i + 1]) : 5; })();
 if (!GENERATIONS[GEN]) { console.error(`unknown --gen ${GEN}`); process.exit(2); }
-const [TEXT_A, TEXT_B] = GENERATIONS[GEN].text, HELMET_OP = GENERATIONS[GEN].helmet, SPACING = 1.155; // text rows alternate A / B
+const [TEXT_A, TEXT_B] = GENERATIONS[GEN].text, HELMET_OP = GENERATIONS[GEN].helmet, SPACING = GENERATIONS[GEN].spacing, ANGLE = 28; // text rows alternate A / B
 const FEATHER = 0.012; // the spill past a cut-out's edge: 1.2% of the width, fading to 0
-const SUFFIX = `-wm${GEN}`, EARLIER = GEN === 4 ? /-wm[23]?$/ : /-wm2?$/; // this generation's name tag · the tags earlier generations left
+const SUFFIX = `-wm${GEN}`, EARLIER = GEN === 5 ? /-wm[234]?$/ : GEN === 4 ? /-wm[23]?$/ : /-wm2?$/; // this generation's name tag · the tags earlier generations left
 const BOXES = path.join(ROOT, "src/data/product-boxes.json"); // unmarked product box per marked file, read by media-quality.ts
 
 /** Two masks of the text tiling: the even rows (TEXT_A) and the odd rows (TEXT_B). */
-async function textMasks(W, H) {
+async function textMasks(W, H, shift = { x: 0, y: 0 }) {
   const k = W / 1080, px = 22 * k;
   const { data: tile, info: ti } = await sharp({
     text: { text: `<span foreground="white" letter_spacing="${Math.round(0.22 * px * 1024)}">OKAMI24.STORE</span>`,
@@ -49,15 +51,52 @@ async function textMasks(W, H) {
   }).png().toBuffer({ resolveWithObject: true });
   const D = Math.ceil(Math.hypot(W, H)) + Math.ceil(600 * k), rows = [[], []];
   let row = 0;
-  for (let y = 0; y < D; y += 64 * SPACING * k, row++) for (let x = 0; x < D; x += 250 * SPACING * k) rows[row % 2].push({ input: tile, left: Math.round(x), top: Math.round(y) });
+  // a slide starts the grid inside its first cell, so the top and left edges stay covered through the plane's 600 px margin
+  for (let y = shift.y; y < D; y += 64 * SPACING * k, row++) for (let x = shift.x; x < D; x += 250 * SPACING * k) rows[row % 2].push({ input: tile, left: Math.round(x), top: Math.round(y) });
   const one = async (comps) => {
     const plane = await sharp({ create: { width: D + ti.width, height: D + ti.height, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
       .composite(comps).png().toBuffer();
-    const rot = await sharp(plane).rotate(-28, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer({ resolveWithObject: true });
+    const rot = await sharp(plane).rotate(-ANGLE, { background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer({ resolveWithObject: true });
     return sharp(rot.data).extract({ left: Math.round((rot.info.width - W) / 2), top: Math.round((rot.info.height - H) / 2), width: W, height: H })
       .extractChannel(3).raw().toBuffer();
   };
   return [await one(rows[0]), await one(rows[1])];
+}
+
+/** Where the pattern should sit on this cut-out (owner 07/11): tries every slide of the grid over one column and one row and
+ *  scores each word against the product's opaque pixels, sampled along the word as it lands in the image. A whole word on the
+ *  product scores best; a word that starts outside the product and runs onto it (cut at its left, what the owner saw) costs most;
+ *  a word that starts on the product and leaves on the right costs little. It reads only the alpha, so a picture always gets the
+ *  same answer. */
+async function fitShift(data, W, H) {
+  const k = W / 1080, px = 22 * k;
+  const { info: ti } = await sharp({
+    text: { text: `<span foreground="white" letter_spacing="${Math.round(0.22 * px * 1024)}">OKAMI24.STORE</span>`,
+      fontfile: FONT, font: `Barlow Condensed SemiBold ${px.toFixed(2)}`, dpi: 72, rgba: true },
+  }).png().toBuffer({ resolveWithObject: true });
+  const STEPX = 250 * SPACING * k, STEPY = 64 * SPACING * k, D = Math.ceil(Math.hypot(W, H)) + Math.ceil(600 * k);
+  const cx = (D + ti.width) / 2, cy = (D + ti.height) / 2, c = Math.cos(ANGLE * Math.PI / 180), s = Math.sin(ANGLE * Math.PI / 180), N = 13;
+  const on = (X, Y) => { const x = Math.round(X), y = Math.round(Y); return x >= 0 && y >= 0 && x < W && y < H && data[(y * W + x) * 4 + 3] > 128; };
+  let best = null;
+  for (let sy = 0; sy < 8; sy++) for (let sx = 0; sx < 32; sx++) {
+    const ox = sx / 32 * STEPX, oy = sy / 8 * STEPY;
+    let score = 0;
+    for (let y = oy; y < D; y += STEPY) for (let x = ox; x < D; x += STEPX) {
+      const dy = y + ti.height / 2 - cy, hits = [];
+      for (let i = 0; i < N; i++) {
+        const dx = x + ti.width * (i + 0.5) / N - cx;
+        hits.push(on(W / 2 + dx * c + dy * s, H / 2 - dx * s + dy * c));
+      }
+      const n = hits.filter(Boolean).length;
+      if (n === 0) continue;
+      if (n === N) score += 4;
+      else if (!hits[0]) score -= 1 + (n / N) * 2; // cut at the left: the longer the stump on the product, the worse it reads
+      else if (!hits[N - 1]) score += n / N - 0.6; // starts on the product, leaves on the right
+      else score -= 0.5; // a gap in the middle of the word
+    }
+    if (!best || score > best.score) best = { score, x: ox, y: oy };
+  }
+  return { x: best.x, y: best.y };
 }
 
 async function helmetMask(W, H) {
@@ -102,10 +141,11 @@ function featherBand(data, W, H) {
 async function mark(file) {
   const meta = await sharp(file).metadata();
   const { data, info } = await sharp(file).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
-  const W = info.width, H = info.height, [tA, tB] = await textMasks(W, H), h = HELMET_OP ? await helmetMask(W, H) : null;
+  const W = info.width, H = info.height, h = HELMET_OP ? await helmetMask(W, H) : null;
   // a cut-out has transparent pixels; an alpha channel alone does not make one (story banners carry alpha, all 255)
   let cutout = false;
   if (meta.hasAlpha) for (let i = 3; i < data.length; i += 4) if (data[i] === 0) { cutout = true; break; }
+  const [tA, tB] = await textMasks(W, H, cutout && GENERATIONS[GEN].fit ? await fitShift(data, W, H) : undefined);
   const band = cutout ? featherBand(data, W, H) : null;
   for (let p = 0, i = 0; p < W * H; p++, i += 4) {
     const text = (tA[p] / 255) * TEXT_A + (tB[p] / 255) * TEXT_B;
@@ -158,7 +198,7 @@ function sourceFiles(dir, out = []) {
   // Git Bash rewrites a leading "/assets/…" into a Windows path, so take anything that holds assets/products/
   const list = args.filter((a) => /assets[\\/]products[\\/]/.test(a)).map((a) => "/" + a.slice(a.search(/assets[\\/]products[\\/]/)).replace(/\\/g, "/"));
   if (!list.length) {
-    console.error("usage: node scripts/watermark.js [--gen 3|4] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...");
+    console.error("usage: node scripts/watermark.js [--gen 3|4|5] [--dry-run] [--keep <dir>] [--originals <dir>] [--template-refs] /assets/products/<slug>/<file> ...");
     process.exit(2);
   }
   const sources = sourceFiles(path.join(ROOT, "src"));
@@ -167,7 +207,7 @@ function sourceFiles(dir, out = []) {
     const file = path.join(ROOT, "public", pub);
     const next = pub.replace(/\.\w+$/, "").replace(EARLIER, "") + SUFFIX + ".webp";
     if (new RegExp(SUFFIX + "\\.\\w+$").test(pub)) { console.log(`skip   ${pub}  already marked`); continue; }
-    if (GEN === 3 && /-wm4\.\w+$/.test(pub)) { console.log(`FAIL   ${pub}  already generation 4; a lower generation would stack names`); refused++; continue; }
+    if (GEN < 5 && new RegExp(`-wm[${GEN + 1}-5]\\.\\w+$`).test(pub)) { console.log(`FAIL   ${pub}  already a later generation; a lower one would stack names`); refused++; continue; }
     if (!fs.existsSync(file)) { console.log(`FAIL   ${pub}  not in public/`); refused++; continue; }
     const orig = originalOf(pub, originals);
     if (!orig) { console.log(`FAIL   ${pub}  no unmarked original (--originals or git history)`); refused++; continue; }
