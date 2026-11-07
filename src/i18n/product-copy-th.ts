@@ -182,6 +182,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "จอทัชสกรีน 2.51 นิ้ว บนตัวเครื่องสาย G4",
     shortDescription:
       "พอตแบตเตอรี่ 1800mAh 35 วัตต์ จอทัชสกรีน 2.51 นิ้ว ปรับช่องลมได้แบบไม่มีขั้น",
+    faqs: {
+      "caliburn-g4-pro-pods": {
+        question: "Caliburn G4 Pro ใช้หัวพอตรุ่นไหนได้บ้าง",
+        answer: "ใส่หัวพอต UWELL GPP ได้ทั้งหัวรุ่นก่อนและรุ่นใหม่ รวมถึงหัว G3 ด้วยค่ะ ใช้ได้ในช่วง 0.4–1.2 โอห์ม ทั้งแบบเติมด้านบนและเติมด้านข้าง",
+      },
+      "caliburn-g4-pro-included-pods": {
+        question: "Caliburn G4 Pro มีหัวพอตแบบไหนมาให้",
+        answer: "หัวพอตที่มาให้เป็นคอยล์ mesh FeCrAl 0.4 โอห์ม และ 0.6 โอห์ม เติมด้านข้างทั้งคู่ค่ะ หัวพอตจุน้ำยา 3mL",
+      },
+      "caliburn-g4-pro-thai-menu": {
+        question: "เมนูบน Caliburn G4 Pro มีภาษาไทยไหม",
+        answer: "ไม่มีภาษาไทยค่ะ เมนูตั้งค่าเลือกได้ 8 ภาษา และปัดจอลงก็เจอเมนูนี้ได้เลยค่ะ",
+      },
+      "caliburn-g4-pro-battery": {
+        question: "Caliburn G4 Pro แบตอยู่ได้กี่วัน",
+        answer: "UWELL ระบุว่าแบต 1800mAh ใช้ได้สูงสุด 7 วันค่ะ ใช้จริงได้กี่วันก็ขึ้นอยู่กับว่าสูบบ่อยแค่ไหนและตั้งกี่วัตต์",
+      },
+      "caliburn-g4-pro-themes": {
+        question: "วิธีปลดล็อกธีมหน้าจอ Caliburn G4 Pro",
+        answer: "สูบให้ถึงจำนวนพัฟที่กำหนดค่ะ ธีมหน้าจอมี 6 แบบ พร้อมใช้ 3 แบบ อีก 3 แบบจะปลดล็อกเมื่อครบ 5,000 · 10,000 และ 20,000 พัฟ",
+      },
+    },
   },
   "caliburn-g4": {
     whoIsThisFor: {
@@ -207,6 +229,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "Caliburn จอสี เลือกโหมดได้ตามความต้องการและการใช้งาน",
     shortDescription:
       "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมด้วยปุ่มเลื่อน หรือกลับด้านหัวพอตก็ได้",
+    faqs: {
+      "caliburn-g4-pods": {
+        question: "Caliburn G4 ใช้หัวพอตรุ่นไหน",
+        answer: "ใช้หัวพอต UWELL GPP ได้ทั้งหัวรุ่นก่อนและรุ่นใหม่ค่ะ หัวพอตที่มาให้เป็นคอยล์ mesh FeCrAl 0.4 โอห์ม และ 0.9 โอห์ม เติมด้านข้างทั้งคู่",
+      },
+      "caliburn-g4-firing": {
+        question: "Caliburn G4 ต้องกดปุ่มตอนสูบไหม",
+        answer: "เลือกได้ค่ะ จะดูดเลยหรือกดปุ่มสูบก็ได้ตามที่ถนัด",
+      },
+      "caliburn-g4-button": {
+        question: "ปุ่มบน Caliburn G4 กดกี่ครั้งทำอะไรได้บ้าง",
+        answer: "กด 1 ครั้งเปิดจอ กด 2 ครั้งล็อกหรือปลดล็อกปุ่มยิง กด 3 ครั้งปรับวัตต์ กด 4 ครั้งเข้าเมนู และกด 5 ครั้งเปิดหรือปิดเครื่องค่ะ",
+      },
+      "caliburn-g4-modes": {
+        question: "โหมด Storm กับ Waves ของ Caliburn G4 ต่างกันยังไง",
+        answer: "UWELL บอกว่า Storm ได้ไอเร็วทันใจ ส่วน Waves นุ่มและสม่ำเสมอค่ะ เลือกใช้ได้ตามความต้องการและการใช้งาน",
+      },
+      "caliburn-g4-charge": {
+        question: "Caliburn G4 ชาร์จเร็วไหม",
+        answer: "ชาร์จเร็วผ่าน USB-C ที่ 5V/2A ค่ะ ตัวเครื่องใช้แบต 1300mAh ในตัว",
+      },
+    },
   },
   "caliburn-g4-mini": {
     whoIsThisFor: {
@@ -229,6 +273,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "G4 เวอร์ชันย่อส่วน พกพาง่าย",
     shortDescription:
       "G4 รุ่นเล็ก เบากว่า ไม่มีจอ เน้นพกง่าย ใช้หัวพอต GPP ตัวเดียวกับ G4 แบตเตอรี่เล็กลงเป็น 1100mAh",
+    faqs: {
+      "caliburn-g4-mini-pods": {
+        question: "Caliburn G4 mini ใช้หัวพอตรุ่นไหน",
+        answer: "ใช้หัวพอต UWELL GPP ได้ทั้งหัวรุ่นก่อนและรุ่นใหม่ค่ะ ส่วนหัวที่อยู่ในกล่องเป็นคอยล์ mesh FeCrAl 0.6 โอห์ม",
+      },
+      "caliburn-g4-mini-refill": {
+        question: "Caliburn G4 mini เติมน้ำยาต้องถอดหัวพอตไหม",
+        answer: "หัวพอตรุ่นใหม่เติมน้ำยาได้ขณะหัวเสียบอยู่ค่ะ หัวพอตจุน้ำยา 3mL",
+      },
+      "caliburn-g4-mini-airflow": {
+        question: "Caliburn G4 mini ปรับลมได้ไหม",
+        answer: "ปรับได้ค่ะ ใช้ปุ่มเลื่อนปรับลมที่ตัวเครื่อง หรือกลับด้านหัวพอตเพื่อปรับลมก็ได้ และจะใช้สองอย่างพร้อมกันก็ได้เช่นกันค่ะ",
+      },
+      "caliburn-g4-mini-upgraded-pods": {
+        question: "Caliburn G4 mini ใช้หัวพอตรุ่นใหม่แล้วต่างกันยังไง",
+        answer: "ตัวเลขจากแล็บของ UWELL บอกว่า หัว GPP รุ่นใหม่คู่กับ Pro-FOCS 4.0 ให้ความพอใจในรสชาติเพิ่มขึ้นสูงสุด 35% และหัวพอตใช้ได้นานขึ้นสูงสุด 35% ค่ะ",
+      },
+    },
   },
   "caliburn-g4-classic": {
     whoIsThisFor: {
@@ -373,6 +435,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว",
     shortDescription:
       "แบต 1250mAh เปลี่ยนธีมหน้าจอได้ และใช้หัวพอต G3 ได้ทุกหัว",
+    faqs: {
+      "caliburn-g3-pro-koko-pods": {
+        question: "Caliburn G3 Pro KOKO ใช้หัวพอตรุ่นไหน",
+        answer: "ใส่หัวพอต Caliburn G3 ซึ่งเป็นระบบ GPP ได้ทุกหัวค่ะ ในช่วง 0.4–1.2 โอห์ม ทั้งแบบเติมด้านบนและเติมด้านข้าง หัวที่มาให้คือ 0.4 โอห์ม จุ 3mL และ 0.9 โอห์ม จุ 2.5mL เติมด้านข้างทั้งคู่ค่ะ",
+      },
+      "caliburn-g3-pro-koko-button": {
+        question: "ปุ่มบน Caliburn G3 Pro KOKO กดแล้วทำอะไรได้บ้าง",
+        answer: "กดสองครั้งติดกันเพื่อล็อกปุ่ม กด 3 ครั้งเพื่อตั้งวัตต์ กด 4 ครั้งเพื่อเปิดเมนูความสว่างและธีมหน้าจอ และกด 5 ครั้งเพื่อเปิดหรือปิดเครื่องค่ะ",
+      },
+      "caliburn-g3-pro-koko-charging": {
+        question: "Caliburn G3 Pro KOKO ชาร์จนานแค่ไหน",
+        answer: "UWELL ระบุว่าชาร์จผ่าน USB-C ที่ 5V/2A 20 นาที ได้ 80% ค่ะ และชาร์จครั้งเดียวใช้ได้สูงสุด 4 วัน ส่วนใช้จริงได้กี่วันก็ขึ้นอยู่กับว่าสูบบ่อยแค่ไหนและตั้งกี่วัตต์",
+      },
+      "caliburn-g3-pro-koko-themes": {
+        question: "Caliburn G3 Pro KOKO เปลี่ยนธีมหน้าจอยังไง",
+        answer: "กดปุ่ม 4 ครั้งเพื่อเปิดเมนู แล้วเลือกธีมจากในนั้นได้เลยค่ะ มีให้เลือก เช่น Planet · Twilight และ KOKO และในเมนูเดียวกันยังสลับโหมดความสว่าง DAY กับ NIGHT ได้ด้วยค่ะ",
+      },
+    },
   },
 
   "argus-g4": {
@@ -427,6 +507,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "แบตเตอรี่เท่า G4 ในตัวเครื่องที่เล็กลง วัตต์ลดเหลือ 30 วัตต์",
     shortDescription: "ARGUS G4 ในตัวเครื่องที่เล็กลง แบตเตอรี่ 1650mAh เท่าเดิม วัตต์สูงสุดลดจาก 35 วัตต์ เหลือ 30 วัตต์",
+    faqs: {
+      "argus-g4-mini-resistance": {
+        question: "ARGUS G4 mini เปลี่ยนจาก 0.7 เป็น 1.0 โอห์มยังไง",
+        answer: "หมุนหัวพอต Multi-Ohm 180 องศาแล้วใส่กลับเข้าไปค่ะ ใส่ตามปกติจะได้ 0.7 โอห์ม กลับด้านแล้วจะได้ 1.0 โอห์ม และตัวเครื่องจะรู้เองว่าหัวพอตใส่อยู่ด้านไหนค่ะ",
+      },
+      "argus-g4-mini-lights": {
+        question: "ไฟบน ARGUS G4 mini แต่ละสีบอกอะไร",
+        answer: "ไฟสีขาวคือ 0.7 โอห์ม ไฟสีเขียวคือ 1.0 โอห์มค่ะ ส่วนไฟสี่ขีดบอกแบตที่เหลือ ขีดละ 25%",
+      },
+      "argus-g4-mini-refill": {
+        question: "ARGUS G4 mini เติมน้ำยายังไง",
+        answer: "เติมจากด้านบนได้ทั้งที่หัวพอตยังอยู่ในเครื่องค่ะ หัวพอต Multi-Ohm จุน้ำยา 3.5mL",
+      },
+      "argus-g4-mini-draw": {
+        question: "ARGUS G4 mini ต้องกดปุ่มไหม",
+        answer: "สูบได้เลยโดยไม่ต้องกดปุ่มค่ะ ส่วนลมปรับได้ละเอียดที่ปุ่มเลื่อนปรับลม ตั้งแต่ MTL ถึง RDL",
+      },
+    },
   },
 
   "argus-p3": {
@@ -662,13 +760,51 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตคิทตัวบาง ยาว 103mm",
     shortDescription: "พอตคิทสาย VMATE ของ VOOPOO: เครื่องอะลูมิเนียมอัลลอยบาง 15.1mm แบตเตอรี่ 1500mAh 5–30 วัตต์ หัวพอตเติมด้านบน 3mL",
+    faqs: {
+      "vmate-i3-cartridge-choice": {
+        question: "VMATE i3 ใช้หัวพอตโอห์มไหนดี",
+        answer: "ดูจากแนวการสูบค่ะ ชอบสูบแน่นแบบ MTL ก็เลือก Top Fill 1.0 โอห์ม ที่ 12–18 วัตต์ หรือ Cartridge V2 1.2 โอห์ม ที่ 8–15 วัตต์ ถ้าชอบลมโล่งแบบ RDL ก็มี Top Fill 0.4 โอห์ม ซึ่ง VOOPOO ระบุว่าต้องใช้ 30 วัตต์ขึ้นไป และ VOOPOO แนะนำให้เช็คค่าโอห์มกับวัตต์ก่อนใช้นะคะ",
+      },
+      "vmate-i3-light": {
+        question: "แถบไฟบน VMATE i3 แต่ละสีหมายถึงอะไร",
+        answer: "แถบไฟบอกแบตที่เหลือค่ะ สีเขียวคือตั้งแต่ 70% ขึ้นไป สีน้ำเงินคือ 30–70% และสีแดงคือ 30% ลงมา",
+      },
+      "vmate-i3-coil-life": {
+        question: "หัวพอตของ VMATE i3 ใช้ได้นานแค่ไหน",
+        answer: "ตามผลทดสอบในห้องแล็บของ VOOPOO คอยล์ iCOSM CODE ใช้ได้กับน้ำยา 90mL ค่ะ ส่วนจะใช้ได้กี่วันก็แล้วแต่คน สูบจัดก็หมดไวหน่อย",
+      },
+      "vmate-i3-charge": {
+        question: "VMATE i3 ชาร์จเร็วไหม",
+        answer: "ชาร์จเร็วผ่าน USB-C ที่ 5V/2A ค่ะ ตัวเครื่องใช้แบต 1500mAh ในตัว",
+      },
+    },
   },
 
   "m-bar-10k": {
     faqs: {
+      "m-bar-10k-name": {
+        question: "Marbo 10K หรือมาโบ 10K คือรุ่นเดียวกับ M Bar 10K ไหม",
+        answer: "เป็นรุ่นเดียวกันค่ะ M Bar 10K คือชื่อรุ่นของ SALTHUB ส่วนอีกชื่อเป็นคำที่หลายร้านในไทยใช้เรียกกันค่ะ",
+      },
+      "m-bar-10k-flavours": {
+        question: "มาโบ 10K มีกลิ่นอะไรบ้าง",
+        answer: "รุ่นนี้มี 12 กลิ่นค่ะ คือ All Berry · Blue Ice · Cola · Grape · Kyoho Grape · Matcha Latte · Menthol Blast · Pink Berry · Strawberry Kiwi · Watermelon · Watermelon Mint และ Yellow Mint",
+      },
+      "m-bar-10k-days": {
+        question: "มาโบ 10,000 พัฟ ใช้ได้กี่วัน",
+        answer: "ตัวเลข 10,000 พัฟเป็นจำนวนสูงสุดที่ SALTHUB ระบุไว้ ไม่ได้บอกเป็นจำนวนวันค่ะ ถ้าสูบเป็นพัก ๆ ระหว่างวัน เครื่องก็จะอยู่ได้นานกว่าการสูบถี่หรือสูบต่อเนื่องนาน ๆ นะคะ",
+      },
+      "m-bar-10k-price": {
+        question: "Marbo 10K ราคาเท่าไหร่",
+        answer: "ราคาแสดงอยู่ในช่องราคาด้านบนของหน้านี้ค่ะ",
+      },
+      "m-bar-10k-review": {
+        question: "มาโบ 10K รีวิวดูได้ที่ไหน",
+        answer: "ร้านมีคลิปของเราเองอยู่บนหน้านี้ค่ะ ดูได้ที่ส่วน “รีวิวจาก OKami24” เป็นคลิปกลิ่น Matcha Latte",
+      },
       "m-bar-10k-recharge": {
-        question: "ชาร์จได้ไหม",
-        answer: "ได้ ชาร์จผ่าน USB-C แบตหมดก็ชาร์จแล้วใช้ต่อได้ ไม่ใช่แบบแบตหมดแล้วจบ",
+        question: "มาโบ 10K ชาร์จได้ไหม",
+        answer: "ได้ค่ะ ชาร์จผ่าน USB-C แบตหมดก็ชาร์จแล้วใช้ต่อได้ ไม่ใช่แบบแบตหมดแล้วจบค่ะ",
       },
     },
     whoIsThisFor: {
@@ -684,7 +820,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "3 โหมดวัตต์ วงแหวน RGB แสดงสถานะ รองรับ 10,000 พัฟ",
     // Round 8 B2: "Marbo" sentence — many shops use that name for M Bar (researcher-1 row 3a). No maker claim.
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่ หลายร้านเรียก Marbo หรือมาโบ 10K",
   },
   "m-bar-9k": {
     whoIsThisFor: {
@@ -729,6 +865,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "ตัวเครื่อง M Switch ที่เก็บไว้ใช้ต่อได้ คู่กับหัวพอตใสของ M Bar ที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ",
   },
   "m-switch-kit": {
+    faqs: {
+      "m-switch-kit-name": {
+        question: "มาโบ 15K กับ M Switch 15K รุ่นเดียวกันไหม",
+        answer: "บนเว็บเรานับเป็นชุดเดียวกันค่ะ ร้านเรียกชุดนี้ว่า M Bar 15K ส่วนชื่อบนหน้าเว็บของ SALTHUB คือ M Switch Kit",
+      },
+      "m-switch-kit-swap": {
+        question: "มาโบเปลี่ยนหัวคือรุ่นไหน",
+        answer: "คือ M Switch Kit บนหน้านี้ค่ะ ตัวเครื่องเก็บไว้ชาร์จใช้ต่อได้ พอหัวพอตหมดหรืออยากเปลี่ยนกลิ่น ก็ถอดหัวเดิมออกแล้วใส่ M Switch Pod หัวใหม่ได้เลย ส่วน M Bar 9K กับ M Bar 10K เป็นพอตใช้แล้วทิ้ง ใช้จนน้ำยาหมดแล้วเปลี่ยนทั้งเครื่องค่ะ",
+      },
+      "m-switch-kit-device-only": {
+        question: "M Switch 15K ซื้อเฉพาะตัวเครื่องได้ไหม",
+        answer: "ตอนนี้ร้านขายเป็นชุดค่ะ ในชุดมีตัวเครื่องคู่กับหัวพอต 1 หัวของกลิ่นที่เลือก และตัวเครื่องเหมือนกันทุกกลิ่น ถ้ามีเครื่องอยู่แล้วและอยากได้หัวเพิ่ม ซื้อแยกได้ที่หน้า M Switch Pod ค่ะ",
+      },
+      "m-switch-kit-price": {
+        question: "M Switch 15K ราคาเท่าไหร่",
+        answer: "ราคาแสดงอยู่ในช่องราคาด้านบนของหน้านี้ค่ะ เป็นราคาชุด ได้ทั้งตัวเครื่องและหัวพอต 1 หัวค่ะ",
+      },
+      "m-switch-kit-refill": {
+        question: "M Switch 15K ต้องเติมน้ำยาเองไหม",
+        answer: "ไม่ต้องเติมค่ะ น้ำยามากับหัวพอตบรรจุสำเร็จอยู่แล้ว จึงไม่ต้องซื้อน้ำยาขวดมาเติมเองค่ะ",
+      },
+    },
     whoIsThisFor: {
       0: "ใช้พอตใช้แล้วทิ้งอยู่ และเสียดายทุกครั้งที่หมดแล้วต้องทิ้งไปทั้งเครื่อง",
     },
@@ -743,7 +901,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ",
     shortDescription:
-      "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ร้านเราเรียกชุดนี้ว่า M Bar 15K หรือ Marbo 15K",
+      "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ร้านเราเรียกชุดนี้ว่า M Bar 15K · Marbo 15K หรือมาโบ 15K",
   },
   "m-switch-pod": {
     whoIsThisFor: {
@@ -757,6 +915,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit ซึ่งร้านเราเรียกว่า M Bar 15K",
+    faqs: {
+      "m-switch-pod-name": {
+        question: "หัวมาโบ 15K กับหัว M Switch 15K เป็นหัวเดียวกันไหม",
+        answer: "ที่ร้านเราเป็นหัวเดียวกันค่ะ คือ M Switch Pod หัวพอตสีดำของ SALTHUB ที่ใช้คู่กับเครื่อง M Switch Kit และเครื่องรุ่นนี้ร้านเราเรียกอีกชื่อว่า M Bar 15K ค่ะ",
+      },
+      "m-switch-pod-device": {
+        question: "ยังไม่มีเครื่อง ซื้อแค่หัวมาโบได้ไหม",
+        answer: "หัวพอตต้องใส่กับตัวเครื่อง M Switch Kit จึงจะใช้ได้ค่ะ ถ้าเพิ่งเริ่ม ซื้อเป็นชุดจะสะดวกกว่า เพราะ M Switch Kit มีทั้งตัวเครื่องและหัวพอตหนึ่งหัวค่ะ",
+      },
+      "m-switch-pod-days": {
+        question: "หัวพอต 15K หัวหนึ่งใช้ได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัวค่ะ แล้วแต่คน สูบจัดก็หมดไวหน่อย SALTHUB ระบุไว้ที่หัวละสูงสุด 15,000 พัฟ ส่วนจะหมดในกี่วัน ขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหนค่ะ",
+      },
+      "m-switch-pod-flavours": {
+        question: "หัวมาโบ 15K มีกลิ่นอะไรบ้าง",
+        answer: "หน้าเว็บของ SALTHUB ลงไว้ 17 กลิ่นค่ะ มีทั้งสายเย็นอย่าง Blue Ice สายองุ่นอย่าง Kyoho Grape สายผลไม้อื่นอย่าง Mango Passion และแนวอื่นอย่าง Cola ดูรายชื่อกลิ่นได้จากบนหน้านี้ค่ะ",
+      },
+      "m-switch-pod-strength": {
+        question: "หัวพอต M Switch นิโคตินเท่าไหร่",
+        answer: "SALTHUB ระบุไว้ที่ 30mg ค่ะ และน้ำยาในหัวเป็นแบบ salt nic",
+      },
+    },
   },
   "m-bar-pod": {
     whoIsThisFor: {
@@ -824,6 +1004,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้งของ RELX มีอยู่ในเว็บทางการ คอยล์ MEGA MESH",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH มี 27 รส รวมแบบนิโคติน 5%",
+    faqs: {
+      "relx-smash-go-12k-what": {
+        question: "RELX Smash Go 12K เป็นพอตแบบไหน",
+        answer: "เป็นพอตใช้แล้วทิ้งของ RELX ที่ชาร์จซ้ำได้ค่ะ สูบได้สูงสุด 12,000 พัฟ ใช้คอยล์ MEGA MESH และตัวเครื่องมีขนาดพอดีกระเป๋ากางเกง พกติดตัวไปได้สะดวกค่ะ",
+      },
+      "relx-smash-go-12k-charge": {
+        question: "RELX 12K ชาร์จได้ไหม",
+        answer: "ชาร์จได้ค่ะ แบต 400mAh ชาร์จซ้ำได้ผ่าน USB-C พอแบตหมดก็ชาร์จแล้วใช้ต่อได้ค่ะ",
+      },
+      "relx-smash-go-12k-days": {
+        question: "RELX Smash Go 12,000 พัฟ ใช้ได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัวค่ะ แล้วแต่คน สูบจัดก็หมดไวหน่อย ตัวเลข 12,000 พัฟเป็นจำนวนสูงสุดที่ RELX ระบุไว้ ส่วนจะหมดในกี่วัน ขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหนค่ะ",
+      },
+      "relx-smash-go-12k-strength": {
+        question: "RELX Smash Go 12K นิโคตินกี่ %",
+        answer: "มี salt nic 3% และ 5% ค่ะ แบบ 5% ดูได้จากกลิ่นที่ชื่อลงท้ายด้วย 5% ก่อนกดเลือก ลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ",
+      },
+      "relx-smash-go-12k-review": {
+        question: "RELX Smash Go 12K มีรีวิวไหม",
+        answer: "มีค่ะ OKami24 ทำคลิปรีวิวรุ่นนี้ไว้บน YouTube และดูได้ในหน้านี้ค่ะ",
+      },
+    },
   },
   // Round "image-sitewide" 2026-09-30 (writer draft A): re-published as a device + prefilled pods, not a disposable.
   "relx-infinity-2-plus": {
@@ -850,9 +1052,21 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "อยากได้ตัวเครื่องที่ใช้ซ้ำได้ แต่ไม่อยากเติมน้ำยาเอง",
     },
     faqs: {
+      "relx-creator-what": {
+        question: "RELX Creator คือเครื่องแบบไหน",
+        answer: "RELX Creator หรือที่หลายคนเรียกว่าพอตเลโก้ เป็นเครื่องระบบสวิตช์ของ RELX บนเว็บของแบรนด์ใช้ชื่อว่า Creator Pro Device ค่ะ",
+      },
       "relx-creator-pods": {
         question: "RELX Creator ใช้กับหัวพอตรุ่นไหนได้บ้าง",
-        answer: "ใส่ได้ทั้งหัวพอต RELX Creator Pod และหัวพอต Muro Connector สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่ ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 ถามก่อนได้เลย",
+        answer: "ใส่ได้ทั้งหัวพอต RELX Creator Pod และหัวพอต Muro Connector ค่ะ สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่ ถ้าจะใช้กับหัวพอตรุ่นอื่น ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ก่อนนะคะ",
+      },
+      "relx-creator-price": {
+        question: "RELX Creator ราคาเท่าไหร่",
+        answer: "ราคาแสดงอยู่ในช่องราคาด้านบนของหน้านี้ค่ะ เป็นราคาตัวเครื่องอย่างเดียว ส่วนหัวพอตต้องซื้อแยกนะคะ",
+      },
+      "relx-creator-no-draw": {
+        question: "RELX Creator ดูดไม่ขึ้น แก้ยังไง",
+        answer: "ร้านแนะนำให้เริ่มจากกดปุ่มครั้งเดียวเพื่อดูแบตก่อนค่ะ ถ้าแบตหมดก็ชาร์จผ่าน USB-C ถ้าแบตยังมี ลองถอดหัวพอตแล้วเสียบกลับให้เข้าที่ และเช็ดขั้วสัมผัสด้วยสำลีก้านหรือทิชชู่แห้ง ลองแล้วยังดูดไม่ขึ้น ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 นะคะ",
       },
     },
     specifications: {
@@ -888,6 +1102,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้ง 18,000 พัฟของ WOTOFO คอยล์ nexMESH สองตัว มีจอ LED",
     shortDescription:
       "พอตใช้แล้วทิ้งของ WOTOFO สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh ชาร์จผ่าน USB-C คอยล์ nexMESH สองตัว มี 2 โหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ปรับลมได้ 2 ระดับ สเปกและรายชื่อกลิ่นเช็คตรงจาก wotofo.com",
+    faqs: {
+      "wotofo-nexbar-18k-screen": {
+        question: "จอของ nexBAR 18K บอกอะไรบ้าง",
+        answer: "จอ LED บอกแบตเป็นเปอร์เซ็นต์ น้ำยาที่เหลือ และโหมดที่ใช้อยู่ค่ะ",
+      },
+      "wotofo-nexbar-18k-airflow": {
+        question: "nexBAR 18K ปรับลมยังไง",
+        answer: "ใช้ปุ่มเลื่อนปรับลมที่ก้นพอตค่ะ ปรับได้ 2 ระดับ เลือกระดับที่สูบแล้วสบายได้เลย",
+      },
+      "wotofo-nexbar-18k-charge": {
+        question: "nexBAR 18K ชาร์จได้ไหม",
+        answer: "ชาร์จได้ค่ะ แบต 750mAh ชาร์จซ้ำได้ผ่าน USB-C พอแบตใกล้หมดก็เสียบสายชาร์จแล้วใช้ต่อได้ค่ะ",
+      },
+      "wotofo-nexbar-18k-days": {
+        question: "nexBAR 18K ใช้ได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัวค่ะ แล้วแต่คน สูบจัดก็หมดไวหน่อย ส่วนตัวเลขที่ WOTOFO ระบุไว้คือสูงสุด 18,000 พัฟ และน้ำยา 21mL ค่ะ",
+      },
+    },
   },
   "joiway-f3": {
     whoIsThisFor: {
@@ -920,6 +1152,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้ง 2 กลิ่นในเครื่องเดียว",
     shortDescription:
       "พอตใช้แล้วทิ้งจาก Joiway 2 กลิ่นในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
+    faqs: {
+      "joiway-f4-double-flavor": {
+        question: "JOIWAY F4 เป็นรุ่น Double Flavor ใช่ไหม",
+        answer: "ใช่ค่ะ F4 เป็นพอตใช้แล้วทิ้งแบบ Double Flavor มีสองกลิ่นในเครื่องเดียว กลิ่นจับคู่มาให้แล้ว เลือกคู่ที่ถูกใจได้เลยค่ะ ส่วนชื่อที่ JOIWAY ตั้งให้รุ่นนี้คือ F4 TWINS",
+      },
+      "joiway-f4-switch": {
+        question: "JOIWAY F4 สลับกลิ่นยังไง",
+        answer: "หมุนปากดูดไปอีกฝั่งได้เลยค่ะ น้ำยาสองกลิ่นแยกอยู่คนละถัง พอปากดูดไปอยู่เหนือถังไหน พัฟต่อไปก็เป็นกลิ่นของถังนั้น และ JOIWAY ระบุว่าสลับได้ตลอดเวลาค่ะ",
+      },
+      "joiway-f4-capacity": {
+        question: "JOIWAY F4 แต่ละกลิ่นมีน้ำยาเท่าไหร่",
+        answer: "น้ำยาบรรจุสำเร็จมาในตัวเครื่องถังละ 10mL ค่ะ รวมทั้งเครื่องเป็น 20mL",
+      },
+      "joiway-f4-charge": {
+        question: "JOIWAY F4 ชาร์จได้ไหม",
+        answer: "ชาร์จได้ค่ะ แบต 650mAh ชาร์จซ้ำได้ผ่าน USB-C พอแบตใกล้หมดก็เสียบสายชาร์จแล้วใช้ต่อได้ ส่วนจอ LED บนตัวเครื่องบอกตัวเลขเป็นเปอร์เซ็นต์ค่ะ",
+      },
+    },
   },
   "tfit-m-power-20k": {
     whoIsThisFor: {
@@ -939,6 +1189,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้งของ TFIT ที่ OKami24 รีวิวใช้จริงบน YouTube",
     shortDescription:
       "พอตใช้แล้วทิ้งของ TFIT รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ตามที่ชอบ",
+    faqs: {
+      "tfit-m-power-20k-review": {
+        question: "M Power 20K มีรีวิวไหม",
+        answer: "มีค่ะ OKami24 รีวิวรุ่นนี้จากการใช้จริงไว้บน YouTube และคลิปอยู่ในหน้านี้ด้วยค่ะ",
+      },
+      "tfit-m-power-20k-charge": {
+        question: "TFIT 20K ชาร์จได้ไหม",
+        answer: "ชาร์จได้ค่ะ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C ช่องชาร์จอยู่ที่ก้นพอต ถ้าแบตหมดก่อนน้ำยา ก็ชาร์จแล้วสูบต่อได้ค่ะ",
+      },
+      "tfit-m-power-20k-airflow": {
+        question: "TFIT M Power ปรับลมได้ไหม",
+        answer: "ปรับได้ค่ะ TFIT ระบุว่าตั้งได้ตั้งแต่แน่นไปจนถึงโล่ง เลือกให้เข้ากับแนวการสูบของตัวเองได้เลย",
+      },
+      "tfit-m-power-20k-days": {
+        question: "M Power 20K ใช้ได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัวค่ะ แล้วแต่คน สูบจัดก็หมดไวหน่อย ตัวเลขที่ TFIT ระบุไว้คือสูงสุด 20,000 พัฟ และถังน้ำยาเป็นแบบใส มองจากด้านนอกก็เห็นว่ายังเหลืออยู่เท่าไหร่ค่ะ",
+      },
+    },
   },
   // maxlist (21/10): warehouse facts only — Max "Foli Bar 15k" (Disposable-42).
   "foli-bar-15k": {

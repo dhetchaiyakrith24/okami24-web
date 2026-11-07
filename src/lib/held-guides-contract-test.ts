@@ -94,7 +94,8 @@ export function runHeldGuidesContractTests(): HeldGuidesContractResult[] {
   check(`no public article or technology page links a held article`, textHits.length === 0, textHits.join("; ") || "none");
   const fileHits: string[] = [];
   for (const file of sourceFiles(SRC_DIR)) {
-    if (RECORD_FILES.has(file) || file.endsWith("held-guides-contract-test.ts")) continue;
+    // content-dates.json is generated and lists held ids on purpose (scripts/content-dates.ts): it is read by id, never linked.
+    if (RECORD_FILES.has(file) || file.endsWith("held-guides-contract-test.ts") || file.endsWith("content-dates.json")) continue;
     const src = readFileSync(file, "utf8");
     for (const s of heldSlugs) if (src.includes(`/guides/${s}`) || src.includes(`"${s}"`)) fileHits.push(`${path.relative(ROOT, file)} names ${s}`);
   }

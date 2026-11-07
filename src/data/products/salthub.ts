@@ -163,11 +163,37 @@ export const salthubProducts: Product[] = [
       "You change flavours often and want a range that runs from cool and fruity all the way to Cola and Matcha Latte.",
     ],
     // Batch 3c: the FAQ "How do I switch power modes?" left — the modes block tells it.
+    // Round SEO full 07/11: the questions searchers type (SEO_LANDSCAPE §0). Thai + zh by id in product-copy-th.ts and faq-copy.ts.
     faqs: [
       {
+        id: "m-bar-10k-name",
+        question: "Is the Marbo 10K the same as the M Bar 10K?",
+        answer: "Yes. M Bar 10K is SALTHUB's model name; Marbo is the name many Thai shops use for it.",
+      },
+      {
+        id: "m-bar-10k-flavours",
+        question: "What flavours does the Marbo 10K come in?",
+        answer: "12: All Berry, Blue Ice, Cola, Grape, Kyoho Grape, Matcha Latte, Menthol Blast, Pink Berry, Strawberry Kiwi, Watermelon, Watermelon Mint and Yellow Mint.",
+      },
+      {
+        id: "m-bar-10k-days",
+        question: "How long does a 10,000-puff Marbo last?",
+        answer: "10,000 puffs is the maximum SALTHUB states, and it isn't a count of days. Vaping now and then through the day makes it last longer than vaping often or in long sessions.",
+      },
+      {
+        id: "m-bar-10k-price",
+        question: "How much is the Marbo 10K?",
+        answer: "The price is shown in the price box near the top of this page.",
+      },
+      {
+        id: "m-bar-10k-review",
+        question: "Where can I watch a Marbo 10K review?",
+        answer: "Our own clip is on this page, under “OKami24 Review”. It covers the Matcha Latte flavour.",
+      },
+      {
         id: "m-bar-10k-recharge",
-        question: "Is it rechargeable?",
-        answer: "Yes — it charges over USB-C rather than being discarded once the internal battery is depleted.",
+        question: "Can you recharge the Marbo 10K?",
+        answer: "Yes, over USB-C. When the battery runs out, charge it and carry on; it isn't a single-charge disposable.",
       },
     ],
     relatedProductSlugs: ["m-bar-9k", "m-switch-kit"],
@@ -553,7 +579,33 @@ export const salthubProducts: Product[] = [
       "Anyone on disposables who feels it's a waste to throw the whole device away each time.",
     ],
     // Batch 3b: the FAQ "different from an M Bar disposable?" left — the head copy already says it twice.
-    faqs: [],
+    faqs: [
+      {
+        id: "m-switch-kit-name",
+        question: "Is the Marbo 15K the same as the M Switch 15K?",
+        answer: "On our site, yes. We call this set the M Bar 15K; SALTHUB's own page names it the M Switch Kit.",
+      },
+      {
+        id: "m-switch-kit-swap",
+        question: "Which Marbo has a replaceable pod?",
+        answer: "The M Switch Kit on this page. You keep the device and recharge it, and when a pod runs out or you want another flavour, you take it off and fit a new M Switch Pod. The M Bar 9K and M Bar 10K are disposables, replaced whole once the liquid runs out.",
+      },
+      {
+        id: "m-switch-kit-device-only",
+        question: "Can I buy the M Switch 15K device on its own?",
+        answer: "We sell it as a set: the device with one pod of the flavour you choose. The device is the same for every flavour. If you already have one and just want more pods, they're sold separately on the M Switch Pod page.",
+      },
+      {
+        id: "m-switch-kit-price",
+        question: "How much is the M Switch 15K?",
+        answer: "The price is shown in the price box near the top of this page. It's for the set: the device and one pod.",
+      },
+      {
+        id: "m-switch-kit-refill",
+        question: "Do you have to refill the M Switch 15K?",
+        answer: "No. The e-liquid comes in the prefilled pod, so there's no bottled e-liquid to buy or pour in.",
+      },
+    ],
     relatedProductSlugs: ["m-switch-pod", "zero-pro"],
     sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/m-switch-kit/"],
   },
@@ -647,7 +699,33 @@ export const salthubProducts: Product[] = [
     features: [],
     compatibility: [{ type: "cartridge", label: "M Switch Kit device body" }],
     whoIsThisFor: ["M Switch Kit owners restocking flavor cartridges."],
-    faqs: [],
+    faqs: [
+      {
+        id: "m-switch-pod-name",
+        question: "Are the Marbo 15K pod and the M Switch 15K pod the same?",
+        answer: "In our shop, yes. Both names mean the M Switch Pod, SALTHUB's black pod for the M Switch Kit device, which we also call the M Bar 15K.",
+      },
+      {
+        id: "m-switch-pod-device",
+        question: "Can I buy just the pod if I don't have the device yet?",
+        answer: "The pod needs an M Switch Kit device to work. If you're just starting, buying the kit is easier, as the M Switch Kit comes with the device and one pod.",
+      },
+      {
+        id: "m-switch-pod-days",
+        question: "How many days does one M Switch Pod last?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. SALTHUB rates each pod at up to 15,000 puffs, so the days depend on how often you vape and how long each draw is.",
+      },
+      {
+        id: "m-switch-pod-flavours",
+        question: "Which flavours does the Marbo 15K pod come in?",
+        answer: "SALTHUB lists 17, including cool flavours like Blue Ice, grape like Kyoho Grape, other fruit like Mango Passion, and others like Cola. The flavour list on this page has the names.",
+      },
+      {
+        id: "m-switch-pod-strength",
+        question: "What nicotine strength is the M Switch Pod?",
+        answer: "SALTHUB gives 30mg, and the e-liquid inside is nicotine salt.",
+      },
+    ],
     relatedProductSlugs: ["m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/"],
   },

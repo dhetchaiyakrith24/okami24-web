@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { TechnologyEntryPageHeader } from "@/components/content/TechnologyEntryPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { legacyRelatedItems } from "@/lib/related-order";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { familyModifiedDate } from "@/lib/content-dates";
@@ -62,7 +63,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
           video={entry.reviewVideo}
         />
       </Container>
-      <RelatedProducts products={related} />
+      <RelatedProducts items={legacyRelatedItems(related)} />
     </>
   );
 }

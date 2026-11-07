@@ -42,7 +42,7 @@ export function ProductPicker({
     <div className="flex flex-col gap-4">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {selected.map((product) => (
-          <div key={product.slug} className="relative rounded-xl border border-surface-border bg-surface-1 p-3">
+          <div key={product.slug} className="relative flex flex-col rounded-xl border border-surface-border bg-surface-1 p-3">
             <button
               onClick={() => onRemove(product.slug)}
               aria-label={`${dict.compare.removeAriaPrefix} ${product.name}`}
@@ -50,8 +50,8 @@ export function ProductPicker({
             >
               <X size={12} aria-hidden />
             </button>
-            <div className="h-16 w-full">
-              <CatalogItemMedia item={product} sizes="10vw" />
+            <div className="relative aspect-[4/5] w-full">
+              <CatalogItemMedia item={product} sizes="(min-width: 640px) 25vw, 50vw" />
             </div>
             <p className="mt-2 text-xs font-semibold text-foreground">{product.name}</p>
             <p className="label-mono text-[0.6rem] text-foreground-dim" lang={labelLang(product.brandName)}>{product.brandName}</p>
@@ -59,7 +59,7 @@ export function ProductPicker({
         ))}
         {selected.length < max &&
           Array.from({ length: max - selected.length }).map((_, i) => (
-            <div key={i} className="flex aspect-square items-center justify-center rounded-xl border border-dashed border-surface-border text-foreground-dim">
+            <div key={i} className="flex aspect-[4/5] h-full w-full items-center justify-center rounded-xl border border-dashed border-surface-border text-foreground-dim">
               <span className="text-2xl">+</span>
             </div>
           ))}
