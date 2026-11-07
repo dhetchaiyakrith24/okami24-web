@@ -1,18 +1,22 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { baht, BrandSplitName, groupLabel, thousands } from "@/components/catalog/lineup-format";
+import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { buyableRows, disposableChooser, type ChooserGroup } from "@/lib/disposable-chooser";
 import type { ChooserCopy } from "@/i18n/category-guide-copy";
-import type { ChooserGroup, DisposableChooserData, LineupRow } from "@/lib/disposable-lineup";
+import type { LineupRow } from "@/lib/disposable-lineup";
 
 /**
  * Round "disposable pod" block 1 (05/11, designer): pick a disposable by puffs or by budget, on the page itself. Native
  * <details> as in the page's FAQ, so every group stays in the server HTML while closed and nothing needs JS. Each closed
  * line already answers the question (how many models, at what price). The real price only: no struck label, no sale chip.
- * Rows and copy are this page's slice (server props, LESSONS 37).
+ * Rows and copy are this page's slice (server props, LESSONS 37). Only what can be bought today sits in a group (owner 07/11), so the
+ * groups are worked out here, with the live stock over the build; a sold-out model stays in the table of every model below.
  */
 function Row({ row, unit }: { row: LineupRow; unit: string }) {
   return (
@@ -72,10 +76,12 @@ export function DisposableChooserJump({ copy }: { copy: Partial<Record<"th" | "e
   );
 }
 
-export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | "en" | "zh", ChooserCopy>>; data: DisposableChooserData }) {
+export function DisposableChooser({ copy, rows }: { copy: Partial<Record<"th" | "en" | "zh", ChooserCopy>>; rows: LineupRow[] }) {
   const { locale, dict } = useLocale();
+  const stock = useLiveCardStock();
+  const data = useMemo(() => disposableChooser(buyableRows(rows, stock)), [rows, stock]);
   const c = copy[locale] ?? copy.en ?? copy.th;
-  if (!c) return null;
+  if (!c || data.minPrice === null) return null;
   const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const unit = dict.catalog.puffUnit;
   const span = (lo: number | null, hi: number | null, f: (n: number) => string) => (lo === null || hi === null ? "" : lo === hi ? f(lo) : `${f(lo)}–${f(hi)}`);
@@ -86,7 +92,7 @@ export function DisposableChooser({ copy, data }: { copy: Partial<Record<"th" | 
 
   return (
     <section id="choose" className="flex scroll-mt-24 flex-col gap-8 border-t border-surface-border-soft pt-10 lg:gap-10 lg:pt-12">
-      <SectionHeading title={t(c.heading)} titleClassName="leading-[1.15] [text-wrap:balance]" description={data.minPrice !== null ? t(c.lede.replace("{min}", baht(data.minPrice))) : undefined} />
+      <SectionHeading title={t(c.heading)} titleClassName="leading-[1.15] [text-wrap:balance]" description={t(c.lede.replace("{min}", baht(data.minPrice)))} />
       <div className="flex flex-col gap-4">
         <div className="grid gap-4 lg:grid-cols-2 lg:items-start lg:gap-6">
           <Groups title={c.puffPanelTitle} groups={data.puffGroups} meta={puffMeta} copy={c} unit={unit} t={t} />

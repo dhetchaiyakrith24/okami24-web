@@ -8,7 +8,7 @@ const OFFICIAL_50MG = "https://www.wotofo.com/products/wotofo-nexbar-18k-50mg";
 /** Photo of one flavour — OKami24's Higgsfield remake of WOTOFO's own gallery photo (map entries in
  *  scripts/process-images.map.json carry the job, the reference and the fidelity sheet). */
 const photo = (id: string, name: string) => ({
-  src: `/assets/products/wotofo-nexbar-18k/variant-${id}-wm3.webp`,
+  src: `/assets/products/wotofo-nexbar-18k/variant-${id}-wm5.webp`,
   alt: `WOTOFO nexBAR 18K, ${name}`,
 });
 
@@ -63,7 +63,7 @@ export const wotofoProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/wotofo-nexbar-18k/card-wm3.webp",
+        src: "/assets/products/wotofo-nexbar-18k/card-wm5.webp",
         alt: "WOTOFO nexBAR 18K, Watermelon Ice, isolated product shot",
         angle:
           "Three-quarter front, isolated — OKami24's Higgsfield remake (image-fix round, owner ruling IMAGE_SPEC §0 item 7) of WOTOFO's own gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice); IoU 0.996 against the maker photo.",
@@ -151,7 +151,28 @@ export const wotofoProducts: Product[] = [
     ],
     compatibility: [typeC],
     whoIsThisFor: ["Customers who saw OKami24's own WOTOFO nexBAR 18K review and want the maker's full spec and flavour list."],
-    faqs: [],
+    faqs: [
+      {
+        id: "wotofo-nexbar-18k-screen",
+        question: "What does the nexBAR 18K screen show?",
+        answer: "The LED screen shows the battery as a percentage, the e-liquid left and the mode you're in.",
+      },
+      {
+        id: "wotofo-nexbar-18k-airflow",
+        question: "How do you adjust the airflow on the nexBAR 18K?",
+        answer: "Use the slider on the base. It has 2 levels, so pick the one that feels right.",
+      },
+      {
+        id: "wotofo-nexbar-18k-charge",
+        question: "Can you recharge the nexBAR 18K?",
+        answer: "Yes. The 750mAh battery recharges over USB-C, so you can plug it in when it runs low.",
+      },
+      {
+        id: "wotofo-nexbar-18k-days",
+        question: "How many days does the nexBAR 18K last?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. WOTOFO's figures are up to 18,000 puffs and 21mL of e-liquid.",
+      },
+    ],
     relatedProductSlugs: [],
     // + WOTOFO's own review (battery percentage, the grooved slider, the button: batch 5a, checker #283 r1).
     sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG, "https://www.wotofo.com/blogs/disposable-vape/wotofo-nexbar-18k-review"],

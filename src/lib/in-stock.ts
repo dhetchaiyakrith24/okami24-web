@@ -1,5 +1,6 @@
 import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 
 /**
@@ -16,5 +17,13 @@ export function inStockEntryKeys(products: Product[], publishedProducts: Storefr
   return [
     ...products.filter((p) => legacyCardStock(p).inStock).map((p) => `legacy:${p.slug}`),
     ...publishedProducts.filter((p) => publishedCardStock(p).inStock).map((p) => `published:${p.slug}`),
+  ];
+}
+
+/** The catalog entries with no price: nothing to buy, so CatalogBrowser's default order puts them last. */
+export function noPriceEntryKeys(products: Product[], publishedProducts: StorefrontProductView[]): string[] {
+  return [
+    ...products.filter((p) => getLegacyApprovedPrice(p.slug) === null).map((p) => `legacy:${p.slug}`),
+    ...publishedProducts.filter((p) => p.sellingPrice === null).map((p) => `published:${p.slug}`),
   ];
 }

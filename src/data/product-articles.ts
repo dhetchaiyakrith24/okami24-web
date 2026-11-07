@@ -26,6 +26,33 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
+  // Round SEO full 07/11: FAQ only, the page has no article yet. เลโก้ once, as the name people type (SEO_LANDSCAPE 0.4).
+  "relx-creator-pod-20k": {
+    th: {
+      sections: [],
+      faq: [
+        { question: "RELX Creator Pod 20K หรือที่หลายคนเรียกว่าหัวพอตเลโก้ ใช้กับเครื่องไหน", answer: "ใช้กับเครื่อง [RELX Creator](/products/relx-creator) ค่ะ ร้านยืนยันจากของจริงที่มีอยู่ ก่อนซื้อ เช็คชื่อรุ่นเครื่องของตัวเองอีกครั้งนะคะ" },
+        { question: "หัว RELX Creator มีกลิ่นอะไรบ้าง", answer: "หน้านี้รวมไว้ 31 กลิ่นค่ะ ถ้าแบ่งตามชื่อกลิ่น สายเย็นมีอย่าง Double Mint · Cool Mint และ Spearmint สายผลไม้มีอย่าง Grape · Watermelon · Lychee และ Pink Guava แนวอื่นมีอย่าง Cola · Jasmine Tea และ Rainbow Candy ส่วนการแบ่งสายนี้ร้านจัดเองจากชื่อกลิ่นค่ะ" },
+        { question: "หัว RELX Creator 20K มีแบบ 5% ไหม", answer: "ในรายการกลิ่นมี 8 กลิ่นที่ชื่อมี 5% ต่อท้ายค่ะ เช่น Grape 5% · Double Mint 5% และ Classic Tobacco 5% ก่อนกดเลือก ลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ" },
+      ],
+    },
+    en: {
+      sections: [],
+      faq: [
+        { question: "Which device does the RELX Creator Pod 20K fit?", answer: "The [RELX Creator](/products/relx-creator). We have confirmed this with our own stock. Check your device name before you buy." },
+        { question: "Which flavours do RELX Creator pods come in?", answer: "This page lists 31. Going by the names, cool ones include Double Mint, Cool Mint and Spearmint, fruit includes Grape, Watermelon, Lychee and Pink Guava, and others include Cola, Jasmine Tea and Rainbow Candy. The groups are ours, not RELX's." },
+        { question: "Do RELX Creator 20K pods come in 5%?", answer: "The list has 8 flavours with 5% at the end of the name, such as Grape 5%, Double Mint 5% and Classic Tobacco 5%. Check the name before you choose." },
+      ],
+    },
+    zh: {
+      sections: [],
+      faq: [
+        { question: "RELX Creator Pod 20K 适配哪款主机？", answer: "适配 [RELX Creator](/products/relx-creator)，已经本店以实物确认。购买前请再核对一次自己的主机型号。" },
+        { question: "RELX Creator 烟弹有哪些口味？", answer: "本页共列出 31 种口味。按名称来分，清凉系有 Double Mint、Cool Mint、Spearmint 等，水果系有 Grape、Watermelon、Lychee、Pink Guava 等，其他还有 Cola、Jasmine Tea、Rainbow Candy 等。分类由本店按名称整理，并非 RELX 官方分类。" },
+        { question: "RELX Creator 20K 烟弹有 5% 的吗？", answer: "口味列表里有 8 种名称以 5% 结尾的口味，例如 Grape 5%、Double Mint 5%、Classic Tobacco 5%。选择前请再核对一次名称。" },
+      ],
+    },
+  },
   // Pack facts = the owner's pouch photos 03/11 (RELX LUMI 18K Aloe Grape, front + back). Flavours = max-seed "RELX-LUMI-18K",
   // grouped by the shop from the words in each name. No charging, coil, airflow or days-of-use claim: nothing printed or confirmed.
   // The pack's QR and verify code stay out until someone scans one (relxnow.com has no LUMI page). The 5% rows: only the flavour
@@ -3659,8 +3686,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           answer: "ESKO BAR ระบุความเข้มข้นนิโคตินไว้ 3% ค่ะ",
         },
         {
-          question: "ESKO BAR 20000 กับ Esko Bar Switch 20K ต่างกันยังไง",
-          answer: "ESKO BAR 20000 ใช้หมดแล้วทิ้งทั้งเครื่อง ส่วน [Esko Bar Switch 20K](/products/pod-159) เก็บตัวเครื่องไว้ใช้ต่อได้ เปลี่ยนแค่หัวค่ะ",
+          question: "ESKO BAR 20K เปลี่ยนหัวได้ไหม",
+          answer: "รุ่นนี้เปลี่ยนหัวไม่ได้ค่ะ ESKO BAR 20000 เป็นพอตใช้แล้วทิ้ง ใช้จนน้ำยาหมดแล้วเปลี่ยนทั้งเครื่อง ถ้าอยากเก็บตัวเครื่องไว้ใช้ต่อแล้วเปลี่ยนแค่หัว รุ่นที่ทำแบบนั้นได้คือ [Esko Bar Switch 20K](/products/pod-159) ค่ะ",
+        },
+        {
+          question: "ESKO BAR 20K กลิ่นไหนดี",
+          answer: "ไม่มีคำตอบเดียวค่ะ ขึ้นอยู่กับว่าชอบแนวไหน ลองเริ่มจากสายที่ชอบก่อน เย็น องุ่น ผลไม้ หรือแนวอื่น รายชื่อแต่ละสายอยู่ในหัวข้อ “ESKO BAR 20000 มีกลิ่นอะไรบ้าง” ด้านบนค่ะ",
+        },
+        {
+          question: "ESKO BAR 20K ต้องเติมน้ำยาไหม",
+          answer: "ไม่ต้องเติมค่ะ รุ่นนี้เป็นพอตใช้แล้วทิ้งที่มีน้ำยาบรรจุมาในเครื่องแล้วค่ะ",
         },
       ],
     },
@@ -3698,8 +3733,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           answer: "ESKO BAR lists a nicotine strength of 3%.",
         },
         {
-          question: "How is the ESKO BAR 20000 different from the Esko Bar Switch 20K?",
-          answer: "The ESKO BAR 20000 is thrown away once it is used up; with the [Esko Bar Switch 20K](/products/pod-159) you keep the device and change only the pod.",
+          question: "Can you change the pod on the ESKO BAR 20K?",
+          answer: "No. The ESKO BAR 20000 is a disposable: you use it until the e-liquid runs out, then replace the whole device. If you'd rather keep the device and change only the pod, that's the [Esko Bar Switch 20K](/products/pod-159).",
+        },
+        {
+          question: "Which ESKO BAR 20K flavour should I pick?",
+          answer: "There's no single answer; it depends on what you enjoy. Start with a group you like, cool, grape, fruit or other, then look through the names under “Which flavours does the ESKO BAR 20000 come in?” above.",
+        },
+        {
+          question: "Do you need to refill the ESKO BAR 20K?",
+          answer: "No. It's a disposable that comes filled with e-liquid.",
         },
       ],
     },
@@ -3737,8 +3780,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           answer: "ESKO BAR 标注的尼古丁浓度为 3%。",
         },
         {
-          question: "ESKO BAR 20000 和 Esko Bar Switch 20K 有什么不同？",
-          answer: "ESKO BAR 20000 用完后整支丢弃；[Esko Bar Switch 20K](/products/pod-159) 则保留主机，只换烟弹。",
+          question: "ESKO BAR 20K 可以换烟弹吗？",
+          answer: "这款不能换烟弹。ESKO BAR 20000 是一次性电子烟，烟油用完后整支更换。如果想保留主机、只换烟弹，可以看 [Esko Bar Switch 20K](/products/pod-159)。",
+        },
+        {
+          question: "ESKO BAR 20K 哪个口味好？",
+          answer: "没有标准答案，取决于个人喜好。可以先选喜欢的类别：清凉、葡萄、水果或其他，各类口味见上方“ESKO BAR 20000 有哪些口味？”。",
+        },
+        {
+          question: "ESKO BAR 20K 需要自己加烟油吗？",
+          answer: "不需要。这是一款出厂已装好烟油的一次性电子烟。",
         },
       ],
     },
@@ -4374,15 +4425,91 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   "m-bar-10k": {
     th: {
       lede: "ด้านล่างไล่ดู M Bar 10K ทีละส่วนจากโปสเตอร์ของ SALTHUB เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
-      sections: []
+      sections: [
+        {
+          heading: "M Bar 10K คืออะไร เหมาะกับใคร",
+          paragraphs: [
+            "M Bar 10K เป็นพอตใช้แล้วทิ้งของ SALTHUB ในตระกูล M Bar ที่มีน้ำยามาในเครื่องแล้ว จึงไม่ต้องเติมน้ำยาเอง ใช้ไปจนน้ำยาหมดก็เปลี่ยนเป็นเครื่องใหม่ได้",
+            "รุ่นนี้เหมาะกับคนที่อยากได้เครื่องที่ใช้ง่าย ไม่ต้องดูแลคอยล์หรือหัวพอตเอง",
+          ],
+        },
+        {
+          heading: "M Bar 10K กลิ่นไหนดี",
+          paragraphs: [
+            "กลิ่นไหนดีไม่มีคำตอบเดียว ขึ้นอยู่กับว่าชอบแนวไหน ร้านแบ่ง 12 กลิ่นของรุ่นนี้เป็น 4 สาย โดยดูจากคำในชื่อกลิ่น ไม่ได้แบ่งตาม SALTHUB ลองเลือกสายที่ชอบไว้ก่อน แล้วค่อยดูรูปทีละกลิ่นจากรายการกลิ่นบนหน้านี้ก็ได้",
+            "สายเย็นมี 4 กลิ่น คือ Blue Ice · Menthol Blast · Watermelon Mint และ Yellow Mint ถ้ากำลังหากลิ่นเมนทอล ชื่อในรายการคือ Menthol Blast",
+            "สายองุ่นมี 2 กลิ่น คือ Grape กับ Kyoho Grape ซึ่งก็คือองุ่นเคียวโฮ",
+            "สายผลไม้มี 4 กลิ่น คือ All Berry · Pink Berry · Strawberry Kiwi และ Watermelon",
+            "ถ้าอยากลองรสอื่นนอกจากผลไม้และความเย็น ก็มี Cola กับ Matcha Latte ให้ดูในแนวอื่น",
+            "ถ้าอยากเทียบกลิ่นกับรุ่นอื่นในตระกูล M Bar ด้วย อ่านต่อได้ที่ [Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)",
+          ],
+        },
+        {
+          heading: "เทียบ M Bar 10K กับ M Bar 9K และ M Switch Kit",
+          paragraphs: [
+            "[M Bar 9K หรือมาโบ 9K](/products/m-bar-9k) เป็นพอตใช้แล้วทิ้งในตระกูลเดียวกัน ต่างจากรุ่นนี้หลัก ๆ ที่โหมด M Bar 10K สลับโหมดได้ ส่วน SALTHUB ไม่ได้ระบุโหมดไว้สำหรับรุ่น 9K ถ้าอยากเลือกความแรงได้ รุ่นนี้ตรงกว่า แต่ถ้าอยากได้กลิ่นหลายแนว M Bar 9K มีตัวเลือกมากกว่า",
+            "ถ้าสูบเป็นประจำและไม่อยากเปลี่ยนเครื่องใหม่ทุกครั้งที่น้ำยาหมด อีกทางที่น่าดูคือ [M Switch Kit](/products/m-switch-kit) ซึ่งเก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอต",
+          ],
+        },
+      ]
     },
     en: {
       lede: "Below, the M Bar 10K one part at a time, from SALTHUB's own posters.",
-      sections: []
+      sections: [
+        {
+          heading: "What is the M Bar 10K, and who is it for?",
+          paragraphs: [
+            "The M Bar 10K is a disposable from SALTHUB's M Bar line that comes filled with e-liquid, so there's nothing to top up. Use it until the liquid runs out, then replace it with a new one.",
+            "It suits anyone who wants something simple, with no coil or pod to look after.",
+          ],
+        },
+        {
+          heading: "Which M Bar 10K flavour should I pick?",
+          paragraphs: [
+            "There's no single answer; it depends on what you enjoy. We've sorted this model's 12 flavours into four groups by the words in their names, which is our grouping, not SALTHUB's. Pick a group first, then look through the photos in the flavour list on this page.",
+            "Cool (4): Blue Ice, Menthol Blast, Watermelon Mint and Yellow Mint. If you're after menthol, the name on the list is Menthol Blast.",
+            "Grape (2): Grape and Kyoho Grape.",
+            "Fruit (4): All Berry, Pink Berry, Strawberry Kiwi and Watermelon.",
+            "For something other than fruit or cool, there's Cola and Matcha Latte in the other group.",
+          ],
+        },
+        {
+          heading: "How does the M Bar 10K differ from the M Bar 9K and the M Switch Kit?",
+          paragraphs: [
+            "The [M Bar 9K](/products/m-bar-9k) is a disposable from the same line. The main difference is the modes: the M Bar 10K has modes to switch between, while SALTHUB lists none for the 9K. If you want to choose the strength, this model is the closer fit; if you want more flavours to pick from, the M Bar 9K has the wider range.",
+            "If you vape regularly and would rather not replace the device each time the liquid runs out, look at the [M Switch Kit](/products/m-switch-kit), a reusable device where you keep the body and change only the pod.",
+          ],
+        },
+      ]
     },
     zh: {
       lede: "下面根据 SALTHUB 自己的海报，逐项来看 M Bar 10K。",
-      sections: []
+      sections: [
+        {
+          heading: "M Bar 10K 是什么，适合谁？",
+          paragraphs: [
+            "M Bar 10K 是 SALTHUB M Bar 系列的一次性电子烟，出厂已装好烟油，不用自己加。烟油用完后，换一支新的就可以。",
+            "它适合想要简单省心、不用打理线圈或烟弹的人。",
+          ],
+        },
+        {
+          heading: "M Bar 10K 哪个口味好？",
+          paragraphs: [
+            "没有标准答案，取决于个人喜好。我们按口味名称里的词，把这款的 12 种口味分成四类，这是本店的分类，不是 SALTHUB 的。可以先选一类，再到本页的口味列表里逐一看图。",
+            "清凉类 4 种：Blue Ice、Menthol Blast、Watermelon Mint、Yellow Mint。想找薄荷醇口味，列表里的名称是 Menthol Blast。",
+            "葡萄类 2 种：Grape 和 Kyoho Grape（巨峰葡萄）。",
+            "水果类 4 种：All Berry、Pink Berry、Strawberry Kiwi、Watermelon。",
+            "想试水果和清凉以外的味道，还有 Cola 和 Matcha Latte，归在其他类。",
+          ],
+        },
+        {
+          heading: "M Bar 10K 和 M Bar 9K、M Switch Kit 有什么不同？",
+          paragraphs: [
+            "[M Bar 9K](/products/m-bar-9k) 是同系列的一次性电子烟，和这款的主要区别在模式：M Bar 10K 可以切换模式，SALTHUB 则未为 9K 标注模式。想自己选强度，这款更合适；想要更多口味，M Bar 9K 的选择更多。",
+            "如果经常使用，又不想每次烟油用完都换整支，可以看看 [M Switch Kit](/products/m-switch-kit)：机身可重复使用，只需更换烟弹。",
+          ],
+        },
+      ]
     },
   },
   // Articles queue 0211 batch 5 (02/11): IQOS ILUMA i — every fact = iqos.com/ph ILUMA i kit page (in-app browser 02/11; quotes in

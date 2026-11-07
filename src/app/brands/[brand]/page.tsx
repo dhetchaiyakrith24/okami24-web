@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inStockEntryKeys } from "@/lib/in-stock";
+import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { brands, getBrand } from "@/data/brands";
 import { familiesForBrand } from "@/data/families";
@@ -22,6 +22,9 @@ import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { relatedArticlesForCollection } from "@/lib/article-relevance";
+import { CategoryGuide } from "@/components/catalog/CategoryGuide";
+import { BRAND_GUIDE_COPY } from "@/i18n/brand-guide-copy";
+import { articleFaqJsonLd } from "@/lib/article-jsonld";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -86,10 +89,16 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   // Round "clip": the page's shop clip (if any) + its VideoObject, described from the Thai dictionary like the product page's.
   const clip = isEmpty ? undefined : COLLECTION_VIDEOS[brandPath];
   const collectionSlugs = [...products, ...publishedProducts, ...pilotProducts].map((p) => p.slug);
+  // Round SEO full (07/11): a brand with an entry in BRAND_GUIDE_COPY gets the category text block under its grid, the
+  // FAQPage of the Thai Q/A it shows, and its models as the ItemList. Other brands are unchanged.
+  const guideCopy = isEmpty ? undefined : BRAND_GUIDE_COPY[brandSlug];
+  const guideFaqJsonLd = guideCopy?.th ? articleFaqJsonLd(guideCopy.th.faq) : null;
+  const listItems = guideCopy ? [...products, ...publishedProducts].map((p) => ({ name: p.displayName, path: `/products/${p.slug}` })) : undefined;
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: brandPageName, description: brandPageDescription, path: brandPath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: brandPageName, description: brandPageDescription, path: brandPath, items: listItems })) }} />
+      {guideFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideFaqJsonLd) }} />}
       {/* Round 7 "SEO ค" B2: the trail names the brand the way a visible breadcrumb would ("Home →
           SALTHUB"), not the whole <title> with its "— OKami24 (OKM)" suffix — 4 brand pages carried
           the full title here (_incoming/seo-c/keymap.md §3). CollectionPage above keeps the title. */}
@@ -97,10 +106,11 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts)} />
+        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>
+      {guideCopy && <CategoryGuide copy={guideCopy} rows={[]} />}
       {/* Round "SEO ง" batch 6: the articles that link this brand or cover its products (article-relevance.ts). */}
       {!isEmpty && (
         <RelatedArticles

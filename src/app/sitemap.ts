@@ -8,6 +8,7 @@ import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { SITE_URL as BASE_URL } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { guideLastModified, pageLastModified, type ContentFamily } from "@/lib/content-dates";
+import { productSitemapImages } from "@/lib/sitemap-images";
 
 // Round "search-price" batch 3 (2026-09-22): `lastModified` used to be `new Date()` — the build
 // time, the same on all 105 URLs, so every deploy told crawlers the privacy page had just changed.
@@ -52,11 +53,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // mixed signal Search Console reports as "noindex". The URL keeps working and comes back into
   // the sitemap by itself the day the category has stock.
   for (const c of categoriesWithProducts()) routes.push(page(`/products/${c.slug}`));
-  for (const p of allProducts) routes.push(page(`/products/${p.slug}`));
+  for (const p of allProducts) routes.push({ ...page(`/products/${p.slug}`), images: productSitemapImages(p) });
   // Real, published ProductMaster products only — never the DEV-preview pool (see
   // storefront-bridge.ts). Grows automatically as more products get genuine owner publication
   // approval (see publication-approvals.ts) — no per-product edit needed here.
-  for (const p of getPublishedProducts()) routes.push(page(`/products/${p.slug}`));
+  for (const p of getPublishedProducts()) routes.push({ ...page(`/products/${p.slug}`), images: productSitemapImages(p) });
   // Only brands with a real product right now — a brand page with zero products is noindexed
   // (see brands/[brand]/page.tsx's generateMetadata), so it has no business being offered to a
   // crawler via the sitemap either. Same list `brandsWithProducts()` already builds for footer/

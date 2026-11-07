@@ -1,5 +1,5 @@
 import type { ChooserCopy } from "@/i18n/category-guide-copy";
-import type { ChooserGroup } from "@/lib/disposable-lineup";
+import type { ChooserGroup } from "@/lib/disposable-chooser";
 
 /** Small shared formats of the disposables chooser and tables: no data import, safe in client components (LESSONS 37). */
 export const thousands = (n: number) => n.toLocaleString("en-US");

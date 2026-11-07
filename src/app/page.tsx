@@ -21,10 +21,16 @@ import { HomeProductIndex } from "@/components/home/HomeProductIndex";
 import { CONTACT } from "@/data/contact";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { CategoryGuide } from "@/components/catalog/CategoryGuide";
+import { HOME_GUIDE_COPY } from "@/i18n/home-guide-copy";
+import { articleFaqJsonLd } from "@/lib/article-jsonld";
 
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
 // leak as the default for every other page (see layout.tsx's metadata comment).
 export const metadata: Metadata = canonicalFor("/");
+
+// The Thai Q/A of the closing note, as FAQPage: same rule as the block itself (cart on).
+const homeFaqJsonLd = ORDERING_ENABLED ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;
 
 export default function Home() {
   const flagships = getFlagshipProducts();
@@ -78,6 +84,7 @@ export default function Home() {
           site, referenced by `@id` from every product page's `Offer.seller` (see seo.ts). Same
           injection pattern as the product page's breadcrumb JSON-LD; nothing visible renders. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(CONTACT)) }} />
+      {homeFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }} />
       {/* Mobile round C, MOBILE_SPEC [M1] "plays once, and not again on back". The phone's hero
           motion is pure CSS so that it starts in the first painted frame, before hydration —
@@ -142,6 +149,8 @@ export default function Home() {
         <HomeProductIndex eyebrow="Catalog Index" />
 
         <GuideTeaserGrid guides={guides.slice(0, 3)} />
+        {/* Round SEO full (07/11): the shop's closing note + FAQ, only while the cart is on (it talks about ordering here). */}
+        {ORDERING_ENABLED && <CategoryGuide copy={HOME_GUIDE_COPY} rows={[]} />}
       </div>
     </>
   );

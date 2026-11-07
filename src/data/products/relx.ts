@@ -1,7 +1,7 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
-const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm3.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
+const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm5.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
@@ -38,7 +38,7 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-smash-go-12k/card-v2-wm3.webp",
+        src: "/assets/products/relx-smash-go-12k/card-v2-wm5.webp",
         alt: "RELX Smash Go 12K, Grape colourway, isolated product shot",
         angle: "Front, isolated — official RELX product photography (relxnow.com Shopify files, native 1224×1224), background-removed by OKami24. Re-processed 2026-09-06 (LAUNCH_AUDIT 11) through scripts/process-images.ts from the native files: device ≈722px on the 1000px canvas (was 712px with JPEG artefacts). 1224px is the largest original RELX publishes; the owner lifted the 800px floor on 2026-09-06 (largest real original, no upscaling). Sources: _incoming/relx-smash-go-12k/SOURCE.md",
         transparentBackground: true,
@@ -54,16 +54,16 @@ export const relxProducts: Product[] = [
     // sharp, correctly identified). `availability: "unknown"` — this product has no Shipnity
     // integration (newly admitted to the catalog this mission, not yet in operational stock data).
     flavorVariants: [
-      { id: "apple", name: "Apple", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-apple-v2-wm3.webp", alt: "RELX Smash Go 12K, Apple" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-cola-v2-wm3.webp", alt: "RELX Smash Go 12K, Cola" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm3.webp", alt: "RELX Smash Go 12K, Double Mint" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm3.webp", alt: "RELX Smash Go 12K, Grape" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9b5fa8", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-lychee-v2-wm3.webp", alt: "RELX Smash Go 12K, Grape Lychee" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "green-mango", name: "Green Mango", swatchHex: "#a8c53e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-green-mango-v2-wm3.webp", alt: "RELX Smash Go 12K, Green Mango" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm3.webp", alt: "RELX Smash Go 12K, Mixberry" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "passion-fruit", name: "Passion Fruit", swatchHex: "#e0a83e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-passion-fruit-v2-wm3.webp", alt: "RELX Smash Go 12K, Passion Fruit" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-peach-strawberry-v2-wm3.webp", alt: "RELX Smash Go 12K, Peach Strawberry" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Watermelon" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "apple", name: "Apple", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-apple-v2-wm5.webp", alt: "RELX Smash Go 12K, Apple" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-cola-v2-wm5.webp", alt: "RELX Smash Go 12K, Cola" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm5.webp", alt: "RELX Smash Go 12K, Double Mint" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "grape", name: "Grape", swatchHex: "#8a6bb0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm5.webp", alt: "RELX Smash Go 12K, Grape" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9b5fa8", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-lychee-v2-wm5.webp", alt: "RELX Smash Go 12K, Grape Lychee" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "green-mango", name: "Green Mango", swatchHex: "#a8c53e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-green-mango-v2-wm5.webp", alt: "RELX Smash Go 12K, Green Mango" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm5.webp", alt: "RELX Smash Go 12K, Mixberry" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "passion-fruit", name: "Passion Fruit", swatchHex: "#e0a83e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-passion-fruit-v2-wm5.webp", alt: "RELX Smash Go 12K, Passion Fruit" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-peach-strawberry-v2-wm5.webp", alt: "RELX Smash Go 12K, Peach Strawberry" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Watermelon" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
       // line 2 max-sync (22/10): 17 more options in Shipnity Max (Disposable-39-11..27) — not on relxnow.com's global page (the 5% ones
       // are its 5% strength); Max names, "<Flavour> 5%" written one way.
       // Photos (line 1, 22/10): the device differs by flavour only in its stripe colour, and the live 10 are 5 colour groups
@@ -71,23 +71,23 @@ export const relxProducts: Product[] = [
       // colour its stripe has on that flavour's retailer poster (pod789.com/product/relx-smash-go-12k, _incoming/smash/src) — pink berry + grape aloe lavender,
       // lychee + watermelon bubblegum + pink guava + strawberry red, oolong tea + cool mint + spearmint green, blueberry +
       // classic tobacco blue, pineapple yellow; a 5% option = its 3% flavour's photo (strength is not visible on the device).
-      { id: "grape-5", name: "Grape 5%", swatchHex: "#8a6bb0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm3.webp", alt: "RELX Smash Go 12K, Grape 5%" } },
-      { id: "watermelon-5", name: "Watermelon 5%", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Watermelon 5%" } },
-      { id: "cola-5", name: "Cola 5%", swatchHex: "#6b4423", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-cola-v2-wm3.webp", alt: "RELX Smash Go 12K, Cola 5%" } },
-      { id: "double-mint-5", name: "Double Mint 5%", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm3.webp", alt: "RELX Smash Go 12K, Double Mint 5%" } },
-      { id: "cool-mint-5", name: "Cool Mint 5%", swatchHex: "#5ec4b0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm3.webp", alt: "RELX Smash Go 12K, Cool Mint 5%" } },
-      { id: "spearmint-5", name: "Spearmint 5%", swatchHex: "#4fb07a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm3.webp", alt: "RELX Smash Go 12K, Spearmint 5%" } },
-      { id: "mixberry-5", name: "Mixberry 5%", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm3.webp", alt: "RELX Smash Go 12K, Mixberry 5%" } },
-      { id: "classic-tobacco-5", name: "Classic Tobacco 5%", swatchHex: "#8a6a45", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm3.webp", alt: "RELX Smash Go 12K, Classic Tobacco 5%" } },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm3.webp", alt: "RELX Smash Go 12K, Pink Berry" } },
-      { id: "lychee", name: "Lychee", swatchHex: "#f0c0d0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Lychee" } },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e86a8a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Watermelon Bubblegum" } },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm3.webp", alt: "RELX Smash Go 12K, Grape Aloe" } },
-      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#a07a3a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm3.webp", alt: "RELX Smash Go 12K, Oolong Tea" } },
-      { id: "pink-guava", name: "Pink Guava", swatchHex: "#e8808a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Pink Guava" } },
-      { id: "blueberry", name: "Blueberry", swatchHex: "#3a4a8e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm3.webp", alt: "RELX Smash Go 12K, Blueberry" } },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#d9405a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm3.webp", alt: "RELX Smash Go 12K, Strawberry" } },
-      { id: "pineapple", name: "Pineapple", swatchHex: "#e0c93a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-passion-fruit-v2-wm3.webp", alt: "RELX Smash Go 12K, Pineapple" } },
+      { id: "grape-5", name: "Grape 5%", swatchHex: "#8a6bb0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm5.webp", alt: "RELX Smash Go 12K, Grape 5%" } },
+      { id: "watermelon-5", name: "Watermelon 5%", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Watermelon 5%" } },
+      { id: "cola-5", name: "Cola 5%", swatchHex: "#6b4423", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-cola-v2-wm5.webp", alt: "RELX Smash Go 12K, Cola 5%" } },
+      { id: "double-mint-5", name: "Double Mint 5%", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm5.webp", alt: "RELX Smash Go 12K, Double Mint 5%" } },
+      { id: "cool-mint-5", name: "Cool Mint 5%", swatchHex: "#5ec4b0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm5.webp", alt: "RELX Smash Go 12K, Cool Mint 5%" } },
+      { id: "spearmint-5", name: "Spearmint 5%", swatchHex: "#4fb07a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm5.webp", alt: "RELX Smash Go 12K, Spearmint 5%" } },
+      { id: "mixberry-5", name: "Mixberry 5%", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm5.webp", alt: "RELX Smash Go 12K, Mixberry 5%" } },
+      { id: "classic-tobacco-5", name: "Classic Tobacco 5%", swatchHex: "#8a6a45", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm5.webp", alt: "RELX Smash Go 12K, Classic Tobacco 5%" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm5.webp", alt: "RELX Smash Go 12K, Pink Berry" } },
+      { id: "lychee", name: "Lychee", swatchHex: "#f0c0d0", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Lychee" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e86a8a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Watermelon Bubblegum" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-grape-v2-wm5.webp", alt: "RELX Smash Go 12K, Grape Aloe" } },
+      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#a07a3a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-double-mint-v2-wm5.webp", alt: "RELX Smash Go 12K, Oolong Tea" } },
+      { id: "pink-guava", name: "Pink Guava", swatchHex: "#e8808a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Pink Guava" } },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#3a4a8e", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-mixberry-v2-wm5.webp", alt: "RELX Smash Go 12K, Blueberry" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#d9405a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon-v2-wm5.webp", alt: "RELX Smash Go 12K, Strawberry" } },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#e0c93a", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-passion-fruit-v2-wm5.webp", alt: "RELX Smash Go 12K, Pineapple" } },
     ],
     // Site-wide template round batch 4c (06/10): the G5 template — RELX's own pictures, one per block (blocks.js in
     // _incoming/sitewide-template/4/4c/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's KV.
@@ -124,7 +124,33 @@ export const relxProducts: Product[] = [
     whoIsThisFor: [
       "You want a disposable that's easy to carry and slips into a pocket for the whole day.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "relx-smash-go-12k-what",
+        question: "What kind of device is the RELX Smash Go 12K?",
+        answer: "It's a rechargeable disposable from RELX, rated at up to 12,000 puffs, with a MEGA MESH coil and a pocket-sized body.",
+      },
+      {
+        id: "relx-smash-go-12k-charge",
+        question: "Can you recharge the RELX 12K?",
+        answer: "Yes. The 400mAh battery charges over USB-C, so when it runs out you can plug it in and carry on.",
+      },
+      {
+        id: "relx-smash-go-12k-days",
+        question: "How many days do 12,000 puffs last on the RELX Smash Go?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. 12,000 puffs is the most RELX states, so the days depend on how often you vape and how long each draw is.",
+      },
+      {
+        id: "relx-smash-go-12k-strength",
+        question: "What nicotine strength is the RELX Smash Go 12K?",
+        answer: "It comes in 3% and 5% nicotine salt. The 5% flavours have 5% at the end of the name, so check the name before you choose.",
+      },
+      {
+        id: "relx-smash-go-12k-review",
+        question: "Is there a review of the RELX Smash Go 12K?",
+        answer: "Yes. OKami24 made a review clip on YouTube, and you can watch it on this page.",
+      },
+    ],
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: ["https://www.relxnow.com/products/relx-smash-go-12k"],
   },
@@ -159,7 +185,7 @@ export const relxProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         // Image round img-1610 16/10: card-v3 = studio re-shoot with the real cap (grey disc + V groove; checker #540 r2 taste note on card-v2).
-        src: "/assets/products/relx-infinity-2-plus/card-v3-wm3.webp",
+        src: "/assets/products/relx-infinity-2-plus/card-v3-wm5.webp",
         alt: "RELX Infinity 2 Plus, Black Sapphire, front view",
         angle: "front, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from RELX's own Black Sapphire front render",
         transparentBackground: true,
@@ -244,7 +270,7 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-creator/card-v4-wm4.webp",
+        src: "/assets/products/relx-creator/card-v4-wm5.webp",
         alt: "RELX Creator Pro device, grey body with a yellow base and pixel smiley screen, upright three-quarter view",
         angle: "3/4, upright — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10)",
         transparentBackground: true,
@@ -256,19 +282,19 @@ export const relxProducts: Product[] = [
     // photos; v4 (07/10 night) = the five colours as one zig-zag group (1/3/5 in front, 2/4 behind) — the one-row v3 left
     // the square half empty at 390 (look-batch/lineup-zig.js --zig --pick).
     lineupImage: {
-      src: "/assets/products/relx-creator/lineup-v5-wm4.webp",
+      src: "/assets/products/relx-creator/lineup-v5-wm5.webp",
       alt: "RELX Creator Pro device, all 5 colours — black, white, grey yellow, green, yellow",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v5-wm4.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
-      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v5-wm4.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow-v5-wm5.webp", alt: "RELX Creator Pro device, grey with a yellow base", ownFloor: true } },
+      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black-v5-wm5.webp", alt: "RELX Creator Pro device, black", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       // Batch 4d-2 (06/10): RELX's other three colours (relxnow.com lists Black / White / Green / Yellow) — catalog completeness;
       // photos = see the "Photos" comment above. The shop's stock is unknown.
-      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v5-wm4.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v5-wm4.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
-      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v5-wm4.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white-v5-wm5.webp", alt: "RELX Creator Pro device, white", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green-v5-wm5.webp", alt: "RELX Creator Pro device, green", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow-v5-wm5.webp", alt: "RELX Creator Pro device, yellow", ownFloor: true }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
     ],
     // RELX's own Creator Pro Device page (relxnow.com, read 2026-09-30): 800mAh, Type-C fast charging, one button — one
     // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
@@ -322,9 +348,24 @@ export const relxProducts: Product[] = [
     whoIsThisFor: ["Vapers who want a device they keep, with prefilled pods they swap instead of filling e-liquid."],
     faqs: [
       {
+        id: "relx-creator-what",
+        question: "What is the RELX Creator?",
+        answer: "The RELX Creator, often called the RELX LEGO, is a reusable RELX device that takes prefilled pods. It's the device RELX lists on its own site as the Creator Pro Device.",
+      },
+      {
         id: "relx-creator-pods",
         question: "Which pods fit the RELX Creator?",
         answer: "RELX Creator Pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
+      },
+      {
+        id: "relx-creator-price",
+        question: "How much is the RELX Creator?",
+        answer: "The price is shown in the price box near the top of this page. It's for the device alone; pods are sold separately.",
+      },
+      {
+        id: "relx-creator-no-draw",
+        question: "The RELX Creator won't draw. What should I do?",
+        answer: "We'd start with one click on the button to check the battery. If it's flat, charge it over USB-C. If there's charge left, take the pod out, seat it firmly again and wipe the contacts with a dry cotton swab or tissue. If it still won't draw, ask us on LINE @okm24.",
       },
     ],
     relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],
