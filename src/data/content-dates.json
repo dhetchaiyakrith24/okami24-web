@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T11:52:46+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T16:45:41+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T16:46:26+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -191,8 +191,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-07T15:32:01+07:00",
-      "fp": "305e7324b2f4"
+      "date": "2026-11-07T16:46:26+07:00",
+      "fp": "cb950cea830f"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",

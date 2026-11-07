@@ -69,7 +69,7 @@ export function productsHeadTh(count: number, orderingOn = false) {
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
     // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
     // top, not a seller's phrase) — "พอต" already covers it.
-    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS รุ่นที่ขายอยู่บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
+    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคารุ่นที่ขายอยู่ ค้นด้วยชื่อรุ่นได้ ${orderCloseTh(orderingOn)}`,
   };
 }
 
