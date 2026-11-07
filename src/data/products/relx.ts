@@ -178,7 +178,7 @@ export const relxProducts: Product[] = [
       { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9a8bc4", availability: "unknown" },
       { id: "mango-passion-fruit", name: "Mango Passion Fruit", swatchHex: "#f2a93b", availability: "unknown" },
       { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
-      { id: "mix-berry", name: "Mix Berry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "mix-berry", name: "Mixed Berry", swatchHex: "#a24a7e", availability: "unknown" },
       { id: "orange-splash", name: "Orange Splash", swatchHex: "#f28a2e", availability: "unknown" },
       { id: "spearmint", name: "Spearmint", swatchHex: "#5fbf9a", availability: "unknown" },
       { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#f2a2b5", availability: "unknown" },
