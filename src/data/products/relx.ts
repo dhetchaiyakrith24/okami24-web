@@ -191,9 +191,8 @@ export const relxProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "30,000", sourceStatus: "unverified" }],
     features: [
-      { id: "shape", title: "A body that sits in the hand", description: "It is short and rounded, closer to a pebble than a stick, so it stays small in the palm or a pocket." },
+      { id: "shape", title: "A body that sits in the hand", description: "It is short and rounded, like a pebble, so it stays small in the palm or a pocket." },
       { id: "display", title: "A teardrop display", description: "The black teardrop on the front is what you check, rather than guessing how much is left." },
-      { id: "choice", title: "If you want one today", description: "If you would rather buy today, the models in stock sit near the top of this page." },
     ],
     compatibility: [],
     whoIsThisFor: [
