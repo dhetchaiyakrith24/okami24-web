@@ -1,6 +1,9 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
+const ULTRA_POD_PAGE = "https://relxnow.com/products/relx-maxgo-ultra-pod";
+const ULTRA_KIT_PAGE = "https://relxnow.com/products/relx-ultra-kit";
+const ARTISAN_PLUS_PAGE = "https://relxnow.com/products/relx-artisan-plus-device";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm5.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
