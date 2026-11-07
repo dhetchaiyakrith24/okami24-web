@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T05:32:09+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T06:17:54+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -143,7 +143,7 @@
       "fp": "f2851dc267db"
     },
     "/brands/smok": {
-      "date": "2026-11-08T05:32:09+07:00",
+      "date": "2026-11-08T06:17:54+07:00",
       "fp": "36f2dd2ced11"
     },
     "/brands/tfit": {
@@ -195,8 +195,12 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-08T05:32:09+07:00",
-      "fp": "e5ceaf4f0242"
+      "date": "2026-11-08T06:17:54+07:00",
+      "fp": "9fc73493cb75"
+    },
+    "/products/86-bar-20k": {
+      "date": "2026-11-08T05:29:23+07:00",
+      "fp": "cfab40194357"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -331,8 +335,8 @@
       "fp": "46ca3eb3948f"
     },
     "/products/disposables": {
-      "date": "2026-11-08T04:10:05+07:00",
-      "fp": "e359e0fff34c"
+      "date": "2026-11-08T05:29:23+07:00",
+      "fp": "389b744ec0f0"
     },
     "/products/drag-6": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -495,8 +499,8 @@
       "fp": "ac746f87aa4a"
     },
     "/products/nexas-booster-16k": {
-      "date": "2026-11-08T04:10:05+07:00",
-      "fp": "6071cd237d4f"
+      "date": "2026-11-08T05:29:23+07:00",
+      "fp": "fc398793d8c3"
     },
     "/products/nexbar-switch-15k-pod": {
       "date": "2026-11-02T03:47:57+07:00",
@@ -547,7 +551,7 @@
       "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-11-08T05:32:09+07:00",
+      "date": "2026-11-08T06:17:54+07:00",
       "fp": "84dd2d5995b4"
     },
     "/products/pods-cartridges": {
@@ -611,11 +615,11 @@
       "fp": "4ceabd6266cc"
     },
     "/products/smok-nord-5": {
-      "date": "2026-11-08T05:32:09+07:00",
+      "date": "2026-11-08T06:17:54+07:00",
       "fp": "a93d3b59b723"
     },
     "/products/smok-rpm-5": {
-      "date": "2026-11-08T05:32:09+07:00",
+      "date": "2026-11-08T06:17:54+07:00",
       "fp": "709decd45f28"
     },
     "/products/sup-zero-22k": {
@@ -637,6 +641,10 @@
     "/products/vazer-one-pod": {
       "date": "2026-11-02T03:47:57+07:00",
       "fp": "c9fb672f6057"
+    },
+    "/products/vazer-reload-15k": {
+      "date": "2026-11-08T05:45:40+07:00",
+      "fp": "e2a05e4a2354"
     },
     "/products/vinci-s": {
       "date": "2026-11-04T00:04:42+07:00",
