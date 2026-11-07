@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { inStockEntryKeys } from "@/lib/in-stock";
+import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
 import { notFound } from "next/navigation";
 import { categories, getCategory, kindCategoryId } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory } from "@/data/products";
@@ -20,6 +20,7 @@ import { CompatibilitySection } from "@/components/product/CompatibilitySection"
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { SimilarInStock } from "@/components/product/SimilarInStock";
 import { publishedRelatedItems, relatedFor } from "@/lib/related-order";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
@@ -72,6 +73,7 @@ import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
+import { similarInStock } from "@/lib/similar-in-stock";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
@@ -258,7 +260,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             // do have something instead of ending the visit. Read from the catalog, so it needs
             // no upkeep and makes no promise about this category.
             alternativeCategories={isEmptyCategory ? categoriesWithProducts() : []}
-            inStockKeys={inStockEntryKeys(products, publishedProducts)}
+            inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
           {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
@@ -344,6 +346,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
+  // No price = the warehouse has never had it: nothing to buy here, so the closest models we do have sit right under the head.
+  const similar = legacySellingPrice === null ? similarInStock(product.slug) : [];
   // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
   // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
   // its own `availability` (no SKU, stock round batch 2b).
@@ -389,7 +393,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
+      {similar.length > 0 && <SimilarInStock items={similar} />}
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
@@ -420,7 +425,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} />
+      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} similarSlugs={similar.map((item) => item.slug)} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
       <RelatedArticles articles={relatedArticlesForLegacy(product)} otherLocaleArticles={relatedArticlesForLegacy(product, { skipThaiOnly: true })} />

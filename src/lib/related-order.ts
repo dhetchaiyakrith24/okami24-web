@@ -3,6 +3,7 @@ import { kindCategoryId } from "@/data/categories";
 import { getPublishedProductBySlug, type StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
+import { NEVER_SUGGEST } from "@/data/similar-models";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { RELATED_SLOTS } from "@/lib/related-row";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
@@ -35,9 +36,6 @@ import type { Product } from "@/types/catalog";
  *  "Connector" in Thai shops; pod789 sells it as a pod that fits the RELX Creator] · ESKO BAR 20000 · INFY 20K · RELX LUMI 18K.
  *  nexBar CLEAR 18K (pod-180) had no market signal; it stays last on the owner's word (BSOT §15 "Customer favorites"). */
 const SHOP_PICKS = ["m-bar-10k", "pod-159", "m-switch-kit", "m-bar-9k", "muro-connector-20k", "esko-bar-20k", "infy-20k", "relx-lumi-18k", "pod-180"];
-
-/** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18: never in cart suggestions or shop picks). */
-const NEVER = new Set(["muro-space-15k", "marbo-10k-clone"]);
 
 /** Parts that fit only some devices (src/data/categories.ts) — never a shop pick for an empty cart. */
 const CONSUMABLE_CATEGORIES = new Set(["pods-cartridges", "coils-accessories", "heated-tobacco-consumables"]);
@@ -172,7 +170,7 @@ function canSell(slug: string, live?: LiveLookup): boolean {
  *  "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น … Auto ตลอด"), has an approved price, is not one of `slugs` and not on the "never" list. */
 export function rowFor(slugs: string[], live?: LiveLookup): CatalogItem[] {
   const taken = new Set(slugs);
-  return suggestionOrder(slugs, (i) => !taken.has(i.slug) && !NEVER.has(i.slug) && i.sellingPrice !== null && canSell(i.slug, live)).slice(0, RELATED_SLOTS);
+  return suggestionOrder(slugs, (i) => !taken.has(i.slug) && !NEVER_SUGGEST.has(i.slug) && i.sellingPrice !== null && canSell(i.slug, live)).slice(0, RELATED_SLOTS);
 }
 
 /** One card of the product page's block: the shop's own card data. */

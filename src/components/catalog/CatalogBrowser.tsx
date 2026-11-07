@@ -136,6 +136,7 @@ export function CatalogBrowser({
   isEmptyCategory,
   alternativeCategories = [],
   inStockKeys,
+  noPriceKeys,
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
@@ -148,6 +149,9 @@ export function CatalogBrowser({
   /** "สินค้าพร้อมส่ง" (owner 24/10 night): entry keys a customer can buy today, from `inStockEntryKeys()`
    *  (src/lib/in-stock.ts) on the server page. Absent = no in-stock toggle. */
   inStockKeys?: string[];
+  /** Entry keys with no price: nothing to buy, so they sit after priced cards in the default order (round popular models 07/11).
+   *  From the server (`noPriceEntryKeys`), so the price table never reaches the browser. */
+  noPriceKeys?: string[];
 }) {
   const { dict, locale } = useLocale();
 
@@ -193,6 +197,7 @@ export function CatalogBrowser({
     setInStockOnly(next);
   };
   const [sort, setSort] = useState<SortMode>("featured");
+  const noPriceSet = useMemo(() => new Set(noPriceKeys ?? []), [noPriceKeys]);
 
   // Phone sheet (M4). Groups start with only the brand list open — it is the facet a shopper
   // reaches for first — and any group that already has a tick opens itself when the sheet does.
@@ -238,10 +243,10 @@ export function CatalogBrowser({
       const familyLabel = (e: CatalogEntry) => (e.familyId ? familyName(e.familyId) : "");
       sorted.sort((a, b) => familyLabel(a).localeCompare(familyLabel(b)) || a.name.localeCompare(b.name));
     } else {
-      sorted.sort((a, b) => Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
+      sorted.sort((a, b) => Number(noPriceSet.has(a.key)) - Number(noPriceSet.has(b.key)) || Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
-  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort]);
+  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort, noPriceSet]);
 
   function toggle<T>(set: Set<T>, value: T, setter: (s: Set<T>) => void) {
     const next = new Set(set);

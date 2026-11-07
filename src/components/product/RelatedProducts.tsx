@@ -8,7 +8,7 @@ import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { DisposablesAllLink } from "@/components/catalog/DisposablesLinks";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
-import { shownRow, type RelatedAnswer } from "@/lib/related-row";
+import { shownRow, shownSimilar, type RelatedAnswer } from "@/lib/related-row";
 import type { RelatedItem } from "@/lib/related-order";
 
 /**
@@ -16,9 +16,10 @@ import type { RelatedItem } from "@/lib/related-order";
  * are prerendered, so they paint the build's row, then a product page (`slug`) asks /api/related/<slug>: the server's row from
  * live stock, the same code as the cart's, with the card data of anything the page was not built with. A failed request
  * leaves the build's row with the /api/stock answer over it; so do guide and technology pages, which name their own products.
- * Renders nothing when no card can be bought — never a sold-out card to fill the section.
+ * Renders nothing when no card can be bought — never a sold-out card to fill the section. `similarSlugs` = the candidates of the
+ * similar-models block on a page with nothing to buy: what that block shows stays out of this row.
  */
-export function RelatedProducts({ items, slug, categoryId }: { items: RelatedItem[]; slug?: string; categoryId?: string }) {
+export function RelatedProducts({ items, slug, categoryId, similarSlugs = [] }: { items: RelatedItem[]; slug?: string; categoryId?: string; similarSlugs?: string[] }) {
   const changes = useLiveCardStock();
   const [answer, setAnswer] = useState<RelatedAnswer<RelatedItem> | null>(null);
   useEffect(() => {
@@ -36,7 +37,8 @@ export function RelatedProducts({ items, slug, categoryId }: { items: RelatedIte
       alive = false;
     };
   }, [slug]);
-  return <RelatedRow row={shownRow(items, changes, answer)} categoryId={categoryId} />;
+  const above = shownSimilar(similarSlugs, changes);
+  return <RelatedRow row={shownRow(items, changes, answer).filter((i) => !above.includes(i.slug))} categoryId={categoryId} />;
 }
 
 /** Same rail classes as ProductRail, for both kinds of card. */
