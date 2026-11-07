@@ -87,7 +87,7 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
   relx: (_priceOf, orderingOn = false) => ({
     title: `RELX ของแท้ พอตใช้แล้วทิ้ง หัวพอต ตัวเครื่อง${OKM_TITLE_SUFFIX}`,
-    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม รุ่นที่ขายอยู่บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
@@ -98,11 +98,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf, orderingOn?: boole
   }),
   voopoo: (_priceOf, orderingOn = false) => ({
     title: `VOOPOO ของแท้ พอตซิสเต็ม หัวพอต และคอยล์${OKM_TITLE_SUFFIX}`,
-    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน รุ่นที่ขายอยู่บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   uwell: (_priceOf, orderingOn = false) => ({
     title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน รุ่นที่ขายอยู่บอกราคาทุกรุ่น ${orderCloseTh(orderingOn)}`,
+    description: `UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคารุ่นที่ขายอยู่ ${orderCloseTh(orderingOn)}`,
   }),
   // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
   // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the

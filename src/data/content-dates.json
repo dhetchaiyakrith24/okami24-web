@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T11:52:46+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T15:31:38+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T16:45:41+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -127,8 +127,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-07T15:32:01+07:00",
-      "fp": "fb37bc386680"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "430f0e5a8ccb"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -147,12 +147,12 @@
       "fp": "f409fb3c3c5a"
     },
     "/brands/uwell": {
-      "date": "2026-11-07T15:32:01+07:00",
-      "fp": "c2cd551db80a"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "7c68138b3e7c"
     },
     "/brands/voopoo": {
-      "date": "2026-11-07T15:32:01+07:00",
-      "fp": "6c4f55c0f105"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "c4d02a86d930"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
