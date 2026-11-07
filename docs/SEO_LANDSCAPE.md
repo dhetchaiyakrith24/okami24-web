@@ -74,7 +74,7 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 | pod ใช้แล้วทิ้ง | 590 | — |  | 0/4 #69.0 | p/disposables | head |
 | เครื่องพอต | 590 | — |  |  | p/pod-systems | head |
 | พอต 20k | 590 | ไม่ได้วัด |  |  | p/disposables | head |
-| หัวพอต infy | 590 | ไม่ได้วัด |  |  | p/pods-cartridges | head |
+| หัวพอต infy | 590 | ไม่ได้วัด |  |  | p/pod-169 | มีหน้าแล้ว |
 | ตัวพอต | 480 | — | #8 |  | p/pod-systems | head |
 | vape แปล | 480 | ไม่ได้วัด |  |  | / | head |
 | vapex | 480 | ไม่ได้วัด |  |  | / | head |
@@ -117,11 +117,11 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 | คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
 |---|---|---|---|---|---|---|
-| นิโคติน | 9900 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| นิโคติน | 9900 | ไม่ได้วัด |  |  | g/what-is-nicotine | มีหน้าแล้ว |
 | vape คือ | 1300 | — |  |  | g/what-is-a-pod-system | head |
 | vapes คือ | 1300 | ไม่ได้วัด |  |  | g/what-is-a-pod-system | head |
 | pod คือ | 1000 | — |  |  | g/what-is-a-pod-system | head |
-| นิโคตินคือ | 880 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| นิโคตินคือ | 880 | ไม่ได้วัด |  |  | g/what-is-nicotine | มีหน้าแล้ว |
 | พอตคืออะไร | 720 | — |  |  | g/what-is-a-pod-system | head |
 | น้ำยาซอลนิค | 590 | — |  |  | g/salt-nic-vs-freebase | head |
 | น้ำยาฟรีเบส | 590 | — |  |  | g/salt-nic-vs-freebase | head |
@@ -129,7 +129,7 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 | พอตดูดไม่ขึ้น | 480 | ไม่ได้วัด |  |  | g/fixing-no-draw-and-blinking-light | ลิงก์เข้า · ความน่าเชื่อถือ |
 | พอตชาร์จไม่เข้า | 390 | — |  |  | g/battery-care-and-charging | head |
 | สแกนมาโบ | 320 | — |  |  | g/checking-a-genuine-pod | head |
-| ดูดพอตแล้วปวดหัว | 320 | — |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| ดูดพอตแล้วปวดหัว | 320 | — |  |  | g/headache-after-vaping | มีหน้าแล้ว |
 | พอตดูดไม่ขึ้นแต่ไฟติด | 320 | — |  |  | g/fixing-no-draw-and-blinking-light | head |
 | พอตไหม้แก้ยังไง | 260 | — |  |  | g/fixing-a-burnt-pod | head |
 | มาโบคืออะไร | 260 | ไม่ได้วัด |  |  | b/salthub | head |
