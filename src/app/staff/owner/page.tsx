@@ -101,7 +101,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           days={sales}
           profit={profit}
           hour={sameHourLastWeek(sales, now)}
-          avgSatang={week.orders > 0 ? Math.round(week.webSatang / week.orders) : null}
+          avgSatang={week.orders > 0 ? Math.round(week.webSatang / week.orders / 100) * 100 : null}
           counts={counts}
           oldest={oldestOrders()}
           canOpenOrders={canOpenOrders}

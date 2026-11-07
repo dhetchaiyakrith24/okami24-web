@@ -4,7 +4,7 @@ import type { StoredRound } from "@/lib/owner/bills";
 import type { TopProduct } from "@/lib/owner/dashboard";
 import { Bars } from "@/components/dashboard/Bars";
 import { Ring } from "@/components/dashboard/Ring";
-import { formatSatang } from "@/app/staff/_components/format";
+import { formatCount, formatSatang } from "@/app/staff/_components/format";
 
 /** The weekly view: the checked round, what the warehouse is owed, and how the week went. Rounds run Saturday 13:00 to Saturday 13:00. */
 
@@ -128,8 +128,8 @@ function Channels({ clicks, carts, top }: { clicks: number | null; carts: number
     <section aria-label="LINE และตะกร้า" className="dash-card dash-rise">
       <h2 className="font-semibold text-foreground">LINE และตะกร้า 7 วัน</h2>
       <ul className="dash-rows flex flex-col">
-        <Row label="คนกดปุ่ม LINE" value={clicks === null ? "ยังไม่มีข้อมูล" : String(clicks)} />
-        <Row label="ใส่ตะกร้าแล้วยังไม่สั่ง" value={String(carts)} />
+        <Row label="คนกดปุ่ม LINE" value={clicks === null ? "ยังไม่มีข้อมูล" : formatCount(clicks)} />
+        <Row label="ใส่ตะกร้าแล้วยังไม่สั่ง" value={formatCount(carts)} />
       </ul>
       <div className="flex flex-col gap-1">
         <h3 className="text-sm text-foreground-muted">ขายดีบนเว็บ · สลิป LINE ไม่บอกว่าซื้ออะไร</h3>
@@ -168,8 +168,8 @@ function Google({ weeks, through }: { weeks: GoogleWeek[]; through: string | nul
             </div>
             <div className="flex flex-col">
               <span className="text-sm text-foreground-muted">เว็บขึ้นให้คนเห็น</span>
-              <span className="font-display text-3xl font-bold tabular-nums leading-tight text-foreground">{now.impressions}</span>
-              {before && <span className="text-sm tabular-nums text-foreground-muted">สัปดาห์ก่อน {before.impressions}</span>}
+              <span className="font-display text-3xl font-bold tabular-nums leading-tight text-foreground">{formatCount(now.impressions)}</span>
+              {before && <span className="text-sm tabular-nums text-foreground-muted">สัปดาห์ก่อน {formatCount(before.impressions)}</span>}
             </div>
           </div>
           <Bars height="h-16" bars={padSlots(weeks, 8).map((w) => (w ? { value: w.clicks, label: shortDate(w.to), title: `สัปดาห์ถึง ${shortDate(w.to)} กด ${w.clicks}` } : null))} />

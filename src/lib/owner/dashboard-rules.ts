@@ -14,7 +14,8 @@ export function greeting(now: number): string {
   const hour = new Date(now + 7 * 3_600_000).getUTCHours();
   if (hour >= 5 && hour < 12) return "สวัสดีตอนเช้า";
   if (hour >= 12 && hour < 17) return "สวัสดีตอนบ่าย";
-  return "สวัสดีตอนเย็น";
+  if (hour >= 17 && hour < 21) return "สวัสดีตอนเย็น";
+  return "สวัสดีค่ะ";
 }
 
 /** How long ago, in the words the page shows. */

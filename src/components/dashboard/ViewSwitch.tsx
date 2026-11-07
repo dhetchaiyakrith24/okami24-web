@@ -27,7 +27,7 @@ export function ViewSwitch({ views, initial, label }: { views: DashView[]; initi
 
   return (
     <>
-      <div role="group" aria-label={label} className="dash-switch lg:hidden">
+      <div role="group" aria-label={label} className="dash-switch">
         {views.map((v) => (
           <button
             key={v.id}

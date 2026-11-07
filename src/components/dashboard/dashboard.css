@@ -52,6 +52,12 @@
   backdrop-filter: blur(14px);
 }
 
+@media (min-width: 64rem) {
+  .dash-switch {
+    display: none;
+  }
+}
+
 .dash-panel {
   animation: dash-fade 0.2s ease-out both;
 }

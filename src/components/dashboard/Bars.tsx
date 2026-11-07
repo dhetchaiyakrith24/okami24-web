@@ -24,7 +24,7 @@ export function Bars({ bars, height = "h-24" }: { bars: (Bar | null)[]; height?:
           if (!bar) return <span key={i} aria-hidden className="min-w-0 flex-1 rounded-md border border-dashed border-white/15" />;
           const size = `${Math.max(4, (Math.abs(bar.value) / top) * 100)}%`;
           const isLast = i === bars.length - 1;
-          const colour = bar.value < 0 ? "bg-danger" : isLast ? "bg-ember-strong" : "bg-surface-3";
+          const colour = bar.value < 0 ? "bg-danger" : isLast ? "bg-ember-strong" : "bg-foreground-muted/35";
           const body = (
             <>
               <span className={`flex items-end ${dips ? "h-3/4" : "h-full"}`}>
@@ -47,7 +47,7 @@ export function Bars({ bars, height = "h-24" }: { bars: (Bar | null)[]; height?:
       </div>
       <div aria-hidden className="flex gap-1.5">
         {bars.map((bar, i) => (
-          <span key={i} className="min-w-0 flex-1 text-center text-[0.8125rem] tabular-nums leading-tight text-foreground-muted">
+          <span key={i} className="min-w-0 flex-1 text-center text-xs tabular-nums leading-tight text-foreground-muted">
             {bar?.label ?? ""}
           </span>
         ))}
