@@ -189,7 +189,7 @@ export const relxProducts: Product[] = [
       { key: "pods", label: "Pod platform", value: "RELX Pod · RELX Pod Pro", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
     ],
     features: [
-      { id: "upgrade", title: "What changed from the Artisan", description: "Power goes from 6.5W to 8W, and the battery from 380mAh to 440mAh." },
+      { id: "upgrade", title: "What changed from the Artisan", description: "More power and a bigger battery than the Artisan." },
       { id: "indicator", title: "4-stage battery indicator", description: "Each bar stands for 25%. At one bar left, RELX says it's time to charge." },
       { id: "in-the-box", title: "What's in the box", description: "The device, a Type-C cable and the manual. Pods are separate." },
     ],

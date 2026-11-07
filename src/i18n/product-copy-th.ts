@@ -1025,7 +1025,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       upgrade: {
         title: "ต่างจาก Artisan รุ่นก่อนตรงไหน",
-        description: "รุ่นนี้เพิ่มจาก 6.5 วัตต์เป็น 8 วัตต์ และเพิ่มแบตจาก 380mAh เป็น 440mAh",
+        description: "รุ่นนี้กำลังไฟสูงขึ้น และแบตจุกว่ารุ่น Artisan เดิม",
       },
       indicator: {
         title: "ไฟบอกแบต 4 ระดับ",
