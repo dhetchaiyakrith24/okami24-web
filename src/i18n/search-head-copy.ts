@@ -363,7 +363,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   // Round popular models 07/11: numbers = verified spec rows from store.smoktech.com.
   "smok-nord-5": "SMOK Nord 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3 มีปุ่มเลื่อนปรับลมและจอ OLED 0.69 นิ้ว มี 12 สี",
-  "smok-rpm-5": "SMOK RPM 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 6.5mL ใช้คอยล์ RPM 3 จอ TFT 0.96 นิ้ว มี 8 สี",
+  "smok-rpm-5": "SMOK RPM 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 6.5mL ใช้คอยล์ RPM 3 Meshed ในกล่องมีค่า 0.15Ω และ 0.23Ω จอ TFT 0.96 นิ้ว มี 8 สี",
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ปรับลมและเลือกโหมดการใช้งานได้ ชาร์จผ่าน USB-C มี 16 กลิ่นให้ดูในหน้านี้",
   "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",
