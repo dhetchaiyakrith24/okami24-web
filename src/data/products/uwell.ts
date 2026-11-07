@@ -1731,7 +1731,33 @@ export const uwellProducts: Product[] = [
     whoIsThisFor: [
       "You're after the standard Caliburn G3, not the G3 Pro, and want UWELL's full spec and every colour it comes in.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g3-coil",
+        question: "How do I change the coil on the Caliburn G3?",
+        answer: "The coil is built into the pod, so you change the whole pod when the flavour starts to fade. The device stays the same.",
+      },
+      {
+        id: "caliburn-g3-pods",
+        question: "Which pods does the Caliburn G3 use?",
+        answer: "Caliburn G3 cartridges with a built-in meshed coil. Each holds 2.5mL and comes in 0.6Ω, 0.9Ω or 1.2Ω, depending on how tight a draw you like.",
+      },
+      {
+        id: "caliburn-g3-battery",
+        question: "What's the Caliburn G3's battery size, and how does it charge?",
+        answer: "It has a 900mAh built-in battery and charges over USB-C, with 2A fast charging.",
+      },
+      {
+        id: "caliburn-g3-wattage",
+        question: "Can I adjust the wattage on the Caliburn G3?",
+        answer: "Yes. The OLED screen lets you set the wattage up to 25W, and it also shows your puff count and offers three firing modes.",
+      },
+      {
+        id: "caliburn-g3-size",
+        question: "How big and how heavy is the UWELL Caliburn G3?",
+        answer: "It measures 115.5 × 24 × 13.9 mm and weighs about 47g. The device is aluminium alloy and the cartridge is PCTG.",
+      },
+    ],
     // Not caliburn-g5 / -lite (SEO watch rows frozen until 22/10 — round p63 file).
     relatedProductSlugs: ["caliburn-g3-pro", "caliburn-g4"],
     sourceUrls: [G3_OFFICIAL, "https://www.myuwell.com/g-pod-platform"],
@@ -1959,7 +1985,33 @@ export const uwellProducts: Product[] = [
       "Vapers who want everything on one screen in a slim pod, and an airflow valve to fine-tune the draw.",
       "Anyone not sure yet between MTL and RDL: a 0.4Ω and a 0.9Ω pod come in the box.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g3-pro-pods",
+        question: "Which pods does the Caliburn G3 Pro take?",
+        answer: "Any Caliburn G3 pod on the GPP platform, from 0.4Ω to 1.2Ω, in top-refill or side-refill versions. The box has a 0.4Ω and a 0.9Ω pod, both side refill.",
+      },
+      {
+        id: "caliburn-g3-pro-wattage",
+        question: "What wattage does the Caliburn G3 Pro go up to?",
+        answer: "It adjusts from 5W to 35W, and the ceiling depends on the pod: 35W with a 0.4Ω pod, 25W with 0.6Ω and 15W with 0.9Ω.",
+      },
+      {
+        id: "caliburn-g3-pro-lock",
+        question: "How do I lock the button on the Caliburn G3 Pro?",
+        answer: "Press it twice and the device fires on the draw only. Three presses set the wattage, and five turn it on or off.",
+      },
+      {
+        id: "caliburn-g3-pro-screen",
+        question: "What does the UWELL Caliburn G3 Pro screen show?",
+        answer: "The full-screen LCD shows the wattage, the battery in 4 bars and your puff count up to 999.",
+      },
+      {
+        id: "caliburn-g3-pro-battery",
+        question: "How big is the G3 Pro's battery?",
+        answer: "1000mAh, built in. It charges over USB-C at 2A.",
+      },
+    ],
     relatedProductSlugs: ["caliburn-g3-pro-koko", "caliburn-g4"],
     sourceUrls: ["https://www.myuwell.com/"],
   },

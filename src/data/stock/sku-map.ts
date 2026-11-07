@@ -222,6 +222,24 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   } },
   // Round p63 (owner 16/10, item 63): searched model the warehouse does not stock — no options on the maker page.
   "drag-x": { parent: null, product: null },
+  "drag-x2": { parent: null, options: {
+    "colorful-silver": null,
+    "pearl-white": null,
+    "sky-blue": null,
+    "modern-red": null,
+    "glow-pink": null,
+    "gray-metal": null,
+    "spray-black": null,
+    "champagne-golden": null,
+    "moss-green": null,
+    "snow-blue": null,
+    "checkered-black": null,
+    retro: null,
+    masala: null,
+    "carbon-fiber": null,
+    classic: null,
+    "galaxy-blue": null,
+  } },
   // Round p63 (owner item 68, 18/10): WOTOFO nexPOD 15K Pro Kit — the warehouse has no nexPOD: every option sold out.
   "nexpod-15k": { parent: null, options: {
     "black": null,
@@ -408,6 +426,19 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "pink-berry-50mg": "Pod-85-29",
     "banana-strawberry-50mg": "Pod-85-30",
     "menthol-freeze-50mg": "Pod-85-31",
+  } },
+  "relx-ultra-pod": { parent: null, options: {
+    watermelon: null,
+    "blueberry-sour-raspberry": null,
+    "cherry-cola": null,
+    "sunrise-lemon-lime": null,
+  } },
+  "relx-ultra-kit": { parent: null, options: {
+    watermelon: null,
+    "sunrise-lemon-lime": null,
+  } },
+  "relx-artisan-plus": { parent: null, options: {
+    "black-wave": null,
   } },
   "relx-smash-go-12k": { parent: "Disposable-39", options: {
     "apple": "Disposable-39-6",
