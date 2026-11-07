@@ -113,7 +113,8 @@ export const SECTION_IMAGES_ZH = sectionImagesIn({
  */
 // 2026-10-02: the owner released both D3-held comparisons (article round, cloud chat: "ได้ ปล่อยขึ้นเว็บเลย") — the set is
 // empty, the switch stays for the next held article.
-export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>([]);
+// Round SEO full 07/11: both wait for the owner's one-time review (he asked to avoid what Google may read two ways).
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["are-pods-harmful", "nicotine-in-urine-tests"]);
 
 /** The "can't open the website" DNS help page (round "site unreachable", 11/10) — id = slug; the route renders
  *  DnsGuideContent for it instead of ArticleBody, and the footer / age gate / home card link to it. */
@@ -3472,7 +3473,7 @@ const allGuides: Guide[] = [
     // repeated use) rest on https://narcotic.fda.moph.go.th/information-about-drugs/nicotine. Evidence: facts-knowledge.md lines 6-10.
     id: "what-is-nicotine",
     slug: "what-is-nicotine",
-    title: "นิโคตินคืออะไร มาจากไหน และอาการติดนิโคตินเป็นแบบไหน",
+    title: "นิโคตินคืออะไร มาจากไหน ติดแล้วเป็นยังไง",
     dek: "นิโคตินคือสารจากพืชสกุล Nicotiana โดยเฉพาะต้นยาสูบ บทความนี้เล่าว่าสารนี้อยู่ในร่างกายนานแค่ไหน และ WHO กับ CDC อธิบายการติดนิโคตินไว้อย่างไร",
     category: "getting-started",
     readingTimeMin: 4,
@@ -3492,7 +3493,7 @@ const allGuides: Guide[] = [
         heading: "นิโคตินอยู่ในร่างกายนานแค่ไหน",
         paragraphs: [
           "เรื่องนี้มักพูดกันด้วยครึ่งชีวิต คือเวลาที่ระดับสารในร่างกายลดลงเหลือครึ่งหนึ่ง รีวิวงานวิชาการของ Benowitz และคณะ ในวารสาร Nicotine & Tobacco Research เผยแพร่เมื่อ 12 มิถุนายน 2020 ระบุว่านิโคตินมีครึ่งชีวิตราว 2 ชั่วโมง",
-          "รีวิวเดียวกันระบุว่า cotinine สารที่มักใช้เป็นตัวบ่งชี้ในการตรวจปัสสาวะ มีครึ่งชีวิตตั้งแต่ 8 ชั่วโมงไปจนถึงมากกว่า 30 ชั่วโมง และต่างกันไปในแต่ละคน เรื่องการตรวจอ่านต่อได้ที่ [ดูดพอตตรวจฉี่เจอไหม](/guides/nicotine-in-urine-tests) ส่วนต้นฉบับอ่านได้ที่ [รีวิวของ Benowitz และคณะ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7882145/)",
+          "รีวิวเดียวกันระบุว่า cotinine สารที่มักใช้เป็นตัวบ่งชี้ในการตรวจปัสสาวะ มีครึ่งชีวิตตั้งแต่ 8 ชั่วโมงไปจนถึงมากกว่า 30 ชั่วโมง และต่างกันไปในแต่ละคน อ่านต้นฉบับได้ที่ [รีวิวของ Benowitz และคณะ](https://pmc.ncbi.nlm.nih.gov/articles/PMC7882145/)",
         ],
       },
       {
@@ -3529,7 +3530,7 @@ const allGuides: Guide[] = [
     // https://narcotic.fda.moph.go.th/information-about-drugs/nicotine (HANDOFF §18). No remedy, no strength advice, no product. Thai hotlines left out on purpose.
     id: "headache-after-vaping",
     slug: "headache-after-vaping",
-    title: "ดูดพอตแล้วปวดหัว เกิดจากอะไร และหน่วยงานสุขภาพแนะนำอะไร",
+    title: "ดูดพอตแล้วปวดหัว เกิดจากอะไร ควรทำยังไง",
     dek: "ดูดพอตแล้วปวดหัวเป็นอาการที่ NHS และ Cancer Research UK พูดถึงไว้ บทความนี้เล่าว่าทั้งสองแห่งแนะนำอะไร นิโคตินเกี่ยวข้องอย่างไร และอาการแบบไหนควรไปพบแพทย์",
     category: "getting-started",
     readingTimeMin: 3,
@@ -3550,7 +3551,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "หน้าของ NHS เรื่องการใช้บุหรี่ไฟฟ้าเพื่อเลิกบุหรี่ บอกว่าอาการปวดหัวเป็นหนึ่งในผลข้างเคียงที่พบบ่อย และถ้าเกิดอาการนี้ ควรคุยกับผู้เชี่ยวชาญด้านการเลิกบุหรี่ อ่านต้นฉบับได้ที่ [NHS ของสหราชอาณาจักร](https://www.nhs.uk/better-health/quit-smoking/vaping-to-quit-smoking/)",
           "Cancer Research UK พูดถึงอาการปวดหัวและคลื่นไส้ไว้ในหน้าที่ทบทวนเมื่อ 20 เมษายน 2026 ว่าอาการเหล่านี้มักดีขึ้นเมื่อเวลาผ่านไป และถ้าอาการคงอยู่ แนะนำให้คุยกับผู้เชี่ยวชาญด้านการเลิกบุหรี่ อ่านต้นฉบับได้ที่ [Cancer Research UK](https://www.cancerresearchuk.org/about-cancer/causes-of-cancer/smoking-and-cancer/is-vaping-harmful)",
-          "สองแห่งนี้แนะนำไปทางเดียวกัน คือให้คุยกับผู้เชี่ยวชาญด้านการเลิกบุหรี่ ส่วนภาพรวมว่าแต่ละหน่วยงานมองพอตอย่างไร อ่านได้ที่ [พอตอันตรายไหม](/guides/are-pods-harmful)",
+          "สองแห่งนี้แนะนำไปทางเดียวกัน คือให้คุยกับผู้เชี่ยวชาญด้านการเลิกบุหรี่",
         ],
       },
       {

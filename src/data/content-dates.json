@@ -20,7 +20,7 @@
     "src/components/tools/SearchTool.tsx": "2026-09-22T04:29:29+07:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
     "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
-    "src/data/guides.ts": "2026-11-07T11:39:13+07:00",
+    "src/data/guides.ts": "2026-11-07T12:15:50+07:00",
     "src/data/search-aliases.ts": "2026-11-03T06:11:30+07:00",
     "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
     "src/i18n/faq-copy.ts": "2026-11-07T11:52:46+07:00",
@@ -59,7 +59,7 @@
     "fixing-a-burnt-pod": "2026-11-05T01:48:05+07:00",
     "fixing-a-leaking-pod": "2026-11-05T01:48:05+07:00",
     "fixing-no-draw-and-blinking-light": "2026-11-05T01:48:05+07:00",
-    "headache-after-vaping": "2026-11-07T11:39:13+07:00",
+    "headache-after-vaping": "2026-11-07T12:15:50+07:00",
     "how-long-a-disposable-lasts": "2026-11-04T08:48:23+07:00",
     "how-long-a-pod-device-lasts": "2026-11-05T01:48:05+07:00",
     "how-to-vape-without-coughing": "2026-10-27T22:53:08+07:00",
@@ -78,7 +78,7 @@
     "types-of-pods": "2026-11-05T23:14:29+07:00",
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
     "what-is-a-pod-system": "2026-11-04T10:19:06+07:00",
-    "what-is-nicotine": "2026-11-07T11:25:03+07:00"
+    "what-is-nicotine": "2026-11-07T12:15:50+07:00"
   },
   "pagesVersion": 3,
   "pages": {
@@ -187,8 +187,8 @@
       "fp": "e9524f1602d1"
     },
     "/guides": {
-      "date": "2026-11-07T11:43:43+07:00",
-      "fp": "5362f302a740"
+      "date": "2026-11-07T12:15:50+07:00",
+      "fp": "03824dac6adc"
     },
     "/products": {
       "date": "2026-11-06T17:49:18+07:00",
