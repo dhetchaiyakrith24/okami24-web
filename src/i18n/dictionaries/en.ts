@@ -545,7 +545,7 @@ export const en: Dictionary = {
     placeErrorAddress: "We couldn’t find that address. Please choose or add a delivery address again.",
     placeErrorShippingChanged: "The shipping fee for this order has changed. The new total is shown above — check it, then confirm again.",
     noteToggle: "Note to the shop (optional)",
-    notePlaceholder: "e.g. a good time to receive the parcel",
+    notePlaceholder: "e.g. a landmark or extra address details",
     noteHint: "Our team sees this note with your order · up to 200 characters",
     stepsLabel: "Checkout steps",
     stepPhone: "Phone",
