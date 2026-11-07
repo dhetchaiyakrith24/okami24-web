@@ -257,7 +257,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1200mAh ในตัว",
       "charge-time": "USB-C",
-      firing: "ดูดแล้วทำงานเอง",
+      firing: "ไม่มีปุ่ม สูบได้เลย",
       airflow: "ระบบลมคู่",
       "pod-compat": "หัวพอต Caliburn G3 คอยล์ในตัว มีค่า 0.6Ω 0.9Ω และ 1.2Ω",
       refill: "มีทั้งแบบเติมด้านข้างและเติมด้านบน แต่ละชุดมาแบบใดแบบหนึ่ง",
@@ -269,8 +269,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         description: "UWELL บอกว่าแบตใหญ่ขึ้น 20% และใช้ได้ถึง 3 วันต่อการชาร์จหนึ่งครั้ง",
       },
       "auto-draw": {
-        title: "ไม่มีปุ่มกด",
-        description: "ดูดแล้วเครื่องทำงานเอง และเลือกทางลมได้ 2 แบบจากหัวพอต",
+        title: "ไม่มีปุ่ม สูบได้เลย",
+        description: "แค่ดูดเครื่องก็ทำงาน และเลือกทางลมได้ 2 แบบจากหัวพอต",
       },
       window: {
         title: "เห็นน้ำยาได้รอบด้าน",
@@ -278,12 +278,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       pods: {
         title: "หัวพอต 3 ค่า",
-        description: "มี 0.6 0.9 และ 1.2 โอห์ม ตั้งแต่ดูดลื่นจนถึงดูดแน่น เลือกจากหัวพอตชุด Caliburn G3 ได้เลย",
+        description: "มี 0.6 0.9 และ 1.2 โอห์ม ตั้งแต่ลมโล่งจนถึงดูดแน่น เลือกจากหัวพอตชุด Caliburn G3 ได้เลย",
       },
     },
-    tagline: "Caliburn แบบไม่มีปุ่ม ดูดแล้วทำงานเอง แบต 1200mAh",
+    tagline: "Caliburn แบบไม่มีปุ่ม สูบได้เลย แบต 1200mAh",
     shortDescription:
-      "แบต 1200mAh ในตัว ปรับได้สูงสุด 25 วัตต์ ดูดแล้วทำงานเอง มีระบบลมคู่ และมีหน้าต่างดูน้ำยา ใช้หัวพอต Caliburn G3 ค่า 0.6Ω 0.9Ω และ 1.2Ω",
+      "แบต 1200mAh ในตัว สูงสุด 25 วัตต์ ไม่มีปุ่ม สูบได้เลย มีระบบลมคู่ และมีหน้าต่างดูน้ำยา ใช้หัวพอต Caliburn G3 ค่า 0.6Ω 0.9Ω และ 1.2Ω",
   },
   "caliburn-g3": {
     whoIsThisFor: {
