@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T03:13:17+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T03:13:25+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T10:59:41+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -539,8 +539,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-creator": {
-      "date": "2026-11-07T03:13:25+07:00",
-      "fp": "c17a1f5ccb3b"
+      "date": "2026-11-07T10:59:41+07:00",
+      "fp": "79e69d347753"
     },
     "/products/relx-creator-pod-20k": {
       "date": "2026-11-02T03:47:57+07:00",

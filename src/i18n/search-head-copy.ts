@@ -345,8 +345,6 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 /** Rows A17 + C1–C16 — product meta descriptions that replace the tagline / shortDescription in
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
-  // Round SEO full 07/11: พอตเลโก้ 1,600 · relx lego 1,300 a month = this device (results read 07/11), one line per THAI_STYLE layer 1 exception 1.
-  "relx-creator": "RELX Creator หรือที่หลายคนเรียกว่าพอตเลโก้ ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก หัวหมดก็เปลี่ยนแค่หัว",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
   "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
