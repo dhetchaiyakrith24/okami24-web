@@ -9,15 +9,6 @@ import { LOW_STOCK_AT } from "@/lib/stock/count-rules";
 
 const DAY_MS = 86_400_000;
 
-/** "Good morning" by the Bangkok clock. */
-export function greeting(now: number): string {
-  const hour = new Date(now + 7 * 3_600_000).getUTCHours();
-  if (hour >= 5 && hour < 12) return "สวัสดีตอนเช้า";
-  if (hour >= 12 && hour < 17) return "สวัสดีตอนบ่าย";
-  if (hour >= 17 && hour < 21) return "สวัสดีตอนเย็น";
-  return "สวัสดีค่ะ";
-}
-
 /** How long ago, in the words the page shows. */
 export function ageText(iso: string, now: number): string {
   const minutes = Math.max(0, Math.floor((now - Date.parse(iso)) / 60_000));
@@ -123,8 +114,9 @@ export interface GoogleWeek {
 /** "22 ต.ค." style short date for the chart axis: dd/mm. */
 export const shortDate = (date: string) => `${Number(date.slice(8, 10))}/${Number(date.slice(5, 7))}`;
 
-/** Oldest first, `slots` long, empty slots at the old end: real bars never stretch to fill the row. */
-export function padSlots<T>(rows: T[], slots: number): (T | null)[] {
-  const kept = rows.slice(-slots);
-  return [...Array.from({ length: slots - kept.length }, () => null), ...kept];
+/** "-1.5k" — the short figure printed on a losing bar. Baht in. */
+export function shortBaht(baht: number): string {
+  const sign = baht < 0 ? "-" : "";
+  const size = Math.abs(baht);
+  return size >= 1000 ? `${sign}${Math.round(size / 100) / 10}k` : `${sign}${Math.round(size)}`;
 }

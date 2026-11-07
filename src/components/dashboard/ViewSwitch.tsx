@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { Alerts, type Alert } from "./Alerts";
 import "./dashboard.css";
 
 export interface DashView {
@@ -10,11 +11,12 @@ export interface DashView {
 }
 
 /**
- * Phones: one view at a time behind a sticky pill switch, flipped at once because every view is already on the page. The
- * address keeps the choice (`?view=`) so a reload stays put. Wide screens: all views side by side, no switch. Swiping is left
- * out on purpose: it would fight the chart under the finger. Takes no data of its own, so the customer pages can use it too.
+ * Phones: one view at a time behind a sticky switch, flipped at once because every view is already on the page. The address
+ * keeps the choice (`?view=`) so a reload stays put. Wide screens: all views side by side, no switch. Swiping is left out on
+ * purpose: it would fight the chart under the finger. The alerts sit above, so a view that already shows one can drop it.
+ * Takes no data of its own, so the customer pages can use it too.
  */
-export function ViewSwitch({ views, initial, label }: { views: DashView[]; initial: string; label: string }) {
+export function ViewSwitch({ views, initial, label, alerts = [] }: { views: DashView[]; initial: string; label: string; alerts?: Alert[] }) {
   const [active, setActive] = useState(views.some((v) => v.id === initial) ? initial : views[0].id);
 
   function pick(id: string) {
@@ -27,6 +29,7 @@ export function ViewSwitch({ views, initial, label }: { views: DashView[]; initi
 
   return (
     <>
+      <Alerts alerts={alerts} view={active} />
       <div role="group" aria-label={label} className="dash-switch">
         {views.map((v) => (
           <button
@@ -34,7 +37,7 @@ export function ViewSwitch({ views, initial, label }: { views: DashView[]; initi
             type="button"
             aria-pressed={active === v.id}
             onClick={() => pick(v.id)}
-            className={`min-h-11 rounded-full text-sm font-semibold transition-colors ${active === v.id ? "bg-ember text-surface-1" : "text-foreground-muted hover:text-foreground"}`}
+            className={`min-h-11 rounded-full text-sm font-semibold transition-colors ${active === v.id ? "bg-white/10 text-foreground" : "text-foreground-muted hover:text-foreground"}`}
           >
             {v.label}
           </button>

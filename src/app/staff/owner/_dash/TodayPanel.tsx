@@ -24,19 +24,43 @@ function compareNote(hour: SameHour | null) {
   return { text: `${word}อาทิตย์ก่อน เวลาเดียวกัน ${Math.abs(hour.percent)}%`, good: hour.percent > 0 };
 }
 
+/** For the day list: "—" when no order of the day has a cost yet. */
 function profitText(day: DayProfit | undefined): string {
   if (!day || day.orders.length === 0) return "ไม่มีออเดอร์";
   return day.unpriced === day.orders.length ? "—" : formatSatang(day.profitSatang);
 }
 
+/** Today's web profit. No order = says so; orders without a cost = what to do about it, never a made-up zero. */
+function ProfitTile({ profit }: { profit: DayProfit | undefined }) {
+  const orders = profit?.orders.length ?? 0;
+  const unpriced = profit?.unpriced ?? 0;
+  const value =
+    orders === 0 ? (
+      <span className="py-1 text-xl text-foreground-muted">ไม่มีออเดอร์</span>
+    ) : unpriced === orders ? (
+      <span className="py-1 text-xl text-foreground-muted">รอทุน</span>
+    ) : (
+      <span className="font-display text-3xl font-bold tabular-nums leading-tight text-foreground">{formatSatang(profit?.profitSatang ?? 0)}</span>
+    );
+  return (
+    <div className="dash-card gap-1!">
+      <span className="text-sm text-foreground-muted">กำไรเว็บวันนี้</span>
+      {value}
+      {unpriced > 0 ? (
+        <Link href="/staff/owner/costs" className="inline-flex min-h-11 items-center text-sm text-unverified hover:underline">
+          ใส่ทุน {unpriced} ออเดอร์ ›
+        </Link>
+      ) : (
+        <span className="text-sm text-foreground-muted">LINE สรุปรายสัปดาห์</span>
+      )}
+    </div>
+  );
+}
+
 function Tiles({ today, profit, avgSatang }: { today: DaySales; profit: DayProfit | undefined; avgSatang: number | null }) {
   return (
     <div className="dash-rise grid grid-cols-2 gap-3">
-      <div className="dash-card gap-1!">
-        <span className="text-sm text-foreground-muted">กำไรเว็บวันนี้</span>
-        <span className="font-display text-3xl font-bold tabular-nums leading-tight text-foreground">{profitText(profit)}</span>
-        {profit && profit.unpriced > 0 ? <span className="text-sm text-unverified">ไม่มีทุน {profit.unpriced} ออเดอร์ ยังไม่นับ</span> : <span className="text-sm text-foreground-muted">LINE สรุปรายสัปดาห์</span>}
-      </div>
+      <ProfitTile profit={profit} />
       <div className="dash-card gap-1!">
         <span className="text-sm text-foreground-muted">ออเดอร์เว็บวันนี้</span>
         <span className="font-display text-3xl font-bold tabular-nums leading-tight text-foreground">{today.orders.length}</span>
@@ -175,7 +199,7 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
         <div className="flex flex-col gap-3 pb-3 pt-1">
           {profit && profit.orders.length > 0 && (
             <div className="flex flex-col gap-1">
-              <h3 className="text-sm text-foreground-muted">ออเดอร์เว็บ {profit.orders.length} รายการ · ขาย แล้วกำไร</h3>
+              <h3 className="text-sm text-foreground-muted">ออเดอร์เว็บ {profit.orders.length} รายการ · ยอดขาย แล้วกำไร</h3>
               <ul className="flex flex-col text-sm text-foreground-muted">
                 {profit.orders.map((o) => (
                   <li key={o.orderNumber} className="flex items-baseline justify-between gap-3 py-1">
@@ -225,7 +249,7 @@ export function TodayPanel(props: {
   return (
     <>
       <div className="dash-rise">
-        <ScrubHero points={points} note={compareNote(hour)} />
+        <ScrubHero points={points} note={compareNote(hour)} axis={{ start: dayLabel(days[Math.min(13, days.length - 1)].date), end: "วันนี้", hint: "ลากดูวันอื่น" }} />
       </div>
       <Tiles today={today} profit={byDate.get(today.date)} avgSatang={avgSatang} />
       <Jobs counts={counts} oldest={oldest} now={now} canOpen={canOpenOrders} />
@@ -237,9 +261,6 @@ export function TodayPanel(props: {
             <DayRow key={d.date} day={d} profit={byDate.get(d.date)} />
           ))}
         </ul>
-        <p className="text-sm leading-relaxed text-foreground-muted">
-          ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว · ยอด LINE = สลิปที่เข้าบัญชีร้าน · กำไรเว็บ = ลูกค้าจ่าย หักทุน หักค่าส่งคลัง 35 บาท
-        </p>
       </section>
     </>
   );

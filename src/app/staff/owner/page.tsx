@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { Container } from "@/components/ui/Container";
+import type { Alert } from "@/components/dashboard/Alerts";
 import { ViewSwitch, type DashView } from "@/components/dashboard/ViewSwitch";
 import { Vapour } from "@/components/dashboard/Vapour";
 import { isBestSeller } from "@/data/sales-badges";
@@ -12,7 +12,7 @@ import { lastRound } from "@/lib/owner/bill-rules";
 import { listRounds } from "@/lib/owner/bills";
 import { codesWithoutCost, profitDays } from "@/lib/owner/costs";
 import { cartsNotOrdered, lineClicks, oldestOrders, topWebProducts } from "@/lib/owner/dashboard";
-import { greeting, sameHourLastWeek, stockSummary, sumSales } from "@/lib/owner/dashboard-rules";
+import { sameHourLastWeek, stockSummary, sumSales } from "@/lib/owner/dashboard-rules";
 import { isStaff } from "@/lib/staff/auth";
 import { salesDays } from "@/lib/staff/daily-sales";
 import { countByJob } from "@/lib/staff/orders";
@@ -21,6 +21,7 @@ import { feedHealth } from "@/lib/woo/watch";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { ControlPanel } from "@/app/staff/owner/_dash/ControlPanel";
+import { HowCounted } from "@/app/staff/owner/_dash/HowCounted";
 import { dayLabel, TodayPanel } from "@/app/staff/owner/_dash/TodayPanel";
 import { WeekPanel } from "@/app/staff/owner/_dash/WeekPanel";
 
@@ -41,7 +42,6 @@ export const metadata: Metadata = {
 
 const PROFIT_DAYS = 14;
 const readClock = () => Date.now();
-const CHIP_CLASS = "inline-flex min-h-9 items-center rounded-full border border-unverified/30 bg-unverified/15 px-3 text-sm font-medium text-unverified";
 
 export default async function OwnerPage({ searchParams }: { searchParams: Promise<{ denied?: string; view?: string }> }) {
   if (!ownerAreaEnabled()) notFound();
@@ -83,13 +83,14 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
   const noCost = codesWithoutCost().length;
   const billDue = !rounds[0] || rounds[0].to < due.to;
 
-  const chips: { text: string; href?: string }[] = [
-    ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined }] : []),
-    ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined }] : []),
-    ...(unclear > 0 ? [{ text: `สลิปไม่แน่ใจ ${unclear}` }] : []),
-    ...(unpriced > 0 ? [{ text: `ไม่มีทุน ${unpriced} ออเดอร์`, href: "/staff/owner/costs" }] : []),
-    ...(billDue ? [{ text: "บิลรอเทียบ", href: "/staff/owner/bill#new" }] : []),
-    ...(feed.state === "ok" ? [] : [{ text: `คลัง${FEED_LIGHT[feed.state].long}` }]),
+  // Most urgent first: a silent warehouse stops stock, then money waiting on the team, then what the owner fixes.
+  const alerts: Alert[] = [
+    ...(feed.state === "ok" ? [] : [{ text: `คลัง${FEED_LIGHT[feed.state].long}`, tone: feed.state === "down" ? ("danger" as const) : ("warn" as const) }]),
+    ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined, tone: "warn" as const }] : []),
+    ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined, tone: "warn" as const }] : []),
+    ...(unclear > 0 ? [{ text: `สลิปไม่แน่ใจ ${unclear}`, tone: "warn" as const }] : []),
+    ...(unpriced > 0 ? [{ text: `ไม่มีทุน ${unpriced} ออเดอร์`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
+    ...(billDue ? [{ text: "บิลรอเทียบ", href: "/staff/owner/bill#new", tone: "warn" as const, hideOn: "week" }] : []),
   ];
 
   const views: DashView[] = [
@@ -123,28 +124,9 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     <Container className="flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
       <StaffBar />
       <Vapour />
-      <header className="flex flex-col gap-2.5">
-        <div className="flex items-baseline justify-between gap-3">
-          <h1 className="text-xl font-semibold text-foreground">{greeting(now)}</h1>
-          <span className="text-sm text-foreground-muted">{dayLabel(sales[0].date)}</span>
-        </div>
-        {chips.length > 0 && (
-          <ul aria-label="เรื่องที่ควรดู" className="flex flex-wrap gap-2">
-            {chips.map((chip) => (
-              <li key={chip.text}>
-                {chip.href ? (
-                  <Link href={chip.href} className={CHIP_CLASS}>
-                    {chip.text}
-                  </Link>
-                ) : (
-                  <span className={CHIP_CLASS}>{chip.text}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
-      </header>
-      <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" />
+      <h1 className="text-sm font-normal text-foreground-muted">ส่วนเจ้าของ · {dayLabel(sales[0].date)}</h1>
+      <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} />
+      <HowCounted />
     </Container>
   );
 }

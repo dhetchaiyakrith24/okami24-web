@@ -3,7 +3,7 @@
  * The owner dashboard's sums, on made-up figures.
  */
 import type { DaySales } from "@/lib/staff/daily-sales-rules";
-import { ageText, greeting, padSlots, sameHourLastWeek, stockSummary, sumSales } from "./dashboard-rules";
+import { ageText, sameHourLastWeek, shortBaht, stockSummary, sumSales } from "./dashboard-rules";
 
 let failed = 0;
 function check(name: string, ok: boolean): void {
@@ -53,9 +53,7 @@ check("an option with no count is not called low", !stock.urgent.some((r) => r.n
 check("best sellers lead, what cannot be ordered first", stock.urgent[0].name === "best · B" && stock.urgent[1].name === "best · A");
 check("a product with no options reads as its own name", stock.urgent.some((r) => r.name === "other"));
 
-check("padded slots keep the newest at the end", JSON.stringify(padSlots([1, 2], 4)) === "[null,null,1,2]");
-check("too many rows keep the newest", JSON.stringify(padSlots([1, 2, 3], 2)) === "[2,3]");
-check("the greeting follows Bangkok", greeting(NOW) === "สวัสดีตอนเช้า" && greeting(Date.parse("2026-11-08T13:00:00+07:00")) === "สวัสดีตอนบ่าย");
+check("a losing round prints short", shortBaht(-1500) === "-1.5k" && shortBaht(-950) === "-950" && shortBaht(22_700) === "22.7k");
 check("ages read in the largest whole unit", ageText("2026-11-08T09:20:00+07:00", NOW) === "40 นาที" && ageText("2026-11-06T09:00:00+07:00", NOW) === "2 วัน");
 
 console.log(failed === 0 ? "owner dashboard: PASS" : `owner dashboard: FAIL (${failed})`);

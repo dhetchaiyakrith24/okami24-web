@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { padSlots, shortDate, type GoogleWeek, type SalesSum } from "@/lib/owner/dashboard-rules";
+import { shortBaht, shortDate, type GoogleWeek, type SalesSum } from "@/lib/owner/dashboard-rules";
 import type { StoredRound } from "@/lib/owner/bills";
 import type { TopProduct } from "@/lib/owner/dashboard";
-import { Bars } from "@/components/dashboard/Bars";
+import { Bars, type BarSlot } from "@/components/dashboard/Bars";
 import { Ring } from "@/components/dashboard/Ring";
 import { formatCount, formatSatang } from "@/app/staff/_components/format";
 
@@ -18,7 +18,8 @@ function RoundHero({ rounds, due }: { rounds: StoredRound[]; due: { from: string
     return (
       <section aria-label="รอบล่าสุด" className="dash-card dash-card-open dash-rise">
         <span className="text-sm text-foreground-muted">รอบ {span(due.from, due.to)}</span>
-        <span className="text-xl font-semibold text-foreground">ยังไม่ได้เทียบบิล กำไรรอบนี้จึงยังไม่มี</span>
+        <span className="text-xl font-semibold text-foreground">รอบนี้ยังไม่ได้เทียบบิล</span>
+        <span className="text-sm text-foreground-muted">กำไรขึ้นหลังวางไฟล์บิล</span>
         <Link href="/staff/owner/bill#new" className="inline-flex min-h-11 w-fit items-center rounded-full bg-ember px-5 text-sm font-semibold text-surface-1 hover:opacity-90">
           วางไฟล์บิล
         </Link>
@@ -36,16 +37,18 @@ function RoundHero({ rounds, due }: { rounds: StoredRound[]; due: { from: string
   const loss = week.totalProfit < 0;
   const noSlips = week.lineSales === 0 && round.totals.lineBill > 0;
   return (
-    <section aria-label="กำไรรอบล่าสุด" className="dash-rise flex flex-col gap-1 px-1 pt-1">
+    <section aria-label="กำไรรอบล่าสุด" className="dash-rise relative isolate flex flex-col gap-1 px-1 pt-1">
+      <span aria-hidden className="dash-glow" />
       <span className="text-sm text-foreground-muted">กำไรรอบ {span(round.from, round.to)}</span>
       <span className={`font-display text-6xl font-bold tabular-nums leading-none ${loss ? "text-danger" : "text-foreground"}`}>{baht(week.totalProfit)}</span>
       {loss && <span className="font-semibold text-danger">ขาดทุน</span>}
       <span className="text-sm tabular-nums text-foreground-muted">
         เว็บ {baht(week.webProfit)} · LINE {baht(week.lineProfit)}
       </span>
-      {change !== null && change !== 0 && (
-        <span className={`text-sm ${change > 0 ? "text-verified" : "text-foreground-muted"}`}>
-          {change > 0 ? "มากกว่า" : "น้อยกว่า"}รอบก่อน {baht(Math.abs(change))}
+      {change !== null && before && (
+        <span className={`text-sm tabular-nums ${change > 0 ? "text-verified" : "text-foreground-muted"}`}>
+          {change > 0 ? "+" : change < 0 ? "-" : ""}
+          {baht(Math.abs(change))} จากรอบก่อน (รอบก่อน {baht(before.week.totalProfit)})
         </span>
       )}
       {noSlips && <span className="text-sm text-unverified">ไม่มียอดสลิปในรอบนี้ กำไร LINE ยังเชื่อไม่ได้</span>}
@@ -53,16 +56,23 @@ function RoundHero({ rounds, due }: { rounds: StoredRound[]; due: { from: string
   );
 }
 
-function RoundBars({ rounds }: { rounds: StoredRound[] }) {
-  const oldestFirst = [...rounds].reverse();
-  const bars = padSlots(oldestFirst, 8).map((r) =>
-    r ? { value: r.week.totalProfit, label: ddmm(r.to), title: `รอบ ${span(r.from, r.to)} กำไร ${baht(r.week.totalProfit)}`, href: `/staff/owner/bill?round=${r.id}` } : null
-  );
+/** The rounds that exist, oldest first, and the round now due as an outline. Six columns at most, so each is a thumb wide. */
+function RoundBars({ rounds, due }: { rounds: StoredRound[]; due: boolean }) {
+  const kept = [...rounds].reverse().slice(due ? -5 : -6);
+  if (kept.length === 0) return null;
+  const bars: BarSlot[] = kept.map((r, i) => ({
+    value: r.week.totalProfit,
+    label: ddmm(r.to),
+    showLabel: i === 0 || i === kept.length - 1 || r.week.totalProfit < 0,
+    mark: r.week.totalProfit < 0 ? shortBaht(r.week.totalProfit) : undefined,
+    title: `รอบ ${span(r.from, r.to)} กำไร ${baht(r.week.totalProfit)}`,
+    href: `/staff/owner/bill?round=${r.id}`,
+  }));
+  if (due) bars.push({ pending: "รอบิล" });
   return (
     <section aria-label="กำไรแต่ละรอบ" className="dash-card dash-rise">
       <h2 className="font-semibold text-foreground">กำไรแต่ละรอบ</h2>
       <Bars bars={bars} />
-      <p className="text-sm text-foreground-muted">รอบละเสาร์ 13:00 ถึงเสาร์ 13:00 · ช่องประยังไม่มีข้อมูล · แตะช่องเพื่อเปิดรอบนั้น</p>
     </section>
   );
 }
@@ -76,10 +86,10 @@ function Row({ label, value, tone }: { label: string; value: string; tone?: stri
   );
 }
 
-function WarehouseBill({ round }: { round: StoredRound | undefined }) {
+function WarehouseBill({ round, older }: { round: StoredRound | undefined; older: boolean }) {
   return (
     <section aria-label="ยอดชำระคลัง" className="dash-card dash-rise">
-      <h2 className="font-semibold text-foreground">ยอดชำระคลัง</h2>
+      <h2 className="font-semibold text-foreground">ยอดชำระคลัง{round && older ? " · รอบก่อน" : ""}</h2>
       {!round ? (
         <p className="text-sm text-foreground-muted">ยังไม่มีข้อมูล รู้ยอดหลังวางไฟล์บิล</p>
       ) : (
@@ -118,7 +128,6 @@ function Week({ week }: { week: SalesSum }) {
           <span className="text-sm tabular-nums text-foreground-muted">LINE {formatSatang(week.lineSatang)}</span>
         </div>
       </div>
-      <p className="text-sm text-foreground-muted">นับตามวัน คนละช่วงกับรอบบิล ตัวเลขจึงไม่เท่ากับรอบ</p>
     </section>
   );
 }
@@ -132,7 +141,7 @@ function Channels({ clicks, carts, top }: { clicks: number | null; carts: number
         <Row label="ใส่ตะกร้าแล้วยังไม่สั่ง" value={formatCount(carts)} />
       </ul>
       <div className="flex flex-col gap-1">
-        <h3 className="text-sm text-foreground-muted">ขายดีบนเว็บ · สลิป LINE ไม่บอกว่าซื้ออะไร</h3>
+        <h3 className="text-sm text-foreground-muted">ขายดีบนเว็บ</h3>
         {top.length === 0 ? (
           <p className="text-sm text-foreground-muted">ยังไม่มีข้อมูล</p>
         ) : (
@@ -172,8 +181,11 @@ function Google({ weeks, through }: { weeks: GoogleWeek[]; through: string | nul
               {before && <span className="text-sm tabular-nums text-foreground-muted">สัปดาห์ก่อน {formatCount(before.impressions)}</span>}
             </div>
           </div>
-          <Bars height="h-16" bars={padSlots(weeks, 8).map((w) => (w ? { value: w.clicks, label: shortDate(w.to), title: `สัปดาห์ถึง ${shortDate(w.to)} กด ${w.clicks}` } : null))} />
-          <p className="text-sm text-foreground-muted">กราฟคือคนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position} · ข้อมูลถึง {shortDate(through)} ช้ากว่าจริง 2–3 วัน</p>
+          <Bars
+            height="h-16"
+            bars={weeks.slice(-8).map((w, i, all) => ({ value: w.clicks, label: shortDate(w.to), showLabel: i === 0 || i === all.length - 1, title: `สัปดาห์ถึง ${shortDate(w.to)} คนกดเข้าเว็บ ${w.clicks}` }))}
+          />
+          <p className="text-sm text-foreground-muted">คนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position} · ข้อมูลถึง {shortDate(through)}</p>
         </>
       )}
     </section>
@@ -190,11 +202,12 @@ export function WeekPanel(props: {
   google: { through: string | null; weeks: GoogleWeek[] };
 }) {
   const { rounds, due, week, clicks, carts, top, google } = props;
+  const billDue = !rounds[0] || rounds[0].to < due.to;
   return (
     <>
       <RoundHero rounds={rounds} due={due} />
-      <RoundBars rounds={rounds} />
-      <WarehouseBill round={rounds[0]} />
+      <RoundBars rounds={rounds} due={billDue} />
+      <WarehouseBill round={rounds[0]} older={billDue} />
       <Week week={week} />
       <Channels clicks={clicks} carts={carts} top={top} />
       <Google weeks={google.weeks} through={google.through} />

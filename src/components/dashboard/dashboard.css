@@ -9,10 +9,19 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(38% 26% at 74% 12%, rgb(255 106 44 / 0.3), transparent 72%),
     radial-gradient(42% 30% at 18% 34%, rgb(255 131 71 / 0.12), transparent 74%),
     radial-gradient(50% 30% at 82% 78%, rgb(255 106 44 / 0.1), transparent 76%);
   animation: dash-drift 24s ease-in-out infinite alternate;
+}
+
+/* The one strong glow: behind the hero number only, never behind a card with small text. */
+.dash-glow {
+  position: absolute;
+  inset: -2.5rem -1.5rem -1rem -2rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgb(255 106 44 / 0.45), transparent);
+  filter: blur(6px);
 }
 
 .dash-card {
