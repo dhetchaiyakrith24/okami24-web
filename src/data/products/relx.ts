@@ -225,7 +225,33 @@ export const relxProducts: Product[] = [
     ],
     compatibility: [{ type: "pod", label: "RELX Pod · Pod Pro · Pod Pro 2", note: "RELX prefilled pods, 1.9mL each." }, typeC],
     whoIsThisFor: ["You already use RELX Pod or Pod Pro pods and want the current Infinity body they fit."],
-    faqs: [],
+    faqs: [
+      {
+        id: "relx-infinity-2-plus-what",
+        question: "What kind of device is the RELX Infinity 2 Plus?",
+        answer: "It's the current device in RELX's Infinity line, a reusable switch-style device with a built-in 440mAh battery. When the e-liquid runs out, you change only the prefilled pod and keep using the same device.",
+      },
+      {
+        id: "relx-infinity-2-plus-vs-2",
+        question: "How is the RELX Infinity 2 Plus different from the Infinity 2?",
+        answer: "It runs at a higher wattage in every mode: Eco 6.5W, Smooth 8W and Boost 10W. You can also tell it apart by the orange button and the Plus icon on the body.",
+      },
+      {
+        id: "relx-infinity-2-plus-modes",
+        question: "What do the three modes on the RELX Infinity Plus do?",
+        answer: "RELX describes Eco as the lighter mode that helps save battery, Smooth as the one for a smooth flavor, and Boost as the one for a stronger flavor. Boost gives up to 15% more vapor than Smooth.",
+      },
+      {
+        id: "relx-infinity-2-plus-pods",
+        question: "Which pods fit the RELX Infinity 2 Plus?",
+        answer: "Three do: RELX Pod, RELX Pod Pro and RELX Pod Pro 2. RELX rates each at 1.9mL and up to 600 puffs, so if you already have any of these, they will go straight into this device.",
+      },
+      {
+        id: "relx-infinity-2-plus-charge",
+        question: "How long does the RELX Infinity 2 Plus take to charge?",
+        answer: "By RELX's figure, 15 minutes over USB-C takes it to 80%. The 4-stage indicator on the device shows how much battery is left.",
+      },
+    ],
     // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
     reviewVideo: { videoId: "hyJ4CkvKMec", title: "หลังใช้งาน 30 วัน RELX INFINITY 2 PLUS อัพเกรดใหม่ปรับได้แล้วทุกหัว!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2024-12-02" },
     relatedProductSlugs: ["relx-creator"],

@@ -419,4 +419,201 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
     question: "RELX Creator 能用哪些烟弹？",
     answer: "可以用 RELX Creator Pod 和 Muro Connector 烟弹，这两款是本店用实物确认过的。如果要用其他烟弹，请先通过 LINE @okm24 询问。",
   },
+  // Round SEO full 07/11, second FAQ set: Thai in product-copy-th.ts, English in the product data.
+  "joiway-f3-12k": {
+    question: "JOIWAY 12K 和 JOIWAY F3 是同一款吗？",
+    answer: "是的。JOIWAY 标称 12,000+ 口，所以不少人把 F3 叫作 JOIWAY 12K。这是该品牌的单口味一次性电子烟。",
+  },
+  "joiway-f3-f4": {
+    question: "JOIWAY F3 和 F4 有什么区别？",
+    answer: "最主要的区别在于机身内的口味数量。F3 是单口味；F4 一机两种口味，转动吸嘴即可切换。",
+  },
+  "joiway-f3-days": {
+    question: "JOIWAY 12000 口能用几天？",
+    answer: "这要看抽吸频率。JOIWAY 标称 12,000+ 口，每个人用完的快慢各不相同。透明油仓就在吸嘴下方，剩余烟油一眼可见，快用完时能提前知道。",
+  },
+  "joiway-f3-charge": {
+    question: "JOIWAY F3 可以充电吗？",
+    answer: "可以，采用 USB-C 充电。如果电量比烟油先用完，充一会儿就能继续使用。",
+  },
+  "joiway-f3-airflow": {
+    question: "JOIWAY F3 可以调节进气吗？",
+    answer: "可以。调节口设在机身底部，想要松一点就开大，想要紧一点就关小。",
+  },
+  "relx-infinity-2-plus-what": {
+    question: "RELX Infinity 2 Plus 是什么样的设备？",
+    answer: "这是 RELX Infinity 系列的现行款换弹式主机，内置 440mAh 电池，可重复充电。烟油用完后只需更换预注油烟弹，主机可以继续使用。",
+  },
+  "relx-infinity-2-plus-vs-2": {
+    question: "RELX Infinity 2 和 Infinity 2 Plus 有什么不同？",
+    answer: "Infinity 2 Plus 每个模式的功率都更高，分别是 Eco 6.5W、Smooth 8W 和 Boost 10W。外观上，也可以通过橙色按键和机身上的 Plus 标识来区分。",
+  },
+  "relx-infinity-2-plus-modes": {
+    question: "RELX Infinity Plus 有几个模式？各有什么不同？",
+    answer: "有三个模式。Eco 抽吸更轻，也更省电；Smooth 口感顺滑；Boost 口味更浓，RELX 表示烟雾量最多比 Smooth 多 15%。",
+  },
+  "relx-infinity-2-plus-pods": {
+    question: "RELX Infinity 的烟弹可以用哪几款？",
+    answer: "可以用三款：RELX Pod、RELX Pod Pro 和 RELX Pod Pro 2。RELX 标称每颗 1.9mL，最高 600 口。手上已有这几款的话，可以直接装到这台主机上。",
+  },
+  "relx-infinity-2-plus-charge": {
+    question: "RELX Infinity 2 Plus 充电要多久？",
+    answer: "按 RELX 标称，USB-C 充电 15 分钟可达 80%。剩余电量可以看机身上的 4 段电量指示。",
+  },
+  "mood-monster-14k-name": {
+    question: "MOOOD 14K 和 MOOOD Monster 14K 是同一款吗？",
+    answer: "是的。MOOOD 14K 是 Monster 系列这款一次性电子烟的简称。品牌名有三个 O，如果看到有人写成 Mood 14K，指的也是这一款。",
+  },
+  "mood-monster-14k-puffs": {
+    question: "MOOOD Monster 14K 能抽多少口？用什么线圈？",
+    answer: "MOOOD 标称最多 14,000 口，采用 DUO MESH 线圈。实际能抽多少，取决于个人的抽吸习惯。",
+  },
+  "mood-monster-14k-refill": {
+    question: "MOOOD Monster 14K 可以自己加烟油吗？",
+    answer: "不可以。这是预注 16mL 烟油的一次性电子烟，烟油用完后换一支新的即可。",
+  },
+  "mood-monster-14k-nicotine": {
+    question: "MOOOD Monster 14K 的尼古丁浓度是多少？",
+    answer: "MOOOD 标注为 3%。部分口味名称后带有 N5%，属于另一个选项，选择时请看清口味名称。",
+  },
+  "mood-monster-14k-flavors": {
+    question: "MOOOD Monster 有哪些口味？",
+    answer: "有 Watermelon、Mango Peach、Lychee 等水果味，Grape、Kyoho Grape 等葡萄味，清凉的 Mint，以及 Cola、Lemon Tea 等其他口味。完整列表见本页选项。",
+  },
+  "zero-pro-marbo": {
+    question: "Marbo Zero Pro 和 SALTHUB Zero Pro 是同一款吗？",
+    answer: "是同一款。Zero Pro 是 SALTHUB 官网上的名称，Marbo Zero Pro 则是不少人仍在使用的叫法。",
+  },
+  "zero-pro-pods": {
+    question: "Marbo Zero 用什么烟弹？",
+    answer: "使用 Zero Cartridge 烟弹。Zero Nano 也用这款烟弹，两台主机都有的话可以互换使用。",
+  },
+  "zero-pro-modes": {
+    question: "Zero Pro 有几个模式？",
+    answer: "有三个模式：Low-end、Mid-range 和 High-end。想抽得柔和一些或浓烈一些，在同一台主机上切换即可。",
+  },
+  "zero-pro-puffs": {
+    question: "Zero Pro 能抽多少口？",
+    answer: "SALTHUB 的 Zero Pro 海报标注为 5,000 口，实际口数会因使用情况而有所不同。",
+  },
+  "zero-pro-battery": {
+    question: "Zero Pro 电池多大？怎么充电？",
+    answer: "内置 380mAh 电池，通过 USB-C 充电，SALTHUB 标明支持快充。",
+  },
+  "muro-3ml-what": {
+    question: "Muro 3ML 是主机还是烟弹？",
+    answer: "是烟弹。每颗 Muro 3ML 预注 3mL 烟油，一颗一种口味，主机需另外准备。",
+  },
+  "muro-3ml-flavors": {
+    question: "Muro 3ML 有哪些口味？",
+    answer: "共有 14 种。清凉款是 Smooth Mint，葡萄味有 Grape 和 Muro Grape，水果味有 Watermelon、Very Strawberry、Mix Berries 等，另外还有 Cola、Mineral Water 等。完整列表见本页选项。",
+  },
+  "muro-3ml-grape": {
+    question: "Muro Grape 和 Grape 是同一种口味吗？",
+    answer: "不是，它们是葡萄味里的两个不同选项，各有各的包装。选择时请看清包装上的名称。",
+  },
+  "next-pro-2-beyond-type": {
+    question: "Next Pro 2 Beyond 是什么类型的设备？",
+    answer: "这是一款烟弹主机，本店归在 Switch Pod 类别。烟油用完后只需更换预装烟油的烟弹，主机可以继续使用。",
+  },
+  "next-pro-2-beyond-colors": {
+    question: "Next Pro 2 Beyond 有哪些颜色？",
+    answer: "共 6 种颜色：Razer Black、Supreme Red、White Lava、Aurora、Lemon Mint 和 Twilight Sky。",
+  },
+  "caliburn-g3-coil": {
+    question: "Caliburn G3 的线圈怎么换？",
+    answer: "线圈集成在烟弹里，口感开始变淡时，整颗烟弹换新即可，主机继续使用。",
+  },
+  "caliburn-g3-pods": {
+    question: "Caliburn G3 用哪种烟弹？",
+    answer: "使用内置 mesh 线圈的 Caliburn G3 烟弹，每颗容量 2.5mL，有 0.6Ω、0.9Ω 和 1.2Ω 三种，可按喜欢的吸阻来选。",
+  },
+  "caliburn-g3-battery": {
+    question: "Caliburn G3 电池多大？怎么充电？",
+    answer: "内置 900mAh 电池，通过 USB-C 充电，支持 2A 快充。",
+  },
+  "caliburn-g3-wattage": {
+    question: "Caliburn G3 可以调功率吗？",
+    answer: "可以。通过 OLED 屏可调节功率，最高 25W，也能查看抽吸口数，并在三种触发模式之间切换。",
+  },
+  "caliburn-g3-size": {
+    question: "UWELL Caliburn G3 尺寸和重量是多少？",
+    answer: "尺寸为 115.5 × 24 × 13.9 mm，重约 47 克。机身为铝合金，烟弹为 PCTG 材质。",
+  },
+  "muro-connector-20k-device": {
+    question: "Muro Connector 20K 能用在哪些主机上？",
+    answer: "这款烟弹为 Muro Creator 主机设计，本店也已用实物确认可以装在 RELX Creator 上。",
+  },
+  "muro-connector-20k-puffs": {
+    question: "Muro Connector 20K 能抽多少口？",
+    answer: "标注最多 20,000 口，实际口数会随个人抽吸习惯有所不同。",
+  },
+  "muro-connector-20k-coil": {
+    question: "Muro Connector 20K 用什么线圈？",
+    answer: "使用 Dual Mesh 线圈。烟弹为预装烟油，烟油用完后换上新的即可。",
+  },
+  "muro-connector-20k-flavors": {
+    question: "Muro Connector 20K 有多少种口味？",
+    answer: "共 33 种。喜欢清凉口味的话，可以先看 Double Mint、Cool Mint、Spear Mint 和 Blue Ice。",
+  },
+  "caliburn-g3-pro-pods": {
+    question: "Caliburn G3 Pro 能用哪些烟弹？",
+    answer: "GPP 系统的 Caliburn G3 烟弹都能用，从 0.4Ω 到 1.2Ω，顶部注油或侧边注油皆可。盒内附 0.4Ω 和 0.9Ω 两颗，都是侧边注油。",
+  },
+  "caliburn-g3-pro-wattage": {
+    question: "Caliburn G3 Pro 功率能调到多少？",
+    answer: "功率范围 5–35W，上限取决于烟弹：0.4Ω 最高 35W，0.6Ω 最高 25W，0.9Ω 最高 15W。",
+  },
+  "caliburn-g3-pro-lock": {
+    question: "Caliburn G3 Pro 怎么锁定按键？",
+    answer: "按两下即可锁定按键，之后只能吸动触发。按三下设定功率，按五下开关机。",
+  },
+  "caliburn-g3-pro-screen": {
+    question: "UWELL Caliburn G3 Pro 的屏幕显示什么？",
+    answer: "全屏 LCD 显示功率、4 格电量，以及最多 999 的抽吸口数。",
+  },
+  "caliburn-g3-pro-battery": {
+    question: "G3 Pro 电池多大？",
+    answer: "内置 1000mAh 电池，通过 USB-C 以 2A 充电。",
+  },
+  "drag-x-battery": {
+    question: "VOOPOO DRAG X 用什么电池？",
+    answer: "使用一节 18650 电池，需另外购买。电池可以留在主机内，通过 USB-C 快充。",
+  },
+  "drag-x-wattage": {
+    question: "DRAG X 功率范围是多少？",
+    answer: "功率 5–80W，电压 3.2–4.2V，适用 0.1Ω 至 3.0Ω 的线圈。",
+  },
+  "drag-x-coil-wattage": {
+    question: "DRAG X 盒内的线圈该设多少功率？",
+    answer: "PnP-VM1 0.3Ω 建议 32–40W，PnP-VM6 0.15Ω 建议 60–80W。",
+  },
+  "drag-x-pod": {
+    question: "DRAG X 烟弹容量多大？",
+    answer: "容量 4.5mL，PCTG 材质，以磁吸固定在主机上。",
+  },
+  "drag-x-smart": {
+    question: "DRAG X 的 SMART 模式有什么用？",
+    answer: "它会推荐起始功率：装上线圈后，主机读取阻值并给出建议，还会记住上次设定的功率。",
+  },
+  "drag-s3-battery": {
+    question: "VOOPOO DRAG S3 用可拆换电池吗？",
+    answer: "电池为内置 3000mAh。电量不足时，把 USB-C 线直接插到主机上充电即可，充电规格为 5V/2A。",
+  },
+  "drag-s3-coil": {
+    question: "DRAG S3 用什么烟弹和线圈？",
+    answer: "使用 PnP X Cartridge，容量 5mL，侧边注油；线圈可用 0.15Ω 至 1.0Ω 的所有 PnP X 线圈，套装附 0.6Ω 和 0.8Ω 两颗。",
+  },
+  "drag-s3-style": {
+    question: "DRAG S3 适合哪些抽法？",
+    answer: "MTL、RDL 和轻度 DTL 都可以。更换线圈，再滑动顶部气流调节，就能配合自己的抽法。",
+  },
+  "drag-s3-unlock": {
+    question: "DRAG S3 怎么解锁？",
+    answer: "触摸点火键上的感应区即可解锁，手指松开后自动重新锁定。连按五下开关机，连按三下进入菜单。",
+  },
+  "drag-s3-modes": {
+    question: "DRAG S3 有哪些模式？",
+    answer: "共三种：SMART 让功率保持在适合线圈的范围内，RBA 由你自己设定全部参数，ECO 用于节省电量。主机功率范围为 5–60W。",
+  },
 };
