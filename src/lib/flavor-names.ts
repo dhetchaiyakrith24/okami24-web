@@ -313,6 +313,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Spear Mint",
   "Apple Fuji",
   "Lemon Cola",
+  "Green Soda",
   "Sour Berry",
   "Just Mint",
   "Sun Pearl",
@@ -347,6 +348,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Big Cola",
   "Lime Ice",
   "Mint N5%",
+  "Red Soda",
   "Love 77",
   "Cola 5%",
 ];
