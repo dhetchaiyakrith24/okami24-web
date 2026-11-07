@@ -1043,7 +1043,7 @@ export const BRAND_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "zh",
   },
   iqos: {
     th: {
-      heading: "IQOS ILUMA i แต่ละรุ่นต่างกันตรงไหน",
+      heading: "ILUMA i แต่ละรุ่นต่างกันตรงไหน",
       intro:
         "IQOS เป็นแบรนด์เครื่องจ่ายความร้อนของ Philip Morris International เครื่องตระกูล ILUMA ใช้ระบบเหนี่ยวนำ SMARTCORE อุ่นยาสูบ แทนการใช้ใบมีดให้ความร้อน และใช้ได้กับบุหรี่ TEREA เท่านั้น\n\nบนหน้านี้มีตัวเครื่องสามรุ่น ซึ่งต่างกันหลัก ๆ สามเรื่อง คือจำนวนชิ้น การสูบต่อเนื่อง และจอทัชกับโหมดหยุดพัก ด้านล่างนี้สรุปไว้สั้น ๆ จากข้อมูลของ IQOS",
       families: [

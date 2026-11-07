@@ -200,7 +200,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         answer: "UWELL ระบุว่าแบต 1800mAh ใช้ได้สูงสุด 7 วันค่ะ ใช้จริงได้กี่วันก็ขึ้นอยู่กับว่าสูบบ่อยแค่ไหนและตั้งกี่วัตต์",
       },
       "caliburn-g4-pro-themes": {
-        question: "ธีมหน้าจอของ Caliburn G4 Pro ปลดล็อกยังไง",
+        question: "วิธีปลดล็อกธีมหน้าจอ Caliburn G4 Pro",
         answer: "สูบให้ถึงจำนวนพัฟที่กำหนดค่ะ ธีมหน้าจอมี 6 แบบ พร้อมใช้ 3 แบบ อีก 3 แบบจะปลดล็อกเมื่อครบ 5,000 · 10,000 และ 20,000 พัฟ",
       },
     },
@@ -402,7 +402,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "แบต 1250mAh เปลี่ยนธีมหน้าจอได้ และใช้หัวพอต G3 ได้ทุกหัว",
     faqs: {
       "caliburn-g3-pro-koko-pods": {
-        question: "Caliburn G3 Pro KOKO ใช้หัวพอตรุ่นไหนได้บ้าง",
+        question: "Caliburn G3 Pro KOKO ใช้หัวพอตรุ่นไหน",
         answer: "ใส่หัวพอต Caliburn G3 ซึ่งเป็นระบบ GPP ได้ทุกหัวค่ะ ในช่วง 0.4–1.2 โอห์ม ทั้งแบบเติมด้านบนและเติมด้านข้าง หัวที่มาให้คือ 0.4 โอห์ม จุ 3mL และ 0.9 โอห์ม จุ 2.5mL เติมด้านข้างทั้งคู่ค่ะ",
       },
       "caliburn-g3-pro-koko-button": {
@@ -844,7 +844,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         answer: "ที่ร้านเราเป็นหัวเดียวกันค่ะ คือ M Switch Pod หัวพอตสีดำของ SALTHUB ที่ใช้คู่กับเครื่อง M Switch Kit และเครื่องรุ่นนี้ร้านเราเรียกอีกชื่อว่า M Bar 15K ค่ะ",
       },
       "m-switch-pod-device": {
-        question: "ยังไม่มีเครื่อง ซื้อแค่หัวมาโบมาใช้ได้ไหม",
+        question: "ยังไม่มีเครื่อง ซื้อแค่หัวมาโบได้ไหม",
         answer: "หัวพอตต้องใส่กับตัวเครื่อง M Switch Kit จึงจะใช้ได้ค่ะ ถ้าเพิ่งเริ่ม ซื้อเป็นชุดจะสะดวกกว่า เพราะ M Switch Kit มีทั้งตัวเครื่องและหัวพอตหนึ่งหัวค่ะ",
       },
       "m-switch-pod-days": {
