@@ -350,7 +350,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
   // Round popular models 07/11: numbers = verified spec rows from store.smoktech.com.
-  "smok-nord-5": "SMOK Nord 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3 มีสไลด์ปรับลมและจอ OLED 0.69 นิ้ว มี 12 สี",
+  "smok-nord-5": "SMOK Nord 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3 มีปุ่มเลื่อนปรับลมและจอ OLED 0.69 นิ้ว มี 12 สี",
   "smok-rpm-5": "SMOK RPM 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 6.5mL ใช้คอยล์ RPM 3 จอ TFT 0.96 นิ้ว มี 8 สี",
   "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ในกล่องมีหัวพอต 0.4 กับ 0.9 โอห์ม",

@@ -147,7 +147,7 @@ export const smokProducts: Product[] = [
       { key: "weight", label: "Weight", value: "122.7g", sourceStatus: "verified", sourceUrl: RPM_5_PAGE },
     ],
     features: [
-      { id: "capacity", title: "A 6.5mL pod", description: "SMOK calls this the biggest step up in capacity across the RPM series." },
+      { id: "capacity", title: "A 6.5mL pod", description: "SMOK raises the capacity of the RPM series to 6.5mL with this model." },
       { id: "power", title: "Up to 80W", description: "The kit runs from 5 to 80W on its 2000mAh battery." },
       { id: "display", title: "0.96-inch TFT display", description: "The display shows your data, and you can change its theme colour." },
       { id: "in-the-box", title: "What's in the box", description: "The device, an RPM 5 pod with a 0.15Ω RPM 3 Meshed coil fitted, a spare 0.23Ω coil, a Type-C cable and the manual." },

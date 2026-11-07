@@ -784,23 +784,23 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "2000mAh ในตัวเครื่อง",
       coils: "RPM 3 Meshed ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.23Ω",
       display: "OLED 0.69 นิ้ว",
-      charging: "USB-C สูงสุด 1.2A · รุ่นหนังสูงสุด 1.5A",
+      charging: "USB-C สูงสุด 1.2A · ชุดสีหนังสูงสุด 1.5A",
     },
     features: {
       airflow: {
-        title: "สไลด์ปรับลม",
-        description: "เลื่อนสไลด์เพื่อตั้งปริมาณลมเข้า โดยลมเข้าได้จากทั้งสองข้างของเครื่อง",
+        title: "ปุ่มเลื่อนปรับลม",
+        description: "เลื่อนปุ่มเพื่อตั้งปริมาณลมได้ตามที่ชอบ โดยลมเข้าจากทั้งสองข้างของเครื่อง",
       },
       power: {
         title: "ปรับได้ 5 ถึง 80 วัตต์",
-        description: "ตั้งได้ตั้งแต่ 5 ถึง 80 วัตต์ ให้เข้ากับคอยล์และสไตล์การสูบ",
+        description: "ตั้งได้ตั้งแต่ 5 ถึง 80 วัตต์ ให้เข้ากับคอยล์และแนวการสูบ",
       },
       display: {
         title: "จอ OLED 0.69 นิ้ว",
-        description: "จอแสดงค่าการทำงาน และไฟ LED จะกะพริบ 5 ครั้งเมื่อเกิดไฟฟ้าลัดวงจร",
+        description: "จอแสดงค่าการทำงาน และไฟ LED จะกะพริบ 5 ครั้งเมื่อเครื่องตรวจพบการช็อต",
       },
       lock: {
-        title: "ตัวล็อกบนหัวพอต",
+        title: "ตัวล็อกคอยล์ในหัวพอต",
         description: "ตัวล็อกในหัวพอตยึดคอยล์ไว้ น้ำยาจึงไม่ไหลออกแม้คอยล์หลุดโดยไม่ตั้งใจ",
       },
       "in-the-box": {
@@ -810,7 +810,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "Nord 5 แบต 2000mAh ปรับได้ 5 ถึง 80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3",
     shortDescription:
-      "SMOK Nord 5 มีแบตในตัว 2000mAh ปรับได้ 5–80 วัตต์ หัวพอตจุ 5mL ใช้คอยล์ RPM 3 มีสไลด์ปรับลมและจอ OLED 0.69 นิ้ว",
+      "SMOK Nord 5 มีแบตในตัว 2000mAh ปรับได้ 5–80 วัตต์ หัวพอตจุ 5mL ใช้คอยล์ RPM 3 มีปุ่มเลื่อนปรับลมและจอ OLED 0.69 นิ้ว",
   },
   "smok-rpm-5": {
     whoIsThisFor: {
@@ -824,11 +824,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       capacity: {
         title: "หัวพอตจุ 6.5mL",
-        description: "SMOK บอกว่านี่คือการเพิ่มความจุน้ำยาครั้งใหญ่ที่สุดของตระกูล RPM",
+        description: "SMOK เพิ่มความจุน้ำยาของตระกูล RPM ขึ้นมาเป็น 6.5mL ในรุ่นนี้",
       },
       power: {
         title: "ปรับได้ถึง 80 วัตต์",
-        description: "ชุดนี้ทำงานตั้งแต่ 5 ถึง 80 วัตต์ ด้วยแบต 2000mAh",
+        description: "ชุดนี้ปรับได้ตั้งแต่ 5 ถึง 80 วัตต์ และใช้แบต 2000mAh",
       },
       display: {
         title: "จอ TFT 0.96 นิ้ว",

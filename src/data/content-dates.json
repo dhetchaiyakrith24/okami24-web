@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T11:22:22+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:50:19+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -571,12 +571,12 @@
       "fp": "0fc2c40e2905"
     },
     "/products/smok-nord-5": {
-      "date": "2026-11-07T10:58:29+07:00",
-      "fp": "35143304cf95"
+      "date": "2026-11-07T11:50:19+07:00",
+      "fp": "a93d3b59b723"
     },
     "/products/smok-rpm-5": {
-      "date": "2026-11-07T10:58:29+07:00",
-      "fp": "4e8ba2e0646a"
+      "date": "2026-11-07T11:50:19+07:00",
+      "fp": "e49fb0f0ad7e"
     },
     "/products/sup-zero-22k": {
       "date": "2026-11-06T17:29:45+07:00",
