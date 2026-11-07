@@ -1,6 +1,6 @@
 # OKami24 — สนามแข่ง SEO (SEO_LANDSCAPE)
 
-> ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · อ่านคู่กับ `docs/SEO_BASELINE.md` · **แผนที่คีย์ (คำไหนหน้าไหน) = ข้อ 0 (07/10)**
+> ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · อ่านคู่กับ `docs/SEO_BASELINE.md` · **แผนที่คำ (คำไหนหน้าไหน) = ข้อ 0 (07/11)**
 > · **เช็กลิสต์หน้า 1 จากหน้าทางการของ Google + สถานะเว็บเรา = ข้อ 7 (รอบ SEO ฉ 12/10)** · **รายการคีย์ทั้งหมด + คำตัดสิน + ลำดับทำ = ข้อ 9 (16/10)**
 > คีย์ที่มีใน SEO_BASELINE ใช้สะกดเดียวกัน (m bar · salthub · uwell · drag 6 · caliburn g5 · pod system ตัวไหนดี · marbo · พอตเปลี่ยนหัว · esko bar switch 20k)
 > ข้อมูลดิบ (มีชื่อเว็บ) อยู่ `_incoming/round10c/` เท่านั้น — ไฟล์นี้ไม่ระบุชื่อ/โดเมนร้านค้า
@@ -41,93 +41,262 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 ---
 
-## 0. แผนที่คีย์ — หนึ่งกลุ่มคำ = หนึ่งหน้าเจ้าของ (รอบ SEO ง · 07/10 · ที่เดียวของ "คำนี้หน้าไหน")
+## 0. แผนที่คำ — ลูกค้าเจอเราด้วยคำไหน หนึ่งกลุ่มคำ = หนึ่งหน้าเจ้าของ (รอบ SEO เต็ม ก้อน 1 · 07/11 · ที่เดียวของ "คำนี้หน้าไหน")
 
-> ที่มา: คำค้นจริง 187 คำ (GSC 21/09–05/10 อ่าน 07/10 — `git show 90125650:docs/rounds/รอบ-SEO-ง-แนบ-gsc-คำค้น-2026-10-07.tsv`) · คำค้น→หน้า
-> อ่านจาก GSC รายคำ 07/10 · title/H1 ของ 112 หน้าจากเว็บจริง 07/10 · ชื่อเรียกไทย = Google autocomplete (researcher 07/10) · คอลัมน์
-> "หน้าเจ้าของ" ในตารางข้อ 2 ข้างล่าง = ภาพ 25/09 — **ถ้าไม่ตรงกับตารางนี้ ยึดตารางนี้**
-> ตัวเลข = คลิก/แสดง · อันดับ · "วันนี้ไปหน้าไหน" มีเฉพาะคำที่เปิดดูรายคำ · ป้าย: ทุกแถวคำค้น/ตัวเลข [ตรวจแล้ว] · การเลือกหน้าเจ้าของ = Friday ตัดสินตามคำตัดสินเจ้าของหลัง 10C + HANDOFF §18
+> ที่มา: ยอดค้น = DataForSEO (Google Ads + Labs ประเทศไทย อ่าน 07/11) · อันดับ = DataForSEO มือถือ 20 อันดับแรก อ่าน 07/11 234 คำ · Search Console = 28 วัน 08/10–04/11 ·
+> คำตั้งต้น = Search Console ทุกรอบ + คำที่คู่แข่ง 4 รายติด + Google autocomplete 1,010 ครั้ง · **ตารางเต็ม 1555 คำ พร้อมคู่แข่ง 3 อันดับแรกรายคำ = `docs/cloud-results/seo-keys-0711.tsv`** (ไฟล์นี้ไม่ใส่ชื่อร้าน) · ข้อ 9 เก็บเหตุผลเดิม แต่ "คำไหนหน้าไหน" ยึดข้อนี้
+> ข้อจำกัด [ตรวจแล้ว]: ยอดค้นคำที่มี "บุหรี่ไฟฟ้า" ไม่มีข้อมูล เพราะ Google Ads ซ่อน · อันดับจากเครื่องมือไม่ตรงผลจริงทุกคำ: "voopoo drag 6 ราคา" เครื่องมือบอกไม่ติด แต่ผลจริงบนคอม 07/11 และ Search Console อยู่อันดับ 1–2 จึงใช้คู่กับคอลัมน์ GSC · คำที่ขึ้น "ไม่ได้วัด" = เครดิตฟรีหมด ·
+> บิลคลังไม่มียอดรายรุ่น "ขายดี" จึงมาจากรายการของเจ้าของ (BSOT §15 + ป้ายขายดี) ไม่ใช่ตัวเลขขาย · ยอดค้นเป็นค่าประมาณของ Google ไม่ใช่จำนวนคนจริง
 
-**กติกา:** คำในตารางมีหน้าเจ้าของหน้าเดียว · หน้าอื่นที่ title/meta ชิงคำเดียวกัน = ต้องถอย (คอลัมน์ "ต้องทำ") · คำรุ่น = หน้าสินค้าเสมอ หน้าแบรนด์ถือแค่ชื่อแบรนด์
-· คำถาม = บทความ แต่ "…ราคา" = หน้าสินค้า/หมวด · ห้ามหน้าเจ้าของสองหน้า
+**กติกา:** คำในตารางมีหน้าเจ้าของหน้าเดียว · หน้าอื่นที่ title/meta ชิงคำเดียวกัน = ต้องถอย · คำรุ่น = หน้าสินค้า หน้าแบรนด์ถือแค่ชื่อแบรนด์ · คำถาม = บทความ แต่ "…ราคา" = หน้าสินค้า/หมวด · ห้ามหน้าเจ้าของสองหน้า · p/ = /products/ · b/ = /brands/ · g/ = /guides/
 
-### 0.1 ชื่อร้าน · คำกว้าง · ประเภท
+**ลูกค้าเจอเราทางไหน (07/11):**
+1. **ชื่อร้าน** — คำเดียวที่เว็บยังชนะแน่นอน · เว็บเราติด 20 อันดับแรกบนมือถือแค่คำเดียวจาก 234 คำที่วัด คือ okami24
+2. **คลิป YouTube ของร้าน** — 39 คำ ติด 20 อันดับแรก · 18 คำติด 3 อันดับแรก เช่น มาโบ 10k #1 · nexbar #1 · marbo 9k #2 · esko bar switch 20k #2 · นี่คือทางเข้าที่แรงที่สุดตอนนี้ แต่คนดูคลิปต้องกดต่อมาเว็บ (ก้อน 6)
+3. **คำรุ่น + ราคา** บางคำ เช่น voopoo drag 6 ราคา · caliburn g5 ราคา (Search Console อันดับ 1–2)
+4. **หน้า 1 ของคำที่วัด** 3 อันดับแรก 702 ช่อง = ร้าน 377 · วิดีโอ 157 · โซเชียล 150 · ตลาดออนไลน์ 18 · แปลว่าคำกลุ่มนี้ชนะด้วยคลิปและโซเชียลได้ ไม่ได้มีแต่หน้าร้าน
+5. **เงินก้อนใหญ่ที่สุดที่เรามีของจริง = ตระกูล M Bar / Marbo / มาโบ** ตามด้วย Esko Bar และ RELX Creator · คำกว้าง "พอต" ใหญ่สุดแต่แข่งหนักสุด
 
-| กลุ่มคำ | คำค้นจริง (คลิก/แสดง · อันดับ) | หน้าเจ้าของ | วันนี้ Google ส่งไป | ต้องทำ |
-|---|---|---|---|---|
-| ชื่อร้าน | okami pod 15/25 4.4 · okami24 11/14 1.0 · okm pod 6/8 1.9 · okami พอต 3/5 2.8 · okami บุหรี่ไฟฟ้า 2/3 5.3 · okm yarz 1/1 7.0 · okm (คำเดียว) ไม่มีแถว | `/` | — | คงเดิม (CTR 60–79%) · `/about` เป็นหน้ารอง "คือใคร" ไม่ไล่คำนี้ |
-| พอต · ร้านพอต · พอตไฟฟ้า · บุหรี่ไฟฟ้า · พอตของแท้ | พอตของแท้ 0/1 2.0 · (พอต/ร้านพอต/พอตไฟฟ้า ยังไม่มีแถว) | `/` | — | ก้อน 4: พิจารณาเติม "พอตไฟฟ้า" ใน title หน้าแรก (พักไว้ตั้งแต่รอบ 9 · ถอดพักแล้ว) · บุหรี่ไฟฟ้า = ไม่เน้น (คำตัดสินหลัง 10C) |
-| pod · pod system · พอตซิสเต็ม | pod 24/114 6.8 · pod system 2/11 3.5 · pod systems 0/2 · pods system 0/1 30 · p.o.d 0/2 3.0 · pod system ราคา 0/1 2.0 · pod 21 0/1 | `/products/pod-systems` | pod → pod-systems 20/60 3.6 + **pod-kits 4/49 7.9** + คู่มือเครื่องแรก 0/5 · pod system → pod-systems 2/11 · **รายวัน (อ่าน 09/10): pod-systems ขึ้นแค่ 30/09–02/10 แล้ว Google สลับไป pod-kits 03/10 → 24 ชม. ล่าสุด pod-kits 0/9 9.9** | รอบ SEO จ (#414): head ของ pod-systems คงเดิมทุกตัวอักษร (เจ้าของ 09/10) · ลิงก์ในเนื้อหาเข้า pod-systems 4 → 9 · pod-kits lede ขึ้นต้น "Pod Kit หรือพอตคิท" · ยังขาด: ลิงก์ในเนื้อหาจาก pod-kits ไป pod-systems (ไม่มีประโยคให้ห่อ — ต้องมีช่องใหม่) |
-| pod kit · พอตคิท | pod kit 0/1 1.0 · starter kit pod 0/3 66 | `/products/pod-systems` (`/products/pod-kits` ย้ายมาที่นี่แล้ว) | — | คงเดิม |
-| พอตใช้แล้วทิ้ง · disposable | พอตใช้แล้วทิ้ง 0/1 2.0 · disposable 0/2 44 | `/products/disposables` | — | คงเดิม |
-| พอตเปลี่ยนหัว · switch pod | (ไม่มีแถว · autocomplete มี "พอตเปลี่ยนหัว infy/15k/20000คำ") | `/products/switch-pods` + คู่มือ `disposable-vs-switch-pod` | — | คงเดิม |
-| หัวพอต · pods · cartridge | pods 0/18 3.9 · หัวพอต 0/2 3.0 · cartridge pod 0/2 4.0 · หัวพอตเปล่า 0/3 9.7 · หัวพอต(เปล่า) ราคาส่ง 0/1 + 0/1 | `/products/pods-cartridges` | pods → pods-cartridges 0/18 | คงเดิม · "หัวพอต<รุ่น>" = หน้าหัวพอตของรุ่นนั้น (0.3) |
-| คอยล์ · คอยล์พอต | คอยล์ voopoo 0/1 5.0 · คอยล์ caliburn g3 0/1 26 | `/products/coils-accessories` | — | คงเดิม · คอยล์<รุ่น> = หน้าคอยล์รุ่นนั้น |
-| เครื่องจ่ายความร้อน · hnb | เครื่อง ดูด บุหรี่ hnb ราคา 1/1 5.0 | `/products/heated-tobacco-devices` | — | คงเดิม |
-| น้ำยาบุหรี่ไฟฟ้า | น้ำยาบุหรี่ไฟฟ้า 0/2 62.5 | `/e-liquid` (HANDOFF §18) | — | คงเดิม |
-| อุปกรณ์บุหรี่ไฟฟ้า | (ไม่มีแถว) | `/products` | — | คงเดิม |
+### 0.1 คำกว้าง · ซื้อ · ชื่อร้าน
 
-### 0.2 คำถาม
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| พอต | 27100 | — |  |  | / | ลิงก์เข้า · ความน่าเชื่อถือ |
+| vape | 14800 | ไม่ได้วัด |  |  | / | head |
+| พอตใช้แล้วทิ้ง | 9900 | — |  | 0/8 #69.0 | p/disposables | Google ส่งไป /guides/open-system-vs-disposable |
+| pod | 5400 | — |  | 0/1 #9.0 | p/pod-systems | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตเปลี่ยนหัว | 5400 | — |  | 0/1 #71.0 | p/switch-pods | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตไฟฟ้า | 4400 | — | #3 |  | p/pod-systems | head |
+| coils | 1600 | — |  |  | p/coils-accessories | เนื้อหาบาง |
+| คอยล์ | 1600 | ไม่ได้วัด |  |  | p/coils-accessories | เนื้อหาบาง |
+| disposable | 1300 | — |  | 0/5 #19.4 | p/disposables | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอต 20000 คำ | 590 | — |  |  | p/disposables | head |
+| pod ใช้แล้วทิ้ง | 590 | — |  | 0/4 #69.0 | p/disposables | head |
+| เครื่องพอต | 590 | — |  |  | p/pod-systems | head |
+| พอต 20k | 590 | ไม่ได้วัด |  |  | p/disposables | head |
+| หัวพอต infy | 590 | ไม่ได้วัด |  |  | p/pods-cartridges | head |
+| ตัวพอต | 480 | — | #8 |  | p/pod-systems | head |
+| vape แปล | 480 | ไม่ได้วัด |  |  | / | head |
+| vapex | 480 | ไม่ได้วัด |  |  | / | head |
+| pod ecig | 390 | — |  |  | p/pod-systems | head |
+| พอตเติมน้ำยา | 390 | — |  |  | g/refilling-a-pod | head |
+| พอต15000คำ | 390 | — |  |  | p/disposables | head |
+| ตัวพอตเปลี่ยนหัว | 320 | — |  |  | p/switch-pods | head |
+| เครื่องพอตเปลี่ยนหัว | 320 | — |  |  | p/switch-pods | head |
+| ใช้แล้วทิ้ง | 320 | — | #9 |  | p/disposables | ลิงก์เข้า · ความน่าเชื่อถือ |
+| น้ำยาองุ่นยาว | 260 | — | #2 |  | p/e-liquid | head |
 
-| กลุ่มคำ | คำค้นจริง | หน้าเจ้าของ | ต้องทำ |
-|---|---|---|---|
-| pod system ตัวไหนดี · ยี่ห้อไหนดี · แนะนำ · pantip · พอตตัวไหนดี · ดีไหม | ยี่ห้อไหนดี 0/4 64 · แนะนํา 0/3 91 · ตัวไหนดี 0/1 68 | คู่มือ `choosing-your-first-pod-system` | ก้อน 6 ลิงก์เข้า · อันดับ 60–90 = หน้ายังอ่อน |
-| pod system คือ · พอตคืออะไร | pod system คือ 0/3 70 · คืออะไร 0/1 | คู่มือ `what-is-a-pod-system` (รอบ SEO จ #414) | คู่มือเลือกเครื่องแรกถอย: หัวข้อ + meta ไม่ขึ้นต้น "Pod System คือ" แล้ว (เจ้าของ 09/10 · seo-auditor) |
-| MTL · DTL · RDL | rozdiel mtl a rdl 0/4 · mtl draw 0/2 · rdl vape meaning 0/2 · dtl 0/1 · rdl vs mtl 0/1 · what does dtl and mtl mean 0/1 | คู่มือ `understanding-mtl-vs-dtl` | คนค้นเป็นต่างชาติ (อังกฤษ/สโลวัก) อันดับ 50–99 — ไม่ลงแรงเพิ่ม |
-| ดูดไม่ขึ้น · ไฟกะพริบ | พอตดูดไม่ขึ้นแก้ยังไง 0/1 54 | คู่มือ `fixing-no-draw-and-blinking-light` | ก้อน 6 ลิงก์เข้า |
-| ใช้ได้กี่วัน | (ไม่มีแถว) | คู่มือ `how-long-a-disposable-lasts` | — |
-| พอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกันยังไง | (ไม่มีแถว · seo-auditor ปิดรอบ SEO ฉ 14/10: 4 หน้าตอบคำถามเดียวกัน — /faq · /guides meta · FAQ ของ what-is-a-pod-system) | คู่มือ `open-system-vs-disposable` (Friday ตัดสิน 14/10: title ตรงคำถามที่สุด) | ไม่ต้องแก้ตอนนี้ (หน้าอื่นตอบสั้นในรูป FAQ ไม่ชิง head) · /faq ไม่มีลิงก์ใน `<main>` เลย → รอบหน้า: คำตอบใน /faq ลิงก์ไปคู่มือนี้ |
-| เติมน้ำยายังไง | เติมน้ำยายังไง 0/1 1.0 | (ไม่มีหน้าตอบ) | **บทความที่ขาด** (0.5) |
-| marbo กลิ่นไหนดี · มีกลิ่นอะไรบ้าง | มีกลิ่นอะไรบ้าง 0/1 14 | คู่มือ `choosing-a-marbo-flavor` | — |
-| caliburn รุ่นไหนดี · เทียบ caliburn | (ไม่มีแถว) | คู่มือ `comparing-caliburn-models` | — |
-| esko bar switch vs m switch | (คู่มือมีคลิก 3/23 ใน 05/10) | คู่มือ `esko-bar-switch-vs-m-switch` | — |
-| สูบพอตยังไงไม่ให้สำลัก · วิธีดูดพอตมือใหม่ · พอตใช้ยังไง | (ไม่มีแถว · AC 23/10 หลายแบบ) | คู่มือ `how-to-vape-without-coughing` (ใหม่ 23/10) | อ่านผล 15/11 |
-| มาโบ 10K ใช้ยังไง · ปรับโหมด · ไฟบอกอะไร | (ไม่มีแถว · PAA 23/10) | คู่มือ `choosing-a-marbo-flavor` หัวข้อ M Bar 10K (23/10) | คำว่า มาโบ ไม่ขึ้นหน้า (ล็อกรอบ 8) |
-| พอตใช้แล้วทิ้ง หมดดูยังไง | (ไม่มีแถว · AC + PAA 23/10) | คู่มือ `how-long-a-disposable-lasts` หัวข้อใหม่ (23/10) | — |
-| พอตกับมาโบต่างกันยังไง | (ไม่มีแถว · AC 23/10 สองทาง) | คู่มือ `disposable-vs-switch-pod` FAQ (23/10 — แทนที่วางไว้ที่ open-system-vs-disposable) | — |
-| เอาพอตไปญี่ปุ่น · เกาหลี · ต่างประเทศ | (ไม่มีแถว · Pantip 23/10) | คู่มือ `taking-a-pod-on-a-plane` หัวข้อใหม่ (23/10) | — |
+ซื้อ (ไม่ใส่คำ "ใกล้ฉัน" และชื่อจังหวัด — ข้อ 0.5):
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| ร้านพอต | 3600 | — |  |  | / | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตส่งด่วน | 2400 | — |  |  | /shipping | head |
+| ขายส่งพอต | 1900 | — |  |  | /faq | head |
+| สั่งพอต | 590 | — |  |  | /how-to-order | head |
+| ซื้อพอต | 480 | — |  |  | /how-to-order | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตออนไลน์ | 390 | — |  |  | / | head |
+| พอตราคาส่ง | 390 | — |  |  | /faq | head |
+| ร้านขายพอตออนไลน์ | 320 | — |  |  | / | head |
+| pod ส่งด่วน | 260 | ไม่ได้วัด |  |  | /shipping | head |
+| พอตใช้แล้วทิ้งราคาถูกส่งฟรี | 260 | ไม่ได้วัด |  |  | /shipping | head |
+| พอตใช้แล้วทิ้งราคาถูก #ส่งฟรี | 260 | ไม่ได้วัด |  |  | /shipping | head |
+| เว็บขายพอต | 260 | ไม่ได้วัด |  |  | / | head |
+| พอตราคา | 210 | ไม่ได้วัด |  |  | / | head |
+| พอตราคาถูก | 210 | ไม่ได้วัด |  |  | / | head |
+| พอตใช้แล้วทิ้งราคาส่ง | 170 | ไม่ได้วัด |  |  | /faq | head |
+| ร้านพอตเก็บปลายทาง | 170 | ไม่ได้วัด |  |  | / | head |
+| พอต 9000 คำราคาส่ง | 140 | ไม่ได้วัด |  |  | /faq | head |
+| ร้านพอตบางแสน | 140 | ไม่ได้วัด |  |  | / | head |
+| พอตราคาเท่าไหร่ | 140 | ไม่ได้วัด |  |  | / | head |
+| หัวพอต relx ราคาส่ง | 110 | ไม่ได้วัด |  |  | /faq | head |
+| ราคาพอต | 110 | ไม่ได้วัด |  |  | / | head |
+| พอตใช้แล้วทิ้งราคาถูก | 90 | ไม่ได้วัด |  |  | p/disposables | head |
+
+### 0.2 ความรู้ · กลิ่น
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| นิโคติน | 9900 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| vape คือ | 1300 | — |  |  | g/what-is-a-pod-system | head |
+| vapes คือ | 1300 | ไม่ได้วัด |  |  | g/what-is-a-pod-system | head |
+| pod คือ | 1000 | — |  |  | g/what-is-a-pod-system | head |
+| นิโคตินคือ | 880 | ไม่ได้วัด |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| พอตคืออะไร | 720 | — |  |  | g/what-is-a-pod-system | head |
+| น้ำยาซอลนิค | 590 | — |  |  | g/salt-nic-vs-freebase | head |
+| น้ำยาฟรีเบส | 590 | — |  |  | g/salt-nic-vs-freebase | head |
+| เช็คมาโบ | 590 | — |  |  | g/checking-a-genuine-pod | head |
+| พอตดูดไม่ขึ้น | 480 | ไม่ได้วัด |  |  | g/fixing-no-draw-and-blinking-light | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตชาร์จไม่เข้า | 390 | — |  |  | g/battery-care-and-charging | head |
+| สแกนมาโบ | 320 | — |  |  | g/checking-a-genuine-pod | head |
+| ดูดพอตแล้วปวดหัว | 320 | — |  |  | ไม่มีหน้า | ก้อน 5: เขียนกลาง ๆ อ้างหน่วยงานทางการ |
+| พอตดูดไม่ขึ้นแต่ไฟติด | 320 | — |  |  | g/fixing-no-draw-and-blinking-light | head |
+| พอตไหม้แก้ยังไง | 260 | — |  |  | g/fixing-a-burnt-pod | head |
+| มาโบคืออะไร | 260 | ไม่ได้วัด |  |  | b/salthub | head |
+| พอตเปลี่ยนหัวรุ่นไหนดี | 210 | — |  |  | g/choosing-a-switch-pod | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอตมาโบดูดไม่ขึ้นเป็นเพราะอะไร | 210 | — | #11 |  | g/fixing-no-draw-and-blinking-light | head |
+| พอตคือ | 210 | — |  |  | g/what-is-a-pod-system | head |
+| เว็บเช็คมาโบแท้ | 210 | — |  |  | g/checking-a-genuine-pod | head |
+| พอตดูดไม่ขึ้นใช้แล้วทิ้ง | 170 | — | #2 |  | g/fixing-no-draw-and-blinking-light | head |
+| พอตขึ้นเครื่องบินได้ไหม 2568 | 170 | — |  |  | g/taking-a-pod-on-a-plane | head |
+| น้ำยาซอลนิคมาโบ | 170 | — |  |  | g/salt-nic-vs-freebase | head |
+| มาโบคือ | 170 | ไม่ได้วัด |  |  | b/salthub | head |
+
+กลิ่น (เจ้าของคำ = บทความกลิ่น Marbo · ข้อยกเว้น "มาโบ" THAI_STYLE §3 ครอบ):
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| มาโบ 9000 มีกลิ่นอะไรบ้าง | 880 | — | #3 |  | p/m-bar-9k | head |
+| บลูไอซ์มาโบ | 720 | — | #1 |  | g/choosing-a-marbo-flavor | head |
+| องุ่นลิ้นจี่มาโบ | 590 | — |  |  | g/choosing-a-marbo-flavor | head |
+| พอตมาโบ 9000 มีกลิ่นอะไรบ้าง | 480 | — |  |  | p/m-bar-9k | head |
+| พอตมีรสอะไรบ้าง | 480 | — |  |  | g/choosing-a-marbo-flavor | head |
+| มาโบ 10k มีกลิ่นอะไรบ้าง | 390 | — | #5 |  | p/m-bar-10k | head |
+| มาโบ 9k มีกลิ่นอะไรบ้าง | 390 | — |  |  | p/m-bar-9k | head |
+| มาโบ 9000 คำมีรสอะไรบ้าง | 390 | ไม่ได้วัด |  |  | p/m-bar-9k | head |
+| พิ้งเบอรี่มาโบ | 390 | — |  |  | g/choosing-a-marbo-flavor | head |
+| พอตพิ้งเบอรี่ | 320 | ไม่ได้วัด |  |  | g/choosing-a-marbo-flavor | head |
+| พอตมิกเบอรี่ | 320 | ไม่ได้วัด |  |  | g/choosing-a-marbo-flavor | head |
+| พอตบลูไอซ์ | 320 | ไม่ได้วัด |  |  | g/choosing-a-marbo-flavor | head |
+
+คำถามรายรุ่น:
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| esko bar 20k กลิ่นไหนดี | 390 | — |  |  | p/esko-bar-20k | head |
+| มาโบ 9000 คำของแท้ | 320 | — |  |  | p/m-bar-9k | head |
+| salthub marbo 9k เช็คของแท้ | 260 | — |  |  | p/m-bar-9k | head |
+| ไอคอสคือ | 260 | ไม่ได้วัด |  |  | b/iqos | head |
+| มาโบ 10k รีวิว | 210 | — | #3 |  | p/m-bar-10k | head |
+| พอต 9000 คำของแท้ | 170 | — |  |  | p/m-bar-9k | head |
+| relx creator ดูดไม่ขึ้น | 170 | — |  |  | p/relx-creator | head |
+| relx smash go 12k รีวิว | 140 | — |  |  | p/relx-smash-go-12k | head |
 
 ### 0.3 แบรนด์และรุ่น
 
-| กลุ่มคำ | คำค้นจริง (คลิก/แสดง · อันดับ) | หน้าเจ้าของ | วันนี้ Google ส่งไป | ต้องทำ |
-|---|---|---|---|---|
-| esko bar · esko · ชื่อเรียก "เอสโคบาร์" | **esko bar 0/87 3.6** · esko 0/3 · esko bar vape 0/1 · eskobarvape 0/1 · eski bar 0/1 · eskbar 0/1 | `/brands/esko-bar` | esko bar → brands/esko-bar 0/87 | **ก้อน 4: head ใหม่** (ติดหน้า 1 แต่ไม่มีคนกด) |
-| esko bar switch 20k | esko bar switch 20k 0/7 9.1 · esko switch 0/2 1.0 · esko bar switch 0/1 · …kit 0/1 · …ราคา 0/1 · หัว esko bar 1/1 · หัว esko 0/2 | `/products/pod-159` | 20k → pod-159 0/7 | brands/esko-bar ถอยชื่อรุ่น+ราคาออกจาก title (ก้อน 4) |
-| esko bar 20k (ตัวไม่สวิตช์) | esko bar 20k 0/3 16.7 | `/products/esko-bar-20k` (ลงแล้ว — ร้านขาย ESKO BAR 20000) | — | หน้ามีแล้ว · หน้าแบรนด์ถอยชื่อรุ่น (20/10) |
-| joiway · ชื่อเรียก "จอยเวย์" | **joiway 1/120 6.3** · joi way 0/4 · joiway ราคา 0/4 · joway pod 0/3 · joiway pod 0/2 · pod joiway 0/2 · joiwat 0/2 · joiway vape 0/1 · joiwy 0/1 · oiway 0/1 · pot joiway 0/1 · พอ ต joiway ราคา 0/1 · บุหรี่ไฟฟ้า joiway 0/1 | `/brands/joiway` | joiway → brands/joiway 1/120 | **ก้อน 4: head ใหม่** |
-| joiway f4 · double flavor | joiway f4 0/10 10.3 · joiway double flavor 0/3 10 | `/products/joiway-f4` | **f4 → brands/joiway 0/10 (หน้าแบรนด์แย่ง)** | ก้อน 4: brand ถอยชื่อรุ่น/ราคา · meta ของ F4 ไม่มีคำ "F4" → เติม |
-| joiway f3 | joiway f3 0/1 4.0 | `/products/joiway-f3` | — | — |
-| salthub · marbo · m bar · ชื่อเรียก "มาโบ" "เอ็มบาร์" | salthub 0/12 33.2 · marbo pod 0/1 6.0 | `/brands/salthub` | salthub → brands/salthub 0/5 · m-switch-kit 0/3 · m-bar-pod (ซ่อนแล้ว 404) 0/3 · m-bar-10k 0/3 · zero-pro 0/1 | ก้อน 4: title แบรนด์ถอยชื่อรุ่น 15K+ราคา กลับเป็นระดับแบรนด์ |
-| m bar 15k · marbo 15k | m bar 15k 0/3 6.0 · mbar 15k 0/3 9.7 | `/products/m-switch-kit` (หัวอย่างเดียว = `m-switch-pod`) | **คำที่มี 15k → brands/salthub 0/6** | 08/10 เจ้าของ: หน้า m-bar-15k ซ่อน + ส่งต่อถาวรไป m-switch-kit · Kit/Pod ใส่ชื่อ "M Bar 15K" |
-| m bar 10k | m bar 10k 1/2 75.5 | `/products/m-bar-10k` | — | head ค้าง (HANDOFF §16 ข้อ 5) |
-| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | เป็นเจ้าของ "m bar 15k" ด้วย (08/10) |
-| marbo zero pro · zero nano · marbo ice blast | marbo zero pro 0/2 1.0 · marbo zero nano 0/1 3.0 · marbo ice blast 1/1 73 | `zero-pro` · `zero-nano` · `m-bar-10k` | — | — |
-| voopoo · พอต/คอยล์/หัวพอต voopoo | voopoo 3/18 10.7 · voopoo ทุกรุ่น 1/1 · เครื่องบุหรี่ไฟฟ้า voopoo 0/1 · หัวพอต voopoo 0/1 · พอต voopoo 0/1 87 | `/brands/voopoo` | voopoo → brands/voopoo 3/18 | ก้อน 4: title แบรนด์ (ตอนนี้ "DRAG 6 · DRAG S3 · ARGUS G4") ถอยชื่อรุ่น |
-| drag 6 | voopoo drag 6 ราคา 8/11 3.3 · drag 6 4/22 8.5 · voopoo drag 6 4/17 8.5 · drag6 4/11 8.0 · drag 6 ราคา 1/4 · drag 6 voopoo 1/2 · voopoo drag6 1/2 · darg 6 0/2 | `/products/drag-6` | drag 6 → drag-6 4/22 · *voopoo drag* → drag-6 11/30 + brands/voopoo 2/2 | คงเดิม (ชนะอยู่แล้ว) |
-| drag s3 | drag s3 1/7 8.3 · voopoo s3 0/1 20 | `/products/drag-s3` | — | — |
-| drag x3 · drag x | drag x 3 0/1 14 | `/products/drag-x3` | — | "voopoo drag x" (ไม่ใช่ X3) = **หน้าที่ขาด** (เจ้าของ 25/09: ต้องมีหน้า) |
-| drag 3 | drag 3 0/5 68 | `/products/coil-38` (คอยล์ของ Drag 3 — ร้านไม่มีตัวเครื่อง) | — | — |
-| argus g4 | voopoo argus g4 ราคา 5/7 2.0 · argus g4 1/11 6.5 · voopoo argus g4 1/5 · argus g4 voopoo 1/1 · drag argus 0/1 | `/products/argus-g4` | **argus g4 → argus-g4-mini 1/8 · argus-g4 0/2** | ก้อน 4: head argus-g4 (ปลดพักแล้วในก้อน 2) · ก้อน 6 ลิงก์ mini→G4 |
-| argus g4 mini | argus g4 mini 5/10 4.8 · g4mini 0/1 · voopoo argus g4 mini price 0/1 | `/products/argus-g4-mini` | — | — |
-| argus g3 mini | voopoo argus g3 mini 2/2 10 · argus g3 mini 0/1 | `/products/argus-g3-mini` | — | — |
-| vmate i3 · vinci s | voopoo vmate i3 7/9 12.1 · vinci s 0/1 5.0 | `vmate-i3` · `vinci-s` | — | — |
-| uwell · caliburn · ชื่อเรียก "คาลิเบิร์น" (หลักฐานเบา) | uwell 0/3 57 · caliburn 0/2 86 · caliburn g 0/2 · uwell caliburn 1/1 · uwell caliburn g 0/4 59 | `/brands/uwell` | — | ก้อน 4: title แบรนด์ (ตอนนี้ "Caliburn G5 · G4 · G3 Pro") ถอยชื่อรุ่น |
-| caliburn g5 | caliburn g5 4/7 14 · uwell caliburn g5 0/2 | `/products/caliburn-g5` | **caliburn g5 → g5-lite 2/5 · brands/uwell 2/2 · caliburn-g5 0/2** | ก้อน 4: head caliburn-g5 + uwell ถอย · ก้อน 6 ลิงก์ |
-| caliburn g5 lite · g5 lite se | caliburn g5 lite 0/6 5.0 · caliburn g 5 lite 0/3 · uwell g5 lite 0/1 · caliburn g5 lite se 0/1 · g5 lite pod 0/1 | `caliburn-g5-lite` · `caliburn-g5-lite-se` | — | — |
-| caliburn g4 · g4 pro · g4 mini · koko · classic | caliburn g4 pro ราคา 1/3 2.0 · caliburn g4 pro 1/3 · caliburn g4 mini 1/6 4.0 · caliburn g4 1/1 · g4 pro 0/1 · uwell g4 pro 0/1 · uwell caliburn g4 pro 0/2 · …g4 mini 0/2 · …g4 0/1 · …g4 pro koko 0/1 | หน้ารุ่นตามชื่อ | — | head G4 Classic ห้วน (ก้อน 4) |
-| caliburn g3 pro · koko | caliburn g3 pro 1/9 5.2 · uwell caliburn g3 pro 0/3 · uwell g3 pro 0/3 · caliburn g3pro 0/1 · g3 pro 0/1 | `/products/caliburn-g3-pro` (+ `-koko` สำหรับ "koko") | — | head G3 Pro / KOKO ห้วน (ก้อน 4) |
-| caliburn g3 (ตัวไม่ Pro) | caliburn g3 0/10 5.5 · caliburn g 3 1/2 · uwell caliburn g3 0/2 · g3 caliburn 0/1 | — (ชั่วคราว: `caliburn-g3-pro`) | **caliburn g3 → g3-pro-koko 0/9 · g3-pro 0/5 · uwell 0/1** | **หน้าที่ขาด** (เจ้าของ 25/09: ต้องมีหน้า) |
-| หัวพอต caliburn g3/g4 | caliburn g3 pod 0/1 · uwell caliburn g3 pro pod 0/1 | `/products/coil-94` | — | — |
-| caliburn g2 | caliburn g2 0/6 48 | `coil-53` / `coil-55` (ร้านมีแค่คอยล์/หัว) | — | — |
-| infy · infy 20k · ชื่อเรียก "อินฟี่" | infy 20k 0/25 13.8 · infy 20000 0/3 40 · infy 20k milk tea 0/2 · lnfy 20k 0/2 · infy bar pro 20k 0/1 · infy 20k disposable pod 0/1 · infy 0/2 97 | `/products/infy-20k` (infy คำเดียว = `/brands/infy`) | infy 20k → infy-20k 0/25 + brands/infy 0/2 | อันดับ 13.8 = หน้า 2 · head ไม่ช่วย → ก้อน 6 ลิงก์เข้า (seo-auditor 07/10) · "infy 12k" = หน้าที่ขาด |
-| nexbar clear 18k · wotofo | nexbar clear 18k 3/8 19 · wotofo 0/1 · wotofo vape 0/1 | `/products/pod-180` (nexbar clear) · `/brands/wotofo` | nexbar clear → pod-180 2/7 + brands/wotofo 1/1 | — |
-| moood · monster 14k | monster 14k 1/5 5.8 · mood monster 1/2 21 · mood 14k 0/1 · moood 14 0/1 · mood บุหรี่ 0/1 | `/products/mood-monster-14k` (แบรนด์ = `/brands/moood`) | — | — |
-| muro | muro connector 20k 1/5 26 · muro sc 8000 0/2 17.5 | `muro-connector-20k` · `muro-sc-8000` | — | ไม่มี `/brands/muro` (ข้อ 0.5) |
-| relx | relx creator 0/1 · relx creator pro 0/1 · "relx" 0/1 | `/products/relx-creator` · `/brands/relx` | — | ก้อน 4: title แบรนด์ relx (ตอนนี้ "พอต RELX Smash Go 12K ฿320") ถอยชื่อรุ่น |
-| nevoks · dotmod · rincoe · iqos | nevoks 2/2 · ngovoks 0/1 · dotmod 1/5 47 · dotmod thailand 0/3 · rincoe 0/1 40 · iqos 1/2 · "iqos" 0/1 | `/brands/<แบรนด์>` | — | dotmod/rincoe/nevoks = คำตัดสินเจ้าของ §18 ไม่แตะ |
-| tfit | (ไม่มีแถว) | `/products/tfit-m-power-20k` · `/brands/tfit` | — | head TFIT ซ้ำ (ก้อน 4) |
+แบรนด์:
 
-**ไม่มีหน้าเจ้าของ (เจตนาไม่ชัด/นอกเรื่อง — ไม่ไล่):** ราคา 0/8 6.4 (กระจาย 6 หน้า) · ราคาไทย · ผลิตปี · ซ่อม 1/1 · พอตสี่เหลี่ยม 0/4 · พอตตัวเล็ก · ขอดูเป็นรูปภาพได้ไหม · ขอรูปประกอบหน่อยครับ · ขอดูตัวอย่าง · รูปภาพแต่ละรุ่น · was ist das · what is this? · "1" · vapemun 1/6 (ชื่อร้านอื่น — ไม่ไล่ชื่อคู่แข่ง)
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| relx | 6600 | — | #6 | 0/7 #81.6 | b/relx | เนื้อหาบาง |
+| มาโบ | 6600 | — |  |  | b/salthub | head |
+| ks | 6600 | ไม่ได้วัด |  |  | b/kardinal-stick | เนื้อหาบาง |
+| salt hub | 4400 | — |  | 0/12 #26.4 | b/salthub | เนื้อหาบาง |
+| พอตมาโบ | 4400 | — |  |  | b/salthub | head |
+| drag | 3600 | — |  |  | b/voopoo | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo | 3600 | ไม่ได้วัด |  |  | b/salthub | เนื้อหาบาง |
+| infy | 2400 | — |  | 0/3 #4.7 | b/infy | เนื้อหาบาง |
+| เอสโคบาร์ | 1900 | ไม่ได้วัด |  |  | b/esko-bar | เนื้อหาบาง |
+| ไอคอส | 1600 | ไม่ได้วัด |  |  | b/iqos | เนื้อหาบาง |
+| หัวพอต relx | 1300 | — | #9 | 0/1 #1.0 | b/relx | head |
+| argus | 1300 | — |  |  | b/voopoo | ลิงก์เข้า · ความน่าเชื่อถือ |
+| voopoo | 1300 | ไม่ได้วัด |  | 3/8 #14.6 | b/voopoo | ลิงก์เข้า · ความน่าเชื่อถือ |
+| พอต relx | 1000 | — |  |  | b/relx | head |
+| หัว relx | 1000 | — |  |  | b/relx | head |
+| joi way | 1000 | — |  | 0/3 #7.3 | b/joiway | เนื้อหาบาง |
+| esko | 720 | — | #10 | 0/5 #67.0 | b/esko-bar | เนื้อหาบาง |
+| m bar | 720 | — | #4 | เดิม 0/4 #3.5 | b/salthub | Google ส่งไป /products/m-bar-15k |
+| อินฟี่ | 720 | ไม่ได้วัด |  | 0/1 #65.0 | b/infy | เนื้อหาบาง |
+| eskobar | 590 | — |  | เดิม 0/1 #80.0 | b/esko-bar | เนื้อหาบาง |
+| nexbar | 590 | — | #1 | 0/1 #76.0 | b/wotofo | Google ส่งไป /products/wotofo-nexbar-18k |
+| relx pod | 590 | — |  | 0/1 #31.0 | b/relx | head |
+
+รุ่นขายดี (เรียงก่อน เพราะขายได้จริงตามรายการเจ้าของ):
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| marbo 9k | 8100 | — | #2 |  | p/m-bar-9k | head |
+| มาโบ 9k | 6600 | — |  |  | p/m-bar-9k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo 10k | 5400 | — |  | 0/1 #73.0 | p/m-bar-10k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| มาโบ 10k | 5400 | — | #1 |  | p/m-bar-10k | head |
+| m switch 15k | 4400 | — |  |  | p/m-switch-kit | head |
+| relx smash go 12k | 3600 | ไม่ได้วัด |  | เดิม 1/1 #6.0 | p/relx-smash-go-12k | Google ส่งไป /brands/relx |
+| esko bar switch 20k | 2900 | — | #2 | เดิม 0/7 #9.1 | p/pod-159 | ลิงก์เข้า · ความน่าเชื่อถือ |
+| m switch | 2900 | — |  | 1/4 #20.3 | p/m-switch-kit | ลิงก์เข้า · ความน่าเชื่อถือ |
+| m-switch | 2900 | ไม่ได้วัด |  | 0/7 #1.4 | p/m-switch-kit | head |
+| มาโบ 9000 คำ | 1900 | ไม่ได้วัด |  |  | p/m-bar-9k | head |
+| มาโบ 9000 | 1900 | — |  |  | p/m-bar-9k | head |
+| พอต 9k | 1900 | — | #6 |  | p/m-bar-9k | head |
+| มาโบ 15k | 1600 | — | #6 |  | p/m-switch-kit | head |
+| พอต 10k | 1600 | ไม่ได้วัด |  |  | p/m-bar-10k | head |
+| มาโบเปลี่ยนหัว | 1300 | — |  |  | p/m-switch-kit | head |
+| m bar 10k | 1300 | — |  | 0/3 #34.7 | p/m-bar-10k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo 15k | 1300 | — |  |  | p/m-switch-kit | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo m switch | 1300 | — |  |  | p/m-switch-kit | head |
+| relx 12k | 1300 | — |  |  | p/relx-smash-go-12k | head |
+| มาโบ 9000 คำกลิ่นไหนหอมสุด | 1000 | — |  |  | p/m-bar-9k | head |
+| หัวมาโบ | 1000 | — |  |  | p/m-switch-pod | head |
+| relx smash go | 1000 | — |  | 1/2 #47.0 | p/relx-smash-go-12k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| esko bar switch | 1000 | ไม่ได้วัด |  | 0/1 #33.0 | p/pod-159 | Google ส่งไป /brands/esko-bar |
+| esko switch 20k | 880 | — | #2 | 0/2 #52.5 | p/pod-159 | Google ส่งไป /guides/esko-bar-switch-vs-m-switch |
+| หัว m switch 15k | 720 | — | #10 |  | p/m-switch-pod | head |
+| หัวพอต 15k | 720 | — |  |  | p/m-switch-pod | head |
+| 9k marbo | 720 | — | #3 |  | p/m-bar-9k | head |
+| m bar 9k | 720 | — |  |  | p/m-bar-9k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| หัวมาโบ 15k | 720 | — |  |  | p/m-switch-pod | head |
+| esko bar 20k เปลี่ยนหัว | 590 | — |  |  | p/pod-159 | head |
+| มาโบ 10000 คำ | 590 | — |  |  | p/m-bar-10k | head |
+| หัวพอต m switch | 590 | — |  |  | p/m-switch-pod | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo switch | 590 | — |  |  | p/m-switch-kit | head |
+| nexbar 18k | 590 | ไม่ได้วัด |  |  | p/pod-180 | head |
+
+รุ่นอื่นที่มีหน้าแล้ว:
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| folic acid | 6600 | ไม่ได้วัด |  |  | p/foli-bar-15k | head |
+| folic | 6600 | ไม่ได้วัด |  |  | p/foli-bar-15k | เนื้อหาบาง |
+| esko bar 20k | 5400 | — |  | เดิม 0/3 #16.7 | p/esko-bar-20k | Google ส่งไป /products/pod-159 |
+| relx creator | 4400 | — |  | 1/1 #38.0 | p/relx-creator | ลิงก์เข้า · ความน่าเชื่อถือ |
+| infy 20k | 1900 | — |  | 0/5 #8.0 | p/infy-20k | ลิงก์เข้า · ความน่าเชื่อถือ |
+| relx creator 20000 puffs | 1900 | — |  |  | p/relx-creator | head |
+| พอตเลโก้ | 1600 | — |  |  | p/relx-creator | head |
+| relx essential 2 | 1300 | — | #9 |  | p/relx-essential-2 | ลิงก์เข้า · ความน่าเชื่อถือ |
+| relx lego | 1300 | — |  |  | p/relx-creator | head |
+| terea | 1300 | ไม่ได้วัด |  |  | p/iqosheet-15 | เนื้อหาบาง |
+| folio | 1300 | ไม่ได้วัด |  |  | p/foli-bar-15k | head |
+| joiway 12k | 1000 | — |  | เดิม 0/1 #56.0 | p/joiway-f3 | Google ส่งไป /brands/joiway |
+| relx creator 20k | 1000 | — |  |  | p/relx-creator | head |
+| folio โรงแรม | 1000 | ไม่ได้วัด |  |  | p/foli-bar-15k | head |
+| relx infinity | 880 | — |  | 0/1 #60.0 | p/relx-infinity-2-plus | ลิงก์เข้า · ความน่าเชื่อถือ |
+| marbo zero | 590 | — |  |  | p/zero-pro | head |
+| เอสโคบาร์ 20k | 590 | — |  |  | p/esko-bar-20k | head |
+| relx essentials | 590 | — | #1 |  | p/relx-essential-2 | head |
+| relx essential | 590 | — |  |  | p/relx-essential-2 | ลิงก์เข้า · ความน่าเชื่อถือ |
+| joiway f3 | 480 | — | #16 | เดิม 0/1 #4.0 | p/joiway-f3 | Google ส่งไป /brands/joiway |
+| joiway f4 | 480 | — |  | 2/47 #9.7 | p/joiway-f4 | Google ส่งไป /brands/joiway |
+| น้ำยามาโบ | 480 | — |  |  | p/eliquid-1 | head |
+| relx infinity 2 | 480 | — |  | 0/1 #71.0 | p/relx-infinity-2-plus | ลิงก์เข้า · ความน่าเชื่อถือ |
+| mq bar 22k | 480 | ไม่ได้วัด |  |  | p/mq-bar-22k | เนื้อหาบาง |
+
+รุ่นที่ยังไม่มีหน้า (รอบรุ่นยอดนิยม · บางชื่อยังไม่ได้ตรวจว่าเป็นรุ่นจริง · พอตเลโก้ = RELX Creator · Joiway 12K = Joiway F3 มีหน้าแล้ว):
+
+| คำ | ยอดค้น/เดือน | เว็บเรา | คลิปร้าน | GSC 28 วัน | หน้าเจ้าของ | ขาด |
+|---|---|---|---|---|---|---|
+| smok | 12100 | — |  |  | - | รอบรุ่นยอดนิยม |
+| smoke | 12100 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| elfbar | 2900 | — |  |  | - | รอบรุ่นยอดนิยม |
+| relx sparta 20k | 2400 | — | #12 |  | - | รอบรุ่นยอดนิยม |
+| elf bars | 2400 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| smoke แปลว่า | 1300 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| nexas booster 16k | 880 | — |  |  | - | รอบรุ่นยอดนิยม |
+| relx diva 30k | 880 | — | #2 |  | - | รอบรุ่นยอดนิยม |
+| infy 12000 | 720 | — |  |  | - | รอบรุ่นยอดนิยม |
+| nexas | 590 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx diva | 590 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx sparta | 590 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx novo | 590 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| infy bar pro 20k | 480 | ไม่ได้วัด |  | 0/2 #78.0 | - | รอบรุ่นยอดนิยม |
+| marbo 25k | 480 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| smok nord fix | 480 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx novo 14k | 480 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| nexas 16000 | 390 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx 20k | 390 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx go | 390 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| marbo 18k | 320 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| marbo vape 25k | 320 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| relx ultra pod | 320 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
+| มาโบ 18000 คำ | 320 | ไม่ได้วัด |  |  | - | รอบรุ่นยอดนิยม |
 
 ### 0.4 ชื่อเรียกไทยที่มีหลักฐานว่าคนพิมพ์ (ก้อน 5 — ลงหน้าเจ้าของแบบประโยคปกติ)
 
@@ -140,7 +309,9 @@ GSC ไม่มีคำค้นอักษรไทยของชื่อ�
 เอสโคบาร์ (esko-bar) · จอยเวย์ (joiway) · ไอคอส (iqos) · **อินฟี่ ลงหน้าแบรนด์ `/brands/infy` ไม่ใช่หน้าสินค้า** · เอ็มบาร์ / คาลิเบิร์น ไม่ได้ลง
 · ถ้าวันอ่านผล 22/10 คำ "infy 20k" ไหลไปหน้าแบรนด์มากขึ้น → ย้าย "อินฟี่" ไปหน้า infy-20k (SEO_BASELINE รายการดูผลข้อ 8)
 
-### 0.5 ส่งต่อ
+### 0.5 ส่งต่อ · ไม่ไล่
+
+**ไม่ไล่ (07/11):** พอตเค (สารเสพติด ยอดค้น 14,800) · ชื่อร้านอื่น · ร้านพอตใกล้ฉัน 12,100 และคำ "ใกล้ฉัน" ทั้งชุด (ร้านไม่มีหน้าร้าน ไม่มีไรเดอร์ หน้าผลมีแผนที่ร้านจริง · /shipping ตอบตามจริงว่าส่งทั่วไทย) · ชื่อจังหวัด (ห้ามหน้ารายจังหวัด) · คำเรื่องอันตรายและสุขภาพ = เขียนกลาง ๆ ตามก้อน 5 ของรอบ แทนคำตัดสิน "ข้าม" ใน 9.5 เฉพาะกลุ่มนี้ (เจ้าของ 07/11)
 
 **หน้า/บทความที่ขาด → รอบบทความ / รอบข้อมูล:** (1) — (ทำแล้ว: "pod system คืออะไร" #414) (2) บทความ "เติมน้ำยาพอตยังไง"
 (3) หน้า Caliburn G3 (ตัวไม่ Pro — 10+ แสดง ไปตกหน้า G3 Pro/KOKO) (4) หน้า VOOPOO Drag X (5) หน้าหมวด/รวม "พอตเปลี่ยนหัว" (มีแล้ว `/products/switch-pods`)

@@ -21,6 +21,7 @@ import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveLegacyProduct } from "@/components/product/useLiveStock";
+import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
@@ -71,7 +72,7 @@ function initialOption<T extends { id: string; availability?: string; image?: un
 export function ProductHero({
   product: builtProduct,
   sellingPrice = null,
-  similarHref,
+  similarSlugs,
   imageDisplayInfo,
   imageDisplayMap,
   orderingEnabled = true,
@@ -97,8 +98,8 @@ export function ProductHero({
   /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
    *  price, no cart action — exactly how every legacy product rendered before that date. */
   sellingPrice?: number | null;
-  /** A no-price page: where the closest models we have sit (round popular models 07/11). Undefined = nothing to offer. */
-  similarHref?: string;
+  /** A no-price page: the models in its #similar-in-stock block (round popular models 07/11). Empty or absent = no block. */
+  similarSlugs?: string[];
   imageDisplayInfo?: ImageDisplayInfo | null;
   /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
    *  described the CARD photo, so selecting a color/flavor whose own image is smaller than the
@@ -110,6 +111,9 @@ export function ProductHero({
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
+  // The jump button goes with its block: SimilarInStock drops the same cards on the same live answer.
+  const liveCards = useLiveCardStock();
+  const similarLeft = similarSlugs?.some((slug) => liveCards?.[slug]?.s !== false) ?? false;
   const { locale, dict } = useLocale();
   const bestIds = bestSellerOptions(product.slug);
   // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
@@ -464,12 +468,12 @@ export function ProductHero({
                 productName={product.displayName}
                 variantLabel={null}
               />
-              {similarHref && <Button href={similarHref}>{dict.product.similarInStockLink}</Button>}
+              {similarLeft && <Button href="#similar-in-stock">{dict.product.similarInStockLink}</Button>}
             </div>
           )}
 
           <div className={`flex flex-wrap gap-3 max-lg:order-9 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
-            <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null || similarHref ? "secondary" : "primary"}>
+            <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null || similarLeft ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>
             {hasVerifiedSpecs && (
