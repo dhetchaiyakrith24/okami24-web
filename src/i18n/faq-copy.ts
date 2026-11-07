@@ -165,4 +165,65 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
     answer:
       "不需要。Favorites 仅保存在您当前使用的浏览器中，只存在于该设备上，目前尚未与任何账号或服务器端资料绑定。",
   },
+  // Round SEO full 07/11: product FAQ rows of M Bar 10K, M Switch Kit and RELX Creator.
+  "m-bar-10k-name": {
+    question: "Marbo 10K 和 M Bar 10K 是同一款吗？",
+    answer: "是同一款。M Bar 10K 是 SALTHUB 的型号名称，Marbo 是泰国不少店家的叫法。",
+  },
+  "m-bar-10k-flavours": {
+    question: "Marbo 10K 有哪些口味？",
+    answer: "这款有 12 种口味：All Berry、Blue Ice、Cola、Grape、Kyoho Grape、Matcha Latte、Menthol Blast、Pink Berry、Strawberry Kiwi、Watermelon、Watermelon Mint、Yellow Mint。",
+  },
+  "m-bar-10k-days": {
+    question: "Marbo 10,000 口能用几天？",
+    answer: "10,000 口是 SALTHUB 标注的最高口数，并不是天数。每天隔一阵抽一会儿，会比抽得频繁或长时间连续抽用得更久。",
+  },
+  "m-bar-10k-price": {
+    question: "Marbo 10K 多少钱？",
+    answer: "价格显示在本页上方的价格栏。",
+  },
+  "m-bar-10k-review": {
+    question: "哪里可以看 Marbo 10K 评测？",
+    answer: "本页就有我们自己的视频，在“OKami24 评测”部分，内容是 Matcha Latte 口味。",
+  },
+  "m-bar-10k-recharge": {
+    question: "Marbo 10K 可以充电吗？",
+    answer: "可以，通过 USB-C 充电。电池用完后充上电就能继续用，不是电量用完就作废的那种。",
+  },
+  "m-switch-kit-name": {
+    question: "Marbo 15K 和 M Switch 15K 是同一款吗？",
+    answer: "在本店是同一套。我们把这套称为 M Bar 15K，SALTHUB 官网上的名称是 M Switch Kit。",
+  },
+  "m-switch-kit-swap": {
+    question: "哪款 Marbo 可以换烟弹？",
+    answer: "就是本页的 M Switch Kit。主机留着充电继续用，烟弹用完或想换口味时，取下旧烟弹，装上新的 M Switch Pod 就行。M Bar 9K 和 M Bar 10K 是一次性电子烟，烟油用完后整支更换。",
+  },
+  "m-switch-kit-device-only": {
+    question: "M Switch 15K 可以只买主机吗？",
+    answer: "目前按套装出售：主机加一颗所选口味的烟弹。每个口味的主机都一样。已有主机、只想加烟弹的话，可以到 M Switch Pod 页面单独购买。",
+  },
+  "m-switch-kit-price": {
+    question: "M Switch 15K 多少钱？",
+    answer: "价格显示在本页上方的价格栏，是套装价，包含主机和一颗烟弹。",
+  },
+  "m-switch-kit-refill": {
+    question: "M Switch 15K 需要自己加烟油吗？",
+    answer: "不需要。烟油已经预装在烟弹里，不用另买瓶装烟油来加。",
+  },
+  "relx-creator-what": {
+    question: "RELX Creator 是什么样的设备？",
+    answer: "RELX Creator，很多人也叫它 RELX LEGO，是 RELX 的换弹式主机，对应 RELX 官网上的 Creator Pro Device。",
+  },
+  "relx-creator-price": {
+    question: "RELX Creator 多少钱？",
+    answer: "价格显示在本页上方的价格栏，只含主机，烟弹需另购。",
+  },
+  "relx-creator-no-draw": {
+    question: "RELX Creator 抽不出来怎么办？",
+    answer: "建议先按一下按键查看电量。没电就用 USB-C 充电；还有电的话，取下烟弹重新装紧，再用干棉签或纸巾擦拭触点。如果还是抽不出来，可以通过 LINE @okm24 联系我们。",
+  },
+  "relx-creator-pods": {
+    question: "RELX Creator 能用哪些烟弹？",
+    answer: "可以用 RELX Creator Pod 和 Muro Connector 烟弹，这两款是本店用实物确认过的。如果要用其他烟弹，请先通过 LINE @okm24 询问。",
+  },
 };
