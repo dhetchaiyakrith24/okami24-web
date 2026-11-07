@@ -184,7 +184,7 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   // ---- 4b. Letters that only meet across a word boundary are not a match (visitor walk 08/11:
   //          "ks" listed Caliburn and RELX first, because "black silver" run together holds it) ----
   {
-    const ks = all.filter((e) => /^ks/i.test(e.hit.name) || e.hit.slug.startsWith("ks-")).map((e) => e.hit.slug);
+    const ks = all.filter((e) => /\bks\b/i.test(e.hit.name)).map((e) => e.hit.slug);
     const got = search("ks");
     check(`"ks" lists the KS products (${ks.length}) and nothing else`, ks.length > 0 && sameSet(got, ks), `got: ${got.join(",")}`);
     check(`"ks pod" stays on KS products`, search("ks pod").length > 0 && search("ks pod").every((s) => ks.includes(s)), search("ks pod").join(","));
