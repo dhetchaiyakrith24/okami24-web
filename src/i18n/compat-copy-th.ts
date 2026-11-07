@@ -36,6 +36,9 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "M Bar-compatible reusable devices": "เครื่องใช้ซ้ำที่รองรับ M Bar",
   "RELX Creator Pod": "หัวพอต RELX Creator Pod",
   "Muro Connector pod": "หัวพอต Muro Connector",
+  // Round popular models 07/11: RELX Ultra + Artisan Plus, from relxnow.com.
+  "RELX Ultra · Artisan · Infinity · Essential · WAKA": "เครื่อง RELX Ultra · Artisan · Infinity · Essential · WAKA",
+  "RELX Ultra Pod": "หัวพอต RELX Ultra Pod",
   // Round p63 (18/10): WOTOFO nexPOD 15K Pro Kit.
   "nexPOD 15K pods": "หัวพอต nexPOD 15K",
 };
@@ -55,6 +58,9 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "5V/2A charging on current-generation devices.": "ชาร์จ 5V/2A",
   "5V/2A charging.": "ชาร์จ 5V/2A",
   "5V/3A charging.": "ชาร์จ 5V/3A",
+  // Round popular models 07/11: RELX Ultra + Artisan Plus.
+  "Device lists from RELX's store page.": "รายชื่อเครื่องตามเว็บทางการของ RELX",
+  "One in the box; RELX's store page says the kit works best with it.": "มีมาในกล่อง 1 ชิ้น และ RELX แนะนำให้ใช้กับหัวนี้",
   // Round p63 (16/10): RELX Infinity 2 Plus.
   "RELX prefilled pods, 1.9mL each.": "หัวพอตบรรจุสำเร็จของ RELX หัวละ 1.9mL",
   // Round p63 (16/10): Caliburn G3 — UWELL's page says "2A Fast Charging", no voltage.

@@ -1,10 +1,135 @@
 import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
+const ULTRA_POD_PAGE = "https://relxnow.com/products/relx-maxgo-ultra-pod";
+const ULTRA_KIT_PAGE = "https://relxnow.com/products/relx-ultra-kit";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm3.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
+  {
+    // Round popular models 07/11: searched ("relx ultra pod", "หัว relx ultra"), not in the warehouse, so no price and no cart
+    // (BSOT §4). Facts and pictures: RELX's own store. The box calls it "Ultra Pod", the store "MAXGO Ultra Pod": same thing.
+    id: "relx-ultra-pod",
+    slug: "relx-ultra-pod",
+    brandId: "relx",
+    familyId: "relx-ultra",
+    categoryId: "switch-pods",
+    systemType: "pod-cartridge",
+    name: "RELX Ultra Pod",
+    displayName: "RELX ULTRA POD",
+    searchAliases: ["RELX MAXGO Ultra Pod", "MAXGO Ultra Pod", "RELX Ultra"],
+    tagline: "RELX's 2mL prefilled pod with a mesh coil at 10W.",
+    shortDescription:
+      "A 2mL prefilled pod from RELX with a mesh coil running at 10W, rated at up to 5,000 puffs. It comes in four flavours at 18mg/ml, and RELX lists it for its Ultra, Artisan, Infinity and Essential devices.",
+    isFlagship: false,
+    attributes: {
+      capacityMl: 2,
+      screenType: "none",
+      portability: "ultra-compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "N/A — cartridge only",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-ultra-pod/card.webp",
+        alt: "RELX Ultra Pod, Watermelon, retail box",
+        angle: "retail box, isolated",
+        transparentBackground: true,
+        sourceName: "RELX (official store photo)",
+        sourceUrl: ULTRA_POD_PAGE,
+      },
+    ],
+    // RELX's four flavours in its store's order; each photo is the box of that flavour from the same page.
+    flavorVariants: [
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e23a43", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-watermelon.webp", alt: "RELX Ultra Pod, Watermelon, retail box" } },
+      { id: "blueberry-sour-raspberry", name: "Blueberry Sour Raspberry", swatchHex: "#5cc0c4", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-blueberry-sour-raspberry.webp", alt: "RELX Ultra Pod, Blueberry Sour Raspberry, retail box" } },
+      { id: "cherry-cola", name: "Cherry Cola", swatchHex: "#a32a3f", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-cherry-cola.webp", alt: "RELX Ultra Pod, Cherry Cola, retail box" } },
+      { id: "sunrise-lemon-lime", name: "Sunrise Lemon Lime", swatchHex: "#efb20f", availability: "unknown", image: { src: "/assets/products/relx-ultra-pod/variant-sunrise-lemon-lime.webp", alt: "RELX Ultra Pod, Sunrise Lemon Lime, retail box" } },
+    ],
+    specifications: [
+      { key: "capacity", label: "E-liquid capacity", value: "2mL", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "puffs", label: "Rated puffs", value: "Up to 5,000", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "coil", label: "Coil", value: "Mesh coil, 10W", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+      { key: "devices", label: "Compatible devices", value: "RELX Ultra, Artisan, Infinity and Essential series · WAKA", sourceStatus: "verified", sourceUrl: ULTRA_POD_PAGE },
+    ],
+    features: [
+      { id: "coil", title: "Mesh coil at 10W", description: "RELX runs a mesh coil at 10W in this pod and tunes it for a fuller taste from first puff to last." },
+      { id: "window", title: "See what's left", description: "The liquid shows through the pod, so you can see how much of the 2mL remains before the taste drops off." },
+      { id: "fit", title: "Which devices it fits", description: "RELX lists it for its Ultra, Artisan, Infinity and Essential devices, and for WAKA devices too." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Ultra · Artisan · Infinity · Essential · WAKA", note: "Device lists from RELX's store page." }],
+    whoIsThisFor: ["You're looking for the RELX Ultra pod by name and want its flavours and the devices RELX lists for it."],
+    faqs: [],
+    relatedProductSlugs: ["relx-ultra-kit", "relx-infinity-2-plus"],
+    sourceUrls: [ULTRA_POD_PAGE],
+  },
+  {
+    // Round popular models 07/11: not in the warehouse, so no price and no cart (BSOT §4). Facts and pictures: RELX's own store.
+    // That page's short line says "1 Essential 2 & 1 Ultra Pod" while its box list and FAQ say Ultra device: the page does not settle
+    // what the body is called, so the copy only says device. Options are the flavour of the pod in the box; the body is Steel Silver.
+    id: "relx-ultra-kit",
+    slug: "relx-ultra-kit",
+    brandId: "relx",
+    familyId: "relx-ultra",
+    categoryId: "switch-pods",
+    systemType: "pod-kit",
+    name: "RELX Ultra Kit",
+    displayName: "RELX ULTRA KIT",
+    searchAliases: ["RELX MAXGO Ultra Kit", "MAXGO Ultra Kit", "RELX Ultra"],
+    tagline: "A 10W RELX device in aluminium alloy, with an Ultra Pod in the box.",
+    shortDescription:
+      "RELX's starter kit: a 10W device with a 380mAh battery in a Steel Silver aluminium alloy body, plus one Ultra Pod in the flavour on the box. It charges over Type-C, reaching 80% in 30 minutes by RELX's figure.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 380,
+      wattageMax: 10,
+      capacityMl: 2,
+      screenType: "led-indicator",
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-ultra-kit/card.webp",
+        alt: "RELX Ultra Kit, Steel Silver with Watermelon pod, retail box",
+        angle: "retail box three-quarter, isolated",
+        transparentBackground: true,
+        sourceName: "RELX (official store photo)",
+        sourceUrl: ULTRA_KIT_PAGE,
+      },
+    ],
+    flavorVariants: [
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e23a43", availability: "unknown", image: { src: "/assets/products/relx-ultra-kit/variant-watermelon.webp", alt: "RELX Ultra Kit, Watermelon, retail box" } },
+      { id: "sunrise-lemon-lime", name: "Sunrise Lemon Lime", swatchHex: "#efb20f", availability: "unknown", image: { src: "/assets/products/relx-ultra-kit/variant-sunrise-lemon-lime.webp", alt: "RELX Ultra Kit, Sunrise Lemon Lime, retail box" } },
+    ],
+    specifications: [
+      { key: "power", label: "Max output", value: "10W", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "battery", label: "Battery", value: "380mAh", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "charging", label: "Charging", value: "Type-C · 80% in 30 minutes (RELX's figure)", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "materials", label: "Materials", value: "Aluminium alloy", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+      { key: "pod", label: "Included pod", value: "RELX Ultra Pod · 2mL · 18mg/ml · up to 5,000 puffs (RELX's figures)", sourceStatus: "verified", sourceUrl: ULTRA_KIT_PAGE },
+    ],
+    features: [
+      { id: "charging", title: "80% in 30 minutes", description: "The 380mAh battery charges over Type-C, and RELX quotes 30 minutes to reach 80%." },
+      { id: "body", title: "Aluminium alloy body", description: "The body is aluminium alloy with a comfort grip, in Steel Silver." },
+      { id: "indicator", title: "A light near the base", description: "A small indicator light near the base shows the device's status and battery." },
+      { id: "in-the-box", title: "What's in the box", description: "The device, a Type-C cable, the manual and one Ultra Pod in the flavour on the box." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Ultra Pod", note: "One in the box; RELX's store page says the kit works best with it." }, typeC],
+    whoIsThisFor: ["You're looking for the RELX Ultra device by name and want its numbers and the two flavours the kit comes in."],
+    faqs: [],
+    relatedProductSlugs: ["relx-ultra-pod", "relx-infinity-2-plus"],
+    sourceUrls: [ULTRA_KIT_PAGE],
+  },
   {
     id: "relx-smash-go-12k",
     slug: "relx-smash-go-12k",

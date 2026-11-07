@@ -393,6 +393,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "banana-strawberry-50mg": "Pod-85-30",
     "menthol-freeze-50mg": "Pod-85-31",
   } },
+  "relx-ultra-pod": { parent: null, options: {
+    watermelon: null,
+    "blueberry-sour-raspberry": null,
+    "cherry-cola": null,
+    "sunrise-lemon-lime": null,
+  } },
+  "relx-ultra-kit": { parent: null, options: {
+    watermelon: null,
+    "sunrise-lemon-lime": null,
+  } },
   "relx-smash-go-12k": { parent: "Disposable-39", options: {
     "apple": "Disposable-39-6",
     "cola": "Disposable-39-7",
