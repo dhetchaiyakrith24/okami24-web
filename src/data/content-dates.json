@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T04:59:24+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T05:26:36+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -191,12 +191,12 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-08T04:59:24+07:00",
-      "fp": "dbf48f064bc2"
+      "date": "2026-11-08T05:26:36+07:00",
+      "fp": "885ca20d22c3"
     },
     "/products/86-bar-20k": {
-      "date": "2026-11-08T04:59:24+07:00",
-      "fp": "ed8fcea35be0"
+      "date": "2026-11-08T05:26:36+07:00",
+      "fp": "48ac4d163df1"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -331,8 +331,8 @@
       "fp": "46ca3eb3948f"
     },
     "/products/disposables": {
-      "date": "2026-11-08T04:59:24+07:00",
-      "fp": "c72337a1ca3d"
+      "date": "2026-11-08T05:26:36+07:00",
+      "fp": "13284d4cf184"
     },
     "/products/drag-6": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -495,8 +495,8 @@
       "fp": "ac746f87aa4a"
     },
     "/products/nexas-booster-16k": {
-      "date": "2026-11-08T04:10:05+07:00",
-      "fp": "6071cd237d4f"
+      "date": "2026-11-08T05:26:36+07:00",
+      "fp": "db234c6962a2"
     },
     "/products/nexbar-switch-15k-pod": {
       "date": "2026-11-02T03:47:57+07:00",
@@ -631,8 +631,8 @@
       "fp": "c9fb672f6057"
     },
     "/products/vazer-reload-15k": {
-      "date": "2026-11-08T04:59:24+07:00",
-      "fp": "67be12732dad"
+      "date": "2026-11-08T05:26:36+07:00",
+      "fp": "0fbe6e4d9bf5"
     },
     "/products/vinci-s": {
       "date": "2026-11-04T00:04:42+07:00",

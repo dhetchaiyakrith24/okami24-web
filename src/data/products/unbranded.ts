@@ -217,7 +217,7 @@ export const unbrandedProducts: Product[] = [
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 16,000 puffs, 20mL, an 800mAh battery and USB-C charging." },
     ],
     compatibility: [],
-    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you want a high-puff disposable you can adjust."],
+    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you want a high-puff disposable."],
     faqs: [],
     relatedProductSlugs: [],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
@@ -970,7 +970,7 @@ export const unbrandedProducts: Product[] = [
     specifications: [{ key: "puffs", label: "Rated puffs", value: "15,000", sourceStatus: "unverified" }],
     features: [
       { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head, so a new flavour only takes a new head." },
-      { id: "air", title: "Airflow and charging", description: "The brand's chart lists airflow control, a mesh coil, USB-C charging and a lanyard in the box." },
+      { id: "air", title: "Airflow and mesh coil", description: "Shops that sell it agree it has adjustable airflow and a mesh coil." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 15,000 puffs, 18mL, a 600mAh battery, 3% nicotine and USB-C charging." },
     ],
     compatibility: [],
@@ -993,9 +993,9 @@ export const unbrandedProducts: Product[] = [
     name: "86 Bar 20K",
     displayName: "86 BAR 20K",
     searchAliases: ["86 Bar","86bar","86 Bar 20000"],
-    tagline: "A disposable with a display and adjustable airflow.",
+    tagline: "A disposable with a mesh coil and USB-C charging.",
     shortDescription:
-      "A disposable with a mesh coil, a display and airflow you can set. Pick from the flavours below.",
+      "A disposable with a mesh coil. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -1031,11 +1031,11 @@ export const unbrandedProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
     features: [
-      { id: "setup", title: "Mesh coil, display, airflow", description: "Shops that sell it list a mesh coil, a display and airflow you can adjust." },
+      { id: "setup", title: "Mesh coil", description: "Shops that sell it list a mesh coil." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 20,000 puffs, a 600mAh battery, 3% nicotine and USB-C charging." },
     ],
     compatibility: [],
-    whoIsThisFor: ["You came looking for the 86 Bar by name, or you want a high-puff disposable you can adjust."],
+    whoIsThisFor: ["You came looking for the 86 Bar by name, or you want a high-puff disposable."],
     faqs: [],
     relatedProductSlugs: [],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
