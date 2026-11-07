@@ -967,7 +967,7 @@ export const unbrandedProducts: Product[] = [
       { id: "strawberry-candy", name: "Strawberry Candy", swatchHex: "#f2a7bb", availability: "unknown" },
       { id: "watermelon-slushie", name: "Watermelon Slushie", swatchHex: "#e4305a", availability: "unknown" },
     ],
-    specifications: [],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "15,000", sourceStatus: "unverified" }],
     features: [
       { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head, so a new flavour only takes a new head." },
       { id: "air", title: "Airflow and charging", description: "The brand's chart lists airflow control, a mesh coil, USB-C charging and a lanyard in the box." },
@@ -1029,7 +1029,7 @@ export const unbrandedProducts: Product[] = [
       { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#e0506a", availability: "unknown" },
       { id: "watermelon-strawberry", name: "Watermelon Strawberry", swatchHex: "#e4576a", availability: "unknown" },
     ],
-    specifications: [],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
     features: [
       { id: "setup", title: "Mesh coil, display, airflow", description: "Shops that sell it list a mesh coil, a display and airflow you can adjust." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 20,000 puffs, a 600mAh battery, 3% nicotine and USB-C charging." },
