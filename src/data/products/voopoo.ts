@@ -1076,7 +1076,33 @@ export const voopooProducts: Product[] = [
       "Vapers who want a small DRAG to reach for every day.",
       "Mostly-MTL vapers who sometimes swap coils for an RDL or light DTL draw.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "drag-s3-battery",
+        question: "Does the VOOPOO DRAG S3 use removable batteries?",
+        answer: "The 3000mAh battery is built in. When it runs low, plug a USB-C cable straight into the device; it charges at 5V/2A.",
+      },
+      {
+        id: "drag-s3-coil",
+        question: "Which pod and coils does the DRAG S3 use?",
+        answer: "The PnP X Cartridge, which holds 5mL and fills from the side, with any PnP X coil from 0.15Ω to 1.0Ω. The kit comes with a 0.6Ω and a 0.8Ω coil.",
+      },
+      {
+        id: "drag-s3-style",
+        question: "What draw styles suit the DRAG S3?",
+        answer: "MTL, RDL and light DTL. Change the coil and slide the top airflow to suit the way you vape.",
+      },
+      {
+        id: "drag-s3-unlock",
+        question: "How do I unlock the DRAG S3?",
+        answer: "Touch the sensor on the fire button to unlock it, and it locks again when you let go. Five presses turn it on or off, and three open the menu.",
+      },
+      {
+        id: "drag-s3-modes",
+        question: "What modes does the DRAG S3 have?",
+        answer: "Three: SMART keeps the wattage in the right range for your coil, RBA leaves every setting to you, and ECO saves battery. The device runs from 5W to 60W.",
+      },
+    ],
     relatedProductSlugs: ["drag-x3", "drag-6"],
     sourceUrls: ["https://www.voopoo.com/drag-series/drag-s3", S3_PAGE],
   },
@@ -1138,7 +1164,33 @@ export const voopooProducts: Product[] = [
     ],
     compatibility: [{ type: "coil", label: "PnP coils", note: "PnP-VM1 0.3Ω and PnP-VM6 0.15Ω come in the kit; PnP-RBA fits." }, { type: "charging", label: "USB-C", note: "USB-C fast charging." }],
     whoIsThisFor: ["You're looking for the DRAG X itself, not the DRAG X3, and want the full spec VOOPOO lists."],
-    faqs: [],
+    faqs: [
+      {
+        id: "drag-x-battery",
+        question: "What battery does the VOOPOO DRAG X use?",
+        answer: "A single 18650 cell, which you buy separately. You can charge it in the device over USB-C, with fast charging.",
+      },
+      {
+        id: "drag-x-wattage",
+        question: "What's the DRAG X's wattage range?",
+        answer: "5–80W, at 3.2–4.2V, and it works with coils from 0.1Ω to 3.0Ω.",
+      },
+      {
+        id: "drag-x-coil-wattage",
+        question: "What wattage should I use for the coils in the DRAG X box?",
+        answer: "Run the PnP-VM1 0.3Ω at 32–40W and the PnP-VM6 0.15Ω at 60–80W.",
+      },
+      {
+        id: "drag-x-pod",
+        question: "How much e-liquid does the DRAG X pod hold?",
+        answer: "4.5mL. The pod is PCTG and held on by magnets.",
+      },
+      {
+        id: "drag-x-smart",
+        question: "What does SMART mode do on the DRAG X?",
+        answer: "It suggests a starting wattage. Fit a coil, the device reads it, and it also remembers the wattage you last set.",
+      },
+    ],
     relatedProductSlugs: ["drag-x3", "drag-s3"],
     sourceUrls: [DRAG_X_PAGE],
   },
