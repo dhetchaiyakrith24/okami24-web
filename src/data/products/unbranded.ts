@@ -170,9 +170,9 @@ export const unbrandedProducts: Product[] = [
     name: "NEXAS Booster 16K",
     displayName: "NEXAS BOOSTER 16K",
     searchAliases: ["Nexas","Nexas Booster","Nexas 16000","Nexas 16K"],
-    tagline: "A tall disposable with a clear tank on top and battery lights on the body.",
+    tagline: "A disposable with battery lights and three airflow steps.",
     shortDescription:
-      "A tall disposable with a tinted tank that shows the liquid, battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
+      "A disposable with battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -213,12 +213,11 @@ export const unbrandedProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "16,000", sourceStatus: "unverified" }],
     features: [
-      { id: "tank", title: "A tank you can see into", description: "The top of the body is a clear tinted tank, so you can see the liquid inside." },
-      { id: "lights", title: "Battery lights and airflow", description: "Small lights on the body show the battery, and the airflow sets in three steps." },
+      { id: "lights", title: "Battery lights and airflow", description: "Lights on the body show the battery, and the airflow sets in three steps." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 16,000 puffs, 20mL, an 800mAh battery and USB-C charging." },
     ],
     compatibility: [],
-    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you want a tall high-puff disposable."],
+    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you want a high-puff disposable you can adjust."],
     faqs: [],
     relatedProductSlugs: [],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
