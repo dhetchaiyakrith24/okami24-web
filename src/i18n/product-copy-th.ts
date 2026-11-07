@@ -1163,7 +1163,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       air: {
         title: "ปรับลมและคอยล์ mesh",
-        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่าปรับรูลมได้และใช้คอยล์ mesh",
+        description: "ร้านที่ขายรุ่นนี้ระบุตรงกันว่าใช้คอยล์ mesh และปรับรูลมได้",
       },
       figures: {
         title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
@@ -1176,7 +1176,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "86-bar-20k": {
     whoIsThisFor: {
-      0: "ตั้งใจมาหา 86 Bar รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งพัฟเยอะ",
+      0: "ตั้งใจมาหา 86 Bar รุ่นนี้โดยเฉพาะ หรือกำลังหาพอตใช้แล้วทิ้งที่พัฟเยอะ",
     },
     features: {
       setup: {
@@ -1188,9 +1188,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         description: "ไม่พบเว็บของผู้ผลิต ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้ ซึ่งระบุตรงกันว่า 20,000 พัฟ แบต 600mAh นิโคติน 3% และชาร์จผ่าน USB-C",
       },
     },
-    tagline: "พอตใช้แล้วทิ้ง ใช้คอยล์ mesh ชาร์จผ่าน USB-C",
+    tagline: "พอตใช้แล้วทิ้งที่ใช้คอยล์ mesh",
     shortDescription:
-      "พอตใช้แล้วทิ้ง ใช้คอยล์ mesh เลือกดูกลิ่นได้จากรายการด้านล่าง",
+      "พอตใช้แล้วทิ้งที่ใช้คอยล์ mesh มีทั้งหมด 13 กลิ่น เลือกดูได้จากรายการด้านล่าง",
   },
   "relx-ultra-pod": {
     whoIsThisFor: {
