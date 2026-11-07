@@ -8,6 +8,8 @@ export const IN_STOCK_ALTERNATIVES: Record<string, string[]> = {
   "caliburn-g3": ["zero-pro", "relx-creator", "vazer-one-pod"],
   "drag-x": ["zero-pro", "next-pro-2-beyond", "relx-creator"],
   "nexpod-15k": ["next-pro-2-beyond", "vazer-one-pod", "zero-pro"],
+  "vazer-reload-15k": ["m-switch-kit", "foli-bar-15k", "esko-bar-20k", "m-bar-9k"],
+  "86-bar-20k": ["esko-bar-20k", "infy-20k", "mq-bar-22k", "m-bar-9k"],
 };
 
 /** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18): never offered as a suggestion or a shop pick. */
