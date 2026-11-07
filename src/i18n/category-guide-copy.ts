@@ -972,7 +972,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "คอยล์ dotAIO V2 จาก DOTMOD",
           body:
-            "[คอยล์ dotAIO V2](/products/coil-70) มีให้เลือก 0.15 · 0.3 · 0.6 และ 0.7 โอห์ม กล่องละ 5 หัว บรรจุแยกซองละหัว ตัวเรือนเป็นทองเหลือง และใช้คอยล์ mesh เดี่ยว ตัว 0.7 โอห์มแนะนำไว้ที่ 14–20 วัตต์ ใช้ได้กับ dotAIO V2 · dotAIO V2 Lite · dotStick Revo · dotPod Max และ dotTank 25mm ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+            "[คอยล์ dotAIO V2](/products/coil-70) มีให้เลือก 0.15 · 0.3 · 0.6 และ 0.7 โอห์ม หนึ่งกล่องมี 5 หัว แยกซองทุกหัว ตัวเรือนเป็นทองเหลือง และใช้คอยล์ mesh เดี่ยว ตัว 0.7 โอห์มแนะนำไว้ที่ 14–20 วัตต์ ใช้ได้กับ dotAIO V2 · dotAIO V2 Lite · dotStick Revo · dotPod Max และ dotTank 25mm ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
         },
       ],
       faqHeading: "คำถามที่พบบ่อย",
