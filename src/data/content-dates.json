@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T11:52:46+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T10:59:41+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T15:41:22+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -38,7 +38,7 @@
     "src/lib/finder.ts": "2026-11-07T13:25:11+07:00"
   },
   "guides": {
-    "are-pods-harmful": "2026-11-07T11:39:13+07:00",
+    "are-pods-harmful": "2026-11-07T15:41:22+07:00",
     "argus-g4-vs-caliburn-g5": "2026-10-26T06:48:28+07:00",
     "battery-care-and-charging": "2026-11-04T09:02:55+07:00",
     "cant-open-the-website": "2026-10-12T01:40:53+07:00",
@@ -59,13 +59,13 @@
     "fixing-a-burnt-pod": "2026-11-05T01:48:05+07:00",
     "fixing-a-leaking-pod": "2026-11-05T01:48:05+07:00",
     "fixing-no-draw-and-blinking-light": "2026-11-05T01:48:05+07:00",
-    "headache-after-vaping": "2026-11-07T12:15:50+07:00",
+    "headache-after-vaping": "2026-11-07T15:41:22+07:00",
     "how-long-a-disposable-lasts": "2026-11-04T08:48:23+07:00",
     "how-long-a-pod-device-lasts": "2026-11-05T01:48:05+07:00",
     "how-to-vape-without-coughing": "2026-10-27T22:53:08+07:00",
     "iqos-iluma-i-one-vs-iluma-i": "2026-11-03T02:27:30+07:00",
     "iqos-iluma-i-reset-and-charging": "2026-11-03T02:27:30+07:00",
-    "nicotine-in-urine-tests": "2026-11-07T11:39:13+07:00",
+    "nicotine-in-urine-tests": "2026-11-07T15:41:22+07:00",
     "open-system-vs-disposable": "2026-11-04T09:02:55+07:00",
     "pg-vg-in-e-liquid": "2026-11-02T05:12:31+07:00",
     "pod-losing-flavor": "2026-11-04T10:24:46+07:00",
@@ -78,7 +78,7 @@
     "types-of-pods": "2026-11-05T23:14:29+07:00",
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
     "what-is-a-pod-system": "2026-11-04T10:19:06+07:00",
-    "what-is-nicotine": "2026-11-07T12:24:15+07:00"
+    "what-is-nicotine": "2026-11-07T15:41:22+07:00"
   },
   "pagesVersion": 3,
   "pages": {
@@ -151,8 +151,8 @@
       "fp": "26926b7474aa"
     },
     "/brands/voopoo": {
-      "date": "2026-11-02T23:29:24+07:00",
-      "fp": "68859c05121b"
+      "date": "2026-11-07T15:41:22+07:00",
+      "fp": "c6ac43163312"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -191,8 +191,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "93e09368bc3c"
+      "date": "2026-11-07T15:41:22+07:00",
+      "fp": "f7eab25e81c2"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -337,6 +337,10 @@
     "/products/drag-x": {
       "date": "2026-11-04T00:04:42+07:00",
       "fp": "fe905aebbf88"
+    },
+    "/products/drag-x2": {
+      "date": "2026-11-07T15:41:22+07:00",
+      "fp": "76b803c84f0e"
     },
     "/products/drag-x3": {
       "date": "2026-10-26T07:07:40+07:00",
@@ -531,8 +535,8 @@
       "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-11-07T03:13:25+07:00",
-      "fp": "7ea22bfaaba7"
+      "date": "2026-11-07T15:41:22+07:00",
+      "fp": "5889a0fb7ff3"
     },
     "/products/pods-cartridges": {
       "date": "2026-11-07T11:43:43+07:00",
