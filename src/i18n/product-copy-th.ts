@@ -956,6 +956,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "nexas-booster-16k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา NEXAS Booster รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งทรงสูงที่พัฟเยอะ",
+    },
+    features: {
+      tank: {
+        title: "มองเห็นน้ำยาในถัง",
+        description: "ส่วนบนของตัวเครื่องเป็นถังใสอมสี จึงมองเห็นน้ำยาข้างใน",
+      },
+      lights: {
+        title: "ไฟบอกแบตและปรับลม",
+        description: "ไฟบนตัวเครื่องบอกแบตที่เหลือ และปรับลมได้ 3 ระดับ",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "ไม่พบเว็บของผู้ผลิต ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 16,000 พัฟ น้ำยา 20mL แบต 800mAh และชาร์จผ่าน USB-C",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้งทรงสูง ถังใสด้านบน พร้อมไฟบอกแบตบนตัวเครื่อง",
+    shortDescription:
+      "พอตใช้แล้วทิ้งทรงสูง ถังด้านบนใสอมสีจนเห็นน้ำยา มีไฟบอกแบตบนตัวเครื่อง และปรับลมได้ 3 ระดับ เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",

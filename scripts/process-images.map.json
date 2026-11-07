@@ -14519,5 +14519,17 @@
    "fidelitySheet": "_incoming/img-fix-0511/out/round2.png"
   },
   "fileName": "variant-ice-tieguanyin-v2.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/nexas/nexas.png",
+  "slug": "nexas-booster-16k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job 6253c5b6-0f0b-4a7f-8bfd-482bdf4957b0), studio remake",
+   "reference": "Shop poster, goatvapethai.com NEXAS-BOOSTER Cola Ice (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-nexas-booster-16k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
  }
 ]
