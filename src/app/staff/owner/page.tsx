@@ -1,25 +1,36 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { Container } from "@/components/ui/Container";
-import { formatRunNumber } from "@/lib/commerce/run-number";
+import type { Alert } from "@/components/dashboard/Alerts";
+import { ViewSwitch, type DashView } from "@/components/dashboard/ViewSwitch";
+import { Vapour } from "@/components/dashboard/Vapour";
+import { isBestSeller } from "@/data/sales-badges";
+import GOOGLE_WEEKLY from "@/data/owner/google-weekly.json";
 import { isOwner, ownerAreaEnabled } from "@/lib/owner/auth";
 import { lastRound } from "@/lib/owner/bill-rules";
-import { listRounds, type StoredRound } from "@/lib/owner/bills";
-import { profitDays } from "@/lib/owner/costs";
-import type { DayProfit } from "@/lib/owner/cost-rules";
-import { salesToday } from "@/lib/staff/daily-sales";
-import { PendingButton } from "@/app/staff/_components/PendingButton";
+import { listRounds } from "@/lib/owner/bills";
+import { codesWithoutCost, profitDays } from "@/lib/owner/costs";
+import { cartsNotOrdered, lineClicks, oldestOrders, soldOptions, topWebProducts } from "@/lib/owner/dashboard";
+import { sameHourLastWeek, stockSummary, sumSales } from "@/lib/owner/dashboard-rules";
+import { isStaff } from "@/lib/staff/auth";
+import { salesDays } from "@/lib/staff/daily-sales";
+import { countByJob } from "@/lib/staff/orders";
+import { stockBook } from "@/lib/staff/stock-book";
+import { feedHealth } from "@/lib/woo/watch";
+import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
-import { formatSatang } from "@/app/staff/_components/format";
-import { LIST_CLASS } from "@/app/staff/_components/OrderRow";
-import { ownerLogoutAction } from "@/app/staff/owner/actions";
+import { ControlPanel } from "@/app/staff/owner/_dash/ControlPanel";
+import { HowCounted } from "@/app/staff/owner/_dash/HowCounted";
+import { dayLabel, TodayPanel } from "@/app/staff/owner/_dash/TodayPanel";
+import { WeekPanel } from "@/app/staff/owner/_dash/WeekPanel";
 
 /**
  * /staff/owner — the owner's section (back-office round 07/11). Google sign-in only; the staff password opens nothing here.
  * 404 until OKAMI24_OWNER_GOOGLE_EMAIL is set on the host (src/lib/owner/auth.ts). Not linked from the shop, not in the sitemap.
- * Today's sales, web profit per day and per order, the last checked week. LINE profit is weekly by the owner's ruling 04/11:
- * a slip says nothing about what was bought, so only the warehouse bill can price it.
+ * The owner's dashboard (owner 08/11, "ใส่จัดเต็มทุกอย่างที่พี่ควรรู้"): today, the week, the shop. Every figure comes from the system,
+ * and what the system does not know says so. LINE profit is weekly by the owner's ruling 04/11: a slip says nothing about what
+ * was bought, so only the warehouse bill can price it, and no page adds it to a day. Rules = src/lib/owner/dashboard-rules.ts.
  */
 
 export const dynamic = "force-dynamic";
@@ -30,93 +41,11 @@ export const metadata: Metadata = {
 };
 
 const PROFIT_DAYS = 14;
-const DAY_LABEL = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", weekday: "short", day: "numeric", month: "short" });
-const dayLabel = (date: string) => DAY_LABEL.format(new Date(`${date}T12:00:00+07:00`));
+const readClock = () => Date.now();
 
-/** Designer 07/11: the second question of the page, so it always answers, also when there is nothing or only an old week to show. */
-function WeekProfitRow({ round }: { round: StoredRound | undefined }) {
-  if (!round) {
-    return (
-      <Link href="/staff/owner/bill#new" className="flex min-h-16 items-center justify-between gap-3 border-y border-surface-border-soft py-3 hover:bg-surface-2">
-        <span className="text-sm text-foreground-muted">กำไรรายสัปดาห์</span>
-        <span className="text-sm text-unverified">ยังไม่มีรอบที่เทียบ · วางไฟล์บิล →</span>
-      </Link>
-    );
-  }
-  const profit = round.week.totalProfit;
-  const stale = round.to < lastRound().to;
-  const noSlips = round.week.lineSales === 0 && round.totals.lineBill > 0;
-  return (
-    <Link href={`/staff/owner/bill?round=${round.id}`} className="flex min-h-16 items-center justify-between gap-3 border-y border-surface-border-soft py-3 hover:bg-surface-2">
-      <span className="flex min-w-0 flex-col text-sm text-foreground-muted">
-        <span>
-          กำไรรอบ {round.from.slice(8, 10)}/{round.from.slice(5, 7)} ถึง {round.to.slice(8, 10)}/{round.to.slice(5, 7)}
-        </span>
-        {stale && <span className="text-unverified">รอบล่าสุดยังไม่ได้เทียบ</span>}
-        {noSlips && <span className="text-unverified">ไม่มียอดสลิปในรอบนี้ กำไร LINE ยังเชื่อไม่ได้</span>}
-      </span>
-      <span className="flex shrink-0 items-center gap-2">
-        <span className="flex flex-col items-end">
-          <span className={`font-display text-2xl font-bold tabular-nums leading-tight ${profit < 0 ? "text-danger" : "text-foreground"}`}>{formatSatang(Math.round(profit * 100))}</span>
-          {round.diffs.length > 0 && <span className="text-xs text-unverified">ไม่ตรง {round.diffs.length} จุด</span>}
-        </span>
-        <span aria-hidden className="text-foreground-dim">
-          ›
-        </span>
-      </span>
-    </Link>
-  );
-}
-
-function ProfitRow({ day }: { day: DayProfit }) {
-  if (day.orders.length === 0) {
-    return (
-      <li className="flex min-h-12 items-center justify-between gap-3 px-4 text-sm text-foreground-dim">
-        <span>{dayLabel(day.date)}</span>
-        <span>ไม่มีออเดอร์</span>
-      </li>
-    );
-  }
-  return (
-    <li>
-      <details className="group">
-        <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 hover:bg-surface-2 [&::-webkit-details-marker]:hidden">
-          <span className="flex min-w-0 flex-col">
-            <span className="text-sm font-semibold text-foreground">{dayLabel(day.date)}</span>
-            {day.unpriced > 0 && <span className="text-xs text-unverified">ไม่มีทุน {day.unpriced} ออเดอร์</span>}
-          </span>
-          <span className="flex shrink-0 items-center gap-2">
-            <span className="flex flex-col items-end">
-              <span className="font-semibold tabular-nums text-foreground">{formatSatang(day.profitSatang)}</span>
-              <span className="text-xs tabular-nums text-foreground-muted">ขาย {formatSatang(day.salesSatang)}</span>
-            </span>
-            <span aria-hidden className="text-foreground-dim transition-transform group-open:rotate-90">
-              ›
-            </span>
-          </span>
-        </summary>
-        <ul className="flex flex-col gap-1 border-t border-surface-border-soft px-4 py-3 text-sm text-foreground-muted">
-          {day.orders.map((o) => (
-            <li key={o.orderNumber} className="flex items-baseline justify-between gap-3 py-1">
-              <span className="min-w-0 truncate tabular-nums">
-                {formatRunNumber(o.runNumber) ?? o.orderNumber} · ขาย {formatSatang(o.total * 100)}
-              </span>
-              {o.profitSatang === null ? (
-                <span className="shrink-0 text-unverified">ไม่มีทุน {o.missing.filter(Boolean).join(" ")}</span>
-              ) : (
-                <span className="shrink-0 tabular-nums text-foreground">{formatSatang(o.profitSatang)}</span>
-              )}
-            </li>
-          ))}
-        </ul>
-      </details>
-    </li>
-  );
-}
-
-export default async function OwnerPage({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
+export default async function OwnerPage({ searchParams }: { searchParams: Promise<{ denied?: string; view?: string }> }) {
   if (!ownerAreaEnabled()) notFound();
-  const { denied } = await searchParams;
+  const { denied, view } = await searchParams;
 
   if (!(await isOwner())) {
     return (
@@ -140,57 +69,63 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     );
   }
 
-  const today = salesToday();
-  const days = profitDays(PROFIT_DAYS);
-  const unpriced = days.reduce((n, d) => n + d.unpriced, 0);
-  const round = listRounds(1)[0];
+  const now = readClock();
+  const sales = salesDays();
+  const profit = profitDays(PROFIT_DAYS);
+  const rounds = listRounds(8);
+  const due = lastRound(now);
+  const counts = countByJob();
+  const canOpenOrders = await isStaff();
+  const week = sumSales(sales.slice(0, 7));
+  const unpriced = profit.reduce((n, d) => n + d.unpriced, 0);
+  const unclear = sales.slice(0, PROFIT_DAYS).reduce((n, d) => n + d.unclear.length, 0);
+  const feed = feedHealth();
+  const noCost = codesWithoutCost().length;
+  const billDue = !rounds[0] || rounds[0].to < due.to;
+
+  // Most urgent first: a silent warehouse stops stock, then money waiting on the team, then what the owner fixes.
+  const alerts: Alert[] = [
+    ...(feed.state === "ok" ? [] : [{ text: `คลัง${FEED_LIGHT[feed.state].long}`, tone: feed.state === "down" ? ("danger" as const) : ("warn" as const) }]),
+    ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined, tone: "warn" as const }] : []),
+    ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined, tone: "warn" as const }] : []),
+    ...(unclear > 0 ? [{ text: `สลิปไม่แน่ใจ ${unclear}`, tone: "warn" as const }] : []),
+    ...(unpriced > 0 ? [{ text: `ไม่มีทุน ${unpriced} ออเดอร์`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
+    ...(billDue ? [{ text: "บิลรอเทียบ", href: "/staff/owner/bill#new", tone: "warn" as const, hideOn: "week" }] : []),
+  ];
+
+  const views: DashView[] = [
+    {
+      id: "today",
+      label: "วันนี้",
+      content: (
+        <TodayPanel
+          days={sales}
+          profit={profit}
+          hour={sameHourLastWeek(sales, now)}
+          avgSatang={week.orders > 0 ? Math.round(week.webSatang / week.orders / 100) * 100 : null}
+          counts={counts}
+          oldest={oldestOrders()}
+          canOpenOrders={canOpenOrders}
+          stock={stockSummary(stockBook(), isBestSeller, soldOptions(30))}
+          feed={feed}
+          now={now}
+        />
+      ),
+    },
+    {
+      id: "week",
+      label: "สัปดาห์",
+      content: <WeekPanel rounds={rounds} due={due} week={week} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
+    },
+    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel ordering={ORDERING_ENABLED} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} /> },
+  ];
 
   return (
-    <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
+    <Container className="relative isolate flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
       <StaffBar />
-      <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ส่วนเจ้าของ</h1>
-
-      <section aria-label="ยอดขายวันนี้" className="flex flex-col gap-1">
-        <span className="text-sm text-foreground-muted">ยอดขายวันนี้</span>
-        <span className="font-display text-4xl font-bold tabular-nums leading-tight text-foreground">{formatSatang(today.totalSatang)}</span>
-        <span className="text-sm tabular-nums text-foreground-muted">
-          เว็บ {formatSatang(today.webSatang)} · LINE {formatSatang(today.lineSatang)}
-        </span>
-      </section>
-
-      <WeekProfitRow round={round} />
-
-      <nav aria-label="เมนูเจ้าของ" className="grid grid-cols-2 gap-2 lg:gap-3">
-        {[
-          { href: "/staff/owner/bill#new", label: "เทียบบิลคลัง", line: "วางไฟล์ทุกเสาร์" },
-          { href: "/staff/owner/costs", label: "ตารางทุน", line: "อัปเดตทุน" },
-        ].map((t) => (
-          <Link key={t.href} href={t.href} className="flex min-h-20 flex-col justify-between gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-3 hover:bg-surface-2 lg:p-4">
-            <span className="text-sm font-semibold text-foreground">{t.label}</span>
-            <span className="text-xs text-foreground-dim">{t.line}</span>
-          </Link>
-        ))}
-      </nav>
-
-      <section aria-label={`กำไรเว็บ ${PROFIT_DAYS} วัน`} className="flex flex-col gap-2">
-        <h2 className="text-lg font-semibold text-foreground">กำไรเว็บรายวัน</h2>
-        {unpriced > 0 && <p className="text-sm text-unverified">ออเดอร์ไม่มีทุน {unpriced} รายการ ไม่นับในกำไร</p>}
-        <ul className={LIST_CLASS}>
-          {days.map((day) => (
-            <ProfitRow key={day.date} day={day} />
-          ))}
-        </ul>
-        <p className="text-sm leading-relaxed text-foreground-muted">กำไร = ลูกค้าจ่าย หักทุน หักค่าส่งคลัง 35 บาท · กำไร LINE ดูรายสัปดาห์ในหน้าเทียบบิล</p>
-      </section>
-
-      <form action={ownerLogoutAction}>
-        <PendingButton
-          className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground"
-          pendingText="กำลังออก…"
-        >
-          ออกจากระบบ
-        </PendingButton>
-      </form>
+      <Vapour />
+      <h1 className="text-sm font-normal text-foreground-muted">ส่วนเจ้าของ · {dayLabel(sales[0].date)}</h1>
+      <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} footer={<HowCounted />} footerHiddenOn={["control"]} />
     </Container>
   );
 }
