@@ -286,7 +286,28 @@ export const joiwayProducts: Product[] = [
       "You tire of one flavour quickly and like to change during the day.",
       "You'd rather pick from ready-made flavour pairs than match them yourself.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "joiway-f4-double-flavor",
+        question: "Is the JOIWAY F4 a double flavor model?",
+        answer: "Yes. The F4 is a disposable with two flavours in one device, paired for you, so you just pick the pair you like. JOIWAY's own name for it is the F4 TWINS.",
+      },
+      {
+        id: "joiway-f4-switch",
+        question: "How do you switch flavours on the JOIWAY F4?",
+        answer: "Turn the mouthpiece to the other side. The two flavours sit in separate tanks, and your next puff comes from the tank the mouthpiece is over. JOIWAY says you can switch at any time.",
+      },
+      {
+        id: "joiway-f4-capacity",
+        question: "How much e-liquid does the JOIWAY F4 hold per flavour?",
+        answer: "Each tank comes prefilled with 10mL, so the device holds 20mL in all.",
+      },
+      {
+        id: "joiway-f4-charge",
+        question: "Can you recharge the JOIWAY F4?",
+        answer: "Yes. The 650mAh battery recharges over USB-C, so you can plug it in when it runs low. The LED display gives its reading in percent.",
+      },
+    ],
     relatedProductSlugs: ["joiway-f3"],
     sourceUrls: ["https://myjoiway.com/", "https://thai.myjoiway.com/"],
   },

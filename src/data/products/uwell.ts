@@ -1016,7 +1016,33 @@ export const uwellProducts: Product[] = [
       "Vapers who want a big touchscreen they can read and adjust at a glance.",
       "Anyone who wants to fine-tune the draw with stepless airflow.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g4-pro-pods",
+        question: "Which pods does the Caliburn G4 Pro take?",
+        answer: "UWELL GPP pods, both previous and upgraded, and G3 pods too. They can be 0.4Ω to 1.2Ω, top refill or side refill.",
+      },
+      {
+        id: "caliburn-g4-pro-included-pods",
+        question: "Which pods come with the Caliburn G4 Pro?",
+        answer: "FeCrAl meshed pods in 0.4Ω and 0.6Ω, both side refill. The pod holds 3mL.",
+      },
+      {
+        id: "caliburn-g4-pro-thai-menu",
+        question: "Does the Caliburn G4 Pro menu come in Thai?",
+        answer: "No. The settings menu offers 8 languages, and Thai isn't among them. Swipe down on the screen to open it.",
+      },
+      {
+        id: "caliburn-g4-pro-battery",
+        question: "How long does the Caliburn G4 Pro battery last?",
+        answer: "UWELL rates the 1800mAh battery at up to 7 days of use. What you get depends on how often you vape and the wattage you set.",
+      },
+      {
+        id: "caliburn-g4-pro-themes",
+        question: "How do you unlock the Caliburn G4 Pro's screen themes?",
+        answer: "By vaping. There are 6 themes: 3 are ready from the start, and the other 3 unlock at 5,000, 10,000 and 20,000 puffs.",
+      },
+    ],
     relatedProductSlugs: ["caliburn-g4-pro-koko", "caliburn-g4"],
     sourceUrls: ["https://www.myuwell.com/"],
   },
@@ -1194,7 +1220,33 @@ export const uwellProducts: Product[] = [
     whoIsThisFor: [
       "Vapers who want a screen and a daily choice between a hard hit and a smooth one.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g4-pods",
+        question: "Which pods does the Caliburn G4 take?",
+        answer: "UWELL GPP pods, previous and upgraded. The pods it comes with are FeCrAl meshed, 0.4Ω and 0.9Ω, both side refill.",
+      },
+      {
+        id: "caliburn-g4-firing",
+        question: "Do you have to press the button to vape on the Caliburn G4?",
+        answer: "It's up to you. You can just draw, or use the button.",
+      },
+      {
+        id: "caliburn-g4-button",
+        question: "What do the button clicks on the Caliburn G4 do?",
+        answer: "1 click lights the screen, 2 lock or unlock button firing, 3 adjust the wattage, 4 open the menu and 5 turn it on or off.",
+      },
+      {
+        id: "caliburn-g4-modes",
+        question: "What's the difference between Storm and Waves on the Caliburn G4?",
+        answer: "UWELL describes Storm as fast and Waves as smooth and steady, so you can pick whichever suits you.",
+      },
+      {
+        id: "caliburn-g4-charge",
+        question: "Does the Caliburn G4 have fast charging?",
+        answer: "Yes, over USB-C at 5V/2A, for its 1300mAh built-in battery.",
+      },
+    ],
     relatedProductSlugs: ["caliburn-g4-mini", "caliburn-g4-classic", "caliburn-g4-pro"],
     sourceUrls: ["https://www.myuwell.com/"],
   },
@@ -1396,7 +1448,28 @@ export const uwellProducts: Product[] = [
       "Vapers who like a small device with no screen to watch: pick it up and vape.",
       "Anyone who doesn't want a screen or mode menu to think about.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g4-mini-pods",
+        question: "Which pods does the Caliburn G4 mini take?",
+        answer: "UWELL GPP pods, previous and upgraded. The pod included in the box is FeCrAl meshed, 0.6Ω.",
+      },
+      {
+        id: "caliburn-g4-mini-refill",
+        question: "Do you have to take the pod out of the Caliburn G4 mini to refill it?",
+        answer: "With the upgraded GPP pods, you can refill while the pod stays in place. The pod holds 3mL.",
+      },
+      {
+        id: "caliburn-g4-mini-airflow",
+        question: "Can you adjust the airflow on the Caliburn G4 mini?",
+        answer: "Yes. Use the airflow slider, turn the pod around, or do both together.",
+      },
+      {
+        id: "caliburn-g4-mini-upgraded-pods",
+        question: "What do the upgraded GPP pods change on the Caliburn G4 mini?",
+        answer: "UWELL's lab tests put it at up to 35% more flavour satisfaction and up to 35% longer cartridge life, when the upgraded pods are used with Pro-FOCS 4.0.",
+      },
+    ],
     relatedProductSlugs: ["caliburn-g4", "caliburn-g5-lite"],
     sourceUrls: ["https://www.myuwell.com/"],
   },
@@ -2002,7 +2075,28 @@ export const uwellProducts: Product[] = [
       "Vapers who like a box-shaped pod with a colour screen and themes to pick from.",
       "Anyone who wants the G3 Pro's pods and 35W with a bigger battery.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "caliburn-g3-pro-koko-pods",
+        question: "Which pods does the Caliburn G3 Pro KOKO take?",
+        answer: "Every Caliburn G3 (GPP) pod from 0.4Ω to 1.2Ω, top refill or side refill. The pods it comes with are 0.4Ω (3mL) and 0.9Ω (2.5mL), both side refill.",
+      },
+      {
+        id: "caliburn-g3-pro-koko-button",
+        question: "What does the button on the Caliburn G3 Pro KOKO do?",
+        answer: "Press twice to lock the button, 3 times to set the wattage, 4 times for the brightness and theme menu, and 5 times to turn it on or off.",
+      },
+      {
+        id: "caliburn-g3-pro-koko-charging",
+        question: "How long does the Caliburn G3 Pro KOKO take to charge?",
+        answer: "UWELL says 80% in 20 minutes over USB-C at 5V/2A, and up to 4 days per charge. Real use depends on how often you vape and the wattage you set.",
+      },
+      {
+        id: "caliburn-g3-pro-koko-themes",
+        question: "How do you change the theme on the Caliburn G3 Pro KOKO?",
+        answer: "Press the button 4 times to open the menu and pick a theme there, such as Planet, Twilight or KOKO. DAY and NIGHT brightness modes are in the same menu.",
+      },
+    ],
     // SEO 04/11: the shop's own clip of exactly this model — title, channel and upload date read from YouTube's watch page (04/11).
     reviewVideo: { videoId: "aP-VXz9bWJU", title: "30 วันกับ UWELL CALIBURN G3 PRO KOKO แบบฮาร์ทคอร์?", channelName: "OKM YARZ", publishedAt: "2026-01-19" },
     relatedProductSlugs: ["caliburn-g3-pro"],

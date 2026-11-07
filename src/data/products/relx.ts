@@ -124,7 +124,33 @@ export const relxProducts: Product[] = [
     whoIsThisFor: [
       "You want a disposable that's easy to carry and slips into a pocket for the whole day.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "relx-smash-go-12k-what",
+        question: "What kind of device is the RELX Smash Go 12K?",
+        answer: "It's a rechargeable disposable from RELX, rated at up to 12,000 puffs, with a MEGA MESH coil and a pocket-sized body.",
+      },
+      {
+        id: "relx-smash-go-12k-charge",
+        question: "Can you recharge the RELX 12K?",
+        answer: "Yes. The 400mAh battery charges over USB-C, so when it runs out you can plug it in and carry on.",
+      },
+      {
+        id: "relx-smash-go-12k-days",
+        question: "How many days do 12,000 puffs last on the RELX Smash Go?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. 12,000 puffs is the most RELX states, so the days depend on how often you vape and how long each draw is.",
+      },
+      {
+        id: "relx-smash-go-12k-strength",
+        question: "What nicotine strength is the RELX Smash Go 12K?",
+        answer: "It comes in 3% and 5% nicotine salt. The 5% flavours have 5% at the end of the name, so check the name before you choose.",
+      },
+      {
+        id: "relx-smash-go-12k-review",
+        question: "Is there a review of the RELX Smash Go 12K?",
+        answer: "Yes. OKami24 made a review clip on YouTube, and you can watch it on this page.",
+      },
+    ],
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: ["https://www.relxnow.com/products/relx-smash-go-12k"],
   },
