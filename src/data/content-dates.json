@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T01:01:02+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:43:03+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "93e09368bc3c"
+      "date": "2026-11-07T11:32:47+07:00",
+      "fp": "fd9c286ad1eb"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -319,8 +319,8 @@
       "fp": "6e79b0bcb8e3"
     },
     "/products/disposables": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "e766d4f96a74"
+      "date": "2026-11-07T11:32:47+07:00",
+      "fp": "4ccf7217bf6d"
     },
     "/products/drag-6": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -477,6 +477,10 @@
     "/products/muro-sc-8000": {
       "date": "2026-11-06T15:32:49+07:00",
       "fp": "ac746f87aa4a"
+    },
+    "/products/nexas-booster-16k": {
+      "date": "2026-11-07T11:32:47+07:00",
+      "fp": "933b15d78eb9"
     },
     "/products/nexbar-switch-15k-pod": {
       "date": "2026-11-02T03:47:57+07:00",

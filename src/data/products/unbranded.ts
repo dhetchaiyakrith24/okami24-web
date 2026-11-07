@@ -157,6 +157,74 @@ export const unbrandedProducts: Product[] = [
     sourceUrls: ["https://vapemun.com/"],
   },
   {
+    // Round popular models 07/11: searched (nexas booster 16k 880 a month), not in the warehouse, no price, no cart, no maker site found, so
+    // Unbranded like the rest of this file. Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in
+    // the browser: goatvapethai · maneevp · yaivapestore: 16,000 puffs, 800mAh, 20mL, USB-C, 3-step airflow, 4 LED lights, these 18 flavours (the first
+    // two shops list them; vbth3 too). Not agreed, so not written: which flavours come at 5%, coil ohms.
+    id: "nexas-booster-16k",
+    slug: "nexas-booster-16k",
+    brandId: "Unbranded",
+    familyId: "Nexas",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "NEXAS Booster 16K",
+    displayName: "NEXAS BOOSTER 16K",
+    searchAliases: ["Nexas","Nexas Booster","Nexas 16000","Nexas 16K"],
+    tagline: "A tall disposable with a clear tank on top and four battery lights.",
+    shortDescription:
+      "A tall disposable with a tinted tank that shows the liquid, four battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/nexas-booster-16k/card-wm5.webp",
+        alt: "NEXAS Booster 16K, white body with an orange tank, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/nexas-booster-16k",
+      },
+    ],
+    flavorVariants: [
+      { id: "cola-ice", name: "Cola Ice", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#8a6a2a", availability: "unknown" },
+      { id: "grape-ice", name: "Grape Ice", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b08ac4", availability: "unknown" },
+      { id: "green-apple", name: "Green Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "green-soda", name: "Green Soda", swatchHex: "#5fbf6a", availability: "unknown" },
+      { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#f2b5c4", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mint-extra", name: "Mint Extra", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#b5853f", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
+      { id: "red-soda", name: "Red Soda", swatchHex: "#d9394e", availability: "unknown" },
+      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#f2c06b", availability: "unknown" },
+      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "yoyo-grape", name: "Yoyo Grape", swatchHex: "#7a5fb0", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "16,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "tank", title: "A tank you can see into", description: "The top of the body is a clear tinted tank, so you can see the liquid inside." },
+      { id: "lights", title: "Four battery lights", description: "Four small lights on the body show the battery, and the airflow sets in three steps." },
+      { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 16,000 puffs, 20mL, an 800mAh battery and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you want a tall high-puff disposable."],
+    faqs: [],
+    relatedProductSlugs: [],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/nexas-booster-16k"],
+  },
+  {
     id: "muro-3ml",
     slug: "muro-3ml",
     brandId: "Unbranded",
