@@ -357,6 +357,7 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
   "caliburn-g4-charge": {
     question: "Caliburn G4 支持快充吗？",
     answer: "支持，通过 USB-C 以 5V/2A 快充，内置 1300mAh 电池。",
+  },
   // Round SEO full 07/11: product FAQ rows of M Bar 10K, M Switch Kit and RELX Creator.
   "m-bar-10k-name": {
     question: "Marbo 10K 和 M Bar 10K 是同一款吗？",
