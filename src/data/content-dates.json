@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T10:59:41+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T16:46:26+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -38,7 +38,7 @@
     "src/lib/finder.ts": "2026-11-07T13:25:11+07:00"
   },
   "guides": {
-    "are-pods-harmful": "2026-11-07T11:39:13+07:00",
+    "are-pods-harmful": "2026-11-07T15:32:01+07:00",
     "argus-g4-vs-caliburn-g5": "2026-10-26T06:48:28+07:00",
     "battery-care-and-charging": "2026-11-04T09:02:55+07:00",
     "cant-open-the-website": "2026-10-12T01:40:53+07:00",
@@ -59,13 +59,13 @@
     "fixing-a-burnt-pod": "2026-11-05T01:48:05+07:00",
     "fixing-a-leaking-pod": "2026-11-05T01:48:05+07:00",
     "fixing-no-draw-and-blinking-light": "2026-11-05T01:48:05+07:00",
-    "headache-after-vaping": "2026-11-07T12:15:50+07:00",
+    "headache-after-vaping": "2026-11-07T15:32:01+07:00",
     "how-long-a-disposable-lasts": "2026-11-04T08:48:23+07:00",
     "how-long-a-pod-device-lasts": "2026-11-05T01:48:05+07:00",
     "how-to-vape-without-coughing": "2026-10-27T22:53:08+07:00",
     "iqos-iluma-i-one-vs-iluma-i": "2026-11-03T02:27:30+07:00",
     "iqos-iluma-i-reset-and-charging": "2026-11-03T02:27:30+07:00",
-    "nicotine-in-urine-tests": "2026-11-07T11:39:13+07:00",
+    "nicotine-in-urine-tests": "2026-11-07T15:32:01+07:00",
     "open-system-vs-disposable": "2026-11-04T09:02:55+07:00",
     "pg-vg-in-e-liquid": "2026-11-02T05:12:31+07:00",
     "pod-losing-flavor": "2026-11-04T10:24:46+07:00",
@@ -78,7 +78,7 @@
     "types-of-pods": "2026-11-05T23:14:29+07:00",
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
     "what-is-a-pod-system": "2026-11-04T10:19:06+07:00",
-    "what-is-nicotine": "2026-11-07T12:24:15+07:00"
+    "what-is-nicotine": "2026-11-07T15:32:01+07:00"
   },
   "pagesVersion": 3,
   "pages": {
@@ -127,8 +127,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-07T03:13:25+07:00",
-      "fp": "3d8b25d1d0c1"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "430f0e5a8ccb"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -147,12 +147,12 @@
       "fp": "f409fb3c3c5a"
     },
     "/brands/uwell": {
-      "date": "2026-11-02T05:34:06+07:00",
-      "fp": "26926b7474aa"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "7c68138b3e7c"
     },
     "/brands/voopoo": {
-      "date": "2026-11-02T23:29:24+07:00",
-      "fp": "68859c05121b"
+      "date": "2026-11-07T16:45:41+07:00",
+      "fp": "c4d02a86d930"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -191,8 +191,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "93e09368bc3c"
+      "date": "2026-11-07T16:46:26+07:00",
+      "fp": "cb950cea830f"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -375,8 +375,8 @@
       "fp": "341cd005a7c7"
     },
     "/products/esko-bar-switch-pod": {
-      "date": "2026-11-07T03:13:25+07:00",
-      "fp": "f0df9a8d5aa0"
+      "date": "2026-11-07T16:22:59+07:00",
+      "fp": "cdb19aa83732"
     },
     "/products/foli-bar-15k": {
       "date": "2026-10-21T16:59:06+07:00",
@@ -431,8 +431,8 @@
       "fp": "c6da7b786c2e"
     },
     "/products/ks-quikpro-kit": {
-      "date": "2026-11-07T16:05:04+07:00",
-      "fp": "2ef63e6f0959"
+      "date": "2026-11-08T00:49:23+07:00",
+      "fp": "922ea8dc9c9b"
     },
     "/products/m-bar-10k": {
       "date": "2026-11-07T11:06:06+07:00",
@@ -511,16 +511,16 @@
       "fp": "e41988b29019"
     },
     "/products/pod-150": {
-      "date": "2026-11-03T01:13:22+07:00",
-      "fp": "2ac33b02be4b"
+      "date": "2026-11-07T16:03:08+07:00",
+      "fp": "249bc7287fb9"
     },
     "/products/pod-154": {
       "date": "2026-11-02T03:47:57+07:00",
       "fp": "d8d785362176"
     },
     "/products/pod-159": {
-      "date": "2026-11-03T00:40:32+07:00",
-      "fp": "81e15d65c5d2"
+      "date": "2026-11-07T16:22:59+07:00",
+      "fp": "90eea7f014c9"
     },
     "/products/pod-169": {
       "date": "2026-11-07T15:48:13+07:00",
@@ -541,6 +541,10 @@
     "/products/punta-ice": {
       "date": "2026-10-20T00:22:12+07:00",
       "fp": "1ab2da0b0561"
+    },
+    "/products/relx-artisan-plus": {
+      "date": "2026-11-07T15:49:14+07:00",
+      "fp": "2183fccdf706"
     },
     "/products/relx-creator": {
       "date": "2026-11-07T10:59:41+07:00",
@@ -570,6 +574,14 @@
       "date": "2026-11-07T11:43:43+07:00",
       "fp": "fc9d25792417"
     },
+    "/products/relx-ultra-kit": {
+      "date": "2026-11-07T15:32:01+07:00",
+      "fp": "af98dbaeb312"
+    },
+    "/products/relx-ultra-pod": {
+      "date": "2026-11-07T16:12:06+07:00",
+      "fp": "4ceabd6266cc"
+    },
     "/products/sup-zero-22k": {
       "date": "2026-11-06T17:29:45+07:00",
       "fp": "2dcb8e6b41d3"
@@ -579,8 +591,8 @@
       "fp": "bb1b19f0d60b"
     },
     "/products/switch-pods": {
-      "date": "2026-11-03T01:07:53+07:00",
-      "fp": "4df1f4478473"
+      "date": "2026-11-07T15:32:01+07:00",
+      "fp": "111471e949d7"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-11-07T11:43:43+07:00",

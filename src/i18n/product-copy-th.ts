@@ -1066,6 +1066,90 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "relx-ultra-pod": {
+    whoIsThisFor: {
+      0: "กำลังหาหัวพอต RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
+    },
+    specifications: {
+      coil: "mesh 10 วัตต์",
+      devices: "WAKA และ RELX ตระกูล Ultra · Artisan · Infinity · Essential",
+      puffs: "สูงสุด 5,000",
+    },
+    features: {
+      coil: {
+        title: "คอยล์ mesh 10 วัตต์",
+        description: "หัวพอตนี้ใช้คอยล์ mesh 10 วัตต์ และ RELX ออกแบบให้รสชาติเต็มตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย",
+      },
+      window: {
+        title: "มองเห็นน้ำยาที่เหลือ",
+        description: "มองเห็นน้ำยาผ่านตัวหัวพอตได้ จึงรู้ได้ว่าจาก 2mL ยังเหลืออีกเท่าไรก่อนที่รสจะเริ่มดรอป",
+      },
+      fit: {
+        title: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+        description: "RELX ระบุว่าใช้ได้กับเครื่องตระกูล Ultra · Artisan · Infinity และ Essential รวมถึงเครื่อง WAKA ด้วย",
+      },
+    },
+    tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 2mL คอยล์ mesh 10 วัตต์",
+    shortDescription:
+      "หัวพอตบรรจุสำเร็จ 2mL ของ RELX ใช้คอยล์ mesh 10 วัตต์ รองรับสูงสุด 5,000 พัฟ มี 4 กลิ่น นิโคติน 18mg/ml และ RELX ระบุว่าใช้ได้กับเครื่องตระกูล Ultra · Artisan · Infinity และ Essential",
+  },
+  "relx-ultra-kit": {
+    whoIsThisFor: {
+      0: "กำลังหาเครื่อง RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูสเปกกับ 2 กลิ่นที่มากับชุด",
+    },
+    specifications: {
+      charging: "USB-C · 80% ใน 30 นาที (ตัวเลขของ RELX)",
+      materials: "อะลูมิเนียมอัลลอย",
+      pod: "RELX Ultra Pod · 2mL · 18mg/ml · สูงสุด 5,000 พัฟ (ตัวเลขของ RELX)",
+    },
+    features: {
+      charging: {
+        title: "ชาร์จ 30 นาที ได้แบต 80%",
+        description: "แบต 380mAh ชาร์จผ่าน USB-C และ RELX ระบุว่าใช้เวลา 30 นาทีก็ได้ 80%",
+      },
+      body: {
+        title: "ตัวเครื่องอะลูมิเนียมอัลลอย",
+        description: "ตัวเครื่องสี Steel Silver ทำจากอะลูมิเนียมอัลลอย และ RELX ออกแบบให้จับได้ถนัดมือ",
+      },
+      indicator: {
+        title: "ไฟบอกสถานะใกล้ฐาน",
+        description: "ไฟเล็ก ๆ ใกล้ฐานเครื่องบอกสถานะการทำงานและแบตเตอรี่",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง สาย USB-C คู่มือ และหัวพอต Ultra 1 ชิ้นตามกลิ่นบนกล่อง",
+      },
+    },
+    tagline: "ตัวเครื่อง RELX 10 วัตต์ ทำจากอะลูมิเนียมอัลลอย พร้อมหัวพอต Ultra ในกล่อง",
+    shortDescription:
+      "ชุดเริ่มต้นของ RELX มีตัวเครื่องอะลูมิเนียมอัลลอยสี Steel Silver 10 วัตต์ แบต 380mAh พร้อมหัวพอต Ultra 1 ชิ้นตามกลิ่นบนกล่อง ชาร์จผ่าน USB-C และ RELX ระบุว่า 30 นาทีได้ 80%",
+  },
+  "relx-artisan-plus": {
+    whoIsThisFor: {
+      0: "กำลังหา RELX Artisan อยู่ และอยากดูสเปกของรุ่นปัจจุบัน",
+    },
+    specifications: {
+      indicator: "ไฟบอกแบต 4 ระดับ",
+      charging: "USB-C",
+    },
+    features: {
+      upgrade: {
+        title: "ต่างจาก Artisan รุ่นก่อนตรงไหน",
+        description: "รุ่นนี้วัตต์สูงขึ้น และแบตจุกว่ารุ่น Artisan เดิม",
+      },
+      indicator: {
+        title: "ไฟบอกแบต 4 ระดับ",
+        description: "แต่ละขีดเท่ากับ 25% และเมื่อเหลือขีดเดียว RELX แนะนำให้ชาร์จได้แล้ว",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง สาย USB-C และคู่มือ ส่วนหัวพอตแยกต่างหาก",
+      },
+    },
+    tagline: "เครื่อง RELX ทรงโค้งเว้า 8 วัตต์ แบต 440mAh",
+    shortDescription:
+      "เครื่องระบบสวิตช์ของ RELX ทรงโค้งเว้าสี Black Wave 8 วัตต์ แบต 440mAh ชาร์จผ่าน USB-C มีไฟบอกแบต 4 ระดับ และใช้ได้กับหัวพอต RELX Pod กับ RELX Pod Pro",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
