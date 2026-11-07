@@ -62,7 +62,7 @@ function RoundBars({ rounds }: { rounds: StoredRound[] }) {
     <section aria-label="กำไรแต่ละรอบ" className="dash-card dash-rise">
       <h2 className="font-semibold text-foreground">กำไรแต่ละรอบ</h2>
       <Bars bars={bars} />
-      <p className="text-sm text-foreground-muted">รอบละเสาร์ 13:00 ถึงเสาร์ 13:00 · ช่องประยังไม่มีข้อมูล · แตะแท่งเพื่อเปิดรอบนั้น</p>
+      <p className="text-sm text-foreground-muted">รอบละเสาร์ 13:00 ถึงเสาร์ 13:00 · ช่องประยังไม่มีข้อมูล · แตะช่องเพื่อเปิดรอบนั้น</p>
     </section>
   );
 }
@@ -173,7 +173,7 @@ function Google({ weeks, through }: { weeks: GoogleWeek[]; through: string | nul
             </div>
           </div>
           <Bars height="h-16" bars={padSlots(weeks, 8).map((w) => (w ? { value: w.clicks, label: shortDate(w.to), title: `สัปดาห์ถึง ${shortDate(w.to)} กด ${w.clicks}` } : null))} />
-          <p className="text-sm text-foreground-muted">แท่งคือคนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position} · ข้อมูลถึง {shortDate(through)} ช้ากว่าจริง 2–3 วัน</p>
+          <p className="text-sm text-foreground-muted">กราฟคือคนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position} · ข้อมูลถึง {shortDate(through)} ช้ากว่าจริง 2–3 วัน</p>
         </>
       )}
     </section>
