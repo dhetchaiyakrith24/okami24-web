@@ -14777,6 +14777,212 @@
   "fileName": "card.webp"
  },
  {
+  "source": "_incoming/popular-0711/g3l/space-black.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "space-black",
+  "fileName": "variant-space-black.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Space Black",
+   "fidelitySheet": "side-session notes popular-g3l-compare, space-black"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/basalt-gray.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "basalt-gray",
+  "fileName": "variant-basalt-gray.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Basalt Gray",
+   "fidelitySheet": "side-session notes popular-g3l-compare, basalt-gray"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/chili-red.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "chili-red",
+  "fileName": "variant-chili-red.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Chili Red",
+   "fidelitySheet": "side-session notes popular-g3l-compare, chili-red"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/pearl-white.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "pearl-white",
+  "fileName": "variant-pearl-white.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Pearl White",
+   "fidelitySheet": "side-session notes popular-g3l-compare, pearl-white"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/pastel-pink.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "pastel-pink",
+  "fileName": "variant-pastel-pink.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Pastel Pink",
+   "fidelitySheet": "side-session notes popular-g3l-compare, pastel-pink"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/ice-blue.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "ice-blue",
+  "fileName": "variant-ice-blue.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Ice Blue",
+   "fidelitySheet": "side-session notes popular-g3l-compare, ice-blue"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/pale-purple.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "pale-purple",
+  "fileName": "variant-pale-purple.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Pale Purple",
+   "fidelitySheet": "side-session notes popular-g3l-compare, pale-purple"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/mint-green.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "mint-green",
+  "fileName": "variant-mint-green.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Mint Green",
+   "fidelitySheet": "side-session notes popular-g3l-compare, mint-green"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/canvas-green.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "canvas-green",
+  "fileName": "variant-canvas-green.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Canvas Green",
+   "fidelitySheet": "side-session notes popular-g3l-compare, canvas-green"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/canvas-blue.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "canvas-blue",
+  "fileName": "variant-canvas-blue.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Canvas Blue",
+   "fidelitySheet": "side-session notes popular-g3l-compare, canvas-blue"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/rose-bloom.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "rose-bloom",
+  "fileName": "variant-rose-bloom.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Rose Bloom",
+   "fidelitySheet": "side-session notes popular-g3l-compare, rose-bloom"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/violet-blossom.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "violet-blossom",
+  "fileName": "variant-violet-blossom.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Violet Blossom",
+   "fidelitySheet": "side-session notes popular-g3l-compare, violet-blossom"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/weave.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "weave",
+  "fileName": "variant-weave.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Weave",
+   "fidelitySheet": "side-session notes popular-g3l-compare, weave"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/vision.png",
+  "slug": "caliburn-g3-lite",
+  "role": "variant",
+  "id": "vision",
+  "fileName": "variant-vision.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Vision",
+   "fidelitySheet": "side-session notes popular-g3l-compare, vision"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/g3l/chili-red.png",
+  "slug": "caliburn-g3-lite",
+  "role": "card",
+  "fileName": "card.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (MCP generate_image, 2 credits): Space Black from UWELL's lineup + exploded view, every other colour edited from that render with UWELL's labelled colour chart (and UWELL's lifestyle strip for patterned editions); one shared matte for all 14",
+   "reference": "UWELL's colour chart files.myuwell.com/uwell/product/caliburn-g3-lite/pc/spe-1-new.png, Chili Red",
+   "fidelitySheet": "side-session notes popular-g3l-compare, chili-red"
+  },
+  "note": "round popular models 07/11: UWELL's page shows each colour about 60 px wide, so each is a studio remake; the owner approved 28 credits"
+ },
+ {
+  "source": "_incoming/popular-0711/nexas/nexas.png",
+  "slug": "nexas-booster-16k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job 6253c5b6-0f0b-4a7f-8bfd-482bdf4957b0), studio remake",
+   "reference": "Shop poster, goatvapethai.com NEXAS-BOOSTER Cola Ice (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-nexas-booster-16k.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
   "source": "_incoming/popular-0711/smok/nord5/red-grey-dart.jpg",
   "slug": "smok-nord-5",
   "role": "variant",

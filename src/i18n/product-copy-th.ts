@@ -312,6 +312,41 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "แบต 1400mAh สูงสุด 35 วัตต์ สูบได้ทั้งแบบดูดและกดปุ่ม",
   },
+  "caliburn-g3-lite": {
+    whoIsThisFor: {
+      0: "อยากได้ Caliburn แบบใช้ง่าย ไม่มีจอ ไม่มีปุ่ม แบตใหญ่ และใช้หัวพอตชุด G3 ได้เหมือนเดิม",
+    },
+    specifications: {
+      battery: "1200mAh ในตัว",
+      "charge-time": "USB-C",
+      firing: "ไม่มีปุ่ม สูบได้เลย",
+      airflow: "ระบบลมคู่",
+      "pod-compat": "หัวพอต Caliburn G3 คอยล์ในตัว มีค่า 0.6Ω 0.9Ω และ 1.2Ω",
+      refill: "มีทั้งแบบเติมด้านข้างและเติมด้านบน แต่ละชุดมาแบบใดแบบหนึ่ง",
+      "battery-light": "ไฟ LED เขียว 60-100% ฟ้า 30-60% แดง 0-30%",
+    },
+    features: {
+      battery: {
+        title: "แบต 1200mAh ในตัวเครื่อง",
+        description: "UWELL บอกว่าแบตใหญ่ขึ้น 20% และใช้ได้ถึง 3 วันต่อการชาร์จหนึ่งครั้ง",
+      },
+      "auto-draw": {
+        title: "ไม่มีปุ่ม สูบได้เลย",
+        description: "แค่ดูดเครื่องก็ทำงาน และเลือกทางลมได้ 2 แบบจากหัวพอต",
+      },
+      window: {
+        title: "เห็นน้ำยาได้รอบด้าน",
+        description: "UWELL เรียกว่าหน้าต่าง 360 องศา มองเห็นระดับน้ำยาได้ทุกมุม",
+      },
+      pods: {
+        title: "หัวพอต 3 ค่า",
+        description: "มี 0.6 0.9 และ 1.2 โอห์ม ตั้งแต่ลมโล่งจนถึงดูดแน่น เลือกจากหัวพอตชุด Caliburn G3 ได้เลย",
+      },
+    },
+    tagline: "Caliburn แบบไม่มีปุ่ม สูบได้เลย แบต 1200mAh",
+    shortDescription:
+      "แบต 1200mAh ในตัว สูงสุด 25 วัตต์ ไม่มีปุ่ม สูบได้เลย มีระบบลมคู่ และมีหน้าต่างดูน้ำยา ใช้หัวพอต Caliburn G3 ค่า 0.6Ω 0.9Ω และ 1.2Ω",
+  },
   "caliburn-g3": {
     whoIsThisFor: {
       0: "กำลังหา Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro และอยากดูสเปกกับสีทั้งหมดที่ UWELL ทำออกมา",
@@ -1099,6 +1134,24 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "nexas-booster-16k": {
+    whoIsThisFor: {
+      0: "ตั้งใจมาหา NEXAS Booster รุ่นนี้ หรืออยากได้พอตใช้แล้วทิ้งพัฟเยอะที่ปรับลมได้",
+    },
+    features: {
+      lights: {
+        title: "ไฟบอกแบตและปรับลม",
+        description: "ไฟบนตัวเครื่องบอกแบตที่เหลือ และปรับลมได้ 3 ระดับ",
+      },
+      figures: {
+        title: "ตัวเลขที่ร้านค้าระบุตรงกัน",
+        description: "ไม่พบเว็บของผู้ผลิต ตัวเลขจึงมาจากร้านที่ขายรุ่นนี้และระบุตรงกัน คือ 16,000 พัฟ น้ำยา 20mL แบต 800mAh และชาร์จผ่าน USB-C",
+      },
+    },
+    tagline: "พอตใช้แล้วทิ้ง มีไฟบอกแบต และปรับลมได้ 3 ระดับ",
+    shortDescription:
+      "พอตใช้แล้วทิ้ง มีไฟบอกแบตบนตัวเครื่อง และปรับลมได้ 3 ระดับ เลือกดูกลิ่นได้จากรายการด้านล่าง",
+  },
   "smok-nord-5": {
     whoIsThisFor: {
       0: "กำลังหา SMOK Nord 5 รุ่นนี้โดยเฉพาะ และอยากดูสเปกกับสีทั้งหมดที่ SMOK ทำออกมา",

@@ -357,6 +357,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): searched as "relx infinity" — RELX's store sells only the Infinity 2 Plus now.
   "relx-infinity-2-plus": "RELX Infinity รุ่นปัจจุบันคือ Infinity 2 Plus เครื่องระบบสวิตช์ที่มี 3 โหมด 6.5–10 วัตต์ แบต 440mAh และใช้ได้กับหัวพอต RELX Pod · Pod Pro · Pod Pro 2",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
+  "caliburn-g3-lite": "Caliburn G3 Lite ไม่มีจอและไม่มีปุ่ม เป็นพอตซิสเต็มจาก UWELL แบต 1200mAh ปรับได้สูงสุด 25 วัตต์ ดูดแล้วทำงานเอง ใช้หัวพอตชุด Caliburn G3",
   "caliburn-g3": "Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro เป็นพอตซิสเต็มจาก UWELL แบต 900mAh ปรับได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ หน้านี้รวมทุกสีที่ UWELL ผลิต",
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
@@ -364,6 +365,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round popular models 07/11: numbers = verified spec rows from store.smoktech.com.
   "smok-nord-5": "SMOK Nord 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3 มีปุ่มเลื่อนปรับลมและจอ OLED 0.69 นิ้ว มี 12 สี",
   "smok-rpm-5": "SMOK RPM 5 แบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอต 6.5mL ใช้คอยล์ RPM 3 Meshed ในกล่องมีค่า 0.15Ω และ 0.23Ω จอ TFT 0.96 นิ้ว มี 8 สี",
+  "nexas-booster-16k": "NEXAS Booster 16K พอตใช้แล้วทิ้ง มีไฟบอกแบต ปรับลมได้ 3 ระดับ ชาร์จผ่าน USB-C มี 18 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงได้ในหน้านี้",
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ปรับลมและเลือกโหมดการใช้งานได้ ชาร์จผ่าน USB-C มี 16 กลิ่นให้ดูในหน้านี้",
   "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",
