@@ -165,4 +165,258 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
     answer:
       "不需要。Favorites 仅保存在您当前使用的浏览器中，只存在于该设备上，目前尚未与任何账号或服务器端资料绑定。",
   },
+  // Round SEO full 07/11: product FAQ, Thai in product-copy-th.ts, English in the product data.
+  "m-switch-pod-name": {
+    question: "Marbo 15K 烟弹和 M Switch 15K 烟弹是同一款吗？",
+    answer: "在本店是同一款，都是 M Switch Pod，SALTHUB 的黑色烟弹，搭配 M Switch Kit 主机使用。这款主机本店也称作 M Bar 15K。",
+  },
+  "m-switch-pod-device": {
+    question: "还没有主机，可以只买烟弹吗？",
+    answer: "烟弹要装在 M Switch Kit 主机上才能用。刚开始的话，买套装更方便，M Switch Kit 含主机和一颗烟弹。",
+  },
+  "m-switch-pod-days": {
+    question: "一颗 M Switch Pod 能用几天？",
+    answer: "没有固定的天数，因人而异，抽得多自然用得快。SALTHUB 标注的是每颗最多 15,000 口，能用几天要看抽吸的频率和每口的长短。",
+  },
+  "m-switch-pod-flavours": {
+    question: "Marbo 15K 烟弹有哪些口味？",
+    answer: "SALTHUB 网页列出 17 种口味，有 Blue Ice 这样的清凉系、Kyoho Grape 这样的葡萄系、Mango Passion 这样的其他水果，以及 Cola 等其他口味。口味名称可以看本页的列表。",
+  },
+  "m-switch-pod-strength": {
+    question: "M Switch Pod 的尼古丁浓度是多少？",
+    answer: "SALTHUB 标注为 30mg，烟弹里的烟油是盐尼古丁。",
+  },
+  "joiway-f4-double-flavor": {
+    question: "JOIWAY F4 是双口味款吗？",
+    answer: "是的。F4 是一机双味的一次性电子烟，两种口味已经配好，挑喜欢的组合就行。JOIWAY 给这款起的名字是 F4 TWINS。",
+  },
+  "joiway-f4-switch": {
+    question: "JOIWAY F4 怎么切换口味？",
+    answer: "把吸嘴转到另一边就行。两种口味分装在两个烟油仓里，吸嘴转到哪个烟油仓上方，下一口就是哪种口味。JOIWAY 表示随时都能切换。",
+  },
+  "joiway-f4-capacity": {
+    question: "JOIWAY F4 每种口味有多少烟油？",
+    answer: "每个烟油仓预装 10mL，整机共 20mL。",
+  },
+  "joiway-f4-charge": {
+    question: "JOIWAY F4 可以充电吗？",
+    answer: "可以。650mAh 电池通过 USB-C 充电，电量低了插上线就能继续用。机身的 LED 屏幕以百分比显示数字。",
+  },
+  "tfit-m-power-20k-review": {
+    question: "M Power 20K 有评测吗？",
+    answer: "有。OKami24 在 YouTube 上发布了实际使用的评测，视频就在本页。",
+  },
+  "tfit-m-power-20k-charge": {
+    question: "TFIT 20K 可以充电吗？",
+    answer: "可以。600mAh 电池通过 USB-C 充电，充电口在机身底部。电池比烟油先用完时，充上电就能继续抽。",
+  },
+  "tfit-m-power-20k-airflow": {
+    question: "TFIT M Power 可以调气流吗？",
+    answer: "可以。TFIT 表示气流可以从紧调到松，按自己的抽法来设定就好。",
+  },
+  "tfit-m-power-20k-days": {
+    question: "M Power 20K 能用几天？",
+    answer: "没有固定的天数，因人而异，抽得多自然用得快。TFIT 标注的是最多 20,000 口。烟油仓是透明的，还剩多少从外面就能看到。",
+  },
+  "caliburn-g4-pro-pods": {
+    question: "Caliburn G4 Pro 能用哪些烟弹？",
+    answer: "可以用 UWELL GPP 烟弹，旧款和升级款都行，G3 烟弹也能用。阻值范围 0.4Ω 至 1.2Ω，顶部注油和侧边注油都支持。",
+  },
+  "caliburn-g4-pro-included-pods": {
+    question: "Caliburn G4 Pro 附带哪些烟弹？",
+    answer: "附带 0.4Ω 和 0.6Ω 的 FeCrAl 网状线圈烟弹，都是侧边注油，烟弹容量 3mL。",
+  },
+  "caliburn-g4-pro-thai-menu": {
+    question: "Caliburn G4 Pro 的菜单有泰语吗？",
+    answer: "没有。设置菜单提供 8 种语言，不含泰语。下滑屏幕即可打开菜单。",
+  },
+  "caliburn-g4-pro-battery": {
+    question: "Caliburn G4 Pro 电池能用几天？",
+    answer: "UWELL 标注 1800mAh 电池最长可用 7 天，实际能用几天取决于抽吸频率和设定的功率。",
+  },
+  "caliburn-g4-pro-themes": {
+    question: "Caliburn G4 Pro 的屏幕主题怎么解锁？",
+    answer: "靠抽吸口数解锁。主题共 6 款，3 款开箱即用，另外 3 款在 5,000、10,000、20,000 口时解锁。",
+  },
+  "caliburn-g4-mini-pods": {
+    question: "Caliburn G4 mini 用哪款烟弹？",
+    answer: "可以用 UWELL GPP 烟弹，旧款和升级款都行。盒内附带的是 0.6Ω FeCrAl 网状线圈烟弹。",
+  },
+  "caliburn-g4-mini-refill": {
+    question: "Caliburn G4 mini 注油要取下烟弹吗？",
+    answer: "升级款 GPP 烟弹无需取下即可注油，烟弹容量 3mL。",
+  },
+  "caliburn-g4-mini-airflow": {
+    question: "Caliburn G4 mini 可以调气流吗？",
+    answer: "可以。可以用气流滑块，也可以把烟弹反向安装，两者也能一起用。",
+  },
+  "caliburn-g4-mini-upgraded-pods": {
+    question: "Caliburn G4 mini 用升级款 GPP 烟弹有什么不同？",
+    answer: "根据 UWELL 实验室数据，升级款烟弹搭配 Pro-FOCS 4.0，口感满意度最高提升 35%，烟弹寿命最高提升 35%。",
+  },
+  "argus-g4-mini-resistance": {
+    question: "ARGUS G4 mini 怎么在 0.7Ω 和 1.0Ω 之间切换？",
+    answer: "把 Multi-Ohm 烟弹转 180° 再插回去。按原样插入是 0.7Ω，转过来就是 1.0Ω，机身会自动识别烟弹的方向。",
+  },
+  "argus-g4-mini-lights": {
+    question: "ARGUS G4 mini 的指示灯代表什么？",
+    answer: "白灯是 0.7Ω，绿灯是 1.0Ω。四格灯显示电量，每格 25%。",
+  },
+  "argus-g4-mini-refill": {
+    question: "ARGUS G4 mini 怎么注油？",
+    answer: "烟弹留在机身上，从顶部注油就行。Multi-Ohm 烟弹容量 3.5mL。",
+  },
+  "argus-g4-mini-draw": {
+    question: "ARGUS G4 mini 需要按键吗？",
+    answer: "不需要，吸气即启动。进气用无级滑块调节，从 MTL 到 RDL。",
+  },
+  "vmate-i3-cartridge-choice": {
+    question: "VMATE i3 选哪种阻值的烟弹？",
+    answer: "按自己的抽吸方式来选。喜欢偏紧的 MTL，可选 Top Fill 1.0Ω（12–18W）或 Cartridge V2 1.2Ω（8–15W）；喜欢通畅的 RDL，可选 Top Fill 0.4Ω，VOOPOO 注明需 30W 以上。VOOPOO 建议使用前先核对阻值和功率。",
+  },
+  "vmate-i3-light": {
+    question: "VMATE i3 的灯带颜色代表什么？",
+    answer: "灯带显示剩余电量：70% 及以上为绿色，30–70% 为蓝色，30% 以下为红色。",
+  },
+  "vmate-i3-coil-life": {
+    question: "VMATE i3 的烟弹能用多久？",
+    answer: "根据 VOOPOO 自己的实验室测试，iCOSM CODE 线圈寿命为 90mL 烟油。能用多少天因人而异，抽得多自然用得快。",
+  },
+  "vmate-i3-charge": {
+    question: "VMATE i3 支持快充吗？",
+    answer: "支持，通过 USB-C 以 5V/2A 快充，内置 1500mAh 电池。",
+  },
+  "caliburn-g3-pro-koko-pods": {
+    question: "Caliburn G3 Pro KOKO 能用哪些烟弹？",
+    answer: "所有 Caliburn G3（GPP）烟弹都能用，阻值 0.4Ω 至 1.2Ω，顶部注油和侧边注油都行。附带的烟弹是 0.4Ω（3mL）和 0.9Ω（2.5mL），都是侧边注油。",
+  },
+  "caliburn-g3-pro-koko-button": {
+    question: "Caliburn G3 Pro KOKO 的按键怎么用？",
+    answer: "连按两下锁定按键，连按 3 下设定功率，连按 4 下打开亮度与主题菜单，连按 5 下开关机。",
+  },
+  "caliburn-g3-pro-koko-charging": {
+    question: "Caliburn G3 Pro KOKO 充电要多久？",
+    answer: "UWELL 标注通过 USB-C 以 5V/2A 充电，20 分钟可充到 80%，一次充电最多用 4 天。实际续航取决于抽吸频率和设定的功率。",
+  },
+  "caliburn-g3-pro-koko-themes": {
+    question: "Caliburn G3 Pro KOKO 怎么换屏幕主题？",
+    answer: "连按 4 下按键打开菜单，在里面选择主题，例如 Planet、Twilight、KOKO。DAY 和 NIGHT 亮度模式也在同一个菜单里。",
+  },
+  "wotofo-nexbar-18k-screen": {
+    question: "nexBAR 18K 的屏幕显示什么？",
+    answer: "LED 屏幕显示电量百分比、剩余烟油和当前模式。",
+  },
+  "wotofo-nexbar-18k-airflow": {
+    question: "nexBAR 18K 怎么调进气？",
+    answer: "用底部的进气滑块，有 2 档可调，选自己抽着舒服的那一档就好。",
+  },
+  "wotofo-nexbar-18k-charge": {
+    question: "nexBAR 18K 可以充电吗？",
+    answer: "可以。750mAh 电池通过 USB-C 充电，电量低了插上线就能继续用。",
+  },
+  "wotofo-nexbar-18k-days": {
+    question: "nexBAR 18K 能用几天？",
+    answer: "没有固定的天数，因人而异，抽得多自然用得快。WOTOFO 标注的是最多 18,000 口，烟油 21mL。",
+  },
+  "relx-smash-go-12k-what": {
+    question: "RELX Smash Go 12K 是什么类型的产品？",
+    answer: "这是 RELX 的可充电一次性电子烟，最多 12,000 口，采用 MEGA MESH 线圈，机身只有口袋大小。",
+  },
+  "relx-smash-go-12k-charge": {
+    question: "RELX 12K 可以充电吗？",
+    answer: "可以。400mAh 电池通过 USB-C 充电，电量用完后充上电就能继续用。",
+  },
+  "relx-smash-go-12k-days": {
+    question: "RELX Smash Go 12,000 口能用几天？",
+    answer: "没有固定的天数，因人而异，抽得多自然用得快。12,000 口是 RELX 标注的最高口数，能用几天要看抽吸的频率和每口的长短。",
+  },
+  "relx-smash-go-12k-strength": {
+    question: "RELX Smash Go 12K 的尼古丁浓度是多少？",
+    answer: "有 3% 和 5% 两种盐尼古丁。5% 的口味名称以 5% 结尾，选择前请再核对一次名称。",
+  },
+  "relx-smash-go-12k-review": {
+    question: "RELX Smash Go 12K 有评测吗？",
+    answer: "有。OKami24 在 YouTube 上发布了这款的评测视频，在本页就能观看。",
+  },
+  "caliburn-g4-pods": {
+    question: "Caliburn G4 用哪款烟弹？",
+    answer: "可以用 UWELL GPP 烟弹，旧款和升级款都行。附带的是 0.4Ω 和 0.9Ω 的 FeCrAl 网状线圈烟弹，都是侧边注油。",
+  },
+  "caliburn-g4-firing": {
+    question: "Caliburn G4 抽的时候要按键吗？",
+    answer: "都可以，直接吸或按键点火都行，看个人习惯。",
+  },
+  "caliburn-g4-button": {
+    question: "Caliburn G4 的按键怎么用？",
+    answer: "按 1 下亮屏，按 2 下锁定或解锁按键点火，按 3 下调节功率，按 4 下进入菜单，按 5 下开关机。",
+  },
+  "caliburn-g4-modes": {
+    question: "Caliburn G4 的 Storm 和 Waves 有什么不同？",
+    answer: "按 UWELL 的说法，Storm 来得快，Waves 平稳顺滑，按自己的需要选择就好。",
+  },
+  "caliburn-g4-charge": {
+    question: "Caliburn G4 支持快充吗？",
+    answer: "支持，通过 USB-C 以 5V/2A 快充，内置 1300mAh 电池。",
+  },
+  // Round SEO full 07/11: product FAQ rows of M Bar 10K, M Switch Kit and RELX Creator.
+  "m-bar-10k-name": {
+    question: "Marbo 10K 和 M Bar 10K 是同一款吗？",
+    answer: "是同一款。M Bar 10K 是 SALTHUB 的型号名称，Marbo 是泰国不少店家的叫法。",
+  },
+  "m-bar-10k-flavours": {
+    question: "Marbo 10K 有哪些口味？",
+    answer: "这款有 12 种口味：All Berry、Blue Ice、Cola、Grape、Kyoho Grape、Matcha Latte、Menthol Blast、Pink Berry、Strawberry Kiwi、Watermelon、Watermelon Mint、Yellow Mint。",
+  },
+  "m-bar-10k-days": {
+    question: "Marbo 10,000 口能用几天？",
+    answer: "10,000 口是 SALTHUB 标注的最高口数，并不是天数。每天隔一阵抽一会儿，会比抽得频繁或长时间连续抽用得更久。",
+  },
+  "m-bar-10k-price": {
+    question: "Marbo 10K 多少钱？",
+    answer: "价格显示在本页上方的价格栏。",
+  },
+  "m-bar-10k-review": {
+    question: "哪里可以看 Marbo 10K 评测？",
+    answer: "本页就有我们自己的视频，在“OKami24 评测”部分，内容是 Matcha Latte 口味。",
+  },
+  "m-bar-10k-recharge": {
+    question: "Marbo 10K 可以充电吗？",
+    answer: "可以，通过 USB-C 充电。电池用完后充上电就能继续用，不是电量用完就作废的那种。",
+  },
+  "m-switch-kit-name": {
+    question: "Marbo 15K 和 M Switch 15K 是同一款吗？",
+    answer: "在本店是同一套。我们把这套称为 M Bar 15K，SALTHUB 官网上的名称是 M Switch Kit。",
+  },
+  "m-switch-kit-swap": {
+    question: "哪款 Marbo 可以换烟弹？",
+    answer: "就是本页的 M Switch Kit。主机留着充电继续用，烟弹用完或想换口味时，取下旧烟弹，装上新的 M Switch Pod 就行。M Bar 9K 和 M Bar 10K 是一次性电子烟，烟油用完后整支更换。",
+  },
+  "m-switch-kit-device-only": {
+    question: "M Switch 15K 可以只买主机吗？",
+    answer: "目前按套装出售：主机加一颗所选口味的烟弹。每个口味的主机都一样。已有主机、只想加烟弹的话，可以到 M Switch Pod 页面单独购买。",
+  },
+  "m-switch-kit-price": {
+    question: "M Switch 15K 多少钱？",
+    answer: "价格显示在本页上方的价格栏，是套装价，包含主机和一颗烟弹。",
+  },
+  "m-switch-kit-refill": {
+    question: "M Switch 15K 需要自己加烟油吗？",
+    answer: "不需要。烟油已经预装在烟弹里，不用另买瓶装烟油来加。",
+  },
+  "relx-creator-what": {
+    question: "RELX Creator 是什么样的设备？",
+    answer: "RELX Creator，很多人也叫它 RELX LEGO，是 RELX 的换弹式主机，对应 RELX 官网上的 Creator Pro Device。",
+  },
+  "relx-creator-price": {
+    question: "RELX Creator 多少钱？",
+    answer: "价格显示在本页上方的价格栏，只含主机，烟弹需另购。",
+  },
+  "relx-creator-no-draw": {
+    question: "RELX Creator 抽不出来怎么办？",
+    answer: "建议先按一下按键查看电量。没电就用 USB-C 充电；还有电的话，取下烟弹重新装紧，再用干棉签或纸巾擦拭触点。如果还是抽不出来，可以通过 LINE @okm24 联系我们。",
+  },
+  "relx-creator-pods": {
+    question: "RELX Creator 能用哪些烟弹？",
+    answer: "可以用 RELX Creator Pod 和 Muro Connector 烟弹，这两款是本店用实物确认过的。如果要用其他烟弹，请先通过 LINE @okm24 询问。",
+  },
 };

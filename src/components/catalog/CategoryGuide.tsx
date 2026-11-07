@@ -1,16 +1,19 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { renderInline } from "@/components/content/ArticleBody";
+import { renderInline } from "@/components/content/render-inline";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { CategoryGuideCopy } from "@/i18n/category-guide-copy";
 import type { CategorySpecRow } from "@/lib/category-spec-table";
 import type { BrandRow, LineupRow } from "@/lib/disposable-lineup";
-import { DisposableCompareTable } from "@/components/catalog/DisposableCompareTable";
 import { baht, thousands } from "@/components/catalog/lineup-format";
+
+// Its own chunk (round SEO full 07/11): only /products/disposables has this table, and this block now also sits on the home page.
+const DisposableCompareTable = dynamic(() => import("@/components/catalog/DisposableCompareTable").then((m) => m.DisposableCompareTable));
 
 /**
  * Round SEO pod (30/10): the text block page-1 rivals carry under their category grid and ours lacked

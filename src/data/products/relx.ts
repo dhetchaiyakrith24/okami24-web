@@ -322,7 +322,33 @@ export const relxProducts: Product[] = [
     whoIsThisFor: [
       "You want a disposable that's easy to carry and slips into a pocket for the whole day.",
     ],
-    faqs: [],
+    faqs: [
+      {
+        id: "relx-smash-go-12k-what",
+        question: "What kind of device is the RELX Smash Go 12K?",
+        answer: "It's a rechargeable disposable from RELX, rated at up to 12,000 puffs, with a MEGA MESH coil and a pocket-sized body.",
+      },
+      {
+        id: "relx-smash-go-12k-charge",
+        question: "Can you recharge the RELX 12K?",
+        answer: "Yes. The 400mAh battery charges over USB-C, so when it runs out you can plug it in and carry on.",
+      },
+      {
+        id: "relx-smash-go-12k-days",
+        question: "How many days do 12,000 puffs last on the RELX Smash Go?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. 12,000 puffs is the most RELX states, so the days depend on how often you vape and how long each draw is.",
+      },
+      {
+        id: "relx-smash-go-12k-strength",
+        question: "What nicotine strength is the RELX Smash Go 12K?",
+        answer: "It comes in 3% and 5% nicotine salt. The 5% flavours have 5% at the end of the name, so check the name before you choose.",
+      },
+      {
+        id: "relx-smash-go-12k-review",
+        question: "Is there a review of the RELX Smash Go 12K?",
+        answer: "Yes. OKami24 made a review clip on YouTube, and you can watch it on this page.",
+      },
+    ],
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: ["https://www.relxnow.com/products/relx-smash-go-12k"],
   },
@@ -520,9 +546,24 @@ export const relxProducts: Product[] = [
     whoIsThisFor: ["Vapers who want a device they keep, with prefilled pods they swap instead of filling e-liquid."],
     faqs: [
       {
+        id: "relx-creator-what",
+        question: "What is the RELX Creator?",
+        answer: "The RELX Creator, often called the RELX LEGO, is a reusable RELX device that takes prefilled pods. It's the device RELX lists on its own site as the Creator Pro Device.",
+      },
+      {
         id: "relx-creator-pods",
         question: "Which pods fit the RELX Creator?",
         answer: "RELX Creator Pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
+      },
+      {
+        id: "relx-creator-price",
+        question: "How much is the RELX Creator?",
+        answer: "The price is shown in the price box near the top of this page. It's for the device alone; pods are sold separately.",
+      },
+      {
+        id: "relx-creator-no-draw",
+        question: "The RELX Creator won't draw. What should I do?",
+        answer: "We'd start with one click on the button to check the battery. If it's flat, charge it over USB-C. If there's charge left, take the pod out, seat it firmly again and wipe the contacts with a dry cotton swab or tissue. If it still won't draw, ask us on LINE @okm24.",
       },
     ],
     relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],

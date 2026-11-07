@@ -122,7 +122,28 @@ export const tfitProducts: Product[] = [
       "You like to set the draw tighter or looser yourself.",
     ],
     // Batch 4g (05/10): the "brand not confirmed 100%" FAQ is gone — TFIT's own site settles it (facts file above).
-    faqs: [],
+    faqs: [
+      {
+        id: "tfit-m-power-20k-review",
+        question: "Is there a review of the M Power 20K?",
+        answer: "Yes. OKami24 reviewed it from real use on YouTube, and the clip is on this page.",
+      },
+      {
+        id: "tfit-m-power-20k-charge",
+        question: "Can you recharge the TFIT 20K?",
+        answer: "Yes. The 600mAh battery charges over USB-C through a port on the base, so if it runs out before the e-liquid does, charge it and carry on.",
+      },
+      {
+        id: "tfit-m-power-20k-airflow",
+        question: "Can you adjust the airflow on the TFIT M Power?",
+        answer: "Yes. TFIT says it goes from tighter to looser, so you can set it to suit how you vape.",
+      },
+      {
+        id: "tfit-m-power-20k-days",
+        question: "How many days does the M Power 20K last?",
+        answer: "There's no fixed number of days. It varies from person to person, and heavier use finishes it sooner. TFIT rates it at up to 20,000 puffs, and the clear tank lets you see how much e-liquid is left.",
+      },
+    ],
     relatedProductSlugs: [],
     sourceUrls: ["https://www.tfitvape.com/"],
   },
