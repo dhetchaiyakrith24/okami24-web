@@ -52,16 +52,16 @@ export const tfitProducts: Product[] = [
     // placement for all 10 (_incoming/img-0211/tfit). The page still opens on TFIT's own card, flavours by swipe or chip.
     openOnCardPhoto: true,
     flavorVariants: [
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-blue-ice-v2-wm3.webp", alt: "TFIT M Power 20K, Blue Ice — device and its pouch" } },
-      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-double-mint-v2-wm3.webp", alt: "TFIT M Power 20K, Double Mint — device and its pouch" } },
-      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape-v2-wm3.webp", alt: "TFIT M Power 20K, Grape — device and its pouch" } },
-      { id: "grape-apple", name: "Grape Apple", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape-apple-v2-wm3.webp", alt: "TFIT M Power 20K, Grape Apple — device and its pouch" } },
-      { id: "hami-melon", name: "Hami Melon", swatchHex: "#c5c53e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-hami-melon-v2-wm3.webp", alt: "TFIT M Power 20K, Hami Melon — device and its pouch" } },
-      { id: "mix-berry", name: "Mix Berry", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-mix-berry-v2-wm3.webp", alt: "TFIT M Power 20K, Mix Berry — device and its pouch" } },
-      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-rainbow-candy-v2-wm3.webp", alt: "TFIT M Power 20K, Rainbow Candy — device and its pouch" } },
-      { id: "sakura-grape", name: "Sakura Grape", swatchHex: "#d18ab0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-sakura-grape-v2-wm3.webp", alt: "TFIT M Power 20K, Sakura Grape — device and its pouch" } },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-strawberry-v2-wm3.webp", alt: "TFIT M Power 20K, Strawberry — device and its pouch" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-watermelon-v2-wm3.webp", alt: "TFIT M Power 20K, Watermelon — device and its pouch" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-blue-ice-v2-wm5.webp", alt: "TFIT M Power 20K, Blue Ice — device and its pouch" } },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-double-mint-v2-wm5.webp", alt: "TFIT M Power 20K, Double Mint — device and its pouch" } },
+      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape-v2-wm5.webp", alt: "TFIT M Power 20K, Grape — device and its pouch" } },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape-apple-v2-wm5.webp", alt: "TFIT M Power 20K, Grape Apple — device and its pouch" } },
+      { id: "hami-melon", name: "Hami Melon", swatchHex: "#c5c53e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-hami-melon-v2-wm5.webp", alt: "TFIT M Power 20K, Hami Melon — device and its pouch" } },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-mix-berry-v2-wm5.webp", alt: "TFIT M Power 20K, Mix Berry — device and its pouch" } },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-rainbow-candy-v2-wm5.webp", alt: "TFIT M Power 20K, Rainbow Candy — device and its pouch" } },
+      { id: "sakura-grape", name: "Sakura Grape", swatchHex: "#d18ab0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-sakura-grape-v2-wm5.webp", alt: "TFIT M Power 20K, Sakura Grape — device and its pouch" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-strawberry-v2-wm5.webp", alt: "TFIT M Power 20K, Strawberry — device and its pouch" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-watermelon-v2-wm5.webp", alt: "TFIT M Power 20K, Watermelon — device and its pouch" } },
     ],
     // Site-wide template round batch 4g (05/10): the G5 template — TFIT's own M Power 20K posters, one per block (down-sized only:
     // _incoming/sitewide-template/4/4g/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
