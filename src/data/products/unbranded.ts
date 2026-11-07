@@ -814,9 +814,9 @@ export const unbrandedProducts: Product[] = [
     name: "Vazer Reload 15K",
     displayName: "VAZER RELOAD 15K",
     searchAliases: ["Vazer Reload","Vazer 15K","Vazer 15000","Vazer Reload 15000"],
-    tagline: "A black body with a swappable flavour head on top.",
+    tagline: "A device with a pre-filled head you can swap for another flavour.",
     shortDescription:
-      "A black body with a pre-filled head on top. When you want another flavour you change the head and keep the body. Pick from the flavours below.",
+      "A pre-filled head sits on the device, so you change the head when you want another flavour. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -854,7 +854,7 @@ export const unbrandedProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "15,000", sourceStatus: "unverified" }],
     features: [
-      { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head on top of the body, so a new flavour only takes a new head." },
+      { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head, so a new flavour only takes a new head." },
       { id: "air", title: "Airflow and charging", description: "The brand's chart lists airflow control, a mesh coil, USB-C charging and a lanyard in the box." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 15,000 puffs, 18mL, a 600mAh battery, 3% nicotine and USB-C charging." },
     ],
@@ -878,9 +878,9 @@ export const unbrandedProducts: Product[] = [
     name: "86 Bar 20K",
     displayName: "86 BAR 20K",
     searchAliases: ["86 Bar","86bar","86 Bar 20000"],
-    tagline: "A slim black bottle shape with a neon face on the front.",
+    tagline: "A disposable with a display and adjustable airflow.",
     shortDescription:
-      "A slim black disposable shaped like a small bottle, with a neon 86 face on the front and the flavour printed down the side. Pick from the flavours below.",
+      "A disposable with a mesh coil, a display and airflow you can set. Pick from the flavours below.",
     isFlagship: false,
     attributes: {
       portability: "standard",
@@ -916,11 +916,11 @@ export const unbrandedProducts: Product[] = [
     ],
     specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
     features: [
-      { id: "look", title: "Neon print on black", description: "The front carries a neon face with 86, and the flavour name runs down the side in its own colour." },
+      { id: "setup", title: "Mesh coil, display, airflow", description: "Shops that sell it list a mesh coil, a display and airflow you can adjust." },
       { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 20,000 puffs, a 600mAh battery, 3% nicotine and USB-C charging." },
     ],
     compatibility: [],
-    whoIsThisFor: ["You came looking for the 86 Bar by name, or you want a slim high-puff disposable."],
+    whoIsThisFor: ["You came looking for the 86 Bar by name, or you want a high-puff disposable you can adjust."],
     faqs: [],
     relatedProductSlugs: [],
     // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
