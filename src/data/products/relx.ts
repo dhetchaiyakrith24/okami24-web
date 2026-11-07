@@ -31,7 +31,7 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-diva-30k/card-wm4.webp",
+        src: "/assets/products/relx-diva-30k/card-wm5.webp",
         alt: "RELX Diva 30K, lilac top and pink-blue body, front view",
         angle: "front, isolated: studio remake",
         transparentBackground: true,
