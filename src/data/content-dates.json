@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T11:13:41+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:14:21+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -123,8 +123,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-07T11:13:41+07:00",
-      "fp": "d28f12c91a86"
+      "date": "2026-11-07T11:14:21+07:00",
+      "fp": "76b679eccaca"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -143,12 +143,12 @@
       "fp": "f409fb3c3c5a"
     },
     "/brands/uwell": {
-      "date": "2026-11-02T05:34:06+07:00",
-      "fp": "26926b7474aa"
+      "date": "2026-11-07T11:14:21+07:00",
+      "fp": "c2cd551db80a"
     },
     "/brands/voopoo": {
-      "date": "2026-11-02T23:29:24+07:00",
-      "fp": "68859c05121b"
+      "date": "2026-11-07T11:14:21+07:00",
+      "fp": "6c4f55c0f105"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-07T11:13:41+07:00",
-      "fp": "147a760cc0b8"
+      "date": "2026-11-07T11:14:21+07:00",
+      "fp": "305e7324b2f4"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
