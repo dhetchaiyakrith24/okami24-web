@@ -166,6 +166,11 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "IQOS ระบุในหน้า ILUMA i ONE ว่าเครื่องนี้ออกแบบมาให้ใช้กับบุหรี่ TEREA และตารางเทียบรุ่นก็ระบุว่าใช้กับ TEREA",
   "LAMBDA's own product page markets the i8 as compatible with TEREA and SENTIA SMARTCORE sticks. This is LAMBDA's manufacturer claim about its own device — IQOS does not endorse third-party hardware and states TEREA is designed for IQOS ILUMA devices.":
     "LAMBDA ระบุในหน้าสินค้าของตัวเองว่า i8 ใช้กับบุหรี่ TEREA และ SENTIA แบบ SMARTCORE ได้ ข้อนี้เป็นคำของ LAMBDA เกี่ยวกับเครื่องของตัวเอง IQOS ไม่ได้รับรองเครื่องจากแบรนด์อื่น และระบุว่า TEREA ออกแบบมาสำหรับเครื่อง IQOS ILUMA",
+  // Fit gaps of the suggestions round (07/11): both are the maker's own page.
+  "Kardinal says the Quikpro uses a proprietary replaceable 15ml cartridge made for this model, and that neither the Lumina's KSpod nor other brands' cartridges fit it.":
+    "Kardinal ระบุว่า Quikpro ใช้หัวพอตขนาด 15 mL ที่ออกแบบมาสำหรับรุ่นนี้โดยเฉพาะ หัวพอต KSpod ของ Lumina และหัวพอตยี่ห้ออื่นใส่ไม่ได้",
+  "ESKO BAR's SWITCH page describes one system: a replaceable pod on the device, with a single replacement pod in the range.":
+    "ESKO BAR ระบุในหน้า SWITCH ว่าตัวเครื่องใช้หัวพอตแบบเปลี่ยนได้ และมีหัวพอตสำหรับเปลี่ยนแยกชิ้น",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */
