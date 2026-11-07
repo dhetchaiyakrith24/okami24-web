@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import MOVED_IMAGES from "@/data/moved-images.json";
+import { CONTACT } from "@/data/contact";
+import { readSwitches } from "@/lib/commerce/shop-switches";
+import { CLOSED_PAGE, hiddenProductOf, staysOpenWhileClosed } from "@/lib/commerce/shop-switches-rules";
 
 /**
  * Image-fix round 2026-09-30 (owner: "Cloudflare ส่ง JPEG — อยากให้แก้"): make the image optimizer answer WebP
@@ -33,8 +36,30 @@ function movedTo(url: NextRequest["nextUrl"]): NextResponse {
   return response;
 }
 
+function closedPage(): NextResponse {
+  return new NextResponse(CLOSED_PAGE.replace("LINE_URL", CONTACT.lineUrl), {
+    status: 503,
+    headers: { "Content-Type": "text/html; charset=utf-8", "Retry-After": "3600", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" },
+  });
+}
+
+/** The owner's switches (shop-switches-rules.ts), on every page request. Null = carry on. */
+function switched(request: NextRequest): NextResponse | null {
+  const { pathname } = request.nextUrl;
+  const { siteClosed, hidden } = readSwitches();
+  if (siteClosed && !staysOpenWhileClosed(pathname)) return closedPage();
+  if (hiddenProductOf(pathname, hidden)) {
+    // A slug no product has: the page's own not-found answer, status 404.
+    const url = request.nextUrl.clone();
+    url.pathname = "/products/not-a-product";
+    return NextResponse.rewrite(url);
+  }
+  return null;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
+  if (!pathname.startsWith("/_next/image") && !pathname.startsWith("/assets/products/")) return switched(request) ?? NextResponse.next();
   if (pathname.startsWith("/assets/products/")) {
     const target = moved[pathname];
     if (!target) return NextResponse.next();
@@ -57,5 +82,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/_next/image", "/assets/products/:path*"],
+  // The last line = every page, for the owner's switches: not /api and /staff, which must outlive a closed site (slip bot, stock
+  // feed, the way back), not build files, and not anything with a file extension (sitemap, robots, pictures).
+  matcher: ["/_next/image", "/assets/products/:path*", "/((?!api/|staff|_next/|assets/|.*\\.[a-z0-9]+$).*)"],
 };

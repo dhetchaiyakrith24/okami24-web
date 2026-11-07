@@ -2,6 +2,7 @@
 
 import { CONTACT } from "@/data/contact";
 import { AddToCartForm } from "@/components/commerce/AddToCartForm";
+import { useOrderingPaused } from "@/components/commerce/cart-count";
 import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Button } from "@/components/ui/Button";
@@ -55,7 +56,7 @@ function showOptionPicker(): void {
  */
 export function ProductBuyAction({
   available,
-  orderingEnabled,
+  orderingEnabled: orderingBuilt,
   slug,
   variantId,
   productName,
@@ -86,6 +87,9 @@ export function ProductBuyAction({
   pageUrl?: string;
 }) {
   const { dict } = useLocale();
+  // The owner's cart switch reaches this prerendered page after load (cart-count.ts): paused = the LINE button.
+  const paused = useOrderingPaused();
+  const orderingEnabled = orderingBuilt && !paused;
 
   if (!available) {
     return (
