@@ -1175,7 +1175,7 @@ export const voopooProducts: Product[] = [
         alt: "VOOPOO DRAG X2, Sky Blue, screen side",
         angle: "front three-quarter, isolated: the device cut from VOOPOO's own box shot",
         transparentBackground: true,
-        sourceName: "VOOPOO (official shop photo)",
+        sourceName: "VOOPOO",
         sourceUrl: DRAG_X2_PAGE,
       },
     ],
