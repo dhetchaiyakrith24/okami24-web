@@ -23,10 +23,10 @@
     "src/data/guides.ts": "2026-11-06T17:57:59+07:00",
     "src/data/search-aliases.ts": "2026-11-03T06:11:30+07:00",
     "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
+    "src/i18n/faq-copy.ts": "2026-11-07T03:13:17+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T01:01:02+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T10:59:41+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -123,16 +123,16 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-03T01:07:53+07:00",
-      "fp": "1cede5c7e03b"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "3d8b25d1d0c1"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
       "fp": "9fe1b134bd56"
     },
     "/brands/salthub": {
-      "date": "2026-11-03T00:40:32+07:00",
-      "fp": "cdc174643297"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "ef66e05798e0"
     },
     "/brands/ske": {
       "date": "2026-10-18T02:14:56+07:00",
@@ -367,12 +367,12 @@
       "fp": "13e4758d27d3"
     },
     "/products/esko-bar-20k": {
-      "date": "2026-11-02T07:54:44+07:00",
-      "fp": "f08c7ca30e29"
+      "date": "2026-11-07T03:13:17+07:00",
+      "fp": "341cd005a7c7"
     },
     "/products/esko-bar-switch-pod": {
-      "date": "2026-11-02T07:54:44+07:00",
-      "fp": "da4e4cddbc37"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "f0df9a8d5aa0"
     },
     "/products/foli-bar-15k": {
       "date": "2026-10-21T16:59:06+07:00",
@@ -395,8 +395,8 @@
       "fp": "25c3ef11cc0d"
     },
     "/products/infy-pod": {
-      "date": "2026-11-03T01:03:09+07:00",
-      "fp": "383b483b4655"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "ac53b667a0f4"
     },
     "/products/iqosheet-14": {
       "date": "2026-11-03T06:20:45+07:00",
@@ -419,8 +419,8 @@
       "fp": "d53943915329"
     },
     "/products/joiway-f3": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "6a615e7e3b99"
+      "date": "2026-11-07T02:46:27+07:00",
+      "fp": "d963d2cef052"
     },
     "/products/joiway-f4": {
       "date": "2026-11-06T17:49:18+07:00",
@@ -431,20 +431,20 @@
       "fp": "2aaae3df9483"
     },
     "/products/m-bar-10k": {
-      "date": "2026-10-14T01:33:05+07:00",
-      "fp": "a85fffaac86c"
+      "date": "2026-11-07T11:06:06+07:00",
+      "fp": "b77de41a1de1"
     },
     "/products/m-bar-9k": {
-      "date": "2026-11-02T02:45:23+07:00",
-      "fp": "bd60bf972eb8"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "46c8434073e1"
     },
     "/products/m-switch-kit": {
-      "date": "2026-11-02T02:45:23+07:00",
-      "fp": "e1a98daae217"
+      "date": "2026-11-07T11:01:11+07:00",
+      "fp": "009fb2ecd230"
     },
     "/products/m-switch-pod": {
-      "date": "2026-11-02T05:16:42+07:00",
-      "fp": "933b055d9158"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "52c477eb87a6"
     },
     "/products/marbo-10k-clone": {
       "date": "2026-10-27T22:40:18+07:00",
@@ -527,8 +527,8 @@
       "fp": "352ab9d74d30"
     },
     "/products/pod-systems": {
-      "date": "2026-11-02T06:06:07+07:00",
-      "fp": "04357b64339c"
+      "date": "2026-11-07T03:13:25+07:00",
+      "fp": "7ea22bfaaba7"
     },
     "/products/pods-cartridges": {
       "date": "2026-11-02T23:29:24+07:00",
@@ -539,8 +539,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-creator": {
-      "date": "2026-10-27T22:32:42+07:00",
-      "fp": "448025b36145"
+      "date": "2026-11-07T10:59:41+07:00",
+      "fp": "79e69d347753"
     },
     "/products/relx-creator-pod-20k": {
       "date": "2026-11-02T03:47:57+07:00",
