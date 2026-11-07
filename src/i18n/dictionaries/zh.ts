@@ -540,7 +540,7 @@ export const zh: Dictionary = {
     placeErrorAddress: "找不到该地址，请重新选择或添加收货地址。",
     placeErrorShippingChanged: "本订单的运费已变更，新的金额显示在上方，请确认后再次提交。",
     noteToggle: "给店铺的备注（选填）",
-    notePlaceholder: "例如：方便收货的时间",
+    notePlaceholder: "例如：地址附近的标志物或其他地址说明",
     noteHint: "团队会在订单中看到此备注 · 最多 200 个字符",
     stepsLabel: "下单步骤",
     stepPhone: "手机号",

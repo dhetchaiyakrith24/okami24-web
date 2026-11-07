@@ -576,3 +576,17 @@ Read again with the same method: GSC + real page **09/11 · 16/11 · 30/11** (de
 - Same window, other lines: #1095 (14 switch pods → switch-pods, merged 02/11 03:47 Thai time, 21a25d74) · details-0211 product
   copy (#1114 merged 02/11 05:34, more to come) — keep in mind when reading 09/11.
 - Before/after shots: `_incoming/seo-0211/b2/pairs/` (not in git).
+
+## Weekly numbers of round SEO full (batch 7, 07/11)
+
+Tool: `scripts/seo-weekly-numbers.js` (its head says what each number is). Recovery levels = GSC-AUDIT 07/11 section 8.
+Task okami24-seo-weekly should read these every Saturday: its wording is not changed yet (the app refused the edit 07/11; proposal in the round's shared notes).
+
+| measure | how | first reading, data to 04/11 [checked 07/11] |
+|---|---|---|
+| Rank of every key | the REAL GOOGLE RESULT PAGE method above; tool read 07/11 = `docs/cloud-results/seo-keys-0711.tsv` | website in the mobile top 20 for 1 of 234 keys |
+| Seen and clicked | Search Console export, last 7 days with data vs the 7 before | 20.4 impressions a day vs 171.0 · 8.7 clicks a day vs 20.4 · 179 of 182 pages in Google · recovery: 0 of 7 days at the halfway level |
+| Carts and LINE clicks | `--shop` in the Render Web Shell | not read yet: needs the Render shell |
+| Repeat buyers | `--shop`, site orders only; LINE and warehouse orders are not in that database | not read yet: needs the Render shell |
+
+Not measurable: image search in the export (read the Search Console screen) · repeat buyers over LINE · who searched before buying. No rank or date is promised from these numbers.
