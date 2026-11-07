@@ -181,6 +181,17 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
     check(`"mbar" finds every "M Bar" product (${mBar.length})`, mBar.length > 0 && missing(mBar, search("mbar")).length === 0, `missing: ${missing(mBar, search("mbar")).join(",") || "none"}`);
   }
 
+  // ---- 4b. Letters that only meet across a word boundary are not a match (visitor walk 08/11:
+  //          "ks" listed Caliburn and RELX first, because "black silver" run together holds it) ----
+  {
+    const ks = all.filter((e) => /\bks\b/i.test(e.hit.name)).map((e) => e.hit.slug);
+    const got = search("ks");
+    check(`"ks" lists the KS products (${ks.length}) and nothing else`, ks.length > 0 && sameSet(got, ks), `got: ${got.join(",")}`);
+    check(`"ks pod" stays on KS products`, search("ks pod").length > 0 && search("ks pod").every((s) => ks.includes(s)), search("ks pod").join(","));
+    check(`a 2-letter token needs a word start: "relx" is not found by "lx"`, !search("lx").includes("relx-infinity-2-plus"), search("lx").join(","));
+    check(`joined words from a word start still match: "mbar" and "drag6"`, search("mbar").length > 0 && search("drag6").includes("drag-6"), "");
+  }
+
   // ---- 5. Every token must match (AND), and a word order is not required ----
   check(`"argus g4 mini" narrows to argus-g4-mini`, sameSet(search("argus g4 mini"), ["argus-g4-mini"]), search("argus g4 mini").join(","));
   check(`"mini argus" = "argus mini"`, sameSet(search("mini argus"), search("argus mini")), "");
