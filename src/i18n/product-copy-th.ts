@@ -956,6 +956,73 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
+  "smok-nord-5": {
+    whoIsThisFor: {
+      0: "กำลังหา SMOK Nord 5 รุ่นนี้โดยเฉพาะ และอยากดูสเปกกับสีทั้งหมดที่ SMOK ทำออกมา",
+    },
+    specifications: {
+      battery: "2000mAh ในตัวเครื่อง",
+      coils: "RPM 3 Meshed ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.23Ω",
+      display: "OLED 0.69 นิ้ว",
+      charging: "USB-C สูงสุด 1.2A · ชุดสีหนังสูงสุด 1.5A",
+    },
+    features: {
+      airflow: {
+        title: "ปุ่มเลื่อนปรับลม",
+        description: "เลื่อนปุ่มเพื่อตั้งปริมาณลมได้ตามที่ชอบ โดยลมเข้าจากทั้งสองข้างของเครื่อง",
+      },
+      power: {
+        title: "ปรับได้ 5 ถึง 80 วัตต์",
+        description: "ตั้งได้ตั้งแต่ 5 ถึง 80 วัตต์ ให้เข้ากับคอยล์และแนวการสูบ",
+      },
+      display: {
+        title: "จอ OLED 0.69 นิ้ว",
+        description: "จอแสดงค่าการทำงาน และไฟ LED จะกะพริบ 5 ครั้งเมื่อเครื่องตรวจพบการช็อต",
+      },
+      lock: {
+        title: "ตัวล็อกคอยล์ในหัวพอต",
+        description: "ตัวล็อกในหัวพอตยึดคอยล์ไว้ น้ำยาจึงไม่ไหลออกแม้คอยล์หลุดโดยไม่ตั้งใจ",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง หัวพอต Nord 5 ที่ใส่คอยล์ RPM 3 Meshed 0.15 โอห์มมาแล้ว คอยล์สำรอง 0.23 โอห์ม สาย USB-C และคู่มือ",
+      },
+    },
+    tagline: "Nord 5 แบต 2000mAh ปรับได้ 5 ถึง 80 วัตต์ หัวพอต 5mL ใช้คอยล์ RPM 3",
+    shortDescription:
+      "SMOK Nord 5 มีแบตในตัว 2000mAh ปรับได้ 5–80 วัตต์ หัวพอตจุ 5mL ใช้คอยล์ RPM 3 มีปุ่มเลื่อนปรับลมและจอ OLED 0.69 นิ้ว",
+  },
+  "smok-rpm-5": {
+    whoIsThisFor: {
+      0: "กำลังหา SMOK RPM 5 รุ่นนี้โดยเฉพาะ และอยากดูตัวเลขของชุดนี้กับสีทั้งหมดที่ SMOK ทำออกมา",
+    },
+    specifications: {
+      coils: "RPM 3 Meshed ในกล่องมี 0.15Ω (ใส่มาแล้ว) และ 0.23Ω",
+      display: "TFT 0.96 นิ้ว",
+      charging: "USB-C สูงสุด 1.4A",
+    },
+    features: {
+      capacity: {
+        title: "หัวพอตจุ 6.5mL",
+        description: "SMOK เพิ่มความจุน้ำยาของตระกูล RPM ขึ้นมาเป็น 6.5mL ในรุ่นนี้",
+      },
+      power: {
+        title: "ปรับได้ถึง 80 วัตต์",
+        description: "ชุดนี้ปรับได้ตั้งแต่ 5 ถึง 80 วัตต์ และใช้แบต 2000mAh",
+      },
+      display: {
+        title: "จอ TFT 0.96 นิ้ว",
+        description: "จอแสดงค่าการทำงาน และเปลี่ยนสีธีมหน้าจอได้",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง หัวพอต RPM 5 ที่ใส่คอยล์ RPM 3 Meshed 0.15 โอห์มมาแล้ว คอยล์สำรอง 0.23 โอห์ม สาย USB-C และคู่มือ",
+      },
+    },
+    tagline: "RPM 5 แบต 2000mAh ปรับได้ถึง 80 วัตต์ หัวพอต 6.5mL",
+    shortDescription:
+      "ชุด SMOK RPM 5 มีแบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอตจุ 6.5mL ใช้คอยล์ RPM 3 Meshed และมีจอ TFT 0.96 นิ้วที่เปลี่ยนสีธีมได้",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
