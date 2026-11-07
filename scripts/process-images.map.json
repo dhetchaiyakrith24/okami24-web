@@ -14521,6 +14521,29 @@
   "fileName": "variant-ice-tieguanyin-v2.webp"
  },
  {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-device-black-wave-front-view.png",
+  "slug": "relx-artisan-plus",
+  "role": "variant",
+  "id": "black-wave",
+  "fileName": "variant-black-wave.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 5000x5000)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx/relx-artisan-plus-vape-device-black-wave-with-box.png",
+  "slug": "relx-artisan-plus",
+  "role": "detail",
+  "id": "box",
+  "fileName": "detail-box.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-artisan-plus-device, used as it is, no AI, no mark (round popular models 07/11, 1226x1224)"
+ },
+ {
   "source": "_incoming/popular-0711/relx/relx-ultra-vape-kit-watermelon-steel-silver.png",
   "slug": "relx-ultra-kit",
   "role": "card",

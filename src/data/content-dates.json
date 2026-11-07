@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-10-29T23:58:41+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-07T11:13:33+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-07T11:13:41+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -123,8 +123,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-07T11:13:33+07:00",
-      "fp": "ebfb1a93392b"
+      "date": "2026-11-07T11:13:41+07:00",
+      "fp": "d28f12c91a86"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -187,8 +187,8 @@
       "fp": "1fc4ff80d272"
     },
     "/products": {
-      "date": "2026-11-07T11:13:33+07:00",
-      "fp": "b74aeb293d93"
+      "date": "2026-11-07T11:13:41+07:00",
+      "fp": "147a760cc0b8"
     },
     "/products/argus-g3-mini": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -538,6 +538,10 @@
       "date": "2026-10-20T00:22:12+07:00",
       "fp": "1ab2da0b0561"
     },
+    "/products/relx-artisan-plus": {
+      "date": "2026-11-07T11:13:41+07:00",
+      "fp": "00b8bfe8bd10"
+    },
     "/products/relx-creator": {
       "date": "2026-10-27T22:32:42+07:00",
       "fp": "448025b36145"
@@ -583,8 +587,8 @@
       "fp": "123a8693a780"
     },
     "/products/switch-pods": {
-      "date": "2026-11-07T11:13:33+07:00",
-      "fp": "05fc262cb342"
+      "date": "2026-11-07T11:13:41+07:00",
+      "fp": "111471e949d7"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-10-27T22:32:42+07:00",

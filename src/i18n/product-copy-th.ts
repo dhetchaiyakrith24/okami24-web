@@ -834,6 +834,32 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "ชุดเริ่มต้นของ RELX มีตัวเครื่องอะลูมิเนียมอัลลอยสี Steel Silver 10 วัตต์ แบต 380mAh พร้อมหัวพอต Ultra 1 ชิ้นตามกลิ่นบนกล่อง ชาร์จผ่าน USB-C และ RELX ระบุว่า 30 นาทีได้ 80%",
   },
+  "relx-artisan-plus": {
+    whoIsThisFor: {
+      0: "กำลังหา RELX Artisan อยู่ และอยากดูสเปกของรุ่นปัจจุบัน",
+    },
+    specifications: {
+      indicator: "ไฟบอกแบต 4 ระดับ",
+      charging: "USB-C",
+    },
+    features: {
+      upgrade: {
+        title: "ต่างจาก Artisan รุ่นก่อนตรงไหน",
+        description: "รุ่นนี้เพิ่มจาก 6.5 วัตต์เป็น 8 วัตต์ และเพิ่มแบตจาก 380mAh เป็น 440mAh",
+      },
+      indicator: {
+        title: "ไฟบอกแบต 4 ระดับ",
+        description: "แต่ละขีดเท่ากับ 25% และเมื่อเหลือขีดเดียว RELX แนะนำให้ชาร์จได้แล้ว",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ในกล่องมีตัวเครื่อง สาย USB-C และคู่มือ ส่วนหัวพอตแยกต่างหาก",
+      },
+    },
+    tagline: "เครื่อง RELX ทรงโค้งเว้า 8 วัตต์ แบต 440mAh",
+    shortDescription:
+      "เครื่องระบบสวิตช์ของ RELX ทรงโค้งเว้าสี Black Wave 8 วัตต์ แบต 440mAh ชาร์จผ่าน USB-C มีไฟบอกแบต 4 ระดับ และใช้ได้กับหัวพอต RELX Pod กับ RELX Pod Pro",
+  },
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",

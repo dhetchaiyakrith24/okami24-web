@@ -3,6 +3,7 @@ import type { Product } from "@/types/catalog";
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
 const ULTRA_POD_PAGE = "https://relxnow.com/products/relx-maxgo-ultra-pod";
 const ULTRA_KIT_PAGE = "https://relxnow.com/products/relx-ultra-kit";
+const ARTISAN_PLUS_PAGE = "https://relxnow.com/products/relx-artisan-plus-device";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}-v2-wm3.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
 const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
@@ -129,6 +130,74 @@ export const relxProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["relx-ultra-pod", "relx-infinity-2-plus"],
     sourceUrls: [ULTRA_KIT_PAGE],
+  },
+  {
+    // Round popular models 07/11: searched ("relx artisan"), not in the warehouse, so no price and no cart (BSOT §4). Facts and
+    // pictures: RELX's own store. The older Artisan (nine finishes, every one sold out at RELX) has no page here: the key lands on this one.
+    id: "relx-artisan-plus",
+    slug: "relx-artisan-plus",
+    brandId: "relx",
+    familyId: "relx-artisan",
+    categoryId: "switch-pods",
+    systemType: "pod-kit",
+    name: "RELX Artisan Plus",
+    displayName: "RELX ARTISAN PLUS",
+    searchAliases: ["RELX Artisan", "Artisan Plus"],
+    tagline: "RELX's sculpted device, now at 8W and 440mAh.",
+    shortDescription:
+      "A pod device from RELX with a sculpted body in Black Wave. It runs at 8W on a 440mAh battery, charges over Type-C and shows the battery in four steps. It takes RELX Pod and RELX Pod Pro.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 440,
+      wattageMax: 8,
+      screenType: "led-indicator",
+      portability: "compact",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-artisan-plus/card.webp",
+        alt: "RELX Artisan Plus, Black Wave, front view",
+        angle: "front, isolated",
+        transparentBackground: true,
+        sourceName: "RELX (official store photo)",
+        sourceUrl: ARTISAN_PLUS_PAGE,
+      },
+      {
+        kind: "official-photo",
+        role: "detail",
+        src: "/assets/products/relx-artisan-plus/detail-box.webp",
+        alt: "RELX Artisan Plus, Black Wave, beside its retail box",
+        angle: "device and retail box",
+        transparentBackground: true,
+        sourceName: "RELX (official store photo)",
+        sourceUrl: ARTISAN_PLUS_PAGE,
+      },
+    ],
+    colorVariants: [
+      { id: "black-wave", name: "Black Wave", swatchHex: "#2b2b2e", image: { src: "/assets/products/relx-artisan-plus/variant-black-wave.webp", alt: "RELX Artisan Plus, Black Wave" } },
+    ],
+    specifications: [
+      { key: "power", label: "Max output", value: "8W", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "battery", label: "Battery", value: "440mAh", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "charging", label: "Charging", value: "Type-C", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "indicator", label: "Display", value: "4-stage battery indicator", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+      { key: "pods", label: "Pod platform", value: "RELX Pod · RELX Pod Pro", sourceStatus: "verified", sourceUrl: ARTISAN_PLUS_PAGE },
+    ],
+    features: [
+      { id: "upgrade", title: "What changed from the Artisan", description: "Power goes from 6.5W to 8W, and the battery from 380mAh to 440mAh." },
+      { id: "indicator", title: "4-stage battery indicator", description: "Each bar stands for 25%. At one bar left, RELX says it's time to charge." },
+      { id: "in-the-box", title: "What's in the box", description: "The device, a Type-C cable and the manual. Pods are separate." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Pod · RELX Pod Pro", note: "Pods from RELX's store page." }, typeC],
+    whoIsThisFor: ["You're looking for the RELX Artisan by name and want the current model's numbers."],
+    faqs: [],
+    relatedProductSlugs: ["relx-infinity-2-plus", "relx-ultra-pod"],
+    sourceUrls: [ARTISAN_PLUS_PAGE],
   },
   {
     id: "relx-smash-go-12k",

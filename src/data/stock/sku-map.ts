@@ -403,6 +403,9 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     watermelon: null,
     "sunrise-lemon-lime": null,
   } },
+  "relx-artisan-plus": { parent: null, options: {
+    "black-wave": null,
+  } },
   "relx-smash-go-12k": { parent: "Disposable-39", options: {
     "apple": "Disposable-39-6",
     "cola": "Disposable-39-7",
