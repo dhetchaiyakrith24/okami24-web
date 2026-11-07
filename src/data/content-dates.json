@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T03:48:09+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T04:16:19+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -583,12 +583,12 @@
       "fp": "69cc48baf421"
     },
     "/products/relx-pod": {
-      "date": "2026-11-08T03:48:09+07:00",
-      "fp": "7d9128d20e3c"
+      "date": "2026-11-08T04:16:19+07:00",
+      "fp": "a82b3a7694f1"
     },
     "/products/relx-pod-pro": {
-      "date": "2026-11-08T03:48:09+07:00",
-      "fp": "c75b9515cfcf"
+      "date": "2026-11-08T04:16:19+07:00",
+      "fp": "cc0beed4e234"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-07T11:43:43+07:00",
