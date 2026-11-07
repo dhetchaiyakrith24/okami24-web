@@ -4,7 +4,8 @@
  *   2. every puffs, mL and mAh figure is stated by a VERIFIED row of that product; a model with no verified row stays empty;
  *   3. the lookalike is in no pick: no chooser group, no brand row (HANDOFF §18);
  *   4. every priced model sits in exactly one budget band, every model with verified puffs in exactly one puff group;
- *   5. the copy holds no digit: figures reach the page only through the {placeholders}, in all three languages.
+ *   5. the copy holds no digit: figures reach the page only through the {placeholders}, in all three languages;
+ *   6. a sold-out model is in no chooser group, by the build's stock or the live answer, and stays in the table of every model.
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
@@ -13,7 +14,8 @@ import { getProductsByCategory } from "@/data/products";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { getPublishedProductsByCategory } from "@/data/shipnity-seed/storefront-bridge";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
-import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
+import { buyableRows, disposableChooser } from "@/lib/disposable-chooser";
+import { disposableBrands, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { verifiedRows } from "@/lib/verified-specs";
 
 interface Result {
@@ -63,6 +65,23 @@ for (const locale of ["th", "en", "zh"] as const) {
   const digits = [...Object.values(c?.chooser ?? {}), ...Object.values(c?.brandTable ?? {})].filter((s) => /\d/.test(s.replace(/\/guides\/[a-z0-9-]+/g, "")));
   check(`${locale}: no digit typed in the copy`, digits.length === 0, digits.join(" | "));
 }
+
+const inChooser = (rows: typeof lineup) => {
+  const d = disposableChooser(rows);
+  return new Set([...d.puffGroups, ...d.budgetGroups].flatMap((g) => g.rows.map((r) => r.slug)));
+};
+const sellable = lineup.find((r) => r.inStock && r.price !== null && !r.listOnly && r.puffs !== null);
+const soldOut = lineup.find((r) => !r.inStock && r.price !== null && !r.listOnly);
+check("the lineup holds a model of each state to test with", sellable !== undefined && soldOut !== undefined);
+if (sellable && soldOut) {
+  const built = inChooser(buyableRows(lineup, null));
+  check("a sold-out model is in no group, by the build's stock", !built.has(soldOut.slug) && built.has(sellable.slug));
+  const live = inChooser(buyableRows(lineup, { [sellable.slug]: { o: true, s: false }, [soldOut.slug]: { o: false, s: true } }));
+  check("the live answer overrides the build, both ways", live.has(soldOut.slug) && !live.has(sellable.slug));
+  check("the table of every model keeps the sold-out model", disposableCompareRows(lineup).some((r) => r.slug === soldOut.slug));
+}
+const nothing = disposableChooser(buyableRows(lineup, Object.fromEntries(lineup.map((r) => [r.slug, { o: true, s: false }]))));
+check("nothing to buy: no groups and no lowest price, so the block hides", nothing.minPrice === null && nothing.puffGroups.length === 0 && nothing.budgetGroups.length === 0);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

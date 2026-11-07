@@ -1,6 +1,9 @@
 import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
+import { NEVER_SUGGEST } from "@/data/similar-models";
 import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
+import { legacyCardStock, publishedCardStock, type CardStockChanges } from "@/lib/stock/card-stock";
 import { verifiedAttributes } from "@/lib/verified-specs";
 
 export interface FinderAnswers {
@@ -142,13 +145,19 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
  * device types, so a consumable can never match, and listing one under a device question would
  * answer a question the customer didn't ask.
  */
-export function unscoredCatalogMatches(answers: FinderAnswers): CatalogItem[] {
+export function unscoredCatalogMatches(answers: FinderAnswers, changes?: CardStockChanges | null): CatalogItem[] {
   if (answers.format === "no-preference") return [];
-  return allCatalogItems().filter((item) => item.origin === "product-master" && item.systemType === answers.format);
+  return allCatalogItems().filter((item) => {
+    if (item.origin !== "product-master" || item.systemType !== answers.format || NEVER_SUGGEST.has(item.slug)) return false;
+    const published = getPublishedProduct(item.slug);
+    return published !== undefined && (changes?.[item.slug]?.s ?? publishedCardStock(published).inStock);
+  });
 }
 
-export function matchProducts(answers: FinderAnswers): { matches: FinderMatch[]; alternatives: FinderMatch[] } {
+/** Only what a visitor can buy today (owner 07/11, the rule of the cart's suggestions): `changes` is the /api/stock answer, the build's stock until it arrives. */
+export function matchProducts(answers: FinderAnswers, changes?: CardStockChanges | null): { matches: FinderMatch[]; alternatives: FinderMatch[] } {
   const scored = allProducts
+    .filter((product) => !NEVER_SUGGEST.has(product.slug) && (changes?.[product.slug]?.s ?? legacyCardStock(product).inStock))
     .map((product) => {
       const { score, reasons } = scoreProduct(product, answers);
       return { product, score, reasons };

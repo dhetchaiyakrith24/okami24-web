@@ -66,7 +66,7 @@ import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { DisposableChooser, DisposableChooserJump } from "@/components/catalog/DisposableChooser";
-import { disposableBrands, disposableChooser, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
+import { disposableBrands, disposableCompareRows, disposableLineup } from "@/lib/disposable-lineup";
 import { CATEGORY_GUIDE_COPY } from "@/i18n/category-guide-copy";
 import { categorySpecRows } from "@/lib/category-spec-table";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -263,7 +263,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)}
           />
           <PilotProductSection products={pilotProducts} />
-          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} data={disposableChooser(lineup)} />}
+          {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} rows={lineup} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
         {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}
@@ -346,13 +346,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
-  // No price = the warehouse has never had it: nothing to buy here, so the closest models we do have sit right under the head.
-  const similar = legacySellingPrice === null ? similarInStock(product.slug) : [];
   // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
   // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
   // its own `availability` (no SKU, stock round batch 2b).
   const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
   const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
+  // Nothing to buy at build time (no price, or every option out): the closest models we do have sit right under the head.
+  // A page built with stock asks for them only if the live stock empties it (SimilarInStock).
+  const similar = legacySellingPrice === null || legacyAllSoldOut ? similarInStock(product.slug) : [];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -394,7 +395,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
-      {similar.length > 0 && <SimilarInStock items={similar} />}
+      <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>
           <ProductEditorialMain product={product} sibling={editorialSibling} copy={editorial.copy} copyTh={copyTh} siblingCopyTh={editorialSibling ? PRODUCT_COPY_TH[editorialSibling.slug] : undefined} />
@@ -425,7 +426,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
         </>
       )}
-      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} />
+      <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} similarSlugs={similar.map((item) => item.slug)} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
       <RelatedArticles articles={relatedArticlesForLegacy(product)} otherLocaleArticles={relatedArticlesForLegacy(product, { skipThaiOnly: true })} />
