@@ -8,6 +8,9 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 // (production-readiness audit: reused here instead of a duplicate pilot-only component).
 export function SourceNote({ product }: { product: { sourceUrls: string[] } }) {
   const { dict } = useLocale();
+  // A model with no maker page carries our own address only: nothing to cite.
+  const urls = product.sourceUrls.filter((url) => !url.includes("okami24.store"));
+  if (urls.length === 0) return null;
   return (
     <section className="bg-surface-1 py-8">
       <Container>
@@ -16,7 +19,7 @@ export function SourceNote({ product }: { product: { sourceUrls: string[] } }) {
             {dict.product.sourceNoteLabel}
           </summary>
           <ul className="mt-3 flex flex-col gap-1.5">
-            {product.sourceUrls.map((url) => (
+            {urls.map((url) => (
               <li key={url} className="break-all">
                 <a href={url} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-foreground-muted hover:underline">
                   {url}
