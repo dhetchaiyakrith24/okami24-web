@@ -14981,5 +14981,29 @@
   },
   "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/vazer/vazer-cut.png",
+  "slug": "vazer-reload-15k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits + 2 for the flavour line, jobs d46484d0, e836d6de), studio remake",
+   "reference": "Shop poster, ezy-pods.net vazer-15000-puffs-device (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-all.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/86/bar86-cut.png",
+  "slug": "86-bar-20k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana 2K 1:1 (MCP generate_image, 2 credits, job 5d6d096b; first try 87a194ed failed), studio remake",
+   "reference": "Shop poster crop, 7pods.shop S__5218386_0 (reference only, never on the site); no maker page exists",
+   "fidelitySheet": "side-session notes popular-compare-all.png"
+  },
+  "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
+  "fileName": "card.webp"
  }
 ]
