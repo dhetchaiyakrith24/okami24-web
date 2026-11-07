@@ -6,6 +6,7 @@
  */
 export const IN_STOCK_ALTERNATIVES: Record<string, string[]> = {
   "caliburn-g3": ["zero-pro", "relx-creator", "vazer-one-pod"],
+  "caliburn-g3-lite": ["relx-creator", "zero-pro", "vazer-one-pod"],
   "drag-x": ["zero-pro", "next-pro-2-beyond", "relx-creator"],
   "relx-diva-30k": ["relx-lumi-18k", "relx-smash-go-12k", "sup-zero-22k"],
   "relx-sparta-20k": ["relx-lumi-18k", "sup-zero-22k", "relx-smash-go-12k"],
