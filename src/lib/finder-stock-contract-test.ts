@@ -2,12 +2,14 @@
  * OKami24 — Finder results hold only what a visitor can buy (owner 07/11, the rule of the cart's suggestions):
  *   1. by the build's stock, no sold-out or unpriced product in the matches, the alternatives or the unranked list;
  *   2. the live answer overrides the build, both ways;
- *   3. nothing to buy = empty lists, never a sold-out card to fill the page.
+ *   3. nothing to buy = empty lists, never a sold-out card to fill the page;
+ *   4. NEVER_SUGGEST (the lookalike, HANDOFF §18) is in no list, even when in stock.
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
 
 import { allProducts } from "@/data/products";
+import { NEVER_SUGGEST } from "@/data/similar-models";
 import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { matchProducts, unscoredCatalogMatches, type FinderAnswers } from "@/lib/finder";
 import { legacyCardStock, publishedCardStock, type CardStockChanges } from "@/lib/stock/card-stock";
@@ -46,6 +48,11 @@ if (back) {
   const everythingElseOut = Object.fromEntries(allProducts.filter((p) => p.slug !== back.slug).map((p) => [p.slug, { o: true, s: false }]));
   check("live: a model back in stock joins the results", allSlugs(a, { ...everythingElseOut, [back.slug]: { o: false, s: true } }).includes(back.slug));
 }
+
+const everyList = formats.flatMap((f) => [...allSlugs(answerSet(f)), ...unscoredCatalogMatches(answerSet(f)).map((i) => i.slug)]);
+const liveBack = Object.fromEntries([...NEVER_SUGGEST].map((slug) => [slug, { o: false, s: true }]));
+const everyListLive = formats.flatMap((f) => [...allSlugs(answerSet(f), liveBack), ...unscoredCatalogMatches(answerSet(f), liveBack).map((i) => i.slug)]);
+check("the lookalike is in no list, even in stock", ![...everyList, ...everyListLive].some((slug) => NEVER_SUGGEST.has(slug)));
 
 const allOut = Object.fromEntries(allProducts.map((p) => [p.slug, { o: true, s: false }]));
 check("nothing to buy: empty lists", allSlugs(a, allOut).length === 0);
