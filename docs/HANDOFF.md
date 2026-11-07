@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 07/11 ~03:30. Main chat holds 5 children (owner allowed them, remove this block when they end). Re-read this + TEAM_RULES.
+Updated 07/11 ~12:45. Main chat holds children (owner allowed them, remove this block when they end). Re-read this + TEAM_RULES.
 CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -77,14 +77,11 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
   - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
     Owner 07/11: "รันเลยยาวๆ แล้วเขียนจดลงบันทึกรอตรวจทีเดียว", "จัดการงานแทนพี่เลย". Review list = รอพี่ตรวจ 117-121. Chrome allowed for research. New pictures not made before are allowed through skill product-images; comparison sheets still wait for the owner. 3412 queue: seo-full, cart-instock, popular-models.
-    watermark-gen4 local_73ffb3ed, branch `claude/watermark-gen5-sitewide` (PR 1269 closed): generation 5, spacing 1.7, pattern shifted right, 1,030 pictures, last rename. Deletes -wm3 and -wm4 from public, so seo-full's 301s from the old-names table in `scripts/data/` must ship in the same deploy.
-    cart-instock local_fe42b3f3, branch `claude/cart-suggest-instock-8eba95`: suggestions in stock only, order = compatible (Argus G4 → coil, e-liquid) → same category → other choices.
-    seo-full local_61acafdd, round SEO full: key table v1 `side-session-notes/local_de553e7b.../seo-keys-v1-0711.md`; 1-2 days = 20 pages, 10 best sellers, top articles, the rest queued.
-    popular-models local_f36f63b5: real pages for models we do not stock. backoffice local_4d9c3c59, round file on main: batches 3-5 (login, DB) wait for the owner's yes; batch 1 waits for the bill after Saturday 13:00.
+    Merged and live 07/11: 1280 generation 5 + 301s · 1282 suggestions · 1284 compare · 1285 titles · 1275 no-price pages. Docs and scripts: 1274, 1276, 1279, 1286, 1293. Open: 1294 SEO content (seo-full-2, 2 articles held) · 1281, 1287-1292 models (popular-models-2) · 1283 owner section (draft, checker PASS, waits for the owner, 1278 closes with it). seo-full-2 is past 70%: a new chat needs the owner's own word.
+    Children now: seo-full-2 local_0e004518, notes `seo-full-2-handover-0711.md` · popular-models-2 local_00d727d5, notes `popular-models-handover.md`, both in the group's notes folder. Round files in docs/rounds. Back-office batches 1, 6, 7 wait (bill · answer · 【แตะได้】).
   - Done 07/11: Pop Up ฿219 label ฿229 badge 5% · Freebase ฿169 · Saltnic 9 · nexBar 15K pictures · line-candidates. Owner: new labels use round badges 5-50 (BSOT §5).
   - DataForSEO: account verified, credit left $0.02, top-up minimum $50 needs the owner, read the full terms first. The owner's API password was shown in chat and reset failed: ask again later. Friday told support the shop sells pods; keep that short next time.
   - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
-  - Watermark: owner 07/11 = every picture gen 4 (text only). Child watermark-gen4, PR 1269, covers the 968 gen-3 files; Friday merges.
   - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
   - OWNER-REQUEST AUDIT 06/11 (report `_incoming/house-20261106/owner-audit-0611.md`). Closed 06/11: picture source audit (1,358 files shown on 182 pages: 1,029 marked, all OKami24 renders by their records, 105 of them traced by folder sample only; 329 unmarked = maker art; no shop picture shown as it is, IMAGE_SPEC 'รูปร้านอื่น') · unmarked orphans · SUP ZERO guide copy.
     Brand completeness closed: ESKO, JOIWAY F3 + F4, TFIT 10 flavours, INFY POD match the maker. No official list exists to check: INFY PLUS 2.5ML, INFY 20K. IQOS read from foreign pages only (no Thai page, 404): Leaf Green vs Spring Green on ILUMA i ONE unproven. JOIWAY lists F4 PLUS (16 pairs), not in our catalog and not in the warehouse list.
