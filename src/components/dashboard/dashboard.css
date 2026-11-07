@@ -1,0 +1,105 @@
+/*
+ * The dashboard look (owner 08/11, direction "Ember Vapour"): ember vapour behind smoked glass on the site's graphite.
+ * Loaded only by pages that use these parts. The glass is painted, not blurred: backdrop-filter on every card is slow on a
+ * phone, and small Thai needs a calm surface, so a card is an opaque-enough fill and only the sticky switch blurs.
+ */
+.dash-vapour {
+  position: fixed;
+  inset: -20% -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 26% at 74% 12%, rgb(255 106 44 / 0.3), transparent 72%),
+    radial-gradient(42% 30% at 18% 34%, rgb(255 131 71 / 0.12), transparent 74%),
+    radial-gradient(50% 30% at 82% 78%, rgb(255 106 44 / 0.1), transparent 76%);
+  animation: dash-drift 24s ease-in-out infinite alternate;
+}
+
+.dash-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgb(255 255 255 / 0.07);
+  border-top-color: rgb(255 255 255 / 0.17);
+  border-radius: 1.25rem;
+  background: rgb(23 24 27 / 0.84);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.34);
+}
+
+.dash-card-open {
+  border-style: dashed;
+  border-color: rgb(255 131 71 / 0.5);
+  box-shadow: none;
+}
+
+.dash-rows > * + * {
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.dash-switch {
+  position: sticky;
+  top: 4.75rem;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+  background: rgb(14 14 16 / 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.dash-panel {
+  animation: dash-fade 0.2s ease-out both;
+}
+
+.dash-rise {
+  animation: dash-rise 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.dash-rise:nth-child(2) { animation-delay: 0.05s; }
+.dash-rise:nth-child(3) { animation-delay: 0.1s; }
+.dash-rise:nth-child(n + 4) { animation-delay: 0.15s; }
+
+.dash-line {
+  stroke-dasharray: 1;
+  animation: dash-draw 0.9s ease-out both;
+}
+
+.dash-bar {
+  transform-origin: bottom;
+  animation: dash-grow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes dash-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes dash-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes dash-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes dash-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes dash-drift {
+  from { transform: translate3d(-2%, -1%, 0); }
+  to { transform: translate3d(3%, 2%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-vapour,
+  .dash-panel,
+  .dash-rise,
+  .dash-line,
+  .dash-bar {
+    animation: none;
+  }
+}
