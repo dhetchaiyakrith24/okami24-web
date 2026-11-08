@@ -45,6 +45,10 @@ check("first order = the oldest", card.firstOrderAt === "2026-10-25T05:00:00Z");
 check("last order = the newest, whatever its status", card.lastOrder?.orderNumber === "D");
 check("contact = recipient of the newest PAID order", card.contact?.name === "ล่าสุดที่จ่าย");
 check("same sign-in shown once", card.members.length === 1);
+const gift = { ...order("G", "shipped", 1, "2026-11-05T00:00:00Z", "เพื่อนที่ได้ของขวัญ"), recipientPhone: "0899999999" };
+const self = order("H", "completed", 1, "2026-11-01T00:00:00Z", "ตัวเอง");
+check("name = newest recipient with the checkout phone, not someone they sent a gift to", customerCard("080-000-0001", [gift, self], []).name === "ตัวเอง");
+check("name falls back to the last contact when no recipient has the checkout phone", customerCard("0999999999", [order("F", "shipped", 1, "2026-11-01T00:00:00Z", "เพื่อน")], []).name === "เพื่อน");
 
 const unpaidOnly = customerCard("0800000000", [order("E", "pending_payment", 200, "2026-11-08T05:00:00Z", "รอ")], []);
 check("no paid order: contact falls back to the newest order", unpaidOnly.contact?.name === "รอ" && unpaidOnly.paidTotal === 0);

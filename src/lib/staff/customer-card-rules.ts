@@ -30,6 +30,8 @@ export interface CardOrder {
 
 export interface CustomerCard {
   phone: string;
+  /** What to call the customer: the newest recipient who has the checkout phone (the buyer themself), else the last contact. */
+  name: string;
   /** Newest first. */
   orders: CardOrder[];
   paidCount: number;
@@ -48,6 +50,8 @@ export interface CustomerCard {
 const PAID: readonly string[] = CONFIRMED_ORDER_STATUSES;
 const WAITING: readonly string[] = ["pending_payment", "payment_submitted", "awaiting_verification"];
 
+const digits = (s: string) => s.replace(/\D/g, "");
+
 export function isPaid(status: OrderStatus): boolean {
   return PAID.includes(status);
 }
@@ -57,8 +61,10 @@ export function customerCard(phone: string, orders: CardOrder[], members: { prov
   const paid = sorted.filter((o) => isPaid(o.status));
   const contactFrom = paid[0] ?? sorted[0] ?? null;
   const seen = new Set<string>();
+  const self = sorted.find((o) => digits(o.recipientPhone) === digits(phone));
   return {
     phone,
+    name: self?.recipientName ?? contactFrom?.recipientName ?? phone,
     orders: sorted,
     paidCount: paid.length,
     paidTotal: paid.reduce((n, o) => n + o.total, 0),

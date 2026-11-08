@@ -40,14 +40,14 @@ function Parcel({ p }: { p: ParcelRow }) {
           {p.late ? `ส่งมา ${p.days} วัน ยังไม่ถึง` : STAFF_STATUS_LABEL[p.status]}
         </span>
       </div>
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
         <CopyNumber number={p.trackingNumber} />
         {carrier ? (
           <a
             href={carrier.trackUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-ember underline underline-offset-4"
+            className="inline-flex min-h-11 items-center text-sm font-semibold text-ember underline underline-offset-4"
           >
             เปิดหน้า {carrier.name.th} ↗
           </a>
@@ -88,9 +88,16 @@ export default async function StaffTrackingPage() {
         </ul>
       )}
 
-      <p className="text-sm leading-relaxed text-foreground-muted">
-        กดคัดลอกเลข แล้วเปิดหน้าขนส่ง วางเลขแล้วค้นหา · ขึ้นสีแดงเมื่อส่งมา {LATE_DAYS} วันขึ้นไปแล้วยังไม่ได้กดว่าลูกค้าได้รับ · ออเดอร์ที่ได้รับแล้วอยู่ในหน้านี้ {KEEP_DONE_DAYS} วัน
-      </p>
+      {/* Three short lines, not one paragraph: Chrome splits "ออเดอร์" and "สีแดง" at 390 (no dictionary entry). */}
+      <ul className="flex flex-col gap-1 text-sm leading-relaxed text-foreground-muted">
+        <li>กดคัดลอกเลข แล้วเปิดหน้าขนส่ง วางเลขแล้วค้นหา</li>
+        <li>
+          ขึ้น<span className="whitespace-nowrap">สีแดง</span>เมื่อส่งมา {LATE_DAYS} วันขึ้นไป และยังไม่ได้กดว่าลูกค้าได้รับ
+        </li>
+        <li>
+          <span className="whitespace-nowrap">ออเดอร์</span>ที่ลูกค้าได้รับแล้วอยู่ในหน้านี้ {KEEP_DONE_DAYS} วัน
+        </li>
+      </ul>
     </Container>
   );
 }

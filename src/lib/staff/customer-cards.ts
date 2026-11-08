@@ -21,7 +21,8 @@ const PAID_SQL = CONFIRMED_ORDER_STATUSES.map((s) => `'${s}'`).join(",");
 export interface CustomerListRow {
   id: number;
   phone: string;
-  /** Recipient names on this customer's orders, newest first — what staff search by. */
+  /** Recipient names on this customer's orders, the buyer's own (recipient phone = checkout phone) first, then newest
+   *  first — what staff search by; the first is the row's name, as on the card. */
   names: string[];
   orderCount: number;
   paidTotal: number;
@@ -35,7 +36,7 @@ export function listCustomers(): CustomerListRow[] {
               COALESCE(SUM(CASE WHEN o.status IN (${PAID_SQL}) THEN o.total END), 0) AS paid_total,
               (SELECT GROUP_CONCAT(name, char(31)) FROM (
                  SELECT DISTINCT a.recipient_name AS name FROM orders o2 JOIN order_shipping_addresses a ON a.order_id = o2.id
-                  WHERE o2.customer_id = c.id ORDER BY o2.id DESC)) AS names
+                  WHERE o2.customer_id = c.id ORDER BY (a.phone = c.phone) DESC, o2.id DESC)) AS names
          FROM customers c JOIN orders o ON o.customer_id = c.id
         WHERE NOT ${AUTO_CANCELLED_SQL}
         GROUP BY c.id

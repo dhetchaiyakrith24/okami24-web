@@ -44,7 +44,6 @@ export default async function StaffCustomerCardPage({ params }: { params: Promis
   const c = customerId === null ? null : getCustomerCard(customerId);
   if (!c) notFound();
 
-  const name = c.contact?.name ?? c.phone;
   const last = c.lastOrder;
 
   return (
@@ -52,7 +51,7 @@ export default async function StaffCustomerCardPage({ params }: { params: Promis
       <StaffBar back={{ href: "/staff/customers", label: "ลูกค้า" }} />
 
       <header className="flex flex-col gap-1">
-        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">{name}</h1>
+        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">{c.name}</h1>
         <p className="text-sm text-foreground-muted">
           เบอร์ที่ใช้สั่ง{" "}
           <a href={`tel:${c.phone}`} className="font-semibold tabular-nums text-ember underline underline-offset-4">
