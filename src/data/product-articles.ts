@@ -6449,6 +6449,127 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (08/11), VOOPOO: DRAG X2 — every fact = VOOPOO's DRAG X2 page (voopoo.com/drag-series/drag-x2, curl 08/11:
+  // "Professional 2nd generation" · leather + metal, metal corners reworked · debossed vegan leather · C-frame battery cover · new
+  // Menu UI · top airflow controls e-liquid and condensate leaking · PnP X Cartridge DTL side-filling, MTL cartridge in the "fully
+  // compatible" set · cartridge spec 50–70% VG, nicotine ≤10 mg · six protections). Left out: 18650, 80W, 5mL and the three modes
+  // (already twice on the page), the coil-by-coil wattage/airflow (coil-92's article), the second coil in the box (this page says
+  // 0.3Ω, the shop's box list 0.2Ω — the spec row is not this batch's). Legacy page → no article FAQ.
+  "drag-x2": {
+    th: {
+      lede: "ด้านล่างสรุปเรื่อง VOOPOO DRAG X2 จากหน้าเว็บของแบรนด์ ว่าปรับอะไรจากรุ่นก่อน ใช้งานมือเดียวสะดวกตรงไหน ใส่หัวพอตกับคอยล์แบบไหนได้ ควรใช้น้ำยาแบบไหน และชิปมีระบบป้องกันอะไรบ้าง",
+      sections: [
+        {
+          heading: "DRAG X2 ปรับอะไรจากรุ่นก่อน",
+          paragraphs: [
+            "VOOPOO เรียก DRAG X2 ว่าเป็นรุ่นที่สองของสายนี้ ยังคงดีไซน์หนังคู่กับโลหะแบบเดิม และตัวหนังเป็นหนังวีแกนลายกด",
+            "ส่วนที่ปรับคือมุมโลหะของตัวเครื่อง VOOPOO เกลาให้รับกับมือ และบอกว่าหยิบขึ้นมาครั้งแรกก็รู้สึกถึงความต่าง",
+          ],
+        },
+        {
+          heading: "ใช้งานด้วยมือเดียวสะดวกตรงไหน",
+          paragraphs: [
+            "ฝาถ่านเป็นแบบ C-frame ที่ VOOPOO ออกแบบมาให้เปลี่ยนถ่านได้ง่าย",
+            "หน้าจอใช้เมนูแบบใหม่ที่เน้นข้อมูลหลักให้อ่านง่าย ตั้งค่าอะไรไว้ก็เห็นบนจอตามนั้น",
+          ],
+        },
+        {
+          heading: "ใส่หัวพอตและคอยล์แบบไหนได้",
+          paragraphs: [
+            "หัวพอตที่มากับเครื่องคือ PnP X Cartridge DTL แบบเติมน้ำยาด้านข้าง หน้าเว็บของ DRAG X2 ยังแสดงหัวพอต PnP X Cartridge MTL ไว้ในกลุ่มของที่ใช้ร่วมกันได้ด้วย ถ้าต้องการหัวพอตเปล่าสำรอง ดูได้ที่หน้า [หัวพอตเปล่า VOOPOO PnP X](/products/coil-56)",
+            "VOOPOO บอกว่าการรับลมจากด้านบนของหัวพอตช่วยลดการรั่วของน้ำยาและไอที่ควบแน่น",
+            "คอยล์ PnP X มีหลายค่า ตั้งแต่ค่าสำหรับสูบแบบ DTL ไปจนถึง MTL แต่ละค่าเหมาะกับการสูบแบบไหนและควรเปิดลมแค่ไหน สรุปไว้ที่หน้า [คอยล์ VOOPOO PnP X](/products/coil-92)",
+          ],
+        },
+        {
+          heading: "ควรใช้น้ำยาแบบไหน",
+          paragraphs: [
+            "สำหรับหัวพอต PnP X Cartridge DTL ที่ให้มา VOOPOO แนะนำน้ำยา VG 50–70% และนิโคตินสูงสุด 10mg ถ้ายังไม่คุ้นกับตัวเลข VG อ่านต่อได้ที่ [PG VG คืออะไร ต่างกันยังไง](/guides/pg-vg-in-e-liquid)",
+          ],
+        },
+        {
+          heading: "ชิปมีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "ชิป Gene.TT 2.0 มีระบบป้องกัน 6 อย่าง ได้แก่ กดสูบนานเกินกำหนด ไฟลัดวงจร ชาร์จเกิน กระแสไฟออกเกิน แบตเตอรี่ต่ำ และชิปร้อนเกิน",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The VOOPOO DRAG X2, from VOOPOO's own page: what changed from the earlier model, what makes it easy to use one-handed, which pods and coils fit, what e-liquid to use, and which protections the chip has.",
+      sections: [
+        {
+          heading: "What changed from the earlier model?",
+          paragraphs: [
+            "VOOPOO calls the DRAG X2 the second generation of the line. It keeps the classic pairing of leather and metal, with debossed vegan leather. What changed is the metal corners, reworked to fit your hand; VOOPOO says you notice the difference the moment you pick it up.",
+          ],
+        },
+        {
+          heading: "What makes it easy to use one-handed?",
+          paragraphs: [
+            "The C-frame battery cover is there to make swapping the battery easy, and a new menu puts the main information up front on the screen, so what you set is what you see.",
+          ],
+        },
+        {
+          heading: "Which pods and coils fit?",
+          paragraphs: [
+            "It comes with the PnP X Cartridge DTL, which fills from the side, and the DRAG X2 page also shows the PnP X Cartridge MTL in its set of compatible parts. Spare empty pods are on the [VOOPOO PnP X empty pod](/products/coil-56) page.",
+            "VOOPOO says the pod's top airflow helps keep e-liquid and condensate from leaking.",
+            "PnP X coils come in several resistances, from DTL to MTL. Which one suits which draw, and how far to open the airflow, is on the [VOOPOO PnP X coil](/products/coil-92) page.",
+          ],
+        },
+        {
+          heading: "What e-liquid should I use?",
+          paragraphs: [
+            "For the PnP X Cartridge DTL in the box, VOOPOO recommends 50–70% VG e-liquid with nicotine up to 10 mg. If VG numbers are new to you, see [PG and VG: what they are and how they differ](/guides/pg-vg-in-e-liquid).",
+          ],
+        },
+        {
+          heading: "Which protections does the chip have?",
+          paragraphs: [
+            "The Gene.TT 2.0 chip has six: overtime, short-circuit, overcharge, output over-current, low battery and chip over-temperature protection.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 VOOPOO 官网的资料，介绍 VOOPOO DRAG X2 比上一代改了什么、单手使用方便在哪里、能装哪些烟弹和线圈、该用什么烟油，以及芯片有哪些保护。",
+      sections: [
+        {
+          heading: "DRAG X2 比上一代改了什么？",
+          paragraphs: [
+            "VOOPOO 称 DRAG X2 为这一系列的第二代，延续皮革搭配金属的经典设计，皮革为压纹素皮。改动在于机身的金属边角，经过打磨更贴合手型，VOOPOO 表示一拿起来就能感受到差别。",
+          ],
+        },
+        {
+          heading: "单手使用方便在哪里？",
+          paragraphs: [
+            "C 型电池盖让更换电池更方便；全新的菜单界面突出主要信息，设置了什么，屏幕上就显示什么。",
+          ],
+        },
+        {
+          heading: "能装哪些烟弹和线圈？",
+          paragraphs: [
+            "随机附带的是侧注油的 PnP X Cartridge DTL，DRAG X2 页面也把 PnP X Cartridge MTL 列在兼容配件里。备用空烟弹见 [VOOPOO PnP X 空烟弹](/products/coil-56)。",
+            "VOOPOO 表示烟弹的顶部进气设计有助于减少烟油和冷凝液渗漏。",
+            "PnP X 线圈有多种阻值，从 DTL 到 MTL 都有。每种阻值适合哪种吸法、气流该开多大，见 [VOOPOO PnP X 线圈](/products/coil-92)。",
+          ],
+        },
+        {
+          heading: "该用什么烟油？",
+          paragraphs: [
+            "针对盒内附带的 PnP X Cartridge DTL，VOOPOO 建议使用 VG 50–70%、尼古丁不超过 10 mg 的烟油。不熟悉 VG 数值的话，可以看 [PG 和 VG 是什么、有什么区别](/guides/pg-vg-in-e-liquid)。",
+          ],
+        },
+        {
+          heading: "芯片有哪些保护？",
+          paragraphs: [
+            "Gene.TT 2.0 芯片共有六项保护：防超时、短路保护、过充保护、输出过流保护、低电保护和芯片过温保护。",
+          ],
+        },
+      ],
+    },
+  },
   // Articles queue 0211 batch 5, VOOPOO (03/11): VINCI S — every fact = VOOPOO's VINCI S page (voopoo.com/vinci-series/vinci-s,
   // WebFetch 03/11; quotes in articles-0311/voopoo-facts.md). Left out (already twice): 2000mAh, 40W, the 4.5mL topside fill.
   // "Seven layers of safety" is not quoted (the page lists six). The VINCI PnP X cartridge is not linked to coil-56: VOOPOO names
