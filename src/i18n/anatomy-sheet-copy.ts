@@ -83,8 +83,8 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       },
       {
         id: "collar",
-        image: { src: `${A}/part-collar-v1.webp`, width: 434, height: 260, alt: { th: "ปลอกลายร่องของ M Bar 10K", en: "M Bar 10K ribbed collar", zh: "M Bar 10K 纹理套环" } },
-        callouts: [{ n: 2, code: "RIBBED COLLAR", y: 40, name: { th: "ปลอกลายร่อง", en: "Ribbed collar", zh: "纹理套环" } }],
+        image: { src: `${A}/part-collar-v1.webp`, width: 434, height: 260, alt: { th: "ฝาครอบลายเส้นของ M Bar 10K", en: "M Bar 10K ribbed collar", zh: "M Bar 10K 纹理套环" } },
+        callouts: [{ n: 2, code: "RIBBED COLLAR", y: 40, name: { th: "ฝาครอบ", en: "Ribbed collar", zh: "纹理套环" } }],
       },
       {
         id: "body",
@@ -164,7 +164,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     zooms: [
       { id: "base", code: "BASE", name: { th: "ก้นพอต", en: "Base", zh: "底部" }, image: { src: `${A}/zoom-base-v1.webp`, width: 1200, height: 1200, alt: { th: "ก้นพอต M Bar 10K ระยะใกล้ ช่องชาร์จ ปุ่ม และช่องปรับลม", en: "M Bar 10K base close-up: charging port, button and airflow slot", zh: "M Bar 10K 底部特写：充电口、按键与气流调节槽" } } },
       { id: "display", code: "DISPLAY", name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" }, leds: true, image: { src: `${A}/zoom-display-v1.webp`, width: 900, height: 900, alt: { th: "ไฟบอกสถานะของ M Bar 10K ระยะใกล้", en: "M Bar 10K mini display close-up", zh: "M Bar 10K 迷你显示屏特写" } } },
-      { id: "collar", code: "COLLAR", name: { th: "ปลอกลายร่อง", en: "Ribbed collar", zh: "纹理套环" }, image: { src: `${A}/zoom-collar-v1.webp`, width: 1200, height: 1200, alt: { th: "ปลอกลายร่องและปากดูดของ M Bar 10K ระยะใกล้", en: "M Bar 10K ribbed collar and mouthpiece close-up", zh: "M Bar 10K 纹理套环与吸嘴特写" } } },
+      { id: "collar", code: "COLLAR", name: { th: "ฝาครอบ", en: "Ribbed collar", zh: "纹理套环" }, image: { src: `${A}/zoom-collar-v1.webp`, width: 1200, height: 1200, alt: { th: "ฝาครอบและปากดูดของ M Bar 10K ระยะใกล้", en: "M Bar 10K ribbed collar and mouthpiece close-up", zh: "M Bar 10K 纹理套环与吸嘴特写" } } },
     ],
     facts: [
       { specKey: "puffs", text: { th: "สูงสุด 10,000 พัฟ", en: "Up to 10,000 puffs", zh: "最多 10,000 口" } },
