@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
@@ -8,6 +9,7 @@ import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
+import { customerIdOf } from "@/lib/staff/customer-cards";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIERS, pickCarrier, STAFF_CARRIER_IDS, toStaffCarrierId, type CarrierId } from "@/lib/commerce/carriers";
 import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
@@ -285,6 +287,7 @@ export default async function StaffOrderPage({
   const shipnity = shipnityReady();
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
 
@@ -432,6 +435,12 @@ export default async function StaffOrderPage({
             {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
           </p>
           {order.customerPhone !== a.phone && <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>}
+          {/* Owner list ก11: every order of this customer, totals and last order. */}
+          {customerId !== null && (
+            <Link href={`/staff/customers/${customerId}`} className="inline-flex min-h-11 w-fit items-center text-sm font-semibold text-ember underline underline-offset-4">
+              การ์ดลูกค้า →
+            </Link>
+          )}
           {order.trackingNumber && order.status !== "shipped" && (
             <p className="text-foreground">
               {order.carrier ? `${CARRIERS[order.carrier].name.th} · ` : ""}เลขพัสดุ {order.trackingNumber}
