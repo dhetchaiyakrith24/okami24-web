@@ -81,7 +81,7 @@ function SlipRow({ slip }: { slip: SalesSlip }) {
 }
 
 function DayRow({ day, today }: { day: DaySales; today: boolean }) {
-  const empty = day.orders.length + day.slips.length + day.unclear.length + day.heldAsWeb.length === 0;
+  const empty = day.orders.length + day.lineOrders.length + day.slips.length + day.unclear.length + day.heldAsWeb.length === 0;
   const name = `${dayLabel(day.date)}${today ? " · วันนี้" : ""}`;
   if (empty) {
     return (
@@ -115,6 +115,21 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
           {day.orders.length > 0 && (
             <Rows title={`ออเดอร์เว็บ ${day.orders.length} รายการ`}>
               {day.orders.map((o) => (
+                <li key={o.orderNumber}>
+                  <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex min-h-9 items-baseline justify-between gap-3 py-1 hover:text-foreground">
+                    <span className="min-w-0 truncate tabular-nums">
+                      {timeOf(o.createdAt)} น. {formatRunNumber(o.runNumber) ?? o.orderNumber}
+                    </span>
+                    <span className="shrink-0 tabular-nums text-foreground">{formatSatang(o.total * 100)}</span>
+                  </Link>
+                </li>
+              ))}
+            </Rows>
+          )}
+          {/* Owner list ก11: LINE orders staff keyed on the web — their slips are inside the order, not in the slip list below. */}
+          {day.lineOrders.length > 0 && (
+            <Rows title={`ออเดอร์ LINE ที่คีย์ในหลังบ้าน ${day.lineOrders.length} รายการ`}>
+              {day.lineOrders.map((o) => (
                 <li key={o.orderNumber}>
                   <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex min-h-9 items-baseline justify-between gap-3 py-1 hover:text-foreground">
                     <span className="min-w-0 truncate tabular-nums">
@@ -194,8 +209,8 @@ export default async function StaffSalesPage() {
       </section>
 
       <p className="text-sm leading-relaxed text-foreground-muted">
-        ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว นับตามวันที่สั่ง ไม่รวมออเดอร์ที่ยกเลิก · ยอด LINE = สลิปที่เข้าบัญชีร้าน นับตามวันที่โอน
-        ไม่รวมสลิปของออเดอร์เว็บ
+        ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว นับตามวันที่สั่ง ไม่รวมออเดอร์ที่ยกเลิก · ยอด LINE = ออเดอร์ LINE ที่คีย์ในหลังบ้าน (นับตามวันที่คีย์)
+        กับสลิปที่เข้าบัญชีร้านแต่ยังไม่ผูกกับออเดอร์ไหน (นับตามวันที่โอน) · สลิปหนึ่งใบนับครั้งเดียว
       </p>
       {ownerAreaEnabled() && (
         <Link href="/staff/owner" className="inline-flex min-h-11 w-fit items-center text-sm text-foreground-dim hover:text-foreground">
