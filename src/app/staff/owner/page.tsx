@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { allCatalogItems } from "@/lib/catalog-index";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { readSwitches } from "@/lib/commerce/shop-switches";
 import { Container } from "@/components/ui/Container";
 import type { Alert } from "@/components/dashboard/Alerts";
 import { ViewSwitch, type DashView } from "@/components/dashboard/ViewSwitch";
@@ -82,9 +84,13 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
   const feed = feedHealth();
   const noCost = codesWithoutCost().length;
   const billDue = !rounds[0] || rounds[0].to < due.to;
+  const switches = readSwitches();
+  const catalog = allCatalogItems().map((item) => ({ slug: item.slug, name: item.name }));
 
   // Most urgent first: a silent warehouse stops stock, then money waiting on the team, then what the owner fixes.
   const alerts: Alert[] = [
+    ...(switches.siteClosed ? [{ text: "เว็บปิดอยู่", href: "/staff/owner?view=control", tone: "danger" as const, hideOn: "control" }] : []),
+    ...(switches.cartOff ? [{ text: "ตะกร้าปิดอยู่", href: "/staff/owner?view=control", tone: "warn" as const, hideOn: "control" }] : []),
     ...(feed.state === "ok" ? [] : [{ text: `คลัง${FEED_LIGHT[feed.state].long}`, tone: feed.state === "down" ? ("danger" as const) : ("warn" as const) }]),
     ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined, tone: "warn" as const }] : []),
     ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined, tone: "warn" as const }] : []),
@@ -106,7 +112,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           counts={counts}
           oldest={oldestOrders()}
           canOpenOrders={canOpenOrders}
-          stock={stockSummary(stockBook(), isBestSeller, soldOptions(30))}
+          stock={stockSummary(stockBook().filter((p) => !switches.hidden.includes(p.slug)), isBestSeller, soldOptions(30))}
           feed={feed}
           now={now}
         />
@@ -117,7 +123,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
       label: "สัปดาห์",
       content: <WeekPanel rounds={rounds} due={due} week={week} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
     },
-    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel ordering={ORDERING_ENABLED} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} /> },
+    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} /> },
   ];
 
   return (

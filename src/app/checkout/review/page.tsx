@@ -6,7 +6,7 @@ import { getOwnedAddress } from "@/lib/commerce/addresses";
 import { getCart } from "@/lib/commerce/cart";
 import { ReviewStepView } from "@/components/commerce/ReviewStepView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
-import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
+import { orderingOpen, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 export const metadata: Metadata = {
   title: "ชำระเงิน: ตรวจสอบคำสั่งซื้อ",
@@ -21,7 +21,7 @@ export default async function CheckoutReviewPage({
   searchParams: Promise<{ addressId?: string; saved?: string }>;
 }) {
   // Online ordering off (owner 2026-09-07) — see src/lib/commerce/ordering-mode.ts.
-  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
+  if (!orderingOpen()) redirect(ORDERING_PAUSED_REDIRECT);
   const session = await getSession();
   if (!session) redirect("/checkout");
 

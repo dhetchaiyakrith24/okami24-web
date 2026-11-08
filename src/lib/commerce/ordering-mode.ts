@@ -1,4 +1,5 @@
 import "server-only";
+import { readSwitches } from "@/lib/commerce/shop-switches";
 
 /**
  * Online ordering switch — **owner decision 2026-09-07**: "ปิดการสั่งซื้อชั่วคราว เหตุผล: ข้อมูลสินค้า
@@ -26,6 +27,15 @@ import "server-only";
  * Server Component that passes a boolean prop down — client components never read env.
  */
 export const ORDERING_ENABLED = (process.env.OKAMI24_ORDERING ?? "").trim().toLowerCase() === "on";
+
+/**
+ * Right now, on this request: the build's setting and the owner's cart switch together (owner 08/11, shop-switches-rules.ts).
+ * The cart, checkout and their actions ask this. Static pages keep ORDERING_ENABLED, because they are built once; the product
+ * page's buttons learn of the switch after load (cart-count.ts). The switch can only close what the build opened.
+ */
+export function orderingOpen(): boolean {
+  return ORDERING_ENABLED && !readSwitches().cartOff;
+}
 
 /** Where the cart and checkout routes send a visitor while ordering is off. The query string is
  *  what makes /products show the "order on LINE" notice (LineOrderingNotice.tsx). */

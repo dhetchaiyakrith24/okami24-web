@@ -2,6 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { getCatalogItem } from "@/lib/catalog-index";
+import { readSwitches, writeSwitches } from "@/lib/commerce/shop-switches";
+import { isSlug } from "@/lib/commerce/shop-switches-rules";
 import { isOwner, ownerLogout } from "@/lib/owner/auth";
 import { bangkokInstant, checkRound, readBill, readRates, weekProfit } from "@/lib/owner/bill-rules";
 import { saveRound, webOrdersForBill } from "@/lib/owner/bills";
@@ -10,6 +13,23 @@ import { WAREHOUSE_SHIPPING_FEE_THB } from "@/lib/woo/order-json";
 import { CODE_PATTERN, costChanges, readCostFile, type CostChange, type CostRow } from "@/lib/owner/cost-rules";
 import { currentCosts, saveCosts } from "@/lib/owner/costs";
 import { readXlsx } from "@/lib/owner/xlsx-read";
+
+/** The owner's switches (src/lib/commerce/shop-switches-rules.ts). Written to the data disk, read by every page within seconds. */
+export async function setSwitchAction(form: FormData): Promise<void> {
+  if (!(await isOwner())) redirect("/staff/owner");
+  const kind = form.get("kind");
+  const on = form.get("value") === "on";
+  const now = readSwitches();
+  if (kind === "cart") writeSwitches({ ...now, cartOff: !on });
+  else if (kind === "site") writeSwitches({ ...now, siteClosed: !on });
+  else if (kind === "hide") {
+    const slug = form.get("slug");
+    if (!isSlug(slug) || !getCatalogItem(slug)) return;
+    writeSwitches({ ...now, hidden: on ? [...new Set([...now.hidden, slug])] : now.hidden.filter((s) => s !== slug) });
+  } else return;
+  console.log(`[switches] owner set ${String(kind)} ${on ? "on" : "off"}`);
+  revalidatePath("/staff/owner");
+}
 
 export async function ownerLogoutAction(): Promise<void> {
   await ownerLogout();
