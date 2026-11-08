@@ -7385,8 +7385,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // EACH" · "COMPATIBILITY: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo
   // V1.5 (Not compatible with 0.15 Ohm dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP ·
   // dotApollo · dotAIO V3". That list belongs to the three values DOTMOD sells now. The 0.7Ω this page sells is on DOTMOD's own box; DOTMOD no
-  // longer lists it, and the shop's record ties it to dotAIO V2 (Shipnity name "คอยล์ Dotmod Aio V2"; DOTMOD's 2026-09-02 dotAIO V2 line-up
-  // 0.3/0.7/0.9Ω) — so no claim that 0.7Ω fits anything beyond dotAIO V2 (checker 09/11). Left out (already on the page): 5 a box, brass,
+  // longer lists it. The devices for 0.7Ω = the spec row "ใช้ได้กับ" (sourced: DOTMOD's dotCoils page as read 2026-09-02, when 0.7Ω was
+  // in the dotAIO V2 line-up 0.3/0.7/0.9Ω — Coil-70 spec comment); the article points to that row and names no device of its own (checker 09/11). Left out (already on the page): 5 a box, brass,
   // single mesh, the 0.7Ω 14–20W. Seed page → FAQ allowed.
   "coil-70": {
     th: {
@@ -7402,7 +7402,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ค่า 0.7 โอห์มในหน้านี้ใช้กับเครื่องไหน",
           paragraphs: [
-            "ค่า 0.7 โอห์มเป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เอง แต่หน้าเว็บของ DOTMOD ตอนนี้ขายเฉพาะ 0.15 · 0.3 และ 0.6 โอห์ม ข้อมูลของร้านผูกค่า 0.7 โอห์มไว้กับ dotAIO V2 ก่อนซื้อจึงควรเช็คชื่อรุ่นเครื่องของตัวเองให้ตรง",
+            "ค่า 0.7 โอห์มเป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เอง แต่หน้าเว็บของ DOTMOD ตอนนี้ขายเฉพาะ 0.15 · 0.3 และ 0.6 โอห์ม เครื่องที่ใช้กับค่า 0.7 โอห์มดูได้ที่แถว “ใช้ได้กับ” ในตารางสเปกของหน้านี้ ก่อนซื้อจึงควรเช็คชื่อรุ่นเครื่องของตัวเองให้ตรง",
           ],
         },
         {
@@ -7421,7 +7421,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "คอยล์ dotCoils มีค่าโอห์มอะไรบ้าง",
-          answer: "หน้าเว็บของ DOTMOD ตอนนี้มีให้เลือก 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้ อ้างอิงจากค่าที่พิมพ์อยู่บนกล่องของ DOTMOD และข้อมูลของร้านผูกไว้กับ dotAIO V2 ค่ะ",
+          answer: "หน้าเว็บของ DOTMOD ตอนนี้มีให้เลือก 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้ อ้างอิงจากค่าที่พิมพ์อยู่บนกล่องของ DOTMOD และเครื่องที่ใช้ได้ดูในตารางสเปกของหน้านี้ค่ะ",
         },
       ],
     },
@@ -7438,7 +7438,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which device is the 0.7Ω on this page for?",
           paragraphs: [
-            "The 0.7Ω value is printed on DOTMOD's own box, but DOTMOD's page now sells only 0.15, 0.3 and 0.6Ω. Our record ties the 0.7Ω to the dotAIO V2, so check your device's model name before you buy.",
+            "The 0.7Ω value is printed on DOTMOD's own box, but DOTMOD's page now sells only 0.15, 0.3 and 0.6Ω. For the devices that take the 0.7Ω, see this page's spec table, and check your device's model name before you buy.",
           ],
         },
         {
@@ -7457,7 +7457,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "Which resistances do dotCoils come in?",
-          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is taken from the value printed on DOTMOD's own box, and our record ties it to the dotAIO V2.",
+          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is taken from the value printed on DOTMOD's own box; the devices it fits are in this page's spec table.",
         },
       ],
     },
@@ -7474,7 +7474,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "本页的 0.7Ω 适用于哪款设备？",
           paragraphs: [
-            "0.7Ω 是 DOTMOD 包装盒上印的阻值，但 DOTMOD 官网目前只销售 0.15、0.3 和 0.6Ω。本店资料将 0.7Ω 对应 dotAIO V2，购买前请核对自己设备的型号。",
+            "0.7Ω 是 DOTMOD 包装盒上印的阻值，但 DOTMOD 官网目前只销售 0.15、0.3 和 0.6Ω。0.7Ω 适用的设备请看本页规格表，购买前请核对自己设备的型号。",
           ],
         },
         {
@@ -7493,7 +7493,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       faq: [
         {
           question: "dotCoils 有哪些阻值？",
-          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 依据的是 DOTMOD 包装盒上印的阻值，本店资料将其对应 dotAIO V2。",
+          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 依据的是 DOTMOD 包装盒上印的阻值，适用设备见本页规格表。",
         },
       ],
     },
