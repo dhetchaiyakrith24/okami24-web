@@ -9,7 +9,7 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { brands } from "@/data/brands";
-import { queryMatches, type SearchText } from "@/lib/catalog-search";
+import { fuzzyQueryMatches, queryMatches, type SearchText } from "@/lib/catalog-search";
 import { familyName } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
@@ -231,7 +231,9 @@ export function CatalogBrowser({
     let list = entries;
     if (query.trim()) {
       const q = query.trim().toLowerCase();
-      list = list.filter((e) => queryMatches(q, e.searchText));
+      const exact = list.filter((e) => queryMatches(q, e.searchText));
+      // Nothing as typed → allow typing slips (owner list ก4, catalog-search.ts rankByQuery does the same on /search).
+      list = exact.length > 0 ? exact : list.filter((e) => fuzzyQueryMatches(q, e.searchText));
     }
     if (brandFilter.size > 0) list = list.filter((e) => e.brandId !== null && brandFilter.has(e.brandId));
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
