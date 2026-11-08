@@ -6972,6 +6972,116 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), DOTMOD: dotCoils (Coil-70) — DOTMOD's own page dotmod.com/products/dotcoils, read 09/11 in the in-app browser:
+  // "Made specifically for dotmod atomizers" · "Single mesh coils" · "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" · "COMPATIBILITY: dotAIO V2 ·
+  // dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo V1.5 (Not compatible with 0.15 Ohm
+  // dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo · dotAIO V3". The 0.7Ω the
+  // shop sells is on DOTMOD's own box (spec row note); the page names no device for it alone, so the 0.15Ω caveat is told only for 0.15Ω.
+  // Left out (already on the page): 5 a box, brass, single mesh, the 0.7Ω 14–20W, the five devices in the spec row. Seed page → FAQ allowed.
+  "coil-70": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าคอยล์ dotCoils ใช้กับเครื่องไหนได้บ้าง และค่าไหนต้องระวังกับบางรุ่น",
+      sections: [
+        {
+          heading: "คอยล์ dotCoils ใช้กับเครื่องไหนได้บ้าง",
+          paragraphs: [
+            "DOTMOD ทำคอยล์นี้มาสำหรับอะตอมของ DOTMOD เองโดยเฉพาะ นอกจากรุ่นในตารางสเปกแล้ว หน้าเว็บของ DOTMOD ตอนนี้ยังระบุ dotStick Revo V1.5 · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3 ไว้ด้วย",
+            "ถ้ามีเครื่องของ DOTMOD หลายรุ่นในรายชื่อนี้ ก็ใช้คอยล์ชนิดเดียวกันได้ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+          ],
+        },
+        {
+          heading: "ค่า 0.15 โอห์มใช้ได้ทุกเครื่องไหม",
+          paragraphs: [
+            "ถ้าใช้ dotStick Revo · dotStick Revo V1.5 หรือ dotPod Max ให้เลี่ยงค่า 0.15 โอห์ม เพราะ DOTMOD ระบุว่าสามรุ่นนี้ไม่รองรับค่านั้น ส่วนเครื่องอื่นในรายชื่อ DOTMOD ไม่ได้เขียนข้อยกเว้นไว้",
+          ],
+        },
+        {
+          heading: "เปลี่ยนคอยล์เมื่อไหร่ดี",
+          paragraphs: [
+            "คอยล์แต่ละหัวแยกซองมาอยู่แล้ว เปิดใช้ทีละหัวได้ ส่วนวิธีดูว่าคอยล์ถึงรอบเปลี่ยนหรือยัง และใส่หัวใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "คอยล์ Dotmod Aio V2 ใส่ dotAIO V3 ได้ไหม",
+          answer: "ได้ค่ะ หน้าเว็บของ DOTMOD ระบุ dotAIO V3 ไว้ในรายชื่อเครื่องที่ใช้คอยล์ dotCoils ได้ค่ะ",
+        },
+        {
+          question: "คอยล์ dotCoils มีค่าโอห์มอะไรบ้าง",
+          answer: "หน้าเว็บของ DOTMOD ตอนนี้มี 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้เป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เองค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "From DOTMOD's own page: which devices take dotCoils, and which value to avoid on some of them.",
+      sections: [
+        {
+          heading: "Which devices take dotCoils?",
+          paragraphs: [
+            "DOTMOD makes these coils for its own atomizers. Besides the models in the spec table, DOTMOD's page now also lists the dotStick Revo V1.5, dotAIO Tank V3, dotTank Max, dotAMP, dotApollo and dotAIO V3.",
+            "If you own more than one DOTMOD device from this list, one coil type covers them. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+          ],
+        },
+        {
+          heading: "Does the 0.15Ω fit every device?",
+          paragraphs: [
+            "On the dotStick Revo, dotStick Revo V1.5 or dotPod Max, skip the 0.15Ω: DOTMOD says those three don't take it. For the other devices on the list, DOTMOD gives no exception.",
+          ],
+        },
+        {
+          heading: "When should I change the coil?",
+          paragraphs: [
+            "Each coil comes in its own sealed pack, so you open one at a time. For how to tell when a coil is due and how long to wait before vaping on a new one, see [coil and pod care](/guides/coil-and-pod-maintenance).",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Does the Dotmod Aio V2 coil fit the dotAIO V3?",
+          answer: "Yes. DOTMOD's page lists the dotAIO V3 among the devices that take dotCoils.",
+        },
+        {
+          question: "Which resistances do dotCoils come in?",
+          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is the value printed on DOTMOD's own box.",
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 DOTMOD 官网整理：dotCoils 适用于哪些设备，以及哪种阻值在部分设备上要注意。",
+      sections: [
+        {
+          heading: "dotCoils 适用于哪些设备？",
+          paragraphs: [
+            "DOTMOD 这款雾化芯专为自家雾化器设计。除了规格表里的型号，DOTMOD 官网现在还列出了 dotStick Revo V1.5、dotAIO Tank V3、dotTank Max、dotAMP、dotApollo 和 dotAIO V3。",
+            "如果手上有这份列表里的多款 DOTMOD 设备，可以共用同一种雾化芯。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+          ],
+        },
+        {
+          heading: "0.15Ω 所有设备都能用吗？",
+          paragraphs: [
+            "使用 dotStick Revo、dotStick Revo V1.5 或 dotPod Max 的话，请避开 0.15Ω，DOTMOD 标明这三款不支持该阻值。列表中的其他设备，DOTMOD 没有注明例外。",
+          ],
+        },
+        {
+          heading: "什么时候该换雾化芯？",
+          paragraphs: [
+            "每颗雾化芯都是独立包装，可以一次拆一颗。怎么判断该换芯、装上新芯后要等多久再抽，可以看 [雾化芯和烟弹保养](/guides/coil-and-pod-maintenance)。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Dotmod Aio V2 雾化芯能用在 dotAIO V3 上吗？",
+          answer: "可以。DOTMOD 官网把 dotAIO V3 列在适用 dotCoils 的设备中。",
+        },
+        {
+          question: "dotCoils 有哪些阻值？",
+          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 是 DOTMOD 包装盒上印的阻值。",
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
