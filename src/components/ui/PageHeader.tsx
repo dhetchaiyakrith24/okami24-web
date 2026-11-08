@@ -10,6 +10,7 @@ export function PageHeader({
   meta,
   descriptionClassName,
   bare,
+  desktopBare,
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -21,12 +22,16 @@ export function PageHeader({
   /** No panel and no rule under it — the header sits on whatever is behind it (/products: the samurai backdrop,
    *  owner 29/10 "not boxed in the header"). Omitted = the usual surface panel. */
   bare?: boolean;
+  /** Desktop (lg+) only: no panel, no rule, a smaller title and no bottom padding — the header sits on the picture
+   *  behind it (the paid order page, owner list ก10 "ใช้พื้นที่กว้างให้ดีขึ้น"). Phones keep the usual panel.
+   *  Omitted = unchanged. */
+  desktopBare?: boolean;
 }) {
   return (
-    <section className={bare ? undefined : "border-b border-surface-border-soft bg-surface-1"}>
-      <Container className="flex flex-col gap-4 py-12 lg:py-16">
+    <section className={bare ? undefined : cn("border-b border-surface-border-soft bg-surface-1", desktopBare && "lg:relative lg:z-10 lg:border-b-0 lg:bg-transparent")}>
+      <Container className={cn("flex flex-col gap-4 py-12 lg:py-16", desktopBare && "lg:gap-3 lg:pb-0 lg:pt-10")}>
         {eyebrow && <span className="label-mono text-xs text-ember" lang={typeof eyebrow === "string" ? labelLang(eyebrow) : undefined}>{eyebrow}</span>}
-        <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground">
+        <h1 className={cn("font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground", desktopBare && "lg:text-[2rem] lg:leading-[1.2]")}>
           {title}
         </h1>
         {description && <p className={cn("max-w-2xl text-base leading-relaxed text-foreground-muted", descriptionClassName)}>{description}</p>}

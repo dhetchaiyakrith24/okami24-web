@@ -199,25 +199,58 @@ export function OrderStatusView({
     return () => window.clearTimeout(t);
   }, [paidOrLater, order.status, order.orderNumber]);
 
+  // Desktop once paid (owner list ก10, 30/10 22:22 — after the two-column layout went live: "การ์ดขอบคุณบนคอมใช้พื้นที่กว้างให้ดีขึ้น";
+  // designer 09/11 direction B "a wide banner like /products"): the samurai is no longer a grid cell but a wide backdrop behind the
+  // header + thank-you, faded out before the cards; the header loses its panel (lg only); the cards start inside the first screen in
+  // 3 columns from xl (status | tracking | unboxing), 2 at lg. CSS `order` only — the DOM order (phones, screen readers) is unchanged.
+  // Waiting for payment and cancelled keep the 30/10 grid untouched.
+  const desk = paidOrLater
+    ? {
+        grid: "lg:grid lg:max-w-[1400px] lg:grid-cols-2 lg:items-start lg:gap-6 lg:pb-16 lg:pt-0 xl:grid-cols-3",
+        image:
+          "lg:left-auto lg:right-[max(0px,calc((100vw-1400px)/2-120px))] lg:top-0 lg:w-[min(62vw,900px)] lg:translate-x-0 lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]",
+        imageMask:
+          "lg:opacity-50 lg:[mask-image:linear-gradient(to_bottom,black_48%,transparent_76%),linear-gradient(to_right,transparent,black_40%,black_96%,transparent)]",
+        band: "lg:left-auto lg:right-[max(0px,calc((100vw-1400px)/2-120px))] lg:top-0 lg:aspect-[1024/476] lg:h-auto lg:w-[min(62vw,900px)]",
+        words: "lg:z-10 lg:col-span-full lg:flex lg:min-h-[340px] lg:max-w-[600px] lg:flex-col lg:justify-center lg:px-2 lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]",
+        status: "lg:relative lg:z-10 lg:order-1",
+        messages: "lg:order-3 lg:col-span-full",
+        stock: "lg:order-4 lg:col-span-full",
+        side: "lg:order-2 lg:gap-6 xl:col-span-2 xl:grid xl:grid-cols-2 xl:items-start",
+        details: "lg:order-5 lg:col-span-full lg:grid lg:grid-cols-2 lg:items-start lg:gap-6 xl:grid-cols-3",
+        items: "xl:col-span-2",
+        note: "lg:order-6 lg:col-span-full",
+      }
+    : {
+        grid: "lg:grid lg:max-w-[1400px] lg:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,620px))] lg:grid-rows-[auto_1fr] lg:items-start lg:gap-x-10 lg:py-16 lg:[grid-auto-flow:row_dense] min-[1700px]:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,700px))]",
+        image: "",
+        imageMask: "",
+        band: "",
+        words: "",
+        status: "lg:relative lg:z-10 lg:col-start-1",
+        messages: "lg:col-span-2",
+        stock: "lg:col-span-2",
+        side: "lg:col-start-2",
+        details: "lg:col-start-1",
+        items: "",
+        note: "lg:col-span-2",
+      };
+
   return (
-    <>
-      <PageHeader eyebrow={dict.orderStatus.eyebrow} title={dict.orderStatus.pageTitle} />
-      {/* Desktop (lg+, owner 30/10 "จัดวางใหม่ให้เต็มจอ"): a two-column grid — thank-you words + status card LEFT, the samurai standing tall RIGHT
-          (spanning both), then the details in two columns (items + address | tracking / unboxing / payment). Phones keep the single
-          column untouched: every desktop rule is an lg: class and the DOM order is unchanged. */}
-      <div className="relative isolate">
-        {paidOrLater && (
-          // Owner 30/10 (desktop): "ฉากหลังไม่ต้องเด่น ไม่ต้องหนัก แต่มี และยังคงเรียบและหรู ตัวแบบยังเด่น" — no shapes (an ink-mountain scene was
-          // rejected): only a faint wine wash behind the character's half (nothing under the words), fading into the page on every side.
-          // No disc or circle (he disliked the red stage light). Desktop only.
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[800px] lg:block [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent),linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-composite:source-in]"
-          >
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_40%,rgba(58,20,24,0.5)_72%,rgba(58,20,24,0.28)_100%),linear-gradient(to_bottom,transparent_35%,rgba(58,20,24,0.22))]" />
-          </div>
-        )}
-      <Container className={`flex max-w-xl flex-col gap-8 py-12 lg:grid lg:max-w-[1400px] lg:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,620px))] ${paidOrLater ? "lg:grid-rows-[1fr_auto]" : "lg:grid-rows-[auto_1fr]"} lg:items-start lg:gap-x-10 lg:py-16 lg:[grid-auto-flow:row_dense] min-[1700px]:grid-cols-[minmax(0,1fr)_minmax(0,clamp(380px,44%,700px))]`}>
+    <div className="relative isolate">
+      {paidOrLater && (
+        // Owner 30/10 (desktop): "ฉากหลังไม่ต้องเด่น ไม่ต้องหนัก แต่มี และยังคงเรียบและหรู ตัวแบบยังเด่น" — no shapes (an ink-mountain scene was
+        // rejected): only a faint wine wash behind the character's half (nothing under the words), fading into the page on every side.
+        // No disc or circle (he disliked the red stage light). Desktop only; as tall as the banner (ก10).
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-[640px] lg:block [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent),linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-composite:source-in]"
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_40%,rgba(58,20,24,0.5)_72%,rgba(58,20,24,0.28)_100%),linear-gradient(to_bottom,transparent_35%,rgba(58,20,24,0.22))]" />
+        </div>
+      )}
+      <PageHeader eyebrow={dict.orderStatus.eyebrow} title={dict.orderStatus.pageTitle} desktopBare={paidOrLater} />
+      <Container className={`flex max-w-xl flex-col gap-8 py-12 ${desk.grid}`}>
         {/* A thank-you once the slip is in — from "payment submitted" to "completed". Owner 24/10: his wording, big and bold
             ("ตัวหน้าใหญ่ Impact ทรงพลัง"). Designer: two fixed lines (line 2 never wraps, so "ใช้บริการ" cannot split), the
             brand in the condensed display face and the brand red, a short red rule above; Thai keeps leading 1.3 (the
@@ -228,21 +261,19 @@ export function OrderStatusView({
           // text and at the sides like the /products backdrop, so it melts into the page. The wrapper is as tall as the picture
           // (the figure never spills onto the order card below); only its width runs past the column. Face whole at every width.
           <div className="okami-thanks relative isolate flex min-h-[min(80vw,656px)] flex-col justify-end lg:contents">
-            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2 lg:relative lg:left-auto lg:z-0 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:w-[128%] lg:max-w-none lg:translate-x-0 lg:self-start lg:justify-self-end lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]">
+            <div aria-hidden className={`pointer-events-none absolute left-1/2 top-0 -z-10 w-[min(calc(100vw-1rem),820px)] -translate-x-1/2 ${desk.image}`}>
               <Image
                 src="/brand/samurai-thanks-full.webp"
                 alt=""
                 width={1024}
                 height={820}
-                sizes="(min-width: 820px) 820px, 100vw"
-                className="block h-auto w-full lg:opacity-50 [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in] lg:[mask-image:linear-gradient(to_bottom,black_86%,transparent),linear-gradient(to_right,transparent,black_24%,black_95%,transparent)]"
+                sizes="(min-width: 1024px) min(62vw, 900px), (min-width: 820px) 820px, 100vw"
+                className={`block h-auto w-full [mask-composite:intersect] [mask-image:linear-gradient(to_bottom,black_34%,transparent_94%),linear-gradient(to_right,transparent,black_9%,black_91%,transparent)] [-webkit-mask-composite:source-in] ${desk.imageMask}`}
               />
-              {/* One thin gold hairline (the kabuto's gold) where her figure fades — the floor she stands on. Desktop only. */}
-              <span aria-hidden className="absolute inset-x-[14%] bottom-[7%] hidden h-px bg-[linear-gradient(to_right,transparent,rgba(201,163,90,0.55)_35%,rgba(201,163,90,0.55)_65%,transparent)] lg:block" />
             </div>
-            {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = just above the words. */}
-            <div ref={bandRef} aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[58%] lg:relative lg:inset-auto lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[1024/476] lg:h-auto lg:w-[128%] lg:self-start lg:justify-self-end" />
-            <div className="relative px-1 lg:z-10 lg:col-start-1 lg:row-start-1 lg:self-center lg:px-2 lg:[animation:okami-thanks-in_420ms_ease-out_80ms_both]">
+            {/* The slash (logo round, batch 2) lands on the low edge of this invisible stage = under the face (checker #961). */}
+            <div ref={bandRef} aria-hidden className={`pointer-events-none absolute inset-x-0 top-0 h-[58%] ${desk.band}`} />
+            <div className={`relative px-1 ${desk.words}`}>
               <span aria-hidden className="mb-4 block h-0.5 w-8 rounded bg-red-strong" />
               <p className="text-[1.75rem] font-bold leading-[1.3] text-foreground lg:text-[2.25rem] xl:text-[2.75rem] min-[1700px]:text-[3.25rem]">
                 <span className="block">{dict.orderStatus.thankYouLead}</span>
@@ -254,7 +285,7 @@ export function OrderStatusView({
             </div>
           </div>
         )}
-        <div ref={numberRef} className="flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm lg:relative lg:z-10 lg:col-start-1">
+        <div ref={numberRef} className={`flex flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm ${desk.status}`}>
           <div className="flex justify-between">
             <span className="text-foreground-muted">{dict.orderStatus.orderNumberLabel}</span>
             <span className="font-medium text-foreground">{order.orderNumber}</span>
@@ -331,7 +362,7 @@ export function OrderStatusView({
 
         {/* The shop's messages (owner 24/10: "กล่องข้อความแจ้งรายละเอียดจากแอดมิน") — why it was cancelled, why an item ran out. */}
         {messages.length > 0 && (
-          <div className="flex flex-col gap-3 rounded-xl border border-ember/40 bg-surface-1 p-4 text-sm lg:col-span-2">
+          <div className={`flex flex-col gap-3 rounded-xl border border-ember/40 bg-surface-1 p-4 text-sm ${desk.messages}`}>
             <span className="label-mono text-xs text-foreground-dim">{t.messagesTitle}</span>
             {messages.map((m, i) => (
               <div key={i} className={i > 0 ? "border-t border-surface-border-soft pt-3" : undefined}>
@@ -343,7 +374,7 @@ export function OrderStatusView({
         )}
 
         {stockIssue && (
-          <div className="lg:col-span-2">
+          <div className={desk.stock}>
             <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />
           </div>
         )}
@@ -352,7 +383,7 @@ export function OrderStatusView({
             carrier and link to its own tracking page, with the 3 steps — the page opens without the number filled in.
             An order shipped before staff picked carriers has no carrier: the number alone, no button. */}
         {(trackingShown || unboxing) && (
-        <div className="flex flex-col gap-8 lg:col-start-2">
+        <div className={`flex flex-col gap-8 ${desk.side}`}>
         {trackingShown && order.trackingNumber && (
           <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm">
             <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.trackTitle}</span>
@@ -403,8 +434,8 @@ export function OrderStatusView({
         </div>
         )}
 
-        <div className="flex flex-col gap-8 lg:col-start-1">
-        <div className="flex flex-col gap-3">
+        <div className={`flex flex-col gap-8 ${desk.details}`}>
+        <div className={`flex flex-col gap-3 ${desk.items}`}>
           <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.itemsTitle}</span>
           <div className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
             {order.items.map((item, i) => (
@@ -521,9 +552,8 @@ export function OrderStatusView({
           </div>
         )}
 
-        {order.status === "payment_submitted" && <p className="text-sm text-foreground-muted lg:col-span-2">{dict.orderStatus.paymentSubmittedNote}</p>}
+        {order.status === "payment_submitted" && <p className={`text-sm text-foreground-muted ${desk.note}`}>{dict.orderStatus.paymentSubmittedNote}</p>}
       </Container>
-      </div>
-    </>
+    </div>
   );
 }
