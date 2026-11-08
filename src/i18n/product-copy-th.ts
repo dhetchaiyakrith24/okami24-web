@@ -1280,9 +1280,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         description: "RELX ระบุว่าใช้ได้กับเครื่อง RELX Essential 2 และ Artisan Plus",
       },
     },
-    tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 1.9mL คอยล์สำลี",
+    tagline: "หัวพอตบรรจุสำเร็จของ RELX คอยล์สำลี",
     shortDescription:
-      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์สำลี ขายแพ็กละ 2 หัว นิโคติน 18mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Essential 2 และ Artisan Plus",
+      "หัวพอตบรรจุสำเร็จของ RELX ใช้คอยล์สำลี ขายแพ็กละ 2 หัว นิโคติน 18mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Essential 2 และ Artisan Plus",
   },
   "relx-pod-pro": {
     whoIsThisFor: {
@@ -1290,6 +1290,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       coil: "คอยล์เซรามิก",
+      nicotine: "18mg/ml · บางกลิ่นมีแบบ 0mg/ml",
     },
     features: {
       swap: {
@@ -1311,7 +1312,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 1.9mL คอยล์เซรามิก",
     shortDescription:
-      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์เซรามิก ขายแพ็กละ 2 หัว นิโคติน 18mg/ml มี 42 กลิ่น ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Infinity 2 Plus · Essential 2 และ Artisan Plus",
+      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์เซรามิก มี 42 กลิ่น หน้าของ RELX ขายแพ็กละ 2 หัว นิโคติน 18mg/ml และบางกลิ่นมีแบบหัวเดียว 0mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Infinity 2 Plus · Essential 2 และ Artisan Plus",
   },
   "relx-ultra-pod": {
     whoIsThisFor: {

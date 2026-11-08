@@ -215,7 +215,7 @@ export const relxProducts: Product[] = [
     // so no price and no cart (BSOT §4). This is the plain RELX Pod with the cotton coil, not the first "Classic" pod RELX's UK store says fits only the
     // Classic device. Flavours: the gallery of RELX's own store listing, which names each one in the file name; the store sells three of them now.
     // Pictures: a box with no gold PRO tab only. RELX shows Watermelon Ice only in the PRO box, and Menthol Xtra only at 600px: both stay with no picture.
-    // Puffs left out: RELX's Pod Pro page says 500 a pod, its Infinity page up to 600.
+    // Puffs left out: RELX's Pod Pro page says 500 a pod, its Infinity page up to 600. Capacity left out: no RELX text names RELX Pod's.
     // Devices: Essential 2 and Artisan Plus pages name "RELX Pod"; the Infinity 2 Plus page says only "RELX, RELX Pod Pro, and RELX Pod Pro 2",
     // so Infinity is not claimed here. The devices row cites Essential 2; Artisan Plus is backed by its edge in catalog-relationships.
     id: "relx-pod",
@@ -227,12 +227,11 @@ export const relxProducts: Product[] = [
     name: "RELX Pod",
     displayName: "RELX POD",
     searchAliases: ["หัว RELX Pod", "หัวพอต RELX Pod", "RELX Pod cotton coil"],
-    tagline: "RELX's 1.9mL prefilled pod with a cotton coil.",
+    tagline: "RELX's prefilled pod with a cotton coil.",
     shortDescription:
-      "A 1.9mL prefilled pod from RELX with a cotton coil, sold in packs of two at 18mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Essential 2 and Artisan Plus devices.",
+      "A prefilled pod from RELX with a cotton coil, sold in packs of two at 18mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Essential 2 and Artisan Plus devices.",
     isFlagship: false,
     attributes: {
-      capacityMl: 1.9,
       screenType: "none",
       portability: "ultra-compact",
       // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
@@ -263,7 +262,6 @@ export const relxProducts: Product[] = [
       { id: "cherry-lime", name: "Cherry Lime", swatchHex: "#8da63f", availability: "unknown", image: { src: "/assets/products/relx-pod/variant-cherry-lime.webp", alt: "RELX Pod, Cherry Lime, retail box" } },
     ],
     specifications: [
-      { key: "capacity", label: "E-liquid capacity", value: "1.9mL", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
       { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: RELX_POD_PAGE },
       { key: "coil", label: "Coil", value: "Cotton coil", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
       { key: "devices", label: "Compatible devices", value: "RELX Essential 2", sourceStatus: "verified", sourceUrl: ESSENTIAL_PAGE },
@@ -296,7 +294,7 @@ export const relxProducts: Product[] = [
     searchAliases: ["หัว RELX Pod Pro", "หัวพอต RELX Pod Pro", "RELX Pod Pro ceramic coil"],
     tagline: "RELX's 1.9mL prefilled pod with a ceramic coil.",
     shortDescription:
-      "A 1.9mL prefilled pod from RELX with a ceramic coil, sold in packs of two at 18mg/ml, in 42 flavours. You swap it when it runs out and keep the device. RELX lists it for its Infinity 2 Plus, Essential 2 and Artisan Plus devices.",
+      "A 1.9mL prefilled pod from RELX with a ceramic coil, in 42 flavours. RELX's page sells it in packs of two at 18mg/ml, and some flavours also as a single pod at 0mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Infinity 2 Plus, Essential 2 and Artisan Plus devices.",
     isFlagship: false,
     attributes: {
       capacityMl: 1.9,
@@ -364,7 +362,7 @@ export const relxProducts: Product[] = [
     ],
     specifications: [
       { key: "capacity", label: "E-liquid capacity", value: "1.9mL", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
-      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
+      { key: "nicotine", label: "Nicotine strength", value: "18mg/ml · 0mg/ml on some flavours", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-pod-pro-autoship" },
       { key: "coil", label: "Coil", value: "Ceramic coil", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
       { key: "devices", label: "Compatible devices", value: "RELX Infinity 2 Plus · Essential 2 · Artisan Plus", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
     ],

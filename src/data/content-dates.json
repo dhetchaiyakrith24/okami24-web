@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T08:40:10+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T10:07:09+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -127,8 +127,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-08T08:40:10+07:00",
-      "fp": "bd4301913c15"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "b9870efa9b65"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -195,8 +195,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-08T08:40:10+07:00",
-      "fp": "3ebcac99b3a2"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "cc81ffed896e"
     },
     "/products/86-bar-20k": {
       "date": "2026-11-08T05:29:23+07:00",
@@ -599,12 +599,12 @@
       "fp": "69cc48baf421"
     },
     "/products/relx-pod": {
-      "date": "2026-11-08T09:01:41+07:00",
-      "fp": "89598f9e14cf"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "6a9704a4fe17"
     },
     "/products/relx-pod-pro": {
-      "date": "2026-11-08T09:01:41+07:00",
-      "fp": "09d53a9b7ad6"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "dcf6cde3847c"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-07T11:43:43+07:00",
@@ -639,8 +639,8 @@
       "fp": "bb1b19f0d60b"
     },
     "/products/switch-pods": {
-      "date": "2026-11-08T08:40:10+07:00",
-      "fp": "d0580aa0cae9"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "8445194d9b9e"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-11-07T11:43:43+07:00",
