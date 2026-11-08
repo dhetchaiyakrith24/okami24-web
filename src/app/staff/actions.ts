@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/auth";
 import { assignRole } from "@/lib/line/groups";
 import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
-import { applyStaffAction, setPlannedCarrier } from "@/lib/staff/orders";
+import { applyStaffAction, getStaffOrder, setPlannedCarrier } from "@/lib/staff/orders";
+import { readSwitches } from "@/lib/commerce/shop-switches";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
@@ -70,6 +71,8 @@ export async function staffShipnityPushAction(formData: FormData): Promise<void>
   if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
   const orderNumber = String(formData.get("orderNumber") ?? "");
   const back = orderPage(orderNumber, formData);
+  // A LINE order goes to the warehouse from here only while the owner's switch is on (owner list ก11, way 2).
+  if (getStaffOrder(orderNumber)?.channel === "line" && !readSwitches().lineToWarehouse) redirect(`${back}error=line-switch-off`);
   const pushed = await pushOrder(orderNumber);
   if (!pushed.ok) redirect(`${back}error=shipnity-${pushed.error}`);
   const step = applyStaffAction(orderNumber, "to-warehouse", { note: "ส่งเข้า Shipnity อัตโนมัติ" });

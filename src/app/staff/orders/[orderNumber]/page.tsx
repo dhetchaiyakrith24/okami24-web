@@ -10,6 +10,8 @@ import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
+import { readSwitches } from "@/lib/commerce/shop-switches";
+import { SITE_URL } from "@/lib/seo";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIERS, pickCarrier, STAFF_CARRIER_IDS, toStaffCarrierId, type CarrierId } from "@/lib/commerce/carriers";
 import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
@@ -50,6 +52,7 @@ export const metadata: Metadata = {
 };
 
 const ERROR_TEXT: Record<string, string> = {
+  "line-switch-off": "ออเดอร์ LINE ยังส่งเข้าคลังจากหลังบ้านไม่ได้ (สวิตช์ของพี่ปิดอยู่) — คีย์ใน Shipnity ตามเดิม แล้วกดส่งรายการให้คลังแล้ว",
   "not-allowed": "ทำขั้นนี้กับออเดอร์สถานะนี้ไม่ได้ (อาจมีคนกดไปก่อนแล้ว) — โหลดหน้าใหม่ดูสถานะล่าสุด",
   tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
   carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ DHL) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
@@ -68,6 +71,7 @@ const ERROR_TEXT: Record<string, string> = {
 };
 
 const DONE_TEXT: Record<string, string> = {
+  "line-order": "บันทึกออเดอร์ LINE แล้ว — คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
@@ -284,7 +288,10 @@ export default async function StaffOrderPage({
   // order (e.g. the refund slip attached afterwards, queue B4) must not replace its reason (checker #877).
   const cancelNote = order.status === "cancelled" ? order.statusHistory.find((h) => h.status === "cancelled")?.note ?? null : null;
   // Shipnity link (owner 28/10): the button shows once staff approved where Shipnity takes orders (/staff/shipnity).
-  const shipnity = shipnityReady();
+  // A LINE order goes by this button only while the owner's switch is on (owner list ก11, way 2); otherwise the admin keys
+  // it into Shipnity as before and presses "ส่งรายการให้คลังแล้ว" below.
+  const lineOrder = order.channel === "line";
+  const shipnity = shipnityReady() && (!lineOrder || readSwitches().lineToWarehouse);
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
   const customerId = customerIdOf(order.orderNumber);
@@ -301,6 +308,11 @@ export default async function StaffOrderPage({
       <header className="flex flex-wrap items-center gap-3">
         <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">{runNumber ?? order.orderNumber}</h1>
         {stockOpen && <span className={`rounded-full border px-3 py-1 text-sm font-medium ${tone.pill}`}>{STAFF_STATUS_LABEL[order.status]}</span>}
+        {lineOrder && (
+          <span className="rounded-full border border-surface-border px-3 py-1 text-sm text-foreground-muted">
+            ออเดอร์ LINE{order.keyedBy ? ` · คีย์โดย ${order.keyedBy}` : ""}
+          </span>
+        )}
       </header>
 
       {error && (ERROR_TEXT[error] ?? STOCK_ERROR_TEXT[error]) && (
@@ -435,6 +447,10 @@ export default async function StaffOrderPage({
             {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
           </p>
           {order.customerPhone !== a.phone && <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>}
+          {/* BSOT §8: for a LINE order the admin sends the customer its status link (the shop's own words go in LINE). */}
+          {lineOrder && (
+            <CopyBlock text={`${SITE_URL}/orders/${order.orderNumber}?token=${order.viewToken}`} label="คัดลอกลิงก์ติดตามออเดอร์" doneLabel="คัดลอกแล้ว" outline />
+          )}
           {/* Owner list ก11: every order of this customer, totals and last order. */}
           {customerId !== null && (
             <Link href={`/staff/customers/${customerId}`} className="inline-flex min-h-11 w-fit items-center text-sm font-semibold text-ember underline underline-offset-4">
