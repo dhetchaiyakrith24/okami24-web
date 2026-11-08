@@ -1259,21 +1259,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // MTL Nic Salts?", "*The cartridges all belong to UWELL CALIBURN G3 series" · pc/imgCon/3.jpg = 3-day "from the UWELL lab test",
   // 20% "compared with other common products in the market" · mo/spe-1..4-new.png = the box per version: INT/FDA 0.6Ω side refill,
   // INT (CRC) 0.6Ω top refill, TPD 0.9Ω top refill, each with the device and the manual · mo/5.jpg = LED colours). Read 08/11.
-  // Left out (already on the page): 1200mAh, auto draw, the 360° window, the three cartridge values. Legacy page → no article FAQ.
+  // Left out (already on the page, checker 09/11): 1200mAh, auto draw, the 360° window, the three cartridge values listed together, the
+  // shared G3 cartridges (hero + feature card + who-is-this-for). Legacy page → no article FAQ.
   "caliburn-g3-lite": {
     th: {
-      lede: "ด้านล่างสรุปเรื่อง UWELL Caliburn G3 Lite จากโปสเตอร์บนเว็บของ UWELL ว่าใช้หัวพอตร่วมกับรุ่นไหนได้ ควรเลือกหัวพอตค่าไหนกับน้ำยาแบบไหน ในกล่องได้หัวพอตแบบไหน และตัวเลขแบตที่ UWELL บอกไว้มาจากไหน",
+      lede: "ด้านล่างสรุปเรื่อง UWELL Caliburn G3 Lite จากโปสเตอร์บนเว็บของ UWELL ทั้งเรื่องหัวพอตกับน้ำยาที่เข้าคู่กัน และหัวพอตที่ได้ในกล่อง ส่วนท้ายเล่าว่าตัวเลขแบตที่ UWELL บอกไว้มาจากไหน และดูแบตที่เหลือยังไง",
       sections: [
         {
-          heading: "G3 Lite ใช้หัวพอตร่วมกับรุ่นไหนได้",
+          heading: "หัวพอตแบบไหนเข้าคู่กับน้ำยาแบบไหน",
           paragraphs: [
-            "UWELL ระบุว่าหัวพอตของ G3 Lite ทุกตัวเป็นหัวพอตตระกูล Caliburn G3 จึงเป็นหัวพอตชุดเดียวกับที่ [Caliburn G3](/products/caliburn-g3) ใช้ ถ้าเคยมีหัวพอต G3 อยู่แล้วก็นำมาใช้ต่อได้",
-          ],
-        },
-        {
-          heading: "ควรเลือกหัวพอตค่าไหนกับน้ำยาแบบไหน",
-          paragraphs: [
-            "ตารางหัวพอตของ UWELL วางหัว 0.6 โอห์มไว้ฝั่งสูบแบบ RDL ที่ลมโล่งกว่า คู่กับน้ำยา freebase และวางหัว 1.2 โอห์มไว้ฝั่งสูบแบบ MTL ที่ลมแน่นกว่า คู่กับน้ำยา salt nic ส่วนหัว 0.9 โอห์มอยู่ตรงกลาง",
+            "ตารางหัวพอตของ UWELL วางหัวโอห์มต่ำไว้ฝั่งสูบแบบ RDL คู่กับน้ำยา freebase และวางหัวโอห์มสูงไว้ฝั่งสูบแบบ MTL คู่กับน้ำยา salt nic",
             "ถ้ายังไม่แน่ใจว่าน้ำยาสองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase) ส่วนหัวพอตสำรองดูได้ที่หน้า [คอยล์ UWELL Caliburn G4 และ G3](/products/coil-94)",
           ],
         },
@@ -1288,24 +1283,24 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "แบตใช้ได้ 3 วันจริงไหม",
           paragraphs: [
             "UWELL บอกว่าชาร์จหนึ่งครั้งใช้ได้ 3 วัน และเขียนหมายเหตุไว้ว่าตัวเลขนี้มาจากการทดสอบในแล็บของ UWELL เอง ใช้จริงได้นานแค่ไหนจึงขึ้นกับการสูบของแต่ละคน",
-            "ส่วนที่บอกว่าแบตใหญ่ขึ้น 20% นั้น UWELL เทียบกับสินค้าทั่วไปในตลาด ระหว่างใช้ ไฟ LED บนตัวเครื่องจะเปลี่ยนสีเป็นเขียว ฟ้า และแดงตามแบตที่เหลือ",
+            "ส่วนที่บอกว่าแบตใหญ่ขึ้น 20% นั้น UWELL เทียบกับสินค้าทั่วไปในตลาด",
+          ],
+        },
+        {
+          heading: "ดูแบตที่เหลือยังไง",
+          paragraphs: [
+            "ระหว่างใช้ ไฟ LED บนตัวเครื่องจะเปลี่ยนสีเป็นเขียว ฟ้า และแดงตามแบตที่เหลือ",
           ],
         },
       ],
     },
     en: {
-      lede: "The UWELL Caliburn G3 Lite, from the posters on UWELL's own page: which models share its pods, which pod to pair with which e-liquid, which pod comes in the box, and where UWELL's battery figures come from.",
+      lede: "The UWELL Caliburn G3 Lite, from the posters on UWELL's own page: which pod pairs with which e-liquid, and which pod comes in the box. After that, where UWELL's battery figures come from and how to read the charge left.",
       sections: [
-        {
-          heading: "Which models share its pods?",
-          paragraphs: [
-            "UWELL says every G3 Lite cartridge belongs to the Caliburn G3 series, the same pods the [Caliburn G3](/products/caliburn-g3) uses, so G3 pods you already have carry over.",
-          ],
-        },
         {
           heading: "Which pod goes with which e-liquid?",
           paragraphs: [
-            "UWELL's cartridge chart puts the 0.6Ω pod at the RDL end, the looser draw, paired with freebase, and the 1.2Ω pod at the MTL end, the tighter draw, paired with nic salt; the 0.9Ω sits in between.",
+            "UWELL's cartridge chart puts the lower-resistance pod at the RDL end, paired with freebase, and the higher-resistance pod at the MTL end, paired with nic salt.",
             "If the two e-liquids are new to you, see [salt nic vs freebase](/guides/salt-nic-vs-freebase). Spare pods are on the [UWELL Caliburn G4 & G3 coil](/products/coil-94) page.",
           ],
         },
@@ -1318,24 +1313,24 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Does the battery really last 3 days?",
           paragraphs: [
-            "UWELL says one charge lasts 3 days and notes that the figure comes from UWELL's own lab test, so real use depends on how you vape. The 20% bigger battery is measured against other common products on the market. As you vape, the LED on the body turns green, blue or red with the charge left.",
+            "UWELL says one charge lasts 3 days and notes that the figure comes from UWELL's own lab test, so real use depends on how you vape. The 20% bigger battery is measured against other common products on the market.",
+          ],
+        },
+        {
+          heading: "How do I see the charge left?",
+          paragraphs: [
+            "As you vape, the LED on the body turns green, blue or red with the charge left.",
           ],
         },
       ],
     },
     zh: {
-      lede: "下面根据 UWELL 官网上的海报，介绍 UWELL Caliburn G3 Lite 能和哪些型号共用烟弹、哪种烟弹配哪种烟油、盒里附带哪种烟弹，以及 UWELL 的电池数据从何而来。",
+      lede: "下面根据 UWELL 官网上的海报，介绍 UWELL Caliburn G3 Lite 哪种烟弹配哪种烟油、盒里附带哪种烟弹，再说明 UWELL 的电池数据从何而来，以及怎么看剩余电量。",
       sections: [
-        {
-          heading: "能和哪些型号共用烟弹？",
-          paragraphs: [
-            "UWELL 表示 G3 Lite 的烟弹全部属于 Caliburn G3 系列，与 [Caliburn G3](/products/caliburn-g3) 用的是同一套烟弹，手上已有的 G3 烟弹可以继续使用。",
-          ],
-        },
         {
           heading: "哪种烟弹配哪种烟油？",
           paragraphs: [
-            "UWELL 的烟弹图表把 0.6Ω 放在 RDL 一端，吸感较松，搭配 freebase；把 1.2Ω 放在 MTL 一端，吸感较紧，搭配 salt nic；0.9Ω 居中。",
+            "UWELL 的烟弹图表把低阻值烟弹放在 RDL 一端，搭配 freebase；把高阻值烟弹放在 MTL 一端，搭配 salt nic。",
             "不清楚两种烟油的区别，可以看 [salt nic 和 freebase 有什么区别](/guides/salt-nic-vs-freebase)。备用烟弹见 [UWELL Caliburn G4 和 G3 线圈](/products/coil-94)。",
           ],
         },
@@ -1348,7 +1343,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "电池真的能用 3 天吗？",
           paragraphs: [
-            "UWELL 表示充一次电可用 3 天，并注明这一数据来自 UWELL 自己的实验室测试，实际能用多久取决于个人的使用习惯。所谓电池容量提升 20%，是与市面上的常见产品相比。使用时，机身上的 LED 灯会随剩余电量显示绿、蓝、红三种颜色。",
+            "UWELL 表示充一次电可用 3 天，并注明这一数据来自 UWELL 自己的实验室测试，实际能用多久取决于个人的使用习惯。所谓电池容量提升 20%，是与市面上的常见产品相比。",
+          ],
+        },
+        {
+          heading: "怎么看剩余电量？",
+          paragraphs: [
+            "使用时，机身上的 LED 灯会随剩余电量显示绿、蓝、红三种颜色。",
           ],
         },
       ],
