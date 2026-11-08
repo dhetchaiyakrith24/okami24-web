@@ -7407,7 +7407,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ลมเข้าสองข้างช่วยอะไร",
           paragraphs: [
-            "SMOK บอกว่าลมที่เข้าจากสองข้างช่วยให้น้ำยากลายเป็นไอได้ทั่วถึงขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
+            "SMOK บอกว่าการวางช่องลมแบบนี้ช่วยให้น้ำยากลายเป็นไอได้ทั่วถึงขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
           ],
         },
         {
@@ -7425,7 +7425,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 กับ RPM 5 ต่างกันยังไง",
           paragraphs: [
-            "ทั้งสองรุ่นใช้คอยล์ RPM 3 เหมือนกัน",
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน",
             "[SMOK RPM 5](/products/smok-rpm-5) จุน้ำยาได้มากกว่า คือ 6.5mL และมีจอ TFT 0.96 นิ้ว ส่วน Nord 5 ตัวเครื่องสั้นกว่า",
           ],
         },
@@ -7444,7 +7444,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What does air from both sides do?",
           paragraphs: [
-            "SMOK says air coming in from both sides turns the e-liquid into vapour more fully and spreads the heat more evenly, for a smooth, full taste. The mouthpiece is wide-bore.",
+            "SMOK says this inlet layout turns the e-liquid into vapour more fully and spreads the heat more evenly, for a smooth, full taste. The mouthpiece is wide-bore.",
           ],
         },
         {
@@ -7462,7 +7462,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 or RPM 5?",
           paragraphs: [
-            "Both take RPM 3 coils.",
+            "Both take the same coil family.",
             "The [SMOK RPM 5](/products/smok-rpm-5) holds more, at 6.5mL, and has a 0.96-inch TFT display; the Nord 5 is the shorter device.",
           ],
         },
@@ -7481,7 +7481,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "两侧进气有什么作用？",
           paragraphs: [
-            "SMOK 表示两侧进气能让烟油雾化得更充分、散热更均衡，口感更顺滑饱满。烟嘴为宽口设计。",
+            "SMOK 表示这种进气布局能让烟油雾化得更充分、散热更均衡，口感更顺滑饱满。烟嘴为宽口设计。",
           ],
         },
         {
@@ -7499,7 +7499,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 和 RPM 5 怎么选？",
           paragraphs: [
-            "两款都使用 RPM 3 线圈。",
+            "两款使用同一系列的线圈。",
             "[SMOK RPM 5](/products/smok-rpm-5) 容量更大，为 6.5mL，并配备 0.96 英寸 TFT 屏；Nord 5 机身更短。",
           ],
         },
@@ -7557,7 +7557,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 กับ Nord 5 ต่างกันยังไง",
           paragraphs: [
-            "ทั้งสองรุ่นใช้คอยล์ RPM 3 เหมือนกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL และใช้จอ OLED 0.69 นิ้ว",
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL และใช้จอ OLED 0.69 นิ้ว",
           ],
         },
       ],
@@ -7600,7 +7600,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 or Nord 5?",
           paragraphs: [
-            "Both take RPM 3 coils. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod and a 0.69-inch OLED display.",
+            "Both take the same coil family. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod and a 0.69-inch OLED display.",
           ],
         },
       ],
@@ -7643,7 +7643,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 和 Nord 5 怎么选？",
           paragraphs: [
-            "两款都使用 RPM 3 线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏。",
+            "两款使用同一系列的线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏。",
           ],
         },
       ],
