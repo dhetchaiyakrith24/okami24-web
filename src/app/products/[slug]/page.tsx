@@ -40,6 +40,8 @@ import {
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { liveLookup } from "@/lib/stock/live";
+import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock/card-stock";
 
 /** JSON-LD `Offer.availability` while online ordering is off (owner 2026-09-07, approved
  *  InStoreOnly): the price stays in structured data so Google keeps showing it, but the offer
@@ -47,6 +49,18 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
  *  through a channel other than online", which is what "order on LINE" is. With ordering on,
  *  nothing is added and the offers are exactly what they were. */
 const OFFER_AVAILABILITY = ORDERING_ENABLED ? {} : { availability: "https://schema.org/InStoreOnly" };
+/** The Offer's stock words from the warehouse's LIVE stock (owner 08/11: Google must read what the page sells today, not
+ *  the build's stock). Sold out → OutOfStock · a price and an option a customer can buy, with ordering on → InStock ·
+ *  otherwise the ordering-mode answer above. `next build` has no live stock (live.ts), so a fresh build says what it said
+ *  before; the hourly regeneration below brings the live answer in. */
+function offerAvailability(stock: CardStock): { availability?: string } {
+  if (stock.soldOut) return { availability: "https://schema.org/OutOfStock" };
+  if (ORDERING_ENABLED && stock.inStock) return { availability: "https://schema.org/InStock" };
+  return OFFER_AVAILABILITY;
+}
+/** ISR (owner 08/11): the prerendered page is rebuilt on the server at most every 3 hours, on the first visit after that,
+ *  so its JSON-LD stock follows the warehouse. 3 hours, not less: a 0.5-CPU instance renders it, and stock moves by the day. */
+export const revalidate = 10800;
 /** Every Offer names the shop as `seller` by `@id` (SEO round ก, 2026-09-21) so Google ties the
  *  53 product offers to the one Organization node on the homepage instead of treating them as
  *  offers from nobody — GSC's "merchant listing" report was flagging exactly that gap. */
@@ -294,9 +308,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         category: categoryNameOf(publishedProduct.categoryId),
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
-        // priceReference (see buildPublishedCatalog()'s own readiness gate). Out of stock as a whole (no SKU, or every
-        // option sold out — the read model's own answer) → OutOfStock, same rule as the legacy branch (stock round 2b).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...(publishedProduct.availabilityStatus === "out-of-stock" ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+        // priceReference (see buildPublishedCatalog()'s own readiness gate). Stock words = offerAvailability (live stock).
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...offerAvailability(publishedCardStock(publishedProduct, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
       const publishedBrand = publishedProduct.brandId ? getBrand(publishedProduct.brandId) : undefined;
       const publishedBrandHref = publishedBrand ? `/brands/${publishedBrand.slug}` : undefined;
@@ -346,9 +359,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
-  // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
-  // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
-  // its own `availability` (no SKU, stock round batch 2b).
+  // Every option sold out at build time (owner's list, no SKU, the warehouse read) — drives the similar-models block only;
+  // the Offer's stock words come from offerAvailability (live stock).
   const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
   const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
   // Nothing to buy at build time (no price, or every option out): the closest models we do have sit right under the head.
@@ -368,7 +380,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated. No price = no Product block at all (SEO 04/11:
     // GSC flagged caliburn-g3 / drag-x / nexpod-15k invalid — Google needs offers, review or aggregateRating).
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...(legacyAllSoldOut ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...offerAvailability(legacyCardStock(product, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   // Round "M Bar 9K redesign" (owner 23/10): a slug in product-editorial.ts gets the editorial body instead of the
   // review / more-details / spec / compatibility / FAQ sections; its FAQPage block is built from the same Thai copy.
