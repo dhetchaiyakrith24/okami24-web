@@ -61,8 +61,6 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
 
   const db = getDb();
   const result = db.transaction((): CreateLineOrderResult & { slipChecked?: boolean } => {
-    db.prepare("INSERT OR IGNORE INTO customers (phone) VALUES (?)").run(input.customerPhone);
-    const customer = db.prepare("SELECT id FROM customers WHERE phone = ?").get(input.customerPhone) as { id: number };
     const history = loadShippingHistory(db, { memberId: null, phones: [input.customerPhone, address.phone], address }, new Date(), isPostcodeSubdistrict);
     const totals = computeOrderTotals(lines, history);
 
@@ -75,6 +73,10 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
       if (fits === "not-loose") return { ok: false, error: "slip-taken" };
       if (fits === "amount") return { ok: false, error: "slip-amount" };
     }
+
+    // Only now, with every check passed: a refused save must leave no customer row behind (a return does not roll back).
+    db.prepare("INSERT OR IGNORE INTO customers (phone) VALUES (?)").run(input.customerPhone);
+    const customer = db.prepare("SELECT id FROM customers WHERE phone = ?").get(input.customerPhone) as { id: number };
 
     const orderNumber = generateOrderNumber();
     const orderId = Number(
