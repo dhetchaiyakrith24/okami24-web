@@ -6986,44 +6986,44 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // split stays in the spec row. Legacy page → no article FAQ.
   "smok-nord-5": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่าคอยล์สองตัวในกล่องใช้กี่วัตต์ ชาร์จนานแค่ไหน เติมน้ำยาแล้วควรทำยังไงก่อนสูบ และ Nord 5 ต่างจาก RPM 5 ตรงไหน",
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่าคอยล์ที่มาในกล่องใช้กี่วัตต์ ชาร์จนานแค่ไหน เติมน้ำยาแล้วควรทำยังไงก่อนสูบ และ Nord 5 ต่างจาก RPM 5 ตรงไหน",
       sections: [
         {
-          heading: "คอยล์สองตัวในกล่องใช้กี่วัตต์",
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
           paragraphs: [
-            "SMOK ทำคอยล์ทั้งสองตัวมาสำหรับการสูบแบบ DL คือดูดลงปอดตรง ๆ คอยล์ที่ใส่มากับหัวพอตใช้ช่วง 40–80 วัตต์ และ SMOK บอกว่าร้อนเร็ว ให้รสชัดและไอเยอะ",
-            "ส่วนคอยล์สำรองใช้ช่วง 20–45 วัตต์ SMOK บอกว่าผิวคอยล์ร้อนสม่ำเสมอกว่า รสจึงนุ่มและเข้ม ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่านต่อได้ที่ [สูบแบบ MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าตัวนี้ร้อนเร็ว ให้รสชัดและไอเยอะ",
+            "ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ SMOK บอกว่าผิวคอยล์ร้อนสม่ำเสมอกว่า และให้รสนุ่มและเข้ม ถ้ายังไม่แน่ใจว่าแนวการสูบของตัวเองเป็นแบบไหน อ่านต่อได้ที่ [สูบแบบ MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
           ],
         },
         {
           heading: "ลมเข้าสองข้างช่วยอะไร",
           paragraphs: [
-            "SMOK บอกว่าลมที่เข้าจากสองข้างช่วยให้น้ำยากลายเป็นไอได้เต็มขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
+            "SMOK บอกว่าลมที่เข้าจากสองข้างช่วยให้น้ำยากลายเป็นไอได้ทั่วถึงขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
           ],
         },
         {
           heading: "SMOK Nord 5 ชาร์จนานแค่ไหน",
           paragraphs: [
-            "หน้าเว็บหลักของ SMOK บอกว่าชาร์จจากแบตอ่อนจนกลับมาพร้อมใช้ ใช้เวลาอย่างมาก 1 ชั่วโมง 40 นาที",
+            "หน้าเว็บหลักของ SMOK บอกว่าเมื่อชาร์จด้วยไฟสูงสุด 1.5A แบตที่เหลือน้อยจะกลับมาพร้อมใช้ภายใน 1 ชั่วโมง 40 นาที",
           ],
         },
         {
           heading: "เติมน้ำยาแล้วสูบได้เลยไหม",
           paragraphs: [
-            "SMOK แนะนำให้รอสักครู่หลังเติมน้ำยา ปล่อยให้น้ำยาซึมเข้าสำลีในคอยล์จนทั่วก่อน แล้วค่อยเริ่มสูบ",
+            "หลังเติมน้ำยา SMOK แนะนำให้วางเครื่องทิ้งไว้หลายนาทีก่อน ให้น้ำยาซึมเข้าสำลีในคอยล์จนทั่ว แล้วค่อยเริ่มสูบ",
           ],
         },
         {
           heading: "SMOK Nord 5 มีระบบป้องกันอะไรบ้าง",
           paragraphs: [
-            "เครื่องตัดการทำงานเมื่อกดยิงค้างครบ 8 วินาที ตรวจได้ว่าใส่หัวพอตแล้วหรือยัง และมีระบบป้องกันแบตต่ำกับไฟช็อต",
+            "เครื่องจะหยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที ตรวจได้ว่าใส่หัวพอตแล้วหรือยัง และมีระบบป้องกันแบตต่ำกับไฟช็อต",
           ],
         },
         {
           heading: "SMOK Nord 5 กับ RPM 5 ต่างกันยังไง",
           paragraphs: [
-            "ทั้งสองรุ่นใช้คอยล์ RPM 3 ชุดเดียวกัน แบตขนาดเท่ากัน และปรับวัตต์ได้ช่วงเดียวกัน",
-            "[SMOK RPM 5](/products/smok-rpm-5) จุน้ำยาได้มากกว่าที่ 6.5mL ใช้จอ TFT 0.96 นิ้ว และเติมน้ำยาด้านบนได้โดยไม่ต้องถอดหัวพอต ส่วน Nord 5 ตัวเครื่องสั้นกว่า",
+            "ทั้งสองรุ่นใช้คอยล์ RPM 3 เหมือนกัน ความจุแบตเท่ากัน และปรับวัตต์ได้ในช่วงเดียวกัน",
+            "[SMOK RPM 5](/products/smok-rpm-5) จุน้ำยาได้มากกว่า คือ 6.5mL และมีจอ TFT 0.96 นิ้ว ส่วน Nord 5 ตัวเครื่องสั้นกว่า",
           ],
         },
       ],
@@ -7034,7 +7034,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What wattage do the two coils in the box run at?",
           paragraphs: [
-            "SMOK makes both for DL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W, and SMOK says it heats up fast with a fuller flavour and plenty of vapour.",
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W, and SMOK says it heats up fast with a fuller flavour and plenty of vapour.",
             "The spare runs at 20–45W, and SMOK says its more even heating surface gives a smooth, rich taste. If you're not sure which style you vape, see [MTL vs DTL](/guides/understanding-mtl-vs-dtl).",
           ],
         },
@@ -7047,13 +7047,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How long does the SMOK Nord 5 take to charge?",
           paragraphs: [
-            "SMOK's main page says it takes an hour and 40 minutes at most to come back from a low battery.",
+            "SMOK's main page says that at up to 1.5A, it charges back from a low battery in an hour and 40 minutes at most.",
           ],
         },
         {
           heading: "Can I vape straight after filling?",
           paragraphs: [
-            "SMOK advises waiting a few minutes after filling, so the e-liquid soaks fully into the cotton in the coil before you start.",
+            "SMOK advises letting it stand for several minutes after filling, so the e-liquid soaks fully into the cotton in the coil before you start.",
           ],
         },
         {
@@ -7065,8 +7065,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 or RPM 5?",
           paragraphs: [
-            "Both take the same RPM 3 coils, with the same battery size and the same wattage range.",
-            "The [SMOK RPM 5](/products/smok-rpm-5) holds more, 6.5mL, has a 0.96-inch TFT display and fills from the top without taking the pod out. The Nord 5 is the shorter device.",
+            "Both take RPM 3 coils, with the same battery capacity and the same wattage range.",
+            "The [SMOK RPM 5](/products/smok-rpm-5) holds more, at 6.5mL, and has a 0.96-inch TFT display; the Nord 5 is the shorter device.",
           ],
         },
       ],
@@ -7077,7 +7077,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "盒内两颗线圈用多少瓦？",
           paragraphs: [
-            "SMOK 把两颗线圈都设计为 DL 抽法，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快、味道更足、烟雾量大。",
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快、味道更足、烟雾量大。",
             "备用的那颗适用 20–45W，SMOK 表示它受热面更均匀，口感顺滑浓郁。不确定自己是哪种抽法，可以看 [MTL 和 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
           ],
         },
@@ -7090,7 +7090,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 充电要多久？",
           paragraphs: [
-            "SMOK 官网表示，从低电量充到可用最多需要 1 小时 40 分钟。",
+            "SMOK 官网表示，以最高 1.5A 充电时，从低电量充回可用最多需要 1 小时 40 分钟。",
           ],
         },
         {
@@ -7108,8 +7108,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK Nord 5 和 RPM 5 怎么选？",
           paragraphs: [
-            "两款使用同一套 RPM 3 线圈，电池容量相同，功率范围也相同。",
-            "[SMOK RPM 5](/products/smok-rpm-5) 容量更大，为 6.5mL，配备 0.96 英寸 TFT 屏，而且无需取下烟弹就能从顶部注油；Nord 5 机身更短。",
+            "两款都使用 RPM 3 线圈，电池容量和功率范围也都相同。",
+            "[SMOK RPM 5](/products/smok-rpm-5) 容量更大，为 6.5mL，并配备 0.96 英寸 TFT 屏；Nord 5 机身更短。",
           ],
         },
       ],
@@ -7119,7 +7119,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // browser: text "Both internal and external battery versions are optional, providing up to 80 watts" · "The 6.5ml RPM 5 Pod comes standard
   // with two RPM 3 meshed coils to satisfy DL vaping enthusiasts" · posters res.smoktech.com/www/files/v2/product/: 6J4EVe9V8KiqBkpvBjYaC8MZYra
   // .jpeg "2000mAh Built-in Battery" (RPM 5) / "External Single 18650 Battery" (RPM 5 Pro) · K44Eb64L3wfaJ8MjrRaltKZRg6O.jpeg spec sheet, RPM 5
-  // Pro "129.4" mm high, "Weight: 100.7g", "Power Range: 5W-80W" · 9JNnE9qJ1mseJEggnkdBflvr97EV.png "Hit the Mark Stepwise: … a stepless
+  // Pro "129.4" mm high, "Power Range: 5W-80W" (its 100.7g is left out: the sheet does not say whether the 18650 is in) · 9JNnE9qJ1mseJEggnkdBflvr97EV.png "Hit the Mark Stepwise: … a stepless
   // airflow adjustment mechanism that supports airway regulation of any size, from minimum to maximum and vice versa" ·
   // 1Ap9X85wJWsGedppZL0Oszm6XZ9Q.jpeg "Slide-to-open Top Filling System: Simply push the top filling cover to expose the filling hole, without
   // pulling out the pod" · EKay1W6zXnCY5WQQlKVNt1W5qeV.jpeg "INTELLIGENT DETECTION: Pod Detection · Short Circuit Protection · 8 Seconds
@@ -7129,44 +7129,44 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // colour, the box list, this kit's size and weight. Legacy page → no article FAQ.
   "smok-rpm-5": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่า RPM 5 ต่างจาก RPM 5 Pro ยังไง เติมน้ำยาและปรับลมยังไง และคอยล์สองตัวในกล่องใช้กี่วัตต์",
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่า RPM 5 ต่างจาก RPM 5 Pro ยังไง เติมน้ำยาและปรับลมยังไง และคอยล์ที่มาในกล่องใช้กี่วัตต์",
       sections: [
         {
           heading: "SMOK RPM 5 กับ RPM 5 Pro ต่างกันยังไง",
           paragraphs: [
-            "SMOK ทำ RPM 5 ออกมาสองแบบ ชุดในหน้านี้คือ RPM 5 ที่ใช้แบตในตัว ส่วน RPM 5 Pro ใช้ถ่าน 18650 หนึ่งก้อนแบบใส่แยก",
-            "ทั้งสองแบบปรับได้สูงสุด 80 วัตต์เท่ากัน ตามตารางสเปกของ SMOK รุ่น Pro สูงกว่าเล็กน้อยที่ 129.4mm และหนัก 100.7g",
+            "SMOK ทำ RPM 5 ออกมาสองแบบ ชุดที่อยู่ในหน้านี้คือ RPM 5 ที่ใช้แบตในตัว ส่วน RPM 5 Pro ใช้ถ่าน 18650 หนึ่งก้อน",
+            "ทั้งสองแบบปรับได้สูงสุด 80 วัตต์เท่ากัน ตามตารางสเปกของ SMOK รุ่น Pro สูง 129.4mm สูงกว่าชุดนี้เล็กน้อย",
           ],
         },
         {
           heading: "SMOK RPM 5 เติมน้ำยายังไง",
           paragraphs: [
-            "หัวพอตเติมน้ำยาจากด้านบน แค่ดันฝาด้านบนให้เลื่อนเปิด ก็เห็นรูเติมน้ำยาโดยไม่ต้องดึงหัวพอตออกจากเครื่อง",
+            "หัวพอตเป็นแบบเติมด้านบน แค่ดันฝาให้เลื่อนเปิดก็จะเห็นรูเติมน้ำยา และเติมได้เลยโดยไม่ต้องดึงหัวพอตออกจากเครื่อง",
           ],
         },
         {
           heading: "SMOK RPM 5 ปรับลมยังไง",
           paragraphs: [
-            "ปุ่มปรับลมเลื่อนได้ต่อเนื่องแบบไม่มีขั้น ตั้งได้ตั้งแต่ลมน้อยสุดไปจนถึงลมเต็ม และเลื่อนกลับได้ตลอด",
+            "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งได้ตั้งแต่ลมน้อยสุดไปจนถึงลมเปิดเต็ม และปรับกลับได้ทุกเมื่อ",
           ],
         },
         {
-          heading: "คอยล์สองตัวในกล่องใช้กี่วัตต์",
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
           paragraphs: [
-            "SMOK ทำคอยล์ทั้งสองตัวมาสำหรับการสูบแบบ DL คือดูดลงปอดตรง ๆ คอยล์ที่ใส่มากับหัวพอตใช้ช่วง 40–80 วัตต์ และ SMOK บอกว่าร้อนเร็ว ส่วนคอยล์สำรองใช้ช่วง 20–45 วัตต์ ซึ่ง SMOK บอกว่าให้รสนุ่มและเข้ม",
-            "อยากรู้ว่าวัตต์กับลมควรตั้งเท่าไร อ่านต่อได้ที่ [เลือกวัตต์และปรับลมยังไง](/guides/choosing-wattage-and-airflow)",
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าร้อนเร็ว ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ และ SMOK บอกว่าให้รสนุ่มและเข้ม",
+            "ถ้าอยากรู้ว่าควรตั้งวัตต์และปรับลมแค่ไหน อ่านต่อได้ที่ [เลือกวัตต์และปรับลมยังไง](/guides/choosing-wattage-and-airflow)",
           ],
         },
         {
           heading: "SMOK RPM 5 มีระบบป้องกันอะไรบ้าง",
           paragraphs: [
-            "เครื่องตรวจได้ว่าใส่หัวพอตแล้วหรือยัง ตัดการทำงานเมื่อกดยิงค้างครบ 8 วินาที เตือนเมื่อแบตต่ำ และมีระบบป้องกันไฟช็อต",
+            "เครื่องตรวจได้ว่าใส่หัวพอตแล้วหรือยัง หยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที เตือนเมื่อแบตต่ำ และมีระบบป้องกันไฟช็อต",
           ],
         },
         {
           heading: "SMOK RPM 5 กับ Nord 5 ต่างกันยังไง",
           paragraphs: [
-            "ทั้งสองรุ่นใช้คอยล์ RPM 3 ชุดเดียวกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL ใช้จอ OLED 0.69 นิ้ว และมีตัวล็อกคอยล์ในหัวพอต",
+            "ทั้งสองรุ่นใช้คอยล์ RPM 3 เหมือนกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL และใช้จอ OLED 0.69 นิ้ว",
           ],
         },
       ],
@@ -7177,27 +7177,27 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 or RPM 5 Pro?",
           paragraphs: [
-            "SMOK makes the RPM 5 in two versions. The kit on this page is the RPM 5 with a built-in battery, while the RPM 5 Pro takes one separate 18650 battery.",
-            "Both go up to 80W. By SMOK's spec sheet, the Pro is slightly taller at 129.4mm and weighs 100.7g.",
+            "SMOK makes the RPM 5 in two versions. The kit on this page is the RPM 5 with a built-in battery; the RPM 5 Pro runs on a single external 18650 battery.",
+            "Both go up to 80W. According to SMOK's spec sheet, the Pro stands slightly taller at 129.4mm.",
           ],
         },
         {
           heading: "How do I fill the SMOK RPM 5?",
           paragraphs: [
-            "The pod fills from the top: push the top cover to slide it open and the filling hole is there, without taking the pod off the device.",
+            "The pod fills from the top: slide the top cover open to reach the filling hole, with no need to take the pod off the device.",
           ],
         },
         {
           heading: "How do I set the airflow on the SMOK RPM 5?",
           paragraphs: [
-            "The airflow switch slides without steps, from the tightest setting to fully open and back again whenever you like.",
+            "The airflow is stepless, so you can set it anywhere from the tightest to fully open and back again.",
           ],
         },
         {
           heading: "What wattage do the two coils in the box run at?",
           paragraphs: [
-            "SMOK makes both for DL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W and, SMOK says, heats up fast; the spare runs at 20–45W for what SMOK calls a smooth, rich taste.",
-            "For help choosing a wattage and airflow, see [choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W and, SMOK says, heats up fast; the spare runs at 20–45W for what SMOK calls a smooth, rich taste.",
+            "Not sure where to set the wattage and airflow? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
           ],
         },
         {
@@ -7209,7 +7209,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 or Nord 5?",
           paragraphs: [
-            "Both take the same RPM 3 coils. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod, a 0.69-inch OLED display and a coil lock in the pod.",
+            "Both take RPM 3 coils. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod and a 0.69-inch OLED display.",
           ],
         },
       ],
@@ -7220,8 +7220,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 和 RPM 5 Pro 有什么区别？",
           paragraphs: [
-            "SMOK 的 RPM 5 有两个版本。本页这套是内置电池的 RPM 5，RPM 5 Pro 则使用一节另装的 18650 电池。",
-            "两款最高都是 80W。按 SMOK 的规格表，Pro 稍高一些，为 129.4mm，重 100.7g。",
+            "SMOK 的 RPM 5 有两个版本。本页这套是内置电池的 RPM 5，RPM 5 Pro 则使用一节外置 18650 电池。",
+            "两款最高都是 80W。根据 SMOK 的规格表，Pro 稍高一些，为 129.4mm。",
           ],
         },
         {
@@ -7233,13 +7233,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 怎么调气流？",
           paragraphs: [
-            "气流开关可无级滑动，从最小一直调到全开，也可以随时调回来。",
+            "气流可无级调节，从最小到最大任意设定，也能随时调回。",
           ],
         },
         {
           heading: "盒内两颗线圈用多少瓦？",
           paragraphs: [
-            "SMOK 把两颗线圈都设计为 DL 抽法，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快；备用的那颗适用 20–45W，SMOK 表示口感顺滑浓郁。",
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快；备用的那颗适用 20–45W，SMOK 表示口感顺滑浓郁。",
             "想了解功率和气流怎么设置，可以看 [怎样选择功率和气流](/guides/choosing-wattage-and-airflow)。",
           ],
         },
@@ -7252,7 +7252,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "SMOK RPM 5 和 Nord 5 怎么选？",
           paragraphs: [
-            "两款使用同一套 RPM 3 线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏，烟弹里还有线圈锁。",
+            "两款都使用 RPM 3 线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏。",
           ],
         },
       ],
