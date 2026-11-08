@@ -6976,10 +6976,10 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // "MAX 1.5A TYPE-C CHARGING: It'll take an hour and 40 minutes at most to recover from the low battery" · "HOW TO FILL WITH E-LIQUID: Do
   // not inhale immediately after filling the pod. Let it stand for several minutes to get the cotton completely saturated" · "the dual-side
   // air inlet layout enables fuller atomization and more balanced heat dissipation, contributing to a smooth and plump taste" · posters
-  // res.smoktech.com/www/files/v2/product/: aezlMwgz46fqJqEPP6rrI4rzJnd.jpeg "MULTIPLY THE SECURITY: 8 seconds cut-off · pod detection ·
-  // low-voltage protection · short circuit protection" · yEwgblKd6JUV9ZaLewPJHRZnnlV.jpeg "COIL INTRODUCTION: Perfect for DL vaping · RPM 3
+  // res.smoktech.com/www/files/v2/product/: 78JNQrvpZJuZ6EeMKzaETdKYMyL.jpeg "MULTIPLY THE SECURITY: 8 seconds cut-off · pod detection ·
+  // low-voltage protection · short circuit protection" · M62N8xvWR9Tbeg8lr2xoIqaRj9j6.jpeg "COIL INTRODUCTION: Perfect for DL vaping · RPM 3
   // Meshed 0.15Ω Coil · Fast ramp-up time · Better flavor and massive vapor · Wattage: 40-80W" / "RPM 3 Meshed 0.23Ω Coil · More even heat
-  // surface · Smooth taste and rich flavor · Wattage: 20-45W" · M62N8xvWR9Tbeg8lr2xoIqaRj9j6.jpeg "WIDE-BORE MOUTHPIECE". The 0.15Ω coil is
+  // surface · Smooth taste and rich flavor · Wattage: 20-45W" · EybDwwK3MeULpod14DbZhdaZNoV.jpeg "WIDE-BORE MOUTHPIECE". The 0.15Ω coil is
   // the one fitted in the pod (spec row). RPM 5 facts = its own verified rows + its SMOK page (top fill: "push the top filling cover to
   // expose the filling hole, without pulling out the pod"). Left out (already on the page): 2000mAh, 5–80W, 5mL, the two ohm values (named
   // here as the fitted coil and the spare), the 0.69-inch OLED, the slider, the short-circuit LED, the pod lock, the box list; the 1.2A / 1.5A
@@ -7117,13 +7117,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Owner task ก6 (09/11), SMOK: RPM 5 — SMOK's own page www.smoktech.com/product/pod_mod/rpm-5-and-rpm-5-pro, read 09/11 in the in-app
   // browser: text "Both internal and external battery versions are optional, providing up to 80 watts" · "The 6.5ml RPM 5 Pod comes standard
-  // with two RPM 3 meshed coils to satisfy DL vaping enthusiasts" · posters res.smoktech.com/www/files/v2/product/: 6J4EVe9V8KiqBkpvBjYaC8MZYra
-  // .jpeg "2000mAh Built-in Battery" (RPM 5) / "External Single 18650 Battery" (RPM 5 Pro) · K44Eb64L3wfaJ8MjrRaltKZRg6O.jpeg spec sheet, RPM 5
-  // Pro "129.4" mm high, "Power Range: 5W-80W" (its 100.7g is left out: the sheet does not say whether the 18650 is in) · 9JNnE9qJ1mseJEggnkdBflvr97EV.png "Hit the Mark Stepwise: … a stepless
+  // with two RPM 3 meshed coils to satisfy DL vaping enthusiasts" · posters res.smoktech.com/www/files/v2/product/: rqYmg6MA4oI9Qw5ny3gRsKBavYE
+  // .jpeg "2000mAh Built-in Battery" (RPM 5) / "External Single 18650 Battery" (RPM 5 Pro) · RNEmoLb3R3T7l0bgQ6zlFROVZYE.jpeg spec sheet, RPM 5
+  // Pro "129.4" mm high, "Power Range: 5W-80W" (its 100.7g is left out: the sheet does not say whether the 18650 is in) · K44Eb64L3wfaJ8MjrRaltKZRg6O.jpeg "Hit the Mark Stepwise: … a stepless
   // airflow adjustment mechanism that supports airway regulation of any size, from minimum to maximum and vice versa" ·
-  // 1Ap9X85wJWsGedppZL0Oszm6XZ9Q.jpeg "Slide-to-open Top Filling System: Simply push the top filling cover to expose the filling hole, without
-  // pulling out the pod" · EKay1W6zXnCY5WQQlKVNt1W5qeV.jpeg "INTELLIGENT DETECTION: Pod Detection · Short Circuit Protection · 8 Seconds
-  // Cut-off · Low-voltage Warning" · zmyXZ8XMXNuv545YjandS4NJNpg.png "COIL INTRODUCTION" (fitted 0.15Ω 40-80W "Fast ramp-up", spare 0.23Ω
+  // 9O3X8vql7mTll3Y17eaGS61Xl5d.jpeg "Slide-to-open Top Filling System: Simply push the top filling cover to expose the filling hole, without
+  // pulling out the pod" · NlMNnNbwn9sqdb3XRLn7I4low8v.jpeg "INTELLIGENT DETECTION: Pod Detection · Short Circuit Protection · 8 Seconds
+  // Cut-off · Low-voltage Warning" · EKay1W6zXnCY5WQQlKVNt1W5qeV.jpeg "COIL INTRODUCTION" (fitted 0.15Ω 40-80W "Fast ramp-up", spare 0.23Ω
   // 20-45W "Smooth taste and rich flavor", both "Perfect for DL vaping"). Nord 5 facts = its verified rows. Left out (already on the page):
   // 2000mAh as a number, 5–80W, 6.5mL, the two ohm values (named here as the fitted coil and the spare), the 0.96-inch TFT and its theme
   // colour, the box list, this kit's size and weight. Legacy page → no article FAQ.
