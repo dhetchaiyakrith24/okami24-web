@@ -39,7 +39,7 @@ import {
 } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { ORDERING_ENABLED, orderingOpen } from "@/lib/commerce/ordering-mode";
 import { liveLookup } from "@/lib/stock/live";
 import { cardTaglinesTh } from "@/lib/card-taglines";
 import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock/card-stock";
@@ -51,12 +51,14 @@ import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock
  *  nothing is added and the offers are exactly what they were. */
 const OFFER_AVAILABILITY = ORDERING_ENABLED ? {} : { availability: "https://schema.org/InStoreOnly" };
 /** The Offer's stock words from the warehouse's LIVE stock (owner 08/11: Google must read what the page sells today, not
- *  the build's stock). Sold out → OutOfStock · a price and an option a customer can buy, with ordering on → InStock ·
- *  otherwise the ordering-mode answer above. `next build` has no live stock (live.ts), so a fresh build says what it said
- *  before; the hourly regeneration below brings the live answer in. */
+ *  the build's stock). Sold out → OutOfStock · the cart closed (env or the owner's "ปิดตะกร้า" switch, orderingOpen) →
+ *  InStoreOnly, as with ordering off · a price and an option a customer can buy → InStock · otherwise nothing. `next build`
+ *  has no live stock and reads the switches as open (live.ts, shop-switches.ts), so a fresh build says what it said
+ *  before; the regeneration below brings the live answer and the switch in. */
 function offerAvailability(stock: CardStock): { availability?: string } {
   if (stock.soldOut) return { availability: "https://schema.org/OutOfStock" };
-  if (ORDERING_ENABLED && stock.inStock) return { availability: "https://schema.org/InStock" };
+  if (!orderingOpen()) return { availability: "https://schema.org/InStoreOnly" };
+  if (stock.inStock) return { availability: "https://schema.org/InStock" };
   return OFFER_AVAILABILITY;
 }
 /** ISR (owner 08/11): the prerendered page is rebuilt on the server at most every 3 hours, on the first visit after that,
