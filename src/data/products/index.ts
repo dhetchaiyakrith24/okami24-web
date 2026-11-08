@@ -4,6 +4,7 @@ import { uwellProducts } from "./uwell";
 import { voopooProducts } from "./voopoo";
 import { salthubProducts } from "./salthub";
 import { relxProducts } from "./relx";
+import { smokProducts } from "./smok";
 import { joiwayProducts } from "./joiway";
 import { tfitProducts } from "./tfit";
 import { infyProducts } from "./infy";
@@ -32,6 +33,7 @@ export const catalogIncludingHidden: Product[] = applySoldOut([
   ...voopooProducts,
   ...salthubProducts,
   ...relxProducts,
+  ...smokProducts,
   ...joiwayProducts,
   ...tfitProducts,
   ...infyProducts,

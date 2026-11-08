@@ -15005,5 +15005,201 @@
   },
   "note": "round popular models 07/11: no maker picture exists; owner allowed pictures not made before",
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/red-grey-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "red-grey-dart",
+  "minLong": 560,
+  "fileName": "variant-red-grey-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/7-color-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "7-color-dart",
+  "minLong": 560,
+  "fileName": "variant-7-color-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/fluid-black-grey.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "fluid-black-grey",
+  "minLong": 560,
+  "fileName": "variant-fluid-black-grey.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/blue-grey-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "blue-grey-dart",
+  "minLong": 560,
+  "fileName": "variant-blue-grey-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/beige-white.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "beige-white",
+  "minLong": 560,
+  "fileName": "variant-beige-white.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/green-blue-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "green-blue-dart",
+  "minLong": 560,
+  "fileName": "variant-green-blue-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/grey.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "grey",
+  "minLong": 560,
+  "fileName": "variant-grey.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/black.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "black",
+  "minLong": 560,
+  "fileName": "variant-black.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/black-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "black-dart",
+  "minLong": 560,
+  "fileName": "variant-black-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/blue-pink-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "blue-pink-dart",
+  "minLong": 560,
+  "fileName": "variant-blue-pink-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/brown.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "brown",
+  "minLong": 560,
+  "fileName": "variant-brown.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/white-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "variant",
+  "id": "white-dart",
+  "minLong": 560,
+  "fileName": "variant-white-dart.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/nord5/7-color-dart.jpg",
+  "slug": "smok-nord-5",
+  "role": "card",
+  "minLong": 560,
+  "fileName": "card.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/matte-gun-metal.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "matte-gun-metal",
+  "minLong": 560,
+  "fileName": "variant-matte-gun-metal.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/brown-leather.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "brown-leather",
+  "minLong": 560,
+  "fileName": "variant-brown-leather.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/prism-rainbow.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "prism-rainbow",
+  "minLong": 560,
+  "fileName": "variant-prism-rainbow.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/white.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "white",
+  "minLong": 560,
+  "fileName": "variant-white.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/grey-leather.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "grey-leather",
+  "minLong": 560,
+  "fileName": "variant-grey-leather.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/black-leather.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "black-leather",
+  "minLong": 560,
+  "fileName": "variant-black-leather.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/beige-white-leather.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "beige-white-leather",
+  "minLong": 560,
+  "fileName": "variant-beige-white-leather.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/black.png",
+  "slug": "smok-rpm-5",
+  "role": "variant",
+  "id": "black",
+  "minLong": 560,
+  "fileName": "variant-black.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/smok/rpm5/prism-rainbow.png",
+  "slug": "smok-rpm-5",
+  "role": "card",
+  "minLong": 560,
+  "fileName": "card.webp",
+  "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
  }
 ]
