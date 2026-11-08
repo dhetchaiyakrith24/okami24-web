@@ -6980,41 +6980,41 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Left out (already on the page): 5 a box, brass, single mesh, the 0.7Ω 14–20W, the five devices in the spec row. Seed page → FAQ allowed.
   "coil-70": {
     th: {
-      lede: "ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าคอยล์ dotCoils ใช้กับเครื่องไหนได้บ้าง และค่าไหนต้องระวังกับบางรุ่น",
+      lede: "คอยล์ตัวนี้ DOTMOD เรียกว่า dotCoils ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าใช้กับเครื่องไหนได้บ้าง และมีค่าโอห์มไหนที่บางรุ่นใช้ไม่ได้",
       sections: [
         {
           heading: "คอยล์ dotCoils ใช้กับเครื่องไหนได้บ้าง",
           paragraphs: [
-            "DOTMOD ทำคอยล์นี้มาสำหรับอะตอมของ DOTMOD เองโดยเฉพาะ นอกจากรุ่นในตารางสเปกแล้ว หน้าเว็บของ DOTMOD ตอนนี้ยังระบุ dotStick Revo V1.5 · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3 ไว้ด้วย",
+            "DOTMOD ทำคอยล์นี้มาสำหรับเครื่องของตัวเองโดยเฉพาะ นอกจากรุ่นที่อยู่ในตารางสเปกแล้ว หน้าเว็บของ DOTMOD ยังระบุ dotStick Revo V1.5 · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3 ไว้ด้วย",
             "ถ้ามีเครื่องของ DOTMOD หลายรุ่นในรายชื่อนี้ ก็ใช้คอยล์ชนิดเดียวกันได้ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
           ],
         },
         {
           heading: "ค่า 0.15 โอห์มใช้ได้ทุกเครื่องไหม",
           paragraphs: [
-            "ถ้าใช้ dotStick Revo · dotStick Revo V1.5 หรือ dotPod Max ให้เลี่ยงค่า 0.15 โอห์ม เพราะ DOTMOD ระบุว่าสามรุ่นนี้ไม่รองรับค่านั้น ส่วนเครื่องอื่นในรายชื่อ DOTMOD ไม่ได้เขียนข้อยกเว้นไว้",
+            "ถ้าใช้ dotStick Revo · dotStick Revo V1.5 หรือ dotPod Max ให้เลี่ยงค่า 0.15 โอห์ม เพราะ DOTMOD ระบุว่าสามรุ่นนี้ไม่รองรับค่านั้น ส่วนเครื่องอื่นในรายชื่อนี้ DOTMOD ไม่ได้เขียนข้อยกเว้นไว้",
           ],
         },
         {
           heading: "เปลี่ยนคอยล์เมื่อไหร่ดี",
           paragraphs: [
-            "คอยล์แต่ละหัวแยกซองมาอยู่แล้ว เปิดใช้ทีละหัวได้ ส่วนวิธีดูว่าคอยล์ถึงรอบเปลี่ยนหรือยัง และใส่หัวใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านต่อได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+            "วิธีดูว่าคอยล์ถึงรอบเปลี่ยนหรือยัง และใส่หัวใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance) ส่วนคอยล์ในกล่องนี้แยกซองมาทีละหัว จึงเปิดเฉพาะหัวที่จะเปลี่ยนได้",
           ],
         },
       ],
       faq: [
         {
-          question: "คอยล์ Dotmod Aio V2 ใส่ dotAIO V3 ได้ไหม",
+          question: "คอยล์ dotCoils ใช้กับ dotAIO V3 ได้ไหม",
           answer: "ได้ค่ะ หน้าเว็บของ DOTMOD ระบุ dotAIO V3 ไว้ในรายชื่อเครื่องที่ใช้คอยล์ dotCoils ได้ค่ะ",
         },
         {
           question: "คอยล์ dotCoils มีค่าโอห์มอะไรบ้าง",
-          answer: "หน้าเว็บของ DOTMOD ตอนนี้มี 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้เป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เองค่ะ",
+          answer: "หน้าเว็บของ DOTMOD ตอนนี้มีให้เลือก 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้ อ้างอิงจากค่าที่พิมพ์อยู่บนกล่องของ DOTMOD ค่ะ",
         },
       ],
     },
     en: {
-      lede: "From DOTMOD's own page: which devices take dotCoils, and which value to avoid on some of them.",
+      lede: "This coil is DOTMOD's dotCoils. Below, from DOTMOD's own page: which devices it fits, and which resistance a few of them can't take.",
       sections: [
         {
           heading: "Which devices take dotCoils?",
@@ -7032,23 +7032,23 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "When should I change the coil?",
           paragraphs: [
-            "Each coil comes in its own sealed pack, so you open one at a time. For how to tell when a coil is due and how long to wait before vaping on a new one, see [coil and pod care](/guides/coil-and-pod-maintenance).",
+            "For how to tell when a coil is due and how long to wait before vaping on a new one, see [coil and pod care](/guides/coil-and-pod-maintenance). Each coil in the box is packed on its own, so you only open the one you're fitting.",
           ],
         },
       ],
       faq: [
         {
-          question: "Does the Dotmod Aio V2 coil fit the dotAIO V3?",
+          question: "Do dotCoils fit the dotAIO V3?",
           answer: "Yes. DOTMOD's page lists the dotAIO V3 among the devices that take dotCoils.",
         },
         {
           question: "Which resistances do dotCoils come in?",
-          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is the value printed on DOTMOD's own box.",
+          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is taken from the value printed on DOTMOD's own box.",
         },
       ],
     },
     zh: {
-      lede: "下面根据 DOTMOD 官网整理：dotCoils 适用于哪些设备，以及哪种阻值在部分设备上要注意。",
+      lede: "这款雾化芯就是 DOTMOD 的 dotCoils。下面根据 DOTMOD 官网整理：适用于哪些设备，以及哪种阻值有几款设备不能用。",
       sections: [
         {
           heading: "dotCoils 适用于哪些设备？",
@@ -7066,18 +7066,18 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "什么时候该换雾化芯？",
           paragraphs: [
-            "每颗雾化芯都是独立包装，可以一次拆一颗。怎么判断该换芯、装上新芯后要等多久再抽，可以看 [雾化芯和烟弹保养](/guides/coil-and-pod-maintenance)。",
+            "怎么判断该换芯、装上新芯后要等多久再抽，可以看 [雾化芯和烟弹保养](/guides/coil-and-pod-maintenance)。盒里每颗雾化芯都是独立包装，换哪颗拆哪颗就行。",
           ],
         },
       ],
       faq: [
         {
-          question: "Dotmod Aio V2 雾化芯能用在 dotAIO V3 上吗？",
+          question: "dotCoils 能用在 dotAIO V3 上吗？",
           answer: "可以。DOTMOD 官网把 dotAIO V3 列在适用 dotCoils 的设备中。",
         },
         {
           question: "dotCoils 有哪些阻值？",
-          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 是 DOTMOD 包装盒上印的阻值。",
+          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 依据的是 DOTMOD 包装盒上印的阻值。",
         },
       ],
     },
