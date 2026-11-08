@@ -71,6 +71,9 @@ export interface AnatomySheet {
   /** the 3/4 view's height cap on a desktop screen, px (default 32rem = 512) — set with stackWidthLg so the two read as
    *  one composition (M Bar 10K: stack 459 px, view 440 px) */
   assembledMaxHeightLg?: number;
+  /** the close-up row's width on a desktop screen, px (default 58rem = 928, tiles ~292 px) — narrower keeps the close-ups
+   *  smaller than the exploded view, which stays the hero (M Bar 10K: 528 = three 160 px tiles + 24 px gaps) */
+  zoomRowWidthLg?: number;
 }
 
 const A = "/assets/products/m-bar-10k/anatomy";
@@ -83,6 +86,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     // (was 856 px with a 567 px stack and the 512 px view). Labels keep their size.
     stackWidthLg: 22,
     assembledMaxHeightLg: 440,
+    zoomRowWidthLg: 528,
     heading: { th: "ไล่ดูทีละส่วน จากบนลงล่าง", en: "Part by part, top to bottom", zh: "逐个部件，自上而下" },
     sheetTitle: { th: "ภาพแยกชิ้น", en: "Exploded view", zh: "分解图" },
     parts: [

@@ -335,7 +335,8 @@ export function ProductAnatomySheet({ product, sheet }: { product: Product; shee
           </div>
 
           <div className="border-t pt-8" style={{ borderColor: RULE }}>
-            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-[58rem] lg:gap-6">
+            {/* --zoom-w: the close-up row's desktop width (sheet.zoomRowWidthLg, default 58rem) */}
+            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-(--zoom-w) lg:gap-6" style={{ ["--zoom-w" as string]: sheet.zoomRowWidthLg ? `${sheet.zoomRowWidthLg}px` : "58rem" }}>
               {sheet.zooms.map((z) => (
                 <li key={z.id} className="flex flex-col gap-2">
                   <div className="relative aspect-square overflow-hidden rounded-md border" style={{ borderColor: RULE, background: "radial-gradient(circle at 50% 40%, #2a2c32, #16171a 75%)" }}>
