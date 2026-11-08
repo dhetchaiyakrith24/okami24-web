@@ -6972,6 +6972,417 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), RELX: Ultra Pod — every fact = RELX's own store page relxnow.com/products/relx-maxgo-ultra-pod, read 09/11:
+  // FAQ "improved leak-proof design that utilizes an advanced Air Pressure Balance System … stays securely inside the pod, regardless of
+  // everyday movement" · description "multi-layered structural design" · "click perfectly into your RELX MAXGO device for a stable,
+  // drop-proof magnetic connection" · "No messy refills or coil changes required. Simply swap out your empty pod" · flavour notes
+  // "Watermelon: A crisp, juicy, and sweet summer classic" / "Sunrise Lemon Lime: … citrusy lemon and tangy lime" / "Cherry Cola: A
+  // nostalgic, fizzy blend with a bold cherry kick" · image alt "18mg/ml single pod packaging" (one pod a pack). Kit pairing =
+  // relxnow.com/products/relx-ultra-kit "It's best used with UltraPod". Pod Pro facts = its own verified rows + RELX's Pod Pro page
+  // collections (Fruit · Mint · Tea · Tobacco · Beverage · Dessert). Left out (already on the page): 2mL, 18mg/ml, 5,000 puffs, mesh 10W,
+  // the visible e-liquid, the device list. Blueberry Sour Raspberry has no RELX note of its own (the description says "Blue Raspberry").
+  // Legacy page → no article FAQ.
+  "relx-ultra-pod": {
+    th: {
+      lede: "ด้านล่างเล่าเรื่องที่ RELX บอกไว้บนหน้าเว็บของ Ultra Pod ตั้งแต่การกันรั่วเวลาพกติดตัว วิธียึดกับตัวเครื่อง ไปจนถึงรสของแต่ละกลิ่น",
+      sections: [
+        {
+          heading: "พก RELX Ultra Pod ใส่กระเป๋า น้ำยาจะรั่วไหม",
+          paragraphs: [
+            "RELX ออกแบบหัวพอตนี้ด้วยระบบที่เรียกว่า Air Pressure Balance System และวางโครงสร้างด้านในไว้หลายชั้น เพื่อให้น้ำยาอยู่ในหัวพอตตลอดการพกติดตัวในแต่ละวัน",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod ยึดกับตัวเครื่องยังไง",
+          paragraphs: [
+            "หัวพอตยึดกับตัวเครื่องด้วยแม่เหล็ก RELX บอกว่าออกแบบให้เข้าล็อกได้พอดีและหลุดยาก",
+            "เมื่อน้ำยาหมดก็ถอดหัวเดิมออกแล้วใส่หัวใหม่ได้ทันที ไม่ต้องเติมน้ำยาหรือเปลี่ยนคอยล์เอง",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod แต่ละกลิ่นรสเป็นยังไง",
+          paragraphs: [
+            "RELX เล่ารสของ 3 กลิ่นไว้ Watermelon เป็นแตงโมรสหวานฉ่ำแบบผลไม้หน้าร้อน Sunrise Lemon Lime เป็นเลมอนกับไลม์ที่เปรี้ยวสดชื่น ส่วน Cherry Cola เป็นโคล่าซ่า ๆ ที่มีรสเชอร์รีเด่นขึ้นมา",
+            "หัวรุ่นนี้ขายแพ็กละ 1 หัว อยากลองหลายกลิ่นก็เลือกแยกทีละกลิ่นได้",
+          ],
+        },
+        {
+          heading: "อยากได้กลิ่นให้เลือกมากกว่านี้ ดูรุ่นไหนต่อ",
+          paragraphs: [
+            "หัวพอตอีกรุ่นของ RELX อย่าง [RELX Pod Pro](/products/relx-pod-pro) มีกลิ่นให้เลือกมากกว่า RELX แบ่งไว้เป็นผลไม้ ชา เครื่องดื่ม ของหวาน มินต์ และยาสูบ และบางกลิ่นมีแบบ 0mg/ml ด้วย",
+            "ส่วนเครื่องที่ RELX บอกว่าใช้คู่กับหัวรุ่นนี้ได้ดีที่สุดคือ [RELX Ultra Kit](/products/relx-ultra-kit)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "What RELX's own page says about the Ultra Pod: how it stays sealed in a pocket, how it attaches to the device, and what each flavour tastes like.",
+      sections: [
+        {
+          heading: "Will the RELX Ultra Pod leak in a pocket or bag?",
+          paragraphs: [
+            "RELX builds this pod around what it calls an Air Pressure Balance System, with a structure of several layers inside, to keep the e-liquid in the pod as you carry it through the day.",
+          ],
+        },
+        {
+          heading: "How does the RELX Ultra Pod attach to the device?",
+          paragraphs: [
+            "It attaches with magnets, and RELX says it is designed to click firmly into place and stay put.",
+            "When it runs out, you take it off and fit a new one. There is no e-liquid to refill and no coil to change.",
+          ],
+        },
+        {
+          heading: "What do the RELX Ultra Pod flavours taste like?",
+          paragraphs: [
+            "RELX describes three of them: Watermelon as a crisp, juicy, sweet summer fruit, Sunrise Lemon Lime as lemon and lime with a zesty edge, and Cherry Cola as a fizzy cola with a bold cherry note.",
+            "Each pack holds one pod, so you can try several flavours one at a time.",
+          ],
+        },
+        {
+          heading: "Want more flavours to choose from?",
+          paragraphs: [
+            "RELX's other pod, the [RELX Pod Pro](/products/relx-pod-pro), has a longer list, grouped by RELX into fruit, tea, beverage, dessert, mint and tobacco, and some flavours also come at 0mg/ml.",
+            "The device RELX says this pod works best with is the [RELX Ultra Kit](/products/relx-ultra-kit).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面整理 RELX 官网对 Ultra Pod 的介绍：随身携带时如何防漏、怎样与主机连接，以及每个口味的味道。",
+      sections: [
+        {
+          heading: "RELX Ultra Pod 放在口袋或包里会漏油吗？",
+          paragraphs: [
+            "RELX 为这款烟弹设计了名为 Air Pressure Balance System 的系统，内部采用多层结构，让烟油在日常随身携带时也留在烟弹里。",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod 怎样与主机连接？",
+          paragraphs: [
+            "烟弹通过磁吸与主机连接，RELX 表示它的设计能稳稳卡入、不易脱落。",
+            "烟油用完后取下旧烟弹、装上新的即可，无需注油，也无需更换线圈。",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod 各口味是什么味道？",
+          paragraphs: [
+            "RELX 介绍了其中 3 款：Watermelon 是清脆多汁、香甜的夏日西瓜；Sunrise Lemon Lime 是柠檬配青柠，酸爽清新；Cherry Cola 是带气泡感的可乐，樱桃味突出。",
+            "每盒 1 颗烟弹，想多试几种口味可以逐个挑选。",
+          ],
+        },
+        {
+          heading: "想要更多口味可选？",
+          paragraphs: [
+            "RELX 的另一款烟弹 [RELX Pod Pro](/products/relx-pod-pro) 口味更多，RELX 将其分为水果、茶、饮品、甜点、薄荷和烟草几类，部分口味还有 0mg/ml 版本。",
+            "RELX 表示与这款烟弹搭配效果最好的主机是 [RELX Ultra Kit](/products/relx-ultra-kit)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Ultra Kit — RELX's own store page relxnow.com/products/relx-ultra-kit, read 09/11: FAQ 'engineered for an
+  // "Ultra Intense" experience … designed to deliver a much stronger hit' · "It's best used with UltraPod" · description "Fully compatible
+  // with RELX MAXGO pods … Watermelon, Cherry Cola, Sunrise Lemon Lime, and Blueberry Sour Raspberry". Pod facts = relxnow.com/products/
+  // relx-maxgo-ultra-pod: "Compatible with both RELX (Ultra/Artisan/Infinity/Essential series) and WAKA device" · "single pod packaging".
+  // The "2X satisfaction" line is left out (no basis given). Left out (already on the page): 10W, 380mAh, Type-C 80% in 30 minutes,
+  // aluminium alloy, the light near the base, the box list. Not settled by RELX, so not said: whether a pod is in the box (the box list
+  // says "RELX Pods are sold separately unless bundled", the short line "1 Essential 2 & 1 Ultra Pod") — PR note. Legacy page → no FAQ.
+  "relx-ultra-kit": {
+    th: {
+      lede: "ด้านล่างเล่าจากหน้าเว็บของ RELX ว่าชุด Ultra Kit ทำมาสำหรับใคร และเมื่อหัวพอตแรกหมดแล้ว จะใช้หัวอะไรต่อได้บ้าง",
+      sections: [
+        {
+          heading: "RELX Ultra Kit เหมาะกับใคร",
+          paragraphs: [
+            "RELX ตั้งชื่อแนวของชุดนี้ว่า Ultra Intense และบอกว่าออกแบบมาให้สูบได้หนักแน่นกว่าเครื่องทั่วไป ถ้าชอบรสเข้มและแรงขึ้นอีกระดับ ชุดนี้ทำมาสำหรับแนวนั้นโดยตรง",
+          ],
+        },
+        {
+          heading: "หัวพอตแรกหมดแล้ว ใช้หัวอะไรต่อ",
+          paragraphs: [
+            "RELX บอกว่าเครื่องนี้ใช้คู่กับหัว [RELX Ultra Pod](/products/relx-ultra-pod) ได้ดีที่สุด หัวรุ่นนี้มี 4 กลิ่น นอกจาก Watermelon กับ Sunrise Lemon Lime ก็ยังมี Blueberry Sour Raspberry และ Cherry Cola ให้เลือก",
+            "หัว Ultra Pod ขายแพ็กละ 1 หัว จึงสลับลองกลิ่นใหม่ได้ทีละหัว",
+          ],
+        },
+        {
+          heading: "หัว Ultra Pod ใช้กับเครื่อง RELX รุ่นอื่นได้ไหม",
+          paragraphs: [
+            "ได้ RELX ระบุว่าหัว Ultra Pod ใช้กับเครื่อง RELX ตระกูล Ultra · Artisan · Infinity และ Essential ได้ รวมถึงเครื่อง WAKA ด้วย",
+            "ถ้ามีเครื่องอย่าง [RELX Essential 2](/products/relx-essential-2) อยู่แล้ว ก็ใช้หัวรุ่นเดียวกันนี้สลับกันได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From RELX's own page: who the Ultra Kit is made for, and which pods to use once the first one runs out.",
+      sections: [
+        {
+          heading: "Who is the RELX Ultra Kit for?",
+          paragraphs: [
+            "RELX calls this kit's style Ultra Intense and says it is built for a stronger hit than a standard device. If you like a bolder, richer taste, this is the kit made for it.",
+          ],
+        },
+        {
+          heading: "Which pod do I use when the first one runs out?",
+          paragraphs: [
+            "RELX says the device works best with the [RELX Ultra Pod](/products/relx-ultra-pod). It comes in four flavours: besides Watermelon and Sunrise Lemon Lime, there are Blueberry Sour Raspberry and Cherry Cola.",
+            "Ultra Pods come one to a pack, so you can try a new flavour one pod at a time.",
+          ],
+        },
+        {
+          heading: "Do Ultra Pods fit other RELX devices?",
+          paragraphs: [
+            "Yes. RELX lists the Ultra Pod for its Ultra, Artisan, Infinity and Essential devices, and for WAKA devices as well.",
+            "If you already have a device such as the [RELX Essential 2](/products/relx-essential-2), you can share the same pods between the two.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "根据 RELX 官网的介绍：Ultra Kit 适合什么样的人，以及第一颗烟弹用完后可以换用哪些烟弹。",
+      sections: [
+        {
+          heading: "RELX Ultra Kit 适合谁？",
+          paragraphs: [
+            "RELX 把这套产品的风格称为 Ultra Intense，表示它的设计比一般主机抽起来更有力度。喜欢更浓、更强烈口感的话，这套就是为此而做的。",
+          ],
+        },
+        {
+          heading: "第一颗烟弹用完后换什么烟弹？",
+          paragraphs: [
+            "RELX 表示这台主机搭配 [RELX Ultra Pod](/products/relx-ultra-pod) 效果最好。这款烟弹共有 4 种口味，除了 Watermelon 和 Sunrise Lemon Lime，还有 Blueberry Sour Raspberry 和 Cherry Cola。",
+            "Ultra Pod 每盒 1 颗，可以一颗一颗地尝试新口味。",
+          ],
+        },
+        {
+          heading: "Ultra Pod 能用在其他 RELX 主机上吗？",
+          paragraphs: [
+            "可以。RELX 标明 Ultra Pod 适用于 RELX Ultra、Artisan、Infinity 和 Essential 系列主机，也适用于 WAKA 主机。",
+            "如果手上已经有 [RELX Essential 2](/products/relx-essential-2) 这类主机，两台可以共用同一款烟弹。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Pod Pro — RELX's own pages, read 09/11: relxnow.com/products/relx-pod-pro groups 34 flavours under
+  // "Collection": Fruit (20: Tangy Grape … Ruby Raspberry) · Mint (Menthol Plus) · Tea (Hibiscus Ice Tea, Iced Jasmine Green Tea, Jasmine
+  // Longjing Tea, Oolong Ice Tea, Lemon Ice Tea, Matcha Frappe) · Tobacco (Classic Tobacco) · Beverage (Orange Sparkle, Iced Pocary,
+  // Cucumber Lemonade, Dark Sparkle) · Dessert (Ludou Ice, Banana Freeze); same page "#Ruby Raspberry: Sweet and tart, this raspberry
+  // flavor is complemented by subtle floral notes and just the right amount of mint" · relxnow.com/products/relx-pod-pro-autoship variants
+  // "0mg/ml (1 Pod)" = Watermelon Ice, Mango Orange, Menthol Xtra; "18mg/ml (2 Pods)" for the rest. The other 8 flavours on this page come
+  // from RELX's flavour pages (product file comment). Left out (already on the page): 1.9mL, the ceramic coil, the device list, Pod Pro 2.
+  // The autoship blurb's "0%, 1.8%, 3% and 5%" is left out: its own variants sell only 0mg/ml and 18mg/ml. Legacy page → no article FAQ.
+  "relx-pod-pro": {
+    th: {
+      lede: "RELX Pod Pro มีกลิ่นให้เลือกเยอะ ด้านล่างใช้การจัดกลุ่มของ RELX เองช่วยให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "RELX Pod Pro มีกลิ่นแนวไหนบ้าง",
+          paragraphs: [
+            "หน้าเว็บของ RELX จัด 34 กลิ่นของหัวรุ่นนี้ไว้เป็น 6 กลุ่ม กลุ่มใหญ่ที่สุดคือผลไม้ มีถึง 20 กลิ่น เช่น Tangy Grape · Hokkaido Melon · Paradise Mango · Sea Salt Lychee และ Fresh Peach",
+            "กลุ่มชามี 6 กลิ่น คือ Hibiscus Ice Tea · Iced Jasmine Green Tea · Jasmine Longjing Tea · Oolong Ice Tea · Lemon Ice Tea และ Matcha Frappe",
+            "กลุ่มเครื่องดื่มมี Orange Sparkle · Iced Pocary · Cucumber Lemonade และ Dark Sparkle กลุ่มของหวานมี Ludou Ice กับ Banana Freeze ส่วนกลุ่มมินต์มี Menthol Plus และกลุ่มยาสูบมี Classic Tobacco",
+            "อีก 8 กลิ่นบนหน้านี้ ร้านรวมมาจากหน้าอื่นของ RELX จึงอยู่นอก 6 กลุ่มข้างบน คือ Icy Coconut Water · Lychee Ice · Taro Scoop · Blueberry Splash · Precious Plum · Mango Orange · Menthol Xtra และ Juicy Apple",
+          ],
+        },
+        {
+          heading: "RELX Pod Pro แบบ 0mg/ml มีกลิ่นไหนบ้าง",
+          paragraphs: [
+            "บนหน้าเว็บของ RELX แบบ 0mg/ml มี 3 กลิ่น คือ Watermelon Ice · Mango Orange และ Menthol Xtra ขายแบบหัวเดียว ส่วนแบบ 18mg/ml ขายแพ็กละ 2 หัว",
+          ],
+        },
+        {
+          heading: "RELX เล่ารสของกลิ่นไหนไว้บ้าง",
+          paragraphs: [
+            "RELX บอกว่า Ruby Raspberry เป็นราสป์เบอร์รีรสหวานอมเปรี้ยว ตามด้วยกลิ่นดอกไม้อ่อน ๆ และความเย็นของมินต์อีกเล็กน้อย",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Pod Pro comes in a lot of flavours. Below, RELX's own groups make the choice easier.",
+      sections: [
+        {
+          heading: "What kinds of flavours does the RELX Pod Pro come in?",
+          paragraphs: [
+            "RELX's page sorts 34 of this pod's flavours into six groups. Fruit is the largest, with 20, such as Tangy Grape, Hokkaido Melon, Paradise Mango, Sea Salt Lychee and Fresh Peach.",
+            "Tea has six: Hibiscus Ice Tea, Iced Jasmine Green Tea, Jasmine Longjing Tea, Oolong Ice Tea, Lemon Ice Tea and Matcha Frappe.",
+            "Beverage has Orange Sparkle, Iced Pocary, Cucumber Lemonade and Dark Sparkle, Dessert has Ludou Ice and Banana Freeze, Mint has Menthol Plus and Tobacco has Classic Tobacco.",
+            "The other eight on this page come from RELX's other listings, so they sit outside those six groups: Icy Coconut Water, Lychee Ice, Taro Scoop, Blueberry Splash, Precious Plum, Mango Orange, Menthol Xtra and Juicy Apple.",
+          ],
+        },
+        {
+          heading: "Which RELX Pod Pro flavours come at 0mg/ml?",
+          paragraphs: [
+            "On RELX's page, three: Watermelon Ice, Mango Orange and Menthol Xtra, sold as a single pod. The 18mg/ml pods come two to a pack.",
+          ],
+        },
+        {
+          heading: "How does RELX describe its flavours?",
+          paragraphs: [
+            "RELX describes Ruby Raspberry as a sweet and tart raspberry, with subtle floral notes and a touch of mint.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Pod Pro 口味很多。下面借助 RELX 自己的分类，帮你更快挑选。",
+      sections: [
+        {
+          heading: "RELX Pod Pro 有哪些类型的口味？",
+          paragraphs: [
+            "RELX 官网把这款烟弹的 34 种口味分成 6 类。水果类最多，有 20 种，例如 Tangy Grape、Hokkaido Melon、Paradise Mango、Sea Salt Lychee 和 Fresh Peach。",
+            "茶类有 6 种：Hibiscus Ice Tea、Iced Jasmine Green Tea、Jasmine Longjing Tea、Oolong Ice Tea、Lemon Ice Tea 和 Matcha Frappe。",
+            "饮品类有 Orange Sparkle、Iced Pocary、Cucumber Lemonade 和 Dark Sparkle，甜点类有 Ludou Ice 和 Banana Freeze，薄荷类有 Menthol Plus，烟草类有 Classic Tobacco。",
+            "本页另外 8 种口味是本店从 RELX 其他页面整理而来，不在上述 6 类之中：Icy Coconut Water、Lychee Ice、Taro Scoop、Blueberry Splash、Precious Plum、Mango Orange、Menthol Xtra 和 Juicy Apple。",
+          ],
+        },
+        {
+          heading: "RELX Pod Pro 哪些口味有 0mg/ml？",
+          paragraphs: [
+            "RELX 官网上的 0mg/ml 有 3 种：Watermelon Ice、Mango Orange 和 Menthol Xtra，单颗销售；18mg/ml 则是每盒 2 颗。",
+          ],
+        },
+        {
+          heading: "RELX 怎样描述它的口味？",
+          paragraphs: [
+            "RELX 形容 Ruby Raspberry 是酸甜的覆盆子味，带有淡淡的花香和恰到好处的一点薄荷。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: RELX Pod — RELX's own pages, read 09/11: relxnow.com/products/relx-pod-autoship offers only "(2-packed)
+  // 18mg/ml" and has no description · Pod Pro facts = its verified rows (1.9mL) + relxnow.com/products/relx-pod-pro-autoship "0mg/ml (1 Pod)"
+  // · relxnow.com/products/relx-pod-pro "Collection: Fruit" lists Watermelon Ice, Pineapple Delight and Strawberry Burst. The flavour groups
+  // here are the shop's, from the words in each name. Left out (already on the page): the cotton coil, the swap, the device list. Not said:
+  // Infinity (this RELX page's subtitle says "For RELX Infinity", the product file keeps it out — PR note). Legacy page → no article FAQ.
+  "relx-pod": {
+    th: {
+      lede: "ด้านล่างช่วยเทียบ RELX Pod กับ RELX Pod Pro ให้เห็นภาพ และจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "เลือก RELX Pod หรือ RELX Pod Pro ดี",
+          paragraphs: [
+            "ตัวเลขความจุน้ำยามีให้ดูเฉพาะฝั่ง [RELX Pod Pro](/products/relx-pod-pro) ที่ 1.9mL เพราะ RELX ระบุไว้แค่รุ่นนั้น",
+            "Pod Pro ยังมีกลิ่นให้เลือกมากกว่า และบางกลิ่นมีแบบ 0mg/ml ด้วย ส่วน RELX Pod บนหน้าเว็บของ RELX มีแบบ 18mg/ml อย่างเดียว",
+          ],
+        },
+        {
+          heading: "RELX Pod กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อน ร้านจัดสายจากคำในชื่อกลิ่น จึงเป็นการจัดของร้านเอง ไม่ใช่การแบ่งของ RELX",
+            "สายมินต์มี Menthol Xtra กับ Lemon Mint ส่วนสายผลไม้มี 7 กลิ่น คือ Watermelon Ice · Pineapple Delight · Strawberry Burst · Blueberry Splash · Juicy Apple · Cherry Lime และ Heisenberry",
+            "ในสายผลไม้ Watermelon Ice · Pineapple Delight และ Strawberry Burst เป็นชื่อที่ RELX เองก็จัดไว้ในกลุ่มผลไม้บนหน้า RELX Pod Pro และ Watermelon Ice มีคำว่า Ice อยู่ในชื่อด้วย",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, a side-by-side look at RELX Pod and RELX Pod Pro, and the flavours sorted into groups to make choosing easier.",
+      sections: [
+        {
+          heading: "RELX Pod or RELX Pod Pro?",
+          paragraphs: [
+            "Only the [RELX Pod Pro](/products/relx-pod-pro) has an e-liquid figure, 1.9mL, because RELX gives one for that pod alone.",
+            "The Pod Pro also has more flavours, and some come at 0mg/ml. RELX Pod, on RELX's page, comes at 18mg/ml only.",
+          ],
+        },
+        {
+          heading: "Which RELX Pod flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Menthol Xtra and Lemon Mint. Fruit has seven: Watermelon Ice, Pineapple Delight, Strawberry Burst, Blueberry Splash, Juicy Apple, Cherry Lime and Heisenberry.",
+            "Of the fruit ones, Watermelon Ice, Pineapple Delight and Strawberry Burst are also in RELX's own fruit group on its Pod Pro page, and Watermelon Ice has Ice in its name.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面把 RELX Pod 和 RELX Pod Pro 放在一起比较，并把口味分好组，方便挑选。",
+      sections: [
+        {
+          heading: "选 RELX Pod 还是 RELX Pod Pro？",
+          paragraphs: [
+            "只有 [RELX Pod Pro](/products/relx-pod-pro) 标有烟油容量 1.9mL，因为 RELX 只给出了这一款的数字。",
+            "Pod Pro 的口味也更多，部分口味还有 0mg/ml 版本；RELX Pod 在 RELX 官网上只有 18mg/ml。",
+          ],
+        },
+        {
+          heading: "RELX Pod 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Menthol Xtra 和 Lemon Mint。水果类有 7 种：Watermelon Ice、Pineapple Delight、Strawberry Burst、Blueberry Splash、Juicy Apple、Cherry Lime 和 Heisenberry。",
+            "水果类中的 Watermelon Ice、Pineapple Delight 和 Strawberry Burst，RELX 在 Pod Pro 页面上也归入水果类，而 Watermelon Ice 的名称里还带有 Ice。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Artisan Plus — RELX's own store page relxnow.com/products/relx-artisan-plus-device, read 09/11: "The power
+  // has been upgraded from 6.5W to 8W, providing stronger vapor production. Additionally, the battery capacity has increased from 380mAh to
+  // 440mAh, ensuring longer usage with fewer charges" · "4-Stage Battery Indicator … more intuitive experience than the original's
+  // color-change system". Pod facts = the verified rows of relx-pod-pro (ceramic, 1.9mL, 0mg/ml on some) and relx-pod (cotton). Left out
+  // (already on the page): 8W, 440mAh, the 4 stages, the sculpted body, Type-C, the box list. Legacy page → no article FAQ.
+  "relx-artisan-plus": {
+    th: {
+      lede: "ด้านล่างเทียบ RELX Artisan Plus กับ Artisan รุ่นเดิมจากหน้าเว็บของ RELX และเล่าว่าหัวพอตสองรุ่นที่ใช้ได้ต่างกันตรงไหน",
+      sections: [
+        {
+          heading: "RELX Artisan Plus ต่างจาก Artisan รุ่นเดิมตรงไหน",
+          paragraphs: [
+            "Artisan รุ่นเดิมใช้ 6.5 วัตต์กับแบต 380mAh รุ่นนี้ RELX เพิ่มทั้งวัตต์และขนาดแบต และบอกว่าไอจึงแน่นขึ้น ใช้ได้นานขึ้นจนชาร์จน้อยครั้งลง",
+            "ส่วนไฟบอกแบต รุ่นเดิมใช้วิธีเปลี่ยนสีไฟ และ RELX บอกว่าแบบใหม่ของรุ่นนี้ดูได้ง่ายกว่า",
+          ],
+        },
+        {
+          heading: "หัว RELX Pod กับ RELX Pod Pro ต่างกันยังไง",
+          paragraphs: [
+            "[RELX Pod Pro](/products/relx-pod-pro) ใช้คอยล์เซรามิก จุน้ำยา 1.9mL มีกลิ่นให้เลือกมากกว่า และบางกลิ่นมีแบบ 0mg/ml",
+            "ส่วน [RELX Pod](/products/relx-pod) ใช้คอยล์สำลี ถ้ายังเลือกไม่ได้ ลองดูรายชื่อกลิ่นของทั้งสองหน้าก่อนก็ได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, RELX's own comparison of the Artisan Plus with the original Artisan, and how the two pods it takes differ.",
+      sections: [
+        {
+          heading: "What changed from the original RELX Artisan?",
+          paragraphs: [
+            "RELX raised the power from the original's 6.5W and the battery from its 380mAh, which RELX says gives denser vapour and longer use between charges.",
+            "As for the battery light, the original showed the charge by changing colour, and RELX says the new one is easier to read.",
+          ],
+        },
+        {
+          heading: "RELX Pod or RELX Pod Pro: what's the difference?",
+          paragraphs: [
+            "The [RELX Pod Pro](/products/relx-pod-pro) has a ceramic coil and holds 1.9mL, has more flavours, and some come at 0mg/ml.",
+            "The [RELX Pod](/products/relx-pod) has a cotton coil. If you can't decide, look through the flavour lists on both pages first.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 RELX 官网，比较 RELX Artisan Plus 与初代 Artisan，并说明它适用的两款烟弹有何不同。",
+      sections: [
+        {
+          heading: "RELX Artisan Plus 和初代 Artisan 有什么不同？",
+          paragraphs: [
+            "RELX 把功率从初代的 6.5W 提高，电池也从 380mAh 加大，RELX 表示烟雾因此更饱满，续航更久、充电次数更少。",
+            "至于电量指示，初代靠灯光变色显示电量，RELX 表示这款的新设计更直观易读。",
+          ],
+        },
+        {
+          heading: "RELX Pod 和 RELX Pod Pro 有什么不同？",
+          paragraphs: [
+            "[RELX Pod Pro](/products/relx-pod-pro) 采用陶瓷线圈，容量 1.9mL，口味更多，部分口味有 0mg/ml 版本。",
+            "[RELX Pod](/products/relx-pod) 采用棉芯线圈。还拿不定主意的话，可以先看看两个页面上的口味列表。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
