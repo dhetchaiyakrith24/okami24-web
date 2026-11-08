@@ -7380,6 +7380,102 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), NEVOKS: Feelin Mini empty pod (coil-54) — NEVOKS's own page nevoks.com/products/nevoks-feelin-mini-pod-kit, read
+  // 09/11 in the in-app browser; posters cdn.shopify.com/s/files/1/0670/1865/3983/files/: feelinmini2.jpg "Easy to Fill · Side Fill" ·
+  // feelinmini7.jpg "Compatible with SPL 10 Coil Series · MTL: Best for 0.8Ω · Tighten MTL: Suggest for 1.0Ω · Not Recommend for 0.6Ω" /
+  // "Mesh Coil SPL-10 · Resistance: 0.8Ω (Included) · Power Range: 13~18W · Recommended E-liquid: Freebase (Best for nicotine≤10mg)" /
+  // "Resistance: 1.0Ω · Power Range: 10~13W · Recommended E-liquid: nicotine salt (Best for nicotine≤35mg) · Compatible product: Feelin/Pagee" (printed in both the 0.8Ω and the 1.0Ω block)
+  // · feelinmini9.jpg "Cartridge Material TPU+PCTG" · feelinmini10.jpg packing list "Feelin Mini Empty Cartridge(2ml) · SPL-10 Mesh Coil 0.8Ω".
+  // "Included" = in the Feelin Mini kit box, not with this pod. en/zh leave out the guide link: /guides/salt-nic-vs-freebase is thaiOnly. Left out: 2mL (spec row). Counted outside the spec table (checker 09/11): SPL10 = FAQ 1 answer + FAQ 2 question only;
+  // 0.8Ω / 1.0Ω = section 2 + FAQ 2; "หัวพอตเปล่า" = tagline + shortDescription, so not in the article.
+  // Seed page → FAQ allowed.
+  "coil-54": {
+    th: {
+      lede: "ด้านล่างสรุปจากโปสเตอร์ของ NEVOKS ว่าหัวพอต Feelin Mini เติมน้ำยาทางไหน และคอยล์แต่ละค่าเข้าคู่กับน้ำยาแบบไหน",
+      sections: [
+        {
+          heading: "หัวพอต Feelin Mini เติมน้ำยาทางไหน",
+          paragraphs: [
+            "หัวพอตนี้เติมน้ำยาจากด้านข้าง ตัวหัวทำจาก TPU กับ PCTG ตามที่ NEVOKS ระบุไว้",
+          ],
+        },
+        {
+          heading: "คอยล์ค่าไหนเข้าคู่กับน้ำยาแบบไหน",
+          paragraphs: [
+            "NEVOKS แนะนำคอยล์ 0.8 โอห์มสำหรับการสูบแบบ MTL ใช้ที่ 13–18 วัตต์ และเข้ากับน้ำยา freebase ที่มีนิโคตินไม่เกิน 10mg คอยล์ค่านี้คือตัวที่ใส่มาในกล่องชุด Feelin Mini",
+            "ถ้าชอบสูบแบบ MTL แบบแน่น NEVOKS แนะนำคอยล์ 1.0 โอห์ม ใช้ที่ 10–13 วัตต์ และเข้ากับน้ำยา salt nic ที่มีนิโคตินไม่เกิน 35mg ส่วนคอยล์ 0.6 โอห์ม NEVOKS ไม่แนะนำให้ใช้กับ Feelin Mini",
+            "ถ้ายังไม่แน่ใจว่าน้ำยาสองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต Feelin Mini ใช้กับคอยล์อะไร",
+          answer: "ใช้กับคอยล์ตระกูล SPL10 ของ NEVOKS ค่ะ",
+        },
+        {
+          question: "คอยล์ SPL10 ใช้กับเครื่องไหนได้อีกบ้าง",
+          answer: "โปสเตอร์ของ NEVOKS ระบุว่าคอยล์ทั้งค่า 0.8 และ 1.0 โอห์มใช้กับ Feelin และ Pagee ได้ด้วยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "From NEVOKS's own posters: how the Feelin Mini pod fills, and which e-liquid each coil value suits.",
+      sections: [
+        {
+          heading: "How does the Feelin Mini pod fill?",
+          paragraphs: [
+            "It fills from the side. NEVOKS lists the pod's material as TPU and PCTG.",
+          ],
+        },
+        {
+          heading: "Which coil goes with which e-liquid?",
+          paragraphs: [
+            "NEVOKS recommends the 0.8Ω for MTL vaping at 13–18W, with freebase e-liquid at up to 10mg nicotine. This is the coil that comes in the Feelin Mini kit box.",
+            "For a tighter MTL draw, NEVOKS suggests the 1.0Ω at 10–13W, with nic salt at up to 35mg. NEVOKS does not recommend the 0.6Ω for the Feelin Mini.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which coils does the Feelin Mini pod take?",
+          answer: "It takes NEVOKS's SPL10 coils.",
+        },
+        {
+          question: "Which other devices take SPL10 coils?",
+          answer: "NEVOKS's poster lists the Feelin and the Pagee for both the 0.8Ω and the 1.0Ω coil.",
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 NEVOKS 的海报整理：Feelin Mini 烟弹怎么注油，以及线圈各个阻值适合哪种烟油。",
+      sections: [
+        {
+          heading: "Feelin Mini 烟弹怎么注油？",
+          paragraphs: [
+            "这款烟弹从侧面注油。NEVOKS 标明烟弹材质为 TPU 和 PCTG。",
+          ],
+        },
+        {
+          heading: "线圈哪个阻值配哪种烟油？",
+          paragraphs: [
+            "NEVOKS 推荐 0.8Ω 用于 MTL 抽法，功率 13–18W，搭配尼古丁不超过 10mg 的 freebase 烟油；Feelin Mini 套装盒里附带的就是这一颗。",
+            "想要更紧的 MTL 吸阻，NEVOKS 建议用 1.0Ω，功率 10–13W，搭配尼古丁不超过 35mg 的 salt nic。NEVOKS 不推荐 Feelin Mini 使用 0.6Ω。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Feelin Mini 烟弹用什么线圈？",
+          answer: "使用 NEVOKS 的 SPL10 系列线圈。",
+        },
+        {
+          question: "SPL10 线圈还适用于哪些设备？",
+          answer: "NEVOKS 的海报标明，0.8Ω 和 1.0Ω 两款线圈也适用于 Feelin 和 Pagee。",
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
