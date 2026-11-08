@@ -245,7 +245,9 @@ export function PilotProductDetail({
       : [{ id: "default", node: renderImage(product.image, true) }];
   // Stock batch 2c (owner 08/10): the photo of an option that cannot be ordered carries the sold-out badge — per slide
   // on phones, over the still image on desktop — on the same rule as the buy action (`available`).
-  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} />;
+  // Phones: top-RIGHT. This page has no heart in that corner, and the full-frame photos (IQOS ILUMA i, iqosheet-18) put the
+  // device's cap in the top-left one, where the pill sat on the product (owner list 08/11).
+  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:left-auto max-lg:right-1" />;
   const badgedSlides = slides.map((s) => {
     const option = options.find((o) => o.id === s.id);
     return (option ? option.outOfStock : product.availabilityStatus !== "in-stock") ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
