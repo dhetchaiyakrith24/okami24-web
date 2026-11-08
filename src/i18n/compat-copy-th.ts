@@ -157,6 +157,13 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   // SEO brand push 30/10: Infinity 2 Plus ↔ the RELX Pod Pro 2 pack (the sentence RELX prints on its own device page).
   "RELX's Infinity 2 Plus page lists RELX Pod Pro 2 among the pods the device takes (1.9mL prefilled pods); the shop's pack prints \"RELX Pod Pro 2\".":
     "ตามที่ RELX ระบุในหน้า Infinity 2 Plus เครื่องนี้ใช้หัวพอต RELX Pod Pro 2 ได้ และแพ็กที่ร้านมีก็พิมพ์ชื่อนี้ไว้",
+  // Round popular models 08/11: RELX Pod + RELX Pod Pro device edges (maker pages read 08/11).
+  "RELX's Essential 2 page: \"Compatible Pod: RELX Pod and RELX Pod Pro\".":
+    "หน้า Essential 2 ของ RELX ระบุว่าเครื่องนี้ใช้กับหัวพอต RELX Pod และ RELX Pod Pro",
+  "RELX's Artisan Plus page: \"Compatible Pod: RELX Pod Pro & RELX Pod\".":
+    "หน้า Artisan Plus ของ RELX ระบุว่าเครื่องนี้ใช้กับหัวพอต RELX Pod Pro และ RELX Pod",
+  "RELX's Infinity 2 Plus page: \"compatible with RELX, RELX Pod Pro, and RELX Pod Pro 2 pods\".":
+    "หน้า Infinity 2 Plus ของ RELX ระบุว่าเครื่องนี้ใช้กับหัวพอต RELX Pod Pro ได้",
   "INFY's own 2.5ML Cartridge (INFY Plus) page says to insert the cartridge in the INFY Cube Box or the INFY Device.":
     "INFY ระบุในหน้าหัวพอต 2.5ML (INFY Plus) ว่าให้ใส่หัวพอตนี้ในตัวเครื่อง INFY Device หรือ INFY Cube Box",
   // Round 30.4ข close (owner, 2026-09-17): the two G/G2-generation pod ↔ coil edges (coil-55 · coil-74
