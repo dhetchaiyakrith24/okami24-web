@@ -69,7 +69,7 @@ function CalloutText({ c, text, showDetail, showCode }: { c: SheetCallout; text:
 
 type Leader = { d: string; ax: number; ay: number };
 
-function ExplodedStack({ parts, text, verified, alt, showCode }: { parts: SheetPart[]; text: (t: SheetText) => ReactNode; verified: (k?: string | string[]) => boolean; alt: (t: SheetText) => string; showCode: boolean }) {
+function ExplodedStack({ parts, text, verified, alt, showCode, widthLg = 42 }: { parts: SheetPart[]; text: (t: SheetText) => ReactNode; verified: (k?: string | string[]) => boolean; alt: (t: SheetText) => string; showCode: boolean; widthLg?: number }) {
   const box = useRef<HTMLDivElement>(null);
   const partEls = useRef<(HTMLDivElement | null)[]>([]);
   const labelEls = useRef<(HTMLLIElement | null)[]>([]);
@@ -129,10 +129,11 @@ function ExplodedStack({ parts, text, verified, alt, showCode }: { parts: SheetP
   }, [measure]);
 
   return (
-    <div ref={box} className="relative" style={height ? { height } : undefined}>
+    // --stack-w: the stack's desktop width (sheet.stackWidthLg, default 42%); the centre axis sits at half of it
+    <div ref={box} className="relative" style={{ ...(height ? { height } : {}), ["--stack-w" as string]: `${widthLg}%` }}>
       {/* centre axis through the parts */}
-      <div className="absolute left-[19%] top-0 w-px lg:left-[21%]" style={{ height: partsHeight ?? "100%", backgroundImage: `repeating-linear-gradient(to bottom, ${RULE} 0 6px, transparent 6px 12px)` }} aria-hidden />
-      <div className="relative flex w-[38%] flex-col items-center gap-6 lg:w-[42%] lg:gap-8">
+      <div className="absolute left-[19%] top-0 w-px lg:left-[calc(var(--stack-w)/2)]" style={{ height: partsHeight ?? "100%", backgroundImage: `repeating-linear-gradient(to bottom, ${RULE} 0 6px, transparent 6px 12px)` }} aria-hidden />
+      <div className="relative flex w-[38%] flex-col items-center gap-6 lg:w-(--stack-w) lg:gap-8">
         {parts.map((p, i) => (
           <div key={p.id} ref={(el) => { partEls.current[i] = el; }} style={{ width: `${(p.image.width / widest) * 100}%` }} className="relative">
             <Image src={p.image.src} alt={alt(p.image.alt)} width={p.image.width} height={p.image.height} sizes="(min-width: 1024px) 220px, 40vw" className={cn("block h-auto w-full", PART_LIGHT)} onLoad={measure} />
@@ -315,13 +316,14 @@ export function ProductAnatomySheet({ product, sheet }: { product: Product; shee
                 height={sheet.assembled.height}
                 sizes="260px"
                 className={cn("h-auto max-h-[32rem] w-auto", PART_LIGHT)}
+                style={sheet.assembledMaxHeightLg ? { maxHeight: sheet.assembledMaxHeightLg } : undefined}
               />
               <figcaption className="label-mono text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
                 3/4 VIEW
               </figcaption>
             </figure>
             <div className="lg:col-span-5">
-              <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} showCode={showCode} />
+              <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} showCode={showCode} widthLg={sheet.stackWidthLg} />
             </div>
             <div className="border-t pt-8 lg:col-span-4 lg:flex lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" style={{ borderColor: RULE }}>
               {sheet.back ? (
@@ -333,7 +335,8 @@ export function ProductAnatomySheet({ product, sheet }: { product: Product; shee
           </div>
 
           <div className="border-t pt-8" style={{ borderColor: RULE }}>
-            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-[58rem] lg:gap-6">
+            {/* --zoom-w: the close-up row's desktop width (sheet.zoomRowWidthLg, default 58rem) */}
+            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-(--zoom-w) lg:gap-6" style={{ ["--zoom-w" as string]: sheet.zoomRowWidthLg ? `${sheet.zoomRowWidthLg}px` : "58rem" }}>
               {sheet.zooms.map((z) => (
                 <li key={z.id} className="flex flex-col gap-2">
                   <div className="relative aspect-square overflow-hidden rounded-md border" style={{ borderColor: RULE, background: "radial-gradient(circle at 50% 40%, #2a2c32, #16171a 75%)" }}>
