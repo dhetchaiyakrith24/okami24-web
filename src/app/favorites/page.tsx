@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { cardTaglinesTh } from "@/lib/card-taglines";
+import { allProducts } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { FavoritesList } from "@/components/tools/FavoritesList";
 import { FavoritesPageHeader } from "@/components/tools/FavoritesPageHeader";
@@ -18,7 +20,7 @@ export default function FavoritesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/favorites")) }} />
       <FavoritesPageHeader />
       <Container className="py-12 lg:py-16">
-        <FavoritesList />
+        <FavoritesList taglinesTh={cardTaglinesTh(allProducts)} />
       </Container>
     </>
   );

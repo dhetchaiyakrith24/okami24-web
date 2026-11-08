@@ -41,6 +41,7 @@ import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSec
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { liveLookup } from "@/lib/stock/live";
+import { cardTaglinesTh } from "@/lib/card-taglines";
 import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock/card-stock";
 
 /** JSON-LD `Offer.availability` while online ordering is off (owner 2026-09-07, approved
@@ -269,6 +270,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             products={products}
             publishedProducts={publishedProducts}
             searchTexts={catalogSearchTexts(products, publishedProducts)}
+            taglinesTh={cardTaglinesTh(products)}
             isEmptyCategory={isEmptyCategory}
             // Round "share-deadend" batch 2 (2026-09-22): an empty category offers the ones that
             // do have something instead of ending the visit. Read from the catalog, so it needs

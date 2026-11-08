@@ -32,7 +32,8 @@ function storefrontSearchEntries(): { hit: SearchHit; text: SearchText }[] {
     ...getPublishedProducts().map((product) => ({ hit: { kind: "published" as const, product }, text: publishedSearchText(product) })),
   ];
 }
-export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
+/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
+export function SearchTool({ initialQuery = "", taglinesTh = {} }: { initialQuery?: string; taglinesTh?: Record<string, string> }) {
   const { dict } = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -94,7 +95,7 @@ export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
             {results.map((r) =>
-              r.kind === "legacy" ? <ProductCard key={r.product.slug} product={r.product} /> : <PilotProductCard key={r.product.slug} product={r.product} />
+              r.kind === "legacy" ? <ProductCard key={r.product.slug} product={r.product} taglineTh={taglinesTh[r.product.slug]} /> : <PilotProductCard key={r.product.slug} product={r.product} />
             )}
             {pilotResults.map((p) => (
               <PilotProductCard key={p.slug} product={p} />

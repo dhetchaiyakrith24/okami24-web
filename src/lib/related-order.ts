@@ -9,6 +9,7 @@ import { RELATED_SLOTS } from "@/lib/related-row";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 import type { LiveLookup } from "@/lib/stock/live-rules";
 import type { Product } from "@/types/catalog";
+import { taglineThFor } from "@/lib/card-taglines";
 
 /**
  * What the shop suggests beside a product, best first — one order for the cart's "สินค้าที่คุณอาจสนใจ" row and the product
@@ -178,6 +179,8 @@ export function rowFor(slugs: string[], live?: LiveLookup): CatalogItem[] {
 export interface RelatedItem {
   slug: string;
   legacy?: Product;
+  /** The legacy card's Thai tagline (card-taglines.ts), so the client card needs no copy table. */
+  taglineTh?: string;
   published?: StorefrontProductView;
   /** As built: what a page that never asks the server starts from (guide and technology pages). */
   inStock: boolean;
@@ -189,14 +192,14 @@ const cardOnly = (p: Product): Product => ({ ...p, features: [], faqs: [], compa
 
 function relatedItem(slug: string): RelatedItem | null {
   const legacy = getProduct(slug);
-  if (legacy) return { slug, legacy: cardOnly(legacy), inStock: legacyCardStock(legacy).inStock };
+  if (legacy) return { slug, legacy: cardOnly(legacy), taglineTh: taglineThFor(slug), inStock: legacyCardStock(legacy).inStock };
   const published = getPublishedProductBySlug(slug);
   return published ? { slug, published, inStock: publishedCardStock(published).inStock } : null;
 }
 
 /** A list of legacy products as the block's cards (guides and technology pages: the products the page itself names). */
 export const legacyRelatedItems = (products: Product[]): RelatedItem[] =>
-  products.map((p) => ({ slug: p.slug, legacy: cardOnly(p), inStock: legacyCardStock(p).inStock }));
+  products.map((p) => ({ slug: p.slug, legacy: cardOnly(p), taglineTh: taglineThFor(p.slug), inStock: legacyCardStock(p).inStock }));
 
 /** The same for the dev-only pilot products. */
 export const publishedRelatedItems = (products: StorefrontProductView[]): RelatedItem[] =>

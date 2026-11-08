@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cardTaglinesTh } from "@/lib/card-taglines";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { Container } from "@/components/ui/Container";
@@ -45,7 +46,7 @@ export default function ProductsPage() {
           <Suspense fallback={null}>
             <LineOrderingNotice />
           </Suspense>
-          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
+          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
         </Container>
       </div>
     </>

@@ -11,7 +11,6 @@ import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName } from "@/lib/utils";
 import { headlineSpecsForProduct } from "@/lib/card-headline-spec";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
 /**
  * Phone layout (mobile round A, M3 — MOBILE_SPEC 3.1/3.5, owner decisions E-ก and F-ก, 2026-09-08;
@@ -26,7 +25,8 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
  * width — desktop reads brand → name → tagline → price → spec row (designer's pick B over a
  * price-in-the-spec-row variant A, which truncated the spec on four-digit prices).
  */
-export function ProductCard({ product }: { product: Product }) {
+/** `taglineTh` = the product's Thai tagline, from the server (src/lib/card-taglines.ts) — never the whole copy table. */
+export function ProductCard({ product, taglineTh }: { product: Product; taglineTh?: string }) {
   // Round 30.4ข batch 2 (owner 2026-09-16): the stats row used to print `attributes` as bare
   // values ("1600MAH · 5–35W", or "—" when there were none) regardless of whether the spec row
   // behind them was verified. It is now the headline spec line — one or two facts picked per
@@ -35,8 +35,7 @@ export function ProductCard({ product }: { product: Product }) {
   const headline = headlineSpecsForProduct(product);
   const sellingPrice = getLegacyApprovedPrice(product.slug);
   // The tagline switches language on the client (round 30.3, THAI_STYLE §6 item 1) — same reason
-  // as the puff count above. The Thai line is the same human-checked entry the product page shows.
-  const taglineTh = PRODUCT_COPY_TH[product.slug]?.tagline;
+  // as the puff count above. The Thai line (prop) is the same human-checked entry the product page shows.
   // Every option sold out (as built) = no sales badge (designer 30/10).
   const options = [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])];
   const soldOut = options.length > 0 ? options.every((v) => v.availability === "out-of-stock") : product.availability === "out-of-stock";

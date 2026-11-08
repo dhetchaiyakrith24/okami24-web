@@ -137,9 +137,12 @@ export function CatalogBrowser({
   alternativeCategories = [],
   inStockKeys,
   noPriceKeys,
+  taglinesTh = {},
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
+  /** Legacy cards' Thai taglines by slug, from `cardTaglinesTh()` (src/lib/card-taglines.ts), built by the server page. */
+  taglinesTh?: Record<string, string>;
   /** From `catalogSearchTexts()` (src/lib/catalog-search-entries.ts), built by the server page. */
   searchTexts: Record<string, SearchText>;
   isEmptyCategory?: boolean;
@@ -466,7 +469,7 @@ export function CatalogBrowser({
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
             {filtered.map((entry) =>
               entry.kind === "legacy" ? (
-                <ProductCard key={entry.key} product={entry.legacyProduct!} />
+                <ProductCard key={entry.key} product={entry.legacyProduct!} taglineTh={taglinesTh[entry.legacyProduct!.slug]} />
               ) : (
                 <PilotProductCard key={entry.key} product={entry.publishedProduct!} />
               )
