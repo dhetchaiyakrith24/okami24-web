@@ -114,6 +114,26 @@ export const families: ProductFamily[] = [
       "RELX's Infinity device takes RELX Pod, Pod Pro and Pod Pro 2 prefilled pods; this generation is the Infinity 2 Plus.",
   },
   {
+    // Round popular models 07/11: SMOK Nord 5 (store.smoktech.com).
+    id: "smok-nord",
+    slug: "smok-nord",
+    brandId: "smok",
+    categoryId: "pod-systems",
+    name: "SMOK Nord",
+    tagline: "Refillable pod kits on replaceable coils.",
+    description: "SMOK's Nord line of refillable pod kits; this generation is the Nord 5.",
+  },
+  {
+    // Round popular models 07/11: SMOK RPM 5 (store.smoktech.com).
+    id: "smok-rpm",
+    slug: "smok-rpm",
+    brandId: "smok",
+    categoryId: "pod-systems",
+    name: "SMOK RPM",
+    tagline: "Refillable pod mods on replaceable coils.",
+    description: "SMOK's RPM line of refillable pod mods; this generation is the RPM 5.",
+  },
+  {
     // Round popular models 07/11: RELX Ultra Kit + Ultra Pod (relxnow.com).
     id: "relx-ultra",
     slug: "relx-ultra",

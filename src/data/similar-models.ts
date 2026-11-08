@@ -8,6 +8,8 @@ export const IN_STOCK_ALTERNATIVES: Record<string, string[]> = {
   "caliburn-g3": ["zero-pro", "relx-creator", "vazer-one-pod"],
   "caliburn-g3-lite": ["relx-creator", "zero-pro", "vazer-one-pod"],
   "drag-x": ["zero-pro", "next-pro-2-beyond", "relx-creator"],
+  "smok-nord-5": ["zero-pro", "next-pro-2-beyond", "relx-creator"],
+  "smok-rpm-5": ["next-pro-2-beyond", "zero-pro", "relx-creator"],
   "nexas-booster-16k": ["esko-bar-20k", "infy-20k", "foli-bar-15k", "m-bar-9k"],
   "relx-diva-30k": ["relx-lumi-18k", "relx-smash-go-12k", "sup-zero-22k"],
   "relx-sparta-20k": ["relx-lumi-18k", "sup-zero-22k", "relx-smash-go-12k"],
