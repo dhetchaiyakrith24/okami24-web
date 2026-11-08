@@ -5,6 +5,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { PHONE_CARDS, RAIL_CARDS, TABLET_CARDS } from "@/data/home-sections";
 import { Container } from "@/components/ui/Container";
 import { ProductCard } from "@/components/catalog/ProductCard";
+import { taglineThFor } from "@/lib/card-taglines";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { HomeText } from "@/components/home/HomeCopy";
 import { DecodeOnView } from "@/components/home/Decode";
@@ -72,7 +73,7 @@ export function HomeCardRail({
                 i === loneTablet && "sm:max-lg:col-span-4 sm:max-lg:mx-auto sm:max-lg:w-[calc(25%-0.5625rem)]",
               )}
             >
-              {item.legacy ? <ProductCard product={item.legacy} /> : <PilotProductCard product={item.published!} />}
+              {item.legacy ? <ProductCard product={item.legacy} taglineTh={taglineThFor(item.legacy.slug)} /> : <PilotProductCard product={item.published!} />}
             </div>
           ))}
         </div>

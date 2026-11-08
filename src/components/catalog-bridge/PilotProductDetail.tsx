@@ -41,6 +41,7 @@ import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { OptionScaledCard, optionScale, optionShare } from "@/components/visual/OptionScaledCard";
 import { SHORT_SPEC_LABEL, verifiedRows } from "@/lib/verified-specs";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
+import { specLabelZh } from "@/i18n/spec-labels-zh";
 import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
@@ -244,7 +245,9 @@ export function PilotProductDetail({
       : [{ id: "default", node: renderImage(product.image, true) }];
   // Stock batch 2c (owner 08/10): the photo of an option that cannot be ordered carries the sold-out badge — per slide
   // on phones, over the still image on desktop — on the same rule as the buy action (`available`).
-  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} />;
+  // Phones: top-RIGHT. This page has no heart in that corner, and the full-frame photos (IQOS ILUMA i, iqosheet-18) put the
+  // device's cap in the top-left one, where the pill sat on the product (owner list 08/11).
+  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:left-auto max-lg:right-1" />;
   const badgedSlides = slides.map((s) => {
     const option = options.find((o) => o.id === s.id);
     return (option ? option.outOfStock : product.availabilityStatus !== "in-stock") ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
@@ -346,7 +349,7 @@ export function PilotProductDetail({
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
                     {/* The seed stores these rows in Thai; English/Chinese visitors read spec-seed-en.ts (21/10). */}
                     {/* A short label never shrinks below one line ("ความ | สามารถ" at 390, 03/11); a long one wraps as before (scan 04/11). */}
-                    <dt className={`${spec.label.length <= SHORT_SPEC_LABEL ? "shrink-0 " : ""}text-foreground-muted`}>{locale === "th" ? spec.label : specLabelEn(spec.label)}</dt>
+                    <dt className={`${spec.label.length <= SHORT_SPEC_LABEL ? "shrink-0 " : ""}text-foreground-muted`}>{locale === "th" ? spec.label : locale === "zh" ? specLabelZh(specLabelEn(spec.label)) : specLabelEn(spec.label)}</dt>
                     <dd className="min-w-0 text-right font-medium text-foreground">{locale === "th" ? spec.value : specValueEn(spec.value)}</dd>
                   </div>
                 ))}

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { cardTaglinesTh } from "@/lib/card-taglines";
+import { allProducts } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { SearchTool } from "@/components/tools/SearchTool";
 import { SearchPageHeader } from "@/components/tools/SearchPageHeader";
@@ -21,7 +23,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/search")) }} />
       <SearchPageHeader />
       <Container className="py-12 lg:py-16">
-        <SearchTool initialQuery={q ?? ""} />
+        <SearchTool initialQuery={q ?? ""} taglinesTh={cardTaglinesTh(allProducts)} />
       </Container>
     </>
   );

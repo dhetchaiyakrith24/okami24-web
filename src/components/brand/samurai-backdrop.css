@@ -19,6 +19,13 @@
   inset: 0;
   background: repeating-linear-gradient(90deg, rgb(0 0 0 / 0.3) 0 1px, transparent 1px 3px);
 }
+/* phones: the lines lighter (owner list ก3, 08/11 — they read heavy on a small screen; the moon of that ask is already
+   gone since the 04/11 treatment) */
+@media (max-width: 1023px) {
+  .samurai-backdrop::after {
+    background: repeating-linear-gradient(90deg, rgb(0 0 0 / 0.18) 0 1px, transparent 1px 3px);
+  }
+}
 .samurai-backdrop-figure {
   /* 180% of a phone, capped so a tablet (640–1023 px) gets the phone's size, not a giant crop; the face (57% across the
      picture) sits ~60% across the screen */

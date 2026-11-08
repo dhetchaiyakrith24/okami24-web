@@ -45,11 +45,16 @@ export function cleanBankAccount(raw: unknown): string | null {
   return /^\d{10,15}$/.test(digits) && digits.length !== 13 ? digits : null;
 }
 
-/** The bank name or branch a customer types: 2–60 characters, no markup or control characters. */
+/** Characters that print nothing — zero-width, word joiner, BOM, soft hyphen, bidi marks/overrides. A pasted bank name
+ *  often carries them; kept, they make two equal names differ on the staff page and can reorder what staff read. */
+const INVISIBLE = /[\u00ad\u180e\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u206f\ufeff]/g;
+
+/** The bank name or branch a customer types: 2–60 characters, no markup or control characters; invisible characters are
+ *  dropped first (known gap closed 08/11). */
 export function cleanBankText(raw: unknown): string | null {
   if (typeof raw !== "string") return null;
-  const t = raw.trim().replace(/\s+/g, " ");
-  return t.length >= 2 && t.length <= 60 && !/[<>{}\u0000-\u001f]/.test(t) ? t : null;
+  const t = raw.replace(INVISIBLE, "").trim().replace(/\s+/g, " ");
+  return t.length >= 2 && t.length <= 60 && !/[<>{}\u0000-\u001f\u007f-\u009f]/.test(t) ? t : null;
 }
 
 /** Where a refund goes: a PromptPay mobile number, or a bank account with its bank and branch. */

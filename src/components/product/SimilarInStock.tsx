@@ -32,7 +32,7 @@ export function SimilarInStock({ slug, items }: { slug: string; items: SimilarIt
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
           {shown.map((item) => (
             <div key={item.slug} className="min-w-0">
-              {item.legacy ? <ProductCard product={item.legacy} /> : <PilotProductCard product={item.published!} />}
+              {item.legacy ? <ProductCard product={item.legacy} taglineTh={item.taglineTh} /> : <PilotProductCard product={item.published!} />}
             </div>
           ))}
         </div>

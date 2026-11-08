@@ -17,7 +17,8 @@ import { Button } from "@/components/ui/Button";
  * Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state reads `dict.favorites.*` — it was
  * hardcoded English in every language.
  */
-export function FavoritesList() {
+/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
+export function FavoritesList({ taglinesTh = {} }: { taglinesTh?: Record<string, string> }) {
   const { favorites } = useFavorites();
   const { dict } = useLocale();
   const legacyProducts = favorites.map((slug) => getProduct(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -37,7 +38,7 @@ export function FavoritesList() {
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
       {legacyProducts.map((p) => (
-        <ProductCard key={p.slug} product={p} />
+        <ProductCard key={p.slug} product={p} taglineTh={taglinesTh[p.slug]} />
       ))}
       {publishedProducts.map((p) => (
         <PilotProductCard key={p.slug} product={p} />
