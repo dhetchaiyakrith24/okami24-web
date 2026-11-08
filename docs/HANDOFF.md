@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 09/11 ~00:15 (cloud chat: owner list items 2–8 = #1319). Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
+Updated 09/11 ~00:40 (main chat). Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
 CART CLOSED by the owner switch 08/11 night (warehouse cannot ship 1–2 weeks; env stays on). #1317 (notice 11–13 Nov) held. Old delay notice (#1248) ends Mon 9/11 by itself (shipping-delay.ts): remove it after, its head lists the files. Earlier orders all ship, no customer message.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -78,7 +78,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
     Owner 07/11: "รันเลยยาวๆ แล้วเขียนจดลงบันทึกรอตรวจทีเดียว", "จัดการงานแทนพี่เลย". Review list = รอพี่ตรวจ 117-121. Chrome allowed for research. New pictures not made before are allowed through skill product-images; comparison sheets still wait for the owner. 3412 queue: seo-full, cart-instock, popular-models.
     Live by 08/11: 1275 1280-1292 1294 1296-1299 1301 1306 1309-1312 1314; round tags seo-full-0711, popular-models-0711 (#1315: parked models + AI pictures in its round file). Owner section on: owner has not reported the Google sign-in yet, then cost file and bill. RELX Pod / Pod Pro have no warehouse code (Max wants a sign-in). Lessons พ78 พ84 พ85. Owner: merge new AI pictures too, sheet sent.
-    Children now: popular-models-4 local_ca0007f9 (round closed, idle) · owner-dashboard local_1506c6f9 (71%, idle). Archived 08/11 on the owner word: popular-models-3, seo-full-3, backoffice, cart-instock. Customer dashboard later (รอพี่ตรวจ). Member discount 5% waits for the owner. Notes: group folder.
+    Children now (09/11): seo-read-0911 local_14d40a53 (SEO_BASELINE 09/11 read + disposable block 4 + request indexing, docs PR) · shop-pictures-5 local_f18a0bf5 (รอพี่ตรวจ 125 from existing Higgsfield renders, then ก2). Cloud: Product articles completion (ก6, one brand per PR, #1320 DRAG X2) hands over in docs/cloud-results/articles-ก6-0911.md; then a local chat continues. All earlier children archived. Member discount 5% waits for the owner. Notes: group folder.
   - Done 07/11: Pop Up ฿219 label ฿229 badge 5% · Freebase ฿169 · Saltnic 9 · nexBar 15K pictures · line-candidates. Owner: new labels use round badges 5-50 (BSOT §5).
   - DataForSEO: account verified, credit left $0.02, top-up minimum $50 needs the owner, read the full terms first. The owner's API password was shown in chat and reset failed: ask again later. Friday told support the shop sells pods; keep that short next time.
   - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
