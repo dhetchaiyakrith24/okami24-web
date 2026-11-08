@@ -7476,6 +7476,275 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), SMOK: Nord 5 — SMOK's own page www.smoktech.com/product/pod/nord-5, read 09/11 in the in-app browser: text
+  // "MAX 1.5A TYPE-C CHARGING: It'll take an hour and 40 minutes at most to recover from the low battery" · "HOW TO FILL WITH E-LIQUID: Do
+  // not inhale immediately after filling the pod. Let it stand for several minutes to get the cotton completely saturated" · "the dual-side
+  // air inlet layout enables fuller atomization and more balanced heat dissipation, contributing to a smooth and plump taste" · posters
+  // res.smoktech.com/www/files/v2/product/: 78JNQrvpZJuZ6EeMKzaETdKYMyL.jpeg "MULTIPLY THE SECURITY: 8 seconds cut-off · pod detection ·
+  // low-voltage protection · short circuit protection" · M62N8xvWR9Tbeg8lr2xoIqaRj9j6.jpeg "COIL INTRODUCTION: Perfect for DL vaping · RPM 3
+  // Meshed 0.15Ω Coil · Fast ramp-up time · Better flavor and massive vapor · Wattage: 40-80W" / "RPM 3 Meshed 0.23Ω Coil · More even heat
+  // surface · Smooth taste and rich flavor · Wattage: 20-45W" · EybDwwK3MeULpod14DbZhdaZNoV.jpeg "WIDE-BORE MOUTHPIECE". The 0.15Ω coil is
+  // the one fitted in the pod (spec row). RPM 5 facts = its own verified rows + its SMOK page (top fill: "push the top filling cover to
+  // expose the filling hole, without pulling out the pod"). Left out (already on the page): 2000mAh, 5–80W, 5mL, the two ohm values (named
+  // here as the fitted coil and the spare), the 0.69-inch OLED, the slider, the short-circuit LED, the pod lock, the box list; the 1.2A / 1.5A
+  // split stays in the spec row, and the 1 h 40 min figure is left out (it sits under "MAX 1.5A"; the spec row says 1.2A for the regular
+  // series — checker 09/11). Legacy page → no article FAQ.
+  "smok-nord-5": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่าคอยล์ที่มาในกล่องใช้กี่วัตต์ เติมน้ำยาแล้วควรทำยังไงก่อนสูบ และ Nord 5 ต่างจาก RPM 5 ตรงไหน",
+      sections: [
+        {
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
+          paragraphs: [
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าตัวนี้ร้อนเร็ว ให้รสชัดและไอเยอะ",
+            "ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ SMOK บอกว่าผิวคอยล์ร้อนสม่ำเสมอกว่า และให้รสนุ่มและเข้ม อยากรู้ว่าแนวการสูบของตัวเองเป็นแบบไหน อ่านต่อได้ที่ [สูบแบบ MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "ลมเข้าสองข้างช่วยอะไร",
+          paragraphs: [
+            "SMOK บอกว่าการวางช่องลมแบบนี้ช่วยให้น้ำยากลายเป็นไอได้ทั่วถึงขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
+          ],
+        },
+        {
+          heading: "เติมน้ำยาแล้วสูบได้เลยไหม",
+          paragraphs: [
+            "หลังเติมน้ำยา SMOK แนะนำให้วางเครื่องทิ้งไว้หลายนาทีก่อน ให้น้ำยาซึมเข้าสำลีในคอยล์จนทั่ว แล้วค่อยเริ่มสูบ",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 มีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "เครื่องจะหยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที ตรวจได้ว่าใส่หัวพอตแล้วหรือยัง และมีระบบป้องกันแบตต่ำกับไฟช็อต",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 กับ RPM 5 ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน",
+            "[SMOK RPM 5](/products/smok-rpm-5) จุน้ำยาได้มากกว่า คือ 6.5mL และมีจอ TFT 0.96 นิ้ว ส่วน Nord 5 ตัวเครื่องสั้นกว่า",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From SMOK's own page and posters: what wattage each coil in the box runs at, what to do after filling, and how the Nord 5 differs from the RPM 5.",
+      sections: [
+        {
+          heading: "What wattage do the two coils in the box run at?",
+          paragraphs: [
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W, and SMOK says it heats up fast with a fuller flavour and plenty of vapour.",
+            "The spare runs at 20–45W, and SMOK says its more even heating surface gives a smooth, rich taste. If you're not sure which style you vape, see [MTL vs DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "What does air from both sides do?",
+          paragraphs: [
+            "SMOK says this inlet layout turns the e-liquid into vapour more fully and spreads the heat more evenly, for a smooth, full taste. The mouthpiece is wide-bore.",
+          ],
+        },
+        {
+          heading: "Can I vape straight after filling?",
+          paragraphs: [
+            "SMOK advises letting it stand for several minutes after filling, so the e-liquid soaks fully into the cotton in the coil before you start.",
+          ],
+        },
+        {
+          heading: "What protections does the SMOK Nord 5 have?",
+          paragraphs: [
+            "It cuts out after 8 seconds of continuous firing, detects whether a pod is fitted, and protects against low voltage and short circuits.",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 or RPM 5?",
+          paragraphs: [
+            "Both take the same coil family.",
+            "The [SMOK RPM 5](/products/smok-rpm-5) holds more, at 6.5mL, and has a 0.96-inch TFT display; the Nord 5 is the shorter device.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 SMOK 官网和海报整理：盒内两颗线圈各用多少瓦、注油后该怎么做，以及 Nord 5 和 RPM 5 有什么不同。",
+      sections: [
+        {
+          heading: "盒内两颗线圈用多少瓦？",
+          paragraphs: [
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快、味道更足、烟雾量大。",
+            "备用的那颗适用 20–45W，SMOK 表示它受热面更均匀，口感顺滑浓郁。不确定自己是哪种抽法，可以看 [MTL 和 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "两侧进气有什么作用？",
+          paragraphs: [
+            "SMOK 表示这种进气布局能让烟油雾化得更充分、散热更均衡，口感更顺滑饱满。烟嘴为宽口设计。",
+          ],
+        },
+        {
+          heading: "注油后可以马上抽吗？",
+          paragraphs: [
+            "SMOK 建议注油后先静置几分钟，让烟油充分浸透线圈里的棉芯后再开始抽。",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 有哪些保护功能？",
+          paragraphs: [
+            "连续点火满 8 秒会自动断电，能检测是否装好烟弹，并具备低电压保护和短路保护。",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 和 RPM 5 怎么选？",
+          paragraphs: [
+            "两款使用同一系列的线圈。",
+            "[SMOK RPM 5](/products/smok-rpm-5) 容量更大，为 6.5mL，并配备 0.96 英寸 TFT 屏；Nord 5 机身更短。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), SMOK: RPM 5 — SMOK's own page www.smoktech.com/product/pod_mod/rpm-5-and-rpm-5-pro, read 09/11 in the in-app
+  // browser: text "Both internal and external battery versions are optional, providing up to 80 watts" · "The 6.5ml RPM 5 Pod comes standard
+  // with two RPM 3 meshed coils to satisfy DL vaping enthusiasts" · posters res.smoktech.com/www/files/v2/product/: rqYmg6MA4oI9Qw5ny3gRsKBavYE
+  // .jpeg "2000mAh Built-in Battery" (RPM 5) / "External Single 18650 Battery" (RPM 5 Pro) · RNEmoLb3R3T7l0bgQ6zlFROVZYE.jpeg spec sheet, RPM 5
+  // Pro "129.4" mm high, "Power Range: 5W-80W" (its 100.7g is left out: the sheet does not say whether the 18650 is in) · K44Eb64L3wfaJ8MjrRaltKZRg6O.jpeg "Hit the Mark Stepwise: … a stepless
+  // airflow adjustment mechanism that supports airway regulation of any size, from minimum to maximum and vice versa" ·
+  // 9O3X8vql7mTll3Y17eaGS61Xl5d.jpeg "Slide-to-open Top Filling System: Simply push the top filling cover to expose the filling hole, without
+  // pulling out the pod" · NlMNnNbwn9sqdb3XRLn7I4low8v.jpeg "INTELLIGENT DETECTION: Pod Detection · Short Circuit Protection · 8 Seconds
+  // Cut-off · Low-voltage Warning" · EKay1W6zXnCY5WQQlKVNt1W5qeV.jpeg "COIL INTRODUCTION" (fitted 0.15Ω 40-80W "Fast ramp-up", spare 0.23Ω
+  // 20-45W "Smooth taste and rich flavor", both "Perfect for DL vaping"). Nord 5 facts = its verified rows. Left out (already on the page):
+  // 2000mAh as a number, 5–80W and the shared 80W top (checker 09/11), 6.5mL, the two ohm values (named here as the fitted coil and the spare), the 0.96-inch TFT and its theme
+  // colour, the box list, this kit's size and weight. Legacy page → no article FAQ.
+  "smok-rpm-5": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่า RPM 5 ต่างจาก RPM 5 Pro ยังไง เติมน้ำยาและปรับลมยังไง และคอยล์ที่มาในกล่องใช้กี่วัตต์",
+      sections: [
+        {
+          heading: "SMOK RPM 5 กับ RPM 5 Pro ต่างกันยังไง",
+          paragraphs: [
+            "SMOK ทำ RPM 5 ออกมาสองแบบ ชุดที่อยู่ในหน้านี้คือ RPM 5 ที่ใช้แบตในตัว ส่วน RPM 5 Pro ใช้ถ่าน 18650 หนึ่งก้อน",
+            "ตามตารางสเปกของ SMOK รุ่น Pro สูง 129.4mm สูงกว่าชุดนี้เล็กน้อย",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 เติมน้ำยายังไง",
+          paragraphs: [
+            "หัวพอตเป็นแบบเติมด้านบน แค่ดันฝาให้เลื่อนเปิดก็จะเห็นรูเติมน้ำยา และเติมได้ทั้งที่หัวพอตยังติดอยู่กับตัวเครื่อง",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 ปรับลมยังไง",
+          paragraphs: [
+            "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งได้ตั้งแต่ลมน้อยสุดไปจนถึงลมเปิดเต็ม และปรับกลับได้ทุกเมื่อ",
+          ],
+        },
+        {
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
+          paragraphs: [
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าร้อนเร็ว ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ และ SMOK บอกว่าให้รสนุ่มและเข้ม",
+            "ถ้าอยากรู้ว่าควรตั้งวัตต์และปรับลมแค่ไหน อ่านต่อได้ที่ [เลือกวัตต์และปรับลมยังไง](/guides/choosing-wattage-and-airflow)",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 มีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "เครื่องตรวจได้ว่าใส่หัวพอตแล้วหรือยัง หยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที เตือนเมื่อแบตต่ำ และมีระบบป้องกันไฟช็อต",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 กับ Nord 5 ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL และใช้จอ OLED 0.69 นิ้ว",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From SMOK's own page and posters: how the RPM 5 differs from the RPM 5 Pro, how to fill it and set the airflow, and what wattage each coil in the box runs at.",
+      sections: [
+        {
+          heading: "SMOK RPM 5 or RPM 5 Pro?",
+          paragraphs: [
+            "SMOK makes the RPM 5 in two versions. The kit on this page is the RPM 5 with a built-in battery; the RPM 5 Pro runs on a single external 18650 battery.",
+            "According to SMOK's spec sheet, the Pro stands slightly taller at 129.4mm.",
+          ],
+        },
+        {
+          heading: "How do I fill the SMOK RPM 5?",
+          paragraphs: [
+            "The pod fills from the top: slide the top cover open to reach the filling hole, with no need to take the pod off the device.",
+          ],
+        },
+        {
+          heading: "How do I set the airflow on the SMOK RPM 5?",
+          paragraphs: [
+            "The airflow is stepless, so you can set it anywhere from the tightest to fully open and back again.",
+          ],
+        },
+        {
+          heading: "What wattage do the two coils in the box run at?",
+          paragraphs: [
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W and, SMOK says, heats up fast; the spare runs at 20–45W for what SMOK calls a smooth, rich taste.",
+            "Not sure where to set the wattage and airflow? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
+          ],
+        },
+        {
+          heading: "What protections does the SMOK RPM 5 have?",
+          paragraphs: [
+            "It detects whether a pod is fitted, cuts out after 8 seconds of continuous firing, warns of a low battery and protects against short circuits.",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 or Nord 5?",
+          paragraphs: [
+            "Both take the same coil family. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod and a 0.69-inch OLED display.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 SMOK 官网和海报整理：RPM 5 和 RPM 5 Pro 的区别、怎样注油和调气流，以及盒内两颗线圈各用多少瓦。",
+      sections: [
+        {
+          heading: "SMOK RPM 5 和 RPM 5 Pro 有什么区别？",
+          paragraphs: [
+            "SMOK 的 RPM 5 有两个版本。本页这套是内置电池的 RPM 5，RPM 5 Pro 则使用一节外置 18650 电池。",
+            "根据 SMOK 的规格表，Pro 稍高一些，为 129.4mm。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 怎么注油？",
+          paragraphs: [
+            "烟弹从顶部注油：推开顶部的注油盖就能看到注油孔，不用把烟弹从主机上取下来。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 怎么调气流？",
+          paragraphs: [
+            "气流可无级调节，从最小到最大任意设定，也能随时调回。",
+          ],
+        },
+        {
+          heading: "盒内两颗线圈用多少瓦？",
+          paragraphs: [
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快；备用的那颗适用 20–45W，SMOK 表示口感顺滑浓郁。",
+            "想了解功率和气流怎么设置，可以看 [怎样选择功率和气流](/guides/choosing-wattage-and-airflow)。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 有哪些保护功能？",
+          paragraphs: [
+            "能检测是否装好烟弹，连续点火满 8 秒自动断电，低电量时会提醒，并具备短路保护。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 和 Nord 5 怎么选？",
+          paragraphs: [
+            "两款使用同一系列的线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
