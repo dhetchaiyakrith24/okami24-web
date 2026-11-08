@@ -316,6 +316,7 @@ export function ProductAnatomySheet({ product, sheet }: { product: Product; shee
                 height={sheet.assembled.height}
                 sizes="260px"
                 className={cn("h-auto max-h-[32rem] w-auto", PART_LIGHT)}
+                style={sheet.assembledMaxHeightLg ? { maxHeight: sheet.assembledMaxHeightLg } : undefined}
               />
               <figcaption className="label-mono text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
                 3/4 VIEW

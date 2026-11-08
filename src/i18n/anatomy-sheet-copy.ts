@@ -68,6 +68,9 @@ export interface AnatomySheet {
   /** width of the exploded stack on a desktop screen, % of its column (default 42). A long slim device stacks taller
    *  than one screen at 42% — M Bar 10K stood 819 px at 1440 (owner 29/09 "ดูใหญ่ไปหน่อย", item ก2) */
   stackWidthLg?: number;
+  /** the 3/4 view's height cap on a desktop screen, px (default 32rem = 512) — set with stackWidthLg so the two read as
+   *  one composition (M Bar 10K: stack 459 px, view 440 px) */
+  assembledMaxHeightLg?: number;
 }
 
 const A = "/assets/products/m-bar-10k/anatomy";
@@ -76,8 +79,10 @@ const D6 = "/assets/products/drag-6/anatomy";
 
 export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
   "m-bar-10k": {
-    // 28% = the stack (567 px at 1440) about as tall as the 3/4 view beside it (max 32rem), the whole sheet in one screen
-    stackWidthLg: 28,
+    // 1440: stack 459 px beside a 440 px 3/4 view; heading to the last label (01–08) 765 px, one screen under the header
+    // (was 856 px with a 567 px stack and the 512 px view). Labels keep their size.
+    stackWidthLg: 22,
+    assembledMaxHeightLg: 440,
     heading: { th: "ไล่ดูทีละส่วน จากบนลงล่าง", en: "Part by part, top to bottom", zh: "逐个部件，自上而下" },
     sheetTitle: { th: "ภาพแยกชิ้น", en: "Exploded view", zh: "分解图" },
     parts: [
