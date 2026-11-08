@@ -189,6 +189,38 @@ img {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ก10 "Zoom" prototype (src/components/visual/ZoomShared.tsx): the card photo → product hero morph. A slow-out curve
+   so the "camera" lands softly; a touch of blur mid-flight hides the pixel stretch between the two sizes (the Next
+   view-transitions guide). Then the lit shelf draws in from the centre under the device. */
+::view-transition-group(.okami-zoom) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+::view-transition-image-pair(.okami-zoom) {
+  animation-name: okami-zoom-blur;
+}
+@keyframes okami-zoom-blur {
+  35% { filter: blur(2px); }
+}
+.okami-zoom-plinth {
+  transform-origin: 50% 100%;
+  animation: okami-zoom-plinth 700ms cubic-bezier(0.22, 0.8, 0.2, 1) 380ms both;
+}
+@keyframes okami-zoom-plinth {
+  from { opacity: 0; transform: scaleX(0.15); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Motion off = no morph at all (the global rule below only shortens animations; view-transition pseudo-elements
+     are named here outright) and the shelf simply sits there. */
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  .okami-zoom-plinth { animation: none; }
+}
 /* The add-to-cart dot (FloatingCart): fixed, flies by WAAPI; never catches a tap. */
 .okami-cart-dot {
   position: fixed;
