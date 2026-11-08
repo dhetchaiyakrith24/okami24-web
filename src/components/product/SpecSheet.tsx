@@ -7,12 +7,13 @@ import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
 import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
+import { specLabelZh } from "@/i18n/spec-labels-zh";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { ThaiText } from "@/components/i18n/ThaiText";
 import { verifiedRows } from "@/lib/verified-specs";
 
-/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in). */
 export function SpecSheet({ product, copyTh }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   // Data round (owner 2026-09-24, question 1 ก): an unverified row is not shown at all — it used to be listed with an
@@ -44,14 +45,16 @@ export function SpecSheet({ product, copyTh }: { product: Product; copyTh?: Prod
             const labelTh = locale === "th" ? specLabelTh(spec.label) : undefined;
             // Warehouse-listed products store Thai rows; English/Chinese visitors read them through spec-seed-en.ts (21/10).
             const labelEn = locale === "th" ? undefined : specLabelEn(spec.label);
+            // Chinese visitors read Chinese labels (spec-labels-zh.ts, owner 08/11); the value stays the English data string.
+            const labelZh = locale === "zh" && labelEn !== undefined ? specLabelZh(labelEn) : undefined;
             const valueEn = locale === "th" ? undefined : specValueEn(spec.value);
             return (
               <SpecChip
                 key={spec.key}
                 spec={spec}
-                label={labelTh ?? (labelEn !== spec.label ? labelEn : undefined)}
+                label={labelTh ?? labelZh ?? (labelEn !== spec.label ? labelEn : undefined)}
                 value={valuesTh?.[spec.key] ? thaiTypographyNode(valuesTh[spec.key]) : valueEn !== undefined && valueEn !== spec.value ? valueEn : undefined}
-                thaiLabel={labelTh !== undefined && labelTh !== spec.label}
+                thaiLabel={(labelTh !== undefined && labelTh !== spec.label) || (labelZh !== undefined && labelZh !== labelEn)}
                 unverifiedLabel={<ThaiText>{dict.product.unverifiedBadge}</ThaiText>}
                 unverifiedTitle={dict.product.unverifiedTooltip}
               />

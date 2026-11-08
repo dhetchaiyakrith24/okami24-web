@@ -8,8 +8,8 @@
  * repeat across meanings (`output` is both "Output range" and "Max output"; `pod` is "Pod
  * platform", "Pod capacity", "Cartridge capacity" and "Included pod"), while the label is unique
  * per meaning. Read by SpecSheet.tsx (product page) and CompareTool.tsx (/compare spec rows) when
- * the locale is Thai; a label without an entry keeps its English text, and English/Chinese
- * visitors keep the data labels by construction. Not part of the dictionary on purpose: the i18n
+ * the locale is Thai; a label without an entry keeps its English text. English visitors keep the
+ * data labels; Chinese visitors read spec-labels-zh.ts (08/11). Not part of the dictionary on purpose: the i18n
  * contract test requires every dictionary key in all three locales, which would mean repeating
  * 41 English labels in en.ts and zh.ts for no reader.
  *

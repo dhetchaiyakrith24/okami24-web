@@ -126,7 +126,8 @@ function localizeQuestion(question: Question<keyof FinderAnswers>, locale: strin
   };
 }
 
-export function FinderTool() {
+/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
+export function FinderTool({ taglinesTh = {} }: { taglinesTh?: Record<string, string> }) {
   const { dict, locale } = useLocale();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
@@ -167,7 +168,7 @@ export function FinderTool() {
                     {dict.finder.bestMatch}
                   </span>
                 )}
-                <ProductCard product={m.product} />
+                <ProductCard product={m.product} taglineTh={taglinesTh[m.product.slug]} />
               </div>
               <ul className="flex flex-col gap-1.5">
                 {m.reasons.slice(0, 3).map((reason, ri) => (
@@ -187,7 +188,7 @@ export function FinderTool() {
             <p className="mt-1 max-w-xl text-sm text-foreground-muted">{dict.finder.alternativesHint}</p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {results.alternatives.map((m) => (
-                <ProductCard key={m.product.slug} product={m.product} />
+                <ProductCard key={m.product.slug} product={m.product} taglineTh={taglinesTh[m.product.slug]} />
               ))}
             </div>
           </div>

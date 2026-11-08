@@ -8,6 +8,7 @@ import { authenticate } from "@/lib/woo/keys";
 import { sentOrders } from "@/lib/woo/order-push";
 import { wooOrderJson } from "@/lib/woo/order-json";
 import { logCall, saveStockReport, stockReports } from "@/lib/woo/store";
+import { logStockPush } from "@/lib/woo/stock-push-log";
 import { applyShipnityTrackings } from "@/lib/woo/tracking-sync";
 import { createWebhook, deleteWebhook, getWebhook, listWebhooks, updateWebhook } from "@/lib/woo/webhooks";
 import type { OrderSource, WebhookStore } from "@/lib/woo/api";
@@ -70,6 +71,11 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     orders: keyId !== null ? { list: () => sentOrders().map((o) => wooOrderJson(o, SITE_URL)) } : NO_ORDERS,
   });
   for (const w of res.writes) saveStockReport(w.sku, w.quantity, w.stockStatus);
+  // A dated history of the pushes for tuning the stock light (stock-push-log.ts) — after the answer, never in its way.
+  if (res.writes.length > 0) {
+    const pushed = res.writes.map((w) => ({ sku: w.sku, quantity: w.quantity }));
+    after(() => logStockPush(pushed));
+  }
   // Shipnity changed an order (e.g. cancelled — out of stock): record it and alert the team on LINE after answering.
   const updates = res.orderUpdates ?? [];
   if (updates.length > 0) after(() => recordOrderUpdates(updates));

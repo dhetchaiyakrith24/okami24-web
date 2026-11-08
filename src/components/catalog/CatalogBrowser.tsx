@@ -9,7 +9,7 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { brands } from "@/data/brands";
-import { queryMatches, type SearchText } from "@/lib/catalog-search";
+import { fuzzyQueryMatches, queryMatches, type SearchText } from "@/lib/catalog-search";
 import { familyName } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
@@ -137,9 +137,12 @@ export function CatalogBrowser({
   alternativeCategories = [],
   inStockKeys,
   noPriceKeys,
+  taglinesTh = {},
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
+  /** Legacy cards' Thai taglines by slug, from `cardTaglinesTh()` (src/lib/card-taglines.ts), built by the server page. */
+  taglinesTh?: Record<string, string>;
   /** From `catalogSearchTexts()` (src/lib/catalog-search-entries.ts), built by the server page. */
   searchTexts: Record<string, SearchText>;
   isEmptyCategory?: boolean;
@@ -228,7 +231,9 @@ export function CatalogBrowser({
     let list = entries;
     if (query.trim()) {
       const q = query.trim().toLowerCase();
-      list = list.filter((e) => queryMatches(q, e.searchText));
+      const exact = list.filter((e) => queryMatches(q, e.searchText));
+      // Nothing as typed → allow typing slips (owner list ก4, catalog-search.ts rankByQuery does the same on /search).
+      list = exact.length > 0 ? exact : list.filter((e) => fuzzyQueryMatches(q, e.searchText));
     }
     if (brandFilter.size > 0) list = list.filter((e) => e.brandId !== null && brandFilter.has(e.brandId));
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
@@ -466,7 +471,7 @@ export function CatalogBrowser({
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
             {filtered.map((entry) =>
               entry.kind === "legacy" ? (
-                <ProductCard key={entry.key} product={entry.legacyProduct!} />
+                <ProductCard key={entry.key} product={entry.legacyProduct!} taglineTh={taglinesTh[entry.legacyProduct!.slug]} />
               ) : (
                 <PilotProductCard key={entry.key} product={entry.publishedProduct!} />
               )

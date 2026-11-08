@@ -1,0 +1,102 @@
+/**
+ * OKami24 — Chinese names for the spec chip labels (owner 08/11: "zh spec-row labels show English").
+ *
+ * Keyed by the ENGLISH label a non-Thai visitor already sees: the data label of a legacy product, or the English
+ * overlay of a warehouse-listed product's Thai label (spec-seed-en.ts `specLabelEn`). Read by SpecSheet.tsx,
+ * PilotProductDetail.tsx and CompareTool.tsx when the locale is Chinese, after specLabelEn. A label without an entry
+ * keeps its English text, as before. Values stay as they are (data strings, English for zh) — labels only.
+ * One field keeps one name, as in spec-labels-th.ts: Battery / Battery capacity, Pod / Cartridge capacity,
+ * Activation / Firing, Control / Control system, Fill style / Filling each share a word.
+ */
+const SPEC_LABELS_ZH: Record<string, string> = {
+  "0.4Ω pod": "0.4Ω 烟弹",
+  Activation: "触发方式",
+  Airflow: "气流",
+  "Anti-leak system": "防漏设计",
+  Battery: "电池",
+  "Battery capacity": "电池",
+  "Battery life": "续航时间",
+  "Battery light": "电量指示灯",
+  Body: "机身材质",
+  "Bottle size": "瓶装容量",
+  Capacity: "容量",
+  "Cartridge capacity": "烟弹容量",
+  "Charge time": "充电时间",
+  Charging: "充电",
+  Chipset: "芯片",
+  Coil: "雾化芯",
+  "Coil fitting": "雾化芯安装",
+  "Coil included": "附带雾化芯",
+  "Coil models": "雾化芯型号",
+  "Compatible device": "适用设备",
+  "Compatible devices": "适用设备",
+  "Compatible pods": "适用烟弹",
+  "Compatible sticks": "适用烟支",
+  Construction: "结构",
+  Control: "操控方式",
+  "Control system": "操控方式",
+  Device: "主机",
+  "Device colours": "机身颜色",
+  Dimensions: "尺寸",
+  Display: "屏幕",
+  "E-liquid capacity": "烟油容量",
+  Features: "功能",
+  "Fill style": "注油方式",
+  Filling: "注油方式",
+  Firing: "触发方式",
+  "Flavor switching": "口味切换",
+  "Flavor system": "口味调节",
+  Format: "类型",
+  "Heating system": "加热方式",
+  "Holder battery": "烟具电池",
+  "In the box": "包装内容",
+  "Included pod": "附带烟弹",
+  Materials: "材质",
+  "Max output": "最大功率",
+  Nicotine: "尼古丁",
+  "Nicotine strength": "尼古丁浓度",
+  "Nicotine type": "尼古丁类型",
+  Output: "输出功率",
+  "Output modes": "输出模式",
+  "Output range": "功率范围",
+  "Output voltage": "输出电压",
+  "Pack size": "每盒数量",
+  "Pocket Charger battery": "充电盒电池",
+  "Pod capacity": "烟弹容量",
+  "Pod connector": "烟弹接口",
+  "Pod dimensions": "烟弹尺寸",
+  "Pod of": "适用主机",
+  "Pod platform": "适用烟弹",
+  "Pod type": "烟弹类型",
+  "Pod weight": "烟弹重量",
+  "Power levels": "功率档位",
+  "Power modes": "功率模式",
+  Puffs: "口数",
+  "Puffs per cartridge": "每颗烟弹口数",
+  "Puffs per pod": "每颗烟弹口数",
+  "Rated puffs": "标称口数",
+  "Recommended wattage": "推荐功率",
+  Resistance: "阻值",
+  "Resistance range": "阻值范围",
+  "Screen themes": "屏幕主题",
+  Settings: "设置",
+  "Sold as": "销售规格",
+  "Status indicator": "状态指示灯",
+  "Sticks per charge": "单次充电可用支数",
+  Temperature: "温度",
+  "Time per stick": "每支使用时间",
+  Touch: "触控",
+  Use: "使用方式",
+  "Vaping style": "抽吸方式",
+  Variant: "版本",
+  Weight: "重量",
+};
+
+/** The Chinese label for an English label ("Recommended wattage (0.8Ω)" keeps its bracket), or the label itself. */
+export function specLabelZh(label: string): string {
+  const exact = SPEC_LABELS_ZH[label];
+  if (exact) return exact;
+  const m = /^(.+?) (\(.+\))$/.exec(label);
+  if (m && SPEC_LABELS_ZH[m[1]]) return `${SPEC_LABELS_ZH[m[1]]} ${m[2]}`;
+  return label;
+}

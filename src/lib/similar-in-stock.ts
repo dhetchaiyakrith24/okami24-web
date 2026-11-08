@@ -6,11 +6,14 @@ import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-previ
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { inStockEntryKeys } from "@/lib/in-stock";
 import type { Product } from "@/types/catalog";
+import { taglineThFor } from "@/lib/card-taglines";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 
 export interface SimilarItem {
   slug: string;
   legacy: Product | null;
+  /** The legacy card's Thai tagline (card-taglines.ts). */
+  taglineTh?: string;
   published: StorefrontProductView | null;
 }
 
@@ -57,5 +60,5 @@ export function similarInStock(slug: string): SimilarItem[] {
   return [...picked, ...sameMake, ...otherMakes]
     .filter((i) => !seen.has(i.slug) && seen.add(i.slug))
     .slice(0, CANDIDATES)
-    .map((i) => ({ slug: i.slug, legacy: getProduct(i.slug) ?? null, published: getPublishedProductBySlug(i.slug) ?? null }));
+    .map((i) => ({ slug: i.slug, legacy: getProduct(i.slug) ?? null, taglineTh: taglineThFor(i.slug), published: getPublishedProductBySlug(i.slug) ?? null }));
 }

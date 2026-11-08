@@ -135,12 +135,68 @@ export function queryMatches(query: string, text: SearchText): boolean {
   return queryScore(query, text) > 0;
 }
 
+/** Optimal-string-alignment distance (an adjacent swap counts as 1), stopping early past `max`. */
+function editDistance(a: string, b: string, max: number): number {
+  const A = [...a];
+  const B = [...b];
+  if (Math.abs(A.length - B.length) > max) return max + 1;
+  const d: number[][] = Array.from({ length: A.length + 1 }, (_, i) => [i, ...Array<number>(B.length).fill(0)]);
+  for (let j = 1; j <= B.length; j++) d[0][j] = j;
+  for (let i = 1; i <= A.length; i++) {
+    let rowMin = Infinity;
+    for (let j = 1; j <= B.length; j++) {
+      const cost = A[i - 1] === B[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+      if (i > 1 && j > 1 && A[i - 1] === B[j - 2] && A[i - 2] === B[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      rowMin = Math.min(rowMin, d[i][j]);
+    }
+    if (rowMin > max) return max + 1;
+  }
+  return d[A.length][B.length];
+}
+
+/** How many typing slips a token may carry (owner list ก4, 08/11): none under 4 characters (too many words sit one
+ *  letter apart), 1 up to 6, 2 from 7. Counted in code points, so a dropped Thai tone mark or vowel is one slip. */
+function slipsAllowed(token: string): number {
+  const n = [...token].length;
+  return n < 4 ? 0 : n < 7 ? 1 : 2;
+}
+
+/** A token with typing slips: close to one of the product's identity words (primary part), or to a run of them joined
+ *  ("caliburm g5" → "caliburn"; "คาลิเบิน" → the alias "คาลิเบิร์น"). Aliases are tried too. */
+function fuzzyTokenIn(token: string, text: SearchText): boolean {
+  const max = slipsAllowed(token);
+  if (max === 0) return false;
+  const words = text.primary.split(NOT_ALNUM).filter(Boolean);
+  const c = compact(token);
+  for (let i = 0; i < words.length; i++) {
+    let joined = "";
+    for (let j = i; j < words.length && joined.length < c.length + max; j++) {
+      joined += words[j];
+      if (editDistance(c, joined, max) <= max) return true;
+    }
+  }
+  return Object.keys(TERM_SEARCH_ALIASES).some(
+    (alias) => [...alias].length >= 4 && editDistance(c, compact(alias), max) <= max && TERM_SEARCH_ALIASES[alias].some((t) => termIn(normalizeQuery(t), text.primary))
+  );
+}
+
+/** The forgiving pass: every token matches as typed, or with a few slips in the product's identity words. */
+export function fuzzyQueryMatches(query: string, text: SearchText): boolean {
+  const q = normalizeQuery(query);
+  if (!q) return false;
+  return q.split(" ").every((token) => tokenScore(token, text) > 0 || fuzzyTokenIn(token, text));
+}
+
 /** Filters `items` to the ones matching `query`, best match first; ties keep the input order
- *  (the data order every grid already uses). */
+ *  (the data order every grid already uses). Nothing matches as typed → the forgiving pass (typing slips, owner list
+ *  ก4) in data order, so a misspelt model name still finds it; an exact hit always wins over a near one. */
 export function rankByQuery<T>(query: string, items: ReadonlyArray<T>, textOf: (item: T) => SearchText): T[] {
-  return items
+  const exact = items
     .map((item, order) => ({ item, order, score: queryScore(query, textOf(item)) }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score || a.order - b.order)
     .map((r) => r.item);
+  if (exact.length > 0) return exact;
+  return items.filter((item) => fuzzyQueryMatches(query, textOf(item)));
 }

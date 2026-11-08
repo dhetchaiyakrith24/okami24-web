@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { cardTaglinesTh } from "@/lib/card-taglines";
+import { allProducts } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { FinderTool } from "@/components/tools/FinderTool";
 import { FinderPageHeader } from "@/components/tools/FinderPageHeader";
@@ -19,7 +21,7 @@ export default function FinderPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/finder")) }} />
       <FinderPageHeader />
       <Container className="py-12 lg:py-20">
-        <FinderTool />
+        <FinderTool taglinesTh={cardTaglinesTh(allProducts)} />
       </Container>
     </>
   );

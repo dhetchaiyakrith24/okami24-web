@@ -244,6 +244,14 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
     check(`family "${f.name}" finds all its products (${expected.length})`, missing(expected, got).length === 0, missing(expected, got).join(",") || "all found");
   }
 
+  // Typing slips (owner list ก4, 08/11): only when nothing matches as typed, never for a short token, never on a hit.
+  const slugsOf = (q: string) => searchProducts(q).map((p) => p.slug);
+  check("a one-letter slip in an English model name still finds it (caliburm → caliburn-g5)", slugsOf("caliburm").includes("caliburn-g5"), slugsOf("caliburm").join(","));
+  check("two swapped letters still find it (calibrun g5 → caliburn-g5)", slugsOf("calibrun g5").includes("caliburn-g5"), slugsOf("calibrun g5").join(","));
+  check("a Thai slip reaches the alias (คาลิเบิน → caliburn-g5)", slugsOf("คาลิเบิน").includes("caliburn-g5"), slugsOf("คาลิเบิน").join(","));
+  check("nonsense stays empty (zzzz, abcd)", slugsOf("zzzz").length === 0 && slugsOf("abcd").length === 0);
+  check("an exact hit is never widened by near words (drag 6 lists DRAG 6 first)", slugsOf("drag 6")[0] === "drag-6", slugsOf("drag 6").join(","));
+
   return results;
 }
 

@@ -89,7 +89,16 @@ check("the product page uses the same ProductMaster rule", src("components/produ
 const route = src("app/api/stock/route.ts");
 check("the stock API answers from the live read, without counts", route.includes("liveCardChanges(allProducts, getPublishedProducts(), liveLookup())") && !/Quantity|publicCount/.test(route));
 check("the price line stays on the build (card and product page alike)", !/useLiveCardStock|useLiveSoldOut/.test(src("components/catalog/SaleLabel.tsx")));
-check("JSON-LD stays build-time", !/useLiveCardStock|card-stock|api\/stock/.test(src("app/products/[slug]/page.tsx").replace(/inStockEntryKeys/g, "")));
+// Owner 08/11: the product JSON-LD follows the live stock — the page regenerates on the server (ISR) and both Offer
+// branches read the cards' live overlay; never a client hook or the stock API from the page itself.
+const productPage = src("app/products/[slug]/page.tsx");
+check(
+  "JSON-LD reads live stock on the server (ISR + the cards' overlay), never the client hook",
+  /^export const revalidate = \d+;$/m.test(productPage) &&
+    productPage.includes("offerAvailability(legacyCardStock(product, liveLookup()))") &&
+    productPage.includes("offerAvailability(publishedCardStock(publishedProduct, liveLookup()))") &&
+    !/useLiveCardStock|api\/stock/.test(productPage)
+);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

@@ -62,6 +62,10 @@ export function runStockIssueContractTests(): { name: string; passed: boolean; d
     "bank / branch text: 2–60 characters, markup refused",
     cleanBankText(" กสิกรไทย ") === "กสิกรไทย" && cleanBankText("ก") === null && cleanBankText("<b>x</b>") === null && cleanBankText("") === null && cleanBankText(3) === null
   );
+  check(
+    "bank / branch text: invisible characters dropped, C1 controls refused",
+    cleanBankText("\u200bกสิกร\u2060ไทย\ufeff") === "กสิกรไทย" && cleanBankText("\u202eกสิกรไทย") === "กสิกรไทย" && cleanBankText("\u200b\u200bก") === null && cleanBankText("กสิกร\u0085ไทย") === null
+  );
   check("bank account mask shows the last 4 digits only", maskAccount("1538292407") === "xxx-x-xxx2407");
   check("mask shows the last 4 digits only", maskPhone("0812345678") === "xxx-xxx-5678");
   check("refund ref: bank reference kept", cleanRefundRef("  2026102414x5AbC ") === "2026102414x5AbC");
