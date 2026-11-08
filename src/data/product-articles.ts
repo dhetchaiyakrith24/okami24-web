@@ -1254,6 +1254,106 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Owner task ก6 (08/11), UWELL: Caliburn G3 Lite — every fact = UWELL's G3 Lite page posters (myuwell.com/caliburn/
+  // caliburn-g3-lite; images files.myuwell.com/uwell/product/caliburn-g3-lite/: pc/imgCon/2-20240514.jpg = GPP chart "RDL Freebase or
+  // MTL Nic Salts?", "*The cartridges all belong to UWELL CALIBURN G3 series" · pc/imgCon/3.jpg = 3-day "from the UWELL lab test",
+  // 20% "compared with other common products in the market" · mo/spe-1..4-new.png = the box per version: INT/FDA 0.6Ω side refill,
+  // INT (CRC) 0.6Ω top refill, TPD 0.9Ω top refill, each with the device and the manual · mo/5.jpg = LED colours). Read 08/11.
+  // Left out (already on the page): 1200mAh, auto draw, the 360° window, the three cartridge values. Legacy page → no article FAQ.
+  "caliburn-g3-lite": {
+    th: {
+      lede: "ด้านล่างสรุปเรื่อง UWELL Caliburn G3 Lite จากโปสเตอร์บนเว็บของ UWELL ว่าใช้หัวพอตร่วมกับรุ่นไหนได้ ควรเลือกหัวพอตค่าไหนกับน้ำยาแบบไหน ในกล่องได้หัวพอตแบบไหน และตัวเลขแบตที่ UWELL บอกไว้มาจากไหน",
+      sections: [
+        {
+          heading: "G3 Lite ใช้หัวพอตร่วมกับรุ่นไหนได้",
+          paragraphs: [
+            "UWELL ระบุว่าหัวพอตของ G3 Lite ทุกตัวเป็นหัวพอตตระกูล Caliburn G3 จึงเป็นหัวพอตชุดเดียวกับที่ [Caliburn G3](/products/caliburn-g3) ใช้ ถ้าเคยมีหัวพอต G3 อยู่แล้วก็นำมาใช้ต่อได้",
+          ],
+        },
+        {
+          heading: "ควรเลือกหัวพอตค่าไหนกับน้ำยาแบบไหน",
+          paragraphs: [
+            "ตารางหัวพอตของ UWELL วางหัว 0.6 โอห์มไว้ฝั่งสูบแบบ RDL ที่ลมโล่งกว่า คู่กับน้ำยา freebase และวางหัว 1.2 โอห์มไว้ฝั่งสูบแบบ MTL ที่ลมแน่นกว่า คู่กับน้ำยา salt nic ส่วนหัว 0.9 โอห์มอยู่ตรงกลาง",
+            "ถ้ายังไม่แน่ใจว่าน้ำยาสองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase) ส่วนหัวพอตสำรองดูได้ที่หน้า [คอยล์ UWELL Caliburn G4 และ G3](/products/coil-94)",
+          ],
+        },
+        {
+          heading: "ในกล่องได้หัวพอตแบบไหน",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง หัวพอตหนึ่งหัว และคู่มือ หัวพอตที่ได้ขึ้นกับเวอร์ชันของกล่อง",
+            "เวอร์ชัน INT/FDA ได้หัว 0.6 โอห์มแบบเติมน้ำยาด้านข้าง เวอร์ชัน INT (CRC) ได้หัว 0.6 โอห์มแบบเติมด้านบน และเวอร์ชัน TPD ได้หัว 0.9 โอห์มแบบเติมด้านบน",
+          ],
+        },
+        {
+          heading: "แบตใช้ได้ 3 วันจริงไหม",
+          paragraphs: [
+            "UWELL บอกว่าชาร์จหนึ่งครั้งใช้ได้ 3 วัน และเขียนหมายเหตุไว้ว่าตัวเลขนี้มาจากการทดสอบในแล็บของ UWELL เอง ใช้จริงได้นานแค่ไหนจึงขึ้นกับการสูบของแต่ละคน",
+            "ส่วนที่บอกว่าแบตใหญ่ขึ้น 20% นั้น UWELL เทียบกับสินค้าทั่วไปในตลาด ระหว่างใช้ ไฟ LED บนตัวเครื่องจะเปลี่ยนสีเป็นเขียว ฟ้า และแดงตามแบตที่เหลือ",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The UWELL Caliburn G3 Lite, from the posters on UWELL's own page: which models share its pods, which pod to pair with which e-liquid, which pod comes in the box, and where UWELL's battery figures come from.",
+      sections: [
+        {
+          heading: "Which models share its pods?",
+          paragraphs: [
+            "UWELL says every G3 Lite cartridge belongs to the Caliburn G3 series, the same pods the [Caliburn G3](/products/caliburn-g3) uses, so G3 pods you already have carry over.",
+          ],
+        },
+        {
+          heading: "Which pod goes with which e-liquid?",
+          paragraphs: [
+            "UWELL's cartridge chart puts the 0.6Ω pod at the RDL end, the looser draw, paired with freebase, and the 1.2Ω pod at the MTL end, the tighter draw, paired with nic salt; the 0.9Ω sits in between.",
+            "If the two e-liquids are new to you, see [salt nic vs freebase](/guides/salt-nic-vs-freebase). Spare pods are on the [UWELL Caliburn G4 & G3 coil](/products/coil-94) page.",
+          ],
+        },
+        {
+          heading: "Which pod comes in the box?",
+          paragraphs: [
+            "The box holds the device, one pod and the manual; which pod depends on the version. INT/FDA comes with a 0.6Ω side-refill pod, INT (CRC) with a 0.6Ω top-refill pod, and TPD with a 0.9Ω top-refill pod.",
+          ],
+        },
+        {
+          heading: "Does the battery really last 3 days?",
+          paragraphs: [
+            "UWELL says one charge lasts 3 days and notes that the figure comes from UWELL's own lab test, so real use depends on how you vape. The 20% bigger battery is measured against other common products on the market. As you vape, the LED on the body turns green, blue or red with the charge left.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 UWELL 官网上的海报，介绍 UWELL Caliburn G3 Lite 能和哪些型号共用烟弹、哪种烟弹配哪种烟油、盒里附带哪种烟弹，以及 UWELL 的电池数据从何而来。",
+      sections: [
+        {
+          heading: "能和哪些型号共用烟弹？",
+          paragraphs: [
+            "UWELL 表示 G3 Lite 的烟弹全部属于 Caliburn G3 系列，与 [Caliburn G3](/products/caliburn-g3) 用的是同一套烟弹，手上已有的 G3 烟弹可以继续使用。",
+          ],
+        },
+        {
+          heading: "哪种烟弹配哪种烟油？",
+          paragraphs: [
+            "UWELL 的烟弹图表把 0.6Ω 放在 RDL 一端，吸感较松，搭配 freebase；把 1.2Ω 放在 MTL 一端，吸感较紧，搭配 salt nic；0.9Ω 居中。",
+            "不清楚两种烟油的区别，可以看 [salt nic 和 freebase 有什么区别](/guides/salt-nic-vs-freebase)。备用烟弹见 [UWELL Caliburn G4 和 G3 线圈](/products/coil-94)。",
+          ],
+        },
+        {
+          heading: "盒里附带哪种烟弹？",
+          paragraphs: [
+            "盒内包含主机、烟弹 1 个和说明书，附带哪种烟弹取决于版本：INT/FDA 版为 0.6Ω 侧注油烟弹，INT (CRC) 版为 0.6Ω 顶部注油烟弹，TPD 版为 0.9Ω 顶部注油烟弹。",
+          ],
+        },
+        {
+          heading: "电池真的能用 3 天吗？",
+          paragraphs: [
+            "UWELL 表示充一次电可用 3 天，并注明这一数据来自 UWELL 自己的实验室测试，实际能用多久取决于个人的使用习惯。所谓电池容量提升 20%，是与市面上的常见产品相比。使用时，机身上的 LED 灯会随剩余电量显示绿、蓝、红三种颜色。",
+          ],
+        },
+      ],
+    },
+  },
   // Product-article round (27/10, side chat seo-push-2710): standard Caliburn G3 (not G3 Pro). Facts only from the verified spec
   // rows of `caliburn-g3` and `caliburn-g3-pro` in src/data/products/uwell.ts (UWELL's own pages / manual / pod chart); thai-copy 27/10.
   "caliburn-g3": {
