@@ -1,6 +1,6 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
-import { CONFIRMED_ORDER_STATUSES } from "@/lib/staff/daily-sales-rules";
+import { CONFIRMED_ORDER_STATUSES, COSTED_PER_ORDER_SQL } from "@/lib/staff/daily-sales-rules";
 import { warehouseCode } from "@/lib/staff/orders-export";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import type { BillOrder, Diff, RoundTotals, WeekProfit } from "@/lib/owner/bill-rules";
@@ -19,7 +19,7 @@ export function webOrdersForBill(sinceIso: string): BillOrder[] {
     .prepare(
       `SELECT o.order_number, o.run_number, o.total, o.created_at, i.product_name_snapshot, i.variant_label, i.quantity, i.product_slug, i.variant_id
          FROM orders o JOIN order_items i ON i.order_id = o.id
-        WHERE o.status IN (${statuses}) AND o.created_at >= ?
+        WHERE o.status IN (${statuses}) AND ${COSTED_PER_ORDER_SQL} AND o.created_at >= ?
         ORDER BY o.id ASC, i.id ASC`
     )
     .all(new Date(Date.parse(sinceIso) - CLAIM_MARGIN_MS).toISOString()) as {
