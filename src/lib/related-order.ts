@@ -3,7 +3,7 @@ import { kindCategoryId } from "@/data/categories";
 import { getPublishedProductBySlug, type StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
-import { NEVER_SUGGEST } from "@/data/similar-models";
+import { NEVER_BESIDE, NEVER_SUGGEST } from "@/data/similar-models";
 import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { RELATED_SLOTS } from "@/lib/related-row";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
@@ -170,7 +170,8 @@ function canSell(slug: string, live?: LiveLookup): boolean {
  *  "ต้องเป็นสินค้าที่มีในสต๊อกเท่านั้น … Auto ตลอด"), has an approved price, is not one of `slugs` and not on the "never" list. */
 export function rowFor(slugs: string[], live?: LiveLookup): CatalogItem[] {
   const taken = new Set(slugs);
-  return suggestionOrder(slugs, (i) => !taken.has(i.slug) && !NEVER_SUGGEST.has(i.slug) && i.sellingPrice !== null && canSell(i.slug, live)).slice(0, RELATED_SLOTS);
+  const apart = new Set(slugs.flatMap((s) => NEVER_BESIDE[s] ?? []));
+  return suggestionOrder(slugs, (i) => !taken.has(i.slug) && !apart.has(i.slug) && !NEVER_SUGGEST.has(i.slug) && i.sellingPrice !== null && canSell(i.slug, live)).slice(0, RELATED_SLOTS);
 }
 
 /** One card of the product page's block: the shop's own card data. */
