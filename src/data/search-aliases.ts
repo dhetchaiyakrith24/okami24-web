@@ -61,6 +61,9 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "ทีฟิท": ["tfit"],
   "ทีฟิส": ["tfit"],
   "อินฟี่": ["infy"],
+  // Round popular models 07/11: SMOK, no Thai spelling read anywhere, so the two forms a Thai reader writes.
+  "สโมค": ["smok"],
+  "สม็อก": ["smok"],
   "อินฟี": ["infy"],
   "อินฟิ": ["infy"],
   // Brands the owner's list did not name but the storefront carries (the contract test demands

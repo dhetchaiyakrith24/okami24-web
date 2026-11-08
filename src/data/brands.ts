@@ -219,6 +219,18 @@ export const brands: Brand[] = [
     referenceUrl: "https://www.relxnow.com/",
   },
   {
+    // Round popular models 07/11: no warehouse stock yet; pages only.
+    id: "smok",
+    slug: "smok",
+    name: "SMOK",
+    fullName: "SMOK",
+    tagline: "Refillable pod kits and pod mods.",
+    taglineTh: "พอตซิสเต็มเติมน้ำยาเอง",
+    description: "A vape hardware maker known for its Nord and RPM refillable pod lines.",
+    descriptionTh: "SMOK ผู้ผลิตพอตซิสเต็มตระกูล Nord และ RPM เติมน้ำยาเองและเปลี่ยนคอยล์ได้",
+    referenceUrl: "https://www.smoktech.com/",
+  },
+  {
     id: "joiway",
     slug: "joiway",
     name: "JOIWAY",

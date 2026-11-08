@@ -4,7 +4,7 @@ import { redirect, RedirectType } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { requestOtp, signInWithoutOtp, verifyOtp } from "@/lib/commerce/auth";
 import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
-import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
+import { orderingOpen, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 import { allowPhoneAttempt } from "@/lib/commerce/phone-rate-limit";
 
 /** Online ordering off (owner 2026-09-07): every step that moves a visitor towards a NEW order
@@ -12,7 +12,7 @@ import { allowPhoneAttempt } from "@/lib/commerce/phone-rate-limit";
  *  guarded — that is the slip upload (POST /orders/<n>/slip, cart round 22/10), which replaced the
  *  old "I have paid" note action. See src/lib/commerce/ordering-mode.ts. */
 function refuseWhileOrderingOff(): void {
-  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
+  if (!orderingOpen()) redirect(ORDERING_PAUSED_REDIRECT);
 }
 import { addAddress, deleteAddress, updateAddress, type AddressInput } from "@/lib/commerce/addresses";
 import { placeOrder } from "@/lib/commerce/orders";

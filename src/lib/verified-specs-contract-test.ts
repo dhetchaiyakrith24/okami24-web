@@ -39,7 +39,7 @@ export const SOURCED_ROW_PRODUCTS = [
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */
 const MANUFACTURER_HOSTS = [
   "salthub.com", "img.salthub.com", "relxnow.com", "myuwell.com", "files.myuwell.com", "manuals.plus", "eskobarvape.com",
-  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com",
+  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com", "smoktech.com", "store.smoktech.com",
   // batch 4a (06/10): JOIWAY's Thai site — it serves JOIWAY's product API + poster files (_incoming/joiway/SOURCE.md)
   "thai.myjoiway.com",
   // round list19 (17/10): LAMBDA's own store (lambdasmoke.com, "Shenzhen Original Technology Co., Ltd.")
@@ -67,6 +67,9 @@ export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */
 const CROSS_PRODUCT_MENTIONS: Record<string, string[]> = {
+  "vazer-reload-15k": ["15,000 พัฟ", "15,000 puffs", "18mL", "600mAh", "3%"], // Round popular models 07/11: 3 shops agree, copy only
+  "86-bar-20k": ["20,000 พัฟ", "20,000 puffs", "600mAh", "3%"], // Round popular models 07/11: 3 shops agree, copy only
+  "nexas-booster-16k": ["16,000 พัฟ", "16,000 puffs", "20mL", "800mAh"], // Round popular models 07/11: 3 shops agree, copy only
   "relx-novo-14k": ["14,000 พัฟ", "14,000 puffs", "500mAh"], // Round popular models 07/11: 3 shops agree, copy only
   // Round popular models 07/11, owner: no maker page = facts from 3 independent shops, in the copy, never a spec row.
   "relx-sparta-20k": ["20,000 พัฟ", "20,000 puffs", "750mAh"],

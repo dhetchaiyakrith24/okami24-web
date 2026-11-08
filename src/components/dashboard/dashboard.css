@@ -1,0 +1,128 @@
+/*
+ * The dashboard look (owner 08/11, direction "Ember Vapour"): ember vapour behind smoked glass on the site's graphite.
+ * Loaded only by pages that use these parts. The glass is painted, not blurred: backdrop-filter on every card is slow on a
+ * phone, and small Thai needs a calm surface, so a card is an opaque-enough fill and only the sticky switch blurs.
+ */
+/* Inside the dashboard box (its parent is relative + isolate), fading out before the site's footer, so no solid band
+   ever cuts it in a straight line. Clipped by its own box, so it can never make the page scroll sideways. */
+.dash-vapour {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 85%);
+}
+.dash-vapour::before {
+  content: "";
+  position: absolute;
+  inset: -10% -20%;
+  background: radial-gradient(42% 30% at 18% 22%, rgb(255 131 71 / 0.12), transparent 74%);
+  animation: dash-drift 24s ease-in-out infinite alternate;
+}
+
+/* The one strong glow: behind the hero number only, never behind a card with small text. */
+.dash-glow {
+  position: absolute;
+  inset: -2.5rem -1.5rem -1rem -2rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgb(255 106 44 / 0.45), transparent);
+  filter: blur(6px);
+}
+
+.dash-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgb(255 255 255 / 0.07);
+  border-top-color: rgb(255 255 255 / 0.17);
+  border-radius: 1.25rem;
+  background: rgb(23 24 27 / 0.84);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.34);
+}
+
+.dash-card-open {
+  border-style: dashed;
+  border-color: rgb(255 131 71 / 0.5);
+  box-shadow: none;
+}
+
+.dash-rows > * + * {
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.dash-switch {
+  position: sticky;
+  top: 4.75rem;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+  background: rgb(14 14 16 / 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+@media (min-width: 64rem) {
+  .dash-switch {
+    display: none;
+  }
+}
+
+.dash-panel {
+  animation: dash-fade 0.2s ease-out both;
+}
+
+.dash-rise {
+  animation: dash-rise 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.dash-rise:nth-child(2) { animation-delay: 0.05s; }
+.dash-rise:nth-child(3) { animation-delay: 0.1s; }
+.dash-rise:nth-child(n + 4) { animation-delay: 0.15s; }
+
+.dash-line {
+  stroke-dasharray: 1;
+  animation: dash-draw 0.9s ease-out both;
+}
+
+.dash-bar {
+  transform-origin: bottom;
+  animation: dash-grow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes dash-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes dash-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes dash-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes dash-grow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes dash-drift {
+  from { transform: translate3d(-2%, -1%, 0); }
+  to { transform: translate3d(3%, 2%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-vapour::before,
+  .dash-panel,
+  .dash-rise,
+  .dash-line,
+  .dash-bar {
+    animation: none;
+  }
+}

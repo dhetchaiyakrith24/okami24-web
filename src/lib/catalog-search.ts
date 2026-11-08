@@ -15,8 +15,11 @@
  *      whitespace collapsed.
  *   2. It is split on whitespace into tokens and EVERY token must match (AND). "caliburn g5" =
  *      caliburn AND g5; "m bar 15k" = m AND bar AND 15k. A token matches when it is a substring
- *      of the product's text, or — with every non-letter removed on both sides — of its compact
- *      text ("drag6" ↔ "DRAG 6", "mbar" ↔ "M Bar", "caliburng5" ↔ "Caliburn G5").
+ *      of the product's text, or when, from the START of a word, the words run together begin with
+ *      it ("drag6" ↔ "DRAG 6", "mbar" ↔ "M Bar", "caliburng5" ↔ "Caliburn G5"). Joining must start
+ *      at a word: "ks" sits inside "black silver" run together, and that listed Caliburn and RELX
+ *      ahead of the KS products (visitor walk 08/11). A Latin or digit token of 1 to 2 characters
+ *      matches only at the start of a word, for the same reason ("ks" inside "drinks").
  *   3. A token that is a search alias (src/data/search-aliases.ts) also matches through the
  *      English term it stands for: "คาลิเบิร์น" → "caliburn", "marbo" → "salthub".
  *
@@ -84,11 +87,25 @@ export function phraseMatches(term: string, text: SearchText): boolean {
   return termIn(t, text.primary) || termIn(t, text.secondary);
 }
 
+/** A token this short says nothing as a substring: it only counts at the start of a word. */
+const SHORT_LATIN = /^[a-z0-9]{1,2}$/;
+
+/** True when the words of `text`, run together from the start of one of them, begin with `c`. */
+function startsAtWord(c: string, text: string): boolean {
+  const words = text.split(NOT_ALNUM).filter(Boolean);
+  for (let i = 0; i < words.length; i++) {
+    let joined = "";
+    for (let j = i; j < words.length && joined.length < c.length; j++) joined += words[j];
+    if (joined.startsWith(c)) return true;
+  }
+  return false;
+}
+
 function termIn(term: string, text: string): boolean {
   if (!term) return false;
-  if (text.includes(term)) return true;
+  if (!SHORT_LATIN.test(term) && text.includes(term)) return true;
   const c = compact(term);
-  return c.length > 0 && compact(text).includes(c);
+  return c.length > 0 && startsAtWord(c, text);
 }
 
 /** 0 = no match. Otherwise 1 for the match itself plus 1 per token that matched in the primary
