@@ -357,10 +357,12 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (16/10): searched as "relx infinity" — RELX's store sells only the Infinity 2 Plus now.
   "relx-infinity-2-plus": "RELX Infinity รุ่นปัจจุบันคือ Infinity 2 Plus เครื่องระบบสวิตช์ที่มี 3 โหมด 6.5–10 วัตต์ แบต 440mAh และใช้ได้กับหัวพอต RELX Pod · Pod Pro · Pod Pro 2",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
+  "caliburn-g3-lite": "Caliburn G3 Lite ไม่มีจอและไม่มีปุ่ม เป็นพอตซิสเต็มจาก UWELL แบต 1200mAh ปรับได้สูงสุด 25 วัตต์ ดูดแล้วทำงานเอง ใช้หัวพอตชุด Caliburn G3",
   "caliburn-g3": "Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro เป็นพอตซิสเต็มจาก UWELL แบต 900mAh ปรับได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ หน้านี้รวมทุกสีที่ UWELL ผลิต",
   // Round p63 (18/10): numbers = verified spec rows of nexpod-15k (wotofo.com).
   "nexpod-15k": "WOTOFO nexPOD 15K Pro Kit เครื่องระบบสวิตช์ แบต 1200mAh ใช้หัวพอตบรรจุสำเร็จ 18mL คอยล์ 0.8 โอห์ม หัวละ 15,000 พัฟ ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหน มี 6 สี",
   // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
+  "nexas-booster-16k": "NEXAS Booster 16K พอตใช้แล้วทิ้ง มีไฟบอกแบต ปรับลมได้ 3 ระดับ ชาร์จผ่าน USB-C มี 18 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงได้ในหน้านี้",
   // Round popular models 07/11: no verified row, so no number but the name and the flavour count.
   "relx-sparta-20k": "RELX Sparta 20K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ปรับลมและเลือกโหมดการใช้งานได้ ชาร์จผ่าน USB-C มี 16 กลิ่นให้ดูในหน้านี้",
   "relx-novo-14k": "RELX Novo 14K พอตใช้แล้วทิ้ง มีจอบนตัวเครื่อง ชาร์จผ่าน USB-C มีทั้งหมด 14 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงที่มีของได้ในหน้านี้",
@@ -437,6 +439,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
+  "vazer-reload-15k": "Vazer Reload 15K ตัวเครื่องพร้อมหัวพอตบรรจุสำเร็จ มี 15 กลิ่น อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว ใช้ตัวเครื่องเดิมได้",
+  "86-bar-20k": "86 Bar 20K พอตใช้แล้วทิ้ง ใช้คอยล์ mesh ชาร์จผ่าน USB-C มี 13 กลิ่น ดูรายชื่อกลิ่นและรุ่นใกล้เคียงได้ในหน้านี้",
   "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C หัวละสูงสุด 15,000 พัฟ ตัวเครื่องมี 4 สี",
   "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",
   "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จ USB-C มี 2 โหมด Normal กับ Turbo",

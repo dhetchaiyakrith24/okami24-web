@@ -57,6 +57,7 @@ export const SPEC_LABELS_TH: Record<string, string> = {
   // Owner 2026-09-15: "ระบบยิง" (pairs with the locked "ปุ่มยิง"), not "การสั่งงาน".
   Activation: "ระบบยิง",
   Firing: "ระบบยิง",
+  "Battery light": "ไฟบอกแบต",
   "Anti-leak system": "ระบบกันรั่ว",
   "Compatible device": "ใช้ได้กับ",
   "Compatible devices": "ใช้ได้กับ",

@@ -157,6 +157,73 @@ export const unbrandedProducts: Product[] = [
     sourceUrls: ["https://vapemun.com/"],
   },
   {
+    // Round popular models 07/11: searched (nexas booster 16k 880 a month), not in the warehouse, no price, no cart, no maker site found, so
+    // Unbranded like the rest of this file. Owner 07/11: a fact only where 3 independent shops agree, in the copy, never a spec row. Read 07/11 in
+    // the browser: goatvapethai · maneevp · yaivapestore: 16,000 puffs, 800mAh, 20mL, USB-C, 3-step airflow, these 18 flavours (the first
+    // two list them, yaivapestore names them all; vbth3 lacks Yoyo Grape). Not agreed, so not written: which flavours come at 5%, coil ohms, the count of lights (two shops).
+    id: "nexas-booster-16k",
+    slug: "nexas-booster-16k",
+    brandId: "Unbranded",
+    familyId: "Nexas",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "NEXAS Booster 16K",
+    displayName: "NEXAS BOOSTER 16K",
+    searchAliases: ["Nexas","Nexas Booster","Nexas 16000","Nexas 16K"],
+    tagline: "A disposable with battery lights and three airflow steps.",
+    shortDescription:
+      "A disposable with battery lights on the body and airflow you can set in three steps. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/nexas-booster-16k/card-wm5.webp",
+        alt: "NEXAS Booster 16K, white body with an orange tank, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/nexas-booster-16k",
+      },
+    ],
+    flavorVariants: [
+      { id: "cola-ice", name: "Cola Ice", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#8a6a2a", availability: "unknown" },
+      { id: "grape-ice", name: "Grape Ice", swatchHex: "#8a6bb0", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b08ac4", availability: "unknown" },
+      { id: "green-apple", name: "Green Apple", swatchHex: "#8cc63f", availability: "unknown" },
+      { id: "green-soda", name: "Green Soda", swatchHex: "#5fbf6a", availability: "unknown" },
+      { id: "lychee-ice", name: "Lychee Ice", swatchHex: "#f2b5c4", availability: "unknown" },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#9fd3e8", availability: "unknown" },
+      { id: "mint-extra", name: "Mint Extra", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "mixberry", name: "Mix Berries", swatchHex: "#a24a7e", availability: "unknown" },
+      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#b5853f", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#f2a093", availability: "unknown" },
+      { id: "red-soda", name: "Red Soda", swatchHex: "#d9394e", availability: "unknown" },
+      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#f2c06b", availability: "unknown" },
+      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#e4576a", availability: "unknown" },
+      { id: "yoyo-grape", name: "Yoyo Grape", swatchHex: "#7a5fb0", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "16,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "lights", title: "Battery lights and airflow", description: "Lights on the body show the battery, and the airflow sets in three steps." },
+      { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 16,000 puffs, 20mL, an 800mAh battery and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the NEXAS Booster by name, or you are after a high-puff disposable."],
+    faqs: [],
+    relatedProductSlugs: [],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/nexas-booster-16k"],
+  },
+  {
     id: "muro-3ml",
     slug: "muro-3ml",
     brandId: "Unbranded",
@@ -847,5 +914,131 @@ export const unbrandedProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["muro-freebase", "muro-space-15k", "muro-3ml", "muro-sc-8000", "muro-connector-20k"],
     sourceUrls: ["https://vapemun.com/"],
+  },
+  {
+    // Round popular models 07/11: searched (vazer reload 15k 590 a month), not in the warehouse, no price, no cart, no maker site found. Owner 07/11: a fact only where
+    // 3 independent shops agree, in the copy, never a spec row. Raw pages read 07/11: goatvapethai · maneevp + yaivapestore (shared wording, 1 shop) · ezy-pods + vppods (shared
+    // template, 1 shop) · 7pods: 15,000 puffs, 600mAh, 18mL, 3%, USB-C, a pre-filled head that swaps. The 15 flavours = the brand's own chart on 7pods and maneevp.
+    // Not agreed, so not written: "cannot be refilled" (2 shops), weight.
+    id: "vazer-reload-15k",
+    slug: "vazer-reload-15k",
+    brandId: "Unbranded",
+    familyId: "Vazer",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "Vazer Reload 15K",
+    displayName: "VAZER RELOAD 15K",
+    searchAliases: ["Vazer Reload","Vazer 15K","Vazer 15000","Vazer Reload 15000"],
+    tagline: "A device with a pre-filled head you can swap for another flavour.",
+    shortDescription:
+      "A pre-filled head sits on the device, so you change the head when you want another flavour. Pick from the flavours below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/vazer-reload-15k/card-wm5.webp",
+        alt: "Vazer Reload 15K, black body with a red Watermelon Slushie head, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/vazer-reload-15k",
+      },
+    ],
+    flavorVariants: [
+      { id: "apple-fuji", name: "Apple Fuji", swatchHex: "#d9394e", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#2a56b0", availability: "unknown" },
+      { id: "cool-mint", name: "Cool Mint", swatchHex: "#8fd6e8", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#b0359e", availability: "unknown" },
+      { id: "grape-osaka", name: "Grape Osaka", swatchHex: "#5b3a9e", availability: "unknown" },
+      { id: "ice-grape", name: "Ice Grape", swatchHex: "#5b3a9e", availability: "unknown" },
+      { id: "lemon-soda", name: "Lemon Soda", swatchHex: "#f2d04a", availability: "unknown" },
+      { id: "lychee", name: "Lychee", swatchHex: "#e0407f", availability: "unknown" },
+      { id: "malibu", name: "Malibu", swatchHex: "#f2d04a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#d4a7d4", availability: "unknown" },
+      { id: "original-cola", name: "Original Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "peach-paradise", name: "Peach Paradise", swatchHex: "#ef6a5a", availability: "unknown" },
+      { id: "root-beer", name: "Root Beer", swatchHex: "#7a4a24", availability: "unknown" },
+      { id: "strawberry-candy", name: "Strawberry Candy", swatchHex: "#f2a7bb", availability: "unknown" },
+      { id: "watermelon-slushie", name: "Watermelon Slushie", swatchHex: "#e4305a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "15,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "swap", title: "Change the head, keep the body", description: "The liquid sits in a pre-filled head, so a new flavour only takes a new head." },
+      { id: "air", title: "Mesh coil and airflow", description: "Shops that sell it agree it has a mesh coil and adjustable airflow." },
+      { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 15,000 puffs, 18mL, a 600mAh battery, 3% nicotine and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the Vazer Reload by name, or you want to change flavour without changing the device."],
+    faqs: [],
+    relatedProductSlugs: [],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/vazer-reload-15k"],
+  },
+  {
+    // Round popular models 07/11: searched (86 bar 20k 480 a month), not in the warehouse, no price, no cart, no maker site found. Owner 07/11: a fact only where 3 independent
+    // shops agree, in the copy, never a spec row. Raw pages read 07/11: maneevp · ezy-pods + vppods (shared template, 1 shop) · 7pods: 20,000 puffs, 600mAh, 3%, USB-C, these 13
+    // flavours. Not agreed, so not written: liquid (1 shop), the six flavours and the 5% versions only ezy-pods + vppods list.
+    id: "86-bar-20k",
+    slug: "86-bar-20k",
+    brandId: "Unbranded",
+    familyId: "86 Bar",
+    categoryId: "disposables",
+    systemType: "disposable",
+    name: "86 Bar 20K",
+    displayName: "86 BAR 20K",
+    searchAliases: ["86 Bar","86bar","86 Bar 20000"],
+    tagline: "A disposable with a mesh coil.",
+    shortDescription:
+      "A disposable with a mesh coil, in 13 flavours. Pick from the list below.",
+    isFlagship: false,
+    attributes: {
+      portability: "standard",
+      // Not a maker fact: the shop's own beginner filter; nothing is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/86-bar-20k/card-wm5.webp",
+        alt: "86 Bar 20K, slim black body with a neon 86 face, front view",
+        angle: "front, isolated: studio remake",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from a vape retailer's poster",
+        sourceUrl: "https://okami24.store/products/86-bar-20k",
+      },
+    ],
+    flavorVariants: [
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#4a7fd9", availability: "unknown" },
+      { id: "coco-pine", name: "Coco Pine", swatchHex: "#e6c65a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#7a3fb0", availability: "unknown" },
+      { id: "lemon-cola", name: "Lemon Cola", swatchHex: "#c9a227", availability: "unknown" },
+      { id: "lychee", name: "Lychee", swatchHex: "#e0407f", availability: "unknown" },
+      { id: "magic-mango", name: "Magic Mango", swatchHex: "#f2a93b", availability: "unknown" },
+      { id: "mint-freeze", name: "Mint Freeze", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#d4a7d4", availability: "unknown" },
+      { id: "oishi-green-tea", name: "Oishi Green Tea", swatchHex: "#6fa84a", availability: "unknown" },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#e4476a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e4305a", availability: "unknown" },
+      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#e0506a", availability: "unknown" },
+      { id: "watermelon-strawberry", name: "Watermelon Strawberry", swatchHex: "#e4576a", availability: "unknown" },
+    ],
+    specifications: [{ key: "puffs", label: "Rated puffs", value: "20,000", sourceStatus: "unverified" }],
+    features: [
+      { id: "setup", title: "Mesh coil", description: "Shops that sell it list a mesh coil." },
+      { id: "figures", title: "The figures shops agree on", description: "The maker has no site we could find, so these come from shops that sell it and agree: 20,000 puffs, a 600mAh battery, 3% nicotine and USB-C charging." },
+    ],
+    compatibility: [],
+    whoIsThisFor: ["You came looking for the 86 Bar by name, or you are after a high-puff disposable."],
+    faqs: [],
+    relatedProductSlugs: [],
+    // Our own page: no maker page exists, and SourceNote drops our own address, so a shop is never linked.
+    sourceUrls: ["https://okami24.store/products/86-bar-20k"],
   },
 ];
