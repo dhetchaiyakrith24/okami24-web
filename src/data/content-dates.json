@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T08:07:13+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T08:35:11+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -559,8 +559,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-artisan-plus": {
-      "date": "2026-11-07T15:49:14+07:00",
-      "fp": "2183fccdf706"
+      "date": "2026-11-08T08:35:11+07:00",
+      "fp": "5b7c59e7c22a"
     },
     "/products/relx-creator": {
       "date": "2026-11-07T10:59:41+07:00",
@@ -575,12 +575,12 @@
       "fp": "7af4da430b7f"
     },
     "/products/relx-essential-2": {
-      "date": "2026-11-04T09:00:12+07:00",
-      "fp": "430c3c65757f"
+      "date": "2026-11-08T08:35:11+07:00",
+      "fp": "352206a039c4"
     },
     "/products/relx-infinity-2-plus": {
-      "date": "2026-11-07T15:48:13+07:00",
-      "fp": "28db9af471e7"
+      "date": "2026-11-08T08:35:11+07:00",
+      "fp": "0db7805dd966"
     },
     "/products/relx-infinity-pro-2-pod": {
       "date": "2026-11-03T01:07:53+07:00",
@@ -595,12 +595,12 @@
       "fp": "69cc48baf421"
     },
     "/products/relx-pod": {
-      "date": "2026-11-08T08:07:13+07:00",
-      "fp": "a82b3a7694f1"
+      "date": "2026-11-08T08:35:11+07:00",
+      "fp": "f8b738e548bd"
     },
     "/products/relx-pod-pro": {
-      "date": "2026-11-08T08:07:13+07:00",
-      "fp": "cc0beed4e234"
+      "date": "2026-11-08T08:35:11+07:00",
+      "fp": "5351487622f1"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-07T11:43:43+07:00",

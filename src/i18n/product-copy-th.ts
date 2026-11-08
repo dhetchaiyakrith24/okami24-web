@@ -1210,12 +1210,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       fit: {
         title: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
-        description: "RELX ระบุว่าใช้ได้กับเครื่อง RELX Essential 2 · Infinity 2 Plus และ Artisan Plus",
+        description: "RELX ระบุว่าใช้ได้กับเครื่อง RELX Essential 2 และ Artisan Plus",
       },
     },
     tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 1.9mL คอยล์สำลี",
     shortDescription:
-      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์สำลี ขายแพ็กละ 2 หัว นิโคติน 18mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Essential 2 · Infinity 2 Plus และ Artisan Plus",
+      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์สำลี ขายแพ็กละ 2 หัว นิโคติน 18mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Essential 2 และ Artisan Plus",
   },
   "relx-pod-pro": {
     whoIsThisFor: {

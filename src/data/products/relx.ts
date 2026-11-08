@@ -216,6 +216,8 @@ export const relxProducts: Product[] = [
     // Classic device. Flavours: the gallery of RELX's own store listing, which names each one in the file name; the store sells three of them now.
     // Pictures: a box with no gold PRO tab only. RELX shows Watermelon Ice only in the PRO box, and Menthol Xtra only at 600px: both stay with no picture.
     // Puffs left out: RELX's Pod Pro page says 500 a pod, its Infinity page up to 600.
+    // Devices: Essential 2 and Artisan Plus pages name "RELX Pod"; the Infinity 2 Plus page says only "RELX, RELX Pod Pro, and RELX Pod Pro 2",
+    // so Infinity is not claimed here. The devices row cites Essential 2; Artisan Plus is backed by its edge in catalog-relationships.
     id: "relx-pod",
     slug: "relx-pod",
     brandId: "relx",
@@ -227,7 +229,7 @@ export const relxProducts: Product[] = [
     searchAliases: ["หัว RELX Pod", "หัวพอต RELX Pod", "RELX Pod cotton coil"],
     tagline: "RELX's 1.9mL prefilled pod with a cotton coil.",
     shortDescription:
-      "A 1.9mL prefilled pod from RELX with a cotton coil, sold in packs of two at 18mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Essential 2, Infinity 2 Plus and Artisan Plus devices.",
+      "A 1.9mL prefilled pod from RELX with a cotton coil, sold in packs of two at 18mg/ml. You swap it when it runs out and keep the device. RELX lists it for its Essential 2 and Artisan Plus devices.",
     isFlagship: false,
     attributes: {
       capacityMl: 1.9,
@@ -264,14 +266,14 @@ export const relxProducts: Product[] = [
       { key: "capacity", label: "E-liquid capacity", value: "1.9mL", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
       { key: "nicotine", label: "Nicotine strength", value: "18mg/ml", sourceStatus: "verified", sourceUrl: RELX_POD_PAGE },
       { key: "coil", label: "Coil", value: "Cotton coil", sourceStatus: "verified", sourceUrl: POD_PRO_PAGE },
-      { key: "devices", label: "Compatible devices", value: "RELX Essential 2 · Infinity 2 Plus · Artisan Plus", sourceStatus: "verified", sourceUrl: ESSENTIAL_PAGE },
+      { key: "devices", label: "Compatible devices", value: "RELX Essential 2", sourceStatus: "verified", sourceUrl: ESSENTIAL_PAGE },
     ],
     features: [
       { id: "swap", title: "A pod you swap", description: "It comes filled with liquid. When it runs out you fit a new one and keep the device." },
       { id: "coil", title: "Cotton coil", description: "RELX says RELX Pod uses a cotton coil, where RELX Pod Pro uses a ceramic one." },
-      { id: "fit", title: "Which devices it fits", description: "RELX lists it for the Essential 2, the Infinity 2 Plus and the Artisan Plus." },
+      { id: "fit", title: "Which devices it fits", description: "RELX lists it for the Essential 2 and the Artisan Plus." },
     ],
-    compatibility: [{ type: "pod", label: "RELX Essential 2 · Infinity 2 Plus · Artisan Plus", note: "Device lists from RELX's store page." }],
+    compatibility: [{ type: "pod", label: "RELX Essential 2 · Artisan Plus", note: "Device lists from RELX's store page." }],
     whoIsThisFor: ["You're looking for RELX Pod by name and want its flavours and the devices RELX lists for it."],
     faqs: [],
     relatedProductSlugs: ["relx-pod-pro", "relx-infinity-2-plus", "relx-ultra-pod"],
