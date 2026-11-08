@@ -7381,20 +7381,28 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
   },
   // Owner task ก6 (09/11), DOTMOD: dotCoils (Coil-70) — DOTMOD's own page dotmod.com/products/dotcoils, read 09/11 in the in-app browser:
-  // "Made specifically for dotmod atomizers" · "Single mesh coils" · "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" · "COMPATIBILITY: dotAIO V2 ·
-  // dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo V1.5 (Not compatible with 0.15 Ohm
-  // dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo · dotAIO V3". The 0.7Ω the
-  // shop sells is on DOTMOD's own box (spec row note); the page names no device for it alone, so the 0.15Ω caveat is told only for 0.15Ω.
-  // Left out (already on the page): 5 a box, brass, single mesh, the 0.7Ω 14–20W, the five devices in the spec row. Seed page → FAQ allowed.
+  // "Made specifically for dotmod atomizers" · "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" · "5 INDIVIDUAL WRAPPED BLISTER PACKS WITH A COIL IN
+  // EACH" · "COMPATIBILITY: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo
+  // V1.5 (Not compatible with 0.15 Ohm dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP ·
+  // dotApollo · dotAIO V3". That list belongs to the three values DOTMOD sells now. The 0.7Ω this page sells is on DOTMOD's own box; DOTMOD no
+  // longer lists it, and the shop's record ties it to dotAIO V2 (Shipnity name "คอยล์ Dotmod Aio V2"; DOTMOD's 2026-09-02 dotAIO V2 line-up
+  // 0.3/0.7/0.9Ω) — so no claim that 0.7Ω fits anything beyond dotAIO V2 (checker 09/11). Left out (already on the page): 5 a box, brass,
+  // single mesh, the 0.7Ω 14–20W. Seed page → FAQ allowed.
   "coil-70": {
     th: {
-      lede: "คอยล์ตัวนี้ DOTMOD เรียกว่า dotCoils ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าใช้กับเครื่องไหนได้บ้าง และมีค่าโอห์มไหนที่บางรุ่นใช้ไม่ได้",
+      lede: "คอยล์ตัวนี้ DOTMOD เรียกว่า dotCoils ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าค่าโอห์มที่ขายอยู่ตอนนี้ใช้กับเครื่องไหน และค่า 0.7 โอห์มในหน้านี้ควรเช็คอะไรก่อนซื้อ",
       sections: [
         {
-          heading: "คอยล์ dotCoils ใช้กับเครื่องไหนได้บ้าง",
+          heading: "รายชื่อเครื่องบนเว็บ DOTMOD เป็นของคอยล์ค่าไหน",
           paragraphs: [
-            "DOTMOD ทำคอยล์นี้มาสำหรับเครื่องของตัวเองโดยเฉพาะ นอกจากรุ่นที่อยู่ในตารางสเปกแล้ว หน้าเว็บของ DOTMOD ยังระบุ dotStick Revo V1.5 · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3 ไว้ด้วย",
-            "ถ้ามีเครื่องของ DOTMOD หลายรุ่นในรายชื่อนี้ ก็ใช้คอยล์ชนิดเดียวกันได้ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+            "หน้าเว็บของ DOTMOD ตอนนี้ขาย dotCoils ค่า 0.15 · 0.3 และ 0.6 โอห์ม และรายชื่อเครื่องบนหน้านั้นเป็นของสามค่านี้ ได้แก่ dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo · dotStick Revo V1.5 · dotPod Max · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3",
+            "DOTMOD ทำคอยล์นี้มาสำหรับเครื่องของตัวเองโดยเฉพาะ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+          ],
+        },
+        {
+          heading: "ค่า 0.7 โอห์มในหน้านี้ใช้กับเครื่องไหน",
+          paragraphs: [
+            "ค่า 0.7 โอห์มเป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เอง แต่หน้าเว็บของ DOTMOD ตอนนี้ขายเฉพาะ 0.15 · 0.3 และ 0.6 โอห์ม ข้อมูลของร้านผูกค่า 0.7 โอห์มไว้กับ dotAIO V2 ก่อนซื้อจึงควรเช็คชื่อรุ่นเครื่องของตัวเองให้ตรง",
           ],
         },
         {
@@ -7412,23 +7420,25 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
-          question: "คอยล์ dotCoils ใช้กับ dotAIO V3 ได้ไหม",
-          answer: "ได้ค่ะ หน้าเว็บของ DOTMOD ระบุ dotAIO V3 ไว้ในรายชื่อเครื่องที่ใช้คอยล์ dotCoils ได้ค่ะ",
-        },
-        {
           question: "คอยล์ dotCoils มีค่าโอห์มอะไรบ้าง",
-          answer: "หน้าเว็บของ DOTMOD ตอนนี้มีให้เลือก 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้ อ้างอิงจากค่าที่พิมพ์อยู่บนกล่องของ DOTMOD ค่ะ",
+          answer: "หน้าเว็บของ DOTMOD ตอนนี้มีให้เลือก 0.15 · 0.3 และ 0.6 โอห์มค่ะ ส่วน 0.7 โอห์มในหน้านี้ อ้างอิงจากค่าที่พิมพ์อยู่บนกล่องของ DOTMOD และข้อมูลของร้านผูกไว้กับ dotAIO V2 ค่ะ",
         },
       ],
     },
     en: {
-      lede: "This coil is DOTMOD's dotCoils. Below, from DOTMOD's own page: which devices it fits, and which resistance a few of them can't take.",
+      lede: "This coil is DOTMOD's dotCoils. Below, from DOTMOD's own page: which devices the values it sells now fit, and what to check about the 0.7Ω on this page before you buy.",
       sections: [
         {
-          heading: "Which devices take dotCoils?",
+          heading: "Which coils is DOTMOD's device list for?",
           paragraphs: [
-            "DOTMOD makes these coils for its own atomizers. Besides the models in the spec table, DOTMOD's page now also lists the dotStick Revo V1.5, dotAIO Tank V3, dotTank Max, dotAMP, dotApollo and dotAIO V3.",
-            "If you own more than one DOTMOD device from this list, one coil type covers them. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+            "DOTMOD's page currently sells dotCoils at 0.15, 0.3 and 0.6Ω, and the device list there is for those three: the dotAIO V2, dotAIO V2 Lite, dotTank 25mm, dotStick Revo, dotStick Revo V1.5, dotPod Max, dotAIO Tank V3, dotTank Max, dotAMP, dotApollo and dotAIO V3.",
+            "DOTMOD makes these coils for its own devices. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+          ],
+        },
+        {
+          heading: "Which device is the 0.7Ω on this page for?",
+          paragraphs: [
+            "The 0.7Ω value is printed on DOTMOD's own box, but DOTMOD's page now sells only 0.15, 0.3 and 0.6Ω. Our record ties the 0.7Ω to the dotAIO V2, so check your device's model name before you buy.",
           ],
         },
         {
@@ -7446,23 +7456,25 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
-          question: "Do dotCoils fit the dotAIO V3?",
-          answer: "Yes. DOTMOD's page lists the dotAIO V3 among the devices that take dotCoils.",
-        },
-        {
           question: "Which resistances do dotCoils come in?",
-          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is taken from the value printed on DOTMOD's own box.",
+          answer: "DOTMOD's page currently offers 0.15, 0.3 and 0.6Ω. The 0.7Ω on this page is taken from the value printed on DOTMOD's own box, and our record ties it to the dotAIO V2.",
         },
       ],
     },
     zh: {
-      lede: "这款雾化芯就是 DOTMOD 的 dotCoils。下面根据 DOTMOD 官网整理：适用于哪些设备，以及哪种阻值有几款设备不能用。",
+      lede: "这款雾化芯就是 DOTMOD 的 dotCoils。下面根据 DOTMOD 官网整理：目前在售的阻值适用于哪些设备，以及本页的 0.7Ω 购买前要核对什么。",
       sections: [
         {
-          heading: "dotCoils 适用于哪些设备？",
+          heading: "DOTMOD 官网的设备列表对应哪些阻值？",
           paragraphs: [
-            "DOTMOD 这款雾化芯专为自家雾化器设计。除了规格表里的型号，DOTMOD 官网现在还列出了 dotStick Revo V1.5、dotAIO Tank V3、dotTank Max、dotAMP、dotApollo 和 dotAIO V3。",
-            "如果手上有这份列表里的多款 DOTMOD 设备，可以共用同一种雾化芯。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+            "DOTMOD 官网目前在售的 dotCoils 为 0.15、0.3 和 0.6Ω，页面上的设备列表对应这三种：dotAIO V2、dotAIO V2 Lite、dotTank 25mm、dotStick Revo、dotStick Revo V1.5、dotPod Max、dotAIO Tank V3、dotTank Max、dotAMP、dotApollo 和 dotAIO V3。",
+            "DOTMOD 这款雾化芯专为自家设备设计。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+          ],
+        },
+        {
+          heading: "本页的 0.7Ω 适用于哪款设备？",
+          paragraphs: [
+            "0.7Ω 是 DOTMOD 包装盒上印的阻值，但 DOTMOD 官网目前只销售 0.15、0.3 和 0.6Ω。本店资料将 0.7Ω 对应 dotAIO V2，购买前请核对自己设备的型号。",
           ],
         },
         {
@@ -7480,12 +7492,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         {
-          question: "dotCoils 能用在 dotAIO V3 上吗？",
-          answer: "可以。DOTMOD 官网把 dotAIO V3 列在适用 dotCoils 的设备中。",
-        },
-        {
           question: "dotCoils 有哪些阻值？",
-          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 依据的是 DOTMOD 包装盒上印的阻值。",
+          answer: "DOTMOD 官网目前提供 0.15、0.3 和 0.6Ω。本页的 0.7Ω 依据的是 DOTMOD 包装盒上印的阻值，本店资料将其对应 dotAIO V2。",
         },
       ],
     },
