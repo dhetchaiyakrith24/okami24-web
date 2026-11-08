@@ -22,6 +22,14 @@ export function formatShortDateTime(iso: string): string {
   return Number.isNaN(d.getTime()) ? iso : SHORT.format(d);
 }
 
+const DAY_ONLY = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", day: "numeric", month: "short", year: "2-digit" });
+
+/** "26 ต.ค. 69" — a day without the time (the customer card's first and last order). */
+export function formatDay(iso: string): string {
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? iso : DAY_ONLY.format(d);
+}
+
 const BAHT = new Intl.NumberFormat("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 export function formatBaht(amount: number): string {

@@ -98,6 +98,16 @@ export default async function StaffPage() {
         </Link>
       </nav>
 
+      {/* Owner list ก11: the customer card and the parcel check, on the same quiet kind of line. */}
+      <nav aria-label="ลูกค้าและพัสดุ" className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-foreground-muted">
+        <Link href="/staff/customers" className="inline-flex min-h-11 items-center hover:text-foreground">
+          ลูกค้า →
+        </Link>
+        <Link href="/staff/tracking" className="inline-flex min-h-11 items-center hover:text-foreground">
+          เช็คพัสดุ →
+        </Link>
+      </nav>
+
       {/* The tools that sat in the folded "อื่น ๆ" row moved under the boxes at the top (owner 28/10): slip check → ตรวจสลิป,
           Shipnity · Excel · LINE groups → Okami dev. Log out stays here as one quiet line. */}
       <form action={staffLogoutAction}>
