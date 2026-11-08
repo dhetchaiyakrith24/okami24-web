@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useMemo, useState } from "react";
+import { startTransition, useActionState, useEffect, useMemo, useState } from "react";
 import { createLineOrderAction, type LineOrderState } from "@/app/staff/line-order/actions";
 import { formatBaht, formatShortDateTime } from "@/app/staff/_components/format";
 
@@ -42,7 +42,8 @@ function readName(): string {
 
 /**
  * The LINE-order form. Every field is held in state, so a refused save (wrong postcode, slip of another amount…) keeps what
- * staff typed. Prices here are the web prices for reading only; the server prices the order again and adds shipping.
+ * staff typed — and the form is sent by hand (onSubmit), not through `action=`, because React resets a form after an
+ * `action=` submit: the picked slip's radio then showed empty while the next save would have gone without a slip. Prices here are the web prices for reading only; the server prices the order again and adds shipping.
  */
 export function LineOrderForm({ products, slips }: { products: PickProduct[]; slips: PickSlip[] }) {
   const [state, action, pending] = useActionState(createLineOrderAction, IDLE);
@@ -81,8 +82,10 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
 
   return (
     <form
-      action={action}
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault();
+        const data = new FormData(e.currentTarget);
+        startTransition(() => action(data));
         try {
           window.localStorage.setItem(NAME_KEY, keyedBy.trim());
         } catch {

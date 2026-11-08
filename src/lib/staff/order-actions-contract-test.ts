@@ -70,6 +70,9 @@ check("warehouse text: recipient, phone and address", text.includes("สมช�
 check("warehouse text: no carrier line unless given", !text.includes("ขนส่ง"), text);
 const withCarrier = warehouseText({ orderNumber: "OK-1", lines: [], recipientName: "ก", phone: "0800000000", address: "x 83150", carrier: "DHL" });
 check("warehouse text: carrier as the last line", withCarrier.split("\n").at(-1) === "ขนส่ง DHL", withCarrier);
+check("warehouse text: a web order heads 'ออเดอร์เว็บ'", text.startsWith("ออเดอร์เว็บ OK-"), text);
+const lineText = warehouseText({ orderNumber: "OK-2", lines: [], recipientName: "ก", phone: "0800000000", address: "x", channel: "line" });
+check("warehouse text: a keyed LINE order heads 'ออเดอร์ LINE'", lineText.startsWith("ออเดอร์ LINE OK-2"), lineText);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

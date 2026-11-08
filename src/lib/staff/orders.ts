@@ -187,6 +187,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
       phone: a.phone,
       address: `${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
       carrier: SHIPNITY_CARRIER_NAME[toStaffCarrierId(order.carrier) ?? pickCarrier(a.postalCode)],
+      channel: extra.channel === "line" ? "line" : "web",
     }),
   };
 }
