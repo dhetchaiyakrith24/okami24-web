@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-09",
-  "endDate": "2026-11-05",
+  "startDate": "2026-10-10",
+  "endDate": "2026-11-06",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 480,
-   "impressions": 3382,
-   "ctr": 0.1419278533412182,
-   "position": 10.991720875221763
+   "clicks": 460,
+   "impressions": 3231,
+   "ctr": 0.14237078303930673,
+   "position": 11.071494893221912
   },
   {
    "keys": [
@@ -120,9 +120,9 @@
     "idn"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 6,
    "ctr": 0,
-   "position": 69.28571428571429
+   "position": 68.66666666666667
   },
   {
    "keys": [
@@ -183,18 +183,18 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 10,
+   "impressions": 9,
    "ctr": 0,
-   "position": 5.3
+   "position": 4.777777777777778
   },
   {
    "keys": [
     "mys"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 14.25
+   "position": 18.666666666666668
   },
   {
    "keys": [
