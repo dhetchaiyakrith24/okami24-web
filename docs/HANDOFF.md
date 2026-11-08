@@ -9,8 +9,8 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 08/11 ~11:10. Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
-CART IS ON since 06/11 ~22:00 (owner "เปิดตะกร้าเลย"; Render OKAMI24_ORDERING = on, deploy dep-dbmud7jrjlhs73cglpf0). The delay notice (#1248) shows until Mon 9/11 and ends by itself (src/lib/commerce/shipping-delay.ts): remove it after that, its head lists the files.
+Updated 09/11 ~00:15 (cloud chat: owner list items 2–8 = #1319). Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
+CART CLOSED by the owner switch 08/11 night (warehouse cannot ship 1–2 weeks; env stays on). #1317 (notice 11–13 Nov) held. Old delay notice (#1248) ends Mon 9/11 by itself (shipping-delay.ts): remove it after, its head lists the files. Earlier orders all ship, no customer message.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
 MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
@@ -29,11 +29,11 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     Warehouse bill columns: "(ว่าง)" = web · "Okami" = LINE keyed by admin (217 orders ฿126,010; 16 of them not ฿35 shipping, unread) · H = rate + shipping.
   SEO findings: Google hid us on general terms since 27/10
     (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
-  Deferred by Friday: stock light's red rule cannot be tuned (woo_stock_reports keeps only the latest time per code) → small push-time log on the data disk, then a week of data ·
-    zh spec-row labels show English (older, not checked) · owner's call: fade the backdrop's moon (1440) and lines (390) = 2 CSS numbers.
+  Done 09/11 (#1319): push-time stock log on the data disk (<data>/stock-pushes/<Thai day>.jsonl, 35 days) — tune the red rule after a week of data with the cart open ·
+    zh spec-row labels in Chinese · backdrop lines lighter on phones (the moon went in the 04/11 treatment).
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312, guide #1314). Left: Excel batch and weekly summary wait for a real bill from the owner; then close with tag backoffice-0711.
 3o No round open. House round 06/11 closed 07/11, tag house-0611 (files: `git show house-0611:docs/rounds/รอบเก็บบ้าน-06-11.md`), evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows, usage-agents-skills.txt, house-check-final.txt).
-    Audit rows not done (rule-audit.md): 16 warehouse-stock.ts stopped 30/10 and still feeds JSON-LD [เชื่อว่า: check first] · 25 LINE/Google sign-in may be test mode · 21 · 34 · 59 · 60.
+    Audit rows not done (rule-audit.md): 25 LINE/Google sign-in may be test mode · 21 · 34 · 59 · 60.
   Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
     Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
     route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
@@ -59,19 +59,18 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
   g SALES LOG (owner 30/10, owner-only view) · Q9 staff dashboard [PLAN WITH THE OWNER FIRST] — unchanged, see git show 37a1b052:docs/HANDOFF.md §16 3g.
   Test orders (OK-20261023-e25378…) → cancel on /staff "ทดสอบ" when the owner is done.
-  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
-     refund ref not the amount · no DB tests · cart Back from review loops · typed note lost if placing fails · add form needs JS (double
-     tap adds twice) · cleanBankText keeps invisible chars · BSOT §9 #804 line quotes the owner 24/10 — confirm.
+  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare (read Render's real header chain first) · partial refund = no 2nd out-of-stock issue · history keeps the
+     refund ref not the amount · no DB tests · BSOT §9 #804 line quotes the owner 24/10 — confirm.
   Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · EasySlip quota 497/1000 (23/10) — warn before it runs out.
 3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77).
 3w Home switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Still build-time: JSON-LD and the struck price / −N% (cards went live 04/11, #1202). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
+3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Product JSON-LD reads live stock + the cart switch through ISR every 3 h (#1319, 09/11; watch Render memory). Still build-time: the struck price / −N% (cards went live 04/11, #1202). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
   "Shipnity link". 【ห้ามแตะ】 coil-1/72/94 photos · every price file. New-products run (15:00) needs the PC on.
   Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18).
 3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md`. Status page for the owner's phone = §17 "Owner status page".
 5 open / dated:
-  - stock light's red rule: needs the push-time log first, then a week of data with the cart open (not dated until then; owner's status page says so).
+  - stock light's red rule: push-time log live 09/11 (#1319); tune after a week of data with the cart open (not dated until the cart reopens).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
@@ -88,7 +87,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
     Brand completeness closed: ESKO, JOIWAY F3 + F4, TFIT 10 flavours, INFY POD match the maker. No official list exists to check: INFY PLUS 2.5ML, INFY 20K. IQOS read from foreign pages only (no Thai page, 404): Leaf Green vs Spring Green on ILUMA i ONE unproven. JOIWAY lists F4 PLUS (16 pairs), not in our catalog and not in the warehouse list.
     Box photos searched 06/11 in Chrome: Muro Salt 28mg + Freebase 4mg found. Nothing usable for Muro 3ML, Graple, RELX Creator Pod 20K, Nexswitch 16K. Only dealer posters (not pack, not used): Super Cool 30ml nic35, Marbo Freebase 30ml 6mg. RELX Smash Go page still says 20ml in the table and 18ml in the text, row stays out. salthub.com names no Zero Nano colours.
     Left: 5% flavour names on LUMI and SUP ZERO while the nicotine row says 3% (no 5% pouch seen) · 27 product pages without an article (list: articles not in PRODUCT_ARTICLES vs sitemap; most have warehouse facts only).
-  - Speed (LESSONS 37): NEXT = PRODUCT_COPY_TH via ProductCard (taglineTh prop) · then framer-motion on home (designer first).
+  - Speed (LESSONS 37): ProductCard tagline prop done (#1319, product/category pages −143 KB raw) · NEXT = framer-motion on home (designer first).
   - The owner's small asks and ideas = one list, `docs/รอพี่ตรวจ.md` "งานเล็กที่พี่ฝากไว้".
   - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
