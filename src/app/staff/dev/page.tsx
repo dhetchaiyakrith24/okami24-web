@@ -12,7 +12,7 @@ import { recentCalls } from "@/lib/woo/store";
 import { feedHealth } from "@/lib/woo/watch";
 import { bangkokShort } from "@/lib/woo/watch-rules";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { WAREHOUSE_NEW } from "@/data/stock/warehouse-new";
 
 /**
@@ -79,7 +79,7 @@ export default async function StaffDevPage() {
         </div>
         <div className={ROW}>
           <span>รับออเดอร์บนเว็บ</span>
-          <span className={ORDERING_ENABLED ? "font-semibold text-verified" : "font-semibold text-danger"}>{ORDERING_ENABLED ? "เปิด" : "ปิด"}</span>
+          <span className={orderingOpen() ? "font-semibold text-verified" : "font-semibold text-danger"}>{orderingOpen() ? "เปิด" : "ปิด"}</span>
         </div>
         {/* Owner 23/10: a copy of every order on the shop's own computer — opens in Excel. */}
         <a href="/staff/api/export" download className={`${ROW} hover:bg-surface-2`}>

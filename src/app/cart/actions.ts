@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { addToCart, setCartItemQuantity, removeCartItem, getCartCount } from "@/lib/commerce/cart";
 import type { ProductRef } from "@/lib/commerce/catalog-resolver";
 import { getCatalogItem } from "@/lib/catalog-index";
-import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
+import { orderingOpen, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 function readVariantId(formData: FormData): string | null {
   const raw = formData.get("variantId");
@@ -16,7 +16,7 @@ function readVariantId(formData: FormData): string | null {
  *  form kept open in a tab, or a hand-made POST, still must not touch a cart. Same destination as
  *  the /cart page itself. */
 function refuseWhileOrderingOff(): void {
-  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
+  if (!orderingOpen()) redirect(ORDERING_PAUSED_REDIRECT);
 }
 
 /** Returns whether the line went in and the cart's new item count — the product page plays the add moment and updates

@@ -40,14 +40,11 @@ export default function ProductsPage() {
         <SamuraiBackdrop />
         <ProductsPageHeader totalCount={totalCount} />
         <Container className="py-12 lg:py-16">
-          {/* Only while online ordering is off, and only visible when /cart or /checkout sent the
-              visitor here (?order=line) — read client-side so this page stays prerendered.
-              src/lib/commerce/ordering-mode.ts, owner 2026-09-07. */}
-          {!ORDERING_ENABLED && (
-            <Suspense fallback={null}>
-              <LineOrderingNotice />
-            </Suspense>
-          )}
+          {/* Only visible when /cart or /checkout sent the visitor here (?order=line) — read client-side so this page stays
+              prerendered. Always on the page: the owner's cart switch closes ordering without a build (ordering-mode.ts). */}
+          <Suspense fallback={null}>
+            <LineOrderingNotice />
+          </Suspense>
           <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
         </Container>
       </div>

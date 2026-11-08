@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useSyncExternalStore } from "react";
+import { hiddenCardsCss } from "@/lib/commerce/shop-switches-rules";
 
 /**
  * The visitor's cart count, shared by every cart button on the page (cart-ready round 24/10): the floating bubble and the
@@ -9,6 +10,7 @@ import { useEffect, useSyncExternalStore } from "react";
  * sets it straight from the server's answer (AddToCartForm → CART_ADDED_EVENT).
  */
 let count = 0;
+let paused = false;
 let inflight: Promise<void> | null = null;
 const listeners = new Set<() => void>();
 
@@ -22,6 +24,25 @@ export function setCartCount(next: number): void {
   emit();
 }
 
+function setPaused(next: boolean): void {
+  if (next === paused) return;
+  paused = next;
+  emit();
+}
+
+/** The owner's hide switch on a prerendered page: the page was built with the card, so a rule takes it away after load. */
+function applyHiddenCards(hidden: string[]): void {
+  const css = hiddenCardsCss(hidden);
+  const id = "okami-hidden-cards";
+  const present = document.getElementById(id);
+  if (!css) {
+    present?.remove();
+    return;
+  }
+  const style = present ?? document.head.appendChild(Object.assign(document.createElement("style"), { id }));
+  style.textContent = css;
+}
+
 /** Ask the server again; concurrent callers share one request. A failed request keeps the last known count. */
 export function refreshCartCount(): Promise<void> {
   if (inflight) return inflight;
@@ -29,8 +50,10 @@ export function refreshCartCount(): Promise<void> {
     try {
       const res = await fetch("/api/cart/count", { cache: "no-store" });
       if (!res.ok) return;
-      const data = (await res.json()) as { count?: number };
+      const data = (await res.json()) as { count?: number; paused?: boolean; hidden?: string[] };
       setCartCount(typeof data.count === "number" ? data.count : 0);
+      setPaused(data.paused === true);
+      applyHiddenCards(Array.isArray(data.hidden) ? data.hidden : []);
     } catch {
       // offline or server busy — keep the last known count
     } finally {
@@ -52,6 +75,11 @@ export function useCartCount(orderingEnabled: boolean, refreshOn?: unknown): num
     if (orderingEnabled) void refreshCartCount();
   }, [orderingEnabled, refreshOn]);
   return orderingEnabled ? value : 0;
+}
+
+/** True while the owner's cart switch is off: buy buttons on prerendered pages turn into the LINE button. */
+export function useOrderingPaused(): boolean {
+  return useSyncExternalStore(subscribe, () => paused, () => false);
 }
 
 /** How many add moments have landed — a cart button keys its badge on this so the number pops when the dot arrives. */

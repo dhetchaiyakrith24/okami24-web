@@ -1,8 +1,10 @@
 import Link from "next/link";
+import type { ComponentProps } from "react";
 import { PendingButton } from "@/app/staff/_components/PendingButton";
+import { ShopSwitchPanel } from "@/app/staff/owner/_dash/ShopSwitchPanel";
 import { ownerLogoutAction } from "@/app/staff/owner/actions";
 
-/** The shop as it stands, and the owner's other pages. */
+/** The owner's switches and other pages. */
 
 function Go({ href, label, line, warn }: { href: string; label: string; line: string; warn?: boolean }) {
   return (
@@ -17,18 +19,10 @@ function Go({ href, label, line, warn }: { href: string; label: string; line: st
 
 const ddmm = (at: string) => `${at.slice(8, 10)}/${at.slice(5, 7)}`;
 
-export function ControlPanel({ ordering, noCost, teamHome, billDue }: { ordering: boolean; noCost: number; teamHome: boolean; billDue: { from: string; to: string } | null }) {
+export function ControlPanel({ switches, noCost, teamHome, billDue }: { switches: ComponentProps<typeof ShopSwitchPanel>; noCost: number; teamHome: boolean; billDue: { from: string; to: string } | null }) {
   return (
     <>
-      <section aria-label="ร้านตอนนี้" className="dash-card dash-rise">
-        <h2 className="font-semibold text-foreground">ร้านตอนนี้</h2>
-        <ul className="dash-rows flex flex-col">
-          <li className="flex min-h-14 items-center justify-between gap-3 py-1">
-            <span className="text-foreground">ตะกร้าและการสั่งซื้อ</span>
-            <span className={`text-sm ${ordering ? "text-verified" : "text-unverified"}`}>{ordering ? "เปิดอยู่" : "ปิดอยู่ สั่งผ่าน LINE"}</span>
-          </li>
-        </ul>
-      </section>
+      <ShopSwitchPanel {...switches} />
       <section aria-label="จัดการ" className="dash-card dash-rise">
         <h2 className="font-semibold text-foreground">จัดการ</h2>
         <ul className="dash-rows flex flex-col">

@@ -1,5 +1,6 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
+import { readSwitches } from "@/lib/commerce/shop-switches";
 import { lookupFrom, quantityLookupFrom, type LiveLookup, type LiveQuantityLookup, type LiveReport } from "@/lib/stock/live-rules";
 
 /**
@@ -31,7 +32,11 @@ function reports(): Map<string, LiveReport> {
 
 /** The live lookup for the cart, checkout and the stock API. */
 export function liveLookup(): LiveLookup {
-  return lookupFrom(reports());
+  const base = lookupFrom(reports());
+  const { hidden } = readSwitches();
+  // A hidden product (the owner's switch) cannot be bought from an open tab either: to the cart it is simply out of stock.
+  if (hidden.length === 0) return base;
+  return (slug, optionId, optionName) => (hidden.includes(slug) ? "out" : base(slug, optionId, optionName));
 }
 
 /** The live count per option for the cart's cap (owner 28/10 "Cap it") — same cached read as liveLookup. */
