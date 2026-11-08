@@ -7745,6 +7745,107 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), DOTMOD: dotCoils (Coil-70) — DOTMOD's own page dotmod.com/products/dotcoils, read 09/11 in the in-app browser:
+  // "Made specifically for dotmod atomizers" · "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" · "5 INDIVIDUAL WRAPPED BLISTER PACKS WITH A COIL IN
+  // EACH" · "COMPATIBILITY: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo
+  // V1.5 (Not compatible with 0.15 Ohm dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP ·
+  // dotApollo · dotAIO V3". That list belongs to the three values DOTMOD sells now. The 0.7Ω this page sells is on DOTMOD's own box; DOTMOD no
+  // longer lists it. The devices for 0.7Ω = the spec row "ใช้ได้กับ" (sourced: DOTMOD's dotCoils page as read 2026-09-02, when 0.7Ω was
+  // in the dotAIO V2 line-up 0.3/0.7/0.9Ω — Coil-70 spec comment); the article points to that row and names no device of its own (checker 09/11). Left out (already on the page): 5 a box, brass,
+  // single mesh, the 0.7Ω 14–20W. Counted outside the spec table (checker 09/11): the three current values = section 1 +
+  // section 2 ("สามค่าข้างบน"); the 0.7Ω = tagline + section 2; no article FAQ (it only repeated sections 1–2).
+  "coil-70": {
+    th: {
+      lede: "คอยล์ตัวนี้ DOTMOD เรียกว่า dotCoils ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าค่าโอห์มที่ขายอยู่ตอนนี้ใช้กับเครื่องไหน และค่าในหน้านี้ควรเช็คอะไรก่อนซื้อ",
+      sections: [
+        {
+          heading: "รายชื่อเครื่องบนเว็บ DOTMOD เป็นของคอยล์ค่าไหน",
+          paragraphs: [
+            "หน้าเว็บของ DOTMOD ตอนนี้ขาย dotCoils ค่า 0.15 · 0.3 และ 0.6 โอห์ม และรายชื่อเครื่องบนหน้านั้นเป็นของสามค่านี้ ได้แก่ dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo · dotStick Revo V1.5 · dotPod Max · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3",
+            "DOTMOD ทำคอยล์นี้มาสำหรับเครื่องของตัวเองโดยเฉพาะ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+          ],
+        },
+        {
+          heading: "ค่า 0.7 โอห์มในหน้านี้ใช้กับเครื่องไหน",
+          paragraphs: [
+            "ค่า 0.7 โอห์มเป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เอง แต่หน้าเว็บของ DOTMOD ตอนนี้ขายเฉพาะสามค่าข้างบน เครื่องที่ใช้กับค่านี้ดูได้ที่แถว “ใช้ได้กับ” ในตารางสเปกของหน้านี้ ก่อนซื้อจึงควรเช็คชื่อรุ่นเครื่องของตัวเองให้ตรง",
+          ],
+        },
+        {
+          heading: "ค่า 0.15 โอห์มใช้ได้ทุกเครื่องไหม",
+          paragraphs: [
+            "ถ้าใช้ dotStick Revo · dotStick Revo V1.5 หรือ dotPod Max ให้เลี่ยงค่า 0.15 โอห์ม เพราะ DOTMOD ระบุว่าสามรุ่นนี้ไม่รองรับค่านั้น ส่วนเครื่องอื่นในรายชื่อนี้ DOTMOD ไม่ได้เขียนข้อยกเว้นไว้",
+          ],
+        },
+        {
+          heading: "เปลี่ยนคอยล์เมื่อไหร่ดี",
+          paragraphs: [
+            "วิธีดูว่าคอยล์ถึงรอบเปลี่ยนหรือยัง และใส่หัวใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance) ส่วนคอยล์ในกล่องนี้แยกซองมาทีละหัว จึงเปิดเฉพาะหัวที่จะเปลี่ยนได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "This coil is DOTMOD's dotCoils. Below, from DOTMOD's own page: which devices the values it sells now fit, and what to check about the value on this page before you buy.",
+      sections: [
+        {
+          heading: "Which coils is DOTMOD's device list for?",
+          paragraphs: [
+            "DOTMOD's page currently sells dotCoils at 0.15, 0.3 and 0.6Ω, and the device list there is for those three: the dotAIO V2, dotAIO V2 Lite, dotTank 25mm, dotStick Revo, dotStick Revo V1.5, dotPod Max, dotAIO Tank V3, dotTank Max, dotAMP, dotApollo and dotAIO V3.",
+            "DOTMOD makes these coils for its own devices. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+          ],
+        },
+        {
+          heading: "Which device is the 0.7Ω on this page for?",
+          paragraphs: [
+            "The 0.7Ω value is printed on DOTMOD's own box, but DOTMOD's page now sells only the three values above. For the devices that take it, see this page's spec table, and check your device's model name before you buy.",
+          ],
+        },
+        {
+          heading: "Does the 0.15Ω fit every device?",
+          paragraphs: [
+            "On the dotStick Revo, dotStick Revo V1.5 or dotPod Max, skip the 0.15Ω: DOTMOD says those three don't take it. For the other devices on the list, DOTMOD gives no exception.",
+          ],
+        },
+        {
+          heading: "When should I change the coil?",
+          paragraphs: [
+            "For how to tell when a coil is due and how long to wait before vaping on a new one, see [coil and pod care](/guides/coil-and-pod-maintenance). Each coil in the box is packed on its own, so you only open the one you're fitting.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "这款雾化芯就是 DOTMOD 的 dotCoils。下面根据 DOTMOD 官网整理：目前在售的阻值适用于哪些设备，以及本页的阻值购买前要核对什么。",
+      sections: [
+        {
+          heading: "DOTMOD 官网的设备列表对应哪些阻值？",
+          paragraphs: [
+            "DOTMOD 官网目前在售的 dotCoils 为 0.15、0.3 和 0.6Ω，页面上的设备列表对应这三种：dotAIO V2、dotAIO V2 Lite、dotTank 25mm、dotStick Revo、dotStick Revo V1.5、dotPod Max、dotAIO Tank V3、dotTank Max、dotAMP、dotApollo 和 dotAIO V3。",
+            "DOTMOD 这款雾化芯专为自家设备设计。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+          ],
+        },
+        {
+          heading: "本页的 0.7Ω 适用于哪款设备？",
+          paragraphs: [
+            "0.7Ω 是 DOTMOD 包装盒上印的阻值，但 DOTMOD 官网目前只销售上面三种阻值。该阻值适用的设备请看本页规格表，购买前请核对自己设备的型号。",
+          ],
+        },
+        {
+          heading: "0.15Ω 所有设备都能用吗？",
+          paragraphs: [
+            "使用 dotStick Revo、dotStick Revo V1.5 或 dotPod Max 的话，请避开 0.15Ω，DOTMOD 标明这三款不支持该阻值。列表中的其他设备，DOTMOD 没有注明例外。",
+          ],
+        },
+        {
+          heading: "什么时候该换雾化芯？",
+          paragraphs: [
+            "怎么判断该换芯、装上新芯后要等多久再抽，可以看 [雾化芯和烟弹保养](/guides/coil-and-pod-maintenance)。盒里每颗雾化芯都是独立包装，换哪颗拆哪颗就行。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
