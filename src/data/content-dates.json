@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T06:17:54+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-08T10:07:09+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-10-30T00:13:29+07:00",
@@ -62,18 +62,18 @@
     "headache-after-vaping": "2026-11-07T15:42:16+07:00",
     "how-long-a-disposable-lasts": "2026-11-04T08:48:23+07:00",
     "how-long-a-pod-device-lasts": "2026-11-05T01:48:05+07:00",
-    "how-to-vape-without-coughing": "2026-11-08T01:35:40+07:00",
+    "how-to-vape-without-coughing": "2026-11-08T09:34:54+07:00",
     "iqos-iluma-i-one-vs-iluma-i": "2026-11-03T02:27:30+07:00",
     "iqos-iluma-i-reset-and-charging": "2026-11-03T02:27:30+07:00",
     "nicotine-in-urine-tests": "2026-11-07T15:42:16+07:00",
     "open-system-vs-disposable": "2026-11-04T09:02:55+07:00",
-    "pg-vg-in-e-liquid": "2026-11-08T01:35:40+07:00",
+    "pg-vg-in-e-liquid": "2026-11-08T09:34:54+07:00",
     "pod-losing-flavor": "2026-11-04T10:24:46+07:00",
     "pod-low-vapor": "2026-11-05T01:48:05+07:00",
     "quit-smoking-with-a-pod": "2026-10-13T21:28:24+07:00",
     "reading-a-spec-sheet": "2026-11-02T23:27:33+07:00",
     "refilling-a-pod": "2026-10-26T07:02:40+07:00",
-    "salt-nic-vs-freebase": "2026-11-08T01:35:40+07:00",
+    "salt-nic-vs-freebase": "2026-11-08T09:34:54+07:00",
     "taking-a-pod-on-a-plane": "2026-10-23T04:50:14+07:00",
     "types-of-pods": "2026-11-05T23:14:29+07:00",
     "understanding-mtl-vs-dtl": "2026-10-27T19:13:22+07:00",
@@ -127,8 +127,8 @@
       "fp": "e4b159b26084"
     },
     "/brands/relx": {
-      "date": "2026-11-08T02:41:27+07:00",
-      "fp": "77edfee12f9b"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "b9870efa9b65"
     },
     "/brands/rincoe": {
       "date": "2026-09-23T16:51:21+07:00",
@@ -195,8 +195,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-08T06:17:54+07:00",
-      "fp": "9fc73493cb75"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "cc81ffed896e"
     },
     "/products/86-bar-20k": {
       "date": "2026-11-08T05:29:23+07:00",
@@ -563,8 +563,8 @@
       "fp": "1ab2da0b0561"
     },
     "/products/relx-artisan-plus": {
-      "date": "2026-11-07T15:49:14+07:00",
-      "fp": "2183fccdf706"
+      "date": "2026-11-08T09:01:41+07:00",
+      "fp": "aa4774ade1dc"
     },
     "/products/relx-creator": {
       "date": "2026-11-07T10:59:41+07:00",
@@ -579,12 +579,12 @@
       "fp": "7af4da430b7f"
     },
     "/products/relx-essential-2": {
-      "date": "2026-11-04T09:00:12+07:00",
-      "fp": "430c3c65757f"
+      "date": "2026-11-08T09:01:41+07:00",
+      "fp": "57b9302e557c"
     },
     "/products/relx-infinity-2-plus": {
-      "date": "2026-11-07T15:48:13+07:00",
-      "fp": "28db9af471e7"
+      "date": "2026-11-08T09:01:41+07:00",
+      "fp": "8bcdceee0c40"
     },
     "/products/relx-infinity-pro-2-pod": {
       "date": "2026-11-03T01:07:53+07:00",
@@ -597,6 +597,14 @@
     "/products/relx-novo-14k": {
       "date": "2026-11-08T02:41:27+07:00",
       "fp": "69cc48baf421"
+    },
+    "/products/relx-pod": {
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "6a9704a4fe17"
+    },
+    "/products/relx-pod-pro": {
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "dcf6cde3847c"
     },
     "/products/relx-smash-go-12k": {
       "date": "2026-11-07T11:43:43+07:00",
@@ -631,8 +639,8 @@
       "fp": "bb1b19f0d60b"
     },
     "/products/switch-pods": {
-      "date": "2026-11-07T15:32:01+07:00",
-      "fp": "111471e949d7"
+      "date": "2026-11-08T10:07:09+07:00",
+      "fp": "8445194d9b9e"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-11-07T11:43:43+07:00",

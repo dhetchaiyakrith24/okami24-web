@@ -15201,5 +15201,165 @@
   "minLong": 560,
   "fileName": "card.webp",
   "note": "SMOK's own store photo (800x800), no AI (round popular models 07/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/pineapple-delight.png",
+  "slug": "relx-pod",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/pineapple-delight.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "pineapple-delight",
+  "fileName": "variant-pineapple-delight.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/strawberry-burst.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "strawberry-burst",
+  "fileName": "variant-strawberry-burst.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/blueberry-splash.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "blueberry-splash",
+  "fileName": "variant-blueberry-splash.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, background and floor shadow cut, same pixels, no AI, no mark (round popular models 08/11)",
+  "minLong": 790
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/heisenberry.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "heisenberry",
+  "fileName": "variant-heisenberry.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/juicy-apple.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "juicy-apple",
+  "fileName": "variant-juicy-apple.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/lemon-mint.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "lemon-mint",
+  "fileName": "variant-lemon-mint.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pod/cherry-lime.png",
+  "slug": "relx-pod",
+  "role": "variant",
+  "id": "cherry-lime",
+  "fileName": "variant-cherry-lime.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-autoship, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/tangy-grape.png",
+  "slug": "relx-pod-pro",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/tangy-grape.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "tangy-grape",
+  "fileName": "variant-tangy-grape.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/watermelon-ice.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "fileName": "variant-watermelon-ice.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/green-melon.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "green-melon",
+  "fileName": "variant-green-melon.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/ruby-raspberry.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "ruby-raspberry",
+  "fileName": "variant-ruby-raspberry.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/dark-sparkle.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "dark-sparkle",
+  "fileName": "variant-dark-sparkle.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/ludou-ice.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "ludou-ice",
+  "fileName": "variant-ludou-ice.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/icy-coconut-water.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "icy-coconut-water",
+  "fileName": "variant-icy-coconut-water.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/lychee-ice.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "lychee-ice",
+  "fileName": "variant-lychee-ice.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/taro-scoop.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "taro-scoop",
+  "fileName": "variant-taro-scoop.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/clean/pro/precious-plum.png",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "precious-plum",
+  "fileName": "variant-precious-plum.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, floor glow cut, same pixels, no AI, no mark (round popular models 08/11)"
+ },
+ {
+  "source": "_incoming/popular-0711/relx-pods/extra/xtra0.jpg",
+  "slug": "relx-pod-pro",
+  "role": "variant",
+  "id": "menthol-xtra",
+  "fileName": "variant-menthol-xtra.webp",
+  "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, used as it is, no AI, no mark (round popular models 08/11)",
+  "minLong": 650
  }
 ]

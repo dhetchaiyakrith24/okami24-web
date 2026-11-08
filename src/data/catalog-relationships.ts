@@ -356,7 +356,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   // device page lists RELX Pod, RELX Pod Pro and RELX Pod Pro 2 (1.9mL prefilled pods) — the same sentence
   // already backs the device's "Pod platform" spec row (src/data/products/relx.ts, verified). The shop's
   // pack (Max "หัวพอต RELX Infinity Pro 2", Pod-27) prints "RELX Pod Pro 2" (seed evidence, maxlist 20/10).
-  // Only the Pod Pro 2 pack is a catalog product; the RELX Pod / Pod Pro packs are not, so no edge for them.
+  // Only the Pod Pro 2 pack is sold here. RELX Pod and RELX Pod Pro have pages with nothing to buy (08/11); their edges follow below.
   // The RELX Creator ↔ Creator Pod 20K pair is NOT authored: its only source is Thai retailers (no maker page).
   // =================================================================================
   {
@@ -364,6 +364,49 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     consumable: "relx-infinity-pro-2-pod",
     role: "pod",
     evidence: "RELX's Infinity 2 Plus page lists RELX Pod Pro 2 among the pods the device takes (1.9mL prefilled pods); the shop's pack prints \"RELX Pod Pro 2\".",
+    sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device",
+    tier: "official",
+  },
+
+  // RELX Pod + RELX Pod Pro (round popular models 08/11, checker on 1311): only pairs a maker page names, read 08/11 in the app browser.
+  // Infinity 2 Plus -> RELX Pod held: that page says "RELX, RELX Pod Pro, and RELX Pod Pro 2 pods", not "RELX Pod".
+  {
+    device: "relx-essential-2",
+    consumable: "relx-pod",
+    role: "pod",
+    evidence: "RELX's Essential 2 page: \"Compatible Pod: RELX Pod and RELX Pod Pro\".",
+    sourceUrl: "https://relxnow.com/products/essential-device",
+    tier: "official",
+  },
+  {
+    device: "relx-essential-2",
+    consumable: "relx-pod-pro",
+    role: "pod",
+    evidence: "RELX's Essential 2 page: \"Compatible Pod: RELX Pod and RELX Pod Pro\".",
+    sourceUrl: "https://relxnow.com/products/essential-device",
+    tier: "official",
+  },
+  {
+    device: "relx-artisan-plus",
+    consumable: "relx-pod",
+    role: "pod",
+    evidence: "RELX's Artisan Plus page: \"Compatible Pod: RELX Pod Pro & RELX Pod\".",
+    sourceUrl: "https://relxnow.com/products/relx-artisan-plus-device",
+    tier: "official",
+  },
+  {
+    device: "relx-artisan-plus",
+    consumable: "relx-pod-pro",
+    role: "pod",
+    evidence: "RELX's Artisan Plus page: \"Compatible Pod: RELX Pod Pro & RELX Pod\".",
+    sourceUrl: "https://relxnow.com/products/relx-artisan-plus-device",
+    tier: "official",
+  },
+  {
+    device: "relx-infinity-2-plus",
+    consumable: "relx-pod-pro",
+    role: "pod",
+    evidence: "RELX's Infinity 2 Plus page: \"compatible with RELX, RELX Pod Pro, and RELX Pod Pro 2 pods\".",
     sourceUrl: "https://relxnow.com/products/relx-infinity-2-plus-device",
     tier: "official",
   },

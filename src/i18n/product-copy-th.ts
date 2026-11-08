@@ -1259,6 +1259,61 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "ชุด SMOK RPM 5 มีแบต 2000mAh ปรับได้ 5–80 วัตต์ หัวพอตจุ 6.5mL ใช้คอยล์ RPM 3 Meshed และมีจอ TFT 0.96 นิ้วที่เปลี่ยนสีธีมได้",
   },
+  "relx-pod": {
+    whoIsThisFor: {
+      0: "กำลังหาหัวพอต RELX Pod รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
+    },
+    specifications: {
+      coil: "คอยล์สำลี",
+    },
+    features: {
+      swap: {
+        title: "หัวพอตแบบเปลี่ยนได้",
+        description: "หัวพอตมีน้ำยามาในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้",
+      },
+      coil: {
+        title: "คอยล์สำลี",
+        description: "RELX ระบุว่า RELX Pod ใช้คอยล์สำลี ส่วน RELX Pod Pro ใช้คอยล์เซรามิก",
+      },
+      fit: {
+        title: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+        description: "RELX ระบุว่าใช้ได้กับเครื่อง RELX Essential 2 และ Artisan Plus",
+      },
+    },
+    tagline: "หัวพอตบรรจุสำเร็จของ RELX คอยล์สำลี",
+    shortDescription:
+      "หัวพอตบรรจุสำเร็จของ RELX ใช้คอยล์สำลี ขายแพ็กละ 2 หัว นิโคติน 18mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Essential 2 และ Artisan Plus",
+  },
+  "relx-pod-pro": {
+    whoIsThisFor: {
+      0: "กำลังหาหัวพอต RELX Pod Pro รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
+    },
+    specifications: {
+      coil: "คอยล์เซรามิก",
+      nicotine: "18mg/ml · บางกลิ่นมีแบบ 0mg/ml",
+    },
+    features: {
+      swap: {
+        title: "หัวพอตแบบเปลี่ยนได้",
+        description: "หัวพอตมีน้ำยามาในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้",
+      },
+      coil: {
+        title: "คอยล์เซรามิก",
+        description: "RELX ระบุว่า RELX Pod Pro ใช้คอยล์เซรามิก ส่วน RELX Pod ใช้คอยล์สำลี และปรับให้กันรั่วได้ดีขึ้น",
+      },
+      fit: {
+        title: "ใช้กับเครื่องรุ่นไหนได้บ้าง",
+        description: "RELX ระบุว่าใช้ได้กับเครื่อง RELX Infinity 2 Plus · Essential 2 และ Artisan Plus",
+      },
+      name: {
+        title: "RELX Pod Pro กับ Pod Pro 2",
+        description: "เว็บของ RELX ตอนนี้แสดงหลายกลิ่นในกล่องที่พิมพ์ว่า Pod Pro 2 หน้านี้ลงรูปเฉพาะกล่องที่พิมพ์ว่า PRO บางกลิ่นจึงยังไม่มีรูป",
+      },
+    },
+    tagline: "หัวพอตบรรจุสำเร็จของ RELX ขนาด 1.9mL คอยล์เซรามิก",
+    shortDescription:
+      "หัวพอตบรรจุสำเร็จ 1.9mL ของ RELX ใช้คอยล์เซรามิก มี 42 กลิ่น หน้าของ RELX ขายแพ็กละ 2 หัว นิโคติน 18mg/ml และบางกลิ่นมีแบบหัวเดียว 0mg/ml ใช้หมดแล้วเปลี่ยนหัวใหม่ เครื่องยังใช้ต่อได้ และ RELX ระบุว่าใช้ได้กับเครื่อง Infinity 2 Plus · Essential 2 และ Artisan Plus",
+  },
   "relx-ultra-pod": {
     whoIsThisFor: {
       0: "กำลังหาหัวพอต RELX Ultra รุ่นนี้โดยเฉพาะ และอยากดูกลิ่นกับเครื่องที่ RELX บอกว่าใช้ได้",
