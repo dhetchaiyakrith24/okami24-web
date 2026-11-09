@@ -5,6 +5,7 @@ import { createMemberSession, upsertMemberFromIdentity } from "@/lib/members/ses
 import { safeReturnPath } from "@/lib/members/id-token";
 import { createOwnerSession, ownerEmailSetting } from "@/lib/owner/auth";
 import { isOwnerIdentity } from "@/lib/owner/identity";
+import { finishStaffGoogleSignIn } from "@/lib/staff/auth";
 
 /**
  * Member sign-in, step 2 (queue Q4): the provider sends the visitor back here with `code` + `state`. The state must equal
@@ -16,9 +17,12 @@ export const dynamic = "force-dynamic";
 
 const HEADERS = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } as const;
 
-function toLogin(reason: string, provider: string, owner = false): NextResponse {
-  console.warn(`[${owner ? "owner" : "member"}-sign-in] ${provider}: ${reason}`);
-  const response = NextResponse.redirect(`${authOrigin()}${owner ? "/staff/owner?denied=1" : "/account/login?error=1"}`, { status: 302, headers: HEADERS });
+type Purpose = "member" | "owner" | "staff";
+const DENIED: Record<Purpose, string> = { member: "/account/login?error=1", owner: "/staff/owner?denied=1", staff: "/staff?denied=1" };
+
+function toLogin(reason: string, provider: string, purpose: Purpose = "member"): NextResponse {
+  console.warn(`[${purpose}-sign-in] ${provider}: ${reason}`);
+  const response = NextResponse.redirect(`${authOrigin()}${DENIED[purpose]}`, { status: 302, headers: HEADERS });
   clearPendingCookie(response);
   return response;
 }
@@ -29,22 +33,34 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
   const query = request.nextUrl.searchParams;
   const pending = readPendingCookie(request.cookies.get(PENDING_COOKIE)?.value);
-  const owner = pending?.purpose === "owner";
-  if (query.get("error")) return toLogin(`provider error ${query.get("error")}`, provider, owner);
+  const purpose: Purpose = pending?.purpose ?? "member";
+  if (query.get("error")) return toLogin(`provider error ${query.get("error")}`, provider, purpose);
   if (!pending || pending.provider !== provider) return toLogin("no pending sign-in", provider);
   const code = query.get("code");
-  if (!code || query.get("state") !== pending.state) return toLogin("state mismatch", provider, owner);
+  if (!code || query.get("state") !== pending.state) return toLogin("state mismatch", provider, purpose);
 
   const result = await finishSignIn(pending, code);
-  if (!result.ok) return toLogin(result.reason, provider, owner);
+  if (!result.ok) return toLogin(result.reason, provider, purpose);
 
   // The owner's sign-in (src/lib/owner/auth.ts) leaves no member row, whoever it turns out to be.
-  if (owner) {
-    if (provider !== "google" || !isOwnerIdentity(result.claims, ownerEmailSetting())) return toLogin("not the owner", provider, true);
+  if (purpose === "owner") {
+    if (provider !== "google" || !isOwnerIdentity(result.claims, ownerEmailSetting())) return toLogin("not the owner", provider, "owner");
     const toOwner = NextResponse.redirect(`${authOrigin()}/staff/owner`, { status: 302, headers: HEADERS });
     clearPendingCookie(toOwner);
     createOwnerSession(toOwner);
     return toOwner;
+  }
+
+  // The team's sign-in (src/lib/staff/auth.ts): an admin's account, or the owner acting in the admin view. No member row either.
+  if (purpose === "staff") {
+    if (provider !== "google") return toLogin("not google", provider, "staff");
+    const toStaff = NextResponse.redirect(`${authOrigin()}/staff`, { status: 302, headers: HEADERS });
+    const signedIn = finishStaffGoogleSignIn(result.claims, toStaff);
+    if (!signedIn.ok) return toLogin(signedIn.reason, provider, "staff");
+    clearPendingCookie(toStaff);
+    // The owner signs in once: the owner's own section opens with the same sign-in.
+    if (signedIn.actor.kind === "owner") createOwnerSession(toStaff);
+    return toStaff;
   }
 
   const memberId = upsertMemberFromIdentity(provider, result.claims.sub, result.claims.name);
