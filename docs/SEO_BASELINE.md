@@ -590,3 +590,69 @@ Task okami24-seo-weekly should read these every Saturday: its wording is not cha
 | Repeat buyers | `--shop`, site orders only; LINE and warehouse orders are not in that database | not read yet: needs the Render shell |
 
 Not measurable: image search in the export (read the Search Console screen) · repeat buyers over LINE · who searched before buying. No rank or date is promised from these numbers.
+
+## READ 09/11 — round SEO 02/11 target table + round disposable block 4 (real page + Search Console)
+
+> Two chats, one read. **Real Google result page** = PC child chat of Friday, 09/11 ~00:25–01:05 Thai (branch `seo-serp-0911`
+> 8121c48b, folded in here): built-in browser of the Claude app, `google.co.th/search?q=<q>&hl=th&gl=th&pws=0`, `start=0` + `start=10`,
+> ≥ 22 s between loads, 32 desktop + 4 mobile loads, **no CAPTCHA**; organic = `#rso a h3`, one per block, domain from `<cite>`.
+> **Search Console** = cloud chat, export bf2d7f1c on branch gsc-data (ran 09/11 02:54Z, last28 = 11/10–07/11, last day with data 06/11).
+> The export holds 28-day totals per query only, so a 27/10-onwards window per query cannot be cut from it: "last28" still holds
+> 16 days from before the 27/10 drop. Round disposable baseline = export e644ebdc (last28 06/10–02/11, the numbers its round file quotes).
+> Variable from 08/11 night: the cart is closed (owner switch; HANDOFF §16) — clicks/orders after that date are not comparable.
+
+| query | real page 09/11 desktop (depth) | top 3 organic 09/11 | real page 02/11 | GSC last28 to 07/11 (clicks / impr / pos) | GSC 13–26/10 |
+|---|---|---|---|---|---|
+| pod | not in top 17 (17) | vap150ipro.com · pod2vape.co · th.wikipedia.org | not in top 16 | 14 / 158 / 11.9 | 11 / 144 / 11.9 |
+| pod system | not in top 17 (17) · mobile: not on page 1 | YouTube · ihavevape.net · vapedumpthailand.store | not in top 17 | 16 / 57 / 4.4 | 11 / 50 / 4.4 |
+| พอต | not in top 20 (20) | dudekub.net · yaivapestore.com · maneevp.com | not in top 20 | no row | no row |
+| น้ำยาบุหรี่ไฟฟ้า | not in top 17 (17) | lazada.co.th · sudjud9.com · vap150ipro.com | not in top 19 | 0 / 11 / 69.0 (only the old /e-liquid row; none on /products/e-liquid) | 0 / 11 / 69.0 |
+| relx | not in top 17 (17) | relxnow.com · relxon.com · Facebook | not in top 17 | 0 / 7 / 81.6 | 0 / 7 / 81.6 |
+| voopoo | not in top 14 (14) | voopoo.com · Facebook · vapestore.co.uk | not in top 14 | 3 / 8 / 14.6 | 3 / 8 / 14.6 |
+| voopoo drag 6 | not in top 17 (17) | voopoo.com · YouTube · vaping360.com | not read | 11 / 42 / 6.7 | 7 / 33 / 6.7 |
+| **voopoo drag 6 ราคา** | **#1** /products/drag-6 (17) · mobile **#1** | okami24.store · vmaniath.com · ubuy.co.th | not in top 7 | 20 / 39 / 1.3 | 13 / 19 / 1.0 |
+| relx lumi 18k | not in top 17 (17) | vap150ipro.com · YouTube · maneevp.com | not read | 0 / 31 / 4.1 | 0 / 31 / 4.1 |
+| joiway | not in top 16 (16) | Facebook · Facebook · maneevp.com | not read | 1 / 53 / 8.4 | 1 / 53 / 8.4 |
+| caliburn g5 | not in top 17 (17) | vaping360.com · myuwell.com · YouTube | not read | 2 / 17 / 9.4 | 1 / 16 / 7.9 |
+| พอตเปลี่ยนหัว | not in top 18 (18) | sudjud9.com · maneevp.com · YouTube | — | 0 / 1 / 71.0 | — |
+| okami24 (control) | #1 / (6) | okami24.store · YouTube (another "OKAMI") · instagram.com/okami24 | #1 | 29 / 43 / 1.0 | 6 / 11 / 1.0 |
+
+"Back" per the rule above (GSC impressions again at ≤ the 13–26/10 position + real page top 20): **only "voopoo drag 6 ราคา"**
+(real page #1 desktop and mobile; impressions again, +5 between the 08/11 and 09/11 exports; its last28 pos 1.3 is a 28-day mix, not yet ≤ 1.0 — read the GSC screen per day to confirm). Nothing else is back in the top 20.
+- Home snippet for "okami24" = our meta ("OKami24 (OKM) ร้านพอตไฟฟ้าและบุหรี่ไฟฟ้า ของแท้ ราคาตรง มีพอตซิสเต็ม …"), no longer the 21+ gate
+  text of 02/11 → the gate's `data-nosnippet` (PR #1121) works. Drag 6 snippet = our meta ending "สั่งบนเว็บหรือ LINE …" (Change 1).
+
+**Round disposable — the 2 keys (block 4, read 1 of 3):**
+
+| query | open: e644ebdc 06/10–02/11 | 09/11: bf2d7f1c 11/10–07/11 | real page 05/11 | real page 09/11 |
+|---|---|---|---|---|
+| พอตใช้แล้วทิ้ง | 0 / 8 / 69.0 (/products/disposables 0/3/56.7 · open-system-vs-disposable 0/5/76.4) | 0 / 8 / 69.0 (same rows) | not on page 1 | not in top 17 desktop · not on page 1 mobile |
+| disposable pod | 0 / 1 / 64.0 (/products/disposables) | 0 / 1 / 64.0 | not on page 1 | not in top 17 desktop · not on page 1 mobile |
+| disposable (side key) | 0 / 6 / 18.0 | 0 / 5 / 19.4 | — | not in top 17 (dictionaries hold it) |
+| page /products/disposables, all queries | 8 / 159 / 11.5 | 4 / 155 / 11.6 | — | — |
+
+- Every disposable-family query row is identical in the two exports (also "pod ใช้แล้วทิ้ง" 0/4/69.0 · "ซื้อพอตใช้แล้วทิ้ง" 0/2/92.0) and
+  none grew between the 08/11 and 09/11 exports → **no new impression on the disposable keys since blocks 1–3 went live (06/11 00:02 Thai)**.
+- Google read: /products/disposables last crawl 06/11 12:19Z (after #1237) and again 08/11 17:17Z (indexing request of the PC chat) · indexed.
+  The new page has been in Google since 06/11; too early to judge rank ([เชื่อว่า] a content change usually shows in rank after 1–3 weeks).
+- Top 3 of the real page 09/11: พอตใช้แล้วทิ้ง = yaivapestore.com · dudekub.net · YouTube; disposable pod = vapedumpthailand.store ·
+  maneevp.com · vap150ipro.com (same shops as 05/11).
+
+**Site level (last90-date + `scripts/seo-weekly-numbers.js`, export 09/11):** 31/10–06/11 = 65 clicks / 159 impressions / pos 4.9
+(9.3 clicks and 22.7 impressions a day) vs 24–30/10 119 / 689 / 9.5. Daily: 01/11 10/26 · 02/11 7/16 · 03/11 11/25 · 04/11 5/16 ·
+05/11 11/23 · **06/11 14/36** (highest impressions since 27/10, still far under the 179–297 a day of 20–26/10). Recovery levels: halfway
+(100+ impressions a day) 0/7 days · full 0/7 days. Queries that gained impressions between the 08/11 and 09/11 exports: voopoo drag 6
+ราคา +5 · okami24 +1 · caliburn g5 ราคา +1 · pnp coils +1 — no generic, category, disposable or e-liquid query.
+**Inspection 09/11 (200 URLs):** 188 indexed. Not indexed = 7 new product pages "discovered / unknown" (relx-artisan-plus · diva-30k ·
+novo-14k · sparta-20k · ultra-kit · ultra-pod · drag-x2) + salt-nic-vs-freebase "discovered" (new/changed 07–08/11, requests carried) ·
+headache-after-vaping, reading-a-spec-sheet, /e-liquid/tobacco-style "crawled, not indexed" · /products/infy-20k "Server error (5xx)" seen
+01/11 19:12Z (live page answers 200 in 0.66 s as Googlebot, curl 08/11 → one-off; request it next).
+
+**Indexing requests 09/11** (PC chat, owner's Chrome, each confirmed "ขอการจัดทำดัชนีแล้ว"): /products/disposables · relx-pod · relx-pod-pro ·
+/brands/smok · smok-nord-5 · smok-rpm-5 · vazer-reload-15k · 86-bar-20k · nexas-booster-16k · caliburn-g3-lite · /guides/how-to-vape-without-coughing.
+Quota hit at /guides/pg-vg-in-e-liquid → carried to 10/11 with `/`, relx-artisan-plus, relx-diva-30k, relx-novo-14k, relx-sparta-20k,
+drag-x2, relx-ultra-pod, pod-150, relx-ultra-kit (+ infy-20k). They stay on `scripts/gsc-unread.ts` by themselves.
+
+Verdict 09/11: [ตรวจแล้ว] one target query back (voopoo drag 6 ราคา #1), the rest still absent from the top 17–20; site impressions
+still ~1/8 of before 27/10; disposable keys unchanged, with the new page indexed only since 06/11. Next reads: real page + GSC **16/11 · 30/11**,
+GSC 15/11 · 10/12 for the disposable keys (round file block 4).
