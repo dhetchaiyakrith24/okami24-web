@@ -116,7 +116,9 @@ const DOCS_BEHIND_OK = (f) => /^(docs\/.+|\.claude\/(LESSONS\.md|LESSONS-images\
 function checkBranch(s) {
   if (!s.branch) return ["detached HEAD — the checker needs a branch (git switch -c <name>)"];
   if (/^(main|master)$/.test(s.branch)) return [`on ${s.branch} — a PR comes from a work branch (TEAM_RULES 13.7)`];
-  if (!s.containsMain && s.behindFiles.length && s.behindFiles.every(DOCS_BEHIND_OK)) {
+  // not for a PR that writes a locked file: the locked row reads the open round's 【แตะได้】 lines from HANDOFF §16 +
+  // docs/rounds/ in THIS tree (round-file.js), and a docs merge on main may have changed them (checker 10/11)
+  if (!s.containsMain && s.behindFiles.length && s.behindFiles.every(DOCS_BEHIND_OK) && !s.files.some((f) => lockedName(f))) {
     s.notes.push(`behind origin/main by docs-only commits (${s.behindFiles.length} file(s): ${s.behindFiles.slice(0, 3).join(" · ")}${s.behindFiles.length > 3 ? " …" : ""}) — no merge needed`);
     return [];
   }
@@ -285,6 +287,7 @@ function selfTest() {
   ok(!fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", ".claude/LESSONS.md"] }), "branch: behind main by docs-only commits passes (10/11)");
   ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", "src/app/page.tsx"] }), "branch: behind main by a src change still fails");
   ok(fails("branch", { containsMain: false, behindFiles: ["docs/THAI_STYLE.md"] }), "branch: behind main by THAI_STYLE.md still fails (words row reads it)");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md"], files: ["src/lib/thai-typography.ts"] }), "branch: docs-only lag but the PR writes a locked file still fails (locked row reads §16 + round file)");
   ok(fails("tree", { dirty: ["src/a.ts"] }), "tree: uncommitted file");
   ok(fails("pushed", { remoteHead: "b".repeat(40) }), "pushed: HEAD not on GitHub");
   ok(fails("hooks", { hooksPath: "nul" }), "hooks: core.hooksPath off (15/10 incident)");
