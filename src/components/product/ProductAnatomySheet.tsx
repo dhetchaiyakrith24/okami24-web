@@ -29,7 +29,7 @@ const INK = "var(--foreground)";
 const INK_SOFT = "var(--foreground-muted)";
 const RULE = "rgba(111,184,216,0.22)"; // --accent-steel, faint
 const LEADER = "rgba(111,184,216,0.6)";
-const EMBER = "#ff6a2c"; // --accent-ember
+const EMBER = "#f08a2a"; // --accent-ember
 const EMBER_INK = EMBER;
 const CODE = "#8f8e93"; // between --foreground-dim and -muted: small caps codes stay readable (~5:1 on SHEET)
 /** rim light + depth so a matte black part does not sink into the dark sheet */
