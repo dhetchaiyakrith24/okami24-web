@@ -12,6 +12,8 @@ import { isStaffJob } from "@/lib/staff/jobs";
 
 export interface LineOrderState {
   error: string | null;
+  /** The recent order this one looks like (same phone, same total, 24 h) — the form then asks "ไม่ใช่ออเดอร์ซ้ำ". */
+  duplicateOf?: string;
 }
 
 /** Why a LINE order was not saved, in the team's words. Nothing is saved on any of these. */
@@ -27,6 +29,7 @@ const ERROR_TH: Record<string, string> = {
   stock: "มีสินค้าที่หมดสต็อก — เอาออกหรือเลือกตัวเลือกอื่น",
   "slip-taken": "สลิปนี้ถูกใช้กับออเดอร์อื่นไปแล้ว — เลือกใบอื่น หรือเลือก ไม่มีสลิปในรายการ",
   "slip-amount": "ยอดสลิปไม่เท่ายอดออเดอร์ (รวมค่าส่งแล้ว) — ตรวจรายการสินค้าหรือเลือกสลิปใบอื่น",
+  duplicate: "อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชม. ยังไม่ได้บันทึก",
 };
 
 /** /staff/line-order — save a LINE-chat order (src/lib/staff/line-orders.ts), then open it. */
@@ -35,6 +38,7 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   const parsed = parseLineOrderForm((name) => form.get(name));
   if (!parsed.ok) return { error: ERROR_TH[parsed.error] };
   const result = createLineOrder(parsed.input);
+  if (!result.ok && result.error === "duplicate") return { error: ERROR_TH.duplicate, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
   redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=line-order`);

@@ -31,6 +31,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
   const [keyedBy, setKeyedBy] = useStaffName();
   const [rows, setRows] = useState<PickRow[]>([]);
   const [slipRef, setSlipRef] = useState("");
+  const [notDup, setNotDup] = useState(false);
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement>) => setF((p) => ({ ...p, [k]: e.target.value }));
 
   const subtotal = rows.reduce((n, r) => n + r.price * r.quantity, 0);
@@ -180,6 +181,19 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         <p role="alert" className="rounded-xl border border-danger/50 bg-danger/10 px-4 py-3 text-sm text-danger">
           {state.error}
         </p>
+      )}
+      {/* LINE_ORDERS_GAPS.md #2: a recent order of the same phone and total — open it first; save only with the tick. */}
+      {state.duplicateOf && (
+        <div className="flex flex-col gap-2 rounded-xl border border-unverified/50 bg-unverified/10 px-4 py-3 text-sm text-foreground">
+          <a href={`/staff/orders/${encodeURIComponent(state.duplicateOf)}`} target="_blank" rel="noopener" className="inline-flex min-h-11 w-fit items-center font-semibold text-ember underline underline-offset-4">
+            เปิดออเดอร์ {state.duplicateOf}
+          </a>
+          <p className="text-foreground-muted">ลูกค้าขอเพิ่มของ = ใช้ &ldquo;เพิ่มสินค้าในออเดอร์&rdquo; ในออเดอร์นั้น</p>
+          <label className="flex min-h-12 items-center gap-3">
+            <input type="checkbox" name="notDuplicate" value="1" checked={notDup} onChange={(e) => setNotDup(e.target.checked)} className="size-5 shrink-0 accent-[var(--color-ember)]" />
+            ไม่ใช่ออเดอร์ซ้ำ — ลูกค้าสั่งอีกออเดอร์จริง
+          </label>
+        </div>
       )}
       <button
         type="submit"

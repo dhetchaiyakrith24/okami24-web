@@ -3,7 +3,8 @@
  * Keying a LINE order end to end against a throwaway SQLite in the OS temp folder (never `.data/`, never the live disk):
  * the real migrations, the real catalogue prices, the real slip rules (checker 09/11 on #1331). Made-up names and phones.
  *
- * Proves: the price comes from the catalogue, not the form · a slip of the exact total confirms the order at once ·
+ * Proves: the price comes from the catalogue, not the form · the same phone + total within 24 h is refused until ticked ·
+ * a slip of the exact total confirms the order at once ·
  * the same slip twice → the second is refused · a refused save leaves no customer row · a keyed LINE order counts once,
  * under LINE, in the day's sales · LINE orders stay out of the web best-seller list · the warehouse push refuses a LINE
  * order while the owner's switch is off.
@@ -83,7 +84,11 @@ async function main(): Promise<void> {
     const total = aRow!.total;
     const at = new Date(Date.now() - 3_600_000).toISOString();
     db.prepare("INSERT INTO slip_checks (trans_ref, amount_satang, transferred_at, receiver_status, first_checked_at, last_checked_at) VALUES (?,?,?,?,?,?)").run("T-OK", total * 100, at, "match", at, at);
-    const b = createLineOrder({ ...base, customerPhone: "0811111111", recipientPhone: "0811111111", slipRef: "T-OK" });
+    // Same phone, same total, minutes later = looks like the same order keyed twice (LINE gap #2): refused until ticked.
+    const twin = createLineOrder({ ...base, customerPhone: "0811111111", recipientPhone: "0811111111", slipRef: "T-OK" });
+    check("same phone + same total within 24 h: refused as a likely duplicate, naming the first", !twin.ok && twin.error === "duplicate" && a.ok && twin.duplicateOf === a.orderNumber, twin);
+    check("the duplicate refusal leaves the slip loose", db.prepare("SELECT 1 FROM order_payment_submissions WHERE slip_trans_ref = 'T-OK'").get() === undefined);
+    const b = createLineOrder({ ...base, customerPhone: "0811111111", recipientPhone: "0811111111", slipRef: "T-OK", notDuplicate: true });
     const bRow = db.prepare("SELECT status, run_number FROM orders WHERE order_number = ?").get(b.ok ? b.orderNumber : "") as { status: string; run_number: number | null } | undefined;
     check("exact slip: confirmed at once with a running number", b.ok && b.confirmed && bRow?.status === "approved" && bRow.run_number !== null, { b, bRow });
 
