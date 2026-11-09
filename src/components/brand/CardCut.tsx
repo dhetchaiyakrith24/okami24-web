@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 /** Pages where the card effects never play (designer "เงาจันทร์" 29/10: no theme on cart, checkout or staff; order pages likewise). */
 const QUIET = /^\/(cart|checkout|staff|orders)(\/|$)/;
-/** When the page moves on: the halves are fully apart at this moment (designer: navigation waits ≤ 150 ms). */
-const NAV_DELAY = 150;
 const NS = "http://www.w3.org/2000/svg";
-const TILT = (20 * Math.PI) / 180;
 
 /** The product photo inside a card: the image itself and the panel it sits in (`data-card-photo`). */
 function photoOf(card: Element): { panel: HTMLElement; img: HTMLImageElement } | null {
@@ -17,93 +13,39 @@ function photoOf(card: Element): { panel: HTMLElement; img: HTMLImageElement } |
   return panel && img && img.complete && img.naturalWidth > 0 ? { panel, img } : null;
 }
 
-/** A copy of the photo laid exactly over the original, inside the same parent (so the hover zoom still applies). */
-function overlayCopy(img: HTMLImageElement): HTMLImageElement {
-  const copy = img.cloneNode() as HTMLImageElement;
-  copy.removeAttribute("id");
-  copy.alt = "";
-  copy.setAttribute("aria-hidden", "true");
-  Object.assign(copy.style, {
-    position: "absolute", inset: "auto", margin: "0", maxWidth: "none", maxHeight: "none", pointerEvents: "none",
-    left: `${img.offsetLeft}px`, top: `${img.offsetTop}px`, width: `${img.offsetWidth}px`, height: `${img.offsetHeight}px`,
-  } satisfies Partial<CSSStyleDeclaration>);
-  img.parentElement!.appendChild(copy);
-  return copy;
-}
-
 /**
- * Click = "ตัดขาด" (owner 29/10 picked option B of the designer's three, demo artifact 132jaUiMjeM8G2oXNgmpDZ): the photo is
- * cut along a −20° line at 62% of the panel height (clear of most screens), the two halves slide a few px apart along
- * the cut while a thin white-hot line with red edges draws across, the card presses in a touch, then the halves close.
- * 360 ms in all; the page moves at NAV_DELAY, when the halves are fully apart. Drawn inside the card, so it leaves
- * with the card when the next page renders (the old slash was a fixed overlay on <body> that could linger).
+ * Click = a light tap (owner 09/11: the old "ตัดขาด" split made the page wait before it moved — "กดปุ๊ปก็ยังไปปั๊ป",
+ * keep a thin, light effect that only says something happened). The page moves at once through the card's own Link;
+ * this never cancels the click. A hairline cut (−20°, the brand's angle) draws across the photo in 160 ms and the card
+ * presses in a touch. Drawn inside the card, so it leaves with the card when the next page renders.
  */
-function playSplit(card: HTMLElement): boolean {
+function playTap(card: HTMLElement): void {
+  card.animate([{ scale: "1" }, { scale: "0.985", offset: 0.35 }, { scale: "1" }], { duration: 180, easing: "ease-out" });
   const photo = photoOf(card);
-  if (!photo) return false;
-  const { panel, img } = photo;
-  const p = panel.getBoundingClientRect(), r = img.getBoundingClientRect();
-  const w = p.width, h = p.height, cy = h * 0.62;
-  const y0 = cy + (w / 2) * Math.tan(TILT), y1 = cy - (w / 2) * Math.tan(TILT); // the cut line, panel coordinates
-  // the same line in the copy's own coordinates (the copy sits where the image is)
-  const ox = r.left - p.left, oy = r.top - p.top, iw = r.width;
-  const ly = (x: number) => y0 + ((y1 - y0) * x) / w - oy;
-  const a = -ox, b = iw + (w - iw - ox);
-  const top = overlayCopy(img), bottom = overlayCopy(img);
-  top.style.clipPath = `polygon(${a}px -50px, ${b}px -50px, ${b}px ${ly(w)}px, ${a}px ${ly(0)}px)`;
-  bottom.style.clipPath = `polygon(${a}px ${ly(0)}px, ${b}px ${ly(w)}px, ${b}px ${r.height + 50}px, ${a}px ${r.height + 50}px)`;
-  img.style.visibility = "hidden";
-
-  const len = w / Math.cos(TILT) + 8, th = 6;
+  if (!photo) return;
+  const { width: w, height: h } = photo.panel.getBoundingClientRect();
+  const len = w / Math.cos((20 * Math.PI) / 180);
   const line = document.createElementNS(NS, "svg");
   line.setAttribute("aria-hidden", "true");
-  line.setAttribute("viewBox", "0 0 100 6");
+  line.setAttribute("viewBox", "0 0 100 2");
   line.setAttribute("preserveAspectRatio", "none");
   Object.assign(line.style, {
-    position: "absolute", left: `${(w - len) / 2}px`, top: `${cy - th / 2}px`, width: `${len}px`, height: `${th}px`,
-    transform: "rotate(-20deg)", pointerEvents: "none", zIndex: "5", filter: "drop-shadow(0 0 6px rgba(242,48,48,0.45))",
+    position: "absolute", left: `${(w - len) / 2}px`, top: `${h * 0.62 - 1}px`, width: `${len}px`, height: "2px",
+    transform: "rotate(-20deg)", pointerEvents: "none", zIndex: "5",
   } satisfies Partial<CSSStyleDeclaration>);
   line.innerHTML =
-    '<defs><linearGradient id="okami-cut" x1="0" x2="1"><stop offset="0" stop-color="#f23030" stop-opacity="0"/>' +
-    '<stop offset="0.12" stop-color="#f23030"/><stop offset="0.88" stop-color="#f23030"/><stop offset="1" stop-color="#f23030" stop-opacity="0"/></linearGradient></defs>' +
-    '<path d="M0 3 Q50 0.6 100 3 Q50 5.4 0 3Z" fill="url(#okami-cut)"/><path d="M6 3 Q50 2.2 94 3 Q50 3.8 6 3Z" fill="#fff1ec"/>';
-  panel.appendChild(line);
-
-  const T = 360, at = (ms: number) => ms / T;
+    '<defs><linearGradient id="okami-tap" x1="0" x2="1"><stop offset="0" stop-color="#f23030" stop-opacity="0"/>' +
+    '<stop offset="0.5" stop-color="#f23030" stop-opacity="0.7"/><stop offset="1" stop-color="#f23030" stop-opacity="0"/></linearGradient></defs>' +
+    '<rect width="100" height="2" fill="url(#okami-tap)"/>';
+  photo.panel.appendChild(line);
   line.animate(
     [
-      // easing per step, never on the whole effect (that warps the timeline: the line was nearly gone while the halves were apart)
-      { clipPath: "inset(0 100% 0 0)", opacity: 1, transform: "rotate(-20deg)", easing: "cubic-bezier(.05,.9,.1,1)" },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-20deg)", offset: at(70) },
-      { clipPath: "inset(0 0 0 0)", opacity: 1, transform: "rotate(-20deg)", offset: at(190), easing: "cubic-bezier(.4,0,1,1)" },
-      { clipPath: "inset(0 0 0 0)", opacity: 0, transform: "rotate(-20deg) scaleY(0.3)" },
+      { clipPath: "inset(0 100% 0 0)", opacity: 1 },
+      { clipPath: "inset(0 0 0 0)", opacity: 1, offset: 0.6 },
+      { clipPath: "inset(0 0 0 0)", opacity: 0 },
     ],
-    { duration: T, fill: "forwards" },
-  );
-  const dx = Math.cos(TILT), dy = -Math.sin(TILT);
-  const slide = (el: HTMLElement, along: number, perp: number) => {
-    const apart = `translate(${dx * along + dy * perp}px, ${dy * along - dx * perp}px)`;
-    el.animate(
-      [
-        { transform: "none" },
-        { transform: "none", offset: at(50), easing: "cubic-bezier(.2,.8,.2,1)" },
-        { transform: apart, offset: at(130) },
-        { transform: apart, offset: at(190), easing: "cubic-bezier(.4,0,.2,1)" },
-        { transform: "none" },
-      ],
-      { duration: T },
-    );
-  };
-  slide(top, 4, 1.5);
-  slide(bottom, -2, 0);
-  card.animate([{ scale: "1" }, { scale: "0.985", offset: at(60) }, { scale: "1", offset: at(260) }, { scale: "1" }], { duration: T });
-  window.setTimeout(() => {
-    top.remove();
-    bottom.remove();
-    line.remove();
-    img.style.visibility = "";
-  }, T);
-  return true;
+    { duration: 160, easing: "ease-out", fill: "forwards" },
+  ).onfinish = () => line.remove();
 }
 
 /**
@@ -133,34 +75,19 @@ function playGlint(card: HTMLElement): void {
 }
 
 /**
- * The product-card effects (samurai theme): click = the cut, mouse hover = the glint. One capture listener for clicks
- * runs before the card's Next Link and cancels the click, which makes Link skip its own navigation (`e.defaultPrevented`,
- * next/dist/client/app-dir/link.js), so the page moves once, NAV_DELAY later. Modified clicks (new tab), the heart
- * button inside the card, reduced motion, a photo not loaded yet and the quiet pages keep the card's normal behaviour.
+ * The product-card effects (samurai theme): click = a light tap that never delays the page, mouse hover = the glint.
+ * Modified clicks (new tab), the heart button inside the card, reduced motion and the quiet pages get no effect.
  * Renders nothing.
  */
 export function CardCut() {
-  const router = useRouter();
   useEffect(() => {
     const still = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches || QUIET.test(window.location.pathname);
-    // A second click while a card is cutting (a double click) does nothing: the first click already navigates, and a second
-    // split would copy the photo while it is hidden and draw a second line (checker note on #991).
-    const cutting = new WeakSet<Element>();
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const target = e.target as Element | null;
       const card = target?.closest<HTMLAnchorElement>("a[data-card-cut]");
       if (!card || target?.closest("button") || still()) return;
-      if (cutting.has(card)) {
-        e.preventDefault();
-        return;
-      }
-      const href = card.getAttribute("href");
-      if (!href || !playSplit(card)) return;
-      e.preventDefault();
-      cutting.add(card);
-      window.setTimeout(() => cutting.delete(card), 400);
-      window.setTimeout(() => router.push(href), NAV_DELAY);
+      playTap(card); // never preventDefault: the card's Link navigates now
     };
     const glinting = new WeakSet<Element>();
     const onOver = (e: PointerEvent) => {
@@ -177,6 +104,6 @@ export function CardCut() {
       document.removeEventListener("click", onClick, true);
       document.removeEventListener("pointerover", onOver);
     };
-  }, [router]);
+  }, []);
   return null;
 }
