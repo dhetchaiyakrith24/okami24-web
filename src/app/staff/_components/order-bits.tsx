@@ -43,6 +43,11 @@ export function historyNoteTh(note: string): string {
   // A keyed LINE order changed before it went to the warehouse (src/lib/staff/line-order-edit.ts).
   const items = /^Staff \((.+?)\): items changed (\d+) → (\d+) THB — (.+)$/.exec(note);
   if (items) return `ทีมงาน (${items[1]}): แก้รายการสินค้า ยอด ${items[2]} → ${items[3]} บาท — ${HOW_TH[items[4]] ?? items[4]}`;
+  // A LINE order keyed on /staff/line-order (src/lib/staff/line-orders.ts).
+  const keyed = /^Staff: LINE order keyed by (.+?)( — ticked: not a duplicate)?$/.exec(note);
+  if (keyed) return `ทีมงาน: คีย์ออเดอร์ LINE โดย ${keyed[1]}${keyed[2] ? " — ติ๊กว่าไม่ใช่ออเดอร์ซ้ำ" : ""}`;
+  if (note === "Staff: slip picked from the slip check") return "ทีมงาน: เลือกสลิปที่บอทตรวจแล้ว";
+  if (note === "Staff: no slip in the slip check — confirm the money by hand") return "ทีมงาน: ไม่มีสลิปในรายการ — ยืนยันยอดเงินเองในหน้านี้";
   // A special price given when the LINE order was keyed (migration 0028, src/lib/staff/line-orders.ts).
   const special = /^Staff \((.+?)\): special price (\d+) → (\d+) THB(?: — (.*))?$/.exec(note);
   if (special) return `ทีมงาน (${special[1]}): ราคาพิเศษ จากราคาเว็บ ${special[2]} → ${special[3]} บาท${special[4] ? ` — ${special[4]}` : ""}`;
