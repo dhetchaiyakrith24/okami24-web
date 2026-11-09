@@ -8079,7 +8079,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "NEXAS Booster 16K เทียบกับรุ่นอื่น",
           paragraphs: [
-            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และใช้นิโคติน 30mg salt nic",
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และใช้นิโคตินแบบ salt nic ความเข้มข้น 30mg",
             "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้ คือ Grape Lychee และ Peach Strawberry ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
             "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
           ],
@@ -8122,7 +8122,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "NEXAS Booster 16K 和其他型号比怎么样？",
           paragraphs: [
-            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，尼古丁为 30mg 盐尼古丁。",
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，使用 30mg 盐尼古丁。",
             "M Bar 9K 也有和这款同名的 Grape Lychee 和 Peach Strawberry，喜欢这两种口味的话，两个型号都能选。",
           ],
         },
@@ -8145,7 +8145,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Foli Cool Bar 15K เทียบกับรุ่นอื่น",
           paragraphs: [
-            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ ใช้แบต 600mAh ชาร์จผ่าน USB-C และปรับลมได้",
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ ใช้แบต 600mAh ที่ชาร์จผ่าน USB-C และปรับลมได้",
             "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้หลายกลิ่น เช่น Apple Aloe · Grape Aloe · Peach และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็เลือกได้ทั้งสองรุ่น",
             "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
           ],
@@ -8167,7 +8167,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How does the Foli Cool Bar 15K compare with other models?",
           paragraphs: [
-            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with a 600mAh battery that charges over USB-C and adjustable airflow.",
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with adjustable airflow and a 600mAh battery that charges over USB-C.",
             "The M Bar 9K also shares several flavour names with this one, such as Apple Aloe, Grape Aloe, Peach and Watermelon, so if those are your flavours, you'll find them on both.",
           ],
         },
