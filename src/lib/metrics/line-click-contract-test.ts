@@ -19,6 +19,13 @@ import os from "node:os";
 import path from "node:path";
 import { LINE_CLICK_SPOTS, MAX_BODY_BYTES, bangkokDay, bangkokDayWindowStart, normalizePage, parseLineClick } from "./line-click-input";
 import { hasLineClicksTable, summarizeLineClicks } from "./line-click-summary";
+import {
+  allowLineClick,
+  MAX_PER_CLIENT as LIMIT_PER_CLIENT,
+  MAX_TOTAL as LIMIT_TOTAL,
+  WINDOW_MS as LIMIT_WINDOW_MS,
+  type ClickLedger,
+} from "./line-click-limit";
 
 interface Result {
   name: string;
@@ -91,6 +98,22 @@ try {
 } finally {
   db.close();
   fs.rmSync(tmp, { recursive: true, force: true });
+}
+
+// 4. the click ceiling (security pass 09/11): per address, shop-wide, and the window lets go again.
+{
+  const ledger: ClickLedger = new Map();
+  const t0 = 1_000_000_000_000;
+  let accepted = 0;
+  for (let i = 0; i < LIMIT_PER_CLIENT + 5; i++) if (allowLineClick(ledger, "a", t0 + i)) accepted++;
+  check("one address is counted at most MAX_PER_CLIENT times per window", accepted === LIMIT_PER_CLIENT, `accepted ${accepted}`);
+  check("another address is still counted", allowLineClick(ledger, "b", t0 + 100));
+  check("after the window the first address is counted again", allowLineClick(ledger, "a", t0 + LIMIT_WINDOW_MS + 1));
+
+  const flood: ClickLedger = new Map();
+  let total = 0;
+  for (let i = 0; i < LIMIT_TOTAL + 50; i++) if (allowLineClick(flood, `ip${i}`, t0 + i)) total++;
+  check("many addresses together are capped at MAX_TOTAL per window", total === LIMIT_TOTAL, `accepted ${total}`);
 }
 
 for (const r of results) {

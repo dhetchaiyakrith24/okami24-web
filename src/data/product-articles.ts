@@ -7987,7 +7987,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Owner task ก6 (09/11), RELX Diva 30K — same basis as Sparta 20K above (flavour names = this page's list, incl. the five whose names end in
   // 5%; groups = the shop's; Smash Go figures = its verified rows). Left out: the display and ECO/BOOST (tagline + shortDescription + features)
-  // and every number for this model except the 5% printed in flavour names (said once here — the shortDescription has it once; thai-copy 09/11).
+  // and every number for this model except the 5% printed in flavour names (one paragraph here; the shortDescription names no
+  // percentage, only "the stronger version"; thai-copy 09/11).
   "relx-diva-30k": {
     th: {
       lede: "RELX Diva 30K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นอื่นของ RELX",
@@ -8052,6 +8053,358 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
             "想和 RELX 另一款比较口味，[RELX Sparta 20K](/products/relx-sparta-20k) 也有同名的 Cola 和 Mineral Water。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), unbranded disposables with no maker site (NEXAS Booster 16K · Foli Cool Bar 15K · 86 Bar 20K), the #1339 pattern:
+  // no new product fact. Flavour names = each page's own list (sources in src/data/products/unbranded.ts); groups = the shop's, from the
+  // words in each name. M Bar 9K figures = its verified rows (salthub.com). Left out per page: what its tagline / shortDescription / feature
+  // cards already say (NEXAS: lights + 3-step airflow + figures; 86 Bar: mesh + figures; Foli: 15,000 + the flavour count) and every number
+  // for these models. en/zh leave out the guide link (/guides/how-long-a-disposable-lasts is thaiOnly). Evidence:
+  // _incoming/ก6-gates/unbranded-source/. Legacy pages → no article FAQ.
+  "nexas-booster-16k": {
+    th: {
+      lede: "NEXAS Booster 16K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "NEXAS Booster 16K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Mint Extra ส่วนสายชามี Oolong Tea",
+            "สายผลไม้มี 11 กลิ่น คือ Grape Ice · Grape Lychee · Green Apple · Lychee Ice · Mix Berries · Peach Strawberry · Strawberry Banana · Strawberry Ice · Strawberry Watermelon · Watermelon Ice และ Yoyo Grape",
+            "แนวเครื่องดื่มมี Cola Ice · Cola Lemon · Green Soda · Mineral Water และ Red Soda",
+          ],
+        },
+        {
+          heading: "NEXAS Booster 16K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และใช้นิโคตินแบบ salt nic ความเข้มข้น 30mg",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้ คือ Grape Lychee และ Peach Strawberry ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The NEXAS Booster 16K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which NEXAS Booster 16K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Mint Extra, and tea has Oolong Tea.",
+            "Fruit has eleven: Grape Ice, Grape Lychee, Green Apple, Lychee Ice, Mix Berries, Peach Strawberry, Strawberry Banana, Strawberry Ice, Strawberry Watermelon, Watermelon Ice and Yoyo Grape.",
+            "Drinks are Cola Ice, Cola Lemon, Green Soda, Mineral Water and Red Soda.",
+          ],
+        },
+        {
+          heading: "How does the NEXAS Booster 16K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with 30mg salt nic.",
+            "The M Bar 9K also shares two flavour names with this one, Grape Lychee and Peach Strawberry, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "NEXAS Booster 16K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "NEXAS Booster 16K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint Extra，茶类有 Oolong Tea。",
+            "水果类有 11 款：Grape Ice、Grape Lychee、Green Apple、Lychee Ice、Mix Berries、Peach Strawberry、Strawberry Banana、Strawberry Ice、Strawberry Watermelon、Watermelon Ice 和 Yoyo Grape。",
+            "饮品类有 Cola Ice、Cola Lemon、Green Soda、Mineral Water 和 Red Soda。",
+          ],
+        },
+        {
+          heading: "NEXAS Booster 16K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，使用 30mg 盐尼古丁。",
+            "M Bar 9K 也有和这款同名的 Grape Lychee 和 Peach Strawberry，喜欢这两种口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  "foli-bar-15k": {
+    th: {
+      lede: "Foli Cool Bar 15K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "Foli Cool Bar 15K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มีกลิ่น Double Mint",
+            "สายผลไม้มี 9 กลิ่น คือ Apple Aloe · Blueberry · Grape · Grape Aloe · Lychee Ice · Mix Berry · Peach · Strawberry Ice และ Watermelon",
+            "แนวเครื่องดื่มมี Cola Ice กับ Red Bull Ice",
+          ],
+        },
+        {
+          heading: "Foli Cool Bar 15K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ ใช้แบต 600mAh ที่ชาร์จผ่าน USB-C และปรับลมได้",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้หลายกลิ่น เช่น Apple Aloe · Grape Aloe · Peach และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Foli Cool Bar 15K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which Foli Cool Bar 15K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "For mint, there's Double Mint.",
+            "Fruit has nine: Apple Aloe, Blueberry, Grape, Grape Aloe, Lychee Ice, Mix Berry, Peach, Strawberry Ice and Watermelon.",
+            "Drinks are Cola Ice and Red Bull Ice.",
+          ],
+        },
+        {
+          heading: "How does the Foli Cool Bar 15K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with adjustable airflow and a 600mAh battery that charges over USB-C.",
+            "The M Bar 9K also shares several flavour names with this one, such as Apple Aloe, Grape Aloe, Peach and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Foli Cool Bar 15K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "Foli Cool Bar 15K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Double Mint。",
+            "水果类有 9 款：Apple Aloe、Blueberry、Grape、Grape Aloe、Lychee Ice、Mix Berry、Peach、Strawberry Ice 和 Watermelon。",
+            "饮品类有 Cola Ice 和 Red Bull Ice。",
+          ],
+        },
+        {
+          heading: "Foli Cool Bar 15K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，电池 600mAh，USB-C 充电，气流可调。",
+            "M Bar 9K 也有好几款和这款同名的口味，例如 Apple Aloe、Grape Aloe、Peach 和 Watermelon，喜欢这些口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  "86-bar-20k": {
+    th: {
+      lede: "86 Bar 20K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "86 Bar 20K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Mint Freeze กับ Watermelon Mint ส่วนสายชามี Oishi Green Tea",
+            "สายผลไม้มี 8 กลิ่น คือ Coco Pine · Grape · Lychee · Magic Mango · Mixberry · Strawberry Kiwi · Watermelon และ Watermelon Strawberry",
+            "แนวเครื่องดื่มมี Lemon Cola ส่วน Blue Ice ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงแยกไว้ต่างหาก",
+          ],
+        },
+        {
+          heading: "86 Bar 20K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และปรับลมได้",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้หลายกลิ่น เช่น Blue Ice · Mixberry · Strawberry Kiwi และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The 86 Bar 20K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which 86 Bar 20K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Mint Freeze and Watermelon Mint, and tea has Oishi Green Tea.",
+            "Fruit has eight: Coco Pine, Grape, Lychee, Magic Mango, Mixberry, Strawberry Kiwi, Watermelon and Watermelon Strawberry.",
+            "For drinks, there's Lemon Cola. Blue Ice's name doesn't say what style it is, so we've kept it apart.",
+          ],
+        },
+        {
+          heading: "How does the 86 Bar 20K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with adjustable airflow.",
+            "The M Bar 9K also shares several flavour names with this one, such as Blue Ice, Mixberry, Strawberry Kiwi and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "86 Bar 20K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "86 Bar 20K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint Freeze 和 Watermelon Mint，茶类有 Oishi Green Tea。",
+            "水果类有 8 款：Coco Pine、Grape、Lychee、Magic Mango、Mixberry、Strawberry Kiwi、Watermelon 和 Watermelon Strawberry。",
+            "饮品类有 Lemon Cola。Blue Ice 的名称看不出口味类型，所以单独列出。",
+          ],
+        },
+        {
+          heading: "86 Bar 20K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，气流可调。",
+            "M Bar 9K 也有好几款和这款同名的口味，例如 Blue Ice、Mixberry、Strawberry Kiwi 和 Watermelon，喜欢这些口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), Vazer Reload 15K — no maker page (vazerpod.com does not resolve), so the #1339 pattern: no new product fact.
+  // Flavour names = this page's own list (the brand's chart, 3-shop sources in src/data/products/unbranded.ts); groups = the shop's, from the
+  // words in each name; Malibu's name gives no style, so it stays ungrouped. M Switch Kit = its verified rows (salthub.com/m-switch-kit/).
+  // Left out: the swap head (tagline + shortDescription + "swap" card already say it), mesh/airflow ("air" card) and every number for this
+  // model ("figures" card). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-reload-15k": {
+    th: {
+      lede: "Vazer Reload 15K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นใกล้เคียง",
+      sections: [
+        {
+          heading: "Vazer Reload 15K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Cool Mint",
+            "สายผลไม้มี 9 กลิ่น คือ Apple Fuji · Blueberry · Grape Lychee · Grape Osaka · Ice Grape · Lychee · Mixberry · Peach Paradise และ Watermelon Slushie",
+            "แนวขนมและเครื่องดื่มมี Lemon Soda · Original Cola · Root Beer และ Strawberry Candy",
+            "ส่วน Malibu ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงแยกไว้ต่างหาก",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ตามที่ SALTHUB ระบุไว้ ตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบตทั้งตอนกำลังชาร์จและตอนชาร์จเต็ม",
+            "M Switch Kit ก็มี Grape Lychee และ Mixberry เหมือนรุ่นนี้ ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Vazer Reload 15K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with a similar model.",
+      sections: [
+        {
+          heading: "Which Vazer Reload 15K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Cool Mint.",
+            "Fruit has nine: Apple Fuji, Blueberry, Grape Lychee, Grape Osaka, Ice Grape, Lychee, Mixberry, Peach Paradise and Watermelon Slushie.",
+            "Sweets and drinks are Lemon Soda, Original Cola, Root Beer and Strawberry Candy.",
+            "Malibu's name doesn't say what style it is, so we haven't put it in a group.",
+          ],
+        },
+        {
+          heading: "How does the Vazer Reload 15K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Switch Kit](/products/m-switch-kit). SALTHUB lists a reusable device with a battery display that shows while charging and when fully charged.",
+            "The M Switch Kit also shares two flavour names with this one, Grape Lychee and Mixberry, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer Reload 15K 口味类型很多。下面由本店把口味分好组方便挑选，并和相近的型号做个比较。",
+      sections: [
+        {
+          heading: "Vazer Reload 15K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Cool Mint。",
+            "水果类有 9 款：Apple Fuji、Blueberry、Grape Lychee、Grape Osaka、Ice Grape、Lychee、Mixberry、Peach Paradise 和 Watermelon Slushie。",
+            "糖果和饮品类有 Lemon Soda、Original Cola、Root Beer 和 Strawberry Candy。",
+            "Malibu 的名称看不出口味类型，所以没有归入任何一组。",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Switch Kit](/products/m-switch-kit)。SALTHUB 标明主机可重复使用，并有电量显示屏，充电中和充满时都会显示。",
+            "M Switch Kit 也有和这款同名的 Grape Lychee 和 Mixberry，喜欢这两种口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), Vazer One pod — same basis as Vazer Reload 15K above (flavour names = this page's list, from the maker's posters
+  // as sold by maneevp.com; groups = the shop's). "Pod only" = its verified format row. Vazer Reload = a device with a pre-filled head (its
+  // own tagline). "Not confirmed to fit the Reload body" = the shop's state of knowledge, no source says either way. Left out: the count of
+  // flavours (shortDescription). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-one-pod": {
+    th: {
+      lede: "หัวพอต Vazer One มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเล่าให้ฟังว่าต่างจาก Vazer Reload 15K ตรงไหน",
+      sections: [
+        {
+          heading: "หัวพอต Vazer One กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มีกลิ่น Mint",
+            "สายผลไม้มี 12 กลิ่น คือ Blueberry · Grape · Grapefruit · Lychee · Mango · Melon · Mix Berries · Peach · Pineapple · Raspberry · Strawberry และ Watermelon",
+            "แนวเครื่องดื่มมี Cola · Cola Lemon · Lemon Soda และ Rootbeer",
+            "แนวขนมและของหวานมี Gummy Bear · Milk Honey · Strawberry Ice-Cream และ Vanilla Custard",
+          ],
+        },
+        {
+          heading: "Vazer One กับ Vazer Reload 15K ต่างกันยังไง",
+          paragraphs: [
+            "Vazer One ในหน้านี้เป็นหัวพอตอย่างเดียว ไม่มีตัวเครื่องมาด้วย ส่วน [Vazer Reload 15K](/products/vazer-reload-15k) มาเป็นตัวเครื่องพร้อมหัวพอตที่เปลี่ยนได้",
+            "ร้านยังไม่มีข้อมูลยืนยันว่าหัวพอต Vazer One ใส่กับตัวเครื่อง Vazer Reload ได้หรือไม่ ก่อนสั่งลองเช็คให้แน่ใจว่าเครื่องที่ใช้อยู่ใส่หัวพอต Vazer One ได้",
+            "สองรุ่นนี้ยังมีกลิ่นชื่อเดียวกันด้วย เช่น Blueberry · Lemon Soda และ Lychee",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Vazer One pods come in flavours of several styles. Below, we sort them into groups to make choosing easier, and explain how they differ from the Vazer Reload 15K.",
+      sections: [
+        {
+          heading: "Which Vazer One pod flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "For mint, there's Mint.",
+            "Fruit has twelve: Blueberry, Grape, Grapefruit, Lychee, Mango, Melon, Mix Berries, Peach, Pineapple, Raspberry, Strawberry and Watermelon.",
+            "Drinks are Cola, Cola Lemon, Lemon Soda and Rootbeer.",
+            "Sweets and desserts are Gummy Bear, Milk Honey, Strawberry Ice-Cream and Vanilla Custard.",
+          ],
+        },
+        {
+          heading: "How is the Vazer One different from the Vazer Reload 15K?",
+          paragraphs: [
+            "The Vazer One on this page is the pod only, with no device. The [Vazer Reload 15K](/products/vazer-reload-15k) comes as a device with a pod you can change.",
+            "We can't confirm that a Vazer One pod fits the Vazer Reload device, so before you order, check that the device you use takes Vazer One pods.",
+            "The two also share some flavour names, such as Blueberry, Lemon Soda and Lychee.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer One 烟弹口味类型很多。下面由本店把口味分好组方便挑选，并说明它和 Vazer Reload 15K 有什么区别。",
+      sections: [
+        {
+          heading: "Vazer One 烟弹哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint。",
+            "水果类有 12 款：Blueberry、Grape、Grapefruit、Lychee、Mango、Melon、Mix Berries、Peach、Pineapple、Raspberry、Strawberry 和 Watermelon。",
+            "饮品类有 Cola、Cola Lemon、Lemon Soda 和 Rootbeer。",
+            "糖果和甜点类有 Gummy Bear、Milk Honey、Strawberry Ice-Cream 和 Vanilla Custard。",
+          ],
+        },
+        {
+          heading: "Vazer One 和 Vazer Reload 15K 有什么区别？",
+          paragraphs: [
+            "本页的 Vazer One 只有烟弹，不含主机；[Vazer Reload 15K](/products/vazer-reload-15k) 则是主机加可更换的烟弹。",
+            "本店还无法确认 Vazer One 烟弹能否装在 Vazer Reload 主机上，下单前请先确认您所用的主机能装 Vazer One 烟弹。",
+            "两款也有一些同名口味，例如 Blueberry、Lemon Soda 和 Lychee。",
           ],
         },
       ],
