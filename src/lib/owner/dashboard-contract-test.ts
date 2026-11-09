@@ -12,7 +12,7 @@ function check(name: string, ok: boolean): void {
 }
 
 const NOW = Date.parse("2026-11-08T10:00:00+07:00");
-const day = (date: string, part: Partial<DaySales>): DaySales => ({ date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [], ...part });
+const day = (date: string, part: Partial<DaySales>): DaySales => ({ date, webSatang: 0, lineSatang: 0, refundedSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [], ...part });
 const order = (createdAt: string, total: number) => ({ orderNumber: createdAt, runNumber: null, total, createdAt, hasSlipRef: true });
 const slip = (transferredAt: string, amountSatang: number) => ({ transRef: transferredAt, amountSatang, transferredAt, receiverStatus: "match" });
 

@@ -1,5 +1,7 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
+import { refundedByRef } from "@/lib/staff/refunds";
+import { netSatang } from "@/lib/staff/refund-rules";
 import { bangkokDate, CONFIRMED_ORDER_STATUSES, dailySales, lastDates, sortSlips, type DaySales, type SalesOrder, type SalesSlip } from "@/lib/staff/daily-sales-rules";
 
 /**
@@ -37,11 +39,13 @@ function readInputs(fromMs: number): { orders: SalesOrder[]; slips: SalesSlip[];
     createdAt: o.created_at,
     hasSlipRef: o.has_slip_ref === 1,
   }));
+  const refunded = refundedByRef();
   const salesSlips: SalesSlip[] = slips.map((s) => ({
     transRef: s.trans_ref,
     amountSatang: s.amount_satang,
     transferredAt: s.transferred_at,
     receiverStatus: s.receiver_status,
+    refundedSatang: refunded.get(s.trans_ref),
   }));
   return { orders: salesOrders, slips: salesSlips, linked: new Set(linkedRows.map((l) => l.ref)) };
 }
@@ -51,14 +55,14 @@ function readSales(dates: string[]): DaySales[] {
   return dailySales(dates, orders, slips, linked);
 }
 
-/** LINE sales of a stretch of time, for the weekly check: the same sorting as the page, by transfer time. */
+/** LINE sales of a stretch of time, for the weekly check: the same sorting as the page, by transfer time, refunds off. */
 export function lineSalesBetween(fromIso: string, toIso: string): number {
   const from = Date.parse(fromIso);
   const to = Date.parse(toIso);
   const { orders, slips, linked } = readInputs(from);
   return sortSlips(orders, slips, linked)
     .line.filter((s) => Date.parse(s.transferredAt) >= from && Date.parse(s.transferredAt) < to)
-    .reduce((n, s) => n + s.amountSatang, 0);
+    .reduce((n, s) => n + netSatang(s.amountSatang, s.refundedSatang), 0);
 }
 
 /** The last SALES_DAYS days, today first (Bangkok). */

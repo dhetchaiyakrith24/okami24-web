@@ -6,6 +6,7 @@
 import type { DaySales } from "@/lib/staff/daily-sales-rules";
 import type { StockProduct } from "@/lib/staff/stock-book";
 import { LOW_STOCK_AT } from "@/lib/stock/count-rules";
+import { netSatang } from "@/lib/staff/refund-rules";
 
 const DAY_MS = 86_400_000;
 
@@ -34,7 +35,7 @@ export function sameHourLastWeek(days: DaySales[], now: number): SameHour | null
   if (!today || !then) return null;
   const until = now - 7 * DAY_MS;
   const web = then.orders.filter((o) => Date.parse(o.createdAt) <= until).reduce((n, o) => n + o.total * 100, 0);
-  const line = then.slips.filter((s) => Date.parse(s.transferredAt) <= until).reduce((n, s) => n + s.amountSatang, 0);
+  const line = then.slips.filter((s) => Date.parse(s.transferredAt) <= until).reduce((n, s) => n + netSatang(s.amountSatang, s.refundedSatang), 0);
   const thenSatang = web + line;
   const percent = thenSatang > 0 ? Math.round(((today.totalSatang - thenSatang) / thenSatang) * 100) : null;
   return { nowSatang: today.totalSatang, thenSatang, percent };

@@ -75,7 +75,10 @@ function SlipRow({ slip }: { slip: SalesSlip }) {
       <span className="min-w-0 truncate tabular-nums">
         {timeOf(slip.transferredAt)} น. <span className="text-xs text-foreground-dim">อ้างอิง …{slip.transRef.slice(-6)}</span>
       </span>
-      <span className="shrink-0 tabular-nums text-foreground">{formatSatang(slip.amountSatang)}</span>
+      <span className="flex shrink-0 flex-col items-end tabular-nums text-foreground">
+        {formatSatang(slip.amountSatang)}
+        {(slip.refundedSatang ?? 0) > 0 && <span className="text-xs text-unverified">คืนแล้ว {formatSatang(Math.min(slip.amountSatang, slip.refundedSatang ?? 0))}</span>}
+      </span>
     </li>
   );
 }
@@ -98,6 +101,7 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold text-foreground">{name}</span>
             {day.unclear.length > 0 && <span className="text-xs text-unverified">ไม่แน่ใจ {day.unclear.length} ใบ</span>}
+            {day.refundedSatang > 0 && <span className="text-xs text-foreground-muted">หักคืนเงิน LINE {formatSatang(day.refundedSatang)}</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">
