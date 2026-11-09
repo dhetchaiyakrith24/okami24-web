@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Look trial — 3 directions for the owner to compare (owner 09/11 21:30, DRAFT ONLY).
+   Each block matches only `html[data-look=…]`, set by src/components/layout/LookSwitch.tsx from `?look=a|b|c`.
+   With no attribute nothing here applies: the site is exactly today's look.
+   Once the owner picks, the chosen values move into :root in globals.css and this file is deleted.
+   Every text token was checked for WCAG AA 4.5:1 on surface-0/1/2 (look-0911 notes); semantic colours —
+   danger red = no, amber = waiting/low, green = in stock, purple = new, fuchsia = sale — are untouched.
+   ========================================================================== */
+
+/* a — "ของเดิม ขัดเงา": same orange-black family; cards lift off the page, small text a step brighter. */
+html[data-look="a"] {
+  --surface-0: #0b0b0d;
+  --surface-1: #1a1b1f;
+  --surface-2: #232429;
+  --surface-3: #2e2f35;
+  --surface-border: #40414a;
+  --surface-border-soft: #2d2e34;
+  --foreground-dim: #8f8e93;
+}
+
+/* b — "ขาวดำ ส้มจุดเดียว": black + warm white carry the page; orange is kept for the buttons you press
+   (owner reference reel 1: "two colours do 90% of the work, the odd one only on the button you want pressed").
+   Orange text accents turn white, soft orange fills turn neutral, the best-seller frame goes quiet (the "ขายดี" chip stays). */
+html[data-look="b"] {
+  --surface-0: #0a0a0b;
+  --surface-1: #18181b;
+  --surface-2: #1f1f22;
+  --surface-3: #2a2a2e;
+  --surface-border: #3a3a3f;
+  --surface-border-soft: #28282c;
+  --foreground: #f5f5f2;
+  --foreground-muted: #b4b4b8;
+  --foreground-dim: #8e8e93;
+  --accent-ember-soft: #26262a;
+  --accent-steel: #a7b0b8;
+  --accent-steel-strong: #c3cad0;
+  --accent-steel-soft: #23272b;
+  --font-body: Inter, "Inter Fallback", var(--font-look-thai-body), sans-serif;
+}
+html[data-look="b"] .text-ember {
+  color: var(--foreground);
+}
+html[data-look="b"] a[data-card-cut]:has([data-sales="best"]) {
+  border-color: var(--surface-border-soft);
+  background: var(--surface-1);
+  box-shadow: none;
+}
+html[data-look="b"] a[data-card-cut]:has([data-sales="best"])::before,
+html[data-look="b"] a[data-card-cut]:has([data-sales="best"])::after {
+  display: none;
+}
+
+/* c — "เตาหลอม": the orange-black of owner reference reel 2 (bright orange → vermilion → oxblood, off-white text,
+   near-black with a warm cast). Oxblood bridges the shop orange and the logo red; a low ember glow sits behind the page top.
+   Thai headings in Prompt for a firmer, more "made" feel. */
+html[data-look="c"] {
+  --surface-0: #100e0d;
+  --surface-1: #1e1a18;
+  --surface-2: #27221f;
+  --surface-3: #2f2a26;
+  --surface-border: #463d37;
+  --surface-border-soft: #302a26;
+  --foreground: #f2efe9;
+  --foreground-muted: #bdb5ab;
+  --foreground-dim: #9a9087;
+  --accent-ember: #f08a2a;
+  --accent-ember-strong: #ffa24d;
+  --accent-ember-soft: #3d1810;
+  --accent-steel: #cfc6bb;
+  --accent-steel-strong: #e6dfd5;
+  --accent-steel-soft: #2a221d;
+  --font-display: "Barlow Condensed", "Barlow Condensed Fallback", var(--font-look-thai-head), sans-serif;
+}
+html[data-look="c"] body {
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgb(122 26 16 / 0.35), transparent 60%) no-repeat,
+    var(--surface-0);
+}

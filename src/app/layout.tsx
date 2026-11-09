@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Barlow_Condensed, Inter, IBM_Plex_Mono, Anuphan, Prompt } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { Footer } from "@/components/layout/Footer";
@@ -17,7 +17,9 @@ import { DNS_GUIDE_ID } from "@/data/guides";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
+import { LookSwitch } from "@/components/layout/LookSwitch";
 import "./globals.css";
+import "./looks.css";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",
@@ -35,6 +37,21 @@ const monoFont = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+// Look trial (owner 09/11, DRAFT ONLY — see src/app/looks.css): two Thai faces the trial directions b and c use.
+// preload: false + used only under html[data-look=…] = the browser never downloads them on today's look.
+const lookThaiBody = Anuphan({
+  variable: "--font-look-thai-body",
+  subsets: ["thai"],
+  preload: false,
+});
+
+const lookThaiHead = Prompt({
+  variable: "--font-look-thai-head",
+  subsets: ["thai"],
+  weight: ["600", "700"],
+  preload: false,
 });
 
 // One clause of the site description depends on whether online ordering is on
@@ -98,7 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     // cookies()/headers() call). Search engines send no cookie, so they read the Thai HTML.
     <html
       lang="th"
-      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} ${lookThaiBody.variable} ${lookThaiHead.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
@@ -121,6 +138,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CardCut />
           {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
           <TeamShortcut />
+          {/* Look trial (owner 09/11, draft only): ?look=a|b|c switches the colour direction for this tab. Renders nothing. */}
+          <LookSwitch />
         </LocaleProvider>
       </body>
     </html>
