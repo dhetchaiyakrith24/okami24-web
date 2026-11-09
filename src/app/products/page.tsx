@@ -40,7 +40,9 @@ export default function ProductsPage() {
       <div className="relative isolate">
         <SamuraiBackdrop />
         <ProductsPageHeader totalCount={totalCount} />
-        <Container className="py-12 lg:py-16">
+        {/* look-0911 fix 2: no top padding here — the header above already ends in 48/64 px, and the two together left a
+            96/128 px empty band before the toolbar, pushing the first product to y≈489 on a phone. */}
+        <Container className="pb-12 lg:pb-16">
           {/* Only visible when /cart or /checkout sent the visitor here (?order=line) — read client-side so this page stays
               prerendered. Always on the page: the owner's cart switch closes ordering without a build (ordering-mode.ts). */}
           <Suspense fallback={null}>
