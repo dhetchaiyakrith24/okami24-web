@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
+import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
@@ -28,6 +29,10 @@ export type HeroSlotView = {
   price: number | null;
   /** how many colours / flavours the model comes in, from 2 up (desktop cards) */
   options: { n: number; kind: "colors" | "flavors" } | null;
+  /** the product's slug + whether every option was sold out at build — the live stock answer then overrides it
+   *  (owner 10/11 "ติดทุกตัวที่หมด": the hero slots carry the cards' "สินค้าหมด" pill, CardSoldOutBadge) */
+  slug: string;
+  soldOut: boolean;
 };
 
 const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
@@ -422,6 +427,8 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
             <span className="okh-brand label-mono" lang="en">
               {slot.brand}
             </span>
+            {/* the slot on screen sold out = the cards' pill, inline under the brand (the photo floats free here) */}
+            <CardSoldOutBadge key={slot.slug} slug={slot.slug} builtSoldOut={slot.soldOut} className="static mt-1 w-fit translate-y-0" />
             <Link href={slot.categoryHref} className="okh-go">
               {tx(copy.viewCategory)} <span aria-hidden>→</span>
             </Link>

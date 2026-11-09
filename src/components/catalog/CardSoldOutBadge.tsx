@@ -3,6 +3,7 @@
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useLiveSoldOut } from "@/components/catalog/useLiveCardStock";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
+import { cn } from "@/lib/utils";
 
 /**
  * "สินค้าหมด" on a product card's photo (owner 10/11 ~02:00: "อยากให้มีป้ายบอกสินค้าหมด ลูกค้าจะได้ไม่เสียเวลากดเข้าไป").
@@ -12,7 +13,7 @@ import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
  * the first paint for those — and the warehouse's live answer then overrides it (useLiveCardStock, one request per page):
  * a product that sold out or came back since the build changes without a rebuild. The photo stays full colour (owner 08/10).
  */
-export function CardSoldOutBadge({ slug, builtSoldOut }: { slug: string; builtSoldOut: boolean }) {
+export function CardSoldOutBadge({ slug, builtSoldOut, className }: { slug: string; builtSoldOut: boolean; className?: string }) {
   const { dict } = useLocale();
   const soldOut = useLiveSoldOut(slug, builtSoldOut);
   if (!soldOut) return null;
@@ -20,7 +21,7 @@ export function CardSoldOutBadge({ slug, builtSoldOut }: { slug: string; builtSo
     <span data-card-soldout="">
       <SoldOutPhotoBadge
         label={dict.product.outOfStockChip}
-        className="bottom-0 left-3 top-auto translate-y-1/2 max-lg:bottom-0 max-lg:left-2 max-lg:top-auto"
+        className={cn("bottom-0 left-3 top-auto translate-y-1/2 max-lg:bottom-0 max-lg:left-2 max-lg:top-auto", className)}
       />
     </span>
   );
