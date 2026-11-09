@@ -32,6 +32,8 @@ const TIME = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", hour: 
 const dayLabel = (date: string) => DAY_LABEL.format(new Date(`${date}T12:00:00+07:00`));
 const timeOf = (iso: string) => TIME.format(new Date(iso));
 const sum = (days: DaySales[], pick: (d: DaySales) => number) => days.reduce((n, d) => n + pick(d), 0);
+/** LINE refunds already off the day's LINE figure (refund-rules.ts applyRefunds). */
+const refundedOf = (day: DaySales) => day.slips.reduce((n, s) => n + (s.refundedSatang ?? 0), 0);
 
 /** Designer 07/11: today is the one number on the page that wins; no box, so it does not read as one more link box. */
 function Today({ day }: { day: DaySales }) {
@@ -75,7 +77,10 @@ function SlipRow({ slip }: { slip: SalesSlip }) {
       <span className="min-w-0 truncate tabular-nums">
         {timeOf(slip.transferredAt)} น. <span className="text-xs text-foreground-dim">อ้างอิง …{slip.transRef.slice(-6)}</span>
       </span>
-      <span className="shrink-0 tabular-nums text-foreground">{formatSatang(slip.amountSatang)}</span>
+      <span className="flex shrink-0 flex-col items-end tabular-nums text-foreground">
+        {formatSatang(slip.amountSatang + (slip.refundedSatang ?? 0))}
+        {slip.refundedSatang ? <span className="text-xs text-unverified">คืนแล้ว {formatSatang(slip.refundedSatang)}</span> : null}
+      </span>
     </li>
   );
 }
@@ -98,6 +103,7 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold text-foreground">{name}</span>
             {day.unclear.length > 0 && <span className="text-xs text-unverified">ไม่แน่ใจ {day.unclear.length} ใบ</span>}
+            {refundedOf(day) > 0 && <span className="text-xs text-foreground-muted">หักคืนเงิน LINE {formatSatang(refundedOf(day))}</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">

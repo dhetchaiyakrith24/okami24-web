@@ -1,9 +1,11 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
 
-/** The groups the alert bot is in (migration 0009) and which one is the order group / the slip group. */
+/** The groups the alert bot is in (migration 0009) and which one is the order group / the slip group / the refund group
+ *  (owner 10/11: the group where admin posts "แจ้งยอดโอนคืน" — refund-rules.ts). */
 
-export type GroupRole = "order" | "slip";
+export type GroupRole = "order" | "slip" | "refund";
+export const GROUP_ROLES: readonly GroupRole[] = ["order", "slip", "refund"];
 
 export interface LineGroup {
   groupId: string;

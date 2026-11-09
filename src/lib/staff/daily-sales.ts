@@ -1,4 +1,6 @@
 import "server-only";
+import { applyRefunds } from "@/lib/staff/refund-rules";
+import { refundedByRef } from "@/lib/staff/refunds";
 import { getDb } from "@/lib/db/client";
 import { bangkokDate, CONFIRMED_ORDER_STATUSES, dailySales, lastDates, lineBillSales, sortSlips, type DaySales, type SalesOrder, type SalesSlip } from "@/lib/staff/daily-sales-rules";
 
@@ -46,7 +48,7 @@ function readInputs(fromMs: number): { orders: SalesOrder[]; slips: SalesSlip[];
     transferredAt: s.transferred_at,
     receiverStatus: s.receiver_status,
   }));
-  return { orders: salesOrders, slips: salesSlips, linked: new Set(linkedRows.map((l) => l.ref)) };
+  return { orders: salesOrders, slips: applyRefunds(salesSlips, refundedByRef()), linked: new Set(linkedRows.map((l) => l.ref)) };
 }
 
 function readSales(dates: string[]): DaySales[] {
