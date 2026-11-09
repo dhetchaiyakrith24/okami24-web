@@ -107,7 +107,7 @@ export default async function StaffCustomerCardPage({ params }: { params: Promis
                   <div className="flex items-baseline justify-between gap-3">
                     <span className="min-w-0 truncate">
                       <span className="font-semibold tabular-nums text-foreground">{run ?? o.orderNumber}</span>
-                      <span className="ml-2 text-xs text-foreground-dim">เว็บ</span>
+                      <span className="ml-2 text-xs text-foreground-dim">{o.channel === "line" ? "LINE" : "เว็บ"}</span>
                     </span>
                     <span className={`shrink-0 text-sm font-semibold tabular-nums ${isPaid(o.status) ? "text-foreground" : "text-foreground-dim"}`}>
                       {formatBaht(o.total)}
@@ -127,7 +127,6 @@ export default async function StaffCustomerCardPage({ params }: { params: Promis
             );
           })}
         </ul>
-        <p className="text-sm text-foreground-dim">ออเดอร์ LINE จะขึ้นที่นี่เมื่อหลังบ้านคีย์ออเดอร์ LINE ได้</p>
       </section>
     </Container>
   );

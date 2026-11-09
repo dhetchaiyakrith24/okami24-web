@@ -18,10 +18,14 @@ const ASK = {
     off: { title: "ปิดเว็บชั่วคราว?", body: "ลูกค้าจะเห็นหน้าแจ้งปิดชั่วคราวพร้อมลิงก์ LINE หลังบ้าน บอทตรวจสลิป และหน้าติดตามออเดอร์ยังใช้ได้", yes: "ปิดเว็บชั่วคราว" },
     on: { title: "เปิดเว็บ?", body: "ลูกค้ากลับมาเข้าเว็บได้ตามปกติทันที", yes: "เปิดเว็บ" },
   },
+  line: {
+    off: { title: "ปิดการส่งออเดอร์ LINE เข้าคลัง?", body: "แอดมินกลับไปคีย์ออเดอร์ LINE ใน Shipnity เองตามเดิม ออเดอร์ที่ส่งไปแล้วไม่กระทบ", yes: "ปิดการส่ง" },
+    on: { title: "เปิดการส่งออเดอร์ LINE เข้าคลัง?", body: "ออเดอร์ LINE ที่คีย์ในหลังบ้านจะมีปุ่มส่งเข้าคลังในหน้าออเดอร์ แอดมินไม่ต้องคีย์ใน Shipnity ซ้ำ · เปิดเมื่อคลังกลับมาส่งของได้", yes: "เปิดการส่ง" },
+  },
 } as const;
 
 /** One toggle. Nothing changes on the first tap: a switch this size asks first, and says how to undo it. */
-function Toggle({ kind, label, on, onText, offText, locked }: { kind: "cart" | "site"; label: string; on: boolean; onText: string; offText: string; locked?: string }) {
+function Toggle({ kind, label, on, onText, offText, locked }: { kind: "cart" | "site" | "line"; label: string; on: boolean; onText: string; offText: string; locked?: string }) {
   const [asking, setAsking] = useState(false);
   const ask = ASK[kind][on ? "off" : "on"];
   return (
@@ -76,7 +80,7 @@ function HideForm({ slug, value, label, tone }: { slug: string; value: "on" | "o
   );
 }
 
-export function ShopSwitchPanel({ orderingBuilt, cartOff, siteClosed, hidden, products }: { orderingBuilt: boolean; cartOff: boolean; siteClosed: boolean; hidden: Product[]; products: Product[] }) {
+export function ShopSwitchPanel({ orderingBuilt, cartOff, siteClosed, lineToWarehouse, hidden, products }: { orderingBuilt: boolean; cartOff: boolean; siteClosed: boolean; lineToWarehouse: boolean; hidden: Product[]; products: Product[] }) {
   const [query, setQuery] = useState("");
   const found = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -92,6 +96,7 @@ export function ShopSwitchPanel({ orderingBuilt, cartOff, siteClosed, hidden, pr
         <ul className="dash-rows flex flex-col">
           <Toggle kind="cart" label="ตะกร้าและการสั่งซื้อ" on={orderingBuilt && !cartOff} onText="เปิดอยู่ ลูกค้าสั่งบนเว็บได้" offText="ปิดอยู่ ลูกค้าสั่งผ่าน LINE" locked={orderingBuilt ? undefined : "ปิดจากค่าระบบ เปิดจากปุ่มนี้ไม่ได้"} />
           <Toggle kind="site" label="เปิดเว็บ" on={!siteClosed} onText="เปิดอยู่ตามปกติ" offText="ปิดชั่วคราว ลูกค้าเห็นหน้าแจ้งปิด" />
+          <Toggle kind="line" label="ส่งออเดอร์ LINE เข้าคลังจากหลังบ้าน" on={lineToWarehouse} onText="เปิดอยู่ แอดมินกดส่งจากหน้าออเดอร์" offText="ปิดอยู่ แอดมินคีย์ใน Shipnity ตามเดิม" />
         </ul>
       </section>
       <section aria-label="ซ่อนสินค้า" className="dash-card dash-rise">

@@ -8,7 +8,7 @@ export function CopyBlock({ text, label, doneLabel, outline = false }: { text: s
   const [done, setDone] = useState(false);
   return (
     <div className="flex flex-col gap-2">
-      <pre className="whitespace-pre-wrap rounded-lg border border-surface-border-soft bg-surface-2 p-3 text-sm leading-relaxed text-foreground">{text}</pre>
+      <pre className="whitespace-pre-wrap [overflow-wrap:anywhere] rounded-lg border border-surface-border-soft bg-surface-2 p-3 text-sm leading-relaxed text-foreground">{text}</pre>
       <button
         type="button"
         onClick={async () => {

@@ -59,9 +59,11 @@ export function warehouseText(input: {
   address: string;
   /** Shipnity's carrier name (EMS / DHL — owner 30/10), the last line when given. */
   carrier?: string;
+  /** A LINE order keyed on /staff/line-order (migration 0026) heads its block "ออเดอร์ LINE"; every other order "ออเดอร์เว็บ". */
+  channel?: "web" | "line";
 }): string {
   return [
-    `ออเดอร์เว็บ ${input.orderNumber}`,
+    `${input.channel === "line" ? "ออเดอร์ LINE" : "ออเดอร์เว็บ"} ${input.orderNumber}`,
     ...input.lines.map((l) => `${l.sku ?? "[ไม่มีรหัสคลัง]"} × ${l.quantity}  (${l.name})`),
     `ผู้รับ ${input.recipientName} ${input.phone}`,
     input.address,
