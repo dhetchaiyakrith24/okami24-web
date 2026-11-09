@@ -31,7 +31,6 @@ const ERROR_TH: Record<string, string> = {
   "slip-taken": "สลิปนี้ถูกใช้กับออเดอร์อื่นไปแล้ว — เลือกใบอื่น หรือเลือก ไม่มีสลิปในรายการ",
   "slip-amount": "ยอดสลิปไม่เท่ายอดออเดอร์ (รวมค่าส่งแล้ว) — ตรวจรายการสินค้า ราคาพิเศษ หรือเลือกสลิปใบอื่น",
   price: "ราคาพิเศษต้องเป็นตัวเลขบาท และไม่เกินราคาเว็บรวมค่าส่ง",
-  duplicate: "อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชม. ยังไม่ได้บันทึก",
 };
 
 /** /staff/line-order — save a LINE-chat order (src/lib/staff/line-orders.ts), then open it. */
@@ -40,7 +39,8 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   const parsed = parseLineOrderForm((name) => form.get(name));
   if (!parsed.ok) return { error: ERROR_TH[parsed.error] };
   const result = createLineOrder(parsed.input);
-  if (!result.ok && result.error === "duplicate") return { error: ERROR_TH.duplicate, duplicateOf: result.duplicateOf };
+  // One message, in the yellow box (checker 10/11 on #1362: a red line saying the same thing above it read twice).
+  if (!result.ok && result.error === "duplicate") return { error: null, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
   // Automation item 3: a keyed order whose slip confirmed it goes to Shipnity by itself while the owner's switches allow.
