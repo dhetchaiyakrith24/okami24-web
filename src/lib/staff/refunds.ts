@@ -13,7 +13,7 @@ import {
   type WaitingPost,
 } from "@/lib/staff/refund-rules";
 
-/** The refund records (migration 0026). Rules = refund-rules.ts. No text of a post, no name, no account is stored here. */
+/** The refund records (migration 0027). Rules = refund-rules.ts. No text of a post, no name, no account is stored here. */
 
 export const posterHash = (userId: string | undefined) =>
   userId ? crypto.createHash("sha256").update(userId).digest("hex").slice(0, 16) : null;

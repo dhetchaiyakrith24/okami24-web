@@ -3,7 +3,7 @@
  * LINE refunds (refund-rules.ts, owner 10/11 "ทาง 1"): reading the admin's post, tying it to a slip, partial refunds,
  * duplicates, and never guessing. The posts below follow the admin's real layout; names and accounts are made up.
  */
-import { decideRefund, netSatang, parseRefundPost, postForPicture, type SlipFact } from "./refund-rules";
+import { applyRefunds, decideRefund, netSatang, parseRefundPost, postForPicture, type SlipFact } from "./refund-rules";
 import { dailySales, type SalesSlip } from "./daily-sales-rules";
 import { formatRefundReply } from "../line/messages";
 
@@ -71,10 +71,13 @@ check("no user id, one post waiting → that post", postForPicture([{ id: 3, pos
 check("net: full refund = 0", netSatang(34000, 34000) === 0);
 check("net: never below zero", netSatang(34000, 99000) === 0);
 check("net: partial", netSatang(260000, 130000) === 130000);
-const s = (transRef: string, baht: number, at: string, refunded?: number): SalesSlip => ({ transRef, amountSatang: baht * 100, transferredAt: at, receiverStatus: "match", refundedSatang: refunded });
-const [day] = dailySales(["2026-11-04"], [], [s("A", 2600, "2026-11-04T08:36:00+07:00", 130000), s("B", 800, "2026-11-04T12:34:00+07:00", 80000), s("C", 500, "2026-11-04T15:00:00+07:00")], new Set());
+const s = (transRef: string, baht: number, at: string): SalesSlip => ({ transRef, amountSatang: baht * 100, transferredAt: at, receiverStatus: "match" });
+const netSlips = applyRefunds([s("A", 2600, "2026-11-04T08:36:00+07:00"), s("B", 800, "2026-11-04T12:34:00+07:00"), s("C", 500, "2026-11-04T15:00:00+07:00")], new Map([["A", 130000], ["B", 99999999]]));
+check("applyRefunds: partial leaves the rest, refunded kept", netSlips[0].amountSatang === 130000 && netSlips[0].refundedSatang === 130000, netSlips[0]);
+check("applyRefunds: never more than the slip", netSlips[1].amountSatang === 0 && netSlips[1].refundedSatang === 80000, netSlips[1]);
+check("applyRefunds: untouched slip has no refundedSatang", netSlips[2].amountSatang === 50000 && netSlips[2].refundedSatang === undefined, netSlips[2]);
+const [day] = dailySales(["2026-11-04"], [], netSlips, new Set());
 check("day LINE = slips minus their refunds (2,600−1,300 + 800−800 + 500)", day.lineSatang === 180000, day.lineSatang);
-check("day keeps the refunded total", day.refundedSatang === 210000, day.refundedSatang);
 check("the refunded slips are still listed", day.slips.length === 3);
 
 // --- the bot's reply carries amounts and a time only

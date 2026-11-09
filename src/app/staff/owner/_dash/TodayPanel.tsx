@@ -158,8 +158,8 @@ function SlipRows({ title, slips }: { title: string; slips: SalesSlip[] }) {
           <li key={s.transRef} className="flex items-baseline justify-between gap-3 py-1">
             <span className="min-w-0 truncate tabular-nums">{timeOf(s.transferredAt)} น.</span>
             <span className="flex shrink-0 flex-col items-end tabular-nums text-foreground">
-              {formatSatang(s.amountSatang)}
-              {(s.refundedSatang ?? 0) > 0 && <span className="text-xs text-unverified">คืนแล้ว {formatSatang(Math.min(s.amountSatang, s.refundedSatang ?? 0))}</span>}
+              {formatSatang(s.amountSatang + (s.refundedSatang ?? 0))}
+              {s.refundedSatang ? <span className="text-xs text-unverified">คืนแล้ว {formatSatang(s.refundedSatang)}</span> : null}
             </span>
           </li>
         ))}
@@ -179,6 +179,7 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
     );
   }
   const unpriced = profit?.unpriced ?? 0;
+  const refunded = day.slips.reduce((n, s) => n + (s.refundedSatang ?? 0), 0);
   return (
     <li>
       <details className="group">
@@ -188,7 +189,7 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
             <span className="text-sm tabular-nums text-foreground-muted">{split(day)}</span>
             {unpriced > 0 && <span className="text-sm text-unverified">ไม่มีทุน {unpriced} ออเดอร์</span>}
             {day.unclear.length > 0 && <span className="text-sm text-unverified">สลิปไม่แน่ใจ {day.unclear.length} ใบ</span>}
-            {day.refundedSatang > 0 && <span className="text-sm text-foreground-muted">หักคืนเงิน LINE {formatSatang(day.refundedSatang)}</span>}
+            {refunded > 0 && <span className="text-sm text-foreground-muted">หักคืนเงิน LINE {formatSatang(refunded)}</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">

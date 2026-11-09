@@ -13,10 +13,7 @@
  *      customer sent it in LINE): same amount, transferred from a day before the order to two days after, one slip per order.
  * Rule 2 can in theory hide a LINE sale of the same amount, so those slips are counted and shown (`heldAsWeb`).
  * "unclear" receivers are not counted either: nobody knows the money reached the shop. They are shown as a warning.
- * A LINE REFUND (owner 10/11 "ทาง 1", refund-rules.ts) comes off the slip it refunds, on that slip's day: the slip counts as
- *   its amount minus what was refunded, never below zero. The day keeps the refunded total to show it.
  */
-import { netSatang } from "@/lib/staff/refund-rules";
 
 export interface SalesOrder {
   orderNumber: string;
@@ -33,7 +30,7 @@ export interface SalesSlip {
   amountSatang: number;
   transferredAt: string;
   receiverStatus: string;
-  /** Matched LINE refunds of this slip (refund-rules.ts); absent = none. */
+  /** LINE refunds already taken off `amountSatang` (refund-rules.ts `applyRefunds`, owner 10/11); absent = none. */
   refundedSatang?: number;
 }
 
@@ -42,8 +39,6 @@ export interface DaySales {
   date: string;
   webSatang: number;
   lineSatang: number;
-  /** LINE refunds taken off this day's LINE slips. */
-  refundedSatang: number;
   totalSatang: number;
   orders: SalesOrder[];
   slips: SalesSlip[];
@@ -110,7 +105,7 @@ export function sortSlips(orders: SalesOrder[], slips: SalesSlip[], linkedRefs: 
  */
 export function dailySales(dates: string[], orders: SalesOrder[], slips: SalesSlip[], linkedRefs: ReadonlySet<string>): DaySales[] {
   const days = new Map<string, DaySales>(
-    dates.map((date) => [date, { date, webSatang: 0, lineSatang: 0, refundedSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [] }])
+    dates.map((date) => [date, { date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [] }])
   );
   for (const order of orders) {
     const day = days.get(bangkokDate(order.createdAt) ?? "");
@@ -125,9 +120,7 @@ export function dailySales(dates: string[], orders: SalesOrder[], slips: SalesSl
   for (const slip of sorted.line) {
     const day = dayOf(slip);
     if (!day) continue;
-    const net = netSatang(slip.amountSatang, slip.refundedSatang);
-    day.lineSatang += net;
-    day.refundedSatang += slip.amountSatang - net;
+    day.lineSatang += slip.amountSatang;
     day.slips.push(slip);
   }
   for (const day of days.values()) {

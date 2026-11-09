@@ -126,6 +126,16 @@ export function postForPicture(waiting: WaitingPost[], posterHash: string | null
   return null;
 }
 
+/** Slips as the sales readers count them: `amountSatang` becomes what is left after the slip's matched refunds, and
+ *  `refundedSatang` keeps what came off (the pages print both). Applied once, where the slips are read (daily-sales.ts),
+ *  so every figure built on them — the day, the 7 days, the same-hour comparison, the LINE round profit — is net. */
+export function applyRefunds<T extends { transRef: string; amountSatang: number }>(slips: T[], refunded: ReadonlyMap<string, number>): (T & { refundedSatang?: number })[] {
+  return slips.map((slip) => {
+    const off = Math.min(slip.amountSatang, refunded.get(slip.transRef) ?? 0);
+    return off > 0 ? { ...slip, amountSatang: slip.amountSatang - off, refundedSatang: off } : slip;
+  });
+}
+
 /** What a slip still counts as after its refunds. */
 export const netSatang = (amountSatang: number, refundedSatang: number | undefined) => Math.max(0, amountSatang - Math.min(amountSatang, refundedSatang ?? 0));
 
