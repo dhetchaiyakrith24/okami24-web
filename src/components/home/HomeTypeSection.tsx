@@ -34,8 +34,18 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
     const i = first.indexOf(slug);
     return i === -1 ? first.length : i;
   };
-  // the picks first, in their order; everything else keeps the catalog's order (stable sort)
-  items.sort((a, b) => rank(a.slug) - rank(b.slug));
+  // Sold out (as built) after everything that sells (owner 10/11 ~02:00, with the card "สินค้าหมด" badge: a customer should
+  // not spend the first cards of a row on things they cannot buy); within each group the picks first, in their order,
+  // then the catalog's order (stable sort). Build-time stock on purpose: the prerendered row never reshuffles after load —
+  // a product that sold out since the build shows its badge in place and moves at the next deploy.
+  const soldOut = (i: (typeof items)[number]) => {
+    if (i.published) return i.published.availabilityStatus === "out-of-stock";
+    const p = i.legacy;
+    if (!p) return false;
+    const options = [...(p.colorVariants ?? []), ...(p.flavorVariants ?? [])];
+    return options.length > 0 ? options.every((v) => v.availability === "out-of-stock") : p.availability === "out-of-stock";
+  };
+  items.sort((a, b) => Number(soldOut(a)) - Number(soldOut(b)) || rank(a.slug) - rank(b.slug));
   const category = getCategory(categories[0]);
   if (!items.length || !category) return null;
   const href = `/products/${category.slug}`;
