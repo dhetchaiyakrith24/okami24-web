@@ -8,6 +8,7 @@
 import type { OrderDetail } from "@/lib/commerce/orders";
 import type { SlipReason, SlipVerdict } from "@/lib/commerce/slip-decision";
 import type { SlipCheckResponse } from "@/lib/staff/slip-check-types";
+import { REASON_TH as REFUND_REASON_TH, type Decision, type SlipFact } from "@/lib/staff/refund-rules";
 import { trimLine1 } from "@/lib/commerce/address-line1";
 
 const baht = (n: number) => `฿${n.toLocaleString("th-TH", { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
@@ -74,6 +75,19 @@ export function formatRestartSlipReply(nowIso: string): string {
     "⏳ เว็บกำลังอัปเดต ตรวจสลิปนี้ไม่ทัน — ส่งรูปสลิปเดิมอีกครั้งในอีก 2–3 นาที",
     `ถ้าผลรอบใหม่บอกว่า "เคยตรวจแล้ว" ครั้งแรกราว ${bangkokTime(nowIso)} = ครั้งนี้เอง ไม่ใช่สลิปซ้ำ`,
   ].join("\n");
+}
+
+/** The bot's answer under a refund post's slip picture in the refund group (owner 10/11 "ทาง 1"). Never the customer's
+ *  name, bank or account — only the amounts, the slip's time and what staff must do when it could not match. */
+export function formatRefundReply(decision: Decision, amountSatang: number | null, slip: SlipFact | null): string {
+  const amount = amountSatang === null ? "" : ` ${baht(amountSatang / 100)}`;
+  if (decision.status === "matched") {
+    const partial = slip && amountSatang !== null && amountSatang < slip.amountSatang ? ` (คืนบางส่วน จากสลิป ${baht(slip.amountSatang / 100)})` : "";
+    const when = slip ? ` ของสลิปโอน ${bangkokTime(slip.transferredAt)}` : "";
+    return `↩️ บันทึกคืนเงิน${amount}${when}${partial} แล้ว · ยอดขาย LINE หักให้แล้ว`;
+  }
+  if (decision.status === "duplicate") return `↩️ คืนเงิน${amount} ของสลิปนี้บันทึกไว้แล้ว · ไม่นับซ้ำ`;
+  return `⚠️ ยังจับคู่คืนเงิน${amount} กับสลิปไม่ได้ — ${REFUND_REASON_TH[decision.reason]} · ทีมงานจับคู่เองได้ที่หน้าตรวจสลิป`;
 }
 
 /** The bot's answer to a slip dropped into the "OKM Slip" group — the same verdicts as the staff page. */
