@@ -2,7 +2,7 @@
  * Run: npx tsx src/lib/staff/daily-sales-contract-test.ts
  * The rules of the daily sales page (daily-sales-rules.ts): what counts, and that no slip counts twice. Made-up figures.
  */
-import { bangkokDate, dailySales, lastDates, type SalesOrder, type SalesSlip } from "./daily-sales-rules";
+import { bangkokDate, costedPerOrder, dailySales, lastDates, lineBillSales, type SalesOrder, type SalesSlip } from "./daily-sales-rules";
 
 let failed = 0;
 function check(name: string, ok: boolean): void {
@@ -16,6 +16,14 @@ const order = (orderNumber: string, total: number, createdAt: string, hasSlipRef
   total,
   createdAt,
   hasSlipRef,
+  channel: "web",
+  sentByUs: false,
+});
+/** A LINE-chat order staff keyed on /staff/line-order (migration 0026). */
+const lineOrder = (orderNumber: string, total: number, createdAt: string, hasSlipRef = true, sentByUs = false): SalesOrder => ({
+  ...order(orderNumber, total, createdAt, hasSlipRef),
+  channel: "line",
+  sentByUs,
 });
 const slip = (transRef: string, baht: number, transferredAt: string, receiverStatus = "match"): SalesSlip => ({
   transRef,
@@ -78,6 +86,26 @@ const [early] = dailySales(
   new Set()
 );
 check("an order before the first date still claims its slip", early.lineSatang === 0 && early.heldAsWeb.length === 1 && early.webSatang === 0);
+
+// LINE orders keyed on the web (owner list ก11, 09/11): one order + its slip = counted once, under LINE.
+{
+  const keyedSlip = slip("K1", 590, "2026-11-07T10:05:00+07:00");
+  const before = dailySales(["2026-11-07"], [], [keyedSlip], new Set())[0];
+  const [after] = dailySales(["2026-11-07"], [lineOrder("L1", 590, "2026-11-07T03:10:00.000Z")], [keyedSlip], new Set(["K1"]));
+  check("keyed LINE order with its slip: LINE once, web untouched", after.lineSatang === 59_000 && after.webSatang === 0 && after.slips.length === 0 && after.lineOrders.length === 1);
+  check("keying a LINE order does not change the day's total (the slip was already LINE money)", after.totalSatang === before.totalSatang);
+  const [noRef] = dailySales(["2026-11-07"], [lineOrder("L2", 590, "2026-11-07T03:10:00.000Z", false)], [keyedSlip], new Set());
+  check("keyed LINE order whose slip was not picked: rule 2 still holds the slip, counted once", noRef.lineSatang === 59_000 && noRef.heldAsWeb.length === 1 && noRef.slips.length === 0);
+  const from = Date.parse("2026-11-07T00:00:00+07:00");
+  const to = Date.parse("2026-11-08T00:00:00+07:00");
+  const loose = slip("LOOSE", 300, "2026-11-07T12:00:00+07:00");
+  const weekBefore = lineBillSales([], [keyedSlip, loose], new Set(), from, to);
+  const weekKeyed = lineBillSales([lineOrder("L1", 590, "2026-11-07T03:10:00.000Z")], [keyedSlip, loose], new Set(["K1"]), from, to);
+  check("weekly LINE (vs Okami rows): keying an order the admin also put in Shipnity changes nothing", weekBefore === 89_000 && weekKeyed === 89_000);
+  const weekSent = lineBillSales([lineOrder("L1", 590, "2026-11-07T03:10:00.000Z", true, true)], [keyedSlip, loose], new Set(["K1"]), from, to);
+  check("weekly LINE: an order our site sent to the warehouse leaves the Okami side (costed per order)", weekSent === 30_000);
+  check("per-order cost covers web orders and sent LINE orders only", costedPerOrder({ channel: "web", sentByUs: false }) && costedPerOrder({ channel: "line", sentByUs: true }) && !costedPerOrder({ channel: "line", sentByUs: false }));
+}
 
 const [empty] = dailySales(["2026-11-07"], [], [], new Set());
 check("a day with nothing is a row of zeros", empty.totalSatang === 0 && empty.orders.length === 0);

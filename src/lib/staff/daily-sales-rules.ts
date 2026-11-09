@@ -13,7 +13,16 @@
  *      customer sent it in LINE): same amount, transferred from a day before the order to two days after, one slip per order.
  * Rule 2 can in theory hide a LINE sale of the same amount, so those slips are counted and shown (`heldAsWeb`).
  * "unclear" receivers are not counted either: nobody knows the money reached the shop. They are shown as a warning.
+ *
+ * LINE ORDERS KEYED ON THE WEB (owner list ก11, 09/11 — migration 0026 `channel`): staff key a LINE-chat order on
+ * /staff/line-order and pick its slip there, so rules 1 and 2 treat it like any order (its slip leaves the loose slips).
+ * Its money then counts ONCE, under LINE, on the day it was keyed — never under web. Two money paths stay apart for the
+ * owner's weekly profit (`lineBillSales`): a LINE order the admin also keyed into Shipnity sits on the bill as an "Okami"
+ * row, so it belongs with the loose LINE slips (slips − Okami rows); one our site sent to the warehouse itself
+ * (`sentByUs`) is on the bill like a web order and is costed per order instead (src/lib/owner/bills.ts, costs.ts).
  */
+
+export type SalesChannel = "web" | "line";
 
 export interface SalesOrder {
   orderNumber: string;
@@ -23,6 +32,10 @@ export interface SalesOrder {
   createdAt: string;
   /** True when a payment on this order carries a bank reference. */
   hasSlipRef: boolean;
+  /** Where the order came from (migration 0026); every order before it is "web". */
+  channel: SalesChannel;
+  /** Our site sent it to the warehouse (woo_order_sends status sent) — the bill then shows it like a web order. */
+  sentByUs: boolean;
 }
 
 export interface SalesSlip {
@@ -38,7 +51,10 @@ export interface DaySales {
   webSatang: number;
   lineSatang: number;
   totalSatang: number;
+  /** Web orders only. */
   orders: SalesOrder[];
+  /** LINE orders staff keyed on the web; their money is inside `lineSatang`. */
+  lineOrders: SalesOrder[];
   slips: SalesSlip[];
   unclear: SalesSlip[];
   heldAsWeb: SalesSlip[];
@@ -103,13 +119,18 @@ export function sortSlips(orders: SalesOrder[], slips: SalesSlip[], linkedRefs: 
  */
 export function dailySales(dates: string[], orders: SalesOrder[], slips: SalesSlip[], linkedRefs: ReadonlySet<string>): DaySales[] {
   const days = new Map<string, DaySales>(
-    dates.map((date) => [date, { date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [] }])
+    dates.map((date) => [date, { date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], lineOrders: [], slips: [], unclear: [], heldAsWeb: [] }])
   );
   for (const order of orders) {
     const day = days.get(bangkokDate(order.createdAt) ?? "");
     if (!day) continue;
-    day.webSatang += order.total * 100;
-    day.orders.push(order);
+    if (order.channel === "line") {
+      day.lineSatang += order.total * 100;
+      day.lineOrders.push(order);
+    } else {
+      day.webSatang += order.total * 100;
+      day.orders.push(order);
+    }
   }
   const sorted = sortSlips(orders, slips, linkedRefs);
   const dayOf = (slip: SalesSlip) => days.get(bangkokDate(slip.transferredAt) ?? "");
@@ -124,7 +145,32 @@ export function dailySales(dates: string[], orders: SalesOrder[], slips: SalesSl
   for (const day of days.values()) {
     day.totalSatang = day.webSatang + day.lineSatang;
     day.orders.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+    day.lineOrders.sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
     day.slips.sort((a, b) => Date.parse(b.transferredAt) - Date.parse(a.transferredAt));
   }
   return dates.map((date) => days.get(date)!);
 }
+
+/**
+ * Satang of LINE money that the warehouse bill's "Okami" rows stand against, for the owner's weekly profit (slips − Okami
+ * rows): loose LINE slips transferred in [fromMs, toMs), plus LINE orders keyed on the web in that stretch that our site
+ * did NOT send to the warehouse (the admin keyed those into Shipnity too). A keyed order's own slip is not loose (rule 1),
+ * so it is counted here once, as the order. A LINE order our site sent is costed per order like a web order instead.
+ */
+export function lineBillSales(orders: SalesOrder[], slips: SalesSlip[], linkedRefs: ReadonlySet<string>, fromMs: number, toMs: number): number {
+  const inside = (iso: string) => {
+    const at = Date.parse(iso);
+    return at >= fromMs && at < toMs;
+  };
+  const loose = sortSlips(orders, slips, linkedRefs).line.filter((s) => inside(s.transferredAt));
+  const keyed = orders.filter((o) => o.channel === "line" && !o.sentByUs && inside(o.createdAt));
+  return loose.reduce((n, s) => n + s.amountSatang, 0) + keyed.reduce((n, o) => n + o.total * 100, 0);
+}
+
+/** Orders the per-order cost and the bill's "(ว่าง)" rows cover: web orders, and LINE orders our site sent to the warehouse. */
+export function costedPerOrder(order: { channel: SalesChannel; sentByUs: boolean }): boolean {
+  return order.channel === "web" || order.sentByUs;
+}
+
+/** `costedPerOrder` as a SQL condition on `orders o`, for the readers that query orders directly. */
+export const COSTED_PER_ORDER_SQL = "(o.channel = 'web' OR EXISTS (SELECT 1 FROM woo_order_sends w WHERE w.order_id = o.id AND w.status = 'sent'))";

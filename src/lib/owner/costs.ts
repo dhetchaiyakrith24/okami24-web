@@ -1,7 +1,7 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
 import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
-import { bangkokDate, CONFIRMED_ORDER_STATUSES, lastDates } from "@/lib/staff/daily-sales-rules";
+import { bangkokDate, CONFIRMED_ORDER_STATUSES, COSTED_PER_ORDER_SQL, lastDates } from "@/lib/staff/daily-sales-rules";
 import { warehouseCode } from "@/lib/staff/orders-export";
 import { WAREHOUSE_SHIPPING_FEE_THB } from "@/lib/woo/order-json";
 import { dailyProfit, productCode, type CostRow, type DatedCost, type DayProfit, type ProfitOrder } from "@/lib/owner/cost-rules";
@@ -61,7 +61,7 @@ function confirmedOrders(sinceIso: string): ProfitOrder[] {
     .prepare(
       `SELECT o.order_number, o.run_number, o.total, o.created_at, i.product_slug, i.variant_id, i.quantity
          FROM orders o JOIN order_items i ON i.order_id = o.id
-        WHERE o.status IN (${statuses}) AND o.created_at >= ?
+        WHERE o.status IN (${statuses}) AND ${COSTED_PER_ORDER_SQL} AND o.created_at >= ?
         ORDER BY o.id DESC, i.id ASC`
     )
     .all(sinceIso) as OrderLineRow[];

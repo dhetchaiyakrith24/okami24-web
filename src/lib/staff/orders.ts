@@ -98,6 +98,10 @@ export function countByJob(): Record<StaffJob, number> {
 
 export interface StaffOrderDetail extends OrderDetail {
   customerPhone: string;
+  /** Where the order came from (migration 0026): "line" = staff keyed it on /staff/line-order. */
+  channel: "web" | "line";
+  /** The name typed by whoever keyed a LINE order; null for web orders. */
+  keyedBy: string | null;
   trackingNumber: string | null;
   /** The customer's optional note to the shop from the review step (cart UX batch C) — staff page only. */
   customerNote: string | null;
@@ -125,8 +129,8 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   if (!order) return null;
   const db = getDb();
   const extra = db
-    .prepare("SELECT o.tracking_number, o.customer_note, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
-    .get(order.id) as { tracking_number: string | null; customer_note: string | null; phone: string };
+    .prepare("SELECT o.tracking_number, o.customer_note, o.channel, o.keyed_by, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
+    .get(order.id) as { tracking_number: string | null; customer_note: string | null; channel: string; keyed_by: string | null; phone: string };
   const slipRow = db
     .prepare(
       "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at, proof_image_path, slip_image_deleted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
@@ -158,6 +162,8 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   return {
     ...order,
     customerPhone: extra.phone,
+    channel: extra.channel === "line" ? "line" : "web",
+    keyedBy: extra.keyed_by,
     trackingNumber: extra.tracking_number,
     customerNote: extra.customer_note,
     slip: slipRow
@@ -181,6 +187,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
       phone: a.phone,
       address: `${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
       carrier: SHIPNITY_CARRIER_NAME[toStaffCarrierId(order.carrier) ?? pickCarrier(a.postalCode)],
+      channel: extra.channel === "line" ? "line" : "web",
     }),
   };
 }

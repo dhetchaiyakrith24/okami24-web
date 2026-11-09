@@ -100,6 +100,9 @@ export default async function StaffPage() {
 
       {/* Owner list ก11: the customer card and the parcel check, on the same quiet kind of line. */}
       <nav aria-label="ลูกค้าและพัสดุ" className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-foreground-muted">
+        <Link href="/staff/line-order" className="inline-flex min-h-11 items-center font-semibold text-ember hover:text-ember-strong">
+          + คีย์ออเดอร์ LINE
+        </Link>
         <Link href="/staff/customers" className="inline-flex min-h-11 items-center hover:text-foreground">
           ลูกค้า →
         </Link>

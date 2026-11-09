@@ -49,7 +49,7 @@ function fromRow(row: AddressRow): AddressRecord {
 export type AddressError = "missing" | "phone" | "houseNumber" | "postal";
 
 /** `{ error }` = refused (why); otherwise the input with the place in the data's own spelling (thai-postcodes.ts). */
-function validate(input: AddressInput): { error: AddressError } | { input: AddressInput } {
+export function validateAddress(input: AddressInput): { error: AddressError } | { input: AddressInput } {
   const required = [input.recipientName, input.phone, input.line1, input.subdistrict, input.district, input.province];
   if (required.some((v) => !v.trim())) return { error: "missing" };
   // A number the courier can call: 9–10 digits starting with 0 (mobile or landline), dashes and spaces allowed.
@@ -107,7 +107,7 @@ export async function listAddresses(): Promise<AddressRecord[]> {
 }
 
 export async function addAddress(raw: AddressInput, makeDefault: boolean): Promise<{ ok: true; id: number } | { ok: false; error: AddressError }> {
-  const checked = validate(raw);
+  const checked = validateAddress(raw);
   if ("error" in checked) return { ok: false, error: checked.error };
   const input = checked.input;
 
@@ -147,7 +147,7 @@ export async function addAddress(raw: AddressInput, makeDefault: boolean): Promi
  * of the address (`order_shipping_addresses`), so editing or deleting here never changes an order already placed.
  */
 export async function updateAddress(addressId: number, raw: AddressInput): Promise<{ ok: true; id: number } | { ok: false; error: AddressError | "not-found" }> {
-  const checked = validate(raw);
+  const checked = validateAddress(raw);
   if ("error" in checked) return { ok: false, error: checked.error };
   const input = checked.input;
   const customer = await requireCustomer();
