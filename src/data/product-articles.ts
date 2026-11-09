@@ -7846,6 +7846,217 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), RELX disposables with no maker page (THAI_STYLE §5 exception 07/11): Sparta 20K. No new product fact here —
+  // the flavour names are this page's own flavour list (3-shop sources in src/data/products/relx.ts) and the groups are the shop's,
+  // from the words in each name. Smash Go 12K figures = its verified rows (relxnow.com). Left out on purpose: the display, airflow and
+  // modes (tagline + shortDescription + features already say them), and every number for this model (its puff row is unverified).
+  // en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. Legacy page → no article FAQ.
+  "relx-sparta-20k": {
+    th: {
+      lede: "RELX Sparta 20K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับพอตใช้แล้วทิ้งรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Sparta 20K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Double Mint กับ Raspberry Mint ส่วนสายชามี Oolong Ice Tea",
+            "สายผลไม้มี 9 กลิ่น คือ Apple · Blueberry · Grape · Grape Lychee · Mixberry · Peach Strawberry · Pineapple · Strawberry และ Watermelon",
+            "แนวขนมและเครื่องดื่มมี Cola · Mineral Water · Rainbow Candy และ Sour Gummy",
+          ],
+        },
+        {
+          heading: "RELX Sparta 20K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ส่วน [RELX Novo 14K](/products/relx-novo-14k) มีกลิ่นที่ชื่อตรงกับรุ่นนี้หลายกลิ่น เช่น Apple · Blueberry · Double Mint และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็มีให้เลือกทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Sparta 20K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX disposables.",
+      sections: [
+        {
+          heading: "Which RELX Sparta 20K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Double Mint and Raspberry Mint, and tea has Oolong Ice Tea.",
+            "Fruit has nine: Apple, Blueberry, Grape, Grape Lychee, Mixberry, Peach Strawberry, Pineapple, Strawberry and Watermelon.",
+            "Sweets and drinks are Cola, Mineral Water, Rainbow Candy and Sour Gummy.",
+          ],
+        },
+        {
+          heading: "How does the RELX Sparta 20K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "The [RELX Novo 14K](/products/relx-novo-14k) shares several flavour names with this one, such as Apple, Blueberry, Double Mint and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Sparta 20K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 的其他一次性型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Sparta 20K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Double Mint 和 Raspberry Mint，茶类有 Oolong Ice Tea。",
+            "水果类有 9 款：Apple、Blueberry、Grape、Grape Lychee、Mixberry、Peach Strawberry、Pineapple、Strawberry 和 Watermelon。",
+            "糖果和饮品类有 Cola、Mineral Water、Rainbow Candy 和 Sour Gummy。",
+          ],
+        },
+        {
+          heading: "RELX Sparta 20K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "[RELX Novo 14K](/products/relx-novo-14k) 有好几款口味名称和这款相同，例如 Apple、Blueberry、Double Mint 和 Watermelon，喜欢这些口味的话，两款都有。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX Novo 14K — same basis as Sparta 20K above (flavour names = this page's list; groups = the shop's; Smash Go
+  // figures = its verified rows). Left out: the display and USB-C (tagline + shortDescription + feature) and every number for this model.
+  "relx-novo-14k": {
+    th: {
+      lede: "RELX Novo 14K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับพอตใช้แล้วทิ้งรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Novo 14K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายเย็นมี Double Mint กับ Sour Lime Ice ส่วนสายชามี LongJing Ice Tea",
+            "สายผลไม้มี 9 กลิ่น คือ Apple · Blueberry · Grape · Grape Apple · Mixed Berry · Sea Salt Lemon · Sour Berry · Strawberry และ Watermelon",
+            "แนวเครื่องดื่มและขนมมี Orange Soda กับ Sour Bubblegum",
+          ],
+        },
+        {
+          heading: "RELX Novo 14K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ส่วน [RELX Sparta 20K](/products/relx-sparta-20k) มีกลิ่นที่ชื่อตรงกับรุ่นนี้หลายกลิ่น เช่น Apple · Blueberry · Double Mint และ Watermelon แล้วยังมีแนวขนมอย่าง Rainbow Candy กับ Sour Gummy ให้เลือกเพิ่มด้วย",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Novo 14K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX disposables.",
+      sections: [
+        {
+          heading: "Which RELX Novo 14K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Cool flavours are Double Mint and Sour Lime Ice, and tea is LongJing Ice Tea.",
+            "Fruit has nine: Apple, Blueberry, Grape, Grape Apple, Mixed Berry, Sea Salt Lemon, Sour Berry, Strawberry and Watermelon.",
+            "Drinks and sweets are Orange Soda and Sour Bubblegum.",
+          ],
+        },
+        {
+          heading: "How does the RELX Novo 14K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "The [RELX Sparta 20K](/products/relx-sparta-20k) shares several flavour names with this one, such as Apple, Blueberry, Double Mint and Watermelon, and adds sweets such as Rainbow Candy and Sour Gummy.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Novo 14K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 的其他一次性型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Novo 14K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "清凉类有 Double Mint 和 Sour Lime Ice，茶类有 LongJing Ice Tea。",
+            "水果类有 9 款：Apple、Blueberry、Grape、Grape Apple、Mixed Berry、Sea Salt Lemon、Sour Berry、Strawberry 和 Watermelon。",
+            "饮品和糖果类有 Orange Soda 和 Sour Bubblegum。",
+          ],
+        },
+        {
+          heading: "RELX Novo 14K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "[RELX Sparta 20K](/products/relx-sparta-20k) 有好几款口味名称和这款相同，例如 Apple、Blueberry、Double Mint 和 Watermelon，另外还多了 Rainbow Candy、Sour Gummy 这类糖果口味。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX Diva 30K — same basis as Sparta 20K above (flavour names = this page's list, incl. the five whose names end in
+  // 5%; groups = the shop's; Smash Go figures = its verified rows). Left out: the display and ECO/BOOST (tagline + shortDescription + features)
+  // and every number for this model except the 5% printed in flavour names (said once here — the shortDescription has it once; thai-copy 09/11).
+  "relx-diva-30k": {
+    th: {
+      lede: "RELX Diva 30K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Diva 30K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Double Mint กับ Spearmint",
+            "สายผลไม้มี 7 กลิ่น คือ Fresh Melon · Grape · Grape Aloe · Mango Passion Fruit · Mix Berry · Orange Splash และ Watermelon",
+            "แนวขนมและเครื่องดื่มมี Cola · Mineral Water และ Strawberry Ice Cream",
+            "ชื่อที่มี 5% ต่อท้ายมี 5 กลิ่น คือ Cola 5% · Double Mint 5% · Grape 5% · Watermelon 5% และ Copico Coffee 5% ส่วน Copico Coffee มีให้เลือกแบบเดียวคือ Copico Coffee 5% ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
+          ],
+        },
+        {
+          heading: "RELX Diva 30K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ถ้าอยากเทียบกลิ่นกับ RELX อีกรุ่น [RELX Sparta 20K](/products/relx-sparta-20k) ก็มีกลิ่นชื่อเดียวกันอย่าง Cola กับ Mineral Water",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Diva 30K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX models.",
+      sections: [
+        {
+          heading: "Which RELX Diva 30K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Double Mint and Spearmint.",
+            "Fruit has seven: Fresh Melon, Grape, Grape Aloe, Mango Passion Fruit, Mix Berry, Orange Splash and Watermelon.",
+            "Sweets and drinks are Cola, Mineral Water and Strawberry Ice Cream.",
+            "Five names end in 5%: Cola 5%, Double Mint 5%, Grape 5%, Watermelon 5% and Copico Coffee 5%. Copico Coffee comes only as Copico Coffee 5%. Check the name in the list before you choose.",
+          ],
+        },
+        {
+          heading: "How does the RELX Diva 30K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "For another RELX with some of the same flavour names, the [RELX Sparta 20K](/products/relx-sparta-20k) also has Cola and Mineral Water.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Diva 30K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 其他型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Diva 30K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Double Mint 和 Spearmint。",
+            "水果类有 7 款：Fresh Melon、Grape、Grape Aloe、Mango Passion Fruit、Mix Berry、Orange Splash 和 Watermelon。",
+            "糖果和饮品类有 Cola、Mineral Water 和 Strawberry Ice Cream。",
+            "名称以 5% 结尾的有 5 款：Cola 5%、Double Mint 5%、Grape 5%、Watermelon 5% 和 Copico Coffee 5%，其中 Copico Coffee 只有 Copico Coffee 5% 一种。选择前请核对列表里的名称。",
+          ],
+        },
+        {
+          heading: "RELX Diva 30K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "想和 RELX 另一款比较口味，[RELX Sparta 20K](/products/relx-sparta-20k) 也有同名的 Cola 和 Mineral Water。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
