@@ -32,3 +32,12 @@ Ranked by money and customer harm (1 = worst).
 4. Duplicate warning (#2). 5. Edit address before send (#7). 6. Cancel note for Shipnity (#4) + double-ship guard (#1) —
 before the switch goes ON. Owner decisions waiting: #5 discounts, #1 when to turn the switch ON,
 #4/#9 ask the warehouse.
+
+## Owner answers (10/11 ~02:00, relayed by Friday) — these settle the "who decides" rows
+- **#13 daily count:** once orders are keyed on the web the admin stops posting them in the LINE room — the web IS the
+  daily count. Build: a per-day count of keyed LINE orders (and web orders) on /staff so the owner sees it there.
+- **#5 special prices:** the admin may decide and give discounts. Build: an admin-entered price or discount per order,
+  recording who gave it and the catalogue price beside it. No cap.
+- **#1 switch ON:** only after keying works AND the warehouse reopens.
+- **#4 / #9 warehouse questions:** the owner asks the warehouse later. Until then, when the web cannot push an update or a
+  cancel, the admin tells the warehouse admin directly — keep the warnings in the UI.
