@@ -22,7 +22,7 @@ import { DUPLICATE_WINDOW_MS, findDuplicate, pickableSlips, slipFits, specialPri
  */
 
 export type CreateLineOrderResult =
-  | { ok: true; orderNumber: string; confirmed: boolean }
+  | { ok: true; orderNumber: string; confirmed: boolean; discount: number | null }
   | { ok: false; error: "address" | "phone" | "postal" | "house" | "item" | "stock" | "slip-taken" | "slip-amount" | "price" }
   | { ok: false; error: "duplicate"; duplicateOf: string };
 
@@ -103,10 +103,10 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
     const orderId = Number(
       db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, channel, keyed_by, discount, discount_by, discount_reason)
-           VALUES (?, ?, ?, NULL, 'payment_submitted', ?, ?, ?, ?, 'bank_transfer', 'line', ?, ?, ?, ?)`
+          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, channel, keyed_by, discount, discount_by, discount_reason, discount_by_staff_id)
+           VALUES (?, ?, ?, NULL, 'payment_submitted', ?, ?, ?, ?, 'bank_transfer', 'line', ?, ?, ?, ?, ?)`
         )
-        .run(orderNumber, crypto.randomBytes(16).toString("hex"), customer.id, totals.subtotal, totals.shippingFee, totals.shippingRule, total, input.keyedBy, special.discount, special.discount ? input.keyedBy : null, special.discount ? input.priceReason || null : null)
+        .run(orderNumber, crypto.randomBytes(16).toString("hex"), customer.id, totals.subtotal, totals.shippingFee, totals.shippingRule, total, input.keyedBy, special.discount, special.discount ? input.keyedBy : null, special.discount ? input.priceReason || null : null, special.discount ? (input.keyedByStaffId ?? null) : null)
         .lastInsertRowid
     );
     const insertItem = db.prepare(
@@ -129,12 +129,12 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
     // Waiting for the money, like a web order whose slip came in: the next step (confirm) is the slip's, below or by hand.
     db.prepare("UPDATE orders SET status = 'awaiting_verification' WHERE id = ?").run(orderId);
     history_.run(orderId, "awaiting_verification", null);
-    return { ok: true, orderNumber, confirmed: false, slipChecked: slip !== undefined };
+    return { ok: true, orderNumber, confirmed: false, discount: special.discount, slipChecked: slip !== undefined };
   })();
 
   if (!result.ok) return result;
   // The slip check already saw this slip reach the shop's account with the exact total = the money is confirmed, the same
   // step staff press on a web order (it assigns the running number and its history row).
   const confirmed = result.slipChecked ? applyStaffAction(result.orderNumber, "confirm", { note: "LINE order — slip from the slip check" }).ok : false;
-  return { ok: true, orderNumber: result.orderNumber, confirmed };
+  return { ok: true, orderNumber: result.orderNumber, confirmed, discount: result.discount };
 }

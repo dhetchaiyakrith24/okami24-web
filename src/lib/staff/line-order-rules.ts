@@ -43,6 +43,9 @@ export interface LineOrderInput {
   agreedTotal?: number | null;
   /** The admin's short reason for the special price. */
   priceReason?: string;
+  /** The signed-in staff account that keyed it (staff-accounts, migration 0029) — set by the server, never from the form;
+   *  null / absent = the shared team password. Stored beside a special price as discount_by_staff_id. */
+  keyedByStaffId?: number | null;
 }
 
 export type LineOrderError = "phone" | "keyed-by" | "items" | "missing" | "price";

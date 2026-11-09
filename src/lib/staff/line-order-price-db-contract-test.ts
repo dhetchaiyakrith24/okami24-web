@@ -55,11 +55,11 @@ async function main(): Promise<void> {
     const at = new Date(Date.now() - 1_800_000).toISOString();
     db.prepare("INSERT INTO slip_checks (trans_ref, amount_satang, transferred_at, receiver_status, first_checked_at, last_checked_at) VALUES (?,?,?,?,?,?)").run("T-SP", agreed * 100, at, "match", at, at);
 
-    const a = createLineOrder({ ...base, slipRef: "T-SP", agreedTotal: agreed, priceReason: "ลูกค้าประจำ" });
-    const row = db.prepare("SELECT id, status, subtotal, shipping_fee, total, discount, discount_by, discount_reason FROM orders WHERE order_number = ?").get(a.ok ? a.orderNumber : "") as Record<string, number | string | null>;
+    const a = createLineOrder({ ...base, slipRef: "T-SP", agreedTotal: agreed, priceReason: "ลูกค้าประจำ", keyedByStaffId: 7 });
+    const row = db.prepare("SELECT id, status, subtotal, shipping_fee, total, discount, discount_by, discount_reason, discount_by_staff_id FROM orders WHERE order_number = ?").get(a.ok ? a.orderNumber : "") as Record<string, number | string | null>;
     check("special price: the slip of the agreed total confirms the order", a.ok && a.confirmed && row.status === "approved", { a, row });
     check("special price: total = agreed; items + shipping stay at catalogue prices", row.total === agreed && Number(row.subtotal) + Number(row.shipping_fee) === web(2), { row, agreed, web: web(2) });
-    check("special price: discount, who and why stored", row.discount === 37 && row.discount_by === "แอดมินทดสอบ" && row.discount_reason === "ลูกค้าประจำ", row);
+    check("special price: discount, who (name + staff account) and why stored; the result carries the discount", a.ok && a.discount === 37 && row.discount === 37 && row.discount_by === "แอดมินทดสอบ" && row.discount_by_staff_id === 7 && row.discount_reason === "ลูกค้าประจำ", { a, row });
     const note = db.prepare("SELECT note FROM order_status_history WHERE order_id = ? AND note LIKE '%special price%'").get(row.id) as { note: string } | undefined;
     check("special price: history row with the web and agreed totals", note?.note === `Staff (แอดมินทดสอบ): special price ${web(2)} → ${agreed} THB — ลูกค้าประจำ`, note);
     const today = salesDays()[0];
