@@ -60,7 +60,7 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
         {password && (
           <>
             {google && <p className="text-xs text-foreground-dim">หรือใช้รหัสทีมงาน (แบบเดิม)</p>}
-            <StaffLogin />
+            <StaffLogin secondary={google} />
           </>
         )}
       </Container>
