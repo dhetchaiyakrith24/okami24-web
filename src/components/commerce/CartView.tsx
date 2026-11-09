@@ -9,7 +9,6 @@ import { updateQuantityAction, removeItemAction } from "@/app/cart/actions";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { CartSuggestions } from "@/components/commerce/CartSuggestions";
 import { ShippingNote } from "@/components/commerce/ShippingNote";
-import { ShippingDelayBanner } from "@/components/commerce/ShippingDelayNotice";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { CartSuggestion } from "@/lib/commerce/cart-suggestions";
 
@@ -133,12 +132,9 @@ export function CartView({ cart, suggestions }: { cart: CartViewData; suggestion
                   {cart.lines.some((l) => l.problem) ? dict.cart.fixIssuesNote : dict.cart.fixQuantityNote}
                 </p>
               ) : (
-                <>
-                <ShippingDelayBanner className="mt-3" />
                 <Button href="/checkout" className="mt-3 w-full justify-center">
                   {dict.cart.checkoutCta}
                 </Button>
-                </>
               )}
               <Button href="/products" variant="ghost" className="w-full justify-center py-2">
                 {dict.cart.continueShoppingCta}
