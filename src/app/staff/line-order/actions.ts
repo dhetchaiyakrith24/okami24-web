@@ -2,11 +2,13 @@
 
 import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { parseLineOrderForm } from "@/lib/staff/line-order-rules";
+import { parseItems, parseLineOrderForm } from "@/lib/staff/line-order-rules";
 import { createLineOrder } from "@/lib/staff/line-orders";
+import { changeLineOrderItems } from "@/lib/staff/line-order-edit";
 import { parsePastedOrder, type PasteResult } from "@/lib/staff/line-order-paste-rules";
 import { stockBook } from "@/lib/staff/stock-book";
 import { placesForPostcode } from "@/lib/commerce/thai-postcodes";
+import { isStaffJob } from "@/lib/staff/jobs";
 
 export interface LineOrderState {
   error: string | null;
@@ -45,4 +47,38 @@ export async function parsePasteAction(text: string): Promise<PasteResult | null
     .map((p) => ({ slug: p.slug, name: p.name, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
     .filter((p) => p.options.length > 0);
   return parsePastedOrder(String(text).slice(0, 4000), products, placesForPostcode);
+}
+
+/** Why "แก้รายการสินค้า" did not save (src/lib/staff/line-order-edit.ts). Nothing is changed on any of these. */
+const CHANGE_ERROR_TH: Record<string, string> = {
+  "not-line": "แก้รายการได้เฉพาะออเดอร์ LINE ที่คีย์ในหลังบ้าน",
+  status: "แก้รายการได้เฉพาะออเดอร์ที่รอยืนยันยอดหรือยืนยันยอดแล้ว และยังไม่ส่งคลัง — โหลดหน้าใหม่ดูสถานะล่าสุด",
+  sent: "ออเดอร์นี้ส่งเข้าคลังแล้ว แก้ในเว็บไม่ได้ — แจ้งแอดมินคลังให้แก้ใน Shipnity",
+  stock: "ออเดอร์นี้มีเรื่องสินค้าหมด แก้รายการไม่ได้ — ใช้กล่องสินค้าหมดหลังลูกค้าโอน",
+  "not-found": "ไม่พบออเดอร์นี้",
+  "only-add": "ลูกค้าโอนแล้ว เพิ่มได้อย่างเดียว — เอาของออกหรือลดจำนวน ใช้กล่องสินค้าหมดหลังลูกค้าโอน (คืนเงิน) หรือยกเลิก",
+  item: "มีสินค้าที่ขายไม่ได้แล้ว — เอาออกแล้วเลือกใหม่",
+  stockOut: "มีสินค้าที่หมดสต็อก — เอาออกหรือเลือกตัวเลือกอื่น",
+  "slip-taken": "สลิปนี้ถูกใช้กับออเดอร์อื่นไปแล้ว — เลือกใบอื่น หรือเลือก ไม่มีสลิปในรายการ",
+  "slip-amount": "ยอดสลิปไม่เท่ายอดที่ต้องโอนเพิ่ม — ตรวจรายการสินค้าหรือเลือกสลิปใบอื่น",
+  "hand-confirm": "ออเดอร์นี้ยืนยันยอดแล้ว — เลือกสลิปส่วนต่าง หรือติ๊กว่าเห็นเงินส่วนต่างเข้าบัญชีร้านแล้ว",
+  "no-change": "ยอดไม่เปลี่ยน — เพิ่มสินค้าก่อนบันทึก",
+  items: "เลือกสินค้าอย่างน้อย 1 รายการ (ไม่เกิน 50 ชิ้นต่อรายการ)",
+  by: "ใส่ชื่อคนแก้",
+};
+
+/** "แก้รายการสินค้า" on a keyed LINE order (LINE_ORDERS_GAPS.md #3) — then back to the order page. */
+export async function changeItemsAction(_prev: LineOrderState, form: FormData): Promise<LineOrderState> {
+  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const orderNumber = String(form.get("orderNumber") ?? "");
+  const items = parseItems(form.get("items"));
+  if (!items) return { error: CHANGE_ERROR_TH.items };
+  const by = String(form.get("by") ?? "").trim().replace(/\s+/g, " ").slice(0, 40);
+  if (!by) return { error: CHANGE_ERROR_TH.by };
+  const ref = String(form.get("slipRef") ?? "").trim().slice(0, 80);
+  const result = changeLineOrderItems({ orderNumber, items, slipRef: ref && ref !== "none" ? ref : null, handConfirmed: form.get("handConfirmed") === "1", by });
+  if (!result.ok) return { error: CHANGE_ERROR_TH[result.error === "stock" ? "stockOut" : result.error] };
+  console.log(`[line-order] ${orderNumber} items changed${result.confirmed ? ", money confirmed by its slips" : ""}`);
+  const from = String(form.get("from") ?? "");
+  redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=items`);
 }
