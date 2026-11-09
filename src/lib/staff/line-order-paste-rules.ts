@@ -33,6 +33,8 @@ export interface PasteResult {
   items: { slug: string; variantId: string | null; quantity: number }[];
   /** Lines that looked like items but matched no product (or an option that is not unique) — shown to the admin. */
   unmatched: string[];
+  /** Every other mobile number in the text (the first one filled the buyer's phone) — the form asks the admin to check. */
+  otherPhones: string[];
 }
 
 const flat = (s: string) => s.toLowerCase().replace(/[\s\-_.]+/g, "");
@@ -48,6 +50,22 @@ function phoneOf(text: string): string | null {
   return m ? `0${m[1]}${m[2]}${m[3]}${m[4]}` : null;
 }
 
+function allPhones(text: string): string[] {
+  return [...new Set([...text.matchAll(new RegExp(PHONE.source, "g"))].map((m) => `0${m[1]}${m[2]}${m[3]}${m[4]}`))];
+}
+
+/** A 5-digit number written as money ("12000 บาท", "฿12000", "ยอด 12000") is not a postcode (checker 10/11 on #1357). */
+const MONEY_BEFORE = /(?:฿|ยอด|ราคา|รวม|โอน|thb)\s*:?\s*$/i;
+const MONEY_AFTER = /^\s*(?:บาท|฿|thb|\.-)/i;
+
+/** The postcode: the first 5-digit number that is not money, preferring one that is a real postcode. */
+function postcodeOf(text: string, placesFor: (postcode: string) => PastePlace[]): string | null {
+  const candidates = [...text.matchAll(new RegExp(POSTCODE.source, "g"))]
+    .filter((m) => !MONEY_BEFORE.test(text.slice(Math.max(0, m.index - 12), m.index)) && !MONEY_AFTER.test(text.slice(m.index + 5, m.index + 12)))
+    .map((m) => m[1]);
+  return candidates.find((c) => placesFor(c).length > 0) ?? candidates[0] ?? null;
+}
+
 /** Strip the ต./อ./จ./postcode words off an address line, leaving the house part. */
 function housePart(line: string): string {
   return line
@@ -60,22 +78,23 @@ function housePart(line: string): string {
 
 export function parsePastedOrder(text: string, products: PasteProduct[], placesFor: (postcode: string) => PastePlace[]): PasteResult {
   const lines = text
-    .replace(/[​-‍⁠﻿]/g, "")
+    .replace(/[\u200B-\u200D\u2060\uFEFF]/g, "")
     .split(/\r?\n/)
     .map((l) => l.replace(/\s+/g, " ").trim())
     .filter(Boolean);
   const all = lines.join("\n");
   const used = new Set<number>();
-  const result: PasteResult = { customerPhone: null, recipientName: null, line1: null, subdistrict: null, district: null, province: null, postalCode: null, items: [], unmatched: [] };
+  const result: PasteResult = { customerPhone: null, recipientName: null, line1: null, subdistrict: null, district: null, province: null, postalCode: null, items: [], unmatched: [], otherPhones: [] };
 
   result.customerPhone = phoneOf(all);
+  result.otherPhones = allPhones(all).filter((p) => p !== result.customerPhone);
   lines.forEach((l, i) => {
     if (phoneOf(l) && l.replace(PHONE, "").replace(/(?:เบอร์|โทร|tel|phone)\s*[:：]?/i, "").trim().length <= 2) used.add(i);
   });
 
-  // Postcode: a 5-digit number that is not inside the phone.
+  // Postcode: a 5-digit number that is not inside the phone and not money (postcodeOf).
   const withoutPhone = all.replace(new RegExp(PHONE.source, "g"), " ");
-  const postal = POSTCODE.exec(withoutPhone)?.[1] ?? null;
+  const postal = postcodeOf(withoutPhone, placesFor);
   result.postalCode = postal;
   const typed = {
     subdistrict: PLACE_WORD.subdistrict.exec(all)?.[1] ?? null,
