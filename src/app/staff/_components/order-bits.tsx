@@ -43,6 +43,9 @@ export function historyNoteTh(note: string): string {
   // A keyed LINE order changed before it went to the warehouse (src/lib/staff/line-order-edit.ts).
   const items = /^Staff \((.+?)\): items changed (\d+) → (\d+) THB — (.+)$/.exec(note);
   if (items) return `ทีมงาน (${items[1]}): แก้รายการสินค้า ยอด ${items[2]} → ${items[3]} บาท — ${HOW_TH[items[4]] ?? items[4]}`;
+  // A special price given when the LINE order was keyed (migration 0028, src/lib/staff/line-orders.ts).
+  const special = /^Staff \((.+?)\): special price (\d+) → (\d+) THB(?: — (.*))?$/.exec(note);
+  if (special) return `ทีมงาน (${special[1]}): ราคาพิเศษ จากราคาเว็บ ${special[2]} → ${special[3]} บาท${special[4] ? ` — ${special[4]}` : ""}`;
   // The shipping address fixed before the warehouse had it (src/lib/staff/order-address.ts).
   const address = /^Staff \((.+?)\): address changed — was: (.*)$/.exec(note);
   if (address) return `ทีมงาน (${address[1]}): แก้ที่อยู่จัดส่ง — ที่อยู่เดิม ${address[2]}`;

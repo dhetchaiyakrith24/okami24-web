@@ -244,6 +244,14 @@ check(
 );
 const above = wooOrderJson({ ...base, shippingFee: 60 }, "https://okami24.store");
 check("order: any other fee keeps the customer total", above.shipping_total === "35.00" && above.fee_lines[0].total === "25.00" && above.total === "310.00");
+// A special price on a LINE order (migration 0028): a second discount line, the total = what the customer paid (300 − 100).
+const special = wooOrderJson({ ...base, orderDiscount: 100 }, "https://okami24.store");
+check(
+  "order: special price = a special-price discount line, total = the agreed total",
+  special.total === "200.00" && special.discount_total === "100.00" && special.coupon_lines.length === 1 && special.coupon_lines[0].code === "special-price"
+);
+const freeSpecial = wooOrderJson({ ...base, shippingFee: 0, orderDiscount: 50, lines: [{ ...base.lines[0], quantity: 2, lineTotal: 500 }] }, "https://okami24.store");
+check("order: free shipping + special price = both discount lines, total = agreed", freeSpecial.total === "450.00" && freeSpecial.discount_total === "85.00" && freeSpecial.coupon_lines.length === 2);
 check("order: sent before the rate change reads back as it was sent", shippingLineWhenSent("2026-10-30T05:00:00.000Z") === 50 && shippingLineWhenSent(WAREHOUSE_RATE_SINCE) === undefined && shippingLineWhenSent(null) === undefined);
 const sentOld = wooOrderJson({ ...base, shippingFee: 0, shippingLine: 50 }, "https://okami24.store");
 check("order: an old free-shipping order = 50 line + 50 discount, no fee", sentOld.shipping_total === "50.00" && sentOld.discount_total === "50.00" && sentOld.fee_lines.length === 0 && sentOld.total === "250.00");

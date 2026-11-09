@@ -2,7 +2,7 @@
  * Run: npx tsx src/lib/staff/line-order-contract-test.ts
  * Keying a LINE order (line-order-rules.ts): what the form accepts, and which slip may pay it. Made-up figures and names.
  */
-import { findDuplicate, localMobile, parseItems, parseLineOrderForm, pickableSlips, slipFits } from "./line-order-rules";
+import { findDuplicate, specialPrice, localMobile, parseItems, parseLineOrderForm, pickableSlips, slipFits } from "./line-order-rules";
 
 let failed = 0;
 function check(name: string, ok: boolean): void {
@@ -75,6 +75,14 @@ check("duplicate: another total is not", findDuplicate([o("A", 600, "2026-11-09T
 check("duplicate: older than 24 h is not", findDuplicate([o("A", 590, "2026-11-08T11:00:00+07:00")], 590, now) === null);
 check("duplicate: a cancelled order is not", findDuplicate([o("A", 590, "2026-11-09T10:00:00+07:00", "cancelled")], 590, now) === null);
 check("form: the tick reads as notDuplicate", (() => { const r = parseLineOrderForm((n) => ({ customerPhone: "0812345678", keyedBy: "x", items: JSON.stringify([{ slug: "a", quantity: 1 }]), recipientName: "x", line1: "1", province: "x", postalCode: "10110", notDuplicate: "1" } as Record<string, string>)[n]); return r.ok && r.input.notDuplicate === true; })());
+
+check("special price: lower than the web total = the difference as discount", JSON.stringify(specialPrice(590, 500)) === JSON.stringify({ ok: true, discount: 90 }));
+check("special price: none, or equal to the web total = no discount", JSON.stringify(specialPrice(590, null)) === JSON.stringify({ ok: true, discount: null }) && JSON.stringify(specialPrice(590, 590)) === JSON.stringify({ ok: true, discount: null }));
+check("special price: above the web total or zero refused", !specialPrice(590, 600).ok && !specialPrice(590, 0).ok);
+const priced = (agreedTotal: string) => parseLineOrderForm((n) => ({ customerPhone: "0812345678", keyedBy: "x", items: JSON.stringify([{ slug: "a", quantity: 1 }]), recipientName: "x", line1: "1", province: "x", postalCode: "10110", agreedTotal, priceReason: " ลูกค้าประจำ " } as Record<string, string>)[n]);
+check("form: agreed total read (commas ok) with the reason", (() => { const r = priced("1,200"); return r.ok && r.input.agreedTotal === 1200 && r.input.priceReason === "ลูกค้าประจำ"; })());
+check("form: an agreed total that is not baht digits is refused", (() => { const r = priced("12.5"); return !r.ok && r.error === "price"; })());
+check("form: empty agreed total = web price", (() => { const r = priced(""); return r.ok && r.input.agreedTotal === null; })());
 
 console.log(failed === 0 ? "line-order contract: PASS" : `line-order contract: FAIL (${failed})`);
 process.exit(failed === 0 ? 0 : 1);

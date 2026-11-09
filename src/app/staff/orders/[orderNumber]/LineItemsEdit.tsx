@@ -23,6 +23,7 @@ export function LineItemsEdit({
   approved,
   moneyIn,
   oldTotal,
+  discount,
   lines,
   products,
   slips,
@@ -33,6 +34,8 @@ export function LineItemsEdit({
   /** A slip is linked or the money is confirmed: lines may only go up (the old ones carry `min`). */
   moneyIn: boolean;
   oldTotal: number;
+  /** A special price on the order (migration 0028) stays as given: THB off the catalogue total. */
+  discount: number;
   lines: PickRow[];
   products: PickProduct[];
   slips: PickSlip[];
@@ -44,7 +47,7 @@ export function LineItemsEdit({
   const [by, setBy] = useStaffName();
 
   const subtotal = rows.reduce((n, r) => n + r.price * r.quantity, 0);
-  const total = subtotal + decideShipping(subtotal, UNKNOWN_VISITOR).fee;
+  const total = subtotal + decideShipping(subtotal, UNKNOWN_VISITOR).fee - discount;
   const diff = total - oldTotal;
   const items = JSON.stringify(rows.map((r) => ({ slug: r.slug, variantId: r.variantId, quantity: r.quantity })));
 

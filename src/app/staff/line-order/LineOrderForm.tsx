@@ -5,6 +5,7 @@ import { createLineOrderAction, parsePasteAction, type LineOrderState } from "@/
 import { formatBaht, formatShortDateTime } from "@/app/staff/_components/format";
 import { rememberStaffName, useStaffName } from "@/app/staff/_components/staff-name";
 import { ItemPicker, rowLabel, type PickProduct, type PickRow } from "./ItemPicker";
+import { decideShipping, UNKNOWN_VISITOR } from "@/lib/commerce/shipping-rules";
 
 export type { PickProduct } from "./ItemPicker";
 
@@ -35,6 +36,13 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement>) => setF((p) => ({ ...p, [k]: e.target.value }));
 
   const subtotal = rows.reduce((n, r) => n + r.price * r.quantity, 0);
+  // For reading only: a LINE order has no member, so its shipping is the web's tier on the subtotal; the server prices again.
+  const webTotal = subtotal + (rows.length > 0 ? decideShipping(subtotal, UNKNOWN_VISITOR).fee : 0);
+  const [agreed, setAgreed] = useState("");
+  const [reason, setReason] = useState("");
+  const agreedDigits = agreed.replace(/[,\s]/g, "");
+  const agreedNum = /^[0-9]{1,6}$/.test(agreedDigits) ? Number(agreedDigits) : null;
+  const payTotal = agreedNum !== null && agreedNum >= 1 && agreedNum < webTotal ? agreedNum : webTotal;
   const items = JSON.stringify(rows.map((r) => ({ slug: r.slug, variantId: r.variantId, quantity: r.quantity })));
 
   // Paste → prefill (owner 10/11 gap hunt): the server reads the text; this only fills the boxes — the admin checks every one.
@@ -143,20 +151,45 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         <h2 className="text-base font-semibold text-foreground">สินค้า</h2>
         <ItemPicker products={products} rows={rows} setRows={setRows} />
         <p className="text-sm text-foreground-muted">
-          ค่าสินค้า <span className="font-semibold tabular-nums text-foreground">{formatBaht(subtotal)}</span> · ค่าส่งระบบคิดให้ตามกติกาเดียวกับเว็บ
+          ราคาเว็บรวมค่าส่ง <span className="font-semibold tabular-nums text-foreground">{formatBaht(webTotal)}</span> · ระบบคิดค่าส่งตามกติกาเดียวกับเว็บ
         </p>
         <input type="hidden" name="items" value={items} />
       </section>
 
+      {/* LINE_ORDERS_GAPS.md #5 (owner 10/11): the admin may give a special price, no cap — the order keeps the web price beside
+          it and who gave it (the keyed-by name). Rules = line-order-rules.ts specialPrice. */}
+      <section className={CARD}>
+        <h2 className="text-base font-semibold text-foreground">ราคาพิเศษ (ไม่ใส่ = ราคาเว็บ)</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <label className={FIELD}>
+            ยอดที่ตกลงกับลูกค้า รวมค่าส่ง
+            <input name="agreedTotal" value={agreed} onChange={(e) => setAgreed(e.target.value)} inputMode="numeric" maxLength={7} autoComplete="off" className={INPUT} />
+          </label>
+          <label className={FIELD}>
+            เหตุผล
+            <input name="priceReason" value={reason} onChange={(e) => setReason(e.target.value)} maxLength={80} autoComplete="off" className={INPUT} />
+          </label>
+        </div>
+        {agreedNum !== null && (
+          <p className={`text-sm ${agreedNum > webTotal || agreedNum < 1 ? "text-danger" : "text-foreground-muted"}`}>
+            {agreedNum > webTotal || agreedNum < 1
+              ? "ยอดต้องไม่เกินราคาเว็บ"
+              : agreedNum === webTotal
+                ? "เท่าราคาเว็บ — ไม่นับเป็นราคาพิเศษ"
+                : `ลด ${formatBaht(webTotal - agreedNum)} จากราคาเว็บ · บันทึกชื่อคนคีย์เป็นคนให้ราคา`}
+          </p>
+        )}
+      </section>
+
       <section className={CARD}>
         <h2 className="text-base font-semibold text-foreground">สลิป</h2>
-        <p className="text-sm text-foreground-muted">สลิปที่บอทตรวจแล้ว ยังไม่ผูกกับออเดอร์ไหน ใน 3 วันล่าสุด · ยอดต้องเท่ายอดออเดอร์รวมค่าส่ง</p>
+        <p className="text-sm text-foreground-muted">สลิปที่บอทตรวจแล้ว ยังไม่ผูกกับออเดอร์ไหน ใน 3 วันล่าสุด · ยอดต้องเท่า {rows.length > 0 ? formatBaht(payTotal) : "ยอดออเดอร์รวมค่าส่ง"} (สีเขียว = ตรง)</p>
         <ul className="flex flex-col gap-1">
           {slips.map((s) => (
             <li key={s.transRef}>
               <label className="flex min-h-12 items-center gap-3 rounded-lg px-2 hover:bg-surface-2">
                 <input type="radio" name="slipRef" value={s.transRef} checked={slipRef === s.transRef} onChange={() => setSlipRef(s.transRef)} className="size-5 accent-[var(--color-ember)]" />
-                <span className="font-semibold tabular-nums text-foreground">{formatBaht(s.amountSatang / 100)}</span>
+                <span className={`font-semibold tabular-nums ${rows.length > 0 && s.amountSatang === payTotal * 100 ? "text-verified" : "text-foreground"}`}>{formatBaht(s.amountSatang / 100)}</span>
                 <span className="text-sm text-foreground-muted">โอน {formatShortDateTime(s.transferredAt)}</span>
               </label>
             </li>

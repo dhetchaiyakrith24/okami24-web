@@ -53,6 +53,7 @@ export function pushOrderFor(orderNumber: string): PushOrder | null {
     postalCode: a.postalCode,
     // Owner 30/10: staff's pick on the order page, else DHL / EMS from the postcode.
     carrier: toStaffCarrierId(o.carrier) ?? pickCarrier(a.postalCode),
+    ...(o.discount ? { orderDiscount: o.discount.amount } : {}),
   };
 }
 
