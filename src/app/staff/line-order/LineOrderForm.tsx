@@ -188,7 +188,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
           <a href={`/staff/orders/${encodeURIComponent(state.duplicateOf)}`} target="_blank" rel="noopener" className="inline-flex min-h-11 w-fit items-center font-semibold text-ember underline underline-offset-4">
             เปิดออเดอร์ {state.duplicateOf}
           </a>
-          <p className="text-foreground-muted">ลูกค้าขอเพิ่มของ = ใช้ &ldquo;เพิ่มสินค้าในออเดอร์&rdquo; ในออเดอร์นั้น</p>
+          <p className="text-foreground-muted">ลูกค้าขอเพิ่มของ = เพิ่มในออเดอร์นั้นแทน</p>
           <label className="flex min-h-12 items-center gap-3">
             <input type="checkbox" name="notDuplicate" value="1" checked={notDup} onChange={(e) => setNotDup(e.target.checked)} className="size-5 shrink-0 accent-[var(--color-ember)]" />
             ไม่ใช่ออเดอร์ซ้ำ — ลูกค้าสั่งอีกออเดอร์จริง
