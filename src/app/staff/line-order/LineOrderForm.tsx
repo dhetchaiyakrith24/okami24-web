@@ -1,15 +1,12 @@
 "use client";
 
-import { startTransition, useActionState, useEffect, useMemo, useState, useTransition } from "react";
+import { startTransition, useActionState, useState, useTransition } from "react";
 import { createLineOrderAction, parsePasteAction, type LineOrderState } from "@/app/staff/line-order/actions";
 import { formatBaht, formatShortDateTime } from "@/app/staff/_components/format";
+import { rememberStaffName, useStaffName } from "@/app/staff/_components/staff-name";
+import { ItemPicker, rowLabel, type PickProduct, type PickRow } from "./ItemPicker";
 
-export interface PickProduct {
-  slug: string;
-  name: string;
-  price: number;
-  options: { id: string | null; name: string }[];
-}
+export type { PickProduct } from "./ItemPicker";
 
 export interface PickSlip {
   transRef: string;
@@ -17,28 +14,11 @@ export interface PickSlip {
   transferredAt: string;
 }
 
-interface Row {
-  slug: string;
-  variantId: string | null;
-  label: string;
-  price: number;
-  quantity: number;
-}
-
 const IDLE: LineOrderState = { error: null };
 const FIELD = "flex flex-col gap-1.5 text-sm text-foreground-muted";
 const INPUT =
   "min-h-12 rounded-lg border border-surface-border bg-surface-1 px-3 text-base text-foreground placeholder:text-foreground-dim focus:border-ember focus:outline-none";
 const CARD = "flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4";
-const NAME_KEY = "okami24-line-order-keyed-by";
-
-function readName(): string {
-  try {
-    return typeof window === "undefined" ? "" : (window.localStorage.getItem(NAME_KEY) ?? "");
-  } catch {
-    return "";
-  }
-}
 
 /**
  * The LINE-order form. Every field is held in state, so a refused save (wrong postcode, slip of another amount…) keeps what
@@ -48,35 +28,11 @@ function readName(): string {
 export function LineOrderForm({ products, slips }: { products: PickProduct[]; slips: PickSlip[] }) {
   const [state, action, pending] = useActionState(createLineOrderAction, IDLE);
   const [f, setF] = useState({ customerPhone: "", recipientName: "", recipientPhone: "", line1: "", subdistrict: "", district: "", province: "", postalCode: "" });
-  const [keyedBy, setKeyedBy] = useState("");
-  // The last name typed on this phone, after hydration (the server has no storage to render it from).
-  // eslint-disable-next-line react-hooks/set-state-in-effect -- one read of browser storage after mount
-  useEffect(() => setKeyedBy((now) => now || readName()), []);
-  const [rows, setRows] = useState<Row[]>([]);
-  const [query, setQuery] = useState("");
+  const [keyedBy, setKeyedBy] = useStaffName();
+  const [rows, setRows] = useState<PickRow[]>([]);
   const [slipRef, setSlipRef] = useState("");
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement>) => setF((p) => ({ ...p, [k]: e.target.value }));
 
-  const found = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (q.length < 2) return [];
-    const out: { product: PickProduct; option: PickProduct["options"][number] }[] = [];
-    for (const p of products) {
-      const nameHit = p.name.toLowerCase().includes(q);
-      for (const o of p.options) if (nameHit || o.name.toLowerCase().includes(q)) out.push({ product: p, option: o });
-      if (out.length >= 30) break;
-    }
-    return out.slice(0, 30);
-  }, [query, products]);
-
-  const add = (p: PickProduct, o: PickProduct["options"][number]) => {
-    setRows((prev) => {
-      const i = prev.findIndex((r) => r.slug === p.slug && r.variantId === o.id);
-      if (i >= 0) return prev.map((r, j) => (j === i ? { ...r, quantity: Math.min(50, r.quantity + 1) } : r));
-      return [...prev, { slug: p.slug, variantId: o.id, label: o.id ? `${p.name} · ${o.name}` : p.name, price: p.price, quantity: 1 }];
-    });
-    setQuery("");
-  };
   const subtotal = rows.reduce((n, r) => n + r.price * r.quantity, 0);
   const items = JSON.stringify(rows.map((r) => ({ slug: r.slug, variantId: r.variantId, quantity: r.quantity })));
 
@@ -91,11 +47,11 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
       const fields = { customerPhone: r.customerPhone, recipientName: r.recipientName, line1: r.line1, subdistrict: r.subdistrict, district: r.district, province: r.province, postalCode: r.postalCode };
       const got = Object.entries(fields).filter(([, v]) => v);
       setF((p) => ({ ...p, ...Object.fromEntries(got) }));
-      const newRows: Row[] = [];
+      const newRows: PickRow[] = [];
       for (const it of r.items) {
         const p = products.find((x) => x.slug === it.slug);
         const o = p?.options.find((x) => x.id === it.variantId);
-        if (p && o) newRows.push({ slug: p.slug, variantId: o.id, label: o.id ? `${p.name} · ${o.name}` : p.name, price: p.price, quantity: it.quantity });
+        if (p && o) newRows.push({ slug: p.slug, variantId: o.id, label: rowLabel(p, o), price: p.price, quantity: it.quantity });
       }
       if (newRows.length > 0) setRows(newRows);
       setPasteNote({ filled: got.length + newRows.length, unmatched: r.unmatched });
@@ -136,11 +92,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         startTransition(() => action(data));
-        try {
-          window.localStorage.setItem(NAME_KEY, keyedBy.trim());
-        } catch {
-          /* a blocked storage only means the name is typed again next time */
-        }
+        rememberStaffName(keyedBy);
       }}
       className="flex flex-col gap-4"
     >
@@ -188,52 +140,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
 
       <section className={CARD}>
         <h2 className="text-base font-semibold text-foreground">สินค้า</h2>
-        <label className={FIELD}>
-          ค้นรุ่นหรือกลิ่น
-          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="พิมพ์อย่างน้อย 2 ตัว" autoComplete="off" className={INPUT} />
-        </label>
-        {query.trim().length >= 2 && found.length === 0 && <p className="text-sm text-foreground-dim">ไม่พบสินค้าที่ขายได้ตอนนี้</p>}
-        {found.length > 0 && (
-          <ul className="flex max-h-72 flex-col divide-y divide-surface-border-soft overflow-y-auto rounded-lg border border-surface-border-soft">
-            {found.map(({ product, option }) => (
-              <li key={`${product.slug}|${option.id ?? ""}`}>
-                <button type="button" onClick={() => add(product, option)} className="flex min-h-12 w-full items-center justify-between gap-3 px-3 py-2 text-left hover:bg-surface-2">
-                  <span className="min-w-0 text-sm text-foreground">
-                    {product.name}
-                    {option.id && <span className="text-foreground-muted"> · {option.name}</span>}
-                  </span>
-                  <span className="shrink-0 text-sm tabular-nums text-foreground-muted">{formatBaht(product.price)}</span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-        {rows.length > 0 && (
-          <ul className="flex flex-col gap-2">
-            {rows.map((r, i) => (
-              <li key={`${r.slug}|${r.variantId ?? ""}`} className="flex flex-col gap-2 rounded-lg border border-surface-border-soft bg-surface-2 p-3">
-                <span className="text-sm text-foreground">{r.label}</span>
-                <div className="flex items-center justify-between gap-3">
-                  <span className="flex items-center gap-2">
-                    <button type="button" aria-label="ลดจำนวน" onClick={() => setRows((p) => p.map((x, j) => (j === i ? { ...x, quantity: Math.max(1, x.quantity - 1) } : x)))} className="size-11 rounded-full border border-surface-border text-lg text-foreground">
-                      −
-                    </button>
-                    <span className="w-8 text-center tabular-nums text-foreground">{r.quantity}</span>
-                    <button type="button" aria-label="เพิ่มจำนวน" onClick={() => setRows((p) => p.map((x, j) => (j === i ? { ...x, quantity: Math.min(50, x.quantity + 1) } : x)))} className="size-11 rounded-full border border-surface-border text-lg text-foreground">
-                      +
-                    </button>
-                  </span>
-                  <span className="flex items-center gap-3">
-                    <span className="text-sm tabular-nums text-foreground">{formatBaht(r.price * r.quantity)}</span>
-                    <button type="button" onClick={() => setRows((p) => p.filter((_, j) => j !== i))} className="min-h-11 px-2 text-sm text-danger">
-                      เอาออก
-                    </button>
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ItemPicker products={products} rows={rows} setRows={setRows} />
         <p className="text-sm text-foreground-muted">
           ค่าสินค้า <span className="font-semibold tabular-nums text-foreground">{formatBaht(subtotal)}</span> · ค่าส่งระบบคิดให้ตามกติกาเดียวกับเว็บ
         </p>

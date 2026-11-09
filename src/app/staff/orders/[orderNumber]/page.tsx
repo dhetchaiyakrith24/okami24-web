@@ -18,6 +18,11 @@ import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
+import { editStateOf, linkedSlips } from "@/lib/staff/line-order-edit";
+import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
+import { slipsToPick } from "@/lib/staff/line-orders";
+import { stockBook } from "@/lib/staff/stock-book";
+import { LineItemsEdit } from "./LineItemsEdit";
 
 const WAREHOUSE_CHANGE_TEXT: Record<string, string> = {
   cancelled: "คลังยกเลิกออเดอร์นี้ใน Shipnity",
@@ -73,6 +78,7 @@ const ERROR_TEXT: Record<string, string> = {
 
 const DONE_TEXT: Record<string, string> = {
   "line-order": "บันทึกออเดอร์ LINE แล้ว — คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
+  items: "บันทึกรายการใหม่แล้ว — ยอดและค่าส่งคิดใหม่ทั้งออเดอร์ · ลิงก์ติดตามออเดอร์เดิมของลูกค้าเห็นรายการใหม่",
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
@@ -193,10 +199,22 @@ function ActionForm({
 }
 
 /** Slip verdict, the reasons (red — a "no", HANDOFF §18), the two amounts side by side and the picture. */
-function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetail; slipImageHref: string; compact: boolean }) {
+function SlipDetails({
+  order,
+  slipImageHref,
+  compact,
+  linked,
+}: {
+  order: StaffOrderDetail;
+  slipImageHref: string;
+  compact: boolean;
+  /** The slips linked to the order — more than one once items were added with a second slip (line-order-edit.ts). */
+  linked: { count: number; satang: number };
+}) {
   const slip = order.slip;
   if (!slip) return <p className="text-foreground-muted">ลูกค้ายังไม่ได้แนบสลิป</p>;
-  const amountOff = slip.amount !== null && slip.amount !== order.total;
+  const amount = linked.count > 1 ? linked.satang / 100 : slip.amount;
+  const amountOff = amount !== null && amount !== order.total;
   return (
     <>
       {/* The verdict stays on the step card in every case — staff confirm by the ✅ (admin manual step 2.1; checker 27/10). */}
@@ -214,9 +232,9 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
       )}
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-surface-2 px-3 py-2">
-          <p className="text-xs text-foreground-muted">ยอดในสลิป</p>
+          <p className="text-xs text-foreground-muted">{linked.count > 1 ? `ยอดสลิปรวม ${linked.count} ใบ` : "ยอดในสลิป"}</p>
           <p className={`text-xl font-semibold tabular-nums ${amountOff ? "text-danger" : "text-foreground"}`}>
-            {slip.amount === null ? "—" : formatBaht(slip.amount)}
+            {amount === null ? "—" : formatBaht(amount)}
           </p>
         </div>
         <div className="rounded-lg bg-surface-2 px-3 py-2">
@@ -298,6 +316,10 @@ export default async function StaffOrderPage({
   const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
+  const linked = linkedSlips(order.id);
+  // "เพิ่มสินค้าในออเดอร์" (LINE_ORDERS_GAPS.md #3): a keyed LINE order not yet sent to the warehouse.
+  const itemsEditable = itemsNotEditable(editStateOf(order.id)) === null;
+  const moneyIn = order.status === "approved" || linked.satang > 0;
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -349,7 +371,7 @@ export default async function StaffOrderPage({
       {paymentStep && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.slip.label}</h2>
-          <SlipDetails order={order} slipImageHref={slipImageHref} compact />
+          <SlipDetails order={order} slipImageHref={slipImageHref} compact linked={linked} />
           {/* One warning line above the button (designer 26/10: three stacked notes read as clutter). */}
           <p className="text-unverified">
             {order.slip?.verdict !== "pass" ? "ก่อนยืนยัน ดูยอดเข้าในแอปธนาคารของร้าน และเช็คของในหน้าคีย์ออเดอร์ Shipnity" : "ก่อนยืนยัน เช็คของในหน้าคีย์ออเดอร์ Shipnity — หมด = ใช้ “สินค้าหมดหลังลูกค้าโอน”"}
@@ -528,7 +550,7 @@ export default async function StaffOrderPage({
             {!paymentStep && order.slip && (
               <div className="flex flex-col gap-3 border-t border-surface-border-soft pt-3">
                 <p className="font-semibold text-foreground">การชำระเงิน</p>
-                <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} />
+                <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} linked={linked} />
               </div>
             )}
             <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
@@ -586,6 +608,36 @@ export default async function StaffOrderPage({
             </form>
           </div>
         </details>
+
+        {itemsEditable && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span>เพิ่มสินค้าในออเดอร์</span>
+              <Chevron />
+            </summary>
+            <div className={foldBody}>
+              <LineItemsEdit
+                orderNumber={order.orderNumber}
+                from={from}
+                approved={order.status === "approved"}
+                moneyIn={moneyIn}
+                oldTotal={order.total}
+                lines={order.items.map((i) => ({
+                  slug: i.productSlug,
+                  variantId: i.variantId,
+                  label: `${i.productName}${i.variantLabel ? ` · ${i.variantLabel}` : ""}`,
+                  price: i.unitPrice,
+                  quantity: i.quantity,
+                  ...(moneyIn ? { min: i.quantity } : {}),
+                }))}
+                products={stockBook()
+                  .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
+                  .filter((p) => p.options.length > 0)}
+                slips={slipsToPick()}
+              />
+            </div>
+          </details>
+        )}
 
         {!stockOpen && !refundSlipDue && <StockIssueSection order={order} asRow />}
 

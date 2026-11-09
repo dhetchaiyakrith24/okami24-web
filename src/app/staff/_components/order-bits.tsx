@@ -30,10 +30,19 @@ const ACTION_TH: Record<string, string> = {
   cancel: "ยกเลิก",
 };
 
+const HOW_TH: Record<string, string> = {
+  "slip from the slip check": "ผูกสลิปที่บอทตรวจแล้ว",
+  "difference confirmed by hand": "ยืนยันเงินส่วนต่างเอง (ดูในแอปธนาคาร)",
+  "money to confirm by hand": "รอยืนยันยอดเงินเอง",
+};
+
 /** The order history keeps its notes in English (written by orders.ts / payment-slip.ts / staff/orders.ts); staff read
  *  them in Thai. Unknown notes are shown as stored. Display only — nothing stored changes. */
 export function historyNoteTh(note: string): string {
   if (note === "Order created") return "ลูกค้าสั่งซื้อ";
+  // A keyed LINE order changed before it went to the warehouse (src/lib/staff/line-order-edit.ts).
+  const items = /^Staff \((.+?)\): items changed (\d+) → (\d+) THB — (.+)$/.exec(note);
+  if (items) return `ทีมงาน (${items[1]}): แก้รายการสินค้า ยอด ${items[2]} → ${items[3]} บาท — ${HOW_TH[items[4]] ?? items[4]}`;
   const slip = /^Slip attached — (?:EasySlip: (pass|check)(?: \((.+)\))?|not checked \(EasySlip unavailable\))$/.exec(note);
   if (slip) {
     if (slip[1] === "pass") return "ลูกค้าแนบสลิป — ✅ ผ่าน";
