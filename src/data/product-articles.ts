@@ -7987,7 +7987,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   // Owner task ก6 (09/11), RELX Diva 30K — same basis as Sparta 20K above (flavour names = this page's list, incl. the five whose names end in
   // 5%; groups = the shop's; Smash Go figures = its verified rows). Left out: the display and ECO/BOOST (tagline + shortDescription + features)
-  // and every number for this model except the 5% printed in flavour names (said once here — the shortDescription has it once; thai-copy 09/11).
+  // and every number for this model except the 5% printed in flavour names (one paragraph here; the shortDescription names no
+  // percentage, only "the stronger version"; thai-copy 09/11).
   "relx-diva-30k": {
     th: {
       lede: "RELX Diva 30K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นอื่นของ RELX",
