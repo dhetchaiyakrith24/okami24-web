@@ -6,6 +6,8 @@ import { Container } from "@/components/ui/Container";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { easySlipConfigured, getQuota } from "@/lib/staff/easyslip";
 import { recentChecks } from "@/lib/staff/slip-checks";
+import { listRefunds } from "@/lib/staff/refunds";
+import { RefundList } from "@/app/staff/slip/RefundList";
 import { SlipChecker } from "@/app/staff/_components/SlipChecker";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 
@@ -23,12 +25,13 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };
 
-export default async function StaffSlipPage() {
+export default async function StaffSlipPage({ searchParams }: { searchParams: Promise<{ refund?: string }> }) {
   if (!staffAreaEnabled()) notFound();
   if (!(await isStaff())) redirect("/staff");
   const configured = easySlipConfigured();
   const quota = configured ? await getQuota() : null;
   const waitingSlips = countByJob().slip;
+  const { refund } = await searchParams;
 
   return (
     <Container className="flex max-w-xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -45,6 +48,7 @@ export default async function StaffSlipPage() {
         </Link>
       </header>
       <SlipChecker configured={configured} initialQuota={quota && quota.ok ? quota.data : null} recent={recentChecks(30)} />
+      <RefundList rows={listRefunds(40)} result={refund} />
     </Container>
   );
 }
