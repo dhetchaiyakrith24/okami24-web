@@ -16,13 +16,13 @@ export interface CartAddedDetail {
   from: { x: number; y: number };
 }
 
-function SubmitButton({ children }: { children: ReactNode }) {
+function SubmitButton({ children, size }: { children: ReactNode; size: "md" | "lg" }) {
   // While the server answers: a quiet busy state, no spinner (designer, cart UX batch B). The button is disabled meanwhile —
   // a double tap used to add the item twice (checker #792).
   const { pending } = useFormStatus();
   return (
     <span aria-busy={pending || undefined} className={cn("inline-flex", pending && "cursor-progress opacity-80")}>
-      <Button type="submit" disabled={pending}>{children}</Button>
+      <Button type="submit" disabled={pending} size={size}>{children}</Button>
     </span>
   );
 }
@@ -40,12 +40,15 @@ export function AddToCartForm({
   variantId,
   className,
   label,
+  size = "md",
   children,
 }: {
   slug: string;
   variantId: string | null;
   className: string;
   label: string;
+  /** lg = the page's own buy button (look-0911 fix 1); the phone's sticky bar keeps md. */
+  size?: "md" | "lg";
   children?: ReactNode;
 }) {
   const formRef = useRef<HTMLFormElement>(null);
@@ -91,7 +94,7 @@ export function AddToCartForm({
       <input type="hidden" name="slug" value={slug} />
       {variantId && <input type="hidden" name="variantId" value={variantId} />}
       <input type="hidden" name="quantity" value={1} />
-      <SubmitButton>{label}</SubmitButton>
+      <SubmitButton size={size}>{label}</SubmitButton>
       {limit !== null && (
         // w-0 + min-w-full: as wide as the button and never wider — in the phone's sticky bar a wider line pushed the
         // price and the cart button aside (proof 28/10).
