@@ -23,6 +23,7 @@ export async function setSwitchAction(form: FormData): Promise<void> {
   if (kind === "cart") writeSwitches({ ...now, cartOff: !on });
   else if (kind === "site") writeSwitches({ ...now, siteClosed: !on });
   else if (kind === "line") writeSwitches({ ...now, lineToWarehouse: on });
+  else if (kind === "auto") writeSwitches({ ...now, autoToWarehouse: on });
   else if (kind === "hide") {
     const slug = form.get("slug");
     if (!isSlug(slug) || !getCatalogItem(slug)) return;

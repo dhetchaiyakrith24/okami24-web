@@ -22,10 +22,14 @@ const ASK = {
     off: { title: "ปิดการส่งออเดอร์ LINE เข้าคลัง?", body: "แอดมินกลับไปคีย์ออเดอร์ LINE ใน Shipnity เองตามเดิม ออเดอร์ที่ส่งไปแล้วไม่กระทบ", yes: "ปิดการส่ง" },
     on: { title: "เปิดการส่งออเดอร์ LINE เข้าคลัง?", body: "ออเดอร์ LINE ที่คีย์ในหลังบ้านจะมีปุ่มส่งเข้าคลังในหน้าออเดอร์ แอดมินไม่ต้องคีย์ใน Shipnity ซ้ำ · เปิดเมื่อคลังกลับมาส่งของได้", yes: "เปิดการส่ง" },
   },
+  auto: {
+    off: { title: "ปิดการส่งเข้าคลังอัตโนมัติ?", body: "แอดมินกลับไปกดส่งเข้าคลังเองในหน้าออเดอร์ ออเดอร์ที่ส่งไปแล้วไม่กระทบ", yes: "ปิดอัตโนมัติ" },
+    on: { title: "เปิดการส่งเข้าคลังอัตโนมัติ?", body: "แอดมินกดยืนยันยอดเงินแล้ว ระบบส่งออเดอร์เข้า Shipnity ให้เองทันที ไม่ต้องกดอีกครั้ง · ออเดอร์ LINE ส่งเองเมื่อเปิดสวิตช์ LINE ด้วย · แอดมินห้ามคีย์ใน Shipnity ซ้ำ · เปิดเมื่อคลังกลับมาส่งของได้", yes: "เปิดอัตโนมัติ" },
+  },
 } as const;
 
 /** One toggle. Nothing changes on the first tap: a switch this size asks first, and says how to undo it. */
-function Toggle({ kind, label, on, onText, offText, locked }: { kind: "cart" | "site" | "line"; label: string; on: boolean; onText: string; offText: string; locked?: string }) {
+function Toggle({ kind, label, on, onText, offText, locked }: { kind: "cart" | "site" | "line" | "auto"; label: string; on: boolean; onText: string; offText: string; locked?: string }) {
   const [asking, setAsking] = useState(false);
   const ask = ASK[kind][on ? "off" : "on"];
   return (
@@ -80,7 +84,23 @@ function HideForm({ slug, value, label, tone }: { slug: string; value: "on" | "o
   );
 }
 
-export function ShopSwitchPanel({ orderingBuilt, cartOff, siteClosed, lineToWarehouse, hidden, products }: { orderingBuilt: boolean; cartOff: boolean; siteClosed: boolean; lineToWarehouse: boolean; hidden: Product[]; products: Product[] }) {
+export function ShopSwitchPanel({
+  orderingBuilt,
+  cartOff,
+  siteClosed,
+  lineToWarehouse,
+  autoToWarehouse,
+  hidden,
+  products,
+}: {
+  orderingBuilt: boolean;
+  cartOff: boolean;
+  siteClosed: boolean;
+  lineToWarehouse: boolean;
+  autoToWarehouse: boolean;
+  hidden: Product[];
+  products: Product[];
+}) {
   const [query, setQuery] = useState("");
   const found = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -97,6 +117,7 @@ export function ShopSwitchPanel({ orderingBuilt, cartOff, siteClosed, lineToWare
           <Toggle kind="cart" label="ตะกร้าและการสั่งซื้อ" on={orderingBuilt && !cartOff} onText="เปิดอยู่ ลูกค้าสั่งบนเว็บได้" offText="ปิดอยู่ ลูกค้าสั่งผ่าน LINE" locked={orderingBuilt ? undefined : "ปิดจากค่าระบบ เปิดจากปุ่มนี้ไม่ได้"} />
           <Toggle kind="site" label="เปิดเว็บ" on={!siteClosed} onText="เปิดอยู่ตามปกติ" offText="ปิดชั่วคราว ลูกค้าเห็นหน้าแจ้งปิด" />
           <Toggle kind="line" label="ส่งออเดอร์ LINE เข้าคลังจากหลังบ้าน" on={lineToWarehouse} onText="เปิดอยู่ แอดมินกดส่งจากหน้าออเดอร์" offText="ปิดอยู่ แอดมินคีย์ใน Shipnity ตามเดิม" />
+          <Toggle kind="auto" label="ส่งเข้าคลังอัตโนมัติเมื่อยืนยันยอด" on={autoToWarehouse} onText="เปิดอยู่ ยืนยันยอดแล้วระบบส่งเข้า Shipnity เอง" offText="ปิดอยู่ แอดมินกดส่งเข้าคลังเอง" />
         </ul>
       </section>
       <section aria-label="ซ่อนสินค้า" className="dash-card dash-rise">

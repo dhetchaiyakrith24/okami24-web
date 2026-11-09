@@ -13,6 +13,7 @@ function check(name: string, ok: boolean): void {
 }
 
 check("no file reads as open", JSON.stringify(parseSwitches(null)) === JSON.stringify(ALL_OPEN));
+check("auto-push to the warehouse is off unless the file says exactly true", ALL_OPEN.autoToWarehouse === false && parseSwitches('{"autoToWarehouse":"yes"}').autoToWarehouse === false && parseSwitches('{"autoToWarehouse":true}').autoToWarehouse === true);
 check("a broken file reads as open", !parseSwitches("{oops").siteClosed && !parseSwitches("null").cartOff && !parseSwitches("[1]").siteClosed);
 check("only a real true closes anything", !parseSwitches('{"siteClosed":"true","cartOff":1}').siteClosed && !parseSwitches('{"cartOff":1}').cartOff);
 check("real values read back", parseSwitches('{"siteClosed":true,"cartOff":true,"hidden":["a-1"]}').siteClosed && parseSwitches('{"hidden":["a-1","a-1"]}').hidden.length === 1);

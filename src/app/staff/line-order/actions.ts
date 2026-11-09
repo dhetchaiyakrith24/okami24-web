@@ -9,6 +9,7 @@ import { parsePastedOrder, type PasteResult } from "@/lib/staff/line-order-paste
 import { stockBook } from "@/lib/staff/stock-book";
 import { placesForPostcode } from "@/lib/commerce/thai-postcodes";
 import { isStaffJob } from "@/lib/staff/jobs";
+import { autoPushAfterConfirm, autoPushDone } from "@/lib/woo/auto-push";
 
 export interface LineOrderState {
   error: string | null;
@@ -42,7 +43,9 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   if (!result.ok && result.error === "duplicate") return { error: ERROR_TH.duplicate, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
-  redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=line-order`);
+  // Automation item 3: a keyed order whose slip confirmed it goes to Shipnity by itself while the owner's switches allow.
+  const done = result.confirmed ? autoPushDone(await autoPushAfterConfirm(result.orderNumber), "line-order") : "line-order";
+  redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=${done}`);
 }
 
 /** "เติมฟอร์มจากข้อความ" — read the admin's pasted LINE text into form values (line-order-paste-rules.ts). Saves nothing. */
@@ -86,5 +89,6 @@ export async function changeItemsAction(_prev: LineOrderState, form: FormData): 
   if (!result.ok) return { error: CHANGE_ERROR_TH[result.error === "stock" ? "stockOut" : result.error] };
   console.log(`[line-order] ${orderNumber} items changed${result.confirmed ? ", money confirmed by its slips" : ""}`);
   const from = String(form.get("from") ?? "");
-  redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=items`);
+  const done = result.confirmed ? autoPushDone(await autoPushAfterConfirm(orderNumber), "items") : "items";
+  redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=${done}`);
 }

@@ -84,6 +84,12 @@ const DONE_TEXT: Record<string, string> = {
   "line-order": "บันทึกออเดอร์ LINE แล้ว — คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
   items: "บันทึกรายการใหม่แล้ว — ยอดและค่าส่งคิดใหม่ทั้งออเดอร์ · ลิงก์ติดตามออเดอร์เดิมของลูกค้าเห็นรายการใหม่",
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
+  "confirm-sent": "บันทึกแล้ว: ยืนยันยอดเงิน · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
+  "confirm-autofail": "บันทึกแล้ว: ยืนยันยอดเงิน · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
+  "line-order-sent": "บันทึกออเดอร์ LINE แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ · คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
+  "line-order-autofail": "บันทึกออเดอร์ LINE แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
+  "items-sent": "บันทึกรายการใหม่แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
+  "items-autofail": "บันทึกรายการใหม่แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
   carrier: "บันทึกแล้ว: เปลี่ยนขนส่ง — ส่งเข้า Shipnity พร้อมขนส่งนี้",
@@ -329,7 +335,7 @@ export default async function StaffOrderPage({
   // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may already hold it → a cancel needs a tick;
   // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
   const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
-  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse });
+  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse });
   // LINE_ORDERS_GAPS.md #7 (src/lib/staff/order-address.ts): the address is fixed here until the warehouse has the order.
   const canEditAddress = addressEditable({ status: order.status, sentToWarehouse: editState.sentToWarehouse });
   const moneyIn = order.status === "approved" || linked.satang > 0;
@@ -412,7 +418,7 @@ export default async function StaffOrderPage({
                   : ""}
               </p>
               {/* LINE_ORDERS_GAPS.md #1: once the switch is on, keying the same LINE order into Shipnity by hand ships it twice. */}
-              {lineOrder && (
+              {(lineOrder || readSwitches().autoToWarehouse) && (
                 <p className="text-sm text-danger">ปุ่มนี้ส่งเข้า Shipnity ให้แล้ว ห้ามคีย์ใน Shipnity ซ้ำ · ถ้าคีย์ใน Shipnity ไปแล้ว อย่ากดปุ่มนี้ ใช้ &ldquo;ส่งเองแบบเดิม&rdquo;</p>
               )}
             </form>

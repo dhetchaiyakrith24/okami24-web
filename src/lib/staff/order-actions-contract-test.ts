@@ -85,6 +85,7 @@ check("no tick: waiting for the money", !may("awaiting_verification", "line"));
 check("no tick: shipped or done (cannot be cancelled anyway)", !may("shipped", "line", true) && !may("completed", "web", true));
 check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ channel: "line", lineSwitchOn: true }));
 check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true }));
+check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true }));
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);
