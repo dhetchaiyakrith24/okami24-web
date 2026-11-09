@@ -752,7 +752,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "strawberry-banana": "Pod-170-23",
     "strawberry-kiwi": "Pod-170-10",
     "yoyo-grape": "Pod-170-1",
-    "menthol-freeze": null,
+    "menthol-freeze": "Pod-170-24",
     "grape-bubblegum": "Pod-170-15",
     "watermelon-bubblegum": "Pod-170-16",
     "strawberry-ice-cream": null,
