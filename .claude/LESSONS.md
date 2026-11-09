@@ -84,6 +84,14 @@ Measure in the real element (named selector, print element and width) at 390/144
 เกินเพดานการรวม [เชื่อว่า ~110 KB] ฟอนต์แยกเป็นไฟล์ที่สอง FCP มือถือ +260 ms · จับได้จาก network-requests ใน JSON ของ Lighthouse ไม่ใช่คะแนน
 เพิ่ม CSS ใน globals = นับไฟล์ .css ของหน้าอื่นก่อน/หลัง (`curl -s <หน้า> | grep -o '_next/static/chunks/[^"]*\.css'`) · CSS หน้าเดียวให้ component นั้น import เอง (home-hero.css · hero-classic.css)
 
+## 41. ตรวจบัญชีคลัง: เปิดดูเนื้อไฟล์ก่อนเชื่อชื่อที่เจ้าของเรียก แล้วเทียบบิลข้ามรอบ (orders-audit 09–10/11)
+เจ้าของส่ง "ไฟล์ทุน" มา แต่เนื้อไฟล์คือบิลคลัง (Pivot: วันที่สร้าง · สร้างโดย · เลขที่ออเดอร์ · ยอดขายตัวแทน · ยอดขายร้านค้า) — ยอด "รวม" = เงินที่ร้านจ่ายคลัง ไม่ใช่ยอดขายหรือทุน
+· ไฟล์ "ประวัติ_ราคาเทียบสินค้า" ของคลัง = ราคาที่คลังคิดร้านต่อชิ้น = ทุนจริงต่อรหัส Max (ครอบรหัสที่ยังไม่มีทุนได้ราวครึ่งหนึ่ง)
+What found real money: (1) the same warehouse order number in the paid bill and the new bill (bills span more than one round);
+(2) shipping ≠ 35 per row; (3) bill − shipping not makeable from exactly `qty` rates → a wrong row (one was a half-refunded order
+billed in full); (4) LINE refunds are invisible to /staff/sales — match each admin refund note to its slip by time + amount.
+The bill has no product lines, so (3) proves "impossible", never "right". Script = `_incoming/orders-audit-0911/check-bill.js` (outside git).
+
 ---
 
 # สิ่งที่พลาด (หมวด 12 ข้อ 27 — เจ้าของพูดเอง = จดเลย)
