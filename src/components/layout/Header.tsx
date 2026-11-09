@@ -12,6 +12,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useSignedIn } from "@/components/account/use-signed-in";
+import { useCartCount } from "@/components/commerce/cart-count";
 
 /** `orderingEnabled` comes from the root layout (src/lib/commerce/ordering-mode.ts — owner
  *  2026-09-07): while online ordering is off, the cart icon and the mobile-menu cart link are not
@@ -37,6 +38,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   // and then reads "บัญชีสมาชิก" instead. Until it answers — or if it fails — the bar shows "เข้าสู่ระบบ".
   const signedIn = useSignedIn();
   const accountLabel = signedIn ? dict.nav.account : dict.nav.login;
+  // look-0911 fix 3: the header cart shows how many items are in it — the same shared count (one /api/cart/count request per
+  // page) the floating cart bubble already reads, so this adds no request.
+  const cartCount = useCartCount(orderingEnabled);
   // Round "share-deadend" batch 2 (2026-09-22): both menus list the categories that have a
   // product today (src/lib/category-visibility.ts) — "น้ำยา" used to open an empty page. The root layout computes the
   // list and passes it in (SEO ฉ batch 4, 13/10 — computing it here shipped the whole catalog to every browser).
@@ -256,10 +260,21 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           {orderingEnabled && (
             <Link
               href="/cart"
-              aria-label={dict.nav.cart}
-              className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2"
+              aria-label={cartCount > 0 ? `${dict.nav.cart} (${cartCount})` : dict.nav.cart}
+              className={cn(
+                "relative rounded-full p-1.5 transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2",
+                cartCount > 0 ? "text-foreground" : "text-foreground-muted",
+              )}
             >
               <ShoppingCart size={19} aria-hidden />
+              {cartCount > 0 && (
+                <span
+                  aria-hidden
+                  className="okami-cart-badge absolute -right-0.5 -top-0.5 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-ember px-1 text-[11px] font-bold leading-none text-[#181008]"
+                >
+                  {cartCount > 9 ? "9+" : cartCount}
+                </span>
+              )}
             </Link>
           )}
           <button
