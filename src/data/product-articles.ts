@@ -8074,14 +8074,14 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "สายมินต์มี Cool Mint",
             "สายผลไม้มี 9 กลิ่น คือ Apple Fuji · Blueberry · Grape Lychee · Grape Osaka · Ice Grape · Lychee · Mixberry · Peach Paradise และ Watermelon Slushie",
             "แนวขนมและเครื่องดื่มมี Lemon Soda · Original Cola · Root Beer และ Strawberry Candy",
-            "ส่วน Malibu ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงไม่ได้จัดไว้ในสายใด",
+            "ส่วน Malibu ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงแยกไว้ต่างหาก",
           ],
         },
         {
           heading: "Vazer Reload 15K เทียบกับรุ่นอื่น",
           paragraphs: [
-            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ผู้ผลิตระบุไว้ว่าตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบต ทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
-            "ถ้าชอบกลิ่นเดียวกัน รุ่นนั้นก็มีกลิ่นชื่อตรงกับรุ่นนี้ คือ Grape Lychee และ Mixberry",
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ตามที่ SALTHUB ระบุไว้ ตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบตทั้งตอนกำลังชาร์จและตอนชาร์จเต็ม",
+            "M Switch Kit ก็มีกลิ่นชื่อเดียวกับรุ่นนี้ คือ Grape Lychee และ Mixberry ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
           ],
         },
       ],
@@ -8103,7 +8103,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "How does the Vazer Reload 15K compare with other models?",
           paragraphs: [
             "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Switch Kit](/products/m-switch-kit). SALTHUB lists a reusable device with a battery display that shows while charging and when fully charged.",
-            "If you like the same flavours, that model shares two names with this one: Grape Lychee and Mixberry.",
+            "The M Switch Kit also shares two flavour names with this one, Grape Lychee and Mixberry, so if those are your flavours, you'll find them on both.",
           ],
         },
       ],
@@ -8125,7 +8125,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Vazer Reload 15K 和其他型号比怎么样？",
           paragraphs: [
             "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Switch Kit](/products/m-switch-kit)。SALTHUB 标明主机可重复使用，并有电量显示屏，充电中和充满时都会显示。",
-            "喜欢同样口味的话，那款也有同名的 Grape Lychee 和 Mixberry。",
+            "M Switch Kit 也有和这款同名的 Grape Lychee 和 Mixberry，喜欢这两种口味的话，两个型号都能选。",
           ],
         },
       ],
@@ -8137,13 +8137,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // flavours (shortDescription). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
   "vazer-one-pod": {
     th: {
-      lede: "หัวพอต Vazer One มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และบอกความต่างกับอีกรุ่นของ Vazer",
+      lede: "หัวพอต Vazer One มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเล่าให้ฟังว่าต่างจาก Vazer Reload 15K ตรงไหน",
       sections: [
         {
           heading: "หัวพอต Vazer One กลิ่นไหนดี",
           paragraphs: [
             "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
-            "สายมินต์มี Mint",
+            "สายมินต์มีกลิ่น Mint",
             "สายผลไม้มี 12 กลิ่น คือ Blueberry · Grape · Grapefruit · Lychee · Mango · Melon · Mix Berries · Peach · Pineapple · Raspberry · Strawberry และ Watermelon",
             "แนวเครื่องดื่มมี Cola · Cola Lemon · Lemon Soda และ Rootbeer",
             "แนวขนมและของหวานมี Gummy Bear · Milk Honey · Strawberry Ice-Cream และ Vanilla Custard",
@@ -8152,21 +8152,21 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Vazer One กับ Vazer Reload 15K ต่างกันยังไง",
           paragraphs: [
-            "Vazer One ในหน้านี้เป็นหัวพอตอย่างเดียว ไม่มีตัวเครื่องมาด้วย",
-            "ส่วน [Vazer Reload 15K](/products/vazer-reload-15k) มาเป็นตัวเครื่องพร้อมหัวพอตที่เปลี่ยนได้ ร้านยังยืนยันไม่ได้ว่าหัว Vazer One ใส่กับตัวเครื่อง Vazer Reload ได้ ก่อนสั่งลองดูชื่อรุ่นของเครื่องที่ใช้อยู่ให้ตรงกัน",
-            "ถ้าชอบกลิ่นเดียวกัน สองรุ่นนี้มีกลิ่นชื่อตรงกันอย่าง Blueberry · Lemon Soda และ Lychee",
+            "Vazer One ในหน้านี้เป็นหัวพอตอย่างเดียว ไม่มีตัวเครื่องมาด้วย ส่วน [Vazer Reload 15K](/products/vazer-reload-15k) มาเป็นตัวเครื่องพร้อมหัวพอตที่เปลี่ยนได้",
+            "ร้านยังไม่มีข้อมูลยืนยันว่าหัวพอต Vazer One ใส่กับตัวเครื่อง Vazer Reload ได้หรือไม่ ก่อนสั่งลองเช็คให้แน่ใจว่าเครื่องที่ใช้อยู่ใส่หัวพอต Vazer One ได้",
+            "สองรุ่นนี้ยังมีกลิ่นชื่อเดียวกันด้วย เช่น Blueberry · Lemon Soda และ Lychee",
           ],
         },
       ],
     },
     en: {
-      lede: "Vazer One pods come in flavours of several styles. Below, we sort them into groups to make choosing easier, and explain how they differ from another Vazer model.",
+      lede: "Vazer One pods come in flavours of several styles. Below, we sort them into groups to make choosing easier, and explain how they differ from the Vazer Reload 15K.",
       sections: [
         {
           heading: "Which Vazer One pod flavour should I start with?",
           paragraphs: [
             "Start with the kind you like. The groups are ours, from the words in each name.",
-            "Mint has Mint.",
+            "For mint, there's Mint.",
             "Fruit has twelve: Blueberry, Grape, Grapefruit, Lychee, Mango, Melon, Mix Berries, Peach, Pineapple, Raspberry, Strawberry and Watermelon.",
             "Drinks are Cola, Cola Lemon, Lemon Soda and Rootbeer.",
             "Sweets and desserts are Gummy Bear, Milk Honey, Strawberry Ice-Cream and Vanilla Custard.",
@@ -8175,15 +8175,15 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How is the Vazer One different from the Vazer Reload 15K?",
           paragraphs: [
-            "The Vazer One on this page is the pod only, with no device.",
-            "The [Vazer Reload 15K](/products/vazer-reload-15k) comes as a device with a pod you can change. We can't confirm that a Vazer One pod fits the Vazer Reload device, so check the model name of the device you use before you order.",
-            "If you like the same flavours, the two share names such as Blueberry, Lemon Soda and Lychee.",
+            "The Vazer One on this page is the pod only, with no device. The [Vazer Reload 15K](/products/vazer-reload-15k) comes as a device with a pod you can change.",
+            "We can't confirm that a Vazer One pod fits the Vazer Reload device, so before you order, check that the device you use takes Vazer One pods.",
+            "The two also share some flavour names, such as Blueberry, Lemon Soda and Lychee.",
           ],
         },
       ],
     },
     zh: {
-      lede: "Vazer One 烟弹口味类型很多。下面由本店把口味分好组方便挑选，并说明它和 Vazer 另一款的区别。",
+      lede: "Vazer One 烟弹口味类型很多。下面由本店把口味分好组方便挑选，并说明它和 Vazer Reload 15K 有什么区别。",
       sections: [
         {
           heading: "Vazer One 烟弹哪个口味好？",
@@ -8198,9 +8198,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Vazer One 和 Vazer Reload 15K 有什么区别？",
           paragraphs: [
-            "本页的 Vazer One 只有烟弹，不含主机。",
-            "[Vazer Reload 15K](/products/vazer-reload-15k) 是主机加可更换的烟弹。本店还无法确认 Vazer One 烟弹能否装在 Vazer Reload 主机上，下单前请先核对您所用主机的型号。",
-            "喜欢同样口味的话，两款有同名的 Blueberry、Lemon Soda 和 Lychee。",
+            "本页的 Vazer One 只有烟弹，不含主机；[Vazer Reload 15K](/products/vazer-reload-15k) 则是主机加可更换的烟弹。",
+            "本店还无法确认 Vazer One 烟弹能否装在 Vazer Reload 主机上，下单前请先确认您所用的主机能装 Vazer One 烟弹。",
+            "两款也有一些同名口味，例如 Blueberry、Lemon Soda 和 Lychee。",
           ],
         },
       ],
