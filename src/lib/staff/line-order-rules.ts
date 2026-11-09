@@ -37,6 +37,8 @@ export interface LineOrderInput {
   items: LineOrderItem[];
   /** The picked slip's bank reference, or null for "no slip in the list". */
   slipRef: string | null;
+  /** Staff ticked "ไม่ใช่ออเดอร์ซ้ำ" after the duplicate warning (findDuplicate below). */
+  notDuplicate?: boolean;
 }
 
 export type LineOrderError = "phone" | "keyed-by" | "items" | "missing";
@@ -98,6 +100,7 @@ export function parseLineOrderForm(get: (name: string) => unknown): { ok: true; 
       const ref = text(get("slipRef"), 80);
       return ref && ref !== "none" ? ref : null;
     })(),
+    notDuplicate: get("notDuplicate") === "1",
   };
   if (!input.recipientName || !input.line1 || !input.province || !input.postalCode) return { ok: false, error: "missing" };
   return { ok: true, input };
@@ -123,4 +126,30 @@ export function pickableSlips(slips: LooseSlip[], nowMs: number): LooseSlip[] {
 export function slipFits(slip: LooseSlip | undefined, totalBaht: number): "ok" | "not-loose" | "amount" {
   if (!slip) return "not-loose";
   return slip.amountSatang === totalBaht * 100 ? "ok" : "amount";
+}
+
+/**
+ * THE SAME ORDER KEYED TWICE (LINE_ORDERS_GAPS.md #2): with a slip, the second save is refused anyway (the slip is taken);
+ * without one, two orders would be confirmed by hand and sales and the bill would count it twice. So an order of the same
+ * total for the same phone (buyer or recipient, any channel, not cancelled) in the last 24 hours stops the save until staff
+ * tick "ไม่ใช่ออเดอร์ซ้ำ". The newest such order is named, so staff can open it (or add items to it instead).
+ */
+export const DUPLICATE_WINDOW_MS = DAY_MS;
+
+export interface RecentOrder {
+  orderNumber: string;
+  total: number;
+  createdAt: string;
+  status: string;
+}
+
+export function findDuplicate(recent: RecentOrder[], total: number, nowMs: number): RecentOrder | null {
+  return (
+    recent
+      .filter((o) => {
+        const at = Date.parse(o.createdAt);
+        return o.status !== "cancelled" && o.total === total && !Number.isNaN(at) && nowMs - at <= DUPLICATE_WINDOW_MS && at - nowMs <= DAY_MS;
+      })
+      .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))[0] ?? null
+  );
 }

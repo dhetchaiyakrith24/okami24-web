@@ -2,7 +2,7 @@
  * Run: npx tsx src/lib/staff/line-order-contract-test.ts
  * Keying a LINE order (line-order-rules.ts): what the form accepts, and which slip may pay it. Made-up figures and names.
  */
-import { localMobile, parseItems, parseLineOrderForm, pickableSlips, slipFits } from "./line-order-rules";
+import { findDuplicate, localMobile, parseItems, parseLineOrderForm, pickableSlips, slipFits } from "./line-order-rules";
 
 let failed = 0;
 function check(name: string, ok: boolean): void {
@@ -67,6 +67,14 @@ check("pickable: last 3 days only, newest first", list.map((x) => x.transRef).jo
 check("slip fits: exact total", slipFits(list[0], 590) === "ok");
 check("slip fits: other amount refused", slipFits(list[0], 600) === "amount");
 check("slip fits: gone from the list = taken", slipFits(undefined, 590) === "not-loose");
+
+const o = (orderNumber: string, total: number, createdAt: string, status = "approved") => ({ orderNumber, total, createdAt, status });
+check("duplicate: same total 2 h ago is named", findDuplicate([o("A", 590, "2026-11-09T10:00:00+07:00")], 590, now)?.orderNumber === "A");
+check("duplicate: the newest of two is named", findDuplicate([o("A", 590, "2026-11-09T08:00:00+07:00"), o("B", 590, "2026-11-09T11:00:00+07:00")], 590, now)?.orderNumber === "B");
+check("duplicate: another total is not", findDuplicate([o("A", 600, "2026-11-09T10:00:00+07:00")], 590, now) === null);
+check("duplicate: older than 24 h is not", findDuplicate([o("A", 590, "2026-11-08T11:00:00+07:00")], 590, now) === null);
+check("duplicate: a cancelled order is not", findDuplicate([o("A", 590, "2026-11-09T10:00:00+07:00", "cancelled")], 590, now) === null);
+check("form: the tick reads as notDuplicate", (() => { const r = parseLineOrderForm((n) => ({ customerPhone: "0812345678", keyedBy: "x", items: JSON.stringify([{ slug: "a", quantity: 1 }]), recipientName: "x", line1: "1", province: "x", postalCode: "10110", notDuplicate: "1" } as Record<string, string>)[n]); return r.ok && r.input.notDuplicate === true; })());
 
 console.log(failed === 0 ? "line-order contract: PASS" : `line-order contract: FAIL (${failed})`);
 process.exit(failed === 0 ? 0 : 1);

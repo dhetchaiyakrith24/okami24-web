@@ -11,7 +11,7 @@ import { generateOrderNumber } from "@/lib/commerce/orders";
 import { liveLookup } from "@/lib/stock/live";
 import { applyStaffAction } from "@/lib/staff/orders";
 import { looseLineSlips } from "@/lib/staff/daily-sales";
-import { pickableSlips, slipFits, type LineOrderInput, type LooseSlip } from "@/lib/staff/line-order-rules";
+import { DUPLICATE_WINDOW_MS, findDuplicate, pickableSlips, slipFits, type LineOrderInput, type LooseSlip, type RecentOrder } from "@/lib/staff/line-order-rules";
 
 /**
  * Creates a LINE-chat order staff keyed on /staff/line-order (owner list ก11, way 2). Rules = line-order-rules.ts. Reached
@@ -23,7 +23,8 @@ import { pickableSlips, slipFits, type LineOrderInput, type LooseSlip } from "@/
 
 export type CreateLineOrderResult =
   | { ok: true; orderNumber: string; confirmed: boolean }
-  | { ok: false; error: "address" | "phone" | "postal" | "house" | "item" | "stock" | "slip-taken" | "slip-amount" };
+  | { ok: false; error: "address" | "phone" | "postal" | "house" | "item" | "stock" | "slip-taken" | "slip-amount" }
+  | { ok: false; error: "duplicate"; duplicateOf: string };
 
 export function slipsToPick(): LooseSlip[] {
   return pickableSlips(
@@ -64,6 +65,21 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
     const history = loadShippingHistory(db, { memberId: null, phones: [input.customerPhone, address.phone], address }, new Date(), isPostcodeSubdistrict);
     const totals = computeOrderTotals(lines, history);
 
+    // The same order keyed twice (line-order-rules.ts findDuplicate) — asked before anything else is checked or written.
+    if (!input.notDuplicate) {
+      const phones = [...new Set([input.customerPhone, address.phone.replace(/[^0-9]/g, "")])];
+      const list = phones.map(() => "?").join(", ");
+      const recent = db
+        .prepare(
+          `SELECT o.order_number AS orderNumber, o.total, o.created_at AS createdAt, o.status
+             FROM orders o JOIN customers c ON c.id = o.customer_id LEFT JOIN order_shipping_addresses a ON a.order_id = o.id
+            WHERE o.created_at >= ? AND (c.phone IN (${list}) OR REPLACE(REPLACE(a.phone, '-', ''), ' ', '') IN (${list}))`
+        )
+        .all(new Date(Date.now() - DUPLICATE_WINDOW_MS).toISOString(), ...phones, ...phones) as RecentOrder[];
+      const twin = findDuplicate(recent, totals.total, Date.now());
+      if (twin) return { ok: false, error: "duplicate", duplicateOf: twin.orderNumber };
+    }
+
     let slip: LooseSlip | undefined;
     if (input.slipRef) {
       // Read again inside the write: another tab may have used this slip a moment ago.
@@ -98,7 +114,7 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
     ).run(orderId, address.recipientName, address.phone, address.line1, address.subdistrict, address.district, address.province, address.postalCode);
     const history_ = db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)");
-    history_.run(orderId, "pending_payment", `Staff: LINE order keyed by ${input.keyedBy}`);
+    history_.run(orderId, "pending_payment", `Staff: LINE order keyed by ${input.keyedBy}${input.notDuplicate ? " — ticked: not a duplicate" : ""}`);
     history_.run(orderId, "payment_submitted", slip ? "Staff: slip picked from the slip check" : "Staff: no slip in the slip check — confirm the money by hand");
     db.prepare(
       `INSERT INTO order_payment_submissions (order_id, method, reference_note, slip_trans_ref, slip_amount_satang, slip_verdict, slip_reasons)
