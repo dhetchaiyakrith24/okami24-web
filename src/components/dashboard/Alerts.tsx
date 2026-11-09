@@ -15,7 +15,7 @@ const TONE = { danger: "text-danger", warn: "text-unverified" };
 const SHOWN = 3;
 
 /**
- * What needs a look, most urgent first (the caller orders them). Three at most, then "+N". A chip that opens a page looks
+ * What needs a look, most urgent first (the caller orders them). Three at most, then "อีก N เรื่อง" (owner 10/11: a bare "+1" said nothing). A chip that opens a page looks
  * like a button and says so with "›"; one that cannot be tapped is only a dot and words. Plain data in, nothing of its own.
  */
 export function Alerts({ alerts, view }: { alerts: Alert[]; view: string }) {
@@ -45,8 +45,8 @@ export function Alerts({ alerts, view }: { alerts: Alert[]; view: string }) {
       {more > 0 && (
         <li>
           <button type="button" onClick={() => setAll(true)} className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-foreground-muted hover:text-foreground">
-            <span className="sm:hidden">+{more + 1}</span>
-            <span className="max-sm:hidden">+{more}</span>
+            <span className="sm:hidden">อีก {more + 1} เรื่อง</span>
+            <span className="max-sm:hidden">อีก {more} เรื่อง</span>
           </button>
         </li>
       )}
