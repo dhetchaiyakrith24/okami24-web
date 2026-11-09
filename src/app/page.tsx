@@ -55,7 +55,16 @@ export default function Home() {
     const flavors = legacy?.flavorVariants?.length ?? (published?.optionAxisCode === "flavor" ? published.variants.length : 0);
     const most = Math.max(colors, flavors);
     const options = most >= 2 ? { n: most, kind: flavors > colors ? ("flavors" as const) : ("colors" as const) } : null;
+    // sold out as built — the same rule as ProductCard / PilotProductCard; the live answer overrides it in the browser
+    const legacyOptions = [...(legacy?.colorVariants ?? []), ...(legacy?.flavorVariants ?? [])];
+    const soldOut = legacy
+      ? legacyOptions.length > 0
+        ? legacyOptions.every((v) => v.availability === "out-of-stock")
+        : legacy.availability === "out-of-stock"
+      : published?.availabilityStatus === "out-of-stock";
     return [{
+      slug: product,
+      soldOut,
       type,
       categoryHref: `/products/${category.slug}`,
       productHref: item.href,

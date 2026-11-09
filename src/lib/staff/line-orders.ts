@@ -11,7 +11,7 @@ import { generateOrderNumber } from "@/lib/commerce/orders";
 import { liveLookup } from "@/lib/stock/live";
 import { applyStaffAction } from "@/lib/staff/orders";
 import { looseLineSlips } from "@/lib/staff/daily-sales";
-import { pickableSlips, slipFits, type LineOrderInput, type LooseSlip } from "@/lib/staff/line-order-rules";
+import { DUPLICATE_WINDOW_MS, findDuplicate, pickableSlips, slipFits, specialPrice, type LineOrderInput, type LooseSlip, type RecentOrder } from "@/lib/staff/line-order-rules";
 
 /**
  * Creates a LINE-chat order staff keyed on /staff/line-order (owner list ก11, way 2). Rules = line-order-rules.ts. Reached
@@ -22,8 +22,9 @@ import { pickableSlips, slipFits, type LineOrderInput, type LooseSlip } from "@/
  */
 
 export type CreateLineOrderResult =
-  | { ok: true; orderNumber: string; confirmed: boolean }
-  | { ok: false; error: "address" | "phone" | "postal" | "house" | "item" | "stock" | "slip-taken" | "slip-amount" };
+  | { ok: true; orderNumber: string; confirmed: boolean; discount: number | null }
+  | { ok: false; error: "address" | "phone" | "postal" | "house" | "item" | "stock" | "slip-taken" | "slip-amount" | "price" }
+  | { ok: false; error: "duplicate"; duplicateOf: string };
 
 export function slipsToPick(): LooseSlip[] {
   return pickableSlips(
@@ -63,13 +64,33 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
   const result = db.transaction((): CreateLineOrderResult & { slipChecked?: boolean } => {
     const history = loadShippingHistory(db, { memberId: null, phones: [input.customerPhone, address.phone], address }, new Date(), isPostcodeSubdistrict);
     const totals = computeOrderTotals(lines, history);
+    // A special price (line-order-rules.ts specialPrice): items and shipping stay at catalogue prices, the order carries the
+    // discount; every money check below reads the total the customer actually pays.
+    const special = specialPrice(totals.total, input.agreedTotal);
+    if (!special.ok) return { ok: false, error: "price" };
+    const total = totals.total - (special.discount ?? 0);
+
+    // The same order keyed twice (line-order-rules.ts findDuplicate) — asked before anything else is checked or written.
+    if (!input.notDuplicate) {
+      const phones = [...new Set([input.customerPhone, address.phone.replace(/[^0-9]/g, "")])];
+      const list = phones.map(() => "?").join(", ");
+      const recent = db
+        .prepare(
+          `SELECT o.order_number AS orderNumber, o.total, o.created_at AS createdAt, o.status
+             FROM orders o JOIN customers c ON c.id = o.customer_id LEFT JOIN order_shipping_addresses a ON a.order_id = o.id
+            WHERE o.created_at >= ? AND (c.phone IN (${list}) OR REPLACE(REPLACE(a.phone, '-', ''), ' ', '') IN (${list}))`
+        )
+        .all(new Date(Date.now() - DUPLICATE_WINDOW_MS).toISOString(), ...phones, ...phones) as RecentOrder[];
+      const twin = findDuplicate(recent, total, Date.now());
+      if (twin) return { ok: false, error: "duplicate", duplicateOf: twin.orderNumber };
+    }
 
     let slip: LooseSlip | undefined;
     if (input.slipRef) {
       // Read again inside the write: another tab may have used this slip a moment ago.
       const linked = db.prepare("SELECT 1 FROM order_payment_submissions WHERE slip_trans_ref = ?").get(input.slipRef);
       slip = linked ? undefined : slipsToPick().find((s) => s.transRef === input.slipRef);
-      const fits = slipFits(slip, totals.total);
+      const fits = slipFits(slip, total);
       if (fits === "not-loose") return { ok: false, error: "slip-taken" };
       if (fits === "amount") return { ok: false, error: "slip-amount" };
     }
@@ -82,10 +103,10 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
     const orderId = Number(
       db
         .prepare(
-          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, channel, keyed_by)
-           VALUES (?, ?, ?, NULL, 'payment_submitted', ?, ?, ?, ?, 'bank_transfer', 'line', ?)`
+          `INSERT INTO orders (order_number, view_token, customer_id, member_id, status, subtotal, shipping_fee, shipping_rule, total, payment_method, channel, keyed_by, discount, discount_by, discount_reason, discount_by_staff_id)
+           VALUES (?, ?, ?, NULL, 'payment_submitted', ?, ?, ?, ?, 'bank_transfer', 'line', ?, ?, ?, ?, ?)`
         )
-        .run(orderNumber, crypto.randomBytes(16).toString("hex"), customer.id, totals.subtotal, totals.shippingFee, totals.shippingRule, totals.total, input.keyedBy)
+        .run(orderNumber, crypto.randomBytes(16).toString("hex"), customer.id, totals.subtotal, totals.shippingFee, totals.shippingRule, total, input.keyedBy, special.discount, special.discount ? input.keyedBy : null, special.discount ? input.priceReason || null : null, special.discount ? (input.keyedByStaffId ?? null) : null)
         .lastInsertRowid
     );
     const insertItem = db.prepare(
@@ -98,7 +119,8 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
     ).run(orderId, address.recipientName, address.phone, address.line1, address.subdistrict, address.district, address.province, address.postalCode);
     const history_ = db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)");
-    history_.run(orderId, "pending_payment", `Staff: LINE order keyed by ${input.keyedBy}`);
+    history_.run(orderId, "pending_payment", `Staff: LINE order keyed by ${input.keyedBy}${input.notDuplicate ? " — ticked: not a duplicate" : ""}`);
+    if (special.discount) history_.run(orderId, "pending_payment", `Staff (${input.keyedBy}): special price ${totals.total} → ${total} THB${input.priceReason ? ` — ${input.priceReason}` : ""}`);
     history_.run(orderId, "payment_submitted", slip ? "Staff: slip picked from the slip check" : "Staff: no slip in the slip check — confirm the money by hand");
     db.prepare(
       `INSERT INTO order_payment_submissions (order_id, method, reference_note, slip_trans_ref, slip_amount_satang, slip_verdict, slip_reasons)
@@ -107,12 +129,12 @@ export function createLineOrder(input: LineOrderInput): CreateLineOrderResult {
     // Waiting for the money, like a web order whose slip came in: the next step (confirm) is the slip's, below or by hand.
     db.prepare("UPDATE orders SET status = 'awaiting_verification' WHERE id = ?").run(orderId);
     history_.run(orderId, "awaiting_verification", null);
-    return { ok: true, orderNumber, confirmed: false, slipChecked: slip !== undefined };
+    return { ok: true, orderNumber, confirmed: false, discount: special.discount, slipChecked: slip !== undefined };
   })();
 
   if (!result.ok) return result;
   // The slip check already saw this slip reach the shop's account with the exact total = the money is confirmed, the same
   // step staff press on a web order (it assigns the running number and its history row).
   const confirmed = result.slipChecked ? applyStaffAction(result.orderNumber, "confirm", { note: "LINE order — slip from the slip check" }).ok : false;
-  return { ok: true, orderNumber: result.orderNumber, confirmed };
+  return { ok: true, orderNumber: result.orderNumber, confirmed, discount: result.discount };
 }
