@@ -43,6 +43,8 @@ export interface SalesSlip {
   amountSatang: number;
   transferredAt: string;
   receiverStatus: string;
+  /** LINE refunds already taken off `amountSatang` (refund-rules.ts `applyRefunds`, owner 10/11); absent = none. */
+  refundedSatang?: number;
 }
 
 export interface DaySales {
