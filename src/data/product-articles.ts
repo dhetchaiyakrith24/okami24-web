@@ -8058,6 +8058,154 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), Vazer Reload 15K — no maker page (vazerpod.com does not resolve), so the #1339 pattern: no new product fact.
+  // Flavour names = this page's own list (the brand's chart, 3-shop sources in src/data/products/unbranded.ts); groups = the shop's, from the
+  // words in each name; Malibu's name gives no style, so it stays ungrouped. M Switch Kit = its verified rows (salthub.com/m-switch-kit/).
+  // Left out: the swap head (tagline + shortDescription + "swap" card already say it), mesh/airflow ("air" card) and every number for this
+  // model ("figures" card). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-reload-15k": {
+    th: {
+      lede: "Vazer Reload 15K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นใกล้เคียง",
+      sections: [
+        {
+          heading: "Vazer Reload 15K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Cool Mint",
+            "สายผลไม้มี 9 กลิ่น คือ Apple Fuji · Blueberry · Grape Lychee · Grape Osaka · Ice Grape · Lychee · Mixberry · Peach Paradise และ Watermelon Slushie",
+            "แนวขนมและเครื่องดื่มมี Lemon Soda · Original Cola · Root Beer และ Strawberry Candy",
+            "ส่วน Malibu ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงไม่ได้จัดไว้ในสายใด",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ผู้ผลิตระบุไว้ว่าตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบต ทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
+            "ถ้าชอบกลิ่นเดียวกัน รุ่นนั้นก็มีกลิ่นชื่อตรงกับรุ่นนี้ คือ Grape Lychee และ Mixberry",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Vazer Reload 15K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with a similar model.",
+      sections: [
+        {
+          heading: "Which Vazer Reload 15K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Cool Mint.",
+            "Fruit has nine: Apple Fuji, Blueberry, Grape Lychee, Grape Osaka, Ice Grape, Lychee, Mixberry, Peach Paradise and Watermelon Slushie.",
+            "Sweets and drinks are Lemon Soda, Original Cola, Root Beer and Strawberry Candy.",
+            "Malibu's name doesn't say what style it is, so we haven't put it in a group.",
+          ],
+        },
+        {
+          heading: "How does the Vazer Reload 15K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Switch Kit](/products/m-switch-kit). SALTHUB lists a reusable device with a battery display that shows while charging and when fully charged.",
+            "If you like the same flavours, that model shares two names with this one: Grape Lychee and Mixberry.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer Reload 15K 口味类型很多。下面由本店把口味分好组方便挑选，并和相近的型号做个比较。",
+      sections: [
+        {
+          heading: "Vazer Reload 15K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Cool Mint。",
+            "水果类有 9 款：Apple Fuji、Blueberry、Grape Lychee、Grape Osaka、Ice Grape、Lychee、Mixberry、Peach Paradise 和 Watermelon Slushie。",
+            "糖果和饮品类有 Lemon Soda、Original Cola、Root Beer 和 Strawberry Candy。",
+            "Malibu 的名称看不出口味类型，所以没有归入任何一组。",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Switch Kit](/products/m-switch-kit)。SALTHUB 标明主机可重复使用，并有电量显示屏，充电中和充满时都会显示。",
+            "喜欢同样口味的话，那款也有同名的 Grape Lychee 和 Mixberry。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), Vazer One pod — same basis as Vazer Reload 15K above (flavour names = this page's list, from the maker's posters
+  // as sold by maneevp.com; groups = the shop's). "Pod only" = its verified format row. Vazer Reload = a device with a pre-filled head (its
+  // own tagline). "Not confirmed to fit the Reload body" = the shop's state of knowledge, no source says either way. Left out: the count of
+  // flavours (shortDescription). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-one-pod": {
+    th: {
+      lede: "หัวพอต Vazer One มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และบอกความต่างกับอีกรุ่นของ Vazer",
+      sections: [
+        {
+          heading: "หัวพอต Vazer One กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Mint",
+            "สายผลไม้มี 12 กลิ่น คือ Blueberry · Grape · Grapefruit · Lychee · Mango · Melon · Mix Berries · Peach · Pineapple · Raspberry · Strawberry และ Watermelon",
+            "แนวเครื่องดื่มมี Cola · Cola Lemon · Lemon Soda และ Rootbeer",
+            "แนวขนมและของหวานมี Gummy Bear · Milk Honey · Strawberry Ice-Cream และ Vanilla Custard",
+          ],
+        },
+        {
+          heading: "Vazer One กับ Vazer Reload 15K ต่างกันยังไง",
+          paragraphs: [
+            "Vazer One ในหน้านี้เป็นหัวพอตอย่างเดียว ไม่มีตัวเครื่องมาด้วย",
+            "ส่วน [Vazer Reload 15K](/products/vazer-reload-15k) มาเป็นตัวเครื่องพร้อมหัวพอตที่เปลี่ยนได้ ร้านยังยืนยันไม่ได้ว่าหัว Vazer One ใส่กับตัวเครื่อง Vazer Reload ได้ ก่อนสั่งลองดูชื่อรุ่นของเครื่องที่ใช้อยู่ให้ตรงกัน",
+            "ถ้าชอบกลิ่นเดียวกัน สองรุ่นนี้มีกลิ่นชื่อตรงกันอย่าง Blueberry · Lemon Soda และ Lychee",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Vazer One pods come in flavours of several styles. Below, we sort them into groups to make choosing easier, and explain how they differ from another Vazer model.",
+      sections: [
+        {
+          heading: "Which Vazer One pod flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Mint.",
+            "Fruit has twelve: Blueberry, Grape, Grapefruit, Lychee, Mango, Melon, Mix Berries, Peach, Pineapple, Raspberry, Strawberry and Watermelon.",
+            "Drinks are Cola, Cola Lemon, Lemon Soda and Rootbeer.",
+            "Sweets and desserts are Gummy Bear, Milk Honey, Strawberry Ice-Cream and Vanilla Custard.",
+          ],
+        },
+        {
+          heading: "How is the Vazer One different from the Vazer Reload 15K?",
+          paragraphs: [
+            "The Vazer One on this page is the pod only, with no device.",
+            "The [Vazer Reload 15K](/products/vazer-reload-15k) comes as a device with a pod you can change. We can't confirm that a Vazer One pod fits the Vazer Reload device, so check the model name of the device you use before you order.",
+            "If you like the same flavours, the two share names such as Blueberry, Lemon Soda and Lychee.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer One 烟弹口味类型很多。下面由本店把口味分好组方便挑选，并说明它和 Vazer 另一款的区别。",
+      sections: [
+        {
+          heading: "Vazer One 烟弹哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint。",
+            "水果类有 12 款：Blueberry、Grape、Grapefruit、Lychee、Mango、Melon、Mix Berries、Peach、Pineapple、Raspberry、Strawberry 和 Watermelon。",
+            "饮品类有 Cola、Cola Lemon、Lemon Soda 和 Rootbeer。",
+            "糖果和甜点类有 Gummy Bear、Milk Honey、Strawberry Ice-Cream 和 Vanilla Custard。",
+          ],
+        },
+        {
+          heading: "Vazer One 和 Vazer Reload 15K 有什么区别？",
+          paragraphs: [
+            "本页的 Vazer One 只有烟弹，不含主机。",
+            "[Vazer Reload 15K](/products/vazer-reload-15k) 是主机加可更换的烟弹。本店还无法确认 Vazer One 烟弹能否装在 Vazer Reload 主机上，下单前请先核对您所用主机的型号。",
+            "喜欢同样口味的话，两款有同名的 Blueberry、Lemon Soda 和 Lychee。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
