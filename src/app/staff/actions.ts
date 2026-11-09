@@ -4,7 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/auth";
 import { assignRole } from "@/lib/line/groups";
-import { STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
+import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
+import { editStateOf } from "@/lib/staff/line-order-edit";
 import { applyStaffAction, getStaffOrder, setPlannedCarrier } from "@/lib/staff/orders";
 import { readSwitches } from "@/lib/commerce/shop-switches";
 import { isStaffJob } from "@/lib/staff/jobs";
@@ -56,13 +57,29 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
   const action = String(formData.get("action") ?? "");
   const back = orderPage(orderNumber, formData);
   if (!(action in STAFF_ACTIONS)) redirect(`${back}error=not-allowed`);
+  // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may hold the order → the admin ticks first.
+  let note = String(formData.get("note") ?? "");
+  const ticked = formData.get("warehouseTick") === "1";
+  const order = action === "cancel" || action === "to-warehouse" ? getStaffOrder(orderNumber) : null;
+  if (order && action === "cancel" && warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editStateOf(order.id).sentToWarehouse })) {
+    if (!ticked) redirect(`${back}error=cancel-warehouse`);
+    // The tick first (the note is cut at 300), then the staff note — or the reason, which is the history note when no staff
+    // note is given (the "ยกเลิกแล้ว — …" banner reads it).
+    const reason = note.trim() || String(formData.get("message") ?? "").replace(/\s+/g, " ").trim();
+    note = ["warehouse: cancelled in Shipnity / told (ticked)", reason].filter(Boolean).join(" — ");
+  }
+  if (order && action === "to-warehouse" && handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse })) {
+    if (!ticked) redirect(`${back}error=handover-tick`);
+    note = ["keyed into Shipnity by hand (ticked)", note.trim()].filter(Boolean).join(" — ");
+  }
   const result = applyStaffAction(orderNumber, action as StaffAction, {
     tracking: String(formData.get("tracking") ?? ""),
     carrier: String(formData.get("carrier") ?? ""),
-    note: String(formData.get("note") ?? ""),
+    note,
     message: String(formData.get("message") ?? ""),
   });
-  redirect(result.ok ? `${back}done=${action}` : `${back}error=${result.error}`);
+  const done = action === "cancel" && order && ticked ? "cancel-warehouse" : action;
+  redirect(result.ok ? `${back}done=${done}` : `${back}error=${result.error}`);
 }
 
 /** "ส่งเข้าคลัง Shipnity" (Shipnity link, owner 28/10): send the paid order to the warehouse's Shipnity, then record the
