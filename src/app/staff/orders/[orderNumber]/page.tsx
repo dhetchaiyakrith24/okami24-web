@@ -347,6 +347,7 @@ export default async function StaffOrderPage({
         {lineOrder && (
           <span className="rounded-full border border-surface-border px-3 py-1 text-sm text-foreground-muted">
             ออเดอร์ LINE{order.keyedBy ? ` · คีย์โดย ${order.keyedBy}` : ""}
+            {order.discount ? " · ราคาพิเศษ" : ""}
           </span>
         )}
       </header>
@@ -557,6 +558,20 @@ export default async function StaffOrderPage({
                 </li>
               ))}
             </ul>
+            {/* A special price (migration 0028): the web price beside it, who gave it and why (owner 10/11). */}
+            {order.discount && (
+              <div className="flex flex-col gap-0.5 border-t border-surface-border-soft pt-2">
+                <p className="flex justify-between text-foreground-muted">
+                  <span>ราคาเว็บรวมค่าส่ง</span>
+                  <span>{formatBaht(order.total + order.discount.amount)}</span>
+                </p>
+                <p className="flex justify-between text-foreground">
+                  <span>ราคาพิเศษ{order.discount.by ? ` · ${order.discount.by}ให้` : ""}</span>
+                  <span>−{formatBaht(order.discount.amount)}</span>
+                </p>
+                {order.discount.reason && <p className="text-xs text-foreground-muted">เหตุผล: {order.discount.reason}</p>}
+              </div>
+            )}
             <p className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold text-foreground">
               <span>รวม (ค่าส่ง {formatBaht(order.shippingFee)})</span>
               <span>{formatBaht(order.total)}</span>
@@ -651,6 +666,7 @@ export default async function StaffOrderPage({
                 approved={order.status === "approved"}
                 moneyIn={moneyIn}
                 oldTotal={order.total}
+                discount={order.discount?.amount ?? 0}
                 lines={order.items.map((i) => ({
                   slug: i.productSlug,
                   variantId: i.variantId,

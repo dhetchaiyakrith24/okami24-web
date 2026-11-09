@@ -48,6 +48,8 @@ export interface PushOrder {
   carrier?: CarrierId;
   /** The shipping line this order was sent with, when it is not today's rate (see shippingLineWhenSent). */
   shippingLine?: number;
+  /** A special price the admin gave on a LINE order (migration 0028): THB off the catalogue total. */
+  orderDiscount?: number;
 }
 
 /** Why an order may NOT go to the warehouse now — null = it may. Only a paid order (staff confirmed the money →
@@ -78,7 +80,10 @@ const wooDate = (iso: string) => iso.replace(/\.\d+Z$/, "").replace(/Z$/, "");
 export function wooOrderJson(o: PushOrder, siteUrl: string) {
   const itemsTotal = o.lines.reduce((n, l) => n + l.lineTotal, 0);
   const shippingReal = o.shippingLine ?? WAREHOUSE_SHIPPING_FEE_THB;
-  const discount = Math.max(0, shippingReal - o.shippingFee);
+  const shippingDiscount = Math.max(0, shippingReal - o.shippingFee);
+  // A special price rides as a second discount line, so the order total stays what the customer paid.
+  const specialDiscount = Math.max(0, o.orderDiscount ?? 0);
+  const discount = shippingDiscount + specialDiscount;
   const extraShipping = Math.max(0, o.shippingFee - shippingReal);
   const total = itemsTotal + shippingReal - discount + extraShipping;
   const carrierName = o.carrier ? SHIPNITY_CARRIER_NAME[o.carrier] : null;
@@ -149,7 +154,10 @@ export function wooOrderJson(o: PushOrder, siteUrl: string) {
       { id: 1, method_title: carrierName ?? "ค่าส่ง", method_id: "flat_rate", total: money(shippingReal), total_tax: "0.00", taxes: [], meta_data: [] },
     ],
     fee_lines: extraShipping > 0 ? [{ id: 1, name: "ค่าส่งส่วนที่ลูกค้าจ่ายเกินเรตคลัง", tax_class: "", tax_status: "none", total: money(extraShipping), total_tax: "0.00", taxes: [], meta_data: [] }] : [],
-    coupon_lines: discount > 0 ? [{ id: 1, code: "free-shipping", discount: money(discount), discount_tax: "0.00", meta_data: [] }] : [],
+    coupon_lines: [
+      ...(shippingDiscount > 0 ? [{ id: 1, code: "free-shipping", discount: money(shippingDiscount), discount_tax: "0.00", meta_data: [] }] : []),
+      ...(specialDiscount > 0 ? [{ id: 2, code: "special-price", discount: money(specialDiscount), discount_tax: "0.00", meta_data: [] }] : []),
+    ],
     refunds: [],
     _links: { self: [{ href: `${siteUrl}/wp-json/wc/v3/orders/${o.id}` }] },
   };

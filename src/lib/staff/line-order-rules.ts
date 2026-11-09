@@ -39,9 +39,16 @@ export interface LineOrderInput {
   slipRef: string | null;
   /** Staff ticked "ไม่ใช่ออเดอร์ซ้ำ" after the duplicate warning (findDuplicate below). */
   notDuplicate?: boolean;
+  /** The total agreed with the customer in the chat, shipping included (a special price — specialPrice below), or null. */
+  agreedTotal?: number | null;
+  /** The admin's short reason for the special price. */
+  priceReason?: string;
+  /** The signed-in staff account that keyed it (staff-accounts, migration 0029) — set by the server, never from the form;
+   *  null / absent = the shared team password. Stored beside a special price as discount_by_staff_id. */
+  keyedByStaffId?: number | null;
 }
 
-export type LineOrderError = "phone" | "keyed-by" | "items" | "missing";
+export type LineOrderError = "phone" | "keyed-by" | "items" | "missing" | "price";
 
 const text = (v: unknown, max: number) => (typeof v === "string" ? v.trim().replace(/\s+/g, " ").slice(0, max) : "");
 const SLUG = /^[a-z0-9][a-z0-9-]{0,119}$/;
@@ -101,7 +108,14 @@ export function parseLineOrderForm(get: (name: string) => unknown): { ok: true; 
       return ref && ref !== "none" ? ref : null;
     })(),
     notDuplicate: get("notDuplicate") === "1",
+    agreedTotal: null,
+    priceReason: text(get("priceReason"), 80),
   };
+  const agreed = text(get("agreedTotal"), 12).replace(/[,\s]/g, "");
+  if (agreed) {
+    if (!/^[0-9]{1,6}$/.test(agreed) || Number(agreed) < 1) return { ok: false, error: "price" };
+    input.agreedTotal = Number(agreed);
+  }
   if (!input.recipientName || !input.line1 || !input.province || !input.postalCode) return { ok: false, error: "missing" };
   return { ok: true, input };
 }
@@ -152,4 +166,17 @@ export function findDuplicate(recent: RecentOrder[], total: number, nowMs: numbe
       })
       .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))[0] ?? null
   );
+}
+
+/**
+ * A SPECIAL PRICE (owner 10/11, LINE_ORDERS_GAPS.md #5: "the admin may give discounts, no cap; record who gave it and the
+ * catalogue price"; migration 0028). The admin types the total agreed in the chat, shipping included. Items and shipping
+ * stay at the web's catalogue prices; the difference is stored as the order's discount with who gave it (the keyed-by
+ * name) and why — total = catalogue total − discount, and the slip must match the agreed total. Lower only: an agreed total
+ * equal to the catalogue total is no special price, one above it is refused (nobody is charged more than the web price).
+ */
+export function specialPrice(catalogueTotal: number, agreedTotal: number | null | undefined): { ok: true; discount: number | null } | { ok: false } {
+  if (agreedTotal === null || agreedTotal === undefined || agreedTotal === catalogueTotal) return { ok: true, discount: null };
+  if (!Number.isInteger(agreedTotal) || agreedTotal < 1 || agreedTotal > catalogueTotal) return { ok: false };
+  return { ok: true, discount: catalogueTotal - agreedTotal };
 }

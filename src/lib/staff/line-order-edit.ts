@@ -39,7 +39,7 @@ export function linkedSlips(orderId: number): { count: number; satang: number } 
 
 export type ChangeItemsResult =
   | { ok: true; confirmed: boolean; oldTotal: number; newTotal: number }
-  | { ok: false; error: NotEditable | MoneyError | "not-found" | "only-add" | "item" | "stock" | "slip-taken" };
+  | { ok: false; error: NotEditable | MoneyError | "not-found" | "only-add" | "item" | "stock" | "slip-taken" | "below-discount" };
 
 export function changeLineOrderItems(input: { orderNumber: string; items: LineOrderItem[]; slipRef: string | null; handConfirmed: boolean; by: string }): ChangeItemsResult {
   const db = getDb();
@@ -47,11 +47,11 @@ export function changeLineOrderItems(input: { orderNumber: string; items: LineOr
   const result = db.transaction((): ChangeItemsResult & { confirm?: boolean } => {
     const order = db
       .prepare(
-        `SELECT o.id, o.total, a.phone, a.line1, a.subdistrict, a.postal_code, c.phone AS cphone
+        `SELECT o.id, o.total, o.discount, a.phone, a.line1, a.subdistrict, a.postal_code, c.phone AS cphone
            FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id JOIN customers c ON c.id = o.customer_id
           WHERE o.order_number = ?`
       )
-      .get(input.orderNumber) as { id: number; total: number; phone: string; line1: string; subdistrict: string; postal_code: string; cphone: string } | undefined;
+      .get(input.orderNumber) as { id: number; total: number; discount: number | null; phone: string; line1: string; subdistrict: string; postal_code: string; cphone: string } | undefined;
     if (!order) return { ok: false, error: "not-found" };
     const state = editStateOf(order.id);
     const blocked = itemsNotEditable(state);
@@ -90,7 +90,9 @@ export function changeLineOrderItems(input: { orderNumber: string; items: LineOr
     const subtotal = priced.reduce((n, l) => n + l.unitPrice * l.quantity, 0);
     const history = loadShippingHistory(db, { memberId: null, phones: [order.cphone, order.phone], address: { line1: order.line1, subdistrict: order.subdistrict, postalCode: order.postal_code } }, new Date(), isPostcodeSubdistrict);
     const shipping = decideShipping(subtotal, history);
-    const newTotal = subtotal + shipping.fee;
+    // A special price stays what the admin gave (migration 0028): the added items come at the catalogue price.
+    const newTotal = subtotal + shipping.fee - (order.discount ?? 0);
+    if (newTotal < 1) return { ok: false, error: "below-discount" };
 
     let slip: { transRef: string; amountSatang: number } | undefined;
     if (input.slipRef) {
