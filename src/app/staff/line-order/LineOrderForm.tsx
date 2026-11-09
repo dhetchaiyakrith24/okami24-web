@@ -1,7 +1,7 @@
 "use client";
 
-import { startTransition, useActionState, useEffect, useMemo, useState } from "react";
-import { createLineOrderAction, type LineOrderState } from "@/app/staff/line-order/actions";
+import { startTransition, useActionState, useEffect, useMemo, useState, useTransition } from "react";
+import { createLineOrderAction, parsePasteAction, type LineOrderState } from "@/app/staff/line-order/actions";
 import { formatBaht, formatShortDateTime } from "@/app/staff/_components/format";
 
 export interface PickProduct {
@@ -80,7 +80,61 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
   const subtotal = rows.reduce((n, r) => n + r.price * r.quantity, 0);
   const items = JSON.stringify(rows.map((r) => ({ slug: r.slug, variantId: r.variantId, quantity: r.quantity })));
 
+  // Paste → prefill (owner 10/11 gap hunt): the server reads the text; this only fills the boxes — the admin checks every one.
+  const [paste, setPaste] = useState("");
+  const [pasteNote, setPasteNote] = useState<{ filled: number; unmatched: string[]; otherPhones: string[] } | null>(null);
+  const [reading, startReading] = useTransition();
+  const fill = () =>
+    startReading(async () => {
+      const r = await parsePasteAction(paste);
+      if (!r) return;
+      const fields = { customerPhone: r.customerPhone, recipientName: r.recipientName, line1: r.line1, subdistrict: r.subdistrict, district: r.district, province: r.province, postalCode: r.postalCode };
+      const got = Object.entries(fields).filter(([, v]) => v);
+      setF((p) => ({ ...p, ...Object.fromEntries(got) }));
+      const newRows: Row[] = [];
+      for (const it of r.items) {
+        const p = products.find((x) => x.slug === it.slug);
+        const o = p?.options.find((x) => x.id === it.variantId);
+        if (p && o) newRows.push({ slug: p.slug, variantId: o.id, label: o.id ? `${p.name} · ${o.name}` : p.name, price: p.price, quantity: it.quantity });
+      }
+      if (newRows.length > 0) setRows(newRows);
+      setPasteNote({ filled: got.length + newRows.length, unmatched: r.unmatched, otherPhones: r.otherPhones });
+    });
+
   return (
+    <>
+    <section className={`${CARD} mb-4`}>
+      <h2 className="text-base font-semibold text-foreground">วางข้อความออเดอร์จาก LINE</h2>
+      <textarea
+        value={paste}
+        onChange={(e) => setPaste(e.target.value)}
+        rows={5}
+        placeholder={"ชื่อผู้รับ\nที่อยู่ ต. อ. จ. รหัสไปรษณีย์\nเบอร์โทร\nรุ่น กลิ่น x จำนวน"}
+        className="rounded-lg border border-surface-border bg-surface-1 px-3 py-2 text-base text-foreground placeholder:text-foreground-dim focus:border-ember focus:outline-none"
+      />
+      <button
+        type="button"
+        onClick={fill}
+        disabled={reading || paste.trim().length === 0}
+        className="inline-flex min-h-11 w-fit items-center rounded-full border border-surface-border px-5 text-sm font-semibold text-foreground hover:border-foreground-dim disabled:opacity-50"
+      >
+        {reading ? "กำลังอ่าน…" : "เติมฟอร์มจากข้อความ"}
+      </button>
+      {pasteNote && (
+        <div className="flex flex-col gap-1 text-sm">
+          <p className="text-foreground-muted">เติมให้ {pasteNote.filled} ช่อง · ตรวจทุกช่องก่อนบันทึก</p>
+          {pasteNote.unmatched.length > 0 && (
+            <p className="text-unverified">
+              อ่านสินค้าไม่ออก เลือกเองจากช่องค้นหา: {pasteNote.unmatched.join(" · ")}
+            </p>
+          )}
+          {/* Checker 10/11: two numbers in the text = which is the buyer and which the recipient is the admin's call. */}
+          {pasteNote.otherPhones.length > 0 && (
+            <p className="text-unverified">ข้อความมีเบอร์อื่นด้วย: {pasteNote.otherPhones.join(" · ")} — เช็คว่าเบอร์ไหนเป็นเบอร์ลูกค้า เบอร์ไหนเป็นเบอร์ผู้รับ</p>
+          )}
+        </div>
+      )}
+    </section>
     <form
       onSubmit={(e) => {
         e.preventDefault();
@@ -232,5 +286,6 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         {pending ? "กำลังบันทึก…" : "บันทึกออเดอร์ LINE"}
       </button>
     </form>
+    </>
   );
 }

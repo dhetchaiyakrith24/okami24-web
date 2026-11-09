@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { parseLineOrderForm } from "@/lib/staff/line-order-rules";
 import { createLineOrder } from "@/lib/staff/line-orders";
+import { parsePastedOrder, type PasteResult } from "@/lib/staff/line-order-paste-rules";
+import { stockBook } from "@/lib/staff/stock-book";
+import { placesForPostcode } from "@/lib/commerce/thai-postcodes";
 
 export interface LineOrderState {
   error: string | null;
@@ -33,4 +36,13 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   if (!result.ok) return { error: ERROR_TH[result.error] };
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
   redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=line-order`);
+}
+
+/** "เติมฟอร์มจากข้อความ" — read the admin's pasted LINE text into form values (line-order-paste-rules.ts). Saves nothing. */
+export async function parsePasteAction(text: string): Promise<PasteResult | null> {
+  if (!staffAreaEnabled() || !(await isStaff())) return null;
+  const products = stockBook()
+    .map((p) => ({ slug: p.slug, name: p.name, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
+    .filter((p) => p.options.length > 0);
+  return parsePastedOrder(String(text).slice(0, 4000), products, placesForPostcode);
 }
