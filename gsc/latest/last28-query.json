@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-10",
-  "endDate": "2026-11-06",
+  "startDate": "2026-10-11",
+  "endDate": "2026-11-07",
   "dimensions": [
    "query"
   ]
@@ -11,28 +11,19 @@
    "keys": [
     "okami24"
    ],
-   "clicks": 26,
-   "impressions": 42,
-   "ctr": 0.6190476190476191,
-   "position": 1.0238095238095237
+   "clicks": 29,
+   "impressions": 43,
+   "ctr": 0.6744186046511628,
+   "position": 1.0232558139534884
   },
   {
    "keys": [
     "voopoo drag 6 ราคา"
    ],
    "clicks": 20,
-   "impressions": 34,
-   "ctr": 0.5882352941176471,
-   "position": 1.2352941176470589
-  },
-  {
-   "keys": [
-    "pod system"
-   ],
-   "clicks": 17,
-   "impressions": 60,
-   "ctr": 0.2833333333333333,
-   "position": 4.333333333333334
+   "impressions": 39,
+   "ctr": 0.5128205128205128,
+   "position": 1.3076923076923077
   },
   {
    "keys": [
@@ -45,30 +36,39 @@
   },
   {
    "keys": [
+    "pod system"
+   ],
+   "clicks": 16,
+   "impressions": 57,
+   "ctr": 0.2807017543859649,
+   "position": 4.350877192982456
+  },
+  {
+   "keys": [
     "pod"
    ],
    "clicks": 14,
-   "impressions": 159,
-   "ctr": 0.0880503144654088,
-   "position": 12.08805031446541
+   "impressions": 158,
+   "ctr": 0.08860759493670886,
+   "position": 11.943037974683545
   },
   {
    "keys": [
     "caliburn g5 ราคา"
    ],
-   "clicks": 11,
-   "impressions": 15,
-   "ctr": 0.7333333333333333,
-   "position": 1.0666666666666667
+   "clicks": 12,
+   "impressions": 16,
+   "ctr": 0.75,
+   "position": 1.0625
   },
   {
    "keys": [
     "voopoo drag 6"
    ],
    "clicks": 11,
-   "impressions": 45,
-   "ctr": 0.24444444444444444,
-   "position": 6.777777777777778
+   "impressions": 42,
+   "ctr": 0.2619047619047619,
+   "position": 6.666666666666667
   },
   {
    "keys": [
@@ -117,30 +117,12 @@
   },
   {
    "keys": [
-    "caliburn g4 pro"
-   ],
-   "clicks": 2,
-   "impressions": 2,
-   "ctr": 1,
-   "position": 12
-  },
-  {
-   "keys": [
     "caliburn g5"
    ],
    "clicks": 2,
    "impressions": 17,
    "ctr": 0.11764705882352941,
    "position": 9.352941176470589
-  },
-  {
-   "keys": [
-    "m bar 15k"
-   ],
-   "clicks": 2,
-   "impressions": 12,
-   "ctr": 0.16666666666666666,
-   "position": 6.416666666666667
   },
   {
    "keys": [
@@ -180,21 +162,12 @@
   },
   {
    "keys": [
-    "voopoo argus g3 mini"
-   ],
-   "clicks": 2,
-   "impressions": 4,
-   "ctr": 0.5,
-   "position": 4.25
-  },
-  {
-   "keys": [
     "argus g4"
    ],
    "clicks": 1,
-   "impressions": 9,
-   "ctr": 0.1111111111111111,
-   "position": 9.444444444444445
+   "impressions": 8,
+   "ctr": 0.125,
+   "position": 8.5
   },
   {
    "keys": [
@@ -219,9 +192,9 @@
     "caliburn g3 pro"
    ],
    "clicks": 1,
-   "impressions": 9,
-   "ctr": 0.1111111111111111,
-   "position": 5.444444444444445
+   "impressions": 7,
+   "ctr": 0.14285714285714285,
+   "position": 5.571428571428571
   },
   {
    "keys": [
@@ -249,6 +222,15 @@
    "impressions": 7,
    "ctr": 0.14285714285714285,
    "position": 4
+  },
+  {
+   "keys": [
+    "caliburn g4 pro"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 14
   },
   {
    "keys": [
@@ -309,9 +291,9 @@
     "joiway f4"
    ],
    "clicks": 1,
-   "impressions": 30,
-   "ctr": 0.03333333333333333,
-   "position": 9.633333333333333
+   "impressions": 29,
+   "ctr": 0.034482758620689655,
+   "position": 9.620689655172415
   },
   {
    "keys": [
@@ -333,6 +315,15 @@
   },
   {
    "keys": [
+    "m bar 15k"
+   ],
+   "clicks": 1,
+   "impressions": 10,
+   "ctr": 0.1,
+   "position": 6.5
+  },
+  {
+   "keys": [
     "m switch"
    ],
    "clicks": 1,
@@ -345,9 +336,9 @@
     "mbar 15k"
    ],
    "clicks": 1,
-   "impressions": 16,
-   "ctr": 0.0625,
-   "position": 7.8125
+   "impressions": 15,
+   "ctr": 0.06666666666666667,
+   "position": 7.866666666666666
   },
   {
    "keys": [
@@ -405,12 +396,21 @@
   },
   {
    "keys": [
+    "voopoo argus g3 mini"
+   ],
+   "clicks": 1,
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
+   "position": 5.333333333333333
+  },
+  {
+   "keys": [
     "voopoo drag6"
    ],
    "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 10
+   "impressions": 1,
+   "ctr": 1,
+   "position": 18
   },
   {
    "keys": [
@@ -486,15 +486,6 @@
   },
   {
    "keys": [
-    "argus g3mini"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
-  },
-  {
-   "keys": [
     "arti mtl"
    ],
    "clicks": 0,
@@ -519,15 +510,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 7
-  },
-  {
-   "keys": [
-    "caliburn 5g lite"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 3
   },
   {
    "keys": [
@@ -681,15 +663,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 29
-  },
-  {
-   "keys": [
-    "drag 6 ราคา"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 3
   },
   {
    "keys": [
@@ -939,9 +912,9 @@
     "infy 20k"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 2,
    "ctr": 0,
-   "position": 17.285714285714285
+   "position": 40
   },
   {
    "keys": [
@@ -1206,15 +1179,6 @@
   },
   {
    "keys": [
-    "m-pod"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 10
-  },
-  {
-   "keys": [
     "m-switch"
    ],
    "clicks": 0,
@@ -1389,9 +1353,9 @@
     "pnp coils"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 61
+   "position": 66.5
   },
   {
    "keys": [
@@ -1665,21 +1629,12 @@
   },
   {
    "keys": [
-    "salthub 10k"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 44
-  },
-  {
-   "keys": [
     "salthub 15k"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 4,
    "ctr": 0,
-   "position": 8.2
+   "position": 7.75
   },
   {
    "keys": [
@@ -1743,15 +1698,6 @@
    "impressions": 7,
    "ctr": 0,
    "position": 5.285714285714286
-  },
-  {
-   "keys": [
-    "uwell"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 4
   },
   {
    "keys": [
@@ -1917,15 +1863,6 @@
   },
   {
    "keys": [
-    "what does dtl and mtl mean on a vape"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 99
-  },
-  {
-   "keys": [
     "what is the price of it"
    ],
    "clicks": 0,
@@ -1959,15 +1896,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 2
-  },
-  {
-   "keys": [
-    "ของแท้ ราคาเท่าไหร่"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 18
   },
   {
    "keys": [
@@ -2325,9 +2253,9 @@
     "ราคา"
    ],
    "clicks": 0,
-   "impressions": 21,
+   "impressions": 20,
    "ctr": 0,
-   "position": 10.714285714285714
+   "position": 11.15
   },
   {
    "keys": [
@@ -2372,7 +2300,7 @@
    "clicks": 0,
    "impressions": 4,
    "ctr": 0,
-   "position": 9.25
+   "position": 10.75
   },
   {
    "keys": [
