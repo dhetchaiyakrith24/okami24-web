@@ -16,6 +16,7 @@ import { pilotAxisLabel, pilotOptionCount } from "./axis-label";
 import { labelLang } from "@/lib/label-lang";
 import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
 import { headlineSpecsForPublished } from "@/lib/card-headline-spec";
+import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
 
 /**
  * Phase 3.0 — the storefront-native sibling of the isolated preview's `PreviewProductCard`.
@@ -73,6 +74,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
           </div>
         )}
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3 max-lg:right-2 max-lg:top-2" />
+        <CardSoldOutBadge slug={product.slug} builtSoldOut={product.availabilityStatus === "out-of-stock"} />
         <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
           {product.image ? (
             <Image
