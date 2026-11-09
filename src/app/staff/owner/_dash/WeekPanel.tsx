@@ -14,12 +14,12 @@ const span = (from: string, to: string) => `${ddmm(from)} ถึง ${ddmm(to)}`
 
 const DAY_MONTH = new Intl.DateTimeFormat("th-TH", { timeZone: "UTC", day: "numeric", month: "short" });
 const DAY = new Intl.DateTimeFormat("th-TH", { timeZone: "UTC", day: "numeric" });
-/** "4–⁠10 พ.ย." · across a month "29 ต.ค.–⁠4 พ.ย." (Bangkok dates, YYYY-MM-DD). The dash is held to the next part (THAI_STYLE §4 (ข)). */
+/** "4–10 พ.ย." · across a month "29 ต.ค.–4 พ.ย." (Bangkok dates, YYYY-MM-DD). The site's render mechanism keeps the range together (no raw U+2060 — THAI_STYLE §5). */
 function dayRange(from: string, to: string): string {
   const a = new Date(`${from}T00:00:00Z`);
   const b = new Date(`${to}T00:00:00Z`);
   const sameMonth = from.slice(0, 7) === to.slice(0, 7);
-  return `${sameMonth ? DAY.format(a) : DAY_MONTH.format(a)}–⁠${DAY_MONTH.format(b)}`;
+  return `${sameMonth ? DAY.format(a) : DAY_MONTH.format(a)}–${DAY_MONTH.format(b)}`;
 }
 const weekStart = (to: string) => new Date(Date.parse(`${to}T00:00:00Z`) - 6 * 86_400_000).toISOString().slice(0, 10);
 
@@ -201,7 +201,7 @@ function Google({ weeks, through }: { weeks: GoogleWeek[]; through: string | nul
           {/* The latest week is whole by days (scripts/google-weekly.js) but Google keeps filling its last 2–3 days, so a drop may not be real. */}
           <p className="flex flex-col text-sm text-foreground-muted">
             <span>{dayRange(weekStart(now.to), now.to)}</span>
-            <span>2–⁠3 วันท้าย Google อาจยังนับไม่⁠ครบ</span>
+            <span>2–3 วันท้าย Google อาจยังนับไม่ครบ</span>
           </p>
           <Bars
             height="h-16"
