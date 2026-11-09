@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 09/11 ~12:00 (main chat; owner shut the PC, next = owner morning review รอพี่ตรวจ 127). Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
+Updated 10/11 ~03:15 (main chat local_de553e7b handing off at 80% context on the owner's word). Full night state (PR-by-PR, children, owner answers, Friday to-dos) = `side-session-notes/local_de553e7b-d4f3-4c9e-9e80-36e56b795348/friday-main-handover-1011.md` (local, this PC). Re-read this + TEAM_RULES.
 CART CLOSED by the owner switch 08/11 night (warehouse cannot ship 1–2 weeks; env stays on). #1317 (notice 11–13 Nov) held. Old delay notice (#1248) ends Mon 9/11 by itself (shipping-delay.ts): remove it after, its head lists the files. Earlier orders all ship, no customer message.
 Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
 MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
@@ -22,12 +22,7 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
 2 OPEN WORK, in merge order:
   e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live (#1237). Left: request indexing for /products/disposables + changed pages, block 4 read 1 done 09/11 (#1341, 2 keys unchanged) · reads 15/11 · 10/12, then close with tag disposable-0511.
     Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
-  g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
-    Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
-    Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
-    Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
-    Rates 22–31/10 match ours, no loss-makers (detail: git show 036fab46:docs/HANDOFF.md §16 2g); 29 products have no rate, 4 with stock in รอพี่ตรวจ.
-    Warehouse bill columns: "(ว่าง)" = web · "Okami" = LINE keyed by admin (217 orders ฿126,010; 16 of them not ฿35 shipping, unread) · H = rate + shipping.
+  g WAREHOUSE BILLS: 22–31/10 paid (03/11) · 31/10–08/11 owed 99,930 (not 103,280) = รอพี่ตรวจ 128 + `docs/cloud-results/accounts-check-plan-0911.md`.
   SEO findings: Google hid us on general terms since 27/10
     (Google's side; new site + almost no backlinks) · read 09/11 done (#1341: only voopoo drag 6 ราคา back #1; impressions ~1/8 of pre-27/10; requests carried to 10/11) · next 16/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
   Done 09/11 (#1319): push-time stock log on the data disk (<data>/stock-pushes/<Thai day>.jsonl, 35 days) — tune the red rule after a week of data with the cart open ·
@@ -70,6 +65,8 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
 3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md`. Status page for the owner's phone = §17 "Owner status page".
 5 open / dated:
+  - FRIDAY: fix skill product-listing Step 1 item 4 — also flag NEW CHILD codes of an existing parent (missed Pod-170-24, IQOSHEET-17-x, Pod-154-19, ELIQUID-1-1). Skill edit → checker.
+  - Owner to-do (รอพี่ตรวจ 128–133): invite bot OKM ORDER to OKAMI INFORMATION + role on /staff/dev → then backfill 8 refunds (5,340) · Pod-181 cost 210? · member card ผ่าน + upscale 1/2 · admin dashboard draft · perks A/B/C.
   - stock light's red rule: push-time log live 09/11 (#1319); tune after a week of data with the cart open (not dated until the cart reopens).
   - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
   - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
@@ -78,7 +75,10 @@ MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production D
   - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
     Owner 07/11: "รันเลยยาวๆ แล้วเขียนจดลงบันทึกรอตรวจทีเดียว", "จัดการงานแทนพี่เลย". Review list = รอพี่ตรวจ 117-121. Chrome allowed for research. New pictures not made before are allowed through skill product-images; comparison sheets still wait for the owner. 3412 queue: seo-full, cart-instock, popular-models.
     Round tags seo-full-0711, popular-models-0711 (#1315 parked models in its round file). Owner signed in to /staff/owner 09/11; cost table still empty (รอพี่ตรวจ 128). RELX Pod / Pod Pro have no warehouse code. Owner: merge new AI pictures too.
-    Children now (09/11 07:00): live 08–09/11: #1326 #1327 #1337 + articles #1330 #1332 #1333 #1334 #1339 (12 pages). Owner morning list = รอพี่ตรวจ 127 (#1331 LINE keying migration 0026 PASS 955e0c17 draft · #1335 thank-you desktop + gold line · #1336 Zoom prototype G5 · #1324 G4 Pro sheet PASS 22a9f5a4, sent to owner). Children done: line-orders local_504fcbb8 · design-g10 local_e248645a · shop-pictures-5 local_f18a0bf5 · articles-g6 local_6526d735. Running 10/11 02:45: look-0911 local_569a83ec (sold-out badge → member tiers + gated tier images, รอพี่ตรวจ 129) · line-orders local_504fcbb8 (67% ctx; #1331 merging, step 3 needs a fresh chat on the owner's word, รอพี่ตรวจ 130) · orders-audit-0911 local_3c20d459 (#1353 refunds merging; loading costs via owner Chrome, 128) · security done (#1345 live, 131)
+    NIGHT 09–10/11 [ตรวจแล้ว] live + curl: #1343 card tap · #1345 security (next 16.4.5, CSP) · #1347 forge colours · #1348 buy fixes · #1351/#1352 articles · #1331 LINE keying (0026, warehouse switch OFF) · #1353 LINE refunds way 1 (0027). Costs loaded 62 codes on /staff/owner/costs.
+    OPEN PRs → next main chat: #1355 sold-out pill (PASS 54b5e4c9; head 320c8ffc = main merge + content-dates only → merge `Checker: SKIP after-pass (13.5 #2 (จ))` when checks green) · #1357 paste-prefill + #1358 add-items (line-orders-2 stack) · #1359 owner-page wording · #1360 staff Google accounts 0029 (FULL set) · #1361 sku drift (needs list-3 nulls + /staff/dev wording) · #1354 gap docs · #1346 close (superseded) · owner drafts #1324 #1335 #1336.
+    CHILDREN: look-0911 local_569a83ec (member card v8 waits owner + upscale choice → hero pill → PR3 member page → ISR live stock → best-seller from sales ≥3 units/30 days web+keyed LINE) · line-orders-2 local_66555054 (discount 0028 approved → rest of hand-over order → auto-push after confirm) · staff-accounts local_7b975303 (#1360, admin dashboard draft waits owner) · orders-audit-0911 local_3c20d459 at 92% → open a fresh chat from `orders-audit-handover-1011.md` (notes folder) on the owner's word.
+    HOLD RULE: a child's gate checks "contains main" → don't merge to main while one runs; GitHub copy/checks sometimes don't start → `gh run rerun` or ready --undo/ready.
   - DataForSEO: account verified, credit left $0.02, top-up minimum $50 needs the owner, read the full terms first. The owner's API password was shown in chat and reset failed: ask again later. Friday told support the shop sells pods; keep that short next time.
   - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
   - SERP + rank read 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
