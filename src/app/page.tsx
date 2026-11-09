@@ -28,6 +28,9 @@ import { articleFaqJsonLd } from "@/lib/article-jsonld";
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
 // leak as the default for every other page (see layout.tsx's metadata comment).
 export const metadata: Metadata = canonicalFor("/");
+/** ISR (owner 10/11 "ตามแนะนำ", like the product pages 08/11): rebuilt on the server at most every 3 hours, so the home rows'
+ *  live-stock order and the new-arrivals row follow the warehouse instead of the build's git snapshot. */
+export const revalidate = 10800;
 
 // The Thai Q/A of the closing note, as FAQPage: same rule as the block itself (cart on).
 const homeFaqJsonLd = ORDERING_ENABLED ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;

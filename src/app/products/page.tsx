@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { catalogSearchTexts } from "@/lib/catalog-search-entries";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
 import { canonicalFor, collectionPageJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { productsHeadTh } from "@/i18n/search-head-copy";
@@ -20,6 +21,9 @@ import { SamuraiBackdrop } from "@/components/brand/SamuraiBackdrop";
 // products on the storefront (owner 2026-09-13, THAI_STYLE §6).
 const PRODUCTS_TOTAL_COUNT = allProducts.length + getPublishedProducts().length;
 const PRODUCTS_HEAD = productsHeadTh(PRODUCTS_TOTAL_COUNT, ORDERING_ENABLED);
+
+/** ISR (owner 10/11): the server-side in-stock list (CatalogBrowser's first paint) follows the warehouse, every 3 hours at most. */
+export const revalidate = 10800;
 
 export const metadata: Metadata = {
   title: { absolute: PRODUCTS_HEAD.title },
@@ -48,7 +52,7 @@ export default function ProductsPage() {
           <Suspense fallback={null}>
             <LineOrderingNotice />
           </Suspense>
-          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
+          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
         </Container>
       </div>
     </>

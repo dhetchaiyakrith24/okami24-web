@@ -2,6 +2,7 @@ import { getProduct } from "@/data/products";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { RAIL_CARDS } from "@/data/home-sections";
 import { newArrivalSlugs } from "@/lib/new-arrivals";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { HomeText } from "@/components/home/HomeCopy";
 import { HomeCardRail, type HomeCardItem } from "@/components/home/HomeCardRail";
 
@@ -11,7 +12,7 @@ import { HomeCardRail, type HomeCardItem } from "@/components/home/HomeCardRail"
  * No "see all" link: there is no newest-first page to send it to, and every card it holds is on the row itself.
  */
 export function HomeNewArrivals() {
-  const items: HomeCardItem[] = newArrivalSlugs(RAIL_CARDS).flatMap<HomeCardItem>((slug) => {
+  const items: HomeCardItem[] = newArrivalSlugs(RAIL_CARDS, liveStockReady() ? liveLookup() : undefined).flatMap<HomeCardItem>((slug) => {
     const legacy = getProduct(slug);
     if (legacy) return [{ slug, legacy, published: null }];
     const published = getPublishedProductBySlug(slug);
