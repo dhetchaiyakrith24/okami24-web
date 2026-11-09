@@ -38,7 +38,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
 
   // Paste → prefill (owner 10/11 gap hunt): the server reads the text; this only fills the boxes — the admin checks every one.
   const [paste, setPaste] = useState("");
-  const [pasteNote, setPasteNote] = useState<{ filled: number; unmatched: string[] } | null>(null);
+  const [pasteNote, setPasteNote] = useState<{ filled: number; unmatched: string[]; otherPhones: string[] } | null>(null);
   const [reading, startReading] = useTransition();
   const fill = () =>
     startReading(async () => {
@@ -54,7 +54,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         if (p && o) newRows.push({ slug: p.slug, variantId: o.id, label: rowLabel(p, o), price: p.price, quantity: it.quantity });
       }
       if (newRows.length > 0) setRows(newRows);
-      setPasteNote({ filled: got.length + newRows.length, unmatched: r.unmatched });
+      setPasteNote({ filled: got.length + newRows.length, unmatched: r.unmatched, otherPhones: r.otherPhones });
     });
 
   return (
@@ -83,6 +83,10 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
             <p className="text-unverified">
               อ่านสินค้าไม่ออก เลือกเองจากช่องค้นหา: {pasteNote.unmatched.join(" · ")}
             </p>
+          )}
+          {/* Checker 10/11: two numbers in the text = which is the buyer and which the recipient is the admin's call. */}
+          {pasteNote.otherPhones.length > 0 && (
+            <p className="text-unverified">ข้อความมีเบอร์อื่นด้วย: {pasteNote.otherPhones.join(" · ")} — เช็คว่าเบอร์ไหนเป็นเบอร์ลูกค้า เบอร์ไหนเป็นเบอร์ผู้รับ</p>
           )}
         </div>
       )}
