@@ -21,7 +21,7 @@ function showOptionPicker(): void {
     .filter((b) => b.offsetParent !== null)
     .slice(0, 24);
   for (const chip of chips) {
-    chip.animate([{ boxShadow: "0 0 0 0 rgba(255,106,44,.55)" }, { boxShadow: "0 0 0 8px rgba(255,106,44,0)" }], {
+    chip.animate([{ boxShadow: "0 0 0 0 rgba(240,138,42,.55)" }, { boxShadow: "0 0 0 8px rgba(240,138,42,0)" }], {
       duration: 900,
       delay: 350,
       easing: "ease-out",
