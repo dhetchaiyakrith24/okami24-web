@@ -61,10 +61,8 @@ export function LineItemsEdit({
       <input type="hidden" name="orderNumber" value={orderNumber} />
       {from && <input type="hidden" name="from" value={from} />}
       <input type="hidden" name="items" value={items} />
-      <p className="text-xs text-foreground-muted">
-        ลูกค้าขอเพิ่มหลังโอนแล้ว = เพิ่มในออเดอร์นี้ ไม่คีย์ออเดอร์ใหม่ (ค่าส่งคิดครั้งเดียว ส่งกล่องเดียว)
-        {moneyIn ? " · ลูกค้าโอนแล้ว เพิ่มได้อย่างเดียว" : ""}
-      </p>
+      <p className="text-xs text-foreground-muted">ลูกค้าขอเพิ่ม = เพิ่มในออเดอร์นี้ ไม่ต้องคีย์ใหม่ · ค่าส่งคิดครั้งเดียว</p>
+      {moneyIn && <p className="text-xs text-unverified">ลูกค้าโอนแล้ว — เพิ่มได้ ลดหรือเอาออกไม่ได้</p>}
       <ItemPicker products={products} rows={rows} setRows={setRows} />
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-surface-2 px-3 py-2">
@@ -78,7 +76,7 @@ export function LineItemsEdit({
       </div>
 
       <fieldset className="flex flex-col gap-1">
-        <legend className="mb-1 text-sm text-foreground-muted">สลิปที่ลูกค้าโอนเพิ่ม (บอทตรวจแล้ว ยังไม่ผูกกับออเดอร์ไหน)</legend>
+        <legend className="mb-1 text-sm text-foreground-muted">สลิปที่โอนเพิ่ม (บอทตรวจแล้ว ยังไม่ผูกออเดอร์)</legend>
         {slips.map((s) => (
           <label key={s.transRef} className="flex min-h-12 items-center gap-3 rounded-lg px-2 hover:bg-surface-2">
             <input type="radio" name="slipRef" value={s.transRef} checked={slipRef === s.transRef} onChange={() => setSlipRef(s.transRef)} className="size-5 accent-[var(--color-ember)]" />
