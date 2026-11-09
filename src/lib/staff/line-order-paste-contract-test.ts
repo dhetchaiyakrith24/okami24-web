@@ -63,5 +63,16 @@ const e = parsePastedOrder("5/5 ซอยทดสอบ 83000", products, place
 check("two places, none named: sub-district left empty", e.subdistrict === null && e.district === "เมืองภูเก็ต" && e.province === "ภูเก็ต", e);
 check("empty paste = empty result", JSON.stringify(parsePastedOrder("   ", products, places).items) === "[]");
 
+// Checker 10/11 on #1357: money is not a postcode · a second phone is handed back · zero-width characters are dropped.
+const money = parsePastedOrder("ทดสอบ ระบบ\n99/1 หมู่ 2 ตลาดใหญ่ 83000\n081-234-5678\nยอด 12000 บาท", products, places);
+check("money (ยอด … บาท) is not taken as the postcode", money.postalCode === "83000", money);
+const amount = parsePastedOrder("ทดสอบ ระบบ\nโอน 50200\n99/1 หมู่ 2\n12000 บาท\n0812345678", products, places);
+check("a 5-digit amount before บาท and after โอน is skipped; nothing else = no postcode", amount.postalCode === null, amount);
+const twoPhones = parsePastedOrder("ทดสอบ ระบบ\n0812345678\nผู้รับ 089-876-5432\n99/1 หมู่ 2 83000", products, places);
+check("second phone handed back for the admin to check", twoPhones.customerPhone === "0812345678" && JSON.stringify(twoPhones.otherPhones) === JSON.stringify(["0898765432"]), twoPhones);
+check("one phone = no other phones", a.otherPhones.length === 0, a.otherPhones);
+const hidden = parsePastedOrder("ทดสอบ\u200B ระบบ\n08\u200D1234\uFEFF5678", products, places);
+check("zero-width characters dropped before reading", hidden.customerPhone === "0812345678" && hidden.recipientName === "ทดสอบ ระบบ", hidden);
+
 console.log(failed === 0 ? "line-order paste contract: PASS" : `line-order paste contract: FAIL (${failed})`);
 process.exit(failed === 0 ? 0 : 1);
