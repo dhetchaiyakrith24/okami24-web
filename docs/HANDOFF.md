@@ -55,9 +55,9 @@ MERGES: the app's Auto check refused `gh pr merge` as [Production Deploy] twice 
     (list `_incoming/orders-audit-0911/refund-backfill-8.md` in that worktree) · Pod-181 cost 210? · member card + upscale · perks A/B/C
     (rec C) · order-count rule for tiers (rec: signed-in web only for now) · bill + rate upload for LINE profit · Max admin deletes the
     duplicate Pod-170-19 row (Mix Berry).
-  - WAREHOUSE BILLS: 22–31/10 paid (03/11) · 31/10–08/11 owed 99,930 = รอพี่ตรวจ 128 + `docs/cloud-results/accounts-check-plan-0911.md`.
-  - SEO: Google hid us on general terms since 27/10 (new site + few backlinks). GSC read 15/11 · 10/12 · SERP + rank 16/11 · 30/11
-    (SEO_BASELINE) → close round SEO 02/11 with tag seo-rank-0211. YouTube 45 pages + clips 8–13 wait the owner in Studio.
+  - WAREHOUSE BILLS: bill 22–31/10 paid (03/11), bill 31/10–08/11 owed 99,930 = รอพี่ตรวจ 128 + `docs/cloud-results/accounts-check-plan-0911.md`.
+  - SEO: Google hid us on general terms since 27/10 (new site + few backlinks) · GSC read · 15/11 · then · 10/12
+  - SEO: SERP + rank read · 16/11 · then · 30/11 (SEO_BASELINE) → close round SEO 02/11 with tag seo-rank-0211. YouTube 45 pages + clips 8–13 wait the owner in Studio.
   - Daily runs (PC + Chrome on): indexing 16:00 · new products 15:00 · follow-up 13:00.
   - stock light red rule: push-time log live (#1319) → tune after a week of data with the cart open.
   - DHL: first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
@@ -71,6 +71,9 @@ MERGES: the app's Auto check refused `gh pr merge` as [Production Deploy] twice 
   - Catalog left: 5% flavour names on LUMI / SUP ZERO while the nicotine row says 3% · 27 product pages without an article ·
     IQOS Leaf Green vs Spring Green on ILUMA i ONE unproven · JOIWAY F4 PLUS (16 pairs) not in catalog/warehouse · no box photos for
     Muro 3ML, Graple, RELX Creator Pod 20K, Nexswitch 16K · RELX Pod / Pod Pro have no warehouse code ·
+    RELX Smash Go page says 20ml in the table, 18ml in the text (row kept out) · INFY PLUS 2.5ML + INFY 20K: no official list to check ·
+    dealer posters only (not used): Super Cool 30ml nic35, Marbo Freebase 30ml 6mg · salthub.com names no Zero Nano colours ·
+    full audit = `_incoming/house-20261106/owner-audit-0611.md` + `git show b6dbe04b:docs/HANDOFF.md` §16 "OWNER-REQUEST AUDIT" ·
     `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the ILUMA i cap (iqosheet-18).
   - Warehouse: Pod-156's 14th option is coded "Pod-147" in Max · EasySlip quota 497/1000 (23/10) — warn before it runs out.
   - Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
