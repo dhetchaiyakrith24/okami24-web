@@ -1,11 +1,12 @@
 import { assignLineGroupAction } from "@/app/staff/actions";
 import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { getGroupName } from "@/lib/line/client";
-import { listGroups, type GroupRole } from "@/lib/line/groups";
+import { GROUP_ROLES, listGroups, type GroupRole } from "@/lib/line/groups";
 
 const ROLE_LABEL: Record<GroupRole, string> = {
   order: "กลุ่มแจ้งออเดอร์",
   slip: "กลุ่มตรวจสลิป",
+  refund: "กลุ่มแจ้งคืนเงิน",
 };
 
 /**
@@ -33,7 +34,7 @@ export async function LineGroups() {
               </div>
               <form action={assignLineGroupAction} className="flex flex-wrap gap-2">
                 <input type="hidden" name="groupId" value={g.groupId} />
-                {(["order", "slip"] as const).map((role) => (
+                {GROUP_ROLES.map((role) => (
                   <PendingButton
                     key={role}
                     name="role"
