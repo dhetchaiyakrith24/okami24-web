@@ -8081,7 +8081,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Vazer Reload 15K เทียบกับรุ่นอื่น",
           paragraphs: [
             "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ตามที่ SALTHUB ระบุไว้ ตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบตทั้งตอนกำลังชาร์จและตอนชาร์จเต็ม",
-            "M Switch Kit ก็มีกลิ่นชื่อเดียวกับรุ่นนี้ คือ Grape Lychee และ Mixberry ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
+            "M Switch Kit ก็มี Grape Lychee และ Mixberry เหมือนรุ่นนี้ ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
           ],
         },
       ],
