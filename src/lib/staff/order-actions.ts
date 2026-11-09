@@ -89,8 +89,10 @@ export function warehouseMayHaveIt(o: { status: OrderStatus; channel: "web" | "l
  * hand ("ส่งรายการให้คลังแล้ว") of a LINE order, while the button can send it, needs the admin's tick that they keyed it into
  * Shipnity themselves and did not press the button — and the button carries a red "do not key it again" line.
  * While the owner's auto-push switch is on (src/lib/woo/auto-push-rules.ts) the system may already have sent ANY paid order,
- * so every hand-over by hand needs the tick.
+ * so every hand-over by hand needs the tick. Only while Shipnity takes orders from us (`shipnityReady`): with no link, nothing
+ * can send by itself and the hand-over by hand is the only way, so asking would only block the admin.
  */
-export function handoverNeedsTick(o: { channel: "web" | "line"; lineSwitchOn: boolean; autoOn?: boolean }): boolean {
+export function handoverNeedsTick(o: { channel: "web" | "line"; lineSwitchOn: boolean; autoOn?: boolean; shipnityReady: boolean }): boolean {
+  if (!o.shipnityReady) return false;
   return o.autoOn === true || (o.channel === "line" && o.lineSwitchOn);
 }

@@ -83,9 +83,10 @@ check("tick on cancel: a paid LINE order (keyed into Shipnity by hand while the 
 check("no tick: a paid web order not sent", !may("approved", "web"));
 check("no tick: waiting for the money", !may("awaiting_verification", "line"));
 check("no tick: shipped or done (cannot be cancelled anyway)", !may("shipped", "line", true) && !may("completed", "web", true));
-check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ channel: "line", lineSwitchOn: true }));
-check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true }));
-check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true }));
+check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ channel: "line", lineSwitchOn: true, shipnityReady: true }));
+check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false, shipnityReady: true }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true, shipnityReady: true }));
+check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true, shipnityReady: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true, shipnityReady: true }));
+check("no hand-over tick without a Shipnity link — nothing can send by itself, so hand-over by hand must stay open", !handoverNeedsTick({ channel: "line", lineSwitchOn: true, autoOn: true, shipnityReady: false }));
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

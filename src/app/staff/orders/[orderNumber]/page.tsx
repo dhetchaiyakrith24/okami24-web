@@ -335,7 +335,7 @@ export default async function StaffOrderPage({
   // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may already hold it → a cancel needs a tick;
   // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
   const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
-  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse });
+  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() });
   // LINE_ORDERS_GAPS.md #7 (src/lib/staff/order-address.ts): the address is fixed here until the warehouse has the order.
   const canEditAddress = addressEditable({ status: order.status, sentToWarehouse: editState.sentToWarehouse });
   const moneyIn = order.status === "approved" || linked.satang > 0;
@@ -446,7 +446,17 @@ export default async function StaffOrderPage({
           ) : (
             <>
               <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-              {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+              {/* Same tick as the folded hand-over above: the server asks for it whenever handoverNeedsTick says so. */}
+              {steps.includes("to-warehouse") && (
+                <ActionForm order={order} from={from} act="to-warehouse">
+                  {handoverTick && (
+                    <label className="flex min-h-12 items-center gap-3 rounded-lg border border-danger/50 px-3 text-sm text-foreground">
+                      <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                      คีย์ออเดอร์นี้ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง
+                    </label>
+                  )}
+                </ActionForm>
+              )}
             </>
           )}
         </section>
