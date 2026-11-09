@@ -183,7 +183,7 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold text-foreground">{dayLabel(day.date)}</span>
             <span className="text-sm tabular-nums text-foreground-muted">{split(day)}</span>
-            {unpriced > 0 && <span className="text-sm text-unverified">ไม่มีทุน {unpriced} ออเดอร์</span>}
+            {unpriced > 0 && <span className="text-sm text-unverified">{unpriced} ออเดอร์ยังไม่นับกำไร</span>}
             {day.unclear.length > 0 && <span className="text-sm text-unverified">สลิปไม่แน่ใจ {day.unclear.length} ใบ</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
