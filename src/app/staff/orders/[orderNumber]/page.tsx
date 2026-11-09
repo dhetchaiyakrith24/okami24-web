@@ -7,7 +7,7 @@ import { formatRunNumber } from "@/lib/commerce/run-number";
 import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
+import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
 import { readSwitches } from "@/lib/commerce/shop-switches";
@@ -65,6 +65,8 @@ const ERROR_TEXT: Record<string, string> = {
   "carrier-locked": "เปลี่ยนขนส่งไม่ได้แล้ว — ออเดอร์ส่งเข้า Shipnity แล้ว หรือสถานะเปลี่ยนไป · แจ้งคลังให้เปลี่ยนใน Shipnity แทน",
   message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
   "not-found": "ไม่พบออเดอร์นี้",
+  "cancel-warehouse": "ยังไม่ได้ยกเลิก — ติ๊กก่อนว่ายกเลิกใน Shipnity หรือแจ้งแอดมินคลังแล้ว (ยกเลิกในเว็บไม่ถึง Shipnity)",
+  "handover-tick": "ยังไม่ได้บันทึก — ติ๊กก่อนว่าคีย์ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง (กันคลังส่งซ้ำ 2 กล่อง)",
   "shipnity-no-target": "ยังส่งเข้า Shipnity ไม่ได้ — ยังไม่ได้กดอนุญาตที่รับออเดอร์ในหน้า \"เชื่อมคลัง Shipnity\" · ใช้คัดลอกข้อความส่งคลังไปก่อน",
   "shipnity-no-sku": "ส่งเข้า Shipnity ไม่ได้ — มีสินค้าที่ไม่มีรหัสคลัง · ใช้คัดลอกข้อความส่งคลังแทน แล้วแจ้ง Friday",
   "shipnity-failed": "ส่งเข้า Shipnity ไม่สำเร็จ ออเดอร์ยังไม่เปลี่ยน — กดส่งใหม่อีกครั้ง หรือคัดลอกข้อความส่งคลังไปก่อน",
@@ -86,6 +88,7 @@ const DONE_TEXT: Record<string, string> = {
   ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
+  "cancel-warehouse": "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์ · เช็คอีกครั้งว่าใน Shipnity ยกเลิกแล้วจริง",
   message: "ส่งข้อความแล้ว: ลูกค้าเห็นในหน้าออเดอร์ — ถ้าเรื่องด่วน โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังในกล่องสินค้าเป็นรายการใหม่",
@@ -318,7 +321,12 @@ export default async function StaffOrderPage({
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
   const linked = linkedSlips(order.id);
   // "เพิ่มสินค้าในออเดอร์" (LINE_ORDERS_GAPS.md #3): a keyed LINE order not yet sent to the warehouse.
-  const itemsEditable = itemsNotEditable(editStateOf(order.id)) === null;
+  const editState = editStateOf(order.id);
+  const itemsEditable = itemsNotEditable(editState) === null;
+  // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may already hold it → a cancel needs a tick;
+  // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
+  const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
+  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse });
   const moneyIn = order.status === "approved" || linked.satang > 0;
 
   return (
@@ -393,10 +401,14 @@ export default async function StaffOrderPage({
                 ส่งชื่อ ที่อยู่ เบอร์ สินค้า และค่าส่ง ไม่ส่งสลิป
                 {sent?.status === "failed"
                   ? sent.httpStatus === null
-                    ? " · ครั้งก่อน Shipnity ไม่ตอบกลับ — เปิด Shipnity ดูก่อนว่าออเดอร์เข้าแล้วหรือยัง ถ้าเข้าแล้วอย่ากดซ้ำ"
+                    ? ` · ครั้งก่อน Shipnity ไม่ตอบกลับ — ค้นใน Shipnity ด้วยเลข ${order.orderNumber} ก่อน ถ้าเข้าแล้วอย่ากดซ้ำ`
                     : " · ครั้งก่อนส่งไม่สำเร็จ"
                   : ""}
               </p>
+              {/* LINE_ORDERS_GAPS.md #1: once the switch is on, keying the same LINE order into Shipnity by hand ships it twice. */}
+              {lineOrder && (
+                <p className="text-sm text-danger">ปุ่มนี้ส่งเข้า Shipnity ให้แล้ว ห้ามคีย์ใน Shipnity ซ้ำ · ถ้าคีย์ใน Shipnity ไปแล้ว อย่ากดปุ่มนี้ ใช้ &ldquo;ส่งเองแบบเดิม&rdquo;</p>
+              )}
             </form>
           )}
           {shipnity ? (
@@ -407,7 +419,16 @@ export default async function StaffOrderPage({
               </summary>
               <div className="flex flex-col gap-3 pt-2">
                 <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-                {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" quiet />}
+                {steps.includes("to-warehouse") && (
+                  <ActionForm order={order} from={from} act="to-warehouse" quiet>
+                    {handoverTick && (
+                      <label className="flex min-h-12 items-center gap-3 rounded-lg border border-danger/50 px-3 text-sm text-foreground">
+                        <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                        คีย์ออเดอร์นี้ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง
+                      </label>
+                    )}
+                  </ActionForm>
+                )}
               </div>
             </details>
           ) : (
@@ -670,6 +691,18 @@ export default async function StaffOrderPage({
                 หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
                 <input name="note" autoComplete="off" maxLength={300} className={input} />
               </label>
+              {/* LINE_ORDERS_GAPS.md #4: a cancel here never reaches Shipnity. */}
+              {mayHave && (
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ยกเลิกในเว็บ ไม่ได้ยกเลิกใน Shipnity — ยกเลิกใน Shipnity เอง หรือแจ้งแอดมินคลัง ด้วยเลข <span className="select-all font-semibold">{order.orderNumber}</span>
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    ยกเลิกใน Shipnity / แจ้งแอดมินคลังแล้ว (หรือยังไม่ได้คีย์ใน Shipnity)
+                  </label>
+                </div>
+              )}
               <PendingButton className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10">
                 {STAFF_ACTIONS.cancel.label}
               </PendingButton>

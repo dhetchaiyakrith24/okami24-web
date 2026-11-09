@@ -53,6 +53,8 @@ export function historyNoteTh(note: string): string {
   const staff = /^(Staff|Shipnity): ([a-z-]+)(.*)$/.exec(note);
   if (staff) {
     const rest = staff[3]
+      .replace(" — warehouse: cancelled in Shipnity / told (ticked)", " — ยกเลิกใน Shipnity / แจ้งแอดมินคลังแล้ว (ติ๊ก)")
+      .replace(" — keyed into Shipnity by hand (ticked)", " — คีย์ใน Shipnity เองแล้ว (ติ๊ก)")
       .replace(" — tracking ", " — เลขพัสดุ ")
       .replace(/ — carrier ([a-z-]+)/, (m, id: string) => {
         const c = toCarrierId(id);
