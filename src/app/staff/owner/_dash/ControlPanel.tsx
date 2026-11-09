@@ -41,7 +41,7 @@ export function ControlPanel({
         <h2 className="font-semibold text-foreground">จัดการ</h2>
         <ul className="dash-rows flex flex-col">
           <Go href="/staff/owner/bill#new" label="เทียบบิลคลัง" line={billDue ? `รอบ ${ddmm(billDue.from)}–${ddmm(billDue.to)} ยังไม่วาง` : "วางไฟล์ทุกเสาร์"} warn={Boolean(billDue)} />
-          <Go href="/staff/owner/costs" label="ตารางทุน" line={noCost > 0 ? `ไม่มีทุน ${noCost} รหัส` : "อัปเดตทุน"} warn={noCost > 0} />
+          <Go href="/staff/owner/costs" label="ตารางทุน" line={noCost > 0 ? `สินค้ายังไม่มีทุน ${noCost} รุ่น` : "อัปเดตทุน"} warn={noCost > 0} />
           <Go
             href="/staff/owner/team"
             label="ทีมงาน"

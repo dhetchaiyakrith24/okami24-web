@@ -102,6 +102,8 @@ export interface StaffOrderDetail extends OrderDetail {
   channel: "web" | "line";
   /** The name typed by whoever keyed a LINE order; null for web orders. */
   keyedBy: string | null;
+  /** A special price (migration 0028): how much less than the catalogue total the customer pays, who gave it, why. */
+  discount: { amount: number; by: string | null; reason: string | null } | null;
   trackingNumber: string | null;
   /** The customer's optional note to the shop from the review step (cart UX batch C) — staff page only. */
   customerNote: string | null;
@@ -129,8 +131,17 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   if (!order) return null;
   const db = getDb();
   const extra = db
-    .prepare("SELECT o.tracking_number, o.customer_note, o.channel, o.keyed_by, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
-    .get(order.id) as { tracking_number: string | null; customer_note: string | null; channel: string; keyed_by: string | null; phone: string };
+    .prepare("SELECT o.tracking_number, o.customer_note, o.channel, o.keyed_by, o.discount, o.discount_by, o.discount_reason, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
+    .get(order.id) as {
+    tracking_number: string | null;
+    customer_note: string | null;
+    channel: string;
+    keyed_by: string | null;
+    discount: number | null;
+    discount_by: string | null;
+    discount_reason: string | null;
+    phone: string;
+  };
   const slipRow = db
     .prepare(
       "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at, proof_image_path, slip_image_deleted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
@@ -164,6 +175,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
     customerPhone: extra.phone,
     channel: extra.channel === "line" ? "line" : "web",
     keyedBy: extra.keyed_by,
+    discount: extra.discount ? { amount: extra.discount, by: extra.discount_by, reason: extra.discount_reason } : null,
     trackingNumber: extra.tracking_number,
     customerNote: extra.customer_note,
     slip: slipRow

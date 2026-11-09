@@ -10,6 +10,8 @@ import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { countByJob, listStaffOrders } from "@/lib/staff/orders";
 import { LIST_CLASS, OrderRow } from "@/app/staff/_components/OrderRow";
 import { jobOf, STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
+import { orderCountDays } from "@/lib/staff/order-count";
+import { formatDay } from "@/app/staff/_components/format";
 
 /**
  * /staff — "งาน", the staff home (owner 26/10, queue B3: "หาออเดอร์ที่ต้องทำไม่เจอ … ใช้บนมือถือ"; staff declutter 27/10):
@@ -71,6 +73,8 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
   const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
   const waiting = listStaffOrders("todo");
   const others: StaffJob[] = ["unpaid", "done", "cancelled"];
+  const dayCounts = orderCountDays(2);
+  const waitingToday = dayCounts[0].line.waiting + dayCounts[0].web.waiting;
 
   return (
     <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -78,6 +82,30 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
       <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
         งาน <span className={todo > 0 ? "text-unverified" : "text-foreground-dim"}>· {todo}</span>
       </h1>
+
+      {/* LINE_ORDERS_GAPS.md #13 (owner 10/11): the web IS the daily order count — the admins no longer post "#N" in the
+          OKAMI ORDER group. Today and yesterday; the money of the day is /staff/sales. Rules = order-count-rules.ts. */}
+      <section aria-label="นับออเดอร์" className="flex flex-col gap-1.5 rounded-xl border border-surface-border-soft bg-surface-1 px-4 py-3 text-sm">
+        {dayCounts.map((d, i) => (
+          <p key={d.date} className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <span className="text-foreground-muted">
+              {i === 0 ? "วันนี้" : "เมื่อวาน"} {formatDay(`${d.date}T12:00:00+07:00`)}
+            </span>
+            <span className="tabular-nums text-foreground">
+              LINE <span className="font-semibold">{d.line.orders}</span> · เว็บ <span className="font-semibold">{d.web.orders}</span> · รวม{" "}
+              <span className="font-semibold">{d.line.orders + d.web.orders}</span>
+            </span>
+          </p>
+        ))}
+        <p className="flex flex-wrap items-center justify-between gap-x-3">
+          <span className={waitingToday > 0 ? "text-xs text-unverified" : "text-xs text-foreground-dim"}>
+            {waitingToday > 0 ? `วันนี้รอยืนยันยอด ${waitingToday}` : "นับออเดอร์ที่ไม่ยกเลิก · เว็บนับเมื่อลูกค้าโอนแล้ว"}
+          </span>
+          <Link href="/staff/sales" className="inline-flex min-h-11 items-center text-sm text-ember hover:text-ember-strong">
+            ยอดเงินรายวัน →
+          </Link>
+        </p>
+      </section>
 
       {/* Staff declutter 27/10 (designer: "one way per job"): the to-do orders right here, under one heading per step in
           working order — the step cards, the filter chips and the step groups of the old list were three ways to the same

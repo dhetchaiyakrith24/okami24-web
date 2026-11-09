@@ -98,7 +98,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined, tone: "warn" as const }] : []),
     ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined, tone: "warn" as const }] : []),
     ...(unclear > 0 ? [{ text: `สลิปไม่แน่ใจ ${unclear}`, tone: "warn" as const }] : []),
-    ...(unpriced > 0 ? [{ text: `ไม่มีทุน ${unpriced} ออเดอร์`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
+    ...(unpriced > 0 ? [{ text: `ออเดอร์รอใส่ทุน ${unpriced}`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
     ...(billDue ? [{ text: "บิลรอเทียบ", href: "/staff/owner/bill#new", tone: "warn" as const, hideOn: "week" }] : []),
   ];
 
@@ -124,7 +124,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     {
       id: "week",
       label: "สัปดาห์",
-      content: <WeekPanel rounds={rounds} due={due} week={week} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
+      content: <WeekPanel rounds={rounds} due={due} week={week} weekDays={{ from: sales[Math.min(6, sales.length - 1)].date, to: sales[0].date }} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
     },
     { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, lineToWarehouse: switches.lineToWarehouse, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} team={team} /> },
   ];

@@ -70,3 +70,25 @@ export function warehouseText(input: {
     ...(input.carrier ? [`ขนส่ง ${input.carrier}`] : []),
   ].join("\n");
 }
+
+/**
+ * THE WAREHOUSE MAY ALREADY HAVE IT (LINE_ORDERS_GAPS.md #1 and #4). Our site only ever sends Shipnity a NEW order — a cancel
+ * on the web never reaches the warehouse (whether Shipnity would act on an update is unknown until the owner asks the
+ * warehouse). So cancelling an order the warehouse may hold needs the admin's tick that they cancelled it in Shipnity or told
+ * the warehouse admin. "May hold": sent by our button, or handed over by hand (processing), or a LINE order already paid —
+ * while the owner's switch is off the admin keys LINE orders into Shipnity by hand, maybe before pressing anything here.
+ */
+export function warehouseMayHaveIt(o: { status: OrderStatus; channel: "web" | "line"; sentToWarehouse: boolean }): boolean {
+  if (o.status === "cancelled" || o.status === "shipped" || o.status === "completed") return false;
+  return o.sentToWarehouse || o.status === "processing" || (o.channel === "line" && o.status === "approved");
+}
+
+/**
+ * THE DOUBLE SHIPMENT (LINE_ORDERS_GAPS.md #1): once the owner's switch is ON, a paid LINE order goes to Shipnity by the
+ * order page's button. Keyed into Shipnity by hand as well, out of habit, the warehouse packs it twice. So the hand-over by
+ * hand ("ส่งรายการให้คลังแล้ว") of a LINE order, while the button can send it, needs the admin's tick that they keyed it into
+ * Shipnity themselves and did not press the button — and the button carries a red "do not key it again" line.
+ */
+export function handoverNeedsTick(o: { channel: "web" | "line"; lineSwitchOn: boolean }): boolean {
+  return o.channel === "line" && o.lineSwitchOn;
+}
