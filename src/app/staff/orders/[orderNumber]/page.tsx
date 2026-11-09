@@ -23,6 +23,8 @@ import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
 import { slipsToPick } from "@/lib/staff/line-orders";
 import { stockBook } from "@/lib/staff/stock-book";
 import { LineItemsEdit } from "./LineItemsEdit";
+import { AddressEdit } from "./AddressEdit";
+import { addressEditable } from "@/lib/staff/order-address";
 
 const WAREHOUSE_CHANGE_TEXT: Record<string, string> = {
   cancelled: "คลังยกเลิกออเดอร์นี้ใน Shipnity",
@@ -89,6 +91,7 @@ const DONE_TEXT: Record<string, string> = {
   complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
   cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
   "cancel-warehouse": "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์ · เช็คอีกครั้งว่าใน Shipnity ยกเลิกแล้วจริง",
+  address: "บันทึกที่อยู่ใหม่แล้ว — ที่อยู่เดิมเก็บไว้ในประวัติ · ข้อความส่งคลังเป็นที่อยู่ใหม่",
   message: "ส่งข้อความแล้ว: ลูกค้าเห็นในหน้าออเดอร์ — ถ้าเรื่องด่วน โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
   "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังในกล่องสินค้าเป็นรายการใหม่",
@@ -327,6 +330,8 @@ export default async function StaffOrderPage({
   // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
   const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
   const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse });
+  // LINE_ORDERS_GAPS.md #7 (src/lib/staff/order-address.ts): the address is fixed here until the warehouse has the order.
+  const canEditAddress = addressEditable({ status: order.status, sentToWarehouse: editState.sentToWarehouse });
   const moneyIn = order.status === "approved" || linked.satang > 0;
 
   return (
@@ -491,6 +496,9 @@ export default async function StaffOrderPage({
             {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
           </p>
           {order.customerPhone !== a.phone && <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>}
+          {!canEditAddress && (order.status === "processing" || editState.sentToWarehouse) && (
+            <p className="text-xs text-foreground-dim">ส่งคลังแล้ว — แก้ที่อยู่ใน Shipnity หรือแจ้งแอดมินคลัง (เว็บไม่ส่งการแก้ไปให้คลัง)</p>
+          )}
           {/* BSOT §8: for a LINE order the admin sends the customer its status link (the shop's own words go in LINE). */}
           {lineOrder && (
             <CopyBlock text={`${SITE_URL}/orders/${order.orderNumber}?token=${order.viewToken}`} label="คัดลอกลิงก์ติดตามออเดอร์" doneLabel="คัดลอกแล้ว" outline />
@@ -655,6 +663,23 @@ export default async function StaffOrderPage({
                   .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
                   .filter((p) => p.options.length > 0)}
                 slips={slipsToPick()}
+              />
+            </div>
+          </details>
+        )}
+
+        {canEditAddress && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span>แก้ที่อยู่จัดส่ง</span>
+              <Chevron />
+            </summary>
+            <div className={foldBody}>
+              <AddressEdit
+                orderNumber={order.orderNumber}
+                from={from}
+                shipnityNote={mayHave}
+                address={{ recipientName: a.recipientName, phone: a.phone, line1: a.line1, subdistrict: a.subdistrict, district: a.district, province: a.province, postalCode: a.postalCode }}
               />
             </div>
           </details>
