@@ -103,7 +103,7 @@ async function db(): Promise<void> {
 
     d.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at, actor_kind, account_id) VALUES ('t1', 'google', '2999-01-01T00:00:00Z', 'account', ?)").run(a.id);
     d.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at) VALUES ('t2', 'abc', '2999-01-01T00:00:00Z')").run();
-    check("a session from before 0028 reads as the shared password", (d.prepare("SELECT actor_kind FROM staff_sessions WHERE token_hash = 't2'").get() as { actor_kind: string }).actor_kind === "shared");
+    check("a session from before 0029 reads as the shared password", (d.prepare("SELECT actor_kind FROM staff_sessions WHERE token_hash = 't2'").get() as { actor_kind: string }).actor_kind === "shared");
     accounts.setAccountActive(a.id, false);
     const revoked = d.prepare("SELECT revoked_at FROM staff_sessions WHERE token_hash = 't1'").get() as { revoked_at: string | null };
     check("disabling an admin ends their open session", revoked.revoked_at !== null);

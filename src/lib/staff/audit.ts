@@ -5,7 +5,7 @@ import type { AuditAction } from "@/lib/staff/audit-rules";
 
 /**
  * "ใครทำอะไร" (owner 10/11: "พี่เห็นว่าใครคีย์ออเดอร์ไหน ใครให้ส่วนลดอะไร ใครกดรับออเดอร์เว็บ"): one row per thing a person did in the
- * back office, in `staff_audit` (migration 0028). Append-only: this file only inserts and reads. A failed write is logged and
+ * back office, in `staff_audit` (migration 0029). Append-only: this file only inserts and reads. A failed write is logged and
  * never stops the action itself — the order step already happened and must not be undone by the record of it.
  * Action names and their Thai words = src/lib/staff/audit-rules.ts.
  */

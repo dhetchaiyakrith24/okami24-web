@@ -3,7 +3,7 @@ import { getDb } from "@/lib/db/client";
 import { normalEmail, parseName, parseNewAccount, type AccountForSignIn } from "@/lib/staff/account-rules";
 
 /**
- * The admins' accounts (migration 0028, owner 10/11). The owner adds, renames and disables them on /staff/owner/team; they sign
+ * The admins' accounts (migration 0029, owner 10/11). The owner adds, renames and disables them on /staff/owner/team; they sign
  * in with Google (src/lib/staff/auth.ts). The address lives only in this table on the data disk — never in a log line.
  */
 
