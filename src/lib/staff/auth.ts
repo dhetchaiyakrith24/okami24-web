@@ -98,7 +98,7 @@ function issueSession(sink: CookieSink, actor: StaffActor, tag: string, hours: n
   const expiresAt = new Date(Date.now() + hours * 3_600_000);
   const db = getDb();
   db.prepare("DELETE FROM staff_sessions WHERE expires_at < ? OR revoked_at IS NOT NULL").run(new Date().toISOString());
-  db.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at, actor_kind, account_id) VALUES (?, ?, ?, ?, ?)").run(
+  db.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at, actor_kind, staff_id) VALUES (?, ?, ?, ?, ?)").run(
     sha256(token),
     tag,
     expiresAt.toISOString(),
@@ -202,7 +202,7 @@ interface SessionRow {
   expires_at: string;
   revoked_at: string | null;
   actor_kind: StaffActor["kind"];
-  account_id: number | null;
+  staff_id: number | null;
   account_name: string | null;
   account_active: number | null;
 }
@@ -219,8 +219,8 @@ export const currentStaff = cache(async (): Promise<StaffActor | null> => {
   if (!token) return null;
   const row = getDb()
     .prepare(
-      `SELECT s.password_tag, s.expires_at, s.revoked_at, s.actor_kind, s.account_id, a.name AS account_name, a.active AS account_active
-       FROM staff_sessions s LEFT JOIN staff_accounts a ON a.id = s.account_id WHERE s.token_hash = ?`
+      `SELECT s.password_tag, s.expires_at, s.revoked_at, s.actor_kind, s.staff_id, a.name AS account_name, a.active AS account_active
+       FROM staff_sessions s LEFT JOIN staff_accounts a ON a.id = s.staff_id WHERE s.token_hash = ?`
     )
     .get(sha256(token)) as SessionRow | undefined;
   if (!row || row.revoked_at) return null;
@@ -231,8 +231,8 @@ export const currentStaff = cache(async (): Promise<StaffActor | null> => {
     return { kind: "shared", accountId: null, name: SHARED_NAME };
   }
   if (row.actor_kind === "owner") return ownerAreaEnabled() ? { kind: "owner", accountId: null, name: OWNER_NAME } : null;
-  if (row.account_id === null || row.account_active !== 1 || !row.account_name) return null;
-  return { kind: "account", accountId: row.account_id, name: row.account_name };
+  if (row.staff_id === null || row.account_active !== 1 || !row.account_name) return null;
+  return { kind: "account", accountId: row.staff_id, name: row.account_name };
 });
 
 /** True when this request carries a live staff session of any kind. */

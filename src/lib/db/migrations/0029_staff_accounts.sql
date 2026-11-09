@@ -15,13 +15,14 @@ CREATE TABLE IF NOT EXISTS staff_accounts (
   last_sign_in_at TEXT
 );
 
--- Who a staff session belongs to. 'shared' = the team password of 0004 (every session before this migration);
--- 'account' = an admin's Google sign-in (account_id set); 'owner' = the owner's Google sign-in, acting in the admin view.
+-- Who a staff session belongs to (`staff_id`, not "account_id": in this shop "account" means a bank account, and the
+-- slip-check contract test keeps every bank-account-shaped column out of the staff tables). 'shared' = the team password of 0004 (every session before this migration);
+-- 'account' = an admin's Google sign-in (staff_id set); 'owner' = the owner's Google sign-in, acting in the admin view.
 ALTER TABLE staff_sessions ADD COLUMN actor_kind TEXT NOT NULL DEFAULT 'shared' CHECK (actor_kind IN ('shared', 'account', 'owner'));
-ALTER TABLE staff_sessions ADD COLUMN account_id INTEGER REFERENCES staff_accounts(id);
+ALTER TABLE staff_sessions ADD COLUMN staff_id INTEGER REFERENCES staff_accounts(id);
 
 -- Who keyed a LINE order, as an account (keyed_by of 0026 stays: the name as it read that day).
-ALTER TABLE orders ADD COLUMN keyed_by_account_id INTEGER REFERENCES staff_accounts(id);
+ALTER TABLE orders ADD COLUMN keyed_by_staff_id INTEGER REFERENCES staff_accounts(id);
 
 -- "ใครทำอะไร": one row per thing a person did in the back office. Append-only — nothing in the code updates or deletes a row.
 -- actor_name is the name at that moment, so renaming or disabling an account never rewrites history.
@@ -29,11 +30,11 @@ CREATE TABLE IF NOT EXISTS staff_audit (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
   actor_kind TEXT NOT NULL CHECK (actor_kind IN ('shared', 'account', 'owner')),
-  account_id INTEGER REFERENCES staff_accounts(id),
+  staff_id INTEGER REFERENCES staff_accounts(id),
   actor_name TEXT NOT NULL,
   action TEXT NOT NULL,
   order_number TEXT,
   detail TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_staff_audit_at ON staff_audit(at);
-CREATE INDEX IF NOT EXISTS idx_staff_audit_account ON staff_audit(account_id, at);
+CREATE INDEX IF NOT EXISTS idx_staff_audit_staff ON staff_audit(staff_id, at);

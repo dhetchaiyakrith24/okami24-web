@@ -101,7 +101,7 @@ async function db(): Promise<void> {
     accounts.markSignedIn(a.id, "g-2", true);
     check("Google's id is pinned once and never overwritten", accounts.accountForSignIn("admin1@example.com")?.googleSub === "g-1");
 
-    d.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at, actor_kind, account_id) VALUES ('t1', 'google', '2999-01-01T00:00:00Z', 'account', ?)").run(a.id);
+    d.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at, actor_kind, staff_id) VALUES ('t1', 'google', '2999-01-01T00:00:00Z', 'account', ?)").run(a.id);
     d.prepare("INSERT INTO staff_sessions (token_hash, password_tag, expires_at) VALUES ('t2', 'abc', '2999-01-01T00:00:00Z')").run();
     check("a session from before 0029 reads as the shared password", (d.prepare("SELECT actor_kind FROM staff_sessions WHERE token_hash = 't2'").get() as { actor_kind: string }).actor_kind === "shared");
     accounts.setAccountActive(a.id, false);
@@ -113,8 +113,8 @@ async function db(): Promise<void> {
     check("rename", accounts.accountForSignIn("admin2@example.com")?.name === "Prang");
 
     recordStaffAction({ kind: "account", accountId: b.id, name: "Prang" }, "sign-in", { detail: "Google" });
-    const row = d.prepare("SELECT actor_kind, account_id, actor_name, action FROM staff_audit").get() as Record<string, unknown>;
-    check("the audit row names its person and keeps the name of that moment", row.actor_kind === "account" && row.account_id === b.id && row.actor_name === "Prang" && row.action === "sign-in");
+    const row = d.prepare("SELECT actor_kind, staff_id, actor_name, action FROM staff_audit").get() as Record<string, unknown>;
+    check("the audit row names its person and keeps the name of that moment", row.actor_kind === "account" && row.staff_id === b.id && row.actor_name === "Prang" && row.action === "sign-in");
     let refused = false;
     try {
       d.prepare("INSERT INTO staff_audit (actor_kind, actor_name, action) VALUES ('nobody', 'x', 'y')").run();
@@ -122,7 +122,7 @@ async function db(): Promise<void> {
       refused = true;
     }
     check("the audit table refuses an unknown kind of person", refused);
-    check("orders can name the account that keyed them", (d.prepare("PRAGMA table_info(orders)").all() as { name: string }[]).some((c) => c.name === "keyed_by_account_id"));
+    check("orders can name the account that keyed them", (d.prepare("PRAGMA table_info(orders)").all() as { name: string }[]).some((c) => c.name === "keyed_by_staff_id"));
   } finally {
     try {
       (await load("src/lib/db/client.ts")).getDb().close();

@@ -76,7 +76,7 @@ export function setAccountActive(id: number, active: boolean): AccountResult {
   if (!row) return { ok: false, error: "missing" };
   db.transaction(() => {
     db.prepare("UPDATE staff_accounts SET active = ? WHERE id = ?").run(active ? 1 : 0, id);
-    if (!active) db.prepare("UPDATE staff_sessions SET revoked_at = ? WHERE account_id = ? AND revoked_at IS NULL").run(new Date().toISOString(), id);
+    if (!active) db.prepare("UPDATE staff_sessions SET revoked_at = ? WHERE staff_id = ? AND revoked_at IS NULL").run(new Date().toISOString(), id);
   })();
   return { ok: true, id, name: row.name };
 }

@@ -12,7 +12,7 @@ import type { AuditAction } from "@/lib/staff/audit-rules";
 export function recordStaffAction(actor: StaffActor, action: AuditAction, extra: { orderNumber?: string | null; detail?: string | null } = {}): void {
   try {
     getDb()
-      .prepare("INSERT INTO staff_audit (actor_kind, account_id, actor_name, action, order_number, detail) VALUES (?, ?, ?, ?, ?, ?)")
+      .prepare("INSERT INTO staff_audit (actor_kind, staff_id, actor_name, action, order_number, detail) VALUES (?, ?, ?, ?, ?, ?)")
       .run(actor.kind, actor.accountId, actor.name, action, extra.orderNumber ?? null, extra.detail ? extra.detail.slice(0, 300) : null);
   } catch (err) {
     console.error(`[staff-audit] not recorded (${action}): ${err instanceof Error ? err.message : String(err)}`);
