@@ -15,16 +15,19 @@ import type { NextConfig } from "next";
  * - https://i.ytimg.com — the review-video thumbnails (ProductReviewVideo, `unoptimized`, so the browser fetches it).
  * - blob: — the slip / refund-slip / bill previews (`URL.createObjectURL`) · data: — inline SVG/PNG in CSS and props.
  * - worker-src 'self' — the hero ribbons run in a same-origin worker (ribbon-driver.ts).
+ * - Cloudflare Web Analytics (T2-48, 10/11): Cloudflare adds its own beacon to every HTML page at the edge —
+ *   https://static.cloudflareinsights.com/beacon.min.js (script) reporting to https://cloudflareinsights.com/cdn-cgi/rum
+ *   (connect). The policy blocked it, so the dashboard counted nothing and every page logged a CSP error. Those two hosts only.
  * `frame-ancestors 'self'` says what X-Frame-Options SAMEORIGIN says, for browsers that read only CSP.
  * `next dev` needs `'unsafe-eval'` for React's dev tooling; production never sends it.
  */
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://i.ytimg.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://cloudflareinsights.com",
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
