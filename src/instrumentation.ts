@@ -12,7 +12,9 @@
  *   3. the automatic backup schedule starts (src/lib/backup/), and
  *   4. the unpaid-order sweep starts (src/lib/commerce/unpaid-expiry.ts — owner 24/10), and
  *   5. the 90-day slip-picture sweep starts (src/lib/commerce/slip-images.ts — owner 26/10), and
- *   6. the Shipnity stock watch starts (src/lib/woo/watch.ts — owner 28/10).
+ *   6. the Shipnity stock watch starts (src/lib/woo/watch.ts — owner 28/10), and
+ *   7. on the TEST copy only (OKAMI24_TEST_SITE=on), an empty database is filled with fake orders (src/lib/test-site-seed.ts —
+ *      owner 10/11). The test copy never shows or serves a QR (the order page and its QR route check the flag).
  * None of them can stop the server: the probe runs in a child process and only reports how it died,
  * the QR install returns a result instead of throwing, and a failed backup is logged and ignored.
  */
@@ -26,6 +28,18 @@ export async function register(): Promise<void> {
   // breadcrumb written before each step. See src/lib/db/startup-check.ts.
   const { runStartupCheck } = await import("./lib/db/startup-check");
   await runStartupCheck();
+
+  // 7. The test copy (owner 10/11): fake data into an empty database, before anything reads it. Never throws.
+  const { TEST_SITE } = await import("./lib/test-site");
+  if (TEST_SITE) {
+    try {
+      const [{ getDb }, { seedTestSite }] = await Promise.all([import("./lib/db/client"), import("./lib/test-site-seed")]);
+      const r = seedTestSite(getDb());
+      console.log(r.seeded ? `[test-site] fake data written: ${r.orders} orders` : `[test-site] no fake data written — ${r.reason}`);
+    } catch (err) {
+      console.error(`[test-site] fake data failed — ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
 
   // Every outcome prints a `[qr]` line — including the two quiet ones. The first live deploy
   // (2026-09-06) ran a whole day with no QR on the disk and nobody knew, because "nothing to install
