@@ -203,6 +203,13 @@ const MAX_ONLY_LABEL_PREFIX: Record<string, string> = {
  *  price itself lives only in publication-approvals.ts. */
 const OWNER_ONE_PRICE_MAX_ONLY = new Set<string>(["GRAPLE-FREEBASE", "MQ-BAR-22K"]);
 
+/** C list 10/11: a Max "Set-…" box row carries the whole product name ("คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว"); on the
+ *  box record the option is only what tells the boxes apart — the resistance, cut verbatim from that same Max text. */
+const MAX_BOX_OPTION_LABEL: Record<string, string> = {
+  "Set-Coil-1-14": "DW60 0.6Ω",
+  "Set-Coil-1-1": "0.15Ω",
+};
+
 function fromMaxOnly(id: string): RawActiveParent {
   const m = MAX_SEED[id];
   const children = m.children.filter((c) => {
@@ -218,7 +225,7 @@ function fromMaxOnly(id: string): RawActiveParent {
     sourcePages: [],
     children: children.map((c) => {
       const pre = MAX_ONLY_LABEL_PREFIX[id];
-      const fixed = MAX_LABEL_FIX[c.shipnityVariantId];
+      const fixed = MAX_BOX_OPTION_LABEL[c.shipnityVariantId] ?? MAX_LABEL_FIX[c.shipnityVariantId];
       return { shipnityVariantId: c.shipnityVariantId, rawLabel: fixed ?? (pre && c.rawLabel.startsWith(pre) ? c.rawLabel.slice(pre.length) : c.rawLabel) };
     }),
   };
