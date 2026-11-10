@@ -2238,13 +2238,14 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
-  // PnP X: wattage = shop.voopoo.com/products/pnp-x-coils (the row Coil-92 already shows); "sold only in packs of 5" (aromes-et-liquides, tier 2).
+  // PnP X: wattage = shop.voopoo.com/products/pnp-x-coils (the row Coil-92 already shows). The box count = the warehouse's own row
+  // (Max "… / 1กล่อง 5ตัว", read 10/11), no outside page — a published row may cite only the maker (verified-specs contract, 11/11).
   "VOOPOO-PNP-X-COIL-5PACK": {
     specifications: [
-      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified", sourceUrl: "https://www.aromes-et-liquides.fr/en/coils-cartomisers/17393-voopoo-pnp-x-coils-x5.html" },
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified" },
       { key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
     ],
-    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils", "https://www.aromes-et-liquides.fr/en/coils-cartomisers/17393-voopoo-pnp-x-coils-x5.html"],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
   },
   "IQOSHEET-18": {
     specifications: [
