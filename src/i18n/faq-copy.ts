@@ -62,7 +62,7 @@ export const FAQ_COPY_TH: Record<string, FAQCopy> = {
   "marbo-vs-m-bar": {
     question: "Marbo กับ M Bar ต่างกันไหม",
     answer:
-      "เป็นของตระกูลเดียวกัน หลายร้านในไทยเรียก M Bar · M Switch และ Zero ว่า Marbo เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ ส่วน Marbo 10K (เทียบแท้) ที่ร้านมีขาย เป็นสินค้าเทียบแท้ ไม่ใช่สินค้าของ SALTHUB",
+      "เป็นของตระกูลเดียวกัน หลายร้านในไทยเรียก M Bar · M Switch และ Zero ว่า Marbo เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ ส่วน Marbo 10K ที่มีขายในร้าน เป็นสินค้าเทียบแท้ คนละผู้ผลิตกับ SALTHUB",
   },
   "nicotine-strength-meaning": {
     question: "นิโคติน “30mg” หมายถึงอะไร",
