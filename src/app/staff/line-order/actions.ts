@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { currentStaff, isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { nameOf, type StaffActor } from "@/lib/staff/account-rules";
 import { markKeyedBy, recordStaffAction } from "@/lib/staff/audit";
+import { withTypedName } from "@/lib/staff/audit-rules";
 import { parseItems, parseLineOrderForm } from "@/lib/staff/line-order-rules";
 import { createLineOrder } from "@/lib/staff/line-orders";
 import { changeLineOrderItems } from "@/lib/staff/line-order-edit";
@@ -53,14 +54,15 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   if (!result.ok && result.error === "duplicate") return { error: null, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
   markKeyedBy(result.orderNumber, actor);
-  recordStaffAction(actor, "line-order", { orderNumber: result.orderNumber, detail: result.confirmed ? "ยืนยันยอดด้วยสลิปแล้ว" : null });
+  const typed = parsed.input.keyedBy; // the shared password's typed name (an own account's name is the account's)
+  recordStaffAction(actor, "line-order", { orderNumber: result.orderNumber, detail: withTypedName(actor.kind, typed, result.confirmed ? "ยืนยันยอดด้วยสลิปแล้ว" : null) });
   if (result.discount) {
     const why = parsed.input.priceReason?.trim();
-    recordStaffAction(actor, "order-discount", { orderNumber: result.orderNumber, detail: `ลด ฿${result.discount.toLocaleString("en-US")}${why ? ` — ${why}` : ""}` });
+    recordStaffAction(actor, "order-discount", { orderNumber: result.orderNumber, detail: withTypedName(actor.kind, typed, `ลด ฿${result.discount.toLocaleString("en-US")}${why ? ` — ${why}` : ""}`) });
   }
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
   // Automation item 3: a keyed order whose slip confirmed it goes to Shipnity by itself while the owner's switches allow.
-  const done = result.confirmed ? autoPushDone(await autoPushed(actor, result.orderNumber), "line-order") : "line-order";
+  const done = result.confirmed ? autoPushDone(await autoPushed(actor, result.orderNumber, typed), "line-order") : "line-order";
   redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=${done}`);
 }
 
@@ -103,9 +105,9 @@ export async function changeItemsAction(_prev: LineOrderState, form: FormData): 
   const ref = String(form.get("slipRef") ?? "").trim().slice(0, 80);
   const result = changeLineOrderItems({ orderNumber, items, slipRef: ref && ref !== "none" ? ref : null, handConfirmed: form.get("handConfirmed") === "1", by });
   if (!result.ok) return { error: CHANGE_ERROR_TH[result.error === "stock" ? "stockOut" : result.error] };
-  recordStaffAction(actor, "order-items", { orderNumber, detail: `฿${result.oldTotal.toLocaleString("en-US")} → ฿${result.newTotal.toLocaleString("en-US")}` });
+  recordStaffAction(actor, "order-items", { orderNumber, detail: withTypedName(actor.kind, by, `฿${result.oldTotal.toLocaleString("en-US")} → ฿${result.newTotal.toLocaleString("en-US")}`) });
   console.log(`[line-order] ${orderNumber} items changed${result.confirmed ? ", money confirmed by its slips" : ""}`);
   const from = String(form.get("from") ?? "");
-  const done = result.confirmed ? autoPushDone(await autoPushed(actor, orderNumber), "items") : "items";
+  const done = result.confirmed ? autoPushDone(await autoPushed(actor, orderNumber, by), "items") : "items";
   redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=${done}`);
 }

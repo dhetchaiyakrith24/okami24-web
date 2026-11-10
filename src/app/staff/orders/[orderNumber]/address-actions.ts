@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { nameOf } from "@/lib/staff/account-rules";
 import { recordStaffAction } from "@/lib/staff/audit";
+import { withTypedName } from "@/lib/staff/audit-rules";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { changeShippingAddress } from "@/lib/staff/order-address";
 
@@ -46,7 +47,7 @@ export async function changeAddressAction(_prev: AddressEditState, form: FormDat
     by
   );
   if (!result.ok) return { error: ERROR_TH[result.error] };
-  recordStaffAction(actor, "order-address", { orderNumber });
+  recordStaffAction(actor, "order-address", { orderNumber, detail: withTypedName(actor.kind, by, null) });
   const from = text(form.get("from"), 20);
   redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=address`);
 }

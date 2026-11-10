@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { currentStaff, staffAreaEnabled, staffLogin, staffLogout } from "@/lib/staff/auth";
 import type { StaffActor } from "@/lib/staff/account-rules";
 import { recordStaffAction } from "@/lib/staff/audit";
-import { ORDER_STEP_AUDIT, orderStepDetail } from "@/lib/staff/audit-rules";
+import { ORDER_STEP_AUDIT, orderStepDetail, refTail } from "@/lib/staff/audit-rules";
 import { assignRole, GROUP_ROLES, type GroupRole } from "@/lib/line/groups";
 import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
 import { editStateOf } from "@/lib/staff/line-order-edit";
@@ -150,7 +150,7 @@ export async function staffStockAction(formData: FormData): Promise<void> {
   if (result.ok) {
     const audit = step === "open" ? "stock-open" : step === "swap" ? "stock-swap" : "stock-refunded";
     // The bank reference only — the customer's account number is never copied into the record.
-    recordStaffAction(actor, audit, { orderNumber, detail: step === "refunded" ? String(formData.get("ref") ?? "").slice(0, 60) || null : null });
+    recordStaffAction(actor, audit, { orderNumber, detail: step === "refunded" ? refTail(String(formData.get("ref") ?? "")) : null });
   }
   redirect(result.ok ? `${back}done=stock-${step}` : `${back}error=stock-${result.error}`);
 }

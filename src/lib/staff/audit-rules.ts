@@ -38,6 +38,11 @@ export const AUDIT_ACTIONS = {
   "line-refund-undo": "ยกเลิกเงินคืน LINE",
   "order-items": "แก้รายการสินค้า",
   "order-address": "แก้ที่อยู่จัดส่ง",
+  "shop-switch": "เปลี่ยนสวิตช์ร้าน",
+  "product-hide": "ซ่อนสินค้า",
+  "product-show": "เปิดสินค้ากลับ",
+  "costs-save": "แก้ตารางทุน",
+  "bill-check": "เทียบบิลคลัง",
 } as const;
 
 export type AuditAction = keyof typeof AUDIT_ACTIONS;
@@ -53,10 +58,34 @@ export const ORDER_STEP_AUDIT = {
   cancel: "order-cancel",
 } as const satisfies Record<string, AuditAction>;
 
-/** The detail of an order step: the tracking number and carrier, or the reason a cancel gave the customer. */
+/** The detail of an order step: the tracking number and carrier, or that a cancel told the customer why — never the text
+ *  itself (it may hold the customer's details; the order's own history keeps it). */
 export function orderStepDetail(step: string, input: { tracking?: string; carrier?: string; message?: string }): string | null {
   if (step === "ship") return [input.carrier?.trim(), input.tracking?.replace(/\s+/g, "").toUpperCase()].filter(Boolean).join(" · ") || null;
-  if (step === "cancel") return input.message?.replace(/\s+/g, " ").trim().slice(0, 120) || null;
+  if (step === "cancel") return input.message?.trim() ? "แจ้งเหตุผลลูกค้าแล้ว" : null;
+  return null;
+}
+
+/** A bank or slip reference in a record: its last 6 characters only (enough to find the slip, not the whole reference). */
+export const refTail = (ref: string): string | null => {
+  const r = ref.replace(/\s+/g, "");
+  return r ? `สลิปลงท้าย ${r.slice(-6)}` : null;
+};
+
+/** A step done with the shared password on a form that asks a name: the record keeps the typed name too (the person is
+ *  otherwise only "รหัสร่วม"). An own account or the owner is already named — nothing added. */
+export function withTypedName(actorKind: string, typed: string, detail: string | null): string | null {
+  const name = typed.replace(/\s+/g, " ").trim().slice(0, 40);
+  if (actorKind !== "shared" || !name) return detail;
+  return [`ชื่อที่พิมพ์ ${name}`, detail].filter(Boolean).join(" · ");
+}
+
+/** The owner's switch (src/app/staff/owner/actions.ts) in the owner's words; null = not a switch. */
+export function switchDetail(kind: unknown, on: boolean): string | null {
+  if (kind === "cart") return on ? "เปิดตะกร้า" : "ปิดตะกร้า";
+  if (kind === "site") return on ? "เปิดเว็บ" : "ปิดเว็บชั่วคราว";
+  if (kind === "line") return on ? "เปิดการส่งออเดอร์ LINE เข้าคลัง" : "ปิดการส่งออเดอร์ LINE เข้าคลัง";
+  if (kind === "auto") return on ? "เปิดการส่งเข้าคลังอัตโนมัติ" : "ปิดการส่งเข้าคลังอัตโนมัติ";
   return null;
 }
 

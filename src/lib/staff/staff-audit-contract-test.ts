@@ -10,7 +10,7 @@ import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";
-import { AUDIT_ACTIONS, dayRange, ORDER_STEP_AUDIT, orderStepDetail, parseDay, parseWho, shiftDay, slipCheckDetail, whoParam } from "./audit-rules";
+import { AUDIT_ACTIONS, dayRange, ORDER_STEP_AUDIT, orderStepDetail, parseDay, parseWho, refTail, shiftDay, slipCheckDetail, switchDetail, whoParam, withTypedName } from "./audit-rules";
 import { STAFF_ACTIONS } from "./order-actions";
 import { nameOf, signedInName } from "./account-rules";
 
@@ -27,7 +27,12 @@ const load = (rel: string) => import(pathToFileURL(path.join(process.cwd(), rel)
 // --- Pure ---
 check("every order-page button has a record with Thai words", Object.keys(STAFF_ACTIONS).every((a) => (ORDER_STEP_AUDIT as Record<string, string>)[a] in AUDIT_ACTIONS));
 check("ship detail = carrier + number, cleaned", orderStepDetail("ship", { carrier: "EMS", tracking: " th12 34 " }) === "EMS · TH1234");
-check("cancel detail = the reason the customer read", orderStepDetail("cancel", { message: "ลูกค้า\nขอยกเลิก" }) === "ลูกค้า ขอยกเลิก");
+check("cancel detail = only that the customer was told, never the text", orderStepDetail("cancel", { message: "คุณสมชาย 0812345678\nขอยกเลิก" }) === "แจ้งเหตุผลลูกค้าแล้ว");
+check("a cancel without a message carries no detail", orderStepDetail("cancel", { message: "  " }) === null);
+check("a refund reference keeps its last 6 only", refTail(" 0123 4567 89AB ") === "สลิปลงท้าย 6789AB" && refTail("  ") === null);
+check("shared password: the typed name joins the record", withTypedName("shared", "  Prang ", "ลด ฿50") === "ชื่อที่พิมพ์ Prang · ลด ฿50" && withTypedName("shared", "Prang", null) === "ชื่อที่พิมพ์ Prang");
+check("an own account or the owner: nothing added", withTypedName("account", "Mallory", "x") === "x" && withTypedName("owner", "x", null) === null && withTypedName("shared", "", "x") === "x");
+check("every owner switch has its words", ["cart", "site", "line", "auto"].every((k) => switchDetail(k, true) && switchDetail(k, false) && switchDetail(k, true) !== switchDetail(k, false)) && switchDetail("x", true) === null);
 check("a confirm carries no detail", orderStepDetail("confirm", { note: "x" } as never) === null);
 check("slip detail: amount + verdict, nothing else", slipCheckDetail({ amount: 1250, receiverStatus: "match" }, false, null) === "฿1,250 · เข้าบัญชีร้าน");
 check("slip detail flags a repeat and a wrong amount", slipCheckDetail({ amount: 99.5, receiverStatus: "mismatch" }, true, false) === "฿99.5 · ไม่ใช่บัญชีร้าน · สลิปเคยตรวจแล้ว · ยอดไม่ตรงออเดอร์");
@@ -58,6 +63,22 @@ for (const [file, hits] of [["src/app/staff/line-order/actions.ts", ["line-order
   const saves = [...src.matchAll(/export async function ((?:create|change)\w*)\(/g)].map((m) => ({ name: m[1], head: src.slice(m.index, m.index + 400) }));
   check(`${file}: has its save actions`, saves.length > 0, saves.length);
   for (const s of saves) check(`${file} ${s.name}: names its person first`, /\{\s*const actor = (?:await actorOrBack\(\)|staffAreaEnabled\(\) \? await currentStaff\(\) : null);/.test(s.head) && !s.head.includes("isStaff()"), s.head.slice(0, 160));
+}
+// Every form that asks a name keeps the typed name in its records (shared password) — line order, items, address, auto-send.
+{
+  const read = (f: string) => fs.readFileSync(path.join(process.cwd(), f), "utf8");
+  const line = read("src/app/staff/line-order/actions.ts");
+  const addr = read("src/app/staff/orders/[orderNumber]/address-actions.ts");
+  const count = (s: string, needle: string) => s.split(needle).length - 1;
+  check("LINE order, discount and items records carry the typed name", count(line, "withTypedName(actor.kind, ") === 3 && line.includes("autoPushed(actor, result.orderNumber, typed)") && line.includes("autoPushed(actor, orderNumber, by)"));
+  check("the address record carries the typed name", addr.includes(`recordStaffAction(actor, "order-address", { orderNumber, detail: withTypedName(actor.kind, by, null) })`));
+  check("the automatic send passes the typed name on", read("src/lib/staff/auto-push-audit.ts").includes("withTypedName(actor.kind, typedName, "));
+  const forms = ["src/app/staff/line-order/LineOrderForm.tsx", "src/app/staff/orders/[orderNumber]/AddressEdit.tsx", "src/app/staff/orders/[orderNumber]/LineItemsEdit.tsx"];
+  const asking = fs.readdirSync(path.join(process.cwd(), "src/app/staff"), { recursive: true }).map(String).filter((f) => /\.tsx$/.test(f) && read(path.join("src/app/staff", f)).includes("useStaffName()"));
+  check("the forms that ask a name are the three wired here", asking.length === forms.length, asking);
+  const owner = read("src/app/staff/owner/actions.ts");
+  check("the owner's switches, hidden products, costs and bill check are recorded", ["\"shop-switch\"", "\"product-hide\"", "\"product-show\"", "\"costs-save\"", "\"bill-check\""].every((a) => owner.includes(a)) && count(owner, "recordStaffAction(OWNER, ") === 4);
+  check("the cost record holds no money", /recordStaffAction\(OWNER, "costs-save", \{ detail: `\$\{count\} รุ่น` \}\)/.test(owner));
 }
 check("a keyed LINE order passes its account to the special price", fs.readFileSync(path.join(process.cwd(), "src/app/staff/line-order/actions.ts"), "utf8").includes("keyedByStaffId: actor.accountId"));
 
