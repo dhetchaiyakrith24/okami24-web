@@ -43,9 +43,10 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
     but-step-fails message) in a FRESH child chat from `notes/line-orders-2-handover-1011.md` "Next task" (notes folder above).
   BLOCKER: orphaned `next start -p 3411` (PID 52844, look-0911 tree) blocks every verify --full; the app refused the child stopping it
     → owner clears it (รอพี่ตรวจ 136). #1377 (look-0911 test gaps for #1374) waits for it.
-  staff-accounts local_7b975303: next = PR (b) audit wiring (keyedBy from currentStaff, discount_by_staff_id, item/address edit notes,
-    "ใครทำอะไร" page) — it owns those files. Owner must add admins' Google addresses on /staff/owner/team (Thai steps from the child).
-    Dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ waits owner.
+  #1378 "ใครทำอะไร" MERGED 10/11 ~11:00 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
+    shared sessions on name-asking forms · owner writes recorded as เจ้าของ). staff-accounts local_7b975303: next = PR (c) waits the owner
+    on the dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ. Owner adds admins on /staff/owner/team (steps in
+    docs/คู่มือเจ้าของ-หลังบ้าน.md "ทีมงาน"); no Render/env change needed.
   look-0911 local_569a83ec: next = test-gaps PR for #1374 (newArrivalSlugs live, liveStockReady, sold-out-last sort) · member card v8
     https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale → PR3 member page → best-seller from real sales.
   orders-audit-2 local_212d2f45: idle — new codes wait รอพี่ตรวจ 134 · Argus P1 Coil-83-1 map waits the owner's Chrome.
