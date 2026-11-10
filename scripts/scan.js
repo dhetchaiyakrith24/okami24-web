@@ -13,7 +13,9 @@
 // short or carry no function word, and anything marked lang="en" (labelLang) is skipped outright;
 // the brand `tagline` strings from src/data/brands.ts are allow-listed explicitly as well.
 //
-//   node scripts/scan.js [--base http://localhost:3412] [--pages "/ /guides /products/x"] [--allow "<exact text>"]... [--verbose]
+//   node scripts/scan.js [--base http://localhost:3412] [--pages "/ /guides /products/x"] [--allow "<exact text>"]... [--cookie name=value]... [--verbose]
+// --cookie name=value (repeatable, as scripts/shot.js): sent with every page request — a signed-in page (/account with a test
+// member's okami24_member cookie on the test server) or a language cookie. Without it nothing changes.
 //
 // Pass = 0 flagged runs across all pages (prints "0/<pages>"). Exit code 1 when anything is flagged
 // so the checker can use it as a gate. Read-only, no browser needed.
@@ -25,6 +27,7 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const base = opt("--base", "http://localhost:3412").replace(/\/$/, "");
 const VERBOSE = args.includes("--verbose");
 const extraAllow = args.map((a, i) => (a === "--allow" ? args[i + 1] : null)).filter(Boolean);
+const COOKIE = args.map((a, i) => (a === "--cookie" ? args[i + 1] : null)).filter(Boolean).join("; ");
 // --pages "/a /b,/c" = only these paths (TEAM_RULES 13.5 #2 (ข): the touched pages + the pages that show that text);
 // without it = every sitemap URL (13.5 #5: shared parts). Paths start with "/"; full URLs are cut to their path.
 const PAGES = (opt("--pages", "") || "").split(/[\s,]+/).filter(Boolean).map((p) => p.replace(/^https?:\/\/[^/]+/, "") || "/");
@@ -112,7 +115,7 @@ async function main() {
     if (!u.startsWith("/")) { unread++; console.log(`${u}\tNOT A PATH (Git Bash? set MSYS_NO_PATHCONV=1)`); continue; }
     let html;
     try {
-      const res = await fetch(base + u);
+      const res = await fetch(base + u, COOKIE ? { headers: { cookie: COOKIE } } : undefined);
       if (!res.ok) { unread++; console.log(`${u}\tHTTP ${res.status}`); await res.body?.cancel(); continue; } // drain: an unread body crashes node on exit (Windows)
       html = await res.text();
     } catch (e) { unread++; console.log(`${u}\tFETCH FAILED ${e.message}`); continue; }

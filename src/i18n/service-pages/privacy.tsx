@@ -25,7 +25,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     description: "เราเก็บข้อมูลอะไรของคุณบ้าง เอาไปทำอะไร และคุณขอให้ลบได้ยังไง — เขียนไว้ตรง ๆ ไม่ใช่ภาษากฎหมายให้งง",
     summary: [
       { label: "เก็บอะไร", value: "เบอร์ ชื่อผู้รับ ที่อยู่ รายการสั่งซื้อ", note: "เท่าที่จำเป็นต่อการส่งของ" },
-      { label: "ใช้ทำอะไร", value: "ยืนยันตัวตน ตรวจยอดโอน จัดส่ง ติดต่อกลับ", note: "แค่ 4 อย่างนี้" },
+      { label: "ใช้ทำอะไร", value: "ตรวจยอดโอน จัดส่ง ติดต่อกลับ", note: "แค่ 3 อย่างนี้" },
       { label: "ขายข้อมูลไหม", value: "ไม่ขาย ไม่แลกกับใคร", note: "ไม่มีพิกเซลโฆษณาในเว็บ" },
     ],
     intro: "หน้านี้บอกว่าเว็บ OKami24 เก็บข้อมูลอะไรของคุณจริง ๆ เอาไปทำอะไร และคุณมีสิทธิ์อะไรบ้าง เราเขียนตามที่ระบบทำจริง ไม่ได้ก๊อปนโยบายมาตรฐานมาแปะ",
@@ -57,8 +57,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. เอาข้อมูลไปทำอะไร",
-      intro: "ใช้ 4 อย่างเท่านั้น",
-      items: ["ยืนยันว่าคนสั่งเป็นคุณจริง", "ตรวจว่ายอดโอนเข้าบัญชีร้านแล้ว", "จัดส่งสินค้าไปให้ถูกที่", "ติดต่อกลับเรื่องคำสั่งซื้อของคุณ"],
+      intro: "ใช้ 3 อย่างเท่านั้น",
+      items: ["ตรวจว่ายอดโอนเข้าบัญชีร้านแล้ว", "จัดส่งสินค้าไปให้ถูกที่", "ติดต่อกลับเรื่องคำสั่งซื้อของคุณ"],
       outro: "ไม่ได้เอาไปทำอย่างอื่น ไม่ส่งโฆษณาไล่ตามคุณ",
     },
     s4: {
@@ -96,7 +96,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     description: "What we collect about you, what we do with it, and how to ask us to delete it — written plainly, not in legalese.",
     summary: [
       { label: "What we collect", value: "Phone number, recipient name, address, order details", note: "Only what’s needed to ship your order" },
-      { label: "What it’s for", value: "Verifying you, checking payment, shipping, getting back to you", note: "Those four things only" },
+      { label: "What it’s for", value: "Checking payment, shipping, getting back to you", note: "Those three things only" },
       { label: "Do we sell it?", value: "No — we don’t sell or trade it", note: "No ad pixels on this site" },
     ],
     intro: "This page sets out what the OKami24 site actually collects about you, what we do with it, and what rights you have. It’s written from what the system really does, not copied from a template policy.",
@@ -128,8 +128,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. What we use it for",
-      intro: "Four things only.",
-      items: ["Confirming that the order really is from you", "Checking that your payment has reached the shop’s account", "Delivering your order to the right place", "Getting back to you about your order"],
+      intro: "Three things only.",
+      items: ["Checking that your payment has reached the shop’s account", "Delivering your order to the right place", "Getting back to you about your order"],
       outro: "Nothing else. We don’t chase you around with ads.",
     },
     s4: {
@@ -167,7 +167,7 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     description: "我们收集您的哪些资料、拿来做什么，以及您如何要求删除 —— 直白说明，不用绕口的法律用语。",
     summary: [
       { label: "收集什么", value: "手机号、收件人姓名、地址、订单内容", note: "仅限发货所需" },
-      { label: "用来做什么", value: "验证身份、核对付款、发货、与您联系", note: "仅此四项" },
+      { label: "用来做什么", value: "核对付款、发货、与您联系", note: "仅此三项" },
       { label: "会出售资料吗", value: "不出售，也不与任何人交换", note: "网站上没有广告追踪像素" },
     ],
     intro: "本页说明 OKami24 网站实际收集您的哪些资料、我们如何使用，以及您享有哪些权利。内容依据系统的真实做法撰写，不是套用模板政策。",
@@ -199,8 +199,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. 资料的用途",
-      intro: "仅有四项用途。",
-      items: ["确认下单的确实是您本人", "核对您的付款已转入本店账户", "将商品准确送达", "就您的订单与您联系"],
+      intro: "仅有三项用途。",
+      items: ["核对您的付款已转入本店账户", "将商品准确送达", "就您的订单与您联系"],
       outro: "没有其他用途。我们不会用广告追着您跑。",
     },
     s4: {

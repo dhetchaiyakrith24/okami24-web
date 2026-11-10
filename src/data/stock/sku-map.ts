@@ -1638,5 +1638,15 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   } },
   "pop-up-10k-base": { parent: "Pod-154", product: "Pod-154-19" },
 
+  // Coil 5-packs (11/11): the Max box rows — Set-Coil-1-14 under Coil-1 · Set-Coil-1-1 its own parent · Set-Coil-92-1 under Coil-92.
+  // Never on the loose-coil pages coil-1 / coil-92.
+  "voopoo-vinci-coil-5pack": { parent: "Coil-1", options: {
+    "Set-Coil-1-14": "Set-Coil-1-14",
+    "Set-Coil-1-1": "Set-Coil-1-1",
+  } },
+  "voopoo-pnp-x-coil-5pack": { parent: "Coil-92", options: {
+    "Set-Coil-92-1": "Set-Coil-92-1",
+  } },
+
   "coil-54": { parent: null, product: null },
 };

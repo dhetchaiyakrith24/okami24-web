@@ -23,6 +23,9 @@ export interface CustomerRecord {
   id: number;
   phone: string;
   displayName: string | null;
+  /** This session's own row — a saved address typed in a phone-only session is usable by this session alone (T2-03,
+   *  src/lib/commerce/address-owner.ts). */
+  sessionId: number;
 }
 
 export async function createSession(customerId: number): Promise<void> {
@@ -52,6 +55,7 @@ export async function destroySession(): Promise<void> {
 }
 
 interface SessionRow {
+  id: number;
   customer_id: number;
   expires_at: string;
   revoked_at: string | null;
@@ -72,7 +76,7 @@ export const getSession = cache(async (): Promise<CustomerRecord | null> => {
 
   const row = getDb()
     .prepare(
-      `SELECT s.customer_id, s.expires_at, s.revoked_at, c.phone, c.display_name
+      `SELECT s.id, s.customer_id, s.expires_at, s.revoked_at, c.phone, c.display_name
        FROM sessions s JOIN customers c ON c.id = s.customer_id
        WHERE s.token_hash = ?`
     )
@@ -81,7 +85,7 @@ export const getSession = cache(async (): Promise<CustomerRecord | null> => {
   if (!row || row.revoked_at !== null || new Date(row.expires_at).getTime() < Date.now()) {
     return null;
   }
-  return { id: row.customer_id, phone: row.phone, displayName: row.display_name };
+  return { id: row.customer_id, phone: row.phone, displayName: row.display_name, sessionId: row.id };
 });
 
 /** Throws rather than returning null — use only where the caller has no valid unauthenticated

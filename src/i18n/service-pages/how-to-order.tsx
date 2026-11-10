@@ -107,7 +107,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
         title: "แนบสลิปในหน้าสถานะคำสั่งซื้อ",
         body: (
           <>
-            โอนเสร็จแล้ว แนบรูปสลิปในหน้าสถานะคำสั่งซื้อได้เลย ระบบจะเช็คสลิปกับธนาคารให้ แล้วแอดมินจะตรวจยอดอีกครั้งก่อนแพ็กของ ถ้าแนบไม่ได้ ส่งสลิปทางไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อแทนได้ค่ะ
+            โอนเสร็จแล้ว แนบรูปสลิปในหน้าสถานะคำสั่งซื้อได้เลย ระบบจะตรวจสลิปเบื้องต้นให้ แล้วแอดมินจะตรวจยอดอีกครั้งก่อนแพ็กของ ถ้าแนบไม่ได้ ส่งสลิปทางไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อแทนได้ค่ะ
           </>
         ),
       },
@@ -192,7 +192,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
         title: "Attach your slip on the order page",
         body: (
           <>
-            Once you’ve transferred, attach the slip on your order status page. The site checks it with the bank, and an admin still confirms the payment before packing. If it won’t upload, send the slip on LINE <LineLink /> with your order number.
+            Once you’ve transferred, attach the slip on your order status page. The site gives it a first check, and an admin still confirms the payment before packing. If it won’t upload, send the slip on LINE <LineLink /> with your order number.
           </>
         ),
       },
@@ -277,7 +277,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
         title: "在订单页上传转账凭证",
         body: (
           <>
-            转账完成后，在订单状态页上传转账凭证即可。系统会向银行核验凭证，管理员也会再确认一次款项后才打包。如果无法上传，请通过 LINE <LineLink /> 发送凭证并附上订单编号。
+            转账完成后，在订单状态页上传转账凭证即可。系统会先初步核对凭证，管理员也会再确认一次款项后才打包。如果无法上传，请通过 LINE <LineLink /> 发送凭证并附上订单编号。
           </>
         ),
       },
