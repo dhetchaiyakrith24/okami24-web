@@ -1505,7 +1505,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/voopoo-vinci-coil-5pack/card.webp",
+      src: "/assets/products/voopoo-vinci-coil-5pack/card-wm5.webp",
       alt: "VOOPOO PnP-DW60 0.6Ω coil box with one coil, studio photo",
       angle: "Front, studio — the coil-1 DW60 option photo (round \"3 coil photos\" 08/10, OKami24 render of VOOPOO's own box + coil images) on the card canvas.",
       transparentBackground: true,
@@ -1517,7 +1517,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/voopoo-pnp-x-coil-5pack/card.webp",
+      src: "/assets/products/voopoo-pnp-x-coil-5pack/card-wm5.webp",
       alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
       angle: "Front, upright — the coil-92 0.15Ω photo (round list19 19/10, OKami24 render of a shop photo of the real coil) on the card canvas.",
       transparentBackground: true,
