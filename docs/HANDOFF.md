@@ -27,42 +27,40 @@ GATE: `pre-checker-gate.js` runs the raw U+00A0/U+2060 check (#1373) and passes 
   not for a PR that writes a locked file). New worktrees may get an absolute core.hooksPath → `git config --worktree core.hooksPath .githooks`.
 CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) — run commands with absolute paths / `git -C`, not `cd`.
 
-1 main = `git fetch && git log -1 --oneline origin/main` (10/11 ~09:20 = 5d79954f). MERGED 10/11, live [ตรวจแล้ว] curl after deploy:
-  batch 1 (~06:30): #1355 card sold-out pill · #1369 skill + §16 · #1361 sku drift (Menthol Freeze → Pod-170-24; Woo catalog 65/763 →
-  63/744) · #1371 delay notice removed · #1368 hero sold-out pill · #1359 owner-page wording · #1373 gate raw-chars · LINE stack #1357
-  paste · #1358 add items · #1362 dup warning · #1363 cancel tick · #1364 address fix · #1366 day count · #1367 admin manual · #1370
-  special price (migration 0028; warehouse payload carries a special-price coupon) · #1375 + #1354 docs.
-  batch 2 (~08:30): #1360 per-admin Google sign-in + /staff/owner/team + audit table (migration 0029) + shared-password switch-off
-  revokes every shared session (/staff shows "เข้าสู่ระบบด้วย Google") · #1374 ISR live stock on / /products /brands (watch Render
-  memory 3–6 h; new-arrivals row refills from the next in-stock model) · #1376 gate docs-lag.
+1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
-2 OPEN PRs:
-  #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
-  MERGED 10/11 afternoon, live [ตรวจแล้ว] curl: #1377 live-stock contract test (~14:20, checker PASS 49dea34b) · #1384 auto-push
-    test gaps + honest "sent but status moved" staff text (~14:55, checker FULL PASS a0b1bfc9; the "โหลดหน้า|ใหม่" line break on /staff
-    is the same as the old button text → needs the word-break mechanism, a locked file = later, own PR).
-    line-orders-3 local_9477bf4f + line-orders-2 local_66555054 = done, archive AFTER line-orders-2's `_incoming/` junction folders go.
-  OUTSIDE TESTER (owner 10/11 ~14:45, owner's call, risks told once — do not raise again): tests the LIVE site; owner opens the cart
-    with the owner switch and adds the tester's Google as ADMIN (owner page = owner's Google only). After the test: Friday cancels the
-    tester's "ทดสอบ" orders, owner removes the admin + closes the cart. Report format PDF. A separate test copy was stopped:
-    branch claude/staging-mode-1c27b3 (8b673155, unverified, no PR; OKAMI24_TEST_SITE switch + fake seed + docs/เว็บทดสอบ-Render.md)
-    — keep for later; leftover tree `_incoming/wt-testsite-base` (detached, real node_modules) = house-clean.
-  orders-audit-2 local_212d2f45: owner answered รอพี่ตรวจ 134 "ตามแนะนำ" 10/11 ~15:00 → resumed queue "C new listings" (state note
-    `notes/orders-audit-2-state-1011.md`); Max prices need the owner's Chrome; Higgsfield credits only after the owner OKs the amount.
-  Render memory: dashboard not signed in in the built-in browser (Friday never types passwords); live pages answer 200 in < 1 s
-    10/11 13:50 [ตรวจแล้ว] curl — no sign of memory trouble. Owner may glance at Render → Metrics.
-  #1378 "ใครทำอะไร" MERGED 10/11 ~09:30 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
-    shared sessions on name-asking forms · owner writes recorded as เจ้าของ). staff-accounts local_7b975303: next = PR (c) waits the owner
-    on the dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ. Owner adds admins on /staff/owner/team (steps in
-    docs/คู่มือเจ้าของ-หลังบ้าน.md "ทีมงาน"); no Render/env change needed.
-  look-0911 local_569a83ec: next = test-gaps PR for #1374 (newArrivalSlugs live, liveStockReady, sold-out-last sort) · member card v8
-    https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale → PR3 member page → best-seller from real sales.
-  orders-audit-2 local_212d2f45: idle — new codes wait รอพี่ตรวจ 134 · Argus P1 Coil-83-1 map waits the owner's Chrome.
-  #1346 + #1365 → owner says "ปิดได้" (the app refused Friday's close) · Owner drafts untouched: #1324 · #1335 · #1336.
-  HOUSE 10/11: 97 merged local branches deleted + 4 stale worktrees pruned; the rest = `_incoming/house-20261110/todo.md`
-    (docs pointers, LESSONS/THAI_STYLE over ceiling → slimming drafts with checker, ~20 merged worktrees to remove with the พ47 method,
-    _incoming folders to archive).
+2 OPEN WORK (10/11 ~17:30, PC off; all child branches pushed):
+  CHECKER RUNNING at shutdown (if lost, re-run on the same sha):
+    #1387 VOOPOO coil 5-packs HIDDEN (Vinci ฿379 DW60/0.15Ω · PnP X ฿439) GATE PASS 46f61b4a, tree
+      `.claude/worktrees/orders-audit-2-fe1e50/_incoming/wt-coils` · FULL set.
+    #1390 no sold-out pill on the 4 home hero brand cards only (owner 10/11): checker PASS 97d8d2f0, ready + merge started ~17:20 —
+      CHECK it merged (`gh pr view 1390`) and curl / ; if not, finish: green checks → merge1.sh.
+  orders-audit-2 local_212d2f45 (state `notes/orders-audit-2-state-1011.md`): owner answered รอพี่ตรวจ 134 "ตามแนะนำ"; Max re-read 10/11
+    15:25 = prices unchanged. NEXT: #1388 Pop Up 10K base ฿219 + Insta 15000 ฿359 hidden (3f81cb90; maker not found → warehouse facts
+    only) → merge main → verify → gate; then #1389 stock refresh from the 10/11 order-entry read (41 options newly out, 51 back) + Argus
+    P1 → Coil-83-1 (d1921f48, BIG/FULL). Then pictures: tell the owner the Higgsfield credit amount, spend only after the OK.
+    Owner: Marbo purple ELIQUID-1-1 = IGNORE (owner 10/11 "ไม่ต้องสนใจ"), never raise it again. Owner allows research in his Chrome
+    (read-only browsing, no sign-ins/likes/forms/downloads).
+  look-0911 local_569a83ec (state `notes/look-0911-state-1011.md`) queue after #1390:
+    (2) THEME (owner: "ส้มดำเป็นหลัก", yellow moved to minor places, warm smoke −10–20 %): black ~60 % · greys/off-white ~30 % · orange
+      ~10 % on what to press · red-orange/maroon for glow depth · yellow tiny or removed (child decides per place) · smoke −15 %. FIRST a
+      yellow-usage list + ONE comparison image (home 1440 + product 390) → Friday shows the owner → then the PR. Refs = OWNER'S REFERENCE
+      LINKS below (§16 item 5).
+    (3) HOME HERO ROTATION (owner: switch the 4 showcase models every 3–5 days, 10–20 models): 4 slots, ~16-model pool (Friday's pick,
+      owner may object), every 4 days, deterministic from the Bangkok date, in-stock only. Live 10/11: 0/26 pod systems in stock (UWELL,
+      VOOPOO none) → pool leans on switch pods, IQOS, disposables; swapped slots show the plain card photo until a cut-out exists.
+    Member card v8 https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale → member page → best-seller from sales.
+  OUTSIDE TESTER (owner 10/11 ~14:45, owner's call, risks told once — never raise again): tests the LIVE site; owner opens the cart with
+    the owner switch + adds the tester's Google as ADMIN (owner page = owner's Google only). After: Friday cancels the tester's "ทดสอบ"
+    orders, owner removes the admin + closes the cart (รอพี่ตรวจ 137). Cart open → no deploys 18:00–24:00 (13.7). Stopped test copy
+    branch claude/staging-mode-1c27b3 (8b673155, unverified, no PR) kept for later; `_incoming/wt-testsite-base` = house-clean.
+  staff-accounts local_7b975303: #1360/#1378 live; next = PR (c) dashboard waits the owner on https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ
+    (look refs: De9XFBQTG0D light glass · De6ef-Svrlj dark glass). Owner adds admins on /staff/owner/team.
+  line-orders-2 local_66555054 + line-orders-3 local_9477bf4f + staging-site local_9911895b = done/stopped → archive after
+    line-orders-2's `_incoming/` junction folders go. #1346 + #1365 → owner says "ปิดได้" · owner drafts untouched: #1324 · #1335 · #1336.
+  HOUSE: 97 merged branches + 8 worktrees removed 10/11; the rest = `_incoming/house-20261110/todo.md` (wt-line under backoffice has
+    >260-char .next paths — needs a long-path delete; 7 worktrees with inner `_incoming/` to archive first; LESSONS/THAI_STYLE over ceiling).
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
   Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live. Left: request indexing for /products/disposables
@@ -106,7 +104,17 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
     (Gmail data + perks) · EMS/DHL tracking page · LINE orders on web · off-site backup R2/B2 (77, owner signs up) · back office the owner runs himself (hide products) · daily income/sales/profit from
     the slip room, LINE + web (slip − cost − ฿35 per order) · THAI_STYLE row "PAYMENT CARD" at next round close · sales log
     owner-only · Q9 staff dashboard (`git show 37a1b052:docs/HANDOFF.md` §16 3g) · back office per-day orders/sales/profit + owner
-    switches (cart, API, close site) · design refs (Instagram reels, owner's Chrome, never like/follow): De9XFBQTG0D · De6ef-Svrlj · DfAqpTsOHYn.
+    switches (cart, API, close site).
+  - OWNER'S REFERENCE LINKS (owner 10/11; instagram.com/reel/<id>; never like/follow/comment). Friday can now HEAR clips: whisper.cpp
+    `C:\Users\dhetc\tools\whisper\bin\Release\whisper-cli.exe` + model `..\models\ggml-large-v3-turbo.bin` (allowed by a rule in
+    ~/.claude/settings.json) · `yt-dlp` pulls the clip · frames via ffmpeg · downloads + frames + contact sheets in `C:\Users\dhetc\tools\whisper\clips`.
+    · STAFF/OWNER DASHBOARD look: De9XFBQTG0D (light "glassy" frosted cards over a blurred photo) · De6ef-Svrlj (dark glass cards, iOS
+      publishing dashboard) → for staff-accounts PR (c) dashboard + the owner page.
+    · WEB EFFECTS: DfAqpTsOHYn (product shelf, warm orange LED under each item, phone + desktop = the #1336 "lit shelf" idea) ·
+      https://www.getlayers.ai/ (paid library of dark "cinematic" sites, smoke/grain hero — mood only, buy nothing).
+    · COLOURS (owner: "ส้มดำเป็นหลัก", yellow demoted, warm smoke −10–20 %): DfScZgPSqc1 (narration: 2 colours do 90 %, one accent 10 %
+      only on the button to press — 60/30/10) · DfTc6X5qyPJ at 5.6 s = the dark orange palette sampled #0D0D0D black · #ED852C orange ·
+      #D33710 red-orange · #710F08 maroon · #EBEBEB off-white (no yellow) → look-0911 theme PR (2).
   - Logo: owner's files = untracked `logo/`, never delete · owner sends the "โฉมใหม่" broadcast.
   - RENDER ignores `docs/**` + `.claude/**` — a docs PR = ONE clean commit from latest main. Home switches `src/data/home-hero.ts` (DESKTOP_HERO · DESKTOP_BG ·
     DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO).
