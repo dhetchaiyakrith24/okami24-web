@@ -15366,43 +15366,49 @@
   "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
   "slug": "iqos-iluma-one",
   "role": "card",
-  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · card = Pebble Grey, the first warehouse colour (Max IQOSHEET-17-1)",
-  "fileName": "card.webp"
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · card = Pebble Grey, the first warehouse colour (Max IQOSHEET-17-1) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "fileName": "card.webp",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
   "slug": "iqos-iluma-one",
   "role": "variant",
   "id": "pebble-grey",
-  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11)"
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/iqos/one-pebble-beige.png",
   "slug": "iqos-iluma-one",
   "role": "variant",
   "id": "pebble-beige",
-  "note": "IQOS official kit render G0000590_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html - used as it is (new-products pictures 10/11)"
+  "note": "IQOS official kit render G0000590_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/iqos/one-sunset-red.png",
   "slug": "iqos-iluma-one",
   "role": "variant",
   "id": "sunset-red",
-  "note": "IQOS official kit render G0000591_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html - used as it is (new-products pictures 10/11)"
+  "note": "IQOS official kit render G0000591_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/iqos/one-moss-green.png",
   "slug": "iqos-iluma-one",
   "role": "variant",
   "id": "moss-green",
-  "note": "IQOS official kit render G0000593_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html - used as it is (new-products pictures 10/11)"
+  "note": "IQOS official kit render G0000593_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/iqos/one-azure-blue.png",
   "slug": "iqos-iluma-one",
   "role": "variant",
   "id": "azure-blue",
-  "note": "IQOS official kit render G0000594_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html - used as it is (new-products pictures 10/11)"
+  "note": "IQOS official kit render G0000594_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
  },
  {
   "source": "_incoming/new-pics-1011/coils/vinci-dw60-box.webp",
