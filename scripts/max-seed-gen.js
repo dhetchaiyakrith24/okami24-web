@@ -68,6 +68,7 @@ const MAX_ONLY_RECORDS = {
   "IQOS-ILUMA-ONE-OASIS": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-4"] },
   // C list 10/11 (item 134 1A): VOOPOO coils sold by the box of 5 — ฿350 Vinci (DW60 0.6Ω under Coil-1 + 0.15Ω its own parent) · ฿400 PnP X.
   "VOOPOO-VINCI-COIL-5PACK": { max: "Coil-1", childIds: ["Set-Coil-1-14"], alsoParents: ["Set-Coil-1-1"] },
+  "VOOPOO-PNP-X-COIL-5PACK": { max: "Coil-92", childIds: ["Set-Coil-92-1"] },
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows

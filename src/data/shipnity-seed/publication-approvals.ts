@@ -278,6 +278,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // 0.15Ω, same price → one page) → ฿379 · PnP X 0.15Ω box ฿400 → ฿439 (BSOT §5). Held until a card photo exists (IMAGE_SPEC §4) — uncomment
   // with the card + sku-map (voopoo-vinci-coil-5pack → Set-Coil-1-14 / Set-Coil-1-1 · voopoo-pnp-x-coil-5pack → Set-Coil-92-1):
   // "VOOPOO-VINCI-COIL-5PACK": { sellingPrice: 379, lastPriceReview: "2026-11-10" },
+  // "VOOPOO-PNP-X-COIL-5PACK": { sellingPrice: 439, lastPriceReview: "2026-11-10" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

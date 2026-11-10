@@ -208,6 +208,7 @@ const OWNER_ONE_PRICE_MAX_ONLY = new Set<string>(["GRAPLE-FREEBASE", "MQ-BAR-22K
 const MAX_BOX_OPTION_LABEL: Record<string, string> = {
   "Set-Coil-1-14": "DW60 0.6Ω",
   "Set-Coil-1-1": "0.15Ω",
+  "Set-Coil-92-1": "0.15Ω",
 };
 
 function fromMaxOnly(id: string): RawActiveParent {
