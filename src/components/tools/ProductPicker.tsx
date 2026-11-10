@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
-import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import type { CatalogItem } from "@/lib/catalog-index";
 import { CatalogItemMedia } from "@/components/visual/CatalogItemMedia";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { labelLang } from "@/lib/label-lang";
@@ -18,9 +18,13 @@ export function ProductPicker({
   selected,
   onAdd,
   onRemove,
+  catalog,
   max = 4,
 }: {
   selected: CatalogItem[];
+  /** the storefront catalog (allCatalogItems, from the server page — a client import of catalog-index bundled the raw
+   *  product files, T2-50) */
+  catalog: readonly CatalogItem[];
   onAdd: (slug: string) => void;
   onRemove: (slug: string) => void;
   max?: number;
@@ -32,7 +36,7 @@ export function ProductPicker({
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.trim().toLowerCase();
-    return allCatalogItems()
+    return catalog
       .filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandName ?? ""} ${p.brandId ?? ""}`.toLowerCase().includes(q))
       .slice(0, 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
