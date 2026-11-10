@@ -92,9 +92,12 @@ async function main(): Promise<void> {
     report({});
     const live0 = liveLookup();
     // victim = the first coded card the snapshot sells → 0 · rescue = the last coded card the snapshot sells out → in stock,
-    // so the row has a card that must move forward and one that must move back, whatever the snapshot holds.
+    // so the row has a card that must move forward and one that must move back, whatever the snapshot holds. When the snapshot
+    // sells no coded pod-system card at all (10/11 read: the whole row out), the victim is the first coded card — flipped to 0 it
+    // still has to sit behind the rescued one (2e/2f check the order, not the card's earlier state).
     const podRow = editorial.get("pod-systems")!;
-    const victim = podRow.find((slug) => codes(slug).length > 0 && inStockLive(slug, live0));
+    const victim =
+      podRow.find((slug) => codes(slug).length > 0 && inStockLive(slug, live0)) ?? podRow.find((slug) => codes(slug).length > 0);
     const rescue = [...podRow].reverse().find((slug) => slug !== victim && codes(slug).length > 0 && !inStockLive(slug, live0));
     check("2a. the pod-system row has a coded card to sell out and one to bring back", Boolean(victim && rescue), { podRow, victim, rescue });
     const flips: Record<string, number> = { ...(victim ? { [victim]: 0 } : {}), ...(rescue ? { [rescue]: 5 } : {}) };
