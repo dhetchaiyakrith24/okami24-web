@@ -27,7 +27,7 @@ GATE: `pre-checker-gate.js` runs the raw U+00A0/U+2060 check (#1373) and passes 
   not for a PR that writes a locked file). New worktrees may get an absolute core.hooksPath → `git config --worktree core.hooksPath .githooks`.
 CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) — run commands with absolute paths / `git -C`, not `cd`.
 
-1 main = `git fetch && git log -1 --oneline origin/main` (10/11 ~08:40 = 91e96429). MERGED 10/11, live [ตรวจแล้ว] curl after deploy:
+1 main = `git fetch && git log -1 --oneline origin/main` (10/11 ~09:20 = 5d79954f). MERGED 10/11, live [ตรวจแล้ว] curl after deploy:
   batch 1 (~06:30): #1355 card sold-out pill · #1369 skill + §16 · #1361 sku drift (Menthol Freeze → Pod-170-24; Woo catalog 65/763 →
   63/744) · #1371 delay notice removed · #1368 hero sold-out pill · #1359 owner-page wording · #1373 gate raw-chars · LINE stack #1357
   paste · #1358 add items · #1362 dup warning · #1363 cancel tick · #1364 address fix · #1366 day count · #1367 admin manual · #1370
@@ -38,11 +38,11 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
 2 OPEN PRs:
-  line-orders-2 local_66555054: #1372 auto-push on confirm behind owner switch autoToWarehouse (default OFF) + fixes a #1363 bug
-    (hand-over tick when Shipnity link not ready; unreachable while switches OFF) — checker FULL PASS 8f39d89d, then conflicted with
-    #1360 → merged main = d0a4e4cd (2 spots: shop-switches-rules.ts both switches kept; owner/page.tsx ControlPanel line) → verify +
-    gate running → checker re-reads the 2 spots → merge. Test gaps for later: Shipnity no-reply, server-action done key, push-OK-but-
-    applyStaffAction-fails message.
+  #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
+  line-orders-2 local_66555054: idle at 89 % context → next = test-gaps PR (Shipnity no-reply · server-action done key · push-OK-
+    but-step-fails message) in a FRESH child chat from `notes/line-orders-2-handover-1011.md` "Next task" (notes folder above).
+  BLOCKER: orphaned `next start -p 3411` (PID 52844, look-0911 tree) blocks every verify --full; the app refused the child stopping it
+    → owner clears it (รอพี่ตรวจ 136). #1377 (look-0911 test gaps for #1374) waits for it.
   staff-accounts local_7b975303: next = PR (b) audit wiring (keyedBy from currentStaff, discount_by_staff_id, item/address edit notes,
     "ใครทำอะไร" page) — it owns those files. Owner must add admins' Google addresses on /staff/owner/team (Thai steps from the child).
     Dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ waits owner.
