@@ -8,6 +8,8 @@ import { ScrubHero } from "@/components/dashboard/ScrubHero";
 import { formatSatang, formatShortDateTime } from "@/app/staff/_components/format";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import type { FeedHealth } from "@/lib/woo/watch-rules";
+import type { HandConfirmedOrder } from "@/lib/staff/hand-confirm";
+import { HandConfirmed } from "@/app/staff/owner/_dash/HandConfirmed";
 
 /** The daily view: is today all right, and what is waiting. Sales and web profit stay apart, per the head of dashboard-rules.ts. */
 
@@ -241,8 +243,11 @@ export function TodayPanel(props: {
   stock: StockSummary;
   feed: FeedHealth;
   now: number;
+  /** T2-01: paid orders the team confirmed without a passed slip (src/lib/staff/hand-confirm.ts). */
+  handConfirmed: HandConfirmedOrder[];
+  handConfirmedDays: number;
 }) {
-  const { days, profit, hour, avgSatang, counts, oldest, canOpenOrders, stock, feed, now } = props;
+  const { days, profit, hour, avgSatang, counts, oldest, canOpenOrders, stock, feed, now, handConfirmed, handConfirmedDays } = props;
   const today = days[0];
   const byDate = new Map(profit.map((p) => [p.date, p]));
   const points = [...days.slice(0, 14)].reverse().map((d, i, all) => ({
@@ -258,6 +263,7 @@ export function TodayPanel(props: {
       </div>
       <Tiles today={today} profit={byDate.get(today.date)} avgSatang={avgSatang} />
       <Jobs counts={counts} oldest={oldest} now={now} canOpen={canOpenOrders} />
+      <HandConfirmed orders={handConfirmed} days={handConfirmedDays} canOpen={canOpenOrders} />
       <Stock stock={stock} feed={feed} />
       <section aria-label="ยอดรายวัน" className="dash-card dash-rise">
         <h2 className="font-semibold text-foreground">รายวัน</h2>
