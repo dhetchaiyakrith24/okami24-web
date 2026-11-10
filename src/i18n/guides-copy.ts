@@ -831,8 +831,8 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
   },
   // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
   "cant-open-the-website": {
-    title: "เข้าเว็บไม่ได้? เปลี่ยน DNS บนมือถือ ทำเองได้ทีละขั้น",
-    dek: "ตั้งไว้ที่เดียวในเครื่อง ก็ใช้ได้กับทุกเว็บ ไม่ใช่แค่เว็บเรา มีวิธีให้ทั้ง iPhone Android และคอม",
+    title: "เข้าเว็บไม่ได้? ลองเปลี่ยน DNS บนมือถือ ทำเองได้ง่าย ๆ",
+    dek: "ตั้งค่าครั้งเดียวในเครื่อง ก็มีผลกับทุกเว็บ ไม่ต้องลงแอปก็ได้ และตั้งกลับเป็นแบบเดิมได้ทุกเมื่อ มีวิธีให้ทั้ง iPhone Android และคอม",
     body: [],
   },
 };
@@ -1228,8 +1228,8 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
   },
   // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
   "cant-open-the-website": {
-    title: "网站打不开？在手机上更改 DNS，一步步照着做",
-    dek: "在设备上改一个设置，所有网站都适用，不只是我们家。iPhone、Android 和电脑都有对应的方法。",
+    title: "网站打不开？试试更改手机的 DNS，自己就能轻松设置",
+    dek: "在设备上设置一次，所有网站都会生效。无需安装 App，也可以随时改回原来的设置。iPhone、Android 和电脑都有对应的方法。",
     body: [],
   },
 };

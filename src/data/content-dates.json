@@ -20,12 +20,12 @@
     "src/components/tools/SearchTool.tsx": "2026-11-08T13:02:31+00:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
     "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
-    "src/data/guides.ts": "2026-11-08T01:35:40+07:00",
+    "src/data/guides.ts": "2026-11-11T00:54:29+07:00",
     "src/data/search-aliases.ts": "2026-11-07T11:22:22+07:00",
     "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
     "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
-    "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
+    "src/i18n/guides-copy.ts": "2026-11-11T00:54:29+07:00",
     "src/i18n/search-head-copy.ts": "2026-11-08T10:07:09+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
@@ -41,7 +41,7 @@
     "are-pods-harmful": "2026-11-07T15:42:16+07:00",
     "argus-g4-vs-caliburn-g5": "2026-10-26T06:48:28+07:00",
     "battery-care-and-charging": "2026-11-04T09:02:55+07:00",
-    "cant-open-the-website": "2026-10-12T01:40:53+07:00",
+    "cant-open-the-website": "2026-11-11T00:54:29+07:00",
     "checking-a-genuine-pod": "2026-10-20T23:10:33+07:00",
     "choosing-a-disposable": "2026-11-03T01:11:58+07:00",
     "choosing-a-marbo-flavor": "2026-11-05T01:48:05+07:00",
@@ -191,8 +191,8 @@
       "fp": "e9524f1602d1"
     },
     "/guides": {
-      "date": "2026-11-07T12:24:15+07:00",
-      "fp": "87aa1dca91b0"
+      "date": "2026-11-11T00:54:29+07:00",
+      "fp": "473f07472ace"
     },
     "/products": {
       "date": "2026-11-08T13:13:31+00:00",
