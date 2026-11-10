@@ -63,8 +63,28 @@ function Age({ late, wait = false, children, className = "" }: { late: boolean; 
   );
 }
 
-/** Keeps "45 นาที" / "3 วัน" on one line (a number never wraps away from its unit). */
+/** Keeps "45 นาที" / "เลขพัสดุ" on one line (a number never wraps away from its unit, a word never splits). */
 const Keep = ({ children }: { children: React.ReactNode }) => <span className="whitespace-nowrap">{children}</span>;
+
+/** A no-break space + "·" — written as a code so no raw U+00A0 sits in the source (THAI_STYLE §5(ฉ)). */
+const NBSP_DOT = String.fromCharCode(0xa0) + "·";
+
+/** "a · b · c" where each part stays whole and a line may break only after a "·" — never before it (designer 11/11). */
+function Pieces({ parts }: { parts: (string | null)[] }) {
+  const shown = parts.filter((p): p is string => Boolean(p));
+  return shown.map((p, i) => (
+    <span key={p}>
+      <Keep>
+        {p}
+        {i < shown.length - 1 ? NBSP_DOT : ""}
+      </Keep>
+      {i < shown.length - 1 ? " " : ""}
+    </span>
+  ));
+}
+
+/** The step tile's label: "รอใส่เลขพัสดุ" breaks as "รอใส่ / เลขพัสดุ" on a phone, never inside "เลขพัสดุ" (designer 11/11). */
+const tileLabel = (j: StaffJob) => (j === "tracking" ? <>รอใส่<Keep>เลขพัสดุ</Keep></> : STAFF_JOBS[j].label);
 
 function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; shop: AdminHomeProps["shop"]; wideOnly: boolean }) {
   const job = jobOf(o.status);
@@ -78,12 +98,14 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
 
   const status = (
     <Age late={age.late} wait={job === "slip"} className="text-sm leading-relaxed lg:text-[0.95rem]">
-      {STAFF_JOBS[job].label}
-      {job === "slip" && (o.slipVerdict === "pass" ? " · สลิปยอดตรง" : " · สลิปต้องดูเอง")} ·{" "}
-      <Keep>
-        {STEP_SINCE[job]} {age.text}
-      </Keep>
-      {job === "tracking" && carrier ? ` · ${CARRIERS[carrier].name.th}` : ""}
+      <Pieces
+        parts={[
+          STAFF_JOBS[job].label,
+          job === "slip" ? (o.slipVerdict === "pass" ? "สลิปยอดตรง" : "สลิปต้องดูเอง") : null,
+          `${STEP_SINCE[job]} ${age.text}`,
+          job === "tracking" && carrier ? CARRIERS[carrier].name.th : null,
+        ]}
+      />
     </Age>
   );
 
@@ -117,7 +139,7 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
         </PendingButton>
       </form>
     ) : (
-      <Link href={href} className={quiet}>
+      <Link href={href} className={`${quiet} lg:text-sm`}>
         {o.channel === "line" ? "เปิดออเดอร์ · คีย์ใน Shipnity เอง" : "เปิดออเดอร์ · คัดลอกรายการส่งคลัง"}
       </Link>
     );
@@ -163,7 +185,7 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
     // Phones: a card (number + price, the wait line, the button). Wide screens: one row on a grid — number · wait · who ·
     // price · button — the link's parts placed straight onto the row's columns (display: contents keeps them in the link).
     <li
-      className={`${age.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col gap-3 p-3.5 lg:grid lg:grid-cols-[6.5rem_minmax(0,1fr)_5.5rem_auto] lg:items-center lg:gap-x-4 lg:px-4 lg:py-3 ${wideOnly ? "max-lg:hidden" : ""}`}
+      className={`${age.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col gap-3 p-3.5 lg:grid lg:grid-cols-[6.5rem_minmax(0,1fr)_5.5rem_17.5rem] lg:items-center lg:gap-x-4 lg:px-4 lg:py-3 ${wideOnly ? "max-lg:hidden" : ""}`}
     >
       <Link href={href} className="flex min-w-0 flex-col gap-1 hover:opacity-90 lg:contents">
         <span className="flex items-baseline justify-between gap-3 lg:contents">
@@ -288,14 +310,14 @@ export function AdminHome(p: AdminHomeProps) {
                 return (
                   <Link key={j} href={STEP_HREF(j)} className={`${age?.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col justify-between gap-1.5 p-3.5 hover:brightness-125 lg:gap-2 lg:p-4`}>
                     {/* Two lines kept for the label on a phone, so the three counts sit on one line. */}
-                    <span className="min-h-[2.6em] text-[0.82rem] leading-snug text-[#ebebeb]/75 lg:min-h-0 lg:text-[0.95rem]">{STAFF_JOBS[j].label}</span>
+                    <span className="min-h-[2.6em] text-[0.82rem] leading-snug text-[#ebebeb]/75 lg:min-h-0 lg:text-[0.95rem]">{tileLabel(j)}</span>
                     <span className={`font-display text-[2.5rem] font-bold leading-none tabular-nums lg:text-[4rem] ${counts[j] > 0 ? "" : "text-[#ebebeb]/35"}`}>{counts[j]}</span>
                     {age ? (
-                      <Age late={age.late} className="whitespace-nowrap text-[0.76rem] lg:text-[0.9rem]">
+                      <Age late={age.late} className="whitespace-nowrap text-[0.76rem] lg:text-[0.95rem]">
                         เก่าสุด {age.text}
                       </Age>
                     ) : (
-                      <span className="text-[0.76rem] text-[#ebebeb]/45 lg:text-[0.9rem]">ไม่มีค้าง</span>
+                      <span className="text-[0.76rem] text-[#ebebeb]/45 lg:text-[0.95rem]">ไม่มีค้าง</span>
                     )}
                   </Link>
                 );
@@ -327,7 +349,7 @@ export function AdminHome(p: AdminHomeProps) {
                 ดูอีก {moreWide} ออเดอร์ ›
               </Link>
             )}
-            <p className="flex flex-wrap items-center gap-x-4 gap-y-1 px-0.5 text-sm text-[#ebebeb]/62">
+            <p className="flex flex-wrap items-center gap-x-4 px-0.5 text-sm text-[#ebebeb]/62 [&>*]:min-h-10!">
               <span className="text-[#ebebeb]/45">ดูออเดอร์อื่น</span>
               {(["unpaid", "done", "cancelled"] as const).map((j) => (
                 <Link key={j} href={STEP_HREF(j)} className="inline-flex min-h-11 items-center hover:text-[#ebebeb]">

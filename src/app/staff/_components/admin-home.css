@@ -18,6 +18,8 @@
   --ah-wait-dot: #f2c14e;
 }
 
+/* In the components layer so a Tailwind utility on the same element (lg:hidden …) still wins. */
+@layer components {
 .ah-page {
   position: relative;
   isolation: isolate;
@@ -28,7 +30,8 @@
 /*
  * The light: one layer, every patch wide and low with an eased fall-off (several stops, not one hard stop at 70 %), the
  * patches overlapping each other, then the whole layer blurred once — so no patch has an edge. A faint grain on top breaks
- * the 8-bit banding a smooth dark gradient shows on phone screens. Fades out before the site's footer.
+ * the 8-bit banding a smooth dark gradient shows on phone screens. Fades out before the site's footer. The patches sit at
+ * the edges with low peaks so the middle of the page stays near black (owner: black ~60 %; designer pass 11/11).
  */
 .ah-aura {
   position: absolute;
@@ -45,10 +48,10 @@
   inset: -10% -25%;
   filter: blur(44px);
   background:
-    radial-gradient(70% 26% at 82% 4%, rgb(237 133 44 / 0.34) 0%, rgb(237 133 44 / 0.24) 22%, rgb(237 133 44 / 0.12) 48%, rgb(237 133 44 / 0.04) 74%, transparent 100%),
-    radial-gradient(75% 30% at 12% 26%, rgb(211 55 16 / 0.28) 0%, rgb(211 55 16 / 0.19) 25%, rgb(211 55 16 / 0.09) 52%, rgb(211 55 16 / 0.03) 76%, transparent 100%),
-    radial-gradient(80% 34% at 90% 52%, rgb(113 15 8 / 0.62) 0%, rgb(113 15 8 / 0.44) 26%, rgb(113 15 8 / 0.22) 54%, rgb(113 15 8 / 0.07) 78%, transparent 100%),
-    radial-gradient(75% 30% at 14% 80%, rgb(237 133 44 / 0.16) 0%, rgb(237 133 44 / 0.11) 26%, rgb(237 133 44 / 0.05) 54%, transparent 100%);
+    radial-gradient(58% 19% at 94% 1%, rgb(237 133 44 / 0.3) 0%, rgb(237 133 44 / 0.2) 24%, rgb(237 133 44 / 0.09) 50%, rgb(237 133 44 / 0.025) 76%, transparent 100%),
+    radial-gradient(52% 17% at -6% 30%, rgb(211 55 16 / 0.18) 0%, rgb(211 55 16 / 0.12) 26%, rgb(211 55 16 / 0.05) 54%, transparent 100%),
+    radial-gradient(56% 20% at 106% 58%, rgb(113 15 8 / 0.42) 0%, rgb(113 15 8 / 0.28) 26%, rgb(113 15 8 / 0.12) 54%, rgb(113 15 8 / 0.03) 78%, transparent 100%),
+    radial-gradient(50% 14% at -4% 88%, rgb(237 133 44 / 0.1) 0%, rgb(237 133 44 / 0.06) 30%, transparent 100%);
 }
 .ah-aura::after {
   content: "";
@@ -63,9 +66,9 @@
     inset: -15% -10%;
     filter: blur(60px);
     background:
-      radial-gradient(42% 48% at 86% 0%, rgb(237 133 44 / 0.32) 0%, rgb(237 133 44 / 0.22) 24%, rgb(237 133 44 / 0.1) 50%, rgb(237 133 44 / 0.035) 76%, transparent 100%),
-      radial-gradient(46% 56% at 4% 40%, rgb(211 55 16 / 0.26) 0%, rgb(211 55 16 / 0.17) 26%, rgb(211 55 16 / 0.08) 54%, rgb(211 55 16 / 0.025) 78%, transparent 100%),
-      radial-gradient(52% 60% at 70% 96%, rgb(113 15 8 / 0.66) 0%, rgb(113 15 8 / 0.46) 26%, rgb(113 15 8 / 0.22) 54%, rgb(113 15 8 / 0.07) 78%, transparent 100%);
+      radial-gradient(34% 40% at 94% -4%, rgb(237 133 44 / 0.28) 0%, rgb(237 133 44 / 0.18) 24%, rgb(237 133 44 / 0.08) 50%, rgb(237 133 44 / 0.02) 76%, transparent 100%),
+      radial-gradient(28% 42% at -5% 46%, rgb(211 55 16 / 0.17) 0%, rgb(211 55 16 / 0.11) 26%, rgb(211 55 16 / 0.045) 54%, transparent 100%),
+      radial-gradient(36% 46% at 80% 106%, rgb(113 15 8 / 0.44) 0%, rgb(113 15 8 / 0.29) 26%, rgb(113 15 8 / 0.12) 54%, rgb(113 15 8 / 0.03) 78%, transparent 100%);
   }
 }
 
@@ -145,4 +148,5 @@
   border-radius: 1.15rem;
   background: rgb(237 133 44 / 0.12);
   color: #f7c9a0;
+}
 }
