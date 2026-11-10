@@ -43,6 +43,7 @@ export default function Home() {
   // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
   // the four small records it shows. A product that is no longer visible, or has no card photo,
   // drops its slot rather than breaking the hero.
+  // No "สินค้าหมด" pill on these four (owner 10/11 "ไม่ต้องใส่ป้ายหมด … เว้นไว้ที่เดียว") — every other card keeps it.
   const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product, photo }) => {
     const item = getCatalogItem(product);
     const category = getCategory(type);
@@ -55,16 +56,7 @@ export default function Home() {
     const flavors = legacy?.flavorVariants?.length ?? (published?.optionAxisCode === "flavor" ? published.variants.length : 0);
     const most = Math.max(colors, flavors);
     const options = most >= 2 ? { n: most, kind: flavors > colors ? ("flavors" as const) : ("colors" as const) } : null;
-    // sold out as built — the same rule as ProductCard / PilotProductCard; the live answer overrides it in the browser
-    const legacyOptions = [...(legacy?.colorVariants ?? []), ...(legacy?.flavorVariants ?? [])];
-    const soldOut = legacy
-      ? legacyOptions.length > 0
-        ? legacyOptions.every((v) => v.availability === "out-of-stock")
-        : legacy.availability === "out-of-stock"
-      : published?.availabilityStatus === "out-of-stock";
     return [{
-      slug: product,
-      soldOut,
       type,
       categoryHref: `/products/${category.slug}`,
       productHref: item.href,
