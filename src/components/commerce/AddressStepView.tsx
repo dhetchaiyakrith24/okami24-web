@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { PostcodePlaceFields, type Place } from "@/components/commerce/PostcodePlaceFields";
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
+import { NotMeButton } from "@/components/commerce/NotMeButton";
 import { AddressSummaryCard, CartFold, PlaceWithMap } from "@/components/commerce/AddressOrderSummary";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, deleteAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
@@ -178,6 +179,8 @@ export function AddressStepView({
                     )}
                   </div>
                 ))}
+                {/* The saved list is the remembered buyer's (T2-06): someone else on this phone starts over with their number. */}
+                <NotMeButton className="-mt-1" />
               </div>
             )}
 

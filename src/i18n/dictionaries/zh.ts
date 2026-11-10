@@ -518,6 +518,7 @@ export const zh: Dictionary = {
     changeAddressCta: "更改地址",
     changeSavedAddressCta: "使用其他地址",
     shipToSavedTitle: "寄到您已保存的地址",
+    notMeCta: "不是本人？更换手机号",
     addressErrorMissing: "请填写所有栏目。",
     addressErrorPhone: "请检查联系电话：手机号 10 位，座机 9 位，以 0 开头。",
     addressErrorHouseNumber: "请在地址中填写门牌号。",
