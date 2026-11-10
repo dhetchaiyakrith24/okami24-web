@@ -99,7 +99,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             เรารับโอนธนาคารและสแกน QR เท่านั้น — <B>ไม่รับบัตรเครดิต และไม่มีเก็บเงินปลายทาง</B>ค่ะ
             <br />
-            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมดนะคะ
+            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมดหรือร้านส่งของให้ไม่ได้ <a href="/warranty#refunds" className="text-foreground hover:text-red">ดูรายละเอียดทุกกรณี</a>ได้นะคะ
           </>
         ),
       },
@@ -126,7 +126,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "ถ้ามีเหตุต้องยกเลิก คำสั่งซื้อจะขึ้นสถานะ “ยกเลิก” ค่ะ",
     cancelBefore: <>ยกเลิกได้ตราบใดที่ยังไม่ได้โอน ทักไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อ บอกว่าจะยกเลิก แอดมินจะจัดการให้ค่ะ</>,
-    noRefund: <><E>โอนแล้วยกเลิกไม่ได้ ยกเว้นกรณีสินค้าหมด</E> เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นที่ราคาเท่ากัน หรือรับเงินคืน ก่อนโอนทุกครั้งจึงควรเช็ครายการ สี กลิ่น และจำนวนให้ครบนะคะ</>,
+    noRefund: <><E>โอนแล้วยกเลิกไม่ได้ ยกเว้นสินค้าหมดหรือร้านส่งของให้ไม่ได้</E> สองกรณีนี้เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นที่ราคาเท่ากัน หรือรับเงินคืน และถ้าร้านยังส่งของไม่ได้ คุณเลือกรอก็ได้ ก่อนโอนทุกครั้งจึงควรเช็ครายการ สี กลิ่น และจำนวนให้ครบนะคะ ดูทุกกรณีได้ใน<a href="/warranty#refunds" className="text-foreground hover:text-red">ตารางหน้านโยบายเคลม</a>ค่ะ</>,
     checkTitle: "ก่อนโอน เช็ค 2 อย่าง",
     checks: [
       <><B>โอนเข้าบัญชีที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอนนะคะ</>,
@@ -184,7 +184,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             We only accept bank transfers and QR payments — <B>no credit cards, and no cash on delivery</B>.
             <br />
-            <B>Transfers can’t be cancelled</B> unless an item is out of stock.
+            <B>Once you’ve transferred, the order can’t be cancelled</B> unless an item is out of stock or we can’t ship it. <a href="/warranty#refunds" className="text-foreground hover:text-red">See every case</a>.
           </>
         ),
       },
@@ -211,7 +211,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "If an order has to be cancelled, there’s a Cancelled status for that.",
     cancelBefore: <>You can cancel any time before you transfer. Message us on LINE <LineLink /> with your order number and say you’d like to cancel — an admin will take care of it.</>,
-    noRefund: <><E>Once you’ve transferred, the order can’t be cancelled — unless an item is out of stock.</E> If that happens, we’ll contact you, and you can choose another item at the same price or get a refund. So check your items, colours, flavours and quantities every time before you transfer.</>,
+    noRefund: <><E>Once you’ve transferred, the order can’t be cancelled — unless an item is out of stock or we can’t ship it.</E> In either case we’ll contact you, and you can choose another item at the same price or a refund. If we can’t ship yet, you can also choose to wait. So check your items, colours, flavours and quantities every time before you transfer. You’ll find <a href="/warranty#refunds" className="text-foreground hover:text-red">every case in one table</a>.</>,
     checkTitle: "Two things to check before you transfer",
     checks: [
       <><B>Only transfer to the account an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
@@ -269,7 +269,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             我们只接受银行转账和扫码付款 —— <B>不支持信用卡，也没有货到付款</B>。
             <br />
-            <B>转账后不可取消</B>，商品缺货的情况除外。
+            <B>转账后订单不可取消</B>，商品缺货或本店无法发货的情况除外，<a href="/warranty#refunds" className="text-foreground hover:text-red">点此查看所有情况</a>。
           </>
         ),
       },
@@ -296,7 +296,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     ],
     cancelStatus: "如果需要取消订单，系统也有「已取消」这个状态。",
     cancelBefore: <>只要还没转账，都可以取消。通过 LINE <LineLink /> 联系我们，附上订单编号说明要取消，管理员会为您处理。</>,
-    noRefund: <><E>转账后订单不可取消，商品缺货的情况除外。</E>如遇缺货，我们会联系您，您可以换成价格相同的其他商品，或选择退款。所以每次转账前，请务必核对商品、颜色、口味和数量。</>,
+    noRefund: <><E>转账后订单不可取消，商品缺货或本店无法发货的情况除外。</E>遇到这两种情况，我们会联系您，您可以换成价格相同的其他商品，或选择退款；如果是暂时无法发货，也可以选择等待。所以每次转账前，请务必核对商品、颜色、口味和数量。所有情况都列在<a href="/warranty#refunds" className="text-foreground hover:text-red">这张表格</a>里。</>,
     checkTitle: "转账前请核对两件事",
     checks: [
       <><B>只能转账到管理员在 LINE {line} 上发给您的账号</B> —— 若有人发来其他账号，请勿转账。</>,
