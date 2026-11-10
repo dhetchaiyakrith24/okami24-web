@@ -44,6 +44,7 @@ export function ProductMasterVariantPicker({
   countLine,
   bestIds,
   className,
+  glossOf,
 }: {
   optionAxisLabel: string | null;
   variants: StorefrontVariantView[];
@@ -58,6 +59,8 @@ export function ProductMasterVariantPicker({
   bestIds?: ReadonlySet<string>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
+  /** T2-32: Thai words for a flavour option (Thai page, flavour axis: flavorThai); absent = labels only. */
+  glossOf?: (label: string) => string | null;
 }) {
   const [internalSelectedId, setInternalSelectedId] = useState(variants[0]?.id ?? null);
   const selectedId = controlledSelectedId !== undefined ? controlledSelectedId : internalSelectedId;
@@ -72,7 +75,7 @@ export function ProductMasterVariantPicker({
     <div data-option-picker className={cn("flex flex-col gap-2", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id], best: bestIds?.has(v.id) }))}
+        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock", left: counts?.[v.id], best: bestIds?.has(v.id), gloss: glossOf?.(v.label) }))}
         selectedId={selectedId}
         countLine={countLine}
         onSelect={handleSelect}
@@ -105,6 +108,8 @@ export function ProductMasterVariantPicker({
               )}
             >
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>
+              {/* Thai in the mono pill reads as a mistake (OptionCountBadge note) — sans, no tracking, no capitals. */}
+              {glossOf?.(v.label) && <span className="font-sans! normal-case! tracking-normal! text-foreground-dim">· {glossOf(v.label)}</span>}
               {outOfStock && outOfStockLabel && <span className="text-[0.6rem] uppercase tracking-wide">{outOfStockLabel}</span>}
               {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}

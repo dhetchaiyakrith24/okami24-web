@@ -37,6 +37,8 @@ export interface PhoneOption {
   /** A best-selling option (src/data/bestseller-options.ts): a small "ขายดี" capsule on its photo. The cart's quick add
    *  passes none, so the badge stays on the product page. */
   best?: boolean;
+  /** T2-32: the Thai words of a flavour name (src/lib/flavor-thai.ts), Thai page only — a small line under the name. */
+  gloss?: string | null;
 }
 
 export function PhoneOptionTiles({
@@ -78,6 +80,7 @@ export function PhoneOptionTiles({
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
         {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
+        {selected?.gloss && <span className="text-foreground-muted">· {selected.gloss}</span>}
         {selected?.best && <OptionBestTag className="px-2 py-1 text-xs" />}
         {selected && <StockPill out={selected.out} />}
         {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
@@ -117,7 +120,8 @@ export function PhoneOptionTiles({
       >
         {options.map((o) => {
           const picked = o.id === selectedId;
-          const name = o.out ? `${o.name} — ${t.optionOut}` : o.name;
+          const shownName = o.gloss ? `${o.name} · ${o.gloss}` : o.name;
+          const name = o.out ? `${shownName} — ${t.optionOut}` : shownName;
           return (
             <button
               key={o.id}
@@ -148,15 +152,18 @@ export function PhoneOptionTiles({
                 )}
                 {o.best && <OptionBestTag className="absolute left-1 top-1" />}
               </span>
-              <span
-                className={cn(
-                  "w-full self-start text-xs leading-tight",
-                  // Strip photos are often plain swatches, so the name carries the choice: one more line there.
-                  strip ? "line-clamp-3" : "line-clamp-2",
-                  picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
-                )}
-              >
-                {o.name}
+              <span className="w-full self-start">
+                <span
+                  className={cn(
+                    "block text-xs leading-tight",
+                    // Strip photos are often plain swatches, so the name carries the choice: one more line there.
+                    strip ? "line-clamp-3" : "line-clamp-2",
+                    picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
+                  )}
+                >
+                  {o.name}
+                </span>
+                {o.gloss && <span className="mt-0.5 block line-clamp-2 text-[0.68rem] leading-tight text-foreground-dim">{o.gloss}</span>}
               </span>
               <StockPill out={o.out} left={o.left} small />
             </button>

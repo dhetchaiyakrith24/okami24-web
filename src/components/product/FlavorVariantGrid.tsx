@@ -40,6 +40,7 @@ export function FlavorVariantGrid({
   countLine,
   bestIds,
   className,
+  glossOf,
 }: {
   variants: FlavorVariant[];
   selectedId: string | null;
@@ -62,6 +63,8 @@ export function FlavorVariantGrid({
   bestIds?: ReadonlySet<string>;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
+  /** T2-32: Thai words for a flavour name (Thai page: flavorThai), shown after the name; absent = names only. */
+  glossOf?: (name: string) => string | null;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
 
@@ -69,7 +72,7 @@ export function FlavorVariantGrid({
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id], best: bestIds?.has(v.id) }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id], best: bestIds?.has(v.id), gloss: glossOf?.(v.name) }))}
         selectedId={isAllSelected ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}
@@ -78,7 +81,7 @@ export function FlavorVariantGrid({
       />
       <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
-        {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}{glossOf?.(selected.name) ? ` · ${glossOf(selected.name)}` : ""}</span>}
         {!isAllSelected && selected && bestIds?.has(selected.id) && <OptionBestTag className="ml-2 align-middle" />}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
@@ -126,6 +129,7 @@ export function FlavorVariantGrid({
                 aria-hidden
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
+              {glossOf?.(v.name) && <span className="text-foreground-dim">· {glossOf(v.name)}</span>}
               {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-danger" : "text-foreground-dim")}>{outOfStockLabel}</span>}
               {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
