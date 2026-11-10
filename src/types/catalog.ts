@@ -292,13 +292,13 @@ export interface Product {
    * ONE selected variant; see `ColorVariantRail`'s "All Colors" chip for how selection state
    * interacts with this.
    */
-  lineupImage?: { src: string; alt: string; sourceName: string };
+  lineupImage?: { src: string; alt: string; /** internal provenance — never reaches the storefront (products/index.ts `storefrontSafe`) */ sourceName?: string };
   /**
    * A second all-colours image when one would hold too many devices (owner 01/10: Caliburn G3 Pro's 16 colours as two
    * groups of 8, "ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น"). Only with `lineupImage`; the colour rail then shows two pills,
    * "ทั้งหมด 1" (lineupImage) and "ทั้งหมด 2" (this). Colour products only.
    */
-  lineupImage2?: { src: string; alt: string; sourceName: string };
+  lineupImage2?: { src: string; alt: string; /** internal provenance — never reaches the storefront */ sourceName?: string };
   /**
    * Image-fix round 2026-09-29 (owner: the standard product photo comes first): the product page opens on the card
    * photo with no option picked, and the card stays the first gallery slide, even though the options have photos.
