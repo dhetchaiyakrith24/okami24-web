@@ -51,7 +51,7 @@ export function ordersToFirstCard(count: number): number {
 
 /**
  * The pictures behind the tier-checked route (src/app/api/account/art/[name]/route.ts): file name → the lowest tier that may
- * open it. The files live in `private/member-art/` (never public/), so none can be opened, crawled or shared without the check.
+ * open it. The files live in `src/assets/member-art/` (never public/), so none can be opened, crawled or shared without the check.
  * card = the picture on that tier's card · room = the full-moon room gallery (10+ only).
  */
 export const MEMBER_ART: Readonly<Record<string, { needs: MemberTier; use: "card" | "room" }>> = {

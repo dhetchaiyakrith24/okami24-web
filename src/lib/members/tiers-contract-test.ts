@@ -40,9 +40,9 @@ export function runTiersContractTests(): { name: string; passed: boolean; detail
   check("no art name can climb out of the folder", Object.keys(MEMBER_ART).every((n) => /^[a-z0-9-]+\.webp$/.test(n)));
 
   // The files exist where the route reads them, and none sits in public/ (a public copy would skip the check).
-  const dir = path.join(process.cwd(), "private", "member-art");
+  const dir = path.join(process.cwd(), "src", "assets", "member-art");
   const missing = Object.keys(MEMBER_ART).filter((n) => !fs.existsSync(path.join(dir, n)));
-  check("every gated picture is in private/member-art/", missing.length === 0, missing.join(", "));
+  check("every gated picture is in src/assets/member-art/", missing.length === 0, missing.join(", "));
   const pub = path.join(process.cwd(), "public");
   const leaked: string[] = [];
   const walk = (d: string) => {

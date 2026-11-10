@@ -27,6 +27,7 @@ export function MemberCard({ tier, count, memberSince, firstCardAt }: { tier: Me
     return (
       <div className="rounded-[20px] border border-white/[0.07] p-[22px]">
         <p className="text-[15px] text-foreground">{t.tierComing.replace("{count}", String(firstCardAt))}</p>
+        <p className="mt-1.5 text-[13px] text-foreground-muted">{t.tierCountNote}</p>
       </div>
     );
   }
