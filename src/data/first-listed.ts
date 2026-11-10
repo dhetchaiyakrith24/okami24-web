@@ -9,6 +9,8 @@
  * Date = the deploy day (Bangkok), ISO yyyy-mm-dd.
  */
 export const FIRST_LISTED: Readonly<Record<string, string>> = {
+  "voopoo-vinci-coil-5pack": "2026-11-11",
+  "voopoo-pnp-x-coil-5pack": "2026-11-11",
   "iqos-iluma-one": "2026-11-11",
   "iqos-iluma-one-oasis": "2026-11-11",
   "pop-up-10k-base": "2026-11-11",

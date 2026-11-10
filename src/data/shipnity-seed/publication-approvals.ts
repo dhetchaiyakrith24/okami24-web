@@ -278,11 +278,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // C list 10/11 (item 134 1A): VOOPOO coil boxes — Max ราคาขาย read 2026-11-10 15:25 (order-entry picker): Vinci boxes ฿350 (DW60 0.6Ω +
   // 0.15Ω, same price → one page) → ฿379 · PnP X 0.15Ω box ฿400 → ฿439 (BSOT §5). Held until a card photo exists (IMAGE_SPEC §4) — uncomment
   // with the card + sku-map (voopoo-vinci-coil-5pack → Set-Coil-1-14 / Set-Coil-1-1 · voopoo-pnp-x-coil-5pack → Set-Coil-92-1).
-  // Card photos exist (11/11); Max re-read 10/11 ~23:00: Set-Coil-1-14 ฿350 · Set-Coil-1-1 ฿350 · Set-Coil-92-1 ฿400 (unchanged). Still held:
-  // the box codes must be in the warehouse read first (scripts/order-entry-stock.js now keeps two-word codes; warehouse-stock.ts is
-  // regenerated from the 10/11 read after the stock-refresh PR) — then uncomment with the sku-map entries:
-  // "VOOPOO-VINCI-COIL-5PACK": { sellingPrice: 379, lastPriceReview: "2026-11-10" },
-  // "VOOPOO-PNP-X-COIL-5PACK": { sellingPrice: 439, lastPriceReview: "2026-11-10" },
+  // Published 11/11: card photos live since #1400; the box codes are in the warehouse read (warehouse-stock.ts regenerated from the
+  // 10/11 15:20 order-entry read with the two-word-code fix) · Max re-read 10/11 ~23:00: Set-Coil-1-14 ฿350 · Set-Coil-1-1 ฿350 ·
+  // Set-Coil-92-1 ฿400 (unchanged):
+  "VOOPOO-VINCI-COIL-5PACK": { sellingPrice: 379, lastPriceReview: "2026-11-10" },
+  "VOOPOO-PNP-X-COIL-5PACK": { sellingPrice: 439, lastPriceReview: "2026-11-10" },
   // C list 10/11 (item 134 4A · 5A): Max ราคาขาย read 2026-11-10 15:25 — Pop Up 10K battery base (Pod-154-19) ฿199 → ฿219 (owner "ตามแนะนำ") ·
   // Insta 15000 (Product 744, 11 flavours) ฿329 → ฿359 (BSOT §5). Held until a card photo exists (IMAGE_SPEC §4) — uncomment with the card +
   // sku-map (pop-up-10k-base → Pod-154-19 · insta-bar-px-15k → Variation 746…760, once the warehouse read carries them):
