@@ -257,6 +257,7 @@ export const zh: Dictionary = {
     worksWithTitle: "可搭配本机使用",
     fitsDevicesTitle: "适配以下设备",
     // T2-31 (tester 10/11): the one line under a pod head's / coil's price naming the devices the maker says it fits.
+    fitsDeviceMore: "+{n} 款",
     fitsDeviceLine: "适用于",
     verifiedCompatibilityNote: "以下每一条均已对照厂商或零售商来源核实。",
     whoIsThisForTitle: "适合谁使用？",

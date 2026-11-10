@@ -8,6 +8,15 @@
  * src/lib/lineup-groups-contract-test.ts lists which products get which.
  */
 type Range = [number, number];
+
+/** A product whose two images split the colours by kind, not by count — each chip names its kind (designer 11/11: "ภาพรวมสี 1 / 2"
+ *  said too little where the images are "the 6 solid colours" / "the 6 gradient finishes"). Keyed by slug, in image order. */
+export const LINEUP_GROUP_NAMES: Readonly<Record<string, ReadonlyArray<Readonly<Record<"th" | "en" | "zh", string>>>>> = {
+  "caliburn-g4-mini": [
+    { th: "สีพื้น", en: "Solid", zh: "纯色" },
+    { th: "สีไล่เฉด", en: "Gradient", zh: "渐变" },
+  ],
+};
 function parse(alt: string | undefined): [number, number, number] | null {
   const m = alt?.match(/colours (\d+)[–-](\d+) of (\d+)/);
   return m ? [Number(m[1]), Number(m[2]), Number(m[3])] : null;

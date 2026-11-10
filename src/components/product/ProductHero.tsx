@@ -28,7 +28,7 @@ import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
 import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
-import { lineupGroupRanges } from "@/lib/lineup-groups";
+import { LINEUP_GROUP_NAMES, lineupGroupRanges } from "@/lib/lineup-groups";
 import type { RelatedDevice } from "@/data/catalog-relationships";
 import { bestSellerOptions } from "@/data/bestseller-options";
 import { countKind, countText } from "@/lib/stock/count-rules";
@@ -153,8 +153,11 @@ export function ProductHero({
   // T2-31 (tester 10/11: "ทั้งหมด 1 / ทั้งหมด 2" did not say what they were): with two images each chip names its colours —
   // "สีที่ 1–4" / "สีที่ 5–8" from the images' alts (lineupGroupRanges); where those do not match the colour chips, "ภาพรวมสี 1" / "2".
   const groupRanges = lineupGroupRanges(product.lineupImage?.alt, product.lineupImage2?.alt, product.colorVariants?.length ?? 0);
+  const groupNames = LINEUP_GROUP_NAMES[product.slug];
   const allLabelAt = (i: number) =>
-    lineups.length > 1 && groupRanges
+    lineups.length > 1 && groupNames?.[i]
+      ? groupNames[i][locale]
+      : lineups.length > 1 && groupRanges
       ? dict.product.lineupGroupLabel.replace("{from}", String(groupRanges[i][0])).replace("{to}", String(groupRanges[i][1]))
       : lineups.length > 1
         ? dict.product.lineupGroupFallback.replace("{n}", String(i + 1))

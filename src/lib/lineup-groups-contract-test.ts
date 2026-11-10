@@ -2,7 +2,7 @@
  *  numbered fallback. A product leaving the fallback list on purpose = update FALLBACK here; one leaving it by a data
  *  slip (a new lineupImage2 whose alt has no range) fails. Run: npx tsx src/lib/lineup-groups-contract-test.ts */
 import { allProducts } from "@/data/products";
-import { lineupGroupRanges } from "./lineup-groups";
+import { LINEUP_GROUP_NAMES, lineupGroupRanges } from "./lineup-groups";
 
 const FALLBACK = new Set(["zero-pro", "caliburn-g4-mini"]);
 
@@ -18,6 +18,10 @@ export function runLineupGroupsContractTests() {
       passed: FALLBACK.has(p.slug) ? r === null : r !== null,
       detail: `alts "${p.lineupImage?.alt}" / "${p.lineupImage2?.alt}" → ${JSON.stringify(r)} · colours ${colours}`,
     });
+  }
+  for (const [slug, names] of Object.entries(LINEUP_GROUP_NAMES)) {
+    const p = allProducts.find((x) => x.slug === slug);
+    results.push({ name: `${slug}: named chips — one name per image, every language filled`, passed: !!p?.lineupImage2 && names.length === 2 && names.every((n) => n.th && n.en && n.zh), detail: "" });
   }
   results.push({ name: "an alt without a range gives no range", passed: lineupGroupRanges("X, colours 1–4 of 8", "X, all colours", 8) === null, detail: "" });
   return results;

@@ -320,6 +320,8 @@ export interface Dictionary {
     worksWithTitle: string;
     fitsDevicesTitle: string;
     fitsDeviceLine: string;
+    /** "+{n} รุ่น" — opens the rest of a long fits line (more than 6 names). */
+    fitsDeviceMore: string;
     verifiedCompatibilityNote: string;
     whoIsThisForTitle: string;
     faqEyebrow: string;

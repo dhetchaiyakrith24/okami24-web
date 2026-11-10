@@ -263,6 +263,7 @@ export const en: Dictionary = {
     worksWithTitle: "Works with this device",
     fitsDevicesTitle: "Fits these devices",
     // T2-31 (tester 10/11): the one line under a pod head's / coil's price naming the devices the maker says it fits.
+    fitsDeviceMore: "+{n} more",
     fitsDeviceLine: "Fits",
     verifiedCompatibilityNote: "Every link here is checked against a manufacturer or retailer source.",
     whoIsThisForTitle: "Who is this for?",
