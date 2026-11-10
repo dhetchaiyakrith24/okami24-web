@@ -1,11 +1,11 @@
 {
- "ranAt": "2026-11-09T02:59:39.656Z",
+ "ranAt": "2026-11-10T04:49:33.900Z",
  "site": "sc-domain:okami24.store",
  "urlSource": "sitemap",
  "rows": [
   {
    "url": "https://okami24.store",
-   "lastCrawl": "2026-11-05T19:19:41Z",
+   "lastCrawl": "2026-11-09T09:06:51Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -35,7 +35,7 @@
   },
   {
    "url": "https://okami24.store/brands/esko-bar",
-   "lastCrawl": "2026-10-31T13:09:23Z",
+   "lastCrawl": "2026-11-09T23:31:07Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -65,7 +65,7 @@
   },
   {
    "url": "https://okami24.store/brands/joiway",
-   "lastCrawl": "2026-10-31T09:24:22Z",
+   "lastCrawl": "2026-11-09T06:36:51Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -135,7 +135,7 @@
   },
   {
    "url": "https://okami24.store/brands/salthub",
-   "lastCrawl": "2026-11-03T09:54:29Z",
+   "lastCrawl": "2026-11-10T02:01:08Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -175,7 +175,7 @@
   },
   {
    "url": "https://okami24.store/brands/uwell",
-   "lastCrawl": "2026-11-02T22:39:22Z",
+   "lastCrawl": "2026-11-09T10:10:55Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -725,7 +725,7 @@
   },
   {
    "url": "https://okami24.store/products/argus-g3-mini",
-   "lastCrawl": "2026-11-07T12:02:08Z",
+   "lastCrawl": "2026-11-09T14:04:45Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -765,7 +765,7 @@
   },
   {
    "url": "https://okami24.store/products/caliburn-g3",
-   "lastCrawl": "2026-11-01T15:24:25Z",
+   "lastCrawl": "2026-11-09T12:13:46Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1145,7 +1145,7 @@
   },
   {
    "url": "https://okami24.store/products/eliquid-109",
-   "lastCrawl": "2026-10-19T17:54:09Z",
+   "lastCrawl": "2026-11-09T16:10:56Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1215,7 +1215,7 @@
   },
   {
    "url": "https://okami24.store/products/graple-freebase",
-   "lastCrawl": "2026-10-19T17:54:13Z",
+   "lastCrawl": "2026-11-09T06:44:56Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1255,7 +1255,7 @@
   },
   {
    "url": "https://okami24.store/products/infy-pod",
-   "lastCrawl": "2026-11-07T13:17:07Z",
+   "lastCrawl": "2026-11-09T15:19:44Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1435,7 +1435,7 @@
   },
   {
    "url": "https://okami24.store/products/muro-freebase",
-   "lastCrawl": "2026-10-23T03:00:24Z",
+   "lastCrawl": "2026-11-09T20:03:15Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1505,7 +1505,7 @@
   },
   {
    "url": "https://okami24.store/products/nexswitch-16k-pod",
-   "lastCrawl": "2026-11-03T08:16:21Z",
+   "lastCrawl": "2026-11-09T07:51:50Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1595,7 +1595,7 @@
   },
   {
    "url": "https://okami24.store/products/pod-systems",
-   "lastCrawl": "2026-11-06T07:32:13Z",
+   "lastCrawl": "2026-11-09T07:14:21Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1627,11 +1627,11 @@
    "url": "https://okami24.store/products/relx-artisan-plus",
    "lastCrawl": null,
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "indexing": "INDEXING_STATE_UNSPECIFIED",
    "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
    "googleCanonical": null,
-   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+   "crawledAs": null
   },
   {
    "url": "https://okami24.store/products/relx-creator",
@@ -1707,11 +1707,11 @@
    "url": "https://okami24.store/products/relx-novo-14k",
    "lastCrawl": null,
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "indexing": "INDEXING_STATE_UNSPECIFIED",
    "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
    "googleCanonical": null,
-   "crawledAs": null
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
   },
   {
    "url": "https://okami24.store/products/relx-pod",
@@ -1757,11 +1757,11 @@
    "url": "https://okami24.store/products/relx-ultra-kit",
    "lastCrawl": null,
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "indexing": "INDEXING_STATE_UNSPECIFIED",
    "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
    "googleCanonical": null,
-   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+   "crawledAs": null
   },
   {
    "url": "https://okami24.store/products/relx-ultra-pod",
@@ -1835,7 +1835,7 @@
   },
   {
    "url": "https://okami24.store/products/vazer-one-pod",
-   "lastCrawl": "2026-10-20T23:00:34Z",
+   "lastCrawl": "2026-11-09T03:51:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
