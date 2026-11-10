@@ -11,7 +11,8 @@ import { readSwitches } from "@/lib/commerce/shop-switches";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
-import { pushOrder } from "@/lib/woo/order-push";
+import { pushOrder, shipnityReady } from "@/lib/woo/order-push";
+import { autoPushAfterConfirm, autoPushDone } from "@/lib/woo/auto-push";
 
 export type StaffLoginState = { error: null | "wrong" | "locked" | "empty"; retryMinutes?: number };
 
@@ -68,7 +69,7 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     const reason = note.trim() || String(formData.get("message") ?? "").replace(/\s+/g, " ").trim();
     note = ["warehouse: cancelled in Shipnity / told (ticked)", reason].filter(Boolean).join(" — ");
   }
-  if (order && action === "to-warehouse" && handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse })) {
+  if (order && action === "to-warehouse" && handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() })) {
     if (!ticked) redirect(`${back}error=handover-tick`);
     note = ["keyed into Shipnity by hand (ticked)", note.trim()].filter(Boolean).join(" — ");
   }
@@ -78,8 +79,10 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     note,
     message: String(formData.get("message") ?? ""),
   });
-  const done = action === "cancel" && order && ticked ? "cancel-warehouse" : action;
-  redirect(result.ok ? `${back}done=${done}` : `${back}error=${result.error}`);
+  if (!result.ok) redirect(`${back}error=${result.error}`);
+  // Automation item 3 (owner 10/11): a confirmed order goes to Shipnity by itself while the owner's switch is on.
+  if (action === "confirm") redirect(`${back}done=${autoPushDone(await autoPushAfterConfirm(orderNumber), "confirm")}`);
+  redirect(`${back}done=${action === "cancel" && order && ticked ? "cancel-warehouse" : action}`);
 }
 
 /** "ส่งเข้าคลัง Shipnity" (Shipnity link, owner 28/10): send the paid order to the warehouse's Shipnity, then record the

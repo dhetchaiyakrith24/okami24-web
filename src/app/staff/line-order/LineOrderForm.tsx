@@ -221,7 +221,8 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
       )}
       {/* LINE_ORDERS_GAPS.md #2: a recent order of the same phone and total — open it first; save only with the tick. */}
       {state.duplicateOf && (
-        <div className="flex flex-col gap-2 rounded-xl border border-unverified/50 bg-unverified/10 px-4 py-3 text-sm text-foreground">
+        <div role="alert" className="flex flex-col gap-2 rounded-xl border border-unverified/50 bg-unverified/10 px-4 py-3 text-sm text-foreground">
+          <p className="font-semibold text-foreground">อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชั่วโมง ยังไม่ได้บันทึก</p>
           <a href={`/staff/orders/${encodeURIComponent(state.duplicateOf)}`} target="_blank" rel="noopener" className="inline-flex min-h-11 w-fit items-center font-semibold text-ember underline underline-offset-4">
             เปิดออเดอร์ {state.duplicateOf}
           </a>
