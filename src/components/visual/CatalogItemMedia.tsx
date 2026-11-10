@@ -1,7 +1,5 @@
 import Image from "next/image";
 import type { CatalogItem } from "@/lib/catalog-index";
-import { getProduct } from "@/data/products";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
 import { ProductMasterGlyph } from "@/components/catalog-bridge/ProductMasterGlyph";
 import { cn } from "@/lib/utils";
 
@@ -14,10 +12,9 @@ import { cn } from "@/lib/utils";
  *
  * 1. A real card photo whenever the item has one (both halves; every published ProductMaster
  *    record has one, since media is part of its publication-readiness gate).
- * 2. `DeviceGlyph` for a legacy product with no photo — the original parametric illustration,
- *    which needs the full legacy record, so it is re-fetched here rather than widening
- *    `CatalogItem` with attributes that only one half has.
- * 3. `ProductMasterGlyph` otherwise — the systemType-derived shape used by PilotProductCard.
+ * 2. `ProductMasterGlyph` otherwise — the systemType-derived shape used by PilotProductCard. (A legacy item without a photo
+ *    used to re-fetch its record for `DeviceGlyph`; that import put the raw catalog into the /compare browser chunk —
+ *    T2-50, 10/11 — and no storefront item lacks a photo: every hidden product is one without, IMAGE_SPEC §4.)
  *
  * Never renders a placeholder image standing in for a real one; an absent photo shows an
  * illustration that is honestly an illustration.
@@ -35,11 +32,6 @@ export function CatalogItemMedia({ item, className, sizes }: { item: CatalogItem
         />
       </div>
     );
-  }
-
-  if (item.origin === "legacy") {
-    const legacy = getProduct(item.slug);
-    if (legacy) return <DeviceGlyph product={legacy} className={className} />;
   }
 
   return <ProductMasterGlyph kind={item.systemType === "coil" ? "coil" : item.systemType === "pod-cartridge" ? "pod-cartridge" : "generic"} className={className} />;
