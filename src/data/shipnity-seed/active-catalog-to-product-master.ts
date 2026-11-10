@@ -814,7 +814,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "VOOPOO-PNP-X-COIL-5PACK": {
     tagline: "คอยล์ PnP X 0.15 โอห์ม จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
-    shortDescription: "คอยล์ PnP X ค่า 0.15 โอห์ม จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว กำลังไฟที่แนะนำ 60-80W",
+    shortDescription: "คอยล์ PnP X ค่า 0.15 โอห์ม จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว แนะนำใช้ที่ 60–80 วัตต์",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
