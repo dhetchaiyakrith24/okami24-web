@@ -8,7 +8,6 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { HeroType } from "@/data/home-hero";
 import type { HeroSlotView } from "./HeroShowcase";
 import { Decode } from "./Decode";
-import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
 
 const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
 
@@ -71,7 +70,7 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
                   <path d="M5 11l6-6M6 5h5v5" />
                 </svg>
               </span>
-              <span className="okh-card-img relative">
+              <span className="okh-card-img">
                 {/* DESKTOP_TRAVEL: the photo sits in a box as tall as the row's end size, shrunk to fit at rest — sharp at both ends */}
                 <span className="okh-card-ph">
                   <Image
@@ -83,7 +82,6 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
                     {...(i === 0 ? ({ loading: "eager", fetchPriority: "high" } as const) : ({ loading: "lazy" } as const))}
                   />
                 </span>
-                <CardSoldOutBadge slug={s.slug} builtSoldOut={s.soldOut} />
               </span>
               <span className="okh-card-head">
                 <span className="okh-card-name font-display" lang="en">
