@@ -121,6 +121,22 @@ try {
   check("member signed in on the session that typed a row may still use it for that order (not list it)", can(orderScope(sameSession), typed) && !ids(listScope(sameSession)).includes(typed));
   check("member m2 (other) lists nothing of m1's", !ids(listScope(m2Visitor)).includes(unique));
   check("a bad id matches nothing", !can(orderScope(owner), 999999) && !can(orderScope(stranger), -1));
+
+  // The writes themselves, with the same WHERE as addresses.ts updateAddress / deleteAddress (T2-15 add-on, Friday 11/11):
+  // a foreign id changes 0 rows, the owner's own changes 1.
+  const update = (scope: Scope, addressId: number) =>
+    db.prepare(`UPDATE addresses SET line1 = 'แก้โดยคนอื่น' WHERE id = ? AND ${scope.sql}`).run(addressId, ...scope.args) as unknown as { changes: number };
+  const remove = (scope: Scope, addressId: number) =>
+    db.prepare(`DELETE FROM addresses WHERE id = ? AND ${scope.sql}`).run(addressId, ...scope.args) as unknown as { changes: number };
+  const m2Edit = editScope(m2Visitor)!;
+  const foreign = [unique, shared, noOrder, otherPhone, typed];
+  check("UPDATE with a foreign id (another member) changes 0 rows", foreign.every((a) => update(m2Edit, a).changes === 0));
+  check("DELETE with a foreign id (another member) changes 0 rows", foreign.every((a) => remove(m2Edit, a).changes === 0));
+  check("…and every foreign row is still there, unchanged", (db.prepare("SELECT COUNT(*) AS n FROM addresses WHERE line1 = 'แก้โดยคนอื่น'").get() as { n: number }).n === 0 && (db.prepare("SELECT COUNT(*) AS n FROM addresses").get() as { n: number }).n === 5);
+  check("a phone-only session has no write scope at all (updateAddress / deleteAddress stop before SQL)", editScope(stranger) === null && editScope(nextVisitor) === null);
+  const ownEdit = editScope(owner)!;
+  check("the owner's own UPDATE changes 1 row", update(ownEdit, unique).changes === 1);
+  check("the owner's own DELETE changes 1 row", remove(ownEdit, unique).changes === 1);
   db.close();
 } finally {
   fs.rmSync(dir, { recursive: true, force: true });
