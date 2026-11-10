@@ -39,8 +39,9 @@ export function readPendingCookie(raw: string | undefined): PendingSignIn | null
     ) {
       return null;
     }
-    // The cookie is unsigned, and that is fine here too: "owner" only changes what a successful Google answer is compared with.
-    return { provider: v.provider, state: v.state, nonce: v.nonce, verifier: v.verifier, returnTo: v.returnTo, purpose: v.purpose === "owner" ? "owner" : "member" };
+    // The cookie is unsigned, and that is fine here too: "owner" / "staff" only change what a successful Google answer is compared with.
+    const purpose = v.purpose === "owner" || v.purpose === "staff" ? v.purpose : "member";
+    return { provider: v.provider, state: v.state, nonce: v.nonce, verifier: v.verifier, returnTo: v.returnTo, purpose };
   } catch {
     return null;
   }
