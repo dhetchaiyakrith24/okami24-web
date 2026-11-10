@@ -38,6 +38,12 @@ export function liveStockReady(): boolean {
   return reports().size > 0;
 }
 
+/** Drop the cached table, so the next read sees a push that was just saved (the stock route calls this before it marks
+ *  pages stale — a page re-rendered inside the 10 s window would otherwise keep the old stock for 3 hours, T2-05). */
+export function forgetLiveStock(): void {
+  cache = null;
+}
+
 /** The live lookup for the cart, checkout and the stock API. */
 export function liveLookup(): LiveLookup {
   const base = lookupFrom(reports());
