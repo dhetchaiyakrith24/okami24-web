@@ -238,6 +238,14 @@ export const currentStaff = cache(async (): Promise<StaffActor | null> => {
 /** True when this request carries a live staff session of any kind. */
 export const isStaff = cache(async (): Promise<boolean> => (await currentStaff()) !== null);
 
+/** The owner switched the shared password off (/staff/owner/team): every session it opened ends now, for good — switching it
+ *  on again later needs the password typed again. Returns how many were open. */
+export function endSharedSessions(): number {
+  return getDb()
+    .prepare("UPDATE staff_sessions SET revoked_at = ? WHERE actor_kind = 'shared' AND revoked_at IS NULL")
+    .run(new Date().toISOString()).changes;
+}
+
 /** The owner signed out of the owner's section: the owner's session in the admin view ends with it. */
 export async function endOwnerStaffSession(): Promise<void> {
   if ((await currentStaff())?.kind !== "owner") return;

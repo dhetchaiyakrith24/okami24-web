@@ -7,7 +7,7 @@ import { isOwner } from "@/lib/owner/auth";
 import { OWNER_NAME, type StaffActor } from "@/lib/staff/account-rules";
 import { addAccount, renameAccount, setAccountActive } from "@/lib/staff/accounts";
 import { recordStaffAction } from "@/lib/staff/audit";
-import { openOwnerStaffSession } from "@/lib/staff/auth";
+import { endSharedSessions, openOwnerStaffSession } from "@/lib/staff/auth";
 
 /** The owner's "ทีมงาน" page (/staff/owner/team, owner 10/11). Every action checks the owner's session itself and is recorded
  *  under "เจ้าของ" in "ใครทำอะไร". Addresses never reach a log line. */
@@ -56,12 +56,14 @@ export async function setAdminActiveAction(form: FormData): Promise<void> {
   redirect(TEAM);
 }
 
-/** The shared team password: off ends every session it opened at once (src/lib/staff/auth.ts checks the switch live). */
+/** The shared team password: off ends every session it opened at once — revoked here, and src/lib/staff/auth.ts also checks
+ *  the switch live. */
 export async function setSharedPasswordAction(form: FormData): Promise<void> {
   if (!(await isOwner())) redirect("/staff/owner");
   const open = form.get("value") === "on";
   writeSwitches({ ...readSwitches(), staffPasswordOff: !open });
-  recordStaffAction(OWNER, open ? "shared-password-on" : "shared-password-off");
+  const ended = open ? 0 : endSharedSessions();
+  recordStaffAction(OWNER, open ? "shared-password-on" : "shared-password-off", { detail: open ? null : `ออกจากระบบ ${ended} เครื่อง` });
   console.log(`[switches] owner set staff password ${open ? "on" : "off"}`);
   revalidatePath(TEAM);
   redirect(TEAM);
