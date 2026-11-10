@@ -103,9 +103,9 @@ export function MemberCard({ tier, count, memberSince, firstCardAt }: { tier: Me
         <div className={s.facts}>
           <span>{since ? t.memberSince.replace("{date}", since) : ""}</span>
           <span>
-            {t.ordersCountedBefore}
+            {t.ordersCounted.split("{count}")[0]}
             <b>{count}</b>
-            {t.ordersCountedAfter}
+            {t.ordersCounted.split("{count}")[1] ?? ""}
           </span>
         </div>
       </div>

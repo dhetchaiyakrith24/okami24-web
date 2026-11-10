@@ -752,9 +752,8 @@ export interface Dictionary {
     tierCardLabel: string;
     /** "{date}" = month + year the account was made. */
     memberSince: string;
-    /** Around the counted-order number on the card (the number is bold between them). */
-    ordersCountedBefore: string;
-    ordersCountedAfter: string;
+    /** The counted-order line on the card; "{count}" = the number, drawn bold. */
+    ordersCounted: string;
     /** Under the card: which orders count. */
     tierCountNote: string;
     /** Below the first card; "{count}" = orders the first card needs. */
