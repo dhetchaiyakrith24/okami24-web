@@ -12,7 +12,7 @@
  *   3. newArrivalSlugs(count, live) — newest first, only what is in stock live, a sold-out new model is replaced by the
  *      next newest (the row stays full while enough models are in stock), everything out = an empty row (it hides);
  *   4. the lookalikes (T2-08, HANDOFF §18) — after every other card of their row whatever the stock, never in its first
- *      RAIL_CARDS, never in the new-arrivals row.
+ *      RAIL_CARDS, never in the new-arrivals row, never in the /search results (their own page and category page stay).
  */
 import fs from "node:fs";
 import os from "node:os";
@@ -47,6 +47,8 @@ async function main(): Promise<void> {
     const { HomeTypeSection } = await load("src/components/home/HomeTypeSection.tsx");
     const { HOME_TYPE_SECTIONS, RAIL_CARDS } = await load("src/data/home-sections.ts");
     const { LOOKALIKES } = await load("src/data/similar-models.ts");
+    const { searchEntries } = await load("src/lib/search-entries.ts");
+    const { getPublishedProducts } = await load("src/data/shipnity-seed/storefront-bridge.ts");
     const { WAREHOUSE_ALL_CODES, WAREHOUSE_OUT_OF_STOCK } = await load("src/data/stock/warehouse-stock.ts");
     const { SHIPNITY_SKU_MAP } = await load("src/data/stock/sku-map.ts");
     const { FIRST_LISTED } = await load("src/data/first-listed.ts");
@@ -144,6 +146,9 @@ async function main(): Promise<void> {
       check("3c. the snapshot sells at least one new model", false, row);
     }
     check("4b. no lookalike in the new-arrivals row, live or as built", ![...newArrivalSlugs(8, live), ...newArrivalSlugs(8)].some((x: string) => LOOKALIKES.has(x)));
+    const searched = (searchEntries() as { hit: { product: { slug: string } } }[]).map((x) => x.hit.product.slug);
+    const lookPublished = (getPublishedProducts() as { slug: string }[]).filter((p) => LOOKALIKES.has(p.slug)).map((p) => p.slug);
+    check("4c. /search leaves out every lookalike (still in the published catalog, so the check bites)", lookPublished.length > 0 && !searched.some((x) => LOOKALIKES.has(x)) && searched.length > 0, { lookPublished, searched: searched.length });
     check("3f. everything out live = an empty row (HomeNewArrivals hides)", (newArrivalSlugs(8, () => "out") as string[]).length === 0);
   } finally {
     try {
