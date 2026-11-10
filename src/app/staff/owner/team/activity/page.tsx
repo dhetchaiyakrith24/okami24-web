@@ -90,7 +90,7 @@ export default async function OwnerActivityPage({ searchParams }: { searchParams
               key={c.label}
               href={href(day, today, c.who)}
               aria-current={on ? "page" : undefined}
-              className={`inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-sm ${on ? "bg-foreground font-semibold text-background" : "border border-surface-border text-foreground hover:bg-white/5"}`}
+              className={`inline-flex min-h-10 items-center gap-1.5 rounded-full px-4 text-sm ${on ? "border border-ember bg-surface-2 font-semibold text-foreground" : "border border-surface-border text-foreground hover:bg-white/5"}`}
             >
               {c.label} <span className="tabular-nums">{c.n}</span>
             </Link>
@@ -111,7 +111,7 @@ export default async function OwnerActivityPage({ searchParams }: { searchParams
                   {r.orderNumber && (
                     <>
                       {" "}
-                      <Link href={`/staff/orders/${encodeURIComponent(r.orderNumber)}`} className="text-ember-strong hover:underline">
+                      <Link href={`/staff/orders/${encodeURIComponent(r.orderNumber)}`} className="whitespace-nowrap text-ember-strong hover:underline">
                         {r.orderNumber}
                       </Link>
                     </>
