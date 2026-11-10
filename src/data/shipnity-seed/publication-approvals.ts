@@ -269,6 +269,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // List-new (27/10): Marbo 10K (เทียบแท้) (Max-only "Disposable-47") — Max ราคาขาย ฿299 for the parent and its 12 flavours (read 2026-10-27);
   // owner 27/10 "ราคา ฿299". Card = the site's M Bar 10K photo (owner 27/10 "ใช้รูป M Bar 10K ที่เว็บมีอยู่ได้เลย", HANDOFF §18).
   "MARBO-10K-CLONE": { sellingPrice: 299, lastPriceReview: "2026-10-27" },
+  // C list 10/11 (owner list item 134 "ตามแนะนำ", 10/11): IQOS ILUMA ONE ฿3,190 (Max ราคาขาย ฿2,900 + BSOT §5) and ILUMA ONE OASIS ฿3,490
+  // (Max ฿3,200) — Max prices from the 17/10 read, to be re-read from Max before going visible. Held until a card photo exists
+  // (IMAGE_SPEC §4) — uncomment with the card + sku-map entries (iqos-iluma-one → IQOSHEET-17-1/-2/-5 · iqos-iluma-one-oasis → IQOSHEET-17-4):
+  // "IQOS-ILUMA-ONE": { sellingPrice: 3190, lastPriceReview: "2026-11-10" },
+  // "IQOS-ILUMA-ONE-OASIS": { sellingPrice: 3490, lastPriceReview: "2026-11-10" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

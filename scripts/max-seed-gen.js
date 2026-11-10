@@ -34,6 +34,9 @@ const MAX_PARENT_OF = {
 // is the storefront slug once lowercased (same rule as every seed record), so it is a readable model name, not Max's "Product N".
 // A value may also be { max, childPrefix }: one Max parent that holds two products (Nexswitch: kit ฿419 rows Pod-161-* and
 // refill-pod ฿269 rows Pod-162-*) → one record per child-code prefix, priced at its own children's ราคาขาย.
+// Or { max, childIds: [...] }: the exact Max children of one product when no prefix separates them (C list 10/11: Max IQOSHEET-17
+// holds ILUMA ONE colours, the OASIS edition at another price and the ILUMA i ONE's Breeze Blue; a "Set-…" 5-coil box sits
+// under its loose coil's parent). Same one-price rule as childPrefix.
 const MAX_ONLY_RECORDS = {
   "KS-QUIKPRO-KIT": "Product 780", // KS Quik Pro 15000 คำ (device + pod)
   "NEXSWITCH-16K-KIT": { max: "Product 1176446", childPrefix: "Pod-161-" }, // Nexswitch 16000 Puffs — "เครื่อง + หัวพอต <flavour>"
@@ -57,6 +60,10 @@ const MAX_ONLY_RECORDS = {
   "MARBO-10K-CLONE": "Disposable-47", // Marbo 10k โคลน — sold as "Marbo 10K (เทียบแท้)" (owner 27/10, HANDOFF §18)
   "NEXBAR-SWITCH-15K-POD": "Pod-181", // nexBar Switch 15k — refill pods, 15 flavours (owner 30/10: list it so Shipnity and the site link up)
   "DUDE-POD-3ML": "Pod-180", // หัว dude 3 ml. — 10 flavours (owner 31/10 "ลงได้เลย"); Max re-used Pod-180 (nexBar CLEAR 18K is Disposable-46)
+  // C list 10/11 (owner list item 134 "ตามแนะนำ"): Max "Iqos iluma one" (IQOSHEET-17) holds the ORIGINAL ILUMA ONE's colours at ฿2,900, its
+  // OASIS edition at ฿3,200 and the ILUMA i ONE's Breeze Blue (IQOSHEET-17-3, already the iqosheet-17 page) → two more records.
+  "IQOS-ILUMA-ONE": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-1", "IQOSHEET-17-2", "IQOSHEET-17-5"] },
+  "IQOS-ILUMA-ONE-OASIS": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-4"] },
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
@@ -75,14 +82,16 @@ for (const id of seedIds) {
 const maxOnly = [];
 for (const [id, spec] of Object.entries(MAX_ONLY_RECORDS)) {
   const maxId = typeof spec === "string" ? spec : spec.max;
-  const prefix = typeof spec === "string" ? "" : spec.childPrefix;
+  const prefix = typeof spec === "string" ? "" : spec.childPrefix ?? "";
+  const ids = typeof spec === "string" ? null : spec.childIds ?? null;
   const p = parents.get(maxId);
   if (!p) { missing.push(id); continue; }
-  const children = rows.filter((r) => r[0] === "C" && r[6] === maxId && r[1].startsWith(prefix))
+  const children = rows.filter((r) => r[0] === "C" && r[6] === maxId && r[1].startsWith(prefix) && (!ids || ids.includes(r[1])))
     .map((r) => ({ shipnityVariantId: r[1], rawLabel: r[2], sellingPrice: num(r[3]), inStock: r[4] === "มีของ" }));
   const prices = [...new Set(children.map((c) => c.sellingPrice))];
-  if (prefix && prices.length !== 1) { console.error(`${id}: children under ${prefix} carry ${prices.length} prices — one record needs one price`); process.exit(1); }
-  out[id] = { maxParentId: maxId, name: p[2], operationalSellingPrice: prefix ? prices[0] : num(p[3]), children };
+  const split = Boolean(prefix || ids);
+  if (split && prices.length !== 1) { console.error(`${id}: children ${prefix || ids.join(",")} carry ${prices.length} prices — one record needs one price`); process.exit(1); }
+  out[id] = { maxParentId: maxId, name: p[2], operationalSellingPrice: split ? prices[0] : num(p[3]), children };
   maxOnly.push(id);
 }
 const body = `/**
