@@ -24,6 +24,8 @@ import { stockBook } from "@/lib/staff/stock-book";
 import { feedHealth } from "@/lib/woo/watch";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
+import { OwnerViewPill } from "@/app/staff/_components/OwnerViewPill";
+import { TODO_JOBS } from "@/lib/staff/jobs";
 import { ControlPanel } from "@/app/staff/owner/_dash/ControlPanel";
 import { HowCounted } from "@/app/staff/owner/_dash/HowCounted";
 import { dayLabel, TodayPanel } from "@/app/staff/owner/_dash/TodayPanel";
@@ -136,6 +138,8 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     <Container className="relative isolate flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
       <StaffBar />
       <Vapour />
+      {/* Owner 10/11 (design v2 board 2, passed 11/11): one switch to the admin home, the yellow count = work waiting on the team. */}
+      <OwnerViewPill active="owner" waiting={TODO_JOBS.reduce((n, j) => n + counts[j], 0)} ownerHref="/staff/owner" adminOpen={canOpenOrders} />
       <h1 className="text-sm font-normal text-foreground-muted">ส่วนเจ้าของ · {dayLabel(sales[0].date)}</h1>
       <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} footer={<HowCounted />} footerHiddenOn={["control"]} />
     </Container>
