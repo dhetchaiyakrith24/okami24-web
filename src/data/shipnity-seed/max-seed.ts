@@ -4348,5 +4348,91 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "POP-UP-10K-BASE": {
+    "maxParentId": "Pod-154",
+    "name": "Pop Up 10K หัวเติม",
+    "operationalSellingPrice": 199,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-154-19",
+        "rawLabel": "ฐานแบตเตอรี่",
+        "sellingPrice": 199,
+        "inStock": true
+      }
+    ]
+  },
+  "INSTA-BAR-PX-15K": {
+    "maxParentId": "Product 744",
+    "name": "Insta 15000 คำ",
+    "operationalSellingPrice": 329,
+    "children": [
+      {
+        "shipnityVariantId": "Variation 746",
+        "rawLabel": "Blackcurrant Grape Ice",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 748",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 749",
+        "rawLabel": "Mix Berry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 750",
+        "rawLabel": "Watermelon Bubblegum",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 752",
+        "rawLabel": "Yummy Bear",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 753",
+        "rawLabel": "Yakult",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 755",
+        "rawLabel": "Lemon Lime Ice Cream",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 756",
+        "rawLabel": "Lychee Rasberry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 758",
+        "rawLabel": "Grape",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 759",
+        "rawLabel": "Strawberry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 760",
+        "rawLabel": "Mango",
+        "sellingPrice": 329,
+        "inStock": false
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML","IQOS-ILUMA-ONE","IQOS-ILUMA-ONE-OASIS","VOOPOO-VINCI-COIL-5PACK","VOOPOO-PNP-X-COIL-5PACK"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML","IQOS-ILUMA-ONE","IQOS-ILUMA-ONE-OASIS","VOOPOO-VINCI-COIL-5PACK","VOOPOO-PNP-X-COIL-5PACK","POP-UP-10K-BASE","INSTA-BAR-PX-15K"];
