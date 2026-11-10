@@ -32,6 +32,14 @@ export interface StaffOrderRow {
   slipVerdict: SlipVerdict | null;
   /** The shop's running number (migration 0017) — null until the payment is confirmed. */
   runNumber: number | null;
+  /** Web or keyed from LINE (migration 0026) — the admin home says which, and a LINE order goes to Shipnity only while the
+   *  owner's switch is on. */
+  channel: "web" | "line";
+  /** The planned carrier (migration 0011), null when none was picked yet. */
+  carrier: string | null;
+  /** When the order entered its current status (the latest history row for it) — null when the history has none. The admin
+   *  home counts a step's wait from here ("ส่งคลังแล้ว 3 วัน"). */
+  since: string | null;
 }
 
 /** A job box of the staff home (src/lib/staff/jobs.ts — owner 26/10, queue B3), "todo" = the three to-do jobs together,
@@ -55,9 +63,10 @@ function orderSql(): string {
 export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
   const rows = getDb()
     .prepare(
-      `SELECT o.order_number, o.status, o.total, o.created_at, o.run_number, a.recipient_name, a.province,
+      `SELECT o.order_number, o.status, o.total, o.created_at, o.run_number, o.channel, o.carrier, a.recipient_name, a.province,
               (SELECT COALESCE(SUM(quantity), 0) FROM order_items i WHERE i.order_id = o.id) AS item_count,
-              (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict
+              (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict,
+              (SELECT MAX(h.created_at) FROM order_status_history h WHERE h.order_id = o.id AND h.status = o.status) AS since
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
         WHERE ${filterSql(filter)} AND NOT ${AUTO_CANCELLED_SQL}
         ORDER BY ${orderSql()} LIMIT 200`
@@ -72,6 +81,9 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     item_count: number;
     slip_verdict: SlipVerdict | null;
     run_number: number | null;
+    channel: string | null;
+    carrier: string | null;
+    since: string | null;
   }[];
   return rows.map((r) => ({
     orderNumber: r.order_number,
@@ -83,6 +95,9 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     itemCount: r.item_count,
     slipVerdict: r.slip_verdict,
     runNumber: r.run_number,
+    channel: r.channel === "line" ? "line" : "web",
+    carrier: r.carrier,
+    since: r.since,
   }));
 }
 

@@ -1,0 +1,152 @@
+/*
+ * The admin home's look (owner 10/11: dark glass, black ~60 % · greys ~30 % · orange ~10 % only on what you press · yellow
+ * tiny). Design v2 passed 11/11 with two changes: the coloured light behind the glass melts into itself (no patch edge, no
+ * banding) and the key numbers, ages, buttons and heads are bigger. Loaded by src/app/staff/_components/AdminHome.tsx only.
+ *
+ * The glass is painted, not blurred (as dashboard.css): backdrop-filter on every card is slow on a phone, and the light
+ * behind is already soft, so a translucent fill shows it through just the same.
+ */
+/* The palette on :root, not on .ah-page: the owner's switch (OwnerViewPill) uses it on /staff/owner too. */
+:root {
+  --ah-black: #0d0d0d;
+  --ah-orange: #ed852c;
+  --ah-orange-hi: #f4a35e;
+  --ah-ember: #d33710;
+  --ah-maroon: #710f08;
+  --ah-late: #ff8a6b;
+  --ah-late-dot: #ff6a45;
+  --ah-wait-dot: #f2c14e;
+}
+
+/* In the components layer so a Tailwind utility on the same element (lg:hidden …) still wins. */
+@layer components {
+.ah-page {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  color: #ebebeb;
+}
+
+/*
+ * The light: one layer, every patch wide and low with an eased fall-off (several stops, not one hard stop at 70 %), the
+ * patches overlapping each other, then the whole layer blurred once — so no patch has an edge. A faint grain on top breaks
+ * the 8-bit banding a smooth dark gradient shows on phone screens. Fades out before the site's footer. The patches sit at
+ * the edges with low peaks so the middle of the page stays near black (owner: black ~60 %; designer pass 11/11).
+ */
+.ah-aura {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+}
+.ah-aura::before {
+  content: "";
+  position: absolute;
+  inset: -10% -25%;
+  filter: blur(44px);
+  background:
+    radial-gradient(58% 19% at 94% 1%, rgb(237 133 44 / 0.3) 0%, rgb(237 133 44 / 0.2) 24%, rgb(237 133 44 / 0.09) 50%, rgb(237 133 44 / 0.025) 76%, transparent 100%),
+    radial-gradient(52% 17% at -6% 30%, rgb(211 55 16 / 0.18) 0%, rgb(211 55 16 / 0.12) 26%, rgb(211 55 16 / 0.05) 54%, transparent 100%),
+    radial-gradient(56% 20% at 106% 58%, rgb(113 15 8 / 0.42) 0%, rgb(113 15 8 / 0.28) 26%, rgb(113 15 8 / 0.12) 54%, rgb(113 15 8 / 0.03) 78%, transparent 100%),
+    radial-gradient(50% 14% at -4% 88%, rgb(237 133 44 / 0.1) 0%, rgb(237 133 44 / 0.06) 30%, transparent 100%);
+}
+.ah-aura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (min-width: 64rem) {
+  .ah-aura::before {
+    inset: -15% -10%;
+    filter: blur(60px);
+    background:
+      radial-gradient(34% 40% at 94% -4%, rgb(237 133 44 / 0.28) 0%, rgb(237 133 44 / 0.18) 24%, rgb(237 133 44 / 0.08) 50%, rgb(237 133 44 / 0.02) 76%, transparent 100%),
+      radial-gradient(28% 42% at -5% 46%, rgb(211 55 16 / 0.17) 0%, rgb(211 55 16 / 0.11) 26%, rgb(211 55 16 / 0.045) 54%, transparent 100%),
+      radial-gradient(36% 46% at 80% 106%, rgb(113 15 8 / 0.44) 0%, rgb(113 15 8 / 0.29) 26%, rgb(113 15 8 / 0.12) 54%, rgb(113 15 8 / 0.03) 78%, transparent 100%);
+  }
+}
+
+.ah-glass {
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 1.6rem;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.085), rgb(255 255 255 / 0.025));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1), 0 16px 38px rgb(0 0 0 / 0.4);
+}
+.ah-glass-hero {
+  border-color: rgb(255 255 255 / 0.14);
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.115), rgb(255 255 255 / 0.03));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.13), 0 20px 46px rgb(0 0 0 / 0.46);
+}
+.ah-well {
+  border: 1px solid rgb(255 255 255 / 0.09);
+  border-radius: 1.15rem;
+  background: rgb(13 13 13 / 0.42);
+}
+.ah-well-late {
+  border-color: rgb(255 106 69 / 0.4);
+  background: rgb(113 15 8 / 0.28);
+}
+.ah-late { color: var(--ah-late); }
+.ah-dot { display: inline-block; flex: none; width: 0.45rem; height: 0.45rem; border-radius: 99px; }
+.ah-dot-late { background: var(--ah-late-dot); }
+.ah-dot-wait { background: var(--ah-wait-dot); }
+
+/* What you press: the one orange on the page. */
+.ah-press {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--ah-orange);
+  color: var(--ah-black);
+  font-weight: 700;
+  transition: background-color 0.15s;
+}
+.ah-press:hover { background: var(--ah-orange-hi); }
+.ah-press-glow { box-shadow: 0 12px 30px rgb(237 133 44 / 0.3); }
+.ah-quiet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.06);
+  color: #ebebeb;
+  transition: background-color 0.15s;
+}
+.ah-quiet:hover { background: rgb(255 255 255 / 0.11); }
+.ah-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 1.15rem;
+  background: rgb(255 255 255 / 0.06);
+  color: #ebebeb;
+  text-align: center;
+  transition: background-color 0.15s;
+}
+.ah-tile:hover { background: rgb(255 255 255 / 0.11); }
+.ah-field {
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 999px;
+  background: rgb(13 13 13 / 0.55);
+  color: #ebebeb;
+}
+.ah-link { color: var(--ah-orange); }
+.ah-link:hover { color: var(--ah-orange-hi); }
+.ah-pill-on { background: #ebebeb; color: var(--ah-black); }
+.ah-count-wait { background: var(--ah-wait-dot); color: var(--ah-black); }
+.ah-banner {
+  border: 1px solid rgb(237 133 44 / 0.4);
+  border-radius: 1.15rem;
+  background: rgb(237 133 44 / 0.12);
+  color: #f7c9a0;
+}
+}

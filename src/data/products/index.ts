@@ -77,7 +77,22 @@ export const hiddenProducts: Product[] = catalogIncludingHidden.filter((p) => p.
  * or a link — while its data stays validated above. Un-hiding a product = delete its
  * `hiddenFromStorefront` field, nothing else.
  */
-export const allProducts: Product[] = catalogIncludingHidden.filter((p) => !p.hiddenFromStorefront);
+/**
+ * The team's provenance notes on a picture (how it was made, which tool, which IMAGE_SPEC item, the source page) are for
+ * audits, not for visitors (outside test T2-50, 10/11: "OKami24 render (Higgsfield)" and "GPT Image" were in every page's
+ * HTML because client components receive the whole product). The storefront list drops them here, on the server, so no
+ * page, rail or API can ship them: a CARD photo and the all-colours lineups keep only what the page shows (src, alt, the
+ * transparent flag). A DETAIL photo keeps its credit — the gallery prints "© <source>" under it on purpose.
+ * `catalogIncludingHidden` (audits, contract tests) keeps the full record.
+ */
+const storefrontSafe = (p: Product): Product => ({
+  ...p,
+  assets: p.assets.map((a) => (a.role === "card" ? { kind: a.kind, role: a.role, src: a.src, alt: a.alt, ...(a.transparentBackground ? { transparentBackground: true } : {}) } : a)),
+  ...(p.lineupImage ? { lineupImage: { src: p.lineupImage.src, alt: p.lineupImage.alt } } : {}),
+  ...(p.lineupImage2 ? { lineupImage2: { src: p.lineupImage2.src, alt: p.lineupImage2.alt } } : {}),
+});
+
+export const allProducts: Product[] = catalogIncludingHidden.filter((p) => !p.hiddenFromStorefront).map(storefrontSafe);
 
 export function getProduct(slug: string): Product | undefined {
   return allProducts.find((p) => p.slug === slug);
