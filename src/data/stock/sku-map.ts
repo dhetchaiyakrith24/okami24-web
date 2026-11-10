@@ -948,7 +948,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   "coil-74": { parent: null, options: {
     "Coil-74-1": null,
   } },
-  "coil-83": { parent: null, product: null },
+  // 10/11: Max lists "หัวแทงค์เปล่า Argus P1" again as its own parent Coil-83-1 (฿250, order-entry read 10/11) — mapped like coil-55.
+  "coil-83": { parent: "Coil-83-1", product: "Coil-83-1" },
   "coil-87": { parent: null, options: {
     "Coil-87-1": null,
   } },
