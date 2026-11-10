@@ -30,37 +30,33 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
 1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
-2 OPEN WORK (10/11 ~17:30, PC off; all child branches pushed):
-  CHECKER RUNNING at shutdown (if lost, re-run on the same sha):
-    #1387 VOOPOO coil 5-packs HIDDEN (Vinci ฿379 DW60/0.15Ω · PnP X ฿439) GATE PASS 46f61b4a, tree
-      `.claude/worktrees/orders-audit-2-fe1e50/_incoming/wt-coils` · FULL set.
-    #1390 no sold-out pill on the 4 home hero brand cards only (owner 10/11): checker PASS 97d8d2f0, ready + merge started ~17:20 —
-      CHECK it merged (`gh pr view 1390`) and curl / ; if not, finish: green checks → merge1.sh.
-  orders-audit-2 local_212d2f45 (state `notes/orders-audit-2-state-1011.md`): owner answered รอพี่ตรวจ 134 "ตามแนะนำ"; Max re-read 10/11
-    15:25 = prices unchanged. NEXT: #1388 Pop Up 10K base ฿219 + Insta 15000 ฿359 hidden (3f81cb90; maker not found → warehouse facts
-    only) → merge main → verify → gate; then #1389 stock refresh from the 10/11 order-entry read (41 options newly out, 51 back) + Argus
-    P1 → Coil-83-1 (d1921f48, BIG/FULL). Then pictures: tell the owner the Higgsfield credit amount, spend only after the OK.
-    Owner: Marbo purple ELIQUID-1-1 = IGNORE (owner 10/11 "ไม่ต้องสนใจ"), never raise it again. Owner allows research in his Chrome
-    (read-only browsing, no sign-ins/likes/forms/downloads).
-  look-0911 local_569a83ec (state `notes/look-0911-state-1011.md`) queue after #1390:
-    (2) THEME (owner: "ส้มดำเป็นหลัก", yellow moved to minor places, warm smoke −10–20 %): black ~60 % · greys/off-white ~30 % · orange
-      ~10 % on what to press · red-orange/maroon for glow depth · yellow tiny or removed (child decides per place) · smoke −15 %. FIRST a
-      yellow-usage list + ONE comparison image (home 1440 + product 390) → Friday shows the owner → then the PR. Refs = OWNER'S REFERENCE
-      LINKS below (§16 item 5).
-    (3) HOME HERO ROTATION (owner: switch the 4 showcase models every 3–5 days, 10–20 models): 4 slots, ~16-model pool (Friday's pick,
-      owner may object), every 4 days, deterministic from the Bangkok date, in-stock only. Live 10/11: 0/26 pod systems in stock (UWELL,
-      VOOPOO none) → pool leans on switch pods, IQOS, disposables; swapped slots show the plain card photo until a cut-out exists.
-    Member card v8 https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale → member page → best-seller from sales.
-  OUTSIDE TESTER (owner 10/11 ~14:45, owner's call, risks told once — never raise again): tests the LIVE site; owner opens the cart with
-    the owner switch + adds the tester's Google as ADMIN (owner page = owner's Google only). After: Friday cancels the tester's "ทดสอบ"
-    orders, owner removes the admin + closes the cart (รอพี่ตรวจ 137). Cart open → no deploys 18:00–24:00 (13.7). Stopped test copy
-    branch claude/staging-mode-1c27b3 (8b673155, unverified, no PR) kept for later; `_incoming/wt-testsite-base` = house-clean.
-  staff-accounts local_7b975303: #1360/#1378 live; next = PR (c) dashboard waits the owner on https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ
-    (look refs: De9XFBQTG0D light glass · De6ef-Svrlj dark glass). Owner adds admins on /staff/owner/team.
-  line-orders-2 local_66555054 + line-orders-3 local_9477bf4f + staging-site local_9911895b = done/stopped → archive after
-    line-orders-2's `_incoming/` junction folders go. #1346 + #1365 → owner says "ปิดได้" · owner drafts untouched: #1324 · #1335 · #1336.
-  HOUSE: 97 merged branches + 8 worktrees removed 10/11; the rest = `_incoming/house-20261110/todo.md` (wt-line under backoffice has
-    >260-char .next paths — needs a long-path delete; 7 worktrees with inner `_incoming/` to archive first; LESSONS/THAI_STYLE over ceiling).
+2 OPEN WORK (11/11 ~01:15, main chat at 78 % context — read this first after a compact):
+  LIVE 10–11/11 [ตรวจแล้ว] curl: #1390 hero no pill · #1386/#1387/#1388 new products HIDDEN · #1395 stock-flip refresh · #1396 BSOT
+    cannot-ship rule · #1397 owner "ยืนยันเงินเอง" mark · docs #1399.
+  TO MERGE (checker PASS, only GitHub `checks` red from a midnight test flake): #1389 stock refresh 10/11 (PASS 5f3676ff) then #1393 CSP
+    Cloudflare analytics (PASS 064b4b0f). After 01:00: `gh run rerun <run> --failed` → green → merge1.sh with
+    OKAMI24_NIGHT_OK=owner-0911-cart-closed (cart closed) → curl; after #1393 check DevTools: no CSP error, beacon 200.
+  FLAKE FIX (own small PR, anyone): `src/lib/staff/line-orders-db-contract-test.ts` dates slips `Date.now() - 1h` and reads
+    salesDays()[0] as today → 2 checks fail 00:00–01:00 Bangkok on every PR. Date the slips at noon Bangkok "today".
+  look-0911 local_569a83ec: #1392 T2-50 strip internal fields (fixed after checker FAIL: client chunks; head 191177d6 + main → re-run
+    checker on its new GATE sha) · #1394 honest copy · #1401 T2-04 wording follows cart switch (FULL) · #1402 T2-08 clone off home +
+    noindex · #1403 T2-24 DNS line rewrite · #1404 T2-09 one refund table (touches the voice-A claim paragraph on /warranty → SHOW THE
+    OWNER that change before merge, 13.3 #5). Then THEME (60/30/10 orange/black, yellow tiny, smoke −15 %; comparison image to the
+    owner first) → HOME HERO ROTATION (4 slots, ~16 in-stock models, every 4 days).
+  catalog-pics local_ae4a3786: #1400 go-live ILUMA ONE ฿3,190 (6 colours: 5 official iqos.com + Bright AI) + OASIS ฿3,490 (AI) + Pop
+    Up 10K base ฿219 (AI) — 12 Higgsfield credits used (owner OK); comparison images sent to the owner 11/11 ~01:10 → MERGE ONLY
+    after his "ผ่าน" (13.5) · #1398 member page = card v8 + full-moon room, current-size pictures, NO perks badge (BSOT: no perks yet;
+    owner choice A/B/C still open) · coil 5-pack go-live after #1389 · Insta 15000 stays hidden; rename "Insta Bar PX" → "Insta 15000"
+    before any publish · upscale tool is denied in settings/app → owner decides later.
+  dashboard-c local_39aadd8e: PR (c) back-office home from `notes/pr-c-handover-1111.md` + `pr-c-drafts/`; owner PASSED v2 with
+    "smooth-fade the colour blobs" + "bigger key elements"; real data only. Its 3412 proof server blocks every verify — stop between shots.
+  DONE/STOPPED: staff-accounts (handover written) · orders-audit-2 · t2-06-notme (owner 11/11: "ไม่ต้องทำ" the not-me button — never
+    raise again; discard local commit aa095111 in `.claude/worktrees/sweet-swartz-08568d`) · staging-site (tag archive/staging-mode-1011)
+    · line-orders-2/-3 → archive later.
+  OWNER RULINGS 10–11/11 (never ask again): Test 2 set in BSOT/§16 above · no Cloudflare sentence on /privacy · FUTURE: owner wants
+    cookies to collect visitor data if SEO is not hurt → plan later (PDPA consent banner, no content-blocking banner, light script).
+  PORTS: verify --full refuses while 3412 is up; one verify at a time on 3411 — children were told.
+  HOUSE: `_incoming/house-20261110/todo.md` + `_incoming/wt-testsite-base` + sweet-swartz worktree.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
   Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live. Left: request indexing for /products/disposables

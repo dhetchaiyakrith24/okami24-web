@@ -19,6 +19,7 @@ import { isStaff } from "@/lib/staff/auth";
 import { listAccounts } from "@/lib/staff/accounts";
 import { salesDays } from "@/lib/staff/daily-sales";
 import { countByJob } from "@/lib/staff/orders";
+import { handConfirmedSince } from "@/lib/staff/hand-confirm";
 import { stockBook } from "@/lib/staff/stock-book";
 import { feedHealth } from "@/lib/woo/watch";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
@@ -118,6 +119,8 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           stock={stockSummary(stockBook().filter((p) => !switches.hidden.includes(p.slug)), isBestSeller, soldOptions(30))}
           feed={feed}
           now={now}
+          handConfirmed={handConfirmedSince(new Date(now - PROFIT_DAYS * 86_400_000).toISOString())}
+          handConfirmedDays={PROFIT_DAYS}
         />
       ),
     },
