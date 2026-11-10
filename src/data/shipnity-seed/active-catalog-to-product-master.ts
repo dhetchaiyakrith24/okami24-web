@@ -3073,12 +3073,11 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
 /**
  * A Shipnity child that is a DIFFERENT real model from the record its parent projects to (round list19, 17/10). It is kept
  * off that record — reported in `excludedChildren`, never shown as one of its options — because one Shipnity parent
- * projects to one record (`projectParent`). Key = "<record id lower-cased>:<Shipnity variant id>" (C list 10/11: the same Max child
- * is a real option of another record cut from the same Max parent — IQOSHEET-17-1 belongs on iqos-iluma-one); value = why.
+ * projects to one record (`projectParent`). Key = Shipnity variant id; value = why.
+ * C list 10/11: the one entry (IQOSHEET-17-1 Pebble Grey off the ILUMA i ONE) became its own record's option — iqos-iluma-one
+ * owns it now and the seed record no longer lists it (build-active-catalog.ts CLAIMED_BY_MAX_ONLY).
  */
-const OTHER_MODEL_CHILDREN: Record<string, string> = {
-  "iqosheet-17:IQOSHEET-17-1": "Pebble Grey is a colour of the original IQOS ILUMA ONE (SKU G0000592), not of the ILUMA i ONE this record is — it is an option of iqos-iluma-one",
-};
+const OTHER_MODEL_CHILDREN: Record<string, string> = {};
 
 // Tier-1 disposable growth mission (2026-09-03) — real OKami24-channel review videos, each
 // confirmed via YouTube's own oEmbed endpoint (title + `author_url` match one of OKami24's three
@@ -3111,7 +3110,7 @@ export function buildVariantStructure(
 ): VariantStructureResult {
   const excludedChildren: ExcludedChild[] = [];
   const variantChildren = children.filter((c) => {
-    const otherModel = OTHER_MODEL_CHILDREN[`${parentInternalId}:${c.shipnityVariantId}`];
+    const otherModel = OTHER_MODEL_CHILDREN[c.shipnityVariantId];
     if (otherModel) {
       excludedChildren.push({ shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, role: c.childRole, reason: otherModel });
       return false;

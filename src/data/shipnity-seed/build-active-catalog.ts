@@ -148,11 +148,22 @@ function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) |
   };
 }
 
+/** C list 10/11: one Max child belongs to one record. A Max-only record cut from an old seed parent by exact child code
+ *  (scripts/max-seed-gen.js childIds — IQOS-ILUMA-ONE takes IQOSHEET-17-1 from the frozen iqosheet-17) owns that child;
+ *  the seed record no longer lists it. */
+const CLAIMED_BY_MAX_ONLY = new Map<string, string>(
+  MAX_ONLY_IDS.flatMap((id) => MAX_SEED[id].children.map((c) => [c.shipnityVariantId, id] as [string, string]))
+);
+
 function buildParent(seedRaw: RawActiveParent): ActiveParentRecord {
   const max = fromMax(seedRaw);
   // operationalCost ("ต้นทุน") is never carried into a record (the site stores no cost); the old seed file still holds the
   // 31/08 values until its own move PR (editing it now would bump every product page's dateModified — content-dates.ts).
-  const raw: SeedInput = max ?? seedRaw;
+  const own = max ?? seedRaw;
+  const raw: SeedInput = {
+    ...own,
+    children: own.children.filter((c) => (CLAIMED_BY_MAX_ONLY.get(c.shipnityVariantId) ?? own.shipnityProductId) === own.shipnityProductId),
+  };
   // Classified as one batch per parent, not child-by-child — group-context reconciliation
   // (see classify.ts file header) needs every sibling's signal available at once.
   const classified = classifyParentChildren(
