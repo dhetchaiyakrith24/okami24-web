@@ -27,6 +27,7 @@ export function LineItemsEdit({
   lines,
   products,
   slips,
+  signedInAs,
 }: {
   orderNumber: string;
   from: string;
@@ -39,6 +40,7 @@ export function LineItemsEdit({
   lines: PickRow[];
   products: PickProduct[];
   slips: PickSlip[];
+  signedInAs: string | null;
 }) {
   const [state, action, pending] = useActionState(changeItemsAction, IDLE);
   const [rows, setRows] = useState<PickRow[]>(lines);
@@ -57,7 +59,7 @@ export function LineItemsEdit({
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         startTransition(() => action(data));
-        rememberStaffName(by);
+        if (!signedInAs) rememberStaffName(by);
       }}
       className="flex flex-col gap-3"
     >
@@ -98,10 +100,16 @@ export function LineItemsEdit({
           เห็นเงินส่วนต่างเข้าบัญชีร้านในแอปธนาคารแล้ว
         </label>
       )}
-      <label className="flex flex-col gap-1.5 text-sm text-foreground-muted">
-        คนแก้
-        <input name="by" value={by} onChange={(e) => setBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
-      </label>
+      {signedInAs ? (
+        <p className="text-sm text-foreground-muted">
+        คนแก้ · <span className="text-foreground">{signedInAs}</span>
+      </p>
+      ) : (
+        <label className="flex flex-col gap-1.5 text-sm text-foreground-muted">
+          คนแก้
+          <input name="by" value={by} onChange={(e) => setBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
+        </label>
+      )}
       {state.error && (
         <p role="alert" className="rounded-xl border border-danger/50 bg-danger/10 px-4 py-3 text-sm text-danger">
           {state.error}

@@ -46,6 +46,10 @@ export default async function OwnerTeamPage({ searchParams }: { searchParams: Pr
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ทีมงาน</h1>
         <p className="text-sm text-foreground-muted">แอดมินแต่ละคนเข้าหน้าทีมงานด้วยบัญชี Google ของตัวเอง ทุกอย่างที่กดบันทึกในชื่อคนนั้น</p>
       </div>
+      <Link href="/staff/owner/team/activity" className="dash-card flex-row! items-center justify-between hover:text-ember-strong">
+        <span className="font-semibold text-foreground">ใครทำอะไร</span>
+        <span className="text-sm text-foreground-muted">ดูรายวัน แยกตามคน ›</span>
+      </Link>
       {!googleStaffSignIn() && <p className="text-sm text-danger">ระบบเข้าด้วย Google ยังไม่ได้ตั้งค่าบนเครื่องเว็บ แอดมินจะยังเข้าด้วย Google ไม่ได้</p>}
       {error === "name" && <p className="text-sm text-danger">ชื่อไม่ถูกต้อง ใส่ 1–30 ตัวอักษร</p>}
 

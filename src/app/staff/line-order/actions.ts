@@ -1,7 +1,9 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { nameOf, type StaffActor } from "@/lib/staff/account-rules";
+import { markKeyedBy, recordStaffAction } from "@/lib/staff/audit";
 import { parseItems, parseLineOrderForm } from "@/lib/staff/line-order-rules";
 import { createLineOrder } from "@/lib/staff/line-orders";
 import { changeLineOrderItems } from "@/lib/staff/line-order-edit";
@@ -33,14 +35,27 @@ const ERROR_TH: Record<string, string> = {
   duplicate: "อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชม. ยังไม่ได้บันทึก",
 };
 
-/** /staff/line-order — save a LINE-chat order (src/lib/staff/line-orders.ts), then open it. */
+async function actorOrBack(): Promise<StaffActor> {
+  const actor = staffAreaEnabled() ? await currentStaff() : null;
+  if (!actor) redirect("/staff");
+  return actor;
+}
+
+/** /staff/line-order — save a LINE-chat order (src/lib/staff/line-orders.ts), then open it. Signed in with an own account
+ *  (owner 10/11) = keyed and any special price under that account; the shared password = the typed name, as before. */
 export async function createLineOrderAction(_prev: LineOrderState, form: FormData): Promise<LineOrderState> {
-  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
-  const parsed = parseLineOrderForm((name) => form.get(name));
+  const actor = await actorOrBack();
+  const parsed = parseLineOrderForm((name) => (name === "keyedBy" ? nameOf(actor, String(form.get(name) ?? "")) : form.get(name)));
   if (!parsed.ok) return { error: ERROR_TH[parsed.error] };
-  const result = createLineOrder(parsed.input);
+  const result = createLineOrder({ ...parsed.input, keyedByStaffId: actor.accountId });
   if (!result.ok && result.error === "duplicate") return { error: ERROR_TH.duplicate, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
+  markKeyedBy(result.orderNumber, actor);
+  recordStaffAction(actor, "line-order", { orderNumber: result.orderNumber, detail: result.confirmed ? "ยืนยันยอดด้วยสลิปแล้ว" : null });
+  if (result.discount) {
+    const why = parsed.input.priceReason?.trim();
+    recordStaffAction(actor, "order-discount", { orderNumber: result.orderNumber, detail: `ลด ฿${result.discount.toLocaleString("en-US")}${why ? ` — ${why}` : ""}` });
+  }
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
   redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=line-order`);
 }
@@ -75,15 +90,16 @@ const CHANGE_ERROR_TH: Record<string, string> = {
 
 /** "แก้รายการสินค้า" on a keyed LINE order (LINE_ORDERS_GAPS.md #3) — then back to the order page. */
 export async function changeItemsAction(_prev: LineOrderState, form: FormData): Promise<LineOrderState> {
-  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const actor = await actorOrBack();
   const orderNumber = String(form.get("orderNumber") ?? "");
   const items = parseItems(form.get("items"));
   if (!items) return { error: CHANGE_ERROR_TH.items };
-  const by = String(form.get("by") ?? "").trim().replace(/\s+/g, " ").slice(0, 40);
+  const by = nameOf(actor, String(form.get("by") ?? "").trim().replace(/\s+/g, " ").slice(0, 40));
   if (!by) return { error: CHANGE_ERROR_TH.by };
   const ref = String(form.get("slipRef") ?? "").trim().slice(0, 80);
   const result = changeLineOrderItems({ orderNumber, items, slipRef: ref && ref !== "none" ? ref : null, handConfirmed: form.get("handConfirmed") === "1", by });
   if (!result.ok) return { error: CHANGE_ERROR_TH[result.error === "stock" ? "stockOut" : result.error] };
+  recordStaffAction(actor, "order-items", { orderNumber, detail: `฿${result.oldTotal.toLocaleString("en-US")} → ฿${result.newTotal.toLocaleString("en-US")}` });
   console.log(`[line-order] ${orderNumber} items changed${result.confirmed ? ", money confirmed by its slips" : ""}`);
   const from = String(form.get("from") ?? "");
   redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=items`);
