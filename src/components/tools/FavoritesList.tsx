@@ -2,8 +2,8 @@
 
 import { useFavorites } from "@/lib/favorites";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { getProduct } from "@/data/products";
-import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
+import type { Product } from "@/types/catalog";
+import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { Button } from "@/components/ui/Button";
@@ -17,12 +17,22 @@ import { Button } from "@/components/ui/Button";
  * Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state reads `dict.favorites.*` — it was
  * hardcoded English in every language.
  */
-/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
-export function FavoritesList({ taglinesTh = {} }: { taglinesTh?: Record<string, string> }) {
+/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). `products` /
+ *  `published` = the storefront lists from the server page (card-only records) — importing the catalog modules here
+ *  bundled the raw product files, the team's picture notes included, into the browser (T2-50, 10/11). */
+export function FavoritesList({
+  products,
+  published,
+  taglinesTh = {},
+}: {
+  products: readonly Product[];
+  published: readonly StorefrontProductView[];
+  taglinesTh?: Record<string, string>;
+}) {
   const { favorites } = useFavorites();
   const { dict } = useLocale();
-  const legacyProducts = favorites.map((slug) => getProduct(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
-  const publishedProducts = favorites.map((slug) => getPublishedProduct(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const legacyProducts = favorites.map((slug) => products.find((p) => p.slug === slug)).filter((p): p is Product => Boolean(p));
+  const publishedProducts = favorites.map((slug) => published.find((p) => p.slug === slug)).filter((p): p is StorefrontProductView => Boolean(p));
   const totalCount = legacyProducts.length + publishedProducts.length;
 
   if (totalCount === 0) {

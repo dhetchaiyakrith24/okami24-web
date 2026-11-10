@@ -30,12 +30,21 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
 1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
+2 OPEN WORK UPDATE (11/11 ~01:45 — read before the 01:15 lines below; the owner compacts the main chat now):
+  MERGED since 01:15 [ตรวจแล้ว] curl: #1389 stock refresh · #1393 CSP (no CSP error on the live home; NO beacon request seen → the
+    owner likely has to switch on Web Analytics in his Cloudflare dashboard — offer to walk him through it). #1392 T2-50 checker PASS
+    b9fb8604, merging in the background → check it merged + curl counts of Higgsfield/GPT Image/IMAGE_SPEC on / /products /favorites
+    /finder = 0.
+  #1394 honest copy: checker FAIL 16655230 — /privacy top summary row still says "ยืนยันตัวตน … แค่ 4 อย่างนี้" (th/en/zh) → look-0911
+    fixing to 3 uses; checker re-reads only that row. Then look-0911 chain: #1401 · #1402 · #1403 · #1404 (show the owner the /warranty
+    claim-paragraph touch before merge).
+  catalog-pics: owner PASSED the 3 new AI pictures ("ผ่านทั้ง 3 รูป") and set a quality bar for EVERY product picture (11/11 ~01:30):
+    true to the maker · no white edge · sharp · real reflections, shadow and light · edges not over-processed · nice-to-have a
+    glass-floor reflection under the base (only if IMAGE_SPEC allows and it matches the whole catalog — else ask the owner, it is a
+    site-wide decision). A changed picture → new comparison to the owner before merge. Then #1400 + #1398 → gate → checker → merge.
+    Also: #1398 member page has NO perks badge (BSOT) · coil 5-packs go live next · Insta 15000 hidden, rename first · upscale denied.
+  dashboard-c: #1406 draft, main merged, verify --full re-running → gate → checker (designer passed the 2 owner changes).
 2 OPEN WORK (11/11 ~01:15, main chat at 78 % context — read this first after a compact):
-  LIVE 10–11/11 [ตรวจแล้ว] curl: #1390 hero no pill · #1386/#1387/#1388 new products HIDDEN · #1395 stock-flip refresh · #1396 BSOT
-    cannot-ship rule · #1397 owner "ยืนยันเงินเอง" mark · docs #1399.
-  TO MERGE (checker PASS, only GitHub `checks` red from a midnight test flake): #1389 stock refresh 10/11 (PASS 5f3676ff) then #1393 CSP
-    Cloudflare analytics (PASS 064b4b0f). After 01:00: `gh run rerun <run> --failed` → green → merge1.sh with
-    OKAMI24_NIGHT_OK=owner-0911-cart-closed (cart closed) → curl; after #1393 check DevTools: no CSP error, beacon 200.
   FLAKE FIX (own small PR, anyone): `src/lib/staff/line-orders-db-contract-test.ts` dates slips `Date.now() - 1h` and reads
     salesDays()[0] as today → 2 checks fail 00:00–01:00 Bangkok on every PR. Date the slips at noon Bangkok "today".
   look-0911 local_569a83ec: #1392 T2-50 strip internal fields (fixed after checker FAIL: client chunks; head 191177d6 + main → re-run
@@ -43,11 +52,6 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
     noindex · #1403 T2-24 DNS line rewrite · #1404 T2-09 one refund table (touches the voice-A claim paragraph on /warranty → SHOW THE
     OWNER that change before merge, 13.3 #5). Then THEME (60/30/10 orange/black, yellow tiny, smoke −15 %; comparison image to the
     owner first) → HOME HERO ROTATION (4 slots, ~16 in-stock models, every 4 days).
-  catalog-pics local_ae4a3786: #1400 go-live ILUMA ONE ฿3,190 (6 colours: 5 official iqos.com + Bright AI) + OASIS ฿3,490 (AI) + Pop
-    Up 10K base ฿219 (AI) — 12 Higgsfield credits used (owner OK); comparison images sent to the owner 11/11 ~01:10 → MERGE ONLY
-    after his "ผ่าน" (13.5) · #1398 member page = card v8 + full-moon room, current-size pictures, NO perks badge (BSOT: no perks yet;
-    owner choice A/B/C still open) · coil 5-pack go-live after #1389 · Insta 15000 stays hidden; rename "Insta Bar PX" → "Insta 15000"
-    before any publish · upscale tool is denied in settings/app → owner decides later.
   dashboard-c local_39aadd8e: PR (c) back-office home from `notes/pr-c-handover-1111.md` + `pr-c-drafts/`; owner PASSED v2 with
     "smooth-fade the colour blobs" + "bigger key elements"; real data only. Its 3412 proof server blocks every verify — stop between shots.
   DONE/STOPPED: staff-accounts (handover written) · orders-audit-2 · t2-06-notme (owner 11/11: "ไม่ต้องทำ" the not-me button — never
@@ -55,7 +59,6 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
     · line-orders-2/-3 → archive later.
   OWNER RULINGS 10–11/11 (never ask again): Test 2 set in BSOT/§16 above · no Cloudflare sentence on /privacy · FUTURE: owner wants
     cookies to collect visitor data if SEO is not hurt → plan later (PDPA consent banner, no content-blocking banner, light script).
-  PORTS: verify --full refuses while 3412 is up; one verify at a time on 3411 — children were told.
   HOUSE: `_incoming/house-20261110/todo.md` + `_incoming/wt-testsite-base` + sweet-swartz worktree.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
