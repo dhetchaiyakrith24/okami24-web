@@ -1623,5 +1623,20 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-180-10": "Pod-180-10",
   } },
 
+  // New-products pictures 10/11: the original IQOS ILUMA ONE (Max IQOSHEET-17 -1/-2/-5; the other three colours are maker colours the
+  // warehouse does not carry) · ILUMA ONE OASIS (-4) · Pop Up 10K battery base (Pod-154-19, never on /products/pod-154).
+  "iqos-iluma-one": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-1": "IQOSHEET-17-1",
+    "IQOSHEET-17-2": "IQOSHEET-17-2",
+    "IQOSHEET-17-5": "IQOSHEET-17-5",
+    "iqos-iluma-one-verified-pebble-beige": null,
+    "iqos-iluma-one-verified-sunset-red": null,
+    "iqos-iluma-one-verified-moss-green": null,
+  } },
+  "iqos-iluma-one-oasis": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-4": "IQOSHEET-17-4",
+  } },
+  "pop-up-10k-base": { parent: "Pod-154", product: "Pod-154-19" },
+
   "coil-54": { parent: null, product: null },
 };

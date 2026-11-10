@@ -12,6 +12,7 @@ import { editStateOf } from "@/lib/staff/line-order-edit";
 import { applyStaffAction, getStaffOrder, setPlannedCarrier } from "@/lib/staff/orders";
 import { readSwitches } from "@/lib/commerce/shop-switches";
 import { isStaffJob } from "@/lib/staff/jobs";
+import { landing } from "@/lib/staff/admin-home-rules";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
 import { pushOrder, shipnityReady } from "@/lib/woo/order-push";
@@ -59,10 +60,10 @@ export async function assignLineGroupAction(formData: FormData): Promise<void> {
 /** One button on /staff/orders/<n> (cart round 22/10): confirm payment · sent to warehouse · shipped + tracking ·
  *  completed · cancel (with a reason). The rules are in src/lib/staff/order-actions.ts. */
 /** Where an order action lands: the same order page, still carrying the list it was opened from (`from`, owner 26/10 B3:
- *  Back must go back to that list) — then `done=` / `error=` follow. */
+ *  Back must go back to that list) — or the admin home, for the buttons in its "ทำก่อน" queue (`from=home`, owner 10/11) —
+ *  then `done=` / `error=` follow. Rules = src/lib/staff/admin-home-rules.ts. */
 function orderPage(orderNumber: string, formData: FormData): string {
-  const from = String(formData.get("from") ?? "");
-  return `/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}`;
+  return landing(orderNumber, String(formData.get("from") ?? ""), (v) => isStaffJob(v) || v === "all");
 }
 
 export async function staffOrderAction(formData: FormData): Promise<void> {
