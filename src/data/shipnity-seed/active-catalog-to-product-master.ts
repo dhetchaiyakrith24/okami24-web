@@ -470,6 +470,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // C list 10/11 (item 134 1A): VOOPOO coils sold by the box — Max-only records cut from the loose-coil parents (scripts/max-seed-gen.js).
   "VOOPOO-VINCI-COIL-5PACK": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว" (Set-Coil-1-14, under Coil-1) + "… Vinci - 0.15Ω 1 กล่อง 5 ตัว" (Set-Coil-1-1), both ฿350 (read 10/11); same family as the loose Vinci coils (Coil-1); 5 per box = the warehouse rows themselves' },
   "VOOPOO-PNP-X-COIL-5PACK": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์ Voopoo PnP X - 0.15Ω / 1กล่อง 5ตัว" (Set-Coil-92-1, under Coil-92) ฿400 (read 10/11); PnP X coils "sold only in packs of 5" (aromes-et-liquides.fr — tier 2)' },
+  // C list 10/11 (item 134 4A · 5A): warehouse facts only, no brand (no maker site found — as Pod-154 and MQ-BAR-22K).
+  "POP-UP-10K-BASE": { brandId: null, brandless: true, categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" child "ฐานแบตเตอรี่" (Pod-154-19) ฿199 (read 10/11) — the battery base the Pop Up 10K refill pods (Pod-154) go on; no maker site found 16-18/10 or 10/11 — warehouse facts only, without a brand' },
+  "INSTA-BAR-PX-15K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Insta 15000 คำ" (Product 744), 11 flavours ฿329, all out (order-entry read 10/11). Thai shops sell this flavour set as "Insta Bar PX 15000 Puffs" (vapemun.com, ihavevape.co — tier 2); the INSTABAR maker site (instabar.net, opened 10/11) lists only DC 15000 and WT 15000, no PX — no maker source, so no brand, no spec rows' },
 };
 
 // ===================================================================================
@@ -815,6 +818,15 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "VOOPOO-PNP-X-COIL-5PACK": {
     tagline: "คอยล์ PnP X 0.15 โอห์ม จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
     shortDescription: "คอยล์ PnP X ค่า 0.15 โอห์ม จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว แนะนำใช้ที่ 60–80 วัตต์",
+  },
+  // C list 10/11: warehouse facts only — the Max names ("Pop Up 10K หัวเติม · ฐานแบตเตอรี่" · "Insta 15000 คำ") and the Max flavour rows.
+  "POP-UP-10K-BASE": {
+    tagline: "ฐานแบตเตอรี่ของ Pop Up 10K",
+    shortDescription: "ฐานแบตเตอรี่ของ Pop Up 10K ใช้กับหัวพอต Pop Up 10K ที่ร้านมีให้เลือกหลายกลิ่น",
+  },
+  "INSTA-BAR-PX-15K": {
+    tagline: "พอตใช้แล้วทิ้ง Insta Bar PX ชื่อรุ่นระบุ 15000",
+    shortDescription: "พอตใช้แล้วทิ้ง Insta Bar PX ชื่อรุ่นระบุ 15000 ร้านมีให้เลือก 11 กลิ่น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -3318,6 +3330,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOS-ILUMA-ONE-OASIS": { name: "IQOS ILUMA ONE OASIS", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis" },
   "VOOPOO-VINCI-COIL-5PACK": { name: "VOOPOO Vinci Coil 5-Pack", sourceUrl: "https://app.shipnitymax.com/" }, // the warehouse's own box (Max rows "… 1 กล่อง 5 ตัว")
   "VOOPOO-PNP-X-COIL-5PACK": { name: "VOOPOO PnP X Coil 0.15Ω 5-Pack", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+  "POP-UP-10K-BASE": { name: "Pop Up 10K Battery Base", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "INSTA-BAR-PX-15K": { name: "Insta Bar PX 15000", sourceUrl: "https://ihavevape.co/product/insta-bar-px-15000-puffs" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
