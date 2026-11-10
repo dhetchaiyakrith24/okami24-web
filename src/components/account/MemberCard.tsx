@@ -118,7 +118,7 @@ export function MemberCard({ tier, count, memberSince, firstCardAt }: { tier: Me
 
 /** The full-moon room (10+ only — the server renders it only then, and every picture is checked again by the art route). */
 export function MemberRoom() {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const t = dict.account;
   const [open, setOpen] = useState<number | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -149,7 +149,7 @@ export function MemberRoom() {
           {t.roomSource}
         </span>
       </div>
-      <p className="text-sm text-foreground-muted">{t.roomHint}</p>
+      <p className="text-sm text-foreground-muted"><Phrases text={t.roomHint} locale={locale} /></p>
       <div className={s.gallery}>
         {ROOM_ORDER.map((name, i) => (
           <button
