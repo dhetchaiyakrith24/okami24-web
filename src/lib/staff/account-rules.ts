@@ -36,6 +36,13 @@ export type SignInDecision =
 
 export const normalEmail = (email: string) => email.trim().toLowerCase();
 
+/** The name a team form records (who keyed / who changed): a personal sign-in names itself and a typed name is ignored; only
+ *  the shared password still asks for one. */
+export const nameOf = (actor: StaffActor, typed: string): string => (actor.kind === "shared" ? typed : actor.name);
+
+/** What a team form shows in place of its name field — null = ask for the name (the shared password). */
+export const signedInName = (actor: StaffActor | null): string | null => (actor && actor.kind !== "shared" ? actor.name : null);
+
 /**
  * A Google sign-in on /staff. Google's own "verified" flag is required (an address nobody proved they own opens nothing).
  * The owner's address = the owner, acting in the admin view. Otherwise the address must belong to an active account; the

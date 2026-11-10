@@ -1,7 +1,10 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { nameOf } from "@/lib/staff/account-rules";
+import { recordStaffAction } from "@/lib/staff/audit";
+import { withTypedName } from "@/lib/staff/audit-rules";
 import { isStaffJob } from "@/lib/staff/jobs";
 import { changeShippingAddress } from "@/lib/staff/order-address";
 
@@ -25,9 +28,10 @@ const text = (v: FormDataEntryValue | null, max: number) => String(v ?? "").trim
 
 /** "แก้ที่อยู่จัดส่ง" on /staff/orders/<n> (LINE_ORDERS_GAPS.md #7) — then back to the order page. */
 export async function changeAddressAction(_prev: AddressEditState, form: FormData): Promise<AddressEditState> {
-  if (!staffAreaEnabled() || !(await isStaff())) redirect("/staff");
+  const actor = staffAreaEnabled() ? await currentStaff() : null;
+  if (!actor) redirect("/staff");
   const orderNumber = text(form.get("orderNumber"), 60);
-  const by = text(form.get("by"), 40);
+  const by = nameOf(actor, text(form.get("by"), 40));
   if (!by) return { error: ERROR_TH.by };
   const result = changeShippingAddress(
     orderNumber,
@@ -43,6 +47,7 @@ export async function changeAddressAction(_prev: AddressEditState, form: FormDat
     by
   );
   if (!result.ok) return { error: ERROR_TH[result.error] };
+  recordStaffAction(actor, "order-address", { orderNumber, detail: withTypedName(actor.kind, by, null) });
   const from = text(form.get("from"), 20);
   redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=address`);
 }

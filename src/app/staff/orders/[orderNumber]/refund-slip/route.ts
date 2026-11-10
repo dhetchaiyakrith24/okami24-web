@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getOrderDetailInternal } from "@/lib/commerce/orders";
 import { refundSlipForOrder, saveRefundSlip } from "@/lib/commerce/slip-images";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { recordStaffAction } from "@/lib/staff/audit";
 import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_BYTES } from "@/lib/staff/easyslip";
 import { sameSiteRequest } from "@/lib/staff/request-guard";
 
@@ -56,5 +57,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ or
   if (!(ACCEPTED_IMAGE_TYPES as readonly string[]).includes(image.type)) return reply({ ok: false, error: "unreadable" }, 415);
 
   const result = await saveRefundSlip(order.id, Buffer.from(await image.arrayBuffer()));
+  const actor = await currentStaff();
+  if (result.ok && actor) recordStaffAction(actor, "refund-slip", { orderNumber });
   return result.ok ? reply({ ok: true }) : reply({ ok: false, error: result.error });
 }

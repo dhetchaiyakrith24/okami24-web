@@ -24,7 +24,19 @@ export interface EditableAddress {
  * address rule and keeps the old one in the history. Sent by hand (onSubmit), like the LINE order form, so a refused save
  * keeps what was typed.
  */
-export function AddressEdit({ orderNumber, from, address, shipnityNote }: { orderNumber: string; from: string; address: EditableAddress; shipnityNote: boolean }) {
+export function AddressEdit({
+  orderNumber,
+  from,
+  address,
+  shipnityNote,
+  signedInAs,
+}: {
+  orderNumber: string;
+  from: string;
+  address: EditableAddress;
+  shipnityNote: boolean;
+  signedInAs: string | null;
+}) {
   const [state, action, pending] = useActionState(changeAddressAction, IDLE);
   const [f, setF] = useState(address);
   const [by, setBy] = useStaffName();
@@ -36,7 +48,7 @@ export function AddressEdit({ orderNumber, from, address, shipnityNote }: { orde
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         startTransition(() => action(data));
-        rememberStaffName(by);
+        if (!signedInAs) rememberStaffName(by);
       }}
       className="flex flex-col gap-3"
     >
@@ -73,10 +85,16 @@ export function AddressEdit({ orderNumber, from, address, shipnityNote }: { orde
           <input name="postalCode" value={f.postalCode} onChange={set("postalCode")} inputMode="numeric" maxLength={5} autoComplete="off" required className={INPUT} />
         </label>
       </div>
-      <label className={FIELD}>
-        คนแก้
-        <input name="by" value={by} onChange={(e) => setBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
-      </label>
+      {signedInAs ? (
+        <p className="text-sm text-foreground-muted">
+        คนแก้ · <span className="text-foreground">{signedInAs}</span>
+      </p>
+      ) : (
+        <label className={FIELD}>
+          คนแก้
+          <input name="by" value={by} onChange={(e) => setBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
+        </label>
+      )}
       {state.error && (
         <p role="alert" className="rounded-xl border border-danger/50 bg-danger/10 px-4 py-3 text-sm text-danger">
           {state.error}

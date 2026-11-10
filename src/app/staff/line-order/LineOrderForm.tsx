@@ -26,7 +26,7 @@ const CARD = "flex flex-col gap-3 rounded-xl border border-surface-border-soft b
  * staff typed — and the form is sent by hand (onSubmit), not through `action=`, because React resets a form after an
  * `action=` submit: the picked slip's radio then showed empty while the next save would have gone without a slip. Prices here are the web prices for reading only; the server prices the order again and adds shipping.
  */
-export function LineOrderForm({ products, slips }: { products: PickProduct[]; slips: PickSlip[] }) {
+export function LineOrderForm({ products, slips, signedInAs }: { products: PickProduct[]; slips: PickSlip[]; signedInAs: string | null }) {
   const [state, action, pending] = useActionState(createLineOrderAction, IDLE);
   const [f, setF] = useState({ customerPhone: "", recipientName: "", recipientPhone: "", line1: "", subdistrict: "", district: "", province: "", postalCode: "" });
   const [keyedBy, setKeyedBy] = useStaffName();
@@ -105,7 +105,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         startTransition(() => action(data));
-        rememberStaffName(keyedBy);
+        if (!signedInAs) rememberStaffName(keyedBy);
       }}
       className="flex flex-col gap-4"
     >
@@ -208,10 +208,17 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
       </section>
 
       <section className={CARD}>
-        <label className={FIELD}>
-          คนคีย์ออเดอร์
-          <input name="keyedBy" value={keyedBy} onChange={(e) => setKeyedBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
-        </label>
+        {/* Owner 10/11: signed in with an own account, the order is keyed under it — nothing to type. */}
+        {signedInAs ? (
+          <p className="text-sm text-foreground-muted">
+          คนคีย์ออเดอร์ · <span className="text-foreground">{signedInAs}</span>
+        </p>
+        ) : (
+          <label className={FIELD}>
+            คนคีย์ออเดอร์
+            <input name="keyedBy" value={keyedBy} onChange={(e) => setKeyedBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
+          </label>
+        )}
       </section>
 
       {state.error && (

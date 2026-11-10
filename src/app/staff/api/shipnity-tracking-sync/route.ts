@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { recordStaffAction } from "@/lib/staff/audit";
 import { sameSiteRequest } from "@/lib/staff/request-guard";
 import { SKIP_TH } from "@/lib/woo/tracking-sync-rules";
 import { catchUpFromLog, phoneTrackings, type SyncResult } from "@/lib/woo/tracking-sync";
@@ -42,9 +43,11 @@ export async function GET(): Promise<NextResponse> {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  if (!staffAreaEnabled() || !(await isStaff())) return new NextResponse(null, { status: 404, headers: HEADERS });
+  const actor = staffAreaEnabled() ? await currentStaff() : null;
+  if (!actor) return new NextResponse(null, { status: 404, headers: HEADERS });
   if (!sameSiteRequest(request)) return new NextResponse(null, { status: 403, headers: HEADERS });
   const body = (await request.json().catch(() => null)) as { apply?: unknown } | null;
   if (body?.apply !== true) return NextResponse.json({ error: 'send {"apply":true}' }, { status: 400, headers: HEADERS });
+  recordStaffAction(actor, "tracking-sync");
   return NextResponse.json(view(catchUpFromLog(true), true, phoneTrackings(true)), { headers: HEADERS });
 }

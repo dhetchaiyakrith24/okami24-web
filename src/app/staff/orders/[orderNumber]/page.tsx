@@ -6,7 +6,8 @@ import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { signedInName } from "@/lib/staff/account-rules";
 import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
@@ -39,6 +40,8 @@ import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { auditForOrder } from "@/lib/staff/audit";
+import { auditLabel } from "@/lib/staff/audit-rules";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
@@ -288,11 +291,14 @@ export default async function StaffOrderPage({
   searchParams: Promise<{ error?: string; done?: string; from?: string }>;
 }) {
   if (!staffAreaEnabled()) notFound();
-  if (!(await isStaff())) redirect("/staff");
+  const me = await currentStaff();
+  if (!me) redirect("/staff");
+  const signedInAs = signedInName(me);
   const { orderNumber } = await params;
   const { error, done, from: fromParam } = await searchParams;
   const order = getStaffOrder(orderNumber);
   if (!order) notFound();
+  const teamRows = auditForOrder(order.orderNumber);
 
   const from = isStaffJob(fromParam) || fromParam === "all" ? fromParam : "";
   const back =
@@ -624,6 +630,20 @@ export default async function StaffOrderPage({
                 ))}
               </ul>
             </div>
+            {/* Owner 10/11: who on the team did what on this order (src/lib/staff/audit.ts) — from the day accounts began. */}
+            {teamRows.length > 0 && (
+              <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
+                <p className="font-semibold text-foreground">ใครทำอะไร</p>
+                <ul className="flex flex-col gap-1 text-foreground-muted">
+                  {teamRows.map((r) => (
+                    <li key={r.id}>
+                      {formatDateTime(r.at)} · <span className="text-foreground">{r.actorName}</span> {auditLabel(r.action)}
+                      {r.detail ? ` — ${r.detail}` : ""}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </details>
 
@@ -695,6 +715,7 @@ export default async function StaffOrderPage({
                   .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
                   .filter((p) => p.options.length > 0)}
                 slips={slipsToPick()}
+                signedInAs={signedInAs}
               />
             </div>
           </details>
@@ -711,6 +732,7 @@ export default async function StaffOrderPage({
                 orderNumber={order.orderNumber}
                 from={from}
                 shipnityNote={mayHave}
+                signedInAs={signedInAs}
                 address={{ recipientName: a.recipientName, phone: a.phone, line1: a.line1, subdistrict: a.subdistrict, district: a.district, province: a.province, postalCode: a.postalCode }}
               />
             </div>
