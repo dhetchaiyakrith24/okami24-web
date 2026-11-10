@@ -39,11 +39,17 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
 2 OPEN PRs:
   #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
-  line-orders-3 local_9477bf4f (started 10/11 13:50, from `notes/line-orders-2-handover-1011.md` "Next task"): draft PR with the 3
-    auto-push test gaps (no-reply · done key · push OK but status moved) → sends Friday GATE PASS sha → checker (FULL, orders) → merge.
-    line-orders-2 local_66555054 = done, archive AFTER its `_incoming/` junction folders are removed (handover "Clean-up left").
-  look-0911: told 10/11 13:48 to run verify --full → gate for #1377 (test gaps for #1374) → sends Friday the sha → checker → merge.
-  Port 3411 shared: one verify --full at a time (look-0911 first, then line-orders-3).
+  MERGED 10/11 afternoon, live [ตรวจแล้ว] curl: #1377 live-stock contract test (~14:20, checker PASS 49dea34b) · #1384 auto-push
+    test gaps + honest "sent but status moved" staff text (~14:55, checker FULL PASS a0b1bfc9; the "โหลดหน้า|ใหม่" line break on /staff
+    is the same as the old button text → needs the word-break mechanism, a locked file = later, own PR).
+    line-orders-3 local_9477bf4f + line-orders-2 local_66555054 = done, archive AFTER line-orders-2's `_incoming/` junction folders go.
+  OUTSIDE TESTER (owner 10/11 ~14:45, owner's call, risks told once — do not raise again): tests the LIVE site; owner opens the cart
+    with the owner switch and adds the tester's Google as ADMIN (owner page = owner's Google only). After the test: Friday cancels the
+    tester's "ทดสอบ" orders, owner removes the admin + closes the cart. Report format PDF. A separate test copy was stopped:
+    branch claude/staging-mode-1c27b3 (8b673155, unverified, no PR; OKAMI24_TEST_SITE switch + fake seed + docs/เว็บทดสอบ-Render.md)
+    — keep for later; leftover tree `_incoming/wt-testsite-base` (detached, real node_modules) = house-clean.
+  orders-audit-2 local_212d2f45: owner answered รอพี่ตรวจ 134 "ตามแนะนำ" 10/11 ~15:00 → resumed queue "C new listings" (state note
+    `notes/orders-audit-2-state-1011.md`); Max prices need the owner's Chrome; Higgsfield credits only after the owner OKs the amount.
   Render memory: dashboard not signed in in the built-in browser (Friday never types passwords); live pages answer 200 in < 1 s
     10/11 13:50 [ตรวจแล้ว] curl — no sign of memory trouble. Owner may glance at Render → Metrics.
   #1378 "ใครทำอะไร" MERGED 10/11 ~09:30 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
