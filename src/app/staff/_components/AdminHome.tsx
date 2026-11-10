@@ -350,7 +350,7 @@ export function AdminHome(p: AdminHomeProps) {
               </Link>
             )}
             <p className="flex flex-wrap items-center gap-x-4 px-0.5 text-sm text-[#ebebeb]/62 [&>*]:min-h-10!">
-              <span className="text-[#ebebeb]/45">ดูออเดอร์อื่น</span>
+              <span className="inline-flex items-center text-[#ebebeb]/45">ดูออเดอร์อื่น</span>
               {(["unpaid", "done", "cancelled"] as const).map((j) => (
                 <Link key={j} href={STEP_HREF(j)} className="inline-flex min-h-11 items-center hover:text-[#ebebeb]">
                   {STAFF_JOBS[j].label} <span className={`ml-1 tabular-nums ${j === "unpaid" && counts[j] > 0 ? "font-semibold text-unverified" : ""}`}>{counts[j]}</span>
