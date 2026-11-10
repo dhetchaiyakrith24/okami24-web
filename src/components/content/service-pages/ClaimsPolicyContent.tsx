@@ -21,7 +21,8 @@ export function ClaimsPolicyContent() {
         <div className="flex flex-col gap-10">
           <SummaryCards items={c.summary} />
 
-          {/* T2-09: every cancel / swap / refund case in one table — /how-to-order and the FAQ link to #refunds. Same table
+          {/* T2-09: every cancel / swap / refund case in one table — /how-to-order links to #refunds (the FAQ button opens
+              /warranty, the table sits right under the summary cards). Same table
               markup as the shipping page's fee table. */}
           <div id="refunds" className="scroll-mt-24">
             <ServiceSection title={c.refunds.title}>

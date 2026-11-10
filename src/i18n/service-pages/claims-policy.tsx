@@ -20,7 +20,8 @@ export interface ClaimsCopy {
   outcome: { title: string; p1: ReactNode; p2: string; p3: ReactNode };
   /** The one table of every cancel / swap / refund case (outside test T2-09, 10/11: the pages contradicted each other) —
    *  BSOT §9 "Cancellation / refund" with its owner exceptions (22/10 out of stock after payment · 10/11 paid but the shop
-   *  cannot ship, "ใช้เหมือนของหมด") and §12 "Authenticity". /how-to-order and the FAQ link here (#refunds). */
+   *  cannot ship, "ใช้เหมือนของหมด") and §12 "Authenticity". /how-to-order links here (#refunds); the FAQ
+   *  "problem-on-arrival" button opens /warranty, where this table sits under the summary cards. */
   refunds: { title: string; headCase: string; headWhat: string; rows: { case: string; what: ReactNode }[] };
   steps: { title: string; items: Step[] };
   honest: { title: string; p1: string; p2: string; p3: ReactNode };
@@ -72,7 +73,7 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
         { case: "ก่อนโอน", what: <>ยกเลิกได้ ทักไลน์ <LineLink /> แจ้งเลขคำสั่งซื้อ</> },
         { case: "โอนแล้ว", what: "ยกเลิกไม่ได้ และไม่คืนเงิน ยกเว้น 3 กรณีถัดไป" },
         { case: "โอนแล้ว แต่สินค้าหมด", what: "เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นราคาเท่ากัน หรือรับเงินคืนเข้าพร้อมเพย์หรือบัญชีธนาคาร" },
-        { case: "โอนแล้ว แต่ร้านเลื่อนส่งของ", what: "เช่น คลังสินค้าหยุดชั่วคราว คุณเลือกได้ว่าจะรอ จะเปลี่ยนเป็นสินค้าอื่นราคาเท่ากัน หรือจะรับเงินคืนเข้าพร้อมเพย์หรือบัญชีธนาคาร" },
+        { case: "โอนแล้ว แต่ร้านส่งของให้ไม่ได้", what: "เช่น คลังสินค้าหยุดชั่วคราว คุณเลือกได้ว่าจะรอ จะเปลี่ยนเป็นสินค้าอื่นราคาเท่ากัน หรือจะรับเงินคืนเข้าพร้อมเพย์หรือบัญชีธนาคาร" },
         { case: "ไม่ผ่านการเช็คของแท้", what: "ส่งผลเช็คจากเว็บทางการของแบรนด์ พร้อมคลิปตอนแกะกล่อง มาทางไลน์ภายใน 7 วันหลังได้รับของ เราจะตรวจสอบ แล้วเปลี่ยนของใหม่หรือคืนเงินให้" },
         { case: "ของมีปัญหาที่เคลมได้", what: "แจ้งภายใน 7 วันหลังได้รับของ ถ้าเคลมผ่าน เราส่งของใหม่ตัวเดิมให้ ตัวนั้นหมดก็เลือกตัวอื่นราคาเท่ากันได้ แต่ไม่คืนเป็นเงินสด" },
       ],
