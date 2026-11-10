@@ -20,6 +20,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { isTestSite } from "../test-site";
 
 export interface OffsiteConfig {
   endpoint: string;
@@ -30,6 +31,8 @@ export interface OffsiteConfig {
 }
 
 export function offsiteConfig(env: Record<string, string | undefined> = process.env): OffsiteConfig | null {
+  // The test copy's fake data never goes into the shop's backup bucket (src/lib/test-site.ts).
+  if (isTestSite(env)) return null;
   const endpoint = env.OKAMI24_OFFSITE_ENDPOINT?.trim().replace(/\/+$/, "") ?? "";
   const bucket = env.OKAMI24_OFFSITE_BUCKET?.trim() ?? "";
   const keyId = env.OKAMI24_OFFSITE_KEY_ID?.trim() ?? "";

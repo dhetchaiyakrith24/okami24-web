@@ -1,5 +1,6 @@
 import "server-only";
 import crypto from "node:crypto";
+import { TEST_SITE } from "@/lib/test-site";
 
 /**
  * LINE Messaging API client for the team's alert bot "OKM ORDER" (@691qxpxp — a separate LINE OA, NOT the shop's
@@ -22,11 +23,14 @@ const TIMEOUT_MS = 10_000;
 const MAX_TEXT = 5000;
 
 function secret(): string | null {
+  // The test copy never talks to the team's real bot, even with its keys pasted by mistake (src/lib/test-site.ts).
+  if (TEST_SITE) return null;
   const v = process.env.OKAMI24_LINE_CHANNEL_SECRET?.trim() ?? "";
   return v.length >= 16 ? v : null;
 }
 
 function token(): string | null {
+  if (TEST_SITE) return null;
   const v = process.env.OKAMI24_LINE_CHANNEL_TOKEN?.trim() ?? "";
   return v.length >= 16 ? v : null;
 }

@@ -5,6 +5,7 @@ import { OrderStatusView } from "@/components/commerce/OrderStatusView";
 import { OrderNotFoundMessage } from "@/components/commerce/OrderNotFoundMessage";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/data/payment";
+import { TEST_PAYMENT_ACCOUNT, TEST_SITE } from "@/lib/test-site";
 import { amountQrAvailable } from "@/lib/commerce/promptpay-qr";
 import { lineImage } from "@/lib/commerce/line-image";
 import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
@@ -39,7 +40,10 @@ export default async function OrderStatusPage({
   // Bank details only for an order that is still waiting for payment (owner rule 2026-09-06,
   // BSOT §9) — resolved here on the server, never shipped in the client dictionary.
   let payment: PaymentAccountView | null = null;
-  if (order.status === "pending_payment") {
+  if (order.status === "pending_payment" && TEST_SITE) {
+    // The test copy: a made-up account and no QR, so nobody pays the shop real money from a test order (src/lib/test-site.ts).
+    payment = { ...TEST_PAYMENT_ACCOUNT, hasQr: false, qrHasAmount: false };
+  } else if (order.status === "pending_payment") {
     payment = {
       bankName: PAYMENT_ACCOUNT.bankName,
       accountName: PAYMENT_ACCOUNT.accountName,

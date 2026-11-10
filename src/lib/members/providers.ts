@@ -1,6 +1,7 @@
 import "server-only";
 import crypto from "node:crypto";
 import { SITE_URL } from "@/lib/seo";
+import { TEST_SITE } from "@/lib/test-site";
 import { checkIdToken, type IdTokenClaims } from "./id-token";
 
 /**
@@ -40,6 +41,8 @@ function env(name: string): string {
 
 function providerConfig(provider: MemberProvider): ProviderConfig | null {
   if (provider === "line") {
+    // The shop's LINE Login channel knows only the live address; the test copy signs in with Google (src/lib/test-site.ts).
+    if (TEST_SITE) return null;
     const clientId = env("OKAMI24_LINE_LOGIN_CHANNEL_ID");
     const clientSecret = env("OKAMI24_LINE_LOGIN_CHANNEL_SECRET");
     if (!clientId || !clientSecret) return null;

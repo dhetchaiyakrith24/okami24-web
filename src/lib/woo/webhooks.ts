@@ -1,5 +1,6 @@
 import "server-only";
 import { getDb } from "@/lib/db/client";
+import { TEST_SITE } from "@/lib/test-site";
 import type { WebhookInput, WebhookView } from "@/lib/woo/api";
 
 /** The webhooks Shipnity registers through /wp-json (table woo_webhooks, migration 0020). */
@@ -92,6 +93,8 @@ export function setApproval(id: number, approved: boolean): void {
 
 /** The approved, active order.created hooks — where a new order is sent (secret included, server side only). */
 export function orderCreatedTargets(): { id: number; deliveryUrl: string; secret: string }[] {
+  // The test copy never sends an order to the warehouse (src/lib/test-site.ts).
+  if (TEST_SITE) return [];
   return (
     getDb()
       .prepare(

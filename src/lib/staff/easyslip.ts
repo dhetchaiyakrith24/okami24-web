@@ -1,5 +1,6 @@
 import "server-only";
 import type { SlipParty } from "@/lib/staff/receiver-match";
+import { TEST_SITE } from "@/lib/test-site";
 
 /**
  * EasySlip API v2 client — the two calls the staff slip-check page makes. Every shape and code here is
@@ -24,6 +25,8 @@ export const MAX_IMAGE_BYTES = 4_194_304;
 export const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/gif", "image/webp"] as const;
 
 function apiKey(): string | null {
+  // The test copy never spends the shop's EasySlip quota: slips there are saved as "not checked" (src/lib/test-site.ts).
+  if (TEST_SITE) return null;
   const key = process.env.OKAMI24_EASYSLIP_API_KEY?.trim() ?? "";
   return key.length >= 16 ? key : null;
 }

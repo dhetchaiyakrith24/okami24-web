@@ -1,6 +1,7 @@
 import { after, NextResponse, type NextRequest } from "next/server";
 import { recordOrderUpdates } from "@/lib/woo/order-events";
 import { SITE_URL } from "@/lib/seo";
+import { TEST_SITE } from "@/lib/test-site";
 import { handle } from "@/lib/woo/api";
 import { wooCatalog } from "@/lib/woo/catalog";
 import { redactSecrets, safeQuery } from "@/lib/woo/credentials";
@@ -36,6 +37,9 @@ const NO_HOOKS: WebhookStore = {
 const NO_ORDERS: OrderSource = { list: () => [] };
 
 async function serve(request: NextRequest, ctx: { params: Promise<{ path?: string[] }> }): Promise<NextResponse> {
+  // The test copy has no warehouse link at all: Shipnity cannot connect to it, so no fake order or stock crosses over
+  // (src/lib/test-site.ts).
+  if (TEST_SITE) return new NextResponse(null, { status: 404 });
   const { path } = await ctx.params;
   const segments = (path ?? []).filter(Boolean);
   const url = new URL(request.url);

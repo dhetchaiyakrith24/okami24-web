@@ -4,6 +4,7 @@ import { getOrderDetailForViewer } from "@/lib/commerce/orders";
 import { sweepIfPastDeadline } from "@/lib/commerce/unpaid-expiry";
 import { promptpayQrPath } from "@/data/payment";
 import { amountQrPng } from "@/lib/commerce/promptpay-qr";
+import { TEST_SITE } from "@/lib/test-site";
 
 /**
  * Serves the shop's PromptPay QR to the viewer of ONE order — owner rule 2026-09-06: the QR is
@@ -14,6 +15,8 @@ import { amountQrPng } from "@/lib/commerce/promptpay-qr";
  * shows the account number without a QR.
  */
 export async function GET(request: NextRequest, context: { params: Promise<{ orderNumber: string }> }) {
+  // The test copy never serves the shop's real PromptPay QR (src/lib/test-site.ts).
+  if (TEST_SITE) return new NextResponse(null, { status: 404 });
   const { orderNumber } = await context.params;
   const token = request.nextUrl.searchParams.get("token");
   const order = await getOrderDetailForViewer(orderNumber, token);
