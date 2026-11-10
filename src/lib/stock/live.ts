@@ -30,6 +30,14 @@ function reports(): Map<string, LiveReport> {
   return cache.reports;
 }
 
+/** Whether the warehouse has reported at all — false during `next build` (no data disk) and on a fresh data dir. Pages that
+ *  SORT or SELECT by stock on the server use the live answer only when this is true: the build's own stock is the git
+ *  snapshot (WAREHOUSE_STOCK_READ_ON), which can be weeks old, so a build keeps the editorial order instead and the next
+ *  regeneration (ISR) brings the live order (Friday's inventory 10/11, owner "ตามแนะนำ"). */
+export function liveStockReady(): boolean {
+  return reports().size > 0;
+}
+
 /** The live lookup for the cart, checkout and the stock API. */
 export function liveLookup(): LiveLookup {
   const base = lookupFrom(reports());
