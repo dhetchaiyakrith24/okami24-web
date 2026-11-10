@@ -103,8 +103,8 @@
       "fp": "553aa8f431cd"
     },
     "/brands/iqos": {
-      "date": "2026-11-03T06:20:45+07:00",
-      "fp": "8b283683403d"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "d4aab6027e97"
     },
     "/brands/joiway": {
       "date": "2026-11-06T17:57:59+07:00",
@@ -155,8 +155,8 @@
       "fp": "c6fd7582e779"
     },
     "/brands/voopoo": {
-      "date": "2026-11-10T23:07:40+07:00",
-      "fp": "f112606554c5"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "37e9afe43712"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -195,8 +195,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-10T23:07:40+07:00",
-      "fp": "f21c45ed7c7a"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "5ffb97850cd1"
     },
     "/products/86-bar-20k": {
       "date": "2026-11-09T21:43:00+07:00",
@@ -331,8 +331,8 @@
       "fp": "3a2120dd9079"
     },
     "/products/coils-accessories": {
-      "date": "2026-11-10T23:07:40+07:00",
-      "fp": "874ddec7e551"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "46ca3eb3948f"
     },
     "/products/disposables": {
       "date": "2026-11-08T13:13:31+00:00",
@@ -407,8 +407,8 @@
       "fp": "53d77232f643"
     },
     "/products/heated-tobacco-devices": {
-      "date": "2026-11-07T17:12:29+07:00",
-      "fp": "638a6e246c62"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "3a7e09aad797"
     },
     "/products/infy-20k": {
       "date": "2026-11-04T09:00:12+07:00",
@@ -417,6 +417,14 @@
     "/products/infy-pod": {
       "date": "2026-11-07T15:48:13+07:00",
       "fp": "aa14e1466445"
+    },
+    "/products/iqos-iluma-one": {
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "21f947900c19"
+    },
+    "/products/iqos-iluma-one-oasis": {
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "550f1a1efef2"
     },
     "/products/iqosheet-14": {
       "date": "2026-11-03T06:20:45+07:00",
@@ -558,6 +566,10 @@
       "date": "2026-11-07T11:43:43+07:00",
       "fp": "21f1f8972495"
     },
+    "/products/pop-up-10k-base": {
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "673522768252"
+    },
     "/products/punta-ice": {
       "date": "2026-10-20T00:22:12+07:00",
       "fp": "1ab2da0b0561"
@@ -639,8 +651,8 @@
       "fp": "bb1b19f0d60b"
     },
     "/products/switch-pods": {
-      "date": "2026-11-08T10:07:09+07:00",
-      "fp": "8445194d9b9e"
+      "date": "2026-11-11T00:40:51+07:00",
+      "fp": "07ed1bb7e97e"
     },
     "/products/tfit-m-power-20k": {
       "date": "2026-11-07T11:43:43+07:00",
@@ -665,14 +677,6 @@
     "/products/vmate-pro-2": {
       "date": "2026-11-07T15:48:13+07:00",
       "fp": "9aabf152e0c6"
-    },
-    "/products/voopoo-pnp-x-coil-5pack": {
-      "date": "2026-11-10T23:07:40+07:00",
-      "fp": "cd7841b5d4ff"
-    },
-    "/products/voopoo-vinci-coil-5pack": {
-      "date": "2026-11-10T23:07:40+07:00",
-      "fp": "007d6fafd0b7"
     },
     "/products/wotofo-nexbar-18k": {
       "date": "2026-11-07T11:43:43+07:00",

@@ -1511,6 +1511,34 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html",
     },
   ],
+  // New-products pictures 10/11 (owner credit OK 10/11 ~23:35): ILUMA ONE OASIS — OKami24 recolour of IQOS's own ILUMA ONE render to
+  // the OASIS edition of IQOS's campaign photo (no single-device maker render exists); shape = the official render's outline.
+  "IQOS-ILUMA-ONE-OASIS": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqos-iluma-one-oasis/card-wm5.webp",
+      alt: "IQOS ILUMA ONE OASIS limited edition, copper orange, studio photo",
+      angle: "Front-left, upright — OKami24 render (Higgsfield, IMAGE_SPEC §0 item 7): the official iqos.com/za ILUMA ONE render recoloured to the OASIS edition of the gr.iqos.com campaign photo, cut with the official render's own outline. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE render and OASIS campaign photo",
+      sourceUrl: "https://gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis",
+    },
+  ],
+  // New-products pictures 10/11: Pop Up 10K battery base alone — OKami24 render from our Pop Up studio card and a shop photo of the base
+  // (no maker site; the shop photo is a small watermarked inset, so the model is unclear — told to the owner with the comparison).
+  "POP-UP-10K-BASE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pop-up-10k-base/card-wm5.webp",
+      alt: "Pop Up 10K battery base, black with the VC logo, studio photo",
+      angle: "Front, upright — OKami24 render (Higgsfield, IMAGE_SPEC §0 item 7) of the base alone, from our pod-154 studio card (light, material) and a shop photo of the base (shape, logo). Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the Pop Up 10K battery base",
+      sourceUrl: "https://podimport-th.com/shop/disposable-pod/10000-puff/popup-10000-puff-nic3/",
+    },
+  ],
   // New-products pictures 10/11: the coil boxes are the live coil-1 / coil-92 option photos (our own studio renders, aiRender in the map),
   // laid on the 4:5 card canvas from the un-watermarked originals — no new picture.
   "VOOPOO-VINCI-COIL-5PACK": [
@@ -2912,6 +2940,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "iqos-iluma-one-verified-pebble-beige": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-pebble-beige.webp", alt: "IQOS ILUMA ONE, Pebble Beige", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html" },
     "iqos-iluma-one-verified-sunset-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-sunset-red.webp", alt: "IQOS ILUMA ONE, Sunset Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html" },
     "iqos-iluma-one-verified-moss-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-moss-green.webp", alt: "IQOS ILUMA ONE, Moss Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    // BRIGHT (2023 limited edition): the maker's only render is 750 px — OKami24 recolour of the official render above to it (aiRender in the map).
+    "IQOSHEET-17-5": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-bright-wm5.webp", alt: "IQOS ILUMA ONE BRIGHT limited edition, lime and white, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE and BRIGHT renders", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-bright" },
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    "IQOSHEET-17-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one-oasis/variant-oasis-limited-wm5.webp", alt: "IQOS ILUMA ONE OASIS limited edition, copper orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE render and OASIS campaign photo", sourceUrl: "https://gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis" },
   },
   // New-products pictures 10/11: each box = the same box photo the loose-coil page shows for that coil (coil-1 options -14 · -1).
   "VOOPOO-VINCI-COIL-5PACK": {
