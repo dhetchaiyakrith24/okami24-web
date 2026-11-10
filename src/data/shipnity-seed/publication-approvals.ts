@@ -279,6 +279,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // with the card + sku-map (voopoo-vinci-coil-5pack → Set-Coil-1-14 / Set-Coil-1-1 · voopoo-pnp-x-coil-5pack → Set-Coil-92-1):
   // "VOOPOO-VINCI-COIL-5PACK": { sellingPrice: 379, lastPriceReview: "2026-11-10" },
   // "VOOPOO-PNP-X-COIL-5PACK": { sellingPrice: 439, lastPriceReview: "2026-11-10" },
+  // C list 10/11 (item 134 4A · 5A): Max ราคาขาย read 2026-11-10 15:25 — Pop Up 10K battery base (Pod-154-19) ฿199 → ฿219 (owner "ตามแนะนำ") ·
+  // Insta 15000 (Product 744, 11 flavours) ฿329 → ฿359 (BSOT §5). Held until a card photo exists (IMAGE_SPEC §4) — uncomment with the card +
+  // sku-map (pop-up-10k-base → Pod-154-19 · insta-bar-px-15k → Variation 746…760, once the warehouse read carries them):
+  // "POP-UP-10K-BASE": { sellingPrice: 219, lastPriceReview: "2026-11-10" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
