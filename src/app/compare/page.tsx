@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { CompareTool } from "@/components/tools/CompareTool";
 import { ComparePageHeader } from "@/components/tools/ComparePageHeader";
-import { getCatalogItem } from "@/lib/catalog-index";
+import { allCatalogItems, getCatalogItem } from "@/lib/catalog-index";
 import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/compare")) }} />
       <ComparePageHeader />
       <Container className="py-12 lg:py-16">
-        <CompareTool initialSlugs={initialSlugs} />
+        <CompareTool initialSlugs={initialSlugs} catalog={allCatalogItems()} />
       </Container>
     </>
   );

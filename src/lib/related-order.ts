@@ -188,7 +188,7 @@ export interface RelatedItem {
 
 /** What ProductCard does not read: the text of the product's own page. The block's cards reach the browser in every
  *  product page, and these fields were most of their weight. */
-const cardOnly = (p: Product): Product => ({ ...p, features: [], faqs: [], compatibility: [], sourceUrls: [] });
+export const cardOnly = (p: Product): Product => ({ ...p, features: [], faqs: [], compatibility: [], sourceUrls: [] });
 
 function relatedItem(slug: string): RelatedItem | null {
   const legacy = getProduct(slug);

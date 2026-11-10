@@ -19,8 +19,9 @@
 // Each option's state is the picker button itself (blue "เพิ่ม <option>" = 1, grey pointer-events-none/disabled = 0) — what
 // the admin sees when keying an order; the browser script also checks it against the option's `available` number and
 // lists every disagreement. A product code that is not one of its own options = 1 when any option is 1. Codes that are not
-// warehouse codes ("test", "Close", "Product 1176446", "Set-Coil-1-14") are skipped and listed. The same code read twice
-// with different states = 0 (out) and listed.
+// warehouse codes ("test", "Close", "Product 1176446") are skipped and listed. A box row with a two-word code ("Set-Coil-1-14":
+// the VOOPOO coil boxes of 5, their own pages since 10/11) IS a warehouse code — the same code shape as sku-map-contract-test.ts.
+// The same code read twice with different states = 0 (out) and listed.
 const fs = require("fs");
 
 const args = process.argv.slice(2);
@@ -32,7 +33,7 @@ if (!inFile || !outFile) {
   console.error("usage: node scripts/order-entry-stock.js <compact.txt> <snapshot-out.txt> [--compare <product-list-snapshot.txt>]");
   process.exit(1);
 }
-const CODE = /^[A-Za-z]+-\d+(?:-\d+)?$/;
+const CODE = /^[A-Za-z]+(?:-[A-Za-z]+)?-\d+(?:-\d+)*$/;
 const state = new Map(), skipped = new Set(), conflicts = new Set();
 const put = (code, v) => {
   if (!CODE.test(code)) { skipped.add(code); return; }
