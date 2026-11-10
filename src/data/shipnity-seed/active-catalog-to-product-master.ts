@@ -466,6 +466,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // by exact child code (scripts/max-seed-gen.js childIds): the ORIGINAL ILUMA ONE (Pebble Grey -1 · Azure Blue -2 · Bright -5, ฿2,900)
   // and its OASIS edition (-4, ฿3,200 — another price, so another record). Breeze Blue -3 stays on iqosheet-17 (ILUMA i ONE).
   "IQOS-ILUMA-ONE": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" children Pebble Grey / Azure Blue / Bright — iqos.com/za ILUMA ONE kit page: "IQOS ILUMA ONE is available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss Green" (opened 10/11); BRIGHT = jp.iqos.com limited edition covering ILUMA PRIME / ILUMA / ILUMA ONE (Sept 2023)' },
+  "IQOS-ILUMA-ONE-OASIS": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" child "Oasis Limited" ฿3,200 — jp.iqos.com news "limited-edition-iqos-iluma-oasis": the OASIS limited edition came as ILUMA PRIME, ILUMA and ILUMA ONE (Nov 2022)' },
 };
 
 // ===================================================================================
@@ -798,6 +799,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "IQOS-ILUMA-ONE": {
     tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน",
     shortDescription: "IQOS ILUMA ONE ชาร์จเต็มสูบได้ 20 มวนติดกัน แต่ละมวนสูบได้นานสุด 6 นาทีหรือ 14 พัฟ ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    tagline: "เครื่องจ่ายความร้อนรุ่นพิเศษ OASIS ผลิตจำนวนจำกัด",
+    shortDescription: "IQOS ILUMA ONE รุ่นพิเศษ OASIS ชาร์จเต็มสูบได้ 20 มวนติดกัน ใช้กับบุหรี่ TEREA เท่านั้น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -2125,6 +2130,14 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html"],
   },
+  "IQOS-ILUMA-ONE-OASIS": {
+    specifications: [
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวนติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "session-time", label: "เวลาสูบต่อมวน", value: "สูงสุด 6 นาทีหรือ 14 พัฟ", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    ],
+    sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html", "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis"],
+  },
   "IQOSHEET-18": {
     specifications: [
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
@@ -3275,6 +3288,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
   "IQOS-ILUMA-ONE": { name: "IQOS ILUMA ONE", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+  "IQOS-ILUMA-ONE-OASIS": { name: "IQOS ILUMA ONE OASIS", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },

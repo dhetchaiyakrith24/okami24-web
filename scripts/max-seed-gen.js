@@ -63,6 +63,7 @@ const MAX_ONLY_RECORDS = {
   // C list 10/11 (owner list item 134 "ตามแนะนำ"): Max "Iqos iluma one" (IQOSHEET-17) holds the ORIGINAL ILUMA ONE's colours at ฿2,900, its
   // OASIS edition at ฿3,200 and the ILUMA i ONE's Breeze Blue (IQOSHEET-17-3, already the iqosheet-17 page) → two more records.
   "IQOS-ILUMA-ONE": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-1", "IQOSHEET-17-2", "IQOSHEET-17-5"] },
+  "IQOS-ILUMA-ONE-OASIS": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-4"] },
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows

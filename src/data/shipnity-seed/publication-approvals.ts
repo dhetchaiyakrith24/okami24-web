@@ -273,6 +273,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // (Max ฿3,200) — Max prices from the 17/10 read, to be re-read from Max before going visible. Held until a card photo exists
   // (IMAGE_SPEC §4) — uncomment with the card + sku-map entries (iqos-iluma-one → IQOSHEET-17-1/-2/-5 · iqos-iluma-one-oasis → IQOSHEET-17-4):
   // "IQOS-ILUMA-ONE": { sellingPrice: 3190, lastPriceReview: "2026-11-10" },
+  // "IQOS-ILUMA-ONE-OASIS": { sellingPrice: 3490, lastPriceReview: "2026-11-10" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

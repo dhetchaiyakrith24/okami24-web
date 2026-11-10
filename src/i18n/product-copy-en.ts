@@ -43,6 +43,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "iqosheet-17": { tagline: "IQOS ILUMA i ONE all-in-one heated tobacco device" },
   // C list 10/11: the original ILUMA ONE + its OASIS limited edition (iqos.com/za · jp.iqos.com).
   "iqos-iluma-one": { tagline: "IQOS ILUMA ONE heated tobacco device, 20 uses per charge, for TEREA sticks only" },
+  "iqos-iluma-one-oasis": { tagline: "IQOS ILUMA ONE OASIS limited edition, for TEREA sticks only" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device with a touch screen and Pause Mode, for TEREA sticks only" },
   "pod-150": { tagline: "KS Quikpro replacement cartridge, 15ml" },
   "ks-quikpro-kit": { tagline: "KS Quikpro device with one 15ml cartridge" },
