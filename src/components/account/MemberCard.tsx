@@ -18,7 +18,7 @@ function Phrases({ text, locale }: { text: string; locale: "th" | "en" | "zh" })
   const parts: string[] = [];
   for (const w of text.split(" ")) {
     const last = parts[parts.length - 1];
-    if (last !== undefined && /^\d+$/.test(last)) parts[parts.length - 1] = `${last} ${w}`;
+    if (last !== undefined && /^\d+$/.test(last)) parts[parts.length - 1] = `${last}${String.fromCharCode(0xa0)}${w}`;
     else parts.push(w);
   }
   // The space sits OUTSIDE the no-wrap span: inside it, the line could not break there (10/11, 360 px ran off the box).
