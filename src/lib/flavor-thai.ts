@@ -24,6 +24,7 @@ const PHRASES: ReadonlyArray<readonly [string, string]> = [
   ["jasmine green tea", "ชาเขียวมะลิ"],
   ["thai milk tea", "ชานมไทย"],
   ["green tangerine", "ส้มเขียว"],
+  ["honeydew melon", "ฮันนี่ดิว"],
   ["shine muscat", "องุ่นไชน์มัสแคท"],
   ["milk tea cha", "ชานม"],
   ["chocolate dubai", "ช็อกโกแลตดูไบ"],
@@ -40,6 +41,8 @@ const PHRASES: ReadonlyArray<readonly [string, string]> = [
   ["green apple", "แอปเปิ้ลเขียว"],
   ["red apple", "แอปเปิ้ลแดง"],
   ["green grape", "องุ่นเขียว"],
+  ["green mango", "มะม่วงเขียว"],
+  ["fruit tea", "ชาผลไม้"],
   ["hibiscus tea", "ชากระเจี๊ยบ"],
   ["black tea", "ชาดำ"],
   ["peach tea", "ชาพีช"],
@@ -116,16 +119,37 @@ const WORDS: Readonly<Record<string, string>> = {
   vanilla: "วานิลลา",
   cucumber: "แตงกวา",
   peppermint: "เปปเปอร์มินต์",
+  // thai-copy 11/11 second pass
+  lemonade: "เลมอนเนด",
+  caramel: "คาราเมล",
+  cookies: "คุกกี้",
 };
+
+/** Words that name the kind of sweet or drink lead the Thai, the flavour follows: "Taro Ice Cream" → "ไอศกรีมเผือก",
+ *  "Lemon Candy Mint" → "ลูกอมเลมอน มินต์" (thai-copy 11/11 — "ลูกอมรส…", not "เลมอน ลูกอม"). */
+const LEADS: Readonly<Record<string, string>> = { icecream: "ไอศกรีม", custard: "คัสตาร์ด", milkshake: "มิลค์เชค", candy: "ลูกอม" };
 
 /** A word that changes the fruit the rest names ("Blueraz Berry" is blue raspberry, not a berry) — the whole name gets nothing. */
 const VETO = new Set(["blueraz", "razz"]);
+/** Names whose Thai drink is not confirmed from the maker (thai-copy 11/11: "Red Soda" may be น้ำแดงโซดา) — nothing until it is. */
+const VETO_NAMES = new Set(["red soda", "green soda", "red lemon soda"]);
 
-const ICE_CREAM = "ไอศกรีม";
 const SKIP = new Set(["ice", "iced", "icy"]);
 
-/** The Thai words for an English flavour name, or null when none of its words is in the tables. */
+/** The Thai words for an English flavour name, or null when none of its words is in the tables. A twin-flavour name
+ *  "A + B" keeps its " + " (thai-copy 11/11: without it two flavours read as one mix), and gets Thai only when both parts do. */
 export function flavorThai(name: string): string | null {
+  const parts = name.split(" + ");
+  if (parts.length > 1) {
+    const each = parts.map(onePart);
+    return each.every((x) => x !== null) ? each.join(" + ") : null;
+  }
+  return onePart(name);
+}
+
+function onePart(name: string): string | null {
+  const plain = name.toLowerCase().replace(/(ice|iced|icy)/g, " ").replace(/s+/g, " ").trim();
+  if (VETO_NAMES.has(plain)) return null;
   const tokens = name
     .toLowerCase()
     .replace(/ice[\s-]+cream/g, "icecream")
@@ -134,10 +158,10 @@ export function flavorThai(name: string): string | null {
     .filter((w) => w && !SKIP.has(w));
   if (tokens.some((w) => VETO.has(w))) return null;
   const out: string[] = [];
-  let iceCream = false;
+  let lead: string | null = null;
   for (let i = 0; i < tokens.length; ) {
-    if (tokens[i] === "icecream") {
-      iceCream = true;
+    if (LEADS[tokens[i]]) {
+      lead = lead ?? LEADS[tokens[i]];
       i++;
       continue;
     }
@@ -155,6 +179,6 @@ export function flavorThai(name: string): string | null {
     i++;
   }
   const unique = [...new Set(out)];
-  if (iceCream) return ICE_CREAM + unique.join("");
+  if (lead) return lead + unique.join(" ");
   return unique.length > 0 ? unique.join(" ") : null;
 }
