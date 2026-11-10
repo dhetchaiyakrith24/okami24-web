@@ -214,6 +214,55 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     sourceUrl: "https://shop.voopoo.com/products/drag-x3",
     tier: "official",
   },
+  // T2-31 (tester 10/11 "หัวพอตไม่บอกว่าใช้กับเครื่องไหน"), maker pages read 11/11 in Chrome.
+  {
+    device: "drag-x2",
+    consumable: "coil-92",
+    role: "coil",
+    evidence: "VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    tier: "official",
+  },
+  {
+    device: "drag-x2",
+    consumable: "coil-56",
+    role: "pod",
+    evidence: "VOOPOO's own PnP X Cartridge page (Thai store page, read 11/11 in a real browser) lists the compatible device as \"VOOPOO Drag S2/X2 Kit\" (DTL with every PnP X coil, MTL with PnP X 0.3Ω / 0.6Ω).",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",
+    tier: "official",
+  },
+  {
+    device: "drag-6",
+    consumable: "voopoo-pnp-x-coil-5pack",
+    role: "coil",
+    evidence: "The box of 5 PnP X 0.15Ω coils (Max Set-Coil-92-1) — the same coil as coil-92. VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    tier: "official",
+  },
+  {
+    device: "drag-s3",
+    consumable: "voopoo-pnp-x-coil-5pack",
+    role: "coil",
+    evidence: "The box of 5 PnP X 0.15Ω coils (Max Set-Coil-92-1) — the same coil as coil-92. VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    tier: "official",
+  },
+  {
+    device: "drag-x3",
+    consumable: "voopoo-pnp-x-coil-5pack",
+    role: "coil",
+    evidence: "The box of 5 PnP X 0.15Ω coils (Max Set-Coil-92-1) — the same coil as coil-92. VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    tier: "official",
+  },
+  {
+    device: "drag-x2",
+    consumable: "voopoo-pnp-x-coil-5pack",
+    role: "coil",
+    evidence: "The box of 5 PnP X 0.15Ω coils (Max Set-Coil-92-1) — the same coil as coil-92. VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".",
+    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    tier: "official",
+  },
 
   // =================================================================================
   // VOOPOO — VMATE cartridges. The strongest VOOPOO link in the set: all four of
