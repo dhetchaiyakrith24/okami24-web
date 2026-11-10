@@ -536,8 +536,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
-    // T2-31 (11/11): "DRAG 4" out — VOOPOO's PnP X coils page (re-read 11/11 in a real browser) names DRAG X2/S2/X3/S3 and ARGUS Pro 2, never DRAG 4.
-    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และ ARGUS Pro 2",
+    // T2-31 (11/11): "DRAG 4" out — VOOPOO's two PnP X pages (re-read 11/11 in a real browser) never name it. The full list is the
+    // "ใช้ได้กับ" row and the line under the price; this sentence names a few and says there are more (designer: not read as the whole list).
+    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และรุ่นอื่นของ VOOPOO",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
   // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
@@ -2058,11 +2059,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "wattage-0-6", label: "กำลังไฟที่แนะนำ (0.6Ω)", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-0-8", label: "กำลังไฟที่แนะนำ (0.8Ω)", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-1-0", label: "กำลังไฟที่แนะนำ (1.0Ω)", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      // T2-31 (11/11, re-read in a real browser): "ใช้ได้กับ DRAG X2/S2/X3/S3, ARGUS Pro 2/MT/E40, DORIC 60 Pro, UFORCE-X Tank II, UFORCE-X Nano,
-      // VINCI Spark 100/220 และ PnP X Pod Tanks" — the old value's "4" (DRAG 4) is not on the page.
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / X3 / S3 · ARGUS Pro 2 / MT / E40 · DORIC 60 Pro · VINCI Spark 100 / 220 · UFORCE-X Tank II · UFORCE-X Nano", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      // T2-31 (11/11, both re-read in a real browser): this page — "ใช้ได้กับ DRAG X2/S2/X3/S3, ARGUS Pro 2/MT/E40, DORIC 60 Pro, UFORCE-X Tank II,
+      // UFORCE-X Nano, VINCI Spark 100/220 และ PnP X Pod Tanks" — plus VOOPOO's PnP coils page (shop.voopoo.com/products/pnp-coils, PnP X
+      // series "For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank") for DRAG 5 / 6. The old value's "4" (DRAG 4) is on neither.
+      // Same set as the line under the price (src/data/fits-devices.ts + the cited edges) — designer 11/11: one list per page.
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / X3 / S3 / 5 / 6 · ARGUS Pro 2 / MT / E40 · DORIC 60 Pro · VINCI Spark 100 / 220 · UFORCE-X Tank II · UFORCE-X Nano", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
     ],
-    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils", "https://shop.voopoo.com/products/pnp-coils"],
   },
   "Coil-53": {
     specifications: [
