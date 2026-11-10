@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
+import { TEST_SITE } from "@/lib/test-site";
 
 export default function robots(): MetadataRoute.Robots {
+  // The test copy (src/lib/test-site.ts): no crawler, no sitemap — the live site's standing must never meet a copy of itself.
+  if (TEST_SITE) return { rules: { userAgent: "*", disallow: "/" } };
   return {
     rules: {
       userAgent: "*",

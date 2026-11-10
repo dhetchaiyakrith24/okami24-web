@@ -10,6 +10,8 @@ import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
 import { TeamShortcut } from "@/components/layout/TeamShortcut";
+import { TestSiteBanner } from "@/components/layout/TestSiteBanner";
+import { TEST_SITE } from "@/lib/test-site";
 import { CardCut } from "@/components/brand/CardCut";
 import { navCategories } from "@/lib/category-visibility";
 import { navBrands } from "@/lib/brand-visibility";
@@ -84,6 +86,9 @@ export const metadata: Metadata = {
     siteName: "OKami24",
     type: "website",
   },
+  // The test copy (src/lib/test-site.ts): noindex for every page that does not set its own robots — the banner's <meta> and
+  // the X-Robots-Tag header (next.config.ts) cover the ones that do. The live site: no key, exactly as before.
+  ...(TEST_SITE ? { robots: { index: false, follow: false } } : {}),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -102,6 +107,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
+          {TEST_SITE ? <TestSiteBanner /> : null}
           <AgeGate orderingEnabled={ORDERING_ENABLED} />
           <Header orderingEnabled={ORDERING_ENABLED} categories={categories} />
           <main className="flex-1">{children}</main>

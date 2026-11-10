@@ -32,6 +32,13 @@ const CONTENT_SECURITY_POLICY = [
   "frame-ancestors 'self'",
 ].join("; ");
 
+/**
+ * The test copy of the site (owner 10/11 — src/lib/test-site.ts, docs/เว็บทดสอบ-Render.md): every response, pages and
+ * files alike, says noindex. Read at build time, like the rest of this file; the live service never sets the flag, so its
+ * headers are exactly the list below without this entry.
+ */
+const TEST_SITE = (process.env.OKAMI24_TEST_SITE ?? "").trim().toLowerCase() === "on";
+
 const nextConfig: NextConfig = {
   /** No `x-powered-by: Next.js` on responses (owner 04/11 security pass): it only tells a scanner what to try. */
   poweredByHeader: false,
@@ -141,6 +148,7 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "microphone=(), geolocation=(), payment=(), usb=()" },
           { key: "Content-Security-Policy", value: CONTENT_SECURITY_POLICY },
+          ...(TEST_SITE ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] : []),
         ],
       },
       /**

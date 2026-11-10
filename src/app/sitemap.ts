@@ -9,6 +9,7 @@ import { SITE_URL as BASE_URL } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { guideLastModified, pageLastModified, type ContentFamily } from "@/lib/content-dates";
 import { productSitemapImages } from "@/lib/sitemap-images";
+import { TEST_SITE } from "@/lib/test-site";
 
 // Round "search-price" batch 3 (2026-09-22): `lastModified` used to be `new Date()` — the build
 // time, the same on all 105 URLs, so every deploy told crawlers the privacy page had just changed.
@@ -44,6 +45,8 @@ const STATIC_ROUTES: Record<string, ContentFamily | null> = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // The test copy (src/lib/test-site.ts) offers no page to a crawler; robots.txt there names no sitemap either.
+  if (TEST_SITE) return [];
   const page = (path: string, family?: ContentFamily | null) => ({ url: `${BASE_URL}${path}`, lastModified: pageLastModified(path || "/", family ?? undefined) });
   const routes: MetadataRoute.Sitemap = Object.entries(STATIC_ROUTES).map(([path, family]) => page(path, family));
 
