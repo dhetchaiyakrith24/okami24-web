@@ -4,7 +4,7 @@
  * names in the "ใช้กับเครื่อง" line under the price, after the linked devices the shop does sell (getCompatibleDevices).
  *
  * Same bar as an edge: only what the maker's own page states, read in a real browser on the date given. Nothing confirmed =
- * no row = no line (never a guess from the name). Names are the maker's model names, written exactly as the maker writes them
+ * no row = no line (never a guess from the name). Names are the maker's model names, the family word in capitals (DRAG · ARGUS · DORIC · VINCI) as VOOPOO's PnP X coils page and the site write them
  * (English on every language page — THAI_STYLE layer 1). Devices only: the line reads "fits device", so a tank the maker
  * also names (UFORCE-X Tank, dotTank) stays out. Checked by src/data/fits-devices-contract-test.ts.
  *
@@ -19,7 +19,8 @@ export interface FitsDevicesRow {
   names: string[];
   /** What the maker's page says, close to its words. */
   evidence: string;
-  sourceUrl: string;
+  /** The maker's pages the names come from. */
+  sourceUrls: string[];
   /** The day the page was read (yyyy-mm-dd). */
   read: string;
 }
@@ -27,39 +28,39 @@ export interface FitsDevicesRow {
 export const FITS_DEVICES: Readonly<Record<string, FitsDevicesRow>> = {
   // VOOPOO PnP X coils: "For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank" — the ones the shop sells are edges.
   "coil-92": {
-    names: ["Drag S2", "Drag 5", "Argus Pro 2"],
-    evidence: "PnP coils page, PnP X series: \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank.\"",
-    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    names: ["DRAG S2", "DRAG 5", "ARGUS Pro 2", "ARGUS MT", "ARGUS E40", "DORIC 60 Pro", "VINCI Spark 100", "VINCI Spark 220"],
+    evidence: "PnP coils page, PnP X series: \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank.\" · PnP X coils page (Thai, re-read 11/11): \"ใช้ได้กับ DRAG X2/S2/X3/S3, ARGUS Pro 2/MT/E40, DORIC 60 Pro, UFORCE-X Tank II, UFORCE-X Nano, VINCI Spark 100/220 และ PnP X Pod Tanks\". Names written as the PnP X coils page writes them (DRAG / ARGUS / DORIC / VINCI in capitals, like the site's own device names).",
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-coils", "https://shop.voopoo.com/products/pnp-x-coils"],
     read: "2026-11-11",
   },
   "voopoo-pnp-x-coil-5pack": {
-    names: ["Drag S2", "Drag 5", "Argus Pro 2"],
-    evidence: "The same PnP X 0.15Ω coil, boxed by 5 — PnP coils page, PnP X series: \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank.\"",
-    sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    names: ["DRAG S2", "DRAG 5", "ARGUS Pro 2", "ARGUS MT", "ARGUS E40", "DORIC 60 Pro", "VINCI Spark 100", "VINCI Spark 220"],
+    evidence: "The same PnP X 0.15Ω coil, boxed by 5 — the same two VOOPOO pages as coil-92.",
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-coils", "https://shop.voopoo.com/products/pnp-x-coils"],
     read: "2026-11-11",
   },
   "coil-56": {
-    names: ["Drag S2"],
+    names: ["DRAG S2"],
     evidence: "PnP X Cartridge page (Thai store page): compatible device \"VOOPOO Drag S2/X2 Kit\" (DTL with every PnP X coil; MTL with PnP X 0.3Ω or 0.6Ω).",
-    sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-cartridge"],
     read: "2026-11-11",
   },
   "coil-83": {
-    names: ["Argus Pod", "Argus P1", "Argus G", "Argus Z"],
+    names: ["ARGUS Pod", "ARGUS P1", "ARGUS G", "ARGUS Z"],
     evidence: "Argus Pod Cartridge page (Thai store page): for the Argus Pod Kit, Argus P1 Kit, Argus G Kit and Argus Z Kit.",
-    sourceUrl: "https://shop.voopoo.com/products/argus-pod-cartridge",
+    sourceUrls: ["https://shop.voopoo.com/products/argus-pod-cartridge"],
     read: "2026-11-11",
   },
   "coil-68": {
-    names: ["Drag Q"],
+    names: ["DRAG Q"],
     evidence: "ITO-X Pod page title: \"VOOPOO ITO-X Pod 3.5ml Fit Drag Q\".",
-    sourceUrl: "https://shop.voopoo.com/products/ito-x-pod-cartridge",
+    sourceUrls: ["https://shop.voopoo.com/products/ito-x-pod-cartridge"],
     read: "2026-11-11",
   },
   "coil-70": {
     names: ["dotAIO V2", "dotAIO V2 Lite", "dotAIO V3"],
     evidence: "dotCoils page, compatibility: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotAIO V3 Tank · dotTank Max · dotAMP · dotApollo · dotAIO V3 (dotStick Revo / Revo V1.5 / dotPod Max: not the 0.15Ω coil — left out here).",
-    sourceUrl: "https://dotmod.com/products/dotcoils",
+    sourceUrls: ["https://dotmod.com/products/dotcoils"],
     read: "2026-11-11",
   },
 };

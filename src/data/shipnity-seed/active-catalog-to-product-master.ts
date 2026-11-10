@@ -536,7 +536,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
-    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และ DRAG 4",
+    // T2-31 (11/11): "DRAG 4" out — VOOPOO's PnP X coils page (re-read 11/11 in a real browser) names DRAG X2/S2/X3/S3 and ARGUS Pro 2, never DRAG 4.
+    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และ ARGUS Pro 2",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
   // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
@@ -2057,7 +2058,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "wattage-0-6", label: "กำลังไฟที่แนะนำ (0.6Ω)", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-0-8", label: "กำลังไฟที่แนะนำ (0.8Ω)", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-1-0", label: "กำลังไฟที่แนะนำ (1.0Ω)", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / 4 / X3 / S3", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      // T2-31 (11/11, re-read in a real browser): "ใช้ได้กับ DRAG X2/S2/X3/S3, ARGUS Pro 2/MT/E40, DORIC 60 Pro, UFORCE-X Tank II, UFORCE-X Nano,
+      // VINCI Spark 100/220 และ PnP X Pod Tanks" — the old value's "4" (DRAG 4) is not on the page.
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / X3 / S3 · ARGUS Pro 2 / MT / E40 · DORIC 60 Pro · VINCI Spark 100 / 220 · UFORCE-X Tank II · UFORCE-X Nano", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
     ],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
   },
