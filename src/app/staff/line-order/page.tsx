@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { signedInName } from "@/lib/staff/account-rules";
 import { stockBook } from "@/lib/staff/stock-book";
 import { slipsToPick } from "@/lib/staff/line-orders";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
 
 export default async function StaffLineOrderPage() {
   if (!staffAreaEnabled()) notFound();
-  if (!(await isStaff())) redirect("/staff");
+  const me = await currentStaff();
+  if (!me) redirect("/staff");
   const products: PickProduct[] = stockBook()
     .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
     .filter((p) => p.options.length > 0);
@@ -35,7 +37,7 @@ export default async function StaffLineOrderPage() {
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">คีย์ออเดอร์ LINE</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">ราคาและค่าส่งเท่าบนเว็บ ระบบคิดให้เอง · บันทึกแล้วไปที่หน้าออเดอร์</p>
       </header>
-      <LineOrderForm products={products} slips={slips} />
+      <LineOrderForm products={products} slips={slips} signedInAs={signedInName(me)} />
     </Container>
   );
 }

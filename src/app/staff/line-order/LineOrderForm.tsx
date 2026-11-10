@@ -26,7 +26,7 @@ const CARD = "flex flex-col gap-3 rounded-xl border border-surface-border-soft b
  * staff typed — and the form is sent by hand (onSubmit), not through `action=`, because React resets a form after an
  * `action=` submit: the picked slip's radio then showed empty while the next save would have gone without a slip. Prices here are the web prices for reading only; the server prices the order again and adds shipping.
  */
-export function LineOrderForm({ products, slips }: { products: PickProduct[]; slips: PickSlip[] }) {
+export function LineOrderForm({ products, slips, signedInAs }: { products: PickProduct[]; slips: PickSlip[]; signedInAs: string | null }) {
   const [state, action, pending] = useActionState(createLineOrderAction, IDLE);
   const [f, setF] = useState({ customerPhone: "", recipientName: "", recipientPhone: "", line1: "", subdistrict: "", district: "", province: "", postalCode: "" });
   const [keyedBy, setKeyedBy] = useStaffName();
@@ -105,7 +105,7 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
         e.preventDefault();
         const data = new FormData(e.currentTarget);
         startTransition(() => action(data));
-        rememberStaffName(keyedBy);
+        if (!signedInAs) rememberStaffName(keyedBy);
       }}
       className="flex flex-col gap-4"
     >
@@ -208,10 +208,17 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
       </section>
 
       <section className={CARD}>
-        <label className={FIELD}>
-          คนคีย์ออเดอร์
-          <input name="keyedBy" value={keyedBy} onChange={(e) => setKeyedBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
-        </label>
+        {/* Owner 10/11: signed in with an own account, the order is keyed under it — nothing to type. */}
+        {signedInAs ? (
+          <p className="text-sm text-foreground-muted">
+          คนคีย์ออเดอร์ · <span className="text-foreground">{signedInAs}</span>
+        </p>
+        ) : (
+          <label className={FIELD}>
+            คนคีย์ออเดอร์
+            <input name="keyedBy" value={keyedBy} onChange={(e) => setKeyedBy(e.target.value)} maxLength={40} autoComplete="off" required className={INPUT} />
+          </label>
+        )}
       </section>
 
       {state.error && (
@@ -221,7 +228,8 @@ export function LineOrderForm({ products, slips }: { products: PickProduct[]; sl
       )}
       {/* LINE_ORDERS_GAPS.md #2: a recent order of the same phone and total — open it first; save only with the tick. */}
       {state.duplicateOf && (
-        <div className="flex flex-col gap-2 rounded-xl border border-unverified/50 bg-unverified/10 px-4 py-3 text-sm text-foreground">
+        <div role="alert" className="flex flex-col gap-2 rounded-xl border border-unverified/50 bg-unverified/10 px-4 py-3 text-sm text-foreground">
+          <p className="font-semibold text-foreground">อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชั่วโมง ยังไม่ได้บันทึก</p>
           <a href={`/staff/orders/${encodeURIComponent(state.duplicateOf)}`} target="_blank" rel="noopener" className="inline-flex min-h-11 w-fit items-center font-semibold text-ember underline underline-offset-4">
             เปิดออเดอร์ {state.duplicateOf}
           </a>

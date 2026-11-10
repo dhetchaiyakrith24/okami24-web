@@ -14,6 +14,12 @@ import { WAREHOUSE_SHIPPING_FEE_THB } from "@/lib/woo/order-json";
 import { CODE_PATTERN, costChanges, readCostFile, type CostChange, type CostRow } from "@/lib/owner/cost-rules";
 import { currentCosts, saveCosts } from "@/lib/owner/costs";
 import { readXlsx } from "@/lib/owner/xlsx-read";
+import { OWNER_NAME, type StaffActor } from "@/lib/staff/account-rules";
+import { recordStaffAction } from "@/lib/staff/audit";
+import { switchDetail } from "@/lib/staff/audit-rules";
+
+/** What the owner changes here is in "ใครทำอะไร" too (checker 10/11 on #1378) — under "เจ้าของ", no money in the detail. */
+const OWNER: StaffActor = { kind: "owner", accountId: null, name: OWNER_NAME };
 
 /** The owner's switches (src/lib/commerce/shop-switches-rules.ts). Written to the data disk, read by every page within seconds. */
 export async function setSwitchAction(form: FormData): Promise<void> {
@@ -24,11 +30,15 @@ export async function setSwitchAction(form: FormData): Promise<void> {
   if (kind === "cart") writeSwitches({ ...now, cartOff: !on });
   else if (kind === "site") writeSwitches({ ...now, siteClosed: !on });
   else if (kind === "line") writeSwitches({ ...now, lineToWarehouse: on });
+  else if (kind === "auto") writeSwitches({ ...now, autoToWarehouse: on });
   else if (kind === "hide") {
     const slug = form.get("slug");
-    if (!isSlug(slug) || !getCatalogItem(slug)) return;
+    const item = isSlug(slug) ? getCatalogItem(slug) : null;
+    if (!isSlug(slug) || !item) return;
     writeSwitches({ ...now, hidden: on ? [...new Set([...now.hidden, slug])] : now.hidden.filter((s) => s !== slug) });
+    recordStaffAction(OWNER, on ? "product-hide" : "product-show", { detail: item.name });
   } else return;
+  if (kind !== "hide") recordStaffAction(OWNER, "shop-switch", { detail: switchDetail(kind, on) });
   console.log(`[switches] owner set ${String(kind)} ${on ? "on" : "off"}`);
   revalidatePath("/staff/owner");
 }
@@ -103,6 +113,7 @@ export async function checkBillAction(_prev: BillCheckState, form: FormData): Pr
   } catch (e) {
     return { error: e instanceof Error ? e.message : "อ่านไฟล์ไม่ได้" };
   }
+  recordStaffAction(OWNER, "bill-check", { detail: `รอบ ${from.slice(0, 10)} ถึง ${to.slice(0, 10)}` });
   revalidatePath("/staff/owner");
   redirect(`/staff/owner/bill?round=${id}`);
 }
@@ -122,6 +133,7 @@ export async function saveCostsAction(_prev: CostPreview, form: FormData): Promi
     return { state: "error", message: "ข้อมูลไม่ครบ ลองเลือกไฟล์ใหม่" };
   }
   const count = saveCosts(rows, String(form.get("fileName") ?? ""));
+  recordStaffAction(OWNER, "costs-save", { detail: `${count} รุ่น` });
   revalidatePath("/staff/owner");
   return { state: "saved", count };
 }

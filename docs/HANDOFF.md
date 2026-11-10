@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 10/11 ~06:45 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
+Updated 10/11 ~08:45 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
 ทำและจัดการได้เลย" + "รันเลยยาวๆ จบแล้วก็สานงานค้างอื่นๆต่อได้ พรุ่งนี้พี่ตรวจทีเดียว" — compact at 80–90 % after writing this block + the status page.
 Children report to the main chat by SendMessage. Children notes folder (this PC, outside git):
 `C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_de553e7b-d4f3-4c9e-9e80-36e56b795348\`.
@@ -21,33 +21,36 @@ MERGE: one PR at a time, or a MERGE WINDOW (10/11): GitHub has strict=false and 
   only the pre-checker gate does. So hold main while children's verify→gate runs, then merge every PASSed PR in one batch
   (`self-merge-check --pr N` in a tree at the PR head, `gh pr merge N --merge --match-head-commit <sha>`; a stacked PR = `gh pr edit N
   --base main` right before its merge; a PR with no tree at its head = `git worktree add --detach _incoming/wt-merge-N <sha>`).
-  verify refuses while 3412 is up. GitHub copy/checks sometimes don't start → `gh run rerun <id>` or ready --undo/ready.
+  verify refuses while 3411/3412 is up. GitHub copy/checks sometimes don't start → `gh run rerun <id>` or ready --undo/ready.
   The app refused `gh pr close` (#1346) 10/11; `gh pr merge` worked all night. Never route a refused action through a child.
-GATE: `pre-checker-gate.js` now runs the raw U+00A0/U+2060 check (#1373) — two PRs reached the checker with one on 10/11.
+GATE: `pre-checker-gate.js` runs the raw U+00A0/U+2060 check (#1373) and passes a branch behind main by docs-only commits (#1376;
+  not for a PR that writes a locked file). New worktrees may get an absolute core.hooksPath → `git config --worktree core.hooksPath .githooks`.
+CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) — run commands with absolute paths / `git -C`, not `cd`.
 
-1 main = `git fetch && git log -1 --oneline origin/main` (10/11 ~06:30 = 455b8a7e). MERGED 10/11 night, live [ตรวจแล้ว] curl after
-  deploy (/ 17 sold-out pills · /products 58 · /shipping no delay copy · /cart 307 · /staff pages 200): #1355 card sold-out pill ·
-  #1369 skill product-listing child codes + this block · #1361 sku drift (Menthol Freeze → Pod-170-24; Woo catalog 65/763 → 63/744) ·
-  #1371 delay notice removed · #1368 hero sold-out pill · #1359 owner-page wording · #1373 gate raw-chars · LINE stack #1357 paste ·
-  #1358 add items · #1362 dup warning · #1363 cancel tick · #1364 address fix · #1366 day count · #1367 admin manual · #1370 special
-  price (migration 0028, warehouse payload carries a special-price coupon).
+1 main = `git fetch && git log -1 --oneline origin/main` (10/11 ~09:20 = 5d79954f). MERGED 10/11, live [ตรวจแล้ว] curl after deploy:
+  batch 1 (~06:30): #1355 card sold-out pill · #1369 skill + §16 · #1361 sku drift (Menthol Freeze → Pod-170-24; Woo catalog 65/763 →
+  63/744) · #1371 delay notice removed · #1368 hero sold-out pill · #1359 owner-page wording · #1373 gate raw-chars · LINE stack #1357
+  paste · #1358 add items · #1362 dup warning · #1363 cancel tick · #1364 address fix · #1366 day count · #1367 admin manual · #1370
+  special price (migration 0028; warehouse payload carries a special-price coupon) · #1375 + #1354 docs.
+  batch 2 (~08:30): #1360 per-admin Google sign-in + /staff/owner/team + audit table (migration 0029) + shared-password switch-off
+  revokes every shared session (/staff shows "เข้าสู่ระบบด้วย Google") · #1374 ISR live stock on / /products /brands (watch Render
+  memory 3–6 h; new-arrivals row refills from the next in-stock model) · #1376 gate docs-lag.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
 2 OPEN PRs:
-  staff-accounts local_7b975303: #1360 Google per admin + migration 0029 = checker FULL PASS 66c7f700, then CONFLICTS with main after
-    the batch → child merges main + resolves → checker re-reads the resolution only. Body says it is the FOUNDATION (audit = sign-in/out +
-    team changes; who keyed/discounted/accepted = PR (b)). Dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ waits owner.
-  line-orders-2 local_66555054: #1372 auto-push to the warehouse on confirm behind NEW owner switch autoToWarehouse (default OFF) +
-    the folded fixes (raised line keeps its sold price — comment + test; dup warning one message "24 ชั่วโมง"; no index on
-    orders.created_at / customers.phone noted) → merge main, verify, gate, FULL-set checker.
-  look-0911 local_569a83ec: #1374 ISR live stock on / /products /brands (21 more pages every 3 h; watch Render memory 3–6 h after
-    deploy) → verify, gate, checker · member card v8 https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale →
-    PR3 member page → best-seller from real sales (≥3 units/30 days, web + keyed LINE). Hero pill at 1024/1440 sits on the device
-    base — owner taste choice (variant: pill in the card head beside the price).
-  orders-audit-2 local_212d2f45: idle — C = new codes wait รอพี่ตรวจ 134 · Argus P1 Coil-83-1 map waits the owner's Chrome
-    (`_incoming/wt-voopoo`).
-  #1346 obsolete → owner closes it (the app refused Friday) · #1354 LINE gap docs (docs-only; รอพี่ตรวจ 130 points at its file) →
-    Friday merges next · #1365 superseded by #1369 → close · Owner drafts untouched: #1324 G4 Pro pictures · #1335 · #1336.
+  #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
+  line-orders-2 local_66555054: idle at 89 % context → next = test-gaps PR (Shipnity no-reply · server-action done key · push-OK-
+    but-step-fails message) in a FRESH child chat from `notes/line-orders-2-handover-1011.md` "Next task" (notes folder above).
+  Port 3411 freed 10/11 11:57 (owner said "ปิดได้"; Friday stopped only that orphaned `next start`). Owner shut the computer down
+    after → nothing runs. NEXT on restart: tell look-0911 to run verify --full → gate → checker for #1377 (test gaps for #1374).
+  #1378 "ใครทำอะไร" MERGED 10/11 ~09:30 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
+    shared sessions on name-asking forms · owner writes recorded as เจ้าของ). staff-accounts local_7b975303: next = PR (c) waits the owner
+    on the dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ. Owner adds admins on /staff/owner/team (steps in
+    docs/คู่มือเจ้าของ-หลังบ้าน.md "ทีมงาน"); no Render/env change needed.
+  look-0911 local_569a83ec: next = test-gaps PR for #1374 (newArrivalSlugs live, liveStockReady, sold-out-last sort) · member card v8
+    https://claude.ai/artifact/C54WAyDjcbFvTmcuWVpDGA waits owner "ผ่าน" + upscale → PR3 member page → best-seller from real sales.
+  orders-audit-2 local_212d2f45: idle — new codes wait รอพี่ตรวจ 134 · Argus P1 Coil-83-1 map waits the owner's Chrome.
+  #1346 + #1365 → owner says "ปิดได้" (the app refused Friday's close) · Owner drafts untouched: #1324 · #1335 · #1336.
   HOUSE 10/11: 97 merged local branches deleted + 4 stale worktrees pruned; the rest = `_incoming/house-20261110/todo.md`
     (docs pointers, LESSONS/THAI_STYLE over ceiling → slimming drafts with checker, ~20 merged worktrees to remove with the พ47 method,
     _incoming folders to archive).

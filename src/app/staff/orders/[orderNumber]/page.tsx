@@ -6,7 +6,8 @@ import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { signedInName } from "@/lib/staff/account-rules";
 import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
@@ -39,6 +40,8 @@ import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { auditForOrder } from "@/lib/staff/audit";
+import { auditLabel } from "@/lib/staff/audit-rules";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
@@ -84,6 +87,12 @@ const DONE_TEXT: Record<string, string> = {
   "line-order": "บันทึกออเดอร์ LINE แล้ว — คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
   items: "บันทึกรายการใหม่แล้ว — ยอดและค่าส่งคิดใหม่ทั้งออเดอร์ · ลิงก์ติดตามออเดอร์เดิมของลูกค้าเห็นรายการใหม่",
   confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
+  "confirm-sent": "บันทึกแล้ว: ยืนยันยอดเงิน · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
+  "confirm-autofail": "บันทึกแล้ว: ยืนยันยอดเงิน · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
+  "line-order-sent": "บันทึกออเดอร์ LINE แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ · คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
+  "line-order-autofail": "บันทึกออเดอร์ LINE แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
+  "items-sent": "บันทึกรายการใหม่แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
+  "items-autofail": "บันทึกรายการใหม่แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
   "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
   shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
   carrier: "บันทึกแล้ว: เปลี่ยนขนส่ง — ส่งเข้า Shipnity พร้อมขนส่งนี้",
@@ -282,11 +291,14 @@ export default async function StaffOrderPage({
   searchParams: Promise<{ error?: string; done?: string; from?: string }>;
 }) {
   if (!staffAreaEnabled()) notFound();
-  if (!(await isStaff())) redirect("/staff");
+  const me = await currentStaff();
+  if (!me) redirect("/staff");
+  const signedInAs = signedInName(me);
   const { orderNumber } = await params;
   const { error, done, from: fromParam } = await searchParams;
   const order = getStaffOrder(orderNumber);
   if (!order) notFound();
+  const teamRows = auditForOrder(order.orderNumber);
 
   const from = isStaffJob(fromParam) || fromParam === "all" ? fromParam : "";
   const back =
@@ -329,7 +341,7 @@ export default async function StaffOrderPage({
   // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may already hold it → a cancel needs a tick;
   // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
   const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
-  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse });
+  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() });
   // LINE_ORDERS_GAPS.md #7 (src/lib/staff/order-address.ts): the address is fixed here until the warehouse has the order.
   const canEditAddress = addressEditable({ status: order.status, sentToWarehouse: editState.sentToWarehouse });
   const moneyIn = order.status === "approved" || linked.satang > 0;
@@ -412,7 +424,7 @@ export default async function StaffOrderPage({
                   : ""}
               </p>
               {/* LINE_ORDERS_GAPS.md #1: once the switch is on, keying the same LINE order into Shipnity by hand ships it twice. */}
-              {lineOrder && (
+              {(lineOrder || readSwitches().autoToWarehouse) && (
                 <p className="text-sm text-danger">ปุ่มนี้ส่งเข้า Shipnity ให้แล้ว ห้ามคีย์ใน Shipnity ซ้ำ · ถ้าคีย์ใน Shipnity ไปแล้ว อย่ากดปุ่มนี้ ใช้ &ldquo;ส่งเองแบบเดิม&rdquo;</p>
               )}
             </form>
@@ -440,7 +452,17 @@ export default async function StaffOrderPage({
           ) : (
             <>
               <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-              {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+              {/* Same tick as the folded hand-over above: the server asks for it whenever handoverNeedsTick says so. */}
+              {steps.includes("to-warehouse") && (
+                <ActionForm order={order} from={from} act="to-warehouse">
+                  {handoverTick && (
+                    <label className="flex min-h-12 items-center gap-3 rounded-lg border border-danger/50 px-3 text-sm text-foreground">
+                      <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                      คีย์ออเดอร์นี้ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง
+                    </label>
+                  )}
+                </ActionForm>
+              )}
             </>
           )}
         </section>
@@ -608,6 +630,20 @@ export default async function StaffOrderPage({
                 ))}
               </ul>
             </div>
+            {/* Owner 10/11: who on the team did what on this order (src/lib/staff/audit.ts) — from the day accounts began. */}
+            {teamRows.length > 0 && (
+              <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
+                <p className="font-semibold text-foreground">ใครทำอะไร</p>
+                <ul className="flex flex-col gap-1 text-foreground-muted">
+                  {teamRows.map((r) => (
+                    <li key={r.id}>
+                      {formatDateTime(r.at)} · <span className="text-foreground">{r.actorName}</span> {auditLabel(r.action)}
+                      {r.detail ? ` — ${r.detail}` : ""}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </details>
 
@@ -679,6 +715,7 @@ export default async function StaffOrderPage({
                   .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
                   .filter((p) => p.options.length > 0)}
                 slips={slipsToPick()}
+                signedInAs={signedInAs}
               />
             </div>
           </details>
@@ -695,6 +732,7 @@ export default async function StaffOrderPage({
                 orderNumber={order.orderNumber}
                 from={from}
                 shipnityNote={mayHave}
+                signedInAs={signedInAs}
                 address={{ recipientName: a.recipientName, phone: a.phone, line1: a.line1, subdistrict: a.subdistrict, district: a.district, province: a.province, postalCode: a.postalCode }}
               />
             </div>

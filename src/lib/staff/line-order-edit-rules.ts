@@ -14,7 +14,9 @@
  * something off would owe the customer money, which is the out-of-stock box's refund path or a cancel. Before any money is
  * in, the admin may fix the list freely (a keying mistake).
  *
- * THE MONEY: lines already on the order keep the price they were sold at; added units take the catalogue price now. The
+ * THE MONEY: a line already on the order keeps the price it was sold at — raising its quantity adds units at that same
+ * price (one row carries one price, and the customer agreed to it); a NEW line takes the catalogue price now. Every added
+ * unit is still stock-checked by the cart's resolver (sellable / sold out — the same rule as a new LINE order). The
  * difference (new total − old total) is what the customer transfers. A picked slip must be loose and carry exactly that
  * difference — or, when no slip is linked yet, exactly the new total. No slip: an order still waiting stays waiting (staff
  * confirm by hand, as today); a paid order needs the admin to tick that the difference reached the shop's account, the same

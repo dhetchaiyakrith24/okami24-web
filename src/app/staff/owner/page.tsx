@@ -126,7 +126,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
       label: "สัปดาห์",
       content: <WeekPanel rounds={rounds} due={due} week={week} weekDays={{ from: sales[Math.min(6, sales.length - 1)].date, to: sales[0].date }} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
     },
-    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, lineToWarehouse: switches.lineToWarehouse, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} team={team} /> },
+    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, lineToWarehouse: switches.lineToWarehouse, autoToWarehouse: switches.autoToWarehouse, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} team={team} /> },
   ];
 
   return (
