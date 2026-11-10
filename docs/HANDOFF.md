@@ -21,7 +21,7 @@ MERGE: one PR at a time, or a MERGE WINDOW (10/11): GitHub has strict=false and 
   only the pre-checker gate does. So hold main while children's verify→gate runs, then merge every PASSed PR in one batch
   (`self-merge-check --pr N` in a tree at the PR head, `gh pr merge N --merge --match-head-commit <sha>`; a stacked PR = `gh pr edit N
   --base main` right before its merge; a PR with no tree at its head = `git worktree add --detach _incoming/wt-merge-N <sha>`).
-  verify refuses while 3412 is up. GitHub copy/checks sometimes don't start → `gh run rerun <id>` or ready --undo/ready.
+  verify refuses while 3411/3412 is up. GitHub copy/checks sometimes don't start → `gh run rerun <id>` or ready --undo/ready.
   The app refused `gh pr close` (#1346) 10/11; `gh pr merge` worked all night. Never route a refused action through a child.
 GATE: `pre-checker-gate.js` runs the raw U+00A0/U+2060 check (#1373) and passes a branch behind main by docs-only commits (#1376;
   not for a PR that writes a locked file). New worktrees may get an absolute core.hooksPath → `git config --worktree core.hooksPath .githooks`.
@@ -41,9 +41,9 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
   #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
   line-orders-2 local_66555054: idle at 89 % context → next = test-gaps PR (Shipnity no-reply · server-action done key · push-OK-
     but-step-fails message) in a FRESH child chat from `notes/line-orders-2-handover-1011.md` "Next task" (notes folder above).
-  BLOCKER: orphaned `next start -p 3411` (PID 52844, look-0911 tree) blocks every verify --full; the app refused the child stopping it
-    → owner clears it (รอพี่ตรวจ 136). #1377 (look-0911 test gaps for #1374) waits for it.
-  #1378 "ใครทำอะไร" MERGED 10/11 ~11:00 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
+  Port 3411 freed 10/11 11:57 (owner said "ปิดได้"; Friday stopped only that orphaned `next start`). Owner shut the computer down
+    after → nothing runs. NEXT on restart: tell look-0911 to run verify --full → gate → checker for #1377 (test gaps for #1374).
+  #1378 "ใครทำอะไร" MERGED 10/11 ~09:30 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
     shared sessions on name-asking forms · owner writes recorded as เจ้าของ). staff-accounts local_7b975303: next = PR (c) waits the owner
     on the dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ. Owner adds admins on /staff/owner/team (steps in
     docs/คู่มือเจ้าของ-หลังบ้าน.md "ทีมงาน"); no Render/env change needed.
