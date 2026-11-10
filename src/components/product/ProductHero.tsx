@@ -410,7 +410,7 @@ export function ProductHero({
             </div>
           )}
           {/* T2-31: the devices this part fits, next to the price (nothing cited = nothing here). */}
-          <FitsDeviceLine slug={product.slug} devices={fitsDevices} className="-mt-3 max-lg:order-5 max-lg:mt-0" />
+          <FitsDeviceLine slug={product.slug} devices={fitsDevices} ownBrand={brandName(product.brandId)} className="-mt-3 max-lg:order-5 max-lg:mt-0" />
 
           {product.colorVariants && product.colorVariants.length > 0 && (
             <ColorVariantRail

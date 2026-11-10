@@ -305,7 +305,7 @@ export function PilotProductDetail({
             </div>
           )}
           {/* T2-31: the devices this part fits, next to the price (nothing cited = nothing here). */}
-          <FitsDeviceLine slug={product.slug} devices={fitsDevices} className="-mt-3 max-lg:order-3 max-lg:mt-0" />
+          <FitsDeviceLine slug={product.slug} devices={fitsDevices} ownBrand={product.brandName} className="-mt-3 max-lg:order-3 max-lg:mt-0" />
 
           <ProductMasterVariantPicker
             optionAxisLabel={axisLabel}
