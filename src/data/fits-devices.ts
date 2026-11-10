@@ -5,7 +5,8 @@
  *
  * Same bar as an edge: only what the maker's own page states, read in a real browser on the date given. Nothing confirmed =
  * no row = no line (never a guess from the name). Names are the maker's model names, written exactly as the maker writes them
- * (English on every language page — THAI_STYLE layer 1). Checked by src/data/fits-devices-contract-test.ts.
+ * (English on every language page — THAI_STYLE layer 1). Devices only: the line reads "fits device", so a tank the maker
+ * also names (UFORCE-X Tank, dotTank) stays out. Checked by src/data/fits-devices-contract-test.ts.
  *
  * Not written (11/11, researcher + Chrome): zero-cartridge · relx-ultra-pod · muro-3ml · muro-connector-20k · vazer-one-pod ·
  * coil-89 · pod-154 · nexswitch-16k-pod · relx-creator-pod-20k · nexbar-switch-15k-pod · dude-pod-3ml (no maker statement found) ·
@@ -26,13 +27,13 @@ export interface FitsDevicesRow {
 export const FITS_DEVICES: Readonly<Record<string, FitsDevicesRow>> = {
   // VOOPOO PnP X coils: "For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank" — the ones the shop sells are edges.
   "coil-92": {
-    names: ["Drag S2", "Drag 5", "Argus Pro 2", "UFORCE-X Tank"],
+    names: ["Drag S2", "Drag 5", "Argus Pro 2"],
     evidence: "PnP coils page, PnP X series: \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank.\"",
     sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
     read: "2026-11-11",
   },
   "voopoo-pnp-x-coil-5pack": {
-    names: ["Drag S2", "Drag 5", "Argus Pro 2", "UFORCE-X Tank"],
+    names: ["Drag S2", "Drag 5", "Argus Pro 2"],
     evidence: "The same PnP X 0.15Ω coil, boxed by 5 — PnP coils page, PnP X series: \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank.\"",
     sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
     read: "2026-11-11",
@@ -56,9 +57,16 @@ export const FITS_DEVICES: Readonly<Record<string, FitsDevicesRow>> = {
     read: "2026-11-11",
   },
   "coil-70": {
-    names: ["dotAIO V2", "dotAIO V2 Lite", "dotAIO V3", "dotTank 25mm"],
+    names: ["dotAIO V2", "dotAIO V2 Lite", "dotAIO V3"],
     evidence: "dotCoils page, compatibility: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotAIO V3 Tank · dotTank Max · dotAMP · dotApollo · dotAIO V3 (dotStick Revo / Revo V1.5 / dotPod Max: not the 0.15Ω coil — left out here).",
     sourceUrl: "https://dotmod.com/products/dotcoils",
     read: "2026-11-11",
   },
 };
+
+/** The plain names for a consumable's line, minus any the linked devices already show (compared without case/spaces). */
+export function fitsDeviceNames(slug: string, linkedNames: string[]): string[] {
+  const key = (s: string) => s.toLowerCase().replace(/[s-]+/g, "");
+  const shown = new Set(linkedNames.map(key));
+  return (FITS_DEVICES[slug]?.names ?? []).filter((n) => !shown.has(key(n)));
+}

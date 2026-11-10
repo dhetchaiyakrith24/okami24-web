@@ -225,6 +225,8 @@ export interface Dictionary {
     colorLabel: string;
     flavorLabel: string;
     allVariantsLabel: string;
+    lineupGroupLabel: string;
+    lineupGroupFallback: string;
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */
     noPhotoFlavor: string;
     noPhotoColor: string;
@@ -317,6 +319,7 @@ export interface Dictionary {
     compatibilityTitle: string;
     worksWithTitle: string;
     fitsDevicesTitle: string;
+    fitsDeviceLine: string;
     verifiedCompatibilityNote: string;
     whoIsThisForTitle: string;
     faqEyebrow: string;
