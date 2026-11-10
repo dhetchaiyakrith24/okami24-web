@@ -467,6 +467,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // and its OASIS edition (-4, ฿3,200 — another price, so another record). Breeze Blue -3 stays on iqosheet-17 (ILUMA i ONE).
   "IQOS-ILUMA-ONE": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" children Pebble Grey / Azure Blue / Bright — iqos.com/za ILUMA ONE kit page: "IQOS ILUMA ONE is available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss Green" (opened 10/11); BRIGHT = jp.iqos.com limited edition covering ILUMA PRIME / ILUMA / ILUMA ONE (Sept 2023)' },
   "IQOS-ILUMA-ONE-OASIS": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" child "Oasis Limited" ฿3,200 — jp.iqos.com news "limited-edition-iqos-iluma-oasis": the OASIS limited edition came as ILUMA PRIME, ILUMA and ILUMA ONE (Nov 2022)' },
+  // C list 10/11 (item 134 1A): VOOPOO coils sold by the box — Max-only records cut from the loose-coil parents (scripts/max-seed-gen.js).
+  "VOOPOO-VINCI-COIL-5PACK": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว" (Set-Coil-1-14, under Coil-1) + "… Vinci - 0.15Ω 1 กล่อง 5 ตัว" (Set-Coil-1-1), both ฿350 (read 10/11); same family as the loose Vinci coils (Coil-1); 5 per box = the warehouse rows themselves' },
+  "VOOPOO-PNP-X-COIL-5PACK": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์ Voopoo PnP X - 0.15Ω / 1กล่อง 5ตัว" (Set-Coil-92-1, under Coil-92) ฿400 (read 10/11); PnP X coils "sold only in packs of 5" (aromes-et-liquides.fr — tier 2)' },
 };
 
 // ===================================================================================
@@ -803,6 +806,15 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "IQOS-ILUMA-ONE-OASIS": {
     tagline: "เครื่องจ่ายความร้อนรุ่นพิเศษ OASIS ผลิตจำนวนจำกัด",
     shortDescription: "IQOS ILUMA ONE รุ่นพิเศษ OASIS ชาร์จเต็มสูบได้ 20 มวนติดกัน ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  // C list 10/11: the box itself = the warehouse's own product (Max "1 กล่อง 5 ตัว"); wattage = shop.voopoo.com PnP X page (as Coil-92).
+  "VOOPOO-VINCI-COIL-5PACK": {
+    tagline: "คอยล์ Vinci จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
+    shortDescription: "คอยล์ Vinci จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว มีให้เลือก 2 แบบ คือ 0.15 โอห์ม กับ DW60 0.6 โอห์ม",
+  },
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    tagline: "คอยล์ PnP X 0.15 โอห์ม จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
+    shortDescription: "คอยล์ PnP X ค่า 0.15 โอห์ม จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว แนะนำใช้ที่ 60–80 วัตต์",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -2138,6 +2150,22 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html", "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis"],
   },
+  // C list 10/11: the box count is the warehouse's own product — Max names both rows "… 1 กล่อง 5 ตัว" (read 10/11); warehouse fact,
+  // no outside page (as Pod-154's row). Checker 10/11: the PnP-TW pack page is another coil, not cited here.
+  "VOOPOO-VINCI-COIL-5PACK": {
+    specifications: [
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // PnP X: wattage = shop.voopoo.com/products/pnp-x-coils (the row Coil-92 already shows); "sold only in packs of 5" (aromes-et-liquides, tier 2).
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    specifications: [
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified", sourceUrl: "https://www.aromes-et-liquides.fr/en/coils-cartomisers/17393-voopoo-pnp-x-coils-x5.html" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils", "https://www.aromes-et-liquides.fr/en/coils-cartomisers/17393-voopoo-pnp-x-coils-x5.html"],
+  },
   "IQOSHEET-18": {
     specifications: [
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
@@ -3288,6 +3316,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
   "IQOS-ILUMA-ONE": { name: "IQOS ILUMA ONE", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
   "IQOS-ILUMA-ONE-OASIS": { name: "IQOS ILUMA ONE OASIS", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis" },
+  "VOOPOO-VINCI-COIL-5PACK": { name: "VOOPOO Vinci Coil 5-Pack", sourceUrl: "https://app.shipnitymax.com/" }, // the warehouse's own box (Max rows "… 1 กล่อง 5 ตัว")
+  "VOOPOO-PNP-X-COIL-5PACK": { name: "VOOPOO PnP X Coil 0.15Ω 5-Pack", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },

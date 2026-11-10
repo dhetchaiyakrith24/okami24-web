@@ -37,6 +37,8 @@ const MAX_PARENT_OF = {
 // Or { max, childIds: [...] }: the exact Max children of one product when no prefix separates them (C list 10/11: Max IQOSHEET-17
 // holds ILUMA ONE colours, the OASIS edition at another price and the ILUMA i ONE's Breeze Blue; a "Set-…" 5-coil box sits
 // under its loose coil's parent). Same one-price rule as childPrefix.
+// + alsoParents: [...]: more Max parents whose rows join the record (a parent with no child rows joins as itself) — C list 10/11: Max
+// sells the Vinci 0.15Ω 5-coil box as its own parent "Set-Coil-1-1", while the DW60 0.6Ω box is a row under Coil-1.
 const MAX_ONLY_RECORDS = {
   "KS-QUIKPRO-KIT": "Product 780", // KS Quik Pro 15000 คำ (device + pod)
   "NEXSWITCH-16K-KIT": { max: "Product 1176446", childPrefix: "Pod-161-" }, // Nexswitch 16000 Puffs — "เครื่อง + หัวพอต <flavour>"
@@ -64,6 +66,9 @@ const MAX_ONLY_RECORDS = {
   // OASIS edition at ฿3,200 and the ILUMA i ONE's Breeze Blue (IQOSHEET-17-3, already the iqosheet-17 page) → two more records.
   "IQOS-ILUMA-ONE": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-1", "IQOSHEET-17-2", "IQOSHEET-17-5"] },
   "IQOS-ILUMA-ONE-OASIS": { max: "IQOSHEET-17", childIds: ["IQOSHEET-17-4"] },
+  // C list 10/11 (item 134 1A): VOOPOO coils sold by the box of 5 — ฿350 Vinci (DW60 0.6Ω under Coil-1 + 0.15Ω its own parent) · ฿400 PnP X.
+  "VOOPOO-VINCI-COIL-5PACK": { max: "Coil-1", childIds: ["Set-Coil-1-14"], alsoParents: ["Set-Coil-1-1"] },
+  "VOOPOO-PNP-X-COIL-5PACK": { max: "Coil-92", childIds: ["Set-Coil-92-1"] },
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
@@ -88,6 +93,12 @@ for (const [id, spec] of Object.entries(MAX_ONLY_RECORDS)) {
   if (!p) { missing.push(id); continue; }
   const children = rows.filter((r) => r[0] === "C" && r[6] === maxId && r[1].startsWith(prefix) && (!ids || ids.includes(r[1])))
     .map((r) => ({ shipnityVariantId: r[1], rawLabel: r[2], sellingPrice: num(r[3]), inStock: r[4] === "มีของ" }));
+  for (const extra of (typeof spec === "string" ? null : spec.alsoParents) ?? []) {
+    const ep = parents.get(extra);
+    if (!ep) { console.error(`${id}: Max parent ${extra} not in the read`); process.exit(1); }
+    const rowsOf = rows.filter((r) => r[0] === "C" && r[6] === extra);
+    for (const r of rowsOf.length ? rowsOf : [ep]) children.push({ shipnityVariantId: r[1], rawLabel: r[2], sellingPrice: num(r[3]), inStock: r[4] === "มีของ" });
+  }
   const prices = [...new Set(children.map((c) => c.sellingPrice))];
   const split = Boolean(prefix || ids);
   if (split && prices.length !== 1) { console.error(`${id}: children ${prefix || ids.join(",")} carry ${prices.length} prices — one record needs one price`); process.exit(1); }
