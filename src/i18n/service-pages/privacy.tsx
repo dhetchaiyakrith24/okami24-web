@@ -57,8 +57,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. เอาข้อมูลไปทำอะไร",
-      intro: "ใช้ 4 อย่างเท่านั้น",
-      items: ["ยืนยันว่าคนสั่งเป็นคุณจริง", "ตรวจว่ายอดโอนเข้าบัญชีร้านแล้ว", "จัดส่งสินค้าไปให้ถูกที่", "ติดต่อกลับเรื่องคำสั่งซื้อของคุณ"],
+      intro: "ใช้ 3 อย่างเท่านั้น",
+      items: ["ตรวจว่ายอดโอนเข้าบัญชีร้านแล้ว", "จัดส่งสินค้าไปให้ถูกที่", "ติดต่อกลับเรื่องคำสั่งซื้อของคุณ"],
       outro: "ไม่ได้เอาไปทำอย่างอื่น ไม่ส่งโฆษณาไล่ตามคุณ",
     },
     s4: {
@@ -128,8 +128,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. What we use it for",
-      intro: "Four things only.",
-      items: ["Confirming that the order really is from you", "Checking that your payment has reached the shop’s account", "Delivering your order to the right place", "Getting back to you about your order"],
+      intro: "Three things only.",
+      items: ["Checking that your payment has reached the shop’s account", "Delivering your order to the right place", "Getting back to you about your order"],
       outro: "Nothing else. We don’t chase you around with ads.",
     },
     s4: {
@@ -199,8 +199,8 @@ export const PRIVACY: ServiceCopy<PrivacyCopy> = {
     },
     s3: {
       title: "3. 资料的用途",
-      intro: "仅有四项用途。",
-      items: ["确认下单的确实是您本人", "核对您的付款已转入本店账户", "将商品准确送达", "就您的订单与您联系"],
+      intro: "仅有三项用途。",
+      items: ["核对您的付款已转入本店账户", "将商品准确送达", "就您的订单与您联系"],
       outro: "没有其他用途。我们不会用广告追着您跑。",
     },
     s4: {
