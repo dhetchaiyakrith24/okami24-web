@@ -15,9 +15,10 @@ const boot = globalThis as typeof globalThis & { __okami24CopyRefreshed?: boolea
 
 export async function GET() {
   const open = orderingOpen();
-  // T2-04: `next build` reads the switches as open, so after every deploy or restart the prerendered pages carry the cart-on
-  // wording. With the cart switched off, the first visit after a boot marks them all stale — every page asks here after load.
-  if (ORDERING_ENABLED && !open && !boot.__okami24CopyRefreshed) {
+  // T2-04: `next build` reads the switches as open, and pages re-rendered before a restart may be kept on disk with the switch
+  // as it was then — so the first visit after a boot (every page asks here after load) marks every page stale, whichever way
+  // the switch stands now. Once per process; pages re-render on their next visit.
+  if (ORDERING_ENABLED && !boot.__okami24CopyRefreshed) {
     boot.__okami24CopyRefreshed = true;
     try {
       revalidatePath("/", "layout");
