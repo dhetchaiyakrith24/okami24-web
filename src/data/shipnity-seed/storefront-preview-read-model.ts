@@ -297,7 +297,9 @@ export function buildPublishedCatalogFrom(candidates: ProductMasterInput[]): Sto
   const views: StorefrontProductView[] = [];
   for (const product of published) {
     const view = toView(product);
-    if (view) views.push(view);
+    // a published product with an approved selling price never shows where the reference price came from (PilotProductDetail
+    // prints it only without a price), so the storefront does not ship it either (T2-50, 10/11) — the preview pages keep it
+    if (view) views.push(view.sellingPrice !== null ? { ...view, priceReferenceSource: null } : view);
   }
   return views;
 }
