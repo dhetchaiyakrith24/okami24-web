@@ -39,10 +39,13 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
 2 OPEN PRs:
   #1372 auto-push behind owner switch autoToWarehouse (default OFF) MERGED 10/11 ~09:20 (+ #1363 hand-over tick bug fix) [ตรวจแล้ว] curl.
-  line-orders-2 local_66555054: idle at 89 % context → next = test-gaps PR (Shipnity no-reply · server-action done key · push-OK-
-    but-step-fails message) in a FRESH child chat from `notes/line-orders-2-handover-1011.md` "Next task" (notes folder above).
-  Port 3411 freed 10/11 11:57 (owner said "ปิดได้"; Friday stopped only that orphaned `next start`). Owner shut the computer down
-    after → nothing runs. NEXT on restart: tell look-0911 to run verify --full → gate → checker for #1377 (test gaps for #1374).
+  line-orders-3 local_9477bf4f (started 10/11 13:50, from `notes/line-orders-2-handover-1011.md` "Next task"): draft PR with the 3
+    auto-push test gaps (no-reply · done key · push OK but status moved) → sends Friday GATE PASS sha → checker (FULL, orders) → merge.
+    line-orders-2 local_66555054 = done, archive AFTER its `_incoming/` junction folders are removed (handover "Clean-up left").
+  look-0911: told 10/11 13:48 to run verify --full → gate for #1377 (test gaps for #1374) → sends Friday the sha → checker → merge.
+  Port 3411 shared: one verify --full at a time (look-0911 first, then line-orders-3).
+  Render memory: dashboard not signed in in the built-in browser (Friday never types passwords); live pages answer 200 in < 1 s
+    10/11 13:50 [ตรวจแล้ว] curl — no sign of memory trouble. Owner may glance at Render → Metrics.
   #1378 "ใครทำอะไร" MERGED 10/11 ~09:30 (every staff write → staff_audit · owner page /staff/owner/team/activity · typed name kept for
     shared sessions on name-asking forms · owner writes recorded as เจ้าของ). staff-accounts local_7b975303: next = PR (c) waits the owner
     on the dashboard draft https://claude.ai/artifact/2SCqRTKTo5nuWt7KyiBazJ. Owner adds admins on /staff/owner/team (steps in
@@ -152,6 +155,7 @@ Windows shell: scripts are written with the Write tool · Thai text enters scrip
 Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/links of every sitemap page) · site-audit.js ·
   scan.js · locale-hydration-scan.js · visible-text.js · wordbreak-scan.js + wb-diff.js · line-candidates.js (try Thai sentence candidates in the real element of a build at 390/1440, the checker's way, before editing source — LESSONS 33) · linemap-scan.js · html-diff.js ·
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
+  moved-images-scan.js (proof for src/data/moved-images.json) ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
   gsc-unread.ts (pages Google has not read since they changed; skill seo-after-publish) ·
@@ -192,8 +196,10 @@ Live site: ALWAYS after a merge check the deploy reached success (`gh api
   LINE bot: webhook https://okami24.store/api/line/webhook; groups bound on /staff: "OKM Webside order" = order alerts · "OKM Slip
   check" = slip check · a join event lost during a deploy = remove the bot from the group and invite again (DEPLOY-RENDER §8) · LINE OA
   "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member) · staff
-  guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · order numbers use the UTC date (noted, not changed).
-Test trees + PR flow: reuse `_incoming/wt-golive` · `_incoming/wt-cart` (real node_modules incl. jsqr). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
+  guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · owner guide (team, switches, who-did-what) = docs/คู่มือเจ้าของ-หลังบ้าน.md ·
+  order numbers use the UTC date (noted, not changed).
+Test trees + PR flow: reuse `_incoming/wt-cart` (real node_modules incl. jsqr; `_incoming/wt-golive` has its tracked files deleted in
+  the working copy — do not reuse). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
   junctioned node_modules break Turbopack builds · gate `full` needs a verify stamp of the EXACT head → merge origin/main + all extra
   commits BEFORE the verify run (~20 min each) · flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready`
   once → checks → `self-merge-check --pr` alone, IN the PR's tree → merge --match-head-commit → deploy success. A deploy skipped while draft = `gh pr ready --undo`, then `gh pr ready`.
