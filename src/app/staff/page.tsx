@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, googleStaffSignIn, sharedPasswordOpen, staffAreaEnabled } from "@/lib/staff/auth";
 import { staffLogoutAction } from "@/app/staff/actions";
 import { StaffLogin } from "@/app/staff/_components/StaffLogin";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
@@ -21,7 +21,7 @@ import { formatDay } from "@/app/staff/_components/format";
  *
  * Not for customers and not for search: no link to it anywhere on the site, not in the sitemap, noindex here. It is also
  * deliberately NOT listed in robots.txt — that file is public, and listing the path there would only advertise it. 404
- * until the owner sets OKAMI24_STAFF_PASSWORD on the host.
+ * until the team password or Google sign-in is configured on the host (src/lib/staff/auth.ts).
  */
 
 export const dynamic = "force-dynamic";
@@ -31,19 +31,40 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };
 
-export default async function StaffPage() {
+export default async function StaffPage({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
   if (!staffAreaEnabled()) notFound();
-  const loggedIn = await isStaff();
+  const actor = await currentStaff();
 
-  if (!loggedIn) {
+  if (!actor) {
+    const { denied } = await searchParams;
+    const google = googleStaffSignIn();
+    const password = sharedPasswordOpen();
     return (
       <Container className="flex max-w-xl flex-col gap-6 pb-28 pt-8 lg:pt-12">
         <header className="flex flex-col gap-2">
           <span className="label-mono text-xs text-ember">OKami24 · ทีมงาน</span>
           <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">หน้าทีมงาน</h1>
-          <p className="text-sm leading-relaxed text-foreground-muted">หน้านี้สำหรับทีมงานร้านเท่านั้น ใส่รหัสทีมงานเพื่อเข้าใช้</p>
+          <p className="text-sm leading-relaxed text-foreground-muted">
+            หน้านี้สำหรับทีมงานร้านเท่านั้น{google ? " เข้าด้วยบัญชี Google ที่เจ้าของร้านเพิ่มไว้" : " ใส่รหัสทีมงานเพื่อเข้าใช้"}
+          </p>
         </header>
-        <StaffLogin />
+        {denied !== undefined && <p className="text-sm leading-relaxed text-danger">บัญชี Google นี้ยังไม่มีสิทธิ์เข้าหน้าทีมงาน ให้เจ้าของร้านเพิ่มอีเมลนี้ก่อน</p>}
+        {google && (
+          // A full page load on purpose: the route answers with a redirect to Google.
+          // eslint-disable-next-line @next/next/no-html-link-for-pages
+          <a
+            href="/api/auth/staff"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-ember px-6 text-sm font-semibold text-background hover:opacity-90"
+          >
+            เข้าสู่ระบบด้วย Google
+          </a>
+        )}
+        {password && (
+          <>
+            {google && <p className="text-xs text-foreground-dim">หรือใช้รหัสทีมงาน (แบบเดิม)</p>}
+            <StaffLogin secondary={google} />
+          </>
+        )}
       </Container>
     );
   }
@@ -141,7 +162,9 @@ export default async function StaffPage() {
 
       {/* The tools that sat in the folded "อื่น ๆ" row moved under the boxes at the top (owner 28/10): slip check → ตรวจสลิป,
           Shipnity · Excel · LINE groups → Okami dev. Log out stays here as one quiet line. */}
-      <form action={staffLogoutAction}>
+      <form action={staffLogoutAction} className="flex flex-wrap items-center gap-x-3 text-sm text-foreground-dim">
+        {/* Owner 10/11: every session names its person — what they press is recorded under this name. */}
+        <span>เข้าระบบเป็น {actor.name}</span>
         <PendingButton
           className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground"
           pendingText="กำลังออก…"

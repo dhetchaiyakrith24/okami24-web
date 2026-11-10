@@ -17,9 +17,12 @@ export interface ShopSwitches {
    *  item 3) — no second click. LINE orders also need `lineToWarehouse`. Off until the owner turns it on (the warehouse
    *  is not shipping); while off, staff send by the order page's button as before. Rules: src/lib/woo/auto-push-rules.ts. */
   autoToWarehouse: boolean;
+  /** The shared team password stops opening /staff (owner 10/11: each admin signs in with their own Google account). Off = the
+   *  password still works, as before this switch existed; the owner turns it off once every admin has signed in with Google. */
+  staffPasswordOff: boolean;
 }
 
-export const ALL_OPEN: ShopSwitches = { cartOff: false, siteClosed: false, hidden: [], lineToWarehouse: false, autoToWarehouse: false };
+export const ALL_OPEN: ShopSwitches = { cartOff: false, siteClosed: false, hidden: [], lineToWarehouse: false, autoToWarehouse: false, staffPasswordOff: false };
 
 /** A slug goes into a CSS selector on every page, so nothing else gets through. */
 const SLUG = /^[a-z0-9][a-z0-9-]{0,119}$/;
@@ -37,6 +40,7 @@ export function parseSwitches(raw: string | null): ShopSwitches {
       hidden: Array.isArray(data.hidden) ? [...new Set(data.hidden.filter(isSlug))] : [],
       lineToWarehouse: data.lineToWarehouse === true,
       autoToWarehouse: data.autoToWarehouse === true,
+      staffPasswordOff: data.staffPasswordOff === true,
     };
   } catch {
     return ALL_OPEN;

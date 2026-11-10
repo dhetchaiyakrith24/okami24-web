@@ -5,6 +5,8 @@ import { RAIL_LAST } from "@/data/home-sections";
 import type { HeroType } from "@/data/home-hero";
 import { HomeTypeText } from "@/components/home/HomeCopy";
 import { HomeCardRail } from "@/components/home/HomeCardRail";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
+import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 
 /** The English tag above each section title — same words as the hero tabs' tags (THAI_STYLE §5 group ก). */
 const TYPE_TAG: Record<HeroType, string> = {
@@ -35,7 +37,13 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
     return i === -1 ? first.length : i;
   };
   // the picks first, in their order; everything else keeps the catalog's order (stable sort)
-  items.sort((a, b) => rank(a.slug) - rank(b.slug));
+  // Sold out after everything that sells (owner 10/11 ~02:00 "ลูกค้าจะได้ไม่เสียเวลา") — by the LIVE answer only: the page
+  // regenerates every 3 hours (ISR, app/page.tsx) and reads the warehouse then; a build (no data disk) has no live answer and
+  // keeps the editorial order, never the stale git snapshot (#1355 round 3). Within each group the picks keep their order.
+  const live = liveStockReady() ? liveLookup() : null;
+  const soldOut = (i: (typeof items)[number]) =>
+    !live ? false : i.legacy ? legacyCardStock(i.legacy, live).soldOut : i.published ? publishedCardStock(i.published, live).soldOut : false;
+  items.sort((a, b) => Number(soldOut(a)) - Number(soldOut(b)) || rank(a.slug) - rank(b.slug));
   const category = getCategory(categories[0]);
   if (!items.length || !category) return null;
   const href = `/products/${category.slug}`;

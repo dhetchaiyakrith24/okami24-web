@@ -6,6 +6,7 @@ import { getCatalogItem } from "@/lib/catalog-index";
 import { readSwitches, writeSwitches } from "@/lib/commerce/shop-switches";
 import { isSlug } from "@/lib/commerce/shop-switches-rules";
 import { isOwner, ownerLogout } from "@/lib/owner/auth";
+import { endOwnerStaffSession } from "@/lib/staff/auth";
 import { bangkokInstant, checkRound, readBill, readRates, weekProfit } from "@/lib/owner/bill-rules";
 import { saveRound, webOrdersForBill } from "@/lib/owner/bills";
 import { lineSalesBetween } from "@/lib/staff/daily-sales";
@@ -35,6 +36,8 @@ export async function setSwitchAction(form: FormData): Promise<void> {
 
 export async function ownerLogoutAction(): Promise<void> {
   await ownerLogout();
+  // The owner's session in the admin view ("มุมแอดมิน") ends with it — the staff cookie is sent to /staff/owner too.
+  await endOwnerStaffSession();
   redirect("/staff/owner");
 }
 

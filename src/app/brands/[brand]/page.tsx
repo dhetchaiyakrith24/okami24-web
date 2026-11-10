@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { cardTaglinesTh } from "@/lib/card-taglines";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { notFound } from "next/navigation";
 import { brands, getBrand } from "@/data/brands";
 import { familiesForBrand } from "@/data/families";
@@ -26,6 +27,9 @@ import { relatedArticlesForCollection } from "@/lib/article-relevance";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { BRAND_GUIDE_COPY } from "@/i18n/brand-guide-copy";
 import { articleFaqJsonLd } from "@/lib/article-jsonld";
+
+/** ISR (owner 10/11): the server-side in-stock list follows the warehouse, every 3 hours at most. */
+export const revalidate = 10800;
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -107,7 +111,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
+        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>

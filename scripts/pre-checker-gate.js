@@ -6,6 +6,8 @@
 //
 //   checked here (the branch the checker will read, diff origin/main...HEAD)
 //     branch     not main, not detached, contains origin/main                           (L6)
+//                — or is behind it by docs-only commits alone (13.7 docs list minus THAI_STYLE.md, which the words row
+//                reads): verify stamps a sha, so a docs merge on main must not force a re-verify (10/11: 3 re-runs)
 //     tree       nothing uncommitted or untracked — the checker reads git, not the folder
 //     pushed     origin/<branch> = HEAD — the `Checker:` line names a sha GitHub has (13.4)
 //     hooks      core.hooksPath = .githooks — the commit/push gates are on
@@ -109,9 +111,17 @@ const JUNK = [
 ];
 
 // ---------------------------------------------------------------- the checks (pure: state in → problems out)
+// a file whose change on main cannot affect this branch's verify/gate result (13.7 docs-only list, minus THAI_STYLE.md)
+const DOCS_BEHIND_OK = (f) => /^(docs\/.+|\.claude\/(LESSONS\.md|LESSONS-images\.md|memory\/.+))$/.test(f) && f !== "docs/THAI_STYLE.md";
 function checkBranch(s) {
   if (!s.branch) return ["detached HEAD — the checker needs a branch (git switch -c <name>)"];
   if (/^(main|master)$/.test(s.branch)) return [`on ${s.branch} — a PR comes from a work branch (TEAM_RULES 13.7)`];
+  // not for a PR that writes a locked file: the locked row reads the open round's 【แตะได้】 lines from HANDOFF §16 +
+  // docs/rounds/ in THIS tree (round-file.js), and a docs merge on main may have changed them (checker 10/11)
+  if (!s.containsMain && s.behindFiles.length && s.behindFiles.every(DOCS_BEHIND_OK) && !s.files.some((f) => lockedName(f))) {
+    s.notes.push(`behind origin/main by docs-only commits (${s.behindFiles.length} file(s): ${s.behindFiles.slice(0, 3).join(" · ")}${s.behindFiles.length > 3 ? " …" : ""}) — no merge needed`);
+    return [];
+  }
   if (!s.containsMain) return [`${s.branch} does not contain origin/main — merge origin/main first (skill round-open step 2)`];
   return [];
 }
@@ -229,6 +239,8 @@ function realState(base, head = "HEAD", cwd = ROOT) {
     branch,
     head: tryGit(["rev-parse", head], { cwd }),
     containsMain: spawnSync("git", ["merge-base", "--is-ancestor", base, head], { cwd }).status === 0,
+    // files main changed since this branch forked (three dots = from the merge base to base)
+    behindFiles: (tryGit(["diff", "--name-only", "--no-renames", `${head}...${base}`], { cwd }) || "").split(/\r?\n/).filter(Boolean),
     remoteHead: branch ? tryGit(["rev-parse", "--verify", "--quiet", `origin/${branch}`], { cwd }) : null,
     dirty: (tryGit(["status", "--porcelain"], { cwd }) || "").split("\n").filter(Boolean).map((l) => l.slice(3)),
     hooksPath: tryGit(["config", "core.hooksPath"], { cwd }) || "",
@@ -262,7 +274,7 @@ function selfTest() {
     files: ["scripts/x.js", "src/components/Foo.tsx"],
     added: { "src/components/Foo.tsx": [{ n: 3, text: 'import { brandName } from "@/data/brands";' }, { n: 4, text: 'const label = "พอดี พอตใช้แล้วทิ้ง";' }] },
     content: { "src/components/Foo.tsx": '"use client";\n\nimport { brandName } from "@/data/brands";\nconst label = "พอดี พอตใช้แล้วทิ้ง";\n' },
-    roundText: "", fullStamp: true, rawHits: [], words, allows: [], notes: [],
+    roundText: "", fullStamp: true, rawHits: [], behindFiles: [], words, allows: [], notes: [],
   };
   const fails = (name, patch) => run({ ...clean, ...patch, notes: [] }, [name]).length > 0;
   console.log("## gate checks — a clean branch passes, each planted example fails");
@@ -272,6 +284,10 @@ function selfTest() {
   ok(fails("branch", { branch: "main" }), "branch: on main (L6)");
   ok(fails("branch", { branch: "" }), "branch: detached HEAD");
   ok(fails("branch", { containsMain: false }), "branch: behind origin/main");
+  ok(!fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", ".claude/LESSONS.md"] }), "branch: behind main by docs-only commits passes (10/11)");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", "src/app/page.tsx"] }), "branch: behind main by a src change still fails");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/THAI_STYLE.md"] }), "branch: behind main by THAI_STYLE.md still fails (words row reads it)");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md"], files: ["src/lib/thai-typography.ts"] }), "branch: docs-only lag but the PR writes a locked file still fails (locked row reads §16 + round file)");
   ok(fails("tree", { dirty: ["src/a.ts"] }), "tree: uncommitted file");
   ok(fails("pushed", { remoteHead: "b".repeat(40) }), "pushed: HEAD not on GitHub");
   ok(fails("hooks", { hooksPath: "nul" }), "hooks: core.hooksPath off (15/10 incident)");
