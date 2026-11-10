@@ -7,6 +7,26 @@ import { cn } from "@/lib/utils";
 import { GOLD } from "./account-ui";
 import s from "./member-card.module.css";
 
+/**
+ * Thai sentence that may break only at its own spaces (between phrases): Chrome's dictionary break split "ที่|นี่" and, with
+ * text-wrap: balance, "บัตร|สมาชิก" at 390 (measured 10/11 on the test server). Each phrase is short enough for a 320 px
+ * screen (widest 227 px at 13-15 px). en/zh render as they are — zh has no spaces, one chunk would run off the screen.
+ */
+function Phrases({ text, locale }: { text: string; locale: "th" | "en" | "zh" }) {
+  if (locale !== "th") return <>{text}</>;
+  const parts = text.split(" ");
+  return (
+    <>
+      {parts.map((w, i) => (
+        <span key={i} className="whitespace-nowrap">
+          {w}
+          {i < parts.length - 1 ? " " : ""}
+        </span>
+      ))}
+    </>
+  );
+}
+
 /** "ต.ค. 2569" — the month the account was made, in the visitor's language (members.created_at is UTC). */
 function memberSinceLabel(iso: string, locale: "th" | "en" | "zh"): string {
   const d = new Date(iso);
@@ -26,8 +46,12 @@ export function MemberCard({ tier, count, memberSince, firstCardAt }: { tier: Me
   if (!tier) {
     return (
       <div className="rounded-[20px] border border-white/[0.07] p-[22px]">
-        <p className="text-[15px] text-foreground">{t.tierComing.replace("{count}", String(firstCardAt))}</p>
-        <p className="mt-1.5 text-[13px] text-foreground-muted">{t.tierCountNote}</p>
+        <p className="text-[15px] text-foreground">
+          <Phrases text={t.tierComing.replace("{count}", String(firstCardAt))} locale={locale} />
+        </p>
+        <p className="mt-1.5 text-[13px] text-foreground-muted">
+          <Phrases text={t.tierCountNote} locale={locale} />
+        </p>
       </div>
     );
   }
@@ -78,7 +102,9 @@ export function MemberCard({ tier, count, memberSince, firstCardAt }: { tier: Me
           </span>
         </div>
       </div>
-      <p className="mt-2 text-xs text-foreground-dim">{t.tierCountNote}</p>
+      <p className="mt-2 text-xs text-foreground-dim">
+        <Phrases text={t.tierCountNote} locale={locale} />
+      </p>
     </div>
   );
 }
