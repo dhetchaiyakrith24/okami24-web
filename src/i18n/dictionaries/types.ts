@@ -744,6 +744,26 @@ export interface Dictionary {
     linkProducts: string;
     linkProductsSub: string;
     linkContact: string;
+    /** Moon cards (owner 10/11, draft v8 — src/lib/members/tiers.ts): the three tier names. */
+    tierCrescent: string;
+    tierHalf: string;
+    tierFull: string;
+    /** Screen-reader name of the card. */
+    tierCardLabel: string;
+    /** "{date}" = month + year the account was made. */
+    memberSince: string;
+    /** The counted-order line on the card; "{count}" = the number, drawn bold. */
+    ordersCounted: string;
+    /** Under the card: which orders count. */
+    tierCountNote: string;
+    /** Below the first card; "{count}" = orders the first card needs. */
+    tierComing: string;
+    /** The full-moon room (10+). "{n}" = picture number. */
+    roomTitle: string;
+    roomSource: string;
+    roomHint: string;
+    roomOpen: string;
+    roomClose: string;
     signOut: string;
   };
   orderStatus: {
