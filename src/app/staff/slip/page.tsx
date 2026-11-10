@@ -40,7 +40,7 @@ export default async function StaffSlipPage({ searchParams }: { searchParams: Pr
         <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">ตรวจสลิปโอนเงิน</h1>
         <p className="text-sm leading-relaxed text-foreground-muted">
           อัปโหลดรูปสลิปจากลูกค้า แล้วดูผลยืนยันจากธนาคาร <span className="whitespace-nowrap">ทั้งยอดเงิน</span> เวลาโอน และบัญชีผู้รับ
-          · สลิปของออเดอร์เว็บ ระบบตรวจให้แล้วในหน้าออเดอร์
+          · สลิปของออเดอร์เว็บ ระบบตรวจให้ตอนลูกค้าแนบ ดูผลในหน้าออเดอร์ (ขึ้น ⏳ สลิปยังไม่ได้ตรวจ = เช็คยอดเองในแอปธนาคาร)
         </p>
         {/* Designer 28/10: someone who came here for a web order's slip finds its list in one tap. */}
         <Link href="/staff/orders?f=slip" className="w-fit text-sm font-semibold text-foreground hover:underline">
