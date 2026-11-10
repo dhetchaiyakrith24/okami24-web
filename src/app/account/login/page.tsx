@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getMember } from "@/lib/members/session";
 import { enabledMemberProviders } from "@/lib/members/providers";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { AccountLoginView } from "@/components/account/AccountLoginView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { memberSerif } from "@/components/account/member-font";
@@ -23,7 +23,7 @@ export default async function AccountLoginPage({ searchParams }: { searchParams:
       <AccountLoginView
         providers={enabledMemberProviders()}
         showError={error !== undefined}
-        orderingEnabled={ORDERING_ENABLED}
+        orderingEnabled={orderingOpen()}
         next={next ?? null}
       />
     </div>

@@ -11,13 +11,18 @@ import { ALL_OPEN, parseSwitches, type ShopSwitches } from "@/lib/commerce/shop-
 
 const FILE = "shop-switches.json";
 const TTL_MS = 2_000;
-let cache: { at: number; value: ShopSwitches } | null = null;
+// On globalThis, not a module `let`: Next bundles routes and pages separately, each with its own copy of a module — the owner's
+// action updated its copy while a page re-rendered from another, up to 2 s old, and that render stood (T2-04, as live.ts T2-05).
+type Cache = { at: number; value: ShopSwitches } | null;
+const shared = globalThis as typeof globalThis & { __okami24Switches?: { cache: Cache } };
+const store = (shared.__okami24Switches ??= { cache: null });
 
 const filePath = () => path.join(dataDir(), FILE);
 
 export function readSwitches(): ShopSwitches {
   // `next build` prerenders on a machine with no data disk.
   if (process.env.NEXT_PHASE === "phase-production-build") return ALL_OPEN;
+  const cache = store.cache;
   if (cache && Date.now() - cache.at < TTL_MS) return cache.value;
   let value = cache?.value ?? ALL_OPEN;
   try {
@@ -25,7 +30,7 @@ export function readSwitches(): ShopSwitches {
   } catch (err) {
     console.error(`[switches] read failed — keeping the last answer: ${err instanceof Error ? err.message : String(err)}`);
   }
-  cache = { at: Date.now(), value };
+  store.cache = { at: Date.now(), value };
   return value;
 }
 
@@ -35,5 +40,5 @@ export function writeSwitches(next: ShopSwitches): void {
   const temp = `${filePath()}.${process.pid}.${Date.now()}.tmp`;
   fs.writeFileSync(temp, JSON.stringify(next));
   fs.renameSync(temp, filePath());
-  cache = { at: Date.now(), value: next };
+  store.cache = { at: Date.now(), value: next };
 }

@@ -1,12 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { FinderAnswers, FinderReasonKey } from "@/lib/finder";
+import type { FinderAnswers, FinderCatalog, FinderReasonKey } from "@/lib/finder";
 import { matchProducts, unscoredCatalogMatches } from "@/lib/finder";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
-import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -127,17 +126,18 @@ function localizeQuestion(question: Question<keyof FinderAnswers>, locale: strin
 }
 
 /** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
-export function FinderTool({ taglinesTh = {} }: { taglinesTh?: Record<string, string> }) {
+/** `catalog` = what the Finder ranks, built on the server (src/lib/finder-catalog.ts) — never the catalog modules here (T2-50). */
+export function FinderTool({ catalog, taglinesTh = {} }: { catalog: FinderCatalog; taglinesTh?: Record<string, string> }) {
   const { dict, locale } = useLocale();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
 
   const isComplete = step >= QUESTIONS.length;
   const stock = useLiveCardStock();
-  const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers, stock) : null), [isComplete, answers, stock]);
+  const results = useMemo(() => (isComplete ? matchProducts(catalog, answers as FinderAnswers, stock) : null), [catalog, isComplete, answers, stock]);
   // Real, purchasable ProductMaster devices the scored quiz structurally cannot rank — see
   // `unscoredCatalogMatches`. Shown separately and unranked rather than excluded or fake-scored.
-  const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(answers as FinderAnswers, stock) : []), [isComplete, answers, stock]);
+  const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(catalog, answers as FinderAnswers, stock) : []), [catalog, isComplete, answers, stock]);
 
   function selectAnswer(key: keyof FinderAnswers, value: FinderAnswers[keyof FinderAnswers]) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -199,10 +199,9 @@ export function FinderTool({ taglinesTh = {} }: { taglinesTh?: Record<string, st
             <h3 className="font-display text-lg font-semibold text-foreground">{dict.finder.alsoInCatalogTitle}</h3>
             <p className="mt-1 max-w-xl text-sm text-foreground-muted"><ThaiText>{dict.finder.scopeNote}</ThaiText></p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {unranked.map((item) => {
-                const published = getPublishedProduct(item.slug);
-                return published ? <PilotProductCard key={item.slug} product={published} /> : null;
-              })}
+              {unranked.map((published) => (
+                <PilotProductCard key={published.slug} product={published} />
+              ))}
             </div>
           </div>
         )}
