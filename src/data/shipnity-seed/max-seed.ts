@@ -4278,5 +4278,30 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "IQOS-ILUMA-ONE": {
+    "maxParentId": "IQOSHEET-17",
+    "name": "Iqos iluma one",
+    "operationalSellingPrice": 2900,
+    "children": [
+      {
+        "shipnityVariantId": "IQOSHEET-17-1",
+        "rawLabel": "Pebble Grey",
+        "sellingPrice": 2900,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "IQOSHEET-17-2",
+        "rawLabel": "Azure Blue",
+        "sellingPrice": 2900,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "IQOSHEET-17-5",
+        "rawLabel": "Bright",
+        "sellingPrice": 2900,
+        "inStock": false
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML","IQOS-ILUMA-ONE"];

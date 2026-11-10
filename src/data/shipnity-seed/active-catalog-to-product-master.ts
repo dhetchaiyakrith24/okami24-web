@@ -462,6 +462,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // original-ILUMA-ONE children (Pebble Grey -1 · Azure Blue -2, both out of stock in Shipnity Max) are a different model:
   // OTHER_MODEL_CHILDREN keeps them off this record; their own page is a later item (one Shipnity parent → one record).
   "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" (SKU G0000592) exact-matches ONLY the ORIGINAL ILUMA ONE\'s official 5-color lineup on iqos.com/my+/id (with confirmed negative-control 404s for Breeze Blue on that lineup); child "Breeze Blue" (SKU G0002077) exact-matches ONLY the NEWER ILUMA i ONE\'s official 6-color lineup on iqos.com/ph+/my (with confirmed negative-control 404s for Pebble Grey on that lineup) — independently corroborated by distinct PMI SKU codes and visibly different chassis renders. A genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
+  // C list 10/11 (owner list item 134 "ตามแนะนำ"): the "later item" above. Max-only records cut from the same Max parent IQOSHEET-17
+  // by exact child code (scripts/max-seed-gen.js childIds): the ORIGINAL ILUMA ONE (Pebble Grey -1 · Azure Blue -2 · Bright -5, ฿2,900)
+  // and its OASIS edition (-4, ฿3,200 — another price, so another record). Breeze Blue -3 stays on iqosheet-17 (ILUMA i ONE).
+  "IQOS-ILUMA-ONE": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" children Pebble Grey / Azure Blue / Bright — iqos.com/za ILUMA ONE kit page: "IQOS ILUMA ONE is available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss Green" (opened 10/11); BRIGHT = jp.iqos.com limited edition covering ILUMA PRIME / ILUMA / ILUMA ONE (Sept 2023)' },
 };
 
 // ===================================================================================
@@ -788,6 +792,12 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // The name is the card title already; a tagline that repeats it broke "ILUMA i | ONE" on the 1440 card (wordbreak scan).
     tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ พกใส่กระเป๋าได้",
     shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มสูบได้ 20 มวนติดกัน มีระบบ Autostart และ FlexPuff ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  // C list 10/11: the ORIGINAL ILUMA ONE + its OASIS edition. Facts = iqos.com/za ILUMA ONE kit page ("20 consecutive uses per charge" ·
+  // "up to 6 mins or 14 puffs" · "only with TEREA sticks") + jp.iqos.com's OASIS news (limited edition). No name in the tagline (as above).
+  "IQOS-ILUMA-ONE": {
+    tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน",
+    shortDescription: "IQOS ILUMA ONE ชาร์จเต็มสูบได้ 20 มวนติดกัน แต่ละมวนสูบได้นานสุด 6 นาทีหรือ 14 พัฟ ใช้กับบุหรี่ TEREA เท่านั้น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -2105,6 +2115,16 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html", "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html"],
   },
+  // C list 10/11: the original ILUMA ONE kit page (iqos.com/za, opened 10/11): "Enjoy 20 consecutive uses per charge" · "lasts up to 6 mins
+  // or 14 puffs, whichever comes first" · "designed to be used only with TEREA sticks". OASIS is an edition of the same ILUMA ONE device.
+  "IQOS-ILUMA-ONE": {
+    specifications: [
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวนติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "session-time", label: "เวลาสูบต่อมวน", value: "สูงสุด 6 นาทีหรือ 14 พัฟ", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    ],
+    sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html"],
+  },
   "IQOSHEET-18": {
     specifications: [
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
@@ -3028,15 +3048,23 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "spring-green", label: "Spring Green", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
     { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
   ],
+  // C list 10/11: the original ILUMA ONE — iqos.com/za: "available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss
+  // Green". Pebble Grey and Azure Blue are Shipnity children (IQOSHEET-17-1 / -2); Bright is the Sept 2023 limited edition (IQOSHEET-17-5).
+  "IQOS-ILUMA-ONE": [
+    { code: "pebble-beige", label: "Pebble Beige", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    { code: "sunset-red", label: "Sunset Red", sourceUrl: "https://www.iqos.com/gb/en/shop/iluma-one-kit-sunset-red.html" },
+    { code: "moss-green", label: "Moss Green", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+  ],
 };
 
 /**
  * A Shipnity child that is a DIFFERENT real model from the record its parent projects to (round list19, 17/10). It is kept
  * off that record — reported in `excludedChildren`, never shown as one of its options — because one Shipnity parent
- * projects to one record (`projectParent`). Key = Shipnity variant id; value = why.
+ * projects to one record (`projectParent`). Key = "<record id lower-cased>:<Shipnity variant id>" (C list 10/11: the same Max child
+ * is a real option of another record cut from the same Max parent — IQOSHEET-17-1 belongs on iqos-iluma-one); value = why.
  */
 const OTHER_MODEL_CHILDREN: Record<string, string> = {
-  "IQOSHEET-17-1": "Pebble Grey is a colour of the original IQOS ILUMA ONE (SKU G0000592), not of the ILUMA i ONE this record is — its own page is a later item",
+  "iqosheet-17:IQOSHEET-17-1": "Pebble Grey is a colour of the original IQOS ILUMA ONE (SKU G0000592), not of the ILUMA i ONE this record is — it is an option of iqos-iluma-one",
 };
 
 // Tier-1 disposable growth mission (2026-09-03) — real OKami24-channel review videos, each
@@ -3070,7 +3098,7 @@ export function buildVariantStructure(
 ): VariantStructureResult {
   const excludedChildren: ExcludedChild[] = [];
   const variantChildren = children.filter((c) => {
-    const otherModel = OTHER_MODEL_CHILDREN[c.shipnityVariantId];
+    const otherModel = OTHER_MODEL_CHILDREN[`${parentInternalId}:${c.shipnityVariantId}`];
     if (otherModel) {
       excludedChildren.push({ shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, role: c.childRole, reason: otherModel });
       return false;
@@ -3246,6 +3274,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
+  "IQOS-ILUMA-ONE": { name: "IQOS ILUMA ONE", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
