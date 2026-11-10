@@ -90,7 +90,8 @@ export interface PendingSignIn {
   verifier: string;
   returnTo: string;
   /** "owner" = the sign-in of /staff/owner (src/lib/owner/auth.ts): no member row, compared with the owner's address. */
-  purpose: "member" | "owner";
+  /** "staff" = the team's sign-in to /staff (src/lib/staff/auth.ts): no member row, compared with the admins' accounts. */
+  purpose: "member" | "owner" | "staff";
 }
 
 export function beginSignIn(provider: MemberProvider, returnTo: string, purpose: PendingSignIn["purpose"] = "member"): { url: string; pending: PendingSignIn } | null {
@@ -109,8 +110,8 @@ export function beginSignIn(provider: MemberProvider, returnTo: string, purpose:
     response_type: "code",
     client_id: config.clientId,
     redirect_uri: callbackUrl(provider),
-    // Members: `openid profile` and no email (BSOT §11). Only the owner's own sign-in asks for the address it must match.
-    scope: purpose === "owner" ? "openid email" : "openid profile",
+    // Members: `openid profile` and no email (BSOT §11). Only the owner's and the team's sign-ins ask for the address they must match.
+    scope: purpose === "member" ? "openid profile" : "openid email",
     state: pending.state,
     nonce: pending.nonce,
     code_challenge: challenge,

@@ -292,6 +292,12 @@ answer: amount, date/time, receiver account (must be the account below), and whe
 checked. A **human still approves** every payment — the page never changes an order by itself. Access = **one shared
 staff password** (owner pick A); the page is not linked from the site, not indexed, not in the sitemap. The API key
 and the staff password live only in the host's secret settings, entered by the owner — never in git or chat.
+**Per-admin accounts (owner 2026-11-10, chat — "admin แต่ละคนมีบัญชีของตัวเอง … พี่เห็นว่าใครคีย์ออเดอร์ไหน ใครให้ส่วนลดอะไร
+ใครกดรับออเดอร์เว็บ"):** each admin signs in to /staff with **their own Google account**; the owner adds, renames and disables
+admins on /staff/owner/team (name + Google address, kept only in the site's database — never in git, env or logs). Every staff
+session names its person and the back office records who did what. The shared password above stays as a **fallback until
+every admin has signed in with Google; the owner then switches it off** on the same page. The owner's own Google sign-in also
+opens the admin view, recorded as "เจ้าของ". Code: `src/lib/staff/auth.ts` · `src/lib/staff/accounts.ts`.
 **Built (#347, 2026-10-07):** `/staff` (404 until the password is set) · a staff session lasts 12 hours · 5 wrong passwords
 from one address in 15 minutes (or 30 from anywhere) pause logins for 15 minutes · the page keeps, per checked slip, only the
 bank's transaction reference, amount, transfer time, the receiver verdict and when it was checked — no slip image, no names or
@@ -461,7 +467,7 @@ Do not collect unnecessary personal information.
 addresses, tracking, product interests.
 
 **Member sign-in — owner 2026-10-26 (queue Q4, main chat):** optional sign-in with **LINE and Google first** (no Facebook);
-**no member perks yet, and none shown on the sign-up page**; staff keep their own password login; designs = drafts v2
+**no member perks yet, and none shown on the sign-up page**; staff keep their own login (§9: Google per admin, owner 2026-11-10); designs = drafts v2
 ("พรีเมียม เรียบหรู"). Guest checkout above is unchanged — signing in is never required to buy, and checkout still asks for
 the phone. What is kept: the provider's user ID and display name only (no email, no picture, no tokens). The member page
 lists only orders placed while signed in (never orders matched by phone alone). The free-shipping-from-300 idea for members
