@@ -62,7 +62,7 @@ export const FAQ_COPY_TH: Record<string, FAQCopy> = {
   "marbo-vs-m-bar": {
     question: "Marbo กับ M Bar ต่างกันไหม",
     answer:
-      "เป็นของตระกูลเดียวกัน หลายร้านในไทยเรียก M Bar · M Switch และ Zero ว่า Marbo เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
+      "เป็นของตระกูลเดียวกัน หลายร้านในไทยเรียก M Bar · M Switch และ Zero ว่า Marbo เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ ส่วน Marbo 10K (เทียบแท้) ที่ร้านมีขาย เป็นสินค้าเทียบแท้ ไม่ใช่สินค้าของ SALTHUB",
   },
   "nicotine-strength-meaning": {
     question: "นิโคติน “30mg” หมายถึงอะไร",
@@ -133,7 +133,7 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
   },
   "marbo-vs-m-bar": {
     question: "Marbo 和 M Bar 是同一个东西吗？",
-    answer: "是同一个产品线的两种叫法：泰国不少店家把 M Bar、M Switch 和 Zero 直接标成 Marbo。Salthub 官网 salthub.com 页脚也放着 Marbo 的标志。",
+    answer: "是同一个产品线的两种叫法：泰国不少店家把 M Bar、M Switch 和 Zero 直接标成 Marbo。Salthub 官网 salthub.com 页脚也放着 Marbo 的标志。本店另售的 Marbo 10K（仿款）是仿款，非 SALTHUB 出品。",
   },
   "nicotine-strength-meaning": {
     question: "「30mg」这样的尼古丁浓度代表什么？",
