@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 10/11 ~08:45 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
+Updated 11/11 ~05:00 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
 ทำและจัดการได้เลย" + "รันเลยยาวๆ จบแล้วก็สานงานค้างอื่นๆต่อได้ พรุ่งนี้พี่ตรวจทีเดียว" — compact at 80–90 % after writing this block + the status page.
 Children report to the main chat by SendMessage. Children notes folder (this PC, outside git):
 `C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_de553e7b-d4f3-4c9e-9e80-36e56b795348\`.
@@ -30,36 +30,30 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
 1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
-2 OPEN WORK UPDATE (11/11 ~01:45 — read before the 01:15 lines below; the owner compacts the main chat now):
-  MERGED since 01:15 [ตรวจแล้ว] curl: #1389 stock refresh · #1393 CSP (no CSP error on the live home; NO beacon request seen → the
-    owner likely has to switch on Web Analytics in his Cloudflare dashboard — offer to walk him through it). #1392 T2-50 checker PASS
-    b9fb8604, merging in the background → check it merged + curl counts of Higgsfield/GPT Image/IMAGE_SPEC on / /products /favorites
-    /finder = 0.
-  #1394 honest copy: checker FAIL 16655230 — /privacy top summary row still says "ยืนยันตัวตน … แค่ 4 อย่างนี้" (th/en/zh) → look-0911
-    fixing to 3 uses; checker re-reads only that row. Then look-0911 chain: #1401 · #1402 · #1403 · #1404 (show the owner the /warranty
-    claim-paragraph touch before merge).
-  catalog-pics: owner PASSED the 3 new AI pictures ("ผ่านทั้ง 3 รูป") and set a quality bar for EVERY product picture (11/11 ~01:30):
-    true to the maker · no white edge · sharp · real reflections, shadow and light · edges not over-processed · nice-to-have a
-    glass-floor reflection under the base (only if IMAGE_SPEC allows and it matches the whole catalog — else ask the owner, it is a
-    site-wide decision). A changed picture → new comparison to the owner before merge. Then #1400 + #1398 → gate → checker → merge.
-    Also: #1398 member page has NO perks badge (BSOT) · coil 5-packs go live next · Insta 15000 hidden, rename first · upscale denied.
-  dashboard-c: #1406 draft, main merged, verify --full re-running → gate → checker (designer passed the 2 owner changes).
-2 OPEN WORK (11/11 ~01:15, main chat at 78 % context — read this first after a compact):
-  FLAKE FIX (own small PR, anyone): `src/lib/staff/line-orders-db-contract-test.ts` dates slips `Date.now() - 1h` and reads
-    salesDays()[0] as today → 2 checks fail 00:00–01:00 Bangkok on every PR. Date the slips at noon Bangkok "today".
-  look-0911 local_569a83ec: #1392 T2-50 strip internal fields (fixed after checker FAIL: client chunks; head 191177d6 + main → re-run
-    checker on its new GATE sha) · #1394 honest copy · #1401 T2-04 wording follows cart switch (FULL) · #1402 T2-08 clone off home +
-    noindex · #1403 T2-24 DNS line rewrite · #1404 T2-09 one refund table (touches the voice-A claim paragraph on /warranty → SHOW THE
-    OWNER that change before merge, 13.3 #5). Then THEME (60/30/10 orange/black, yellow tiny, smoke −15 %; comparison image to the
-    owner first) → HOME HERO ROTATION (4 slots, ~16 in-stock models, every 4 days).
-  dashboard-c local_39aadd8e: PR (c) back-office home from `notes/pr-c-handover-1111.md` + `pr-c-drafts/`; owner PASSED v2 with
-    "smooth-fade the colour blobs" + "bigger key elements"; real data only. Its 3412 proof server blocks every verify — stop between shots.
-  DONE/STOPPED: staff-accounts (handover written) · orders-audit-2 · t2-06-notme (owner 11/11: "ไม่ต้องทำ" the not-me button — never
-    raise again; discard local commit aa095111 in `.claude/worktrees/sweet-swartz-08568d`) · staging-site (tag archive/staging-mode-1011)
-    · line-orders-2/-3 → archive later.
-  OWNER RULINGS 10–11/11 (never ask again): Test 2 set in BSOT/§16 above · no Cloudflare sentence on /privacy · FUTURE: owner wants
-    cookies to collect visitor data if SEO is not hurt → plan later (PDPA consent banner, no content-blocking banner, light script).
-  HOUSE: `_incoming/house-20261110/todo.md` + `_incoming/wt-testsite-base` + sweet-swartz worktree.
+2 OPEN WORK (11/11 ~05:00, owner asleep: "จัดการงานต่อได้เลยนะพรุ่งนี้พี่ตรวจทีเดียว"):
+  LIVE 11/11 night [ตรวจแล้ว] curl: #1392 T2-50 internal strings 0 · #1406 admin home v2 · #1401 T2-04 wording follows the cart switch
+    (footer "สั่งซื้อและสอบถามทาง LINE" live) · #1400 ILUMA ONE ฿3,190 / OASIS ฿3,490 / Pop Up base ฿219 · #1408 T2-03+T2-15 saved
+    addresses for LINE/Google members only (owner "อนุมัติ" the 7-step plan; migration 0030) · #1398 member moon cards · #1394 honest copy.
+  TEST 2 LEDGER = `_incoming/house-20261110/t2-ledger.md` (59 rows) + report text `t2-report.txt` (outside git). Not started ~40,
+    ordered by severity there. Owner's rulings: T2-06 no · T2-30 no notify (owner "ไม่แจ้งเตือนอะไร") · T2-02 leave as is.
+  CHILDREN:
+    look-0911 local_569a83ec: chain #1402 T2-08 (now BIG: page-substance LOOKALIKES skip) → #1403 T2-24 → #1404 T2-09 (SHOW THE
+      OWNER the /warranty claim-paragraph change before merge) → one PR for #1401 follow-ups (first view after a boot can serve
+      cart-on HTML; JSON-LD availability) → THEME (comparison to the owner first) → HOME HERO ROTATION.
+    catalog-pics local_ae4a3786: #1409 coil 5-packs ฿379/฿439 (new stock file with Set-Coil codes) → T2-13 no stock number = not
+      for sale (before the cart reopens) → T2-31 "ใช้กับเครื่อง" on pod heads → T2-32 Thai flavour names + search synonyms.
+    dashboard-c local_39aadd8e: T2-16 staff rights from the session not the `okami24_team` cookie → T2-52 /staff 401 + every
+      Server Action checks the session → T2-14 shared-password limit + log · + #1408 test add-on (foreign id UPDATE/DELETE changes=0).
+  MERGE: always merge from a DETACHED tree at the checked sha (`git worktree add --detach _incoming/wt-merge-N <sha>`), because
+    children start their next job in the same worktree right after --done (11/11: #1408 and #1398 merge1.sh refused "head != tree").
+  CHECKER PROOF of verify --full = the clean-pass stamp `$(git rev-parse --git-common-dir)/verify-full/<sha>` (verify-catalog writes
+    it only on a full clean pass of a clean tree) — name it in every checker brief (11/11: 2 proof-only FAILs).
+  FLAKE FIX (own small PR): `line-orders-db-contract-test.ts` dates slips Date.now()-1h → fails 00:00–01:00 Bangkok; date at noon.
+  OWNER TOMORROW: look at the admin home + member page live · Cloudflare Web Analytics switch (beacon not seen) · switch off the
+    shared staff password once every admin has a Google account · perks A/B/C · /warranty claim paragraph (#1404).
+  DONE/STOPPED children: staff-accounts · orders-audit-2 · t2-06-notme (never raise the not-me button again; discard aa095111 in
+    sweet-swartz) · staging-site · line-orders-2/-3 → archive. HOUSE: `_incoming/house-20261110/todo.md` + wt-testsite-base.
+  OWNER RULINGS 10–11/11 (never ask again): no Cloudflare sentence on /privacy · FUTURE cookies plan if SEO is not hurt.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
   Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live. Left: request indexing for /products/disposables
