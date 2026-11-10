@@ -10,7 +10,7 @@ import type { FeedHealth } from "@/lib/woo/watch-rules";
 import { greeting, oldestPerStep, priorityQueue, STEP_SINCE, stepAge } from "@/lib/staff/admin-home-rules";
 import { staffLogoutAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { PendingButton } from "@/app/staff/_components/PendingButton";
-import { formatBaht, formatSatang } from "@/app/staff/_components/format";
+import { formatSatang } from "@/app/staff/_components/format";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { OwnerViewPill } from "@/app/staff/_components/OwnerViewPill";
 
@@ -53,14 +53,18 @@ export interface AdminHomeProps {
   dateLabel: string;
 }
 
-function Age({ late, children, className = "" }: { late: boolean; children: React.ReactNode; className?: string }) {
+/** A wait line: red text + red dot when late (a day or more), the yellow dot for a slip waiting; plain text otherwise. */
+function Age({ late, wait = false, children, className = "" }: { late: boolean; wait?: boolean; children: React.ReactNode; className?: string }) {
   return (
-    <span className={`inline-flex items-center gap-1.5 ${late ? "ah-late" : "text-[#ebebeb]/70"} ${className}`}>
-      {late && <span aria-hidden className="ah-dot ah-dot-late" />}
+    <span className={`block ${late ? "ah-late" : "text-[#ebebeb]/70"} ${className}`}>
+      {(late || wait) && <span aria-hidden className={`ah-dot mr-1.5 align-[0.08em] ${late ? "ah-dot-late" : "ah-dot-wait"}`} />}
       {children}
     </span>
   );
 }
+
+/** Keeps "45 นาที" / "3 วัน" on one line (a number never wraps away from its unit). */
+const Keep = ({ children }: { children: React.ReactNode }) => <span className="whitespace-nowrap">{children}</span>;
 
 function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; shop: AdminHomeProps["shop"]; wideOnly: boolean }) {
   const job = jobOf(o.status);
@@ -73,10 +77,12 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
   const quiet = "ah-quiet min-h-[3.25rem] px-5 text-[0.95rem] lg:min-h-12";
 
   const status = (
-    <Age late={age.late} className="text-sm lg:text-[0.95rem]">
-      {!age.late && job === "slip" && <span aria-hidden className="ah-dot ah-dot-wait" />}
+    <Age late={age.late} wait={job === "slip"} className="text-sm leading-relaxed lg:text-[0.95rem]">
       {STAFF_JOBS[job].label}
-      {job === "slip" && (o.slipVerdict === "pass" ? " · สลิปยอดตรง" : " · สลิปต้องดูเอง")} · {STEP_SINCE[job]} {age.text}
+      {job === "slip" && (o.slipVerdict === "pass" ? " · สลิปยอดตรง" : " · สลิปต้องดูเอง")} ·{" "}
+      <Keep>
+        {STEP_SINCE[job]} {age.text}
+      </Keep>
       {job === "tracking" && carrier ? ` · ${CARRIERS[carrier].name.th}` : ""}
     </Age>
   );
@@ -112,7 +118,7 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
       </form>
     ) : (
       <Link href={href} className={quiet}>
-        {o.channel === "line" ? "เปิดออเดอร์ (ออเดอร์ LINE คีย์ใน Shipnity เอง)" : "เปิดออเดอร์ คัดลอกรายการส่งคลัง"}
+        {o.channel === "line" ? "เปิดออเดอร์ · คีย์ใน Shipnity เอง" : "เปิดออเดอร์ · คัดลอกรายการส่งคลัง"}
       </Link>
     );
   } else {
@@ -121,7 +127,7 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
         <input type="hidden" name="orderNumber" value={o.orderNumber} />
         <input type="hidden" name="action" value="ship" />
         <input type="hidden" name="from" value="home" />
-        <label className="flex min-w-0 flex-[1_1_9rem] lg:w-48 lg:flex-none">
+        <label className="flex min-w-0 flex-[1_1_9rem] lg:w-44 lg:flex-none">
           <span className="sr-only">เลขพัสดุ {name}</span>
           <input
             name="tracking"
@@ -154,23 +160,30 @@ function QueueRow({ o, now, shop, wideOnly }: { o: StaffOrderRow; now: number; s
   }
 
   return (
-    <li className={`${age.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col gap-3 p-3.5 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-5 lg:px-4 lg:py-3 ${wideOnly ? "max-lg:hidden" : ""}`}>
-      <Link href={href} className="flex min-w-0 flex-col gap-1 hover:opacity-90 lg:flex-1 lg:flex-row lg:items-center lg:gap-5">
+    // Phones: a card (number + price, the wait line, the button). Wide screens: one row on a grid — number · wait · who ·
+    // price · button — the link's parts placed straight onto the row's columns (display: contents keeps them in the link).
+    <li
+      className={`${age.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col gap-3 p-3.5 lg:grid lg:grid-cols-[6.5rem_minmax(0,1fr)_5.5rem_auto] lg:items-center lg:gap-x-4 lg:px-4 lg:py-3 ${wideOnly ? "max-lg:hidden" : ""}`}
+    >
+      <Link href={href} className="flex min-w-0 flex-col gap-1 hover:opacity-90 lg:contents">
         <span className="flex items-baseline justify-between gap-3 lg:contents">
-          <span className="min-w-0 truncate text-[1.06rem] font-bold lg:w-24 lg:flex-none">
+          <span className="min-w-0 truncate text-[1.06rem] font-bold lg:col-start-1 lg:row-start-1">
             {name}
             <span className="ml-2 text-sm font-normal text-[#ebebeb]/65 lg:hidden">
               {o.itemCount} ชิ้น · {o.channel === "line" ? "LINE" : "เว็บ"}
             </span>
           </span>
-          <span className="shrink-0 text-[1.06rem] font-semibold tabular-nums lg:order-last lg:w-24 lg:text-right">{formatBaht(o.total)}</span>
+          <span className="shrink-0 text-[1.06rem] font-semibold tabular-nums lg:col-start-3 lg:row-start-1 lg:text-right">{formatSatang(o.total * 100)}</span>
         </span>
-        <span className="lg:min-w-0 lg:flex-1">{status}</span>
-        <span className="hidden w-28 flex-none truncate text-sm text-[#ebebeb]/62 lg:inline">
-          {o.recipientName} · {o.channel === "line" ? "LINE" : "เว็บ"}
+        <span className="flex min-w-0 flex-col gap-0.5 lg:col-start-2 lg:row-start-1">
+          {status}
+          <span className="hidden truncate text-sm text-[#ebebeb]/55 lg:block">
+            {o.recipientName} · {o.itemCount} ชิ้น · {o.channel === "line" ? "LINE" : "เว็บ"}
+          </span>
         </span>
       </Link>
-      <div className="lg:flex-none">{action}</div>
+      {/* The parcel form with the carrier picker is too wide for the row's last column: it takes its own line. */}
+      <div className={job === "tracking" && !carrier ? "lg:col-span-full lg:row-start-2 lg:justify-self-end" : "lg:col-start-4 lg:row-start-1 lg:justify-self-end"}>{action}</div>
     </li>
   );
 }
@@ -249,7 +262,7 @@ export function AdminHome(p: AdminHomeProps) {
       )}
 
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-5">
-        <div className="flex min-w-0 flex-col gap-4 lg:flex-[1.9] lg:gap-5">
+        <div className="flex min-w-0 flex-col gap-4 lg:flex-1 lg:gap-5">
           <section aria-label="งานรอทำ" className="ah-glass ah-glass-hero flex flex-col gap-4 p-[1.15rem] lg:flex-row lg:items-stretch lg:gap-5 lg:p-6">
             <div className="flex items-end justify-between gap-3 lg:w-56 lg:flex-none lg:flex-col lg:items-start lg:justify-between">
               <div className="flex flex-col gap-1">
@@ -274,14 +287,15 @@ export function AdminHome(p: AdminHomeProps) {
                 const age = first ? stepAge(first, now) : null;
                 return (
                   <Link key={j} href={STEP_HREF(j)} className={`${age?.late ? "ah-well ah-well-late" : "ah-well"} flex flex-col justify-between gap-1.5 p-3.5 hover:brightness-125 lg:gap-2 lg:p-4`}>
-                    <span className="text-[0.82rem] leading-snug text-[#ebebeb]/75 lg:text-[0.95rem]">{STAFF_JOBS[j].label}</span>
+                    {/* Two lines kept for the label on a phone, so the three counts sit on one line. */}
+                    <span className="min-h-[2.6em] text-[0.82rem] leading-snug text-[#ebebeb]/75 lg:min-h-0 lg:text-[0.95rem]">{STAFF_JOBS[j].label}</span>
                     <span className={`font-display text-[2.5rem] font-bold leading-none tabular-nums lg:text-[4rem] ${counts[j] > 0 ? "" : "text-[#ebebeb]/35"}`}>{counts[j]}</span>
                     {age ? (
-                      <Age late={age.late} className="text-[0.8rem] lg:text-[0.9rem]">
+                      <Age late={age.late} className="whitespace-nowrap text-[0.76rem] lg:text-[0.9rem]">
                         เก่าสุด {age.text}
                       </Age>
                     ) : (
-                      <span className="text-[0.8rem] text-[#ebebeb]/45 lg:text-[0.9rem]">ไม่มีค้าง</span>
+                      <span className="text-[0.76rem] text-[#ebebeb]/45 lg:text-[0.9rem]">ไม่มีค้าง</span>
                     )}
                   </Link>
                 );
@@ -327,7 +341,7 @@ export function AdminHome(p: AdminHomeProps) {
           </section>
         </div>
 
-        <div className="flex min-w-0 flex-col gap-4 lg:flex-1 lg:gap-5">
+        <div className="flex min-w-0 flex-col gap-4 lg:w-[22rem] lg:flex-none lg:gap-5">
           <nav aria-label="ทางลัด" className="grid grid-cols-2 gap-2 lg:rounded-[1.6rem] lg:border lg:border-white/12 lg:bg-white/[0.055] lg:p-[1.15rem]">
             <Link href="/staff/line-order" className="ah-press ah-press-glow col-span-2 min-h-[3.6rem] text-[1.06rem]">
               + คีย์ออเดอร์ LINE

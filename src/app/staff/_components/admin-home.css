@@ -6,7 +6,8 @@
  * The glass is painted, not blurred (as dashboard.css): backdrop-filter on every card is slow on a phone, and the light
  * behind is already soft, so a translucent fill shows it through just the same.
  */
-.ah-page {
+/* The palette on :root, not on .ah-page: the owner's switch (OwnerViewPill) uses it on /staff/owner too. */
+:root {
   --ah-black: #0d0d0d;
   --ah-orange: #ed852c;
   --ah-orange-hi: #f4a35e;
@@ -15,6 +16,9 @@
   --ah-late: #ff8a6b;
   --ah-late-dot: #ff6a45;
   --ah-wait-dot: #f2c14e;
+}
+
+.ah-page {
   position: relative;
   isolation: isolate;
   overflow: clip;

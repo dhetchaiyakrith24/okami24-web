@@ -80,7 +80,7 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
   return (
     <div className="ah-page">
       <div aria-hidden className="ah-aura" />
-      <Container className="flex max-w-2xl flex-col pb-10 pt-4 lg:max-w-6xl lg:pt-6">
+      <Container className="flex max-w-2xl flex-col pb-10 pt-4 lg:max-w-[80rem] lg:pt-6">
         <StaffBar />
         <AdminHome
           actor={actor}
