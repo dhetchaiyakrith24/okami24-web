@@ -148,7 +148,7 @@ export function flavorThai(name: string): string | null {
 }
 
 function onePart(name: string): string | null {
-  const plain = name.toLowerCase().replace(/(ice|iced|icy)/g, " ").replace(/s+/g, " ").trim();
+  const plain = name.toLowerCase().replace(/\b(ice|iced|icy)\b/g, " ").replace(/\s+/g, " ").trim();
   if (VETO_NAMES.has(plain)) return null;
   const tokens = name
     .toLowerCase()
