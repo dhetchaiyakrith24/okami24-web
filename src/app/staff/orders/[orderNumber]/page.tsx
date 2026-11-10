@@ -41,6 +41,8 @@ import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
 import { auditForOrder } from "@/lib/staff/audit";
+import { handConfirmForOrder } from "@/lib/staff/hand-confirm";
+import { handConfirmLabel, pressedBy } from "@/lib/staff/hand-confirm-rules";
 import { auditLabel } from "@/lib/staff/audit-rules";
 
 /**
@@ -303,6 +305,8 @@ export default async function StaffOrderPage({
   const order = getStaffOrder(orderNumber);
   if (!order) notFound();
   const teamRows = auditForOrder(order.orderNumber);
+  // T2-01 (owner 10/11): the money was confirmed without a slip that passed the check — said here, never blocked.
+  const handConfirm = handConfirmForOrder(order.orderNumber);
 
   const from = isStaffJob(fromParam) || fromParam === "all" ? fromParam : "";
   const back =
@@ -364,6 +368,11 @@ export default async function StaffOrderPage({
           <span className="rounded-full border border-surface-border px-3 py-1 text-sm text-foreground-muted">
             ออเดอร์ LINE{order.keyedBy ? ` · คีย์โดย ${order.keyedBy}` : ""}
             {order.discount ? " · ราคาพิเศษ" : ""}
+          </span>
+        )}
+        {handConfirm && (
+          <span className="rounded-full border border-unverified/50 px-3 py-1 text-sm text-unverified">
+            {handConfirmLabel(handConfirm.kind)} · {pressedBy(handConfirm.by)}
           </span>
         )}
       </header>
