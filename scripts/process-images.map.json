@@ -15361,5 +15361,71 @@
   "fileName": "variant-menthol-xtra.webp",
   "note": "RELX's own store photo, relxnow.com/products/relx-pod-pro, used as it is, no AI, no mark (round popular models 08/11)",
   "minLong": 650
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
+  "slug": "iqos-iluma-one",
+  "role": "card",
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · card = Pebble Grey, the first warehouse colour (Max IQOSHEET-17-1)",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "pebble-grey",
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-beige.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "pebble-beige",
+  "note": "IQOS official kit render G0000590_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html - used as it is (new-products pictures 10/11)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-sunset-red.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "sunset-red",
+  "note": "IQOS official kit render G0000591_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html - used as it is (new-products pictures 10/11)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-moss-green.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "moss-green",
+  "note": "IQOS official kit render G0000593_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html - used as it is (new-products pictures 10/11)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-azure-blue.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "azure-blue",
+  "note": "IQOS official kit render G0000594_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html - used as it is (new-products pictures 10/11)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/coils/vinci-dw60-box.webp",
+  "slug": "voopoo-vinci-coil-5pack",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-dw60.png; render _incoming/coil3/out/c1-dw60-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-dw60.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "new-products pictures 10/11 - the live coil-1 DW60 option photo (box + coil, un-watermarked original from watermark-originals) laid on the 4:5 card canvas; no new picture",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/coils/pnpx-015.webp",
+  "slug": "voopoo-pnp-x-coil-5pack",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop coil photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/c92-015-A.png; keyed by flood (b17/floodkey.js T=6 so the black O-rings stay), rows cut at the brass base (y 1900), O-ring rows bridged (gapfill.js WIN=60 Q=0.9), holes refilled (holefill.js), floor shadow under the flange cleared outside the brass-ring span, largest blob kept - copies beside this source",
+   "reference": "maneevp.com VOOPOO PnP X 0.15Ω coil photo 1000 px (https://maneevp.com/product/voopoo-pnp-x-coil/) - _incoming/img-1610/masters/src/coil-92 (index masters/src/index.json); VOOPOO own PNP-X-*-NEW.png carry the AIGC marker (rejected)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/c92-dark.jpg - PnP X logo, etched 0.15Ω / 60-80W, cotton windows, O-rings, flange flat checked by eye against the shop photo"
+  },
+  "note": "new-products pictures 10/11 - the live coil-92 0.15Ω photo (un-watermarked original from watermark-originals) laid on the 4:5 card canvas; no new picture (box version unclear - option A)",
+  "fileName": "card.webp"
  }
 ]

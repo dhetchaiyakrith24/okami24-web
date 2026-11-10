@@ -1485,6 +1485,46 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html",
     },
   ],
+  // New-products pictures 10/11 (owner "ลงรูปลงของให้เรียบร้อย"): the original ILUMA ONE — IQOS's own kit render (iqos.com/za, 2048 px
+  // transparent PNG), used as it is; Pebble Grey = the first warehouse colour (Max IQOSHEET-17-1). Map: scripts/process-images.map.json.
+  "IQOS-ILUMA-ONE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqos-iluma-one/card.webp",
+      alt: "IQOS ILUMA ONE, Pebble Grey, official product render",
+      angle: "Official manufacturer render: iqos.com/za ILUMA ONE Pebble Grey kit page, gallery image 00 (SKU G0000592), fetched as a 2048 px transparent PNG; no edit beyond the card canvas (scripts/process-images.map.json).",
+      transparentBackground: true,
+      sourceName: "IQOS (official brand site)",
+      sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html",
+    },
+  ],
+  // New-products pictures 10/11: the coil boxes are the live coil-1 / coil-92 option photos (our own studio renders, aiRender in the map),
+  // laid on the 4:5 card canvas from the un-watermarked originals — no new picture.
+  "VOOPOO-VINCI-COIL-5PACK": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/voopoo-vinci-coil-5pack/card.webp",
+      alt: "VOOPOO PnP-DW60 0.6Ω coil box with one coil, studio photo",
+      angle: "Front, studio — the coil-1 DW60 option photo (round \"3 coil photos\" 08/10, OKami24 render of VOOPOO's own box + coil images) on the card canvas.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images",
+      sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    },
+  ],
+  "VOOPOO-PNP-X-COIL-5PACK": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/voopoo-pnp-x-coil-5pack/card.webp",
+      alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
+      angle: "Front, upright — the coil-92 0.15Ω photo (round list19 19/10, OKami24 render of a shop photo of the real coil) on the card canvas.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil",
+      sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/",
+    },
+  ],
   "IQOSHEET-17": [
     {
       kind: "official-photo",
@@ -2853,6 +2893,22 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "iqosheet-18-verified-bold-ruby": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/bold-ruby-wm5.webp", alt: "IQOS ILUMA i, Bold Ruby", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS Japan's own Bold Ruby photo", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   },
   // Round list19 (17/10): ILUMA i ONE — each colour = that colour's own iqos.com/ph kit page og:image (2048 px transparent PNG).
+  // New-products pictures 10/11: ILUMA ONE colours = IQOS's own kit renders (iqos.com/za, same pose and scale, measured).
+  "IQOS-ILUMA-ONE": {
+    "IQOSHEET-17-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-pebble-grey.webp", alt: "IQOS ILUMA ONE, Pebble Grey", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html" },
+    "IQOSHEET-17-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-azure-blue.webp", alt: "IQOS ILUMA ONE, Azure Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html" },
+    "iqos-iluma-one-verified-pebble-beige": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-pebble-beige.webp", alt: "IQOS ILUMA ONE, Pebble Beige", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html" },
+    "iqos-iluma-one-verified-sunset-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-sunset-red.webp", alt: "IQOS ILUMA ONE, Sunset Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html" },
+    "iqos-iluma-one-verified-moss-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-moss-green.webp", alt: "IQOS ILUMA ONE, Moss Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+  },
+  // New-products pictures 10/11: each box = the same box photo the loose-coil page shows for that coil (coil-1 options -14 · -1).
+  "VOOPOO-VINCI-COIL-5PACK": {
+    "Set-Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-14-wm5.webp", alt: "VOOPOO PnP-DW60 coil 0.6Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
+    "Set-Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-vm6-wm5.webp", alt: "VOOPOO PnP-VM6 coil 0.15Ω (black ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+  },
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    "Set-Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm5.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+  },
   "IQOSHEET-17": {
     "IQOSHEET-17-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-breeze-blue.webp", alt: "IQOS ILUMA i ONE, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
     "iqosheet-17-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-digital-violet.webp", alt: "IQOS ILUMA i ONE, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
