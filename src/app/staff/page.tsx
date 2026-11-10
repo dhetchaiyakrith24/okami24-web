@@ -1,23 +1,26 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { currentStaff, googleStaffSignIn, sharedPasswordOpen, staffAreaEnabled } from "@/lib/staff/auth";
-import { staffLogoutAction } from "@/app/staff/actions";
 import { StaffLogin } from "@/app/staff/_components/StaffLogin";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
-import { PendingButton } from "@/app/staff/_components/PendingButton";
+import { AdminHome } from "@/app/staff/_components/AdminHome";
+import { DONE_TEXT, ERROR_TEXT, STOCK_ERROR_TEXT } from "@/app/staff/_components/order-notices";
 import { countByJob, listStaffOrders } from "@/lib/staff/orders";
-import { LIST_CLASS, OrderRow } from "@/app/staff/_components/OrderRow";
-import { jobOf, STAFF_JOBS, TODO_JOBS, type StaffJob } from "@/lib/staff/jobs";
 import { orderCountDays } from "@/lib/staff/order-count";
-import { formatDay } from "@/app/staff/_components/format";
+import { myCountsToday } from "@/lib/staff/audit";
+import { salesToday } from "@/lib/staff/daily-sales";
+import { homeDate, homeNotice } from "@/lib/staff/admin-home-rules";
+import { readSwitches } from "@/lib/commerce/shop-switches";
+import { feedHealth } from "@/lib/woo/watch";
+import { shipnityReady } from "@/lib/woo/order-push";
 
 /**
- * /staff — "งาน", the staff home (owner 26/10, queue B3: "หาออเดอร์ที่ต้องทำไม่เจอ … ใช้บนมือถือ"; staff declutter 27/10):
- * every order waiting on the team, under รอตรวจสลิป · รอส่งคลัง · รอใส่เลขพัสดุ in working order, then one line to the other
- * jobs and log out; the section boxes on top (owner 28/10) lead to the slip check and Okami dev. Jobs and colours =
- * src/lib/staff/jobs.ts (yellow waiting, green done, red cancelled — HANDOFF §18).
+ * /staff — the admin home (owner 10/11 "admin และพี่ แต่ละคนมี dashboard ของตัวเอง"; design v2 passed 11/11). What waits on the
+ * team now, in the order to do it, with the everyday step in the row; the look and the parts = src/app/staff/_components/
+ * AdminHome.tsx. Still here from the old home: the day's order count, today and yesterday (LINE_ORDERS_GAPS.md #13 — the web
+ * IS the daily count), the other job lists, the shortcuts, who is signed in and log out. The owner in the admin view sees the
+ * same page under "เจ้าของ" with the switch back to the owner's dashboard.
  *
  * Not for customers and not for search: no link to it anywhere on the site, not in the sitemap, noindex here. It is also
  * deliberately NOT listed in robots.txt — that file is public, and listing the path there would only advertise it. 404
@@ -31,12 +34,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
 };
 
-export default async function StaffPage({ searchParams }: { searchParams: Promise<{ denied?: string }> }) {
+const readClock = () => Date.now();
+
+export default async function StaffPage({ searchParams }: { searchParams: Promise<{ denied?: string; order?: string; done?: string; error?: string }> }) {
   if (!staffAreaEnabled()) notFound();
   const actor = await currentStaff();
+  const query = await searchParams;
 
   if (!actor) {
-    const { denied } = await searchParams;
     const google = googleStaffSignIn();
     const password = sharedPasswordOpen();
     return (
@@ -48,7 +53,7 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
             หน้านี้สำหรับทีมงานร้านเท่านั้น{google ? " เข้าด้วยบัญชี Google ที่เจ้าของร้านเพิ่มไว้" : " ใส่รหัสทีมงานเพื่อเข้าใช้"}
           </p>
         </header>
-        {denied !== undefined && <p className="text-sm leading-relaxed text-danger">บัญชี Google นี้ยังไม่มีสิทธิ์เข้าหน้าทีมงาน ให้เจ้าของร้านเพิ่มอีเมลนี้ก่อน</p>}
+        {query.denied !== undefined && <p className="text-sm leading-relaxed text-danger">บัญชี Google นี้ยังไม่มีสิทธิ์เข้าหน้าทีมงาน ให้เจ้าของร้านเพิ่มอีเมลนี้ก่อน</p>}
         {google && (
           // A full page load on purpose: the route answers with a redirect to Google.
           // eslint-disable-next-line @next/next/no-html-link-for-pages
@@ -69,109 +74,35 @@ export default async function StaffPage({ searchParams }: { searchParams: Promis
     );
   }
 
-  const counts = countByJob();
-  const todo = TODO_JOBS.reduce((n, j) => n + counts[j], 0);
-  const waiting = listStaffOrders("todo");
-  const others: StaffJob[] = ["unpaid", "done", "cancelled"];
-  const dayCounts = orderCountDays(2);
-  const waitingToday = dayCounts[0].line.waiting + dayCounts[0].web.waiting;
+  const days = orderCountDays(2);
+  const switches = readSwitches();
 
   return (
-    <Container className="flex max-w-2xl flex-col gap-5 pb-8 pt-4 lg:gap-6 lg:pt-8">
-      <StaffBar tab="orders" />
-      <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
-        งาน <span className={todo > 0 ? "text-unverified" : "text-foreground-dim"}>· {todo}</span>
-      </h1>
-
-      {/* LINE_ORDERS_GAPS.md #13 (owner 10/11): the web IS the daily order count — the admins no longer post "#N" in the
-          OKAMI ORDER group. Today and yesterday; the money of the day is /staff/sales. Rules = order-count-rules.ts. */}
-      <section aria-label="นับออเดอร์" className="flex flex-col gap-1.5 rounded-xl border border-surface-border-soft bg-surface-1 px-4 py-3 text-sm">
-        {dayCounts.map((d, i) => (
-          <p key={d.date} className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-            <span className="text-foreground-muted">
-              {i === 0 ? "วันนี้" : "เมื่อวาน"} {formatDay(`${d.date}T12:00:00+07:00`)}
-            </span>
-            <span className="tabular-nums text-foreground">
-              LINE <span className="font-semibold">{d.line.orders}</span> · เว็บ <span className="font-semibold">{d.web.orders}</span> · รวม{" "}
-              <span className="font-semibold">{d.line.orders + d.web.orders}</span>
-            </span>
-          </p>
-        ))}
-        <p className="flex flex-wrap items-center justify-between gap-x-3">
-          <span className={waitingToday > 0 ? "text-xs text-unverified" : "text-xs text-foreground-dim"}>
-            {waitingToday > 0 ? `วันนี้รอยืนยันยอด ${waitingToday}` : "นับออเดอร์ที่ไม่ยกเลิก · เว็บนับเมื่อลูกค้าโอนแล้ว"}
-          </span>
-          <Link href="/staff/sales" className="inline-flex min-h-11 items-center text-sm text-ember hover:text-ember-strong">
-            ยอดเงินรายวัน →
-          </Link>
-        </p>
-      </section>
-
-      {/* Staff declutter 27/10 (designer: "one way per job"): the to-do orders right here, under one heading per step in
-          working order — the step cards, the filter chips and the step groups of the old list were three ways to the same
-          rows. A heading opens that step on its own page; an empty step is one quiet line. */}
-      {TODO_JOBS.map((job) => {
-        const rows = waiting.filter((o) => jobOf(o.status) === job);
-        return (
-          <section key={job} className="flex flex-col gap-2">
-            <h2 className="flex items-baseline justify-between gap-3">
-              <Link href={`/staff/orders?f=${job}`} className={`text-lg font-semibold hover:underline ${rows.length > 0 ? "text-foreground" : "text-foreground-dim"}`}>
-                {STAFF_JOBS[job].label}
-              </Link>
-              <span className={`font-display text-2xl font-bold tabular-nums leading-none ${rows.length > 0 ? "text-unverified" : "text-foreground-dim"}`}>
-                {rows.length > 0 ? rows.length : "ไม่มี"}
-              </span>
-            </h2>
-            {rows.length > 0 && (
-              <ul className={LIST_CLASS}>
-                {rows.map((o) => (
-                  <OrderRow key={o.orderNumber} o={o} from="" showStatus={false} />
-                ))}
-              </ul>
-            )}
-          </section>
-        );
-      })}
-
-      {/* Not work, but still one tap away and always visible (designer risk (ค)): the other jobs on one quiet line. */}
-      <nav aria-label="ออเดอร์อื่น" className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-foreground-muted">
-        <span className="text-foreground-dim">ดูออเดอร์อื่น</span>
-        {others.map((job) => (
-          <Link key={job} href={`/staff/orders?f=${job}`} className="hover:text-foreground">
-            {STAFF_JOBS[job].label}{" "}
-            <span className={`tabular-nums ${job === "unpaid" && counts[job] > 0 ? "font-semibold text-unverified" : ""}`}>{counts[job]}</span>
-          </Link>
-        ))}
-        <Link href="/staff/orders?f=all" className="hover:text-foreground">
-          ทั้งหมด
-        </Link>
-      </nav>
-
-      {/* Owner list ก11: the customer card and the parcel check, on the same quiet kind of line. */}
-      <nav aria-label="ลูกค้าและพัสดุ" className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-foreground-muted">
-        <Link href="/staff/line-order" className="inline-flex min-h-11 items-center font-semibold text-ember hover:text-ember-strong">
-          + คีย์ออเดอร์ LINE
-        </Link>
-        <Link href="/staff/customers" className="inline-flex min-h-11 items-center hover:text-foreground">
-          ลูกค้า →
-        </Link>
-        <Link href="/staff/tracking" className="inline-flex min-h-11 items-center hover:text-foreground">
-          เช็คพัสดุ →
-        </Link>
-      </nav>
-
-      {/* The tools that sat in the folded "อื่น ๆ" row moved under the boxes at the top (owner 28/10): slip check → ตรวจสลิป,
-          Shipnity · Excel · LINE groups → Okami dev. Log out stays here as one quiet line. */}
-      <form action={staffLogoutAction} className="flex flex-wrap items-center gap-x-3 text-sm text-foreground-dim">
-        {/* Owner 10/11: every session names its person — what they press is recorded under this name. */}
-        <span>เข้าระบบเป็น {actor.name}</span>
-        <PendingButton
-          className="-ml-2 inline-flex min-h-11 items-center rounded-full px-2 text-sm text-foreground-dim hover:bg-surface-2 hover:text-foreground"
-          pendingText="กำลังออก…"
-        >
-          ออกจากระบบ
-        </PendingButton>
-      </form>
-    </Container>
+    <div className="ah-page">
+      <div aria-hidden className="ah-aura" />
+      <Container className="flex max-w-2xl flex-col pb-10 pt-4 lg:max-w-6xl lg:pt-6">
+        <StaffBar />
+        <AdminHome
+          actor={actor}
+          now={readClock()}
+          counts={countByJob()}
+          waiting={listStaffOrders("todo")}
+          days={days}
+          // The shared password is nobody in particular — no "what I did today" for it.
+          mine={actor.kind === "shared" ? null : myCountsToday(actor, days[0].date)}
+          feed={feedHealth()}
+          salesTodaySatang={salesToday().totalSatang}
+          shop={{
+            cartOff: switches.cartOff,
+            siteClosed: switches.siteClosed,
+            lineToWarehouse: switches.lineToWarehouse,
+            autoToWarehouse: switches.autoToWarehouse,
+            shipnityReady: shipnityReady(),
+          }}
+          notice={homeNotice(query, DONE_TEXT, { ...STOCK_ERROR_TEXT, ...ERROR_TEXT })}
+          dateLabel={homeDate(days[0].date)}
+        />
+      </Container>
+    </div>
   );
 }
