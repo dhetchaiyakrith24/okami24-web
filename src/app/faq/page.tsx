@@ -6,7 +6,7 @@ import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { FAQPageHeader } from "@/components/content/FAQPageHeader";
 import { FAQCategoryHeading } from "@/components/content/FAQCategoryHeading";
 import { canonicalFor, faqPageJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { FAQ_COPY_TH } from "@/i18n/faq-copy";
 
 export const metadata: Metadata = {
@@ -23,10 +23,11 @@ export default function FAQPage() {
   // — FAQ_COPY_TH overlay when it exists, English fallback otherwise, and the LINE answer swapped
   // in for the ordering question while ordering is off (same selection FAQAccordion.tsx makes).
   // JSON-LD stays plain text: no thaiTypography() pass, which is render-time only.
+  const open = orderingOpen();
   const faqSchemaItems = CATEGORY_ORDER.flatMap((category) =>
     faqsByCategory(category).map((item) => ({
       question: FAQ_COPY_TH[item.id]?.question ?? item.question,
-      answer: (!ORDERING_ENABLED && ORDERING_OFF_ANSWERS[item.id]?.th) || (FAQ_COPY_TH[item.id]?.answer ?? item.answer),
+      answer: (!open && ORDERING_OFF_ANSWERS[item.id]?.th) || (FAQ_COPY_TH[item.id]?.answer ?? item.answer),
     }))
   );
   return (
@@ -42,13 +43,13 @@ export default function FAQPage() {
             // at all — not even inside the serialized props. FAQAccordion does the same swap for
             // th/zh, where the translation overlay lives.
             const items = faqsByCategory(category).map((item) =>
-              !ORDERING_ENABLED && ORDERING_OFF_ANSWERS[item.id] ? { ...item, answer: ORDERING_OFF_ANSWERS[item.id].en } : item
+              !open && ORDERING_OFF_ANSWERS[item.id] ? { ...item, answer: ORDERING_OFF_ANSWERS[item.id].en } : item
             );
             if (items.length === 0) return null;
             return (
               <div key={category}>
                 <FAQCategoryHeading category={category} />
-                <FAQAccordion items={items} orderingEnabled={ORDERING_ENABLED} />
+                <FAQAccordion items={items} orderingEnabled={open} />
               </div>
             );
           })}

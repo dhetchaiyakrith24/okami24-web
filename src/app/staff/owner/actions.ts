@@ -40,6 +40,8 @@ export async function setSwitchAction(form: FormData): Promise<void> {
   } else return;
   if (kind !== "hide") recordStaffAction(OWNER, "shop-switch", { detail: switchDetail(kind, on) });
   console.log(`[switches] owner set ${String(kind)} ${on ? "on" : "off"}`);
+  // the cart switch changes the wording of every page (layout, FAQ, how-to-order, heads — T2-04): mark them all stale
+  if (kind === "cart") revalidatePath("/", "layout");
   revalidatePath("/staff/owner");
 }
 
