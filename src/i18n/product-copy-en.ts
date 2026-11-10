@@ -49,6 +49,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "voopoo-pnp-x-coil-5pack": { tagline: "VOOPOO PnP X 0.15Ω coils, box of 5" },
   // C list 10/11: warehouse facts only (no maker site).
   "pop-up-10k-base": { tagline: "Pop Up 10K battery base" },
+  "insta-bar-px-15k": { tagline: "Insta Bar PX disposable, model name says 15000" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device with a touch screen and Pause Mode, for TEREA sticks only" },
   "pod-150": { tagline: "KS Quikpro replacement cartridge, 15ml" },
   "ks-quikpro-kit": { tagline: "KS Quikpro device with one 15ml cartridge" },

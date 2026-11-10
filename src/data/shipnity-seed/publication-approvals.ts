@@ -283,6 +283,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Insta 15000 (Product 744, 11 flavours) ฿329 → ฿359 (BSOT §5). Held until a card photo exists (IMAGE_SPEC §4) — uncomment with the card +
   // sku-map (pop-up-10k-base → Pod-154-19 · insta-bar-px-15k → Variation 746…760, once the warehouse read carries them):
   // "POP-UP-10K-BASE": { sellingPrice: 219, lastPriceReview: "2026-11-10" },
+  // "INSTA-BAR-PX-15K": { sellingPrice: 359, lastPriceReview: "2026-11-10" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

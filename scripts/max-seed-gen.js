@@ -71,6 +71,7 @@ const MAX_ONLY_RECORDS = {
   "VOOPOO-PNP-X-COIL-5PACK": { max: "Coil-92", childIds: ["Set-Coil-92-1"] },
   // C list 10/11 (item 134 4A · 5A): Pop Up 10K's battery base (a row under the refill-pod parent) · "Insta 15000 คำ" (Product 744, 11 flavours).
   "POP-UP-10K-BASE": { max: "Pod-154", childIds: ["Pod-154-19"] },
+  "INSTA-BAR-PX-15K": "Product 744",
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
