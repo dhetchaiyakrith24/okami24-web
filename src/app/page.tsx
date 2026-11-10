@@ -19,7 +19,7 @@ import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
 import { HomeProductIndex } from "@/components/home/HomeProductIndex";
 import { CONTACT } from "@/data/contact";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { HOME_GUIDE_COPY } from "@/i18n/home-guide-copy";
@@ -33,9 +33,11 @@ export const metadata: Metadata = canonicalFor("/");
 export const revalidate = 10800;
 
 // The Thai Q/A of the closing note, as FAQPage: same rule as the block itself (cart on).
-const homeFaqJsonLd = ORDERING_ENABLED ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;
 
 export default function Home() {
+  // the cart switch, not only the build (T2-04): the closing note (cart on) and its FAQ schema, the classic hero's line
+  const open = orderingOpen();
+  const homeFaqJsonLd = open ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;
   const flagships = getFlagshipProducts();
   const flagship = getProduct("caliburn-g5")!;
   const mBar10k = getProduct("m-bar-10k")!;
@@ -116,7 +118,7 @@ export default function Home() {
       {PHONE_HERO === "classic" ? (
         <>
           <div className="lg:hidden">
-            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} orderingEnabled={ORDERING_ENABLED} />
+            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} orderingEnabled={open} />
           </div>
           <div className="hidden lg:block">
             <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />
@@ -154,7 +156,7 @@ export default function Home() {
 
         <GuideTeaserGrid guides={guides.slice(0, 3)} />
         {/* Round SEO full (07/11): the shop's closing note + FAQ, only while the cart is on (it talks about ordering here). */}
-        {ORDERING_ENABLED && <CategoryGuide copy={HOME_GUIDE_COPY} rows={[]} />}
+        {open && <CategoryGuide copy={HOME_GUIDE_COPY} rows={[]} />}
       </div>
     </>
   );
