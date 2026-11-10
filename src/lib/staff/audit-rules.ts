@@ -7,8 +7,8 @@ export const AUDIT_ACTIONS = {
   "sign-in": "เข้าระบบ",
   "sign-out": "ออกจากระบบ",
   // T2-14: every wrong try of the shared team password, and the lock that follows — no address, no IP, only that it happened.
-  "sign-in-failed": "ใส่รหัสร่วมผิด",
-  "sign-in-locked": "รหัสร่วมถูกล็อก (ผิดหลายครั้ง)",
+  "sign-in-failed": "ใส่รหัสผิด",
+  "sign-in-locked": "ถูกล็อก (ใส่ผิดหลายครั้ง)",
   "team-add": "เพิ่มแอดมิน",
   "team-rename": "เปลี่ยนชื่อแอดมิน",
   "team-disable": "ปิดบัญชีแอดมิน",
