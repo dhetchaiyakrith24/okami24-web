@@ -155,8 +155,8 @@
       "fp": "c6fd7582e779"
     },
     "/brands/voopoo": {
-      "date": "2026-11-11T00:40:51+07:00",
-      "fp": "37e9afe43712"
+      "date": "2026-11-11T04:07:07+07:00",
+      "fp": "f112606554c5"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -195,8 +195,8 @@
       "fp": "87aa1dca91b0"
     },
     "/products": {
-      "date": "2026-11-11T00:40:51+07:00",
-      "fp": "5ffb97850cd1"
+      "date": "2026-11-11T04:07:07+07:00",
+      "fp": "9479fde575e6"
     },
     "/products/86-bar-20k": {
       "date": "2026-11-09T21:43:00+07:00",
@@ -331,8 +331,8 @@
       "fp": "3a2120dd9079"
     },
     "/products/coils-accessories": {
-      "date": "2026-11-11T00:40:51+07:00",
-      "fp": "46ca3eb3948f"
+      "date": "2026-11-11T04:07:07+07:00",
+      "fp": "874ddec7e551"
     },
     "/products/disposables": {
       "date": "2026-11-08T13:13:31+00:00",
@@ -677,6 +677,14 @@
     "/products/vmate-pro-2": {
       "date": "2026-11-07T15:48:13+07:00",
       "fp": "9aabf152e0c6"
+    },
+    "/products/voopoo-pnp-x-coil-5pack": {
+      "date": "2026-11-11T04:07:07+07:00",
+      "fp": "cd7841b5d4ff"
+    },
+    "/products/voopoo-vinci-coil-5pack": {
+      "date": "2026-11-11T04:07:07+07:00",
+      "fp": "007d6fafd0b7"
     },
     "/products/wotofo-nexbar-18k": {
       "date": "2026-11-07T11:43:43+07:00",

@@ -163,5 +163,5 @@ export const WAREHOUSE_ALL_CODES: ReadonlySet<string> = new Set([
   "Pod-179-5", "Pod-179-6", "Pod-180", "Pod-180-1", "Pod-180-2", "Pod-180-3", "Pod-180-4", "Pod-180-5",
   "Pod-180-6", "Pod-180-7", "Pod-180-8", "Pod-180-9", "Pod-180-10", "Pod-181", "Pod-181-1", "Pod-181-2",
   "Pod-181-3", "Pod-181-4", "Pod-181-5", "Pod-181-6", "Pod-181-7", "Pod-181-8", "Pod-181-9", "Pod-181-10",
-  "Pod-181-11", "Pod-181-12", "Pod-181-13", "Pod-181-14", "Pod-181-15",
+  "Pod-181-11", "Pod-181-12", "Pod-181-13", "Pod-181-14", "Pod-181-15", "Set-Coil-1-1", "Set-Coil-1-14", "Set-Coil-92-1",
 ]);
