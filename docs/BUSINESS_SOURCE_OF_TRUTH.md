@@ -361,6 +361,10 @@ how-to-order page and on the order page next to the bank details.
 > only the out-of-stock lines, the rest of the order still ships and the shipping fee is kept; when every line is out the
 > whole paid total goes back and the order is cancelled. Staff still phone or LINE the customer (the site cannot message
 > them). Code: `src/lib/commerce/stock-issues.ts`.
+> **OWNER EXCEPTION 2026-11-10 (main chat, answering the outside tester's Test 2 item T2-09 — his words: "ใช้เหมือนของหมด"):**
+> if the customer has **paid and the shop cannot ship** (e.g. the warehouse is paused), the **same rule as out of stock after
+> payment** applies: the customer chooses to wait, swap to another item at the same price, or take a refund to PromptPay / a
+> bank account. Every other case still follows "no cancellation and no refund after the transfer".
 
 **Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
