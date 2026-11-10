@@ -5,7 +5,7 @@
  *
  * Proves: a paid order + a second slip of exactly the difference → one order, one shipping fee, both slips linked, still
  * paid · sales count the new total once, under LINE, and the 2nd slip is not a loose slip any more · old lines keep their
- * sold price · a paid order cannot lose items · a paid order with no slip needs the hand tick · a waiting order + one slip
+ * sold price, also for units added to them · a paid order cannot lose items · a paid order with no slip needs the hand tick · a waiting order + one slip
  * of the whole new total is confirmed · an order sent to the warehouse, or a web order, cannot be changed.
  */
 import fs from "node:fs";
@@ -112,6 +112,21 @@ async function main(): Promise<void> {
     const c3 = changeLineOrderItems({ orderNumber: a.orderNumber, items: more, slipRef: null, handConfirmed: false, by: "x" });
     check("C: paid order, no slip, no tick → refused", !c3.ok && c3.error === "hand-confirm", c3);
     check("C: refused changes left the order as it was", orderRow(a.orderNumber).total === expected);
+
+    // C4. Raising an old line while its catalogue price has moved (checker 10/11 on #1358): the added unit comes at the
+    // line's sold price (one row, one price), not today's — the new line from B keeps today's price.
+    const c4 = changeLineOrderItems({ orderNumber: a.orderNumber, items: more, slipRef: null, handConfirmed: true, by: "x" });
+    const oneRow = db.prepare("SELECT unit_price, quantity, line_total FROM order_items WHERE order_id = ? AND product_slug = ? ORDER BY id LIMIT 1").get(after.id, one.slug) as {
+      unit_price: number;
+      quantity: number;
+      line_total: number;
+    };
+    const sub4 = (unit1 - 1) * 2 + unit2;
+    check(
+      "C4: a raised old line keeps its sold price for the added unit",
+      c4.ok && oneRow.unit_price === unit1 - 1 && oneRow.quantity === 2 && oneRow.line_total === (unit1 - 1) * 2 && orderRow(a.orderNumber).subtotal === sub4,
+      { c4, oneRow, sub4, row: orderRow(a.orderNumber) }
+    );
 
     // D. Waiting for the money (no slip), then one slip of the whole new total → confirmed.
     const d = createLineOrder({ ...base, customerPhone: "0822222222", recipientPhone: "0822222222", slipRef: null });

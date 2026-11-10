@@ -11,6 +11,8 @@ import { parsePastedOrder, type PasteResult } from "@/lib/staff/line-order-paste
 import { stockBook } from "@/lib/staff/stock-book";
 import { placesForPostcode } from "@/lib/commerce/thai-postcodes";
 import { isStaffJob } from "@/lib/staff/jobs";
+import { autoPushDone } from "@/lib/woo/auto-push";
+import { autoPushed } from "@/lib/staff/auto-push-audit";
 
 export interface LineOrderState {
   error: string | null;
@@ -32,7 +34,6 @@ const ERROR_TH: Record<string, string> = {
   "slip-taken": "สลิปนี้ถูกใช้กับออเดอร์อื่นไปแล้ว — เลือกใบอื่น หรือเลือก ไม่มีสลิปในรายการ",
   "slip-amount": "ยอดสลิปไม่เท่ายอดออเดอร์ (รวมค่าส่งแล้ว) — ตรวจรายการสินค้า ราคาพิเศษ หรือเลือกสลิปใบอื่น",
   price: "ราคาพิเศษต้องเป็นตัวเลขบาท และไม่เกินราคาเว็บรวมค่าส่ง",
-  duplicate: "อาจเป็นออเดอร์ซ้ำ — เบอร์นี้มีออเดอร์ยอดเท่ากันใน 24 ชม. ยังไม่ได้บันทึก",
 };
 
 async function actorOrBack(): Promise<StaffActor> {
@@ -48,7 +49,8 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
   const parsed = parseLineOrderForm((name) => (name === "keyedBy" ? nameOf(actor, String(form.get(name) ?? "")) : form.get(name)));
   if (!parsed.ok) return { error: ERROR_TH[parsed.error] };
   const result = createLineOrder({ ...parsed.input, keyedByStaffId: actor.accountId });
-  if (!result.ok && result.error === "duplicate") return { error: ERROR_TH.duplicate, duplicateOf: result.duplicateOf };
+  // One message, in the yellow box (checker 10/11 on #1362: a red line saying the same thing above it read twice).
+  if (!result.ok && result.error === "duplicate") return { error: null, duplicateOf: result.duplicateOf };
   if (!result.ok) return { error: ERROR_TH[result.error] };
   markKeyedBy(result.orderNumber, actor);
   recordStaffAction(actor, "line-order", { orderNumber: result.orderNumber, detail: result.confirmed ? "ยืนยันยอดด้วยสลิปแล้ว" : null });
@@ -57,7 +59,9 @@ export async function createLineOrderAction(_prev: LineOrderState, form: FormDat
     recordStaffAction(actor, "order-discount", { orderNumber: result.orderNumber, detail: `ลด ฿${result.discount.toLocaleString("en-US")}${why ? ` — ${why}` : ""}` });
   }
   console.log(`[line-order] ${result.orderNumber} keyed${result.confirmed ? ", money confirmed by its slip" : ", waiting for the money"}`);
-  redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=line-order`);
+  // Automation item 3: a keyed order whose slip confirmed it goes to Shipnity by itself while the owner's switches allow.
+  const done = result.confirmed ? autoPushDone(await autoPushed(actor, result.orderNumber), "line-order") : "line-order";
+  redirect(`/staff/orders/${encodeURIComponent(result.orderNumber)}?done=${done}`);
 }
 
 /** "เติมฟอร์มจากข้อความ" — read the admin's pasted LINE text into form values (line-order-paste-rules.ts). Saves nothing. */
@@ -102,5 +106,6 @@ export async function changeItemsAction(_prev: LineOrderState, form: FormData): 
   recordStaffAction(actor, "order-items", { orderNumber, detail: `฿${result.oldTotal.toLocaleString("en-US")} → ฿${result.newTotal.toLocaleString("en-US")}` });
   console.log(`[line-order] ${orderNumber} items changed${result.confirmed ? ", money confirmed by its slips" : ""}`);
   const from = String(form.get("from") ?? "");
-  redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=items`);
+  const done = result.confirmed ? autoPushDone(await autoPushed(actor, orderNumber), "items") : "items";
+  redirect(`/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}done=${done}`);
 }

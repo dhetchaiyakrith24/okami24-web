@@ -54,9 +54,18 @@ check("the name field hides only for a known person", signedInName(iceA) === "IC
 for (const [file, hits] of [["src/app/staff/line-order/actions.ts", ["line-order", "order-discount", "order-items"]], ["src/app/staff/orders/[orderNumber]/address-actions.ts", ["order-address"]]] as const) {
   const src = fs.readFileSync(path.join(process.cwd(), file), "utf8");
   check(`${file}: records ${hits.join(", ")}`, hits.every((h) => src.includes(`recordStaffAction(actor, "${h}"`)));
-  check(`${file}: no write action asks only isStaff()`, !/export async function (create|change)w*([^)]*)[^{]*{s*if (!staffAreaEnabled() || !(await isStaff()))/.test(src));
+  // Every save action starts by naming its person (currentStaff), never the bare yes/no isStaff().
+  const saves = [...src.matchAll(/export async function ((?:create|change)\w*)\(/g)].map((m) => ({ name: m[1], head: src.slice(m.index, m.index + 400) }));
+  check(`${file}: has its save actions`, saves.length > 0, saves.length);
+  for (const s of saves) check(`${file} ${s.name}: names its person first`, /\{\s*const actor = (?:await actorOrBack\(\)|staffAreaEnabled\(\) \? await currentStaff\(\) : null);/.test(s.head) && !s.head.includes("isStaff()"), s.head.slice(0, 160));
 }
 check("a keyed LINE order passes its account to the special price", fs.readFileSync(path.join(process.cwd(), "src/app/staff/line-order/actions.ts"), "utf8").includes("keyedByStaffId: actor.accountId"));
+
+for (const file of ["src/app/staff/actions.ts", "src/app/staff/line-order/actions.ts"]) {
+  const src = fs.readFileSync(path.join(process.cwd(), file), "utf8");
+  check(`${file}: the automatic send to Shipnity goes through autoPushed (recorded)`, src.includes("autoPushed(actor, ") && !src.includes("autoPushAfterConfirm("));
+}
+check("autoPushed records only a send that happened", /if \(outcome\.sent\) recordStaffAction\(actor, "order-shipnity"/.test(fs.readFileSync(path.join(process.cwd(), "src/lib/staff/auto-push-audit.ts"), "utf8")));
 
 // --- Database ---
 async function db(): Promise<void> {

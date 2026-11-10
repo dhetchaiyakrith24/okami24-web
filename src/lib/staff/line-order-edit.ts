@@ -13,8 +13,9 @@ import { addedUnits, checkMoney, itemsNotEditable, onlyAdds, type EditableStatus
 /**
  * Add items to a keyed LINE order before it goes to the warehouse (LINE_ORDERS_GAPS.md #3) — the rules and why are in
  * line-order-edit-rules.ts. Reached only through the staff action, which checks the staff session first. Lines already on
- * the order keep their sold price (rows updated in place, never deleted while money is in); added units are priced and
- * stock-checked by the same resolver as the cart; shipping is worked out again on the whole order by the web's rule.
+ * the order keep their sold price, raised quantities included (rows updated in place, never deleted while money is in); a
+ * new line is priced by the same resolver as the cart; every added unit is stock-checked by it (sellable / sold out, as a
+ * new LINE order); shipping is worked out again on the whole order by the web's rule.
  */
 
 /** Where an order stands for "แก้รายการสินค้า": every reader asks the same question (the page and the save). */
@@ -65,7 +66,8 @@ export function changeLineOrderItems(input: { orderNumber: string; items: LineOr
     const moneyIn = state.status === "approved" || linkedSatang > 0;
     if (moneyIn && !onlyAdds(oldLines, input.items)) return { ok: false, error: "only-add" };
 
-    // Price: an old line keeps its sold price; a new line takes today's catalogue price. Added units must sell now.
+    // Price: an old line keeps its sold price, also for the units added to it; a new line takes today's catalogue price.
+    // Every added unit must sell now (checker 10/11 on #1358: the comment said "added units take the catalogue price").
     const priced: { slug: string; variantId: string | null; quantity: number; unitPrice: number; name: string; label: string | null; rowId: number | null }[] = [];
     const added = new Map(addedUnits(oldLines, input.items).map((l) => [`${l.slug}|${l.variantId ?? ""}`, l.quantity]));
     for (const item of input.items) {
