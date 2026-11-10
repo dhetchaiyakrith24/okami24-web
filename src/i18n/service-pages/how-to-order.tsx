@@ -99,7 +99,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
             <br />
             เรารับโอนธนาคารและสแกน QR เท่านั้น — <B>ไม่รับบัตรเครดิต และไม่มีเก็บเงินปลายทาง</B>ค่ะ
             <br />
-            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมดหรือร้านส่งของให้ไม่ได้ <a href="/warranty#refunds" className="text-foreground hover:text-red">ดูรายละเอียดทุกกรณี</a>ได้นะคะ
+            <B>โอนแล้วยกเลิกไม่ได้</B> ยกเว้นกรณีสินค้าหมดหรือร้านส่งของให้ไม่ได้นะคะ <a href="/warranty#refunds" className="text-foreground hover:text-red">ดูทุกกรณี</a>
           </>
         ),
       },

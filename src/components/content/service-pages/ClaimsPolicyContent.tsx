@@ -29,7 +29,8 @@ export function ClaimsPolicyContent() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="label-mono text-xs text-foreground-dim">
-                      <th className="px-4 py-3 text-left font-normal">{c.refunds.headCase}</th>
+                      {/* the case column keeps 40 %: a narrower one wrapped short labels and left "ไม่" at a line end (wordbreak-scan 11/11) */}
+                      <th className="w-2/5 px-4 py-3 text-left font-normal">{c.refunds.headCase}</th>
                       <th className="px-4 py-3 text-left font-normal">{c.refunds.headWhat}</th>
                     </tr>
                   </thead>
