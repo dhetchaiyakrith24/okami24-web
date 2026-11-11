@@ -97,7 +97,9 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
         : issue.resolution === "refunded"
           ? `${bankVars ? fill(t.stockRefundedBank, bankVars) : fill(t.stockRefunded, { amount, phone })}${issue.wholeOrder ? "" : ` ${t.stockRefundedPartial}`}`
           : issue.choice === "swap" || swapState.done
-            ? t.stockChosenSwap
+            ? cancelled // the warehouse cancelled the order after the customer chose a swap — staff contact them (T2-10)
+              ? t.stockChosenSwapCancelled
+              : t.stockChosenSwap
             : bankVars
               ? fill(t.stockChosenRefundBank, bankVars)
               : fill(t.stockChosenRefund, { amount, phone });
@@ -125,7 +127,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
     }
     return (
       <div className="flex flex-col gap-2 rounded-xl border border-amber-300/25 bg-amber-300/[0.06] p-4 text-sm">
-        <span className="label-mono text-xs text-amber-200">{t.stockTitle}</span>
+        <span className="label-mono text-xs text-amber-200">{cancelled && issue.choice === "refund" ? t.stockRefundTitle : t.stockTitle}</span>
         <p className="text-foreground">{text}</p>
         <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>
       </div>

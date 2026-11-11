@@ -9,7 +9,7 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 11/11 ~05:00 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
+Updated 12/11 ~00:30 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
 ทำและจัดการได้เลย" + "รันเลยยาวๆ จบแล้วก็สานงานค้างอื่นๆต่อได้ พรุ่งนี้พี่ตรวจทีเดียว" — compact at 80–90 % after writing this block + the status page.
 Children report to the main chat by SendMessage. Children notes folder (this PC, outside git):
 `C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_de553e7b-d4f3-4c9e-9e80-36e56b795348\`.
@@ -30,29 +30,47 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
 1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
-2 OPEN WORK (11/11 ~05:00, owner asleep: "จัดการงานต่อได้เลยนะพรุ่งนี้พี่ตรวจทีเดียว"):
-  LIVE 11/11 night [ตรวจแล้ว] curl: #1392 T2-50 internal strings 0 · #1406 admin home v2 · #1401 T2-04 wording follows the cart switch
-    (footer "สั่งซื้อและสอบถามทาง LINE" live) · #1400 ILUMA ONE ฿3,190 / OASIS ฿3,490 / Pop Up base ฿219 · #1408 T2-03+T2-15 saved
-    addresses for LINE/Google members only (owner "อนุมัติ" the 7-step plan; migration 0030) · #1398 member moon cards · #1394 honest copy.
-  TEST 2 LEDGER = `_incoming/house-20261110/t2-ledger.md` (59 rows) + report text `t2-report.txt` (outside git). Not started ~40,
-    ordered by severity there. Owner's rulings: T2-06 no · T2-30 no notify (owner "ไม่แจ้งเตือนอะไร") · T2-02 leave as is.
+2 OPEN WORK (12/11 ~00:30, main chat at 73 % — compact next; the PC shut down 11/11 ~07:18, resumed 20:40):
+  LIVE 11/11 [ตรวจแล้ว] curl:
+    - #1410 staff door
+    - #1414 deploymentId = RENDER_GIT_COMMIT. Stale tab hard-reloads (owner black screen).
+    - #1402 lookalike off home and /search (noindex)
+    - #1412 "ใช้ได้กับเครื่อง" line (official + same-brand edges only)
+    - #1403 footer "เข้าเว็บไม่ได้? มีวิธีแก้ง่าย ๆ"
+    - #1415 Shipnity cancel → web cancel (BSOT §9 ruling 11/11)
+    - #1409 coil 5-packs ฿379/฿439
+  READY, HOLD:
+    - #1418 cancel follow-ups: checker PASS 9b66869b, merge tree _incoming/wt-merge-1418. Merge after #1416's gate (merge window).
+    - #1404 one refund table: PASS c2ffaa74. WAITS for the owner's word on the /warranty claim paragraph.
+      Text: _incoming/house-20261110/warranty-claim-paragraph-for-owner.md (unchanged since). Asked 3×, not answered yet.
+  STOCK (owner 11/11 "ทุกตัวต้องเช็คได้หมด … เปิดระบบรันสต็อกสดด้วย Api ทุกตัว"):
+    - /staff/shipnity: 753 codes · 733 reported · 732 agree.
+    - Pod-159-16 ESKO Extra Menthol is IN at the warehouse (checked in Shipnity's order-create picker) but the page
+      said หมด. Cause: an old Max seed made the maker-verified option "unknown" and the page painted it "หมด"; the refresh only compares live with live.
+    - 20 codes listed this week have no Shipnity number. They match the warehouse today. Shipnity read our list once (28/10) and pushes on change only;
+      no pull API; Max admin has no store-link menu.
+    - FIX = #1416 catalog-pics (verify + seeded proof running):
+      - live overlay on the product page render
+      - stale-page refresh
+      - "ask" state = no live number → "สอบถามสต็อกทาง LINE", cart refuses
+      - red list on /staff/shipnity
+      - product-listing step "ask the warehouse to press อัปเดตสต็อก"
+    - SEO-only products stay unmapped (owner OK).
   CHILDREN:
-    look-0911 local_569a83ec: chain #1402 T2-08 (now BIG: page-substance LOOKALIKES skip) → #1403 T2-24 → #1404 T2-09 (SHOW THE
-      OWNER the /warranty claim-paragraph change before merge) → one PR for #1401 follow-ups (first view after a boot can serve
-      cart-on HTML; JSON-LD availability) → THEME (comparison to the owner first) → HOME HERO ROTATION.
-    catalog-pics local_ae4a3786: #1409 coil 5-packs ฿379/฿439 (new stock file with Set-Coil codes) → T2-13 no stock number = not
-      for sale (before the cart reopens) → T2-31 "ใช้กับเครื่อง" on pod heads → T2-32 Thai flavour names + search synonyms.
-    dashboard-c local_39aadd8e: T2-16 staff rights from the session not the `okami24_team` cookie → T2-52 /staff 401 + every
-      Server Action checks the session → T2-14 shared-password limit + log · + #1408 test add-on (foreign id UPDATE/DELETE changes=0).
-  MERGE: always merge from a DETACHED tree at the checked sha (`git worktree add --detach _incoming/wt-merge-N <sha>`), because
-    children start their next job in the same worktree right after --done (11/11: #1408 and #1398 merge1.sh refused "head != tree").
-  CHECKER PROOF of verify --full = the clean-pass stamp `$(git rev-parse --git-common-dir)/verify-full/<sha>` (verify-catalog writes
-    it only on a full clean pass of a clean tree) — name it in every checker brief (11/11: 2 proof-only FAILs).
+    - catalog-pics local_ae4a3786: #1416 → #1413 T2-32 Thai flavour names (+ fits-devices.ts:70 regex fix).
+    - look-0911 local_569a83ec: #1417 = #1401 follow-up (a), the first request after a boot is fresh; it verifies after catalog-pics says "free".
+      (b) the JSON-LD offer: re-check after #1416. Then THEME → HOME HERO ROTATION.
+    - cancel-sync local_32aa45ac: after #1418 merges:
+      - a wording PR (lineOrderingNotice, stockCancelLead, 404 body, paymentAfterTransferNote "ได้")
+      - T2-21: owner 11/11 "พิมพ์เองได้เหมือนเดิม" = hand typing stays. Add only: reject ต./อ. without letters, a phone cap, a postcode-list check.
+    - dashboard-c local_39aadd8e: done → archive.
+  OWNER ASKED 11/11 (do next): back-office menu in the site header for owner/admin + a phone home-screen icon for /staff (owner "ตามแนะนำ").
+    Not started; designer draft first (TeamShortcut.tsx pill exists).
+  PORTS: one verify at a time; hand over with "free". Merge only when no gate is running (main moving = re-verify).
+  TEST TREE _incoming/wt-cart: node_modules next 16.3.3 vs lock 16.4.5 · merge from a detached tree (LESSONS พ89) · checker proof = verify stamp (พ88).
+  OWNER TO-DO: Cloudflare analytics switch · shared password off · perks A/B/C · cancel #0036.
+  LEDGER: _incoming/house-20261110/t2-ledger.md (refresh it).
   FLAKE FIX (own small PR): `line-orders-db-contract-test.ts` dates slips Date.now()-1h → fails 00:00–01:00 Bangkok; date at noon.
-  OWNER TOMORROW: look at the admin home + member page live · Cloudflare Web Analytics switch (beacon not seen) · switch off the
-    shared staff password once every admin has a Google account · perks A/B/C · /warranty claim paragraph (#1404).
-  DONE/STOPPED children: staff-accounts · orders-audit-2 · t2-06-notme (never raise the not-me button again; discard aa095111 in
-    sweet-swartz) · staging-site · line-orders-2/-3 → archive. HOUSE: `_incoming/house-20261110/todo.md` + wt-testsite-base.
   OWNER RULINGS 10–11/11 (never ask again): no Cloudflare sentence on /privacy · FUTURE cookies plan if SEO is not hurt.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
