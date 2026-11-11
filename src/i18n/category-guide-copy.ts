@@ -962,7 +962,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "คอยล์ VOOPOO PnP X · Vinci และ TPP",
           body:
-            "[คอยล์ PnP X](/products/coil-92) มีให้เลือก 7 ค่า ตั้งแต่ 0.15 ถึง 1.0 โอห์ม ตัว 0.15 โอห์มแนะนำไว้ที่ 60–80 วัตต์ ส่วนตัว 1.0 โอห์มอยู่ที่ 10–13 วัตต์ ใช้กับเครื่อง DRAG X2 · S2 · X3 · S3 และ DRAG 4 ส่วน [คอยล์ Vinci](/products/coil-1) มีให้เลือกตั้งแต่ 0.15 ถึง 1.2 โอห์ม ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio และ [คอยล์ TPP](/products/coil-38) มี 0.15 · 0.2 และ 0.3 โอห์ม ตัว 0.2 โอห์มแนะนำไว้ที่ 40–60 วัตต์ ตัว 0.3 โอห์มอยู่ที่ 32–40 วัตต์ ใช้คู่กับ [TPP Pod](/products/coil-87) ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [VOOPOO](/brands/voopoo)",
+            "[คอยล์ PnP X](/products/coil-92) มีให้เลือก 7 ค่า ตั้งแต่ 0.15 ถึง 1.0 โอห์ม ตัว 0.15 โอห์มแนะนำไว้ที่ 60–80 วัตต์ ส่วนตัว 1.0 โอห์มอยู่ที่ 10–13 วัตต์ ใช้กับเครื่อง DRAG X2 · S2 · X3 · S3 · ARGUS Pro 2 และรุ่นอื่น ส่วน [คอยล์ Vinci](/products/coil-1) มีให้เลือกตั้งแต่ 0.15 ถึง 1.2 โอห์ม ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio และ [คอยล์ TPP](/products/coil-38) มี 0.15 · 0.2 และ 0.3 โอห์ม ตัว 0.2 โอห์มแนะนำไว้ที่ 40–60 วัตต์ ตัว 0.3 โอห์มอยู่ที่ 32–40 วัตต์ ใช้คู่กับ [TPP Pod](/products/coil-87) ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [VOOPOO](/brands/voopoo)",
         },
         {
           heading: "คอยล์ Caliburn G และ G2 จาก UWELL",
@@ -995,7 +995,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "คอยล์ VOOPOO ตัวไหนใช้กับเครื่องอะไร",
           answer:
-            "คอยล์ PnP X ใช้กับ DRAG X2 · S2 · X3 · S3 และ DRAG 4 รวมถึง DRAG 6 ที่ VOOPOO ระบุว่าถังน้ำยาของชุดใส่คอยล์ PnP X ได้ทุกตัวค่ะ คอยล์ Vinci ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio ส่วนคอยล์ TPP ใช้กับ TPP Pod · DRAG 3 Kit และ DRAG X Plus Kit ก่อนซื้อ เช็คแถว “ใช้ได้กับ” ในหน้าคอยล์ให้ตรงกับเครื่องอีกครั้งนะคะ",
+            "คอยล์ PnP X ใช้กับ DRAG X2 · S2 · X3 · S3 · ARGUS Pro 2 และรุ่นอื่น รวมถึง DRAG 6 ที่ VOOPOO ระบุว่าถังน้ำยาของชุดใส่คอยล์ PnP X ได้ทุกตัวค่ะ คอยล์ Vinci ใช้กับ VINCI Pod · VINCI X Pod และ DRAG Baby Trio ส่วนคอยล์ TPP ใช้กับ TPP Pod · DRAG 3 Kit และ DRAG X Plus Kit ก่อนซื้อ เช็คแถว “ใช้ได้กับ” ในหน้าคอยล์ให้ตรงกับเครื่องอีกครั้งนะคะ",
         },
         {
           question: "ใส่คอยล์ใหม่แล้ว ต้องรอก่อนสูบไหม",
@@ -1017,7 +1017,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "VOOPOO PnP X, Vinci and TPP coils",
           body:
-            "[PnP X coils](/products/coil-92) come in seven values from 0.15Ω to 1.0Ω. The 0.15Ω coil is rated at 60–80W and the 1.0Ω at 10–13W. They fit the DRAG X2, S2, X3, S3 and DRAG 4. [Vinci coils](/products/coil-1) run from 0.15Ω to 1.2Ω and fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. [TPP coils](/products/coil-38) come in 0.15, 0.2 and 0.3Ω; the 0.2Ω is rated at 40–60W and the 0.3Ω at 32–40W, and they go with the [TPP Pod](/products/coil-87). More from the brand is on the [VOOPOO](/brands/voopoo) page.",
+            "[PnP X coils](/products/coil-92) come in seven values from 0.15Ω to 1.0Ω. The 0.15Ω coil is rated at 60–80W and the 1.0Ω at 10–13W. They fit the DRAG X2, S2, X3, S3, ARGUS Pro 2 and more. [Vinci coils](/products/coil-1) run from 0.15Ω to 1.2Ω and fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. [TPP coils](/products/coil-38) come in 0.15, 0.2 and 0.3Ω; the 0.2Ω is rated at 40–60W and the 0.3Ω at 32–40W, and they go with the [TPP Pod](/products/coil-87). More from the brand is on the [VOOPOO](/brands/voopoo) page.",
         },
         {
           heading: "UWELL Caliburn G and G2 coils",
@@ -1050,7 +1050,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "Which VOOPOO coil fits which device?",
           answer:
-            "PnP X coils fit the DRAG X2, S2, X3, S3 and DRAG 4, and VOOPOO states that the DRAG 6 kit's tank takes every PnP X coil. Vinci coils fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. TPP coils fit the TPP Pod, DRAG 3 Kit and DRAG X Plus Kit. Before you buy, check the “Compatible devices” row on the coil's page.",
+            "PnP X coils fit the DRAG X2, S2, X3, S3, ARGUS Pro 2 and more, and VOOPOO states that the DRAG 6 kit's tank takes every PnP X coil. Vinci coils fit the VINCI Pod, VINCI X Pod and DRAG Baby Trio. TPP coils fit the TPP Pod, DRAG 3 Kit and DRAG X Plus Kit. Before you buy, check the “Compatible devices” row on the coil's page.",
         },
         {
           question: "Should I wait before vaping on a new coil?",
@@ -1072,7 +1072,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           heading: "VOOPOO PnP X、Vinci 与 TPP 雾化芯",
           body:
-            "[PnP X 雾化芯](/products/coil-92) 有 7 种阻值，从 0.15Ω 到 1.0Ω，其中 0.15Ω 的建议功率为 60–80W，1.0Ω 为 10–13W，适配 DRAG X2、S2、X3、S3 和 DRAG 4。[Vinci 雾化芯](/products/coil-1) 阻值从 0.15Ω 到 1.2Ω，适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。[TPP 雾化芯](/products/coil-38) 有 0.15、0.2 和 0.3Ω，其中 0.2Ω 的建议功率为 40–60W，0.3Ω 为 32–40W，搭配 [TPP Pod](/products/coil-87) 使用。更多产品见 [VOOPOO](/brands/voopoo) 品牌页。",
+            "[PnP X 雾化芯](/products/coil-92) 有 7 种阻值，从 0.15Ω 到 1.0Ω，其中 0.15Ω 的建议功率为 60–80W，1.0Ω 为 10–13W，适配 DRAG X2、S2、X3、S3、ARGUS Pro 2 等机型。[Vinci 雾化芯](/products/coil-1) 阻值从 0.15Ω 到 1.2Ω，适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。[TPP 雾化芯](/products/coil-38) 有 0.15、0.2 和 0.3Ω，其中 0.2Ω 的建议功率为 40–60W，0.3Ω 为 32–40W，搭配 [TPP Pod](/products/coil-87) 使用。更多产品见 [VOOPOO](/brands/voopoo) 品牌页。",
         },
         {
           heading: "UWELL Caliburn G 与 G2 雾化芯",
@@ -1105,7 +1105,7 @@ export const CATEGORY_GUIDE_COPY: Record<string, Partial<Record<"th" | "en" | "z
         {
           question: "VOOPOO 哪款雾化芯适配哪些设备？",
           answer:
-            "PnP X 雾化芯适配 DRAG X2、S2、X3、S3 和 DRAG 4，VOOPOO 也标明 DRAG 6 套装的油仓支持全部 PnP X 雾化芯。Vinci 雾化芯适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。TPP 雾化芯适配 TPP Pod、DRAG 3 Kit 和 DRAG X Plus Kit。购买前请再核对雾化芯页面规格表中列出的设备。",
+            "PnP X 雾化芯适配 DRAG X2、S2、X3、S3、ARGUS Pro 2 等机型，VOOPOO 也标明 DRAG 6 套装的油仓支持全部 PnP X 雾化芯。Vinci 雾化芯适配 VINCI Pod、VINCI X Pod 和 DRAG Baby Trio。TPP 雾化芯适配 TPP Pod、DRAG 3 Kit 和 DRAG X Plus Kit。购买前请再核对雾化芯页面规格表中列出的设备。",
         },
         {
           question: "换上新雾化芯后要等一会儿再抽吗？",

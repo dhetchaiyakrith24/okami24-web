@@ -6,12 +6,18 @@ import { SITE_URL } from "@/lib/seo";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import type { OrderUpdate } from "@/lib/woo/api";
 import { alertWorthy, formatWarehouseChangeAlert } from "@/lib/woo/order-alert";
+import { cancelByWarehouse } from "@/lib/woo/warehouse-cancel";
 
 /**
  * Changes Shipnity makes to an order it was sent (owner 28/10: "หากมีกรณีสินค้ายกเลิกเพราะหมดกะทันหัน ทาง Shipnity กดยกเลิก
  * มาทาง Web เราต้องรู้และแจ้งตีกลับไปในไลน์"). Each change is recorded (table woo_order_events); a cancel / delete / refund /
- * fail is pushed once into the "OKM Order" LINE group. The order's own status on the site is not touched — the admin calls
- * the customer and the warehouse's admin, then uses the order page as usual. Never throws.
+ * fail is pushed once into the "OKM Order" LINE group (unchanged).
+ *
+ * The order's own status: REPLACED 11/11. Until then (28/10) the site left it alone and the admin cancelled by hand. The owner,
+ * 11/11 ~20:45 in the main chat, asked "เมื่อ Shipnity ยกเลิกออเดอร์ (เดิมพี่ตั้งไว้ 28/10 ให้แค่เตือนทาง LINE แล้วแอดมินจัดการเอง)
+ * จะเปลี่ยนไหม", chose "ยกเลิกบนเว็บอัตโนมัติ" (outside tester's Test 2, T2-10 / T2-11): a "cancelled" or "refunded" from
+ * Shipnity now cancels the web order itself — warehouse-cancel.ts (a paid order opens the refund choice first). A delete /
+ * trash / failed still only alerts. Never throws.
  */
 
 export async function recordOrderUpdates(updates: OrderUpdate[]): Promise<void> {
@@ -19,6 +25,13 @@ export async function recordOrderUpdates(updates: OrderUpdate[]): Promise<void> 
     try {
       const db = getDb();
       db.prepare("INSERT INTO woo_order_events (order_id, shipnity_status) VALUES (?, ?)").run(u.orderId, u.status);
+      try {
+        const cancel = cancelByWarehouse(u.orderId, u.status);
+        if (cancel.cancelled) console.log(`[shipnity] order id ${u.orderId}: cancelled on the web by the warehouse (${u.status})${cancel.refundOpen ? " — refund choice open" : ""}`);
+      } catch (err) {
+        // The alert below still goes out: the team cancels by hand, as before 11/11.
+        console.error(`[shipnity] order id ${u.orderId}: web cancel failed — ${err instanceof Error ? err.message : String(err)}`);
+      }
       if (!alertWorthy(u.status)) continue;
       const already = db
         .prepare("SELECT 1 FROM woo_order_events WHERE order_id = ? AND shipnity_status = ? AND notified_at IS NOT NULL LIMIT 1")

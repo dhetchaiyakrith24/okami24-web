@@ -275,7 +275,7 @@ export const joiwayProducts: Product[] = [
         title: "Battery and display",
         description: "The display reads in percent, so a quick look tells you how much is left.",
         subline: "Plug in over USB-C when it runs low.",
-        image: { src: "/assets/products/joiway-f4/story-power.webp", alt: "JOIWAY F4 poster — 650MAH, charging over a Type-C cable, and a close-up of the twin LED display", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+        image: { src: "/assets/products/joiway-f4/story-power.webp", alt: "JOIWAY F4 poster — 650mAh, charging over a Type-C cable, and a close-up of the twin LED display", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
       },
       {
         id: "hand",

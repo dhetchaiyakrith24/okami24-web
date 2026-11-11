@@ -11,6 +11,7 @@ import { stockIssueViewFor } from "@/lib/commerce/stock-issues";
 import { customerMessagesFor } from "@/lib/commerce/order-messages";
 import { isAutoCancelNote, paymentDeadline, sweepIfPastDeadline } from "@/lib/commerce/unpaid-expiry";
 import { unboxingNoticeFor } from "@/lib/commerce/unboxing-notice";
+import { cancelMessageIndex, isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
 
 export const metadata: Metadata = {
   title: "สถานะคำสั่งซื้อ",
@@ -57,7 +58,7 @@ export default async function OrderStatusPage({
 
   // Owner 24/10: the admin's messages to the customer, dated here on the server (one time zone, no hydration drift).
   const dateFmt = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
-  const messages = customerMessagesFor(order.id).map((m) => ({ body: m.body, dateLabel: dateFmt.format(new Date(m.createdAt)) }));
+  const allMessages = customerMessagesFor(order.id);
   // Whether money ever came in — a cancelled order that was paid tells the customer about the refund.
   const paid = order.statusHistory.some((h) => h.status === "payment_submitted");
   // Owner 29/10: a slip that was never confirmed (failed or fake) promises no refund — only an order whose money the shop
@@ -70,10 +71,18 @@ export default async function OrderStatusPage({
   // Cancelled by the unpaid sweep, not by staff — the page says why. The deadline line shows while it still waits.
   const autoCancelled = order.status === "cancelled" && order.statusHistory.some((h) => h.status === "cancelled" && isAutoCancelNote(h.note));
   const deadlineIso = order.status === "pending_payment" ? paymentDeadline(order.createdAt).toISOString() : null;
+  // Why it was cancelled (T2-11 / T2-19): "cancelled" is final, so the first cancelled row IS the cancel. The warehouse
+  // cancelled it in Shipnity (src/lib/woo/warehouse-cancel.ts), or staff did — then the message they wrote with the cancel is
+  // the page's headline, and it leaves the message box below so it is not said twice.
+  const cancelRow = order.status === "cancelled" ? order.statusHistory.find((h) => h.status === "cancelled") ?? null : null;
+  const warehouseCancelled = cancelRow !== null && isWarehouseCancelNote(cancelRow.note);
+  const reasonAt = cancelRow && !autoCancelled && !warehouseCancelled ? cancelMessageIndex(cancelRow.createdAt, allMessages) : -1;
+  const cancelReason = reasonAt >= 0 ? allMessages[reasonAt].body : null;
+  const messages = allMessages.filter((_, i) => i !== reasonAt).map((m) => ({ body: m.body, dateLabel: dateFmt.format(new Date(m.createdAt)) }));
 
   // The history holds staff-only notes (cancel reasons, out-of-stock notes — checker #802) and the page never shows it:
   // it must not reach the browser at all.
   const customerOrder = { ...order, statusHistory: [] };
 
-  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} paymentConfirmed={paymentConfirmed} unboxing={unboxing} autoCancelled={autoCancelled} deadlineIso={deadlineIso} />;
+  return <OrderStatusView order={customerOrder} token={token ?? null} payment={payment} itemImages={itemImages} stockIssue={stockIssue} messages={messages} paid={paid} paymentConfirmed={paymentConfirmed} unboxing={unboxing} autoCancelled={autoCancelled} warehouseCancelled={warehouseCancelled} cancelReason={cancelReason} deadlineIso={deadlineIso} />;
 }

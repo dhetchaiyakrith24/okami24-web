@@ -5,6 +5,7 @@ import { resolveProductRef } from "@/lib/commerce/catalog-resolver";
 import { FIRST_LISTED } from "@/data/first-listed";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
 import type { LiveLookup } from "@/lib/stock/live-rules";
+import { LOOKALIKES } from "@/data/similar-models";
 
 /**
  * The homepage "สินค้าใหม่" row (owner 29/10 — new products on the homepage, no manual updates): the products listed most
@@ -13,7 +14,8 @@ import type { LiveLookup } from "@/lib/stock/live-rules";
  * row changes with every deploy — every listing PR deploys, which is exactly when a new product appears.
  */
 export function newArrivalSlugs(count: number, live?: LiveLookup): string[] {
-  const items = allCatalogItems().filter((i) => i.sellingPrice !== null && FIRST_LISTED[i.slug]);
+  // never a lookalike (HANDOFF §18, T2-08): it is not on the home page at all
+  const items = allCatalogItems().filter((i) => i.sellingPrice !== null && FIRST_LISTED[i.slug] && !LOOKALIKES.has(i.slug));
   const order = new Map(items.map((i, n) => [i.slug, n]));
   const sells = (slug: string, origin: "legacy" | "product-master") => {
     const ids =

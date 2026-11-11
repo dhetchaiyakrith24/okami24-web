@@ -10,22 +10,22 @@
     "src/app/how-to-order": "2026-11-11T00:35:23+07:00",
     "src/app/page.tsx": "2026-11-11T00:35:23+07:00",
     "src/app/privacy": "2026-09-06T12:34:47+07:00",
-    "src/app/search": "2026-11-11T00:18:16+07:00",
+    "src/app/search": "2026-11-11T05:07:11+07:00",
     "src/app/shipping": "2026-10-29T20:14:45+07:00",
     "src/app/warranty": "2026-09-06T15:38:15+07:00",
-    "src/components/home": "2026-11-10T15:51:52+07:00",
+    "src/components/home": "2026-11-11T01:07:54+07:00",
     "src/components/tools/CompareTool.tsx": "2026-11-11T00:21:33+07:00",
     "src/components/tools/FavoritesList.tsx": "2026-11-11T00:18:16+07:00",
     "src/components/tools/FinderTool.tsx": "2026-11-11T00:18:16+07:00",
     "src/components/tools/SearchTool.tsx": "2026-11-11T00:18:16+07:00",
     "src/data/contact.ts": "2026-10-22T21:05:00+07:00",
-    "src/data/faqs.ts": "2026-10-29T23:58:41+07:00",
-    "src/data/guides.ts": "2026-11-08T01:35:40+07:00",
+    "src/data/faqs.ts": "2026-11-11T00:48:27+07:00",
+    "src/data/guides.ts": "2026-11-11T00:54:29+07:00",
     "src/data/search-aliases.ts": "2026-11-11T05:02:53+07:00",
     "src/data/technology.ts": "2026-11-06T17:57:59+07:00",
-    "src/i18n/faq-copy.ts": "2026-11-07T15:48:13+07:00",
+    "src/i18n/faq-copy.ts": "2026-11-11T05:25:18+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
-    "src/i18n/guides-copy.ts": "2026-11-06T17:57:59+07:00",
+    "src/i18n/guides-copy.ts": "2026-11-11T00:54:29+07:00",
     "src/i18n/search-head-copy.ts": "2026-11-08T10:07:09+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
@@ -41,7 +41,7 @@
     "are-pods-harmful": "2026-11-07T15:42:16+07:00",
     "argus-g4-vs-caliburn-g5": "2026-10-26T06:48:28+07:00",
     "battery-care-and-charging": "2026-11-04T09:02:55+07:00",
-    "cant-open-the-website": "2026-10-12T01:40:53+07:00",
+    "cant-open-the-website": "2026-11-11T00:54:29+07:00",
     "checking-a-genuine-pod": "2026-10-20T23:10:33+07:00",
     "choosing-a-disposable": "2026-11-03T01:11:58+07:00",
     "choosing-a-marbo-flavor": "2026-11-05T01:48:05+07:00",
@@ -155,8 +155,8 @@
       "fp": "c6fd7582e779"
     },
     "/brands/voopoo": {
-      "date": "2026-11-11T04:07:07+07:00",
-      "fp": "f112606554c5"
+      "date": "2026-11-11T05:40:33+07:00",
+      "fp": "d052e5d3bed5"
     },
     "/brands/wotofo": {
       "date": "2026-10-30T20:28:30+07:00",
@@ -191,12 +191,12 @@
       "fp": "e9524f1602d1"
     },
     "/guides": {
-      "date": "2026-11-07T12:24:15+07:00",
-      "fp": "87aa1dca91b0"
+      "date": "2026-11-11T21:48:31+07:00",
+      "fp": "473f07472ace"
     },
     "/products": {
-      "date": "2026-11-11T04:07:07+07:00",
-      "fp": "9479fde575e6"
+      "date": "2026-11-11T05:40:33+07:00",
+      "fp": "24a1822b49b5"
     },
     "/products/86-bar-20k": {
       "date": "2026-11-09T21:43:00+07:00",
@@ -291,8 +291,8 @@
       "fp": "ab9c35a2d5a3"
     },
     "/products/coil-56": {
-      "date": "2026-11-04T00:04:42+07:00",
-      "fp": "41dca3886deb"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "ac2ccbd2af9a"
     },
     "/products/coil-68": {
       "date": "2026-11-04T00:04:42+07:00",
@@ -323,40 +323,40 @@
       "fp": "381dd6010c0e"
     },
     "/products/coil-92": {
-      "date": "2026-11-04T00:04:42+07:00",
-      "fp": "6aefaee61016"
+      "date": "2026-11-11T05:40:33+07:00",
+      "fp": "731843d80c01"
     },
     "/products/coil-94": {
       "date": "2026-11-02T22:02:51+07:00",
       "fp": "3a2120dd9079"
     },
     "/products/coils-accessories": {
-      "date": "2026-11-11T04:07:07+07:00",
-      "fp": "874ddec7e551"
+      "date": "2026-11-11T05:40:33+07:00",
+      "fp": "419f47757b82"
     },
     "/products/disposables": {
       "date": "2026-11-08T13:13:31+00:00",
       "fp": "0d9f7fc59268"
     },
     "/products/drag-6": {
-      "date": "2026-11-06T17:49:18+07:00",
-      "fp": "eacb02ce910f"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "f759947009ba"
     },
     "/products/drag-s3": {
-      "date": "2026-11-07T15:48:13+07:00",
-      "fp": "6de0485b4fc1"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "a982303476f4"
     },
     "/products/drag-x": {
       "date": "2026-11-07T15:48:13+07:00",
       "fp": "6e37d7af252e"
     },
     "/products/drag-x2": {
-      "date": "2026-11-08T14:34:09+00:00",
-      "fp": "545f9495a6c7"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "769114366f4a"
     },
     "/products/drag-x3": {
-      "date": "2026-10-26T07:07:40+07:00",
-      "fp": "b4cc431025b3"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "b4e191fd30a3"
     },
     "/products/dude-pod-3ml": {
       "date": "2026-11-02T05:29:33+07:00",
@@ -473,10 +473,6 @@
     "/products/m-switch-pod": {
       "date": "2026-11-07T11:43:43+07:00",
       "fp": "6ccdf160b14d"
-    },
-    "/products/marbo-10k-clone": {
-      "date": "2026-10-27T22:40:18+07:00",
-      "fp": "af2724cfa5a4"
     },
     "/products/mood-monster-14k": {
       "date": "2026-11-07T17:49:28+07:00",
@@ -679,8 +675,8 @@
       "fp": "9aabf152e0c6"
     },
     "/products/voopoo-pnp-x-coil-5pack": {
-      "date": "2026-11-11T04:34:18+07:00",
-      "fp": "dc30a04eb2bf"
+      "date": "2026-11-11T05:18:37+07:00",
+      "fp": "53dcdce84389"
     },
     "/products/voopoo-vinci-coil-5pack": {
       "date": "2026-11-11T04:07:07+07:00",
