@@ -5,6 +5,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import type { Category } from "@/types/catalog";
+import { categoryPageLabelTh, categoryPageLedeTh } from "@/i18n/category-head-th";
 
 /**
  * Split out of products/[slug]/page.tsx (same reason as SearchPageHeader.tsx) so the page can
@@ -19,8 +20,8 @@ export function CategoryPageHeader({ category }: { category: Category }) {
   return (
     <PageHeader
       eyebrow={dict.catalog.eyebrow}
-      title={th ? <CategoryLabel label={category.labelTh} /> : category.name}
-      description={th ? thaiTypographyNode(category.descriptionTh) : category.description}
+      title={th ? <CategoryLabel label={categoryPageLabelTh(category)} /> : category.name}
+      description={th ? thaiTypographyNode(categoryPageLedeTh(category)) : category.description}
     />
   );
 }

@@ -7,6 +7,7 @@ import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { emberRgb } from "@/lib/preview";
 
 /** Scrolls the page's option chips (`data-option-picker`) into view and rings the in-stock chips once (no motion when
  *  the visitor asked for reduced motion — then only the scroll, without smooth animation). */
@@ -21,7 +22,8 @@ function showOptionPicker(): void {
     .filter((b) => b.offsetParent !== null)
     .slice(0, 24);
   for (const chip of chips) {
-    chip.animate([{ boxShadow: "0 0 0 0 rgba(240,138,42,.55)" }, { boxShadow: "0 0 0 8px rgba(240,138,42,0)" }], {
+    const rgb = emberRgb();
+    chip.animate([{ boxShadow: `0 0 0 0 rgb(${rgb} / .55)` }, { boxShadow: `0 0 0 8px rgb(${rgb} / 0)` }], {
       duration: 900,
       delay: 350,
       easing: "ease-out",
