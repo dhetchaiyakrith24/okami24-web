@@ -237,6 +237,8 @@ export interface Dictionary {
     /** Phone option tiles (Q5, 24/10): the green pill, the sold-out pill, and "{in} of {n}" over the tiles. */
     optionIn: string;
     optionOut: string;
+    /** Owner 11/11: a tile whose warehouse code has no live number — ask the shop (live-rules.ts "ask"). */
+    optionAsk: string;
     optionStockCount: string;
     /** Live warehouse count of the picked option (owner 26/10 word, HANDOFF §18 "Low-stock label") — `{n}` = pieces left, shown at ≤ 3. */
     lowStock: string;
@@ -590,6 +592,8 @@ export interface Dictionary {
     orderOnLineNote: string;
     outOfStockLabel: string;
     outOfStockCta: string;
+    /** Owner 11/11 safety net: the picked option has a warehouse code but no live number — not sold, not "sold out". */
+    askStockCta: string;
     /** While online ordering is OFF (OKAMI24_ORDERING, owner 2026-09-07) these four replace the
      *  cart button: the button label (shows the LINE ID on purpose — if the link fails the
      *  customer can still type it), the line under it before a tap, the line after the tap has
