@@ -8,7 +8,8 @@
  * list, and gets a whole-order refund choice · the customer can pick a refund on the cancelled order and staff can record
  * it (the order stays cancelled) · a swap is refused on it · a second "cancelled" changes nothing · "deleted" / "failed"
  * only record the event · a shipped order is left alone · an order with a slip never confirmed cancels with no refund box ·
- * the event row is still written every time.
+ * the event row is still written every time · a choice the customer already made on an open out-of-stock issue is kept
+ * (refund target included), widened to the whole order, with a team note.
  */
 import fs from "node:fs";
 import os from "node:os";
@@ -37,7 +38,7 @@ async function main(): Promise<void> {
     const { stockBook } = await load("src/lib/staff/stock-book.ts");
     const { createLineOrder } = await load("src/lib/staff/line-orders.ts");
     const { recordOrderUpdates } = await load("src/lib/woo/order-events.ts");
-    const { getStockIssue, stockIssueViewFor, chooseRefund, chooseSwap, markRefunded } = await load("src/lib/commerce/stock-issues.ts");
+    const { getStockIssue, stockIssueViewFor, chooseRefund, chooseSwap, markRefunded, openStockIssue } = await load("src/lib/commerce/stock-issues.ts");
     const { salesToday } = await load("src/lib/staff/daily-sales.ts");
     const { jobOf } = await load("src/lib/staff/jobs.ts");
     const db = getDb();
@@ -126,6 +127,39 @@ async function main(): Promise<void> {
     const slip = make("payment_submitted", ["payment_submitted"]);
     await recordOrderUpdates([{ orderId: slip.id, status: "cancelled" }]);
     check("unconfirmed slip → cancelled, no refund box", statusOf(slip.id) === "cancelled" && getStockIssue(slip.id) === null);
+
+    // 8 — the customer had already answered an open out-of-stock issue (one line of two): the warehouse cancel keeps the
+    //     answer, widens the issue to the whole order and notes it for the team (checker of #1415).
+    const twoLines = (history: string[]) => {
+      const o = make("approved", history);
+      db.prepare("INSERT INTO order_items (order_id, product_slug, variant_id, variant_label, product_name_snapshot, unit_price, quantity, line_total) SELECT order_id, product_slug, variant_id, variant_label, product_name_snapshot, unit_price, 1, unit_price FROM order_items WHERE order_id = ? LIMIT 1").run(o.id);
+      db.prepare("UPDATE orders SET subtotal = subtotal * 2, total = total + subtotal WHERE id = ?").run(o.id);
+      const ids = (db.prepare("SELECT id FROM order_items WHERE order_id = ? ORDER BY id").all(o.id) as { id: number }[]).map((r) => r.id);
+      return { ...o, ids };
+    };
+    const paidHist = ["payment_submitted", "awaiting_verification", "approved"];
+    const kept = twoLines(paidHist);
+    check("partial issue opened", openStockIssue(kept.number, [kept.ids[0]], "หมดสีเดียว").ok);
+    const bankPick = await chooseRefund(kept.number, kept.token, { mode: "bank", account: "1234567890", bank: "กสิกรไทย", branch: "" });
+    check("customer picked a bank refund for the one line", bankPick.ok && getStockIssue(kept.id)?.refund.wholeOrder === false, bankPick);
+    await recordOrderUpdates([{ orderId: kept.id, status: "cancelled" }]);
+    const k = getStockIssue(kept.id);
+    check("warehouse cancel keeps the customer's choice and bank account", statusOf(kept.id) === "cancelled" && k?.choice === "refund" && k.refundBankAccount?.account === "1234567890" && k.refundBankAccount.bank === "กสิกรไทย", k);
+    const total = (db.prepare("SELECT total FROM orders WHERE id = ?").get(kept.id) as { total: number }).total;
+    check("…widened to the whole order: the whole paid total goes back", k?.refund.wholeOrder === true && k.refund.amount === total, { refund: k?.refund, total });
+    check("…and the staff note keeps the old one", k?.staffNote === "คลังยกเลิกใน Shipnity (cancelled) · เดิม: หมดสีเดียว", k?.staffNote);
+    const note = db.prepare("SELECT note FROM order_status_history WHERE order_id = ? AND note LIKE 'Stock: warehouse cancelled%'").get(kept.id) as { note: string } | undefined;
+    check("…with a team note in the history", note?.note === "Stock: warehouse cancelled — customer's choice kept (refund), widened to the whole order", note);
+    check("staff can still record that refund", markRefunded(kept.number, "TESTREF5678").ok && statusOf(kept.id) === "cancelled");
+
+    const swapKept = twoLines(paidHist);
+    openStockIssue(swapKept.number, [swapKept.ids[0]], "");
+    db.prepare("UPDATE order_stock_issues SET choice = 'swap', swap_json = '[]', chosen_at = '2026-11-11T00:00:00.000Z' WHERE order_id = ?").run(swapKept.id);
+    await recordOrderUpdates([{ orderId: swapKept.id, status: "cancelled" }]);
+    const sk = getStockIssue(swapKept.id);
+    const skView = stockIssueViewFor(swapKept.id);
+    check("a swap the customer chose is kept too (staff contact them)", sk?.choice === "swap" && sk.refund.wholeOrder && skView?.afterCancel === true && skView.stage === "chosen", { sk, skView });
+    check("…and staff can still record a refund instead", markRefunded(swapKept.number, "TESTREF9999").ok);
 
     // 7 — an order that never was: nothing breaks.
     let threw = false;

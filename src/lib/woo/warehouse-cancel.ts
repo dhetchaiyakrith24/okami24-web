@@ -2,7 +2,7 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { canTransition, type OrderStatus } from "@/lib/commerce/order-status";
 import { openStockIssue } from "@/lib/commerce/stock-issues";
-import { warehouseCancelNote, warehouseCancels } from "@/lib/commerce/cancel-reason";
+import { keptChoiceNote, WAREHOUSE_ISSUE_NOTE, warehouseCancelNote, warehouseCancels } from "@/lib/commerce/cancel-reason";
 
 /**
  * Shipnity cancelled an order it was sent → the web order cancels itself (T2-10 / T2-11, owner 11/11 ~20:45, main chat, his
@@ -32,11 +32,25 @@ export function cancelByWarehouse(orderId: number, shipnityStatus: string | null
     if (!canTransition(row.status, "cancelled")) return { cancelled: false, reason: "not-allowed" };
     let refundOpen = false;
     if (CONFIRMED.includes(row.status)) {
-      const issue = db.prepare("SELECT resolution FROM order_stock_issues WHERE order_id = ?").get(orderId) as { resolution: string | null } | undefined;
-      // A refund already made for some lines stays as it is (openStockIssue refuses it) — staff settle the rest by hand.
-      if (issue?.resolution !== "refunded") {
-        const lines = (db.prepare("SELECT id FROM order_items WHERE order_id = ?").all(orderId) as { id: number }[]).map((i) => i.id);
-        refundOpen = openStockIssue(row.order_number, lines, `คลังยกเลิกใน Shipnity (${shipnityStatus})`).ok;
+      const issue = db.prepare("SELECT resolution, choice, staff_note FROM order_stock_issues WHERE order_id = ?").get(orderId) as
+        | { resolution: string | null; choice: string | null; staff_note: string | null }
+        | undefined;
+      const lines = (db.prepare("SELECT id FROM order_items WHERE order_id = ?").all(orderId) as { id: number }[]).map((i) => i.id);
+      const note = `${WAREHOUSE_ISSUE_NOTE}(${shipnityStatus})`;
+      if (issue && issue.resolution === null && issue.choice !== null) {
+        // The customer already answered an open out-of-stock issue (Friday 11/11, checker of #1415): their choice and refund
+        // target stay — openStockIssue would wipe them. The issue widens to the whole order (the whole paid total goes
+        // back) and the team gets a history note.
+        db.prepare("UPDATE order_stock_issues SET out_item_ids = ?, staff_note = ? WHERE order_id = ?").run(
+          lines.join(","),
+          (issue.staff_note ? `${note} · เดิม: ${issue.staff_note}` : note).slice(0, 300),
+          orderId
+        );
+        db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, ?, ?)").run(orderId, row.status, keptChoiceNote(issue.choice));
+        refundOpen = true;
+      } else if (issue?.resolution !== "refunded") {
+        // A refund already made for some lines stays as it is (openStockIssue refuses it) — staff settle the rest by hand.
+        refundOpen = openStockIssue(row.order_number, lines, note).ok;
       }
     }
     db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'cancelled', ?)").run(orderId, warehouseCancelNote(shipnityStatus!));

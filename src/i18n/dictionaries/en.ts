@@ -695,6 +695,7 @@ export const en: Dictionary = {
     stockRefundBankBack: "Back to PromptPay",
     stockPending: "Saving…",
     stockChosenSwap: "Swap request received. We're preparing your items, and this page will update once the swap is done.",
+    stockChosenSwapCancelled: "We’ve received your swap request. Since this order has been cancelled, we’ll be in touch to arrange whichever you prefer: your swapped items as a new order, covered by the amount you’ve already paid, or a refund by PromptPay or to a bank account.",
     stockChosenRefund: "Refund request received. We'll transfer {amount} to PromptPay {phone}.",
     stockChosenRefundBank: "Refund request received. We'll transfer {amount} to {bank}{branch}, account {account}.",
     stockSwapped: "Your items have been swapped. The list below is what we'll ship.",
