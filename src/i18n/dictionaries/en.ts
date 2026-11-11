@@ -477,6 +477,7 @@ export const en: Dictionary = {
     orderOnLineNote: "Or order on LINE @okm24",
     outOfStockLabel: "Out of stock",
     outOfStockCta: "Ask on LINE",
+    askStockCta: "Ask about stock on LINE",
     orderOnLineCta: "Order on LINE @okm24",
     orderOnLineHint: "Opens our LINE. Message us there — the admin replies in person.",
     orderOnLineCopied: "Product details copied — paste them in LINE.",

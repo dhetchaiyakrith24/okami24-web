@@ -40,18 +40,20 @@ import { BRAND_LOGOS } from "@/lib/brand-logos";
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
  *  is sold out, so the name label and photo still work). */
-function firstSellable<T extends { id: string; availability?: string }>(options: T[] | undefined): string | null {
+function firstSellable<T extends { id: string; availability?: string; stockAsk?: true }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  return (options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
+  // An option with no live warehouse number ("ask", live-overlay.ts) is not sold either — open on one that sells first.
+  return (options.find((o) => o.availability !== "out-of-stock" && !o.stockAsk) ?? options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
 }
 
 /** Image-fix round 2026-09-28 (owner: an option without its own photo must never show another option's photo):
  *  open on an option that HAS its own photo, so the first picture always matches the name beside it. With every
  *  option photographed this is exactly `firstSellable`. With 2+ options and none photographed nothing is
  *  pre-selected — the page opens on the product photo, which then claims no particular option. */
-function initialOption<T extends { id: string; availability?: string; image?: unknown }>(options: T[] | undefined): string | null {
+function initialOption<T extends { id: string; availability?: string; stockAsk?: true; image?: unknown }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  const sellable = options.filter((o) => o.availability !== "out-of-stock");
+  const selling = options.filter((o) => o.availability !== "out-of-stock" && !o.stockAsk);
+  const sellable = selling.length > 0 ? selling : options.filter((o) => o.availability !== "out-of-stock");
   const withPhoto = (sellable.length > 0 ? sellable : options).find((o) => o.image);
   if (withPhoto) return withPhoto.id;
   return options.length >= 2 ? null : firstSellable(options);
@@ -194,7 +196,10 @@ export function ProductHero({
   const everyOptionSoldOut = hasOptions
     ? [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock")
     : product.availability === "out-of-stock";
-  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
+  // Owner 11/11 safety net: an option (or a product without options) whose warehouse code has no live number is not sold —
+  // the buy slot asks about stock on LINE instead (live-rules.ts "ask"; the cart and checkout refuse it on the server).
+  const stockAsk = !everyOptionSoldOut && (hasOptions ? !!(selectedColor?.stockAsk ?? selectedFlavor?.stockAsk) : !!product.stockAsk);
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut && !stockAsk;
   const builtOptions = [...(builtProduct.colorVariants ?? []), ...(builtProduct.flavorVariants ?? [])];
   const builtSoldOut = builtOptions.length > 0 ? builtOptions.every((v) => v.availability === "out-of-stock") : builtProduct.availability === "out-of-stock";
   // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
@@ -444,6 +449,7 @@ export function ProductHero({
                   are passed in so this renders exactly as it did when the branch lived here. */}
               <ProductBuyAction
                 available={canAddToCart}
+                askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
@@ -559,6 +565,7 @@ export function ProductHero({
       <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled} lowText={canAddToCart ? pickedLowText : null}>
         <ProductBuyAction
           available={canAddToCart}
+          askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
           orderingEnabled={orderingEnabled}
           slug={product.slug}

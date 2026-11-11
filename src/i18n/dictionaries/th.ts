@@ -511,6 +511,7 @@ export const th: Dictionary = {
     orderOnLineNote: "หรือสั่งทางไลน์ @okm24",
     outOfStockLabel: "สินค้าหมด",
     outOfStockCta: "สอบถามทาง LINE",
+    askStockCta: "สอบถามสต็อกทาง LINE",
     orderOnLineCta: "สั่งซื้อทางไลน์ @okm24",
     orderOnLineHint: "กดแล้วเปิดไลน์ร้าน แอดมินตอบเองค่ะ",
     orderOnLineCopied: "คัดลอกข้อมูลสินค้าแล้ว วางในไลน์ได้เลยค่ะ",

@@ -469,6 +469,7 @@ export const zh: Dictionary = {
     orderOnLineNote: "也可通过 LINE @okm24 下单",
     outOfStockLabel: "缺货",
     outOfStockCta: "LINE 咨询",
+    askStockCta: "LINE 咨询库存",
     orderOnLineCta: "用 LINE 下单 @okm24",
     orderOnLineHint: "点击后打开本店 LINE，直接问，店主亲自回复",
     orderOnLineCopied: "已复制商品信息，在 LINE 里粘贴即可",

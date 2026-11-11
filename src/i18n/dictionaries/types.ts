@@ -585,6 +585,8 @@ export interface Dictionary {
     orderOnLineNote: string;
     outOfStockLabel: string;
     outOfStockCta: string;
+    /** Owner 11/11 safety net: the picked option has a warehouse code but no live number — not sold, not "sold out". */
+    askStockCta: string;
     /** While online ordering is OFF (OKAMI24_ORDERING, owner 2026-09-07) these four replace the
      *  cart button: the button label (shows the LINE ID on purpose — if the link fails the
      *  customer can still type it), the line under it before a tap, the line after the tap has
