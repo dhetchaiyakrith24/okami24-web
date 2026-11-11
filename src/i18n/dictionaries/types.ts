@@ -224,7 +224,9 @@ export interface Dictionary {
   product: {
     colorLabel: string;
     flavorLabel: string;
-    allVariantsLabel: string;
+    /** The first chip of the colour / flavour picker = the maker's picture of every option together (owner 12/11). */
+    allColorsLabel: string;
+    allFlavorsLabel: string;
     lineupGroupLabel: string;
     lineupGroupFallback: string;
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */

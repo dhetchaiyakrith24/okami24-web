@@ -82,7 +82,7 @@ export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: 
                             <Link href={`/brands/${b.slug}`} className="whitespace-nowrap underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember">
                               {b.name}
                             </Link>
-                            {b.bestSeller && <span className="inline-flex h-[19px] items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 text-[11px] leading-none font-semibold whitespace-nowrap text-ember-strong">{t(brandTable.bestSeller)}</span>}
+                            {b.bestSeller && <span className="inline-flex h-[19px] items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 text-[11px] leading-none font-semibold whitespace-nowrap text-foreground">{t(brandTable.bestSeller)}</span>}
                           </span>
                         </th>
                         <td className="py-3 pl-2 text-right font-display text-[15px] font-semibold tabular-nums text-foreground">{b.models}</td>
