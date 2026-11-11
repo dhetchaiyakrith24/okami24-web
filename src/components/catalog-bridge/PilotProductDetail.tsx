@@ -46,6 +46,7 @@ import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { renderInline } from "@/components/content/ArticleBody";
+import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
 import type { ProductArticleCopy } from "@/data/product-articles";
 import type { Locale } from "@/i18n/config";
 
@@ -306,6 +307,8 @@ export function PilotProductDetail({
               </p>
             </div>
           )}
+          {/* T2-31: the devices this part fits, next to the price (nothing cited = nothing here). */}
+          <FitsDeviceLine slug={product.slug} devices={fitsDevices} ownBrand={product.brandName} className="-mt-3 max-lg:order-3 max-lg:mt-0" />
 
           <ProductMasterVariantPicker
             optionAxisLabel={axisLabel}
