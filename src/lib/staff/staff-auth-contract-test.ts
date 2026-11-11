@@ -137,6 +137,20 @@ async function main(): Promise<void> {
     jar = new Map();
     check("on again: the password signs in afresh", (await auth.staffLogin("made-up-team-pass")).ok === true);
 
+    // --- 1b. T2-14: wrong tries are limited and each one is recorded ---
+    jar = new Map();
+    const wrongs = [];
+    for (let i = 0; i < 5; i++) wrongs.push(await auth.staffLogin("not-the-pass"));
+    check("wrong password: refused, no session", wrongs.every((r) => !r.ok && r.reason === "wrong") && !jar.has("okami24_staff"));
+    const locked = await auth.staffLogin("made-up-team-pass");
+    check("after 5 wrong tries the right password is locked out too", !locked.ok && locked.reason === "locked" && (locked.retryMinutes ?? 0) >= 1);
+    const failRows = d.prepare("SELECT actor_kind, actor_name, detail FROM staff_audit WHERE action = 'sign-in-failed' ORDER BY id").all() as { actor_kind: string; actor_name: string; detail: string }[];
+    check("each wrong try is in ใครทำอะไร under รหัสร่วม", failRows.length === 5 && failRows.every((r) => r.actor_kind === "shared" && r.actor_name === "รหัสร่วม"), failRows);
+    check("…counted per phone", failRows[4]?.detail === "ครั้งที่ 5 จาก 5 ของเครื่องนี้", failRows[4]);
+    check("the lock is recorded", (d.prepare("SELECT COUNT(*) AS n FROM staff_audit WHERE action = 'sign-in-locked'").get() as { n: number }).n === 1);
+    check("the records keep nothing about the visitor", failRows.every((r) => !/\d+\.\d+\.\d+\.\d+|[0-9a-f]{16}/.test(r.detail)));
+    d.prepare("DELETE FROM staff_login_failures").run();
+
     // --- 2. The owner's actions, tried without the owner ---
     const adminJar: Jar = new Map();
     auth.finishStaffGoogleSignIn({ sub: "g-ice", email: "admin1@example.com", emailVerified: true }, { cookies: { set: (n: string, v: string) => void adminJar.set(n, v) } });

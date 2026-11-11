@@ -4,6 +4,7 @@ import MOVED_IMAGES from "@/data/moved-images.json";
 import { CONTACT } from "@/data/contact";
 import { readSwitches } from "@/lib/commerce/shop-switches";
 import { CLOSED_PAGE, hiddenProductOf, staysOpenWhileClosed } from "@/lib/commerce/shop-switches-rules";
+import { OWNER_COOKIE, STAFF_COOKIE, staffDoor } from "@/lib/staff/staff-door";
 
 /**
  * Image-fix round 2026-09-30 (owner: "Cloudflare ส่ง JPEG — อยากให้แก้"): make the image optimizer answer WebP
@@ -57,8 +58,26 @@ function switched(request: NextRequest): NextResponse | null {
   return null;
 }
 
+/** T2-52 (src/lib/staff/staff-door.ts): a /staff page asked for without the session's cookie gets a real 307 to its sign-in. */
+function staffDoorAnswer(request: NextRequest): NextResponse | null {
+  const target = staffDoor(request.nextUrl.pathname, {
+    staff: request.cookies.has(STAFF_COOKIE),
+    owner: request.cookies.has(OWNER_COOKIE),
+  });
+  if (!target) return null;
+  const url = request.nextUrl.clone();
+  url.pathname = target;
+  url.search = "";
+  const response = NextResponse.redirect(url, 307);
+  response.headers.set("Cache-Control", "no-store");
+  response.headers.set("X-Robots-Tag", "noindex");
+  return response;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
+  // The back office outlives a closed site (the owner's switches below never apply to it).
+  if (pathname.startsWith("/staff")) return staffDoorAnswer(request) ?? NextResponse.next();
   if (!pathname.startsWith("/_next/image") && !pathname.startsWith("/assets/products/")) return switched(request) ?? NextResponse.next();
   if (pathname.startsWith("/assets/products/")) {
     const target = moved[pathname];
@@ -84,5 +103,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   // The last line = every page, for the owner's switches: not /api, /wp-json (Shipnity's stock, orders and tracking) and /staff,
   // which must outlive a closed site, not build files, and not anything with a file extension (sitemap, robots, pictures).
-  matcher: ["/_next/image", "/assets/products/:path*", "/((?!api/|wp-json|staff|_next/|assets/|.*\\.[a-z0-9]+$).*)"],
+  // "/staff/:path+" = the back office's outer door only (T2-52) — the switches never run for it (see proxy above).
+  matcher: ["/_next/image", "/assets/products/:path*", "/staff/:path+", "/((?!api/|wp-json|staff|_next/|assets/|.*\\.[a-z0-9]+$).*)"],
 };
