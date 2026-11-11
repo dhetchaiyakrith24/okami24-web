@@ -39,6 +39,17 @@ const nextConfig: NextConfig = {
   /** No `x-powered-by: Next.js` on responses (owner 04/11 security pass): it only tells a scanner what to try. */
   poweredByHeader: false,
 
+  /**
+   * Version-skew protection (owner 11/11: "หลังจากกดสินค้าเปลี่ยนหน้า ขึ้นภาพจอดำและมีปุ่มให้กด Reload"). Every merge
+   * redeploys Render, and the new build renames its JS chunks. A tab opened before the deploy then asks for chunks that are
+   * gone on its next client-side navigation, and Next shows its black error screen with a Reload button.
+   * With a deployment id, Next stamps it on assets and navigation requests; when the client's id differs from the server's
+   * it does a full page load instead (node_modules/next/dist/docs/01-app/03-api-reference/05-config/01-next-config-js/
+   * deploymentId.md "How it works"). Render sets RENDER_GIT_COMMIT at build time and run time. Unset (local builds,
+   * the test server) = undefined = Next behaves exactly as before.
+   */
+  deploymentId: process.env.RENDER_GIT_COMMIT || undefined,
+
   experimental: {
     /**
      * Hold the image optimizer to two workers (2026-09-06).
