@@ -133,7 +133,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
 .okh-btn-primary {
   background: var(--accent-ember);
   color: #160803;
-  box-shadow: 0 0 0 1px rgba(255, 162, 77, 0.5), 0 10px 40px -10px rgba(240, 138, 42, 0.7);
+  box-shadow: 0 0 0 1px rgb(var(--ember-strong-rgb) / 0.5), 0 10px 40px -10px rgb(var(--ember-rgb) / 0.7);
 }
 .okh-btn-primary:hover { background: var(--accent-ember-strong); transform: translateY(-1px); }
 .okh-btn-ghost { border: 1px solid var(--surface-border); color: var(--foreground); }
@@ -159,7 +159,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   height: 11%;
   transform: translateX(50%);
   /* the warm pool the device hovers over */
-  background: radial-gradient(closest-side, rgba(240, 138, 42, 0.55), rgba(240, 138, 42, 0.18) 55%, rgba(240, 138, 42, 0));
+  background: radial-gradient(closest-side, rgb(var(--ember-rgb) / 0.55), rgb(var(--ember-rgb) / 0.18) 55%, rgb(var(--ember-rgb) / 0));
   filter: blur(6px);
   animation: okh-floor-breathe 9s ease-in-out infinite;
 }
@@ -218,7 +218,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   will-change: transform;
 }
 .okh-float img {
-  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(240, 138, 42, 0.12));
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgb(var(--ember-rgb) / 0.12));
 }
 /* phones (owner clip 03/11: scrolling back up, the hero showed black for 2–3 frames before it popped in): every slot kept
    its own blurred, drop-shadowed, animating layer although only one shows, so Safari had four of them to raster when the
@@ -266,7 +266,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
      reads as held above the ground on purpose (a levitation shot), not pasted on */
   .okh-prod[data-flying] .okh-float { animation: okh-float-calm 9s ease-in-out infinite; }
   .okh-prod[data-flying] .okh-float img {
-    filter: brightness(0.92) drop-shadow(0 0 22px rgba(240, 138, 42, 0.12)) drop-shadow(0 28px 34px rgba(0, 0, 0, 0.5));
+    filter: brightness(0.92) drop-shadow(0 0 22px rgb(var(--ember-rgb) / 0.12)) drop-shadow(0 28px 34px rgba(0, 0, 0, 0.5));
   }
   .okh-prod[data-flying] .okh-sheen {
     -webkit-mask: var(--okh-mask-d) center / contain no-repeat;
@@ -282,7 +282,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
        alone does not read */
     background:
       radial-gradient(closest-side, rgba(6, 4, 3, 0.9), rgba(6, 4, 3, 0.55) 45%, rgba(6, 4, 3, 0) 70%),
-      radial-gradient(closest-side, rgba(240, 138, 42, 0.3), rgba(240, 138, 42, 0.1) 60%, rgba(240, 138, 42, 0));
+      radial-gradient(closest-side, rgb(var(--ember-rgb) / 0.3), rgb(var(--ember-rgb) / 0.1) 60%, rgb(var(--ember-rgb) / 0));
     filter: blur(10px);
   }
 }
@@ -325,7 +325,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   margin-top: 0.375rem;
   font-size: 0.8125rem;
   color: var(--foreground);
-  border-bottom: 1px solid rgba(240, 138, 42, 0.6);
+  border-bottom: 1px solid rgb(var(--ember-rgb) / 0.6);
   padding-bottom: 0.1875rem;
 }
 .okh-go:hover { color: var(--accent-ember-strong); }
@@ -412,7 +412,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     width: 62%;
     height: 14%;
     transform: translateX(-50%);
-    background: radial-gradient(closest-side, rgba(240, 138, 42, 0.32), rgba(240, 138, 42, 0));
+    background: radial-gradient(closest-side, rgb(var(--ember-rgb) / 0.32), rgb(var(--ember-rgb) / 0));
     filter: blur(6px);
     animation: none;
   }
@@ -481,7 +481,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   }
   .okh-lattice::before { background: rgb(255 255 255 / 0.028); }
   .okh-lattice::after {
-    background: radial-gradient(circle 15rem at var(--mx) var(--my), rgb(240 138 42 / 0.22), rgb(240 138 42 / 0.06) 45%, transparent 72%);
+    background: radial-gradient(circle 15rem at var(--mx) var(--my), rgb(var(--ember-rgb) / 0.22), rgb(var(--ember-rgb) / 0.06) 45%, transparent 72%);
     opacity: 0;
     transition: opacity 0.5s ease, --mx 0.32s cubic-bezier(0.2, 0.7, 0.2, 1), --my 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
@@ -495,7 +495,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-bg="spot"] .okh-lattice::after {
     -webkit-mask: none;
     mask: none;
-    background: radial-gradient(circle 26rem at var(--mx) var(--my), rgb(240 138 42 / 0.11), rgb(240 138 42 / 0.045) 42%, transparent 72%);
+    background: radial-gradient(circle 26rem at var(--mx) var(--my), rgb(var(--ember-rgb) / 0.11), rgb(var(--ember-rgb) / 0.045) 42%, transparent 72%);
   }
 
   /* DESKTOP_CARD_LAYOUT (owner 21/10 "อยากให้เรียงแบบมี Layers ทับซ้อนกันเล็กน้อย"): the cards overlap at their edges —
@@ -519,7 +519,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-layout="stagger"] .okh-card:hover,
   .okh[data-layout="stagger"] .okh-card:focus-visible { z-index: 10; }
   .okh[data-layout="stagger"] .okh-card:hover {
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(240 138 42 / 0.45), -8px 0 14px -10px rgb(0 0 0 / 0.75);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(var(--ember-rgb) / 0.45), -8px 0 14px -10px rgb(0 0 0 / 0.75);
   }
   /* the 1st and 3rd sit lower: the last card stays high, clear of the LINE button in the corner */
   .okh[data-layout="stagger"] .okh-card:nth-child(odd) { margin-top: 1.5rem; }
@@ -560,7 +560,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh-card:hover {
     border-color: color-mix(in srgb, var(--accent-ember) 70%, transparent);
     background: var(--surface-1);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(240 138 42 / 0.45);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(var(--ember-rgb) / 0.45);
     transform: translateY(-3px);
   }
   .okh-card:focus-visible { outline: 2px solid var(--accent-ember); outline-offset: 3px; }
