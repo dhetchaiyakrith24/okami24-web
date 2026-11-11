@@ -832,6 +832,8 @@ export interface Dictionary {
     stockLead: string;
     /** The refund box on an order the warehouse cancelled (T2-10): refund only; waiting or a same-price swap go through LINE. */
     stockCancelLead: string;
+    /** The customer chose a swap, then the warehouse cancelled the whole order: staff will contact them (swap as a new order, or refund). */
+    stockChosenSwapCancelled: string;
     stockSwapTitle: string;
     stockSwapPickLabel: string;
     stockSwapPlaceholder: string;
