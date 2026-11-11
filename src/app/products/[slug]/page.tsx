@@ -96,6 +96,7 @@ import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticles
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CategoryCrumbText } from "@/components/catalog/CategoryCrumbText";
 import { categoryCrumbTh, ROOT_CRUMB } from "@/i18n/category-crumbs";
+import { categoryPageLabelTh, categoryPageLedeTh } from "@/i18n/category-head-th";
 import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -175,7 +176,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
   // Round 7 "SEO ค" B2: the <title> gains " ของแท้ บอกราคาทุกรุ่น" after the locked label (categoryTitleTh);
   // the lede/description and the H1 are unchanged.
-  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
+  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: categoryPageLedeTh(category), ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {
@@ -260,10 +261,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
             CollectionPage + the Home → Category trail. No visible change. */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath, items: listItems })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: categoryPageLabelTh(category), description: categoryPageLedeTh(category), path: categoryPath, items: listItems })) }} />
         {guideFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideFaqJsonLd) }} />}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
-        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(categoryPageLabelTh(category), categoryPath)) }} />
+        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${categoryPageLabelTh(category)}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {lineup && guideCopy && <DisposableChooserJump copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} />}
