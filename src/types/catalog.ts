@@ -163,6 +163,9 @@ export interface ColorVariant {
    *  (see `VariantAvailability`). Optional here because colour lists predate the stock field;
    *  absent means "no signal" and is treated exactly like `"unknown"`. */
   availability?: VariantAvailability;
+  /** Live stock (src/lib/stock/live-rules.ts "ask"): the warehouse code has no live number, so it is not sold — the page
+   *  offers "ask about stock on LINE". Set only by the live overlay (live-overlay.ts), never in data. */
+  stockAsk?: true;
 }
 
 /**
@@ -211,6 +214,9 @@ export interface FlavorVariant {
   boxImage?: { src: string; alt: string };
   /** Catalog truth vs. operational stock truth — see `VariantAvailability`'s own doc comment. */
   availability: VariantAvailability;
+  /** Live stock (src/lib/stock/live-rules.ts "ask"): the warehouse code has no live number, so it is not sold — the page
+   *  offers "ask about stock on LINE". Set only by the live overlay (live-overlay.ts), never in data. */
+  stockAsk?: true;
   sourceUrl?: string;
 }
 
@@ -239,6 +245,9 @@ export interface Product {
    * (`product: null`). Absent = no signal, sells as before. Products with options carry stock per option instead.
    */
   availability?: VariantAvailability;
+  /** Live stock (src/lib/stock/live-rules.ts "ask"): the warehouse code has no live number, so it is not sold — the page
+   *  offers "ask about stock on LINE". Set only by the live overlay (live-overlay.ts), never in data. */
+  stockAsk?: true;
   /**
    * Other real names this exact product is sold under (e.g. the M Switch Kit is the shop's "M Bar 15K") — searched like
    * the product name, never rendered. A name listed here must also appear in the product's visible copy (a spacing
