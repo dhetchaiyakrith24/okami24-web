@@ -3,18 +3,20 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { pilotStatusAfterLive } from "@/lib/stock/card-stock";
+import { liveLegacyProduct, livePilotProduct, lookupFromAnswer } from "@/lib/stock/live-overlay";
+import type { LiveState } from "@/lib/stock/live-rules";
 
 /**
  * Live warehouse stock on a prerendered product page (Shipnity link step 4, owner 28/10). The page renders with the
- * stock it was built with, then asks /api/stock/<slug> once and re-labels its options: "in" sells, "out" shows
- * "สินค้าหมด". Options the answer leaves out keep the built state. A failed request changes nothing. The cart and
+ * stock the server rendered (live since 11/11 — src/lib/stock/live-overlay.ts; the build's own stock until its first
+ * regeneration), then asks /api/stock/<slug> once and re-labels its options with the SAME overlay: "in" sells, "out" shows
+ * "สินค้าหมด", "ask" asks about stock on LINE. Options the answer leaves out keep the rendered state. A failed request changes nothing. The cart and
  * checkout re-check on the server, so this is display only.
  */
 
 interface LiveAnswer {
-  o: Record<string, "in" | "out">;
-  p: "in" | "out" | null;
+  o: Record<string, LiveState>;
+  p: LiveState | null;
   q?: Record<string, number>;
   pq?: number | null;
 }
@@ -53,34 +55,17 @@ function useLiveAnswer(slug: string): [LiveAnswer | null, boolean] {
   return [answer, settled];
 }
 
-const toAvail = (s: "in" | "out") => (s === "in" ? ("in-stock" as const) : ("out-of-stock" as const));
-
 /** A legacy product with its options' availability replaced by the live answer (same object until it arrives). */
 export function useLiveLegacyProduct(product: Product): { product: Product; counts: LiveCounts } {
   const [live, settled] = useLiveAnswer(product.slug);
-  const relabelled = useMemo(() => {
-    if (!live) return product;
-    const relabel = <T extends { id: string; availability?: Product["availability"] }>(v: T): T =>
-      live.o[v.id] ? { ...v, availability: toAvail(live.o[v.id]) } : v;
-    return {
-      ...product,
-      ...(live.p ? { availability: toAvail(live.p) } : {}),
-      colorVariants: product.colorVariants?.map(relabel),
-      flavorVariants: product.flavorVariants?.map(relabel),
-    };
-  }, [product, live]);
+  const relabelled = useMemo(() => (live ? liveLegacyProduct(product, lookupFromAnswer(product.slug, live)) : product), [product, live]);
   return { product: relabelled, counts: useMemo(() => countsOf(live, settled), [live, settled]) };
 }
 
 /** A ProductMaster product with its variants' availability replaced by the live answer. */
 export function useLivePilotProduct(product: StorefrontProductView): { product: StorefrontProductView; counts: LiveCounts } {
   const [live, settled] = useLiveAnswer(product.slug);
-  const relabelled = useMemo(() => {
-    if (!live) return product;
-    const variants = product.variants.map((v) => (live.o[v.id] ? { ...v, availabilityStatus: toAvail(live.o[v.id]) } : v));
-    // The same rule the product cards use (src/lib/stock/card-stock.ts), so a card and its page never disagree.
-    const productStatus = pilotStatusAfterLive(variants, product.availabilityStatus, live.p);
-    return { ...product, variants, availabilityStatus: productStatus };
-  }, [product, live]);
+  // The same rule the product cards use (src/lib/stock/card-stock.ts), so a card and its page never disagree.
+  const relabelled = useMemo(() => (live ? livePilotProduct(product, lookupFromAnswer(product.slug, live)) : product), [product, live]);
   return { product: relabelled, counts: useMemo(() => countsOf(live, settled), [live, settled]) };
 }

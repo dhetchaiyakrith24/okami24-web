@@ -103,6 +103,8 @@ export function resolveProductRef(ref: ProductRef, live?: LiveLookup, item?: Cat
     const now = live?.(product.slug, variant.id, variant.label);
     if (now === "in") availabilityStatus = "in-stock";
     else if (now === "out") availabilityStatus = "out-of-stock";
+    // "ask" = a warehouse code with no live number: never sold from the build snapshot alone (owner 11/11, live-rules.ts).
+    else if (now === "ask") availabilityStatus = "unknown";
     // KNOWN LIMITATION: StorefrontProductView's toView() never reads ProductVariant.pricingOverride
     // (see storefront-preview-read-model.ts), so every published variant today inherits the
     // product-level sellingPrice. No currently-published product sets a pricingOverride, so this
@@ -114,6 +116,7 @@ export function resolveProductRef(ref: ProductRef, live?: LiveLookup, item?: Cat
     const now = live?.(product.slug);
     if (now === "in") availabilityStatus = "in-stock";
     else if (now === "out") availabilityStatus = "out-of-stock";
+    else if (now === "ask") availabilityStatus = "unknown";
   }
 
   // CORRECTED (owner architecture review): this used to only block an explicit "out-of-stock" and
@@ -181,10 +184,11 @@ function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem, live?: Live
     ...(product.flavorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability })),
   ].map((o) => {
     const now = live?.(product.slug, o.id, o.label);
-    return now === "in" ? { ...o, availability: "in-stock" as const } : now === "out" ? { ...o, availability: "out-of-stock" as const } : o;
+    // "ask" (a warehouse code with no live number) is refused like sold out: never sold from the build snapshot alone (11/11).
+    return now === "in" ? { ...o, availability: "in-stock" as const } : now === "out" || now === "ask" ? { ...o, availability: "out-of-stock" as const } : o;
   });
   const productNow = options.length === 0 ? live?.(product.slug) : null;
-  const productAvailability = productNow === "in" ? "in-stock" : productNow === "out" ? "out-of-stock" : product.availability;
+  const productAvailability = productNow === "in" ? "in-stock" : productNow === "out" || productNow === "ask" ? "out-of-stock" : product.availability;
 
   // A product without options that has no SKU in the warehouse (applySoldOut, stock round batch 2b).
   if (options.length === 0 && productAvailability === "out-of-stock") {

@@ -85,7 +85,7 @@ const hook = src("components/catalog/useLiveCardStock.ts");
 check("one request per page: the cards' hook is the only caller of /api/stock", (hook.match(/fetch\(/g) ?? []).length === 1 && hook.includes('fetch("/api/stock"'));
 check("the card's sales badge reads the live answer", /CardSalesBadge[\s\S]*?useLiveSoldOut\(slug, soldOut\)/.test(src("components/catalog/SalesBadge.tsx")));
 check("the in-stock filter reads the live answer", src("components/catalog/CatalogBrowser.tsx").includes("useLiveCardStock()"));
-check("the product page uses the same ProductMaster rule", src("components/product/useLiveStock.ts").includes("pilotStatusAfterLive(variants, product.availabilityStatus, live.p)"));
+check("the product page uses the same overlay (live-overlay.ts) after load", src("components/product/useLiveStock.ts").includes("livePilotProduct(product, lookupFromAnswer(product.slug, live))") && src("components/product/useLiveStock.ts").includes("liveLegacyProduct(product, lookupFromAnswer(product.slug, live))"));
 const route = src("app/api/stock/route.ts");
 check("the stock API answers from the live read, without counts", route.includes("liveCardChanges(allProducts, getPublishedProducts(), liveLookup())") && !/Quantity|publicCount/.test(route));
 check("the price line stays on the build (card and product page alike)", !/useLiveCardStock|useLiveSoldOut/.test(src("components/catalog/SaleLabel.tsx")));
@@ -95,8 +95,9 @@ const productPage = src("app/products/[slug]/page.tsx");
 check(
   "JSON-LD reads live stock on the server (ISR + the cards' overlay), never the client hook",
   /^export const revalidate = \d+;$/m.test(productPage) &&
-    productPage.includes("offerAvailability(legacyCardStock(product, liveLookup()))") &&
-    productPage.includes("offerAvailability(publishedCardStock(publishedProduct, liveLookup()))") &&
+    productPage.includes("const live = liveLookup();") &&
+    productPage.includes("offerAvailability(legacyCardStock(product, live))") &&
+    productPage.includes("offerAvailability(publishedCardStock(publishedProduct, live))") &&
     !/useLiveCardStock|api\/stock/.test(productPage)
 );
 

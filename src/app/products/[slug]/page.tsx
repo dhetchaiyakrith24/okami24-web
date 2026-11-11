@@ -41,6 +41,7 @@ import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSec
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { ORDERING_ENABLED, orderingOpen } from "@/lib/commerce/ordering-mode";
 import { liveLookup } from "@/lib/stock/live";
+import { liveLegacyProduct, livePilotProduct } from "@/lib/stock/live-overlay";
 import { cardTaglinesTh } from "@/lib/card-taglines";
 import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock/card-stock";
 
@@ -299,9 +300,15 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     );
   }
 
+  // Owner 11/11 ("ทุกตัวต้องเช็คได้หมด … รันสต็อกสด"): the page renders with the warehouse's LIVE stock laid over the build's
+  // (src/lib/stock/live-overlay.ts — the same overlay the page's after-load refresh and the cards use), so the first paint and a
+  // reader without JavaScript see live stock. `next build` has no data disk: the overlay is a no-op there, and the first
+  // regeneration brings the live answer (pages whose live stock differs from the build are marked stale — stale-pages.ts).
+  const live = liveLookup();
   const product = getProduct(slug);
   if (!product) {
-    const publishedProduct = getPublishedProduct(slug);
+    const builtPublished = getPublishedProduct(slug);
+    const publishedProduct = builtPublished ? livePilotProduct(builtPublished, live) : undefined;
     if (publishedProduct) {
       // Same schema.org shape as the legacy branch below — a published ProductMaster product is
       // a real product page and deserves the same structured-data completeness.
@@ -316,7 +323,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
         // priceReference (see buildPublishedCatalog()'s own readiness gate). Stock words = offerAvailability (live stock).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...offerAvailability(publishedCardStock(publishedProduct, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...offerAvailability(publishedCardStock(publishedProduct, live)), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
       const publishedBrand = publishedProduct.brandId ? getBrand(publishedProduct.brandId) : undefined;
       const publishedBrandHref = publishedBrand ? `/brands/${publishedBrand.slug}` : undefined;
@@ -342,7 +349,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         </>
       );
     }
-    const pilotProduct = getPilotProduct(slug);
+    const builtPilot = getPilotProduct(slug);
+    const pilotProduct = builtPilot ? livePilotProduct(builtPilot, live) : undefined;
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
       return <PilotProductDetail product={pilotProduct} related={publishedRelatedItems(getPilotRelatedProducts(pilotProduct))} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(pilotProduct.slug)} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
@@ -350,6 +358,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     notFound();
   }
 
+  const liveProduct = liveLegacyProduct(product, live);
   const related = relatedFor(product.slug);
   const brand = getBrand(product.brandId);
   // The product's own Thai copy, handed to the Client Components below as a prop (SEO ฉ batch 4, 14/10 — importing
@@ -366,10 +375,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
-  // Every option sold out at build time (owner's list, no SKU, the warehouse read) — drives the similar-models block only;
-  // the Offer's stock words come from offerAvailability (live stock).
-  const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
-  const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
+  // Every option sold out as rendered (owner's list, no SKU, the live warehouse answer over the build's read) — drives the
+  // similar-models block only; the Offer's stock words come from offerAvailability (live stock).
+  const legacyOptions = [...(liveProduct.flavorVariants ?? []), ...(liveProduct.colorVariants ?? [])];
+  const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : liveProduct.availability === "out-of-stock";
   // Nothing to buy at build time (no price, or every option out): the closest models we do have sit right under the head.
   // A page built with stock asks for them only if the live stock empties it (SimilarInStock).
   const similar = legacySellingPrice === null || legacyAllSoldOut ? similarInStock(product.slug) : [];
@@ -387,7 +396,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated. No price = no Product block at all (SEO 04/11:
     // GSC flagged caliburn-g3 / drag-x / nexpod-15k invalid — Google needs offers, review or aggregateRating).
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...offerAvailability(legacyCardStock(product, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...offerAvailability(legacyCardStock(product, live)), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   // Round "M Bar 9K redesign" (owner 23/10): a slug in product-editorial.ts gets the editorial body instead of the
   // review / more-details / spec / compatibility / FAQ sections; its FAQPage block is built from the same Thai copy.
@@ -413,7 +422,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
+      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
       <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>
