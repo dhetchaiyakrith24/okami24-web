@@ -102,6 +102,9 @@ export interface StorefrontVariantView {
    *  the cart/checkout stock-validation step can reject a specific out-of-stock variant even when
    *  the product as a whole still has other in-stock variants. */
   availabilityStatus: AvailabilityStatus;
+  /** Live stock "ask" (src/lib/stock/live-rules.ts): a warehouse code with no live number — not sold, not shown as sold
+   *  out; the page offers "ask about stock on LINE". Set only by the live overlay (src/lib/stock/live-overlay.ts). */
+  stockAsk?: true;
 }
 
 /** Which dev-preview fallback illustration applies — derived from `systemType`, itself
@@ -185,6 +188,8 @@ export interface StorefrontProductView {
    *  live quantity — see docs/BUSINESS_SOURCE_OF_TRUTH.md §19 ("Shipnity integration mechanism"
    *  is TBD). Checkout must treat this as authoritative pending a real Shipnity API. */
   availabilityStatus: AvailabilityStatus;
+  /** Live stock "ask" for a product without variants (src/lib/stock/live-overlay.ts) — see StorefrontVariantView.stockAsk. */
+  stockAsk?: true;
   /** Manufacturer facts only (see VERIFIED_SPECIFICATIONS) — never OKami24 editorial or merchant
    *  knowledge, which stay separate fields for exactly this reason. Empty for every product this
    *  hasn't been researched for yet — absence, not a placeholder. */

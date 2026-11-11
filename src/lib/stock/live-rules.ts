@@ -10,11 +10,16 @@ import { SHIPNITY_SKU_MAP } from "@/data/stock/sku-map";
  *   - an option with no warehouse code (sku-map `null`) or a code still to check ("check") gets no live answer — it keeps
  *     what the build says (null = "สินค้าหมด", as before);
  *   - a code Shipnity reported: number > 0 = sells · 0 or less = "สินค้าหมด" (BSOT §6 "stock > 0: available");
- *   - a code Shipnity never reported: no live answer — the build-time warehouse read stays the fallback.
+ *   - a code Shipnity never reported, or reported with neither a number nor a status, while the table holds reports (the
+ *     link is up): "ask" — the site does not sell it from the build-time snapshot alone. The page offers "ask about stock
+ *     on LINE", the cart and checkout refuse it (owner 11/11 "ตาข่ายกันพลาด": codes listed that week had no Shipnity
+ *     number, and the build snapshot had Pod-159-16 sold out while Shipnity said 140);
+ *   - no reports at all (`next build` has no data disk, a fresh data dir): no live answer — the build-time read stays.
  * `optionId` undefined = a product without options (its own code).
  */
 
-export type LiveState = "in" | "out";
+/** "ask" = the option has a warehouse code but no live number: neither sold nor sold out — the visitor asks the shop. */
+export type LiveState = "in" | "out" | "ask";
 
 export interface LiveReport {
   quantity: number | null;
@@ -41,10 +46,11 @@ export function liveState(
   if (optionId !== undefined && listed(slug, optionName ?? optionId, optionId)) return "out";
   const code = codeFor(slug, optionId);
   if (!code) return null;
+  const linkUp = reports.size > 0;
   const r = reports.get(code);
-  if (!r) return null;
+  if (!r) return linkUp ? "ask" : null;
   const qty = r.quantity ?? (r.stockStatus === "instock" ? 1 : r.stockStatus === "outofstock" ? 0 : null);
-  if (qty === null) return null;
+  if (qty === null) return linkUp ? "ask" : null;
   return qty > 0 ? "in" : "out";
 }
 
