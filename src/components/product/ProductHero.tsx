@@ -405,7 +405,8 @@ export function ProductHero({
             <p className="max-w-lg text-lg leading-relaxed text-foreground-muted">{heroTagline}</p>
           </div>
           <div className="flex flex-col gap-1 max-lg:order-8">
-            <p className="max-w-lg text-sm leading-relaxed text-foreground-dim">{heroDescription}</p>
+            {/* 15 px muted, not 14 px dim (owner 12/11 "อ่านง่ายขึ้น"; designer: not 16 — it would sit 2 px from the 18 px tagline). */}
+            <p className="max-w-lg text-[0.9375rem] leading-relaxed text-foreground-muted">{heroDescription}</p>
           </div>
 
           {sellingPrice !== null && (
