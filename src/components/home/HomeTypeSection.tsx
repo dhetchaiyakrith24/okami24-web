@@ -43,7 +43,8 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
   const live = liveStockReady() ? liveLookup() : null;
   const soldOut = (i: (typeof items)[number]) =>
     !live ? false : i.legacy ? legacyCardStock(i.legacy, live).soldOut : i.published ? publishedCardStock(i.published, live).soldOut : false;
-  items.sort((a, b) => Number(soldOut(a)) - Number(soldOut(b)) || rank(a.slug) - rank(b.slug));
+  const last = (i: (typeof items)[number]) => Number(RAIL_LAST.has(i.slug));
+  items.sort((a, b) => last(a) - last(b) || Number(soldOut(a)) - Number(soldOut(b)) || rank(a.slug) - rank(b.slug));
   const category = getCategory(categories[0]);
   if (!items.length || !category) return null;
   const href = `/products/${category.slug}`;

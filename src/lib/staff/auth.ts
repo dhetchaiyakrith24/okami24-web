@@ -140,22 +140,26 @@ export async function staffLogin(given: string): Promise<LoginResult> {
     .prepare("SELECT COUNT(*) AS n, MIN(failed_at) AS first FROM staff_login_failures WHERE client_hash = ?")
     .get(client) as { n: number; first: string | null };
   const total = (db.prepare("SELECT COUNT(*) AS n FROM staff_login_failures").get() as { n: number }).n;
+  // T2-14: wrong tries and locks go to "ใครทำอะไร" under the shared password, so the owner sees someone guessing while it
+  // still exists. Nothing about the visitor is kept there (the per-visitor lock uses a hash in staff_login_failures).
+  const shared: StaffActor = { kind: "shared", accountId: null, name: SHARED_NAME };
   if (mine.n >= MAX_FAILURES_PER_CLIENT || total >= MAX_FAILURES_TOTAL) {
     const first = mine.first ? Date.parse(mine.first) : Date.now();
     const retryMinutes = Math.max(1, Math.ceil((first + WINDOW_MINUTES * 60_000 - Date.now()) / 60_000));
+    recordStaffAction(shared, "sign-in-locked", { detail: total >= MAX_FAILURES_TOTAL ? "ล็อกทุกเครื่อง" : "ล็อกเครื่องนี้" });
     return { ok: false, reason: "locked", retryMinutes };
   }
 
   if (!passwordMatches(given, expected)) {
     db.prepare("INSERT INTO staff_login_failures (client_hash) VALUES (?)").run(client);
+    recordStaffAction(shared, "sign-in-failed", { detail: `ครั้งที่ ${mine.n + 1} จาก ${MAX_FAILURES_PER_CLIENT} ของเครื่องนี้` });
     // A small fixed pause makes scripted guessing slower without bothering a person.
     await new Promise((resolve) => setTimeout(resolve, 600));
     return { ok: false, reason: "wrong" };
   }
 
-  const actor: StaffActor = { kind: "shared", accountId: null, name: SHARED_NAME };
-  issueSession(await cookies(), actor, passwordTag(expected), STAFF_SESSION_HOURS);
-  recordStaffAction(actor, "sign-in", { detail: "รหัสร่วม" });
+  issueSession(await cookies(), shared, passwordTag(expected), STAFF_SESSION_HOURS);
+  recordStaffAction(shared, "sign-in", { detail: "รหัสร่วม" });
   return { ok: true };
 }
 
