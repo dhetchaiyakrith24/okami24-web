@@ -54,7 +54,7 @@ export const en: Dictionary = {
     help: "Help",
     ageNotice: "For ages 21 and over only. Nicotine is addictive. Order right here on the site; ask us on LINE",
     ageNoticeWhileOrderingOff: "For ages 21 and over only. Nicotine is addictive. Order and ask us on LINE",
-    siteUnreachable: "Can't open the site? See how to fix it",
+    siteUnreachable: "Can't open the site? There's an easy way to fix it",
   },
   hero: {
     badgeSuffix: "· Current Flagship",
