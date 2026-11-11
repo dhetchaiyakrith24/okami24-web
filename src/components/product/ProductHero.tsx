@@ -531,7 +531,8 @@ export function ProductHero({
           {zoomProto && (
             // The lit shelf of the owner's reference reel: one ember line the device stands on + its warm spill, drawn
             // in from the centre after the zoom lands (globals.css "okami-zoom-plinth"; still when motion is off).
-            <div aria-hidden className="okami-zoom-plinth pointer-events-none absolute inset-x-[12%] bottom-[7%] z-0 h-24">
+            // At least 34 px up: the phone slide dots sit 18–26 px above the box bottom, and 7% alone (≈24 px at 390) put the line on them.
+            <div aria-hidden className="okami-zoom-plinth pointer-events-none absolute inset-x-[12%] bottom-[max(7%,34px)] z-0 h-24">
               <div className="absolute inset-x-0 bottom-0 h-full rounded-[50%] bg-[radial-gradient(ellipse_at_50%_100%,rgba(255,106,44,0.32)_0%,rgba(255,106,44,0.10)_45%,transparent_72%)] blur-md" />
               <div className="absolute inset-x-[6%] bottom-0 h-px bg-[linear-gradient(to_right,transparent,rgba(255,131,71,0.95)_30%,rgba(255,131,71,0.95)_70%,transparent)] shadow-[0_0_14px_2px_rgba(255,106,44,0.55)]" />
             </div>
