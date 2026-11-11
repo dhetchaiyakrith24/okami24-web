@@ -18,6 +18,8 @@ import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
+import { PreviewPill } from "@/components/layout/PreviewPill";
+import { PREVIEW_BOOT } from "@/lib/preview";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",
@@ -107,6 +109,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="th"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
+      <head>
+        {/* Preview links (owner 12/11): ?preview=<word> marks this device; <html data-preview> is set here, before the first
+            paint, so a draft shows without a flash of the old look. The server never reads the cookie — pages stay static. */}
+        <script dangerouslySetInnerHTML={{ __html: PREVIEW_BOOT }} />
+      </head>
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
           <AgeGate orderingEnabled={open} />
@@ -128,6 +135,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CardCut />
           {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
           <TeamShortcut />
+          {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
+          <PreviewPill />
         </LocaleProvider>
       </body>
     </html>
