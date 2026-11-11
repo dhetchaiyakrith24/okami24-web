@@ -8,11 +8,6 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  * /products/disposables (docs/SEO_LANDSCAPE.md §0), with the words a shopper searches. The crumb text replaces the shared
  * short name on these pages only; the link closes the related-products section, as the home rails' "see all" pill.
  */
-export function DisposablesCrumb() {
-  const { dict } = useLocale();
-  return <>{dict.product.disposablesCrumb}</>;
-}
-
 export function DisposablesAllLink() {
   const { dict } = useLocale();
   return (

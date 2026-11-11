@@ -68,7 +68,7 @@ export function ColorVariantRail({
   className?: string;
 }) {
   // Several "all" images (lineupImage2 — owner 01/10: Caliburn G3 Pro's 16 colours as two groups of 8): one pill each,
-  // labelled by the parent ("ทั้งหมด 1", "ทั้งหมด 2"); `allLabel`/`isAllSelected`/`onSelectAll` stay the single-pill case.
+  // labelled by the parent ("สีที่ 1–8" / "ภาพรวมสี 1" — T2-31); `allLabel`/`isAllSelected`/`onSelectAll` stay the single-pill case.
   const pills = allChips ?? (onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []);
   const selectedPill = pills.find((p) => p.selected);
   const selected = variants.find((v) => v.id === selectedId);

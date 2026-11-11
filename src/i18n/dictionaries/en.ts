@@ -188,7 +188,8 @@ export const en: Dictionary = {
   product: {
     colorLabel: "Color",
     flavorLabel: "Flavor",
-    allVariantsLabel: "All",
+    allColorsLabel: "All colours",
+    allFlavorsLabel: "All flavours",
     // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
     lineupGroupLabel: "Colours {from}–{to}",
     lineupGroupFallback: "All colours {n}",
