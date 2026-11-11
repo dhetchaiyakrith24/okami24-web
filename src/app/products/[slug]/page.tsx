@@ -107,6 +107,7 @@ import { lineOrderCodes } from "@/lib/line-order-codes";
 import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory";
 import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { LOOKALIKES } from "@/data/similar-models";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -218,6 +219,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       ...canonicalFor(path),
+      // a lookalike's page stays for whoever opens it, but not in search: it must not compete with the genuine model (T2-08)
+      ...(LOOKALIKES.has(publishedProduct.slug) ? NOINDEX_FOLLOW : {}),
       ...(publishedProduct.image ? openGraphWithImage({ title: shareTitleWithPriceTh(baseTitle, publishedProduct.sellingPrice), description, path, image: publishedProduct.image }) : {}),
     };
   }
