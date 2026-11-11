@@ -13,7 +13,8 @@ function message(state: StaffLoginState): string | null {
   return null;
 }
 
-export function StaffLogin() {
+/** `secondary` = Google sign-in is the main way in (owner 10/11): the password form stays, with a quiet button and no autofocus. */
+export function StaffLogin({ secondary = false }: { secondary?: boolean }) {
   const [state, formAction, pending] = useActionState(staffLoginAction, initialState);
   const error = message(state);
 
@@ -27,7 +28,7 @@ export function StaffLogin() {
           type="password"
           autoComplete="current-password"
           required
-          autoFocus
+          autoFocus={!secondary}
           className="rounded-md border border-surface-border bg-surface-2 px-3 py-3 text-base text-foreground"
         />
       </label>
@@ -39,7 +40,11 @@ export function StaffLogin() {
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong disabled:opacity-60"
+        className={
+          secondary
+            ? "inline-flex items-center justify-center rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-surface-2 disabled:opacity-60"
+            : "inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong disabled:opacity-60"
+        }
       >
         {pending ? "กำลังตรวจรหัส…" : "เข้าสู่ระบบ"}
       </button>

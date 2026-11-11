@@ -2,6 +2,7 @@ import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
+import type { LiveLookup } from "@/lib/stock/live-rules";
 
 /**
  * "สินค้าพร้อมส่ง" (owner 24/10 night: a button that shows which products the shop has in stock right now). A product
@@ -13,10 +14,10 @@ import { legacyCardStock, publishedCardStock } from "@/lib/stock/card-stock";
  * answer over it after load (owner 31/10, /api/stock), so the filter follows Shipnity without a rebuild.
  * Returns the catalog entry keys CatalogBrowser uses ("legacy:<slug>" / "published:<slug>").
  */
-export function inStockEntryKeys(products: Product[], publishedProducts: StorefrontProductView[]): string[] {
+export function inStockEntryKeys(products: Product[], publishedProducts: StorefrontProductView[], live?: LiveLookup): string[] {
   return [
-    ...products.filter((p) => legacyCardStock(p).inStock).map((p) => `legacy:${p.slug}`),
-    ...publishedProducts.filter((p) => publishedCardStock(p).inStock).map((p) => `published:${p.slug}`),
+    ...products.filter((p) => legacyCardStock(p, live).inStock).map((p) => `legacy:${p.slug}`),
+    ...publishedProducts.filter((p) => publishedCardStock(p, live).inStock).map((p) => `published:${p.slug}`),
   ];
 }
 

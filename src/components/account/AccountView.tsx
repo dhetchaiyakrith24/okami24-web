@@ -11,6 +11,8 @@ import { signOutAction } from "@/app/account/actions";
 import { CONTACT } from "@/data/contact";
 import { cn } from "@/lib/utils";
 import { GOLD, MEMBER_GLOW } from "./account-ui";
+import { MemberCard, MemberRoom } from "./MemberCard";
+import type { MemberTier } from "@/lib/members/tiers";
 
 export interface AccountOrder {
   orderNumber: string;
@@ -150,12 +152,31 @@ function RowLink({ href, title, sub, external }: { href: string; title: string; 
   );
 }
 
+export interface AccountStanding {
+  tier: MemberTier | null;
+  count: number;
+  memberSince: string | null;
+  /** Counted orders the first card needs (tiers.ts TIER_THRESHOLDS). */
+  firstCardAt: number;
+}
+
 /**
- * /account — drafts v2 (owner 26/10): greeting, the latest order with its four-step bar, then quiet links. Phone = one
- * column; desktop = order card left, links right. Only orders placed while signed in are listed (src/lib/commerce/orders.ts
- * `listOrdersForMember`) — never orders matched by phone alone.
+ * /account — drafts v2 (owner 26/10): greeting, the member's moon card (owner 10/11, draft v8), the latest order with its
+ * four-step bar, then quiet links; the full-moon room under it at 10+. Phone = one column; desktop = card + order left, links
+ * right. Only orders placed while signed in are listed (src/lib/commerce/orders.ts `listOrdersForMember`) — never orders
+ * matched by phone alone.
  */
-export function AccountView({ displayName, provider, orders }: { displayName: string | null; provider: MemberProvider; orders: AccountOrder[] }) {
+export function AccountView({
+  displayName,
+  provider,
+  orders,
+  standing,
+}: {
+  displayName: string | null;
+  provider: MemberProvider;
+  orders: AccountOrder[];
+  standing: AccountStanding;
+}) {
   const { dict, locale } = useLocale();
   const t = dict.account;
   const latest = orders[0] ?? null;
@@ -173,7 +194,8 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
         <p className="mt-2 text-[13px] text-foreground-muted">{t.signedInWith.replace("{provider}", providerName)}</p>
 
         <div className="mt-[30px] grid gap-[18px] lg:mt-10 lg:grid-cols-[1.1fr_1fr] lg:gap-12">
-          <div>
+          <div className="flex flex-col gap-[18px]">
+            <MemberCard tier={standing.tier} count={standing.count} memberSince={standing.memberSince} firstCardAt={standing.firstCardAt} />
             {latest ? (
               <LatestOrderCard order={latest} />
             ) : (
@@ -204,6 +226,12 @@ export function AccountView({ displayName, provider, orders }: { displayName: st
             </form>
           </div>
         </div>
+
+        {standing.tier === "full" && (
+          <div className="mt-12">
+            <MemberRoom />
+          </div>
+        )}
 
         {orders.length > 1 && (
           <section id="all-orders" className="mt-12 scroll-mt-24">

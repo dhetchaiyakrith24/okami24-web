@@ -5,7 +5,9 @@
 // left at a line end, a number split from its Thai unit, a Latin term split across lines, and a
 // single short word alone on the last line. Replaces shooting 100+ screenshots for the eye.
 //
-//   node scripts/wordbreak-scan.js [--base http://localhost:3412] [--widths 390,1440] [--out dir] [/path ...]
+//   node scripts/wordbreak-scan.js [--base http://localhost:3412] [--widths 390,1440] [--out dir] [--cookie name=value]... [/path ...]
+//   --cookie (repeatable, as scripts/shot.js): set on the browser before the first request — okami24_locale=en|zh for the
+//   English / Chinese page, or a test member's okami24_member cookie for /account on the test server. Without it nothing changes.
 //   no paths → every URL in <base>/sitemap.xml · JSON per page/width in --out (default _incoming/wordbreak) ·
 //   summary table (markdown) on stdout. Needs Chrome (CHROME_PATH) and a running `next start`.
 //
@@ -21,6 +23,7 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const base = opt("--base", "http://localhost:3412");
 const widths = opt("--widths", "390,1440").split(",").map(Number);
 const outDir = opt("--out", "_incoming/wordbreak");
+const cookies = args.map((a, i) => (a === "--cookie" ? args[i + 1] : null)).filter(Boolean);
 // --wait <ms> = the old fixed sleep after navigation (was always 8000). Not given = wait until the page is ready
 // (scripts/page-ready.js, round "cloud" 2026-09-26 — proved against a fixed-wait control run, _incoming/cloud-round/).
 const fixedWait = opt("--wait", null) == null ? null : +opt("--wait");
@@ -85,6 +88,7 @@ async function measure(url, width) {
     await send("Page.enable"); await send("Runtime.enable");
     await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 768 });
     await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
+    if (cookies.length) await send("Network.setCookies", { cookies: cookies.map((c) => { const at = c.indexOf("="); return { name: c.slice(0, at), value: c.slice(at + 1), url: new URL(url).origin }; }) });
     const stamp = await docStamp(send);
     await send("Page.navigate", { url });
     if (fixedWait != null) await sleep(fixedWait); else { const rd = await waitReady(send, stamp); if (rd.how !== "ready") process.stderr.write(`page-ready ${url} @${width}: ${rd.how} after ${rd.total} ms\n`); }

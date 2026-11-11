@@ -19,7 +19,7 @@ import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
 import { HomeProductIndex } from "@/components/home/HomeProductIndex";
 import { CONTACT } from "@/data/contact";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { HOME_GUIDE_COPY } from "@/i18n/home-guide-copy";
@@ -28,11 +28,16 @@ import { articleFaqJsonLd } from "@/lib/article-jsonld";
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
 // leak as the default for every other page (see layout.tsx's metadata comment).
 export const metadata: Metadata = canonicalFor("/");
+/** ISR (owner 10/11 "ตามแนะนำ", like the product pages 08/11): rebuilt on the server at most every 3 hours, so the home rows'
+ *  live-stock order and the new-arrivals row follow the warehouse instead of the build's git snapshot. */
+export const revalidate = 10800;
 
 // The Thai Q/A of the closing note, as FAQPage: same rule as the block itself (cart on).
-const homeFaqJsonLd = ORDERING_ENABLED ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;
 
 export default function Home() {
+  // the cart switch, not only the build (T2-04): the closing note (cart on) and its FAQ schema, the classic hero's line
+  const open = orderingOpen();
+  const homeFaqJsonLd = open ? articleFaqJsonLd(HOME_GUIDE_COPY.th?.faq) : null;
   const flagships = getFlagshipProducts();
   const flagship = getProduct("caliburn-g5")!;
   const mBar10k = getProduct("m-bar-10k")!;
@@ -40,6 +45,7 @@ export default function Home() {
   // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
   // the four small records it shows. A product that is no longer visible, or has no card photo,
   // drops its slot rather than breaking the hero.
+  // No "สินค้าหมด" pill on these four (owner 10/11 "ไม่ต้องใส่ป้ายหมด … เว้นไว้ที่เดียว") — every other card keeps it.
   const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product, photo }) => {
     const item = getCatalogItem(product);
     const category = getCategory(type);
@@ -112,7 +118,7 @@ export default function Home() {
       {PHONE_HERO === "classic" ? (
         <>
           <div className="lg:hidden">
-            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} orderingEnabled={ORDERING_ENABLED} />
+            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} orderingEnabled={open} />
           </div>
           <div className="hidden lg:block">
             <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />
@@ -150,7 +156,7 @@ export default function Home() {
 
         <GuideTeaserGrid guides={guides.slice(0, 3)} />
         {/* Round SEO full (07/11): the shop's closing note + FAQ, only while the cart is on (it talks about ordering here). */}
-        {ORDERING_ENABLED && <CategoryGuide copy={HOME_GUIDE_COPY} rows={[]} />}
+        {open && <CategoryGuide copy={HOME_GUIDE_COPY} rows={[]} />}
       </div>
     </>
   );

@@ -12,6 +12,17 @@ const baht = (n: number) => formatSatang(Math.round(n * 100));
 const ddmm = (at: string) => `${at.slice(8, 10)}/${at.slice(5, 7)}`;
 const span = (from: string, to: string) => `${ddmm(from)} ถึง ${ddmm(to)}`;
 
+const DAY_MONTH = new Intl.DateTimeFormat("th-TH", { timeZone: "UTC", day: "numeric", month: "short" });
+const DAY = new Intl.DateTimeFormat("th-TH", { timeZone: "UTC", day: "numeric" });
+/** "4–10 พ.ย." · across a month "29 ต.ค.–4 พ.ย." (Bangkok dates, YYYY-MM-DD). The site's render mechanism keeps the range together (no raw U+2060 — THAI_STYLE §5). */
+function dayRange(from: string, to: string): string {
+  const a = new Date(`${from}T00:00:00Z`);
+  const b = new Date(`${to}T00:00:00Z`);
+  const sameMonth = from.slice(0, 7) === to.slice(0, 7);
+  return `${sameMonth ? DAY.format(a) : DAY_MONTH.format(a)}–${DAY_MONTH.format(b)}`;
+}
+const weekStart = (to: string) => new Date(Date.parse(`${to}T00:00:00Z`) - 6 * 86_400_000).toISOString().slice(0, 10);
+
 function RoundHero({ rounds, due }: { rounds: StoredRound[]; due: { from: string; to: string } }) {
   const round = rounds[0];
   if (!round || round.to < due.to) {
@@ -114,10 +125,13 @@ function WarehouseBill({ round, older }: { round: StoredRound | undefined; older
   );
 }
 
-function Week({ week }: { week: SalesSum }) {
+function Week({ week, days }: { week: SalesSum; days: { from: string; to: string } }) {
   return (
     <section aria-label="ยอดขาย 7 วันล่าสุด" className="dash-card dash-rise">
-      <h2 className="font-semibold text-foreground">ยอดขาย 7 วันล่าสุด</h2>
+      <div className="flex flex-col">
+        <h2 className="font-semibold text-foreground">ยอดขาย 7 วันล่าสุด</h2>
+        <span className="text-sm text-foreground-muted">{dayRange(days.from, days.to)}</span>
+      </div>
       <div className="flex items-center gap-4">
         {week.webPercent !== null && <Ring percent={week.webPercent} label={`เว็บ ${week.webPercent}% ของยอดขาย`} />}
         <div className="flex min-w-0 flex-col gap-0.5">
@@ -132,10 +146,13 @@ function Week({ week }: { week: SalesSum }) {
   );
 }
 
-function Channels({ clicks, carts, top }: { clicks: number | null; carts: number; top: TopProduct[] }) {
+function Channels({ clicks, carts, top, days }: { clicks: number | null; carts: number; top: TopProduct[]; days: { from: string; to: string } }) {
   return (
     <section aria-label="LINE และตะกร้า" className="dash-card dash-rise">
-      <h2 className="font-semibold text-foreground">LINE และตะกร้า 7 วัน</h2>
+      <div className="flex flex-col">
+        <h2 className="font-semibold text-foreground">LINE และตะกร้า 7 วัน</h2>
+        <span className="text-sm text-foreground-muted">{dayRange(days.from, days.to)}</span>
+      </div>
       <ul className="dash-rows flex flex-col">
         <Row label="คนกดปุ่ม LINE" value={clicks === null ? "ยังไม่มีข้อมูล" : formatCount(clicks)} />
         <Row label="ใส่ตะกร้าแล้วยังไม่สั่ง" value={formatCount(carts)} />
@@ -181,11 +198,16 @@ function Google({ weeks, through }: { weeks: GoogleWeek[]; through: string | nul
               {before && <span className="text-sm tabular-nums text-foreground-muted">สัปดาห์ก่อน {formatCount(before.impressions)}</span>}
             </div>
           </div>
+          {/* The latest week is whole by days (scripts/google-weekly.js) but Google keeps filling its last 2–3 days, so a drop may not be real. */}
+          <p className="flex flex-col text-sm text-foreground-muted">
+            <span>{dayRange(weekStart(now.to), now.to)}</span>
+            <span>2–3 วันท้าย Google อาจยังนับไม่ครบ</span>
+          </p>
           <Bars
             height="h-16"
             bars={weeks.slice(-8).map((w, i, all) => ({ value: w.clicks, label: shortDate(w.to), showLabel: i === 0 || i === all.length - 1, title: `สัปดาห์ถึง ${shortDate(w.to)} คนกดเข้าเว็บ ${w.clicks}` }))}
           />
-          <p className="text-sm text-foreground-muted">คนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position} · ข้อมูลถึง {shortDate(through)}</p>
+          <p className="text-sm text-foreground-muted">คนกดเข้าเว็บต่อสัปดาห์ · อันดับเฉลี่ย {now.position}</p>
         </>
       )}
     </section>
@@ -196,20 +218,22 @@ export function WeekPanel(props: {
   rounds: StoredRound[];
   due: { from: string; to: string };
   week: SalesSum;
+  /** The 7 Bangkok days the sales card sums, oldest first. */
+  weekDays: { from: string; to: string };
   clicks: number | null;
   carts: number;
   top: TopProduct[];
   google: { through: string | null; weeks: GoogleWeek[] };
 }) {
-  const { rounds, due, week, clicks, carts, top, google } = props;
+  const { rounds, due, week, weekDays, clicks, carts, top, google } = props;
   const billDue = !rounds[0] || rounds[0].to < due.to;
   return (
     <>
       <RoundHero rounds={rounds} due={due} />
       <RoundBars rounds={rounds} due={billDue} />
       <WarehouseBill round={rounds[0]} older={billDue} />
-      <Week week={week} />
-      <Channels clicks={clicks} carts={carts} top={top} />
+      <Week week={week} days={weekDays} />
+      <Channels clicks={clicks} carts={carts} top={top} days={weekDays} />
       <Google weeks={google.weeks} through={google.through} />
     </>
   );

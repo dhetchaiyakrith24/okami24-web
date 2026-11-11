@@ -29,11 +29,13 @@ function Parcel({ p }: { p: ParcelRow }) {
   const carrier = p.carrier ? CARRIERS[p.carrier] : null;
   return (
     <li className={`flex flex-col gap-2 rounded-xl border bg-surface-1 p-4 ${p.late ? "border-danger/50" : "border-surface-border-soft"}`}>
-      <div className="flex items-baseline justify-between gap-3">
-        <Link href={`/staff/orders/${encodeURIComponent(p.orderNumber)}`} className="min-w-0 truncate font-semibold tabular-nums text-foreground hover:underline">
-          {run ?? p.orderNumber}
-          <span className="ml-2 text-sm font-normal text-foreground-muted">
-            {p.recipientName} · {p.province}
+      {/* Checker 09/11: at 390 a late order's wide pill cut the province to "ภ…" — the name and province now take their own
+          line under the number and wrap, so nothing is cut. */}
+      <div className="flex items-start justify-between gap-3">
+        <Link href={`/staff/orders/${encodeURIComponent(p.orderNumber)}`} className="flex min-w-0 flex-col gap-0.5 hover:underline">
+          <span className="font-semibold tabular-nums text-foreground">{run ?? p.orderNumber}</span>
+          <span className="text-sm text-foreground-muted">
+            {p.recipientName} · <span className="whitespace-nowrap">{p.province}</span>
           </span>
         </Link>
         <span className={`shrink-0 rounded-full border px-2 py-0.5 text-xs ${p.late ? TONE_CLASS.no.pill : TONE_CLASS[statusTone(p.status)].pill}`}>

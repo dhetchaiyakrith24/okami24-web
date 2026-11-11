@@ -292,6 +292,12 @@ answer: amount, date/time, receiver account (must be the account below), and whe
 checked. A **human still approves** every payment — the page never changes an order by itself. Access = **one shared
 staff password** (owner pick A); the page is not linked from the site, not indexed, not in the sitemap. The API key
 and the staff password live only in the host's secret settings, entered by the owner — never in git or chat.
+**Per-admin accounts (owner 2026-11-10, chat — "admin แต่ละคนมีบัญชีของตัวเอง … พี่เห็นว่าใครคีย์ออเดอร์ไหน ใครให้ส่วนลดอะไร
+ใครกดรับออเดอร์เว็บ"):** each admin signs in to /staff with **their own Google account**; the owner adds, renames and disables
+admins on /staff/owner/team (name + Google address, kept only in the site's database — never in git, env or logs). Every staff
+session names its person and the back office records who did what. The shared password above stays as a **fallback until
+every admin has signed in with Google; the owner then switches it off** on the same page. The owner's own Google sign-in also
+opens the admin view, recorded as "เจ้าของ". Code: `src/lib/staff/auth.ts` · `src/lib/staff/accounts.ts`.
 **Built (#347, 2026-10-07):** `/staff` (404 until the password is set) · a staff session lasts 12 hours · 5 wrong passwords
 from one address in 15 minutes (or 30 from anywhere) pause logins for 15 minutes · the page keeps, per checked slip, only the
 bank's transaction reference, amount, transfer time, the receiver verdict and when it was checked — no slip image, no names or
@@ -355,6 +361,15 @@ how-to-order page and on the order page next to the bank details.
 > only the out-of-stock lines, the rest of the order still ships and the shipping fee is kept; when every line is out the
 > whole paid total goes back and the order is cancelled. Staff still phone or LINE the customer (the site cannot message
 > them). Code: `src/lib/commerce/stock-issues.ts`.
+> **OWNER EXCEPTION 2026-11-10 (main chat, answering the outside tester's Test 2 item T2-09 — his words: "ใช้เหมือนของหมด"):**
+> if the customer has **paid and the shop cannot ship** (e.g. the warehouse is paused), the **same rule as out of stock after
+> payment** applies: the customer chooses to wait, swap to another item at the same price, or take a refund to PromptPay / a
+> bank account. Every other case still follows "no cancellation and no refund after the transfer".
+> **OWNER RULING 2026-11-11 (main chat, Test 2 items T2-10/11 — his choice "ยกเลิกบนเว็บอัตโนมัติ", replacing the 28/10 rule
+> "LINE alert only, staff handle it"):** when the warehouse cancels or refunds an order in Shipnity, the web order is
+> **cancelled automatically** and leaves sales and the tracking list; the LINE alert to the team stays. A confirmed-paid
+> customer then picks the refund target on the order page (whole paid total); "wait" or "same-price swap" goes through LINE.
+> A slip that was never confirmed gets no refund box (owner 29/10). Code: `src/lib/woo/warehouse-cancel.ts` (#1415, #1418).
 
 **Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
@@ -461,7 +476,7 @@ Do not collect unnecessary personal information.
 addresses, tracking, product interests.
 
 **Member sign-in — owner 2026-10-26 (queue Q4, main chat):** optional sign-in with **LINE and Google first** (no Facebook);
-**no member perks yet, and none shown on the sign-up page**; staff keep their own password login; designs = drafts v2
+**no member perks yet, and none shown on the sign-up page**; staff keep their own login (§9: Google per admin, owner 2026-11-10); designs = drafts v2
 ("พรีเมียม เรียบหรู"). Guest checkout above is unchanged — signing in is never required to buy, and checkout still asks for
 the phone. What is kept: the provider's user ID and display name only (no email, no picture, no tokens). The member page
 lists only orders placed while signed in (never orders matched by phone alone). The free-shipping-from-300 idea for members

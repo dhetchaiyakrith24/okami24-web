@@ -99,7 +99,7 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
             easing: "ease-out",
           });
           fab.animate(
-            [{ boxShadow: "0 0 0 0 rgba(255,106,44,.5)" }, { boxShadow: "0 0 0 12px rgba(255,106,44,0)" }],
+            [{ boxShadow: "0 0 0 0 rgba(240,138,42,.5)" }, { boxShadow: "0 0 0 12px rgba(240,138,42,0)" }],
             { duration: 700, easing: "ease-out" },
           );
         };

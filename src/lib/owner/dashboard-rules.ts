@@ -34,7 +34,10 @@ export function sameHourLastWeek(days: DaySales[], now: number): SameHour | null
   if (!today || !then) return null;
   const until = now - 7 * DAY_MS;
   const web = then.orders.filter((o) => Date.parse(o.createdAt) <= until).reduce((n, o) => n + o.total * 100, 0);
-  const line = then.slips.filter((s) => Date.parse(s.transferredAt) <= until).reduce((n, s) => n + s.amountSatang, 0);
+  // LINE = loose slips + LINE orders keyed on the web (their slips are not loose — daily-sales-rules.ts).
+  const line =
+    then.slips.filter((s) => Date.parse(s.transferredAt) <= until).reduce((n, s) => n + s.amountSatang, 0) +
+    then.lineOrders.filter((o) => Date.parse(o.createdAt) <= until).reduce((n, o) => n + o.total * 100, 0);
   const thenSatang = web + line;
   const percent = thenSatang > 0 ? Math.round(((today.totalSatang - thenSatang) / thenSatang) * 100) : null;
   return { nowSatang: today.totalSatang, thenSatang, percent };

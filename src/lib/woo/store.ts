@@ -9,6 +9,8 @@ const ORDER_BODY_LIMIT = 32768;
 const KEEP_ROWS = 5000;
 /** Non-product calls are pruned on their own, so an hourly stock run of 700+ writes cannot push them out (owner 29/10). */
 const KEEP_OTHER_ROWS = 2000;
+/** Unsigned non-product calls (no Woo key — a scanner, or Shipnity before its key is set) keep a small window of their own. */
+const KEEP_UNSIGNED_ROWS = 500;
 const PRODUCT_PATH = "/wp-json/wc/v_/products%";
 
 export interface LogEntry {
@@ -41,14 +43,18 @@ export function logCall(e: LogEntry): void {
     );
     // Keep the newest rows only, so a stranger hammering the URL cannot fill the disk.
     if (++writes % 100 === 0) {
-      const prune = (match: string, keep: number) =>
+      const prune = (where: string, keep: number) =>
         db
           .prepare(
-            `DELETE FROM woo_api_log WHERE path ${match} ? AND id < COALESCE((SELECT id FROM woo_api_log WHERE path ${match} ? ORDER BY id DESC LIMIT 1 OFFSET ?), 0)`
+            `DELETE FROM woo_api_log WHERE ${where} AND id < COALESCE((SELECT id FROM woo_api_log WHERE ${where} ORDER BY id DESC LIMIT 1 OFFSET ?), 0)`
           )
           .run(PRODUCT_PATH, PRODUCT_PATH, keep - 1);
-      prune("LIKE", KEEP_ROWS);
-      prune("NOT LIKE", KEEP_OTHER_ROWS);
+      prune("path LIKE ?", KEEP_ROWS);
+      // Signed and unsigned non-product calls are pruned apart (security pass 09/11): the tracking catch-up and the staff
+      // "order writes" download read Shipnity's signed rows, and a stranger's unsigned calls (answered 401, never acted on)
+      // must not be able to push those out by sheer number.
+      prune("path NOT LIKE ? AND key_id IS NOT NULL", KEEP_OTHER_ROWS);
+      prune("path NOT LIKE ? AND key_id IS NULL", KEEP_UNSIGNED_ROWS);
     }
   } catch {
     // the log must never be the reason a call fails

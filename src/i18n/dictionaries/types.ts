@@ -225,6 +225,8 @@ export interface Dictionary {
     colorLabel: string;
     flavorLabel: string;
     allVariantsLabel: string;
+    lineupGroupLabel: string;
+    lineupGroupFallback: string;
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */
     noPhotoFlavor: string;
     noPhotoColor: string;
@@ -317,6 +319,9 @@ export interface Dictionary {
     compatibilityTitle: string;
     worksWithTitle: string;
     fitsDevicesTitle: string;
+    fitsDeviceLine: string;
+    /** "+{n} รุ่น" — opens the rest of a long fits line (more than 6 names). */
+    fitsDeviceMore: string;
     verifiedCompatibilityNote: string;
     whoIsThisForTitle: string;
     faqEyebrow: string;
@@ -744,6 +749,26 @@ export interface Dictionary {
     linkProducts: string;
     linkProductsSub: string;
     linkContact: string;
+    /** Moon cards (owner 10/11, draft v8 — src/lib/members/tiers.ts): the three tier names. */
+    tierCrescent: string;
+    tierHalf: string;
+    tierFull: string;
+    /** Screen-reader name of the card. */
+    tierCardLabel: string;
+    /** "{date}" = month + year the account was made. */
+    memberSince: string;
+    /** The counted-order line on the card; "{count}" = the number, drawn bold. */
+    ordersCounted: string;
+    /** Under the card: which orders count. */
+    tierCountNote: string;
+    /** Below the first card; "{count}" = orders the first card needs. */
+    tierComing: string;
+    /** The full-moon room (10+). "{n}" = picture number. */
+    roomTitle: string;
+    roomSource: string;
+    roomHint: string;
+    roomOpen: string;
+    roomClose: string;
     signOut: string;
   };
   orderStatus: {
@@ -805,6 +830,10 @@ export interface Dictionary {
      *  is out · {amount} = the refund in baht · {phone} = the PromptPay number, masked to its last 4 digits. */
     stockTitle: string;
     stockLead: string;
+    /** The refund box on an order the warehouse cancelled (T2-10): refund only; waiting or a same-price swap go through LINE. */
+    stockCancelLead: string;
+    /** The customer chose a swap, then the warehouse cancelled the whole order: staff will contact them (swap as a new order, or refund). */
+    stockChosenSwapCancelled: string;
     stockSwapTitle: string;
     stockSwapPickLabel: string;
     stockSwapPlaceholder: string;
@@ -856,9 +885,15 @@ export interface Dictionary {
     nextShippedNoTracking: string;
     nextCompleted: string;
     nextCancelled: string;
-    nextCancelledPaid: string;
-    /** Cancelled after a slip was sent but before the payment was ever confirmed (slip failed / fake) — no refund promise (owner 29/10). */
-    nextCancelledSlipRejected: string;
+    /** T2-11: the reason line when the warehouse cancelled the order in Shipnity and the site cancelled it (owner 11/11). */
+    cancelReasonWarehouse: string;
+    /** T2-19: how the money comes back, under the reason of a cancelled order (BSOT §9, owner exception 10/11). The shop
+     *  confirmed the payment and the refund box sits below. */
+    cancelMoneyChoose: string;
+    /** The shop confirmed the payment, staff cancelled, no refund box: staff contact the customer. */
+    cancelMoneyPaid: string;
+    /** A slip was sent but never confirmed (slip failed / fake) — no refund promise (owner 29/10), and no accusation. */
+    cancelMoneySlip: string;
     /** Unboxing-video notice (owner 29/10): after payment until the parcel arrives, then 7 days after delivery. */
     unboxingTitle: string;
     unboxingWaiting: string;

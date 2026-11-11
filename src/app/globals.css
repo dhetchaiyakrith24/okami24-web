@@ -1,31 +1,36 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Design tokens — dark tech foundation, ember + steel accents.
+   Design tokens — "เตาหลอม" (forge), owner 09/11 (look-0911 direction c + direction b's one-orange rule): warm black,
+   off-white text, one bright orange that only marks what to press or what is selected; an oxblood soft fill bridges the
+   orange to the logo red. Every text token is WCAG AA (4.5:1) on surface-0/1/2. Before 09/11: graphite + #ff6a2c (git).
    ========================================================================== */
 :root {
-  /* Surfaces: tonal graphite steps, never pure black */
-  --surface-0: #0e0e10; /* page background */
-  --surface-1: #17181b; /* section / card background */
-  --surface-2: #1f2024; /* elevated card */
-  --surface-3: #2a2b30; /* hover / active */
-  --surface-border: #34353c;
-  --surface-border-soft: #26272c;
+  /* Surfaces: warm near-black steps, never pure black (card vs page 1.12:1, card border 1.63:1 — was 1.09 / 1.45) */
+  --surface-0: #100e0d; /* page background */
+  --surface-1: #1e1a18; /* section / card background */
+  --surface-2: #27221f; /* elevated card */
+  --surface-3: #2f2a26; /* hover / active */
+  --surface-border: #463d37;
+  --surface-border-soft: #302a26;
 
   /* Foreground */
-  --foreground: #f3f1ec;
-  --foreground-muted: #b1afb2;
+  --foreground: #f2efe9;
+  --foreground-muted: #bdb5ab;
   /* #78777c until 04/11: 3.99:1 on surface-1, under WCAG 4.5:1 for small text (Lighthouse color-contrast). Owner "ปรับเล็กน้อย":
-     the gentlest same-hue step that reads 4.5:1 on surface-0/1/2 (5.34 / 4.91 / 4.51) — designer 04/11. */
-  --foreground-dim: #87868b;
+     the gentlest same-hue step that reads 4.5:1 on surface-0/1/2. Forge 09/11: warm step, 6.16 / 5.52 / 5.03. */
+  --foreground-dim: #9a9087;
 
   /* Accents */
-  --accent-ember: #ff6a2c;
-  --accent-ember-strong: #ff8347;
-  --accent-ember-soft: #4a2a1b;
-  --accent-steel: #6fb8d8;
-  --accent-steel-strong: #8ccbe6;
-  --accent-steel-soft: #1c3038;
+  /* Ember = the one orange: buttons, the selected state, focus (button text #181008 on it 7.50:1; on surface-0 7.68:1).
+     -soft = oxblood, the bridge to the logo red (orange on it 6.27:1). */
+  --accent-ember: #f08a2a;
+  --accent-ember-strong: #ffa24d;
+  --accent-ember-soft: #3d1810;
+  /* Steel = a quiet warm neutral (was a cool blue): counts and secondary chips no longer compete with the orange. */
+  --accent-steel: #cfc6bb;
+  --accent-steel-strong: #e6dfd5;
+  --accent-steel-soft: #2a221d;
   /* "Night" purple = "มาใหม่" only (owner 02/11 "หาคู่สีเลยว่าอะไรเหมาะกับส้มดำ"; designer 02/11 option A — a triad of ember). */
   --accent-night: #8b6cf0;
   --accent-night-strong: #b49cff;
@@ -48,10 +53,12 @@
 
   /* Semantic */
   --state-verified: #7ed08a;
-  --state-unverified: #d6ab52;
+  /* Waiting / low = yellow (owner 26/10 "สีเหลือง"). #d6ab52 until 09/11: the forge orange came to 29.9 colour distance from
+     it; one step yellower (#d9bd4f) is 36.9 — as far apart as orange and danger red were before. 8.5:1 on surface-2. */
+  --state-unverified: #d9bd4f;
   --state-danger: #e2685f;
   /* Low stock (owner 26/10, HANDOFF §18): the unverified amber under its own name — green in stock · amber low · red out. */
-  --state-low: #d6ab52;
+  --state-low: #d9bd4f;
 
   /* Type scale (fluid) */
   --text-display: clamp(2.75rem, 2rem + 3.5vw, 6rem);
@@ -100,6 +107,16 @@
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
   --font-mono: var(--font-mono);
+}
+
+/* One orange per screen (owner 09/11, look-0911: direction b's rule on the forge colours — "two colours do 90% of the
+   work, the accent only on what you want pressed"). Orange stays on buttons (bg-ember), the selected state and focus
+   (border-/outline-ember, bg-ember dots and bars); orange TEXT reads off-white instead — eyebrows, the headline's second
+   line, small labels. Unlayered on purpose: it wins over the Tailwind utilities without touching the ~40 files that use
+   the class; hover:text-ember (feedback on a link) keeps its orange. */
+.text-ember,
+.text-ember-strong {
+  color: var(--foreground);
 }
 
 html {
@@ -229,7 +246,7 @@ img {
   height: 10px;
   border-radius: 9999px;
   background: var(--color-ember);
-  box-shadow: 0 0 10px rgba(255, 106, 44, 0.7);
+  box-shadow: 0 0 10px rgba(240, 138, 42, 0.7);
   pointer-events: none;
 }
 
@@ -442,97 +459,6 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 
 
-/* "ขายดี" stands out (owner 31/10: "ใส่กรอบ Effect ทั้งป้ายขายดีและตัวกล่อง-การ์ด"; designer 31/10 direction B "ชักดาบ").
-   A card carrying the best-seller pill (SalesBadge.tsx sets data-sales after hydration) gets an ember gradient frame, a warm
-   under-glow and a hot line on its top edge — the border stays 1px, so nothing moves when the pill lands. With motion
-   allowed, a light runs along the top edge then back along the bottom and the pill catches it, once per 8s, three times then
-   stops (owner 02/11 — WCAG 2.2.2; transform only);
-   reduced motion = the still frame (direction A). Red stays "no", amber stays "low" (HANDOFF §18). */
-a[data-card-cut]:has([data-sales="best"]) {
-  isolation: isolate;
-  border-color: transparent;
-  background:
-    linear-gradient(to top, rgb(255 106 44 / 0.06), transparent 40%) padding-box,
-    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
-    linear-gradient(160deg, var(--accent-ember-strong) 0%, rgb(255 106 44 / 0.25) 35%, rgb(255 106 44 / 0.25) 65%, var(--accent-ember) 100%) border-box;
-  box-shadow: inset 0 0 0 1px rgb(255 106 44 / 0.18), 0 8px 16px -10px rgb(255 106 44 / 0.5);
-}
-a[data-card-cut]:has([data-sales="best"]):hover {
-  background:
-    linear-gradient(to top, rgb(255 106 44 / 0.08), transparent 40%) padding-box,
-    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
-    linear-gradient(160deg, var(--accent-ember-strong), var(--accent-ember)) border-box;
-}
-a[data-card-cut]:has([data-sales="best"])::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  z-index: 20;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 30%, #fff1ec 50%, var(--accent-ember-strong) 70%, transparent);
-  opacity: 0.9;
-}
-@media (prefers-reduced-motion: no-preference) {
-  a[data-card-cut]:has([data-sales="best"])::before,
-  a[data-card-cut]:has([data-sales="best"])::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 45%;
-    height: 2px;
-    z-index: 20;
-    pointer-events: none;
-    opacity: 1;
-    background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 35%, #fff1ec 50%, var(--accent-ember-strong) 65%, transparent);
-    animation: okami-best-edge 8s linear 3 forwards; /* three runs, then still (owner 02/11 "วิ่ง 3 ตามแนะนำ") */
-  }
-  /* After the three runs the top edge settles into the still line the reduced-motion card shows (checker 02/11: the card
-     ended with no top light at all). Later in the list = wins over the last frame of the runs. */
-  a[data-card-cut]:has([data-sales="best"])::before {
-    animation: okami-best-edge 8s linear 3 forwards, okami-best-settle 0.8s ease-out 24s forwards;
-  }
-  a[data-card-cut]:has([data-sales="best"])::after {
-    top: auto;
-    bottom: 0;
-    animation-name: okami-best-edge-back;
-  }
-  .okami-best-pill::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1; /* under the words, over the pill fill (the pill is isolate) */
-    background: linear-gradient(105deg, transparent 30%, rgb(255 241 236 / 0.35) 50%, transparent 70%);
-    animation: okami-best-glint 8s linear 3 forwards;
-  }
-  /* The product head pill glints 3 times and stops — it sits next to the page title. */
-  .okami-best-pill[data-head]::after {
-    animation: okami-best-glint 8s linear -3s 3 forwards; /* ends past the pill edge, not across the words (checker #1069) */
-  }
-  /* Half the cards run half a cycle later — a brand page full of best sellers does not flash in step. */
-  a[data-card-cut]:nth-child(2n):has([data-sales="best"])::after,
-  a[data-card-cut]:nth-child(2n) .okami-best-pill::after {
-    animation-delay: -4s;
-  }
-  a[data-card-cut]:nth-child(2n):has([data-sales="best"])::before {
-    animation-delay: -4s, 20s;
-  }
-}
-@keyframes okami-best-edge {
-  0% { transform: translateX(-100%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
-  22%, 100% { transform: translateX(225%); }
-}
-@keyframes okami-best-edge-back {
-  0%, 24% { transform: translateX(225%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
-  46%, 100% { transform: translateX(-100%); }
-}
-@keyframes okami-best-settle {
-  from { transform: none; width: 100%; opacity: 0; }
-  to { transform: none; width: 100%; opacity: 0.9; }
-}
-@keyframes okami-best-glint {
-  0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }
-  58%, 100% { transform: translateX(110%); }
-}
+/* "ขายดี" (owner 31/10 frame + running light) — removed 09/11 with the forge look: on a first row where every card is a
+   best seller the frame marked nothing, and the one orange belongs to what you press. The "ขายดี" chip itself stays
+   (SalesBadge). History of the effect: git log -S "okami-best-edge". */

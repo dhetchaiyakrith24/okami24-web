@@ -26,7 +26,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-1": { tagline: "Vinci coil by VOOPOO" },
   "coil-38": { tagline: "VOOPOO TPP coil in 0.2 and 0.3Ω, for the TPP Pod" },
   "coil-53": { tagline: "UWELL Caliburn G-series coil, 0.8 / 1.0 / 1.2Ω" },
-  "coil-92": { tagline: "VOOPOO PnP X coil from 0.15 to 1.0Ω, for the DRAG X2, S2, X3, S3 and DRAG 4" },
+  "coil-92": { tagline: "VOOPOO PnP X coil from 0.15 to 1.0Ω, for the DRAG X2, S2, X3, S3 and other VOOPOO devices" },
   "coil-55": { tagline: "Empty 2mL top-fill pod for the UWELL Caliburn G2 that takes Caliburn G2 and Caliburn G coils" },
   "coil-56": { tagline: "Empty 5mL VOOPOO PnP X pod with side filling, for PnP X coils" },
   "coil-68": { tagline: "Empty 3.5mL top-fill VOOPOO ITO-X pod for ITO coils" },
@@ -41,6 +41,15 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "iqosheet-15": { tagline: "TEREA sticks for IQOS ILUMA, priced per pack of 20" },
   "iqosheet-16": { tagline: "IQOS ILUMA i PRIME heated tobacco device" },
   "iqosheet-17": { tagline: "IQOS ILUMA i ONE all-in-one heated tobacco device" },
+  // C list 10/11: the original ILUMA ONE + its OASIS limited edition (iqos.com/za · jp.iqos.com).
+  "iqos-iluma-one": { tagline: "IQOS ILUMA ONE heated tobacco device, 20 uses per charge, for TEREA sticks only" },
+  "iqos-iluma-one-oasis": { tagline: "IQOS ILUMA ONE OASIS limited edition, for TEREA sticks only" },
+  // C list 10/11: VOOPOO coil boxes (the warehouse sells them 5 to a box).
+  "voopoo-vinci-coil-5pack": { tagline: "VOOPOO Vinci coils, box of 5, 0.15Ω or DW60 0.6Ω" },
+  "voopoo-pnp-x-coil-5pack": { tagline: "VOOPOO PnP X 0.15Ω coils, box of 5" },
+  // C list 10/11: warehouse facts only (no maker site).
+  "pop-up-10k-base": { tagline: "Pop Up 10K battery base" },
+  "insta-bar-px-15k": { tagline: "Insta Bar PX disposable, model name says 15000" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device with a touch screen and Pause Mode, for TEREA sticks only" },
   "pod-150": { tagline: "KS Quikpro replacement cartridge, 15ml" },
   "ks-quikpro-kit": { tagline: "KS Quikpro device with one 15ml cartridge" },

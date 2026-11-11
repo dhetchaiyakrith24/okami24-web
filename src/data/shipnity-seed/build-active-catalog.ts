@@ -148,11 +148,22 @@ function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) |
   };
 }
 
+/** C list 10/11: one Max child belongs to one record. A Max-only record cut from an old seed parent by exact child code
+ *  (scripts/max-seed-gen.js childIds — IQOS-ILUMA-ONE takes IQOSHEET-17-1 from the frozen iqosheet-17) owns that child;
+ *  the seed record no longer lists it. */
+const CLAIMED_BY_MAX_ONLY = new Map<string, string>(
+  MAX_ONLY_IDS.flatMap((id) => MAX_SEED[id].children.map((c) => [c.shipnityVariantId, id] as [string, string]))
+);
+
 function buildParent(seedRaw: RawActiveParent): ActiveParentRecord {
   const max = fromMax(seedRaw);
   // operationalCost ("ต้นทุน") is never carried into a record (the site stores no cost); the old seed file still holds the
   // 31/08 values until its own move PR (editing it now would bump every product page's dateModified — content-dates.ts).
-  const raw: SeedInput = max ?? seedRaw;
+  const own = max ?? seedRaw;
+  const raw: SeedInput = {
+    ...own,
+    children: own.children.filter((c) => (CLAIMED_BY_MAX_ONLY.get(c.shipnityVariantId) ?? own.shipnityProductId) === own.shipnityProductId),
+  };
   // Classified as one batch per parent, not child-by-child — group-context reconciliation
   // (see classify.ts file header) needs every sibling's signal available at once.
   const classified = classifyParentChildren(
@@ -192,6 +203,14 @@ const MAX_ONLY_LABEL_PREFIX: Record<string, string> = {
  *  price itself lives only in publication-approvals.ts. */
 const OWNER_ONE_PRICE_MAX_ONLY = new Set<string>(["GRAPLE-FREEBASE", "MQ-BAR-22K"]);
 
+/** C list 10/11: a Max "Set-…" box row carries the whole product name ("คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว"); on the
+ *  box record the option is only what tells the boxes apart — the resistance, cut verbatim from that same Max text. */
+const MAX_BOX_OPTION_LABEL: Record<string, string> = {
+  "Set-Coil-1-14": "DW60 0.6Ω",
+  "Set-Coil-1-1": "0.15Ω",
+  "Set-Coil-92-1": "0.15Ω",
+};
+
 function fromMaxOnly(id: string): RawActiveParent {
   const m = MAX_SEED[id];
   const children = m.children.filter((c) => {
@@ -207,7 +226,7 @@ function fromMaxOnly(id: string): RawActiveParent {
     sourcePages: [],
     children: children.map((c) => {
       const pre = MAX_ONLY_LABEL_PREFIX[id];
-      const fixed = MAX_LABEL_FIX[c.shipnityVariantId];
+      const fixed = MAX_BOX_OPTION_LABEL[c.shipnityVariantId] ?? MAX_LABEL_FIX[c.shipnityVariantId];
       return { shipnityVariantId: c.shipnityVariantId, rawLabel: fixed ?? (pre && c.rawLabel.startsWith(pre) ? c.rawLabel.slice(pre.length) : c.rawLabel) };
     }),
   };

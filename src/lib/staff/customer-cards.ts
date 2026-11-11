@@ -60,7 +60,7 @@ export function getCustomerCard(customerId: number): CustomerCard | null {
   if (!customer) return null;
   const rows = db
     .prepare(
-      `SELECT o.order_number, o.run_number, o.status, o.total, o.created_at, o.tracking_number,
+      `SELECT o.order_number, o.run_number, o.status, o.total, o.created_at, o.tracking_number, o.channel,
               a.recipient_name, a.phone AS recipient_phone, a.line1, a.subdistrict, a.district, a.province, a.postal_code,
               (SELECT COALESCE(SUM(quantity), 0) FROM order_items i WHERE i.order_id = o.id) AS item_count
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
@@ -73,6 +73,7 @@ export function getCustomerCard(customerId: number): CustomerCard | null {
     total: number;
     created_at: string;
     tracking_number: string | null;
+    channel: string;
     recipient_name: string;
     recipient_phone: string;
     line1: string;
@@ -95,6 +96,7 @@ export function getCustomerCard(customerId: number): CustomerCard | null {
     address: `${trimLine1(r.line1, { subdistrict: r.subdistrict, district: r.district, province: r.province, postalCode: r.postal_code })} ต.${r.subdistrict} อ.${r.district} จ.${r.province} ${r.postal_code}`,
     province: r.province,
     trackingNumber: r.tracking_number,
+    channel: r.channel === "line" ? "line" : "web",
   }));
   const members = db
     .prepare(

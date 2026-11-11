@@ -21,7 +21,7 @@ function showOptionPicker(): void {
     .filter((b) => b.offsetParent !== null)
     .slice(0, 24);
   for (const chip of chips) {
-    chip.animate([{ boxShadow: "0 0 0 0 rgba(255,106,44,.55)" }, { boxShadow: "0 0 0 8px rgba(255,106,44,0)" }], {
+    chip.animate([{ boxShadow: "0 0 0 0 rgba(240,138,42,.55)" }, { boxShadow: "0 0 0 8px rgba(240,138,42,0)" }], {
       duration: 900,
       delay: 350,
       easing: "ease-out",
@@ -130,7 +130,7 @@ export function ProductBuyAction({
   }
 
   return (
-    <AddToCartForm slug={slug} variantId={variantId} className={compact ? "flex flex-wrap gap-y-1" : formClassName} label={dict.productActions.addToCartCta}>
+    <AddToCartForm slug={slug} variantId={variantId} className={compact ? "flex flex-wrap gap-y-1" : formClassName} label={dict.productActions.addToCartCta} size={compact ? "md" : "lg"}>
       {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
       {!compact && (
         <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className={noteClassName}>

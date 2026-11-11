@@ -2,6 +2,15 @@ import "server-only";
 import { getDb } from "@/lib/db/client";
 import { requireCustomer } from "./session";
 import { checkPostcodePlace } from "./thai-postcodes";
+import { getMember } from "@/lib/members/session";
+import { editScope, listScope, newRowOwner, orderScope, type AddressViewer } from "./address-owner";
+
+/** Who is asking (T2-03): the checkout phone session (required, as before) and the signed-in member, if any. The rules of
+ *  what each may see = src/lib/commerce/address-owner.ts. */
+async function viewer(): Promise<AddressViewer & { customerId: number }> {
+  const [customer, member] = await Promise.all([requireCustomer(), getMember()]);
+  return { customerId: customer.id, sessionId: customer.sessionId, memberId: member?.id ?? null };
+}
 
 export interface AddressInput {
   recipientName: string;
@@ -49,7 +58,7 @@ function fromRow(row: AddressRow): AddressRecord {
 export type AddressError = "missing" | "phone" | "houseNumber" | "postal";
 
 /** `{ error }` = refused (why); otherwise the input with the place in the data's own spelling (thai-postcodes.ts). */
-function validate(input: AddressInput): { error: AddressError } | { input: AddressInput } {
+export function validateAddress(input: AddressInput): { error: AddressError } | { input: AddressInput } {
   const required = [input.recipientName, input.phone, input.line1, input.subdistrict, input.district, input.province];
   if (required.some((v) => !v.trim())) return { error: "missing" };
   // A number the courier can call: 9–10 digits starting with 0 (mobile or landline), dashes and spaces allowed.
@@ -98,34 +107,43 @@ export async function lastUsedAddressId(addresses: AddressRecord[]): Promise<num
   return addresses[0].id;
 }
 
+/** The saved addresses the address step lists: a signed-in member's own only — a phone-only session lists none (T2-03). */
 export async function listAddresses(): Promise<AddressRecord[]> {
-  const customer = await requireCustomer();
+  const scope = listScope(await viewer());
+  if (!scope) return [];
   const rows = getDb()
-    .prepare("SELECT * FROM addresses WHERE customer_id = ? ORDER BY is_default DESC, id DESC")
-    .all(customer.id) as AddressRow[];
+    .prepare(`SELECT * FROM addresses WHERE ${scope.sql} ORDER BY is_default DESC, id DESC`)
+    .all(...scope.args) as AddressRow[];
   return rows.map(fromRow);
 }
 
+/** Saves the typed address: to the member when one is signed in, else to this phone session only (usable for its own
+ *  order, never listed again — address-owner.ts). The default flag is the member's; a phone-only row is never a default. */
 export async function addAddress(raw: AddressInput, makeDefault: boolean): Promise<{ ok: true; id: number } | { ok: false; error: AddressError }> {
-  const checked = validate(raw);
+  const checked = validateAddress(raw);
   if ("error" in checked) return { ok: false, error: checked.error };
   const input = checked.input;
 
-  const customer = await requireCustomer();
+  const who = await viewer();
+  const owner = newRowOwner(who);
   const db = getDb();
-  const isFirst = (db.prepare("SELECT COUNT(*) as n FROM addresses WHERE customer_id = ?").get(customer.id) as { n: number }).n === 0;
+  const isFirst =
+    owner.memberId !== null && (db.prepare("SELECT COUNT(*) as n FROM addresses WHERE member_id = ?").get(owner.memberId) as { n: number }).n === 0;
+  const asDefault = owner.memberId !== null && (makeDefault || isFirst);
 
   const insertRun = db.transaction(() => {
-    if (makeDefault || isFirst) {
-      db.prepare("UPDATE addresses SET is_default = 0 WHERE customer_id = ?").run(customer.id);
+    if (asDefault) {
+      db.prepare("UPDATE addresses SET is_default = 0 WHERE member_id = ?").run(owner.memberId);
     }
     return db
       .prepare(
-        `INSERT INTO addresses (customer_id, recipient_name, phone, line1, subdistrict, district, province, postal_code, is_default)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO addresses (customer_id, member_id, session_id, recipient_name, phone, line1, subdistrict, district, province, postal_code, is_default)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       )
       .run(
-        customer.id,
+        who.customerId,
+        owner.memberId,
+        owner.sessionId,
         input.recipientName.trim(),
         input.phone.trim(),
         input.line1.trim(),
@@ -133,7 +151,7 @@ export async function addAddress(raw: AddressInput, makeDefault: boolean): Promi
         input.district.trim(),
         input.province.trim(),
         input.postalCode.trim(),
-        makeDefault || isFirst ? 1 : 0
+        asDefault ? 1 : 0
       );
   });
 
@@ -143,44 +161,50 @@ export async function addAddress(raw: AddressInput, makeDefault: boolean): Promi
 
 /**
  * Edit / delete a saved address (owner 03/11 "ที่อยู่ที่บันทึกไว้ ขอให้มีหัวข้อลบหรือแก้ไขได้"). Both are scoped to the
- * signed-in customer, like `getOwnedAddress` — an id from the form is never trusted on its own. Orders keep their own copy
- * of the address (`order_shipping_addresses`), so editing or deleting here never changes an order already placed.
+ * signed-in member's own rows (T2-15, address-owner.ts `editScope`) — an id from the form is never trusted on its own, and a
+ * phone-only session has nothing to edit. Orders keep their own copy of the address (`order_shipping_addresses`), so editing
+ * or deleting here never changes an order already placed.
  */
 export async function updateAddress(addressId: number, raw: AddressInput): Promise<{ ok: true; id: number } | { ok: false; error: AddressError | "not-found" }> {
-  const checked = validate(raw);
+  const checked = validateAddress(raw);
   if ("error" in checked) return { ok: false, error: checked.error };
   const input = checked.input;
-  const customer = await requireCustomer();
+  const scope = editScope(await viewer());
+  if (!scope) return { ok: false, error: "not-found" };
   const result = getDb()
     .prepare(
       `UPDATE addresses SET recipient_name = ?, phone = ?, line1 = ?, subdistrict = ?, district = ?, province = ?, postal_code = ?
-       WHERE id = ? AND customer_id = ?`
+       WHERE id = ? AND ${scope.sql}`
     )
-    .run(input.recipientName.trim(), input.phone.trim(), input.line1.trim(), input.subdistrict.trim(), input.district.trim(), input.province.trim(), input.postalCode.trim(), addressId, customer.id);
+    .run(input.recipientName.trim(), input.phone.trim(), input.line1.trim(), input.subdistrict.trim(), input.district.trim(), input.province.trim(), input.postalCode.trim(), addressId, ...scope.args);
   return result.changes === 1 ? { ok: true, id: addressId } : { ok: false, error: "not-found" };
 }
 
-/** Deleting the default hands the default to the newest address left, so the address step still preselects one. */
+/** Deleting the default hands the default to the member's newest address left, so the address step still preselects one. */
 export async function deleteAddress(addressId: number): Promise<boolean> {
-  const customer = await requireCustomer();
+  const scope = editScope(await viewer());
+  if (!scope) return false;
   const db = getDb();
   return db.transaction(() => {
-    const row = db.prepare("SELECT is_default FROM addresses WHERE id = ? AND customer_id = ?").get(addressId, customer.id) as { is_default: number } | undefined;
+    const row = db.prepare(`SELECT is_default, member_id FROM addresses WHERE id = ? AND ${scope.sql}`).get(addressId, ...scope.args) as
+      | { is_default: number; member_id: number }
+      | undefined;
     if (!row) return false;
-    db.prepare("DELETE FROM addresses WHERE id = ? AND customer_id = ?").run(addressId, customer.id);
+    db.prepare(`DELETE FROM addresses WHERE id = ? AND ${scope.sql}`).run(addressId, ...scope.args);
     if (row.is_default === 1) {
-      db.prepare("UPDATE addresses SET is_default = 1 WHERE id = (SELECT MAX(id) FROM addresses WHERE customer_id = ?)").run(customer.id);
+      db.prepare("UPDATE addresses SET is_default = 1 WHERE id = (SELECT MAX(id) FROM addresses WHERE member_id = ?)").run(row.member_id);
     }
     return true;
   })();
 }
 
-/** Fetches one address by id, scoped to the current customer — never trust an address id from a
- *  form field without checking ownership, or one customer could read/ship to another's address. */
+/** Fetches one address by id for the review step and the order (T2-15): the member's own, or what this very phone session
+ *  typed — never trust an address id from a form field or the address bar, or one visitor could read or ship to another's
+ *  address. */
 export async function getOwnedAddress(addressId: number): Promise<AddressRecord | null> {
-  const customer = await requireCustomer();
+  const scope = orderScope(await viewer());
   const row = getDb()
-    .prepare("SELECT * FROM addresses WHERE id = ? AND customer_id = ?")
-    .get(addressId, customer.id) as AddressRow | undefined;
+    .prepare(`SELECT * FROM addresses WHERE id = ? AND ${scope.sql}`)
+    .get(addressId, ...scope.args) as AddressRow | undefined;
   return row ? fromRow(row) : null;
 }

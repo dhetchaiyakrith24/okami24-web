@@ -5,7 +5,6 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { SHIPPING } from "@/i18n/service-pages/shipping";
-import { ShippingDelayBanner } from "@/components/commerce/ShippingDelayNotice";
 
 /** Body of /shipping in the active language (copy: src/i18n/service-pages/shipping.tsx). */
 export function ShippingContent() {
@@ -16,7 +15,6 @@ export function ShippingContent() {
       <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<SummaryCards items={c.summary} />} />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
-          <ShippingDelayBanner />
           <ServiceSection title={c.feeTitle}>
             <div className="overflow-x-auto rounded-xl border border-surface-border-soft bg-surface-1">
               <table className="w-full text-sm">

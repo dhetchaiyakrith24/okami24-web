@@ -11,6 +11,7 @@ import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName } from "@/lib/utils";
 import { headlineSpecsForProduct } from "@/lib/card-headline-spec";
+import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 
 /**
@@ -60,6 +61,7 @@ export function ProductCard({ product, taglineTh }: { product: Product; taglineT
           <OptionCountBadge product={product} />
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3 max-lg:right-2 max-lg:top-2" />
+        <CardSoldOutBadge slug={product.slug} builtSoldOut={soldOut} />
         {/* ก10 "Zoom" prototype: this photo morphs into the product page's hero (ZoomShared — prototype slugs only). */}
         <ZoomShared slug={product.slug}>
           <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
