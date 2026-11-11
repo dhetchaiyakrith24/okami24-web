@@ -47,10 +47,14 @@ export function ProductPicker({
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {selected.map((product) => (
           <div key={product.slug} className="relative flex flex-col rounded-xl border border-surface-border bg-surface-1 p-3">
+            {/* z-10: the picture box below is `relative` (07/11 fill-the-card fix) and comes later in the DOM, so
+                without it the picture painted over this button and swallowed every click (owner 12/11). Guarded by
+                compare-remove-contract-test.ts. */}
             <button
+              type="button"
               onClick={() => onRemove(product.slug)}
               aria-label={`${dict.compare.removeAriaPrefix} ${product.name}`}
-              className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-surface-border bg-surface-0 text-foreground-muted hover:text-foreground"
+              className="absolute right-2 top-2 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-surface-border bg-surface-0 text-foreground-muted hover:text-foreground"
             >
               <X size={12} aria-hidden />
             </button>
