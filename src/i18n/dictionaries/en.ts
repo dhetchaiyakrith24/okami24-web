@@ -199,6 +199,7 @@ export const en: Dictionary = {
     outOfStockChip: "Out of stock",
     optionIn: "In stock",
     optionOut: "Sold out",
+    optionAsk: "Ask",
     optionStockCount: "{in}/{n} available",
     lowStock: "Almost gone · {n} left",
     stockLeft: "{n} left",

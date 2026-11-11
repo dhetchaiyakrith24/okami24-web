@@ -237,6 +237,8 @@ export interface Dictionary {
     /** Phone option tiles (Q5, 24/10): the green pill, the sold-out pill, and "{in} of {n}" over the tiles. */
     optionIn: string;
     optionOut: string;
+    /** Owner 11/11: a tile whose warehouse code has no live number — ask the shop (live-rules.ts "ask"). */
+    optionAsk: string;
     optionStockCount: string;
     /** Live warehouse count of the picked option (owner 26/10 word, HANDOFF §18 "Low-stock label") — `{n}` = pieces left, shown at ≤ 3. */
     lowStock: string;

@@ -72,7 +72,7 @@ export function ProductMasterVariantPicker({
     <div data-option-picker className={cn("flex flex-col gap-2", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock" && !v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }))}
+        options={variants.map((v) => ({ id: v.id, name: v.label, image: v.image, out: v.availabilityStatus !== "in-stock" && !v.stockAsk, ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }))}
         selectedId={selectedId}
         countLine={countLine}
         onSelect={handleSelect}

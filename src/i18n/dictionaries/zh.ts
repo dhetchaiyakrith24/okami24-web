@@ -193,6 +193,7 @@ export const zh: Dictionary = {
     outOfStockChip: "缺货",
     optionIn: "有货",
     optionOut: "售罄",
+    optionAsk: "咨询",
     optionStockCount: "现货 {in}/{n}",
     lowStock: "即将售罄 · 仅剩 {n} 件",
     stockLeft: "剩 {n} 件",

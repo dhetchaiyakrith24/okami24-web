@@ -128,6 +128,7 @@ check("product page: legacy renders through the overlay", page.includes("const l
 check("product page: published + pilot render through the overlay", page.includes("livePilotProduct(builtPublished, live)") && page.includes("livePilotProduct(builtPilot, live)"));
 check("stock routes mark stale pages", src("app/api/stock/route.ts").includes("refreshStalePages()") && src("app/api/stock/[slug]/route.ts").includes("refreshStalePages({ slug })") && src("app/wp-json/[[...path]]/route.ts").includes("refreshStalePages({ force: true })"));
 check("the buy slot asks on LINE for ask", src("components/commerce/ProductBuyAction.tsx").includes("askStock ? dict.productActions.askStockCta") && src("components/product/ProductHero.tsx").includes("askStock={stockAsk}") && src("components/catalog-bridge/PilotProductDetail.tsx").includes("askStock={askStock}"));
+check("phone tiles: ask is its own pill, not counted as ready to ship", src("components/product/PhoneOptionTiles.tsx").includes("options.filter((o) => !o.out && !o.ask)") && ["components/product/FlavorVariantGrid.tsx", "components/product/ColorVariantRail.tsx", "components/catalog-bridge/ProductMasterVariantPicker.tsx"].every((f) => src(f).includes("ask: !!v.stockAsk")));
 const staff = src("app/staff/shipnity/page.tsx");
 check("staff page: names the codes with no number, drops the owner-closed guess", staff.includes("<StockRows rows={cmp.missing} />") && !staff.includes("อาจเป็นรายการที่พี่ปิดขายไว้"));
 

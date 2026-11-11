@@ -214,6 +214,7 @@ export const th: Dictionary = {
     outOfStockChip: "สินค้าหมด",
     optionIn: "มีของ",
     optionOut: "หมด",
+    optionAsk: "สอบถาม",
     optionStockCount: "พร้อมส่ง {in}/{n}",
     lowStock: "ใกล้หมด · เหลือ {n} ชิ้น",
     stockLeft: "เหลือ {n} ชิ้น",
