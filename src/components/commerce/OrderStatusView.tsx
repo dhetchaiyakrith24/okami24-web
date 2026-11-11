@@ -369,7 +369,9 @@ export function OrderStatusView({
         )}
 
         {stockIssue && (
-          <div className="lg:col-span-2">
+          // Refund only on a cancelled order (one form, T2-10): the left column, as wide as the order card above — across
+          // both columns its one button stretched to ~900 px at 1440.
+          <div className={stockIssue.afterCancel ? "lg:col-start-1" : "lg:col-span-2"}>
             <StockIssueBox issue={stockIssue} orderNumber={order.orderNumber} token={token} />
           </div>
         )}
