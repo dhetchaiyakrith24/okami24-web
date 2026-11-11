@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-12",
-  "endDate": "2026-11-08",
+  "startDate": "2026-10-13",
+  "endDate": "2026-11-09",
   "dimensions": [
    "query"
   ]
@@ -11,19 +11,19 @@
    "keys": [
     "okami24"
    ],
-   "clicks": 28,
-   "impressions": 46,
-   "ctr": 0.6086956521739131,
-   "position": 1.0217391304347827
+   "clicks": 27,
+   "impressions": 45,
+   "ctr": 0.6,
+   "position": 1.0222222222222221
   },
   {
    "keys": [
     "voopoo drag 6 ราคา"
    ],
    "clicks": 23,
-   "impressions": 49,
-   "ctr": 0.46938775510204084,
-   "position": 1.4081632653061225
+   "impressions": 48,
+   "ctr": 0.4791666666666667,
+   "position": 1.4166666666666667
   },
   {
    "keys": [
@@ -39,36 +39,27 @@
     "caliburn g5 ราคา"
    ],
    "clicks": 13,
-   "impressions": 18,
-   "ctr": 0.7222222222222222,
-   "position": 1.0555555555555556
+   "impressions": 16,
+   "ctr": 0.8125,
+   "position": 1.0625
   },
   {
    "keys": [
     "pod"
    ],
-   "clicks": 12,
-   "impressions": 151,
-   "ctr": 0.07947019867549669,
-   "position": 12.079470198675496
+   "clicks": 11,
+   "impressions": 144,
+   "ctr": 0.0763888888888889,
+   "position": 11.895833333333334
   },
   {
    "keys": [
     "pod system"
    ],
-   "clicks": 12,
-   "impressions": 52,
-   "ctr": 0.23076923076923078,
-   "position": 4.346153846153847
-  },
-  {
-   "keys": [
-    "voopoo argus g4 ราคา"
-   ],
-   "clicks": 9,
-   "impressions": 12,
-   "ctr": 0.75,
-   "position": 1.3333333333333333
+   "clicks": 11,
+   "impressions": 50,
+   "ctr": 0.22,
+   "position": 4.359999999999999
   },
   {
    "keys": [
@@ -81,21 +72,30 @@
   },
   {
    "keys": [
-    "voopoo drag 6"
+    "voopoo argus g4 ราคา"
    ],
    "clicks": 8,
-   "impressions": 37,
-   "ctr": 0.21621621621621623,
-   "position": 6.702702702702703
+   "impressions": 11,
+   "ctr": 0.7272727272727273,
+   "position": 1.2727272727272727
+  },
+  {
+   "keys": [
+    "voopoo drag 6"
+   ],
+   "clicks": 7,
+   "impressions": 33,
+   "ctr": 0.21212121212121213,
+   "position": 6.666666666666667
   },
   {
    "keys": [
     "caliburn g5 lite"
    ],
-   "clicks": 6,
-   "impressions": 23,
-   "ctr": 0.2608695652173913,
-   "position": 5.260869565217392
+   "clicks": 4,
+   "impressions": 16,
+   "ctr": 0.25,
+   "position": 5.6875
   },
   {
    "keys": [
@@ -165,9 +165,9 @@
     "caliburn"
    ],
    "clicks": 1,
-   "impressions": 5,
-   "ctr": 0.2,
-   "position": 43.4
+   "impressions": 4,
+   "ctr": 0.25,
+   "position": 44.5
   },
   {
    "keys": [
@@ -282,9 +282,9 @@
     "joiway f4"
    ],
    "clicks": 1,
-   "impressions": 26,
-   "ctr": 0.038461538461538464,
-   "position": 9.538461538461538
+   "impressions": 25,
+   "ctr": 0.04,
+   "position": 9.52
   },
   {
    "keys": [
@@ -372,9 +372,9 @@
     "switch pod"
    ],
    "clicks": 1,
-   "impressions": 12,
-   "ctr": 0.08333333333333333,
-   "position": 8.333333333333332
+   "impressions": 10,
+   "ctr": 0.1,
+   "position": 8.4
   },
   {
    "keys": [
@@ -384,24 +384,6 @@
    "impressions": 2,
    "ctr": 0.5,
    "position": 7
-  },
-  {
-   "keys": [
-    "voopoo argus g3 mini"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 6
-  },
-  {
-   "keys": [
-    "voopoo drag6"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 14
   },
   {
    "keys": [
@@ -477,15 +459,6 @@
   },
   {
    "keys": [
-    "arti mtl"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 68
-  },
-  {
-   "keys": [
     "bar10k"
    ],
    "clicks": 0,
@@ -528,15 +501,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 48
-  },
-  {
-   "keys": [
-    "caliburn g5 se lite"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 5
   },
   {
    "keys": [
@@ -675,15 +639,6 @@
   },
   {
    "keys": [
-    "drags3"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 1
-  },
-  {
-   "keys": [
     "eskibar"
    ],
    "clicks": 0,
@@ -696,9 +651,9 @@
     "esko"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 4,
    "ctr": 0,
-   "position": 67
+   "position": 67.25
   },
   {
    "keys": [
@@ -810,15 +765,6 @@
   },
   {
    "keys": [
-    "g4 lite"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 9
-  },
-  {
-   "keys": [
     "g4 mini"
    ],
    "clicks": 0,
@@ -840,7 +786,7 @@
     "g5 lite"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 3,
    "ctr": 0,
    "position": 6
   },
@@ -849,9 +795,9 @@
     "g5 lite caliburn"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 5.666666666666667
+   "position": 5
   },
   {
    "keys": [
@@ -912,18 +858,9 @@
     "infy pod"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 62.333333333333336
-  },
-  {
-   "keys": [
-    "infy 電子タバコ"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 67
+   "position": 60.8
   },
   {
    "keys": [
@@ -942,15 +879,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 9
-  },
-  {
-   "keys": [
-    "iqos 7"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [
@@ -1362,9 +1290,9 @@
     "pod system pantip"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 2,
    "ctr": 0,
-   "position": 54
+   "position": 46.5
   },
   {
    "keys": [
@@ -1374,15 +1302,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 68
-  },
-  {
-   "keys": [
-    "pod system ตัวไหนดี"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 50
   },
   {
    "keys": [
@@ -1407,9 +1326,9 @@
     "pod system แนะนํา"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 35.333333333333336
+   "position": 9
   },
   {
    "keys": [
@@ -1446,15 +1365,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 46
-  },
-  {
-   "keys": [
-    "pricing"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 12
   },
   {
    "keys": [
@@ -1587,9 +1497,9 @@
     "salthub"
    ],
    "clicks": 0,
-   "impressions": 11,
+   "impressions": 10,
    "ctr": 0,
-   "position": 26.545454545454547
+   "position": 26.5
   },
   {
    "keys": [
@@ -1650,9 +1560,9 @@
     "tfit m power 20k"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 6,
    "ctr": 0,
-   "position": 16
+   "position": 17.166666666666668
   },
   {
    "keys": [
@@ -1680,15 +1590,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 52
-  },
-  {
-   "keys": [
-    "uwell caliburn g4 mini"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 10
   },
   {
    "keys": [
@@ -1767,9 +1668,9 @@
     "voopoo argus g4"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 4,
    "ctr": 0,
-   "position": 9
+   "position": 9.25
   },
   {
    "keys": [
@@ -1797,6 +1698,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 28
+  },
+  {
+   "keys": [
+    "voopoo drag6"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
   },
   {
    "keys": [
@@ -1854,15 +1764,6 @@
   },
   {
    "keys": [
-    "กี่บาท"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 2
-  },
-  {
-   "keys": [
     "ขอดูตัวเครื่อง"
    ],
    "clicks": 0,
@@ -1911,9 +1812,9 @@
     "คอยล์บุหรี่ไฟฟ้า voopoo"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 70.33333333333333
+   "position": 56
   },
   {
    "keys": [
@@ -1929,9 +1830,9 @@
     "จอยเว"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 8,
    "ctr": 0,
-   "position": 7.222222222222222
+   "position": 7
   },
   {
    "keys": [
@@ -2115,15 +2016,6 @@
   },
   {
    "keys": [
-    "พอต เอสโคบาร์"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 8
-  },
-  {
-   "keys": [
     "พอตปลอมดูยังไง"
    ],
    "clicks": 0,
@@ -2166,15 +2058,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 71
-  },
-  {
-   "keys": [
-    "พอตเอสโคบา"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
   },
   {
    "keys": [

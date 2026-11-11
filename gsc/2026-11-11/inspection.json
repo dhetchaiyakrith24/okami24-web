@@ -1,0 +1,2057 @@
+{
+ "ranAt": "2026-11-11T03:02:03.886Z",
+ "site": "sc-domain:okami24.store",
+ "urlSource": "sitemap",
+ "rows": [
+  {
+   "url": "https://okami24.store",
+   "lastCrawl": "2026-11-09T09:06:51Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/about",
+   "lastCrawl": "2026-11-08T13:38:19Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/about",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/dotmod",
+   "lastCrawl": "2026-11-03T08:06:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/dotmod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/esko-bar",
+   "lastCrawl": "2026-11-09T23:31:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/esko-bar",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/infy",
+   "lastCrawl": "2026-11-08T06:03:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/infy",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/iqos",
+   "lastCrawl": "2026-11-01T05:24:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/iqos",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/joiway",
+   "lastCrawl": "2026-11-09T06:36:51Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/joiway",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/kardinal-stick",
+   "lastCrawl": "2026-11-03T10:44:31Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/kardinal-stick",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/lambda",
+   "lastCrawl": "2026-11-06T11:04:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/lambda",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/moood",
+   "lastCrawl": "2026-11-07T16:01:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/moood",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/nevoks",
+   "lastCrawl": "2026-10-30T17:50:18Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/nevoks",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/relx",
+   "lastCrawl": "2026-11-10T22:01:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/relx",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/rincoe",
+   "lastCrawl": "2026-11-07T02:56:47Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/rincoe",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/salthub",
+   "lastCrawl": "2026-11-11T02:12:49Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/salthub",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/ske",
+   "lastCrawl": "2026-10-19T03:07:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/ske",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/smok",
+   "lastCrawl": "2026-11-08T17:55:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/smok",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/tfit",
+   "lastCrawl": "2026-10-25T07:24:04Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/tfit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/uwell",
+   "lastCrawl": "2026-11-09T10:10:55Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/uwell",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/voopoo",
+   "lastCrawl": "2026-11-02T21:50:49Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/voopoo",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/brands/wotofo",
+   "lastCrawl": "2026-11-03T21:14:06Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/brands/wotofo",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/contact",
+   "lastCrawl": "2026-11-02T18:43:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/contact",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid",
+   "lastCrawl": "2026-10-30T19:06:27Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/e-liquid",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid/beverage",
+   "lastCrawl": "2026-10-21T15:06:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/e-liquid/beverage",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid/dessert",
+   "lastCrawl": "2026-10-23T12:14:58Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/e-liquid/dessert",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid/fruit",
+   "lastCrawl": "2026-10-22T15:24:58Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/e-liquid/fruit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid/menthol-cooling",
+   "lastCrawl": "2026-10-25T12:56:13Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/e-liquid/menthol-cooling",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/e-liquid/tobacco-style",
+   "lastCrawl": "2026-10-27T21:04:25Z",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": null,
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/faq",
+   "lastCrawl": "2026-11-07T00:45:47Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/faq",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides",
+   "lastCrawl": "2026-11-08T12:32:54Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/argus-g4-vs-caliburn-g5",
+   "lastCrawl": "2026-10-07T22:34:45Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/argus-g4-vs-caliburn-g5",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/battery-care-and-charging",
+   "lastCrawl": "2026-11-06T10:13:38Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/battery-care-and-charging",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/cant-open-the-website",
+   "lastCrawl": "2026-10-31T20:39:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/cant-open-the-website",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/checking-a-genuine-pod",
+   "lastCrawl": "2026-10-17T01:53:53Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/checking-a-genuine-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-a-disposable",
+   "lastCrawl": "2026-11-03T07:24:33Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-a-disposable",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-a-marbo-flavor",
+   "lastCrawl": "2026-11-03T15:24:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-a-marbo-flavor",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-a-pod-flavor",
+   "lastCrawl": "2026-10-20T20:38:32Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-a-pod-flavor",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-a-switch-pod",
+   "lastCrawl": "2026-10-22T23:28:58Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-a-switch-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-a-terea-flavor",
+   "lastCrawl": "2026-10-20T23:13:49Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-a-terea-flavor",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-wattage-and-airflow",
+   "lastCrawl": "2026-10-21T15:03:33Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-wattage-and-airflow",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/choosing-your-first-pod-system",
+   "lastCrawl": "2026-11-03T06:10:25Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/choosing-your-first-pod-system",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/coil-and-pod-maintenance",
+   "lastCrawl": "2026-10-22T05:56:54Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/coil-and-pod-maintenance",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/comparing-caliburn-models",
+   "lastCrawl": "2026-11-04T07:30:14Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/comparing-caliburn-models",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/comparing-voopoo-argus-models",
+   "lastCrawl": "2026-10-31T09:29:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/comparing-voopoo-argus-models",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/comparing-voopoo-drag-models",
+   "lastCrawl": "2026-10-26T22:13:54Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/comparing-voopoo-drag-models",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/disposable-vs-switch-pod",
+   "lastCrawl": "2026-10-06T05:13:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/disposable-vs-switch-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/esko-bar-switch-vs-m-switch",
+   "lastCrawl": "2026-11-03T10:22:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/esko-bar-switch-vs-m-switch",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/fixing-a-burnt-pod",
+   "lastCrawl": "2026-10-16T10:02:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/fixing-a-burnt-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/fixing-a-leaking-pod",
+   "lastCrawl": "2026-10-26T23:28:55Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/fixing-a-leaking-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/fixing-no-draw-and-blinking-light",
+   "lastCrawl": "2026-10-21T01:31:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/fixing-no-draw-and-blinking-light",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/headache-after-vaping",
+   "lastCrawl": "2026-11-07T09:07:05Z",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": null,
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/how-long-a-disposable-lasts",
+   "lastCrawl": "2026-11-06T21:20:40Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/how-long-a-disposable-lasts",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/how-long-a-pod-device-lasts",
+   "lastCrawl": "2026-10-31T09:29:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/how-long-a-pod-device-lasts",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/how-to-vape-without-coughing",
+   "lastCrawl": "2026-11-08T18:05:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/how-to-vape-without-coughing",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/iqos-iluma-i-one-vs-iluma-i",
+   "lastCrawl": "2026-10-21T00:02:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/iqos-iluma-i-one-vs-iluma-i",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/iqos-iluma-i-reset-and-charging",
+   "lastCrawl": "2026-10-31T06:54:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/iqos-iluma-i-reset-and-charging",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/open-system-vs-disposable",
+   "lastCrawl": "2026-11-02T07:39:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/open-system-vs-disposable",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/pg-vg-in-e-liquid",
+   "lastCrawl": "2026-11-06T15:48:30Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/pg-vg-in-e-liquid",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/pod-losing-flavor",
+   "lastCrawl": "2026-11-04T03:54:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/pod-losing-flavor",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/pod-low-vapor",
+   "lastCrawl": "2026-11-04T03:56:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/pod-low-vapor",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/quit-smoking-with-a-pod",
+   "lastCrawl": "2026-10-25T22:56:13Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/quit-smoking-with-a-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/reading-a-spec-sheet",
+   "lastCrawl": "2026-10-07T22:34:45Z",
+   "verdict": "NEUTRAL",
+   "coverage": "Crawled - currently not indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/reading-a-spec-sheet",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/refilling-a-pod",
+   "lastCrawl": "2026-10-30T22:09:28Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/refilling-a-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/salt-nic-vs-freebase",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "Discovered - currently not indexed",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+  },
+  {
+   "url": "https://okami24.store/guides/taking-a-pod-on-a-plane",
+   "lastCrawl": "2026-11-02T06:25:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/taking-a-pod-on-a-plane",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/types-of-pods",
+   "lastCrawl": "2026-11-04T03:58:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/types-of-pods",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/understanding-mtl-vs-dtl",
+   "lastCrawl": "2026-11-01T01:39:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/understanding-mtl-vs-dtl",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/what-is-a-pod-system",
+   "lastCrawl": "2026-11-03T16:14:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/what-is-a-pod-system",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/guides/what-is-nicotine",
+   "lastCrawl": "2026-11-07T09:07:04Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/guides/what-is-nicotine",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/how-to-order",
+   "lastCrawl": "2026-11-09T12:56:57Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/how-to-order",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/privacy",
+   "lastCrawl": "2026-11-01T14:09:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/privacy",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products",
+   "lastCrawl": "2026-11-09T01:00:20Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/86-bar-20k",
+   "lastCrawl": "2026-11-08T18:01:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/86-bar-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/argus-g3-mini",
+   "lastCrawl": "2026-11-09T14:04:45Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/argus-g3-mini",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/argus-g4",
+   "lastCrawl": "2026-11-02T16:24:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/argus-g4",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/argus-g4-mini",
+   "lastCrawl": "2026-11-06T06:53:37Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/argus-g4-mini",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/argus-p3",
+   "lastCrawl": "2026-11-11T02:12:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/argus-p3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g3",
+   "lastCrawl": "2026-11-09T12:13:46Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g3-lite",
+   "lastCrawl": "2026-11-08T18:03:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g3-lite",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g3-pro",
+   "lastCrawl": "2026-11-04T15:18:17Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g3-pro",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g3-pro-koko",
+   "lastCrawl": "2026-11-08T09:10:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g3-pro-koko",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g4",
+   "lastCrawl": "2026-11-06T08:33:38Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g4",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g4-classic",
+   "lastCrawl": "2026-11-01T02:56:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g4-classic",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g4-mini",
+   "lastCrawl": "2026-11-04T22:50:39Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g4-mini",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g4-pro",
+   "lastCrawl": "2026-11-07T09:09:05Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g4-pro",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g4-pro-koko",
+   "lastCrawl": "2026-11-03T08:16:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g4-pro-koko",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g5",
+   "lastCrawl": "2026-11-07T09:23:57Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g5",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g5-lite",
+   "lastCrawl": "2026-11-08T23:50:40Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g5-lite",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/caliburn-g5-lite-se",
+   "lastCrawl": "2026-11-01T14:55:55Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/caliburn-g5-lite-se",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-1",
+   "lastCrawl": "2026-11-02T12:39:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-1",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-21",
+   "lastCrawl": "2026-10-20T17:51:10Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-21",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-38",
+   "lastCrawl": "2026-11-06T07:20:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-38",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-53",
+   "lastCrawl": "2026-11-03T12:27:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-53",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-54",
+   "lastCrawl": "2026-11-03T10:47:26Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-54",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-55",
+   "lastCrawl": "2026-11-03T09:32:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-55",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-56",
+   "lastCrawl": "2026-11-03T09:04:27Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-56",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-68",
+   "lastCrawl": "2026-09-23T10:48:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-68",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-70",
+   "lastCrawl": "2026-11-03T09:05:19Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-70",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-72",
+   "lastCrawl": "2026-09-23T10:48:19Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-72",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-74",
+   "lastCrawl": "2026-11-07T17:33:55Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-74",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-83",
+   "lastCrawl": "2026-09-23T10:48:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-83",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-87",
+   "lastCrawl": "2026-11-08T07:18:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-87",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-89",
+   "lastCrawl": "2026-09-23T10:48:20Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-89",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-92",
+   "lastCrawl": "2026-11-02T08:54:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-92",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coil-94",
+   "lastCrawl": "2026-11-07T09:33:09Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coil-94",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/coils-accessories",
+   "lastCrawl": "2026-11-02T10:09:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/coils-accessories",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/disposables",
+   "lastCrawl": "2026-11-08T17:17:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/disposables",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/drag-6",
+   "lastCrawl": "2026-11-03T09:21:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/drag-6",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/drag-s3",
+   "lastCrawl": "2026-11-10T17:21:16Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/drag-s3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/drag-x",
+   "lastCrawl": "2026-10-31T11:54:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/drag-x",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/drag-x2",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "Discovered - currently not indexed",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+  },
+  {
+   "url": "https://okami24.store/products/drag-x3",
+   "lastCrawl": "2026-11-03T02:24:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/drag-x3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/dude-pod-3ml",
+   "lastCrawl": "2026-11-04T19:33:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/dude-pod-3ml",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/e-liquid",
+   "lastCrawl": "2026-11-02T21:24:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/e-liquid",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/eliquid-1",
+   "lastCrawl": "2026-11-07T09:23:08Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/eliquid-1",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/eliquid-109",
+   "lastCrawl": "2026-11-09T16:10:56Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/eliquid-109",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/eliquid-64",
+   "lastCrawl": "2026-10-20T23:00:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/eliquid-64",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/eliquid-72",
+   "lastCrawl": "2026-11-06T08:58:41Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/eliquid-72",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/eliquid-73",
+   "lastCrawl": "2026-11-10T19:31:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/eliquid-73",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/esko-bar-20k",
+   "lastCrawl": "2026-11-08T06:40:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/esko-bar-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/esko-bar-switch-pod",
+   "lastCrawl": "2026-11-08T16:11:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/esko-bar-switch-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/foli-bar-15k",
+   "lastCrawl": "2026-10-20T23:30:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/foli-bar-15k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/graple-freebase",
+   "lastCrawl": "2026-11-09T06:44:56Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/graple-freebase",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/heated-tobacco-consumables",
+   "lastCrawl": "2026-10-18T17:57:57Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/heated-tobacco-consumables",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/heated-tobacco-devices",
+   "lastCrawl": "2026-11-02T01:24:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/heated-tobacco-devices",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/infy-20k",
+   "lastCrawl": "2026-11-01T19:12:27Z",
+   "verdict": "NEUTRAL",
+   "coverage": "Server error (5xx)",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "SERVER_ERROR",
+   "googleCanonical": null,
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/infy-pod",
+   "lastCrawl": "2026-11-09T15:19:44Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/infy-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/iqos-iluma-one",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": null
+  },
+  {
+   "url": "https://okami24.store/products/iqos-iluma-one-oasis",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": null
+  },
+  {
+   "url": "https://okami24.store/products/iqosheet-14",
+   "lastCrawl": "2026-11-10T11:25:15Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqosheet-14",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/iqosheet-15",
+   "lastCrawl": "2026-10-18T17:57:55Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqosheet-15",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/iqosheet-16",
+   "lastCrawl": "2026-11-03T09:57:25Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqosheet-16",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/iqosheet-17",
+   "lastCrawl": "2026-11-10T10:10:12Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqosheet-17",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/iqosheet-18",
+   "lastCrawl": "2026-11-02T05:09:31Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqosheet-18",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/joiway-f3",
+   "lastCrawl": "2026-11-03T11:37:18Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/joiway-f3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/joiway-f4",
+   "lastCrawl": "2026-11-07T09:43:14Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/joiway-f4",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/ks-quikpro-kit",
+   "lastCrawl": "2026-10-31T05:40:26Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/ks-quikpro-kit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/m-bar-10k",
+   "lastCrawl": "2026-11-07T09:15:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/m-bar-10k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/m-bar-9k",
+   "lastCrawl": "2026-11-07T09:21:08Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/m-bar-9k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/m-switch-kit",
+   "lastCrawl": "2026-11-07T09:19:08Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/m-switch-kit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/m-switch-pod",
+   "lastCrawl": "2026-11-07T09:11:06Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/m-switch-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/marbo-10k-clone",
+   "lastCrawl": "2026-11-06T09:10:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/marbo-10k-clone",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/mood-monster-14k",
+   "lastCrawl": "2026-11-07T01:29:05Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/mood-monster-14k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/mq-bar-22k",
+   "lastCrawl": "2026-11-09T02:15:20Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/mq-bar-22k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/muro-3ml",
+   "lastCrawl": "2026-11-06T09:28:26Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/muro-3ml",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/muro-connector-20k",
+   "lastCrawl": "2026-11-06T09:18:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/muro-connector-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/muro-freebase",
+   "lastCrawl": "2026-11-09T20:03:15Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/muro-freebase",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/muro-salt-nic",
+   "lastCrawl": "2026-11-07T09:27:09Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/muro-salt-nic",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/muro-sc-8000",
+   "lastCrawl": "2026-11-06T09:20:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/muro-sc-8000",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/nexas-booster-16k",
+   "lastCrawl": "2026-11-08T18:03:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/nexas-booster-16k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/nexbar-switch-15k-pod",
+   "lastCrawl": "2026-11-06T09:08:38Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/nexbar-switch-15k-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/nexpod-15k",
+   "lastCrawl": "2026-11-04T21:14:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/nexpod-15k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/nexswitch-16k-kit",
+   "lastCrawl": "2026-10-18T17:57:57Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/nexswitch-16k-kit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/nexswitch-16k-pod",
+   "lastCrawl": "2026-11-09T07:51:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/nexswitch-16k-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/next-pro-2-beyond",
+   "lastCrawl": "2026-11-02T17:39:29Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/next-pro-2-beyond",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-142",
+   "lastCrawl": "2026-10-19T01:55:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-142",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-149",
+   "lastCrawl": "2026-11-08T20:23:29Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-149",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-150",
+   "lastCrawl": "2026-10-18T02:00:30Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-150",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-154",
+   "lastCrawl": "2026-10-18T02:00:31Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-154",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-159",
+   "lastCrawl": "2026-11-04T17:32:35Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-159",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-169",
+   "lastCrawl": "2026-11-04T17:34:36Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-169",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-180",
+   "lastCrawl": "2026-11-07T09:35:09Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-180",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pod-systems",
+   "lastCrawl": "2026-11-09T07:14:21Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pod-systems",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pods-cartridges",
+   "lastCrawl": "2026-11-08T07:55:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pods-cartridges",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/pop-up-10k-base",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": null
+  },
+  {
+   "url": "https://okami24.store/products/punta-ice",
+   "lastCrawl": "2026-11-03T11:34:36Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/punta-ice",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-artisan-plus",
+   "lastCrawl": "2026-11-10T09:16:58Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-artisan-plus",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-creator",
+   "lastCrawl": "2026-11-03T22:31:06Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-creator",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-creator-pod-20k",
+   "lastCrawl": "2026-11-07T09:13:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-creator-pod-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-diva-30k",
+   "lastCrawl": "2026-11-10T09:12:56Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-diva-30k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-essential-2",
+   "lastCrawl": "2026-10-20T17:51:11Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-essential-2",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-infinity-2-plus",
+   "lastCrawl": "2026-11-04T17:30:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-infinity-2-plus",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-infinity-pro-2-pod",
+   "lastCrawl": "2026-11-06T09:24:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-infinity-pro-2-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-lumi-18k",
+   "lastCrawl": "2026-11-10T12:40:15Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-lumi-18k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-novo-14k",
+   "lastCrawl": "2026-11-10T09:14:57Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-novo-14k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-pod",
+   "lastCrawl": "2026-11-08T17:51:33Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-pod-pro",
+   "lastCrawl": "2026-11-08T17:53:33Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-pod-pro",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-smash-go-12k",
+   "lastCrawl": "2026-11-06T09:26:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-smash-go-12k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-sparta-20k",
+   "lastCrawl": "2026-11-10T09:17:00Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-sparta-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-ultra-kit",
+   "lastCrawl": "2026-11-10T09:20:59Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-ultra-kit",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/relx-ultra-pod",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "Discovered - currently not indexed",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+  },
+  {
+   "url": "https://okami24.store/products/smok-nord-5",
+   "lastCrawl": "2026-11-08T17:57:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/smok-nord-5",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/smok-rpm-5",
+   "lastCrawl": "2026-11-08T17:59:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/smok-rpm-5",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/sup-zero-22k",
+   "lastCrawl": "2026-11-06T09:22:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/sup-zero-22k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/super-cool-saltnic",
+   "lastCrawl": "2026-11-10T09:10:56Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/super-cool-saltnic",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/switch-pods",
+   "lastCrawl": "2026-11-03T19:54:47Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/switch-pods",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/tfit-m-power-20k",
+   "lastCrawl": "2026-11-03T09:37:02Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/tfit-m-power-20k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/vazer-one-pod",
+   "lastCrawl": "2026-11-09T03:51:52Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/vazer-one-pod",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/vazer-reload-15k",
+   "lastCrawl": "2026-11-08T17:59:34Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/vazer-reload-15k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/vinci-s",
+   "lastCrawl": "2026-11-10T16:06:06Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/vinci-s",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/vmate-i3",
+   "lastCrawl": "2026-11-03T01:09:23Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/vmate-i3",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/vmate-pro-2",
+   "lastCrawl": "2026-11-06T09:22:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/vmate-pro-2",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/voopoo-pnp-x-coil-5pack",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": null
+  },
+  {
+   "url": "https://okami24.store/products/voopoo-vinci-coil-5pack",
+   "lastCrawl": null,
+   "verdict": "NEUTRAL",
+   "coverage": "URL is unknown to Google",
+   "indexing": "INDEXING_STATE_UNSPECIFIED",
+   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "googleCanonical": null,
+   "crawledAs": null
+  },
+  {
+   "url": "https://okami24.store/products/wotofo-nexbar-18k",
+   "lastCrawl": "2026-11-07T09:13:07Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/wotofo-nexbar-18k",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/zero-cartridge",
+   "lastCrawl": "2026-11-07T09:37:12Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/zero-cartridge",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/zero-nano",
+   "lastCrawl": "2026-11-04T02:14:03Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/zero-nano",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/products/zero-pro",
+   "lastCrawl": "2026-11-07T09:39:11Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/zero-pro",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/shipping",
+   "lastCrawl": "2026-11-01T10:24:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/shipping",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology",
+   "lastCrawl": "2026-11-01T17:54:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology/gesture-and-triple-tap-control",
+   "lastCrawl": "2026-10-25T15:28:13Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology/gesture-and-triple-tap-control",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology/high-output-chip-platforms",
+   "lastCrawl": "2026-09-21T18:55:19Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology/high-output-chip-platforms",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology/mesh-coil-systems",
+   "lastCrawl": "2026-09-21T18:53:19Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology/mesh-coil-systems",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology/multi-resistance-cartridges",
+   "lastCrawl": "2026-11-02T16:13:24Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology/multi-resistance-cartridges",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/technology/onboard-touch-displays",
+   "lastCrawl": "2026-09-29T03:51:33Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/technology/onboard-touch-displays",
+   "crawledAs": "MOBILE"
+  },
+  {
+   "url": "https://okami24.store/warranty",
+   "lastCrawl": "2026-10-31T18:10:22Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/warranty",
+   "crawledAs": "MOBILE"
+  }
+ ]
+}
