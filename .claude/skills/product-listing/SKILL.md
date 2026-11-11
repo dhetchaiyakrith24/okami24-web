@@ -105,8 +105,12 @@ report it; never reach the same result another way (13.7).
 1. After the merge, mark the code's line in `new-products.md` with ` — listed #<PR> as /products/<slug>`, or
    ` — prepared unpublished (#<PR>): <why>`.
 2. Visitor-visible page = skill `seo-after-publish`.
-3. Report in Thai, central §12 item 10 + `docs/TEMPLATES.md` (ข): first line = the summary · per product the name customers see +
+3. Live stock number: after the deploy, `/staff/shipnity` (section "เทียบสต็อก") must not list the new code under "ยังไม่มีตัวเลขจาก
+   Shipnity". A code with no Shipnity number is not sold — its page shows "สอบถามสต็อกทาง LINE" (owner 11/11). Listed there = the
+   warehouse presses "อัปเดตสต็อก" for that code in Shipnity, so Shipnity sends its number: one line in `docs/รอพี่ตรวจ.md`
+   ("แจ้งคลังกดอัปเดตสต็อก <name>", precedent item 113) and in the report's "ต้องตัดสินใจ/ทำ".
+4. Report in Thai, central §12 item 10 + `docs/TEMPLATES.md` (ข): first line = the summary · per product the name customers see +
    its live link, or why it waits · questions as one set, each with a recommendation (13.3).
-4. Daily task: push notification when anything was found (PushNotification tool, if available):
+5. Daily task: push notification when anything was found (PushNotification tool, if available):
    "สินค้าใหม่ N รายการ: ลงเว็บแล้ว X · รอพี่ Y" plus the links. Its report is what the main chat reads.
-5. Main chat: status page = 13.6.
+6. Main chat: status page = 13.6.
