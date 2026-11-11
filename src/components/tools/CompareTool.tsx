@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ScrollHintFrame } from "@/components/ui/ScrollHintFrame";
-import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
+import type { CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
 import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -111,10 +111,11 @@ function verifiedSpecRows(items: CatalogItem[], valueOf: (slug: string, spec: Sp
     .filter((row): row is Row => Boolean(row));
 }
 
-export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
+/** `catalog` = allCatalogItems() from the server page (T2-50: a client import of catalog-index bundled the raw product files). */
+export function CompareTool({ initialSlugs, catalog }: { initialSlugs: string[]; catalog: readonly CatalogItem[] }) {
   const { dict, locale } = useLocale();
   const [slugs, setSlugs] = useState<string[]>(initialSlugs);
-  const items = useMemo(() => slugs.map((s) => getCatalogItem(s)).filter((p): p is CatalogItem => Boolean(p)), [slugs]);
+  const items = useMemo(() => slugs.map((s) => catalog.find((i) => i.slug === s)).filter((p): p is CatalogItem => Boolean(p)), [slugs, catalog]);
 
   const classification = useMemo(() => classificationRows(items, dict), [items, dict]);
   // Round 30.4ค batch 1 (owner 2026-09-15): the row header is the same Thai chip label the product
@@ -151,7 +152,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
 
   return (
     <div className="flex flex-col gap-12">
-      <ProductPicker selected={items} onAdd={addProduct} onRemove={removeProduct} />
+      <ProductPicker selected={items} catalog={catalog} onAdd={addProduct} onRemove={removeProduct} />
 
       {items.length < 2 ? (
         <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-surface-border py-16 text-center">

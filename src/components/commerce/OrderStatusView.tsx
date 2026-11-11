@@ -122,6 +122,8 @@ export function OrderStatusView({
   paymentConfirmed = false,
   unboxing = null,
   autoCancelled = false,
+  warehouseCancelled = false,
+  cancelReason = null,
   deadlineIso = null,
 }: {
   order: OrderDetail;
@@ -142,6 +144,10 @@ export function OrderStatusView({
   unboxing?: UnboxingNotice;
   /** Cancelled by the 24-hour unpaid sweep (owner 24/10 proposal ②) — the next-step line says why. */
   autoCancelled?: boolean;
+  /** Cancelled because the warehouse cancelled it in Shipnity (owner 11/11, T2-10) — the page says so in the page language. */
+  warehouseCancelled?: boolean;
+  /** The reason staff wrote with their cancel (T2-19): the headline of a cancelled order. Their own words, as typed. */
+  cancelReason?: string | null;
   /** While waiting for payment: when the order cancels itself (ISO). Shown in Bangkok time in the page language — a
    *  Thai-formatted date leaked into the en/zh pages (locale scan, 24/10 night). */
   deadlineIso?: string | null;
@@ -170,8 +176,22 @@ export function OrderStatusView({
     // No carrier picked = no "check the parcel" button below (checker #807 note b) — the line points at the number instead.
     shipped: !order.trackingNumber ? t.nextShippedNoTracking : order.carrier ? t.nextShipped : t.nextShippedNoCarrier,
     completed: t.nextCompleted,
-    cancelled: stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : paid && !paymentConfirmed && !stockIssue ? t.nextCancelledSlipRejected : paid ? t.nextCancelledPaid : autoCancelled ? t.nextCancelledUnpaid : t.nextCancelled,
+    cancelled: autoCancelled ? t.nextCancelledUnpaid : warehouseCancelled ? t.cancelReasonWarehouse : cancelReason ?? (stockIssue?.resolution === "refunded" ? t.nextCancelledRefunded : t.nextCancelled),
   };
+  // A cancelled order: the reason above (NEXT), then how the money comes back (T2-19, BSOT §9 incl. the owner's 10/11
+  // "cannot ship = out of stock" rule). Unpaid = nothing to return. A refund box below (open, chosen or done) speaks for
+  // itself. A slip the shop never confirmed promises no refund (owner 29/10) — the customer sends it on LINE to be checked.
+  const refundBox = order.status === "cancelled" && !!stockIssue && ((stockIssue.afterCancel && stockIssue.wholeOrder) || stockIssue.resolution === "refunded");
+  const cancelMoney =
+    order.status !== "cancelled" || autoCancelled || refundBox
+      ? refundBox && stockIssue?.stage === "waiting-choice"
+        ? t.cancelMoneyChoose
+        : null
+      : paymentConfirmed || stockIssue // an out-of-stock issue was opened = the owner's one exception (checker #1004 note a)
+        ? t.cancelMoneyPaid
+        : paid
+          ? t.cancelMoneySlip
+          : null;
   const next = stockStage === "waiting-choice" ? t.nextStockWaiting : stockStage === "chosen" ? t.nextStockChosen : NEXT[order.status];
   const terminal = order.status === "completed" || order.status === "cancelled";
   const statusText =
@@ -229,7 +249,9 @@ export function OrderStatusView({
         words: "",
         status: "lg:relative lg:z-10 lg:col-start-1",
         messages: "lg:col-span-2",
-        stock: "lg:col-span-2",
+        // Refund only on a cancelled order (one form, T2-10): the left column, as wide as the order card above — across
+        // both columns its one button stretched to ~900 px at 1440.
+        stock: stockIssue?.afterCancel ? "lg:col-start-1" : "lg:col-span-2",
         side: "lg:col-start-2",
         details: "lg:col-start-1",
         items: "",
@@ -348,8 +370,14 @@ export function OrderStatusView({
           )}
           <p className="mt-3 border-t border-surface-border-soft pt-3 text-foreground">
             {!terminal && <span className="text-foreground-muted">{t.nextLabel} · </span>}
-            {withLineLink(next)}
+            {order.status === "cancelled" && cancelReason && !warehouseCancelled && !autoCancelled ? (
+              // Staff's own words — line breaks kept, never parsed for the LINE handle.
+              <span className="whitespace-pre-wrap break-words">{next}</span>
+            ) : (
+              withLineLink(next)
+            )}
           </p>
+          {cancelMoney && <p className="mt-1.5 text-foreground-muted">{withLineLink(cancelMoney)}</p>}
           {deadlineIso && (
             <p className="mt-1.5 text-sm text-foreground-muted">
               {t.paymentDeadlineNote.replace(

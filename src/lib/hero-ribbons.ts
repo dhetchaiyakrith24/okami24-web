@@ -199,12 +199,13 @@ uniform vec3 u_head;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges.
-  // Colour = the shop orange leaning a little to the logo red (owner 20/10 ~04:30).
-  vec4 c0 = vec4(1.0, 0.36, 0.165, 0.0);
-  vec4 c1 = vec4(1.0, 0.36, 0.165, 0.25);
-  vec4 c2 = vec4(1.0, 0.41, 0.215, 1.0);
-  vec4 c3 = vec4(1.0, 0.56, 0.37, 1.0);
-  vec4 c4 = vec4(1.0, 0.36, 0.165, 0.7);
+  // Colour = the shop orange leaning a little to the logo red (owner 20/10 ~04:30). Forge look (owner 09/11): the same lean
+  // as a heat ramp — vermilion at the faint ends, the new bright orange #f08a2a at the peak, an oxblood-leaning tail.
+  vec4 c0 = vec4(0.89, 0.30, 0.12, 0.0);
+  vec4 c1 = vec4(0.89, 0.30, 0.12, 0.25);
+  vec4 c2 = vec4(0.94, 0.45, 0.16, 1.0);
+  vec4 c3 = vec4(0.94, 0.60, 0.26, 1.0);
+  vec4 c4 = vec4(0.78, 0.20, 0.09, 0.7);
   float a = u_fade * 0.6;
   float b = u_fade + 0.12;
   if (u < a) return stop2(u, 0.0, c0, a, c1);
@@ -224,7 +225,7 @@ vec4 coreGrad(float u) {
 }
 void main() {
   // flow: one even colour along the route (its ends are off screen) · hero: the band's gradient
-  vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(1.0, 0.4, 0.2, 1.0))
+  vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(0.94, 0.47, 0.16, 1.0))
          : (u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u));
   float d = abs(v_side);
   // soft stroke: a bell that reaches zero at the strip's edge (it stopped at 3 %, which showed as rims

@@ -9,86 +9,131 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 09/11 ~02:00 (main chat, after compact). Owner runs long, merge without asking, close all work. Main chat id local_de553e7b. Re-read this + TEAM_RULES.
-CART CLOSED by the owner switch 08/11 night (warehouse cannot ship 1–2 weeks; env stays on). #1317 (notice 11–13 Nov) held. Old delay notice (#1248) ends Mon 9/11 by itself (shipping-delay.ts): remove it after, its head lists the files. Earlier orders all ship, no customer message.
-Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
-MERGE ORDER = one PR at a time: main has moved = merge main in, verify --full (3 min when cached), gate, checker, ready, merge. verify refuses while 3412 is up.
-MERGES IN THIS CHAT: the app's Auto check refused `gh pr merge` as [Production Deploy] twice (04/11 22:00 and 22:50) until the owner's word in chat named the work. Never route it through a child or another tool; tell the owner. Children do not merge; the main chat does.
+Updated 12/11 ~00:30 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
+ทำและจัดการได้เลย" + "รันเลยยาวๆ จบแล้วก็สานงานค้างอื่นๆต่อได้ พรุ่งนี้พี่ตรวจทีเดียว" — compact at 80–90 % after writing this block + the status page.
+Children report to the main chat by SendMessage. Children notes folder (this PC, outside git):
+`C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_de553e7b-d4f3-4c9e-9e80-36e56b795348\`.
 
-1 main = see git log (06/11: #1237–#1250). Customer walk fixes, pack specs, 2 articles, delay notice and carrier by number are live.
-  #1227 ฿35 line: not proven how Shipnity treats fee_lines, read the first real ฿50 order.
-  TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247 carrier by number shape; a real number joins a shipped order (detail: git log -S "#1247" docs/HANDOFF.md).
-2 OPEN WORK, in merge order:
-  e Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live (#1237). Left: request indexing for /products/disposables + changed pages, block 4 reads 09/11 · 15/11 · 10/12, then close with tag disposable-0511.
-    Unknown: the 2 results Google removed on "disposable pod" (Lumen sits behind a bot check; not passed).
-  g WAREHOUSE BILL 22–31/10 reconciled (`_incoming/sales-0411/`, local): web orders = the "(ว่าง)" rows, 19 orders, 34 pcs, ฿8,285, every one matches ours on quantity and rate + shipping.
-    Round 28/10 20:34 → 31/10 13:00 (owner's range A): customers paid ฿11,539, bill ฿8,285, profit ฿3,254. #0036 is NOT billed (its 3 codes are absent; likely the old test order). 9 cancelled orders were never sent.
-    Shipping: the warehouse billed ฿50 on 14 orders, ฿35 on 5; owner says ฿35 always → ฿210 over. Cause (code read): order-json.ts sends FLAT_SHIPPING_FEE_THB as shipping_total, with a matching discount on free-shipping orders; the bill column reads it.
-    Owner told the warehouse 04/11: asked for ฿35 flat, ฿210 kept as CREDIT (check it on the next bill), web now sends 35 (true once #1227 is live), no web orders until things are normal. Waiting on the warehouse's two answers.
-    Rates 22–31/10 match ours, no loss-makers (detail: git show 036fab46:docs/HANDOFF.md §16 2g); 29 products have no rate, 4 with stock in รอพี่ตรวจ.
-    Warehouse bill columns: "(ว่าง)" = web · "Okami" = LINE keyed by admin (217 orders ฿126,010; 16 of them not ฿35 shipping, unread) · H = rate + shipping.
-  SEO findings: Google hid us on general terms since 27/10
-    (Google's side; new site + almost no backlinks) · next read 09/11 · articles all pass · YouTube 45 pages + clips 8–13 wait on the owner in Studio.
-  Done 09/11 (#1319): push-time stock log on the data disk (<data>/stock-pushes/<Thai day>.jsonl, 35 days) — tune the red rule after a week of data with the cart open ·
-    zh spec-row labels in Chinese · backdrop lines lighter on phones (the moon went in the 04/11 treatment).
-3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312, guide #1314). Left: Excel batch and weekly summary wait for a real bill from the owner; then close with tag backoffice-0711.
-3o No round open. House round 06/11 closed 07/11, tag house-0611 (files: `git show house-0611:docs/rounds/รอบเก็บบ้าน-06-11.md`), evidence `_incoming/house-20261106/` (rule-audit.md = 60 rows, usage-agents-skills.txt, house-check-final.txt).
-  Queue 02/11 closed 06/11, tag queue-0211 (files: `git show queue-0211:docs/rounds/รอบคิวงานพี่-02-11.md`).
-    Owner answers 04/11: phone-lookup hole (86) = "เอาไว้ก่อน" (parked; research in this chat: LINE/Google give no phone number; free
-    route = no prefill for guests + saved data only when signed in + bind phone via the order link; SMS OTP ฿0.3–1/msg) · LINE orders use
-    the web price (trust line stays, §18) · RELX Essential 2 / Infinity Pro 2 cards keep the spec row (Friday's call, owner "ตามมืออาชีพ").
-    PARKED / LATER: LINE Webhook redelivery (owner "เอาไว้ก่อน" 03/11) · unwatermarked originals under public/assets → cleanup after gen 3 ·
-      THAI_STYLE group ก หนามแท่ง/โนนหนามแท่ง · coil-56 / coil-83 retailer facts → details pass ·
-      ZERO PRO "Copper/Champagne" + INFY "Frost Pink" names not on the makers' sites
-      · MURO Space 15K stays hidden (retailer pictures).
-    Owner to answer = docs/รอพี่ตรวจ.md.
-  b DESIGN REFERENCES from the owner 30/10 (Instagram reels, open in the owner's Chrome, never like/follow): back office + member sign-up page designs https://www.instagram.com/reel/De9XFBQTG0D/ and
-     https://www.instagram.com/reel/De6ef-Svrlj/ · "Zoom" motion for the home + product pages https://www.instagram.com/reel/DfAqpTsOHYn/ → skill okami24-plan + designer.
-     STAFF LOGIN PLAN (owner 30/10): staff sign in like members → a "ขอสิทธิ์ทีมงาน" list on /staff → owner approves → staff dashboard
-     (role on the member row; BSOT §11). Login = 13.3 #9 → plan with the owner first. The #1046 pill stays till then.
-     FUTURE ROUND (owner 30/10): desktop thank-you page to use the wide space better — queued.
-  d Staff to-do: OK-20261028-ccd46d empty tracking note → staff fill it.
-     ROUTINE "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
-  e RENDER ignores `docs/**` + `.claude/**` (owner set 30/10) — a docs PR must be ONE clean commit from latest main.
-  f back-office queue: customer cards (Gmail data + perks; owner asked twice) · EMS/DHL tracking page + motion · staff-by-Gmail NOT built
-     (BSOT §11 keeps no email) · LINE orders on web (later) · off-site backup (77) · THAI_STYLE row "PAYMENT CARD" at next round close.
-3 OWNER ASKED 04/11 (later, plan first): a back-office button showing web orders per day, sales, profit · owner-pressable switches: cart, API, close the site temporarily ·
-  back office the owner runs himself (hide products etc.) · daily income / sales / profit from the slip room covering LINE + web (slip amount − cost − ฿35 warehouse shipping per order).
-  OWNER QUEUE — owner's order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; then the rest.
-  a Owner's logo files = untracked `logo/` folder, never delete · left: owner sends the "โฉมใหม่" broadcast.
-  g SALES LOG (owner 30/10, owner-only view) · Q9 staff dashboard [PLAN WITH THE OWNER FIRST] — unchanged, see git show 37a1b052:docs/HANDOFF.md §16 3g.
-  Test orders (OK-20261023-e25378…) → cancel on /staff "ทดสอบ" when the owner is done.
-  Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare (read Render's real header chain first) · partial refund = no 2nd out-of-stock issue · history keeps the
-     refund ref not the amount · no DB tests · BSOT §9 #804 line quotes the owner 24/10 — confirm.
-  Warehouse: Pod-156's 14th option is coded "Pod-147" in Max (decoder skips it) · EasySlip quota 497/1000 (23/10) — warn before it runs out.
-3c Cart (round closed 26/10, tag `cart-reopen-2210`): off-site DB backup needs an R2/B2 account = the owner signs up (รอพี่ตรวจ 77).
-3w Home switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
-3u STOCK — Shipnity pushes stock to /wp-json (woo_stock_reports); the site reads it at runtime (live stock, 28/10). Product JSON-LD reads live stock + the cart switch through ISR every 3 h (#1319, 09/11; watch Render memory). Still build-time: the struck price / −N% (cards went live 04/11, #1202). Plan + state = `docs/cloud-results/stock-api-sku-survey.md`
-  "Shipnity link". 【ห้ามแตะ】 coil-1/72/94 photos · every price file. New-products run (15:00) needs the PC on.
-  Open: `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18).
-3i / 3s / 3p PARKED rounds (image sweep · SEO all keys · p63) = unchanged, see `git show 464b7f64:docs/HANDOFF.md` §16 3i/3s/3p.
+CART CLOSED by the owner switch 08/11 night (warehouse cannot ship 1–2 weeks; env stays on).
+TEMP owner 09/11, ends when the cart reopens: merges 18–24 OK (`OKAMI24_NIGHT_OK=owner-0911-cart-closed`), batch them. No 11.11 promo.
+Open with the warehouse: ฿35 answer (2g), customers pay the same, the shop may be billed ฿50.
+MERGE: one PR at a time, or a MERGE WINDOW (10/11): GitHub has strict=false and self-merge-check does not test "contains main" —
+  only the pre-checker gate does. So hold main while children's verify→gate runs, then merge every PASSed PR in one batch
+  (`self-merge-check --pr N` in a tree at the PR head, `gh pr merge N --merge --match-head-commit <sha>`; a stacked PR = `gh pr edit N
+  --base main` right before its merge; a PR with no tree at its head = `git worktree add --detach _incoming/wt-merge-N <sha>`).
+  verify refuses while 3411/3412 is up. GitHub copy/checks sometimes don't start → `gh run rerun <id>` or ready --undo/ready.
+  The app refused `gh pr close` (#1346) 10/11; `gh pr merge` worked all night. Never route a refused action through a child.
+GATE: `pre-checker-gate.js` runs the raw U+00A0/U+2060 check (#1373) and passes a branch behind main by docs-only commits (#1376;
+  not for a PR that writes a locked file). New worktrees may get an absolute core.hooksPath → `git config --worktree core.hooksPath .githooks`.
+CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) — run commands with absolute paths / `git -C`, not `cd`.
+
+1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
+  #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
+  TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
+2 OPEN WORK (12/11 ~00:30, main chat at 73 % — compact next; the PC shut down 11/11 ~07:18, resumed 20:40):
+  LIVE 11/11 [ตรวจแล้ว] curl:
+    - #1410 staff door
+    - #1414 deploymentId = RENDER_GIT_COMMIT. Stale tab hard-reloads (owner black screen).
+    - #1402 lookalike off home and /search (noindex)
+    - #1412 "ใช้ได้กับเครื่อง" line (official + same-brand edges only)
+    - #1403 footer "เข้าเว็บไม่ได้? มีวิธีแก้ง่าย ๆ"
+    - #1415 Shipnity cancel → web cancel (BSOT §9 ruling 11/11)
+    - #1409 coil 5-packs ฿379/฿439
+  READY, HOLD:
+    - #1418 cancel follow-ups: checker PASS 9b66869b, merge tree _incoming/wt-merge-1418. Merge after #1416's gate (merge window).
+    - #1404 one refund table: PASS c2ffaa74. WAITS for the owner's word on the /warranty claim paragraph.
+      Text: _incoming/house-20261110/warranty-claim-paragraph-for-owner.md (unchanged since). Asked 3×, not answered yet.
+  STOCK (owner 11/11 "ทุกตัวต้องเช็คได้หมด … เปิดระบบรันสต็อกสดด้วย Api ทุกตัว"):
+    - /staff/shipnity: 753 codes · 733 reported · 732 agree.
+    - Pod-159-16 ESKO Extra Menthol is IN at the warehouse (checked in Shipnity's order-create picker) but the page
+      said หมด. Cause: an old Max seed made the maker-verified option "unknown" and the page painted it "หมด"; the refresh only compares live with live.
+    - 20 codes listed this week have no Shipnity number. They match the warehouse today. Shipnity read our list once (28/10) and pushes on change only;
+      no pull API; Max admin has no store-link menu.
+    - FIX = #1416 catalog-pics (verify + seeded proof running):
+      - live overlay on the product page render
+      - stale-page refresh
+      - "ask" state = no live number → "สอบถามสต็อกทาง LINE", cart refuses
+      - red list on /staff/shipnity
+      - product-listing step "ask the warehouse to press อัปเดตสต็อก"
+    - SEO-only products stay unmapped (owner OK).
+  CHILDREN:
+    - catalog-pics local_ae4a3786: #1416 → #1413 T2-32 Thai flavour names (+ fits-devices.ts:70 regex fix).
+    - look-0911 local_569a83ec: #1417 = #1401 follow-up (a), the first request after a boot is fresh; it verifies after catalog-pics says "free".
+      (b) the JSON-LD offer: re-check after #1416. Then THEME → HOME HERO ROTATION.
+    - cancel-sync local_32aa45ac: after #1418 merges:
+      - a wording PR (lineOrderingNotice, stockCancelLead, 404 body, paymentAfterTransferNote "ได้")
+      - T2-21: owner 11/11 "พิมพ์เองได้เหมือนเดิม" = hand typing stays. Add only: reject ต./อ. without letters, a phone cap, a postcode-list check.
+    - dashboard-c local_39aadd8e: done → archive.
+  OWNER ASKED 11/11 (do next): back-office menu in the site header for owner/admin + a phone home-screen icon for /staff (owner "ตามแนะนำ").
+    Not started; designer draft first (TeamShortcut.tsx pill exists).
+  PORTS: one verify at a time; hand over with "free". Merge only when no gate is running (main moving = re-verify).
+  TEST TREE _incoming/wt-cart: node_modules next 16.3.3 vs lock 16.4.5 · merge from a detached tree (LESSONS พ89) · checker proof = verify stamp (พ88).
+  OWNER TO-DO: Cloudflare analytics switch · shared password off · perks A/B/C · cancel #0036.
+  LEDGER: _incoming/house-20261110/t2-ledger.md (refresh it).
+  FLAKE FIX (own small PR): `line-orders-db-contract-test.ts` dates slips Date.now()-1h → fails 00:00–01:00 Bangkok; date at noon.
+  OWNER RULINGS 10–11/11 (never ask again): no Cloudflare sentence on /privacy · FUTURE cookies plan if SEO is not hurt.
+3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
+  wait for a real bill from the owner; then close with tag backoffice-0711.
+  Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live. Left: request indexing for /products/disposables
+    + changed pages · block 4 reads 15/11 · 10/12, then tag disposable-0511. Unknown: 2 results Google removed on "disposable pod".
+  Closed: seo-full-0711 · popular-models-0711 (files deleted 10/11: `git show <tag>:docs/rounds/<name>`; #1315 parked models inside)
+    · house-0611 · queue-0211 · cart-reopen-2210.
+  PARKED rounds 3i/3s/3p (image sweep · SEO all keys · p63) = `git show 464b7f64:docs/HANDOFF.md` §16.
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md`. Status page for the owner's phone = §17 "Owner status page".
 5 open / dated:
-  - stock light's red rule: push-time log live 09/11 (#1319); tune after a week of data with the cart open (not dated until the cart reopens).
-  - DHL: watch the first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
-  - Daily indexing runs by itself 16:00 (task okami24-google-read-daily, needs the PC + Chrome on).
+  - Owner to-do (รอพี่ตรวจ 128–133): invite bot OKM ORDER to OKAMI INFORMATION + role on /staff/dev → backfill 8 refunds
+    (list `_incoming/orders-audit-0911/refund-backfill-8.md` in that worktree) · Pod-181 cost 210? · member card + upscale · perks A/B/C
+    (rec C) · order-count rule for tiers (rec: signed-in web only for now) · bill + rate upload for LINE profit · Max admin deletes the
+    duplicate Pod-170-19 row (Mix Berry).
+  - WAREHOUSE BILLS: bill 22–31/10 paid (03/11), bill 31/10–08/11 owed 99,930 = รอพี่ตรวจ 128 + `docs/cloud-results/accounts-check-plan-0911.md`.
+  - SEO: Google hid us on general terms since 27/10 (new site + few backlinks) · GSC read · 15/11 · then · 10/12
+  - SEO: SERP + rank read · 16/11 · then · 30/11 (SEO_BASELINE) → close round SEO 02/11 with tag seo-rank-0211. YouTube 45 pages + clips 8–13 wait the owner in Studio.
+  - Daily runs (PC + Chrome on): indexing 16:00 · new products 15:00 · follow-up 13:00.
+  - stock light red rule: push-time log live (#1319) → tune after a week of data with the cart open.
+  - DHL: first DHL order after #1195 — does Shipnity show the packer note? Remove the note once Shipnity reads the carrier.
+  - security-0911 decisions open (รอพี่ตรวจ 131): phone-login refund target, limiter lockouts, Cloudflare/AI bots, slip limit.
+  - DataForSEO: credit $0.02, top-up min $50 = owner; owner's API password was shown in chat, reset failed → ask later.
+  - Owner 07/11 standing: "รันเลยยาวๆ แล้วเขียนจดลงบันทึกรอตรวจทีเดียว" · "จัดการงานแทนพี่เลย" · Chrome OK for research · new pictures
+    via skill product-images allowed, comparison sheets still wait the owner · owner: merge new AI pictures too.
   - Owner 07/11 why we feel stuck: ทำเยอะแต่ยอดไม่ขึ้น · ไม่เห็นตัวเลขจริง · ลำดับงานไม่ชัด.
-  - ROUND SEO FULL 07/11 = `docs/rounds/รอบ-SEO-เต็ม-07-11.md` · ROUND POPULAR MODELS 07/11 = `docs/rounds/รอบลงรุ่นยอดนิยมที่ไม่มีของ-07-11.md` · GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO trial works in part, script `_incoming/plan-0711/dfs5.js`, key file outside the repo, top-up needs the owner.
-  - CHILDREN 07/11 (Friday merges all PRs · no site deploy 18:00–24:00 Thai):
-    Owner 07/11: "รันเลยยาวๆ แล้วเขียนจดลงบันทึกรอตรวจทีเดียว", "จัดการงานแทนพี่เลย". Review list = รอพี่ตรวจ 117-121. Chrome allowed for research. New pictures not made before are allowed through skill product-images; comparison sheets still wait for the owner. 3412 queue: seo-full, cart-instock, popular-models.
-    Live by 08/11: 1275 1280-1292 1294 1296-1299 1301 1306 1309-1312 1314; round tags seo-full-0711, popular-models-0711 (#1315: parked models + AI pictures in its round file). Owner section on: owner has not reported the Google sign-in yet, then cost file and bill. RELX Pod / Pod Pro have no warehouse code (Max wants a sign-in). Lessons พ78 พ84 พ85. Owner: merge new AI pictures too, sheet sent.
-    Children now (09/11 02:00, owner allowed 3–4 tonight, reviews once in the morning): seo-read-0911 local_14d40a53 done (SERP + 11 indexing on branch seo-serp-0911; a cloud SEO chat folds it with GSC after 10:00 into one docs PR) · shop-pictures-5 local_f18a0bf5 (PR 1324 G4 Pro sent back: desert-gold too pale, iron-gray reads black; PR 1327 M Bar 10K view in checks; 33 credits for 4 models wait on the owner) · line-orders local_504fcbb8 (PR 1326 ก11 part 1 customer card + tracking page; keying waits: owner proposed pulling LINE orders from Shipnity daily, child researching what Max allows) · articles-g6 local_6526d735 (ก6, 40 pages from docs/cloud-results/articles-ก6-0911.md, one brand per PR, RELX first) · design-g10 local_e248645a (ก10 desktop thank-you + Zoom prototype, drafts only for the owner, proof in notes g10-proof/). #1323 + hand-over #1328 merged. Owner: no LINE customer messages (admin does it); buying backlinks = told risky (link-spam policy).
-  - Done 07/11: Pop Up ฿219 label ฿229 badge 5% · Freebase ฿169 · Saltnic 9 · nexBar 15K pictures · line-candidates. Owner: new labels use round badges 5-50 (BSOT §5).
-  - DataForSEO: account verified, credit left $0.02, top-up minimum $50 needs the owner, read the full terms first. The owner's API password was shown in chat and reset failed: ask again later. Friday told support the shop sells pods; keep that short next time.
-  - Then: pictures (all there, new ones, flaw fixes) · back office switches (item 3). Small asks = รอพี่ตรวจ ก1-ก12.
-  - 09/11 SERP + rank read incl. disposable terms · 16/11 · 30/11 (SEO_BASELINE) · GSC read 15/11 · 10/12 · then close round SEO 02/11 with tag seo-rank-0211 · Search Console 2–4 weeks after 12/10.
-  - OWNER-REQUEST AUDIT 06/11 (report `_incoming/house-20261106/owner-audit-0611.md`). Closed 06/11: picture source audit (1,358 files shown on 182 pages: 1,029 marked, all OKami24 renders by their records, 105 of them traced by folder sample only; 329 unmarked = maker art; no shop picture shown as it is, IMAGE_SPEC 'รูปร้านอื่น') · unmarked orphans · SUP ZERO guide copy.
-    Brand completeness closed: ESKO, JOIWAY F3 + F4, TFIT 10 flavours, INFY POD match the maker. No official list exists to check: INFY PLUS 2.5ML, INFY 20K. IQOS read from foreign pages only (no Thai page, 404): Leaf Green vs Spring Green on ILUMA i ONE unproven. JOIWAY lists F4 PLUS (16 pairs), not in our catalog and not in the warehouse list.
-    Box photos searched 06/11 in Chrome: Muro Salt 28mg + Freebase 4mg found. Nothing usable for Muro 3ML, Graple, RELX Creator Pod 20K, Nexswitch 16K. Only dealer posters (not pack, not used): Super Cool 30ml nic35, Marbo Freebase 30ml 6mg. RELX Smash Go page still says 20ml in the table and 18ml in the text, row stays out. salthub.com names no Zero Nano colours.
-    Left: 5% flavour names on LUMI and SUP ZERO while the nicotine row says 3% (no 5% pouch seen) · 27 product pages without an article (list: articles not in PRODUCT_ARTICLES vs sitemap; most have warehouse facts only).
-  - Speed (LESSONS 37): ProductCard tagline prop done (#1319, product/category pages −143 KB raw) · NEXT = framer-motion on home (designer first).
-  - The owner's small asks and ideas = one list, `docs/รอพี่ตรวจ.md` "งานเล็กที่พี่ฝากไว้".
-  - Data, copy, cleanup and page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5.
+  - Speed (LESSONS 37): NEXT = framer-motion on home (designer first).
+  - SEO tools: GSC audit `_incoming/gsc-audit-0711/GSC-AUDIT-0711.md` · DataForSEO script `_incoming/plan-0711/dfs5.js` (key outside the repo).
+  - Catalog left: 5% flavour names on LUMI / SUP ZERO while the nicotine row says 3% · 27 product pages without an article ·
+    IQOS Leaf Green vs Spring Green on ILUMA i ONE unproven · JOIWAY F4 PLUS (16 pairs) not in catalog/warehouse · no box photos for
+    Muro 3ML, Graple, RELX Creator Pod 20K, Nexswitch 16K · RELX Pod / Pod Pro have no warehouse code ·
+    RELX Smash Go page says 20ml in the table, 18ml in the text (row kept out) · INFY PLUS 2.5ML + INFY 20K: no official list to check ·
+    dealer posters only (not used): Super Cool 30ml nic35, Marbo Freebase 30ml 6mg · salthub.com names no Zero Nano colours ·
+    full audit = `_incoming/house-20261106/owner-audit-0611.md` + `git show b6dbe04b:docs/HANDOFF.md` §16 "OWNER-REQUEST AUDIT" ·
+    `legacy-price-approvals.ts` still names Pod-181 for caliburn-g4-pro · at 390 the small pill sits on the ILUMA i cap (iqosheet-18).
+  - Warehouse: Pod-156's 14th option is coded "Pod-147" in Max · EasySlip quota 497/1000 (23/10) — warn before it runs out.
+  - Known, not fixed: rate limit trusts X-Forwarded-For off Cloudflare · partial refund = no 2nd out-of-stock issue · history keeps the
+    refund ref not the amount · no DB tests · BSOT §9 #804 line quotes the owner 24/10 — confirm.
+  - Test orders (OK-20261023-e25378…) → cancel on /staff "ทดสอบ" when the owner is done · OK-20261028-ccd46d empty tracking note → staff.
+  - PARKED (owner "เอาไว้ก่อน"): phone-lookup hole (86) · LINE Webhook redelivery · unwatermarked originals cleanup after gen 3 ·
+    THAI_STYLE group ก หนามแท่ง · coil-56/83 retailer facts · ZERO PRO "Copper/Champagne" + INFY "Frost Pink" names · MURO Space 15K hidden.
+  - OWNER QUEUE (owner order 27/10: logo → cart fit → staff pages → LINE sign-in logo → best sellers; plan with the owner first): staff login like members + "ขอสิทธิ์ทีมงาน" (13.3 #9, #1046 pill stays) · customer cards
+    (Gmail data + perks) · EMS/DHL tracking page · LINE orders on web · off-site backup R2/B2 (77, owner signs up) · back office the owner runs himself (hide products) · daily income/sales/profit from
+    the slip room, LINE + web (slip − cost − ฿35 per order) · THAI_STYLE row "PAYMENT CARD" at next round close · sales log
+    owner-only · Q9 staff dashboard (`git show 37a1b052:docs/HANDOFF.md` §16 3g) · back office per-day orders/sales/profit + owner
+    switches (cart, API, close site).
+  - OWNER'S REFERENCE LINKS (owner 10/11; instagram.com/reel/<id>; never like/follow/comment). Friday can now HEAR clips: whisper.cpp
+    `C:\Users\dhetc\tools\whisper\bin\Release\whisper-cli.exe` + model `..\models\ggml-large-v3-turbo.bin` (allowed by a rule in
+    ~/.claude/settings.json) · `yt-dlp` pulls the clip · frames via ffmpeg · downloads + frames + contact sheets in `C:\Users\dhetc\tools\whisper\clips`.
+    · STAFF/OWNER DASHBOARD look: De9XFBQTG0D (light "glassy" frosted cards over a blurred photo) · De6ef-Svrlj (dark glass cards, iOS
+      publishing dashboard) → for staff-accounts PR (c) dashboard + the owner page.
+    · WEB EFFECTS: DfAqpTsOHYn (product shelf, warm orange LED under each item, phone + desktop = the #1336 "lit shelf" idea) ·
+      https://www.getlayers.ai/ (paid library of dark "cinematic" sites, smoke/grain hero — mood only, buy nothing).
+    · COLOURS (owner: "ส้มดำเป็นหลัก", yellow demoted, warm smoke −10–20 %): DfScZgPSqc1 (narration: 2 colours do 90 %, one accent 10 %
+      only on the button to press — 60/30/10) · DfTc6X5qyPJ at 5.6 s = the dark orange palette sampled #0D0D0D black · #ED852C orange ·
+      #D33710 red-orange · #710F08 maroon · #EBEBEB off-white (no yellow) → look-0911 theme PR (2).
+  - Logo: owner's files = untracked `logo/`, never delete · owner sends the "โฉมใหม่" broadcast.
+  - RENDER ignores `docs/**` + `.claude/**` — a docs PR = ONE clean commit from latest main. Home switches `src/data/home-hero.ts` (DESKTOP_HERO · DESKTOP_BG ·
+    DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO).
+  - STOCK: Shipnity pushes to /wp-json, read at runtime; JSON-LD via ISR every 3 h (watch Render memory); struck price / −N% still
+    build-time. 【ห้ามแตะ】 coil-1/72/94
+    photos · every price file. Plan = `docs/cloud-results/stock-api-sku-survey.md` "Shipnity link".
+  - Routine "new models research" = draft `_incoming/new-models/routine-okami24-new-models-research.md`, not created.
+  - Small asks = `docs/รอพี่ตรวจ.md` "งานเล็กที่พี่ฝากไว้" · page notes for each page's next touch = `git show 464b7f64:docs/HANDOFF.md` §16 item 5.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
@@ -135,6 +180,7 @@ Windows shell: scripts are written with the Write tool · Thai text enters scrip
 Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/links of every sitemap page) · site-audit.js ·
   scan.js · locale-hydration-scan.js · visible-text.js · wordbreak-scan.js + wb-diff.js · line-candidates.js (try Thai sentence candidates in the real element of a build at 390/1440, the checker's way, before editing source — LESSONS 33) · linemap-scan.js · html-diff.js ·
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
+  moved-images-scan.js (proof for src/data/moved-images.json) ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
   gsc-unread.ts (pages Google has not read since they changed; skill seo-after-publish) ·
@@ -175,8 +221,10 @@ Live site: ALWAYS after a merge check the deploy reached success (`gh api
   LINE bot: webhook https://okami24.store/api/line/webhook; groups bound on /staff: "OKM Webside order" = order alerts · "OKM Slip
   check" = slip check · a join event lost during a deploy = remove the bot from the group and invite again (DEPLOY-RENDER §8) · LINE OA
   "OKM ORDER" @691qxpxp (free 300 msgs/month; a group push counts per member) · staff
-  guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · order numbers use the UTC date (noted, not changed).
-Test trees + PR flow: reuse `_incoming/wt-golive` · `_incoming/wt-cart` (real node_modules incl. jsqr). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
+  guide = docs/คู่มือแอดมิน-ออเดอร์เว็บ.md · owner guide (team, switches, who-did-what) = docs/คู่มือเจ้าของ-หลังบ้าน.md ·
+  order numbers use the UTC date (noted, not changed).
+Test trees + PR flow: reuse `_incoming/wt-cart` (real node_modules incl. jsqr; `_incoming/wt-golive` has its tracked files deleted in
+  the working copy — do not reuse). A FRESH worktree fails verify --full typecheck once (LayoutProps) → run twice ·
   junctioned node_modules break Turbopack builds · gate `full` needs a verify stamp of the EXACT head → merge origin/main + all extra
   commits BEFORE the verify run (~20 min each) · flow: draft → verify --full on the head in a test tree → gate → checker → `gh pr ready`
   once → checks → `self-merge-check --pr` alone, IN the PR's tree → merge --match-head-commit → deploy success. A deploy skipped while draft = `gh pr ready --undo`, then `gh pr ready`.

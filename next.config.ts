@@ -1,8 +1,54 @@
 import type { NextConfig } from "next";
 
+/**
+ * Content-Security-Policy (owner 09/11 "ความปลอดภัยของเว็บ"): the browser may only load scripts, styles, fonts and
+ * data from this site, so a script tag injected through some future bug cannot pull code from another host, and a
+ * page cannot send what it reads (a customer's order, the staff pages) to another host (`connect-src 'self'`).
+ *
+ * No nonce, on purpose: a nonce has to differ per response, which forces every page to render per request — the
+ * home and product pages are prerendered and served from the Cloudflare cache today (`x-nextjs-prerender: 1`), and
+ * a 0.5-CPU Render box should not render them per visitor. Without a nonce Next's own inline bootstrap scripts need
+ * `'unsafe-inline'` (node_modules/next/dist/docs/01-app/02-guides/content-security-policy.md "Without Nonces"),
+ * so this does not stop an inline script that is already in the HTML; it does stop every other host.
+ *
+ * Every outside host the site actually loads from, measured on the built pages 09/11:
+ * - https://i.ytimg.com — the review-video thumbnails (ProductReviewVideo, `unoptimized`, so the browser fetches it).
+ * - blob: — the slip / refund-slip / bill previews (`URL.createObjectURL`) · data: — inline SVG/PNG in CSS and props.
+ * - worker-src 'self' — the hero ribbons run in a same-origin worker (ribbon-driver.ts).
+ * - Cloudflare Web Analytics (T2-48, 10/11): Cloudflare adds its own beacon to every HTML page at the edge —
+ *   https://static.cloudflareinsights.com/beacon.min.js (script) reporting to https://cloudflareinsights.com/cdn-cgi/rum
+ *   (connect). The policy blocked it, so the dashboard counted nothing and every page logged a CSP error. Those two hosts only.
+ * `frame-ancestors 'self'` says what X-Frame-Options SAMEORIGIN says, for browsers that read only CSP.
+ * `next dev` needs `'unsafe-eval'` for React's dev tooling; production never sends it.
+ */
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://i.ytimg.com",
+  "font-src 'self' data:",
+  "connect-src 'self' https://cloudflareinsights.com",
+  "worker-src 'self' blob:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+].join("; ");
+
 const nextConfig: NextConfig = {
   /** No `x-powered-by: Next.js` on responses (owner 04/11 security pass): it only tells a scanner what to try. */
   poweredByHeader: false,
+
+  /**
+   * Version-skew protection (owner 11/11: "หลังจากกดสินค้าเปลี่ยนหน้า ขึ้นภาพจอดำและมีปุ่มให้กด Reload"). Every merge
+   * redeploys Render, and the new build renames its JS chunks. A tab opened before the deploy then asks for chunks that are
+   * gone on its next client-side navigation, and Next shows its black error screen with a Reload button.
+   * With a deployment id, Next stamps it on assets and navigation requests; when the client's id differs from the server's
+   * it does a full page load instead (node_modules/next/dist/docs/01-app/03-api-reference/05-config/01-next-config-js/
+   * deploymentId.md "How it works"). Render sets RENDER_GIT_COMMIT at build time and run time. Unset (local builds,
+   * the test server) = undefined = Next behaves exactly as before.
+   */
+  deploymentId: process.env.RENDER_GIT_COMMIT || undefined,
 
   experimental: {
     /**
@@ -108,6 +154,7 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "microphone=(), geolocation=(), payment=(), usb=()" },
+          { key: "Content-Security-Policy", value: CONTENT_SECURITY_POLICY },
         ],
       },
       /**

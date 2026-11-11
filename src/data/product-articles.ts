@@ -6972,6 +6972,1444 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Owner task ก6 (09/11), RELX: Ultra Pod — every fact = RELX's own store page relxnow.com/products/relx-maxgo-ultra-pod, read 09/11:
+  // FAQ "improved leak-proof design that utilizes an advanced Air Pressure Balance System … stays securely inside the pod, regardless of
+  // everyday movement" · description "multi-layered structural design" · "click perfectly into your RELX MAXGO device for a stable,
+  // drop-proof magnetic connection" · "No messy refills or coil changes required. Simply swap out your empty pod" · flavour notes
+  // "Watermelon: A crisp, juicy, and sweet summer classic" / "Sunrise Lemon Lime: … citrusy lemon and tangy lime" / "Cherry Cola: A
+  // nostalgic, fizzy blend with a bold cherry kick" · image alt "18mg/ml single pod packaging" (one pod a pack). Kit pairing =
+  // relxnow.com/products/relx-ultra-kit "It's best used with UltraPod". Pod Pro facts = its own verified rows + RELX's Pod Pro page
+  // collections (Fruit · Mint · Tea · Tobacco · Beverage · Dessert). Left out (already on the page): 2mL, 18mg/ml, 5,000 puffs, mesh 10W,
+  // the visible e-liquid, the device list. Blueberry Sour Raspberry has no RELX note of its own (the description says "Blue Raspberry").
+  // Legacy page → no article FAQ.
+  "relx-ultra-pod": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บของ RELX ว่า Ultra Pod กันน้ำยารั่วเวลาพกติดตัวยังไง ยึดกับตัวเครื่องแบบไหน และ RELX เล่ารสของแต่ละกลิ่นไว้ว่ายังไง",
+      sections: [
+        {
+          heading: "พก RELX Ultra Pod ใส่กระเป๋า น้ำยาจะรั่วไหม",
+          paragraphs: [
+            "RELX ใช้ระบบที่เรียกว่า Air Pressure Balance System กับโครงสร้างด้านในหลายชั้น เพื่อให้น้ำยาอยู่ในหัวพอตแม้จะพกติดตัวไปไหนมาไหนระหว่างวัน",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod ยึดกับตัวเครื่องยังไง",
+          paragraphs: [
+            "หัวพอตยึดกับตัวเครื่องด้วยแม่เหล็ก และ RELX บอกว่าออกแบบให้เข้าล็อกได้พอดีและหลุดยาก",
+            "เมื่อน้ำยาหมดก็ถอดหัวเดิมออกแล้วใส่หัวใหม่ได้ทันที โดยไม่ต้องเติมน้ำยาหรือเปลี่ยนคอยล์เอง",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod แต่ละกลิ่นรสเป็นยังไง",
+          paragraphs: [
+            "RELX เล่ารสไว้ 3 กลิ่น คือ Watermelon เป็นแตงโมหวานฉ่ำแบบผลไม้หน้าร้อน Sunrise Lemon Lime เป็นเลมอนกับไลม์ที่เปรี้ยวสดชื่น ส่วน Cherry Cola เป็นโคล่าซ่า ๆ ที่มีรสเชอร์รีเด่นขึ้นมา",
+            "หัวรุ่นนี้ขายแพ็กละ 1 หัว อยากลองหลายกลิ่นก็เลือกแยกทีละกลิ่นได้",
+          ],
+        },
+        {
+          heading: "อยากได้กลิ่นให้เลือกมากกว่านี้ ดูรุ่นไหนต่อ",
+          paragraphs: [
+            "หัวพอตอีกรุ่นของ RELX อย่าง [RELX Pod Pro](/products/relx-pod-pro) มีกลิ่นให้เลือกมากกว่า โดย RELX แบ่งไว้เป็นกลุ่มผลไม้ ชา เครื่องดื่ม ของหวาน มินต์ และยาสูบ บางกลิ่นยังมีแบบ 0mg/ml ด้วย แต่ก่อนเลือก ลองเช็คว่าเครื่องที่ใช้อยู่เป็นรุ่นที่ RELX ระบุไว้สำหรับ Pod Pro คือ Infinity 2 Plus · Essential 2 และ Artisan Plus",
+            "ส่วนเครื่องที่ RELX แนะนำให้ใช้คู่กับหัวพอตรุ่นนี้คือ [RELX Ultra Kit](/products/relx-ultra-kit)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "What RELX's own page says about the Ultra Pod: how it stays sealed in a pocket, how it attaches to the device, and what each flavour tastes like.",
+      sections: [
+        {
+          heading: "Will the RELX Ultra Pod leak in a pocket or bag?",
+          paragraphs: [
+            "RELX builds this pod around what it calls an Air Pressure Balance System, with a structure of several layers inside, to keep the e-liquid in the pod as you carry it through the day.",
+          ],
+        },
+        {
+          heading: "How does the RELX Ultra Pod attach to the device?",
+          paragraphs: [
+            "It attaches with magnets, and RELX says it is designed to click firmly into place and stay put.",
+            "When it runs out, you take it off and fit a new one. There is no e-liquid to refill and no coil to change.",
+          ],
+        },
+        {
+          heading: "What do the RELX Ultra Pod flavours taste like?",
+          paragraphs: [
+            "RELX describes three of them: Watermelon as a crisp, juicy, sweet summer fruit, Sunrise Lemon Lime as lemon and lime with a zesty edge, and Cherry Cola as a fizzy cola with a bold cherry note.",
+            "Each pack holds one pod, so you can try several flavours one at a time.",
+          ],
+        },
+        {
+          heading: "Want more flavours to choose from?",
+          paragraphs: [
+            "RELX's other pod, the [RELX Pod Pro](/products/relx-pod-pro), has a longer list, grouped by RELX into fruit, tea, beverage, dessert, mint and tobacco, and some flavours also come at 0mg/ml. Before choosing it, check that your device is one RELX lists for the Pod Pro: the Infinity 2 Plus, Essential 2 or Artisan Plus.",
+            "RELX recommends pairing this pod with the [RELX Ultra Kit](/products/relx-ultra-kit).",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面整理 RELX 官网对 Ultra Pod 的介绍：随身携带时如何防漏、怎样与主机连接，以及每个口味的味道。",
+      sections: [
+        {
+          heading: "RELX Ultra Pod 放在口袋或包里会漏油吗？",
+          paragraphs: [
+            "RELX 为这款烟弹设计了名为 Air Pressure Balance System 的系统，内部采用多层结构，让烟油在日常随身携带时也留在烟弹里。",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod 怎样与主机连接？",
+          paragraphs: [
+            "烟弹通过磁吸与主机连接，RELX 表示它的设计能稳稳卡入、不易脱落。",
+            "烟油用完后取下旧烟弹、装上新的即可，无需注油，也无需更换线圈。",
+          ],
+        },
+        {
+          heading: "RELX Ultra Pod 各口味是什么味道？",
+          paragraphs: [
+            "RELX 介绍了其中 3 款：Watermelon 是清脆多汁、香甜的夏日西瓜；Sunrise Lemon Lime 是柠檬配青柠，酸爽清新；Cherry Cola 是带气泡感的可乐，樱桃味突出。",
+            "每盒 1 颗烟弹，想多试几种口味可以逐个挑选。",
+          ],
+        },
+        {
+          heading: "想要更多口味可选？",
+          paragraphs: [
+            "RELX 的另一款烟弹 [RELX Pod Pro](/products/relx-pod-pro) 口味更多，RELX 将其分为水果、茶、饮品、甜点、薄荷和烟草几类，部分口味还有 0mg/ml 版本。选择前请先确认手上的主机是 RELX 为 Pod Pro 标明的型号：Infinity 2 Plus、Essential 2 或 Artisan Plus。",
+            "RELX 推荐搭配这款烟弹使用的主机是 [RELX Ultra Kit](/products/relx-ultra-kit)。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Ultra Kit — RELX's own store page relxnow.com/products/relx-ultra-kit, read 09/11: FAQ 'engineered for an
+  // "Ultra Intense" experience … designed to deliver a much stronger hit' · "It's best used with UltraPod" · description "Fully compatible
+  // with RELX MAXGO pods … Watermelon, Cherry Cola, Sunrise Lemon Lime, and Blueberry Sour Raspberry". Pod facts = relxnow.com/products/
+  // relx-maxgo-ultra-pod: "Compatible with both RELX (Ultra/Artisan/Infinity/Essential series) and WAKA device" · "single pod packaging".
+  // The "2X satisfaction" line is left out (no basis given); "works best with" is already in the page's compatibility note. Left out (already on the page): 10W, 380mAh, Type-C 80% in 30 minutes,
+  // aluminium alloy, the light near the base, the box list. Not settled by RELX, so not said: whether a pod is in the box (the box list
+  // says "RELX Pods are sold separately unless bundled", the short line "1 Essential 2 & 1 Ultra Pod") — PR note. Legacy page → no FAQ.
+  "relx-ultra-kit": {
+    th: {
+      lede: "ด้านล่างเล่าจากหน้าเว็บของ RELX ว่าชุด Ultra Kit ทำมาสำหรับใคร และใช้กับหัวพอตอะไรได้บ้าง",
+      sections: [
+        {
+          heading: "RELX Ultra Kit เหมาะกับใคร",
+          paragraphs: [
+            "RELX เรียกแนวของชุดนี้ว่า Ultra Intense และบอกว่าออกแบบมาให้สูบแล้วรู้สึกแรงขึ้นอย่างชัดเจน ถ้าชอบสูบแบบแรง ๆ ชุดนี้ก็ทำมาเพื่อแนวนั้นโดยตรง",
+          ],
+        },
+        {
+          heading: "RELX Ultra Kit ใช้หัวพอตอะไรได้บ้าง",
+          paragraphs: [
+            "หัวที่ใช้ได้คือ [RELX Ultra Pod](/products/relx-ultra-pod) ซึ่งมี 4 กลิ่น นอกจาก Watermelon กับ Sunrise Lemon Lime แล้ว ยังมี Blueberry Sour Raspberry และ Cherry Cola ให้เลือกด้วย",
+            "หัว Ultra Pod ขายแพ็กละ 1 หัว จึงสลับลองกลิ่นใหม่ได้ทีละหัว",
+          ],
+        },
+        {
+          heading: "หัว Ultra Pod ใช้กับเครื่อง RELX รุ่นอื่นได้ไหม",
+          paragraphs: [
+            "ใช้ได้ โดย RELX ระบุว่าหัว Ultra Pod ใช้กับเครื่องตระกูล Ultra · Artisan · Infinity และ Essential รวมถึงเครื่อง WAKA ด้วย ถ้ามีเครื่อง RELX ตระกูลเหล่านี้อยู่แล้ว ก็ใช้หัวรุ่นเดียวกันสลับกันได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From RELX's own page: who the Ultra Kit is made for, and which pods it takes.",
+      sections: [
+        {
+          heading: "Who is the RELX Ultra Kit for?",
+          paragraphs: [
+            "RELX describes this kit as built for an Ultra Intense experience, with a much stronger hit. If a strong hit is what you're after, this is the kit made for it.",
+          ],
+        },
+        {
+          heading: "Which pods does the RELX Ultra Kit take?",
+          paragraphs: [
+            "The pod it takes is the [RELX Ultra Pod](/products/relx-ultra-pod), which comes in four flavours: Watermelon and Sunrise Lemon Lime, plus Blueberry Sour Raspberry and Cherry Cola.",
+            "Ultra Pods come one to a pack, so you can try a new flavour one pod at a time.",
+          ],
+        },
+        {
+          heading: "Do Ultra Pods fit other RELX devices?",
+          paragraphs: [
+            "Yes. RELX lists the Ultra Pod for its Ultra, Artisan, Infinity and Essential devices, and for WAKA devices as well, so if you already own one of those you can share the same pods.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "根据 RELX 官网的介绍：Ultra Kit 适合什么样的人，以及可以搭配哪些烟弹。",
+      sections: [
+        {
+          heading: "RELX Ultra Kit 适合谁？",
+          paragraphs: [
+            "RELX 把这套产品定位为 Ultra Intense 体验，表示抽起来力度明显更强。喜欢更有力度的口感，这套就是为此而设计的。",
+          ],
+        },
+        {
+          heading: "RELX Ultra Kit 用什么烟弹？",
+          paragraphs: [
+            "适用的烟弹是 [RELX Ultra Pod](/products/relx-ultra-pod)，共有 4 种口味：除了 Watermelon 和 Sunrise Lemon Lime，还有 Blueberry Sour Raspberry 和 Cherry Cola。",
+            "Ultra Pod 每盒 1 颗，可以一颗一颗地尝试新口味。",
+          ],
+        },
+        {
+          heading: "Ultra Pod 能用在其他 RELX 主机上吗？",
+          paragraphs: [
+            "可以。RELX 标明 Ultra Pod 适用于 RELX Ultra、Artisan、Infinity 和 Essential 系列主机，也适用于 WAKA 主机；手上已有这些系列的主机，就可以共用同一款烟弹。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Pod Pro — RELX's own pages, read 09/11: relxnow.com/products/relx-pod-pro groups 34 flavours under
+  // "Collection": Fruit (20: Tangy Grape … Ruby Raspberry) · Mint (Menthol Plus) · Tea (Hibiscus Ice Tea, Iced Jasmine Green Tea, Jasmine
+  // Longjing Tea, Oolong Ice Tea, Lemon Ice Tea, Matcha Frappe) · Tobacco (Classic Tobacco) · Beverage (Orange Sparkle, Iced Pocary,
+  // Cucumber Lemonade, Dark Sparkle) · Dessert (Ludou Ice, Banana Freeze); same page "#Ruby Raspberry: Sweet and tart, this raspberry
+  // flavor is complemented by subtle floral notes and just the right amount of mint" · relxnow.com/products/relx-pod-pro-autoship variants
+  // "0mg/ml (1 Pod)" = Watermelon Ice, Mango Orange, Menthol Xtra; "18mg/ml (2 Pods)" for the rest. The other 8 flavours on this page come
+  // from RELX's flavour pages (product file comment). Left out (already on the page): 1.9mL, the ceramic coil, the device list, Pod Pro 2.
+  // The autoship blurb's "0%, 1.8%, 3% and 5%" is left out: its own variants sell only 0mg/ml and 18mg/ml. Legacy page → no article FAQ.
+  "relx-pod-pro": {
+    th: {
+      lede: "RELX Pod Pro มีกลิ่นให้เลือกเยอะ ด้านล่างจึงแบ่งกลิ่นตามกลุ่มที่ RELX จัดไว้เอง เพื่อให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "RELX Pod Pro มีกลิ่นแนวไหนบ้าง",
+          paragraphs: [
+            "หน้าเว็บของ RELX จัด 34 กลิ่นของหัวรุ่นนี้ไว้เป็น 6 กลุ่ม กลุ่มใหญ่ที่สุดคือผลไม้ มีถึง 20 กลิ่น เช่น Tangy Grape · Hokkaido Melon · Paradise Mango · Sea Salt Lychee และ Fresh Peach",
+            "กลุ่มชามี 6 กลิ่น คือ Hibiscus Ice Tea · Iced Jasmine Green Tea · Jasmine Longjing Tea · Oolong Ice Tea · Lemon Ice Tea และ Matcha Frappe",
+            "กลุ่มเครื่องดื่มมี Orange Sparkle · Iced Pocary · Cucumber Lemonade และ Dark Sparkle กลุ่มของหวานมี Ludou Ice กับ Banana Freeze ส่วนกลุ่มมินต์มี Menthol Plus และกลุ่มยาสูบมี Classic Tobacco",
+            "ส่วนอีก 8 กลิ่นบนหน้านี้ ร้านรวบรวมมาจากหน้าอื่นของ RELX จึงอยู่นอก 6 กลุ่มข้างบน ได้แก่ Icy Coconut Water · Lychee Ice · Taro Scoop · Blueberry Splash · Precious Plum · Mango Orange · Menthol Xtra และ Juicy Apple",
+          ],
+        },
+        {
+          heading: "RELX Pod Pro แบบ 0mg/ml มีกลิ่นไหนบ้าง",
+          paragraphs: [
+            "กลิ่นที่ RELX ขายแบบ 0mg/ml บนหน้าเว็บมี 3 กลิ่น คือ Watermelon Ice · Mango Orange และ Menthol Xtra",
+          ],
+        },
+        {
+          heading: "RELX เล่ารสของ Ruby Raspberry ไว้ว่ายังไง",
+          paragraphs: [
+            "RELX บอกว่า Ruby Raspberry เป็นราสป์เบอร์รีรสหวานอมเปรี้ยว มีกลิ่นดอกไม้อ่อน ๆ กับมินต์อีกนิดพอดี ๆ",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Pod Pro comes in a lot of flavours, so below they are sorted into RELX's own groups to make choosing easier.",
+      sections: [
+        {
+          heading: "What kinds of flavours does the RELX Pod Pro come in?",
+          paragraphs: [
+            "RELX's page sorts 34 of this pod's flavours into six groups. Fruit is the largest, with 20, such as Tangy Grape, Hokkaido Melon, Paradise Mango, Sea Salt Lychee and Fresh Peach.",
+            "Tea has six: Hibiscus Ice Tea, Iced Jasmine Green Tea, Jasmine Longjing Tea, Oolong Ice Tea, Lemon Ice Tea and Matcha Frappe.",
+            "Beverage has Orange Sparkle, Iced Pocary, Cucumber Lemonade and Dark Sparkle, Dessert has Ludou Ice and Banana Freeze, Mint has Menthol Plus and Tobacco has Classic Tobacco.",
+            "The other eight on this page come from RELX's other listings, so they sit outside those six groups: Icy Coconut Water, Lychee Ice, Taro Scoop, Blueberry Splash, Precious Plum, Mango Orange, Menthol Xtra and Juicy Apple.",
+          ],
+        },
+        {
+          heading: "Which RELX Pod Pro flavours come at 0mg/ml?",
+          paragraphs: [
+            "RELX's page lists three at 0mg/ml: Watermelon Ice, Mango Orange and Menthol Xtra.",
+          ],
+        },
+        {
+          heading: "How does RELX describe Ruby Raspberry?",
+          paragraphs: [
+            "RELX describes Ruby Raspberry as a sweet and tart raspberry, with subtle floral notes and a touch of mint.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Pod Pro 口味很多。下面借助 RELX 自己的分类，帮你更快挑选。",
+      sections: [
+        {
+          heading: "RELX Pod Pro 有哪些类型的口味？",
+          paragraphs: [
+            "RELX 官网把这款烟弹的 34 种口味分成 6 类。水果类最多，有 20 种，例如 Tangy Grape、Hokkaido Melon、Paradise Mango、Sea Salt Lychee 和 Fresh Peach。",
+            "茶类有 6 种：Hibiscus Ice Tea、Iced Jasmine Green Tea、Jasmine Longjing Tea、Oolong Ice Tea、Lemon Ice Tea 和 Matcha Frappe。",
+            "饮品类有 Orange Sparkle、Iced Pocary、Cucumber Lemonade 和 Dark Sparkle，甜点类有 Ludou Ice 和 Banana Freeze，薄荷类有 Menthol Plus，烟草类有 Classic Tobacco。",
+            "本页另外 8 种口味是本店从 RELX 其他页面整理而来，不在上述 6 类之中：Icy Coconut Water、Lychee Ice、Taro Scoop、Blueberry Splash、Precious Plum、Mango Orange、Menthol Xtra 和 Juicy Apple。",
+          ],
+        },
+        {
+          heading: "RELX Pod Pro 哪些口味有 0mg/ml？",
+          paragraphs: [
+            "RELX 官网上有 0mg/ml 版本的口味共 3 种：Watermelon Ice、Mango Orange 和 Menthol Xtra。",
+          ],
+        },
+        {
+          heading: "RELX 怎样描述 Ruby Raspberry？",
+          paragraphs: [
+            "RELX 形容 Ruby Raspberry 是酸甜的覆盆子味，带有淡淡的花香和恰到好处的一点薄荷。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: RELX Pod — RELX's own pages, read 09/11: relxnow.com/products/relx-pod-autoship offers only "(2-packed)
+  // 18mg/ml" and has no description · Pod Pro facts = its verified rows (1.9mL) + relxnow.com/products/relx-pod-pro-autoship "0mg/ml (1 Pod)"
+  // · relxnow.com/products/relx-pod-pro "Collection: Fruit" lists Watermelon Ice, Pineapple Delight and Strawberry Burst. The flavour groups
+  // here are the shop's, from the words in each name. Left out (already on the page): the cotton coil, the swap, the device list. Not said:
+  // Infinity (this RELX page's subtitle says "For RELX Infinity", the product file keeps it out — PR note). Legacy page → no article FAQ.
+  "relx-pod": {
+    th: {
+      lede: "ด้านล่างช่วยเทียบ RELX Pod กับ RELX Pod Pro ให้เห็นภาพ และจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น",
+      sections: [
+        {
+          heading: "เลือก RELX Pod หรือ RELX Pod Pro ดี",
+          paragraphs: [
+            "RELX บอกความจุน้ำยาไว้เฉพาะ [RELX Pod Pro](/products/relx-pod-pro) คือ 1.9mL ส่วนของ RELX Pod หน้าเว็บของ RELX ไม่ได้ระบุไว้",
+            "Pod Pro ยังมีกลิ่นให้เลือกมากกว่า และบางกลิ่นมีแบบ 0mg/ml ด้วย ส่วน RELX Pod มีขายบนหน้าเว็บของ RELX แบบ 18mg/ml อย่างเดียว",
+          ],
+        },
+        {
+          heading: "RELX Pod กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อน สายด้านล่างร้านจัดเองจากคำในชื่อกลิ่น ไม่ใช่การแบ่งกลุ่มของ RELX",
+            "สายมินต์มี Menthol Xtra กับ Lemon Mint ส่วนสายผลไม้มี 7 กลิ่น คือ Watermelon Ice · Pineapple Delight · Strawberry Burst · Blueberry Splash · Juicy Apple · Cherry Lime และ Heisenberry",
+            "ในสายผลไม้ Watermelon Ice · Pineapple Delight และ Strawberry Burst เป็น 3 กลิ่นที่ RELX เองก็จัดไว้ในกลุ่มผลไม้บนหน้า RELX Pod Pro ด้วย",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, a side-by-side look at RELX Pod and RELX Pod Pro, and the flavours sorted into groups to make choosing easier.",
+      sections: [
+        {
+          heading: "RELX Pod or RELX Pod Pro?",
+          paragraphs: [
+            "RELX gives an e-liquid capacity only for the [RELX Pod Pro](/products/relx-pod-pro), at 1.9mL. Its pages don't list one for RELX Pod.",
+            "The Pod Pro also has more flavours, and some come at 0mg/ml. RELX Pod, on RELX's page, comes at 18mg/ml only.",
+          ],
+        },
+        {
+          heading: "Which RELX Pod flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Menthol Xtra and Lemon Mint. Fruit has seven: Watermelon Ice, Pineapple Delight, Strawberry Burst, Blueberry Splash, Juicy Apple, Cherry Lime and Heisenberry.",
+            "Of the fruit ones, Watermelon Ice, Pineapple Delight and Strawberry Burst also sit in RELX's own fruit group on its Pod Pro page.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面把 RELX Pod 和 RELX Pod Pro 放在一起比较，并把口味分好组，方便挑选。",
+      sections: [
+        {
+          heading: "选 RELX Pod 还是 RELX Pod Pro？",
+          paragraphs: [
+            "RELX 只公布了 [RELX Pod Pro](/products/relx-pod-pro) 的烟油容量，为 1.9mL，RELX Pod 则没有标明。",
+            "Pod Pro 的口味也更多，部分口味还有 0mg/ml 版本；RELX Pod 在 RELX 官网上只有 18mg/ml。",
+          ],
+        },
+        {
+          heading: "RELX Pod 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Menthol Xtra 和 Lemon Mint。水果类有 7 种：Watermelon Ice、Pineapple Delight、Strawberry Burst、Blueberry Splash、Juicy Apple、Cherry Lime 和 Heisenberry。",
+            "水果类中的 Watermelon Ice、Pineapple Delight 和 Strawberry Burst，RELX 在 Pod Pro 页面上也归入水果类。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX: Artisan Plus — RELX's own store page relxnow.com/products/relx-artisan-plus-device, read 09/11: "The power
+  // has been upgraded from 6.5W to 8W, providing stronger vapor production. Additionally, the battery capacity has increased from 380mAh to
+  // 440mAh, ensuring longer usage with fewer charges" · "4-Stage Battery Indicator … more intuitive experience than the original's
+  // color-change system". Pod facts = the verified rows of relx-pod-pro (ceramic, 1.9mL, 0mg/ml on some, 42 flavours) and relx-pod (cotton, 9 flavours). Left out
+  // (already on the page): 8W, 440mAh, the 4 stages, the sculpted body, Type-C, the box list. Legacy page → no article FAQ.
+  "relx-artisan-plus": {
+    th: {
+      lede: "ด้านล่างเทียบ RELX Artisan Plus กับ Artisan รุ่นก่อนจากหน้าเว็บของ RELX และเล่าว่าหัวพอตสองรุ่นที่ใช้ได้ต่างกันตรงไหน",
+      sections: [
+        {
+          heading: "RELX Artisan Plus ได้อะไรเพิ่มจาก Artisan รุ่นก่อน",
+          paragraphs: [
+            "Artisan รุ่นก่อนใช้ 6.5 วัตต์กับแบต 380mAh ส่วนรุ่นนี้เพิ่มทั้งวัตต์และขนาดแบต RELX บอกว่าไอจึงแน่นขึ้น ใช้ได้นานขึ้น และชาร์จน้อยครั้งลง",
+            "เรื่องไฟบอกแบต รุ่นก่อนใช้วิธีเปลี่ยนสีไฟ ส่วนแบบใหม่ของรุ่นนี้ RELX บอกว่าดูได้ง่ายกว่า",
+          ],
+        },
+        {
+          heading: "หัว RELX Pod กับ RELX Pod Pro ต่างกันยังไง",
+          paragraphs: [
+            "[RELX Pod Pro](/products/relx-pod-pro) ใช้คอยล์เซรามิก จุน้ำยาได้ 1.9mL มีกลิ่นให้เลือกมากกว่า และบางกลิ่นยังมีแบบ 0mg/ml ด้วย",
+            "ส่วน [RELX Pod](/products/relx-pod) ใช้คอยล์สำลี ถ้ายังเลือกไม่ได้ ลองดูรายชื่อกลิ่นของทั้งสองหน้าก่อนก็ได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Below, RELX's own comparison of the Artisan Plus with the original Artisan, and how the two pods it takes differ.",
+      sections: [
+        {
+          heading: "What does the Artisan Plus add over the original?",
+          paragraphs: [
+            "RELX raised the power from the original's 6.5W and the battery from its 380mAh, which it says gives denser vapour and longer use between charges.",
+            "As for the battery light, the original showed the charge by changing colour, and RELX says the new one is easier to read.",
+          ],
+        },
+        {
+          heading: "RELX Pod or RELX Pod Pro: what's the difference?",
+          paragraphs: [
+            "The [RELX Pod Pro](/products/relx-pod-pro) has a ceramic coil, holds 1.9mL and comes in more flavours, some of them at 0mg/ml.",
+            "The [RELX Pod](/products/relx-pod) has a cotton coil. If you can't decide, look through the flavour lists on both pages first.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 RELX 官网，比较 RELX Artisan Plus 与初代 Artisan，并说明它适用的两款烟弹有何不同。",
+      sections: [
+        {
+          heading: "RELX Artisan Plus 比初代 Artisan 多了什么？",
+          paragraphs: [
+            "RELX 在初代 6.5W 的基础上提高了功率，电池也在 380mAh 的基础上加大，并表示烟雾因此更饱满，续航更久，充电次数更少。",
+            "至于电量指示，初代靠灯光变色显示电量，RELX 表示这款的新设计更直观易读。",
+          ],
+        },
+        {
+          heading: "RELX Pod 和 RELX Pod Pro 有什么不同？",
+          paragraphs: [
+            "[RELX Pod Pro](/products/relx-pod-pro) 采用陶瓷线圈，容量 1.9mL，口味更多，部分口味有 0mg/ml 版本。",
+            "[RELX Pod](/products/relx-pod) 采用棉芯线圈。还拿不定主意的话，可以先看看两个页面上的口味列表。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), NEVOKS: Feelin Mini empty pod (coil-54) — NEVOKS's own page nevoks.com/products/nevoks-feelin-mini-pod-kit, read
+  // 09/11 in the in-app browser; posters cdn.shopify.com/s/files/1/0670/1865/3983/files/: feelinmini2.jpg "Easy to Fill · Side Fill" ·
+  // feelinmini7.jpg "Compatible with SPL 10 Coil Series · MTL: Best for 0.8Ω · Tighten MTL: Suggest for 1.0Ω · Not Recommend for 0.6Ω" /
+  // "Mesh Coil SPL-10 · Resistance: 0.8Ω (Included) · Power Range: 13~18W · Recommended E-liquid: Freebase (Best for nicotine≤10mg)" /
+  // "Resistance: 1.0Ω · Power Range: 10~13W · Recommended E-liquid: nicotine salt (Best for nicotine≤35mg) · Compatible product: Feelin/Pagee" (printed in both the 0.8Ω and the 1.0Ω block)
+  // · feelinmini9.jpg "Cartridge Material TPU+PCTG" · feelinmini10.jpg packing list "Feelin Mini Empty Cartridge(2ml) · SPL-10 Mesh Coil 0.8Ω".
+  // "Included" = in the Feelin Mini kit box, not with this pod. en/zh leave out the guide link: /guides/salt-nic-vs-freebase is thaiOnly. Left out: 2mL (spec row). Counted outside the spec table (checker 09/11): SPL10 = FAQ 1 answer + FAQ 2 question only;
+  // 0.8Ω / 1.0Ω = section 2 + FAQ 2; "หัวพอตเปล่า" = tagline + shortDescription, so not in the article.
+  // Seed page → FAQ allowed.
+  "coil-54": {
+    th: {
+      lede: "ด้านล่างสรุปจากโปสเตอร์ของ NEVOKS ว่าหัวพอต Feelin Mini เติมน้ำยาทางไหน และคอยล์แต่ละค่าเข้าคู่กับน้ำยาแบบไหน",
+      sections: [
+        {
+          heading: "หัวพอต Feelin Mini เติมน้ำยาทางไหน",
+          paragraphs: [
+            "หัวพอตนี้เติมน้ำยาจากด้านข้าง ตัวหัวทำจาก TPU กับ PCTG ตามที่ NEVOKS ระบุไว้",
+          ],
+        },
+        {
+          heading: "คอยล์ค่าไหนเข้าคู่กับน้ำยาแบบไหน",
+          paragraphs: [
+            "NEVOKS แนะนำคอยล์ 0.8 โอห์มสำหรับการสูบแบบ MTL ใช้ที่ 13–18 วัตต์ และเข้ากับน้ำยา freebase ที่มีนิโคตินไม่เกิน 10mg คอยล์ค่านี้คือตัวที่ใส่มาในกล่องชุด Feelin Mini",
+            "ถ้าชอบสูบแบบ MTL แบบแน่น NEVOKS แนะนำคอยล์ 1.0 โอห์ม ใช้ที่ 10–13 วัตต์ และเข้ากับน้ำยา salt nic ที่มีนิโคตินไม่เกิน 35mg ส่วนคอยล์ 0.6 โอห์ม NEVOKS ไม่แนะนำให้ใช้กับ Feelin Mini",
+            "ถ้ายังไม่แน่ใจว่าน้ำยาสองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "หัวพอต Feelin Mini ใช้กับคอยล์อะไร",
+          answer: "ใช้กับคอยล์ตระกูล SPL10 ของ NEVOKS ค่ะ",
+        },
+        {
+          question: "คอยล์ SPL10 ใช้กับเครื่องไหนได้อีกบ้าง",
+          answer: "โปสเตอร์ของ NEVOKS ระบุว่าคอยล์ทั้งค่า 0.8 และ 1.0 โอห์มใช้กับ Feelin และ Pagee ได้ด้วยค่ะ",
+        },
+      ],
+    },
+    en: {
+      lede: "From NEVOKS's own posters: how the Feelin Mini pod fills, and which e-liquid each coil value suits.",
+      sections: [
+        {
+          heading: "How does the Feelin Mini pod fill?",
+          paragraphs: [
+            "It fills from the side. NEVOKS lists the pod's material as TPU and PCTG.",
+          ],
+        },
+        {
+          heading: "Which coil goes with which e-liquid?",
+          paragraphs: [
+            "NEVOKS recommends the 0.8Ω for MTL vaping at 13–18W, with freebase e-liquid at up to 10mg nicotine. This is the coil that comes in the Feelin Mini kit box.",
+            "For a tighter MTL draw, NEVOKS suggests the 1.0Ω at 10–13W, with nic salt at up to 35mg. NEVOKS does not recommend the 0.6Ω for the Feelin Mini.",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Which coils does the Feelin Mini pod take?",
+          answer: "It takes NEVOKS's SPL10 coils.",
+        },
+        {
+          question: "Which other devices take SPL10 coils?",
+          answer: "NEVOKS's poster lists the Feelin and the Pagee for both the 0.8Ω and the 1.0Ω coil.",
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 NEVOKS 的海报整理：Feelin Mini 烟弹怎么注油，以及线圈各个阻值适合哪种烟油。",
+      sections: [
+        {
+          heading: "Feelin Mini 烟弹怎么注油？",
+          paragraphs: [
+            "这款烟弹从侧面注油。NEVOKS 标明烟弹材质为 TPU 和 PCTG。",
+          ],
+        },
+        {
+          heading: "线圈哪个阻值配哪种烟油？",
+          paragraphs: [
+            "NEVOKS 推荐 0.8Ω 用于 MTL 抽法，功率 13–18W，搭配尼古丁不超过 10mg 的 freebase 烟油；Feelin Mini 套装盒里附带的就是这一颗。",
+            "想要更紧的 MTL 吸阻，NEVOKS 建议用 1.0Ω，功率 10–13W，搭配尼古丁不超过 35mg 的 salt nic。NEVOKS 不推荐 Feelin Mini 使用 0.6Ω。",
+          ],
+        },
+      ],
+      faq: [
+        {
+          question: "Feelin Mini 烟弹用什么线圈？",
+          answer: "使用 NEVOKS 的 SPL10 系列线圈。",
+        },
+        {
+          question: "SPL10 线圈还适用于哪些设备？",
+          answer: "NEVOKS 的海报标明，0.8Ω 和 1.0Ω 两款线圈也适用于 Feelin 和 Pagee。",
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), SMOK: Nord 5 — SMOK's own page www.smoktech.com/product/pod/nord-5, read 09/11 in the in-app browser: text
+  // "MAX 1.5A TYPE-C CHARGING: It'll take an hour and 40 minutes at most to recover from the low battery" · "HOW TO FILL WITH E-LIQUID: Do
+  // not inhale immediately after filling the pod. Let it stand for several minutes to get the cotton completely saturated" · "the dual-side
+  // air inlet layout enables fuller atomization and more balanced heat dissipation, contributing to a smooth and plump taste" · posters
+  // res.smoktech.com/www/files/v2/product/: 78JNQrvpZJuZ6EeMKzaETdKYMyL.jpeg "MULTIPLY THE SECURITY: 8 seconds cut-off · pod detection ·
+  // low-voltage protection · short circuit protection" · M62N8xvWR9Tbeg8lr2xoIqaRj9j6.jpeg "COIL INTRODUCTION: Perfect for DL vaping · RPM 3
+  // Meshed 0.15Ω Coil · Fast ramp-up time · Better flavor and massive vapor · Wattage: 40-80W" / "RPM 3 Meshed 0.23Ω Coil · More even heat
+  // surface · Smooth taste and rich flavor · Wattage: 20-45W" · EybDwwK3MeULpod14DbZhdaZNoV.jpeg "WIDE-BORE MOUTHPIECE". The 0.15Ω coil is
+  // the one fitted in the pod (spec row). RPM 5 facts = its own verified rows + its SMOK page (top fill: "push the top filling cover to
+  // expose the filling hole, without pulling out the pod"). Left out (already on the page): 2000mAh, 5–80W, 5mL, the two ohm values (named
+  // here as the fitted coil and the spare), the 0.69-inch OLED, the slider, the short-circuit LED, the pod lock, the box list; the 1.2A / 1.5A
+  // split stays in the spec row, and the 1 h 40 min figure is left out (it sits under "MAX 1.5A"; the spec row says 1.2A for the regular
+  // series — checker 09/11). Legacy page → no article FAQ.
+  "smok-nord-5": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่าคอยล์ที่มาในกล่องใช้กี่วัตต์ เติมน้ำยาแล้วควรทำยังไงก่อนสูบ และ Nord 5 ต่างจาก RPM 5 ตรงไหน",
+      sections: [
+        {
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
+          paragraphs: [
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าตัวนี้ร้อนเร็ว ให้รสชัดและไอเยอะ",
+            "ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ SMOK บอกว่าผิวคอยล์ร้อนสม่ำเสมอกว่า และให้รสนุ่มและเข้ม อยากรู้ว่าแนวการสูบของตัวเองเป็นแบบไหน อ่านต่อได้ที่ [สูบแบบ MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
+          ],
+        },
+        {
+          heading: "ลมเข้าสองข้างช่วยอะไร",
+          paragraphs: [
+            "SMOK บอกว่าการวางช่องลมแบบนี้ช่วยให้น้ำยากลายเป็นไอได้ทั่วถึงขึ้น และระบายความร้อนได้สมดุลกว่า รสที่ได้จึงนุ่มและแน่น ส่วนปากดูดเป็นแบบรูกว้าง",
+          ],
+        },
+        {
+          heading: "เติมน้ำยาแล้วสูบได้เลยไหม",
+          paragraphs: [
+            "หลังเติมน้ำยา SMOK แนะนำให้วางเครื่องทิ้งไว้หลายนาทีก่อน ให้น้ำยาซึมเข้าสำลีในคอยล์จนทั่ว แล้วค่อยเริ่มสูบ",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 มีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "เครื่องจะหยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที ตรวจได้ว่าใส่หัวพอตแล้วหรือยัง และมีระบบป้องกันแบตต่ำกับไฟช็อต",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 กับ RPM 5 ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน",
+            "[SMOK RPM 5](/products/smok-rpm-5) จุน้ำยาได้มากกว่า คือ 6.5mL และมีจอ TFT 0.96 นิ้ว ส่วน Nord 5 ตัวเครื่องสั้นกว่า",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From SMOK's own page and posters: what wattage each coil in the box runs at, what to do after filling, and how the Nord 5 differs from the RPM 5.",
+      sections: [
+        {
+          heading: "What wattage do the two coils in the box run at?",
+          paragraphs: [
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W, and SMOK says it heats up fast with a fuller flavour and plenty of vapour.",
+            "The spare runs at 20–45W, and SMOK says its more even heating surface gives a smooth, rich taste. If you're not sure which style you vape, see [MTL vs DTL](/guides/understanding-mtl-vs-dtl).",
+          ],
+        },
+        {
+          heading: "What does air from both sides do?",
+          paragraphs: [
+            "SMOK says this inlet layout turns the e-liquid into vapour more fully and spreads the heat more evenly, for a smooth, full taste. The mouthpiece is wide-bore.",
+          ],
+        },
+        {
+          heading: "Can I vape straight after filling?",
+          paragraphs: [
+            "SMOK advises letting it stand for several minutes after filling, so the e-liquid soaks fully into the cotton in the coil before you start.",
+          ],
+        },
+        {
+          heading: "What protections does the SMOK Nord 5 have?",
+          paragraphs: [
+            "It cuts out after 8 seconds of continuous firing, detects whether a pod is fitted, and protects against low voltage and short circuits.",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 or RPM 5?",
+          paragraphs: [
+            "Both take the same coil family.",
+            "The [SMOK RPM 5](/products/smok-rpm-5) holds more, at 6.5mL, and has a 0.96-inch TFT display; the Nord 5 is the shorter device.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 SMOK 官网和海报整理：盒内两颗线圈各用多少瓦、注油后该怎么做，以及 Nord 5 和 RPM 5 有什么不同。",
+      sections: [
+        {
+          heading: "盒内两颗线圈用多少瓦？",
+          paragraphs: [
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快、味道更足、烟雾量大。",
+            "备用的那颗适用 20–45W，SMOK 表示它受热面更均匀，口感顺滑浓郁。不确定自己是哪种抽法，可以看 [MTL 和 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+          ],
+        },
+        {
+          heading: "两侧进气有什么作用？",
+          paragraphs: [
+            "SMOK 表示这种进气布局能让烟油雾化得更充分、散热更均衡，口感更顺滑饱满。烟嘴为宽口设计。",
+          ],
+        },
+        {
+          heading: "注油后可以马上抽吗？",
+          paragraphs: [
+            "SMOK 建议注油后先静置几分钟，让烟油充分浸透线圈里的棉芯后再开始抽。",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 有哪些保护功能？",
+          paragraphs: [
+            "连续点火满 8 秒会自动断电，能检测是否装好烟弹，并具备低电压保护和短路保护。",
+          ],
+        },
+        {
+          heading: "SMOK Nord 5 和 RPM 5 怎么选？",
+          paragraphs: [
+            "两款使用同一系列的线圈。",
+            "[SMOK RPM 5](/products/smok-rpm-5) 容量更大，为 6.5mL，并配备 0.96 英寸 TFT 屏；Nord 5 机身更短。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), SMOK: RPM 5 — SMOK's own page www.smoktech.com/product/pod_mod/rpm-5-and-rpm-5-pro, read 09/11 in the in-app
+  // browser: text "Both internal and external battery versions are optional, providing up to 80 watts" · "The 6.5ml RPM 5 Pod comes standard
+  // with two RPM 3 meshed coils to satisfy DL vaping enthusiasts" · posters res.smoktech.com/www/files/v2/product/: rqYmg6MA4oI9Qw5ny3gRsKBavYE
+  // .jpeg "2000mAh Built-in Battery" (RPM 5) / "External Single 18650 Battery" (RPM 5 Pro) · RNEmoLb3R3T7l0bgQ6zlFROVZYE.jpeg spec sheet, RPM 5
+  // Pro "129.4" mm high, "Power Range: 5W-80W" (its 100.7g is left out: the sheet does not say whether the 18650 is in) · K44Eb64L3wfaJ8MjrRaltKZRg6O.jpeg "Hit the Mark Stepwise: … a stepless
+  // airflow adjustment mechanism that supports airway regulation of any size, from minimum to maximum and vice versa" ·
+  // 9O3X8vql7mTll3Y17eaGS61Xl5d.jpeg "Slide-to-open Top Filling System: Simply push the top filling cover to expose the filling hole, without
+  // pulling out the pod" · NlMNnNbwn9sqdb3XRLn7I4low8v.jpeg "INTELLIGENT DETECTION: Pod Detection · Short Circuit Protection · 8 Seconds
+  // Cut-off · Low-voltage Warning" · EKay1W6zXnCY5WQQlKVNt1W5qeV.jpeg "COIL INTRODUCTION" (fitted 0.15Ω 40-80W "Fast ramp-up", spare 0.23Ω
+  // 20-45W "Smooth taste and rich flavor", both "Perfect for DL vaping"). Nord 5 facts = its verified rows. Left out (already on the page):
+  // 2000mAh as a number, 5–80W and the shared 80W top (checker 09/11), 6.5mL, the two ohm values (named here as the fitted coil and the spare), the 0.96-inch TFT and its theme
+  // colour, the box list, this kit's size and weight. Legacy page → no article FAQ.
+  "smok-rpm-5": {
+    th: {
+      lede: "ด้านล่างสรุปจากหน้าเว็บและโปสเตอร์ของ SMOK ว่า RPM 5 ต่างจาก RPM 5 Pro ยังไง เติมน้ำยาและปรับลมยังไง และคอยล์ที่มาในกล่องใช้กี่วัตต์",
+      sections: [
+        {
+          heading: "SMOK RPM 5 กับ RPM 5 Pro ต่างกันยังไง",
+          paragraphs: [
+            "SMOK ทำ RPM 5 ออกมาสองแบบ ชุดที่อยู่ในหน้านี้คือ RPM 5 ที่ใช้แบตในตัว ส่วน RPM 5 Pro ใช้ถ่าน 18650 หนึ่งก้อน",
+            "ตามตารางสเปกของ SMOK รุ่น Pro สูง 129.4mm สูงกว่าชุดนี้เล็กน้อย",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 เติมน้ำยายังไง",
+          paragraphs: [
+            "หัวพอตเป็นแบบเติมด้านบน แค่ดันฝาให้เลื่อนเปิดก็จะเห็นรูเติมน้ำยา และเติมได้ทั้งที่หัวพอตยังติดอยู่กับตัวเครื่อง",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 ปรับลมยังไง",
+          paragraphs: [
+            "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งได้ตั้งแต่ลมน้อยสุดไปจนถึงลมเปิดเต็ม และปรับกลับได้ทุกเมื่อ",
+          ],
+        },
+        {
+          heading: "คอยล์ที่มาในกล่องใช้กี่วัตต์",
+          paragraphs: [
+            "SMOK ออกแบบคอยล์ทั้งสองแบบมาสำหรับการสูบแบบ DTL คือดูดลงปอดตรง ๆ ตัวที่ใส่มากับหัวพอตใช้ได้ช่วง 40–80 วัตต์ และ SMOK บอกว่าร้อนเร็ว ส่วนคอยล์สำรองใช้ได้ช่วง 20–45 วัตต์ และ SMOK บอกว่าให้รสนุ่มและเข้ม",
+            "ถ้าอยากรู้ว่าควรตั้งวัตต์และปรับลมแค่ไหน อ่านต่อได้ที่ [เลือกวัตต์และปรับลมยังไง](/guides/choosing-wattage-and-airflow)",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 มีระบบป้องกันอะไรบ้าง",
+          paragraphs: [
+            "เครื่องตรวจได้ว่าใส่หัวพอตแล้วหรือยัง หยุดจ่ายไฟเมื่อกดปุ่มยิงค้างครบ 8 วินาที เตือนเมื่อแบตต่ำ และมีระบบป้องกันไฟช็อต",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 กับ Nord 5 ต่างกันยังไง",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้คอยล์ตระกูลเดียวกัน ส่วน [SMOK Nord 5](/products/smok-nord-5) ตัวเครื่องสั้นกว่า หัวพอตจุ 5mL และใช้จอ OLED 0.69 นิ้ว",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "From SMOK's own page and posters: how the RPM 5 differs from the RPM 5 Pro, how to fill it and set the airflow, and what wattage each coil in the box runs at.",
+      sections: [
+        {
+          heading: "SMOK RPM 5 or RPM 5 Pro?",
+          paragraphs: [
+            "SMOK makes the RPM 5 in two versions. The kit on this page is the RPM 5 with a built-in battery; the RPM 5 Pro runs on a single external 18650 battery.",
+            "According to SMOK's spec sheet, the Pro stands slightly taller at 129.4mm.",
+          ],
+        },
+        {
+          heading: "How do I fill the SMOK RPM 5?",
+          paragraphs: [
+            "The pod fills from the top: slide the top cover open to reach the filling hole, with no need to take the pod off the device.",
+          ],
+        },
+        {
+          heading: "How do I set the airflow on the SMOK RPM 5?",
+          paragraphs: [
+            "The airflow is stepless, so you can set it anywhere from the tightest to fully open and back again.",
+          ],
+        },
+        {
+          heading: "What wattage do the two coils in the box run at?",
+          paragraphs: [
+            "SMOK makes both for DTL vaping, drawing straight into the lungs. The coil fitted in the pod runs at 40–80W and, SMOK says, heats up fast; the spare runs at 20–45W for what SMOK calls a smooth, rich taste.",
+            "Not sure where to set the wattage and airflow? See [choosing wattage and airflow](/guides/choosing-wattage-and-airflow).",
+          ],
+        },
+        {
+          heading: "What protections does the SMOK RPM 5 have?",
+          paragraphs: [
+            "It detects whether a pod is fitted, cuts out after 8 seconds of continuous firing, warns of a low battery and protects against short circuits.",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 or Nord 5?",
+          paragraphs: [
+            "Both take the same coil family. The [SMOK Nord 5](/products/smok-nord-5) is a shorter device with a 5mL pod and a 0.69-inch OLED display.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "下面根据 SMOK 官网和海报整理：RPM 5 和 RPM 5 Pro 的区别、怎样注油和调气流，以及盒内两颗线圈各用多少瓦。",
+      sections: [
+        {
+          heading: "SMOK RPM 5 和 RPM 5 Pro 有什么区别？",
+          paragraphs: [
+            "SMOK 的 RPM 5 有两个版本。本页这套是内置电池的 RPM 5，RPM 5 Pro 则使用一节外置 18650 电池。",
+            "根据 SMOK 的规格表，Pro 稍高一些，为 129.4mm。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 怎么注油？",
+          paragraphs: [
+            "烟弹从顶部注油：推开顶部的注油盖就能看到注油孔，不用把烟弹从主机上取下来。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 怎么调气流？",
+          paragraphs: [
+            "气流可无级调节，从最小到最大任意设定，也能随时调回。",
+          ],
+        },
+        {
+          heading: "盒内两颗线圈用多少瓦？",
+          paragraphs: [
+            "两颗线圈都是 SMOK 为 DTL 抽法设计的，也就是直接吸入肺部。装在烟弹里的那颗适用 40–80W，SMOK 表示它升温快；备用的那颗适用 20–45W，SMOK 表示口感顺滑浓郁。",
+            "想了解功率和气流怎么设置，可以看 [怎样选择功率和气流](/guides/choosing-wattage-and-airflow)。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 有哪些保护功能？",
+          paragraphs: [
+            "能检测是否装好烟弹，连续点火满 8 秒自动断电，低电量时会提醒，并具备短路保护。",
+          ],
+        },
+        {
+          heading: "SMOK RPM 5 和 Nord 5 怎么选？",
+          paragraphs: [
+            "两款使用同一系列的线圈。[SMOK Nord 5](/products/smok-nord-5) 机身更短，烟弹容量 5mL，配 0.69 英寸 OLED 屏。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), DOTMOD: dotCoils (Coil-70) — DOTMOD's own page dotmod.com/products/dotcoils, read 09/11 in the in-app browser:
+  // "Made specifically for dotmod atomizers" · "Resistance: 0.15 Ohm | 0.3 Ohm | 0.6 Ohm" · "5 INDIVIDUAL WRAPPED BLISTER PACKS WITH A COIL IN
+  // EACH" · "COMPATIBILITY: dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo (Not compatible with 0.15 Ohm dotCoil) · dotStick Revo
+  // V1.5 (Not compatible with 0.15 Ohm dotCoil) · dotPod Max (Not compatible with 0.15 Ohm dotCoil) · dotAIO Tank V3 · dotTank Max · dotAMP ·
+  // dotApollo · dotAIO V3". That list belongs to the three values DOTMOD sells now. The 0.7Ω this page sells is on DOTMOD's own box; DOTMOD no
+  // longer lists it. The devices for 0.7Ω = the spec row "ใช้ได้กับ" (sourced: DOTMOD's dotCoils page as read 2026-09-02, when 0.7Ω was
+  // in the dotAIO V2 line-up 0.3/0.7/0.9Ω — Coil-70 spec comment); the article points to that row and names no device of its own (checker 09/11). Left out (already on the page): 5 a box, brass,
+  // single mesh, the 0.7Ω 14–20W. Counted outside the spec table (checker 09/11): the three current values = section 1 +
+  // section 2 ("สามค่าข้างบน"); the 0.7Ω = tagline + section 2; no article FAQ (it only repeated sections 1–2).
+  "coil-70": {
+    th: {
+      lede: "คอยล์ตัวนี้ DOTMOD เรียกว่า dotCoils ด้านล่างสรุปจากหน้าเว็บของ DOTMOD ว่าค่าโอห์มที่ขายอยู่ตอนนี้ใช้กับเครื่องไหน และค่าในหน้านี้ควรเช็คอะไรก่อนซื้อ",
+      sections: [
+        {
+          heading: "รายชื่อเครื่องบนเว็บ DOTMOD เป็นของคอยล์ค่าไหน",
+          paragraphs: [
+            "หน้าเว็บของ DOTMOD ตอนนี้ขาย dotCoils ค่า 0.15 · 0.3 และ 0.6 โอห์ม และรายชื่อเครื่องบนหน้านั้นเป็นของสามค่านี้ ได้แก่ dotAIO V2 · dotAIO V2 Lite · dotTank 25mm · dotStick Revo · dotStick Revo V1.5 · dotPod Max · dotAIO Tank V3 · dotTank Max · dotAMP · dotApollo และ dotAIO V3",
+            "DOTMOD ทำคอยล์นี้มาสำหรับเครื่องของตัวเองโดยเฉพาะ ดูรุ่นอื่นของแบรนด์ได้ที่หน้า [DOTMOD](/brands/dotmod)",
+          ],
+        },
+        {
+          heading: "ค่า 0.7 โอห์มในหน้านี้ใช้กับเครื่องไหน",
+          paragraphs: [
+            "ค่า 0.7 โอห์มเป็นค่าที่พิมพ์อยู่บนกล่องของ DOTMOD เอง แต่หน้าเว็บของ DOTMOD ตอนนี้ขายเฉพาะสามค่าข้างบน เครื่องที่ใช้กับค่านี้ดูได้ที่แถว “ใช้ได้กับ” ในตารางสเปกของหน้านี้ ก่อนซื้อจึงควรเช็คชื่อรุ่นเครื่องของตัวเองให้ตรง",
+          ],
+        },
+        {
+          heading: "ค่า 0.15 โอห์มใช้ได้ทุกเครื่องไหม",
+          paragraphs: [
+            "ถ้าใช้ dotStick Revo · dotStick Revo V1.5 หรือ dotPod Max ให้เลี่ยงค่า 0.15 โอห์ม เพราะ DOTMOD ระบุว่าสามรุ่นนี้ไม่รองรับค่านั้น ส่วนเครื่องอื่นในรายชื่อนี้ DOTMOD ไม่ได้เขียนข้อยกเว้นไว้",
+          ],
+        },
+        {
+          heading: "เปลี่ยนคอยล์เมื่อไหร่ดี",
+          paragraphs: [
+            "วิธีดูว่าคอยล์ถึงรอบเปลี่ยนหรือยัง และใส่หัวใหม่แล้วควรรอนานแค่ไหนก่อนสูบ อ่านได้ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance) ส่วนคอยล์ในกล่องนี้แยกซองมาทีละหัว จึงเปิดเฉพาะหัวที่จะเปลี่ยนได้",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "This coil is DOTMOD's dotCoils. Below, from DOTMOD's own page: which devices the values it sells now fit, and what to check about the value on this page before you buy.",
+      sections: [
+        {
+          heading: "Which coils is DOTMOD's device list for?",
+          paragraphs: [
+            "DOTMOD's page currently sells dotCoils at 0.15, 0.3 and 0.6Ω, and the device list there is for those three: the dotAIO V2, dotAIO V2 Lite, dotTank 25mm, dotStick Revo, dotStick Revo V1.5, dotPod Max, dotAIO Tank V3, dotTank Max, dotAMP, dotApollo and dotAIO V3.",
+            "DOTMOD makes these coils for its own devices. More from the brand is on the [DOTMOD](/brands/dotmod) page.",
+          ],
+        },
+        {
+          heading: "Which device is the 0.7Ω on this page for?",
+          paragraphs: [
+            "The 0.7Ω value is printed on DOTMOD's own box, but DOTMOD's page now sells only the three values above. For the devices that take it, see this page's spec table, and check your device's model name before you buy.",
+          ],
+        },
+        {
+          heading: "Does the 0.15Ω fit every device?",
+          paragraphs: [
+            "On the dotStick Revo, dotStick Revo V1.5 or dotPod Max, skip the 0.15Ω: DOTMOD says those three don't take it. For the other devices on the list, DOTMOD gives no exception.",
+          ],
+        },
+        {
+          heading: "When should I change the coil?",
+          paragraphs: [
+            "For how to tell when a coil is due and how long to wait before vaping on a new one, see [coil and pod care](/guides/coil-and-pod-maintenance). Each coil in the box is packed on its own, so you only open the one you're fitting.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "这款雾化芯就是 DOTMOD 的 dotCoils。下面根据 DOTMOD 官网整理：目前在售的阻值适用于哪些设备，以及本页的阻值购买前要核对什么。",
+      sections: [
+        {
+          heading: "DOTMOD 官网的设备列表对应哪些阻值？",
+          paragraphs: [
+            "DOTMOD 官网目前在售的 dotCoils 为 0.15、0.3 和 0.6Ω，页面上的设备列表对应这三种：dotAIO V2、dotAIO V2 Lite、dotTank 25mm、dotStick Revo、dotStick Revo V1.5、dotPod Max、dotAIO Tank V3、dotTank Max、dotAMP、dotApollo 和 dotAIO V3。",
+            "DOTMOD 这款雾化芯专为自家设备设计。更多产品见 [DOTMOD](/brands/dotmod) 品牌页。",
+          ],
+        },
+        {
+          heading: "本页的 0.7Ω 适用于哪款设备？",
+          paragraphs: [
+            "0.7Ω 是 DOTMOD 包装盒上印的阻值，但 DOTMOD 官网目前只销售上面三种阻值。该阻值适用的设备请看本页规格表，购买前请核对自己设备的型号。",
+          ],
+        },
+        {
+          heading: "0.15Ω 所有设备都能用吗？",
+          paragraphs: [
+            "使用 dotStick Revo、dotStick Revo V1.5 或 dotPod Max 的话，请避开 0.15Ω，DOTMOD 标明这三款不支持该阻值。列表中的其他设备，DOTMOD 没有注明例外。",
+          ],
+        },
+        {
+          heading: "什么时候该换雾化芯？",
+          paragraphs: [
+            "怎么判断该换芯、装上新芯后要等多久再抽，可以看 [雾化芯和烟弹保养](/guides/coil-and-pod-maintenance)。盒里每颗雾化芯都是独立包装，换哪颗拆哪颗就行。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX disposables with no maker page (THAI_STYLE §5 exception 07/11): Sparta 20K. No new product fact here —
+  // the flavour names are this page's own flavour list (3-shop sources in src/data/products/relx.ts) and the groups are the shop's,
+  // from the words in each name. Smash Go 12K figures = its verified rows (relxnow.com). Left out on purpose: the display, airflow and
+  // modes (tagline + shortDescription + features already say them), and every number for this model (its puff row is unverified).
+  // en/zh leave out the guide link: /guides/how-long-a-disposable-lasts is thaiOnly. Legacy page → no article FAQ.
+  "relx-sparta-20k": {
+    th: {
+      lede: "RELX Sparta 20K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับพอตใช้แล้วทิ้งรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Sparta 20K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Double Mint กับ Raspberry Mint ส่วนสายชามี Oolong Ice Tea",
+            "สายผลไม้มี 9 กลิ่น คือ Apple · Blueberry · Grape · Grape Lychee · Mixberry · Peach Strawberry · Pineapple · Strawberry และ Watermelon",
+            "แนวขนมและเครื่องดื่มมี Cola · Mineral Water · Rainbow Candy และ Sour Gummy",
+          ],
+        },
+        {
+          heading: "RELX Sparta 20K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ส่วน [RELX Novo 14K](/products/relx-novo-14k) มีกลิ่นที่ชื่อตรงกับรุ่นนี้หลายกลิ่น เช่น Apple · Blueberry · Double Mint และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็มีให้เลือกทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Sparta 20K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX disposables.",
+      sections: [
+        {
+          heading: "Which RELX Sparta 20K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Double Mint and Raspberry Mint, and tea has Oolong Ice Tea.",
+            "Fruit has nine: Apple, Blueberry, Grape, Grape Lychee, Mixberry, Peach Strawberry, Pineapple, Strawberry and Watermelon.",
+            "Sweets and drinks are Cola, Mineral Water, Rainbow Candy and Sour Gummy.",
+          ],
+        },
+        {
+          heading: "How does the RELX Sparta 20K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "The [RELX Novo 14K](/products/relx-novo-14k) shares several flavour names with this one, such as Apple, Blueberry, Double Mint and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Sparta 20K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 的其他一次性型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Sparta 20K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Double Mint 和 Raspberry Mint，茶类有 Oolong Ice Tea。",
+            "水果类有 9 款：Apple、Blueberry、Grape、Grape Lychee、Mixberry、Peach Strawberry、Pineapple、Strawberry 和 Watermelon。",
+            "糖果和饮品类有 Cola、Mineral Water、Rainbow Candy 和 Sour Gummy。",
+          ],
+        },
+        {
+          heading: "RELX Sparta 20K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "[RELX Novo 14K](/products/relx-novo-14k) 有好几款口味名称和这款相同，例如 Apple、Blueberry、Double Mint 和 Watermelon，喜欢这些口味的话，两款都有。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX Novo 14K — same basis as Sparta 20K above (flavour names = this page's list; groups = the shop's; Smash Go
+  // figures = its verified rows). Left out: the display and USB-C (tagline + shortDescription + feature) and every number for this model.
+  "relx-novo-14k": {
+    th: {
+      lede: "RELX Novo 14K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับพอตใช้แล้วทิ้งรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Novo 14K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายเย็นมี Double Mint กับ Sour Lime Ice ส่วนสายชามี LongJing Ice Tea",
+            "สายผลไม้มี 9 กลิ่น คือ Apple · Blueberry · Grape · Grape Apple · Mixed Berry · Sea Salt Lemon · Sour Berry · Strawberry และ Watermelon",
+            "แนวเครื่องดื่มและขนมมี Orange Soda กับ Sour Bubblegum",
+          ],
+        },
+        {
+          heading: "RELX Novo 14K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ส่วน [RELX Sparta 20K](/products/relx-sparta-20k) มีกลิ่นที่ชื่อตรงกับรุ่นนี้หลายกลิ่น เช่น Apple · Blueberry · Double Mint และ Watermelon แล้วยังมีแนวขนมอย่าง Rainbow Candy กับ Sour Gummy ให้เลือกเพิ่มด้วย",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Novo 14K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX disposables.",
+      sections: [
+        {
+          heading: "Which RELX Novo 14K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Cool flavours are Double Mint and Sour Lime Ice, and tea is LongJing Ice Tea.",
+            "Fruit has nine: Apple, Blueberry, Grape, Grape Apple, Mixed Berry, Sea Salt Lemon, Sour Berry, Strawberry and Watermelon.",
+            "Drinks and sweets are Orange Soda and Sour Bubblegum.",
+          ],
+        },
+        {
+          heading: "How does the RELX Novo 14K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "The [RELX Sparta 20K](/products/relx-sparta-20k) shares several flavour names with this one, such as Apple, Blueberry, Double Mint and Watermelon, and adds sweets such as Rainbow Candy and Sour Gummy.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Novo 14K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 的其他一次性型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Novo 14K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "清凉类有 Double Mint 和 Sour Lime Ice，茶类有 LongJing Ice Tea。",
+            "水果类有 9 款：Apple、Blueberry、Grape、Grape Apple、Mixed Berry、Sea Salt Lemon、Sour Berry、Strawberry 和 Watermelon。",
+            "饮品和糖果类有 Orange Soda 和 Sour Bubblegum。",
+          ],
+        },
+        {
+          heading: "RELX Novo 14K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "[RELX Sparta 20K](/products/relx-sparta-20k) 有好几款口味名称和这款相同，例如 Apple、Blueberry、Double Mint 和 Watermelon，另外还多了 Rainbow Candy、Sour Gummy 这类糖果口味。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), RELX Diva 30K — same basis as Sparta 20K above (flavour names = this page's list, incl. the five whose names end in
+  // 5%; groups = the shop's; Smash Go figures = its verified rows). Left out: the display and ECO/BOOST (tagline + shortDescription + features)
+  // and every number for this model except the 5% printed in flavour names (one paragraph here; the shortDescription names no
+  // percentage, only "the stronger version"; thai-copy 09/11).
+  "relx-diva-30k": {
+    th: {
+      lede: "RELX Diva 30K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นอื่นของ RELX",
+      sections: [
+        {
+          heading: "RELX Diva 30K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Double Mint กับ Spearmint",
+            "สายผลไม้มี 7 กลิ่น คือ Fresh Melon · Grape · Grape Aloe · Mango Passion Fruit · Mix Berry · Orange Splash และ Watermelon",
+            "แนวขนมและเครื่องดื่มมี Cola · Mineral Water และ Strawberry Ice Cream",
+            "ชื่อที่มี 5% ต่อท้ายมี 5 กลิ่น คือ Cola 5% · Double Mint 5% · Grape 5% · Watermelon 5% และ Copico Coffee 5% ส่วน Copico Coffee มีให้เลือกแบบเดียวคือ Copico Coffee 5% ก่อนกดเลือก ลองดูชื่อในรายการอีกครั้งให้ตรงกับแบบที่ต้องการ",
+          ],
+        },
+        {
+          heading: "RELX Diva 30K เทียบกับรุ่นอื่นของ RELX",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ RELX ลงสเปกไว้เอง ลองดู [RELX Smash Go 12K](/products/relx-smash-go-12k) ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน RELX ระบุไว้ว่าสูบได้สูงสุด 12,000 พัฟ และใช้แบต 400mAh",
+            "ถ้าอยากเทียบกลิ่นกับ RELX อีกรุ่น [RELX Sparta 20K](/products/relx-sparta-20k) ก็มีกลิ่นชื่อเดียวกันอย่าง Cola กับ Mineral Water",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The RELX Diva 30K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with other RELX models.",
+      sections: [
+        {
+          heading: "Which RELX Diva 30K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name, not RELX's own.",
+            "Mint has Double Mint and Spearmint.",
+            "Fruit has seven: Fresh Melon, Grape, Grape Aloe, Mango Passion Fruit, Mix Berry, Orange Splash and Watermelon.",
+            "Sweets and drinks are Cola, Mineral Water and Strawberry Ice Cream.",
+            "Five names end in 5%: Cola 5%, Double Mint 5%, Grape 5%, Watermelon 5% and Copico Coffee 5%. Copico Coffee comes only as Copico Coffee 5%. Check the name in the list before you choose.",
+          ],
+        },
+        {
+          heading: "How does the RELX Diva 30K compare with other RELX models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by RELX itself, look at the [RELX Smash Go 12K](/products/relx-smash-go-12k): a disposable rated for up to 12,000 puffs, with a 400mAh battery.",
+            "For another RELX with some of the same flavour names, the [RELX Sparta 20K](/products/relx-sparta-20k) also has Cola and Mineral Water.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "RELX Diva 30K 口味类型很多。下面由本店把口味分好组方便挑选，并和 RELX 其他型号做个比较。",
+      sections: [
+        {
+          heading: "RELX Diva 30K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理，并非 RELX 官方分类。",
+            "薄荷类有 Double Mint 和 Spearmint。",
+            "水果类有 7 款：Fresh Melon、Grape、Grape Aloe、Mango Passion Fruit、Mix Berry、Orange Splash 和 Watermelon。",
+            "糖果和饮品类有 Cola、Mineral Water 和 Strawberry Ice Cream。",
+            "名称以 5% 结尾的有 5 款：Cola 5%、Double Mint 5%、Grape 5%、Watermelon 5% 和 Copico Coffee 5%，其中 Copico Coffee 只有 Copico Coffee 5% 一种。选择前请核对列表里的名称。",
+          ],
+        },
+        {
+          heading: "RELX Diva 30K 和 RELX 其他型号比怎么样？",
+          paragraphs: [
+            "想选 RELX 官方公布规格的型号，可以看看 [RELX Smash Go 12K](/products/relx-smash-go-12k)。这款一次性设备 RELX 标称最高 12,000 口，电池 400mAh。",
+            "想和 RELX 另一款比较口味，[RELX Sparta 20K](/products/relx-sparta-20k) 也有同名的 Cola 和 Mineral Water。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), unbranded disposables with no maker site (NEXAS Booster 16K · Foli Cool Bar 15K · 86 Bar 20K), the #1339 pattern:
+  // no new product fact. Flavour names = each page's own list (sources in src/data/products/unbranded.ts); groups = the shop's, from the
+  // words in each name. M Bar 9K figures = its verified rows (salthub.com). Left out per page: what its tagline / shortDescription / feature
+  // cards already say (NEXAS: lights + 3-step airflow + figures; 86 Bar: mesh + figures; Foli: 15,000 + the flavour count) and every number
+  // for these models. en/zh leave out the guide link (/guides/how-long-a-disposable-lasts is thaiOnly). Evidence:
+  // _incoming/ก6-gates/unbranded-source/. Legacy pages → no article FAQ.
+  "nexas-booster-16k": {
+    th: {
+      lede: "NEXAS Booster 16K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "NEXAS Booster 16K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Mint Extra ส่วนสายชามี Oolong Tea",
+            "สายผลไม้มี 11 กลิ่น คือ Grape Ice · Grape Lychee · Green Apple · Lychee Ice · Mix Berries · Peach Strawberry · Strawberry Banana · Strawberry Ice · Strawberry Watermelon · Watermelon Ice และ Yoyo Grape",
+            "แนวเครื่องดื่มมี Cola Ice · Cola Lemon · Green Soda · Mineral Water และ Red Soda",
+          ],
+        },
+        {
+          heading: "NEXAS Booster 16K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และใช้นิโคตินแบบ salt nic ความเข้มข้น 30mg",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้ คือ Grape Lychee และ Peach Strawberry ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The NEXAS Booster 16K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which NEXAS Booster 16K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Mint Extra, and tea has Oolong Tea.",
+            "Fruit has eleven: Grape Ice, Grape Lychee, Green Apple, Lychee Ice, Mix Berries, Peach Strawberry, Strawberry Banana, Strawberry Ice, Strawberry Watermelon, Watermelon Ice and Yoyo Grape.",
+            "Drinks are Cola Ice, Cola Lemon, Green Soda, Mineral Water and Red Soda.",
+          ],
+        },
+        {
+          heading: "How does the NEXAS Booster 16K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with 30mg salt nic.",
+            "The M Bar 9K also shares two flavour names with this one, Grape Lychee and Peach Strawberry, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "NEXAS Booster 16K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "NEXAS Booster 16K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint Extra，茶类有 Oolong Tea。",
+            "水果类有 11 款：Grape Ice、Grape Lychee、Green Apple、Lychee Ice、Mix Berries、Peach Strawberry、Strawberry Banana、Strawberry Ice、Strawberry Watermelon、Watermelon Ice 和 Yoyo Grape。",
+            "饮品类有 Cola Ice、Cola Lemon、Green Soda、Mineral Water 和 Red Soda。",
+          ],
+        },
+        {
+          heading: "NEXAS Booster 16K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，使用 30mg 盐尼古丁。",
+            "M Bar 9K 也有和这款同名的 Grape Lychee 和 Peach Strawberry，喜欢这两种口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  "foli-bar-15k": {
+    th: {
+      lede: "Foli Cool Bar 15K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "Foli Cool Bar 15K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มีกลิ่น Double Mint",
+            "สายผลไม้มี 9 กลิ่น คือ Apple Aloe · Blueberry · Grape · Grape Aloe · Lychee Ice · Mix Berry · Peach · Strawberry Ice และ Watermelon",
+            "แนวเครื่องดื่มมี Cola Ice กับ Red Bull Ice",
+          ],
+        },
+        {
+          heading: "Foli Cool Bar 15K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ ใช้แบต 600mAh ที่ชาร์จผ่าน USB-C และปรับลมได้",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้หลายกลิ่น เช่น Apple Aloe · Grape Aloe · Peach และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Foli Cool Bar 15K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which Foli Cool Bar 15K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "For mint, there's Double Mint.",
+            "Fruit has nine: Apple Aloe, Blueberry, Grape, Grape Aloe, Lychee Ice, Mix Berry, Peach, Strawberry Ice and Watermelon.",
+            "Drinks are Cola Ice and Red Bull Ice.",
+          ],
+        },
+        {
+          heading: "How does the Foli Cool Bar 15K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with adjustable airflow and a 600mAh battery that charges over USB-C.",
+            "The M Bar 9K also shares several flavour names with this one, such as Apple Aloe, Grape Aloe, Peach and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Foli Cool Bar 15K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "Foli Cool Bar 15K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Double Mint。",
+            "水果类有 9 款：Apple Aloe、Blueberry、Grape、Grape Aloe、Lychee Ice、Mix Berry、Peach、Strawberry Ice 和 Watermelon。",
+            "饮品类有 Cola Ice 和 Red Bull Ice。",
+          ],
+        },
+        {
+          heading: "Foli Cool Bar 15K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，电池 600mAh，USB-C 充电，气流可调。",
+            "M Bar 9K 也有好几款和这款同名的口味，例如 Apple Aloe、Grape Aloe、Peach 和 Watermelon，喜欢这些口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  "86-bar-20k": {
+    th: {
+      lede: "86 Bar 20K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับ M Bar 9K",
+      sections: [
+        {
+          heading: "86 Bar 20K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Mint Freeze กับ Watermelon Mint ส่วนสายชามี Oishi Green Tea",
+            "สายผลไม้มี 8 กลิ่น คือ Coco Pine · Grape · Lychee · Magic Mango · Mixberry · Strawberry Kiwi · Watermelon และ Watermelon Strawberry",
+            "แนวเครื่องดื่มมี Lemon Cola ส่วน Blue Ice ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงแยกไว้ต่างหาก",
+          ],
+        },
+        {
+          heading: "86 Bar 20K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Bar 9K](/products/m-bar-9k) ของ SALTHUB ซึ่งเป็นพอตใช้แล้วทิ้งเหมือนกัน SALTHUB ระบุไว้ว่าสูบได้สูงสุด 9,000 พัฟ และปรับลมได้",
+            "M Bar 9K ก็มีกลิ่นชื่อเดียวกับรุ่นนี้หลายกลิ่น เช่น Blue Ice · Mixberry · Strawberry Kiwi และ Watermelon ถ้าชอบกลิ่นเหล่านี้ ก็เลือกได้ทั้งสองรุ่น",
+            "พอตใช้แล้วทิ้งหนึ่งเครื่องใช้ได้กี่วันขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The 86 Bar 20K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with the M Bar 9K.",
+      sections: [
+        {
+          heading: "Which 86 Bar 20K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Mint Freeze and Watermelon Mint, and tea has Oishi Green Tea.",
+            "Fruit has eight: Coco Pine, Grape, Lychee, Magic Mango, Mixberry, Strawberry Kiwi, Watermelon and Watermelon Strawberry.",
+            "For drinks, there's Lemon Cola. Blue Ice's name doesn't say what style it is, so we've kept it apart.",
+          ],
+        },
+        {
+          heading: "How does the 86 Bar 20K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Bar 9K](/products/m-bar-9k), also a disposable. SALTHUB rates it for up to 9,000 puffs, with adjustable airflow.",
+            "The M Bar 9K also shares several flavour names with this one, such as Blue Ice, Mixberry, Strawberry Kiwi and Watermelon, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "86 Bar 20K 口味类型很多。下面由本店把口味分好组方便挑选，并和 M Bar 9K 做个比较。",
+      sections: [
+        {
+          heading: "86 Bar 20K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint Freeze 和 Watermelon Mint，茶类有 Oishi Green Tea。",
+            "水果类有 8 款：Coco Pine、Grape、Lychee、Magic Mango、Mixberry、Strawberry Kiwi、Watermelon 和 Watermelon Strawberry。",
+            "饮品类有 Lemon Cola。Blue Ice 的名称看不出口味类型，所以单独列出。",
+          ],
+        },
+        {
+          heading: "86 Bar 20K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Bar 9K](/products/m-bar-9k)，同样是一次性设备。SALTHUB 标称最高 9,000 口，气流可调。",
+            "M Bar 9K 也有好几款和这款同名的口味，例如 Blue Ice、Mixberry、Strawberry Kiwi 和 Watermelon，喜欢这些口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), Vazer Reload 15K — no maker page (vazerpod.com does not resolve), so the #1339 pattern: no new product fact.
+  // Flavour names = this page's own list (the brand's chart, 3-shop sources in src/data/products/unbranded.ts); groups = the shop's, from the
+  // words in each name; Malibu's name gives no style, so it stays ungrouped. M Switch Kit = its verified rows (salthub.com/m-switch-kit/).
+  // Left out: the swap head (tagline + shortDescription + "swap" card already say it), mesh/airflow ("air" card) and every number for this
+  // model ("figures" card). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-reload-15k": {
+    th: {
+      lede: "Vazer Reload 15K มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเทียบให้ดูกับรุ่นใกล้เคียง",
+      sections: [
+        {
+          heading: "Vazer Reload 15K กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มี Cool Mint",
+            "สายผลไม้มี 9 กลิ่น คือ Apple Fuji · Blueberry · Grape Lychee · Grape Osaka · Ice Grape · Lychee · Mixberry · Peach Paradise และ Watermelon Slushie",
+            "แนวขนมและเครื่องดื่มมี Lemon Soda · Original Cola · Root Beer และ Strawberry Candy",
+            "ส่วน Malibu ชื่อกลิ่นไม่ได้บอกว่าเป็นแนวไหน ร้านจึงแยกไว้ต่างหาก",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K เทียบกับรุ่นอื่น",
+          paragraphs: [
+            "ถ้าอยากได้รุ่นที่ผู้ผลิตลงสเปกไว้เอง ลองดู [M Switch Kit](/products/m-switch-kit) ของ SALTHUB ตามที่ SALTHUB ระบุไว้ ตัวเครื่องใช้ซ้ำได้ และมีจอบอกระดับแบตทั้งตอนกำลังชาร์จและตอนชาร์จเต็ม",
+            "M Switch Kit ก็มี Grape Lychee และ Mixberry เหมือนรุ่นนี้ ถ้าชอบสองกลิ่นนี้ ก็เลือกได้ทั้งสองรุ่น",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "The Vazer Reload 15K offers flavours in several styles. Below, we sort them into groups to make choosing easier, and compare it with a similar model.",
+      sections: [
+        {
+          heading: "Which Vazer Reload 15K flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "Mint has Cool Mint.",
+            "Fruit has nine: Apple Fuji, Blueberry, Grape Lychee, Grape Osaka, Ice Grape, Lychee, Mixberry, Peach Paradise and Watermelon Slushie.",
+            "Sweets and drinks are Lemon Soda, Original Cola, Root Beer and Strawberry Candy.",
+            "Malibu's name doesn't say what style it is, so we haven't put it in a group.",
+          ],
+        },
+        {
+          heading: "How does the Vazer Reload 15K compare with other models?",
+          paragraphs: [
+            "If you'd prefer a model with specs published by its maker, look at SALTHUB's [M Switch Kit](/products/m-switch-kit). SALTHUB lists a reusable device with a battery display that shows while charging and when fully charged.",
+            "The M Switch Kit also shares two flavour names with this one, Grape Lychee and Mixberry, so if those are your flavours, you'll find them on both.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer Reload 15K 口味类型很多。下面由本店把口味分好组方便挑选，并和相近的型号做个比较。",
+      sections: [
+        {
+          heading: "Vazer Reload 15K 哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Cool Mint。",
+            "水果类有 9 款：Apple Fuji、Blueberry、Grape Lychee、Grape Osaka、Ice Grape、Lychee、Mixberry、Peach Paradise 和 Watermelon Slushie。",
+            "糖果和饮品类有 Lemon Soda、Original Cola、Root Beer 和 Strawberry Candy。",
+            "Malibu 的名称看不出口味类型，所以没有归入任何一组。",
+          ],
+        },
+        {
+          heading: "Vazer Reload 15K 和其他型号比怎么样？",
+          paragraphs: [
+            "想选厂家公布规格的型号，可以看看 SALTHUB 的 [M Switch Kit](/products/m-switch-kit)。SALTHUB 标明主机可重复使用，并有电量显示屏，充电中和充满时都会显示。",
+            "M Switch Kit 也有和这款同名的 Grape Lychee 和 Mixberry，喜欢这两种口味的话，两个型号都能选。",
+          ],
+        },
+      ],
+    },
+  },
+  // Owner task ก6 (09/11), Vazer One pod — same basis as Vazer Reload 15K above (flavour names = this page's list, from the maker's posters
+  // as sold by maneevp.com; groups = the shop's). "Pod only" = its verified format row. Vazer Reload = a device with a pre-filled head (its
+  // own tagline). "Not confirmed to fit the Reload body" = the shop's state of knowledge, no source says either way. Left out: the count of
+  // flavours (shortDescription). Evidence: _incoming/ก6-gates/vazer-source/. Legacy page → no article FAQ.
+  "vazer-one-pod": {
+    th: {
+      lede: "หัวพอต Vazer One มีกลิ่นให้เลือกหลายแนว ด้านล่างร้านจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น และเล่าให้ฟังว่าต่างจาก Vazer Reload 15K ตรงไหน",
+      sections: [
+        {
+          heading: "หัวพอต Vazer One กลิ่นไหนดี",
+          paragraphs: [
+            "ลองเริ่มจากสายที่ชอบก่อนก็ได้ สายด้านล่างนี้เป็นการจัดของร้านเอง โดยดูจากคำในชื่อกลิ่นแต่ละชื่อ",
+            "สายมินต์มีกลิ่น Mint",
+            "สายผลไม้มี 12 กลิ่น คือ Blueberry · Grape · Grapefruit · Lychee · Mango · Melon · Mix Berries · Peach · Pineapple · Raspberry · Strawberry และ Watermelon",
+            "แนวเครื่องดื่มมี Cola · Cola Lemon · Lemon Soda และ Rootbeer",
+            "แนวขนมและของหวานมี Gummy Bear · Milk Honey · Strawberry Ice-Cream และ Vanilla Custard",
+          ],
+        },
+        {
+          heading: "Vazer One กับ Vazer Reload 15K ต่างกันยังไง",
+          paragraphs: [
+            "Vazer One ในหน้านี้เป็นหัวพอตอย่างเดียว ไม่มีตัวเครื่องมาด้วย ส่วน [Vazer Reload 15K](/products/vazer-reload-15k) มาเป็นตัวเครื่องพร้อมหัวพอตที่เปลี่ยนได้",
+            "ร้านยังไม่มีข้อมูลยืนยันว่าหัวพอต Vazer One ใส่กับตัวเครื่อง Vazer Reload ได้หรือไม่ ก่อนสั่งลองเช็คให้แน่ใจว่าเครื่องที่ใช้อยู่ใส่หัวพอต Vazer One ได้",
+            "สองรุ่นนี้ยังมีกลิ่นชื่อเดียวกันด้วย เช่น Blueberry · Lemon Soda และ Lychee",
+          ],
+        },
+      ],
+    },
+    en: {
+      lede: "Vazer One pods come in flavours of several styles. Below, we sort them into groups to make choosing easier, and explain how they differ from the Vazer Reload 15K.",
+      sections: [
+        {
+          heading: "Which Vazer One pod flavour should I start with?",
+          paragraphs: [
+            "Start with the kind you like. The groups are ours, from the words in each name.",
+            "For mint, there's Mint.",
+            "Fruit has twelve: Blueberry, Grape, Grapefruit, Lychee, Mango, Melon, Mix Berries, Peach, Pineapple, Raspberry, Strawberry and Watermelon.",
+            "Drinks are Cola, Cola Lemon, Lemon Soda and Rootbeer.",
+            "Sweets and desserts are Gummy Bear, Milk Honey, Strawberry Ice-Cream and Vanilla Custard.",
+          ],
+        },
+        {
+          heading: "How is the Vazer One different from the Vazer Reload 15K?",
+          paragraphs: [
+            "The Vazer One on this page is the pod only, with no device. The [Vazer Reload 15K](/products/vazer-reload-15k) comes as a device with a pod you can change.",
+            "We can't confirm that a Vazer One pod fits the Vazer Reload device, so before you order, check that the device you use takes Vazer One pods.",
+            "The two also share some flavour names, such as Blueberry, Lemon Soda and Lychee.",
+          ],
+        },
+      ],
+    },
+    zh: {
+      lede: "Vazer One 烟弹口味类型很多。下面由本店把口味分好组方便挑选，并说明它和 Vazer Reload 15K 有什么区别。",
+      sections: [
+        {
+          heading: "Vazer One 烟弹哪个口味好？",
+          paragraphs: [
+            "可以先从喜欢的类型选起。分组由本店按口味名称里的词整理。",
+            "薄荷类有 Mint。",
+            "水果类有 12 款：Blueberry、Grape、Grapefruit、Lychee、Mango、Melon、Mix Berries、Peach、Pineapple、Raspberry、Strawberry 和 Watermelon。",
+            "饮品类有 Cola、Cola Lemon、Lemon Soda 和 Rootbeer。",
+            "糖果和甜点类有 Gummy Bear、Milk Honey、Strawberry Ice-Cream 和 Vanilla Custard。",
+          ],
+        },
+        {
+          heading: "Vazer One 和 Vazer Reload 15K 有什么区别？",
+          paragraphs: [
+            "本页的 Vazer One 只有烟弹，不含主机；[Vazer Reload 15K](/products/vazer-reload-15k) 则是主机加可更换的烟弹。",
+            "本店还无法确认 Vazer One 烟弹能否装在 Vazer Reload 主机上，下单前请先确认您所用的主机能装 Vazer One 烟弹。",
+            "两款也有一些同名口味，例如 Blueberry、Lemon Soda 和 Lychee。",
+          ],
+        },
+      ],
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

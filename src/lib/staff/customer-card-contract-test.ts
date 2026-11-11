@@ -23,6 +23,7 @@ const order = (orderNumber: string, status: CardOrder["status"], total: number, 
   address: `ที่อยู่ของ ${recipientName}`,
   province: "กรุงเทพมหานคร",
   trackingNumber: null,
+  channel: "web",
 });
 
 const card = customerCard(

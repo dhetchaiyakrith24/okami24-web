@@ -12,8 +12,8 @@ function check(name: string, ok: boolean): void {
 }
 
 const NOW = Date.parse("2026-11-08T10:00:00+07:00");
-const day = (date: string, part: Partial<DaySales>): DaySales => ({ date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], slips: [], unclear: [], heldAsWeb: [], ...part });
-const order = (createdAt: string, total: number) => ({ orderNumber: createdAt, runNumber: null, total, createdAt, hasSlipRef: true });
+const day = (date: string, part: Partial<DaySales>): DaySales => ({ date, webSatang: 0, lineSatang: 0, totalSatang: 0, orders: [], lineOrders: [], slips: [], unclear: [], heldAsWeb: [], ...part });
+const order = (createdAt: string, total: number) => ({ orderNumber: createdAt, runNumber: null, total, createdAt, hasSlipRef: true, channel: "web" as const, sentByUs: false });
 const slip = (transferredAt: string, amountSatang: number) => ({ transRef: transferredAt, amountSatang, transferredAt, receiverStatus: "match" });
 
 const blank = (i: number) => day(`2026-11-0${i}`, {});
@@ -24,6 +24,8 @@ const lastWeek = day("2026-11-01", {
 const today = day("2026-11-08", { webSatang: 30_000, totalSatang: 30_000 });
 const hour = sameHourLastWeek([today, blank(7), blank(6), blank(5), blank(4), blank(3), blank(2), lastWeek], NOW);
 check("last week counts only up to this hour", hour?.thenSatang === 20_000);
+const lastWeekKeyed = day("2026-11-01", { lineOrders: [{ ...order("2026-11-01T09:00:00+07:00", 50), channel: "line" }, { ...order("2026-11-01T21:00:00+07:00", 70), channel: "line" }] });
+check("a LINE order keyed on the web counts as LINE money up to this hour", sameHourLastWeek([today, blank(7), blank(6), blank(5), blank(4), blank(3), blank(2), lastWeekKeyed], NOW)?.thenSatang === 5_000);
 check("the change is a whole percent", hour?.percent === 50);
 check("nothing last week gives no percent", sameHourLastWeek([today, blank(7), blank(6), blank(5), blank(4), blank(3), blank(2), blank(1)], NOW)?.percent === null);
 check("under 8 days gives no comparison", sameHourLastWeek([today], NOW) === null);

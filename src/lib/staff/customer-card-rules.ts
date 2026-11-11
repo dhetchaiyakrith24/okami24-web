@@ -6,7 +6,7 @@
  * "a customer finds their orders by PHONE NUMBER ONLY"). The recipient on an order may differ; it is shown, never merged on.
  * PAID = the statuses daily sales counts (staff confirmed the money, not cancelled) — so the card and /staff/sales agree.
  * WAITING = the customer has not paid or staff have not checked the slip yet. Neither is money received.
- * LINE orders join the card once staff can key them into the web (ก11 step 3–4); until then every order here is a web order.
+ * LINE orders staff keyed on /staff/line-order (migration 0026) sit beside the web ones, marked by `channel`.
  * Reads only. No cost and no profit (owner 04/11: those are the owner's alone; admins open this card too).
  */
 import type { OrderStatus } from "@/lib/commerce/order-status";
@@ -26,6 +26,7 @@ export interface CardOrder {
   address: string;
   province: string;
   trackingNumber: string | null;
+  channel: "web" | "line";
 }
 
 export interface CustomerCard {

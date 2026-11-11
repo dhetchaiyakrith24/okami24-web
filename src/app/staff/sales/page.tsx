@@ -32,6 +32,8 @@ const TIME = new Intl.DateTimeFormat("th-TH", { timeZone: "Asia/Bangkok", hour: 
 const dayLabel = (date: string) => DAY_LABEL.format(new Date(`${date}T12:00:00+07:00`));
 const timeOf = (iso: string) => TIME.format(new Date(iso));
 const sum = (days: DaySales[], pick: (d: DaySales) => number) => days.reduce((n, d) => n + pick(d), 0);
+/** LINE refunds already off the day's LINE figure (refund-rules.ts applyRefunds). */
+const refundedOf = (day: DaySales) => day.slips.reduce((n, s) => n + (s.refundedSatang ?? 0), 0);
 
 /** Designer 07/11: today is the one number on the page that wins; no box, so it does not read as one more link box. */
 function Today({ day }: { day: DaySales }) {
@@ -75,13 +77,16 @@ function SlipRow({ slip }: { slip: SalesSlip }) {
       <span className="min-w-0 truncate tabular-nums">
         {timeOf(slip.transferredAt)} น. <span className="text-xs text-foreground-dim">อ้างอิง …{slip.transRef.slice(-6)}</span>
       </span>
-      <span className="shrink-0 tabular-nums text-foreground">{formatSatang(slip.amountSatang)}</span>
+      <span className="flex shrink-0 flex-col items-end tabular-nums text-foreground">
+        {formatSatang(slip.amountSatang + (slip.refundedSatang ?? 0))}
+        {slip.refundedSatang ? <span className="text-xs text-unverified">คืนแล้ว {formatSatang(slip.refundedSatang)}</span> : null}
+      </span>
     </li>
   );
 }
 
 function DayRow({ day, today }: { day: DaySales; today: boolean }) {
-  const empty = day.orders.length + day.slips.length + day.unclear.length + day.heldAsWeb.length === 0;
+  const empty = day.orders.length + day.lineOrders.length + day.slips.length + day.unclear.length + day.heldAsWeb.length === 0;
   const name = `${dayLabel(day.date)}${today ? " · วันนี้" : ""}`;
   if (empty) {
     return (
@@ -98,6 +103,7 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold text-foreground">{name}</span>
             {day.unclear.length > 0 && <span className="text-xs text-unverified">ไม่แน่ใจ {day.unclear.length} ใบ</span>}
+            {refundedOf(day) > 0 && <span className="text-xs text-foreground-muted">หักคืนเงิน LINE {formatSatang(refundedOf(day))}</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">
@@ -115,6 +121,21 @@ function DayRow({ day, today }: { day: DaySales; today: boolean }) {
           {day.orders.length > 0 && (
             <Rows title={`ออเดอร์เว็บ ${day.orders.length} รายการ`}>
               {day.orders.map((o) => (
+                <li key={o.orderNumber}>
+                  <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex min-h-9 items-baseline justify-between gap-3 py-1 hover:text-foreground">
+                    <span className="min-w-0 truncate tabular-nums">
+                      {timeOf(o.createdAt)} น. {formatRunNumber(o.runNumber) ?? o.orderNumber}
+                    </span>
+                    <span className="shrink-0 tabular-nums text-foreground">{formatSatang(o.total * 100)}</span>
+                  </Link>
+                </li>
+              ))}
+            </Rows>
+          )}
+          {/* Owner list ก11: LINE orders staff keyed on the web — their slips are inside the order, not in the slip list below. */}
+          {day.lineOrders.length > 0 && (
+            <Rows title={`ออเดอร์ LINE ที่คีย์ในหลังบ้าน ${day.lineOrders.length} รายการ`}>
+              {day.lineOrders.map((o) => (
                 <li key={o.orderNumber}>
                   <Link href={`/staff/orders/${encodeURIComponent(o.orderNumber)}`} className="flex min-h-9 items-baseline justify-between gap-3 py-1 hover:text-foreground">
                     <span className="min-w-0 truncate tabular-nums">
@@ -194,8 +215,8 @@ export default async function StaffSalesPage() {
       </section>
 
       <p className="text-sm leading-relaxed text-foreground-muted">
-        ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว นับตามวันที่สั่ง ไม่รวมออเดอร์ที่ยกเลิก · ยอด LINE = สลิปที่เข้าบัญชีร้าน นับตามวันที่โอน
-        ไม่รวมสลิปของออเดอร์เว็บ
+        ยอดเว็บ = ออเดอร์ที่ยืนยันยอดเงินแล้ว นับตามวันที่สั่ง ไม่รวมออเดอร์ที่ยกเลิก · ยอด LINE = ออเดอร์ LINE ที่คีย์ในหลังบ้าน (นับตามวันที่คีย์)
+        กับสลิปที่เข้าบัญชีร้านแต่ยังไม่ผูกกับออเดอร์ไหน (นับตามวันที่โอน) · สลิปหนึ่งใบนับครั้งเดียว
       </p>
       {ownerAreaEnabled() && (
         <Link href="/staff/owner" className="inline-flex min-h-11 w-fit items-center text-sm text-foreground-dim hover:text-foreground">

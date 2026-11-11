@@ -32,6 +32,14 @@ export interface StaffOrderRow {
   slipVerdict: SlipVerdict | null;
   /** The shop's running number (migration 0017) — null until the payment is confirmed. */
   runNumber: number | null;
+  /** Web or keyed from LINE (migration 0026) — the admin home says which, and a LINE order goes to Shipnity only while the
+   *  owner's switch is on. */
+  channel: "web" | "line";
+  /** The planned carrier (migration 0011), null when none was picked yet. */
+  carrier: string | null;
+  /** When the order entered its current status (the latest history row for it) — null when the history has none. The admin
+   *  home counts a step's wait from here ("ส่งคลังแล้ว 3 วัน"). */
+  since: string | null;
 }
 
 /** A job box of the staff home (src/lib/staff/jobs.ts — owner 26/10, queue B3), "todo" = the three to-do jobs together,
@@ -55,9 +63,10 @@ function orderSql(): string {
 export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
   const rows = getDb()
     .prepare(
-      `SELECT o.order_number, o.status, o.total, o.created_at, o.run_number, a.recipient_name, a.province,
+      `SELECT o.order_number, o.status, o.total, o.created_at, o.run_number, o.channel, o.carrier, a.recipient_name, a.province,
               (SELECT COALESCE(SUM(quantity), 0) FROM order_items i WHERE i.order_id = o.id) AS item_count,
-              (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict
+              (SELECT slip_verdict FROM order_payment_submissions s WHERE s.order_id = o.id ORDER BY s.id DESC LIMIT 1) AS slip_verdict,
+              (SELECT MAX(h.created_at) FROM order_status_history h WHERE h.order_id = o.id AND h.status = o.status) AS since
          FROM orders o JOIN order_shipping_addresses a ON a.order_id = o.id
         WHERE ${filterSql(filter)} AND NOT ${AUTO_CANCELLED_SQL}
         ORDER BY ${orderSql()} LIMIT 200`
@@ -72,6 +81,9 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     item_count: number;
     slip_verdict: SlipVerdict | null;
     run_number: number | null;
+    channel: string | null;
+    carrier: string | null;
+    since: string | null;
   }[];
   return rows.map((r) => ({
     orderNumber: r.order_number,
@@ -83,6 +95,9 @@ export function listStaffOrders(filter: StaffOrderFilter): StaffOrderRow[] {
     itemCount: r.item_count,
     slipVerdict: r.slip_verdict,
     runNumber: r.run_number,
+    channel: r.channel === "line" ? "line" : "web",
+    carrier: r.carrier,
+    since: r.since,
   }));
 }
 
@@ -98,6 +113,12 @@ export function countByJob(): Record<StaffJob, number> {
 
 export interface StaffOrderDetail extends OrderDetail {
   customerPhone: string;
+  /** Where the order came from (migration 0026): "line" = staff keyed it on /staff/line-order. */
+  channel: "web" | "line";
+  /** The name typed by whoever keyed a LINE order; null for web orders. */
+  keyedBy: string | null;
+  /** A special price (migration 0028): how much less than the catalogue total the customer pays, who gave it, why. */
+  discount: { amount: number; by: string | null; reason: string | null } | null;
   trackingNumber: string | null;
   /** The customer's optional note to the shop from the review step (cart UX batch C) — staff page only. */
   customerNote: string | null;
@@ -125,8 +146,17 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   if (!order) return null;
   const db = getDb();
   const extra = db
-    .prepare("SELECT o.tracking_number, o.customer_note, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
-    .get(order.id) as { tracking_number: string | null; customer_note: string | null; phone: string };
+    .prepare("SELECT o.tracking_number, o.customer_note, o.channel, o.keyed_by, o.discount, o.discount_by, o.discount_reason, c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?")
+    .get(order.id) as {
+    tracking_number: string | null;
+    customer_note: string | null;
+    channel: string;
+    keyed_by: string | null;
+    discount: number | null;
+    discount_by: string | null;
+    discount_reason: string | null;
+    phone: string;
+  };
   const slipRow = db
     .prepare(
       "SELECT slip_verdict, slip_reasons, slip_trans_ref, slip_amount_satang, submitted_at, proof_image_path, slip_image_deleted_at FROM order_payment_submissions WHERE order_id = ? ORDER BY id DESC LIMIT 1"
@@ -158,6 +188,9 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
   return {
     ...order,
     customerPhone: extra.phone,
+    channel: extra.channel === "line" ? "line" : "web",
+    keyedBy: extra.keyed_by,
+    discount: extra.discount ? { amount: extra.discount, by: extra.discount_by, reason: extra.discount_reason } : null,
     trackingNumber: extra.tracking_number,
     customerNote: extra.customer_note,
     slip: slipRow
@@ -181,6 +214,7 @@ export function getStaffOrder(orderNumber: string): StaffOrderDetail | null {
       phone: a.phone,
       address: `${trimLine1(a.line1, a)} ต.${a.subdistrict} อ.${a.district} จ.${a.province} ${a.postalCode}`,
       carrier: SHIPNITY_CARRIER_NAME[toStaffCarrierId(order.carrier) ?? pickCarrier(a.postalCode)],
+      channel: extra.channel === "line" ? "line" : "web",
     }),
   };
 }

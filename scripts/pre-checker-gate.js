@@ -6,6 +6,8 @@
 //
 //   checked here (the branch the checker will read, diff origin/main...HEAD)
 //     branch     not main, not detached, contains origin/main                           (L6)
+//                — or is behind it by docs-only commits alone (13.7 docs list minus THAI_STYLE.md, which the words row
+//                reads): verify stamps a sha, so a docs merge on main must not force a re-verify (10/11: 3 re-runs)
 //     tree       nothing uncommitted or untracked — the checker reads git, not the folder
 //     pushed     origin/<branch> = HEAD — the `Checker:` line names a sha GitHub has (13.4)
 //     hooks      core.hooksPath = .githooks — the commit/push gates are on
@@ -13,6 +15,8 @@
 //     locked     render.yaml · .env* · ordering-mode.ts · thai-typography.ts only with a 【แตะได้】 line (13.7 · L8)
 //     words      added src/ lines carry no forbidden word — THAI_STYLE §3 "ห้ามใช้" column + the grep groups of skill
 //                thai-check gates 4–5 (read from those files every run, never copied here)          (L9)
+//     raw        no raw U+00A0 / U+2060 anywhere under src/ docs/ scripts/ (`node scripts/thai-raw-chars-check.js` = 0 —
+//                skill thai-check gates 2/3 · THAI_STYLE §5(ฉ); 10/11 two PRs passed the gate with a raw U+2060 and the checker caught it)
 //     full       a PR that reaches the site has a clean `verify:catalog --full` pass of this exact commit (build + leak
 //                check — moved from GitHub to the test machine 21/10; run it in the PR's worktree, never the main folder)
 //     client     an added import in a "use client" file pulls no whole table into the browser
@@ -107,9 +111,17 @@ const JUNK = [
 ];
 
 // ---------------------------------------------------------------- the checks (pure: state in → problems out)
+// a file whose change on main cannot affect this branch's verify/gate result (13.7 docs-only list, minus THAI_STYLE.md)
+const DOCS_BEHIND_OK = (f) => /^(docs\/.+|\.claude\/(LESSONS\.md|LESSONS-images\.md|memory\/.+))$/.test(f) && f !== "docs/THAI_STYLE.md";
 function checkBranch(s) {
   if (!s.branch) return ["detached HEAD — the checker needs a branch (git switch -c <name>)"];
   if (/^(main|master)$/.test(s.branch)) return [`on ${s.branch} — a PR comes from a work branch (TEAM_RULES 13.7)`];
+  // not for a PR that writes a locked file: the locked row reads the open round's 【แตะได้】 lines from HANDOFF §16 +
+  // docs/rounds/ in THIS tree (round-file.js), and a docs merge on main may have changed them (checker 10/11)
+  if (!s.containsMain && s.behindFiles.length && s.behindFiles.every(DOCS_BEHIND_OK) && !s.files.some((f) => lockedName(f))) {
+    s.notes.push(`behind origin/main by docs-only commits (${s.behindFiles.length} file(s): ${s.behindFiles.slice(0, 3).join(" · ")}${s.behindFiles.length > 3 ? " …" : ""}) — no merge needed`);
+    return [];
+  }
   if (!s.containsMain) return [`${s.branch} does not contain origin/main — merge origin/main first (skill round-open step 2)`];
   return [];
 }
@@ -138,6 +150,8 @@ function checkFull(s) {
       `run "npx tsx scripts/verify-catalog.ts --full" in the PR's test worktree on this commit (TEAM_RULES 13.5 #2 (ก))`,
   ];
 }
+// raw U+00A0 / U+2060: the render mechanism inserts them; a raw one in the repo always fails (10/11 #1357 #1359)
+const checkRaw = (s) => s.rawHits.map((h) => `${h} — write it as \\u00A0 / \\u2060 in code or drop it (skill thai-check gates 2/3 · THAI_STYLE §5(ฉ))`);
 function checkWords(s) {
   const words = s.words.map((w) => [w, wordRe(w)]);
   const out = [];
@@ -190,7 +204,7 @@ function checkClient(s) {
   }
   return out;
 }
-const CHECKS = { branch: checkBranch, tree: checkTree, pushed: checkPushed, hooks: checkHooks, paths: checkPaths, locked: checkLocked, full: checkFull, words: checkWords, client: checkClient };
+const CHECKS = { branch: checkBranch, tree: checkTree, pushed: checkPushed, hooks: checkHooks, paths: checkPaths, locked: checkLocked, full: checkFull, raw: checkRaw, words: checkWords, client: checkClient };
 
 // ---------------------------------------------------------------- read the real state
 function addedLines(diff) {
@@ -209,6 +223,12 @@ function fullStamped(sha, cwd = ROOT) {
   const common = tryGit(["rev-parse", "--git-common-dir"], { cwd });
   return !!(sha && common && fs.existsSync(path.join(path.resolve(cwd, common), "verify-full", sha)));
 }
+function rawHits(cwd = ROOT) {
+  const r = spawnSync(process.execPath, [path.join(cwd, "scripts", "thai-raw-chars-check.js")], { cwd, encoding: "utf8" });
+  if (r.status === 0) return [];
+  const hits = (r.stdout || "").split(/\r?\n/).filter((l) => /:\d+\s+\d+× raw/.test(l)).map((l) => l.trim());
+  return hits.length ? hits : [`thai-raw-chars-check.js exited ${r.status}: ${((r.stdout || "") + (r.stderr || "")).trim().slice(0, 200)}`];
+}
 function realState(base, head = "HEAD", cwd = ROOT) {
   const branch = tryGit(["branch", "--show-current"], { cwd }) || "";
   const files = git(["diff", "--name-only", "--no-renames", `${base}...${head}`], { cwd }).split("\n").filter(Boolean);
@@ -219,6 +239,8 @@ function realState(base, head = "HEAD", cwd = ROOT) {
     branch,
     head: tryGit(["rev-parse", head], { cwd }),
     containsMain: spawnSync("git", ["merge-base", "--is-ancestor", base, head], { cwd }).status === 0,
+    // files main changed since this branch forked (three dots = from the merge base to base)
+    behindFiles: (tryGit(["diff", "--name-only", "--no-renames", `${head}...${base}`], { cwd }) || "").split(/\r?\n/).filter(Boolean),
     remoteHead: branch ? tryGit(["rev-parse", "--verify", "--quiet", `origin/${branch}`], { cwd }) : null,
     dirty: (tryGit(["status", "--porcelain"], { cwd }) || "").split("\n").filter(Boolean).map((l) => l.slice(3)),
     hooksPath: tryGit(["config", "core.hooksPath"], { cwd }) || "",
@@ -227,6 +249,7 @@ function realState(base, head = "HEAD", cwd = ROOT) {
     content,
     roundText: openRoundText(cwd),
     fullStamp: fullStamped(tryGit(["rev-parse", head], { cwd }), cwd),
+    rawHits: rawHits(cwd),
     words: forbiddenWords(),
     allows,
     notes: [],
@@ -251,7 +274,7 @@ function selfTest() {
     files: ["scripts/x.js", "src/components/Foo.tsx"],
     added: { "src/components/Foo.tsx": [{ n: 3, text: 'import { brandName } from "@/data/brands";' }, { n: 4, text: 'const label = "พอดี พอตใช้แล้วทิ้ง";' }] },
     content: { "src/components/Foo.tsx": '"use client";\n\nimport { brandName } from "@/data/brands";\nconst label = "พอดี พอตใช้แล้วทิ้ง";\n' },
-    roundText: "", fullStamp: true, words, allows: [], notes: [],
+    roundText: "", fullStamp: true, rawHits: [], behindFiles: [], words, allows: [], notes: [],
   };
   const fails = (name, patch) => run({ ...clean, ...patch, notes: [] }, [name]).length > 0;
   console.log("## gate checks — a clean branch passes, each planted example fails");
@@ -261,6 +284,10 @@ function selfTest() {
   ok(fails("branch", { branch: "main" }), "branch: on main (L6)");
   ok(fails("branch", { branch: "" }), "branch: detached HEAD");
   ok(fails("branch", { containsMain: false }), "branch: behind origin/main");
+  ok(!fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", ".claude/LESSONS.md"] }), "branch: behind main by docs-only commits passes (10/11)");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md", "src/app/page.tsx"] }), "branch: behind main by a src change still fails");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/THAI_STYLE.md"] }), "branch: behind main by THAI_STYLE.md still fails (words row reads it)");
+  ok(fails("branch", { containsMain: false, behindFiles: ["docs/HANDOFF.md"], files: ["src/lib/thai-typography.ts"] }), "branch: docs-only lag but the PR writes a locked file still fails (locked row reads §16 + round file)");
   ok(fails("tree", { dirty: ["src/a.ts"] }), "tree: uncommitted file");
   ok(fails("pushed", { remoteHead: "b".repeat(40) }), "pushed: HEAD not on GitHub");
   ok(fails("hooks", { hooksPath: "nul" }), "hooks: core.hooksPath off (15/10 incident)");
@@ -275,6 +302,8 @@ function selfTest() {
   ok(fails("words", plantWord('const t = "เปลี่ยนตลับได้";')), "words: ตลับ added in src (L9)");
   ok(fails("words", plantWord('const t = "พอดซิสเต็ม";')), "words: พอด (not พอดี) added in src (L9)");
   ok(!fails("words", plantWord("// พอตใช้แล้วทิ้ง not ดิสโพส")), "words: a code comment passes");
+  ok(fails("raw", { rawHits: ["src/lib/x.ts:63  1× raw U+00A0/U+2060  …/[​-‍]/"] }), "raw: a raw U+2060 in source (10/11 #1357 #1359)");
+  ok(!fails("raw", { rawHits: [] }), "raw: none passes");
   ok(!fails("words", { ...plantWord('const t = "ดิสโพส";'), allows: ["ดิสโพส@src/components/Foo.tsx"] }), "words: --allow word@file passes");
   const plantImport = (line, type = "") => ({
     added: { "src/components/Foo.tsx": [{ n: 3, text: line }] },

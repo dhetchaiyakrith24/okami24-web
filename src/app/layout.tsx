@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { ORDERING_ENABLED, orderingOpen } from "@/lib/commerce/ordering-mode";
 import { Footer } from "@/components/layout/Footer";
 import { TrustBar } from "@/components/layout/TrustBar";
 import { AgeGate } from "@/components/layout/AgeGate";
@@ -42,23 +42,27 @@ const monoFont = IBM_Plex_Mono({
 // not tell Google "order on the site". The strings are otherwise the owner's copy, with the
 // vocabulary locked in round 30.2 (docs/THAI_STYLE.md §3, owner 2026-09-09): พอต not พอด,
 // พอตใช้แล้วทิ้ง not ดิสโพส.
-const ORDER_CHANNEL_CLAUSE = ORDERING_ENABLED ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24";
+// T2-04 (owner 10/11 "ตามแนะนำ"): the wording follows the owner's cart switch too (orderingOpen), not only the build — a
+// build cannot read the switch, so /api/cart/count refreshes every page once after a boot while the cart is switched off, and
+// the switch itself refreshes them when flipped (src/app/staff/owner/actions.ts).
+const orderChannelClause = (open: boolean) => (open ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24");
 
 // SEO round ก (owner เคาะ 2026-09-21, rows A1/A2 of the batch-2 table): while ordering is off the
 // homepage title/description are the approved strings in search-head-copy.ts ("OKami24 (OKM)" so
 // the short brand word "okm" — no result for this site in Search Console — is tied to the shop; no
 // "น้ำยา" because that category has nothing on the storefront, same ruling as /products). The
 // ordering-on wording was never re-approved, so it is the pre-round string, untouched.
-const HOME_DESCRIPTION = ORDERING_ENABLED
-  ? `OKami24: พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง ${ORDER_CHANNEL_CLAUSE} ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24`
-  : HOME_HEAD_TH.description;
+const homeDescription = (open: boolean) =>
+  open
+    ? `OKami24: พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง ${orderChannelClause(open)} ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24`
+    : HOME_HEAD_TH.description;
 
-export const metadata: Metadata = {
+export const generateMetadata = (): Metadata => ({
   title: {
     default: HOME_HEAD_TH.title,
     template: "%s — OKami24",
   },
-  description: HOME_DESCRIPTION,
+  description: homeDescription(orderingOpen()),
   // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
   // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
   // back to localhost in dev, and refuses to build at all in production without it.
@@ -84,12 +88,15 @@ export const metadata: Metadata = {
     siteName: "OKami24",
     type: "website",
   },
-};
+});
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   // Computed here, on the server, and handed to the header and footer (Client Components) as plain
   // lists — see NavCategory in src/lib/category-visibility.ts for why.
   const categories = navCategories();
+  // wording = the switch (orderingOpen); the header and the floating cart keep the build's flag ON PURPOSE: it decides whether
+  // they ask /api/cart/count after load, and that answer carries the switches (paused, hidden cards) to every prerendered page
+  const open = orderingOpen();
   return (
     // `lang="th"` matches DEFAULT_LOCALE — Thai is what every visitor and every crawler gets
     // (owner decision 2026-09-06, BSOT §20; see i18n/config.ts). LocaleProvider corrects this
@@ -102,13 +109,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
-          <AgeGate orderingEnabled={ORDERING_ENABLED} />
+          <AgeGate orderingEnabled={open} />
           <Header orderingEnabled={ORDERING_ENABLED} categories={categories} />
           <main className="flex-1">{children}</main>
           {/* Round 30.4ข batch 5: the four-claim trust strip sits between the page and the footer on
               every route (owner's placement "ก่อน footer"). */}
           <TrustBar />
-          <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} orderingEnabled={ORDERING_ENABLED} />
+          <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} orderingEnabled={open} />
           <LineContact />
           {/* Cart UX batch B (owner 24/10): the floating cart bubble above the LINE button — only while the cart has items. */}
           <FloatingCart orderingEnabled={ORDERING_ENABLED} />

@@ -33,7 +33,7 @@ export function Scene4Hero({ progress }: { progress: MotionValue<number> }) {
           src="/assets/products/m-bar-10k/card.webp"
           alt="SaltHub M Bar 10K"
           sizeClass="h-[52vh] w-[26vh] sm:h-[60vh] sm:w-[30vh]"
-          glow="rgba(255,106,44,0.5)"
+          glow="rgba(240,138,42,0.5)"
           focusAt={[0.06, 0.22, 0.40, 0.54]}
           entry={{ x: "6vw", y: "38vh", rotate: 10, rotateY: -24, scale: 0.6, blur: 22 }}
           focus={{ x: "0vw", y: "-5vh", rotate: -3, rotateY: -4, scale: 1, blur: 0 }}

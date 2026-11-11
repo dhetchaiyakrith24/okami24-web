@@ -8,6 +8,8 @@ import { ScrubHero } from "@/components/dashboard/ScrubHero";
 import { formatSatang, formatShortDateTime } from "@/app/staff/_components/format";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import type { FeedHealth } from "@/lib/woo/watch-rules";
+import type { HandConfirmedOrder } from "@/lib/staff/hand-confirm";
+import { HandConfirmed } from "@/app/staff/owner/_dash/HandConfirmed";
 
 /** The daily view: is today all right, and what is waiting. Sales and web profit stay apart, per the head of dashboard-rules.ts. */
 
@@ -157,7 +159,10 @@ function SlipRows({ title, slips }: { title: string; slips: SalesSlip[] }) {
         {slips.map((s) => (
           <li key={s.transRef} className="flex items-baseline justify-between gap-3 py-1">
             <span className="min-w-0 truncate tabular-nums">{timeOf(s.transferredAt)} น.</span>
-            <span className="shrink-0 tabular-nums text-foreground">{formatSatang(s.amountSatang)}</span>
+            <span className="flex shrink-0 flex-col items-end tabular-nums text-foreground">
+              {formatSatang(s.amountSatang + (s.refundedSatang ?? 0))}
+              {s.refundedSatang ? <span className="text-xs text-unverified">คืนแล้ว {formatSatang(s.refundedSatang)}</span> : null}
+            </span>
           </li>
         ))}
       </ul>
@@ -176,6 +181,7 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
     );
   }
   const unpriced = profit?.unpriced ?? 0;
+  const refunded = day.slips.reduce((n, s) => n + (s.refundedSatang ?? 0), 0);
   return (
     <li>
       <details className="group">
@@ -183,8 +189,9 @@ function DayRow({ day, profit }: { day: DaySales; profit: DayProfit | undefined 
           <span className="flex min-w-0 flex-col">
             <span className="text-sm font-semibold text-foreground">{dayLabel(day.date)}</span>
             <span className="text-sm tabular-nums text-foreground-muted">{split(day)}</span>
-            {unpriced > 0 && <span className="text-sm text-unverified">ไม่มีทุน {unpriced} ออเดอร์</span>}
+            {unpriced > 0 && <span className="text-sm text-unverified">{unpriced} ออเดอร์ยังไม่นับกำไร</span>}
             {day.unclear.length > 0 && <span className="text-sm text-unverified">สลิปไม่แน่ใจ {day.unclear.length} ใบ</span>}
+            {refunded > 0 && <span className="text-sm text-foreground-muted">หักคืนเงิน LINE {formatSatang(refunded)}</span>}
           </span>
           <span className="flex shrink-0 items-center gap-2">
             <span className="flex flex-col items-end">
@@ -236,8 +243,11 @@ export function TodayPanel(props: {
   stock: StockSummary;
   feed: FeedHealth;
   now: number;
+  /** T2-01: paid orders the team confirmed without a passed slip (src/lib/staff/hand-confirm.ts). */
+  handConfirmed: HandConfirmedOrder[];
+  handConfirmedDays: number;
 }) {
-  const { days, profit, hour, avgSatang, counts, oldest, canOpenOrders, stock, feed, now } = props;
+  const { days, profit, hour, avgSatang, counts, oldest, canOpenOrders, stock, feed, now, handConfirmed, handConfirmedDays } = props;
   const today = days[0];
   const byDate = new Map(profit.map((p) => [p.date, p]));
   const points = [...days.slice(0, 14)].reverse().map((d, i, all) => ({
@@ -253,6 +263,7 @@ export function TodayPanel(props: {
       </div>
       <Tiles today={today} profit={byDate.get(today.date)} avgSatang={avgSatang} />
       <Jobs counts={counts} oldest={oldest} now={now} canOpen={canOpenOrders} />
+      <HandConfirmed orders={handConfirmed} days={handConfirmedDays} canOpen={canOpenOrders} />
       <Stock stock={stock} feed={feed} />
       <section aria-label="ยอดรายวัน" className="dash-card dash-rise">
         <h2 className="font-semibold text-foreground">รายวัน</h2>

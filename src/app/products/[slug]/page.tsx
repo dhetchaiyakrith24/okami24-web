@@ -107,6 +107,7 @@ import { lineOrderCodes } from "@/lib/line-order-codes";
 import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory";
 import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { LOOKALIKES } from "@/data/similar-models";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -193,7 +194,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // (search-head-copy.ts), then the B2 price line — price from the same approval the page
     // shows, appended only when one exists, kept inside 160 characters (withPriceSuffixTh).
     const baseDescription = legacyBaseDescriptionTh(product);
-    const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug), true, ORDERING_ENABLED);
+    const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug), true, orderingOpen());
     return {
       title,
       description,
@@ -213,11 +214,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const title = productTitleWithPriceTh(publishedProduct.slug, baseTitle, publishedProduct.sellingPrice);
     // Same head-only override + B2 price line as the legacy branch above.
     const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
-    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice, !NO_GENUINE_CLAIM_PATHS.has(path), ORDERING_ENABLED);
+    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice, !NO_GENUINE_CLAIM_PATHS.has(path), orderingOpen());
     return {
       title,
       description,
       ...canonicalFor(path),
+      // a lookalike's page stays for whoever opens it, but not in search: it must not compete with the genuine model (T2-08)
+      ...(LOOKALIKES.has(publishedProduct.slug) ? NOINDEX_FOLLOW : {}),
       ...(publishedProduct.image ? openGraphWithImage({ title: shareTitleWithPriceTh(baseTitle, publishedProduct.sellingPrice), description, path, image: publishedProduct.image }) : {}),
     };
   }
@@ -410,7 +413,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
       <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>

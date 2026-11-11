@@ -1,6 +1,7 @@
-import { timingSafeEqual } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 import { NextResponse, type NextRequest } from "next/server";
 import { MAX_BODY_BYTES, parseLineClick } from "@/lib/metrics/line-click-input";
+import { allowLineClick, type ClickLedger } from "@/lib/metrics/line-click-limit";
 import { lineClickSummary, recordLineClick } from "@/lib/metrics/line-clicks";
 
 /**
@@ -32,6 +33,27 @@ function empty(status: number): NextResponse {
   return new NextResponse(null, { status, headers: HEADERS });
 }
 
+declare global {
+  var __okami24LineClicks: ClickLedger | undefined;
+}
+
+function clickLedger(): ClickLedger {
+  globalThis.__okami24LineClicks ??= new Map();
+  return globalThis.__okami24LineClicks;
+}
+
+/**
+ * The visitor's address, hashed and kept only in memory for the limit (nothing is stored — the promise above holds).
+ * Same order as phone-rate-limit.ts: Cloudflare's CF-Connecting-IP (every request reaches Render through Cloudflare —
+ * okami24.onrender.com answers `x-render-routing: blocked-render-subdomain`, measured 09/11), else the rightmost
+ * X-Forwarded-For entry, never the caller-written leftmost.
+ */
+function clientOf(request: NextRequest): string {
+  const ip =
+    request.headers.get("cf-connecting-ip") ?? request.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim() ?? "unknown";
+  return createHash("sha256").update(`okami24-line-click:${ip}`).digest("hex").slice(0, 32);
+}
+
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const declared = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(declared) && declared > MAX_BODY_BYTES) return empty(413);
@@ -46,6 +68,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const click = parseLineClick(body);
   if (!click) return empty(400);
+  if (!allowLineClick(clickLedger(), clientOf(request), Date.now())) return empty(204);
 
   try {
     recordLineClick(click);

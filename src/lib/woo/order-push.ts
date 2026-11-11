@@ -8,6 +8,7 @@ import { pushBlock, shippingLineWhenSent, wooOrderJson, type PushOrder } from "@
 import { trimLine1 } from "@/lib/commerce/address-line1";
 import { orderCreatedTargets } from "@/lib/woo/webhooks";
 import { pickCarrier, toStaffCarrierId } from "@/lib/commerce/carriers";
+import { readSwitches } from "@/lib/commerce/shop-switches";
 
 /**
  * Send one paid order to the warehouse's Shipnity the way a WooCommerce shop does (Shipnity link, owner 28/10): POST the
@@ -52,6 +53,7 @@ export function pushOrderFor(orderNumber: string): PushOrder | null {
     postalCode: a.postalCode,
     // Owner 30/10: staff's pick on the order page, else DHL / EMS from the postcode.
     carrier: toStaffCarrierId(o.carrier) ?? pickCarrier(a.postalCode),
+    ...(o.discount ? { orderDiscount: o.discount.amount } : {}),
   };
 }
 
@@ -61,13 +63,16 @@ export function sign(body: string, secret: string): string {
 
 export type PushResult =
   | { ok: true }
-  | { ok: false; error: "not-found" | "not-approved" | "already-sent" | "stock-open" | "no-target" | "no-sku" | "failed" | "no-reply"; detail?: string };
+  | { ok: false; error: "not-found" | "not-approved" | "already-sent" | "stock-open" | "no-target" | "no-sku" | "failed" | "no-reply" | "line-switch-off"; detail?: string };
 
 export async function pushOrder(orderNumber: string): Promise<PushResult> {
   // Checked on the server at the moment of sending, not only by which button the page showed (checker #957: a page left
   // open in a second tab could send an unpaid or cancelled order).
   const detail = getStaffOrder(orderNumber);
   if (!detail) return { ok: false, error: "not-found" };
+  // A LINE order keyed in the back office goes to the warehouse only while the owner's switch is on (owner list ก11, way 2) —
+  // checked here too, not only in the staff action, so no other caller can send one (checker 09/11).
+  if (detail.channel === "line" && !readSwitches().lineToWarehouse) return { ok: false, error: "line-switch-off" };
   const block = pushBlock({
     status: detail.status,
     alreadySent: sendState(detail.id)?.firstSentAt != null,

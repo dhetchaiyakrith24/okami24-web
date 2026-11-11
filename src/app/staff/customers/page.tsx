@@ -33,7 +33,7 @@ export default async function StaffCustomersPage() {
         </h1>
         <p className="text-sm leading-relaxed text-foreground-muted">
           <span className="whitespace-nowrap">ยอดซื้อ = ออเดอร์ที่ยืนยันยอดเงินแล้ว</span> ·{" "}
-          <span className="whitespace-nowrap">ตอนนี้มีเฉพาะออเดอร์เว็บ</span>
+          <span className="whitespace-nowrap">รวมออเดอร์เว็บและ LINE</span>
         </p>
       </header>
       <CustomerSearch rows={rows} />

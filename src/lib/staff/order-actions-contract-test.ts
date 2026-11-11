@@ -5,13 +5,14 @@
  *   2. which buttons show at each status — nothing can be confirmed before a slip, nothing shipped before payment is
  *      confirmed, nothing cancelled once shipped;
  *   3. tracking numbers are cleaned or refused;
- *   4. the warehouse text carries every item's code and quantity and says so out loud when a code is missing.
+ *   4. the warehouse text carries every item's code and quantity and says so out loud when a code is missing;
+ *   5. when a cancel or a hand-over by hand needs the admin's tick about Shipnity (LINE_ORDERS_GAPS.md #1 / #4).
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
 
 import { canTransition, ORDER_STATUSES, type OrderStatus } from "../commerce/order-status";
-import { availableActions, cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
+import { availableActions, cleanTracking, handoverNeedsTick, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
 
 interface Result {
   name: string;
@@ -70,6 +71,22 @@ check("warehouse text: recipient, phone and address", text.includes("สมช�
 check("warehouse text: no carrier line unless given", !text.includes("ขนส่ง"), text);
 const withCarrier = warehouseText({ orderNumber: "OK-1", lines: [], recipientName: "ก", phone: "0800000000", address: "x 83150", carrier: "DHL" });
 check("warehouse text: carrier as the last line", withCarrier.split("\n").at(-1) === "ขนส่ง DHL", withCarrier);
+check("warehouse text: a web order heads 'ออเดอร์เว็บ'", text.startsWith("ออเดอร์เว็บ OK-"), text);
+const lineText = warehouseText({ orderNumber: "OK-2", lines: [], recipientName: "ก", phone: "0800000000", address: "x", channel: "line" });
+check("warehouse text: a keyed LINE order heads 'ออเดอร์ LINE'", lineText.startsWith("ออเดอร์ LINE OK-2"), lineText);
+
+// 5. LINE_ORDERS_GAPS.md #1 / #4: when a cancel or a hand-over needs the admin's tick about Shipnity.
+const may = (status: OrderStatus, channel: "web" | "line", sentToWarehouse = false) => warehouseMayHaveIt({ status, channel, sentToWarehouse });
+check("tick on cancel: sent by the button", may("approved", "web", true));
+check("tick on cancel: handed over by hand", may("processing", "web"));
+check("tick on cancel: a paid LINE order (keyed into Shipnity by hand while the switch is off)", may("approved", "line"));
+check("no tick: a paid web order not sent", !may("approved", "web"));
+check("no tick: waiting for the money", !may("awaiting_verification", "line"));
+check("no tick: shipped or done (cannot be cancelled anyway)", !may("shipped", "line", true) && !may("completed", "web", true));
+check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ channel: "line", lineSwitchOn: true, shipnityReady: true }));
+check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false, shipnityReady: true }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true, shipnityReady: true }));
+check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true, shipnityReady: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true, shipnityReady: true }));
+check("no hand-over tick without a Shipnity link — nothing can send by itself, so hand-over by hand must stay open", !handoverNeedsTick({ channel: "line", lineSwitchOn: true, autoOn: true, shipnityReady: false }));
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

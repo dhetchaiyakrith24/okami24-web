@@ -95,7 +95,7 @@ function getOrderRowById(id: number): OrderRow | undefined {
   return getDb().prepare("SELECT * FROM orders WHERE id = ?").get(id) as OrderRow | undefined;
 }
 
-function generateOrderNumber(): string {
+export function generateOrderNumber(): string {
   const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const suffix = crypto.randomBytes(3).toString("hex");
   return `OK-${date}-${suffix}`;
