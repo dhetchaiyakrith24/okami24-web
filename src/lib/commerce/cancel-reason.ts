@@ -21,6 +21,14 @@ export function isWarehouseCancelNote(note: string | null): boolean {
   return note !== null && note.startsWith(WAREHOUSE_CANCEL_NOTE_PREFIX);
 }
 
+/** The staff note on the out-of-stock issue the warehouse cancel opens or widens (the staff page names the box by it). */
+export const WAREHOUSE_ISSUE_NOTE = "คลังยกเลิกใน Shipnity ";
+
+/** History note when the warehouse cancel keeps a choice the customer had already made on an open issue. */
+export function keptChoiceNote(choice: string): string {
+  return `Stock: warehouse cancelled — customer's choice kept (${choice}), widened to the whole order`;
+}
+
 /** The Shipnity statuses that make the web order cancel itself (owner 11/11, "ยกเลิกบนเว็บอัตโนมัติ"): the warehouse said
  *  in words that it cancelled (or cancelled and refunded). A delete / trash / failed only alerts the team (order-alert.ts) —
  *  a cancel cannot be undone (order-status.ts), and a deleted order may be a duplicate the warehouse cleared, so staff decide. */

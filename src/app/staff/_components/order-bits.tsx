@@ -79,6 +79,9 @@ export function historyNoteTh(note: string): string {
   // Out of stock after payment (cart UX batch E) — written by src/lib/commerce/stock-issues.ts.
   // The same box opened by the warehouse cancel (src/lib/woo/warehouse-cancel.ts): the whole order, refund only.
   if (/^Stock: out after payment — lines [\d,]+ — คลังยกเลิกใน Shipnity/.test(note)) return "คลัง (Shipnity): เปิดให้ลูกค้าเลือกช่องทางรับเงินคืนทั้งออเดอร์";
+  // …or widened over a choice the customer had already made (keptChoiceNote in src/lib/commerce/cancel-reason.ts).
+  const kept = /^Stock: warehouse cancelled — customer's choice kept ((refund|swap))/.exec(note);
+  if (kept) return `คลัง (Shipnity): ยกเลิกทั้งออเดอร์ — เก็บที่ลูกค้าเลือกไว้ (${kept[1] === "refund" ? "รับเงินคืน" : "เปลี่ยนสินค้า"}) คืนเงินเป็นยอดทั้งออเดอร์`;
   if (note.startsWith("Stock: out after payment")) return `ทีมงาน: แจ้งลูกค้าว่าสินค้าหมด${note.replace(/^Stock: out after payment — lines [\d,]+/, "")}`;
   if (note.startsWith("Stock: swapped — ")) return `ทีมงาน: เปลี่ยนสินค้าให้แล้ว — ${note.slice("Stock: swapped — ".length)}`;
   if (note.startsWith("Stock: refunded — ref ")) return `ทีมงาน: คืนเงินแล้ว — เลขอ้างอิง ${note.slice("Stock: refunded — ref ".length)}`;

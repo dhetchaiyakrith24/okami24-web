@@ -695,6 +695,7 @@ export const zh: Dictionary = {
     stockRefundBankBack: "返回 PromptPay",
     stockPending: "正在保存…",
     stockChosenSwap: "已收到更换请求，我们正在为您备货，更换完成后本页会随之更新。",
+    stockChosenSwapCancelled: "已收到您的更换请求。由于此订单已取消，我们会联系您确认：用您已支付的款项将所选更换商品另开新订单，或退款至 PromptPay 或银行账户，按您方便的方式处理。",
     stockChosenRefund: "已收到退款请求，我们将把 {amount} 转至 PromptPay {phone}。",
     stockChosenRefundBank: "已收到退款请求，我们将把 {amount} 转至 {bank}{branch}，账号 {account}。",
     stockSwapped: "商品已更换完成，以下为我们将发出的商品。",
