@@ -35,11 +35,12 @@ export function formatPriceTh(price: number): string {
  *  Round 7 "SEO ค" B2 (owner ruling 2026-09-23): both "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are allowed in
  *  head copy — before this round "บุหรี่ไฟฟ้า" appeared in no head on the site (0/99) while
  *  Search Console showed "okami บุหรี่ไฟฟ้า" at 0/5. Wording = thai-copy's row A (title keeps the
- *  BSOT §1 slogan whole; "พอตไฟฟ้า" stays in the visible H1, which is untouched — owner set, B5). */
+ *  BSOT §1 slogan whole). 12/11: "พอตไฟฟ้า" belongs to /products/pod-systems (SEO_LANDSCAPE §0.1 — its H1/title/crumb
+ *  carry it), so this cart-off home description says "ร้านพอตและบุหรี่ไฟฟ้า" and "/" does not compete for it (seo-auditor 12/11). */
 export const HOME_HEAD_TH = {
   title: "OKami24 (OKM) ร้านพอต บุหรี่ไฟฟ้า ของแท้ ราคาตรง บริการจริง",
   description:
-    "OKami24 (OKM) ร้านพอตไฟฟ้าและบุหรี่ไฟฟ้า ของแท้ ราคาตรง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท",
+    "OKami24 (OKM) ร้านพอตและบุหรี่ไฟฟ้า ของแท้ ราคาตรง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท",
 } as const;
 
 /** Rows A3 / A4. */
