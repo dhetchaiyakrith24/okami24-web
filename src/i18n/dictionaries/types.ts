@@ -825,6 +825,8 @@ export interface Dictionary {
      *  is out · {amount} = the refund in baht · {phone} = the PromptPay number, masked to its last 4 digits. */
     stockTitle: string;
     stockLead: string;
+    /** The refund box on an order the warehouse cancelled (T2-10): refund only; waiting or a same-price swap go through LINE. */
+    stockCancelLead: string;
     stockSwapTitle: string;
     stockSwapPickLabel: string;
     stockSwapPlaceholder: string;
@@ -876,9 +878,15 @@ export interface Dictionary {
     nextShippedNoTracking: string;
     nextCompleted: string;
     nextCancelled: string;
-    nextCancelledPaid: string;
-    /** Cancelled after a slip was sent but before the payment was ever confirmed (slip failed / fake) — no refund promise (owner 29/10). */
-    nextCancelledSlipRejected: string;
+    /** T2-11: the reason line when the warehouse cancelled the order in Shipnity and the site cancelled it (owner 11/11). */
+    cancelReasonWarehouse: string;
+    /** T2-19: how the money comes back, under the reason of a cancelled order (BSOT §9, owner exception 10/11). The shop
+     *  confirmed the payment and the refund box sits below. */
+    cancelMoneyChoose: string;
+    /** The shop confirmed the payment, staff cancelled, no refund box: staff contact the customer. */
+    cancelMoneyPaid: string;
+    /** A slip was sent but never confirmed (slip failed / fake) — no refund promise (owner 29/10), and no accusation. */
+    cancelMoneySlip: string;
     /** Unboxing-video notice (owner 29/10): after payment until the parcel arrives, then 7 days after delivery. */
     unboxingTitle: string;
     unboxingWaiting: string;
