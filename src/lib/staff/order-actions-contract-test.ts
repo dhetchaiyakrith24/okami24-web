@@ -12,7 +12,7 @@
  */
 
 import { canTransition, ORDER_STATUSES, type OrderStatus } from "../commerce/order-status";
-import { availableActions, cancelOwesRefund, cleanTracking, handoverNeedsTick, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
+import { availableActions, cancelOwesRefund, cleanTracking, handoverNeedsTick, refundCancelNote, REFUND_TICK_NOTE, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
 
 interface Result {
   name: string;
@@ -91,6 +91,14 @@ check("no hand-over tick without a Shipnity link — nothing can send by itself,
 // Owner 12/11: cancelling an order whose payment staff confirmed owes a refund (the cancel form asks for a tick).
 check("refund tick: approved and processing (payment confirmed)", cancelOwesRefund("approved") && cancelOwesRefund("processing"));
 check("no refund tick: unpaid, slip not confirmed yet (owner 29/10), shipped, done, cancelled", (["pending_payment", "payment_submitted", "awaiting_verification", "shipped", "completed", "cancelled"] as OrderStatus[]).every((st) => !cancelOwesRefund(st)));
+// Checker 12/11: the reason lost every "s" (a regex missing its backslash) and a long reason pushed the mark past the 300 cut.
+const fromMessage = refundCancelNote("", "Out of  stock\nsorry, ส่งไม่ได้ค่ะ");
+check("refund note: the customer reason keeps every letter (only whitespace runs become one space)", fromMessage === `${REFUND_TICK_NOTE} — Out of stock sorry, ส่งไม่ได้ค่ะ`, fromMessage);
+check("refund note: the staff note wins over the reason", refundCancelNote("  staff says s  ", "ignored") === `${REFUND_TICK_NOTE} — staff says s`);
+check("refund note: the mark survives the 300 cut whatever the reason's length", refundCancelNote("", "s".repeat(400)).slice(0, 300).startsWith(REFUND_TICK_NOTE));
+const both = refundCancelNote("warehouse: cancelled in Shipnity / told (ticked) — stock gone", "x");
+check("refund note: a warehouse-ticked note stays whole after the mark", both === `${REFUND_TICK_NOTE} — warehouse: cancelled in Shipnity / told (ticked) — stock gone`, both);
+check("refund note: no reason at all = the mark alone", refundCancelNote(" ", " ") === REFUND_TICK_NOTE);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

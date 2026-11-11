@@ -95,6 +95,19 @@ export function cancelOwesRefund(status: OrderStatus): boolean {
   return status === "approved" || status === "processing";
 }
 
+/** The tick's mark in the history note (order-bits.tsx shows it in Thai). */
+export const REFUND_TICK_NOTE = "refund due (ticked)";
+
+/**
+ * The history note of a cancel that owes a refund: the tick's mark FIRST (the note is cut at 300 — checker 12/11: last, a
+ * long reason pushed it off), then the staff note, or else the reason the customer is shown, its runs of whitespace made one
+ * space. `note` may already carry the warehouse tick (actions.ts); it stays whole after the mark.
+ */
+export function refundCancelNote(note: string, message: string): string {
+  const reason = note.trim() || message.replace(/\s+/g, " ").trim();
+  return [REFUND_TICK_NOTE, reason].filter(Boolean).join(" — ");
+}
+
 /**
  * THE DOUBLE SHIPMENT (LINE_ORDERS_GAPS.md #1): once the owner's switch is ON, a paid LINE order goes to Shipnity by the
  * order page's button. Keyed into Shipnity by hand as well, out of habit, the warehouse packs it twice. So the hand-over by

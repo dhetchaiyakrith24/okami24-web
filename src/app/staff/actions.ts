@@ -7,7 +7,7 @@ import type { StaffActor } from "@/lib/staff/account-rules";
 import { recordStaffAction } from "@/lib/staff/audit";
 import { ORDER_STEP_AUDIT, orderStepDetail, refTail } from "@/lib/staff/audit-rules";
 import { assignRole, GROUP_ROLES, type GroupRole } from "@/lib/line/groups";
-import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund } from "@/lib/staff/order-actions";
+import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund, refundCancelNote } from "@/lib/staff/order-actions";
 import { editStateOf } from "@/lib/staff/line-order-edit";
 import { applyStaffAction, getStaffOrder, setPlannedCarrier } from "@/lib/staff/orders";
 import { readSwitches } from "@/lib/commerce/shop-switches";
@@ -86,9 +86,8 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
   // Owner 12/11: a paid order owes a refund when cancelled — the admin ticks that they know (order-actions.ts cancelOwesRefund).
   if (order && action === "cancel" && cancelOwesRefund(order.status)) {
     if (formData.get("refundTick") !== "1") redirect(`${back}error=cancel-refund`);
-    // Keep the reason in the history note (the "ยกเลิกแล้ว — …" banner reads it): the staff note, or else the customer reason.
-    const reason = note.trim() || String(formData.get("message") ?? "").replace(/s+/g, " ").trim();
-    note = [reason, "refund due (ticked)"].filter(Boolean).join(" — ");
+    // Keep the reason in the history note (the "ยกเลิกแล้ว — …" banner reads it), after the tick's mark.
+    note = refundCancelNote(note, String(formData.get("message") ?? ""));
   }
   if (order && action === "to-warehouse" && handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() })) {
     if (!ticked) redirect(`${back}error=handover-tick`);
