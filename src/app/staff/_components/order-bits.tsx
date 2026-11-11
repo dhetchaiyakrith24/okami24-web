@@ -66,6 +66,7 @@ export function historyNoteTh(note: string): string {
     const rest = staff[3]
       .replace(" — warehouse: cancelled in Shipnity / told (ticked)", " — ยกเลิกใน Shipnity / แจ้งแอดมินคลังแล้ว (ติ๊ก)")
       .replace(" — keyed into Shipnity by hand (ticked)", " — คีย์ใน Shipnity เองแล้ว (ติ๊ก)")
+      .replace(" — refund due (ticked)", " — รับทราบว่าต้องโอนเงินคืน (ติ๊ก)")
       // The warehouse cancelled in Shipnity → the web cancelled itself (src/lib/woo/warehouse-cancel.ts, owner 11/11).
       .replace(" — warehouse cancelled", " — คลังยกเลิกใน Shipnity เว็บยกเลิกให้อัตโนมัติ")
       .replace(" — warehouse refunded", " — คลังคืนเงิน / ยกเลิกใน Shipnity เว็บยกเลิกให้อัตโนมัติ")

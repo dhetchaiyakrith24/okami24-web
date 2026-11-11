@@ -84,6 +84,18 @@ export function warehouseMayHaveIt(o: { status: OrderStatus; channel: "web" | "l
 }
 
 /**
+ * A CANCEL THAT OWES A REFUND (owner 12/11, via Friday: "ยกเลิกออเดอร์ที่ลูกค้าจ่ายแล้ว หน้าทีมงานต้องเตือนเรื่องคืนเงิน"). Staff confirmed
+ * the payment (approved — LINE orders included — or processing), so cancelling means the shop transfers the money back
+ * (BSOT §9: no refund after a transfer except out of stock / cannot ship — the owner's two exceptions, which are what a cancel
+ * of a paid order is). The cancel form asks for a tick that the admin knows; the out-of-stock box with every line ticked is
+ * the better way (the customer picks where the refund goes, staff record it). A slip never confirmed promises no refund
+ * (owner 29/10) — no tick there.
+ */
+export function cancelOwesRefund(status: OrderStatus): boolean {
+  return status === "approved" || status === "processing";
+}
+
+/**
  * THE DOUBLE SHIPMENT (LINE_ORDERS_GAPS.md #1): once the owner's switch is ON, a paid LINE order goes to Shipnity by the
  * order page's button. Keyed into Shipnity by hand as well, out of habit, the warehouse packs it twice. So the hand-over by
  * hand ("ส่งรายการให้คลังแล้ว") of a LINE order, while the button can send it, needs the admin's tick that they keyed it into

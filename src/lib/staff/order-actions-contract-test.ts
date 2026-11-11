@@ -12,7 +12,7 @@
  */
 
 import { canTransition, ORDER_STATUSES, type OrderStatus } from "../commerce/order-status";
-import { availableActions, cleanTracking, handoverNeedsTick, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
+import { availableActions, cancelOwesRefund, cleanTracking, handoverNeedsTick, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
 
 interface Result {
   name: string;
@@ -87,6 +87,10 @@ check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ c
 check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false, shipnityReady: true }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true, shipnityReady: true }));
 check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true, shipnityReady: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true, shipnityReady: true }));
 check("no hand-over tick without a Shipnity link — nothing can send by itself, so hand-over by hand must stay open", !handoverNeedsTick({ channel: "line", lineSwitchOn: true, autoOn: true, shipnityReady: false }));
+
+// Owner 12/11: cancelling an order whose payment staff confirmed owes a refund (the cancel form asks for a tick).
+check("refund tick: approved and processing (payment confirmed)", cancelOwesRefund("approved") && cancelOwesRefund("processing"));
+check("no refund tick: unpaid, slip not confirmed yet (owner 29/10), shipped, done, cancelled", (["pending_payment", "payment_submitted", "awaiting_verification", "shipped", "completed", "cancelled"] as OrderStatus[]).every((st) => !cancelOwesRefund(st)));
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);
