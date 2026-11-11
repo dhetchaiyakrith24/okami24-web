@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { cardTaglinesTh } from "@/lib/card-taglines";
-import { allProducts, legacySearchText } from "@/data/products";
-import { getPilotProducts, getPublishedProducts, publishedSearchText } from "@/data/shipnity-seed/storefront-bridge";
-import { cardOnly } from "@/lib/related-order";
+import { allProducts } from "@/data/products";
+import { getPilotProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { searchEntries } from "@/lib/search-entries";
 import { Container } from "@/components/ui/Container";
-import { SearchTool, type SearchEntry } from "@/components/tools/SearchTool";
+import { SearchTool } from "@/components/tools/SearchTool";
 import { SearchPageHeader } from "@/components/tools/SearchPageHeader";
 import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
@@ -17,16 +17,6 @@ export const metadata: Metadata = {
   ...canonicalFor("/search"),
   ...NOINDEX_FOLLOW,
 };
-
-/** What /search searches, built here on the server so the browser never bundles the catalog modules (T2-50): the search
- *  text from the full record, the card from the card-only one (related-order.ts cardOnly). Same order as before — legacy, then
- *  published; ties keep it. */
-function searchEntries(): SearchEntry[] {
-  return [
-    ...allProducts.map((p) => ({ hit: { kind: "legacy" as const, product: cardOnly(p) }, text: legacySearchText(p) })),
-    ...getPublishedProducts().map((p) => ({ hit: { kind: "published" as const, product: p }, text: publishedSearchText(p) })),
-  ];
-}
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const { q } = await searchParams;

@@ -75,29 +75,37 @@ export function runI18nContractTests(): I18nContractResult[] {
   // Rewritten 08/11 (owner switches, round back-office batch 7): every page passes through for the owner's switches. It reads
   // the path and the owner's switch file on the data disk only (src/lib/commerce/shop-switches.ts), nothing about the visitor.
   // Its own comments are line comments: a block comment after the "image/webp,*/*" string would confuse pinText.
+  // Rewritten 11/11 (outside tester T2-52): /staff/* passes through the back office's outer door (src/lib/staff/staff-door.ts),
+  // which reads only whether the staff / owner session cookie is there — nothing about the visitor's place or language.
   const PROXY_PIN =
-    'import { NextResponse } from "next/server"; import type { NextRequest } from "next/server"; import MOVED_IMAGES from ' +
-    '"@/data/moved-images.json"; import { CONTACT } from "@/data/contact"; import { readSwitches } from "@/lib/commerce/shop-switches"; ' +
-    'import { CLOSED_PAGE, hiddenProductOf, staysOpenWhileClosed } from "@/lib/commerce/shop-switches-rules"; const moved = ' +
-    'MOVED_IMAGES as Record<string, string>; function movedTo(url: NextRequest["nextUrl"]): NextResponse { const response = ' +
-    'NextResponse.redirect(url, 301); response.headers.set("Cache-Control", "public, max-age=2592000"); return response; } function ' +
-    'closedPage(): NextResponse { return new NextResponse(CLOSED_PAGE.replace("LINE_URL", CONTACT.lineUrl), { status: 503, headers: { ' +
-    '"Content-Type": "text/html; charset=utf-8", "Retry-After": "3600", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" }, }); } ' +
-    'function switched(request: NextRequest): NextResponse | null { const { pathname } = request.nextUrl; const { siteClosed, hidden } ' +
-    '= readSwitches(); if (siteClosed && !staysOpenWhileClosed(pathname)) return closedPage(); if (hiddenProductOf(pathname, hidden)) { ' +
-    '// A slug no product has: the page\'s own not-found answer, status 404. const url = request.nextUrl.clone(); url.pathname = ' +
-    '"/products/not-a-product"; return NextResponse.rewrite(url); } return null; } export function proxy(request: NextRequest) { const ' +
-    '{ pathname, searchParams } = request.nextUrl; if (!pathname.startsWith("/_next/image") && ' +
-    '!pathname.startsWith("/assets/products/")) return switched(request) ?? NextResponse.next(); if ' +
-    '(pathname.startsWith("/assets/products/")) { const target = moved[pathname]; if (!target) return NextResponse.next(); const url = ' +
-    'request.nextUrl.clone(); url.pathname = target; return movedTo(url); } const source = searchParams.get("url"); const replaced = ' +
-    'source ? moved[source] : undefined; if (replaced) { const url = request.nextUrl.clone(); url.searchParams.set("url", replaced); ' +
-    'return movedTo(url); } const accept = request.headers.get("accept") ?? ""; if (accept.includes("image/webp")) return ' +
-    'NextResponse.next(); const headers = new Headers(request.headers); headers.set("accept", accept ? `image/webp,${accept}` : ' +
-    '"image/webp,*/*"); return NextResponse.next({ request: { headers } }); } export const config = { // The last line = every page, ' +
-    'for the owner\'s switches: not /api, /wp-json (Shipnity\'s stock, orders and tracking) and /staff, // which must outlive a closed ' +
-    'site, not build files, and not anything with a file extension (sitemap, robots, pictures). matcher: ["/_next/image", ' +
-    '"/assets/products/:path*", "/((?!api/|wp-json|staff|_next/|assets/|.*\\\\.[a-z0-9]+$).*)"], };';
+    'import { NextResponse } from "next/server"; import type { NextRequest } from "next/server"; import MOVED_IMAGES from "@/data/mov' +
+    'ed-images.json"; import { CONTACT } from "@/data/contact"; import { readSwitches } from "@/lib/commerce/shop-switches"; import {' +
+    ' CLOSED_PAGE, hiddenProductOf, staysOpenWhileClosed } from "@/lib/commerce/shop-switches-rules"; import { OWNER_COOKIE, STAFF_CO' +
+    'OKIE, staffDoor } from "@/lib/staff/staff-door"; const moved = MOVED_IMAGES as Record<string, string>; function movedTo(url: Nex' +
+    'tRequest["nextUrl"]): NextResponse { const response = NextResponse.redirect(url, 301); response.headers.set("Cache-Control", "pu' +
+    'blic, max-age=2592000"); return response; } function closedPage(): NextResponse { return new NextResponse(CLOSED_PAGE.replace("L' +
+    'INE_URL", CONTACT.lineUrl), { status: 503, headers: { "Content-Type": "text/html; charset=utf-8", "Retry-After": "3600", "Cache-' +
+    'Control": "no-store", "X-Robots-Tag": "noindex" }, }); } function switched(request: NextRequest): NextResponse | null { const { ' +
+    'pathname } = request.nextUrl; const { siteClosed, hidden } = readSwitches(); if (siteClosed && !staysOpenWhileClosed(pathname)) ' +
+    'return closedPage(); if (hiddenProductOf(pathname, hidden)) { // A slug no product has: the page\'s own not-found answer, status ' +
+    '404. const url = request.nextUrl.clone(); url.pathname = "/products/not-a-product"; return NextResponse.rewrite(url); } return n' +
+    'ull; } function staffDoorAnswer(request: NextRequest): NextResponse | null { const target = staffDoor(request.nextUrl.pathname, ' +
+    '{ staff: request.cookies.has(STAFF_COOKIE), owner: request.cookies.has(OWNER_COOKIE), }); if (!target) return null; const url = ' +
+    'request.nextUrl.clone(); url.pathname = target; url.search = ""; const response = NextResponse.redirect(url, 307); response.head' +
+    'ers.set("Cache-Control", "no-store"); response.headers.set("X-Robots-Tag", "noindex"); return response; } export function proxy(' +
+    'request: NextRequest) { const { pathname, searchParams } = request.nextUrl; // The back office outlives a closed site (the owner' +
+    '\'s switches below never apply to it). if (pathname.startsWith("/staff")) return staffDoorAnswer(request) ?? NextResponse.next();' +
+    ' if (!pathname.startsWith("/_next/image") && !pathname.startsWith("/assets/products/")) return switched(request) ?? NextResponse' +
+    '.next(); if (pathname.startsWith("/assets/products/")) { const target = moved[pathname]; if (!target) return NextResponse.next()' +
+    '; const url = request.nextUrl.clone(); url.pathname = target; return movedTo(url); } const source = searchParams.get("url"); con' +
+    'st replaced = source ? moved[source] : undefined; if (replaced) { const url = request.nextUrl.clone(); url.searchParams.set("url' +
+    '", replaced); return movedTo(url); } const accept = request.headers.get("accept") ?? ""; if (accept.includes("image/webp")) retu' +
+    'rn NextResponse.next(); const headers = new Headers(request.headers); headers.set("accept", accept ? `image/webp,${accept}` : "i' +
+    'mage/webp,*/*"); return NextResponse.next({ request: { headers } }); } export const config = { // The last line = every page, fo' +
+    'r the owner\'s switches: not /api, /wp-json (Shipnity\'s stock, orders and tracking) and /staff, // which must outlive a closed si' +
+    'te, not build files, and not anything with a file extension (sitemap, robots, pictures). // "/staff/:path+" = the back office\'s ' +
+    'outer door only (T2-52) — the switches never run for it (see proxy above). matcher: ["/_next/image", "/assets/products/:path*", ' +
+    '"/staff/:path+", "/((?!api/|wp-json|staff|_next/|assets/|.*\\\\.[a-z0-9]+$).*)"], };';
   const pinText = (src: string) => src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\s+/g, " ").trim();
   const proxyPath = path.join(process.cwd(), "src", "proxy.ts");
   const proxySrc = fs.existsSync(proxyPath) ? readFileSync(proxyPath, "utf-8") : null;
