@@ -175,6 +175,9 @@ export function PilotProductDetail({
     : product.variants.length > 0
       ? inStock.length > 0
       : product.availabilityStatus === "in-stock";
+  // Owner 11/11 safety net: a variant (or a product without variants) whose warehouse code has no live number is not sold —
+  // the buy slot asks about stock on LINE instead of "สินค้าหมด" (live-rules.ts "ask"; the cart and checkout refuse it too).
+  const askStock = !available && (selectedVariant ? !!selectedVariant.stockAsk : product.variants.length > 0 ? product.variants.some((v) => v.stockAsk) : !!product.stockAsk);
   const showBuy = isPublished && product.sellingPrice !== null;
   // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
   const hasOptions = product.variants.length > 0;
@@ -251,7 +254,7 @@ export function PilotProductDetail({
   const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:left-auto max-lg:right-1" />;
   const badgedSlides = slides.map((s) => {
     const option = options.find((o) => o.id === s.id);
-    return (option ? option.outOfStock : product.availabilityStatus !== "in-stock") ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
+    return (option ? option.outOfStock : product.availabilityStatus !== "in-stock" && !product.stockAsk) ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
   });
 
   return (
@@ -332,6 +335,7 @@ export function PilotProductDetail({
                   original form/note classes, so nothing renders differently. */}
               <ProductBuyAction
                 available={available}
+                askStock={askStock}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={selectedVariantId}
@@ -499,7 +503,7 @@ export function PilotProductDetail({
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant ? pilotOptionLabel(selectedVariant.label, locale) : null} orderingEnabled={orderingEnabled} lowText={pickedLowText}>
-          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
+          <ProductBuyAction available={available} askStock={askStock} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
     </>
