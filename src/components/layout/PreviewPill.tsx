@@ -7,7 +7,8 @@ import { endPreview, previewWord } from "@/lib/preview";
  * "พรีวิว" — the small pill that says this device is looking at a design draft (owner 12/11, preview links — src/lib/preview.ts),
  * with the one button that turns it off. Shows only where `<html data-preview>` is set (by the inline head script, before
  * paint), so customers and search engines never get it: the server renders nothing and the page stays static.
- * Top right under the header — the bottom corners belong to the LINE button and the team button.
+ * Top centre under the header — the bottom corners belong to the LINE button and the team button, the top right to the
+ * home hero's "ปิดแสง" switch on desktop.
  */
 const subscribe = () => () => {};
 const server = () => null;
@@ -19,7 +20,7 @@ export function PreviewPill() {
     <div
       role="status"
       lang="th"
-      className="fixed right-[calc(0.75rem+env(safe-area-inset-right,0px))] top-[4.5rem] z-40 inline-flex items-center gap-1 rounded-full border border-surface-border bg-surface-1/95 py-1 pl-3 pr-1 text-xs font-semibold text-foreground shadow-2xl backdrop-blur-md sm:top-[5.75rem]"
+      className="fixed left-1/2 top-[4.5rem] z-40 -translate-x-1/2 inline-flex items-center gap-1 rounded-full border border-surface-border bg-surface-1/95 py-1 pl-3 pr-1 text-xs font-semibold text-foreground shadow-2xl backdrop-blur-md sm:top-[5.75rem]"
     >
       <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-ember" />
       <span className="px-1">พรีวิว</span>
