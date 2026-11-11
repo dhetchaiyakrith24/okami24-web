@@ -44,18 +44,20 @@ import { ZoomShared, ZOOM_PROTO_SLUGS } from "@/components/visual/ZoomShared";
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
  *  is sold out, so the name label and photo still work). */
-function firstSellable<T extends { id: string; availability?: string }>(options: T[] | undefined): string | null {
+function firstSellable<T extends { id: string; availability?: string; stockAsk?: true }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  return (options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
+  // An option with no live warehouse number ("ask", live-overlay.ts) is not sold either — open on one that sells first.
+  return (options.find((o) => o.availability !== "out-of-stock" && !o.stockAsk) ?? options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
 }
 
 /** Image-fix round 2026-09-28 (owner: an option without its own photo must never show another option's photo):
  *  open on an option that HAS its own photo, so the first picture always matches the name beside it. With every
  *  option photographed this is exactly `firstSellable`. With 2+ options and none photographed nothing is
  *  pre-selected — the page opens on the product photo, which then claims no particular option. */
-function initialOption<T extends { id: string; availability?: string; image?: unknown }>(options: T[] | undefined): string | null {
+function initialOption<T extends { id: string; availability?: string; stockAsk?: true; image?: unknown }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  const sellable = options.filter((o) => o.availability !== "out-of-stock");
+  const selling = options.filter((o) => o.availability !== "out-of-stock" && !o.stockAsk);
+  const sellable = selling.length > 0 ? selling : options.filter((o) => o.availability !== "out-of-stock");
   const withPhoto = (sellable.length > 0 ? sellable : options).find((o) => o.image);
   if (withPhoto) return withPhoto.id;
   return options.length >= 2 ? null : firstSellable(options);
@@ -147,7 +149,7 @@ export function ProductHero({
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
   const [showAllColors, setShowAllColors] = useState(lineupFirst);
   // Which "all" image is shown: `lineupImage2` is a second group (owner 01/10 — Caliburn G3 Pro's 16 colours as two
-  // groups of 8). With two, the pills read "ทั้งหมด 1" / "ทั้งหมด 2" (the label + its number, in every language).
+  // groups of 8). With two, each pill names its group (see allLabelAt); with one, "ภาพรวมทุกสี" / "ภาพรวมทุกกลิ่น".
   const lineups = [product.lineupImage, product.lineupImage2].filter((l): l is NonNullable<typeof l> => !!l);
   const [allIndex, setAllIndex] = useState(0);
   const shownLineup = lineups[allIndex] ?? product.lineupImage;
@@ -162,7 +164,9 @@ export function ProductHero({
       ? dict.product.lineupGroupLabel.replace("{from}", String(groupRanges[i][0])).replace("{to}", String(groupRanges[i][1]))
       : lineups.length > 1
         ? dict.product.lineupGroupFallback.replace("{n}", String(i + 1))
-        : dict.product.allVariantsLabel;
+        : product.colorVariants?.length
+          ? dict.product.allColorsLabel
+          : dict.product.allFlavorsLabel;
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
@@ -212,7 +216,10 @@ export function ProductHero({
   const everyOptionSoldOut = hasOptions
     ? [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock")
     : product.availability === "out-of-stock";
-  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
+  // Owner 11/11 safety net: an option (or a product without options) whose warehouse code has no live number is not sold —
+  // the buy slot asks about stock on LINE instead (live-rules.ts "ask"; the cart and checkout refuse it on the server).
+  const stockAsk = !everyOptionSoldOut && (hasOptions ? !!(selectedColor?.stockAsk ?? selectedFlavor?.stockAsk) : !!product.stockAsk);
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut && !stockAsk;
   const builtOptions = [...(builtProduct.colorVariants ?? []), ...(builtProduct.flavorVariants ?? [])];
   const builtSoldOut = builtOptions.length > 0 ? builtOptions.every((v) => v.availability === "out-of-stock") : builtProduct.availability === "out-of-stock";
   // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
@@ -423,7 +430,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.colorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allColorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
@@ -444,7 +451,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.flavorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allFlavorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
@@ -465,6 +472,7 @@ export function ProductHero({
                   are passed in so this renders exactly as it did when the branch lived here. */}
               <ProductBuyAction
                 available={canAddToCart}
+                askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
@@ -592,6 +600,7 @@ export function ProductHero({
       <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled} lowText={canAddToCart ? pickedLowText : null}>
         <ProductBuyAction
           available={canAddToCart}
+          askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
           orderingEnabled={orderingEnabled}
           slug={product.slug}

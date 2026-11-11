@@ -30,7 +30,7 @@ function useBadges(slug: string, soldOut: boolean): SalesBadgeKind[] {
 /** "ขายดี" stands out (owner 31/10 "ใส่กรอบ Effect ทั้งป้ายขายดีและตัวกล่อง-การ์ด"; designer 31/10): an ember capsule that
  *  catches a light once per cycle — the light and the card frame it switches on live in globals.css ("ขายดี" stands out). */
 const BEST_PILL =
-  "okami-best-pill relative isolate inline-flex shrink-0 items-center gap-1 overflow-hidden rounded-full border border-ember/60 bg-ember-soft font-sans font-semibold leading-none tracking-normal text-ember-strong";
+  "okami-best-pill relative isolate inline-flex shrink-0 items-center gap-1 overflow-hidden rounded-full border border-ember/60 bg-ember-soft font-sans font-semibold leading-none tracking-normal text-foreground";
 const BEST_DOT = "size-1.5 rounded-full bg-ember shadow-[0_0_6px_var(--color-ember)]";
 
 /** "มาใหม่" = the "Night" purple capsule (owner 02/11 "หาคู่สีเลยว่าอะไรเหมาะกับส้มดำ"; designer 02/11 option A): built like the
@@ -81,7 +81,7 @@ export function OptionBestTag({ className }: { className?: string }) {
     <span
       data-option-best=""
       className={cn(
-        "inline-flex shrink-0 items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 py-0.5 font-sans text-[10px] font-semibold leading-none tracking-normal text-ember-strong",
+        "inline-flex shrink-0 items-center rounded-full border border-ember/60 bg-ember-soft px-1.5 py-0.5 font-sans text-[10px] font-semibold leading-none tracking-normal text-foreground",
         className,
       )}
     >

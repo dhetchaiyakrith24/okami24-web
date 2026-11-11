@@ -27,6 +27,10 @@
   --accent-ember: #f08a2a;
   --accent-ember-strong: #ffa24d;
   --accent-ember-soft: #3d1810;
+  /* The two oranges as "R G B" channels, for glows written as rgb(var(--ember-rgb) / alpha) — a preview (src/lib/preview.ts)
+     that changes the orange changes every glow with it. Keep in step with the hex values above. */
+  --ember-rgb: 240 138 42;
+  --ember-strong-rgb: 255 162 77;
   /* Steel = a quiet warm neutral (was a cool blue): counts and secondary chips no longer compete with the orange. */
   --accent-steel: #cfc6bb;
   --accent-steel-strong: #e6dfd5;
@@ -246,7 +250,7 @@ img {
   height: 10px;
   border-radius: 9999px;
   background: var(--color-ember);
-  box-shadow: 0 0 10px rgba(240, 138, 42, 0.7);
+  box-shadow: 0 0 10px rgb(var(--ember-rgb) / 0.7);
   pointer-events: none;
 }
 

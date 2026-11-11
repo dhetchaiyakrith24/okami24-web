@@ -203,7 +203,10 @@ export const th: Dictionary = {
   product: {
     colorLabel: "สี",
     flavorLabel: "รสชาติ",
-    allVariantsLabel: "ทั้งหมด",
+    // The lineup photo's chip (owner 12/11 "ภาพรวมทุกสี"; tester T2-31: "ทั้งหมด" did not say what it was). "ภาพรวม" ties
+    // "ทุกสี/ทุกกลิ่น" to the picture, not to stock (THAI_STYLE ruling 2026-09-23 — thai-copy 12/11).
+    allColorsLabel: "ภาพรวมทุกสี",
+    allFlavorsLabel: "ภาพรวมทุกกลิ่น",
     // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
     lineupGroupLabel: "สีที่ {from}–{to}",
     lineupGroupFallback: "ภาพรวมสี {n}",
@@ -214,6 +217,7 @@ export const th: Dictionary = {
     outOfStockChip: "สินค้าหมด",
     optionIn: "มีของ",
     optionOut: "หมด",
+    optionAsk: "สอบถาม",
     optionStockCount: "พร้อมส่ง {in}/{n}",
     lowStock: "ใกล้หมด · เหลือ {n} ชิ้น",
     stockLeft: "เหลือ {n} ชิ้น",
@@ -517,6 +521,7 @@ export const th: Dictionary = {
     orderOnLineNote: "หรือสั่งทางไลน์ @okm24",
     outOfStockLabel: "สินค้าหมด",
     outOfStockCta: "สอบถามทาง LINE",
+    askStockCta: "สอบถามสต็อกทาง LINE",
     orderOnLineCta: "สั่งซื้อทางไลน์ @okm24",
     orderOnLineHint: "กดแล้วเปิดไลน์ร้าน แอดมินตอบเองค่ะ",
     orderOnLineCopied: "คัดลอกข้อมูลสินค้าแล้ว วางในไลน์ได้เลยค่ะ",

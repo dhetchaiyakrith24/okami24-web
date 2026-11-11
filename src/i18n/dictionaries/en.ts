@@ -188,7 +188,8 @@ export const en: Dictionary = {
   product: {
     colorLabel: "Color",
     flavorLabel: "Flavor",
-    allVariantsLabel: "All",
+    allColorsLabel: "All colours",
+    allFlavorsLabel: "All flavours",
     // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
     lineupGroupLabel: "Colours {from}–{to}",
     lineupGroupFallback: "All colours {n}",
@@ -199,6 +200,7 @@ export const en: Dictionary = {
     outOfStockChip: "Out of stock",
     optionIn: "In stock",
     optionOut: "Sold out",
+    optionAsk: "Ask",
     optionStockCount: "{in}/{n} available",
     lowStock: "Almost gone · {n} left",
     stockLeft: "{n} left",
@@ -483,6 +485,7 @@ export const en: Dictionary = {
     orderOnLineNote: "Or order on LINE @okm24",
     outOfStockLabel: "Out of stock",
     outOfStockCta: "Ask on LINE",
+    askStockCta: "Ask about stock on LINE",
     orderOnLineCta: "Order on LINE @okm24",
     orderOnLineHint: "Opens our LINE. Message us there — the admin replies in person.",
     orderOnLineCopied: "Product details copied — paste them in LINE.",
