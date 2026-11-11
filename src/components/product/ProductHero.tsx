@@ -27,6 +27,9 @@ import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
+import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
+import { LINEUP_GROUP_NAMES, lineupGroupRanges } from "@/lib/lineup-groups";
+import type { RelatedDevice } from "@/data/catalog-relationships";
 import { bestSellerOptions } from "@/data/bestseller-options";
 import { countKind, countText } from "@/lib/stock/count-rules";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
@@ -82,7 +85,10 @@ export function ProductHero({
   brandSlug,
   hasBrandPage = false,
   lineCodes,
+  fitsDevices = [],
 }: {
+  /** T2-31: cited devices this part fits (getCompatibleDevices, from the server page) — the line under the price. */
+  fitsDevices?: RelatedDevice[];
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
   lineCodes?: LineOrderCodes;
   product: Product;
@@ -144,7 +150,18 @@ export function ProductHero({
   const lineups = [product.lineupImage, product.lineupImage2].filter((l): l is NonNullable<typeof l> => !!l);
   const [allIndex, setAllIndex] = useState(0);
   const shownLineup = lineups[allIndex] ?? product.lineupImage;
-  const allLabelAt = (i: number) => (lineups.length > 1 ? `${dict.product.allVariantsLabel} ${i + 1}` : dict.product.allVariantsLabel);
+  // T2-31 (tester 10/11: "ทั้งหมด 1 / ทั้งหมด 2" did not say what they were): with two images each chip names its colours —
+  // "สีที่ 1–4" / "สีที่ 5–8" from the images' alts (lineupGroupRanges); where those do not match the colour chips, "ภาพรวมสี 1" / "2".
+  const groupRanges = lineupGroupRanges(product.lineupImage?.alt, product.lineupImage2?.alt, product.colorVariants?.length ?? 0);
+  const groupNames = LINEUP_GROUP_NAMES[product.slug];
+  const allLabelAt = (i: number) =>
+    lineups.length > 1 && groupNames?.[i]
+      ? groupNames[i][locale]
+      : lineups.length > 1 && groupRanges
+      ? dict.product.lineupGroupLabel.replace("{from}", String(groupRanges[i][0])).replace("{to}", String(groupRanges[i][1]))
+      : lineups.length > 1
+        ? dict.product.lineupGroupFallback.replace("{n}", String(i + 1))
+        : dict.product.allVariantsLabel;
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
@@ -392,6 +409,8 @@ export function ProductHero({
               {!hasOptions && <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} className="mt-1 lg:hidden" />}
             </div>
           )}
+          {/* T2-31: the devices this part fits, next to the price (nothing cited = nothing here). */}
+          <FitsDeviceLine slug={product.slug} devices={fitsDevices} ownBrand={brandName(product.brandId)} className="-mt-3 max-lg:order-5 max-lg:mt-0" />
 
           {product.colorVariants && product.colorVariants.length > 0 && (
             <ColorVariantRail
