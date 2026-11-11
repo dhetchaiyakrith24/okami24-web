@@ -13,11 +13,14 @@ import type { RelatedDevice } from "@/data/catalog-relationships";
  * src/data/catalog-relationships.ts — the same list as the "fits these devices" cards lower on the page), then the
  * maker-named devices the shop does not sell (plain text, src/data/fits-devices.ts). Nothing cited = no line.
  *
+ * Manufacturer only (checker #1412 round 1): only `tier: "official"` edges reach this line — a retailer or distributor
+ * citation (coil-72 → VMATE i3, M Switch Pod → M Switch Kit) stays in the cards below until the maker states the fit.
+ * Same brand only: another brand's claim that its device takes this part (LAMBDA i8 → IQOS TEREA, which IQOS says is for
+ * ILUMA only) needs the caveat its card carries, so it stays in the cards.
  * Devices only: an edge whose "device" end is itself a pod or coil (a coil that fits a pod — coil-53 → Caliburn G2 pod) stays
  * in the cards lower on the page, not in this line, which says "fits device".
- * A linked device drops the brand word when it begins its name and is the part's own brand ("VOOPOO DRAG 6" → "DRAG 6" on a
- * VOOPOO coil; LAMBDA i8 keeps "LAMBDA" on the IQOS TEREA page), and only when a model name is left (INFY "POD" keeps "INFY"). Each model name stays on one line; the break falls
- * only at a " · ".
+ * A linked device drops the brand word that begins its name ("VOOPOO DRAG 6" → "DRAG 6"), only when a model name is left
+ * (INFY "POD" keeps "INFY"). Each model name stays on one line; the break falls only at a " · ".
  *
  * Designer 11/11: two levels — a device you can buy here is bright with a clear underline, one the shop does not sell is
  * muted; more than SHOWN names = the first SHOWN (links first) and a "+N รุ่น" button that opens the rest in place (the full
@@ -30,12 +33,12 @@ const PART_CATEGORIES = new Set(["pods-cartridges", "coils-accessories"]);
 export function FitsDeviceLine({ slug, devices, ownBrand, className }: { slug: string; devices: RelatedDevice[]; ownBrand: string | null; className?: string }) {
   const { dict, locale } = useLocale();
   const [open, setOpen] = useState(false);
-  const linked = devices.filter((d) => !PART_CATEGORIES.has(d.ref.categoryId)).map((d) => {
+  const sameBrandAs = (b: string | null) => !!b && !!ownBrand && b.toLowerCase() === ownBrand.toLowerCase();
+  const linked = devices.filter((d) => d.tier === "official" && sameBrandAs(d.ref.brandName) && !PART_CATEGORIES.has(d.ref.categoryId)).map((d) => {
     const name = pilotName(d.ref.slug, d.ref.name, locale);
     const brand = d.ref.brandName;
     const rest = brand && name.toLowerCase().startsWith(`${brand.toLowerCase()} `) ? name.slice(brand.length + 1) : null;
-    const sameBrand = !!brand && !!ownBrand && brand.toLowerCase() === ownBrand.toLowerCase();
-    const short = rest && sameBrand && (/d/.test(rest) || rest.trim().includes(" ")) ? rest : name;
+    const short = rest && (/\d/.test(rest) || rest.trim().includes(" ")) ? rest : name;
     return { key: d.ref.slug, href: d.ref.href, name: short };
   });
   const plain = fitsDeviceNames(slug, linked.map((l) => l.name));
