@@ -54,7 +54,7 @@ export const en: Dictionary = {
     help: "Help",
     ageNotice: "For ages 21 and over only. Nicotine is addictive. Order right here on the site; ask us on LINE",
     ageNoticeWhileOrderingOff: "For ages 21 and over only. Nicotine is addictive. Order and ask us on LINE",
-    siteUnreachable: "Can't open the site? See how to fix it",
+    siteUnreachable: "Can't open the site? There's an easy way to fix it",
   },
   hero: {
     badgeSuffix: "· Current Flagship",
@@ -189,6 +189,9 @@ export const en: Dictionary = {
     colorLabel: "Color",
     flavorLabel: "Flavor",
     allVariantsLabel: "All",
+    // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
+    lineupGroupLabel: "Colours {from}–{to}",
+    lineupGroupFallback: "All colours {n}",
     noPhotoFlavor: "No photo of this flavor yet",
     noPhotoColor: "No photo of this color yet",
     chooseFlavorFirst: "Choose a flavor",
@@ -259,6 +262,9 @@ export const en: Dictionary = {
     compatibilityTitle: "Compatibility",
     worksWithTitle: "Works with this device",
     fitsDevicesTitle: "Fits these devices",
+    // T2-31 (tester 10/11): the one line under a pod head's / coil's price naming the devices the maker says it fits.
+    fitsDeviceMore: "+{n} more",
+    fitsDeviceLine: "Fits",
     verifiedCompatibilityNote: "Every link here is checked against a manufacturer or retailer source.",
     whoIsThisForTitle: "Who is this for?",
     faqEyebrow: "FAQ",
