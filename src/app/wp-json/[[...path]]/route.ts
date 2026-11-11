@@ -12,6 +12,7 @@ import { logCall, saveStockReport, stockReports } from "@/lib/woo/store";
 import { logStockPush } from "@/lib/woo/stock-push-log";
 import { forgetLiveStock } from "@/lib/stock/live";
 import { flippedSlugs, pagesToRefresh } from "@/lib/stock/refresh-pages";
+import { refreshStalePages } from "@/lib/stock/stale-refresh";
 import { applyShipnityTrackings } from "@/lib/woo/tracking-sync";
 import { createWebhook, deleteWebhook, getWebhook, listWebhooks, updateWebhook } from "@/lib/woo/webhooks";
 import type { OrderSource, WebhookStore } from "@/lib/woo/api";
@@ -87,6 +88,10 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
         forgetLiveStock();
         for (const p of paths) revalidatePath(p);
       }
+      // And every page whose render differs from the live answer, not only a flip between two reports (owner 11/11: a page
+      // built from a stale snapshot kept "หมด" while Shipnity's number stayed 140 — stale-pages.ts).
+      forgetLiveStock();
+      refreshStalePages({ force: true });
     } catch (err) {
       console.error(`[stock] page refresh failed — pages keep their 3-hour window: ${err instanceof Error ? err.message : String(err)}`);
     }
