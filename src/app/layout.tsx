@@ -43,7 +43,7 @@ const monoFont = IBM_Plex_Mono({
 // vocabulary locked in round 30.2 (docs/THAI_STYLE.md §3, owner 2026-09-09): พอต not พอด,
 // พอตใช้แล้วทิ้ง not ดิสโพส.
 // T2-04 (owner 10/11 "ตามแนะนำ"): the wording follows the owner's cart switch too (orderingOpen), not only the build — a
-// build cannot read the switch, so /api/cart/count refreshes every page once after a boot while the cart is switched off, and
+// build cannot read the switch, so every page is refreshed once after each boot (src/lib/commerce/boot-refresh.ts asks /api/cart/count), and
 // the switch itself refreshes them when flipped (src/app/staff/owner/actions.ts).
 const orderChannelClause = (open: boolean) => (open ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24");
 

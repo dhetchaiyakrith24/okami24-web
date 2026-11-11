@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ScrollHintFrame } from "@/components/ui/ScrollHintFrame";
 import type { CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
@@ -142,6 +142,16 @@ export function CompareTool({ initialSlugs, catalog }: { initialSlugs: string[];
   // the same truth signal `verifiedSpecRows` below already trusts.
   const hasUncertainItems = items.some((i) => i.specifications.some((s) => s.sourceStatus === "unverified"));
   const bestFitItems = items.filter((i) => i.whoIsThisFor.length > 0);
+
+  // Keep `?slugs=` in step with the selection so a reload (or a shared link) shows what is on screen — before
+  // 12/11 a removed product came back on reload because the URL still named it.
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (slugs.length > 0) url.searchParams.set("slugs", slugs.join(","));
+    else url.searchParams.delete("slugs");
+    const next = `${url.pathname}${url.search}${url.hash}`;
+    if (next !== `${window.location.pathname}${window.location.search}${window.location.hash}`) window.history.replaceState(null, "", next);
+  }, [slugs]);
 
   function addProduct(slug: string) {
     setSlugs((prev) => (prev.includes(slug) || prev.length >= 4 ? prev : [...prev, slug]));
