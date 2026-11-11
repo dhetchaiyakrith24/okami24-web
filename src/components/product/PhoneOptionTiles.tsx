@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { Fragment, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useChipAutoscroll } from "./use-chip-autoscroll";
 import { countKind } from "@/lib/stock/count-rules";
+import { glossPieces } from "@/lib/flavor-thai";
 import { OptionBestTag } from "@/components/catalog/SalesBadge";
 
 /**
@@ -163,7 +164,7 @@ export function PhoneOptionTiles({
                 >
                   {o.name}
                 </span>
-                {o.gloss && <span className="mt-0.5 block line-clamp-2 text-[0.68rem] leading-tight text-foreground-dim">{o.gloss}</span>}
+                {o.gloss && <span className="mt-0.5 block line-clamp-2 text-[0.68rem] leading-tight text-foreground-dim"><GlossText text={o.gloss} /></span>}
               </span>
               <StockPill out={o.out} left={o.left} small />
             </button>
@@ -205,5 +206,24 @@ function StockPill({ out, small, left }: { out: boolean; small?: boolean; left?:
     >
       {out ? t.optionOut : low ? t.stockLeftShort.replace("{n}", String(left)) : t.optionIn}
     </span>
+  );
+}
+
+/** A Thai flavour gloss that breaks only between words (and after a lead word), never inside one — glossPieces. */
+function GlossText({ text }: { text: string }) {
+  return (
+    <>
+      {glossPieces(text).map((pieces, i) => (
+        <Fragment key={i}>
+          {i > 0 && " "}
+          {pieces.map((p, j) => (
+            <Fragment key={j}>
+              {j > 0 && <wbr />}
+              <span className="whitespace-nowrap">{p}</span>
+            </Fragment>
+          ))}
+        </Fragment>
+      ))}
+    </>
   );
 }

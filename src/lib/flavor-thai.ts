@@ -182,3 +182,13 @@ function onePart(name: string): string | null {
   if (lead) return lead + unique.join(" ");
   return unique.length > 0 ? unique.join(" ") : null;
 }
+
+/** The gloss cut into pieces a line may break between, never inside (wordbreak-scan 12/11 on a 390 phone tile: "หมาก|ฝรั่ง",
+ *  "ไอศกรีมวานิล|ลา"): one list per space-separated word; a word that begins with a lead word (LEADS) is two pieces. */
+export function glossPieces(gloss: string): string[][] {
+  const leads = Object.values(LEADS);
+  return gloss.split(" ").filter(Boolean).map((w) => {
+    const lead = leads.find((l) => w.startsWith(l) && w.length > l.length);
+    return lead ? [lead, w.slice(lead.length)] : [w];
+  });
+}

@@ -6,7 +6,7 @@
  */
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
-import { flavorThai } from "@/lib/flavor-thai";
+import { flavorThai, glossPieces } from "@/lib/flavor-thai";
 
 const FLAVOR_AXIS = /flav/i;
 
@@ -56,6 +56,9 @@ export function runFlavorThaiContractTests() {
   }
   const names = catalogFlavorNames();
   const glossed = names.filter((n) => flavorThai(n) !== null);
+  // A phone tile breaks the gloss only between these pieces (wordbreak-scan 12/11: "หมาก|ฝรั่ง", "ไอศกรีมวานิล|ลา").
+  check("gloss pieces: words whole, a lead word its own piece", JSON.stringify(glossPieces("แตงโม หมากฝรั่ง")) === JSON.stringify([["แตงโม"], ["หมากฝรั่ง"]]) && JSON.stringify(glossPieces("ไอศกรีมวานิลลา")) === JSON.stringify([["ไอศกรีม", "วานิลลา"]]));
+  check("gloss pieces put back together = the gloss", names.every((n) => { const g = flavorThai(n); return g === null || glossPieces(g).map((w) => w.join("")).join(" ") === g; }));
   check("the catalog has flavour names, and most get Thai words", names.length > 0 && glossed.length * 2 > names.length, `${glossed.length} of ${names.length}`);
   return results;
 }
