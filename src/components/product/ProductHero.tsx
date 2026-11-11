@@ -148,7 +148,7 @@ export function ProductHero({
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
   const [showAllColors, setShowAllColors] = useState(lineupFirst);
   // Which "all" image is shown: `lineupImage2` is a second group (owner 01/10 — Caliburn G3 Pro's 16 colours as two
-  // groups of 8). With two, the pills read "ทั้งหมด 1" / "ทั้งหมด 2" (the label + its number, in every language).
+  // groups of 8). With two, each pill names its group (see allLabelAt); with one, "ภาพรวมทุกสี" / "ภาพรวมทุกกลิ่น".
   const lineups = [product.lineupImage, product.lineupImage2].filter((l): l is NonNullable<typeof l> => !!l);
   const [allIndex, setAllIndex] = useState(0);
   const shownLineup = lineups[allIndex] ?? product.lineupImage;
@@ -163,7 +163,9 @@ export function ProductHero({
       ? dict.product.lineupGroupLabel.replace("{from}", String(groupRanges[i][0])).replace("{to}", String(groupRanges[i][1]))
       : lineups.length > 1
         ? dict.product.lineupGroupFallback.replace("{n}", String(i + 1))
-        : dict.product.allVariantsLabel;
+        : product.colorVariants?.length
+          ? dict.product.allColorsLabel
+          : dict.product.allFlavorsLabel;
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
@@ -426,7 +428,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.colorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allColorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
@@ -447,7 +449,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.flavorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allFlavorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
