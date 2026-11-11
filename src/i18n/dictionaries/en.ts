@@ -731,6 +731,7 @@ export const en: Dictionary = {
     nextShippedNoCarrier: "Your parcel has left the warehouse. Use the tracking number below to check its status with the carrier, or message us on LINE @okm24 if you’re not sure which carrier it is.",
     nextCompleted: "This order is complete.",
     nextCancelled: "This order has been cancelled.",
+    discountLabel: "Discount",
     cancelReasonWarehouse: "Our warehouse has let us know it can’t ship this order, so we’ve had to cancel it. We’re sorry for the inconvenience.",
     cancelMoneyChoose: "We’ll refund the full amount you transferred. Choose how you’d like to receive it below.",
     cancelMoneyPaid: "We’ll be in touch to refund you by PromptPay or to a bank account, whichever suits you. In the meantime, message us on LINE @okm24 with any questions.",

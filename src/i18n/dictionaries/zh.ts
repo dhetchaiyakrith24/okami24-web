@@ -723,6 +723,7 @@ export const zh: Dictionary = {
     nextShippedNoCarrier: "包裹已从仓库发出。可用下方快递单号向快递公司查询；如不确定是哪家快递，请通过 LINE @okm24 联系我们。",
     nextCompleted: "此订单已完成。",
     nextCancelled: "此订单已取消。",
+    discountLabel: "折扣",
     cancelReasonWarehouse: "仓库通知我们此订单无法发货，我们只能将订单取消，给您带来不便，敬请谅解。",
     cancelMoneyChoose: "您转账的全部金额将退还给您，请在下方选择方便的收款方式。",
     cancelMoneyPaid: "我们会联系您，按您方便的方式退款至 PromptPay 或银行账户。如有疑问，请通过 LINE @okm24 联系我们。",
