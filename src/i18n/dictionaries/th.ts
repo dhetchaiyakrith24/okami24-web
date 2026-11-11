@@ -204,6 +204,9 @@ export const th: Dictionary = {
     colorLabel: "สี",
     flavorLabel: "รสชาติ",
     allVariantsLabel: "ทั้งหมด",
+    // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
+    lineupGroupLabel: "สีที่ {from}–{to}",
+    lineupGroupFallback: "ภาพรวมสี {n}",
     noPhotoFlavor: "ยังไม่มีรูปของกลิ่นนี้",
     noPhotoColor: "ยังไม่มีรูปของสีนี้",
     chooseFlavorFirst: "เลือกกลิ่น",
@@ -282,6 +285,9 @@ export const th: Dictionary = {
     compatibilityTitle: "ใช้กับอะไรได้บ้าง",
     worksWithTitle: "ใช้ร่วมกับเครื่องนี้ได้",
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
+    // T2-31 (tester 10/11): the one line under a pod head's / coil's price naming the devices the maker says it fits.
+    fitsDeviceMore: "+{n} รุ่น",
+    fitsDeviceLine: "ใช้ได้กับเครื่อง",
     verifiedCompatibilityNote: "ทุกรายการเช็คกับเว็บทางการของแบรนด์หรือหน้าร้านค้าปลีกแล้ว",
     whoIsThisForTitle: "เหมาะกับใคร",
     faqEyebrow: "ถาม-ตอบ",

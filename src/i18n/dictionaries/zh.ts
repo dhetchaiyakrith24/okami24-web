@@ -183,6 +183,9 @@ export const zh: Dictionary = {
     colorLabel: "颜色",
     flavorLabel: "口味",
     allVariantsLabel: "全部",
+    // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
+    lineupGroupLabel: "颜色 {from}–{to}",
+    lineupGroupFallback: "全部颜色 {n}",
     noPhotoFlavor: "暂无该口味的图片",
     noPhotoColor: "暂无该颜色的图片",
     chooseFlavorFirst: "选择口味",
@@ -253,6 +256,9 @@ export const zh: Dictionary = {
     compatibilityTitle: "兼容性",
     worksWithTitle: "可搭配本机使用",
     fitsDevicesTitle: "适配以下设备",
+    // T2-31 (tester 10/11): the one line under a pod head's / coil's price naming the devices the maker says it fits.
+    fitsDeviceMore: "+{n} 款",
+    fitsDeviceLine: "适用于",
     verifiedCompatibilityNote: "以下每一条均已对照厂商或零售商来源核实。",
     whoIsThisForTitle: "适合谁使用？",
     faqEyebrow: "问答",
