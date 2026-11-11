@@ -212,12 +212,14 @@ img {
 }
 /* ก10 "Zoom" prototype (src/components/visual/ZoomShared.tsx): the card photo → product hero morph. A slow-out curve
    so the "camera" lands softly; a touch of blur mid-flight hides the pixel stretch between the two sizes (the Next
-   view-transitions guide). Then the lit shelf draws in from the centre under the device. */
-::view-transition-group(.okami-zoom) {
+   view-transitions guide). Then the lit shelf draws in from the centre under the device.
+   PREVIEW ONLY: every rule is scoped to html[data-preview="zoom"|"cards-zoom"] (ZOOM_PREVIEW_WORDS in ZoomShared.tsx —
+   keep in step); the view-transition pseudo-elements hang off <html>, hence no space before "::". */
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(.okami-zoom) {
   animation-duration: 560ms;
   animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
 }
-::view-transition-image-pair(.okami-zoom) {
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(.okami-zoom) {
   animation-name: okami-zoom-blur;
 }
 @keyframes okami-zoom-blur {
@@ -234,10 +236,10 @@ img {
 @media (prefers-reduced-motion: reduce) {
   /* Motion off = no morph at all (the global rule below only shortens animations; view-transition pseudo-elements
      are named here outright) and the shelf simply sits there. */
-  ::view-transition-group(*),
-  ::view-transition-image-pair(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-old(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-new(*) {
     animation: none !important;
   }
   .okami-zoom-plinth { animation: none; }
