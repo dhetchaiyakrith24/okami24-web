@@ -10,7 +10,9 @@
  *      sold-out card, each group in the editorial order, the row's length unchanged; a card the live answer sells out
  *      moves behind the in-stock ones;
  *   3. newArrivalSlugs(count, live) — newest first, only what is in stock live, a sold-out new model is replaced by the
- *      next newest (the row stays full while enough models are in stock), everything out = an empty row (it hides).
+ *      next newest (the row stays full while enough models are in stock), everything out = an empty row (it hides);
+ *   4. the lookalikes (T2-08, HANDOFF §18) — after every other card of their row whatever the stock, never in its first
+ *      RAIL_CARDS, never in the new-arrivals row, never in the /search results (their own page and category page stay).
  */
 import fs from "node:fs";
 import os from "node:os";
@@ -43,7 +45,10 @@ async function main(): Promise<void> {
     const { legacyCardStock, publishedCardStock } = await load("src/lib/stock/card-stock.ts");
     const { newArrivalSlugs } = await load("src/lib/new-arrivals.ts");
     const { HomeTypeSection } = await load("src/components/home/HomeTypeSection.tsx");
-    const { HOME_TYPE_SECTIONS } = await load("src/data/home-sections.ts");
+    const { HOME_TYPE_SECTIONS, RAIL_CARDS } = await load("src/data/home-sections.ts");
+    const { LOOKALIKES } = await load("src/data/similar-models.ts");
+    const { searchEntries } = await load("src/lib/search-entries.ts");
+    const { getPublishedProducts } = await load("src/data/shipnity-seed/storefront-bridge.ts");
     const { WAREHOUSE_ALL_CODES, WAREHOUSE_OUT_OF_STOCK } = await load("src/data/stock/warehouse-stock.ts");
     const { SHIPNITY_SKU_MAP } = await load("src/data/stock/sku-map.ts");
     const { FIRST_LISTED } = await load("src/data/first-listed.ts");
@@ -109,9 +114,11 @@ async function main(): Promise<void> {
       const items = rowItems(s);
       const after = items.map((i) => i.slug);
       const out = new Set(items.filter((i) => soldOutLive(i, live)).map((i) => i.slug));
-      const expected = [...before.filter((x) => !out.has(x)), ...before.filter((x) => out.has(x))];
+      const look = (x: string) => LOOKALIKES.has(x);
+      const expected = [...before.filter((x) => !look(x) && !out.has(x)), ...before.filter((x) => !look(x) && out.has(x)), ...before.filter(look)];
       check(`2c. ${s.type}: same cards, same length`, after.length === before.length && [...after].sort().join() === [...before].sort().join(), { before, after });
-      check(`2d. ${s.type}: in stock first, sold out last, each group in the editorial order`, after.join() === expected.join(), { expected, after });
+      check(`2d. ${s.type}: in stock first, sold out last, each group in the editorial order (a lookalike after all)`, after.join() === expected.join(), { expected, after });
+      for (const x of after.filter(look)) check(`4a. ${s.type}: ${x} is not in the first ${RAIL_CARDS} cards (${after.length} in the row)`, after.indexOf(x) >= RAIL_CARDS, after);
     }
     if (victim && rescue) {
       const after = rowItems(pods).map((i) => i.slug);
@@ -138,6 +145,10 @@ async function main(): Promise<void> {
     } else {
       check("3c. the snapshot sells at least one new model", false, row);
     }
+    check("4b. no lookalike in the new-arrivals row, live or as built", ![...newArrivalSlugs(8, live), ...newArrivalSlugs(8)].some((x: string) => LOOKALIKES.has(x)));
+    const searched = (searchEntries() as { hit: { product: { slug: string } } }[]).map((x) => x.hit.product.slug);
+    const lookPublished = (getPublishedProducts() as { slug: string }[]).filter((p) => LOOKALIKES.has(p.slug)).map((p) => p.slug);
+    check("4c. /search leaves out every lookalike (still in the published catalog, so the check bites)", lookPublished.length > 0 && !searched.some((x) => LOOKALIKES.has(x)) && searched.length > 0, { lookPublished, searched: searched.length });
     check("3f. everything out live = an empty row (HomeNewArrivals hides)", (newArrivalSlugs(8, () => "out") as string[]).length === 0);
   } finally {
     try {
