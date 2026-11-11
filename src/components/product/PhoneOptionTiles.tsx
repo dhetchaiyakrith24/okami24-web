@@ -80,8 +80,13 @@ export function PhoneOptionTiles({
     <div ref={rootRef} className={cn("flex flex-col gap-3", className)}>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
-        {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
-        {selected?.gloss && <span className="text-foreground-muted">· {selected.gloss}</span>}
+        {/* Designer 12/11: the gloss sits in the name's own span, so the dot has a space on both sides (gap-x-2 was before it only). */}
+        {selected && (
+          <span className="font-semibold text-foreground">
+            {selected.name}
+            {selected.gloss && <span className="font-normal text-foreground-muted"> · {selected.gloss}</span>}
+          </span>
+        )}
         {selected?.best && <OptionBestTag className="px-2 py-1 text-xs" />}
         {selected && <StockPill out={selected.out} />}
         {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
@@ -164,7 +169,7 @@ export function PhoneOptionTiles({
                 >
                   {o.name}
                 </span>
-                {o.gloss && <span className="mt-0.5 block line-clamp-2 text-[0.68rem] leading-tight text-foreground-dim"><GlossText text={o.gloss} /></span>}
+                {o.gloss && <span className={cn("mt-0.5 block text-[0.68rem] leading-tight text-foreground-dim", strip ? "line-clamp-1" : "line-clamp-2")}><GlossText text={o.gloss} /></span>}
               </span>
               <StockPill out={o.out} left={o.left} small />
             </button>

@@ -85,7 +85,7 @@ export function FlavorVariantGrid({
         {!isAllSelected && selected && bestIds?.has(selected.id) && <OptionBestTag className="ml-2 align-middle" />}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
-      <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto pr-1 max-lg:hidden">
+      <div className="flex max-h-80 flex-wrap gap-2 overflow-y-auto pr-1 max-lg:hidden">
         {onSelectAll && (
           <button
             type="button"
@@ -129,7 +129,7 @@ export function FlavorVariantGrid({
                 aria-hidden
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
-              {glossOf?.(v.name) && <span className="text-foreground-dim">· {glossOf(v.name)}</span>}
+              {glossOf?.(v.name) && <span className={cn("text-foreground-dim", outOfStock && "line-through decoration-foreground-dim")}>· {glossOf(v.name)}</span>}
               {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-danger" : "text-foreground-dim")}>{outOfStockLabel}</span>}
               {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}

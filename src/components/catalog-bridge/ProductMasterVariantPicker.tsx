@@ -109,7 +109,7 @@ export function ProductMasterVariantPicker({
             >
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>
               {/* Thai in the mono pill reads as a mistake (OptionCountBadge note) — sans, no tracking, no capitals. */}
-              {glossOf?.(v.label) && <span className="font-sans! normal-case! tracking-normal! text-foreground-dim">· {glossOf(v.label)}</span>}
+              {glossOf?.(v.label) && <span className={cn("font-sans! normal-case! tracking-normal! text-foreground-dim", outOfStock && "line-through decoration-foreground-dim")}>· {glossOf(v.label)}</span>}
               {outOfStock && outOfStockLabel && <span className="text-[0.6rem] uppercase tracking-wide">{outOfStockLabel}</span>}
               {bestIds?.has(v.id) && <OptionBestTag />}
               {!outOfStock && <LowStockTag left={counts?.[v.id]} />}
