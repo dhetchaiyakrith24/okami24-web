@@ -1,4 +1,4 @@
-import type { RibbonDriver, RibbonMessage, RibbonMode } from "@/lib/hero-ribbons";
+import { ribbonPalette, type RibbonDriver, type RibbonMessage, type RibbonMode } from "@/lib/hero-ribbons";
 
 /**
  * The ribbon engine in a worker on an OffscreenCanvas — shared by the hero (HeroShowcase) and the
@@ -25,7 +25,7 @@ export function workerDriver(canvases: HTMLCanvasElement[], onReady: () => void,
     else worker.terminate();
   };
   const post = (m: RibbonMessage, transfer: Transferable[] = []) => worker.postMessage(m, transfer);
-  post({ type: "init", canvases: off, mode }, off);
+  post({ type: "init", canvases: off, mode, palette: ribbonPalette() }, off);
   return {
     size: (w, h, dpr, phone) => post({ type: "size", w, h, dpr, phone }),
     focus: (x, y) => post({ type: "focus", x, y }),

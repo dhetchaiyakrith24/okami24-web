@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Preview "cards" — black + the shop orange (owner 12/11: the forge card body reads "ขุ่นและเก่า"; "ขอสีส้มพี่คืน ไม่เอาโทนเหลือง
+   … เว็บเราจะดำ ส้ม"; "เหลืองมีได้แต่ต้องไม่เด่นจนส้มหาย"). Designer pass 12/11 before the build.
+   ONLY `html[data-preview="cards"]` matches — set on the owner's device by okami24.store/?preview=cards (src/lib/preview.ts).
+   Every customer still gets today's look. When the owner approves: the values below become :root / the base rules in
+   globals.css, the frame moves there too, the home ribbon's palette becomes the default (src/lib/hero-ribbons.ts), and this
+   file and its import in layout.tsx are deleted.
+   ========================================================================== */
+html[data-preview="cards"] {
+  /* Neutral graphite (the pre-09/11 surfaces and text — every text token AA on surface-0/1/2: dim 5.34 / 4.91 / 4.51). */
+  --surface-0: #0e0e10;
+  --surface-1: #17181b;
+  --surface-2: #1f2024;
+  --surface-3: #2a2b30;
+  --surface-border: #34353c;
+  --surface-border-soft: #26272c;
+  --foreground: #f3f1ec;
+  --foreground-muted: #b1afb2;
+  --foreground-dim: #87868b;
+  /* The shop orange leads again (button text #181008 on it 6.58:1, on -strong 7.69:1; on surface-0 6.75:1). Oxblood -soft
+     stays for solid fills only (the "ขายดี" chip, checkout steps); see-through washes turn orange below. */
+  --accent-ember: #ff6a2c;
+  --accent-ember-strong: #ff8347;
+  --ember-rgb: 255 106 44;
+  --ember-strong-rgb: 255 131 71;
+  /* Steel: a quiet neutral (not the old blue, not warm). */
+  --accent-steel: #c6c5cc;
+  --accent-steel-strong: #e4e3e9;
+  --accent-steel-soft: #2a2b30;
+  /* Status colours unchanged: red sold out · yellow #d9bd4f wait/low · green in stock · purple new. */
+}
+
+/* Orange text comes back (the 09/11 one-orange rule in globals.css paints .text-ember off-white): eyebrows, the headline's
+   second line, accent labels. The "ขายดี" chip keeps its approved off-white words (text-foreground in SalesBadge). */
+html[data-preview="cards"] .text-ember {
+  color: var(--accent-ember);
+}
+html[data-preview="cards"] .text-ember-strong {
+  color: var(--accent-ember-strong);
+}
+
+/* A see-through oxblood wash reads brown on graphite: badges, the selected variant, the language switch, finder and
+   service-step chips get a see-through orange instead. */
+html[data-preview="cards"] .bg-ember-soft\/30,
+html[data-preview="cards"] .bg-ember-soft\/40,
+html[data-preview="cards"] .bg-ember-soft\/60 {
+  background-color: rgb(255 106 44 / 0.1);
+}
+html[data-preview="cards"] .hover\:bg-ember-soft:hover {
+  background-color: rgb(255 106 44 / 0.15);
+}
+
+/* The shop's picks glow (owner 12/11: the frame back, subtle, on "ขายดี" and "แนะนำ" cards). One still look for both —
+   "the shop recommends this"; the chip says which. A best seller is marked by its chip (SalesBadge sets data-sales after
+   hydration — the 1px border is already there, so nothing moves and the card's transition fades the glow in); "แนะนำ" =
+   the Flagship cards (ProductCard sets data-flagship in the server HTML). Low alpha on purpose: a first row of best sellers
+   must not become a wall of orange. No running light (the 31/10 one: git log -S "okami-best-edge"). */
+html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]),
+html[data-preview="cards"] a[data-card-cut][data-flagship] {
+  border-color: rgb(255 106 44 / 0.38);
+  box-shadow: 0 0 18px -6px rgb(255 106 44 / 0.3), inset 0 1px 0 rgb(255 131 71 / 0.1);
+}
+html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]):hover,
+html[data-preview="cards"] a[data-card-cut][data-flagship]:hover {
+  border-color: rgb(255 106 44 / 0.6);
+  box-shadow: 0 0 26px -6px rgb(255 106 44 / 0.42), inset 0 1px 0 rgb(255 131 71 / 0.14);
+}
+@media (max-width: 63.98rem) {
+  html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]),
+  html[data-preview="cards"] a[data-card-cut][data-flagship] {
+    box-shadow: 0 0 12px -5px rgb(255 106 44 / 0.26), inset 0 1px 0 rgb(255 131 71 / 0.1);
+  }
+}

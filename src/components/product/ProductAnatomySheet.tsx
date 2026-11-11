@@ -29,7 +29,7 @@ const INK = "var(--foreground)";
 const INK_SOFT = "var(--foreground-muted)";
 const RULE = "rgba(111,184,216,0.22)"; // --accent-steel, faint
 const LEADER = "rgba(111,184,216,0.6)";
-const EMBER = "#f08a2a"; // --accent-ember
+const EMBER = "var(--accent-ember)"; // a CSS value: used in style props only (an SVG fill attribute cannot read var())
 const EMBER_INK = EMBER;
 const CODE = "#8f8e93"; // between --foreground-dim and -muted: small caps codes stay readable (~5:1 on SHEET)
 /** rim light + depth so a matte black part does not sink into the dark sheet */
@@ -144,8 +144,8 @@ function ExplodedStack({ parts, text, verified, alt, showCode, widthLg = 42 }: {
         {leaders.map((l, i) => (
           <g key={i}>
             <path d={l.d} fill="none" stroke={LEADER} strokeWidth={1} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
-            <circle cx={l.ax} cy={l.ay} r={3.5} fill={EMBER} />
-            <circle cx={l.ax} cy={l.ay} r={7} fill="none" stroke={EMBER} strokeOpacity={0.35} />
+            <circle cx={l.ax} cy={l.ay} r={3.5} style={{ fill: EMBER }} />
+            <circle cx={l.ax} cy={l.ay} r={7} fill="none" style={{ stroke: EMBER }} strokeOpacity={0.35} />
           </g>
         ))}
       </svg>
@@ -188,7 +188,7 @@ function BottomView({ sheet, text, verified, showCode }: { sheet: AnatomySheet; 
           {sheet.base.map((c) => (
             <g key={c.n}>
               <line x1={c.x * 2} y1={c.y * 2} x2={c.to[0] * 2} y2={c.to[1] * 2} stroke={LEADER} strokeWidth={1} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
-              <circle cx={c.to[0] * 2} cy={c.to[1] * 2} r={2.2} fill={EMBER} stroke="none" />
+              <circle cx={c.to[0] * 2} cy={c.to[1] * 2} r={2.2} style={{ fill: EMBER }} stroke="none" />
             </g>
           ))}
         </svg>
