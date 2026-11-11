@@ -140,7 +140,7 @@ export const zh: Dictionary = {
   },
   catalog: {
     eyebrow: "产品目录",
-    lineOrderingNotice: "现在用 LINE 下单更快，加 @okm24 就好",
+    lineOrderingNotice: "现在通过 LINE 下单更快。",
     lineOrderingCta: "联系 @okm24",
     puffUnit: "口",
     cardBattery: "电池 {mah}",
@@ -643,7 +643,7 @@ export const zh: Dictionary = {
     paymentQrNote: "也可用银行 App 扫描下方二维码，按上方总金额付款。",
     paymentQrAmountNote: "也可用银行 App 扫描下方二维码，二维码已包含本订单金额，付款前请核对是否与上方总金额一致。",
     paymentQrAlt: "用于向店铺账户转账的 PromptPay 二维码",
-    paymentAfterTransferNote: "转账完成后，请在下方上传转账凭证。我们核对款项后会为您备货发货。如有问题，请通过 LINE @okm24 联系我们。",
+    paymentAfterTransferNote: "转账完成后，请在下方上传转账凭证。如有问题，请通过 LINE @okm24 联系我们。",
     paymentNoRefundWarning: "转账后订单不可取消，商品缺货的情况除外——届时我们会联系您换成同价商品或退款。",
     paymentCopyCta: "复制账号",
     paymentCopiedLabel: "已复制",
@@ -747,7 +747,7 @@ export const zh: Dictionary = {
   },
   notFound: {
     title: "找不到此页面",
-    body: "你打开的页面不存在，或该产品已从网站下架。可以浏览全部产品；找不到想要的型号，也可以在 LINE 上问我们。",
+    body: "您打开的页面不存在，或该产品已从网站下架。可以浏览全部产品；如果找不到想要的型号，也可以通过 LINE @okm24 联系我们。",
     ctaProducts: "浏览全部产品",
     ctaLine: "LINE 联系 @okm24",
     ctaHome: "返回首页",
