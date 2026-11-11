@@ -1,12 +1,13 @@
 /* ==========================================================================
    Preview "cards" — black + the shop orange (owner 12/11: the forge card body reads "ขุ่นและเก่า"; "ขอสีส้มพี่คืน ไม่เอาโทนเหลือง
    … เว็บเราจะดำ ส้ม"; "เหลืองมีได้แต่ต้องไม่เด่นจนส้มหาย"). Designer pass 12/11 before the build.
-   ONLY `html[data-preview="cards"]` matches — set on the owner's device by okami24.store/?preview=cards (src/lib/preview.ts).
+   ONLY `html[data-preview^="cards"]` matches — set on the owner's device by okami24.store/?preview=cards (src/lib/preview.ts);
+   ?preview=cards-run is the same look plus a slow light along the Flagship frames (the owner compares still vs moving).
    Every customer still gets today's look. When the owner approves: the values below become :root / the base rules in
    globals.css, the frame moves there too, the home ribbon's palette becomes the default (src/lib/hero-ribbons.ts), and this
    file and its import in layout.tsx are deleted.
    ========================================================================== */
-html[data-preview="cards"] {
+html[data-preview^="cards"] {
   /* Neutral graphite (the pre-09/11 surfaces and text — every text token AA on surface-0/1/2: dim 5.34 / 4.91 / 4.51). */
   --surface-0: #0e0e10;
   --surface-1: #17181b;
@@ -32,21 +33,21 @@ html[data-preview="cards"] {
 
 /* Orange text comes back (the 09/11 one-orange rule in globals.css paints .text-ember off-white): eyebrows, the headline's
    second line, accent labels. The "ขายดี" chip keeps its approved off-white words (text-foreground in SalesBadge). */
-html[data-preview="cards"] .text-ember {
+html[data-preview^="cards"] .text-ember {
   color: var(--accent-ember);
 }
-html[data-preview="cards"] .text-ember-strong {
+html[data-preview^="cards"] .text-ember-strong {
   color: var(--accent-ember-strong);
 }
 
 /* A see-through oxblood wash reads brown on graphite: badges, the selected variant, the language switch, finder and
    service-step chips get a see-through orange instead. */
-html[data-preview="cards"] .bg-ember-soft\/30,
-html[data-preview="cards"] .bg-ember-soft\/40,
-html[data-preview="cards"] .bg-ember-soft\/60 {
+html[data-preview^="cards"] .bg-ember-soft\/30,
+html[data-preview^="cards"] .bg-ember-soft\/40,
+html[data-preview^="cards"] .bg-ember-soft\/60 {
   background-color: rgb(255 106 44 / 0.1);
 }
-html[data-preview="cards"] .hover\:bg-ember-soft:hover {
+html[data-preview^="cards"] .hover\:bg-ember-soft:hover {
   background-color: rgb(255 106 44 / 0.15);
 }
 
@@ -55,19 +56,51 @@ html[data-preview="cards"] .hover\:bg-ember-soft:hover {
    hydration — the 1px border is already there, so nothing moves and the card's transition fades the glow in); "แนะนำ" =
    the Flagship cards (ProductCard sets data-flagship in the server HTML). Low alpha on purpose: a first row of best sellers
    must not become a wall of orange. No running light (the 31/10 one: git log -S "okami-best-edge"). */
-html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]),
-html[data-preview="cards"] a[data-card-cut][data-flagship] {
+html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]),
+html[data-preview^="cards"] a[data-card-cut][data-flagship] {
   border-color: rgb(255 106 44 / 0.38);
   box-shadow: 0 0 18px -6px rgb(255 106 44 / 0.3), inset 0 1px 0 rgb(255 131 71 / 0.1);
 }
-html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]):hover,
-html[data-preview="cards"] a[data-card-cut][data-flagship]:hover {
+html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]):hover,
+html[data-preview^="cards"] a[data-card-cut][data-flagship]:hover {
   border-color: rgb(255 106 44 / 0.6);
   box-shadow: 0 0 26px -6px rgb(255 106 44 / 0.42), inset 0 1px 0 rgb(255 131 71 / 0.14);
 }
 @media (max-width: 63.98rem) {
-  html[data-preview="cards"] a[data-card-cut]:has([data-sales="best"]),
-  html[data-preview="cards"] a[data-card-cut][data-flagship] {
+  html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]),
+  html[data-preview^="cards"] a[data-card-cut][data-flagship] {
     box-shadow: 0 0 12px -5px rgb(255 106 44 / 0.26), inset 0 1px 0 rgb(255 131 71 / 0.1);
+  }
+}
+
+/* ?preview=cards-run only: the same frame, plus a slow light running round the four Flagship ("แนะนำ") cards — the owner
+   compares it with the still frame (12/11). Drawn on the card's own 1px border (a masked conic ring inside the card, so
+   overflow-hidden does not clip it); one turn every 7 s. Motion only when the visitor allows it; reduced motion = the
+   still frame above. */
+@property --okami-run-a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-preview="cards-run"] a[data-card-cut][data-flagship]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: conic-gradient(from var(--okami-run-a), transparent 0deg 250deg, rgb(255 131 71 / 0.9) 320deg, rgb(255 241 236 / 0.95) 340deg, transparent 360deg);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    animation: okami-run-light 7s linear infinite;
+  }
+}
+@keyframes okami-run-light {
+  to {
+    --okami-run-a: 360deg;
   }
 }
