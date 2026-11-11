@@ -25,6 +25,11 @@ export const IN_STOCK_ALTERNATIVES: Record<string, string[]> = {
   "86-bar-20k": ["esko-bar-20k", "infy-20k", "mq-bar-22k", "m-bar-9k"],
 };
 
+/** The "เทียบแท้" (lookalike) products (owner 27/10, docs/HANDOFF.md §18). Their own pages stay, but they are never a shop pick,
+ *  never on the home page (its rails and the new-arrivals row), noindex and out of the sitemap — so they do not compete with
+ *  the genuine model's page in search (outside test T2-08, owner "ตามแนะนำ" 10/11). */
+export const LOOKALIKES: ReadonlySet<string> = new Set(["marbo-10k-clone"]);
+
 /** BSOT §15 "Not recommended" + the one lookalike (owner 27/10, HANDOFF §18): never offered as a suggestion or a shop pick. */
 export const NEVER_SUGGEST = new Set(["muro-space-15k", "marbo-10k-clone"]);
 

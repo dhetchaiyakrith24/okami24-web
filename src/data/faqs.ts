@@ -107,7 +107,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "devices",
     question: "Is Marbo the same thing as M Bar?",
     answer:
-      "They are two names for one line: many Thai shops list the M Bar, M Switch and Zero devices under the name Marbo. Salthub's own site carries the Marbo logo in its footer.",
+      "They are two names for one line: many Thai shops list the M Bar, M Switch and Zero devices under the name Marbo. Salthub's own site carries the Marbo logo in its footer. The Marbo 10K (Clone) we also sell is a clone, not made by SALTHUB.",
     action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
   },
   {
