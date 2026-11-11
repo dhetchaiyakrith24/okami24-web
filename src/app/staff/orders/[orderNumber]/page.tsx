@@ -19,6 +19,7 @@ import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
+import { isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
 import { editStateOf, linkedSlips } from "@/lib/staff/line-order-edit";
 import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
 import { slipsToPick } from "@/lib/staff/line-orders";
@@ -282,6 +283,7 @@ export default async function StaffOrderPage({
   const shipnity = shipnityReady() && (!lineOrder || readSwitches().lineToWarehouse);
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const warehouseCancelled = order.status === "cancelled" && isWarehouseCancelNote(cancelNote);
   const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
@@ -329,12 +331,17 @@ export default async function StaffOrderPage({
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
-      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. The order's
-          status here is not changed by it: staff call the customer and the warehouse's admin first. */}
+      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. Since 11/11
+          (owner, T2-10) a "cancelled" / "refunded" cancels the web order itself (src/lib/woo/warehouse-cancel.ts); a delete /
+          fail still waits for staff: call the customer and the warehouse's admin first. */}
       {warehouse && (
         <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} — คุยกับแอดมินคลัง
-          แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)
+          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} —{" "}
+          {warehouseCancelled
+            ? order.stockIssue && order.stockIssue.resolution === null
+              ? "เว็บยกเลิกออเดอร์ให้แล้ว ลูกค้าเลือกช่องทางรับเงินคืนในหน้าออเดอร์ โอนคืนแล้วบันทึกในกล่องด้านล่าง"
+              : "เว็บยกเลิกออเดอร์ให้แล้ว"
+            : <>คุยกับแอดมินคลัง แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)</>}
         </p>
       )}
 

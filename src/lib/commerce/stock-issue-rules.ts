@@ -17,6 +17,16 @@ export function canOpenStockIssue(status: OrderStatus): boolean {
   return STOCK_ISSUE_STATUSES.includes(status);
 }
 
+/**
+ * The refund half of an issue stays open on a CANCELLED order when the issue covers the whole order (T2-10, owner 11/11:
+ * Shipnity cancels → the web order cancels itself; BSOT §9 owner exception 10/11: paid but the shop cannot ship = the
+ * out-of-stock rule) — the customer still picks where the money goes, and staff still record the transfer. The swap half
+ * never does: a cancelled order is final (order-status.ts), so a same-price swap goes through LINE as a new order.
+ */
+export function canRefundStockIssue(status: OrderStatus, wholeOrder: boolean): boolean {
+  return canOpenStockIssue(status) || (status === "cancelled" && wholeOrder);
+}
+
 export type StockIssueChoice = "swap" | "refund";
 export type StockIssueResolution = "swapped" | "refunded";
 
@@ -153,6 +163,8 @@ export interface StockIssueView {
   refundBank: { bank: string; branch: string; accountMasked: string } | null;
   /** Only while the customer still has to choose: the swap options for each out line, by order-line id. */
   swapGroups: Record<number, SwapGroup[]>;
+  /** The order is already cancelled (the warehouse cancelled it, T2-10): refund only, no swap form (canRefundStockIssue). */
+  afterCancel: boolean;
   /** Refunded and staff attached the bank's transfer slip (queue B4) — the order page shows it from /orders/<n>/refund-slip. */
   refundSlip: boolean;
 }
