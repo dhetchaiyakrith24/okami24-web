@@ -34,7 +34,7 @@ visible copy · brand names in Latin, incl. "Marbo" (the two exceptions + hidden
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
 (THAI_STYLE_LOG §7) · round 7 (SEO ค, owner via Cowork 23/09): home page top word "Pod System", "บุหรี่ไฟฟ้า" second · "Marbo" and
 "M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
-"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount; its question may use the word "ราคาส่ง" (owner 16/10, list item 64) · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
+"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount; its question may use the word "ราคาส่ง" (owner 16/10, list item 64) · breadcrumb in Thai — "หน้าแรก" + the Thai category name ("พอตไฟฟ้า" for pod-systems: 4,400/mo vs an empty "พอตซิสเต็ม"), brand and model names stay English; visible = JSON-LD `name`, `item` URLs unchanged (owner 12/11 ~03:40 "ของบางอย่าง Eng ดีกว่าเช่น ชื่อแบรน รุ่น" · replaces 09-11 "Home stays"; names = `src/i18n/category-crumbs.ts`) · LINE-click counter =
 in-site count, no cookies, nothing sent outside ·
 new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` (code name of the home section "Pod Kit / พอตคิท") keeps its name — a rename changes nothing a visitor sees (Friday 15/10) · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).

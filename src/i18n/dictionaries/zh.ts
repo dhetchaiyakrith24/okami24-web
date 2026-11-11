@@ -182,7 +182,8 @@ export const zh: Dictionary = {
   product: {
     colorLabel: "颜色",
     flavorLabel: "口味",
-    allVariantsLabel: "全部",
+    allColorsLabel: "全部颜色",
+    allFlavorsLabel: "全部口味",
     // T2-31: a product whose "all colours" picture is two images — one chip per image says which colours it shows.
     lineupGroupLabel: "颜色 {from}–{to}",
     lineupGroupFallback: "全部颜色 {n}",
