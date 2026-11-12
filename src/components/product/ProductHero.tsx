@@ -40,7 +40,7 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
-import { useZoomPreview } from "@/components/visual/ZoomNav";
+import { useZoomOn } from "@/components/visual/ZoomNav";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -361,11 +361,11 @@ export function ProductHero({
   // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
   const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? allLabelAt(allIndex) : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
-  // The Zoom shelf: only on a device previewing the Zoom (owner 12/11 preview links) — customers get today's box.
-  const zoomPreview = useZoomPreview();
+  // The Zoom shelf: in a browser the Zoom runs in, after hydration (the server HTML stays as it was).
+  const zoomOn = useZoomOn();
   // A device on a stage of its own (a lineup, or a studio photo with its own floor) gets neither the floor shadow below nor the shelf.
   const ownStage = (showAllColors && !!product.lineupImage) || !!(heroOverrideImage && "ownFloor" in heroOverrideImage && heroOverrideImage.ownFloor);
-  const zoomShelf = zoomPreview && !ownStage;
+  const zoomShelf = zoomOn && !ownStage;
 
   return (
     <>
@@ -539,7 +539,7 @@ export function ProductHero({
             gallery, which is absolutely positioned over the same square. One FavoriteButton in its
             original DOM slot serves both — a second copy for the phone view was found (2026-09-08)
             to perturb the desktop render of the heart's backdrop blur by ±2/255. */}
-        {/* data-zoom-hero: the box the tapped card photo lands in (the Zoom, src/lib/zoom-nav.ts — ?preview=zoom only). */}
+        {/* data-zoom-hero: the box the tapped card photo lands in (the Zoom, src/lib/zoom-nav.ts). */}
         <div data-zoom-hero="" className="relative order-1 mx-auto aspect-square w-full max-w-lg max-lg:order-3 max-lg:max-w-none lg:order-2 lg:max-w-none">
           {zoomShelf && (
             // The lit shelf of the owner's reference reel: one ember line the device stands on + its warm spill, drawn

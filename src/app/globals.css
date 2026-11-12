@@ -235,8 +235,8 @@ img {
 }
 /* ก10 "Zoom" (src/lib/zoom-nav.ts, owner ruling 13/11): a tapped card photo flies into the product hero. While it lands,
    the hero photo underneath stays hidden so the two never show at once; then the lit shelf draws in from the centre under
-   the device as the photo lands (paused while the screen is dark). PREVIEW ONLY: the shelf is rendered only on a device previewing the Zoom (ZoomNav.tsx), and the engine sets
-   data-zoom-landing only there. Motion off = the engine never runs and the shelf simply sits there. */
+   the device as the photo lands (paused while the screen is dark). The shelf is added after hydration in a browser the
+   Zoom runs in (ZoomNav.tsx); on a direct visit it simply draws in once. Motion off = the engine never runs and the shelf sits still. */
 html[data-zoom-landing] [data-zoom-hero] img {
   opacity: 0 !important;
 }

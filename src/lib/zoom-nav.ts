@@ -14,7 +14,7 @@
  *      follows that photo every frame, so a late scroll or layout change on the new page cannot leave it off target —
  *      while the dark lifts off the page. The hero's own photo then takes over under it (a short cross-fade covers a
  *      different photo or one still loading).
- * Loaded only on a device previewing the Zoom (ZoomNav.tsx imports this file on demand), so no customer downloads it.
+ * Fetched after the page has loaded (ZoomNav.tsx imports this file when the browser is idle), never on the server.
  */
 
 type Router = { push: (href: string, opts?: { scroll?: boolean }) => void; prefetch: (href: string) => void };
@@ -38,8 +38,12 @@ let busy = false;
 
 const raf = () => new Promise<number>((r) => requestAnimationFrame(r));
 
+/** Less motion asked for, or a slow / Save-Data connection (the home page's data-okami-lite, checked here too because
+ *  that flag is set only on the home page). */
 function lite(): boolean {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1";
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1") return true;
+  const c = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+  return !!c && (!!c.saveData || /(^|-)2g$/.test(c.effectiveType ?? ""));
 }
 
 function boxOf(r: DOMRect): Box {
