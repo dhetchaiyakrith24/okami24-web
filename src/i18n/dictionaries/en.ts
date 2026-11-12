@@ -146,7 +146,7 @@ export const en: Dictionary = {
   },
   catalog: {
     eyebrow: "Catalog",
-    lineOrderingNotice: "Ordering on LINE is faster right now — message @okm24.",
+    lineOrderingNotice: "Ordering on LINE is faster right now.",
     lineOrderingCta: "Message @okm24",
     puffUnit: "puffs",
     cardBattery: "Battery {mah}",
@@ -654,7 +654,7 @@ export const en: Dictionary = {
     paymentQrNote: "Or scan the QR code below in your banking app and transfer the total shown above.",
     paymentQrAmountNote: "Or scan the QR code below in your banking app. The amount for this order is already in the QR code, so please check it matches the total above before you pay.",
     paymentQrAlt: "PromptPay QR code for transferring to the shop's account",
-    paymentAfterTransferNote: "Once you've transferred, attach your slip below. We'll check the payment and get your order ready to ship. Any trouble, message us on LINE @okm24.",
+    paymentAfterTransferNote: "Once you've transferred, attach your slip below. If you run into any trouble, message us on LINE @okm24.",
     paymentNoRefundWarning: "Once you’ve transferred, the order can’t be cancelled unless an item is out of stock — then we’ll contact you to swap to another item at the same price or take a refund.",
     paymentCopyCta: "Copy account number",
     paymentCopiedLabel: "Copied",
@@ -758,7 +758,7 @@ export const en: Dictionary = {
   },
   notFound: {
     title: "Page not found",
-    body: "The page you're looking for doesn't exist, or the product may have been removed from the catalog. Browse all products, or message us on LINE if you can't find the model you want.",
+    body: "The page you're looking for doesn't exist, or the product may have been removed from the catalog. Browse all products, or if you can't find the model you want, message us on LINE @okm24.",
     ctaProducts: "Browse all products",
     ctaLine: "Message @okm24 on LINE",
     ctaHome: "Back home",
