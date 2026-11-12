@@ -8,7 +8,7 @@ import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { signedInName } from "@/lib/staff/account-rules";
-import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
+import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
 import { readSwitches } from "@/lib/commerce/shop-switches";
@@ -19,6 +19,7 @@ import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
+import { isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
 import { editStateOf, linkedSlips } from "@/lib/staff/line-order-edit";
 import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
 import { slipsToPick } from "@/lib/staff/line-orders";
@@ -44,6 +45,7 @@ import { auditForOrder } from "@/lib/staff/audit";
 import { handConfirmForOrder } from "@/lib/staff/hand-confirm";
 import { handConfirmLabel, pressedBy } from "@/lib/staff/hand-confirm-rules";
 import { auditLabel } from "@/lib/staff/audit-rules";
+import { DONE_TEXT, ERROR_TEXT, STOCK_ERROR_TEXT } from "@/app/staff/_components/order-notices";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
@@ -61,64 +63,6 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "ออเดอร์ (ทีมงาน)",
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
-};
-
-const ERROR_TEXT: Record<string, string> = {
-  "line-switch-off": "ออเดอร์ LINE ยังส่งเข้าคลังจากหลังบ้านไม่ได้ (สวิตช์ของพี่ปิดอยู่) — คีย์ใน Shipnity ตามเดิม แล้วกดส่งรายการให้คลังแล้ว",
-  "shipnity-line-switch-off": "ออเดอร์ LINE ยังส่งเข้าคลังจากหลังบ้านไม่ได้ (สวิตช์ของพี่ปิดอยู่) — คีย์ใน Shipnity ตามเดิม แล้วกดส่งรายการให้คลังแล้ว",
-  "not-allowed": "ทำขั้นนี้กับออเดอร์สถานะนี้ไม่ได้ (อาจมีคนกดไปก่อนแล้ว) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
-  carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ DHL) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
-  "carrier-locked": "เปลี่ยนขนส่งไม่ได้แล้ว — ออเดอร์ส่งเข้า Shipnity แล้ว หรือสถานะเปลี่ยนไป · แจ้งคลังให้เปลี่ยนใน Shipnity แทน",
-  message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
-  "not-found": "ไม่พบออเดอร์นี้",
-  "cancel-warehouse": "ยังไม่ได้ยกเลิก — ติ๊กก่อนว่ายกเลิกใน Shipnity หรือแจ้งแอดมินคลังแล้ว (ยกเลิกในเว็บไม่ถึง Shipnity)",
-  "handover-tick": "ยังไม่ได้บันทึก — ติ๊กก่อนว่าคีย์ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง (กันคลังส่งซ้ำ 2 กล่อง)",
-  "shipnity-no-target": "ยังส่งเข้า Shipnity ไม่ได้ — ยังไม่ได้กดอนุญาตที่รับออเดอร์ในหน้า \"เชื่อมคลัง Shipnity\" · ใช้คัดลอกข้อความส่งคลังไปก่อน",
-  "shipnity-no-sku": "ส่งเข้า Shipnity ไม่ได้ — มีสินค้าที่ไม่มีรหัสคลัง · ใช้คัดลอกข้อความส่งคลังแทน แล้วแจ้ง Friday",
-  "shipnity-failed": "ส่งเข้า Shipnity ไม่สำเร็จ ออเดอร์ยังไม่เปลี่ยน — กดส่งใหม่อีกครั้ง หรือคัดลอกข้อความส่งคลังไปก่อน",
-  "shipnity-no-reply": "Shipnity ไม่ตอบกลับ (หมดเวลารอ) — คลังอาจได้รับออเดอร์ไปแล้ว · เปิด Shipnity ดูก่อน ถ้าออเดอร์เข้าแล้วอย่ากดส่งซ้ำ ให้กด “ส่งรายการให้คลังแล้ว” ในส่งเองแบบเดิมแทน",
-  "shipnity-not-found": "ไม่พบออเดอร์นี้",
-  "shipnity-not-approved": "ส่งเข้า Shipnity ไม่ได้ — ส่งได้เฉพาะออเดอร์ที่ยืนยันยอดเงินแล้วและยังไม่ส่งคลัง (อาจมีคนกดเปลี่ยนสถานะไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "shipnity-already-sent": "ออเดอร์นี้ส่งเข้า Shipnity ไปแล้ว (หรือกำลังส่ง) — ไม่ส่งซ้ำ · โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "shipnity-stock-open": "ส่งเข้า Shipnity ไม่ได้ — ยังมีเรื่องสินค้าหมดที่ยังไม่จบ จัดการกล่องสินค้าหมดก่อน",
-  "shipnity-sent-status": "ส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
-};
-
-const DONE_TEXT: Record<string, string> = {
-  "line-order": "บันทึกออเดอร์ LINE แล้ว — คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
-  items: "บันทึกรายการใหม่แล้ว — ยอดและค่าส่งคิดใหม่ทั้งออเดอร์ · ลิงก์ติดตามออเดอร์เดิมของลูกค้าเห็นรายการใหม่",
-  confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
-  "confirm-sent": "บันทึกแล้ว: ยืนยันยอดเงิน · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
-  "confirm-autofail": "บันทึกแล้ว: ยืนยันยอดเงิน · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
-  "line-order-sent": "บันทึกออเดอร์ LINE แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ · คัดลอกลิงก์ติดตามออเดอร์ในกล่องลูกค้า ส่งให้ลูกค้าทาง LINE",
-  "line-order-autofail": "บันทึกออเดอร์ LINE แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
-  "items-sent": "บันทึกรายการใหม่แล้ว · ระบบส่งเข้า Shipnity ให้แล้ว (ส่งเข้าคลังอัตโนมัติ) — ห้ามคีย์ใน Shipnity ซ้ำ",
-  // Sent, but the order's status moved meanwhile (auto-push.ts stepRecorded false) — same words as "shipnity-sent-status".
-  "confirm-sent-status": "บันทึกแล้ว: ยืนยันยอดเงิน · ระบบส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
-  "line-order-sent-status": "บันทึกออเดอร์ LINE แล้ว · ระบบส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
-  "items-sent-status": "บันทึกรายการใหม่แล้ว · ระบบส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
-  "items-autofail":"บันทึกรายการใหม่แล้ว · แต่ส่งเข้า Shipnity อัตโนมัติไม่สำเร็จ — ดูกล่องขั้นต่อไป กดส่งเข้าคลังอีกครั้ง (ถ้าขึ้นว่าไม่ตอบกลับ เปิด Shipnity ดูก่อน)",
-  "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
-  shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
-  carrier: "บันทึกแล้ว: เปลี่ยนขนส่ง — ส่งเข้า Shipnity พร้อมขนส่งนี้",
-  ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
-  complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
-  cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
-  "cancel-warehouse": "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์ · เช็คอีกครั้งว่าใน Shipnity ยกเลิกแล้วจริง",
-  address: "บันทึกที่อยู่ใหม่แล้ว — ที่อยู่เดิมเก็บไว้ในประวัติ · ข้อความส่งคลังเป็นที่อยู่ใหม่",
-  message: "ส่งข้อความแล้ว: ลูกค้าเห็นในหน้าออเดอร์ — ถ้าเรื่องด่วน โทรหรือทัก LINE บอกลูกค้าด้วย",
-  "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
-  "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังในกล่องสินค้าเป็นรายการใหม่",
-  "stock-refunded": "บันทึกแล้ว: คืนเงินแล้ว ลูกค้าเห็นในหน้าออเดอร์",
-};
-
-const STOCK_ERROR_TEXT: Record<string, string> = {
-  "stock-not-allowed": "ทำขั้นนี้ไม่ได้ (สถานะเปลี่ยนไปแล้ว หรือมีคนกดไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "stock-no-lines": "ติ๊กเลือกสินค้าที่หมดอย่างน้อย 1 รายการ",
-  "stock-swap-invalid": "สินค้าที่ลูกค้าเลือกหมดหรือราคาเปลี่ยนแล้ว — กด \"แจ้งใหม่\" ให้ลูกค้าเลือกอีกครั้ง",
-  "stock-refund-ref": "ใส่เลขอ้างอิงการโอนจากแอปธนาคาร (ตัวอักษรอังกฤษ ตัวเลข 4–60 ตัว)",
-  "stock-not-found": "ไม่พบออเดอร์นี้",
 };
 
 const primary =
@@ -339,6 +283,7 @@ export default async function StaffOrderPage({
   const shipnity = shipnityReady() && (!lineOrder || readSwitches().lineToWarehouse);
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const warehouseCancelled = order.status === "cancelled" && isWarehouseCancelNote(cancelNote);
   const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
@@ -386,12 +331,17 @@ export default async function StaffOrderPage({
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
-      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. The order's
-          status here is not changed by it: staff call the customer and the warehouse's admin first. */}
+      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. Since 11/11
+          (owner, T2-10) a "cancelled" / "refunded" cancels the web order itself (src/lib/woo/warehouse-cancel.ts); a delete /
+          fail still waits for staff: call the customer and the warehouse's admin first. */}
       {warehouse && (
         <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} — คุยกับแอดมินคลัง
-          แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)
+          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} —{" "}
+          {warehouseCancelled
+            ? order.stockIssue && order.stockIssue.resolution === null
+              ? "เว็บยกเลิกออเดอร์ให้แล้ว ลูกค้าเลือกช่องทางรับเงินคืนในหน้าออเดอร์ โอนคืนแล้วบันทึกในกล่องด้านล่าง"
+              : "เว็บยกเลิกออเดอร์ให้แล้ว"
+            : <>คุยกับแอดมินคลัง แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)</>}
         </p>
       )}
 
@@ -763,10 +713,24 @@ export default async function StaffOrderPage({
             <form action={staffOrderAction} className={foldBody}>
               <OrderFields order={order} from={from} />
               <input type="hidden" name="action" value="cancel" />
-              {order.slip && (
-                <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
-                </p>
+              {cancelOwesRefund(order.status) ? (
+                // Owner 12/11: cancelling a paid order means a refund — said in red, and the form needs the tick (actions.ts).
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ลูกค้าจ่ายแล้ว {formatBaht(order.total)} — ยกเลิกแล้วร้านต้องโอนเงินคืน · ถ้ายกเลิกเพราะของหมดหรือคลังส่งไม่ได้ ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo;
+                    ติ๊กทุกรายการแทน — ลูกค้าเลือกช่องทางรับเงินคืนเองในหน้าออเดอร์ แล้วบันทึกการโอนคืนพร้อมสลิปได้
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="refundTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    รับทราบว่าต้องโอนเงินคืน {formatBaht(order.total)} ให้ลูกค้าเอง
+                  </label>
+                </div>
+              ) : (
+                order.slip && (
+                  <p className="text-xs text-foreground-dim">
+                    ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
+                  </p>
+                )
               )}
               <label className="flex flex-col gap-1 text-foreground-muted">
                 เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์

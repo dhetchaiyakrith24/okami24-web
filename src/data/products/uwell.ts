@@ -859,16 +859,14 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        // 2026-09-05: replaced by UWELL's own official Pearl Silver render (myuwell.com
-        // files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-4.webp, 1539×1671, two devices
-        // front+back, printed colour name erased) processed to the 1000×1000 spec by
-        // scripts/process-images.ts. The whole G4 Pro set (card + 8 colours) was redone from the
-        // same official series so every colour shares one canvas. card.png left on disk untouched.
-        src: "/assets/products/caliburn-g4-pro/card-v2.webp",
-        alt: "UWELL Caliburn G4 Pro, Pearl Silver, screen side, isolated product shot",
-        angle: "Screen side, upright on 4:5 — cut whole from UWELL's own colour render (batch 1c colours, 03/10)",
+        // Item 125 (09/11): the page showed only UWELL pictures. Card = OKami24's own Pearl Silver studio render (Higgsfield
+        // nano_banana_2, 30/09, made from UWELL's Pearl Silver render), cut on the shop's floor-less transparent card.
+        // Provenance + recolour steps: scripts/process-images.map.json (aiRender). The UWELL card-v2.webp stays on disk.
+        src: "/assets/products/caliburn-g4-pro/card-v3-wm5.webp",
+        alt: "UWELL Caliburn G4 Pro, Pearl Silver, screen side, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield studio render of the Pearl Silver device, made from UWELL's own render of this model",
         transparentBackground: true,
-        sourceName: "UWELL",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's images",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
       },
     ],
@@ -891,37 +889,39 @@ export const uwellProducts: Product[] = [
     // Site-wide template round batch 1c colours (owner 03/10): every colour image = the screen side + the back side cut whole from
     // UWELL's own per-colour render (a clean gap between the two devices — no AI), upright, then tilted 12° together (the finish
     // pattern is on the back only); the page opens on the card, Pearl Silver upright on 4:5 (_incoming/sitewide-template/1c-colours/).
+    // Item 125 (09/11): replaced by OKami24's own pictures — ONE master render (the card's) with only the frame colour moved to each
+    // UWELL colour by script, the KOKO way (owner 01/10). Screen side only, so the back finishes (marble, stripes) no longer show.
     openOnCardPhoto: true,
     colorVariants: [
       {
         id: "desert-gold",
         name: "Desert Gold",
         swatchHex: "#c9a24b",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-desert-gold-v2.webp", alt: "UWELL Caliburn G4 Pro, Desert Gold" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-desert-gold-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Desert Gold" },
       },
       {
         id: "fantasy-pink",
         name: "Fantasy Pink",
         swatchHex: "#e6a3c0",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-fantasy-pink-v2.webp", alt: "UWELL Caliburn G4 Pro, Fantasy Pink" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-fantasy-pink-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Fantasy Pink" },
       },
       {
         id: "frost-white",
         name: "Frost White",
         swatchHex: "#e8ecec",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-frost-white-v2.webp", alt: "UWELL Caliburn G4 Pro, Frost White" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-frost-white-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Frost White" },
       },
       {
         id: "ink-blue",
         name: "Ink Blue",
         swatchHex: "#1e3a5c",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-ink-blue-v2.webp", alt: "UWELL Caliburn G4 Pro, Ink Blue" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-ink-blue-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Ink Blue" },
       },
       {
         id: "iron-gray",
         name: "Iron Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray-v2.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
       },
       {
         id: "light-green",
@@ -929,19 +929,19 @@ export const uwellProducts: Product[] = [
         swatchHex: "#a8d5ba",
         // 2026-09-05: official myuwell.com color-7.webp (owner-supplied link; the numbered file the
         // owner named, color-8, turned out to be Fantasy Pink — each file's printed label was read)
-        image: { src: "/assets/products/caliburn-g4-pro/variant-light-green-v2.webp", alt: "UWELL Caliburn G4 Pro, Light Green" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-light-green-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Light Green" },
       },
       {
         id: "pearl-silver",
         name: "Pearl Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-pearl-silver-v2.webp", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-pearl-silver-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
       },
       {
         id: "stripe-black",
         name: "Stripe Black",
         swatchHex: "#1c1c1c",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-stripe-black-v2.webp", alt: "UWELL Caliburn G4 Pro, Stripe Black" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-stripe-black-v3-wm5.webp", alt: "UWELL Caliburn G4 Pro, Stripe Black" },
       },
     ],
     specifications: [

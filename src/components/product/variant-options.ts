@@ -44,6 +44,6 @@ export function pilotVariantOptions(product: StorefrontProductView): VariantOpti
     id: v.id,
     name: v.label,
     image: v.image ? { src: v.image.src, alt: v.image.alt } : null,
-    outOfStock: v.availabilityStatus !== "in-stock",
+    outOfStock: v.availabilityStatus !== "in-stock" && !v.stockAsk,
   }));
 }

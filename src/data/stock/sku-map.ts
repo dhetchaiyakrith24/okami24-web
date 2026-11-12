@@ -948,7 +948,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   "coil-74": { parent: null, options: {
     "Coil-74-1": null,
   } },
-  "coil-83": { parent: null, product: null },
+  // 10/11: Max lists "หัวแทงค์เปล่า Argus P1" again as its own parent Coil-83-1 (฿250, order-entry read 10/11) — mapped like coil-55.
+  "coil-83": { parent: "Coil-83-1", product: "Coil-83-1" },
   "coil-87": { parent: null, options: {
     "Coil-87-1": null,
   } },
@@ -1620,6 +1621,31 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-180-8": "Pod-180-8",
     "Pod-180-9": "Pod-180-9",
     "Pod-180-10": "Pod-180-10",
+  } },
+
+  // New-products pictures 10/11: the original IQOS ILUMA ONE (Max IQOSHEET-17 -1/-2/-5; the other three colours are maker colours the
+  // warehouse does not carry) · ILUMA ONE OASIS (-4) · Pop Up 10K battery base (Pod-154-19, never on /products/pod-154).
+  "iqos-iluma-one": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-1": "IQOSHEET-17-1",
+    "IQOSHEET-17-2": "IQOSHEET-17-2",
+    "IQOSHEET-17-5": "IQOSHEET-17-5",
+    "iqos-iluma-one-verified-pebble-beige": null,
+    "iqos-iluma-one-verified-sunset-red": null,
+    "iqos-iluma-one-verified-moss-green": null,
+  } },
+  "iqos-iluma-one-oasis": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-4": "IQOSHEET-17-4",
+  } },
+  "pop-up-10k-base": { parent: "Pod-154", product: "Pod-154-19" },
+
+  // Coil 5-packs (11/11): the Max box rows — Set-Coil-1-14 under Coil-1 · Set-Coil-1-1 its own parent · Set-Coil-92-1 under Coil-92.
+  // Never on the loose-coil pages coil-1 / coil-92.
+  "voopoo-vinci-coil-5pack": { parent: "Coil-1", options: {
+    "Set-Coil-1-14": "Set-Coil-1-14",
+    "Set-Coil-1-1": "Set-Coil-1-1",
+  } },
+  "voopoo-pnp-x-coil-5pack": { parent: "Coil-92", options: {
+    "Set-Coil-92-1": "Set-Coil-92-1",
   } },
 
   "coil-54": { parent: null, product: null },

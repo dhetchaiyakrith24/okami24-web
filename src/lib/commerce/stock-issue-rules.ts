@@ -17,6 +17,16 @@ export function canOpenStockIssue(status: OrderStatus): boolean {
   return STOCK_ISSUE_STATUSES.includes(status);
 }
 
+/**
+ * The refund half of an issue stays open on a CANCELLED order when the issue covers the whole order (T2-10, owner 11/11:
+ * Shipnity cancels → the web order cancels itself; BSOT §9 owner exception 10/11: paid but the shop cannot ship = the
+ * out-of-stock rule) — the customer still picks where the money goes, and staff still record the transfer. The swap half
+ * never does: a cancelled order is final (order-status.ts), so a same-price swap goes through LINE as a new order.
+ */
+export function canRefundStockIssue(status: OrderStatus, wholeOrder: boolean): boolean {
+  return canOpenStockIssue(status) || (status === "cancelled" && wholeOrder);
+}
+
 export type StockIssueChoice = "swap" | "refund";
 export type StockIssueResolution = "swapped" | "refunded";
 
@@ -117,17 +127,36 @@ export function parseSwapJson(raw: string | null): SwapPick[] | null {
   }
 }
 
+/** The baht fraction of a partial refund goes to the customer (true) or stays with the shop (false). Friday 12/11. */
+const ROUND_FOR_CUSTOMER = true;
+
 /**
- * What a refund returns: the lines that are out (unit price × quantity). The rest of the order still ships, and the shipping
- * fee is kept — unless every line is out, then nothing ships and the whole paid total goes back (the order is cancelled).
- * Friday 24/10 (reversible): BSOT §9 offers "a refund" for the item that is out, not for the items the shop can send.
+ * What a refund returns: what the customer actually PAID for the lines that are out. The rest of the order still ships,
+ * and the shipping fee is kept — unless every line is out, then nothing ships and the whole paid total goes back (the
+ * order is cancelled). Friday 24/10 (reversible): BSOT §9 offers "a refund" for the item that is out, not for the items
+ * the shop can send.
+ *
+ * A staff special price (orders.discount, migration 0028) lowers the total, not the lines, so a line's catalogue
+ * lineTotal is more than was paid for it (bug sweep 12/11: 2 × ฿500, ฿600 off, ฿400 paid → one line out refunded ฿500).
+ * What was paid for the goods = total − the shipping fee kept; each line's share of that follows its catalogue value
+ * (with no discount, the share is the line's own total). Whole baht; the fraction follows ROUND_FOR_CUSTOMER. The
+ * result never exceeds what was paid minus what still ships (the kept fee + the other lines' share, floored).
  */
 export function refundAmount(
-  outLines: { lineTotal: number }[],
-  order: { total: number; lineCount: number }
+  outLines: { itemId: number; lineTotal: number }[],
+  order: { total: number; shippingFee: number; lines: { itemId: number; lineTotal: number }[] }
 ): { amount: number; wholeOrder: boolean } {
-  const wholeOrder = outLines.length >= order.lineCount;
-  return { amount: wholeOrder ? order.total : outLines.reduce((s, l) => s + l.lineTotal, 0), wholeOrder };
+  const outIds = new Set(outLines.map((l) => l.itemId));
+  const wholeOrder = order.lines.length > 0 && order.lines.every((l) => outIds.has(l.itemId));
+  if (wholeOrder) return { amount: order.total, wholeOrder };
+  const goodsValue = order.lines.reduce((s, l) => s + l.lineTotal, 0);
+  const outValue = order.lines.filter((l) => outIds.has(l.itemId)).reduce((s, l) => s + l.lineTotal, 0);
+  const goodsPaid = Math.max(0, order.total - order.shippingFee);
+  if (goodsValue <= 0 || outValue <= 0) return { amount: 0, wholeOrder };
+  const share = (goodsPaid * outValue) / goodsValue;
+  const stillShips = order.shippingFee + Math.floor(goodsPaid - share + 1e-9);
+  const rounded = ROUND_FOR_CUSTOMER ? Math.ceil(share - 1e-9) : Math.floor(share + 1e-9);
+  return { amount: Math.max(0, Math.min(rounded, order.total - stillShips, order.total)), wholeOrder };
 }
 
 /** One product in the swap picker: its in-stock options at the same unit price (value = encodeSwapValue). */
@@ -153,6 +182,8 @@ export interface StockIssueView {
   refundBank: { bank: string; branch: string; accountMasked: string } | null;
   /** Only while the customer still has to choose: the swap options for each out line, by order-line id. */
   swapGroups: Record<number, SwapGroup[]>;
+  /** The order is already cancelled (the warehouse cancelled it, T2-10): refund only, no swap form (canRefundStockIssue). */
+  afterCancel: boolean;
   /** Refunded and staff attached the bank's transfer slip (queue B4) — the order page shows it from /orders/<n>/refund-slip. */
   refundSlip: boolean;
 }

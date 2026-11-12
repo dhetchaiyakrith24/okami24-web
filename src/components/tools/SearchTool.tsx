@@ -5,8 +5,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { allProducts, legacySearchText } from "@/data/products";
-import { getPublishedProducts, publishedSearchText, searchPilotProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { rankByQuery, type SearchText } from "@/lib/catalog-search";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
@@ -24,25 +22,38 @@ import { pluralCount } from "@/i18n/dictionaries";
  * stay last (`searchPilotProducts` — never present in production). No deduplication — none of
  * the pilot products has a known `exactLegacyMatch`, so there is nothing to merge.
  */
-type SearchHit = { kind: "legacy"; product: Product } | { kind: "published"; product: StorefrontProductView };
+export type SearchHit = { kind: "legacy"; product: Product } | { kind: "published"; product: StorefrontProductView };
+export type SearchEntry = { hit: SearchHit; text: SearchText };
 
-function storefrontSearchEntries(): { hit: SearchHit; text: SearchText }[] {
-  return [
-    ...allProducts.map((product) => ({ hit: { kind: "legacy" as const, product }, text: legacySearchText(product) })),
-    ...getPublishedProducts().map((product) => ({ hit: { kind: "published" as const, product }, text: publishedSearchText(product) })),
-  ];
+/** The DEV-preview match (storefront-bridge.ts searchPilotProducts, same haystack) over the list the server sends — empty
+ *  in production, where there are no pilot products. */
+function pilotMatches(pilot: readonly StorefrontProductView[], query: string): StorefrontProductView[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return pilot.filter((p) => [p.displayName, p.brandName, p.categoryName, p.tagline, ...p.variants.map((v) => v.label)].join(" ").toLowerCase().includes(q));
 }
-/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). */
-export function SearchTool({ initialQuery = "", taglinesTh = {} }: { initialQuery?: string; taglinesTh?: Record<string, string> }) {
+/** `taglinesTh` = legacy cards' Thai taglines by slug, from the server page (src/lib/card-taglines.ts). `entries` / `pilot` =
+ *  the searchable catalog built on the server (src/app/search/page.tsx) — importing the catalog modules here bundled the raw
+ *  product files, the team's picture notes included, into the browser (T2-50, 10/11). */
+export function SearchTool({
+  entries,
+  pilot = [],
+  initialQuery = "",
+  taglinesTh = {},
+}: {
+  entries: readonly SearchEntry[];
+  pilot?: readonly StorefrontProductView[];
+  initialQuery?: string;
+  taglinesTh?: Record<string, string>;
+}) {
   const { dict } = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
   const inputRef = useRef<HTMLInputElement>(null);
-  const entries = useMemo(() => storefrontSearchEntries(), []);
   const results = useMemo(() => rankByQuery(query, entries, (e) => e.text).map((e) => e.hit), [query, entries]);
-  const pilotResults = useMemo(() => searchPilotProducts(query), [query]);
+  const pilotResults = useMemo(() => pilotMatches(pilot, query), [pilot, query]);
   const totalCount = results.length + pilotResults.length;
 
   useEffect(() => {

@@ -13,6 +13,7 @@
  * `npx tsx scripts/content-dates.ts --rekey` (keeps the dates) in the same commit.
  */
 import { createHash } from "node:crypto";
+import { LOOKALIKES } from "../../src/data/similar-models";
 
 export const SUBSTANCE_VERSION = 3;
 
@@ -114,7 +115,8 @@ export function pageSubstances(s: PageSources): Record<string, unknown> {
         return [m.slug, m.displayName, m.tagline, s.cardTagline(m.slug), options, (m.variants ?? []).map((v) => v.label)];
       })
       .sort((a, b) => (a[0]! < b[0]! ? -1 : 1));
-  for (const p of all) pages[`/products/${p.slug}`] = { record: p, copy: s.productCopy(p.slug) };
+  // a lookalike page is noindex and out of the sitemap (T2-08), so it gets no date; its category still lists it below
+  for (const p of all) if (!LOOKALIKES.has(p.slug)) pages[`/products/${p.slug}`] = { record: p, copy: s.productCopy(p.slug) };
   for (const c of s.categories) {
     const path = `/products/${c.slug}`;
     pages[path] = { record: c, copy: s.categoryCopy(c.id), specs: s.categorySpecs(c.id), clip: s.collectionVideos[path], listed: listed(all.filter((p) => p.categoryId === c.id)) };

@@ -1,4 +1,5 @@
 import type { HeroType } from "@/data/home-hero";
+import { LOOKALIKES } from "@/data/similar-models";
 
 /**
  * The homepage below the hero, by product TYPE (owner 20/10 ~03:40: "not Caliburn-centred — a
@@ -40,9 +41,10 @@ export const HOME_TYPE_SECTIONS: { type: HeroType; categories: string[]; first: 
  *  Owner 21/10: 6 → 8 ("เพิ่มเป็น 8") — the desktop rail and the tablet grid; phones keep PHONE_CARDS. */
 export const RAIL_CARDS = 8;
 
-/** Products a homepage rail never puts in its cards — they sort last and stay on the category page ("see all N").
- *  The one lookalike (owner 27/10, docs/HANDOFF.md §18: never in shop picks, never next to the genuine M Bar 10K). */
-export const RAIL_LAST = new Set<string>(["marbo-10k-clone"]);
+/** Products a homepage rail never puts in its cards — they sort after every other card, sold out or not (T2-08: the live
+ *  in-stock sort of #1374 could lift an in-stock lookalike past sold-out cards into the first RAIL_CARDS), and stay on the
+ *  category page ("see all N" still counts them). = the lookalikes (src/data/similar-models.ts LOOKALIKES, HANDOFF §18). */
+export const RAIL_LAST: ReadonlySet<string> = LOOKALIKES;
 /** cards shown per section on a phone (two rows of two … three rows) before "see all N" */
 export const PHONE_CARDS = 6;
 /** cards shown per section on a tablet (two rows of four) */

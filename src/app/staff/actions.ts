@@ -7,11 +7,12 @@ import type { StaffActor } from "@/lib/staff/account-rules";
 import { recordStaffAction } from "@/lib/staff/audit";
 import { ORDER_STEP_AUDIT, orderStepDetail, refTail } from "@/lib/staff/audit-rules";
 import { assignRole, GROUP_ROLES, type GroupRole } from "@/lib/line/groups";
-import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
+import { handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund, refundCancelNote } from "@/lib/staff/order-actions";
 import { editStateOf } from "@/lib/staff/line-order-edit";
 import { applyStaffAction, getStaffOrder, setPlannedCarrier } from "@/lib/staff/orders";
 import { readSwitches } from "@/lib/commerce/shop-switches";
 import { isStaffJob } from "@/lib/staff/jobs";
+import { landing } from "@/lib/staff/admin-home-rules";
 import { applySwap, markRefunded, openStockIssue } from "@/lib/commerce/stock-issues";
 import { addCustomerMessage } from "@/lib/commerce/order-messages";
 import { pushOrder, shipnityReady } from "@/lib/woo/order-push";
@@ -59,10 +60,10 @@ export async function assignLineGroupAction(formData: FormData): Promise<void> {
 /** One button on /staff/orders/<n> (cart round 22/10): confirm payment · sent to warehouse · shipped + tracking ·
  *  completed · cancel (with a reason). The rules are in src/lib/staff/order-actions.ts. */
 /** Where an order action lands: the same order page, still carrying the list it was opened from (`from`, owner 26/10 B3:
- *  Back must go back to that list) — then `done=` / `error=` follow. */
+ *  Back must go back to that list) — or the admin home, for the buttons in its "ทำก่อน" queue (`from=home`, owner 10/11) —
+ *  then `done=` / `error=` follow. Rules = src/lib/staff/admin-home-rules.ts. */
 function orderPage(orderNumber: string, formData: FormData): string {
-  const from = String(formData.get("from") ?? "");
-  return `/staff/orders/${encodeURIComponent(orderNumber)}?${isStaffJob(from) || from === "all" ? `from=${from}&` : ""}`;
+  return landing(orderNumber, String(formData.get("from") ?? ""), (v) => isStaffJob(v) || v === "all");
 }
 
 export async function staffOrderAction(formData: FormData): Promise<void> {
@@ -81,6 +82,12 @@ export async function staffOrderAction(formData: FormData): Promise<void> {
     // note is given (the "ยกเลิกแล้ว — …" banner reads it).
     const reason = note.trim() || String(formData.get("message") ?? "").replace(/\s+/g, " ").trim();
     note = ["warehouse: cancelled in Shipnity / told (ticked)", reason].filter(Boolean).join(" — ");
+  }
+  // Owner 12/11: a paid order owes a refund when cancelled — the admin ticks that they know (order-actions.ts cancelOwesRefund).
+  if (order && action === "cancel" && cancelOwesRefund(order.status)) {
+    if (formData.get("refundTick") !== "1") redirect(`${back}error=cancel-refund`);
+    // Keep the reason in the history note (the "ยกเลิกแล้ว — …" banner reads it), after the tick's mark.
+    note = refundCancelNote(note, String(formData.get("message") ?? ""));
   }
   if (order && action === "to-warehouse" && handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() })) {
     if (!ticked) redirect(`${back}error=handover-tick`);

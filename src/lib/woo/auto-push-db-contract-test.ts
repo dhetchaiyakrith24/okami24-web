@@ -165,9 +165,10 @@ async function main(): Promise<void> {
       const want = [`${base}-sent`, `${base}-sent-status`, base, `${base}-autofail`, `${base}-autofail`];
       check(`done key (${base}): sent / sent-status / skip / autofail`, JSON.stringify(keys) === JSON.stringify(want), keys);
     }
-    // Every key above has a text on the order page (else the admin lands on a page that says nothing).
-    const pageSrc = fs.readFileSync(path.join(process.cwd(), "src/app/staff/orders/[orderNumber]/page.tsx"), "utf8");
-    const doneBlock = pageSrc.slice(pageSrc.indexOf("const DONE_TEXT"));
+    // Every key above has a text on the order page and the admin home (else the admin lands on a page that says nothing) —
+    // both read DONE_TEXT from order-notices.ts (admin home 11/11).
+    const pageSrc = fs.readFileSync(path.join(process.cwd(), "src/app/staff/_components/order-notices.ts"), "utf8");
+    const doneBlock = pageSrc.slice(pageSrc.indexOf("export const DONE_TEXT"));
     const missing = ["confirm", "line-order", "items"]
       .flatMap((b) => [b, `${b}-sent`, `${b}-sent-status`, `${b}-autofail`])
       .filter((k) => !new RegExp(`(^|\\s)("${k}"|${k.replace(/-/g, "\\-")}):`, "m").test(doneBlock.slice(0, doneBlock.indexOf("};"))));

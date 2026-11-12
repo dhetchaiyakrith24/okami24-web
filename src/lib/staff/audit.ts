@@ -75,14 +75,14 @@ export function auditForDay(day: string, who: AuditWho, limit = 500): AuditRow[]
   ).map(toRow);
 }
 
-/** How many things each person did that day — the chips on "ใครทำอะไร". Sign-in/out are not work and are not counted. */
+/** How many things each person did that day — the chips on "ใครทำอะไร". Sign-in/out and wrong passwords are not work and are not counted. */
 export function auditCounts(day: string): { kind: ActorKind; accountId: number | null; name: string; n: number }[] {
   const { from, to } = dayRange(day);
   return (
     getDb()
       .prepare(
         `SELECT actor_kind AS kind, staff_id AS accountId, MAX(actor_name) AS name, COUNT(*) AS n FROM staff_audit
-         WHERE at >= ? AND at < ? AND action NOT IN ('sign-in', 'sign-out') GROUP BY actor_kind, staff_id ORDER BY n DESC`
+         WHERE at >= ? AND at < ? AND action NOT IN ('sign-in', 'sign-out', 'sign-in-failed', 'sign-in-locked') GROUP BY actor_kind, staff_id ORDER BY n DESC`
       )
       .all(from, to) as { kind: ActorKind; accountId: number | null; name: string; n: number }[]
   );

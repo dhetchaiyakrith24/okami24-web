@@ -1618,8 +1618,8 @@ const allGuides: Guide[] = [
     // "อ่านต่อ" box (article-relevance.ts). th/zh title + dek in guides-copy.ts.
     id: DNS_GUIDE_ID,
     slug: DNS_GUIDE_ID,
-    title: "Can't open the site? Change your phone's DNS, step by step",
-    dek: "One setting on your device works for every site, not just ours. There's a way for iPhone, Android and computers.",
+    title: "Can't open the site? Try changing your phone's DNS. It's easy to do yourself.",
+    dek: "Set it once on your device and it applies to every site. No app needed, and you can switch back any time. There's a way for iPhone, Android and computers.",
     category: "getting-started",
     readingTimeMin: 5,
     publishedAt: "2026-10-11",

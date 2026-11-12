@@ -15,16 +15,19 @@ import type { NextConfig } from "next";
  * - https://i.ytimg.com — the review-video thumbnails (ProductReviewVideo, `unoptimized`, so the browser fetches it).
  * - blob: — the slip / refund-slip / bill previews (`URL.createObjectURL`) · data: — inline SVG/PNG in CSS and props.
  * - worker-src 'self' — the hero ribbons run in a same-origin worker (ribbon-driver.ts).
+ * - Cloudflare Web Analytics (T2-48, 10/11): Cloudflare adds its own beacon to every HTML page at the edge —
+ *   https://static.cloudflareinsights.com/beacon.min.js (script) reporting to https://cloudflareinsights.com/cdn-cgi/rum
+ *   (connect). The policy blocked it, so the dashboard counted nothing and every page logged a CSP error. Those two hosts only.
  * `frame-ancestors 'self'` says what X-Frame-Options SAMEORIGIN says, for browsers that read only CSP.
  * `next dev` needs `'unsafe-eval'` for React's dev tooling; production never sends it.
  */
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://i.ytimg.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://cloudflareinsights.com",
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
@@ -35,6 +38,17 @@ const CONTENT_SECURITY_POLICY = [
 const nextConfig: NextConfig = {
   /** No `x-powered-by: Next.js` on responses (owner 04/11 security pass): it only tells a scanner what to try. */
   poweredByHeader: false,
+
+  /**
+   * Version-skew protection (owner 11/11: "หลังจากกดสินค้าเปลี่ยนหน้า ขึ้นภาพจอดำและมีปุ่มให้กด Reload"). Every merge
+   * redeploys Render, and the new build renames its JS chunks. A tab opened before the deploy then asks for chunks that are
+   * gone on its next client-side navigation, and Next shows its black error screen with a Reload button.
+   * With a deployment id, Next stamps it on assets and navigation requests; when the client's id differs from the server's
+   * it does a full page load instead (node_modules/next/dist/docs/01-app/03-api-reference/05-config/01-next-config-js/
+   * deploymentId.md "How it works"). Render sets RENDER_GIT_COMMIT at build time and run time. Unset (local builds,
+   * the test server) = undefined = Next behaves exactly as before.
+   */
+  deploymentId: process.env.RENDER_GIT_COMMIT || undefined,
 
   experimental: {
     /**

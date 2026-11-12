@@ -12,7 +12,9 @@
  *   3. the automatic backup schedule starts (src/lib/backup/), and
  *   4. the unpaid-order sweep starts (src/lib/commerce/unpaid-expiry.ts — owner 24/10), and
  *   5. the 90-day slip-picture sweep starts (src/lib/commerce/slip-images.ts — owner 26/10), and
- *   6. the Shipnity stock watch starts (src/lib/woo/watch.ts — owner 28/10).
+ *   6. the Shipnity stock watch starts (src/lib/woo/watch.ts — owner 28/10), and
+ *   7. the server asks its own /api/cart/count once it answers, so every prerendered page follows the owner's cart switch
+ *      from the first visit after a boot (src/lib/commerce/boot-refresh.ts — T2-04 follow-up, owner 10/11 "ตามแนะนำ").
  * None of them can stop the server: the probe runs in a child process and only reports how it died,
  * the QR install returns a result instead of throwing, and a failed backup is logged and ignored.
  */
@@ -73,4 +75,9 @@ export async function register(): Promise<void> {
   // 6. The Shipnity stock light + LINE alert when the stock push stops (owner 28/10) — src/lib/woo/watch.ts.
   const { startStockWatch } = await import("./lib/woo/watch");
   startStockWatch();
+
+  // 7. Never awaited: it waits for this very server to answer. It never throws; the .catch is for the import alone.
+  Promise.all([import("./lib/commerce/boot-refresh"), import("./lib/commerce/ordering-mode")])
+    .then(([{ refreshPagesAfterBoot }, { ORDERING_ENABLED }]) => refreshPagesAfterBoot(undefined, { orderingEnabled: ORDERING_ENABLED }))
+    .catch((err) => console.error(`[switches] boot refresh failed to start: ${err instanceof Error ? err.message : String(err)}`));
 }
