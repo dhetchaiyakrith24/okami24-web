@@ -3,9 +3,10 @@ import type { Category } from "@/types/catalog";
 /**
  * A category page's Thai H1 + lede where the shop's search key is not its menu label (owner 12/11 ~03:40 "พอตซิสเต็ม
  * เปลี่ยนได้ถ้าคนค้นหาน้อยกว่า พอตไฟฟ้า … ถ้าเกี่ยว SEO จัดการเลย"; SEO_LANDSCAPE §0.1 พอตไฟฟ้า 4,400/mo, "พอตซิสเต็ม" no search
- * demand; every page-1 competitor's category H1 says "พอตไฟฟ้า"). seo-auditor 12/11: `labelTh` itself stays — it feeds the
- * menu, the home category table and on-site search ("พอตซิสเต็ม" must keep finding these devices) — so only this page's
- * H1, lede/meta, CollectionPage name and its BreadcrumbList crumb read the override. "Pod System" stays first in the H1
+ * demand; every page-1 competitor's category H1 says "พอตไฟฟ้า"). seo-auditor 12/11: `labelTh` itself stays — it is the
+ * on-site search key ("พอตซิสเต็ม" must keep finding these devices). This page's H1, lede/meta, CollectionPage name and
+ * BreadcrumbList crumb read the override, and since the 12/11 live fix so do the header menus, the home category table
+ * and the empty-category chips (a visitor saw "พอตซิสเต็ม" in the menu and "พอตไฟฟ้า" on the page it opened). "Pod System" stays first in the H1
  * (owner 08/10: the shop's biggest key). The lede keeps the facts of `descriptionTh` (same models), led by the key.
  * Small and table-free on purpose: CategoryPageHeader (client) imports it.
  */

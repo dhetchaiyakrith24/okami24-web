@@ -163,6 +163,29 @@ img {
   }
 }
 
+/* Live fix 12/11 (visitor agent): on a phone the floating LINE button and the cart bubble above it covered the corner of
+   the product cards while scrolling. While the visitor scrolls DOWN they slide off the bottom edge; any scroll UP brings them
+   back (LineContact sets html[data-fab-away]). `translate`, not `transform`: the bubble's entry animation holds transform. */
+@media (max-width: 39.98rem) {
+  .okami-line-fab {
+    transition: color 150ms, background-color 150ms, border-color 150ms, translate 250ms ease;
+  }
+  .okami-cart-fab {
+    transition: border-color 300ms, padding 300ms, translate 250ms ease;
+  }
+  html[data-fab-away] .okami-line-fab:not(:focus-visible),
+  html[data-fab-away] .okami-cart-fab:not(:focus-visible) {
+    translate: 0 calc(100% + 6rem);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .okami-line-fab,
+    .okami-cart-fab {
+      transition-duration: 0s;
+    }
+  }
+}
+
 /* Cart UX batch B (owner 24/10, designer option A): the floating cart bubble sits 12px above the LINE button on the same
    right edge. Phone: LINE is 48px at bottom 1rem → cart at 4.75rem. ≥640: LINE pill at bottom 2rem → cart at 5.75rem.
    Product pages below lg: the bubble is hidden, the buy bar carries the cart button (rule below). */
