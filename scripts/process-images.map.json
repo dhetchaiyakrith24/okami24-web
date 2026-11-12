@@ -15363,6 +15363,131 @@
   "minLong": 650
  },
  {
+  "source": "_incoming/img125/g4p-final/g4p-pearl-silver.png",
+  "slug": "caliburn-g4-pro",
+  "role": "card",
+  "replaces": "/assets/products/caliburn-g4-pro/card-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-pearl-silver-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): the page showed only UWELL pictures — our own render replaces the card",
+  "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-desert-gold.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "desert-gold",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-desert-gold-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-desert-gold-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-desert-gold-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-fantasy-pink.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "fantasy-pink",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-fantasy-pink-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-fantasy-pink-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-fantasy-pink-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-frost-white.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "frost-white",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-frost-white-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-frost-white-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-frost-white-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-ink-blue.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "ink-blue",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-ink-blue-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-ink-blue-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-ink-blue-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-iron-gray.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "iron-gray",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-iron-gray-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-iron-gray-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-iron-gray-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-light-green.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "light-green",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-light-green-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-light-green-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-light-green-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-pearl-silver.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "pearl-silver",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-pearl-silver-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-pearl-silver-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-pearl-silver-v3.webp"
+ },
+ {
+  "source": "_incoming/img125/g4p-final/g4p-stripe-black.png",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "stripe-black",
+  "replaces": "/assets/products/caliburn-g4-pro/variant-stripe-black-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 4K, ONE master (job set 519eeb75, file 68a926c2, 30/09 — our own Pearl Silver studio render of UWELL's Caliburn G4 Pro, OKami24-assets 2026-10/uwell-caliburn-g4), cut by scripts/flatcut.js 2 12 + scripts/lab/edge-choke.js 6, then _incoming/img125/g4p-recolour.js moves the frame colour (CIELAB, relative to UWELL's Pearl Silver at the same patches) to each UWELL colour; screen and clear pod untouched — the KOKO way (owner 01/10 \"ทำเลย\")",
+   "reference": "frame colour: UWELL's own per-colour render (/assets/products/caliburn-g4-pro/variant-stripe-black-v2.webp, from files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-N.webp); model: UWELL's Pearl Silver render (card-v2.webp)",
+   "fidelitySheet": "_incoming/img125/g4p-fidelity/ (UWELL | new, every colour)"
+  },
+  "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
+  "fileName": "variant-stripe-black-v3.webp"
+ },
+ {
   "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
   "slug": "iqos-iluma-one",
   "role": "card",
