@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
@@ -24,7 +25,10 @@ const DisposableCompareTable = dynamic(() => import("@/components/catalog/Dispos
  * Parts reused from pages that already passed: SectionHeading, the editorial FAQ markup, the article inline-link renderer and the
  * editorial compare-table rules.
  */
-export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[]; lineup?: LineupRow[] }) {
+/** `stack` (category + brand pages; the home page has its own guide deck): from 3 families up, on a wide and tall enough
+ *  screen the families become the stacked deck of the home guides — preview "stack" only for now (src/app/preview-stack.css,
+ *  designer 13/11). Without the preview the hooks do nothing; the extra wrappers keep the gaps the Container gave. */
+export function CategoryGuide({ copy, rows, brands = [], lineup = [], stack = false }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[]; lineup?: LineupRow[]; stack?: boolean }) {
   const { locale } = useLocale();
   const c = copy[locale] ?? copy.en ?? copy.th;
   if (!c) return null;
@@ -32,12 +36,15 @@ export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: 
   const dash = <span className="text-foreground-dim">—</span>;
   const table = c.table;
   const brandTable = c.brandTable;
+  const deck = stack && c.families.length >= 3;
 
   return (
     <>
       <section className="border-t border-surface-border-soft py-14 lg:py-20">
         <Container className="flex flex-col gap-10">
+          <div className={deck ? "okc-fam-wrap flex flex-col gap-10" : "flex flex-col gap-10"}>
           {/* "\n\n" in an intro = a new short paragraph (owner 04/11: the intros read 9–15 lines on a phone). */}
+          <div className="okc-fam-head">
           <SectionHeading
             title={t(c.heading)}
             description={
@@ -50,13 +57,15 @@ export function CategoryGuide({ copy, rows, brands = [], lineup = [] }: { copy: 
               </span>
             }
           />
-          <div className="grid gap-8 md:grid-cols-3">
+          </div>
+          <div className={deck ? "okc-fams grid gap-8 md:grid-cols-3" : "grid gap-8 md:grid-cols-3"}>
             {c.families.map((f, i) => (
-              <div key={i} className="flex flex-col gap-3">
+              <div key={i} className={deck ? "okc-fam flex flex-col gap-3" : "flex flex-col gap-3"} style={deck ? ({ "--i": i, "--n": c.families.length } as CSSProperties) : undefined}>
                 <h3 className="font-display text-xl leading-snug font-semibold text-foreground">{t(f.heading)}</h3>
                 <p className="text-sm leading-relaxed text-foreground-muted">{renderInline(f.body, locale, `family-${i}`)}</p>
               </div>
             ))}
+          </div>
           </div>
           {brandTable && brands.length > 0 && (
             <div className="grid gap-4 lg:grid-cols-3 lg:gap-8">

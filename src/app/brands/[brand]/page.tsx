@@ -115,7 +115,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>
-      {guideCopy && <CategoryGuide copy={guideCopy} rows={[]} />}
+      {guideCopy && <CategoryGuide copy={guideCopy} rows={[]} stack />}
       {/* Round "SEO ง" batch 6: the articles that link this brand or cover its products (article-relevance.ts). */}
       {!isEmpty && (
         <RelatedArticles
