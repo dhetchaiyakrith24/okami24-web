@@ -3,28 +3,28 @@
   "account": "…@okami24-gsc.iam.gserviceaccount.com",
   "ranges": {
     "last28": {
-      "startDate": "2026-10-13",
-      "endDate": "2026-11-09"
+      "startDate": "2026-10-14",
+      "endDate": "2026-11-10"
     },
     "last90": {
-      "startDate": "2026-08-12",
-      "endDate": "2026-11-09"
+      "startDate": "2026-08-13",
+      "endDate": "2026-11-10"
     }
   },
   "rows": {
-    "last28-query": 264,
+    "last28-query": 257,
     "last28-page": 153,
-    "last28-query-page": 355,
+    "last28-query-page": 346,
     "last28-device": 3,
     "last28-country": 29,
-    "last90-date": 64
+    "last90-date": 65
   },
-  "ranAt": "2026-11-11T02:56:32.809Z",
+  "ranAt": "2026-11-12T04:02:23.239Z",
   "inspection": {
     "urlSource": "sitemap",
-    "urls": 205,
-    "inspected": 205,
-    "withCrawlDate": 197,
+    "urls": 204,
+    "inspected": 204,
+    "withCrawlDate": 196,
     "failed": 0,
     "stoppedByQuota": false
   }
