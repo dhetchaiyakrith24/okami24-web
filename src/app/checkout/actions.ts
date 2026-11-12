@@ -137,9 +137,10 @@ export async function selectAddressAction(formData: FormData): Promise<void> {
  * cookie deleted) and starts checkout again at the phone step. The cart cookie is separate and stays; the member sign-in
  * (okami24_member) is untouched. Not guarded by ordering-mode: leaving must always work (/checkout itself refuses when off).
  */
-export async function notMeAction(): Promise<void> {
+export async function notMeAction(formData?: FormData): Promise<void> {
   await destroySession();
-  redirect("/checkout", RedirectType.replace);
+  // /orders shows the same remembered number and its order list (Friday 12/11): from there, back to an empty /orders.
+  redirect(formData?.get("from") === "orders" ? "/orders" : "/checkout", RedirectType.replace);
 }
 
 export interface PlaceOrderState {

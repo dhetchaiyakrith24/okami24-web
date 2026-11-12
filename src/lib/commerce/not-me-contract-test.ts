@@ -29,10 +29,13 @@ function fnBody(src: string, name: string): string {
 const actions = read("src/app/checkout/actions.ts");
 const notMe = fnBody(actions, "notMeAction");
 check("notMeAction exists", notMe.length > 0);
-check("it ends the phone session before leaving", /await destroySession\(\);[\s\S]*redirect\("\/checkout", RedirectType\.replace\)/.test(notMe));
-check("it goes to the phone step only", (notMe.match(/redirect\(/g) ?? []).length === 1);
+check(
+  "it ends the phone session before leaving",
+  /await destroySession\(\);[\s\S]*redirect\(formData\?\.get\("from"\) === "orders" \? "\/orders" : "\/checkout", RedirectType\.replace\)/.test(notMe)
+);
+check("it goes to the phone step, or back to an empty /orders — nowhere else", (notMe.match(/redirect\(/g) ?? []).length === 1);
 check("leaving is never refused by the cart switch", !notMe.includes("refuseWhileOrderingOff"));
-check("it touches no cart, address or member state", !/cart|Address|Member|revalidate/i.test(notMe.replace(/\/\*[\s\S]*?\*\//g, "")));
+check("it touches no cart, address or member state", !/cart|Address|Member|revalidate/i.test(notMe.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "")));
 
 // 2. destroySession revokes server-side AND drops the cookie; getSession refuses a revoked row.
 const session = read("src/lib/commerce/session.ts");
@@ -79,6 +82,15 @@ check("address step: not in the members' saved-addresses list", savedBlock !== "
 const addressPage = read("src/app/checkout/address/page.tsx");
 check("address page: shown only without a member", /showNotMe=\{member === null\}/.test(addressPage) && addressPage.includes("getMember()"));
 check("review step: no button (only members reach review?saved=1)", !read("src/components/commerce/ReviewStepView.tsx").includes("NotMeButton"));
+// /orders shows the same remembered number + its order list (Friday 12/11): the same button, back to an empty /orders.
+const lookup = read("src/components/commerce/OrderLookupView.tsx");
+check(
+  "/orders: once, inside the signed-in block, phone-only session, posting from=orders",
+  (lookup.match(/<NotMeButton/g) ?? []).length === 1 &&
+    /\{signedIn && \([\s\S]*\{showNotMe && \(\s*<form[^>]*>\s*<input type="hidden" name="from" value="orders" \/>\s*<NotMeButton \/>/.test(lookup)
+);
+const ordersPage = read("src/app/orders/page.tsx");
+check("/orders page: shown only without a member", /showNotMe=\{member === null\}/.test(ordersPage) && /showNotMe=\{false\}/.test(ordersPage) && ordersPage.includes("getMember()"));
 
 // 5. Words in all three languages (Thai = the owner's words).
 check("th = the owner's words", getDictionary("th").checkout.notMeCta === "ไม่ใช่ฉัน / เปลี่ยนเบอร์");

@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { NotMeButton } from "@/components/commerce/NotMeButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { orderLookupAction, type OrderLookupState } from "@/app/orders/actions";
 import { orderStatusLabel, type OrderStatus } from "@/lib/commerce/order-status";
@@ -72,7 +73,16 @@ function LookupForm({ again }: { again: boolean }) {
  * /orders — "ติดตามคำสั่งซื้อ" (owner 24/10). Signed in (after checkout on this device, or after the phone form here):
  * the customer's orders, newest first, each linking to its order page. Not signed in: the phone form.
  */
-export function OrderLookupView({ phone, orders }: { phone: string | null; orders: OrderListItem[] }) {
+export function OrderLookupView({
+  phone,
+  orders,
+  showNotMe,
+}: {
+  phone: string | null;
+  orders: OrderListItem[];
+  /** A phone-only session: the number and orders shown are this device's remembered ones (T2-06). */
+  showNotMe: boolean;
+}) {
   const { dict, locale } = useLocale();
   const t = dict.orderLookup;
   const signedIn = phone !== null;
@@ -113,6 +123,13 @@ export function OrderLookupView({ phone, orders }: { phone: string | null; order
                   </li>
                 ))}
               </ul>
+            )}
+            {/* T2-06: a shared phone remembers the last buyer's number for 30 days; someone else ends it here. */}
+            {showNotMe && (
+              <form className="-mt-1 flex">
+                <input type="hidden" name="from" value="orders" />
+                <NotMeButton />
+              </form>
             )}
           </div>
         )}

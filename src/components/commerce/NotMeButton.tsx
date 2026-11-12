@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils";
 
 /**
  * "ไม่ใช่ฉัน / เปลี่ยนเบอร์" (owner 10/11, T2-06): a quiet text button where checkout shows the number this device remembers.
- * It sits INSIDE another form (the address form, under the phone field) and posts to notMeAction instead of that form's own
- * action; formNoValidate so the empty required address fields do not stop it. notMeAction ends this device's phone session
- * and goes back to the phone step; the memory itself stays for everyone who does not press it.
+ * It sits INSIDE a form (the address form under the phone field, or its own small form on /orders with from=orders) and
+ * posts to notMeAction instead of that form's own action; formNoValidate so the empty required address fields do not stop
+ * it. notMeAction ends this device's phone session and goes back to the phone step (or an empty /orders); the memory
+ * itself stays for everyone who does not press it.
  */
 export function NotMeButton({ className }: { className?: string }) {
   const { pending } = useFormStatus();
