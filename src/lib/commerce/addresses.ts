@@ -57,6 +57,9 @@ function fromRow(row: AddressRow): AddressRecord {
  *  Was an English sentence passed through the URL (cart-ready round 24/10). */
 export type AddressError = "missing" | "phone" | "houseNumber" | "postal";
 
+/** A Thai or Latin letter — a place name has at least one. */
+const HAS_LETTER = /[ก-ฮะ-๎a-zA-Z]/;
+
 /** `{ error }` = refused (why); otherwise the input with the place in the data's own spelling (thai-postcodes.ts). */
 export function validateAddress(input: AddressInput): { error: AddressError } | { input: AddressInput } {
   const required = [input.recipientName, input.phone, input.line1, input.subdistrict, input.district, input.province];
@@ -66,6 +69,9 @@ export function validateAddress(input: AddressInput): { error: AddressError } | 
   // so a mobile (06/08/09) needs 10 digits and a landline (02–07) 9.
   const phone = input.phone.replace(/[\s-]/g, "");
   if (!/^0[689][0-9]{8}$/.test(phone) && !/^0[2-7][0-9]{7}$/.test(phone)) return { error: "phone" };
+  // A hand-typed sub-district or district is allowed (owner 03/11, confirmed 11/11 "พิมพ์เองได้เหมือนเดิม") but must name a
+  // place: "-", "." or digits alone carry no letter (outside tester T2-21: "- ต.- อ.-" went through to the warehouse).
+  if (!HAS_LETTER.test(input.subdistrict) || !HAS_LETTER.test(input.district)) return { error: "missing" };
   // The courier needs a house number (owner 02/11): the address line must carry at least one digit, Arabic or Thai.
   if (!/[0-9๐-๙]/.test(input.line1)) return { error: "houseNumber" };
   // The postcode must be real and serve the province given (owner 02/11: a wrong postcode stops the order); the sub-district
