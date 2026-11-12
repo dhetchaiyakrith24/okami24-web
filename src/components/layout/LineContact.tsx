@@ -32,22 +32,18 @@ export function LineContact() {
   const close = useCallback(() => setOpen(false), []);
   // Live fix 12/11 (visitor agent): on a phone the button (and the cart bubble above it) sat over the product cards while
   // scrolling. Scrolling DOWN past the first screen sets html[data-fab-away] and globals.css slides both off (phones only);
-  // any scroll UP brings them back. One passive listener, one attribute write per change, no React state per scroll.
+  // any scroll UP brings them back. One passive listener that writes the attribute only when it changes, no React state
+  // per scroll (no rAF either: a background tab pauses rAF and the button would stay put).
   useEffect(() => {
     const root = document.documentElement;
     let last = window.scrollY;
-    let queued = false;
     const onScroll = () => {
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(() => {
-        queued = false;
-        const y = window.scrollY;
-        if (Math.abs(y - last) < 8) return;
-        if (y > last && y > 160) root.dataset.fabAway = "1";
-        else if (y < last) delete root.dataset.fabAway;
-        last = y;
-      });
+      const y = window.scrollY;
+      if (Math.abs(y - last) < 8) return;
+      const away = y > last && y > 160;
+      if (away && !root.dataset.fabAway) root.dataset.fabAway = "1";
+      else if (!away && y < last && root.dataset.fabAway) delete root.dataset.fabAway;
+      last = y;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
