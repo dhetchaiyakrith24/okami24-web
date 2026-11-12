@@ -18,8 +18,8 @@ import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
-// Preview "guides" (owner 12/11): the home guide cards stack as you scroll — html[data-preview="guides"] only.
-import "./preview-guides.css";
+// The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
+import "./home-guides.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
 
