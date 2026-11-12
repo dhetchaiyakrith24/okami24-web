@@ -22,7 +22,7 @@ export function runFitsDevicesContractTests() {
     check(`${slug}: is a visible catalog product`, !!resolveVisibleRef(slug));
     check(`${slug}: names are non-empty and unique`, row.names.length > 0 && new Set(row.names.map(key)).size === row.names.length, row.names.join(", "));
     check(`${slug}: source is an https page with a read date`, row.sourceUrls.length > 0 && row.sourceUrls.every((u) => /^https:\/\//.test(u)) &&/^\d{4}-\d{2}-\d{2}$/.test(row.read) && row.evidence.length > 0, row.sourceUrls.join(" "));
-    const linked = getCompatibleDevices(slug).map((d) => key(d.ref.name.replace(/^S+s+/, "")));
+    const linked = getCompatibleDevices(slug).map((d) => key(d.ref.name.replace(/^\S+\s+/, "")));
     const repeats = row.names.filter((n) => linked.includes(key(n)));
     check(`${slug}: no plain name repeats a linked device`, repeats.length === 0 && fitsDeviceNames(slug, []).length === row.names.length, repeats.join(", "));
     const sold = row.names.filter((n) => shopDevices.has(key(n)));

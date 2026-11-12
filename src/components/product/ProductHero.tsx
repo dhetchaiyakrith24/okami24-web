@@ -27,6 +27,7 @@ import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
+import { flavorThai } from "@/lib/flavor-thai";
 import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
 import { LINEUP_GROUP_NAMES, lineupGroupRanges } from "@/lib/lineup-groups";
 import type { RelatedDevice } from "@/data/catalog-relationships";
@@ -453,6 +454,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.flavorLabel}
+              glossOf={locale === "th" ? flavorThai : undefined}
               allLabel={product.lineupImage ? dict.product.allFlavorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}

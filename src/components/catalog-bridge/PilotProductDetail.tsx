@@ -46,6 +46,7 @@ import { pilotName, pilotOptionLabel } from "@/i18n/product-names-en";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { renderInline } from "@/components/content/ArticleBody";
+import { flavorThai } from "@/lib/flavor-thai";
 import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
 import type { ProductArticleCopy } from "@/data/product-articles";
 import type { Locale } from "@/i18n/config";
@@ -320,6 +321,7 @@ export function PilotProductDetail({
             countLine={countLine}
             bestIds={bestSellerOptions(product.slug)}
             className="max-lg:order-2"
+            glossOf={locale === "th" && product.optionAxisCode && /flav/i.test(product.optionAxisCode) ? flavorThai : undefined}
           />
 
           {showBuy && (

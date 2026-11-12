@@ -67,7 +67,7 @@ export const FITS_DEVICES: Readonly<Record<string, FitsDevicesRow>> = {
 
 /** The plain names for a consumable's line, minus any the linked devices already show (compared without case/spaces). */
 export function fitsDeviceNames(slug: string, linkedNames: string[]): string[] {
-  const key = (s: string) => s.toLowerCase().replace(/[s-]+/g, "");
+  const key = (s: string) => s.toLowerCase().replace(/[\s-]+/g, "");
   const shown = new Set(linkedNames.map(key));
   return (FITS_DEVICES[slug]?.names ?? []).filter((n) => !shown.has(key(n)));
 }
