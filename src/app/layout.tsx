@@ -20,8 +20,8 @@ import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
 // Preview "cards" (owner 12/11): scoped to html[data-preview="cards"] only — customers get today's look (src/lib/preview.ts).
 import "./preview-cards.css";
-// Preview "guides" (owner 12/11): the home guide cards stack as you scroll — html[data-preview="guides"] only.
-import "./preview-guides.css";
+// The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
+import "./home-guides.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
 
