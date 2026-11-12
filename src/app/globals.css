@@ -495,18 +495,21 @@ html:lang(th) .label-mono:not(:lang(en)) {
    hydration — the border stays 1px, so nothing moves when it lands); a Flagship card by data-flagship in the server HTML.
    An orange gradient frame, a warm under-glow and a hot line on the top edge; with motion allowed a light runs along the
    top edge then back along the bottom and the chip catches it, once per 8 s, three times, then the top edge settles into
-   the still line (WCAG 2.2.2). Reduced motion / Save-Data (lite) = the still frame. The 31/10 6 % orange wash inside the card
-   body stays out (owner 12/11: no tint in the card body). Orange follows the palette (--ember-rgb). History: git log -S "okami-best-edge". */
+   the still line (WCAG 2.2.2). Reduced motion / Save-Data (lite) = the still frame. The warm fade up from the card's bottom
+   edge (6 %, hover 8 %) is back too — owner 13/11 on his crop of the 09/11 cards: "มันต่างกันตรงแสง Fade ด้านล่างการ์ดใช่ไหม …
+   มันก็สวยดีนะ ใส่สำหรับสินค้าขายดีไว้ก็ได้ครับ". Orange follows the palette (--ember-rgb). History: git log -S "okami-best-edge". */
 a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]) {
   isolation: isolate;
   border-color: transparent;
   background:
+    linear-gradient(to top, rgb(var(--ember-rgb) / 0.06), transparent 40%) padding-box,
     linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
     linear-gradient(160deg, var(--accent-ember-strong) 0%, rgb(var(--ember-rgb) / 0.25) 35%, rgb(var(--ember-rgb) / 0.25) 65%, var(--accent-ember) 100%) border-box;
   box-shadow: inset 0 0 0 1px rgb(var(--ember-rgb) / 0.18), 0 8px 16px -10px rgb(var(--ember-rgb) / 0.5);
 }
 a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]):hover {
   background:
+    linear-gradient(to top, rgb(var(--ember-rgb) / 0.08), transparent 40%) padding-box,
     linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
     linear-gradient(160deg, var(--accent-ember-strong), var(--accent-ember)) border-box;
 }
