@@ -81,16 +81,18 @@ function guessHero(): Box {
 
 /** The product page's hero photo box + the picture with the most area showing inside it. */
 function heroPhoto(): { img: HTMLImageElement; hero: HTMLElement } | null {
-  const hero = document.querySelector<HTMLElement>("[data-zoom-hero]");
-  if (!hero) return null;
-  const h = hero.getBoundingClientRect();
-  let best: { img: HTMLImageElement; area: number } | null = null;
-  for (const img of hero.querySelectorAll("img")) {
-    const r = img.getBoundingClientRect();
-    const area = Math.max(0, Math.min(r.right, h.right) - Math.max(r.left, h.left)) * Math.max(0, Math.min(r.bottom, h.bottom) - Math.max(r.top, h.top));
-    if (area > (best?.area ?? 0)) best = { img, area };
+  // A page may have one box per screen size (the pilot product page: a phone gallery and a desktop photo); the hidden
+  // one measures 0 and drops out.
+  let best: { img: HTMLImageElement; hero: HTMLElement; area: number } | null = null;
+  for (const hero of document.querySelectorAll<HTMLElement>("[data-zoom-hero]")) {
+    const h = hero.getBoundingClientRect();
+    for (const img of hero.querySelectorAll("img")) {
+      const r = img.getBoundingClientRect();
+      const area = Math.max(0, Math.min(r.right, h.right) - Math.max(r.left, h.left)) * Math.max(0, Math.min(r.bottom, h.bottom) - Math.max(r.top, h.top));
+      if (area > (best?.area ?? 0)) best = { img, hero, area };
+    }
   }
-  return best ? { img: best.img, hero } : null;
+  return best ? { img: best.img, hero: best.hero } : null;
 }
 
 function place(el: HTMLElement, b: Box): void {
@@ -261,11 +263,16 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       // the photo keeps growing a touch until the page is there. The landing may start in the push's last 100 ms.
       let found: ReturnType<typeof heroPhoto> = null;
       let drifting = false;
+      let arrived = 0;
       for (;;) {
         await raf();
         const t = performance.now() - t0;
         if (left || t > WAIT_MS) throw new Error("gave up");
-        if (!found && location.pathname === path && (found = heroPhoto())) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        if (!arrived && location.pathname === path) arrived = t;
+        if (!found && arrived && (found = heroPhoto())) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        // The page is there but has no photo box to land on (a page without data-zoom-hero, a product with no photo):
+        // fade straight into it rather than holding the dim.
+        if (!found && arrived && t - arrived > 400) throw new Error("no hero");
         if (found && t >= PUSH_MS - 100) break;
         if (!drifting && t >= PUSH_MS) {
           drifting = true;
