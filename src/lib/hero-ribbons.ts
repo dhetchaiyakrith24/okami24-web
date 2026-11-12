@@ -889,7 +889,7 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
   }
 }
 
-/** The palette this page draws with: the preview "cards" / "cards-run" (src/lib/preview.ts) draws the shop orange. Main thread only. */
+/** The palette this page draws with: the preview "cards" (and any word starting "cards", src/lib/preview.ts) draws the shop orange. Main thread only. */
 export function ribbonPalette(): RibbonPalette {
   return typeof document !== "undefined" && document.documentElement.dataset.preview?.startsWith("cards") ? "shop" : "forge";
 }

@@ -488,6 +488,92 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 
 
-/* "ขายดี" (owner 31/10 frame + running light) — removed 09/11 with the forge look: on a first row where every card is a
-   best seller the frame marked nothing, and the one orange belongs to what you press. The "ขายดี" chip itself stays
-   (SalesBadge). History of the effect: git log -S "okami-best-edge". */
+/* "ขายดี" and "แนะนำ" cards: the running edge light (owner 31/10 "ใส่กรอบ Effect ทั้งป้ายขายดีและตัวกล่อง-การ์ด", designer
+   direction B "ชักดาบ"; 3 runs then still, owner 02/11; removed 09/11 with the forge look; back 13/11 — the owner turned down
+   both new glows: "พี่ขอแบบเดิม … ที่วิ่งก่อนหน้า" → "วิ่ง 3 รอบแล้วหยุด"). Since 13/11 also on the Flagship ("แนะนำ") cards
+   (owner 12/11: the frame on "ขายดี" and "แนะนำ"). A best seller is marked by its chip (SalesBadge sets data-sales after
+   hydration — the border stays 1px, so nothing moves when it lands); a Flagship card by data-flagship in the server HTML.
+   An orange gradient frame, a warm under-glow and a hot line on the top edge; with motion allowed a light runs along the
+   top edge then back along the bottom and the chip catches it, once per 8 s, three times, then the top edge settles into
+   the still line (WCAG 2.2.2). Reduced motion / Save-Data (lite) = the still frame. The 31/10 6 % orange wash inside the card
+   body stays out (owner 12/11: no tint in the card body). Orange follows the palette (--ember-rgb). History: git log -S "okami-best-edge". */
+a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]) {
+  isolation: isolate;
+  border-color: transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    linear-gradient(160deg, var(--accent-ember-strong) 0%, rgb(var(--ember-rgb) / 0.25) 35%, rgb(var(--ember-rgb) / 0.25) 65%, var(--accent-ember) 100%) border-box;
+  box-shadow: inset 0 0 0 1px rgb(var(--ember-rgb) / 0.18), 0 8px 16px -10px rgb(var(--ember-rgb) / 0.5);
+}
+a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]):hover {
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    linear-gradient(160deg, var(--accent-ember-strong), var(--accent-ember)) border-box;
+}
+/* The still hot line on the top edge (reduced motion / lite keep it; the three runs settle into it). */
+a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 20;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 30%, #fff1ec 50%, var(--accent-ember-strong) 70%, transparent);
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before,
+  html:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 45%;
+    height: 2px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 35%, #fff1ec 50%, var(--accent-ember-strong) 65%, transparent);
+    /* Three runs, then (later in the list wins) the top edge settles into the still line (checker 02/11). */
+    animation: okami-best-edge 8s linear 3 forwards, okami-best-settle 0.8s ease-out 24s forwards;
+  }
+  html:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::after {
+    top: auto;
+    bottom: 0;
+    animation: okami-best-edge-back 8s linear 3 forwards;
+  }
+  html:not([data-okami-lite="1"]) a[data-card-cut] .okami-best-pill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1; /* under the words, over the chip fill (the chip is isolate) */
+    background: linear-gradient(105deg, transparent 30%, rgb(255 241 236 / 0.35) 50%, transparent 70%);
+    transform: translateX(-110%);
+    animation: okami-best-glint 8s linear 3 forwards;
+  }
+  /* Half the cards run half a cycle later — a row of best sellers does not flash in step. */
+  html:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n):is(:has([data-sales="best"]), [data-flagship])::after,
+  html:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n) .okami-best-pill::after {
+    animation-delay: -4s;
+  }
+  html:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n):is(:has([data-sales="best"]), [data-flagship])::before {
+    animation-delay: -4s, 20s;
+  }
+}
+@keyframes okami-best-edge {
+  0% { transform: translateX(-100%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+  22%, 100% { transform: translateX(225%); }
+}
+@keyframes okami-best-edge-back {
+  0%, 24% { transform: translateX(225%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+  46%, 100% { transform: translateX(-100%); }
+}
+@keyframes okami-best-settle {
+  from { transform: none; width: 100%; opacity: 0; }
+  to { transform: none; width: 100%; opacity: 0.9; }
+}
+@keyframes okami-best-glint {
+  0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }
+  58%, 100% { transform: translateX(110%); }
+}
