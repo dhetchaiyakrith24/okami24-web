@@ -22,6 +22,8 @@ import "./globals.css";
 import "./preview-cards.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
+// Preview "buyrail" (12/11): the product page's sticky buy card on wide screens — html[data-preview="buyrail"] only.
+import "./preview-buyrail.css";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",
