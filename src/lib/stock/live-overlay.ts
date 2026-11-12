@@ -14,7 +14,8 @@ import type { LiveLookup, LiveState } from "@/lib/stock/live-rules";
  *   - "ask" → `availability: "unknown"` + `stockAsk` — not sold, not shown as sold out; the buy slot asks on LINE;
  *   - no live answer (no code, or no reports at all, as in `next build`) → what the build said.
  * A ProductMaster product's own status follows pilotStatusAfterLive (a variant that sells = in stock · all sold out = sold
- * out · otherwise the build), so a card and its page never disagree. Same object back when nothing changes.
+ * out · none sells and one is "ask" = unknown + the product's own stockAsk · otherwise the build), so a card and its page never
+ * disagree. Same object back when nothing changes.
  */
 
 export const availOf = (s: "in" | "out"): VariantAvailability => (s === "in" ? "in-stock" : "out-of-stock");
@@ -31,15 +32,19 @@ export function overlayAvailability<T extends { availability?: VariantAvailabili
 }
 
 /** A ProductMaster product's status once its variants carry the live answer (`own` = the live answer of a product without
- *  variants): one variant that sells = in stock · every variant sold out = sold out · otherwise what the build said. */
+ *  variants): one variant that sells = in stock · every variant sold out = sold out · none sells and one is "ask" = unknown
+ *  (bug sweep 12/11: a build that said sold out kept its card and JSON-LD at OutOfStock while the page asked on LINE) ·
+ *  otherwise what the build said (the build may know more than its variants: pod-159 is built in stock with 19 of 20 options
+ *  on the owner's sold-out list and one unknown — the schema's plain rollup would flip it on every live read). */
 export function pilotStatusAfterLive(
-  variants: readonly { availabilityStatus: VariantAvailability }[],
+  variants: readonly { availabilityStatus: VariantAvailability; stockAsk?: true }[],
   built: VariantAvailability,
   own: LiveState | null
 ): VariantAvailability {
   if (variants.length === 0) return own === "ask" ? "unknown" : own ? availOf(own) : built;
   if (variants.some((v) => v.availabilityStatus === "in-stock")) return "in-stock";
   if (variants.every((v) => v.availabilityStatus === "out-of-stock")) return "out-of-stock";
+  if (variants.some((v) => v.stockAsk)) return "unknown";
   return built;
 }
 
@@ -73,7 +78,9 @@ export function livePilotProduct(product: StorefrontProductView, live: LiveLooku
   });
   const own = product.variants.length === 0 ? live(product.slug) : null;
   const status = pilotStatusAfterLive(variants, product.availabilityStatus, own);
-  const ask = own === "ask";
+  // The product asks on LINE as a whole when it has no variants and asks, or when nothing sells and a variant asks — the
+  // phone gallery's unpicked photo and the head read this (PilotProductDetail), not "สินค้าหมด".
+  const ask = own === "ask" || (variants.length > 0 && status === "unknown" && variants.some((v) => v.stockAsk));
   if (!changed && status === product.availabilityStatus && !!product.stockAsk === ask) return product;
   const { stockAsk: _drop, ...rest } = product;
   void _drop;
