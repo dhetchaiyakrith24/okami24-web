@@ -242,7 +242,9 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       // The hero photo of the page we are going to stays hidden until the flying copy is on it (globals.css "okami-zoom") —
       // set only now, under the copy, so a product page we are leaving never blinks its own photo.
       root.dataset.zoomLanding = "1";
-      router.push(href, { scroll: true });
+      // No scroll by the router: it scrolls the new page a beat after it shows (and stops 65 px down, under the header);
+      // the zoom puts the page at its very top itself the moment it arrives, so the photo it lands on holds still.
+      router.push(href, { scroll: false });
 
       // Wait for the product page — the motion never stops meanwhile: past the push-in the camera keeps creeping in and
       // the photo keeps growing a touch until the page is there. The landing may start in the push's last 100 ms.
@@ -252,7 +254,7 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
         await raf();
         const t = performance.now() - t0;
         if (left || t > WAIT_MS) throw new Error("gave up");
-        if (!found && location.pathname === path) found = heroPhoto();
+        if (!found && location.pathname === path && (found = heroPhoto())) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
         if (found && t >= PUSH_MS - 100) break;
         if (!drifting && t >= PUSH_MS) {
           drifting = true;
@@ -263,11 +265,10 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
         }
       }
       let hit: { img: HTMLImageElement; hero: HTMLElement } = found;
-      // Let the new page take its scroll position (the hero photo still for one frame, at most ~5; the second glide below
-      // catches a later shift).
+      // Let the new page settle (the hero photo still for two frames, at most ~8; the second glide below catches a later shift).
       const target = () => fit(aspect, drawn((hit = heroPhoto() ?? hit).img));
       let to = target();
-      for (let i = 0, still = 0; i < 5 && still < 1; i++) {
+      for (let i = 0, still = 0; i < 8 && still < 2; i++) {
         await raf();
         const next = target();
         still = Math.abs(next.x - to.x) + Math.abs(next.y - to.y) + Math.abs(next.w - to.w) < 1 ? still + 1 : 0;
@@ -314,6 +315,7 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       // let whatever page is there be.
       if (main) Object.assign(main.style, { transformOrigin: "", visibility: "" });
       delete root.dataset.zoomLanding;
+      if (!left && location.pathname === path) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       const fade = [veil, flier, ...(wall ? [wall] : [])].map((el) =>
         el.animate([{ opacity: getComputedStyle(el).opacity }, { opacity: 0 }], { duration: 220, fill: "forwards" }),
       );
