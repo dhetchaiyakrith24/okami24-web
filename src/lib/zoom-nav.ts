@@ -356,10 +356,23 @@ export function attachZoom(router: Router): () => void {
     const href = (e.target as Element | null)?.closest<HTMLAnchorElement>("a[data-card-cut]")?.getAttribute("href");
     if (href?.startsWith("/products/")) router.prefetch(href);
   };
+  // Back/Forward after a zoom: the browser puts the page back where it was, but the site-wide smooth scrolling
+  // (globals.css html) turned that into a 0.6 s glide down the list (a plain link jumps straight back). Instant for that moment.
+  let popTimer = 0;
+  const onPop = () => {
+    const root = document.documentElement;
+    root.style.scrollBehavior = "auto";
+    window.clearTimeout(popTimer);
+    popTimer = window.setTimeout(() => (root.style.scrollBehavior = ""), 800);
+  };
   document.addEventListener("pointerdown", onDown, { capture: true, passive: true });
   document.addEventListener("click", onClick, true);
+  window.addEventListener("popstate", onPop);
   return () => {
     document.removeEventListener("pointerdown", onDown, true);
     document.removeEventListener("click", onClick, true);
+    window.removeEventListener("popstate", onPop);
+    window.clearTimeout(popTimer);
+    document.documentElement.style.scrollBehavior = "";
   };
 }
