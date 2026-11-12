@@ -9,7 +9,6 @@ import { LineContact } from "@/components/layout/LineContact";
 import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
-import { TeamShortcut } from "@/components/layout/TeamShortcut";
 import { CardCut } from "@/components/brand/CardCut";
 import { navCategories } from "@/lib/category-visibility";
 import { navBrands } from "@/lib/brand-visibility";
@@ -135,8 +134,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ImageSaveGuard />
           {/* Samurai theme (owner 29/10): the short red cut across a product card's photo on click. Renders nothing. */}
           <CardCut />
-          {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
-          <TeamShortcut />
           {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
           <PreviewPill />
         </LocaleProvider>
