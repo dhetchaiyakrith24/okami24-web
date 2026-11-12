@@ -29,8 +29,10 @@ const WAIT_MS = 8000;
 const HERO_CACHE = "okami-zoom-hero";
 /** How long the camera keeps creeping in after the push-in while the product page is still coming. */
 const DRIFT_MS = 1800;
-/** The dim at the end of the push-in: the wall stays faintly there, never a black "loading" screen (designer 13/11). */
-const VEIL_MAX = 0.86;
+/** The dim at the end of the push-in. The veil itself is a radial dim (see zoom()): ~0.74 round the product, ~0.97 at the
+ *  edges — the wall stays faintly there (never a black "loading" screen) but the far side of a zoomed page (a filter
+ *  list blown up 2×) sinks away (designer 13/11). */
+const VEIL_MAX = 1;
 
 let busy = false;
 
@@ -155,7 +157,7 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   veil.setAttribute("aria-hidden", "true");
   Object.assign(veil.style, {
     position: "fixed", inset: "0", zIndex: "49", pointerEvents: "none", opacity: "0",
-    background: `radial-gradient(ellipse 60% 24% at ${((mid.x + mid.w / 2) / window.innerWidth) * 100}% ${((mid.y + mid.h * 0.95) / window.innerHeight) * 100}%, rgb(var(--ember-rgb, 240 138 42) / 0.18), transparent 70%), var(--surface-0, #100e0d)`,
+    background: `radial-gradient(ellipse 60% 24% at ${((mid.x + mid.w / 2) / window.innerWidth) * 100}% ${((mid.y + mid.h * 0.95) / window.innerHeight) * 100}%, rgb(var(--ember-rgb, 240 138 42) / 0.18), transparent 70%), radial-gradient(circle at ${((mid.x + mid.w / 2) / window.innerWidth) * 100}% ${((mid.y + mid.h / 2) / window.innerHeight) * 100}%, color-mix(in srgb, var(--surface-0, #100e0d) 74%, transparent) 0%, color-mix(in srgb, var(--surface-0, #100e0d) 97%, transparent) 60%)`,
   } satisfies Partial<CSSStyleDeclaration>);
 
   // The lifted photo: the card's own picture (already painted, so it shows at once) + a sharper copy from the same srcset
@@ -235,6 +237,11 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
         const copy = camera(wall, `${cx}px ${cy}px`);
         copy.startTime = moving.startTime;
         pushing.push(copy);
+        // Let the copy be painted and moving on screen before the next page's render takes the main thread (on desktop
+        // the copy otherwise stood still for ~0.3 s while the pod flew on — designer 13/11).
+        await copy.ready;
+        await raf();
+        await raf();
         // The real page is now under the copy: stop moving it and stop painting it while the next page renders there.
         moving.cancel();
         main.style.visibility = "hidden";
@@ -286,8 +293,9 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       veil.style.opacity = String(dim);
       if (main) Object.assign(main.style, { transformOrigin: "", visibility: "" });
       delete root.dataset.zoomDark;
-      const lifting = [veil.animate([{ opacity: dim }, { opacity: 0 }], { duration: LAND_MS - 60, delay: 60, easing: "cubic-bezier(0.3, 0, 0.2, 1)", fill: "both" })];
-      if (wall) lifting.push(wall.animate([{ opacity: 1 }, { opacity: 0 }], { duration: LAND_MS * 0.6, easing: "ease-out", fill: "forwards" }));
+      const lifting = [veil.animate([{ opacity: dim }, { opacity: 0 }], { duration: LAND_MS - 120, delay: 120, easing: "cubic-bezier(0.3, 0, 0.2, 1)", fill: "both" })];
+      // The copy is gone before the page shows through, so old and new text never overlap (designer 13/11).
+      if (wall) lifting.push(wall.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 140, easing: "ease-out", fill: "forwards" }));
       await flier.animate([{ transform: "none" }, { transform: toward(from, to) }], { duration: LAND_MS, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", fill: "forwards" }).finished;
       for (const a of flier.getAnimations()) a.cancel();
       place(flier, to);
