@@ -2,7 +2,8 @@
    Preview "cards" — black + the shop orange (owner 12/11: the forge card body reads "ขุ่นและเก่า"; "ขอสีส้มพี่คืน ไม่เอาโทนเหลือง
    … เว็บเราจะดำ ส้ม"; "เหลืองมีได้แต่ต้องไม่เด่นจนส้มหาย"). Designer pass 12/11 before the build.
    ONLY `html[data-preview^="cards"]` matches — set on the owner's device by okami24.store/?preview=cards (src/lib/preview.ts);
-   ?preview=cards-run is the same look plus a slow light along the Flagship frames (the owner compares still vs moving).
+   ?preview=cards-run is the same look plus a slow light along the Flagship frames (the owner compares still vs moving);
+   ?preview=cards-old / cards-old-loop = the same look with the 31/10 running edge light instead (end of this file).
    Every customer still gets today's look. When the owner approves: the values below become :root / the base rules in
    globals.css, the frame moves there too, the home ribbon's palette becomes the default (src/lib/hero-ribbons.ts), and this
    file and its import in layout.tsx are deleted.
@@ -56,19 +57,19 @@ html[data-preview^="cards"] .hover\:bg-ember-soft:hover {
    hydration — the 1px border is already there, so nothing moves and the card's transition fades the glow in); "แนะนำ" =
    the Flagship cards (ProductCard sets data-flagship in the server HTML). Low alpha on purpose: a first row of best sellers
    must not become a wall of orange. No running light (the 31/10 one: git log -S "okami-best-edge"). */
-html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]),
-html[data-preview^="cards"] a[data-card-cut][data-flagship] {
+html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut]:has([data-sales="best"]),
+html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut][data-flagship] {
   border-color: rgb(255 106 44 / 0.38);
   box-shadow: 0 0 18px -6px rgb(255 106 44 / 0.3), inset 0 1px 0 rgb(255 131 71 / 0.1);
 }
-html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]):hover,
-html[data-preview^="cards"] a[data-card-cut][data-flagship]:hover {
+html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut]:has([data-sales="best"]):hover,
+html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut][data-flagship]:hover {
   border-color: rgb(255 106 44 / 0.6);
   box-shadow: 0 0 26px -6px rgb(255 106 44 / 0.42), inset 0 1px 0 rgb(255 131 71 / 0.14);
 }
 @media (max-width: 63.98rem) {
-  html[data-preview^="cards"] a[data-card-cut]:has([data-sales="best"]),
-  html[data-preview^="cards"] a[data-card-cut][data-flagship] {
+  html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut]:has([data-sales="best"]),
+  html[data-preview^="cards"]:not([data-preview^="cards-old"]) a[data-card-cut][data-flagship] {
     box-shadow: 0 0 12px -5px rgb(255 106 44 / 0.26), inset 0 1px 0 rgb(255 131 71 / 0.1);
   }
 }
@@ -103,4 +104,108 @@ html[data-preview^="cards"] a[data-card-cut][data-flagship]:hover {
   to {
     --okami-run-a: 360deg;
   }
+}
+
+/* ==========================================================================
+   ?preview=cards-old / cards-old-loop (owner 13/11: both new glows rejected — "พี่ขอแบบเดิม … ที่วิ่งก่อนหน้า … พี่ชอบแบบนั้น
+   มากกว่า"). The 31/10 best-seller frame with its running edge light (e321d47d · 3 runs then still: cff47852 + 9fcdf821 ·
+   removed 09/11 in f3b54964), put back on the black + orange cards above, on "ขายดี" AND "แนะนำ" (Flagship) cards:
+   an orange gradient 1px frame + warm under-glow + a hot line on the top edge; with motion allowed a light runs along the
+   top edge then back along the bottom, and the "ขายดี" chip catches it, once per 8 s; half the cards half a cycle later.
+     cards-old      = three runs, then the top edge settles into the still line (as it was live 02/11–09/11; WCAG 2.2.2)
+     cards-old-loop = runs for as long as the card is on screen (the 31/10 original)
+   Going live = ONE choice: the two custom properties on the first rule below (3 + okami-best-settle, or infinite + none).
+   Kept out on purpose: the 31/10 6 % orange wash inside the card body (owner 12/11: no tint in the card body — a see-through
+   orange reads brown on graphite). Reduced motion / Save-Data (lite) = the still frame + still top line. The chip lands after
+   hydration but the border stays 1px, so nothing moves.
+   ========================================================================== */
+html[data-preview^="cards-old"] {
+  --okami-best-runs: 3;
+  --okami-best-settle: okami-best-settle;
+}
+html[data-preview="cards-old-loop"] {
+  --okami-best-runs: infinite;
+  --okami-best-settle: none;
+}
+html[data-preview^="cards-old"] a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]) {
+  isolation: isolate;
+  border-color: transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    linear-gradient(160deg, var(--accent-ember-strong) 0%, rgb(var(--ember-rgb) / 0.25) 35%, rgb(var(--ember-rgb) / 0.25) 65%, var(--accent-ember) 100%) border-box;
+  box-shadow: inset 0 0 0 1px rgb(var(--ember-rgb) / 0.18), 0 8px 16px -10px rgb(var(--ember-rgb) / 0.5);
+}
+html[data-preview^="cards-old"] a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]):hover {
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    linear-gradient(160deg, var(--accent-ember-strong), var(--accent-ember)) border-box;
+}
+/* The still hot line on the top edge (what reduced motion / lite keep, and where the 3 runs settle). */
+html[data-preview^="cards-old"] a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  z-index: 20;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 30%, #fff1ec 50%, var(--accent-ember-strong) 70%, transparent);
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before,
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 45%;
+    height: 2px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, var(--accent-ember-strong) 35%, #fff1ec 50%, var(--accent-ember-strong) 65%, transparent);
+    /* Later in the list wins: after the runs the settle brings back the still top line (checker 02/11). */
+    animation:
+      okami-best-edge 8s linear var(--okami-best-runs) forwards,
+      var(--okami-best-settle) 0.8s ease-out 24s forwards;
+  }
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::after {
+    top: auto;
+    bottom: 0;
+    animation: okami-best-edge-back 8s linear var(--okami-best-runs) forwards;
+  }
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut] .okami-best-pill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1; /* under the words, over the chip fill (the chip is isolate) */
+    background: linear-gradient(105deg, transparent 30%, rgb(255 241 236 / 0.35) 50%, transparent 70%);
+    transform: translateX(-110%);
+    animation: okami-best-glint 8s linear var(--okami-best-runs) forwards;
+  }
+  /* Half the cards run half a cycle later — a row of best sellers does not flash in step. */
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n):is(:has([data-sales="best"]), [data-flagship])::after,
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n) .okami-best-pill::after {
+    animation-delay: -4s;
+  }
+  html[data-preview^="cards-old"]:not([data-okami-lite="1"]) a[data-card-cut]:nth-child(2n):is(:has([data-sales="best"]), [data-flagship])::before {
+    animation-delay: -4s, 20s;
+  }
+}
+@keyframes okami-best-edge {
+  0% { transform: translateX(-100%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+  22%, 100% { transform: translateX(225%); }
+}
+@keyframes okami-best-edge-back {
+  0%, 24% { transform: translateX(225%); animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1); }
+  46%, 100% { transform: translateX(-100%); }
+}
+@keyframes okami-best-settle {
+  from { transform: none; width: 100%; opacity: 0; }
+  to { transform: none; width: 100%; opacity: 0.9; }
+}
+@keyframes okami-best-glint {
+  0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }
+  58%, 100% { transform: translateX(110%); }
 }
