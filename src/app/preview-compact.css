@@ -51,8 +51,8 @@
     font-size: 12px;
   }
   html[data-preview$="compact"] a[data-card-cut] [data-sale-badge] {
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 12px; /* checker #1442: ≥ 12px */
+    line-height: 14px;
   }
   /* Cards inside a wrapper (home rails, related, similar-in-stock) fill the wrapper, which the grid already stretches to
      the row — so the price foot lines up there too. No display on the wrapper: the home rails hide cards 7+ on phones by
@@ -60,13 +60,18 @@
   html[data-preview$="compact"] div:has(> a[data-card-cut]:only-child) > a[data-card-cut] {
     height: 100%;
   }
-  /* Heart: a 32px circle, still a 44px tap area. */
+  /* Heart: a 32px circle, still a 44px tap area — the ring is measured from inside the 1px border (30px), so −7px each side
+     = 44 (checker #1442: −6px gave 42). */
   html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > button {
     width: 2rem;
     height: 2rem;
   }
   html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > button::before {
-    inset: -6px;
+    inset: -7px;
+  }
+  /* Brand line 11px (was 9.6px) so it does not read tiny next to the 15px name (checker #1442). */
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] + div > div:first-child > span:first-child {
+    font-size: 11px;
   }
   /* Chips 12px (were 11 / 11.2): "ขายดี" / "มาใหม่" keep their 19px height and negative margin, so the brand line does
      not grow when they land after hydration. */
