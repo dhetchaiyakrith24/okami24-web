@@ -22,6 +22,8 @@ import "./globals.css";
 import "./card-compact.css";
 // The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
 import "./home-guides.css";
+// Desktop: the category/brand "families" stack like the home guide deck (owner 13/11 "ไม่ต้องจำลองเว็บละ" → default, no preview).
+import "./category-families.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
 

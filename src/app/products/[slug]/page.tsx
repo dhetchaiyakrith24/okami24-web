@@ -288,7 +288,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           {lineup && guideCopy && <DisposableChooser copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} rows={lineup} />}
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
-        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} />}
+        {guideCopy && <CategoryGuide copy={guideCopy} rows={categorySpecRows(products)} brands={lineup ? disposableBrands(lineup) : undefined} lineup={lineup ? disposableCompareRows(lineup) : undefined} stack />}
         {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
         {!isEmptyCategory && (
           <RelatedArticles
