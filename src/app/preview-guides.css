@@ -23,6 +23,10 @@ html[data-preview="guides"] .okh-guide {
 html[data-preview="guides"] .okh-guide h3 {
   text-wrap: balance;
 }
+/* The wide desktop card left one word alone on the blurb's last line ("… ทำงานยัง / ไง", shot 12/11). */
+html[data-preview="guides"] .okh-guide p {
+  text-wrap: pretty;
+}
 html[data-preview="guides"] .okh-guide-arrow {
   display: block;
 }
