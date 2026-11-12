@@ -21,8 +21,8 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
   const helpGuide = getGuide(DNS_GUIDE_ID);
   return (
     <section className="bg-surface-1 py-14 lg:py-20">
-      {/* okh-guides*: hooks for the preview "guides" (src/app/preview-guides.css — the cards stack as you scroll). Without the
-          preview they do nothing; the --i / --n style values only feed that preview. */}
+      {/* okh-guides*: hooks for src/app/home-guides.css — the cards stack as you scroll (owner approved 13/11). The --i / --n
+          style values feed each card's sticky offset and its sink-back range. */}
       <Container className="okh-guides-wrap flex flex-col gap-10">
         <div className="okh-guides-head flex flex-wrap items-end justify-between gap-4">
           <SectionHeading eyebrow="Guides & Learn" title={<HomeText k="guidesTitle" />} />
