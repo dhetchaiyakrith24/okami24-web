@@ -482,10 +482,33 @@ export function OrderStatusView({
               </div>
             ))}
           </div>
-          <div className="flex justify-between rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm font-semibold text-foreground">
-            <span>{dict.orderStatus.totalsTitle}</span>
-            <span>{formatTHB(order.total)}</span>
-          </div>
+          {order.discountAmount ? (
+            // A special price staff gave (owner 12/11: the page showed only the lower total, so the items did not add up to
+            // it): goods + shipping, the discount, then what the customer pays. Orders without one keep the single line.
+            <div className="flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm text-foreground">
+              <div className="flex justify-between text-foreground-muted">
+                <span>{dict.cart.subtotalLabel}</span>
+                <span>{formatTHB(order.subtotal)}</span>
+              </div>
+              <div className="flex justify-between text-foreground-muted">
+                <span>{dict.cart.shippingLabel}</span>
+                <span>{order.shippingFee === 0 ? dict.cart.freeShippingLabel : formatTHB(order.shippingFee)}</span>
+              </div>
+              <div className="flex justify-between text-foreground-muted">
+                <span>{t.discountLabel}</span>
+                <span>−{formatTHB(order.discountAmount)}</span>
+              </div>
+              <div className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold">
+                <span>{dict.orderStatus.totalsTitle}</span>
+                <span>{formatTHB(order.total)}</span>
+              </div>
+            </div>
+          ) : (
+            <div className="flex justify-between rounded-xl border border-surface-border-soft bg-surface-1 p-4 text-sm font-semibold text-foreground">
+              <span>{dict.orderStatus.totalsTitle}</span>
+              <span>{formatTHB(order.total)}</span>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col gap-2">

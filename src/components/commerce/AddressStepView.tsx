@@ -15,6 +15,8 @@ import type { CartView as CartViewData } from "@/lib/commerce/cart";
 
 // Kept here, not in actions.ts: a "use server" file may only export async functions (see checkout/actions.ts).
 const initialAddressState: AddressFormState = { errorKey: null, values: {} };
+/** The phone box's length cap (T2-21: it took 20 characters). */
+const PHONE_MAX = 12;
 
 function Field({
   label,
@@ -24,6 +26,7 @@ function Field({
   pattern,
   inputMode,
   autoComplete,
+  maxLength,
   error,
 }: {
   label: string;
@@ -33,6 +36,7 @@ function Field({
   pattern?: string;
   inputMode?: "text" | "tel" | "numeric";
   autoComplete?: string;
+  maxLength?: number;
   /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers.
    *  It goes away once the customer edits the field (checker 02/11: a fixed field stayed red until the next save). */
   error?: string | null;
@@ -49,6 +53,7 @@ function Field({
         pattern={pattern}
         inputMode={inputMode}
         autoComplete={autoComplete}
+        maxLength={maxLength}
         defaultValue={defaultValue}
         required
         onChange={() => setEdited(true)}
@@ -206,6 +211,8 @@ export function AddressStepView({
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
+                // T2-21: 10 digits + two dashes at most ("081-234-5678"); the server checks the digits (addresses.ts).
+                maxLength={PHONE_MAX}
                 defaultValue={v.phone ?? defaultPhone}
                 error={fieldError("phone")}
               />

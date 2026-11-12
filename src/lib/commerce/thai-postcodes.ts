@@ -10,6 +10,11 @@ import data from "@/data/thai-address/postcodes.json";
  * so the customer always picks — nothing is guessed. A code the data does not list is refused (owner 02/11 "รหัสไม่มีจริง =
  * ไปต่อไม่ได้"; checker 02/11: a prefix-only manual path let made-up codes such as 10999 through) — the field tells the
  * customer to check it again or message the shop on LINE. Licence of the data: LICENSE-thai-province-data.txt beside it.
+ *
+ * HAND TYPING STAYS (owner 03/11; confirmed 11/11 in the main chat, answering the outside tester's T2-21 "ต./อ./จ. from a
+ * picker only": "พิมพ์เองได้เหมือนเดิม"). The picker is a help, never the only way in: the customer may type the sub-district
+ * and district themselves. What T2-21 changed instead: a typed name must hold a letter (addresses.ts), the phone box is
+ * capped, and a typed code that serves several places opens the picker (PostcodePlaceFields.tsx).
  */
 
 export interface Place {
