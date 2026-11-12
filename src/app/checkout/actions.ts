@@ -6,6 +6,7 @@ import { requestOtp, signInWithoutOtp, verifyOtp } from "@/lib/commerce/auth";
 import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
 import { orderingOpen, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 import { allowPhoneAttempt } from "@/lib/commerce/phone-rate-limit";
+import { destroySession } from "@/lib/commerce/session";
 
 /** Online ordering off (owner 2026-09-07): every step that moves a visitor towards a NEW order
  *  refuses, the same way the checkout pages do. Paying for an order that already exists is not
@@ -127,6 +128,19 @@ export async function selectAddressAction(formData: FormData): Promise<void> {
   refuseWhileOrderingOff();
   const addressId = Number(formData.get("addressId"));
   redirect(`/checkout/review?addressId=${addressId}`);
+}
+
+/**
+ * "ไม่ใช่ฉัน / เปลี่ยนเบอร์" (owner 10/11, outside tester T2-06): the phone session is remembered on this device for 30 days, so
+ * a shared phone carries on as the last buyer (their number in the address step, their customer record for the order; since
+ * T2-03 their saved addresses are no longer listed). This ends THIS device's phone session only (revoked server-side,
+ * cookie deleted) and starts checkout again at the phone step. The cart cookie is separate and stays; the member sign-in
+ * (okami24_member) is untouched. Not guarded by ordering-mode: leaving must always work (/checkout itself refuses when off).
+ */
+export async function notMeAction(formData?: FormData): Promise<void> {
+  await destroySession();
+  // /orders shows the same remembered number and its order list (Friday 12/11): from there, back to an empty /orders.
+  redirect(formData?.get("from") === "orders" ? "/orders" : "/checkout", RedirectType.replace);
 }
 
 export interface PlaceOrderState {

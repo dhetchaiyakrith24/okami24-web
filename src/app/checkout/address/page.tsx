@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/commerce/session";
+import { getMember } from "@/lib/members/session";
 import { listAddresses, lastUsedAddressId } from "@/lib/commerce/addresses";
 import { getCart } from "@/lib/commerce/cart";
 import { AddressStepView } from "@/components/commerce/AddressStepView";
@@ -32,7 +33,16 @@ export default async function CheckoutAddressPage({
     const lastId = await lastUsedAddressId(addresses);
     if (lastId !== null) redirect(`/checkout/review?addressId=${lastId}&saved=1`);
   }
-  const [session, cart] = await Promise.all([getSession(), getCart()]);
+  const [session, cart, member] = await Promise.all([getSession(), getCart(), getMember()]);
   // The cart beside the form is display only (look A, owner 03/11); no address yet, so the review step re-works the fee.
-  return <AddressStepView addresses={addresses} addressMissing={error === "not-found"} defaultPhone={session?.phone ?? ""} cart={cart} />;
+  // "ไม่ใช่ฉัน / เปลี่ยนเบอร์" (T2-06) only for a phone-only session: a signed-in member's addresses belong to their own account.
+  return (
+    <AddressStepView
+      addresses={addresses}
+      addressMissing={error === "not-found"}
+      defaultPhone={session?.phone ?? ""}
+      cart={cart}
+      showNotMe={member === null}
+    />
+  );
 }
