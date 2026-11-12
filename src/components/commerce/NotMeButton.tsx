@@ -23,7 +23,9 @@ export function NotMeButton({ className }: { className?: string }) {
       disabled={pending}
       data-not-me
       className={cn(
-        "min-h-10 self-start px-1 py-2 text-sm text-foreground-muted underline-offset-4 hover:text-foreground hover:underline disabled:opacity-60",
+        // Checker 12/11: on a phone a grey label did not read as tappable — always underlined (the site's link look,
+        // CategoryGuide) and a 44px touch target; still quieter than the form's own button.
+        "inline-flex min-h-11 items-center self-start px-1 text-sm text-foreground-muted underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground disabled:opacity-60",
         className
       )}
     >

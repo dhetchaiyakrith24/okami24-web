@@ -126,7 +126,8 @@ export function OrderLookupView({
             )}
             {/* T2-06: a shared phone remembers the last buyer's number for 30 days; someone else ends it here. */}
             {showNotMe && (
-              <form className="-mt-1 flex">
+              // -mb-4: the 44px target plus the page's gap-8 left a hole above the next card (checker 12/11).
+              <form className="-mt-1 -mb-4 flex">
                 <input type="hidden" name="from" value="orders" />
                 <NotMeButton />
               </form>

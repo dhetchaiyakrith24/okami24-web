@@ -87,7 +87,7 @@ const lookup = read("src/components/commerce/OrderLookupView.tsx");
 check(
   "/orders: once, inside the signed-in block, phone-only session, posting from=orders",
   (lookup.match(/<NotMeButton/g) ?? []).length === 1 &&
-    /\{signedIn && \([\s\S]*\{showNotMe && \(\s*<form[^>]*>\s*<input type="hidden" name="from" value="orders" \/>\s*<NotMeButton \/>/.test(lookup)
+    /\{signedIn && \([\s\S]*\{showNotMe && \(\s*(?:\/\/[^\n]*\n\s*)?<form[^>]*>\s*<input type="hidden" name="from" value="orders" \/>\s*<NotMeButton \/>/.test(lookup)
 );
 const ordersPage = read("src/app/orders/page.tsx");
 check("/orders page: shown only without a member", /showNotMe=\{member === null\}/.test(ordersPage) && /showNotMe=\{false\}/.test(ordersPage) && ordersPage.includes("getMember()"));
