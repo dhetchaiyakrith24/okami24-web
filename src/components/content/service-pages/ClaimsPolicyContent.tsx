@@ -21,6 +21,33 @@ export function ClaimsPolicyContent() {
         <div className="flex flex-col gap-10">
           <SummaryCards items={c.summary} />
 
+          {/* T2-09: every cancel / swap / refund case in one table — /how-to-order links to #refunds (the FAQ button opens
+              /warranty, the table sits right under the summary cards). Same table
+              markup as the shipping page's fee table. */}
+          <div id="refunds" className="scroll-mt-24">
+            <ServiceSection title={c.refunds.title}>
+              <div className="overflow-x-auto rounded-xl border border-surface-border-soft bg-surface-1">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="label-mono text-xs text-foreground-dim">
+                      {/* the case column keeps 40 %: a narrower one wrapped short labels and left "ไม่" at a line end (wordbreak-scan 11/11) */}
+                      <th className="w-2/5 px-4 py-3 text-left font-normal">{c.refunds.headCase}</th>
+                      <th className="px-4 py-3 text-left font-normal">{c.refunds.headWhat}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-foreground">
+                    {c.refunds.rows.map((row) => (
+                      <tr key={row.case} className="border-t border-surface-border-soft align-top">
+                        <td className="px-4 py-3 font-semibold">{row.case}</td>
+                        <td className="px-4 py-3 text-foreground-muted">{row.what}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </ServiceSection>
+          </div>
+
           <ServiceSection title={c.window.title}>
             <p>{c.window.body}</p>
           </ServiceSection>
