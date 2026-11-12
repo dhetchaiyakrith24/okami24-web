@@ -84,10 +84,36 @@ export function runStockIssueContractTests(): { name: string; passed: boolean; d
       parseSwapJson(null) === null
   );
   check("item ids parsed, junk dropped", JSON.stringify(parseItemIds("12, 15,x,0,-3")) === "[12,15]");
-  const partial = refundAmount([{ lineTotal: 350 }], { total: 750, lineCount: 2 });
-  check("refund: one of two lines out → that line only, order goes on", partial.amount === 350 && !partial.wholeOrder, JSON.stringify(partial));
-  const whole = refundAmount([{ lineTotal: 350 }], { total: 400, lineCount: 1 });
+  const L = (itemId: number, lineTotal: number) => ({ itemId, lineTotal });
+  const partial = refundAmount([L(1, 350)], { total: 750, shippingFee: 0, lines: [L(1, 350), L(2, 400)] });
+  check("refund: one of two lines out, no discount → that line's own total, order goes on", partial.amount === 350 && !partial.wholeOrder, JSON.stringify(partial));
+  const keptFee = refundAmount([L(1, 350)], { total: 750, shippingFee: 50, lines: [L(1, 350), L(2, 350)] });
+  check("refund: no discount, shipping kept → the line's own total", keptFee.amount === 350 && !keptFee.wholeOrder, JSON.stringify(keptFee));
+  const whole = refundAmount([L(1, 350)], { total: 400, shippingFee: 50, lines: [L(1, 350)] });
   check("refund: every line out → the whole paid total incl. shipping", whole.amount === 400 && whole.wholeOrder, JSON.stringify(whole));
+  // Bug sweep 12/11: a LINE special price (orders.discount) — 2 × ฿500, free shipping, ฿600 off → ฿400 paid.
+  const special = refundAmount([L(1, 500)], { total: 400, shippingFee: 0, lines: [L(1, 500), L(2, 500)] });
+  check("refund: special price, one of two equal lines out → half of what was paid (฿200, not ฿500)", special.amount === 200 && !special.wholeOrder, JSON.stringify(special));
+  const specialAll = refundAmount([L(1, 500), L(2, 500)], { total: 400, shippingFee: 0, lines: [L(1, 500), L(2, 500)] });
+  check("refund: special price, every line out → order.total", specialAll.amount === 400 && specialAll.wholeOrder, JSON.stringify(specialAll));
+  // ฿300 + ฿700 goods, ฿50 shipping kept, ฿250 off → ฿800 paid, ฿750 of it for goods; the ฿300 line's share = ฿225.
+  const withFee = refundAmount([L(1, 300)], { total: 800, shippingFee: 50, lines: [L(1, 300), L(2, 700)] });
+  check("refund: special price with a shipping fee → the line's share of the goods paid, fee kept", withFee.amount === 225, JSON.stringify(withFee));
+  // ฿100 × 3, ฿100 off, no shipping → ฿200 paid; one line's share = ฿66.67 → ฿67 to the customer, never above paid − what ships.
+  const third = refundAmount([L(1, 100)], { total: 200, shippingFee: 0, lines: [L(1, 100), L(2, 100), L(3, 100)] });
+  check("refund: a fraction of a baht rounds once, never past paid − what still ships", (third.amount === 67 || third.amount === 66) && third.amount <= 200 - 133, JSON.stringify(third));
+  const twoOfThree = refundAmount([L(1, 100), L(2, 100)], { total: 200, shippingFee: 0, lines: [L(1, 100), L(2, 100), L(3, 100)] });
+  check("refund: one line + the rest never add up to more than was paid", twoOfThree.amount + Math.floor(200 / 3) <= 200 && twoOfThree.amount >= 133, JSON.stringify(twoOfThree));
+  const feeEaten = refundAmount([L(1, 500)], { total: 30, shippingFee: 50, lines: [L(1, 500), L(2, 500)] });
+  check("refund: a discount that ate into the kept fee → nothing paid for goods, ฿0, never negative", feeEaten.amount === 0, JSON.stringify(feeEaten));
+  for (const [outs, lines, total, fee] of [
+    [[L(1, 990)], [L(1, 990), L(2, 10)], 1, 0],
+    [[L(2, 10)], [L(1, 990), L(2, 10)], 999, 0],
+    [[L(1, 333)], [L(1, 333), L(2, 333), L(3, 334)], 977, 77],
+  ] as const) {
+    const r = refundAmount([...outs], { total, shippingFee: fee, lines: [...lines] });
+    check(`refund: never above what was paid (total ${total})`, Number.isInteger(r.amount) && r.amount >= 0 && r.amount <= total - fee, JSON.stringify(r));
+  }
   return results;
 }
 
