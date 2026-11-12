@@ -3,6 +3,7 @@ import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { liveLookup } from "@/lib/stock/live";
 import { liveCardChanges, type CardStockChanges } from "@/lib/stock/card-stock";
+import { refreshStalePages } from "@/lib/stock/stale-refresh";
 
 /**
  * GET /api/stock — live warehouse stock for the product CARDS (owner 31/10: cards read live stock like the product page;
@@ -22,6 +23,8 @@ let memo: { at: number; c: CardStockChanges } | null = null;
 export async function GET(): Promise<NextResponse> {
   if (!memo || Date.now() - memo.at >= TTL_MS) {
     memo = { at: Date.now(), c: liveCardChanges(allProducts, getPublishedProducts(), liveLookup()) };
+    // Pages the build (or an older render) got wrong re-render on their next visit with live stock (owner 11/11).
+    refreshStalePages();
   }
   return NextResponse.json({ c: memo.c }, { headers: { "Cache-Control": "public, max-age=30, s-maxage=30" } });
 }

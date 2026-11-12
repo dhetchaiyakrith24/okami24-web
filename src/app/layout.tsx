@@ -18,6 +18,10 @@ import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
+// Preview "cards" (owner 12/11): scoped to html[data-preview="cards"] only — customers get today's look (src/lib/preview.ts).
+import "./preview-cards.css";
+import { PreviewPill } from "@/components/layout/PreviewPill";
+import { PREVIEW_BOOT } from "@/lib/preview";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",
@@ -43,7 +47,7 @@ const monoFont = IBM_Plex_Mono({
 // vocabulary locked in round 30.2 (docs/THAI_STYLE.md §3, owner 2026-09-09): พอต not พอด,
 // พอตใช้แล้วทิ้ง not ดิสโพส.
 // T2-04 (owner 10/11 "ตามแนะนำ"): the wording follows the owner's cart switch too (orderingOpen), not only the build — a
-// build cannot read the switch, so /api/cart/count refreshes every page once after a boot while the cart is switched off, and
+// build cannot read the switch, so every page is refreshed once after each boot (src/lib/commerce/boot-refresh.ts asks /api/cart/count), and
 // the switch itself refreshes them when flipped (src/app/staff/owner/actions.ts).
 const orderChannelClause = (open: boolean) => (open ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24");
 
@@ -107,6 +111,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="th"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
+      <head>
+        {/* Preview links (owner 12/11): ?preview=<word> marks this device; <html data-preview> is set here, before the first
+            paint, so a draft shows without a flash of the old look. The server never reads the cookie — pages stay static. */}
+        <script dangerouslySetInnerHTML={{ __html: PREVIEW_BOOT }} />
+      </head>
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
           <AgeGate orderingEnabled={open} />
@@ -128,6 +137,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CardCut />
           {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
           <TeamShortcut />
+          {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
+          <PreviewPill />
         </LocaleProvider>
       </body>
     </html>

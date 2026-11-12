@@ -125,7 +125,7 @@ export function LineOrderForm({ products, slips, signedInAs }: { products: PickP
         </label>
         <label className={FIELD}>
           เบอร์ผู้รับ (เว้นว่าง = เบอร์ลูกค้า)
-          <input name="recipientPhone" value={f.recipientPhone} onChange={set("recipientPhone")} inputMode="tel" autoComplete="off" className={INPUT} />
+          <input name="recipientPhone" value={f.recipientPhone} onChange={set("recipientPhone")} inputMode="tel" maxLength={12} autoComplete="off" className={INPUT} />
         </label>
         <label className={FIELD}>
           บ้านเลขที่ หมู่ ซอย ถนน

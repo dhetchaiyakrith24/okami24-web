@@ -27,6 +27,10 @@
   --accent-ember: #f08a2a;
   --accent-ember-strong: #ffa24d;
   --accent-ember-soft: #3d1810;
+  /* The two oranges as "R G B" channels, for glows written as rgb(var(--ember-rgb) / alpha) — a preview (src/lib/preview.ts)
+     that changes the orange changes every glow with it. Keep in step with the hex values above. */
+  --ember-rgb: 240 138 42;
+  --ember-strong-rgb: 255 162 77;
   /* Steel = a quiet warm neutral (was a cool blue): counts and secondary chips no longer compete with the orange. */
   --accent-steel: #cfc6bb;
   --accent-steel-strong: #e6dfd5;
@@ -206,6 +210,40 @@ img {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ก10 "Zoom" prototype (src/components/visual/ZoomShared.tsx): the card photo → product hero morph. A slow-out curve
+   so the "camera" lands softly; a touch of blur mid-flight hides the pixel stretch between the two sizes (the Next
+   view-transitions guide). Then the lit shelf draws in from the centre under the device.
+   PREVIEW ONLY: every rule is scoped to html[data-preview="zoom"|"cards-zoom"] (ZOOM_PREVIEW_WORDS in ZoomShared.tsx —
+   keep in step); the view-transition pseudo-elements hang off <html>, hence no space before "::". */
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(.okami-zoom) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(.okami-zoom) {
+  animation-name: okami-zoom-blur;
+}
+@keyframes okami-zoom-blur {
+  35% { filter: blur(2px); }
+}
+.okami-zoom-plinth {
+  transform-origin: 50% 100%;
+  animation: okami-zoom-plinth 700ms cubic-bezier(0.22, 0.8, 0.2, 1) 380ms both;
+}
+@keyframes okami-zoom-plinth {
+  from { opacity: 0; transform: scaleX(0.15); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Motion off = no morph at all (the global rule below only shortens animations; view-transition pseudo-elements
+     are named here outright) and the shelf simply sits there. */
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-old(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-new(*) {
+    animation: none !important;
+  }
+  .okami-zoom-plinth { animation: none; }
+}
 /* The add-to-cart dot (FloatingCart): fixed, flies by WAAPI; never catches a tap. */
 .okami-cart-dot {
   position: fixed;
@@ -214,7 +252,7 @@ img {
   height: 10px;
   border-radius: 9999px;
   background: var(--color-ember);
-  box-shadow: 0 0 10px rgba(240, 138, 42, 0.7);
+  box-shadow: 0 0 10px rgb(var(--ember-rgb) / 0.7);
   pointer-events: none;
 }
 

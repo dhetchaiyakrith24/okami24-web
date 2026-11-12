@@ -13,8 +13,8 @@
     "src/app/search": "2026-11-11T05:07:11+07:00",
     "src/app/shipping": "2026-10-29T20:14:45+07:00",
     "src/app/warranty": "2026-09-06T15:38:15+07:00",
-    "src/components/home": "2026-11-11T01:07:54+07:00",
-    "src/components/tools/CompareTool.tsx": "2026-11-11T00:21:33+07:00",
+    "src/components/home": "2026-11-12T01:56:45+07:00",
+    "src/components/tools/CompareTool.tsx": "2026-11-12T01:20:21+07:00",
     "src/components/tools/FavoritesList.tsx": "2026-11-11T00:18:16+07:00",
     "src/components/tools/FinderTool.tsx": "2026-11-11T00:18:16+07:00",
     "src/components/tools/SearchTool.tsx": "2026-11-11T00:18:16+07:00",
@@ -26,7 +26,7 @@
     "src/i18n/faq-copy.ts": "2026-11-11T05:25:18+07:00",
     "src/i18n/finder-copy.ts": "2026-09-15T22:01:03+07:00",
     "src/i18n/guides-copy.ts": "2026-11-11T00:54:29+07:00",
-    "src/i18n/search-head-copy.ts": "2026-11-08T10:07:09+07:00",
+    "src/i18n/search-head-copy.ts": "2026-11-12T02:34:00+07:00",
     "src/i18n/service-pages/claims-policy.tsx": "2026-10-26T07:35:20+07:00",
     "src/i18n/service-pages/contact.tsx": "2026-10-26T02:48:56+07:00",
     "src/i18n/service-pages/how-to-order.tsx": "2026-11-10T22:10:29+07:00",
@@ -83,8 +83,8 @@
   "pagesVersion": 3,
   "pages": {
     "/": {
-      "date": "2026-09-23T09:51:40+07:00",
-      "fp": "930f05195b21"
+      "date": "2026-11-12T02:34:00+07:00",
+      "fp": "a9d30c37a949"
     },
     "/about": {
       "date": "2026-11-03T03:51:49+07:00",

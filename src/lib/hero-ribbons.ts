@@ -177,7 +177,15 @@ void main() {
   v_box = bx;
 }`;
 
-const FRAG = `
+/** Ribbon colours. "forge" = today (owner 09/11). "shop" = the preview "cards" (owner 12/11: the shop orange #ff6a2c at the
+ *  peak again — the forge peak #f08a2a/#f0993f reads amber; the reel's vermilion ends and oxblood tail stay as support). */
+export type RibbonPalette = "forge" | "shop";
+const PEAK: Record<RibbonPalette, { c2: string; c3: string; flow: string }> = {
+  forge: { c2: "0.94, 0.45, 0.16", c3: "0.94, 0.60, 0.26", flow: "0.94, 0.47, 0.16" },
+  shop: { c2: "1.0, 0.42, 0.17", c3: "1.0, 0.51, 0.28", flow: "1.0, 0.42, 0.17" },
+};
+
+const frag = (p: RibbonPalette) => `
 precision mediump float;
 varying float v_u;
 varying float v_g;
@@ -203,8 +211,8 @@ vec4 mainGrad(float u) {
   // as a heat ramp — vermilion at the faint ends, the new bright orange #f08a2a at the peak, an oxblood-leaning tail.
   vec4 c0 = vec4(0.89, 0.30, 0.12, 0.0);
   vec4 c1 = vec4(0.89, 0.30, 0.12, 0.25);
-  vec4 c2 = vec4(0.94, 0.45, 0.16, 1.0);
-  vec4 c3 = vec4(0.94, 0.60, 0.26, 1.0);
+  vec4 c2 = vec4(${PEAK[p].c2}, 1.0);
+  vec4 c3 = vec4(${PEAK[p].c3}, 1.0);
   vec4 c4 = vec4(0.78, 0.20, 0.09, 0.7);
   float a = u_fade * 0.6;
   float b = u_fade + 0.12;
@@ -225,7 +233,7 @@ vec4 coreGrad(float u) {
 }
 void main() {
   // flow: one even colour along the route (its ends are off screen) · hero: the band's gradient
-  vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(0.94, 0.47, 0.16, 1.0))
+  vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(${PEAK[p].flow}, 1.0))
          : (u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u));
   float d = abs(v_side);
   // soft stroke: a bell that reaches zero at the strip's edge (it stopped at 3 %, which showed as rims
@@ -405,11 +413,11 @@ function softPass(tg: Target): Soft | null {
 
 const UNIFORMS = ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_boxes", "u_nboxes", "u_boxBase", "u_cut", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"];
 
-function makeTarget(canvas: Ctx2Canvas): Target | null {
+function makeTarget(canvas: Ctx2Canvas, palette: RibbonPalette): Target | null {
   const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
   if (!gl) return null;
   try {
-    const prog = compile(gl, VERT, FRAG);
+    const prog = compile(gl, VERT, frag(palette));
     gl.useProgram(prog);
     const u: Uniforms = {};
     for (const name of UNIFORMS) u[name] = gl.getUniformLocation(prog, name);
@@ -491,10 +499,10 @@ export class RibbonEngine {
   private glow = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
-  static create(canvases: Ctx2Canvas | Ctx2Canvas[], mode: RibbonMode = "hero"): RibbonEngine | null {
+  static create(canvases: Ctx2Canvas | Ctx2Canvas[], mode: RibbonMode = "hero", palette: RibbonPalette = "forge"): RibbonEngine | null {
     const targets: Target[] = [];
     for (const c of Array.isArray(canvases) ? canvases : [canvases]) {
-      const t = makeTarget(c);
+      const t = makeTarget(c, palette);
       if (!t) return null;
       targets.push(t);
     }
@@ -826,7 +834,7 @@ export class RibbonEngine {
 
 /** Messages the page sends to hero-ribbons.worker.ts — one per RibbonEngine method. */
 export type RibbonMessage =
-  | { type: "init"; canvases: OffscreenCanvas[]; mode?: RibbonMode }
+  | { type: "init"; canvases: OffscreenCanvas[]; mode?: RibbonMode; palette?: RibbonPalette }
   | { type: "size"; w: number; h: number; dpr: number; phone: boolean }
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
@@ -881,9 +889,14 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
   }
 }
 
+/** The palette this page draws with: the preview "cards" / "cards-run" (src/lib/preview.ts) draws the shop orange. Main thread only. */
+export function ribbonPalette(): RibbonPalette {
+  return typeof document !== "undefined" && document.documentElement.dataset.preview?.startsWith("cards") ? "shop" : "forge";
+}
+
 /** Main-thread engine behind the same driver shape (no OffscreenCanvas / no worker). */
 export function mainThreadDriver(canvases: HTMLCanvasElement | HTMLCanvasElement[], mode: RibbonMode = "hero"): RibbonDriver | null {
-  const engine = RibbonEngine.create(canvases, mode);
+  const engine = RibbonEngine.create(canvases, mode, ribbonPalette());
   if (!engine) return null;
   return {
     size: (w, h, dpr, phone) => applyRibbonMessage(engine, { type: "size", w, h, dpr, phone }),

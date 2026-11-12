@@ -8,7 +8,7 @@ import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { signedInName } from "@/lib/staff/account-rules";
-import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
+import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
 import { readSwitches } from "@/lib/commerce/shop-switches";
@@ -713,10 +713,24 @@ export default async function StaffOrderPage({
             <form action={staffOrderAction} className={foldBody}>
               <OrderFields order={order} from={from} />
               <input type="hidden" name="action" value="cancel" />
-              {order.slip && (
-                <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
-                </p>
+              {cancelOwesRefund(order.status) ? (
+                // Owner 12/11: cancelling a paid order means a refund — said in red, and the form needs the tick (actions.ts).
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ลูกค้าจ่ายแล้ว {formatBaht(order.total)} — ยกเลิกแล้วร้านต้องโอนเงินคืน · ถ้ายกเลิกเพราะของหมดหรือคลังส่งไม่ได้ ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo;
+                    ติ๊กทุกรายการแทน — ลูกค้าเลือกช่องทางรับเงินคืนเองในหน้าออเดอร์ แล้วบันทึกการโอนคืนพร้อมสลิปได้
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="refundTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    รับทราบว่าต้องโอนเงินคืน {formatBaht(order.total)} ให้ลูกค้าเอง
+                  </label>
+                </div>
+              ) : (
+                order.slip && (
+                  <p className="text-xs text-foreground-dim">
+                    ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
+                  </p>
+                )
               )}
               <label className="flex flex-col gap-1 text-foreground-muted">
                 เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์

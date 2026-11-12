@@ -41,6 +41,7 @@ import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSec
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { ORDERING_ENABLED, orderingOpen } from "@/lib/commerce/ordering-mode";
 import { liveLookup } from "@/lib/stock/live";
+import { liveLegacyProduct, livePilotProduct } from "@/lib/stock/live-overlay";
 import { cardTaglinesTh } from "@/lib/card-taglines";
 import { legacyCardStock, publishedCardStock, type CardStock } from "@/lib/stock/card-stock";
 
@@ -93,7 +94,9 @@ import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibili
 import { similarInStock } from "@/lib/similar-in-stock";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
+import { CategoryCrumbText } from "@/components/catalog/CategoryCrumbText";
+import { categoryCrumbTh, ROOT_CRUMB } from "@/i18n/category-crumbs";
+import { categoryPageLabelTh, categoryPageLedeTh } from "@/i18n/category-head-th";
 import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -141,14 +144,12 @@ function legacyOwnFloorSrcs(product: Product): (string | undefined)[] {
   return [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].map((v) => (v.image?.ownFloor ? v.image.src : undefined));
 }
 
-/** Round "disposable pod" block 2 (05/11): the disposable pages' crumb and BreadcrumbList say the term the category owns
- *  (Thai, as the page's other schema does); other categories keep their name. The visible crumb follows the language. */
-function categoryCrumbName(categoryId: string, fallback: string): string {
-  return categoryId === "disposables" ? getDictionary("th").product.disposablesCrumb : fallback;
-}
-
+/** Breadcrumb (owner 12/11, src/i18n/category-crumbs.ts): หน้าแรก / the Thai category name / the model name (English). The
+ *  Thai words are the BreadcrumbList names; the visible root and category crumbs follow the visitor's language. */
 function localisedCategoryCrumb<T extends { name: string; path: string }>(trail: T[], categoryId: string): (Omit<T, "name"> & { name: ReactNode })[] {
-  return trail.map((t, i) => (i === 1 && categoryId === "disposables" ? { ...t, name: <DisposablesCrumb /> } : t));
+  return trail.map((t, i) =>
+    i === 0 ? { ...t, name: <CategoryCrumbText id="root" fallback={t.name} /> } : i === 1 ? { ...t, name: <CategoryCrumbText id={categoryId} fallback={t.name} /> } : t,
+  );
 }
 
 export function generateStaticParams() {
@@ -175,7 +176,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
   // Round 7 "SEO ค" B2: the <title> gains " ของแท้ บอกราคาทุกรุ่น" after the locked label (categoryTitleTh);
   // the lede/description and the H1 are unchanged.
-  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
+  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: categoryPageLedeTh(category), ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {
@@ -260,10 +261,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
             CollectionPage + the Home → Category trail. No visible change. */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath, items: listItems })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: categoryPageLabelTh(category), description: categoryPageLedeTh(category), path: categoryPath, items: listItems })) }} />
         {guideFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideFaqJsonLd) }} />}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
-        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(categoryPageLabelTh(category), categoryPath)) }} />
+        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${categoryPageLabelTh(category)}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {lineup && guideCopy && <DisposableChooserJump copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} />}
@@ -299,9 +300,15 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     );
   }
 
+  // Owner 11/11 ("ทุกตัวต้องเช็คได้หมด … รันสต็อกสด"): the page renders with the warehouse's LIVE stock laid over the build's
+  // (src/lib/stock/live-overlay.ts — the same overlay the page's after-load refresh and the cards use), so the first paint and a
+  // reader without JavaScript see live stock. `next build` has no data disk: the overlay is a no-op there, and the first
+  // regeneration brings the live answer (pages whose live stock differs from the build are marked stale — stale-pages.ts).
+  const live = liveLookup();
   const product = getProduct(slug);
   if (!product) {
-    const publishedProduct = getPublishedProduct(slug);
+    const builtPublished = getPublishedProduct(slug);
+    const publishedProduct = builtPublished ? livePilotProduct(builtPublished, live) : undefined;
     if (publishedProduct) {
       // Same schema.org shape as the legacy branch below — a published ProductMaster product is
       // a real product page and deserves the same structured-data completeness.
@@ -316,14 +323,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
         // priceReference (see buildPublishedCatalog()'s own readiness gate). Stock words = offerAvailability (live stock).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...offerAvailability(publishedCardStock(publishedProduct, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...offerAvailability(publishedCardStock(publishedProduct, live)), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
       const publishedBrand = publishedProduct.brandId ? getBrand(publishedProduct.brandId) : undefined;
       const publishedBrandHref = publishedBrand ? `/brands/${publishedBrand.slug}` : undefined;
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
-        { name: "Home", path: "/" },
-        { name: categoryCrumbName(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
+        { name: ROOT_CRUMB.th, path: "/" },
+        { name: categoryCrumbTh(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
         { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
       ];
       // List-new 30/10: a warehouse-listed product with an article (product-articles.ts) gets the "more details" and FAQ
@@ -342,7 +349,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         </>
       );
     }
-    const pilotProduct = getPilotProduct(slug);
+    const builtPilot = getPilotProduct(slug);
+    const pilotProduct = builtPilot ? livePilotProduct(builtPilot, live) : undefined;
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
       return <PilotProductDetail product={pilotProduct} related={publishedRelatedItems(getPilotRelatedProducts(pilotProduct))} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(pilotProduct.slug)} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
@@ -350,6 +358,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     notFound();
   }
 
+  const liveProduct = liveLegacyProduct(product, live);
   const related = relatedFor(product.slug);
   const brand = getBrand(product.brandId);
   // The product's own Thai copy, handed to the Client Components below as a prop (SEO ฉ batch 4, 14/10 — importing
@@ -366,10 +375,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
-  // Every option sold out at build time (owner's list, no SKU, the warehouse read) — drives the similar-models block only;
-  // the Offer's stock words come from offerAvailability (live stock).
-  const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
-  const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
+  // Every option sold out as rendered (owner's list, no SKU, the live warehouse answer over the build's read) — drives the
+  // similar-models block only; the Offer's stock words come from offerAvailability (live stock).
+  const legacyOptions = [...(liveProduct.flavorVariants ?? []), ...(liveProduct.colorVariants ?? [])];
+  const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : liveProduct.availability === "out-of-stock";
   // Nothing to buy at build time (no price, or every option out): the closest models we do have sit right under the head.
   // A page built with stock asks for them only if the live stock empties it (SimilarInStock).
   const similar = legacySellingPrice === null || legacyAllSoldOut ? similarInStock(product.slug) : [];
@@ -387,7 +396,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated. No price = no Product block at all (SEO 04/11:
     // GSC flagged caliburn-g3 / drag-x / nexpod-15k invalid — Google needs offers, review or aggregateRating).
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...offerAvailability(legacyCardStock(product, liveLookup())), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...offerAvailability(legacyCardStock(product, live)), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   // Round "M Bar 9K redesign" (owner 23/10): a slug in product-editorial.ts gets the editorial body instead of the
   // review / more-details / spec / compatibility / FAQ sections; its FAQPage block is built from the same Thai copy.
@@ -400,8 +409,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     ? null
     : articleFaqJsonLd(product.faqs.map((f) => ({ question: copyTh?.faqs?.[f.id]?.question ?? f.question, answer: copyTh?.faqs?.[f.id]?.answer ?? f.answer })));
   const legacyTrail = [
-    { name: "Home", path: "/" },
-    { name: categoryCrumbName(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
+    { name: ROOT_CRUMB.th, path: "/" },
+    { name: categoryCrumbTh(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
     { name: product.displayName, path: `/products/${product.slug}` },
   ];
 
@@ -413,7 +422,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
+      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
       <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>

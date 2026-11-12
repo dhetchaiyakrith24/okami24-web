@@ -11,7 +11,7 @@ import { taglineThFor } from "@/lib/card-taglines";
  */
 export function ProductRail({ products }: { products: Product[] }) {
   return (
-    <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
+    <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12 lg:-mt-3 lg:pt-3">
       {products.map((product) => (
         <div key={product.id} className="w-[240px] shrink-0 snap-start max-lg:w-auto sm:w-[280px]">
           <ProductCard product={product} taglineTh={taglineThFor(product.slug)} />

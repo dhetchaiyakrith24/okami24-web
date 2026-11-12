@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
+import { ROOT_CRUMB } from "@/i18n/category-crumbs";
 
 /**
  * Single source of truth for the site origin — read from the `SITE_URL` environment variable so
@@ -148,11 +149,11 @@ export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
   };
 }
 
-/** The two-step trail (Home → this page) for a top-level page that has no deeper real ancestor —
- *  brand, guide, technology, flavour-family and the static pages. Same "Home" root the 53 product
- *  trails already use, so every BreadcrumbList on the site names the root identically. */
+/** The two-step trail (หน้าแรก → this page) for a top-level page that has no deeper real ancestor —
+ *  brand, guide, technology, flavour-family and the static pages. Same Thai root as the product trails (owner 12/11,
+ *  src/i18n/category-crumbs.ts), so every BreadcrumbList on the site names the root identically. */
 export function pageBreadcrumbJsonLd(name: string, path: string) {
-  return breadcrumbJsonLd([{ name: "Home", path: "/" }, { name, path }]);
+  return breadcrumbJsonLd([{ name: ROOT_CRUMB.th, path: "/" }, { name, path }]);
 }
 
 /**

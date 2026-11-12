@@ -72,7 +72,7 @@ export function FlavorVariantGrid({
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", left: counts?.[v.id], best: bestIds?.has(v.id), gloss: glossOf?.(v.name) }))}
+        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id), gloss: glossOf?.(v.name) }))}
         selectedId={isAllSelected ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}

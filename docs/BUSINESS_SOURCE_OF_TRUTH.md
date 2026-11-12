@@ -365,6 +365,11 @@ how-to-order page and on the order page next to the bank details.
 > if the customer has **paid and the shop cannot ship** (e.g. the warehouse is paused), the **same rule as out of stock after
 > payment** applies: the customer chooses to wait, swap to another item at the same price, or take a refund to PromptPay / a
 > bank account. Every other case still follows "no cancellation and no refund after the transfer".
+> **OWNER RULING 2026-11-11 (main chat, Test 2 items T2-10/11 — his choice "ยกเลิกบนเว็บอัตโนมัติ", replacing the 28/10 rule
+> "LINE alert only, staff handle it"):** when the warehouse cancels or refunds an order in Shipnity, the web order is
+> **cancelled automatically** and leaves sales and the tracking list; the LINE alert to the team stays. A confirmed-paid
+> customer then picks the refund target on the order page (whole paid total); "wait" or "same-price swap" goes through LINE.
+> A slip that was never confirmed gets no refund box (owner 29/10). Code: `src/lib/woo/warehouse-cancel.ts` (#1415, #1418).
 
 **Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
