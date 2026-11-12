@@ -468,3 +468,25 @@ html:lang(th) .label-mono:not(:lang(en)) {
 /* "ขายดี" (owner 31/10 frame + running light) — removed 09/11 with the forge look: on a first row where every card is a
    best seller the frame marked nothing, and the one orange belongs to what you press. The "ขายดี" chip itself stays
    (SalesBadge). History of the effect: git log -S "okami-best-edge". */
+
+/* Preview "tiles" (DesktopOptionTiles — rendered only under ?preview=tiles): two rows of colour tiles while closed —
+   8 at lg (4 a row), 10 at xl (5), 12 from 1440 (6). Plain CSS so each width hides exactly its own overflow. */
+[data-tiles-closed] > :nth-child(n + 9) {
+  display: none;
+}
+@media (min-width: 80rem) {
+  [data-tiles-closed] > :nth-child(n + 9) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 11) {
+    display: none;
+  }
+}
+@media (min-width: 90rem) {
+  [data-tiles-closed] > :nth-child(n + 11) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 13) {
+    display: none;
+  }
+}

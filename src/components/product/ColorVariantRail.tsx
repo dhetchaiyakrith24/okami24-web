@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
+import { DesktopOptionTiles } from "./DesktopOptionTiles";
+import { usePreview } from "@/lib/use-preview";
 import { LowStockDot, useLowStockTitle } from "./StockCount";
 import { OptionBestTag } from "@/components/catalog/SalesBadge";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -75,18 +77,26 @@ export function ColorVariantRail({
   const anyAll = !!selectedPill;
   const lowTitle = useLowStockTitle();
   const { dict } = useLocale();
+  // Preview "tiles" (owner 12/11): desktop photo tiles instead of the dots — the owner's device only, after load.
+  const tiles = usePreview("tiles");
+  const options = variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }));
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }))}
+        options={options}
         selectedId={anyAll ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}
         label={label}
         pills={pills}
       />
+      {tiles && (
+        <DesktopOptionTiles className="max-lg:hidden" options={options} selectedId={anyAll ? null : selectedId} onSelect={onSelect} label={label} pills={pills} />
+      )}
+      {!tiles && (
+      <>
       <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
         {label}
         {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
@@ -159,6 +169,8 @@ export function ColorVariantRail({
           {" — "}
           {outOfStockLabel}
         </span>
+      )}
+      </>
       )}
     </div>
   );
