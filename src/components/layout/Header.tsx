@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X, Search, Heart, ShoppingCart, ChevronDown, PackageSearch } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import type { NavCategory } from "@/lib/category-visibility";
+import { categoryPageLabelTh } from "@/i18n/category-head-th";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
@@ -46,7 +47,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   // list and passes it in (SEO ฉ batch 4, 13/10 — computing it here shipped the whole catalog to every browser).
   // Round 30.3ข (THAI_STYLE §2 layer 2): the product menus show "English / ไทย" for a Thai visitor.
   // Only these two menus and the category page H1 — the footer/home grid keep `shortName` (owner).
-  const categoryLabel = (c: (typeof categories)[number]) => (locale === "th" ? c.labelTh : c.name);
+  // Live fix 12/11 (visitor agent): the menus read the same Thai name as the category page's H1 and crumb (pod-systems =
+  // "พอตไฟฟ้า", src/i18n/category-head-th.ts); `labelTh` itself stays the on-site search key.
+  const categoryLabel = (c: (typeof categories)[number]) => (locale === "th" ? categoryPageLabelTh(c) : c.name);
 
   const PRIMARY_LINKS = [
     { label: dict.nav.eliquid, href: "/e-liquid" },

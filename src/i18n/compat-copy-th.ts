@@ -138,6 +138,11 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "VOOPOO ระบุในหน้า DRAG 6 ว่าถังน้ำยา UFORCE-X ของชุดนี้ใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15Ω กับ 0.3Ω",
   "VOOPOO's own DRAG S3 page states the full PnP X coil lineup (0.15–1.0Ω) fits, and the kit ships with PnP X 0.6Ω and 0.8Ω coils.":
     "VOOPOO ระบุในหน้า DRAG S3 ว่าใช้คอยล์ PnP X ได้ครบทุกค่า (0.15–1.0Ω) และในกล่องมีคอยล์ PnP X 0.6Ω กับ 0.8Ω",
+  // T2-31 (11/11, thai-copy): DRAG X2 ↔ PnP X coil / PnP X Cartridge, and the PnP X 5-pack's four devices — maker pages read 11/11.
+  "VOOPOO's own PnP coils page (read 11/11 in a real browser) lists the PnP X series \"For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank\".":
+    "VOOPOO ระบุในหน้าคอยล์ PnP ว่าคอยล์ตระกูล PnP X ใช้ได้กับ Drag X2/S2 · Drag X3/S3 · Drag 5/6 · Argus Pro 2 และถังน้ำยา UFORCE-X Tank",
+  "VOOPOO's own PnP X Cartridge page (Thai store page, read 11/11 in a real browser) lists the compatible device as \"VOOPOO Drag S2/X2 Kit\" (DTL with every PnP X coil, MTL with PnP X 0.3Ω / 0.6Ω).":
+    "VOOPOO ระบุในหน้าหัวพอต PnP X Cartridge ว่าใช้กับ Drag S2/X2 Kit ได้ หัวพอตแบบ DTL ใช้คอยล์ PnP X ได้ทุกตัว ส่วนแบบ MTL ใช้ได้กับคอยล์ PnP X 0.3Ω กับ 0.6Ω",
   "VOOPOO's own DRAG X3 page states it is compatible with all PnP X coils.":
     "VOOPOO ระบุในหน้า DRAG X3 ว่าใช้คอยล์ PnP X ได้ทุกตัว",
   ["UWELL: its own official page states all G Pod Platform cartridges are compatible with CALIBURN GPP series devices, and the GPP cartridge ships in the kit." + GPP_MATCH_EN]:

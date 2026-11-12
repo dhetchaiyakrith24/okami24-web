@@ -7,6 +7,7 @@ import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { emberRgb } from "@/lib/preview";
 
 /** Scrolls the page's option chips (`data-option-picker`) into view and rings the in-stock chips once (no motion when
  *  the visitor asked for reduced motion — then only the scroll, without smooth animation). */
@@ -21,7 +22,8 @@ function showOptionPicker(): void {
     .filter((b) => b.offsetParent !== null)
     .slice(0, 24);
   for (const chip of chips) {
-    chip.animate([{ boxShadow: "0 0 0 0 rgba(240,138,42,.55)" }, { boxShadow: "0 0 0 8px rgba(240,138,42,0)" }], {
+    const rgb = emberRgb();
+    chip.animate([{ boxShadow: `0 0 0 0 rgb(${rgb} / .55)` }, { boxShadow: `0 0 0 8px rgb(${rgb} / 0)` }], {
       duration: 900,
       delay: 350,
       easing: "ease-out",
@@ -56,6 +58,7 @@ function showOptionPicker(): void {
  */
 export function ProductBuyAction({
   available,
+  askStock = false,
   orderingEnabled: orderingBuilt,
   slug,
   variantId,
@@ -69,6 +72,9 @@ export function ProductBuyAction({
   pageUrl,
 }: {
   available: boolean;
+  /** Owner 11/11 safety net (src/lib/stock/live-rules.ts "ask"): the picked option has a warehouse code but no live number.
+   *  Not sold and not "sold out" — the slot is one "ask about stock on LINE" button (the server refuses it in the cart too). */
+  askStock?: boolean;
   orderingEnabled: boolean;
   slug: string;
   variantId: string | null;
@@ -94,7 +100,7 @@ export function ProductBuyAction({
   if (!available) {
     return (
       <div className={compact ? "flex items-center gap-3" : "flex flex-col items-start gap-2"}>
-        <span className="label-mono text-xs text-danger">{dict.productActions.outOfStockLabel}</span>
+        {!askStock && <span className="label-mono text-xs text-danger">{dict.productActions.outOfStockLabel}</span>}
         {/* 19/10: the enquiry opens the same LINE ready-message / scan dialog as the order button, in "ask" wording. */}
         <OrderViaLineButton
           productName={productName}
@@ -102,7 +108,7 @@ export function ProductBuyAction({
           productCode={productCode ?? slug} pageUrl={pageUrl}
           mode="ask"
           hideHint
-          label={dict.productActions.outOfStockCta}
+          label={askStock ? dict.productActions.askStockCta : dict.productActions.outOfStockCta}
           linkClassName={cn(
             "inline-flex items-center justify-center gap-2 rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember",
             compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3"

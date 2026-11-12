@@ -27,6 +27,10 @@
   --accent-ember: #f08a2a;
   --accent-ember-strong: #ffa24d;
   --accent-ember-soft: #3d1810;
+  /* The two oranges as "R G B" channels, for glows written as rgb(var(--ember-rgb) / alpha) — a preview (src/lib/preview.ts)
+     that changes the orange changes every glow with it. Keep in step with the hex values above. */
+  --ember-rgb: 240 138 42;
+  --ember-strong-rgb: 255 162 77;
   /* Steel = a quiet warm neutral (was a cool blue): counts and secondary chips no longer compete with the orange. */
   --accent-steel: #cfc6bb;
   --accent-steel-strong: #e6dfd5;
@@ -159,6 +163,29 @@ img {
   }
 }
 
+/* Live fix 12/11 (visitor agent): on a phone the floating LINE button and the cart bubble above it covered the corner of
+   the product cards while scrolling. While the visitor scrolls DOWN they slide off the bottom edge; any scroll UP brings them
+   back (LineContact sets html[data-fab-away]). `translate`, not `transform`: the bubble's entry animation holds transform. */
+@media (max-width: 39.98rem) {
+  .okami-line-fab {
+    transition: color 150ms, background-color 150ms, border-color 150ms, translate 250ms ease;
+  }
+  .okami-cart-fab {
+    transition: border-color 300ms, padding 300ms, translate 250ms ease;
+  }
+  html[data-fab-away] .okami-line-fab:not(:focus-visible),
+  html[data-fab-away] .okami-cart-fab:not(:focus-visible) {
+    translate: 0 calc(100% + 6rem);
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .okami-line-fab,
+    .okami-cart-fab {
+      transition-duration: 0s;
+    }
+  }
+}
+
 /* Cart UX batch B (owner 24/10, designer option A): the floating cart bubble sits 12px above the LINE button on the same
    right edge. Phone: LINE is 48px at bottom 1rem → cart at 4.75rem. ≥640: LINE pill at bottom 2rem → cart at 5.75rem.
    Product pages below lg: the bubble is hidden, the buy bar carries the cart button (rule below). */
@@ -206,6 +233,40 @@ img {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ก10 "Zoom" prototype (src/components/visual/ZoomShared.tsx): the card photo → product hero morph. A slow-out curve
+   so the "camera" lands softly; a touch of blur mid-flight hides the pixel stretch between the two sizes (the Next
+   view-transitions guide). Then the lit shelf draws in from the centre under the device.
+   PREVIEW ONLY: every rule is scoped to html[data-preview="zoom"|"cards-zoom"] (ZOOM_PREVIEW_WORDS in ZoomShared.tsx —
+   keep in step); the view-transition pseudo-elements hang off <html>, hence no space before "::". */
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(.okami-zoom) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(.okami-zoom) {
+  animation-name: okami-zoom-blur;
+}
+@keyframes okami-zoom-blur {
+  35% { filter: blur(2px); }
+}
+.okami-zoom-plinth {
+  transform-origin: 50% 100%;
+  animation: okami-zoom-plinth 700ms cubic-bezier(0.22, 0.8, 0.2, 1) 380ms both;
+}
+@keyframes okami-zoom-plinth {
+  from { opacity: 0; transform: scaleX(0.15); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Motion off = no morph at all (the global rule below only shortens animations; view-transition pseudo-elements
+     are named here outright) and the shelf simply sits there. */
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-old(*),
+  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-new(*) {
+    animation: none !important;
+  }
+  .okami-zoom-plinth { animation: none; }
+}
 /* The add-to-cart dot (FloatingCart): fixed, flies by WAAPI; never catches a tap. */
 .okami-cart-dot {
   position: fixed;
@@ -214,7 +275,7 @@ img {
   height: 10px;
   border-radius: 9999px;
   background: var(--color-ember);
-  box-shadow: 0 0 10px rgba(240, 138, 42, 0.7);
+  box-shadow: 0 0 10px rgb(var(--ember-rgb) / 0.7);
   pointer-events: none;
 }
 

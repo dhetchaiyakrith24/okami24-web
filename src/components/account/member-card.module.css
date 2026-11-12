@@ -82,15 +82,15 @@
   right: 20px;
   top: 50%;
   height: 1px;
-  background: linear-gradient(90deg, #f08a2a, rgb(240 138 42 / 0) 70%);
+  background: linear-gradient(90deg, rgb(var(--ember-rgb)), rgb(var(--ember-rgb) / 0) 70%);
 }
 
 /* 5+ half moon = the transfer card's tone (owner 10/11 03:00 "ปรับโทนไปเหมือนการ์ดโอน"): graphite, a warm-charcoal panel with the
    profile portrait greyed in screen mode, fine vertical lines, thin orange outline + soft halo, the gold chip. */
 .half {
-  --edge: rgb(240 138 42 / 0.42);
+  --edge: rgb(var(--ember-rgb) / 0.42);
   background: #27221f;
-  box-shadow: 0 0 0 1px rgb(240 138 42 / 0.08), 0 0 20px -6px rgb(240 138 42 / 0.35), 0 18px 40px -22px rgb(0 0 0 / 0.9);
+  box-shadow: 0 0 0 1px rgb(var(--ember-rgb) / 0.08), 0 0 20px -6px rgb(var(--ember-rgb) / 0.35), 0 18px 40px -22px rgb(0 0 0 / 0.9);
 }
 .panel {
   position: absolute;
@@ -129,7 +129,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.3em;
-  color: #f08a2a;
+  color: var(--accent-ember);
 }
 
 /* 10+ full moon (v8, owner: ~10% wider, ~57% of the card): the portrait at 130% of the card height, anchored right, the left of

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ScrollHintFrame } from "@/components/ui/ScrollHintFrame";
 import type { CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
@@ -40,6 +40,8 @@ interface Row {
 }
 
 const EM_DASH = "—";
+/** This device's compare list (localStorage), so the selection survives leaving /compare (live fix 12/11). */
+const COMPARE_STORAGE_KEY = "okami24-compare";
 
 function screenLabel(item: CatalogItem, dict: Dictionary): string {
   const a = item.attributes;
@@ -142,6 +144,44 @@ export function CompareTool({ initialSlugs, catalog }: { initialSlugs: string[];
   // the same truth signal `verifiedSpecRows` below already trusts.
   const hasUncertainItems = items.some((i) => i.specifications.some((s) => s.sourceStatus === "unverified"));
   const bestFitItems = items.filter((i) => i.whoIsThisFor.length > 0);
+
+  // Keep `?slugs=` in step with the selection so a reload (or a shared link) shows what is on screen — before
+  // 12/11 a removed product came back on reload because the URL still named it.
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (slugs.length > 0) url.searchParams.set("slugs", slugs.join(","));
+    else url.searchParams.delete("slugs");
+    const next = `${url.pathname}${url.search}${url.hash}`;
+    if (next !== `${window.location.pathname}${window.location.search}${window.location.hash}`) window.history.replaceState(null, "", next);
+  }, [slugs]);
+
+  // Live fix 12/11 (visitor agent): the selection survives leaving the page. A product page's "เทียบ" button opens
+  // /compare?slugs=<that one>, so picking A, going to B and pressing "เทียบ" again used to drop A. This device remembers
+  // the list; a link naming 0–1 products adds to it, a link naming 2+ (a shared comparison) shows exactly that link.
+  const [restored, setRestored] = useState(false);
+  useEffect(() => {
+    if (initialSlugs.length <= 1) {
+      try {
+        const stored: unknown = JSON.parse(window.localStorage.getItem(COMPARE_STORAGE_KEY) ?? "[]");
+        if (Array.isArray(stored)) {
+          // eslint-disable-next-line react-hooks/set-state-in-effect -- one read of this device's storage after hydration
+          setSlugs((prev) => [...stored.filter((s): s is string => typeof s === "string" && !prev.includes(s) && catalog.some((i) => i.slug === s)), ...prev].slice(-4));
+        }
+      } catch {
+        // blocked or broken storage = no memory, the page still works
+      }
+    }
+    setRestored(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once, on mount
+  }, []);
+  useEffect(() => {
+    if (!restored) return;
+    try {
+      window.localStorage.setItem(COMPARE_STORAGE_KEY, JSON.stringify(slugs));
+    } catch {
+      // ignore
+    }
+  }, [slugs, restored]);
 
   function addProduct(slug: string) {
     setSlugs((prev) => (prev.includes(slug) || prev.length >= 4 ? prev : [...prev, slug]));

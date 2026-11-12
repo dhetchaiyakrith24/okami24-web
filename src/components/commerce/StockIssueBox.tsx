@@ -83,6 +83,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
   );
   const anySwap = issue.outLines.every((l) => (issue.swapGroups[l.itemId] ?? []).length > 0);
   const pending = swapPending || refundPending;
+  const cancelled = issue.afterCancel;
 
   // Resolved or chosen: one calm status line, no buttons.
   if (issue.stage !== "waiting-choice" || done) {
@@ -96,7 +97,9 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
         : issue.resolution === "refunded"
           ? `${bankVars ? fill(t.stockRefundedBank, bankVars) : fill(t.stockRefunded, { amount, phone })}${issue.wholeOrder ? "" : ` ${t.stockRefundedPartial}`}`
           : issue.choice === "swap" || swapState.done
-            ? t.stockChosenSwap
+            ? cancelled // the warehouse cancelled the order after the customer chose a swap — staff contact them (T2-10)
+              ? t.stockChosenSwapCancelled
+              : t.stockChosenSwap
             : bankVars
               ? fill(t.stockChosenRefundBank, bankVars)
               : fill(t.stockChosenRefund, { amount, phone });
@@ -124,7 +127,7 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
     }
     return (
       <div className="flex flex-col gap-2 rounded-xl border border-amber-300/25 bg-amber-300/[0.06] p-4 text-sm">
-        <span className="label-mono text-xs text-amber-200">{t.stockTitle}</span>
+        <span className="label-mono text-xs text-amber-200">{cancelled && issue.choice === "refund" ? t.stockRefundTitle : t.stockTitle}</span>
         <p className="text-foreground">{text}</p>
         <p className="text-foreground-muted">{withLineLink(t.stockContactNote)}</p>
       </div>
@@ -138,10 +141,12 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
           {/* The amber dot = the "waiting for payment" pill's dot without the ping (designer 24/10). */}
           <p className="flex items-start gap-2 text-lg font-semibold leading-snug text-foreground lg:text-xl">
             <span aria-hidden className="mt-2 inline-flex size-2 shrink-0 rounded-full bg-amber-300 shadow-[0_0_6px_1px_rgba(252,211,77,0.6)]" />
-            {t.stockTitle}
+            {cancelled ? t.stockRefundTitle : t.stockTitle}
           </p>
-          <p className="text-foreground-muted">{t.stockLead}</p>
+          <p className="text-foreground-muted">{cancelled ? withLineLink(t.stockCancelLead) : t.stockLead}</p>
         </div>
+        {/* A cancelled order (the warehouse cancelled it, T2-10) gives back the whole order: no list of "out" lines. */}
+        {!cancelled && (
         <ul className="flex flex-col gap-1.5 rounded-lg border border-surface-border-soft bg-surface-2 p-3">
           {issue.outLines.map((l) => (
             <li key={l.itemId} className="flex justify-between gap-4">
@@ -150,11 +155,13 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
             </li>
           ))}
         </ul>
+        )}
       </div>
 
       {/* Desktop: the swap and the refund sit side by side so the box is not a long column (owner 30/10: too long for a thank-you page). `contents` = no box on phones. */}
-      <div className="contents lg:grid lg:grid-cols-2 lg:gap-x-8">
-      {/* 1 — swap for a same-price item */}
+      <div className={cancelled ? "contents" : "contents lg:grid lg:grid-cols-2 lg:gap-x-8"}>
+      {/* 1 — swap for a same-price item (never on a cancelled order: it is final — the lead points at LINE instead) */}
+      {!cancelled && (
       <form action={swapAction} className="flex flex-col gap-3 border-t border-surface-border-soft pt-4">
         {hidden}
         <p className={anySwap ? "font-semibold text-foreground" : "font-semibold text-foreground-muted"}>{t.stockSwapTitle}</p>
@@ -192,11 +199,12 @@ export function StockIssueBox({ issue, orderNumber, token }: { issue: StockIssue
           <p className="text-foreground-muted">{withLineLink(t.stockSwapNone)}</p>
         )}
       </form>
+      )}
 
       {/* 2 — refund to PromptPay */}
       <form action={refundAction} className="flex flex-col gap-3 border-t border-surface-border-soft pt-4">
         {hidden}
-        <p className="font-semibold text-foreground">{t.stockRefundTitle}</p>
+        {!cancelled && <p className="font-semibold text-foreground">{t.stockRefundTitle}</p>}
         <div className="flex flex-col gap-1">
           <p className="flex items-baseline justify-between gap-4">
             <span className="text-foreground-muted">{t.stockRefundAmount}</span>

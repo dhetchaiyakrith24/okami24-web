@@ -67,6 +67,11 @@ export function PostcodePlaceFields({
   const [open, setOpen] = useState(false);
   const [searched, setSearched] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
+  const pickerRef = useRef<HTMLInputElement>(null);
+  // T2-21 ("พิมพ์รหัสไปรษณีย์แล้วไม่ขึ้นรายการให้เลือก"): the code's places listed only once the picker below was tapped, so a
+  // customer who typed the fifth digit saw nothing to pick. A code just completed BY TYPING that serves several places moves
+  // the focus to the picker, which opens its list (onFocus). A code that comes back after a refused submit does not.
+  const jumpRef = useRef(false);
 
   useEffect(() => {
     if (!complete) return;
@@ -79,6 +84,10 @@ export function PostcodePlaceFields({
       .then((j: { places: Place[] }) => {
         if (!live) return;
         setPlaces(j.places);
+        if (jumpRef.current) {
+          jumpRef.current = false;
+          if (j.places.length > 1) requestAnimationFrame(() => pickerRef.current?.focus());
+        }
         setPlace((cur) => {
           // A place this code serves stays (after a refused submit, or one picked in the search); one place = fill it in.
           const exact = j.places.find((p) => sameName(cur.subdistrict, p.subdistrict) && sameName(cur.district, p.district) && sameName(cur.province, p.province));
@@ -175,7 +184,9 @@ export function PostcodePlaceFields({
           required
           value={code}
           onChange={(e) => {
-            setCode(e.target.value.replace(/[^0-9]/g, "").slice(0, 5));
+            const next = e.target.value.replace(/[^0-9]/g, "").slice(0, 5);
+            jumpRef.current = next.length === 5 && next !== code;
+            setCode(next);
             setCodeEdited(true);
           }}
           aria-invalid={codeError ? true : undefined}
@@ -199,6 +210,7 @@ export function PostcodePlaceFields({
           {t.postcodePlaceLabel}
           <input
             id="postcodePlace"
+            ref={pickerRef}
             type="search"
             role="combobox"
             autoComplete="off"

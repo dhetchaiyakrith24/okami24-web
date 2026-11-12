@@ -365,6 +365,11 @@ how-to-order page and on the order page next to the bank details.
 > if the customer has **paid and the shop cannot ship** (e.g. the warehouse is paused), the **same rule as out of stock after
 > payment** applies: the customer chooses to wait, swap to another item at the same price, or take a refund to PromptPay / a
 > bank account. Every other case still follows "no cancellation and no refund after the transfer".
+> **OWNER RULING 2026-11-11 (main chat, Test 2 items T2-10/11 — his choice "ยกเลิกบนเว็บอัตโนมัติ", replacing the 28/10 rule
+> "LINE alert only, staff handle it"):** when the warehouse cancels or refunds an order in Shipnity, the web order is
+> **cancelled automatically** and leaves sales and the tracking list; the LINE alert to the team stays. A confirmed-paid
+> customer then picks the refund target on the order page (whole paid total); "wait" or "same-price swap" goes through LINE.
+> A slip that was never confirmed gets no refund box (owner 29/10). Code: `src/lib/woo/warehouse-cancel.ts` (#1415, #1418).
 
 **Pay at once + slip on the order page (owner 2026-10-22, cart round):** the customer pays right after placing the order
 and attaches the slip on the order page; the site checks it with EasySlip on arrival (same check as the staff page) and the
@@ -474,8 +479,18 @@ addresses, tracking, product interests.
 **no member perks yet, and none shown on the sign-up page**; staff keep their own login (§9: Google per admin, owner 2026-11-10); designs = drafts v2
 ("พรีเมียม เรียบหรู"). Guest checkout above is unchanged — signing in is never required to buy, and checkout still asks for
 the phone. What is kept: the provider's user ID and display name only (no email, no picture, no tokens). The member page
-lists only orders placed while signed in (never orders matched by phone alone). The free-shipping-from-300 idea for members
-(§ shipping, owner 2026-10-24) is not live.
+lists only orders placed while signed in (never orders matched by phone alone). The member free-shipping-from-300 benefit
+went LIVE 2026-10-30 (§10 "Free shipping" holds the rule).
+> **OWNER RULING 2026-11-12/13 (main chat) — member level 10 perk "C" (NOT BUILT YET; it changes money → full check set):**
+> a member at level 10 (`src/lib/members/tiers.ts`: approved-or-later orders placed while signed in, member_id only) gets
+> **10 % off the goods (never the shipping) + free shipping, only on orders of ฿1,000 or more**; **one discount per order, not
+> combined with other promos** (12/11) · **starts from the 11th order** — the order that reaches level 10 gets no discount
+> (13/11, his pick "เริ่มออเดอร์ที่ 11") · **the discount is rounded to whole baht in the shop's favour** = rounded down,
+> e.g. 105.50 → 105 (13/11, his pick "ปัดเป็นบาทเต็ม ให้ร้านได้เปรียบ") · prices come from the catalogue only.
+> **Still open (owner 13/11: "ทำเป็นคู่มือ … พี่สับสน"):** whether ฿1,000 is counted before or after the 10 % · whether a
+> level-10 free-shipping order uses up the monthly member benefit · which wins against a LINE special price · whether free
+> shipping counts as a "promo" · how the 5 % member promo (owner list item 107) relates. The plain-language guide with
+> examples = `docs/คู่มือส่วนลดและสิทธิพิเศษ.md`. Do not build perk C until these are answered.
 
 **Personal data (PDPA) — owner 2026-09-06, answers 9–11:**
 - **Retention:** order and address data are kept **1 year**, counted from order completion, then

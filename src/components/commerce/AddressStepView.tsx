@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { PostcodePlaceFields, type Place } from "@/components/commerce/PostcodePlaceFields";
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
+import { NotMeButton } from "@/components/commerce/NotMeButton";
 import { AddressSummaryCard, CartFold, PlaceWithMap } from "@/components/commerce/AddressOrderSummary";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, deleteAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
@@ -15,6 +16,8 @@ import type { CartView as CartViewData } from "@/lib/commerce/cart";
 
 // Kept here, not in actions.ts: a "use server" file may only export async functions (see checkout/actions.ts).
 const initialAddressState: AddressFormState = { errorKey: null, values: {} };
+/** The phone box's length cap (T2-21: it took 20 characters). */
+const PHONE_MAX = 12;
 
 function Field({
   label,
@@ -24,6 +27,7 @@ function Field({
   pattern,
   inputMode,
   autoComplete,
+  maxLength,
   error,
 }: {
   label: string;
@@ -33,6 +37,7 @@ function Field({
   pattern?: string;
   inputMode?: "text" | "tel" | "numeric";
   autoComplete?: string;
+  maxLength?: number;
   /** The refusal that belongs to this field (owner 02/11): shown right under it, and the field is marked for screen readers.
    *  It goes away once the customer edits the field (checker 02/11: a fixed field stayed red until the next save). */
   error?: string | null;
@@ -49,6 +54,7 @@ function Field({
         pattern={pattern}
         inputMode={inputMode}
         autoComplete={autoComplete}
+        maxLength={maxLength}
         defaultValue={defaultValue}
         required
         onChange={() => setEdited(true)}
@@ -88,11 +94,14 @@ export function AddressStepView({
   addressMissing,
   defaultPhone,
   cart,
+  showNotMe,
 }: {
   addresses: AddressRecord[];
   addressMissing: boolean;
   defaultPhone: string;
   cart: CartViewData;
+  /** A phone-only session (no LINE / Google member): the number in the phone field is this device's remembered one (T2-06). */
+  showNotMe: boolean;
 }) {
   const { dict } = useLocale();
   const [state, formAction, pending] = useActionState(addAddressAction, initialAddressState);
@@ -206,9 +215,13 @@ export function AddressStepView({
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
+                // T2-21: 10 digits + two dashes at most ("081-234-5678"); the server checks the digits (addresses.ts).
+                maxLength={PHONE_MAX}
                 defaultValue={v.phone ?? defaultPhone}
                 error={fieldError("phone")}
               />
+              {/* T2-06: a shared phone remembers the last buyer's number for 30 days; someone else starts over with their own. */}
+              {showNotMe && !editing && <NotMeButton className="-mt-2" />}
               {/* React resets the form after every submit; for these controlled fields that left the list showing its first
                   sub-district while the form still held the picked one (found 02/11). Each answer of the action carries a new
                   `attempt`, so they remount from it and what is shown is what is sent. */}

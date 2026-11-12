@@ -8,7 +8,7 @@ import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
 import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { signedInName } from "@/lib/staff/account-rules";
-import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction } from "@/lib/staff/order-actions";
+import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
 import { readSwitches } from "@/lib/commerce/shop-switches";
@@ -19,6 +19,7 @@ import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
+import { isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
 import { editStateOf, linkedSlips } from "@/lib/staff/line-order-edit";
 import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
 import { slipsToPick } from "@/lib/staff/line-orders";
@@ -282,6 +283,7 @@ export default async function StaffOrderPage({
   const shipnity = shipnityReady() && (!lineOrder || readSwitches().lineToWarehouse);
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const warehouseCancelled = order.status === "cancelled" && isWarehouseCancelNote(cancelNote);
   const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
@@ -329,12 +331,17 @@ export default async function StaffOrderPage({
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
-      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. The order's
-          status here is not changed by it: staff call the customer and the warehouse's admin first. */}
+      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. Since 11/11
+          (owner, T2-10) a "cancelled" / "refunded" cancels the web order itself (src/lib/woo/warehouse-cancel.ts); a delete /
+          fail still waits for staff: call the customer and the warehouse's admin first. */}
       {warehouse && (
         <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} — คุยกับแอดมินคลัง
-          แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)
+          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} —{" "}
+          {warehouseCancelled
+            ? order.stockIssue && order.stockIssue.resolution === null
+              ? "เว็บยกเลิกออเดอร์ให้แล้ว ลูกค้าเลือกช่องทางรับเงินคืนในหน้าออเดอร์ โอนคืนแล้วบันทึกในกล่องด้านล่าง"
+              : "เว็บยกเลิกออเดอร์ให้แล้ว"
+            : <>คุยกับแอดมินคลัง แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)</>}
         </p>
       )}
 
@@ -706,10 +713,24 @@ export default async function StaffOrderPage({
             <form action={staffOrderAction} className={foldBody}>
               <OrderFields order={order} from={from} />
               <input type="hidden" name="action" value="cancel" />
-              {order.slip && (
-                <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
-                </p>
+              {cancelOwesRefund(order.status) ? (
+                // Owner 12/11: cancelling a paid order means a refund — said in red, and the form needs the tick (actions.ts).
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ลูกค้าจ่ายแล้ว {formatBaht(order.total)} — ยกเลิกแล้วร้านต้องโอนเงินคืน · ถ้ายกเลิกเพราะของหมดหรือคลังส่งไม่ได้ ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo;
+                    ติ๊กทุกรายการแทน — ลูกค้าเลือกช่องทางรับเงินคืนเองในหน้าออเดอร์ แล้วบันทึกการโอนคืนพร้อมสลิปได้
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="refundTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    รับทราบว่าต้องโอนเงินคืน {formatBaht(order.total)} ให้ลูกค้าเอง
+                  </label>
+                </div>
+              ) : (
+                order.slip && (
+                  <p className="text-xs text-foreground-dim">
+                    ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
+                  </p>
+                )
               )}
               <label className="flex flex-col gap-1 text-foreground-muted">
                 เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์

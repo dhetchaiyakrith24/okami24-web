@@ -39,7 +39,7 @@ const wrongPrice = lineup.filter((r) => r.price !== catalogPrice.get(r.slug)).ma
 check("every price is the catalog's selling price", wrongPrice.length === 0, wrongPrice.join(", "));
 
 const verifiedText = new Map<string, string>([...legacy, ...published].map((p) => [p.slug, verifiedRows(p.specifications).map((s) => s.value).join(" | ")]));
-const statedBy = (slug: string, n: number) => new RegExp(`(?<![\d,.])${n.toLocaleString("en-US").replace(/,/g, ",?")}(?![\d])`).test(verifiedText.get(slug) ?? "");
+const statedBy = (slug: string, n: number) => new RegExp(`(?<![\\d,.])${n.toLocaleString("en-US").replace(/,/g, ",?")}(?![\\d])`).test(verifiedText.get(slug) ?? "");
 const unbacked = lineup.flatMap((r) => [r.puffs, r.capacityMl, r.batteryMah].filter((n): n is number => n !== null && !statedBy(r.slug, n)).map((n) => `${r.slug}: ${n}`));
 check("every figure is stated by a verified row of that product", unbacked.length === 0, unbacked.join(", "));
 

@@ -224,7 +224,11 @@ export interface Dictionary {
   product: {
     colorLabel: string;
     flavorLabel: string;
-    allVariantsLabel: string;
+    /** The first chip of the colour / flavour picker = the maker's picture of every option together (owner 12/11). */
+    allColorsLabel: string;
+    allFlavorsLabel: string;
+    lineupGroupLabel: string;
+    lineupGroupFallback: string;
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */
     noPhotoFlavor: string;
     noPhotoColor: string;
@@ -235,6 +239,8 @@ export interface Dictionary {
     /** Phone option tiles (Q5, 24/10): the green pill, the sold-out pill, and "{in} of {n}" over the tiles. */
     optionIn: string;
     optionOut: string;
+    /** Owner 11/11: a tile whose warehouse code has no live number — ask the shop (live-rules.ts "ask"). */
+    optionAsk: string;
     optionStockCount: string;
     /** Live warehouse count of the picked option (owner 26/10 word, HANDOFF §18 "Low-stock label") — `{n}` = pieces left, shown at ≤ 3. */
     lowStock: string;
@@ -317,6 +323,9 @@ export interface Dictionary {
     compatibilityTitle: string;
     worksWithTitle: string;
     fitsDevicesTitle: string;
+    fitsDeviceLine: string;
+    /** "+{n} รุ่น" — opens the rest of a long fits line (more than 6 names). */
+    fitsDeviceMore: string;
     verifiedCompatibilityNote: string;
     whoIsThisForTitle: string;
     faqEyebrow: string;
@@ -585,6 +594,8 @@ export interface Dictionary {
     orderOnLineNote: string;
     outOfStockLabel: string;
     outOfStockCta: string;
+    /** Owner 11/11 safety net: the picked option has a warehouse code but no live number — not sold, not "sold out". */
+    askStockCta: string;
     /** While online ordering is OFF (OKAMI24_ORDERING, owner 2026-09-07) these four replace the
      *  cart button: the button label (shows the LINE ID on purpose — if the link fails the
      *  customer can still type it), the line under it before a tap, the line after the tap has
@@ -642,6 +653,8 @@ export interface Dictionary {
     changeAddressCta: string;
     changeSavedAddressCta: string;
     shipToSavedTitle: string;
+    /** Ends this device's remembered phone session (T2-06) — shown under the address step's phone field and on /orders (phone-only session). */
+    notMeCta: string;
     addressErrorMissing: string;
     addressErrorPhone: string;
     addressErrorHouseNumber: string;
@@ -825,6 +838,10 @@ export interface Dictionary {
      *  is out · {amount} = the refund in baht · {phone} = the PromptPay number, masked to its last 4 digits. */
     stockTitle: string;
     stockLead: string;
+    /** The refund box on an order the warehouse cancelled (T2-10): refund only; waiting or a same-price swap go through LINE. */
+    stockCancelLead: string;
+    /** The customer chose a swap, then the warehouse cancelled the whole order: staff will contact them (swap as a new order, or refund). */
+    stockChosenSwapCancelled: string;
     stockSwapTitle: string;
     stockSwapPickLabel: string;
     stockSwapPlaceholder: string;
@@ -876,9 +893,17 @@ export interface Dictionary {
     nextShippedNoTracking: string;
     nextCompleted: string;
     nextCancelled: string;
-    nextCancelledPaid: string;
-    /** Cancelled after a slip was sent but before the payment was ever confirmed (slip failed / fake) — no refund promise (owner 29/10). */
-    nextCancelledSlipRejected: string;
+    /** A special price staff gave (owner 12/11) — the line between shipping and the total on the order page. */
+    discountLabel: string;
+    /** T2-11: the reason line when the warehouse cancelled the order in Shipnity and the site cancelled it (owner 11/11). */
+    cancelReasonWarehouse: string;
+    /** T2-19: how the money comes back, under the reason of a cancelled order (BSOT §9, owner exception 10/11). The shop
+     *  confirmed the payment and the refund box sits below. */
+    cancelMoneyChoose: string;
+    /** The shop confirmed the payment, staff cancelled, no refund box: staff contact the customer. */
+    cancelMoneyPaid: string;
+    /** A slip was sent but never confirmed (slip failed / fake) — no refund promise (owner 29/10), and no accusation. */
+    cancelMoneySlip: string;
     /** Unboxing-video notice (owner 29/10): after payment until the parcel arrives, then 7 days after delivery. */
     unboxingTitle: string;
     unboxingWaiting: string;

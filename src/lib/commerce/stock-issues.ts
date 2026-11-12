@@ -12,6 +12,7 @@ import { insertCustomerMessage } from "./order-messages";
 import type { OrderStatus } from "./order-status";
 import {
   canOpenStockIssue,
+  canRefundStockIssue,
   cleanBankAccount,
   cleanBankText,
   cleanPromptPayPhone,
@@ -61,7 +62,8 @@ export interface StockIssue {
   refundPromptPay: string | null;
   /** Or the bank account the customer gave (full number — staff page only) with its bank and branch. */
   refundBankAccount: { account: string; bank: string; branch: string } | null;
-  /** What a refund returns (refundAmount in stock-issue-rules.ts): the out lines, or the whole paid total when all are out. */
+  /** What a refund returns (refundAmount in stock-issue-rules.ts): what was paid for the out lines (a special price shared
+   *  over the lines), or the whole paid total when all are out. */
   refund: { amount: number; wholeOrder: boolean };
   chosenAt: string | null;
   resolution: StockIssueResolution | null;
@@ -130,7 +132,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
   const picks = parseSwapJson(row.swap_json);
   const all = itemsOf(orderId);
   const outLines = all.filter((i) => ids.has(i.id)).map(toLine);
-  const total = (getDb().prepare("SELECT total FROM orders WHERE id = ?").get(orderId) as { total: number }).total;
+  const money = getDb().prepare("SELECT total, shipping_fee FROM orders WHERE id = ?").get(orderId) as { total: number; shipping_fee: number };
   return {
     orderId,
     outLines,
@@ -146,7 +148,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
     refundPromptPay: row.refund_promptpay,
     refundBankAccount:
       row.refund_account && row.refund_bank ? { account: row.refund_account, bank: row.refund_bank, branch: row.refund_branch ?? "" } : null,
-    refund: refundAmount(outLines, { total, lineCount: all.length }),
+    refund: refundAmount(outLines, { total: money.total, shippingFee: money.shipping_fee, lines: all.map(toLine) }),
     chosenAt: row.chosen_at,
     resolution: row.resolution,
     refundRef: row.refund_ref,
@@ -295,10 +297,13 @@ export function markRefunded(orderNumber: string, rawRef: string): StaffStockRes
     const order = orderRow(orderNumber);
     if (!order) return { ok: false, error: "not-found" };
     const issue = getStockIssue(order.id);
-    if (!issue || issue.resolution || !canOpenStockIssue(order.status)) return { ok: false, error: "not-allowed" };
+    if (!issue || issue.resolution || !canRefundStockIssue(order.status, issue.refund.wholeOrder)) return { ok: false, error: "not-allowed" };
     db.prepare(`UPDATE order_stock_issues SET resolution = 'refunded', refund_ref = ?, resolved_at = ${now} WHERE order_id = ?`).run(ref, order.id);
     const note = `Stock: refunded — ref ${ref}`;
-    if (issue.refund.wholeOrder) {
+    if (order.status === "cancelled") {
+      // Already cancelled (the warehouse cancelled it, T2-10): the refund is one more row on the cancelled order.
+      db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'cancelled', ?)").run(order.id, note);
+    } else if (issue.refund.wholeOrder) {
       // Every STOCK_ISSUE_STATUSES status may move to "cancelled" (order-status.ts ALLOWED_TRANSITIONS).
       db.prepare("INSERT INTO order_status_history (order_id, status, note) VALUES (?, 'cancelled', ?)").run(order.id, note);
       db.prepare(`UPDATE orders SET status = 'cancelled', updated_at = ${now} WHERE id = ?`).run(order.id);
@@ -347,7 +352,7 @@ export async function chooseRefund(orderNumber: string, viewToken: string | null
   const found = await customerIssue(orderNumber, viewToken);
   if (!found) return { ok: false, error: "not-found" };
   const { order, issue } = found;
-  if (!issue || issue.choice || issue.resolution || !canOpenStockIssue(order.status)) return { ok: false, error: "closed" };
+  if (!issue || issue.choice || issue.resolution || !canRefundStockIssue(order.status, issue.refund.wholeOrder)) return { ok: false, error: "closed" };
   let target: RefundTarget;
   if (input.mode === "bank") {
     const account = cleanBankAccount(input.account);
@@ -397,10 +402,14 @@ export function stockIssueViewFor(orderId: number): StockIssueView | null {
   const issue = getStockIssue(orderId);
   if (!issue) return null;
   const stage = stockIssueStage(issue);
-  const own = getDb().prepare("SELECT c.phone FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?").get(orderId) as { phone: string } | undefined;
+  const own = getDb().prepare("SELECT c.phone, o.status FROM orders o JOIN customers c ON c.id = o.customer_id WHERE o.id = ?").get(orderId) as
+    | { phone: string; status: OrderStatus }
+    | undefined;
   const ownPhone = own ? cleanPromptPayPhone(own.phone) : null;
+  // A cancelled order offers the refund only (canRefundStockIssue) — no swap options are looked up for it.
+  const afterCancel = own?.status === "cancelled";
   const swapGroups: StockIssueView["swapGroups"] = {};
-  if (stage === "waiting-choice") for (const l of issue.outLines) swapGroups[l.itemId] = swapCandidates(l);
+  if (stage === "waiting-choice" && !afterCancel) for (const l of issue.outLines) swapGroups[l.itemId] = swapCandidates(l);
   return {
     stage,
     choice: issue.choice,
@@ -414,6 +423,7 @@ export function stockIssueViewFor(orderId: number): StockIssueView | null {
       ? { bank: issue.refundBankAccount.bank, branch: issue.refundBankAccount.branch, accountMasked: maskAccount(issue.refundBankAccount.account) }
       : null,
     swapGroups,
+    afterCancel,
     refundSlip: issue.resolution === "refunded" && issue.refundSlipAt !== null,
   };
 }

@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { Fragment, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { useChipAutoscroll } from "./use-chip-autoscroll";
 import { countKind } from "@/lib/stock/count-rules";
+import { glossPieces } from "@/lib/flavor-thai";
 import { OptionBestTag } from "@/components/catalog/SalesBadge";
 
 /**
@@ -32,11 +33,16 @@ export interface PhoneOption {
   image?: { src: string; alt: string };
   swatchHex?: string;
   out: boolean;
+  /** Owner 11/11 safety net: a warehouse code with no live number (live-rules.ts "ask") — not sold, not sold out: a plain
+   *  "สอบถาม" pill instead of the green "มีของ", and not counted as ready to ship. */
+  ask?: boolean;
   /** Live warehouse count (/api/stock, capped there); undefined until it arrives or when there is none. */
   left?: number;
   /** A best-selling option (src/data/bestseller-options.ts): a small "ขายดี" capsule on its photo. The cart's quick add
    *  passes none, so the badge stays on the product page. */
   best?: boolean;
+  /** T2-32: the Thai words of a flavour name (src/lib/flavor-thai.ts), Thai page only — a small line under the name. */
+  gloss?: string | null;
 }
 
 export function PhoneOptionTiles({
@@ -71,15 +77,21 @@ export function PhoneOptionTiles({
   const strip = many && !open;
   useChipAutoscroll(listRef, strip ? selectedId : null);
   const selected = options.find((o) => o.id === selectedId);
-  const inCount = options.filter((o) => !o.out).length;
+  const inCount = options.filter((o) => !o.out && !o.ask).length;
 
   return (
     <div ref={rootRef} className={cn("flex flex-col gap-3", className)}>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm">
         {label && <span className="text-foreground-dim">{label}</span>}
-        {selected && <span className="font-semibold text-foreground">{selected.name}</span>}
+        {/* Designer 12/11: the gloss sits in the name's own span, so the dot has a space on both sides (gap-x-2 was before it only). */}
+        {selected && (
+          <span className="font-semibold text-foreground">
+            {selected.name}
+            {selected.gloss && <span className="font-normal text-foreground-muted"> · {selected.gloss}</span>}
+          </span>
+        )}
         {selected?.best && <OptionBestTag className="px-2 py-1 text-xs" />}
-        {selected && <StockPill out={selected.out} />}
+        {selected && <StockPill out={selected.out} ask={selected.ask} />}
         {/* Opens unpicked (photo-rule pages): say what to do instead of a bare axis label (designer note 24/10). */}
         {!selected && !pills.some((p) => p.selected) && <span className="text-foreground-muted">{t.optionPickPrompt}</span>}
         <span className="ml-auto text-xs text-foreground-dim">
@@ -117,7 +129,8 @@ export function PhoneOptionTiles({
       >
         {options.map((o) => {
           const picked = o.id === selectedId;
-          const name = o.out ? `${o.name} — ${t.optionOut}` : o.name;
+          const shownName = o.gloss ? `${o.name} · ${o.gloss}` : o.name;
+          const name = o.out ? `${shownName} — ${t.optionOut}` : o.ask ? `${shownName} — ${t.optionAsk}` : shownName;
           return (
             <button
               key={o.id}
@@ -148,17 +161,20 @@ export function PhoneOptionTiles({
                 )}
                 {o.best && <OptionBestTag className="absolute left-1 top-1" />}
               </span>
-              <span
-                className={cn(
-                  "w-full self-start text-xs leading-tight",
-                  // Strip photos are often plain swatches, so the name carries the choice: one more line there.
-                  strip ? "line-clamp-3" : "line-clamp-2",
-                  picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
-                )}
-              >
-                {o.name}
+              <span className="w-full self-start">
+                <span
+                  className={cn(
+                    "block text-xs leading-tight",
+                    // Strip photos are often plain swatches, so the name carries the choice: one more line there.
+                    strip ? "line-clamp-3" : "line-clamp-2",
+                    picked ? "font-semibold text-foreground" : o.out ? "text-foreground-dim" : "text-foreground-muted"
+                  )}
+                >
+                  {o.name}
+                </span>
+                {o.gloss && <span className={cn("mt-0.5 block text-[0.68rem] leading-tight text-foreground-dim", strip ? "line-clamp-1" : "line-clamp-2")}><GlossText text={o.gloss} /></span>}
               </span>
-              <StockPill out={o.out} left={o.left} small />
+              <StockPill out={o.out} ask={o.ask} left={o.left} small />
             </button>
           );
         })}
@@ -182,21 +198,40 @@ export function PhoneOptionTiles({
   );
 }
 
-function StockPill({ out, small, left }: { out: boolean; small?: boolean; left?: number }) {
+function StockPill({ out, ask, small, left }: { out: boolean; ask?: boolean; small?: boolean; left?: number }) {
   const { dict } = useLocale();
   const t = dict.product;
   // Only a small tile at ≤ 3 changes words (short amber "เหลือ N"); every other pill stays "มีของ" / "หมด".
-  const low = !out && left !== undefined && countKind(left) === "low";
+  const low = !out && !ask && left !== undefined && countKind(left) === "low";
   return (
     <span
       className={cn(
         "inline-flex items-center self-start rounded-full font-medium leading-none",
         small ? "px-2 py-1 text-xs" : "px-2.5 py-1 text-xs",
         // Only "in stock" gets the green frame, so the eye finds what can be bought; sold out is plain dim text (B).
-        out ? "text-foreground-dim" : low ? "border border-low/40 bg-low/10 text-low" : "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
+        out ? "text-foreground-dim" : ask ? "border border-surface-border text-foreground-muted" : low ? "border border-low/40 bg-low/10 text-low" : "border border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
       )}
     >
-      {out ? t.optionOut : low ? t.stockLeftShort.replace("{n}", String(left)) : t.optionIn}
+      {out ? t.optionOut : ask ? t.optionAsk : low ? t.stockLeftShort.replace("{n}", String(left)) : t.optionIn}
     </span>
+  );
+}
+
+/** A Thai flavour gloss that breaks only between words (and after a lead word), never inside one — glossPieces. */
+function GlossText({ text }: { text: string }) {
+  return (
+    <>
+      {glossPieces(text).map((pieces, i) => (
+        <Fragment key={i}>
+          {i > 0 && " "}
+          {pieces.map((p, j) => (
+            <Fragment key={j}>
+              {j > 0 && <wbr />}
+              <span className="whitespace-nowrap">{p}</span>
+            </Fragment>
+          ))}
+        </Fragment>
+      ))}
+    </>
   );
 }

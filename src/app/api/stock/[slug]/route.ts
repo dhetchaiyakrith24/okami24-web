@@ -2,12 +2,14 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getProduct } from "@/data/products";
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { liveLookup, liveQuantityLookup } from "@/lib/stock/live";
+import type { LiveState } from "@/lib/stock/live-rules";
 import { publicCount } from "@/lib/stock/count-rules";
+import { refreshStalePages } from "@/lib/stock/stale-refresh";
 
 /**
  * GET /api/stock/<slug> — the live warehouse stock of one product's options (Shipnity link step 4, owner 28/10). Product
  * pages stay prerendered; after load they ask here and update their option tiles and buy button, so a stock change in
- * Shipnity shows without a new build. Answer: `{ o: { <optionId>: "in" | "out" }, p: "in" | "out" | null, q: { <optionId>: n },
+ * Shipnity shows without a new build. Answer: `{ o: { <optionId>: "in" | "out" | "ask" }, p: "in" | "out" | "ask" | null, q: { <optionId>: n },
  * pq: n | null }` — only options with a live answer are listed; the rest keep what the page was built with. `q` / `pq` = the
  * warehouse count of an option that sells (owner 30/10 "ใส่ตัวเลขที่เหลือในสต๊อก"), capped by publicCount (count-rules.ts).
  * No cookies, no customer data; the cart and checkout re-check on the server (catalog-resolver.ts), so nothing here is trusted for money.
@@ -27,7 +29,7 @@ export async function GET(_req: NextRequest, ctx: { params: Promise<{ slug: stri
     ? [...(legacy.colorVariants ?? []), ...(legacy.flavorVariants ?? [])].map((v) => ({ id: v.id, name: v.name }))
     : published!.variants.map((v) => ({ id: v.id, name: v.label }));
   const qty = liveQuantityLookup();
-  const o: Record<string, "in" | "out"> = {};
+  const o: Record<string, LiveState> = {};
   const q: Record<string, number> = {};
   for (const opt of options) {
     const s = live(slug, opt.id, opt.name);
@@ -37,6 +39,8 @@ export async function GET(_req: NextRequest, ctx: { params: Promise<{ slug: stri
   }
   const p = options.length === 0 ? live(slug) : null;
   const pq = p === "in" ? publicCount(qty(slug)) : null;
+  // This page was rendered with other stock than the warehouse holds now: its next visit re-renders live (owner 11/11).
+  refreshStalePages({ slug });
   return NextResponse.json(
     { o, p, q, pq },
     // A short shared cache: a busy page does not hit the server per visitor, and a stock change shows within a minute.
