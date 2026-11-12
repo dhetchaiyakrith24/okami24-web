@@ -177,7 +177,7 @@ void main() {
   v_box = bx;
 }`;
 
-/** Ribbon colours. "forge" = today (owner 09/11). "shop" = the preview "cards" (owner 12/11: the shop orange #ff6a2c at the
+/** Ribbon colours. "shop" = the default since owner 13/11 (was the preview "cards", 12/11: the shop orange #ff6a2c at the
  *  peak again — the forge peak #f08a2a/#f0993f reads amber; the reel's vermilion ends and oxblood tail stay as support). */
 export type RibbonPalette = "forge" | "shop";
 const PEAK: Record<RibbonPalette, { c2: string; c3: string; flow: string }> = {
@@ -499,7 +499,7 @@ export class RibbonEngine {
   private glow = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
-  static create(canvases: Ctx2Canvas | Ctx2Canvas[], mode: RibbonMode = "hero", palette: RibbonPalette = "forge"): RibbonEngine | null {
+  static create(canvases: Ctx2Canvas | Ctx2Canvas[], mode: RibbonMode = "hero", palette: RibbonPalette = "shop"): RibbonEngine | null {
     const targets: Target[] = [];
     for (const c of Array.isArray(canvases) ? canvases : [canvases]) {
       const t = makeTarget(c, palette);
@@ -889,9 +889,10 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
   }
 }
 
-/** The palette this page draws with: the preview "cards" / "cards-run" (src/lib/preview.ts) draws the shop orange. Main thread only. */
+/** The palette this page draws with: the shop orange for everyone since owner 13/11 (black + orange; was the preview "cards").
+ *  "forge" stays in PEAK only so a revert of that look is one line. */
 export function ribbonPalette(): RibbonPalette {
-  return typeof document !== "undefined" && document.documentElement.dataset.preview?.startsWith("cards") ? "shop" : "forge";
+  return "shop";
 }
 
 /** Main-thread engine behind the same driver shape (no OffscreenCanvas / no worker). */
