@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -30,6 +30,31 @@ export function LineContact() {
   const label = dict.nav.contactLine;
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
+  // Live fix 12/11 (visitor agent): on a phone the button (and the cart bubble above it) sat over the product cards while
+  // scrolling. Scrolling DOWN past the first screen sets html[data-fab-away] and globals.css slides both off (phones only);
+  // any scroll UP brings them back. One passive listener, one attribute write per change, no React state per scroll.
+  useEffect(() => {
+    const root = document.documentElement;
+    let last = window.scrollY;
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        const y = window.scrollY;
+        if (Math.abs(y - last) < 8) return;
+        if (y > last && y > 160) root.dataset.fabAway = "1";
+        else if (y < last) delete root.dataset.fabAway;
+        last = y;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      delete root.dataset.fabAway;
+    };
+  }, []);
   const onClick = (e: React.MouseEvent) => {
     if (window.matchMedia("(pointer: coarse)").matches || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
