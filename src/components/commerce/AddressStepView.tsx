@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { PostcodePlaceFields, type Place } from "@/components/commerce/PostcodePlaceFields";
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
+import { NotMeButton } from "@/components/commerce/NotMeButton";
 import { AddressSummaryCard, CartFold, PlaceWithMap } from "@/components/commerce/AddressOrderSummary";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { addAddressAction, deleteAddressAction, selectAddressAction, type AddressFormState } from "@/app/checkout/actions";
@@ -93,11 +94,14 @@ export function AddressStepView({
   addressMissing,
   defaultPhone,
   cart,
+  showNotMe,
 }: {
   addresses: AddressRecord[];
   addressMissing: boolean;
   defaultPhone: string;
   cart: CartViewData;
+  /** A phone-only session (no LINE / Google member): the number in the phone field is this device's remembered one (T2-06). */
+  showNotMe: boolean;
 }) {
   const { dict } = useLocale();
   const [state, formAction, pending] = useActionState(addAddressAction, initialAddressState);
@@ -216,6 +220,8 @@ export function AddressStepView({
                 defaultValue={v.phone ?? defaultPhone}
                 error={fieldError("phone")}
               />
+              {/* T2-06: a shared phone remembers the last buyer's number for 30 days; someone else starts over with their own. */}
+              {showNotMe && !editing && <NotMeButton className="-mt-2" />}
               {/* React resets the form after every submit; for these controlled fields that left the list showing its first
                   sub-district while the form still held the picked one (found 02/11). Each answer of the action carries a new
                   `attempt`, so they remount from it and what is shown is what is sent. */}
