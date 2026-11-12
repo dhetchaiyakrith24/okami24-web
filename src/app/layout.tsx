@@ -18,6 +18,8 @@ import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
+// Preview "compact" (owner 13/11): four product cards to a phone screen — html[data-preview$="compact"] only.
+import "./preview-compact.css";
 // The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
 import "./home-guides.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
