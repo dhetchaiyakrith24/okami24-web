@@ -535,6 +535,7 @@ export const en: Dictionary = {
     changeAddressCta: "Change address",
     changeSavedAddressCta: "Use another address",
     shipToSavedTitle: "Shipping to your saved address",
+    notMeCta: "Not you? Use another number",
     addressErrorMissing: "Please fill in every field.",
     addressErrorPhone: "Please check the contact number: a mobile has 10 digits, a landline 9, starting with 0.",
     addressErrorHouseNumber: "Please include the house number in the address.",
