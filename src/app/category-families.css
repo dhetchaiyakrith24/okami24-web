@@ -1,33 +1,33 @@
 /* ==========================================================================
-   Preview "stack" — the approved home guide deck (src/app/home-guides.css, owner 13/11 "บังคับใช้ได้หมดในทุกส่วนที่รก …
+   Category / brand "families" as the stacked deck — the approved home guide deck (src/app/home-guides.css, owner 13/11 "บังคับใช้ได้หมดในทุกส่วนที่รก …
    แต่ต้องไม่ส่งผลเสียกับ SEO นะ และใช้งานง่าย") on the category / brand pages' "families" block (CategoryGuide, from 3
    families up). Designer 13/11: desktop only (≥64rem wide AND ≥45rem tall — a long family paragraph on a phone would be
    taller than the screen and get covered before it is read); the heading + intro stay put on the left (5/12) while the
    family cards run on the right (7/12); the tables and the FAQ below keep their full width. Card height = its words (the
    tallest family sets the row; no min-height). Service-page steps and product feature cards were judged too short to
-   stack (scrolling for nothing). ONLY `html[data-preview="stack"]` matches (src/lib/preview.ts) — customers keep today's
-   3 columns. The HTML is the same with or without it: same headings, words, inline links and order; the 01/02/03 are
+   stack (scrolling for nothing). Shipped as the default without a preview round (owner 13/11 ~05:40 "จัดการส่วนที่เหลือ
+   ต่อเลย ไม่ต้องจำลองเว็บละ พรุ่งนี้พี่มาดูงานทีเดียว" — revert this file's PR to go back to 3 columns). The HTML is the same with or without it: same headings, words, inline links and order; the 01/02/03 are
    CSS counters with empty alt text (decoration, not read out). Reduced motion / Save-Data (lite) = the cards without the
    stacking. Reuses the guide deck's okh-guide-sink / okh-guide-shade keyframes (home-guides.css, loaded on every page).
    ========================================================================== */
 @media (min-width: 64rem) and (min-height: 45rem) {
-  html[data-preview="stack"] .okc-fam-wrap {
+  .okc-fam-wrap {
     display: grid;
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     column-gap: 4rem;
     align-items: start;
   }
-  html[data-preview="stack"] .okc-fam-head {
+  .okc-fam-head {
     position: sticky;
     top: 7rem;
   }
-  html[data-preview="stack"] .okc-fams {
+  .okc-fams {
     grid-template-columns: minmax(0, 1fr);
     grid-auto-rows: 1fr; /* every card as tall as the tallest, so a covered card never shows its bottom edge */
     gap: 1.5rem;
     counter-reset: okc-fam;
   }
-  html[data-preview="stack"] .okc-fam {
+  .okc-fam {
     position: relative;
     padding: 2rem;
     border-radius: 1rem;
@@ -37,32 +37,32 @@
     box-shadow: 0 -10px 24px -14px rgb(0 0 0 / 0.8);
     counter-increment: okc-fam;
   }
-  html[data-preview="stack"] .okc-fam::before {
+  .okc-fam::before {
     content: counter(okc-fam, decimal-leading-zero) / "";
     font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     color: var(--accent-steel);
   }
-  html[data-preview="stack"] .okc-fam h3 {
+  .okc-fam h3 {
     font-size: 1.5rem; /* text-2xl */
     line-height: 1.25;
     text-wrap: balance;
   }
-  html[data-preview="stack"] .okc-fam p {
+  .okc-fam p {
     font-size: 1rem; /* text-base: a ~600px card reads ~60 characters a line */
     text-wrap: pretty;
   }
 }
 
 @media (min-width: 64rem) and (min-height: 45rem) and (prefers-reduced-motion: no-preference) {
-  html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam {
+  html:not([data-okami-lite="1"]) .okc-fam {
     position: sticky;
     top: calc(7rem + var(--i) * 1rem); /* header 5rem + 2rem air, then 1rem lower per card */
   }
   /* Keyboard: Tab / Shift+Tab onto a link in a covered card does not scroll (a sticky card counts as on screen), so that
      card comes to the front (designer 13/11). */
-  html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam:focus-within {
+  html:not([data-okami-lite="1"]) .okc-fam:focus-within {
     z-index: 2;
   }
 }
@@ -70,17 +70,17 @@
 /* The covered cards sink back while the next one slides over them — the same scroll-driven animation as the guide deck. */
 @supports (animation-timeline: view()) {
   @media (min-width: 64rem) and (min-height: 45rem) and (prefers-reduced-motion: no-preference) {
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fams {
+    html:not([data-okami-lite="1"]) .okc-fams {
       view-timeline: --okc-fams block;
       view-timeline-inset: 7rem 0;
     }
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam {
+    html:not([data-okami-lite="1"]) .okc-fam {
       transform-origin: 50% 0;
       animation: okh-guide-sink linear both;
       animation-timeline: --okc-fams;
       animation-range: exit-crossing calc(var(--i) / var(--n) * 100%) exit-crossing calc((var(--i) + 1) / var(--n) * 100%);
     }
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam::after {
+    html:not([data-okami-lite="1"]) .okc-fam::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -92,10 +92,10 @@
       animation-timeline: --okc-fams;
       animation-range: inherit;
     }
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam:last-child,
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam:last-child::after,
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam:focus-within,
-    html[data-preview="stack"]:not([data-okami-lite="1"]) .okc-fam:focus-within::after {
+    html:not([data-okami-lite="1"]) .okc-fam:last-child,
+    html:not([data-okami-lite="1"]) .okc-fam:last-child::after,
+    html:not([data-okami-lite="1"]) .okc-fam:focus-within,
+    html:not([data-okami-lite="1"]) .okc-fam:focus-within::after {
       animation: none;
     }
   }

@@ -26,8 +26,8 @@ const DisposableCompareTable = dynamic(() => import("@/components/catalog/Dispos
  * editorial compare-table rules.
  */
 /** `stack` (category + brand pages; the home page has its own guide deck): from 3 families up, on a wide and tall enough
- *  screen the families become the stacked deck of the home guides — preview "stack" only for now (src/app/preview-stack.css,
- *  designer 13/11). Without the preview the hooks do nothing; the extra wrappers keep the gaps the Container gave. */
+ *  screen the families become the stacked deck of the home guides (src/app/category-families.css, designer 13/11; owner
+ *  13/11 → default). Below that the hooks do nothing; the extra wrappers keep the gaps the Container gave. */
 export function CategoryGuide({ copy, rows, brands = [], lineup = [], stack = false }: { copy: Partial<Record<"th" | "en" | "zh", CategoryGuideCopy>>; rows: CategorySpecRow[]; brands?: BrandRow[]; lineup?: LineupRow[]; stack?: boolean }) {
   const { locale } = useLocale();
   const c = copy[locale] ?? copy.en ?? copy.th;
