@@ -38,6 +38,11 @@
     /* header 4rem + 1rem air, then 0.75rem lower per card — the covered cards keep a 12px edge showing */
     top: calc(5rem + var(--i) * 0.75rem);
   }
+  /* Keyboard: Shift+Tab back to a covered card does not scroll (a sticky card counts as on screen), so the focused card
+     comes to the front, full size and unshaded (designer 13/11). */
+  html:not([data-okami-lite="1"]) .okh-guide:focus-visible {
+    z-index: 2;
+  }
 }
 
 @media (min-width: 40rem) {
@@ -106,7 +111,9 @@
       animation-range: inherit;
     }
     html:not([data-okami-lite="1"]) .okh-guide:last-child,
-    html:not([data-okami-lite="1"]) .okh-guide:last-child::after {
+    html:not([data-okami-lite="1"]) .okh-guide:last-child::after,
+    html:not([data-okami-lite="1"]) .okh-guide:focus-visible,
+    html:not([data-okami-lite="1"]) .okh-guide:focus-visible::after {
       animation: none;
     }
     @media (min-width: 40rem) {
