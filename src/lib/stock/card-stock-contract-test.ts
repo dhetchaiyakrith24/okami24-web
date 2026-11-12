@@ -78,6 +78,8 @@ check("no variants: the live answer wins, none = as built", pilotStatusAfterLive
 check("one variant sells = in stock", pilotStatusAfterLive([{ availabilityStatus: "out-of-stock" }, { availabilityStatus: "in-stock" }], "out-of-stock", null) === "in-stock");
 check("every variant out = sold out", pilotStatusAfterLive([{ availabilityStatus: "out-of-stock" }], "in-stock", null) === "out-of-stock");
 check("unknown left = as built", pilotStatusAfterLive([{ availabilityStatus: "unknown" }, { availabilityStatus: "out-of-stock" }], "unknown", null) === "unknown");
+check("none sells, one asks = unknown whatever the build said (not sold out)", pilotStatusAfterLive([{ availabilityStatus: "unknown", stockAsk: true }, { availabilityStatus: "out-of-stock" }], "out-of-stock", null) === "unknown" && pilotStatusAfterLive([{ availabilityStatus: "unknown", stockAsk: true }], "in-stock", null) === "unknown");
+check("unknown without ask keeps the build (pod-159: built in stock, 19 out + 1 unknown)", pilotStatusAfterLive([{ availabilityStatus: "unknown" }, { availabilityStatus: "out-of-stock" }], "in-stock", null) === "in-stock");
 
 // 4 — wiring
 const src = (f: string) => readFileSync(path.join(process.cwd(), "src", f), "utf8");

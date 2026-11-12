@@ -121,6 +121,21 @@ if (published) {
   check("published: no live answer = the same object", livePilotProduct(published, lookupFrom(new Map(), none)) === published);
 }
 
+// Bug sweep 12/11: a published product the build called sold out, whose every variant now asks, reads "ask" as a whole —
+// not sold out on its card or its JSON-LD (soldOut drives OutOfStock), the product carries stockAsk for the unpicked photo.
+const allCoded = buildPublishedCatalog().find((p) => p.sellingPrice !== null && p.variants.length > 0 && p.variants.every((v) => codeFor(p.slug, v.id)));
+check("a priced published product with every variant coded exists", !!allCoded);
+if (allCoded) {
+  const builtOutAll = { ...allCoded, availabilityStatus: "out-of-stock" as const, variants: allCoded.variants.map((v) => ({ ...v, availabilityStatus: "out-of-stock" as const })) };
+  const everyAsk = lookupFrom(new Map([["__another_code__", rep(1)]]), none);
+  const now = livePilotProduct(builtOutAll, everyAsk);
+  check("published all-ask over a sold-out build: unknown + the product's own stockAsk", now.availabilityStatus === "unknown" && now.stockAsk === true && now.variants.every((v) => v.stockAsk === true));
+  const card = publishedCardStock(builtOutAll, everyAsk);
+  check("published all-ask: the card is neither sold out nor พร้อมส่ง", !card.soldOut && !card.inStock);
+  const mixed = lookupFrom(new Map([[codeFor(allCoded.slug, allCoded.variants[0].id)!, rep(0)]]), none);
+  check("published ask + out: still not sold out", allCoded.variants.length < 2 || (livePilotProduct(builtOutAll, mixed).availabilityStatus === "unknown" && !publishedCardStock(builtOutAll, mixed).soldOut));
+}
+
 // 5. wiring
 const src = (f: string) => readFileSync(path.join(process.cwd(), "src", f), "utf8");
 const page = src("app/products/[slug]/page.tsx");
@@ -129,6 +144,7 @@ check("product page: published + pilot render through the overlay", page.include
 check("stock routes mark stale pages", src("app/api/stock/route.ts").includes("refreshStalePages()") && src("app/api/stock/[slug]/route.ts").includes("refreshStalePages({ slug })") && src("app/wp-json/[[...path]]/route.ts").includes("refreshStalePages({ force: true })"));
 check("the buy slot asks on LINE for ask", src("components/commerce/ProductBuyAction.tsx").includes("askStock ? dict.productActions.askStockCta") && src("components/product/ProductHero.tsx").includes("askStock={stockAsk}") && src("components/catalog-bridge/PilotProductDetail.tsx").includes("askStock={askStock}"));
 check("phone tiles: ask is its own pill, not counted as ready to ship", src("components/product/PhoneOptionTiles.tsx").includes("options.filter((o) => !o.out && !o.ask)") && ["components/product/FlavorVariantGrid.tsx", "components/product/ColorVariantRail.tsx", "components/catalog-bridge/ProductMasterVariantPicker.tsx"].every((f) => src(f).includes("ask: !!v.stockAsk")));
+check("published desktop still: no sold-out badge on an ask option", src("components/catalog-bridge/PilotProductDetail.tsx").includes("{!available && !askStock && soldOutBadge}"));
 const staff = src("app/staff/shipnity/page.tsx");
 check("staff page: names the codes with no number, drops the owner-closed guess", staff.includes("<StockRows rows={cmp.missing} />") && !staff.includes("อาจเป็นรายการที่พี่ปิดขายไว้"));
 
