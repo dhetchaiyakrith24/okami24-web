@@ -51,6 +51,7 @@ export function DesktopOptionTiles({
   const pickedIndex = options.findIndex((o) => o.id === selectedId);
   const isOpen = open || pickedIndex >= PER_ROW.lg * ROWS_SHOWN;
   const n = options.length;
+  const showAll = n > PER_ROW.lg * ROWS_SHOWN && pickedIndex < PER_ROW.lg * ROWS_SHOWN;
   // The "show all" button only where something is hidden at that width.
   const buttonClass = cn(
     n <= PER_ROW.lg * ROWS_SHOWN && "hidden",
@@ -71,8 +72,10 @@ export function DesktopOptionTiles({
           {t.optionStockCount.replace("{in}", String(inCount)).replace("{n}", String(n))}
         </span>
       </div>
-      {pills.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+      {/* "Show all" sits in the pill row (or alone when there are no pills), not under the grid: a row of its own pushed the
+          buy button 10px below a 1440×900 screen's fold (measured 12/11 on Caliburn G3 Pro). */}
+      {(pills.length > 0 || showAll) && (
+        <div className="flex flex-wrap items-center gap-2">
           {pills.map((p) => (
             <button
               key={p.label}
@@ -87,6 +90,19 @@ export function DesktopOptionTiles({
               {p.label}
             </button>
           ))}
+          {showAll && (
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={isOpen}
+            className={cn(
+              "ml-auto h-8 rounded-full border border-surface-border px-4 text-xs font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground",
+              buttonClass
+            )}
+          >
+            {isOpen ? t.optionShowLess : t.optionShowAll.replace("{n}", String(n))}
+          </button>
+          )}
         </div>
       )}
       <div
@@ -142,19 +158,6 @@ export function DesktopOptionTiles({
           );
         })}
       </div>
-      {n > PER_ROW.lg * ROWS_SHOWN && pickedIndex < PER_ROW.lg * ROWS_SHOWN && (
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={isOpen}
-          className={cn(
-            "h-9 self-start rounded-full border border-surface-border px-4 text-xs font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground",
-            buttonClass
-          )}
-        >
-          {isOpen ? t.optionShowLess : t.optionShowAll.replace("{n}", String(n))}
-        </button>
-      )}
     </div>
   );
 }
