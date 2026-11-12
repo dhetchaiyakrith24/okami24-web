@@ -11,6 +11,7 @@ import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
 import { TeamShortcut } from "@/components/layout/TeamShortcut";
 import { CardCut } from "@/components/brand/CardCut";
+import { ZoomNav } from "@/components/visual/ZoomNav";
 import { navCategories } from "@/lib/category-visibility";
 import { navBrands } from "@/lib/brand-visibility";
 import { DNS_GUIDE_ID } from "@/data/guides";
@@ -137,6 +138,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ImageSaveGuard />
           {/* Samurai theme (owner 29/10): the short red cut across a product card's photo on click. Renders nothing. */}
           <CardCut />
+          {/* The Zoom (owner ก10): a tapped card zooms into the product page — only on a device previewing it (?preview=zoom). Renders nothing. */}
+          <ZoomNav />
           {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
           <TeamShortcut />
           {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}

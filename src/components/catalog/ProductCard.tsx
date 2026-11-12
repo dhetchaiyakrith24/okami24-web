@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
-import { ZoomShared } from "@/components/visual/ZoomShared";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
@@ -63,12 +62,9 @@ export function ProductCard({ product, taglineTh }: { product: Product; taglineT
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3 max-lg:right-2 max-lg:top-2" />
         <CardSoldOutBadge slug={product.slug} builtSoldOut={soldOut} />
-        {/* ก10 "Zoom" prototype: this photo morphs into the product page's hero (ZoomShared — prototype slugs, ?preview=zoom only). */}
-        <ZoomShared slug={product.slug}>
-          <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-            <ProductMedia product={product} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
-          </div>
-        </ZoomShared>
+        <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+          <ProductMedia product={product} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">

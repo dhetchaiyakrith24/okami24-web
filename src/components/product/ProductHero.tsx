@@ -40,7 +40,7 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
-import { ZoomShared, ZOOM_PROTO_SLUGS, useZoomPreview } from "@/components/visual/ZoomShared";
+import { useZoomPreview } from "@/components/visual/ZoomNav";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -363,7 +363,9 @@ export function ProductHero({
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
   // The Zoom shelf: only on a device previewing the Zoom (owner 12/11 preview links) — customers get today's box.
   const zoomPreview = useZoomPreview();
-  const zoomProto = zoomPreview && ZOOM_PROTO_SLUGS.has(product.slug);
+  // A device on a stage of its own (a lineup, or a studio photo with its own floor) gets neither the floor shadow below nor the shelf.
+  const ownStage = (showAllColors && !!product.lineupImage) || !!(heroOverrideImage && "ownFloor" in heroOverrideImage && heroOverrideImage.ownFloor);
+  const zoomShelf = zoomPreview && !ownStage;
 
   return (
     <>
@@ -537,10 +539,9 @@ export function ProductHero({
             gallery, which is absolutely positioned over the same square. One FavoriteButton in its
             original DOM slot serves both — a second copy for the phone view was found (2026-09-08)
             to perturb the desktop render of the heart's backdrop blur by ±2/255. */}
-        {/* ก10 "Zoom" prototype: the card photo the visitor tapped morphs into this box (ZoomShared — prototype slugs, ?preview=zoom only). */}
-        <ZoomShared slug={product.slug}>
-        <div className="relative order-1 mx-auto aspect-square w-full max-w-lg max-lg:order-3 max-lg:max-w-none lg:order-2 lg:max-w-none">
-          {zoomProto && (
+        {/* data-zoom-hero: the box the tapped card photo lands in (the Zoom, src/lib/zoom-nav.ts — ?preview=zoom only). */}
+        <div data-zoom-hero="" className="relative order-1 mx-auto aspect-square w-full max-w-lg max-lg:order-3 max-lg:max-w-none lg:order-2 lg:max-w-none">
+          {zoomShelf && (
             // The lit shelf of the owner's reference reel: one ember line the device stands on + its warm spill, drawn
             // in from the centre after the zoom lands (globals.css "okami-zoom-plinth"; still when motion is off).
             // At least 34 px up: the phone slide dots sit 18–26 px above the box bottom, and 7% alone (≈24 px at 390) put the line on them.
@@ -572,7 +573,7 @@ export function ProductHero({
           </div>
           {/* The floor shadow under a single device; a lineup carries its own stage floor, and this one sat as a second
               floor under its names (designer 2026-09-30); a colour photo marked `ownFloor` carries its own studio shadow. */}
-          {!(showAllColors && product.lineupImage) && !(heroOverrideImage && "ownFloor" in heroOverrideImage && heroOverrideImage.ownFloor) && (
+          {!ownStage && (
             <div
               className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70 max-lg:hidden"
               style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
@@ -597,7 +598,6 @@ export function ProductHero({
             )}
           </div>
         </div>
-        </ZoomShared>
       </Container>
     </section>
     {sellingPrice !== null && (

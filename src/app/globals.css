@@ -233,20 +233,12 @@ img {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* ก10 "Zoom" prototype (src/components/visual/ZoomShared.tsx): the card photo → product hero morph. A slow-out curve
-   so the "camera" lands softly; a touch of blur mid-flight hides the pixel stretch between the two sizes (the Next
-   view-transitions guide). Then the lit shelf draws in from the centre under the device.
-   PREVIEW ONLY: every rule is scoped to html[data-preview="zoom"|"cards-zoom"] (ZOOM_PREVIEW_WORDS in ZoomShared.tsx —
-   keep in step); the view-transition pseudo-elements hang off <html>, hence no space before "::". */
-html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(.okami-zoom) {
-  animation-duration: 560ms;
-  animation-timing-function: cubic-bezier(0.22, 0.8, 0.2, 1);
-}
-html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(.okami-zoom) {
-  animation-name: okami-zoom-blur;
-}
-@keyframes okami-zoom-blur {
-  35% { filter: blur(2px); }
+/* ก10 "Zoom" (src/lib/zoom-nav.ts, owner ruling 13/11): a tapped card photo flies into the product hero. While it lands,
+   the hero photo underneath stays hidden so the two never show at once; then the lit shelf draws in from the centre under
+   the device. PREVIEW ONLY: the shelf is rendered only on a device previewing the Zoom (ZoomNav.tsx), and the engine sets
+   data-zoom-landing only there. Motion off = the engine never runs and the shelf simply sits there. */
+html[data-zoom-landing] [data-zoom-hero] img {
+  opacity: 0 !important;
 }
 .okami-zoom-plinth {
   transform-origin: 50% 100%;
@@ -257,14 +249,6 @@ html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-ima
   to { opacity: 1; transform: scaleX(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  /* Motion off = no morph at all (the global rule below only shortens animations; view-transition pseudo-elements
-     are named here outright) and the shelf simply sits there. */
-  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-group(*),
-  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-image-pair(*),
-  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-old(*),
-  html:is([data-preview="zoom"], [data-preview="cards-zoom"])::view-transition-new(*) {
-    animation: none !important;
-  }
   .okami-zoom-plinth { animation: none; }
 }
 /* The add-to-cart dot (FloatingCart): fixed, flies by WAAPI; never catches a tap. */
