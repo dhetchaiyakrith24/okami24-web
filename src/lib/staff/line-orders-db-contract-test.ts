@@ -82,7 +82,12 @@ async function main(): Promise<void> {
 
     // 2. A loose slip of the exact total confirms the order at once.
     const total = aRow!.total;
-    const at = new Date(Date.now() - 3_600_000).toISOString();
+    // An hour ago, but never before today's Bangkok midnight: step 5 reads salesDays()[0] = today in Bangkok, so between
+    // 00:00 and 01:00 an hour-ago slip fell on yesterday and the two "loose LINE slip" checks failed (13/11 00:18, any
+    // branch). Never in the future either — the slip stays something already transferred.
+    const { bangkokDate } = await load("src/lib/staff/daily-sales-rules.ts");
+    const todayStart = Date.parse(`${bangkokDate(new Date().toISOString())}T00:00:00+07:00`);
+    const at = new Date(Math.max(Date.now() - 3_600_000, todayStart)).toISOString();
     db.prepare("INSERT INTO slip_checks (trans_ref, amount_satang, transferred_at, receiver_status, first_checked_at, last_checked_at) VALUES (?,?,?,?,?,?)").run("T-OK", total * 100, at, "match", at, at);
     // Same phone, same total, minutes later = looks like the same order keyed twice (LINE gap #2): refused until ticked.
     const twin = createLineOrder({ ...base, customerPhone: "0811111111", recipientPhone: "0811111111", slipRef: "T-OK" });
