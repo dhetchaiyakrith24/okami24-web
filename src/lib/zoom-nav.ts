@@ -22,7 +22,7 @@ type Box = { x: number; y: number; w: number; h: number };
 
 /** Pages where cards never zoom (the same quiet pages as the card tap effect, CardCut.tsx). */
 const QUIET = /^\/(cart|checkout|staff|orders)(\/|$)/;
-const PUSH_MS = 380;
+const PUSH_MS = 460;
 const LAND_MS = 560;
 /** Longest wait for the product page before giving up and simply letting it show. */
 const WAIT_MS = 8000;
@@ -58,16 +58,17 @@ function fit(aspect: number, box: Box): Box {
   return { x: box.x + (box.w - w) / 2, y: box.y + (box.h - h) / 2, w, h };
 }
 
-/** Where the product page will most likely show its photo box: last measured on this width, else the usual spot. */
+/** Where the product page will most likely show its photo: where the last one landed on this width, else the usual spot. */
 function guessHero(): Box {
   const vw = window.innerWidth;
   try {
     const hit = JSON.parse(sessionStorage.getItem(HERO_CACHE) ?? "null") as (Box & { vw: number }) | null;
     if (hit && hit.vw === vw) return hit;
   } catch {}
-  if (vw < 1024) return { x: 16, y: 130, w: vw - 32, h: vw - 32 };
-  const side = Math.min(560, vw * 0.4);
-  return { x: vw / 2 + Math.max(0, (Math.min(vw, 1280) / 2 - side) / 2), y: 150, w: side, h: side };
+  // Measured on the product page (Caliburn G5 landing, 13/11): phone 390 → photo area from y 178, 0.76 × width tall;
+  // desktop 1440 → right half, y 288, 516 tall. A wrong guess only means a longer glide in move 2.
+  if (vw < 1024) return { x: 16, y: 178, w: vw - 32, h: vw * 0.76 };
+  return { x: vw * 0.485, y: 288, w: vw * 0.468, h: Math.min(516, vw * 0.36) };
 }
 
 /** The product page's hero photo box + the picture with the most area showing inside it. */
@@ -93,25 +94,33 @@ function toward(from: Box, to: Box): string {
   return `translate(${to.x - from.x}px, ${to.y - from.y}px) scale(${to.w / from.w}, ${to.h / from.h})`;
 }
 
-/** A still copy of the page body (`<main>`) laid exactly over it, under the header — the wall the camera pushes into. */
-function stillWall(main: HTMLElement): HTMLElement {
-  const r = main.getBoundingClientRect();
-  const wall = main.cloneNode(true) as HTMLElement;
-  wall.setAttribute("aria-hidden", "true");
-  wall.setAttribute("inert", "");
-  wall.removeAttribute("id");
-  for (const el of wall.querySelectorAll("[id], [data-zoom-hero]")) {
+/**
+ * A still copy of the page body (`<main>`), clipped to the screen and laid exactly over the page under the header — the wall
+ * the camera pushes into. Product cards off screen are copied as empty boxes of the same size (`offscreen`, measured
+ * before anything moved), so copying a long grid costs little more than the screenful the visitor sees.
+ */
+function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect>): HTMLElement {
+  const copy = main.cloneNode(true) as HTMLElement;
+  copy.removeAttribute("id");
+  for (const el of copy.querySelectorAll("[id], [data-zoom-hero]")) {
     el.removeAttribute("id");
     el.removeAttribute("data-zoom-hero");
   }
+  copy.querySelectorAll<HTMLElement>("a[data-card-cut]").forEach((card, i) => {
+    const box = offscreen.get(i);
+    if (box) Object.assign(card.style, { contentVisibility: "hidden", containIntrinsicSize: `${box.width}px ${box.height}px` });
+  });
+  Object.assign(copy.style, { position: "absolute", left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, margin: "0" });
+  const wall = document.createElement("div");
+  wall.setAttribute("aria-hidden", "true");
+  wall.setAttribute("inert", "");
   Object.assign(wall.style, {
-    position: "fixed", left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, height: `${r.height}px`, margin: "0",
-    zIndex: "49", pointerEvents: "none", background: "var(--surface-0, #100e0d)", willChange: "transform",
+    position: "fixed", inset: "0", overflow: "hidden", zIndex: "49", pointerEvents: "none",
+    background: "var(--surface-0, #100e0d)", willChange: "transform",
   } satisfies Partial<CSSStyleDeclaration>);
+  wall.append(copy);
   return wall;
 }
-
-const easeOut = (t: number) => 1 - Math.pow(1 - t, 3.2);
 
 function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   busy = true;
@@ -154,31 +163,41 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
     flier.append(sharp);
   }
 
-  const wall = main ? stillWall(main) : null;
-  if (wall) {
-    const photo = wall.querySelector<HTMLElement>(`a[href="${CSS.escape(href)}"] [data-card-photo] img`);
-    // Only the copy's photo hides: the real card under it stays as it was (the page leaves anyway).
-    if (photo) photo.style.opacity = "0";
-    wall.style.transformOrigin = `${start.x + start.w / 2 - parseFloat(wall.style.left)}px ${start.y + start.h / 2 - parseFloat(wall.style.top)}px`;
-    document.body.append(wall);
-  }
   document.body.append(veil, flier);
-  // The hero photo of the page we are going to stays hidden until the flying copy is on it (globals.css "okami-zoom").
-  root.dataset.zoomLanding = "1";
-  // The real page changes route now, under the still wall.
-  router.push(href, { scroll: true });
+  // The lit shelf of the page we are going to waits until the photo starts landing, so it lights up under it (globals.css "okami-zoom").
+  root.dataset.zoomDark = "1";
+  cardImg.style.opacity = "0";
 
-  // ── Move 1: push in ──
+  // ── Move 1: push in ── started first and kept cheap, so the tap answers on the very next frame. Every part is a
+  // transform or an opacity, which the browser animates off the main thread: it keeps moving while the page is busy below.
   const ease = "cubic-bezier(0.32, 0, 0.18, 1)";
   const pushing = [
     flier.animate([{ transform: "none" }, { transform: toward(start, mid) }], { duration: PUSH_MS, easing: ease, fill: "forwards" }),
     // The dark comes late (ease-in): the wall is seen moving in first, then fades behind the product.
     veil.animate([{ opacity: 0 }, { opacity: 1 }], { duration: PUSH_MS, easing: "cubic-bezier(0.6, 0, 0.9, 0.6)", fill: "forwards" }),
   ];
-  if (wall) pushing.push(wall.animate([{ transform: "none" }, { transform: `scale(${PUSH_SCALE})` }], { duration: PUSH_MS, easing: ease, fill: "forwards" }));
+  const mainBox = main?.getBoundingClientRect();
+  const cx = start.x + start.w / 2;
+  const cy = start.y + start.h / 2;
+  // Cards well off screen (measured now, before anything moves): the wall copy leaves them as empty boxes.
+  const offscreen = new Map<number, DOMRect>();
+  main?.querySelectorAll("a[data-card-cut]").forEach((card, i) => {
+    const b = card.getBoundingClientRect();
+    if (b.bottom < -200 || b.top > window.innerHeight + 200 || b.right < -200 || b.left > window.innerWidth + 200) offscreen.set(i, b);
+  });
+  const camera = (el: HTMLElement, origin: string) => {
+    el.style.transformOrigin = origin;
+    return el.animate([{ transform: "none" }, { transform: `scale(${PUSH_SCALE})` }], { duration: PUSH_MS, easing: ease, fill: "forwards" });
+  };
+  const moving = main && mainBox ? camera(main, `${cx - mainBox.left}px ${cy - mainBox.top}px`) : null;
+  let wall: HTMLElement | null = null;
 
   const finish = () => {
     delete root.dataset.zoomLanding;
+    delete root.dataset.zoomDark;
+    moving?.cancel();
+    if (main) Object.assign(main.style, { transformOrigin: "", visibility: "" });
+    cardImg.style.opacity = "";
     wall?.remove();
     veil.remove();
     flier.remove();
@@ -188,8 +207,30 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   void (async () => {
     try {
       const t0 = performance.now();
+      // Once the motion is on screen: lay a still copy of the wall over the page (same motion, same clock) and change
+      // route under it. Copying a long page can hold the main thread for a moment; the motion above does not need it.
+      await raf();
+      if (main && mainBox && moving) {
+        await moving.ready;
+        wall = stillWall(main, mainBox, offscreen);
+        document.body.append(wall);
+        const copy = camera(wall, `${cx}px ${cy}px`);
+        copy.startTime = moving.startTime;
+        pushing.push(copy);
+        // The real page is now under the copy: stop moving it and stop painting it while the next page renders there.
+        moving.cancel();
+        main.style.visibility = "hidden";
+      }
+      // The hero photo of the page we are going to stays hidden until the flying copy is on it (globals.css "okami-zoom") —
+      // set only now, under the copy, so a product page we are leaving never blinks its own photo.
+      root.dataset.zoomLanding = "1";
+      router.push(href, { scroll: true });
+
       await Promise.all(pushing.map((a) => a.finished));
-      wall?.remove(); // fully dark now
+      // Fully dark now: the wall copy goes and the real page (by now usually the product page) comes back unseen.
+      wall?.remove();
+      moving?.cancel();
+      if (main) Object.assign(main.style, { transformOrigin: "", visibility: "" });
 
       // Usually the product page is already there; if not, the photo breathes in a touch while it comes.
       let found = location.pathname === path ? heroPhoto() : null;
@@ -215,26 +256,34 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       veil.style.opacity = "1";
       if (!found) throw new Error("no hero");
       let hit: { img: HTMLImageElement; hero: HTMLElement } = found;
-      await raf(); // let the new page take its scroll position
-
-      // ── Move 2: land ── the photo follows the hero photo frame by frame while the dark lifts off the page.
-      const from = boxOf(flier.getBoundingClientRect());
-      const lift = veil.animate([{ opacity: 1 }, { opacity: 0 }], { duration: LAND_MS - 60, delay: 60, easing: "cubic-bezier(0.3, 0, 0.2, 1)", fill: "both" });
-      const l0 = performance.now();
-      let to = from;
-      for (;;) {
-        const t = Math.min(1, (performance.now() - l0) / LAND_MS);
-        const e = easeOut(t);
-        hit = heroPhoto() ?? hit;
-        to = fit(aspect, drawn(hit.img));
-        place(flier, { x: from.x + (to.x - from.x) * e, y: from.y + (to.y - from.y) * e, w: from.w + (to.w - from.w) * e, h: from.h + (to.h - from.h) * e });
-        if (t >= 1) break;
+      // Let the new page take its scroll position and settle (the hero photo still for two frames, at most ~10).
+      const target = () => fit(aspect, drawn((hit = heroPhoto() ?? hit).img));
+      let to = target();
+      for (let i = 0, still = 0; i < 10 && still < 2; i++) {
         await raf();
+        const next = target();
+        still = Math.abs(next.x - to.x) + Math.abs(next.y - to.y) + Math.abs(next.w - to.w) < 1 ? still + 1 : 0;
+        to = next;
+      }
+
+      // ── Move 2: land ── onto the hero photo while the dark lifts off the page. A transform again, so it glides even if
+      // the new page is still busy; if the page moved meanwhile, a short second glide puts it right.
+      const from = boxOf(flier.getBoundingClientRect());
+      delete root.dataset.zoomDark;
+      const lift = veil.animate([{ opacity: 1 }, { opacity: 0 }], { duration: LAND_MS - 60, delay: 60, easing: "cubic-bezier(0.3, 0, 0.2, 1)", fill: "both" });
+      await flier.animate([{ transform: "none" }, { transform: toward(from, to) }], { duration: LAND_MS, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", fill: "forwards" }).finished;
+      for (const a of flier.getAnimations()) a.cancel();
+      place(flier, to);
+      const now = target();
+      if (Math.abs(now.x - to.x) + Math.abs(now.y - to.y) + Math.abs(now.w - to.w) > 1.5) {
+        await flier.animate([{ transform: "none" }, { transform: toward(to, now) }], { duration: 200, easing: "ease-out", fill: "forwards" }).finished;
+        for (const a of flier.getAnimations()) a.cancel();
+        place(flier, now);
+        to = now;
       }
       await lift.finished;
       try {
-        const box = boxOf(hit.hero.getBoundingClientRect());
-        sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...box, vw: window.innerWidth }));
+        sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...to, vw: window.innerWidth }));
       } catch {}
 
       // Hand over to the page's own photo (wait for it if it is still loading), then let the copy go.
