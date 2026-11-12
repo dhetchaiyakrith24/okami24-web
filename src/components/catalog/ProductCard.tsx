@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
+import { ZoomShared } from "@/components/visual/ZoomShared";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
@@ -62,9 +63,12 @@ export function ProductCard({ product, taglineTh }: { product: Product; taglineT
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3 max-lg:right-2 max-lg:top-2" />
         <CardSoldOutBadge slug={product.slug} builtSoldOut={soldOut} />
-        <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-          <ProductMedia product={product} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
-        </div>
+        {/* ก10 "Zoom" prototype: this photo morphs into the product page's hero (ZoomShared — prototype slugs, ?preview=zoom only). */}
+        <ZoomShared slug={product.slug}>
+          <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
+            <ProductMedia product={product} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
+          </div>
+        </ZoomShared>
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
@@ -92,13 +96,15 @@ export function ProductCard({ product, taglineTh }: { product: Product; taglineT
             no approved price then leaves its gap at the bottom edge instead of mid-card. Both lines
             keep their height when empty so every card in a row still ends at the same edge.
             Desktop (round search-price batch 2): the same price line, 18 px, between the two-line
-            tagline floor and the spec row, so prices align across a row. */}
-        <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="legacy">
+            tagline floor and the spec row, so prices align across a row.
+            Owner 12/11 ("ตัวเลขที่ทำให้ตัดสินใจซื้อ อ่านง่ายขึ้น"; designer 12/11): the phone spec line is 13 px muted, not 10 px dim, and
+            wraps to two lines instead of cutting "35 วั…" — two lines are always reserved so prices stay level across a row. */}
+        <p className="hidden min-h-[2.5rem] overflow-hidden text-[0.8125rem] leading-[1.25rem] text-foreground-muted [-webkit-box-orient:vertical] [-webkit-line-clamp:2] max-lg:[display:-webkit-box]" data-card-spec-phone="legacy">
           <CardHeadlineSpec specs={headline} compact />
         </p>
         {/* + the struck-through label price and "−N%" on approved products (owner 03/11, SaleLabel.tsx) — same line, same height. */}
         <CardPrice slug={product.slug} price={sellingPrice} soldOut={soldOut} />
-        <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="legacy">
+        <div className="mt-auto flex min-h-5 flex-wrap items-center gap-x-3 gap-y-0.5 pt-3 text-[0.8125rem] leading-5 text-foreground-muted max-lg:hidden" data-card-spec="legacy">
           <CardHeadlineSpec specs={headline} />
         </div>
       </div>

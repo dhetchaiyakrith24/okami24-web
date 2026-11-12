@@ -61,7 +61,7 @@ export function AddressEdit({
       </label>
       <label className={FIELD}>
         เบอร์ผู้รับ
-        <input name="phone" value={f.phone} onChange={set("phone")} inputMode="tel" autoComplete="off" required className={INPUT} />
+        <input name="phone" value={f.phone} onChange={set("phone")} inputMode="tel" maxLength={12} autoComplete="off" required className={INPUT} />
       </label>
       <label className={FIELD}>
         บ้านเลขที่ หมู่ ซอย ถนน

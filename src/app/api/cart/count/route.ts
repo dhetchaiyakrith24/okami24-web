@@ -16,8 +16,9 @@ const boot = globalThis as typeof globalThis & { __okami24CopyRefreshed?: boolea
 export async function GET() {
   const open = orderingOpen();
   // T2-04: `next build` reads the switches as open, and pages re-rendered before a restart may be kept on disk with the switch
-  // as it was then — so the first visit after a boot (every page asks here after load) marks every page stale, whichever way
-  // the switch stands now. Once per process; pages re-render on their next visit.
+  // as it was then — so the first call after a boot marks every page stale, whichever way the switch stands now. The server
+  // makes that call itself as soon as it answers (src/lib/commerce/boot-refresh.ts); every page also asks here after load.
+  // Once per process; pages re-render on their next visit.
   if (ORDERING_ENABLED && !boot.__okami24CopyRefreshed) {
     boot.__okami24CopyRefreshed = true;
     try {

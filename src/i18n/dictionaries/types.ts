@@ -224,7 +224,9 @@ export interface Dictionary {
   product: {
     colorLabel: string;
     flavorLabel: string;
-    allVariantsLabel: string;
+    /** The first chip of the colour / flavour picker = the maker's picture of every option together (owner 12/11). */
+    allColorsLabel: string;
+    allFlavorsLabel: string;
     lineupGroupLabel: string;
     lineupGroupFallback: string;
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */
@@ -889,6 +891,8 @@ export interface Dictionary {
     nextShippedNoTracking: string;
     nextCompleted: string;
     nextCancelled: string;
+    /** A special price staff gave (owner 12/11) — the line between shipping and the total on the order page. */
+    discountLabel: string;
     /** T2-11: the reason line when the warehouse cancelled the order in Shipnity and the site cancelled it (owner 11/11). */
     cancelReasonWarehouse: string;
     /** T2-19: how the money comes back, under the reason of a cancelled order (BSOT §9, owner exception 10/11). The shop

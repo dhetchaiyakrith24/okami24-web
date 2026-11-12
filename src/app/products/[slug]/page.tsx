@@ -94,7 +94,9 @@ import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibili
 import { similarInStock } from "@/lib/similar-in-stock";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { DisposablesCrumb } from "@/components/catalog/DisposablesLinks";
+import { CategoryCrumbText } from "@/components/catalog/CategoryCrumbText";
+import { categoryCrumbTh, ROOT_CRUMB } from "@/i18n/category-crumbs";
+import { categoryPageLabelTh, categoryPageLedeTh } from "@/i18n/category-head-th";
 import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -142,14 +144,12 @@ function legacyOwnFloorSrcs(product: Product): (string | undefined)[] {
   return [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].map((v) => (v.image?.ownFloor ? v.image.src : undefined));
 }
 
-/** Round "disposable pod" block 2 (05/11): the disposable pages' crumb and BreadcrumbList say the term the category owns
- *  (Thai, as the page's other schema does); other categories keep their name. The visible crumb follows the language. */
-function categoryCrumbName(categoryId: string, fallback: string): string {
-  return categoryId === "disposables" ? getDictionary("th").product.disposablesCrumb : fallback;
-}
-
+/** Breadcrumb (owner 12/11, src/i18n/category-crumbs.ts): หน้าแรก / the Thai category name / the model name (English). The
+ *  Thai words are the BreadcrumbList names; the visible root and category crumbs follow the visitor's language. */
 function localisedCategoryCrumb<T extends { name: string; path: string }>(trail: T[], categoryId: string): (Omit<T, "name"> & { name: ReactNode })[] {
-  return trail.map((t, i) => (i === 1 && categoryId === "disposables" ? { ...t, name: <DisposablesCrumb /> } : t));
+  return trail.map((t, i) =>
+    i === 0 ? { ...t, name: <CategoryCrumbText id="root" fallback={t.name} /> } : i === 1 ? { ...t, name: <CategoryCrumbText id={categoryId} fallback={t.name} /> } : t,
+  );
 }
 
 export function generateStaticParams() {
@@ -176,7 +176,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
   // Round 7 "SEO ค" B2: the <title> gains " ของแท้ บอกราคาทุกรุ่น" after the locked label (categoryTitleTh);
   // the lede/description and the H1 are unchanged.
-  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
+  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: categoryPageLedeTh(category), ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {
@@ -261,10 +261,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
             CollectionPage + the Home → Category trail. No visible change. */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath, items: listItems })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: categoryPageLabelTh(category), description: categoryPageLedeTh(category), path: categoryPath, items: listItems })) }} />
         {guideFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(guideFaqJsonLd) }} />}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
-        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(categoryPageLabelTh(category), categoryPath)) }} />
+        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${categoryPageLabelTh(category)}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {lineup && guideCopy && <DisposableChooserJump copy={{ th: guideCopy.th?.chooser, en: guideCopy.en?.chooser, zh: guideCopy.zh?.chooser }} />}
@@ -329,8 +329,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       const publishedBrandHref = publishedBrand ? `/brands/${publishedBrand.slug}` : undefined;
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
-        { name: "Home", path: "/" },
-        { name: categoryCrumbName(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
+        { name: ROOT_CRUMB.th, path: "/" },
+        { name: categoryCrumbTh(publishedProduct.categoryId, publishedProduct.categoryName), path: `/products/${publishedProduct.categoryId}` },
         { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
       ];
       // List-new 30/10: a warehouse-listed product with an article (product-articles.ts) gets the "more details" and FAQ
@@ -409,8 +409,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     ? null
     : articleFaqJsonLd(product.faqs.map((f) => ({ question: copyTh?.faqs?.[f.id]?.question ?? f.question, answer: copyTh?.faqs?.[f.id]?.answer ?? f.answer })));
   const legacyTrail = [
-    { name: "Home", path: "/" },
-    { name: categoryCrumbName(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
+    { name: ROOT_CRUMB.th, path: "/" },
+    { name: categoryCrumbTh(product.categoryId, categoryNameOf(product.categoryId)), path: `/products/${product.categoryId}` },
     { name: product.displayName, path: `/products/${product.slug}` },
   ];
 
