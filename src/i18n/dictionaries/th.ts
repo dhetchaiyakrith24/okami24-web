@@ -98,7 +98,8 @@ export const th: Dictionary = {
     fxOff: "ปิดแสง",
     fxOn: "เปิดแสง",
     types: {
-      "pod-systems": { label: "พอตซิสเต็ม", desc: "เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้" },
+      // 13/11 (checker #1432): the type section's tab/H2 names the category like its page, menu and table — "พอตไฟฟ้า" (owner 12/11 SEO pick).
+      "pod-systems": { label: "พอตไฟฟ้า", desc: "เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้" },
       "switch-pods": { label: "พอตเปลี่ยนหัว", desc: "ตัวเครื่องใช้ต่อได้ น้ำยาหมดก็เปลี่ยนแค่หัวพอต" },
       "disposables": { label: "พอตใช้แล้วทิ้ง", desc: "แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา" },
       "heated-tobacco-devices": { label: "IQOS TEREA", desc: "TEREA ให้ฟีลสูบคล้ายบุหรี่มวน" },
