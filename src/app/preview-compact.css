@@ -54,13 +54,11 @@
     font-size: 11px;
     line-height: 13px;
   }
-  /* Cards inside a wrapper (home rails, related, similar-in-stock) stretch to the row so the price foot lines up too. */
-  html[data-preview$="compact"] div:has(> a[data-card-cut]:only-child) {
-    display: flex;
-    flex-direction: column;
-  }
+  /* Cards inside a wrapper (home rails, related, similar-in-stock) fill the wrapper, which the grid already stretches to
+     the row — so the price foot lines up there too. No display on the wrapper: the home rails hide cards 7+ on phones by
+     the wrapper's own display:none (first proof 13/11: a display:flex here showed 8 cards instead of 6). */
   html[data-preview$="compact"] div:has(> a[data-card-cut]:only-child) > a[data-card-cut] {
-    flex: 1 1 auto;
+    height: 100%;
   }
   /* Heart: a 32px circle, still a 44px tap area. */
   html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > button {
