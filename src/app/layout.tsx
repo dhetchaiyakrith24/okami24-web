@@ -22,8 +22,8 @@ import "./globals.css";
 import "./preview-cards.css";
 // Preview "compact" (owner 13/11): four product cards to a phone screen — html[data-preview$="compact"] only.
 import "./preview-compact.css";
-// Preview "guides" (owner 12/11): the home guide cards stack as you scroll — html[data-preview="guides"] only.
-import "./preview-guides.css";
+// The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
+import "./home-guides.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
 
