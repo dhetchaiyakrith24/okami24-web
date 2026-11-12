@@ -381,7 +381,8 @@ export function PilotProductDetail({
         </div>
 
         <div className="relative order-1 aspect-[4/5] w-full max-lg:hidden lg:order-2">
-          {!available && soldOutBadge}
+          {/* An "ask" option is not sold out — the buy slot asks on LINE (bug sweep 12/11: the desktop still kept "สินค้าหมด"). */}
+          {!available && !askStock && soldOutBadge}
           {showNoPhoto && selectedVariant ? (
             <div className="h-full w-full p-8 lg:p-12">
               <NoOptionPhoto name={pilotOptionLabel(selectedVariant.label, locale)} note={noPhotoNote} />
