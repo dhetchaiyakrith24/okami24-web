@@ -2,7 +2,7 @@
  * Run: npx tsx src/lib/commerce/not-me-contract-test.ts
  * T2-06 (owner 10/11): checkout keeps remembering the last buyer on a device (30-day phone session), and a quiet
  * "ไม่ใช่ฉัน / เปลี่ยนเบอร์" button ends that memory for the person standing there. Guards: the action ends the session and
- * goes back to the phone step (nothing else), the button only shows where the remembered buyer shows, the 3 languages have
+ * goes back to the phone step (nothing else), the button only shows where the remembered number shows, the 3 languages have
  * the words, and a revoked session really reads as signed out (the SQL in session.ts, run on a throwaway DB).
  * `server-only` throws under plain tsx (see verify-commerce-db.ts), so the server files are read as text, not imported.
  */
@@ -47,7 +47,8 @@ for (const f of fs.readdirSync(path.resolve("src/lib/db/migrations")).filter((f)
   db.exec(fs.readFileSync(path.resolve("src/lib/db/migrations", f), "utf8"));
 }
 const updateSql = /prepare\("(UPDATE sessions SET revoked_at[^"]*)"\)/.exec(destroy)?.[1] ?? "";
-const selectSql = /prepare\(\s*`(SELECT s\.customer_id[\s\S]*?)`/.exec(session)?.[1] ?? "";
+// getSession's read (its column list grew with T2-03's sessionId, so match the statement by its FROM, not its columns).
+const selectSql = /prepare\(\s*`(SELECT [^`]*?FROM sessions s JOIN customers[^`]*)`/.exec(session)?.[1] ?? "";
 check("the two statements were found", updateSql !== "" && selectSql !== "");
 const customerId = Number(db.prepare("INSERT INTO customers (phone) VALUES ('0812345678')").run().lastInsertRowid);
 const future = new Date(Date.now() + 86_400_000).toISOString();
@@ -63,15 +64,21 @@ check("after: that session is gone", !live("a"));
 check("another device's session of the same customer stays", live("b"));
 check("the customer and their history stay", db.prepare("SELECT COUNT(*) AS n FROM customers WHERE id = ?").get(customerId) !== undefined);
 
-// 4. The button: a form bound to notMeAction, shown only where the remembered buyer shows.
+// 4. The button: posts notMeAction from inside the address form, under the phone field that holds the remembered number,
+//    for a phone-only session only. Since T2-03 a phone-only session lists no saved address and never lands on review?saved=1,
+//    so the phone number is the one thing it remembers; a signed-in member's saved addresses are their own account's.
 const button = read("src/components/commerce/NotMeButton.tsx");
-check("the button posts notMeAction", button.includes("action={notMeAction}") && button.includes('type="submit"'));
+check("the button posts notMeAction", button.includes("formAction={notMeAction}") && button.includes('type="submit"'));
+check("the empty required address fields cannot block it", button.includes("formNoValidate"));
 check("the button cannot post twice while pending", button.includes("disabled={pending}"));
-const review = read("src/components/commerce/ReviewStepView.tsx");
-check("review step: only with the address picked for a returning buyer", /\{savedAddress && <NotMeButton/.test(review) && (review.match(/<NotMeButton/g) ?? []).length === 1);
 const address = read("src/components/commerce/AddressStepView.tsx");
+check("address step: shown once", (address.match(/<NotMeButton/g) ?? []).length === 1);
+check("address step: right under the phone field, phone-only session, not while editing", /defaultValue=\{v\.phone \?\? defaultPhone\}[\s\S]{0,200}?\/>\s*\{\/\*[^*]*\*\/\}\s*\{showNotMe && !editing && <NotMeButton/.test(address));
 const savedBlock = /\{addresses\.length > 0 && \([\s\S]*?\n {12}\)\}/.exec(address)?.[0] ?? "";
-check("address step: inside the saved-addresses list only", savedBlock.includes("<NotMeButton") && (address.match(/<NotMeButton/g) ?? []).length === 1);
+check("address step: not in the members' saved-addresses list", savedBlock !== "" && !savedBlock.includes("NotMeButton"));
+const addressPage = read("src/app/checkout/address/page.tsx");
+check("address page: shown only without a member", /showNotMe=\{member === null\}/.test(addressPage) && addressPage.includes("getMember()"));
+check("review step: no button (only members reach review?saved=1)", !read("src/components/commerce/ReviewStepView.tsx").includes("NotMeButton"));
 
 // 5. Words in all three languages (Thai = the owner's words).
 check("th = the owner's words", getDictionary("th").checkout.notMeCta === "ไม่ใช่ฉัน / เปลี่ยนเบอร์");

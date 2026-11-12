@@ -653,7 +653,7 @@ export interface Dictionary {
     changeAddressCta: string;
     changeSavedAddressCta: string;
     shipToSavedTitle: string;
-    /** Ends this device's remembered phone session (T2-06) — shown where the remembered name/address shows. */
+    /** Ends this device's remembered phone session (T2-06) — shown under the address step's phone field (phone-only session). */
     notMeCta: string;
     addressErrorMissing: string;
     addressErrorPhone: string;

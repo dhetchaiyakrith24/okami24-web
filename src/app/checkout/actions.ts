@@ -132,7 +132,8 @@ export async function selectAddressAction(formData: FormData): Promise<void> {
 
 /**
  * "ไม่ใช่ฉัน / เปลี่ยนเบอร์" (owner 10/11, outside tester T2-06): the phone session is remembered on this device for 30 days, so
- * a shared phone shows the last buyer's name and address. This ends THIS device's phone session only (revoked server-side,
+ * a shared phone carries on as the last buyer (their number in the address step, their customer record for the order; since
+ * T2-03 their saved addresses are no longer listed). This ends THIS device's phone session only (revoked server-side,
  * cookie deleted) and starts checkout again at the phone step. The cart cookie is separate and stays; the member sign-in
  * (okami24_member) is untouched. Not guarded by ordering-mode: leaving must always work (/checkout itself refuses when off).
  */

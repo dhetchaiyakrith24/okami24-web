@@ -10,7 +10,6 @@ import { CUSTOMER_NOTE_MAX } from "@/lib/commerce/customer-note";
 import { LineThumb } from "@/components/commerce/LineThumb";
 import { ShippingNote } from "@/components/commerce/ShippingNote";
 import { CheckoutSteps } from "@/components/commerce/CheckoutSteps";
-import { NotMeButton } from "@/components/commerce/NotMeButton";
 import type { CartView as CartViewData } from "@/lib/commerce/cart";
 import type { AddressRecord } from "@/lib/commerce/addresses";
 
@@ -102,8 +101,6 @@ export function ReviewStepView({
               {savedAddress ? dict.checkout.changeSavedAddressCta : dict.checkout.changeAddressCta}
             </Button>
           </div>
-          {/* A shared phone remembers the last buyer for 30 days (T2-06): the next person can start fresh with their own number. */}
-          {savedAddress && <NotMeButton className="-mt-1" />}
         </div>
 
         <div className="flex flex-col gap-2">
