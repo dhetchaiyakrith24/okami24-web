@@ -1,40 +1,42 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Design tokens — "เตาหลอม" (forge), owner 09/11 (look-0911 direction c + direction b's one-orange rule): warm black,
-   off-white text, one bright orange that only marks what to press or what is selected; an oxblood soft fill bridges the
-   orange to the logo red. Every text token is WCAG AA (4.5:1) on surface-0/1/2. Before 09/11: graphite + #ff6a2c (git).
+   Design tokens — black + the shop orange (owner 13/11 ~04:10, after comparing pre-forge · forge · ?preview=cards side by
+   side: "จัดการต่อได้เลย"; 12/11: "ขอสีส้มพี่คืน ไม่เอาโทนเหลือง … เว็บเราจะดำ ส้ม", "เหลืองมีได้แต่ต้องไม่เด่นจนส้มหาย").
+   Neutral graphite surfaces, off-white text, #ff6a2c leads; yellow stays a minor status accent. Every text token is WCAG AA
+   (4.5:1) on surface-0/1/2. The forge look (warm black + #f08a2a, owner 09/11) and the preview file it came from: git.
    ========================================================================== */
 :root {
-  /* Surfaces: warm near-black steps, never pure black (card vs page 1.12:1, card border 1.63:1 — was 1.09 / 1.45) */
-  --surface-0: #100e0d; /* page background */
-  --surface-1: #1e1a18; /* section / card background */
-  --surface-2: #27221f; /* elevated card */
-  --surface-3: #2f2a26; /* hover / active */
-  --surface-border: #463d37;
-  --surface-border-soft: #302a26;
+  /* Surfaces: neutral graphite steps, never pure black */
+  --surface-0: #0e0e10; /* page background */
+  --surface-1: #17181b; /* section / card background */
+  --surface-2: #1f2024; /* elevated card */
+  --surface-3: #2a2b30; /* hover / active */
+  --surface-border: #34353c;
+  --surface-border-soft: #26272c;
 
   /* Foreground */
-  --foreground: #f2efe9;
-  --foreground-muted: #bdb5ab;
-  /* #78777c until 04/11: 3.99:1 on surface-1, under WCAG 4.5:1 for small text (Lighthouse color-contrast). Owner "ปรับเล็กน้อย":
-     the gentlest same-hue step that reads 4.5:1 on surface-0/1/2. Forge 09/11: warm step, 6.16 / 5.52 / 5.03. */
-  --foreground-dim: #9a9087;
+  --foreground: #f3f1ec;
+  --foreground-muted: #b1afb2;
+  /* #78777c until 04/11: 3.99:1 on surface-1, under WCAG 4.5:1 for small text (Lighthouse color-contrast). Graphite step:
+     5.34 / 4.91 / 4.51 on surface-0/1/2. */
+  --foreground-dim: #87868b;
 
   /* Accents */
-  /* Ember = the one orange: buttons, the selected state, focus (button text #181008 on it 7.50:1; on surface-0 7.68:1).
-     -soft = oxblood, the bridge to the logo red (orange on it 6.27:1). */
-  --accent-ember: #f08a2a;
-  --accent-ember-strong: #ffa24d;
+  /* Ember = the shop orange: buttons, the selected state, focus, and orange text again (button text #181008 on it 6.58:1,
+     on -strong 7.69:1; on surface-0 6.75:1). -soft = oxblood, for solid fills only (the "ขายดี" chip, checkout steps);
+     its see-through washes turn orange below. */
+  --accent-ember: #ff6a2c;
+  --accent-ember-strong: #ff8347;
   --accent-ember-soft: #3d1810;
   /* The two oranges as "R G B" channels, for glows written as rgb(var(--ember-rgb) / alpha) — a preview (src/lib/preview.ts)
      that changes the orange changes every glow with it. Keep in step with the hex values above. */
-  --ember-rgb: 240 138 42;
-  --ember-strong-rgb: 255 162 77;
-  /* Steel = a quiet warm neutral (was a cool blue): counts and secondary chips no longer compete with the orange. */
-  --accent-steel: #cfc6bb;
-  --accent-steel-strong: #e6dfd5;
-  --accent-steel-soft: #2a221d;
+  --ember-rgb: 255 106 44;
+  --ember-strong-rgb: 255 131 71;
+  /* Steel = a quiet neutral (not the old blue, not warm): counts and secondary chips no longer compete with the orange. */
+  --accent-steel: #c6c5cc;
+  --accent-steel-strong: #e4e3e9;
+  --accent-steel-soft: #2a2b30;
   /* "Night" purple = "มาใหม่" only (owner 02/11 "หาคู่สีเลยว่าอะไรเหมาะกับส้มดำ"; designer 02/11 option A — a triad of ember). */
   --accent-night: #8b6cf0;
   --accent-night-strong: #b49cff;
@@ -113,14 +115,17 @@
   --font-mono: var(--font-mono);
 }
 
-/* One orange per screen (owner 09/11, look-0911: direction b's rule on the forge colours — "two colours do 90% of the
-   work, the accent only on what you want pressed"). Orange stays on buttons (bg-ember), the selected state and focus
-   (border-/outline-ember, bg-ember dots and bars); orange TEXT reads off-white instead — eyebrows, the headline's second
-   line, small labels. Unlayered on purpose: it wins over the Tailwind utilities without touching the ~40 files that use
-   the class; hover:text-ember (feedback on a link) keeps its orange. */
-.text-ember,
-.text-ember-strong {
-  color: var(--foreground);
+/* A see-through oxblood wash reads brown on graphite (owner 13/11 black + orange): badges, the selected variant, the
+   language switch, finder and service-step chips get a see-through orange instead. Unlayered on purpose: it wins over the
+   Tailwind utilities without touching the files that use the classes. (The 09/11 "one orange per screen" rule that painted
+   .text-ember off-white is gone with the forge look — orange text is back.) */
+.bg-ember-soft\/30,
+.bg-ember-soft\/40,
+.bg-ember-soft\/60 {
+  background-color: rgb(var(--ember-rgb) / 0.1);
+}
+.hover\:bg-ember-soft:hover {
+  background-color: rgb(var(--ember-rgb) / 0.15);
 }
 
 html {
