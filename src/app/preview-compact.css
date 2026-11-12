@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Preview "compact" — product cards on phones, four to a screen (owner 13/11, iPhone Pro Max: "การ์ดมันไม่พอดีจอ
+   อยากให้อัตราส่วนมันเป็นสี่ชิ้นพอดี แล้วก็แซมชิ้นที่ 5-6 ได้ก็ดีถ้าทำได้ กลัวทำแล้วสี่ชิ้นจะเล็กเกิน"). Designer 13/11:
+   a 2×2 block fits whole at 390 / 430 / 440 with the top of cards 5–6 showing (at 390 only when the two rows are not both
+   the tallest kind — 2-line name AND 2-line spec). The card loses ~25 % of its height while the product stays almost as big:
+     · the photo box is 1/1 under 410px, 9/10 from 410px (was 4/5 — IMAGE_SPEC "card frame 4:5", owner 30/09: this preview
+       is the owner's call on that ruling) and loses its padding (WebKit added the padding on top of the ratio: the
+       owner's screenshot shows a 264px photo box where the code says 240); the picture keeps 4px of air instead;
+     · no reserved empty lines under the name and the spec; the price sits at the card's foot (margin-top: auto), so
+       prices still line up across a row;
+     · name 15px, price 17px, chips 12px (were 14 / 15 / 11), heart 32px drawn with a 44px tap area.
+   Phones and tablets only (< 64rem); desktop untouched. HTML unchanged — CSS on the cards' existing data hooks.
+   Matches any word ending in "compact": ?preview=cards-compact keeps the owner's black + orange look (preview "cards",
+   which matches words starting "cards") and adds this; ?preview=compact = this on today's colours. When approved: these
+   become the cards' own phone classes and this file and its import are deleted.
+   ========================================================================== */
+@media (max-width: 63.98rem) {
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] {
+    aspect-ratio: 1 / 1;
+    padding: 0;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] img {
+    padding: 4px;
+  }
+  /* The words: 12px on top stays — the "สินค้าหมด" pill straddles the photo's bottom edge and would sit on the brand line. */
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] + div {
+    padding: 12px 10px 10px;
+    gap: 4px;
+  }
+  html[data-preview$="compact"] a[data-card-cut] h3 {
+    font-size: 15px;
+    line-height: 1.3; /* room for stacked Thai tone marks under the 2-line clamp */
+    min-height: 0;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-spec-phone] {
+    min-height: 0;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-price] {
+    font-size: 17px;
+    line-height: 1.2;
+    min-height: 1.2em; /* a card with no price keeps the line */
+    margin-top: auto;
+    padding-top: 2px;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-list-price] {
+    font-size: 12px;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-sale-badge] {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  /* Cards inside a wrapper (home rails, related, similar-in-stock) stretch to the row so the price foot lines up too. */
+  html[data-preview$="compact"] div:has(> a[data-card-cut]:only-child) {
+    display: flex;
+    flex-direction: column;
+  }
+  html[data-preview$="compact"] div:has(> a[data-card-cut]:only-child) > a[data-card-cut] {
+    flex: 1 1 auto;
+  }
+  /* Heart: a 32px circle, still a 44px tap area. */
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > button {
+    width: 2rem;
+    height: 2rem;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > button::before {
+    inset: -6px;
+  }
+  /* Chips 12px (were 11 / 11.2): "ขายดี" / "มาใหม่" keep their 19px height and negative margin, so the brand line does
+     not grow when they land after hydration. */
+  html[data-preview$="compact"] a[data-card-cut] [data-sales] {
+    font-size: 12px;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-soldout] span span:last-child {
+    font-size: 12px;
+  }
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] > div:first-child > span {
+    font-size: 12px;
+  }
+}
+@media (min-width: 25.625rem) and (max-width: 63.98rem) {
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo] {
+    aspect-ratio: 9 / 10;
+  }
+}
