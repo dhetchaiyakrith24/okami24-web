@@ -62,7 +62,8 @@ export interface StockIssue {
   refundPromptPay: string | null;
   /** Or the bank account the customer gave (full number — staff page only) with its bank and branch. */
   refundBankAccount: { account: string; bank: string; branch: string } | null;
-  /** What a refund returns (refundAmount in stock-issue-rules.ts): the out lines, or the whole paid total when all are out. */
+  /** What a refund returns (refundAmount in stock-issue-rules.ts): what was paid for the out lines (a special price shared
+   *  over the lines), or the whole paid total when all are out. */
   refund: { amount: number; wholeOrder: boolean };
   chosenAt: string | null;
   resolution: StockIssueResolution | null;
@@ -131,7 +132,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
   const picks = parseSwapJson(row.swap_json);
   const all = itemsOf(orderId);
   const outLines = all.filter((i) => ids.has(i.id)).map(toLine);
-  const total = (getDb().prepare("SELECT total FROM orders WHERE id = ?").get(orderId) as { total: number }).total;
+  const money = getDb().prepare("SELECT total, shipping_fee FROM orders WHERE id = ?").get(orderId) as { total: number; shipping_fee: number };
   return {
     orderId,
     outLines,
@@ -147,7 +148,7 @@ export function getStockIssue(orderId: number): StockIssue | null {
     refundPromptPay: row.refund_promptpay,
     refundBankAccount:
       row.refund_account && row.refund_bank ? { account: row.refund_account, bank: row.refund_bank, branch: row.refund_branch ?? "" } : null,
-    refund: refundAmount(outLines, { total, lineCount: all.length }),
+    refund: refundAmount(outLines, { total: money.total, shippingFee: money.shipping_fee, lines: all.map(toLine) }),
     chosenAt: row.chosen_at,
     resolution: row.resolution,
     refundRef: row.refund_ref,
