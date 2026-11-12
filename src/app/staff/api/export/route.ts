@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { recordStaffAction } from "@/lib/staff/audit";
 import { ordersCsv } from "@/lib/staff/orders-export";
 
 /**
@@ -14,7 +15,9 @@ export const dynamic = "force-dynamic";
 const HEADERS = { "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, nofollow" } as const;
 
 export async function GET(): Promise<NextResponse> {
-  if (!staffAreaEnabled() || !(await isStaff())) return new NextResponse(null, { status: 404, headers: HEADERS });
+  const actor = staffAreaEnabled() ? await currentStaff() : null;
+  if (!actor) return new NextResponse(null, { status: 404, headers: HEADERS });
+  recordStaffAction(actor, "export");
 
   const day = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Bangkok" }).format(new Date());
   return new NextResponse(ordersCsv(), {

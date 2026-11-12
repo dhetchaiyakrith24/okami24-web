@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { HomeCategoryLabel, HomeIndexName, HomeText } from "@/components/home/HomeCopy";
 import { DecodeOnView } from "@/components/home/Decode";
 import { brandName } from "@/lib/utils";
+import { LOOKALIKES } from "@/data/similar-models";
 
 /**
  * Round 8 B1 (owner ruling 2026-09-23, HANDOFF §16 4b round-7 close ruling 6): a text index of
@@ -49,7 +50,8 @@ function entriesFor(categoryId: string): IndexEntry[] {
   const published = getPublishedProducts()
     .filter((p) => p.categoryId === categoryId)
     .map((p) => ({ slug: p.slug, name: p.displayName, brand: withBrand(p.displayName, p.brandId) }));
-  return [...legacy, ...published].sort((a, b) => `${a.brand} ${a.name}`.localeCompare(`${b.brand} ${b.name}`));
+  // never a lookalike: it is off the home page and noindex (T2-08, HANDOFF §18) — its category page still lists it
+  return [...legacy, ...published].filter((e) => !LOOKALIKES.has(e.slug)).sort((a, b) => `${a.brand} ${a.name}`.localeCompare(`${b.brand} ${b.name}`));
 }
 
 export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {

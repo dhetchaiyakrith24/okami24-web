@@ -6,16 +6,27 @@ import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { formatRunNumber } from "@/lib/commerce/run-number";
 import { paymentDeadline } from "@/lib/commerce/unpaid-expiry";
 import { stockIssueStage } from "@/lib/commerce/stock-issue-rules";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
-import { availableActions, STAFF_ACTIONS, type StaffAction } from "@/lib/staff/order-actions";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { signedInName } from "@/lib/staff/account-rules";
+import { availableActions, handoverNeedsTick, STAFF_ACTIONS, warehouseMayHaveIt, type StaffAction, cancelOwesRefund } from "@/lib/staff/order-actions";
 import { getStaffOrder, type StaffOrderDetail } from "@/lib/staff/orders";
 import { customerIdOf } from "@/lib/staff/customer-cards";
+import { readSwitches } from "@/lib/commerce/shop-switches";
+import { SITE_URL } from "@/lib/seo";
 import { isStaffJob, STAFF_JOBS, STAFF_STATUS_LABEL, statusTone, TONE_CLASS } from "@/lib/staff/jobs";
 import { CARRIERS, pickCarrier, STAFF_CARRIER_IDS, toStaffCarrierId, type CarrierId } from "@/lib/commerce/carriers";
 import { SHIPPING_RULE_STAFF_LABEL } from "@/lib/commerce/shipping-rules";
 import { staffCarrierAction, staffMessageAction, staffOrderAction, staffShipnityPushAction } from "@/app/staff/actions";
 import { sendState, shipnityReady } from "@/lib/woo/order-push";
 import { warehouseChange } from "@/lib/woo/order-events";
+import { isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
+import { editStateOf, linkedSlips } from "@/lib/staff/line-order-edit";
+import { itemsNotEditable } from "@/lib/staff/line-order-edit-rules";
+import { slipsToPick } from "@/lib/staff/line-orders";
+import { stockBook } from "@/lib/staff/stock-book";
+import { LineItemsEdit } from "./LineItemsEdit";
+import { AddressEdit } from "./AddressEdit";
+import { addressEditable } from "@/lib/staff/order-address";
 
 const WAREHOUSE_CHANGE_TEXT: Record<string, string> = {
   cancelled: "คลังยกเลิกออเดอร์นี้ใน Shipnity",
@@ -30,6 +41,11 @@ import { PendingButton } from "@/app/staff/_components/PendingButton";
 import { StockIssueSection } from "@/app/staff/_components/StockIssueSection";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
 import { formatBaht, formatDateTime, historyNoteTh, REASON_LABEL, VerdictBadge } from "@/app/staff/_components/order-bits";
+import { auditForOrder } from "@/lib/staff/audit";
+import { handConfirmForOrder } from "@/lib/staff/hand-confirm";
+import { handConfirmLabel, pressedBy } from "@/lib/staff/hand-confirm-rules";
+import { auditLabel } from "@/lib/staff/audit-rules";
+import { DONE_TEXT, ERROR_TEXT, STOCK_ERROR_TEXT } from "@/app/staff/_components/order-notices";
 
 /**
  * /staff/orders/<n> — one web order for staff (cart round 22/10): everything needed to check the payment and send it
@@ -47,46 +63,6 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "ออเดอร์ (ทีมงาน)",
   robots: { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
-};
-
-const ERROR_TEXT: Record<string, string> = {
-  "not-allowed": "ทำขั้นนี้กับออเดอร์สถานะนี้ไม่ได้ (อาจมีคนกดไปก่อนแล้ว) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  tracking: "เลขพัสดุไม่ถูกต้อง — ใส่ตัวอักษรอังกฤษ ตัวเลข หรือขีด 6–40 ตัว",
-  carrier: "เลือกขนส่งก่อน (ไปรษณีย์ไทย หรือ DHL) — ลูกค้าจะเห็นชื่อขนส่งและปุ่มเช็คสถานะพัสดุ",
-  "carrier-locked": "เปลี่ยนขนส่งไม่ได้แล้ว — ออเดอร์ส่งเข้า Shipnity แล้ว หรือสถานะเปลี่ยนไป · แจ้งคลังให้เปลี่ยนใน Shipnity แทน",
-  message: "เขียนข้อความถึงลูกค้าอย่างน้อย 3 ตัวอักษร — ลูกค้าจะเห็นในหน้าออเดอร์ (ยกเลิกต้องบอกลูกค้าว่าเพราะอะไร)",
-  "not-found": "ไม่พบออเดอร์นี้",
-  "shipnity-no-target": "ยังส่งเข้า Shipnity ไม่ได้ — ยังไม่ได้กดอนุญาตที่รับออเดอร์ในหน้า \"เชื่อมคลัง Shipnity\" · ใช้คัดลอกข้อความส่งคลังไปก่อน",
-  "shipnity-no-sku": "ส่งเข้า Shipnity ไม่ได้ — มีสินค้าที่ไม่มีรหัสคลัง · ใช้คัดลอกข้อความส่งคลังแทน แล้วแจ้ง Friday",
-  "shipnity-failed": "ส่งเข้า Shipnity ไม่สำเร็จ ออเดอร์ยังไม่เปลี่ยน — กดส่งใหม่อีกครั้ง หรือคัดลอกข้อความส่งคลังไปก่อน",
-  "shipnity-no-reply": "Shipnity ไม่ตอบกลับ (หมดเวลารอ) — คลังอาจได้รับออเดอร์ไปแล้ว · เปิด Shipnity ดูก่อน ถ้าออเดอร์เข้าแล้วอย่ากดส่งซ้ำ ให้กด “ส่งรายการให้คลังแล้ว” ในส่งเองแบบเดิมแทน",
-  "shipnity-not-found": "ไม่พบออเดอร์นี้",
-  "shipnity-not-approved": "ส่งเข้า Shipnity ไม่ได้ — ส่งได้เฉพาะออเดอร์ที่ยืนยันยอดเงินแล้วและยังไม่ส่งคลัง (อาจมีคนกดเปลี่ยนสถานะไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "shipnity-already-sent": "ออเดอร์นี้ส่งเข้า Shipnity ไปแล้ว (หรือกำลังส่ง) — ไม่ส่งซ้ำ · โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "shipnity-stock-open": "ส่งเข้า Shipnity ไม่ได้ — ยังมีเรื่องสินค้าหมดที่ยังไม่จบ จัดการกล่องสินค้าหมดก่อน",
-  "shipnity-sent-status": "ส่งเข้า Shipnity แล้ว แต่สถานะออเดอร์เปลี่ยนไประหว่างนั้น — โหลดหน้าใหม่ แล้วเช็คกับคลังว่าออเดอร์เข้า Shipnity ถูกต้อง",
-};
-
-const DONE_TEXT: Record<string, string> = {
-  confirm: "บันทึกแล้ว: ยืนยันยอดเงิน",
-  "to-warehouse": "บันทึกแล้ว: ส่งรายการให้คลัง",
-  shipnity: "ส่งเข้า Shipnity แล้ว และบันทึกว่าส่งรายการให้คลังแล้ว — คลังเห็นออเดอร์ใน Shipnity",
-  carrier: "บันทึกแล้ว: เปลี่ยนขนส่ง — ส่งเข้า Shipnity พร้อมขนส่งนี้",
-  ship: "บันทึกแล้ว: ส่งของแล้ว ลูกค้าเห็นขนส่ง เลขพัสดุ และปุ่มเช็คสถานะในหน้าออเดอร์",
-  complete: "บันทึกแล้ว: ลูกค้าได้รับของ",
-  cancel: "บันทึกแล้ว: ยกเลิกออเดอร์ ลูกค้าเห็นเหตุผลในหน้าออเดอร์",
-  message: "ส่งข้อความแล้ว: ลูกค้าเห็นในหน้าออเดอร์ — ถ้าเรื่องด่วน โทรหรือทัก LINE บอกลูกค้าด้วย",
-  "stock-open": "บันทึกแล้ว: ลูกค้าจะเห็นในหน้าออเดอร์ให้เลือกเปลี่ยนสินค้าหรือรับเงินคืน — โทรหรือทัก LINE บอกลูกค้าด้วย",
-  "stock-swap": "บันทึกแล้ว: เปลี่ยนสินค้าในออเดอร์แล้ว — ข้อความส่งคลังในกล่องสินค้าเป็นรายการใหม่",
-  "stock-refunded": "บันทึกแล้ว: คืนเงินแล้ว ลูกค้าเห็นในหน้าออเดอร์",
-};
-
-const STOCK_ERROR_TEXT: Record<string, string> = {
-  "stock-not-allowed": "ทำขั้นนี้ไม่ได้ (สถานะเปลี่ยนไปแล้ว หรือมีคนกดไปก่อน) — โหลดหน้าใหม่ดูสถานะล่าสุด",
-  "stock-no-lines": "ติ๊กเลือกสินค้าที่หมดอย่างน้อย 1 รายการ",
-  "stock-swap-invalid": "สินค้าที่ลูกค้าเลือกหมดหรือราคาเปลี่ยนแล้ว — กด \"แจ้งใหม่\" ให้ลูกค้าเลือกอีกครั้ง",
-  "stock-refund-ref": "ใส่เลขอ้างอิงการโอนจากแอปธนาคาร (ตัวอักษรอังกฤษ ตัวเลข 4–60 ตัว)",
-  "stock-not-found": "ไม่พบออเดอร์นี้",
 };
 
 const primary =
@@ -188,10 +164,22 @@ function ActionForm({
 }
 
 /** Slip verdict, the reasons (red — a "no", HANDOFF §18), the two amounts side by side and the picture. */
-function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetail; slipImageHref: string; compact: boolean }) {
+function SlipDetails({
+  order,
+  slipImageHref,
+  compact,
+  linked,
+}: {
+  order: StaffOrderDetail;
+  slipImageHref: string;
+  compact: boolean;
+  /** The slips linked to the order — more than one once items were added with a second slip (line-order-edit.ts). */
+  linked: { count: number; satang: number };
+}) {
   const slip = order.slip;
   if (!slip) return <p className="text-foreground-muted">ลูกค้ายังไม่ได้แนบสลิป</p>;
-  const amountOff = slip.amount !== null && slip.amount !== order.total;
+  const amount = linked.count > 1 ? linked.satang / 100 : slip.amount;
+  const amountOff = amount !== null && amount !== order.total;
   return (
     <>
       {/* The verdict stays on the step card in every case — staff confirm by the ✅ (admin manual step 2.1; checker 27/10). */}
@@ -209,9 +197,9 @@ function SlipDetails({ order, slipImageHref, compact }: { order: StaffOrderDetai
       )}
       <div className="grid grid-cols-2 gap-2">
         <div className="rounded-lg bg-surface-2 px-3 py-2">
-          <p className="text-xs text-foreground-muted">ยอดในสลิป</p>
+          <p className="text-xs text-foreground-muted">{linked.count > 1 ? `ยอดสลิปรวม ${linked.count} ใบ` : "ยอดในสลิป"}</p>
           <p className={`text-xl font-semibold tabular-nums ${amountOff ? "text-danger" : "text-foreground"}`}>
-            {slip.amount === null ? "—" : formatBaht(slip.amount)}
+            {amount === null ? "—" : formatBaht(amount)}
           </p>
         </div>
         <div className="rounded-lg bg-surface-2 px-3 py-2">
@@ -253,11 +241,16 @@ export default async function StaffOrderPage({
   searchParams: Promise<{ error?: string; done?: string; from?: string }>;
 }) {
   if (!staffAreaEnabled()) notFound();
-  if (!(await isStaff())) redirect("/staff");
+  const me = await currentStaff();
+  if (!me) redirect("/staff");
+  const signedInAs = signedInName(me);
   const { orderNumber } = await params;
   const { error, done, from: fromParam } = await searchParams;
   const order = getStaffOrder(orderNumber);
   if (!order) notFound();
+  const teamRows = auditForOrder(order.orderNumber);
+  // T2-01 (owner 10/11): the money was confirmed without a slip that passed the check — said here, never blocked.
+  const handConfirm = handConfirmForOrder(order.orderNumber);
 
   const from = isStaffJob(fromParam) || fromParam === "all" ? fromParam : "";
   const back =
@@ -284,12 +277,27 @@ export default async function StaffOrderPage({
   // order (e.g. the refund slip attached afterwards, queue B4) must not replace its reason (checker #877).
   const cancelNote = order.status === "cancelled" ? order.statusHistory.find((h) => h.status === "cancelled")?.note ?? null : null;
   // Shipnity link (owner 28/10): the button shows once staff approved where Shipnity takes orders (/staff/shipnity).
-  const shipnity = shipnityReady();
+  // A LINE order goes by this button only while the owner's switch is on (owner list ก11, way 2); otherwise the admin keys
+  // it into Shipnity as before and presses "ส่งรายการให้คลังแล้ว" below.
+  const lineOrder = order.channel === "line";
+  const shipnity = shipnityReady() && (!lineOrder || readSwitches().lineToWarehouse);
   const sent = sendState(order.id);
   const warehouse = warehouseChange(order.id);
+  const warehouseCancelled = order.status === "cancelled" && isWarehouseCancelNote(cancelNote);
   const customerId = customerIdOf(order.orderNumber);
   const staffCarrier = toStaffCarrierId(order.carrier);
   const planned = staffCarrier ?? pickCarrier(a.postalCode);
+  const linked = linkedSlips(order.id);
+  // "เพิ่มสินค้าในออเดอร์" (LINE_ORDERS_GAPS.md #3): a keyed LINE order not yet sent to the warehouse.
+  const editState = editStateOf(order.id);
+  const itemsEditable = itemsNotEditable(editState) === null;
+  // LINE_ORDERS_GAPS.md #1 / #4 (src/lib/staff/order-actions.ts): the warehouse may already hold it → a cancel needs a tick;
+  // a LINE order handed over by hand while the button could send it → a tick too (double shipment).
+  const mayHave = warehouseMayHaveIt({ status: order.status, channel: order.channel, sentToWarehouse: editState.sentToWarehouse });
+  const handoverTick = handoverNeedsTick({ channel: order.channel, lineSwitchOn: readSwitches().lineToWarehouse, autoOn: readSwitches().autoToWarehouse, shipnityReady: shipnityReady() });
+  // LINE_ORDERS_GAPS.md #7 (src/lib/staff/order-address.ts): the address is fixed here until the warehouse has the order.
+  const canEditAddress = addressEditable({ status: order.status, sentToWarehouse: editState.sentToWarehouse });
+  const moneyIn = order.status === "approved" || linked.satang > 0;
 
   return (
     <Container className="flex max-w-2xl flex-col gap-4 pb-8 pt-4 lg:gap-6 lg:pt-8">
@@ -301,6 +309,17 @@ export default async function StaffOrderPage({
       <header className="flex flex-wrap items-center gap-3">
         <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">{runNumber ?? order.orderNumber}</h1>
         {stockOpen && <span className={`rounded-full border px-3 py-1 text-sm font-medium ${tone.pill}`}>{STAFF_STATUS_LABEL[order.status]}</span>}
+        {lineOrder && (
+          <span className="rounded-full border border-surface-border px-3 py-1 text-sm text-foreground-muted">
+            ออเดอร์ LINE{order.keyedBy ? ` · คีย์โดย ${order.keyedBy}` : ""}
+            {order.discount ? " · ราคาพิเศษ" : ""}
+          </span>
+        )}
+        {handConfirm && (
+          <span className="rounded-full border border-unverified/50 px-3 py-1 text-sm text-unverified">
+            {handConfirmLabel(handConfirm.kind)} · {pressedBy(handConfirm.by)}
+          </span>
+        )}
       </header>
 
       {error && (ERROR_TEXT[error] ?? STOCK_ERROR_TEXT[error]) && (
@@ -312,12 +331,17 @@ export default async function StaffOrderPage({
         <p className="rounded-lg border border-verified/40 bg-verified/10 px-4 py-3 text-sm text-foreground">{DONE_TEXT[done]}</p>
       )}
 
-      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. The order's
-          status here is not changed by it: staff call the customer and the warehouse's admin first. */}
+      {/* The warehouse cancelled / deleted the order in Shipnity (owner 28/10) — the team also got a LINE alert. Since 11/11
+          (owner, T2-10) a "cancelled" / "refunded" cancels the web order itself (src/lib/woo/warehouse-cancel.ts); a delete /
+          fail still waits for staff: call the customer and the warehouse's admin first. */}
       {warehouse && (
         <p role="alert" className="rounded-lg border border-danger/60 bg-danger/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} — คุยกับแอดมินคลัง
-          แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)
+          {WAREHOUSE_CHANGE_TEXT[warehouse.status] ?? "คลังเปลี่ยนสถานะออเดอร์นี้ใน Shipnity"} เมื่อ {formatDateTime(warehouse.at)} —{" "}
+          {warehouseCancelled
+            ? order.stockIssue && order.stockIssue.resolution === null
+              ? "เว็บยกเลิกออเดอร์ให้แล้ว ลูกค้าเลือกช่องทางรับเงินคืนในหน้าออเดอร์ โอนคืนแล้วบันทึกในกล่องด้านล่าง"
+              : "เว็บยกเลิกออเดอร์ให้แล้ว"
+            : <>คุยกับแอดมินคลัง แล้วแจ้งลูกค้า (เปลี่ยนสินค้า / คืนเงิน ใช้กล่อง &quot;สินค้าหมดหลังลูกค้าโอน&quot;)</>}
         </p>
       )}
 
@@ -336,7 +360,7 @@ export default async function StaffOrderPage({
       {paymentStep && (
         <section className={`${card} border-unverified/40`}>
           <h2 className="text-base font-semibold text-foreground">ขั้นต่อไป · {STAFF_JOBS.slip.label}</h2>
-          <SlipDetails order={order} slipImageHref={slipImageHref} compact />
+          <SlipDetails order={order} slipImageHref={slipImageHref} compact linked={linked} />
           {/* One warning line above the button (designer 26/10: three stacked notes read as clutter). */}
           <p className="text-unverified">
             {order.slip?.verdict !== "pass" ? "ก่อนยืนยัน ดูยอดเข้าในแอปธนาคารของร้าน และเช็คของในหน้าคีย์ออเดอร์ Shipnity" : "ก่อนยืนยัน เช็คของในหน้าคีย์ออเดอร์ Shipnity — หมด = ใช้ “สินค้าหมดหลังลูกค้าโอน”"}
@@ -358,10 +382,14 @@ export default async function StaffOrderPage({
                 ส่งชื่อ ที่อยู่ เบอร์ สินค้า และค่าส่ง ไม่ส่งสลิป
                 {sent?.status === "failed"
                   ? sent.httpStatus === null
-                    ? " · ครั้งก่อน Shipnity ไม่ตอบกลับ — เปิด Shipnity ดูก่อนว่าออเดอร์เข้าแล้วหรือยัง ถ้าเข้าแล้วอย่ากดซ้ำ"
+                    ? ` · ครั้งก่อน Shipnity ไม่ตอบกลับ — ค้นใน Shipnity ด้วยเลข ${order.orderNumber} ก่อน ถ้าเข้าแล้วอย่ากดซ้ำ`
                     : " · ครั้งก่อนส่งไม่สำเร็จ"
                   : ""}
               </p>
+              {/* LINE_ORDERS_GAPS.md #1: once the switch is on, keying the same LINE order into Shipnity by hand ships it twice. */}
+              {(lineOrder || readSwitches().autoToWarehouse) && (
+                <p className="text-sm text-danger">ปุ่มนี้ส่งเข้า Shipnity ให้แล้ว ห้ามคีย์ใน Shipnity ซ้ำ · ถ้าคีย์ใน Shipnity ไปแล้ว อย่ากดปุ่มนี้ ใช้ &ldquo;ส่งเองแบบเดิม&rdquo;</p>
+              )}
             </form>
           )}
           {shipnity ? (
@@ -372,13 +400,32 @@ export default async function StaffOrderPage({
               </summary>
               <div className="flex flex-col gap-3 pt-2">
                 <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-                {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" quiet />}
+                {steps.includes("to-warehouse") && (
+                  <ActionForm order={order} from={from} act="to-warehouse" quiet>
+                    {handoverTick && (
+                      <label className="flex min-h-12 items-center gap-3 rounded-lg border border-danger/50 px-3 text-sm text-foreground">
+                        <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                        คีย์ออเดอร์นี้ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง
+                      </label>
+                    )}
+                  </ActionForm>
+                )}
               </div>
             </details>
           ) : (
             <>
               <CopyBlock text={order.warehouseText} label="คัดลอกข้อความส่งคลัง" doneLabel="คัดลอกแล้ว" outline />
-              {steps.includes("to-warehouse") && <ActionForm order={order} from={from} act="to-warehouse" />}
+              {/* Same tick as the folded hand-over above: the server asks for it whenever handoverNeedsTick says so. */}
+              {steps.includes("to-warehouse") && (
+                <ActionForm order={order} from={from} act="to-warehouse">
+                  {handoverTick && (
+                    <label className="flex min-h-12 items-center gap-3 rounded-lg border border-danger/50 px-3 text-sm text-foreground">
+                      <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                      คีย์ออเดอร์นี้ใน Shipnity เองแล้ว และไม่ได้กดปุ่มส่งเข้าคลัง
+                    </label>
+                  )}
+                </ActionForm>
+              )}
             </>
           )}
         </section>
@@ -435,6 +482,13 @@ export default async function StaffOrderPage({
             {a.line1} ต.{a.subdistrict} อ.{a.district} จ.{a.province} {a.postalCode}
           </p>
           {order.customerPhone !== a.phone && <p className="text-foreground-muted">เบอร์ที่ใช้สั่ง {order.customerPhone}</p>}
+          {!canEditAddress && (order.status === "processing" || editState.sentToWarehouse) && (
+            <p className="text-xs text-foreground-dim">ส่งคลังแล้ว — แก้ที่อยู่ใน Shipnity หรือแจ้งแอดมินคลัง (เว็บไม่ส่งการแก้ไปให้คลัง)</p>
+          )}
+          {/* BSOT §8: for a LINE order the admin sends the customer its status link (the shop's own words go in LINE). */}
+          {lineOrder && (
+            <CopyBlock text={`${SITE_URL}/orders/${order.orderNumber}?token=${order.viewToken}`} label="คัดลอกลิงก์ติดตามออเดอร์" doneLabel="คัดลอกแล้ว" outline />
+          )}
           {/* Owner list ก11: every order of this customer, totals and last order. */}
           {customerId !== null && (
             <Link href={`/staff/customers/${customerId}`} className="inline-flex min-h-11 w-fit items-center text-sm font-semibold text-ember underline underline-offset-4">
@@ -489,6 +543,20 @@ export default async function StaffOrderPage({
                 </li>
               ))}
             </ul>
+            {/* A special price (migration 0028): the web price beside it, who gave it and why (owner 10/11). */}
+            {order.discount && (
+              <div className="flex flex-col gap-0.5 border-t border-surface-border-soft pt-2">
+                <p className="flex justify-between text-foreground-muted">
+                  <span>ราคาเว็บรวมค่าส่ง</span>
+                  <span>{formatBaht(order.total + order.discount.amount)}</span>
+                </p>
+                <p className="flex justify-between text-foreground">
+                  <span>ราคาพิเศษ{order.discount.by ? ` · ${order.discount.by}ให้` : ""}</span>
+                  <span>−{formatBaht(order.discount.amount)}</span>
+                </p>
+                {order.discount.reason && <p className="text-xs text-foreground-muted">เหตุผล: {order.discount.reason}</p>}
+              </div>
+            )}
             <p className="flex justify-between border-t border-surface-border-soft pt-2 font-semibold text-foreground">
               <span>รวม (ค่าส่ง {formatBaht(order.shippingFee)})</span>
               <span>{formatBaht(order.total)}</span>
@@ -511,7 +579,7 @@ export default async function StaffOrderPage({
             {!paymentStep && order.slip && (
               <div className="flex flex-col gap-3 border-t border-surface-border-soft pt-3">
                 <p className="font-semibold text-foreground">การชำระเงิน</p>
-                <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} />
+                <SlipDetails order={order} slipImageHref={slipImageHref} compact={false} linked={linked} />
               </div>
             )}
             <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
@@ -525,6 +593,20 @@ export default async function StaffOrderPage({
                 ))}
               </ul>
             </div>
+            {/* Owner 10/11: who on the team did what on this order (src/lib/staff/audit.ts) — from the day accounts began. */}
+            {teamRows.length > 0 && (
+              <div className="flex flex-col gap-1 border-t border-surface-border-soft pt-3">
+                <p className="font-semibold text-foreground">ใครทำอะไร</p>
+                <ul className="flex flex-col gap-1 text-foreground-muted">
+                  {teamRows.map((r) => (
+                    <li key={r.id}>
+                      {formatDateTime(r.at)} · <span className="text-foreground">{r.actorName}</span> {auditLabel(r.action)}
+                      {r.detail ? ` — ${r.detail}` : ""}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </details>
 
@@ -570,6 +652,56 @@ export default async function StaffOrderPage({
           </div>
         </details>
 
+        {itemsEditable && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span>เพิ่มสินค้าในออเดอร์</span>
+              <Chevron />
+            </summary>
+            <div className={foldBody}>
+              <LineItemsEdit
+                orderNumber={order.orderNumber}
+                from={from}
+                approved={order.status === "approved"}
+                moneyIn={moneyIn}
+                oldTotal={order.total}
+                discount={order.discount?.amount ?? 0}
+                lines={order.items.map((i) => ({
+                  slug: i.productSlug,
+                  variantId: i.variantId,
+                  label: `${i.productName}${i.variantLabel ? ` · ${i.variantLabel}` : ""}`,
+                  price: i.unitPrice,
+                  quantity: i.quantity,
+                  ...(moneyIn ? { min: i.quantity } : {}),
+                }))}
+                products={stockBook()
+                  .map((p) => ({ slug: p.slug, name: p.name, price: p.price, options: p.options.filter((o) => o.sells).map((o) => ({ id: o.id, name: o.name })) }))
+                  .filter((p) => p.options.length > 0)}
+                slips={slipsToPick()}
+                signedInAs={signedInAs}
+              />
+            </div>
+          </details>
+        )}
+
+        {canEditAddress && (
+          <details className={foldRow}>
+            <summary className={foldSummary}>
+              <span>แก้ที่อยู่จัดส่ง</span>
+              <Chevron />
+            </summary>
+            <div className={foldBody}>
+              <AddressEdit
+                orderNumber={order.orderNumber}
+                from={from}
+                shipnityNote={mayHave}
+                signedInAs={signedInAs}
+                address={{ recipientName: a.recipientName, phone: a.phone, line1: a.line1, subdistrict: a.subdistrict, district: a.district, province: a.province, postalCode: a.postalCode }}
+              />
+            </div>
+          </details>
+        )}
+
         {!stockOpen && !refundSlipDue && <StockIssueSection order={order} asRow />}
 
         {actions.includes("cancel") && (
@@ -581,10 +713,24 @@ export default async function StaffOrderPage({
             <form action={staffOrderAction} className={foldBody}>
               <OrderFields order={order} from={from} />
               <input type="hidden" name="action" value="cancel" />
-              {order.slip && (
-                <p className="text-xs text-foreground-dim">
-                  ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
-                </p>
+              {cancelOwesRefund(order.status) ? (
+                // Owner 12/11: cancelling a paid order means a refund — said in red, and the form needs the tick (actions.ts).
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ลูกค้าจ่ายแล้ว {formatBaht(order.total)} — ยกเลิกแล้วร้านต้องโอนเงินคืน · ถ้ายกเลิกเพราะของหมดหรือคลังส่งไม่ได้ ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo;
+                    ติ๊กทุกรายการแทน — ลูกค้าเลือกช่องทางรับเงินคืนเองในหน้าออเดอร์ แล้วบันทึกการโอนคืนพร้อมสลิปได้
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="refundTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    รับทราบว่าต้องโอนเงินคืน {formatBaht(order.total)} ให้ลูกค้าเอง
+                  </label>
+                </div>
+              ) : (
+                order.slip && (
+                  <p className="text-xs text-foreground-dim">
+                    ลูกค้าโอนแล้ว: ถ้าสินค้าหมด ใช้ &ldquo;สินค้าหมดหลังลูกค้าโอน&rdquo; แทน — ลูกค้าเลือกเปลี่ยนสินค้าหรือรับเงินคืนเองในหน้าออเดอร์
+                  </p>
+                )
               )}
               <label className="flex flex-col gap-1 text-foreground-muted">
                 เหตุผลที่ยกเลิก — ลูกค้าเห็นข้อความนี้ในหน้าออเดอร์
@@ -601,6 +747,18 @@ export default async function StaffOrderPage({
                 หมายเหตุทีมงาน (ลูกค้าไม่เห็น · ไม่ใส่ก็ได้)
                 <input name="note" autoComplete="off" maxLength={300} className={input} />
               </label>
+              {/* LINE_ORDERS_GAPS.md #4: a cancel here never reaches Shipnity. */}
+              {mayHave && (
+                <div className="flex flex-col gap-2 rounded-lg border border-danger/50 bg-danger/10 p-3">
+                  <p className="text-sm text-foreground">
+                    ยกเลิกในเว็บ ไม่ได้ยกเลิกใน Shipnity — ยกเลิกใน Shipnity เอง หรือแจ้งแอดมินคลัง ด้วยเลข <span className="select-all font-semibold">{order.orderNumber}</span>
+                  </p>
+                  <label className="flex min-h-12 items-center gap-3 text-sm text-foreground">
+                    <input type="checkbox" name="warehouseTick" value="1" required className="size-5 shrink-0 accent-[var(--color-ember)]" />
+                    ยกเลิกใน Shipnity / แจ้งแอดมินคลังแล้ว (หรือยังไม่ได้คีย์ใน Shipnity)
+                  </label>
+                </div>
+              )}
               <PendingButton className="self-start rounded-full border border-danger/60 px-5 py-2.5 text-sm font-semibold text-danger hover:bg-danger/10">
                 {STAFF_ACTIONS.cancel.label}
               </PendingButton>

@@ -27,6 +27,9 @@ import { shownSimilar } from "@/lib/related-row";
 import { StockCountLine } from "@/components/product/StockCount";
 import { HeadSalesBadge } from "@/components/catalog/SalesBadge";
 import { HeadPrice } from "@/components/catalog/SaleLabel";
+import { FitsDeviceLine } from "@/components/product/FitsDeviceLine";
+import { LINEUP_GROUP_NAMES, lineupGroupRanges } from "@/lib/lineup-groups";
+import type { RelatedDevice } from "@/data/catalog-relationships";
 import { bestSellerOptions } from "@/data/bestseller-options";
 import { countKind, countText } from "@/lib/stock/count-rules";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
@@ -36,22 +39,25 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
+import { ZoomShared, ZOOM_PROTO_SLUGS, useZoomPreview } from "@/components/visual/ZoomShared";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
  *  is sold out, so the name label and photo still work). */
-function firstSellable<T extends { id: string; availability?: string }>(options: T[] | undefined): string | null {
+function firstSellable<T extends { id: string; availability?: string; stockAsk?: true }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  return (options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
+  // An option with no live warehouse number ("ask", live-overlay.ts) is not sold either — open on one that sells first.
+  return (options.find((o) => o.availability !== "out-of-stock" && !o.stockAsk) ?? options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
 }
 
 /** Image-fix round 2026-09-28 (owner: an option without its own photo must never show another option's photo):
  *  open on an option that HAS its own photo, so the first picture always matches the name beside it. With every
  *  option photographed this is exactly `firstSellable`. With 2+ options and none photographed nothing is
  *  pre-selected — the page opens on the product photo, which then claims no particular option. */
-function initialOption<T extends { id: string; availability?: string; image?: unknown }>(options: T[] | undefined): string | null {
+function initialOption<T extends { id: string; availability?: string; stockAsk?: true; image?: unknown }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
-  const sellable = options.filter((o) => o.availability !== "out-of-stock");
+  const selling = options.filter((o) => o.availability !== "out-of-stock" && !o.stockAsk);
+  const sellable = selling.length > 0 ? selling : options.filter((o) => o.availability !== "out-of-stock");
   const withPhoto = (sellable.length > 0 ? sellable : options).find((o) => o.image);
   if (withPhoto) return withPhoto.id;
   return options.length >= 2 ? null : firstSellable(options);
@@ -82,7 +88,10 @@ export function ProductHero({
   brandSlug,
   hasBrandPage = false,
   lineCodes,
+  fitsDevices = [],
 }: {
+  /** T2-31: cited devices this part fits (getCompatibleDevices, from the server page) — the line under the price. */
+  fitsDevices?: RelatedDevice[];
   /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
   lineCodes?: LineOrderCodes;
   product: Product;
@@ -140,11 +149,24 @@ export function ProductHero({
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
   const [showAllColors, setShowAllColors] = useState(lineupFirst);
   // Which "all" image is shown: `lineupImage2` is a second group (owner 01/10 — Caliburn G3 Pro's 16 colours as two
-  // groups of 8). With two, the pills read "ทั้งหมด 1" / "ทั้งหมด 2" (the label + its number, in every language).
+  // groups of 8). With two, each pill names its group (see allLabelAt); with one, "ภาพรวมทุกสี" / "ภาพรวมทุกกลิ่น".
   const lineups = [product.lineupImage, product.lineupImage2].filter((l): l is NonNullable<typeof l> => !!l);
   const [allIndex, setAllIndex] = useState(0);
   const shownLineup = lineups[allIndex] ?? product.lineupImage;
-  const allLabelAt = (i: number) => (lineups.length > 1 ? `${dict.product.allVariantsLabel} ${i + 1}` : dict.product.allVariantsLabel);
+  // T2-31 (tester 10/11: "ทั้งหมด 1 / ทั้งหมด 2" did not say what they were): with two images each chip names its colours —
+  // "สีที่ 1–4" / "สีที่ 5–8" from the images' alts (lineupGroupRanges); where those do not match the colour chips, "ภาพรวมสี 1" / "2".
+  const groupRanges = lineupGroupRanges(product.lineupImage?.alt, product.lineupImage2?.alt, product.colorVariants?.length ?? 0);
+  const groupNames = LINEUP_GROUP_NAMES[product.slug];
+  const allLabelAt = (i: number) =>
+    lineups.length > 1 && groupNames?.[i]
+      ? groupNames[i][locale]
+      : lineups.length > 1 && groupRanges
+      ? dict.product.lineupGroupLabel.replace("{from}", String(groupRanges[i][0])).replace("{to}", String(groupRanges[i][1]))
+      : lineups.length > 1
+        ? dict.product.lineupGroupFallback.replace("{n}", String(i + 1))
+        : product.colorVariants?.length
+          ? dict.product.allColorsLabel
+          : dict.product.allFlavorsLabel;
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
@@ -194,7 +216,10 @@ export function ProductHero({
   const everyOptionSoldOut = hasOptions
     ? [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock")
     : product.availability === "out-of-stock";
-  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
+  // Owner 11/11 safety net: an option (or a product without options) whose warehouse code has no live number is not sold —
+  // the buy slot asks about stock on LINE instead (live-rules.ts "ask"; the cart and checkout refuse it on the server).
+  const stockAsk = !everyOptionSoldOut && (hasOptions ? !!(selectedColor?.stockAsk ?? selectedFlavor?.stockAsk) : !!product.stockAsk);
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut && !stockAsk;
   const builtOptions = [...(builtProduct.colorVariants ?? []), ...(builtProduct.flavorVariants ?? [])];
   const builtSoldOut = builtOptions.length > 0 ? builtOptions.every((v) => v.availability === "out-of-stock") : builtProduct.availability === "out-of-stock";
   // The warehouse count of what the buy action would add (owner 30/10 "2 A"; live after load — count-rules.ts).
@@ -335,6 +360,9 @@ export function ProductHero({
   // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
   const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? allLabelAt(allIndex) : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
+  // The Zoom shelf: only on a device previewing the Zoom (owner 12/11 preview links) — customers get today's box.
+  const zoomPreview = useZoomPreview();
+  const zoomProto = zoomPreview && ZOOM_PROTO_SLUGS.has(product.slug);
 
   return (
     <>
@@ -392,6 +420,8 @@ export function ProductHero({
               {!hasOptions && <StockCountLine left={canAddToCart ? pickedLeft : undefined} reserve={reserveCount} className="mt-1 lg:hidden" />}
             </div>
           )}
+          {/* T2-31: the devices this part fits, next to the price (nothing cited = nothing here). */}
+          <FitsDeviceLine slug={product.slug} devices={fitsDevices} ownBrand={brandName(product.brandId)} className="-mt-3 max-lg:order-5 max-lg:mt-0" />
 
           {product.colorVariants && product.colorVariants.length > 0 && (
             <ColorVariantRail
@@ -402,7 +432,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.colorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allColorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
@@ -423,7 +453,7 @@ export function ProductHero({
                 setShowAllColors(false);
               }}
               label={dict.product.flavorLabel}
-              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              allLabel={product.lineupImage ? dict.product.allFlavorsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
@@ -444,6 +474,7 @@ export function ProductHero({
                   are passed in so this renders exactly as it did when the branch lived here. */}
               <ProductBuyAction
                 available={canAddToCart}
+                askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
@@ -504,7 +535,18 @@ export function ProductHero({
             gallery, which is absolutely positioned over the same square. One FavoriteButton in its
             original DOM slot serves both — a second copy for the phone view was found (2026-09-08)
             to perturb the desktop render of the heart's backdrop blur by ±2/255. */}
+        {/* ก10 "Zoom" prototype: the card photo the visitor tapped morphs into this box (ZoomShared — prototype slugs, ?preview=zoom only). */}
+        <ZoomShared slug={product.slug}>
         <div className="relative order-1 mx-auto aspect-square w-full max-w-lg max-lg:order-3 max-lg:max-w-none lg:order-2 lg:max-w-none">
+          {zoomProto && (
+            // The lit shelf of the owner's reference reel: one ember line the device stands on + its warm spill, drawn
+            // in from the centre after the zoom lands (globals.css "okami-zoom-plinth"; still when motion is off).
+            // At least 34 px up: the phone slide dots sit 18–26 px above the box bottom, and 7% alone (≈24 px at 390) put the line on them.
+            <div aria-hidden className="okami-zoom-plinth pointer-events-none absolute inset-x-[12%] bottom-[max(7%,34px)] z-0 h-24">
+              <div className="absolute inset-x-0 bottom-0 h-full rounded-[50%] bg-[radial-gradient(ellipse_at_50%_100%,rgba(255,106,44,0.32)_0%,rgba(255,106,44,0.10)_45%,transparent_72%)] blur-md" />
+              <div className="absolute inset-x-[6%] bottom-0 h-px bg-[linear-gradient(to_right,transparent,rgba(255,131,71,0.95)_30%,rgba(255,131,71,0.95)_70%,transparent)] shadow-[0_0_14px_2px_rgba(255,106,44,0.55)]" />
+            </div>
+          )}
           <div
             className="pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
@@ -553,12 +595,14 @@ export function ProductHero({
             )}
           </div>
         </div>
+        </ZoomShared>
       </Container>
     </section>
     {sellingPrice !== null && (
       <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel} orderingEnabled={orderingEnabled} lowText={canAddToCart ? pickedLowText : null}>
         <ProductBuyAction
           available={canAddToCart}
+          askStock={stockAsk}
                 choiceMissingLabel={choiceMissingLabel}
           orderingEnabled={orderingEnabled}
           slug={product.slug}

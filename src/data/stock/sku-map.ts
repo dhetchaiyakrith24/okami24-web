@@ -752,7 +752,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "strawberry-banana": "Pod-170-23",
     "strawberry-kiwi": "Pod-170-10",
     "yoyo-grape": "Pod-170-1",
-    "menthol-freeze": null,
+    "menthol-freeze": "Pod-170-24",
     "grape-bubblegum": "Pod-170-15",
     "watermelon-bubblegum": "Pod-170-16",
     "strawberry-ice-cream": null,
@@ -948,7 +948,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   "coil-74": { parent: null, options: {
     "Coil-74-1": null,
   } },
-  "coil-83": { parent: null, product: null },
+  // 10/11: Max lists "หัวแทงค์เปล่า Argus P1" again as its own parent Coil-83-1 (฿250, order-entry read 10/11) — mapped like coil-55.
+  "coil-83": { parent: "Coil-83-1", product: "Coil-83-1" },
   "coil-87": { parent: null, options: {
     "Coil-87-1": null,
   } },
@@ -1014,7 +1015,9 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   // Round list19 (18/10): KS Quikpro 15K cartridge — the 15 Max children; Grape Berry is Kardinal's flavour the warehouse does not carry.
   // Round list19 (18/10): KS Quikpro kit — Max-only codes ("Variation N") are not in the 13/10 warehouse snapshot, so the kit options
   // Max marked "ไม่มีของ" on 17/10 (all 4) are null = sold out; map a code here when Max shows it in stock.
-  "ks-quikpro-kit": { parent: "Product 780", options: {
+  // 10/11: the warehouse removed "Product 780" from Max (list read 10/11) — parent null; remap (parent "Product 780" + the
+  // Variation codes) when Max re-adds it.
+  "ks-quikpro-kit": { parent: null, options: {
     "Variation 2216": null,
     "Variation 2213": null,
     "Variation 2215": null,
@@ -1112,30 +1115,32 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-142-5": "Pod-142-5",
   } },
   // Round list19 (19/10): Nexswitch 16K kit (device + one pod) — Max Pod-161-* under Max parent "Product 1176446".
-  "nexswitch-16k-kit": { parent: "Product 1176446", options: {
-    "Pod-161-1": "Pod-161-1",
-    "Pod-161-2": "Pod-161-2",
-    "Pod-161-3": "Pod-161-3",
-    "Pod-161-4": "Pod-161-4",
-    "Pod-161-5": "Pod-161-5",
-    "Pod-161-6": "Pod-161-6",
-    "Pod-161-7": "Pod-161-7",
-    "Pod-161-8": "Pod-161-8",
-    "Pod-161-9": "Pod-161-9",
-    "Pod-161-10": "Pod-161-10",
+  // 10/11: the warehouse removed Pod-161-* and Pod-162-* from Max (list read 10/11) — null = sold out, page and options stay;
+  // remap (parent "Product 1176446", each option = its own Max code) when Max re-adds them.
+  "nexswitch-16k-kit": { parent: null, options: {
+    "Pod-161-1": null,
+    "Pod-161-2": null,
+    "Pod-161-3": null,
+    "Pod-161-4": null,
+    "Pod-161-5": null,
+    "Pod-161-6": null,
+    "Pod-161-7": null,
+    "Pod-161-8": null,
+    "Pod-161-9": null,
+    "Pod-161-10": null,
   } },
-  // Round list19 (19/10): Nexswitch 16K refill pod — Max Pod-162-* under Max parent "Product 1176446".
-  "nexswitch-16k-pod": { parent: "Product 1176446", options: {
-    "Pod-162-1": "Pod-162-1",
-    "Pod-162-2": "Pod-162-2",
-    "Pod-162-3": "Pod-162-3",
-    "Pod-162-4": "Pod-162-4",
-    "Pod-162-5": "Pod-162-5",
-    "Pod-162-6": "Pod-162-6",
-    "Pod-162-7": "Pod-162-7",
-    "Pod-162-8": "Pod-162-8",
-    "Pod-162-9": "Pod-162-9",
-    "Pod-162-10": "Pod-162-10",
+  // Round list19 (19/10): Nexswitch 16K refill pod — Max Pod-162-* under Max parent "Product 1176446". Removed 10/11 — see above.
+  "nexswitch-16k-pod": { parent: null, options: {
+    "Pod-162-1": null,
+    "Pod-162-2": null,
+    "Pod-162-3": null,
+    "Pod-162-4": null,
+    "Pod-162-5": null,
+    "Pod-162-6": null,
+    "Pod-162-7": null,
+    "Pod-162-8": null,
+    "Pod-162-9": null,
+    "Pod-162-10": null,
   } },
   // Round list19 (19/10): RELX LUMI 18K — the 16 Max flavour rows (Disposable-44-11 Sea Salt Lemon Candy sold out on 13/10).
   // Round p63 (19/10): ESKO BAR 20000 — the 22 Max flavour rows (every one "ไม่มีของ" in the Max list of 17/10).
@@ -1616,6 +1621,31 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-180-8": "Pod-180-8",
     "Pod-180-9": "Pod-180-9",
     "Pod-180-10": "Pod-180-10",
+  } },
+
+  // New-products pictures 10/11: the original IQOS ILUMA ONE (Max IQOSHEET-17 -1/-2/-5; the other three colours are maker colours the
+  // warehouse does not carry) · ILUMA ONE OASIS (-4) · Pop Up 10K battery base (Pod-154-19, never on /products/pod-154).
+  "iqos-iluma-one": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-1": "IQOSHEET-17-1",
+    "IQOSHEET-17-2": "IQOSHEET-17-2",
+    "IQOSHEET-17-5": "IQOSHEET-17-5",
+    "iqos-iluma-one-verified-pebble-beige": null,
+    "iqos-iluma-one-verified-sunset-red": null,
+    "iqos-iluma-one-verified-moss-green": null,
+  } },
+  "iqos-iluma-one-oasis": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-4": "IQOSHEET-17-4",
+  } },
+  "pop-up-10k-base": { parent: "Pod-154", product: "Pod-154-19" },
+
+  // Coil 5-packs (11/11): the Max box rows — Set-Coil-1-14 under Coil-1 · Set-Coil-1-1 its own parent · Set-Coil-92-1 under Coil-92.
+  // Never on the loose-coil pages coil-1 / coil-92.
+  "voopoo-vinci-coil-5pack": { parent: "Coil-1", options: {
+    "Set-Coil-1-14": "Set-Coil-1-14",
+    "Set-Coil-1-1": "Set-Coil-1-1",
+  } },
+  "voopoo-pnp-x-coil-5pack": { parent: "Coil-92", options: {
+    "Set-Coil-92-1": "Set-Coil-92-1",
   } },
 
   "coil-54": { parent: null, product: null },

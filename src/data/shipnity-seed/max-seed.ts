@@ -4278,5 +4278,161 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       }
     ]
   },
+  "IQOS-ILUMA-ONE": {
+    "maxParentId": "IQOSHEET-17",
+    "name": "Iqos iluma one",
+    "operationalSellingPrice": 2900,
+    "children": [
+      {
+        "shipnityVariantId": "IQOSHEET-17-1",
+        "rawLabel": "Pebble Grey",
+        "sellingPrice": 2900,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "IQOSHEET-17-2",
+        "rawLabel": "Azure Blue",
+        "sellingPrice": 2900,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "IQOSHEET-17-5",
+        "rawLabel": "Bright",
+        "sellingPrice": 2900,
+        "inStock": false
+      }
+    ]
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    "maxParentId": "IQOSHEET-17",
+    "name": "Iqos iluma one",
+    "operationalSellingPrice": 3200,
+    "children": [
+      {
+        "shipnityVariantId": "IQOSHEET-17-4",
+        "rawLabel": "Oasis Limited",
+        "sellingPrice": 3200,
+        "inStock": false
+      }
+    ]
+  },
+  "VOOPOO-VINCI-COIL-5PACK": {
+    "maxParentId": "Coil-1",
+    "name": "Coil Vinci",
+    "operationalSellingPrice": 350,
+    "children": [
+      {
+        "shipnityVariantId": "Set-Coil-1-14",
+        "rawLabel": "คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว",
+        "sellingPrice": 350,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Set-Coil-1-1",
+        "rawLabel": "คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - 0.15Ω 1 กล่อง 5 ตัว",
+        "sellingPrice": 350,
+        "inStock": true
+      }
+    ]
+  },
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    "maxParentId": "Coil-92",
+    "name": "คอยล์ Voopoo PnP X",
+    "operationalSellingPrice": 400,
+    "children": [
+      {
+        "shipnityVariantId": "Set-Coil-92-1",
+        "rawLabel": "คอยล์ Voopoo PnP X - 0.15Ω / 1กล่อง 5ตัว",
+        "sellingPrice": 400,
+        "inStock": true
+      }
+    ]
+  },
+  "POP-UP-10K-BASE": {
+    "maxParentId": "Pod-154",
+    "name": "Pop Up 10K หัวเติม",
+    "operationalSellingPrice": 199,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-154-19",
+        "rawLabel": "ฐานแบตเตอรี่",
+        "sellingPrice": 199,
+        "inStock": true
+      }
+    ]
+  },
+  "INSTA-BAR-PX-15K": {
+    "maxParentId": "Product 744",
+    "name": "Insta 15000 คำ",
+    "operationalSellingPrice": 329,
+    "children": [
+      {
+        "shipnityVariantId": "Variation 746",
+        "rawLabel": "Blackcurrant Grape Ice",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 748",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 749",
+        "rawLabel": "Mix Berry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 750",
+        "rawLabel": "Watermelon Bubblegum",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 752",
+        "rawLabel": "Yummy Bear",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 753",
+        "rawLabel": "Yakult",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 755",
+        "rawLabel": "Lemon Lime Ice Cream",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 756",
+        "rawLabel": "Lychee Rasberry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 758",
+        "rawLabel": "Grape",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 759",
+        "rawLabel": "Strawberry",
+        "sellingPrice": 329,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Variation 760",
+        "rawLabel": "Mango",
+        "sellingPrice": 329,
+        "inStock": false
+      }
+    ]
+  },
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD","RELX-CREATOR-POD-20K","SUP-ZERO-22K","MARBO-10K-CLONE","NEXBAR-SWITCH-15K-POD","DUDE-POD-3ML","IQOS-ILUMA-ONE","IQOS-ILUMA-ONE-OASIS","VOOPOO-VINCI-COIL-5PACK","VOOPOO-PNP-X-COIL-5PACK","POP-UP-10K-BASE","INSTA-BAR-PX-15K"];

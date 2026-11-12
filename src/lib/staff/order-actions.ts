@@ -59,12 +59,65 @@ export function warehouseText(input: {
   address: string;
   /** Shipnity's carrier name (EMS / DHL — owner 30/10), the last line when given. */
   carrier?: string;
+  /** A LINE order keyed on /staff/line-order (migration 0026) heads its block "ออเดอร์ LINE"; every other order "ออเดอร์เว็บ". */
+  channel?: "web" | "line";
 }): string {
   return [
-    `ออเดอร์เว็บ ${input.orderNumber}`,
+    `${input.channel === "line" ? "ออเดอร์ LINE" : "ออเดอร์เว็บ"} ${input.orderNumber}`,
     ...input.lines.map((l) => `${l.sku ?? "[ไม่มีรหัสคลัง]"} × ${l.quantity}  (${l.name})`),
     `ผู้รับ ${input.recipientName} ${input.phone}`,
     input.address,
     ...(input.carrier ? [`ขนส่ง ${input.carrier}`] : []),
   ].join("\n");
+}
+
+/**
+ * THE WAREHOUSE MAY ALREADY HAVE IT (LINE_ORDERS_GAPS.md #1 and #4). Our site only ever sends Shipnity a NEW order — a cancel
+ * on the web never reaches the warehouse (whether Shipnity would act on an update is unknown until the owner asks the
+ * warehouse). So cancelling an order the warehouse may hold needs the admin's tick that they cancelled it in Shipnity or told
+ * the warehouse admin. "May hold": sent by our button, or handed over by hand (processing), or a LINE order already paid —
+ * while the owner's switch is off the admin keys LINE orders into Shipnity by hand, maybe before pressing anything here.
+ */
+export function warehouseMayHaveIt(o: { status: OrderStatus; channel: "web" | "line"; sentToWarehouse: boolean }): boolean {
+  if (o.status === "cancelled" || o.status === "shipped" || o.status === "completed") return false;
+  return o.sentToWarehouse || o.status === "processing" || (o.channel === "line" && o.status === "approved");
+}
+
+/**
+ * A CANCEL THAT OWES A REFUND (owner 12/11, via Friday: "ยกเลิกออเดอร์ที่ลูกค้าจ่ายแล้ว หน้าทีมงานต้องเตือนเรื่องคืนเงิน"). Staff confirmed
+ * the payment (approved — LINE orders included — or processing), so cancelling means the shop transfers the money back
+ * (BSOT §9: no refund after a transfer except out of stock / cannot ship — the owner's two exceptions, which are what a cancel
+ * of a paid order is). The cancel form asks for a tick that the admin knows; the out-of-stock box with every line ticked is
+ * the better way (the customer picks where the refund goes, staff record it). A slip never confirmed promises no refund
+ * (owner 29/10) — no tick there.
+ */
+export function cancelOwesRefund(status: OrderStatus): boolean {
+  return status === "approved" || status === "processing";
+}
+
+/** The tick's mark in the history note (order-bits.tsx shows it in Thai). */
+export const REFUND_TICK_NOTE = "refund due (ticked)";
+
+/**
+ * The history note of a cancel that owes a refund: the tick's mark FIRST (the note is cut at 300 — checker 12/11: last, a
+ * long reason pushed it off), then the staff note, or else the reason the customer is shown, its runs of whitespace made one
+ * space. `note` may already carry the warehouse tick (actions.ts); it stays whole after the mark.
+ */
+export function refundCancelNote(note: string, message: string): string {
+  const reason = note.trim() || message.replace(/\s+/g, " ").trim();
+  return [REFUND_TICK_NOTE, reason].filter(Boolean).join(" — ");
+}
+
+/**
+ * THE DOUBLE SHIPMENT (LINE_ORDERS_GAPS.md #1): once the owner's switch is ON, a paid LINE order goes to Shipnity by the
+ * order page's button. Keyed into Shipnity by hand as well, out of habit, the warehouse packs it twice. So the hand-over by
+ * hand ("ส่งรายการให้คลังแล้ว") of a LINE order, while the button can send it, needs the admin's tick that they keyed it into
+ * Shipnity themselves and did not press the button — and the button carries a red "do not key it again" line.
+ * While the owner's auto-push switch is on (src/lib/woo/auto-push-rules.ts) the system may already have sent ANY paid order,
+ * so every hand-over by hand needs the tick. Only while Shipnity takes orders from us (`shipnityReady`): with no link, nothing
+ * can send by itself and the hand-over by hand is the only way, so asking would only block the admin.
+ */
+export function handoverNeedsTick(o: { channel: "web" | "line"; lineSwitchOn: boolean; autoOn?: boolean; shipnityReady: boolean }): boolean {
+  if (!o.shipnityReady) return false;
+  return o.autoOn === true || (o.channel === "line" && o.lineSwitchOn);
 }

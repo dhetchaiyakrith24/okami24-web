@@ -6,11 +6,12 @@ import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { catalogSearchTexts } from "@/lib/catalog-search-entries";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
 import { canonicalFor, collectionPageJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { productsHeadTh } from "@/i18n/search-head-copy";
 import { Suspense } from "react";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
 import { SamuraiBackdrop } from "@/components/brand/SamuraiBackdrop";
 
@@ -19,13 +20,16 @@ import { SamuraiBackdrop } from "@/components/brand/SamuraiBackdrop";
 // round ก rows A7/A8). Round 30.4's ruling still holds: no "น้ำยา" until that category has
 // products on the storefront (owner 2026-09-13, THAI_STYLE §6).
 const PRODUCTS_TOTAL_COUNT = allProducts.length + getPublishedProducts().length;
-const PRODUCTS_HEAD = productsHeadTh(PRODUCTS_TOTAL_COUNT, ORDERING_ENABLED);
+const productsHead = () => productsHeadTh(PRODUCTS_TOTAL_COUNT, orderingOpen());
 
-export const metadata: Metadata = {
-  title: { absolute: PRODUCTS_HEAD.title },
-  description: PRODUCTS_HEAD.description,
+/** ISR (owner 10/11): the server-side in-stock list (CatalogBrowser's first paint) follows the warehouse, every 3 hours at most. */
+export const revalidate = 10800;
+
+export const generateMetadata = (): Metadata => ({
+  title: { absolute: productsHead().title },
+  description: productsHead().description,
   ...canonicalFor("/products"),
-};
+});
 
 export default function ProductsPage() {
   // Real, published ProductMaster products belong on the main catalog index the same as legacy
@@ -33,6 +37,7 @@ export default function ProductsPage() {
   // origin to find it here. See CatalogBrowser's own doc comment.
   const publishedProducts = getPublishedProducts();
   const totalCount = allProducts.length + publishedProducts.length;
+  const PRODUCTS_HEAD = productsHead();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: PRODUCTS_HEAD.title, description: PRODUCTS_HEAD.description, path: "/products" })) }} />
@@ -40,13 +45,15 @@ export default function ProductsPage() {
       <div className="relative isolate">
         <SamuraiBackdrop />
         <ProductsPageHeader totalCount={totalCount} />
-        <Container className="py-12 lg:py-16">
+        {/* look-0911 fix 2: no top padding here — the header above already ends in 48/64 px, and the two together left a
+            96/128 px empty band before the toolbar, pushing the first product to y≈489 on a phone. */}
+        <Container className="pb-12 lg:pb-16">
           {/* Only visible when /cart or /checkout sent the visitor here (?order=line) — read client-side so this page stays
               prerendered. Always on the page: the owner's cart switch closes ordering without a build (ordering-mode.ts). */}
           <Suspense fallback={null}>
             <LineOrderingNotice />
           </Suspense>
-          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
+          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
         </Container>
       </div>
     </>

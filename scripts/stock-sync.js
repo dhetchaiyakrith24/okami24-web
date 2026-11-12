@@ -49,7 +49,7 @@ if (!file || !/^\d{4}-\d{2}-\d{2}$/.test(date ?? "")) {
 const pairs = fs.readFileSync(file, "utf8").trim().split(",").map((p) => p.trim()).filter(Boolean);
 const all = new Map();
 for (const p of pairs) {
-  const m = /^([A-Za-z]+-\d+(?:-\d+)?)=([01])$/.exec(p);
+  const m = /^([A-Za-z]+(?:-[A-Za-z]+)?-\d+(?:-\d+)*)=([01])$/.exec(p); // code shape = order-entry-stock.js (box rows "Set-Coil-1-14")
   if (!m) { console.error(`bad entry: ${p}`); process.exit(1); }
   all.set(m[1], m[2]);
 }

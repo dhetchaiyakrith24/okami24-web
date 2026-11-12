@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
-import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import type { CatalogItem } from "@/lib/catalog-index";
 import { CatalogItemMedia } from "@/components/visual/CatalogItemMedia";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { labelLang } from "@/lib/label-lang";
@@ -18,9 +18,13 @@ export function ProductPicker({
   selected,
   onAdd,
   onRemove,
+  catalog,
   max = 4,
 }: {
   selected: CatalogItem[];
+  /** the storefront catalog (allCatalogItems, from the server page — a client import of catalog-index bundled the raw
+   *  product files, T2-50) */
+  catalog: readonly CatalogItem[];
   onAdd: (slug: string) => void;
   onRemove: (slug: string) => void;
   max?: number;
@@ -32,7 +36,7 @@ export function ProductPicker({
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.trim().toLowerCase();
-    return allCatalogItems()
+    return catalog
       .filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandName ?? ""} ${p.brandId ?? ""}`.toLowerCase().includes(q))
       .slice(0, 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,10 +47,14 @@ export function ProductPicker({
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {selected.map((product) => (
           <div key={product.slug} className="relative flex flex-col rounded-xl border border-surface-border bg-surface-1 p-3">
+            {/* z-10: the picture box below is `relative` (07/11 fill-the-card fix) and comes later in the DOM, so
+                without it the picture painted over this button and swallowed every click (owner 12/11). Guarded by
+                compare-remove-contract-test.ts. */}
             <button
+              type="button"
               onClick={() => onRemove(product.slug)}
               aria-label={`${dict.compare.removeAriaPrefix} ${product.name}`}
-              className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-surface-border bg-surface-0 text-foreground-muted hover:text-foreground"
+              className="absolute right-2 top-2 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-surface-border bg-surface-0 text-foreground-muted hover:text-foreground"
             >
               <X size={12} aria-hidden />
             </button>

@@ -28,13 +28,18 @@ Stops = 13.3 only. A stop in an unattended run: leave the draft and ask in the r
    customer, contact or existing-order pages. Never type a password. A sign-in page = stop; the report's first line says the
    owner must sign in to Shipnity Max in Chrome, and the next run reads on.
 3. Save the read to `_incoming/stock-api/sync/oe-<YYYY-MM-DD-HHMM>.txt` in the main folder.
-4. The read is comma-separated `<parent>:<bits>[@options]`. A parent code (letters-dash-digits; ignore `Set-*`, "Close", "test")
-   is NEW when neither `"<code>"` nor `"<code>-` appears in origin/main's [sku-map].
+4. The read is comma-separated `<parent>:<bits>[@options]`; each option's code = the list after `@`, else `<parent>-1` … `<parent>-<n>`
+   in bit order (the same decoding as `scripts/order-entry-stock.js`). Ignore `Set-*`, "Close", "test". Two kinds of NEW, check both:
+   - (a) **new product** — a parent code (letters-dash-digits) is NEW when neither `"<code>"` nor `"<code>-` appears in origin/main's [sku-map].
+   - (b) **new colour / flavour of a product we list** — the parent is in [sku-map] but one of its option codes is not (`"<option code>"`
+     appears nowhere in it). Skip an option code that is another product's parent code (the script lists those as "option coded as
+     another product"). Checking only (a) misses these (10/11: Pod-170-24, IQOSHEET-17-x, Pod-154-19, ELIQUID-1-1 were missed).
 5. Skip codes already in `_incoming/stock-api/new-products.md` of the main folder (a line containing ` · <code> · `). Append the
-   rest: `- <YYYY-MM-DD HH:MM> · <code> · <in>/<total> · <name if the read has it>`. Never edit or delete a line here.
-6. No new code = report "ไม่มีสินค้าใหม่" and stop.
+   rest: `- <YYYY-MM-DD HH:MM> · <code> · <in>/<total> · <name if the read has it>` — for (b) `<in>/<total>` = that option's bit
+   out of 1 and the name part starts `option of <parent> ·`. Never edit or delete a line here.
+6. No new code of either kind = report "ไม่มีสินค้าใหม่" and stop. The report names (a) and (b) codes on separate lines.
 
-Daily task limit: at most 3 new products per run, oldest first. The rest wait for the next run.
+Daily task limit: at most 3 new products per run, oldest first; all (b) codes of one parent count as one. The rest wait for the next run.
 
 ## Step 2 — Identify
 
@@ -43,6 +48,9 @@ Daily task limit: at most 3 new products per run, oldest first. The rest wait fo
 3. Not new after all: Shipnity re-codes products (Pod-180 became Disposable-46). Already on the site under another code = add
    the code to [sku-map] for that page, no [warehouse-new] entry, then Step 6.
 4. Every colour and flavour the maker offers goes in, stock or not (`CLAUDE.md`).
+   A Step 1 (b) code: item 1 gives the option name → the page already shows that colour/flavour (mapped `null`, `"check"` or under a
+   duplicate Max row) = put the code on that option in [sku-map], then Step 6 · the page lacks it = add the option the maker's way
+   (identity by item 2, pictures by skill `product-images`) on the existing page, no [warehouse-new] entry.
 5. A new brand or category = a change every page feels (footer · home · /about · sitemap · LESSONS พ7): plan it as a shared part
    (13.2 `scope-auditor` · 13.5 #5).
 
@@ -97,8 +105,13 @@ report it; never reach the same result another way (13.7).
 1. After the merge, mark the code's line in `new-products.md` with ` — listed #<PR> as /products/<slug>`, or
    ` — prepared unpublished (#<PR>): <why>`.
 2. Visitor-visible page = skill `seo-after-publish`.
-3. Report in Thai, central §12 item 10 + `docs/TEMPLATES.md` (ข): first line = the summary · per product the name customers see +
+3. Live stock number: after the deploy, `/staff/shipnity` (section "เทียบสต็อก") must not list the new code under "ยังไม่มีตัวเลขจาก
+   Shipnity". A code with no Shipnity number is not sold — its page shows "สอบถามสต็อกทาง LINE" (owner 11/11). Listed there = ask
+   the warehouse admin to press "อัปเดตสต็อก" on the okami24.store connection in the warehouse's own Shipnity (the Max admin
+   account has no store-connection menu), so Shipnity sends its number: one line in `docs/รอพี่ตรวจ.md` ("แจ้งคลังกดอัปเดตสต็อก
+   <name>", precedent item 113) and in the report's "ต้องตัดสินใจ/ทำ".
+4. Report in Thai, central §12 item 10 + `docs/TEMPLATES.md` (ข): first line = the summary · per product the name customers see +
    its live link, or why it waits · questions as one set, each with a recommendation (13.3).
-4. Daily task: push notification when anything was found (PushNotification tool, if available):
+5. Daily task: push notification when anything was found (PushNotification tool, if available):
    "สินค้าใหม่ N รายการ: ลงเว็บแล้ว X · รอพี่ Y" plus the links. Its report is what the main chat reads.
-5. Main chat: status page = 13.6.
+6. Main chat: status page = 13.6.

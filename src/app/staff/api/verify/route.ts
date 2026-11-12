@@ -1,5 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { currentStaff, staffAreaEnabled } from "@/lib/staff/auth";
+import { recordStaffAction } from "@/lib/staff/audit";
+import { slipCheckDetail } from "@/lib/staff/audit-rules";
 import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_BYTES } from "@/lib/staff/easyslip";
 import type { SlipCheckResponse } from "@/lib/staff/slip-check-types";
 import { sameSiteRequest } from "@/lib/staff/request-guard";
@@ -32,7 +34,8 @@ function parseExpected(value: FormDataEntryValue | null): number | null {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  if (!staffAreaEnabled() || !(await isStaff())) return new NextResponse(null, { status: 404, headers: HEADERS });
+  const actor = staffAreaEnabled() ? await currentStaff() : null;
+  if (!actor) return new NextResponse(null, { status: 404, headers: HEADERS });
 
   if (!sameSiteRequest(request)) return new NextResponse(null, { status: 403, headers: HEADERS });
 
@@ -53,5 +56,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const bytes = Buffer.from(await image.arrayBuffer());
   const fileName = image instanceof File && image.name ? image.name.slice(0, 100) : "slip";
-  return reply(await checkSlip({ bytes, type: image.type, fileName, expected, withQuota: true }));
+  const result = await checkSlip({ bytes, type: image.type, fileName, expected, withQuota: true });
+  if (result.ok) recordStaffAction(actor, "slip-check", { detail: slipCheckDetail(result.slip, result.duplicate !== null, result.amountCheck?.matches ?? null) });
+  return reply(result);
 }

@@ -7,6 +7,7 @@ import { allCatalogItems, getCatalogItem, type CatalogItem } from "@/lib/catalog
 import { inStockEntryKeys } from "@/lib/in-stock";
 import type { Product } from "@/types/catalog";
 import { taglineThFor } from "@/lib/card-taglines";
+import { cardOnly } from "@/lib/related-order";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 
 export interface SimilarItem {
@@ -44,6 +45,8 @@ function buyableToday(slug: string): boolean {
 
 /** The models to offer on `slug`'s page, closest first, every one with a price and stock at build time. Empty = nothing to
  *  offer, and the page then shows no block. Stock can only be read at build here; the page checks it again live. */
+const cardOnlyOrNull = (p: Product | undefined): Product | null => (p ? cardOnly(p) : null);
+
 export function similarInStock(slug: string): SimilarItem[] {
   const own = getCatalogItem(slug);
   if (!own) return [];
@@ -60,5 +63,6 @@ export function similarInStock(slug: string): SimilarItem[] {
   return [...picked, ...sameMake, ...otherMakes]
     .filter((i) => !seen.has(i.slug) && seen.add(i.slug))
     .slice(0, CANDIDATES)
-    .map((i) => ({ slug: i.slug, legacy: getProduct(i.slug) ?? null, taglineTh: taglineThFor(i.slug), published: getPublishedProductBySlug(i.slug) ?? null }));
+    // the same card-only record as the related block (related-order.ts): the page text never rides along (T2-50)
+    .map((i) => ({ slug: i.slug, legacy: cardOnlyOrNull(getProduct(i.slug)), taglineTh: taglineThFor(i.slug), published: getPublishedProductBySlug(i.slug) ?? null }));
 }

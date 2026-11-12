@@ -1,5 +1,6 @@
 import { staffStockAction } from "@/app/staff/actions";
 import { canOpenStockIssue, stockIssueStage } from "@/lib/commerce/stock-issue-rules";
+import { isWarehouseCancelNote } from "@/lib/commerce/cancel-reason";
 import type { StaffOrderDetail } from "@/lib/staff/orders";
 import { formatBaht, formatDateTime } from "@/app/staff/_components/order-bits";
 import { RefundSlipUpload } from "@/app/staff/_components/RefundSlipUpload";
@@ -90,13 +91,18 @@ export function StockIssueSection({ order, asRow = false }: { order: StaffOrderD
   }
 
   const stage = stockIssueStage(issue);
+  // The warehouse cancelled the whole order in Shipnity (src/lib/woo/warehouse-cancel.ts) — the box is a refund, not "out of stock".
+  const cancelled = order.status === "cancelled";
+  const byWarehouse = cancelled && isWarehouseCancelNote(order.statusHistory.find((h) => h.status === "cancelled")?.note ?? null);
   return (
     <section
       className={
         asRow ? "flex flex-col gap-3 px-4 py-4 text-sm sm:px-5" : `${box} ${stage === "resolved" ? "border-surface-border-soft" : "border-unverified/50"}`
       }
     >
-      <h2 className="text-base font-semibold text-foreground">สินค้าหมดหลังลูกค้าโอน</h2>
+      <h2 className="text-base font-semibold text-foreground">
+        {byWarehouse ? "คลังยกเลิกออเดอร์ใน Shipnity — คืนเงินลูกค้า" : cancelled ? "ออเดอร์ยกเลิกแล้ว — คืนเงินลูกค้า" : "สินค้าหมดหลังลูกค้าโอน"}
+      </h2>
       <p className="text-foreground-muted">แจ้งเมื่อ {formatDateTime(issue.openedAt)}{issue.staffNote ? ` — ${issue.staffNote}` : ""}</p>
       {issue.resolution === "swapped" && issue.swap ? (
         // The order lines now hold the new items — show what changed from the customer's recorded choice.
@@ -122,7 +128,23 @@ export function StockIssueSection({ order, asRow = false }: { order: StaffOrderD
         </p>
       )}
 
-      {stage === "chosen" && issue.choice === "swap" && issue.swap && (
+      {stage === "chosen" && issue.choice === "swap" && issue.swap && cancelled && (
+        // A cancelled order is final: the swap cannot be written into it (applySwap refuses).
+        <div className="flex flex-col gap-1">
+          <p className="font-semibold text-foreground">ลูกค้าเลือกเปลี่ยนสินค้าไว้ก่อนออเดอร์ถูกยกเลิก ({formatDateTime(issue.chosenAt ?? issue.openedAt)})</p>
+          <ul className="list-disc pl-5 text-foreground">
+            {issue.swap.map((p) => (
+              <li key={p.itemId}>
+                {p.fromLabel ?? "?"} → {p.name}
+                {p.variantLabel ? ` · ${p.variantLabel}` : ""}
+              </li>
+            ))}
+          </ul>
+          <p className="text-foreground-muted">เปลี่ยนในออเดอร์นี้ไม่ได้แล้ว — ติดต่อลูกค้า: คีย์ออเดอร์ LINE ใหม่ด้วยยอดที่จ่ายแล้ว หรือโอนคืนแล้วบันทึกด้านล่าง</p>
+        </div>
+      )}
+
+      {stage === "chosen" && issue.choice === "swap" && issue.swap && !cancelled && (
         <form action={staffStockAction} className="flex flex-col gap-2">
           <input type="hidden" name="orderNumber" value={order.orderNumber} />
           <input type="hidden" name="step" value="swap" />
@@ -166,7 +188,11 @@ export function StockIssueSection({ order, asRow = false }: { order: StaffOrderD
             <p className="text-unverified">ไม่ใช่เบอร์ที่ใช้สั่ง (หรือเป็นเลขบัญชี) — ก่อนโอนเช็คว่าชื่อบัญชีปลายทางตรงกับชื่อลูกค้า ({order.shippingAddress.recipientName})</p>
           )}
           <p className="text-xs text-foreground-dim">
-            {issue.refund.wholeOrder ? "สินค้าหมดทุกรายการ — บันทึกแล้วออเดอร์จะถูกยกเลิก" : "คืนเฉพาะรายการที่หมด (ค่าส่งไม่คืน) — รายการที่เหลือส่งตามปกติ"}
+            {order.status === "cancelled"
+              ? "ออเดอร์ยกเลิกแล้ว — คืนเต็มยอดที่ลูกค้าจ่าย"
+              : issue.refund.wholeOrder
+                ? "สินค้าหมดทุกรายการ — บันทึกแล้วออเดอร์จะถูกยกเลิก"
+                : "คืนเฉพาะรายการที่หมด (ค่าส่งไม่คืน) — รายการที่เหลือส่งตามปกติ"}
           </p>
         </div>
       )}

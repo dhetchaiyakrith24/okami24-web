@@ -8,6 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CART_ADDED_EVENT, type CartAddedDetail } from "@/components/commerce/AddToCartForm";
 import { markLanded, refreshCartCount, setCartCount, useCartCount, useCartLanded, visibleCartTarget } from "@/components/commerce/cart-count";
 import { cn } from "@/lib/utils";
+import { emberRgb } from "@/lib/preview";
 
 /** Pages that are the cart flow themselves (or staff) — the button would only point at where the visitor already is. */
 const HIDDEN_ON = ["/cart", "/checkout", "/orders", "/staff"];
@@ -99,7 +100,7 @@ export function FloatingCart({ orderingEnabled }: { orderingEnabled: boolean }) 
             easing: "ease-out",
           });
           fab.animate(
-            [{ boxShadow: "0 0 0 0 rgba(255,106,44,.5)" }, { boxShadow: "0 0 0 12px rgba(255,106,44,0)" }],
+            [{ boxShadow: `0 0 0 0 rgb(${emberRgb()} / .5)` }, { boxShadow: `0 0 0 12px rgb(${emberRgb()} / 0)` }],
             { duration: 700, easing: "ease-out" },
           );
         };

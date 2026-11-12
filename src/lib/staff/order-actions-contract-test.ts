@@ -5,13 +5,14 @@
  *   2. which buttons show at each status — nothing can be confirmed before a slip, nothing shipped before payment is
  *      confirmed, nothing cancelled once shipped;
  *   3. tracking numbers are cleaned or refused;
- *   4. the warehouse text carries every item's code and quantity and says so out loud when a code is missing.
+ *   4. the warehouse text carries every item's code and quantity and says so out loud when a code is missing;
+ *   5. when a cancel or a hand-over by hand needs the admin's tick about Shipnity (LINE_ORDERS_GAPS.md #1 / #4).
  *
  * Runs under plain `tsx` (discovered by scripts/verify-catalog.ts).
  */
 
 import { canTransition, ORDER_STATUSES, type OrderStatus } from "../commerce/order-status";
-import { availableActions, cleanTracking, stepsFor, warehouseText, type StaffAction } from "./order-actions";
+import { availableActions, cancelOwesRefund, cleanTracking, handoverNeedsTick, refundCancelNote, REFUND_TICK_NOTE, stepsFor, warehouseMayHaveIt, warehouseText, type StaffAction } from "./order-actions";
 
 interface Result {
   name: string;
@@ -70,6 +71,34 @@ check("warehouse text: recipient, phone and address", text.includes("สมช�
 check("warehouse text: no carrier line unless given", !text.includes("ขนส่ง"), text);
 const withCarrier = warehouseText({ orderNumber: "OK-1", lines: [], recipientName: "ก", phone: "0800000000", address: "x 83150", carrier: "DHL" });
 check("warehouse text: carrier as the last line", withCarrier.split("\n").at(-1) === "ขนส่ง DHL", withCarrier);
+check("warehouse text: a web order heads 'ออเดอร์เว็บ'", text.startsWith("ออเดอร์เว็บ OK-"), text);
+const lineText = warehouseText({ orderNumber: "OK-2", lines: [], recipientName: "ก", phone: "0800000000", address: "x", channel: "line" });
+check("warehouse text: a keyed LINE order heads 'ออเดอร์ LINE'", lineText.startsWith("ออเดอร์ LINE OK-2"), lineText);
+
+// 5. LINE_ORDERS_GAPS.md #1 / #4: when a cancel or a hand-over needs the admin's tick about Shipnity.
+const may = (status: OrderStatus, channel: "web" | "line", sentToWarehouse = false) => warehouseMayHaveIt({ status, channel, sentToWarehouse });
+check("tick on cancel: sent by the button", may("approved", "web", true));
+check("tick on cancel: handed over by hand", may("processing", "web"));
+check("tick on cancel: a paid LINE order (keyed into Shipnity by hand while the switch is off)", may("approved", "line"));
+check("no tick: a paid web order not sent", !may("approved", "web"));
+check("no tick: waiting for the money", !may("awaiting_verification", "line"));
+check("no tick: shipped or done (cannot be cancelled anyway)", !may("shipped", "line", true) && !may("completed", "web", true));
+check("hand-over tick: LINE order while the switch is on", handoverNeedsTick({ channel: "line", lineSwitchOn: true, shipnityReady: true }));
+check("no hand-over tick: switch off, or a web order", !handoverNeedsTick({ channel: "line", lineSwitchOn: false, shipnityReady: true }) && !handoverNeedsTick({ channel: "web", lineSwitchOn: true, shipnityReady: true }));
+check("hand-over tick: every order while the auto-push switch is on", handoverNeedsTick({ channel: "web", lineSwitchOn: false, autoOn: true, shipnityReady: true }) && handoverNeedsTick({ channel: "line", lineSwitchOn: false, autoOn: true, shipnityReady: true }));
+check("no hand-over tick without a Shipnity link — nothing can send by itself, so hand-over by hand must stay open", !handoverNeedsTick({ channel: "line", lineSwitchOn: true, autoOn: true, shipnityReady: false }));
+
+// Owner 12/11: cancelling an order whose payment staff confirmed owes a refund (the cancel form asks for a tick).
+check("refund tick: approved and processing (payment confirmed)", cancelOwesRefund("approved") && cancelOwesRefund("processing"));
+check("no refund tick: unpaid, slip not confirmed yet (owner 29/10), shipped, done, cancelled", (["pending_payment", "payment_submitted", "awaiting_verification", "shipped", "completed", "cancelled"] as OrderStatus[]).every((st) => !cancelOwesRefund(st)));
+// Checker 12/11: the reason lost every "s" (a regex missing its backslash) and a long reason pushed the mark past the 300 cut.
+const fromMessage = refundCancelNote("", "Out of  stock\nsorry, ส่งไม่ได้ค่ะ");
+check("refund note: the customer reason keeps every letter (only whitespace runs become one space)", fromMessage === `${REFUND_TICK_NOTE} — Out of stock sorry, ส่งไม่ได้ค่ะ`, fromMessage);
+check("refund note: the staff note wins over the reason", refundCancelNote("  staff says s  ", "ignored") === `${REFUND_TICK_NOTE} — staff says s`);
+check("refund note: the mark survives the 300 cut whatever the reason's length", refundCancelNote("", "s".repeat(400)).slice(0, 300).startsWith(REFUND_TICK_NOTE));
+const both = refundCancelNote("warehouse: cancelled in Shipnity / told (ticked) — stock gone", "x");
+check("refund note: a warehouse-ticked note stays whole after the mark", both === `${REFUND_TICK_NOTE} — warehouse: cancelled in Shipnity / told (ticked) — stock gone`, both);
+check("refund note: no reason at all = the mark alone", refundCancelNote(" ", " ") === REFUND_TICK_NOTE);
 
 for (const res of results) {
   console.log(`${res.passed ? "PASS" : "FAIL"}  ${res.name}${res.passed || !res.detail ? "" : `\n      ${res.detail}`}`);

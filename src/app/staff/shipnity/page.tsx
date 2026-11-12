@@ -130,18 +130,28 @@ export default async function StaffShipnityPage() {
       </header>
 
       <section id="stock" className="flex flex-col gap-3">
-        <h2 className="text-lg font-semibold text-foreground">เทียบสต็อก Shipnity กับหน้าเว็บ</h2>
+        <h2 className="text-lg font-semibold text-foreground">เทียบสต็อก Shipnity กับสต็อกตอนสร้างเว็บ</h2>
         <p className="text-sm leading-relaxed text-foreground-muted">
           {formatCount(cmp.total)} รหัส · Shipnity ส่งตัวเลขมาแล้ว {formatCount(cmp.reported)} · ตรงกัน {formatCount(cmp.agree)}
-          {" · "}
-          <span className={cmp.siteSellsButEmpty.length > 0 ? "font-semibold text-danger" : ""}>
-            Shipnity หมดแต่เว็บยังขาย {formatCount(cmp.siteSellsButEmpty.length)}
-          </span>
-          {" · "}Shipnity มีแต่เว็บขึ้นหมด {formatCount(cmp.siteOutButStocked.length)} · ยังไม่มีตัวเลข {formatCount(cmp.missing.length)}
+          {" · "}Shipnity หมด แต่สต็อกตอนสร้างเว็บยังมี {formatCount(cmp.siteSellsButEmpty.length)}
+          {" · "}Shipnity มีของ แต่สต็อกตอนสร้างเว็บหมด {formatCount(cmp.siteOutButStocked.length)} · ยังไม่มีตัวเลข {formatCount(cmp.missing.length)}
         </p>
+        <p className="text-sm leading-relaxed text-foreground-dim">
+          หน้าสินค้า ตะกร้า และการสั่งซื้อใช้ตัวเลขล่าสุดจาก Shipnity อยู่แล้ว ลูกค้าจึงสั่งของที่ Shipnity หมดไม่ได้ · รหัสที่ Shipnity ยังไม่ส่งตัวเลข เว็บไม่ขาย หน้าสินค้าขึ้นปุ่ม “สอบถามสต็อกทาง LINE” แทน
+        </p>
+        {/* Owner 11/11: a code with no Shipnity number is not sold (live-rules.ts "ask") — staff see which, and what fixes it. */}
+        {cmp.missing.length > 0 && (
+          <div role="alert" className="flex flex-col gap-2 rounded-xl border border-danger/40 bg-danger/5 px-4 py-3">
+            <p className="text-sm font-semibold text-danger">
+              {formatCount(cmp.missing.length)} รหัสยังไม่มีตัวเลขจาก Shipnity — เว็บไม่ขายรหัสเหล่านี้
+            </p>
+            <p className="text-sm leading-relaxed text-foreground-muted">ให้คลังกด “อัปเดตสต็อก” ของรหัสนี้ใน Shipnity แล้ว Shipnity จะส่งตัวเลขมาเอง หน้าสินค้ากลับมาขายได้ในไม่กี่นาที</p>
+            <StockRows rows={cmp.missing} />
+          </div>
+        )}
         {cmp.siteSellsButEmpty.length > 0 && (
-          <details open>
-            <summary className="cursor-pointer text-sm font-semibold text-danger">Shipnity หมด แต่เว็บยังขาย</summary>
+          <details>
+            <summary className="cursor-pointer text-sm text-foreground">Shipnity หมด แต่สต็อกตอนสร้างเว็บยังมี</summary>
             <div className="pt-2">
               <StockRows rows={cmp.siteSellsButEmpty} />
             </div>
@@ -149,17 +159,9 @@ export default async function StaffShipnityPage() {
         )}
         {cmp.siteOutButStocked.length > 0 && (
           <details>
-            <summary className="cursor-pointer text-sm text-foreground">Shipnity มีของ แต่เว็บขึ้นหมด (อาจเป็นรายการปิดขายของพี่)</summary>
+            <summary className="cursor-pointer text-sm text-foreground">Shipnity มีของ แต่สต็อกตอนสร้างเว็บหมด (หน้าเว็บใช้ตัวเลข Shipnity แล้ว)</summary>
             <div className="pt-2">
               <StockRows rows={cmp.siteOutButStocked} />
-            </div>
-          </details>
-        )}
-        {cmp.missing.length > 0 && (
-          <details>
-            <summary className="cursor-pointer text-sm text-foreground-muted">ยังไม่มีตัวเลขจาก Shipnity</summary>
-            <div className="pt-2">
-              <StockRows rows={cmp.missing} />
             </div>
           </details>
         )}

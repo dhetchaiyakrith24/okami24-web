@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { cardTaglinesTh } from "@/lib/card-taglines";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
+import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { notFound } from "next/navigation";
 import { brands, getBrand } from "@/data/brands";
 import { familiesForBrand } from "@/data/families";
@@ -15,7 +16,7 @@ import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
 import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandTitleTh } from "@/i18n/search-titles";
 import { BRAND_H1, BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
-import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { orderingOpen } from "@/lib/commerce/ordering-mode";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
@@ -26,6 +27,9 @@ import { relatedArticlesForCollection } from "@/lib/article-relevance";
 import { CategoryGuide } from "@/components/catalog/CategoryGuide";
 import { BRAND_GUIDE_COPY } from "@/i18n/brand-guide-copy";
 import { articleFaqJsonLd } from "@/lib/article-jsonld";
+
+/** ISR (owner 10/11): the server-side in-stock list follows the warehouse, every 3 hours at most. */
+export const revalidate = 10800;
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -44,7 +48,7 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   // search for and their prices. The price is read from the catalog index here, at build, through
   // the same source the product page shows — never typed into the copy (owner: 6 of the 8 prices
   // are estimates the stock API will overwrite). No approved price → that fragment is dropped.
-  const headOverride = BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, ORDERING_ENABLED);
+  const headOverride = BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, orderingOpen());
   if (headOverride && !isEmpty) {
     return {
       title: { absolute: headOverride.title },
@@ -84,7 +88,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   // <title> says). Nothing visible changes.
   const isEmpty = products.length === 0 && publishedProducts.length === 0;
   const brandPath = `/brands/${brandSlug}`;
-  const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, ORDERING_ENABLED);
+  const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf, orderingOpen());
   const brandPageName = headOverride?.title ?? (isEmpty ? brand.name : brandTitleTh(brand.name));
   const brandPageDescription = headOverride?.description ?? brand.descriptionTh ?? brand.description;
   // Round "clip": the page's shop clip (if any) + its VideoObject, described from the Thai dictionary like the product page's.
@@ -107,7 +111,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
+        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>

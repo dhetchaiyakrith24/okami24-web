@@ -299,7 +299,7 @@ npm run qr:upload-text
 58. **Google:** console.cloud.google.com → โปรเจกต์ **okami24-gsc** → Google Auth Platform → Branding: ชื่อแอป OKami24 ·
     อีเมลฝ่ายช่วยเหลือและอีเมลติดต่อ = okamisalt@gmail.com · โดเมน okami24.store · Clients → **"OKami24 website sign-in"** (Web) →
     Authorized redirect URI = `https://okami24.store/api/auth/google/callback` · Audience = **In production** แล้ว (ตรวจ 07/11) ·
-    ขอแค่ `openid profile` · ส่วนเจ้าของขอ `openid email` เพิ่ม — ไม่ต้องยื่นตรวจ ตราบใดที่ไม่อัปโหลดโลโก้
+    ขอแค่ `openid profile` · ส่วนเจ้าของและทีมงาน `/staff` (บัญชีแอดมินรายคน 10/11) ขอ `openid email` — client เดียวกัน ไม่มีค่าใน Render เพิ่ม — ไม่ต้องยื่นตรวจ ตราบใดที่ไม่อัปโหลดโลโก้
 59. Render → **okami24** → **Environment** → เพิ่ม 4 ค่า (ความลับ 2 ตัว = เจ้าของวางเอง):
     - `OKAMI24_LINE_LOGIN_CHANNEL_ID` → Channel ID · `OKAMI24_LINE_LOGIN_CHANNEL_SECRET` → Channel secret (LINE แท็บ Basic settings)
     - `OKAMI24_GOOGLE_CLIENT_ID` → Client ID · `OKAMI24_GOOGLE_CLIENT_SECRET` → Client secret (Google ให้ดูครั้งเดียวตอนสร้าง ·

@@ -462,6 +462,17 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // original-ILUMA-ONE children (Pebble Grey -1 · Azure Blue -2, both out of stock in Shipnity Max) are a different model:
   // OTHER_MODEL_CHILDREN keeps them off this record; their own page is a later item (one Shipnity parent → one record).
   "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" (SKU G0000592) exact-matches ONLY the ORIGINAL ILUMA ONE\'s official 5-color lineup on iqos.com/my+/id (with confirmed negative-control 404s for Breeze Blue on that lineup); child "Breeze Blue" (SKU G0002077) exact-matches ONLY the NEWER ILUMA i ONE\'s official 6-color lineup on iqos.com/ph+/my (with confirmed negative-control 404s for Pebble Grey on that lineup) — independently corroborated by distinct PMI SKU codes and visibly different chassis renders. A genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
+  // C list 10/11 (owner list item 134 "ตามแนะนำ"): the "later item" above. Max-only records cut from the same Max parent IQOSHEET-17
+  // by exact child code (scripts/max-seed-gen.js childIds): the ORIGINAL ILUMA ONE (Pebble Grey -1 · Azure Blue -2 · Bright -5, ฿2,900)
+  // and its OASIS edition (-4, ฿3,200 — another price, so another record). Breeze Blue -3 stays on iqosheet-17 (ILUMA i ONE).
+  "IQOS-ILUMA-ONE": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" children Pebble Grey / Azure Blue / Bright — iqos.com/za ILUMA ONE kit page: "IQOS ILUMA ONE is available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss Green" (opened 10/11); BRIGHT = jp.iqos.com limited edition covering ILUMA PRIME / ILUMA / ILUMA ONE (Sept 2023)' },
+  "IQOS-ILUMA-ONE-OASIS": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'Max "Iqos iluma one" child "Oasis Limited" ฿3,200 — jp.iqos.com news "limited-edition-iqos-iluma-oasis": the OASIS limited edition came as ILUMA PRIME, ILUMA and ILUMA ONE (Nov 2022)' },
+  // C list 10/11 (item 134 1A): VOOPOO coils sold by the box — Max-only records cut from the loose-coil parents (scripts/max-seed-gen.js).
+  "VOOPOO-VINCI-COIL-5PACK": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์บุหรี่ไฟฟ้า Voopoo Vinci - DW60 0.6Ω 1 กล่อง 5 ตัว" (Set-Coil-1-14, under Coil-1) + "… Vinci - 0.15Ω 1 กล่อง 5 ตัว" (Set-Coil-1-1), both ฿350 (read 10/11); same family as the loose Vinci coils (Coil-1); 5 per box = the warehouse rows themselves' },
+  "VOOPOO-PNP-X-COIL-5PACK": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'Max "คอยล์ Voopoo PnP X - 0.15Ω / 1กล่อง 5ตัว" (Set-Coil-92-1, under Coil-92) ฿400 (read 10/11); PnP X coils "sold only in packs of 5" (aromes-et-liquides.fr — tier 2)' },
+  // C list 10/11 (item 134 4A · 5A): warehouse facts only, no brand (no maker site found — as Pod-154 and MQ-BAR-22K).
+  "POP-UP-10K-BASE": { brandId: null, brandless: true, categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" child "ฐานแบตเตอรี่" (Pod-154-19) ฿199 (read 10/11) — the battery base the Pop Up 10K refill pods (Pod-154) go on; no maker site found 16-18/10 or 10/11 — warehouse facts only, without a brand' },
+  "INSTA-BAR-PX-15K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Insta 15000 คำ" (Product 744), 11 flavours ฿329, all out (order-entry read 10/11). Thai shops sell this flavour set as "Insta Bar PX 15000 Puffs" (vapemun.com, ihavevape.co — tier 2); the INSTABAR maker site (instabar.net, opened 10/11) lists only DC 15000 and WT 15000, no PX — no maker source, so no brand, no spec rows' },
 };
 
 // ===================================================================================
@@ -525,7 +536,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
-    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และ DRAG 4",
+    // T2-31 (11/11): "DRAG 4" out — VOOPOO's two PnP X pages (re-read 11/11 in a real browser) never name it. The full list is the
+    // "ใช้ได้กับ" row and the line under the price; this sentence names a few and says there are more (designer: not read as the whole list).
+    tagline: "คอยล์ PnP X จาก VOOPOO มีให้เลือกตั้งแต่ 0.15 ถึง 1.0 โอห์ม ใช้กับเครื่อง DRAG X2 S2 X3 S3 และรุ่นอื่นของ VOOPOO",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
   // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
@@ -788,6 +801,34 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // The name is the card title already; a tagline that repeats it broke "ILUMA i | ONE" on the 1440 card (wordbreak scan).
     tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ พกใส่กระเป๋าได้",
     shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มสูบได้ 20 มวนติดกัน มีระบบ Autostart และ FlexPuff ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  // C list 10/11: the ORIGINAL ILUMA ONE + its OASIS edition. Facts = iqos.com/za ILUMA ONE kit page ("20 consecutive uses per charge" ·
+  // "up to 6 mins or 14 puffs" · "only with TEREA sticks") + jp.iqos.com's OASIS news (limited edition). No name in the tagline (as above).
+  "IQOS-ILUMA-ONE": {
+    tagline: "เครื่องจ่ายความร้อนตัวเดียวจบ ชาร์จเต็มสูบได้ 20 มวนติดกัน",
+    shortDescription: "IQOS ILUMA ONE ชาร์จเต็มสูบได้ 20 มวนติดกัน แต่ละมวนสูบได้นานสุด 6 นาทีหรือ 14 พัฟ ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    tagline: "เครื่องจ่ายความร้อนรุ่นพิเศษ OASIS ผลิตจำนวนจำกัด",
+    shortDescription: "IQOS ILUMA ONE รุ่นพิเศษ OASIS ชาร์จเต็มสูบได้ 20 มวนติดกัน ใช้กับบุหรี่ TEREA เท่านั้น",
+  },
+  // C list 10/11: the box itself = the warehouse's own product (Max "1 กล่อง 5 ตัว"); wattage = shop.voopoo.com PnP X page (as Coil-92).
+  "VOOPOO-VINCI-COIL-5PACK": {
+    tagline: "คอยล์ Vinci จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
+    shortDescription: "คอยล์ Vinci จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว มีให้เลือก 2 แบบ คือ 0.15 โอห์ม กับ DW60 0.6 โอห์ม",
+  },
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    tagline: "คอยล์ PnP X 0.15 โอห์ม จาก VOOPOO ขายยกกล่อง กล่องละ 5 ตัว",
+    shortDescription: "คอยล์ PnP X ค่า 0.15 โอห์ม จากแบรนด์ VOOPOO ขายยกกล่อง กล่องละ 5 ตัว แนะนำใช้ที่ 60–80 วัตต์",
+  },
+  // C list 10/11: warehouse facts only — the Max names ("Pop Up 10K หัวเติม · ฐานแบตเตอรี่" · "Insta 15000 คำ") and the Max flavour rows.
+  "POP-UP-10K-BASE": {
+    tagline: "ฐานแบตเตอรี่ของ Pop Up 10K",
+    shortDescription: "ฐานแบตเตอรี่ของ Pop Up 10K ใช้กับหัวพอต Pop Up 10K ที่ร้านมีให้เลือกหลายกลิ่น",
+  },
+  "INSTA-BAR-PX-15K": {
+    tagline: "พอตใช้แล้วทิ้ง Insta Bar PX ชื่อรุ่นระบุ 15000",
+    shortDescription: "พอตใช้แล้วทิ้ง Insta Bar PX ชื่อรุ่นระบุ 15000 ร้านมีให้เลือก 11 กลิ่น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -1458,6 +1499,74 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html",
     },
   ],
+  // New-products pictures 10/11 (owner "ลงรูปลงของให้เรียบร้อย"): the original ILUMA ONE — IQOS's own kit render (iqos.com/za, 2048 px
+  // transparent PNG), used as it is; Pebble Grey = the first warehouse colour (Max IQOSHEET-17-1). Map: scripts/process-images.map.json.
+  "IQOS-ILUMA-ONE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqos-iluma-one/card.webp",
+      alt: "IQOS ILUMA ONE, Pebble Grey, official product render",
+      angle: "Official manufacturer render: iqos.com/za ILUMA ONE Pebble Grey kit page, gallery image 00 (SKU G0000592), fetched as a 2048 px transparent PNG; no edit beyond the card canvas (scripts/process-images.map.json).",
+      transparentBackground: true,
+      sourceName: "IQOS (official brand site)",
+      sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html",
+    },
+  ],
+  // New-products pictures 10/11 (owner credit OK 10/11 ~23:35): ILUMA ONE OASIS — OKami24 recolour of IQOS's own ILUMA ONE render to
+  // the OASIS edition of IQOS's campaign photo (no single-device maker render exists); shape = the official render's outline.
+  "IQOS-ILUMA-ONE-OASIS": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqos-iluma-one-oasis/card-wm5.webp",
+      alt: "IQOS ILUMA ONE OASIS limited edition, copper orange, studio photo",
+      angle: "Front-left, upright — OKami24 render (Higgsfield, IMAGE_SPEC §0 item 7): the official iqos.com/za ILUMA ONE render recoloured to the OASIS edition of the gr.iqos.com campaign photo, cut with the official render's own outline. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE render and OASIS campaign photo",
+      sourceUrl: "https://gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis",
+    },
+  ],
+  // New-products pictures 10/11: Pop Up 10K battery base alone — OKami24 render from our Pop Up studio card and a shop photo of the base
+  // (no maker site; the shop photo is a small watermarked inset, so the model is unclear — told to the owner with the comparison).
+  "POP-UP-10K-BASE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pop-up-10k-base/card-wm5.webp",
+      alt: "Pop Up 10K battery base, black with the VC logo, studio photo",
+      angle: "Front, upright — OKami24 render (Higgsfield, IMAGE_SPEC §0 item 7) of the base alone, from our pod-154 studio card (light, material) and a shop photo of the base (shape, logo). Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the Pop Up 10K battery base",
+      sourceUrl: "https://podimport-th.com/shop/disposable-pod/10000-puff/popup-10000-puff-nic3/",
+    },
+  ],
+  // New-products pictures 10/11: the coil boxes are the live coil-1 / coil-92 option photos (our own studio renders, aiRender in the map),
+  // laid on the 4:5 card canvas from the un-watermarked originals — no new picture.
+  "VOOPOO-VINCI-COIL-5PACK": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/voopoo-vinci-coil-5pack/card-wm5.webp",
+      alt: "VOOPOO PnP-DW60 0.6Ω coil box with one coil, studio photo",
+      angle: "Front, studio — the coil-1 DW60 option photo (round \"3 coil photos\" 08/10, OKami24 render of VOOPOO's own box + coil images) on the card canvas.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images",
+      sourceUrl: "https://shop.voopoo.com/products/pnp-coils",
+    },
+  ],
+  "VOOPOO-PNP-X-COIL-5PACK": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/voopoo-pnp-x-coil-5pack/card-wm5.webp",
+      alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
+      angle: "Front, upright — the coil-92 0.15Ω photo (round list19 19/10, OKami24 render of a shop photo of the real coil) on the card canvas.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil",
+      sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/",
+    },
+  ],
   "IQOSHEET-17": [
     {
       kind: "official-photo",
@@ -1950,9 +2059,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "wattage-0-6", label: "กำลังไฟที่แนะนำ (0.6Ω)", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-0-8", label: "กำลังไฟที่แนะนำ (0.8Ω)", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "wattage-1-0", label: "กำลังไฟที่แนะนำ (1.0Ω)", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / 4 / X3 / S3", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      // T2-31 (11/11, both re-read in a real browser): this page — "ใช้ได้กับ DRAG X2/S2/X3/S3, ARGUS Pro 2/MT/E40, DORIC 60 Pro, UFORCE-X Tank II,
+      // UFORCE-X Nano, VINCI Spark 100/220 และ PnP X Pod Tanks" — plus VOOPOO's PnP coils page (shop.voopoo.com/products/pnp-coils, PnP X
+      // series "For Drag X2/S2, Drag X3/S3, Drag 5/6, Argus Pro 2, UFORCE-X Tank") for DRAG 5 / 6. The old value's "4" (DRAG 4) is on neither.
+      // Same set as the line under the price (src/data/fits-devices.ts + the cited edges) — designer 11/11: one list per page.
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / X3 / S3 / 5 / 6 · ARGUS Pro 2 / MT / E40 · DORIC 60 Pro · VINCI Spark 100 / 220 · UFORCE-X Tank II · UFORCE-X Nano", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
     ],
-    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils", "https://shop.voopoo.com/products/pnp-coils"],
   },
   "Coil-53": {
     specifications: [
@@ -2104,6 +2217,41 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html", "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html"],
+  },
+  // C list 10/11: the original ILUMA ONE kit page (iqos.com/za, opened 10/11): "Enjoy 20 consecutive uses per charge" · "lasts up to 6 mins
+  // or 14 puffs, whichever comes first" · "designed to be used only with TEREA sticks". OASIS is an edition of the same ILUMA ONE device.
+  "IQOS-ILUMA-ONE": {
+    specifications: [
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวนติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "session-time", label: "เวลาสูบต่อมวน", value: "สูงสุด 6 นาทีหรือ 14 พัฟ", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    ],
+    sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html"],
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    specifications: [
+      { key: "sessions", label: "จำนวนมวนต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 มวนติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "session-time", label: "เวลาสูบต่อมวน", value: "สูงสุด 6 นาทีหรือ 14 พัฟ", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับบุหรี่", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    ],
+    sourceUrls: ["https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html", "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis"],
+  },
+  // C list 10/11: the box count is the warehouse's own product — Max names both rows "… 1 กล่อง 5 ตัว" (read 10/11); warehouse fact,
+  // no outside page (as Pod-154's row). Checker 10/11: the PnP-TW pack page is another coil, not cited here.
+  "VOOPOO-VINCI-COIL-5PACK": {
+    specifications: [
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // PnP X: wattage = shop.voopoo.com/products/pnp-x-coils (the row Coil-92 already shows). The box count = the warehouse's own row
+  // (Max "… / 1กล่อง 5ตัว", read 10/11), no outside page — a published row may cite only the maker (verified-specs contract, 11/11).
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    specifications: [
+      { key: "pack", label: "จำนวนต่อกล่อง", value: "5 ตัว", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
   },
   "IQOSHEET-18": {
     specifications: [
@@ -2792,6 +2940,27 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "iqosheet-18-verified-bold-ruby": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/bold-ruby-wm5.webp", alt: "IQOS ILUMA i, Bold Ruby", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS Japan's own Bold Ruby photo", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   },
   // Round list19 (17/10): ILUMA i ONE — each colour = that colour's own iqos.com/ph kit page og:image (2048 px transparent PNG).
+  // New-products pictures 10/11: ILUMA ONE colours = IQOS's own kit renders (iqos.com/za, same pose and scale, measured).
+  "IQOS-ILUMA-ONE": {
+    "IQOSHEET-17-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-pebble-grey.webp", alt: "IQOS ILUMA ONE, Pebble Grey", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html" },
+    "IQOSHEET-17-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-azure-blue.webp", alt: "IQOS ILUMA ONE, Azure Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html" },
+    "iqos-iluma-one-verified-pebble-beige": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-pebble-beige.webp", alt: "IQOS ILUMA ONE, Pebble Beige", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html" },
+    "iqos-iluma-one-verified-sunset-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-sunset-red.webp", alt: "IQOS ILUMA ONE, Sunset Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html" },
+    "iqos-iluma-one-verified-moss-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-moss-green.webp", alt: "IQOS ILUMA ONE, Moss Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    // BRIGHT (2023 limited edition): the maker's only render is 750 px — OKami24 recolour of the official render above to it (aiRender in the map).
+    "IQOSHEET-17-5": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one/variant-bright-wm5.webp", alt: "IQOS ILUMA ONE BRIGHT limited edition, lime and white, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE and BRIGHT renders", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-bright" },
+  },
+  "IQOS-ILUMA-ONE-OASIS": {
+    "IQOSHEET-17-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqos-iluma-one-oasis/variant-oasis-limited-wm5.webp", alt: "IQOS ILUMA ONE OASIS limited edition, copper orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own ILUMA ONE render and OASIS campaign photo", sourceUrl: "https://gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis" },
+  },
+  // New-products pictures 10/11: each box = the same box photo the loose-coil page shows for that coil (coil-1 options -14 · -1).
+  "VOOPOO-VINCI-COIL-5PACK": {
+    "Set-Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-14-wm5.webp", alt: "VOOPOO PnP-DW60 coil 0.6Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
+    "Set-Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1-vm6-wm5.webp", alt: "VOOPOO PnP-VM6 coil 0.15Ω (black ring) with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the real VOOPOO coil and box", sourceUrl: "https://maneevp.com/product/voopoo-pnp-coil/" },
+  },
+  "VOOPOO-PNP-X-COIL-5PACK": {
+    "Set-Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1-wm5.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
+  },
   "IQOSHEET-17": {
     "IQOSHEET-17-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-breeze-blue.webp", alt: "IQOS ILUMA i ONE, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
     "iqosheet-17-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-digital-violet.webp", alt: "IQOS ILUMA i ONE, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
@@ -3028,16 +3197,23 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "spring-green", label: "Spring Green", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
     { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
   ],
+  // C list 10/11: the original ILUMA ONE — iqos.com/za: "available in 5 colors: Pebble Beige, Pebble Grey, Sunset Red, Azure Blue and Moss
+  // Green". Pebble Grey and Azure Blue are Shipnity children (IQOSHEET-17-1 / -2); Bright is the Sept 2023 limited edition (IQOSHEET-17-5).
+  "IQOS-ILUMA-ONE": [
+    { code: "pebble-beige", label: "Pebble Beige", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+    { code: "sunset-red", label: "Sunset Red", sourceUrl: "https://www.iqos.com/gb/en/shop/iluma-one-kit-sunset-red.html" },
+    { code: "moss-green", label: "Moss Green", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+  ],
 };
 
 /**
  * A Shipnity child that is a DIFFERENT real model from the record its parent projects to (round list19, 17/10). It is kept
  * off that record — reported in `excludedChildren`, never shown as one of its options — because one Shipnity parent
  * projects to one record (`projectParent`). Key = Shipnity variant id; value = why.
+ * C list 10/11: the one entry (IQOSHEET-17-1 Pebble Grey off the ILUMA i ONE) became its own record's option — iqos-iluma-one
+ * owns it now and the seed record no longer lists it (build-active-catalog.ts CLAIMED_BY_MAX_ONLY).
  */
-const OTHER_MODEL_CHILDREN: Record<string, string> = {
-  "IQOSHEET-17-1": "Pebble Grey is a colour of the original IQOS ILUMA ONE (SKU G0000592), not of the ILUMA i ONE this record is — its own page is a later item",
-};
+const OTHER_MODEL_CHILDREN: Record<string, string> = {};
 
 // Tier-1 disposable growth mission (2026-09-03) — real OKami24-channel review videos, each
 // confirmed via YouTube's own oEmbed endpoint (title + `author_url` match one of OKami24's three
@@ -3246,6 +3422,12 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
+  "IQOS-ILUMA-ONE": { name: "IQOS ILUMA ONE", sourceUrl: "https://www.iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html" },
+  "IQOS-ILUMA-ONE-OASIS": { name: "IQOS ILUMA ONE OASIS", sourceUrl: "https://jp.iqos.com/news/limited-edition-iqos-iluma-oasis" },
+  "VOOPOO-VINCI-COIL-5PACK": { name: "VOOPOO Vinci Coil 5-Pack", sourceUrl: "https://app.shipnitymax.com/" }, // the warehouse's own box (Max rows "… 1 กล่อง 5 ตัว")
+  "VOOPOO-PNP-X-COIL-5PACK": { name: "VOOPOO PnP X Coil 0.15Ω 5-Pack", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+  "POP-UP-10K-BASE": { name: "Pop Up 10K Battery Base", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "INSTA-BAR-PX-15K": { name: "Insta Bar PX 15000", sourceUrl: "https://ihavevape.co/product/insta-bar-px-15000-puffs" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },

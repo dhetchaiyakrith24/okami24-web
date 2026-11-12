@@ -3,7 +3,7 @@ import type { MemberProvider } from "@/lib/members/providers";
 /** The member pages' gold accent and warm top glow — from drafts v2 (`_incoming/q4-drafts/gen2.js`, owner 26/10 "พรีเมียม เรียบหรู"). */
 export const GOLD = "#c8b28a";
 export const MEMBER_GLOW =
-  "radial-gradient(120% 60% at 50% -10%, rgba(255,106,44,0.16), transparent 60%), radial-gradient(80% 40% at 50% 0%, rgba(200,178,138,0.08), transparent 70%)";
+  "radial-gradient(120% 60% at 50% -10%, rgb(var(--ember-rgb) / 0.16), transparent 60%), radial-gradient(80% 40% at 50% 0%, rgba(200,178,138,0.08), transparent 70%)";
 
 /** The provider's mark inside its button: LINE's speech bubble on white, Google's four-colour G. */
 export function ProviderMark({ provider }: { provider: MemberProvider }) {

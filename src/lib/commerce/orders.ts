@@ -24,6 +24,9 @@ export interface OrderSummary {
   /** Which shipping tier set the fee (migration 0022, owner 29/10) — null for orders placed before the tiers. */
   shippingRule: StoredShippingRule | null;
   total: number;
+  /** A special price staff gave (migration 0028, LINE orders): how much less than subtotal + shipping the customer pays —
+   *  total already has it taken off. null = none. The customer's order page shows it as a "ส่วนลด" line (owner 12/11). */
+  discountAmount?: number | null;
   createdAt: string;
   /** The shop's running number (migration 0017) — null until staff confirm the payment. Format: run-number.ts. */
   runNumber: number | null;
@@ -70,6 +73,7 @@ interface OrderRow {
   shipping_fee: number;
   shipping_rule?: string | null;
   total: number;
+  discount?: number | null;
   created_at: string;
   tracking_number?: string | null;
   carrier?: string | null;
@@ -86,6 +90,7 @@ function toSummary(row: OrderRow): OrderSummary {
     shippingFee: row.shipping_fee,
     shippingRule: isShippingRule(row.shipping_rule) ? row.shipping_rule : null,
     total: row.total,
+    discountAmount: row.discount ?? null,
     createdAt: row.created_at,
     runNumber: row.run_number ?? null,
   };
@@ -95,7 +100,7 @@ function getOrderRowById(id: number): OrderRow | undefined {
   return getDb().prepare("SELECT * FROM orders WHERE id = ?").get(id) as OrderRow | undefined;
 }
 
-function generateOrderNumber(): string {
+export function generateOrderNumber(): string {
   const date = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const suffix = crypto.randomBytes(3).toString("hex");
   return `OK-${date}-${suffix}`;

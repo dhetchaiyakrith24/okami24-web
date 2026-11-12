@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { after, NextResponse, type NextRequest } from "next/server";
 import { recordOrderUpdates } from "@/lib/woo/order-events";
 import { SITE_URL } from "@/lib/seo";
@@ -9,6 +10,9 @@ import { sentOrders } from "@/lib/woo/order-push";
 import { wooOrderJson } from "@/lib/woo/order-json";
 import { logCall, saveStockReport, stockReports } from "@/lib/woo/store";
 import { logStockPush } from "@/lib/woo/stock-push-log";
+import { forgetLiveStock } from "@/lib/stock/live";
+import { flippedSlugs, pagesToRefresh } from "@/lib/stock/refresh-pages";
+import { refreshStalePages } from "@/lib/stock/stale-refresh";
 import { applyShipnityTrackings } from "@/lib/woo/tracking-sync";
 import { createWebhook, deleteWebhook, getWebhook, listWebhooks, updateWebhook } from "@/lib/woo/webhooks";
 import type { OrderSource, WebhookStore } from "@/lib/woo/api";
@@ -55,6 +59,9 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     }
   }
 
+  const prior = keyId !== null ? stockReports() : new Map();
+  // handle() updates `prior` in place as it records writes — keep the table as it was for the flip check below
+  const before = new Map(prior);
   const res = handle({
     method: request.method,
     segments,
@@ -63,7 +70,7 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     signed: keyId !== null,
     siteUrl: SITE_URL,
     catalog: wooCatalog(),
-    reports: keyId !== null ? stockReports() : new Map(),
+    reports: prior,
     hooks:
       keyId !== null
         ? { list: listWebhooks, get: getWebhook, create: (w) => createWebhook(keyId, w), update: updateWebhook, remove: deleteWebhook }
@@ -71,6 +78,24 @@ async function serve(request: NextRequest, ctx: { params: Promise<{ path?: strin
     orders: keyId !== null ? { list: () => sentOrders().map((o) => wooOrderJson(o, SITE_URL)) } : NO_ORDERS,
   });
   for (const w of res.writes) saveStockReport(w.sku, w.quantity, w.stockStatus);
+  // A model that sold out or came back: its pages (and the home page, /products, its category and brand) re-render on their
+  // next visit instead of waiting out the 3-hour ISR window (T2-05, src/lib/stock/refresh-pages.ts). Never in the way of the
+  // answer Shipnity waits for.
+  if (res.writes.length > 0) {
+    try {
+      const paths = pagesToRefresh(flippedSlugs(before, res.writes));
+      if (paths.length > 0) {
+        forgetLiveStock();
+        for (const p of paths) revalidatePath(p);
+      }
+      // And every page whose render differs from the live answer, not only a flip between two reports (owner 11/11: a page
+      // built from a stale snapshot kept "หมด" while Shipnity's number stayed 140 — stale-pages.ts).
+      forgetLiveStock();
+      refreshStalePages({ force: true });
+    } catch (err) {
+      console.error(`[stock] page refresh failed — pages keep their 3-hour window: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
   // A dated history of the pushes for tuning the stock light (stock-push-log.ts) — after the answer, never in its way.
   if (res.writes.length > 0) {
     const pushed = res.writes.map((w) => ({ sku: w.sku, quantity: w.quantity }));

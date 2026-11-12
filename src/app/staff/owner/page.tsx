@@ -16,12 +16,16 @@ import { codesWithoutCost, profitDays } from "@/lib/owner/costs";
 import { cartsNotOrdered, lineClicks, oldestOrders, soldOptions, topWebProducts } from "@/lib/owner/dashboard";
 import { sameHourLastWeek, stockSummary, sumSales } from "@/lib/owner/dashboard-rules";
 import { isStaff } from "@/lib/staff/auth";
+import { listAccounts } from "@/lib/staff/accounts";
 import { salesDays } from "@/lib/staff/daily-sales";
 import { countByJob } from "@/lib/staff/orders";
+import { handConfirmedSince } from "@/lib/staff/hand-confirm";
 import { stockBook } from "@/lib/staff/stock-book";
 import { feedHealth } from "@/lib/woo/watch";
 import { FEED_LIGHT } from "@/app/staff/_components/feed-light";
 import { StaffBar } from "@/app/staff/_components/StaffBar";
+import { OwnerViewPill } from "@/app/staff/_components/OwnerViewPill";
+import { TODO_JOBS } from "@/lib/staff/jobs";
 import { ControlPanel } from "@/app/staff/owner/_dash/ControlPanel";
 import { HowCounted } from "@/app/staff/owner/_dash/HowCounted";
 import { dayLabel, TodayPanel } from "@/app/staff/owner/_dash/TodayPanel";
@@ -86,6 +90,8 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
   const billDue = !rounds[0] || rounds[0].to < due.to;
   const switches = readSwitches();
   const catalog = allCatalogItems().map((item) => ({ slug: item.slug, name: item.name }));
+  const admins = listAccounts().filter((a) => a.active);
+  const team = { active: admins.length, notSignedIn: admins.filter((a) => !a.lastSignInAt).length };
 
   // Most urgent first: a silent warehouse stops stock, then money waiting on the team, then what the owner fixes.
   const alerts: Alert[] = [
@@ -95,7 +101,7 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
     ...(counts.slip > 0 ? [{ text: `รอตรวจสลิป ${counts.slip}`, href: canOpenOrders ? "/staff/orders?f=slip" : undefined, tone: "warn" as const }] : []),
     ...(counts.tracking > 0 ? [{ text: `รอใส่เลขพัสดุ ${counts.tracking}`, href: canOpenOrders ? "/staff/orders?f=tracking" : undefined, tone: "warn" as const }] : []),
     ...(unclear > 0 ? [{ text: `สลิปไม่แน่ใจ ${unclear}`, tone: "warn" as const }] : []),
-    ...(unpriced > 0 ? [{ text: `ไม่มีทุน ${unpriced} ออเดอร์`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
+    ...(unpriced > 0 ? [{ text: `ออเดอร์รอใส่ทุน ${unpriced}`, href: "/staff/owner/costs", tone: "warn" as const }] : []),
     ...(billDue ? [{ text: "บิลรอเทียบ", href: "/staff/owner/bill#new", tone: "warn" as const, hideOn: "week" }] : []),
   ];
 
@@ -115,21 +121,25 @@ export default async function OwnerPage({ searchParams }: { searchParams: Promis
           stock={stockSummary(stockBook().filter((p) => !switches.hidden.includes(p.slug)), isBestSeller, soldOptions(30))}
           feed={feed}
           now={now}
+          handConfirmed={handConfirmedSince(new Date(now - PROFIT_DAYS * 86_400_000).toISOString())}
+          handConfirmedDays={PROFIT_DAYS}
         />
       ),
     },
     {
       id: "week",
       label: "สัปดาห์",
-      content: <WeekPanel rounds={rounds} due={due} week={week} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
+      content: <WeekPanel rounds={rounds} due={due} week={week} weekDays={{ from: sales[Math.min(6, sales.length - 1)].date, to: sales[0].date }} clicks={lineClicks(7)} carts={cartsNotOrdered(7)} top={topWebProducts(7)} google={GOOGLE_WEEKLY} />,
     },
-    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} /> },
+    { id: "control", label: "ควบคุมร้าน", content: <ControlPanel switches={{ orderingBuilt: ORDERING_ENABLED, cartOff: switches.cartOff, siteClosed: switches.siteClosed, lineToWarehouse: switches.lineToWarehouse, autoToWarehouse: switches.autoToWarehouse, hidden: catalog.filter((p) => switches.hidden.includes(p.slug)), products: catalog }} noCost={noCost} teamHome={canOpenOrders} billDue={billDue ? due : null} team={team} /> },
   ];
 
   return (
     <Container className="relative isolate flex max-w-2xl flex-col gap-3.5 pb-8 pt-4 lg:max-w-6xl lg:gap-5 lg:pt-8">
       <StaffBar />
       <Vapour />
+      {/* Owner 10/11 (design v2 board 2, passed 11/11): one switch to the admin home, the yellow count = work waiting on the team. */}
+      <OwnerViewPill active="owner" waiting={TODO_JOBS.reduce((n, j) => n + counts[j], 0)} ownerHref="/staff/owner" adminOpen={canOpenOrders} />
       <h1 className="text-sm font-normal text-foreground-muted">ส่วนเจ้าของ · {dayLabel(sales[0].date)}</h1>
       <ViewSwitch views={views} initial={view ?? ""} label="เลือกมุมมอง" alerts={alerts} footer={<HowCounted />} footerHiddenOn={["control"]} />
     </Container>

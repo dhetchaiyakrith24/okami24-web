@@ -15486,5 +15486,128 @@
   },
   "note": "item 125 (09/11): one master for every colour, only the frame colour changes when a customer swipes",
   "fileName": "variant-stripe-black-v3.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
+  "slug": "iqos-iluma-one",
+  "role": "card",
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · card = Pebble Grey, the first warehouse colour (Max IQOSHEET-17-1) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "fileName": "card.webp",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-grey.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "pebble-grey",
+  "note": "IQOS official kit render G0000592_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-grey.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-pebble-beige.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "pebble-beige",
+  "note": "IQOS official kit render G0000590_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-pebble-beige.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-sunset-red.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "sunset-red",
+  "note": "IQOS official kit render G0000591_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-sunset-red.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-moss-green.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "moss-green",
+  "note": "IQOS official kit render G0000593_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-moss-green.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/iqos/one-azure-blue.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "azure-blue",
+  "note": "IQOS official kit render G0000594_00 (2048 px transparent PNG, AEM rendition 2000x2000) from iqos.com/za/en/shop/iqos-iluma-one-kit-azure-blue.html - used as it is (new-products pictures 10/11) · alphaCut 60 drops the faint floor shadow that ran to the right (device measured x 871-1131 of 2048, shadow to x 1630) so the device itself is centred; the page draws its own floor",
+  "alphaCut": 60
+ },
+ {
+  "source": "_incoming/new-pics-1011/coils/vinci-dw60-box.webp",
+  "slug": "voopoo-vinci-coil-5pack",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-dw60.png; render _incoming/coil3/out/c1-dw60-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-dw60.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "new-products pictures 10/11 - the live coil-1 DW60 option photo (box + coil, un-watermarked original from watermark-originals) laid on the 4:5 card canvas; no new picture",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/coils/pnpx-015.webp",
+  "slug": "voopoo-pnp-x-coil-5pack",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop coil photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/c92-015-A.png; keyed by flood (b17/floodkey.js T=6 so the black O-rings stay), rows cut at the brass base (y 1900), O-ring rows bridged (gapfill.js WIN=60 Q=0.9), holes refilled (holefill.js), floor shadow under the flange cleared outside the brass-ring span, largest blob kept - copies beside this source",
+   "reference": "maneevp.com VOOPOO PnP X 0.15Ω coil photo 1000 px (https://maneevp.com/product/voopoo-pnp-x-coil/) - _incoming/img-1610/masters/src/coil-92 (index masters/src/index.json); VOOPOO own PNP-X-*-NEW.png carry the AIGC marker (rejected)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/c92-dark.jpg - PnP X logo, etched 0.15Ω / 60-80W, cotton windows, O-rings, flange flat checked by eye against the shop photo"
+  },
+  "note": "new-products pictures 10/11 - the live coil-92 0.15Ω photo (un-watermarked original from watermark-originals) laid on the 4:5 card canvas; no new picture (box version unclear - option A)",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/ai/key/one-bright.png",
+  "slug": "iqos-iluma-one",
+  "role": "variant",
+  "id": "bright",
+  "alphaCut": 60,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (MCP generate_image, 2 credits; owner OK 10/11 ~23:35 \"ใช้ได้\" for 12 credits, relayed by Friday) - recolour EDIT of the official iqos.com/za ILUMA ONE Pebble Grey render (image 1, flat #2b2e33) to the BRIGHT edition of image 2; job 169f0d21 (2nd of 2 - the 1st, d0d0a9c2, came out paler with a grey logo); cut with the official render's own alpha (_incoming/new-pics-1011/ai/matte-iqos.js, geometry measured equal: device box 262x1152 at x 870 vs 260x1151 at x 871)",
+   "reference": "jp.iqos.com/news/limited-edition-iqos-iluma-bright - official 750 px BRIGHT ILUMA ONE render (bright_sept28_ilumaonebright_750x750_lottery.png) for the colour; shape = iqos.com/za Pebble Grey kit render G0000592",
+   "fidelitySheet": "_incoming/new-pics-1011/ai/fid/bright-vs-maker.png - IoU 0.947 vs the maker render (its own camera), colour dE median 8.4 (lighting re-made, IMAGE_SPEC §0 item 8 (3)); body hue measured 194,191,84 vs maker 199,198,111; eye: shape, seam, button, light strip, end cap = the official render; IQOS lettering on the white cap is light grey (the maker 750 px render shows none)"
+  },
+  "note": "new-products pictures 10/11 - ILUMA ONE BRIGHT (Max IQOSHEET-17-5); same scale and place as the five official colours (alphaCut 60 as they are)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/ai/key/one-oasis.png",
+  "slug": "iqos-iluma-one-oasis",
+  "role": "card",
+  "alphaCut": 60,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (MCP generate_image, 2 credits; owner OK 10/11 ~23:35 \"ใช้ได้\" for 12 credits, relayed by Friday) - recolour EDIT of the official iqos.com/za ILUMA ONE Pebble Grey render to the OASIS edition of image 2; job 392abb52 (2nd of 2 - the 1st, 40632df2, came out brown/rust); cut with the official render's alpha (matte-iqos.js)",
+   "reference": "gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis - official campaign tile IQOS_ILUMA_OASIS_DCE2-NewsArticle-Tile1 (3840x1080), the upright ILUMA ONE on the right, for the colour (no single-device maker render exists); shape = iqos.com/za Pebble Grey kit render",
+   "fidelitySheet": "_incoming/new-pics-1011/ai/fid/oasis-shape-vs-official.png - shape IoU 1.0 vs the official render (its alpha); colour checked by eye against the campaign photo (mid-tones 180,77,31 there; numbers cannot compare a sunset-lit scene)"
+  },
+  "note": "new-products pictures 10/11 - ILUMA ONE OASIS card (Max IQOSHEET-17-4)",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/new-pics-1011/ai/key/one-oasis.png",
+  "slug": "iqos-iluma-one-oasis",
+  "role": "variant",
+  "id": "oasis-limited",
+  "alphaCut": 60,
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (MCP generate_image, 2 credits; owner OK 10/11 ~23:35 \"ใช้ได้\" for 12 credits, relayed by Friday) - recolour EDIT of the official iqos.com/za ILUMA ONE Pebble Grey render to the OASIS edition of image 2; job 392abb52 (2nd of 2 - the 1st, 40632df2, came out brown/rust); cut with the official render's alpha (matte-iqos.js)",
+   "reference": "gr.iqos.com/en/blog-news/iqos-news/limited-edition-iqos-iluma-oasis - official campaign tile IQOS_ILUMA_OASIS_DCE2-NewsArticle-Tile1 (3840x1080), the upright ILUMA ONE on the right, for the colour (no single-device maker render exists); shape = iqos.com/za Pebble Grey kit render",
+   "fidelitySheet": "_incoming/new-pics-1011/ai/fid/oasis-shape-vs-official.png - shape IoU 1.0 vs the official render (its alpha); colour checked by eye against the campaign photo (mid-tones 180,77,31 there; numbers cannot compare a sunset-lit scene)"
+  },
+  "note": "new-products pictures 10/11 - ILUMA ONE OASIS option (Max IQOSHEET-17-4)"
+ },
+ {
+  "source": "_incoming/new-pics-1011/ai/key/popup-base.png",
+  "slug": "pop-up-10k-base",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K (MCP generate_image, 2 credits; owner OK 10/11 ~23:35 \"ใช้ได้\" for 12 credits, relayed by Friday) - studio photo of the base alone from our pod-154 Coke studio card (image 2: light, backdrop, material) and the shop photo of the base (image 1: shape, logo); job 313f8f51 (2nd of 2 - the 1st, 68c39902, came out tall and narrow); keyed off #2b2e33 by _incoming/new-pics-1011/ai/matte-solid.js (TEXTURE=1 SMOOTH=1, foot row 1878: colour distance + surface grain, largest piece, every row solid, edges median-smoothed; floor reflection dropped)",
+   "reference": "podimport-th.com POPUP-10000puff_3.jpg (shop photo, the base alone inset, watermarked - screenshot in _incoming/new-pics-1011/popup-base/podimport-3-screen.png; reference only) + our own pod-154 card-v2 (watermark-originals)",
+   "fidelitySheet": "_incoming/new-pics-1011/ai/fid/popbase-vs-shop.png - numbers unusable (the shop watermark widens the reference outline: IoU 0.537); eye: squat two-step block, wider lower sleeve, flat top, VC + VAPE CITY in pale lavender-white as in the shop photo. The model photo is unclear (a small inset of a phone photo; the base logo colour may vary by batch)"
+  },
+  "note": "new-products pictures 10/11 - Pop Up 10K battery base (Max Pod-154-19); one option = the card serves as its photo (IMAGE_SPEC §4)",
+  "fileName": "card.webp"
  }
 ]

@@ -30,7 +30,7 @@ export function Scene3Voopoo({ progress }: { progress: MotionValue<number> }) {
           src="/assets/products/argus-g4/card.webp"
           alt="VOOPOO ARGUS G4"
           sizeClass="h-[48vh] w-[16vh] sm:h-[62vh] sm:w-[21vh]"
-          glow="rgba(255,106,44,0.45)"
+          glow="rgb(var(--ember-rgb) / 0.45)"
           focusAt={[0.06, 0.22, 0.42, 0.56]}
           entry={{ x: "36vw", y: "30vh", rotate: 16, rotateY: 34, scale: 0.6, blur: 22 }}
           focus={{ x: "0vw", y: "-5vh", rotate: -6, rotateY: 10, scale: 1, blur: 0 }}
@@ -42,7 +42,7 @@ export function Scene3Voopoo({ progress }: { progress: MotionValue<number> }) {
           src="/assets/products/drag-6/home-brown-v2.webp"
           alt="VOOPOO DRAG 6"
           sizeClass="h-[44vh] w-[26vh] sm:h-[56vh] sm:w-[33vh]"
-          glow="rgba(255,106,44,0.4)"
+          glow="rgb(var(--ember-rgb) / 0.4)"
           focusAt={[0.40, 0.56, 0.72, 0.84]}
           entry={{ x: "32vw", y: "34vh", rotate: 20, rotateY: 36, scale: 0.6, blur: 24 }}
           focus={{ x: "-2vw", y: "-5vh", rotate: 6, rotateY: 8, scale: 1, blur: 0 }}

@@ -50,7 +50,8 @@ export interface TopProduct {
   pieces: number;
 }
 
-/** Best sellers on the web only: a LINE slip says nothing about what was bought. */
+/** Best sellers on the web only: a LINE slip says nothing about what was bought, and LINE orders keyed in the back office
+ *  (migration 0026) stay out too, so the ranking keeps meaning "what web customers buy" (checker 09/11). */
 export function topWebProducts(days: number, limit = 5): TopProduct[] {
   const since = new Date(Date.now() - days * 86_400_000).toISOString();
   const statuses = CONFIRMED_ORDER_STATUSES.map((s) => `'${s}'`).join(",");
@@ -58,7 +59,7 @@ export function topWebProducts(days: number, limit = 5): TopProduct[] {
     .prepare(
       `SELECT MAX(i.product_name_snapshot) AS name, SUM(i.quantity) AS pieces
          FROM order_items i JOIN orders o ON o.id = i.order_id
-        WHERE o.status IN (${statuses}) AND o.created_at >= ?
+        WHERE o.status IN (${statuses}) AND o.channel = 'web' AND o.created_at >= ?
         GROUP BY i.product_slug
         ORDER BY pieces DESC, name ASC
         LIMIT ?`

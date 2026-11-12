@@ -12,7 +12,10 @@ import { allProducts } from "@/data/products";
 import { NEVER_SUGGEST } from "@/data/similar-models";
 import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { matchProducts, unscoredCatalogMatches, type FinderAnswers } from "@/lib/finder";
+import { finderCatalog } from "@/lib/finder-catalog";
 import { legacyCardStock, publishedCardStock, type CardStockChanges } from "@/lib/stock/card-stock";
+
+const CATALOG = finderCatalog();
 
 const results: { name: string; passed: boolean; detail: string }[] = [];
 const check = (name: string, passed: boolean, detail = "") => results.push({ name, passed, detail });
@@ -20,7 +23,7 @@ const check = (name: string, passed: boolean, detail = "") => results.push({ nam
 const formats: FinderAnswers["format"][] = ["open-pod", "pod-kit", "disposable", "no-preference"];
 const answerSet = (format: FinderAnswers["format"]): FinderAnswers => ({ format, portability: "no-preference", screen: "no-preference", battery: "somewhat", output: "flexible", experience: "beginner" });
 const allSlugs = (a: FinderAnswers, c?: CardStockChanges | null) => {
-  const r = matchProducts(a, c);
+  const r = matchProducts(CATALOG, a, c);
   return [...r.matches, ...r.alternatives].map((m) => m.product.slug);
 };
 
@@ -32,7 +35,7 @@ const bad = formats.flatMap((f) => allSlugs(answerSet(f)).filter((slug) => !sell
 check("by the build's stock, nothing that cannot be bought", bad.length === 0, bad.join(", "));
 
 const badUnranked = formats.flatMap((f) =>
-  unscoredCatalogMatches(answerSet(f)).filter((i) => {
+  unscoredCatalogMatches(CATALOG, answerSet(f)).filter((i) => {
     const p = getPublishedProduct(i.slug);
     return !p || !publishedCardStock(p).inStock;
   }),
@@ -40,7 +43,7 @@ const badUnranked = formats.flatMap((f) =>
 check("the unranked list holds nothing that cannot be bought", badUnranked.length === 0, badUnranked.map((i) => i.slug).join(", "));
 
 const a = answerSet("no-preference");
-const top = matchProducts(a).matches[0]?.product.slug;
+const top = matchProducts(CATALOG, a).matches[0]?.product.slug;
 check("there is a top match to test with", top !== undefined);
 if (top) check("live: a model that sold out after the build leaves the results", !allSlugs(a, { [top]: { o: true, s: false } }).includes(top));
 const back = soldOut[0];
@@ -49,9 +52,9 @@ if (back) {
   check("live: a model back in stock joins the results", allSlugs(a, { ...everythingElseOut, [back.slug]: { o: false, s: true } }).includes(back.slug));
 }
 
-const everyList = formats.flatMap((f) => [...allSlugs(answerSet(f)), ...unscoredCatalogMatches(answerSet(f)).map((i) => i.slug)]);
+const everyList = formats.flatMap((f) => [...allSlugs(answerSet(f)), ...unscoredCatalogMatches(CATALOG, answerSet(f)).map((i) => i.slug)]);
 const liveBack = Object.fromEntries([...NEVER_SUGGEST].map((slug) => [slug, { o: false, s: true }]));
-const everyListLive = formats.flatMap((f) => [...allSlugs(answerSet(f), liveBack), ...unscoredCatalogMatches(answerSet(f), liveBack).map((i) => i.slug)]);
+const everyListLive = formats.flatMap((f) => [...allSlugs(answerSet(f), liveBack), ...unscoredCatalogMatches(CATALOG, answerSet(f), liveBack).map((i) => i.slug)]);
 check("the lookalike is in no list, even in stock", ![...everyList, ...everyListLive].some((slug) => NEVER_SUGGEST.has(slug)));
 
 const allOut = Object.fromEntries(allProducts.map((p) => [p.slug, { o: true, s: false }]));
