@@ -22,6 +22,11 @@
   html[data-preview$="compact"] a[data-card-cut] [data-card-photo] img {
     padding: 4px;
   }
+  /* With a flavour/colour count chip in the top-left corner the picture starts 16px down, so the chip covers no more of a
+     mouthpiece than it does today (first proof 13/11: at 4px the "12 กลิ่น" chip sat on the M Bar 10K top). */
+  html[data-preview$="compact"] a[data-card-cut] [data-card-photo]:has(> div:first-child > span) img {
+    padding-top: 16px;
+  }
   /* The words: 12px on top stays — the "สินค้าหมด" pill straddles the photo's bottom edge and would sit on the brand line. */
   html[data-preview$="compact"] a[data-card-cut] [data-card-photo] + div {
     padding: 12px 10px 10px;
