@@ -53,7 +53,9 @@ export function ProductArticleBody({ articles }: { articles: ArticlesByLocale })
   // A lede-only article (owner 06/10 pm: M Bar 10K's one section went) renders no empty bordered block.
   if (!a || a.sections.length === 0) return null;
   return (
-    <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:gap-14 lg:pt-16">
+    // Centred on wide screens under the centred heading + lede (Measure, owner 13/11) — a caller that already centres it
+    // (ProductMoreDetails' stage) sees no change; below lg unchanged.
+    <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:mx-auto lg:gap-14 lg:pt-16">
       {a.sections.map((s, i) => (
         <div key={i} className="flex flex-col gap-3">
           <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{locale === "th" ? thaiTypographyNode(s.heading) : s.heading}</h3>

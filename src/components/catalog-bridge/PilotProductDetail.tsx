@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { Measure } from "@/components/ui/Measure";
 import { Badge } from "@/components/ui/Badge";
 import type { RelatedItem } from "@/lib/related-order";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
@@ -479,7 +480,9 @@ export function PilotProductDetail({
       )}
       {article?.faq && article.faq.length > 0 && (
         <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
+          {/* Wide screens: heading + questions centred as one column (Measure, owner 13/11); below lg unchanged. */}
           <Container>
+            <Measure>
             <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{dict.product.faqTitle}</h2>
             <div className="mt-8 max-w-3xl border-t border-surface-border">
               {article.faq.map((f, i) => (
@@ -494,6 +497,7 @@ export function PilotProductDetail({
                 </details>
               ))}
             </div>
+            </Measure>
           </Container>
         </section>
       )}

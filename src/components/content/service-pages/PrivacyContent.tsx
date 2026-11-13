@@ -12,7 +12,7 @@ export function PrivacyContent() {
   const c = useServiceCopy(PRIVACY);
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<UpdatedAt date={SERVICE_PAGES_UPDATED} />} />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<UpdatedAt date={SERVICE_PAGES_UPDATED} />} measure="2xl" />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <SummaryCards items={c.summary} />

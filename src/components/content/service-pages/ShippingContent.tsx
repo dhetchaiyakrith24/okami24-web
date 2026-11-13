@@ -12,7 +12,7 @@ export function ShippingContent() {
   const link = "text-foreground hover:text-red";
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<SummaryCards items={c.summary} />} />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<SummaryCards items={c.summary} />} measure="2xl" />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <ServiceSection title={c.feeTitle}>
