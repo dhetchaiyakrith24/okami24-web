@@ -7,6 +7,8 @@ import type { Locale } from "@/i18n/config";
 import { renderInline } from "@/components/content/ArticleBody";
 import type { ProductArticleCopy } from "@/data/product-articles";
 import { thaiTypographyNode } from "@/lib/thai-typography";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 /**
  * Article round (02/10, designer option A): a product's article from src/data/product-articles.ts, in two parts —
@@ -64,6 +66,13 @@ export function ProductArticleBody({ articles }: { articles: ArticlesByLocale })
               {renderInline(p, locale, `a${i}p${pi}`)}
             </p>
           ))}
+          {/* Product-article round 13/11: the section's own picture (`ArticleSubsection.image`, in the type since 16/10 but
+              never drawn). A cut-out floats small under its text; a poster gets the G5 poster frame. */}
+          {s.image && (
+            <div className={cn("mt-2", s.image.transparent ? "w-full max-w-[13rem] lg:max-w-[15rem]" : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black")}>
+              <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes={s.image.transparent ? "240px" : "(min-width: 1024px) 768px, 100vw"} className="block h-auto w-full" />
+            </div>
+          )}
         </div>
       ))}
     </div>
