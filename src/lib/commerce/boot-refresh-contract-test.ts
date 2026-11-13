@@ -11,7 +11,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { bootRefreshUrl, refreshPagesAfterBoot, type BootRefreshDeps } from "./boot-refresh";
+import { BOOT_KIND_HEADER, bootRefreshKind, bootRefreshUrl, refreshPagesAfterBoot, sitemapPaths, type BootRefreshDeps } from "./boot-refresh";
 
 type Result = { name: string; passed: boolean; detail: string };
 
@@ -76,6 +76,74 @@ export async function runBootRefreshContractTests(): Promise<Result[]> {
   );
   const route = read("src/app/api/cart/count/route.ts");
   check("4b. /api/cart/count still marks every page stale once per process", /revalidatePath\("\/", "layout"\)/.test(route) && /__okami24CopyRefreshed/.test(route));
+
+  // 5. first-hit round 14/11: expire only when the build copy is wrong, otherwise stale-while-revalidate on the same tag
+  const open = { cartOff: false, siteClosed: false, hidden: [] as string[] };
+  check("5a. all switches as built → stale (build copy served at once, re-rendered behind it)", bootRefreshKind(open) === "stale");
+  check(
+    "5b. cart off / site closed / a product hidden → expire (the build copy must not be served)",
+    bootRefreshKind({ ...open, cartOff: true }) === "expire" &&
+      bootRefreshKind({ ...open, siteClosed: true }) === "expire" &&
+      bootRefreshKind({ ...open, hidden: ["m-bar-10k"] }) === "expire",
+  );
+  check(
+    '5c. the route uses bootRefreshKind and revalidatePath("/", "layout")\'s own tag with the "max" profile',
+    route.includes("boot.__okami24BootKind = bootRefreshKind(readSwitches());") && route.includes('boot.__okami24BootKind === "stale"') && route.includes('revalidateTag(`${NEXT_CACHE_IMPLICIT_TAG_ID}/layout`, "max")'),
+  );
+  // 6. expired pages are warmed by the server itself, one at a time, in sitemap order; a stale refresh warms nothing
+  const sitemap = "<urlset><url><loc>https://okami24.store/</loc></url><url><loc>https://okami24.store/products</loc></url><url><loc>https://okami24.store/products/m-bar-10k</loc></url><url><loc>https://okami24.store/products</loc></url></urlset>";
+  check("6a. sitemapPaths keeps order, drops the host and repeats", JSON.stringify(sitemapPaths(sitemap)) === JSON.stringify(["/", "/products", "/products/m-bar-10k"]));
+  // `staleTimes` = how many answers a page gives as STALE before HIT (its background re-render still running)
+  const warmed = (kind: string | null, staleTimes = 0) => {
+    const calls: string[] = [];
+    const waits: number[] = [];
+    const seen = new Map<string, number>();
+    const deps: BootRefreshDeps = {
+      fetch: async (url) => {
+        calls.push(url);
+        const n = seen.get(url) ?? 0;
+        seen.set(url, n + 1);
+        const cache = kind === "stale" ? (n < staleTimes ? "STALE" : "HIT") : "MISS";
+        return {
+          status: 200,
+          headers: { get: (h: string) => (h === BOOT_KIND_HEADER ? kind : h === "x-nextjs-cache" && !url.includes("/api/") && !url.endsWith(".xml") ? cache : null) },
+          text: async () => (url.endsWith("/sitemap.xml") ? sitemap : ""),
+        };
+      },
+      wait: async (ms) => void waits.push(ms),
+      log: () => {},
+      port: "3999",
+    };
+    return { deps, calls, waits };
+  };
+  const ex = warmed("expire");
+  await refreshPagesAfterBoot(ex.deps, { orderingEnabled: true, firstDelayMs: 0 });
+  check(
+    "6b. expire → the sitemap, then each page once, in order, paced",
+    JSON.stringify(ex.calls) === JSON.stringify(["http://127.0.0.1:3999/api/cart/count", "http://127.0.0.1:3999/sitemap.xml", "http://127.0.0.1:3999/", "http://127.0.0.1:3999/products", "http://127.0.0.1:3999/products/m-bar-10k"]) &&
+      ex.waits.filter((w) => w === 250).length === 3,
+    ex.calls.join(" "),
+  );
+  const st = warmed("stale", 2);
+  await refreshPagesAfterBoot(st.deps, { orderingEnabled: true, firstDelayMs: 0 });
+  const perPage = ["/", "/products", "/products/m-bar-10k"].map((p) => st.calls.filter((c) => c === `http://127.0.0.1:3999${p}`).length);
+  check(
+    "6c. stale → each page is asked again until it reads HIT (its re-render done) before the next one starts",
+    JSON.stringify(perPage) === "[3,3,3]" && st.waits.filter((w) => w === 300).length === 6 && st.calls.indexOf("http://127.0.0.1:3999/products") > st.calls.lastIndexOf("http://127.0.0.1:3999/"),
+    `${perPage.join(",")} · ${st.calls.join(" ")}`,
+  );
+  const none = warmed(null);
+  await refreshPagesAfterBoot(none.deps, { orderingEnabled: true, firstDelayMs: 0 });
+  check("6e. no kind in the answer (no boot refresh ran) → no warming", none.calls.length === 1, none.calls.join(" "));
+  check("6d. the route names its kind in the boot-kind header", route.includes("[BOOT_KIND_HEADER]: boot.__okami24BootKind"));
+
+  // If a Next upgrade renamed the implicit tag, the stale refresh would quietly mark nothing — this says so.
+  const nextConstants = read("node_modules/next/dist/lib/constants.js");
+  const nextRevalidate = read("node_modules/next/dist/server/web/spec-extension/revalidate.js");
+  check(
+    "5d. Next's implicit tag is still _N_T_ and revalidatePath still builds <id><path>/<type>",
+    nextConstants.includes("NEXT_CACHE_IMPLICIT_TAG_ID = '_N_T_'") && nextRevalidate.includes("normalizedPath += `${normalizedPath.endsWith('/') ? '' : '/'}${type}`"),
+  );
   return results;
 }
 
