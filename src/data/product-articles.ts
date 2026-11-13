@@ -29,7 +29,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Product-article round 13/11 (owner: best sellers in stock first, the G5 standard upgraded with what page-1 pages do),
   // Marbo Saltnic: no maker site (the Muro e-liquid pattern of 02/11) — facts = the two verified rows (30ml · salt nic), the
   // options as the warehouse lists them (Purple 50mg = the only stated strength) and what the bottle labels print in the
-  // warehouse's own ELQ-1 listing photo, recorded in shipnity-seed/active-catalog-to-product-master.ts ("ELIQUID-1" image
+  // warehouse's ELQ-1 listing photo (a BN VAPE shop poster the warehouse listed with; checker #1452), recorded in shipnity-seed/active-catalog-to-product-master.ts ("ELIQUID-1" image
   // note: black prints "Ice Blast", purple "Ice Grape"). No flavour guessed for any other colour. Thai = thai-copy 13/11.
   "eliquid-1": {
     th: {
@@ -40,7 +40,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "ชื่อตัวเลือกบนหน้านี้มีอยู่สองแบบ แบบแรกบอกแนวกลิ่นไว้เป็นคำเลย มี 3 ชื่อ คือ Tobacco · Ice Strawberry และ Ice Sparkling ชื่อกลุ่มนี้พอบอกได้ว่ากลิ่นไปทางไหน อย่าง Tobacco ก็คือแนวยาสูบ ส่วน Ice Strawberry มีสตรอเบอร์รี่อยู่ในชื่อ",
             "อีก 6 ชื่อเป็นชื่อสี เช่น Purple · Black และ Green ชื่อเหล่านี้คือชื่อที่ร้านใช้เรียกขวดในคลังสินค้า ชื่อสีอย่างเดียวไม่ได้บอกว่าข้างในเป็นรสอะไร ร้านจึงไม่เดารสจากสีให้",
-            "แต่มีสองขวดที่ฉลากพิมพ์ชื่อกลิ่นไว้ให้เห็นในรูปขวดจากคลังของร้าน ขวด Purple พิมพ์ว่า Ice Grape ส่วนขวด Black พิมพ์ว่า Ice Blast ขวดสีอื่นที่อยากรู้ก่อนสั่ง ส่งชื่อกลิ่นหรือรูปขวดมาให้ร้านช่วยดูได้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+            "แต่มีสองขวดที่ฉลากพิมพ์ชื่อกลิ่นไว้ให้เห็นในรูปที่คลังสินค้าใช้ลงรายการ ขวด Purple พิมพ์ว่า Ice Grape ส่วนขวด Black พิมพ์ว่า Ice Blast ขวดสีอื่นที่อยากรู้ก่อนสั่ง ส่งชื่อกลิ่นหรือรูปขวดมาให้ร้านช่วยดูได้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
           ],
         },
         {
@@ -53,7 +53,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
       faq: [
         { question: "Marbo สีดำ คือกลิ่นไหน", answer: "บนหน้านี้คือตัวเลือก Black ค่ะ ฉลากของขวดสีดำพิมพ์ชื่อกลิ่นไว้ว่า Ice Blast ใครกำลังหากลิ่นนี้ของ Marbo อยู่ ก็คือตัวเลือกนี้ค่ะ" },
-        { question: "Marbo Saltnic มีแบบ 50mg ไหม", answer: "มีค่ะ ตัวเลือก Purple 50mg คือกลิ่น Purple ในแบบ 50mg ส่วนขวดอื่นบนหน้านี้ยังไม่ได้ระบุความเข้มข้นไว้ ก่อนกดเลือก ลองดูชื่อให้ตรงกับแบบที่ต้องการนะคะ" },
+        { question: "Marbo Saltnic มีแบบ 50mg ไหม", answer: "มีค่ะ ตัวเลือก Purple 50mg คือกลิ่น Purple ในแบบ 50mg ส่วนขวดอื่นบนหน้านี้ ร้านยังไม่ได้ลงความเข้มข้นไว้ ก่อนกดเลือกจึงควรดูชื่อตัวเลือกให้ตรงกับแบบที่ต้องการค่ะ" },
         { question: "Marbo Saltnic เติมกับหัวพอตแบบไหนได้", answer: "เติมได้กับหัวพอตที่เติมน้ำยาเองได้ค่ะ อย่างหัวพอตของพอตซิสเต็ม ส่วนหัวพอตบรรจุสำเร็จกับพอตใช้แล้วทิ้งเป็นแบบที่ใช้จนน้ำยาหมดแล้วเปลี่ยนใหม่ ไม่ได้มีไว้ให้เติม วิธีดูว่าหัวพอตที่ใช้อยู่เติมเองได้ไหม อ่านต่อได้ที่[เติมพอตยังไง](/guides/refilling-a-pod) ค่ะ" },
       ],
     },
@@ -65,7 +65,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "The names on this page come in two kinds. Three describe the flavour in words: Tobacco, Ice Strawberry and Ice Sparkling.",
             "The other six are colours, such as Purple, Black and Green. These are the names we use for the bottles in our warehouse. A colour alone doesn't say what the flavour is, so we don't guess one for you.",
-            "Two bottles do print a flavour name on the label, as our warehouse photo of them shows: Purple reads Ice Grape and Black reads Ice Blast. For any other colour, send us the name or a photo of the bottle on LINE @okm24 and we'll check before you order.",
+            "Two bottles do print a flavour name on the label, as the photo our warehouse lists them with shows: Purple reads Ice Grape and Black reads Ice Blast. For any other colour, send us the name or a photo of the bottle on LINE @okm24 and we'll check before you order.",
           ],
         },
         {
@@ -90,7 +90,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "本页的选项名称分两类。一类直接用文字点明口味方向，共 3 个：Tobacco、Ice Strawberry 和 Ice Sparkling。",
             "另外 6 个是颜色名，例如 Purple、Black、Green。这些是本店仓库对瓶子的叫法，单凭颜色并不能说明口味，所以我们不会凭颜色去猜口味。",
-            "不过有两瓶的标签印着口味名称，本店仓库的瓶身照片可以看到：Purple 印着 Ice Grape，Black 印着 Ice Blast。其他颜色想在下单前确认，可以把口味名称或瓶身照片发到 LINE @okm24，我们帮您确认。",
+            "不过有两瓶的标签印着口味名称，从仓库上架所用的瓶身照片可以看到：Purple 印着 Ice Grape，Black 印着 Ice Blast。其他颜色想在下单前确认，可以把口味名称或瓶身照片发到 LINE @okm24，我们帮您确认。",
           ],
         },
         {
@@ -118,7 +118,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Marbo Freebase ต่างจาก Marbo Saltnic ตรงไหน",
           paragraphs: [
-            "ต่างกันหลัก ๆ ที่นิโคติน ขวดนี้เป็นแบบ freebase ส่วน [Marbo Saltnic](/products/eliquid-1) เป็นแบบ salt nic นิโคตินสองแบบนี้เหมาะกับเครื่องคนละแบบ เวลาเลือกจึงเริ่มจากเครื่องที่ใช้อยู่และคำแนะนำของผู้ผลิตเครื่องก่อน แล้วค่อยมาดูกลิ่น รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+            "ต่างกันหลัก ๆ ที่นิโคติน [Marbo Saltnic](/products/eliquid-1) เป็นแบบ salt nic ส่วนขวดนี้เป็นแบบ freebase นิโคตินสองแบบนี้เหมาะกับเครื่องคนละแบบ เวลาเลือกจึงเริ่มจากเครื่องที่ใช้อยู่และคำแนะนำของผู้ผลิตเครื่องก่อน แล้วค่อยมาดูกลิ่น รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
             "ชื่อกลิ่นของสองขวดซ้ำกันอยู่สามชื่อ คือ Purple · Gold และ Ice Sparkling แม้ชื่อจะเหมือนกัน นิโคตินก็ยังเป็นคนละแบบ จึงควรเลือกขวดให้ตรงกับเครื่องก่อน ฝั่ง Marbo Saltnic มีตัวเลือกมากกว่า ส่วน Pink มีเฉพาะใน Marbo Freebase",
           ],
         },
