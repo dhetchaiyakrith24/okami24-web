@@ -5534,64 +5534,127 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
-  // Round "queue 0211" articles, Muro e-liquids (02/11): no maker site exists — facts = the records in src/data/products/unbranded.ts
-  // only: the nicotine type (verified, it is in the name) and the flavour names (one set for both). Bottle size and nicotine mg rows
-  // are unverified → not stated; salt nic vs freebase itself = the shop guide, linked, not retold. Legacy pages render no article
-  // FAQ → none written. Thai = thai-copy 02/11 (worded apart so the sibling pages do not duplicate).
+  // Round "queue 0211" articles, Muro e-liquids (02/11) + product-article round 13/11 (owner: best sellers in stock first):
+  // no maker site — facts = src/data/products/unbranded.ts only: nicotine type (verified, in the name), nicotine strength
+  // (verified rows since 06/11: 28mg / 4mg, printed on the maker's poster) and the flavour names (one set for both). Bottle
+  // size unverified → never stated. mg is never converted to %; why = the shop guide, linked. Device advice (Aspire · RELX:
+  // salt nic for small low-watt pods, freebase for high-watt low-ohm) and top/side fill = guides.ts salt-nic-vs-freebase ·
+  // refilling-a-pod; "one coil, one flavour" = UWELL via refilling-a-pod. Muro Connector 20K / SC 8000 = prefilled (their
+  // records). Legacy pages render no article FAQ → buyer questions are H3s. Thai = thai-copy 02/11 + 13/11.
   "muro-salt-nic": {
     th: {
-      lede: "ด้านล่างร้านจัดกลิ่นของ Muro Salt Nic เป็นสายให้ดูง่ายขึ้น และเล่าว่าต่างจาก Muro Freebase ตรงไหน",
+      lede: "ก่อนเลือก Muro Salt Nic ร้านรวมเรื่องที่ควรรู้ไว้ด้านล่าง ทั้งความเข้มข้นของนิโคติน เครื่องที่ใช้ได้ และวิธีเติม พร้อมจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น",
       sections: [
         {
-          heading: "Muro Salt Nic กับ Muro Freebase ต่างกันยังไง",
+          heading: "Muro Salt Nic เข้มข้นเท่าไหร่",
           paragraphs: [
-            "สองรุ่นนี้ใช้ชื่อกลิ่นชุดเดียวกันทุกกลิ่น ที่ต่างกันคือชนิดของนิโคติน Muro Salt Nic ใช้นิโคตินแบบ salt nic ส่วน [Muro Freebase](/products/muro-freebase) ใช้แบบ freebase จะเลือกรุ่นไหน จึงดูจากเครื่องที่ใช้ก่อนได้เลย แล้วค่อยเลือกกลิ่นที่ชอบ",
-            "สองแบบนี้เป็นนิโคตินคนละชนิด และเข้ากับเครื่องคนละแบบด้วย ถ้ายังไม่แน่ใจว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน อ่านต่อได้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+            "ขวดนี้มีความเข้มข้นของนิโคติน 28mg ตามที่ผู้ผลิตพิมพ์ไว้บนโปสเตอร์ของรุ่นนี้ ตัวเลขในหน่วย mg ยิ่งสูง นิโคตินก็ยิ่งเข้ม",
+            "ถ้าเคยใช้พอตที่บอกตัวเลขนี้เป็น % มาก่อน ให้ดูสองหน่วยนี้แยกกัน เพราะร้านเทียบให้เฉพาะ mg กับ mg และ % กับ % เหตุผลอ่านต่อได้ที่[ตัวเลข % กับ mg บอกอะไร](/guides/salt-nic-vs-freebase)",
           ],
         },
         {
-          heading: "มีกลิ่นแนวไหนให้เลือกบ้าง",
+          heading: "Muro Salt Nic กับ Muro Freebase ต่างกันยังไง",
           paragraphs: [
-            "ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี Click Mint สายองุ่นมี Grape ส่วนสายผลไม้มี Watermelon · Strawberry Twist และ Peach ที่เหลือคือ Big Cola ชื่อนี้ไม่ได้บอกผลไม้ ร้านจึงจัดไว้แนวอื่น",
-            "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง กลิ่นอยู่ที่น้ำยา ไม่ได้ผูกกับตัวเครื่อง อยากลองกลิ่นอื่นก็ไม่ต้องเปลี่ยนเครื่อง วิธีเติมน้ำยาทีละขั้น ร้านเล่าไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod)",
+            "สองรุ่นนี้ใช้ชื่อกลิ่นชุดเดียวกันทุกกลิ่น ที่ต่างกันคือนิโคติน ขวดนี้เป็นแบบ salt nic ส่วน [Muro Freebase](/products/muro-freebase) เป็นแบบ freebase",
+            "ความเข้มข้นของสองขวดก็ห่างกันมาก ขวดนี้ 28mg ส่วนอีกขวด 4mg แต่สองขวดนี้เป็นนิโคตินคนละแบบ จะหยิบขวดไหนจึงให้เครื่องที่ใช้อยู่เป็นตัวตัดสิน มากกว่าตัวเลข แล้วค่อยเลือกกลิ่นที่ชอบ",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic ใช้กับเครื่องอะไร",
+          paragraphs: [
+            "ขวดนี้เป็นน้ำยาสำหรับเติม ใช้กับพอตซิสเต็มที่เติมน้ำยาลงหัวพอตเองได้ ส่วนเรื่องนิโคติน ผู้ผลิตเครื่องอย่าง Aspire และ RELX แนะนำ salt nic กับพอตตัวเล็กที่ใช้วัตต์ต่ำ และ freebase กับเครื่องวัตต์สูง ถ้าเครื่องที่ใช้อยู่เป็นพอตตัวเล็ก ก็เริ่มดูจากขวดนี้ได้ แล้วเช็คคู่มือของเครื่องรุ่นนั้นอีกครั้ง",
+            "ถ้าที่ใช้อยู่เป็น Muro รุ่นอื่น ให้ดูก่อนว่าเป็นแบบไหน Muro Connector 20K เป็นหัวพอต และ Muro SC 8000 เป็นพอตใช้แล้วทิ้ง ทั้งสองรุ่นมีน้ำยามาในตัวแล้ว ใช้หมดก็เปลี่ยนใหม่ จึงไม่ต้องซื้อน้ำยาขวดไปเติม",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic มีกลิ่นอะไรบ้าง",
+          paragraphs: [
+            "ร้านจัดสายจากคำในชื่อกลิ่น สายเย็นมี Click Mint สายองุ่นมี Grape ส่วนสายผลไม้มี Watermelon · Strawberry Twist และ Peach ที่เหลือคือ Big Cola ซึ่งชื่อพาไปทางโคล่ามากกว่าผลไม้ ร้านจึงจัดไว้แนวอื่น",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic เติมยังไง",
+          paragraphs: [
+            "หัวพอตแบบเติมเองมีช่องเติมอยู่สองตำแหน่ง คือด้านบนกับด้านข้าง ก่อนเปิดขวดจึงควรดูให้แน่ใจว่าหัวพอตในมือเป็นแบบไหน ขั้นตอนทีละขั้นและระดับน้ำยาที่พอดี ร้านรวมไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod)",
+            "ในพอตซิสเต็ม กลิ่นมาจากน้ำยาที่เติม อยากลองกลิ่นอื่นของ Muro ก็ใช้เครื่องเดิมต่อได้ แต่ UWELL แนะนำให้ใช้คอยล์ตัวหนึ่งกับน้ำยากลิ่นเดียว ร้านเราจึงใช้กลิ่นเดิมไปจนถึงรอบเปลี่ยนหัวพอต แล้วค่อยเริ่มกลิ่นใหม่กับหัวใหม่",
           ],
         },
       ],
     },
     en: {
-      lede: "Below, the Muro Salt Nic flavours sorted into groups, and how it differs from Muro Freebase.",
+      lede: "Before you pick a bottle, here's what's worth knowing about Muro Salt Nic: what its nicotine strength means, which devices it suits and how to fill one, plus the flavours sorted into groups.",
       sections: [
         {
-          heading: "Muro Salt Nic or Muro Freebase?",
+          heading: "How strong is Muro Salt Nic?",
           paragraphs: [
-            "The two share the same set of flavour names. The difference is the nicotine: Muro Salt Nic uses salt nic, while [Muro Freebase](/products/muro-freebase) uses freebase. So let your device decide which one to take first, then pick the flavour you like.",
-            "Salt nic and freebase are two different forms of nicotine, and each suits a different kind of device, so it's worth checking what your device's maker recommends.",
+            "This bottle has a nicotine strength of 28mg, as printed on the maker's poster. The higher the mg figure, the stronger the nicotine.",
+            "If you're used to strengths given as a percentage, keep the two units apart: we compare mg only with mg, and % only with %.",
           ],
         },
         {
-          heading: "Which flavours are there?",
+          heading: "Muro Salt Nic or Muro Freebase?",
           paragraphs: [
-            "We grouped them by the words in their names. Click Mint is the cool one and Grape the grape; fruit has Watermelon, Strawberry Twist and Peach. Big Cola doesn't name a fruit, so it sits on its own.",
-            "In a pod system you refill yourself, the flavour is in the e-liquid rather than the device, so trying another flavour doesn't mean changing devices.",
+            "The two share the same set of flavour names. What differs is the nicotine: this bottle is salt nic, while [Muro Freebase](/products/muro-freebase) is freebase.",
+            "The strengths are far apart too, 28mg here and 4mg in the other. Since the two use different nicotine, let your device make the call rather than the number, then choose the flavour you like.",
+          ],
+        },
+        {
+          heading: "Which devices is Muro Salt Nic for?",
+          paragraphs: [
+            "It's a bottle for refilling, so it goes in a Pod System whose pod you fill yourself. On the nicotine side, device makers such as Aspire and RELX recommend salt nic for small, low-wattage pods and freebase for higher-wattage devices. If yours is a small pod, this bottle is a sensible place to start; check its manual to be sure.",
+            "If you use another Muro, check which kind it is first. Muro Connector 20K is a prefilled pod and Muro SC 8000 is a disposable. Both come with e-liquid inside and are replaced when empty, so neither needs a bottle.",
+          ],
+        },
+        {
+          heading: "What flavours does Muro Salt Nic come in?",
+          paragraphs: [
+            "We grouped them by the words in their names. Click Mint is the cool one and Grape the grape; the fruit group has Watermelon, Strawberry Twist and Peach. Big Cola points to cola rather than fruit, so it sits on its own.",
+          ],
+        },
+        {
+          heading: "How do I refill with Muro Salt Nic?",
+          paragraphs: [
+            "Refillable pods open for filling either at the top or at the side, so check which one yours is before you open the bottle.",
+            "In a Pod System the flavour comes from the e-liquid, so you can try another Muro flavour without changing devices. UWELL recommends one coil for one flavour, so we stay with a flavour until it's time for a new pod, then start the next one with the fresh pod.",
           ],
         },
       ],
     },
     zh: {
-      lede: "下面把 Muro Salt Nic 的口味按类型分好组，并说明它和 Muro Freebase 有什么不同。",
+      lede: "挑选 Muro Salt Nic 之前，可以先看看下面整理的内容：尼古丁浓度代表什么、适合哪些设备、怎样加注，并把口味按类型分好组，方便挑选。",
       sections: [
         {
-          heading: "Muro Salt Nic 和 Muro Freebase 有什么不同？",
+          heading: "Muro Salt Nic 浓度是多少？",
           paragraphs: [
-            "两款的口味名称完全相同，区别在于尼古丁类型：Muro Salt Nic 采用盐尼古丁，[Muro Freebase](/products/muro-freebase) 则采用游离碱尼古丁。所以可以先按所用设备决定选哪一款，再挑喜欢的口味。",
-            "盐尼古丁和游离碱尼古丁是两种不同形式的尼古丁，适合的设备也不同，建议参考设备厂家的推荐。",
+            "这瓶的尼古丁浓度为 28mg，以厂家海报上印的数字为准。mg 数字越高，尼古丁越浓。",
+            "如果您习惯看以 % 标注的浓度，请把两种单位分开看：我们只在同一单位之间比较，mg 对 mg，% 对 %。",
           ],
         },
         {
-          heading: "有哪些口味可选？",
+          heading: "Muro Salt Nic 和 Muro Freebase 有什么不同？",
           paragraphs: [
-            "我们按口味名称里的词来分组：清凉类是 Click Mint，葡萄类是 Grape，水果类有 Watermelon、Strawberry Twist 和 Peach。Big Cola 的名称不是水果，单独归为其他。",
-            "如果使用可自行注油的开放式设备，口味在烟油里，与主机无关，想换口味不必更换设备。",
+            "两款的口味名称完全相同，区别在于尼古丁类型：这瓶是盐尼古丁，[Muro Freebase](/products/muro-freebase) 则是游离碱尼古丁。",
+            "两瓶的浓度也相差很大：这瓶 28mg，另一瓶 4mg。但两者的尼古丁类型不同，选哪一瓶应由所用设备决定，而不是看数字，之后再挑喜欢的口味。",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic 适合什么设备？",
+          paragraphs: [
+            "这是用来加注的瓶装烟油，适合烟弹可自行注油的 Pod System。至于尼古丁类型，Aspire、RELX 等设备厂家建议小型低功率烟弹搭配盐尼古丁，高功率设备搭配游离碱尼古丁。如果用的是小型烟弹，可以先从这瓶看起，再对照设备说明书确认。",
+            "如果手上是其他 Muro 产品，先看清是哪一类：Muro Connector 20K 是预注油烟弹，Muro SC 8000 是一次性电子烟。两者都已自带烟油，用完即换，不需要另购瓶装烟油。",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic 有哪些口味？",
+          paragraphs: [
+            "我们按口味名称里的词来分组：清凉类是 Click Mint，葡萄类是 Grape，水果类有 Watermelon、Strawberry Twist 和 Peach。Big Cola 的名称指向可乐而不是水果，单独归为其他。",
+          ],
+        },
+        {
+          heading: "Muro Salt Nic 怎么加注？",
+          paragraphs: [
+            "可自行注油的烟弹分顶部注油和侧面注油两种，打开瓶子前先确认手上的烟弹从哪里加注。",
+            "Pod System 的口味来自烟油，想换 Muro 的其他口味不必更换设备。不过 UWELL 建议一个线圈只搭配一种口味，所以我们会把同一口味用到更换烟弹时，再用新烟弹开始新口味。",
           ],
         },
       ],
