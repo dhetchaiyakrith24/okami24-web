@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
 import { Badge } from "@/components/ui/Badge";
-import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import type { CardPublished } from "@/lib/card-record";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { CardSalesBadge } from "@/components/catalog/SalesBadge";
@@ -38,7 +39,8 @@ import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
  * and the tagline gets the same two-line floor (`lg:min-h-10`) as ProductCard so the price sits
  * at the same height on every card in a row.
  */
-export function PilotProductCard({ product }: { product: StorefrontProductView }) {
+/** `product` = a card-only record (src/lib/card-record.ts) or a full StorefrontProductView. */
+export function PilotProductCard({ product }: { product: CardPublished }) {
   const { dict, locale } = useLocale();
   const sellingPrice = product.publicationStatus === "published" ? product.sellingPrice : null;
   // Round 30.4ข batch 2 (owner 2026-09-16): the headline spec from VERIFIED spec rows (capacity /

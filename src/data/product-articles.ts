@@ -26,30 +26,314 @@ export interface ProductArticleCopy {
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
-  // Round SEO full 07/11: FAQ only, the page has no article yet.
-  "super-cool-saltnic": {
+  // Product-article round 13/11 (owner: best sellers in stock first, the G5 standard upgraded with what page-1 pages do),
+  // Marbo Saltnic: no maker site (the Muro e-liquid pattern of 02/11) — facts = the two verified rows (30ml · salt nic), the
+  // options as the warehouse lists them (Purple 50mg = the only stated strength) and what the bottle labels print in the
+  // warehouse's ELQ-1 listing photo (a BN VAPE shop poster the warehouse listed with; checker #1452), recorded in shipnity-seed/active-catalog-to-product-master.ts ("ELIQUID-1" image
+  // note: black prints "Ice Blast", purple "Ice Grape"). No flavour guessed for any other colour. Thai = thai-copy 13/11.
+  "eliquid-1": {
     th: {
-      sections: [],
+      lede: "ตัวเลือกของ Marbo Saltnic ส่วนใหญ่ใช้ชื่อเป็นสี ดูจากชื่ออย่างเดียวอาจยังไม่รู้ว่าเป็นกลิ่นแนวไหน ด้านล่างร้านเล่าวิธีอ่านชื่อเหล่านี้ไว้ให้ พร้อมความต่างจาก Marbo Freebase",
+      sections: [
+        {
+          heading: "Marbo Saltnic มีกลิ่นอะไรให้เลือกบ้าง",
+          paragraphs: [
+            "ชื่อตัวเลือกบนหน้านี้มีอยู่สองแบบ แบบแรกบอกแนวกลิ่นไว้เป็นคำเลย มี 3 ชื่อ คือ Tobacco · Ice Strawberry และ Ice Sparkling ชื่อกลุ่มนี้พอบอกได้ว่ากลิ่นไปทางไหน อย่าง Tobacco ก็คือแนวยาสูบ ส่วน Ice Strawberry มีสตรอเบอร์รี่อยู่ในชื่อ",
+            "อีก 6 ชื่อเป็นชื่อสี เช่น Purple · Black และ Green ชื่อเหล่านี้คือชื่อที่ร้านใช้เรียกขวดในคลังสินค้า ชื่อสีอย่างเดียวไม่ได้บอกว่าข้างในเป็นรสอะไร ร้านจึงไม่เดารสจากสีให้",
+            "แต่มีสองขวดที่ฉลากพิมพ์ชื่อกลิ่นไว้ให้เห็นในรูปที่คลังสินค้าใช้ลงรายการ ขวด Purple พิมพ์ว่า Ice Grape ส่วนขวด Black พิมพ์ว่า Ice Blast ขวดสีอื่นที่อยากรู้ก่อนสั่ง ส่งชื่อกลิ่นหรือรูปขวดมาให้ร้านช่วยดูได้ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+          ],
+        },
+        {
+          heading: "Marbo Saltnic กับ Marbo Freebase ต่างกันยังไง",
+          paragraphs: [
+            "แม้จะเป็น Marbo เหมือนกัน แต่ Marbo Saltnic กับ [Marbo Freebase](/products/eliquid-109) ใช้นิโคตินคนละชนิด ขวดนี้เป็นแบบ salt nic ส่วนอีกขวดเป็นแบบ freebase เครื่องแต่ละรุ่นเหมาะกับนิโคตินไม่เหมือนกัน ก่อนเลือกขวดจึงควรดูคำแนะนำของผู้ผลิตเครื่องที่ใช้อยู่ ส่วนความต่างของนิโคตินสองแบบนี้ ร้านเล่าไว้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+            "ชื่อ Purple · Gold และ Ice Sparkling มีอยู่ในทั้งสองขวด แต่ชื่อเหมือนกันไม่ได้แปลว่าใช้แทนกันได้ เพราะนิโคตินเป็นคนละแบบ เลือกขวดให้ตรงกับเครื่องก่อน แล้วค่อยเลือกชื่อที่ชอบ",
+          ],
+        },
+      ],
       faq: [
-        { question: "Super Cool เป็นน้ำยา salt nic ไหม", answer: "ใช่ค่ะ Super Cool Salt Nic เป็นน้ำยาที่ใช้นิโคตินแบบ salt nic ความต่างจาก freebase อ่านต่อได้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase) ค่ะ" },
-        { question: "Super Cool มีกลิ่นอะไรบ้าง", answer: "Super Cool Salt Nic มี 10 กลิ่น คือ Grape Blast · Shine Muscat · Yacool · Laimoon · Blueraz Berry · Pinky Blush · King Melon · Strawberry Frost · White Polo และ Black Hexx ค่ะ" },
-        { question: "น้ำยา Super Cool ใช้กับเครื่องแบบไหน", answer: "น้ำยา Super Cool เหมาะกับพอตซิสเต็มตัวเล็กที่เติมน้ำยาเองและใช้วัตต์ต่ำค่ะ เพราะผู้ผลิตพอตหลายรายแนะนำ salt nic ไว้สำหรับเครื่องแบบนี้ ถ้าอยากให้ช่วยดูเครื่องที่ใช้อยู่ ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+        { question: "Marbo สีดำ คือกลิ่นไหน", answer: "บนหน้านี้คือตัวเลือก Black ค่ะ ฉลากของขวดสีดำพิมพ์ชื่อกลิ่นไว้ว่า Ice Blast ใครกำลังหากลิ่นนี้ของ Marbo อยู่ ก็คือตัวเลือกนี้ค่ะ" },
+        { question: "Marbo Saltnic มีแบบ 50mg ไหม", answer: "มีค่ะ ตัวเลือก Purple 50mg คือกลิ่น Purple ในแบบ 50mg และเป็นขวดเดียวบนหน้านี้ที่ระบุตัวเลขไว้ ก่อนกดเลือกจึงควรดูชื่อตัวเลือกให้ตรงกับแบบที่ต้องการค่ะ" },
+        { question: "Marbo Saltnic เติมกับหัวพอตแบบไหนได้", answer: "เติมได้กับหัวพอตที่เติมน้ำยาเองได้ค่ะ อย่างหัวพอตของพอตซิสเต็ม ส่วนหัวพอตบรรจุสำเร็จกับพอตใช้แล้วทิ้งเป็นแบบที่ใช้จนน้ำยาหมดแล้วเปลี่ยนใหม่ ไม่ได้มีไว้ให้เติม วิธีดูว่าหัวพอตที่ใช้อยู่เติมเองได้ไหม อ่านต่อได้ที่[เติมพอตยังไง](/guides/refilling-a-pod) ค่ะ" },
       ],
     },
     en: {
-      sections: [],
+      lede: "Most Marbo Saltnic options are named after a colour, which doesn't tell you much about the flavour. Below, we explain how to read the names and how this line differs from Marbo Freebase.",
+      sections: [
+        {
+          heading: "Which flavours does Marbo Saltnic come in?",
+          paragraphs: [
+            "The names on this page come in two kinds. Three describe the flavour in words: Tobacco, Ice Strawberry and Ice Sparkling.",
+            "The other six are colours, such as Purple, Black and Green. These are the names we use for the bottles in our warehouse. A colour alone doesn't say what the flavour is, so we don't guess one for you.",
+            "Two bottles do print a flavour name on the label, as the photo our warehouse lists them with shows: Purple reads Ice Grape and Black reads Ice Blast. For any other colour, send us the name or a photo of the bottle on LINE @okm24 and we'll check before you order.",
+          ],
+        },
+        {
+          heading: "Marbo Saltnic or Marbo Freebase?",
+          paragraphs: [
+            "Both carry the Marbo name, but the nicotine differs: Marbo Saltnic is salt nic, while [Marbo Freebase](/products/eliquid-109) is freebase. Devices suit one or the other, so check what your device's maker recommends before you choose a bottle.",
+            "Purple, Gold and Ice Sparkling appear in both lines. A shared name doesn't make the two bottles interchangeable, though. Pick the line that suits your device first, then the name you like.",
+          ],
+        },
+      ],
       faq: [
-        { question: "Is Super Cool a salt nic e-liquid?", answer: "Yes. Super Cool Salt Nic is an e-liquid with nicotine in salt nic form." },
-        { question: "What flavours does Super Cool come in?", answer: "Ten: Grape Blast, Shine Muscat, Yacool, Laimoon, Blueraz Berry, Pinky Blush, King Melon, Strawberry Frost, White Polo and Black Hexx." },
-        { question: "What kind of device suits Super Cool e-liquid?", answer: "A small, low-wattage Pod System you fill yourself, the kind several pod makers recommend salt nic for. If you'd like us to check your device, message us on LINE @okm24." },
+        { question: "Which option is the black Marbo?", answer: "On this page it's Black. The black bottle's label prints the flavour name Ice Blast, so if you're looking for Marbo Ice Blast, this is the one." },
+        { question: "Does Marbo Saltnic come in 50mg?", answer: "Yes. The Purple 50mg option is Purple in a 50mg version. The other bottles on this page don't state a strength, so check the name before you choose." },
+        { question: "What kind of pod can I fill with Marbo Saltnic?", answer: "Any pod you refill yourself, such as the pod of a Pod System. Prefilled pods and disposables are used until the e-liquid runs out and then replaced, so they aren't meant to be refilled." },
       ],
     },
     zh: {
-      sections: [],
+      lede: "Marbo Saltnic 的大部分选项以颜色命名，单看名称不太容易判断口味。下面说明这些名称该怎么看，以及它和 Marbo Freebase 有什么不同。",
+      sections: [
+        {
+          heading: "Marbo Saltnic 有哪些口味？",
+          paragraphs: [
+            "本页的选项名称分两类。一类直接用文字点明口味方向，共 3 个：Tobacco、Ice Strawberry 和 Ice Sparkling。",
+            "另外 6 个是颜色名，例如 Purple、Black、Green。这些是本店仓库对瓶子的叫法，单凭颜色并不能说明口味，所以我们不会凭颜色去猜口味。",
+            "不过有两瓶的标签印着口味名称，从仓库上架所用的瓶身照片可以看到：Purple 印着 Ice Grape，Black 印着 Ice Blast。其他颜色想在下单前确认，可以把口味名称或瓶身照片发到 LINE @okm24，我们帮您确认。",
+          ],
+        },
+        {
+          heading: "Marbo Saltnic 和 Marbo Freebase 有什么不同？",
+          paragraphs: [
+            "两款都叫 Marbo，但尼古丁类型不同：Marbo Saltnic 是盐尼古丁，[Marbo Freebase](/products/eliquid-109) 是游离碱尼古丁。不同设备适合的尼古丁类型不同，选瓶之前建议先看设备厂家的推荐。",
+            "Purple、Gold 和 Ice Sparkling 两款都有，但名称相同并不代表可以互换。先选适合设备的那一款，再挑喜欢的名称。",
+          ],
+        },
+      ],
       faq: [
-        { question: "Super Cool 是 salt nic 烟油吗？", answer: "是的，Super Cool Salt Nic 是尼古丁类型为 salt nic 的烟油。" },
-        { question: "Super Cool 有哪些口味？", answer: "共 10 种口味：Grape Blast、Shine Muscat、Yacool、Laimoon、Blueraz Berry、Pinky Blush、King Melon、Strawberry Frost、White Polo 和 Black Hexx。" },
-        { question: "Super Cool 烟油适合什么设备？", answer: "适合自行注油的低功率小型 Pod System，多家烟弹设备厂商都建议这类设备使用 salt nic。想确认手上的设备是否合适，欢迎通过 LINE @okm24 咨询。" },
+        { question: "黑色的 Marbo 是哪个选项？", answer: "本页对应的是 Black。黑色瓶子的标签印着口味名称 Ice Blast，如果您在找 Marbo Ice Blast，就是这一款。" },
+        { question: "Marbo Saltnic 有 50mg 的吗？", answer: "有。Purple 50mg 选项就是 50mg 版本的 Purple。本页其他瓶子未标注浓度，选择前请核对名称。" },
+        { question: "Marbo Saltnic 可以加到什么样的烟弹里？", answer: "可加注到能自行注油的烟弹，例如 Pod System 的烟弹。预注油烟弹和一次性电子烟是用完烟油后直接更换的，不用于加注。" },
+      ],
+    },
+  },
+  // Product-article round 13/11, Marbo Freebase: no maker site — facts = the verified freebase row, "ขวดยาว" with no ml
+  // stated, the four options as the warehouse lists them, the names shared with Marbo Saltnic. No ml / mg / flavour per
+  // colour (the source of the Freebase bottle photos is a shop poster, not the warehouse's own listing). Thai = thai-copy 13/11.
+  "eliquid-109": {
+    th: {
+      lede: "Marbo Freebase ใช้ชื่อ Marbo เหมือนกับ Marbo Saltnic แต่เป็นนิโคตินคนละชนิด ด้านล่างร้านเล่าว่าสองขวดนี้ต่างกันตรงไหน และมีกลิ่นไหนที่เลือกได้เฉพาะในขวดนี้",
+      sections: [
+        {
+          heading: "Marbo Freebase ต่างจาก Marbo Saltnic ตรงไหน",
+          paragraphs: [
+            "ต่างกันหลัก ๆ ที่นิโคติน [Marbo Saltnic](/products/eliquid-1) เป็นแบบ salt nic ส่วนขวดนี้เป็นแบบ freebase นิโคตินสองแบบนี้เหมาะกับเครื่องคนละแบบ เวลาเลือกจึงเริ่มจากเครื่องที่ใช้อยู่และคำแนะนำของผู้ผลิตเครื่องก่อน แล้วค่อยมาดูกลิ่น รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+            "ชื่อกลิ่นของสองขวดซ้ำกันอยู่สามชื่อ คือ Purple · Gold และ Ice Sparkling แม้ชื่อจะเหมือนกัน นิโคตินก็ยังเป็นคนละแบบ จึงควรเลือกขวดให้ตรงกับเครื่องก่อน ฝั่ง Marbo Saltnic มีตัวเลือกมากกว่า ส่วน Pink มีเฉพาะใน Marbo Freebase",
+          ],
+        },
+        {
+          heading: "เลือกกลิ่น Marbo Freebase จากชื่อยังไง",
+          paragraphs: [
+            "ในสี่ตัวเลือก มีแค่ Ice Sparkling ที่บอกแนวกลิ่นไว้เป็นคำ อีกสามตัวเลือกเป็นชื่อสีที่ใช้เรียกขวดในระบบคลังของร้าน ชื่อสีไม่ได้บอกว่าข้างในเป็นรสอะไร และร้านยังไม่มีข้อมูลที่ยืนยันได้ จึงไม่ได้เขียนรสให้แต่ละสี",
+            "วิธีดูจากชื่อว่ากลิ่นไหนเย็น ร้านเล่าไว้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor) ถ้าอยากรู้ก่อนสั่งว่าขวดสีไหนเป็นแนวไหน ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Marbo Freebase ขวดยาวมีกี่ ml", answer: "ชื่อนี้เป็นชื่อที่ใช้เรียกในคลังของร้านค่ะ ปริมาณเป็น ml และความเข้มข้นของนิโคตินยังไม่ได้ระบุไว้ ถ้าต้องการตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+        { question: "Marbo Freebase ใช้กับเครื่องแบบไหน", answer: "ใช้เติมในหัวพอตที่เติมน้ำยาเองได้ค่ะ และเพราะเป็นนิโคตินแบบ freebase ก่อนเลือกควรเช็คคู่มือหรือคำแนะนำของผู้ผลิตเครื่องว่าเหมาะกับ freebase ไหม ถ้าเครื่องเหมาะกับ salt nic มากกว่า เลือกขวด Saltnic แทนได้ค่ะ" },
+        { question: "Marbo สีชมพู มีแบบ salt nic ไหม", answer: "ในรายการของร้าน ตัวเลือก Pink มีเฉพาะในขวด Freebase ค่ะ ส่วนชื่อที่มีให้เลือกทั้งสองขวดคือ Purple · Gold และ Ice Sparkling" },
+      ],
+    },
+    en: {
+      lede: "Marbo Freebase shares the Marbo name with Marbo Saltnic but uses a different kind of nicotine. Below, how the two bottles differ, and the flavour you'll only find in this one.",
+      sections: [
+        {
+          heading: "How is Marbo Freebase different from Marbo Saltnic?",
+          paragraphs: [
+            "Mainly in the nicotine. This bottle is freebase; [Marbo Saltnic](/products/eliquid-1) is salt nic. Each suits a different kind of device, so start from the device you use and its maker's recommendation, then look at flavours.",
+            "Three names appear in both lines: Purple, Gold and Ice Sparkling. Even with the same name, the nicotine is different, so choose the line that matches your device first. Marbo Saltnic has more options, while Pink is only in Marbo Freebase.",
+          ],
+        },
+        {
+          heading: "How do I choose a Marbo Freebase flavour from the names?",
+          paragraphs: [
+            "Of the four options, only Ice Sparkling names its flavour in words. The other three are the colours our warehouse uses for the bottles, and they don't tell you what's inside. We have nothing verified to go on, so we don't attach a flavour to a colour.",
+            "If you'd like to know which colour is which before you order, message us on LINE @okm24.",
+          ],
+        },
+      ],
+      faq: [
+        { question: "How many ml is the Marbo Freebase tall bottle?", answer: "That's the name it has in our warehouse. Neither the volume in ml nor the nicotine strength is stated on this page. If you need either figure before you order, message us on LINE @okm24." },
+        { question: "What kind of device is Marbo Freebase for?", answer: "It's for pods you refill yourself. Because it's freebase, check your device's manual or its maker's recommendation first. If your device is better suited to salt nic, Marbo Saltnic is the one to choose instead." },
+        { question: "Does Marbo Saltnic come in Pink too?", answer: "Not in our range. Pink is only in Marbo Freebase. The names both lines share are Purple, Gold and Ice Sparkling." },
+      ],
+    },
+    zh: {
+      lede: "Marbo Freebase 和 Marbo Saltnic 同用 Marbo 这个名字，但尼古丁类型不同。下面说明两款的区别，以及只有这一款才有的口味。",
+      sections: [
+        {
+          heading: "Marbo Freebase 和 Marbo Saltnic 有什么区别？",
+          paragraphs: [
+            "主要区别在尼古丁：这款是游离碱尼古丁，[Marbo Saltnic](/products/eliquid-1) 是盐尼古丁。两者适合的设备不同，建议先根据手上的设备和设备厂家的推荐来决定，再看口味。",
+            "两款有三个名称相同：Purple、Gold 和 Ice Sparkling。名称一样，尼古丁却不同，所以还是先选适合设备的那一款。Marbo Saltnic 的选项更多，而 Pink 只有 Marbo Freebase 才有。",
+          ],
+        },
+        {
+          heading: "怎样从名称挑选 Marbo Freebase 的口味？",
+          paragraphs: [
+            "四个选项中，只有 Ice Sparkling 用文字点明了口味方向。另外三个是本店仓库对瓶子的颜色叫法，并不说明瓶内是什么口味。由于没有可核实的资料，我们不按颜色标注口味。",
+            "下单前想了解哪个颜色是什么口味，欢迎通过 LINE @okm24 咨询。",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Marbo Freebase 长瓶装是多少 ml？", answer: "这是本店仓库里的叫法，毫升数和尼古丁浓度都未标注。下单前需要这些数字，欢迎通过 LINE @okm24 咨询。" },
+        { question: "Marbo Freebase 适合什么设备？", answer: "适合可自行注油的烟弹。因为是游离碱尼古丁，建议先查看设备说明书或厂家推荐。如果设备更适合盐尼古丁，可以改选 Marbo Saltnic。" },
+        { question: "Marbo Saltnic 也有 Pink 吗？", answer: "本店的两款中，Pink 只有 Marbo Freebase 才有。两款共有的名称是 Purple、Gold 和 Ice Sparkling。" },
+      ],
+    },
+  },
+  // Product-article round 13/11, Super Cool Salt Nic: brandless, no maker site — facts = the verified salt nic row, the ten
+  // options as the warehouse lists them (Max ELQ-6), the count 10. Flavours grouped by the words in their names only (the Muro
+  // pattern); no taste, ml, mg or maker named. FAQ of 07/11 rewritten so the ten names appear once outside the tiles, and its
+  // "several pod makers recommend salt nic" line dropped (no maker source on the page). Thai = thai-copy 13/11.
+  "super-cool-saltnic": {
+    th: {
+      lede: "Super Cool มีกลิ่นให้เลือกหลายชื่อ บางชื่อบอกผลไม้ไว้ชัด บางชื่ออ่านแล้วอาจนึกไม่ออกว่าเป็นแนวไหน ร้านจึงจัดกลิ่นเป็นสายตามคำในชื่อไว้ให้ พร้อมเล่าวิธีเลือกขวดให้เข้ากับเครื่องที่ใช้อยู่",
+      sections: [
+        {
+          heading: "Super Cool มีกลิ่นแนวไหนให้เลือกบ้าง",
+          paragraphs: [
+            "เริ่มจากสายองุ่น มี Grape Blast กับ Shine Muscat ซึ่งเป็นชื่อพันธุ์องุ่น ถัดมาเป็นสายผลไม้ มี Strawberry Frost · King Melon และ Blueraz Berry ทั้งสามชื่อมีคำที่บอกผลไม้อยู่ในตัว",
+            "อีกห้าชื่อ คือ Yacool · Laimoon · Pinky Blush · White Polo และ Black Hexx เป็นชื่อที่ตั้งขึ้นเฉพาะ อ่านจากชื่ออย่างเดียวจึงบอกแนวกลิ่นได้ยาก ร้านเลยรวมไว้เป็นแนวอื่น ถ้าสนใจชื่อไหนในกลุ่มนี้และอยากรู้รายละเอียดก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+          ],
+        },
+        {
+          heading: "เลือกขวดให้เข้ากับเครื่องยังไง",
+          paragraphs: [
+            "นิโคตินในน้ำยาพอตมีสองแบบ คือ salt nic กับ freebase และเครื่องแต่ละรุ่นก็เหมาะกับแต่ละแบบต่างกัน ก่อนเลือกขวด จึงควรเปิดคู่มือหรือหน้าเว็บของผู้ผลิตเครื่องที่ใช้อยู่ แล้วดูว่าแนะนำน้ำยาแบบไหน รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่[salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+            "[Graple](/products/graple-freebase) คือน้ำยาแบบ freebase ที่ร้านมีให้เลือก ถ้าเครื่องที่ใช้อยู่เหมาะกับนิโคตินแบบนั้นมากกว่า ก็เลือกขวดนั้นแทนได้ ขวดนั้นมีตัวเลือกชื่อ Grape ซึ่งก็อยู่ในสายองุ่นเช่นกัน",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Super Cool เป็นน้ำยา salt nic ไหม", answer: "ใช่ค่ะ น้ำยาทุกกลิ่นบนหน้านี้ใช้นิโคตินแบบเดียวกันหมด ก่อนเลือกลองเช็คคู่มือของเครื่องที่ใช้อยู่ด้วยว่าแนะนำนิโคตินแบบไหน ถ้าอยากให้ร้านช่วยดู ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+        { question: "Super Cool มีกี่กลิ่น", answer: "มี 10 กลิ่นค่ะ ถ้าแบ่งตามคำในชื่อ จะเป็นสายองุ่น 2 กลิ่น สายผลไม้ 3 กลิ่น และอีก 5 กลิ่นที่ชื่อยังบอกแนวกลิ่นได้ไม่ชัด ร้านจัดไว้เป็นแนวอื่น ชื่อกลิ่นทั้งหมดดูได้จากตัวเลือกบนหน้านี้ค่ะ" },
+        { question: "Super Cool ใช้กับเครื่องแบบไหน", answer: "ใช้กับเครื่องที่เติมน้ำยาเองได้ค่ะ อย่างพอตซิสเต็มที่หัวพอตเปิดเติมได้ ส่วนพอตใช้แล้วทิ้งและหัวพอตแบบบรรจุสำเร็จมีน้ำยามาในตัวแล้ว วิธีดูว่าหัวพอตที่ใช้อยู่เติมเองได้ไหม และวิธีเติมทีละขั้น ร้านเล่าไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod) ค่ะ" },
+      ],
+    },
+    en: {
+      lede: "Super Cool's flavour names range from the obvious to the mysterious. To make choosing easier, we've grouped them by the words in each name and explained how to match a bottle to your device.",
+      sections: [
+        {
+          heading: "What kinds of flavour does Super Cool offer?",
+          paragraphs: [
+            "The grape group has Grape Blast and Shine Muscat, which is a grape variety. The fruit group has Strawberry Frost, King Melon and Blueraz Berry, each with a fruit in its name.",
+            "The other five, Yacool, Laimoon, Pinky Blush, White Polo and Black Hexx, are made-up names that say little about the flavour on their own, so we've put them under “other”. If one of them catches your eye, message us on LINE @okm24 and we'll tell you more before you order.",
+          ],
+        },
+        {
+          heading: "How do I match the bottle to my device?",
+          paragraphs: [
+            "Pod e-liquid comes with one of two kinds of nicotine, salt nic or freebase, and each device suits one better than the other. Before choosing a bottle, check your device's manual or its maker's website for the kind it recommends.",
+            "If your device is better suited to freebase, we also carry [Graple](/products/graple-freebase), a freebase e-liquid. Its one option is named Grape, so it sits in the grape group too.",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Is Super Cool a salt nic e-liquid?", answer: "Yes. Every flavour on this page uses salt nic, so it's worth checking that your device recommends salt nic before you choose." },
+        { question: "How many flavours does Super Cool have?", answer: "Ten. Going by the words in their names, two are grape, three are fruit, and the remaining five have names that don't point to a flavour, so we list them as other. You'll find all ten among the options on this page." },
+        { question: "What kind of device suits Super Cool?", answer: "Any device whose pod you fill yourself, such as a Pod System with a refillable pod. Disposables and prefilled pods come with e-liquid already inside, so they don't need a bottle." },
+      ],
+    },
+    zh: {
+      lede: "Super Cool 的口味名称有的一看就懂，有的却不太好猜。为了方便挑选，我们按名称里的字词把口味分了组，并说明怎样挑选适合自己设备的瓶子。",
+      sections: [
+        {
+          heading: "Super Cool 有哪些口味类型？",
+          paragraphs: [
+            "葡萄类有 Grape Blast 和葡萄品种名 Shine Muscat；水果类有 Strawberry Frost、King Melon 和 Blueraz Berry，名称里都带着水果。",
+            "另外五个是 Yacool、Laimoon、Pinky Blush、White Polo 和 Black Hexx，属于自创名称，单看名字很难判断口味方向，所以归为其他类。对其中哪一款感兴趣，下单前欢迎通过 LINE @okm24 咨询。",
+          ],
+        },
+        {
+          heading: "怎样挑选适合设备的瓶子？",
+          paragraphs: [
+            "烟油里的尼古丁分为盐尼古丁和游离碱尼古丁两种，不同设备适合的类型也不同。选瓶之前，建议先查看设备说明书或厂家官网，确认推荐使用哪一种。",
+            "如果您的设备更适合游离碱尼古丁，本店也有游离碱烟油 [Graple](/products/graple-freebase)。它唯一的选项名为 Grape，同样属于葡萄类。",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Super Cool 是盐尼古丁烟油吗？", answer: "是的，本页所有口味都采用盐尼古丁。选购前建议先确认设备是否推荐使用盐尼古丁。" },
+        { question: "Super Cool 有几种口味？", answer: "共 10 种。按名称里的字词来分，葡萄类 2 种、水果类 3 种，另外 5 种的名称看不出口味方向，归为其他类。全部名称都可以在本页的选项中看到。" },
+        { question: "Super Cool 适合什么设备？", answer: "适合烟弹可自行注油的设备，例如 Pod System。一次性电子烟和预注油烟弹已自带烟油，不需要另外使用瓶装烟油。" },
+      ],
+    },
+  },
+  // Product-article round 13/11, Graple Freebase: brandless, no maker site — facts = the verified freebase row and its one
+  // option as the warehouse lists it (Max ELQ-2-1, shown "Grape"). No taste, ml, mg or maker named; the ml FAQ says the page
+  // has no figure (the Marbo Freebase pattern). Thai = thai-copy 13/11.
+  "graple-freebase": {
+    th: {
+      lede: "Graple Freebase ใช้นิโคตินแบบ freebase เวลาเลือกขวดนี้จึงควรเริ่มจากเครื่องที่ใช้อยู่ ด้านล่างร้านเล่าวิธีดูไว้ให้ พร้อมทางเลือกถ้าเครื่องที่ใช้อยู่เหมาะกับ salt nic มากกว่า",
+      sections: [
+        {
+          heading: "Graple Freebase ใช้กับเครื่องแบบไหน",
+          paragraphs: [
+            "น้ำยาขวดนี้มีไว้เติมเอง จึงใช้กับเครื่องที่หัวพอตเติมน้ำยาได้ อย่างพอตซิสเต็ม ถ้าเครื่องที่ใช้อยู่เป็นพอตใช้แล้วทิ้งหรือใช้หัวพอตบรรจุสำเร็จ น้ำยามากับตัวเครื่องหรือหัวพอตอยู่แล้ว ขวดนี้จึงเหมาะกับเครื่องที่เติมน้ำยาเองได้เท่านั้น",
+            "เรื่องต่อมาคือชนิดของนิโคติน เพราะ freebase กับ salt nic เหมาะกับเครื่องคนละแบบ เครื่องของคุณเหมาะกับแบบไหน ลองดูได้จากคู่มือที่มากับเครื่อง หรือหน้าเว็บของผู้ผลิตเครื่องรุ่นนั้น ส่วนความต่างของนิโคตินสองแบบนี้ อ่านต่อได้ที่[salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "เครื่องเหมาะกับ salt nic เลือกขวดไหนดี",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) เป็นน้ำยาแบบ salt nic ที่ร้านมีให้เลือก ในนั้นมีสองชื่อที่อยู่ในสายองุ่น คือ Grape Blast กับ Shine Muscat ซึ่งเป็นชื่อพันธุ์องุ่น ส่วนกลิ่นอื่นของขวดนั้น ร้านจัดเป็นสายตามคำในชื่อไว้ให้ที่หน้านั้นแล้ว",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Graple Freebase มีกี่กลิ่น", answer: "หน้านี้มีตัวเลือกเดียวค่ะ คือ Grape ถ้ากำลังหาน้ำยานิโคตินแบบเดียวกันในกลิ่นอื่น ในหมวดน้ำยามีของ Marbo และ Muro ให้ดูด้วยค่ะ" },
+        { question: "Graple Freebase เติมยังไง", answer: "เติมตามวิธีของหัวพอตที่ใช้อยู่ค่ะ เพราะหัวพอตแต่ละแบบเปิดช่องเติมต่างกัน ขั้นตอนทีละขั้น เติมแค่ไหนถึงพอดี และควรรอนานแค่ไหนก่อนสูบ ร้านเล่าไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod) ค่ะ" },
+        { question: "Graple Freebase มีกี่ ml", answer: "ตอนนี้ร้านยังไม่ได้ลงปริมาณกับความเข้มข้นนิโคตินของขวดนี้ไว้บนหน้าเว็บค่ะ ถ้าอยากทราบตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+      ],
+    },
+    en: {
+      lede: "Graple Freebase uses freebase nicotine, so the place to start is the device you use. Below, how to check, and what to choose instead if your device is better suited to salt nic.",
+      sections: [
+        {
+          heading: "Which devices suit Graple Freebase?",
+          paragraphs: [
+            "This bottle is for refilling, so it goes in a device whose pod you fill yourself, such as a Pod System. If you use a disposable or prefilled pods, the e-liquid already comes with them, so there's no need to buy a bottle.",
+            "The nicotine matters too, since freebase and salt nic suit different kinds of device. Your device's manual or its maker's website is the place to check which one it recommends.",
+          ],
+        },
+        {
+          heading: "What if my device is better suited to salt nic?",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) is a salt nic e-liquid we carry. Two of its names fall in the grape group: Grape Blast, and Shine Muscat, which is a grape variety. Its other flavours are grouped by name on its page.",
+          ],
+        },
+      ],
+      faq: [
+        { question: "How many flavours does Graple Freebase come in?", answer: "There's one option on this page: Grape. If you're after another freebase flavour, our e-liquid range also includes Marbo and Muro." },
+        { question: "How do I refill with Graple Freebase?", answer: "Fill it the way your pod is designed to be filled. Pods open for filling in different ways, so your device's manual is the place to check." },
+        { question: "How many ml is Graple Freebase?", answer: "We haven't listed this bottle's volume or nicotine strength on the site yet. If you'd like either figure before you order, message us on LINE @okm24." },
+      ],
+    },
+    zh: {
+      lede: "Graple Freebase 采用游离碱尼古丁，选购时建议先从手上的设备入手。下面说明怎样确认，以及设备更适合盐尼古丁时可以改选什么。",
+      sections: [
+        {
+          heading: "Graple Freebase 适合哪些设备？",
+          paragraphs: [
+            "这瓶是用来加注的烟油，适合烟弹可自行注油的设备，例如 Pod System。如果使用的是一次性电子烟或预注油烟弹，烟油已随设备附带，无需另购瓶装烟油。",
+            "另外还要看尼古丁类型：游离碱和盐尼古丁适合的设备不同。设备适合哪一种，可以查看随机附带的说明书或设备厂家的官网。",
+          ],
+        },
+        {
+          heading: "设备更适合盐尼古丁时，可以改选什么？",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) 是本店的盐尼古丁烟油，其中有两个名称属于葡萄类：Grape Blast 和葡萄品种名 Shine Muscat。它的其他口味已在该页面按名称分好组。",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Graple Freebase 有几种口味？", answer: "本页只有一个选项：Grape。想找其他游离碱口味，本店烟油分类里还有 Marbo 和 Muro 可供选择。" },
+        { question: "Graple Freebase 怎么加注？", answer: "请按所用烟弹的方式加注。不同烟弹的注油口开法不一样，具体可参考设备说明书。" },
+        { question: "Graple Freebase 是多少 ml？", answer: "这瓶的容量和尼古丁浓度目前还没有在网站上标注。下单前需要了解，欢迎通过 LINE @okm24 咨询。" },
       ],
     },
   },

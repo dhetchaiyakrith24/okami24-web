@@ -2,7 +2,8 @@
 
 import { forwardRef, useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { HeroType } from "@/data/home-hero";

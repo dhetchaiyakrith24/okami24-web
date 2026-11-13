@@ -4,7 +4,8 @@ import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
-import { catalogSearchTexts } from "@/lib/catalog-search-entries";
+import { catalogSearchPrimary, catalogSearchVersion } from "@/lib/catalog-search-entries";
+import { cardProduct, cardPublished } from "@/lib/card-record";
 import { inStockEntryKeys, noPriceEntryKeys } from "@/lib/in-stock";
 import { liveLookup, liveStockReady } from "@/lib/stock/live";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
@@ -53,7 +54,7 @@ export default function ProductsPage() {
           <Suspense fallback={null}>
             <LineOrderingNotice />
           </Suspense>
-          <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(allProducts, publishedProducts)} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
+          <CatalogBrowser products={allProducts.map(cardProduct)} publishedProducts={publishedProducts.map(cardPublished)} searchPrimary={catalogSearchPrimary(allProducts, publishedProducts)} searchVersion={catalogSearchVersion()} taglinesTh={cardTaglinesTh(allProducts)} inStockKeys={inStockEntryKeys(allProducts, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(allProducts, publishedProducts)} />
         </Container>
       </div>
     </>

@@ -597,3 +597,26 @@ a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before {
   0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }
   58%, 100% { transform: translateX(110%); }
 }
+
+/* Desktop colour tiles (DesktopOptionTiles — the default from lg since owner 13/11): the tiles a closed grid shows —
+   6 at lg (one row of 6, keeps the buy button on a 1024×900 first screen), 14 at xl (two rows of 7), 16 from 1440 (two rows
+   of 8). Plain CSS so each width hides exactly its own overflow; keep in step with SHOWN in DesktopOptionTiles.tsx. */
+[data-tiles-closed] > :nth-child(n + 7) {
+  display: none;
+}
+@media (min-width: 80rem) {
+  [data-tiles-closed] > :nth-child(n + 7) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 15) {
+    display: none;
+  }
+}
+@media (min-width: 90rem) {
+  [data-tiles-closed] > :nth-child(n + 15) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 17) {
+    display: none;
+  }
+}

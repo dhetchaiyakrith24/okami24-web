@@ -8,6 +8,7 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
 import { countKind } from "@/lib/stock/count-rules";
 import { glossPieces } from "@/lib/flavor-thai";
 import { OptionBestTag } from "@/components/catalog/SalesBadge";
+import type { PhotoBox } from "@/lib/option-photo-box";
 
 /**
  * Phone option picker (queue Q5, owner 24/10 — mockups A/B/C in `_incoming/cartpolish-2410/picker/`). Below `lg` the
@@ -43,6 +44,9 @@ export interface PhoneOption {
   best?: boolean;
   /** T2-32: the Thai words of a flavour name (src/lib/flavor-thai.ts), Thai page only — a small line under the name. */
   gloss?: string | null;
+  /** Where the device sits in its photo — [top, bottom, left, right, aspect] (src/lib/option-photo-box.ts). Read by the
+   *  desktop tiles only, to fill the tile with the whole device; the phone tiles ignore it. */
+  box?: PhotoBox;
 }
 
 export function PhoneOptionTiles({

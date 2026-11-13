@@ -6,7 +6,8 @@ import { categories, getCategory, kindCategoryId } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
-import { catalogSearchTexts } from "@/lib/catalog-search-entries";
+import { catalogSearchPrimary, catalogSearchVersion } from "@/lib/catalog-search-entries";
+import { cardProduct, cardPublished } from "@/lib/card-record";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductReviewSection } from "@/components/product/ProductReviewSection";
@@ -111,6 +112,7 @@ import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory"
 import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 import { LOOKALIKES } from "@/data/similar-models";
+import { photoBoxesFor } from "@/lib/option-photo-box";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -273,9 +275,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
               data stays in its own, clearly-labeled section below — never mixed in. */}
           <CatalogBrowser
-            products={products}
-            publishedProducts={publishedProducts}
-            searchTexts={catalogSearchTexts(products, publishedProducts)}
+            products={products.map(cardProduct)}
+            publishedProducts={publishedProducts.map(cardPublished)}
+            searchPrimary={catalogSearchPrimary(products, publishedProducts)}
+            searchVersion={catalogSearchVersion()}
             taglinesTh={cardTaglinesTh(products)}
             isEmptyCategory={isEmptyCategory}
             // Round "share-deadend" batch 2 (2026-09-22): an empty category offers the ones that
@@ -373,6 +376,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   // `legacyProductImageSrcs`'s own doc comment for the bug this fixes.
   const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product), legacyOwnFloorSrcs(product));
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
+  // Where each colour's device sits in its photo — the desktop colour tiles fill the tile with it (src/lib/option-photo-box.ts).
+  const optionPhotoBoxes = photoBoxesFor((product.colorVariants ?? []).map((v) => v.image?.src));
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
   // Every option sold out as rendered (owner's list, no SKU, the live warehouse answer over the build's read) — drives the
@@ -422,7 +427,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
+      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} optionPhotoBoxes={optionPhotoBoxes} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
       <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>
@@ -444,6 +449,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               <ProductArticleSection articles={productDetailsCopy(product.slug).articles} />
             </>
           )}
+          {/* Sticky buy rail (owner 13/11): ProductHero portals a buy card in here on xl+ screens; below xl this box is
+              display:contents — no box (src/app/product-buyrail.css). */}
+          <div data-buy-rail="" className="contents">
           <SpecSheet product={product} copyTh={copyTh} />
           <CompatibilitySection product={product} copyTh={copyTh} />
           {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
@@ -452,6 +460,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
           <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
+          </div>
         </>
       )}
       <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} similarSlugs={similar.map((item) => item.slug)} />
