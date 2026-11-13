@@ -352,7 +352,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "relx-smash-go-12k": "RELX Smash Go 12K (RELX 12K) พอตใช้แล้วทิ้งชาร์จซ้ำได้ สูงสุด 12,000 พัฟ แบต 400mAh คอยล์ MEGA MESH มี 27 รส",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
-  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
+  // G5 round 14/11 (seo-auditor): the meta opens with the searched name like m-bar-10k below; facts unchanged (verified rows).
+  "m-switch-kit": "M Switch 15K (M Bar 15K / Marbo 15K) จาก SALTHUB ตัวเครื่องใช้ซ้ำได้ คู่หัวพอตบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
   // Round SEO D (07/10) — head-only lines that open with the model name (the page's own shortDescription stays as
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",

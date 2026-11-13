@@ -50,7 +50,7 @@ export function ProductArticleSection({ articles }: { articles: ArticlesByLocale
 }
 
 export function ProductArticleBody({ articles }: { articles: ArticlesByLocale }) {
-  const { locale } = useLocale();
+  const { dict, locale } = useLocale();
   const a = articles[locale];
   // A lede-only article (owner 06/10 pm: M Bar 10K's one section went) renders no empty bordered block.
   if (!a || a.sections.length === 0) return null;
@@ -72,6 +72,21 @@ export function ProductArticleBody({ articles }: { articles: ArticlesByLocale })
             <div className={cn("mt-2", s.image.transparent ? "w-full max-w-[13rem] lg:max-w-[15rem]" : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black")}>
               <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes={s.image.transparent ? "240px" : "(min-width: 1024px) 768px, 100vw"} className="block h-auto w-full" />
             </div>
+          )}
+          {/* G5 round 14/11: a maker's picture (poster, kit render) keeps the credit line every story poster carries; the
+              shop's own photos (sourceName "OKami24") stay uncredited as before. */}
+          {s.image && s.image.sourceName !== "OKami24" && (
+            <p className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
+              © {s.image.sourceName}
+              {s.image.sourceUrl && (
+                <>
+                  {" · "}
+                  <a href={s.image.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="transition-colors hover:text-foreground hover:underline">
+                    {dict.product.gallerySourceLinkLabel}
+                  </a>
+                </>
+              )}
+            </p>
           )}
         </div>
       ))}
