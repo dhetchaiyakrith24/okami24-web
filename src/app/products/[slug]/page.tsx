@@ -444,8 +444,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               <ProductArticleSection articles={productDetailsCopy(product.slug).articles} />
             </>
           )}
-          {/* Preview "buyrail" (12/11): ProductHero portals a sticky buy card in here on wide screens. For customers this box is
-              display:contents — no box, no change (src/app/preview-buyrail.css). */}
+          {/* Sticky buy rail (owner 13/11): ProductHero portals a buy card in here on xl+ screens; below xl this box is
+              display:contents — no box (src/app/product-buyrail.css). */}
           <div data-buy-rail="" className="contents">
           <SpecSheet product={product} copyTh={copyTh} />
           <CompatibilitySection product={product} copyTh={copyTh} />

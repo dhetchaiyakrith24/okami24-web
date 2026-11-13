@@ -42,7 +42,6 @@ import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { ZoomShared, ZOOM_PROTO_SLUGS, useZoomPreview } from "@/components/visual/ZoomShared";
 import { BuyRail } from "@/components/product/BuyRail";
-import { usePreview } from "@/lib/use-preview";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -366,8 +365,6 @@ export function ProductHero({
   // The Zoom shelf: only on a device previewing the Zoom (owner 12/11 preview links) — customers get today's box.
   const zoomPreview = useZoomPreview();
   const zoomProto = zoomPreview && ZOOM_PROTO_SLUGS.has(product.slug);
-  // Preview "buyrail" (12/11): the sticky buy card beside the spec sheet → FAQ on xl+ — the owner's device only, after load.
-  const buyRail = usePreview("buyrail");
 
   return (
     <>
@@ -620,7 +617,8 @@ export function ProductHero({
         />
       </MobileBuyBar>
     )}
-    {buyRail && sellingPrice !== null && (
+    {/* Sticky buy rail beside the spec sheet → FAQ on xl+ (owner 13/11 → default; it portals in after load). */}
+    {sellingPrice !== null && (
       <BuyRail
         name={product.displayName}
         media={

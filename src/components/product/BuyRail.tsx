@@ -5,13 +5,13 @@ import { createPortal } from "react-dom";
 import { ChevronUp } from "lucide-react";
 
 /**
- * Preview "buyrail" (designer pass d, 12/11 — shared notes look-1211-design-passes.md "D sticky buy rail"): on wide
- * screens (xl+) a 300px buy card rides beside the spec sheet → compatibility → compatible products → FAQ, so a visitor
- * who reads down the page never has to scroll back up to buy. Not beside the gallery / anatomy / feature grid (the owner
- * approved those full width). ProductHero renders this only under `?preview=buyrail` and only after load (usePreview), and
- * it portals into the page's `[data-buy-rail]` wrapper — `display: contents` for customers, a positioned box under the
- * preview (src/app/preview-buyrail.css). Same selection, stock and buy logic as the hero: the hero passes the very nodes
- * it renders (price, count line, buy action), so nothing here decides anything.
+ * Sticky buy rail (designer pass d, 12/11 — shared notes look-1211-design-passes.md "D sticky buy rail"; owner 13/11 →
+ * the default for everyone): on wide screens (xl+) a 300px buy card rides beside the spec sheet → compatibility →
+ * compatible products → FAQ, so a visitor who reads down the page never has to scroll back up to buy. Not beside the
+ * gallery / anatomy / feature grid (the owner approved those full width). ProductHero renders it after load and it portals
+ * into the page's `[data-buy-rail]` wrapper — a positioned box from xl, `display: contents` below (src/app/product-buyrail.css).
+ * Same selection, stock and buy logic as the hero: the hero passes the very nodes it renders (price, count line, buy
+ * action), so nothing here decides anything.
  */
 export function BuyRail({
   name,
