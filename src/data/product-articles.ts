@@ -3720,7 +3720,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "M Switch 15K ชาร์จไม่เข้า ทำยังไงดี",
           paragraphs: [
             "หน้าคำถามที่พบบ่อยของ SALTHUB แนะนำว่าใช้ครั้งแรก ให้ใช้จนแบตหมดก่อน แล้วค่อยชาร์จให้เต็ม",
-            "ถ้าเสียบสายแล้วไฟยังไม่เข้า SALTHUB แนะนำให้ลองขยับเครื่องดูว่าหัวสายเสียบแน่นดีแล้วหรือยัง",
+            "ถ้าชาร์จแล้วไฟยังไม่เข้า SALTHUB แนะนำให้ลองขยับเครื่องดูว่าต่อกับที่ชาร์จ USB แน่นดีแล้วหรือยัง",
           ],
         },
         {
@@ -3754,7 +3754,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "The M Switch 15K won't charge. What can I do?",
           paragraphs: [
             "SALTHUB's FAQ suggests running the battery down on first use, then charging it to full.",
-            "If the cable is in and it still won't charge, SALTHUB suggests moving the device a little to check the plug sits firmly.",
+            "If it still won't charge, SALTHUB suggests moving the device a little to check it connects firmly with the USB charger.",
           ],
         },
         {
@@ -3787,7 +3787,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "M Switch 15K 充不进电怎么办？",
           paragraphs: [
             "SALTHUB 的常见问题建议：第一次使用时先把电用完，再充满。",
-            "如果插上线还是充不进，SALTHUB 建议轻轻晃动主机，看看接头是否插稳。",
+            "如果还是充不进电，SALTHUB 建议轻轻晃动主机，看看与 USB 充电器是否接触良好。",
           ],
         },
         {
