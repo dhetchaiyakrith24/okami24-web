@@ -3712,7 +3712,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ในชุด M Switch 15K มีอะไรบ้าง",
           paragraphs: [
             "บนกล่องชุดเริ่มต้นของ SALTHUB เขียนไว้ว่าในกล่องมี 3 อย่าง คือตัวเครื่อง หัวพอตหนึ่งหัว และสายคล้องไว้ห้อยคอหนึ่งเส้น",
-            "หัวพอตที่มากับชุดเป็นกลิ่นที่เลือกจากตารางกลิ่นด้านบน",
+            "หัวพอตในชุดเป็นกลิ่นที่เลือกจากตารางกลิ่นด้านบนของหน้านี้",
           ],
           image: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "ภาพชุดเริ่มต้น M Switch กลิ่น Blue Ice จาก SALTHUB กล่องคู่กับตัวเครื่อง", width: 778, height: 1006, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", transparent: true },
         },
@@ -3727,7 +3727,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "M Switch 15K ของแท้ เช็คยังไง",
           paragraphs: [
             "SALTHUB ให้เช็คของแท้ที่หน้า salthub.com/authenticate โดยถ่ายรูปฉลากรับรองบนกล่อง ซึ่งต้องถ่ายจากตัวฉลากจริงเท่านั้น",
-            "วิธีเช็คของแท้ของแบรนด์อื่นบนเว็บเรา รวมไว้ในบทความ [พอตของแท้ ดูยังไง](/guides/checking-a-genuine-pod)",
+            "วิธีเช็คของแท้ของแบรนด์อื่นบนเว็บเรา อ่านต่อได้ที่ [พอตของแท้ ดูยังไง](/guides/checking-a-genuine-pod)",
           ],
         },
       ]
