@@ -819,6 +819,9 @@ export const unbrandedProducts: Product[] = [
     // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
     // — a legacy page shows its article only inside it (as muro-sc-8000).
     storyDetails: true,
+    // Product-article round 13/11 (owner: "การจัดวางและใส่รูปเพิ่มเติมเหมือน G5"): the six live bottle photos side by side (scripted, no AI,
+    // no enlargement; owner "ขึ้น + ส่งรูป").
+    storyCover: { src: "/assets/products/muro-freebase/story-lineup.webp", alt: "All six Muro Freebase bottles side by side", width: 1286, height: 920, sourceName: "OKami24", transparent: true },
     attributes: {
       capacityMl: 60,
       liquidBase: "freebase",
@@ -875,6 +878,9 @@ export const unbrandedProducts: Product[] = [
     // Round "queue 0211" articles (02/11): the more-details section (all-flavours grid + the article in product-articles.ts)
     // — a legacy page shows its article only inside it (as muro-sc-8000).
     storyDetails: true,
+    // Product-article round 13/11 (owner: "การจัดวางและใส่รูปเพิ่มเติมเหมือน G5"): the six live bottle photos side by side (scripted, no AI,
+    // no enlargement; owner "ขึ้น + ส่งรูป").
+    storyCover: { src: "/assets/products/muro-salt-nic/story-lineup.webp", alt: "All six Muro Salt Nic bottles side by side", width: 1789, height: 920, sourceName: "OKami24", transparent: true },
     attributes: {
       capacityMl: 30,
       liquidBase: "salt-nic",
