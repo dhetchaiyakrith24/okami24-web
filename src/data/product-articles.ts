@@ -131,7 +131,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
       ],
       faq: [
-        { question: "Marbo Freebase ขวดยาวมีกี่ ml", answer: "หน้านี้เรียกตามชื่อในคลังว่าขวดยาวค่ะ ปริมาณเป็น ml และความเข้มข้นของนิโคตินยังไม่ได้ระบุไว้ ถ้าต้องการตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+        { question: "Marbo Freebase ขวดยาวมีกี่ ml", answer: "ชื่อนี้เป็นชื่อที่ใช้เรียกในคลังของร้านค่ะ ปริมาณเป็น ml และความเข้มข้นของนิโคตินยังไม่ได้ระบุไว้ ถ้าต้องการตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
         { question: "Marbo Freebase ใช้กับเครื่องแบบไหน", answer: "ใช้เติมในหัวพอตที่เติมน้ำยาเองได้ค่ะ และเพราะเป็นนิโคตินแบบ freebase ก่อนเลือกควรเช็คคู่มือหรือคำแนะนำของผู้ผลิตเครื่องว่าเหมาะกับ freebase ไหม ถ้าเครื่องเหมาะกับ salt nic มากกว่า เลือก Marbo Saltnic แทนได้ค่ะ" },
         { question: "Marbo สีชมพู มีแบบ salt nic ไหม", answer: "ในรายการของร้าน ตัวเลือก Pink มีเฉพาะใน Marbo Freebase ค่ะ ส่วนชื่อที่มีให้เลือกทั้งสองขวดคือ Purple · Gold และ Ice Sparkling" },
       ],
@@ -155,7 +155,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
       ],
       faq: [
-        { question: "How many ml is the Marbo Freebase tall bottle?", answer: "We list it as the tall bottle, the name it has in our warehouse. Neither the volume in ml nor the nicotine strength is stated on this page. If you need either figure before you order, message us on LINE @okm24." },
+        { question: "How many ml is the Marbo Freebase tall bottle?", answer: "That's the name it has in our warehouse. Neither the volume in ml nor the nicotine strength is stated on this page. If you need either figure before you order, message us on LINE @okm24." },
         { question: "What kind of device is Marbo Freebase for?", answer: "It's for pods you refill yourself. Because it's freebase, check your device's manual or its maker's recommendation first. If your device is better suited to salt nic, Marbo Saltnic is the one to choose instead." },
         { question: "Does Marbo Saltnic come in Pink too?", answer: "Not in our range. Pink is only in Marbo Freebase. The names both lines share are Purple, Gold and Ice Sparkling." },
       ],
@@ -179,7 +179,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
       ],
       faq: [
-        { question: "Marbo Freebase 长瓶装是多少 ml？", answer: "本页按仓库里的叫法称为长瓶装，毫升数和尼古丁浓度都未标注。下单前需要这些数字，欢迎通过 LINE @okm24 咨询。" },
+        { question: "Marbo Freebase 长瓶装是多少 ml？", answer: "这是本店仓库里的叫法，毫升数和尼古丁浓度都未标注。下单前需要这些数字，欢迎通过 LINE @okm24 咨询。" },
         { question: "Marbo Freebase 适合什么设备？", answer: "适合可自行注油的烟弹。因为是游离碱尼古丁，建议先查看设备说明书或厂家推荐。如果设备更适合盐尼古丁，可以改选 Marbo Saltnic。" },
         { question: "Marbo Saltnic 也有 Pink 吗？", answer: "本店的两款中，Pink 只有 Marbo Freebase 才有。两款共有的名称是 Purple、Gold 和 Ice Sparkling。" },
       ],
