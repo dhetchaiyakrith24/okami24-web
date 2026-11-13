@@ -411,7 +411,7 @@ export function ProductHero({
             <HeadSalesBadge slug={product.slug} soldOut={everyOptionSoldOut} />
           </div>
           <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground max-lg:order-2 max-lg:text-[1.75rem] max-lg:leading-[1.1]">
-            {product.name}
+            {product.heroName ?? product.name}
           </h1>
           <div className="flex flex-col gap-1.5 max-lg:order-7">
             <p className="max-w-lg text-lg leading-relaxed text-foreground-muted">{heroTagline}</p>

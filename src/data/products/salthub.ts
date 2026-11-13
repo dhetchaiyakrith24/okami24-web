@@ -457,6 +457,8 @@ export const salthubProducts: Product[] = [
     categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "M Switch Kit",
+    // G5 round 14/11 (U1): the H1 as people search it ("m switch 15k" 4,400/mo vs "m switch" 2,900); the title already says it.
+    heroName: "M Switch 15K",
     displayName: "SALTHUB M SWITCH KIT",
     // Owner 2026-10-08: the shop sells this set as "M Bar 15K" (the retired m-bar-15k page redirects here).
     searchAliases: ["M Bar 15K", "MBar 15K", "Marbo 15K"],
