@@ -3,6 +3,7 @@
 import type { FAQItem } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Measure } from "@/components/ui/Measure";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
@@ -22,9 +23,13 @@ export function ProductFAQ({ faqs, faqsTh }: { faqs: FAQItem[]; faqsTh?: Product
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
-      <Container className="flex flex-col gap-8">
-        <SectionHeading eyebrow={dict.product.faqEyebrow} title={dict.product.faqTitle} />
-        <FAQAccordion items={items} />
+      {/* Wide screens: heading + questions as one centred reading column, like every other FAQ block (Measure, owner
+          13/11 · checker #1458) — beside the sticky buy card it centres in the content lane. Below lg unchanged. */}
+      <Container>
+        <Measure className="flex flex-col gap-8">
+          <SectionHeading eyebrow={dict.product.faqEyebrow} title={dict.product.faqTitle} />
+          <FAQAccordion items={items} />
+        </Measure>
       </Container>
     </section>
   );
