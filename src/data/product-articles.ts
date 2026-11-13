@@ -1,4 +1,4 @@
-import type { ArticleFAQItem, ArticleSubsection } from "@/types/catalog";
+import type { ArticleFAQItem, ArticleSubsection, StoryImage } from "@/types/catalog";
 import type { Locale } from "@/i18n/config";
 
 /**
@@ -23,6 +23,12 @@ export interface ProductArticleCopy {
   /** Warehouse-listed (Shipnity seed) pages only — they have no `Product.faqs`; PilotProductDetail shows these under the
    *  article and the server page builds FAQPage JSON-LD from the Thai copy (the M Bar 9K editorial pattern). */
   faq?: ArticleFAQItem[];
+  /** Product-article round 13/11 (owner on the live Marbo pages: "ยังไม่เห็นการจัดวางและใส่รูปเพิ่มเติมเหมือน G5") —
+   *  warehouse-listed pages only, which have no `Product.storyCover` / all-options grid: the line's picture under the
+   *  lede (the G5 cover slot) and, when set, every option as a photo tile (the G5 all-options grid, from the variants'
+   *  own photos). A record without them renders exactly as before. */
+  cover?: StoryImage;
+  optionsGrid?: "flavours" | "colours";
 }
 
 export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArticleCopy>>> = {
@@ -34,9 +40,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   "eliquid-1": {
     th: {
       lede: "ตัวเลือกของ Marbo Saltnic ส่วนใหญ่ใช้ชื่อเป็นสี ดูจากชื่ออย่างเดียวอาจยังไม่รู้ว่าเป็นกลิ่นแนวไหน ด้านล่างร้านเล่าวิธีอ่านชื่อเหล่านี้ไว้ให้ พร้อมความต่างจาก Marbo Freebase",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-1/story-lineup.webp", alt: "ขวดน้ำยา Marbo Saltnic ทุกสีวางเรียงกัน ตรงกลางคือขวดสี Black", width: 2369, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Marbo Saltnic มีกลิ่นอะไรให้เลือกบ้าง",
+          image: { src: "/assets/products/eliquid-1/variant-elq-1-2-wm5.webp", alt: "ขวดน้ำยา Marbo Saltnic สี Black ฉลากพิมพ์ชื่อกลิ่น Ice Blast", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "ชื่อตัวเลือกบนหน้านี้มีอยู่สองแบบ แบบแรกบอกแนวกลิ่นไว้เป็นคำเลย มี 3 ชื่อ คือ Tobacco · Ice Strawberry และ Ice Sparkling ชื่อกลุ่มนี้พอบอกได้ว่ากลิ่นไปทางไหน อย่าง Tobacco ก็คือแนวยาสูบ ส่วน Ice Strawberry มีสตรอเบอร์รี่อยู่ในชื่อ",
             "อีก 6 ชื่อเป็นชื่อสี เช่น Purple · Black และ Green ชื่อเหล่านี้คือชื่อที่ร้านใช้เรียกขวดในคลังสินค้า ชื่อสีอย่างเดียวไม่ได้บอกว่าข้างในเป็นรสอะไร ร้านจึงไม่เดารสจากสีให้",
@@ -45,6 +54,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Marbo Saltnic กับ Marbo Freebase ต่างกันยังไง",
+          image: { src: "/assets/products/eliquid-109/card-wm5.webp", alt: "ขวดน้ำยา Marbo Freebase ขวดยาว", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "แม้จะเป็น Marbo เหมือนกัน แต่ Marbo Saltnic กับ [Marbo Freebase](/products/eliquid-109) ใช้นิโคตินคนละชนิด ขวดนี้เป็นแบบ salt nic ส่วนอีกขวดเป็นแบบ freebase เครื่องแต่ละรุ่นเหมาะกับนิโคตินไม่เหมือนกัน ก่อนเลือกขวดจึงควรดูคำแนะนำของผู้ผลิตเครื่องที่ใช้อยู่ ส่วนความต่างของนิโคตินสองแบบนี้ ร้านเล่าไว้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
             "ชื่อ Purple · Gold และ Ice Sparkling มีอยู่ในทั้งสองขวด แต่ชื่อเหมือนกันไม่ได้แปลว่าใช้แทนกันได้ เพราะนิโคตินเป็นคนละแบบ เลือกขวดให้ตรงกับเครื่องก่อน แล้วค่อยเลือกชื่อที่ชอบ",
@@ -59,9 +69,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     en: {
       lede: "Most Marbo Saltnic options are named after a colour, which doesn't tell you much about the flavour. Below, we explain how to read the names and how this line differs from Marbo Freebase.",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-1/story-lineup.webp", alt: "Every Marbo Saltnic bottle side by side, Black in the middle", width: 2369, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Which flavours does Marbo Saltnic come in?",
+          image: { src: "/assets/products/eliquid-1/variant-elq-1-2-wm5.webp", alt: "Marbo Saltnic bottle in Black, its label printing Ice Blast", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "The names on this page come in two kinds. Three describe the flavour in words: Tobacco, Ice Strawberry and Ice Sparkling.",
             "The other six are colours, such as Purple, Black and Green. These are the names we use for the bottles in our warehouse. A colour alone doesn't say what the flavour is, so we don't guess one for you.",
@@ -70,6 +83,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Marbo Saltnic or Marbo Freebase?",
+          image: { src: "/assets/products/eliquid-109/card-wm5.webp", alt: "Marbo Freebase tall bottle", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Both carry the Marbo name, but the nicotine differs: Marbo Saltnic is salt nic, while [Marbo Freebase](/products/eliquid-109) is freebase. Devices suit one or the other, so check what your device's maker recommends before you choose a bottle.",
             "Purple, Gold and Ice Sparkling appear in both lines. A shared name doesn't make the two bottles interchangeable, though. Pick the line that suits your device first, then the name you like.",
@@ -84,9 +98,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     zh: {
       lede: "Marbo Saltnic 的大部分选项以颜色命名，单看名称不太容易判断口味。下面说明这些名称该怎么看，以及它和 Marbo Freebase 有什么不同。",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-1/story-lineup.webp", alt: "Marbo Saltnic 全部瓶装并排，中间是 Black", width: 2369, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Marbo Saltnic 有哪些口味？",
+          image: { src: "/assets/products/eliquid-1/variant-elq-1-2-wm5.webp", alt: "Marbo Saltnic Black 瓶，标签印着 Ice Blast", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "本页的选项名称分两类。一类直接用文字点明口味方向，共 3 个：Tobacco、Ice Strawberry 和 Ice Sparkling。",
             "另外 6 个是颜色名，例如 Purple、Black、Green。这些是本店仓库对瓶子的叫法，单凭颜色并不能说明口味，所以我们不会凭颜色去猜口味。",
@@ -95,6 +112,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Marbo Saltnic 和 Marbo Freebase 有什么不同？",
+          image: { src: "/assets/products/eliquid-109/card-wm5.webp", alt: "Marbo Freebase 长瓶装", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "两款都叫 Marbo，但尼古丁类型不同：Marbo Saltnic 是盐尼古丁，[Marbo Freebase](/products/eliquid-109) 是游离碱尼古丁。不同设备适合的尼古丁类型不同，选瓶之前建议先看设备厂家的推荐。",
             "Purple、Gold 和 Ice Sparkling 两款都有，但名称相同并不代表可以互换。先选适合设备的那一款，再挑喜欢的名称。",
@@ -114,9 +132,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   "eliquid-109": {
     th: {
       lede: "Marbo Freebase ใช้ชื่อ Marbo เหมือนกับ Marbo Saltnic แต่เป็นนิโคตินคนละชนิด ด้านล่างร้านเล่าว่าสองขวดนี้ต่างกันตรงไหน และมีกลิ่นไหนที่เลือกได้เฉพาะในขวดนี้",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-109/story-lineup.webp", alt: "ขวดน้ำยา Marbo Freebase ขวดยาวครบทั้งสี่ตัวเลือกวางเรียงกัน", width: 708, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Marbo Freebase ต่างจาก Marbo Saltnic ตรงไหน",
+          image: { src: "/assets/products/eliquid-1/card-v3-wm5.webp", alt: "ขวดน้ำยา Marbo Saltnic ขวด 30ml", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "ต่างกันหลัก ๆ ที่นิโคติน [Marbo Saltnic](/products/eliquid-1) เป็นแบบ salt nic ส่วนขวดนี้เป็นแบบ freebase นิโคตินสองแบบนี้เหมาะกับเครื่องคนละแบบ เวลาเลือกจึงเริ่มจากเครื่องที่ใช้อยู่และคำแนะนำของผู้ผลิตเครื่องก่อน แล้วค่อยมาดูกลิ่น รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
             "ชื่อกลิ่นของสองขวดซ้ำกันอยู่สามชื่อ คือ Purple · Gold และ Ice Sparkling แม้ชื่อจะเหมือนกัน นิโคตินก็ยังเป็นคนละแบบ จึงควรเลือกขวดให้ตรงกับเครื่องก่อน ฝั่ง Marbo Saltnic มีตัวเลือกมากกว่า ส่วน Pink มีเฉพาะใน Marbo Freebase",
@@ -124,6 +145,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "เลือกกลิ่น Marbo Freebase จากชื่อยังไง",
+          image: { src: "/assets/products/eliquid-109/variant-elq-3-4-wm5.webp", alt: "ขวดน้ำยา Marbo Freebase กลิ่น Ice Sparkling", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "ในสี่ตัวเลือก มีแค่ Ice Sparkling ที่บอกแนวกลิ่นไว้เป็นคำ อีกสามตัวเลือกเป็นชื่อสีที่ใช้เรียกขวดในระบบคลังของร้าน ชื่อสีไม่ได้บอกว่าข้างในเป็นรสอะไร และร้านยังไม่มีข้อมูลที่ยืนยันได้ จึงไม่ได้เขียนรสให้แต่ละสี",
             "วิธีดูจากชื่อว่ากลิ่นไหนเย็น ร้านเล่าไว้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor) ถ้าอยากรู้ก่อนสั่งว่าขวดสีไหนเป็นแนวไหน ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
@@ -138,9 +160,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     en: {
       lede: "Marbo Freebase shares the Marbo name with Marbo Saltnic but uses a different kind of nicotine. Below, how the two bottles differ, and the flavour you'll only find in this one.",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-109/story-lineup.webp", alt: "All four Marbo Freebase tall bottles side by side", width: 708, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "How is Marbo Freebase different from Marbo Saltnic?",
+          image: { src: "/assets/products/eliquid-1/card-v3-wm5.webp", alt: "Marbo Saltnic 30ml bottle", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Mainly in the nicotine. This bottle is freebase; [Marbo Saltnic](/products/eliquid-1) is salt nic. Each suits a different kind of device, so start from the device you use and its maker's recommendation, then look at flavours.",
             "Three names appear in both lines: Purple, Gold and Ice Sparkling. Even with the same name, the nicotine is different, so choose the line that matches your device first. Marbo Saltnic has more options, while Pink is only in Marbo Freebase.",
@@ -148,6 +173,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "How do I choose a Marbo Freebase flavour from the names?",
+          image: { src: "/assets/products/eliquid-109/variant-elq-3-4-wm5.webp", alt: "Marbo Freebase bottle, Ice Sparkling", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Of the four options, only Ice Sparkling names its flavour in words. The other three are the colours our warehouse uses for the bottles, and they don't tell you what's inside. We have nothing verified to go on, so we don't attach a flavour to a colour.",
             "If you'd like to know which colour is which before you order, message us on LINE @okm24.",
@@ -162,9 +188,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     zh: {
       lede: "Marbo Freebase 和 Marbo Saltnic 同用 Marbo 这个名字，但尼古丁类型不同。下面说明两款的区别，以及只有这一款才有的口味。",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/eliquid-109/story-lineup.webp", alt: "Marbo Freebase 四款长瓶装并排", width: 708, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Marbo Freebase 和 Marbo Saltnic 有什么区别？",
+          image: { src: "/assets/products/eliquid-1/card-v3-wm5.webp", alt: "Marbo Saltnic 30ml 瓶装", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "主要区别在尼古丁：这款是游离碱尼古丁，[Marbo Saltnic](/products/eliquid-1) 是盐尼古丁。两者适合的设备不同，建议先根据手上的设备和设备厂家的推荐来决定，再看口味。",
             "两款有三个名称相同：Purple、Gold 和 Ice Sparkling。名称一样，尼古丁却不同，所以还是先选适合设备的那一款。Marbo Saltnic 的选项更多，而 Pink 只有 Marbo Freebase 才有。",
@@ -172,6 +201,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "怎样从名称挑选 Marbo Freebase 的口味？",
+          image: { src: "/assets/products/eliquid-109/variant-elq-3-4-wm5.webp", alt: "Marbo Freebase Ice Sparkling 瓶", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "四个选项中，只有 Ice Sparkling 用文字点明了口味方向。另外三个是本店仓库对瓶子的颜色叫法，并不说明瓶内是什么口味。由于没有可核实的资料，我们不按颜色标注口味。",
             "下单前想了解哪个颜色是什么口味，欢迎通过 LINE @okm24 咨询。",
