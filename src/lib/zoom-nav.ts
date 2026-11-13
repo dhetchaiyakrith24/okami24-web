@@ -40,6 +40,8 @@ const HERO_CACHE = "okami-zoom-hero";
 /** Where the last zoom started — Back to that list plays it in reverse. */
 const BACK_KEY = "okami-zoom-back";
 const PHOTO = "okami-zoom-photo";
+/** Most bigger card photos fetched ahead on one page (readyAhead in attachZoom): a screenful or two, not the whole list. */
+const AHEAD = 8;
 const HEAD = "okami-zoom-head";
 
 let busy = false;
@@ -501,19 +503,37 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   return true;
 }
 
+/** The engine as ZoomNav.tsx holds it: `zoom(card)` = zoom into that card now if the Zoom applies (true), else false
+ *  (the caller then navigates plainly); `detach` = take every listener off. */
+export type ZoomEngine = { zoom: (card: HTMLAnchorElement) => boolean; detach: () => void };
+
+/** Picture to zoom from, when this card zooms at all (the same checks for a click and for a held first tap). */
+function zoomable(card: HTMLAnchorElement): { img: HTMLImageElement; href: string } | null {
+  if (busy || lite() || QUIET.test(location.pathname)) return null;
+  const href = card.getAttribute("href");
+  const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
+  if (!href?.startsWith("/products/") || new URL(href, location.href).pathname === location.pathname) return null;
+  if (!img || !img.complete || img.naturalWidth === 0) return null;
+  return { img, href };
+}
+
 /** Capture-phase click on `a[data-card-cut]` (every product card): zoom instead of the Link's own navigation. */
-export function attachZoom(router: Router): () => void {
+export function attachZoom(router: Router): ZoomEngine {
+  const zoom = (card: HTMLAnchorElement): boolean => {
+    const z = zoomable(card);
+    if (!z) return false;
+    zoomIn(z.img, card, z.href, router);
+    return true;
+  };
   const onClick = (e: MouseEvent) => {
-    if (busy || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     const target = e.target as Element | null;
     const card = target?.closest<HTMLAnchorElement>("a[data-card-cut]");
-    if (!card || target?.closest("button") || lite() || QUIET.test(location.pathname)) return;
-    const href = card.getAttribute("href");
-    const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
-    if (!href?.startsWith("/products/") || new URL(href, location.href).pathname === location.pathname) return;
-    if (!img || !img.complete || img.naturalWidth === 0) return;
+    if (!card || target?.closest("button")) return;
+    const z = zoomable(card);
+    if (!z) return;
     e.preventDefault(); // the Link sees defaultPrevented and stands down; the zoom navigates itself
-    zoomIn(img, card, href, router);
+    zoomIn(z.img, card, z.href, router);
   };
   // As the finger lands: fetch the product page and decode the sharp photo, so both are usually ready by the tap.
   const onDown = (e: PointerEvent) => {
@@ -524,6 +544,35 @@ export function attachZoom(router: Router): () => void {
     const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
     if (img) prepare(img, card.hasAttribute("data-zoom-pilot"));
   };
+  // The bigger photos of the cards in view, fetched and decoded ahead when the list stands still (idle, at most
+  // AHEAD per page): the zoom's sharp layer is then ready on the first tap too (owner 13/11 23:33: "หรือว่ามันเป็นเพราะว่า
+  // ต้องโหลดรูปภาพก่อน"). The card pictures themselves are already on screen.
+  let ahead = 0;
+  let aheadPath = location.pathname;
+  let aheadTimer = 0;
+  const readyAhead = () => {
+    if (location.pathname !== aheadPath) {
+      aheadPath = location.pathname;
+      ahead = 0;
+    }
+    if (ahead >= AHEAD || QUIET.test(location.pathname) || lite()) return;
+    const h = window.innerHeight;
+    for (const card of document.querySelectorAll<HTMLAnchorElement>(CARDS)) {
+      if (ahead >= AHEAD) break;
+      const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
+      if (!img || !img.complete || prepared.has(img)) continue;
+      const r = card.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > h || r.width === 0) continue;
+      prepare(img, card.hasAttribute("data-zoom-pilot"));
+      ahead++;
+    }
+  };
+  const onScrollStill = () => {
+    window.clearTimeout(aheadTimer);
+    aheadTimer = window.setTimeout(() => idle(readyAhead), 250);
+  };
+  idle(readyAhead);
+  window.addEventListener("scroll", onScrollStill, { passive: true });
   // The cards made cheap to snapshot, in idle time: now, whenever cards are added, and after a resize (sizes change).
   let queued = false;
   const queue = () => {
@@ -580,7 +629,9 @@ export function attachZoom(router: Router): () => void {
   nav?.addEventListener("navigate", onNavigate);
   window.addEventListener("popstate", onPopEarly, true);
   window.addEventListener("popstate", onPop);
-  return () => {
+  const detach = () => {
+    window.removeEventListener("scroll", onScrollStill);
+    window.clearTimeout(aheadTimer);
     document.removeEventListener("pointerdown", onDown, true);
     watch.disconnect();
     window.removeEventListener("resize", onResize);
@@ -593,4 +644,5 @@ export function attachZoom(router: Router): () => void {
     window.clearTimeout(popTimer);
     document.documentElement.style.scrollBehavior = "";
   };
+  return { zoom, detach };
 }

@@ -3,15 +3,19 @@
 import { useEffect, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { previewOn } from "@/lib/preview";
+import type { ZoomEngine } from "@/lib/zoom-nav";
 
 /**
  * The "Zoom" (owner list ก10, rulings 13/11; preview only, see zoomOnClient): a tapped product card is a camera move into
- * its photo, and that move is the page change — the engine is src/lib/zoom-nav.ts. This renders nothing, and the engine
- * is fetched only after the page has loaded (when the browser is idle), so it never competes with the page's first paint.
+ * its photo, and that move is the page change — the engine is src/lib/zoom-nav.ts. This renders nothing. The engine is
+ * fetched right after hydration (preview only); a tap on a card that comes before it is held a moment, then zoomed.
  * The only server-HTML trace of the Zoom for everyone: `data-zoom-hero` on the product photo boxes and `data-zoom-pilot`
- * on the pilot cards (PilotProductCard) — attributes nothing else reads. A tap before the engine is there, and every case
- * it refuses (reduced motion, Save-Data, a modified click, no View Transitions …), is the plain link.
+ * on the pilot cards (PilotProductCard) — attributes nothing else reads. Every case the engine refuses (reduced motion,
+ * Save-Data, a modified click, no View Transitions …) is the plain link.
  */
+
+/** Longest a tap on a card waits for the engine (the first tap on a fresh page) before it is the plain page change. */
+const HOLD_MS = 150;
 
 // Nothing here changes while the page is open.
 const subscribe = () => () => {};
@@ -48,21 +52,35 @@ export function ZoomNav() {
   const router = useRouter();
   useEffect(() => {
     if (!on) return;
-    let detach: (() => void) | undefined;
+    let engine: ZoomEngine | null = null;
     let gone = false;
-    const load = () => {
-      void import("@/lib/zoom-nav").then(({ attachZoom }) => {
-        if (!gone) detach = attachZoom(router);
+    // Fetched right after hydration, not when the browser is idle: on the owner's iPhone (13/11 23:33) the first tap came
+    // before an idle-time engine and was the plain link — "กดครั้งแรก … ต้องกดซ้ำอีกรอบถึงจะเกิดการซูม". Preview only.
+    const ready = import("@/lib/zoom-nav")
+      .then(({ attachZoom }) => {
+        if (!gone) engine = attachZoom(router);
+        return engine;
+      })
+      .catch(() => null);
+    // A tap on a card before the engine is there is held (≤ HOLD_MS) while it finishes, then zoomed — or, if it is still
+    // not there (or the Zoom does not apply to that card), the plain page change, the same as the link would do.
+    const early = (e: MouseEvent) => {
+      if (engine || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const target = e.target as Element | null;
+      const card = target?.closest<HTMLAnchorElement>("a[data-card-cut]");
+      const href = card?.getAttribute("href");
+      if (!card || !href?.startsWith("/products/") || target?.closest("button")) return;
+      e.preventDefault();
+      void Promise.race([ready, new Promise<null>((r) => setTimeout(() => r(null), HOLD_MS))]).then((eng) => {
+        if (gone) return;
+        if (!eng || !eng.zoom(card)) router.push(href);
       });
     };
-    // Not needed before the first tap on a card: wait until the page's own loading is done.
-    const idle = "requestIdleCallback" in window;
-    const handle = idle ? window.requestIdleCallback(load, { timeout: 2500 }) : window.setTimeout(load, 1200);
+    document.addEventListener("click", early, true);
     return () => {
       gone = true;
-      if (idle) window.cancelIdleCallback(handle);
-      else window.clearTimeout(handle);
-      detach?.();
+      document.removeEventListener("click", early, true);
+      engine?.detach();
     };
   }, [on, router]);
   return null;
