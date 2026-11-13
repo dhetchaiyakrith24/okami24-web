@@ -9,8 +9,8 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Updated 12/11 ~00:30 by main chat local_00f56a2d (took over from local_de553e7b 03:10). Owner 10/11 night: "สานงานต่อได้เลยยาวๆ …
-ทำและจัดการได้เลย" + "รันเลยยาวๆ จบแล้วก็สานงานค้างอื่นๆต่อได้ พรุ่งนี้พี่ตรวจทีเดียว" — compact at 80–90 % after writing this block + the status page.
+Updated 14/11 ~05:00 by main chat local_00f56a2d (compacted 14/11 ~03:10; notes `_incoming/house-20261110/friday-after-compact.md`).
+Owner 14/11 ~03:00: "1 = ทำต่อเต็มที่" (quota, plan was 85 % at 05:00, resets 15/11 22:00) · heavy child chats = Friday moves them when due.
 Children report to the main chat by SendMessage. Children notes folder (this PC, outside git):
 `C:\Users\dhetc\AppData\Local\Claude-Data\claude_pzs8sxrjxfjjc\side-session-notes\local_de553e7b-d4f3-4c9e-9e80-36e56b795348\`.
 
@@ -30,30 +30,22 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
 1 main = `git fetch && git log -1 --oneline origin/main`. Everything merged 10/11 is live [ตรวจแล้ว] curl; list = `git log --merges --since=2026-11-09`.
   #1227 ฿35 line: not proven how Shipnity treats fee_lines — read the first real ฿50 order.
   TRACKING: 18 orders of 06/11 moved to shipped with no number (owner). #1247: a real number joins a shipped order.
-2 OPEN WORK (12/11 ~08:15, main chat at 73 %; owner asleep since ~03:50: "จัดการต่อได้เลย … พรุ่งนี้พี่ตรวจทีเดียว · Merge ได้เลย … ถอยหลังได้"):
-  LIVE 12/11 night (checker PASS each, live-checked): #1416 live stock (Pod-159-16 Extra Menthol in) · #1417 boot refresh ·
-    #1424 compare X removes (clicked live) · #1426 ?preview=<word> switch + cards/orange behind preview=cards / cards-run ·
-    #1335 desktop thank-you (gold line out) · #1428 Thai breadcrumb (brand/model stay English) + ภาพรวมทุกสี + pod-systems H1
-    "Pod System / พอตไฟฟ้า" · #1420 LINE wording · #1422 ส่วนลด line on the customer order page · #1421 address (letterless ต./อ. refused,
-    phone cap 12, typed postcode opens the list) · #1423 staff refund warning on a paid cancel · #1418 cancel follow-ups · #1425 agents.
+2 OPEN WORK (14/11 ~05:00). Live 13–14/11 [ตรวจแล้ว] curl: #1446 tiles/buy rail/menu · #1447 skill okami24-brief · #1448 zoom preview-only ·
+    #1449 speed · #1452/#1453/#1459 articles + six e-liquid pages at the full G5 standard · #1454 camera zoom · #1460 THAI_STYLE note ·
+    #1461 zoom first tap · #1458 wide-screen centring · #1451 render.yaml buildFilter (docs/** + .claude/**; first docs-only merge = the test).
   IN FLIGHT:
-    - look-0911 local_569a83ec: #1336 Zoom behind ?preview=zoom / cards-zoom, verify running → checker → merge. Then archive look-0911.
-    - catalog-pics local_ae4a3786: #1413 Thai flavour names, next on the ports.
-    - #1324 G4 Pro 8 colours: owner "รูปผ่าน" 12/11, checker PASS 22a9f5a4 (old base) → ready → merge.
-    - NEW design chat on the owner's next turn, from look-1211-handover.md (notes folder of the main chat): #1427 guide stack (preview "guides") ·
-      desktop colour tiles (preview) · sticky buy rail · account page way 1 · back-office menu (owner picks: "หลังบ้าน", drop the
-      "ทีมงาน" pill, option A, red-ground home-screen icon).
-    - Perk C (level 10, owner chose C 12/11): a fresh chat AFTER the owner answers 6 questions (child-handover-1211-perk-c-and-queue.md).
-  ASK THE OWNER (one set): YouTube 8–13 sign-in (shop channels' Google account in the app pane) · perk C six questions ·
-    DB: link LINE-keyed orders to members (13.3 #9) · delete 2 old picture artifacts? · still vs running card glow, then make it default ·
-    open /staff/shipnity red list (needs a staff login).
-  BUG SWEEP (owner 12/11): after the port queue — visitor customer walk 390+1440 + visitor admin walk · code-review of PRs merged
-    10–12/11 · scan.js all pages · grep lost-backslash regexes. Follow-up: own message for a ต./อ. typed as "-".
-  PORTS: one verify at a time on 3411/3412; a live checker note blocks test-server start machine-wide; HOLD every merge, docs too,
-    while a child's verify/gate runs (LESSONS พ92).
-  OWNER TO-DO: Cloudflare Web Analytics switch · shared staff password off · cancel #0036 by hand.
-  LEDGER: _incoming/house-20261110/todo.md (night answers) · friday-after-compact.md.
-  OWNER RULINGS 10–11/11 (never ask again): no Cloudflare sentence on /privacy · FUTURE cookies plan if SEO is not hurt.
+    - ZOOM #1462 `claude/zoom-smooth` @ 4cf4a72a (tree `_incoming/wt-zoomcam`): checker FAILed 2fbfe644 on desktop aim only (cold pages
+      land 13–154 px off then glide; joiway-f3 16 px). 4cf4a72a re-aims after the frame settles. Friday bar for the PREVIEW merge: final
+      landing ≤4 px, no jump; first-flight accuracy waits on the speed fix below. Next: verify --full → gate → narrow checker → merge → Friday
+      tests in the app browser → owner link (?preview=zoom). Handoff + tools: notes folder `zoom-camera-1311/handoff-zoom-2.md`. Still open
+      vs owner bar: rAF gaps >50 ms at 4× and IN 1440; ~350 ms before Back = Next list render (keep-alive list = next.config, BIG).
+    - PRODUCTS G5 local_cf7cfe62: #1463 M Switch Kit · #1464 RELX Smash Go 12K → verify/gate (go given 05:00) → checker → merge.
+      Marbo Freebase labels: no clean photo online; "Ice Grope" is the real label → asked the owner for a phone photo of 2 bottles.
+    - SPEED local_87ee34f7: first hit of product pages 1–3 s live (relx-pod-pro 3.28 s, then 0.34 s) despite generateStaticParams → find cause.
+    - Close #1450 (old zoom draft). Archive local_93a681e7 + local_a66802d4 once their worktrees are not a node_modules source.
+  CHILD CHATS: start_session is refused on turns not typed by the owner over Remote Control → reuse an idle child (rename + effort + brief).
+  ASK THE OWNER (open): Marbo bottle photo · "รุ่นนี้มี N กลิ่น" heading centred? · 60/30/10 reel use · empty folder `C:\c` delete?
+  PORTS: one verify at a time on 3411/3412; children ask Friday for "go"; zoom tools use 3470, speed 3471. HOLD merges while a gate runs.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
   Round disposable 05/11 = `docs/rounds/รอบพอตใช้แล้วทิ้ง-05-11.md`: blocks 1–3 live. Left: request indexing for /products/disposables
