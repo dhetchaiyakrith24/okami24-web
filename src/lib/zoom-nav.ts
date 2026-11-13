@@ -116,8 +116,12 @@ function toward(from: Box, to: Box): string {
  * the camera pushes into. Product cards off screen are copied as empty boxes of the same size (`offscreen`, measured
  * before anything moved), so copying a long grid costs little more than the screenful the visitor sees.
  */
-function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect>): HTMLElement {
+function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect>, lifted: HTMLImageElement): HTMLElement {
+  const at = [...main.querySelectorAll("img")].indexOf(lifted);
   const copy = main.cloneNode(true) as HTMLElement;
+  // The tapped picture is the one flying: never also in the copy (it may still be showing on the page itself).
+  const twin = at >= 0 ? copy.querySelectorAll("img")[at] : undefined;
+  if (twin) twin.style.opacity = "0";
   copy.removeAttribute("id");
   for (const el of copy.querySelectorAll("[id], [data-zoom-hero]")) {
     el.removeAttribute("id");
@@ -202,7 +206,13 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   document.body.append(veil, flier);
   // The lit shelf of the page we are going to waits until the photo starts landing, so it lights up under it (globals.css "okami-zoom").
   root.dataset.zoomDark = "1";
-  cardImg.style.opacity = "0";
+  // The card's own picture gives way only once the lifted copy can be drawn: hiding it at once left an empty card for
+  // ~0.15 s on desktop while the copy was still being decoded and drawn (13/11).
+  const lift = () => {
+    if (flier.isConnected) cardImg.style.opacity = "0";
+  };
+  // Two frames after the decode: the copy has then been drawn in its own layer at least once.
+  const lifted = base.decode().catch(() => {}).then(raf).then(raf).then(lift);
 
   // ── Move 1: push in ── started first and kept cheap, so the tap answers on the very next frame. Every part is a
   // transform or an opacity, which the browser animates off the main thread: it keeps moving while the page is busy below.
@@ -249,7 +259,8 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       await raf();
       if (main && mainBox) {
         await pushing[0].ready;
-        wall = stillWall(main, mainBox, offscreen);
+        await lifted; // the copy leaves the tapped picture out, so the flying one must be on screen first
+        wall = stillWall(main, mainBox, offscreen, cardImg);
         document.body.append(wall);
         const copy = camera(wall, `${cx}px ${cy}px`, PUSH_MS - (performance.now() - t0));
         // Let the copy be painted and moving on screen before the next page's render takes the main thread (on desktop
