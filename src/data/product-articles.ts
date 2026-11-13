@@ -3703,7 +3703,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "M Switch 15K ใช้กับหัวรุ่นไหน",
           paragraphs: [
-            "ตัวเครื่องนี้ใช้กับหัว M Switch Pod ของ SALTHUB แค่สวมหัวลงบนตัวเครื่องตามโปสเตอร์ด้านล่าง ก็พร้อมสูบได้เลย",
+            "ตัวเครื่องนี้ใช้กับหัว [M Switch Pod](/products/m-switch-pod) ของ SALTHUB แค่สวมหัวลงบนตัวเครื่องตามโปสเตอร์ด้านล่าง ก็พร้อมสูบได้เลย",
             "ถ้ากำลังชั่งใจระหว่าง M Switch กับเครื่องเปลี่ยนหัวยี่ห้ออื่น ร้านเทียบสเปกให้ทีละข้อแล้วที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
           ],
           image: { src: "/assets/products/m-switch-kit/story-combination.webp", alt: "โปสเตอร์ M Switch ของ SALTHUB หัวพอตสวมลงบนตัวเครื่อง \"Combination device and cartridge\"", width: 1600, height: 988, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
@@ -3712,7 +3712,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ในชุด M Switch 15K มีอะไรบ้าง",
           paragraphs: [
             "บนกล่องชุดเริ่มต้นของ SALTHUB เขียนไว้ว่าในกล่องมี 3 อย่าง คือตัวเครื่อง หัวพอตหนึ่งหัว และสายคล้องไว้ห้อยคอหนึ่งเส้น",
-            "หัวพอตในชุดเป็นกลิ่นที่เลือกไว้ ถ้าอยากได้หัวเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่[หน้าหัวพอต](/products/m-switch-pod)",
+            "หัวพอตที่มากับชุดเป็นกลิ่นที่เลือกจากตารางกลิ่นด้านบน",
           ],
           image: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "ภาพชุดเริ่มต้น M Switch กลิ่น Blue Ice จาก SALTHUB กล่องคู่กับตัวเครื่อง", width: 778, height: 1006, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", transparent: true },
         },
@@ -3738,7 +3738,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which pods does the M Switch 15K take?",
           paragraphs: [
-            "It takes SALTHUB's M Switch Pod: fit the pod onto the device as the poster below shows and it's ready to use.",
+            "It takes SALTHUB's [M Switch Pod](/products/m-switch-pod): fit the pod onto the device as the poster below shows and it's ready to use.",
           ],
           image: { src: "/assets/products/m-switch-kit/story-combination.webp", alt: "SALTHUB's M Switch poster — the pod going onto the device, \"Combination device and cartridge\"", width: 1600, height: 988, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
         },
@@ -3746,7 +3746,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "What's in the M Switch 15K kit?",
           paragraphs: [
             "SALTHUB's starter-kit box lists three things: the device, one pod and one lanyard.",
-            "The pod is the flavour you pick. Spare pods and other flavours are on the [pod page](/products/m-switch-pod).",
+            "The pod in the kit is the flavour you choose from the grid above.",
           ],
           image: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "SALTHUB's M Switch starter kit in Blue Ice — the box beside the device", width: 778, height: 1006, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", transparent: true },
         },
@@ -3771,7 +3771,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "M Switch 15K 用哪种烟弹？",
           paragraphs: [
-            "这台主机用 SALTHUB 的 M Switch Pod，按下方海报把烟弹装到主机上就能用。",
+            "这台主机用 SALTHUB 的 [M Switch Pod](/products/m-switch-pod)，按下方海报把烟弹装到主机上就能用。",
           ],
           image: { src: "/assets/products/m-switch-kit/story-combination.webp", alt: "SALTHUB 的 M Switch 海报：烟弹装到主机上，“Combination device and cartridge”", width: 1600, height: 988, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
         },
@@ -3779,7 +3779,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "M Switch 15K 套装里有什么？",
           paragraphs: [
             "SALTHUB 的套装盒上列了三样：主机、一颗烟弹和一条挂绳。",
-            "烟弹是你选的口味。备用烟弹和其他口味见[烟弹页面](/products/m-switch-pod)。",
+            "套装里的烟弹就是你在上方口味表里选的口味。",
           ],
           image: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "SALTHUB 的 M Switch 套装 Blue Ice：盒子与主机", width: 778, height: 1006, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", transparent: true },
         },
