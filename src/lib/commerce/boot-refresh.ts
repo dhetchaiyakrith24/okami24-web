@@ -39,7 +39,15 @@ export function bootRefreshUrl(port: string | undefined): string {
  */
 export async function refreshPagesAfterBoot(
   deps: BootRefreshDeps = DEFAULT_DEPS,
-  { orderingEnabled, firstDelayMs = 500, retryMs = 1000, maxTries = 60 }: { orderingEnabled: boolean; firstDelayMs?: number; retryMs?: number; maxTries?: number },
+  {
+    orderingEnabled,
+    firstDelayMs = 500,
+    retryMs = 1000,
+    maxTries = 60,
+    // Kill switch without a code change: OKAMI24_BOOT_WARM=off in Render's environment (a restart, not a deploy) turns the
+    // warm loop off; the boot refresh itself still runs (visitors then render pages as before this round).
+    warm = process.env.OKAMI24_BOOT_WARM !== "off",
+  }: { orderingEnabled: boolean; firstDelayMs?: number; retryMs?: number; maxTries?: number; warm?: boolean },
 ): Promise<number | null> {
   if (!orderingEnabled) return null;
   const url = bootRefreshUrl(deps.port ?? process.env.PORT);
@@ -51,7 +59,8 @@ export async function refreshPagesAfterBoot(
       // Re-render every page now, one by one, so no visitor pays a render and no two renders run at once (first-hit round
       // 14/11). Not awaited by anyone: register() never waits for this.
       const kind = res.headers?.get(BOOT_KIND_HEADER);
-      if (kind === "expire" || kind === "stale") await warmPages(deps, url.replace(/\/api\/cart\/count$/, ""));
+      if (warm && (kind === "expire" || kind === "stale")) await warmPages(deps, url.replace(/\/api\/cart\/count$/, ""));
+      else if (!warm) deps.log("[switches] boot warm loop off (OKAMI24_BOOT_WARM=off) — pages render on their first visit");
       return res.status;
     } catch {
       if (attempt < maxTries) await deps.wait(retryMs);
@@ -97,8 +106,9 @@ export function sitemapPaths(xml: string): string[] {
 }
 
 /**
- * Re-render every page in the sitemap once, right after the boot refresh marked them: one page at a time with `paceMs`
- * between, so a visitor's request always finds the 0.5-CPU box between two renders, never behind a queue of them.
+ * Re-render every page in the sitemap once, right after the boot refresh marked them: one page at a time, resting after each
+ * as long as it took (at least `paceMs`), so a visitor's request always finds the 0.5-CPU box between two renders, never
+ * behind a queue of them.
  * An expired page renders on the request itself (MISS). A stale one is answered at once (STALE) and re-renders behind the
  * answer, so the loop asks again every `pollMs` until it reads HIT before moving on — single file in both cases. A page a
  * visitor opens meanwhile behaves as without the loop. Logs one line; never throws.
@@ -118,6 +128,7 @@ export async function warmPages(
   }
   let done = 0;
   for (const p of paths) {
+    const pageStarted = Date.now();
     try {
       for (let poll = 0; poll < maxPolls; poll++) {
         const res = await deps.fetch(base + p, { cache: "no-store" });
@@ -129,7 +140,10 @@ export async function warmPages(
     } catch {
       /* one page failing does not stop the rest */
     }
-    await deps.wait(paceMs);
+    // Rest at least as long as that page took (never under paceMs): the loop holds at most half of the box over any stretch,
+    // so a visitor, the LINE slip webhook or Shipnity's stock push always gets the other half. A page that took long because
+    // the box was busy (real traffic) makes the next rest longer by the same amount — the loop backs off under load.
+    await deps.wait(Math.max(paceMs, Date.now() - pageStarted));
   }
   deps.log(`[switches] warmed ${done}/${paths.length} sitemap pages after the boot refresh in ${Math.round((Date.now() - started) / 1000)} s`);
   return done;

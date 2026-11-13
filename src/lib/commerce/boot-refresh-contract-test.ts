@@ -11,7 +11,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { BOOT_KIND_HEADER, bootRefreshKind, bootRefreshUrl, refreshPagesAfterBoot, sitemapPaths, type BootRefreshDeps } from "./boot-refresh";
+import { BOOT_KIND_HEADER, bootRefreshKind, bootRefreshUrl, refreshPagesAfterBoot, sitemapPaths, warmPages, type BootRefreshDeps } from "./boot-refresh";
 
 type Result = { name: string; passed: boolean; detail: string };
 
@@ -135,6 +135,32 @@ export async function runBootRefreshContractTests(): Promise<Result[]> {
   const none = warmed(null);
   await refreshPagesAfterBoot(none.deps, { orderingEnabled: true, firstDelayMs: 0 });
   check("6e. no kind in the answer (no boot refresh ran) → no warming", none.calls.length === 1, none.calls.join(" "));
+  const killed = warmed("expire");
+  await refreshPagesAfterBoot(killed.deps, { orderingEnabled: true, firstDelayMs: 0, warm: false });
+  check("6f. kill switch (warm: false = OKAMI24_BOOT_WARM=off) → the refresh runs, no page is warmed", killed.calls.length === 1, killed.calls.join(" "));
+  const boot = read("src/lib/commerce/boot-refresh.ts");
+  check("6g. the kill switch reads OKAMI24_BOOT_WARM", boot.includes('warm = process.env.OKAMI24_BOOT_WARM !== "off"'));
+  // A page that takes 400 ms is followed by a 400 ms rest (≥ paceMs 250): the loop never holds more than half the box.
+  const slowWaits: number[] = [];
+  let clock = 0;
+  const realNow = Date.now;
+  Date.now = () => clock;
+  try {
+    await warmPages(
+      {
+        fetch: async (url) => {
+          if (!url.endsWith(".xml")) clock += 400;
+          return { status: 200, headers: { get: () => null }, text: async () => (url.endsWith(".xml") ? sitemap : "") };
+        },
+        wait: async (ms) => void slowWaits.push(ms),
+        log: () => {},
+      },
+      "http://127.0.0.1:3999",
+    );
+  } finally {
+    Date.now = realNow;
+  }
+  check("6h. rests as long as each page took (back-off under load)", JSON.stringify(slowWaits) === "[400,400,400]", slowWaits.join(","));
   check("6d. the route names its kind in the boot-kind header", route.includes("[BOOT_KIND_HEADER]: boot.__okami24BootKind"));
 
   // If a Next upgrade renamed the implicit tag, the stale refresh would quietly mark nothing — this says so.
