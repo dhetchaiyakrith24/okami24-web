@@ -44,7 +44,7 @@ CONTEXT: every cwd change into a worktree re-loads the rule files (~25k tokens) 
     - SPEED local_87ee34f7: first hit of product pages 1–3 s live (relx-pod-pro 3.28 s, then 0.34 s) despite generateStaticParams → find cause.
     - Close #1450 (old zoom draft). Archive local_93a681e7 + local_a66802d4 once their worktrees are not a node_modules source.
   CHILD CHATS: start_session is refused on turns not typed by the owner over Remote Control → reuse an idle child (rename + effort + brief).
-  ASK THE OWNER (open): Marbo bottle photo · "รุ่นนี้มี N กลิ่น" heading centred? · 60/30/10 reel use · empty folder C:c delete?
+  ASK THE OWNER (open): Marbo bottle photo · "รุ่นนี้มี N กลิ่น" heading centred? · 60/30/10 reel use · empty folder `C:\c` delete?
   PORTS: one verify at a time on 3411/3412; children ask Friday for "go"; zoom tools use 3470, speed 3471. HOLD merges while a gate runs.
 3 OPEN ROUND docs/rounds/รอบหลังบ้านยอดขาย-07-11.md (back office). Block 7 switches live (#1312). Left: Excel batch and weekly summary
   wait for a real bill from the owner; then close with tag backoffice-0711.
