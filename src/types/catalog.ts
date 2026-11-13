@@ -228,6 +228,9 @@ export interface Product {
   categoryId: string;
   systemType: SystemType;
   name: string;
+  /** The H1 when people search a different name than `name` (G5 formula U1, 14/11: page-1 shop pages use the exact
+   *  searched name as the H1, 10 of 10). H1 only; cards, cart lines, breadcrumbs and JSON-LD keep `name`. */
+  heroName?: string;
   displayName: string;
   tagline: string;
   shortDescription: string;
