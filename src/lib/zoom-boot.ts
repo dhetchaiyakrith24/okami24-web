@@ -17,7 +17,7 @@
 export const ZOOM_HOLD_MS = 600;
 
 export const ZOOM_BOOT =
-  "try{var Zd=document;if(Zd.documentElement.dataset.preview==='zoom'&&typeof Zd.startViewTransition==='function'){" +
+  "(function(){try{var Zd=document;if(Zd.documentElement.dataset.preview!=='zoom'||typeof Zd.startViewTransition!=='function')return;{" +
   "var Z=window.__okZoom={q:null,on:false,push:null};" +
   "Zd.addEventListener('click',function(e){" +
   "if(Z.on||Z.q||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;" +
@@ -25,4 +25,4 @@ export const ZOOM_BOOT =
   "var h=a.getAttribute('href');if(!h||h.indexOf('/products/')!==0)return;" +
   "e.preventDefault();a.style.transition='transform .12s ease-out';a.style.transform='scale(.97)';" +
   "Z.q={a:a,h:h,t:Date.now(),k:setTimeout(function(){if(!Z.q||Z.q.a!==a)return;Z.q=null;a.style.transform='';" +
-  "if(Z.push)Z.push(h);else location.assign(h)}," + ZOOM_HOLD_MS + ")}},true)}}catch(e){}";
+  "if(Z.push)Z.push(h);else location.assign(h)}," + ZOOM_HOLD_MS + ")}},true)}}catch(e){}})();";
