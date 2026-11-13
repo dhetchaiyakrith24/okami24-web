@@ -13,7 +13,7 @@ import type { PhoneOption } from "./PhoneOptionTiles";
  * Desktop colour tiles (owner-approved mock 12/11, designer pass c1 — shared notes look-1211-design-passes.md "A desktop colour
  * tiles"; owner 13/11 "จัดการส่วนที่เหลือต่อเลย" → the default for everyone, the `?preview=tiles` gate removed): at `lg` and
  * above the colour picker is a grid of real-device photo tiles instead of 32px swatch dots (ColorVariantRail).
- *   - portrait tiles, fixed 60×100px (never 1fr): 6 a row at lg · 7 at xl · 8 from 1440. The option photos are slim devices
+ *   - portrait tiles, fixed 60×92px (never 1fr): 6 a row at lg · 7 at xl · 8 from 1440. The option photos are slim devices
  *     on square canvases (20–39 % of the width, 84 % of the height), so a square tile showed a ~15px sliver (checker 13/11:
  *     Black / Gray / Brown / Green not tellable apart). The photo now covers the tall tile and is lifted to ~94 % of its
  *     height — the whole device, only empty canvas is trimmed (Owner eye 16: products whole, never a hard crop);
@@ -30,8 +30,9 @@ const PER_ROW = { lg: 6, xl: 7, wide: 8 } as const;
 /** How many tiles a closed grid shows at each width (globals.css [data-tiles-closed] mirrors these). */
 const SHOWN = { lg: PER_ROW.lg * ROWS_SHOWN.lg, xl: PER_ROW.xl * ROWS_SHOWN.xl, wide: PER_ROW.wide * ROWS_SHOWN.wide } as const;
 
-/** The tile's inner box (60×100 minus the 2px border) and how much of it the device may fill. */
-const INNER = { w: 56, h: 96 } as const;
+/** The tile's inner box (60×92 minus the 2px border) and how much of it the device may fill. 92 not 100: two rows of 100
+ *  put the buy button at 898–900px on a 1280/1440 × 900 screen (measured 13/11) — 92 leaves it ~16px clear. */
+const INNER = { w: 56, h: 88 } as const;
 const FILL = { h: 0.92, w: 0.86 } as const;
 
 /** Rendered height of the photo's whole canvas: the device (its box in the photo) as tall as the tile allows, never wider
@@ -160,7 +161,7 @@ export function DesktopOptionTiles({
               aria-label={name}
               title={name}
               className={cn(
-                "relative flex h-[6.25rem] w-[3.75rem] items-center justify-center overflow-hidden rounded-xl border-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember",
+                "relative flex h-[5.75rem] w-[3.75rem] items-center justify-center overflow-hidden rounded-xl border-2 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember",
                 picked
                   ? "border-ember bg-[radial-gradient(ellipse_at_50%_100%,rgb(var(--ember-rgb)/0.16),transparent_70%)] bg-surface-2"
                   : "border-surface-border bg-surface-1 hover:border-foreground-dim"
