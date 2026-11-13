@@ -222,9 +222,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   "super-cool-saltnic": {
     th: {
       lede: "Super Cool มีกลิ่นให้เลือกหลายชื่อ บางชื่อบอกผลไม้ไว้ชัด บางชื่ออ่านแล้วอาจนึกไม่ออกว่าเป็นแนวไหน ร้านจึงจัดกลิ่นเป็นสายตามคำในชื่อไว้ให้ พร้อมเล่าวิธีเลือกขวดให้เข้ากับเครื่องที่ใช้อยู่",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/super-cool-saltnic/story-lineup.webp", alt: "ขวดน้ำยา Super Cool ทั้ง 10 กลิ่นวางเรียงกัน", width: 2659, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Super Cool มีกลิ่นแนวไหนให้เลือกบ้าง",
+          image: { src: "/assets/products/super-cool-saltnic/variant-elq-6-1-wm5.webp", alt: "ขวดน้ำยา Super Cool กลิ่น Grape Blast", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "เริ่มจากสายองุ่น มี Grape Blast กับ Shine Muscat ซึ่งเป็นชื่อพันธุ์องุ่น ถัดมาเป็นสายผลไม้ มี Strawberry Frost · King Melon และ Blueraz Berry ทั้งสามชื่อมีคำที่บอกผลไม้อยู่ในตัว",
             "อีกห้าชื่อ คือ Yacool · Laimoon · Pinky Blush · White Polo และ Black Hexx เป็นชื่อที่ตั้งขึ้นเฉพาะ อ่านจากชื่ออย่างเดียวจึงบอกแนวกลิ่นได้ยาก ร้านเลยรวมไว้เป็นแนวอื่น ถ้าสนใจชื่อไหนในกลุ่มนี้และอยากรู้รายละเอียดก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
@@ -232,6 +235,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "เลือกขวดให้เข้ากับเครื่องยังไง",
+          image: { src: "/assets/products/graple-freebase/card-wm5.webp", alt: "ขวดน้ำยา Graple แบบ freebase", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "นิโคตินในน้ำยาพอตมีสองแบบ คือ salt nic กับ freebase และเครื่องแต่ละรุ่นก็เหมาะกับแต่ละแบบต่างกัน ก่อนเลือกขวด จึงควรเปิดคู่มือหรือหน้าเว็บของผู้ผลิตเครื่องที่ใช้อยู่ แล้วดูว่าแนะนำน้ำยาแบบไหน รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่[salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
             "[Graple](/products/graple-freebase) คือน้ำยาแบบ freebase ที่ร้านมีให้เลือก ถ้าเครื่องที่ใช้อยู่เหมาะกับนิโคตินแบบนั้นมากกว่า ก็เลือกขวดนั้นแทนได้ ขวดนั้นมีตัวเลือกชื่อ Grape ซึ่งก็อยู่ในสายองุ่นเช่นกัน",
@@ -246,9 +250,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     en: {
       lede: "Super Cool's flavour names range from the obvious to the mysterious. To make choosing easier, we've grouped them by the words in each name and explained how to match a bottle to your device.",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/super-cool-saltnic/story-lineup.webp", alt: "All ten Super Cool bottles side by side", width: 2659, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "What kinds of flavour does Super Cool offer?",
+          image: { src: "/assets/products/super-cool-saltnic/variant-elq-6-1-wm5.webp", alt: "Super Cool bottle, Grape Blast", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "The grape group has Grape Blast and Shine Muscat, which is a grape variety. The fruit group has Strawberry Frost, King Melon and Blueraz Berry, each with a fruit in its name.",
             "The other five, Yacool, Laimoon, Pinky Blush, White Polo and Black Hexx, are made-up names that say little about the flavour on their own, so we've put them under “other”. If one of them catches your eye, message us on LINE @okm24 and we'll tell you more before you order.",
@@ -256,6 +263,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "How do I match the bottle to my device?",
+          image: { src: "/assets/products/graple-freebase/card-wm5.webp", alt: "Graple freebase e-liquid bottle", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Pod e-liquid comes with one of two kinds of nicotine, salt nic or freebase, and each device suits one better than the other. Before choosing a bottle, check your device's manual or its maker's website for the kind it recommends.",
             "If your device is better suited to freebase, we also carry [Graple](/products/graple-freebase), a freebase e-liquid. Its one option is named Grape, so it sits in the grape group too.",
@@ -270,9 +278,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     zh: {
       lede: "Super Cool 的口味名称有的一看就懂，有的却不太好猜。为了方便挑选，我们按名称里的字词把口味分了组，并说明怎样挑选适合自己设备的瓶子。",
+      optionsGrid: "flavours",
+      cover: { src: "/assets/products/super-cool-saltnic/story-lineup.webp", alt: "Super Cool 全部 10 款瓶装并排", width: 2659, height: 920, sourceName: "OKami24", transparent: true },
       sections: [
         {
           heading: "Super Cool 有哪些口味类型？",
+          image: { src: "/assets/products/super-cool-saltnic/variant-elq-6-1-wm5.webp", alt: "Super Cool Grape Blast 瓶", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "葡萄类有 Grape Blast 和葡萄品种名 Shine Muscat；水果类有 Strawberry Frost、King Melon 和 Blueraz Berry，名称里都带着水果。",
             "另外五个是 Yacool、Laimoon、Pinky Blush、White Polo 和 Black Hexx，属于自创名称，单看名字很难判断口味方向，所以归为其他类。对其中哪一款感兴趣，下单前欢迎通过 LINE @okm24 咨询。",
@@ -280,6 +291,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "怎样挑选适合设备的瓶子？",
+          image: { src: "/assets/products/graple-freebase/card-wm5.webp", alt: "Graple 游离碱烟油瓶", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "烟油里的尼古丁分为盐尼古丁和游离碱尼古丁两种，不同设备适合的类型也不同。选瓶之前，建议先查看设备说明书或厂家官网，确认推荐使用哪一种。",
             "如果您的设备更适合游离碱尼古丁，本店也有游离碱烟油 [Graple](/products/graple-freebase)。它唯一的选项名为 Grape，同样属于葡萄类。",
@@ -309,6 +321,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "เครื่องเหมาะกับ salt nic เลือกขวดไหนดี",
+          image: { src: "/assets/products/super-cool-saltnic/card-wm5.webp", alt: "ขวดน้ำยา Super Cool แบบ salt nic", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "[Super Cool](/products/super-cool-saltnic) เป็นน้ำยาแบบ salt nic ที่ร้านมีให้เลือก ในนั้นมีสองชื่อที่อยู่ในสายองุ่น คือ Grape Blast กับ Shine Muscat ซึ่งเป็นชื่อพันธุ์องุ่น ส่วนกลิ่นอื่นของขวดนั้น ร้านจัดเป็นสายตามคำในชื่อไว้ให้ที่หน้านั้นแล้ว",
           ],
@@ -332,6 +345,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "What if my device is better suited to salt nic?",
+          image: { src: "/assets/products/super-cool-saltnic/card-wm5.webp", alt: "Super Cool salt nic e-liquid bottle", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "[Super Cool](/products/super-cool-saltnic) is a salt nic e-liquid we carry. Two of its names fall in the grape group: Grape Blast, and Shine Muscat, which is a grape variety. Its other flavours are grouped by name on its page.",
           ],
@@ -355,6 +369,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "设备更适合盐尼古丁时，可以改选什么？",
+          image: { src: "/assets/products/super-cool-saltnic/card-wm5.webp", alt: "Super Cool 盐尼古丁烟油瓶", width: 1000, height: 1250, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "[Super Cool](/products/super-cool-saltnic) 是本店的盐尼古丁烟油，其中有两个名称属于葡萄类：Grape Blast 和葡萄品种名 Shine Muscat。它的其他口味已在该页面按名称分好组。",
           ],
