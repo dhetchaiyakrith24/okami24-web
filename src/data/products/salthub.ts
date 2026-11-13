@@ -457,6 +457,8 @@ export const salthubProducts: Product[] = [
     categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "M Switch Kit",
+    // G5 round 14/11 (U1): the H1 as people search it ("m switch 15k" 4,400/mo vs "m switch" 2,900); the title already says it.
+    heroName: "M Switch 15K",
     displayName: "SALTHUB M SWITCH KIT",
     // Owner 2026-10-08: the shop sells this set as "M Bar 15K" (the retired m-bar-15k page redirects here).
     searchAliases: ["M Bar 15K", "MBar 15K", "Marbo 15K"],
@@ -503,9 +505,11 @@ export const salthubProducts: Product[] = [
     openOnCardPhoto: true,
     storyDetails: true,
     // Site-wide template round batch 3b (05/10): split → the G5 template's stage (docs/PRODUCT_PAGE_TEMPLATE.md) — SALTHUB's own
-    // kit posters, one per block (1920 px, whole, down-sized only: _incoming/sitewide-template/3/3b/blocks.js). No cover: the
-    // campaign poster is 1920 px (poster-stretch ×1.36 as a full-width cover) and each of its icons has a block. Not used: the
-    // "Combination device and cartridge" poster (the head copy already says it twice).
+    // kit posters, one per block (1920 px, whole, down-sized only: _incoming/sitewide-template/3/3b/blocks.js).
+    // G5 round 14/11 (owner 13/11: the whole G5 page, pictures and layout, not text only): the campaign poster becomes the
+    // cover (story-cover-v2: the old story-cover name redirects to the card in moved-images.json; switch_pod_kit_01, 1920 px — the largest SALTHUB serves; poster-stretch ×1.36 at 1440 like the live G5 Lite
+    // cover, phones ×0.54), and the "Combination device and cartridge" poster sits under the article's "which pod" H3.
+    storyCover: { src: "/assets/products/m-switch-kit/story-cover-v2.webp", alt: "SALTHUB's M Switch campaign poster — two M Switch devices with the 15000 puffs, cotton mesh, Type-C and lanyard icons", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },
     storyLayout: "stage",
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#ab8cf0", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-kyoho-grape-v4-wm5.webp", alt: "SALTHUB M Switch Kit, Kyoho Grape — device and pod" } },
