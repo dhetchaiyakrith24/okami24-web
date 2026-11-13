@@ -14,6 +14,12 @@ import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useSignedIn } from "@/components/account/use-signed-in";
 import { useCartCount } from "@/components/commerce/cart-count";
+import dynamic from "next/dynamic";
+import { useIsTeam } from "@/components/layout/TeamShortcut";
+
+// "หลังบ้าน" (owner 12/11): fetched only on a team device (useIsTeam) — visitors download none of it (TeamMenu.tsx).
+const TeamHeaderMenu = dynamic(() => import("@/components/layout/TeamMenu").then((m) => m.TeamHeaderMenu), { ssr: false });
+const TeamDrawerSection = dynamic(() => import("@/components/layout/TeamMenu").then((m) => m.TeamDrawerSection), { ssr: false });
 
 /** `orderingEnabled` comes from the root layout (src/lib/commerce/ordering-mode.ts — owner
  *  2026-09-07): while online ordering is off, the cart icon and the mobile-menu cart link are not
@@ -34,6 +40,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
   // remembered at pointerdown, before the browser's emulated mouseenter opens it (checker note #817).
   const touchOpensMenu = useRef(false);
   const { dict, locale } = useLocale();
+  const isTeam = useIsTeam();
   // Member sign-in (owner 26/10: "อยากให้มีคำว่า 'เข้าสู่ระบบ' เห็นชัดบนหัวเว็บทุกหน้า"). Pages are prerendered and the layout
   // never reads cookies, so the header asks after load whether this browser is signed in (same pattern as the cart count)
   // and then reads "บัญชีสมาชิก" instead. Until it answers — or if it fails — the bar shows "เข้าสู่ระบบ".
@@ -226,6 +233,9 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           >
             <Search size={19} aria-hidden />
           </Link>
+          {isTeam ? (
+            <TeamHeaderMenu favoritesLabel={dict.nav.favorites} />
+          ) : (
           <Link
             href="/favorites"
             aria-label={dict.nav.favorites}
@@ -233,6 +243,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           >
             <Heart size={19} aria-hidden />
           </Link>
+          )}
           {/* Owner 24/10: "ติดตามคำสั่งซื้อ" as a visible header item — icon on phones (the drawer also lists it), icon + words
               from xl where the bar has room. Shown even with ordering off: past orders can still be followed. */}
           <Link
@@ -282,13 +293,14 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
           )}
           <button
             ref={menuButtonRef}
-            className="rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 xl:hidden"
+            className="relative rounded-full p-1.5 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:p-2 xl:hidden"
             onClick={() => setMenuOpenOn((open) => (open === pathname ? null : pathname))}
             aria-label={mobileOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
           >
             {mobileOpen ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
+            {isTeam && !mobileOpen && <span aria-hidden className="absolute right-1 top-1 size-2 rounded-full bg-ember" />}
           </button>
         </div>
       </Container>
@@ -312,6 +324,7 @@ export function Header({ orderingEnabled = true, categories }: { orderingEnabled
             if ((e.target as HTMLElement).closest("a")) closeMenu();
           }}
         >
+          {isTeam && <TeamDrawerSection />}
           <span className="label-mono px-3 py-2 text-xs text-foreground-dim">{dict.nav.products}</span>
           <Link href="/products" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
             {dict.nav.allProducts}

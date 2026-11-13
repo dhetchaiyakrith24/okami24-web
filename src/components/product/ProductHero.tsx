@@ -41,6 +41,8 @@ import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { useZoomOn } from "@/components/visual/ZoomNav";
+import { BuyRail } from "@/components/product/BuyRail";
+import type { PhotoBox } from "@/lib/option-photo-box";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -84,6 +86,7 @@ export function ProductHero({
   similarSlugs,
   imageDisplayInfo,
   imageDisplayMap,
+  optionPhotoBoxes,
   orderingEnabled = true,
   copyTh: copyThAll,
   brandSlug,
@@ -120,6 +123,8 @@ export function ProductHero({
    *  the card when a specific entry is missing (e.g. `getImageDisplayInfo` couldn't read the file).
    *  See `src/lib/media-quality.ts` and `ProductMedia`'s doc comment. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
+  /** Where each colour's device sits in its photo (src/lib/option-photo-box.ts) — the desktop colour tiles' fit. */
+  optionPhotoBoxes?: Record<string, PhotoBox>;
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
@@ -439,10 +444,10 @@ export function ProductHero({
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
-              outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
               countLine={countLine}
               bestIds={bestIds}
+              photoBoxes={optionPhotoBoxes}
               className="max-lg:order-4"
             />
           )}
@@ -615,6 +620,43 @@ export function ProductHero({
           compact
         />
       </MobileBuyBar>
+    )}
+    {/* Sticky buy rail beside the spec sheet → FAQ on xl+ (owner 13/11 → default; it portals in after load). */}
+    {sellingPrice !== null && (
+      <BuyRail
+        name={product.displayName}
+        media={
+          <>
+            {showNoPhoto && selectedRecord ? (
+              <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
+            ) : (
+              <div className="relative h-full w-full p-4">
+                <ProductMedia product={product} sizes="300px" overrideImage={heroOverrideImage} />
+              </div>
+            )}
+            {photoSoldOut && <SoldOutPhotoBadge label={dict.product.outOfStockChip} />}
+          </>
+        }
+        optionLabel={selectedOptionLabel}
+        optionSwatch={showAllColors ? undefined : selectedColor?.swatchHex}
+        price={<HeadPrice slug={product.slug} price={sellingPrice} soldOut={builtSoldOut} />}
+        countLine={countLine}
+        buy={
+          <ProductBuyAction
+            available={canAddToCart}
+            askStock={stockAsk}
+            choiceMissingLabel={choiceMissingLabel}
+            orderingEnabled={orderingEnabled}
+            slug={product.slug}
+            variantId={cartVariantId}
+            productCode={(cartVariantId ? lineCodes?.byOption[cartVariantId] : undefined) ?? lineCodes?.fallback}
+            pageUrl={lineCodes?.pageUrl}
+            productName={product.displayName}
+            variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
+            noteClassName="text-xs text-foreground-muted hover:text-foreground"
+          />
+        }
+      />
     )}
     </>
   );
