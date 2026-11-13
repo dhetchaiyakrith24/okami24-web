@@ -5868,6 +5868,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Muro Salt Nic กับ Muro Freebase ต่างกันยังไง",
+          image: { src: "/assets/products/muro-freebase/variant-grape-wm5.webp", alt: "ขวดน้ำยา Muro Freebase กลิ่น Grape", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "สองรุ่นนี้ใช้ชื่อกลิ่นชุดเดียวกันทุกกลิ่น ที่ต่างกันคือนิโคติน ขวดนี้เป็นแบบ salt nic ส่วน [Muro Freebase](/products/muro-freebase) เป็นแบบ freebase",
             "ความเข้มข้นของสองขวดก็ห่างกันมาก ขวดนี้ 28mg ส่วนอีกขวด 4mg แต่สองขวดนี้เป็นนิโคตินคนละแบบ จะหยิบขวดไหนจึงให้เครื่องที่ใช้อยู่เป็นตัวตัดสิน มากกว่าตัวเลข แล้วค่อยเลือกกลิ่นที่ชอบ",
@@ -5907,6 +5908,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Muro Salt Nic or Muro Freebase?",
+          image: { src: "/assets/products/muro-freebase/variant-grape-wm5.webp", alt: "Muro Freebase bottle, Grape", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "The two share the same set of flavour names. What differs is the nicotine: this bottle is salt nic, while [Muro Freebase](/products/muro-freebase) is freebase.",
             "The strengths are far apart too, 28mg here and 4mg in the other. Since the two use different nicotine, let your device make the call rather than the number, then choose the flavour you like.",
@@ -5946,6 +5948,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         },
         {
           heading: "Muro Salt Nic 和 Muro Freebase 有什么不同？",
+          image: { src: "/assets/products/muro-freebase/variant-grape-wm5.webp", alt: "Muro Freebase Grape 瓶", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "两款的口味名称完全相同，区别在于尼古丁类型：这瓶是盐尼古丁，[Muro Freebase](/products/muro-freebase) 则是游离碱尼古丁。",
             "两瓶的浓度也相差很大：这瓶 28mg，另一瓶 4mg。但两者的尼古丁类型不同，选哪一瓶应由所用设备决定，而不是看数字，之后再挑喜欢的口味。",
@@ -5980,6 +5983,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       sections: [
         {
           heading: "Muro Freebase ต่างจาก Muro Salt Nic ตรงไหน",
+          image: { src: "/assets/products/muro-salt-nic/variant-grape-wm5.webp", alt: "ขวดน้ำยา Muro Salt Nic กลิ่น Grape", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Muro Freebase กับ [Muro Salt Nic](/products/muro-salt-nic) มีชื่อกลิ่นเหมือนกันทุกกลิ่น สิ่งที่ต่างคือชนิดของนิโคติน รุ่นนี้เป็นแบบ freebase ส่วนอีกรุ่นเป็นแบบ salt nic เวลาเลือกระหว่างสองรุ่นนี้ ให้ดูเครื่องที่ใช้อยู่เป็นหลัก แล้วกลิ่นที่ชอบก็มีให้เลือกในรุ่นนั้นเหมือนกัน",
           ],
@@ -6011,6 +6015,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       sections: [
         {
           heading: "How is Muro Freebase different from Muro Salt Nic?",
+          image: { src: "/assets/products/muro-salt-nic/variant-grape-wm5.webp", alt: "Muro Salt Nic bottle, Grape", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Muro Freebase and [Muro Salt Nic](/products/muro-salt-nic) share the same flavour names; what differs is the nicotine. This one is freebase, the other is salt nic. Let your device decide which one to take, and the flavour you like is there in either.",
           ],
@@ -6042,6 +6047,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       sections: [
         {
           heading: "Muro Freebase 和 Muro Salt Nic 有什么不同？",
+          image: { src: "/assets/products/muro-salt-nic/variant-grape-wm5.webp", alt: "Muro Salt Nic Grape 瓶", width: 1000, height: 1000, sourceName: "OKami24", transparent: true },
           paragraphs: [
             "Muro Freebase 和 [Muro Salt Nic](/products/muro-salt-nic) 的口味名称完全相同，不同的是尼古丁：这款是游离碱尼古丁，另一款是盐尼古丁。先根据设备决定选哪一款，喜欢的口味两款都有。",
           ],
