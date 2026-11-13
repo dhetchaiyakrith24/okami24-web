@@ -1,5 +1,6 @@
-import Link from "next/link";
-import type { Product } from "@/types/catalog";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
+import type { CardProduct } from "@/lib/card-record";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
@@ -27,7 +28,8 @@ import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approv
  * price-in-the-spec-row variant A, which truncated the spec on four-digit prices).
  */
 /** `taglineTh` = the product's Thai tagline, from the server (src/lib/card-taglines.ts) — never the whole copy table. */
-export function ProductCard({ product, taglineTh }: { product: Product; taglineTh?: string }) {
+/** `product` = a card-only record (src/lib/card-record.ts) or a full Product — the card reads only CardProduct fields. */
+export function ProductCard({ product, taglineTh }: { product: CardProduct; taglineTh?: string }) {
   // Round 30.4ข batch 2 (owner 2026-09-16): the stats row used to print `attributes` as bare
   // values ("1600MAH · 5–35W", or "—" when there were none) regardless of whether the spec row
   // behind them was verified. It is now the headline spec line — one or two facts picked per

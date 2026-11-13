@@ -26,6 +26,10 @@ export type HeadlineSpec =
   | { kind: "capacity"; ml: string };
 
 type Row = Pick<Specification, "key" | "value" | "sourceStatus">;
+/** A spec row as a card reads it (src/lib/card-record.ts keeps only these three fields). */
+export type HeadlineRow = Row;
+/** Every spec key the functions below look up — the card-only records keep just these rows (src/lib/card-record.ts). */
+export const HEADLINE_SPEC_KEYS: ReadonlySet<string> = new Set(["battery", "output", "wattage", "puffs", "resistance", "capacity", "pod"]);
 
 const verifiedRow = (rows: readonly Row[], key: string) =>
   rows.find((r) => r.key === key && r.sourceStatus === "verified");
@@ -113,11 +117,11 @@ function pick(
 }
 
 /** Legacy catalog product (src/data/products). */
-export function headlineSpecsForProduct(product: Product): HeadlineSpec[] {
+export function headlineSpecsForProduct(product: Pick<Product, "categoryId" | "systemType" | "attributes"> & { specifications: readonly Row[] }): HeadlineSpec[] {
   return pick(kindCategoryId(product), product.specifications, product.attributes);
 }
 
 /** Published ProductMaster product (storefront bridge) — spec rows only, no attributes. */
-export function headlineSpecsForPublished(product: StorefrontProductView): HeadlineSpec[] {
+export function headlineSpecsForPublished(product: Pick<StorefrontProductView, "categoryId" | "systemType"> & { specifications: readonly Row[] }): HeadlineSpec[] {
   return pick(kindCategoryId(product), product.specifications);
 }
