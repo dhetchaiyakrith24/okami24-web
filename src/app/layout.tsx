@@ -19,10 +19,12 @@ import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
-// Preview "compact" (owner 13/11): four product cards to a phone screen — html[data-preview$="compact"] only.
-import "./preview-compact.css";
+// Compact product cards on phones — four to a screen (preview "compact", owner approved 13/11 → default for everyone).
+import "./card-compact.css";
 // The home guide cards stack as you scroll (preview "guides", owner approved 13/11 → default for everyone).
 import "./home-guides.css";
+// Desktop: the category/brand "families" stack like the home guide deck (owner 13/11 "ไม่ต้องจำลองเว็บละ" → default, no preview).
+import "./category-families.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
 
