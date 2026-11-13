@@ -25,8 +25,9 @@ What a skill may name: TEAM_RULES 13.2 "สกิลเขียนอะไร�
 4. **Freedom.** The method is theirs. Never write steps or a solution you already favour. Give one line of what is
    known or already ruled out, nothing more. An idea outside the brief but inside the direction: build it as a separate,
    revertible piece and tell Friday ("ลองทำ เวิคไม่เวิคค่อยว่ากัน" — owner 13/11).
-5. **Done when + return.** Give the pass bar the owner would use (what he sees on his phone, both widths), the proof to
-   bring (before/after at 390 + 1440), and the hand-back: the sha + "free", draft PR, never merge.
+5. **Done when + return.** The pass bar is the owner's words from part 1 plus the Owner eye list
+   (`.claude/agents/designer.md`), both seen at 390 and 1440. Name the proof to bring (before/after at 390 + 1440) and
+   the hand-back: the sha + "free", a draft PR, never a merge.
 
 A checker or other reviewer gets parts 1 and 5 and the spots to look at. **Never your conclusion** — it comes back confirmed.
 
@@ -34,6 +35,8 @@ A checker or other reviewer gets parts 1 and 5 and the spots to look at. **Never
 
 - Child chat or agent at **high** effort (owner 13/11: design = high; light checks/docs = medium).
 - Ask for **2–3 directions that really differ**, at least one of them bold. Three shades of the same idea is one idea.
+  "Bold" still means "เรียบหรูแต่ดูมีอะไร", never extreme. For example: a running edge light that settles after 3 runs
+  (the owner liked this), not a neon "game" backdrop (he rejected that).
 - **One signature detail per component** — light, texture, brand art, or motion with life. "Clean" is not "empty".
 - **Describe motion as the owner would feel it**, frame by frame from the tap: what moves first, where the eye goes,
   how it ends. The tap acts at once and the decoration runs alongside it. A speed cost of at most 3–5 %, SEO untouched.
@@ -44,17 +47,17 @@ A checker or other reviewer gets parts 1 and 5 and the spots to look at. **Never
 
 | Size | Before anyone builds the full thing | Then |
 |---|---|---|
-| 1–2 small pieces | nothing | build → shots in the report → merge |
-| A new look for one part | **2–3 still images**, one per direction, in chat. He points at one. Other work does not stop meanwhile. | build the chosen one |
-| A look that changes the whole site (e.g. the zoom on every card) | a **live preview link** on the real site that he taps on his own phone (`?preview=`) | default for everyone after his OK (TEAM_RULES 13.3 list) |
+| A tweak to 1–2 existing pieces (size, spacing, colour, a detail), no new look | nothing | build → shots in the report → merge |
+| A new look for one part (a new component, or one section redesigned) | **2–3 still images**, one per direction, sent in chat with your pick. This is not a wait point: build your pick at once and switch if he points at another one. | merge as usual; he reviews after the merge (13.5, 13.8) |
+| A look that changes every page or every card (e.g. the zoom) | a **live preview link** on the real site that he taps on his own phone (`?preview=`) | default for everyone after his OK. This is the one wait, and it lives in TEAM_RULES 13.3. |
 
 Swatches or a mock-up away from the page are not enough. He could not judge them ("นึกภาพไม่ออก"), and the forge colours
 passed the sheet but failed on the live site. Show it in place, at real size.
 
 ## Step 4 — learn from the result (every time the owner reviews look work)
 
-1. Each fix he asks for, and each thing he praises: write one line in the report's "ทำอะไร" — what he said (a short quote)
-   and what the brief missed.
+1. For each fix he asks for and each thing he praises, add one line to the report: his words (a short quote) → what the
+   brief missed.
 2. A new taste point → add it to Owner eye "Taste" as the next number. A point that is already there → rewrite that
    line in place (central §12 item 25). Owner eye is the one home for taste. Do not write taste into LESSONS: LESSONS
    is over its ceiling, and a story there helps no brief.
