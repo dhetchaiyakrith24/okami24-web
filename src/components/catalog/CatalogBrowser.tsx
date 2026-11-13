@@ -3,13 +3,14 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import type { Category, Product, ScreenType, Portability } from "@/types/catalog";
-import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import type { Category, ScreenType, Portability } from "@/types/catalog";
+import type { CardProduct, CardPublished } from "@/lib/card-record";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { brands } from "@/data/brands";
 import { fuzzyQueryMatches, queryMatches, type SearchText } from "@/lib/catalog-search";
+import { loadSearchSecondary } from "@/lib/catalog-search-secondary";
 import { familyName } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { Check, ChevronDown, SlidersHorizontal, X } from "lucide-react";
@@ -62,17 +63,21 @@ interface CatalogEntry {
   screenType: ScreenType | null;
   portability: Portability | null;
   beginnerFriendly: boolean | null;
-  legacyProduct?: Product;
-  publishedProduct?: StorefrontProductView;
+  legacyProduct?: CardProduct;
+  publishedProduct?: CardPublished;
 }
 
-function toEntries(products: Product[], publishedProducts: StorefrontProductView[], searchTexts: Record<string, SearchText>): CatalogEntry[] {
+/** `secondary` = the rest of each entry's search text (flavours, specs …), fetched the first time the search box is used
+ *  (speed round 13/11: it was 47 KB of every grid page's payload, read by nobody who never types). Until it arrives an entry
+ *  is searched by its primary text alone (name, brand, the shop's own words for it). */
+function toEntries(products: CardProduct[], publishedProducts: CardPublished[], searchPrimary: Record<string, string>, secondary: Record<string, string> | null): CatalogEntry[] {
+  const text = (key: string): SearchText => ({ primary: searchPrimary[key] ?? "", secondary: secondary?.[key] ?? "" });
   const legacyEntries: CatalogEntry[] = products.map((p) => ({
     kind: "legacy",
     key: `legacy:${p.slug}`,
     name: p.name,
     tagline: p.tagline,
-    searchText: searchTexts[`legacy:${p.slug}`] ?? EMPTY_TEXT,
+    searchText: text(`legacy:${p.slug}`),
     brandId: p.brandId,
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
@@ -88,7 +93,7 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
     key: `published:${p.slug}`,
     name: p.displayName,
     tagline: p.tagline,
-    searchText: searchTexts[`published:${p.slug}`] ?? EMPTY_TEXT,
+    searchText: text(`published:${p.slug}`),
     brandId: p.brandId,
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
@@ -126,26 +131,24 @@ function writeStockParam(inStock: boolean) {
 /** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
 type SheetGroupId = "brand" | "screen" | "portability" | "level";
 
-/** A product the page forgot to build search text for matches nothing rather than crashing —
- *  and catalog-search-contract-test.ts checks every grid page passes a complete map. */
-const EMPTY_TEXT: SearchText = { primary: "", secondary: "" };
-
 export function CatalogBrowser({
   products,
   publishedProducts = [],
-  searchTexts,
+  searchPrimary,
   isEmptyCategory,
   alternativeCategories = [],
   inStockKeys,
   noPriceKeys,
   taglinesTh = {},
 }: {
-  products: Product[];
-  publishedProducts?: StorefrontProductView[];
+  /** Card-only records (src/lib/card-record.ts cardProduct / cardPublished) — the grid ships cards, not product pages. */
+  products: CardProduct[];
+  publishedProducts?: CardPublished[];
   /** Legacy cards' Thai taglines by slug, from `cardTaglinesTh()` (src/lib/card-taglines.ts), built by the server page. */
   taglinesTh?: Record<string, string>;
-  /** From `catalogSearchTexts()` (src/lib/catalog-search-entries.ts), built by the server page. */
-  searchTexts: Record<string, SearchText>;
+  /** From `catalogSearchPrimary()` (src/lib/catalog-search-entries.ts), built by the server page. A product missing here
+   *  matches nothing rather than crashing — and catalog-search-contract-test.ts checks every grid page passes the map. */
+  searchPrimary: Record<string, string>;
   isEmptyCategory?: boolean;
   /** Categories that do have products today (`categoriesWithProducts()`), offered as the way out
    *  of an empty category page. The server page passes it; nothing renders when it is empty. */
@@ -208,7 +211,14 @@ export function CatalogBrowser({
   const [sheetOpen, setSheetOpen] = useState(false);
   const [openGroups, setOpenGroups] = useState<Set<SheetGroupId>>(() => new Set<SheetGroupId>(["brand"]));
 
-  const entries = useMemo(() => toEntries(products, publishedProducts, searchTexts), [products, publishedProducts, searchTexts]);
+  const [searchSecondary, setSearchSecondary] = useState<Record<string, string> | null>(null);
+  const wantSecondary = useCallback(() => {
+    if (!searchSecondary) loadSearchSecondary().then((texts) => texts && setSearchSecondary(texts));
+  }, [searchSecondary]);
+  const entries = useMemo(
+    () => toEntries(products, publishedProducts, searchPrimary, searchSecondary),
+    [products, publishedProducts, searchPrimary, searchSecondary]
+  );
 
   const availableBrands = useMemo(() => {
     const ids = new Set(entries.map((e) => e.brandId));
@@ -304,7 +314,11 @@ export function CatalogBrowser({
             id="catalog-search"
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onFocus={wantSecondary}
+            onChange={(e) => {
+              wantSecondary();
+              setQuery(e.target.value);
+            }}
             placeholder={dict.catalog.searchPlaceholder}
             className="w-full rounded-lg border border-surface-border bg-surface-1 px-3 py-2 text-sm text-foreground placeholder:text-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
           />
@@ -525,7 +539,11 @@ export function CatalogBrowser({
               id="catalog-search-sheet"
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onFocus={wantSecondary}
+              onChange={(e) => {
+                wantSecondary();
+                setQuery(e.target.value);
+              }}
               placeholder={dict.catalog.searchPlaceholder}
               className="min-h-11 w-full rounded-lg border border-surface-border bg-surface-0 px-3 text-base text-foreground placeholder:text-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
             />

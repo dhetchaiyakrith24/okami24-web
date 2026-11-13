@@ -8,7 +8,8 @@ import { familiesForBrand } from "@/data/families";
 import { getProductsByBrand } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
-import { catalogSearchTexts } from "@/lib/catalog-search-entries";
+import { catalogSearchPrimary } from "@/lib/catalog-search-entries";
+import { cardProduct, cardPublished } from "@/lib/card-record";
 import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
@@ -111,7 +112,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
+        <CatalogBrowser products={products.map(cardProduct)} publishedProducts={publishedProducts.map(cardPublished)} searchPrimary={catalogSearchPrimary(products, publishedProducts)} taglinesTh={cardTaglinesTh(products)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} inStockKeys={inStockEntryKeys(products, publishedProducts, liveStockReady() ? liveLookup() : undefined)} noPriceKeys={noPriceEntryKeys(products, publishedProducts)} />
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>

@@ -230,10 +230,10 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
     const usages = sourceFilesUnder(appDir).flatMap((file) => {
       const src = readFileSync(file, "utf8");
       const tags = src.match(/<CatalogBrowser\b[^>]*>/g) ?? [];
-      return tags.map((tag) => ({ file: path.relative(process.cwd(), file), ok: /searchTexts=\{catalogSearchTexts\(/.test(tag) }));
+      return tags.map((tag) => ({ file: path.relative(process.cwd(), file), ok: /searchPrimary=\{catalogSearchPrimary\(/.test(tag) }));
     });
     const bad = usages.filter((u) => !u.ok).map((u) => u.file);
-    check(`every <CatalogBrowser> in src/app passes searchTexts={catalogSearchTexts(...)} (${usages.length} usages)`, usages.length > 0 && bad.length === 0, bad.join(", ") || "all pass it");
+    check(`every <CatalogBrowser> in src/app passes searchPrimary={catalogSearchPrimary(...)} (${usages.length} usages)`, usages.length > 0 && bad.length === 0, bad.join(", ") || "all pass it");
   }
 
   // ---- 11. No family name the data knows is unreachable by its own spelling ----
