@@ -25,8 +25,10 @@ export function ProductFAQ({ faqs, faqsTh }: { faqs: FAQItem[]; faqsTh?: Product
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
       {/* Wide screens: heading + questions as one centred reading column, like every other FAQ block (Measure, owner
           13/11 · checker #1458) — beside the sticky buy card it centres in the content lane. Below lg unchanged. */}
-      <Container>
-        <Measure className="flex flex-col gap-8">
+      {/* The wrapper is display:contents below lg, so phones keep the exact old box tree (a block wrapper rounded one
+          page 0.1px differently at 390). */}
+      <Container className="flex flex-col gap-8">
+        <Measure className="max-lg:contents lg:flex lg:flex-col lg:gap-8">
           <SectionHeading eyebrow={dict.product.faqEyebrow} title={dict.product.faqTitle} />
           <FAQAccordion items={items} />
         </Measure>
