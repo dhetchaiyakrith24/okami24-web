@@ -219,4 +219,3 @@ export function UpdatedAt({ date }: { date: string }) {
   );
 }
 
-export const SERVICE_PAGES_UPDATED = "2026-09-06";

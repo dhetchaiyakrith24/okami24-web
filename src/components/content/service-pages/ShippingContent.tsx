@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
+import { AgeNote, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { SHIPPING } from "@/i18n/service-pages/shipping";
 
 /** Body of /shipping in the active language (copy: src/i18n/service-pages/shipping.tsx). */
-export function ShippingContent() {
+export function ShippingContent({ updated }: { updated: string }) {
   const c = useServiceCopy(SHIPPING);
   const link = "text-foreground hover:text-red";
   return (
@@ -64,7 +64,7 @@ export function ShippingContent() {
           </ServiceSection>
 
           <AgeNote />
-          <UpdatedAt date={SERVICE_PAGES_UPDATED} />
+          <UpdatedAt date={updated} />
         </div>
       </Container>
     </>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, InfoCard, NumberedSteps, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
+import { AgeNote, InfoCard, NumberedSteps, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { CLAIMS } from "@/i18n/service-pages/claims-policy";
 
 /**
@@ -11,7 +11,7 @@ import { CLAIMS } from "@/i18n/service-pages/claims-policy";
  * Published 2026-09-06 after the owner ticked the symptom list (BSOT §12) — the DRAFT bar and
  * the "owner to confirm" box that lived here while it was a /preview draft are gone.
  */
-export function ClaimsPolicyContent() {
+export function ClaimsPolicyContent({ updated }: { updated: string }) {
   const c = useServiceCopy(CLAIMS);
   const link = "text-foreground hover:text-red";
   return (
@@ -38,8 +38,8 @@ export function ClaimsPolicyContent() {
                   <tbody className="text-foreground">
                     {c.refunds.rows.map((row) => (
                       <tr key={row.case} className="border-t border-surface-border-soft align-top">
-                        <td className="px-4 py-3 font-semibold">{row.case}</td>
-                        <td className="px-4 py-3 text-foreground-muted">{row.what}</td>
+                        <td className="px-4 py-3 font-semibold text-pretty">{row.case}</td>
+                        <td className="px-4 py-3 text-pretty text-foreground-muted">{row.what}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -98,7 +98,7 @@ export function ClaimsPolicyContent() {
           </ServiceSection>
 
           <AgeNote />
-          <UpdatedAt date={SERVICE_PAGES_UPDATED} />
+          <UpdatedAt date={updated} />
         </div>
       </Container>
     </>

@@ -1,3 +1,4 @@
+import { pageModifiedDate } from "@/lib/content-dates";
 import type { Metadata } from "next";
 import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { CONTACT_HEAD_TH } from "@/i18n/search-head-copy";
@@ -19,7 +20,7 @@ export default function ContactPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(CONTACT_HEAD_TH.title, "/contact")) }} />
-      <ContactContent orderingEnabled={orderingOpen()} />
+      <ContactContent orderingEnabled={orderingOpen()} updated={pageModifiedDate("/contact", "contact")} />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { pageModifiedDate } from "@/lib/content-dates";
 import type { Metadata } from "next";
 import { canonicalFor } from "@/lib/seo";
 import { ClaimsPolicyContent } from "@/components/content/service-pages/ClaimsPolicyContent";
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function WarrantyPage() {
-  return <ClaimsPolicyContent />;
+  return <ClaimsPolicyContent updated={pageModifiedDate("/warranty", "warranty")} />;
 }

@@ -2,17 +2,17 @@
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
+import { AgeNote, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { PRIVACY } from "@/i18n/service-pages/privacy";
 
 const LIST = "flex flex-col gap-1.5 text-sm";
 
 /** Body of /privacy in the active language (copy: src/i18n/service-pages/privacy.tsx). */
-export function PrivacyContent() {
+export function PrivacyContent({ updated }: { updated: string }) {
   const c = useServiceCopy(PRIVACY);
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<UpdatedAt date={SERVICE_PAGES_UPDATED} />} />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<UpdatedAt date={updated} />} />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <SummaryCards items={c.summary} />
@@ -85,7 +85,7 @@ export function PrivacyContent() {
           </ServiceSection>
 
           <AgeNote />
-          <UpdatedAt date={SERVICE_PAGES_UPDATED} />
+          <UpdatedAt date={updated} />
         </div>
       </Container>
     </>

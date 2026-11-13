@@ -5,11 +5,11 @@ import { CONTACT } from "@/data/contact";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { AgeNote, EmailLink, InfoCard, LineLink, SERVICE_PAGES_UPDATED, ServiceSection, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
+import { AgeNote, EmailLink, InfoCard, LineLink, ServiceSection, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { CONTACT_PAGE } from "@/i18n/service-pages/contact";
 
 /** Body of /contact in the active language (copy: src/i18n/service-pages/contact.tsx). */
-export function ContactContent({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
+export function ContactContent({ orderingEnabled = true, updated }: { orderingEnabled?: boolean; updated: string }) {
   const c = useServiceCopy(CONTACT_PAGE);
   return (
     <>
@@ -84,7 +84,7 @@ export function ContactContent({ orderingEnabled = true }: { orderingEnabled?: b
           </ServiceSection>
 
           <AgeNote />
-          <UpdatedAt date={SERVICE_PAGES_UPDATED} />
+          <UpdatedAt date={updated} />
         </div>
       </Container>
     </>

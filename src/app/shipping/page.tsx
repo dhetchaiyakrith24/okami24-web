@@ -1,3 +1,4 @@
+import { pageModifiedDate } from "@/lib/content-dates";
 import type { Metadata } from "next";
 import { canonicalFor } from "@/lib/seo";
 import { ShippingContent } from "@/components/content/service-pages/ShippingContent";
@@ -15,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function ShippingPage() {
-  return <ShippingContent />;
+  return <ShippingContent updated={pageModifiedDate("/shipping", "shipping")} />;
 }

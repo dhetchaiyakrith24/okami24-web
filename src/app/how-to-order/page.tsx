@@ -1,3 +1,4 @@
+import { pageModifiedDate } from "@/lib/content-dates";
 import type { Metadata } from "next";
 import { canonicalFor } from "@/lib/seo";
 import { HowToOrderContent } from "@/components/content/service-pages/HowToOrderContent";
@@ -18,5 +19,5 @@ export const generateMetadata = (): Metadata => ({
 });
 
 export default function HowToOrderPage() {
-  return <HowToOrderContent orderingEnabled={orderingOpen()} />;
+  return <HowToOrderContent orderingEnabled={orderingOpen()} updated={pageModifiedDate("/how-to-order", "howToOrder")} />;
 }

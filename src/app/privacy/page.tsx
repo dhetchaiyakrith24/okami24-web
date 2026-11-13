@@ -1,3 +1,4 @@
+import { pageModifiedDate } from "@/lib/content-dates";
 import type { Metadata } from "next";
 import { canonicalFor } from "@/lib/seo";
 import { PrivacyContent } from "@/components/content/service-pages/PrivacyContent";
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  return <PrivacyContent />;
+  return <PrivacyContent updated={pageModifiedDate("/privacy", "privacy")} />;
 }

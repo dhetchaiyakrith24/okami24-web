@@ -86,6 +86,13 @@ export function pageLastModified(path: string, family?: ContentFamily): Date | u
   return newest > 0 ? new Date(newest) : undefined;
 }
 
+/** The visible "last updated" date of a service page (YYYY-MM-DD, Bangkok time) — the same date sitemap.ts gives that
+ *  URL. Replaces the one hand-typed SERVICE_PAGES_UPDATED ("2026-09-06") all five pages shared, which /warranty still
+ *  showed after its copy changed on 11/11 (Friday 13/11). */
+export function pageModifiedDate(path: string, family: ContentFamily): string {
+  return (pageLastModified(path, family) ?? familyLastModified(family)).toLocaleDateString("en-CA", { timeZone: "Asia/Bangkok" });
+}
+
 /** Calendar date (YYYY-MM-DD, Bangkok time — the shop's day, like the hand-typed value it
  *  replaces) for JSON-LD `dateModified`. */
 export function familyModifiedDate(family: ContentFamily): string {
