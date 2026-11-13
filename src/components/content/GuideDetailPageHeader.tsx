@@ -42,6 +42,7 @@ export function GuideDetailPageHeader({
       title={locale === "th" ? thaiTypographyNode(shownTitle) : shownTitle}
       description={locale === "th" ? thaiTypographyNode(shownDek) : shownDek}
       meta={byline && <GuideByline publishedAt={byline.publishedAt} modifiedAt={byline.modifiedAt} />}
+      centred
     />
   );
 }

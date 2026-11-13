@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Measure } from "@/components/ui/Measure";
 import { renderInline } from "@/components/content/render-inline";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -143,7 +144,9 @@ export function CategoryGuide({ copy, rows, brands = [], lineup = [], stack = fa
         </Container>
       </section>
       <section className="border-t border-surface-border-soft bg-surface-1 py-14 lg:py-20">
+        {/* Wide screens: heading + questions centred as one column (Measure, owner 13/11); below lg unchanged. */}
         <Container>
+          <Measure>
           <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{t(c.faqHeading)}</h2>
           <div className="mt-8 max-w-3xl border-t border-surface-border">
             {c.faq.map((f, i) => (
@@ -158,6 +161,7 @@ export function CategoryGuide({ copy, rows, brands = [], lineup = [], stack = fa
               </details>
             ))}
           </div>
+          </Measure>
         </Container>
       </section>
     </>
