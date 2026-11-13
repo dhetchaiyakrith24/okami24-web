@@ -8,9 +8,13 @@
 export const SEARCH_SECONDARY_PATH = "/api/catalog-search";
 
 let request: Promise<Record<string, string> | null> | null = null;
+let requested: string | null = null;
 
-export function loadSearchSecondary(): Promise<Record<string, string> | null> {
-  request ??= fetch(SEARCH_SECONDARY_PATH)
+/** `version` = catalogSearchVersion() from the server page — part of the URL, so a changed catalog is a new address. */
+export function loadSearchSecondary(version: string): Promise<Record<string, string> | null> {
+  if (requested !== version) request = null;
+  requested = version;
+  request ??= fetch(`${SEARCH_SECONDARY_PATH}?v=${encodeURIComponent(version)}`)
     .then((r) => (r.ok ? (r.json() as Promise<Record<string, string>>) : Promise.reject(new Error(String(r.status)))))
     .catch(() => {
       request = null;

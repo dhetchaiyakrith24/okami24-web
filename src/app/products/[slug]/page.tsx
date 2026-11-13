@@ -6,7 +6,7 @@ import { categories, getCategory, kindCategoryId } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
-import { catalogSearchPrimary } from "@/lib/catalog-search-entries";
+import { catalogSearchPrimary, catalogSearchVersion } from "@/lib/catalog-search-entries";
 import { cardProduct, cardPublished } from "@/lib/card-record";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductGallery } from "@/components/product/ProductGallery";
@@ -277,6 +277,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             products={products.map(cardProduct)}
             publishedProducts={publishedProducts.map(cardPublished)}
             searchPrimary={catalogSearchPrimary(products, publishedProducts)}
+            searchVersion={catalogSearchVersion()}
             taglinesTh={cardTaglinesTh(products)}
             isEmptyCategory={isEmptyCategory}
             // Round "share-deadend" batch 2 (2026-09-22): an empty category offers the ones that

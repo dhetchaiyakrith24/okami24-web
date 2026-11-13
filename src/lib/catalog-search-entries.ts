@@ -10,10 +10,11 @@
  * storefront (/api/catalog-search), fetched the first time a visitor uses a search box (src/lib/catalog-search-secondary.ts).
  */
 import "server-only";
+import { createHash } from "node:crypto";
 import type { Product } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { legacySearchText } from "@/data/products";
-import { publishedSearchText } from "@/data/shipnity-seed/storefront-bridge";
+import { allProducts, legacySearchText } from "@/data/products";
+import { getPublishedProducts, publishedSearchText } from "@/data/shipnity-seed/storefront-bridge";
 import type { SearchText } from "@/lib/catalog-search";
 
 /** Keyed the way CatalogBrowser keys its entries: `legacy:<slug>` / `published:<slug>`. */
@@ -34,3 +35,12 @@ export const catalogSearchPrimary = (products: Product[], publishedProducts: Sto
 /** The whole storefront's secondary half (the /api/catalog-search answer). */
 export const catalogSearchSecondary = (products: Product[], publishedProducts: StorefrontProductView[]) =>
   half(catalogSearchTexts(products, publishedProducts), "secondary");
+
+let version: string | undefined;
+/** A hash of that answer, put in the URL the grids fetch (`/api/catalog-search?v=…`): the route is static and answers with a
+ *  long shared-cache life, so a changed catalog must change the address, or Cloudflare would keep yesterday's flavour and
+ *  spec words after a deploy (checker #1449). Same catalog → same address → the edge copy stays useful across deploys. */
+export function catalogSearchVersion(): string {
+  version ??= createHash("sha1").update(JSON.stringify(catalogSearchSecondary(allProducts, getPublishedProducts()))).digest("hex").slice(0, 10);
+  return version;
+}

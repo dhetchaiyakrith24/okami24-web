@@ -135,6 +135,7 @@ export function CatalogBrowser({
   products,
   publishedProducts = [],
   searchPrimary,
+  searchVersion,
   isEmptyCategory,
   alternativeCategories = [],
   inStockKeys,
@@ -149,6 +150,8 @@ export function CatalogBrowser({
   /** From `catalogSearchPrimary()` (src/lib/catalog-search-entries.ts), built by the server page. A product missing here
    *  matches nothing rather than crashing — and catalog-search-contract-test.ts checks every grid page passes the map. */
   searchPrimary: Record<string, string>;
+  /** `catalogSearchVersion()` — the secondary half's address carries it, so a changed catalog is never served from an old copy. */
+  searchVersion: string;
   isEmptyCategory?: boolean;
   /** Categories that do have products today (`categoriesWithProducts()`), offered as the way out
    *  of an empty category page. The server page passes it; nothing renders when it is empty. */
@@ -212,9 +215,18 @@ export function CatalogBrowser({
   const [openGroups, setOpenGroups] = useState<Set<SheetGroupId>>(() => new Set<SheetGroupId>(["brand"]));
 
   const [searchSecondary, setSearchSecondary] = useState<Record<string, string> | null>(null);
+  // The fetch failed: search by primary text alone rather than wait forever (it is tried again on the next focus).
+  const [searchFallback, setSearchFallback] = useState(false);
   const wantSecondary = useCallback(() => {
-    if (!searchSecondary) loadSearchSecondary().then((texts) => texts && setSearchSecondary(texts));
-  }, [searchSecondary]);
+    if (searchSecondary) return;
+    loadSearchSecondary(searchVersion).then((texts) => {
+      if (texts) setSearchSecondary(texts);
+      else setSearchFallback(true);
+    });
+  }, [searchSecondary, searchVersion]);
+  // A query typed before the secondary half arrived is held, not run on half the text (checker #1449: a flavour typed in
+  // that moment found nothing). The grid keeps its current cards, dimmed and aria-busy, until the words are in.
+  const searchPending = query.trim() !== "" && searchSecondary === null && !searchFallback;
   const entries = useMemo(
     () => toEntries(products, publishedProducts, searchPrimary, searchSecondary),
     [products, publishedProducts, searchPrimary, searchSecondary]
@@ -240,7 +252,7 @@ export function CatalogBrowser({
 
   const filtered = useMemo(() => {
     let list = entries;
-    if (query.trim()) {
+    if (query.trim() && !searchPending) {
       const q = query.trim().toLowerCase();
       const exact = list.filter((e) => queryMatches(q, e.searchText));
       // Nothing as typed → allow typing slips (owner list ก4, catalog-search.ts rankByQuery does the same on /search).
@@ -262,7 +274,7 @@ export function CatalogBrowser({
       sorted.sort((a, b) => Number(noPriceSet.has(a.key)) - Number(noPriceSet.has(b.key)) || Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
-  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort, noPriceSet]);
+  }, [entries, query, searchPending, brandFilter, screenFilter, portabilityFilter, beginnerOnly, inStockOnly, inStockSet, signedIn, sort, noPriceSet]);
 
   function toggle<T>(set: Set<T>, value: T, setter: (s: Set<T>) => void) {
     const next = new Set(set);
@@ -483,7 +495,10 @@ export function CatalogBrowser({
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
+          <div
+            aria-busy={searchPending || undefined}
+            className={cn("grid grid-cols-2 gap-3 transition-opacity sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4", searchPending && "opacity-50")}
+          >
             {filtered.map((entry) =>
               entry.kind === "legacy" ? (
                 <ProductCard key={entry.key} product={entry.legacyProduct!} taglineTh={taglinesTh[entry.legacyProduct!.slug]} />
