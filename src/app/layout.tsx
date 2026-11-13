@@ -10,6 +10,7 @@ import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
 import { CardCut } from "@/components/brand/CardCut";
+import { ZoomNav } from "@/components/visual/ZoomNav";
 import { navCategories } from "@/lib/category-visibility";
 import { navBrands } from "@/lib/brand-visibility";
 import { DNS_GUIDE_ID } from "@/data/guides";
@@ -140,6 +141,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ImageSaveGuard />
           {/* Samurai theme (owner 29/10): the short red cut across a product card's photo on click. Renders nothing. */}
           <CardCut />
+          {/* The Zoom (owner ก10): a tapped card zooms into the product page (everyone; the engine loads when the browser is idle). Renders nothing. */}
+          <ZoomNav />
           {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
           <PreviewPill />
         </LocaleProvider>

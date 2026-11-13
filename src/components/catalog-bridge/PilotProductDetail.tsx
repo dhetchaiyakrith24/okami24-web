@@ -370,8 +370,9 @@ export function PilotProductDetail({
         {/* Phone gallery — hidden at lg+, where the desktop image box below is the hero. 4:3 rather
             than the legacy pages' square (D-ข): ProductMaster photos are mostly landscape boxes
             (coils, pods) that filled a 350px square only ~220px high; the shorter frame shows the
-            same photo at the same size and lifts the chips and price into the first screen. */}
-        <div className="relative aspect-[4/3] w-full max-lg:order-1 lg:hidden">
+            same photo at the same size and lifts the chips and price into the first screen.
+            data-zoom-hero (here and on the desktop box): where a tapped card photo lands (the Zoom, src/lib/zoom-nav.ts). */}
+        <div data-zoom-hero="" className="relative aspect-[4/3] w-full max-lg:order-1 lg:hidden">
           <div
             className="pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
@@ -380,7 +381,7 @@ export function PilotProductDetail({
           <MobileVariantGallery slides={badgedSlides} selectedId={selectedVariantId ?? "default"} onSelect={(id) => setSelectedVariantId(id === "default" ? null : id)} className="h-full" ariaLabel={axisLabel ?? undefined} />
         </div>
 
-        <div className="relative order-1 aspect-[4/5] w-full max-lg:hidden lg:order-2">
+        <div data-zoom-hero="" className="relative order-1 aspect-[4/5] w-full max-lg:hidden lg:order-2">
           {/* An "ask" option is not sold out — the buy slot asks on LINE (bug sweep 12/11: the desktop still kept "สินค้าหมด"). */}
           {!available && !askStock && soldOutBadge}
           {showNoPhoto && selectedVariant ? (
