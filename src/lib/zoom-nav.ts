@@ -52,7 +52,13 @@ function boxOf(r: DOMRect): Box {
 
 /** The rectangle an `object-fit: contain` (centred) image actually paints inside its element box. */
 function drawn(img: HTMLImageElement): Box {
-  const b = boxOf(img.getBoundingClientRect());
+  // object-fit draws inside the content box: the compact phone cards pad the <img> itself (card-compact.css, 4px / 16px).
+  const r = img.getBoundingClientRect();
+  const cs = getComputedStyle(img);
+  const px = (k: string) => parseFloat(cs.getPropertyValue(k)) || 0;
+  const l = px("padding-left") + px("border-left-width");
+  const t = px("padding-top") + px("border-top-width");
+  const b: Box = { x: r.left + l, y: r.top + t, w: Math.max(1, r.width - l - px("padding-right") - px("border-right-width")), h: Math.max(1, r.height - t - px("padding-bottom") - px("border-bottom-width")) };
   const nw = img.naturalWidth || b.w;
   const nh = img.naturalHeight || b.h;
   const s = Math.min(b.w / nw, b.h / nh);
