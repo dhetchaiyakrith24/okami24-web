@@ -14,14 +14,15 @@ import { previewOn } from "@/lib/preview";
 
 // Nothing here changes while the page is open.
 const subscribe = () => () => {};
-/** Browsers the engine can run in: Web Animations with their promises, and color-mix() (the dim behind the photo). */
+/** Browsers the engine can run in: same-document View Transitions (the camera runs on the browser's snapshot of the page)
+ *  and Web Animations with their promises. */
 function zoomSupported(): boolean {
   try {
     return (
+      typeof (document as Document & { startViewTransition?: unknown }).startViewTransition === "function" &&
       typeof Element.prototype.animate === "function" &&
       typeof Animation !== "undefined" &&
-      "finished" in Animation.prototype &&
-      CSS.supports("color", "color-mix(in srgb, red 50%, transparent)")
+      "finished" in Animation.prototype
     );
   } catch {
     return false;

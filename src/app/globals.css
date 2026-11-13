@@ -238,13 +238,44 @@ img {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* ก10 "Zoom" (src/lib/zoom-nav.ts, owner ruling 13/11): a tapped card photo flies into the product hero. While it lands,
-   the hero photo underneath stays hidden so the two never show at once; then the lit shelf draws in from the centre under
-   the device as the photo lands (paused while the screen is dark). The shelf is added after hydration in a browser the
-   Zoom runs in (ZoomNav.tsx); on a direct visit it simply draws in once. Motion off = the engine never runs and the shelf sits still. */
-html[data-zoom-landing] [data-zoom-hero] img {
-  opacity: 0 !important;
+/* ก10 "Zoom" (src/lib/zoom-nav.ts, owner rulings 13/11): a camera move into the tapped card, on the browser's View
+   Transitions. The engine drives the list snapshot (root) itself; the photo layer's group follows the same camera (same
+   duration and easing as the engine's ZOOM_MS / EASE — the engine also sets them, this is the first frame's value); the
+   header group stays put. No glow where two snapshots cross (the UA blends them with plus-lighter). */
+html[data-zoom-vt]::view-transition-old(root),
+html[data-zoom-vt]::view-transition-new(root) {
+  animation: none;
+  transform-origin: 0 0;
+  mix-blend-mode: normal;
 }
+html[data-zoom-vt="out"]::view-transition-old(root) {
+  z-index: 1;
+}
+html[data-zoom-vt]::view-transition-group(okami-zoom-photo) {
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.25, 0.9, 0.25, 1);
+}
+html[data-zoom-vt]::view-transition-old(okami-zoom-photo) {
+  animation: none;
+}
+html[data-zoom-vt]::view-transition-new(okami-zoom-photo) {
+  mix-blend-mode: normal;
+  animation: okami-zoom-sharp 140ms ease-out both;
+}
+html[data-zoom-vt]::view-transition-group(okami-zoom-head),
+html[data-zoom-vt]::view-transition-old(okami-zoom-head),
+html[data-zoom-vt]::view-transition-new(okami-zoom-head) {
+  animation: none;
+}
+html[data-zoom-vt]::view-transition-old(okami-zoom-head) {
+  display: none;
+}
+@keyframes okami-zoom-sharp {
+  from { opacity: 0; }
+}
+/* The lit shelf draws in from the centre under the device as the product page shows (paused while the stage covers it).
+   It is added after hydration in a browser the Zoom runs in (ZoomNav.tsx); on a direct visit it simply draws in once.
+   Motion off = the engine never runs and the shelf sits still. */
 html[data-zoom-dark] .okami-zoom-plinth {
   animation-play-state: paused;
 }
