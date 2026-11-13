@@ -26,6 +26,7 @@ import "./home-guides.css";
 import "./category-families.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
+import { ZOOM_BOOT } from "@/lib/zoom-boot";
 // The product page's sticky buy card on wide screens (preview "buyrail", owner 13/11 → default for everyone).
 import "./product-buyrail.css";
 
@@ -120,9 +121,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         {/* Preview links (owner 12/11): ?preview=<word> marks this device; <html data-preview> is set here, before the first
             paint, so a draft shows without a flash of the old look. The server never reads the cookie — pages stay static. */}
-        <script dangerouslySetInnerHTML={{ __html: PREVIEW_BOOT }} />
+        {/* …and the Zoom preview holds a first tap on a card before its engine is there (src/lib/zoom-boot.ts; does
+            nothing without the zoom preview). */}
+        <script dangerouslySetInnerHTML={{ __html: PREVIEW_BOOT + ZOOM_BOOT }} />
       </head>
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
+        {/* The Zoom (owner ก10, preview only): first in <body> so its engine starts downloading at the start of hydration,
+            not at the end — on a slow phone hydration takes seconds and a first tap came before it. Renders nothing. */}
+        <ZoomNav />
         <LocaleProvider>
           <AgeGate orderingEnabled={open} />
           <Header orderingEnabled={ORDERING_ENABLED} categories={categories} />
@@ -141,8 +147,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ImageSaveGuard />
           {/* Samurai theme (owner 29/10): the short red cut across a product card's photo on click. Renders nothing. */}
           <CardCut />
-          {/* The Zoom (owner ก10): a tapped card zooms into the product page (everyone; the engine loads when the browser is idle). Renders nothing. */}
-          <ZoomNav />
           {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
           <PreviewPill />
         </LocaleProvider>
