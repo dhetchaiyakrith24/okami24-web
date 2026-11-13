@@ -42,6 +42,7 @@ import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { useZoomOn } from "@/components/visual/ZoomNav";
 import { BuyRail } from "@/components/product/BuyRail";
+import type { PhotoBox } from "@/lib/option-photo-box";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -85,6 +86,7 @@ export function ProductHero({
   similarSlugs,
   imageDisplayInfo,
   imageDisplayMap,
+  optionPhotoBoxes,
   orderingEnabled = true,
   copyTh: copyThAll,
   brandSlug,
@@ -121,6 +123,8 @@ export function ProductHero({
    *  the card when a specific entry is missing (e.g. `getImageDisplayInfo` couldn't read the file).
    *  See `src/lib/media-quality.ts` and `ProductMedia`'s doc comment. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
+  /** Where each colour's device sits in its photo (src/lib/option-photo-box.ts) — the desktop colour tiles' fit. */
+  optionPhotoBoxes?: Record<string, PhotoBox>;
 }) {
   // Live warehouse stock (Shipnity, owner 28/10): the built page first, then the options re-labelled from /api/stock.
   const { product, counts: liveCounts } = useLiveLegacyProduct(builtProduct);
@@ -443,6 +447,7 @@ export function ProductHero({
               counts={liveCounts.o}
               countLine={countLine}
               bestIds={bestIds}
+              photoBoxes={optionPhotoBoxes}
               className="max-lg:order-4"
             />
           )}

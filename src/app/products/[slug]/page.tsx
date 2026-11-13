@@ -111,6 +111,7 @@ import { HashLinksKeepHistory } from "@/components/product/HashLinksKeepHistory"
 import { NO_GENUINE_CLAIM_PATHS } from "@/lib/genuine-claim";
 import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 import { LOOKALIKES } from "@/data/similar-models";
+import { photoBoxesFor } from "@/lib/option-photo-box";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -373,6 +374,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   // `legacyProductImageSrcs`'s own doc comment for the bug this fixes.
   const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product), legacyOwnFloorSrcs(product));
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
+  // Where each colour's device sits in its photo — the desktop colour tiles fill the tile with it (src/lib/option-photo-box.ts).
+  const optionPhotoBoxes = photoBoxesFor((product.colorVariants ?? []).map((v) => v.image?.src));
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
   // Every option sold out as rendered (owner's list, no SKU, the live warehouse answer over the build's read) — drives the
@@ -422,7 +425,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       {productFaqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productFaqJsonLd) }} />}
       <HashLinksKeepHistory />
       <Breadcrumbs trail={localisedCategoryCrumb(legacyTrail, product.categoryId)} />
-      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
+      <ProductHero product={liveProduct} sellingPrice={legacySellingPrice} similarSlugs={similar.map((item) => item.slug)} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} optionPhotoBoxes={optionPhotoBoxes} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(product.slug)} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} hasBrandPage={Boolean(brand)} fitsDevices={getCompatibleDevices(product.slug)} />
       <SimilarInStock slug={product.slug} items={similar} />
       {editorial ? (
         <>
