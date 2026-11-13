@@ -65,6 +65,8 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       href={`/products/${product.slug}`}
       data-card-cut=""
       data-card-slug={product.slug}
+      // The Zoom (src/lib/zoom-nav.ts) aims at this page layout's photo spot, which sits lower than ProductHero's.
+      data-zoom-pilot=""
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-all duration-300 hover:-translate-y-1 hover:border-foreground-dim"
     >
       <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6 max-lg:p-3" data-card-photo="">
