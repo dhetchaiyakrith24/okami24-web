@@ -426,9 +426,12 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   busy = true;
   const root = document.documentElement;
   const header = siteHeader();
-  // The list back at the visitor's place before anything is measured (the browser's own restore can come a beat later),
-  // and its cards made cheap to snapshot (this list was just rendered again).
-  if (Math.abs(window.scrollY - info.y) > 1) window.scrollTo({ top: info.y, left: 0, behavior: "instant" });
+  // The list back at the visitor's place before anything is measured, and its cards made cheap to snapshot (this list was
+  // just rendered again). The browser's own scroll restore comes after this listener and moved a deep list 12–15 px
+  // mid-pull-back (Coil-1, 13/11): off for this one Back (the current entry's mode), on again when the zoom-out ends.
+  const y = info.y;
+  history.scrollRestoration = "manual";
+  if (Math.abs(window.scrollY - y) > 1) window.scrollTo({ top: y, left: 0, behavior: "instant" });
   ease();
   const p = drawn(img);
   const cardBox = boxOf(img.getBoundingClientRect());
@@ -465,12 +468,14 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
     ghost?.remove();
     img.style.viewTransitionName = "";
     if (header) header.style.viewTransitionName = "";
+    history.scrollRestoration = "auto";
     busy = false;
   };
   let vt: Transition;
   try {
     vt = startVT(() => {
       unzoom();
+      if (Math.abs(window.scrollY - y) > 1) window.scrollTo({ top: y, left: 0, behavior: "instant" });
       ghost?.remove();
       if (ghost) img.style.viewTransitionName = PHOTO;
     });
