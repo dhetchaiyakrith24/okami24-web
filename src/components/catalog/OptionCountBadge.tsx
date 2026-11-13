@@ -1,6 +1,5 @@
 "use client";
 
-import type { Product } from "@/types/catalog";
 import { Badge } from "@/components/ui/Badge";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
@@ -18,7 +17,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  *
  * Shown only from 2 options up — "1 flavour" is noise, not information.
  */
-export function OptionCountBadge({ product }: { product: Product }) {
+export function OptionCountBadge({ product }: { product: { colorVariants?: readonly unknown[]; flavorVariants?: readonly unknown[] } }) {
   const { locale, dict } = useLocale();
   const flavors = product.flavorVariants?.length ?? 0;
   const colors = product.colorVariants?.length ?? 0;

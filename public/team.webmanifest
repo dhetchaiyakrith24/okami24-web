@@ -1,0 +1,16 @@
+{
+  "id": "/staff",
+  "name": "OKami24 หลังบ้าน",
+  "short_name": "หลังบ้าน",
+  "start_url": "/staff",
+  "scope": "/staff",
+  "display": "standalone",
+  "lang": "th",
+  "background_color": "#0e0e10",
+  "theme_color": "#0e0e10",
+  "icons": [
+    { "src": "/team-icon-v1-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/team-icon-v1-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/team-icon-v1-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
