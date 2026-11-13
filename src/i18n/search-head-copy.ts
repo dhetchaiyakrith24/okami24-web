@@ -261,6 +261,8 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
  * iqosheet / pod-159 pages keep their generated titles so `<title>`, Product.name and H1 agree.
  */
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
+  // G5 round 14/11 (seo-auditor): "relx 12k" 1,300 a month beside "relx smash go 12k" 3,600; the category word goes so the price fits 60.
+  "relx-smash-go-12k": "RELX SMASH GO 12K (RELX 12K) ของแท้",
   // Round SEO full 07/11 (keyword map SEO_LANDSCAPE §0): marbo 9k 8,100 · มาโบ 9k 6,600 · marbo 10k + มาโบ 10k 5,400 each · m switch 15k 4,400 ·
   // มาโบ 15k 1,600 searches a month. "SALTHUB" leaves these titles so the price still fits 60 characters; the brand page owns it (THAI_STYLE §3 exception 2).
   "m-bar-9k": "พอต M BAR 9K (Marbo 9K / มาโบ 9K) ของแท้",
@@ -346,6 +348,8 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 /** Rows A17 + C1–C16 — product meta descriptions that replace the tagline / shortDescription in
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
+  // G5 round 14/11 (seo-auditor): the meta opened without the model name; same facts as shortDescription (verified rows).
+  "relx-smash-go-12k": "RELX Smash Go 12K (RELX 12K) พอตใช้แล้วทิ้งชาร์จซ้ำได้ สูงสุด 12,000 พัฟ แบต 400mAh คอยล์ MEGA MESH มี 27 รส",
   // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
   // 15,000 = the Kit's verified puffs-per-pod row).
   // G5 round 14/11 (seo-auditor): the meta opens with the searched name like m-bar-10k below; facts unchanged (verified rows).
