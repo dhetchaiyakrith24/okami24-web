@@ -222,6 +222,29 @@ function siteHeader(): HTMLElement | null {
   return document.querySelector<HTMLElement>("body header");
 }
 
+/**
+ * Until the main thread is free: three frames in a row each within ~two refreshes (≤ 34 ms), or `cap` ms. Motion started
+ * while the page is busy stalls mid-way (live 14/11 at 375 px: a 263 ms freeze in the middle of the zoom, right after the
+ * route change; the owner: "กระตุก · ไม่สมูท"). Started on a quiet main thread it runs through. Each move of the Zoom
+ * waits here first, standing still on the frame it starts from, and nothing heavy runs while one is moving.
+ */
+async function quiet(cap: number): Promise<void> {
+  const t0 = performance.now();
+  let last = await raf();
+  for (let calm = 0; calm < 3 && performance.now() - t0 < cap; ) {
+    const t = await raf();
+    calm = t - last <= 34 ? calm + 1 : 0;
+    last = t;
+  }
+}
+/** Animations set up paused on their first frame, then all started together. */
+const hold0 = (anims: Animation[]) => {
+  for (const a of anims) a.pause();
+  return () => {
+    for (const a of anims) a.play();
+  };
+};
+
 /** The photo's group (globals.css: no browser morph, origin 0 0) sits on its new box `to`; this carries it from the old
  *  box `from` (same aspect: one scale) — a transform only, so it runs beside the camera off the main thread. */
 function morph(from: Box, to: Box, timing: KeyframeAnimationOptions): Animation {
@@ -303,9 +326,6 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       cardImg.style.viewTransitionName = "";
       photo.style.viewTransitionName = PHOTO;
       document.body.append(stage);
-      // The route changes now, right after the list's snapshot — the plain link's speed: the page is usually there by
-      // the time the camera lands. No scroll by the router: the zoom puts the product page at its top itself.
-      router.push(href, { scroll: false });
     });
   } catch {
     finish();
@@ -320,12 +340,22 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       const timing = { duration: ZOOM_MS, easing: EASE, fill: "both" } as const;
       // The camera on the list — it then holds, zoomed in on the card, until the product page is there (never a blank
       // screen) — the photo layer riding the same camera, and the product page held back until it is there.
-      moves.push(
+      const camera = [
         root.animate({ transform: ["none", camCss(cam)] }, { ...timing, pseudoElement: "::view-transition-old(root)" }),
         morph(cardBox, shot(cam, cardBox), timing),
-      );
+      ];
+      moves.push(...camera);
       const hold = root.animate({ opacity: [0, 0] }, { duration: WAIT_MS, fill: "both", pseudoElement: "::view-transition-new(root)" });
       moves.push(hold);
+      // The camera moves on a quiet main thread (≤ 120 ms wait) and nothing heavy runs while it moves: the route
+      // changes once it has landed — the product page then renders (the main thread's longest stretch, 150–260 ms at
+      // 1×) while the camera holds still on the photo, where a busy main thread cannot show.
+      const go = hold0(camera);
+      await quiet(120);
+      go();
+      await camera[0].finished;
+      // No scroll by the router: the zoom puts the product page at its top itself.
+      router.push(href, { scroll: false });
 
       // The product page: its route, then its photo box (or, past 0.6 s on its route, none — then it simply shows).
       let found: ReturnType<typeof heroPhoto> = null;
@@ -350,9 +380,8 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
           sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...at, vw: window.innerWidth, pilot }));
         } catch {}
       }
-      // The page shows round the photo while the camera lands (from 60 % of the way in), or at once if it came later.
-      const early = t0 + ZOOM_MS * 0.6 - performance.now();
-      if (early > 0) await new Promise((r) => setTimeout(r, early));
+      // The page shows round the photo once its render has let go of the main thread (≤ 0.4 s), so the fade runs smooth.
+      await quiet(400);
       hold.cancel();
       moves.push(root.animate({ opacity: [0, 1] }, { duration: LIFT_MS, easing: "ease-out", fill: "both", pseudoElement: "::view-transition-new(root)" }));
       listen(true);
@@ -496,6 +525,12 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
         // Sharp product photo first, the card's own picture by the time it is card-sized again.
         moves.push(root.animate({ opacity: [0, 1] }, { duration: ZOOM_MS * 0.7, delay: ZOOM_MS * 0.1, easing: "linear", fill: "both", pseudoElement: `::view-transition-new(${PHOTO})` }));
       }
+      // The list has just been rendered again; its after-work (effects, pictures) would stall the pull-back mid-way
+      // (a 133–149 ms gap at 1×, measured 14/11). It stands on its zoomed first frame until the main thread is quiet
+      // (≤ 300 ms), then pulls back in one go.
+      const go = hold0(moves);
+      await quiet(300);
+      go();
       await vt.finished;
     } catch {}
     done();
@@ -556,6 +591,7 @@ export function attachZoom(router: Router): ZoomEngine {
       aheadPath = location.pathname;
       ahead = 0;
     }
+    if (busy) return void (aheadTimer = window.setTimeout(() => idle(readyAhead), 400));
     if (ahead >= AHEAD || QUIET.test(location.pathname) || lite()) return;
     const h = window.innerHeight;
     for (const card of document.querySelectorAll<HTMLAnchorElement>(CARDS)) {
@@ -581,6 +617,8 @@ export function attachZoom(router: Router): ZoomEngine {
     queued = true;
     idle(() => {
       queued = false;
+      // Never while a zoom runs (its moves must have the main thread to themselves): again after it.
+      if (busy) return void window.setTimeout(queue, 400);
       if (!QUIET.test(location.pathname)) ease();
     });
   };

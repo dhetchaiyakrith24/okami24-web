@@ -57,10 +57,23 @@ const boot = (): Boot | undefined => (window as Window & { __okZoom?: Boot }).__
  * then — a zoom started before that keeps the camera on the card until the page can change. Nothing for anyone else.
  */
 type Router = { push: (href: string, opts?: { scroll?: boolean }) => void; prefetch: (href: string) => void };
+/** Longest a zoom started before hydration waits for the router before the browser changes page itself. */
+const ROUTER_WAIT_MS = 1500;
 let real: Router | null = null;
 const pending: (() => void)[] = [];
 const router: Router = {
-  push: (href, opts) => (real ? real.push(href, opts) : void pending.push(() => real?.push(href, opts))),
+  // Held until hydration hands over the real router — and if that never comes (a hydration error), the browser's own page
+  // change after ROUTER_WAIT_MS, so a tap can never end on the list.
+  push: (href, opts) => {
+    if (real) return real.push(href, opts);
+    const fallback = window.setTimeout(() => {
+      if (!real) location.assign(href);
+    }, ROUTER_WAIT_MS);
+    pending.push(() => {
+      window.clearTimeout(fallback);
+      real?.push(href, opts);
+    });
+  },
   prefetch: (href) => real?.prefetch(href),
 };
 let engine: ZoomEngine | null = null;
