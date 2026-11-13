@@ -104,6 +104,80 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Product-article round 13/11, Graple Freebase: brandless, no maker site — facts = the verified freebase row and its one
+  // option as the warehouse lists it (Max ELQ-2-1, shown "Grape"). No taste, ml, mg or maker named; the ml FAQ says the page
+  // has no figure (the Marbo Freebase pattern). Thai = thai-copy 13/11.
+  "graple-freebase": {
+    th: {
+      lede: "Graple Freebase ใช้นิโคตินแบบ freebase เวลาเลือกขวดนี้จึงควรเริ่มจากเครื่องที่ใช้อยู่ ด้านล่างร้านเล่าวิธีดูไว้ให้ พร้อมทางเลือกถ้าเครื่องของคุณเหมาะกับ salt nic มากกว่า",
+      sections: [
+        {
+          heading: "Graple Freebase ใช้กับเครื่องแบบไหน",
+          paragraphs: [
+            "น้ำยาขวดนี้มีไว้เติมเอง จึงใช้กับเครื่องที่หัวพอตเติมน้ำยาได้ อย่างพอตซิสเต็ม ถ้าเครื่องที่ใช้อยู่เป็นพอตใช้แล้วทิ้งหรือใช้หัวพอตบรรจุสำเร็จ น้ำยามากับตัวเครื่องหรือหัวพอตอยู่แล้ว จึงไม่ต้องซื้อน้ำยาขวดเพิ่ม",
+            "เรื่องต่อมาคือชนิดของนิโคติน เพราะ freebase กับ salt nic เหมาะกับเครื่องคนละแบบ เครื่องของคุณเหมาะกับแบบไหน ลองดูได้จากคู่มือที่มากับเครื่อง หรือหน้าเว็บของผู้ผลิตเครื่องรุ่นนั้น ส่วนความต่างของนิโคตินสองแบบนี้ อ่านต่อได้ที่[salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "ถ้าเครื่องเหมาะกับ salt nic จะเลือกขวดไหนแทน",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) เป็นน้ำยาแบบ salt nic ที่ร้านมีให้เลือก ในนั้นมีสองชื่อที่อยู่ในสายองุ่น คือ Grape Blast กับ Shine Muscat ซึ่งเป็นชื่อพันธุ์องุ่น ส่วนกลิ่นอื่นของขวดนั้น ร้านจัดเป็นสายตามคำในชื่อไว้ให้ที่หน้านั้นแล้ว",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Graple Freebase มีกี่กลิ่น", answer: "หน้านี้มีตัวเลือกเดียวค่ะ คือ Grape ถ้ากำลังหาน้ำยาแบบ freebase กลิ่นอื่น ในหมวดน้ำยามีของ Marbo และ Muro ให้ดูด้วยค่ะ" },
+        { question: "Graple Freebase เติมยังไง", answer: "เติมตามวิธีของหัวพอตที่ใช้อยู่ค่ะ เพราะหัวพอตแต่ละแบบเปิดช่องเติมต่างกัน ขั้นตอนทีละขั้น เติมแค่ไหนถึงพอดี และควรรอนานแค่ไหนก่อนสูบ ร้านเล่าไว้ที่[เติมพอตยังไง](/guides/refilling-a-pod) ค่ะ" },
+        { question: "Graple Freebase มีกี่ ml", answer: "ตอนนี้ร้านยังไม่ได้ลงปริมาณกับความเข้มข้นนิโคตินของขวดนี้ไว้บนหน้าเว็บค่ะ ถ้าอยากทราบตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+      ],
+    },
+    en: {
+      lede: "Graple Freebase uses freebase nicotine, so the place to start is the device you use. Below, how to check, and what to choose instead if your device is better suited to salt nic.",
+      sections: [
+        {
+          heading: "Which devices suit Graple Freebase?",
+          paragraphs: [
+            "This bottle is for refilling, so it goes in a device whose pod you fill yourself, such as a Pod System. If you use a disposable or prefilled pods, the e-liquid already comes with them, so there's no need to buy a bottle.",
+            "The nicotine matters too, since freebase and salt nic suit different kinds of device. Your device's manual or its maker's website is the place to check which one it recommends.",
+          ],
+        },
+        {
+          heading: "What if my device is better suited to salt nic?",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) is a salt nic e-liquid we carry. Two of its names fall in the grape group: Grape Blast, and Shine Muscat, which is a grape variety. Its other flavours are grouped by name on its page.",
+          ],
+        },
+      ],
+      faq: [
+        { question: "How many flavours does Graple Freebase come in?", answer: "There's one option on this page: Grape. If you're after another freebase flavour, our e-liquid range also includes Marbo and Muro." },
+        { question: "How do I refill with Graple Freebase?", answer: "Fill it the way your pod is designed to be filled. Pods open for filling in different ways, so your device's manual is the place to check." },
+        { question: "How many ml is Graple Freebase?", answer: "We haven't listed this bottle's volume or nicotine strength on the site yet. If you'd like either figure before you order, message us on LINE @okm24." },
+      ],
+    },
+    zh: {
+      lede: "Graple Freebase 采用游离碱尼古丁，选购时建议先从手上的设备入手。下面说明怎样确认，以及设备更适合盐尼古丁时可以改选什么。",
+      sections: [
+        {
+          heading: "Graple Freebase 适合哪些设备？",
+          paragraphs: [
+            "这瓶是用来加注的烟油，适合烟弹可自行注油的设备，例如 Pod System。如果使用的是一次性电子烟或预注油烟弹，烟油已随设备附带，无需另购瓶装烟油。",
+            "另外还要看尼古丁类型：游离碱和盐尼古丁适合的设备不同。设备适合哪一种，可以查看随机附带的说明书或设备厂家的官网。",
+          ],
+        },
+        {
+          heading: "设备更适合盐尼古丁时，可以改选什么？",
+          paragraphs: [
+            "[Super Cool](/products/super-cool-saltnic) 是本店的盐尼古丁烟油，其中有两个名称属于葡萄类：Grape Blast 和葡萄品种名 Shine Muscat。它的其他口味已在该页面按名称分好组。",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Graple Freebase 有几种口味？", answer: "本页只有一个选项：Grape。想找其他游离碱口味，本店烟油分类里还有 Marbo 和 Muro 可供选择。" },
+        { question: "Graple Freebase 怎么加注？", answer: "请按所用烟弹的方式加注。不同烟弹的注油口开法不一样，具体可参考设备说明书。" },
+        { question: "Graple Freebase 是多少 ml？", answer: "这瓶的容量和尼古丁浓度目前还没有在网站上标注。下单前需要了解，欢迎通过 LINE @okm24 咨询。" },
+      ],
+    },
+  },
   // Round SEO full 07/11: FAQ only, the page has no article yet.
   "mq-bar-22k": {
     th: {
