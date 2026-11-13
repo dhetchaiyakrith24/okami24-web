@@ -4042,9 +4042,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // E1 eskobarvape.com/product/pod-system/ (device + pod) and E2 eskobarvape.com/product/eskobar ("ESKO BAR 498", the
   // disposable). Source per sentence: _incoming/articles-0211/esko-draft.md. Flavour groups on the pod page only (the kit
   // page links there); the comparison query stays with the guide esko-bar-switch-vs-m-switch. FAQ = PilotProductDetail's.
+  // G5 round 14/11 (owner 13/11: the whole G5 page, pictures and layout): ESKO BAR's own feature posters + box shot
+  // (eskobarvape.com/product/pod-system/, downsized never enlarged) beside the four H3s, and the all-flavours grid.
   "pod-159": {
     th: {
       lede: "Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ของ ESKO BAR ที่ตัวเครื่องกับหัวพอตแยกจากกัน พอน้ำยาหมดก็เปลี่ยนแค่หัว ด้านล่างเป็นข้อมูลจากหน้าเว็บของ ESKO BAR ว่าเครื่องนี้ปรับอะไรได้ และในกล่องมีอะไรบ้าง",
+      optionsGrid: "flavours",
       sections: [
         {
           heading: "Esko Bar Switch 20K ต่างจากพอตใช้แล้วทิ้งยังไง",
@@ -4052,6 +4055,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ESKO BAR ออกแบบให้แบตเตอรี่กับถังน้ำยาแยกจากกัน เวลาน้ำยาหมดหรืออยากเปลี่ยนกลิ่น ก็เปลี่ยนแค่หัวพอต ส่วนตัวเครื่องเก็บไว้ชาร์จแล้วใช้ต่อได้",
             "หัวพอตของรุ่นนี้มีขายแยกที่หน้า [หัวพอต Esko Bar Switch 20K](/products/esko-bar-switch-pod) ถ้ายังลังเลว่าแบบไหนเหมาะกว่า อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-replaceable-pod.webp", alt: "โปสเตอร์ของ ESKO BAR หัวพอต Esko Bar Switch 20K กลิ่น Grape สวมอยู่บนตัวเครื่องสีม่วง", width: 733, height: 900, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "Esko Bar Switch 20K ปรับอะไรได้บ้าง",
@@ -4059,12 +4064,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "เครื่องมีสองโหมดให้เลือก กดปุ่มเดียวก็สลับได้ ทาง ESKO BAR อธิบายว่าโหมด High ให้รสเข้มกว่า ส่วนโหมด Low สูบแล้วนุ่มกว่า",
             "ที่ก้นตัวเครื่องมีปุ่มหมุนปรับลม 3 ระดับ ตั้งแต่ลมแน่นไปจนถึงลมโล่ง เลือกได้ตามแนวการสูบที่ชอบ",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-airflow.webp", alt: "โปสเตอร์ของ ESKO BAR ก้นตัวเครื่องกับปุ่มหมุนปรับลมและช่องชาร์จ USB-C", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "หน้าจอของ Esko Bar Switch 20K บอกอะไร",
           paragraphs: [
             "หน้าจอดิจิทัลบนตัวเครื่องบอกระดับแบตกับโหมดที่กำลังใช้อยู่ ส่วนที่ก้นตัวเครื่องมีวงไฟประดับอยู่ด้วย",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-display.webp", alt: "โปสเตอร์ของ ESKO BAR หน้าจอดิจิทัลแสดงระดับแบตและโหมด", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "ในกล่อง Esko Bar Switch 20K มีอะไรบ้าง",
@@ -4072,6 +4081,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ตามรายการที่ ESKO BAR ลงไว้ ในกล่องมีตัวเครื่อง สายคล้องคอ และหัวพอต อย่างละหนึ่งชิ้น",
             "หัวพอตที่ให้มาเป็นแบบคอยล์คู่ ร้อนพร้อมกันทั้งสองตัว ESKO BAR บอกว่าช่วยให้ได้ไอมากขึ้น และรสชาติออกมาคงที่",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-box.webp", alt: "กล่อง Esko Bar Switch 20K จาก ESKO BAR พิมพ์แบต 850mAh ชาร์จ Type-C และขนาดตัวเครื่อง", width: 770, height: 1200, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
       ],
       faq: [
@@ -4087,6 +4098,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     en: {
       lede: "The Esko Bar Switch 20K is ESKO BAR's switch-style device: the body and the pod are separate, so when the e-liquid runs out you change only the pod. Below is a summary from ESKO BAR's own page of what you can adjust and what comes in the box.",
+      optionsGrid: "flavours",
       sections: [
         {
           heading: "How is the Esko Bar Switch 20K different from a disposable?",
@@ -4094,6 +4106,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ESKO BAR keeps the battery and the e-liquid tank separate. When the e-liquid runs out or you want another flavour, you change only the pod and keep the device to recharge and use again.",
             "Its pods are sold separately on the [Esko Bar Switch 20K pod](/products/esko-bar-switch-pod) page.",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-replaceable-pod.webp", alt: "ESKO BAR's poster — the Esko Bar Switch 20K Grape pod on the purple device", width: 733, height: 900, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "What can you adjust on the Esko Bar Switch 20K?",
@@ -4101,12 +4115,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "One button switches between High and Low mode. ESKO BAR describes High as the bolder flavour and Low as the smoother draw.",
             "A dial at the base turns the airflow through three settings, from a tight draw to a wide-open one, to suit how you like to vape.",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-airflow.webp", alt: "ESKO BAR's poster — the base with the airflow dial and the USB-C port", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "What does the Esko Bar Switch 20K screen show?",
           paragraphs: [
             "The digital screen shows the battery level and the mode in use, and an ambient light ring circles the base.",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-display.webp", alt: "ESKO BAR's poster — the digital screen showing battery level and mode", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "What comes in the Esko Bar Switch 20K box?",
@@ -4114,6 +4132,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "According to ESKO BAR's packing list, the box holds one device, one lanyard and one pod.",
             "The pod in the box has two coils that heat at once, which ESKO BAR says gives more vapour and a steady flavour.",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-box.webp", alt: "ESKO BAR's Esko Bar Switch 20K box, printed 850mAh battery, Type-C charging and the device size", width: 770, height: 1200, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
       ],
       faq: [
@@ -4129,6 +4149,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
     zh: {
       lede: "Esko Bar Switch 20K 是 ESKO BAR 的换弹式主机，主机和烟弹分开，烟油用完只需换烟弹。下面根据 ESKO BAR 自己的网页，介绍这款主机可以调节什么、盒内有什么。",
+      optionsGrid: "flavours",
       sections: [
         {
           heading: "Esko Bar Switch 20K 和一次性电子烟有什么不同？",
@@ -4136,6 +4157,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ESKO BAR 把电池和烟油仓分开设计。烟油用完或想换口味时，只换烟弹，主机留着充电继续用。",
             "这款主机的烟弹另有单独出售，详见 [Esko Bar Switch 20K 烟弹](/products/esko-bar-switch-pod) 页面。",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-replaceable-pod.webp", alt: "ESKO BAR 海报：Grape 口味的 Esko Bar Switch 20K 烟弹装在紫色主机上", width: 733, height: 900, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "Esko Bar Switch 20K 可以调节什么？",
@@ -4143,12 +4166,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "一个按键即可在 High 和 Low 模式之间切换。ESKO BAR 说明 High 口味更浓，Low 抽起来更柔顺。",
             "机身底部有旋钮，可调三档进气，从紧到松，按自己的抽吸习惯选择。",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-airflow.webp", alt: "ESKO BAR 海报：主机底部的进气旋钮与 USB-C 充电口", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "Esko Bar Switch 20K 的屏幕显示什么？",
           paragraphs: [
             "主机的数字屏幕会显示电量和当前模式，底部还有一圈氛围灯。",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-display.webp", alt: "ESKO BAR 海报：显示电量与模式的数字屏幕", width: 900, height: 526, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
         {
           heading: "Esko Bar Switch 20K 盒内有什么？",
@@ -4156,6 +4183,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "根据 ESKO BAR 列出的包装清单，盒内有主机、挂绳和烟弹各一件。",
             "盒内附带的烟弹采用双线圈同时加热，ESKO BAR 表示这样烟雾更多，口味更稳定。",
           ],
+          imageLayout: "beside",
+          image: { src: "/assets/products/pod-159/story-box.webp", alt: "ESKO BAR 的 Esko Bar Switch 20K 包装盒，印有 850mAh 电池、Type-C 充电与机身尺寸", width: 770, height: 1200, sourceName: "ESKO BAR", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
         },
       ],
       faq: [
