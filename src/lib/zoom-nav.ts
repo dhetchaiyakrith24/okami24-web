@@ -133,6 +133,9 @@ function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect
   const wall = document.createElement("div");
   wall.setAttribute("aria-hidden", "true");
   wall.setAttribute("inert", "");
+  // Drawn lighter than the page (globals.css [data-zoom-wall]): no card gradients or shadows, which cost the GPU ~150 ms
+  // to paint into a new layer and froze the first frames of the zoom (checker 13/11).
+  wall.setAttribute("data-zoom-wall", "");
   Object.assign(wall.style, {
     position: "fixed", inset: "0", overflow: "hidden", zIndex: "30", pointerEvents: "none",
     background: "var(--surface-0, #100e0d)", willChange: "transform",
@@ -205,7 +208,9 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   // transform or an opacity, which the browser animates off the main thread: it keeps moving while the page is busy below.
   const timing = { duration: PUSH_MS, easing: "cubic-bezier(0.45, 0, 0.2, 1)", fill: "forwards" } as const;
   const pushing = [
-    flier.animate([{ transform: "none" }, { transform: toward(start, mid) }], timing),
+    // The photo leaves at once (a quick start, then it eases in): with a slow start it barely moved in the first
+    // ~150 ms and the tap read as a pause (checker 13/11).
+    flier.animate([{ transform: "none" }, { transform: toward(start, mid) }], { ...timing, easing: "cubic-bezier(0.25, 0.5, 0.25, 1)" }),
     // The dim comes late (ease-in): the wall is seen rushing in first, then sinks behind the product.
     veil.animate([{ opacity: 0 }, { opacity: VEIL_MAX }], { ...timing, easing: "cubic-bezier(0.6, 0, 0.9, 0.6)" }),
   ];
@@ -216,18 +221,17 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
     const b = card.getBoundingClientRect();
     if (b.bottom < -200 || b.top > window.innerHeight + 200 || b.right < -200 || b.left > window.innerWidth + 200) offscreen.set(i, b);
   });
-  const camera = (el: HTMLElement, origin: string) => {
+  // The camera starts from rest whenever the copy is ready and arrives with the photo at the end of the push-in.
+  const camera = (el: HTMLElement, origin: string, left: number) => {
     el.style.transformOrigin = origin;
-    return el.animate([{ transform: "none" }, { transform: shot(scale) }], timing);
+    return el.animate([{ transform: "none" }, { transform: shot(scale) }], { ...timing, duration: Math.max(240, left) });
   };
-  const moving = main && mainBox ? camera(main, `${cx - mainBox.left}px ${cy - mainBox.top}px`) : null;
   let wall: HTMLElement | null = null;
 
   const finish = () => {
     window.removeEventListener("popstate", onBack);
     delete root.dataset.zoomLanding;
     delete root.dataset.zoomDark;
-    moving?.cancel();
     if (main) Object.assign(main.style, { transformOrigin: "", visibility: "" });
     cardImg.style.opacity = "";
     wall?.remove();
@@ -239,23 +243,21 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
   void (async () => {
     try {
       const t0 = performance.now();
-      // Once the motion is on screen: lay a still copy of the wall over the page (same motion, same clock) and change
-      // route under it. Copying a long page can hold the main thread for a moment; the motion above does not need it.
+      // Once the photo is moving: lay a still copy of the wall over the page and push the camera in on it (same clock
+      // as the photo) and change route under it. The real page itself is never moved: moving it made the GPU paint
+      // the whole page into a new layer at the tap, and nothing on screen moved for ~0.25 s (checker 13/11).
       await raf();
-      if (main && mainBox && moving) {
-        await moving.ready;
+      if (main && mainBox) {
+        await pushing[0].ready;
         wall = stillWall(main, mainBox, offscreen);
         document.body.append(wall);
-        const copy = camera(wall, `${cx}px ${cy}px`);
-        copy.startTime = moving.startTime;
-        pushing.push(copy);
+        const copy = camera(wall, `${cx}px ${cy}px`, PUSH_MS - (performance.now() - t0));
         // Let the copy be painted and moving on screen before the next page's render takes the main thread (on desktop
         // the copy otherwise stood still for ~0.3 s while the pod flew on — designer 13/11).
         await copy.ready;
         await raf();
         await raf();
-        // The real page is now under the copy: stop moving it and stop painting it while the next page renders there.
-        moving.cancel();
+        // The real page is now under the copy: stop painting it while the next page renders there.
         main.style.visibility = "hidden";
       }
       // The hero photo of the page we are going to stays hidden until the flying copy is on it (globals.css "okami-zoom") —
