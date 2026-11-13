@@ -6,13 +6,14 @@
  *   cards slide off-screen with the camera on the way in and glide back into place on the way out ("ย้อนเวลา").
  *
  * How (the browser's View Transitions, same-document): on the tap the browser keeps a snapshot of the list as it stands — a
- * GPU texture, no page copy and no repaint (a copied or promoted page held every frame for 0.2–0.4 s, measured 13/11) — and
- * the camera is one transform on that snapshot: the tapped card's photo grows onto the spot where the product page shows
- * its photo, everything else around it moves out of the screen in proportion, like a lens pushing in. The photo itself is
- * a separate sharp layer locked to the same camera (its morph is the same straight line), so it never blurs or stretches.
- * Under the snapshot the route changes at once; at the end of the push the photo stands where the product page has its
- * photo and the page shows round it. Back (popstate to that list) plays the same camera in reverse on the list as it is
- * restored, at the place and scroll the visitor left.
+ * GPU texture, no page copy (a copied or promoted page held every frame for 0.2–0.4 s, measured 13/11; the snapshot frame
+ * costs ~10 ms once the off-screen parts skip painting, see trim()) — and the camera is one transform on that snapshot:
+ * the tapped card's photo grows onto the spot where the product page shows its photo, everything else around it moves out
+ * of the screen in proportion, like a lens pushing in. The photo itself is a separate sharp layer locked to the same
+ * camera (the same straight line, also a transform), so it never blurs or stretches. Both run off the main thread; the
+ * route changes under the snapshot one frame after the camera starts; at the end of the push the photo stands where the
+ * product page has its photo and the page shows round it. Back to that list plays the same camera in reverse on the
+ * list as it is restored, at the place and scroll the visitor left, starting on the product photo.
  * The site header keeps its own snapshot and stays put, like the frame round the reel's screen.
  * Browsers without View Transitions, reduced motion, Save-Data, modified clicks … = the plain link (ZoomNav.tsx, attachZoom).
  * Fetched after the page has loaded (ZoomNav.tsx imports this file when the browser is idle), never on the server.
@@ -156,13 +157,85 @@ function prepare(cardImg: HTMLImageElement, pilot: boolean): HTMLImageElement | 
   return sharp;
 }
 
+/**
+ * The snapshot paints the whole page, not only the screen: on /products the off-screen cards made the tap frame ~100 ms
+ * (1×) / ~720 ms (4× CPU); with them skipped it is ~30 / ~220 ms (measured 13/11). So, from the moment the finger lands
+ * until the snapshot is taken, every part of the page well off screen skips painting (content-visibility: hidden) at its
+ * own measured size — nothing on screen moves. Undone on the snapshot, a scroll, a cancelled touch, or after a second.
+ */
+let untrim: (() => void) | null = null;
+let trimTimer = 0;
+function trim(): void {
+  if (untrim) return;
+  const h = window.innerHeight;
+  const parts = [...document.querySelectorAll<HTMLElement>("main section, main article, main a[data-card-cut], body > footer, footer")];
+  const boxes = parts.map((el) => el.getBoundingClientRect()); // all reads before any write: one layout
+  const done: [HTMLElement, string, string][] = [];
+  parts.forEach((el, i) => {
+    const b = boxes[i];
+    if (b.height === 0 || (b.bottom > -120 && b.top < h + 120)) return;
+    done.push([el, el.style.contentVisibility, el.style.containIntrinsicSize]);
+    el.style.containIntrinsicSize = `${b.width}px ${b.height}px`;
+    el.style.contentVisibility = "hidden";
+  });
+  untrim = () => {
+    untrim = null;
+    window.clearTimeout(trimTimer);
+    window.removeEventListener("scroll", restore, true);
+    for (const [el, cv, cis] of done) {
+      el.style.contentVisibility = cv;
+      el.style.containIntrinsicSize = cis;
+    }
+  };
+  window.addEventListener("scroll", restore, { capture: true, passive: true });
+  trimTimer = window.setTimeout(restore, 1000);
+}
+function restore(): void {
+  untrim?.();
+}
+
+/** A picture layer in `cardImg`'s box carried by `cam` (its padding scaled too), drawing `src` the way the card
+ *  draws its picture, with `sharp` (a bigger copy) laid over it once that has loaded. */
+function photoLayer(cardImg: HTMLImageElement, cam: Cam, src: string, sharp: HTMLImageElement | null): HTMLElement {
+  const cs = getComputedStyle(cardImg);
+  const px = (k: string) => (parseFloat(cs.getPropertyValue(k)) || 0) * cam.s;
+  const photo = document.createElement("div");
+  Object.assign(photo.style, { position: "absolute", boxSizing: "border-box", transformOrigin: "0 0", padding: `${px("padding-top")}px ${px("padding-right")}px ${px("padding-bottom")}px ${px("padding-left")}px` } satisfies Partial<CSSStyleDeclaration>);
+  place(photo, shot(cam, boxOf(cardImg.getBoundingClientRect())));
+  const inner = document.createElement("div");
+  Object.assign(inner.style, { position: "relative", width: "100%", height: "100%" });
+  const base = new Image();
+  base.alt = "";
+  base.src = src;
+  for (const img of sharp ? [base, sharp] : [base]) {
+    Object.assign(img.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: cs.objectFit || "contain", objectPosition: cs.objectPosition });
+    inner.append(img);
+  }
+  if (sharp && !sharp.complete) {
+    sharp.style.opacity = "0";
+    sharp.addEventListener("load", () => sharp.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 120, fill: "forwards" }), { once: true });
+  }
+  photo.append(inner);
+  return photo;
+}
+
 function siteHeader(): HTMLElement | null {
   return document.querySelector<HTMLElement>("body header");
 }
 
-/** Every animation the transition runs on one of its pseudo-elements. */
-function vtAnimation(pseudo: string): Animation[] {
-  return document.getAnimations().filter((a) => (a.effect as KeyframeEffect | null)?.pseudoElement === pseudo);
+/** Until the camera is really moving on screen: its animations have their start time, and one more frame is out. */
+async function started(moves: Animation[]): Promise<void> {
+  await Promise.race([Promise.all(moves.map((a) => a.ready)), new Promise((r) => setTimeout(r, 250))]);
+  await raf();
+}
+
+/** The photo's group (globals.css: no browser morph, origin 0 0) sits on its new box `to`; this carries it from the old
+ *  box `from` (same aspect: one scale) — a transform only, so it runs beside the camera off the main thread. */
+function morph(from: Box, to: Box, timing: KeyframeAnimationOptions): Animation {
+  return document.documentElement.animate(
+    { transform: [`translate(${from.x}px, ${from.y}px) scale(${from.w / to.w})`, `translate(${to.x}px, ${to.y}px)`] },
+    { ...timing, pseudoElement: `::view-transition-group(${PHOTO})` },
+  );
 }
 
 type BackInfo = { list: string; product: string; slug: string; vw: number; y: number; pilot: boolean };
@@ -185,29 +258,14 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   // It is the new state of the transition; the product page renders under it and shows through when it is there.
   const stage = document.createElement("div");
   stage.setAttribute("aria-hidden", "true");
-  Object.assign(stage.style, { position: "fixed", inset: "0", zIndex: "40", pointerEvents: "none", background: "var(--surface-0, #100e0d)" } satisfies Partial<CSSStyleDeclaration>);
-  // The photo layer is the card's <img> box carried by the camera (padding and all), so the morph from the card picture
-  // is one uniform scale — the same line the camera draws — and the picture inside lands exactly on `to`.
-  const cs = getComputedStyle(cardImg);
-  const px = (k: string) => (parseFloat(cs.getPropertyValue(k)) || 0) * cam.s;
-  const photo = document.createElement("div");
-  Object.assign(photo.style, { position: "absolute", boxSizing: "border-box", transformOrigin: "0 0", padding: `${px("padding-top")}px ${px("padding-right")}px ${px("padding-bottom")}px ${px("padding-left")}px` } satisfies Partial<CSSStyleDeclaration>);
-  place(photo, shot(cam, boxOf(cardImg.getBoundingClientRect())));
-  const inner = document.createElement("div");
-  Object.assign(inner.style, { position: "relative", width: "100%", height: "100%" });
-  const base = new Image();
-  base.alt = "";
-  base.src = cardImg.currentSrc || cardImg.src;
-  const sharp = prepare(cardImg, pilot);
-  for (const img of sharp ? [base, sharp] : [base]) {
-    Object.assign(img.style, { position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: cs.objectFit || "contain", objectPosition: cs.objectPosition });
-    inner.append(img);
-  }
-  if (sharp && !sharp.complete) {
-    sharp.style.opacity = "0";
-    sharp.addEventListener("load", () => sharp.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 120, fill: "forwards" }), { once: true });
-  }
-  photo.append(inner);
+  Object.assign(stage.style, { position: "fixed", inset: "0", zIndex: "40", pointerEvents: "none" } satisfies Partial<CSSStyleDeclaration>);
+  const ground = document.createElement("div");
+  Object.assign(ground.style, { position: "absolute", inset: "0", background: "var(--surface-0, #100e0d)" });
+  stage.append(ground);
+  // The photo layer: the card's <img> box carried by the camera, so the morph from the card picture is one uniform
+  // scale — the same line the camera draws — and the picture inside lands exactly on `to`.
+  const cardBox = boxOf(cardImg.getBoundingClientRect());
+  const photo = photoLayer(cardImg, cam, cardImg.currentSrc || cardImg.src, prepare(cardImg, pilot));
   stage.append(photo);
 
   let left = false;
@@ -215,16 +273,20 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   window.addEventListener("popstate", onBack);
   // Scrolling, a key or a touch once the product page is there hands it over at once (nothing left standing on top).
   let handed = false;
-  const hand = () => (handed = true);
+  let onHand = () => {};
+  const handing = new Promise<void>((r) => (onHand = r));
+  const hand = () => {
+    handed = true;
+    onHand();
+  };
   const handOpts = { capture: true, passive: true } as const;
   const listen = (on: boolean) => {
-    for (const t of ["wheel", "touchstart", "keydown"] as const) (on ? window.addEventListener : window.removeEventListener)(t, hand, handOpts);
+    for (const t of ["wheel", "touchstart", "pointerdown", "keydown"] as const) (on ? window.addEventListener : window.removeEventListener)(t, hand, handOpts);
   };
 
   const finish = () => {
     window.removeEventListener("popstate", onBack);
     listen(false);
-    delete root.dataset.zoomVt;
     delete root.dataset.zoomDark;
     if (header) header.style.viewTransitionName = "";
     cardImg.style.viewTransitionName = "";
@@ -235,18 +297,20 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
 
   // Names for the two things that are not the camera: the header (stays put) and the photo (old: the card's picture,
   // new: the sharp layer on the stage).
-  root.dataset.zoomVt = "in";
   if (header) header.style.viewTransitionName = HEAD;
   cardImg.style.viewTransitionName = PHOTO;
+  trim();
+  window.clearTimeout(trimTimer);
+  const moves: Animation[] = [];
   let vt: Transition;
   try {
     vt = startVT(() => {
       cardImg.style.viewTransitionName = "";
       photo.style.viewTransitionName = PHOTO;
-      root.dataset.zoomDark = "1";
       document.body.append(stage);
     });
   } catch {
+    restore();
     finish();
     router.push(href);
     return;
@@ -258,14 +322,24 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       const timing = { duration: ZOOM_MS, easing: EASE, fill: "both" } as const;
       // The camera on the list, and the stage showing in under it over the last third (the cards that are still on
       // screen at the edges sink into the page colour as they leave).
-      root.animate({ transform: ["none", camCss(cam)] }, { ...timing, pseudoElement: "::view-transition-old(root)" });
-      root.animate({ opacity: [0, 0, 1], offset: [0, 0.62, 1] }, { ...timing, easing: "linear", pseudoElement: "::view-transition-new(root)" });
-      // The photo layer rides the same camera (globals.css sets its group's duration and easing to these).
-      for (const a of vtAnimation(`::view-transition-group(${PHOTO})`)) a.effect?.updateTiming({ duration: ZOOM_MS, easing: EASE });
-      // The route changes now, under the snapshot (the motion above runs off the main thread; the page render does not hold it).
-      // No scroll by the router: the zoom puts the product page at its top itself, under the stage.
+      moves.push(
+        root.animate({ transform: ["none", camCss(cam)] }, { ...timing, pseudoElement: "::view-transition-old(root)" }),
+        root.animate({ opacity: [0, 0, 1], offset: [0, 0.62, 1] }, { ...timing, easing: "linear", pseudoElement: "::view-transition-new(root)" }),
+      );
+      // The photo layer rides the same camera: the card's box to the same box carried by the camera.
+      moves.push(morph(cardBox, shot(cam, cardBox), timing));
+      // Everything heavy waits one frame, until the camera is moving on screen (it then runs off the main thread): the
+      // off-screen parts painting again, the product page's lit shelf held until the page shows, and the route change —
+      // done at once, the next page's render made the first frame of the motion ~80 ms late (trace 13/11). "Moving" =
+      // the camera has its start time (Animation.ready; at 4× CPU two frames were not enough) and one frame is out.
+      await started(moves);
+      restore();
+      root.dataset.zoomDark = "1";
+      // The route changes now, under the snapshot. No scroll by the router: the zoom puts the product page at its top
+      // itself, under the stage.
       router.push(href, { scroll: false });
       await vt.finished;
+      for (const a of moves) a.cancel();
       if (header) header.style.viewTransitionName = "";
       photo.style.viewTransitionName = "";
       listen(true);
@@ -283,6 +357,11 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
         await raf();
       }
       let hit = found;
+      // Whatever happens next, nothing of the zoom outlives 2.5 s on the product page.
+      const guard = window.setTimeout(hand, 2500);
+      // The page shows round the photo at once (the photo stays on top, on the page's own photo, until that has loaded).
+      delete root.dataset.zoomDark;
+      const showing = handed ? null : ground.animate([{ opacity: 1 }, { opacity: 0 }], { duration: LIFT_MS, easing: "ease-out", fill: "forwards" }).finished;
       const target = () => fit(aspect, drawn((hit = heroPhoto() ?? hit).img));
       // The product photo still for two frames (at most ~8): its place is final.
       let at = target();
@@ -300,17 +379,19 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
         const pb = boxOf(photo.getBoundingClientRect());
         const k = at.w / to.w;
         const end: Box = { x: at.x + (pb.x - to.x) * k, y: at.y + (pb.y - to.y) * k, w: pb.w * k, h: pb.h * k };
-        await photo.animate([{ transform: "none" }, { transform: toward(pb, end) }], { duration: 160, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", fill: "forwards" }).finished;
+        await Promise.race([photo.animate([{ transform: "none" }, { transform: toward(pb, end) }], { duration: 160, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", fill: "forwards" }).finished, handing]);
       }
-      // The page's own photo ready (or 0.5 s), then the page shows round it.
+      // The page's own photo loaded (≤ 0.4 s more), then the photo layer goes.
       const real = hit.img;
-      if (!real.complete && !handed) await Promise.race([new Promise((r) => real.addEventListener("load", r, { once: true })), new Promise((r) => setTimeout(r, 500))]);
-      delete root.dataset.zoomDark;
-      if (!handed) await stage.animate([{ opacity: 1 }, { opacity: 0 }], { duration: LIFT_MS, easing: "ease-out", fill: "forwards" }).finished;
+      if (!real.complete && !handed) await Promise.race([new Promise((r) => real.addEventListener("load", r, { once: true })), new Promise((r) => setTimeout(r, 400)), handing]);
+      if (!handed) await Promise.race([showing, handing]);
+      if (!handed) await Promise.race([photo.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-out", fill: "forwards" }).finished, handing]);
+      window.clearTimeout(guard);
       finish();
     } catch {
       // Back pressed, no product page, anything unexpected: never leave the visitor under the stage.
       vt.skipTransition();
+      for (const a of moves) a.cancel();
       if (!left && location.pathname === path) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       await stage.animate([{ opacity: getComputedStyle(stage).opacity }, { opacity: 0 }], { duration: 200, fill: "forwards" }).finished.catch(() => {});
       finish();
@@ -318,12 +399,17 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   })();
 }
 
+/** Back to a list: the product photo as it stood, measured before the router swaps the page (capture-phase popstate). */
+type Leaving = { src: string; box: Box; fit: string; position: string } | null;
+
 /**
- * Back to the list a zoom started from: the camera starts where the zoom-in ended (the card's photo on the product photo)
- * and pulls back to the list exactly as the visitor left it — the other cards glide back into place round the card.
- * Returns false when it does not apply (the plain Back then happens as before).
+ * Back to the list a zoom started from: the camera starts where the zoom-in ended — the card's photo standing on the
+ * product photo — and pulls back to the list exactly as the visitor left it; the other cards glide back into place round
+ * the card ("ย้อนเวลา"). Runs after the router has put the list back (it does so inside its own popstate handler): the
+ * list's snapshot is taken as it stands, then shown through the reversed camera. Returns false when it does not apply
+ * (the plain Back then happens as before).
  */
-function zoomOut(e: PopStateEvent): boolean {
+function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   if (busy || lite()) return false;
   // A swipe-back the browser animated itself (iOS edge swipe): no second animation on top of it.
   if ((e as PopStateEvent & { hasUAVisualTransition?: boolean }).hasUAVisualTransition) return false;
@@ -332,41 +418,51 @@ function zoomOut(e: PopStateEvent): boolean {
     info = JSON.parse(sessionStorage.getItem(BACK_KEY) ?? "null") as BackInfo | null;
   } catch {}
   if (!info || info.vw !== window.innerWidth || location.pathname + location.search !== info.list) return false;
-  // Still showing the product page the zoom went to (the router has not swapped it yet) — its photo is where the camera starts.
-  const hero = heroPhoto();
-  if (!hero) return false;
-  const heroBox = drawn(hero.img);
-  const onScreen = heroBox.y + heroBox.h > 40 && heroBox.y < window.innerHeight - 40;
+  const img = document.querySelector<HTMLImageElement>(`a[data-card-slug="${CSS.escape(info.slug)}"] [data-card-photo] img`);
+  if (!img || !img.complete || img.naturalWidth === 0) return false;
   busy = true;
   const root = document.documentElement;
   const header = siteHeader();
-  const slug = info.slug;
-  const y = info.y;
-  root.dataset.zoomVt = "out";
+  // The list back at the visitor's place before anything is measured (the browser's own restore can come a beat later).
+  if (Math.abs(window.scrollY - info.y) > 1) window.scrollTo({ top: info.y, left: 0, behavior: "instant" });
+  const p = drawn(img);
+  const onScreen = !!leaving && leaving.box.y + leaving.box.h > 40 && leaving.box.y < window.innerHeight - 40;
+  const cam = camera(p, fit(p.w / p.h, onScreen ? leaving!.box : guessHero(info.pilot)));
+  // The product photo, standing where it stood, in the card photo's box carried by the camera (the mirror of the
+  // zoom-in's photo layer): the old side of the photo's morph, so the pull-back starts on the sharp product photo.
+  const ghost = onScreen ? photoLayer(img, cam, leaving!.src, null) : null;
+  if (ghost) {
+    for (const i of ghost.querySelectorAll("img")) Object.assign(i.style, { objectFit: leaving!.fit, objectPosition: leaving!.position });
+    Object.assign(ghost.style, { position: "fixed", zIndex: "40", pointerEvents: "none" });
+    ghost.setAttribute("aria-hidden", "true");
+    ghost.style.viewTransitionName = PHOTO;
+    document.body.append(ghost);
+  }
+  // The frame the snapshot is taken in would show the restored list unzoomed for a frame (seen 13/11): under a cover in
+  // the page colour, that frame is the zoom-in's last one instead — the product photo standing on the page colour.
+  const cover = document.createElement("div");
+  cover.setAttribute("aria-hidden", "true");
+  Object.assign(cover.style, { position: "fixed", inset: "0", zIndex: "40", pointerEvents: "none", background: "var(--surface-0, #100e0d)" } satisfies Partial<CSSStyleDeclaration>);
+  document.body.insertBefore(cover, ghost);
   if (header) header.style.viewTransitionName = HEAD;
-  let cam: Cam | null = null;
+  trim();
+  window.clearTimeout(trimTimer);
+  const moves: Animation[] = [];
   const done = () => {
-    delete root.dataset.zoomVt;
+    for (const a of moves) a.cancel();
+    restore();
+    cover.remove();
+    ghost?.remove();
+    img.style.viewTransitionName = "";
     if (header) header.style.viewTransitionName = "";
     busy = false;
   };
   let vt: Transition;
   try {
-    vt = startVT(async () => {
-      // Wait (briefly — the screen holds the product page meanwhile) for the list to be back at the visitor's place.
-      const t0 = performance.now();
-      let img: HTMLImageElement | null = null;
-      while (performance.now() - t0 < 900) {
-        img = document.querySelector<HTMLImageElement>(`a[data-card-slug="${CSS.escape(slug)}"] [data-card-photo] img`);
-        if (img && location.pathname + location.search === info!.list && !heroPhoto()) {
-          if (Math.abs(window.scrollY - y) > 2) window.scrollTo({ top: y, left: 0, behavior: "instant" });
-          if (Math.abs(window.scrollY - y) <= 2 && img.complete) break;
-        }
-        await raf();
-      }
-      if (!img) return;
-      const p = drawn(img);
-      cam = camera(p, onScreen ? fit(p.w / p.h, heroBox) : fit(p.w / p.h, guessHero(info!.pilot)));
+    vt = startVT(() => {
+      cover.remove();
+      ghost?.remove();
+      if (ghost) img.style.viewTransitionName = PHOTO;
     });
   } catch {
     done();
@@ -375,12 +471,19 @@ function zoomOut(e: PopStateEvent): boolean {
   void (async () => {
     try {
       await vt.ready;
-      if (cam) {
-        const timing = { duration: ZOOM_MS, easing: EASE, fill: "both" } as const;
-        root.animate({ transform: [camCss(cam), "none"] }, { ...timing, pseudoElement: "::view-transition-new(root)" });
-        // The product page dissolves into the zoomed list in the first frames (globals.css keeps it on top).
-        root.animate({ opacity: [1, 0] }, { duration: 120, easing: "ease-out", fill: "both", pseudoElement: "::view-transition-old(root)" });
+      const timing = { duration: ZOOM_MS, easing: EASE, fill: "both" } as const;
+      moves.push(
+        root.animate({ transform: [camCss(cam), "none"] }, { ...timing, pseudoElement: "::view-transition-new(root)" }),
+        // The zoomed list comes in over the cover (the old snapshot, under it) in the first frames.
+        root.animate({ opacity: [0, 1] }, { duration: 100, easing: "ease-out", fill: "both", pseudoElement: "::view-transition-new(root)" }),
+      );
+      if (ghost) {
+        const cardBox = boxOf(img.getBoundingClientRect());
+        moves.push(morph(shot(cam, cardBox), cardBox, timing));
+        // Sharp product photo first, the card's own picture by the time it is card-sized again.
+        moves.push(root.animate({ opacity: [0, 1] }, { duration: ZOOM_MS * 0.7, delay: ZOOM_MS * 0.1, easing: "linear", fill: "both", pseudoElement: `::view-transition-new(${PHOTO})` }));
       }
+      await started(moves);
       await vt.finished;
     } catch {}
     done();
@@ -410,23 +513,50 @@ export function attachZoom(router: Router): () => void {
     router.prefetch(href);
     const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
     if (img) prepare(img, card.hasAttribute("data-zoom-pilot"));
+    if (!busy && e.button === 0 && !lite() && !QUIET.test(location.pathname)) trim();
   };
   // Back/Forward: instant scroll back (the site-wide smooth scrolling turned the browser's restore into a 0.6 s glide
   // down the list), and the zoom-out when it is Back to the list a zoom started from.
   let popTimer = 0;
-  const onPop = (e: PopStateEvent) => {
+  let leaving: Leaving = null;
+  const measure = () => {
+    const hero = heroPhoto();
+    if (!hero) return;
+    const cs = getComputedStyle(hero.img);
+    leaving = { src: hero.img.currentSrc || hero.img.src, box: drawn(hero.img), fit: cs.objectFit || "contain", position: cs.objectPosition };
+  };
+  // Back/Forward: the Navigation API's "navigate" comes before the router swaps the page (popstate comes after, measured
+  // 13/11); without that API the zoom-out runs without the product photo.
+  type Nav = EventTarget & { addEventListener: (t: "navigate", f: (e: Event & { navigationType?: string }) => void) => void };
+  const nav = (window as Window & { navigation?: Nav }).navigation;
+  const onNavigate = (e: Event & { navigationType?: string }) => {
+    if (e.navigationType === "traverse") measure();
+  };
+  const onPopEarly = () => {
     const root = document.documentElement;
     root.style.scrollBehavior = "auto";
     window.clearTimeout(popTimer);
     popTimer = window.setTimeout(() => (root.style.scrollBehavior = ""), 1200);
-    zoomOut(e);
+    measure();
+  };
+  // This file loads after the page is up, so this listener comes after the router's own: the list is back by now.
+  const onPop = (e: PopStateEvent) => {
+    zoomOut(e, leaving);
+    leaving = null;
   };
   document.addEventListener("pointerdown", onDown, { capture: true, passive: true });
+  document.addEventListener("pointercancel", restore, true);
   document.addEventListener("click", onClick, true);
+  nav?.addEventListener("navigate", onNavigate);
+  window.addEventListener("popstate", onPopEarly, true);
   window.addEventListener("popstate", onPop);
   return () => {
     document.removeEventListener("pointerdown", onDown, true);
+    document.removeEventListener("pointercancel", restore, true);
+    restore();
     document.removeEventListener("click", onClick, true);
+    nav?.removeEventListener("navigate", onNavigate as EventListener);
+    window.removeEventListener("popstate", onPopEarly, true);
     window.removeEventListener("popstate", onPop);
     window.clearTimeout(popTimer);
     document.documentElement.style.scrollBehavior = "";

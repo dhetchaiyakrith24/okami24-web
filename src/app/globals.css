@@ -239,35 +239,32 @@ img {
   to { opacity: 1; transform: translateY(0); }
 }
 /* ก10 "Zoom" (src/lib/zoom-nav.ts, owner rulings 13/11): a camera move into the tapped card, on the browser's View
-   Transitions. The engine drives the list snapshot (root) itself; the photo layer's group follows the same camera (same
-   duration and easing as the engine's ZOOM_MS / EASE — the engine also sets them, this is the first frame's value); the
-   header group stays put. No glow where two snapshots cross (the UA blends them with plus-lighter). */
-html[data-zoom-vt]::view-transition-old(root),
-html[data-zoom-vt]::view-transition-new(root) {
+   Transitions (the only ones on the site). The engine drives the page snapshots (root) and the photo layer's group
+   itself, with transforms only — the browser's own group morph animates width/height, which runs on the main thread and
+   fell behind the camera while the product page rendered (13/11); the header stays put. No html attribute switches these on: an attribute on <html> made the
+   snapshot frame restyle the whole page (~60 ms, trace 13/11). No glow where two snapshots cross (no plus-lighter). */
+::view-transition-old(root),
+::view-transition-new(root) {
   animation: none;
   transform-origin: 0 0;
   mix-blend-mode: normal;
 }
-html[data-zoom-vt="out"]::view-transition-old(root) {
-  z-index: 1;
+::view-transition-group(okami-zoom-photo) {
+  animation: none;
+  transform-origin: 0 0;
 }
-html[data-zoom-vt]::view-transition-group(okami-zoom-photo) {
-  animation-duration: 350ms;
-  animation-timing-function: cubic-bezier(0.25, 0.9, 0.25, 1);
-}
-html[data-zoom-vt]::view-transition-old(okami-zoom-photo) {
+::view-transition-old(okami-zoom-photo) {
   animation: none;
 }
-html[data-zoom-vt]::view-transition-new(okami-zoom-photo) {
+::view-transition-new(okami-zoom-photo) {
   mix-blend-mode: normal;
   animation: okami-zoom-sharp 140ms ease-out both;
 }
-html[data-zoom-vt]::view-transition-group(okami-zoom-head),
-html[data-zoom-vt]::view-transition-old(okami-zoom-head),
-html[data-zoom-vt]::view-transition-new(okami-zoom-head) {
+::view-transition-group(okami-zoom-head),
+::view-transition-new(okami-zoom-head) {
   animation: none;
 }
-html[data-zoom-vt]::view-transition-old(okami-zoom-head) {
+::view-transition-old(okami-zoom-head) {
   display: none;
 }
 @keyframes okami-zoom-sharp {
