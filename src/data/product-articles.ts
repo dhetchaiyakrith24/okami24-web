@@ -4717,7 +4717,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "RELX Smash Go 12K ของแท้ เช็คยังไง",
           paragraphs: [
-            "RELX เปิดหน้าเช็คของแท้ไว้ที่ relxnow.com/pages/verify กรอกรหัส 14 หลักที่ข้างกล่อง หรือสแกน QR code บนตัวพอตค้างไว้ราว 3–5 วินาที",
+            "RELX เปิดหน้าเช็คของแท้ไว้ที่ relxnow.com/pages/verify เช็คได้สองทาง คือกรอกรหัส 14 หลักที่ข้างกล่อง หรือสแกน QR code บนตัวพอตค้างไว้ราว 3–5 วินาที",
             "เว็บของ RELX ที่ทำพอตคือ relxnow.com ส่วน relx.com เป็นเว็บของบริษัทอื่นที่ชื่อเหมือนกัน",
             "วิธีเช็คของแท้ของแบรนด์อื่นบนเว็บเรา อ่านต่อได้ที่ [พอตของแท้ ดูยังไง](/guides/checking-a-genuine-pod)"
           ]
