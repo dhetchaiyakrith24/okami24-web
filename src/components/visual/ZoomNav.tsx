@@ -40,6 +40,12 @@ const zoomOnServer = () => false;
  *  every card opens to everyone only after he taps it on his phone). */
 const zoomOnClient = () => previewOn("zoom") && zoomSupported();
 
+/** Under the preview, the engine starts downloading as this file loads — before hydration, which on a slow phone holds
+ *  the page for seconds (4× CPU: the first tap's click came ~3.5 s after the finger, measured 13/11) — so it is there by
+ *  the first tap. Nothing is fetched for anyone else. */
+const load = () => import("@/lib/zoom-nav").catch(() => null);
+const preloaded = typeof window !== "undefined" && zoomOnClient() ? load() : null;
+
 /** True only under the "zoom" preview, in a browser the Zoom runs in, after hydration (false on the server and the first
  *  render). */
 export function useZoomOn(): boolean {
@@ -54,14 +60,12 @@ export function ZoomNav() {
     if (!on) return;
     let engine: ZoomEngine | null = null;
     let gone = false;
-    // Fetched right after hydration, not when the browser is idle: on the owner's iPhone (13/11 23:33) the first tap came
+    // Attached right after hydration, not when the browser is idle: on the owner's iPhone (13/11 23:33) the first tap came
     // before an idle-time engine and was the plain link — "กดครั้งแรก … ต้องกดซ้ำอีกรอบถึงจะเกิดการซูม". Preview only.
-    const ready = import("@/lib/zoom-nav")
-      .then(({ attachZoom }) => {
-        if (!gone) engine = attachZoom(router);
-        return engine;
-      })
-      .catch(() => null);
+    const ready = (preloaded ?? load()).then((mod) => {
+      if (mod && !gone) engine = mod.attachZoom(router);
+      return engine;
+    });
     // A tap on a card before the engine is there is held (≤ HOLD_MS) while it finishes, then zoomed — or, if it is still
     // not there (or the Zoom does not apply to that card), the plain page change, the same as the link would do.
     const early = (e: MouseEvent) => {
