@@ -4680,15 +4680,21 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
   },
   // Site-wide template round batch 4c (06/10): from RELX's own Smash Go 12K page; Thai = thai-copy 06/10.
+  // G5 round 14/11 (owner 13/11: the G5 standard + what page-1 pages do; pictures and layout are part of it): the strength H3 in
+  // the buyer's words with RELX's own Grape pack render beside it (relxnow.com RELX_SMASH_GO_12K_Grape_Package, white ground
+  // cut by edge fill — the pack prints "3% Nicotine" under the flavour name), and a genuine-check H3 = relxnow.com/pages/verify
+  // as the checking-a-genuine-pod guide verified it (Thai links the guide; it is Thai-only, so en/zh carry no link).
   "relx-smash-go-12k": {
     th: {
       lede: "ด้านล่างไล่ดู RELX Smash Go 12K ทีละส่วนจากภาพของ RELX เอง",
       sections: [
         {
-          heading: "ความเข้มข้นมีให้เลือกสองแบบ",
+          heading: "RELX Smash Go 12K มีแบบ 3% กับ 5% ดูยังไง",
           paragraphs: [
-            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%"
-          ]
+            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%",
+            "บนซองของ RELX ความเข้มข้นพิมพ์ไว้ใต้ชื่อกลิ่น อย่างซองกลิ่น Grape ในภาพนี้เขียนว่า 3% Nicotine"
+          ],
+          image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "ภาพซอง RELX Smash Go 12K กลิ่น Grape จาก RELX ตัวพอตคู่กับซองที่พิมพ์ 3% Nicotine", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
           heading: "RELX Smash Go 12K มีกลิ่นแนวไหนบ้าง",
@@ -4707,6 +4713,14 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "RELX อธิบายว่าคอยล์รุ่นนี้ช่วยให้รสนุ่มและคงที่ และทำให้น้ำยากลายเป็นไอได้สม่ำเสมอ",
             "เครื่องหนึ่งใช้ได้กี่วันก็ขึ้นกับว่าสูบบ่อยแค่ไหน ร้านเล่าไว้ละเอียดที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)"
           ]
+        },
+        {
+          heading: "RELX Smash Go 12K ของแท้ เช็คยังไง",
+          paragraphs: [
+            "RELX เปิดหน้าเช็คของแท้ไว้ที่ relxnow.com/pages/verify กรอกรหัส 14 หลักที่ข้างกล่อง หรือสแกน QR code บนตัวพอตค้างไว้ราว 3–5 วินาที",
+            "เว็บของ RELX ที่ทำพอตคือ relxnow.com ส่วน relx.com เป็นเว็บของบริษัทอื่นที่ชื่อเหมือนกัน",
+            "วิธีเช็คของแท้ของแบรนด์อื่นบนเว็บเรา อ่านต่อได้ที่ [พอตของแท้ ดูยังไง](/guides/checking-a-genuine-pod)"
+          ]
         }
       ]
     },
@@ -4714,10 +4728,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "Below, a look at the RELX Smash Go 12K one part at a time, taken from RELX's own pictures.",
       sections: [
         {
-          heading: "Two strengths to choose from",
+          heading: "RELX Smash Go 12K in 3% or 5%: how do I tell?",
           paragraphs: [
-            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version."
-          ]
+            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version.",
+            "On RELX's pack the strength is printed under the flavour name: the Grape pack pictured here says 3% Nicotine."
+          ],
+          image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "RELX's Smash Go 12K Grape pack render — the pen beside its pack, printed 3% Nicotine", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
           heading: "Which flavours does the RELX Smash Go 12K come in?",
@@ -4735,6 +4751,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "RELX says this coil gives a smooth, consistent flavour and vaporises the e-liquid evenly.",
             "How many days one lasts depends on how often you vape."
           ]
+        },
+        {
+          heading: "How do I check a RELX Smash Go 12K is genuine?",
+          paragraphs: [
+            "RELX's check is at relxnow.com/pages/verify: enter the 14-digit code on the side of the box, or scan the QR code on the pod and hold it for about 3–5 seconds.",
+            "RELX's vape site is relxnow.com; relx.com belongs to a different company with the same name."
+          ]
         }
       ]
     },
@@ -4742,10 +4765,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "下面根据 RELX 自己的图片，逐项来看 RELX Smash Go 12K。",
       sections: [
         {
-          heading: "两种浓度可选",
+          heading: "RELX Smash Go 12K 的 3% 和 5% 怎么分？",
           paragraphs: [
-            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。"
-          ]
+            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。",
+            "RELX 的包装上，浓度印在口味名下方：图中 Grape 口味的包装写着 3% Nicotine。"
+          ],
+          image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "RELX 的 Smash Go 12K Grape 包装图：烟杆与印有 3% Nicotine 的包装", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
           heading: "RELX Smash Go 12K 有哪些口味？",
@@ -4762,6 +4787,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "RELX 表示这款线圈让口味顺滑稳定，烟油雾化更均匀。",
             "一支能用几天，取决于抽的频率。"
+          ]
+        },
+        {
+          heading: "RELX Smash Go 12K 怎么验真伪？",
+          paragraphs: [
+            "RELX 的验证页面是 relxnow.com/pages/verify：输入包装盒侧面的 14 位码，或扫描烟杆上的二维码并保持约 3–5 秒。",
+            "RELX 电子烟的官网是 relxnow.com，relx.com 是另一家同名公司的网站。"
           ]
         }
       ]
