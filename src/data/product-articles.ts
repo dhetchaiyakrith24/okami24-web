@@ -5662,58 +5662,94 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "muro-freebase": {
     th: {
-      lede: "ด้านล่างร้านเล่าว่า Muro Freebase ต่างจาก Muro Salt Nic ตรงไหน พร้อมจัดกลิ่นเป็นสายไว้ให้เลือกได้ง่ายขึ้น",
+      lede: "ขวดนี้ต่างจาก Muro Salt Nic ตรงไหน ความเข้มข้นของนิโคตินบอกอะไร และเหมาะกับเครื่องแบบไหน ร้านเล่าไว้ด้านล่าง พร้อมจัดกลิ่นเป็นสายให้เลือกได้ง่ายขึ้น",
       sections: [
         {
-          heading: "ต่างจาก Muro Salt Nic ตรงไหน",
+          heading: "Muro Freebase ต่างจาก Muro Salt Nic ตรงไหน",
           paragraphs: [
             "Muro Freebase กับ [Muro Salt Nic](/products/muro-salt-nic) มีชื่อกลิ่นเหมือนกันทุกกลิ่น สิ่งที่ต่างคือชนิดของนิโคติน รุ่นนี้เป็นแบบ freebase ส่วนอีกรุ่นเป็นแบบ salt nic เวลาเลือกระหว่างสองรุ่นนี้ ให้ดูเครื่องที่ใช้อยู่เป็นหลัก แล้วกลิ่นที่ชอบก็มีให้เลือกในรุ่นนั้นเหมือนกัน",
-            "freebase กับ salt nic เป็นนิโคตินคนละชนิด และเข้ากับเครื่องคนละแบบ ความต่างของทั้งสองแบบ รวมถึงวิธีดูว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ร้านรวมไว้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "Muro Freebase เข้มข้นเท่าไหร่",
+          paragraphs: [
+            "ผู้ผลิตพิมพ์ความเข้มข้นของนิโคตินรุ่นนี้ไว้บนโปสเตอร์ว่า 4mg ตัวเลขในหน่วย mg บอกว่านิโคตินเข้มแค่ไหน ยิ่งตัวเลขสูงก็ยิ่งเข้ม",
+            "ตัวเลขนี้ต่ำกว่าอีกรุ่นที่ระบุไว้ 28mg อยู่มาก ถ้าเคยเห็นน้ำยาหรือพอตที่บอกเป็น % ให้แยกดูจาก mg เพราะร้านเทียบให้เฉพาะในหน่วยเดียวกัน เหตุผลและความต่างของนิโคตินสองแบบนี้ อ่านต่อได้ที่[นิโคติน salt nic กับ freebase](/guides/salt-nic-vs-freebase)",
+          ],
+        },
+        {
+          heading: "Muro Freebase ใช้กับเครื่องอะไร",
+          paragraphs: [
+            "ขวดนี้มีไว้เติมเอง ใช้กับเครื่องที่หัวพอตหรือถังน้ำยาเติมได้ ส่วนเรื่องนิโคติน ผู้ผลิตเครื่องอย่าง Aspire และ RELX แนะนำ freebase กับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ ส่วนพอตตัวเล็กที่ใช้วัตต์ต่ำ แนะนำเป็น salt nic ก่อนสั่ง ลองเปิดคู่มือของเครื่องที่ใช้อยู่ดูอีกครั้งว่าแนะนำแบบไหน",
+            "ถ้าใช้เครื่องที่ปรับวัตต์ได้ วิธีตั้งวัตต์และช่องลมให้เข้ากับแนวการสูบ อ่านได้ที่[เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
           ],
         },
         {
           heading: "Muro Freebase กลิ่นไหนดี",
           paragraphs: [
             "เลือกจากแนวที่ชอบก่อนก็ได้ ร้านจัดสายจากคำในชื่อกลิ่น ถ้าชอบความเย็น ชื่อที่มีคำว่า Mint คือ Click Mint ถ้าชอบองุ่นมี Grape และถ้าชอบผลไม้มี Watermelon · Strawberry Twist กับ Peach ส่วน Big Cola เป็นชื่อเครื่องดื่ม ไม่ได้บอกผลไม้ ร้านจัดไว้แนวอื่น",
-            "ถ้าใช้เครื่องที่ปรับวัตต์ได้ วิธีตั้งวัตต์และช่องลมให้เข้ากับแนวการสูบ อ่านได้ที่[เลือกวัตต์และช่องลม](/guides/choosing-wattage-and-airflow)",
           ],
         },
       ],
     },
     en: {
-      lede: "Below, how Muro Freebase differs from Muro Salt Nic, and its flavours sorted into groups to make choosing easier.",
+      lede: "Below, how Muro Freebase differs from Muro Salt Nic, what its nicotine strength means and which devices it suits, with the flavours sorted into groups to make choosing easier.",
       sections: [
         {
-          heading: "How is it different from Muro Salt Nic?",
+          heading: "How is Muro Freebase different from Muro Salt Nic?",
           paragraphs: [
             "Muro Freebase and [Muro Salt Nic](/products/muro-salt-nic) share the same flavour names; what differs is the nicotine. This one is freebase, the other is salt nic. Let your device decide which one to take, and the flavour you like is there in either.",
-            "Because freebase and salt nic suit different kinds of device, your device maker's recommendation is the best guide.",
+          ],
+        },
+        {
+          heading: "How strong is Muro Freebase?",
+          paragraphs: [
+            "The maker's poster gives its nicotine strength as 4mg. The mg figure tells you how strong the nicotine is: the higher it goes, the stronger.",
+            "That's well below the 28mg of the other line. If you're used to strengths in %, keep the units apart, as we only compare within the same unit.",
+          ],
+        },
+        {
+          heading: "Which devices is Muro Freebase for?",
+          paragraphs: [
+            "It's a bottle for refilling, so it suits a device with a pod or tank you fill yourself. On the nicotine side, device makers such as Aspire and RELX recommend freebase for higher-wattage devices with low-ohm coils, and salt nic for small, low-wattage pods. Before you order, check your device's manual for the kind it recommends.",
+            "If your device lets you set the wattage, [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow) explains how to match wattage and airflow to the way you vape.",
           ],
         },
         {
           heading: "Which Muro Freebase flavour should I pick?",
           paragraphs: [
             "Start with what you like. We grouped the flavours by the words in their names: for cool, Click Mint; for grape, Grape; for fruit, Watermelon, Strawberry Twist and Peach. Big Cola is named after a drink rather than a fruit, so we list it separately.",
-            "If your device lets you set the wattage, [Choosing Wattage & Airflow](/guides/choosing-wattage-and-airflow) explains how to match wattage and airflow to the way you vape.",
           ],
         },
       ],
     },
     zh: {
-      lede: "下面说明 Muro Freebase 和 Muro Salt Nic 的区别，并把口味按类型分好组，方便挑选。",
+      lede: "下面说明 Muro Freebase 和 Muro Salt Nic 的区别、尼古丁浓度代表什么、适合哪些设备，并把口味按类型分好组，方便挑选。",
       sections: [
         {
-          heading: "和 Muro Salt Nic 有什么不同？",
+          heading: "Muro Freebase 和 Muro Salt Nic 有什么不同？",
           paragraphs: [
             "Muro Freebase 和 [Muro Salt Nic](/products/muro-salt-nic) 的口味名称完全相同，不同的是尼古丁：这款是游离碱尼古丁，另一款是盐尼古丁。先根据设备决定选哪一款，喜欢的口味两款都有。",
-            "游离碱尼古丁和盐尼古丁适合的设备类型不同，建议参考设备厂家的推荐。",
+          ],
+        },
+        {
+          heading: "Muro Freebase 浓度是多少？",
+          paragraphs: [
+            "厂家海报上标注的尼古丁浓度为 4mg。mg 数字代表尼古丁的浓淡，数字越高越浓。",
+            "这比另一款的 28mg 低很多。如果习惯看 % 标注，请注意我们只在同一单位之间比较浓度。",
+          ],
+        },
+        {
+          heading: "Muro Freebase 适合什么设备？",
+          paragraphs: [
+            "这是用来加注的瓶装烟油，适合烟弹或烟仓可自行注油的设备。尼古丁方面，Aspire、RELX 等设备厂家建议高功率、低阻值线圈的设备搭配游离碱尼古丁，小型低功率烟弹搭配盐尼古丁。下单前请对照设备说明书，确认推荐哪一种。",
+            "如果设备可以调功率，怎样让功率和进气配合自己的吸法，详见[如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
           ],
         },
         {
           heading: "Muro Freebase 哪个口味好？",
           paragraphs: [
             "可以先从喜欢的类型选起。我们按口味名称里的词来分组：清凉类是 Click Mint，葡萄类是 Grape，水果类有 Watermelon、Strawberry Twist 和 Peach。Big Cola 是饮品名称而不是水果，单独列出。",
-            "如果设备可以调功率，怎样让功率和进气配合自己的吸法，详见[如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。",
           ],
         },
       ],
