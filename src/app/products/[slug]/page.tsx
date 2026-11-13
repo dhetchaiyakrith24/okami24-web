@@ -450,8 +450,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             </>
           )}
           {/* Sticky buy rail (owner 13/11): ProductHero portals a buy card in here on xl+ screens; below xl this box is
-              display:contents — no box (src/app/product-buyrail.css). */}
-          <div data-buy-rail="" className="contents">
+              display:contents — no box (src/app/product-buyrail.css). The column is reserved only when there is a card
+              (ProductHero renders BuyRail only with a price): a product without a price used to keep an empty 396px
+              band on the right with its sections pinned left (checker #1458, owner 13/11 "จัดให้อยู่ตรงกลาง"). */}
+          <div {...(legacySellingPrice !== null ? { "data-buy-rail": "" } : {})} className="contents">
           <SpecSheet product={product} copyTh={copyTh} />
           <CompatibilitySection product={product} copyTh={copyTh} />
           {/* Structured, clickable compatibility — real catalog products verified to fit, on top of

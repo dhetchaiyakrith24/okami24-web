@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product, Specification } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
+import { Measure } from "@/components/ui/Measure";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { renderInline } from "@/components/content/ArticleBody";
 import type { EditorialCopy, EditorialImage } from "@/data/product-editorial";
@@ -277,7 +278,9 @@ export function ProductEditorialFaq({ copy }: { copy: CopyByLocale }) {
   // on the server page is built from the same Thai copy).
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
+      {/* Wide screens: heading + questions centred as one column (Measure, owner 13/11); below lg unchanged. */}
       <Container>
+        <Measure>
         <h2 className="font-display text-[length:var(--text-h2)] leading-[0.95] font-semibold tracking-tight text-foreground">{t(c.faq.title)}</h2>
         <div className="mt-8 max-w-3xl border-t border-surface-border">
           {c.faq.items.map((f, i) => (
@@ -292,6 +295,7 @@ export function ProductEditorialFaq({ copy }: { copy: CopyByLocale }) {
             </details>
           ))}
         </div>
+        </Measure>
       </Container>
     </section>
   );
