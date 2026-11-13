@@ -5,11 +5,12 @@ import { useRouter } from "next/navigation";
 import { previewOn } from "@/lib/preview";
 
 /**
- * The "Zoom" (owner list ก10, ruling 13/11; shipped to everyone 13/11): a tapped product card zooms into its photo and
- * that zoom is the page change — the engine is src/lib/zoom-nav.ts. The server HTML is the same for everyone: this renders
- * nothing, and the engine is fetched only after the page has loaded (when the browser is idle), so it never competes with
- * the page's first paint. A tap before it is there, and every case the engine refuses (reduced motion, Save-Data, a
- * modified click …), is the plain link.
+ * The "Zoom" (owner list ก10, rulings 13/11; preview only, see zoomOnClient): a tapped product card is a camera move into
+ * its photo, and that move is the page change — the engine is src/lib/zoom-nav.ts. This renders nothing, and the engine
+ * is fetched only after the page has loaded (when the browser is idle), so it never competes with the page's first paint.
+ * The only server-HTML trace of the Zoom for everyone: `data-zoom-hero` on the product photo boxes and `data-zoom-pilot`
+ * on the pilot cards (PilotProductCard) — attributes nothing else reads. A tap before the engine is there, and every case
+ * it refuses (reduced motion, Save-Data, a modified click, no View Transitions …), is the plain link.
  */
 
 // Nothing here changes while the page is open.

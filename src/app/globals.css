@@ -273,9 +273,6 @@ img {
 /* The lit shelf draws in from the centre under the device as the product page shows (paused while the stage covers it).
    It is added after hydration in a browser the Zoom runs in (ZoomNav.tsx); on a direct visit it simply draws in once.
    Motion off = the engine never runs and the shelf sits still. */
-html[data-zoom-dark] .okami-zoom-plinth {
-  animation-play-state: paused;
-}
 .okami-zoom-plinth {
   transform-origin: 50% 100%;
   animation: okami-zoom-plinth 700ms cubic-bezier(0.22, 0.8, 0.2, 1) 380ms both;
