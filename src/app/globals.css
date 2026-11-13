@@ -245,22 +245,6 @@ img {
 html[data-zoom-landing] [data-zoom-hero] img {
   opacity: 0 !important;
 }
-/* The Zoom's still copy of the page (zoom-nav.ts stillWall): the cards drawn lighter — a best-seller / Flagship frame as one
-   flat ember line, no gradients, shadows or running lights. Painting the real frames into the new layer took the GPU
-   ~150 ms and froze the first frames of the zoom (checker 13/11); the copy sinks under the dim a moment later anyway. */
-[data-zoom-wall] a[data-card-cut],
-[data-zoom-wall] a[data-card-cut] *,
-[data-zoom-wall] a[data-card-cut]::before,
-[data-zoom-wall] a[data-card-cut]::after,
-[data-zoom-wall] a[data-card-cut] *::before,
-[data-zoom-wall] a[data-card-cut] *::after {
-  box-shadow: none !important;
-  background-image: none !important;
-  animation: none !important;
-}
-[data-zoom-wall] a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship]) {
-  border-color: rgb(var(--ember-rgb) / 0.55) !important;
-}
 html[data-zoom-dark] .okami-zoom-plinth {
   animation-play-state: paused;
 }

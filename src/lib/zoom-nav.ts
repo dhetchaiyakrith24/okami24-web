@@ -7,12 +7,13 @@
  * would wait on the network first — exactly what the owner turned down. This runs on the tap instead, in every browser
  * (plain Web Animations + one animation-frame loop), in two moves:
  *   1. "push in" (on the tap, nothing waits): the card's photo lifts off as a fixed copy and flies to where the product
- *      page shows it, while the wall of cards behind gently scales up around that card (the camera moving in) and sinks
- *      into the page colour. The wall is a still copy laid over the page, so the real page changes route underneath at
- *      the same moment — the network wait hides inside the motion instead of coming before it.
- *   2. "land": once the product page is there (put at its top under the copy), the photo glides onto the hero's real
- *      photo in one move while the dark lifts off the page; scrolling at that moment hands the page over at once. The hero's own photo then takes over under it (a short cross-fade covers a
- *      different photo or one still loading).
+ *      page shows it, while the page behind sinks into a dim. The route changes under the dim straight away, so the
+ *      network wait hides inside the motion instead of coming before it.
+ *   2. "land": once the product page is there (put at its top while still dim), the photo glides onto the hero's real
+ *      photo in one move while the dim lifts; scrolling at that moment hands the page over at once. The hero's own photo
+ *      then takes over under it (a short cross-fade covers a different photo or one still loading).
+ * Owner 13/11 (iPhone + desktop): quick and calm, moving from the very tap — so only the photo and the dim move: no copy
+ * of the page and no camera move on it (painting either into a new layer held every frame for ~0.2–0.4 s).
  * Fetched after the page has loaded (ZoomNav.tsx imports this file when the browser is idle), never on the server.
  */
 
@@ -24,13 +25,11 @@ const QUIET = /^\/(cart|checkout|staff|orders)(\/|$)/;
 /** The push-in, and the longest landing glide + dim lift (owner 13/11: quicker, calm). */
 const PUSH_MS = 420;
 const LAND_MS = 300;
+/** The dim comes in faster than the photo flies: the route changes under it right after the tap. */
+const VEIL_MS = 240;
 /** Longest wait for the product page before giving up and simply letting it show. */
 const WAIT_MS = 8000;
 const HERO_CACHE = "okami-zoom-hero";
-/** The camera's push-in on the wall: a gentle scale about the tapped card, drifting this share of the way toward the photo's spot. */
-const CAMERA = 1.15;
-const PAN = 0.3;
-
 let busy = false;
 
 const raf = () => new Promise<number>((r) => requestAnimationFrame(r));
@@ -119,48 +118,9 @@ function toward(from: Box, to: Box): string {
   return `translate(${to.x - from.x}px, ${to.y - from.y}px) scale(${to.w / from.w}, ${to.h / from.h})`;
 }
 
-/**
- * A still copy of the page body (`<main>`), clipped to the screen and laid exactly over the page, under the header and the
- * floating buttons — the wall
- * the camera pushes into. Product cards off screen are copied as empty boxes of the same size (`offscreen`, measured
- * before anything moved), so copying a long grid costs little more than the screenful the visitor sees.
- */
-function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect>, lifted: HTMLImageElement): HTMLElement {
-  const at = [...main.querySelectorAll("img")].indexOf(lifted);
-  const copy = main.cloneNode(true) as HTMLElement;
-  // The tapped picture is the one flying: never also in the copy (it may still be showing on the page itself).
-  const twin = at >= 0 ? copy.querySelectorAll("img")[at] : undefined;
-  if (twin) twin.style.opacity = "0";
-  copy.removeAttribute("id");
-  for (const el of copy.querySelectorAll("[id], [data-zoom-hero]")) {
-    el.removeAttribute("id");
-    el.removeAttribute("data-zoom-hero");
-  }
-  // The card tap effect's red hairline (CardCut.tsx) would freeze mid-stroke in a still copy.
-  for (const line of copy.querySelectorAll("[data-card-photo] > svg")) line.remove();
-  copy.querySelectorAll<HTMLElement>("a[data-card-cut]").forEach((card, i) => {
-    const box = offscreen.get(i);
-    if (box) Object.assign(card.style, { contentVisibility: "hidden", containIntrinsicSize: `${box.width}px ${box.height}px` });
-  });
-  Object.assign(copy.style, { position: "absolute", left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, margin: "0" });
-  const wall = document.createElement("div");
-  wall.setAttribute("aria-hidden", "true");
-  wall.setAttribute("inert", "");
-  // Drawn lighter than the page (globals.css [data-zoom-wall]): no card gradients or shadows, which cost the GPU ~150 ms
-  // to paint into a new layer and froze the first frames of the zoom (checker 13/11).
-  wall.setAttribute("data-zoom-wall", "");
-  Object.assign(wall.style, {
-    position: "fixed", inset: "0", overflow: "hidden", zIndex: "30", pointerEvents: "none",
-    background: "var(--surface-0, #100e0d)", willChange: "transform",
-  } satisfies Partial<CSSStyleDeclaration>);
-  wall.append(copy);
-  return wall;
-}
-
 function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: boolean): void {
   busy = true;
   const root = document.documentElement;
-  const main = document.querySelector<HTMLElement>("main");
   const start = drawn(cardImg);
   const aspect = start.w / start.h;
   const mid = fit(aspect, guessHero(pilot));
@@ -169,15 +129,9 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
   const onBack = () => (left = true);
   window.addEventListener("popstate", onBack);
 
-  // The camera: a short, gentle push-in on the tapped card (scaled about the card, drifting only a little toward where
-  // the photo goes) while the room sinks into the dim. The photo itself makes the journey. A long sideways pan of the
-  // whole wall read as "the zoom goes off to one side" on wide screens (owner 13/11).
-  const cx = start.x + start.w / 2;
-  const cy = start.y + start.h / 2;
-  const shot = `translate(${(mid.x + mid.w / 2 - cx) * PAN}px, ${(mid.y + mid.h / 2 - cy) * PAN}px) scale(${CAMERA})`;
-
-  // The dim the wall sinks into: the page colour (never quite black — a ghost of the wall stays), with a low warm light
-  // where the product will stand. Under the site header, which stays put like the frame round the reel's screen.
+  // The dim the page sinks into: the page colour (never quite black — a ghost of the page stays), with a low warm light
+  // where the product will stand. Under the site header, which stays put like the frame round the reel's screen. It
+  // comes in quickly: the route changes under it straight after the tap, so it covers the old page giving way to the new.
   const veil = document.createElement("div");
   veil.setAttribute("aria-hidden", "true");
   Object.assign(veil.style, {
@@ -216,19 +170,12 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
   // ── Move 1: push in ── nothing waits for it: it starts on the frame after the tap, as transforms and opacities the
   // browser runs off the main thread. Quick to leave, calm to arrive (owner 13/11: "นุ่มๆ นิ่งๆ ค่อนข้างเร็ว").
   const flight = flier.animate([{ transform: "none" }, { transform: toward(start, mid) }], { duration: PUSH_MS, easing: "cubic-bezier(0.2, 0.7, 0.25, 1)", fill: "forwards" });
-  veil.animate([{ opacity: 0 }, { opacity: 1 }], { duration: PUSH_MS, easing: "cubic-bezier(0.3, 0, 0.5, 1)", fill: "forwards" });
+  veil.animate([{ opacity: 0 }, { opacity: 1 }], { duration: VEIL_MS, easing: "cubic-bezier(0.2, 0.6, 0.35, 1)", fill: "forwards" });
   // The card's own picture gives way once the lifted copy is drawn (decoded + a frame), so it never blinks out.
   const lifted = (wasReady ? raf() : ready.decoded.then(raf).then(raf)).then(() => {
     if (flier.isConnected) cardImg.style.opacity = "0";
   });
-  const mainBox = main?.getBoundingClientRect();
-  // Cards well off screen (measured now, before anything moves): the wall copy leaves them as empty boxes.
-  const offscreen = new Map<number, DOMRect>();
-  main?.querySelectorAll("a[data-card-cut]").forEach((card, i) => {
-    const b = card.getBoundingClientRect();
-    if (b.bottom < -200 || b.top > window.innerHeight + 200 || b.right < -200 || b.left > window.innerWidth + 200) offscreen.set(i, b);
-  });
-  let wall: HTMLElement | null = null;
+  void lifted;
 
   // Ends the zoom, at once or with a short fade — whichever way it ends (landed, scrolled, Back, no product page).
   let ended = false;
@@ -237,10 +184,9 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
     ended = true;
     window.removeEventListener("popstate", onBack);
     for (const ev of ["wheel", "touchmove", "keydown"]) window.removeEventListener(ev, interrupt, true);
-    if (main) main.style.visibility = "";
     delete root.dataset.zoomLanding;
     delete root.dataset.zoomDark;
-    const parts = [veil, flier, ...(wall ? [wall] : [])];
+    const parts = [veil, flier];
     if (fadeMs > 0) {
       const fade = parts.map((el) => {
         const from = getComputedStyle(el).opacity;
@@ -263,24 +209,10 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
   void (async () => {
     try {
       const t0 = performance.now();
+      // Change route at once, under the dim: the photo is already moving (its first frame is out), and nothing big is
+      // painted for the zoom — an earlier still copy of the page laid over it cost the GPU ~0.2–0.4 s at the tap, during
+      // which nothing on screen moved (checker 13/11, headless 390).
       await raf();
-      if (main && mainBox) {
-        // The copy leaves the tapped picture out, so the flying one must be on screen first.
-        await lifted;
-        wall = stillWall(main, mainBox, offscreen, cardImg);
-        document.body.append(wall);
-        wall.style.transformOrigin = `${cx}px ${cy}px`;
-        // The camera starts from rest whenever the copy is ready and arrives with the photo.
-        const camera = wall.animate([{ transform: "none" }, { transform: shot }], { duration: Math.max(200, PUSH_MS - (performance.now() - t0)), easing: "cubic-bezier(0.3, 0.5, 0.3, 1)", fill: "forwards" });
-        // Let the copy be painted before the next page's render takes the main thread (designer 13/11).
-        await camera.ready;
-        await raf();
-        await raf();
-        // The real page is now under the copy: stop painting it while the next page renders there.
-        main.style.visibility = "hidden";
-      }
-      // The hero photo of the page we are going to stays hidden until the flying copy is on it (globals.css "okami-zoom").
-      root.dataset.zoomLanding = "1";
       // No scroll by the router: it scrolls the new page a beat after it shows (and stops 65 px down, under the header);
       // the zoom puts the page at its top itself the moment it arrives, still under the copy, so nothing moves after.
       router.push(href, { scroll: false });
@@ -292,7 +224,12 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
         await raf();
         const t = performance.now() - t0;
         if (left || t > WAIT_MS) throw new Error("gave up");
-        if (!arrived && location.pathname === path) arrived = t;
+        if (!arrived && location.pathname === path) {
+          arrived = t;
+          // The new page's own photo stays hidden until the flying copy is on it (globals.css "okami-zoom"); set only
+          // now, so a product page we are leaving never blinks its own photo.
+          root.dataset.zoomLanding = "1";
+        }
         if (!found && arrived && (found = heroPhoto())) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
         // The page is there but has no photo box to land on: fade straight into it rather than holding the dim.
         if (!found && arrived && t - arrived > 400) throw new Error("no hero");
@@ -314,7 +251,6 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
       place(flier, from);
 
       // ── Move 2: land ── the dim and the copy lift off the product page while the photo settles onto its own photo.
-      if (main) main.style.visibility = "";
       delete root.dataset.zoomDark;
       const dim = parseFloat(getComputedStyle(veil).opacity);
       for (const a of veil.getAnimations()) a.cancel();
@@ -322,14 +258,11 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: bo
       for (const ev of ["wheel", "touchmove", "keydown"]) window.addEventListener(ev, interrupt, { capture: true, passive: true });
       landedAt = performance.now();
       const lifting = [veil.animate([{ opacity: dim }, { opacity: 0 }], { duration: LAND_MS, easing: "cubic-bezier(0.3, 0, 0.2, 1)", fill: "forwards" })];
-      // The copy is gone before the page shows through, so old and new text never overlap (designer 13/11).
-      if (wall) lifting.push(wall.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-out", fill: "forwards" }));
       const far = Math.abs(to.x - from.x) + Math.abs(to.y - from.y) + Math.abs(to.w - from.w);
       if (far > 1) await flier.animate([{ transform: "none" }, { transform: toward(from, to) }], { duration: Math.min(LAND_MS, 160 + far * 0.4), easing: "cubic-bezier(0.25, 0.6, 0.25, 1)", fill: "forwards" }).finished;
       if (ended) return;
       await Promise.all(lifting.map((a) => a.finished));
       if (ended) return;
-      wall?.remove();
       try {
         sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...to, vw: window.innerWidth, pilot }));
       } catch {}
