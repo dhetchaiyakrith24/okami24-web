@@ -206,12 +206,20 @@ function heroPhoto(): { img: HTMLImageElement; hero: HTMLElement } | null {
  *  update the browser pauses frames, so no rAF) for at most `ms`; null past that. */
 async function heroSoon(path: string, ms: number): Promise<ReturnType<typeof heroPhoto>> {
   const t0 = performance.now();
+  // Laid out AND settled: the same box on three reads in a row — the page's first render can still move its photo
+  // (joiway-f3 at 1440: 16 px, ~70 ms after it first showed, checker 14/11).
+  let last = "";
+  let same = 0;
+  let h: ReturnType<typeof heroPhoto> = null;
   for (;;) {
-    if (location.pathname === path) {
-      const h = heroPhoto();
-      if (h) return h;
+    if (location.pathname === path && (h = heroPhoto())) {
+      const b = drawn(h.img);
+      const k = `${Math.round(b.x)},${Math.round(b.y)},${Math.round(b.w)}`;
+      same = k === last ? same + 1 : 0;
+      last = k;
+      if (same >= 2) return h;
     }
-    if (performance.now() - t0 > ms) return null;
+    if (performance.now() - t0 > ms) return h;
     await new Promise((r) => setTimeout(r, 16));
   }
 }
@@ -360,7 +368,6 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   let pushed = false;
   let found: ReturnType<typeof heroPhoto> = null;
   let heroBox: Box | null = null;
-  let aimed = false;
   try {
     sessionStorage.setItem(BACK_KEY, JSON.stringify({ list: location.pathname + location.search, product: path, slug: card.dataset.cardSlug ?? "", vw: window.innerWidth, y: window.scrollY, pilot } satisfies BackInfo));
   } catch {}
@@ -429,7 +436,6 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
           heroBox = drawn(found.img);
           to = landing(from, share, heroBox, aimOf(found.img, heroBox));
           cam = camera(from, to);
-          aimed = true;
         }
       }
       // The photo layer: the card's <img> box carried by the camera, so the morph from the card picture is one uniform
@@ -485,10 +491,11 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       // Where the product page shows its photo (the guess `to` is right once this layout landed on this width before).
       const real = found?.img ?? null;
       // The real photo frame, and the device landed on the page's own device (its centre) — so nothing shifts when the
-      // page's photo takes over; the frame is kept as the next guess for this layout and width. Already aimed there
-      // (desktop) = the same box, so no correction runs.
-      heroBox ??= found ? drawn(found.img) : null;
-      const at = found && heroBox ? (aimed ? to : landing(from, share, heroBox, aimOf(found.img, heroBox))) : null;
+      // page's photo takes over; the frame is kept as the next guess for this layout and width.
+      // Measured again here, just before the page shows: if it still moved after the camera was aimed, the short glide
+      // below carries the photo onto it (never a jump when the stage goes); unmoved = the same box, no glide.
+      heroBox = found ? drawn(found.img) : null;
+      const at = found && heroBox ? landing(from, share, heroBox, aimOf(found.img, heroBox)) : null;
       if (found && heroBox) {
         readHeroLater(found.img); // for Back's aim, off its busy task
         veiled = [...found.hero.querySelectorAll("img")];
