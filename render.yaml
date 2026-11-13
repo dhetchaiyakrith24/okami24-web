@@ -47,6 +47,15 @@ services:
     # previous deploy keeps serving. `autoDeployTrigger` replaces the deprecated `autoDeploy` (render.com/docs/blueprint-spec).
     # Undo: `off` here + revert the workflow PR.
     autoDeployTrigger: commit
+    # A merge that touches only docs or the team's own files (rules, skills, agents, lessons) does not rebuild the site
+    # (owner 13/11 "แก้ได้เลย"): every deploy takes the site down briefly and empties the picture cache, and a docs-only merge
+    # on 13/11 15:50 did exactly that. Any other changed file in the same merge still deploys as before. This must live HERE:
+    # on a Blueprint sync Render replaces the service's build filter with this field, and an absent field means "no filter"
+    # (render.com/docs/blueprint-spec) — so a filter set only in the dashboard is wiped. Undo: delete this block.
+    buildFilter:
+      ignoredPaths:
+        - docs/**
+        - .claude/**
     disk:
       name: okami24-data
       mountPath: /var/data
