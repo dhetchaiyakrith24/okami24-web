@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import Link from "next/link";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
 import { ArrowRight } from "lucide-react";
 import type { Guide } from "@/types/catalog";
 import { DNS_GUIDE_ID, getGuide } from "@/data/guides";

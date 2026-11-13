@@ -3,25 +3,29 @@
 import { useEffect, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { previewOn } from "@/lib/preview";
+import type { ZoomEngine } from "@/lib/zoom-nav";
 
 /**
- * The "Zoom" (owner list ก10, ruling 13/11; shipped to everyone 13/11): a tapped product card zooms into its photo and
- * that zoom is the page change — the engine is src/lib/zoom-nav.ts. The server HTML is the same for everyone: this renders
- * nothing, and the engine is fetched only after the page has loaded (when the browser is idle), so it never competes with
- * the page's first paint. A tap before it is there, and every case the engine refuses (reduced motion, Save-Data, a
- * modified click …), is the plain link.
+ * The "Zoom" (owner list ก10, rulings 13/11; preview only, see zoomOnClient): a tapped product card is a camera move into
+ * its photo, and that move is the page change — the engine is src/lib/zoom-nav.ts. This renders nothing. Under the preview
+ * the engine is attached as soon as its file has loaded (below), and a tap on a card that comes before it is held by
+ * src/lib/zoom-boot.ts (inline in <head>), then zoomed.
+ * The only server-HTML trace of the Zoom for everyone: `data-zoom-hero` on the product photo boxes and `data-zoom-pilot`
+ * on the pilot cards (PilotProductCard) — attributes nothing else reads. Every case the engine refuses (reduced motion,
+ * Save-Data, a modified click, no View Transitions …) is the plain link.
  */
 
 // Nothing here changes while the page is open.
 const subscribe = () => () => {};
-/** Browsers the engine can run in: Web Animations with their promises, and color-mix() (the dim behind the photo). */
+/** Browsers the engine can run in: same-document View Transitions (the camera runs on the browser's snapshot of the page)
+ *  and Web Animations with their promises. */
 function zoomSupported(): boolean {
   try {
     return (
+      typeof (document as Document & { startViewTransition?: unknown }).startViewTransition === "function" &&
       typeof Element.prototype.animate === "function" &&
       typeof Animation !== "undefined" &&
-      "finished" in Animation.prototype &&
-      CSS.supports("color", "color-mix(in srgb, red 50%, transparent)")
+      "finished" in Animation.prototype
     );
   } catch {
     return false;
@@ -40,28 +44,65 @@ export function useZoomOn(): boolean {
   return useSyncExternalStore(subscribe, zoomOnClient, zoomOnServer);
 }
 
-/** Mounted once in the root layout. Renders nothing. */
+/** What src/lib/zoom-boot.ts left on the page: the tap it holds, and the plain page change it falls back to. */
+type HeldTap = { a: HTMLAnchorElement; h: string; t: number; k: number };
+type Boot = { q: HeldTap | null; on: boolean; push: ((href: string) => void) | null };
+const boot = (): Boot | undefined => (window as Window & { __okZoom?: Boot }).__okZoom;
+
+/**
+ * Under the preview the engine is attached the moment its file has loaded — not after hydration: on a slow phone (4× CPU)
+ * hydrating a long list takes seconds, and a first tap came before it (checker 14/11: the engine arrived 6.6–8 s after
+ * load). This module is evaluated first thing in <body> (layout.tsx), so the engine starts downloading at the start of
+ * hydration. Its page changes go through `router` below: the real router once ZoomNav has hydrated (useRouter), held until
+ * then — a zoom started before that keeps the camera on the card until the page can change. Nothing for anyone else.
+ */
+type Router = { push: (href: string, opts?: { scroll?: boolean }) => void; prefetch: (href: string) => void };
+let real: Router | null = null;
+const pending: (() => void)[] = [];
+const router: Router = {
+  push: (href, opts) => (real ? real.push(href, opts) : void pending.push(() => real?.push(href, opts))),
+  prefetch: (href) => real?.prefetch(href),
+};
+let engine: ZoomEngine | null = null;
+if (typeof window !== "undefined" && zoomOnClient()) {
+  void import("@/lib/zoom-nav")
+    .then(({ attachZoom }) => {
+      engine = attachZoom(router);
+      // The tap zoom-boot.ts is holding (if any) is this engine's now.
+      const z = boot();
+      if (!z) return;
+      z.on = true;
+      const held = z.q;
+      if (!held) return;
+      z.q = null;
+      window.clearTimeout(held.k);
+      held.a.style.transform = "";
+      if (!engine.zoom(held.a)) (z.push ?? ((h: string) => location.assign(h)))(held.h);
+    })
+    .catch(() => {});
+}
+
+/** Mounted once, first in <body> (root layout). Renders nothing: hands the engine the real router once hydrated. */
 export function ZoomNav() {
   const on = useZoomOn();
-  const router = useRouter();
+  const next = useRouter();
   useEffect(() => {
     if (!on) return;
-    let detach: (() => void) | undefined;
-    let gone = false;
-    const load = () => {
-      void import("@/lib/zoom-nav").then(({ attachZoom }) => {
-        if (!gone) detach = attachZoom(router);
-      });
-    };
-    // Not needed before the first tap on a card: wait until the page's own loading is done.
-    const idle = "requestIdleCallback" in window;
-    const handle = idle ? window.requestIdleCallback(load, { timeout: 2500 }) : window.setTimeout(load, 1200);
+    real = next;
+    const z = boot();
+    // A tap still held when the page has hydrated falls back to the router's page change, not a full page load.
+    if (z) z.push = (href) => next.push(href);
+    for (const run of pending.splice(0)) run();
+    // The router registers its popstate handler in its own effect, which runs after this one (it is the parent): one
+    // task later the engine's zoom-out listener goes behind it (if the engine was attached before hydration).
+    const behind = window.setTimeout(() => engine?.afterRouter(), 0);
     return () => {
-      gone = true;
-      if (idle) window.cancelIdleCallback(handle);
-      else window.clearTimeout(handle);
-      detach?.();
+      window.clearTimeout(behind);
+      if (real === next) real = null;
+      if (z) z.push = null;
     };
-  }, [on, router]);
+  }, [on, next]);
+  // The engine lives as long as the page (the root layout never unmounts); nothing to detach here.
+  void engine;
   return null;
 }

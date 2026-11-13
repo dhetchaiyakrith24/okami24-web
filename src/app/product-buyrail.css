@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Sticky buy rail (designer pass d, 12/11; owner 13/11 "จัดการส่วนที่เหลือต่อเลย" → the default for everyone, the
+   ?preview=buyrail gate removed): on xl+ screens a 300px buy card rides beside the product page's spec sheet → compatibility
+   → compatible products → FAQ (BuyRail.tsx, portalled into [data-buy-rail]). Below xl the wrapper stays display:contents
+   (no box). The column is reserved by this server CSS, so nothing moves when the card mounts after load. No JS fade, no
+   fixed position: the card is sticky inside its own column, so it stops where the FAQ ends.
+   ========================================================================== */
+@media (min-width: 80rem) {
+  [data-buy-rail] {
+    display: block;
+    position: relative;
+  }
+  /* Every section's container gives up the rail's width on its right (same max-width/centring as Container). */
+  [data-buy-rail] .max-w-\[1400px\] {
+    padding-right: calc(3rem + 300px + 3rem);
+  }
+  [data-buy-rail] > .okb-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: calc(max((100vw - 1400px) / 2, 0px) + 3rem);
+    width: 300px;
+    padding-block: 3rem;
+    pointer-events: none;
+  }
+  [data-buy-rail] .okb-card {
+    position: sticky;
+    top: 6rem;
+    pointer-events: auto;
+  }
+  [data-buy-rail] .okb-media {
+    height: 220px;
+  }
+}
+@media (min-width: 80rem) and (max-height: 45rem) {
+  [data-buy-rail] .okb-media {
+    height: 140px;
+  }
+}
+/* Below xl the rail does not exist (the phone buy bar and the hero's own button cover it). */
+@media (max-width: 79.98rem) {
+  .okb-rail {
+    display: none;
+  }
+}

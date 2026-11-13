@@ -45,7 +45,10 @@ brand turn; moving a page to "stage" is part of that page's turn, not a side eff
   with its `specKey` (dropped while the row is not verified).
 - Three languages for every new sentence (th/en/zh), all three through `thai-copy` (Thai first, en/zh from the same facts;
   one sample block to the owner before a whole batch — owner 04/10); gates = skill `thai-check`; a compound split or
-  a negation left at a line end (wordbreak-scan) is reworded, single words alone on a last line are left (HANDOFF §17).
+  a negation left at a line end (wordbreak-scan) is reworded. A single word alone on a last line is not a bug and is not
+  glued (owner 24/09, THAI_STYLE "ไม่ผูก — ถาวร" · LOG round 10B decision 1); for NEW article copy (body, FAQ answers, h3)
+  it is reworded when a short rewrite fixes it, at 390 and 1440, th/en/zh scanned before hand-back — for the checker a
+  NOTE, never a FAIL (Friday 13/11, after two checker FAILs on it).
 - Facts from the maker only (HANDOFF §18 "Product facts") · no claim THAI_STYLE §3 forbids · prices never typed.
 
 ## 4. Links from images (round G5 batch 3 — `_incoming/g5-template/b3-image-links.md` is the worked table)

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
 import { Badge } from "@/components/ui/Badge";
-import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import type { CardPublished } from "@/lib/card-record";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { CardSalesBadge } from "@/components/catalog/SalesBadge";
@@ -38,7 +39,8 @@ import { CardSoldOutBadge } from "@/components/catalog/CardSoldOutBadge";
  * and the tagline gets the same two-line floor (`lg:min-h-10`) as ProductCard so the price sits
  * at the same height on every card in a row.
  */
-export function PilotProductCard({ product }: { product: StorefrontProductView }) {
+/** `product` = a card-only record (src/lib/card-record.ts) or a full StorefrontProductView. */
+export function PilotProductCard({ product }: { product: CardPublished }) {
   const { dict, locale } = useLocale();
   const sellingPrice = product.publicationStatus === "published" ? product.sellingPrice : null;
   // Round 30.4ข batch 2 (owner 2026-09-16): the headline spec from VERIFIED spec rows (capacity /
@@ -65,6 +67,8 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       href={`/products/${product.slug}`}
       data-card-cut=""
       data-card-slug={product.slug}
+      // The Zoom (src/lib/zoom-nav.ts) aims at this page layout's photo spot, which sits lower than ProductHero's.
+      data-zoom-pilot=""
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-all duration-300 hover:-translate-y-1 hover:border-foreground-dim"
     >
       <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6 max-lg:p-3" data-card-photo="">

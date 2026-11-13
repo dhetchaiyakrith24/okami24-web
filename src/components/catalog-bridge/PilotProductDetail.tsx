@@ -473,6 +473,41 @@ export function PilotProductDetail({
               <SectionHeading align="center" eyebrow={dict.product.featuresEyebrow} title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>} />
               <ProductArticleLede articles={articles} />
             </div>
+            {/* Product-article round 13/11 (owner: "การจัดวางและใส่รูปเพิ่มเติมเหมือน G5"): the G5 cover slot and all-options grid,
+                for a warehouse-listed product whose article asks for them — the same markup as ProductMoreDetails (plain tiles:
+                the pilot picker does not listen for #option-). A record without `cover` / `optionsGrid` renders as before. */}
+            {article.cover && (
+              // A cut-out line-up floats, at most ~26rem tall (a portrait line-up stays narrow, a wide one caps at 56rem).
+              // Signature detail (Owner eye 12–13): a soft shop-orange light under the line-up, like a lit shelf — one accent, faded
+              // at every edge, never over the bottles.
+              <div
+                className={article.cover.transparent ? "mx-auto w-full bg-[radial-gradient(ellipse_55%_22%_at_50%_96%,rgb(var(--ember-rgb)/0.16),transparent_72%)] pb-3" : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black"}
+                style={article.cover.transparent ? { maxWidth: `${Math.min(56, Math.round((article.cover.width / article.cover.height) * 26))}rem` } : undefined}
+              >
+                <Image src={article.cover.src} alt={article.cover.alt} width={article.cover.width} height={article.cover.height} sizes="(min-width: 1024px) 896px, 100vw" className="block h-auto w-full" />
+              </div>
+            )}
+            {article.optionsGrid && product.variants.some((v) => v.image) && (
+              <div className="flex flex-col gap-8">
+                <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
+                  {(article.optionsGrid === "colours" ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(product.variants.length))}
+                </h3>
+                <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6 lg:gap-4">
+                  {product.variants
+                    .filter((v) => v.image)
+                    .map((v) => (
+                      <li key={v.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
+                        {/* The bottle photos keep wide transparent margins (the hero needs them), so the tile shows the bottle
+                            larger (Owner eye 4: as big as its neighbours on other pages' grids). */}
+                        <div className="relative aspect-square w-full overflow-hidden">
+                          <Image src={v.image!.src} alt={v.image!.alt} fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw" className="scale-[1.2] object-contain p-3" />
+                        </div>
+                        <div className="px-3 pb-3 text-xs font-medium text-foreground-muted max-lg:px-2">{pilotOptionLabel(v.label, locale)}</div>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
             <ProductArticleBody articles={articles} />
           </Container>
         </section>
