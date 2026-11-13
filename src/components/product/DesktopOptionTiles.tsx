@@ -9,11 +9,9 @@ import { OptionBestTag } from "@/components/catalog/SalesBadge";
 import type { PhoneOption } from "./PhoneOptionTiles";
 
 /**
- * Preview "tiles" (owner-approved mock 12/11, designer pass c1 — shared notes look-1211-design-passes.md "A desktop colour
- * tiles"): at `lg` and above the colour picker becomes a grid of real-device photo tiles instead of 32px swatch dots.
- * Rendered ONLY under `?preview=tiles` and only after load (ColorVariantRail → usePreview), so customers and the HTML
- * search engines read keep today's dots. When the owner approves, ColorVariantRail renders this by default and its dot row
- * goes.
+ * Desktop colour tiles (owner-approved mock 12/11, designer pass c1 — shared notes look-1211-design-passes.md "A desktop colour
+ * tiles"; owner 13/11 "จัดการส่วนที่เหลือต่อเลย" → the default for everyone, the `?preview=tiles` gate removed): at `lg` and
+ * above the colour picker is a grid of real-device photo tiles instead of 32px swatch dots (ColorVariantRail).
  *   - fixed 5rem tiles (never 1fr): 4 a row at lg · 5 at xl · 6 from 1440 — two rows show, "show all" opens the rest
  *     (open from the start when the picked colour sits past the second row);
  *   - picture only — the head row names the picked colour, and the hovered / focused tile's name while the pointer is on it;
