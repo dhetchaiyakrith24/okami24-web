@@ -2,6 +2,7 @@
 
 import { useEffect, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
+import { previewOn } from "@/lib/preview";
 
 /**
  * The "Zoom" (owner list ก10, ruling 13/11; shipped to everyone 13/11): a tapped product card zooms into its photo and
@@ -27,10 +28,16 @@ function zoomSupported(): boolean {
   }
 }
 const zoomOnServer = () => false;
+/** Preview only (owner 13/11 after testing on his phone and computer: a hitch before the zoom, the page moving after it,
+ *  stutter on Caliburn G5, and on wide desktops the zoom lands to one side). Everyone else gets the plain link, as before
+ *  #1443, and the engine is never fetched. The owner tries the rework through `?preview=zoom` (TEAM_RULES 13.3: a look on
+ *  every card opens to everyone only after he taps it on his phone). */
+const zoomOnClient = () => previewOn("zoom") && zoomSupported();
 
-/** True in a browser the Zoom runs in, and only after hydration (false on the server and the first render). */
+/** True only under the "zoom" preview, in a browser the Zoom runs in, after hydration (false on the server and the first
+ *  render). */
 export function useZoomOn(): boolean {
-  return useSyncExternalStore(subscribe, zoomSupported, zoomOnServer);
+  return useSyncExternalStore(subscribe, zoomOnClient, zoomOnServer);
 }
 
 /** Mounted once in the root layout. Renders nothing. */

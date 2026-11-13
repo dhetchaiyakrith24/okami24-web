@@ -60,6 +60,19 @@ as "below the owner's bar" with the fix:**
    an option in the draft, never shipped straight (owner 30/09 "อย่าลืมปรับสีพื้นหลังให้เข้ากับธีมเว็บ").
 11. Trimming copy never deletes a whole block the page shows (lede, body, side points) — rewrite it in place; the look
    stays (owner 03/10 on live: the G5 lede was gone).
+12. Character, not plain — "เรียบหรูแต่ดูมีอะไร", hard to copy: every new component carries one signature detail
+   (light · texture · brand art · motion with life); clean ≠ empty (owner 13/11 interview · 31/10 badge "ยังไม่ค่อยเด่น" ·
+   30/10 payment card "Black card เรียบ มีคาแรคเตอร์").
+13. Never louder than the product — one accent per screen, motion that settles (runs then stops), effects blended
+   at the edges, no "game" look, no colour blobs (03/11 sale chip · 04/11 "ดูเป็นเว็บ Game" · 11/11 "ก้อนๆสี … Smooth - Fade").
+14. Black + shop orange are the brand; yellow only a small accent; nothing muddy or aged (11/11 forge "ขุ่นและเก่า …
+   ขอสีส้มพี่คืน").
+15. The tap acts at once — decoration runs alongside the action, never before it (09/11 "กดปุ๊ปก็ยังไปปั๊ป" · 13/11 Zoom
+   "เริ่ม Zoom ตั้งแต่ตอนกด"); speed cost ≤ 3–5 %, SEO untouched (owner 13/11 interview).
+16. Edges and craft — soft fades, never a hard crop or shape cut; faces and products whole; real shadows and
+   reflections; no white rims (29/10 oval cut · "หน้าหาย" · 31/10 "ขอบขาวหนามาก").
+17. A detail the owner liked stays; a new variant sits next to it, never replaces it (09/11 running light
+   removed → "ใส่กลับ" · 13/11 "พี่ขอแบบเดิม").
 
 ---
 
@@ -79,6 +92,8 @@ as "below the owner's bar" with the fix:**
 ---
 
 ## เวลากำหนดทิศทาง (ก่อนทำ)
+
+(Friday's brief to this agent, and to any child chat doing look work = skill `okami24-brief`.)
 
 1. เข้าใจก่อนว่า **ใครดู** และ **อยากให้เขาทำอะไรต่อ**
 2. ดูของเดิมก่อน — ต้องยึดสไตล์ ฟอนต์ สีเดิมของงานนั้น ห้ามเปลี่ยนธีมทั้งหมดเพราะคิดว่าสวยกว่า
