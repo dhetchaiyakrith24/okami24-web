@@ -9,7 +9,6 @@ import { LineContact } from "@/components/layout/LineContact";
 import { FloatingCart } from "@/components/commerce/FloatingCart";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
-import { TeamShortcut } from "@/components/layout/TeamShortcut";
 import { CardCut } from "@/components/brand/CardCut";
 import { ZoomNav } from "@/components/visual/ZoomNav";
 import { navCategories } from "@/lib/category-visibility";
@@ -27,6 +26,8 @@ import "./home-guides.css";
 import "./category-families.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
+// The product page's sticky buy card on wide screens (preview "buyrail", owner 13/11 → default for everyone).
+import "./product-buyrail.css";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",
@@ -142,8 +143,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <CardCut />
           {/* The Zoom (owner ก10): a tapped card zooms into the product page (everyone; the engine loads when the browser is idle). Renders nothing. */}
           <ZoomNav />
-          {/* Team button (owner 30/10): shows only on a device that logged in to /staff in the last 12 hours — read in the browser from a marker cookie, so every page stays static. */}
-          <TeamShortcut />
           {/* "พรีวิว" + off button — only on a device that opened a preview link. Renders nothing for everyone else. */}
           <PreviewPill />
         </LocaleProvider>

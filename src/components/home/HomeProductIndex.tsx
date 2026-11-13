@@ -1,4 +1,5 @@
-import Link from "next/link";
+// Prefetch on touch/hover/focus, not on sight (speed round 13/11 — IntentLink.tsx says why).
+import { IntentLink as Link } from "@/components/ui/IntentLink";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { categoriesWithProducts } from "@/lib/category-visibility";

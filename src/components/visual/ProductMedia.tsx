@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Product } from "@/types/catalog";
+import type { Product, ProductAsset } from "@/types/catalog";
 import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
 import { cn } from "@/lib/utils";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
@@ -43,7 +43,7 @@ export function ProductMedia({
   loading,
   fetchPriority,
 }: {
-  product: Product;
+  product: Pick<Product, "systemType" | "isFlagship" | "attributes"> & { assets: readonly Pick<ProductAsset, "role" | "src" | "alt">[] };
   className?: string;
   sizes?: string;
   qualityAware?: ImageDisplayInfo | null;
