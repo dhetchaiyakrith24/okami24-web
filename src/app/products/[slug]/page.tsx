@@ -444,6 +444,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               <ProductArticleSection articles={productDetailsCopy(product.slug).articles} />
             </>
           )}
+          {/* Sticky buy rail (owner 13/11): ProductHero portals a buy card in here on xl+ screens; below xl this box is
+              display:contents — no box (src/app/product-buyrail.css). */}
+          <div data-buy-rail="" className="contents">
           <SpecSheet product={product} copyTh={copyTh} />
           <CompatibilitySection product={product} copyTh={copyTh} />
           {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
@@ -452,6 +455,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
           <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
           <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
+          </div>
         </>
       )}
       <RelatedProducts items={related} slug={product.slug} categoryId={product.categoryId} similarSlugs={similar.map((item) => item.slug)} />

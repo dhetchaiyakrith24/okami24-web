@@ -26,6 +26,8 @@ import "./home-guides.css";
 import "./category-families.css";
 import { PreviewPill } from "@/components/layout/PreviewPill";
 import { PREVIEW_BOOT } from "@/lib/preview";
+// The product page's sticky buy card on wide screens (preview "buyrail", owner 13/11 → default for everyone).
+import "./product-buyrail.css";
 
 const displayFont = Barlow_Condensed({
   variable: "--font-display",

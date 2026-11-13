@@ -41,6 +41,7 @@ import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { ZoomShared, ZOOM_PROTO_SLUGS, useZoomPreview } from "@/components/visual/ZoomShared";
+import { BuyRail } from "@/components/product/BuyRail";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -614,6 +615,43 @@ export function ProductHero({
           compact
         />
       </MobileBuyBar>
+    )}
+    {/* Sticky buy rail beside the spec sheet → FAQ on xl+ (owner 13/11 → default; it portals in after load). */}
+    {sellingPrice !== null && (
+      <BuyRail
+        name={product.displayName}
+        media={
+          <>
+            {showNoPhoto && selectedRecord ? (
+              <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
+            ) : (
+              <div className="relative h-full w-full p-4">
+                <ProductMedia product={product} sizes="300px" overrideImage={heroOverrideImage} />
+              </div>
+            )}
+            {photoSoldOut && <SoldOutPhotoBadge label={dict.product.outOfStockChip} />}
+          </>
+        }
+        optionLabel={selectedOptionLabel}
+        optionSwatch={showAllColors ? undefined : selectedColor?.swatchHex}
+        price={<HeadPrice slug={product.slug} price={sellingPrice} soldOut={builtSoldOut} />}
+        countLine={countLine}
+        buy={
+          <ProductBuyAction
+            available={canAddToCart}
+            askStock={stockAsk}
+            choiceMissingLabel={choiceMissingLabel}
+            orderingEnabled={orderingEnabled}
+            slug={product.slug}
+            variantId={cartVariantId}
+            productCode={(cartVariantId ? lineCodes?.byOption[cartVariantId] : undefined) ?? lineCodes?.fallback}
+            pageUrl={lineCodes?.pageUrl}
+            productName={product.displayName}
+            variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
+            noteClassName="text-xs text-foreground-muted hover:text-foreground"
+          />
+        }
+      />
     )}
     </>
   );
