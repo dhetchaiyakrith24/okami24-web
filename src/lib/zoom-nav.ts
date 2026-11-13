@@ -139,9 +139,18 @@ function landing(from: Box, share: Share, frame: Box, aim: { x: number; y: numbe
   const c = centre(deviceIn(b, share));
   return { ...b, x: b.x + aim.x - c.x, y: b.y + aim.y - c.y };
 }
-/** Where to aim on the product page's photo: its device's centre when its picture can be read, else the frame's centre. */
-function aimOf(img: HTMLImageElement, box: Box): { x: number; y: number } {
-  return centre(img.complete && img.naturalWidth ? deviceIn(box, deviceShare(img)) : box);
+/** Where to aim on the product page's photo: its device's centre when its picture can be read, else the frame's centre.
+ *  `cachedOnly` (Back): never reads pixels there — Back's task already holds the list's re-render (~0.3 s at 1×); the
+ *  photo's share is read in idle time after the zoom-in lands (readHeroLater). */
+function aimOf(img: HTMLImageElement, box: Box, cachedOnly = false): { x: number; y: number } {
+  const s = cachedOnly ? shares.get(img.currentSrc || img.src) : img.complete && img.naturalWidth ? deviceShare(img) : undefined;
+  return centre(s ? deviceIn(box, s) : box);
+}
+/** The product photo's device share, read when the browser is idle once the picture has loaded. */
+function readHeroLater(img: HTMLImageElement): void {
+  const read = () => idle(() => deviceShare(img));
+  if (img.complete && img.naturalWidth) read();
+  else img.addEventListener("load", read, { once: true });
 }
 
 /** The camera that lays `from` onto `to` (same aspect: uniform scale by width). */
@@ -481,6 +490,7 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       heroBox ??= found ? drawn(found.img) : null;
       const at = found && heroBox ? (aimed ? to : landing(from, share, heroBox, aimOf(found.img, heroBox))) : null;
       if (found && heroBox) {
+        readHeroLater(found.img); // for Back's aim, off its busy task
         veiled = [...found.hero.querySelectorAll("img")];
         for (const i of veiled) i.style.opacity = "0";
         try {
@@ -761,7 +771,7 @@ export function attachZoom(router: Router): ZoomEngine {
     if (!hero) return;
     const cs = getComputedStyle(hero.img);
     const box = drawn(hero.img);
-    leaving = { src: hero.img.currentSrc || hero.img.src, box, aim: aimOf(hero.img, box), fit: cs.objectFit || "contain", position: cs.objectPosition };
+    leaving = { src: hero.img.currentSrc || hero.img.src, box, aim: aimOf(hero.img, box, true), fit: cs.objectFit || "contain", position: cs.objectPosition };
   };
   // Back/Forward: the Navigation API's "navigate" comes before the router swaps the page (popstate comes after, measured
   // 13/11); without that API the zoom-out runs without the product photo.
