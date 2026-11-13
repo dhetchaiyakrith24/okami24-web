@@ -69,24 +69,27 @@ function fit(aspect: number, box: Box): Box {
   return { x: box.x + (box.w - w) / 2, y: box.y + (box.h - h) / 2, w, h };
 }
 
-/** Where the product page will most likely show its photo: where the last one landed on this width, else its usual spot. */
-function guessHero(): Box {
+/** Where the product page will most likely show its photo: where the last one of this page layout landed on this width,
+ *  else its usual spot. `pilot` = the pilot product page (PilotProductDetail), whose photo sits lower. */
+function guessHero(pilot: boolean): Box {
   const vw = window.innerWidth;
   try {
-    const hit = JSON.parse(sessionStorage.getItem(HERO_CACHE) ?? "null") as (Box & { vw: number }) | null;
-    if (hit && hit.vw === vw) return hit;
+    const hit = JSON.parse(sessionStorage.getItem(HERO_CACHE) ?? "null") as (Box & { vw: number; pilot?: boolean }) | null;
+    if (hit && hit.vw === vw && !!hit.pilot === pilot) return hit;
   } catch {}
   // Measured on the product pages 13/11 (ProductHero): phone → a square box 20 px in from each side, from y 217, the
   // photo ~24 px inside it; desktop → the right half of the page's content column (the header's max-width box, centred
   // on wide screens — guessing from the window width sent the zoom off to one side at 2000 px), photo 48 px inside.
+  // Pilot page: phone → a 4:3 box from y ~320; desktop → a 4:5 box from y ~484 in the same column.
   if (vw < 1024) {
     const s = vw - 40;
-    return { x: 44, y: 241, w: s - 48, h: s - 48 };
+    return pilot ? { x: 32, y: 332, w: s - 24, h: s * 0.75 - 24 } : { x: 44, y: 241, w: s - 48, h: s - 48 };
   }
   const header = document.querySelector("header");
   const column = header && [...header.querySelectorAll("div")].find((d) => getComputedStyle(d).maxWidth !== "none");
   const c = column?.getBoundingClientRect() ?? { left: 0, width: vw };
   const w = c.width * 0.48;
+  if (pilot) return { x: c.left + c.width * 0.485 + 48, y: 532, w: w - 96, h: w * 1.25 - 96 };
   const y = vw >= 1440 ? 205 : vw >= 1280 ? 238 : 345;
   return { x: c.left + c.width * 0.485 + 48, y: y + 48, w: w - 96, h: Math.min(w - 96, window.innerHeight - y - 96) };
 }
@@ -154,13 +157,13 @@ function stillWall(main: HTMLElement, r: DOMRect, offscreen: Map<number, DOMRect
   return wall;
 }
 
-function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
+function zoom(cardImg: HTMLImageElement, href: string, router: Router, pilot: boolean): void {
   busy = true;
   const root = document.documentElement;
   const main = document.querySelector<HTMLElement>("main");
   const start = drawn(cardImg);
   const aspect = start.w / start.h;
-  const mid = fit(aspect, guessHero());
+  const mid = fit(aspect, guessHero(pilot));
   const path = new URL(href, location.href).pathname;
   let left = false;
   const onBack = () => (left = true);
@@ -328,7 +331,7 @@ function zoom(cardImg: HTMLImageElement, href: string, router: Router): void {
       if (ended) return;
       wall?.remove();
       try {
-        sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...to, vw: window.innerWidth }));
+        sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...to, vw: window.innerWidth, pilot }));
       } catch {}
       // Hand over to the page's own photo (a short wait if it is still loading), then let the copy go.
       const real = hit.img;
@@ -374,7 +377,7 @@ export function attachZoom(router: Router): () => void {
     if (!href?.startsWith("/products/") || new URL(href, location.href).pathname === location.pathname) return;
     if (!img || !img.complete || img.naturalWidth === 0) return;
     e.preventDefault(); // the Link sees defaultPrevented and stands down; the zoom navigates itself
-    zoom(img, href, router);
+    zoom(img, href, router, card.hasAttribute("data-zoom-pilot"));
   };
   // Fetch the product page as the finger lands, so it is usually ready by the end of the push-in.
   // The card's picture is decoded then too, so the lifted copy is drawn on the frame after the tap.
