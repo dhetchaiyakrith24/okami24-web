@@ -27,7 +27,7 @@ export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?
             </Button>
           </div>
         }
-        measure="2xl"
+        centred
       />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">

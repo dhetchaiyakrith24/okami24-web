@@ -16,7 +16,7 @@ export function ClaimsPolicyContent() {
   const link = "text-foreground hover:text-red";
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} measure="2xl" />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} centred />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <SummaryCards items={c.summary} />

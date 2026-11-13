@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 import { labelLang } from "@/lib/label-lang";
-import { MEASURE_CLASS, type MeasureSize } from "@/components/ui/Measure";
 
 export function PageHeader({
   eyebrow,
@@ -12,7 +11,7 @@ export function PageHeader({
   descriptionClassName,
   bare,
   desktopBare,
-  measure,
+  centred,
 }: {
   eyebrow?: string;
   title: ReactNode;
@@ -28,13 +27,15 @@ export function PageHeader({
    *  behind it (the paid order page, owner list ก10 "ใช้พื้นที่กว้างให้ดีขึ้น"). Phones keep the usual panel.
    *  Omitted = unchanged. */
   desktopBare?: boolean;
-  /** lg+ only: the header text keeps to the page's centred reading column (Measure), so the H1's left edge lines up
-   *  with the body below it instead of the page edge (owner 13/11). The panel behind stays full width. Omitted = unchanged. */
-  measure?: MeasureSize;
+  /** lg+ only, for a page whose body is a centred reading column: the header text is centred over it (owner 13/11
+   *  "จัดให้อยู่ตรงกลาง"), so masthead and body share one axis. The title keeps the full Container width, so it wraps
+   *  exactly as before — a left edge shared with the narrow body would have pushed one-line titles onto two lines.
+   *  Omitted = unchanged. */
+  centred?: boolean;
 }) {
   return (
     <section className={bare ? undefined : cn("border-b border-surface-border-soft bg-surface-1", desktopBare && "lg:relative lg:z-10 lg:border-b-0 lg:bg-transparent")}>
-      <Container className={cn("flex flex-col gap-4 py-12 lg:py-16", desktopBare && "lg:gap-3 lg:pb-0 lg:pt-10", measure && MEASURE_CLASS[measure])}>
+      <Container className={cn("flex flex-col gap-4 py-12 lg:py-16", desktopBare && "lg:gap-3 lg:pb-0 lg:pt-10", centred && "lg:items-center lg:text-center")}>
         {eyebrow && <span className="label-mono text-xs text-ember" lang={typeof eyebrow === "string" ? labelLang(eyebrow) : undefined}>{eyebrow}</span>}
         <h1 className={cn("font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground", desktopBare && "lg:text-[2rem] lg:leading-[1.2]")}>
           {title}

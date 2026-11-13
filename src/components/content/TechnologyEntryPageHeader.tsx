@@ -15,5 +15,5 @@ import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 export function TechnologyEntryPageHeader({ id, title, description }: { id: string; title: string; description: string }) {
   const { dict, locale } = useLocale();
   const overlay = locale === "th" ? TECHNOLOGY_COPY_TH[id] : locale === "zh" ? TECHNOLOGY_COPY_ZH[id] : undefined;
-  return <PageHeader eyebrow={dict.nav.technology} title={locale === "th" && overlay?.name ? thaiTypographyNode(overlay.name) : (overlay?.name ?? title)} description={locale === "th" && overlay?.summary ? thaiTypographyNode(overlay.summary) : (overlay?.summary ?? description)} measure="3xl" />;
+  return <PageHeader eyebrow={dict.nav.technology} title={locale === "th" && overlay?.name ? thaiTypographyNode(overlay.name) : (overlay?.name ?? title)} description={locale === "th" && overlay?.summary ? thaiTypographyNode(overlay.summary) : (overlay?.summary ?? description)} centred />;
 }
