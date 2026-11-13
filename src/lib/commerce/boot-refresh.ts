@@ -12,6 +12,9 @@
  * throws, and gives up quietly after `maxTries` (the visitors' own requests still refresh the pages, as before). It imports
  * nothing server-only, so its contract test runs under plain tsx; register() passes ORDERING_ENABLED in.
  */
+import { categories } from "@/data/categories";
+import { OWNER_BEST_SELLERS } from "@/data/sales-badges";
+
 export interface BootRefreshDeps {
   /** The port this server listens on. Default: process.env.PORT, read when the refresh starts — `next start` sets it once
    *  it listens, before register() runs. */
@@ -56,10 +59,9 @@ export async function refreshPagesAfterBoot(
     try {
       const res = await deps.fetch(url, { cache: "no-store" });
       deps.log(`[switches] pages marked for refresh after boot — ${url} answered ${res.status} (try ${attempt})`);
-      // Re-render every page now, one by one, so no visitor pays a render and no two renders run at once (first-hit round
-      // 14/11). Not awaited by anyone: register() never waits for this.
-      const kind = res.headers?.get(BOOT_KIND_HEADER);
-      if (warm && (kind === "expire" || kind === "stale")) await warmPages(deps, url.replace(/\/api\/cart\/count$/, ""));
+      // The pages were just expired: re-render them now, one by one and the most-visited first, so no visitor pays a render
+      // and no two renders run at once (first-hit round 14/11). Not awaited by anyone: register() never waits for this.
+      if (warm && res.headers?.get(BOOT_KIND_HEADER) === "expire") await warmPages(deps, url.replace(/\/api\/cart\/count$/, ""));
       else if (!warm) deps.log("[switches] boot warm loop off (OKAMI24_BOOT_WARM=off) — pages render on their first visit");
       return res.status;
     } catch {
@@ -71,28 +73,32 @@ export async function refreshPagesAfterBoot(
 }
 
 /**
- * How the boot refresh marks the pages (first-hit round, owner 13/11 "กดเปลี่ยนหัวข้อหน่วง"; live 14/11 after a deploy: a product
- * page's first visit took 0.9–3.3 s, every later one 0.3 s). Expiring every page outright made the FIRST visit of EVERY page
- * after EVERY deploy a full render on the 0.5-CPU box — 12–19 deploys a day.
- *
- * The build renders every page with the switches all open (shop-switches.ts: no data disk at build). So:
- * - "expire" — a switch that changes what a page renders is not in its build state (the cart is off: the ordering wording;
- *   a product is hidden: its stock reads "out"; the site is closed): the build copy is WRONG, so it must never be served —
- *   the first visit renders fresh, exactly as before.
- * - "stale" — every switch still stands as the build rendered it: the build copy is right. It is served at once and the
- *   page re-renders in the background (stale-while-revalidate), which still brings the live stock (JSON-LD) in on the
- *   first visit after a deploy, as the expiring refresh did.
- * Either way warmPages() then re-renders every sitemap page right after the boot, one at a time: "expire" is the live state
- * while the owner keeps the cart off (08/11 — /api/cart/count answered paused: true on 14/11), and with "stale" the
- * background renders visitors would set off arrive in a heap on a 0.5-CPU box (measured: a stale page served in 0.06 s,
- * the next page 1.6 s because the first one's re-render held the CPU) — the loop runs them single file instead.
+ * Why the warm loop (first-hit round, owner 13/11 "กดเปลี่ยนหัวข้อหน่วง"; live 14/11 after a deploy: a product page's first visit
+ * took 0.9–3.3 s, every later one 0.3 s): the boot refresh expires every page outright — the build copy must never be served,
+ * because the build renders with no live stock and with the switches all open (checker #1467: with the cart ON the build copy
+ * still carried InStoreOnly / the LINE-order block on 56 of 131 product pages) — so without the loop the FIRST visit of EVERY
+ * page after EVERY deploy (12–19 a day) was a full render. The refresh stays an outright expire; the loop only takes the
+ * renders off the visitors. There is deliberately no stale-while-revalidate branch.
  */
-export function bootRefreshKind(switches: { cartOff: boolean; siteClosed: boolean; hidden: readonly string[] }): "expire" | "stale" {
-  return switches.cartOff || switches.siteClosed || switches.hidden.length > 0 ? "expire" : "stale";
-}
-
-/** /api/cart/count names the kind its boot refresh used (once one ran), so the server's own call knows whether to warm. */
+/** /api/cart/count says "expire" once its boot refresh ran (whoever triggered it), so the server's own call knows to warm. */
 export const BOOT_KIND_HEADER = "x-okami24-boot-refresh";
+
+/**
+ * Warm order: the pages most visitors land on first — home, /products, every category, every brand — then the owner's best
+ * sellers, then every other product page, then the rest (guides, service pages …). Sitemap order is kept inside each group.
+ */
+const CATEGORY_PATHS = new Set(categories.map((c) => `/products/${c.slug}`));
+export function warmRank(path: string): number {
+  if (path === "/") return 0;
+  if (path === "/products") return 1;
+  if (CATEGORY_PATHS.has(path)) return 2;
+  if (path.startsWith("/brands/")) return 3;
+  if (path.startsWith("/products/")) return OWNER_BEST_SELLERS.has(path.slice("/products/".length)) ? 4 : 5;
+  return 6;
+}
+export function warmOrder(paths: readonly string[]): string[] {
+  return paths.map((p, i) => ({ p, i, r: warmRank(p) })).sort((a, b) => a.r - b.r || a.i - b.i).map((x) => x.p);
+}
 
 /** Paths in a sitemap, in its order (home, categories, products … — the order the site lists them). */
 export function sitemapPaths(xml: string): string[] {
@@ -106,23 +112,21 @@ export function sitemapPaths(xml: string): string[] {
 }
 
 /**
- * Re-render every page in the sitemap once, right after the boot refresh marked them: one page at a time, resting after each
- * as long as it took (at least `paceMs`), so a visitor's request always finds the 0.5-CPU box between two renders, never
- * behind a queue of them.
- * An expired page renders on the request itself (MISS). A stale one is answered at once (STALE) and re-renders behind the
- * answer, so the loop asks again every `pollMs` until it reads HIT before moving on — single file in both cases. A page a
- * visitor opens meanwhile behaves as without the loop. Logs one line; never throws.
+ * Re-render every page in the sitemap once (warmOrder), right after the boot refresh expired them: one page at a time — the
+ * request itself renders it (MISS) — resting after each as long as it took (at least `paceMs`), so a visitor's request always
+ * finds the box between two renders, never behind a queue of them. A page a visitor opens meanwhile renders on that visit as
+ * before. Logs when the first `firstN` are warm and when all are; never throws.
  */
 export async function warmPages(
   deps: BootRefreshDeps,
   base: string,
-  { paceMs = 250, pollMs = 300, maxPolls = 40, maxPages = 400 }: { paceMs?: number; pollMs?: number; maxPolls?: number; maxPages?: number } = {},
+  { paceMs = 250, maxPages = 400, firstN = 30 }: { paceMs?: number; maxPages?: number; firstN?: number } = {},
 ): Promise<number> {
   const started = Date.now();
   let paths: string[] = [];
   try {
     const res = await deps.fetch(`${base}/sitemap.xml`, { cache: "no-store" });
-    paths = res.text ? sitemapPaths(await res.text()).slice(0, maxPages) : [];
+    paths = res.text ? warmOrder(sitemapPaths(await res.text())).slice(0, maxPages) : [];
   } catch {
     /* no sitemap → nothing to warm; visitors render as before */
   }
@@ -130,12 +134,8 @@ export async function warmPages(
   for (const p of paths) {
     const pageStarted = Date.now();
     try {
-      for (let poll = 0; poll < maxPolls; poll++) {
-        const res = await deps.fetch(base + p, { cache: "no-store" });
-        if (res.text) await res.text();
-        if (res.headers?.get("x-nextjs-cache")?.toUpperCase() !== "STALE") break;
-        await deps.wait(pollMs);
-      }
+      const res = await deps.fetch(base + p, { cache: "no-store" });
+      if (res.text) await res.text();
       done++;
     } catch {
       /* one page failing does not stop the rest */
@@ -144,6 +144,7 @@ export async function warmPages(
     // so a visitor, the LINE slip webhook or Shipnity's stock push always gets the other half. A page that took long because
     // the box was busy (real traffic) makes the next rest longer by the same amount — the loop backs off under load.
     await deps.wait(Math.max(paceMs, Date.now() - pageStarted));
+    if (done === firstN && paths.length > firstN) deps.log(`[switches] warmed the first ${firstN} pages (home, /products, categories, brands, best sellers …) in ${Math.round((Date.now() - started) / 1000)} s`);
   }
   deps.log(`[switches] warmed ${done}/${paths.length} sitemap pages after the boot refresh in ${Math.round((Date.now() - started) / 1000)} s`);
   return done;

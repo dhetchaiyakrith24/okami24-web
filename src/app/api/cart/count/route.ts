@@ -1,6 +1,5 @@
-import { revalidatePath, revalidateTag } from "next/cache";
-import { NEXT_CACHE_IMPLICIT_TAG_ID } from "next/dist/lib/constants";
-import { BOOT_KIND_HEADER, bootRefreshKind } from "@/lib/commerce/boot-refresh";
+import { revalidatePath } from "next/cache";
+import { BOOT_KIND_HEADER } from "@/lib/commerce/boot-refresh";
 import { NextResponse } from "next/server";
 import { getCartCount } from "@/lib/commerce/cart";
 import { orderingOpen, ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
@@ -13,23 +12,20 @@ import { readSwitches } from "@/lib/commerce/shop-switches";
  * (src/lib/commerce/shop-switches-rules.ts): every page already asks here after load, so they cost no extra request.
  */
 /** Once per server process (globalThis: every bundle shares it). */
-const boot = globalThis as typeof globalThis & { __okami24CopyRefreshed?: boolean; __okami24BootKind?: "expire" | "stale" };
+const boot = globalThis as typeof globalThis & { __okami24CopyRefreshed?: boolean; __okami24BootExpired?: boolean };
 
 export async function GET() {
   const open = orderingOpen();
   // T2-04: `next build` reads the switches as open, and pages re-rendered before a restart may be kept on disk with the switch
   // as it was then — so the first call after a boot marks every page stale, whichever way the switch stands now. The server
   // makes that call itself as soon as it answers (src/lib/commerce/boot-refresh.ts); every page also asks here after load.
-  // Once per process; pages re-render on their next visit — blocking only when the build copy is wrong (bootRefreshKind):
-  // otherwise the build copy answers at once and the page re-renders behind it (first-hit round 14/11).
+  // Once per process; pages re-render on their next visit — and the server's own boot call then renders them all itself, one
+  // at a time (boot-refresh.ts warmPages, first-hit round 14/11), so no visitor waits for that render.
   if (ORDERING_ENABLED && !boot.__okami24CopyRefreshed) {
     boot.__okami24CopyRefreshed = true;
     try {
-      // "stale" = revalidatePath("/", "layout")'s own tag with the "max" profile: the same pages, stale-while-revalidate
-      // instead of expired (node_modules/next/dist/server/web/spec-extension/revalidate.js builds that tag the same way).
-      boot.__okami24BootKind = bootRefreshKind(readSwitches());
-      if (boot.__okami24BootKind === "stale") revalidateTag(`${NEXT_CACHE_IMPLICIT_TAG_ID}/layout`, "max");
-      else revalidatePath("/", "layout");
+      revalidatePath("/", "layout");
+      boot.__okami24BootExpired = true;
     } catch (err) {
       console.error(`[switches] page refresh after boot failed: ${err instanceof Error ? err.message : String(err)}`);
     }
@@ -42,7 +38,7 @@ export async function GET() {
         "Cache-Control": "private, no-store",
         "X-Robots-Tag": "noindex, nofollow",
         // Tells the boot refresh (boot-refresh.ts warmPages) the pages were expired, whoever triggered it first.
-        ...(boot.__okami24BootKind ? { [BOOT_KIND_HEADER]: boot.__okami24BootKind } : {}),
+        ...(boot.__okami24BootExpired ? { [BOOT_KIND_HEADER]: "expire" } : {}),
       },
     },
   );
