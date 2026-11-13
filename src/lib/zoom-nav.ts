@@ -419,7 +419,7 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   } catch {}
   if (!info || info.vw !== window.innerWidth || location.pathname + location.search !== info.list) return false;
   const img = document.querySelector<HTMLImageElement>(`a[data-card-slug="${CSS.escape(info.slug)}"] [data-card-photo] img`);
-  if (!img || !img.complete || img.naturalWidth === 0) return false;
+  if (!img) return false;
   busy = true;
   const root = document.documentElement;
   const header = siteHeader();
