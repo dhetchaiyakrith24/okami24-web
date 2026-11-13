@@ -519,10 +519,14 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       if (at && Math.abs(at.x - to.x) + Math.abs(at.y - to.y) + Math.abs(at.w - to.w) > 2) {
         const k = at.w / to.w;
         end = { x: at.x + (pb.x - to.x) * k, y: at.y + (pb.y - to.y) * k, w: pb.w * k, h: pb.h * k };
+        // Paced by distance so no frame steps more than ~8 px (checker #1462: a fixed 160 ms ease-out moved 16–80 px in its
+        // first frame on a cold miss): ~5.5 ms per px of travel with a soft start, never shorter than before, capped at 0.7 s.
+        const travel = Math.hypot(end.x - pb.x, end.y - pb.y) + Math.abs(end.w - pb.w);
+        const glideMs = Math.min(700, Math.max(LIFT_MS + 40, Math.round(travel * 5.5)));
         moves.push(
           root.animate(
             { transform: ["translate(0px, 0px) scale(1)", `translate(${end.x - pb.x}px, ${end.y - pb.y}px) scale(${k})`] },
-            { duration: LIFT_MS + 40, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)", fill: "both", composite: "add", pseudoElement: `::view-transition-group(${PHOTO})` },
+            { duration: glideMs, easing: "cubic-bezier(0.4, 0, 0.2, 1)", fill: "both", composite: "add", pseudoElement: `::view-transition-group(${PHOTO})` },
           ),
         );
       }
