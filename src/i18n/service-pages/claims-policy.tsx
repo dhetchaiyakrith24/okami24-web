@@ -18,6 +18,11 @@ export interface ClaimsCopy {
   /** `caseByCase` = the owner's answer "ค" on item 6 (used for a while, then it breaks). */
   symptoms: { title: string; acceptTitle: string; acceptItems: string[]; declineTitle: string; declineItems: string[]; caseByCase: ReactNode };
   outcome: { title: string; p1: ReactNode; p2: string; p3: ReactNode };
+  /** The one table of every cancel / swap / refund case (outside test T2-09, 10/11: the pages contradicted each other) —
+   *  BSOT §9 "Cancellation / refund" with its owner exceptions (22/10 out of stock after payment · 10/11 paid but the shop
+   *  cannot ship, "ใช้เหมือนของหมด") and §12 "Authenticity". /how-to-order links here (#refunds); the FAQ
+   *  "problem-on-arrival" button opens /warranty, where this table sits under the summary cards. */
+  refunds: { title: string; headCase: string; headWhat: string; rows: { case: string; what: ReactNode }[] };
   steps: { title: string; items: Step[] };
   honest: { title: string; p1: string; p2: string; p3: ReactNode };
   readNext: string;
@@ -58,7 +63,20 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "เคลมแล้วได้อะไร",
       p1: <B>เคลมผ่าน เราส่งของใหม่ตัวเดิมไปให้</B>,
       p2: "ถ้าตัวนั้นหมดสต๊อกพอดี เปลี่ยนเป็นตัวอื่นราคาเท่ากันให้เลือกค่ะ",
-      p3: <><B>เราไม่คืนเป็นเงินสด มีข้อยกเว้นเดียว คือสินค้าเช็คของแท้ไม่ผ่าน</B> บอกไว้ตรงนี้ตั้งแต่แรก จะได้ไม่ต้องมาเถียงกันทีหลัง กรณีนี้ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วันนับจากวันที่ได้รับของ เราจะตรวจสอบให้ แล้วแจ้งกลับว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ค่ะ</>,
+      p3: <><B>เคลมแล้วเราไม่คืนเป็นเงินสด ยกเว้นสินค้าเช็คของแท้ไม่ผ่าน</B> บอกไว้ตรงนี้ตั้งแต่แรก จะได้ไม่ต้องมาเถียงกันทีหลัง กรณีนี้ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วันนับจากวันที่ได้รับของ เราจะตรวจสอบให้ แล้วแจ้งกลับว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ค่ะ ส่วนกรณีโอนแล้วแต่สินค้าหมดหรือร้านส่งของให้ไม่ได้ ดูได้ในตารางด้านบนค่ะ</>,
+    },
+    refunds: {
+      title: "ยกเลิก เปลี่ยนสินค้า และคืนเงิน ทุกกรณี",
+      headCase: "กรณี",
+      headWhat: "ทำอะไรได้บ้าง",
+      rows: [
+        { case: "ก่อนโอน", what: <>ยกเลิกได้ ทักไลน์ <LineLink /> แจ้งเลขคำสั่งซื้อ</> },
+        { case: "โอนแล้ว", what: "ยกเลิกไม่ได้ และไม่คืนเงิน ยกเว้น 3 กรณีถัดไป" },
+        { case: "โอนแล้ว แต่สินค้าหมด", what: "เราจะติดต่อไปให้คุณเลือกเปลี่ยนเป็นสินค้าอื่นราคาเท่ากัน หรือรับเงินคืนเข้าพร้อมเพย์หรือบัญชีธนาคาร" },
+        { case: "โอนแล้ว แต่ร้านส่งของให้ไม่ได้", what: "เช่น คลังสินค้าหยุดชั่วคราว คุณเลือกได้ว่าจะรอ จะเปลี่ยนเป็นสินค้าอื่นราคาเท่ากัน หรือจะรับเงินคืนเข้าพร้อมเพย์หรือบัญชีธนาคาร" },
+        { case: "ไม่ผ่านการเช็คของแท้", what: "ส่งผลเช็คจากเว็บทางการของแบรนด์ พร้อมคลิปตอนแกะกล่อง มาทางไลน์ภายใน 7 วันหลังได้รับของ เราจะตรวจสอบ แล้วเปลี่ยนของใหม่หรือคืนเงินให้" },
+        { case: "ของมีปัญหาที่เคลมได้", what: "แจ้งภายใน 7 วันหลังได้รับของ ถ้าเคลมผ่าน เราส่งของใหม่ตัวเดิมให้ ตัวนั้นหมดก็เลือกตัวอื่นราคาเท่ากันได้ แต่ไม่คืนเป็นเงินสด" },
+      ],
     },
     steps: {
       title: "ขั้นตอนเคลม",
@@ -110,7 +128,20 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "What you get if a claim is approved",
       p1: <B>If the claim is approved, we send you a new unit of the same item.</B>,
       p2: "If that item happens to be out of stock, you can pick something else at the same price.",
-      p3: <><B>We don’t give cash refunds, with one exception: an item that fails the authenticity check.</B> We say this up front so there’s nothing to argue about later. If the item fails the check on the brand’s official website, send us the result and your unboxing video on LINE within 7 days of receiving it. We’ll look into it, then let you know whether we’ll replace the item or refund you.</>,
+      p3: <><B>A claim never ends in a cash refund, except when the item fails the authenticity check.</B> We say this up front so there’s nothing to argue about later. If the item fails the check on the brand’s official website, send us the result and your unboxing video on LINE within 7 days of receiving it. We’ll look into it, then let you know whether we’ll replace the item or refund you. If you’ve paid and an item is out of stock or we can’t ship it, see the table above.</>,
+    },
+    refunds: {
+      title: "Cancellations, swaps and refunds: every case",
+      headCase: "Situation",
+      headWhat: "What you can do",
+      rows: [
+        { case: "You haven’t paid yet", what: <>You can cancel. Just message us on LINE <LineLink /> with your order number.</> },
+        { case: "You’ve paid", what: "The order can’t be cancelled or refunded, except in the next three cases." },
+        { case: "You’ve paid, but an item is out of stock", what: "We’ll contact you, and you can choose another item at the same price or a refund to PromptPay or a bank account." },
+        { case: "You’ve paid, but we can’t ship yet", what: "For example, the warehouse is paused. You can choose to wait, switch to another item at the same price, or get a refund to PromptPay or a bank account." },
+        { case: "The item fails the authenticity check", what: "Send us the result from the brand’s official website and your unboxing video on LINE within 7 days of receiving it. We’ll look into it, then replace the item or refund you." },
+        { case: "A covered problem", what: "Tell us within 7 days of receiving it. If the claim is approved, we send a new unit of the same item, or another item at the same price if it’s out of stock. No cash refund." },
+      ],
     },
     steps: {
       title: "How to make a claim",
@@ -162,7 +193,20 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "售后通过后能得到什么",
       p1: <B>售后通过，我们会寄一件同款新品给您。</B>,
       p2: "如果该商品刚好缺货，可以另选一件同价位的商品。",
-      p3: <><B>我们不退现金，唯一的例外是商品未通过正品验证。</B>事先在这里说清楚，免得日后争执。如果商品在品牌官网验证未通过，请在收货之日起 7 天内通过 LINE 发来验证结果和开箱视频；我们核实后，会告知您是换新还是退款。</>,
+      p3: <><B>售后不退现金，唯一的例外是商品未通过正品验证。</B>事先在这里说清楚，免得日后争执。如果商品在品牌官网验证未通过，请在收货之日起 7 天内通过 LINE 发来验证结果和开箱视频；我们核实后，会告知您是换新还是退款。已转账但缺货或无法发货的情况，请看上方的表格。</>,
+    },
+    refunds: {
+      title: "取消、换货与退款：所有情况一览",
+      headCase: "情况",
+      headWhat: "可以怎么做",
+      rows: [
+        { case: "还没转账", what: <>可以取消，请通过 LINE <LineLink /> 联系我们，并附上订单编号。</> },
+        { case: "已经转账", what: "不可取消，也不退款，紧接着的三种情况除外。" },
+        { case: "已转账，但商品缺货", what: "我们会联系您，您可以换成价格相同的其他商品，或退款到 PromptPay 或银行账户。" },
+        { case: "已转账，但本店暂时无法发货", what: "例如仓库暂停运作。您可以选择等待、换成价格相同的其他商品，或退款到 PromptPay 或银行账户。" },
+        { case: "正品验证未通过", what: "请在收货之日起 7 天内，通过 LINE 发来品牌官网的验证结果和开箱视频；我们核实后会换新或退款。" },
+        { case: "商品出现可受理的问题", what: "请在收货之日起 7 天内告知我们。售后通过后，我们寄出同款新品；该款缺货时，可改选价格相同的其他商品。不退现金。" },
+      ],
     },
     steps: {
       title: "售后流程",

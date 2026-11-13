@@ -47,6 +47,6 @@ export function endPreview(): void {
 /** The shop orange as "R G B" channels for a glow drawn from script (WAAPI keyframes): whatever --ember-rgb resolves to on
  *  this page, so a preview that changes the orange changes these glows too. */
 export function emberRgb(): string {
-  if (typeof document === "undefined") return "240 138 42";
-  return getComputedStyle(document.documentElement).getPropertyValue("--ember-rgb").trim() || "240 138 42";
+  if (typeof document === "undefined") return "255 106 44";
+  return getComputedStyle(document.documentElement).getPropertyValue("--ember-rgb").trim() || "255 106 44";
 }
