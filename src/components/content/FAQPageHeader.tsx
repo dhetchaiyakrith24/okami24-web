@@ -18,6 +18,7 @@ export function FAQPageHeader({ count }: { count: number }) {
       eyebrow={dict.faq.eyebrow}
       title={dict.faq.pageTitle}
       description={`${count} ${pluralCount(count, dict.faq.pageDescriptionOne, dict.faq.pageDescriptionOther)}`}
+      centred
     />
   );
 }

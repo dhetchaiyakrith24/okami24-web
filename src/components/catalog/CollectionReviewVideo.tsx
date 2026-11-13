@@ -3,6 +3,8 @@
 import type { ReviewVideo } from "@/types/catalog";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { MEASURE_CLASS } from "@/components/ui/Measure";
+import { cn } from "@/lib/utils";
 
 /**
  * Round "clip" (2026-09-27): the shop clip on a brand or category page (src/data/collection-videos.ts), under the
@@ -14,7 +16,8 @@ export function CollectionReviewVideo({ video, contextName }: { video: ReviewVid
   const { dict, locale } = useLocale();
   if (!video) return null;
   return (
-    <div className="max-w-2xl">
+    // Wide screens: centred under the product grid (Measure, owner 13/11); below lg unchanged.
+    <div className={cn("max-w-2xl", MEASURE_CLASS["2xl"])}>
       <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, video.title)} contextName={contextName} />
     </div>
   );

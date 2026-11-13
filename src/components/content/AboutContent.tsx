@@ -40,7 +40,7 @@ export function AboutContent({ brands, orderingEnabled = true }: { brands: Brand
   const link = "text-foreground hover:text-red";
   return (
     <>
-      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.lede} />
+      <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.lede} centred />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <section>

@@ -27,6 +27,7 @@ export function ContactContent({ orderingEnabled = true }: { orderingEnabled?: b
             </Button>
           </div>
         }
+        centred
       />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Measure } from "@/components/ui/Measure";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { RelatedArticle } from "@/lib/article-relevance";
@@ -36,7 +37,10 @@ export function RelatedArticles({ articles: thaiArticles, otherLocaleArticles }:
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-10 lg:py-12" data-related-articles>
-      <Container className="flex flex-col gap-4">
+      {/* Wide screens: the list keeps the centred reading column of the FAQ / article above it (Measure, owner 13/11 ·
+          designer 13/11); below lg unchanged. */}
+      <Container>
+        <Measure className="flex flex-col gap-4">
         <p className="label-mono text-[0.65rem] text-foreground-dim">{dict.product.readMoreEyebrow}</p>
         <ul className="flex flex-col gap-2">
           {articles.map((a) => (
@@ -53,6 +57,7 @@ export function RelatedArticles({ articles: thaiArticles, otherLocaleArticles }:
             </li>
           ))}
         </ul>
+        </Measure>
       </Container>
     </section>
   );

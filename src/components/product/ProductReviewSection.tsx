@@ -3,6 +3,7 @@
 import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Measure } from "@/components/ui/Measure";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -30,11 +31,14 @@ export function ProductReviewSection({ product, title: sectionTitle }: { product
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />
-      <Container className="flex flex-col gap-8">
-        <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={sectionTitle ?? product.displayName} />
-        <div className="max-w-2xl">
-          <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideTitle} contextName={product.displayName} />
-        </div>
+      {/* Wide screens: heading + clip sit centred as one column (Measure — owner 13/11); below lg unchanged. */}
+      <Container>
+        <Measure size="2xl" className="flex flex-col gap-8">
+          <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={sectionTitle ?? product.displayName} />
+          <div className="max-w-2xl">
+            <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideTitle} contextName={product.displayName} />
+          </div>
+        </Measure>
       </Container>
     </section>
   );
