@@ -17,6 +17,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 import { useSignedIn } from "@/components/account/use-signed-in";
 import { useLiveCardStock } from "@/components/catalog/useLiveCardStock";
+import { categoryPageLabelTh } from "@/i18n/category-head-th";
 
 type SortMode = "featured" | "alphabetical" | "family";
 
@@ -148,7 +149,7 @@ export function CatalogBrowser({
   isEmptyCategory?: boolean;
   /** Categories that do have products today (`categoriesWithProducts()`), offered as the way out
    *  of an empty category page. The server page passes it; nothing renders when it is empty. */
-  alternativeCategories?: Pick<Category, "slug" | "shortName" | "labelTh">[];
+  alternativeCategories?: Pick<Category, "id" | "slug" | "shortName" | "labelTh">[];
   /** "สินค้าพร้อมส่ง" (owner 24/10 night): entry keys a customer can buy today, from `inStockEntryKeys()`
    *  (src/lib/in-stock.ts) on the server page. Absent = no in-stock toggle. */
   inStockKeys?: string[];
@@ -460,7 +461,7 @@ export function CatalogBrowser({
                       href={`/products/${c.slug}`}
                       className="rounded-full border border-surface-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground-dim hover:text-ember"
                     >
-                      {locale === "th" ? c.labelTh : c.shortName}
+                      {locale === "th" ? categoryPageLabelTh(c) : c.shortName}
                     </Link>
                   ))}
                 </div>

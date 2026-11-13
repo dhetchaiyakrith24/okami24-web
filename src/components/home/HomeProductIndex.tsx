@@ -2,6 +2,7 @@ import Link from "next/link";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { categoriesWithProducts } from "@/lib/category-visibility";
+import { categoryPageLabelTh } from "@/i18n/category-head-th";
 import { Container } from "@/components/ui/Container";
 import { HomeCategoryLabel, HomeIndexName, HomeText } from "@/components/home/HomeCopy";
 import { DecodeOnView } from "@/components/home/Decode";
@@ -86,7 +87,7 @@ export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {
             <details key={category.id} className="okh-index group/box rounded-2xl border border-surface-border bg-surface-0">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-display text-lg font-semibold leading-tight text-foreground">
-                  <HomeCategoryLabel labelTh={category.labelTh} shortName={category.shortName} />
+                  <HomeCategoryLabel labelTh={categoryPageLabelTh(category)} shortName={category.shortName} />
                 </h3>
                 <span className="flex shrink-0 items-center gap-2 text-foreground-muted">
                   <span className="label-mono text-xs" lang="en">
