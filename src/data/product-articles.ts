@@ -4769,6 +4769,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ในตารางกลิ่นด้านบน กลิ่นที่ชื่อลงท้ายด้วย 5% คือแบบ 5%",
             "บนซองของ RELX ความเข้มข้นพิมพ์ไว้ใต้ชื่อกลิ่น อย่างซองกลิ่น Grape ในภาพนี้เขียนว่า 3% Nicotine"
           ],
+          imageLayout: "beside",
           image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "ภาพซอง RELX Smash Go 12K กลิ่น Grape จาก RELX ตัวพอตคู่กับซองที่พิมพ์ 3% Nicotine", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
@@ -4808,6 +4809,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. In the flavour grid above, the names ending in 5% are the 5% version.",
             "On RELX's pack the strength is printed under the flavour name: the Grape pack pictured here says 3% Nicotine."
           ],
+          imageLayout: "beside",
           image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "RELX's Smash Go 12K Grape pack render — the pen beside its pack, printed 3% Nicotine", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
@@ -4845,6 +4847,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。上方口味表里名称带 5% 的，就是 5% 浓度的版本。",
             "RELX 的包装上，浓度印在口味名下方：图中 Grape 口味的包装写着 3% Nicotine。"
           ],
+          imageLayout: "beside",
           image: { src: "/assets/products/relx-smash-go-12k/story-package-grape.webp", alt: "RELX 的 Smash Go 12K Grape 包装图：烟杆与印有 3% Nicotine 的包装", width: 453, height: 757, sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", transparent: true },
         },
         {
