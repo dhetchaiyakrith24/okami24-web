@@ -3693,7 +3693,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // (U3, the searched words "M Switch 15K"). Sources: "which pod" = SALTHUB's "Combination device and cartridge" poster
   // (switch_pod_kit_03, shown under it) + the M Switch Pod line on salthub.com; "what's in the kit" = SALTHUB's starter-kit
   // box render (CONTAINS: Pod Device ×1 · SWITCH Pod ×1 · Lanyard ×1, the render shown under it); "won't charge" =
-  // salthub.com/faq/ "Why won't my vape charge?". Nothing here repeats a poster's own line or a FAQ answer.
+  // salthub.com/faq/ "Why won't my vape charge?"; "genuine" = salthub.com/authenticate as the checking-a-genuine-pod guide
+  // verified it (Thai links the guide; the guide is Thai-only, so en/zh carry no link). Nothing here repeats a poster's own
+  // line or a FAQ answer.
   "m-switch-kit": {
     th: {
       lede: "ด้านล่างไล่ดู M Switch Kit ทีละส่วนจากโปสเตอร์ของ SALTHUB เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
@@ -3709,7 +3711,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ในชุด M Switch 15K มีอะไรบ้าง",
           paragraphs: [
-            "บนกล่องชุดเริ่มต้นของ SALTHUB เขียนไว้ว่าในกล่องมี 3 อย่าง คือตัวเครื่อง หัวพอตหนึ่งหัว และสายคล้องหนึ่งเส้น",
+            "บนกล่องชุดเริ่มต้นของ SALTHUB เขียนไว้ว่าในกล่องมี 3 อย่าง คือตัวเครื่อง หัวพอตหนึ่งหัว และสายคล้องไว้ห้อยคอหนึ่งเส้น",
             "หัวพอตในชุดเป็นกลิ่นที่เลือกไว้ ถ้าอยากได้หัวเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่[หน้าหัวพอต](/products/m-switch-pod)",
           ],
           image: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "ภาพชุดเริ่มต้น M Switch กลิ่น Blue Ice จาก SALTHUB กล่องคู่กับตัวเครื่อง", width: 778, height: 1006, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", transparent: true },
@@ -3721,6 +3723,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ถ้าเสียบสายแล้วไฟยังไม่เข้า SALTHUB แนะนำให้ลองขยับเครื่องดูว่าหัวสายเสียบแน่นดีแล้วหรือยัง",
           ],
         },
+        {
+          heading: "M Switch 15K ของแท้ เช็คยังไง",
+          paragraphs: [
+            "SALTHUB ให้เช็คของแท้ที่หน้า salthub.com/authenticate โดยถ่ายรูปฉลากรับรองบนกล่อง ซึ่งต้องถ่ายจากตัวฉลากจริงเท่านั้น",
+            "วิธีเช็คของแท้ของแบรนด์อื่นบนเว็บเรา รวมไว้ในบทความ [พอตของแท้ ดูยังไง](/guides/checking-a-genuine-pod)",
+          ],
+        },
       ]
     },
     en: {
@@ -3730,7 +3739,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "Which pods does the M Switch 15K take?",
           paragraphs: [
             "It takes SALTHUB's M Switch Pod: fit the pod onto the device as the poster below shows and it's ready to use.",
-            "Weighing the M Switch against another brand's swap-pod device? We compare the specs point by point in [Esko Bar Switch 20K vs M Switch](/guides/esko-bar-switch-vs-m-switch).",
           ],
           image: { src: "/assets/products/m-switch-kit/story-combination.webp", alt: "SALTHUB's M Switch poster — the pod going onto the device, \"Combination device and cartridge\"", width: 1600, height: 988, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
         },
@@ -3749,6 +3757,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "If the cable is in and it still won't charge, SALTHUB suggests moving the device a little to check the plug sits firmly.",
           ],
         },
+        {
+          heading: "How do I check an M Switch 15K is genuine?",
+          paragraphs: [
+            "SALTHUB's check is at salthub.com/authenticate: you photograph the authentication label on the box, and it has to be the real label.",
+          ],
+        },
       ]
     },
     zh: {
@@ -3758,7 +3772,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "M Switch 15K 用哪种烟弹？",
           paragraphs: [
             "这台主机用 SALTHUB 的 M Switch Pod，按下方海报把烟弹装到主机上就能用。",
-            "如果在 M Switch 和其他品牌的换弹机之间犹豫，可以看本店逐项对比的 [Esko Bar Switch 20K 与 M Switch](/guides/esko-bar-switch-vs-m-switch)。",
           ],
           image: { src: "/assets/products/m-switch-kit/story-combination.webp", alt: "SALTHUB 的 M Switch 海报：烟弹装到主机上，“Combination device and cartridge”", width: 1600, height: 988, sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
         },
@@ -3775,6 +3788,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "SALTHUB 的常见问题建议：第一次使用时先把电用完，再充满。",
             "如果插上线还是充不进，SALTHUB 建议轻轻晃动主机，看看接头是否插稳。",
+          ],
+        },
+        {
+          heading: "M Switch 15K 怎么验真伪？",
+          paragraphs: [
+            "SALTHUB 的验证页面是 salthub.com/authenticate：拍下包装盒上的防伪标签即可，必须拍实物标签。",
           ],
         },
       ]
