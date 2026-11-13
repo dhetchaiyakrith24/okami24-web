@@ -77,11 +77,68 @@ function drawn(img: HTMLImageElement): Box {
   return { x: b.x + (b.w - nw * s) / 2, y: b.y + (b.h - nh * s) / 2, w: nw * s, h: nh * s };
 }
 
+/**
+ * Where the device itself sits inside a picture, as shares of the picture (0–1): the box of its visible pixels (alpha),
+ * read once per picture from a 64 px copy (same-origin /_next/image, so the canvas stays readable) and kept. Product
+ * pictures are cut-outs on a transparent canvas and the device is not always in the middle of it, so aiming at the
+ * picture's box sent the zoom beside the model on desktop (owner 14/11 "ไม่ได้ซูมไปตรงกลางของตัวโมเดล"). A picture that
+ * cannot be read (not loaded, no alpha, a tainted canvas) counts as the whole picture.
+ */
+type Share = { l: number; t: number; r: number; b: number };
+const WHOLE: Share = { l: 0, t: 0, r: 1, b: 1 };
+const shares = new Map<string, Share>();
+function deviceShare(img: HTMLImageElement): Share {
+  const src = img.currentSrc || img.src;
+  const hit = shares.get(src);
+  if (hit) return hit;
+  if (!img.complete || !img.naturalWidth) return WHOLE;
+  let s = WHOLE;
+  try {
+    const N = 64;
+    const c = document.createElement("canvas");
+    c.width = N;
+    c.height = N;
+    const g = c.getContext("2d", { willReadFrequently: true });
+    if (g) {
+      g.drawImage(img, 0, 0, N, N);
+      const d = g.getImageData(0, 0, N, N).data;
+      let l = N, t = N, r = -1, b = -1;
+      for (let y = 0; y < N; y++)
+        for (let x = 0; x < N; x++)
+          if (d[(y * N + x) * 4 + 3] > 24) {
+            if (x < l) l = x;
+            if (x > r) r = x;
+            if (y < t) t = y;
+            if (y > b) b = y;
+          }
+      // A picture with no transparent margin (a photo on a background) is aimed as a whole.
+      if (r >= l && b >= t && (l > 0 || t > 0 || r < N - 1 || b < N - 1)) s = { l: l / N, t: t / N, r: (r + 1) / N, b: (b + 1) / N };
+    }
+  } catch {}
+  shares.set(src, s);
+  return s;
+}
+/** The device's box inside a picture drawn at `box`. */
+const deviceIn = (box: Box, s: Share): Box => ({ x: box.x + s.l * box.w, y: box.y + s.t * box.h, w: (s.r - s.l) * box.w, h: (s.b - s.t) * box.h });
+const centre = (b: Box) => ({ x: b.x + b.w / 2, y: b.y + b.h / 2 });
+
 /** `aspect` fitted (contain) and centred in `box`. */
 function fit(aspect: number, box: Box): Box {
   const w = Math.min(box.w, box.h * aspect);
   const h = w / aspect;
   return { x: box.x + (box.w - w) / 2, y: box.y + (box.h - h) / 2, w, h };
+}
+
+/** The card picture (drawn at `from`, its device at `share`) laid into `frame` the way the page lays its photo (contain),
+ *  then moved so the device's centre sits exactly on `aim` — the device lands in the middle of the photo frame. */
+function landing(from: Box, share: Share, frame: Box, aim: { x: number; y: number }): Box {
+  const b = fit(from.w / from.h, frame);
+  const c = centre(deviceIn(b, share));
+  return { ...b, x: b.x + aim.x - c.x, y: b.y + aim.y - c.y };
+}
+/** Where to aim on the product page's photo: its device's centre when its picture can be read, else the frame's centre. */
+function aimOf(img: HTMLImageElement, box: Box): { x: number; y: number } {
+  return centre(img.complete && img.naturalWidth ? deviceIn(box, deviceShare(img)) : box);
 }
 
 /** The camera that lays `from` onto `to` (same aspect: uniform scale by width). */
@@ -145,6 +202,7 @@ function toward(from: Box, to: Box): string {
 /** The sharp picture for a card, started (and decoded) as the finger lands, so the photo layer is drawn on the tap frame. */
 const prepared = new WeakMap<HTMLImageElement, HTMLImageElement>();
 function prepare(cardImg: HTMLImageElement, pilot: boolean): HTMLImageElement | null {
+  deviceShare(cardImg); // the aim, read now (64 px, ~1 ms) rather than on the tap frame
   if (!cardImg.srcset) return null;
   let sharp = prepared.get(cardImg);
   if (!sharp) {
@@ -263,8 +321,11 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   const pilot = card.hasAttribute("data-zoom-pilot");
   const path = new URL(href, location.href).pathname;
   const from = drawn(cardImg);
-  const aspect = from.w / from.h;
-  const to = fit(aspect, guessHero(pilot));
+  // Aimed at the device, not the picture (owner 14/11 "ไม่ได้ซูมไปตรงกลางของตัวโมเดล"): its centre lands on the centre
+  // of the product page's photo frame.
+  const share = deviceShare(cardImg);
+  const frame = guessHero(pilot);
+  const to = landing(from, share, frame, centre(frame));
   const cam = camera(from, to);
   try {
     sessionStorage.setItem(BACK_KEY, JSON.stringify({ list: location.pathname + location.search, product: path, slug: card.dataset.cardSlug ?? "", vw: window.innerWidth, y: window.scrollY, pilot } satisfies BackInfo));
@@ -372,13 +433,19 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       // Where the product page shows its photo (the guess `to` is right once this layout landed on this width before).
       const real = found?.img ?? null;
-      const at = found ? fit(aspect, drawn(found.img)) : null;
-      if (found && at) {
+      // The real photo frame, and the device landed on the page's own device (its centre) — so nothing shifts when the
+      // page's photo takes over; the frame is kept as the next guess for this layout and width.
+      const heroBox = found ? drawn(found.img) : null;
+      const at = found && heroBox ? landing(from, share, heroBox, aimOf(found.img, heroBox)) : null;
+      if (found && heroBox) {
         veiled = [...found.hero.querySelectorAll("img")];
         for (const i of veiled) i.style.opacity = "0";
         try {
-          sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...at, vw: window.innerWidth, pilot }));
+          sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...heroBox, vw: window.innerWidth, pilot }));
         } catch {}
+        // For the aim checks (nothing on screen): where the camera put the device, the photo frame's centre and the
+        // page's own device centre.
+        performance.mark("okami-zoom-land", { detail: { camera: centre(deviceIn(to, share)), frame: centre(heroBox), device: aimOf(found.img, heroBox), final: at && centre(deviceIn(at, share)) } });
       }
       // The page shows round the photo once its render has let go of the main thread (≤ 0.4 s), so the fade runs smooth.
       await quiet(400);
@@ -434,7 +501,7 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
 }
 
 /** Back to a list: the product photo as it stood, measured before the router swaps the page (capture-phase popstate). */
-type Leaving = { src: string; box: Box; fit: string; position: string } | null;
+type Leaving = { src: string; box: Box; aim: { x: number; y: number }; fit: string; position: string } | null;
 
 /**
  * Back to the list a zoom started from: the camera starts where the zoom-in ended — the card's photo standing on the
@@ -467,7 +534,9 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   const p = drawn(img);
   const cardBox = boxOf(img.getBoundingClientRect());
   const onScreen = !!leaving && leaving.box.y + leaving.box.h > 40 && leaving.box.y < window.innerHeight - 40;
-  const cam = camera(p, fit(p.w / p.h, onScreen ? leaving!.box : guessHero(info.pilot)));
+  // The mirror of the zoom-in's aim: the card's device starts on the product photo's device.
+  const frame = onScreen ? leaving!.box : guessHero(info.pilot);
+  const cam = camera(p, landing(p, deviceShare(img), frame, onScreen ? leaving!.aim : centre(frame)));
   // The frame the snapshot is taken in shows the list already through the camera (zoomed in on the card), not the list as
   // it stands for a frame and not a blank: the pull-back starts the moment the product page goes. The camera goes on
   // <main>'s children with <main> clipped sideways: on a phone, anything reaching past the right edge widens the page and
@@ -642,7 +711,8 @@ export function attachZoom(router: Router): ZoomEngine {
     const hero = heroPhoto();
     if (!hero) return;
     const cs = getComputedStyle(hero.img);
-    leaving = { src: hero.img.currentSrc || hero.img.src, box: drawn(hero.img), fit: cs.objectFit || "contain", position: cs.objectPosition };
+    const box = drawn(hero.img);
+    leaving = { src: hero.img.currentSrc || hero.img.src, box, aim: aimOf(hero.img, box), fit: cs.objectFit || "contain", position: cs.objectPosition };
   };
   // Back/Forward: the Navigation API's "navigate" comes before the router swaps the page (popstate comes after, measured
   // 13/11); without that API the zoom-out runs without the product photo.
