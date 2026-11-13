@@ -437,7 +437,6 @@ export function ProductHero({
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
-              outOfStockLabel={dict.product.outOfStockChip}
               counts={liveCounts.o}
               countLine={countLine}
               bestIds={bestIds}

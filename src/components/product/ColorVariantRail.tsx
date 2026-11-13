@@ -4,9 +4,7 @@ import type { ReactNode } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 import { PhoneOptionTiles } from "./PhoneOptionTiles";
-import { LowStockDot, useLowStockTitle } from "./StockCount";
-import { OptionBestTag } from "@/components/catalog/SalesBadge";
-import { useLocale } from "@/components/i18n/LocaleProvider";
+import { DesktopOptionTiles } from "./DesktopOptionTiles";
 
 /**
  * Real manufacturer color/finish selector for a Legacy Product Detail hero (owner quality review,
@@ -30,8 +28,8 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  * the cart gates (ProductHero + `resolveProductRef()`) keep it out of the cart. `"unknown"`/absent renders like
  * in-stock, matching the legacy cart gate.
  *
- * Phones (queue Q5, owner 24/10): below `lg` the dot row is replaced by PhoneOptionTiles (photo tiles with
- * an in-stock / sold-out pill; a photo strip past 12 options). At `lg` and above the dots are unchanged.
+ * Phones (queue Q5, owner 24/10): below `lg` PhoneOptionTiles (photo tiles with an in-stock / sold-out pill; a photo
+ * strip past 12 options). From `lg` DesktopOptionTiles (owner 13/11: real-device photo tiles replaced the swatch dots).
  */
 export function ColorVariantRail({
   variants,
@@ -42,7 +40,6 @@ export function ColorVariantRail({
   isAllSelected,
   onSelectAll,
   allChips,
-  outOfStockLabel,
   counts,
   countLine,
   bestIds,
@@ -57,7 +54,6 @@ export function ColorVariantRail({
   onSelectAll?: () => void;
   /** More than one "all" image: one pill per image, in order (replaces `allLabel`/`isAllSelected`/`onSelectAll`). */
   allChips?: { label: string; selected: boolean; onSelect: () => void }[];
-  outOfStockLabel?: string;
   /** Live warehouse count per option id (/api/stock — owner 30/10); empty until it arrives. */
   counts?: Record<string, number>;
   /** The picked option's count line, shown under the phone tiles' header (PhoneOptionTiles). */
@@ -70,96 +66,23 @@ export function ColorVariantRail({
   // Several "all" images (lineupImage2 — owner 01/10: Caliburn G3 Pro's 16 colours as two groups of 8): one pill each,
   // labelled by the parent ("สีที่ 1–8" / "ภาพรวมสี 1" — T2-31); `allLabel`/`isAllSelected`/`onSelectAll` stay the single-pill case.
   const pills = allChips ?? (onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []);
-  const selectedPill = pills.find((p) => p.selected);
-  const selected = variants.find((v) => v.id === selectedId);
-  const anyAll = !!selectedPill;
-  const lowTitle = useLowStockTitle();
-  const { dict } = useLocale();
+  const anyAll = pills.some((p) => p.selected);
+  const options = variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }));
 
   return (
     <div data-option-picker className={cn("flex flex-col gap-2.5", className)}>
       <PhoneOptionTiles
         className="lg:hidden"
-        options={variants.map((v) => ({ id: v.id, name: v.name, image: v.image, swatchHex: v.swatchHex, out: v.availability === "out-of-stock", ask: !!v.stockAsk, left: counts?.[v.id], best: bestIds?.has(v.id) }))}
+        options={options}
         selectedId={anyAll ? null : selectedId}
         countLine={countLine}
         onSelect={onSelect}
         label={label}
         pills={pills}
       />
-      <span className="label-mono text-xs text-foreground-dim max-lg:hidden">
-        {label}
-        {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
-        {!anyAll && selected && bestIds?.has(selected.id) && <OptionBestTag className="ml-2 align-middle" />}
-        {selectedPill && <span className="ml-2 font-sans normal-case text-foreground-muted">{selectedPill.label}</span>}
-      </span>
-      <div className="flex flex-wrap items-center gap-2.5 max-lg:hidden">
-        {pills.map((p) => (
-          <button
-            key={p.label}
-            type="button"
-            onClick={p.onSelect}
-            aria-pressed={p.selected}
-            title={p.label}
-            className={cn(
-              "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150",
-              p.selected
-                ? "border-ember bg-ember/10 text-foreground"
-                : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
-            )}
-          >
-            {p.label}
-          </button>
-        ))}
-        {variants.map((v) => {
-          const outOfStock = v.availability === "out-of-stock";
-          const base = outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : lowTitle(v.name, counts?.[v.id]) ?? v.name;
-          const name = bestIds?.has(v.id) ? `${base} · ${dict.product.badgeBestSeller}` : base;
-          return (
-            <button
-              key={v.id}
-              type="button"
-              data-option-id={v.id}
-              onClick={() => onSelect(v.id)}
-              aria-label={name}
-              aria-pressed={!anyAll && v.id === selectedId}
-              title={name}
-              className={cn(
-                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
-                !anyAll && v.id === selectedId
-                  ? "scale-110 ring-ember"
-                  : "ring-transparent hover:scale-105 hover:ring-surface-border"
-              )}
-            >
-              <span
-                className={cn("block h-full w-full rounded-full border border-black/10 shadow-inner", outOfStock && "opacity-35")}
-                style={{ backgroundColor: v.swatchHex }}
-                aria-hidden
-              />
-              {outOfStock && (
-                <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80"
-                  aria-hidden
-                />
-              )}
-              {!outOfStock && <LowStockDot left={counts?.[v.id]} />}
-              {bestIds?.has(v.id) && (
-                <span className="pointer-events-none absolute -left-1 -top-1 size-2.5 rounded-full border border-surface-1 bg-ember shadow-[0_0_6px_var(--color-ember)]" aria-hidden />
-              )}
-            </button>
-          );
-        })}
-      </div>
-      {outOfStockLabel && variants.some((v) => v.availability === "out-of-stock") && (
-        <span className="text-xs text-foreground-dim max-lg:hidden">
-          {variants
-            .filter((v) => v.availability === "out-of-stock")
-            .map((v) => v.name)
-            .join(", ")}
-          {" — "}
-          {outOfStockLabel}
-        </span>
-      )}
+      {/* lg+: real-device photo tiles (owner 13/11 — the "tiles" preview became the default; the 32px dot row and the
+          "sold-out names" line went with it: each sold-out tile says "หมด" itself). */}
+      <DesktopOptionTiles className="max-lg:hidden" options={options} selectedId={anyAll ? null : selectedId} onSelect={onSelect} label={label} pills={pills} />
     </div>
   );
 }

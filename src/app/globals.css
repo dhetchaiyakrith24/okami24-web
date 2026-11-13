@@ -585,3 +585,25 @@ a[data-card-cut]:is(:has([data-sales="best"]), [data-flagship])::before {
   0%, 48% { transform: translateX(-110%); animation-timing-function: ease-in-out; }
   58%, 100% { transform: translateX(110%); }
 }
+
+/* Desktop colour tiles (DesktopOptionTiles — the default from lg since owner 13/11): two rows of colour tiles while closed —
+   8 at lg (4 a row), 10 at xl (5), 12 from 1440 (6). Plain CSS so each width hides exactly its own overflow. */
+[data-tiles-closed] > :nth-child(n + 9) {
+  display: none;
+}
+@media (min-width: 80rem) {
+  [data-tiles-closed] > :nth-child(n + 9) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 11) {
+    display: none;
+  }
+}
+@media (min-width: 90rem) {
+  [data-tiles-closed] > :nth-child(n + 11) {
+    display: flex;
+  }
+  [data-tiles-closed] > :nth-child(n + 13) {
+    display: none;
+  }
+}
