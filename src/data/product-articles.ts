@@ -108,6 +108,83 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ],
     },
   },
+  // Product-article round 13/11, Marbo Freebase: no maker site — facts = the verified freebase row, "ขวดยาว" with no ml
+  // stated, the four options as the warehouse lists them, the names shared with Marbo Saltnic. No ml / mg / flavour per
+  // colour (the source of the Freebase bottle photos is a shop poster, not the warehouse's own listing). Thai = thai-copy 13/11.
+  "eliquid-109": {
+    th: {
+      lede: "Marbo Freebase ใช้ชื่อ Marbo เหมือนกับ Marbo Saltnic แต่เป็นนิโคตินคนละชนิด ด้านล่างร้านเล่าว่าสองขวดนี้ต่างกันตรงไหน และมีกลิ่นไหนที่เลือกได้เฉพาะในขวดนี้",
+      sections: [
+        {
+          heading: "Marbo Freebase ต่างจาก Marbo Saltnic ตรงไหน",
+          paragraphs: [
+            "ต่างกันหลัก ๆ ที่นิโคติน ขวดนี้เป็นแบบ freebase ส่วน [Marbo Saltnic](/products/eliquid-1) เป็นแบบ salt nic นิโคตินสองแบบนี้เหมาะกับเครื่องคนละแบบ เวลาเลือกจึงเริ่มจากเครื่องที่ใช้อยู่และคำแนะนำของผู้ผลิตเครื่องก่อน แล้วค่อยมาดูกลิ่น รายละเอียดของสองแบบนี้ ร้านรวมไว้ที่ [salt nic กับ freebase ต่างกันยังไง](/guides/salt-nic-vs-freebase)",
+            "ชื่อกลิ่นของสองขวดซ้ำกันอยู่สามชื่อ คือ Purple · Gold และ Ice Sparkling แม้ชื่อจะเหมือนกัน นิโคตินก็ยังเป็นคนละแบบ จึงควรเลือกขวดให้ตรงกับเครื่องก่อน ฝั่ง Marbo Saltnic มีตัวเลือกมากกว่า ส่วน Pink มีเฉพาะใน Marbo Freebase",
+          ],
+        },
+        {
+          heading: "เลือกกลิ่น Marbo Freebase จากชื่อยังไง",
+          paragraphs: [
+            "ในสี่ตัวเลือก มีแค่ Ice Sparkling ที่บอกแนวกลิ่นไว้เป็นคำ อีกสามตัวเลือกเป็นชื่อสีที่ใช้เรียกขวดในระบบคลังของร้าน ชื่อสีไม่ได้บอกว่าข้างในเป็นรสอะไร และร้านยังไม่มีข้อมูลที่ยืนยันได้ จึงไม่ได้เขียนรสให้แต่ละสี",
+            "วิธีดูจากชื่อว่ากลิ่นไหนเย็น ร้านเล่าไว้ที่[พอตกลิ่นไหนดี](/guides/choosing-a-pod-flavor) ถ้าอยากรู้ก่อนสั่งว่าขวดสีไหนเป็นแนวไหน ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Marbo Freebase ขวดยาวมีกี่ ml", answer: "หน้านี้เรียกตามชื่อในคลังว่าขวดยาวค่ะ ปริมาณเป็น ml และความเข้มข้นของนิโคตินยังไม่ได้ระบุไว้ ถ้าต้องการตัวเลขก่อนสั่ง ติดต่อสอบถามเพิ่มเติมได้ที่ @okm24 ค่ะ" },
+        { question: "Marbo Freebase ใช้กับเครื่องแบบไหน", answer: "ใช้เติมในหัวพอตที่เติมน้ำยาเองได้ค่ะ และเพราะเป็นนิโคตินแบบ freebase ก่อนเลือกควรเช็คคู่มือหรือคำแนะนำของผู้ผลิตเครื่องว่าเหมาะกับ freebase ไหม ถ้าเครื่องเหมาะกับ salt nic มากกว่า เลือก Marbo Saltnic แทนได้ค่ะ" },
+        { question: "Marbo สีชมพู มีแบบ salt nic ไหม", answer: "ในรายการของร้าน ตัวเลือก Pink มีเฉพาะใน Marbo Freebase ค่ะ ส่วนชื่อที่มีให้เลือกทั้งสองขวดคือ Purple · Gold และ Ice Sparkling" },
+      ],
+    },
+    en: {
+      lede: "Marbo Freebase shares the Marbo name with Marbo Saltnic but uses a different kind of nicotine. Below, how the two bottles differ, and the flavour you'll only find in this one.",
+      sections: [
+        {
+          heading: "How is Marbo Freebase different from Marbo Saltnic?",
+          paragraphs: [
+            "Mainly in the nicotine. This bottle is freebase; [Marbo Saltnic](/products/eliquid-1) is salt nic. Each suits a different kind of device, so start from the device you use and its maker's recommendation, then look at flavours.",
+            "Three names appear in both lines: Purple, Gold and Ice Sparkling. Even with the same name, the nicotine is different, so choose the line that matches your device first. Marbo Saltnic has more options, while Pink is only in Marbo Freebase.",
+          ],
+        },
+        {
+          heading: "How do I choose a Marbo Freebase flavour from the names?",
+          paragraphs: [
+            "Of the four options, only Ice Sparkling names its flavour in words. The other three are the colours our warehouse uses for the bottles, and they don't tell you what's inside. We have nothing verified to go on, so we don't attach a flavour to a colour.",
+            "If you'd like to know which colour is which before you order, message us on LINE @okm24.",
+          ],
+        },
+      ],
+      faq: [
+        { question: "How many ml is the Marbo Freebase tall bottle?", answer: "We list it as the tall bottle, the name it has in our warehouse. Neither the volume in ml nor the nicotine strength is stated on this page. If you need either figure before you order, message us on LINE @okm24." },
+        { question: "What kind of device is Marbo Freebase for?", answer: "It's for pods you refill yourself. Because it's freebase, check your device's manual or its maker's recommendation first. If your device is better suited to salt nic, Marbo Saltnic is the one to choose instead." },
+        { question: "Does Marbo Saltnic come in Pink too?", answer: "Not in our range. Pink is only in Marbo Freebase. The names both lines share are Purple, Gold and Ice Sparkling." },
+      ],
+    },
+    zh: {
+      lede: "Marbo Freebase 和 Marbo Saltnic 同用 Marbo 这个名字，但尼古丁类型不同。下面说明两款的区别，以及只有这一款才有的口味。",
+      sections: [
+        {
+          heading: "Marbo Freebase 和 Marbo Saltnic 有什么区别？",
+          paragraphs: [
+            "主要区别在尼古丁：这款是游离碱尼古丁，[Marbo Saltnic](/products/eliquid-1) 是盐尼古丁。两者适合的设备不同，建议先根据手上的设备和设备厂家的推荐来决定，再看口味。",
+            "两款有三个名称相同：Purple、Gold 和 Ice Sparkling。名称一样，尼古丁却不同，所以还是先选适合设备的那一款。Marbo Saltnic 的选项更多，而 Pink 只有 Marbo Freebase 才有。",
+          ],
+        },
+        {
+          heading: "怎样从名称挑选 Marbo Freebase 的口味？",
+          paragraphs: [
+            "四个选项中，只有 Ice Sparkling 用文字点明了口味方向。另外三个是本店仓库对瓶子的颜色叫法，并不说明瓶内是什么口味。由于没有可核实的资料，我们不按颜色标注口味。",
+            "下单前想了解哪个颜色是什么口味，欢迎通过 LINE @okm24 咨询。",
+          ],
+        },
+      ],
+      faq: [
+        { question: "Marbo Freebase 长瓶装是多少 ml？", answer: "本页按仓库里的叫法称为长瓶装，毫升数和尼古丁浓度都未标注。下单前需要这些数字，欢迎通过 LINE @okm24 咨询。" },
+        { question: "Marbo Freebase 适合什么设备？", answer: "适合可自行注油的烟弹。因为是游离碱尼古丁，建议先查看设备说明书或厂家推荐。如果设备更适合盐尼古丁，可以改选 Marbo Saltnic。" },
+        { question: "Marbo Saltnic 也有 Pink 吗？", answer: "本店的两款中，Pink 只有 Marbo Freebase 才有。两款共有的名称是 Purple、Gold 和 Ice Sparkling。" },
+      ],
+    },
+  },
   // Round SEO full 07/11: FAQ only, the page has no article yet.
   "super-cool-saltnic": {
     th: {
