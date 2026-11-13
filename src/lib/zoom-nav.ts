@@ -504,8 +504,9 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
 }
 
 /** The engine as ZoomNav.tsx holds it: `zoom(card)` = zoom into that card now if the Zoom applies (true), else false
- *  (the caller then navigates plainly); `detach` = take every listener off. */
-export type ZoomEngine = { zoom: (card: HTMLAnchorElement) => boolean; detach: () => void };
+ *  (the caller then navigates plainly); `detach` = take every listener off; `afterRouter` = once the router is up,
+ *  put the zoom-out's popstate listener behind the router's own again. */
+export type ZoomEngine = { zoom: (card: HTMLAnchorElement) => boolean; detach: () => void; afterRouter: () => void };
 
 /** Picture to zoom from, when this card zooms at all (the same checks for a click and for a held first tap). */
 function zoomable(card: HTMLAnchorElement): { img: HTMLImageElement; href: string } | null {
@@ -644,5 +645,12 @@ export function attachZoom(router: Router): ZoomEngine {
     window.clearTimeout(popTimer);
     document.documentElement.style.scrollBehavior = "";
   };
-  return { zoom, detach };
+  // The zoom-out must run after the router's own popstate handler (that one puts the list back). Attached before
+  // hydration, the engine registered first and Back lost its zoom-out (13/11); ZoomNav calls this once the router has
+  // registered its handler, and the listener goes to the back of the line again.
+  const afterRouter = () => {
+    window.removeEventListener("popstate", onPop);
+    window.addEventListener("popstate", onPop);
+  };
+  return { zoom, detach, afterRouter };
 }
