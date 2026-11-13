@@ -1,11 +1,11 @@
 {
- "ranAt": "2026-11-12T04:07:52.634Z",
+ "ranAt": "2026-11-13T03:37:29.727Z",
  "site": "sc-domain:okami24.store",
  "urlSource": "sitemap",
  "rows": [
   {
    "url": "https://okami24.store",
-   "lastCrawl": "2026-11-09T09:06:51Z",
+   "lastCrawl": "2026-11-12T15:45:51Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -15,7 +15,7 @@
   },
   {
    "url": "https://okami24.store/about",
-   "lastCrawl": "2026-11-08T13:38:19Z",
+   "lastCrawl": "2026-11-12T16:01:53Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -55,7 +55,7 @@
   },
   {
    "url": "https://okami24.store/brands/iqos",
-   "lastCrawl": "2026-11-01T05:24:24Z",
+   "lastCrawl": "2026-11-12T15:59:53Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -95,7 +95,7 @@
   },
   {
    "url": "https://okami24.store/brands/moood",
-   "lastCrawl": "2026-11-07T16:01:35Z",
+   "lastCrawl": "2026-11-11T23:00:24Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -185,7 +185,7 @@
   },
   {
    "url": "https://okami24.store/brands/voopoo",
-   "lastCrawl": "2026-11-02T21:50:49Z",
+   "lastCrawl": "2026-11-12T15:47:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -205,7 +205,7 @@
   },
   {
    "url": "https://okami24.store/contact",
-   "lastCrawl": "2026-11-02T18:43:23Z",
+   "lastCrawl": "2026-11-12T16:04:27Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -215,7 +215,7 @@
   },
   {
    "url": "https://okami24.store/e-liquid",
-   "lastCrawl": "2026-11-11T18:18:17Z",
+   "lastCrawl": "2026-11-12T05:06:58Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -285,7 +285,7 @@
   },
   {
    "url": "https://okami24.store/guides",
-   "lastCrawl": "2026-11-08T12:32:54Z",
+   "lastCrawl": "2026-11-12T17:44:32Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -315,7 +315,7 @@
   },
   {
    "url": "https://okami24.store/guides/cant-open-the-website",
-   "lastCrawl": "2026-10-31T20:39:23Z",
+   "lastCrawl": "2026-11-12T15:57:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -455,7 +455,7 @@
   },
   {
    "url": "https://okami24.store/guides/esko-bar-switch-vs-m-switch",
-   "lastCrawl": "2026-11-03T10:22:24Z",
+   "lastCrawl": "2026-11-12T00:57:33Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -555,7 +555,7 @@
   },
   {
    "url": "https://okami24.store/guides/open-system-vs-disposable",
-   "lastCrawl": "2026-11-02T07:39:24Z",
+   "lastCrawl": "2026-11-12T06:34:12Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -565,7 +565,7 @@
   },
   {
    "url": "https://okami24.store/guides/pg-vg-in-e-liquid",
-   "lastCrawl": "2026-11-06T15:48:30Z",
+   "lastCrawl": "2026-11-12T16:14:34Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -627,11 +627,11 @@
    "url": "https://okami24.store/guides/salt-nic-vs-freebase",
    "lastCrawl": null,
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "indexing": "INDEXING_STATE_UNSPECIFIED",
    "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
    "googleCanonical": null,
-   "crawledAs": null
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
   },
   {
    "url": "https://okami24.store/guides/taking-a-pod-on-a-plane",
@@ -705,7 +705,7 @@
   },
   {
    "url": "https://okami24.store/products",
-   "lastCrawl": "2026-11-09T01:00:20Z",
+   "lastCrawl": "2026-11-12T15:49:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -795,7 +795,7 @@
   },
   {
    "url": "https://okami24.store/products/caliburn-g3-pro-koko",
-   "lastCrawl": "2026-11-08T09:10:52Z",
+   "lastCrawl": "2026-11-12T05:07:00Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -855,7 +855,7 @@
   },
   {
    "url": "https://okami24.store/products/caliburn-g5",
-   "lastCrawl": "2026-11-07T09:23:57Z",
+   "lastCrawl": "2026-11-12T07:18:02Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -915,7 +915,7 @@
   },
   {
    "url": "https://okami24.store/products/coil-53",
-   "lastCrawl": "2026-11-03T12:27:23Z",
+   "lastCrawl": "2026-11-12T00:21:04Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -925,7 +925,7 @@
   },
   {
    "url": "https://okami24.store/products/coil-54",
-   "lastCrawl": "2026-11-03T10:47:26Z",
+   "lastCrawl": "2026-11-12T16:16:34Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -965,7 +965,7 @@
   },
   {
    "url": "https://okami24.store/products/coil-70",
-   "lastCrawl": "2026-11-03T09:05:19Z",
+   "lastCrawl": "2026-11-12T13:00:02Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1045,7 +1045,7 @@
   },
   {
    "url": "https://okami24.store/products/coils-accessories",
-   "lastCrawl": "2026-11-02T10:09:22Z",
+   "lastCrawl": "2026-11-12T15:49:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1065,7 +1065,7 @@
   },
   {
    "url": "https://okami24.store/products/drag-6",
-   "lastCrawl": "2026-11-03T09:21:23Z",
+   "lastCrawl": "2026-11-12T15:29:50Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1075,7 +1075,7 @@
   },
   {
    "url": "https://okami24.store/products/drag-s3",
-   "lastCrawl": "2026-11-10T17:21:16Z",
+   "lastCrawl": "2026-11-12T15:53:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1095,17 +1095,17 @@
   },
   {
    "url": "https://okami24.store/products/drag-x2",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:37:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/drag-x2",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/drag-x3",
-   "lastCrawl": "2026-11-03T02:24:23Z",
+   "lastCrawl": "2026-11-12T15:57:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1235,7 +1235,7 @@
   },
   {
    "url": "https://okami24.store/products/heated-tobacco-devices",
-   "lastCrawl": "2026-11-02T01:24:23Z",
+   "lastCrawl": "2026-11-12T15:59:53Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1255,7 +1255,7 @@
   },
   {
    "url": "https://okami24.store/products/infy-pod",
-   "lastCrawl": "2026-11-09T15:19:44Z",
+   "lastCrawl": "2026-11-12T00:18:17Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1265,23 +1265,23 @@
   },
   {
    "url": "https://okami24.store/products/iqos-iluma-one",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:39:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqos-iluma-one",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/iqos-iluma-one-oasis",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:41:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/iqos-iluma-one-oasis",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/iqosheet-14",
@@ -1325,7 +1325,7 @@
   },
   {
    "url": "https://okami24.store/products/iqosheet-18",
-   "lastCrawl": "2026-11-02T05:09:31Z",
+   "lastCrawl": "2026-11-12T06:34:02Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1355,7 +1355,7 @@
   },
   {
    "url": "https://okami24.store/products/ks-quikpro-kit",
-   "lastCrawl": "2026-10-31T05:40:26Z",
+   "lastCrawl": "2026-11-11T23:42:14Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1415,7 +1415,7 @@
   },
   {
    "url": "https://okami24.store/products/mq-bar-22k",
-   "lastCrawl": "2026-11-09T02:15:20Z",
+   "lastCrawl": "2026-11-12T18:37:45Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1625,17 +1625,17 @@
   },
   {
    "url": "https://okami24.store/products/pop-up-10k-base",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:43:51Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/pop-up-10k-base",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/punta-ice",
-   "lastCrawl": "2026-11-03T11:34:36Z",
+   "lastCrawl": "2026-11-12T05:50:29Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1655,7 +1655,7 @@
   },
   {
    "url": "https://okami24.store/products/relx-creator",
-   "lastCrawl": "2026-11-03T22:31:06Z",
+   "lastCrawl": "2026-11-13T03:19:52Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1685,7 +1685,7 @@
   },
   {
    "url": "https://okami24.store/products/relx-essential-2",
-   "lastCrawl": "2026-10-20T17:51:11Z",
+   "lastCrawl": "2026-11-12T16:16:36Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1785,13 +1785,13 @@
   },
   {
    "url": "https://okami24.store/products/relx-ultra-pod",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED"
+   "lastCrawl": "2026-11-12T15:45:51Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/relx-ultra-pod",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/smok-nord-5",
@@ -1835,7 +1835,7 @@
   },
   {
    "url": "https://okami24.store/products/switch-pods",
-   "lastCrawl": "2026-11-03T19:54:47Z",
+   "lastCrawl": "2026-11-12T16:01:53Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1855,7 +1855,7 @@
   },
   {
    "url": "https://okami24.store/products/vazer-one-pod",
-   "lastCrawl": "2026-11-09T03:51:52Z",
+   "lastCrawl": "2026-11-12T16:06:29Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1895,7 +1895,7 @@
   },
   {
    "url": "https://okami24.store/products/vmate-pro-2",
-   "lastCrawl": "2026-11-06T09:22:24Z",
+   "lastCrawl": "2026-11-12T05:50:31Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",
@@ -1905,23 +1905,23 @@
   },
   {
    "url": "https://okami24.store/products/voopoo-pnp-x-coil-5pack",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:37:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/voopoo-pnp-x-coil-5pack",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/voopoo-vinci-coil-5pack",
-   "lastCrawl": null,
-   "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
-   "indexing": "INDEXING_STATE_UNSPECIFIED",
-   "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED",
-   "googleCanonical": null,
-   "crawledAs": null
+   "lastCrawl": "2026-11-12T15:39:50Z",
+   "verdict": "PASS",
+   "coverage": "Submitted and indexed",
+   "indexing": "INDEXING_ALLOWED",
+   "pageFetch": "SUCCESSFUL",
+   "googleCanonical": "https://okami24.store/products/voopoo-vinci-coil-5pack",
+   "crawledAs": "MOBILE"
   },
   {
    "url": "https://okami24.store/products/wotofo-nexbar-18k",
@@ -2035,7 +2035,7 @@
   },
   {
    "url": "https://okami24.store/warranty",
-   "lastCrawl": "2026-10-31T18:10:22Z",
+   "lastCrawl": "2026-11-12T12:07:23Z",
    "verdict": "PASS",
    "coverage": "Submitted and indexed",
    "indexing": "INDEXING_ALLOWED",

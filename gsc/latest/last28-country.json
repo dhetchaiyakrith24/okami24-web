@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-14",
-  "endDate": "2026-11-10",
+  "startDate": "2026-10-15",
+  "endDate": "2026-11-11",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 415,
-   "impressions": 2923,
-   "ctr": 0.14197742045843312,
-   "position": 10.907971262401642
+   "clicks": 396,
+   "impressions": 2816,
+   "ctr": 0.140625,
+   "position": 10.872869318181818
   },
   {
    "keys": [
@@ -39,9 +39,9 @@
     "gbr"
    ],
    "clicks": 1,
-   "impressions": 3,
-   "ctr": 0.3333333333333333,
-   "position": 16.333333333333336
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 20
   },
   {
    "keys": [

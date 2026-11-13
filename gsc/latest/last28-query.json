@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-14",
-  "endDate": "2026-11-10",
+  "startDate": "2026-10-15",
+  "endDate": "2026-11-11",
   "dimensions": [
    "query"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "okami24"
    ],
-   "clicks": 30,
-   "impressions": 47,
-   "ctr": 0.6382978723404256,
-   "position": 1.0212765957446808
+   "clicks": 33,
+   "impressions": 50,
+   "ctr": 0.66,
+   "position": 1.02
   },
   {
    "keys": [
@@ -29,10 +29,10 @@
    "keys": [
     "okami pod"
    ],
-   "clicks": 15,
-   "impressions": 18,
-   "ctr": 0.8333333333333334,
-   "position": 1.8888888888888888
+   "clicks": 16,
+   "impressions": 19,
+   "ctr": 0.8421052631578947,
+   "position": 1.8421052631578947
   },
   {
    "keys": [
@@ -47,28 +47,19 @@
    "keys": [
     "pod"
    ],
-   "clicks": 10,
-   "impressions": 135,
-   "ctr": 0.07407407407407407,
-   "position": 11.755555555555556
+   "clicks": 9,
+   "impressions": 130,
+   "ctr": 0.06923076923076923,
+   "position": 10.815384615384616
   },
   {
    "keys": [
     "pod system"
    ],
-   "clicks": 10,
-   "impressions": 45,
-   "ctr": 0.2222222222222222,
-   "position": 4.355555555555556
-  },
-  {
-   "keys": [
-    "voopoo argus g4 ราคา"
-   ],
    "clicks": 9,
-   "impressions": 12,
-   "ctr": 0.75,
-   "position": 1.25
+   "impressions": 42,
+   "ctr": 0.21428571428571427,
+   "position": 4.428571428571429
   },
   {
    "keys": [
@@ -81,21 +72,30 @@
   },
   {
    "keys": [
+    "voopoo argus g4 ราคา"
+   ],
+   "clicks": 8,
+   "impressions": 11,
+   "ctr": 0.7272727272727273,
+   "position": 1.1818181818181819
+  },
+  {
+   "keys": [
     "voopoo drag 6"
    ],
-   "clicks": 7,
-   "impressions": 30,
-   "ctr": 0.23333333333333334,
-   "position": 6.733333333333333
+   "clicks": 5,
+   "impressions": 25,
+   "ctr": 0.2,
+   "position": 6.84
   },
   {
    "keys": [
     "caliburn g5 lite"
    ],
    "clicks": 3,
-   "impressions": 15,
-   "ctr": 0.2,
-   "position": 5.8
+   "impressions": 12,
+   "ctr": 0.25,
+   "position": 5.916666666666667
   },
   {
    "keys": [
@@ -105,15 +105,6 @@
    "impressions": 3,
    "ctr": 1,
    "position": 14.666666666666666
-  },
-  {
-   "keys": [
-    "voopoo"
-   ],
-   "clicks": 3,
-   "impressions": 8,
-   "ctr": 0.375,
-   "position": 14.625
   },
   {
    "keys": [
@@ -129,8 +120,8 @@
     "nexbar 18k ราคา"
    ],
    "clicks": 2,
-   "impressions": 12,
-   "ctr": 0.16666666666666666,
+   "impressions": 10,
+   "ctr": 0.2,
    "position": 6.5
   },
   {
@@ -153,30 +144,21 @@
   },
   {
    "keys": [
+    "voopoo"
+   ],
+   "clicks": 2,
+   "impressions": 7,
+   "ctr": 0.2857142857142857,
+   "position": 11.571428571428571
+  },
+  {
+   "keys": [
     "caliburn"
    ],
    "clicks": 1,
    "impressions": 4,
    "ctr": 0.25,
    "position": 44.5
-  },
-  {
-   "keys": [
-    "caliburn g3 pro"
-   ],
-   "clicks": 1,
-   "impressions": 3,
-   "ctr": 0.3333333333333333,
-   "position": 9.666666666666666
-  },
-  {
-   "keys": [
-    "caliburn g3 คอยล์"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 2
   },
   {
    "keys": [
@@ -210,9 +192,9 @@
     "caliburn g5"
    ],
    "clicks": 1,
-   "impressions": 16,
-   "ctr": 0.0625,
-   "position": 7.9375
+   "impressions": 14,
+   "ctr": 0.07142857142857142,
+   "position": 8.214285714285715
   },
   {
    "keys": [
@@ -300,9 +282,9 @@
     "mbar 15k"
    ],
    "clicks": 1,
-   "impressions": 11,
-   "ctr": 0.09090909090909091,
-   "position": 8.363636363636363
+   "impressions": 8,
+   "ctr": 0.125,
+   "position": 8.625
   },
   {
    "keys": [
@@ -324,15 +306,6 @@
   },
   {
    "keys": [
-    "relx smash go"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 47
-  },
-  {
-   "keys": [
     "switch pod"
    ],
    "clicks": 1,
@@ -351,15 +324,6 @@
   },
   {
    "keys": [
-    "voopoo g4 mini"
-   ],
-   "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 4.5
-  },
-  {
-   "keys": [
     "voopoo vmate pro 2"
    ],
    "clicks": 1,
@@ -375,24 +339,6 @@
    "impressions": 1,
    "ctr": 1,
    "position": 2
-  },
-  {
-   "keys": [
-    "พอตใช้ทิ้ง"
-   ],
-   "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 55
-  },
-  {
-   "keys": [
-    "agrus g4"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
   },
   {
    "keys": [
@@ -417,9 +363,9 @@
     "argus g4"
    ],
    "clicks": 0,
-   "impressions": 7,
+   "impressions": 5,
    "ctr": 0,
-   "position": 8.714285714285715
+   "position": 9.2
   },
   {
    "keys": [
@@ -441,15 +387,6 @@
   },
   {
    "keys": [
-    "calibrun g5"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 7
-  },
-  {
-   "keys": [
     "caliburn g"
    ],
    "clicks": 0,
@@ -465,6 +402,15 @@
    "impressions": 2,
    "ctr": 0,
    "position": 6
+  },
+  {
+   "keys": [
+    "caliburn g3 pro"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 9
   },
   {
    "keys": [
@@ -600,15 +546,6 @@
    "impressions": 3,
    "ctr": 0,
    "position": 6
-  },
-  {
-   "keys": [
-    "drag6"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 8
   },
   {
    "keys": [
@@ -795,9 +732,9 @@
     "infy 20k"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 40
+   "position": 13
   },
   {
    "keys": [
@@ -993,9 +930,9 @@
     "m bar 15k"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 6.5
+   "position": 6.6
   },
   {
    "keys": [
@@ -1143,6 +1080,15 @@
   },
   {
    "keys": [
+    "muro connector 20k"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 62
+  },
+  {
+   "keys": [
     "muro mixto"
    ],
    "clicks": 0,
@@ -1260,15 +1206,6 @@
   },
   {
    "keys": [
-    "pod store"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 15
-  },
-  {
-   "keys": [
     "pod system pantip"
    ],
    "clicks": 0,
@@ -1317,9 +1254,9 @@
     "pod systems"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 3.5
+   "position": 3
   },
   {
    "keys": [
@@ -1449,6 +1386,15 @@
   },
   {
    "keys": [
+    "relx smash go"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 69
+  },
+  {
+   "keys": [
     "round pods"
    ],
    "clicks": 0,
@@ -1533,18 +1479,18 @@
     "tfit m power 20k"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 4,
    "ctr": 0,
-   "position": 15.6
+   "position": 17
   },
   {
    "keys": [
     "tfit m power 20k ราคา"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 4.5
+   "position": 4
   },
   {
    "keys": [
@@ -1581,15 +1527,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 9
-  },
-  {
-   "keys": [
-    "uwell caliburn g5 lite"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 8
   },
   {
    "keys": [
@@ -1641,9 +1578,9 @@
     "voopoo argus g4"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 3,
    "ctr": 0,
-   "position": 9.25
+   "position": 9.333333333333334
   },
   {
    "keys": [
@@ -1683,12 +1620,21 @@
   },
   {
    "keys": [
+    "voopoo g4 mini"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 7
+  },
+  {
+   "keys": [
     "voopoo vmate i3"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 8.5
+   "position": 7
   },
   {
    "keys": [
@@ -1794,9 +1740,9 @@
     "จอยเว"
    ],
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 6,
    "ctr": 0,
-   "position": 7
+   "position": 6.666666666666667
   },
   {
    "keys": [
@@ -2046,9 +1992,9 @@
     "ราคา"
    ],
    "clicks": 0,
-   "impressions": 22,
+   "impressions": 23,
    "ctr": 0,
-   "position": 11.863636363636363
+   "position": 11.478260869565217
   },
   {
    "keys": [
@@ -2088,6 +2034,15 @@
   },
   {
    "keys": [
+    "ราคาปัจจุบัน"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
+  },
+  {
+   "keys": [
     "ราคาา"
    ],
    "clicks": 0,
@@ -2103,6 +2058,15 @@
    "impressions": 4,
    "ctr": 0,
    "position": 10.75
+  },
+  {
+   "keys": [
+    "ราคาเท่าไหร่"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
   },
   {
    "keys": [
@@ -2310,15 +2274,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 27
-  },
-  {
-   "keys": [
-    "เอาบุหรี่ไฟฟ้าขึ้นเครื่องได้ไหม"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 6
   }
  ]
 }
