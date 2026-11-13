@@ -64,7 +64,8 @@ export function ELiquidNicotineTypes() {
 export function ELiquidDisclaimer() {
   const { dict } = useLocale();
   return (
-    <div className="mt-14 rounded-2xl border border-surface-border-soft bg-surface-1 p-6">
+    // Wide screens: as wide as the centred section above it (designer 13/11); below lg unchanged.
+    <div className="mt-14 rounded-2xl border border-surface-border-soft bg-surface-1 p-6 lg:mx-auto lg:max-w-3xl">
       <p className="text-sm leading-relaxed text-foreground-muted"><ThaiText>{dict.eliquid.disclaimer}</ThaiText></p>
     </div>
   );
