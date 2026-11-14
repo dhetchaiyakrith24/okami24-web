@@ -58,38 +58,59 @@ export function ProductArticleBody({ articles }: { articles: ArticlesByLocale })
     // Centred on wide screens under the centred heading + lede (Measure, owner 13/11) — a caller that already centres it
     // (ProductMoreDetails' stage) sees no change; below lg unchanged.
     <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:mx-auto lg:gap-14 lg:pt-16">
-      {a.sections.map((s, i) => (
-        <div key={i} className="flex flex-col gap-3">
-          <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{locale === "th" ? thaiTypographyNode(s.heading) : s.heading}</h3>
-          {s.paragraphs.map((p, pi) => (
-            <p key={pi} className="text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
-              {renderInline(p, locale, `a${i}p${pi}`)}
-            </p>
-          ))}
-          {/* Product-article round 13/11: the section's own picture (`ArticleSubsection.image`, in the type since 16/10 but
-              never drawn). A cut-out floats small under its text; a poster gets the G5 poster frame. */}
-          {s.image && (
+      {a.sections.map((s, i) => {
+        const text = (
+          <>
+            <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{locale === "th" ? thaiTypographyNode(s.heading) : s.heading}</h3>
+            {s.paragraphs.map((p, pi) => (
+              <p key={pi} className="text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
+                {renderInline(p, locale, `a${i}p${pi}`)}
+              </p>
+            ))}
+          </>
+        );
+        const media = s.image && (
+          <>
+            {/* Product-article round 13/11: the section's own picture (`ArticleSubsection.image`, in the type since 16/10 but
+                never drawn). A cut-out floats small under its text; a poster gets the G5 poster frame. */}
             <div className={cn("mt-2", s.image.transparent ? "w-full max-w-[13rem] lg:max-w-[15rem]" : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black")}>
               <Image src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height} sizes={s.image.transparent ? "240px" : "(min-width: 1024px) 768px, 100vw"} className="block h-auto w-full" />
             </div>
-          )}
-          {/* G5 round 14/11: a maker's picture (poster, kit render) keeps the credit line every story poster carries; the
-              shop's own photos (sourceName "OKami24") stay uncredited as before. */}
-          {s.image && s.image.sourceName !== "OKami24" && (
-            <p className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
-              © {s.image.sourceName}
-              {s.image.sourceUrl && (
-                <>
-                  {" · "}
-                  <a href={s.image.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="transition-colors hover:text-foreground hover:underline">
-                    {dict.product.gallerySourceLinkLabel}
-                  </a>
-                </>
-              )}
-            </p>
-          )}
-        </div>
-      ))}
+            {/* G5 round 14/11: a maker's picture (poster, kit render) keeps the credit line every story poster carries; the
+                shop's own photos (sourceName "OKami24") stay uncredited as before. */}
+            {s.image.sourceName !== "OKami24" && (
+              <p className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
+                © {s.image.sourceName}
+                {s.image.sourceUrl && (
+                  <>
+                    {" · "}
+                    <a href={s.image.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="transition-colors hover:text-foreground hover:underline">
+                      {dict.product.gallerySourceLinkLabel}
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
+          </>
+        );
+        // G5 round 14/11 (`imageLayout: "beside"`, checker on RELX at 1440): from lg the picture sits right of the heading and
+        // text, both centred on one row, so a small cut-out no longer leaves the row half empty; below lg it is the same
+        // stack as every other section. Sections without the flag render exactly as before.
+        if (s.image && s.imageLayout === "beside") {
+          return (
+            <div key={i} className="flex flex-col gap-3 lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:items-center lg:gap-x-12">
+              <div className="flex flex-col gap-3">{text}</div>
+              <div className="flex flex-col gap-3 lg:[&>div]:mt-0">{media}</div>
+            </div>
+          );
+        }
+        return (
+          <div key={i} className="flex flex-col gap-3">
+            {text}
+            {media}
+          </div>
+        );
+      })}
     </div>
   );
 }

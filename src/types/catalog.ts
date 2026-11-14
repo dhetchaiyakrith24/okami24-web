@@ -436,6 +436,9 @@ export interface ArticleSubsection {
   paragraphs: string[];
   /** Same as `GuideSection.image`, for a poster about exactly this H3's subject. */
   image?: StoryImage;
+  /** Product articles only (G5 round 14/11, checker on RELX at 1440: a small cut-out under short text left the row half
+   *  empty): "beside" puts the picture to the right of the heading and text from lg up; below lg it stays under the text. */
+  imageLayout?: "beside";
 }
 
 export interface ArticleFAQItem {
