@@ -34,6 +34,9 @@ const ZOOM_MS = 350;
 const EASE = "cubic-bezier(0.25, 0.9, 0.25, 1)";
 /** The product page showing round the photo once it is there. */
 const LIFT_MS = 120;
+/** Desktop: longest wait, on the still list, for the product page's real photo frame before the camera flies (past it the
+ *  camera flies to the guess and corrects once the page is there). ~150–260 ms is a product page's render at 1×. */
+const AIM_MS = 300;
 /** Longest wait for the product page before giving up and simply letting it show. */
 const WAIT_MS = 8000;
 const HERO_CACHE = "okami-zoom-hero";
@@ -77,11 +80,77 @@ function drawn(img: HTMLImageElement): Box {
   return { x: b.x + (b.w - nw * s) / 2, y: b.y + (b.h - nh * s) / 2, w: nw * s, h: nh * s };
 }
 
+/**
+ * Where the device itself sits inside a picture, as shares of the picture (0–1): the box of its visible pixels (alpha),
+ * read once per picture from a 64 px copy (same-origin /_next/image, so the canvas stays readable) and kept. Product
+ * pictures are cut-outs on a transparent canvas and the device is not always in the middle of it, so aiming at the
+ * picture's box sent the zoom beside the model on desktop (owner 14/11 "ไม่ได้ซูมไปตรงกลางของตัวโมเดล"). A picture that
+ * cannot be read (not loaded, no alpha, a tainted canvas) counts as the whole picture.
+ */
+type Share = { l: number; t: number; r: number; b: number };
+const WHOLE: Share = { l: 0, t: 0, r: 1, b: 1 };
+const shares = new Map<string, Share>();
+function deviceShare(img: HTMLImageElement): Share {
+  const src = img.currentSrc || img.src;
+  const hit = shares.get(src);
+  if (hit) return hit;
+  if (!img.complete || !img.naturalWidth) return WHOLE;
+  let s = WHOLE;
+  try {
+    const N = 64;
+    const c = document.createElement("canvas");
+    c.width = N;
+    c.height = N;
+    const g = c.getContext("2d", { willReadFrequently: true });
+    if (g) {
+      g.drawImage(img, 0, 0, N, N);
+      const d = g.getImageData(0, 0, N, N).data;
+      let l = N, t = N, r = -1, b = -1;
+      for (let y = 0; y < N; y++)
+        for (let x = 0; x < N; x++)
+          if (d[(y * N + x) * 4 + 3] > 24) {
+            if (x < l) l = x;
+            if (x > r) r = x;
+            if (y < t) t = y;
+            if (y > b) b = y;
+          }
+      // A picture with no transparent margin (a photo on a background) is aimed as a whole.
+      if (r >= l && b >= t && (l > 0 || t > 0 || r < N - 1 || b < N - 1)) s = { l: l / N, t: t / N, r: (r + 1) / N, b: (b + 1) / N };
+    }
+  } catch {}
+  shares.set(src, s);
+  return s;
+}
+/** The device's box inside a picture drawn at `box`. */
+const deviceIn = (box: Box, s: Share): Box => ({ x: box.x + s.l * box.w, y: box.y + s.t * box.h, w: (s.r - s.l) * box.w, h: (s.b - s.t) * box.h });
+const centre = (b: Box) => ({ x: b.x + b.w / 2, y: b.y + b.h / 2 });
+
 /** `aspect` fitted (contain) and centred in `box`. */
 function fit(aspect: number, box: Box): Box {
   const w = Math.min(box.w, box.h * aspect);
   const h = w / aspect;
   return { x: box.x + (box.w - w) / 2, y: box.y + (box.h - h) / 2, w, h };
+}
+
+/** The card picture (drawn at `from`, its device at `share`) laid into `frame` the way the page lays its photo (contain),
+ *  then moved so the device's centre sits exactly on `aim` — the device lands in the middle of the photo frame. */
+function landing(from: Box, share: Share, frame: Box, aim: { x: number; y: number }): Box {
+  const b = fit(from.w / from.h, frame);
+  const c = centre(deviceIn(b, share));
+  return { ...b, x: b.x + aim.x - c.x, y: b.y + aim.y - c.y };
+}
+/** Where to aim on the product page's photo: its device's centre when its picture can be read, else the frame's centre.
+ *  `cachedOnly` (Back): never reads pixels there — Back's task already holds the list's re-render (~0.3 s at 1×); the
+ *  photo's share is read in idle time after the zoom-in lands (readHeroLater). */
+function aimOf(img: HTMLImageElement, box: Box, cachedOnly = false): { x: number; y: number } {
+  const s = cachedOnly ? shares.get(img.currentSrc || img.src) : img.complete && img.naturalWidth ? deviceShare(img) : undefined;
+  return centre(s ? deviceIn(box, s) : box);
+}
+/** The product photo's device share, read when the browser is idle once the picture has loaded. */
+function readHeroLater(img: HTMLImageElement): void {
+  const read = () => idle(() => deviceShare(img));
+  if (img.complete && img.naturalWidth) read();
+  else img.addEventListener("load", read, { once: true });
 }
 
 /** The camera that lays `from` onto `to` (same aspect: uniform scale by width). */
@@ -133,6 +202,28 @@ function heroPhoto(): { img: HTMLImageElement; hero: HTMLElement } | null {
   return best ? { img: best.img, hero: best.hero } : null;
 }
 
+/** The product page's photo once `path` is the route and the photo is laid out, polled on timers (inside a transition's
+ *  update the browser pauses frames, so no rAF) for at most `ms`; null past that. */
+async function heroSoon(path: string, ms: number): Promise<ReturnType<typeof heroPhoto>> {
+  const t0 = performance.now();
+  // Laid out AND settled: the same box on three reads in a row — the page's first render can still move its photo
+  // (joiway-f3 at 1440: 16 px, ~70 ms after it first showed, checker 14/11).
+  let last = "";
+  let same = 0;
+  let h: ReturnType<typeof heroPhoto> = null;
+  for (;;) {
+    if (location.pathname === path && (h = heroPhoto())) {
+      const b = drawn(h.img);
+      const k = `${Math.round(b.x)},${Math.round(b.y)},${Math.round(b.w)}`;
+      same = k === last ? same + 1 : 0;
+      last = k;
+      if (same >= 2) return h;
+    }
+    if (performance.now() - t0 > ms) return h;
+    await new Promise((r) => setTimeout(r, 16));
+  }
+}
+
 function place(el: HTMLElement, b: Box): void {
   Object.assign(el.style, { left: `${b.x}px`, top: `${b.y}px`, width: `${b.w}px`, height: `${b.h}px` });
 }
@@ -145,6 +236,7 @@ function toward(from: Box, to: Box): string {
 /** The sharp picture for a card, started (and decoded) as the finger lands, so the photo layer is drawn on the tap frame. */
 const prepared = new WeakMap<HTMLImageElement, HTMLImageElement>();
 function prepare(cardImg: HTMLImageElement, pilot: boolean): HTMLImageElement | null {
+  deviceShare(cardImg); // the aim, read now (64 px, ~1 ms) rather than on the tap frame
   if (!cardImg.srcset) return null;
   let sharp = prepared.get(cardImg);
   if (!sharp) {
@@ -222,6 +314,29 @@ function siteHeader(): HTMLElement | null {
   return document.querySelector<HTMLElement>("body header");
 }
 
+/**
+ * Until the main thread is free: three frames in a row each within ~two refreshes (≤ 34 ms), or `cap` ms. Motion started
+ * while the page is busy stalls mid-way (live 14/11 at 375 px: a 263 ms freeze in the middle of the zoom, right after the
+ * route change; the owner: "กระตุก · ไม่สมูท"). Started on a quiet main thread it runs through. Each move of the Zoom
+ * waits here first, standing still on the frame it starts from, and nothing heavy runs while one is moving.
+ */
+async function quiet(cap: number): Promise<void> {
+  const t0 = performance.now();
+  let last = await raf();
+  for (let calm = 0; calm < 3 && performance.now() - t0 < cap; ) {
+    const t = await raf();
+    calm = t - last <= 34 ? calm + 1 : 0;
+    last = t;
+  }
+}
+/** Animations set up paused on their first frame, then all started together. */
+const hold0 = (anims: Animation[]) => {
+  for (const a of anims) a.pause();
+  return () => {
+    for (const a of anims) a.play();
+  };
+};
+
 /** The photo's group (globals.css: no browser morph, origin 0 0) sits on its new box `to`; this carries it from the old
  *  box `from` (same aspect: one scale) — a transform only, so it runs beside the camera off the main thread. */
 function morph(from: Box, to: Box, timing: KeyframeAnimationOptions): Animation {
@@ -240,9 +355,19 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   const pilot = card.hasAttribute("data-zoom-pilot");
   const path = new URL(href, location.href).pathname;
   const from = drawn(cardImg);
-  const aspect = from.w / from.h;
-  const to = fit(aspect, guessHero(pilot));
-  const cam = camera(from, to);
+  // Aimed at the device, not the picture (owner 14/11 "ไม่ได้ซูมไปตรงกลางของตัวโมเดล"): its centre lands on the centre
+  // of the product page's photo frame.
+  const share = deviceShare(cardImg);
+  const frame = guessHero(pilot);
+  let to = landing(from, share, frame, centre(frame));
+  let cam = camera(from, to);
+  // Desktop: the photo frame's place depends on each product (its photo column is centred against its text), so no guess
+  // from the list can be exact — the camera waits (on the still list, ≤ AIM_MS) for the product page and flies once,
+  // straight onto its real photo: no correction when the page shows. Phones keep the guess (their frame does not move).
+  const exact = window.innerWidth >= 1024;
+  let pushed = false;
+  let found: ReturnType<typeof heroPhoto> = null;
+  let heroBox: Box | null = null;
   try {
     sessionStorage.setItem(BACK_KEY, JSON.stringify({ list: location.pathname + location.search, product: path, slug: card.dataset.cardSlug ?? "", vw: window.innerWidth, y: window.scrollY, pilot } satisfies BackInfo));
   } catch {}
@@ -252,11 +377,10 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   const stage = document.createElement("div");
   stage.setAttribute("aria-hidden", "true");
   Object.assign(stage.style, { position: "fixed", inset: "0", zIndex: "40", pointerEvents: "none" } satisfies Partial<CSSStyleDeclaration>);
-  // The photo layer: the card's <img> box carried by the camera, so the morph from the card picture is one uniform
-  // scale — the same line the camera draws — and the picture inside lands exactly on `to`.
   const cardBox = boxOf(cardImg.getBoundingClientRect());
-  const photo = photoLayer(cardImg, cam, cardImg.currentSrc || cardImg.src, prepare(cardImg, pilot));
-  stage.append(photo);
+  const sharp = prepare(cardImg, pilot);
+  const cardSrc = cardImg.currentSrc || cardImg.src;
+  let photo: HTMLElement | null = null;
 
   let left = false;
   const onBack = () => (left = true);
@@ -288,7 +412,7 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
     unveil();
     if (header) header.style.viewTransitionName = "";
     cardImg.style.viewTransitionName = "";
-    photo.style.viewTransitionName = "";
+    if (photo) photo.style.viewTransitionName = "";
     stage.remove();
     busy = false;
   };
@@ -299,13 +423,27 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
   cardImg.style.viewTransitionName = PHOTO;
   let vt: Transition;
   try {
-    vt = startVT(() => {
+    vt = startVT(async () => {
       cardImg.style.viewTransitionName = "";
+      if (exact) {
+        // The list stands still as a snapshot while the product page renders under it (nothing moves, so a busy main
+        // thread cannot show); its real photo frame is then known before the camera moves.
+        router.push(href, { scroll: false });
+        pushed = true;
+        found = await heroSoon(path, AIM_MS);
+        if (found) {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          heroBox = drawn(found.img);
+          to = landing(from, share, heroBox, aimOf(found.img, heroBox));
+          cam = camera(from, to);
+        }
+      }
+      // The photo layer: the card's <img> box carried by the camera, so the morph from the card picture is one uniform
+      // scale — the same line the camera draws — and the picture inside lands exactly on `to`.
+      photo = photoLayer(cardImg, cam, cardSrc, sharp);
       photo.style.viewTransitionName = PHOTO;
+      stage.append(photo);
       document.body.append(stage);
-      // The route changes now, right after the list's snapshot — the plain link's speed: the page is usually there by
-      // the time the camera lands. No scroll by the router: the zoom puts the product page at its top itself.
-      router.push(href, { scroll: false });
     });
   } catch {
     finish();
@@ -320,17 +458,27 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       const timing = { duration: ZOOM_MS, easing: EASE, fill: "both" } as const;
       // The camera on the list — it then holds, zoomed in on the card, until the product page is there (never a blank
       // screen) — the photo layer riding the same camera, and the product page held back until it is there.
-      moves.push(
+      const camera = [
         root.animate({ transform: ["none", camCss(cam)] }, { ...timing, pseudoElement: "::view-transition-old(root)" }),
         morph(cardBox, shot(cam, cardBox), timing),
-      );
+      ];
+      moves.push(...camera);
       const hold = root.animate({ opacity: [0, 0] }, { duration: WAIT_MS, fill: "both", pseudoElement: "::view-transition-new(root)" });
       moves.push(hold);
+      // The camera moves on a quiet main thread (≤ 120 ms wait) and nothing heavy runs while it moves: the route
+      // changes once it has landed — the product page then renders (the main thread's longest stretch, 150–260 ms at
+      // 1×) while the camera holds still on the photo, where a busy main thread cannot show.
+      const go = hold0(camera);
+      await quiet(120);
+      go();
+      await camera[0].finished;
+      // No scroll by the router: the zoom puts the product page at its top itself.
+      if (!pushed) router.push(href, { scroll: false });
 
       // The product page: its route, then its photo box (or, past 0.6 s on its route, none — then it simply shows).
-      let found: ReturnType<typeof heroPhoto> = null;
+      // Desktop already has it when it was there within AIM_MS.
       let routed = 0;
-      for (;;) {
+      while (!found) {
         if (left || performance.now() - t0 > WAIT_MS) throw new Error("gave up");
         if (location.pathname === path) {
           routed ||= performance.now();
@@ -342,17 +490,25 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       // Where the product page shows its photo (the guess `to` is right once this layout landed on this width before).
       const real = found?.img ?? null;
-      const at = found ? fit(aspect, drawn(found.img)) : null;
-      if (found && at) {
+      // The real photo frame, and the device landed on the page's own device (its centre) — so nothing shifts when the
+      // page's photo takes over; the frame is kept as the next guess for this layout and width.
+      // Measured again here, just before the page shows: if it still moved after the camera was aimed, the short glide
+      // below carries the photo onto it (never a jump when the stage goes); unmoved = the same box, no glide.
+      heroBox = found ? drawn(found.img) : null;
+      const at = found && heroBox ? landing(from, share, heroBox, aimOf(found.img, heroBox)) : null;
+      if (found && heroBox) {
+        readHeroLater(found.img); // for Back's aim, off its busy task
         veiled = [...found.hero.querySelectorAll("img")];
         for (const i of veiled) i.style.opacity = "0";
         try {
-          sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...at, vw: window.innerWidth, pilot }));
+          sessionStorage.setItem(HERO_CACHE, JSON.stringify({ ...heroBox, vw: window.innerWidth, pilot }));
         } catch {}
+        // For the aim checks (nothing on screen): where the camera put the device, the photo frame's centre and the
+        // page's own device centre.
+        performance.mark("okami-zoom-land", { detail: { camera: centre(deviceIn(to, share)), frame: centre(heroBox), device: aimOf(found.img, heroBox), final: at && centre(deviceIn(at, share)) } });
       }
-      // The page shows round the photo while the camera lands (from 60 % of the way in), or at once if it came later.
-      const early = t0 + ZOOM_MS * 0.6 - performance.now();
-      if (early > 0) await new Promise((r) => setTimeout(r, early));
+      // The page shows round the photo once its render has let go of the main thread (≤ 0.4 s), so the fade runs smooth.
+      await quiet(400);
       hold.cancel();
       moves.push(root.animate({ opacity: [0, 1] }, { duration: LIFT_MS, easing: "ease-out", fill: "both", pseudoElement: "::view-transition-new(root)" }));
       listen(true);
@@ -381,15 +537,16 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
       for (const a of moves) a.cancel();
       moves.length = 0;
       if (header) header.style.viewTransitionName = "";
-      photo.style.viewTransitionName = "";
-      if (inside || handed) return finish();
+      const layer = photo as HTMLElement | null; // set in the transition's update, before `ready`
+      if (layer) layer.style.viewTransitionName = "";
+      if (inside || handed || !layer) return finish();
 
       // Otherwise ours stands on it until it has loaded (≤ 0.15 s), then hands over.
       const guard = window.setTimeout(hand, 1500);
-      if (end) Object.assign(photo.style, { transformOrigin: "0 0", transform: toward(pb, end) });
+      if (end) Object.assign(layer.style, { transformOrigin: "0 0", transform: toward(pb, end) });
       if (real && !real.complete) await Promise.race([new Promise((r) => real.addEventListener("load", r, { once: true })), new Promise((r) => setTimeout(r, 150)), handing]);
       unveil();
-      if (!handed) await Promise.race([photo.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-out", fill: "forwards" }).finished, handing]);
+      if (!handed) await Promise.race([layer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, easing: "ease-out", fill: "forwards" }).finished, handing]);
       window.clearTimeout(guard);
       finish();
     } catch {
@@ -405,7 +562,7 @@ function zoomIn(cardImg: HTMLImageElement, card: HTMLAnchorElement, href: string
 }
 
 /** Back to a list: the product photo as it stood, measured before the router swaps the page (capture-phase popstate). */
-type Leaving = { src: string; box: Box; fit: string; position: string } | null;
+type Leaving = { src: string; box: Box; aim: { x: number; y: number }; fit: string; position: string } | null;
 
 /**
  * Back to the list a zoom started from: the camera starts where the zoom-in ended — the card's photo standing on the
@@ -438,7 +595,9 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
   const p = drawn(img);
   const cardBox = boxOf(img.getBoundingClientRect());
   const onScreen = !!leaving && leaving.box.y + leaving.box.h > 40 && leaving.box.y < window.innerHeight - 40;
-  const cam = camera(p, fit(p.w / p.h, onScreen ? leaving!.box : guessHero(info.pilot)));
+  // The mirror of the zoom-in's aim: the card's device starts on the product photo's device.
+  const frame = onScreen ? leaving!.box : guessHero(info.pilot);
+  const cam = camera(p, landing(p, deviceShare(img), frame, onScreen ? leaving!.aim : centre(frame)));
   // The frame the snapshot is taken in shows the list already through the camera (zoomed in on the card), not the list as
   // it stands for a frame and not a blank: the pull-back starts the moment the product page goes. The camera goes on
   // <main>'s children with <main> clipped sideways: on a phone, anything reaching past the right edge widens the page and
@@ -496,6 +655,12 @@ function zoomOut(e: PopStateEvent, leaving: Leaving): boolean {
         // Sharp product photo first, the card's own picture by the time it is card-sized again.
         moves.push(root.animate({ opacity: [0, 1] }, { duration: ZOOM_MS * 0.7, delay: ZOOM_MS * 0.1, easing: "linear", fill: "both", pseudoElement: `::view-transition-new(${PHOTO})` }));
       }
+      // The list has just been rendered again; its after-work (effects, pictures) would stall the pull-back mid-way
+      // (a 133–149 ms gap at 1×, measured 14/11). It stands on its zoomed first frame until the main thread is quiet
+      // (≤ 300 ms), then pulls back in one go.
+      const go = hold0(moves);
+      await quiet(300);
+      go();
       await vt.finished;
     } catch {}
     done();
@@ -537,10 +702,15 @@ export function attachZoom(router: Router): ZoomEngine {
     zoomIn(z.img, card, z.href, router);
   };
   // As the finger lands: fetch the product page and decode the sharp photo, so both are usually ready by the tap.
+  // A mouse rests on the card a moment before the click: the same, from the pointer coming onto the card (once per card),
+  // so on desktop the product page is usually there inside AIM_MS and the camera flies straight onto its photo.
+  const readied = new WeakSet<HTMLAnchorElement>();
   const onDown = (e: PointerEvent) => {
     const card = (e.target as Element | null)?.closest<HTMLAnchorElement>("a[data-card-cut]");
     const href = card?.getAttribute("href");
     if (!card || !href?.startsWith("/products/")) return;
+    if (e.type === "pointerover" && (e.pointerType !== "mouse" || readied.has(card) || busy)) return;
+    readied.add(card);
     router.prefetch(href);
     const img = card.querySelector<HTMLImageElement>("[data-card-photo] img");
     if (img) prepare(img, card.hasAttribute("data-zoom-pilot"));
@@ -556,6 +726,7 @@ export function attachZoom(router: Router): ZoomEngine {
       aheadPath = location.pathname;
       ahead = 0;
     }
+    if (busy) return void (aheadTimer = window.setTimeout(() => idle(readyAhead), 400));
     if (ahead >= AHEAD || QUIET.test(location.pathname) || lite()) return;
     const h = window.innerHeight;
     for (const card of document.querySelectorAll<HTMLAnchorElement>(CARDS)) {
@@ -581,6 +752,8 @@ export function attachZoom(router: Router): ZoomEngine {
     queued = true;
     idle(() => {
       queued = false;
+      // Never while a zoom runs (its moves must have the main thread to themselves): again after it.
+      if (busy) return void window.setTimeout(queue, 400);
       if (!QUIET.test(location.pathname)) ease();
     });
   };
@@ -604,7 +777,8 @@ export function attachZoom(router: Router): ZoomEngine {
     const hero = heroPhoto();
     if (!hero) return;
     const cs = getComputedStyle(hero.img);
-    leaving = { src: hero.img.currentSrc || hero.img.src, box: drawn(hero.img), fit: cs.objectFit || "contain", position: cs.objectPosition };
+    const box = drawn(hero.img);
+    leaving = { src: hero.img.currentSrc || hero.img.src, box, aim: aimOf(hero.img, box, true), fit: cs.objectFit || "contain", position: cs.objectPosition };
   };
   // Back/Forward: the Navigation API's "navigate" comes before the router swaps the page (popstate comes after, measured
   // 13/11); without that API the zoom-out runs without the product photo.
@@ -626,6 +800,7 @@ export function attachZoom(router: Router): ZoomEngine {
     leaving = null;
   };
   document.addEventListener("pointerdown", onDown, { capture: true, passive: true });
+  document.addEventListener("pointerover", onDown, { capture: true, passive: true });
   document.addEventListener("click", onClick, true);
   nav?.addEventListener("navigate", onNavigate);
   window.addEventListener("popstate", onPopEarly, true);
@@ -634,6 +809,7 @@ export function attachZoom(router: Router): ZoomEngine {
     window.removeEventListener("scroll", onScrollStill);
     window.clearTimeout(aheadTimer);
     document.removeEventListener("pointerdown", onDown, true);
+    document.removeEventListener("pointerover", onDown, true);
     watch.disconnect();
     window.removeEventListener("resize", onResize);
     window.clearTimeout(resizeTimer);
