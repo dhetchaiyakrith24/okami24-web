@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-10-15",
-  "endDate": "2026-11-11",
+  "startDate": "2026-10-16",
+  "endDate": "2026-11-12",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 396,
-   "impressions": 2816,
-   "ctr": 0.140625,
-   "position": 10.872869318181818
+   "clicks": 376,
+   "impressions": 2638,
+   "ctr": 0.1425322213798332,
+   "position": 11.033737680060652
   },
   {
    "keys": [
@@ -93,9 +93,9 @@
     "bra"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 48.333333333333336
+   "position": 54
   },
   {
    "keys": [
@@ -147,9 +147,9 @@
     "jpn"
    ],
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 7,
    "ctr": 0,
-   "position": 17
+   "position": 6.857142857142857
   },
   {
    "keys": [
@@ -195,15 +195,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 82
-  },
-  {
-   "keys": [
-    "pol"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 62
   },
   {
    "keys": [
